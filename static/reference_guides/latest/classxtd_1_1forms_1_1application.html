@@ -1276,12 +1276,12 @@ If your application was originally supplied command-line options when it first e
 <div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
-<div class="line">  <span class="keyword">auto</span> restart_count = <a class="code" href="classxtd_1_1environment.html#abc571cecc9691249a326323123b98c29">environment::get_environment_variable</a>(<span class="stringliteral">&quot;applicatioon_restart_count&quot;</span>).empty() ? 0 : <a class="code" href="group__xtd__core.html#ga8dd4c00484ddac781e23fb7a7a0f5d2e">parse&lt;int&gt;</a>(<a class="code" href="classxtd_1_1environment.html#abc571cecc9691249a326323123b98c29">environment::get_environment_variable</a>(<span class="stringliteral">&quot;applicatioon_restart_count&quot;</span>));</div>
+<div class="line">  <span class="keyword">auto</span> restart_count = <a class="code" href="classxtd_1_1environment.html#abc571cecc9691249a326323123b98c29">environment::get_environment_variable</a>(<span class="stringliteral">&quot;application_restart_count&quot;</span>).empty() ? 0 : <a class="code" href="group__xtd__core.html#ga8dd4c00484ddac781e23fb7a7a0f5d2e">parse&lt;int&gt;</a>(<a class="code" href="classxtd_1_1environment.html#abc571cecc9691249a326323123b98c29">environment::get_environment_variable</a>(<span class="stringliteral">&quot;application_restart_count&quot;</span>));</div>
 <div class="line">  <span class="keyword">auto</span> main_form = <a class="code" href="classxtd_1_1forms_1_1form.html#a0ce64249f570739e80ce099ae7898ad8">form::create</a>(<a class="code" href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">ustring::format</a>(<span class="stringliteral">&quot;Restart {} times&quot;</span>, restart_count));</div>
 <div class="line">  <span class="keyword">auto</span> restart_button = <a class="code" href="classxtd_1_1forms_1_1button.html#a6c38aeb9fcd0d1fa50f5a66d9356d4a8">button::create</a>(main_form, <span class="stringliteral">&quot;Restart&quot;</span>, {10, 10});</div>
 <div class="line">  restart_button.<a class="code" href="classxtd_1_1forms_1_1control.html#a651752ad0a3ec381983aa0b367291a68">click</a> += <a class="code" href="classxtd_1_1forms_1_1application.html#a9d1de5b2f5e8ee4b46a24aa8f556a5c2">application::restart</a>;</div>
 <div class="line">  </div>
-<div class="line">  <a class="code" href="classxtd_1_1environment.html#ab2d3cd3dc81f0073e7891d0d6e81159f">environment::set_environment_variable</a>(<span class="stringliteral">&quot;applicatioon_restart_count&quot;</span>, <a class="code" href="group__xtd__core.html#gabff6a04b06200c06d782196536e4a8af">to_string</a>(restart_count + 1));</div>
+<div class="line">  <a class="code" href="classxtd_1_1environment.html#ab2d3cd3dc81f0073e7891d0d6e81159f">environment::set_environment_variable</a>(<span class="stringliteral">&quot;application_restart_count&quot;</span>, <a class="code" href="group__xtd__core.html#gabff6a04b06200c06d782196536e4a8af">to_string</a>(restart_count + 1));</div>
 <div class="line">  </div>
 <div class="line">  <a class="code" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(main_form);</div>
 <div class="line">}</div>
@@ -2012,7 +2012,7 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 2 2023 18:11:33 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Mar 28 2023 12:11:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

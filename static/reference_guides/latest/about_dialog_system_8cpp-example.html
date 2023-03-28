@@ -115,21 +115,21 @@ $(function() {
 <div class="line">    <a class="code" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.location({10, 10});</div>
 <div class="line">    <a class="code" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.text(<span class="stringliteral">&quot;About...&quot;</span>);</div>
 <div class="line">    <a class="code" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.click += [&amp;] {</div>
-<div class="line">      about_dialog about_dialog;</div>
-<div class="line">      about_dialog.dialog_style(<a name="a1"></a><a class="code" href="group__xtd__forms.html#gga7fd72f9f89441658953471a6ec525725a54b53072540eeeb8f8e9343e71f28176">xtd::forms::dialog_style::system</a>);</div>
-<div class="line">      about_dialog.icon(<a name="_a2"></a><a class="code" href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a>(gammasoft_64x64_xpm));</div>
-<div class="line">      about_dialog.name(<span class="stringliteral">&quot;About dialog system&quot;</span>);</div>
-<div class="line">      about_dialog.version(<span class="stringliteral">&quot;1.0&quot;</span>);</div>
-<div class="line">      about_dialog.long_version(<span class="stringliteral">&quot;1.0.0&quot;</span>);</div>
-<div class="line">      about_dialog.description(<span class="stringliteral">&quot;About dialog description.&quot;</span>);</div>
-<div class="line">      about_dialog.copyright(<span class="stringliteral">&quot;Copyright (c) 2023 Gammasoft.\nAll rights reserved.&quot;</span>);</div>
-<div class="line">      about_dialog.website(<span class="stringliteral">&quot;https://gammasoft71.wixsite.com/gammasoft&quot;</span>);</div>
-<div class="line">      about_dialog.website_label(<span class="stringliteral">&quot;gammasoft website&quot;</span>);</div>
-<div class="line">      about_dialog.authors({<span class="stringliteral">&quot;Gammasoft&quot;</span>, <span class="stringliteral">&quot;Contributors&quot;</span>});</div>
-<div class="line">      about_dialog.documenters({<span class="stringliteral">&quot;Gammasoft&quot;</span>});</div>
-<div class="line">      about_dialog.translators({<span class="stringliteral">&quot;Gammasoft&quot;</span>, <span class="stringliteral">&quot;Contributors&quot;</span>});</div>
-<div class="line">      about_dialog.artists({<span class="stringliteral">&quot;Gammasoft&quot;</span>});</div>
-<div class="line">      about_dialog.license(<span class="stringliteral">&quot;MIT License\n&quot;</span></div>
+<div class="line">      <span class="keyword">static</span> about_dialog dialog;</div>
+<div class="line">      dialog.dialog_style(<a name="a1"></a><a class="code" href="group__xtd__forms.html#gga7fd72f9f89441658953471a6ec525725a54b53072540eeeb8f8e9343e71f28176">xtd::forms::dialog_style::system</a>);</div>
+<div class="line">      dialog.icon(<a name="_a2"></a><a class="code" href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a>(gammasoft_64x64_xpm));</div>
+<div class="line">      dialog.name(<span class="stringliteral">&quot;About dialog system&quot;</span>);</div>
+<div class="line">      dialog.version(<span class="stringliteral">&quot;1.0&quot;</span>);</div>
+<div class="line">      dialog.long_version(<span class="stringliteral">&quot;1.0.0&quot;</span>);</div>
+<div class="line">      dialog.description(<span class="stringliteral">&quot;About dialog description.&quot;</span>);</div>
+<div class="line">      dialog.copyright(<span class="stringliteral">&quot;Copyright (c) 2023 Gammasoft.\nAll rights reserved.&quot;</span>);</div>
+<div class="line">      dialog.website(<span class="stringliteral">&quot;https://gammasoft71.wixsite.com/gammasoft&quot;</span>);</div>
+<div class="line">      dialog.website_label(<span class="stringliteral">&quot;gammasoft website&quot;</span>);</div>
+<div class="line">      dialog.authors({<span class="stringliteral">&quot;Gammasoft&quot;</span>, <span class="stringliteral">&quot;Contributors&quot;</span>});</div>
+<div class="line">      dialog.documenters({<span class="stringliteral">&quot;Gammasoft&quot;</span>});</div>
+<div class="line">      dialog.translators({<span class="stringliteral">&quot;Gammasoft&quot;</span>, <span class="stringliteral">&quot;Contributors&quot;</span>});</div>
+<div class="line">      dialog.artists({<span class="stringliteral">&quot;Gammasoft&quot;</span>});</div>
+<div class="line">      dialog.license(<span class="stringliteral">&quot;MIT License\n&quot;</span></div>
 <div class="line">        <span class="stringliteral">&quot;\n&quot;</span></div>
 <div class="line">        <span class="stringliteral">&quot;Copyright (c) 2023 Gammasoft.\n&quot;</span></div>
 <div class="line">        <span class="stringliteral">&quot;\n&quot;</span></div>
@@ -153,7 +153,7 @@ $(function() {
 <div class="line">        <span class="stringliteral">&quot;ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n&quot;</span></div>
 <div class="line">        <span class="stringliteral">&quot;OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE\n&quot;</span></div>
 <div class="line">        <span class="stringliteral">&quot;OR OTHER DEALINGS IN THE SOFTWARE.\n&quot;</span>);</div>
-<div class="line">      about_dialog.show(*<span class="keyword">this</span>);</div>
+<div class="line">      dialog.show(*<span class="keyword">this</span>);</div>
 <div class="line">    };</div>
 <div class="line">  }</div>
 <div class="line">  </div>
@@ -177,7 +177,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 2 2023 18:11:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Mar 28 2023 12:11:23 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

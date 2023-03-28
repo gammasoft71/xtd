@@ -97,9 +97,9 @@ $(function() {
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      </div>
 <div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1trace__message__dialog.html#aa84a5f2aab01c5e824d160585c348300">   61</a></span>&#160;      <a class="code" href="namespacextd.html">xtd</a>::<a class="code" href="classxtd_1_1ustring.html">ustring</a> <a class="code" href="classxtd_1_1forms_1_1message.html">message</a>() const noexcept;</div>
 <div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1trace__message__dialog.html#aa73345fa423d9c6869cec51747db2d87">   65</a></span>&#160;      <a class="code" href="classxtd_1_1forms_1_1trace__message__dialog.html">trace_message_dialog</a>&amp; <a class="code" href="classxtd_1_1forms_1_1message.html">message</a>(const <a class="code" href="namespacextd.html">xtd</a>::<a class="code" href="classxtd_1_1ustring.html">ustring</a>&amp; <a class="code" href="classxtd_1_1forms_1_1message.html">message</a>) {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#if defined(TRACE)</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">        #if defined(TRACE)</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        dialog_.message(<a class="code" href="classxtd_1_1forms_1_1message.html">message</a>);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">        #endif</span></div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      }</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      </div>
@@ -107,34 +107,34 @@ $(function() {
 <div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1trace__message__dialog.html#a6cbd43d2ad5aabc783c01f0121a5642d">   77</a></span>&#160;      <span class="keywordtype">void</span> <a class="code" href="classxtd_1_1forms_1_1trace__message__dialog.html#a6cbd43d2ad5aabc783c01f0121a5642d">reset</a>();</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      </div>
 <div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1trace__message__dialog.html#a7f4af7a1d9030fbe165f2f284b19adf6">   80</a></span>&#160;      <a class="code" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a> <a class="code" href="classxtd_1_1forms_1_1trace__message__dialog.html#a7f4af7a1d9030fbe165f2f284b19adf6">show_dialog</a>() {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#if defined(TRACE)</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">        #if defined(TRACE)</span></div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <a class="code" href="classxtd_1_1diagnostics_1_1trace.html#a0cf0960a97a2e45829917c931e1cf9bb">xtd::diagnostics::trace::write_line</a>(dialog_.message());</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">return</span> dialog_.show_dialog();</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">        #else</span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="group__xtd__forms.html#gga4f0cffaa8fcb3708782f28d60386c525a334c4a4c42fdb79d7ebc3e73b517e6f8">xtd::forms::dialog_result::none</a>;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">        #endif</span></div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      }</div>
 <div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1trace__message__dialog.html#a480f9dd172f09a9e848188dcc2afe9a8">   89</a></span>&#160;      <a class="code" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a> <a class="code" href="classxtd_1_1forms_1_1trace__message__dialog.html#a480f9dd172f09a9e848188dcc2afe9a8">show_dialog</a>(<span class="keyword">const</span> <a class="code" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a>&amp; owner) {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#if defined(TRACE)</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">        #if defined(TRACE)</span></div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <a class="code" href="classxtd_1_1diagnostics_1_1trace.html#a0cf0960a97a2e45829917c931e1cf9bb">xtd::diagnostics::trace::write_line</a>(dialog_.message());</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">return</span> dialog_.show_dialog(owner);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">        #else</span></div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="group__xtd__forms.html#gga4f0cffaa8fcb3708782f28d60386c525a334c4a4c42fdb79d7ebc3e73b517e6f8">xtd::forms::dialog_result::none</a>;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">        #endif</span></div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;      }</div>
 <div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1trace__message__dialog.html#a2e1acf82565ea518c0b38bdc8a455d01">   98</a></span>&#160;      <span class="keywordtype">void</span> <a class="code" href="classxtd_1_1forms_1_1trace__message__dialog.html#a2e1acf82565ea518c0b38bdc8a455d01">show_sheet</a>(<span class="keyword">const</span> <a class="code" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a>&amp; owner) {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#if defined(TRACE)</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">        #if defined(TRACE)</span></div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <a class="code" href="classxtd_1_1diagnostics_1_1trace.html#a0cf0960a97a2e45829917c931e1cf9bb">xtd::diagnostics::trace::write_line</a>(dialog_.message());</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        dialog_.show_sheet(owner);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">        #endif</span></div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;      }</div>
 <div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1trace__message__dialog.html#abe17813a0b3fc33a680bfc653585b213">  105</a></span>&#160;      <a class="code" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a> <a class="code" href="classxtd_1_1forms_1_1trace__message__dialog.html#abe17813a0b3fc33a680bfc653585b213">show_sheet_dialog</a>(<span class="keyword">const</span> <a class="code" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a>&amp; owner) {</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#if defined(TRACE)</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">        #if defined(TRACE)</span></div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <a class="code" href="classxtd_1_1diagnostics_1_1trace.html#a0cf0960a97a2e45829917c931e1cf9bb">xtd::diagnostics::trace::write_line</a>(dialog_.message());</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">return</span> dialog_.show_sheet_dialog(owner);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor">        #else</span></div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="group__xtd__forms.html#gga4f0cffaa8fcb3708782f28d60386c525a334c4a4c42fdb79d7ebc3e73b517e6f8">xtd::forms::dialog_result::none</a>;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor">        #endif</span></div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;      }</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;      </div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;      </div>
@@ -174,7 +174,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 2 2023 18:11:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Mar 28 2023 12:11:25 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

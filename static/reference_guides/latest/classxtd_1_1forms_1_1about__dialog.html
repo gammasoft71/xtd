@@ -137,37 +137,36 @@ Inheritance diagram for xtd::forms::about_dialog:</div>
 <div class="line">    <a class="code" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;About dialog example&quot;</span>);</div>
 <div class="line">    controls().push_back(button1);</div>
 <div class="line">    </div>
-<div class="line">    about_dialog1.icon(<a class="code" href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a>(gammasoft_64x64_xpm));</div>
-<div class="line">    about_dialog1.name(<span class="stringliteral">&quot;About dialog&quot;</span>);</div>
-<div class="line">    about_dialog1.version(<span class="stringliteral">&quot;1.0&quot;</span>);</div>
-<div class="line">    about_dialog1.long_version(<span class="stringliteral">&quot;1.0.0&quot;</span>);</div>
-<div class="line">    about_dialog1.description(<span class="stringliteral">&quot;About dialog description.&quot;</span>);</div>
-<div class="line">    about_dialog1.copyright(<span class="stringliteral">&quot;Copyright (c) 2023 Gammasoft.\nAll rights reserved.&quot;</span>);</div>
-<div class="line">    about_dialog1.website(<span class="stringliteral">&quot;https://gammasoft71.wixsite.com/gammasoft&quot;</span>);</div>
-<div class="line">    about_dialog1.website_label(<span class="stringliteral">&quot;gammasoft website&quot;</span>);</div>
-<div class="line">    about_dialog1.authors({<span class="stringliteral">&quot;Gammasoft&quot;</span>, <span class="stringliteral">&quot;Contributors&quot;</span>});</div>
-<div class="line">    about_dialog1.documenters({<span class="stringliteral">&quot;Gammasoft&quot;</span>});</div>
-<div class="line">    about_dialog1.translators({<span class="stringliteral">&quot;Gammasoft&quot;</span>, <span class="stringliteral">&quot;Contributors&quot;</span>});</div>
-<div class="line">    about_dialog1.artists({<span class="stringliteral">&quot;Gammasoft&quot;</span>});</div>
-<div class="line">    about_dialog1.license(<span class="stringliteral">&quot;MIT License\n&quot;</span></div>
-<div class="line">      <span class="stringliteral">&quot;\n&quot;</span></div>
-<div class="line">      <span class="stringliteral">&quot;Copyright (c) 2023 Gammasoft.\n&quot;</span></div>
-<div class="line">      <span class="stringliteral">&quot;\n&quot;</span></div>
-<div class="line">      <span class="stringliteral">&quot;Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \&quot;Software\&quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n&quot;</span></div>
-<div class="line">      <span class="stringliteral">&quot;\n&quot;</span></div>
-<div class="line">      <span class="stringliteral">&quot;The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n&quot;</span></div>
-<div class="line">      <span class="stringliteral">&quot;\n&quot;</span></div>
-<div class="line">      <span class="stringliteral">&quot;THE SOFTWARE IS PROVIDED \&quot;AS IS\&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n&quot;</span>);</div>
-<div class="line">      </div>
 <div class="line">    <a class="code" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.location({10, 10});</div>
 <div class="line">    <a class="code" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.text(<span class="stringliteral">&quot;About...&quot;</span>);</div>
 <div class="line">    <a class="code" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.click += [&amp;] {</div>
-<div class="line">      about_dialog1.show();</div>
+<div class="line">      <span class="keyword">static</span> <a class="code" href="classxtd_1_1forms_1_1about__dialog.html#a534a89c91706cfd51503d57de98b91de">about_dialog</a> dialog;</div>
+<div class="line">      dialog.icon(<a class="code" href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a>(gammasoft_64x64_xpm));</div>
+<div class="line">      dialog.name(<span class="stringliteral">&quot;About dialog&quot;</span>);</div>
+<div class="line">      dialog.version(<span class="stringliteral">&quot;1.0&quot;</span>);</div>
+<div class="line">      dialog.long_version(<span class="stringliteral">&quot;1.0.0&quot;</span>);</div>
+<div class="line">      dialog.description(<span class="stringliteral">&quot;About dialog description.&quot;</span>);</div>
+<div class="line">      dialog.website(<span class="stringliteral">&quot;https://gammasoft71.wixsite.com/gammasoft&quot;</span>);</div>
+<div class="line">      dialog.website_label(<span class="stringliteral">&quot;gammasoft website&quot;</span>);</div>
+<div class="line">      dialog.copyright(<span class="stringliteral">&quot;Copyright (c) 2023 Gammasoft.\nAll rights reserved.&quot;</span>);</div>
+<div class="line">      dialog.authors({<span class="stringliteral">&quot;Gammasoft&quot;</span>, <span class="stringliteral">&quot;Contributors&quot;</span>});</div>
+<div class="line">      dialog.documenters({<span class="stringliteral">&quot;Gammasoft&quot;</span>});</div>
+<div class="line">      dialog.translators({<span class="stringliteral">&quot;Gammasoft&quot;</span>, <span class="stringliteral">&quot;Contributors&quot;</span>});</div>
+<div class="line">      dialog.artists({<span class="stringliteral">&quot;Gammasoft&quot;</span>});</div>
+<div class="line">      dialog.license(<span class="stringliteral">&quot;MIT License\n&quot;</span></div>
+<div class="line">        <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line">        <span class="stringliteral">&quot;Copyright (c) 2023 Gammasoft.\n&quot;</span></div>
+<div class="line">        <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line">        <span class="stringliteral">&quot;Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \&quot;Software\&quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n&quot;</span></div>
+<div class="line">        <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line">        <span class="stringliteral">&quot;The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n&quot;</span></div>
+<div class="line">        <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line">        <span class="stringliteral">&quot;THE SOFTWARE IS PROVIDED \&quot;AS IS\&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n&quot;</span>);</div>
+<div class="line">      dialog.show();</div>
 <div class="line">    };</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
-<div class="line">  <a class="code" href="classxtd_1_1forms_1_1about__dialog.html#a534a89c91706cfd51503d57de98b91de">about_dialog</a> about_dialog1;</div>
 <div class="line">  <a class="code" href="group__style__sheets.html#ga20f9c51904cab0da365efa6c57b84908">button</a> <a class="code" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>;</div>
 <div class="line">};</div>
 <div class="line"> </div>
@@ -199,21 +198,21 @@ Inheritance diagram for xtd::forms::about_dialog:</div>
 <div class="line">    <a class="code" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.location({10, 10});</div>
 <div class="line">    <a class="code" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.text(<span class="stringliteral">&quot;About...&quot;</span>);</div>
 <div class="line">    <a class="code" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.click += [&amp;] {</div>
-<div class="line">      <a class="code" href="classxtd_1_1forms_1_1about__dialog.html#a534a89c91706cfd51503d57de98b91de">about_dialog</a> <a class="code" href="classxtd_1_1forms_1_1about__dialog.html#a534a89c91706cfd51503d57de98b91de">about_dialog</a>;</div>
-<div class="line">      <a class="code" href="classxtd_1_1forms_1_1about__dialog.html#a534a89c91706cfd51503d57de98b91de">about_dialog</a>.dialog_style(<a class="code" href="group__xtd__forms.html#gga7fd72f9f89441658953471a6ec525725a54b53072540eeeb8f8e9343e71f28176">xtd::forms::dialog_style::system</a>);</div>
-<div class="line">      <a class="code" href="classxtd_1_1forms_1_1about__dialog.html#a534a89c91706cfd51503d57de98b91de">about_dialog</a>.icon(<a class="code" href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a>(gammasoft_64x64_xpm));</div>
-<div class="line">      <a class="code" href="classxtd_1_1forms_1_1about__dialog.html#a534a89c91706cfd51503d57de98b91de">about_dialog</a>.name(<span class="stringliteral">&quot;About dialog system&quot;</span>);</div>
-<div class="line">      <a class="code" href="classxtd_1_1forms_1_1about__dialog.html#a534a89c91706cfd51503d57de98b91de">about_dialog</a>.version(<span class="stringliteral">&quot;1.0&quot;</span>);</div>
-<div class="line">      <a class="code" href="classxtd_1_1forms_1_1about__dialog.html#a534a89c91706cfd51503d57de98b91de">about_dialog</a>.long_version(<span class="stringliteral">&quot;1.0.0&quot;</span>);</div>
-<div class="line">      <a class="code" href="classxtd_1_1forms_1_1about__dialog.html#a534a89c91706cfd51503d57de98b91de">about_dialog</a>.description(<span class="stringliteral">&quot;About dialog description.&quot;</span>);</div>
-<div class="line">      <a class="code" href="classxtd_1_1forms_1_1about__dialog.html#a534a89c91706cfd51503d57de98b91de">about_dialog</a>.copyright(<span class="stringliteral">&quot;Copyright (c) 2023 Gammasoft.\nAll rights reserved.&quot;</span>);</div>
-<div class="line">      <a class="code" href="classxtd_1_1forms_1_1about__dialog.html#a534a89c91706cfd51503d57de98b91de">about_dialog</a>.website(<span class="stringliteral">&quot;https://gammasoft71.wixsite.com/gammasoft&quot;</span>);</div>
-<div class="line">      <a class="code" href="classxtd_1_1forms_1_1about__dialog.html#a534a89c91706cfd51503d57de98b91de">about_dialog</a>.website_label(<span class="stringliteral">&quot;gammasoft website&quot;</span>);</div>
-<div class="line">      <a class="code" href="classxtd_1_1forms_1_1about__dialog.html#a534a89c91706cfd51503d57de98b91de">about_dialog</a>.authors({<span class="stringliteral">&quot;Gammasoft&quot;</span>, <span class="stringliteral">&quot;Contributors&quot;</span>});</div>
-<div class="line">      <a class="code" href="classxtd_1_1forms_1_1about__dialog.html#a534a89c91706cfd51503d57de98b91de">about_dialog</a>.documenters({<span class="stringliteral">&quot;Gammasoft&quot;</span>});</div>
-<div class="line">      <a class="code" href="classxtd_1_1forms_1_1about__dialog.html#a534a89c91706cfd51503d57de98b91de">about_dialog</a>.translators({<span class="stringliteral">&quot;Gammasoft&quot;</span>, <span class="stringliteral">&quot;Contributors&quot;</span>});</div>
-<div class="line">      <a class="code" href="classxtd_1_1forms_1_1about__dialog.html#a534a89c91706cfd51503d57de98b91de">about_dialog</a>.artists({<span class="stringliteral">&quot;Gammasoft&quot;</span>});</div>
-<div class="line">      <a class="code" href="classxtd_1_1forms_1_1about__dialog.html#a534a89c91706cfd51503d57de98b91de">about_dialog</a>.license(<span class="stringliteral">&quot;MIT License\n&quot;</span></div>
+<div class="line">      <span class="keyword">static</span> <a class="code" href="classxtd_1_1forms_1_1about__dialog.html#a534a89c91706cfd51503d57de98b91de">about_dialog</a> dialog;</div>
+<div class="line">      dialog.dialog_style(<a class="code" href="group__xtd__forms.html#gga7fd72f9f89441658953471a6ec525725a54b53072540eeeb8f8e9343e71f28176">xtd::forms::dialog_style::system</a>);</div>
+<div class="line">      dialog.icon(<a class="code" href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a>(gammasoft_64x64_xpm));</div>
+<div class="line">      dialog.name(<span class="stringliteral">&quot;About dialog system&quot;</span>);</div>
+<div class="line">      dialog.version(<span class="stringliteral">&quot;1.0&quot;</span>);</div>
+<div class="line">      dialog.long_version(<span class="stringliteral">&quot;1.0.0&quot;</span>);</div>
+<div class="line">      dialog.description(<span class="stringliteral">&quot;About dialog description.&quot;</span>);</div>
+<div class="line">      dialog.copyright(<span class="stringliteral">&quot;Copyright (c) 2023 Gammasoft.\nAll rights reserved.&quot;</span>);</div>
+<div class="line">      dialog.website(<span class="stringliteral">&quot;https://gammasoft71.wixsite.com/gammasoft&quot;</span>);</div>
+<div class="line">      dialog.website_label(<span class="stringliteral">&quot;gammasoft website&quot;</span>);</div>
+<div class="line">      dialog.authors({<span class="stringliteral">&quot;Gammasoft&quot;</span>, <span class="stringliteral">&quot;Contributors&quot;</span>});</div>
+<div class="line">      dialog.documenters({<span class="stringliteral">&quot;Gammasoft&quot;</span>});</div>
+<div class="line">      dialog.translators({<span class="stringliteral">&quot;Gammasoft&quot;</span>, <span class="stringliteral">&quot;Contributors&quot;</span>});</div>
+<div class="line">      dialog.artists({<span class="stringliteral">&quot;Gammasoft&quot;</span>});</div>
+<div class="line">      dialog.license(<span class="stringliteral">&quot;MIT License\n&quot;</span></div>
 <div class="line">        <span class="stringliteral">&quot;\n&quot;</span></div>
 <div class="line">        <span class="stringliteral">&quot;Copyright (c) 2023 Gammasoft.\n&quot;</span></div>
 <div class="line">        <span class="stringliteral">&quot;\n&quot;</span></div>
@@ -237,7 +236,7 @@ Inheritance diagram for xtd::forms::about_dialog:</div>
 <div class="line">        <span class="stringliteral">&quot;ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n&quot;</span></div>
 <div class="line">        <span class="stringliteral">&quot;OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE\n&quot;</span></div>
 <div class="line">        <span class="stringliteral">&quot;OR OTHER DEALINGS IN THE SOFTWARE.\n&quot;</span>);</div>
-<div class="line">      <a class="code" href="classxtd_1_1forms_1_1about__dialog.html#a534a89c91706cfd51503d57de98b91de">about_dialog</a>.show(*<span class="keyword">this</span>);</div>
+<div class="line">      dialog.show(*<span class="keyword">this</span>);</div>
 <div class="line">    };</div>
 <div class="line">  }</div>
 <div class="line">  </div>
@@ -1517,7 +1516,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 2 2023 18:11:33 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Mar 28 2023 12:11:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
