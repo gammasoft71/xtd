@@ -1,7 +1,6 @@
 #include <xtd/xtd>
 
 using namespace std;
-using namespace std::literals;
 using namespace xtd;
 using namespace xtd::net;
 using namespace xtd::net::sockets;
@@ -29,7 +28,7 @@ auto main()->int {
     while (!terminate_app) {
       auto str = ustring::format("counter={}", counter++);
       client_socket.send_to(vector<unsigned char>(str.begin(), str.end()), ip_end_point(ip_address::ip_v6_loopback, 9400));
-      this_thread::sleep_for(50ms);
+      this_thread::sleep_for(50_ms);
     }
     
     client_socket.send_to(vector<unsigned char> {0xFF}, ip_end_point(ip_address::ip_v6_loopback, 9400));

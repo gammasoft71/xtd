@@ -1,7 +1,6 @@
 #include <xtd/xtd>
 
 using namespace std;
-using namespace std::literals;
 using namespace xtd;
 using namespace xtd::io;
 using namespace xtd::net;
@@ -29,7 +28,7 @@ auto main()->int {
     auto counter = 1;
     while (!terminate_app) {
       writer.write_line(ustring::format("counter={}", counter++));
-      this_thread::sleep_for(50ms);
+      this_thread::sleep_for(50_ms);
     }
   });
   

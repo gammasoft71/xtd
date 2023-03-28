@@ -4,8 +4,8 @@
 #include <xtd/xtd>
 
 using namespace std;
-using namespace std::literals;
 using namespace std::this_thread;
+using namespace xtd;
 using namespace xtd::diagnostics;
 
 auto main()->int {
@@ -15,7 +15,7 @@ auto main()->int {
   /// Simulate work...
   for (auto step = 1; step <= 10; step++) {
     debug::write_line("working step {}...", step);
-    sleep_for(300ms);
+    sleep_for(300_ms);
   }
   debug::unindent();
   debug::write_line("End");

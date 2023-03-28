@@ -1,11 +1,10 @@
 #include <xtd/xtd>
 
 using namespace std;
-using namespace std::literals;
 using namespace xtd;
 
 auto main()->int {
-  auto duration = 26h + 3min + 32s + 24ms + 500ns;
+  auto duration = 26_h + 3_min + 32_s + 24_ms + 500_ns;
   cout << ustring::format("{}", duration) << endl;
   cout << ustring::format("{:c}", duration) << endl;
   cout << ustring::format("{:d}", duration) << endl;

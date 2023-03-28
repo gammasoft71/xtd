@@ -1,6 +1,5 @@
 #include <xtd/xtd.tunit>
 
-using namespace std::literals;
 using namespace xtd::tunit;
 
 class test_class_(test_application) {

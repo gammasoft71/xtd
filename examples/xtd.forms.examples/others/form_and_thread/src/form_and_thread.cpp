@@ -1,7 +1,6 @@
 #include <xtd/xtd>
 
 using namespace std;
-using namespace std::literals;
 using namespace xtd;
 using namespace xtd::forms;
 
@@ -23,7 +22,7 @@ public:
         auto counter = 0U;
         while (!closed) {
           /// simulate work...
-          this_thread::sleep_for(50ms);
+          this_thread::sleep_for(50_ms);
           ++counter;
           /// call invoke method to update UI in the main thread.
           messages.begin_invoke([&, counter, user_thread_id] {

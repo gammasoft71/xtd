@@ -2,7 +2,6 @@
 #include <iostream>
 
 using namespace std;
-using namespace std::literals;
 using namespace xtd;
 
 auto main()->int {
