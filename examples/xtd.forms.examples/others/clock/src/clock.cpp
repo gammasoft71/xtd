@@ -1,7 +1,6 @@
 #include <ctime>
 #include <xtd/xtd>
 
-using namespace std::literals;
 using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
@@ -12,7 +11,7 @@ auto main()->int {
   auto center_to_screen_next_time = false;
   
   timer timer;
-  timer.interval(100ms);
+  timer.interval(100_ms);
   timer.enabled(true);
   
   form form_main;

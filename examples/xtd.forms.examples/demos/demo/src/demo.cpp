@@ -5,7 +5,6 @@ using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::drawing;
 using namespace xtd::forms;
-using namespace std::literals;
 
 auto main()->int {
   main_menu main_menu1 = forms::main_menu::create_standard_items([&](object & sender, const event_args & e) {

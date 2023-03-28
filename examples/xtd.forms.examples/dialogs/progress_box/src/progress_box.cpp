@@ -1,7 +1,6 @@
 #include <xtd/xtd>
 #include <thread>
 
-using namespace std::literals;
 using namespace xtd;
 using namespace xtd::forms;
 
@@ -18,7 +17,7 @@ public:
     .click += [this] {
       progress_box::show(*this, "Downloading", "Please wait...", 0, 0, 100, progress_box_options::show_cancel_button | progress_box_options::show_skip_button);
       for (auto index = progress_box::minimum(); index <= progress_box::maximum(); ++index) {
-        std::this_thread::sleep_for(100ms); // Do some work...
+        std::this_thread::sleep_for(100_ms); // Do some work...
         progress_box::update(index, "Downloading", xtd::ustring::format("{}/{}", index, progress_box::maximum()));
         if (progress_box::skipped()) index++;
         if (progress_box::cancelled()) break;
