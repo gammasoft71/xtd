@@ -199,6 +199,10 @@ bool environment::is_64_bit_process() noexcept {
   return sizeof(size_t) == 8;
 }
 
+std::locale environment::locale() noexcept {
+  return std::locale();
+}
+
 ustring environment::machine_name() {
   return native::environment::get_machine_name();
 }
