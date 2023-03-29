@@ -111,7 +111,7 @@ namespace {
     distribution_key_values.insert({"VERSION_ID", version});
     distribution_key_values.insert({"VERSION_CODENAME", codename});
 #else
-    auto distribution_string = create_process("cat cat /etc/os-release");
+    auto distribution_string = create_process("cat /etc/os-release");
     auto distribution_lines = xtd::native::unix::strings::split(distribution_string, {'\n'});
     for (auto distribution_line : distribution_lines) {
       auto key_value =xtd::native::unix::strings::split(distribution_line, {'='});
