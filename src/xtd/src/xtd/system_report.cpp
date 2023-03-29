@@ -67,7 +67,7 @@ namespace {
     report += ustring::format("{}Time since boot: {}{}", indent_string(indent + 1), to_time_since_boot_string(environment::tick_count()), environment::new_line());
     report += ustring::format("{}Distribution: {}", indent_string(indent + 1), environment::new_line());
     report += ustring::format("{}Name: {}{}", indent_string(indent + 2), operating_system.distribution().name(), environment::new_line());
-    report += ustring::format("{}Version: {}{}", indent_string(indent + 2), operating_system.distribution().version(), environment::new_line());
+    report += ustring::format("{}Version: {}{}", indent_string(indent + 2), operating_system.distribution().version_string(), environment::new_line());
     report += ustring::format("{}Code name: {}{}", indent_string(indent + 2), operating_system.distribution().code_name(), environment::new_line());
     report += ustring::format("{}Description: {}{}", indent_string(indent + 2), operating_system.distribution().description(), environment::new_line());
     report += ustring::format("{}Id: {}{}", indent_string(indent + 2), operating_system.distribution().id(), environment::new_line());
