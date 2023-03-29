@@ -15,6 +15,7 @@
 #include <windows.h>
 #include <Lmcons.h>
 
+using namespace std;
 using namespace xtd::native;
 
 #undef min
@@ -30,6 +31,82 @@ std::map<std::string, std::string> __none_envs__;
 std::map<std::string, std::string> __process_envs__;
 std::map<std::string, std::string> __user_envs__;
 
+namespace {
+  void get_windows_version(int_least32_t& major, int_least32_t& minor, int_least32_t& build, int_least32_t& revision) {
+    // GetVersionEx (https://docs.microsoft.com/en-us/windows/win32/api/sysinfoapi/nf-sysinfoapi-getversionexa) allows you to get the version for a Windows 8 at most. For Windows 10 and more see :
+    // https://stackoverflow.com/questions/32115255/c-how-to-detect-windows-10
+    NTSTATUS(WINAPI * RtlGetVersion)(LPOSVERSIONINFOEXW);
+    OSVERSIONINFOEXW os_info;
+
+    *(FARPROC*)&RtlGetVersion = GetProcAddress(GetModuleHandleA("ntdll"), "RtlGetVersion");
+    if (RtlGetVersion != nullptr) {
+      os_info.dwOSVersionInfoSize = sizeof(os_info);
+      RtlGetVersion(&os_info);
+      major = os_info.dwMajorVersion;
+      minor = os_info.dwMinorVersion;
+      build = os_info.dwBuildNumber;
+      revision = (os_info.wServicePackMajor << 10) | os_info.wServicePackMinor;
+    }
+    else {
+#pragma warning(push)
+#pragma warning(disable : 4996)
+      OSVERSIONINFOEX version_info{};
+      version_info.dwOSVersionInfoSize = sizeof(OSVERSIONINFOEX);
+      if (GetVersionEx((LPOSVERSIONINFO)&version_info)) {
+        major = version_info.dwMajorVersion;
+        minor = version_info.dwMinorVersion;
+        build = version_info.dwBuildNumber;
+        revision = (version_info.wServicePackMajor << 16) | version_info.wServicePackMinor;
+      }
+#pragma warning(pop)
+    }
+  }
+
+  tuple<string, string, string> get_windows_information() {
+    // https://en.wikipedia.org/wiki/List_of_Microsoft_Windows_versions
+    auto major = -1, minor = -1, build = -1, revision = -1;
+    get_windows_version(major, minor, build, revision);
+
+    if (build == 103) return make_tuple("Windows 3.1", "", "");
+    if (build == 102) return make_tuple("Windows 3.1", "Sparta", "");
+    if (build == 528) return make_tuple("Windows NT 3.1", "Razzle", "");
+    if (build == 300) return make_tuple("Windows 3.11", "Snowball", "");
+    if (build == 153) return make_tuple("Windows 3.2", "", "");
+    if (build == 807) return make_tuple("Windows NT 3.5", "Daytona", "");
+    if (build == 1057) return make_tuple("Windows NT 3.51", "Daytona", "");
+    if (build == 950) return make_tuple("Windows 95", "Chicago", "");
+    if (build == 1381) return make_tuple("Windows NT 4.0", "Shell Update Release", "");
+    if (build == 1998) return make_tuple("Windows Windows 98", "Memphis", "");
+    if (build == 2222) return make_tuple("Windows Windows 98 Second Edition", "", "");
+    if (build == 2195) return make_tuple("Windows 2000", "Windows NT 5.0", "");
+    if (build == 3000) return make_tuple("Windows Me", "Millennium", "");
+    if (build == 2600) return make_tuple("Windows XP", "Whistler", "");
+    if (build == 2700) return make_tuple("Windows XP", "Symphony", "");
+    if (build == 2710) return make_tuple("Windows XP", "Emerald", "");
+    if (build == 3790) return make_tuple("Windows XP", "Anvil", "");
+    if (build == 6002) return make_tuple("Windows Vista", "Longhorn", "");
+    if (build == 7601) return make_tuple("Windows 7", "Windows 7", "");
+    if (build == 9200) return make_tuple("Windows 8", "Windows 8", "");
+    if (build == 9600) return make_tuple("Windows 8.1", "Blue", "");
+    if (build == 10240) return make_tuple("Windows 10", "Threshold", "1507");
+    if (build == 10586) return make_tuple("Windows 10", "Threshold 2", "1511");
+    if (build == 14393) return make_tuple("Windows 10", "Redstone 1", "1607");
+    if (build == 15063) return make_tuple("Windows 10", "Redstone 2", "1703");
+    if (build == 16299) return make_tuple("Windows 10", "Redstone 3", "1709");
+    if (build == 17134) return make_tuple("Windows 10", "Redstone 4", "1803");
+    if (build == 17763) return make_tuple("Windows 10", "Redstone 5", "1809");
+    if (build == 18362) return make_tuple("Windows 10", "19H1", "1903");
+    if (build == 16363) return make_tuple("Windows 10", "Vanadium", "1909");
+    if (build == 19041) return make_tuple("Windows 10", "Vibranium", "2004");
+    if (build == 19042) return make_tuple("Windows 10", "Vibranium", "20H2");
+    if (build == 19043) return make_tuple("Windows 10", "Vibranium", "21H1");
+    if (build == 19044) return make_tuple("Windows 10", "Vibranium", "21H2");
+    if (build == 19045) return make_tuple("Windows 10", "Vibranium", "22H2");
+    if (build == 22000) return make_tuple("Windows 11", "Sun Valley", "21H2");
+    if (build == 22621) return make_tuple("Windows 11", "Sun Valley 2", "22H2");
+    return {"Windows", "", ""};
+  }
+}
 
 std::vector<std::string> environment::get_command_line_args() {
   return {__environment_argv, __environment_argv + __environment_argc};
@@ -51,13 +128,15 @@ std::string environment::get_distribution_bug_report() {
 }
 
 std::string environment::get_distribution_code_name() {
-  return "";
+  auto [name, code_name, version] = get_windows_information();
+  return code_name;
 }
 
 std::string environment::get_distribution_description() {
-  int_least32_t major = -1, minor = -1, build = -1, revision = -1;
+  auto [name, code_name, version] = get_windows_information();
+  auto major = -1, minor = -1, build = -1, revision = -1;
   get_os_version(major, minor, build, revision);
-  return "Microsoft " + get_distribution_name() + " [Version" + std::to_string(major) + "." + std::to_string(minor) + "." + std::to_string(build) + "." + std::to_string(revision) + "]";
+  return "Microsoft " + name + (version.empty() ? "" : "") + version + " [Version " + std::to_string(major) + "." + std::to_string(minor) + "." + std::to_string(build) + "." + std::to_string(revision) + "]";
 }
 
 std::string environment::get_distribution_home() {
@@ -73,18 +152,22 @@ std::vector<std::string> environment::get_distribution_like_ids() {
 }
 
 std::string environment::get_distribution_name() {
-  return "Windows";
+  auto [name, code_name, version] = get_windows_information();
+  return name;
 }
 
 void environment::get_distribution_version(int_least32_t& major, int_least32_t& minor, int_least32_t& build, int_least32_t& revision) {
   auto dummy = -1;
-  get_os_version(major, minor, dummy, dummy);
+  get_os_version(major, minor, build, dummy);
 }
 
 std::string environment::get_distribution_version_string() {
-  int_least32_t major = -1, minor = -1, build = -1, revision = -1;
-  get_os_version(major, minor, build, revision);
-  return "[Version" + std::to_string(major) + "." + std::to_string(minor) + "." + std::to_string(build) + "." + std::to_string(revision) + "]";
+  auto [name, code_name, version] = get_windows_information();
+  auto version_string = std::string("");
+  auto major = -1, minor = -1, build = -1, revision = -1;
+  get_distribution_version(major, minor, build, revision);
+
+  return version + (version.empty() ? "" : " ") + std::to_string(major) + "." + std::to_string(minor) + "." + (code_name.empty() ? "" : std::to_string(build) + " (" + code_name + ")");
 }
 
 std::string environment::get_environment_variable(const std::string& variable, int_least32_t target) {
@@ -167,32 +250,7 @@ int_least32_t environment::get_os_platform_id() {
 }
 
 void environment::get_os_version(int_least32_t& major, int_least32_t& minor, int_least32_t& build, int_least32_t& revision) {
-  // GetVersionEx (https://docs.microsoft.com/en-us/windows/win32/api/sysinfoapi/nf-sysinfoapi-getversionexa) allows you to get the version for a Windows 8 at most. For Windows 10 and more see :
-  // https://stackoverflow.com/questions/32115255/c-how-to-detect-windows-10
-  NTSTATUS(WINAPI * RtlGetVersion)(LPOSVERSIONINFOEXW);
-  OSVERSIONINFOEXW os_info;
-  
-  *(FARPROC*)&RtlGetVersion = GetProcAddress(GetModuleHandleA("ntdll"), "RtlGetVersion");
-  if (RtlGetVersion != nullptr) {
-    os_info.dwOSVersionInfoSize = sizeof(os_info);
-    RtlGetVersion(&os_info);
-    major = os_info.dwMajorVersion;
-    minor = os_info.dwMinorVersion;
-    build = os_info.dwBuildNumber;
-    revision = (os_info.wServicePackMajor << 10) | os_info.wServicePackMinor;
-  } else {
-#pragma warning(push)
-#pragma warning(disable : 4996)
-    OSVERSIONINFOEX version_info {};
-    version_info.dwOSVersionInfoSize = sizeof(OSVERSIONINFOEX);
-    if (GetVersionEx((LPOSVERSIONINFO)&version_info)) {
-      major = version_info.dwMajorVersion;
-      minor = version_info.dwMinorVersion;
-      build = version_info.dwBuildNumber;
-      revision = (version_info.wServicePackMajor << 16) | version_info.wServicePackMinor;
-    }
-#pragma warning(pop)
-  }
+  return get_windows_version(major, minor, build, revision);
 }
 
 std::string environment::get_service_pack() {
