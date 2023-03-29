@@ -68,10 +68,7 @@ namespace {
     report += ustring::format("{}Distribution: {}", indent_string(indent + 1), environment::new_line());
     report += ustring::format("{}Name: {}{}", indent_string(indent + 2), operating_system.distribution().name(), environment::new_line());
     report += ustring::format("{}Version: {}{}", indent_string(indent + 2), operating_system.distribution().version_string(), environment::new_line());
-    report += ustring::format("{}Code name: {}{}", indent_string(indent + 2), operating_system.distribution().code_name(), environment::new_line());
-    report += ustring::format("{}Description: {}{}", indent_string(indent + 2), operating_system.distribution().description(), environment::new_line());
     report += ustring::format("{}Id: {}{}", indent_string(indent + 2), operating_system.distribution().id(), environment::new_line());
-    report += ustring::format("{}Like ids: {{{}}}{}", indent_string(indent + 2), ustring::join(", ", operating_system.distribution().like_ids()), environment::new_line());
     report += ustring::format("{}Home: {}{}", indent_string(indent + 2), operating_system.distribution().home(), environment::new_line());
     report += ustring::format("{}Bug repport: {}{}", indent_string(indent + 2), operating_system.distribution().bug_repport(), environment::new_line());
     return report + environment::new_line();
