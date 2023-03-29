@@ -26,10 +26,10 @@ __declspec(dllimport) extern int __argc;
 __declspec(dllimport) extern char** __argv;
 int __environment_argc = __argc;
 char** __environment_argv = __argv;
-std::map<std::string, std::string> __machine_envs__;
-std::map<std::string, std::string> __none_envs__;
-std::map<std::string, std::string> __process_envs__;
-std::map<std::string, std::string> __user_envs__;
+map<string, string> __machine_envs__;
+map<string, string> __none_envs__;
+map<string, string> __process_envs__;
+map<string, string> __user_envs__;
 
 namespace {
   void get_windows_version(int_least32_t& major, int_least32_t& minor, int_least32_t& build, int_least32_t& revision) {
@@ -108,50 +108,50 @@ namespace {
   }
 }
 
-std::vector<std::string> environment::get_command_line_args() {
+vector<string> environment::get_command_line_args() {
   return {__environment_argv, __environment_argv + __environment_argc};
 }
 
-std::string environment::get_desktop_environment() {
+string environment::get_desktop_environment() {
   return "windows";
 }
 
-std::string environment::get_desktop_theme() {
+string environment::get_desktop_theme() {
   DWORD value = 0, value_size = sizeof(value);
   if (RegGetValue(HKEY_CURRENT_USER, L"Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize", L"AppsUseLightTheme", RRF_RT_REG_DWORD, nullptr, &value, &value_size) != ERROR_SUCCESS)
     value = 0;
   return value == 0 ? "windows" : "windows dark";
 }
 
-std::string environment::get_distribution_bug_report() {
+string environment::get_distribution_bug_report() {
   return "https://support.microsoft.com/windows";
 }
 
-std::string environment::get_distribution_code_name() {
+string environment::get_distribution_code_name() {
   auto [name, code_name, version] = get_windows_information();
   return code_name;
 }
 
-std::string environment::get_distribution_description() {
+string environment::get_distribution_description() {
   auto [name, code_name, version] = get_windows_information();
   auto major = -1, minor = -1, build = -1, revision = -1;
   get_os_version(major, minor, build, revision);
-  return "Microsoft " + name + (version.empty() ? "" : "") + version + " [Version " + std::to_string(major) + "." + std::to_string(minor) + "." + std::to_string(build) + "." + std::to_string(revision) + "]";
+  return name + " " + version + (version.empty() ? "" : " ") + to_string(major) + "." + to_string(minor) + "." + to_string(build);
 }
 
-std::string environment::get_distribution_home() {
+string environment::get_distribution_home() {
   return "https://www.microsoft.com/windows";
 }
 
-std::string environment::get_distribution_id() {
+string environment::get_distribution_id() {
   return "windows";
 }
 
-std::vector<std::string> environment::get_distribution_like_ids() {
+vector<string> environment::get_distribution_like_ids() {
   return {"windows"};
 }
 
-std::string environment::get_distribution_name() {
+string environment::get_distribution_name() {
   auto [name, code_name, version] = get_windows_information();
   return name;
 }
@@ -161,19 +161,19 @@ void environment::get_distribution_version(int_least32_t& major, int_least32_t& 
   get_os_version(major, minor, build, dummy);
 }
 
-std::string environment::get_distribution_version_string() {
+string environment::get_distribution_version_string() {
   auto [name, code_name, version] = get_windows_information();
-  auto version_string = std::string("");
+  auto version_string = string("");
   auto major = -1, minor = -1, build = -1, revision = -1;
   get_distribution_version(major, minor, build, revision);
 
-  return version + (version.empty() ? "" : " ") + std::to_string(major) + "." + std::to_string(minor) + "." + (code_name.empty() ? "" : std::to_string(build) + " (" + code_name + ")");
+  return version + (version.empty() ? "" : " ") + to_string(major) + "." + to_string(minor) + "." + (code_name.empty() ? "" : to_string(build) + " (" + code_name + ")");
 }
 
-std::string environment::get_environment_variable(const std::string& variable, int_least32_t target) {
+string environment::get_environment_variable(const string& variable, int_least32_t target) {
   if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS) {
     DWORD environent_variable_size = 65535;
-    std::wstring environment_variable(environent_variable_size, 0);
+    wstring environment_variable(environent_variable_size, 0);
     environent_variable_size = GetEnvironmentVariable(win32::strings::to_wstring(variable).data(), environment_variable.data(), environent_variable_size);
     if (!environent_variable_size) return "";
     return win32::strings::to_string(environment_variable);
@@ -187,7 +187,7 @@ std::string environment::get_environment_variable(const std::string& variable, i
   return "";
 }
 
-std::map<std::string, std::string>& environment::get_environment_variables(int_least32_t target) {
+map<string, string>& environment::get_environment_variables(int_least32_t target) {
   auto& envs = __none_envs__;
   
   if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS) {
@@ -195,7 +195,7 @@ std::map<std::string, std::string>& environment::get_environment_variables(int_l
     envs.clear();
     
     for (size_t index = 0; environ[index] != nullptr; index++) {
-      std::vector<std::string> key_value = win32::strings::split(environ[index], {'='});
+      vector<string> key_value = win32::strings::split(environ[index], {'='});
       if (key_value.size() == 2)
         envs.insert({key_value[0], key_value[1]});
     }
@@ -207,17 +207,17 @@ std::map<std::string, std::string>& environment::get_environment_variables(int_l
     envs.clear();
     
     HKEY root_key = target == ENVIRONMENT_VARIABLE_TARGET_USER ? HKEY_CURRENT_USER : HKEY_LOCAL_MACHINE;
-    std::wstring sub_key = target == ENVIRONMENT_VARIABLE_TARGET_USER ? L"Environment" : L"System\\CurrentControlSet\\Control\\Session Manager\\Environment";
+    wstring sub_key = target == ENVIRONMENT_VARIABLE_TARGET_USER ? L"Environment" : L"System\\CurrentControlSet\\Control\\Session Manager\\Environment";
     HKEY environment_key = 0;
     LSTATUS result = RegOpenKeyEx(root_key, sub_key.data(), 0, KEY_READ, &environment_key);
     if (result != ERROR_SUCCESS || environment_key == 0) return envs;
     
     for (DWORD index = 0; result != ERROR_NO_MORE_ITEMS; ++index) {
       DWORD value_size = 32767;
-      std::wstring value(value_size, 0);
+      wstring value(value_size, 0);
       DWORD data_type = REG_EXPAND_SZ;
       DWORD data_size = 65535;
-      std::wstring data(data_size, 0);
+      wstring data(data_size, 0);
       result = RegEnumValue(environment_key, index, value.data(), &value_size, nullptr, &data_type, reinterpret_cast<LPBYTE>(data.data()), &data_size);
       if (value[0] != 0) envs.insert({ win32::strings::to_string(value), win32::strings::to_string(data)});
     }
@@ -228,16 +228,16 @@ std::map<std::string, std::string>& environment::get_environment_variables(int_l
   return envs;
 }
 
-std::string environment::get_know_folder_path(int_least32_t id) {
+string environment::get_know_folder_path(int_least32_t id) {
   if (id == CSIDL_HOME)
     return get_environment_variable("HOMEPATH", ENVIRONMENT_VARIABLE_TARGET_PROCESS);
   DWORD path_size = 65535;
-  std::wstring path;
+  wstring path;
   path.resize(path_size);
   return SHGetFolderPath(nullptr, id, nullptr, SHGFP_TYPE_CURRENT, path.data()) == S_OK ? win32::strings::to_string(path) : "";
 }
 
-std::string environment::get_machine_name() {
+string environment::get_machine_name() {
   wchar_t machine_name[MAX_COMPUTERNAME_LENGTH + 1];
   DWORD size = MAX_COMPUTERNAME_LENGTH + 1;
   if (!GetComputerName(machine_name, &size))
@@ -253,7 +253,7 @@ void environment::get_os_version(int_least32_t& major, int_least32_t& minor, int
   return get_windows_version(major, minor, build, revision);
 }
 
-std::string environment::get_service_pack() {
+string environment::get_service_pack() {
 #pragma warning(push)
 #pragma warning(disable : 4996)
   OSVERSIONINFOEX version_info {};
@@ -284,12 +284,12 @@ bool environment::get_user_administrator() {
   return IsUserAnAdmin();
 }
 
-std::string environment::get_user_domain_name() {
+string environment::get_user_domain_name() {
   auto name = getenv("USERDOMAIN");
   return name ? name : "";
 }
 
-std::string environment::get_user_name() {
+string environment::get_user_name() {
   wchar_t user_name[UNLEN + 1];
   DWORD size = UNLEN + 1;
   if (!GetUserName(user_name, &size))
@@ -320,11 +320,11 @@ bool environment::is_os_64_bit() {
   return false;
 }
 
-std::string environment::new_line() {
+string environment::new_line() {
   return "\n";
 }
 
-void environment::set_environment_variable(const std::string& name, const std::string& value, int_least32_t target) {
+void environment::set_environment_variable(const string& name, const string& value, int_least32_t target) {
   if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS)
     SetEnvironmentVariable(win32::strings::to_wstring(name).c_str(), win32::strings::to_wstring(value).c_str());
   else if (target == ENVIRONMENT_VARIABLE_TARGET_USER) {
@@ -334,7 +334,7 @@ void environment::set_environment_variable(const std::string& name, const std::s
   }
 }
 
-void environment::unset_environment_variable(const std::string& name, int_least32_t target) {
+void environment::unset_environment_variable(const string& name, int_least32_t target) {
   if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS)
     SetEnvironmentVariable(win32::strings::to_wstring(name).c_str(), nullptr);
   else if (target == ENVIRONMENT_VARIABLE_TARGET_USER) {
