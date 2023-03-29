@@ -107,7 +107,6 @@ This class provides methods to set the interval, and to start and stop the timer
 The Windows Forms Timer component is single-threaded, and is limited to an accuracy of 55 milliseconds. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of timer component. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std::literals;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacextd_1_1drawing.html">xtd::drawing</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
@@ -131,7 +130,7 @@ The Windows Forms Timer component is single-threaded, and is limited to an accur
 <div class="line">        <a class="code" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.text(timer1.enabled() ? <span class="stringliteral">&quot;Stop&quot;</span> : <span class="stringliteral">&quot;Start&quot;</span>);</div>
 <div class="line">      };</div>
 <div class="line">      </div>
-<div class="line">      timer1.interval(100ms);</div>
+<div class="line">      timer1.interval(100_ms);</div>
 <div class="line">      timer1.tick += [&amp;](<span class="keywordtype">object</span> &amp; sender, <span class="keyword">const</span> event_args &amp; <a class="code" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>) {</div>
 <div class="line">        label1.text(<a class="code" href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">ustring::format</a>(<span class="stringliteral">&quot;{:F1}&quot;</span>, ++counter / 10.0));</div>
 <div class="line">      };</div>
@@ -568,7 +567,7 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 28 2023 20:49:14 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Mar 28 2023 23:29:25 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

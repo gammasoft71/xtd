@@ -110,7 +110,6 @@ To set up for a background operation, add an event handler for the do_work event
 <div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
-<div class="line"><span class="keyword">using namespace </span>std::literals;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
 <div class="line"> </div>
@@ -172,7 +171,7 @@ To set up for a background operation, add an event handler for the do_work event
 <div class="line">      worker.do_work += [&amp;] {</div>
 <div class="line">        <span class="keywordflow">for</span> (<span class="keyword">auto</span> step = 1; step &lt;= progress.maximum(); ++step) {</div>
 <div class="line">          <span class="keywordflow">if</span> (worker.cancellation_pending()) <span class="keywordflow">break</span>; <span class="comment">// stop work...</span></div>
-<div class="line">          this_thread::sleep_for(100ms); <span class="comment">// simulate work...</span></div>
+<div class="line">          this_thread::sleep_for(100_ms); <span class="comment">// simulate work...</span></div>
 <div class="line">          worker.report_progress(step, <a class="code" href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">ustring::format</a>(<span class="stringliteral">&quot;step {} / {}&quot;</span>, step, progress.maximum()));</div>
 <div class="line">        }</div>
 <div class="line">      };</div>
@@ -824,7 +823,7 @@ template&lt;typename argument_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 28 2023 20:49:10 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Mar 28 2023 23:29:21 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -128,7 +128,6 @@ Inheritance diagram for xtd::forms::progress_dialog:</div>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1progress__dialog.html" title="Represents a common dialog box that displays progress dialog.">progress_dialog</a> dialog. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;thread&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std::literals;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
 <div class="line"> </div>
@@ -150,7 +149,7 @@ Inheritance diagram for xtd::forms::progress_dialog:</div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code" href="classxtd_1_1forms_1_1progress__dialog.html#a52ee0033c571e4c42adf22ddfdc54a4f">step</a> = 1; <a class="code" href="classxtd_1_1forms_1_1progress__dialog.html#a52ee0033c571e4c42adf22ddfdc54a4f">step</a> &lt;= dialog.maximum(); ++<a class="code" href="classxtd_1_1forms_1_1progress__dialog.html#a52ee0033c571e4c42adf22ddfdc54a4f">step</a>) {</div>
 <div class="line">        dialog.value(<a class="code" href="classxtd_1_1forms_1_1progress__dialog.html#a52ee0033c571e4c42adf22ddfdc54a4f">step</a>);</div>
 <div class="line">        dialog.message(<a class="code" href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">ustring::format</a>(<span class="stringliteral">&quot;Step {}/{} ==&gt; {}&quot;</span>, dialog.value(), dialog.maximum(), dialog.skipped() ? <span class="stringliteral">&quot;skipped&quot;</span> : <span class="stringliteral">&quot;done&quot;</span>));</div>
-<div class="line">        std::this_thread::sleep_for(100ms);</div>
+<div class="line">        std::this_thread::sleep_for(100_ms);</div>
 <div class="line">      }</div>
 <div class="line">    };</div>
 <div class="line">    </div>
@@ -168,7 +167,7 @@ Inheritance diagram for xtd::forms::progress_dialog:</div>
 <div class="line">      dialog.show_dialog(*<span class="keyword">this</span>);</div>
 <div class="line">      <span class="keywordflow">while</span> (!dialog.cancelled()) {</div>
 <div class="line">        <a class="code" href="classxtd_1_1forms_1_1application.html#a1d4031fa24263d5b25e996ebd2ce9089">application::do_events</a>();</div>
-<div class="line">        std::this_thread::sleep_for(100ms);</div>
+<div class="line">        std::this_thread::sleep_for(100_ms);</div>
 <div class="line">      }</div>
 <div class="line">    };</div>
 <div class="line">  }</div>
@@ -1523,7 +1522,7 @@ The minimum and maximum values of the value property are specified by the minimu
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 28 2023 20:49:13 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Mar 28 2023 23:29:24 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

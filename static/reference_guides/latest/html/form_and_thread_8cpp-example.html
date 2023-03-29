@@ -103,7 +103,6 @@ $(function() {
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
-<div class="line"><span class="keyword">using namespace </span>std::literals;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
 <div class="line"> </div>
@@ -124,7 +123,7 @@ $(function() {
 <div class="line">      threads[index] = thread([&amp;](<span class="keyword">auto</span> user_thread_id) {</div>
 <div class="line">        <span class="keyword">auto</span> counter = 0U;</div>
 <div class="line">        <span class="keywordflow">while</span> (!closed) {</div>
-<div class="line">          this_thread::sleep_for(50ms);</div>
+<div class="line">          this_thread::sleep_for(50_ms);</div>
 <div class="line">          ++counter;</div>
 <div class="line">          messages.begin_invoke([&amp;, counter, user_thread_id] {</div>
 <div class="line">            messages.items().push_back(ustring::format(<span class="stringliteral">&quot;thread: {}, counter: {}&quot;</span>, user_thread_id, counter));</div>
@@ -152,7 +151,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 28 2023 20:49:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Mar 28 2023 23:29:14 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
