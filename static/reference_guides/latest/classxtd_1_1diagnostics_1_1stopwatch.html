@@ -321,7 +321,7 @@ The <a class="el" href="classxtd_1_1diagnostics_1_1stopwatch.html" title="Provid
 <div class="ttc" id="anamespacextd_1_1diagnostics_html"><div class="ttname"><a href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a></div><div class="ttdoc">The xtd::diagnostics namespace provides classes that allow you to interact with system processes,...</div><div class="ttdef"><b>Definition:</b> assert_dialog_result.h:10</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition:</b> system_report.h:17</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="stopwatch_form_8cpp-example.html#_a3">stopwatch_form.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="stopwatch_form_8cpp-example.html#_a9">stopwatch_form.cpp</a>.</dd>
 </dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Constructors</h2></td></tr>
@@ -439,7 +439,6 @@ Use the <a class="el" href="classxtd_1_1diagnostics_1_1stopwatch.html#a711a2e1fb
 <dl class="section user"><dt>Examples</dt><dd>The following example initializes a <a class="el" href="classxtd_1_1diagnostics_1_1stopwatch.html" title="Provides a set of methods and properties that you can use to accurately measure elapsed time.">xtd::diagnostics::stopwatch</a> instance by using a simple class constructor. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std::chrono;</div>
-<div class="line"><span class="keyword">using namespace </span>std::literals;</div>
 <div class="line"><span class="keyword">using namespace </span>std::this_thread;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
@@ -447,7 +446,7 @@ Use the <a class="el" href="classxtd_1_1diagnostics_1_1stopwatch.html#a711a2e1fb
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
 <div class="line">  <a class="code" href="classxtd_1_1diagnostics_1_1stopwatch.html#a8d385ccc393bc5b63c37c46eca5a30fc">stopwatch</a> <a class="code" href="classxtd_1_1diagnostics_1_1stopwatch.html#a8d385ccc393bc5b63c37c46eca5a30fc">stopwatch</a>;</div>
 <div class="line">  <a class="code" href="classxtd_1_1diagnostics_1_1stopwatch.html#a8d385ccc393bc5b63c37c46eca5a30fc">stopwatch</a>.start();</div>
-<div class="line">  sleep_for(10000ms);</div>
+<div class="line">  sleep_for(10000_ms);</div>
 <div class="line">  <a class="code" href="classxtd_1_1diagnostics_1_1stopwatch.html#a8d385ccc393bc5b63c37c46eca5a30fc">stopwatch</a>.stop();</div>
 <div class="line">  <span class="comment">// Get the elapsed time as a duration value.</span></div>
 <div class="line">  nanoseconds <a class="code" href="group__xtd__core.html#gga5c7a488efbbc9c766286c1485399aef3af01a37d157918910f2035b2af81ea4e1">ns</a> = <a class="code" href="classxtd_1_1diagnostics_1_1stopwatch.html#a8d385ccc393bc5b63c37c46eca5a30fc">stopwatch</a>.elapsed();</div>
@@ -504,7 +503,6 @@ By default, the elapsed time value of a <a class="el" href="classxtd_1_1diagnost
 <dl class="section user"><dt>Examples</dt><dd>The following example initializes a <a class="el" href="classxtd_1_1diagnostics_1_1stopwatch.html" title="Provides a set of methods and properties that you can use to accurately measure elapsed time.">xtd::diagnostics::stopwatch</a> instance by using a simple class constructor. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std::chrono;</div>
-<div class="line"><span class="keyword">using namespace </span>std::literals;</div>
 <div class="line"><span class="keyword">using namespace </span>std::this_thread;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
@@ -512,7 +510,7 @@ By default, the elapsed time value of a <a class="el" href="classxtd_1_1diagnost
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
 <div class="line">  <a class="code" href="classxtd_1_1diagnostics_1_1stopwatch.html#a8d385ccc393bc5b63c37c46eca5a30fc">stopwatch</a> <a class="code" href="classxtd_1_1diagnostics_1_1stopwatch.html#a8d385ccc393bc5b63c37c46eca5a30fc">stopwatch</a>;</div>
 <div class="line">  <a class="code" href="classxtd_1_1diagnostics_1_1stopwatch.html#a8d385ccc393bc5b63c37c46eca5a30fc">stopwatch</a>.start();</div>
-<div class="line">  sleep_for(10000ms);</div>
+<div class="line">  sleep_for(10000_ms);</div>
 <div class="line">  <a class="code" href="classxtd_1_1diagnostics_1_1stopwatch.html#a8d385ccc393bc5b63c37c46eca5a30fc">stopwatch</a>.stop();</div>
 <div class="line">  <span class="comment">// Get the elapsed time as a duration value.</span></div>
 <div class="line">  nanoseconds <a class="code" href="group__xtd__core.html#gga5c7a488efbbc9c766286c1485399aef3af01a37d157918910f2035b2af81ea4e1">ns</a> = <a class="code" href="classxtd_1_1diagnostics_1_1stopwatch.html#a8d385ccc393bc5b63c37c46eca5a30fc">stopwatch</a>.elapsed();</div>
@@ -1316,7 +1314,6 @@ When a stopwatch instance measures more than one interval, the start method resu
 <dl class="section user"><dt>Examples</dt><dd>The following example initializes a <a class="el" href="classxtd_1_1diagnostics_1_1stopwatch.html" title="Provides a set of methods and properties that you can use to accurately measure elapsed time.">xtd::diagnostics::stopwatch</a> instance by using a simple class constructor. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std::chrono;</div>
-<div class="line"><span class="keyword">using namespace </span>std::literals;</div>
 <div class="line"><span class="keyword">using namespace </span>std::this_thread;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
@@ -1324,7 +1321,7 @@ When a stopwatch instance measures more than one interval, the start method resu
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
 <div class="line">  <a class="code" href="classxtd_1_1diagnostics_1_1stopwatch.html#a8d385ccc393bc5b63c37c46eca5a30fc">stopwatch</a> <a class="code" href="classxtd_1_1diagnostics_1_1stopwatch.html#a8d385ccc393bc5b63c37c46eca5a30fc">stopwatch</a>;</div>
 <div class="line">  <a class="code" href="classxtd_1_1diagnostics_1_1stopwatch.html#a8d385ccc393bc5b63c37c46eca5a30fc">stopwatch</a>.start();</div>
-<div class="line">  sleep_for(10000ms);</div>
+<div class="line">  sleep_for(10000_ms);</div>
 <div class="line">  <a class="code" href="classxtd_1_1diagnostics_1_1stopwatch.html#a8d385ccc393bc5b63c37c46eca5a30fc">stopwatch</a>.stop();</div>
 <div class="line">  <span class="comment">// Get the elapsed time as a duration value.</span></div>
 <div class="line">  nanoseconds <a class="code" href="group__xtd__core.html#gga5c7a488efbbc9c766286c1485399aef3af01a37d157918910f2035b2af81ea4e1">ns</a> = <a class="code" href="classxtd_1_1diagnostics_1_1stopwatch.html#a8d385ccc393bc5b63c37c46eca5a30fc">stopwatch</a>.elapsed();</div>
@@ -1601,7 +1598,6 @@ When a <a class="el" href="classxtd_1_1diagnostics_1_1stopwatch.html" title="Pro
 <dl class="section user"><dt>Examples</dt><dd>The following example initializes a <a class="el" href="classxtd_1_1diagnostics_1_1stopwatch.html" title="Provides a set of methods and properties that you can use to accurately measure elapsed time.">xtd::diagnostics::stopwatch</a> instance by using a simple class constructor. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std::chrono;</div>
-<div class="line"><span class="keyword">using namespace </span>std::literals;</div>
 <div class="line"><span class="keyword">using namespace </span>std::this_thread;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
@@ -1609,7 +1605,7 @@ When a <a class="el" href="classxtd_1_1diagnostics_1_1stopwatch.html" title="Pro
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
 <div class="line">  <a class="code" href="classxtd_1_1diagnostics_1_1stopwatch.html#a8d385ccc393bc5b63c37c46eca5a30fc">stopwatch</a> <a class="code" href="classxtd_1_1diagnostics_1_1stopwatch.html#a8d385ccc393bc5b63c37c46eca5a30fc">stopwatch</a>;</div>
 <div class="line">  <a class="code" href="classxtd_1_1diagnostics_1_1stopwatch.html#a8d385ccc393bc5b63c37c46eca5a30fc">stopwatch</a>.start();</div>
-<div class="line">  sleep_for(10000ms);</div>
+<div class="line">  sleep_for(10000_ms);</div>
 <div class="line">  <a class="code" href="classxtd_1_1diagnostics_1_1stopwatch.html#a8d385ccc393bc5b63c37c46eca5a30fc">stopwatch</a>.stop();</div>
 <div class="line">  <span class="comment">// Get the elapsed time as a duration value.</span></div>
 <div class="line">  nanoseconds <a class="code" href="group__xtd__core.html#gga5c7a488efbbc9c766286c1485399aef3af01a37d157918910f2035b2af81ea4e1">ns</a> = <a class="code" href="classxtd_1_1diagnostics_1_1stopwatch.html#a8d385ccc393bc5b63c37c46eca5a30fc">stopwatch</a>.elapsed();</div>
@@ -1633,7 +1629,7 @@ When a <a class="el" href="classxtd_1_1diagnostics_1_1stopwatch.html" title="Pro
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 28 2023 12:11:28 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Mar 30 2023 21:11:52 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -103,7 +103,6 @@ $(function() {
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;../properties/resources.h&quot;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std::literals;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
@@ -115,14 +114,14 @@ $(function() {
 <div class="line">    start_position(form_start_position::center_screen);</div>
 <div class="line">    client_size({275, 120});</div>
 <div class="line">    icon(stopwatch_form::properties::resources::stopwatch_ico());</div>
-<div class="line">    <a name="a1"></a><a class="code" href="group__xtd__forms.html#gae69a2e9fdce97075bf7642aed73e5907">form_border_style</a>(forms::form_border_style::fixed_single);</div>
+<div class="line">    <a name="a1"></a><a class="code" href="group__xtd__forms.html#gae69a2e9fdce97075bf7642aed73e5907">form_border_style</a>(<a name="a2"></a><a class="code" href="group__xtd__forms.html#ggae69a2e9fdce97075bf7642aed73e5907a8268520ea0c581e1a782fa9e102d3eb0">forms::form_border_style::fixed_single</a>);</div>
 <div class="line">    maximize_box(<span class="keyword">false</span>);</div>
 <div class="line">    </div>
 <div class="line">    watch_panel.parent(*<span class="keyword">this</span>);</div>
-<div class="line">    watch_panel.border_style(forms::border_style::bevel_inset);</div>
+<div class="line">    watch_panel.border_style(<a name="a3"></a><a class="code" href="group__xtd__forms.html#gga663fa5bbff2ea7ea9ece8563a188a1c6aae4509457b65ff8a8e7572620008e2f1">forms::border_style::bevel_inset</a>);</div>
 <div class="line">    watch_panel.bounds({20, 10, 235, 50});</div>
-<div class="line">    watch_panel.back_color(drawing::color::average(drawing::color::black, drawing::color::lime, 0.25));</div>
-<div class="line">    watch_panel.fore_color(drawing::color::lime);</div>
+<div class="line">    watch_panel.back_color(<a name="a4"></a><a class="code" href="classxtd_1_1drawing_1_1color.html#a0006066077e2d4e4b6aa70f2cae785a8">drawing::color::average</a>(<a name="a5"></a><a class="code" href="classxtd_1_1drawing_1_1color.html#ad04928a6ddbfa799f6fdaca302cacf11">drawing::color::black</a>, <a name="a6"></a><a class="code" href="classxtd_1_1drawing_1_1color.html#a59bfef2cdc600a35b186f7c98238a3c4">drawing::color::lime</a>, 0.25));</div>
+<div class="line">    watch_panel.fore_color(<a class="code" href="classxtd_1_1drawing_1_1color.html#a59bfef2cdc600a35b186f7c98238a3c4">drawing::color::lime</a>);</div>
 <div class="line">    </div>
 <div class="line">    watch.parent(watch_panel);</div>
 <div class="line">    watch.bounds({10, 8, 214, 33});</div>
@@ -131,7 +130,7 @@ $(function() {
 <div class="line">    start_stop.parent(*<span class="keyword">this</span>);</div>
 <div class="line">    start_stop.location({10, 80});</div>
 <div class="line">    start_stop.text(<span class="stringliteral">&quot;Start&quot;</span>);</div>
-<div class="line">    start_stop.click += <a name="a2"></a><a class="code" href="group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;main_form::on_start_stop_click);</div>
+<div class="line">    start_stop.click += <a name="a7"></a><a class="code" href="group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;main_form::on_start_stop_click);</div>
 <div class="line">    </div>
 <div class="line">    pause_resume.parent(*<span class="keyword">this</span>);</div>
 <div class="line">    pause_resume.location({100, 80});</div>
@@ -145,7 +144,7 @@ $(function() {
 <div class="line">    reset.enabled(<span class="keyword">false</span>);</div>
 <div class="line">    reset.click += <a class="code" href="group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;main_form::on_reset_click);</div>
 <div class="line">    </div>
-<div class="line">    timer_chrono.interval(11ms);</div>
+<div class="line">    timer_chrono.interval(11_ms);</div>
 <div class="line">    timer_chrono.tick += <a class="code" href="group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;main_form::on_timer_tick);</div>
 <div class="line">  }</div>
 <div class="line">  </div>
@@ -179,30 +178,36 @@ $(function() {
 <div class="line">  };</div>
 <div class="line">  </div>
 <div class="line">  <span class="keywordtype">void</span> on_timer_tick(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> event_args&amp; <a class="code" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>) {</div>
-<div class="line">    watch.text(ustring::format(<span class="stringliteral">&quot;{0:H}:{0:M}:{0:S}.{0:L}&quot;</span>, stopwatch.elapsed()));</div>
+<div class="line">    watch.text(<a name="a8"></a><a class="code" href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">ustring::format</a>(<span class="stringliteral">&quot;{0:H}:{0:M}:{0:S}.{0:L}&quot;</span>, stopwatch.elapsed()));</div>
 <div class="line">  };</div>
 <div class="line">  </div>
-<div class="line">  <a name="_a3"></a><a class="code" href="classxtd_1_1diagnostics_1_1stopwatch.html">xtd::diagnostics::stopwatch</a> stopwatch;</div>
-<div class="line">  <a name="a4"></a><a class="code" href="group__style__sheets.html#gaae87e0a9c1c5ae2ac0e089e242234eca">panel</a> watch_panel;</div>
+<div class="line">  <a name="_a9"></a><a class="code" href="classxtd_1_1diagnostics_1_1stopwatch.html">xtd::diagnostics::stopwatch</a> stopwatch;</div>
+<div class="line">  <a name="a10"></a><a class="code" href="group__style__sheets.html#gaae87e0a9c1c5ae2ac0e089e242234eca">panel</a> watch_panel;</div>
 <div class="line">  lcd_label watch;</div>
-<div class="line">  <a name="a5"></a><a class="code" href="group__style__sheets.html#ga20f9c51904cab0da365efa6c57b84908">button</a> start_stop;</div>
+<div class="line">  <a class="code" href="group__style__sheets.html#ga20f9c51904cab0da365efa6c57b84908">button</a> start_stop;</div>
 <div class="line">  <a class="code" href="group__style__sheets.html#ga20f9c51904cab0da365efa6c57b84908">button</a> pause_resume;</div>
 <div class="line">  <a class="code" href="group__style__sheets.html#ga20f9c51904cab0da365efa6c57b84908">button</a> reset;</div>
 <div class="line">  timer timer_chrono;</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
-<div class="line">  <a name="a6"></a><a class="code" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a>(main_form());</div>
+<div class="line">  <a name="a11"></a><a class="code" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a>(main_form());</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stopwatch_html"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stopwatch.html">xtd::diagnostics::stopwatch</a></div><div class="ttdoc">Provides a set of methods and properties that you can use to accurately measure elapsed time.</div><div class="ttdef"><b>Definition:</b> stopwatch.h:32</div></div>
+<div class="ttc" id="aclassxtd_1_1drawing_1_1color_html_a0006066077e2d4e4b6aa70f2cae785a8"><div class="ttname"><a href="classxtd_1_1drawing_1_1color.html#a0006066077e2d4e4b6aa70f2cae785a8">xtd::drawing::color::average</a></div><div class="ttdeci">static color average(const color &amp;color1, const color &amp;color2, double weight, bool average_alpha) noexcept</div><div class="ttdoc">Returns the weighted average color between the two given colors.</div></div>
+<div class="ttc" id="aclassxtd_1_1drawing_1_1color_html_a59bfef2cdc600a35b186f7c98238a3c4"><div class="ttname"><a href="classxtd_1_1drawing_1_1color.html#a59bfef2cdc600a35b186f7c98238a3c4">xtd::drawing::color::lime</a></div><div class="ttdeci">static const xtd::drawing::color lime</div><div class="ttdoc">Gets a system-defined color that has an ARGB value of 0xFF00FF00. This field is constant.</div><div class="ttdef"><b>Definition:</b> color.h:286</div></div>
+<div class="ttc" id="aclassxtd_1_1drawing_1_1color_html_ad04928a6ddbfa799f6fdaca302cacf11"><div class="ttname"><a href="classxtd_1_1drawing_1_1color.html#ad04928a6ddbfa799f6fdaca302cacf11">xtd::drawing::color::black</a></div><div class="ttdeci">static const xtd::drawing::color black</div><div class="ttdoc">Gets a system-defined color that has an ARGB value of 0xFF000000. This field is constant.</div><div class="ttdef"><b>Definition:</b> color.h:79</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a4ee49410f3156fd66b61c2567a59388e"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a></div><div class="ttdeci">static void run()</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
 <div class="ttc" id="agroup__events_html_ga0b1801aa17fa22ddacfdcccd7b25316b"><div class="ttname"><a href="group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b">xtd::event_handler</a></div><div class="ttdeci">generic_event_handler&lt;&gt; event_handler</div><div class="ttdoc">Represents the method that will handle an event that has no event data.</div><div class="ttdef"><b>Definition:</b> event_handler.h:33</div></div>
+<div class="ttc" id="agroup__format__parse_html_ga3afd6d163bc6391a48a1f84f28a68ffd"><div class="ttname"><a href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">xtd::ustring::format</a></div><div class="ttdeci">static ustring format(const ustring &amp;fmt, args_t &amp;&amp;... args)</div><div class="ttdoc">Writes the text representation of the specified arguments list, to string using the specified format ...</div><div class="ttdef"><b>Definition:</b> ustring.h:701</div></div>
 <div class="ttc" id="agroup__style__sheets_html_ga20f9c51904cab0da365efa6c57b84908"><div class="ttname"><a href="group__style__sheets.html#ga20f9c51904cab0da365efa6c57b84908">xtd::forms::style_sheets::button</a></div><div class="ttdeci">xtd::forms::style_sheets::control button</div><div class="ttdoc">The buttton data allows you to specify the box of a button control.</div><div class="ttdef"><b>Definition:</b> button.h:21</div></div>
 <div class="ttc" id="agroup__style__sheets_html_ga305ec1c107ffe3a4a89f839499c2ae7c"><div class="ttname"><a href="group__style__sheets.html#ga305ec1c107ffe3a4a89f839499c2ae7c">xtd::forms::style_sheets::form</a></div><div class="ttdeci">xtd::forms::style_sheets::control form</div><div class="ttdoc">The form data allows you to specify the box of a form control.</div><div class="ttdef"><b>Definition:</b> form.h:19</div></div>
 <div class="ttc" id="agroup__style__sheets_html_gaae87e0a9c1c5ae2ac0e089e242234eca"><div class="ttname"><a href="group__style__sheets.html#gaae87e0a9c1c5ae2ac0e089e242234eca">xtd::forms::style_sheets::panel</a></div><div class="ttdeci">xtd::forms::style_sheets::control panel</div><div class="ttdoc">The panel data allows you to specify the box of a panel control.</div><div class="ttdef"><b>Definition:</b> panel.h:21</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">xtd::console_key::e</a></div><div class="ttdeci">@ e</div><div class="ttdoc">The E key.</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gae69a2e9fdce97075bf7642aed73e5907"><div class="ttname"><a href="group__xtd__forms.html#gae69a2e9fdce97075bf7642aed73e5907">xtd::forms::form_border_style</a></div><div class="ttdeci">form_border_style</div><div class="ttdoc">Specifies the border styles for a form.</div><div class="ttdef"><b>Definition:</b> form_border_style.h:18</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1"><div class="ttname"><a href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">xtd::forms::status_bar_panel_style::text</a></div><div class="ttdeci">@ text</div><div class="ttdoc">The xtd::forms::status_bar_panel displays text in the standard font.</div></div>
+<div class="ttc" id="agroup__xtd__forms_html_gga663fa5bbff2ea7ea9ece8563a188a1c6aae4509457b65ff8a8e7572620008e2f1"><div class="ttname"><a href="group__xtd__forms.html#gga663fa5bbff2ea7ea9ece8563a188a1c6aae4509457b65ff8a8e7572620008e2f1">xtd::forms::border_style::bevel_inset</a></div><div class="ttdeci">@ bevel_inset</div><div class="ttdoc">A bevel inset border.</div></div>
+<div class="ttc" id="agroup__xtd__forms_html_ggae69a2e9fdce97075bf7642aed73e5907a8268520ea0c581e1a782fa9e102d3eb0"><div class="ttname"><a href="group__xtd__forms.html#ggae69a2e9fdce97075bf7642aed73e5907a8268520ea0c581e1a782fa9e102d3eb0">xtd::forms::form_border_style::fixed_single</a></div><div class="ttdeci">@ fixed_single</div><div class="ttdoc">A fixed, single-line border.</div></div>
 <div class="ttc" id="anamespacextd_1_1diagnostics_html"><div class="ttname"><a href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a></div><div class="ttdoc">The xtd::diagnostics namespace provides classes that allow you to interact with system processes,...</div><div class="ttdef"><b>Definition:</b> assert_dialog_result.h:10</div></div>
 <div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition:</b> about_box.h:13</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition:</b> system_report.h:17</div></div>
@@ -210,7 +215,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 28 2023 12:11:23 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Mar 30 2023 21:11:46 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

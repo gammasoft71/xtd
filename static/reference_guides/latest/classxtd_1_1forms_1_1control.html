@@ -11142,7 +11142,6 @@ For more information about handling events, see <a href="https://gammasoft71.git
 To handle custom layouts, use the layout event instead of the resize event. The layout event is raised in response to a resize event, but also in response to other changes that affect the layout of the control. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of control resize event. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std::literals;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacextd_1_1drawing.html">xtd::drawing</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
@@ -11156,7 +11155,7 @@ To handle custom layouts, use the layout event instead of the resize event. The 
 <div class="line">    dot_matrix_display1.fore_color(color::red);</div>
 <div class="line">    dot_matrix_display1.anchor(<a class="code" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3ab28354b543375bfa94dabaeda722927f">anchor_styles::top</a> | <a class="code" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a71f262d796bed1ab30e8a2d5a8ddee6f">anchor_styles::bottom</a>);</div>
 <div class="line">    </div>
-<div class="line">    timer1.interval(300ms);</div>
+<div class="line">    timer1.interval(300_ms);</div>
 <div class="line">    timer1.enabled(<span class="keyword">true</span>);</div>
 <div class="line">    timer1.tick += [&amp;] {</div>
 <div class="line">      dot_matrix_display1.dot_matrix_style(dot_matrix_styles[(counter / <a class="code" href="group__style__sheets.html#ggaa76409da314505c52983287adca0c27aacd8e7918010a87cc619849e00265c9a6">chase</a>.size()) % dot_matrix_styles.size()]);</div>
@@ -11308,7 +11307,7 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 28 2023 12:11:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Mar 30 2023 21:11:54 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

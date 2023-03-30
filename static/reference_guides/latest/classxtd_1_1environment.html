@@ -463,6 +463,9 @@ Public Types</h2></td></tr>
 <tr class="memitem:a6e68323948aa77284ae3711e097c2b1a"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1environment.html#a6e68323948aa77284ae3711e097c2b1a">is_64_bit_process</a> () noexcept</td></tr>
 <tr class="memdesc:a6e68323948aa77284ae3711e097c2b1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the current process is a 64-bit process.  <a href="classxtd_1_1environment.html#a6e68323948aa77284ae3711e097c2b1a">More...</a><br /></td></tr>
 <tr class="separator:a6e68323948aa77284ae3711e097c2b1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2f93c286067682766713931998d2b55"><td class="memItemLeft" align="right" valign="top">static std::locale&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1environment.html#ac2f93c286067682766713931998d2b55">locale</a> () noexcept</td></tr>
+<tr class="memdesc:ac2f93c286067682766713931998d2b55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a copy of the global C++ locale, which is the locale most recently used as the argument to See <a href="https://en.cppreference.com/w/cpp/locale/locale/locale">std::locale::global</a> or a copy of See <a href="https://en.cppreference.com/w/cpp/locale/locale/locale">std::locale::classic()</a> if no call to See <a href="https://en.cppreference.com/w/cpp/locale/locale/locale">std::locale::global</a> has been made.  <a href="classxtd_1_1environment.html#ac2f93c286067682766713931998d2b55">More...</a><br /></td></tr>
+<tr class="separator:ac2f93c286067682766713931998d2b55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c1e66dbbf0e30139f418051970afd92"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1environment.html#a2c1e66dbbf0e30139f418051970afd92">machine_name</a> ()</td></tr>
 <tr class="memdesc:a2c1e66dbbf0e30139f418051970afd92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the NetBIOS name of this local computer.  <a href="classxtd_1_1environment.html#a2c1e66dbbf0e30139f418051970afd92">More...</a><br /></td></tr>
 <tr class="separator:a2c1e66dbbf0e30139f418051970afd92"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1473,6 +1476,35 @@ Environment variable names are case-sensitive on Linux and macOS but are not cas
 
 </div>
 </div>
+<a id="ac2f93c286067682766713931998d2b55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2f93c286067682766713931998d2b55">&#9670;&nbsp;</a></span>locale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::locale xtd::environment::locale </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a copy of the global C++ locale, which is the locale most recently used as the argument to See <a href="https://en.cppreference.com/w/cpp/locale/locale/locale">std::locale::global</a> or a copy of See <a href="https://en.cppreference.com/w/cpp/locale/locale/locale">std::locale::classic()</a> if no call to See <a href="https://en.cppreference.com/w/cpp/locale/locale/locale">std::locale::global</a> has been made. </p>
+<dl class="section return"><dt>Returns</dt><dd>A copy of the global C++ locale. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>See <a href="https://en.cppreference.com/w/cpp/locale/locale/locale">std::locale</a> for more information. </dd></dl>
+
+</div>
+</div>
 <a id="a2c1e66dbbf0e30139f418051970afd92"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2c1e66dbbf0e30139f418051970afd92">&#9670;&nbsp;</a></span>machine_name()</h2>
 
@@ -2153,7 +2185,7 @@ The <a class="el" href="group__xtd__core.html#gga437764d898631d282f7d95b573328c7
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 28 2023 12:11:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Mar 30 2023 21:11:51 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

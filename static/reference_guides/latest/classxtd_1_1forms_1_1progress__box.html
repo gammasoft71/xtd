@@ -127,7 +127,6 @@ Inheritance diagram for xtd::forms::progress_box:</div>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1progress__box.html" title="Represents a common dialog box that displays a progress dialog.">xtd::forms::progress_box</a> dialog. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;thread&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std::literals;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
 <div class="line"> </div>
@@ -144,7 +143,7 @@ Inheritance diagram for xtd::forms::progress_box:</div>
 <div class="line">    .click += [<span class="keyword">this</span>] {</div>
 <div class="line">      <a class="code" href="classxtd_1_1forms_1_1progress__box.html#a2cf1f96f8dabc2e72967c0d50c4ea8dc">progress_box::show</a>(*<span class="keyword">this</span>, <span class="stringliteral">&quot;Downloading&quot;</span>, <span class="stringliteral">&quot;Please wait...&quot;</span>, 0, 0, 100, <a class="code" href="group__xtd__forms.html#gga7d89c3c0497732661a1a007b853a3054afd83c0fb28a1af1c7f58e5731330e941">progress_box_options::show_cancel_button</a> | <a class="code" href="group__xtd__forms.html#gga7d89c3c0497732661a1a007b853a3054a01bfbe0b9e06ee88965fce01ce66269f">progress_box_options::show_skip_button</a>);</div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> index = <a class="code" href="classxtd_1_1forms_1_1progress__box.html#a9bc717cd029a345b3375914942f98738">progress_box::minimum</a>(); index &lt;= <a class="code" href="classxtd_1_1forms_1_1progress__box.html#a333f585801bb0fd787cca40139b2818a">progress_box::maximum</a>(); ++index) {</div>
-<div class="line">        std::this_thread::sleep_for(100ms); <span class="comment">// Do some work...</span></div>
+<div class="line">        std::this_thread::sleep_for(100_ms); <span class="comment">// Do some work...</span></div>
 <div class="line">        <a class="code" href="classxtd_1_1forms_1_1progress__box.html#aeea7f6091c5cfb93abb923c1e68c13b5">progress_box::update</a>(index, <span class="stringliteral">&quot;Downloading&quot;</span>, <a class="code" href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">xtd::ustring::format</a>(<span class="stringliteral">&quot;{}/{}&quot;</span>, index, <a class="code" href="classxtd_1_1forms_1_1progress__box.html#a333f585801bb0fd787cca40139b2818a">progress_box::maximum</a>()));</div>
 <div class="line">        <span class="keywordflow">if</span> (<a class="code" href="classxtd_1_1forms_1_1progress__box.html#a4a1a764cdc165383cf1d1670cbb36f82">progress_box::skipped</a>()) index++;</div>
 <div class="line">        <span class="keywordflow">if</span> (<a class="code" href="classxtd_1_1forms_1_1progress__box.html#aba5811de949bc92b46f30b85a7a8c7cc">progress_box::cancelled</a>()) <span class="keywordflow">break</span>;</div>
@@ -335,6 +334,8 @@ Inheritance diagram for xtd::forms::progress_box:</div>
 
 <p>Check if the progress dialog is canceled. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if the progress dialog is canceled </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="progress_box_8cpp-example.html#a9">progress_box.cpp</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -362,6 +363,8 @@ Inheritance diagram for xtd::forms::progress_box:</div>
 </div><div class="memdoc">
 
 <p>Hides a progress box in front. </p>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="progress_box_8cpp-example.html#a10">progress_box.cpp</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -390,6 +393,8 @@ Inheritance diagram for xtd::forms::progress_box:</div>
 
 <p>Gets the maximum value of the range of the progress dialog. </p>
 <dl class="section return"><dt>Returns</dt><dd>The maximum value of the range. The default is 100. </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="progress_box_8cpp-example.html#a5">progress_box.cpp</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -418,6 +423,8 @@ Inheritance diagram for xtd::forms::progress_box:</div>
 
 <p>Gets the minimum value of the range of the progress dialog. </p>
 <dl class="section return"><dt>Returns</dt><dd>The minimum value of the range. The default is 0. </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="progress_box_8cpp-example.html#a4">progress_box.cpp</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -1451,6 +1458,8 @@ Inheritance diagram for xtd::forms::progress_box:</div>
   </table>
   </dd>
 </dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="progress_box_8cpp-example.html#a1">progress_box.cpp</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -2342,6 +2351,8 @@ Inheritance diagram for xtd::forms::progress_box:</div>
 
 <p>Check if the progress dialog is skipped. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if the progress dialog is skipped </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="progress_box_8cpp-example.html#a8">progress_box.cpp</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -2872,6 +2883,8 @@ Inheritance diagram for xtd::forms::progress_box:</div>
   </table>
   </dd>
 </dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="progress_box_8cpp-example.html#a6">progress_box.cpp</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -2882,7 +2895,7 @@ Inheritance diagram for xtd::forms::progress_box:</div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 28 2023 12:11:32 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Mar 30 2023 21:11:56 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

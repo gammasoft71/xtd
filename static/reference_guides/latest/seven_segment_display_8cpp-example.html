@@ -102,7 +102,6 @@ $(function() {
 </dd></dl>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std::literals;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacextd_1_1drawing.html">xtd::drawing</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
@@ -113,17 +112,17 @@ $(function() {
 <div class="line">    seven_segment_display1.<a name="a1"></a><a class="code" href="classxtd_1_1forms_1_1style__sheets_1_1control.html#ac59c669ef64a5f0d297df5202fcc8093">height</a>(250);</div>
 <div class="line">    seven_segment_display1.location({(client_size().width() - seven_segment_display1.width()) / 2, (client_size().height() - seven_segment_display1.height()) / 2});</div>
 <div class="line">    seven_segment_display1.parent(*<span class="keyword">this</span>);</div>
-<div class="line">    seven_segment_display1.fore_color(color::red);</div>
+<div class="line">    seven_segment_display1.fore_color(<a name="a2"></a><a class="code" href="classxtd_1_1drawing_1_1color.html#a7a0b8f1210fbda4739c37fd61e1a1dab">color::red</a>);</div>
 <div class="line">    seven_segment_display1.anchor(anchor_styles::top | anchor_styles::bottom);</div>
 <div class="line">    </div>
-<div class="line">    timer1.interval(300ms);</div>
+<div class="line">    timer1.interval(300_ms);</div>
 <div class="line">    timer1.enabled(<span class="keyword">true</span>);</div>
 <div class="line">    timer1.tick += [&amp;] {</div>
 <div class="line">      seven_segment_display1.segment_style(segment_styles[(counter / <a class="code" href="group__style__sheets.html#ggaa76409da314505c52983287adca0c27aacd8e7918010a87cc619849e00265c9a6">chase</a>.size()) % segment_styles.size()]);</div>
 <div class="line">      seven_segment_display1.value(<a class="code" href="group__style__sheets.html#ggaa76409da314505c52983287adca0c27aacd8e7918010a87cc619849e00265c9a6">chase</a>[counter++ % <a class="code" href="group__style__sheets.html#ggaa76409da314505c52983287adca0c27aacd8e7918010a87cc619849e00265c9a6">chase</a>.size()]);</div>
 <div class="line">    };</div>
 <div class="line">    </div>
-<div class="line">    back_color(color::average(color::black, seven_segment_display1.fore_color(), 0.20));</div>
+<div class="line">    back_color(<a name="a3"></a><a class="code" href="classxtd_1_1drawing_1_1color.html#a0006066077e2d4e4b6aa70f2cae785a8">color::average</a>(<a name="a4"></a><a class="code" href="classxtd_1_1drawing_1_1color.html#ad04928a6ddbfa799f6fdaca302cacf11">color::black</a>, seven_segment_display1.fore_color(), 0.20));</div>
 <div class="line">    <a class="code" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;Seven segment display example&quot;</span>);</div>
 <div class="line">    resize += [&amp;] {</div>
 <div class="line">      seven_segment_display1.left((client_size().<a class="code" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962aeaae26a6fb20ed3ef54fb23bfa0b1fcc">width</a>() - seven_segment_display1.width()) / 2);</div>
@@ -159,6 +158,9 @@ $(function() {
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
 <div class="line">  application::run(form1 {});</div>
 <div class="line">}</div>
+<div class="ttc" id="aclassxtd_1_1drawing_1_1color_html_a0006066077e2d4e4b6aa70f2cae785a8"><div class="ttname"><a href="classxtd_1_1drawing_1_1color.html#a0006066077e2d4e4b6aa70f2cae785a8">xtd::drawing::color::average</a></div><div class="ttdeci">static color average(const color &amp;color1, const color &amp;color2, double weight, bool average_alpha) noexcept</div><div class="ttdoc">Returns the weighted average color between the two given colors.</div></div>
+<div class="ttc" id="aclassxtd_1_1drawing_1_1color_html_a7a0b8f1210fbda4739c37fd61e1a1dab"><div class="ttname"><a href="classxtd_1_1drawing_1_1color.html#a7a0b8f1210fbda4739c37fd61e1a1dab">xtd::drawing::color::red</a></div><div class="ttdeci">static const xtd::drawing::color red</div><div class="ttdoc">Gets a system-defined color that has an ARGB value of 0xFFFF0000. This field is constant.</div><div class="ttdef"><b>Definition:</b> color.h:400</div></div>
+<div class="ttc" id="aclassxtd_1_1drawing_1_1color_html_ad04928a6ddbfa799f6fdaca302cacf11"><div class="ttname"><a href="classxtd_1_1drawing_1_1color.html#ad04928a6ddbfa799f6fdaca302cacf11">xtd::drawing::color::black</a></div><div class="ttdeci">static const xtd::drawing::color black</div><div class="ttdoc">Gets a system-defined color that has an ARGB value of 0xFF000000. This field is constant.</div><div class="ttdef"><b>Definition:</b> color.h:79</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1style__sheets_1_1control_html_ac59c669ef64a5f0d297df5202fcc8093"><div class="ttname"><a href="classxtd_1_1forms_1_1style__sheets_1_1control.html#ac59c669ef64a5f0d297df5202fcc8093">xtd::forms::style_sheets::control::height</a></div><div class="ttdeci">std::optional&lt; xtd::forms::style_sheets::length &gt; height() const noexcept override</div><div class="ttdoc">Gets the height of the box.</div></div>
 <div class="ttc" id="agroup__style__sheets_html_ga305ec1c107ffe3a4a89f839499c2ae7c"><div class="ttname"><a href="group__style__sheets.html#ga305ec1c107ffe3a4a89f839499c2ae7c">xtd::forms::style_sheets::form</a></div><div class="ttdeci">xtd::forms::style_sheets::control form</div><div class="ttdoc">The form data allows you to specify the box of a form control.</div><div class="ttdef"><b>Definition:</b> form.h:19</div></div>
 <div class="ttc" id="agroup__style__sheets_html_ggaa76409da314505c52983287adca0c27aacd8e7918010a87cc619849e00265c9a6"><div class="ttname"><a href="group__style__sheets.html#ggaa76409da314505c52983287adca0c27aacd8e7918010a87cc619849e00265c9a6">xtd::forms::style_sheets::length_unit::chase</a></div><div class="ttdeci">@ chase</div><div class="ttdoc">Defines a chase unit. Relative to width of the &quot;0&quot; (zero).</div></div>
@@ -172,7 +174,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 28 2023 12:11:22 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Mar 30 2023 21:11:46 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

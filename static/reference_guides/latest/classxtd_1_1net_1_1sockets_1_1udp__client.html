@@ -116,7 +116,6 @@ You can use any of the send methods provided in the <a class="el" href="classxtd
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to use IPv4 <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html" title="Provides User Datagram Protocol (UDP) network services.">xtd::net::sockets::udp_client</a> class. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
-<div class="line"><span class="keyword">using namespace </span>std::literals;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacextd_1_1net.html">xtd::net</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacextd_1_1net_1_1sockets.html">xtd::net::sockets</a>;</div>
@@ -142,7 +141,7 @@ You can use any of the send methods provided in the <a class="el" href="classxtd
 <div class="line">    <span class="keywordflow">while</span> (!terminate_app) {</div>
 <div class="line">      <span class="keyword">auto</span> str = <a class="code" href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">ustring::format</a>(<span class="stringliteral">&quot;counter={}&quot;</span>, counter++);</div>
 <div class="line">      <a class="code" href="group__xtd__core.html#ggac4690c745045463d3c96d043878cc1e3a84864c1fe095359bc9c5ac068e24e781">udp</a>.send(vector&lt;unsigned char&gt;(str.begin(), str.end()), str.size(), ip_end_point(<a class="code" href="classxtd_1_1net_1_1ip__address.html#af97ec37d5ae5e391246dc8f19afaa626">ip_address::loopback</a>, 9400));</div>
-<div class="line">      this_thread::sleep_for(50ms);</div>
+<div class="line">      this_thread::sleep_for(50_ms);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <a class="code" href="group__xtd__core.html#ggac4690c745045463d3c96d043878cc1e3a84864c1fe095359bc9c5ac068e24e781">udp</a>.send(vector&lt;unsigned char&gt; {0xFF}, 1, ip_end_point(<a class="code" href="classxtd_1_1net_1_1ip__address.html#af97ec37d5ae5e391246dc8f19afaa626">ip_address::loopback</a>, 9400));</div>
@@ -176,7 +175,6 @@ You can use any of the send methods provided in the <a class="el" href="classxtd
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to use IPv6 <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html" title="Provides User Datagram Protocol (UDP) network services.">xtd::net::sockets::udp_client</a> class. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
-<div class="line"><span class="keyword">using namespace </span>std::literals;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacextd_1_1net.html">xtd::net</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacextd_1_1net_1_1sockets.html">xtd::net::sockets</a>;</div>
@@ -202,7 +200,7 @@ You can use any of the send methods provided in the <a class="el" href="classxtd
 <div class="line">    <span class="keywordflow">while</span> (!terminate_app) {</div>
 <div class="line">      <span class="keyword">auto</span> str = <a class="code" href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">ustring::format</a>(<span class="stringliteral">&quot;counter={}&quot;</span>, counter++);</div>
 <div class="line">      <a class="code" href="group__xtd__core.html#ggac4690c745045463d3c96d043878cc1e3a84864c1fe095359bc9c5ac068e24e781">udp</a>.send(vector&lt;unsigned char&gt;(str.begin(), str.end()), str.size(), ip_end_point(<a class="code" href="classxtd_1_1net_1_1ip__address.html#aec19e1f22b8910e852dce40a4c6caf60">ip_address::ip_v6_loopback</a>, 9400));</div>
-<div class="line">      this_thread::sleep_for(50ms);</div>
+<div class="line">      this_thread::sleep_for(50_ms);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <a class="code" href="group__xtd__core.html#ggac4690c745045463d3c96d043878cc1e3a84864c1fe095359bc9c5ac068e24e781">udp</a>.send(vector&lt;unsigned char&gt; {0xFF}, 1, ip_end_point(<a class="code" href="classxtd_1_1net_1_1ip__address.html#aec19e1f22b8910e852dce40a4c6caf60">ip_address::ip_v6_loopback</a>, 9400));</div>
@@ -2183,7 +2181,7 @@ If you receive a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__excep
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 28 2023 12:11:34 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Mar 30 2023 21:11:58 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -919,72 +919,73 @@ $(function() {
 <div class="line"><a name="l01572"></a><span class="lineno"> 1572</span>&#160;    <span class="keyword">static</span> <span class="keyword">auto</span> convert_param(arg_t&amp;&amp; arg) noexcept {</div>
 <div class="line"><a name="l01573"></a><span class="lineno"> 1573</span>&#160;      <span class="keywordflow">if</span> constexpr(std::is_same&lt;std::remove_cv_t&lt;std::remove_reference_t&lt;arg_t&gt;&gt;, std::string&gt;::value) <span class="keywordflow">return</span> std::forward&lt;arg_t&gt;(arg).c_str();</div>
 <div class="line"><a name="l01574"></a><span class="lineno"> 1574</span>&#160;      <span class="keywordflow">else</span> <span class="keywordflow">if</span> constexpr(std::is_same&lt;std::remove_cv_t&lt;std::remove_reference_t&lt;arg_t&gt;&gt;, std::wstring&gt;::value) <span class="keywordflow">return</span> std::forward&lt;arg_t&gt;(arg).c_str();</div>
-<div class="line"><a name="l01575"></a><span class="lineno"> 1575</span>&#160;      <span class="keywordflow">else</span> <span class="keywordflow">return</span> std::forward&lt;arg_t&gt;(arg);</div>
-<div class="line"><a name="l01576"></a><span class="lineno"> 1576</span>&#160;    }</div>
-<div class="line"><a name="l01577"></a><span class="lineno"> 1577</span>&#160;    </div>
-<div class="line"><a name="l01578"></a><span class="lineno"> 1578</span>&#160;    <span class="keyword">static</span> <a class="code" href="classxtd_1_1ustring.html#add61d5146149ee689a7f9bed1309cfad">ustring</a> get_class_name(<span class="keyword">const</span> <a class="code" href="classxtd_1_1ustring.html#add61d5146149ee689a7f9bed1309cfad">ustring</a>&amp; full_name);</div>
-<div class="line"><a name="l01579"></a><span class="lineno"> 1579</span>&#160;    </div>
-<div class="line"><a name="l01580"></a><span class="lineno"> 1580</span>&#160;    <span class="keyword">using</span> std::basic_string&lt;value_type&gt;::assign;</div>
-<div class="line"><a name="l01581"></a><span class="lineno"> 1581</span>&#160;    <span class="keyword">using</span> std::basic_string&lt;value_type&gt;::reserve;</div>
-<div class="line"><a name="l01582"></a><span class="lineno"> 1582</span>&#160;    <span class="keyword">using</span> std::basic_string&lt;value_type&gt;::shrink_to_fit;</div>
-<div class="line"><a name="l01583"></a><span class="lineno"> 1583</span>&#160;    <span class="keyword">using</span> std::basic_string&lt;value_type&gt;::clear;</div>
-<div class="line"><a name="l01584"></a><span class="lineno"> 1584</span>&#160;    <span class="keyword">using</span> std::basic_string&lt;value_type&gt;::erase;</div>
-<div class="line"><a name="l01585"></a><span class="lineno"> 1585</span>&#160;    <span class="keyword">using</span> std::basic_string&lt;value_type&gt;::push_back;</div>
-<div class="line"><a name="l01586"></a><span class="lineno"> 1586</span>&#160;    <span class="keyword">using</span> std::basic_string&lt;value_type&gt;::pop_back;</div>
-<div class="line"><a name="l01587"></a><span class="lineno"> 1587</span>&#160;    <span class="keyword">using</span> std::basic_string&lt;value_type&gt;::append;</div>
-<div class="line"><a name="l01588"></a><span class="lineno"> 1588</span>&#160;    <span class="keyword">using</span> std::basic_string&lt;value_type&gt;::replace;</div>
-<div class="line"><a name="l01589"></a><span class="lineno"> 1589</span>&#160;    <span class="keyword">using</span> std::basic_string&lt;value_type&gt;::resize;</div>
-<div class="line"><a name="l01590"></a><span class="lineno"> 1590</span>&#160;  };</div>
-<div class="line"><a name="l01591"></a><span class="lineno"> 1591</span>&#160;  </div>
-<div class="line"><a name="l01595"></a><span class="lineno"><a class="line" href="namespacextd.html#a1534fdba36dfecd4183c59c4198e9931"> 1595</a></span>&#160;  <a class="code" href="classxtd_1_1ustring.html">ustring</a> <a class="code" href="namespacextd.html#a1534fdba36dfecd4183c59c4198e9931">to_ustring</a>(<span class="keywordtype">int</span> val);</div>
-<div class="line"><a name="l01599"></a><span class="lineno"><a class="line" href="namespacextd.html#ab34043733c5a73b7bfcc812499b6952d"> 1599</a></span>&#160;  <a class="code" href="classxtd_1_1ustring.html">ustring</a> <a class="code" href="namespacextd.html#a1534fdba36dfecd4183c59c4198e9931">to_ustring</a>(<span class="keywordtype">unsigned</span> val);</div>
-<div class="line"><a name="l01603"></a><span class="lineno"><a class="line" href="namespacextd.html#acce141375d54d0a4688f6755731bc8ee"> 1603</a></span>&#160;  <a class="code" href="classxtd_1_1ustring.html">ustring</a> <a class="code" href="namespacextd.html#a1534fdba36dfecd4183c59c4198e9931">to_ustring</a>(<span class="keywordtype">long</span> val);</div>
-<div class="line"><a name="l01607"></a><span class="lineno"><a class="line" href="namespacextd.html#a70f4e83a96a3ba0aa53b2188bc4ef830"> 1607</a></span>&#160;  <a class="code" href="classxtd_1_1ustring.html">ustring</a> <a class="code" href="namespacextd.html#a1534fdba36dfecd4183c59c4198e9931">to_ustring</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> val);</div>
-<div class="line"><a name="l01611"></a><span class="lineno"><a class="line" href="namespacextd.html#abd0160176edf94121b7088e5328cffa1"> 1611</a></span>&#160;  <a class="code" href="classxtd_1_1ustring.html">ustring</a> <a class="code" href="namespacextd.html#a1534fdba36dfecd4183c59c4198e9931">to_ustring</a>(<span class="keywordtype">long</span> <span class="keywordtype">long</span> val);</div>
-<div class="line"><a name="l01615"></a><span class="lineno"><a class="line" href="namespacextd.html#a3eb92919a949ba8b32dbd26adef20320"> 1615</a></span>&#160;  <a class="code" href="classxtd_1_1ustring.html">ustring</a> <a class="code" href="namespacextd.html#a1534fdba36dfecd4183c59c4198e9931">to_ustring</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> val);</div>
-<div class="line"><a name="l01619"></a><span class="lineno"><a class="line" href="namespacextd.html#a09ce7d13f338f58929bd66b05bc6d0ef"> 1619</a></span>&#160;  <a class="code" href="classxtd_1_1ustring.html">ustring</a> <a class="code" href="namespacextd.html#a1534fdba36dfecd4183c59c4198e9931">to_ustring</a>(<span class="keywordtype">float</span> val);</div>
-<div class="line"><a name="l01623"></a><span class="lineno"><a class="line" href="namespacextd.html#a889fbb0dffe667c522f15baa51c33599"> 1623</a></span>&#160;  <a class="code" href="classxtd_1_1ustring.html">ustring</a> <a class="code" href="namespacextd.html#a1534fdba36dfecd4183c59c4198e9931">to_ustring</a>(<span class="keywordtype">double</span> val);</div>
-<div class="line"><a name="l01627"></a><span class="lineno"><a class="line" href="namespacextd.html#af4efcc0fc604bd556b3eea7b967ebffd"> 1627</a></span>&#160;  <a class="code" href="classxtd_1_1ustring.html">ustring</a> <a class="code" href="namespacextd.html#a1534fdba36dfecd4183c59c4198e9931">to_ustring</a>(<span class="keywordtype">long</span> <span class="keywordtype">double</span> val);</div>
-<div class="line"><a name="l01631"></a><span class="lineno"> 1631</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> type_t&gt;</div>
-<div class="line"><a name="l01632"></a><span class="lineno"><a class="line" href="namespacextd.html#a49eacb3f21f5d52626b362a5acecbbb4"> 1632</a></span>&#160;  <a class="code" href="classxtd_1_1ustring.html">ustring</a> <a class="code" href="namespacextd.html#a1534fdba36dfecd4183c59c4198e9931">to_ustring</a>(type_t val) {</div>
-<div class="line"><a name="l01633"></a><span class="lineno"> 1633</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">ustring::format</a>(<span class="stringliteral">&quot;{}&quot;</span>, val);</div>
-<div class="line"><a name="l01634"></a><span class="lineno"> 1634</span>&#160;  }</div>
-<div class="line"><a name="l01635"></a><span class="lineno"> 1635</span>&#160;}</div>
-<div class="line"><a name="l01636"></a><span class="lineno"> 1636</span>&#160; </div>
-<div class="line"><a name="l01638"></a><span class="lineno"> 1638</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> arg_t&gt;</div>
-<div class="line"><a name="l01639"></a><span class="lineno"> 1639</span>&#160;<span class="keywordtype">void</span> __ustring_extract_format_arg(std::string&amp; fmt, <span class="keywordtype">size_t</span>&amp; index, std::vector&lt;__format_information&lt;char&gt;&gt;&amp; formats, arg_t&amp;&amp; arg) {</div>
-<div class="line"><a name="l01640"></a><span class="lineno"> 1640</span>&#160;  <span class="keywordtype">size_t</span> offset = 0;</div>
-<div class="line"><a name="l01641"></a><span class="lineno"> 1641</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; format : formats) {</div>
-<div class="line"><a name="l01642"></a><span class="lineno"> 1642</span>&#160;    format.location += offset;</div>
-<div class="line"><a name="l01643"></a><span class="lineno"> 1643</span>&#160;    <span class="keywordflow">if</span> (format.index == index) {</div>
-<div class="line"><a name="l01644"></a><span class="lineno"> 1644</span>&#160;      <a class="code" href="classxtd_1_1ustring.html">xtd::ustring</a> arg_str = format.<a class="code" href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">format</a>.empty() ? __format_stringer&lt;char, arg_t&gt;(arg) : <a class="code" href="namespacextd.html">xtd</a>::<a class="code" href="group__xtd__core.html#gabff6a04b06200c06d782196536e4a8af">to_string</a>(arg, format.format);</div>
-<div class="line"><a name="l01645"></a><span class="lineno"> 1645</span>&#160;      </div>
-<div class="line"><a name="l01646"></a><span class="lineno"> 1646</span>&#160;      <span class="keywordflow">if</span> (!format.alignment.empty()) {</div>
-<div class="line"><a name="l01647"></a><span class="lineno"> 1647</span>&#160;        <a class="code" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">xtd::int32</a> alignment = 0;</div>
-<div class="line"><a name="l01648"></a><span class="lineno"> 1648</span>&#160;        <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l01649"></a><span class="lineno"> 1649</span>&#160;          alignment = std::stoi(format.alignment);</div>
-<div class="line"><a name="l01650"></a><span class="lineno"> 1650</span>&#160;        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a name="l01651"></a><span class="lineno"> 1651</span>&#160;          __throw_ustring_format_exception();</div>
-<div class="line"><a name="l01652"></a><span class="lineno"> 1652</span>&#160;        }</div>
-<div class="line"><a name="l01653"></a><span class="lineno"> 1653</span>&#160;        <span class="keywordflow">if</span> (alignment &gt; 0) arg_str = arg_str.<a class="code" href="classxtd_1_1ustring.html#aadfe62deb046bd17790cb22207d4f4f5">pad_left</a>(alignment);</div>
-<div class="line"><a name="l01654"></a><span class="lineno"> 1654</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (alignment &lt; 0) arg_str = arg_str.<a class="code" href="classxtd_1_1ustring.html#a7b9abb16d8b680c650dd5cad88b8ecdb">pad_right</a>(-alignment);</div>
-<div class="line"><a name="l01655"></a><span class="lineno"> 1655</span>&#160;      }</div>
-<div class="line"><a name="l01656"></a><span class="lineno"> 1656</span>&#160;      fmt.<a class="code" href="classxtd_1_1ustring.html#a4fb8bd971a50be1f16f8a60f1acc5e8e">insert</a>(format.location, arg_str);</div>
-<div class="line"><a name="l01657"></a><span class="lineno"> 1657</span>&#160;      offset += arg_str.size();</div>
-<div class="line"><a name="l01658"></a><span class="lineno"> 1658</span>&#160;    }</div>
-<div class="line"><a name="l01659"></a><span class="lineno"> 1659</span>&#160;  }</div>
-<div class="line"><a name="l01660"></a><span class="lineno"> 1660</span>&#160;  ++index;</div>
-<div class="line"><a name="l01661"></a><span class="lineno"> 1661</span>&#160;}</div>
-<div class="line"><a name="l01662"></a><span class="lineno"> 1662</span>&#160; </div>
-<div class="line"><a name="l01663"></a><span class="lineno"> 1663</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ...args_t&gt;</div>
-<div class="line"><a name="l01664"></a><span class="lineno"> 1664</span>&#160;<span class="keywordtype">void</span> __xtd_ustrings_unused(args_t&amp;&amp; ... args) {}</div>
-<div class="line"><a name="l01665"></a><span class="lineno"> 1665</span>&#160; </div>
-<div class="line"><a name="l01666"></a><span class="lineno"> 1666</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ...args_t&gt;</div>
-<div class="line"><a name="l01667"></a><span class="lineno"> 1667</span>&#160;<span class="keywordtype">void</span> __ustring_extract_format_arg(<a class="code" href="classxtd_1_1ustring.html">xtd::ustring</a>&amp; fmt, std::vector&lt;__format_information&lt;char&gt;&gt;&amp; formats, args_t&amp;&amp; ... args) {</div>
-<div class="line"><a name="l01668"></a><span class="lineno"> 1668</span>&#160;  <span class="keywordtype">size_t</span> index = 0;</div>
-<div class="line"><a name="l01669"></a><span class="lineno"> 1669</span>&#160;  (__ustring_extract_format_arg(fmt, index, formats, args), ...);</div>
-<div class="line"><a name="l01670"></a><span class="lineno"> 1670</span>&#160;  __xtd_ustrings_unused(index); <span class="comment">// workaround to mute gcc warning: unused-but-set-variable</span></div>
-<div class="line"><a name="l01671"></a><span class="lineno"> 1671</span>&#160;}</div>
+<div class="line"><a name="l01575"></a><span class="lineno"> 1575</span>&#160;      <span class="keywordflow">else</span> <span class="keywordflow">if</span> constexpr(std::is_same&lt;std::remove_cv_t&lt;std::remove_reference_t&lt;arg_t&gt;&gt;, <a class="code" href="classxtd_1_1ustring.html">xtd::ustring</a>&gt;::value) <span class="keywordflow">return</span> std::forward&lt;arg_t&gt;(arg).c_str();</div>
+<div class="line"><a name="l01576"></a><span class="lineno"> 1576</span>&#160;      <span class="keywordflow">else</span> <span class="keywordflow">return</span> std::forward&lt;arg_t&gt;(arg);</div>
+<div class="line"><a name="l01577"></a><span class="lineno"> 1577</span>&#160;    }</div>
+<div class="line"><a name="l01578"></a><span class="lineno"> 1578</span>&#160;    </div>
+<div class="line"><a name="l01579"></a><span class="lineno"> 1579</span>&#160;    <span class="keyword">static</span> <a class="code" href="classxtd_1_1ustring.html#add61d5146149ee689a7f9bed1309cfad">ustring</a> get_class_name(<span class="keyword">const</span> <a class="code" href="classxtd_1_1ustring.html#add61d5146149ee689a7f9bed1309cfad">ustring</a>&amp; full_name);</div>
+<div class="line"><a name="l01580"></a><span class="lineno"> 1580</span>&#160;    </div>
+<div class="line"><a name="l01581"></a><span class="lineno"> 1581</span>&#160;    <span class="keyword">using</span> std::basic_string&lt;value_type&gt;::assign;</div>
+<div class="line"><a name="l01582"></a><span class="lineno"> 1582</span>&#160;    <span class="keyword">using</span> std::basic_string&lt;value_type&gt;::reserve;</div>
+<div class="line"><a name="l01583"></a><span class="lineno"> 1583</span>&#160;    <span class="keyword">using</span> std::basic_string&lt;value_type&gt;::shrink_to_fit;</div>
+<div class="line"><a name="l01584"></a><span class="lineno"> 1584</span>&#160;    <span class="keyword">using</span> std::basic_string&lt;value_type&gt;::clear;</div>
+<div class="line"><a name="l01585"></a><span class="lineno"> 1585</span>&#160;    <span class="keyword">using</span> std::basic_string&lt;value_type&gt;::erase;</div>
+<div class="line"><a name="l01586"></a><span class="lineno"> 1586</span>&#160;    <span class="keyword">using</span> std::basic_string&lt;value_type&gt;::push_back;</div>
+<div class="line"><a name="l01587"></a><span class="lineno"> 1587</span>&#160;    <span class="keyword">using</span> std::basic_string&lt;value_type&gt;::pop_back;</div>
+<div class="line"><a name="l01588"></a><span class="lineno"> 1588</span>&#160;    <span class="keyword">using</span> std::basic_string&lt;value_type&gt;::append;</div>
+<div class="line"><a name="l01589"></a><span class="lineno"> 1589</span>&#160;    <span class="keyword">using</span> std::basic_string&lt;value_type&gt;::replace;</div>
+<div class="line"><a name="l01590"></a><span class="lineno"> 1590</span>&#160;    <span class="keyword">using</span> std::basic_string&lt;value_type&gt;::resize;</div>
+<div class="line"><a name="l01591"></a><span class="lineno"> 1591</span>&#160;  };</div>
+<div class="line"><a name="l01592"></a><span class="lineno"> 1592</span>&#160;  </div>
+<div class="line"><a name="l01596"></a><span class="lineno"><a class="line" href="namespacextd.html#a1534fdba36dfecd4183c59c4198e9931"> 1596</a></span>&#160;  <a class="code" href="classxtd_1_1ustring.html">ustring</a> <a class="code" href="namespacextd.html#a1534fdba36dfecd4183c59c4198e9931">to_ustring</a>(<span class="keywordtype">int</span> val);</div>
+<div class="line"><a name="l01600"></a><span class="lineno"><a class="line" href="namespacextd.html#ab34043733c5a73b7bfcc812499b6952d"> 1600</a></span>&#160;  <a class="code" href="classxtd_1_1ustring.html">ustring</a> <a class="code" href="namespacextd.html#a1534fdba36dfecd4183c59c4198e9931">to_ustring</a>(<span class="keywordtype">unsigned</span> val);</div>
+<div class="line"><a name="l01604"></a><span class="lineno"><a class="line" href="namespacextd.html#acce141375d54d0a4688f6755731bc8ee"> 1604</a></span>&#160;  <a class="code" href="classxtd_1_1ustring.html">ustring</a> <a class="code" href="namespacextd.html#a1534fdba36dfecd4183c59c4198e9931">to_ustring</a>(<span class="keywordtype">long</span> val);</div>
+<div class="line"><a name="l01608"></a><span class="lineno"><a class="line" href="namespacextd.html#a70f4e83a96a3ba0aa53b2188bc4ef830"> 1608</a></span>&#160;  <a class="code" href="classxtd_1_1ustring.html">ustring</a> <a class="code" href="namespacextd.html#a1534fdba36dfecd4183c59c4198e9931">to_ustring</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> val);</div>
+<div class="line"><a name="l01612"></a><span class="lineno"><a class="line" href="namespacextd.html#abd0160176edf94121b7088e5328cffa1"> 1612</a></span>&#160;  <a class="code" href="classxtd_1_1ustring.html">ustring</a> <a class="code" href="namespacextd.html#a1534fdba36dfecd4183c59c4198e9931">to_ustring</a>(<span class="keywordtype">long</span> <span class="keywordtype">long</span> val);</div>
+<div class="line"><a name="l01616"></a><span class="lineno"><a class="line" href="namespacextd.html#a3eb92919a949ba8b32dbd26adef20320"> 1616</a></span>&#160;  <a class="code" href="classxtd_1_1ustring.html">ustring</a> <a class="code" href="namespacextd.html#a1534fdba36dfecd4183c59c4198e9931">to_ustring</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> val);</div>
+<div class="line"><a name="l01620"></a><span class="lineno"><a class="line" href="namespacextd.html#a09ce7d13f338f58929bd66b05bc6d0ef"> 1620</a></span>&#160;  <a class="code" href="classxtd_1_1ustring.html">ustring</a> <a class="code" href="namespacextd.html#a1534fdba36dfecd4183c59c4198e9931">to_ustring</a>(<span class="keywordtype">float</span> val);</div>
+<div class="line"><a name="l01624"></a><span class="lineno"><a class="line" href="namespacextd.html#a889fbb0dffe667c522f15baa51c33599"> 1624</a></span>&#160;  <a class="code" href="classxtd_1_1ustring.html">ustring</a> <a class="code" href="namespacextd.html#a1534fdba36dfecd4183c59c4198e9931">to_ustring</a>(<span class="keywordtype">double</span> val);</div>
+<div class="line"><a name="l01628"></a><span class="lineno"><a class="line" href="namespacextd.html#af4efcc0fc604bd556b3eea7b967ebffd"> 1628</a></span>&#160;  <a class="code" href="classxtd_1_1ustring.html">ustring</a> <a class="code" href="namespacextd.html#a1534fdba36dfecd4183c59c4198e9931">to_ustring</a>(<span class="keywordtype">long</span> <span class="keywordtype">double</span> val);</div>
+<div class="line"><a name="l01632"></a><span class="lineno"> 1632</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> type_t&gt;</div>
+<div class="line"><a name="l01633"></a><span class="lineno"><a class="line" href="namespacextd.html#a49eacb3f21f5d52626b362a5acecbbb4"> 1633</a></span>&#160;  <a class="code" href="classxtd_1_1ustring.html">ustring</a> <a class="code" href="namespacextd.html#a1534fdba36dfecd4183c59c4198e9931">to_ustring</a>(type_t val) {</div>
+<div class="line"><a name="l01634"></a><span class="lineno"> 1634</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">ustring::format</a>(<span class="stringliteral">&quot;{}&quot;</span>, val);</div>
+<div class="line"><a name="l01635"></a><span class="lineno"> 1635</span>&#160;  }</div>
+<div class="line"><a name="l01636"></a><span class="lineno"> 1636</span>&#160;}</div>
+<div class="line"><a name="l01637"></a><span class="lineno"> 1637</span>&#160; </div>
+<div class="line"><a name="l01639"></a><span class="lineno"> 1639</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> arg_t&gt;</div>
+<div class="line"><a name="l01640"></a><span class="lineno"> 1640</span>&#160;<span class="keywordtype">void</span> __ustring_extract_format_arg(std::string&amp; fmt, <span class="keywordtype">size_t</span>&amp; index, std::vector&lt;__format_information&lt;char&gt;&gt;&amp; formats, arg_t&amp;&amp; arg) {</div>
+<div class="line"><a name="l01641"></a><span class="lineno"> 1641</span>&#160;  <span class="keywordtype">size_t</span> offset = 0;</div>
+<div class="line"><a name="l01642"></a><span class="lineno"> 1642</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; format : formats) {</div>
+<div class="line"><a name="l01643"></a><span class="lineno"> 1643</span>&#160;    format.location += offset;</div>
+<div class="line"><a name="l01644"></a><span class="lineno"> 1644</span>&#160;    <span class="keywordflow">if</span> (format.index == index) {</div>
+<div class="line"><a name="l01645"></a><span class="lineno"> 1645</span>&#160;      <a class="code" href="classxtd_1_1ustring.html">xtd::ustring</a> arg_str = format.<a class="code" href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">format</a>.empty() ? __format_stringer&lt;char, arg_t&gt;(arg) : <a class="code" href="namespacextd.html">xtd</a>::<a class="code" href="group__xtd__core.html#gabff6a04b06200c06d782196536e4a8af">to_string</a>(arg, format.format);</div>
+<div class="line"><a name="l01646"></a><span class="lineno"> 1646</span>&#160;      </div>
+<div class="line"><a name="l01647"></a><span class="lineno"> 1647</span>&#160;      <span class="keywordflow">if</span> (!format.alignment.empty()) {</div>
+<div class="line"><a name="l01648"></a><span class="lineno"> 1648</span>&#160;        <a class="code" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">xtd::int32</a> alignment = 0;</div>
+<div class="line"><a name="l01649"></a><span class="lineno"> 1649</span>&#160;        <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l01650"></a><span class="lineno"> 1650</span>&#160;          alignment = std::stoi(format.alignment);</div>
+<div class="line"><a name="l01651"></a><span class="lineno"> 1651</span>&#160;        } <span class="keywordflow">catch</span> (...) {</div>
+<div class="line"><a name="l01652"></a><span class="lineno"> 1652</span>&#160;          __throw_ustring_format_exception();</div>
+<div class="line"><a name="l01653"></a><span class="lineno"> 1653</span>&#160;        }</div>
+<div class="line"><a name="l01654"></a><span class="lineno"> 1654</span>&#160;        <span class="keywordflow">if</span> (alignment &gt; 0) arg_str = arg_str.<a class="code" href="classxtd_1_1ustring.html#aadfe62deb046bd17790cb22207d4f4f5">pad_left</a>(alignment);</div>
+<div class="line"><a name="l01655"></a><span class="lineno"> 1655</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (alignment &lt; 0) arg_str = arg_str.<a class="code" href="classxtd_1_1ustring.html#a7b9abb16d8b680c650dd5cad88b8ecdb">pad_right</a>(-alignment);</div>
+<div class="line"><a name="l01656"></a><span class="lineno"> 1656</span>&#160;      }</div>
+<div class="line"><a name="l01657"></a><span class="lineno"> 1657</span>&#160;      fmt.<a class="code" href="classxtd_1_1ustring.html#a4fb8bd971a50be1f16f8a60f1acc5e8e">insert</a>(format.location, arg_str);</div>
+<div class="line"><a name="l01658"></a><span class="lineno"> 1658</span>&#160;      offset += arg_str.size();</div>
+<div class="line"><a name="l01659"></a><span class="lineno"> 1659</span>&#160;    }</div>
+<div class="line"><a name="l01660"></a><span class="lineno"> 1660</span>&#160;  }</div>
+<div class="line"><a name="l01661"></a><span class="lineno"> 1661</span>&#160;  ++index;</div>
+<div class="line"><a name="l01662"></a><span class="lineno"> 1662</span>&#160;}</div>
+<div class="line"><a name="l01663"></a><span class="lineno"> 1663</span>&#160; </div>
+<div class="line"><a name="l01664"></a><span class="lineno"> 1664</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ...args_t&gt;</div>
+<div class="line"><a name="l01665"></a><span class="lineno"> 1665</span>&#160;<span class="keywordtype">void</span> __xtd_ustrings_unused(args_t&amp;&amp; ... args) {}</div>
+<div class="line"><a name="l01666"></a><span class="lineno"> 1666</span>&#160; </div>
+<div class="line"><a name="l01667"></a><span class="lineno"> 1667</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ...args_t&gt;</div>
+<div class="line"><a name="l01668"></a><span class="lineno"> 1668</span>&#160;<span class="keywordtype">void</span> __ustring_extract_format_arg(<a class="code" href="classxtd_1_1ustring.html">xtd::ustring</a>&amp; fmt, std::vector&lt;__format_information&lt;char&gt;&gt;&amp; formats, args_t&amp;&amp; ... args) {</div>
+<div class="line"><a name="l01669"></a><span class="lineno"> 1669</span>&#160;  <span class="keywordtype">size_t</span> index = 0;</div>
+<div class="line"><a name="l01670"></a><span class="lineno"> 1670</span>&#160;  (__ustring_extract_format_arg(fmt, index, formats, args), ...);</div>
+<div class="line"><a name="l01671"></a><span class="lineno"> 1671</span>&#160;  __xtd_ustrings_unused(index); <span class="comment">// workaround to mute gcc warning: unused-but-set-variable</span></div>
+<div class="line"><a name="l01672"></a><span class="lineno"> 1672</span>&#160;}</div>
 <div class="ttc" id="aclassxtd_1_1icomparable_html"><div class="ttname"><a href="classxtd_1_1icomparable.html">xtd::icomparable</a></div><div class="ttdoc">Defines a generalized comparison method that a value type or class implements to create a type-specif...</div><div class="ttdef"><b>Definition:</b> icomparable.h:17</div></div>
 <div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition:</b> object.h:31</div></div>
 <div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition:</b> ustring.h:48</div></div>
@@ -1107,7 +1108,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 28 2023 12:11:24 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Mar 30 2023 21:11:47 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
