@@ -24,7 +24,7 @@
 | [bitmap](https://github.com/gammasoft71/xtd/tree/master/src/xtd.drawing/include/xtd/drawing/bitmap.h)                           | class        | ![progress](/pictures/progress75.png)  |
 | [brush](https://github.com/gammasoft71/xtd/tree/master/src/xtd.drawing/include/xtd/drawing/brush.h)                             | class        | ![progress](/pictures/progress100.png) |
 | [brushes](https://github.com/gammasoft71/xtd/tree/master/src/xtd.drawing/include/xtd/drawing/brushes.h)                         | static class | ![progress](/pictures/progress100.png) |
-| [buffered_graphics](https://github.com/gammasoft71/xtd/tree/master/src/xtd.drawing/include/xtd/drawing/buffered_graphics.h)     | class        | ![progress](/pictures/progress0.png)   |
+| [buffered_graphics](https://github.com/gammasoft71/xtd/tree/master/src/xtd.drawing/include/xtd/drawing/buffered_graphics.h)     | class        | ![progress](/pictures/progress100.png) |
 | [color](https://github.com/gammasoft71/xtd/tree/master/src/xtd.drawing/include/xtd/drawing/color.h)                             | class        | ![progress](/pictures/progress100.png) |
 | [colors](https://github.com/gammasoft71/xtd/tree/master/src/xtd.drawing/include/xtd/drawing/colors.h)                           | static class | ![progress](/pictures/progress100.png) |
 | [dash_style](https://github.com/gammasoft71/xtd/tree/master/src/xtd.drawing/include/xtd/drawing/dash_style.h)                   | enumeration  | ![progress](/pictures/progress100.png) |
