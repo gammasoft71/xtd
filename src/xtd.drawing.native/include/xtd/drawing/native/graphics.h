@@ -37,6 +37,18 @@ namespace xtd {
         /// @name Protected methods
         
         /// @{
+        /// @brief Performs a bit-block transfer of color data, corresponding to a rectangle of pixels, from the screen to the drawing surface of the graphics.
+        /// @param handle The graphics handle.
+        /// @param handle_source The source graphics handle.
+        /// @param source_x The x-coordinate of the upper-left corner of the source rectangle.
+        /// @param source_y The x-coordinate of the upper-left corner of the source rectangle.
+        /// @param destination_x The x-coordinate of the upper-left corner of the destination rectangle.
+        /// @param destination_y The y-coordinate of the upper-left corner of the destination rectangle.
+        /// @param block_region_width The width of the source and destination rectangle.
+        /// @param block_region_height The height of the source and destination rectangle.
+        /// @param copy_pixel_operation The copy pixel operation values (see copy_pixel_operations.h for more information).
+        /// @warning Internal use only
+        static void copy_from_graphics(intptr handle, intptr handle_source, int32 source_x, int32 source_y, int32 destination_x, int32 destination_y, int32 block_region_width, int32 block_region_height, int32 copy_pixel_operation);
         /// @brief Clears the entire drawing surface and fills it with the specified background color.
         /// @param handle The graphics handle.
         /// @param a The alpha component of the background color of the drawing surface.

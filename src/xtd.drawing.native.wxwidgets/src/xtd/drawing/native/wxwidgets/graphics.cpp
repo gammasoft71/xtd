@@ -75,6 +75,32 @@ namespace {
   }
 }
 
+void graphics::copy_from_graphics(intptr handle, intptr handle_source, int32 source_x, int32 source_y, int32 destination_x, int32 destination_y, int32 block_region_width, int32 block_region_height, int32 copy_pixel_operation) {
+  if (!handle) return;
+  wxRasterOperationMode raster_operation_mode = wxRasterOperationMode::wxCOPY;
+  switch (copy_pixel_operation) {
+    case CPO_BLACKNESS: raster_operation_mode = wxRasterOperationMode::wxCLEAR; break;
+    case CPO_CAPTURE_BLT: raster_operation_mode = wxRasterOperationMode::wxCOPY; break;
+    case CPO_DESTINATION_INVERT: raster_operation_mode = wxRasterOperationMode::wxINVERT; break;
+    case CPO_MERGE_COPY: raster_operation_mode = wxRasterOperationMode::wxAND; break;
+    case CPO_MERGE_PAINT: raster_operation_mode = wxRasterOperationMode::wxOR_INVERT; break;
+    case CPO_NO_MIRROR_BITMAP: raster_operation_mode = wxRasterOperationMode::wxINVERT; break;
+    case CPO_NOT_SOURCE_COPY: raster_operation_mode = wxRasterOperationMode::wxSRC_INVERT; break;
+    case CPO_NOT_SOURCE_ERASE: raster_operation_mode = wxRasterOperationMode::wxOR_INVERT; break;
+    case CPO_PAT_COPY:  break;
+    case CPO_PAT_INVERT:  break;
+    case CPO_PAT_PAINT:  break;
+    case CPO_SOURCE_AND: raster_operation_mode = wxRasterOperationMode::wxAND; break;
+    case CPO_SOURCE_COPY: raster_operation_mode = wxRasterOperationMode::wxCOPY; break;
+    case CPO_SOURCE_ERASE: raster_operation_mode = wxRasterOperationMode::wxAND_INVERT; break;
+    case CPO_SOURCE_INVERT: raster_operation_mode = wxRasterOperationMode::wxXOR; break;
+    case CPO_SOURCE_PAINT: raster_operation_mode = wxRasterOperationMode::wxOR; break;
+    case CPO_WHITENESS: raster_operation_mode = wxRasterOperationMode::wxSET; break;
+    default: raster_operation_mode = wxRasterOperationMode::wxCOPY; break;
+  }
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc().Blit(destination_x, destination_y, block_region_width, block_region_height, &reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle_source)->hdc(), source_x, source_y, raster_operation_mode);
+}
+
 void graphics::clear(intptr handle, xtd::byte a, xtd::byte r, xtd::byte g, xtd::byte b) {
   if (handle == 0) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
