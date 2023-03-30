@@ -56,6 +56,7 @@ namespace {
     static auto name = "macOS"s;
     static auto version = ""s;
 
+    /*
     if (version.empty()) {
       try {
         codename = xtd::native::unix::strings::replace(create_process("awk '/SOFTWARE LICENSE AGREEMENT FOR macOS/' '/System/Library/CoreServices/Setup Assistant.app/Contents/Resources/en.lproj/OSXSoftwareLicense.rtf' | awk -F 'macOS ' '{print $NF}' | awk '{print substr($0, 0, length($0)-1)}'"), "\n", "");
@@ -72,7 +73,7 @@ namespace {
         minor = stoi(versions[1]);
       } catch(...) {
       }
-    }
+    }*/
 
     if (major == 10 && minor == 0) return make_tuple("OS X", "Cheetah", version);
     if (major == 10 && minor == 1) return make_tuple("OS X", "Puma", version);
