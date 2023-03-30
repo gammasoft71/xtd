@@ -34,6 +34,7 @@
 #include "drawing/brown_colors.h"
 #include "drawing/brush.h"
 #include "drawing/brushes.h"
+#include "drawing/buffered_graphics.h"
 #include "drawing/color.h"
 #include "drawing/colors.h"
 #include "drawing/cyan_colors.h"
