@@ -227,9 +227,39 @@ namespace xtd {
       /// @param color xtd::drawing::color structure that represents the background color of the drawing surface.
       void clear(const color& color);
 
+      /// @brief Performs a bit-block transfer of color data, corresponding to a rectangle of pixels, from the drawing surface of the xtd::drawing::graphics source to the drawing surface of the xtd::drawing::graphics.
+      /// @param source The drawing surface of the xtd::drawing::graphics source.
+      /// @param upper_left_source The point at the upper-left corner of the source rectangle.
+      /// @param upper_left_destination The point at the upper-left corner of the destination rectangle.
+      /// @param block_region_size The size of the area to be transferred.
+      /// @remarks The xtd::drawing::graphics::copy_from_graphics methods are useful for layering one image on top of another. To specify how the source and destination colors are blended, use one of the xtd::drawing::graphics::copy_from_screen methods that takes a xtd::drawing::graphics::copy_pixel_operation parameter.
       void copy_from_graphics(const graphics& source, const xtd::drawing::point& upper_left_source, const xtd::drawing::point& upper_left_destination, const xtd::drawing::size& block_region_size);
+      /// @brief Performs a bit-block transfer of color data, corresponding to a rectangle of pixels, from the xtd::drawing::graphics source to the drawing surface of the xtd::drawing::graphics.
+      /// @param source The drawing surface of the xtd::drawing::graphics source.
+      /// @param upper_left_source The point at the upper-left corner of the source rectangle.
+      /// @param upper_left_destination The point at the upper-left corner of the destination rectangle.
+      /// @param block_region_size The size of the area to be transferred.
+      /// @param copy_pixel_operation One of the xtd::drawing::graphics::copy_pixel_operation values.
+      /// @remarks The xtd::drawing::graphics::copy_from_graphics methods are useful for layering one image on top of another. The xtd::drawing::copy_pixel_operation parameter allows you to specify if and how the source colors should be blended with the colors in the destination area.
       void copy_from_graphics(const graphics& source, const xtd::drawing::point& upper_left_source, const xtd::drawing::point& upper_left_destination, const xtd::drawing::size& block_region_size, xtd::drawing::copy_pixel_operation copy_pixel_operation);
+      /// @brief Performs a bit-block transfer of color data, corresponding to a rectangle of pixels, from the drawing surface of the xtd::drawing::graphics source to the drawing surface of the xtd::drawing::graphics.
+      /// @param source The drawing surface of the xtd::drawing::graphics source.
+      /// @param source_x The x-coordinate of the point at the upper-left corner of the source rectangle.
+      /// @param source_y The y-coordinate of the point at the upper-left corner of the source rectangle.
+      /// @param destination_x The x-coordinate of the point at the upper-left corner of the destination rectangle.
+      /// @param destination_y The y-coordinate of the point at the upper-left corner of the destination rectangle.
+      /// @param block_region_size The size of the area to be transferred.
+      /// @remarks The xtd::drawing::graphics::copy_from_graphics methods are useful for layering one image on top of another. To specify how the source and destination colors are blended, use one of the xtd::drawing::graphics::copy_from_screen methods that takes a xtd::drawing::graphics::copy_pixel_operation parameter.
       void copy_from_graphics(const graphics& source, int32 source_x, int32 source_y, int32 destination_x, int32 destination_y, const xtd::drawing::size& block_region_size);
+      /// @brief Performs a bit-block transfer of color data, corresponding to a rectangle of pixels, from the drawing surface of the xtd::drawing::graphics source to the drawing surface of the xtd::drawing::graphics.
+      /// @param source The drawing surface of the xtd::drawing::graphics source.
+      /// @param source_x The x-coordinate of the point at the upper-left corner of the source rectangle.
+      /// @param source_y The y-coordinate of the point at the upper-left corner of the source rectangle.
+      /// @param destination_x The x-coordinate of the point at the upper-left corner of the destination rectangle.
+      /// @param destination_y The y-coordinate of the point at the upper-left corner of the destination rectangle.
+      /// @param block_region_size The size of the area to be transferred.
+      /// @param copy_pixel_operation One of the xtd::drawing::graphics::copy_pixel_operation values.
+      /// @remarks The xtd::drawing::graphics::copy_from_graphics methods are useful for layering one image on top of another. The xtd::drawing::copy_pixel_operation parameter allows you to specify if and how the source colors should be blended with the colors in the destination area.
       void copy_from_graphics(const graphics& source, int32 source_x, int32 source_y, int32 destination_x, int32 destination_y, const xtd::drawing::size& block_region_size, xtd::drawing::copy_pixel_operation copy_pixel_operation);
 
       /// @brief Performs a bit-block transfer of color data, corresponding to a rectangle of pixels, from the screen to the drawing surface of the xtd::drawing::graphics.
