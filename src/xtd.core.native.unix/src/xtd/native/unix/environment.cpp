@@ -57,18 +57,21 @@ namespace {
     static auto version = ""s;
 
     if (version.empty()) {
-      //codename = xtd::native::unix::strings::replace(create_process("awk '/SOFTWARE LICENSE AGREEMENT FOR macOS/' '/System/Library/CoreServices/Setup Assistant.app/Contents/Resources/en.lproj/OSXSoftwareLicense.rtf' | awk -F 'macOS ' '{print $NF}' | awk '{print substr($0, 0, length($0)-1)}'"), "\n", "");
-      auto distribution_string = create_process("sw_vers");
-      auto distribution_lines = xtd::native::unix::strings::split(distribution_string, {'\n'});
-      for (auto distribution_line : distribution_lines) {
-        auto key_value =xtd::native::unix::strings::split(distribution_line, {'\t'});
-        if (key_value.size() != 3) continue;
-        if (key_value[0] == "BuildVersion:") build_version = key_value[2];
-        if (key_value[0] == "ProductVersion:") version = key_value[2];
+      try {
+        codename = xtd::native::unix::strings::replace(create_process("awk '/SOFTWARE LICENSE AGREEMENT FOR macOS/' '/System/Library/CoreServices/Setup Assistant.app/Contents/Resources/en.lproj/OSXSoftwareLicense.rtf' | awk -F 'macOS ' '{print $NF}' | awk '{print substr($0, 0, length($0)-1)}'"), "\n", "");
+        auto distribution_string = create_process("sw_vers");
+        auto distribution_lines = xtd::native::unix::strings::split(distribution_string, {'\n'});
+        for (auto distribution_line : distribution_lines) {
+          auto key_value =xtd::native::unix::strings::split(distribution_line, {'\t'});
+          if (key_value.size() != 3) continue;
+          if (key_value[0] == "BuildVersion:") build_version = key_value[2];
+          if (key_value[0] == "ProductVersion:") version = key_value[2];
+        }
+        auto versions = xtd::native::unix::strings::split(version, {'.'});
+        major = stoi(versions[0]);
+        minor = stoi(versions[1]);
+      } catch(...) {
       }
-      auto versions = xtd::native::unix::strings::split(version, {'.'});
-      major = stoi(versions[0]);
-      minor = stoi(versions[1]);
     }
 
     if (major == 10 && minor == 0) return make_tuple("OS X", "Cheetah", version);
