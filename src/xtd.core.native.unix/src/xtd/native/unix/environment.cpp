@@ -57,7 +57,7 @@ namespace {
     static auto version = ""s;
 
     if (version.empty()) {
-      codename = xtd::native::unix::strings::replace(create_process("awk '/SOFTWARE LICENSE AGREEMENT FOR macOS/' '/System/Library/CoreServices/Setup Assistant.app/Contents/Resources/en.lproj/OSXSoftwareLicense.rtf' | awk -F 'macOS ' '{print $NF}' | awk '{print substr($0, 0, length($0)-1)}'"), "\n", "");
+      //codename = xtd::native::unix::strings::replace(create_process("awk '/SOFTWARE LICENSE AGREEMENT FOR macOS/' '/System/Library/CoreServices/Setup Assistant.app/Contents/Resources/en.lproj/OSXSoftwareLicense.rtf' | awk -F 'macOS ' '{print $NF}' | awk '{print substr($0, 0, length($0)-1)}'"), "\n", "");
       auto distribution_string = create_process("sw_vers");
       auto distribution_lines = xtd::native::unix::strings::split(distribution_string, {'\n'});
       for (auto distribution_line : distribution_lines) {
