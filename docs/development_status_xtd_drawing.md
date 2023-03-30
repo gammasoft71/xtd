@@ -26,7 +26,7 @@
 | [bitmap](../src/xtd.drawing/include/xtd/drawing/bitmap.h)                           | class        | ![progress](pictures/progress75.png)  |
 | [brush](../src/xtd.drawing/include/xtd/drawing/brush.h)                             | class        | ![progress](pictures/progress100.png) |
 | [brushes](../src/xtd.drawing/include/xtd/drawing/brushes.h)                         | static class | ![progress](pictures/progress100.png) |
-| [buffered_graphics](../src/xtd.drawing/include/xtd/drawing/buffered_graphics.h)     | class        | ![progress](pictures/progress0.png)   |
+| [buffered_graphics](../src/xtd.drawing/include/xtd/drawing/buffered_graphics.h)     | class        | ![progress](pictures/progress100.png) |
 | [color](../src/xtd.drawing/include/xtd/drawing/color.h)                             | class        | ![progress](pictures/progress100.png) |
 | [colors](../src/xtd.drawing/include/xtd/drawing/colors.h)                           | static class | ![progress](pictures/progress100.png) |
 | [dash_style](../src/xtd.drawing/include/xtd/drawing/dash_style.h)                   | enumeration  | ![progress](pictures/progress100.png) |
