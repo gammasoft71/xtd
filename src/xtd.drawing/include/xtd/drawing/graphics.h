@@ -226,7 +226,12 @@ namespace xtd {
       /// @brief Clears the entire drawing surface and fills it with the specified background color.
       /// @param color xtd::drawing::color structure that represents the background color of the drawing surface.
       void clear(const color& color);
-      
+
+      void copy_from_graphics(const graphics& source, const xtd::drawing::point& upper_left_source, const xtd::drawing::point& upper_left_destination, const xtd::drawing::size& block_region_size);
+      void copy_from_graphics(const graphics& source, const xtd::drawing::point& upper_left_source, const xtd::drawing::point& upper_left_destination, const xtd::drawing::size& block_region_size, xtd::drawing::copy_pixel_operation copy_pixel_operation);
+      void copy_from_graphics(const graphics& source, int32 source_x, int32 source_y, int32 destination_x, int32 destination_y, const xtd::drawing::size& block_region_size);
+      void copy_from_graphics(const graphics& source, int32 source_x, int32 source_y, int32 destination_x, int32 destination_y, const xtd::drawing::size& block_region_size, xtd::drawing::copy_pixel_operation copy_pixel_operation);
+
       /// @brief Performs a bit-block transfer of color data, corresponding to a rectangle of pixels, from the screen to the drawing surface of the xtd::drawing::graphics.
       /// @param upper_left_source The point at the upper-left corner of the source rectangle.
       /// @param upper_left_destination The point at the upper-left corner of the destination rectangle.
