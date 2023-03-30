@@ -10,12 +10,13 @@ add_sources(
   include/xtd/xtd.drawing
   include/xtd/xtd.drawing.h
   include/xtd/drawing/basic_colors.h
-  include/xtd/drawing//bitmap.h
+  include/xtd/drawing/bitmap.h
   include/xtd/drawing/black_colors.h
   include/xtd/drawing/blue_colors.h
   include/xtd/drawing/brown_colors.h
-  include/xtd/drawing//brush.h
-  include/xtd/drawing//brushes.h
+  include/xtd/drawing/brush.h
+  include/xtd/drawing/brushes.h
+  include/xtd/drawing/buffered_graphics.h
   include/xtd/drawing/color.h
   include/xtd/drawing/colors.h
   include/xtd/drawing/copy_pixel_operation.h
@@ -107,6 +108,7 @@ add_sources(
   src/xtd/drawing/brown_colors.cpp
   src/xtd/drawing/brush.cpp
   src/xtd/drawing/brushes.cpp
+  src/xtd/drawing/buffered_graphics.cpp
   src/xtd/drawing/color.cpp
   src/xtd/drawing/colors.cpp
   src/xtd/drawing/cyan_colors.cpp
