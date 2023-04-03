@@ -97,5 +97,5 @@ void background_worker::run_worker_async() {
 }
 
 void background_worker::argument_(any&& argument) {
-  data_->argument = move(argument);
+  data_->argument = std::move(argument);
 }
