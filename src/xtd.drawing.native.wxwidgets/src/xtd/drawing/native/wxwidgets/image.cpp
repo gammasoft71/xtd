@@ -11,7 +11,10 @@
 #include <xtd/convert_string.h>
 #include <xtd/io/path.h>
 #include <atomic>
+#include <wx/bitmap.h>
 #include <wx/display.h>
+#include <wx/icon.h>
+#include <wx/iconbndl.h>
 #include <wx/image.h>
 #include <wx/palette.h>
 #include <wx/stream.h>
@@ -309,6 +312,35 @@ intptr image::create(intptr image, int32 left, int32 top, int32 width, int32 hei
 void image::destroy(intptr image) {
   reinterpret_cast<wxImage*>(image)->Destroy();
   delete reinterpret_cast<wxImage*>(image);
+}
+
+intptr image::from_hicon(intptr icon) {
+  toolkit::initialize(); // Must be first
+  wxBitmap bitmap;
+  bitmap.CopyFromIcon(*reinterpret_cast<wxIcon*>(icon));
+  wxImage* result = new wxImage(bitmap.ConvertToImage());
+  return reinterpret_cast<intptr>(result);
+}
+
+intptr image::get_hbitmap(intptr image) {
+  wxBitmap* result = new wxBitmap(*reinterpret_cast<wxImage*>(image));
+  return reinterpret_cast<intptr>(result);
+}
+
+intptr image::get_hbitmap(intptr image, xtd::byte a, xtd::byte r, xtd::byte g, xtd::byte b) {
+  wxBitmap* result = new wxBitmap(*reinterpret_cast<wxImage*>(image));
+  /// @todo see how to set background color to wxBitmap.
+  return reinterpret_cast<intptr>(result);
+}
+
+intptr image::get_hicon(intptr image) {
+  toolkit::initialize(); // Must be first
+  if (image == 0) return 0;
+  wxIconBundle* result = new wxIconBundle;
+  wxIcon icon;
+  icon.CopyFromBitmap(wxBitmap(*reinterpret_cast<wxImage*>(image)));
+  result->AddIcon(icon);
+  return reinterpret_cast<intptr>(result);
 }
 
 size_t image::flags(intptr image) {

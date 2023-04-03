@@ -290,6 +290,7 @@ namespace xtd {
       image(int32 width, int32 height, int32 stride, xtd::drawing::imaging::pixel_format format, intptr scan0);
       image(const image& image, int32 width, int32 height);
       image(const image& image, const rectangle& rect);
+      static image from_hicon(intptr hicon);
       /// @endcond
       
     private:
