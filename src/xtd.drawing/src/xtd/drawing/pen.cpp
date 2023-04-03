@@ -196,7 +196,7 @@ xtd::ustring pen::to_string() const noexcept {
 }
 
 void pen::brush_(std::unique_ptr<xtd::drawing::brush>&& brush) {
-  data_->brush = move(brush);
+  data_->brush = std::move(brush);
 }
 
 void pen::color_(const xtd::drawing::color& color) {
