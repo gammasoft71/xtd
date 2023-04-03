@@ -5,6 +5,7 @@
 
 using namespace xtd;
 using namespace xtd::drawing;
+using namespace xtd::drawing::imaging;
 
 bitmap bitmap::empty;
 
@@ -36,6 +37,9 @@ bitmap::bitmap(const char* const* bits) : xtd::drawing::image(bits) {
 }
 
 bitmap::bitmap(int32 width, int32 height) : xtd::drawing::image(width, height) {
+}
+
+bitmap::bitmap(int32 width, int32 height, xtd::drawing::imaging::pixel_format format) : xtd::drawing::image(width, height, format) {
 }
 
 bitmap::bitmap(const xtd::drawing::size& size) : xtd::drawing::image(size.width(), size.height()) {
