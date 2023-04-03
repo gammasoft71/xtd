@@ -197,6 +197,10 @@ void image::color_palette(intptr image, std::vector<std::tuple<xtd::byte, xtd::b
 }
 
 intptr image::create(const ustring& filename, std::map<size_t, size_t>& frame_resolutions) {
+  return create(filename, false, frame_resolutions);
+}
+
+intptr image::create(const ustring& filename, bool use_icm, std::map<size_t, size_t>& frame_resolutions) {
   toolkit::initialize(); // Must be first
   auto extension = xtd::io::path::get_extension(filename).to_lower();
   auto bitmap_type = wxBitmapType::wxBITMAP_TYPE_ANY;
@@ -221,14 +225,20 @@ intptr image::create(const ustring& filename, std::map<size_t, size_t>& frame_re
   else if (extension == ".xbm") bitmap_type = wxBitmapType::wxBITMAP_TYPE_XBM;
   else if (extension == ".xpm") bitmap_type = wxBitmapType::wxBITMAP_TYPE_XPM;
   auto img = new wxImage(wxString(convert_string::to_wstring(filename)), bitmap_type);
+  // wxWidgets does not have a parameter or a method to set color correction when creating from a filename.
   frame_resolutions[get_frame_resolution(*img)] = img->GetImageCount(filename);
   return reinterpret_cast<intptr>(img);
 }
 
 intptr image::create(std::istream& stream, std::map<size_t, size_t>& frame_resolutions) {
+  return create(stream, false, frame_resolutions);
+}
+
+intptr image::create(std::istream& stream, bool use_icm, std::map<size_t, size_t>& frame_resolutions) {
   toolkit::initialize(); // Must be first
   StdInputStreamAdapter std_stream(stream);
   auto img = new wxImage(std_stream);
+  // wxWidgets does not have a parameter or a method to set color correction when creating from a stream.
   frame_resolutions[get_frame_resolution(*img)] = img->GetImageCount(std_stream);
   return reinterpret_cast<intptr>(img);
 }

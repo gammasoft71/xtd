@@ -70,7 +70,33 @@ image::image(const ustring& filename) : data_(std::make_shared<data>()) {
   update_properties();
 }
 
+image::image(const ustring& filename, bool use_icm) : data_(std::make_shared<data>()) {
+  map<size_t, size_t> frame_resolutions;
+  data_->handle_ = native::image::create(filename, use_icm, frame_resolutions);
+  data_->frame_dimensions.clear();
+  for (auto frame_resolution : frame_resolutions) {
+    if (frame_resolution.first == FD_PAGE) data_->frame_dimensions[imaging::frame_dimension::page().guid()] =  frame_resolution.second;
+    else if (frame_resolution.first == FD_RESOLUTION) data_->frame_dimensions[imaging::frame_dimension::resolution().guid()] =  frame_resolution.second;
+    else if (frame_resolution.first == FD_TIME) data_->frame_dimensions[imaging::frame_dimension::time().guid()] =  frame_resolution.second;
+    else throw argument_exception(csf_);
+  }
+  update_properties();
+}
+
 image::image(std::istream& stream) : data_(std::make_shared<data>()) {
+  map<size_t, size_t> frame_resolutions;
+  data_->handle_ = native::image::create(stream, frame_resolutions);
+  data_->frame_dimensions.clear();
+  for (auto frame_resolution : frame_resolutions) {
+    if (frame_resolution.first == FD_PAGE) data_->frame_dimensions[imaging::frame_dimension::page().guid()] =  frame_resolution.second;
+    else if (frame_resolution.first == FD_RESOLUTION) data_->frame_dimensions[imaging::frame_dimension::resolution().guid()] =  frame_resolution.second;
+    else if (frame_resolution.first == FD_TIME) data_->frame_dimensions[imaging::frame_dimension::time().guid()] =  frame_resolution.second;
+    else throw argument_exception(csf_);
+  }
+  update_properties();
+}
+
+image::image(std::istream& stream, bool use_icm) : data_(std::make_shared<data>()) {
   map<size_t, size_t> frame_resolutions;
   data_->handle_ = native::image::create(stream, frame_resolutions);
   data_->frame_dimensions.clear();

@@ -279,8 +279,10 @@ namespace xtd {
     protected:
       /// @cond
       explicit image(intptr hbitmap);
-      explicit image(const xtd::ustring& fileName);
+      explicit image(const xtd::ustring& filename);
+      explicit image(const xtd::ustring& filename, bool use_icm);
       explicit image(std::istream& stream);
+      explicit image(std::istream& stream, bool use_icm);
       explicit image(const char* const* bits);
       image(int32 width, int32 height);
       image(const image& image, int32 width, int32 height);

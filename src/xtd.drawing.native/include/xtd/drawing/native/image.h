@@ -311,6 +311,15 @@ namespace xtd {
         /// @remarks A multiple-resolution image is an image that contains more than one copy of an image at different resolutions. This is commonly used by MIP mapping where the displayed image size determines the resolution of the image used for drawing. GDI+ can support an arbitrary number of pages (or images, or frames), as well as an arbitrary number of resolutions. The defined dimensions are properties of the frame_dimension.
         /// @warning Internal use only
         static intptr create(const xtd::ustring& filename, std::map<size_t, size_t>& frame_resolutions);
+        /// @brief Creates an image from specified filename and get the frame_solution collection.
+        /// @param filename The filename of the image.
+        /// @param frame_resolutions an std::map<size_t, size_t> containing the frame dimention and the image count collection (see frame_dimension.h for more information).
+        /// @param use_icm true to use color correction for this Bitmap; otherwise, false.
+        /// @remarks This method returns information about multiple-frame images, which come in two styles: multiple page and multiple resolution.
+        /// @remarks A multiple-page image is an image that contains more than one image. Each page contains a single image (or frame). These pages (or images, or frames) are typically displayed in succession to produce an animated sequence, such as an animated .gif file.
+        /// @remarks A multiple-resolution image is an image that contains more than one copy of an image at different resolutions. This is commonly used by MIP mapping where the displayed image size determines the resolution of the image used for drawing. GDI+ can support an arbitrary number of pages (or images, or frames), as well as an arbitrary number of resolutions. The defined dimensions are properties of the frame_dimension.
+        /// @warning Internal use only
+        static intptr create(const xtd::ustring& filename, bool use_icm, std::map<size_t, size_t>& frame_resolutions);
         /// @brief Creates an image from specified std::istream and get the frame_solution collection.
         /// @param stream The std::istream containing the image.
         /// @param frame_resolutions an std::map<size_t, size_t> containing the frame dimention and the image count collection (see frame_dimension.h for more information).
@@ -319,6 +328,15 @@ namespace xtd {
         /// @remarks A multiple-resolution image is an image that contains more than one copy of an image at different resolutions. This is commonly used by MIP mapping where the displayed image size determines the resolution of the image used for drawing. GDI+ can support an arbitrary number of pages (or images, or frames), as well as an arbitrary number of resolutions. The defined dimensions are properties of the frame_dimension.
         /// @warning Internal use only
         static intptr create(std::istream& stream, std::map<size_t, size_t>& frame_resolutions);
+        /// @brief Creates an image from specified std::istream and get the frame_solution collection.
+        /// @param stream The std::istream containing the image.
+        /// @param use_icm true to use color correction for this Bitmap; otherwise, false.
+        /// @param frame_resolutions an std::map<size_t, size_t> containing the frame dimention and the image count collection (see frame_dimension.h for more information).
+        /// @remarks This method returns information about multiple-frame images, which come in two styles: multiple page and multiple resolution.
+        /// @remarks A multiple-page image is an image that contains more than one image. Each page contains a single image (or frame). These pages (or images, or frames) are typically displayed in succession to produce an animated sequence, such as an animated .gif file.
+        /// @remarks A multiple-resolution image is an image that contains more than one copy of an image at different resolutions. This is commonly used by MIP mapping where the displayed image size determines the resolution of the image used for drawing. GDI+ can support an arbitrary number of pages (or images, or frames), as well as an arbitrary number of resolutions. The defined dimensions are properties of the frame_dimension.
+        /// @warning Internal use only
+        static intptr create(std::istream& stream, bool use_icm, std::map<size_t, size_t>& frame_resolutions);
         /// @brief Creates an image from bits.
         /// @param bits The bits containing the image.
         /// @return A new image handle.
