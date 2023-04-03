@@ -75,11 +75,24 @@ namespace xtd {
       /// @param width The width, in pixels, of the new bitmap.
       /// @param height The height, in pixels, of the new bitmap.
       bitmap(int32 width, int32 height);
+      /// @brief Initializes a new instance of the xtd::drawing::bitmap class with the specified size and with the resolution of the specified xtd::drawing::raphics object.
+      /// @param width The width, in pixels, of the new bitmap.
+      /// @param height The height, in pixels, of the new bitmap.
+      /// @param g The Graphics object that specifies the resolution for the new Bitmap.
+      /// @remarks The new xtd::drawing::bitmap that this method creates takes its horizontal and vertical resolution from the xtd::drawing::graphics::dpi_x and xtd::drawing::graphics::dpi_y properties of g, respectively.
+      bitmap(int32 width, int32 height, const graphics& g);
       /// @brief Initializes a new instance of the xtd::drawing::bitmap class with the specified size.
       /// @param width The width, in pixels, of the new bitmap.
       /// @param height The height, in pixels, of the new bitmap.
       /// @param format The pixel format for the new xtd::drawing::bitmap class with the specified size and format.
       bitmap(int32 width, int32 height, xtd::drawing::imaging::pixel_format format);
+      /// @brief Initializes a new instance of the xtd::drawing::bitmap class with the specified size.
+      /// @param width The width, in pixels, of the new bitmap.
+      /// @param height The height, in pixels, of the new bitmap.
+      /// @param stride Integer that specifies the byte offset between the beginning of one scan line and the next. This is usually (but not necessarily) the number of bytes in the pixel format (for example, 2 for 16 bits per pixel) multiplied by the width of the bitmap. The value passed to this parameter must be a multiple of four.
+      /// @param format The pixel format for the new xtd::drawing::bitmap class with the specified size and format.
+      /// @param scan0 Pointer to an array of bytes that contains the pixel data.
+      bitmap(int32 width, int32 height, int32 stride, xtd::drawing::imaging::pixel_format format, intptr scan0);
       /// @brief Initializes a new instance of the xtd::drawing::bitmap class with the specified size.
       /// @param size the size, in pixels, of the new bitmap.
       explicit bitmap(const xtd::drawing::size& size);
