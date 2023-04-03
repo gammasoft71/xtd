@@ -14,13 +14,22 @@ bitmap::bitmap(const image& original) : xtd::drawing::image(original) {
 bitmap::bitmap(const image& original, const xtd::drawing::size& new_size) : xtd::drawing::image(original, new_size.width(), new_size.height()) {
 }
 
+bitmap::bitmap(const image& original, int32 width, int32 height) : xtd::drawing::image(original, width, height) {
+}
+
 bitmap::bitmap(const image& original, const rectangle& new_rect) : xtd::drawing::image(original, new_rect) {
 }
 
 bitmap::bitmap(const xtd::ustring& filename) : xtd::drawing::image(filename) {
 }
 
+bitmap::bitmap(const xtd::ustring& filename, bool use_icm) : xtd::drawing::image(filename, use_icm) {
+}
+
 bitmap::bitmap(std::istream& stream) : xtd::drawing::image(stream) {
+}
+
+bitmap::bitmap(std::istream& stream, bool use_icm) : xtd::drawing::image(stream, use_icm) {
 }
 
 bitmap::bitmap(const char* const* bits) : xtd::drawing::image(bits) {

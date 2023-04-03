@@ -40,6 +40,11 @@ namespace xtd {
       /// @param original The xtd::drawing::image from which to create the new bitmap.
       /// @param new_size The xtd::drawing::size structure that represent the size of the new bitmap.
       bitmap(const image& original, const xtd::drawing::size& new_size);
+      /// @brief Initializes a new instance of the bitmap class from the specified existing image, scaled to the specified size.
+      /// @param original The xtd::drawing::image from which to create the new bitmap.
+      /// @param width The width, in pixels, of the new xtd::drawing::bitmap.
+      /// @param height The height, in pixels, of the new xtd::drawing::bitmap.
+      bitmap(const image& original, int32 width, int32 height);
       /// @brief Initializes a new instance of the bitmap class from the specified existing image, scaled to the specified rectangle.
       /// @param original The xtd::drawing::image from which to create the new bitmap.
       /// @param new_rect The xtd::drawing::rect structure that represent the location and size of the new bitmap.
@@ -48,9 +53,21 @@ namespace xtd {
       /// @param filename The bitmap file name and path.
       /// @remarks The file name and path can be relative to the application or an absolute path. Use this constructor to open images with the following file formats: BMP, GIF, EXIF, JPG, PNG and TIFF. For more information about supported formats, see Types of Bitmaps. The file remains locked until the Bitmap is disposed.
       explicit bitmap(const xtd::ustring& filename);
+      /// @brief Initializes a new instance of the bitmap class from the specified file.
+      /// @param filename The bitmap file name and path.
+      /// @param use_icm true to use color correction for this Bitmap; otherwise, false.
+      /// @remarks The file name and path can be relative to the application or an absolute path. Use this constructor to open images with the following file formats: BMP, GIF, EXIF, JPG, PNG and TIFF. For more information about supported formats, see Types of Bitmaps. The file remains locked until the Bitmap is disposed.
+      explicit bitmap(const xtd::ustring& filename, bool use_icm);
       /// @brief Initializes a new instance of the bitmap class from the specified data stream.
       /// @param stream The data stream used to load the image.
-      explicit bitmap(std::istream& stream);
+      /// @remarks You must keep the stream open for the lifetime of the Bitmap.
+        explicit bitmap(std::istream& stream);
+      /// @brief Initializes a new instance of the bitmap class from the specified data stream.
+      /// @param stream The data stream used to load the image.
+      /// @param use_icm true to use color correction for this Bitmap; otherwise, false.
+      /// @remarks You must keep the stream open for the lifetime of the Bitmap.
+      /// @remarks Due to a limitation of the GDI+ decoder, an xtd::argument_exception is thrown if you construct a bitmap from a .png image file with a single dimension greater than 65,535 pixels.
+      explicit bitmap(std::istream& stream, bool use_icm);
       /// @brief Initializes a new instance of the bitmap class from the specified data xpm.
       /// @param bits The data xpm used to load the image.
       explicit bitmap(const char* const* bits);
