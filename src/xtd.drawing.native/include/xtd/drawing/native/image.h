@@ -306,6 +306,7 @@ namespace xtd {
         /// @brief Creates an image from specified filename and get the frame_solution collection.
         /// @param filename The filename of the image.
         /// @param frame_resolutions an std::map<size_t, size_t> containing the frame dimention and the image count collection (see frame_dimension.h for more information).
+        /// @return A new image handle.
         /// @remarks This method returns information about multiple-frame images, which come in two styles: multiple page and multiple resolution.
         /// @remarks A multiple-page image is an image that contains more than one image. Each page contains a single image (or frame). These pages (or images, or frames) are typically displayed in succession to produce an animated sequence, such as an animated .gif file.
         /// @remarks A multiple-resolution image is an image that contains more than one copy of an image at different resolutions. This is commonly used by MIP mapping where the displayed image size determines the resolution of the image used for drawing. GDI+ can support an arbitrary number of pages (or images, or frames), as well as an arbitrary number of resolutions. The defined dimensions are properties of the frame_dimension.
@@ -315,6 +316,7 @@ namespace xtd {
         /// @param filename The filename of the image.
         /// @param frame_resolutions an std::map<size_t, size_t> containing the frame dimention and the image count collection (see frame_dimension.h for more information).
         /// @param use_icm true to use color correction for this Bitmap; otherwise, false.
+        /// @return A new image handle.
         /// @remarks This method returns information about multiple-frame images, which come in two styles: multiple page and multiple resolution.
         /// @remarks A multiple-page image is an image that contains more than one image. Each page contains a single image (or frame). These pages (or images, or frames) are typically displayed in succession to produce an animated sequence, such as an animated .gif file.
         /// @remarks A multiple-resolution image is an image that contains more than one copy of an image at different resolutions. This is commonly used by MIP mapping where the displayed image size determines the resolution of the image used for drawing. GDI+ can support an arbitrary number of pages (or images, or frames), as well as an arbitrary number of resolutions. The defined dimensions are properties of the frame_dimension.
@@ -323,6 +325,7 @@ namespace xtd {
         /// @brief Creates an image from specified std::istream and get the frame_solution collection.
         /// @param stream The std::istream containing the image.
         /// @param frame_resolutions an std::map<size_t, size_t> containing the frame dimention and the image count collection (see frame_dimension.h for more information).
+        /// @return A new image handle.
         /// @remarks This method returns information about multiple-frame images, which come in two styles: multiple page and multiple resolution.
         /// @remarks A multiple-page image is an image that contains more than one image. Each page contains a single image (or frame). These pages (or images, or frames) are typically displayed in succession to produce an animated sequence, such as an animated .gif file.
         /// @remarks A multiple-resolution image is an image that contains more than one copy of an image at different resolutions. This is commonly used by MIP mapping where the displayed image size determines the resolution of the image used for drawing. GDI+ can support an arbitrary number of pages (or images, or frames), as well as an arbitrary number of resolutions. The defined dimensions are properties of the frame_dimension.
@@ -332,6 +335,7 @@ namespace xtd {
         /// @param stream The std::istream containing the image.
         /// @param use_icm true to use color correction for this Bitmap; otherwise, false.
         /// @param frame_resolutions an std::map<size_t, size_t> containing the frame dimention and the image count collection (see frame_dimension.h for more information).
+        /// @return A new image handle.
         /// @remarks This method returns information about multiple-frame images, which come in two styles: multiple page and multiple resolution.
         /// @remarks A multiple-page image is an image that contains more than one image. Each page contains a single image (or frame). These pages (or images, or frames) are typically displayed in succession to produce an animated sequence, such as an animated .gif file.
         /// @remarks A multiple-resolution image is an image that contains more than one copy of an image at different resolutions. This is commonly used by MIP mapping where the displayed image size determines the resolution of the image used for drawing. GDI+ can support an arbitrary number of pages (or images, or frames), as well as an arbitrary number of resolutions. The defined dimensions are properties of the frame_dimension.
@@ -346,17 +350,20 @@ namespace xtd {
         /// @brief Creates an empty image from size.
         /// @param width The width for the empty image.
         /// @param height The height for the empty image.
+        /// @return A new image handle.
         /// @warning Internal use only
         static intptr create(int32 width, int32 height);
         /// @brief Creates an empty image from size, and horzontal and vertical resolution.
         /// @param width The width for the new image.
         /// @param height The height for the new image.
+        /// @return A new image handle.
         /// @warning Internal use only
         static intptr create(int32 width, int32 height, float horizontal_resolution, float vertical_resolution);
         /// @brief Creates an empty image from size, and pixel format.
         /// @param width The width for the empty image.
         /// @param height The height for the empty image.
         /// @param format The pixel format for the new image.
+        /// @return A new image handle.
         /// @warning Internal use only
         static intptr create(int32 width, int32 height, int32 format);
         /// @brief Creates an empty image from size, pixel format and pixel datas.
@@ -365,12 +372,14 @@ namespace xtd {
         /// @param stride Integer that specifies the byte offset between the beginning of one scan line and the next. This is usually (but not necessarily) the number of bytes in the pixel format (for example, 2 for 16 bits per pixel) multiplied by the width of the bitmap. The value passed to this parameter must be a multiple of four.
         /// @param format The pixel format for the new image.
         /// @param scan0 Pointer to an array of bytes that contains the pixel data.
+        /// @return A new image handle.
         /// @warning Internal use only
         static intptr create(int32 width, int32 height, int32 stride, int32 format, intptr scan0);
         /// @brief Creates and rescales an image from specified image, and size.
         /// @param image The image source handle.
         /// @param width The width for the new image.
         /// @param height The height for the new image.
+        /// @return A new image handle.
         /// @warning Internal use only
         static intptr create(intptr image, int32 width, int32 height);
         /// @brief Creates and crops an image from specified image, position and size.
@@ -379,6 +388,7 @@ namespace xtd {
         /// @param top The top of for new image.
         /// @param width The width for the new image.
         /// @param height The height for the new image.
+        /// @return A new image handle.
         /// @warning Internal use only
         static intptr create(intptr image, int32 left, int32 top, int32 width, int32 height);
         
@@ -393,6 +403,34 @@ namespace xtd {
         /// @warning Internal use only
         static size_t flags(intptr image);
         
+        /// @brief Creates a bitmap from a Windows handle to an icon.
+        /// @param hicon A handle to an icon.
+        /// @return A new bitmap handle.
+        /// @warning Internal use only
+        static intptr from_hicon(intptr icon);
+
+        /// @brief Creates a GDI bitmap object from this image.
+        /// @param image A handle to an image.
+        /// @return A new bitmap handle.
+        /// @warning Internal use only
+        static intptr get_hbitmap(intptr image);
+
+        /// @brief Creates a GDI bitmap object from this image.
+        /// @param image A handle to an image.
+        /// @param a The alpha componant of the background color.
+        /// @param r The red componant of the background color.
+        /// @param g The green componant of the background color.
+        /// @param b The blue componant of the background color.
+        /// @return A new bitmap handle.
+        /// @warning Internal use only
+        static intptr get_hbitmap(intptr image, xtd::byte a, xtd::byte r, xtd::byte g, xtd::byte b);
+        
+        /// @brief Returns the handle to an icon.
+        /// @param image A handle to an image.
+        /// @return A new icon handle.
+        /// @warning Internal use only
+        static intptr get_hicon(intptr image);
+
         /// @brief Gets the horizontal resolution, in pixels per inch, of the image.
         /// @param image The image handle.
         /// @return The horizontal resolution, in pixels per inch, of the image.

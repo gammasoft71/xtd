@@ -59,6 +59,22 @@ bitmap bitmap::clone(const rectangle_f& rect) const {
   return bitmap(*this, xtd::drawing::rectangle::ceiling(rect));
 }
 
+bitmap bitmap::from_hicon(intptr hicon) {
+  return bitmap(image::from_hicon(hicon));
+}
+
+intptr bitmap::get_hbitmap() const {
+  return native::image::get_hbitmap(handle());
+}
+
+intptr bitmap::get_hbitmap(const color& background) const {
+  return native::image::get_hbitmap(handle(), background.a(), background.r(), background.g(), background.b());
+}
+
+intptr bitmap::get_hicon() const {
+  return native::image::get_hicon(handle());
+}
+
 drawing::color bitmap::get_pixel(int32 x, int32 y) const {
   xtd::byte a = 0, r = 0, g = 0, b = 0;
   native::image::get_pixel(handle(), x, y, a, r, g, b);

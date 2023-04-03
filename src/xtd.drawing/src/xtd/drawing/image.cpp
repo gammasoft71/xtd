@@ -305,6 +305,13 @@ void image::save(std::ostream& stream, const imaging::image_format& format) cons
   native::image::save(data_->handle_, stream, to_raw_format(format));
 }
 
+image image::from_hicon(intptr hicon) {
+  image result;
+  result.data_->handle_ = native::image::from_hicon(hicon);
+  result.update_properties();
+  return result;
+}
+
 void image::update_properties() {
   data_->flags_ = static_cast<imaging::image_flags>(native::image::flags(data_->handle_));
   

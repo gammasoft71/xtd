@@ -18,6 +18,7 @@ namespace xtd {
   namespace drawing {
     /// @cond
     class icon;
+    class image;
     /// @endcond
     
     /// @brief The xtd::drawing::native namespace contains internal native API definitions to access underlying toolkits used by xtd.drawing library.
@@ -32,6 +33,7 @@ namespace xtd {
       /// @warning Internal use only
       class drawing_native_export_ icon final static_ {
         friend xtd::drawing::icon;
+        friend xtd::drawing::image;
       protected:
         /// @name Protected methods
         

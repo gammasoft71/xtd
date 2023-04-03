@@ -113,6 +113,27 @@ namespace xtd {
       bitmap& operator =(const bitmap& bitmap) = default;
       /// @endcond
       
+      /// @brief Creates a xtd::drawing::bitmap from a Windows handle to an icon.
+      /// @param hicon A handle to an icon.
+      /// @return The xtd::drawing::bitmap that this method creates.
+      static bitmap from_hicon(intptr icon);
+
+      /// @brief Creates a GDI bitmap object from this xtd::drawing::bitmap.
+      /// @return A handle to the GDI bitmap object that this method creates.
+      /// @remarks You are responsible for calling the GDI DeleteObject method to free the memory used by the GDI bitmap object. For more information about GDI bitmaps, see <a href=https://go.microsoft.com/fwlink/?LinkId=205685>Bitmaps</a> in the Windows GDI documentation.
+      intptr get_hbitmap() const;
+
+      /// @brief Creates a GDI bitmap object from this xtd::drawing::bitmap.
+      /// @param background A xtd::drawing::color structure that specifies the background color. This parameter is ignored if the bitmap is totally opaque.
+      /// @return A handle to the GDI bitmap object that this method creates.
+      /// @remarks You are responsible for calling the GDI DeleteObject method to free the memory used by the GDI bitmap object. For more information about GDI bitmaps, see <a href=https://go.microsoft.com/fwlink/?LinkId=205685>Bitmaps</a> in the Windows GDI documentation.
+      intptr get_hbitmap(const color& background) const;
+
+      /// @brief Returns the handle to an icon.
+      /// @return A Windows handle to an icon with the same image as the xtd::drawing::bitmap.
+      /// @remarks Initially, an icon created from the handle will have the same size as the original bitmap.
+      intptr get_hicon() const;
+
       /// @brief Gets the color of the specified pixel in this bitmap.
       /// @param x The x-coordinate of the pixel to retrieve.
       /// @param y The y-coordinate of the pixel to retrieve.
