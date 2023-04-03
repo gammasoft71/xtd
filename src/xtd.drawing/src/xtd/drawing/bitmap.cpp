@@ -39,7 +39,13 @@ bitmap::bitmap(const char* const* bits) : xtd::drawing::image(bits) {
 bitmap::bitmap(int32 width, int32 height) : xtd::drawing::image(width, height) {
 }
 
+bitmap::bitmap(int32 width, int32 height, const graphics& g) : xtd::drawing::image(width, height, g.dpi_x(), g.dpi_y()) {
+}
+
 bitmap::bitmap(int32 width, int32 height, xtd::drawing::imaging::pixel_format format) : xtd::drawing::image(width, height, format) {
+}
+
+bitmap::bitmap(int32 width, int32 height, int32 stride, xtd::drawing::imaging::pixel_format format, intptr scan0) : xtd::drawing::image(width, height, stride, format, scan0) {
 }
 
 bitmap::bitmap(const xtd::drawing::size& size) : xtd::drawing::image(size.width(), size.height()) {

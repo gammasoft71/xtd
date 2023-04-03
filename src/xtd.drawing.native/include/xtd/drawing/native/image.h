@@ -348,13 +348,26 @@ namespace xtd {
         /// @param height The height for the empty image.
         /// @warning Internal use only
         static intptr create(int32 width, int32 height);
-        /// @brief Creates an empty image from size.
+        /// @brief Creates an empty image from size, and horzontal and vertical resolution.
+        /// @param width The width for the new image.
+        /// @param height The height for the new image.
+        /// @warning Internal use only
+        static intptr create(int32 width, int32 height, float horizontal_resolution, float vertical_resolution);
+        /// @brief Creates an empty image from size, and pixel format.
         /// @param width The width for the empty image.
         /// @param height The height for the empty image.
         /// @param format The pixel format for the new image.
         /// @warning Internal use only
         static intptr create(int32 width, int32 height, int32 format);
-        /// @brief Creates and rescales an image from specified image and size.
+        /// @brief Creates an empty image from size, pixel format and pixel datas.
+        /// @param width The width for the empty image.
+        /// @param height The height for the empty image.
+        /// @param stride Integer that specifies the byte offset between the beginning of one scan line and the next. This is usually (but not necessarily) the number of bytes in the pixel format (for example, 2 for 16 bits per pixel) multiplied by the width of the bitmap. The value passed to this parameter must be a multiple of four.
+        /// @param format The pixel format for the new image.
+        /// @param scan0 Pointer to an array of bytes that contains the pixel data.
+        /// @warning Internal use only
+        static intptr create(int32 width, int32 height, int32 stride, int32 format, intptr scan0);
+        /// @brief Creates and rescales an image from specified image, and size.
         /// @param image The image source handle.
         /// @param width The width for the new image.
         /// @param height The height for the new image.

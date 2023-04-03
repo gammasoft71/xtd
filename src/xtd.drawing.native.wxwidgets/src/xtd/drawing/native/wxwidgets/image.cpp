@@ -258,10 +258,32 @@ intptr image::create(int32 width, int32 height) {
   return reinterpret_cast<intptr>(result);
 }
 
+intptr image::create(int32 width, int32 height, float horizontal_resolution, float vertical_resolution) {
+  toolkit::initialize(); // Must be first
+  wxImage* result = new wxImage(width, height);
+  /// @todo see how to set horizontal and vertical resolution with wxWidgets.
+  result->InitAlpha();
+  for (int32 y = 0; y < height; y++)
+    for (int32 x = 0; x < width; x++)
+      result->SetAlpha(x, y, 0);
+  return reinterpret_cast<intptr>(result);
+}
+
 intptr image::create(int32 width, int32 height, int32 format) {
   toolkit::initialize(); // Must be first
   wxImage* result = new wxImage(width, height);
   /// @todo see how to set pixel format with wxWidgets.
+  result->InitAlpha();
+  for (int32 y = 0; y < height; y++)
+    for (int32 x = 0; x < width; x++)
+      result->SetAlpha(x, y, 0);
+  return reinterpret_cast<intptr>(result);
+}
+
+intptr image::create(int32 width, int32 height, int32 stride, int32 format, intptr scan0) {
+  toolkit::initialize(); // Must be first
+  wxImage* result = new wxImage(width, height);
+  /// @todo see how to set pixel format and data with wxWidgets.
   result->InitAlpha();
   for (int32 y = 0; y < height; y++)
     for (int32 x = 0; x < width; x++)
