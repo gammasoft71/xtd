@@ -285,6 +285,7 @@ namespace xtd {
       explicit image(std::istream& stream, bool use_icm);
       explicit image(const char* const* bits);
       image(int32 width, int32 height);
+      image(int32 width, int32 height, xtd::drawing::imaging::pixel_format format);
       image(const image& image, int32 width, int32 height);
       image(const image& image, const rectangle& rect);
       /// @endcond

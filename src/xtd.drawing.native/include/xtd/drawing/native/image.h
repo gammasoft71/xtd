@@ -348,6 +348,12 @@ namespace xtd {
         /// @param height The height for the empty image.
         /// @warning Internal use only
         static intptr create(int32 width, int32 height);
+        /// @brief Creates an empty image from size.
+        /// @param width The width for the empty image.
+        /// @param height The height for the empty image.
+        /// @param format The pixel format for the new image.
+        /// @warning Internal use only
+        static intptr create(int32 width, int32 height, int32 format);
         /// @brief Creates and rescales an image from specified image and size.
         /// @param image The image source handle.
         /// @param width The width for the new image.

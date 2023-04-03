@@ -120,6 +120,11 @@ image::image(int32 width, int32 height) : data_(std::make_shared<data>()) {
   update_properties();
 }
 
+image::image(int32 width, int32 height, xtd::drawing::imaging::pixel_format format) {
+  data_->handle_ = native::image::create(width, height);
+  update_properties();
+}
+
 image::image(const image& image, int32 width, int32 height) : data_(std::make_shared<data>()) {
   data_->handle_ = native::image::create(image.handle(), width, height);
   update_properties();

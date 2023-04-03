@@ -51,31 +51,36 @@ namespace xtd {
       bitmap(const image& original, const rectangle& new_rect);
       /// @brief Initializes a new instance of the bitmap class from the specified file.
       /// @param filename The bitmap file name and path.
-      /// @remarks The file name and path can be relative to the application or an absolute path. Use this constructor to open images with the following file formats: BMP, GIF, EXIF, JPG, PNG and TIFF. For more information about supported formats, see Types of Bitmaps. The file remains locked until the Bitmap is disposed.
+      /// @remarks The file name and path can be relative to the application or an absolute path. Use this constructor to open images with the following file formats: BMP, GIF, EXIF, JPG, PNG and TIFF. For more information about supported formats, see Types of Bitmaps. The file remains locked until the xtd::drawing::bitmap is disposed.
       explicit bitmap(const xtd::ustring& filename);
       /// @brief Initializes a new instance of the bitmap class from the specified file.
       /// @param filename The bitmap file name and path.
-      /// @param use_icm true to use color correction for this Bitmap; otherwise, false.
-      /// @remarks The file name and path can be relative to the application or an absolute path. Use this constructor to open images with the following file formats: BMP, GIF, EXIF, JPG, PNG and TIFF. For more information about supported formats, see Types of Bitmaps. The file remains locked until the Bitmap is disposed.
+      /// @param use_icm true to use color correction for this xtd::drawing::bitmap; otherwise, false.
+      /// @remarks The file name and path can be relative to the application or an absolute path. Use this constructor to open images with the following file formats: BMP, GIF, EXIF, JPG, PNG and TIFF. For more information about supported formats, see Types of Bitmaps. The file remains locked until the xtd::drawing::bitmap is disposed.
       explicit bitmap(const xtd::ustring& filename, bool use_icm);
       /// @brief Initializes a new instance of the bitmap class from the specified data stream.
       /// @param stream The data stream used to load the image.
-      /// @remarks You must keep the stream open for the lifetime of the Bitmap.
+      /// @remarks You must keep the stream open for the lifetime of the xtd::drawing::bitmap.
         explicit bitmap(std::istream& stream);
       /// @brief Initializes a new instance of the bitmap class from the specified data stream.
       /// @param stream The data stream used to load the image.
-      /// @param use_icm true to use color correction for this Bitmap; otherwise, false.
-      /// @remarks You must keep the stream open for the lifetime of the Bitmap.
+      /// @param use_icm true to use color correction for this xtd::drawing::bitmap; otherwise, false.
+      /// @remarks You must keep the stream open for the lifetime of the xtd::drawing::bitmap.
       /// @remarks Due to a limitation of the GDI+ decoder, an xtd::argument_exception is thrown if you construct a bitmap from a .png image file with a single dimension greater than 65,535 pixels.
       explicit bitmap(std::istream& stream, bool use_icm);
       /// @brief Initializes a new instance of the bitmap class from the specified data xpm.
       /// @param bits The data xpm used to load the image.
       explicit bitmap(const char* const* bits);
-      /// @brief Initializes a new instance of the Bitmap class with the specified size.
+      /// @brief Initializes a new instance of the xtd::drawing::bitmap class with the specified size.
       /// @param width The width, in pixels, of the new bitmap.
       /// @param height The height, in pixels, of the new bitmap.
       bitmap(int32 width, int32 height);
-      /// @brief Initializes a new instance of the Bitmap class with the specified size.
+      /// @brief Initializes a new instance of the xtd::drawing::bitmap class with the specified size.
+      /// @param width The width, in pixels, of the new bitmap.
+      /// @param height The height, in pixels, of the new bitmap.
+      /// @param format The pixel format for the new xtd::drawing::bitmap class with the specified size and format.
+      bitmap(int32 width, int32 height, xtd::drawing::imaging::pixel_format format);
+      /// @brief Initializes a new instance of the xtd::drawing::bitmap class with the specified size.
       /// @param size the size, in pixels, of the new bitmap.
       explicit bitmap(const xtd::drawing::size& size);
       /// @}
@@ -83,10 +88,10 @@ namespace xtd {
       /// @name Methods
       
       /// @{
-      /// @brief Creates a copy of the section of this Bitmap defined with a specified rectangle.
+      /// @brief Creates a copy of the section of this xtd::drawing::bitmap defined with a specified rectangle.
       /// @param rect Defines the portion of this bitmap to copy.
       bitmap clone(const rectangle& rect) const;
-      /// @brief Creates a copy of the section of this Bitmap defined with a specified rectangle.
+      /// @brief Creates a copy of the section of this xtd::drawing::bitmap defined with a specified rectangle.
       /// @param rect Defines the portion of this bitmap to copy.
       bitmap clone(const rectangle_f& rect) const;
       
