@@ -312,6 +312,10 @@ image image::from_hicon(intptr hicon) {
   return result;
 }
 
+void image::set_pixel_format(imaging::pixel_format value) {
+  data_->pixel_format_ = value;
+}
+
 void image::update_properties() {
   data_->flags_ = static_cast<imaging::image_flags>(native::image::flags(data_->handle_));
   

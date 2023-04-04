@@ -162,11 +162,31 @@ namespace xtd {
       /// @remarks When calling this method, you should use a member of the xtd::drawing::imaging::pixel_format enumeration that contains a specific bits-per-pixel (BPP) value. Using xtd::drawing::imaging::pixel_format values such as xtd::drawing::imaging::pixel_format::indexed and xtd::drawing::imaging::pixel_format::gdi will throw an xtd::argument_exception. Also, passing the incorrect pixel format for a bitmap will throw an xtd::argument_exception.
       xtd::drawing::imaging::bitmap_data lock_bits(const rectangle& rect, xtd::drawing::imaging::image_lock_mode flags, xtd::drawing::imaging::pixel_format format, const xtd::drawing::imaging::bitmap_data& data);
 
-      /// @brief Sets the color of the specified pixel in this bitmap.
+      /// @brief Makes the default transparent color transparent for this xtd::drawing::bitmap.
+      /// @remarks The system palette defines one color as the default transparent, or alpha, color. This method makes the default transparent color transparent for this xtd::drawing::bitmap. If no transparent color is specified by the system, xtd::drawing::color::light_gray is the transparent color.
+      /// @remarks When you call xtd::drawing::bitmap::make_transparent, the bitmap will be converted to the xtd::drawing::imaging::pixel_format::format_32bpp_argb format, as this format supports an alpha channel.
+      void make_transparent();
+      /// @brief Makes the specified color transparent for this xtd::drawing::bitmap.
+      /// @param transprent_color The xtd::drawing::color structure that represents the color to make transparent.
+      /// @remarks When you call xtd::drawing::bitmap::make_transparent, the bitmap will be converted to the xtd::drawing::imaging::pixel_format::format_32bpp_argb format, as this format supports an alpha channel.
+      void make_transparent(const color& transparent_color);
+      
+      /// @brief Sets the color of the specified pixel in this xtd::drawing::bitmap.
       /// @param x The x-coordinate of the pixel to retrieve.
       /// @param y The y-coordinate of the pixel to retrieve.
       /// @param color A xtd::drawing::color structure that represents the color of the specified pixel.
       void set_pixel(int32 x, int32 y, const drawing::color& color);
+      
+      /// @brief Sets the resolution for this xtd::drawing::bitmap.
+      /// @param x_dpi The horizontal resolution, in dots per inch, of the xtd::drawing::bitmap.
+      /// @param y_dpi The vertical resolution, in dots per inch, of the xtd::drawing::bitmap.
+      /// @remarks Use this method to set the desired resolution on a newly created bitmap. Changing the resolution of the image does not change its physical size.
+      void set_resolution(int32 x_dpi, int32 y_dpi);
+
+      /// @brief Unlocks this xtd::drawing::bitmap from system memory.
+      /// @param data A xtd::drawing::imaging::bitmap_data that specifies information about the lock operation.
+      /// @remarks The xtd::drawing::imaging::bitmap_data specifies the attributes of the xtd::drawing::bitmap, such as size, pixel format, the starting address of the pixel data in memory, and length of each scan line (stride).
+      void unlock_bits(const xtd::drawing::imaging::bitmap_data& data);
       /// @}
       
     private:
