@@ -16,6 +16,7 @@
 #include "drawing/drawing2d/pen_alignment.h"
 #include "drawing/drawing2d/pen_type.h"
 #include "drawing/drawing2d/radial_gradient_brush.h"
+#include "drawing/imaging/bitmap_data.h"
 #include "drawing/imaging/color_palette.h"
 #include "drawing/imaging/frame_dimension.h"
 #include "drawing/imaging/image_flags.h"
