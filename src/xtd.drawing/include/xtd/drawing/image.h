@@ -291,6 +291,7 @@ namespace xtd {
       image(const image& image, int32 width, int32 height);
       image(const image& image, const rectangle& rect);
       static image from_hicon(intptr hicon);
+      void set_pixel_format(imaging::pixel_format value);
       /// @endcond
       
     private:

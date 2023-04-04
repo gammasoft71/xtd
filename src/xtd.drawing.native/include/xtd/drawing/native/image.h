@@ -431,14 +431,48 @@ namespace xtd {
         /// @warning Internal use only
         static intptr get_hicon(intptr image);
 
+        /// @brief Gets the color of the specified pixel in the image.
+        /// @param image The image handle.
+        /// @param x The x-coordinate of the pixel to retrieve.
+        /// @param y The y-coordinate of the pixel to retrieve.
+        /// @param a The alpha component of the color of the specified pixel.
+        /// @param r The red component of the color of the specified pixel.
+        /// @param g The green component of the color of the specified pixel.
+        /// @param b The blue component of the color of the specified pixel.
+        /// @warning Internal use only
+        static void get_pixel(intptr image, int32 x, int32 y, xtd::byte& a, xtd::byte& r, xtd::byte& g, xtd::byte& b);
+        
         /// @brief Gets the horizontal resolution, in pixels per inch, of the image.
         /// @param image The image handle.
         /// @return The horizontal resolution, in pixels per inch, of the image.
         /// @warning Internal use only
         static float horizontal_resolution(intptr image);
         
-        static void lock_bits(intptr image, int32& height, int32& pixel_format, int32& reserved, intptr& scan0, int32& stride, int32& width);
+        /// @brief Locks a xtd::drawing::bitmap into system memory.
+        /// @param image The image handle.
+        /// @param top An int32 that specifies the top of the bitmap to lock.
+        /// @param left An int32 that specifies the left of the bitmap to lock.
+        /// @param width An int32 that specifies the width of the bitmap to lock.
+        /// @param height An int32 that specifies the height of the bitmap to lock.
+        /// @param flags An image lock mode value that specifies the access level (read/write) for the bitmap.
+        /// @param format A pixel format value that specifies the data format of this bitmap.
+        /// @param image_data_height The pixel height of the bitmap object. Also sometimes referred to as the number of scan lines.
+        /// @param image_data_pixel_format A pixel format that specifies the format of the pixel information in the associated bitmap.
+        /// @param image_data_reserved Reserved. Do not use.
+        /// @param image_data_scan0 The address of the first pixel data in the bitmap.
+        /// @param image_data_stride The stride width (also called scan width), in bytes, of the bitmap.
+        /// @param image_data_width The pixel width of the bitmap. This can also be thought of as the number of pixels in one scan line.
+        /// @return A xtd::drawing::imaging::bitmap_data that contains information about this lock operation.
+        static void lock_bits(intptr image, int32 left, int32 top, int32 width, int32 height, int32 flags, int32 format, int32& image_data_height, int32& image_data_pixel_format, int32& image_data_reserved, intptr& image_data_scan0, int32& image_data_stride, int32& image_data_width);
         
+        /// @brief Makes the specified color transparent for this bitmap.
+        /// @param image The image handle.
+        /// @param transprent_color_a The byte that represents the alpha component of the color to make transparent.
+        /// @param transprent_color_r The byte that represents the red component of the color to make transparent.
+        /// @param transprent_color_g The byte that represents the green component of the color to make transparent.
+        /// @param transprent_color_b The byte that represents the blue component of the color to make transparent.
+        static void make_transparent(intptr image, xtd::byte transparent_color_a, xtd::byte transparent_color_r, xtd::byte transparent_color_g, xtd::byte transparent_color_b);
+
         /// @brief Gets the width and height of this image.
         /// @param image The image handle.
         /// @param width A int32 that represents the width of the image.
@@ -483,17 +517,6 @@ namespace xtd {
         /// @warning Internal use only
         static float vertical_resolution(intptr image);
         
-        /// @brief Gets the color of the specified pixel in the image.
-        /// @param image The image handle.
-        /// @param x The x-coordinate of the pixel to retrieve.
-        /// @param y The y-coordinate of the pixel to retrieve.
-        /// @param a The alpha component of the color of the specified pixel.
-        /// @param r The red component of the color of the specified pixel.
-        /// @param g The green component of the color of the specified pixel.
-        /// @param b The blue component of the color of the specified pixel.
-        /// @warning Internal use only
-        static void get_pixel(intptr image, int32 x, int32 y, xtd::byte& a, xtd::byte& r, xtd::byte& g, xtd::byte& b);
-        
         /// @brief Rotates, flips, or rotates and flips the image.
         /// @param image The image handle.
         /// @param rotate_flip_type A value that specifies the type of rotation and flip to apply to the image (see rotate_flip_types.h for more information).
@@ -511,28 +534,44 @@ namespace xtd {
         /// @warning Internal use only
         static void set_pixel(intptr image, int32 x, int32 y, xtd::byte a, xtd::byte r, xtd::byte g, xtd::byte b);
         
+        /// @brief Sets the resolution for this bitmap.
+        /// @param image The image handle.
+        /// @param x_dpi The horizontal resolution, in dots per inch, of the xtd::drawing::bitmap.
+        /// @param y_dpi The vertical resolution, in dots per inch, of the xtd::drawing::bitmap.
+        static void set_resolution(intptr image, int32 x_dpi, int32 y_dpi);
+        
         /// @brief Saves image to the specified output filename.
-        /// @param image The icon handle .
+        /// @param image The image handle.
         /// @param filename The file to save to.
         /// @warning Internal use only
         static void save(intptr image, const xtd::ustring& filename);
         /// @brief Saves image to the specified output filename and raw format.
-        /// @param image The icon handle .
+        /// @param image The image handle.
         /// @param filename The file to save to.
         /// @param raw_format The image format that represents the file format of this image (see image_formats.h for more information).
         /// @warning Internal use only
         static void save(intptr image, const xtd::ustring& filename, size_t raw_format);
         /// @brief Saves image to the specified stream and raw format.
-        /// @param image The icon handle .
+        /// @param image The image handle.
         /// @param stream The stream to save to.
         /// @param raw_format The image format that represents the file format of this image (see image_formats.h for more information).
         /// @warning Internal use only
         static void save(intptr image, std::ostream& stream, size_t raw_format);
-        
+
         /// @brief Get the screen dpi.
         /// @return The screen dpi.
         /// @warning Internal use only
         static float screen_dpi();
+        
+        /// @brief Unlocks this Bitmap from system memory.
+        /// @param image The image handle.
+        /// @param image_data_height The pixel height of the bitmap object. Also sometimes referred to as the number of scan lines.
+        /// @param image_data_pixel_format A pixel format that specifies the format of the pixel information in the associated bitmap.
+        /// @param image_data_reserved Reserved. Do not use.
+        /// @param image_data_scan0 The address of the first pixel data in the bitmap.
+        /// @param image_data_stride The stride width (also called scan width), in bytes, of the bitmap.
+        /// @param image_data_width The pixel width of the bitmap. This can also be thought of as the number of pixels in one scan line.
+        static void unlock_bits(intptr image, int32& image_data_height, int32& image_data_pixel_format, int32& image_data_reserved, intptr& image_data_scan0, int32& image_data_stride, int32& image_data_width);
         /// @}
       };
     }

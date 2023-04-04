@@ -8,6 +8,7 @@
 #include <xtd/drawing/native/rotate_flip_types.h>
 #include <xtd/drawing/native/toolkit.h>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
+#include <xtd/argument_exception.h>
 #include <xtd/convert_string.h>
 #include <xtd/io/path.h>
 #include <atomic>
@@ -69,6 +70,17 @@ namespace {
     std::ostream& stream_;
   };
   
+  /*
+  size_t frame_count(std::istream& stream) {
+    StdInputStreamAdapter std_stream(stream);
+    return wxImage::GetImageCount(std_stream);
+  }
+  
+  size_t frame_count(const xtd::ustring& filename) {
+    return wxImage::GetImageCount(wxString(convert_string::to_wstring(filename)));
+  }
+   */
+
   wxBitmapType to_bitmap_type(size_t raw_format) {
     switch (raw_format) {
       case IFM_BMP: return wxBitmapType::wxBITMAP_TYPE_BMP;
@@ -314,6 +326,11 @@ void image::destroy(intptr image) {
   delete reinterpret_cast<wxImage*>(image);
 }
 
+size_t image::flags(intptr image) {
+  /// @todo see how to get flags dimension with wxWidgets.
+  return IFL_NONE;
+}
+
 intptr image::from_hicon(intptr icon) {
   toolkit::initialize(); // Must be first
   wxBitmap bitmap;
@@ -343,18 +360,14 @@ intptr image::get_hicon(intptr image) {
   return reinterpret_cast<intptr>(result);
 }
 
-size_t image::flags(intptr image) {
-  /// @todo see how to get flags dimension with wxWidgets.
-  return IFL_NONE;
-}
-
-size_t frame_count(std::istream& stream) {
-  StdInputStreamAdapter std_stream(stream);
-  return wxImage::GetImageCount(std_stream);
-}
-
-size_t frame_count(const xtd::ustring& filename) {
-  return wxImage::GetImageCount(wxString(convert_string::to_wstring(filename)));
+void image::get_pixel(intptr image, int32 x, int32 y, xtd::byte& a, xtd::byte& r, xtd::byte& g, xtd::byte& b) {
+  if (reinterpret_cast<wxImage*>(image)->IsTransparent(x, y, 1)) a = r = g = b = 0;
+  else {
+    a = reinterpret_cast<wxImage*>(image)->HasAlpha() ? reinterpret_cast<wxImage*>(image)->GetAlpha(x, y) : 255;
+    r = reinterpret_cast<wxImage*>(image)->GetRed(x, y);
+    g = reinterpret_cast<wxImage*>(image)->GetGreen(x, y);
+    b = reinterpret_cast<wxImage*>(image)->GetBlue(x, y);
+  }
 }
 
 float image::horizontal_resolution(intptr image) {
@@ -368,8 +381,17 @@ float image::horizontal_resolution(intptr image) {
   return horizontal_resolution;
 }
 
-void image::lock_bits(intptr image, int32& height, int32& pixel_format, int32& reserved, intptr& scan0, int32& stride, int32& width) {
+void image::lock_bits(intptr image, int32 left, int32 top, int32 width, int32 height, int32 flags, int32 format, int32& image_data_height, int32& image_data_pixel_format, int32& image_data_reserved, intptr& image_data_scan0, int32& image_data_stride, int32& image_data_width) {
   /// @todo see how to implement lock bits with wxWidgets.
+}
+
+void image::make_transparent(intptr image, xtd::byte transparent_color_a, xtd::byte transparent_color_r, xtd::byte transparent_color_g, xtd::byte transparent_color_b) {
+  if (!image) throw argument_exception(csf_);
+  reinterpret_cast<wxImage*>(image)->InitAlpha();
+  for (int32 y = 0; y < reinterpret_cast<wxImage*>(image)->GetHeight(); y++)
+    for (int32 x = 0; x < reinterpret_cast<wxImage*>(image)->GetWidth(); x++)
+      if (reinterpret_cast<wxImage*>(image)->GetRed(x, y) == transparent_color_r && reinterpret_cast<wxImage*>(image)->GetGreen(x, y) == transparent_color_g && reinterpret_cast<wxImage*>(image)->GetBlue(x, y) == transparent_color_b && reinterpret_cast<wxImage*>(image)->GetAlpha(x, y) == transparent_color_a)
+        reinterpret_cast<wxImage*>(image)->SetAlpha(x, y, 0);
 }
 
 void image::physical_dimension(intptr image, int32& width, int32& height) {
@@ -412,16 +434,6 @@ float image::vertical_resolution(intptr image) {
   return vertical_resolution;
 }
 
-void image::get_pixel(intptr image, int32 x, int32 y, xtd::byte& a, xtd::byte& r, xtd::byte& g, xtd::byte& b) {
-  if (reinterpret_cast<wxImage*>(image)->IsTransparent(x, y, 1)) a = r = g = b = 0;
-  else {
-    a = reinterpret_cast<wxImage*>(image)->HasAlpha() ? reinterpret_cast<wxImage*>(image)->GetAlpha(x, y) : 255;
-    r = reinterpret_cast<wxImage*>(image)->GetRed(x, y);
-    g = reinterpret_cast<wxImage*>(image)->GetGreen(x, y);
-    b = reinterpret_cast<wxImage*>(image)->GetBlue(x, y);
-  }
-}
-
 void image::rotate_flip(intptr image, int32 rotate_flip_type) {
   auto wx_image = reinterpret_cast<wxImage*>(image);
   switch (rotate_flip_type) {
@@ -442,6 +454,10 @@ void image::set_pixel(intptr image, int32 x, int32 y, xtd::byte a, xtd::byte r, 
   reinterpret_cast<wxImage*>(image)->SetRGB(x, y, r, g, b);
 }
 
+void image::set_resolution(intptr image, int32 x_dpi, int32 y_dpi) {
+  /// @todo see how to set image resolution with wxWidgets.
+}
+
 void image::save(intptr image, const ustring& filename) {
   reinterpret_cast<wxImage*>(image)->SaveFile(wxString(convert_string::to_wstring(filename)));
 }
@@ -457,4 +473,8 @@ void image::save(intptr image, std::ostream& stream, size_t raw_format) {
 
 float image::screen_dpi() {
   return static_cast<float>(wxDisplay::GetStdPPIValue());
+}
+
+void image::unlock_bits(intptr image, int32& image_data_height, int32& image_data_pixel_format, int32& image_data_reserved, intptr& image_data_scan0, int32& image_data_stride, int32& image_data_width) {
+  /// @todo see how to implement unlock bits with wxWidgets.
 }

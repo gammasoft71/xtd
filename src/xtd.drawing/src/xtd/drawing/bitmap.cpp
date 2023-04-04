@@ -88,16 +88,42 @@ bitmap_data bitmap::lock_bits(const rectangle& rect, xtd::drawing::imaging::imag
 
 bitmap_data bitmap::lock_bits(const rectangle& rect, xtd::drawing::imaging::image_lock_mode flags, xtd::drawing::imaging::pixel_format format, const bitmap_data& data) {
   if (format == xtd::drawing::imaging::pixel_format::indexed || format == xtd::drawing::imaging::pixel_format::gdi) throw argument_exception(csf_);
-  int32 height = data.height();
-  int32 pixel_format = static_cast<int32>(data.pixel_format());
-  int32 reserved = data.reserved();
-  intptr scan0 = data.scan0();
-  int32 stride = data.stride();
-  int32 width = data.width();
-  native::image::lock_bits(handle(), height, pixel_format, reserved, scan0, stride, width);
-  return bitmap_data().height(height).pixel_format(static_cast<xtd::drawing::imaging::pixel_format>(pixel_format)).reserved(reserved).scan0(scan0).stride(stride).width(width);
+  int32 image_data_height = data.height();
+  int32 image_data_pixel_format = static_cast<int32>(data.pixel_format());
+  int32 image_data_reserved = data.reserved();
+  intptr image_data_scan0 = data.scan0();
+  int32 image_data_stride = data.stride();
+  int32 image_data_width = data.width();
+  native::image::lock_bits(handle(), rect.left(), rect.top(), rect.width(), rect.height(), static_cast<int32>(flags), static_cast<int32>(format), image_data_height, image_data_pixel_format, image_data_reserved, image_data_scan0, image_data_stride, image_data_width);
+  return bitmap_data().height(image_data_height).pixel_format(static_cast<xtd::drawing::imaging::pixel_format>(image_data_pixel_format)).reserved(image_data_reserved).scan0(image_data_scan0).stride(image_data_stride).width(image_data_width);
+}
+
+void bitmap::make_transparent() {
+  for (auto y = 0; y < height(); ++y)
+    for (auto x = 0; x < image::width(); ++x)
+      if (get_pixel(x, y).a() < 255) return;
+  make_transparent(color::light_gray);
+}
+
+void bitmap::make_transparent(const color& transparent_color) {
+  set_pixel_format(imaging::pixel_format::format_32bpp_argb);
+  native::image::make_transparent(handle(), transparent_color.a(), transparent_color.r(), transparent_color.g(), transparent_color.b());
 }
 
 void bitmap::set_pixel(int32 x, int32 y, const drawing::color& color) {
   native::image::set_pixel(handle(), x, y, color.a(), color.r(), color.g(), color.b());
+}
+
+void bitmap::set_resolution(int32 x_dpi, int32 y_dpi) {
+  native::image::set_resolution(handle(), x_dpi, y_dpi);
+}
+
+void bitmap::unlock_bits(const bitmap_data& data) {
+  int32 image_data_height = data.height();
+  int32 image_data_pixel_format = static_cast<int32>(data.pixel_format());
+  int32 image_data_reserved = data.reserved();
+  intptr image_data_scan0 = data.scan0();
+  int32 image_data_stride = data.stride();
+  int32 image_data_width = data.width();
+  native::image::unlock_bits(handle(), image_data_height, image_data_pixel_format, image_data_reserved, image_data_scan0, image_data_stride, image_data_width);
 }

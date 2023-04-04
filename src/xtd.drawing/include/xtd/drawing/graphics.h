@@ -1112,15 +1112,15 @@ namespace xtd {
       /// @param image xtd::drawing::image from which to create the new xtd::drawing::graphics.
       /// @return This method returns a new xtd::drawing::graphics for the specified Image.
       /// @remarks If the image has an indexed pixel format, this method throws an exception with the message, "A xtd::drawing::graphics object cannot be created from an image that has an indexed pixel format." The indexed pixel formats are shown in the following list.
-      /// * xtd::drawing::imaging::pixel_format::format1bpp_indexed
-      /// * xtd::drawing::imaging::pixel_format::format4bpp_indexed
-      /// * xtd::drawing::imaging::pixel_format::format8bpp_indexed
+      /// * xtd::drawing::imaging::pixel_format::format_1bpp_indexed
+      /// * xtd::drawing::imaging::pixel_format::format_4bpp_indexed
+      /// * xtd::drawing::imaging::pixel_format::format_8bpp_indexed
       /// @remarks You can save the indexed image as another format by using the xtd::drawing:image::save(xtd::ustring, xtd::drawing::imaging::image_format) method and then retrieve a xtd::drawing::graphics object for the new image.
       /// @remarks This method also throws an exception if the image has any of the following pixel formats.
       /// * xtd::drawing::imaging::pixel_format::undefined
       /// * xtd::drawing::imaging::pixel_format::dont_care
-      /// * xtd::drawing::imaging::pixel_format::format16bpp_argb1555
-      /// * xtd::drawing::imaging::pixel_format::format16bpp_gray_scale
+      /// * xtd::drawing::imaging::pixel_format::format_16bpp_argb1555
+      /// * xtd::drawing::imaging::pixel_format::format_16bpp_gray_scale
       static graphics from_image(const xtd::drawing::image& image);
       
       /// @brief Gets the handle to the device context associated with this xtd::drawing::graphics.
