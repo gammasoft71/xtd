@@ -368,6 +368,10 @@ float image::horizontal_resolution(intptr image) {
   return horizontal_resolution;
 }
 
+void image::lock_bits(intptr image, int32& height, int32& pixel_format, int32& reserved, intptr& scan0, int32& stride, int32& width) {
+  /// @todo see how to implement lock bits with wxWidgets.
+}
+
 void image::physical_dimension(intptr image, int32& width, int32& height) {
   width = reinterpret_cast<wxImage*>(image)->GetWidth();
   height = reinterpret_cast<wxImage*>(image)->GetHeight();
