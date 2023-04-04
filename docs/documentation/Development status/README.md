@@ -34,7 +34,7 @@ sidebar_position: 8
 | Name                                                                                   | Status                                 |
 | -------------------------------------------------------------------------------------- | -------------------------------------- |
 | [xtd.core](/docs/documentation/Development%20status/development_status_xtd_core)       | ![progress](/pictures/progress75.png)  |
-| [xtd.drawing](/docs/documentation/Development%20status/development_status_xtd_drawing) | ![progress](/pictures/progress75.png)  |
+| [xtd.drawing](/docs/documentation/Development%20status/development_status_xtd_drawing) | ![progress](/pictures/progress100.png) |
 | [xtd.forms](/docs/documentation/Development%20status/development_status_xtd_forms)     | ![progress](/pictures/progress75.png)  |
 | [xtd.tunit](/docs/documentation/Development%20status/development_status_xtd_tunit)     | ![progress](/pictures/progress100.png) |
 
