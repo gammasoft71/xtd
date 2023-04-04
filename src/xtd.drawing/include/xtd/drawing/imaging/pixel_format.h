@@ -32,41 +32,41 @@ namespace xtd {
         /// @brief The pixel data contains GDI colors.
         gdi = 0x00020000,
         /// @brief Specifies that the format is 16 bits per pixel; 5 bits each are used for the red, green, and blue components. The remaining bit is not used.
-        format16bpp_rgb555 = 0x00021005,
+        format_16bpp_rgb555 = 0x00021005,
         /// @brief Specifies that the format is 16 bits per pixel; 5 bits are used for the red component, 6 bits are used for the green component, and 5 bits are used for the blue component.
-        format16bpp_rgb565 = 0x00021006,
+        format_16bpp_rgb565 = 0x00021006,
         /// @brief Specifies that the format is 24 bits per pixel; 8 bits each are used for the red, green, and blue components.
-        format24bpp_rgb = 0x00021808,
+        format_24bpp_rgb = 0x00021808,
         /// @brief Specifies that the format is 32 bits per pixel; 8 bits each are used for the red, green, and blue components. The remaining 8 bits are not used.
-        format32bpp_rgb = 0x00022009,
+        format_32bpp_rgb = 0x00022009,
         /// @brief Specifies that the pixel format is 1 bit per pixel and that it uses indexed color. The color table therefore has two colors in it.
-        format1bpp_indexed = 0x00030101,
+        format_1bpp_indexed = 0x00030101,
         /// @brief Specifies that the format is 4 bits per pixel, indexed.
-        format4bpp_indexed = 0x00030402,
+        format_4bpp_indexed = 0x00030402,
         /// @brief Specifies that the format is 8 bits per pixel, indexed. The color table therefore has 256 colors in it.
-        format8bpp_indexed = 0x00030803,
+        format_8bpp_indexed = 0x00030803,
         /// @brief The pixel data contains alpha values that are not premultiplied.
         alpha = 0x00040000,
         /// @brief The pixel format is 16 bits per pixel. The color information specifies 32,768 shades of color, of which 5 bits are red, 5 bits are green, 5 bits are blue, and 1 bit is alpha.
-        format16bpp_argb1555 = 0x00061007,
+        format_16bpp_argb1555 = 0x00061007,
         /// The pixel format contains premultiplied alpha values.
         palpha = 0x00080000,
         /// @brief Specifies that the format is 32 bits per pixel; 8 bits each are used for the alpha, red, green, and blue components. The red, green, and blue components are premultiplied, according to the alpha component.
-        format32bpp_pargb = 0x000E200B,
+        format_32bpp_pargb = 0x000E200B,
         /// @brief Reserved.
         extended = 0x00100000,
         /// @brief The pixel format is 16 bits per pixel. The color information specifies 65536 shades of gray.
-        format16bpp_gray_scale = 0x00101004,
+        format_16bpp_gray_scale = 0x00101004,
         /// @brief Specifies that the format is 48 bits per pixel; 16 bits each are used for the red, green, and blue components.
-        format48bpp_rgb = 0x0010300C,
+        format_48bpp_rgb = 0x0010300C,
         /// @brief Specifies that the format is 64 bits per pixel; 16 bits each are used for the alpha, red, green, and blue components. The red, green, and blue components are premultiplied according to the alpha component.
-        format64bpp_pargb = 0x001C400E,
+        format_64bpp_pargb = 0x001C400E,
         /// @brief The default pixel format of 32 bits per pixel. The format specifies 24-bit color depth and an 8-bit alpha channel.
         canonical = 0x00200000,
         /// @brief Specifies that the format is 32 bits per pixel; 8 bits each are used for the alpha, red, green, and blue components.
-        format32bpp_argb = 0x0026200A,
+        format_32bpp_argb = 0x0026200A,
         /// @brief Specifies that the format is 64 bits per pixel; 16 bits each are used for the alpha, red, green, and blue components.
-        format64bpp_argb = 0x0034400D,
+        format_64bpp_argb = 0x0034400D,
       };
     }
   }
@@ -76,6 +76,6 @@ namespace xtd {
 flags_attribute_(xtd::drawing::imaging, pixel_format);
 
 template<> struct xtd::enum_register<xtd::drawing::imaging::pixel_format> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::drawing::imaging::pixel_format> {{xtd::drawing::imaging::pixel_format::undefined, "undefined"}, {xtd::drawing::imaging::pixel_format::max, "max"}, {xtd::drawing::imaging::pixel_format::indexed, "indexed"}, {xtd::drawing::imaging::pixel_format::gdi, "gdi"}, {xtd::drawing::imaging::pixel_format::format16bpp_rgb555, "format16bpp_rgb555"}, {xtd::drawing::imaging::pixel_format::format16bpp_rgb565, "format16bpp_rgb565"}, {xtd::drawing::imaging::pixel_format::format24bpp_rgb, "format24bpp_rgb"}, {xtd::drawing::imaging::pixel_format::format32bpp_rgb, "format32bpp_rgb"}, {xtd::drawing::imaging::pixel_format::format1bpp_indexed, "format1bpp_indexed"}, {xtd::drawing::imaging::pixel_format::format4bpp_indexed, "format4bpp_indexed"}, {xtd::drawing::imaging::pixel_format::format8bpp_indexed, "format8bpp_indexed"}, {xtd::drawing::imaging::pixel_format::alpha, "alpha"}, {xtd::drawing::imaging::pixel_format::format16bpp_argb1555, "format16bpp_argb1555"}, {xtd::drawing::imaging::pixel_format::palpha, "palpha"}, {xtd::drawing::imaging::pixel_format::format32bpp_pargb, "format32bpp_pargb"}, {xtd::drawing::imaging::pixel_format::extended, "extended"}, {xtd::drawing::imaging::pixel_format::format16bpp_gray_scale, "format16bpp_gray_scale"}, {xtd::drawing::imaging::pixel_format::format48bpp_rgb, "format48bpp_rgb"}, {xtd::drawing::imaging::pixel_format::format64bpp_pargb, "format64bpp_pargb"}, {xtd::drawing::imaging::pixel_format::canonical, "canonical"}, {xtd::drawing::imaging::pixel_format::format32bpp_argb, "format32bpp_argb"}, {xtd::drawing::imaging::pixel_format::format64bpp_argb, "format64bpp_argb"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::drawing::imaging::pixel_format> {{xtd::drawing::imaging::pixel_format::undefined, "undefined"}, {xtd::drawing::imaging::pixel_format::max, "max"}, {xtd::drawing::imaging::pixel_format::indexed, "indexed"}, {xtd::drawing::imaging::pixel_format::gdi, "gdi"}, {xtd::drawing::imaging::pixel_format::format_16bpp_rgb555, "format_16bpp_rgb555"}, {xtd::drawing::imaging::pixel_format::format_16bpp_rgb565, "format_16bpp_rgb565"}, {xtd::drawing::imaging::pixel_format::format_24bpp_rgb, "format_24bpp_rgb"}, {xtd::drawing::imaging::pixel_format::format_32bpp_rgb, "format_32bpp_rgb"}, {xtd::drawing::imaging::pixel_format::format_1bpp_indexed, "format_1bpp_indexed"}, {xtd::drawing::imaging::pixel_format::format_4bpp_indexed, "format_4bpp_indexed"}, {xtd::drawing::imaging::pixel_format::format_8bpp_indexed, "format_8bpp_indexed"}, {xtd::drawing::imaging::pixel_format::alpha, "alpha"}, {xtd::drawing::imaging::pixel_format::format_16bpp_argb1555, "format_16bpp_argb1555"}, {xtd::drawing::imaging::pixel_format::palpha, "palpha"}, {xtd::drawing::imaging::pixel_format::format_32bpp_pargb, "format_32bpp_pargb"}, {xtd::drawing::imaging::pixel_format::extended, "extended"}, {xtd::drawing::imaging::pixel_format::format_16bpp_gray_scale, "format_16bpp_gray_scale"}, {xtd::drawing::imaging::pixel_format::format_48bpp_rgb, "format_48bpp_rgb"}, {xtd::drawing::imaging::pixel_format::format_64bpp_pargb, "format_64bpp_pargb"}, {xtd::drawing::imaging::pixel_format::canonical, "canonical"}, {xtd::drawing::imaging::pixel_format::format_32bpp_argb, "format_32bpp_argb"}, {xtd::drawing::imaging::pixel_format::format_64bpp_argb, "format_64bpp_argb"}};}
 };
 /// @endcond
