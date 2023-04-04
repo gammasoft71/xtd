@@ -95,6 +95,7 @@ add_sources(
   include/xtd/drawing/imaging/frame_dimension.h
   include/xtd/drawing/imaging/image_flags.h
   include/xtd/drawing/imaging/image_format.h
+  include/xtd/drawing/imaging/image_lock_mode.h
   include/xtd/drawing/imaging/pixel_format.h
   include/xtd/drawing/imaging/property_item.h
   include/xtd/drawing/text/font_collection.h
