@@ -437,6 +437,8 @@ namespace xtd {
         /// @warning Internal use only
         static float horizontal_resolution(intptr image);
         
+        static void lock_bits(intptr image, int32& height, int32& pixel_format, int32& reserved, intptr& scan0, int32& stride, int32& width);
+        
         /// @brief Gets the width and height of this image.
         /// @param image The image handle.
         /// @param width A int32 that represents the width of the image.

@@ -1,4 +1,5 @@
 #include "../../../include/xtd/drawing/bitmap.h"
+#include <xtd/argument_exception.h>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/image.h>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
@@ -79,6 +80,22 @@ drawing::color bitmap::get_pixel(int32 x, int32 y) const {
   xtd::byte a = 0, r = 0, g = 0, b = 0;
   native::image::get_pixel(handle(), x, y, a, r, g, b);
   return color::from_argb(a, r, g, b);
+}
+
+bitmap_data bitmap::lock_bits(const rectangle& rect, xtd::drawing::imaging::image_lock_mode flags, xtd::drawing::imaging::pixel_format format) {
+  return lock_bits(rect, flags, format, bitmap_data {});
+}
+
+bitmap_data bitmap::lock_bits(const rectangle& rect, xtd::drawing::imaging::image_lock_mode flags, xtd::drawing::imaging::pixel_format format, const bitmap_data& data) {
+  if (format == xtd::drawing::imaging::pixel_format::indexed || format == xtd::drawing::imaging::pixel_format::gdi) throw argument_exception(csf_);
+  int32 height = data.height();
+  int32 pixel_format = static_cast<int32>(data.pixel_format());
+  int32 reserved = data.reserved();
+  intptr scan0 = data.scan0();
+  int32 stride = data.stride();
+  int32 width = data.width();
+  native::image::lock_bits(handle(), height, pixel_format, reserved, scan0, stride, width);
+  return bitmap_data().height(height).pixel_format(static_cast<xtd::drawing::imaging::pixel_format>(pixel_format)).reserved(reserved).scan0(scan0).stride(stride).width(width);
 }
 
 void bitmap::set_pixel(int32 x, int32 y, const drawing::color& color) {

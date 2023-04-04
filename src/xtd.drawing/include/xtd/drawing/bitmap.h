@@ -142,6 +142,26 @@ namespace xtd {
       /// @return A xtd::drawing::color structure that represents the color of the specified pixel.
       drawing::color get_pixel(int32 x, int32 y)  const;
       
+      /// @brief Locks a xtd::drawing::bitmap into system memory.
+      /// @param rect A xtd::drawing::rectangle structure that specifies the portion of the xtd::drawing::bitmap to lock.
+      /// @param flags An xtd::drawing::imaging::image_lock_mode enumeration that specifies the access level (read/write) for the xtd::drawing::bitmap.
+      /// @param format A xtd::drawing::imaging::pixel_format enumeration that specifies the data format of this xtd::drawing::bitmap.
+      /// @return A xtd::drawing::imaging::bitmap_data that contains information about this lock operation.
+      /// @remarks Use the xtd::drawing::bitmap::lock_bits method to lock an existing bitmap in system memory so that it can be changed programmatically. You can change the color of an image with the xtd::drawing::bitmap::set_pixel method, although the xtd::drawing::bitmap::lock_bits method offers better performance for large-scale changes.
+      /// @remarks The xtd::drawing::imaging::bitmap_data specifies the attributes of the xtd::drawing::bitmap, such as size, pixel format, the starting address of the pixel data in memory, and length of each scan line (stride).
+      /// @remarks When calling this method, you should use a member of the xtd::drawing::imaging::pixel_format enumeration that contains a specific bits-per-pixel (BPP) value. Using xtd::drawing::imaging::pixel_format values such as xtd::drawing::imaging::pixel_format::indexed and xtd::drawing::imaging::pixel_format::gdi will throw an xtd::argument_exception. Also, passing the incorrect pixel format for a bitmap will throw an xtd::argument_exception.
+      xtd::drawing::imaging::bitmap_data lock_bits(const rectangle& rect, xtd::drawing::imaging::image_lock_mode flags, xtd::drawing::imaging::pixel_format format);
+      /// @brief Locks a xtd::drawing::bitmap into system memory.
+      /// @param rect A xtd::drawing::rectangle structure that specifies the portion of the xtd::drawing::bitmap to lock.
+      /// @param flags An xtd::drawing::imaging::image_lock_mode enumeration that specifies the access level (read/write) for the xtd::drawing::bitmap.
+      /// @param format A xtd::drawing::imaging::pixel_format enumeration that specifies the data format of this xtd::drawing::bitmap.
+      /// @param data A xtd::drawing::imaging::bitmap_data that contains information about the lock operation.
+      /// @return A xtd::drawing::imaging::bitmap_data that contains information about this lock operation.
+      /// @remarks Use the xtd::drawing::bitmap::lock_bits method to lock an existing bitmap in system memory so that it can be changed programmatically. You can change the color of an image with the xtd::drawing::bitmap::set_pixel method, although the xtd::drawing::bitmap::lock_bits method offers better performance for large-scale changes.
+      /// @remarks The xtd::drawing::imaging::bitmap_data specifies the attributes of the xtd::drawing::bitmap, such as size, pixel format, the starting address of the pixel data in memory, and length of each scan line (stride).
+      /// @remarks When calling this method, you should use a member of the xtd::drawing::imaging::pixel_format enumeration that contains a specific bits-per-pixel (BPP) value. Using xtd::drawing::imaging::pixel_format values such as xtd::drawing::imaging::pixel_format::indexed and xtd::drawing::imaging::pixel_format::gdi will throw an xtd::argument_exception. Also, passing the incorrect pixel format for a bitmap will throw an xtd::argument_exception.
+      xtd::drawing::imaging::bitmap_data lock_bits(const rectangle& rect, xtd::drawing::imaging::image_lock_mode flags, xtd::drawing::imaging::pixel_format format, const xtd::drawing::imaging::bitmap_data& data);
+
       /// @brief Sets the color of the specified pixel in this bitmap.
       /// @param x The x-coordinate of the pixel to retrieve.
       /// @param y The y-coordinate of the pixel to retrieve.
