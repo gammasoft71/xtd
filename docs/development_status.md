@@ -32,7 +32,7 @@
 | Name                                             | Status                                |
 |--------------------------------------------------|---------------------------------------|
 | [xtd.core](development_status_xtd_core.md)       | ![progress](pictures/progress75.png)  |
-| [xtd.drawing](development_status_xtd_drawing.md) | ![progress](pictures/progress75.png)  |
+| [xtd.drawing](development_status_xtd_drawing.md) | ![progress](pictures/progress100.png) |
 | [xtd.forms](development_status_xtd_forms.md)     | ![progress](pictures/progress75.png)  |
 | [xtd.tunit](development_status_xtd_tunit.md)     | ![progress](pictures/progress100.png) |
 
