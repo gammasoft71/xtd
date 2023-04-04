@@ -21,6 +21,7 @@
 #include "drawing/imaging/frame_dimension.h"
 #include "drawing/imaging/image_flags.h"
 #include "drawing/imaging/image_format.h"
+#include "drawing/imaging/image_lock_mode.h"
 #include "drawing/imaging/pixel_format.h"
 #include "drawing/imaging/property_item.h"
 #include "drawing/text/font_collection.h"
