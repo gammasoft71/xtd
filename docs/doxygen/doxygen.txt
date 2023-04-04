@@ -166,6 +166,7 @@ HTML_FOOTER            = html_footer.html
 HTML_STYLESHEET        = 
 HTML_EXTRA_STYLESHEET  = doxygen-awesome-css/doxygen-awesome.css custom_images.css
 HTML_EXTRA_FILES       = doxygen-awesome-css/doxygen-awesome-darkmode-toggle.js favicon.png
+HTML_COLORSTYLE        = LIGHT # Default: AUTO_LIGHT
 HTML_COLORSTYLE_HUE    = 220
 HTML_COLORSTYLE_SAT    = 100
 HTML_COLORSTYLE_GAMMA  = 80
