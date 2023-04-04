@@ -61,6 +61,22 @@ public:
      *     <li>Item 2
      *   </ul>
      * </table>
+     * 
+     * A table can be centered with the `<center>` html tag:
+     * <center>
+     * | Foo         | Bar            | Baz                       | FooBar      |
+     * |-------------|----------------|---------------------------|-------------|
+     * | Lorem imsum | dolor sit amet | cenectetur adipisici elit | At vero eos |
+     * </center>
+     *
+     * Embedded Graphviz graphs support dark mode and can be scrolled once they get too wide:
+     * \dot Graphviz with a caption
+     *  digraph example {
+     *      node [fontsize="12"];
+     *      rankdir="LR"
+     *      a -> b -> c -> d -> e -> f -> g -> h -> i -> j -> k;
+     *  }
+     *  \enddot
      *
      * ## Lists
      *
@@ -120,6 +136,8 @@ public:
      * @invariant This is an invariant
      *
      * @pre This is a precondition
+     *
+     * @post This is a postcondition
      *
      * @todo This theme is never finished!
      *
