@@ -86,6 +86,7 @@ add_sources(
   include/xtd/drawing/drawing2d/pixel_offset_mode.h
   include/xtd/drawing/drawing2d/radial_gradient_brush.h
   include/xtd/drawing/drawing2d/smoothing_mode.h
+  include/xtd/drawing/imaging/bitmap_data.h
   include/xtd/drawing/imaging/color_palette.h
   include/xtd/drawing/imaging/encoder.h
   include/xtd/drawing/imaging/encoder_parameter.h
@@ -150,6 +151,7 @@ add_sources(
   src/xtd/drawing/drawing2d/linear_gradient_brush.cpp
   src/xtd/drawing/drawing2d/matrix.cpp
   src/xtd/drawing/drawing2d/radial_gradient_brush.cpp
+  src/xtd/drawing/imaging/bitmap_data.cpp
   src/xtd/drawing/imaging/encoder_parameter.cpp
   src/xtd/drawing/text/installed_font_collection.cpp
   src/xtd/drawing/text/private_font_collection.cpp

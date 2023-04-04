@@ -4,6 +4,7 @@
 #pragma once
 #include "../drawing_export.h"
 #include "image.h"
+#include "imaging/bitmap_data.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
