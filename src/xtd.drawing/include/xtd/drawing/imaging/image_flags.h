@@ -52,6 +52,8 @@ namespace xtd {
 }
 
 /// @cond
+flags_attribute_(xtd::drawing::imaging, image_flags);
+
 template<> struct xtd::enum_register<xtd::drawing::imaging::image_flags> {
   explicit operator auto() const noexcept {return xtd::enum_collection<xtd::drawing::imaging::image_flags> {{xtd::drawing::imaging::image_flags::none, "none"}, {xtd::drawing::imaging::image_flags::scalable, "scalable"}, {xtd::drawing::imaging::image_flags::has_alpha, "has_alpha"}, {xtd::drawing::imaging::image_flags::has_translucent, "has_translucent"}, {xtd::drawing::imaging::image_flags::partially_scalable, "partially_scalable"}, {xtd::drawing::imaging::image_flags::color_space_rgb, "color_space_rgb"}, {xtd::drawing::imaging::image_flags::color_space_cmyk, "color_space_cmyk"}, {xtd::drawing::imaging::image_flags::color_space_gray, "color_space_gray"}, {xtd::drawing::imaging::image_flags::color_space_ycbcr, "color_space_ycbcr"}, {xtd::drawing::imaging::image_flags::color_space_ycck, "color_space_ycck"}, {xtd::drawing::imaging::image_flags::has_real_dpi, "has_real_dpi"}, {xtd::drawing::imaging::image_flags::has_real_pixel_size, "has_real_pixel_size"}, {xtd::drawing::imaging::image_flags::read_only, "read_only"}, {xtd::drawing::imaging::image_flags::caching, "caching"}};}
 };
