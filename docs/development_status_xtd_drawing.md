@@ -23,7 +23,7 @@
 
 | Name                                                                                | Type         | Status                                |
 |-------------------------------------------------------------------------------------|--------------|---------------------------------------|
-| [bitmap](../src/xtd.drawing/include/xtd/drawing/bitmap.h)                           | class        | ![progress](pictures/progress75.png)  |
+| [bitmap](../src/xtd.drawing/include/xtd/drawing/bitmap.h)                           | class        | ![progress](pictures/progress100.png) |
 | [brush](../src/xtd.drawing/include/xtd/drawing/brush.h)                             | class        | ![progress](pictures/progress100.png) |
 | [brushes](../src/xtd.drawing/include/xtd/drawing/brushes.h)                         | static class | ![progress](pictures/progress100.png) |
 | [buffered_graphics](../src/xtd.drawing/include/xtd/drawing/buffered_graphics.h)     | class        | ![progress](pictures/progress100.png) |
@@ -94,6 +94,7 @@
 
 | Name                                                                                                          | Type         | Status                                |
 |---------------------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
+| [bitmap_data](../src/xtd.drawing/include/xtd/drawing/imaging/bitmap_data.h)                                   | class        | ![progress](pictures/progress100.png) |
 | [color_palette](../src/xtd.drawing/include/xtd/drawing/imaging/color_palette.h)                               | class        | ![progress](pictures/progress100.png) |
 | [encoder](../src/xtd.drawing/include/xtd/drawing/imaging/encoder.h)                                           | class        | ![progress](pictures/progress100.png) |
 | [encoder_parameter](../src/xtd.drawing/include/xtd/drawing/imaging/encoder_parameter.h)                       | class        | ![progress](pictures/progress100.png) |
@@ -102,6 +103,7 @@
 | [frame_dimension](../src/xtd.drawing/include/xtd/drawing/imaging/frame_dimension.h)                           | class        | ![progress](pictures/progress100.png) |
 | [image_flags](../src/xtd.drawing/include/xtd/drawing/imaging/image_flags.h)                                   | enumeration  | ![progress](pictures/progress100.png) |
 | [image_format](../src/xtd.drawing/include/xtd/drawing/imaging/image_format.h)                                 | class        | ![progress](pictures/progress100.png) |
+| [image_lock_mode](../src/xtd.drawing/include/xtd/drawing/imaging/image_lock_mode.h)                           | enumeration  | ![progress](pictures/progress100.png) |
 | [pixel_format](../src/xtd.drawing/include/xtd/drawing/imaging/pixel_format.h)                                 | enumeration  | ![progress](pictures/progress100.png) |
 | [property_item](../src/xtd.drawing/include/xtd/drawing/imaging/property_item.h)                               | class        | ![progress](pictures/progress100.png) |
 
