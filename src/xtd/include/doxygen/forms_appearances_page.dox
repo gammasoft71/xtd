@@ -5,6 +5,25 @@
 /// @brief Contains forms appearances.
 ///
 /// @par Debug form appearance
+/// | xtd::forms::debug_form | Windows                              | macOS                                | Gnome                                |
+/// | ---------------------- | ------------------------------------ | ------------------------------------ | ------------------------------------ |
+/// | Light                  |  @image html form_debug_form_w.png   |  @image html form_debug_form_m.png   |  @image html form_debug_form_g.png   |
+/// | Dark                   |  @image html form_debug_form_wd.png  |  @image html form_debug_form_md.png  |  @image html form_debug_form_gd.png  |
+///
+/// @par Form appearance
+/// | xtd::forms::form | Windows                        | macOS                          | Gnome                          |
+/// | ---------------- | ------------------------------ | ------------------------------ | ------------------------------ |
+/// | Light            |  @image html form_form_w.png   |  @image html form_form_m.png   |  @image html form_form_g.png   |
+/// | Dark             |  @image html form_form_wd.png  |  @image html form_form_md.png  |  @image html form_form_gd.png  |
+///
+/// @par Trace form appearance
+/// | xtd::forms::trace_form | Windows                              | macOS                                | Gnome                                |
+/// | ---------------------- | ------------------------------------ | ------------------------------------ | ------------------------------------ |
+/// | Light                  |  @image html form_trace_form_w.png   |  @image html form_trace_form_m.png   |  @image html form_trace_form_g.png   |
+/// | Dark                   |  @image html form_trace_form_wd.png  |  @image html form_trace_form_md.png  |  @image html form_trace_form_gd.png  |
+///
+/*
+/// @par Debug form appearance
 /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
 ///   <tr>
 ///     <td style="width:100px">xtd::forms::debug_form</td>
@@ -70,3 +89,4 @@
 ///   </tr>
 /// </table>
 ///
+*/
