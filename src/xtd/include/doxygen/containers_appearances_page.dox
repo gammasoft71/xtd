@@ -5,134 +5,38 @@
 /// @brief Contains containers appearances.
 ///
 /// @par Group box appearance
-/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-///   <tr>
-///     <td style="width:100px">xtd::forms::group_box</td>
-///     <th><b>Windows</b></th>
-///     <th><b>macOS</b></th>
-///     <th><b>Gnome</b></th>
-///   </tr>
-///   <tr>
-///     <td>Light</td>
-///     <td>@image html containers_group_box_w.png</td>
-///     <td>@image html containers_group_box_m.png</td>
-///     <td>@image html containers_group_box_g.png</td>
-///   </tr>
-///   <tr>
-///     <td>Dark</td>
-///     <td>@image html containers_group_box_wd.png</td>
-///     <td>@image html containers_group_box_md.png</td>
-///     <td>@image html containers_group_box_gd.png</td>
-///   </tr>
-/// </table>
+/// | xtd::forms::group_box | Windows                                   | macOS                                     | Gnome                                     |
+/// | --------------------- | ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
+/// | Light                 |  @image html containers_group_box_w.png   |  @image html containers_group_box_m.png   |  @image html containers_group_box_g.png   |
+/// | Dark                  |  @image html containers_group_box_wd.png  |  @image html containers_group_box_md.png  |  @image html containers_group_box_gd.png  |
 ///
 /// @par Horizontal layout panel appearance
-/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-///   <tr>
-///     <td style="width:100px">xtd::forms::horizontal_layout_panel</td>
-///     <th><b>Windows</b></th>
-///     <th><b>macOS</b></th>
-///     <th><b>Gnome</b></th>
-///   </tr>
-///   <tr>
-///     <td>Light</td>
-///     <td>@image html containers_horizontal_layout_panel_w.png</td>
-///     <td>@image html containers_horizontal_layout_panel_m.png</td>
-///     <td>@image html containers_horizontal_layout_panel_g.png</td>
-///   </tr>
-///   <tr>
-///     <td>Dark</td>
-///     <td>@image html containers_horizontal_layout_panel_wd.png</td>
-///     <td>@image html containers_horizontal_layout_panel_md.png</td>
-///     <td>@image html containers_horizontal_layout_panel_gd.png</td>
-///   </tr>
-/// </table>
+/// | xtd::forms::horizontal_layout_panel | Windows                                                 | macOS                                                   | Gnome                                                   |
+/// | ----------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
+/// | Light                               |  @image html containers_horizontal_layout_panel_w.png   |  @image html containers_horizontal_layout_panel_m.png   |  @image html containers_horizontal_layout_panel_g.png   |
+/// | Dark                                |  @image html containers_horizontal_layout_panel_wd.png  |  @image html containers_horizontal_layout_panel_md.png  |  @image html containers_horizontal_layout_panel_gd.png  |
 ///
 /// @par Panel appearance
-/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-///   <tr>
-///     <td style="width:100px">xtd::forms::panel</td>
-///     <th><b>Windows</b></th>
-///     <th><b>macOS</b></th>
-///     <th><b>Gnome</b></th>
-///   </tr>
-///   <tr>
-///     <td>Light</td>
-///     <td>@image html containers_panel_w.png</td>
-///     <td>@image html containers_panel_m.png</td>
-///     <td>@image html containers_panel_g.png</td>
-///   </tr>
-///   <tr>
-///     <td>Dark</td>
-///     <td>@image html containers_panel_wd.png</td>
-///     <td>@image html containers_panel_md.png</td>
-///     <td>@image html containers_panel_gd.png</td>
-///   </tr>
-/// </table>
+/// | xtd::forms::panel | Windows                               | macOS                                 | Gnome                                 |
+/// | ----------------- | ------------------------------------- | ------------------------------------- | ------------------------------------- |
+/// | Light             |  @image html containers_panel_w.png   |  @image html containers_panel_m.png   |  @image html containers_panel_g.png   |
+/// | Dark              |  @image html containers_panel_wd.png  |  @image html containers_panel_md.png  |  @image html containers_panel_gd.png  |
 ///
 /// @par Popup panel appearance
-/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-///   <tr>
-///     <td style="width:100px">xtd::forms::popup_panel</td>
-///     <th><b>Windows</b></th>
-///     <th><b>macOS</b></th>
-///     <th><b>Gnome</b></th>
-///   </tr>
-///   <tr>
-///     <td>Light</td>
-///     <td>@image html containers_popup_panel_w.png</td>
-///     <td>@image html containers_popup_panel_m.png</td>
-///     <td>@image html containers_popup_panel_g.png</td>
-///   </tr>
-///   <tr>
-///     <td>Dark</td>
-///     <td>@image html containers_popup_panel_wd.png</td>
-///     <td>@image html containers_popup_panel_md.png</td>
-///     <td>@image html containers_popup_panel_gd.png</td>
-///   </tr>
-/// </table>
+/// | xtd::forms::popup_panel | Windows                                     | macOS                                       | Gnome                                       |
+/// | ----------------------- | ------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
+/// | Light                   |  @image html containers_popup_panel_w.png   |  @image html containers_popup_panel_m.png   |  @image html containers_popup_panel_g.png   |
+/// | Dark                    |  @image html containers_popup_panel_wd.png  |  @image html containers_popup_panel_md.png  |  @image html containers_popup_panel_gd.png  |
 ///
 /// @par Tab control appearance
-/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-///   <tr>
-///     <td style="width:100px">xtd::forms::tab_control</td>
-///     <th><b>Windows</b></th>
-///     <th><b>macOS</b></th>
-///     <th><b>Gnome</b></th>
-///   </tr>
-///   <tr>
-///     <td>Light</td>
-///     <td>@image html containers_tab_control_w.png</td>
-///     <td>@image html containers_tab_control_m.png</td>
-///     <td>@image html containers_tab_control_g.png</td>
-///   </tr>
-///   <tr>
-///     <td>Dark</td>
-///     <td>@image html containers_tab_control_wd.png</td>
-///     <td>@image html containers_tab_control_md.png</td>
-///     <td>@image html containers_tab_control_gd.png</td>
-///   </tr>
-/// </table>
+/// | xtd::forms::tab_control | Windows                                     | macOS                                       | Gnome                                       |
+/// | ----------------------- | ------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
+/// | Light                   |  @image html containers_tab_control_w.png   |  @image html containers_tab_control_m.png   |  @image html containers_tab_control_g.png   |
+/// | Dark                    |  @image html containers_tab_control_wd.png  |  @image html containers_tab_control_md.png  |  @image html containers_tab_control_gd.png  |
 ///
 /// @par Vertical layout panel appearance
-/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-///   <tr>
-///     <td style="width:100px">xtd::forms::vertical_layout_panel</td>
-///     <th><b>Windows</b></th>
-///     <th><b>macOS</b></th>
-///     <th><b>Gnome</b></th>
-///   </tr>
-///   <tr>
-///     <td>Light</td>
-///     <td>@image html containers_vertical_layout_panel_w.png</td>
-///     <td>@image html containers_vertical_layout_panel_m.png</td>
-///     <td>@image html containers_vertical_layout_panel_g.png</td>
-///   </tr>
-///   <tr>
-///     <td>Dark</td>
-///     <td>@image html containers_vertical_layout_panel_wd.png</td>
-///     <td>@image html containers_vertical_layout_panel_md.png</td>
-///     <td>@image html containers_vertical_layout_panel_gd.png</td>
-///   </tr>
-/// </table>
+/// | xtd::forms::vertical_layout_panel | Windows                                               | macOS                                                 | Gnome                                                 |
+/// | --------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+/// | Light                             |  @image html containers_vertical_layout_panel_w.png   |  @image html containers_vertical_layout_panel_m.png   |  @image html containers_vertical_layout_panel_g.png   |
+/// | Dark                              |  @image html containers_vertical_layout_panel_wd.png  |  @image html containers_vertical_layout_panel_md.png  |  @image html containers_vertical_layout_panel_gd.png  |
 ///
