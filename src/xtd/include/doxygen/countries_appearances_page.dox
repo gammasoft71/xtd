@@ -5,1255 +5,254 @@
 /// @brief Contains countries flags appearances.
 ///
 /// Shows xtd::forms::countries flags.
-/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-///   <tr>
-///     <th><b>Name</b></th>
-///     <th><b>Value</b></th>
-///     <th><b>Flags</b></th>
-///   </tr>
-///   <tr>
-///     <td>Afghanistan</td>
-///     <td>xtd::forms::countries::afghanistan
-///     <td>@image html af.png</td>
-///   </tr>
-///   <tr>
-///     <td>Åland Islands</td>
-///     <td>xtd::forms::countries::aland_islands
-///     <td>@image html ax.png</td>
-///   </tr>
-///   <tr>
-///     <td>Albania</td>
-///     <td>xtd::forms::countries::albania
-///     <td>@image html al.png</td>
-///   </tr>
-///   <tr>
-///     <td>Algeria</td>
-///     <td>xtd::forms::countries::algeria
-///     <td>@image html dz.png</td>
-///   </tr>
-///   <tr>
-///     <td>American Samoa</td>
-///     <td>xtd::forms::countries::american_samoa
-///     <td>@image html as.png</td>
-///   </tr>
-///   <tr>
-///     <td>Andorra</td>
-///     <td>xtd::forms::countries::andorra
-///     <td>@image html ad.png</td>
-///   </tr>
-///   <tr>
-///     <td>Angola</td>
-///     <td>xtd::forms::countries::angola
-///     <td>@image html ao.png</td>
-///   </tr>
-///   <tr>
-///     <td>Anguilla</td>
-///     <td>xtd::forms::countries::anguilla
-///     <td>@image html ai.png</td>
-///   </tr>
-///   <tr>
-///     <td>Antarctica</td>
-///     <td>xtd::forms::countries::antarctica
-///     <td>@image html aq.png</td>
-///   </tr>
-///   <tr>
-///     <td>Antigua and Barbuda</td>
-///     <td>xtd::forms::countries::antigua_and_barbuda
-///     <td>@image html ag.png</td>
-///   </tr>
-///   <tr>
-///     <td>Argentina</td>
-///     <td>xtd::forms::countries::argentina
-///     <td>@image html ar.png</td>
-///   </tr>
-///   <tr>
-///     <td>Armenia</td>
-///     <td>xtd::forms::countries::armenia
-///     <td>@image html am.png</td>
-///   </tr>
-///   <tr>
-///     <td>Aruba</td>
-///     <td>xtd::forms::countries::aruba
-///     <td>@image html aw.png</td>
-///   </tr>
-///   <tr>
-///     <td>Australia</td>
-///     <td>xtd::forms::countries::australia
-///     <td>@image html au.png</td>
-///   </tr>
-///   <tr>
-///     <td>Austria</td>
-///     <td>xtd::forms::countries::austria
-///     <td>@image html at.png</td>
-///   </tr>
-///   <tr>
-///     <td>Azerbaijan</td>
-///     <td>xtd::forms::countries::azerbaijan
-///     <td>@image html az.png</td>
-///   </tr>
-///   <tr>
-///     <td>Bahamas</td>
-///     <td>xtd::forms::countries::bahamas
-///     <td>@image html bs.png</td>
-///   </tr>
-///   <tr>
-///     <td>Bahrain</td>
-///     <td>xtd::forms::countries::bahrain
-///     <td>@image html bh.png</td>
-///   </tr>
-///   <tr>
-///     <td>Bangladesh</td>
-///     <td>xtd::forms::countries::bangladesh
-///     <td>@image html bd.png</td>
-///   </tr>
-///   <tr>
-///     <td>Barbados</td>
-///     <td>xtd::forms::countries::barbados
-///     <td>@image html bb.png</td>
-///   </tr>
-///   <tr>
-///     <td>Belarus</td>
-///     <td>xtd::forms::countries::belarus
-///     <td>@image html by.png</td>
-///   </tr>
-///   <tr>
-///     <td>Belgium</td>
-///     <td>xtd::forms::countries::belgium
-///     <td>@image html be.png</td>
-///   </tr>
-///   <tr>
-///     <td>Belize</td>
-///     <td>xtd::forms::countries::belize
-///     <td>@image html bz.png</td>
-///   </tr>
-///   <tr>
-///     <td>Benin</td>
-///     <td>xtd::forms::countries::benin
-///     <td>@image html bj.png</td>
-///   </tr>
-///   <tr>
-///     <td>Bermuda</td>
-///     <td>xtd::forms::countries::bermuda
-///     <td>@image html bm.png</td>
-///   </tr>
-///   <tr>
-///     <td>Bhutan</td>
-///     <td>xtd::forms::countries::bhutan
-///     <td>@image html bt.png</td>
-///   </tr>
-///   <tr>
-///     <td>Bolivia (Plurinational State of)</td>
-///     <td>xtd::forms::countries::bolivia
-///     <td>@image html bo.png</td>
-///   </tr>
-///   <tr>
-///     <td>Bonaire, Sint Eustatius and Saba</td>
-///     <td>xtd::forms::countries::bonaire_sint_eustatius_and_saba
-///     <td>@image html bq.png</td>
-///   </tr>
-///   <tr>
-///     <td>Bosnia and Herzegovina</td>
-///     <td>xtd::forms::countries::bosnia_and_herzegovina
-///     <td>@image html ba.png</td>
-///   </tr>
-///   <tr>
-///     <td>Botswana</td>
-///     <td>xtd::forms::countries::botswana
-///     <td>@image html bw.png</td>
-///   </tr>
-///   <tr>
-///     <td>Bouvet Island</td>
-///     <td>xtd::forms::countries::bouvet_island
-///     <td>@image html bv.png</td>
-///   </tr>
-///   <tr>
-///     <td>Brazil</td>
-///     <td>xtd::forms::countries::brazil
-///     <td>@image html br.png</td>
-///   </tr>
-///   <tr>
-///     <td>British Indian Ocean Territory</td>
-///     <td>xtd::forms::countries::british_indian_ocean_territory
-///     <td>@image html iot.png</td>
-///   </tr>
-///   <tr>
-///     <td>Brunei Darussalam</td>
-///     <td>xtd::forms::countries::brunei_darussalam
-///     <td>@image html bn.png</td>
-///   </tr>
-///   <tr>
-///     <td>Bulgaria</td>
-///     <td>xtd::forms::countries::bulgaria
-///     <td>@image html bg.png</td>
-///   </tr>
-///   <tr>
-///     <td>Burkina Faso</td>
-///     <td>xtd::forms::countries::burkina_faso
-///     <td>@image html bf.png</td>
-///   </tr>
-///   <tr>
-///     <td>Burundi</td>
-///     <td>xtd::forms::countries::burundi
-///     <td>@image html bi.png</td>
-///   </tr>
-///   <tr>
-///     <td>Cabo Verde</td>
-///     <td>xtd::forms::countries::cabo_verde
-///     <td>@image html cv.png</td>
-///   </tr>
-///   <tr>
-///     <td>Cambodia</td>
-///     <td>xtd::forms::countries::cambodia
-///     <td>@image html kh.png</td>
-///   </tr>
-///   <tr>
-///     <td>Cameroon</td>
-///     <td>xtd::forms::countries::cameroon
-///     <td>@image html cm.png</td>
-///   </tr>
-///   <tr>
-///     <td>Canada</td>
-///     <td>xtd::forms::countries::canada
-///     <td>@image html ca.png</td>
-///   </tr>
-///   <tr>
-///     <td>Cayman Islands</td>
-///     <td>xtd::forms::countries::cayman_islands
-///     <td>@image html ky.png</td>
-///   </tr>
-///   <tr>
-///     <td>Central African Republic</td>
-///     <td>xtd::forms::countries::central_african_republic
-///     <td>@image html cf.png</td>
-///   </tr>
-///   <tr>
-///     <td>Chad</td>
-///     <td>xtd::forms::countries::chad
-///     <td>@image html td.png</td>
-///   </tr>
-///   <tr>
-///     <td>Chile</td>
-///     <td>xtd::forms::countries::chile
-///     <td>@image html cl.png</td>
-///   </tr>
-///   <tr>
-///     <td>China</td>
-///     <td>xtd::forms::countries::china
-///     <td>@image html cn.png</td>
-///   </tr>
-///   <tr>
-///     <td>Christmas Island</td>
-///     <td>xtd::forms::countries::christmas_island
-///     <td>@image html cx.png</td>
-///   </tr>
-///   <tr>
-///     <td>Cocos (Keeling) Islands</td>
-///     <td>xtd::forms::countries::cocos_keeling_islands
-///     <td>@image html cc.png</td>
-///   </tr>
-///   <tr>
-///     <td>Colombia</td>
-///     <td>xtd::forms::countries::colombia
-///     <td>@image html co.png</td>
-///   </tr>
-///   <tr>
-///     <td>Comoros</td>
-///     <td>xtd::forms::countries::comoros
-///     <td>@image html km.png</td>
-///   </tr>
-///   <tr>
-///     <td>Congo</td>
-///     <td>xtd::forms::countries::congo
-///     <td>@image html cg.png</td>
-///   </tr>
-///   <tr>
-///     <td>Congo, Democratic Republic of the</td>
-///     <td>xtd::forms::countries::democratic_republic_of_the_congo
-///     <td>@image html cd.png</td>
-///   </tr>
-///   <tr>
-///     <td>Cook Islands</td>
-///     <td>xtd::forms::countries::cook_islands
-///     <td>@image html ck.png</td>
-///   </tr>
-///   <tr>
-///     <td>Costa Rica</td>
-///     <td>xtd::forms::countries::costa_rica
-///     <td>@image html cr.png</td>
-///   </tr>
-///   <tr>
-///     <td>Côte d'Ivoire</td>
-///     <td>xtd::forms::countries::cote_d_ivoire
-///     <td>@image html ci.png</td>
-///   </tr>
-///   <tr>
-///     <td>Croatia</td>
-///     <td>xtd::forms::countries::croatia
-///     <td>@image html hr.png</td>
-///   </tr>
-///   <tr>
-///     <td>Cuba</td>
-///     <td>xtd::forms::countries::cuba
-///     <td>@image html cu.png</td>
-///   </tr>
-///   <tr>
-///     <td>Curaçao</td>
-///     <td>xtd::forms::countries::curacao
-///     <td>@image html cw.png</td>
-///   </tr>
-///   <tr>
-///     <td>Cyprus</td>
-///     <td>xtd::forms::countries::cyprus
-///     <td>@image html cy.png</td>
-///   </tr>
-///   <tr>
-///     <td>Czechia</td>
-///     <td>xtd::forms::countries::czechia
-///     <td>@image html cz.png</td>
-///   </tr>
-///   <tr>
-///     <td>Denmark</td>
-///     <td>xtd::forms::countries::denmark
-///     <td>@image html dk.png</td>
-///   </tr>
-///   <tr>
-///     <td>Djibouti</td>
-///     <td>xtd::forms::countries::djibouti
-///     <td>@image html dj.png</td>
-///   </tr>
-///   <tr>
-///     <td>Dominica</td>
-///     <td>xtd::forms::countries::dominica
-///     <td>@image html dm.png</td>
-///   </tr>
-///   <tr>
-///     <td>Dominican Republic</td>
-///     <td>xtd::forms::countries::dominican_republic
-///     <td>@image html do.png</td>
-///   </tr>
-///   <tr>
-///     <td>Ecuador</td>
-///     <td>xtd::forms::countries::ecuador
-///     <td>@image html ec.png</td>
-///   </tr>
-///   <tr>
-///     <td>Egypt</td>
-///     <td>xtd::forms::countries::egypt
-///     <td>@image html eg.png</td>
-///   </tr>
-///   <tr>
-///     <td>El Salvador</td>
-///     <td>xtd::forms::countries::el_salvador
-///     <td>@image html sv.png</td>
-///   </tr>
-///   <tr>
-///     <td>Equatorial Guinea</td>
-///     <td>xtd::forms::countries::equatorial_guinea
-///     <td>@image html gq.png</td>
-///   </tr>
-///   <tr>
-///     <td>Eritrea</td>
-///     <td>xtd::forms::countries::eritrea
-///     <td>@image html er.png</td>
-///   </tr>
-///   <tr>
-///     <td>Estonia</td>
-///     <td>xtd::forms::countries::estonia
-///     <td>@image html ee.png</td>
-///   </tr>
-///   <tr>
-///     <td>Eswatini</td>
-///     <td>xtd::forms::countries::eswatini
-///     <td>@image html sz.png</td>
-///   </tr>
-///   <tr>
-///     <td>Ethiopia</td>
-///     <td>xtd::forms::countries::ethiopia
-///     <td>@image html et.png</td>
-///   </tr>
-///   <tr>
-///     <td>Falkland Islands (Malvinas)</td>
-///     <td>xtd::forms::countries::falkland_islands
-///     <td>@image html fk.png</td>
-///   </tr>
-///   <tr>
-///     <td>Faroe Islands</td>
-///     <td>xtd::forms::countries::faroe_islands
-///     <td>@image html fo.png</td>
-///   </tr>
-///   <tr>
-///     <td>Fiji</td>
-///     <td>xtd::forms::countries::fiji
-///     <td>@image html fj.png</td>
-///   </tr>
-///   <tr>
-///     <td>Finland</td>
-///     <td>xtd::forms::countries::finland
-///     <td>@image html fi.png</td>
-///   </tr>
-///   <tr>
-///     <td>France</td>
-///     <td>xtd::forms::countries::france
-///     <td>@image html fr.png</td>
-///   </tr>
-///   <tr>
-///     <td>French Guiana</td>
-///     <td>xtd::forms::countries::french_guiana
-///     <td>@image html gf.png</td>
-///   </tr>
-///   <tr>
-///     <td>French Polynesia</td>
-///     <td>xtd::forms::countries::french_polynesia
-///     <td>@image html pf.png</td>
-///   </tr>
-///   <tr>
-///     <td>French Southern Territories</td>
-///     <td>xtd::forms::countries::french_southern_territories
-///     <td>@image html tf.png</td>
-///   </tr>
-///   <tr>
-///     <td>Gabon</td>
-///     <td>xtd::forms::countries::gabon
-///     <td>@image html ga.png</td>
-///   </tr>
-///   <tr>
-///     <td>Gambia</td>
-///     <td>xtd::forms::countries::gambia
-///     <td>@image html gm.png</td>
-///   </tr>
-///   <tr>
-///     <td>Georgia</td>
-///     <td>xtd::forms::countries::georgia
-///     <td>@image html ge.png</td>
-///   </tr>
-///   <tr>
-///     <td>Germany</td>
-///     <td>xtd::forms::countries::germany
-///     <td>@image html de.png</td>
-///   </tr>
-///   <tr>
-///     <td>Ghana</td>
-///     <td>xtd::forms::countries::ghana
-///     <td>@image html gh.png</td>
-///   </tr>
-///   <tr>
-///     <td>Gibraltar</td>
-///     <td>xtd::forms::countries::gibraltar
-///     <td>@image html gi.png</td>
-///   </tr>
-///   <tr>
-///     <td>Greece</td>
-///     <td>xtd::forms::countries::greece
-///     <td>@image html gr.png</td>
-///   </tr>
-///   <tr>
-///     <td>Greenland</td>
-///     <td>xtd::forms::countries::greenland
-///     <td>@image html gl.png</td>
-///   </tr>
-///   <tr>
-///     <td>Grenada</td>
-///     <td>xtd::forms::countries::grenada
-///     <td>@image html gd.png</td>
-///   </tr>
-///   <tr>
-///     <td>Guadeloupe</td>
-///     <td>xtd::forms::countries::guadeloupe
-///     <td>@image html gp.png</td>
-///   </tr>
-///   <tr>
-///     <td>Guam</td>
-///     <td>xtd::forms::countries::guam
-///     <td>@image html gu.png</td>
-///   </tr>
-///   <tr>
-///     <td>Guatemala</td>
-///     <td>xtd::forms::countries::guatemala
-///     <td>@image html gt.png</td>
-///   </tr>
-///   <tr>
-///     <td>Guernsey</td>
-///     <td>xtd::forms::countries::guernsey
-///     <td>@image html gg.png</td>
-///   </tr>
-///   <tr>
-///     <td>Guinea</td>
-///     <td>xtd::forms::countries::guinea
-///     <td>@image html gn.png</td>
-///   </tr>
-///   <tr>
-///     <td>Guinea-Bissau</td>
-///     <td>xtd::forms::countries::guinea_bissau
-///     <td>@image html gw.png</td>
-///   </tr>
-///   <tr>
-///     <td>Guyana</td>
-///     <td>xtd::forms::countries::guyana
-///     <td>@image html gy.png</td>
-///   </tr>
-///   <tr>
-///     <td>Haiti</td>
-///     <td>xtd::forms::countries::haiti
-///     <td>@image html ht.png</td>
-///   </tr>
-///   <tr>
-///     <td>Heard Island and McDonald Islands</td>
-///     <td>xtd::forms::countries::heard_island_and_mcdonald_islands
-///     <td>@image html hm.png</td>
-///   </tr>
-///   <tr>
-///     <td>Holy See</td>
-///     <td>xtd::forms::countries::holy_see
-///     <td>@image html va.png</td>
-///   </tr>
-///   <tr>
-///     <td>Honduras</td>
-///     <td>xtd::forms::countries::honduras
-///     <td>@image html hn.png</td>
-///   </tr>
-///   <tr>
-///     <td>Hong Kong</td>
-///     <td>xtd::forms::countries::hong_kong
-///     <td>@image html hk.png</td>
-///   </tr>
-///   <tr>
-///     <td>Hungary</td>
-///     <td>xtd::forms::countries::hungary
-///     <td>@image html hu.png</td>
-///   </tr>
-///   <tr>
-///     <td>Iceland</td>
-///     <td>xtd::forms::countries::iceland
-///     <td>@image html is.png</td>
-///   </tr>
-///   <tr>
-///     <td>India</td>
-///     <td>xtd::forms::countries::india
-///     <td>@image html in.png</td>
-///   </tr>
-///   <tr>
-///     <td>Indonesia</td>
-///     <td>xtd::forms::countries::indonesia
-///     <td>@image html id.png</td>
-///   </tr>
-///   <tr>
-///     <td>Iran (Islamic Republic of)</td>
-///     <td>xtd::forms::countries::iran
-///     <td>@image html ir.png</td>
-///   </tr>
-///   <tr>
-///     <td>Iraq</td>
-///     <td>xtd::forms::countries::iraq
-///     <td>@image html iq.png</td>
-///   </tr>
-///   <tr>
-///     <td>Ireland</td>
-///     <td>xtd::forms::countries::ireland
-///     <td>@image html ie.png</td>
-///   </tr>
-///   <tr>
-///     <td>Isle of Man</td>
-///     <td>xtd::forms::countries::isle_of_man
-///     <td>@image html im.png</td>
-///   </tr>
-///   <tr>
-///     <td>Israel</td>
-///     <td>xtd::forms::countries::israel
-///     <td>@image html il.png</td>
-///   </tr>
-///   <tr>
-///     <td>Italy</td>
-///     <td>xtd::forms::countries::italy
-///     <td>@image html it.png</td>
-///   </tr>
-///   <tr>
-///     <td>Jamaica</td>
-///     <td>xtd::forms::countries::jamaica
-///     <td>@image html jm.png</td>
-///   </tr>
-///   <tr>
-///     <td>Japan</td>
-///     <td>xtd::forms::countries::japan
-///     <td>@image html jp.png</td>
-///   </tr>
-///   <tr>
-///     <td>Jersey</td>
-///     <td>xtd::forms::countries::jersey
-///     <td>@image html je.png</td>
-///   </tr>
-///   <tr>
-///     <td>Jordan</td>
-///     <td>xtd::forms::countries::jordan
-///     <td>@image html jo.png</td>
-///   </tr>
-///   <tr>
-///     <td>Kazakhstan</td>
-///     <td>xtd::forms::countries::kazakhstan
-///     <td>@image html kz.png</td>
-///   </tr>
-///   <tr>
-///     <td>Kenya</td>
-///     <td>xtd::forms::countries::kenya
-///     <td>@image html ke.png</td>
-///   </tr>
-///   <tr>
-///     <td>Kiribati</td>
-///     <td>xtd::forms::countries::kiribati
-///     <td>@image html ki.png</td>
-///   </tr>
-///   <tr>
-///     <td>Korea (Democratic People's Republic of)</td>
-///     <td>xtd::forms::countries::north_korea
-///     <td>@image html kp.png</td>
-///   </tr>
-///   <tr>
-///     <td>Korea, Republic of</td>
-///     <td>xtd::forms::countries::south_korea
-///     <td>@image html kr.png</td>
-///   </tr>
-///   <tr>
-///     <td>Kuwait</td>
-///     <td>xtd::forms::countries::kuwait
-///     <td>@image html kw.png</td>
-///   </tr>
-///   <tr>
-///     <td>Kyrgyzstan</td>
-///     <td>xtd::forms::countries::kyrgyzstan
-///     <td>@image html kg.png</td>
-///   </tr>
-///   <tr>
-///     <td>Lao People's Democratic Republic</td>
-///     <td>xtd::forms::countries::lao_people_s_democratic_republic
-///     <td>@image html la.png</td>
-///   </tr>
-///   <tr>
-///     <td>Latvia</td>
-///     <td>xtd::forms::countries::latvia
-///     <td>@image html lv.png</td>
-///   </tr>
-///   <tr>
-///     <td>Lebanon</td>
-///     <td>xtd::forms::countries::lebanon
-///     <td>@image html lb.png</td>
-///   </tr>
-///   <tr>
-///     <td>Lesotho</td>
-///     <td>xtd::forms::countries::lesotho
-///     <td>@image html ls.png</td>
-///   </tr>
-///   <tr>
-///     <td>Liberia</td>
-///     <td>xtd::forms::countries::liberia
-///     <td>@image html lr.png</td>
-///   </tr>
-///   <tr>
-///     <td>Libya</td>
-///     <td>xtd::forms::countries::libya
-///     <td>@image html ly.png</td>
-///   </tr>
-///   <tr>
-///     <td>Liechtenstein</td>
-///     <td>xtd::forms::countries::liechtenstein
-///     <td>@image html li.png</td>
-///   </tr>
-///   <tr>
-///     <td>Lithuania</td>
-///     <td>xtd::forms::countries::lithuania
-///     <td>@image html lt.png</td>
-///   </tr>
-///   <tr>
-///     <td>Luxembourg</td>
-///     <td>xtd::forms::countries::luxembourg
-///     <td>@image html lu.png</td>
-///   </tr>
-///   <tr>
-///     <td>Macao</td>
-///     <td>xtd::forms::countries::macao
-///     <td>@image html mo.png</td>
-///   </tr>
-///   <tr>
-///     <td>Madagascar</td>
-///     <td>xtd::forms::countries::madagascar
-///     <td>@image html mg.png</td>
-///   </tr>
-///   <tr>
-///     <td>Malawi</td>
-///     <td>xtd::forms::countries::malawi
-///     <td>@image html mw.png</td>
-///   </tr>
-///   <tr>
-///     <td>Malaysia</td>
-///     <td>xtd::forms::countries::malaysia
-///     <td>@image html my.png</td>
-///   </tr>
-///   <tr>
-///     <td>Maldives</td>
-///     <td>xtd::forms::countries::maldives
-///     <td>@image html mv.png</td>
-///   </tr>
-///   <tr>
-///     <td>Mali</td>
-///     <td>xtd::forms::countries::mali
-///     <td>@image html ml.png</td>
-///   </tr>
-///   <tr>
-///     <td>Malta</td>
-///     <td>xtd::forms::countries::malta
-///     <td>@image html mt.png</td>
-///   </tr>
-///   <tr>
-///     <td>Marshall Islands</td>
-///     <td>xtd::forms::countries::marshall_islands
-///     <td>@image html mh.png</td>
-///   </tr>
-///   <tr>
-///     <td>Martinique</td>
-///     <td>xtd::forms::countries::martinique
-///     <td>@image html mq.png</td>
-///   </tr>
-///   <tr>
-///     <td>Mauritania</td>
-///     <td>xtd::forms::countries::mauritania
-///     <td>@image html mr.png</td>
-///   </tr>
-///   <tr>
-///     <td>Mauritius</td>
-///     <td>xtd::forms::countries::mauritius
-///     <td>@image html mu.png</td>
-///   </tr>
-///   <tr>
-///     <td>Mayotte</td>
-///     <td>xtd::forms::countries::mayotte
-///     <td>@image html yt.png</td>
-///   </tr>
-///   <tr>
-///     <td>Mexico</td>
-///     <td>xtd::forms::countries::mexico
-///     <td>@image html mx.png</td>
-///   </tr>
-///   <tr>
-///     <td>Micronesia (Federated States of)</td>
-///     <td>xtd::forms::countries::federated_states_of_micronesia
-///     <td>@image html fm.png</td>
-///   </tr>
-///   <tr>
-///     <td>Moldova, Republic of</td>
-///     <td>xtd::forms::countries::moldova
-///     <td>@image html md.png</td>
-///   </tr>
-///   <tr>
-///     <td>Monaco</td>
-///     <td>xtd::forms::countries::monaco
-///     <td>@image html mc.png</td>
-///   </tr>
-///   <tr>
-///     <td>Mongolia</td>
-///     <td>xtd::forms::countries::mongolia
-///     <td>@image html mn.png</td>
-///   </tr>
-///   <tr>
-///     <td>Montenegro</td>
-///     <td>xtd::forms::countries::montenegro
-///     <td>@image html me.png</td>
-///   </tr>
-///   <tr>
-///     <td>Montserrat</td>
-///     <td>xtd::forms::countries::montserrat
-///     <td>@image html ms.png</td>
-///   </tr>
-///   <tr>
-///     <td>Morocco</td>
-///     <td>xtd::forms::countries::morocco
-///     <td>@image html ma.png</td>
-///   </tr>
-///   <tr>
-///     <td>Mozambique</td>
-///     <td>xtd::forms::countries::mozambique
-///     <td>@image html mz.png</td>
-///   </tr>
-///   <tr>
-///     <td>Myanmar</td>
-///     <td>xtd::forms::countries::myanmar
-///     <td>@image html mm.png</td>
-///   </tr>
-///   <tr>
-///     <td>Namibia</td>
-///     <td>xtd::forms::countries::namibia
-///     <td>@image html na.png</td>
-///   </tr>
-///   <tr>
-///     <td>Nauru</td>
-///     <td>xtd::forms::countries::nauru
-///     <td>@image html nr.png</td>
-///   </tr>
-///   <tr>
-///     <td>Nepal</td>
-///     <td>xtd::forms::countries::nepal
-///     <td>@image html np.png</td>
-///   </tr>
-///   <tr>
-///     <td>Netherlands</td>
-///     <td>xtd::forms::countries::netherlands
-///     <td>@image html nl.png</td>
-///   </tr>
-///   <tr>
-///     <td>New Caledonia</td>
-///     <td>xtd::forms::countries::new_caledonia
-///     <td>@image html nc.png</td>
-///   </tr>
-///   <tr>
-///     <td>New Zealand</td>
-///     <td>xtd::forms::countries::new_zealand
-///     <td>@image html nz.png</td>
-///   </tr>
-///   <tr>
-///     <td>Nicaragua</td>
-///     <td>xtd::forms::countries::nicaragua
-///     <td>@image html ni.png</td>
-///   </tr>
-///   <tr>
-///     <td>Niger</td>
-///     <td>xtd::forms::countries::niger
-///     <td>@image html ne.png</td>
-///   </tr>
-///   <tr>
-///     <td>Nigeria</td>
-///     <td>xtd::forms::countries::nigeria
-///     <td>@image html ng.png</td>
-///   </tr>
-///   <tr>
-///     <td>Niue</td>
-///     <td>xtd::forms::countries::niue
-///     <td>@image html nu.png</td>
-///   </tr>
-///   <tr>
-///     <td>Norfolk Island</td>
-///     <td>xtd::forms::countries::norfolk_island
-///     <td>@image html nf.png</td>
-///   </tr>
-///   <tr>
-///     <td>North Macedonia</td>
-///     <td>xtd::forms::countries::north_macedonia
-///     <td>@image html mk.png</td>
-///   </tr>
-///   <tr>
-///     <td>Northern Mariana Islands</td>
-///     <td>xtd::forms::countries::northern_mariana_islands
-///     <td>@image html mp.png</td>
-///   </tr>
-///   <tr>
-///     <td>Norway</td>
-///     <td>xtd::forms::countries::norway
-///     <td>@image html no.png</td>
-///   </tr>
-///   <tr>
-///     <td>Oman</td>
-///     <td>xtd::forms::countries::oman
-///     <td>@image html om.png</td>
-///   </tr>
-///   <tr>
-///     <td>Pakistan</td>
-///     <td>xtd::forms::countries::pakistan
-///     <td>@image html pk.png</td>
-///   </tr>
-///   <tr>
-///     <td>Palau</td>
-///     <td>xtd::forms::countries::palau
-///     <td>@image html pw.png</td>
-///   </tr>
-///   <tr>
-///     <td>Palestine, State of</td>
-///     <td>xtd::forms::countries::state_of_palestine
-///     <td>@image html ps.png</td>
-///   </tr>
-///   <tr>
-///     <td>Panama</td>
-///     <td>xtd::forms::countries::panama
-///     <td>@image html pa.png</td>
-///   </tr>
-///   <tr>
-///     <td>Papua New Guinea</td>
-///     <td>xtd::forms::countries::papua_new_guinea
-///     <td>@image html pg.png</td>
-///   </tr>
-///   <tr>
-///     <td>Paraguay</td>
-///     <td>xtd::forms::countries::paraguay
-///     <td>@image html py.png</td>
-///   </tr>
-///   <tr>
-///     <td>Peru</td>
-///     <td>xtd::forms::countries::peru
-///     <td>@image html pe.png</td>
-///   </tr>
-///   <tr>
-///     <td>Philippines</td>
-///     <td>xtd::forms::countries::philippines
-///     <td>@image html ph.png</td>
-///   </tr>
-///   <tr>
-///     <td>Pitcairn</td>
-///     <td>xtd::forms::countries::pitcairn
-///     <td>@image html pn.png</td>
-///   </tr>
-///   <tr>
-///     <td>Poland</td>
-///     <td>xtd::forms::countries::poland
-///     <td>@image html pl.png</td>
-///   </tr>
-///   <tr>
-///     <td>Portugal</td>
-///     <td>xtd::forms::countries::portugal
-///     <td>@image html pt.png</td>
-///   </tr>
-///   <tr>
-///     <td>Puerto Rico</td>
-///     <td>xtd::forms::countries::puerto_rico
-///     <td>@image html pr.png</td>
-///   </tr>
-///   <tr>
-///     <td>Qatar</td>
-///     <td>xtd::forms::countries::qatar
-///     <td>@image html qa.png</td>
-///   </tr>
-///   <tr>
-///     <td>Réunion</td>
-///     <td>xtd::forms::countries::reunion
-///     <td>@image html re.png</td>
-///   </tr>
-///   <tr>
-///     <td>Romania</td>
-///     <td>xtd::forms::countries::romania
-///     <td>@image html ro.png</td>
-///   </tr>
-///   <tr>
-///     <td>Russian Federation</td>
-///     <td>xtd::forms::countries::russian_federation
-///     <td>@image html ru.png</td>
-///   </tr>
-///   <tr>
-///     <td>Rwanda</td>
-///     <td>xtd::forms::countries::rwanda
-///     <td>@image html rw.png</td>
-///   </tr>
-///   <tr>
-///     <td>Saint Barthélemy</td>
-///     <td>xtd::forms::countries::saint_barthelemy
-///     <td>@image html bl.png</td>
-///   </tr>
-///   <tr>
-///     <td>Saint Helena, Ascension and Tristan da Cunha</td>
-///     <td>xtd::forms::countries::saint_helena_ascension_and_tristan_da_cunha
-///     <td>@image html sh.png</td>
-///   </tr>
-///   <tr>
-///     <td>Saint Kitts and Nevis</td>
-///     <td>xtd::forms::countries::saint_kitts_and_nevis
-///     <td>@image html kn.png</td>
-///   </tr>
-///   <tr>
-///     <td>Saint Lucia</td>
-///     <td>xtd::forms::countries::saint_lucia
-///     <td>@image html lc.png</td>
-///   </tr>
-///   <tr>
-///     <td>Saint Martin (French part)</td>
-///     <td>xtd::forms::countries::saint_martin_french_part
-///     <td>@image html mf.png</td>
-///   </tr>
-///   <tr>
-///     <td>Saint Pierre and Miquelon</td>
-///     <td>xtd::forms::countries::saint_pierre_and_miquelon
-///     <td>@image html pm.png</td>
-///   </tr>
-///   <tr>
-///     <td>Saint Vincent and the Grenadines</td>
-///     <td>xtd::forms::countries::saint_vincent_and_the_grenadines
-///     <td>@image html vc.png</td>
-///   </tr>
-///   <tr>
-///     <td>Samoa</td>
-///     <td>xtd::forms::countries::samoa
-///     <td>@image html ws.png</td>
-///   </tr>
-///   <tr>
-///     <td>San Marino</td>
-///     <td>xtd::forms::countries::san_marino
-///     <td>@image html sm.png</td>
-///   </tr>
-///   <tr>
-///     <td>Sao Tome and Principe</td>
-///     <td>xtd::forms::countries::sao_tome_and_principe
-///     <td>@image html st.png</td>
-///   </tr>
-///   <tr>
-///     <td>Saudi Arabia</td>
-///     <td>xtd::forms::countries::saudi_arabia
-///     <td>@image html sa.png</td>
-///   </tr>
-///   <tr>
-///     <td>Senegal</td>
-///     <td>xtd::forms::countries::senegal
-///     <td>@image html sn.png</td>
-///   </tr>
-///   <tr>
-///     <td>Serbia</td>
-///     <td>xtd::forms::countries::serbia
-///     <td>@image html rs.png</td>
-///   </tr>
-///   <tr>
-///     <td>Seychelles</td>
-///     <td>xtd::forms::countries::seychelles
-///     <td>@image html sc.png</td>
-///   </tr>
-///   <tr>
-///     <td>Sierra Leone</td>
-///     <td>xtd::forms::countries::sierra_leone
-///     <td>@image html sl.png</td>
-///   </tr>
-///   <tr>
-///     <td>Singapore</td>
-///     <td>xtd::forms::countries::singapore
-///     <td>@image html sg.png</td>
-///   </tr>
-///   <tr>
-///     <td>Sint Maarten (Dutch part)</td>
-///     <td>xtd::forms::countries::sint_maarten_dutch_part
-///     <td>@image html sx.png</td>
-///   </tr>
-///   <tr>
-///     <td>Slovakia</td>
-///     <td>xtd::forms::countries::slovakia
-///     <td>@image html sk.png</td>
-///   </tr>
-///   <tr>
-///     <td>Slovenia</td>
-///     <td>xtd::forms::countries::slovenia
-///     <td>@image html si.png</td>
-///   </tr>
-///   <tr>
-///     <td>Solomon Islands</td>
-///     <td>xtd::forms::countries::solomon_islands
-///     <td>@image html sb.png</td>
-///   </tr>
-///   <tr>
-///     <td>Somalia</td>
-///     <td>xtd::forms::countries::somalia
-///     <td>@image html so.png</td>
-///   </tr>
-///   <tr>
-///     <td>South Africa</td>
-///     <td>xtd::forms::countries::south_africa
-///     <td>@image html za.png</td>
-///   </tr>
-///   <tr>
-///     <td>South Georgia and the South Sandwich Islands</td>
-///     <td>xtd::forms::countries::south_georgia_and_the_south_sandwich_islands
-///     <td>@image html gs.png</td>
-///   </tr>
-///   <tr>
-///     <td>South Sudan</td>
-///     <td>xtd::forms::countries::south_sudan
-///     <td>@image html ss.png</td>
-///   </tr>
-///   <tr>
-///     <td>Spain</td>
-///     <td>xtd::forms::countries::spain
-///     <td>@image html es.png</td>
-///   </tr>
-///   <tr>
-///     <td>Sri Lanka</td>
-///     <td>xtd::forms::countries::sri_lanka
-///     <td>@image html lk.png</td>
-///   </tr>
-///   <tr>
-///     <td>Sudan</td>
-///     <td>xtd::forms::countries::sudan
-///     <td>@image html sd.png</td>
-///   </tr>
-///   <tr>
-///     <td>Suriname</td>
-///     <td>xtd::forms::countries::suriname
-///     <td>@image html sr.png</td>
-///   </tr>
-///   <tr>
-///     <td>Svalbard and Jan Mayen</td>
-///     <td>xtd::forms::countries::svalbard_and_jan_mayen
-///     <td>@image html sj.png</td>
-///   </tr>
-///   <tr>
-///     <td>Sweden</td>
-///     <td>xtd::forms::countries::sweden
-///     <td>@image html se.png</td>
-///   </tr>
-///   <tr>
-///     <td>Switzerland</td>
-///     <td>xtd::forms::countries::switzerland
-///     <td>@image html ch.png</td>
-///   </tr>
-///   <tr>
-///     <td>Syrian Arab Republic</td>
-///     <td>xtd::forms::countries::syrian_arab_republic
-///     <td>@image html sy.png</td>
-///   </tr>
-///   <tr>
-///     <td>Taiwan, Province of China</td>
-///     <td>xtd::forms::countries::taiwan_china
-///     <td>@image html tw.png</td>
-///   </tr>
-///   <tr>
-///     <td>Tajikistan</td>
-///     <td>xtd::forms::countries::tajikistan
-///     <td>@image html tj.png</td>
-///   </tr>
-///   <tr>
-///     <td>Tanzania, United Republic of</td>
-///     <td>xtd::forms::countries::tanzania
-///     <td>@image html tz.png</td>
-///   </tr>
-///   <tr>
-///     <td>Thailand</td>
-///     <td>xtd::forms::countries::thailand
-///     <td>@image html th.png</td>
-///   </tr>
-///   <tr>
-///     <td>Timor-Leste</td>
-///     <td>xtd::forms::countries::timor_leste
-///     <td>@image html tl.png</td>
-///   </tr>
-///   <tr>
-///     <td>Togo</td>
-///     <td>xtd::forms::countries::togo
-///     <td>@image html tg.png</td>
-///   </tr>
-///   <tr>
-///     <td>Tokelau</td>
-///     <td>xtd::forms::countries::tokelau
-///     <td>@image html tk.png</td>
-///   </tr>
-///   <tr>
-///     <td>Tonga</td>
-///     <td>xtd::forms::countries::tonga
-///     <td>@image html to.png</td>
-///   </tr>
-///   <tr>
-///     <td>Trinidad and Tobago</td>
-///     <td>xtd::forms::countries::trinidad_and_tobago
-///     <td>@image html tt.png</td>
-///   </tr>
-///   <tr>
-///     <td>Tunisia</td>
-///     <td>xtd::forms::countries::tunisia
-///     <td>@image html tn.png</td>
-///   </tr>
-///   <tr>
-///     <td>Turkey</td>
-///     <td>xtd::forms::countries::turkey
-///     <td>@image html tr.png</td>
-///   </tr>
-///   <tr>
-///     <td>Turkmenistan</td>
-///     <td>xtd::forms::countries::turkmenistan
-///     <td>@image html tm.png</td>
-///   </tr>
-///   <tr>
-///     <td>Turks and Caicos Islands</td>
-///     <td>xtd::forms::countries::turks_and_caicos_islands
-///     <td>@image html tc.png</td>
-///   </tr>
-///   <tr>
-///     <td>Tuvalu</td>
-///     <td>xtd::forms::countries::tuvalu
-///     <td>@image html tv.png</td>
-///   </tr>
-///   <tr>
-///     <td>Uganda</td>
-///     <td>xtd::forms::countries::uganda
-///     <td>@image html ug.png</td>
-///   </tr>
-///   <tr>
-///     <td>Ukraine</td>
-///     <td>xtd::forms::countries::ukraine
-///     <td>@image html ua.png</td>
-///   </tr>
-///   <tr>
-///     <td>United Arab Emirates</td>
-///     <td>xtd::forms::countries::united_arab_emirates
-///     <td>@image html ae.png</td>
-///   </tr>
-///   <tr>
-///     <td>United Kingdom of Great Britain and Northern Ireland</td>
-///     <td>xtd::forms::countries::united_kingdom_of_great_britain_and_northern_ireland
-///     <td>@image html gb.png</td>
-///   </tr>
-///   <tr>
-///     <td>United States of America</td>
-///     <td>xtd::forms::countries::united_states_of_america
-///     <td>@image html us.png</td>
-///   </tr>
-///   <tr>
-///     <td>United States Minor Outlying Islands</td>
-///     <td>xtd::forms::countries::united_states_minor_outlying_islands
-///     <td>@image html um.png</td>
-///   </tr>
-///   <tr>
-///     <td>Uruguay</td>
-///     <td>xtd::forms::countries::uruguay
-///     <td>@image html uy.png</td>
-///   </tr>
-///   <tr>
-///     <td>Uzbekistan</td>
-///     <td>xtd::forms::countries::uzbekistan
-///     <td>@image html uz.png</td>
-///   </tr>
-///   <tr>
-///     <td>Vanuatu</td>
-///     <td>xtd::forms::countries::vanuatu
-///     <td>@image html vu.png</td>
-///   </tr>
-///   <tr>
-///     <td>Venezuela (Bolivarian Republic of)</td>
-///     <td>xtd::forms::countries::venezuela
-///     <td>@image html ve.png</td>
-///   </tr>
-///   <tr>
-///     <td>Viet Nam</td>
-///     <td>xtd::forms::countries::viet_nam
-///     <td>@image html vn.png</td>
-///   </tr>
-///   <tr>
-///     <td>Virgin Islands (British)</td>
-///     <td>xtd::forms::countries::british_virgin_islands
-///     <td>@image html vg.png</td>
-///   </tr>
-///   <tr>
-///     <td>Virgin Islands (U.S.)</td>
-///     <td>xtd::forms::countries::united_states_virgin_islands
-///     <td>@image html vi.png</td>
-///   </tr>
-///   <tr>
-///     <td>Wallis and Futuna</td>
-///     <td>xtd::forms::countries::wallis_and_futuna
-///     <td>@image html wf.png</td>
-///   </tr>
-///   <tr>
-///     <td>Western Sahara</td>
-///     <td>xtd::forms::countries::western_sahara
-///     <td>@image html eh.png</td>
-///   </tr>
-///   <tr>
-///     <td>Yemen</td>
-///     <td>xtd::forms::countries::yemen
-///     <td>@image html ye.png</td>
-///   </tr>
-///   <tr>
-///     <td>Zambia</td>
-///     <td>xtd::forms::countries::zambia
-///     <td>@image html zm.png</td>
-///   </tr>
-///   <tr>
-///     <td>Zimbabwe</td>
-///     <td>xtd::forms::countries::zimbabwe
-///     <td>@image html zw.png</td>
-///   </tr>
-/// </table>
+/// | Name                                                 | Value                                                                       | Flags                 |
+/// | ---------------------------------------------------- | --------------------------------------------------------------------------- | --------------------- |
+/// | Afghanistan                                          | xtd::forms::countries::afghanistan                                          |  @image html af.png   |
+/// | Åland Islands                                        | xtd::forms::countries::aland_islands                                        |  @image html ax.png   |
+/// | Albania                                              | xtd::forms::countries::albania                                              |  @image html al.png   |
+/// | Algeria                                              | xtd::forms::countries::algeria                                              |  @image html dz.png   |
+/// | American Samoa                                       | xtd::forms::countries::american_samoa                                       |  @image html as.png   |
+/// | Andorra                                              | xtd::forms::countries::andorra                                              |  @image html ad.png   |
+/// | Angola                                               | xtd::forms::countries::angola                                               |  @image html ao.png   |
+/// | Anguilla                                             | xtd::forms::countries::anguilla                                             |  @image html ai.png   |
+/// | Antarctica                                           | xtd::forms::countries::antarctica                                           |  @image html aq.png   |
+/// | Antigua and Barbuda                                  | xtd::forms::countries::antigua_and_barbuda                                  |  @image html ag.png   |
+/// | Argentina                                            | xtd::forms::countries::argentina                                            |  @image html ar.png   |
+/// | Armenia                                              | xtd::forms::countries::armenia                                              |  @image html am.png   |
+/// | Aruba                                                | xtd::forms::countries::aruba                                                |  @image html aw.png   |
+/// | Australia                                            | xtd::forms::countries::australia                                            |  @image html au.png   |
+/// | Austria                                              | xtd::forms::countries::austria                                              |  @image html at.png   |
+/// | Azerbaijan                                           | xtd::forms::countries::azerbaijan                                           |  @image html az.png   |
+/// | Bahamas                                              | xtd::forms::countries::bahamas                                              |  @image html bs.png   |
+/// | Bahrain                                              | xtd::forms::countries::bahrain                                              |  @image html bh.png   |
+/// | Bangladesh                                           | xtd::forms::countries::bangladesh                                           |  @image html bd.png   |
+/// | Barbados                                             | xtd::forms::countries::barbados                                             |  @image html bb.png   |
+/// | Belarus                                              | xtd::forms::countries::belarus                                              |  @image html by.png   |
+/// | Belgium                                              | xtd::forms::countries::belgium                                              |  @image html be.png   |
+/// | Belize                                               | xtd::forms::countries::belize                                               |  @image html bz.png   |
+/// | Benin                                                | xtd::forms::countries::benin                                                |  @image html bj.png   |
+/// | Bermuda                                              | xtd::forms::countries::bermuda                                              |  @image html bm.png   |
+/// | Bhutan                                               | xtd::forms::countries::bhutan                                               |  @image html bt.png   |
+/// | Bolivia (Plurinational State of)                     | xtd::forms::countries::bolivia                                              |  @image html bo.png   |
+/// | Bonaire, Sint Eustatius and Saba                     | xtd::forms::countries::bonaire_sint_eustatius_and_saba                      |  @image html bq.png   |
+/// | Bosnia and Herzegovina                               | xtd::forms::countries::bosnia_and_herzegovina                               |  @image html ba.png   |
+/// | Botswana                                             | xtd::forms::countries::botswana                                             |  @image html bw.png   |
+/// | Bouvet Island                                        | xtd::forms::countries::bouvet_island                                        |  @image html bv.png   |
+/// | Brazil                                               | xtd::forms::countries::brazil                                               |  @image html br.png   |
+/// | British Indian Ocean Territory                       | xtd::forms::countries::british_indian_ocean_territory                       |  @image html iot.png  |
+/// | Brunei Darussalam                                    | xtd::forms::countries::brunei_darussalam                                    |  @image html bn.png   |
+/// | Bulgaria                                             | xtd::forms::countries::bulgaria                                             |  @image html bg.png   |
+/// | Burkina Faso                                         | xtd::forms::countries::burkina_faso                                         |  @image html bf.png   |
+/// | Burundi                                              | xtd::forms::countries::burundi                                              |  @image html bi.png   |
+/// | Cabo Verde                                           | xtd::forms::countries::cabo_verde                                           |  @image html cv.png   |
+/// | Cambodia                                             | xtd::forms::countries::cambodia                                             |  @image html kh.png   |
+/// | Cameroon                                             | xtd::forms::countries::cameroon                                             |  @image html cm.png   |
+/// | Canada                                               | xtd::forms::countries::canada                                               |  @image html ca.png   |
+/// | Cayman Islands                                       | xtd::forms::countries::cayman_islands                                       |  @image html ky.png   |
+/// | Central African Republic                             | xtd::forms::countries::central_african_republic                             |  @image html cf.png   |
+/// | Chad                                                 | xtd::forms::countries::chad                                                 |  @image html td.png   |
+/// | Chile                                                | xtd::forms::countries::chile                                                |  @image html cl.png   |
+/// | China                                                | xtd::forms::countries::china                                                |  @image html cn.png   |
+/// | Christmas Island                                     | xtd::forms::countries::christmas_island                                     |  @image html cx.png   |
+/// | Cocos (Keeling) Islands                              | xtd::forms::countries::cocos_keeling_islands                                |  @image html cc.png   |
+/// | Colombia                                             | xtd::forms::countries::colombia                                             |  @image html co.png   |
+/// | Comoros                                              | xtd::forms::countries::comoros                                              |  @image html km.png   |
+/// | Congo                                                | xtd::forms::countries::congo                                                |  @image html cg.png   |
+/// | Congo, Democratic Republic of the                    | xtd::forms::countries::democratic_republic_of_the_congo                     |  @image html cd.png   |
+/// | Cook Islands                                         | xtd::forms::countries::cook_islands                                         |  @image html ck.png   |
+/// | Costa Rica                                           | xtd::forms::countries::costa_rica                                           |  @image html cr.png   |
+/// | Côte d'Ivoire                                        | xtd::forms::countries::cote_d_ivoire                                        |  @image html ci.png   |
+/// | Croatia                                              | xtd::forms::countries::croatia                                              |  @image html hr.png   |
+/// | Cuba                                                 | xtd::forms::countries::cuba                                                 |  @image html cu.png   |
+/// | Curaçao                                              | xtd::forms::countries::curacao                                              |  @image html cw.png   |
+/// | Cyprus                                               | xtd::forms::countries::cyprus                                               |  @image html cy.png   |
+/// | Czechia                                              | xtd::forms::countries::czechia                                              |  @image html cz.png   |
+/// | Denmark                                              | xtd::forms::countries::denmark                                              |  @image html dk.png   |
+/// | Djibouti                                             | xtd::forms::countries::djibouti                                             |  @image html dj.png   |
+/// | Dominica                                             | xtd::forms::countries::dominica                                             |  @image html dm.png   |
+/// | Dominican Republic                                   | xtd::forms::countries::dominican_republic                                   |  @image html do.png   |
+/// | Ecuador                                              | xtd::forms::countries::ecuador                                              |  @image html ec.png   |
+/// | Egypt                                                | xtd::forms::countries::egypt                                                |  @image html eg.png   |
+/// | El Salvador                                          | xtd::forms::countries::el_salvador                                          |  @image html sv.png   |
+/// | Equatorial Guinea                                    | xtd::forms::countries::equatorial_guinea                                    |  @image html gq.png   |
+/// | Eritrea                                              | xtd::forms::countries::eritrea                                              |  @image html er.png   |
+/// | Estonia                                              | xtd::forms::countries::estonia                                              |  @image html ee.png   |
+/// | Eswatini                                             | xtd::forms::countries::eswatini                                             |  @image html sz.png   |
+/// | Ethiopia                                             | xtd::forms::countries::ethiopia                                             |  @image html et.png   |
+/// | Falkland Islands (Malvinas)                          | xtd::forms::countries::falkland_islands                                     |  @image html fk.png   |
+/// | Faroe Islands                                        | xtd::forms::countries::faroe_islands                                        |  @image html fo.png   |
+/// | Fiji                                                 | xtd::forms::countries::fiji                                                 |  @image html fj.png   |
+/// | Finland                                              | xtd::forms::countries::finland                                              |  @image html fi.png   |
+/// | France                                               | xtd::forms::countries::france                                               |  @image html fr.png   |
+/// | French Guiana                                        | xtd::forms::countries::french_guiana                                        |  @image html gf.png   |
+/// | French Polynesia                                     | xtd::forms::countries::french_polynesia                                     |  @image html pf.png   |
+/// | French Southern Territories                          | xtd::forms::countries::french_southern_territories                          |  @image html tf.png   |
+/// | Gabon                                                | xtd::forms::countries::gabon                                                |  @image html ga.png   |
+/// | Gambia                                               | xtd::forms::countries::gambia                                               |  @image html gm.png   |
+/// | Georgia                                              | xtd::forms::countries::georgia                                              |  @image html ge.png   |
+/// | Germany                                              | xtd::forms::countries::germany                                              |  @image html de.png   |
+/// | Ghana                                                | xtd::forms::countries::ghana                                                |  @image html gh.png   |
+/// | Gibraltar                                            | xtd::forms::countries::gibraltar                                            |  @image html gi.png   |
+/// | Greece                                               | xtd::forms::countries::greece                                               |  @image html gr.png   |
+/// | Greenland                                            | xtd::forms::countries::greenland                                            |  @image html gl.png   |
+/// | Grenada                                              | xtd::forms::countries::grenada                                              |  @image html gd.png   |
+/// | Guadeloupe                                           | xtd::forms::countries::guadeloupe                                           |  @image html gp.png   |
+/// | Guam                                                 | xtd::forms::countries::guam                                                 |  @image html gu.png   |
+/// | Guatemala                                            | xtd::forms::countries::guatemala                                            |  @image html gt.png   |
+/// | Guernsey                                             | xtd::forms::countries::guernsey                                             |  @image html gg.png   |
+/// | Guinea                                               | xtd::forms::countries::guinea                                               |  @image html gn.png   |
+/// | Guinea-Bissau                                        | xtd::forms::countries::guinea_bissau                                        |  @image html gw.png   |
+/// | Guyana                                               | xtd::forms::countries::guyana                                               |  @image html gy.png   |
+/// | Haiti                                                | xtd::forms::countries::haiti                                                |  @image html ht.png   |
+/// | Heard Island and McDonald Islands                    | xtd::forms::countries::heard_island_and_mcdonald_islands                    |  @image html hm.png   |
+/// | Holy See                                             | xtd::forms::countries::holy_see                                             |  @image html va.png   |
+/// | Honduras                                             | xtd::forms::countries::honduras                                             |  @image html hn.png   |
+/// | Hong Kong                                            | xtd::forms::countries::hong_kong                                            |  @image html hk.png   |
+/// | Hungary                                              | xtd::forms::countries::hungary                                              |  @image html hu.png   |
+/// | Iceland                                              | xtd::forms::countries::iceland                                              |  @image html is.png   |
+/// | India                                                | xtd::forms::countries::india                                                |  @image html in.png   |
+/// | Indonesia                                            | xtd::forms::countries::indonesia                                            |  @image html id.png   |
+/// | Iran (Islamic Republic of)                           | xtd::forms::countries::iran                                                 |  @image html ir.png   |
+/// | Iraq                                                 | xtd::forms::countries::iraq                                                 |  @image html iq.png   |
+/// | Ireland                                              | xtd::forms::countries::ireland                                              |  @image html ie.png   |
+/// | Isle of Man                                          | xtd::forms::countries::isle_of_man                                          |  @image html im.png   |
+/// | Israel                                               | xtd::forms::countries::israel                                               |  @image html il.png   |
+/// | Italy                                                | xtd::forms::countries::italy                                                |  @image html it.png   |
+/// | Jamaica                                              | xtd::forms::countries::jamaica                                              |  @image html jm.png   |
+/// | Japan                                                | xtd::forms::countries::japan                                                |  @image html jp.png   |
+/// | Jersey                                               | xtd::forms::countries::jersey                                               |  @image html je.png   |
+/// | Jordan                                               | xtd::forms::countries::jordan                                               |  @image html jo.png   |
+/// | Kazakhstan                                           | xtd::forms::countries::kazakhstan                                           |  @image html kz.png   |
+/// | Kenya                                                | xtd::forms::countries::kenya                                                |  @image html ke.png   |
+/// | Kiribati                                             | xtd::forms::countries::kiribati                                             |  @image html ki.png   |
+/// | Korea (Democratic People's Republic of)              | xtd::forms::countries::north_korea                                          |  @image html kp.png   |
+/// | Korea, Republic of                                   | xtd::forms::countries::south_korea                                          |  @image html kr.png   |
+/// | Kuwait                                               | xtd::forms::countries::kuwait                                               |  @image html kw.png   |
+/// | Kyrgyzstan                                           | xtd::forms::countries::kyrgyzstan                                           |  @image html kg.png   |
+/// | Lao People's Democratic Republic                     | xtd::forms::countries::lao_people_s_democratic_republic                     |  @image html la.png   |
+/// | Latvia                                               | xtd::forms::countries::latvia                                               |  @image html lv.png   |
+/// | Lebanon                                              | xtd::forms::countries::lebanon                                              |  @image html lb.png   |
+/// | Lesotho                                              | xtd::forms::countries::lesotho                                              |  @image html ls.png   |
+/// | Liberia                                              | xtd::forms::countries::liberia                                              |  @image html lr.png   |
+/// | Libya                                                | xtd::forms::countries::libya                                                |  @image html ly.png   |
+/// | Liechtenstein                                        | xtd::forms::countries::liechtenstein                                        |  @image html li.png   |
+/// | Lithuania                                            | xtd::forms::countries::lithuania                                            |  @image html lt.png   |
+/// | Luxembourg                                           | xtd::forms::countries::luxembourg                                           |  @image html lu.png   |
+/// | Macao                                                | xtd::forms::countries::macao                                                |  @image html mo.png   |
+/// | Madagascar                                           | xtd::forms::countries::madagascar                                           |  @image html mg.png   |
+/// | Malawi                                               | xtd::forms::countries::malawi                                               |  @image html mw.png   |
+/// | Malaysia                                             | xtd::forms::countries::malaysia                                             |  @image html my.png   |
+/// | Maldives                                             | xtd::forms::countries::maldives                                             |  @image html mv.png   |
+/// | Mali                                                 | xtd::forms::countries::mali                                                 |  @image html ml.png   |
+/// | Malta                                                | xtd::forms::countries::malta                                                |  @image html mt.png   |
+/// | Marshall Islands                                     | xtd::forms::countries::marshall_islands                                     |  @image html mh.png   |
+/// | Martinique                                           | xtd::forms::countries::martinique                                           |  @image html mq.png   |
+/// | Mauritania                                           | xtd::forms::countries::mauritania                                           |  @image html mr.png   |
+/// | Mauritius                                            | xtd::forms::countries::mauritius                                            |  @image html mu.png   |
+/// | Mayotte                                              | xtd::forms::countries::mayotte                                              |  @image html yt.png   |
+/// | Mexico                                               | xtd::forms::countries::mexico                                               |  @image html mx.png   |
+/// | Micronesia (Federated States of)                     | xtd::forms::countries::federated_states_of_micronesia                       |  @image html fm.png   |
+/// | Moldova, Republic of                                 | xtd::forms::countries::moldova                                              |  @image html md.png   |
+/// | Monaco                                               | xtd::forms::countries::monaco                                               |  @image html mc.png   |
+/// | Mongolia                                             | xtd::forms::countries::mongolia                                             |  @image html mn.png   |
+/// | Montenegro                                           | xtd::forms::countries::montenegro                                           |  @image html me.png   |
+/// | Montserrat                                           | xtd::forms::countries::montserrat                                           |  @image html ms.png   |
+/// | Morocco                                              | xtd::forms::countries::morocco                                              |  @image html ma.png   |
+/// | Mozambique                                           | xtd::forms::countries::mozambique                                           |  @image html mz.png   |
+/// | Myanmar                                              | xtd::forms::countries::myanmar                                              |  @image html mm.png   |
+/// | Namibia                                              | xtd::forms::countries::namibia                                              |  @image html na.png   |
+/// | Nauru                                                | xtd::forms::countries::nauru                                                |  @image html nr.png   |
+/// | Nepal                                                | xtd::forms::countries::nepal                                                |  @image html np.png   |
+/// | Netherlands                                          | xtd::forms::countries::netherlands                                          |  @image html nl.png   |
+/// | New Caledonia                                        | xtd::forms::countries::new_caledonia                                        |  @image html nc.png   |
+/// | New Zealand                                          | xtd::forms::countries::new_zealand                                          |  @image html nz.png   |
+/// | Nicaragua                                            | xtd::forms::countries::nicaragua                                            |  @image html ni.png   |
+/// | Niger                                                | xtd::forms::countries::niger                                                |  @image html ne.png   |
+/// | Nigeria                                              | xtd::forms::countries::nigeria                                              |  @image html ng.png   |
+/// | Niue                                                 | xtd::forms::countries::niue                                                 |  @image html nu.png   |
+/// | Norfolk Island                                       | xtd::forms::countries::norfolk_island                                       |  @image html nf.png   |
+/// | North Macedonia                                      | xtd::forms::countries::north_macedonia                                      |  @image html mk.png   |
+/// | Northern Mariana Islands                             | xtd::forms::countries::northern_mariana_islands                             |  @image html mp.png   |
+/// | Norway                                               | xtd::forms::countries::norway                                               |  @image html no.png   |
+/// | Oman                                                 | xtd::forms::countries::oman                                                 |  @image html om.png   |
+/// | Pakistan                                             | xtd::forms::countries::pakistan                                             |  @image html pk.png   |
+/// | Palau                                                | xtd::forms::countries::palau                                                |  @image html pw.png   |
+/// | Palestine, State of                                  | xtd::forms::countries::state_of_palestine                                   |  @image html ps.png   |
+/// | Panama                                               | xtd::forms::countries::panama                                               |  @image html pa.png   |
+/// | Papua New Guinea                                     | xtd::forms::countries::papua_new_guinea                                     |  @image html pg.png   |
+/// | Paraguay                                             | xtd::forms::countries::paraguay                                             |  @image html py.png   |
+/// | Peru                                                 | xtd::forms::countries::peru                                                 |  @image html pe.png   |
+/// | Philippines                                          | xtd::forms::countries::philippines                                          |  @image html ph.png   |
+/// | Pitcairn                                             | xtd::forms::countries::pitcairn                                             |  @image html pn.png   |
+/// | Poland                                               | xtd::forms::countries::poland                                               |  @image html pl.png   |
+/// | Portugal                                             | xtd::forms::countries::portugal                                             |  @image html pt.png   |
+/// | Puerto Rico                                          | xtd::forms::countries::puerto_rico                                          |  @image html pr.png   |
+/// | Qatar                                                | xtd::forms::countries::qatar                                                |  @image html qa.png   |
+/// | Réunion                                              | xtd::forms::countries::reunion                                              |  @image html re.png   |
+/// | Romania                                              | xtd::forms::countries::romania                                              |  @image html ro.png   |
+/// | Russian Federation                                   | xtd::forms::countries::russian_federation                                   |  @image html ru.png   |
+/// | Rwanda                                               | xtd::forms::countries::rwanda                                               |  @image html rw.png   |
+/// | Saint Barthélemy                                     | xtd::forms::countries::saint_barthelemy                                     |  @image html bl.png   |
+/// | Saint Helena, Ascension and Tristan da Cunha         | xtd::forms::countries::saint_helena_ascension_and_tristan_da_cunha          |  @image html sh.png   |
+/// | Saint Kitts and Nevis                                | xtd::forms::countries::saint_kitts_and_nevis                                |  @image html kn.png   |
+/// | Saint Lucia                                          | xtd::forms::countries::saint_lucia                                          |  @image html lc.png   |
+/// | Saint Martin (French part)                           | xtd::forms::countries::saint_martin_french_part                             |  @image html mf.png   |
+/// | Saint Pierre and Miquelon                            | xtd::forms::countries::saint_pierre_and_miquelon                            |  @image html pm.png   |
+/// | Saint Vincent and the Grenadines                     | xtd::forms::countries::saint_vincent_and_the_grenadines                     |  @image html vc.png   |
+/// | Samoa                                                | xtd::forms::countries::samoa                                                |  @image html ws.png   |
+/// | San Marino                                           | xtd::forms::countries::san_marino                                           |  @image html sm.png   |
+/// | Sao Tome and Principe                                | xtd::forms::countries::sao_tome_and_principe                                |  @image html st.png   |
+/// | Saudi Arabia                                         | xtd::forms::countries::saudi_arabia                                         |  @image html sa.png   |
+/// | Senegal                                              | xtd::forms::countries::senegal                                              |  @image html sn.png   |
+/// | Serbia                                               | xtd::forms::countries::serbia                                               |  @image html rs.png   |
+/// | Seychelles                                           | xtd::forms::countries::seychelles                                           |  @image html sc.png   |
+/// | Sierra Leone                                         | xtd::forms::countries::sierra_leone                                         |  @image html sl.png   |
+/// | Singapore                                            | xtd::forms::countries::singapore                                            |  @image html sg.png   |
+/// | Sint Maarten (Dutch part)                            | xtd::forms::countries::sint_maarten_dutch_part                              |  @image html sx.png   |
+/// | Slovakia                                             | xtd::forms::countries::slovakia                                             |  @image html sk.png   |
+/// | Slovenia                                             | xtd::forms::countries::slovenia                                             |  @image html si.png   |
+/// | Solomon Islands                                      | xtd::forms::countries::solomon_islands                                      |  @image html sb.png   |
+/// | Somalia                                              | xtd::forms::countries::somalia                                              |  @image html so.png   |
+/// | South Africa                                         | xtd::forms::countries::south_africa                                         |  @image html za.png   |
+/// | South Georgia and the South Sandwich Islands         | xtd::forms::countries::south_georgia_and_the_south_sandwich_islands         |  @image html gs.png   |
+/// | South Sudan                                          | xtd::forms::countries::south_sudan                                          |  @image html ss.png   |
+/// | Spain                                                | xtd::forms::countries::spain                                                |  @image html es.png   |
+/// | Sri Lanka                                            | xtd::forms::countries::sri_lanka                                            |  @image html lk.png   |
+/// | Sudan                                                | xtd::forms::countries::sudan                                                |  @image html sd.png   |
+/// | Suriname                                             | xtd::forms::countries::suriname                                             |  @image html sr.png   |
+/// | Svalbard and Jan Mayen                               | xtd::forms::countries::svalbard_and_jan_mayen                               |  @image html sj.png   |
+/// | Sweden                                               | xtd::forms::countries::sweden                                               |  @image html se.png   |
+/// | Switzerland                                          | xtd::forms::countries::switzerland                                          |  @image html ch.png   |
+/// | Syrian Arab Republic                                 | xtd::forms::countries::syrian_arab_republic                                 |  @image html sy.png   |
+/// | Taiwan, Province of China                            | xtd::forms::countries::taiwan_china                                         |  @image html tw.png   |
+/// | Tajikistan                                           | xtd::forms::countries::tajikistan                                           |  @image html tj.png   |
+/// | Tanzania, United Republic of                         | xtd::forms::countries::tanzania                                             |  @image html tz.png   |
+/// | Thailand                                             | xtd::forms::countries::thailand                                             |  @image html th.png   |
+/// | Timor-Leste                                          | xtd::forms::countries::timor_leste                                          |  @image html tl.png   |
+/// | Togo                                                 | xtd::forms::countries::togo                                                 |  @image html tg.png   |
+/// | Tokelau                                              | xtd::forms::countries::tokelau                                              |  @image html tk.png   |
+/// | Tonga                                                | xtd::forms::countries::tonga                                                |  @image html to.png   |
+/// | Trinidad and Tobago                                  | xtd::forms::countries::trinidad_and_tobago                                  |  @image html tt.png   |
+/// | Tunisia                                              | xtd::forms::countries::tunisia                                              |  @image html tn.png   |
+/// | Turkey                                               | xtd::forms::countries::turkey                                               |  @image html tr.png   |
+/// | Turkmenistan                                         | xtd::forms::countries::turkmenistan                                         |  @image html tm.png   |
+/// | Turks and Caicos Islands                             | xtd::forms::countries::turks_and_caicos_islands                             |  @image html tc.png   |
+/// | Tuvalu                                               | xtd::forms::countries::tuvalu                                               |  @image html tv.png   |
+/// | Uganda                                               | xtd::forms::countries::uganda                                               |  @image html ug.png   |
+/// | Ukraine                                              | xtd::forms::countries::ukraine                                              |  @image html ua.png   |
+/// | United Arab Emirates                                 | xtd::forms::countries::united_arab_emirates                                 |  @image html ae.png   |
+/// | United Kingdom of Great Britain and Northern Ireland | xtd::forms::countries::united_kingdom_of_great_britain_and_northern_ireland |  @image html gb.png   |
+/// | United States of America                             | xtd::forms::countries::united_states_of_america                             |  @image html us.png   |
+/// | United States Minor Outlying Islands                 | xtd::forms::countries::united_states_minor_outlying_islands                 |  @image html um.png   |
+/// | Uruguay                                              | xtd::forms::countries::uruguay                                              |  @image html uy.png   |
+/// | Uzbekistan                                           | xtd::forms::countries::uzbekistan                                           |  @image html uz.png   |
+/// | Vanuatu                                              | xtd::forms::countries::vanuatu                                              |  @image html vu.png   |
+/// | Venezuela (Bolivarian Republic of)                   | xtd::forms::countries::venezuela                                            |  @image html ve.png   |
+/// | Viet Nam                                             | xtd::forms::countries::viet_nam                                             |  @image html vn.png   |
+/// | Virgin Islands (British)                             | xtd::forms::countries::british_virgin_islands                               |  @image html vg.png   |
+/// | Virgin Islands (U.S.)                                | xtd::forms::countries::united_states_virgin_islands                         |  @image html vi.png   |
+/// | Wallis and Futuna                                    | xtd::forms::countries::wallis_and_futuna                                    |  @image html wf.png   |
+/// | Western Sahara                                       | xtd::forms::countries::western_sahara                                       |  @image html eh.png   |
+/// | Yemen                                                | xtd::forms::countries::yemen                                                |  @image html ye.png   |
+/// | Zambia                                               | xtd::forms::countries::zambia                                               |  @image html zm.png   |
+/// | Zimbabwe                                             | xtd::forms::countries::zimbabwe                                             |  @image html zw.png   |
