@@ -5,728 +5,200 @@
 /// @brief Contains controls appearances.
 ///
 /// @par Button appearance
-/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-///   <tr>
-///     <td style="width:100px">xtd::forms::button</td>
-///     <th><b>Windows</b></th>
-///     <th><b>macOS</b></th>
-///     <th><b>Gnome</b></th>
-///   </tr>
-///   <tr>
-///     <td>Light</td>
-///     <td>@image html control_button_w.png</td>
-///     <td>@image html control_button_m.png</td>
-///     <td>@image html control_button_g.png</td>
-///   </tr>
-///   <tr>
-///     <td>Dark</td>
-///     <td>@image html control_button_wd.png</td>
-///     <td>@image html control_button_md.png</td>
-///     <td>@image html control_button_gd.png</td>
-///   </tr>
-/// </table>
+/// | xtd::forms::button | Windows                             | macOS                               | Gnome                               |
+/// | ------------------ | ----------------------------------- | ----------------------------------- | ----------------------------------- |
+/// | Light              |  @image html control_button_w.png   |  @image html control_button_m.png   |  @image html control_button_g.png   |
+/// | Dark               |  @image html control_button_wd.png  |  @image html control_button_md.png  |  @image html control_button_gd.png  |
 ///
 /// @par Check box appearance
-/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-///   <tr>
-///     <td style="width:100px">xtd::forms::check_box</td>
-///     <th><b>Windows</b></th>
-///     <th><b>macOS</b></th>
-///     <th><b>Gnome</b></th>
-///   </tr>
-///   <tr>
-///     <td>Light</td>
-///     <td>@image html control_check_box_w.png</td>
-///     <td>@image html control_check_box_m.png</td>
-///     <td>@image html control_check_box_g.png</td>
-///   </tr>
-///   <tr>
-///     <td>Dark</td>
-///     <td>@image html control_check_box_wd.png</td>
-///     <td>@image html control_check_box_md.png</td>
-///     <td>@image html control_check_box_gd.png</td>
-///   </tr>
-/// </table>
+/// | xtd::forms::check_box | Windows                                | macOS                                  | Gnome                                  |
+/// | --------------------- | -------------------------------------- | -------------------------------------- | -------------------------------------- |
+/// | Light                 |  @image html control_check_box_w.png   |  @image html control_check_box_m.png   |  @image html control_check_box_g.png   |
+/// | Dark                  |  @image html control_check_box_wd.png  |  @image html control_check_box_md.png  |  @image html control_check_box_gd.png  |
 ///
 /// @par Checked list box appearance
-/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-///   <tr>
-///     <td style="width:100px">xtd::forms::checked_list_box</td>
-///     <th><b>Windows</b></th>
-///     <th><b>macOS</b></th>
-///     <th><b>Gnome</b></th>
-///   </tr>
-///   <tr>
-///     <td>Light</td>
-///     <td>@image html control_checked_list_box_w.png</td>
-///     <td>@image html control_checked_list_box_m.png</td>
-///     <td>@image html control_checked_list_box_g.png</td>
-///   </tr>
-///   <tr>
-///     <td>Dark</td>
-///     <td>@image html control_checked_list_box_wd.png</td>
-///     <td>@image html control_checked_list_box_md.png</td>
-///     <td>@image html control_checked_list_box_gd.png</td>
-///   </tr>
-/// </table>
+/// | xtd::forms::checked_list_box | Windows                                       | macOS                                         | Gnome                                         |
+/// | ---------------------------- | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
+/// | Light                        |  @image html control_checked_list_box_w.png   |  @image html control_checked_list_box_m.png   |  @image html control_checked_list_box_g.png   |
+/// | Dark                         |  @image html control_checked_list_box_wd.png  |  @image html control_checked_list_box_md.png  |  @image html control_checked_list_box_gd.png  |
 ///
 /// @par Choice appearance
-/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-///   <tr>
-///     <td style="width:100px">xtd::forms::choice</td>
-///     <th><b>Windows</b></th>
-///     <th><b>macOS</b></th>
-///     <th><b>Gnome</b></th>
-///   </tr>
-///   <tr>
-///     <td>Light</td>
-///     <td>@image html control_choice_w.png</td>
-///     <td>@image html control_choice_m.png</td>
-///     <td>@image html control_choice_g.png</td>
-///   </tr>
-///   <tr>
-///     <td>Dark</td>
-///     <td>@image html control_choice_wd.png</td>
-///     <td>@image html control_choice_md.png</td>
-///     <td>@image html control_choice_gd.png</td>
-///   </tr>
-/// </table>
+/// | xtd::forms::choice | Windows                             | macOS                               | Gnome                               |
+/// | ------------------ | ----------------------------------- | ----------------------------------- | ----------------------------------- |
+/// | Light              |  @image html control_choice_w.png   |  @image html control_choice_m.png   |  @image html control_choice_g.png   |
+/// | Dark               |  @image html control_choice_wd.png  |  @image html control_choice_md.png  |  @image html control_choice_gd.png  |
 ///
 /// @par Color picker appearance
-/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-///   <tr>
-///     <td style="width:100px">xtd::forms::color_picker</td>
-///     <th><b>Windows</b></th>
-///     <th><b>macOS</b></th>
-///     <th><b>Gnome</b></th>
-///   </tr>
-///   <tr>
-///     <td>Light</td>
-///     <td>@image html control_color_picker_w.png</td>
-///     <td>@image html control_color_picker_m.png</td>
-///     <td>@image html control_color_picker_g.png</td>
-///   </tr>
-///   <tr>
-///     <td>Dark</td>
-///     <td>@image html control_color_picker_wd.png</td>
-///     <td>@image html control_color_picker_md.png</td>
-///     <td>@image html control_color_picker_gd.png</td>
-///   </tr>
-/// </table>
+/// | xtd::forms::color_picker | Windows                                   | macOS                                     | Gnome                                     |
+/// | ------------------------ | ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
+/// | Light                    |  @image html control_color_picker_w.png   |  @image html control_color_picker_m.png   |  @image html control_color_picker_g.png   |
+/// | Dark                     |  @image html control_color_picker_wd.png  |  @image html control_color_picker_md.png  |  @image html control_color_picker_gd.png  |
 ///
 /// @par Combo box appearance
-/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-///   <tr>
-///     <td style="width:100px">xtd::forms::combo_box</td>
-///     <th><b>Windows</b></th>
-///     <th><b>macOS</b></th>
-///     <th><b>Gnome</b></th>
-///   </tr>
-///   <tr>
-///     <td>Light</td>
-///     <td>@image html control_combo_box_w.png</td>
-///     <td>@image html control_combo_box_m.png</td>
-///     <td>@image html control_combo_box_g.png</td>
-///   </tr>
-///   <tr>
-///     <td>Dark</td>
-///     <td>@image html control_combo_box_wd.png</td>
-///     <td>@image html control_combo_box_md.png</td>
-///     <td>@image html control_combo_box_gd.png</td>
-///   </tr>
-/// </table>
+/// | xtd::forms::combo_box | Windows                                | macOS                                  | Gnome                                  |
+/// | --------------------- | ---------------------------------------| ---------------------------------------| ---------------------------------------|
+/// | Light                 |  @image html control_combo_box_w.png   |  @image html control_combo_box_m.png   |  @image html control_combo_box_g.png   |
+/// | Dark                  |  @image html control_combo_box_wd.png  |  @image html control_combo_box_md.png  |  @image html control_combo_box_gd.png  |
 ///
 /// @par Command link button appearance
-/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-///   <tr>
-///     <td style="width:100px">xtd::forms::command_link_button</td>
-///     <th><b>Windows</b></th>
-///     <th><b>macOS</b></th>
-///     <th><b>Gnome</b></th>
-///   </tr>
-///   <tr>
-///     <td>Light</td>
-///     <td>@image html control_command_link_button_w.png</td>
-///     <td>@image html control_command_link_button_m.png</td>
-///     <td>@image html control_command_link_button_g.png</td>
-///   </tr>
-///   <tr>
-///     <td>Dark</td>
-///     <td>@image html control_command_link_button_wd.png</td>
-///     <td>@image html control_command_link_button_md.png</td>
-///     <td>@image html control_command_link_button_gd.png</td>
-///   </tr>
-/// </table>
+/// | xtd::forms::command_link_button | Windows                                          | macOS                                            | Gnome                                            |
+/// | ------------------------------- | -------------------------------------------------| -------------------------------------------------| -------------------------------------------------|
+/// | Light                           |  @image html control_command_link_button_w.png   |  @image html control_command_link_button_m.png   |  @image html control_command_link_button_g.png   |
+/// | Dark                            |  @image html control_command_link_button_wd.png  |  @image html control_command_link_button_md.png  |  @image html control_command_link_button_gd.png  |
 ///
 /// @par Date time picker appearance
-/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-///   <tr>
-///     <td style="width:100px">xtd::forms::date_time_picker</td>
-///     <th><b>Windows</b></th>
-///     <th><b>macOS</b></th>
-///     <th><b>Gnome</b></th>
-///   </tr>
-///   <tr>
-///     <td>Light</td>
-///     <td>@image html control_date_time_picker_w.png</td>
-///     <td>@image html control_date_time_picker_m.png</td>
-///     <td>@image html control_date_time_picker_g.png</td>
-///   </tr>
-///   <tr>
-///     <td>Dark</td>
-///     <td>@image html control_date_time_picker_wd.png</td>
-///     <td>@image html control_date_time_picker_md.png</td>
-///     <td>@image html control_date_time_picker_gd.png</td>
-///   </tr>
-/// </table>
+/// | xtd::forms::date_time_picker | Windows                                       | macOS                                         | Gnome                                         |
+/// | ---------------------------- | --------------------------------------------- | ----------------------------------------------| ----------------------------------------------|
+/// | Light                        |  @image html control_date_time_picker_w.png   |  @image html control_date_time_picker_m.png   |  @image html control_date_time_picker_g.png   |
+/// | Dark                         |  @image html control_date_time_picker_wd.png  |  @image html control_date_time_picker_md.png  |  @image html control_date_time_picker_gd.png  |
 ///
 /// @par Domain up down appearance
-/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-///   <tr>
-///     <td style="width:100px">xtd::forms::domain_up_down</td>
-///     <th><b>Windows</b></th>
-///     <th><b>macOS</b></th>
-///     <th><b>Gnome</b></th>
-///   </tr>
-///   <tr>
-///     <td>Light</td>
-///     <td>@image html control_domain_up_down_w.png</td>
-///     <td>@image html control_domain_up_down_m.png</td>
-///     <td>@image html control_domain_up_down_g.png</td>
-///   </tr>
-///   <tr>
-///     <td>Dark</td>
-///     <td>@image html control_domain_up_down_wd.png</td>
-///     <td>@image html control_domain_up_down_md.png</td>
-///     <td>@image html control_domain_up_down_gd.png</td>
-///   </tr>
-/// </table>
+/// | xtd::forms::domain_up_down | Windows                                     | macOS                                       | Gnome                                       |
+/// | -------------------------- | ------------------------------------------- | --------------------------------------------| --------------------------------------------|
+/// | Light                      |  @image html control_domain_up_down_w.png   |  @image html control_domain_up_down_m.png   |  @image html control_domain_up_down_g.png   |
+/// | Dark                       |  @image html control_domain_up_down_wd.png  |  @image html control_domain_up_down_md.png  |  @image html control_domain_up_down_gd.png  |
 ///
 /// @par Dot matrix display appearance
-/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-///   <tr>
-///     <td style="width:100px">xtd::forms::dot_matrix_display</td>
-///     <th><b>Windows</b></th>
-///     <th><b>macOS</b></th>
-///     <th><b>Gnome</b></th>
-///   </tr>
-///   <tr>
-///     <td>Light</td>
-///     <td>@image html control_dot_matrix_display_w.png</td>
-///     <td>@image html control_dot_matrix_display_m.png</td>
-///     <td>@image html control_dot_matrix_display_g.png</td>
-///   </tr>
-///   <tr>
-///     <td>Dark</td>
-///     <td>@image html control_dot_matrix_display_wd.png</td>
-///     <td>@image html control_dot_matrix_display_md.png</td>
-///     <td>@image html control_dot_matrix_display_gd.png</td>
-///   </tr>
-/// </table>
+/// | xtd::forms::dot_matrix_display | Windows                                         | macOS                                           | Gnome                                           |
+/// | ------------------------------ | ----------------------------------------------- | ------------------------------------------------| ------------------------------------------------|
+/// | Light                          |  @image html control_dot_matrix_display_w.png   |  @image html control_dot_matrix_display_m.png   |  @image html control_dot_matrix_display_g.png   |
+/// | Dark                           |  @image html control_dot_matrix_display_wd.png  |  @image html control_dot_matrix_display_md.png  |  @image html control_dot_matrix_display_gd.png  |
 ///
 /// @par Font picker appearance
-/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-///   <tr>
-///     <td style="width:100px">xtd::forms::font_picker</td>
-///     <th><b>Windows</b></th>
-///     <th><b>macOS</b></th>
-///     <th><b>Gnome</b></th>
-///   </tr>
-///   <tr>
-///     <td>Light</td>
-///     <td>@image html control_font_picker_w.png</td>
-///     <td>@image html control_font_picker_m.png</td>
-///     <td>@image html control_font_picker_g.png</td>
-///   </tr>
-///   <tr>
-///     <td>Dark</td>
-///     <td>@image html control_font_picker_wd.png</td>
-///     <td>@image html control_font_picker_md.png</td>
-///     <td>@image html control_font_picker_gd.png</td>
-///   </tr>
-/// </table>
+/// | xtd::forms::font_picker | Windows                                  | macOS                                    | Gnome                                    |
+/// | ----------------------- | ---------------------------------------- | -----------------------------------------| -----------------------------------------|
+/// | Light                   |  @image html control_font_picker_w.png   |  @image html control_font_picker_m.png   |  @image html control_font_picker_g.png   |
+/// | Dark                    |  @image html control_font_picker_wd.png  |  @image html control_font_picker_md.png  |  @image html control_font_picker_gd.png  |
 ///
 /// @par Fourteen segment display appearance
-/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-///   <tr>
-///     <td style="width:100px">xtd::forms::fourteen_segment_display</td>
-///     <th><b>Windows</b></th>
-///     <th><b>macOS</b></th>
-///     <th><b>Gnome</b></th>
-///   </tr>
-///   <tr>
-///     <td>Light</td>
-///     <td>@image html control_fourteen_segment_display_w.png</td>
-///     <td>@image html control_fourteen_segment_display_m.png</td>
-///     <td>@image html control_fourteen_segment_display_g.png</td>
-///   </tr>
-///   <tr>
-///     <td>Dark</td>
-///     <td>@image html control_fourteen_segment_display_wd.png</td>
-///     <td>@image html control_fourteen_segment_display_md.png</td>
-///     <td>@image html control_fourteen_segment_display_gd.png</td>
-///   </tr>
-/// </table>
+/// | xtd::forms::fourteen_segment_display | Windows                                               | macOS                                                 | Gnome                                                 |
+/// | ------------------------------------ | ----------------------------------------------------- | ------------------------------------------------------| ------------------------------------------------------|
+/// | Light                                |  @image html control_fourteen_segment_display_w.png   |  @image html control_fourteen_segment_display_m.png   |  @image html control_fourteen_segment_display_g.png   |
+/// | Dark                                 |  @image html control_fourteen_segment_display_wd.png  |  @image html control_fourteen_segment_display_md.png  |  @image html control_fourteen_segment_display_gd.png  |
 ///
 /// @par Horizontal scroll bar appearance
-/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-///   <tr>
-///     <td style="width:100px">xtd::forms::h_scroll_bar</td>
-///     <th><b>Windows</b></th>
-///     <th><b>macOS</b></th>
-///     <th><b>Gnome</b></th>
-///   </tr>
-///   <tr>
-///     <td>Light</td>
-///     <td>@image html control_h_scroll_bar_w.png</td>
-///     <td>@image html control_h_scroll_bar_m.png</td>
-///     <td>@image html control_h_scroll_bar_g.png</td>
-///   </tr>
-///   <tr>
-///     <td>Dark</td>
-///     <td>@image html control_h_scroll_bar_wd.png</td>
-///     <td>@image html control_h_scroll_bar_md.png</td>
-///     <td>@image html control_h_scroll_bar_gd.png</td>
-///   </tr>
-/// </table>
+/// | xtd::forms::h_scroll_bar | Windows                                   | macOS                                     | Gnome                                     |
+/// | ------------------------ | ----------------------------------------- | ------------------------------------------| ------------------------------------------|
+/// | Light                    |  @image html control_h_scroll_bar_w.png   |  @image html control_h_scroll_bar_m.png   |  @image html control_h_scroll_bar_g.png   |
+/// | Dark                     |  @image html control_h_scroll_bar_wd.png  |  @image html control_h_scroll_bar_md.png  |  @image html control_h_scroll_bar_gd.png  |
 ///
 /// @par Label appearance
-/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-///   <tr>
-///     <td style="width:100px">xtd::forms::label</td>
-///     <th><b>Windows</b></th>
-///     <th><b>macOS</b></th>
-///     <th><b>Gnome</b></th>
-///   </tr>
-///   <tr>
-///     <td>Light</td>
-///     <td>@image html control_label_w.png</td>
-///     <td>@image html control_label_m.png</td>
-///     <td>@image html control_label_g.png</td>
-///   </tr>
-///   <tr>
-///     <td>Dark</td>
-///     <td>@image html control_label_wd.png</td>
-///     <td>@image html control_label_md.png</td>
-///     <td>@image html control_label_gd.png</td>
-///   </tr>
-/// </table>
+/// | xtd::forms::label | Windows                            | macOS                              | Gnome                              |
+/// | ----------------- | ---------------------------------- | -----------------------------------| -----------------------------------|
+/// | Light             |  @image html control_label_w.png   |  @image html control_label_m.png   |  @image html control_label_g.png   |
+/// | Dark              |  @image html control_label_wd.png  |  @image html control_label_md.png  |  @image html control_label_gd.png  |
 ///
 /// @par LCD label appearance
-/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-///   <tr>
-///     <td style="width:100px">xtd::forms::lcd_label</td>
-///     <th><b>Windows</b></th>
-///     <th><b>macOS</b></th>
-///     <th><b>Gnome</b></th>
-///   </tr>
-///   <tr>
-///     <td>Light</td>
-///     <td>@image html control_lcd_label_w.png</td>
-///     <td>@image html control_lcd_label_m.png</td>
-///     <td>@image html control_lcd_label_g.png</td>
-///   </tr>
-///   <tr>
-///     <td>Dark</td>
-///     <td>@image html control_lcd_label_wd.png</td>
-///     <td>@image html control_lcd_label_md.png</td>
-///     <td>@image html control_lcd_label_gd.png</td>
-///   </tr>
-/// </table>
+/// | xtd::forms::lcd_label | Windows                                | macOS                                  | Gnome                                  |
+/// | --------------------- | -------------------------------------- | ---------------------------------------| ---------------------------------------|
+/// | Light                 |  @image html control_lcd_label_w.png   |  @image html control_lcd_label_m.png   |  @image html control_lcd_label_g.png   |
+/// | Dark                  |  @image html control_lcd_label_wd.png  |  @image html control_lcd_label_md.png  |  @image html control_lcd_label_gd.png  |
 ///
 /// @par Light button appearance
-/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-///   <tr>
-///     <td style="width:100px">xtd::forms::light_button</td>
-///     <th><b>Windows</b></th>
-///     <th><b>macOS</b></th>
-///     <th><b>Gnome</b></th>
-///   </tr>
-///   <tr>
-///     <td>Light</td>
-///     <td>@image html control_light_button_w.png</td>
-///     <td>@image html control_light_button_m.png</td>
-///     <td>@image html control_light_button_g.png</td>
-///   </tr>
-///   <tr>
-///     <td>Dark</td>
-///     <td>@image html control_light_button_wd.png</td>
-///     <td>@image html control_light_button_md.png</td>
-///     <td>@image html control_light_button_gd.png</td>
-///   </tr>
-/// </table>
+/// | xtd::forms::light_button | Windows                                   | macOS                                     | Gnome                                     |
+/// | ------------------------ | ----------------------------------------- | ------------------------------------------| ------------------------------------------|
+/// | Light                    |  @image html control_light_button_w.png   |  @image html control_light_button_m.png   |  @image html control_light_button_g.png   |
+/// | Dark                     |  @image html control_light_button_wd.png  |  @image html control_light_button_md.png  |  @image html control_light_button_gd.png  |
 ///
-/// @par link label appearance
-/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-///   <tr>
-///     <td style="width:100px">xtd::forms::link_label</td>
-///     <th><b>Windows</b></th>
-///     <th><b>macOS</b></th>
-///     <th><b>Gnome</b></th>
-///   </tr>
-///   <tr>
-///     <td>Light</td>
-///     <td>@image html control_link_label_w.png</td>
-///     <td>@image html control_link_label_m.png</td>
-///     <td>@image html control_link_label_g.png</td>
-///   </tr>
-///   <tr>
-///     <td>Dark</td>
-///     <td>@image html control_link_label_wd.png</td>
-///     <td>@image html control_link_label_md.png</td>
-///     <td>@image html control_link_label_gd.png</td>
-///   </tr>
-/// </table>
+/// @par Link label appearance
+/// | xtd::forms::link_label | Windows                                 | macOS                                   | Gnome                                   |
+/// | ---------------------- | --------------------------------------- | ----------------------------------------| ----------------------------------------|
+/// | Light                  |  @image html control_link_label_w.png   |  @image html control_link_label_m.png   |  @image html control_link_label_g.png   |
+/// | Dark                   |  @image html control_link_label_wd.png  |  @image html control_link_label_md.png  |  @image html control_link_label_gd.png  |
 ///
 /// @par List box appearance
-/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-///   <tr>
-///     <td style="width:100px">xtd::forms::list_box</td>
-///     <th><b>Windows</b></th>
-///     <th><b>macOS</b></th>
-///     <th><b>Gnome</b></th>
-///   </tr>
-///   <tr>
-///     <td>Light</td>
-///     <td>@image html control_list_box_w.png</td>
-///     <td>@image html control_list_box_m.png</td>
-///     <td>@image html control_list_box_g.png</td>
-///   </tr>
-///   <tr>
-///     <td>Dark</td>
-///     <td>@image html control_list_box_wd.png</td>
-///     <td>@image html control_list_box_md.png</td>
-///     <td>@image html control_list_box_gd.png</td>
-///   </tr>
-/// </table>
+/// | xtd::forms::list_box | Windows                               | macOS                                 | Gnome                                 |
+/// | -------------------- | ------------------------------------- | --------------------------------------| --------------------------------------|
+/// | Light                |  @image html control_list_box_w.png   |  @image html control_list_box_m.png   |  @image html control_list_box_g.png   |
+/// | Dark                 |  @image html control_list_box_wd.png  |  @image html control_list_box_md.png  |  @image html control_list_box_gd.png  |
 ///
 /// @par Loading indicator appearance
-/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-///   <tr>
-///     <td style="width:100px">xtd::forms::loading_indicator</td>
-///     <th><b>Windows</b></th>
-///     <th><b>macOS</b></th>
-///     <th><b>Gnome</b></th>
-///   </tr>
-///   <tr>
-///     <td>Light</td>
-///     <td>@image html control_loading_indicator_w.png</td>
-///     <td>@image html control_loading_indicator_m.png</td>
-///     <td>@image html control_loading_indicator_g.png</td>
-///   </tr>
-///   <tr>
-///     <td>Dark</td>
-///     <td>@image html control_loading_indicator_wd.png</td>
-///     <td>@image html control_loading_indicator_md.png</td>
-///     <td>@image html control_loading_indicator_gd.png</td>
-///   </tr>
-/// </table>
+/// | xtd::forms::loading_indicator | Windows                                        | macOS                                          | Gnome                                          |
+/// | ----------------------------- | ---------------------------------------------- | -----------------------------------------------| -----------------------------------------------|
+/// | Light                         |  @image html control_loading_indicator_w.png   |  @image html control_loading_indicator_m.png   |  @image html control_loading_indicator_g.png   |
+/// | Dark                          |  @image html control_loading_indicator_wd.png  |  @image html control_loading_indicator_md.png  |  @image html control_loading_indicator_gd.png  |
 ///
 /// @par Month calendar appearance
-/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-///   <tr>
-///     <td style="width:100px">xtd::forms::month_calendar</td>
-///     <th><b>Windows</b></th>
-///     <th><b>macOS</b></th>
-///     <th><b>Gnome</b></th>
-///   </tr>
-///   <tr>
-///     <td>Light</td>
-///     <td>@image html control_month_calendar_w.png</td>
-///     <td>@image html control_month_calendar_m.png</td>
-///     <td>@image html control_month_calendar_g.png</td>
-///   </tr>
-///   <tr>
-///     <td>Dark</td>
-///     <td>@image html control_month_calendar_wd.png</td>
-///     <td>@image html control_month_calendar_md.png</td>
-///     <td>@image html control_month_calendar_gd.png</td>
-///   </tr>
-/// </table>
+/// | xtd::forms::month_calendar | Windows                                     | macOS                                       | Gnome                                       |
+/// | -------------------------- | ------------------------------------------- | --------------------------------------------| --------------------------------------------|
+/// | Light                      |  @image html control_month_calendar_w.png   |  @image html control_month_calendar_m.png   |  @image html control_month_calendar_g.png   |
+/// | Dark                       |  @image html control_month_calendar_wd.png  |  @image html control_month_calendar_md.png  |  @image html control_month_calendar_gd.png  |
 ///
 /// @par Nine segment display appearance
-/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-///   <tr>
-///     <td style="width:100px">xtd::forms::nine_segment_display</td>
-///     <th><b>Windows</b></th>
-///     <th><b>macOS</b></th>
-///     <th><b>Gnome</b></th>
-///   </tr>
-///   <tr>
-///     <td>Light</td>
-///     <td>@image html control_nine_segment_display_w.png</td>
-///     <td>@image html control_nine_segment_display_m.png</td>
-///     <td>@image html control_nine_segment_display_g.png</td>
-///   </tr>
-///   <tr>
-///     <td>Dark</td>
-///     <td>@image html control_nine_segment_display_wd.png</td>
-///     <td>@image html control_nine_segment_display_md.png</td>
-///     <td>@image html control_nine_segment_display_gd.png</td>
-///   </tr>
-/// </table>
+/// | xtd::forms::nine_segment_display | Windows                                           | macOS                                             | Gnome                                             |
+/// | -------------------------------- | ------------------------------------------------- | --------------------------------------------------| --------------------------------------------------|
+/// | Light                            |  @image html control_nine_segment_display_w.png   |  @image html control_nine_segment_display_m.png   |  @image html control_nine_segment_display_g.png   |
+/// | Dark                             |  @image html control_nine_segment_display_wd.png  |  @image html control_nine_segment_display_md.png  |  @image html control_nine_segment_display_gd.png  |
 ///
 /// @par Numeric up down appearance
-/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-///   <tr>
-///     <td style="width:100px">xtd::forms::numeric_up_down</td>
-///     <th><b>Windows</b></th>
-///     <th><b>macOS</b></th>
-///     <th><b>Gnome</b></th>
-///   </tr>
-///   <tr>
-///     <td>Light</td>
-///     <td>@image html control_numeric_up_down_w.png</td>
-///     <td>@image html control_numeric_up_down_m.png</td>
-///     <td>@image html control_numeric_up_down_g.png</td>
-///   </tr>
-///   <tr>
-///     <td>Dark</td>
-///     <td>@image html control_numeric_up_down_wd.png</td>
-///     <td>@image html control_numeric_up_down_md.png</td>
-///     <td>@image html control_numeric_up_down_gd.png</td>
-///   </tr>
-/// </table>
+/// | xtd::forms::numeric_up_down | Windows                                      | macOS                                        | Gnome                                        |
+/// | --------------------------- | -------------------------------------------- | ---------------------------------------------| ---------------------------------------------|
+/// | Light                       |  @image html control_numeric_up_down_w.png   |  @image html control_numeric_up_down_m.png   |  @image html control_numeric_up_down_g.png   |
+/// | Dark                        |  @image html control_numeric_up_down_wd.png  |  @image html control_numeric_up_down_md.png  |  @image html control_numeric_up_down_gd.png  |
 ///
 /// @par Picture box appearance
-/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-///   <tr>
-///     <td style="width:100px">xtd::forms::picture_box</td>
-///     <th><b>Windows</b></th>
-///     <th><b>macOS</b></th>
-///     <th><b>Gnome</b></th>
-///   </tr>
-///   <tr>
-///     <td>Light</td>
-///     <td>@image html control_picture_box_w.png</td>
-///     <td>@image html control_picture_box_m.png</td>
-///     <td>@image html control_picture_box_g.png</td>
-///   </tr>
-///   <tr>
-///     <td>Dark</td>
-///     <td>@image html control_picture_box_wd.png</td>
-///     <td>@image html control_picture_box_md.png</td>
-///     <td>@image html control_picture_box_gd.png</td>
-///   </tr>
-/// </table>
+/// | xtd::forms::picture_box | Windows                                  | macOS                                    | Gnome                                    |
+/// | ----------------------- | ---------------------------------------- | -----------------------------------------| -----------------------------------------|
+/// | Light                   |  @image html control_picture_box_w.png   |  @image html control_picture_box_m.png   |  @image html control_picture_box_g.png   |
+/// | Dark                    |  @image html control_picture_box_wd.png  |  @image html control_picture_box_md.png  |  @image html control_picture_box_gd.png  |
 ///
 /// @par Progress bar appearance
-/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-///   <tr>
-///     <td style="width:100px">xtd::forms::progress_bar</td>
-///     <th><b>Windows</b></th>
-///     <th><b>macOS</b></th>
-///     <th><b>Gnome</b></th>
-///   </tr>
-///   <tr>
-///     <td>Light</td>
-///     <td>@image html control_progress_bar_w.png</td>
-///     <td>@image html control_progress_bar_m.png</td>
-///     <td>@image html control_progress_bar_g.png</td>
-///   </tr>
-///   <tr>
-///     <td>Dark</td>
-///     <td>@image html control_progress_bar_wd.png</td>
-///     <td>@image html control_progress_bar_md.png</td>
-///     <td>@image html control_progress_bar_gd.png</td>
-///   </tr>
-/// </table>
+/// | xtd::forms::progress_bar | Windows                                   | macOS                                     | Gnome                                     |
+/// | ------------------------ | ----------------------------------------- | ------------------------------------------| ------------------------------------------|
+/// | Light                    |  @image html control_progress_bar_w.png   |  @image html control_progress_bar_m.png   |  @image html control_progress_bar_g.png   |
+/// | Dark                     |  @image html control_progress_bar_wd.png  |  @image html control_progress_bar_md.png  |  @image html control_progress_bar_gd.png  |
 ///
 /// @par Radio button appearance
-/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-///   <tr>
-///     <td style="width:100px">xtd::forms::radio_button</td>
-///     <th><b>Windows</b></th>
-///     <th><b>macOS</b></th>
-///     <th><b>Gnome</b></th>
-///   </tr>
-///   <tr>
-///     <td>Light</td>
-///     <td>@image html control_radio_button_w.png</td>
-///     <td>@image html control_radio_button_m.png</td>
-///     <td>@image html control_radio_button_g.png</td>
-///   </tr>
-///   <tr>
-///     <td>Dark</td>
-///     <td>@image html control_radio_button_wd.png</td>
-///     <td>@image html control_radio_button_md.png</td>
-///     <td>@image html control_radio_button_gd.png</td>
-///   </tr>
-/// </table>
+/// | xtd::forms::radio_button | Windows                                   | macOS                                     | Gnome                                     |
+/// | ------------------------ | ----------------------------------------- | ------------------------------------------| ------------------------------------------|
+/// | Light                    |  @image html control_radio_button_w.png   |  @image html control_radio_button_m.png   |  @image html control_radio_button_g.png   |
+/// | Dark                     |  @image html control_radio_button_wd.png  |  @image html control_radio_button_md.png  |  @image html control_radio_button_gd.png  |
 ///
 /// @par Seven segment display appearance
-/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-///   <tr>
-///     <td style="width:100px">xtd::forms::seven_segment_display</td>
-///     <th><b>Windows</b></th>
-///     <th><b>macOS</b></th>
-///     <th><b>Gnome</b></th>
-///   </tr>
-///   <tr>
-///     <td>Light</td>
-///     <td>@image html control_seven_segment_display_w.png</td>
-///     <td>@image html control_seven_segment_display_m.png</td>
-///     <td>@image html control_seven_segment_display_g.png</td>
-///   </tr>
-///   <tr>
-///     <td>Dark</td>
-///     <td>@image html control_seven_segment_display_wd.png</td>
-///     <td>@image html control_seven_segment_display_md.png</td>
-///     <td>@image html control_seven_segment_display_gd.png</td>
-///   </tr>
-/// </table>
+/// | xtd::forms::seven_segment_display | Windows                                            | macOS                                              | Gnome                                              |
+/// | --------------------------------- | -------------------------------------------------- | ---------------------------------------------------| ---------------------------------------------------|
+/// | Light                             |  @image html control_seven_segment_display_w.png   |  @image html control_seven_segment_display_m.png   |  @image html control_seven_segment_display_g.png   |
+/// | Dark                              |  @image html control_seven_segment_display_wd.png  |  @image html control_seven_segment_display_md.png  |  @image html control_seven_segment_display_gd.png  |
 ///
 /// @par Sixteen segment display appearance
-/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-///   <tr>
-///     <td style="width:100px">xtd::forms::sixteen_segment_display</td>
-///     <th><b>Windows</b></th>
-///     <th><b>macOS</b></th>
-///     <th><b>Gnome</b></th>
-///   </tr>
-///   <tr>
-///     <td>Light</td>
-///     <td>@image html control_sixteen_segment_display_w.png</td>
-///     <td>@image html control_sixteen_segment_display_m.png</td>
-///     <td>@image html control_sixteen_segment_display_g.png</td>
-///   </tr>
-///   <tr>
-///     <td>Dark</td>
-///     <td>@image html control_sixteen_segment_display_wd.png</td>
-///     <td>@image html control_sixteen_segment_display_md.png</td>
-///     <td>@image html control_sixteen_segment_display_gd.png</td>
-///   </tr>
-/// </table>
+/// | xtd::forms::sixteen_segment_display | Windows                                              | macOS                                                | Gnome                                                |
+/// | ----------------------------------- | ---------------------------------------------------- | -----------------------------------------------------| -----------------------------------------------------|
+/// | Light                               |  @image html control_sixteen_segment_display_w.png   |  @image html control_sixteen_segment_display_m.png   |  @image html control_sixteen_segment_display_g.png   |
+/// | Dark                                |  @image html control_sixteen_segment_display_wd.png  |  @image html control_sixteen_segment_display_md.png  |  @image html control_sixteen_segment_display_gd.png  |
 ///
 /// @par Switch button appearance
-/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-///   <tr>
-///     <td style="width:100px">xtd::forms::switch_button</td>
-///     <th><b>Windows</b></th>
-///     <th><b>macOS</b></th>
-///     <th><b>Gnome</b></th>
-///   </tr>
-///   <tr>
-///     <td>Light</td>
-///     <td>@image html control_switch_button_w.png</td>
-///     <td>@image html control_switch_button_m.png</td>
-///     <td>@image html control_switch_button_g.png</td>
-///   </tr>
-///   <tr>
-///     <td>Dark</td>
-///     <td>@image html control_switch_button_wd.png</td>
-///     <td>@image html control_switch_button_md.png</td>
-///     <td>@image html control_switch_button_gd.png</td>
-///   </tr>
-/// </table>
+/// | xtd::forms::switch_button | Windows                                    | macOS                                      | Gnome                                      |
+/// | ------------------------- | ------------------------------------------ | -------------------------------------------| -------------------------------------------|
+/// | Light                     |  @image html control_switch_button_w.png   |  @image html control_switch_button_m.png   |  @image html control_switch_button_g.png   |
+/// | Dark                      |  @image html control_switch_button_wd.png  |  @image html control_switch_button_md.png  |  @image html control_switch_button_gd.png  |
 ///
 /// @par Text box appearance
-/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-///   <tr>
-///     <td style="width:100px">xtd::forms::text_box</td>
-///     <th><b>Windows</b></th>
-///     <th><b>macOS</b></th>
-///     <th><b>Gnome</b></th>
-///   </tr>
-///   <tr>
-///     <td>Light</td>
-///     <td>@image html control_text_box_w.png</td>
-///     <td>@image html control_text_box_m.png</td>
-///     <td>@image html control_text_box_g.png</td>
-///   </tr>
-///   <tr>
-///     <td>Dark</td>
-///     <td>@image html control_text_box_wd.png</td>
-///     <td>@image html control_text_box_md.png</td>
-///     <td>@image html control_text_box_gd.png</td>
-///   </tr>
-/// </table>
+/// | xtd::forms::text_box | Windows                               | macOS                                 | Gnome                                 |
+/// | -------------------- | ------------------------------------- | --------------------------------------| --------------------------------------|
+/// | Light                |  @image html control_text_box_w.png   |  @image html control_text_box_m.png   |  @image html control_text_box_g.png   |
+/// | Dark                 |  @image html control_text_box_wd.png  |  @image html control_text_box_md.png  |  @image html control_text_box_gd.png  |
 ///
 /// @par Toggle button appearance
-/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-///   <tr>
-///     <td style="width:100px">xtd::forms::toggle_button</td>
-///     <th><b>Windows</b></th>
-///     <th><b>macOS</b></th>
-///     <th><b>Gnome</b></th>
-///   </tr>
-///   <tr>
-///     <td>Light</td>
-///     <td>@image html control_toggle_button_w.png</td>
-///     <td>@image html control_toggle_button_m.png</td>
-///     <td>@image html control_toggle_button_g.png</td>
-///   </tr>
-///   <tr>
-///     <td>Dark</td>
-///     <td>@image html control_toggle_button_wd.png</td>
-///     <td>@image html control_toggle_button_md.png</td>
-///     <td>@image html control_toggle_button_gd.png</td>
-///   </tr>
-/// </table>
+/// | xtd::forms::toggle_button | Windows                                    | macOS                                      | Gnome                                      |
+/// | ------------------------- | ------------------------------------------ | -------------------------------------------| -------------------------------------------|
+/// | Light                     |  @image html control_toggle_button_w.png   |  @image html control_toggle_button_m.png   |  @image html control_toggle_button_g.png   |
+/// | Dark                      |  @image html control_toggle_button_wd.png  |  @image html control_toggle_button_md.png  |  @image html control_toggle_button_gd.png  |
 ///
 /// @par Track bar appearance
-/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-///   <tr>
-///     <td style="width:100px">xtd::forms::track_bar</td>
-///     <th><b>Windows</b></th>
-///     <th><b>macOS</b></th>
-///     <th><b>Gnome</b></th>
-///   </tr>
-///   <tr>
-///     <td>Light</td>
-///     <td>@image html control_track_bar_w.png</td>
-///     <td>@image html control_track_bar_m.png</td>
-///     <td>@image html control_track_bar_g.png</td>
-///   </tr>
-///   <tr>
-///     <td>Dark</td>
-///     <td>@image html control_track_bar_wd.png</td>
-///     <td>@image html control_track_bar_md.png</td>
-///     <td>@image html control_track_bar_gd.png</td>
-///   </tr>
-/// </table>
+/// | xtd::forms::track_bar | Windows                                | macOS                                  | Gnome                                  |
+/// | --------------------- | -------------------------------------- | ---------------------------------------| ---------------------------------------|
+/// | Light                 |  @image html control_track_bar_w.png   |  @image html control_track_bar_m.png   |  @image html control_track_bar_g.png   |
+/// | Dark                  |  @image html control_track_bar_wd.png  |  @image html control_track_bar_md.png  |  @image html control_track_bar_gd.png  |
 ///
 /// @par Up down button appearance
-/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-///   <tr>
-///     <td style="width:100px">xtd::forms::up_down_button</td>
-///     <th><b>Windows</b></th>
-///     <th><b>macOS</b></th>
-///     <th><b>Gnome</b></th>
-///   </tr>
-///   <tr>
-///     <td>Light</td>
-///     <td>@image html control_up_down_button_w.png</td>
-///     <td>@image html control_up_down_button_m.png</td>
-///     <td>@image html control_up_down_button_g.png</td>
-///   </tr>
-///   <tr>
-///     <td>Dark</td>
-///     <td>@image html control_up_down_button_wd.png</td>
-///     <td>@image html control_up_down_button_md.png</td>
-///     <td>@image html control_up_down_button_gd.png</td>
-///   </tr>
-/// </table>
+/// | xtd::forms::up_down_button | Windows                                     | macOS                                       | Gnome                                       |
+/// | -------------------------- | ------------------------------------------- | --------------------------------------------| --------------------------------------------|
+/// | Light                      |  @image html control_up_down_button_w.png   |  @image html control_up_down_button_m.png   |  @image html control_up_down_button_g.png   |
+/// | Dark                       |  @image html control_up_down_button_wd.png  |  @image html control_up_down_button_md.png  |  @image html control_up_down_button_gd.png  |
 ///
 /// @par Vertical scroll bar appearance
-/// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-///   <tr>
-///     <td style="width:100px">xtd::forms::v_scroll_bar</td>
-///     <th><b>Windows</b></th>
-///     <th><b>macOS</b></th>
-///     <th><b>Gnome</b></th>
-///   </tr>
-///   <tr>
-///     <td>Light</td>
-///     <td>@image html control_v_scroll_bar_w.png</td>
-///     <td>@image html control_v_scroll_bar_m.png</td>
-///     <td>@image html control_v_scroll_bar_g.png</td>
-///   </tr>
-///   <tr>
-///     <td>Dark</td>
-///     <td>@image html control_v_scroll_bar_wd.png</td>
-///     <td>@image html control_v_scroll_bar_md.png</td>
-///     <td>@image html control_v_scroll_bar_gd.png</td>
-///   </tr>
-/// </table>
+/// | xtd::forms::v_scroll_bar | Windows                                   | macOS                                     | Gnome                                     |
+/// | ------------------------ | ----------------------------------------- | ------------------------------------------| ------------------------------------------|
+/// | Light                    |  @image html control_v_scroll_bar_w.png   |  @image html control_v_scroll_bar_m.png   |  @image html control_v_scroll_bar_g.png   |
+/// | Dark                     |  @image html control_v_scroll_bar_wd.png  |  @image html control_v_scroll_bar_md.png  |  @image html control_v_scroll_bar_gd.png  |
 ///
