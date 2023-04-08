@@ -24,11 +24,12 @@ option(XTD_BUILD_WITH_CONTINUOUS_INTEGRATION_SYSTEM "Build with the continuous i
 option(XTD_DOWNLOAD_ASTYLE "Download and build astyle from Github" OFF)
 option(XTD_DOWNLOAD_CPPCHECK "Download and build cppcheck from Github" OFF)
 option(XTD_DOWNLOAD_DOXYGEN "Download and build doxygen from Github" OFF)
+option(XTD_ENABLE_COVERAGE "Enable code coverage" OFF)
+option(XTD_ENABLE_EXTRA_PROJECTS "Enable exptra projects (docs, local and scripts" OFF)
 option(XTD_ENABLE_RUN_ASTYLE "Enable run astyle (format) command" ON)
 option(XTD_ENABLE_RUN_CPPCHECK "Enable run cppcheck command" ON)
 option(XTD_ENABLE_RUN_DEVELOPPER_REFERENCE_GUIDE "Add run Developper Reference Guide generator command" OFF)
 option(XTD_ENABLE_RUN_REFERENCE_GUIDE "Add run Reference Guide generator command" ON)
-option(XTD_ENABLE_COVERAGE "Enable code coverage" OFF)
 option(XTD_INSTALL_EXAMPLES "Install examples" ON)
 option(XTD_INSTALL_RESOURCES "Install resources" ON)
 option(XTD_SET_COMPILER_OPTION_WARNINGS_TO_ALL "Enable compiler option warnings to all" ON)
@@ -192,7 +193,11 @@ if (XTD_BUILD_TESTS_XTD_CORE OR XTD_BUILD_TESTS_XTD_DRAWING OR XTD_BUILD_TESTS_X
 endif ()
 
 # Projects
-add_projects(docs locale scripts src tests tools themes)
+if (XTD_ENABLE_EXTRA_PROJECTS)
+add_projects(docs locale scripts)
+endif ()
+
+add_projects(src tests tools themes)
 
 # Run Developper Reference Guide generator command
 if (XTD_ENABLE_RUN_DEVELOPPER_REFERENCE_GUIDE)
