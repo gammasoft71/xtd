@@ -194,7 +194,7 @@ endif ()
 
 # Projects
 if (XTD_ENABLE_EXTRA_PROJECTS)
-add_projects(docs locale scripts)
+  add_projects(docs locale scripts)
 endif ()
 
 add_projects(src tests tools themes)
