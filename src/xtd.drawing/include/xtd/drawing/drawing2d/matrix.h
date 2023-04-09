@@ -50,7 +50,7 @@ namespace xtd {
       ///       <td>Scale by a factor of 2 in the x direction</td>
       ///     </tr>
       ///     <tr>
-      ///       <td>matrix Bc/td>
+      ///       <td>matrix C</td>
       ///       <td>Translate 3 units in the y direction</td>
       ///     </tr>
       ///   </tbody>
