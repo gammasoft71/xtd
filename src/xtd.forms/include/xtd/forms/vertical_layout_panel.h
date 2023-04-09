@@ -17,26 +17,10 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms containers
     /// @par Appearance
-    /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-    ///   <tr>
-    ///     <th style="width:100px"></th>
-    ///     <th><b>Windows</b></th>
-    ///     <th><b>macOS</b></th>
-    ///     <th><b>Gnome</b></th>
-    ///   </tr>
-    ///   <tr>
-    ///     <th>Light</th>
-    ///     <td>@image html containers_vertical_layout_panel_w.png</td>
-    ///     <td>@image html containers_vertical_layout_panel_m.png</td>
-    ///     <td>@image html containers_vertical_layout_panel_g.png</td>
-    ///   </tr>
-    ///   <tr>
-    ///     <td>Dark</td>
-    ///     <td>@image html containers_vertical_layout_panel_wd.png</td>
-    ///     <td>@image html containers_vertical_layout_panel_md.png</td>
-    ///     <td>@image html containers_vertical_layout_panel_gd.png</td>
-    ///   </tr>
-    /// </table>
+    /// |       | Windows                                               | macOS                                                 | Gnome                                                 |
+    /// | ----- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+    /// | Light |  @image html containers_vertical_layout_panel_w.png   |  @image html containers_vertical_layout_panel_m.png   |  @image html containers_vertical_layout_panel_g.png   |
+    /// | Dark  |  @image html containers_vertical_layout_panel_wd.png  |  @image html containers_vertical_layout_panel_md.png  |  @image html containers_vertical_layout_panel_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of vertical_layout_panel container.
     /// @include vertical_layout_panel.cpp

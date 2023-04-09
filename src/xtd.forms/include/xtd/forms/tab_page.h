@@ -16,26 +16,10 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms containers
     /// @par Appearance
-    /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-    ///   <tr>
-    ///     <th style="width:100px"></th>
-    ///     <th><b>Windows</b></th>
-    ///     <th><b>macOS</b></th>
-    ///     <th><b>Gnome</b></th>
-    ///   </tr>
-    ///   <tr>
-    ///     <th>Light</th>
-    ///     <td>@image html containers_tab_control_w.png</td>
-    ///     <td>@image html containers_tab_control_m.png</td>
-    ///     <td>@image html containers_tab_control_g.png</td>
-    ///   </tr>
-    ///   <tr>
-    ///     <td>Dark</td>
-    ///     <td>@image html containers_tab_control_wd.png</td>
-    ///     <td>@image html containers_tab_control_md.png</td>
-    ///     <td>@image html containers_tab_control_gd.png</td>
-    ///   </tr>
-    /// </table>
+    /// |       | Windows                                     | macOS                                       | Gnome                                       |
+    /// | ----- | ------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
+    /// | Light |  @image html containers_tab_control_w.png   |  @image html containers_tab_control_m.png   |  @image html containers_tab_control_g.png   |
+    /// | Dark  |  @image html containers_tab_control_wd.png  |  @image html containers_tab_control_md.png  |  @image html containers_tab_control_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of tab_page container.
     /// @include tab_control.cpp
