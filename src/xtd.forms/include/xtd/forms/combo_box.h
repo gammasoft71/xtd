@@ -22,26 +22,10 @@ namespace xtd {
     /// @remarks In addition to display and selection functionality, the combo_box also provides features that enable you to efficiently add items to the combo_box and to find text within the items of the list. With the begin_update and end_update methods, you can add a large number of items to the combo_box without the control being repainted each time an item is added to the list. The find_string and find_string_exact methods enable you to search for an item in the list that contains a specific search string.
     /// @remarks You can use these properties to manage the currently selected item in the list, the text property to specify the string displayed in the editing field, the selected_index property to get or set the current item, and the selected_item property to get or set a reference to the object.
     /// @par Appearance
-    /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-    ///   <tr>
-    ///     <th style="width:100px"></th>
-    ///     <th><b>Windows</b></th>
-    ///     <th><b>macOS</b></th>
-    ///     <th><b>Gnome</b></th>
-    ///   </tr>
-    ///   <tr>
-    ///     <th>Light</th>
-    ///     <td>@image html control_combo_box_w.png</td>
-    ///     <td>@image html control_combo_box_m.png</td>
-    ///     <td>@image html control_combo_box_g.png</td>
-    ///   </tr>
-    ///   <tr>
-    ///     <th>Dark</th>
-    ///     <td>@image html control_combo_box_wd.png</td>
-    ///     <td>@image html control_combo_box_md.png</td>
-    ///     <td>@image html control_combo_box_gd.png</td>
-    ///   </tr>
-    /// </table>
+    /// |       | Windows                                | macOS                                  | Gnome                                  |
+    /// | ----- | ---------------------------------------| ---------------------------------------| ---------------------------------------|
+    /// | Light |  @image html control_combo_box_w.png   |  @image html control_combo_box_m.png   |  @image html control_combo_box_g.png   |
+    /// | Dark  |  @image html control_combo_box_wd.png  |  @image html control_combo_box_md.png  |  @image html control_combo_box_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of combo box control.
     /// @include combo_box.cpp

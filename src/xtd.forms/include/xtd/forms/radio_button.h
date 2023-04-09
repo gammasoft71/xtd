@@ -26,26 +26,10 @@ namespace xtd {
     /// @remarks radio_button and check_box controls have a similar function: they offer choices a user can select or clear. The difference is that multiple check_box controls can be selected at the same time, but option buttons are mutually exclusive.
     /// @remarks Use the checked property to get or set the state of a radio_button. The option button's appearance can be altered to appear as a toggle-style button or as a standard option button by setting the appearance property.
     /// @par Appearance
-    /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-    ///   <tr>
-    ///     <th style="width:100px"></th>
-    ///     <th><b>Windows</b></th>
-    ///     <th><b>macOS</b></th>
-    ///     <th><b>Gnome</b></th>
-    ///   </tr>
-    ///   <tr>
-    ///     <th>Light</th>
-    ///     <td>@image html control_radio_button_w.png</td>
-    ///     <td>@image html control_radio_button_m.png</td>
-    ///     <td>@image html control_radio_button_g.png</td>
-    ///   </tr>
-    ///   <tr>
-    ///     <th>Dark</th>
-    ///     <td>@image html control_radio_button_wd.png</td>
-    ///     <td>@image html control_radio_button_md.png</td>
-    ///     <td>@image html control_radio_button_gd.png</td>
-    ///   </tr>
-    /// </table>
+    /// |       | Windows                                   | macOS                                     | Gnome                                     |
+    /// | ----- | ----------------------------------------- | ------------------------------------------| ------------------------------------------|
+    /// | Light |  @image html control_radio_button_w.png   |  @image html control_radio_button_m.png   |  @image html control_radio_button_g.png   |
+    /// | Dark  |  @image html control_radio_button_wd.png  |  @image html control_radio_button_md.png  |  @image html control_radio_button_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of radio_button control.
     /// @include radio_button.cpp

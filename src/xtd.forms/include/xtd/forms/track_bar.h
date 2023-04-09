@@ -20,26 +20,10 @@ namespace xtd {
     /// @remarks The large_change property defines the increment to add or subtract from the value property when clicks occur on either side of the scroll box. The track bar can be displayed horizontally or vertically.
     /// @remarks You can use this control to input numeric data obtained through the value property. You can display this numeric data in a control or use it in code.
     /// @par Appearance
-    /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-    ///   <tr>
-    ///     <th style="width:100px"></th>
-    ///     <th><b>Windows</b></th>
-    ///     <th><b>macOS</b></th>
-    ///     <th><b>Gnome</b></th>
-    ///   </tr>
-    ///   <tr>
-    ///     <th>Light</th>
-    ///     <td>@image html control_track_bar_w.png</td>
-    ///     <td>@image html control_track_bar_m.png</td>
-    ///     <td>@image html control_track_bar_g.png</td>
-    ///   </tr>
-    ///   <tr>
-    ///     <th>Dark</th>
-    ///     <td>@image html control_track_bar_wd.png</td>
-    ///     <td>@image html control_track_bar_md.png</td>
-    ///     <td>@image html control_track_bar_gd.png</td>
-    ///   </tr>
-    /// </table>
+    /// |       | Windows                                | macOS                                  | Gnome                                  |
+    /// | ----- | -------------------------------------- | ---------------------------------------| ---------------------------------------|
+    /// | Light |  @image html control_track_bar_w.png   |  @image html control_track_bar_m.png   |  @image html control_track_bar_g.png   |
+    /// | Dark  |  @image html control_track_bar_wd.png  |  @image html control_track_bar_md.png  |  @image html control_track_bar_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of track_bar control.
     /// @include track_bar.cpp

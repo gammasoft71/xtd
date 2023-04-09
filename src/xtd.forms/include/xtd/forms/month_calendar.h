@@ -26,26 +26,10 @@ namespace xtd {
     /// @remarks The xtd::forms::month_calendar control is drawn by the operating system, so the xtd::forms::month_calendar::paint event is never raised. If you need to provide a customized look to the xtd::forms::month_calendar control, you should override the xtd::forms::month_calendar::on_print method, call the base implementation of xtd::forms::control::on_print, and then perform custom painting.
     /// @remarks If you need custom date formatting and a selection limited to just one date, you might consider using a xtd::forms::month_calendar::date_time_picker control instead of a xtd::forms::month_calendar. Using the xtd::forms::month_calendar::date_time_picker eliminates much of the need for validating date/time values.
     /// @par Appearance
-    /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-    ///   <tr>
-    ///     <th style="width:100px"></th>
-    ///     <th><b>Windows</b></th>
-    ///     <th><b>macOS</b></th>
-    ///     <th><b>Gnome</b></th>
-    ///   </tr>
-    ///   <tr>
-    ///     <th>Light</th>
-    ///     <td>@image html control_month_calendar_w.png</td>
-    ///     <td>@image html control_month_calendar_m.png</td>
-    ///     <td>@image html control_month_calendar_g.png</td>
-    ///   </tr>
-    ///   <tr>
-    ///     <th>Dark</th>
-    ///     <td>@image html control_month_calendar_wd.png</td>
-    ///     <td>@image html control_month_calendar_md.png</td>
-    ///     <td>@image html control_month_calendar_gd.png</td>
-    ///   </tr>
-    /// </table>
+    /// |       | Windows                                     | macOS                                       | Gnome                                       |
+    /// | ----- | ------------------------------------------- | --------------------------------------------| --------------------------------------------|
+    /// | Light |  @image html control_month_calendar_w.png   |  @image html control_month_calendar_m.png   |  @image html control_month_calendar_g.png   |
+    /// | Dark  |  @image html control_month_calendar_wd.png  |  @image html control_month_calendar_md.png  |  @image html control_month_calendar_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of month_calendar control.
     /// @include month_calendar.cpp
