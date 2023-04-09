@@ -21,26 +21,10 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms controls
     /// @par Appearance
-    /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-    ///   <tr>
-    ///     <th style="width:100px"></th>
-    ///     <th><b>Windows</b></th>
-    ///     <th><b>macOS</b></th>
-    ///     <th><b>Gnome</b></th>
-    ///   </tr>
-    ///   <tr>
-    ///     <th>Light</th>
-    ///     <td>@image html control_up_down_button_w.png</td>
-    ///     <td>@image html control_up_down_button_m.png</td>
-    ///     <td>@image html control_up_down_button_g.png</td>
-    ///   </tr>
-    ///   <tr>
-    ///     <th>Dark</th>
-    ///     <td>@image html control_up_down_button_wd.png</td>
-    ///     <td>@image html control_up_down_button_md.png</td>
-    ///     <td>@image html control_up_down_button_gd.png</td>
-    ///   </tr>
-    /// </table>
+    /// |       | Windows                                     | macOS                                       | Gnome                                       |
+    /// | ----- | ------------------------------------------- | --------------------------------------------| --------------------------------------------|
+    /// | Light |  @image html control_up_down_button_w.png   |  @image html control_up_down_button_m.png   |  @image html control_up_down_button_g.png   |
+    /// | Dark  |  @image html control_up_down_button_wd.png  |  @image html control_up_down_button_md.png  |  @image html control_up_down_button_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of up down button control.
     /// @include up_down_button.cpp

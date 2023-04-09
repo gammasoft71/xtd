@@ -22,26 +22,10 @@ namespace xtd {
     /// @remarks If use_tab_stops is true, the checked_list_box will recognize and expand tab characters in an item's text, creating columns. These tab stops are preset and cannot be changed. To use custom tab stops, set use_tab_stops to false, set use_custom_tab_offsets to true, and add the custom values to the custom_tab_offsets collection.
     /// @note If the use_compatible_text_rendering property is false, the custom_tab_offsets property will be ignored and replaced with standard tab offsets.
     /// @par Appearance
-    /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-    ///   <tr>
-    ///     <th style="width:100px"></th>
-    ///     <th><b>Windows</b></th>
-    ///     <th><b>macOS</b></th>
-    ///     <th><b>Gnome</b></th>
-    ///   </tr>
-    ///   <tr>
-    ///     <th>Light</th>
-    ///     <td>@image html control_checked_list_box_w.png</td>
-    ///     <td>@image html control_checked_list_box_m.png</td>
-    ///     <td>@image html control_checked_list_box_g.png</td>
-    ///   </tr>
-    ///   <tr>
-    ///     <th>Dark</th>
-    ///     <td>@image html control_checked_list_box_wd.png</td>
-    ///     <td>@image html control_checked_list_box_md.png</td>
-    ///     <td>@image html control_checked_list_box_gd.png</td>
-    ///   </tr>
-    /// </table>
+    /// |       | Windows                                       | macOS                                         | Gnome                                         |
+    /// | ----- | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
+    /// | Light |  @image html control_checked_list_box_w.png   |  @image html control_checked_list_box_m.png   |  @image html control_checked_list_box_g.png   |
+    /// | Dark  |  @image html control_checked_list_box_wd.png  |  @image html control_checked_list_box_md.png  |  @image html control_checked_list_box_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of checked_list_box control.
     /// @include checked_list_box.cpp

@@ -20,26 +20,10 @@ namespace xtd {
     /// @remarks To specify the allowable range of values for the control, set the minimum and maximum properties. Set the increment value to specify the value to be incremented or decremented to the value property when the user clicks the up or down arrow buttons. You can increase the speed that the control moves through numbers when the user continuously presses the up or down arrow by setting the accelerations property.
     /// @remarks When the up_button or down_button methods are called, either in code or by the click of the up or down buttons, the new value is validated and the control is updated with the new value in the appropriate format. Specifically, if the user_edit property is set to true, the parse_edit_text method is called prior to validating or updating the value. The value is then verified to be between the minimum and maximum values, and the update_edit_text method is called.
     /// @par Appearance
-    /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-    ///   <tr>
-    ///     <th style="width:100px"></th>
-    ///     <th><b>Windows</b></th>
-    ///     <th><b>macOS</b></th>
-    ///     <th><b>Gnome</b></th>
-    ///   </tr>
-    ///   <tr>
-    ///     <th>Light</th>
-    ///     <td>@image html control_numeric_up_down_w.png</td>
-    ///     <td>@image html control_numeric_up_down_m.png</td>
-    ///     <td>@image html control_numeric_up_down_g.png</td>
-    ///   </tr>
-    ///   <tr>
-    ///     <th>Dark</th>
-    ///     <td>@image html control_numeric_up_down_wd.png</td>
-    ///     <td>@image html control_numeric_up_down_md.png</td>
-    ///     <td>@image html control_numeric_up_down_gd.png</td>
-    ///   </tr>
-    /// </table>
+    /// |       | Windows                                      | macOS                                        | Gnome                                        |
+    /// | ----- | -------------------------------------------- | ---------------------------------------------| ---------------------------------------------|
+    /// | Light |  @image html control_numeric_up_down_w.png   |  @image html control_numeric_up_down_m.png   |  @image html control_numeric_up_down_g.png   |
+    /// | Dark  |  @image html control_numeric_up_down_wd.png  |  @image html control_numeric_up_down_md.png  |  @image html control_numeric_up_down_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of numeric up down control.
     /// @include numeric_up_down.cpp

@@ -30,26 +30,10 @@ namespace xtd {
     /// @note When the flat_style property is set to flat_style::system, the check_align property is ignored and the control is displayed using the content_alignment::middle_left or content_alignment::middle_right alignment. If the check_align property is set to one of the right alignments, the control is displayed using the content_alignment::middle_right alignment; otherwise, it is displayed using the content_alignment::middle_left alignment.
     /// @remarks The following describes an indeterminate state: You have a toggle_button that determines if the selected text in a rich_text_box is bold. When you select text you can click the toggle_button to bold the selection. Likewise, when you select some text, the toggle_button displays whether the selected text is bold. If your selected text contains text that is bold and normal, the toggle_button will have an indeterminate state.
     /// @par Appearance
-    /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-    ///   <tr>
-    ///     <th style="width:100px"></th>
-    ///     <th><b>Windows</b></th>
-    ///     <th><b>macOS</b></th>
-    ///     <th><b>Gnome</b></th>
-    ///   </tr>
-    ///   <tr>
-    ///     <th>Light</th>
-    ///     <td>@image html control_toggle_button_w.png</td>
-    ///     <td>@image html control_toggle_button_m.png</td>
-    ///     <td>@image html control_toggle_button_g.png</td>
-    ///   </tr>
-    ///   <tr>
-    ///     <th>Dark</th>
-    ///     <td>@image html control_toggle_button_wd.png</td>
-    ///     <td>@image html control_toggle_button_md.png</td>
-    ///     <td>@image html control_toggle_button_gd.png</td>
-    ///   </tr>
-    /// </table>
+    /// |       | Windows                                    | macOS                                      | Gnome                                      |
+    /// | ----- | ------------------------------------------ | -------------------------------------------| -------------------------------------------|
+    /// | Light |  @image html control_toggle_button_w.png   |  @image html control_toggle_button_m.png   |  @image html control_toggle_button_g.png   |
+    /// | Dark  |  @image html control_toggle_button_wd.png  |  @image html control_toggle_button_md.png  |  @image html control_toggle_button_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of toggle_button control.
     /// @include toggle_button.cpp

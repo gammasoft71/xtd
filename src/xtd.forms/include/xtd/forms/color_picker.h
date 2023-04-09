@@ -18,26 +18,10 @@ namespace xtd {
     /// @remarks The inherited member show_dialog must be invoked to create this specific common dialog box. hook_proc can be overridden to implement specific dialog box hook functionality. Use color to retrieve the color selected by the user.
     /// @remarks When you create an instance of color_dialog, some of the read/write properties are set to initial values. For a list of these values, see the color_dialog constructor.
     /// @par Appearance
-    /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-    ///   <tr>
-    ///     <th style="width:100px"></th>
-    ///     <th><b>Windows</b></th>
-    ///     <th><b>macOS</b></th>
-    ///     <th><b>Gnome</b></th>
-    ///   </tr>
-    ///   <tr>
-    ///     <th>Light</th>
-    ///     <td>@image html control_color_picker_w.png</td>
-    ///     <td>@image html control_color_picker_m.png</td>
-    ///     <td>@image html control_color_picker_g.png</td>
-    ///   </tr>
-    ///   <tr>
-    ///     <th>Dark</th>
-    ///     <td>@image html control_color_picker_wd.png</td>
-    ///     <td>@image html control_color_picker_md.png</td>
-    ///     <td>@image html control_color_picker_gd.png</td>
-    ///   </tr>
-    /// </table>
+    /// |       | Windows                                   | macOS                                     | Gnome                                     |
+    /// | ----- | ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
+    /// | Light |  @image html control_color_picker_w.png   |  @image html control_color_picker_m.png   |  @image html control_color_picker_g.png   |
+    /// | Dark  |  @image html control_color_picker_wd.png  |  @image html control_color_picker_md.png  |  @image html control_color_picker_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of color_picker picker.
     /// @include color_picker.cpp
