@@ -15,7 +15,7 @@ namespace xtd {
   /// @par Examples
   /// The following example demonstrates how to throw and catch an unauthorized_access_exception.
   /// @include unauthorized_access_exception.cpp
-  /// @todo add param_name property and constructors param (param_nam is the parameter that cause the exception).
+  /// @todo add param_name property and constructors param (param_name is the parameter that cause the exception).
   class unauthorized_access_exception : public system_exception {
   public:
     /// @name Constructors
