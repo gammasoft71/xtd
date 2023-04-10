@@ -39,26 +39,10 @@ namespace xtd {
     /// @remarks Using the properties available in the form class, you can determine the appearance, size, color, and window management features of the window or dialog box you are creating. The text property allows you to specify the caption of the window in the title bar. The size and desktop_location properties allow you to define the size and position of the window when it is displayed. You can use the fore_color color property to change the default foreground color of all controls placed on the form. The form_border_style, minimize_box, and maximize_box properties allow you to control whether the form can be minimized, maximized, or resized at run time.
     /// @remarks In addition to properties, you can use the methods of the class to manipulate a form. For example, you can use the show_dialog method to show a form as a modal dialog box. You can use the set_desktop_location method to position the form on the desktop.
     /// @par Appearance
-    /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-    ///   <tr>
-    ///     <th style="width:100px"></th>
-    ///     <th><b>Windows</b></th>
-    ///     <th><b>macOS</b></th>
-    ///     <th><b>Gnome</b></th>
-    ///   </tr>
-    ///   <tr>
-    ///     <th>Light</th>
-    ///     <td>@image html form_form_w.png</td>
-    ///     <td>@image html form_form_m.png</td>
-    ///     <td>@image html form_form_g.png</td>
-    ///   </tr>
-    ///   <tr>
-    ///     <th>Dark</th>
-    ///     <td>@image html form_form_wd.png</td>
-    ///     <td>@image html form_form_md.png</td>
-    ///     <td>@image html form_form_gd.png</td>
-    ///   </tr>
-    /// </table>
+    /// |       | Windows                        | macOS                          | Gnome                          |
+    /// | ----- | ------------------------------ | ------------------------------ | ------------------------------ |
+    /// | Light |  @image html form_form_w.png   |  @image html form_form_m.png   |  @image html form_form_g.png   |
+    /// | Dark  |  @image html form_form_wd.png  |  @image html form_form_md.png  |  @image html form_form_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of form control.
     /// @include form.cpp
