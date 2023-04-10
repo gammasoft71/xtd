@@ -29,26 +29,10 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms menus_and_toolbars
     /// @par Appearance
-    /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-    ///   <tr>
-    ///     <th style="width:100px"></th>
-    ///     <th><b>Windows</b></th>
-    ///     <th><b>macOS</b></th>
-    ///     <th><b>Gnome</b></th>
-    ///   </tr>
-    ///   <tr>
-    ///     <th>Light</th>
-    ///     <td>@image html menus_and_toolbars_status_bar_w.png</td>
-    ///     <td>@image html menus_and_toolbars_status_bar_m.png</td>
-    ///     <td>@image html menus_and_toolbars_status_bar_g.png</td>
-    ///   </tr>
-    ///   <tr>
-    ///     <td>Dark</td>
-    ///     <td>@image html menus_and_toolbars_status_bar_wd.png</td>
-    ///     <td>@image html menus_and_toolbars_status_bar_md.png</td>
-    ///     <td>@image html menus_and_toolbars_status_bar_gd.png</td>
-    ///   </tr>
-    /// </table>
+    /// |       | Windows                                            | macOS                                              | Gnome                                              |
+    /// | ----- | -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
+    /// | Light |  @image html menus_and_toolbars_status_bar_w.png   |  @image html menus_and_toolbars_status_bar_m.png   |  @image html menus_and_toolbars_status_bar_g.png   |
+    /// | Dark  |  @image html menus_and_toolbars_status_bar_wd.png  |  @image html menus_and_toolbars_status_bar_md.png  |  @image html menus_and_toolbars_status_bar_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of xtd::forms::status_bar control.
     /// @include status_bar.cpp
