@@ -17,26 +17,10 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms dialogs
     /// @par Appearance
-    /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-    ///   <tr>
-    ///     <th style="width:100px"></th>
-    ///     <th><b>Windows</b></th>
-    ///     <th><b>macOS</b></th>
-    ///     <th><b>Gnome</b></th>
-    ///   </tr>
-    ///   <tr>
-    ///     <th>Light</th>
-    ///     <td>@image html dialog_find_dialog_w.png</td>
-    ///     <td>@image html dialog_find_dialog_m.png</td>
-    ///     <td>@image html dialog_find_dialog_g.png</td>
-    ///   </tr>
-    ///   <tr>
-    ///     <th>Dark</th>
-    ///     <td>@image html dialog_find_dialog_wd.png</td>
-    ///     <td>@image html dialog_find_dialog_md.png</td>
-    ///     <td>@image html dialog_find_dialog_gd.png</td>
-    ///   </tr>
-    /// </table>
+    /// |       | Windows                                 | macOS                                   | Gnome                                   |
+    /// | ----- | --------------------------------------- | --------------------------------------- | --------------------------------------- |
+    /// | Light |  @image html dialog_find_dialog_w.png   |  @image html dialog_find_dialog_m.png   |  @image html dialog_find_dialog_g.png   |
+    /// | Dark  |  @image html dialog_find_dialog_wd.png  |  @image html dialog_find_dialog_md.png  |  @image html dialog_find_dialog_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of xtd::forms::find_box dialog.
     /// @include find_box.cpp
