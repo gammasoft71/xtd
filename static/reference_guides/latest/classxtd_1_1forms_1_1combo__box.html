@@ -122,31 +122,37 @@ To add or remove objects in the list at run time, use methods of the <a class="e
 In addition to display and selection functionality, the <a class="el" href="classxtd_1_1forms_1_1combo__box.html" title="Represents a Windows combo box control.">combo_box</a> also provides features that enable you to efficiently add items to the <a class="el" href="classxtd_1_1forms_1_1combo__box.html" title="Represents a Windows combo box control.">combo_box</a> and to find text within the items of the list. With the begin_update and end_update methods, you can add a large number of items to the <a class="el" href="classxtd_1_1forms_1_1combo__box.html" title="Represents a Windows combo box control.">combo_box</a> without the control being repainted each time an item is added to the list. The find_string and find_string_exact methods enable you to search for an item in the list that contains a specific search string. </dd>
 <dd>
 You can use these properties to manage the currently selected item in the list, the text property to specify the string displayed in the editing field, the selected_index property to get or set the current item, and the selected_item property to get or set a reference to the object. </dd></dl>
-<dl class="section user"><dt>Appearance</dt><dd><table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-<tr>
-<th style="width:100px"></th><th><b>Windows</b> </th><th><b>macOS</b> </th><th><b>Gnome</b>  </th></tr>
-<tr>
-<th>Light </th><td><div class="image">
+<dl class="section user"><dt>Appearance</dt><dd><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone"></th><th class="markdownTableHeadNone">Windows   </th><th class="markdownTableHeadNone">macOS   </th><th class="markdownTableHeadNone">Gnome    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Light   </td><td class="markdownTableBodyNone"> <div class="image">
 <img src="control_combo_box_w.png" alt=""/>
-</div>
-td </td><td><div class="image">
+<div class="caption">
+  </div></div>
+  </td><td class="markdownTableBodyNone"> <div class="image">
 <img src="control_combo_box_m.png" alt=""/>
-</div>
-td </td><td><div class="image">
+<div class="caption">
+  </div></div>
+  </td><td class="markdownTableBodyNone"> <div class="image">
 <img src="control_combo_box_g.png" alt=""/>
-</div>
-td  </td></tr>
-<tr>
-<th>Dark </th><td><div class="image">
+<div class="caption">
+  </div></div>
+   </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Dark   </td><td class="markdownTableBodyNone"> <div class="image">
 <img src="control_combo_box_wd.png" alt=""/>
-</div>
-td </td><td><div class="image">
+<div class="caption">
+  </div></div>
+  </td><td class="markdownTableBodyNone"> <div class="image">
 <img src="control_combo_box_md.png" alt=""/>
-</div>
-td </td><td><div class="image">
+<div class="caption">
+  </div></div>
+  </td><td class="markdownTableBodyNone"> <div class="image">
 <img src="control_combo_box_gd.png" alt=""/>
-</div>
-td  </td></tr>
+<div class="caption">
+  </div></div>
+  </td></tr>
 </table>
 </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of combo box control. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
@@ -197,8 +203,8 @@ td  </td></tr>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1event__args_html"><div class="ttname"><a href="classxtd_1_1event__args.html">xtd::event_args</a></div><div class="ttdoc">Represents the base class for classes that contain event data, and provides a value to use for events...</div><div class="ttdef"><b>Definition:</b> event_args.h:18</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a4ee49410f3156fd66b61c2567a59388e"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a></div><div class="ttdeci">static void run()</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1combo__box_html"><div class="ttname"><a href="classxtd_1_1forms_1_1combo__box.html">xtd::forms::combo_box</a></div><div class="ttdoc">Represents a Windows combo box control.</div><div class="ttdef"><b>Definition:</b> combo_box.h:48</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application's user interface.</div><div class="ttdef"><b>Definition:</b> form.h:65</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1combo__box_html"><div class="ttname"><a href="classxtd_1_1forms_1_1combo__box.html">xtd::forms::combo_box</a></div><div class="ttdoc">Represents a Windows combo box control.</div><div class="ttdef"><b>Definition:</b> combo_box.h:32</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application's user interface.</div><div class="ttdef"><b>Definition:</b> form.h:49</div></div>
 <div class="ttc" id="agroup__events_html_ga0b1801aa17fa22ddacfdcccd7b25316b"><div class="ttname"><a href="group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b">xtd::event_handler</a></div><div class="ttdeci">generic_event_handler&lt;&gt; event_handler</div><div class="ttdoc">Represents the method that will handle an event that has no event data.</div><div class="ttdef"><b>Definition:</b> event_handler.h:33</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1"><div class="ttname"><a href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">xtd::forms::status_bar_panel_style::text</a></div><div class="ttdeci">@ text</div><div class="ttdoc">The xtd::forms::status_bar_panel displays text in the standard font.</div></div>
 <div class="ttc" id="anamespacextd_1_1drawing_html"><div class="ttname"><a href="namespacextd_1_1drawing.html">xtd::drawing</a></div><div class="ttdoc">The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functi...</div><div class="ttdef"><b>Definition:</b> basic_colors.h:13</div></div>
@@ -2530,7 +2536,7 @@ The <a class="el" href="classxtd_1_1forms_1_1combo__box.html#aee57ff936a6cdee054
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Apr 4 2023 21:38:14 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Apr 10 2023 18:10:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

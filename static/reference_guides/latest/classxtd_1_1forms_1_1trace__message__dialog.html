@@ -105,31 +105,37 @@ Inheritance diagram for xtd::forms::trace_message_dialog:</div>
 <div class="textblock"><p>Displays a message window and write debug, which presents a debug message to the user. </p>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1forms.html" title="The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...">xtd::forms</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms.html" title="The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...">xtd.forms</a></dd></dl>
-<dl class="section user"><dt>Appearance</dt><dd><table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-<tr>
-<th style="width:100px"></th><th><b>Windows</b> </th><th><b>macOS</b> </th><th><b>Gnome</b>  </th></tr>
-<tr>
-<th>Light </th><td><div class="image">
-<img src="dialog_debug_message_box_w.png" alt=""/>
-</div>
-td </td><td><div class="image">
-<img src="dialog_debug_message_box_m.png" alt=""/>
-</div>
-td </td><td><div class="image">
-<img src="dialog_debug_message_box_g.png" alt=""/>
-</div>
-td  </td></tr>
-<tr>
-<th>Dark </th><td><div class="image">
-<img src="dialog_debug_message_box_wd.png" alt=""/>
-</div>
-td </td><td><div class="image">
-<img src="dialog_debug_message_box_md.png" alt=""/>
-</div>
-td </td><td><div class="image">
-<img src="dialog_debug_message_box_gd.png" alt=""/>
-</div>
-td  </td></tr>
+<dl class="section user"><dt>Appearance</dt><dd><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone"></th><th class="markdownTableHeadNone">Windows   </th><th class="markdownTableHeadNone">macOS   </th><th class="markdownTableHeadNone">Gnome    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Light   </td><td class="markdownTableBodyNone"> <div class="image">
+<img src="dialog_trace_message_box_w.png" alt=""/>
+<div class="caption">
+  </div></div>
+  </td><td class="markdownTableBodyNone"> <div class="image">
+<img src="dialog_trace_message_box_m.png" alt=""/>
+<div class="caption">
+  </div></div>
+  </td><td class="markdownTableBodyNone"> <div class="image">
+<img src="dialog_trace_message_box_g.png" alt=""/>
+<div class="caption">
+  </div></div>
+   </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Dark   </td><td class="markdownTableBodyNone"> <div class="image">
+<img src="dialog_trace_message_box_wd.png" alt=""/>
+<div class="caption">
+  </div></div>
+  </td><td class="markdownTableBodyNone"> <div class="image">
+<img src="dialog_trace_message_box_md.png" alt=""/>
+<div class="caption">
+  </div></div>
+  </td><td class="markdownTableBodyNone"> <div class="image">
+<img src="dialog_trace_message_box_gd.png" alt=""/>
+<div class="caption">
+  </div></div>
+  </td></tr>
 </table>
 </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1trace__message__dialog.html" title="Displays a message window and write debug, which presents a debug message to the user.">trace_message_dialog</a> dialog. <div class="fragment"><div class="line"><span class="preprocessor">#define TRACE</span></div>
@@ -160,13 +166,13 @@ td  </td></tr>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(form1 {});</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a4ee49410f3156fd66b61c2567a59388e"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a></div><div class="ttdeci">static void run()</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1button_html"><div class="ttname"><a href="classxtd_1_1forms_1_1button.html">xtd::forms::button</a></div><div class="ttdoc">Represents a Windows button control.</div><div class="ttdef"><b>Definition:</b> button.h:61</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1button_html"><div class="ttname"><a href="classxtd_1_1forms_1_1button.html">xtd::forms::button</a></div><div class="ttdoc">Represents a Windows button control.</div><div class="ttdef"><b>Definition:</b> button.h:45</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_a53e5a75ad180a2efadc129e5a3c18cbd"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">xtd::forms::control::location</a></div><div class="ttdeci">virtual drawing::point location() const noexcept</div><div class="ttdoc">Gets the coordinates of the upper-left corner of the control relative to the upper-left corner of its...</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application's user interface.</div><div class="ttdef"><b>Definition:</b> form.h:65</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1trace__form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1trace__form.html">xtd::forms::trace_form</a></div><div class="ttdoc">Represents a form that displays trace form. This class cannot be inherited.</div><div class="ttdef"><b>Definition:</b> trace_form.h:46</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1trace__message__dialog_html"><div class="ttname"><a href="classxtd_1_1forms_1_1trace__message__dialog.html">xtd::forms::trace_message_dialog</a></div><div class="ttdoc">Displays a message window and write debug, which presents a debug message to the user.</div><div class="ttdef"><b>Definition:</b> trace_message_dialog.h:41</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application's user interface.</div><div class="ttdef"><b>Definition:</b> form.h:49</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1trace__form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1trace__form.html">xtd::forms::trace_form</a></div><div class="ttdoc">Represents a form that displays trace form. This class cannot be inherited.</div><div class="ttdef"><b>Definition:</b> trace_form.h:30</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1trace__message__dialog_html"><div class="ttname"><a href="classxtd_1_1forms_1_1trace__message__dialog.html">xtd::forms::trace_message_dialog</a></div><div class="ttdoc">Displays a message window and write debug, which presents a debug message to the user.</div><div class="ttdef"><b>Definition:</b> trace_message_dialog.h:25</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1trace__message__dialog_html_aa84a5f2aab01c5e824d160585c348300"><div class="ttname"><a href="classxtd_1_1forms_1_1trace__message__dialog.html#aa84a5f2aab01c5e824d160585c348300">xtd::forms::trace_message_dialog::message</a></div><div class="ttdeci">xtd::ustring message() const noexcept</div><div class="ttdoc">Gets the text message.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1trace__message__dialog_html_abe17813a0b3fc33a680bfc653585b213"><div class="ttname"><a href="classxtd_1_1forms_1_1trace__message__dialog.html#abe17813a0b3fc33a680bfc653585b213">xtd::forms::trace_message_dialog::show_sheet_dialog</a></div><div class="ttdeci">xtd::forms::dialog_result show_sheet_dialog(const iwin32_window &amp;owner)</div><div class="ttdoc">Runs message dialog box.</div><div class="ttdef"><b>Definition:</b> trace_message_dialog.h:105</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1trace__message__dialog_html_abe17813a0b3fc33a680bfc653585b213"><div class="ttname"><a href="classxtd_1_1forms_1_1trace__message__dialog.html#abe17813a0b3fc33a680bfc653585b213">xtd::forms::trace_message_dialog::show_sheet_dialog</a></div><div class="ttdeci">xtd::forms::dialog_result show_sheet_dialog(const iwin32_window &amp;owner)</div><div class="ttdoc">Runs message dialog box.</div><div class="ttdef"><b>Definition:</b> trace_message_dialog.h:89</div></div>
 <div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition:</b> about_box.h:13</div></div>
 </div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
@@ -512,7 +518,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Apr 4 2023 21:38:16 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Apr 10 2023 18:10:56 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

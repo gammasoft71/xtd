@@ -113,7 +113,7 @@ Inheritance diagram for xtd::forms::toggle_button:</div>
 <div class="textblock"><p>Represents a Windows <a class="el" href="classxtd_1_1forms_1_1toggle__button.html" title="Represents a Windows toggle_button.">toggle_button</a>. </p>
 <div class="fragment"><div class="line"><span class="keyword">class </span><a class="code hl_define" href="group__keywords.html#gaa2ab2e666648001a7d445dc452ac1767">forms_export_</a> <a class="code hl_class" href="classxtd_1_1forms_1_1toggle__button.html">toggle_button</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1button__base.html">xtd::forms::button_base</a></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1button__base_html"><div class="ttname"><a href="classxtd_1_1forms_1_1button__base.html">xtd::forms::button_base</a></div><div class="ttdoc">Implements the basic functionality common to button controls.</div><div class="ttdef"><b>Definition:</b> button_base.h:33</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1toggle__button_html"><div class="ttname"><a href="classxtd_1_1forms_1_1toggle__button.html">xtd::forms::toggle_button</a></div><div class="ttdoc">Represents a Windows toggle_button.</div><div class="ttdef"><b>Definition:</b> toggle_button.h:56</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1toggle__button_html"><div class="ttname"><a href="classxtd_1_1forms_1_1toggle__button.html">xtd::forms::toggle_button</a></div><div class="ttdoc">Represents a Windows toggle_button.</div><div class="ttdef"><b>Definition:</b> toggle_button.h:40</div></div>
 <div class="ttc" id="agroup__keywords_html_gaa2ab2e666648001a7d445dc452ac1767"><div class="ttname"><a href="group__keywords.html#gaa2ab2e666648001a7d445dc452ac1767">forms_export_</a></div><div class="ttdeci">#define forms_export_</div><div class="ttdoc">Define shared library export.</div><div class="ttdef"><b>Definition:</b> forms_export.h:13</div></div>
 </div><!-- fragment --> <dl class="section user"><dt>Inheritance</dt><dd><a class="el" href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....">xtd::object</a> → <a class="el" href="classxtd_1_1forms_1_1component.html" title="Provides the base implementation and enables object sharing between applications.">xtd::forms::component</a> → <a class="el" href="classxtd_1_1forms_1_1control.html" title="Defines the base class for controls, which are components with visual representation.">xtd::forms::control</a> → <a class="el" href="classxtd_1_1forms_1_1button__base.html" title="Implements the basic functionality common to button controls.">xtd::forms::button_base</a> → <a class="el" href="classxtd_1_1forms_1_1toggle__button.html" title="Represents a Windows toggle_button.">xtd::forms::toggle_button</a> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1forms.html" title="The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...">xtd::forms</a> </dd></dl>
@@ -129,31 +129,37 @@ The three_state property determines whether the control supports two or three st
 <dl class="section remark"><dt>Remarks</dt><dd>The flat_style property determines the style and appearance of the control. If the flat_style property is set to <a class="el" href="group__xtd__forms.html#gga7cc15a089c6b538cb469caa2e9aba1a1a54b53072540eeeb8f8e9343e71f28176" title="The appearance of the control is determined by the user&#39;s operating system.">flat_style::system</a>, the user's operating system determines the appearance of the control. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>When the flat_style property is set to <a class="el" href="group__xtd__forms.html#gga7cc15a089c6b538cb469caa2e9aba1a1a54b53072540eeeb8f8e9343e71f28176" title="The appearance of the control is determined by the user&#39;s operating system.">flat_style::system</a>, the check_align property is ignored and the control is displayed using the <a class="el" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0a4d8a5580bcd972246c9910900a6efc09" title="Content is vertically aligned in the middle, and horizontally aligned on the left.">content_alignment::middle_left</a> or <a class="el" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0aff1bb2ef26708d2a4dc98bdda5c48071" title="Content is vertically aligned at the middle, and horizontally aligned on the right.">content_alignment::middle_right</a> alignment. If the check_align property is set to one of the right alignments, the control is displayed using the <a class="el" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0aff1bb2ef26708d2a4dc98bdda5c48071" title="Content is vertically aligned at the middle, and horizontally aligned on the right.">content_alignment::middle_right</a> alignment; otherwise, it is displayed using the <a class="el" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0a4d8a5580bcd972246c9910900a6efc09" title="Content is vertically aligned in the middle, and horizontally aligned on the left.">content_alignment::middle_left</a> alignment. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The following describes an indeterminate state: You have a <a class="el" href="classxtd_1_1forms_1_1toggle__button.html" title="Represents a Windows toggle_button.">toggle_button</a> that determines if the selected text in a rich_text_box is bold. When you select text you can click the <a class="el" href="classxtd_1_1forms_1_1toggle__button.html" title="Represents a Windows toggle_button.">toggle_button</a> to bold the selection. Likewise, when you select some text, the <a class="el" href="classxtd_1_1forms_1_1toggle__button.html" title="Represents a Windows toggle_button.">toggle_button</a> displays whether the selected text is bold. If your selected text contains text that is bold and normal, the <a class="el" href="classxtd_1_1forms_1_1toggle__button.html" title="Represents a Windows toggle_button.">toggle_button</a> will have an indeterminate state. </dd></dl>
-<dl class="section user"><dt>Appearance</dt><dd><table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-<tr>
-<th style="width:100px"></th><th><b>Windows</b> </th><th><b>macOS</b> </th><th><b>Gnome</b>  </th></tr>
-<tr>
-<th>Light </th><td><div class="image">
+<dl class="section user"><dt>Appearance</dt><dd><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone"></th><th class="markdownTableHeadNone">Windows   </th><th class="markdownTableHeadNone">macOS   </th><th class="markdownTableHeadNone">Gnome    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Light   </td><td class="markdownTableBodyNone"> <div class="image">
 <img src="control_toggle_button_w.png" alt=""/>
-</div>
-td </td><td><div class="image">
+<div class="caption">
+  </div></div>
+  </td><td class="markdownTableBodyNone"> <div class="image">
 <img src="control_toggle_button_m.png" alt=""/>
-</div>
-td </td><td><div class="image">
+<div class="caption">
+  </div></div>
+  </td><td class="markdownTableBodyNone"> <div class="image">
 <img src="control_toggle_button_g.png" alt=""/>
-</div>
-td  </td></tr>
-<tr>
-<th>Dark </th><td><div class="image">
+<div class="caption">
+  </div></div>
+   </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Dark   </td><td class="markdownTableBodyNone"> <div class="image">
 <img src="control_toggle_button_wd.png" alt=""/>
-</div>
-td </td><td><div class="image">
+<div class="caption">
+  </div></div>
+  </td><td class="markdownTableBodyNone"> <div class="image">
 <img src="control_toggle_button_md.png" alt=""/>
-</div>
-td </td><td><div class="image">
+<div class="caption">
+  </div></div>
+  </td><td class="markdownTableBodyNone"> <div class="image">
 <img src="control_toggle_button_gd.png" alt=""/>
-</div>
-td  </td></tr>
+<div class="caption">
+  </div></div>
+  </td></tr>
 </table>
 </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1toggle__button.html" title="Represents a Windows toggle_button.">toggle_button</a> control. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
@@ -206,7 +212,7 @@ td  </td></tr>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a4ee49410f3156fd66b61c2567a59388e"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a></div><div class="ttdeci">static void run()</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a6af4447091dec74038a54c6b9f5f8760"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a6af4447091dec74038a54c6b9f5f8760">xtd::forms::application::enable_visual_styles</a></div><div class="ttdeci">static void enable_visual_styles()</div><div class="ttdoc">Enables visual styles for the application.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application's user interface.</div><div class="ttdef"><b>Definition:</b> form.h:65</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application's user interface.</div><div class="ttdef"><b>Definition:</b> form.h:49</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1"><div class="ttname"><a href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">xtd::forms::status_bar_panel_style::text</a></div><div class="ttdeci">@ text</div><div class="ttdoc">The xtd::forms::status_bar_panel displays text in the standard font.</div></div>
 <div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition:</b> about_box.h:13</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition:</b> system_report.h:17</div></div>
@@ -2616,7 +2622,7 @@ The on_checked_changed method also allows derived classes to handle the event wi
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Apr 4 2023 21:38:16 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Apr 10 2023 18:10:56 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

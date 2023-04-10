@@ -113,36 +113,42 @@ Inheritance diagram for xtd::forms::tool_bar:</div>
 <div class="textblock"><p>Represents a Windows toolbar. </p>
 <div class="fragment"><div class="line"><span class="keyword">class </span><a class="code hl_define" href="group__keywords.html#gaa2ab2e666648001a7d445dc452ac1767">forms_export_</a> <a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar.html">tool_bar</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1control.html">xtd::forms::control</a></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html">xtd::forms::control</a></div><div class="ttdoc">Defines the base class for controls, which are components with visual representation.</div><div class="ttdef"><b>Definition:</b> control.h:76</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1tool__bar_html"><div class="ttname"><a href="classxtd_1_1forms_1_1tool__bar.html">xtd::forms::tool_bar</a></div><div class="ttdoc">Represents a Windows toolbar.</div><div class="ttdef"><b>Definition:</b> tool_bar.h:64</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1tool__bar_html"><div class="ttname"><a href="classxtd_1_1forms_1_1tool__bar.html">xtd::forms::tool_bar</a></div><div class="ttdoc">Represents a Windows toolbar.</div><div class="ttdef"><b>Definition:</b> tool_bar.h:48</div></div>
 <div class="ttc" id="agroup__keywords_html_gaa2ab2e666648001a7d445dc452ac1767"><div class="ttname"><a href="group__keywords.html#gaa2ab2e666648001a7d445dc452ac1767">forms_export_</a></div><div class="ttdeci">#define forms_export_</div><div class="ttdoc">Define shared library export.</div><div class="ttdef"><b>Definition:</b> forms_export.h:13</div></div>
 </div><!-- fragment --> <dl class="section user"><dt>Inheritance</dt><dd><a class="el" href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....">xtd::object</a> → <a class="el" href="classxtd_1_1forms_1_1component.html" title="Provides the base implementation and enables object sharing between applications.">xtd::forms::component</a> → <a class="el" href="classxtd_1_1forms_1_1control.html" title="Defines the base class for controls, which are components with visual representation.">xtd::forms::control</a> → <a class="el" href="classxtd_1_1forms_1_1tool__bar.html" title="Represents a Windows toolbar.">xtd::forms::tool_bar</a> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1forms.html" title="The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...">xtd::forms</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms.html" title="The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...">xtd.forms</a></dd></dl>
-<dl class="section user"><dt>Appearance</dt><dd><table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-<tr>
-<th style="width:100px"></th><th><b>Windows</b> </th><th><b>macOS</b> </th><th><b>Gnome</b>  </th></tr>
-<tr>
-<th>Light </th><td><div class="image">
+<dl class="section user"><dt>Appearance</dt><dd><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone"></th><th class="markdownTableHeadNone">Windows   </th><th class="markdownTableHeadNone">macOS   </th><th class="markdownTableHeadNone">Gnome    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Light   </td><td class="markdownTableBodyNone"> <div class="image">
 <img src="menus_and_toolbars_tool_bar_w.png" alt=""/>
-</div>
-td </td><td><div class="image">
+<div class="caption">
+  </div></div>
+  </td><td class="markdownTableBodyNone"> <div class="image">
 <img src="menus_and_toolbars_tool_bar_m.png" alt=""/>
-</div>
-td </td><td><div class="image">
+<div class="caption">
+  </div></div>
+  </td><td class="markdownTableBodyNone"> <div class="image">
 <img src="menus_and_toolbars_tool_bar_g.png" alt=""/>
-</div>
-td  </td></tr>
-<tr>
-<td>Dark </td><td><div class="image">
+<div class="caption">
+  </div></div>
+   </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Dark   </td><td class="markdownTableBodyNone"> <div class="image">
 <img src="menus_and_toolbars_tool_bar_wd.png" alt=""/>
-</div>
-td </td><td><div class="image">
+<div class="caption">
+  </div></div>
+  </td><td class="markdownTableBodyNone"> <div class="image">
 <img src="menus_and_toolbars_tool_bar_md.png" alt=""/>
-</div>
-td </td><td><div class="image">
+<div class="caption">
+  </div></div>
+  </td><td class="markdownTableBodyNone"> <div class="image">
 <img src="menus_and_toolbars_tool_bar_gd.png" alt=""/>
-</div>
-td  </td></tr>
+<div class="caption">
+  </div></div>
+  </td></tr>
 </table>
 </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1tool__bar.html" title="Represents a Windows toolbar.">xtd::forms::tool_bar</a> control. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
@@ -252,12 +258,12 @@ td  </td></tr>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1event__args_html"><div class="ttname"><a href="classxtd_1_1event__args.html">xtd::event_args</a></div><div class="ttdoc">Represents the base class for classes that contain event data, and provides a value to use for events...</div><div class="ttdef"><b>Definition:</b> event_args.h:18</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a4ee49410f3156fd66b61c2567a59388e"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a></div><div class="ttdeci">static void run()</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1choice_html"><div class="ttname"><a href="classxtd_1_1forms_1_1choice.html">xtd::forms::choice</a></div><div class="ttdoc">Represents a choice control.</div><div class="ttdef"><b>Definition:</b> choice.h:49</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1context__menu_html"><div class="ttname"><a href="classxtd_1_1forms_1_1context__menu.html">xtd::forms::context_menu</a></div><div class="ttdoc">Represents a shortcut menu.</div><div class="ttdef"><b>Definition:</b> context_menu.h:47</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application's user interface.</div><div class="ttdef"><b>Definition:</b> form.h:65</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1list__box_html"><div class="ttname"><a href="classxtd_1_1forms_1_1list__box.html">xtd::forms::list_box</a></div><div class="ttdoc">Represents a standard Windows list box.</div><div class="ttdef"><b>Definition:</b> list_box.h:45</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1choice_html"><div class="ttname"><a href="classxtd_1_1forms_1_1choice.html">xtd::forms::choice</a></div><div class="ttdoc">Represents a choice control.</div><div class="ttdef"><b>Definition:</b> choice.h:33</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1context__menu_html"><div class="ttname"><a href="classxtd_1_1forms_1_1context__menu.html">xtd::forms::context_menu</a></div><div class="ttdoc">Represents a shortcut menu.</div><div class="ttdef"><b>Definition:</b> context_menu.h:31</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application's user interface.</div><div class="ttdef"><b>Definition:</b> form.h:49</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1list__box_html"><div class="ttname"><a href="classxtd_1_1forms_1_1list__box.html">xtd::forms::list_box</a></div><div class="ttdoc">Represents a standard Windows list box.</div><div class="ttdef"><b>Definition:</b> list_box.h:29</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1menu__item_html"><div class="ttname"><a href="classxtd_1_1forms_1_1menu__item.html">xtd::forms::menu_item</a></div><div class="ttdoc">Represents an individual item that is displayed within a main_menu or context_menu.</div><div class="ttdef"><b>Definition:</b> menu_item.h:27</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1progress__bar_html"><div class="ttname"><a href="classxtd_1_1forms_1_1progress__bar.html">xtd::forms::progress_bar</a></div><div class="ttdoc">Represents a Windows progress bar control.</div><div class="ttdef"><b>Definition:</b> progress_bar.h:52</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1progress__bar_html"><div class="ttname"><a href="classxtd_1_1forms_1_1progress__bar.html">xtd::forms::progress_bar</a></div><div class="ttdoc">Represents a Windows progress bar control.</div><div class="ttdef"><b>Definition:</b> progress_bar.h:36</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1timer_html"><div class="ttname"><a href="classxtd_1_1forms_1_1timer.html">xtd::forms::timer</a></div><div class="ttdoc">Implements a timer that raises an event at user-defined intervals. This timer is optimized for use in...</div><div class="ttdef"><b>Definition:</b> timer.h:29</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1tool__bar__button__click__event__args_html"><div class="ttname"><a href="classxtd_1_1forms_1_1tool__bar__button__click__event__args.html">xtd::forms::tool_bar_button_click_event_args</a></div><div class="ttdoc">Provides data for the xtd::forms::tool_bar::button_click event.</div><div class="ttdef"><b>Definition:</b> tool_bar_button_click_event_args.h:21</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1tool__bar__button_html"><div class="ttname"><a href="classxtd_1_1forms_1_1tool__bar__button.html">xtd::forms::tool_bar_button</a></div><div class="ttdoc">Represents a toolbar button.</div><div class="ttdef"><b>Definition:</b> tool_bar_button.h:37</div></div>
@@ -2727,7 +2733,7 @@ The <a class="el" href="classxtd_1_1forms_1_1tool__bar.html#a413c840156136e2329b
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Apr 4 2023 21:38:16 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Apr 10 2023 18:10:56 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
