@@ -20,26 +20,10 @@ namespace xtd {
     ///  * To enable debug mode with cmake, add the add_definitions(-DDEBUG) command line in the CMakeLists.txt of your project, or you can add #define DEBUG to the top of your file.
     /// @remarks To activate your code if DEBUG is defined, you must enclose calls to the methods of Debug in an #if defined(DEBUG) ... #endif block, and add the /DDEBUG option to the compiler command line or add #define DEBUG to the file.
     /// @par Appearance
-    /// <table align="center" border="0" cellpadding="10" cellspacing="0" style="width:100%">
-    ///   <tr>
-    ///     <th style="width:100px"></th>
-    ///     <th><b>Windows</b></th>
-    ///     <th><b>macOS</b></th>
-    ///     <th><b>Gnome</b></th>
-    ///   </tr>
-    ///   <tr>
-    ///     <th>Light</th>
-    ///     <td>@image html form_trace_form_w.png</td>
-    ///     <td>@image html form_trace_form_m.png</td>
-    ///     <td>@image html form_trace_form_g.png</td>
-    ///   </tr>
-    ///   <tr>
-    ///     <th>Dark</th>
-    ///     <td>@image html form_trace_form_wd.png</td>
-    ///     <td>@image html form_trace_form_md.png</td>
-    ///     <td>@image html form_trace_form_gd.png</td>
-    ///   </tr>
-    /// </table>
+    /// |       | Windows                              | macOS                                | Gnome                                |
+    /// | ----- | ------------------------------------ | ------------------------------------ | ------------------------------------ |
+    /// | Light |  @image html form_trace_form_w.png   |  @image html form_trace_form_m.png   |  @image html form_trace_form_g.png   |
+    /// | Dark  |  @image html form_trace_form_wd.png  |  @image html form_trace_form_md.png  |  @image html form_trace_form_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of trace_form form.
     /// @include trace_form.cpp
