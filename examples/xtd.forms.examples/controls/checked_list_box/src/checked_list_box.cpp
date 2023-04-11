@@ -4,7 +4,7 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
-namespace examples {
+namespace checked_list_box_example {
   class form1 : public form {
   public:
     form1() {
@@ -31,5 +31,5 @@ namespace examples {
 }
 
 auto main()->int {
-  application::run(examples::form1 {});
+  application::run(checked_list_box_example::form1 {});
 }

@@ -3,7 +3,7 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-namespace examples {
+namespace check_box_example {
   class form1 : public form {
   public:
     form1() {
@@ -62,5 +62,5 @@ namespace examples {
 
 auto main()->int {
   application::enable_visual_styles();
-  application::run(examples::form1 {});
+  application::run(check_box_example::form1 {});
 }

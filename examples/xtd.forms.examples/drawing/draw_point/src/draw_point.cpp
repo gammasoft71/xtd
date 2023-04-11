@@ -5,7 +5,7 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
-namespace examples {
+namespace draw_point_example {
   class form1 : public form {
     struct colored_point {
       point location;
@@ -46,5 +46,5 @@ namespace examples {
 }
 
 auto main()->int {
-  application::run(examples::form1 {});
+  application::run(draw_point_example::form1 {});
 }

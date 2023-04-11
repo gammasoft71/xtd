@@ -2,7 +2,7 @@
 
 using namespace xtd;
 
-namespace examples {
+namespace bit_converter_is_big_endian_example {
   class program {
   public:
     // The main entry point for the application.
@@ -17,7 +17,7 @@ namespace examples {
   };
 }
 
-startup_(examples::program);
+startup_(bit_converter_is_big_endian_example::program);
 
 /*
  This example of the bit_converter::is_big_endian field generates

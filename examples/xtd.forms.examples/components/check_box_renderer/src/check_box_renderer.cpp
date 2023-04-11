@@ -5,7 +5,7 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
-namespace examples {
+namespace check_box_renderer_example {
   class form1 : public form {
   public:
     form1() {
@@ -98,5 +98,5 @@ namespace examples {
 }
 
 auto main()->int {
-  application::run(examples::form1 {});
+  application::run(check_box_renderer_example::form1 {});
 }

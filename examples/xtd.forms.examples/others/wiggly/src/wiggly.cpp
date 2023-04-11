@@ -5,7 +5,7 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
-namespace examples {
+namespace wiggly_example {
   class wiggly : public user_control {
   public:
     wiggly() {
@@ -61,10 +61,10 @@ namespace examples {
     
   private:
     forms::text_box text_box;
-    examples::wiggly wiggly;
+    wiggly_example::wiggly wiggly;
   };
 }
 
 auto main()->int {
-  application::run(examples::form1 {});
+  application::run(wiggly_example::form1 {});
 }

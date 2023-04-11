@@ -5,7 +5,7 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
-namespace examples {
+namespace countries_example {
   class main_form : public form {
   public:
     static auto main() {
@@ -68,4 +68,4 @@ namespace examples {
   };
 }
 
-startup_(examples::main_form);
+startup_(countries_example::main_form);

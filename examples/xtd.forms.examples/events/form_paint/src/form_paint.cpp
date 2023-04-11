@@ -6,7 +6,7 @@ using namespace xtd::drawing;
 using namespace xtd::drawing::drawing2d;
 using namespace xtd::forms;
 
-namespace examples {
+namespace form_paint_example {
   class form1 : public form {
   public:
     form1() {
@@ -31,5 +31,5 @@ namespace examples {
 }
 
 auto main()->int {
-  application::run(examples::form1 {});
+  application::run(form_paint_example::form1 {});
 }

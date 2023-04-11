@@ -4,7 +4,7 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
-namespace examples {
+namespace wnd_proc_example {
   class form1 : public form {
   public:
     form1() {
@@ -46,5 +46,5 @@ namespace examples {
 }
 
 auto main()->int {
-  application::run(examples::form1 {});
+  application::run(wnd_proc_example::form1 {});
 }

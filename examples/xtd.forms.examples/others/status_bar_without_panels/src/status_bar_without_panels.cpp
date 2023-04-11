@@ -3,7 +3,7 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-namespace examples {
+namespace status_bar_without_panels_example {
   class form1 : public form {
   public:
     form1() {
@@ -25,5 +25,5 @@ namespace examples {
 }
 
 auto main()->int {
-  application::run(examples::form1 {});
+  application::run(status_bar_without_panels_example::form1 {});
 }

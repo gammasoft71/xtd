@@ -3,7 +3,7 @@
 using namespace std;
 using namespace xtd;
 
-namespace examples {
+namespace bit_converter_round_trips_example {
   class program {
   public:
     // The main entry point for the application.
@@ -21,7 +21,7 @@ namespace examples {
   };
 }
 
-startup_(examples::program);
+startup_(bit_converter_round_trips_example::program);
 
 // This code produces the following output:
 //

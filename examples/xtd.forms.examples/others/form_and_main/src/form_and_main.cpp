@@ -3,7 +3,7 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-namespace examples {
+namespace form_and_main_example {
   class form_main : public form {
   public:
     static auto main() {
@@ -29,4 +29,4 @@ namespace examples {
   };
 }
 
-startup_(examples::form_main);
+startup_(form_and_main_example::form_main);

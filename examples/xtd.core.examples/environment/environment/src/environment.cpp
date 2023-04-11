@@ -2,7 +2,7 @@
 
 using namespace xtd;
 
-namespace examples {
+namespace environment_example {
   class program {
   public:
     // The main entry point for the application.
@@ -74,7 +74,7 @@ namespace examples {
   };
 }
 
-startup_(examples::program);
+startup_(environment_example::program);
 
 // This example produces results similar to the following:
 // (Any result that is lengthy or reveals information that should remain
@@ -93,7 +93,7 @@ startup_(examples::program);
 // third line
 // os_version: macOS 12.6.0
 // stack_trace: '   at xtd::environment::stack_trace()
-//    at examples::program::main()
+//    at environment_example::program::main()
 //    at main::startup::run(void (*)(), int, char**)'
 // system_directory: /System
 // tick_count: 3.01:15:01:827000000

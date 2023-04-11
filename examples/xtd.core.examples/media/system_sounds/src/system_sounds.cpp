@@ -3,7 +3,7 @@
 using namespace xtd;
 using namespace xtd::media;
 
-namespace examples {
+namespace system_sound_example {
   class program {
   public:
     // The main entry point for the application.
@@ -34,7 +34,7 @@ namespace examples {
   };
 }
 
-startup_(examples::program);
+startup_(system_sound_example::program);
 
 // This code can produce the following output:
 //

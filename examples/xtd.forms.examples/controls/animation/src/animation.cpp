@@ -7,7 +7,7 @@ using namespace xtd::drawing;
 using namespace xtd::diagnostics;
 using namespace xtd::forms;
 
-namespace examples {
+namespace animation_example {
   class form1 : public form {
   public:
     form1() {
@@ -55,5 +55,5 @@ auto main()->int {
   auto df = debug_form {};
   df.back_color(basic_colors::black());
   df.fore_color(basic_colors::lime());
-  application::run(examples::form1 {});
+  application::run(animation_example::form1 {});
 }

@@ -4,7 +4,7 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
-namespace examples {
+namespace lcd_label_appearance_example {
   class form_lcd_label : public form {
   public:
     form_lcd_label() {
@@ -120,5 +120,5 @@ namespace examples {
 }
 
 auto main()->int {
-  application::run(examples::form_lcd_label());
+  application::run(lcd_label_appearance_example::form_lcd_label());
 }

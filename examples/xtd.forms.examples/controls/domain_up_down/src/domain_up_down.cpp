@@ -3,7 +3,7 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-namespace examples {
+namespace domain_up_down_example {
   class form1 : public form {
   public:
     form1() {
@@ -28,5 +28,5 @@ namespace examples {
 }
 
 auto main()->int {
-  application::run(examples::form1 {});
+  application::run(domain_up_down_example::form1 {});
 }

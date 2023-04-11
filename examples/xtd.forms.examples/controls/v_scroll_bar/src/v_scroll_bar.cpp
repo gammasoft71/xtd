@@ -2,7 +2,7 @@
 
 using namespace xtd::forms;
 
-namespace examples {
+namespace v_scroll_bar_example {
   class form1 : public form {
   public:
     form1() {
@@ -31,5 +31,5 @@ namespace examples {
 
 auto main()->int {
   debug_form df;
-  application::run(examples::form1 {});
+  application::run(v_scroll_bar_example::form1 {});
 }

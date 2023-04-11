@@ -4,7 +4,7 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
-namespace examples {
+namespace line_example {
   class colored_line : public user_control {
   public:
     void color(const drawing::color& color) {back_color(color);}
@@ -44,5 +44,5 @@ namespace examples {
 }
 
 auto main()->int {
-  application::run(examples::form1 {});
+  application::run(line_example::form1 {});
 }

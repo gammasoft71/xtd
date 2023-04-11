@@ -3,7 +3,7 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-namespace examples {
+namespace tool_bar_example {
   class form1 : public form {
   public:
     form1() {
@@ -101,5 +101,5 @@ namespace examples {
 }
 
 auto main()->int {
-  application::run(examples::form1 {});
+  application::run(tool_bar_example::form1 {});
 }

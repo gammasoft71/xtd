@@ -4,7 +4,7 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
-namespace examples {
+namespace owner_button_example {
   class owner_button : public button {
   protected:
     void on_paint(paint_event_args& e) override {
@@ -68,5 +68,5 @@ namespace examples {
 }
 
 auto main()->int {
-  application::run(examples::form1 {});
+  application::run(owner_button_example::form1 {});
 }

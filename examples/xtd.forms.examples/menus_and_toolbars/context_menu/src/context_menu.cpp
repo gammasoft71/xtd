@@ -3,7 +3,7 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-namespace examples {
+namespace context_menu_example {
   class form1 : public form {
   public:
     form1() {
@@ -91,5 +91,5 @@ namespace examples {
 
 auto main()->int {
   application::enable_menu_images();
-  application::run(examples::form1 {});
+  application::run(context_menu_example::form1 {});
 }

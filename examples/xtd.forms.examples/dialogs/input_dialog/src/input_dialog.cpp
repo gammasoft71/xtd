@@ -3,7 +3,7 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-namespace examples {
+namespace input_dialog_example {
   class form1 : public form {
   public:
     form1() {
@@ -33,5 +33,5 @@ namespace examples {
 }
 
 auto main()->int {
-  application::run(examples::form1 {});
+  application::run(input_dialog_example::form1 {});
 }
