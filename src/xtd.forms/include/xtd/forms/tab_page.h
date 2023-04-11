@@ -79,7 +79,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::tab_page.
       /// @param name The name of the xtd::forms::tab_page.
       /// @return New xtd::forms::tab_page created.
-      static tab_page create(const xtd::ustring& text = "", const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      static tab_page create(const xtd::ustring& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
       /// @brief A factory to create an xtd::forms::tab_page with specified parent, text, location ,size, and name.
       /// @param parent The parent that contains the new created xtd::forms::tab_page.
       /// @param text A string that represent text of the xtd::forms::tab_page.
@@ -87,7 +87,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::tab_page.
       /// @param name The name of the xtd::forms::tab_page.
       /// @return New xtd::forms::tab_page created.
-      static tab_page create(const control& parent, const xtd::ustring& text = "", const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      static tab_page create(const control& parent, const xtd::ustring& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
       
       void destroy_handle() override;
       /// @}

@@ -334,7 +334,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::form.
       /// @param name The name of the xtd::forms::form.
       /// @return New xtd::forms::form created.
-      static form create(const xtd::ustring& text = "", const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      static form create(const xtd::ustring& text, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
       /// @brief A factory to create an xtd::forms::form with specified text, location, size, and name.
       /// @param text A string that represent text of the xtd::forms::form.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::form.

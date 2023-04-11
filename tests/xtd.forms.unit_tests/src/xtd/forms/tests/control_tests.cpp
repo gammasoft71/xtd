@@ -34,7 +34,7 @@ namespace xtd::forms::tests {
       using control::create_params;
       
       using control::create;
-      static control_for_test create(const xtd::ustring& text = "", const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string) {
+      static control_for_test create(const xtd::ustring& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string) {
         control_for_test item;
         item.text(text);
         if (location != drawing::point {-1, -1}) item.location(location);
@@ -42,7 +42,7 @@ namespace xtd::forms::tests {
         item.name(name);
         return item;
       }
-      static control_for_test create(const control& parent, const xtd::ustring& text = "", const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string) {
+      static control_for_test create(const control& parent, const xtd::ustring& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string) {
         control_for_test item;
         item.parent(parent);
         item.text(text);

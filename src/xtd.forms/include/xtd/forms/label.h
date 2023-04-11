@@ -175,7 +175,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::label.
       /// @param name The name of the xtd::forms::label.
       /// @return New xtd::forms::label created.
-      static label create(const xtd::ustring& text = "", const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      static label create(const xtd::ustring& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
       /// @brief A factory to create an xtd::forms::label with specified parent, text, location ,size, and name.
       /// @param parent The parent that contains the new created xtd::forms::label.
       /// @param text A string that represent text of the xtd::forms::label.
@@ -183,7 +183,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::label.
       /// @param name The name of the xtd::forms::label.
       /// @return New xtd::forms::label created.
-      static label create(const control& parent, const xtd::ustring& text = "", const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      static label create(const control& parent, const xtd::ustring& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
       /// @}
       
       /// @name Events

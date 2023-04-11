@@ -102,7 +102,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::button.
       /// @param name The name of the xtd::forms::button.
       /// @return New xtd::forms::button created.
-      static button create(const xtd::ustring& text = "", const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      static button create(const xtd::ustring& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
       /// @brief A factory to create an xtd::forms::button with specified parent, text, location ,size, and name.
       /// @param parent The parent that contains the new created xtd::forms::button.
       /// @param text A string that represent text of the xtd::forms::button.
@@ -110,7 +110,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::button.
       /// @param name The name of the xtd::forms::button.
       /// @return New xtd::forms::button created.
-      static button create(const control& parent, const xtd::ustring& text = "", const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      static button create(const control& parent, const xtd::ustring& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
       
       void notify_default(bool value) override;
       
