@@ -3,7 +3,7 @@
 using namespace std;
 using namespace xtd;
 
-namespace examples {
+namespace environment_exit_code_example {
   class program {
   public:
     // The main entry point for the application.
@@ -25,7 +25,7 @@ namespace examples {
   };
 }
 
-startup_(examples::program);
+startup_(environment_exit_code_example::program);
 
 // This code produces the following output :
 //

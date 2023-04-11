@@ -3,7 +3,7 @@
 using namespace std;
 using namespace xtd;
 
-namespace examples {
+namespace main4_example {
   class program {
   public:
     static int main(const vector<ustring>& args) {
@@ -16,11 +16,11 @@ namespace examples {
   };
 }
 
-startup_(examples::program);
-// startup_(examples::program); is same as :
+startup_(main4_example::program);
+// startup_(main4_example::program); is same as :
 //
 // auto main(int argc, char* argv[])->int {
-//   return examples::program::main({argv + 1, argv + argc});
+//   return main4_example::program::main({argv + 1, argv + argc});
 // }
 
 

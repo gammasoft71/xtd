@@ -2,7 +2,7 @@
 
 using namespace xtd;
 
-namespace examples {
+namespace main1_example {
   class program {
   public:
     static void main() {
@@ -16,11 +16,11 @@ namespace examples {
   };
 }
 
-startup_(examples::program);
-// startup_(examples::program); is same as :
+startup_(main1_example::program);
+// startup_(main1_example::program); is same as :
 //
 // auto main(int argc, char* argv[])->int {
-//   examples::program::main();
+//   main1_example::program::main();
 //   return environment::exit_code();
 // }
 

@@ -3,7 +3,7 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-namespace examples {
+namespace application_idle_example {
   class form1 : public form {
   public:
     form1() {
@@ -20,5 +20,5 @@ namespace examples {
 }
 
 auto main()->int {
-  application::run(examples::form1 {});
+  application::run(application_idle_example::form1 {});
 }

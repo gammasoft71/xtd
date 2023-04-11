@@ -6,7 +6,7 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
-namespace examples {
+namespace user_control_example {
   enum class operation_status {
     none,
     running,
@@ -85,7 +85,7 @@ namespace examples {
     
   private:
     void on_operation_click(object& sender, const event_args& e) {
-      examples::operation& operation = as<examples::operation&>(sender);
+      user_control_example::operation& operation = as<user_control_example::operation&>(sender);
       switch (operation.status()) {
         case operation_status::none: operation.status(operation_status::running); break;
         case operation_status::running: operation.status(operation_status::succeed); break;
@@ -99,5 +99,5 @@ namespace examples {
 }
 
 auto main()->int {
-  application::run(examples::form1 {});
+  application::run(user_control_example::form1 {});
 }

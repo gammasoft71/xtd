@@ -3,7 +3,7 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-namespace examples {
+namespace toggle_button_example {
   class form1 : public form {
   public:
     form1() {
@@ -44,5 +44,5 @@ namespace examples {
 
 auto main()->int {
   application::enable_visual_styles();
-  application::run(examples::form1 {});
+  application::run(toggle_button_example::form1 {});
 }

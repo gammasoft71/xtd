@@ -5,7 +5,7 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
-namespace examples {
+namespace border_style_example {
   class form1 : public form {
   public:
     static auto main() {
@@ -128,4 +128,4 @@ namespace examples {
   };
 }
 
-startup_(examples::form1);
+startup_(border_style_example::form1);

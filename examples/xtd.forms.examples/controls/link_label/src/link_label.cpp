@@ -7,7 +7,7 @@ using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::forms;
 
-namespace examples {
+namespace link_label_example {
   class form1 : public form {
   public:
     form1() {
@@ -52,5 +52,5 @@ namespace examples {
 }
 
 auto main()->int {
-  application::run(examples::form1 {});
+  application::run(link_label_example::form1 {});
 }

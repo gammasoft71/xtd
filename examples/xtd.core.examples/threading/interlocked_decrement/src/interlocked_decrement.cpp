@@ -6,7 +6,7 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::threading;
 
-namespace examples {
+namespace interlocked_decrement_example {
   class my_interlocked_decrement_class {
   private:
     class count_class {
@@ -46,7 +46,7 @@ namespace examples {
   };
 }
 
-startup_(examples::my_interlocked_decrement_class);
+startup_(interlocked_decrement_example::my_interlocked_decrement_class);
 
 // This code produces the following output:
 //

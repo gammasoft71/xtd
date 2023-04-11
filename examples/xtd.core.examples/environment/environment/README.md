@@ -34,7 +34,7 @@ second line
 third line
 os_version: macOS 12.6.0
 stack_trace: '   at xtd::environment::stack_trace()
-   at examples::program::main()
+   at environment_example::program::main()
    at main::startup::run(void (*)(), int, char**)'
 system_directory: /System
 tick_count: 3.01:15:01:827000000

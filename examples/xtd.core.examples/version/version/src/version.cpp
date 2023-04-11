@@ -2,7 +2,7 @@
 
 using namespace xtd;
 
-namespace examples {
+namespace version_example {
   class program {
   public:
     // The main entry point for the application.
@@ -21,7 +21,7 @@ namespace examples {
   };
 }
 
-startup_(examples::program);
+startup_(version_example::program);
 
 // This code can produce the following output:
 //

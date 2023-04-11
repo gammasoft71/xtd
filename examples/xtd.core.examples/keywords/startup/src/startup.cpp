@@ -4,7 +4,7 @@
 using namespace std;
 using namespace xtd;
 
-namespace examples {
+namespace startup_example {
   class program {
   public:
     static auto main(const vector<ustring>& args) {
@@ -14,7 +14,7 @@ namespace examples {
   };
 }
 
-startup_(examples::program);
+startup_(startup_example::program);
 
 // This code produces the following output if one two "three four" five six are entered on command line:
 //

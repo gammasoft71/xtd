@@ -7,7 +7,7 @@ using namespace std::chrono;
 using namespace xtd;
 using namespace xtd::threading;
 
-namespace examples {
+namespace interlocked_example {
   struct my_thread {
     std::thread thread;
     ustring name;
@@ -71,4 +71,4 @@ namespace examples {
   };
 }
 
-startup_(examples::my_interlocked_exchange_class);
+startup_(interlocked_example::my_interlocked_exchange_class);

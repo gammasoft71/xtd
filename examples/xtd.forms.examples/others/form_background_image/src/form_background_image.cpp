@@ -4,7 +4,7 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
-namespace examples {
+namespace form_background_image_example {
   class form_main : public form {
   public:
     static auto main() {
@@ -27,4 +27,4 @@ namespace examples {
   };
 }
 
-startup_(examples::form_main);
+startup_(form_background_image_example::form_main);

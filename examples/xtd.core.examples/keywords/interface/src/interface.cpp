@@ -3,7 +3,7 @@
 using namespace std;
 using namespace xtd;
 
-namespace examples {
+namespace interface_example {
   class istringable interface_ {
   public:
     virtual ustring to_string() const = 0;
@@ -17,7 +17,7 @@ namespace examples {
 }
 
 auto main()->int {
-  std::shared_ptr<examples::istringable> stringable = std::make_shared<examples::program>();
+  std::shared_ptr<interface_example::istringable> stringable = std::make_shared<interface_example::program>();
   cout << stringable->to_string() << endl;
 }
 

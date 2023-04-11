@@ -3,7 +3,7 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-namespace examples {
+namespace control_with_name_operator_example {
   class main_form : public form {
   public:
     main_form() {
@@ -31,5 +31,5 @@ namespace examples {
 }
 
 auto main()->int {
-  xtd::forms::application::run(examples::main_form {});
+  xtd::forms::application::run(control_with_name_operator_example::main_form {});
 }

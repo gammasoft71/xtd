@@ -5,7 +5,7 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
-namespace examples {
+namespace numeric_tex_box_example {
   class numeric_text_box : public text_box {
   public:
     numeric_text_box() = default;
@@ -58,5 +58,5 @@ namespace examples {
 }
 
 auto main()->int {
-  application::run(examples::form1 {});
+  application::run(numeric_tex_box_example::form1 {});
 }

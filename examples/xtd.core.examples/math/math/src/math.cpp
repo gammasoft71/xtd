@@ -2,7 +2,7 @@
 
 using namespace xtd;
 
-namespace examples {
+namespace math_example {
   // The following class represents simple functionality of the trapezoid.
   class math_trapezoid_sample {
   public:
@@ -71,7 +71,7 @@ namespace examples {
   };
 }
 
-startup_(examples::math_trapezoid_sample);
+startup_(math_example::math_trapezoid_sample);
 
 // This code produces the following output:
 //

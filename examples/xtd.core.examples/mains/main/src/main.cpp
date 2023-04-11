@@ -3,7 +3,7 @@
 using namespace std;
 using namespace xtd;
 
-namespace examples {
+namespace main_example {
   class program {
   public:
     static auto main(const vector<ustring>& args) {
@@ -25,7 +25,7 @@ namespace examples {
   };
 }
 
-startup_(examples::program);
+startup_(main_example::program);
 
 // This code produces the following output if 3 is entered on command line:
 //

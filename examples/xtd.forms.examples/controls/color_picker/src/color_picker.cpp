@@ -5,7 +5,7 @@ using namespace xtd::drawing;
 using namespace xtd::drawing::drawing2d;
 using namespace xtd::forms;
 
-namespace examples {
+namespace color_picker_example {
   class form1 : public form {
   public:
     form1() {
@@ -36,5 +36,5 @@ namespace examples {
 }
 
 auto main()->int {
-  application::run(examples::form1 {});
+  application::run(color_picker_example::form1 {});
 }

@@ -3,7 +3,7 @@
 using namespace std;
 using namespace xtd;
 
-namespace examples {
+namespace static_object2_example {
   class program final : public static_object {
   public:
     static ustring to_string() {return "program";}
@@ -12,9 +12,9 @@ namespace examples {
 
 auto main()->int {
   // uncomment next line cause build error with call implicitly-deleted default constructor.
-  //examples::program program;
+  //static_object2_example::program program;
   
-  cout << examples::program::to_string() << endl;
+  cout << static_object2_example::program::to_string() << endl;
 }
 
 // This code produces the following output:
