@@ -1,6 +1,6 @@
 # hello_world_say
 
-The classic first application "Hello, World!" with [xtd::forms::button](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1button.html) control an [xtd::speech::synthesis::speech_synthesizer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1speech_1_1synthesis_1_1speech__synthesizer.html) class.
+The classic first application "Hello, World!" with [xtd::forms::button](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1button.html) control and [xtd::speech::synthesis::speech_synthesizer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1speech_1_1synthesis_1_1speech__synthesizer.html) class.
 
 # Sources
 
