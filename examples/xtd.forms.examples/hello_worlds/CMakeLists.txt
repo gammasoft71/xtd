@@ -11,4 +11,5 @@ add_projects(
   hello_world_message_box3
   hello_world_paint
   hello_world_say
+  hello_world_xtd
 )
