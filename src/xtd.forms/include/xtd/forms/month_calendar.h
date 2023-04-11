@@ -354,7 +354,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
       /// @param name The name of the xtd::forms::month_calendar.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create(const forms::selection_range& selection_range = forms::selection_range {}, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      static month_calendar create(const forms::selection_range& selection_range, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
       /// @brief A factory to create an xtd::forms::month_calendar with specified location, size, and name.
       /// @param selection_start A xtd::date_time indicating the first date in the selection range.
       /// @param selection_end A xtd::date_time indicating the last date in the selection range.
@@ -370,7 +370,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
       /// @param name The name of the xtd::forms::month_calendar.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create(const control& parent, const forms::selection_range& selection_range = forms::selection_range {}, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      static month_calendar create(const control& parent, const forms::selection_range& selection_range, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
       /// @brief A factory to create an xtd::forms::month_calendar with specified parent, location ,size, and name.
       /// @param parent The parent that contains the new created xtd::forms::month_calendar.
       /// @param selection_start A xtd::date_time indicating the first date in the selection range.

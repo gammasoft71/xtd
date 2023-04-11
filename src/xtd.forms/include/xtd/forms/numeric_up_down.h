@@ -112,7 +112,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::numeric_up_down.
       /// @param name The name of the xtd::forms::numeric_up_down.
       /// @return New xtd::forms::numeric_up_down created.
-      static numeric_up_down create(double value = 0, double minimum = 0, double maximum = 100, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      static numeric_up_down create(double value, double minimum = 0, double maximum = 100, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
       /// @brief A factory to create an xtd::forms::numeric_up_down with specified parent, location ,size, and name.
       /// @param parent The parent that contains the new created xtd::forms::numeric_up_down.
       /// @param value The numeric value of the numeric_up_down control.
@@ -122,7 +122,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::numeric_up_down.
       /// @param name The name of the xtd::forms::numeric_up_down.
       /// @return New xtd::forms::numeric_up_down created.
-      static numeric_up_down create(const control& parent, double value = 0, double minimum = 0, double maximum = 100, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      static numeric_up_down create(const control& parent, double value, double minimum = 0, double maximum = 100, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
       
       /// @brief Sets the minimum and maximum values for a track_bar.
       /// @param min_value The lower limit of the range of the track bar.
