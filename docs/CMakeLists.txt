@@ -300,8 +300,3 @@ add_sources(
   ../README.md
 )
 target_type(INTERFACE_LIBRARY)
-
-# Install
-if (XTD_INSTALL_RESOURCES)
-  install(DIRECTORY pictures/examples/. DESTINATION share/xtd/resources/pictures/examples)
-endif ()
