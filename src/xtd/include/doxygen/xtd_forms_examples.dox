@@ -1306,6 +1306,21 @@
 /// <br>
 /// @image html debug_message_box_gd.png
 ///
+/// @example debug_message_dialog.cpp
+/// demonstrates the use of xtd::forms::debug_message_dialog dialog.
+/// @par Windows
+/// @image html debug_message_dialog_w.png
+/// <br>
+/// @image html debug_message_dialog_wd.png
+/// @par macOS
+/// @image html debug_message_dialog_m.png
+/// <br>
+/// @image html debug_message_dialog_md.png
+/// @par Gnome
+/// @image html debug_message_dialog_g.png
+/// <br>
+/// @image html debug_message_dialog_gd.png
+///
 /// @example exception_box.cpp
 /// demonstrates the use of xtd::forms::exception_box dialog.
 /// @par Windows
@@ -1620,6 +1635,21 @@
 /// @image html trace_message_box_g.png
 /// <br>
 /// @image html trace_message_box_gd.png
+///
+/// @example trace_message_dialog.cpp
+/// demonstrates the use of xtd::forms::trace_message_dialog dialog.
+/// @par Windows
+/// @image html trace_message_dialog_w.png
+/// <br>
+/// @image html trace_message_dialog_wd.png
+/// @par macOS
+/// @image html trace_message_dialog_m.png
+/// <br>
+/// @image html trace_message_dialog_md.png
+/// @par Gnome
+/// @image html trace_message_dialog_g.png
+/// <br>
+/// @image html trace_message_dialog_gd.png
 ///
 /// @example draw_ellipse.cpp
 /// shows how to draw ellipse in paint event using xtd::drawing::graphics::draw_ellipse.
@@ -2147,7 +2177,7 @@
 /// @image html hello_world_paint_gd.png
 ///
 /// @example hello_world_say.cpp
-/// The classic first application "Hello, World!" with xtd::forms::button control an xtd::speech::synthesis::speech_synthesizer class.
+/// The classic first application "Hello, World!" with xtd::forms::button control and xtd::speech::synthesis::speech_synthesizer class.
 /// @par Windows
 /// @image html hello_world_say_w.png
 /// <br>
@@ -2160,6 +2190,21 @@
 /// @image html hello_world_say_g.png
 /// <br>
 /// @image html hello_world_say_gd.png
+///
+/// @example hello_world_xtd.cpp
+/// The classic first application "Hello, World!" with xtd::forms::main_menu menu, xtd::sorms::status_bar control, and xtd::event_handler.
+/// @par Windows
+/// @image html hello_world_xtd_w.png
+/// <br>
+/// @image html hello_world_xtd_wd.png
+/// @par macOS
+/// @image html hello_world_xtd_m.png
+/// <br>
+/// @image html hello_world_xtd_md.png
+/// @par Gnome
+/// @image html hello_world_xtd_g.png
+/// <br>
+/// @image html hello_world_xtd_gd.png
 ///
 /// @example context_menu.cpp
 /// demonstrates the use of xtd::forms::context_menu component.
@@ -2462,7 +2507,7 @@
 /// @image html colors_gd.png
 ///
 /// @example control_with_name_operator.cpp
-/// shows how to use xtd::forms::control::name property and xtd::forms::layout::arranged_element_collection::operator[] name operator.
+/// shows how to use xtd::forms::control::name property and xtd::forms::layout::arranged_element_collection::operator\[\] name operator.
 /// @par Windows
 /// @image html control_with_name_operator_w.png
 /// <br>
@@ -3390,3 +3435,4 @@
 /// @image html user_dialog_show_sheet_g.png
 /// <br>
 /// @image html user_dialog_show_sheet_gd.png
+///
