@@ -165,7 +165,7 @@ There are a number of ways to modify the value displayed by the <a class="el" hr
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">namespace </span>examples {</div>
+<div class="line"><span class="keyword">namespace </span>progress_bar_example {</div>
 <div class="line">  <span class="keyword">class </span>form1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    form1() {</div>
@@ -217,7 +217,7 @@ There are a number of ways to modify the value displayed by the <a class="el" hr
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(examples::form1 {});</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(progress_bar_example::form1 {});</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a4ee49410f3156fd66b61c2567a59388e"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a></div><div class="ttdeci">static void run()</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application's user interface.</div><div class="ttdef"><b>Definition:</b> form.h:49</div></div>
@@ -292,12 +292,12 @@ There are a number of ways to modify the value displayed by the <a class="el" hr
 <tr class="memitem:aaa2357d5fab5eddbfbe4bb4e05bc39df"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1progress__bar.html#aaa2357d5fab5eddbfbe4bb4e05bc39df">to_string</a> () const noexcept override</td></tr>
 <tr class="memdesc:aaa2357d5fab5eddbfbe4bb4e05bc39df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string that represents the <a class="el" href="classxtd_1_1forms_1_1progress__bar.html" title="Represents a Windows progress bar control.">progress_bar</a> control.  <br /></td></tr>
 <tr class="separator:aaa2357d5fab5eddbfbe4bb4e05bc39df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9863bc585062c8e2980cff96ef8e2e2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1progress__bar.html">progress_bar</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1progress__bar.html#af9863bc585062c8e2980cff96ef8e2e2">create</a> (<a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> <a class="el" href="classxtd_1_1forms_1_1progress__bar.html#a889aaaf65861927b471a664c758c6bf5">value</a>=0, <a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> <a class="el" href="classxtd_1_1forms_1_1progress__bar.html#af393f83370e74dcd9bd8c975c289f370">minimum</a>=0, <a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> <a class="el" href="classxtd_1_1forms_1_1progress__bar.html#ab5034186c4c657cb299c2b0b3181280c">maximum</a>=100, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>={-1, -1}, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>={-1, -1}, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>=<a class="el" href="classxtd_1_1ustring.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b">xtd::ustring::empty_string</a>)</td></tr>
-<tr class="memdesc:af9863bc585062c8e2980cff96ef8e2e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1progress__bar.html" title="Represents a Windows progress bar control.">xtd::forms::progress_bar</a> with specified location, size, and name.  <br /></td></tr>
-<tr class="separator:af9863bc585062c8e2980cff96ef8e2e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a729bfef7ef84e4a5fbaaa41c41060070"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1progress__bar.html">progress_bar</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1progress__bar.html#a729bfef7ef84e4a5fbaaa41c41060070">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, <a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> <a class="el" href="classxtd_1_1forms_1_1progress__bar.html#a889aaaf65861927b471a664c758c6bf5">value</a>=0, <a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> <a class="el" href="classxtd_1_1forms_1_1progress__bar.html#af393f83370e74dcd9bd8c975c289f370">minimum</a>=0, <a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> <a class="el" href="classxtd_1_1forms_1_1progress__bar.html#ab5034186c4c657cb299c2b0b3181280c">maximum</a>=100, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>={-1, -1}, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>={-1, -1}, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>=<a class="el" href="classxtd_1_1ustring.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b">xtd::ustring::empty_string</a>)</td></tr>
-<tr class="memdesc:a729bfef7ef84e4a5fbaaa41c41060070"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1progress__bar.html" title="Represents a Windows progress bar control.">xtd::forms::progress_bar</a> with specified parent, location ,size, and name.  <br /></td></tr>
-<tr class="separator:a729bfef7ef84e4a5fbaaa41c41060070"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41b022dc7ebcf328d7b6ce91da99fd29"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1progress__bar.html">progress_bar</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1progress__bar.html#a41b022dc7ebcf328d7b6ce91da99fd29">create</a> (<a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> <a class="el" href="classxtd_1_1forms_1_1progress__bar.html#a889aaaf65861927b471a664c758c6bf5">value</a>, <a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> <a class="el" href="classxtd_1_1forms_1_1progress__bar.html#af393f83370e74dcd9bd8c975c289f370">minimum</a>=0, <a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> <a class="el" href="classxtd_1_1forms_1_1progress__bar.html#ab5034186c4c657cb299c2b0b3181280c">maximum</a>=100, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>={-1, -1}, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>={-1, -1}, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>=<a class="el" href="classxtd_1_1ustring.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b">xtd::ustring::empty_string</a>)</td></tr>
+<tr class="memdesc:a41b022dc7ebcf328d7b6ce91da99fd29"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1progress__bar.html" title="Represents a Windows progress bar control.">xtd::forms::progress_bar</a> with specified location, size, and name.  <br /></td></tr>
+<tr class="separator:a41b022dc7ebcf328d7b6ce91da99fd29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcdfd6c1873a2996d3aa6ca396bf3fff"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1progress__bar.html">progress_bar</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1progress__bar.html#adcdfd6c1873a2996d3aa6ca396bf3fff">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, <a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> <a class="el" href="classxtd_1_1forms_1_1progress__bar.html#a889aaaf65861927b471a664c758c6bf5">value</a>, <a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> <a class="el" href="classxtd_1_1forms_1_1progress__bar.html#af393f83370e74dcd9bd8c975c289f370">minimum</a>=0, <a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> <a class="el" href="classxtd_1_1forms_1_1progress__bar.html#ab5034186c4c657cb299c2b0b3181280c">maximum</a>=100, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>={-1, -1}, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>={-1, -1}, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>=<a class="el" href="classxtd_1_1ustring.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b">xtd::ustring::empty_string</a>)</td></tr>
+<tr class="memdesc:adcdfd6c1873a2996d3aa6ca396bf3fff"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1progress__bar.html" title="Represents a Windows progress bar control.">xtd::forms::progress_bar</a> with specified parent, location ,size, and name.  <br /></td></tr>
+<tr class="separator:adcdfd6c1873a2996d3aa6ca396bf3fff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a715ff790d0ca1efb82c5431d9785f05d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1control.html">control</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1progress__bar.html#a715ff790d0ca1efb82c5431d9785f05d">create</a> (const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>={-1, -1}, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>={-1, -1}, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>=<a class="el" href="classxtd_1_1ustring.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b">xtd::ustring::empty_string</a>)</td></tr>
 <tr class="memdesc:a715ff790d0ca1efb82c5431d9785f05d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a specified control with specified location, size, and name.  <br /></td></tr>
 <tr class="separator:a715ff790d0ca1efb82c5431d9785f05d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1404,8 +1404,8 @@ template&lt;typename control_t &gt; </div>
 
 </div>
 </div>
-<a id="a729bfef7ef84e4a5fbaaa41c41060070" name="a729bfef7ef84e4a5fbaaa41c41060070"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a729bfef7ef84e4a5fbaaa41c41060070">&#9670;&#160;</a></span>create() <span class="overload">[4/8]</span></h2>
+<a id="adcdfd6c1873a2996d3aa6ca396bf3fff" name="adcdfd6c1873a2996d3aa6ca396bf3fff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcdfd6c1873a2996d3aa6ca396bf3fff">&#9670;&#160;</a></span>create() <span class="overload">[4/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1423,7 +1423,7 @@ template&lt;typename control_t &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a>&#160;</td>
-          <td class="paramname"><em>value</em> = <code>0</code>, </td>
+          <td class="paramname"><em>value</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1655,8 +1655,8 @@ template&lt;typename control_t &gt; </div>
 
 </div>
 </div>
-<a id="af9863bc585062c8e2980cff96ef8e2e2" name="af9863bc585062c8e2980cff96ef8e2e2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af9863bc585062c8e2980cff96ef8e2e2">&#9670;&#160;</a></span>create() <span class="overload">[8/8]</span></h2>
+<a id="a41b022dc7ebcf328d7b6ce91da99fd29" name="a41b022dc7ebcf328d7b6ce91da99fd29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41b022dc7ebcf328d7b6ce91da99fd29">&#9670;&#160;</a></span>create() <span class="overload">[8/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1668,7 +1668,7 @@ template&lt;typename control_t &gt; </div>
           <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1progress__bar.html">progress_bar</a> xtd::forms::progress_bar::create </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a>&#160;</td>
-          <td class="paramname"><em>value</em> = <code>0</code>, </td>
+          <td class="paramname"><em>value</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -2414,7 +2414,7 @@ The minimum and maximum values of the value property are specified by the minimu
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 10 2023 18:10:56 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Apr 14 2023 16:41:56 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -167,7 +167,7 @@ The three_state property determines whether the control supports two or three st
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">namespace </span>examples {</div>
+<div class="line"><span class="keyword">namespace </span>toggle_button_example {</div>
 <div class="line">  <span class="keyword">class </span>form1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    form1() {</div>
@@ -208,7 +208,7 @@ The three_state property determines whether the control supports two or three st
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a6af4447091dec74038a54c6b9f5f8760">application::enable_visual_styles</a>();</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(examples::form1 {});</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(toggle_button_example::form1 {});</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a4ee49410f3156fd66b61c2567a59388e"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a></div><div class="ttdeci">static void run()</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a6af4447091dec74038a54c6b9f5f8760"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a6af4447091dec74038a54c6b9f5f8760">xtd::forms::application::enable_visual_styles</a></div><div class="ttdeci">static void enable_visual_styles()</div><div class="ttdoc">Enables visual styles for the application.</div></div>
@@ -266,12 +266,12 @@ The three_state property determines whether the control supports two or three st
 <tr class="separator:ac6266fb00033185935ef674bc2f0f1d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Methods</h2></td></tr>
-<tr class="memitem:a700c4acb5b86f9feeefb604554ee6037"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1toggle__button.html">toggle_button</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1toggle__button.html#a700c4acb5b86f9feeefb604554ee6037">create</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>=&quot;&quot;, bool <a class="el" href="classxtd_1_1forms_1_1toggle__button.html#a5e3fba04604087c67c8ddd5acae935a0">three_state</a>=false, <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866">xtd::forms::check_state</a> <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866">check_state</a>=<a class="el" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866aad91a1da588ce256d30b1af38f78f84e">xtd::forms::check_state::unchecked</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>={-1, -1}, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>={-1, -1}, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>=<a class="el" href="classxtd_1_1ustring.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b">xtd::ustring::empty_string</a>)</td></tr>
-<tr class="memdesc:a700c4acb5b86f9feeefb604554ee6037"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1toggle__button.html" title="Represents a Windows toggle_button.">xtd::forms::toggle_button</a> with specified text, three_state, check_state, location ,size, and name.  <br /></td></tr>
-<tr class="separator:a700c4acb5b86f9feeefb604554ee6037"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca982b26b2d94757f36ab8ed304b981b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1toggle__button.html">toggle_button</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1toggle__button.html#aca982b26b2d94757f36ab8ed304b981b">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>=&quot;&quot;, bool <a class="el" href="classxtd_1_1forms_1_1toggle__button.html#a5e3fba04604087c67c8ddd5acae935a0">three_state</a>=false, <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866">xtd::forms::check_state</a> <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866">check_state</a>=<a class="el" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866aad91a1da588ce256d30b1af38f78f84e">xtd::forms::check_state::unchecked</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>={-1, -1}, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>={-1, -1}, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>=<a class="el" href="classxtd_1_1ustring.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b">xtd::ustring::empty_string</a>)</td></tr>
-<tr class="memdesc:aca982b26b2d94757f36ab8ed304b981b"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a <a class="el" href="classxtd_1_1forms_1_1toggle__button.html" title="Represents a Windows toggle_button.">xtd::forms::toggle_button</a> with specified parent, text, three_state, check_state, location ,size, and name.  <br /></td></tr>
-<tr class="separator:aca982b26b2d94757f36ab8ed304b981b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad40fc42253e95a23c2f854dcf6c10006"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1toggle__button.html">toggle_button</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1toggle__button.html#ad40fc42253e95a23c2f854dcf6c10006">create</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, bool <a class="el" href="classxtd_1_1forms_1_1toggle__button.html#a5e3fba04604087c67c8ddd5acae935a0">three_state</a>=false, <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866">xtd::forms::check_state</a> <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866">check_state</a>=<a class="el" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866aad91a1da588ce256d30b1af38f78f84e">xtd::forms::check_state::unchecked</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>={-1, -1}, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>={-1, -1}, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>=<a class="el" href="classxtd_1_1ustring.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b">xtd::ustring::empty_string</a>)</td></tr>
+<tr class="memdesc:ad40fc42253e95a23c2f854dcf6c10006"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1toggle__button.html" title="Represents a Windows toggle_button.">xtd::forms::toggle_button</a> with specified text, three_state, check_state, location ,size, and name.  <br /></td></tr>
+<tr class="separator:ad40fc42253e95a23c2f854dcf6c10006"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a056eed8a6dc02698f034e74c4618af10"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1toggle__button.html">toggle_button</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1toggle__button.html#a056eed8a6dc02698f034e74c4618af10">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, bool <a class="el" href="classxtd_1_1forms_1_1toggle__button.html#a5e3fba04604087c67c8ddd5acae935a0">three_state</a>=false, <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866">xtd::forms::check_state</a> <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866">check_state</a>=<a class="el" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866aad91a1da588ce256d30b1af38f78f84e">xtd::forms::check_state::unchecked</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>={-1, -1}, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>={-1, -1}, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>=<a class="el" href="classxtd_1_1ustring.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b">xtd::ustring::empty_string</a>)</td></tr>
+<tr class="memdesc:a056eed8a6dc02698f034e74c4618af10"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a <a class="el" href="classxtd_1_1forms_1_1toggle__button.html" title="Represents a Windows toggle_button.">xtd::forms::toggle_button</a> with specified parent, text, three_state, check_state, location ,size, and name.  <br /></td></tr>
+<tr class="separator:a056eed8a6dc02698f034e74c4618af10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a715ff790d0ca1efb82c5431d9785f05d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1control.html">control</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1toggle__button.html#a715ff790d0ca1efb82c5431d9785f05d">create</a> (const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>={-1, -1}, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>={-1, -1}, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>=<a class="el" href="classxtd_1_1ustring.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b">xtd::ustring::empty_string</a>)</td></tr>
 <tr class="memdesc:a715ff790d0ca1efb82c5431d9785f05d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a specified control with specified location, size, and name.  <br /></td></tr>
 <tr class="separator:a715ff790d0ca1efb82c5431d9785f05d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1669,8 +1669,89 @@ template&lt;typename control_t &gt; </div>
 
 </div>
 </div>
+<a id="a056eed8a6dc02698f034e74c4618af10" name="a056eed8a6dc02698f034e74c4618af10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a056eed8a6dc02698f034e74c4618af10">&#9670;&#160;</a></span>create() <span class="overload">[3/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1toggle__button.html">toggle_button</a> xtd::forms::toggle_button::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>text</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>three_state</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866">xtd::forms::check_state</a>&#160;</td>
+          <td class="paramname"><em>check_state</em> = <code><a class="el" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866aad91a1da588ce256d30b1af38f78f84e">xtd::forms::check_state::unchecked</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em> = <code>{-1,&#160;-1}</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;&#160;</td>
+          <td class="paramname"><em>size</em> = <code>{-1,&#160;-1}</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>name</em> = <code><a class="el" href="classxtd_1_1ustring.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b">xtd::ustring::empty_string</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A factory to create a <a class="el" href="classxtd_1_1forms_1_1toggle__button.html" title="Represents a Windows toggle_button.">xtd::forms::toggle_button</a> with specified parent, text, three_state, check_state, location ,size, and name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>The parent that contains the new created <a class="el" href="classxtd_1_1forms_1_1toggle__button.html" title="Represents a Windows toggle_button.">xtd::forms::toggle_button</a>. </td></tr>
+    <tr><td class="paramname">text</td><td>A string that represent text of the <a class="el" href="classxtd_1_1forms_1_1toggle__button.html" title="Represents a Windows toggle_button.">xtd::forms::toggle_button</a>. </td></tr>
+    <tr><td class="paramname">three_state</td><td>true if the <a class="el" href="classxtd_1_1forms_1_1toggle__button.html" title="Represents a Windows toggle_button.">toggle_button</a> is able to display three check states; otherwise, false. </td></tr>
+    <tr><td class="paramname">check_state</td><td>One of the check_state enumeration values. </td></tr>
+    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1toggle__button.html" title="Represents a Windows toggle_button.">xtd::forms::toggle_button</a>. </td></tr>
+    <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1toggle__button.html" title="Represents a Windows toggle_button.">xtd::forms::toggle_button</a>. </td></tr>
+    <tr><td class="paramname">name</td><td>The name of the <a class="el" href="classxtd_1_1forms_1_1toggle__button.html" title="Represents a Windows toggle_button.">xtd::forms::toggle_button</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1toggle__button.html" title="Represents a Windows toggle_button.">xtd::forms::toggle_button</a> created. </dd></dl>
+
+</div>
+</div>
 <a id="a666a59357d5bd8028e2e970daad0b798" name="a666a59357d5bd8028e2e970daad0b798"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a666a59357d5bd8028e2e970daad0b798">&#9670;&#160;</a></span>create() <span class="overload">[3/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a666a59357d5bd8028e2e970daad0b798">&#9670;&#160;</a></span>create() <span class="overload">[4/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1735,87 +1816,6 @@ template&lt;typename control_t &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>New control created. </dd></dl>
-
-</div>
-</div>
-<a id="aca982b26b2d94757f36ab8ed304b981b" name="aca982b26b2d94757f36ab8ed304b981b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aca982b26b2d94757f36ab8ed304b981b">&#9670;&#160;</a></span>create() <span class="overload">[4/8]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1toggle__button.html">toggle_button</a> xtd::forms::toggle_button::create </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;&#160;</td>
-          <td class="paramname"><em>parent</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
-          <td class="paramname"><em>text</em> = <code>&quot;&quot;</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>three_state</em> = <code>false</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866">xtd::forms::check_state</a>&#160;</td>
-          <td class="paramname"><em>check_state</em> = <code><a class="el" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866aad91a1da588ce256d30b1af38f78f84e">xtd::forms::check_state::unchecked</a></code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
-          <td class="paramname"><em>location</em> = <code>{-1,&#160;-1}</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;&#160;</td>
-          <td class="paramname"><em>size</em> = <code>{-1,&#160;-1}</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
-          <td class="paramname"><em>name</em> = <code><a class="el" href="classxtd_1_1ustring.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b">xtd::ustring::empty_string</a></code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>A factory to create a <a class="el" href="classxtd_1_1forms_1_1toggle__button.html" title="Represents a Windows toggle_button.">xtd::forms::toggle_button</a> with specified parent, text, three_state, check_state, location ,size, and name. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">parent</td><td>The parent that contains the new created <a class="el" href="classxtd_1_1forms_1_1toggle__button.html" title="Represents a Windows toggle_button.">xtd::forms::toggle_button</a>. </td></tr>
-    <tr><td class="paramname">text</td><td>A string that represent text of the <a class="el" href="classxtd_1_1forms_1_1toggle__button.html" title="Represents a Windows toggle_button.">xtd::forms::toggle_button</a>. </td></tr>
-    <tr><td class="paramname">three_state</td><td>true if the <a class="el" href="classxtd_1_1forms_1_1toggle__button.html" title="Represents a Windows toggle_button.">toggle_button</a> is able to display three check states; otherwise, false. </td></tr>
-    <tr><td class="paramname">check_state</td><td>One of the check_state enumeration values. </td></tr>
-    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1toggle__button.html" title="Represents a Windows toggle_button.">xtd::forms::toggle_button</a>. </td></tr>
-    <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1toggle__button.html" title="Represents a Windows toggle_button.">xtd::forms::toggle_button</a>. </td></tr>
-    <tr><td class="paramname">name</td><td>The name of the <a class="el" href="classxtd_1_1forms_1_1toggle__button.html" title="Represents a Windows toggle_button.">xtd::forms::toggle_button</a>. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1toggle__button.html" title="Represents a Windows toggle_button.">xtd::forms::toggle_button</a> created. </dd></dl>
 
 </div>
 </div>
@@ -1927,70 +1927,8 @@ template&lt;typename control_t &gt; </div>
 
 </div>
 </div>
-<a id="a2f18f45074d5203b7f6354ff37c647d2" name="a2f18f45074d5203b7f6354ff37c647d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f18f45074d5203b7f6354ff37c647d2">&#9670;&#160;</a></span>create() <span class="overload">[7/8]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename control_t &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static control_t xtd::forms::control::create </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
-          <td class="paramname"><em>text</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
-          <td class="paramname"><em>location</em> = <code>{-1,&#160;-1}</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;&#160;</td>
-          <td class="paramname"><em>size</em> = <code>{-1,&#160;-1}</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
-          <td class="paramname"><em>name</em> = <code><a class="el" href="classxtd_1_1ustring.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b">xtd::ustring::empty_string</a></code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>A factory to create a specified control with specified text, location ,size back_color and fore_color. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">text</td><td>A string that represent text of the control. </td></tr>
-    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the control. </td></tr>
-    <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the control. </td></tr>
-    <tr><td class="paramname">name</td><td>The name of the control. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>New control created. </dd></dl>
-
-</div>
-</div>
-<a id="a700c4acb5b86f9feeefb604554ee6037" name="a700c4acb5b86f9feeefb604554ee6037"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a700c4acb5b86f9feeefb604554ee6037">&#9670;&#160;</a></span>create() <span class="overload">[8/8]</span></h2>
+<a id="ad40fc42253e95a23c2f854dcf6c10006" name="ad40fc42253e95a23c2f854dcf6c10006"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad40fc42253e95a23c2f854dcf6c10006">&#9670;&#160;</a></span>create() <span class="overload">[7/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2002,7 +1940,7 @@ template&lt;typename control_t &gt; </div>
           <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1toggle__button.html">toggle_button</a> xtd::forms::toggle_button::create </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
-          <td class="paramname"><em>text</em> = <code>&quot;&quot;</code>, </td>
+          <td class="paramname"><em>text</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -2060,6 +1998,68 @@ template&lt;typename control_t &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1toggle__button.html" title="Represents a Windows toggle_button.">xtd::forms::toggle_button</a> created. </dd></dl>
+
+</div>
+</div>
+<a id="a2f18f45074d5203b7f6354ff37c647d2" name="a2f18f45074d5203b7f6354ff37c647d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f18f45074d5203b7f6354ff37c647d2">&#9670;&#160;</a></span>create() <span class="overload">[8/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename control_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static control_t xtd::forms::control::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>text</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em> = <code>{-1,&#160;-1}</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;&#160;</td>
+          <td class="paramname"><em>size</em> = <code>{-1,&#160;-1}</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>name</em> = <code><a class="el" href="classxtd_1_1ustring.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b">xtd::ustring::empty_string</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A factory to create a specified control with specified text, location ,size back_color and fore_color. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>A string that represent text of the control. </td></tr>
+    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the control. </td></tr>
+    <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the control. </td></tr>
+    <tr><td class="paramname">name</td><td>The name of the control. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New control created. </dd></dl>
 
 </div>
 </div>
@@ -2622,7 +2622,7 @@ The on_checked_changed method also allows derived classes to handle the event wi
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 10 2023 18:10:56 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Apr 14 2023 16:41:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

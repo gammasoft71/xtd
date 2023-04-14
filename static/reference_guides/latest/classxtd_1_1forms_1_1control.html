@@ -149,7 +149,7 @@ The majority of the controls in the <a class="el" href="namespacextd_1_1forms.ht
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1drawing.html">xtd::drawing</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">namespace </span>examples {</div>
+<div class="line"><span class="keyword">namespace </span>control_example {</div>
 <div class="line">  <span class="keyword">class </span>form1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    form1() {</div>
@@ -171,7 +171,7 @@ The majority of the controls in the <a class="el" href="namespacextd_1_1forms.ht
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(examples::form1 {});</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(control_example::form1 {});</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a4ee49410f3156fd66b61c2567a59388e"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a></div><div class="ttdeci">static void run()</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html">xtd::forms::control</a></div><div class="ttdoc">Defines the base class for controls, which are components with visual representation.</div><div class="ttdef"><b>Definition:</b> control.h:76</div></div>
@@ -4481,7 +4481,7 @@ Setting the <a class="el" href="classxtd_1_1forms_1_1control.html#a75fa27c1abc0d
 
 <p>Gets the coordinates of the upper-left corner of the control relative to the upper-left corner of its container. </p>
 <dl class="section return"><dt>Returns</dt><dd>The point that represents the upper-left corner of the control relative to the upper-left corner of its container. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="color_picker_8cpp-example.html#a7">color_picker.cpp</a>, <a class="el" href="debug_message_box_8cpp-example.html#a2">debug_message_box.cpp</a>, <a class="el" href="demo_8cpp-example.html#a5">demo.cpp</a>, <a class="el" href="dialog_8cpp-example.html#a3">dialog.cpp</a>, <a class="el" href="enable_changed_event_8cpp-example.html#a1">enable_changed_event.cpp</a>, <a class="el" href="font_changed_event_8cpp-example.html#a1">font_changed_event.cpp</a>, <a class="el" href="form_and_main_8cpp-example.html#a5">form_and_main.cpp</a>, <a class="el" href="form_background_image_8cpp-example.html#a5">form_background_image.cpp</a>, <a class="el" href="owner_button_8cpp-example.html#a14">owner_button.cpp</a>, <a class="el" href="screen_8cpp-example.html#a3">screen.cpp</a>, <a class="el" href="trace_message_box_8cpp-example.html#a2">trace_message_box.cpp</a>, and <a class="el" href="wiggly_8cpp-example.html#a13">wiggly.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="color_picker_8cpp-example.html#a7">color_picker.cpp</a>, <a class="el" href="debug_message_box_8cpp-example.html#a2">debug_message_box.cpp</a>, <a class="el" href="debug_message_dialog_8cpp-example.html#a1">debug_message_dialog.cpp</a>, <a class="el" href="demo_8cpp-example.html#a5">demo.cpp</a>, <a class="el" href="dialog_8cpp-example.html#a3">dialog.cpp</a>, <a class="el" href="enable_changed_event_8cpp-example.html#a1">enable_changed_event.cpp</a>, <a class="el" href="font_changed_event_8cpp-example.html#a1">font_changed_event.cpp</a>, <a class="el" href="form_and_main_8cpp-example.html#a5">form_and_main.cpp</a>, <a class="el" href="form_background_image_8cpp-example.html#a5">form_background_image.cpp</a>, <a class="el" href="owner_button_8cpp-example.html#a14">owner_button.cpp</a>, <a class="el" href="screen_8cpp-example.html#a3">screen.cpp</a>, <a class="el" href="trace_message_box_8cpp-example.html#a2">trace_message_box.cpp</a>, <a class="el" href="trace_message_dialog_8cpp-example.html#a1">trace_message_dialog.cpp</a>, and <a class="el" href="wiggly_8cpp-example.html#a13">wiggly.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -11075,7 +11075,7 @@ When creating a new custom control or an inherited control with a different visu
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1drawing_1_1drawing2d.html">xtd::drawing::drawing2d</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">namespace </span>examples {</div>
+<div class="line"><span class="keyword">namespace </span>form_paint_example {</div>
 <div class="line">  <span class="keyword">class </span>form1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    form1() {</div>
@@ -11100,7 +11100,7 @@ When creating a new custom control or an inherited control with a different visu
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(examples::form1 {});</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(form_paint_example::form1 {});</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1drawing2d_1_1linear__gradient__brush_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1drawing2d_1_1linear__gradient__brush.html">xtd::drawing::drawing2d::linear_gradient_brush</a></div><div class="ttdoc">Encapsulates a xtd::drawing::brush with a linear gradient. This class cannot be inherited.</div><div class="ttdef"><b>Definition:</b> linear_gradient_brush.h:31</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1drawing2d_1_1radial__gradient__brush_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1drawing2d_1_1radial__gradient__brush.html">xtd::drawing::drawing2d::radial_gradient_brush</a></div><div class="ttdoc">Encapsulates a xtd::drawing::brush with a radial gradient. This class cannot be inherited.</div><div class="ttdef"><b>Definition:</b> radial_gradient_brush.h:30</div></div>
@@ -11332,7 +11332,7 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 10 2023 18:10:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Apr 14 2023 16:41:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

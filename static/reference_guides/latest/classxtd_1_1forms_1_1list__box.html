@@ -153,7 +153,7 @@ Inheritance diagram for xtd::forms::list_box:</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1drawing.html">xtd::drawing</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">namespace </span>examples {</div>
+<div class="line"><span class="keyword">namespace </span>list_box_example {</div>
 <div class="line">  <span class="keyword">class </span>form1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    form1() {</div>
@@ -196,7 +196,7 @@ Inheritance diagram for xtd::forms::list_box:</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(examples::form1 {});</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(list_box_example::form1 {});</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a4ee49410f3156fd66b61c2567a59388e"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a></div><div class="ttdeci">static void run()</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application's user interface.</div><div class="ttdef"><b>Definition:</b> form.h:49</div></div>
@@ -290,12 +290,12 @@ Inheritance diagram for xtd::forms::list_box:</div>
 <tr class="memitem:ae1378d3b234f02322bf8d8c6e441f865"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1list__box.html#ae1378d3b234f02322bf8d8c6e441f865">end_update</a> ()</td></tr>
 <tr class="memdesc:ae1378d3b234f02322bf8d8c6e441f865"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resumes painting the <a class="el" href="classxtd_1_1forms_1_1list__box.html" title="Represents a standard Windows list box.">list_box</a> control after painting is suspended by the begin_update method.  <br /></td></tr>
 <tr class="separator:ae1378d3b234f02322bf8d8c6e441f865"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52db4b94472c3caffe98192d99eb2e04"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1list__box.html">list_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1list__box.html#a52db4b94472c3caffe98192d99eb2e04">create</a> (const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;<a class="el" href="classxtd_1_1forms_1_1list__box.html#aa37783fc6469a7a8f23f344c48e56081">items</a>=<a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> {}, size_t <a class="el" href="classxtd_1_1forms_1_1list__box.html#aa8045fbe5b3f684d26ad7a15e87bd3a2">selected_index</a>=<a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#abe13629dbfb1ddb09bd30bc0a1707f72">object_collection::npos</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>={-1, -1}, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>={-1, -1}, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>=<a class="el" href="classxtd_1_1ustring.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b">xtd::ustring::empty_string</a>)</td></tr>
-<tr class="memdesc:a52db4b94472c3caffe98192d99eb2e04"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1list__box.html" title="Represents a standard Windows list box.">xtd::forms::list_box</a> with specified items, selected_index, location ,size, and name.  <br /></td></tr>
-<tr class="separator:a52db4b94472c3caffe98192d99eb2e04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af625f90739ca60a984aff4c48ad2ca41"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1list__box.html">list_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1list__box.html#af625f90739ca60a984aff4c48ad2ca41">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;<a class="el" href="classxtd_1_1forms_1_1list__box.html#aa37783fc6469a7a8f23f344c48e56081">items</a>=<a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> {}, size_t <a class="el" href="classxtd_1_1forms_1_1list__box.html#aa8045fbe5b3f684d26ad7a15e87bd3a2">selected_index</a>=<a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#abe13629dbfb1ddb09bd30bc0a1707f72">object_collection::npos</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>={-1, -1}, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>={-1, -1}, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>=<a class="el" href="classxtd_1_1ustring.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b">xtd::ustring::empty_string</a>)</td></tr>
-<tr class="memdesc:af625f90739ca60a984aff4c48ad2ca41"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1list__box.html" title="Represents a standard Windows list box.">xtd::forms::list_box</a> with specified parent, items, selected_index, location ,size, and name.  <br /></td></tr>
-<tr class="separator:af625f90739ca60a984aff4c48ad2ca41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62c6fe1f7d4d40616d83f76f5c68520c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1list__box.html">list_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1list__box.html#a62c6fe1f7d4d40616d83f76f5c68520c">create</a> (const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;<a class="el" href="classxtd_1_1forms_1_1list__box.html#aa37783fc6469a7a8f23f344c48e56081">items</a>, size_t <a class="el" href="classxtd_1_1forms_1_1list__box.html#aa8045fbe5b3f684d26ad7a15e87bd3a2">selected_index</a>=<a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#abe13629dbfb1ddb09bd30bc0a1707f72">object_collection::npos</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>={-1, -1}, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>={-1, -1}, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>=<a class="el" href="classxtd_1_1ustring.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b">xtd::ustring::empty_string</a>)</td></tr>
+<tr class="memdesc:a62c6fe1f7d4d40616d83f76f5c68520c"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1list__box.html" title="Represents a standard Windows list box.">xtd::forms::list_box</a> with specified items, selected_index, location ,size, and name.  <br /></td></tr>
+<tr class="separator:a62c6fe1f7d4d40616d83f76f5c68520c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08c225e2525eb3d464ef7e3c956018bd"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1list__box.html">list_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1list__box.html#a08c225e2525eb3d464ef7e3c956018bd">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;<a class="el" href="classxtd_1_1forms_1_1list__box.html#aa37783fc6469a7a8f23f344c48e56081">items</a>, size_t <a class="el" href="classxtd_1_1forms_1_1list__box.html#aa8045fbe5b3f684d26ad7a15e87bd3a2">selected_index</a>=<a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#abe13629dbfb1ddb09bd30bc0a1707f72">object_collection::npos</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>={-1, -1}, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>={-1, -1}, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>=<a class="el" href="classxtd_1_1ustring.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b">xtd::ustring::empty_string</a>)</td></tr>
+<tr class="memdesc:a08c225e2525eb3d464ef7e3c956018bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1list__box.html" title="Represents a standard Windows list box.">xtd::forms::list_box</a> with specified parent, items, selected_index, location ,size, and name.  <br /></td></tr>
+<tr class="separator:a08c225e2525eb3d464ef7e3c956018bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a715ff790d0ca1efb82c5431d9785f05d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1control.html">control</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1list__box.html#a715ff790d0ca1efb82c5431d9785f05d">create</a> (const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>={-1, -1}, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>={-1, -1}, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>=<a class="el" href="classxtd_1_1ustring.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b">xtd::ustring::empty_string</a>)</td></tr>
 <tr class="memdesc:a715ff790d0ca1efb82c5431d9785f05d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a specified control with specified location, size, and name.  <br /></td></tr>
 <tr class="separator:a715ff790d0ca1efb82c5431d9785f05d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1578,8 +1578,8 @@ template&lt;typename control_t &gt; </div>
 
 </div>
 </div>
-<a id="af625f90739ca60a984aff4c48ad2ca41" name="af625f90739ca60a984aff4c48ad2ca41"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af625f90739ca60a984aff4c48ad2ca41">&#9670;&#160;</a></span>create() <span class="overload">[3/8]</span></h2>
+<a id="a08c225e2525eb3d464ef7e3c956018bd" name="a08c225e2525eb3d464ef7e3c956018bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08c225e2525eb3d464ef7e3c956018bd">&#9670;&#160;</a></span>create() <span class="overload">[3/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1597,7 +1597,7 @@ template&lt;typename control_t &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;&#160;</td>
-          <td class="paramname"><em>items</em> = <code><a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a>&#160;{}</code>, </td>
+          <td class="paramname"><em>items</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1828,8 +1828,8 @@ template&lt;typename control_t &gt; </div>
 
 </div>
 </div>
-<a id="a52db4b94472c3caffe98192d99eb2e04" name="a52db4b94472c3caffe98192d99eb2e04"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a52db4b94472c3caffe98192d99eb2e04">&#9670;&#160;</a></span>create() <span class="overload">[7/8]</span></h2>
+<a id="a62c6fe1f7d4d40616d83f76f5c68520c" name="a62c6fe1f7d4d40616d83f76f5c68520c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62c6fe1f7d4d40616d83f76f5c68520c">&#9670;&#160;</a></span>create() <span class="overload">[7/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1841,7 +1841,7 @@ template&lt;typename control_t &gt; </div>
           <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1list__box.html">list_box</a> xtd::forms::list_box::create </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;&#160;</td>
-          <td class="paramname"><em>items</em> = <code><a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a>&#160;{}</code>, </td>
+          <td class="paramname"><em>items</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -2667,7 +2667,7 @@ The <a class="el" href="classxtd_1_1forms_1_1list__box.html" title="Represents a
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 10 2023 18:10:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Apr 14 2023 16:41:56 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

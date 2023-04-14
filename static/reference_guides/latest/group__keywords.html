@@ -2843,7 +2843,7 @@ If you need to get the fully-qualified name, you can use the typeof_ expression 
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">namespace </span>examples {</div>
+<div class="line"><span class="keyword">namespace </span>main1_example {</div>
 <div class="line">  <span class="keyword">class </span>program {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> main() {</div>
@@ -2857,11 +2857,11 @@ If you need to get the fully-qualified name, you can use the typeof_ expression 
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(examples::program);</div>
-<div class="line"><span class="comment">// startup_(examples::program); is same as :</span></div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(main1_example::program);</div>
+<div class="line"><span class="comment">// startup_(main1_example::program); is same as :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// auto main(int argc, char* argv[])-&gt;int {</span></div>
-<div class="line"><span class="comment">//   examples::program::main();</span></div>
+<div class="line"><span class="comment">//   main1_example::program::main();</span></div>
 <div class="line"><span class="comment">//   return environment::exit_code();</span></div>
 <div class="line"><span class="comment">// }</span></div>
 <div class="line"> </div>
@@ -2878,7 +2878,7 @@ If you need to get the fully-qualified name, you can use the typeof_ expression 
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">namespace </span>examples {</div>
+<div class="line"><span class="keyword">namespace </span>main2_example {</div>
 <div class="line">  <span class="keyword">class </span>program {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    <span class="keyword">static</span> <span class="keywordtype">int</span> main() {</div>
@@ -2891,11 +2891,11 @@ If you need to get the fully-qualified name, you can use the typeof_ expression 
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(examples::program);</div>
-<div class="line"><span class="comment">// startup_(examples::program); is same as :</span></div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(main2_example::program);</div>
+<div class="line"><span class="comment">// startup_(main2_example::program); is same as :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// auto main(int argc, char* argv[])-&gt;int {</span></div>
-<div class="line"><span class="comment">//   return examples::program::main();</span></div>
+<div class="line"><span class="comment">//   return main2_example::program::main();</span></div>
 <div class="line"><span class="comment">// }</span></div>
 <div class="line"> </div>
 <div class="line"> </div>
@@ -2912,7 +2912,7 @@ If you need to get the fully-qualified name, you can use the typeof_ expression 
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">namespace </span>examples {</div>
+<div class="line"><span class="keyword">namespace </span>main3_example {</div>
 <div class="line">  <span class="keyword">class </span>program {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> main(<span class="keyword">const</span> vector&lt;ustring&gt;&amp; args) {</div>
@@ -2926,11 +2926,11 @@ If you need to get the fully-qualified name, you can use the typeof_ expression 
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(examples::program);</div>
-<div class="line"><span class="comment">// startup_(examples::program); is same as :</span></div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(main3_example::program);</div>
+<div class="line"><span class="comment">// startup_(main3_example::program); is same as :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// auto main(int argc, char* argv[])-&gt;int {</span></div>
-<div class="line"><span class="comment">//   examples::program::main({argv + 1, argv + argc});</span></div>
+<div class="line"><span class="comment">//   main3_example::program::main({argv + 1, argv + argc});</span></div>
 <div class="line"><span class="comment">//   return environment::exit_code();</span></div>
 <div class="line"><span class="comment">// }</span></div>
 <div class="line"> </div>
@@ -2947,7 +2947,7 @@ If you need to get the fully-qualified name, you can use the typeof_ expression 
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">namespace </span>examples {</div>
+<div class="line"><span class="keyword">namespace </span>main4_example {</div>
 <div class="line">  <span class="keyword">class </span>program {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    <span class="keyword">static</span> <span class="keywordtype">int</span> main(<span class="keyword">const</span> vector&lt;ustring&gt;&amp; args) {</div>
@@ -2960,11 +2960,11 @@ If you need to get the fully-qualified name, you can use the typeof_ expression 
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(examples::program);</div>
-<div class="line"><span class="comment">// startup_(examples::program); is same as :</span></div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(main4_example::program);</div>
+<div class="line"><span class="comment">// startup_(main4_example::program); is same as :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// auto main(int argc, char* argv[])-&gt;int {</span></div>
-<div class="line"><span class="comment">//   return examples::program::main({argv + 1, argv + argc});</span></div>
+<div class="line"><span class="comment">//   return main4_example::program::main({argv + 1, argv + argc});</span></div>
 <div class="line"><span class="comment">// }</span></div>
 <div class="line"> </div>
 <div class="line"> </div>
@@ -3153,7 +3153,7 @@ If you need to get the fully-qualified name, you can use the typeof_ expression 
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 10 2023 18:10:53 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Apr 14 2023 16:41:54 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

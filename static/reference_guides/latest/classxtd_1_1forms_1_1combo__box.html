@@ -161,7 +161,7 @@ You can use these properties to manage the currently selected item in the list, 
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1drawing.html">xtd::drawing</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">namespace </span>examples {</div>
+<div class="line"><span class="keyword">namespace </span>combo_box_example {</div>
 <div class="line">  <span class="keyword">class </span>form1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    form1() {</div>
@@ -199,7 +199,7 @@ You can use these properties to manage the currently selected item in the list, 
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(examples::form1 {});</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(combo_box_example::form1 {});</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1event__args_html"><div class="ttname"><a href="classxtd_1_1event__args.html">xtd::event_args</a></div><div class="ttdoc">Represents the base class for classes that contain event data, and provides a value to use for events...</div><div class="ttdef"><b>Definition:</b> event_args.h:18</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a4ee49410f3156fd66b61c2567a59388e"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a></div><div class="ttdeci">static void run()</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
@@ -284,9 +284,9 @@ You can use these properties to manage the currently selected item in the list, 
 <tr class="memitem:a9d10c57fa87bf8e24a765da12a1cd9ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1combo__box.html#a9d10c57fa87bf8e24a765da12a1cd9ee">end_update</a> ()</td></tr>
 <tr class="memdesc:a9d10c57fa87bf8e24a765da12a1cd9ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resumes painting the <a class="el" href="classxtd_1_1forms_1_1combo__box.html" title="Represents a Windows combo box control.">combo_box</a> control after painting is suspended by the begin_update method.  <br /></td></tr>
 <tr class="separator:a9d10c57fa87bf8e24a765da12a1cd9ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09cce6d77885b9d40090a7dfbad127be"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1combo__box.html">combo_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1combo__box.html#a09cce6d77885b9d40090a7dfbad127be">create</a> (const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;<a class="el" href="classxtd_1_1forms_1_1combo__box.html#a3aca3c25f07d8c57e761c974aeee2caa">items</a>=<a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> {}, size_t <a class="el" href="classxtd_1_1forms_1_1combo__box.html#a41c568add0a270beb925284101252e7a">selected_index</a>=<a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#abe13629dbfb1ddb09bd30bc0a1707f72">object_collection::npos</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>={-1, -1}, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>={-1, -1}, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>=<a class="el" href="classxtd_1_1ustring.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b">xtd::ustring::empty_string</a>)</td></tr>
-<tr class="memdesc:a09cce6d77885b9d40090a7dfbad127be"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1combo__box.html" title="Represents a Windows combo box control.">xtd::forms::combo_box</a> with specified items, selected_index, location ,size, and name.  <br /></td></tr>
-<tr class="separator:a09cce6d77885b9d40090a7dfbad127be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acae5e35606e4e63a84ef9d4a4790c03c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1combo__box.html">combo_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1combo__box.html#acae5e35606e4e63a84ef9d4a4790c03c">create</a> (const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;<a class="el" href="classxtd_1_1forms_1_1combo__box.html#a3aca3c25f07d8c57e761c974aeee2caa">items</a>, size_t <a class="el" href="classxtd_1_1forms_1_1combo__box.html#a41c568add0a270beb925284101252e7a">selected_index</a>=<a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#abe13629dbfb1ddb09bd30bc0a1707f72">object_collection::npos</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>={-1, -1}, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>={-1, -1}, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>=<a class="el" href="classxtd_1_1ustring.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b">xtd::ustring::empty_string</a>)</td></tr>
+<tr class="memdesc:acae5e35606e4e63a84ef9d4a4790c03c"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1combo__box.html" title="Represents a Windows combo box control.">xtd::forms::combo_box</a> with specified items, selected_index, location ,size, and name.  <br /></td></tr>
+<tr class="separator:acae5e35606e4e63a84ef9d4a4790c03c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14d602eb5ebfdf0a97ef7c17f04ceb9e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1combo__box.html">combo_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1combo__box.html#a14d602eb5ebfdf0a97ef7c17f04ceb9e">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;<a class="el" href="classxtd_1_1forms_1_1combo__box.html#a3aca3c25f07d8c57e761c974aeee2caa">items</a>, size_t <a class="el" href="classxtd_1_1forms_1_1combo__box.html#a41c568add0a270beb925284101252e7a">selected_index</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>={-1, -1}, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>={-1, -1}, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>=<a class="el" href="classxtd_1_1ustring.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b">xtd::ustring::empty_string</a>)</td></tr>
 <tr class="memdesc:a14d602eb5ebfdf0a97ef7c17f04ceb9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1combo__box.html" title="Represents a Windows combo box control.">xtd::forms::combo_box</a> with specified parent, items, selected_index, location ,size, and name.  <br /></td></tr>
 <tr class="separator:a14d602eb5ebfdf0a97ef7c17f04ceb9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1637,8 +1637,8 @@ template&lt;typename control_t &gt; </div>
 
 </div>
 </div>
-<a id="a09cce6d77885b9d40090a7dfbad127be" name="a09cce6d77885b9d40090a7dfbad127be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a09cce6d77885b9d40090a7dfbad127be">&#9670;&#160;</a></span>create() <span class="overload">[7/8]</span></h2>
+<a id="acae5e35606e4e63a84ef9d4a4790c03c" name="acae5e35606e4e63a84ef9d4a4790c03c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acae5e35606e4e63a84ef9d4a4790c03c">&#9670;&#160;</a></span>create() <span class="overload">[7/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1650,7 +1650,7 @@ template&lt;typename control_t &gt; </div>
           <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1combo__box.html">combo_box</a> xtd::forms::combo_box::create </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;&#160;</td>
-          <td class="paramname"><em>items</em> = <code><a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a>&#160;{}</code>, </td>
+          <td class="paramname"><em>items</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -2536,7 +2536,7 @@ The <a class="el" href="classxtd_1_1forms_1_1combo__box.html#aee57ff936a6cdee054
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 10 2023 18:10:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Apr 14 2023 16:41:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

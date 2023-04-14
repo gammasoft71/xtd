@@ -159,7 +159,7 @@ You can use these properties to manage the currently selected item in the list, 
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">namespace </span>examples {</div>
+<div class="line"><span class="keyword">namespace </span>checked_list_box_example {</div>
 <div class="line">  <span class="keyword">class </span>form1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    form1() {</div>
@@ -186,7 +186,7 @@ You can use these properties to manage the currently selected item in the list, 
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(examples::form1 {});</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(checked_list_box_example::form1 {});</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a4ee49410f3156fd66b61c2567a59388e"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a></div><div class="ttdeci">static void run()</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1checked__list__box_html"><div class="ttname"><a href="classxtd_1_1forms_1_1checked__list__box.html">xtd::forms::checked_list_box</a></div><div class="ttdoc">Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.</div><div class="ttdef"><b>Definition:</b> checked_list_box.h:32</div></div>
@@ -203,7 +203,7 @@ You can use these properties to manage the currently selected item in the list, 
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1drawing.html">xtd::drawing</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">namespace </span>examples {</div>
+<div class="line"><span class="keyword">namespace </span>choice_example {</div>
 <div class="line">  <span class="keyword">class </span>form1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    form1() {</div>
@@ -233,7 +233,7 @@ You can use these properties to manage the currently selected item in the list, 
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(examples::form1 {});</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(choice_example::form1 {});</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1event__args_html"><div class="ttname"><a href="classxtd_1_1event__args.html">xtd::event_args</a></div><div class="ttdoc">Represents the base class for classes that contain event data, and provides a value to use for events...</div><div class="ttdef"><b>Definition:</b> event_args.h:18</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1choice_html"><div class="ttname"><a href="classxtd_1_1forms_1_1choice.html">xtd::forms::choice</a></div><div class="ttdoc">Represents a choice control.</div><div class="ttdef"><b>Definition:</b> choice.h:33</div></div>
@@ -290,9 +290,9 @@ You can use these properties to manage the currently selected item in the list, 
 <tr class="memitem:a675bf4228461addf7018d7b6570ee74d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1choice.html#a675bf4228461addf7018d7b6570ee74d">end_update</a> ()</td></tr>
 <tr class="memdesc:a675bf4228461addf7018d7b6570ee74d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resumes painting the choice control after painting is suspended by the begin_update method.  <br /></td></tr>
 <tr class="separator:a675bf4228461addf7018d7b6570ee74d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abef5ab46b12a38f5a9e935d0d4625297"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1choice.html">choice</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1choice.html#abef5ab46b12a38f5a9e935d0d4625297">create</a> (const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;<a class="el" href="classxtd_1_1forms_1_1choice.html#a983b4c2eb923b5b3c008312327ee9fc8">items</a>=<a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> {}, size_t <a class="el" href="classxtd_1_1forms_1_1choice.html#ab2fdcff9659ed89bfc68d939ed61edaa">selected_index</a>=<a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#abe13629dbfb1ddb09bd30bc0a1707f72">object_collection::npos</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>={-1, -1}, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>={-1, -1}, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>=<a class="el" href="classxtd_1_1ustring.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b">xtd::ustring::empty_string</a>)</td></tr>
-<tr class="memdesc:abef5ab46b12a38f5a9e935d0d4625297"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified items, selected_index, location ,size, and name.  <br /></td></tr>
-<tr class="separator:abef5ab46b12a38f5a9e935d0d4625297"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cc595e3c82a424b8b0657337daac1fd"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1choice.html">choice</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1choice.html#a6cc595e3c82a424b8b0657337daac1fd">create</a> (const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;<a class="el" href="classxtd_1_1forms_1_1choice.html#a983b4c2eb923b5b3c008312327ee9fc8">items</a>, size_t <a class="el" href="classxtd_1_1forms_1_1choice.html#ab2fdcff9659ed89bfc68d939ed61edaa">selected_index</a>=<a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#abe13629dbfb1ddb09bd30bc0a1707f72">object_collection::npos</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>={-1, -1}, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>={-1, -1}, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>=<a class="el" href="classxtd_1_1ustring.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b">xtd::ustring::empty_string</a>)</td></tr>
+<tr class="memdesc:a6cc595e3c82a424b8b0657337daac1fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified items, selected_index, location ,size, and name.  <br /></td></tr>
+<tr class="separator:a6cc595e3c82a424b8b0657337daac1fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6cc8fb66db1cba11c3a9931658b61e58"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1choice.html">choice</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1choice.html#a6cc8fb66db1cba11c3a9931658b61e58">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;<a class="el" href="classxtd_1_1forms_1_1choice.html#a983b4c2eb923b5b3c008312327ee9fc8">items</a>, size_t <a class="el" href="classxtd_1_1forms_1_1choice.html#ab2fdcff9659ed89bfc68d939ed61edaa">selected_index</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>={-1, -1}, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>={-1, -1}, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>=<a class="el" href="classxtd_1_1ustring.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b">xtd::ustring::empty_string</a>)</td></tr>
 <tr class="memdesc:a6cc8fb66db1cba11c3a9931658b61e58"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified parent, items, selected_index, location ,size, and name.  <br /></td></tr>
 <tr class="separator:a6cc8fb66db1cba11c3a9931658b61e58"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1634,8 +1634,8 @@ template&lt;typename control_t &gt; </div>
 
 </div>
 </div>
-<a id="abef5ab46b12a38f5a9e935d0d4625297" name="abef5ab46b12a38f5a9e935d0d4625297"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abef5ab46b12a38f5a9e935d0d4625297">&#9670;&#160;</a></span>create() <span class="overload">[7/8]</span></h2>
+<a id="a6cc595e3c82a424b8b0657337daac1fd" name="a6cc595e3c82a424b8b0657337daac1fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cc595e3c82a424b8b0657337daac1fd">&#9670;&#160;</a></span>create() <span class="overload">[7/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1647,7 +1647,7 @@ template&lt;typename control_t &gt; </div>
           <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1choice.html">choice</a> xtd::forms::choice::create </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;&#160;</td>
-          <td class="paramname"><em>items</em> = <code><a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a>&#160;{}</code>, </td>
+          <td class="paramname"><em>items</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -2388,7 +2388,7 @@ Typically, you should not set the client_size of the control. </dd></dl>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 10 2023 18:10:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Apr 14 2023 16:41:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -157,7 +157,7 @@ Inheritance diagram for xtd::forms::status_bar:</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1drawing.html">xtd::drawing</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">namespace </span>examples {</div>
+<div class="line"><span class="keyword">namespace </span>status_bar_example {</div>
 <div class="line">  <span class="keyword">class </span>form1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    form1() {</div>
@@ -208,7 +208,7 @@ Inheritance diagram for xtd::forms::status_bar:</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(examples::form1 {});</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(status_bar_example::form1 {});</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1bitmap_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a></div><div class="ttdoc">Encapsulates a GDI+ bitmap, which consists of the pixel data for a graphics image and its attributes....</div><div class="ttdef"><b>Definition:</b> bitmap.h:26</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1color_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a></div><div class="ttdoc">Represents an ARGB (alpha, red, green, blue) color.</div><div class="ttdef"><b>Definition:</b> color.h:45</div></div>
@@ -239,7 +239,7 @@ The default <a class="el" href="classxtd_1_1forms_1_1status__bar.html" title="Re
 If you want to determine when a <a class="el" href="classxtd_1_1forms_1_1status__bar__panel.html" title="Represents a xtd::forms::status_bar panel.">xtd::forms::status_bar_panel</a> object within a <a class="el" href="classxtd_1_1forms_1_1status__bar.html" title="Represents a Windows status bar control.">xtd::forms::status_bar</a> control is clicked, you can create an event handler for the <a class="el" href="classxtd_1_1forms_1_1status__bar.html#a3cda53efcd93ef1960361d480f083998" title="Occurs when a xtd::forms::status_bar_panel object on a xtd::forms::status_bar control is clicked.">xtd::forms::status_bar::panel_click</a> event. To perform owner-draw operations on a panel, you can create an event handler for the <a class="el" href="classxtd_1_1forms_1_1status__bar.html#a0f5250091b2ce6a8ee785ec6ec2db569" title="Occurs when a visual aspect of an owner-drawn status bar control changes.">xtd::forms::status_bar::draw_item</a> event. The event data passed to the event handler provides information on the panel to draw and a <a class="el" href="classxtd_1_1drawing_1_1graphics.html" title="Defines an object used to draw lines and curves. This class cannot be inherited.">xtd::drawing::graphics</a> object to use to perform drawing tasks. </dd>
 <dd>
 When you create an instance of <a class="el" href="classxtd_1_1forms_1_1status__bar.html" title="Represents a Windows status bar control.">xtd::forms::status_bar</a>, the read/write properties are set to initial values. For a list of these values, see the <a class="el" href="classxtd_1_1forms_1_1status__bar.html" title="Represents a Windows status bar control.">xtd::forms::status_bar</a> constructor. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="application_enable_dark_mode_8cpp-example.html#_a47">application_enable_dark_mode.cpp</a>, <a class="el" href="application_enable_light_mode_8cpp-example.html#_a47">application_enable_light_mode.cpp</a>, <a class="el" href="some_controls_8cpp-example.html#_a47">some_controls.cpp</a>, <a class="el" href="status_bar_8cpp-example.html#_a10">status_bar.cpp</a>, <a class="el" href="status_bar_without_panels_8cpp-example.html#_a2">status_bar_without_panels.cpp</a>, and <a class="el" href="themes_8cpp-example.html#_a47">themes.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="application_enable_dark_mode_8cpp-example.html#_a47">application_enable_dark_mode.cpp</a>, <a class="el" href="application_enable_light_mode_8cpp-example.html#_a47">application_enable_light_mode.cpp</a>, <a class="el" href="hello_world_xtd_8cpp-example.html#_a5">hello_world_xtd.cpp</a>, <a class="el" href="some_controls_8cpp-example.html#_a47">some_controls.cpp</a>, <a class="el" href="status_bar_8cpp-example.html#_a10">status_bar.cpp</a>, <a class="el" href="status_bar_without_panels_8cpp-example.html#_a2">status_bar_without_panels.cpp</a>, and <a class="el" href="themes_8cpp-example.html#_a47">themes.cpp</a>.</dd>
 </dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
@@ -308,28 +308,6 @@ friend&#160;</td><td class="memItemRight" valign="bottom"><b>status_bar_panel</b
 <tr class="memitem:a41c65307367e3b81303f186729de9ddf"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1status__bar.html">status_bar</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1status__bar.html#a41c65307367e3b81303f186729de9ddf">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>={-1, -1}, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>={-1, -1}, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>=<a class="el" href="classxtd_1_1ustring.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b">xtd::ustring::empty_string</a>)</td></tr>
 <tr class="memdesc:a41c65307367e3b81303f186729de9ddf"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1status__bar.html" title="Represents a Windows status bar control.">xtd::forms::status_bar</a> with specified parent, location ,size, and name.  <br /></td></tr>
 <tr class="separator:a41c65307367e3b81303f186729de9ddf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a715ff790d0ca1efb82c5431d9785f05d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1control.html">control</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1status__bar.html#a715ff790d0ca1efb82c5431d9785f05d">create</a> (const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>={-1, -1}, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>={-1, -1}, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>=<a class="el" href="classxtd_1_1ustring.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b">xtd::ustring::empty_string</a>)</td></tr>
-<tr class="memdesc:a715ff790d0ca1efb82c5431d9785f05d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a specified control with specified location, size, and name.  <br /></td></tr>
-<tr class="separator:a715ff790d0ca1efb82c5431d9785f05d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c7a93d3dc3add2e579ed2a97e96a618"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1control.html">control</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1status__bar.html#a6c7a93d3dc3add2e579ed2a97e96a618">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>={-1, -1}, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>={-1, -1}, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>=<a class="el" href="classxtd_1_1ustring.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b">xtd::ustring::empty_string</a>)</td></tr>
-<tr class="memdesc:a6c7a93d3dc3add2e579ed2a97e96a618"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a specified control with specified parent, location, size, and name.  <br /></td></tr>
-<tr class="separator:a6c7a93d3dc3add2e579ed2a97e96a618"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7af97dfabdb463a98299210e4cba58d8"><td class="memTemplParams" colspan="2">template&lt;typename control_t &gt; </td></tr>
-<tr class="memitem:a7af97dfabdb463a98299210e4cba58d8"><td class="memTemplItemLeft" align="right" valign="top">static control_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1status__bar.html#a7af97dfabdb463a98299210e4cba58d8">create</a> (const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>={-1, -1}, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>={-1, -1}, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>=<a class="el" href="classxtd_1_1ustring.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b">xtd::ustring::empty_string</a>)</td></tr>
-<tr class="memdesc:a7af97dfabdb463a98299210e4cba58d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a specified control with specified location, size, and name.  <br /></td></tr>
-<tr class="separator:a7af97dfabdb463a98299210e4cba58d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7228d92b809441329e7ebeb0b5dc4cad"><td class="memTemplParams" colspan="2">template&lt;typename control_t &gt; </td></tr>
-<tr class="memitem:a7228d92b809441329e7ebeb0b5dc4cad"><td class="memTemplItemLeft" align="right" valign="top">static control_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1status__bar.html#a7228d92b809441329e7ebeb0b5dc4cad">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>={-1, -1}, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>={-1, -1}, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>=<a class="el" href="classxtd_1_1ustring.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b">xtd::ustring::empty_string</a>)</td></tr>
-<tr class="memdesc:a7228d92b809441329e7ebeb0b5dc4cad"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a specified control with specified parent, location, size, and name.  <br /></td></tr>
-<tr class="separator:a7228d92b809441329e7ebeb0b5dc4cad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f18f45074d5203b7f6354ff37c647d2"><td class="memTemplParams" colspan="2">template&lt;typename control_t &gt; </td></tr>
-<tr class="memitem:a2f18f45074d5203b7f6354ff37c647d2"><td class="memTemplItemLeft" align="right" valign="top">static control_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1status__bar.html#a2f18f45074d5203b7f6354ff37c647d2">create</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>={-1, -1}, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>={-1, -1}, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>=<a class="el" href="classxtd_1_1ustring.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b">xtd::ustring::empty_string</a>)</td></tr>
-<tr class="memdesc:a2f18f45074d5203b7f6354ff37c647d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a specified control with specified text, location ,size back_color and fore_color.  <br /></td></tr>
-<tr class="separator:a2f18f45074d5203b7f6354ff37c647d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a666a59357d5bd8028e2e970daad0b798"><td class="memTemplParams" colspan="2">template&lt;typename control_t &gt; </td></tr>
-<tr class="memitem:a666a59357d5bd8028e2e970daad0b798"><td class="memTemplItemLeft" align="right" valign="top">static control_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1status__bar.html#a666a59357d5bd8028e2e970daad0b798">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>={-1, -1}, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>={-1, -1}, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>=<a class="el" href="classxtd_1_1ustring.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b">xtd::ustring::empty_string</a>)</td></tr>
-<tr class="memdesc:a666a59357d5bd8028e2e970daad0b798"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a specified control with specified parent, text, location, size, and name.  <br /></td></tr>
-<tr class="separator:a666a59357d5bd8028e2e970daad0b798"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Protetced properties</h2></td></tr>
 <tr class="memitem:a97e70b187e3be29a89592b64ef7425eb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1forms_1_1create__params.html">forms::create_params</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1status__bar.html#a97e70b187e3be29a89592b64ef7425eb">create_params</a> () const noexcept override</td></tr>
@@ -1255,130 +1233,8 @@ When you create an instance of <a class="el" href="classxtd_1_1forms_1_1status__
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a6c7a93d3dc3add2e579ed2a97e96a618" name="a6c7a93d3dc3add2e579ed2a97e96a618"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6c7a93d3dc3add2e579ed2a97e96a618">&#9670;&#160;</a></span>create() <span class="overload">[1/8]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> xtd::forms::control::create </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;&#160;</td>
-          <td class="paramname"><em>parent</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
-          <td class="paramname"><em>location</em> = <code>{-1,&#160;-1}</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;&#160;</td>
-          <td class="paramname"><em>size</em> = <code>{-1,&#160;-1}</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
-          <td class="paramname"><em>name</em> = <code><a class="el" href="classxtd_1_1ustring.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b">xtd::ustring::empty_string</a></code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>A factory to create a specified control with specified parent, location, size, and name. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">parent</td><td>The parent that contains the new created control. </td></tr>
-    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the control. </td></tr>
-    <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the control. </td></tr>
-    <tr><td class="paramname">name</td><td>The name of the control. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>New control created. </dd></dl>
-
-</div>
-</div>
-<a id="a7228d92b809441329e7ebeb0b5dc4cad" name="a7228d92b809441329e7ebeb0b5dc4cad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7228d92b809441329e7ebeb0b5dc4cad">&#9670;&#160;</a></span>create() <span class="overload">[2/8]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename control_t &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static control_t xtd::forms::control::create </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;&#160;</td>
-          <td class="paramname"><em>parent</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
-          <td class="paramname"><em>location</em> = <code>{-1,&#160;-1}</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;&#160;</td>
-          <td class="paramname"><em>size</em> = <code>{-1,&#160;-1}</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
-          <td class="paramname"><em>name</em> = <code><a class="el" href="classxtd_1_1ustring.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b">xtd::ustring::empty_string</a></code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>A factory to create a specified control with specified parent, location, size, and name. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">parent</td><td>The parent that contains the new created control. </td></tr>
-    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the control. </td></tr>
-    <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the control. </td></tr>
-    <tr><td class="paramname">name</td><td>The name of the control. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>New control created. </dd></dl>
-
-</div>
-</div>
 <a id="a41c65307367e3b81303f186729de9ddf" name="a41c65307367e3b81303f186729de9ddf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a41c65307367e3b81303f186729de9ddf">&#9670;&#160;</a></span>create() <span class="overload">[3/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a41c65307367e3b81303f186729de9ddf">&#9670;&#160;</a></span>create() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1437,185 +1293,8 @@ template&lt;typename control_t &gt; </div>
 
 </div>
 </div>
-<a id="a666a59357d5bd8028e2e970daad0b798" name="a666a59357d5bd8028e2e970daad0b798"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a666a59357d5bd8028e2e970daad0b798">&#9670;&#160;</a></span>create() <span class="overload">[4/8]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename control_t &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static control_t xtd::forms::control::create </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;&#160;</td>
-          <td class="paramname"><em>parent</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
-          <td class="paramname"><em>text</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
-          <td class="paramname"><em>location</em> = <code>{-1,&#160;-1}</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;&#160;</td>
-          <td class="paramname"><em>size</em> = <code>{-1,&#160;-1}</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
-          <td class="paramname"><em>name</em> = <code><a class="el" href="classxtd_1_1ustring.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b">xtd::ustring::empty_string</a></code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>A factory to create a specified control with specified parent, text, location, size, and name. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">parent</td><td>The parent that contains the new created control. </td></tr>
-    <tr><td class="paramname">text</td><td>A string that represent text of the control. </td></tr>
-    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the control. </td></tr>
-    <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the control. </td></tr>
-    <tr><td class="paramname">name</td><td>The name of the control. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>New control created. </dd></dl>
-
-</div>
-</div>
-<a id="a715ff790d0ca1efb82c5431d9785f05d" name="a715ff790d0ca1efb82c5431d9785f05d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a715ff790d0ca1efb82c5431d9785f05d">&#9670;&#160;</a></span>create() <span class="overload">[5/8]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> xtd::forms::control::create </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
-          <td class="paramname"><em>location</em> = <code>{-1,&#160;-1}</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;&#160;</td>
-          <td class="paramname"><em>size</em> = <code>{-1,&#160;-1}</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
-          <td class="paramname"><em>name</em> = <code><a class="el" href="classxtd_1_1ustring.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b">xtd::ustring::empty_string</a></code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>A factory to create a specified control with specified location, size, and name. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the control. </td></tr>
-    <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the control. </td></tr>
-    <tr><td class="paramname">name</td><td>The name of the control. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>New control created. </dd></dl>
-
-</div>
-</div>
-<a id="a7af97dfabdb463a98299210e4cba58d8" name="a7af97dfabdb463a98299210e4cba58d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7af97dfabdb463a98299210e4cba58d8">&#9670;&#160;</a></span>create() <span class="overload">[6/8]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename control_t &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static control_t xtd::forms::control::create </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
-          <td class="paramname"><em>location</em> = <code>{-1,&#160;-1}</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;&#160;</td>
-          <td class="paramname"><em>size</em> = <code>{-1,&#160;-1}</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
-          <td class="paramname"><em>name</em> = <code><a class="el" href="classxtd_1_1ustring.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b">xtd::ustring::empty_string</a></code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>A factory to create a specified control with specified location, size, and name. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the control. </td></tr>
-    <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the control. </td></tr>
-    <tr><td class="paramname">name</td><td>The name of the control. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>New control created. </dd></dl>
-
-</div>
-</div>
 <a id="aafc558c539ee160fc8d8176659f3b479" name="aafc558c539ee160fc8d8176659f3b479"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aafc558c539ee160fc8d8176659f3b479">&#9670;&#160;</a></span>create() <span class="overload">[7/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aafc558c539ee160fc8d8176659f3b479">&#9670;&#160;</a></span>create() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1664,68 +1343,6 @@ template&lt;typename control_t &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1status__bar.html" title="Represents a Windows status bar control.">xtd::forms::status_bar</a> created. </dd></dl>
-
-</div>
-</div>
-<a id="a2f18f45074d5203b7f6354ff37c647d2" name="a2f18f45074d5203b7f6354ff37c647d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f18f45074d5203b7f6354ff37c647d2">&#9670;&#160;</a></span>create() <span class="overload">[8/8]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename control_t &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static control_t xtd::forms::control::create </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
-          <td class="paramname"><em>text</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
-          <td class="paramname"><em>location</em> = <code>{-1,&#160;-1}</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;&#160;</td>
-          <td class="paramname"><em>size</em> = <code>{-1,&#160;-1}</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
-          <td class="paramname"><em>name</em> = <code><a class="el" href="classxtd_1_1ustring.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b">xtd::ustring::empty_string</a></code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>A factory to create a specified control with specified text, location ,size back_color and fore_color. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">text</td><td>A string that represent text of the control. </td></tr>
-    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the control. </td></tr>
-    <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the control. </td></tr>
-    <tr><td class="paramname">name</td><td>The name of the control. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>New control created. </dd></dl>
 
 </div>
 </div>
@@ -2455,7 +2072,7 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 10 2023 18:10:56 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Apr 14 2023 16:41:56 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
