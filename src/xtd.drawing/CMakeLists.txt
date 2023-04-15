@@ -17,6 +17,7 @@ add_sources(
   include/xtd/drawing/brush.h
   include/xtd/drawing/brushes.h
   include/xtd/drawing/buffered_graphics.h
+  include/xtd/drawing/buffered_graphics_context.h
   include/xtd/drawing/color.h
   include/xtd/drawing/colors.h
   include/xtd/drawing/copy_pixel_operation.h
@@ -111,6 +112,7 @@ add_sources(
   src/xtd/drawing/brush.cpp
   src/xtd/drawing/brushes.cpp
   src/xtd/drawing/buffered_graphics.cpp
+  src/xtd/drawing/buffered_graphics_context.cpp
   src/xtd/drawing/color.cpp
   src/xtd/drawing/colors.cpp
   src/xtd/drawing/cyan_colors.cpp
