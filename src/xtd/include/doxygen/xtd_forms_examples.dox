@@ -2626,6 +2626,21 @@
 /// <br>
 /// @image html form_background_image_gd.png
 ///
+/// @example form_background_image2.cpp
+/// demonstrates how to use of xtd::forms::form control with background_image.
+/// @par Windows
+/// @image html form_background_image2_w.png
+/// <br>
+/// @image html form_background_image2_wd.png
+/// @par macOS
+/// @image html form_background_image2_m.png
+/// <br>
+/// @image html form_background_image2_md.png
+/// @par Gnome
+/// @image html form_background_image2_g.png
+/// <br>
+/// @image html form_background_image2_gd.png
+///
 /// @example form_decoration.cpp
 /// demonstrates the use of xtd::forms::form.
 /// @par Windows
