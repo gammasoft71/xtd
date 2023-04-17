@@ -95,3 +95,4 @@ tools/xtdc-gui/properties/settings.h
 tools/keycodes/properties/resources.h
 tools/keycodes/properties/settings.h
 tools/keycodes/properties/startup.cpp
+examples/xtd.forms.examples/others/form_background_image2/properties/resources.h
