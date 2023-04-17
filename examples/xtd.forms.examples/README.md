@@ -264,6 +264,7 @@
 * [form_and_main](others/form_and_main/README.md) demonstrates how to use startup_ keyword.
 * [form_and_thread](others/form_and_thread/README.md) demonstrates how a thread can update ui with [xtd::forms::control::invoke](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a17ec51282322d8387937dc8dad438e32) method.
 * [form_background_image](others/form_background_image/README.md) demonstrates how to use [xtd::forms::form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html) class with image_background property.
+* [form_background_image2](others/form_background_image2/README.md) demonstrates how to use [xtd::forms::form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html) class with image_background property.
 * [form_decoration](others/form_decoration/README.md) demonstrates the use of [xtd::forms::form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html).
 * [form_resize](others/form_resize/README.md) shows how to set minimum size, set maximum size, move and resize a form.
 * [form_show](others/form_show/README.md) demonstrates how to launch form as normal window, model-less window and modal window.
