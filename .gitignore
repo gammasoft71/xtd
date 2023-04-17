@@ -61,6 +61,7 @@ examples/xtd.forms.examples/controls/picture_box/properties/resources.h
 examples/xtd.forms.examples/games/minesweeper/properties/startup.cpp
 examples/xtd.forms.examples/games/minesweeper/properties/settings.h
 examples/xtd.forms.examples/games/minesweeper/properties/resources.h
+examples/xtd.forms.examples/others/form_background_image2/properties/resources.h
 examples/xtd.forms.examples/others/stopwatch_form/properties/resources.h
 scripts/install/test_wxwidgets/wxwidgets.lck
 src/xtd/include/xtd/xtd.h
