@@ -1,2 +1,2 @@
-resource(background_dark resources/background_dark.png)
-resource(background_light resources/background_light.png)
+resource(bliss_day resources/bliss_day.png)
+resource(bliss_night resources/bliss_night.png)

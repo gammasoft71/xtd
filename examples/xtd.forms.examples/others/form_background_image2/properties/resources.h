@@ -15,14 +15,14 @@ namespace form_background_image2::properties {
   class resources final static_ {
   public:
     /// @brief Looks up a localized resource of type xtd::drawing::bitmap.
-    static const xtd::drawing::bitmap& background_dark() {
-      static xtd::drawing::bitmap bitmap(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), "..", "Resources", "background_dark.png"));
+    static const xtd::drawing::bitmap& bliss_day() {
+      static xtd::drawing::bitmap bitmap(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), "..", "Resources", "bliss_day.png"));
       return bitmap;
     }
 
     /// @brief Looks up a localized resource of type xtd::drawing::bitmap.
-    static const xtd::drawing::bitmap& background_light() {
-      static xtd::drawing::bitmap bitmap(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), "..", "Resources", "background_light.png"));
+    static const xtd::drawing::bitmap& bliss_night() {
+      static xtd::drawing::bitmap bitmap(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), "..", "Resources", "bliss_night.png"));
       return bitmap;
     }
 
