@@ -25,11 +25,12 @@ var searchData=
   ['brush_22',['brush',['../classxtd_1_1drawing_1_1brush.html',1,'xtd::drawing']]],
   ['brushes_23',['brushes',['../classxtd_1_1drawing_1_1brushes.html',1,'xtd::drawing']]],
   ['buffered_5fgraphics_24',['buffered_graphics',['../classxtd_1_1drawing_1_1buffered__graphics.html',1,'xtd::drawing']]],
-  ['busy_5fbox_25',['busy_box',['../classxtd_1_1forms_1_1busy__box.html',1,'xtd::forms']]],
-  ['busy_5fdialog_26',['busy_dialog',['../classxtd_1_1forms_1_1busy__dialog.html',1,'xtd::forms']]],
-  ['button_27',['button',['../classxtd_1_1forms_1_1button.html',1,'xtd::forms']]],
-  ['button_5fbase_28',['button_base',['../classxtd_1_1forms_1_1button__base.html',1,'xtd::forms']]],
-  ['button_5fimages_29',['button_images',['../classxtd_1_1forms_1_1button__images.html',1,'xtd::forms']]],
-  ['button_5frenderer_30',['button_renderer',['../classxtd_1_1forms_1_1button__renderer.html',1,'xtd::forms']]],
-  ['buttons_31',['buttons',['../classxtd_1_1forms_1_1buttons.html',1,'xtd::forms']]]
+  ['buffered_5fgraphics_5fcontext_25',['buffered_graphics_context',['../classxtd_1_1drawing_1_1buffered__graphics__context.html',1,'xtd::drawing']]],
+  ['busy_5fbox_26',['busy_box',['../classxtd_1_1forms_1_1busy__box.html',1,'xtd::forms']]],
+  ['busy_5fdialog_27',['busy_dialog',['../classxtd_1_1forms_1_1busy__dialog.html',1,'xtd::forms']]],
+  ['button_28',['button',['../classxtd_1_1forms_1_1button.html',1,'xtd::forms']]],
+  ['button_5fbase_29',['button_base',['../classxtd_1_1forms_1_1button__base.html',1,'xtd::forms']]],
+  ['button_5fimages_30',['button_images',['../classxtd_1_1forms_1_1button__images.html',1,'xtd::forms']]],
+  ['button_5frenderer_31',['button_renderer',['../classxtd_1_1forms_1_1button__renderer.html',1,'xtd::forms']]],
+  ['buttons_32',['buttons',['../classxtd_1_1forms_1_1buttons.html',1,'xtd::forms']]]
 ];

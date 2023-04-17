@@ -33,13 +33,14 @@ var searchData=
   ['brush_2eh_30',['brush.h',['../brush_8h.html',1,'']]],
   ['brushes_2eh_31',['brushes.h',['../brushes_8h.html',1,'']]],
   ['buffered_5fgraphics_2eh_32',['buffered_graphics.h',['../buffered__graphics_8h.html',1,'']]],
-  ['build_5ftype_2eh_33',['build_type.h',['../build__type_8h.html',1,'']]],
-  ['busy_5fbox_2eh_34',['busy_box.h',['../busy__box_8h.html',1,'']]],
-  ['busy_5fdialog_2eh_35',['busy_dialog.h',['../busy__dialog_8h.html',1,'']]],
-  ['button_2eh_36',['button.h',['../button_8h.html',1,'(Global Namespace)'],['../style__sheets_2button_8h.html',1,'(Global Namespace)']]],
-  ['button_5fbase_2eh_37',['button_base.h',['../button__base_8h.html',1,'']]],
-  ['button_5fimages_2eh_38',['button_images.h',['../button__images_8h.html',1,'']]],
-  ['button_5frenderer_2eh_39',['button_renderer.h',['../button__renderer_8h.html',1,'']]],
-  ['button_5fstate_2eh_40',['button_state.h',['../button__state_8h.html',1,'']]],
-  ['buttons_2eh_41',['buttons.h',['../buttons_8h.html',1,'']]]
+  ['buffered_5fgraphics_5fcontext_2eh_33',['buffered_graphics_context.h',['../buffered__graphics__context_8h.html',1,'']]],
+  ['build_5ftype_2eh_34',['build_type.h',['../build__type_8h.html',1,'']]],
+  ['busy_5fbox_2eh_35',['busy_box.h',['../busy__box_8h.html',1,'']]],
+  ['busy_5fdialog_2eh_36',['busy_dialog.h',['../busy__dialog_8h.html',1,'']]],
+  ['button_2eh_37',['button.h',['../button_8h.html',1,'(Global Namespace)'],['../style__sheets_2button_8h.html',1,'(Global Namespace)']]],
+  ['button_5fbase_2eh_38',['button_base.h',['../button__base_8h.html',1,'']]],
+  ['button_5fimages_2eh_39',['button_images.h',['../button__images_8h.html',1,'']]],
+  ['button_5frenderer_2eh_40',['button_renderer.h',['../button__renderer_8h.html',1,'']]],
+  ['button_5fstate_2eh_41',['button_state.h',['../button__state_8h.html',1,'']]],
+  ['buttons_2eh_42',['buttons.h',['../buttons_8h.html',1,'']]]
 ];
