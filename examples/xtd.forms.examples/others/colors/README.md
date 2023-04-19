@@ -4,8 +4,8 @@ demonstrates the use of [xtd::forms::user_control](https://gammasoft71.github.io
 
 # Sources
 
-* [src/colors.cpp](src/color_chooser.h)
-* [src/colors.cpp](src/color_editor.h)
+* [src/color_chooser.h](src/color_chooser.h)
+* [src/color_editor.h](src/color_editor.h)
 * [src/colors.cpp](src/colors.cpp)
 * [CMakeLists.txt](CMakeLists.txt)
 
