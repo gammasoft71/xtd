@@ -6,8 +6,12 @@ namespace minesweeper {
   /// @brief Represent high scores dialog that display high scores dialog.
   class high_scores_dialog final : public xtd::forms::form {
   public:
+    /// @name Constructors
+    
+    /// @{
     /// @brief Initialize a new instance of minesweeper::high_scores_dialog class.
     high_scores_dialog();
+    /// @}
     
   private:
     void read_and_update_settings();

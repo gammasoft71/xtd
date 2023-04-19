@@ -10,6 +10,9 @@ namespace minesweeper {
   /// @remarks the game contains 480 (30 x 16 cells and 99 mines for expert and custom level.
   class cell final {
   public:
+    /// @name Properties
+    
+    /// @{
     /// @brief Gets a value indicate if cell contains mine.
     /// @return true if cell contains mine; otherwhise false.
     bool contains_mine() const noexcept;
@@ -41,14 +44,22 @@ namespace minesweeper {
     /// @remarks The values is 30 x 30.
     static xtd::drawing::size size() noexcept;
     
+    /// @brief Gets the cell state.
+    /// @return One of minesweeper::cell_state value.
     cell_state state() const noexcept;
+    /// @brief Sets the cell state.
+    /// @param value One of minesweeper::cell_state value.
     void state(cell_state value) noexcept;
     
     /// @brief Gets the width of cell in pixels.
     /// @return The width of cell.
     /// @remarks The values is 30.
     static int width() noexcept;
+    /// @}
     
+    /// @name Methods
+    
+    /// @{
     /// @brief Clear all cell's values
     /// @remarks Clear as follow:
     /// | name                         | value                 |
@@ -57,7 +68,8 @@ namespace minesweeper {
     /// | number_of_neighbouring_mines | 0                     |
     /// | state                        | cell_state::unchecked |
     void clear() noexcept;
-    
+    /// @}
+
   private:
     bool has_mine_ = false;
     int number_of_neighboring_mines_ = 0;

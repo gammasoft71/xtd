@@ -8,9 +8,16 @@ namespace minesweeper {
   /// @remarks minesweeper::custom_field_dialog is used when user choose Custom from the Game menu.
   class custom_field_dialog final : public xtd::forms::form {
   public:
+    /// @name Constructors
+    
+    /// @{
     /// @brief Initialize a new instance of minesweeper::custom_field_dialog class.
     custom_field_dialog();
+    /// @}
     
+    /// @name Properties
+    
+    /// @{
     /// @brief Gets the custom height for the game area.
     /// @return The height of game area.
     /// @remarks The value is between 8 and 24.
@@ -37,16 +44,18 @@ namespace minesweeper {
     /// @param value The custom mines number.
     /// @remarks The value is between 10 and 667.
     void custom_mines(int value) noexcept;
-    
-    static constexpr const int minimum_height = 8;
-    static constexpr const int maximum_height = 24;
-    static constexpr const int minimum_width = 8;
-    static constexpr const int maximum_width = 30;
-    static constexpr const int minimum_mines = 10;
-    static constexpr const int maximum_mines = 667;
+    /// @}
     
   private:
     void on_text_box_key_press(object& sender, xtd::forms::key_press_event_args& e);
+
+    static constexpr const int minimum_height_ = 8;
+    static constexpr const int maximum_height_ = 24;
+    static constexpr const int minimum_width_ = 8;
+    static constexpr const int maximum_width_ = 30;
+    static constexpr const int minimum_mines_ = 10;
+    static constexpr const int maximum_mines_ = 667;
+
     xtd::forms::label message_label_;
     xtd::forms::label custom_height_label_;
     xtd::forms::label custom_width_label_;
@@ -55,8 +64,8 @@ namespace minesweeper {
     xtd::forms::text_box custom_width_text_box_;
     xtd::forms::text_box custom_mines_text_box_;
     xtd::forms::button ok_button_;
-    int custom_height_ = minimum_height;
-    int custom_width_ = minimum_width;
-    int custom_mines_ = minimum_mines;
+    int custom_height_ = minimum_height_;
+    int custom_width_ = minimum_width_;
+    int custom_mines_ = minimum_mines_;
   };
 }
