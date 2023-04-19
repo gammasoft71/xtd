@@ -2071,6 +2071,7 @@ if (MSVC)
   add_definitions(-D_SILENCE_ALL_CXX17_DEPRECATION_WARNINGS)
   add_compile_options(${BUILD_ON_MULTIPLE_PROCESSES} /utf-8 /wd4251 /wd4275 /wd4996 /Zc:__cplusplus)
   set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /bigobj")
+  set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /bigobj")
   
   # The following linker flag goes against Microsoft's note.
   # But this is not a problem at the moment. If there is ever a problem or doubt, it should be addressed and removed it.
