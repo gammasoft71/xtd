@@ -82,8 +82,8 @@ int custom_field_dialog::custom_heght() const noexcept {
 
 void custom_field_dialog::custom_height(int value) noexcept {
   custom_height_ = value;
-  if (custom_height_ < minimum_height) custom_height_ = minimum_height;
-  else if (custom_height_ > maximum_height) custom_height_ = maximum_height;
+  if (custom_height_ < minimum_height_) custom_height_ = minimum_height_;
+  else if (custom_height_ > maximum_height_) custom_height_ = maximum_height_;
   custom_height_text_box_.text(ustring::format("{}", custom_height_));
 }
 
@@ -93,8 +93,8 @@ int custom_field_dialog::custom_width() const noexcept {
 
 void custom_field_dialog::custom_width(int value) noexcept {
   custom_width_ = value;
-  if (custom_width_ < minimum_width) custom_width_ = minimum_width;
-  else if (custom_width_ > maximum_width) custom_width_ = maximum_width;
+  if (custom_width_ < minimum_width_) custom_width_ = minimum_width_;
+  else if (custom_width_ > maximum_width_) custom_width_ = maximum_width_;
   custom_width_text_box_.text(ustring::format("{}", custom_width_));
 }
 
@@ -104,8 +104,8 @@ int custom_field_dialog::custom_mines() const noexcept {
 
 void custom_field_dialog::custom_mines(int value) noexcept {
   custom_mines_ = value;
-  if (custom_mines_ < minimum_mines) custom_mines_ = minimum_mines;
-  else if (custom_mines_ > maximum_mines) custom_mines_ = maximum_mines;
+  if (custom_mines_ < minimum_mines_) custom_mines_ = minimum_mines_;
+  else if (custom_mines_ > maximum_mines_) custom_mines_ = maximum_mines_;
   custom_mines_text_box_.text(ustring::format("{}", custom_mines_));
 }
 

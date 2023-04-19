@@ -7,9 +7,16 @@ namespace minesweeper {
   /// @brief Represent input name dialog that display input name dialog.
   class input_name_dialog final : public xtd::forms::form {
   public:
+    /// @name Constructors
+    
+    /// @{
     /// @brief Initialize a new instance of minesweeper::input_name_dialog class.
     input_name_dialog();
+    /// @}
     
+    /// @name Properties
+    
+    /// @{
     /// @brief Gets the level for which the gammer name is entered.
     /// @return One of minesweeper::level values.
     minesweeper::level level() const noexcept;
@@ -23,6 +30,7 @@ namespace minesweeper {
     /// @brief Sets the gammer name.
     /// @param gammer_name The gammer name.
     void gammer_name(const xtd::ustring& gammer_name) noexcept;
+    /// @}
     
   private:
     xtd::ustring level_to_string() noexcept;

@@ -20,12 +20,20 @@ namespace minesweeper {
     using grid_size = xtd::drawing::size;
     
   public:
-    /// @brief The main entry point for the game.
-    static void main();
+    /// @name Constructors
     
+    /// @{
     /// @brief Initialize a new instance of minesweeper::form_minesweeper form.
     minesweeper_form();
+    /// @}
+
+    /// @name Methods
     
+    /// @{
+    /// @brief The main entry point for the game.
+    static void main();
+    /// @}
+
   private:
     void change_level(level l);
     
