@@ -92,7 +92,7 @@ void minesweeper_form::new_game() {
     auto x = rand.next(0, grid_size_.width() - 1);
     auto y = rand.next(0, grid_size_.height() - 1);
     
-    if (cells_[x][y].has_mine()) {
+    if (cells_[x][y].contains_mine()) {
       count--;
       continue;
     }
@@ -103,8 +103,8 @@ void minesweeper_form::new_game() {
     for (auto x = 0; x < grid_size_.width(); x++)
       for (auto yy = y - 1; yy <= y + 1; yy++)
         for (auto xx = x - 1; xx <= x + 1; xx++)
-          if (yy >= 0 && yy < grid_size_.height() && xx >= 0 && xx < grid_size_.width() && cells_[xx][yy].has_mine())
-            cells_[x][y].neighbors(cells_[x][y].neighbors() + 1);
+          if (yy >= 0 && yy < grid_size_.height() && xx >= 0 && xx < grid_size_.width() && cells_[xx][yy].contains_mine())
+            cells_[x][y].neighbors(cells_[x][y].number_of_neighbouring_mines() + 1);
             
   mine_count_label_.text(ustring::format("{:D3}", mine_count_ - flagged_mine_count_));
   stopwatch_label_.text("000");
@@ -125,7 +125,7 @@ int minesweeper_form::checked_cell(const point& cell_location) {
     cells_[cell_location.x()][cell_location.y()].state(cell_state::checked);
     checked_cell_count_++;
   }
-  return cells_[cell_location.x()][cell_location.y()].neighbors();
+  return cells_[cell_location.x()][cell_location.y()].number_of_neighbouring_mines();
 }
 
 void minesweeper_form::draw_cell(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) {
@@ -142,7 +142,7 @@ void minesweeper_form::draw_checked(paint_event_args& e, const rectangle& clip_r
   color text_color;
   
   if (properties::settings::default_settings().original_color()) {
-    switch (cell.neighbors()) {
+    switch (cell.number_of_neighbouring_mines()) {
       case 1: text_color = color::blue; break;
       case 2: text_color = color::green; break;
       case 3: text_color = color::red; break;
@@ -154,7 +154,7 @@ void minesweeper_form::draw_checked(paint_event_args& e, const rectangle& clip_r
       default: return;
     }
   } else if (back_color().get_brightness() < 0.5f) {
-    switch (cell.neighbors()) {
+    switch (cell.number_of_neighbouring_mines()) {
       case 1: text_color = color::light_sky_blue; break;
       case 2: text_color = color::from_argb(0x30, 0xDC, 0x66); break;
       case 3: text_color = color::from_argb(0xD0, 0x3E, 0x3D); break;
@@ -166,7 +166,7 @@ void minesweeper_form::draw_checked(paint_event_args& e, const rectangle& clip_r
       default: return;
     }
   } else {
-    switch (cell.neighbors()) {
+    switch (cell.number_of_neighbouring_mines()) {
       case 1: text_color = color::blue; break;
       case 2: text_color = color::green; break;
       case 3: text_color = color::red; break;
@@ -178,7 +178,7 @@ void minesweeper_form::draw_checked(paint_event_args& e, const rectangle& clip_r
       default: return;
     }
   }
-  auto text = std::to_string(cell.neighbors());
+  auto text = std::to_string(cell.number_of_neighbouring_mines());
   auto x = clip_rectangle.left() + (clip_rectangle.width() - e.graphics().measure_string(text, font()).width()) / 2;
   auto y = clip_rectangle.top() + (clip_rectangle.height() - e.graphics().measure_string(text, font()).height()) / 2;
   e.graphics().draw_string(text, font(), solid_brush(text_color), x, y);
@@ -257,9 +257,9 @@ void minesweeper_form::game_over() {
   for (auto y = 0; y < grid_size_.height(); y++) {
     for (auto x = 0; x < grid_size_.width(); x++) {
       if (cells_[x][y].state() == cell_state::exploded_mine) continue;
-      if (cells_[x][y].state() == cell_state::flag && !cells_[x][y].has_mine())
+      if (cells_[x][y].state() == cell_state::flag && !cells_[x][y].contains_mine())
         cells_[x][y].state(cell_state::error);
-      if (cells_[x][y].state() != cell_state::flag && cells_[x][y].has_mine())
+      if (cells_[x][y].state() != cell_state::flag && cells_[x][y].contains_mine())
         cells_[x][y].state(cell_state::mine);
     }
   }
@@ -415,7 +415,7 @@ void minesweeper_form::uncover_cell(int x, int y) {
   if (cells_[x][y].state() == cell_state::question)
     cells_[x][y].state(cell_state::unchecked);
   if (cells_[x][y].state() == cell_state::unchecked) {
-    if (cells_[x][y].has_mine()) {
+    if (cells_[x][y].contains_mine()) {
       cells_[x][y].state(cell_state::exploded_mine);
       game_over();
     } else {
@@ -437,7 +437,7 @@ void minesweeper_form::you_win() {
   game_over_ = true;
   for (auto y = 0; y < grid_size_.height(); y++)
     for (auto x = 0; x < grid_size_.width(); x++)
-      if (cells_[x][y].state() != cell_state::flag && cells_[x][y].has_mine())
+      if (cells_[x][y].state() != cell_state::flag && cells_[x][y].contains_mine())
         cells_[x][y].state(cell_state::mine);
         
   start_game_.image(bitmap(properties::resources::smiley3(), {24, 24}));
