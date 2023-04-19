@@ -2,7 +2,7 @@
 
 using namespace minesweeper;
 
-bool cell::has_mine() const noexcept {
+bool cell::contains_mine() const noexcept {
   return has_mine_;
 }
 
@@ -10,20 +10,20 @@ void cell::has_mine(bool value) noexcept {
   has_mine_ = value;
 }
 
-bool cell::has_neighbors() const noexcept {
-  return neighbors_;
+bool cell::has_neighbouring_mines() const noexcept {
+  return number_of_neighboring_mines_;
 }
 
 int cell::height() noexcept {
   return size_.height();
 }
 
-int cell::neighbors() const noexcept {
-  return neighbors_;
+int cell::number_of_neighbouring_mines() const noexcept {
+  return number_of_neighboring_mines_;
 }
 
 void cell::neighbors(int value) noexcept {
-  neighbors_ = value;
+  number_of_neighboring_mines_ = value;
 }
 
 xtd::drawing::size cell::size() noexcept {
@@ -44,6 +44,6 @@ int cell::width() noexcept {
 
 void cell::clear() noexcept {
   has_mine_ = false;
-  neighbors_ = 0;
+  number_of_neighboring_mines_ = 0;
   state_ = cell_state::unchecked;
 }
