@@ -27,7 +27,7 @@ namespace xtd {
     /// @remarks If you need custom date formatting and a selection limited to just one date, you might consider using a xtd::forms::month_calendar::date_time_picker control instead of a xtd::forms::month_calendar. Using the xtd::forms::month_calendar::date_time_picker eliminates much of the need for validating date/time values.
     /// @par Appearance
     /// |       | Windows                                     | macOS                                       | Gnome                                       |
-    /// | ----- | ------------------------------------------- | --------------------------------------------| --------------------------------------------|
+    /// | ----- | ------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
     /// | Light |  @image html control_month_calendar_w.png   |  @image html control_month_calendar_m.png   |  @image html control_month_calendar_g.png   |
     /// | Dark  |  @image html control_month_calendar_wd.png  |  @image html control_month_calendar_md.png  |  @image html control_month_calendar_gd.png  |
     /// @par Examples

@@ -27,7 +27,7 @@ namespace xtd {
     /// @remarks Use the checked property to get or set the state of a radio_button. The option button's appearance can be altered to appear as a toggle-style button or as a standard option button by setting the appearance property.
     /// @par Appearance
     /// |       | Windows                                   | macOS                                     | Gnome                                     |
-    /// | ----- | ----------------------------------------- | ------------------------------------------| ------------------------------------------|
+    /// | ----- | ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
     /// | Light |  @image html control_radio_button_w.png   |  @image html control_radio_button_m.png   |  @image html control_radio_button_g.png   |
     /// | Dark  |  @image html control_radio_button_wd.png  |  @image html control_radio_button_md.png  |  @image html control_radio_button_gd.png  |
     /// @par Examples

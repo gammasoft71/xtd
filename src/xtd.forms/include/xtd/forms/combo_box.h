@@ -23,7 +23,7 @@ namespace xtd {
     /// @remarks You can use these properties to manage the currently selected item in the list, the text property to specify the string displayed in the editing field, the selected_index property to get or set the current item, and the selected_item property to get or set a reference to the object.
     /// @par Appearance
     /// |       | Windows                                | macOS                                  | Gnome                                  |
-    /// | ----- | ---------------------------------------| ---------------------------------------| ---------------------------------------|
+    /// | ----- | -------------------------------------- | -------------------------------------- | -------------------------------------- |
     /// | Light |  @image html control_combo_box_w.png   |  @image html control_combo_box_m.png   |  @image html control_combo_box_g.png   |
     /// | Dark  |  @image html control_combo_box_wd.png  |  @image html control_combo_box_md.png  |  @image html control_combo_box_gd.png  |
     /// @par Examples

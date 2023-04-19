@@ -30,7 +30,7 @@
 ## xtd libraries
 
 | Name                                             | Status                                |
-|--------------------------------------------------|---------------------------------------|
+| ------------------------------------------------ | ------------------------------------- |
 | [xtd.core](development_status_xtd_core.md)       | ![progress](pictures/progress75.png)  |
 | [xtd.drawing](development_status_xtd_drawing.md) | ![progress](pictures/progress100.png) |
 | [xtd.forms](development_status_xtd_forms.md)     | ![progress](pictures/progress75.png)  |
@@ -39,7 +39,7 @@
 ## Others
 
 | Name                                       | Status                                |
-|--------------------------------------------|---------------------------------------|
+| ------------------------------------------ | ------------------------------------- |
 | [cmake](development_status_cmake.md)       | ![progress](pictures/progress100.png) |
 | [themes](development_status_themes.md)     | ![progress](pictures/progress25.png)  |
 | [toolkits](development_status_toolkits.md) | ![progress](pictures/progress75.png)  |

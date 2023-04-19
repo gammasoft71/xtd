@@ -19,7 +19,7 @@
 ## Tools
 
 | Name                                | Type        | Status                                |
-|-------------------------------------|-------------|---------------------------------------|
+| ----------------------------------- | ----------- | ------------------------------------- |
 | [guidgen](../tools/guidgen)         | application | ![progress](pictures/progress100.png) |
 | [guidgen-gui](../tools/guidgen-gui) | application | ![progress](pictures/progress100.png) |
 | [sleepfor](../tools/sleepfor)       | application | ![progress](pictures/progress100.png) |

@@ -22,7 +22,7 @@
 ## xtd::drawing
 
 | Name                                                                                | Type         | Status                                |
-|-------------------------------------------------------------------------------------|--------------|---------------------------------------|
+| ----------------------------------------------------------------------------------- | ------------ | ------------------------------------- |
 | [bitmap](../src/xtd.drawing/include/xtd/drawing/bitmap.h)                           | class        | ![progress](pictures/progress100.png) |
 | [brush](../src/xtd.drawing/include/xtd/drawing/brush.h)                             | class        | ![progress](pictures/progress100.png) |
 | [brushes](../src/xtd.drawing/include/xtd/drawing/brushes.h)                         | static class | ![progress](pictures/progress100.png) |
@@ -65,7 +65,7 @@
 ## xtd::drawing::drawing2d
 
 | Name                                                                                                    | Type         | Status                                |
-|---------------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
+| ------------------------------------------------------------------------------------------------------- | ------------ | ------------------------------------- |
 | [compisiting_mode](../src/xtd.drawing/include/xtd/drawing/drawing2d/compisiting_mode.h)                 | enumeration  | ![progress](pictures/progress100.png) |
 | [compisiting_quality](../src/xtd.drawing/include/xtd/drawing/drawing2d/compisiting_quality.h)           | enumeration  | ![progress](pictures/progress100.png) |
 | [conical_gradient_brush](../src/xtd.drawing/include/xtd/drawing/drawing2d/conical_gradient_brush.h)     | class        | ![progress](pictures/progress100.png) |
@@ -93,7 +93,7 @@
 ## xtd::drawing::imaging
 
 | Name                                                                                                          | Type         | Status                                |
-|---------------------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
+| ------------------------------------------------------------------------------------------------------------- | ------------ | ------------------------------------- |
 | [bitmap_data](../src/xtd.drawing/include/xtd/drawing/imaging/bitmap_data.h)                                   | class        | ![progress](pictures/progress100.png) |
 | [color_palette](../src/xtd.drawing/include/xtd/drawing/imaging/color_palette.h)                               | class        | ![progress](pictures/progress100.png) |
 | [encoder](../src/xtd.drawing/include/xtd/drawing/imaging/encoder.h)                                           | class        | ![progress](pictures/progress100.png) |
@@ -110,7 +110,7 @@
 ## xtd::drawing::text
 
 | Name                                                                                                 | Type         | Status                                |
-|------------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
+| ---------------------------------------------------------------------------------------------------- | ------------ | ------------------------------------- |
 | [font_collection](../src/xtd.drawing/include/xtd/drawing/text/font_collection.h)                     | class        | ![progress](pictures/progress100.png) |
 | [generic_font_families](../src/xtd.drawing/include/xtd/drawing/text/generic_font_families.h)         | enumeration  | ![progress](pictures/progress100.png) |
 | [hotkey_prefix](../src/xtd.drawing/include/xtd/drawing/text/hotkey_prefix.h)                         | enumeration  | ![progress](pictures/progress100.png) |

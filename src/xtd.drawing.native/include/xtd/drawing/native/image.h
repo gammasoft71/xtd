@@ -42,7 +42,7 @@ namespace xtd {
           /// @brief The ID of the property.
           /// @remarks The following table shows the property tags and their IDs.
           /// | ID     | Property tag                                  |
-          /// |--------|-----------------------------------------------|
+          /// | ------ | --------------------------------------------- |
           /// | 0x000  | property_tag_gps_ver                          |
           /// | 0x001  | property_tag_gps_latitude_ref                 |
           /// | 0x002  | property_tag_gps_latitude                     |
@@ -266,7 +266,7 @@ namespace xtd {
           /// @brief An integer that defines the type of data contained in the value property.
           /// @remarks The following table shows integers and the types they represent.
           /// | Integer | Represented Type                                                                                                                                                                                                                                            |
-          /// |---------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+          /// | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
           /// | 1       | Specifies that Value is an array of bytes.                                                                                                                                                                                                                  |
           /// | 2       | Specifies that Value is a null-terminated ASCII string. If you set the type data member to ASCII type, you should set the Len property to the length of the string including the null terminator. For example, the string "Hello" would have a length of 6. |
           /// | 3       | Specifies that Value is an array of unsigned short (16-bit) integers.                                                                                                                                                                                       |

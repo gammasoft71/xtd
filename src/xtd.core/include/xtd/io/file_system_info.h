@@ -253,7 +253,7 @@ namespace xtd {
       /// * When the xtd::io::file_system_info is constructed from a file path with a trailing dot, then that trailing dot is trimmed, so new xtd::io::file_system_info("foo.bar.").extension returns ".bar".
       /// @remarks
       /// | To do this...                                 | See the example in this topic...                                                                                                               |
-      /// |-----------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
+      /// | --------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
       /// | Create a text file.                           | <a ref="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks/How-tos/write_text_to_a_file">How to: Write Text to a File</a> |
       /// | Write to a text file.                         | <a ref="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks/How-tos/write_text_to_a_file">How to: Write Text to a File</a> |
       /// | Read from a text file.                        | <a ref="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks/How-tos/read_text_from_a_file">How to: Read Text to a File</a> |

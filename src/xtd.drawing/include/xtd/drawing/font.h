@@ -186,7 +186,7 @@ namespace xtd {
       /// @return A byte value that specifies the GDI character set that this xtd::drawing::font uses. The default is 1.
       /// @remarks This property returns 1, unless a different character set is specified in the font(string, float, font_style, graphics_unit, xtd::byte) constructor. This property takes a value from the list defined in the Windows SDK header file WinGDI.h. The character sets and byte values are listed in the following table.
       /// | Character set | Value |
-      /// |---------------|-------|
+      /// | ------------- | ----- |
       /// | ANSI          | 0     |
       /// | DEFAULT       | 1     |
       /// | SYMBOL        | 2     |

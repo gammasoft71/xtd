@@ -339,7 +339,7 @@ namespace xtd {
       /// @endcode
       /// @remarks search_pattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in search_pattern.
       /// | Wildcard specifier | Matches                                   |
-      /// |--------------------|-------------------------------------------|
+      /// | ------------------ | ----------------------------------------- |
       /// | * (asterisk)       | Zero or more characters in that position. |
       /// | ? (question mark)  | Zero or one character in that position.   |
       /// @remarks Characters other than the wildcard are literal characters. For example, the search_pattern string "*t" searches for all names in path ending with the letter "t". The search_pattern string "s*" searches for all names in path beginning with the letter "s".
@@ -428,7 +428,7 @@ namespace xtd {
       /// @endcode
       /// @remarks search_pattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in searchPattern.
       /// | Wildcard specifier | Matches                                   |
-      /// | -------------------|-------------------------------------------|
+      /// | ------------------ | ----------------------------------------- |
       /// | * (asterisk)       | Zero or more characters in that position. |
       /// | ? (question mark)  | Zero or one character in that position.   |
       /// Characters other than the wildcard are literal characters. For example, the search_pattern string "*t" searches for all names in path ending with the letter "t". The search_attern string "s*" searches for all names in path beginning with the letter "s".
@@ -459,7 +459,7 @@ namespace xtd {
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
       /// @remarks search_pattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in searchPattern.
       /// | Wildcard specifier | Matches                                   |
-      /// | -------------------|-------------------------------------------|
+      /// | ------------------ | ----------------------------------------- |
       /// | * (asterisk)       | Zero or more characters in that position. |
       /// | ? (question mark)  | Zero or one character in that position.   |
       /// Characters other than the wildcard are literal characters. For example, the search_pattern string "*t" searches for all names in path ending with the letter "t". The search_attern string "s*" searches for all names in path beginning with the letter "s".
@@ -714,7 +714,7 @@ namespace xtd {
       /// @remarks This method returns all subdirectories directly under the specified directory that match the specified search pattern. If the specified directory has no subdirectories, or no subdirectories match the search_pattern parameter, this method returns an empty array. Only the top directory is searched.
       /// @remarks search_pattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in search_pattern.
       /// | Wildcard specifier | Matches                                   |
-      /// |--------------------|-------------------------------------------|
+      /// | ------------------ | ----------------------------------------- |
       /// | * (asterisk)       | Zero or more characters in that position. |
       /// | ? (question mark)  | Zero or one character in that position.   |
       /// @remarks Characters other than the wildcard are literal characters. For example, the search_attern string "*t" searches for all names in path ending with the letter "t". The search_pattern string "s*" searches for all names in path beginning with the letter "s".
@@ -868,7 +868,7 @@ namespace xtd {
       /// @remarks The returned file names are appended to the supplied path parameter and the order of the returned file names is not guaranteed; use the std::sort method if a specific sort order is required.
       /// @remarks search_pattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in search_pattern.
       /// | Wildcard specifier | Matches                                   |
-      /// |--------------------|-------------------------------------------|
+      /// | ------------------ | ----------------------------------------- |
       /// | * (asterisk)       | Zero or more characters in that position. |
       /// | ? (question mark)  | Zero or one character in that position.   |
       /// @remarks Characters other than the wildcard are literal characters. For example, the search_pattern string "*t" searches for all names in path ending with the letter "t". The search_pattern string "s*" searches for all names in path beginning with the letter "s".
@@ -1108,7 +1108,7 @@ namespace xtd {
       /// @remarks The returned file names are appended to the supplied path parameter and the order of the returned file names is not guaranteed; use the std::sort method if a specific sort order is required.
       /// @remarks search_pattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in search_pattern.
       /// | Wildcard specifier | Matches                                   |
-      /// |--------------------|-------------------------------------------|
+      /// | ------------------ | ----------------------------------------- |
       /// | * (asterisk)       | Zero or more characters in that position. |
       /// | ? (question mark)  | Zero or one character in that position.   |
       /// @remarks Characters other than the wildcard are literal characters. For example, the search_pattern string "*t" searches for all names in path ending with the letter "t". The search_pattern string "s*" searches for all names in path beginning with the letter "s".

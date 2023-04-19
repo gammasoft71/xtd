@@ -28,7 +28,7 @@ namespace xtd {
       /// @ingroup xtd_core
       /// @remarks Use a xtd::net::sockets::multicast_option to store the xtd::net::ip_address of a multicast group you want to join or drop. Use the xtd::net::sockets::socket::set_socket_option method with the following parameters to join a multicast group.
       /// | Parameter         | Value                                                   |
-      /// |-------------------|---------------------------------------------------------|
+      /// | ----------------- | ------------------------------------------------------- |
       /// | socket_option_level | xtd::net::sockets::socket_option_level::udp           |
       /// | socket_option_name  | xtd::net::sockets::socket_option_name::add_membership |
       /// | object            | xtd::net::sockets::multicast_option                     |

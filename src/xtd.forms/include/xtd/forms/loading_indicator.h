@@ -18,7 +18,7 @@ namespace xtd {
     /// @ingroup xtd_forms controls
     /// @par Appearance
     /// |       | Windows                                        | macOS                                          | Gnome                                          |
-    /// | ----- | ---------------------------------------------- | -----------------------------------------------| -----------------------------------------------|
+    /// | ----- | ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- |
     /// | Light |  @image html control_loading_indicator_w.png   |  @image html control_loading_indicator_m.png   |  @image html control_loading_indicator_g.png   |
     /// | Dark  |  @image html control_loading_indicator_wd.png  |  @image html control_loading_indicator_md.png  |  @image html control_loading_indicator_gd.png  |
     /// @par Examples

@@ -298,7 +298,7 @@ namespace xtd {
     /// @return One of the values in the following table.
     ///
     /// | value parameter                       | Return value                                                  |
-    /// |---------------------------------------|---------------------------------------------------------------|
+    /// | ------------------------------------- | ------------------------------------------------------------- |
     /// | Positive                              | The natural logarithm of d; that is, ln value, or log e value |
     /// | Zero                                  | xtd::math::negative_infinity                                  |
     /// | Negative                              | xtd::math::NaN                                                |
@@ -313,7 +313,7 @@ namespace xtd {
     /// @return One of the values in the following table. (+Infinity denotes math::positive_infinity, -Infinity denotes math::negative_infinity, and math::NaN denotes math::NaN.)
     ///
     /// | a                                | new_base                                | Return value                 |
-    /// |----------------------------------|-----------------------------------------| -----------------------------|
+    /// | -------------------------------- | --------------------------------------- | ---------------------------- |
     /// | a > 0                            | (0 < new_base < 1) -or- (new_base > 1)  | log new_base (a)             |
     /// | a < 0                            | (any value)                             | xtd::math::NaN               |
     /// | (any value)                      | new_base < 0                            | xtd::math::NaN               |
@@ -335,7 +335,7 @@ namespace xtd {
     /// @return One of the values in the following table.
     ///
     /// | value parameter                       | Return value                                                  |
-    /// |---------------------------------------|---------------------------------------------------------------|
+    /// | ------------------------------------- | ------------------------------------------------------------- |
     /// | Positive                              | The natural logarithm of d; that is, ln value, or log e value |
     /// | Zero                                  | xtd::math::negative_infinity                                  |
     /// | Negative                              | xtd::math::NaN                                                |
@@ -483,7 +483,7 @@ namespace xtd {
     /// @remarks The following table indicates the return value when various values or ranges of values are specified for the x and y parameters. For more information, see Double::math::positive_infinity, Double::math::negative_infinity, and Double::NaN.
     ///
     /// | Parameters                                                                                                       | Return value            |
-    /// |------------------------------------------------------------------------------------------------------------------|-------------------------|
+    /// | ---------------------------------------------------------------------------------------------------------------- | ----------------------- |
     /// | x or y = math::NaN.                                                                                              | math::NaN               |
     /// | x = Any value except math::NaN; y = 0.                                                                           | 1                       |
     /// | x = math::negative_infinity; y < 0.                                                                              | 0                       |
@@ -531,7 +531,7 @@ namespace xtd {
     /// @return int32 A number that indicates the sign of value, as shown in the following table.
     ///
     /// | Return value | Meaning                     |
-    /// |--------------|-----------------------------|
+    /// | ------------ | --------------------------- |
     /// | -1           | value is less than zero.    |
     /// | 0            | value is equal to zero.     |
     /// | 1            | value is greater than zero. |
@@ -542,7 +542,7 @@ namespace xtd {
     /// @return int32 A number that indicates the sign of value, as shown in the following table.
     ///
     /// | Return value | Meaning                     |
-    /// |--------------|-----------------------------|
+    /// | ------------ | --------------------------- |
     /// | -1           | value is less than zero.    |
     /// | 0            | value is equal to zero.     |
     /// | 1            | value is greater than zero. |
@@ -553,7 +553,7 @@ namespace xtd {
     /// @return int32 A number that indicates the sign of value, as shown in the following table.
     ///
     /// | Return value | Meaning                     |
-    /// |--------------|-----------------------------|
+    /// | ------------ | --------------------------- |
     /// | -1           | value is less than zero.    |
     /// | 0            | value is equal to zero.     |
     /// | 1            | value is greater than zero. |
@@ -563,7 +563,7 @@ namespace xtd {
     /// @return int32 A number that indicates the sign of value, as shown in the following table.
     ///
     /// | Return value | Meaning                     |
-    /// |--------------|-----------------------------|
+    /// | ------------ | --------------------------- |
     /// | -1           | value is less than zero.    |
     /// | 0            | value is equal to zero.     |
     /// | 1            | value is greater than zero. |
@@ -573,7 +573,7 @@ namespace xtd {
     /// @return int32 A number that indicates the sign of value, as shown in the following table.
     ///
     /// | Return value | Meaning                     |
-    /// |--------------|-----------------------------|
+    /// | ------------ | --------------------------- |
     /// | -1           | value is less than zero.    |
     /// | 0            | value is equal to zero.     |
     /// | 1            | value is greater than zero. |
@@ -583,7 +583,7 @@ namespace xtd {
     /// @return int32 A number that indicates the sign of value, as shown in the following table.
     ///
     /// | Return value | Meaning                     |
-    /// |--------------|-----------------------------|
+    /// | ------------ | --------------------------- |
     /// | -1           | value is less than zero.    |
     /// | 0            | value is equal to zero.     |
     /// | 1            | value is greater than zero. |
@@ -593,7 +593,7 @@ namespace xtd {
     /// @return int32 A number that indicates the sign of value, as shown in the following table.
     ///
     /// | Return value | Meaning                     |
-    /// |--------------|-----------------------------|
+    /// | ------------ | --------------------------- |
     /// | -1           | value is less than zero.    |
     /// | 0            | value is equal to zero.     |
     /// | 1            | value is greater than zero. |
@@ -603,7 +603,7 @@ namespace xtd {
     /// @return int32 A number that indicates the sign of value, as shown in the following table.
     ///
     /// | Return value | Meaning                     |
-    /// |--------------|-----------------------------|
+    /// | ------------ | --------------------------- |
     /// | -1           | value is less than zero.    |
     /// | 0            | value is equal to zero.     |
     /// | 1            | value is greater than zero. |
@@ -625,7 +625,7 @@ namespace xtd {
     /// @return One of the values in the following table.
     ///
     /// | value parameter                | Return value                   |
-    /// |--------------------------------|--------------------------------|
+    /// | ------------------------------ | ------------------------------ |
     /// | Zero or positive               | The positive square root of d. |
     /// | Negative                       | math::NaN                      |
     /// | Equals math::NaN               | math::NaN                      |
@@ -647,7 +647,7 @@ namespace xtd {
     /// @return The integral part of d; that is, the number that remains after any fractional digits have been discarded, or one of the values listed in the following table.
     ///
     /// | value            | Return value     |
-    /// |------------------|------------------|
+    /// | ---------------- | ---------------- |
     /// | NaN              | NaN              |
     /// | NegativeInfinity | NegativeInfinity |
     /// | PositiveInfinity | PositiveInfinity |
@@ -657,7 +657,7 @@ namespace xtd {
     /// @return The integral part of d; that is, the number that remains after any fractional digits have been discarded, or one of the values listed in the following table.
     ///
     /// | value                   | Return value            |
-    /// |-------------------------|-------------------------|
+    /// | ----------------------- | ----------------------- |
     /// | math::NaN               | math::NaN               |
     /// | math::negative_infinity | math::negative_infinity |
     /// | math::positive_infinity | math::positive_infinity |

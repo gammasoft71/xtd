@@ -81,7 +81,7 @@ namespace xtd {
         /// @param gdi_char_set The GDI character set.
         /// @param gdi_vertical_font True is the font is GDI vertical font; otherwise false.
         /// | Character set | Value |
-        /// |---------------|-------|
+        /// | ------------- | ----- |
         /// | ANSI          | 0     |
         /// | DEFAULT       | 1     |
         /// | SYMBOL        | 2     |

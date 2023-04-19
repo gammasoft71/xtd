@@ -24,7 +24,7 @@ namespace xtd {
       /// @remarks When you pass a parameter to an image encoder, the parameter is encapsulated in an EncoderParameter object. One of the fields of the EncoderParameter object is a GUID that specifies the category of the parameter. Use the static fields of the Encoder class to retrieve an Encoder that contains parameters of the desired category.
       /// @remarks The image encoders that are built into GDI+ receive parameters that belong to several categories. The following table lists all the categories and the GUID associated with each category.
       /// | Category          | GUID                                 |
-      /// |-------------------|--------------------------------------|
+      /// | ----------------- | ------------------------------------ |
       /// | chrominance_table | f2e455dc-09b3-4316-8260-676ada32481c |
       /// | color_depth       | 66087055-ad66-4c7c-9a18-38a2310b8337 |
       /// | compression       | e09d739d-ccd4-44ee-8eba-3fbf8be4fc58 |

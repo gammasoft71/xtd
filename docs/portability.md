@@ -88,7 +88,7 @@ Actually xtd run on Windows, macOS, Linux, iOS and Android Operating System.
 ## The xtd libraries portability list
 
 | Library                                                                      | Windows | macOS | Linux | iOS   | Android |
-|------------------------------------------------------------------------------|---------|-------|-------|-------|---------|
+| ---------------------------------------------------------------------------- | ------- | ----- | ----- | ----- | ------- |
 | [xtd.core](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html)       | ✔️      | ✔️    | ✔️    | ✔️    | ✔️      |
 | [xtd.drawing](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__drawing.html) | ✔️      | ✔️    | ✔️    | ❌    | ❌      |
 | [xtd.forms](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html)     | ✔️      | ✔️    | ✔️    | ❌    | ❌      |

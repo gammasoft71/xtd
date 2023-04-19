@@ -67,7 +67,7 @@ namespace xtd {
         /// @brief Sets the first day of the week as displayed in the month calendar.
         /// @param day One of following day values :
         /// | value | day         |
-        /// |-------|-------------|
+        /// | ----- | ----------- |
         /// | 0     | monday      |
         /// | 1     | tuesday     |
         /// | 2     | wednesday   |
@@ -84,7 +84,7 @@ namespace xtd {
         /// @return A std:tuple<uint32, xtd::date_time> that contains information about the specified point on the month calendar.
         /// @remarks The value uint32 represents the strike zone, see the following table for the correspondence:
         /// | Value | hit area            |
-        /// |-------|---------------------|
+        /// | ----- | ------------------- |
         /// | 0     | nowhere             |
         /// | 1     | title_background    |
         /// | 2     | title_month         |

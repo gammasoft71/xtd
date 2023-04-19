@@ -8,7 +8,7 @@
 // The following constants are defined in the file xtd_command.cmake.
 // If the target project is not built with cmake, each constant must be defined by the build tool like this:
 // | Constant                              | Value |
-// |---------------------------------------|-------|
+// | ------------------------------------- | ----- |
 // | __XTD_TARGET_ID_UNKNOWN__             | 0     |
 // | __XTD_TARGET_ID_CONSOLE_APPLICATION__ | 1     |
 // | __XTD_TARGET_ID_GUI_APPLICATION__     | 2     |

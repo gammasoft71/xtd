@@ -39,7 +39,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the font_dialog class.
       /// @remarks When you create an instance of font_dialog, the following read/write properties are initialized.
       /// | Property             | Initial value |
-      /// |----------------------|---------------|
+      /// | -------------------- | ------------- |
       /// | allow_simulations    | true          |
       /// | allow_vector_fonts   | true          |
       /// | allow_vertical_fonts | true          |

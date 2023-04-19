@@ -50,7 +50,7 @@ namespace xtd {
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::background_image class.
         /// @remarks The following table shows the default values for the properties :
         /// | Property                                          | Default value                                         |
-        /// |---------------------------------------------------|-------------------------------------------------------|
+        /// | ------------------------------------------------- | ----------------------------------------------------- |
         /// | xtd::forms::style_sheets::background_image::angle      | 180                                                   |
         /// | xtd::forms::style_sheets::background_image::colors     | An array with one color : xtd::drawing::color::black) |
         /// | xtd::forms::style_sheets::background_image::image_type | xtd::forms::style_sheets::image_type::none            |
@@ -60,7 +60,7 @@ namespace xtd {
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::background_image class with specified url.
         /// @param url The url of image to display.
         /// | Property                                          | Default value                                         |
-        /// |---------------------------------------------------|-------------------------------------------------------|
+        /// | ------------------------------------------------- | ----------------------------------------------------- |
         /// | xtd::forms::style_sheets::background_image::angle      | 180                                                   |
         /// | xtd::forms::style_sheets::background_image::colors     | An array with one color : xtd::drawing::color::black) |
         /// | xtd::forms::style_sheets::background_image::image_type | xtd::forms::style_sheets::image_type::url             |
@@ -69,7 +69,7 @@ namespace xtd {
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::background_image class with specified colors array.
         /// @param color The colors that specifies the color for gradient image to display.
         /// | Property                                          | Default value                                         |
-        /// |---------------------------------------------------|-------------------------------------------------------|
+        /// | ------------------------------------------------- | ----------------------------------------------------- |
         /// | xtd::forms::style_sheets::background_image::angle      | 180                                                   |
         /// | xtd::forms::style_sheets::background_image::image_type | xtd::forms::style_sheets::image_type::linera_gradient |
         /// | xtd::forms::style_sheets::background_image::url        | An empty tring ("")                                   |

@@ -5,26 +5,26 @@
 ## Learn about xtd
 
 | Download                     |
-|------------------------------|
+| ---------------------------- |
 | [Download xtd](downloads.md) |
 
 | Overview                                      |
-|-----------------------------------------------|
+| --------------------------------------------- |
 | [What is xtd?](what_is_xtd.md)                |
 | [Introduction to xtd](introduction_to_xtd.md) |
 
 | Get started                                                   |
-|---------------------------------------------------------------|
+| ------------------------------------------------------------- |
 | [Hello World](hello_world.md)                           |
 | [Get started tutorials](tutorials.md)                         |
 | [Follow by looking at examples of xtd](../examples/README.md) |
 
 | What's new?                                                |
-|------------------------------------------------------------|
+| ---------------------------------------------------------- |
 | [News on xtd](https://gammasoft71.github.io/xtd/docs/news) |
 
 | Basics                                   |
-|------------------------------------------|
+| ---------------------------------------- |
 | [Types specifications](types.md)         |
 | [Enumerations management](enum_class.md) |
 | [String manipulations](ustring.md)       |
@@ -33,7 +33,7 @@
 | [What is an event?](events.md)           |
 
 | Drawing something                                                   |
-|---------------------------------------------------------------------|
+| ------------------------------------------------------------------- |
 | [Basic types like point, size, ...](points_sizes_and_rectangles.md) |
 | [Need colors ?](colors.md)                                          |
 | [Painting with brushes](brushes.md)                                 |
@@ -42,7 +42,7 @@
 | [Images, bitmaps and icons](images.md)                              |
 
 | Desktop applications                         |
-|----------------------------------------------|
+| -------------------------------------------- |
 | [Application](application_overview.md) |
 | [Dialogs](dialogs.md)                        |
 | [Forms](forms.md)                            |
@@ -54,7 +54,7 @@
 | [Settings](settings.md)                      |
 
 | Unit tests applications                                |
-|--------------------------------------------------------|
+| ------------------------------------------------------ |
 | [Overview](tunit_overview.md)                    |
 | [Running test](writing_applicaion_running_test.md)     |
 | [Extending test](writing_applicaion_extending_test.md) |

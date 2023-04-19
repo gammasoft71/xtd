@@ -19,7 +19,7 @@
 ## CMake commands
 
 | Name                                                                  | Type  | Status                                |
-|-----------------------------------------------------------------------|-------|---------------------------------------|
+| --------------------------------------------------------------------- | ----- | ------------------------------------- |
 | [Generic commands](../scripts/cmake/xtd_commands.cmake)               | macro | ![progress](pictures/progress100.png) |
 | [Target properties commands](../scripts/cmake/xtd_commands.cmake)     | macro | ![progress](pictures/progress100.png) |
 | [Assembly Informations commands](../scripts/cmake/xtd_commands.cmake) | macro | ![progress](pictures/progress100.png) |

@@ -22,7 +22,7 @@ namespace xtd {
     /// * For finer control, use the Win32 API functions GetKeyState, GetAsyncKeyState, or GetKeyboardState defined in user32.dll, to do this. For more information about calling native functions, see Consuming Unmanaged DLL Functions.
     /// @remarks The following table shows the key code values represented by two enumerated values, representing both the general original equipment manufacturer (OEM) keys and the more specific U.S.-keyboard associations.
     /// | Hexadecimal value | U.S. keyboard      | General OEM |
-    /// |-------------------|--------------------|-------------|
+    /// | ----------------- | ------------------ | ----------- |
     /// | BA                | oem_semicolon      | oem1        |
     /// | BF                | oem_question       | oem2        |
     /// | C0                | oem_tilde          | oem3        |

@@ -779,7 +779,7 @@ namespace xtd {
     /// @include date_time_sprintf.cpp
     /// @remarks The formatting codes for sprintf are listed below:
     /// | Format | Print                                                                                                                       |
-    /// |--------|-----------------------------------------------------------------------------------------------------------------------------|
+    /// | ------ | --------------------------------------------------------------------------------------------------------------------------- |
     /// | \%a    | writes abbreviated weekday name, e.g. Fri (locale dependent).                                                               |
     /// | \%A    | writes full weekday name, e.g. Friday (locale dependent).                                                                   |
     /// | \%b    | writes abbreviated month name, e.g. Oct (locale dependent)                                                                  |
@@ -921,7 +921,7 @@ namespace xtd {
     /// @remarks The local time is equal to the Coordinated Universal Time (UTC) time plus the UTC offset. For more information about the UTC offset, see xtd::time_zone_info::get_utc_offset. The conversion also takes into account the daylight saving time rule that applies to the time represented by the current xtd::date_time object.
     /// @remarks The value returned by the xtd::date_time::to_local_time method is determined by the xtd::date_time::kind property of the current xtd::date_time object. The following table describes the possible results.
     /// | Kind                             | Results                                                                                                                                                |
-    /// |----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
+    /// | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
     /// | xtd::date_time_kind::utc         | This instance of xtd::date_timextd::date_time is converted to local time.                                                                              |
     /// | xtd::date_time_kind::local       | No conversion is performed.                                                                                                                            |
     /// | xtd::date_time_kind::unspecified | This instance of xtd::date_time is assumed to be a UTC time, and the conversion is performed as if xtd::date_time::kind were xtd::date_time_kind::utc. |
@@ -962,7 +962,7 @@ namespace xtd {
     /// @include date_time_to_string_format.cpp
     /// @remarks The formatting codes for xtd::date_time::to_string(const xtd::ustring&) are listed below:
     /// | Format | Print                                                                                                                       |
-    /// |--------| ----------------------------------------------------------------------------------------------------------------------------|
+    /// | ------ | --------------------------------------------------------------------------------------------------------------------------- |
     /// | 'a'    | writes "PM" or "AM"                                                                                                         |
     /// | 'b'    | writes 3 digit millisecond, e.G. 012                                                                                        |
     /// | 'B'    | wrties millisecond, eg 12                                                                                                   |
@@ -1031,7 +1031,7 @@ namespace xtd {
     /// @remarks The Coordinated Universal Time (UTC) is equal to the local time minus the UTC offset. For more information about the UTC offset, see xtd::time_zone_info::get_utc_offset. The conversion also takes into account the daylight saving time rule that applies to the time represented by the current xtd::date_time object.
     /// @remarks The value returned by the xtd::date_time::to_universal_time method is determined by the xtd::date_time::kind property of the current xtd::date_time object. The following table describes the possible results.
     /// | Kind                             | Results                                                                                                                                 |
-    /// |----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
+    /// | -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
     /// | xtd::date_time_kind::utc         | No conversion is performed.                                                                                                             |
     /// | xtd::date_time_kind::local       | The current xtd::date_time object is converted to UTC.                                                                                  |
     /// | xtd::date_time_kind::unspecified | The current xtd::date_time object is assumed to be a local time, and the conversion is performed as if xtd::date_time::kind were Local. |

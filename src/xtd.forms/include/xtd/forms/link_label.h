@@ -30,7 +30,7 @@ namespace xtd {
     /// @remarks The xtd::forms::link_label provides a number of properties that enable you to define the display appearance of hyperlinks in the control. The xtd::forms::link_label::active_link_color, xtd::forms::link_label::disabled_link_color, xtd::forms::link_label::link_color, and xtd::forms::link_label::visited_link_color properties define the colors used when displaying a hyperlink in various states. The xtd::forms::link_label::link_behavior property defines the display of the underline that is associated with a hyperlink.
     /// @par Appearance
     /// |       | Windows                                 | macOS                                   | Gnome                                   |
-    /// | ----- | --------------------------------------- | ----------------------------------------| ----------------------------------------|
+    /// | ----- | --------------------------------------- | --------------------------------------- | --------------------------------------- |
     /// | Light |  @image html control_link_label_w.png   |  @image html control_link_label_m.png   |  @image html control_link_label_g.png   |
     /// | Dark  |  @image html control_link_label_wd.png  |  @image html control_link_label_md.png  |  @image html control_link_label_gd.png  |
     /// @par Examples

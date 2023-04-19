@@ -33,7 +33,7 @@
 // The following constants are defined in the file xtd_command.cmake.
 // If the target project is not built with cmake, each constant must be defined by the build tool like this:
 // | Constant                       | Value                                            |
-// |--------------------------------|--------------------------------------------------|
+// | ------------------------------ | ------------------------------------------------ |
 // | __XTD_INCLUDE_PATH__           | ${XTD_INSTALL_PATH}/include"                     |
 // | __XTD_LIB_PATH__               | ${XTD_INSTALL_PATH}/lib"                         |
 // | __XTD_CONSOLE_INCLUDE_PATH__   | ${XTD_CONSOLE_INSTALL_PATH}/include"             |
@@ -72,7 +72,7 @@ namespace xtd {
     /// @remarks For more information about special folders, see the KNOWNFOLDERID constants in the Windows documentation.
     /// @remarks The list below typically represents special folders by OS :
     /// | Name                     | android                              | iOS                                  | Linux                                | macOS                                     | Windows                                                                                              |
-    /// |--------------------------|--------------------------------------|--------------------------------------|--------------------------------------|-------------------------------------------|------------------------------------------------------------------------------------------------------|
+    /// | ------------------------ | ------------------------------------ | ------------------------------------ | ------------------------------------ | ----------------------------------------- | ---------------------------------------------------------------------------------------------------- |
     /// | desktop                  | /home/${User}/Desktop                | /Users/${User}/Desktop               | /home/${User}/Desktop                | /Users/${User}/Desktop                    | C:\\Users\\${User}\\Desktop                                                                          |
     /// | programs                 |                                      |                                      |                                      |                                           | C:\\Users\\${User}\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs                       |
     /// | my_documents             | /home/${User}                        | /Users/${User}                       | /home/${User}                        | /Users/${User}                            | C:\\Users\\${User}\\Documents                                                                        |
@@ -483,7 +483,7 @@ namespace xtd {
     /// @remarks If a double quotation mark follows two or an even number of backslashes, each proceeding backslash pair is replaced with one backslash and the double quotation mark is removed. If a double quotation mark follows an odd number of backslashes, including just one, each preceding pair is replaced with one backslash and the remaining backslash is removed; however, in this case the double quotation mark is not removed.
     /// @remarks The following table shows how command line arguments can be delimited, and assumes MyApp as the current executing application.
     /// | Input at the command line                    | Resulting command line arguments           |
-    /// |----------------------------------------------|--------------------------------------------|
+    /// | -------------------------------------------- | ------------------------------------------ |
     /// | MyApp alpha beta                             | MyApp, alpha, beta                         |
     /// | MyApp "alpha with spaces" "beta with spaces" | MyApp, alpha with spaces, beta with spaces |
     /// | MyApp 'alpha with spaces' beta               | MyApp, 'alpha, with, spaces', beta         |

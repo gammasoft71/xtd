@@ -32,7 +32,7 @@ namespace xtd {
     /// @note When the flat_style property is set to flat_style::system, the check_align property is ignored and the control is displayed using the content_alignment::middle_left or content_alignment::middle_right alignment. If the check_align property is set to one of the right alignments, the control is displayed using the content_alignment::middle_right alignment; otherwise, it is displayed using the content_alignment::middle_left alignment.
     /// @par Appearance
     /// |       | Windows                                   | macOS                                     | Gnome                                     |
-    /// | ----- | ----------------------------------------- | ------------------------------------------| ------------------------------------------|
+    /// | ----- | ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
     /// | Light |  @image html control_light_button_w.png   |  @image html control_light_button_m.png   |  @image html control_light_button_g.png   |
     /// | Dark  |  @image html control_light_button_wd.png  |  @image html control_light_button_md.png  |  @image html control_light_button_gd.png  |
     /// @par Examples
@@ -82,7 +82,7 @@ namespace xtd {
       /// @remarks If the three_state property is set to false, the check_state property value can only be set to check_state::indeterminate in code and not by u ser interaction.
       /// @remarks The following table describes the xtd::forms::appearance of the light_button control in its different states for the normal and button style control light_button::appearance.
       /// | Check_state   |  appearance::normal                                 | appearance::button          |
-      /// |---------------|-----------------------------------------------------|-----------------------------|
+      /// | ------------- | --------------------------------------------------- | --------------------------- |
       /// | checked       | The light_button displays a light on.               | The control appears sunken. |
       /// | unchecked     | The light_button displays a light off.              | The control appears raised. |
       /// | indeterminate | The light_button displays a light on and is shaded. | The control appears flat.   |
@@ -94,7 +94,7 @@ namespace xtd {
       /// @param check_state One of the check_state enumeration values. The default value is unchecked.
       /// @remarks The following table describes the xtd::forms::appearance of the light_button control in its different states for the normal and button style control light_button::appearance.
       /// | Check_state   |  appearance::normal                                 | appearance::button          |
-      /// |---------------|-----------------------------------------------------|-----------------------------|
+      /// | ------------- | --------------------------------------------------- | --------------------------- |
       /// | checked       | The light_button displays a light on.               | The control appears sunken. |
       /// | unchecked     | The light_button displays a light off.              | The control appears raised. |
       /// | indeterminate | The light_button displays a light on and is shaded. | The control appears flat.   |

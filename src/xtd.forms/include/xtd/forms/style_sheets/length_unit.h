@@ -37,7 +37,7 @@ namespace xtd {
       /// @par Absolute lengths
       /// The absolute length units are fixed and a length expressed in any of these will appear as exactly that size.
       /// | Enum class value | Css potfix | Description                  |
-      /// |------------------|------------|------------------------------|
+      /// | ---------------- | ---------- | ---------------------------- |
       /// | centimeters      | cm         | centimeters                  |
       /// | millimeters      | mm         | millimeters                  |
       /// | inches           | in         | inches (1in = 96px = 2.54cm) |
@@ -47,7 +47,7 @@ namespace xtd {
       /// @par Relative lengths
       /// Relative length units specify a length relative to another length property. Relative length units scales better between different rendering mediums.
       /// | Enum class value | Css potfix | Description                                                                               |
-      /// |------------------|------------|-------------------------------------------------------------------------------------------|
+      /// | ---------------- | ---------- | ----------------------------------------------------------------------------------------- |
       /// | element          | em         | Relative to the font-size of the element (2em means 2 times the size of the current font) |
       /// | element_x_height | ex         | Relative to the x-height of the current font (rarely used)                                |
       /// | chase            | ch         | Relative to width of the "0" (zero)                                                       |

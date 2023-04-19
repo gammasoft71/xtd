@@ -21,7 +21,7 @@ namespace xtd {
     /// @remarks When the up_button or down_button methods are called, either in code or by the click of the up or down buttons, the new value is validated and the control is updated with the new value in the appropriate format. Specifically, if the user_edit property is set to true, the parse_edit_text method is called prior to validating or updating the value. The value is then verified to be between the minimum and maximum values, and the update_edit_text method is called.
     /// @par Appearance
     /// |       | Windows                                      | macOS                                        | Gnome                                        |
-    /// | ----- | -------------------------------------------- | ---------------------------------------------| ---------------------------------------------|
+    /// | ----- | -------------------------------------------- | -------------------------------------------- | -------------------------------------------- |
     /// | Light |  @image html control_numeric_up_down_w.png   |  @image html control_numeric_up_down_m.png   |  @image html control_numeric_up_down_g.png   |
     /// | Dark  |  @image html control_numeric_up_down_wd.png  |  @image html control_numeric_up_down_md.png  |  @image html control_numeric_up_down_gd.png  |
     /// @par Examples

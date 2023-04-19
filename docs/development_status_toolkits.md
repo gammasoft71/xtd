@@ -19,7 +19,7 @@
 ## Toolkits
 
 | Name                                           | Type    | Status                                |
-|------------------------------------------------|---------|---------------------------------------|
+| ---------------------------------------------- | ------- | ------------------------------------- |
 | [cocoa](../src/xtd.forms.native.cocoa)         | library | ![progress](pictures/progress0.png)   |
 | [fltk](../src/xtd.forms.native.fltk)           | library | ![progress](pictures/progress0.png)   |
 | [gtk4](../src/xtd.forms.native.gtk4)           | library | ![progress](pictures/progress0.png)   |

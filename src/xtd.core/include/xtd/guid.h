@@ -135,7 +135,7 @@ namespace xtd {
     /// @return A 32-bit signed integer that indicates the relative order of the objects being compared.
     /// The return value has these meanings:
     /// | Value             | Condition                          |
-    /// |-------------------|------------------------------------|
+    /// | ----------------- | ---------------------------------- |
     /// | Less than zero    | This instance is less than obj.    |
     /// | Zero              | This instance is equal to obj.     |
     /// | Greater than zero | This instance is greater than obj. |
@@ -165,7 +165,7 @@ namespace xtd {
     /// @exception xtd::format_exception The value of format is not null, an empty string (""), "N", "D", "B", "P", or "X".
     /// @remarks The following table shows the accepted format specifiers for the format parameter. "0" represents a digit; hyphens ("-"), braces ("{", "}"), and parentheses ("(", ")") appear as shown.
     /// | Specifier | Format of return value                                                                                                                      |
-    /// |-----------|---------------------------------------------------------------------------------------------------------------------------------------------|
+    /// | --------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
     /// | N         | 32 digits:                                                                                                                                  |
     /// |           | 00000000000000000000000000000000                                                                                                            |
     /// | D         | 32 digits separated by hyphens:                                                                                                             |

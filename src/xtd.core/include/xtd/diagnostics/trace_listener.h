@@ -38,7 +38,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the trace_listener class.
       /// @remarks The following table shows initial property values for an instance of trace_listener.
       /// | Property     | Default Value          |
-      /// |--------------|------------------------|
+      /// | ------------ | ---------------------- |
       /// | name         | The empty string (""). |
       /// | indent_level | Zero.                  |
       /// | indent_size  | Four spaces.           |

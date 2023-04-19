@@ -19,7 +19,7 @@
 ## Themes
 
 | Name                                       | Type      | Status                                |
-|--------------------------------------------|-----------|---------------------------------------|
+| ------------------------------------------ | --------- | ------------------------------------- |
 | [gnome_dark](../themes/gnome_dark)         | css files | ![progress](pictures/progress25.png)  |
 | [gnome_light](../themes/gnome_light)       | css files | ![progress](pictures/progress25.png)  |
 | [kde_dark](../themes/kde_dark)             | css files | ![progress](pictures/progress25.png)  |
