@@ -34,7 +34,7 @@
 ## Translated languages
 
 | Languages               | Status                                  |
-|-------------------------|-----------------------------------------|
+| ----------------------- | --------------------------------------- |
 | [English](../locale/en) | ![progresser](pictures/progress100.png) |
 | [French](../locale/fr)  | ![progresser](pictures/progress100.png) |
 

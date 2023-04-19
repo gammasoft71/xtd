@@ -171,7 +171,7 @@
 /// The following table lists types or categories of types that support a predefined set of format strings, and provides links to the topics that list the supported format strings. Note that string formatting is an extensible mechanism that makes it possible to define new format strings for all existing types as well as to define a set of format strings supported by an application-defined type. For more information, see @ref CustomFormatSection.
 ///
 /// | Type or Type category                                                                                                                                            | See                              |
-/// |------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------|
+/// | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- |
 /// | Boolean type (bool)                                                                                                                                              | @ref BooleanFormatSection        |
 /// | Date and time type (std::chrono::time_point, std::time_t)                                                                                                        | @ref DateTimeFormatSection       |
 /// | Duration type (std::chrono::duration)                                                                                                                            | @ref DurationFormatSection       |

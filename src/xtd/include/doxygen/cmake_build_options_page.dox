@@ -9,7 +9,7 @@
 /// @section xtdBuildOptions xtd build options
 ///
 /// | Option Name                                  | Type   | Description                                                                            | Default Value       |
-/// | ---------------------------------------------|--------|---------------------------------------------------------------------------------------|---------------------|
+/// | -------------------------------------------- | ------ | ------------------------------------------------------------------------------------- | ------------------- |
 /// | XTD_BUILD_CPP_STANDARD                       | string | Choose c++ standard to build xtd projects (20 17 14 11 compiler_default)             | 20                  |
 /// | XTD_BUILD_LIBRARIES_XTD_CORE                 | bool   | Build xtd.core libraries                                                              | ON                  |
 /// | XTD_BUILD_LIBRARIES_XTD_DRAWING              | bool   | Build xtd.drawing libraries                                                           | ON                  |
@@ -48,7 +48,7 @@
 /// @section xtUserProjectdBuildOptions xtd user project build options
 ///
 /// | Option Name                                  | Type   | Description                                                                            | Default Value       |
-/// | ---------------------------------------------|--------|---------------------------------------------------------------------------------------|---------------------|
+/// | -------------------------------------------- | ------ | ------------------------------------------------------------------------------------- | ------------------- |
 /// | XTD_BUILD_CPP_STANDARD                       | string | Choose c++ standard to build xtd projects (20 17 14 11 compiler_default)             | 20                  |
 /// | XTD_DOWNLOAD_DOXYGEN                         | bool   | Download and build doxygen from Github                                                | OFF                 |
 /// | XTD_ENABLE_COMMAND_REFERENCE_GUIDE_GENERATOR | bool   | Enable command Reference Guide Generator                                              | ON                  |

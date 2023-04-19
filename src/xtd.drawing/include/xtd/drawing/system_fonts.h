@@ -35,7 +35,7 @@ namespace xtd {
       /// @return The default xtd::drawing::font of the system. The value returned will vary depending on the user's operating system and the local culture setting of their system.
       /// @remarks The following table describes the value returned by the xtd::drawing::system_fonts::default_font property depending on the operating system and local culture.
       /// | System and/or culture           | Font                                                               |
-      /// |---------------------------------|--------------------------------------------------------------------|
+      /// | ------------------------------- | ------------------------------------------------------------------ |
       /// | Windows NT 4x, Japanese version | MS UI Gothic, 9 point                                              |
       /// | Arabic Windows                  | Tahoma, 8 point                                                    |
       /// | Other operating system/culture  | MS Shell Dlg logical font, typically Microsoft Sans Serif, 8 point |

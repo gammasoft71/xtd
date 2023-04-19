@@ -35,7 +35,7 @@ namespace xtd {
       /// @brief Initializes a new string_format object.
       /// @remarks The following table shows initial property values for an instance of string_format class.
       /// | property       | initial value |
-      /// |----------------|---------------|
+      /// | -------------- | ------------- |
       /// | format_flag    | 0             |
       /// | hotkey_prefix  | none          |
       string_format() = default;
@@ -70,7 +70,7 @@ namespace xtd {
       /// @return The generic default string_format object.
       /// @remarks The following table shows initial property values for a generic default instance of the string_format class.
       /// | property       | initial value |
-      /// |----------------|---------------|
+      /// | -------------- | ------------- |
       /// | format_flag    | 0             |
       /// | alignment      | near          |
       /// | line_alignment | near          |
@@ -82,7 +82,7 @@ namespace xtd {
       /// @return A generic typographic string_format object.
       /// @remarks The following table shows initial property values for a generic default instance of the string_format class.
       /// | property       | initial value                                          |
-      /// |----------------|--------------------------------------------------------|
+      /// | -------------- | ------------------------------------------------------ |
       /// | format_flag    | 0b110000000000100 (no_clip\|fit_black_box\|line_limit) |
       /// | alignment      | near                                                   |
       /// | line_alignment | near                                                   |

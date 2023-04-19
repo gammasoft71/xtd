@@ -31,7 +31,7 @@ namespace xtd {
     /// @remarks The following describes an indeterminate state: You have a toggle_button that determines if the selected text in a rich_text_box is bold. When you select text you can click the toggle_button to bold the selection. Likewise, when you select some text, the toggle_button displays whether the selected text is bold. If your selected text contains text that is bold and normal, the toggle_button will have an indeterminate state.
     /// @par Appearance
     /// |       | Windows                                    | macOS                                      | Gnome                                      |
-    /// | ----- | ------------------------------------------ | -------------------------------------------| -------------------------------------------|
+    /// | ----- | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
     /// | Light |  @image html control_toggle_button_w.png   |  @image html control_toggle_button_m.png   |  @image html control_toggle_button_g.png   |
     /// | Dark  |  @image html control_toggle_button_wd.png  |  @image html control_toggle_button_md.png  |  @image html control_toggle_button_gd.png  |
     /// @par Examples
@@ -82,7 +82,7 @@ namespace xtd {
       /// @remarks If the three_state property is set to false, the check_state property value can only be set to check_state::Indeterminate in code and not by u ser interaction.
       /// @remarks The following table describes the xtd::forms::appearance of the toggle_button control in its different states for the normal and button style control toggle_button::appearance.
       /// | Check_state   |  appearance::normal                               | appearance::button          |
-      /// |---------------|---------------------------------------------------|-----------------------------|
+      /// | ------------- | ------------------------------------------------- | --------------------------- |
       /// | checked       | The toggle_button displays a check mark.          | The control appears sunken. |
       /// | unchecked     | The CheckBox is empty.                            | The control appears raised. |
       /// | indeterminate | The CheckBox displays a check mark and is shaded. | The control appears flat.   |
@@ -91,7 +91,7 @@ namespace xtd {
       /// @param chexk_state One of the check_state enumeration values. The default value is unchecked.
       /// @remarks The following table describes the xtd::forms::appearance of the toggle_button control in its different states for the normal and button style control toggle_button::appearance.
       /// | Check_state   |  appearance::normal                               | appearance::button          |
-      /// |---------------|---------------------------------------------------|-----------------------------|
+      /// | ------------- | ------------------------------------------------- | --------------------------- |
       /// | checked       | The toggle_button displays a check mark.          | The control appears sunken. |
       /// | unchecked     | The CheckBox is empty.                            | The control appears raised. |
       /// | indeterminate | The CheckBox displays a check mark and is shaded. | The control appears flat.   |

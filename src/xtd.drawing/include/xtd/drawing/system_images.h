@@ -60,7 +60,7 @@ namespace xtd {
       /// @remarks The system images are grouped by contaxt.
       /// @remarks The following table list the contexts :
       /// | Context       | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-      /// |---------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+      /// | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
       /// | Actions       | Icons which are generally used in menus and dialogs for interacting with the user.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
       /// | Animations    | Animated images used to represent loading web sites, or other background processing which may be less suited to more verbose progress reporting in the user interface. Animations should be a PNG with frames which are the size of the directory the animation is in, tiled in a WxH grid. Implementations should determine the number of frames by dividing the image into its frames, and iterating from left to right, wrapping to the first frame, after rendering the last.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
       /// | Applications  | Icons that describe what an application is, for use in the Programs menu, window decorations, and the task list. These may or may not be generic depending on the application and its purpose. Applications which are to be considered part of the base desktop, such as the calculator or terminal, should use the generic icons specified in this specification, while more advanced applications such as web browsers and office applications should use branded icons which still give the user an idea of what function the application provides.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
@@ -80,7 +80,7 @@ namespace xtd {
       /// @remarks The system images are grouped by contaxt.
       /// @par The following table represents Standard Action Icons :
       /// | Name                      | Description                                                                                                                                                             |
-      /// | --------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+      /// | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
       /// | address-book-new          | The icon used for the action to create a new address book.                                                                                                              |
       /// | application-exit          | The icon used for exiting an application. Typically this is seen in the application's menus as File->Quit.                                                              |
       /// | appointment-new           | The icon used for the action to create a new appointment in a calendaring application.                                                                                  |
@@ -203,11 +203,11 @@ namespace xtd {
       /// | zoom-out                  | The icon used for the “Zoom Out” item in the application's “View” menu.                                                                                                 |
       /// @par The following table represents Standard Animation Icons :
       /// | Name               | Description                                                                                                     |
-      /// |--------------------|-----------------------------------------------------------------------------------------------------------------|
+      /// | ------------------ | --------------------------------------------------------------------------------------------------------------- |
       /// | process-working    | This is the standard spinner animation for web browsers and file managers to show that the location is loading. |
       /// @par The following table represents Standard Application Icons :
       /// | Name                              | Description                                                                                  |
-      /// | ----------------------------------|----------------------------------------------------------------------------------------------|
+      /// | --------------------------------- | -------------------------------------------------------------------------------------------- |
       /// | accessories-calculator            | The icon used for the desktop's calculator accessory program.                                |
       /// | accessories-character-map         | The icon used for the desktop's international and extended text character accessory program. |
       /// | accessories-dictionary            | The icon used for the desktop's dictionary accessory program.                                |
@@ -229,7 +229,7 @@ namespace xtd {
       /// | utilities-terminal                | The icon used for the desktop's terminal emulation application.                              |
       /// @par The following table represents Standard Category Icons :
       /// | Name                            | Description                                                                        |
-      /// |---------------------------------|------------------------------------------------------------------------------------|
+      /// | ------------------------------- | ---------------------------------------------------------------------------------- |
       /// | applications-accessories        | The icon for the “Accessories” sub-menu of the Programs menu.                      |
       /// | applications-development        | The icon for the “Programming” sub-menu of the Programs menu.                      |
       /// | applications-engineering        | The icon for the “Engineering” sub-menu of the Programs menu.                      |
@@ -251,7 +251,7 @@ namespace xtd {
       /// | system-help                     | The icon for the “Help” system category.                                           |
       /// @par The following table represents Standard Device Icons :
       /// | Name                                | Description                                                                                                                                                                                                                                                                 |
-      /// | ------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+      /// | ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
       /// | audio-card                          | The icon used for the audio rendering device.                                                                                                                                                                                                                               |
       /// | audio-input-microphone              | The icon used for the microphone audio input device.                                                                                                                                                                                                                        |
       /// | battery                             | The icon used for the system battery device.                                                                                                                                                                                                                                |
@@ -290,7 +290,7 @@ namespace xtd {
       /// | video-display                       | The icon used for the monitor that video gets displayed to.                                                                                                                                                                                                                 |
       /// @par The following table represents Standard Emblem Icons :
       /// | Name                 | Description                                                                                                          |
-      /// | ---------------------|----------------------------------------------------------------------------------------------------------------------|
+      /// | -------------------- | -------------------------------------------------------------------------------------------------------------------- |
       /// | emblem-default       | The icon used as an emblem to specify the default selection of a printer for example.                                |
       /// | emblem-documents     | The icon used as an emblem for the directory where a user's documents are stored.                                    |
       /// | emblem-downloads     | The icon used as an emblem for the directory where a user's downloads from the internet are stored.                  |
@@ -309,7 +309,7 @@ namespace xtd {
       /// | emblem-unreadable    | The icon used as an emblem for files and directories that are inaccessible.                                          |
       /// @par The following table represents Standard Emoticon Icons :
       /// | Name             | Description                         |
-      /// | -----------------|-------------------------------------|
+      /// | ---------------- | ----------------------------------- |
       /// | face-angel       | The icon used for the 0:-) emote.   |
       /// | face-angry       | The icon used for the X-( emote.    |
       /// | face-cool        | The icon used for the B-) emote.    |
@@ -327,17 +327,17 @@ namespace xtd {
       /// | face-smile-big   | The icon used for the :-D emote.    |
       /// | face-smirk       | The icon used for the :-! emote.    |
       /// | face-surprise    | The icon used for the :-0 emote.    |
-      /// | face-tired       | The icon used for the \|-) emote.   |
+      /// | face-tired       | The icon used for the \| ) emote.   |
       /// | face-uncertain   | The icon used for the :-/ emote.    |
       /// | face-wink        | The icon used for the ;-) emote.    |
       /// | face-worried     | The icon used for the :-S emote.    |
       /// @par The following table represents Standard MIME Type Icons :
       /// | Name    | Description                                                                                                                                                              |
-      /// | --------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+      /// | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
       /// | flag-aa | The flag for the country with the ISO 3166 country code AA. All flags should use ISO 3166 two-letter country codes, in lowercase form, as the specifier for the country. |
       /// @par The following table represents Standard International Icons :
       /// | Name                     | Description                                                 |
-      /// | -------------------------|-------------------------------------------------------------|
+      /// | ------------------------ | ----------------------------------------------------------- |
       /// | application-x-executable | The icon used for executable file types.                    |
       /// | audio-x-generic          | The icon used for generic audio file types.                 |
       /// | font-x-generic           | The icon used for generic font file types.                  |
@@ -356,7 +356,7 @@ namespace xtd {
       /// | x-office-spreadsheet     | The icon used for generic spreadsheet file types.           |
       /// @par The following table represents Standard Place Icons :
       /// | Name                | Description                                                                                                               |
-      /// | --------------------|---------------------------------------------------------------------------------------------------------------------------|
+      /// | ------------------- | ------------------------------------------------------------------------------------------------------------------------- |
       /// | folder              | The standard folder icon used to represent directories on local filesystems, mail folders, and other hierarchical groups. |
       /// | folder-activities   | The icon used for activities directory.                                                                                   |
       /// | folder-applications | The icon used for applications directory.                                                                                 |
@@ -394,7 +394,7 @@ namespace xtd {
       /// | user-trash          | The icon for the user's “Trash” place in the desktop's file manager.                                                      |
       /// @par The following table represents Standard Status Icons :
       /// | Name                      | Description                                                                                                                                                                                                                                                                                      |
-      /// | --------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+      /// | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
       /// | appointment-missed        | The icon used when an appointment was missed.                                                                                                                                                                                                                                                    |
       /// | appointment-soon          | The icon used when an appointment will occur soon.                                                                                                                                                                                                                                               |
       /// | audio-volume-high         | The icon used to indicate high audio volume.                                                                                                                                                                                                                                                     |
@@ -454,7 +454,7 @@ namespace xtd {
       /// | weather-storm             | The icon used while storms are occurring in a region.                                                                                                                                                                                                                                            |
       /// @par The following table represents Standard xtd Icons :
       /// | Name                      | Description                        |
-      /// | --------------------------|------------------------------------|
+      /// | ------------------------- | ---------------------------------- |
       /// | gammasoft                 | The icon for Gammasoft logo.       |
       /// | xtd                       | The icon for xtd logo.             |
       /// | xtd-console               | The icon for xtd console logo.     |
@@ -473,7 +473,7 @@ namespace xtd {
       /// @return An xtd::ustring array that contains the image names.
       /// @par The following table represents Standard Action Icons :
       /// | Name                      | Description                                                                                                                                                             |
-      /// | --------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+      /// | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
       /// | address-book-new          | The icon used for the action to create a new address book.                                                                                                              |
       /// | application-exit          | The icon used for exiting an application. Typically this is seen in the application's menus as File->Quit.                                                              |
       /// | appointment-new           | The icon used for the action to create a new appointment in a calendaring application.                                                                                  |
@@ -596,11 +596,11 @@ namespace xtd {
       /// | zoom-out                  | The icon used for the “Zoom Out” item in the application's “View” menu.                                                                                                 |
       /// @par The following table represents Standard Animation Icons :
       /// | Name               | Description                                                                                                     |
-      /// |--------------------|-----------------------------------------------------------------------------------------------------------------|
+      /// | ------------------ | --------------------------------------------------------------------------------------------------------------- |
       /// | process-working    | This is the standard spinner animation for web browsers and file managers to show that the location is loading. |
       /// @par The following table represents Standard Application Icons :
       /// | Name                              | Description                                                                                  |
-      /// | ----------------------------------|----------------------------------------------------------------------------------------------|
+      /// | --------------------------------- | -------------------------------------------------------------------------------------------- |
       /// | accessories-calculator            | The icon used for the desktop's calculator accessory program.                                |
       /// | accessories-character-map         | The icon used for the desktop's international and extended text character accessory program. |
       /// | accessories-dictionary            | The icon used for the desktop's dictionary accessory program.                                |
@@ -622,7 +622,7 @@ namespace xtd {
       /// | utilities-terminal                | The icon used for the desktop's terminal emulation application.                              |
       /// @par The following table represents Standard Category Icons :
       /// | Name                            | Description                                                                        |
-      /// |---------------------------------|------------------------------------------------------------------------------------|
+      /// | ------------------------------- | ---------------------------------------------------------------------------------- |
       /// | applications-accessories        | The icon for the “Accessories” sub-menu of the Programs menu.                      |
       /// | applications-development        | The icon for the “Programming” sub-menu of the Programs menu.                      |
       /// | applications-engineering        | The icon for the “Engineering” sub-menu of the Programs menu.                      |
@@ -644,7 +644,7 @@ namespace xtd {
       /// | system-help                     | The icon for the “Help” system category.                                           |
       /// @par The following table represents Standard Device Icons :
       /// | Name                                | Description                                                                                                                                                                                                                                                                 |
-      /// | ------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+      /// | ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
       /// | audio-card                          | The icon used for the audio rendering device.                                                                                                                                                                                                                               |
       /// | audio-input-microphone              | The icon used for the microphone audio input device.                                                                                                                                                                                                                        |
       /// | battery                             | The icon used for the system battery device.                                                                                                                                                                                                                                |
@@ -683,7 +683,7 @@ namespace xtd {
       /// | video-display                       | The icon used for the monitor that video gets displayed to.                                                                                                                                                                                                                 |
       /// @par The following table represents Standard Emblem Icons :
       /// | Name                 | Description                                                                                                          |
-      /// | ---------------------|----------------------------------------------------------------------------------------------------------------------|
+      /// | -------------------- | -------------------------------------------------------------------------------------------------------------------- |
       /// | emblem-default       | The icon used as an emblem to specify the default selection of a printer for example.                                |
       /// | emblem-documents     | The icon used as an emblem for the directory where a user's documents are stored.                                    |
       /// | emblem-downloads     | The icon used as an emblem for the directory where a user's downloads from the internet are stored.                  |
@@ -702,7 +702,7 @@ namespace xtd {
       /// | emblem-unreadable    | The icon used as an emblem for files and directories that are inaccessible.                                          |
       /// @par The following table represents Standard Emoticon Icons :
       /// | Name             | Description                         |
-      /// | -----------------|-------------------------------------|
+      /// | ---------------- | ----------------------------------- |
       /// | face-angel       | The icon used for the 0:-) emote.   |
       /// | face-angry       | The icon used for the X-( emote.    |
       /// | face-cool        | The icon used for the B-) emote.    |
@@ -720,17 +720,17 @@ namespace xtd {
       /// | face-smile-big   | The icon used for the :-D emote.    |
       /// | face-smirk       | The icon used for the :-! emote.    |
       /// | face-surprise    | The icon used for the :-0 emote.    |
-      /// | face-tired       | The icon used for the \|-) emote.   |
+      /// | face-tired       | The icon used for the \| ) emote.   |
       /// | face-uncertain   | The icon used for the :-/ emote.    |
       /// | face-wink        | The icon used for the ;-) emote.    |
       /// | face-worried     | The icon used for the :-S emote.    |
       /// @par The following table represents Standard MIME Type Icons :
       /// | Name    | Description                                                                                                                                                              |
-      /// | --------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+      /// | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
       /// | flag-aa | The flag for the country with the ISO 3166 country code AA. All flags should use ISO 3166 two-letter country codes, in lowercase form, as the specifier for the country. |
       /// @par The following table represents Standard International Icons :
       /// | Name                     | Description                                                 |
-      /// | -------------------------|-------------------------------------------------------------|
+      /// | ------------------------ | ----------------------------------------------------------- |
       /// | application-x-executable | The icon used for executable file types.                    |
       /// | audio-x-generic          | The icon used for generic audio file types.                 |
       /// | font-x-generic           | The icon used for generic font file types.                  |
@@ -749,7 +749,7 @@ namespace xtd {
       /// | x-office-spreadsheet     | The icon used for generic spreadsheet file types.           |
       /// @par The following table represents Standard Place Icons :
       /// | Name                | Description                                                                                                               |
-      /// | --------------------|---------------------------------------------------------------------------------------------------------------------------|
+      /// | ------------------- | ------------------------------------------------------------------------------------------------------------------------- |
       /// | folder              | The standard folder icon used to represent directories on local filesystems, mail folders, and other hierarchical groups. |
       /// | folder-activities   | The icon used for activities directory.                                                                                   |
       /// | folder-applications | The icon used for applications directory.                                                                                 |
@@ -787,7 +787,7 @@ namespace xtd {
       /// | user-trash          | The icon for the user's “Trash” place in the desktop's file manager.                                                      |
       /// @par The following table represents Standard Status Icons :
       /// | Name                      | Description                                                                                                                                                                                                                                                                                      |
-      /// | --------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+      /// | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
       /// | appointment-missed        | The icon used when an appointment was missed.                                                                                                                                                                                                                                                    |
       /// | appointment-soon          | The icon used when an appointment will occur soon.                                                                                                                                                                                                                                               |
       /// | audio-volume-high         | The icon used to indicate high audio volume.                                                                                                                                                                                                                                                     |
@@ -847,7 +847,7 @@ namespace xtd {
       /// | weather-storm             | The icon used while storms are occurring in a region.                                                                                                                                                                                                                                            |
       /// @par The following table represents Standard xtd Icons :
       /// | Name                      | Description                        |
-      /// | --------------------------|------------------------------------|
+      /// | ------------------------- | ---------------------------------- |
       /// | gammasoft                 | The icon for Gammasoft logo.       |
       /// | xtd                       | The icon for xtd logo.             |
       /// | xtd-console               | The icon for xtd console logo.     |
@@ -868,7 +868,7 @@ namespace xtd {
       /// @remarks The system images are grouped by contaxt.
       /// @par The following table represents Standard Action Icons :
       /// | Name                      | Description                                                                                                                                                             |
-      /// | --------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+      /// | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
       /// | address-book-new          | The icon used for the action to create a new address book.                                                                                                              |
       /// | application-exit          | The icon used for exiting an application. Typically this is seen in the application's menus as File->Quit.                                                              |
       /// | appointment-new           | The icon used for the action to create a new appointment in a calendaring application.                                                                                  |
@@ -991,11 +991,11 @@ namespace xtd {
       /// | zoom-out                  | The icon used for the “Zoom Out” item in the application's “View” menu.                                                                                                 |
       /// @par The following table represents Standard Animation Icons :
       /// | Name               | Description                                                                                                     |
-      /// |--------------------|-----------------------------------------------------------------------------------------------------------------|
+      /// | ------------------ | --------------------------------------------------------------------------------------------------------------- |
       /// | process-working    | This is the standard spinner animation for web browsers and file managers to show that the location is loading. |
       /// @par The following table represents Standard Application Icons :
       /// | Name                              | Description                                                                                  |
-      /// | ----------------------------------|----------------------------------------------------------------------------------------------|
+      /// | --------------------------------- | -------------------------------------------------------------------------------------------- |
       /// | accessories-calculator            | The icon used for the desktop's calculator accessory program.                                |
       /// | accessories-character-map         | The icon used for the desktop's international and extended text character accessory program. |
       /// | accessories-dictionary            | The icon used for the desktop's dictionary accessory program.                                |
@@ -1017,7 +1017,7 @@ namespace xtd {
       /// | utilities-terminal                | The icon used for the desktop's terminal emulation application.                              |
       /// @par The following table represents Standard Category Icons :
       /// | Name                            | Description                                                                        |
-      /// |---------------------------------|------------------------------------------------------------------------------------|
+      /// | ------------------------------- | ---------------------------------------------------------------------------------- |
       /// | applications-accessories        | The icon for the “Accessories” sub-menu of the Programs menu.                      |
       /// | applications-development        | The icon for the “Programming” sub-menu of the Programs menu.                      |
       /// | applications-engineering        | The icon for the “Engineering” sub-menu of the Programs menu.                      |
@@ -1039,7 +1039,7 @@ namespace xtd {
       /// | system-help                     | The icon for the “Help” system category.                                           |
       /// @par The following table represents Standard Device Icons :
       /// | Name                                | Description                                                                                                                                                                                                                                                                 |
-      /// | ------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+      /// | ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
       /// | audio-card                          | The icon used for the audio rendering device.                                                                                                                                                                                                                               |
       /// | audio-input-microphone              | The icon used for the microphone audio input device.                                                                                                                                                                                                                        |
       /// | battery                             | The icon used for the system battery device.                                                                                                                                                                                                                                |
@@ -1078,7 +1078,7 @@ namespace xtd {
       /// | video-display                       | The icon used for the monitor that video gets displayed to.                                                                                                                                                                                                                 |
       /// @par The following table represents Standard Emblem Icons :
       /// | Name                 | Description                                                                                                          |
-      /// | ---------------------|----------------------------------------------------------------------------------------------------------------------|
+      /// | -------------------- | -------------------------------------------------------------------------------------------------------------------- |
       /// | emblem-default       | The icon used as an emblem to specify the default selection of a printer for example.                                |
       /// | emblem-documents     | The icon used as an emblem for the directory where a user's documents are stored.                                    |
       /// | emblem-downloads     | The icon used as an emblem for the directory where a user's downloads from the internet are stored.                  |
@@ -1097,7 +1097,7 @@ namespace xtd {
       /// | emblem-unreadable    | The icon used as an emblem for files and directories that are inaccessible.                                          |
       /// @par The following table represents Standard Emoticon Icons :
       /// | Name             | Description                         |
-      /// | -----------------|-------------------------------------|
+      /// | ---------------- | ----------------------------------- |
       /// | face-angel       | The icon used for the 0:-) emote.   |
       /// | face-angry       | The icon used for the X-( emote.    |
       /// | face-cool        | The icon used for the B-) emote.    |
@@ -1115,17 +1115,17 @@ namespace xtd {
       /// | face-smile-big   | The icon used for the :-D emote.    |
       /// | face-smirk       | The icon used for the :-! emote.    |
       /// | face-surprise    | The icon used for the :-0 emote.    |
-      /// | face-tired       | The icon used for the \|-) emote.   |
+      /// | face-tired       | The icon used for the \| ) emote.   |
       /// | face-uncertain   | The icon used for the :-/ emote.    |
       /// | face-wink        | The icon used for the ;-) emote.    |
       /// | face-worried     | The icon used for the :-S emote.    |
       /// @par The following table represents Standard MIME Type Icons :
       /// | Name    | Description                                                                                                                                                              |
-      /// | --------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+      /// | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
       /// | flag-aa | The flag for the country with the ISO 3166 country code AA. All flags should use ISO 3166 two-letter country codes, in lowercase form, as the specifier for the country. |
       /// @par The following table represents Standard International Icons :
       /// | Name                     | Description                                                 |
-      /// | -------------------------|-------------------------------------------------------------|
+      /// | ------------------------ | ----------------------------------------------------------- |
       /// | application-x-executable | The icon used for executable file types.                    |
       /// | audio-x-generic          | The icon used for generic audio file types.                 |
       /// | font-x-generic           | The icon used for generic font file types.                  |
@@ -1144,7 +1144,7 @@ namespace xtd {
       /// | x-office-spreadsheet     | The icon used for generic spreadsheet file types.           |
       /// @par The following table represents Standard Place Icons :
       /// | Name                | Description                                                                                                               |
-      /// | --------------------|---------------------------------------------------------------------------------------------------------------------------|
+      /// | ------------------- | ------------------------------------------------------------------------------------------------------------------------- |
       /// | folder              | The standard folder icon used to represent directories on local filesystems, mail folders, and other hierarchical groups. |
       /// | folder-activities   | The icon used for activities directory.                                                                                   |
       /// | folder-applications | The icon used for applications directory.                                                                                 |
@@ -1182,7 +1182,7 @@ namespace xtd {
       /// | user-trash          | The icon for the user's “Trash” place in the desktop's file manager.                                                      |
       /// @par The following table represents Standard Status Icons :
       /// | Name                      | Description                                                                                                                                                                                                                                                                                      |
-      /// | --------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+      /// | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
       /// | appointment-missed        | The icon used when an appointment was missed.                                                                                                                                                                                                                                                    |
       /// | appointment-soon          | The icon used when an appointment will occur soon.                                                                                                                                                                                                                                               |
       /// | audio-volume-high         | The icon used to indicate high audio volume.                                                                                                                                                                                                                                                     |
@@ -1242,7 +1242,7 @@ namespace xtd {
       /// | weather-storm             | The icon used while storms are occurring in a region.                                                                                                                                                                                                                                            |
       /// @par The following table represents Standard xtd Icons :
       /// | Name                      | Description                        |
-      /// | --------------------------|------------------------------------|
+      /// | ------------------------- | ---------------------------------- |
       /// | gammasoft                 | The icon for Gammasoft logo.       |
       /// | xtd                       | The icon for xtd logo.             |
       /// | xtd-console               | The icon for xtd console logo.     |

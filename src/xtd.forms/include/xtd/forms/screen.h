@@ -139,7 +139,7 @@ namespace xtd {
       /// @remarks In printing, DPI (dots per inch) refers to the output resolution of a printer, scanner or image setter, and PPI (pixels per inch) refers to the input resolution of a photograph, image or screen.
       /// @remarks The following table shows the standard values by operating system :
       /// |  Values and conversion            | Windows | macOS | linux |
-      /// |-----------------------------------|---------|-------|-------|
+      /// | --------------------------------- | ------- | ----- | ----- |
       /// | Pixels per inch (PPI)             |      96 |    72 |    96 |
       /// | Pixels per centimeters (pixel/cm) |      38 |    28 |    38 |
       /// | Pitch (µm)                        |     265 |   353 |   265 |

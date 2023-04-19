@@ -577,7 +577,7 @@ namespace xtd {
       /// @exception xtd::security::security_exception The caller does not have code access permission to create the directory.
       /// @remarks searchPattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in searchPattern.
       /// | Wildcard specifier | Matches                                   |
-      /// |--------------------|-------------------------------------------|
+      /// | ------------------ | ----------------------------------------- |
       /// | * (asterisk)       | Zero or more characters in that position. |
       /// | ? (question mark)  | Zero or one character in that position.   |
       /// @remarks Characters other than the wildcard are literal characters. For example, the string "*t" searches for all names in ending with the letter "t". ". The searchPattern string "s*" searches for all names in path beginning with the letter "s".
@@ -752,7 +752,7 @@ namespace xtd {
       /// @endcode
       /// @remarks search_pattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in search_pattern.
       /// | Wildcard specifier | Matches                                   |
-      /// |--------------------|-------------------------------------------|
+      /// | ------------------ | ----------------------------------------- |
       /// | * (asterisk)       | Zero or more characters in that position. |
       /// | ? (question mark)  | Zero or one character in that position.   |
       /// @remarks Characters other than the wildcard are literal characters. For example, the string "*t" searches for all names in ending with the letter "t". ". The search_pattern string "s*" searches for all names in path beginning with the letter "s".
@@ -790,7 +790,7 @@ namespace xtd {
       /// @exception xtd::security::security_exception The caller does not have code access permission to create the directory.
       /// @remarks search_pattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in search_pattern.
       /// | Wildcard specifier | Matches                                   |
-      /// |--------------------|-------------------------------------------|
+      /// | ------------------ | ----------------------------------------- |
       /// | * (asterisk)       | Zero or more characters in that position. |
       /// | ? (question mark)  | Zero or one character in that position.   |
       /// @remarks Characters other than the wildcard are literal characters. For example, the string "*t" searches for all names in ending with the letter "t". ". The search_pattern string "s*" searches for all names in path beginning with the letter "s".
@@ -881,7 +881,7 @@ namespace xtd {
       ///@endcode
       /// @remarks search_pattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in search_pattern.
       /// | Wildcard specifier | Matches                                   |
-      /// |--------------------|-------------------------------------------|
+      /// | ------------------ | ----------------------------------------- |
       /// | * (asterisk)       | Zero or more characters in that position. |
       /// | ? (question mark)  | Zero or one character in that position.   |
       /// @remarks Characters other than the wildcard are literal characters. For example, the string "*t" searches for all names in ending with the letter "t". ". The search_pattern string "s*" searches for all names in path beginning with the letter "s".
@@ -1025,7 +1025,7 @@ namespace xtd {
       /// @endcode
       /// @remarks search_pattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in search_pattern.
       /// | Wildcard specifier | Matches                                   |
-      /// |--------------------|-------------------------------------------|
+      /// | ------------------ | ----------------------------------------- |
       /// | * (asterisk)       | Zero or more characters in that position. |
       /// | ? (question mark)  | Zero or one character in that position.   |
       /// @remarks Characters other than the wildcard are literal characters. For example, the string "*t" searches for all names in ending with the letter "t". ". The search_pattern string "s*" searches for all names in path beginning with the letter "s".
@@ -1205,7 +1205,7 @@ namespace xtd {
       /// @endcode
       /// @remarks search_pattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in search_pattern.
       /// | Wildcard specifier | Matches                                   |
-      /// |--------------------|-------------------------------------------|
+      /// | ------------------ | ----------------------------------------- |
       /// | * (asterisk)       | Zero or more characters in that position. |
       /// | ? (question mark)  | Zero or one character in that position.   |
       /// @remarks Characters other than the wildcard are literal characters. For example, the string "*t" searches for all names in ending with the letter "t". ". The search_pattern string "s*" searches for all names in path beginning with the letter "s".

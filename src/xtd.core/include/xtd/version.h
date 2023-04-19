@@ -100,7 +100,7 @@ namespace xtd {
     /// @brief Initializes a new instance of the xtd::version class.
     /// @remarks This constructor creates a xtd::version object with the following property values.
     /// | Property               | Value |
-    /// |------------------------|-------|
+    /// | ---------------------- | ----- |
     /// | xtd::version::major    | 0     |
     /// | xtd::version::minor    | 0     |
     /// | xtd::version::build    | -1    |
@@ -123,7 +123,7 @@ namespace xtd {
     /// @exception xtd::out_of_range_exception major or minor is less than zero.
     /// @remarks This constructor creates a xtd::version object with the following property values.
     /// | Property               | Value          |
-    /// |------------------------|----------------|
+    /// | ---------------------- | -------------- |
     /// | xtd::version::major    | major          |
     /// | xtd::version::minor    | minor          |
     /// | xtd::version::build    | undefined (-1) |
@@ -136,7 +136,7 @@ namespace xtd {
     /// @exception xtd::out_of_range_exception major, minor or build is less than zero.
     /// @remarks This constructor creates a xtd::version object with the following property values.
     /// | Property               | Value          |
-    /// |------------------------|----------------|
+    /// | ---------------------- | -------------- |
     /// | xtd::version::major    | major          |
     /// | xtd::version::minor    | minor          |
     /// | xtd::version::build    | build          |
@@ -150,7 +150,7 @@ namespace xtd {
     /// @exception xtd::out_of_range_exception major, minor, build or revision is less than zero.
     /// @remarks This constructor creates a xtd::version object with the following property values.
     /// | Property               | Value    |
-    /// |------------------------|----------|
+    /// | ---------------------- | -------- |
     /// | xtd::version::major    | major    |
     /// | xtd::version::minor    | minor    |
     /// | xtd::version::build    | build    |
@@ -207,7 +207,7 @@ namespace xtd {
     /// @param version An object to compare.
     /// @return A signed integer that indicates the relative values of the two objects, as shown in the following table.
     /// | Return value      | Meaning                                                              |
-    /// |-------------------|----------------------------------------------------------------------|
+    /// | ----------------- | -------------------------------------------------------------------- |
     /// | Less than zero    | The current xtd::version object is a version before version.         |
     /// | Zero              | The current xtd::version object is the same version as version.      |
     /// | Greater than zero | The current xtd::version object is a version subsequent to version. |
@@ -244,7 +244,7 @@ namespace xtd {
     /// @param field_count The number of components to return. The field_count ranges from 0 to 4.
     /// @return The xtd::ustring representation of the values of the major, minor, build, and revision components of the current xtd::version object, each separated by a period character ('.'). The field_count parameter determines how many components are returned.
     /// | field_count | Return Value               |
-    /// |-------------|----------------------------|
+    /// | ----------- | -------------------------- |
     /// | 0           | An empty string ("").      |
     /// | 1           | major                      |
     /// | 2           | major.minor                |

@@ -35,7 +35,7 @@
 ## xtd
 
 | Name                                                                                                   | Type          | Status                                |
-|--------------------------------------------------------------------------------------------------------|---------------|---------------------------------------|
+| ------------------------------------------------------------------------------------------------------ | ------------- | ------------------------------------- |
 | [action](../src/xtd.core/include/xtd/action.h)                                                         | delegate      | ![progress](pictures/progress100.png) |
 | [architecture_id](../src/xtd.core/include/xtd/architecture_id.h)                                       | enumeration   | ![progress](pictures/progress100.png) |
 | [argument_exception](../src/xtd.core/include/xtd/argument_exception.h)                                 | exception     | ![progress](pictures/progress100.png) |
@@ -151,7 +151,7 @@
 ## xtd::collections
 
 | Name                                                                                         | Type          | Status                                |
-|----------------------------------------------------------------------------------------------|---------------|---------------------------------------|
+| -------------------------------------------------------------------------------------------- | ------------- | ------------------------------------- |
 | [any_pair](../src/xtd.core/include/xtd/collections/any_pair.h)                               | alias         | ![progress](pictures/progress100.png) |
 | [key_not_found_exception](../src/xtd.core/include/xtd/collections/key_not_found_exception.h) | class         | ![progress](pictures/progress100.png) |
 | [vector_list](../src/xtd.core/include/xtd/collections/vector_list.h)                         | alias         | ![progress](pictures/progress100.png) |
@@ -159,7 +159,7 @@
 ## xtd::collections::specialized
 
 | Name                                                                                 | Type          | Status                                |
-|--------------------------------------------------------------------------------------|---------------|---------------------------------------|
+| ------------------------------------------------------------------------------------ | ------------- | ------------------------------------- |
 | [string_map](../src/xtd.core/include/xtd/collections/specialized/string_map.h)       | alias         | ![progress](pictures/progress100.png) |
 | [string_pair](../src/xtd.core/include/xtd/collections/specialized/string_pair.h)     | alias         | ![progress](pictures/progress100.png) |
 | [string_vector](../src/xtd.core/include/xtd/collections/specialized/string_vector.h) | alias         | ![progress](pictures/progress100.png) |
@@ -167,7 +167,7 @@
 ## xtd::diagnostics
 
 | Name                                                                                                 | Type         | Status                                |
-|------------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
+| ---------------------------------------------------------------------------------------------------- | ------------ | ------------------------------------- |
 | [assert_dialog_result](../src/xtd.core/include/xtd/diagnostics/assert_dialog_result.h)               | enumeration  | ![progress](pictures/progress100.png) |
 | [boolean_switch](../src/xtd.core/include/xtd/diagnostics/boolean_switch.h)                           | class        | ![progress](pictures/progress100.png) |
 | [console_trace_listener](../src/xtd.core/include/xtd/diagnostics/console_trace_listener.h)           | class        | ![progress](pictures/progress100.png) |
@@ -207,7 +207,7 @@
 ## xtd::io
 
 | Name                                                                                                 | Type         | Status                                |
-|------------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
+| ---------------------------------------------------------------------------------------------------- | ------------ | ------------------------------------- |
 | [binary_reader](../src/xtd.core/include/xtd/io/binary_reader.h)                                      | class        | ![progress](pictures/progress100.png) |
 | [binary_writer](../src/xtd.core/include/xtd/io/binary_writer.h)                                      | class        | ![progress](pictures/progress100.png) |
 | [directory](../src/xtd.core/include/xtd/io/directory.h)                                              | static class | ![progress](pictures/progress100.png) |
@@ -237,7 +237,7 @@
 ## xtd::io::memory_mapped_files
 
 | Name                                                                                                            | Type         | Status                                |
-|-----------------------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
+| --------------------------------------------------------------------------------------------------------------- | ------------ | ------------------------------------- |
 | [memory_mapped_file](../src/xtd.core/include/xtd/io/memory_mapped_files/memory_mapped_file.h)                   | class        | ![progress](pictures/progress0.png)   |
 | [memory_mapped_file_access](../src/xtd.core/include/xtd/io/memory_mapped_files/memory_mapped_file_access.h)     | enumeration  | ![progress](pictures/progress0.png)   |
 | [memory_mapped_file_options](../src/xtd.core/include/xtd/io/memory_mapped_files/memory_mapped_file_options.h)   | enumeration  | ![progress](pictures/progress0.png)   |
@@ -248,7 +248,7 @@
 ## xtd::media
 
 | Name                                                                                                 | Type         | Status                                |
-|------------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
+| ---------------------------------------------------------------------------------------------------- | ------------ | ------------------------------------- |
 | [sound_player](../src/xtd.core/include/xtd/media/sound_player.h)                                     | class        | ![progress](pictures/progress0.png)   |
 | [system_sound](../src/xtd.core/include/xtd/media/system_sound.h)                                     | class        | ![progress](pictures/progress100.png) |
 | [system_sounds](../src/xtd.core/include/xtd/media/system_sounds.h)                                   | static class | ![progress](pictures/progress100.png) |
@@ -256,7 +256,7 @@
 ## xtd::microsoft::win32
 
 | Name                                                                                                         | Type         | Status                                |
-|--------------------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
+| ------------------------------------------------------------------------------------------------------------ | ------------ | ------------------------------------- |
 | [registry](../src/xtd.core/include/xtd/microsoft/win32/registry.h)                                           | class        | ![progress](pictures/progress0.png)   |
 | [registry_hive](../src/xtd.core/include/xtd/microsoft/win32/registry_hive.h)                                 | enumeration  | ![progress](pictures/progress0.png)   |
 | [registry_key](../src/xtd.core/include/xtd/microsoft/win32/registry_key.h)                                   | class        | ![progress](pictures/progress0.png)   |
@@ -269,7 +269,7 @@
 ## xtd::net
 
 | Name                                                                                           | Type         | Status                                |
-|------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
+| ---------------------------------------------------------------------------------------------- | ------------ | ------------------------------------- |
 | [cookie_exception](../src/xtd.core/include/xtd/net/cookie_exception.h)                         | exception    | ![progress](pictures/progress100.png) |
 | [dns](../src/xtd.core/include/xtd/net/dns.h)                                                   | static class | ![progress](pictures/progress100.png) |
 | [dns_end_point](../src/xtd.core/include/xtd/net/dns_end_point.h)                               | class        | ![progress](pictures/progress100.png) |
@@ -288,7 +288,7 @@
 ## xtd::net::sockets
 
 | Name                                                                                                               | Type         | Status                                |
-|--------------------------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
+| ------------------------------------------------------------------------------------------------------------------ | ------------ | ------------------------------------- |
 | [address_family](../src/xtd.core/include/xtd/net/sockets/address_family.h)                                         | enumeration  | ![progress](pictures/progress100.png) |
 | [io_control_code](../src/xtd.core/include/xtd/net/sockets/io_control_code.h)                                       | enumeration  | ![progress](pictures/progress100.png) |
 | [ip_packet_information](../src/xtd.core/include/xtd/net/sockets/ip_packet_information.h)                           | class        | ![progress](pictures/progress100.png) |
@@ -324,7 +324,7 @@
 ## xtd::net::web_sockets
 
 | Name                                                                                            | Type         | Status                                |
-|-------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
+| ----------------------------------------------------------------------------------------------- | ------------ | ------------------------------------- |
 | [client_web_socket](../src/xtd.core/include/xtd/net/websockets/client_web_socket.h)             | class        | ![progress](pictures/progress0.png)   |
 | [web_socket](../src/xtd.core/include/xtd/net/websockets/web_socket.h)                           | class        | ![progress](pictures/progress0.png)   |
 | [web_socket_close_status](../src/xtd.core/include/xtd/net/websockets/web_socket_close_status.h) | enumeration  | ![progress](pictures/progress0.png)   |
@@ -334,7 +334,7 @@
 ## xtd::reflection
 
 | Name                                                                                                          | Type         | Status                                |
-|---------------------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
+| ------------------------------------------------------------------------------------------------------------- | ------------ | ------------------------------------- |
 | [assembly](../src/xtd.core/include/xtd/reflection/assembly.h)                                                 | class        | ![progress](pictures/progress100.png) |
 | [assembly_company_attribute](../src/xtd.core/include/xtd/reflection/assembly_company_attribute.h)             | class        | ![progress](pictures/progress100.png) |
 | [assembly_configuration_attribute](../src/xtd.core/include/xtd/reflection/assembly_configuration_attribute.h) | class        | ![progress](pictures/progress100.png) |
@@ -352,19 +352,19 @@
 ## xtd::security
 
 | Name                                                                  | Type         | Status                                |
-|-----------------------------------------------------------------------|--------------|---------------------------------------|
+| --------------------------------------------------------------------- | ------------ | ------------------------------------- |
 | [secure_string](../src/xtd.core/include/xtd/security/secure_string.h) | all          | ![progress](pictures/progress100.png) |
 
 ## xtd::text
 
 | Name                                                                                                 | Type         | Status                                |
-|------------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
+| ---------------------------------------------------------------------------------------------------- | ------------ | ------------------------------------- |
 | [string_builder](../src/xtd.core/include/xtd/text/string_builder)                                    | all          | ![progress](pictures/progress0.png)   |
 
 ## xtd::threading
 
 | Name                                                                                                                     | Type         | Status                                |
-|--------------------------------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
+| ------------------------------------------------------------------------------------------------------------------------ | ------------ | ------------------------------------- |
 | [abandoned_mutex_exception](../src/xtd.core/include/xtd/threading/abandoned_mutex_exception.h)                           | exception    | ![progress](pictures/progress0.png)   |
 | [auto_reset_event](../src/xtd.core/include/xtd/threading/auto_reset_event.h)                                             | class        | ![progress](pictures/progress0.png)   |
 | [event_reset_mode](../src/xtd.core/include/xtd/threading/event_reset_mode.h)                                             | enumeration  | ![progress](pictures/progress0.png)   |
@@ -389,7 +389,7 @@
 ## xtd::timers
 
 | Name                                                                                | Type         | Status                                |
-|-------------------------------------------------------------------------------------|--------------|---------------------------------------|
+| ----------------------------------------------------------------------------------- | ------------ | ------------------------------------- |
 | [elapsed_event_args](../src/xtd.core/include/xtd/timers/elapsed_event_args.h)       | class        | ![progress](pictures/progress0.png)   |
 | [elapsed_event_handler](../src/xtd.core/include/xtd/timers/elapsed_event_handler.h) | delegate     | ![progress](pictures/progress0.png)   |
 | [timer](../src/xtd.core/include/xtd/timers/timer.h)                                 | class        | ![progress](pictures/progress0.png)   |
@@ -397,7 +397,7 @@
 ## xtd::web::css
 
 | Name                                                               | Type         | Status                                |
-|--------------------------------------------------------------------|--------------|---------------------------------------|
+| ------------------------------------------------------------------ | ------------ | ------------------------------------- |
 | [css_reader](../src/xtd.core/include/xtd/web/css/css_reader.h)     | class        | ![progress](pictures/progress100.png) |
 | [css_writer](../src/xtd.core/include/xtd/web/css/css_writer.h)     | class        | ![progress](pictures/progress100.png) |
 | [property](../src/xtd.core/include/xtd/web/css/property.h)         | class        | ![progress](pictures/progress100.png) |

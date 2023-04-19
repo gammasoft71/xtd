@@ -37,7 +37,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the color_dialog class.
       /// @remarks When you create an instance of ColorDialog, the following read/write properties are set to initial values.
       /// | Property         | Initial Value         |
-      /// |------------------|-----------------------|
+      /// | ---------------- | --------------------- |
       /// | alpha_color      | true                  |
       /// | allow_full_open  | true                  |
       /// | any_color        | false                 |

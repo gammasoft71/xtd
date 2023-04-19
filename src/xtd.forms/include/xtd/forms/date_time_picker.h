@@ -20,7 +20,7 @@ namespace xtd {
     /// @ingroup xtd_forms controls
     /// @par Appearance
     /// |       | Windows                                       | macOS                                         | Gnome                                         |
-    /// | ----- | --------------------------------------------- | ----------------------------------------------| ----------------------------------------------|
+    /// | ----- | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
     /// | Light |  @image html control_date_time_picker_w.png   |  @image html control_date_time_picker_m.png   |  @image html control_date_time_picker_g.png   |
     /// | Dark  |  @image html control_date_time_picker_wd.png  |  @image html control_date_time_picker_md.png  |  @image html control_date_time_picker_gd.png  |
     /// @par Examples

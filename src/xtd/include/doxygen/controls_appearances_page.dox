@@ -36,169 +36,169 @@
 ///
 /// @par Combo box appearance
 /// | xtd::forms::combo_box | Windows                                | macOS                                  | Gnome                                  |
-/// | --------------------- | ---------------------------------------| ---------------------------------------| ---------------------------------------|
+/// | --------------------- | -------------------------------------- | -------------------------------------- | -------------------------------------- |
 /// | Light                 |  @image html control_combo_box_w.png   |  @image html control_combo_box_m.png   |  @image html control_combo_box_g.png   |
 /// | Dark                  |  @image html control_combo_box_wd.png  |  @image html control_combo_box_md.png  |  @image html control_combo_box_gd.png  |
 ///
 /// @par Command link button appearance
 /// | xtd::forms::command_link_button | Windows                                          | macOS                                            | Gnome                                            |
-/// | ------------------------------- | -------------------------------------------------| -------------------------------------------------| -------------------------------------------------|
+/// | ------------------------------- | ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
 /// | Light                           |  @image html control_command_link_button_w.png   |  @image html control_command_link_button_m.png   |  @image html control_command_link_button_g.png   |
 /// | Dark                            |  @image html control_command_link_button_wd.png  |  @image html control_command_link_button_md.png  |  @image html control_command_link_button_gd.png  |
 ///
 /// @par Date time picker appearance
 /// | xtd::forms::date_time_picker | Windows                                       | macOS                                         | Gnome                                         |
-/// | ---------------------------- | --------------------------------------------- | ----------------------------------------------| ----------------------------------------------|
+/// | ---------------------------- | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
 /// | Light                        |  @image html control_date_time_picker_w.png   |  @image html control_date_time_picker_m.png   |  @image html control_date_time_picker_g.png   |
 /// | Dark                         |  @image html control_date_time_picker_wd.png  |  @image html control_date_time_picker_md.png  |  @image html control_date_time_picker_gd.png  |
 ///
 /// @par Domain up down appearance
 /// | xtd::forms::domain_up_down | Windows                                     | macOS                                       | Gnome                                       |
-/// | -------------------------- | ------------------------------------------- | --------------------------------------------| --------------------------------------------|
+/// | -------------------------- | ------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
 /// | Light                      |  @image html control_domain_up_down_w.png   |  @image html control_domain_up_down_m.png   |  @image html control_domain_up_down_g.png   |
 /// | Dark                       |  @image html control_domain_up_down_wd.png  |  @image html control_domain_up_down_md.png  |  @image html control_domain_up_down_gd.png  |
 ///
 /// @par Dot matrix display appearance
 /// | xtd::forms::dot_matrix_display | Windows                                         | macOS                                           | Gnome                                           |
-/// | ------------------------------ | ----------------------------------------------- | ------------------------------------------------| ------------------------------------------------|
+/// | ------------------------------ | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
 /// | Light                          |  @image html control_dot_matrix_display_w.png   |  @image html control_dot_matrix_display_m.png   |  @image html control_dot_matrix_display_g.png   |
 /// | Dark                           |  @image html control_dot_matrix_display_wd.png  |  @image html control_dot_matrix_display_md.png  |  @image html control_dot_matrix_display_gd.png  |
 ///
 /// @par Font picker appearance
 /// | xtd::forms::font_picker | Windows                                  | macOS                                    | Gnome                                    |
-/// | ----------------------- | ---------------------------------------- | -----------------------------------------| -----------------------------------------|
+/// | ----------------------- | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
 /// | Light                   |  @image html control_font_picker_w.png   |  @image html control_font_picker_m.png   |  @image html control_font_picker_g.png   |
 /// | Dark                    |  @image html control_font_picker_wd.png  |  @image html control_font_picker_md.png  |  @image html control_font_picker_gd.png  |
 ///
 /// @par Fourteen segment display appearance
 /// | xtd::forms::fourteen_segment_display | Windows                                               | macOS                                                 | Gnome                                                 |
-/// | ------------------------------------ | ----------------------------------------------------- | ------------------------------------------------------| ------------------------------------------------------|
+/// | ------------------------------------ | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
 /// | Light                                |  @image html control_fourteen_segment_display_w.png   |  @image html control_fourteen_segment_display_m.png   |  @image html control_fourteen_segment_display_g.png   |
 /// | Dark                                 |  @image html control_fourteen_segment_display_wd.png  |  @image html control_fourteen_segment_display_md.png  |  @image html control_fourteen_segment_display_gd.png  |
 ///
 /// @par Horizontal scroll bar appearance
 /// | xtd::forms::h_scroll_bar | Windows                                   | macOS                                     | Gnome                                     |
-/// | ------------------------ | ----------------------------------------- | ------------------------------------------| ------------------------------------------|
+/// | ------------------------ | ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
 /// | Light                    |  @image html control_h_scroll_bar_w.png   |  @image html control_h_scroll_bar_m.png   |  @image html control_h_scroll_bar_g.png   |
 /// | Dark                     |  @image html control_h_scroll_bar_wd.png  |  @image html control_h_scroll_bar_md.png  |  @image html control_h_scroll_bar_gd.png  |
 ///
 /// @par Label appearance
 /// | xtd::forms::label | Windows                            | macOS                              | Gnome                              |
-/// | ----------------- | ---------------------------------- | -----------------------------------| -----------------------------------|
+/// | ----------------- | ---------------------------------- | ---------------------------------- | ---------------------------------- |
 /// | Light             |  @image html control_label_w.png   |  @image html control_label_m.png   |  @image html control_label_g.png   |
 /// | Dark              |  @image html control_label_wd.png  |  @image html control_label_md.png  |  @image html control_label_gd.png  |
 ///
 /// @par LCD label appearance
 /// | xtd::forms::lcd_label | Windows                                | macOS                                  | Gnome                                  |
-/// | --------------------- | -------------------------------------- | ---------------------------------------| ---------------------------------------|
+/// | --------------------- | -------------------------------------- | -------------------------------------- | -------------------------------------- |
 /// | Light                 |  @image html control_lcd_label_w.png   |  @image html control_lcd_label_m.png   |  @image html control_lcd_label_g.png   |
 /// | Dark                  |  @image html control_lcd_label_wd.png  |  @image html control_lcd_label_md.png  |  @image html control_lcd_label_gd.png  |
 ///
 /// @par Light button appearance
 /// | xtd::forms::light_button | Windows                                   | macOS                                     | Gnome                                     |
-/// | ------------------------ | ----------------------------------------- | ------------------------------------------| ------------------------------------------|
+/// | ------------------------ | ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
 /// | Light                    |  @image html control_light_button_w.png   |  @image html control_light_button_m.png   |  @image html control_light_button_g.png   |
 /// | Dark                     |  @image html control_light_button_wd.png  |  @image html control_light_button_md.png  |  @image html control_light_button_gd.png  |
 ///
 /// @par Link label appearance
 /// | xtd::forms::link_label | Windows                                 | macOS                                   | Gnome                                   |
-/// | ---------------------- | --------------------------------------- | ----------------------------------------| ----------------------------------------|
+/// | ---------------------- | --------------------------------------- | --------------------------------------- | --------------------------------------- |
 /// | Light                  |  @image html control_link_label_w.png   |  @image html control_link_label_m.png   |  @image html control_link_label_g.png   |
 /// | Dark                   |  @image html control_link_label_wd.png  |  @image html control_link_label_md.png  |  @image html control_link_label_gd.png  |
 ///
 /// @par List box appearance
 /// | xtd::forms::list_box | Windows                               | macOS                                 | Gnome                                 |
-/// | -------------------- | ------------------------------------- | --------------------------------------| --------------------------------------|
+/// | -------------------- | ------------------------------------- | ------------------------------------- | ------------------------------------- |
 /// | Light                |  @image html control_list_box_w.png   |  @image html control_list_box_m.png   |  @image html control_list_box_g.png   |
 /// | Dark                 |  @image html control_list_box_wd.png  |  @image html control_list_box_md.png  |  @image html control_list_box_gd.png  |
 ///
 /// @par Loading indicator appearance
 /// | xtd::forms::loading_indicator | Windows                                        | macOS                                          | Gnome                                          |
-/// | ----------------------------- | ---------------------------------------------- | -----------------------------------------------| -----------------------------------------------|
+/// | ----------------------------- | ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- |
 /// | Light                         |  @image html control_loading_indicator_w.png   |  @image html control_loading_indicator_m.png   |  @image html control_loading_indicator_g.png   |
 /// | Dark                          |  @image html control_loading_indicator_wd.png  |  @image html control_loading_indicator_md.png  |  @image html control_loading_indicator_gd.png  |
 ///
 /// @par Month calendar appearance
 /// | xtd::forms::month_calendar | Windows                                     | macOS                                       | Gnome                                       |
-/// | -------------------------- | ------------------------------------------- | --------------------------------------------| --------------------------------------------|
+/// | -------------------------- | ------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
 /// | Light                      |  @image html control_month_calendar_w.png   |  @image html control_month_calendar_m.png   |  @image html control_month_calendar_g.png   |
 /// | Dark                       |  @image html control_month_calendar_wd.png  |  @image html control_month_calendar_md.png  |  @image html control_month_calendar_gd.png  |
 ///
 /// @par Nine segment display appearance
 /// | xtd::forms::nine_segment_display | Windows                                           | macOS                                             | Gnome                                             |
-/// | -------------------------------- | ------------------------------------------------- | --------------------------------------------------| --------------------------------------------------|
+/// | -------------------------------- | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
 /// | Light                            |  @image html control_nine_segment_display_w.png   |  @image html control_nine_segment_display_m.png   |  @image html control_nine_segment_display_g.png   |
 /// | Dark                             |  @image html control_nine_segment_display_wd.png  |  @image html control_nine_segment_display_md.png  |  @image html control_nine_segment_display_gd.png  |
 ///
 /// @par Numeric up down appearance
 /// | xtd::forms::numeric_up_down | Windows                                      | macOS                                        | Gnome                                        |
-/// | --------------------------- | -------------------------------------------- | ---------------------------------------------| ---------------------------------------------|
+/// | --------------------------- | -------------------------------------------- | -------------------------------------------- | -------------------------------------------- |
 /// | Light                       |  @image html control_numeric_up_down_w.png   |  @image html control_numeric_up_down_m.png   |  @image html control_numeric_up_down_g.png   |
 /// | Dark                        |  @image html control_numeric_up_down_wd.png  |  @image html control_numeric_up_down_md.png  |  @image html control_numeric_up_down_gd.png  |
 ///
 /// @par Picture box appearance
 /// | xtd::forms::picture_box | Windows                                  | macOS                                    | Gnome                                    |
-/// | ----------------------- | ---------------------------------------- | -----------------------------------------| -----------------------------------------|
+/// | ----------------------- | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
 /// | Light                   |  @image html control_picture_box_w.png   |  @image html control_picture_box_m.png   |  @image html control_picture_box_g.png   |
 /// | Dark                    |  @image html control_picture_box_wd.png  |  @image html control_picture_box_md.png  |  @image html control_picture_box_gd.png  |
 ///
 /// @par Progress bar appearance
 /// | xtd::forms::progress_bar | Windows                                   | macOS                                     | Gnome                                     |
-/// | ------------------------ | ----------------------------------------- | ------------------------------------------| ------------------------------------------|
+/// | ------------------------ | ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
 /// | Light                    |  @image html control_progress_bar_w.png   |  @image html control_progress_bar_m.png   |  @image html control_progress_bar_g.png   |
 /// | Dark                     |  @image html control_progress_bar_wd.png  |  @image html control_progress_bar_md.png  |  @image html control_progress_bar_gd.png  |
 ///
 /// @par Radio button appearance
 /// | xtd::forms::radio_button | Windows                                   | macOS                                     | Gnome                                     |
-/// | ------------------------ | ----------------------------------------- | ------------------------------------------| ------------------------------------------|
+/// | ------------------------ | ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
 /// | Light                    |  @image html control_radio_button_w.png   |  @image html control_radio_button_m.png   |  @image html control_radio_button_g.png   |
 /// | Dark                     |  @image html control_radio_button_wd.png  |  @image html control_radio_button_md.png  |  @image html control_radio_button_gd.png  |
 ///
 /// @par Seven segment display appearance
 /// | xtd::forms::seven_segment_display | Windows                                            | macOS                                              | Gnome                                              |
-/// | --------------------------------- | -------------------------------------------------- | ---------------------------------------------------| ---------------------------------------------------|
+/// | --------------------------------- | -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
 /// | Light                             |  @image html control_seven_segment_display_w.png   |  @image html control_seven_segment_display_m.png   |  @image html control_seven_segment_display_g.png   |
 /// | Dark                              |  @image html control_seven_segment_display_wd.png  |  @image html control_seven_segment_display_md.png  |  @image html control_seven_segment_display_gd.png  |
 ///
 /// @par Sixteen segment display appearance
 /// | xtd::forms::sixteen_segment_display | Windows                                              | macOS                                                | Gnome                                                |
-/// | ----------------------------------- | ---------------------------------------------------- | -----------------------------------------------------| -----------------------------------------------------|
+/// | ----------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
 /// | Light                               |  @image html control_sixteen_segment_display_w.png   |  @image html control_sixteen_segment_display_m.png   |  @image html control_sixteen_segment_display_g.png   |
 /// | Dark                                |  @image html control_sixteen_segment_display_wd.png  |  @image html control_sixteen_segment_display_md.png  |  @image html control_sixteen_segment_display_gd.png  |
 ///
 /// @par Switch button appearance
 /// | xtd::forms::switch_button | Windows                                    | macOS                                      | Gnome                                      |
-/// | ------------------------- | ------------------------------------------ | -------------------------------------------| -------------------------------------------|
+/// | ------------------------- | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
 /// | Light                     |  @image html control_switch_button_w.png   |  @image html control_switch_button_m.png   |  @image html control_switch_button_g.png   |
 /// | Dark                      |  @image html control_switch_button_wd.png  |  @image html control_switch_button_md.png  |  @image html control_switch_button_gd.png  |
 ///
 /// @par Text box appearance
 /// | xtd::forms::text_box | Windows                               | macOS                                 | Gnome                                 |
-/// | -------------------- | ------------------------------------- | --------------------------------------| --------------------------------------|
+/// | -------------------- | ------------------------------------- | ------------------------------------- | ------------------------------------- |
 /// | Light                |  @image html control_text_box_w.png   |  @image html control_text_box_m.png   |  @image html control_text_box_g.png   |
 /// | Dark                 |  @image html control_text_box_wd.png  |  @image html control_text_box_md.png  |  @image html control_text_box_gd.png  |
 ///
 /// @par Toggle button appearance
 /// | xtd::forms::toggle_button | Windows                                    | macOS                                      | Gnome                                      |
-/// | ------------------------- | ------------------------------------------ | -------------------------------------------| -------------------------------------------|
+/// | ------------------------- | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
 /// | Light                     |  @image html control_toggle_button_w.png   |  @image html control_toggle_button_m.png   |  @image html control_toggle_button_g.png   |
 /// | Dark                      |  @image html control_toggle_button_wd.png  |  @image html control_toggle_button_md.png  |  @image html control_toggle_button_gd.png  |
 ///
 /// @par Track bar appearance
 /// | xtd::forms::track_bar | Windows                                | macOS                                  | Gnome                                  |
-/// | --------------------- | -------------------------------------- | ---------------------------------------| ---------------------------------------|
+/// | --------------------- | -------------------------------------- | -------------------------------------- | -------------------------------------- |
 /// | Light                 |  @image html control_track_bar_w.png   |  @image html control_track_bar_m.png   |  @image html control_track_bar_g.png   |
 /// | Dark                  |  @image html control_track_bar_wd.png  |  @image html control_track_bar_md.png  |  @image html control_track_bar_gd.png  |
 ///
 /// @par Up down button appearance
 /// | xtd::forms::up_down_button | Windows                                     | macOS                                       | Gnome                                       |
-/// | -------------------------- | ------------------------------------------- | --------------------------------------------| --------------------------------------------|
+/// | -------------------------- | ------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
 /// | Light                      |  @image html control_up_down_button_w.png   |  @image html control_up_down_button_m.png   |  @image html control_up_down_button_g.png   |
 /// | Dark                       |  @image html control_up_down_button_wd.png  |  @image html control_up_down_button_md.png  |  @image html control_up_down_button_gd.png  |
 ///
 /// @par Vertical scroll bar appearance
 /// | xtd::forms::v_scroll_bar | Windows                                   | macOS                                     | Gnome                                     |
-/// | ------------------------ | ----------------------------------------- | ------------------------------------------| ------------------------------------------|
+/// | ------------------------ | ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
 /// | Light                    |  @image html control_v_scroll_bar_w.png   |  @image html control_v_scroll_bar_m.png   |  @image html control_v_scroll_bar_g.png   |
 /// | Dark                     |  @image html control_v_scroll_bar_wd.png  |  @image html control_v_scroll_bar_md.png  |  @image html control_v_scroll_bar_gd.png  |
 ///

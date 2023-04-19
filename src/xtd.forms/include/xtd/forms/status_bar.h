@@ -61,7 +61,7 @@ namespace xtd {
       /// @remarks The default xtd::forms::status_bar has no panels.
       /// @remarks When you create an instance of xtd::forms::status_bar, the following read/write properties are set to initial values.
       /// | Property                            | Initial value                  |
-      /// |-------------------------------------|--------------------------------|
+      /// | ----------------------------------- | ------------------------------ |
       /// | xtd::forms::status_bar::dock        | xtd::forms::dock_style::bottom |
       /// | xtd::forms::status_bar::show_panels | false                          |
       /// | xtd::forms::status_bar::sizing_grip | true                           |

@@ -20,7 +20,7 @@ namespace xtd {
   /// @ingroup xtd_core system
   /// @remarks The xtd::bit_converter class helps manipulate value types in their fundamental form, as a series of bytes. A xtd::byte is defined as an 8-bit unsigned integer. The xtd::bit_converter class includes static methods to convert each of the primitive types to and from an std::vector of bytes, as the following table illustrates.
   /// | Type     | To xtd::byte conversion                                                      | From xtd::byte conversion                                                                                    |
-  /// |----------|---------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
+  /// | -------- | ------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
   /// | bool     | xtd::bit_converter::get_bytes(bool)                                       | xtd::bit_converter::to_boolean(const std::vector< xtd::byte >&, int32)                                     |
   /// | char32 | xtd::bit_converter::get_bytes(char32)                                   | xtd::bit_converter::to_char(const std::vector< xtd::byte >&, int32)                                        |
   /// | double   | xtd::bit_converter::get_bytes(double) - or - double_to_int64_bits(double) | xtd::bit_converter::to_double(const std::vector< xtd::byte >&, int32) - or - int64_bits_to_double(int64) |
@@ -35,7 +35,7 @@ namespace xtd {
   /// @include bit_converter_round_trips.cpp
   /// The order of bytes in the std::vector returned by the xtd::bit_converter::get_bytes method overloads (as well as the order of bits in the integer returned by the xtd::bit_converter:double_to_int64_bits method and the order of hexadecimal strings returned by the to_string(xtd::byte[]) method) depends on whether the computer architecture is little-endian or big-endian. Similarly, the order of bytes in the std::vector and returned by the ToIntegerValue methods and the to_char method depends on whether the computer architecture is little-endian or big-endian. The endianness of an architecture is indicated by the is_little_endian property, which returns true on little-endian systems and false on big-endian systems. On little-endian systems, lower-order bytes precede higher-order bytes. On big-endian system, higher-order bytes precede lower-order bytes. The following table illustrates the difference in the xtd::byte std::vectors that result from passing the integer 1,234,567,890 (0x499602D2) to the get_bytes(int32) method. The bytes are listed in order from the xtd::byte at index 0 to the xtd::byte at index 3.
   /// |               |             |
-  /// |---------------|-------------|
+  /// | ------------- | ----------- |
   /// | Little-endian | D2-02-96-49 |
   /// | Big-endian    | 49-96-02-D2 |
   /// Because the return value of some methods depends on system architecture, be careful when transmitting xtd::byte data beyond machine boundaries:

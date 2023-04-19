@@ -19,7 +19,7 @@ namespace xtd {
     /// @ingroup xtd_forms controls
     /// @par Appearance
     /// |       | Windows                                    | macOS                                      | Gnome                                      |
-    /// | ----- | ------------------------------------------ | -------------------------------------------| -------------------------------------------|
+    /// | ----- | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
     /// | Light |  @image html control_switch_button_w.png   |  @image html control_switch_button_m.png   |  @image html control_switch_button_g.png   |
     /// | Dark  |  @image html control_switch_button_wd.png  |  @image html control_switch_button_md.png  |  @image html control_switch_button_gd.png  |
     /// @par Examples

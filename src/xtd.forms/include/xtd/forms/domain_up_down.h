@@ -18,7 +18,7 @@ namespace xtd {
     /// @ingroup xtd_forms controls
     /// @par Appearance
     /// |       | Windows                                     | macOS                                       | Gnome                                       |
-    /// | ----- | ------------------------------------------- | --------------------------------------------| --------------------------------------------|
+    /// | ----- | ------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
     /// | Light |  @image html control_domain_up_down_w.png   |  @image html control_domain_up_down_m.png   |  @image html control_domain_up_down_g.png   |
     /// | Dark  |  @image html control_domain_up_down_wd.png  |  @image html control_domain_up_down_md.png  |  @image html control_domain_up_down_gd.png  |
     /// @par Examples

@@ -108,7 +108,7 @@ For the purposes of this tables, a, b, and c represent valid values (literals, v
 # Arithmetic operators
 
 | Operator name                  | Syntax | Can overload | Prototype examples as member of K | Protype examples outside class definition |
-|--------------------------------|--------|--------------|-----------------------------------|-------------------------------------------|
+| ------------------------------ | ------ | ------------ | --------------------------------- | ----------------------------------------- |
 | Basic assignment               | a = b  | Yes          | R& K::operator =(S b);            | N/A                                       |
 | Addition                       | a + b  | Yes          | R K::operator +(S b);             | R operator +(K a, S b);                   |
 | Subtraction                    | a - b  | Yes          | R K::operator -(S b);             | R operator -(K a, S b);                   |
@@ -125,7 +125,7 @@ For the purposes of this tables, a, b, and c represent valid values (literals, v
 # Comparison operators / relational operators
 
 | Operator name            | Syntax                 | Can overload | Prototype example as member of K       | Prototype examples outside class definition |
-|--------------------------|------------------------|--------------|----------------------------------------|---------------------------------------------|
+| ------------------------ | ---------------------- | ------------ | -------------------------------------- | ------------------------------------------- |
 | Equal to.                | a == b                 | Yes          | bool K::operator ==(S const& b) const; | bool operator ==(K const& a, S const& b);   |
 | Not equal to             | a != b -or- a not_eq b | Yes          | bool K::operator !=(S const& b) const; | bool operator !=(K const& a, S const& b);   |
 | Greater than             | a > b                  | Yes          | bool K::operator >(S const& b) const;  | bool operator >(K const& a, S const& b);    |
@@ -136,7 +136,7 @@ For the purposes of this tables, a, b, and c represent valid values (literals, v
 # Logical operators
 
 | Operator name          | Syntax              | Can overload | Protype examples as member of K | Protype examples outside class definitions |
-|------------------------|---------------------|--------------|---------------------------------|--------------------------------------------|
+| ---------------------- | ------------------- | ------------ | ------------------------------- | ------------------------------------------ |
 | Logical negation (NOT) | !a -or- not a       | Yes          | bool K::operator !() const;     | bool operator !(K a);                      |
 | Logical AND            | a && b -or- a and b | Yes          | bool K::operator &&(S b) const; | bool operator &&(K a, S b);                |
 | Logical OR             | a || b -or- a or b  | Yes          | bool K::operator ||(S b) const; | bool operator ||(K a, S b);                |
@@ -144,7 +144,7 @@ For the purposes of this tables, a, b, and c represent valid values (literals, v
 # Bitwise operators
 
 | Operator name       | Syntax                | Can overload | Protype examples as member of K | Protype examples outside class definitions |
-|---------------------|-----------------------|--------------|---------------------------------|--------------------------------------------|
+| ------------------- | --------------------- | ------------ | ------------------------------- | ------------------------------------------ |
 | Bitwise NOT         | ~a -or- compl a       | Yes          | R K::operator ~();              | R operator ~(K a);                         |
 | Bitwise AND         | a & b -or- a bitand b | Yes          | R K::operator &(S b);           | R operator &(K a, S b);                    |
 | Bitwise OR          | a | n -or- a bitor b  | Yes          | R K::operator |(S b);           | R operator |(K a, S b);                    |
@@ -155,7 +155,7 @@ For the purposes of this tables, a, b, and c represent valid values (literals, v
 # Compound assignment operators
 
 | Operator name                  | Syntax                 | Meaning.   | Can overload | Protype examples as member of K | Protype examples outside class definitions |
-|--------------------------------|------------------------|------------|--------------|---------------------------------|--------------------------------------------|
+| ------------------------------ | ---------------------- | ---------- | ------------ | ------------------------------- | ------------------------------------------ |
 | Addition assignment            | a += b                 | a = a + b  | Yes          | R& K::operator +=(S b);         | R& operator +=(K& a, S b);                 |
 | Subtraction assignment         | a -= b                 | a = a - b  | Yes          | R& K::operator -=(S b);         | R& operator -=(K& a, S b);                 |
 | Multiplication assignment      | a *= b                 | a = a * b  | Yes          | R& K::operator *=(S b);         | R& operator *=(K& a, S b);                 |
@@ -170,7 +170,7 @@ For the purposes of this tables, a, b, and c represent valid values (literals, v
 # Member and pointer operators
 
 | Operator name                                                | Syntax | Can overload | Protype examples as member of K | Protype examples outside class definitions |
-|--------------------------------------------------------------|--------|--------------|---------------------------------|--------------------------------------------|
+| ------------------------------------------------------------ | ------ | ------------ | ------------------------------- | ------------------------------------------ |
 | Array subsript                                               | a[b]   | Yes          | R& K::operator [](S b);         | N/A                                        |
 | Indirection ("object pointed to by a")                       | a      | Yes          | R& K::operator *();             | R& operator *(K a);                        |
 | Address ("address of a")                                     | &a     | Yes          | R* K::operator &();             | R* operator &(K a);                        |
@@ -182,7 +182,7 @@ For the purposes of this tables, a, b, and c represent valid values (literals, v
 # Other operators
 
 | Operator name               | Syntax                            | Can overload | Protype examples as member of K     | Protype examples outside class definitions |
-|-----------------------------|-----------------------------------|--------------|-------------------------------------|--------------------------------------------|
+| --------------------------- | --------------------------------- | ------------ | ----------------------------------- | ------------------------------------------ |
 | Function call               | a(a1, a2)                         | Yes          | R K::operator ()(S a, T b, ...);    | N/A                                        |
 | Comma                       | a, b                              | Yes          | R K::operator ,(S b);               | R operator ,(K a, S b);                    |
 | Ternary conditional         | a ? b : c                         | No           | N/A                                 | N/A                                        |

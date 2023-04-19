@@ -25,7 +25,7 @@ Follow the [css tutorial](https://www.w3schools.com/css/default.asp) to read or 
 The following table lists the members to describe a theme:
 
 | Member      | Type                             | Description                 |
-|-------------|----------------------------------|-----------------------------|
+| ----------- | -------------------------------- | --------------------------- |
 | name        | [string](#list-of-property-type) | Gets the theme name.        |
 | description | [string](#list-of-property-type) | Gets the theme description. |
 | authors     | [string](#list-of-property-type) | Gets the theme authors.     |
@@ -37,7 +37,7 @@ The following table lists the members to describe a theme:
 The following table lists the system colors that can be customized using style sheets:
 
 | Color                                                                                                                                          | Type                            | Description                                                                       |
-|------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------|-----------------------------------------------------------------------------------|
+| ---------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- | --------------------------------------------------------------------------------- |
 | [accent](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1system__colors.html#a77eb861710eace25ba504b40e5b88ac2)                    | [color](#list-of-property-type) | Gets the color used to accent a control.                                          |
 | [accent-text](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1system__colors.html#ac8752bc4cd0b4cbea00bfa048d3dc213)               | [color](#list-of-property-type) | Gets the color of the text used to accent a control.                              |
 | [active-border](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1system__colors.html#ad34e4d2271162cf60ed269cd68e40ed7)             | [color](#list-of-property-type) | Gets the color of the active window's border.                                     |
@@ -81,7 +81,7 @@ The following table lists the system colors that can be customized using style s
 The following table lists the xtd controls that can be customized using style sheets:
 
 | Control                                                                                                     | How to style                                         |
-|-------------------------------------------------------------------------------------------------------------|------------------------------------------------------|
+| ----------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
 | [button](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1button.html)                             |                                                      |
 | [check_box](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1check__box.html)                      |                                                      |
 | [checked_list_box](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1checked__list__box.html)       |                                                      |
@@ -116,14 +116,14 @@ The table below lists all the properties supported by xtd style sheets.
 Properties marked with an asterisk * are specific to xtd and have no equivalent in [CSS2 or CSS3](https://www.w3schools.com/cssref/default.asp).
 
 | Property    | Type                           | Description                 |
-|-------------|--------------------------------|-----------------------------|
+| ----------- | ------------------------------ | --------------------------- |
 
 ## List of property type
 
 The following table summarizes the syntax and meaning of the different property types:
 
 | Type         | Syntax                                                                                                                                                                                                                   | Description                                                                                                                                                                                                                                                                                       |
-|--------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | alignment    | {top<br>\| left<br>\| bottom<br>\| right<br>\| center}*                                                                                                                                                                  | Specifies a double-quited utf-8 string (e.g. "Text")                                                                                                                                                                                                                                              |
 | border       | {border_style | length | brush}                                                                                                                                                                                          | Shorthand border property                                                                                                                                                                                                                                                                         |
 | border_color | color{1,4}                                                                                                                                                                                                               | Shorthand border property                                                                                                                                                                                                                                                                         |
@@ -136,7 +136,7 @@ The following table summarizes the syntax and meaning of the different property 
 The following states are supported:
 
 | State       | Descripttion                                                                                                                       |
-|-------------|------------------------------------------------------------------------------------------------------------------------------------|
+| ----------- | ---------------------------------------------------------------------------------------------------------------------------------- |
 | :checked    | The item is checked.                                                                                                               |
 | :default    | The item is the default (see [ibuttton_control](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1ibutton__control.html)). |
 | :disabled   | The irem is disabled, generally the item is grayed.                                                                                |
@@ -152,14 +152,14 @@ The following states are supported:
 The following subcontrols are available:
 
 | Sub-control | Descripttion                                                                                                                       |
-|-------------|------------------------------------------------------------------------------------------------------------------------------------|
+| ----------- | ---------------------------------------------------------------------------------------------------------------------------------- |
 
 ## List of images
 
 Images used in xtd can be customized using the following properties:
 
 | Context       | Name                               | [xtd::drawing::system_image](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1system__images.html)                                                                                    |
-|---------------|------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ------------- | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Actions       | address-book-new                   | [xtd::drawing::system_image::from_name("address-book-new")](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1system__images.html#a0cdc35ee4c41a69247c94e85e0f495b5)                   |
 | Actions       | application-exit                   | [xtd::drawing::system_image::from_name("application-exit")](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1system__images.html#a0cdc35ee4c41a69247c94e85e0f495b5)                   |
 | Actions       | appointment-new                    | [xtd::drawing::system_image::from_name("appointment-new")](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1system__images.html#a0cdc35ee4c41a69247c94e85e0f495b5)                    |

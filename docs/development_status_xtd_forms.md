@@ -22,7 +22,7 @@
 ## xtd::forms
 
 | Name                                                                                                                          | Type         | Status                                |
-|-------------------------------------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
+| ----------------------------------------------------------------------------------------------------------------------------- | ------------ | ------------------------------------- |
 | [about_box](../src/xtd.forms/include/xtd/forms/about_box.h)                                                                   | static class | ![progress](pictures/progress100.png) |
 | [about_dialog](../src/xtd.forms/include/xtd/forms/about_dialog.h)                                                             | class        | ![progress](pictures/progress100.png) |
 | [anchor_styles](../src/xtd.forms/include/xtd/forms/anchor_styles.h)                                                           | enumeration  | ![progress](pictures/progress100.png) |
@@ -328,20 +328,20 @@
 ## xtd::forms::layout
 
 | Name                                                                                                   | Type         | Status                                |
-|--------------------------------------------------------------------------------------------------------|--------------|---------------------------------------|
+| ------------------------------------------------------------------------------------------------------ | ------------ | ------------------------------------- |
 | [arranged_element_collection](../src/xtd.forms/include/xtd/forms/layout/arranged_element_collection.h) | class        | ![progress](pictures/progress100.png) |
 | [sorter_none](../src/xtd.forms/include/xtd/forms/layout/sorter_none.h)                                 | class        | ![progress](pictures/progress100.png) |
 
 ## xtd::forms::properties
 
 | Name                                                                   | Type         | Status                                |
-|------------------------------------------------------------------------|--------------|---------------------------------------|
+| ---------------------------------------------------------------------- | ------------ | ------------------------------------- |
 | [resources](../src/xtd.forms/include/xtd/forms/properties/resources.h) | static class | ![progress](pictures/progress100.png) |
 
 ## xtd::forms::style_sheets
 
 | Name                                                                                          | Type         | Status                                |
-|-----------------------------------------------------------------------------------------------|--------------|---------------------------------------|
+| --------------------------------------------------------------------------------------------- | ------------ | ------------------------------------- |
 | [border_color](../src/xtd.forms/include/xtd/forms/style_sheets/border_color.h)                | class        | ![progress](pictures/progress100.png) |
 | [border_radius](../src/xtd.forms/include/xtd/forms/style_sheets/border_radius.h)              | class        | ![progress](pictures/progress100.png) |
 | [border_style](../src/xtd.forms/include/xtd/forms/style_sheets/border_style.h)                | class        | ![progress](pictures/progress100.png) |
@@ -366,7 +366,7 @@
 ## xtd::forms::visual_styles
 
 | Name                                                                                          | Type         | Status                                |
-|-----------------------------------------------------------------------------------------------|--------------|---------------------------------------|
+| --------------------------------------------------------------------------------------------- | ------------ | ------------------------------------- |
 | [check_box_state](../src/xtd.forms/include/xtd/forms/visual_styles/check_box_state.h)         | enumeration  | ![progress](pictures/progress100.png) |
 | [push_button_state](../src/xtd.forms/include/xtd/forms/visual_styles/push_button_state.h)     | enumeration  | ![progress](pictures/progress100.png) |
 | [radio_button_state](../src/xtd.forms/include/xtd/forms/visual_styles/radio_button_state.h)   | enumeration  | ![progress](pictures/progress100.png) |

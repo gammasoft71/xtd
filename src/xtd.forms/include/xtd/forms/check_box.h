@@ -104,7 +104,7 @@ namespace xtd {
       /// @remarks If the three_state property is set to false, the check_state property value can only be set to check_state::indeterminate in code and not by u ser interaction.
       /// @remarks The following table describes the xtd::forms::appearance of the check_box control in its different states for the normal and button style control check_box::appearance.
       /// | Check_state   |  appearance::normal                                                    | appearance::button                     |
-      /// |---------------|------------------------------------------------------------------------|----------------------------------------|
+      /// | ------------- | ---------------------------------------------------------------------- | -------------------------------------- |
       /// | checked       | The check_box displays a check mark.                                   | The control appears sunken.            |
       /// | unchecked     | The CheckBox is empty.                                                 | The control appears raised.            |
       /// | indeterminate | The CheckBox displays a check mark and is shaded.                      | The control appears flat.              |
@@ -116,7 +116,7 @@ namespace xtd {
       /// @param check_state One of the check_state enumeration values. The default value is unchecked.
       /// @remarks The following table describes the xtd::forms::appearance of the check_box control in its different states for the normal and button style control check_box::appearance.
       /// | Check_state   |  appearance::normal                                                    | appearance::button                     |
-      /// |---------------|------------------------------------------------------------------------|----------------------------------------|
+      /// | ------------- | ---------------------------------------------------------------------- | -------------------------------------- |
       /// | checked       | The check_box displays a check mark.                                   | The control appears sunken.            |
       /// | unchecked     | The CheckBox is empty.                                                 | The control appears raised.            |
       /// | indeterminate | The CheckBox displays a check mark and is shaded.                      | The control appears flat.              |

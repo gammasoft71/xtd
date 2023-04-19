@@ -145,7 +145,7 @@ namespace xtd {
       /// @brief Resets all properties to default values.
       /// @remarks When you reset the xtd::forms::replace::dialog, the following read/write properties are set to initial values.
       /// | Property         | Value                              |
-      /// |------------------|------------------------------------|
+      /// | ---------------- | ---------------------------------- |
       /// | title            | ""                                 |
       /// | find_string      | ""                                 |
       /// | replace_string   | ""                                 |

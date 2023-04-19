@@ -64,7 +64,7 @@ For example, a parameter constrained to isession might be called session_t.
 **✔️ DO** follow the guidelines described in the following table when naming types derived from or implementing certain xtd Framework types.
 
 | Base Type               | Derived/Implementing Type Guideline                                                                |
-|-------------------------|----------------------------------------------------------------------------------------------------|
+| ----------------------- | -------------------------------------------------------------------------------------------------- |
 | xtd::delegate           | **✔️ DO** add the suffix "_event_handler" to names of delegates that are used in events.            |
 | xtd::delegate           | **✔️ DO** add the suffix "_callback" to names of delegates other than those used as event handlers. |
 | xtd::delegate           | **❌ DO NOT** add the suffix "_delegate" to a delegate.                                             |

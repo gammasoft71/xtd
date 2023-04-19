@@ -20,7 +20,7 @@ namespace xtd {
     /// @ingroup xtd_forms controls
     /// @par Appearance
     /// |       | Windows                               | macOS                                 | Gnome                                 |
-    /// | ----- | ------------------------------------- | --------------------------------------| --------------------------------------|
+    /// | ----- | ------------------------------------- | ------------------------------------- | ------------------------------------- |
     /// | Light |  @image html control_list_box_w.png   |  @image html control_list_box_m.png   |  @image html control_list_box_g.png   |
     /// | Dark  |  @image html control_list_box_wd.png  |  @image html control_list_box_md.png  |  @image html control_list_box_gd.png  |
     /// @par Examples

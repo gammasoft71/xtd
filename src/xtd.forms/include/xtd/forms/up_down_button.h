@@ -22,7 +22,7 @@ namespace xtd {
     /// @ingroup xtd_forms controls
     /// @par Appearance
     /// |       | Windows                                     | macOS                                       | Gnome                                       |
-    /// | ----- | ------------------------------------------- | --------------------------------------------| --------------------------------------------|
+    /// | ----- | ------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
     /// | Light |  @image html control_up_down_button_w.png   |  @image html control_up_down_button_m.png   |  @image html control_up_down_button_g.png   |
     /// | Dark  |  @image html control_up_down_button_wd.png  |  @image html control_up_down_button_md.png  |  @image html control_up_down_button_gd.png  |
     /// @par Examples

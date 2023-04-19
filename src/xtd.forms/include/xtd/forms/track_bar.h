@@ -21,7 +21,7 @@ namespace xtd {
     /// @remarks You can use this control to input numeric data obtained through the value property. You can display this numeric data in a control or use it in code.
     /// @par Appearance
     /// |       | Windows                                | macOS                                  | Gnome                                  |
-    /// | ----- | -------------------------------------- | ---------------------------------------| ---------------------------------------|
+    /// | ----- | -------------------------------------- | -------------------------------------- | -------------------------------------- |
     /// | Light |  @image html control_track_bar_w.png   |  @image html control_track_bar_m.png   |  @image html control_track_bar_g.png   |
     /// | Dark  |  @image html control_track_bar_wd.png  |  @image html control_track_bar_md.png  |  @image html control_track_bar_gd.png  |
     /// @par Examples

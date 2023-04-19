@@ -39,7 +39,7 @@ For example, a method converting to int64_t should be named to_int64, not to_lon
 The following table presents several base data types using the **cstdint** type names (as well as the corresponding type names for all platform).
 
 | C++                | cstdint     | xtd     | Size in bytes |
-|--------------------|-------------|---------|---------------|
+| ------------------ | ----------- | ------- | ------------- |
 | char               | uint8_t     | sbyte   | 1             |
 | unsigned char      | int8_t      | byte    | 1             |
 | short              | int16_t     | int16   | 2             |

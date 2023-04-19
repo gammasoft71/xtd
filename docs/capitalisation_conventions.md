@@ -133,7 +133,7 @@ Most compound terms are treated as single words .
 These are compound words written as a single word, such as endpoint. For the purpose of casing guidelines, treat a closed-form compound word as a single word. Use a current dictionary to determine if a compound word is written in closed form. ​​
 
 | separate_word | Not          |
-|---------------|--------------|
+| ------------- | ------------ |
 | bit_flag      | bitflag      |
 | callback      | call_back    |
 | canceled      | cancelled    |

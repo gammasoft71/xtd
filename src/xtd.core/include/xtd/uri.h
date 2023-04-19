@@ -458,7 +458,7 @@ namespace xtd {
     /// @remarks The scheme property returns the scheme used to initialize the xtd::uri instance. This property does not indicate that the scheme used to initialize the xtd::uri instance was recognized.
     /// @remarks The following table shows examples of some possible values returned by the scheme property.
     /// | Scheme   | Description                                                                                    |
-    /// |----------| -----------------------------------------------------------------------------------------------|
+    /// | -------- | ---------------------------------------------------------------------------------------------- |
     /// | file     | The resource is a file on the local computer.                                                  |
     /// | ftp      | The resource is accessed through FTP.                                                          |
     /// | gopher   | The resource is accessed through the Gopher protocol.                                          |
@@ -565,7 +565,7 @@ namespace xtd {
     /// @remarks   * query includes the Path, plus the query and its delimiter.
     /// @remarks The following examples show a URI and the results of calling get_left_part with scheme, authority, Path, or query.
     /// | URI                                         | Scheme  | Autority                | Path                                       | Query                                       |
-    /// |---------------------------------------------|---------|-------------------------|--------------------------------------------|---------------------------------------------|
+    /// | ------------------------------------------- | ------- | ----------------------- | ------------------------------------------ | ------------------------------------------- |
     /// | http://www.contoso.com/index.htm?date=today | http:// | http://www.contoso.com  | http://www.contoso.com/index.htm           | http://www.contoso.com/index.htm?date=today |
     /// | http://www.contoso.com/index.htm#main       | http:// | http://www.contoso.com  | http://www.contoso.com/index.htm           | http://www.contoso.com/index.htm            |
     /// | mailto:user@contoso.com?subject=uri         | mailto: | mailto:user@contoso.com | mailto:user@contoso.com?subject=uri        | <None>                                      |
@@ -593,7 +593,7 @@ namespace xtd {
     /// @exception ArgumentNullException uri is null.
     /// @remarks IsBaseOf is used to compare the current xtd::uri instance to a specified xtd::uri to determine whether this URI is a base for the specified xtd::uri. When comparing two xtd::uri objects to determine a base relationship, the user information (user_info) is not evaluated. When comparing two URIs (uri1 and uri2), uri1 is the base of uri2 if, when you ignore everything in uri2 after the last slash (/), the two URIs are identical. Using http://host/path/path/file?query as the base URI, the following table shows whether it is a base for other URIs.
     /// | URI                                   | http://host/path/path/file?query is base of |
-    /// |---------------------------------------|---------------------------------------------|
+    /// | ------------------------------------- | ------------------------------------------- |
     /// | http://host/path/path/file/           | yes                                         |
     /// | http://host/path/path/#fragment       | yes                                         |
     /// | http://host/path/path/MoreDir/"       | yes                                         |
@@ -626,7 +626,7 @@ namespace xtd {
     /// @remarks The string is considered to be well-formed in accordance with RFC 2396 and RFC 2732 by default. If International Resource Identifiers (IRIs) or Internationalized Domain Name (IDN) parsing is enabled, the string is considered to be well-formed in accordance with RFC 3986 and RFC 3987
     /// @remarks The string is considered poorly formed, causing the method to return false, if any of the following conditions occur.
     /// | Error                                                                                      | Example                                       |
-    /// |--------------------------------------------------------------------------------------------|-----------------------------------------------|
+    /// | ------------------------------------------------------------------------------------------ | --------------------------------------------- |
     /// | The string is not correctly escaped.                                                       | http://www.contoso.com/path???/file name      |
     /// | The string is an absolute xtd::uri that represents an implicit file xtd::uri.              | c:\\directory\filename                        |
     /// | The string is an absolute URI that is missing a slash before the path.                     | file://c:/directory/filename                  |
@@ -645,7 +645,7 @@ namespace xtd {
     /// @remarks By default, the string is considered well-formed in accordance with RFC 2396 and RFC 2732. If International Resource Identifiers (IRIs) or Internationalized Domain Name (IDN) parsing is enabled, the string is considered well-formed in accordance with RFC 3986 and RFC 3987.
     /// @remarks The string is considered poorly formed, causing the method to return false, if any of the following conditions occur
     /// | Error                                                                                      | Example                                       |
-    /// |--------------------------------------------------------------------------------------------|-----------------------------------------------|
+    /// | ------------------------------------------------------------------------------------------ | --------------------------------------------- |
     /// | The string is not correctly escaped.                                                       | http://www.contoso.com/path???/file name      |
     /// | The string is an absolute xtd::uri that represents an implicit file xtd::uri.              | c:\\directory\filename                        |
     /// | The string is an absolute URI that is missing a slash before the path.                     | file://c:/directory/filename                  |

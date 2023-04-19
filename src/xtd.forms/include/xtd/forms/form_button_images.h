@@ -338,7 +338,7 @@ namespace xtd {
       /// @return The size that represents the height and width of the button images in pixels.
       /// @remarks The following table show size by operating system :
       /// | Windows  | macOS    | linux    |
-      /// |----------|----------|----------|
+      /// | -------- | -------- | -------- |
       /// | {90, 58} | {24, 24} | {64, 64} |
       static xtd::drawing::size size();
       /// @brief Gets the height and width of the button images with specified maximized form.
@@ -346,7 +346,7 @@ namespace xtd {
       /// @return The size that represents the height and width of the button images in pixels.
       /// @remarks The following table show size by operating system :
       /// | maximized form | Windows  | macOS    | linux    |
-      /// |----------------|----------|----------|----------|
+      /// | -------------- | -------- | -------- | -------- |
       /// | false          | {90, 58} | {24, 24} | {64, 64} |
       /// | true           | {90, 42} | {24, 24} | {64, 64} |
       static xtd::drawing::size size(bool maximized_form);

@@ -41,7 +41,7 @@ namespace sleepfor {
     
     static string get_usage() {
       return "Usage\n"
-        "  sleepfor [duration] [--nanoseconds|--milliseconds|--seconds|--minutes|]\n"
+        "  sleepfor [duration] [--nanoseconds| -milliseconds| -seconds| -minutes|]\n"
         "\n"
         "-ns, --nanoseconds  : The specified duration is in nanoseconds.\n"
         "-ms, --milliseconds : The specified duration is in milliseconds. Is the default.\n"

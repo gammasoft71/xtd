@@ -297,7 +297,7 @@ To facilitate the writing of the flags attribute, there is the [flags_attribute 
 The [flags_attribute helper](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gaea49fae71107df8769685efb159c181a) helper sets the [xtd::enum_set_attribute](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1enum__set__attribute.html) with the [xtd::enum_attribute::flags](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#gga21077f4832fc4718f7095d1a560a89cda4e5868d676cb634aa75b125a0f741abf) atribute and implements the following operators for enum flags:
 
 | Operator | Name                   |
-|----------|------------------------|
+| -------- | ---------------------- |
 | ^=       | Bitwise XOR assignment |
 | &=       | Bitwise AND assignment |
 | \|=      | Bitwise OR assignment  |

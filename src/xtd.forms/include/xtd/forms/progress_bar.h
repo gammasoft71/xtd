@@ -27,7 +27,7 @@ namespace xtd {
     /// @note fore_color and back_color changes for the progress_bar will not be honored.
     /// @par Appearance
     /// |       | Windows                                   | macOS                                     | Gnome                                     |
-    /// | ----- | ----------------------------------------- | ------------------------------------------| ------------------------------------------|
+    /// | ----- | ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
     /// | Light |  @image html control_progress_bar_w.png   |  @image html control_progress_bar_m.png   |  @image html control_progress_bar_g.png   |
     /// | Dark  |  @image html control_progress_bar_wd.png  |  @image html control_progress_bar_md.png  |  @image html control_progress_bar_gd.png  |
     /// @par Examples

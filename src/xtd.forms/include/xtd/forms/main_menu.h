@@ -58,7 +58,7 @@ namespace xtd {
       /// @return new main menu instance.
       /// @remarks The following table shows the items contained in the menu_items array and sub menu_items array :
       /// | menu_index | sub_menu_index | menu_item | sub_menu_item |
-      /// |------------|----------------|-----------|---------------|
+      /// | ---------- | -------------- | --------- | ------------- |
       /// | 0          |                | file      |               |
       /// | 0          | 0              | file      | new           |
       /// | 0          | 1              | file      | open          |
@@ -108,7 +108,7 @@ namespace xtd {
       /// @return new main menu instance.
       /// @remarks The following table shows the items contained in the menu_items array and sub menu_items array :
       /// | menu_index | sub_menu_index | menu_item | sub_menu_item |
-      /// |------------|----------------|-----------|---------------|
+      /// | ---------- | -------------- | --------- | ------------- |
       /// | 0          |                | file      |               |
       /// | 0          | 0              | file      | new           |
       /// | 0          | 1              | file      | open          |
@@ -158,7 +158,7 @@ namespace xtd {
       /// @return new main menu instance.
       /// @remarks The following table shows the items contained in the menu_items array and sub menu_items array :
       /// | menu_index | sub_menu_index | menu_item | sub_menu_item |
-      /// |------------|----------------|-----------|---------------|
+      /// | ---------- | -------------- | --------- | ------------- |
       /// | 0          |                | file      |               |
       /// | 0          | 0              | file      | new           |
       /// | 0          | 1              | file      | open          |
@@ -209,7 +209,7 @@ namespace xtd {
       /// @return new main menu instance.
       /// @remarks The following table shows the items contained in the menu_items array and sub menu_items array :
       /// | menu_index | sub_menu_index | menu_item | sub_menu_item |
-      /// |------------|----------------|-----------|---------------|
+      /// | ---------- | -------------- | --------- | ------------- |
       /// | 0          |                | file      |               |
       /// | 0          | 0              | file      | new           |
       /// | 0          | 1              | file      | open          |

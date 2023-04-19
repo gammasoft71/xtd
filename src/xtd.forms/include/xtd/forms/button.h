@@ -33,7 +33,7 @@ namespace xtd {
     /// @note If the control that has focus accepts and processes the ENTER key press, the button does not process it. For example, if a multiline text_box or another button has focus, that control processes the ENTER key press instead of the accept button.
     /// @par Appearance
     /// |       | Windows                             | macOS                               | Gnome                               |
-    /// | ------| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+    /// | ----- | ----------------------------------- | ----------------------------------- | ----------------------------------- |
     /// | Light |  @image html control_button_w.png   |  @image html control_button_m.png   |  @image html control_button_g.png   |
     /// | Dark  |  @image html control_button_wd.png  |  @image html control_button_md.png  |  @image html control_button_gd.png  |
     /// @par Examples

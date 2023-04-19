@@ -472,7 +472,7 @@ namespace xtd {
     /// @param str_b The second string to compare.
     /// @return A 32-bit signed integer that indicates the lexical relationship between the two compares.
     /// | Value             | Condition                                                     |
-    /// |-------------------|---------------------------------------------------------------|
+    /// | ----------------- | ------------------------------------------------------------- |
     /// | Less than zero    | str_a precedes str_b in the sort order.                       |
     /// | Zero              | str_a occurs in the same position as str_b in the sort order. |
     /// | Greater than zero | str_a follows str_b in the sort order.                        |
@@ -483,7 +483,7 @@ namespace xtd {
     /// @param ignore_case true to ignore case during the comparison; otherwise, false.
     /// @return A 32-bit signed integer that indicates the lexical relationship between the two compares.
     /// | Value             | Condition                                                     |
-    /// |-------------------|---------------------------------------------------------------|
+    /// | ----------------- | ------------------------------------------------------------- |
     /// | Less than zero    | str_a precedes str_b in the sort order.                       |
     /// | Zero              | str_a occurs in the same position as str_b in the sort order. |
     /// | Greater than zero | str_a follows str_b in the sort order.                        |
@@ -495,7 +495,7 @@ namespace xtd {
     /// @param comparison_type One of the enumeration values that specifies the rules to use in the comparison.
     /// @return A 32-bit signed integer that indicates the lexical relationship between the two compares.
     /// | Value             | Condition                                                     |
-    /// |-------------------|---------------------------------------------------------------|
+    /// | ----------------- | ------------------------------------------------------------- |
     /// | Less than zero    | str_a precedes str_b in the sort order.                       |
     /// | Zero              | str_a occurs in the same position as str_b in the sort order. |
     /// | Greater than zero | str_a follows str_b in the sort order.                        |
@@ -508,7 +508,7 @@ namespace xtd {
     /// @param length The maximum number of characters in the substrings to compare
     /// @return A 32-bit signed integer that indicates the lexical relationship between the two compares.
     /// | Value             | Condition                                                     |
-    /// |-------------------|---------------------------------------------------------------|
+    /// | ----------------- | ------------------------------------------------------------- |
     /// | Less than zero    | str_a precedes str_b in the sort order.                       |
     /// | Zero              | str_a occurs in the same position as str_b in the sort order. |
     /// | Greater than zero | str_a follows str_b in the sort order.                        |
@@ -522,7 +522,7 @@ namespace xtd {
     /// @param ignore_case true to ignore case during the comparison; otherwise, false.
     /// @return A 32-bit signed integer that indicates the lexical relationship between the two compares.
     /// | Value             | Condition                                                     |
-    /// |-------------------|---------------------------------------------------------------|
+    /// | ----------------- | ------------------------------------------------------------- |
     /// | Less than zero    | str_a precedes str_b in the sort order.                       |
     /// | Zero              | str_a occurs in the same position as str_b in the sort order. |
     /// | Greater than zero | str_a follows str_b in the sort order.                        |
@@ -536,7 +536,7 @@ namespace xtd {
     /// @param comparison_type One of the enumeration values that specifies the rules to use in the comparison.
     /// @return A 32-bit signed integer that indicates the lexical relationship between the two compares.
     /// | Value             | Condition                                                     |
-    /// |-------------------|---------------------------------------------------------------|
+    /// | ----------------- | ------------------------------------------------------------- |
     /// | Less than zero    | str_a precedes str_b in the sort order.                       |
     /// | Zero              | str_a occurs in the same position as str_b in the sort order. |
     /// | Greater than zero | str_a follows str_b in the sort order.                        |
@@ -1120,7 +1120,7 @@ namespace xtd {
     /// @remarks A format specifier follows this prototype:
     /// @remarks %[flags][width][.precision][length]specifier
     /// | specifier | Output                                                                                                                                                   | Example      |
-    /// |-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
+    /// | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
     /// | d or i    | Signed decimal integer                                                                                                                                   | 392          |
     /// | u         | Unsigned decimal integer                                                                                                                                 | 7235         |
     /// | o         | Unsigned octal                                                                                                                                           | 610          |
@@ -1141,7 +1141,7 @@ namespace xtd {
     /// | %         | A % followed by another % character will write a single % to the stream.                                                                                 | %            |
     /// @remarks The format specifier can also contain sub-specifiers: flags, width, .precision and modifiers (in that order), which are optional and follow these specifications:
     /// | flags   | description                                                                                                                                                                                                                                                                                                 |
-    /// |---------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+    /// | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
     /// | -       | Left-justify within the given field width; Right justification is the default (see width sub-specifier).                                                                                                                                                                                                    |
     /// | +       | Forces to prefix the result with a plus or minus sign (+ or -) even for positive numbers. By default, only negative numbers are preceded with a - sign.                                                                                                                                                    |
     /// | (space) | If no sign is going to be written, a blank space is inserted before the value.                                                                                                                                                                                                                              |
@@ -1149,17 +1149,17 @@ namespace xtd {
     /// | 0       | Left-pads the number with zeroes (0) instead of spaces when padding is specified (see width sub-specifier).                                                                                                                                                                                                 |
     ///
     /// | width    | description                                                                                                                                                                                          |
-    /// |----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+    /// | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
     /// | (number) | Minimum number of characters to be printed. If the value to be printed is shorter than this number, the result is padded with blank spaces. The value is not truncated even if the result is larger. |
     /// | *        | The width is not specified in the format string, but as an additional integer value argument preceding the argument that has to be formatted.                                                        |
     ///
     /// | .precision | description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-    /// |------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+    /// | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
     /// | .number    | For integer specifiers (d, i, o, u, x, X): precision specifies the minimum number of digits to be written. If the value to be written is shorter than this number, the result is padded with leading zeros. The value is not truncated even if the result is longer. A precision of 0 means that no character is written for the value 0. For a, A, e, E, f and F specifiers: this is the number of digits to be printed after the decimal point (by default, this is 6). For g and G specifiers: This is the maximum number of significant digits to be printed. For s: this is the maximum number of characters to be printed. By default all characters are printed until the ending null character is encountered. If the period is specified without an explicit value for precision, 0 is assumed. |
     /// | .*         | The precision is not specified in the format string, but as an additional integer value argument preceding the argument that has to be formatted.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
     /// @remarks The length sub-specifier modifies the length of the data type. This is a chart showing the types used to interpret the corresponding arguments with and without length specifier (if a different type is used, the proper type promotion or conversion is performed, if allowed):
     /// | length | d i           | u o x X                | f F e E g G a A | c     | s        | p     | n              |
-    /// |--------|---------------|------------------------|-----------------|-------|----------|-------|----------------|
+    /// | ------ | ------------- | ---------------------- | --------------- | ----- | -------- | ----- | -------------- |
     /// | (none) | int           | unsigned int           | double          | int   | char8*    | void* | int*           |
     /// | hh     | signed char8   | unsigned char8          |                 |       |          |       | unsigned char8* |
     /// | h      | short int     | unsigned short int     |                 |       |          |       | short int*     |

@@ -124,7 +124,7 @@ namespace xtd {
         /// @return The created control window handle.
         /// @remarks For creating controls, some xtd::forms::create_params members are filled in as follow :
         /// | Control                         | xtd::forms::create_params::class_name | xtd::forms::create_params::style                              |
-        /// |---------------------------------|---------------------------------------|---------------------------------------------------------------|
+        /// | ------------------------------- | ------------------------------------- | ------------------------------------------------------------- |
         /// | xtd::forms::button              | "button"                              | button_styles.h and window_styles.h bitwise combination       |
         /// | xtd::forms::check_box           | "checkbox"                            | button_styles.h and window_styles.h bitwise combination       |
         /// | xtd::forms::checked_list_box    | "checkedlistbox"                      | window_styles.h bitwise combination                           |
@@ -202,7 +202,7 @@ namespace xtd {
         /// @remarks The class name is the same as the one used to create the control with the xtd::forms::create_params class.
         /// @remarks The following table contains the default width and height in pixels for class name :
         /// | class name          | Width  | Height |
-        /// |---------------------|--------|--------|
+        /// | ------------------- | ------ | ------ |
         /// | "button"            | 75     | 25     |
         /// | "checkbox"          | 104    | 25     |
         /// | "checkedlistbox"    | 120    | 90     |

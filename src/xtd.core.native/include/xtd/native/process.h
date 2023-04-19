@@ -56,7 +56,7 @@ namespace xtd {
       /// @return The base priority, which is computed from the process priority class of the associated process. (see priority_class.h file).
       /// @remarks The following table shows the relationship between the base priority and process priority class values.
       /// | Windows base_priority | macOS base_priority                        | linux base_priority                        | priority_class              |
-      /// |-----------------------|--------------------------------------------|--------------------------------------------|-----------------------------|
+      /// | --------------------- | ------------------------------------------ | ------------------------------------------ | --------------------------- |
       /// | 4                     | PRIO_MIN                             (-20) | PRIO_MIN                             (-20) | IDLE_PRIORITY_CLASS         |
       /// | 6                     | PRIO_MIN + (PRIO_MAX - PRIO_MIN) / 4 (-10) | PRIO_MIN + (PRIO_MAX - PRIO_MIN) / 4 (-10) | BELOW_NORMAL_PRIORITY_CLASS |
       /// | 8                     | PRIO_MIN + (PRIO_MAX - PRIO_MIN)/2     (0) | PRIO_MIN + (PRIO_MAX - PRIO_MIN)/2     (0) | NORMAL_PRIORITY_CLASS       |

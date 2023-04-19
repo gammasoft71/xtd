@@ -24,7 +24,7 @@ namespace xtd {
     /// @return A 32-bit signed integer that indicates the relative order of the objects being compared.
     /// The return value has these meanings:
     /// | Value             | Condition                          |
-    /// |-------------------|------------------------------------|
+    /// | ----------------- | ---------------------------------- |
     /// | Less than zero    | This instance is less than obj.    |
     /// | Zero              | This instance is equal to obj.     |
     /// | Greater than zero | This instance is greater than obj. |

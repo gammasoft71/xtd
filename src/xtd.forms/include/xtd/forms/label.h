@@ -22,7 +22,7 @@ namespace xtd {
     /// @ingroup xtd_forms controls
     /// @par Appearance
     /// |       | Windows                            | macOS                              | Gnome                              |
-    /// | ----- | ---------------------------------- | -----------------------------------| -----------------------------------|
+    /// | ----- | ---------------------------------- | ---------------------------------- | ---------------------------------- |
     /// | Light |  @image html control_label_w.png   |  @image html control_label_m.png   |  @image html control_label_g.png   |
     /// | Dark  |  @image html control_label_wd.png  |  @image html control_label_md.png  |  @image html control_label_gd.png  |
     /// @par Examples

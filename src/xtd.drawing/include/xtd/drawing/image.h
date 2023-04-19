@@ -70,7 +70,7 @@ namespace xtd {
       /// @return The integer representing a bitwise combination of xtd::drawing::imaging::image_flags for this xtd::drawing::image.
       /// @remarks The integer value returned from this method will correspond to a sum of image_flags, as described in the following table.
       /// | image_flag value                 | Integer representation |
-      /// |----------------------------------|------------------------|
+      /// | -------------------------------- | ---------------------- |
       /// | image_flags_none                 | 0                      |
       /// | Iimage_flags_scalable            | 1                      |
       /// | Iimage_flags_has_alpha           | 2                      |
