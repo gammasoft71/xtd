@@ -4,7 +4,7 @@
 namespace xtd::tests {
   class bytes_assert final : private xtd::tunit::base_assert {
     static bool is_little_endian() {
-      static constexpr const int32 endian = 1;
+      static constexpr int32 endian = 1;
       return *(char*)&endian == 1;
     }
     

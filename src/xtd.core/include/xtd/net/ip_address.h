@@ -290,7 +290,7 @@ namespace xtd {
       
     private:
       friend xtd::net::sockets::socket;
-      static constexpr const size_t number_of_numbers_ = 8;
+      static constexpr size_t number_of_numbers_ = 8;
       ip_address(const std::vector<uint16>& numbers, uint32 scope_id);
       uint32 address_ = 0xFFFFFFFF;
       std::vector<uint16> numbers_ = std::vector<uint16>(number_of_numbers_);

@@ -93,7 +93,7 @@ namespace xtd {
       
       /// @brief Defines the value that is returned from the get_offset() method when the offset is unknown. This field is constant.
       /// @remarks The value of this constant is std::numeric_limit<uint32>::max().
-      static constexpr const uint32 OFFSET_UNKNOWN = std::numeric_limits<uint32>::max();
+      static constexpr uint32 OFFSET_UNKNOWN = std::numeric_limits<uint32>::max();
       /// @}
       
       /// @name Methods

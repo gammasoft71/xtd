@@ -23,9 +23,9 @@ namespace xtd {
       
       /// @{
       /// @brief Specifies the minimum value that can be assigned to the port property. The min_port value is set to 0x0000. This field is read-only.
-      static constexpr const uint16 min_port = 0x0000;
+      static constexpr uint16 min_port = 0x0000;
       /// @brief Specifies the maximum value that can be assigned to the port property. The max_port value is set to 0xFFFF. This field is read-only.
-      static constexpr const uint16 max_port = 0xFFFF;
+      static constexpr uint16 max_port = 0xFFFF;
       /// @
       
       /// @name Constructors
