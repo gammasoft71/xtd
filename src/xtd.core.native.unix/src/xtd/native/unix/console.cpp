@@ -624,8 +624,8 @@ namespace {
       return 0;
     }
     
-    inline static constexpr const int_least32_t simple_rate = 8000;
-    inline static constexpr const int_least32_t bits_per_channel = 8;
+    inline static constexpr int_least32_t simple_rate = 8000;
+    inline static constexpr int_least32_t bits_per_channel = 8;
     inline static dispatch_semaphore_t idle_semaphore = dispatch_semaphore_create(1);
     inline static dispatch_semaphore_t start_playing_semaphore = dispatch_semaphore_create(0);
     inline static dispatch_semaphore_t end_playing_semaphore = dispatch_semaphore_create(0);
@@ -642,7 +642,7 @@ bool console::beep(uint_least32_t frequency, uint_least32_t duration) {
 bool console::beep(uint_least32_t frequency, uint_least32_t duration) {
   if (frequency < 37 || frequency > 32767) return false;
   
-  static constexpr const uint_least32_t simple_rate = 8000;
+  static constexpr uint_least32_t simple_rate = 8000;
   static snd_pcm_t* pcm_handle = nullptr;
   if (pcm_handle == nullptr) {
     if (snd_pcm_open(&pcm_handle, "default", SND_PCM_STREAM_PLAYBACK, 0)) return false;

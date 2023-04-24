@@ -1230,7 +1230,7 @@ namespace xtd {
       /// @}
       
     private:
-      static constexpr const xtd::drawing::known_color start_know_system_colors_range = static_cast<xtd::drawing::known_color>(0xFF01);
+      static constexpr xtd::drawing::known_color start_know_system_colors_range = static_cast<xtd::drawing::known_color>(0xFF01);
       explicit color(uint32 argb);
       explicit color(intptr handle);
       color(const color& color, const xtd::drawing::known_color& know_color);
