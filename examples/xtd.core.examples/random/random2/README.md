@@ -4,7 +4,7 @@ Shows how to use [xtd::random](https://gammasoft71.github.io/xtd/reference_guide
 
 ## Sources
 
-[src/random2.cpp](src/random1.cpp)
+[src/random2.cpp](src/random2.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
