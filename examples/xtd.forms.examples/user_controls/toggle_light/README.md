@@ -4,7 +4,7 @@ demonstrates how to create a custom control with [xtd::forms::user_control](http
 
 # Sources
 
-* [src/line.cpp](src/toggle_light.cpp)
+* [src/toggle_light.cpp](src/toggle_light.cpp)
 * [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
