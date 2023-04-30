@@ -242,10 +242,10 @@ namespace xtd {
       
       xtd::ustring str;
       int64 rest = to_int(value_);
-      enum_collection<enum_type> reversed = entries();
-      std::reverse(reversed.begin(), reversed.end());
+      enum_collection<enum_type> reversed_entries = entries();
+      std::reverse(reversed_entries.begin(), reversed_entries.end());
       
-      for (auto item : reversed) {
+      for (auto item : reversed_entries) {
         if (to_int(item.first) != 0 && (rest & to_int(item.first)) == to_int(item.first)) {
           rest -= to_int(item.first);
           if (!xtd::ustring::is_empty(str)) str = ", " + str;
