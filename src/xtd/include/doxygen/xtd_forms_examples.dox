@@ -3421,6 +3421,21 @@
 /// <br>
 /// @image html owner_button_gd.png
 ///
+/// @example toggle_light.cpp
+/// demonstrates how to create a custom control with xtd::forms::user_control control.
+/// @par Windows
+/// @image html toggle_light_w.png
+/// <br>
+/// @image html toggle_light_wd.png
+/// @par macOS
+/// @image html toggle_light_m.png
+/// <br>
+/// @image html toggle_light_md.png
+/// @par Gnome
+/// @image html toggle_light_g.png
+/// <br>
+/// @image html toggle_light_gd.png
+///
 /// @example user_dialog.cpp
 /// demonstrates the use of xtd::forms::form as dialog.
 /// @par Windows
