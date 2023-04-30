@@ -5,6 +5,8 @@
 #include <optional>
 #include <xtd/object.h>
 #include <xtd/types.h>
+#include "graphics.h"
+#include "buffered_graphics.h"
 #include "point.h"
 #include "size.h"
 
@@ -40,27 +42,41 @@ namespace xtd {
       /// @name Properties
       
       /// @{
+      /// @brief Gets the maximum size of the buffer to use.
+      /// @return A xtd::drawing::size indicating the maximum size of the buffer dimensions.
+      /// @remarks This property allows you to get or set the maximum dimensions for a buffer that should be retained in memory. You can allocate a buffer of any size, however any buffer with dimensions greater than the xtd::drawing::buffered_graphics_context::MaximumBuffer size will be used temporarily and then discarded when the xtd::drawing::buffered_graphics object is released.
       const xtd::drawing::size& maximum_buffer() const noexcept;
+      /// @brief Sets the maximum size of the buffer to use.
+      /// @param value A xtd::drawing::size indicating the maximum size of the buffer dimensions.
+      /// @exception xtd::argument_exception The height or width of the size is less than or equal to zero.
+      /// @remarks This property allows you to get or set the maximum dimensions for a buffer that should be retained in memory. You can allocate a buffer of any size, however any buffer with dimensions greater than the xtd::drawing::buffered_graphics_context::MaximumBuffer size will be used temporarily and then discarded when the xtd::drawing::buffered_graphics object is released.
       buffered_graphics_context& maximum_buffer(const xtd::drawing::size& value);
       /// @}
 
       /// @name Methods
       
       /// @{
+      void allocate(const xtd::drawing::graphics& target_graphics, const xtd::drawing::rectangle& targat_rectangle);
+      void allocate(intptr target_dc, const xtd::drawing::rectangle& targat_rectangle);
+
       /// @brief Destroy of the current graphics buffer, if a buffer has been allocated and has not yet been destroyed.
       /// @remarks If the graphics buffer is in use, it will be marked for destroying as soon as it is free; otherwise, it will be destoyed immediately.
       void invalidate();
       /// @}
 
     private:
+      //xtd::drawing::buffered_graphics alloc_buffer_in_temp_manager(const xtd::drawing::graphics* target_graphics, intptr target_dc, const xtd::drawing::rectangle& target_rectangle);
+      //xtd::drawing::buffered_graphics allocate_buffer(const xtd::drawing::graphics* target_graphics, intptr target_dc, const xtd::drawing::rectangle& target_rectangle);
       void destroy();
 
       inline static const int BUFFER_FREE = 0; //the graphics buffer is free to use
       inline static const int BUFFER_BUSY_PAINTING = 1; //graphics buffer is busy being created/painting
       inline static const int BUFFER_BUSY_DESTROYING = 2; //graphics buffer is busy destroying
 
+      xtd::drawing::buffered_graphics buffer_;
       xtd::drawing::size buffered_size_;
-      int buzy_ = BUFFER_FREE;
+      int busy_ = BUFFER_FREE;
+      xtd::drawing::graphics compat_graphics_;
       bool invalidate_when_free_ = false;
       xtd::drawing::size maximum_buffer_ {75 * 3, 32 * 3}; //by defualt, the size of our maxbuffer will be 3 x standard button size.
       xtd::drawing::point target_location_;
