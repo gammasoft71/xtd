@@ -8,6 +8,7 @@ add_references(xtd.core)
 add_sources(
   src/main.cpp 
   src/xtd/tests/any_tests.cpp
+  src/xtd/tests/architecture_id_tests.cpp
   src/xtd/tests/argument_exception_tests.cpp
   src/xtd/tests/argument_null_exception_tests.cpp
   src/xtd/tests/argument_out_of_range_exception_tests.cpp
