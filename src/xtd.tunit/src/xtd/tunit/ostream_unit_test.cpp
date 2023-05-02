@@ -15,6 +15,11 @@ std::ostream& ostream_unit_test::ostream() {
   return os_;
 }
 
+int ostream_unit_test::count_tests(const std::vector<std::string>& tests) {
+  os_ << tests.size() << std::endl;
+  return unit_test::count_tests(tests);
+}
+
 int ostream_unit_test::list_tests(const std::vector<std::string>& tests) {
   if (!settings::default_settings().gtest_compatibility()) {
     for (auto name : tests)

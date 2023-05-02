@@ -49,6 +49,14 @@ namespace xtd {
       /// @param also_run_ignored_tests  true if also run ignored test; otherwise false.
       void also_run_ignored_tests(bool also_run_ignored_tests) noexcept;
       
+      /// @brief Gets count tests.
+      /// @return true if count tests; otherwise false.
+      bool count_tests() const noexcept;
+      
+      /// @brief Sets count tests.
+      /// @param count_tests true if count tests; otherwise false.
+      void count_tests(bool count_tests) noexcept;
+
       /// @brief Gets exit status.
       /// @return exit status.
       /// @remarks The value by default is EXIT_SUCCESS.
@@ -202,6 +210,7 @@ namespace xtd {
       std::string filter_tests_ = "*.*";
       int32 exit_status_ = EXIT_SUCCESS;
       bool gtest_compatibility_ = false;
+      bool count_tests_ = false;
       bool list_tests_ = false;
       bool output_color_ = true;
       bool output_json_ = false;
