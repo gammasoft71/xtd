@@ -131,12 +131,12 @@ int32 unit_test::run() {
     return xtd::tunit::settings::default_settings().exit_status();
   
   if (xtd::tunit::settings::default_settings().count_tests()) {
-    std::vector<std::string> tests;
+    auto count = 0;
     for (auto test_class : test_classes())
       for (auto test : test_class.test()->tests())
-        tests.push_back(test_class.test()->name() + '.' + test.name());
+        count++;
     
-    return count_tests(tests);
+    return count_tests(count);
   }
   
   if (xtd::tunit::settings::default_settings().list_tests()) {
@@ -194,7 +194,7 @@ int32 unit_test::run() {
   return xtd::tunit::settings::default_settings().exit_status();
 }
 
-int32 unit_test::count_tests(const std::vector<std::string>& tests) {
+int32 unit_test::count_tests(int32 count) {
   return xtd::tunit::settings::default_settings().exit_status();
 }
 

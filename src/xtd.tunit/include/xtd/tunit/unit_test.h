@@ -131,11 +131,11 @@ namespace xtd {
       
       /// @{
       /// @brief Counts the test names contained in the specified tests.
-      /// @param tests The list of test names.
+      /// @param count The tests count.
       /// @return The xtd::tunit::settings::exit_status value.
       /// @remarks This method does nothing by default. The inheritor must overload this method to act as it wants when the unit_lest is asked for the test list.
       /// @remarks This method is typically used to display the list of tests in a stream, or whatever. It depends on the implementation chosen by the inheritor.
-      virtual int32 count_tests(const std::vector<std::string>& tests);
+      virtual int32 count_tests(int32 count);
 
       /// @brief Lists the test names contained in the specified tests.
       /// @param tests The list of test names.
