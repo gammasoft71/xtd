@@ -556,6 +556,12 @@ namespace xtd {
     template<typename enum_t>
     static sbyte to_sbyte(enum_t value) noexcept {return enum_object<enum_t>(value).to_sbyte();}
     
+    /// @brief Converts this instance to string.
+    /// @param value The value to convert.
+    /// @return A new xtd::ustring converted from this instance.
+    template<typename enum_t>
+    static xtd::ustring to_string(enum_t value) noexcept {return enum_object<enum_t>(value).to_string();}
+    
     /// @brief Converts this instance to unsigned int16.
     /// @param value The value to convert.
     /// @return A new to_uint16 object converted from this instance.
