@@ -129,19 +129,28 @@ std::vector<std::string> unit_test::succeed_test_names() const noexcept {
 int32 unit_test::run() {
   if (parse_arguments(arguments))
     return xtd::tunit::settings::default_settings().exit_status();
+  
+  if (xtd::tunit::settings::default_settings().count_tests()) {
+    std::vector<std::string> tests;
+    for (auto test_class : test_classes())
+      for (auto test : test_class.test()->tests())
+        tests.push_back(test_class.test()->name() + '.' + test.name());
     
+    return count_tests(tests);
+  }
+  
   if (xtd::tunit::settings::default_settings().list_tests()) {
     std::vector<std::string> tests;
     for (auto test_class : test_classes())
       for (auto test : test_class.test()->tests())
         tests.push_back(test_class.test()->name() + '.' + test.name());
-        
+    
     if (xtd::tunit::settings::default_settings().output_json()) write_list_tests_json();
     if (xtd::tunit::settings::default_settings().output_xml()) write_list_tests_xml();
     
     return list_tests(tests);
   }
-  
+
   xtd::system_exception::enable_stack_trace(settings::default_settings().enable_stack_trace());
   
   auto random = xtd::tunit::settings::default_settings().random_seed() ? xtd::random(xtd::tunit::settings::default_settings().random_seed()) : xtd::random();
@@ -185,6 +194,10 @@ int32 unit_test::run() {
   return xtd::tunit::settings::default_settings().exit_status();
 }
 
+int32 unit_test::count_tests(const std::vector<std::string>& tests) {
+  return xtd::tunit::settings::default_settings().exit_status();
+}
+
 int32 unit_test::list_tests(const std::vector<std::string>& tests) {
   return xtd::tunit::settings::default_settings().exit_status();
 }
@@ -194,7 +207,8 @@ bool unit_test::parse_arguments(const std::vector<std::string>& args) {
   for (auto arg : args) {
     if (arg == "--gtest_compatibility" || arg.find("--gtest") == 0) gtest_compatibility = true;
     // Test selection :
-    if (arg == "--list_tests") xtd::tunit::settings::default_settings().list_tests(true);
+    if (arg == "--count_tests") xtd::tunit::settings::default_settings().count_tests(true);
+    else if (arg == "--list_tests") xtd::tunit::settings::default_settings().list_tests(true);
     else if (arg == "--gtest_list_tests") xtd::tunit::settings::default_settings().list_tests(true);
     else if (arg.find("--filter_tests=") == 0) xtd::tunit::settings::default_settings().filter_tests(arg.substr(15));
     else if (arg.find("--gtest_filter=") == 0) xtd::tunit::settings::default_settings().filter_tests(arg.substr(15));

@@ -16,6 +16,14 @@ void settings::also_run_ignored_tests(bool also_run_ignored_tests) noexcept {
   also_run_ignored_tests_ = also_run_ignored_tests;
 }
 
+bool settings::count_tests() const noexcept {
+  return count_tests_;
+}
+
+void settings::count_tests(bool count_tests) noexcept {
+  count_tests_ = count_tests;
+}
+
 int32 settings::exit_status() const noexcept {
   return exit_status_;
 }

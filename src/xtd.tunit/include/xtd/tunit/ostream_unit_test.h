@@ -47,6 +47,7 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      int count_tests(const std::vector<std::string>& tests) override;
       int list_tests(const std::vector<std::string>& tests) override;
       bool parse_arguments(const std::vector<std::string>& args) override;
       
