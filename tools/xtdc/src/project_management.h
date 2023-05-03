@@ -101,22 +101,6 @@ namespace xtdc_command {
       throw xtd::argument_exception("sdk is not project_sdk valid value", current_stack_frame_);
     }
     
-    xtd::ustring create(const xtd::ustring& name, project_type type, project_sdk sdk, project_language language) const {
-      auto sdks = get_valid_sdks(type);
-      if (std::find(sdks.begin(), sdks.end(), sdk) == sdks.end()) return "The sdk param not valid with type param! Create project aborted.";
-      auto languages = get_valid_languages(sdk);
-      if (std::find(languages.begin(), languages.end(), language) == languages.end()) return "The language param not valid with sdk param! Create project aborted.";
-      if (is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} already exists and not empty! Create project aborted.", path_);
-      if (sdk == project_sdk::qt5 && xtd::environment::get_environment_variable("CMAKE_PREFIX_PATH").empty()) return "Set your CMAKE_PREFIX_PATH environment variable to the Qt 5 installation prefix! Create project aborted.";
-      xtd::io::directory::create_directory(xtd::io::path::combine(path_, "build"));
-      create_doxygen_txt(name);
-      create_readme_md(name);
-      std::map<project_type, xtd::action<const xtd::ustring&, project_sdk, project_language, bool>> {{project_type::blank_solution, {*this, &project_management::create_blank_solution}}, {project_type::console, {*this, &project_management::create_console}}, {project_type::gui, {*this, &project_management::create_gui}}, {project_type::shared_library, {*this, &project_management::create_shared_library}}, {project_type::static_library, {*this, &project_management::create_static_library}}, {project_type::unit_test_application, {*this, &project_management::create_unit_test_application}}} [type](name, sdk, language, true);
-      generate(name);
-      if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Create project aborted.";
-      return xtd::ustring::format("{0}Project {1} created{0}", xtd::environment::new_line(), path_);
-    }
-    
     xtd::ustring add(const xtd::ustring& name, project_type type, project_sdk sdk, project_language language) const {
       auto sdks = get_valid_sdks(type);
       if (std::find(sdks.begin(), sdks.end(), sdk) == sdks.end()) return "The sdk param not valid with type param! Add project aborted.";
@@ -133,7 +117,7 @@ namespace xtdc_command {
       std::map<project_type, xtd::action<const xtd::ustring&, project_sdk, project_language, bool>> {{project_type::blank_solution, {*this, &project_management::create_blank_solution}}, {project_type::console, {*this, &project_management::create_console}}, {project_type::gui, {*this, &project_management::create_gui}}, {project_type::shared_library, {*this, &project_management::create_shared_library}}, {project_type::static_library, {*this, &project_management::create_static_library}}, {project_type::unit_test_application, {*this, &project_management::create_unit_test_application}}} [type](name, sdk, language, false);
       path_ = xtd::io::directory::get_parent(path_).full_name();
       xtd::io::file::write_all_lines(xtd::io::path::combine(path_, "CMakeLists.txt"), lines);
-      generate(name);
+      generate_project(name);
       if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Add project aborted.";
       return xtd::ustring::format("{0}Project {1} added{0}", xtd::environment::new_line(), path_);
     }
@@ -141,7 +125,7 @@ namespace xtdc_command {
     xtd::ustring build(const xtd::ustring& target, bool clean_first, bool release) const {
       if (!is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} does not exists or is empty! Build project aborted.", path_);
       if (clean_first) clean(release);
-      else generate();
+      else generate_project();
       if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Build project aborted.";
       change_current_directory current_directory {xtd::environment::os_version().is_unix_platform() ? xtd::io::path::combine(build_path(), release ? "Release" : "Debug") : build_path()};
       if (xtd::environment::os_version().is_windows_platform())
@@ -157,11 +141,43 @@ namespace xtdc_command {
     xtd::ustring clean(bool release) const {
       if (!is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} does not exists or is empty! Clean project aborted.", path_);
       xtd::io::directory::remove(xtd::environment::os_version().is_unix_platform() ? xtd::io::path::combine(build_path(), release ? "Release" : "Debug") : build_path(), true);
-      generate();
+      generate_project();
       if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Clean project aborted.";
       return xtd::ustring::format("{0}Project {1} cleaned{0}", xtd::environment::new_line(), path_);
     }
     
+    xtd::ustring create(const xtd::ustring& name, project_type type, project_sdk sdk, project_language language) const {
+      auto sdks = get_valid_sdks(type);
+      if (std::find(sdks.begin(), sdks.end(), sdk) == sdks.end()) return "The sdk param not valid with type param! Create project aborted.";
+      auto languages = get_valid_languages(sdk);
+      if (std::find(languages.begin(), languages.end(), language) == languages.end()) return "The language param not valid with sdk param! Create project aborted.";
+      if (is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} already exists and not empty! Create project aborted.", path_);
+      if (sdk == project_sdk::qt5 && xtd::environment::get_environment_variable("CMAKE_PREFIX_PATH").empty()) return "Set your CMAKE_PREFIX_PATH environment variable to the Qt 5 installation prefix! Create project aborted.";
+      xtd::io::directory::create_directory(xtd::io::path::combine(path_, "build"));
+      create_doxygen_txt(name);
+      create_readme_md(name);
+      std::map<project_type, xtd::action<const xtd::ustring&, project_sdk, project_language, bool>> {{project_type::blank_solution, {*this, &project_management::create_blank_solution}}, {project_type::console, {*this, &project_management::create_console}}, {project_type::gui, {*this, &project_management::create_gui}}, {project_type::shared_library, {*this, &project_management::create_shared_library}}, {project_type::static_library, {*this, &project_management::create_static_library}}, {project_type::unit_test_application, {*this, &project_management::create_unit_test_application}}} [type](name, sdk, language, true);
+      generate_project(name);
+      if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Create project aborted.";
+      return xtd::ustring::format("{0}Project {1} created{0}", xtd::environment::new_line(), path_);
+    }
+    
+    xtd::ustring generate(const xtd::ustring& name, project_type type, project_sdk sdk, project_language language) const {
+      auto sdks = get_valid_sdks(type);
+      if (std::find(sdks.begin(), sdks.end(), sdk) == sdks.end()) return "The sdk param not valid with type param! GenertaeGenertae project aborted.";
+      auto languages = get_valid_languages(sdk);
+      if (std::find(languages.begin(), languages.end(), language) == languages.end()) return "The language param not valid with sdk param! Genertae project aborted.";
+      if (!is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} does not exists or is empty! Genertae project aborted.", path_);
+      if (sdk == project_sdk::qt5 && xtd::environment::get_environment_variable("CMAKE_PREFIX_PATH").empty()) return "Set your CMAKE_PREFIX_PATH environment variable to the Qt 5 installation prefix! Genertae project aborted.";
+      xtd::io::directory::create_directory(xtd::io::path::combine(path_, "build"));
+      create_doxygen_txt(name);
+      create_readme_md(name);
+      std::map<project_type, xtd::action<const xtd::ustring&, project_sdk, project_language, bool>> {{project_type::blank_solution, {*this, &project_management::create_blank_solution}}, {project_type::console, {*this, &project_management::create_console}}, {project_type::gui, {*this, &project_management::create_gui}}, {project_type::shared_library, {*this, &project_management::create_shared_library}}, {project_type::static_library, {*this, &project_management::create_static_library}}, {project_type::unit_test_application, {*this, &project_management::create_unit_test_application}}} [type](name, sdk, language, true);
+      generate_project(name);
+      if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Create project aborted.";
+      return xtd::ustring::format("{0}Project {1} created{0}", xtd::environment::new_line(), path_);
+    }
+
     xtd::ustring install(bool release) const {
       if (!is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} does not exists or is empty! Install project aborted.", path_);
       change_current_directory current_directory {xtd::environment::os_version().is_unix_platform() ? xtd::io::path::combine(build_path(), release ? "Release" : "Debug") : build_path()};
@@ -173,7 +189,7 @@ namespace xtdc_command {
     xtd::ustring open(bool release) const {
       if (!is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} does not exists or is empty! Open project aborted.", path_);
       change_current_directory current_directory {xtd::environment::os_version().is_unix_platform() ? xtd::io::path::combine(build_path(), release ? "Release" : "Debug") : build_path()};
-      generate();
+      generate_project();
       if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Open project aborted.";
       if (xtd::environment::os_version().is_windows_platform()) launch_and_wait_process(xtd::ustring::format("{}.sln", xtd::io::path::combine(build_path(), get_name())), true);
       else if (xtd::environment::os_version().is_macos_platform()) launch_and_wait_process(xtd::ustring::format("{}.xcodeproj", xtd::io::path::combine(build_path(), get_name())), true);
@@ -184,7 +200,7 @@ namespace xtdc_command {
     xtd::ustring update(const xtd::ustring& target) const {
       if (!is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} does not exists or is empty! Update project aborted.", path_);
       change_current_directory current_directory {build_path()};
-      generate(target);
+      generate_project(target);
       if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Update project aborted.";
       return xtd::ustring::format("{0}Project {1} updated{0}", xtd::environment::new_line(), get_name());
     }
@@ -381,9 +397,9 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(xtd::io::path::combine(path_, "README.md"), lines);
     }
     
-    void generate() const {generate(xtd::io::path::get_file_name(path_));}
+    void generate_project() const {generate_project(xtd::io::path::get_file_name(path_));}
     
-    void generate(xtd::ustring name) const {
+    void generate_project(xtd::ustring name) const {
       bool first_generation = !xtd::io::directory::exists(build_path());
       xtd::io::directory::create_directory(build_path());
       change_current_directory current_directory {build_path()};
