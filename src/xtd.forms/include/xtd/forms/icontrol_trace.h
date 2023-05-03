@@ -21,11 +21,11 @@ namespace xtd {
       
       /// @{
       /// @brief Write debug or trace message on this instance control.
-      /// @param message A string that tcontains the debug oor trace message.
+      /// @param message A string that tcontains the debug or trace message.
       virtual void write(const xtd::ustring& message) = 0;
       
       /// @brief Write debug or trace message on this instance control followed by line terminator.
-      /// @param message A string that tcontains the debug oor trace message.
+      /// @param message A string that tcontains the debug or trace message.
       virtual void write_line(const xtd::ustring& message) = 0;
       
       /// @brief Flushes the output buffer and causes buffered data to write to the control.
