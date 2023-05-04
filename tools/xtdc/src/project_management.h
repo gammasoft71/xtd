@@ -114,7 +114,14 @@ namespace xtdc_command {
       if (std::find_if(lines.begin(), lines.end(), [](const xtd::ustring & value) {return value.contains("find_package(xtd");}) == lines.end() && sdk == project_sdk::xtd) return "The sdk param not valid with current project sdk! Add project aborted.";
       
       lines.push_back(xtd::ustring::format("{}({})", std::find_if(lines.begin(), lines.end(), [](const xtd::ustring & value) {return value.contains("find_package(xtd");}) != lines.end() ? "add_projects" : "add_subdirectory", xtd::io::path::get_file_name(path_)));
-      std::map<project_type, xtd::action<const xtd::ustring&, project_sdk, project_language, bool>> {{project_type::blank_solution, {*this, &project_management::create_blank_solution}}, {project_type::console, {*this, &project_management::create_console}}, {project_type::gui, {*this, &project_management::create_gui}}, {project_type::shared_library, {*this, &project_management::create_shared_library}}, {project_type::static_library, {*this, &project_management::create_static_library}}, {project_type::unit_test_application, {*this, &project_management::create_unit_test_application}}} [type](name, sdk, language, false);
+      std::map<project_type, xtd::action<const xtd::ustring&, project_sdk, project_language, bool>> {
+        {project_type::blank_solution, {*this, &project_management::create_blank_solution}},
+        {project_type::console, {*this, &project_management::create_console}},
+        {project_type::gui, {*this, &project_management::create_gui}},
+        {project_type::shared_library, {*this, &project_management::create_shared_library}},
+        {project_type::static_library, {*this, &project_management::create_static_library}},
+        {project_type::unit_test_application, {*this, &project_management::create_unit_test_application}}
+      } [type](name, sdk, language, false);
       path_ = xtd::io::directory::get_parent(path_).full_name();
       xtd::io::file::write_all_lines(xtd::io::path::combine(path_, "CMakeLists.txt"), lines);
       generate_project(name);
@@ -156,7 +163,14 @@ namespace xtdc_command {
       xtd::io::directory::create_directory(xtd::io::path::combine(path_, "build"));
       create_doxygen_txt(name);
       create_readme_md(name);
-      std::map<project_type, xtd::action<const xtd::ustring&, project_sdk, project_language, bool>> {{project_type::blank_solution, {*this, &project_management::create_blank_solution}}, {project_type::console, {*this, &project_management::create_console}}, {project_type::gui, {*this, &project_management::create_gui}}, {project_type::shared_library, {*this, &project_management::create_shared_library}}, {project_type::static_library, {*this, &project_management::create_static_library}}, {project_type::unit_test_application, {*this, &project_management::create_unit_test_application}}} [type](name, sdk, language, true);
+      std::map<project_type, xtd::action<const xtd::ustring&, project_sdk, project_language, bool>> {
+        {project_type::blank_solution, {*this, &project_management::create_blank_solution}},
+        {project_type::console, {*this, &project_management::create_console}},
+        {project_type::gui, {*this, &project_management::create_gui}},
+        {project_type::shared_library, {*this, &project_management::create_shared_library}},
+        {project_type::static_library, {*this, &project_management::create_static_library}},
+        {project_type::unit_test_application, {*this, &project_management::create_unit_test_application}}
+      } [type](name, sdk, language, true);
       generate_project(name);
       if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Create project aborted.";
       return xtd::ustring::format("{0}Project {1} created{0}", xtd::environment::new_line(), path_);
@@ -172,7 +186,14 @@ namespace xtdc_command {
       xtd::io::directory::create_directory(xtd::io::path::combine(path_, "build"));
       create_doxygen_txt(name);
       create_readme_md(name);
-      std::map<project_type, xtd::action<const xtd::ustring&, project_sdk, project_language, bool>> {{project_type::blank_solution, {*this, &project_management::create_blank_solution}}, {project_type::console, {*this, &project_management::create_console}}, {project_type::gui, {*this, &project_management::create_gui}}, {project_type::shared_library, {*this, &project_management::create_shared_library}}, {project_type::static_library, {*this, &project_management::create_static_library}}, {project_type::unit_test_application, {*this, &project_management::create_unit_test_application}}} [type](name, sdk, language, true);
+      std::map<project_type, xtd::action<const xtd::ustring&, project_sdk, project_language, bool>> {
+        {project_type::blank_solution, {*this, &project_management::create_blank_solution}},
+        {project_type::console, {*this, &project_management::create_console}},
+        {project_type::gui, {*this, &project_management::generate_gui}},
+        {project_type::shared_library, {*this, &project_management::create_shared_library}},
+        {project_type::static_library, {*this, &project_management::create_static_library}},
+        {project_type::unit_test_application, {*this, &project_management::create_unit_test_application}}
+      } [type](name, sdk, language, true);
       generate_project(name);
       if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Create project aborted.";
       return xtd::ustring::format("{0}Project {1} created{0}", xtd::environment::new_line(), path_);
@@ -395,6 +416,25 @@ namespace xtdc_command {
         xtd::ustring::format("# {}", name),
       };
       xtd::io::file::write_all_lines(xtd::io::path::combine(path_, "README.md"), lines);
+    }
+    
+    void generate_gui(const xtd::ustring& name, project_sdk sdk, project_language language) const {
+      std::map<project_sdk, xtd::action<const xtd::ustring&, bool>> {
+        {project_sdk::cocoa, {cocoa_gui_project {path_}, &cocoa_gui_project::create}},
+        {project_sdk::fltk, {fltk_gui_project {path_}, &fltk_gui_project::create}},
+        {project_sdk::gtk2, {gtk2_gui_project {path_}, &gtk2_gui_project::create}},
+        {project_sdk::gtk3, {gtk3_gui_project {path_}, &gtk3_gui_project::create}},
+        {project_sdk::gtk4, {gtk4_gui_project {path_}, &gtk4_gui_project::create}},
+        {project_sdk::gtkmm, {gtkmm_gui_project {path_}, &gtkmm_gui_project::create}},
+        {project_sdk::qt5, {qt5_gui_project {path_}, &qt5_gui_project::create}},
+        {project_sdk::qt6, {qt6_gui_project {path_}, &qt6_gui_project::create}},
+        {project_sdk::win32, {win32_gui_project {path_}, &win32_gui_project::create}},
+        {project_sdk::winforms, {winforms_gui_project {path_}, &winforms_gui_project::create}},
+        {project_sdk::wpf, {wpf_gui_project {path_}, &wpf_gui_project::create}},
+        {project_sdk::wxwidgets, {wxwidgets_gui_project {path_}, &wxwidgets_gui_project::create}},
+        {project_sdk::xtd, {xtd_gui_project {path_}, &xtd_gui_project::generate}},
+        {project_sdk::xtd_c, {xtd_c_gui_project {path_}, &xtd_c_gui_project::create}}
+      } [sdk](name, false);
     }
     
     void generate_project() const {generate_project(xtd::io::path::get_file_name(path_));}
