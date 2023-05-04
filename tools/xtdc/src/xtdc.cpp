@@ -413,7 +413,7 @@ namespace xtdc_command {
     }
     
     static ustring get_xtd_version() noexcept {
-      ustring result = ustring::format("xtd Framework:{}", environment::new_line());
+      auto result = ustring::format("xtd Framework:{}", environment::new_line());
       for (auto library : system_report::xtd_libraries()) {
         result += ustring::format("  {}", library.name(), environment::new_line());
         result += ustring::format("    Version: {}{}", library.version(), environment::new_line());
@@ -477,10 +477,10 @@ namespace xtdc_command {
     }
     
     static int build(const vector<ustring>& args) {
-      bool show_help = false;
+      auto show_help = false;
       ustring invalid_option;
-      bool clean_first = false;
-      bool release = true;
+      auto clean_first = false;
+      auto release = false;
       ustring target;
       ustring path;
       if (!process_build_arguments(args, show_help, clean_first, release, target, path, invalid_option)) {
@@ -499,9 +499,9 @@ namespace xtdc_command {
     }
     
     static int clean(const vector<ustring>& args) {
-      bool show_help = false;
+      auto show_help = false;
       ustring invalid_option;
-      bool release = true;
+      auto release = false;
       ustring path;
       if (!process_clean_arguments(args, show_help, release, path, invalid_option)) {
         if (!invalid_option.empty())
@@ -567,9 +567,9 @@ namespace xtdc_command {
     }
     
     static int install(const vector<ustring>& args) {
-      bool show_help = false;
+      auto show_help = false;
       ustring invalid_option;
-      bool release = true;
+      auto release = false;
       ustring path;
       if (!process_install_arguments(args, show_help, release, path, invalid_option)) {
         if (!invalid_option.empty())
@@ -630,9 +630,9 @@ namespace xtdc_command {
     }
     
     static int open(const vector<ustring>& args) {
-      bool show_help = false;
+      auto show_help = false;
       ustring invalid_option;
-      bool release = true;
+      auto release = false;
       ustring path;
       if (!process_open_arguments(args, show_help, release, path, invalid_option)) {
         if (!invalid_option.empty())
@@ -650,7 +650,7 @@ namespace xtdc_command {
     }
     
     static int update(const vector<ustring>& args) {
-      bool show_help = false;
+      auto show_help = false;
       ustring invalid_option;
       ustring target;
       ustring path;
@@ -670,10 +670,10 @@ namespace xtdc_command {
     }
     
     static int run(const vector<ustring>& args) {
-      bool show_help = false;
+      auto show_help = false;
       ustring invalid_option;
-      bool release = true;
-      bool wait = false;
+      auto release = false;
+      auto wait = false;
       ustring target;
       ustring path;
       if (!process_run_arguments(args, show_help, release, wait, target, path, invalid_option)) {
@@ -692,7 +692,7 @@ namespace xtdc_command {
     }
     
     static int targets(const vector<ustring>& args) {
-      bool show_help = false;
+      auto show_help = false;
       ustring invalid_option;
       ustring path;
       if (!process_targets_arguments(args, show_help, path, invalid_option)) {
@@ -714,9 +714,9 @@ namespace xtdc_command {
     }
     
     static int test(const vector<ustring>& args) {
-      bool show_help = false;
+      auto show_help = false;
       ustring invalid_option;
-      bool release = true;
+      auto release = false;
       ustring path;
       if (!process_test_arguments(args, show_help, release, path, invalid_option)) {
         if (!invalid_option.empty())
@@ -734,9 +734,9 @@ namespace xtdc_command {
     }
     
     static int uninstall(const vector<ustring>& args) {
-      bool show_help = false;
+      auto show_help = false;
       ustring invalid_option;
-      bool release = true;
+      auto release = false;
       ustring path;
       if (!process_uninstall_arguments(args, show_help, release, path, invalid_option)) {
         if (!invalid_option.empty())
