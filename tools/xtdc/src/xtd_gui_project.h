@@ -121,7 +121,6 @@ namespace xtdc_command {
     }
     
     void generate_cmakelists_txt(const xtd::ustring& name, const xtd::ustring& path) const {
-      auto [headers, sources] = get_sources(path, path);
       std::vector<xtd::ustring> lines {
         "cmake_minimum_required(VERSION 3.3)",
         "",
@@ -130,6 +129,7 @@ namespace xtdc_command {
         "find_package(xtd REQUIRED)",
         "add_sources(",
       };
+      auto [headers, sources] = get_sources(path, path);
       for (auto file : headers)
         lines.push_back(xtd::ustring::format("  {}", file));
       for (auto file : sources)

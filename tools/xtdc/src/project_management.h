@@ -147,7 +147,8 @@ namespace xtdc_command {
     
     xtd::ustring clean(bool release) const {
       if (!is_path_already_exist_and_not_empty(path_)) return xtd::ustring::format("Path {} does not exists or is empty! Clean project aborted.", path_);
-      xtd::io::directory::remove(xtd::environment::os_version().is_unix_platform() ? xtd::io::path::combine(build_path(), release ? "Release" : "Debug") : build_path(), true);
+      auto build_path = xtd::environment::os_version().is_unix_platform() ? xtd::io::path::combine(this->build_path(), release ? "Release" : "Debug") : this->build_path();
+      if (xtd::io::directory::exists(build_path)) xtd::io::directory::remove(build_path, true);
       generate_project();
       if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Clean project aborted.";
       return xtd::ustring::format("{0}Project {1} cleaned{0}", xtd::environment::new_line(), path_);
@@ -188,7 +189,7 @@ namespace xtdc_command {
       create_readme_md(name);
       std::map<project_type, xtd::action<const xtd::ustring&, project_sdk, project_language, bool>> {
         {project_type::blank_solution, {*this, &project_management::create_blank_solution}},
-        {project_type::console, {*this, &project_management::create_console}},
+        {project_type::console, {*this, &project_management::generate_console}},
         {project_type::gui, {*this, &project_management::generate_gui}},
         {project_type::shared_library, {*this, &project_management::create_shared_library}},
         {project_type::static_library, {*this, &project_management::create_static_library}},
@@ -379,12 +380,32 @@ namespace xtdc_command {
       switch (sdk) {
         case project_sdk::xtd: xtd_console_project(path_).create(name, create_solution); break;
         case project_sdk::xtd_c: xtd_c_console_project(path_).create(name, create_solution); break;
-        default: std::map<project_language, xtd::action<const xtd::ustring&, bool>> {{project_language::c, {c_console_project {path_}, &c_console_project::create}}, {project_language::cpp, {cpp_console_project {path_}, &cpp_console_project::create}}, {project_language::csharp, {csharp_console_project {path_}, &csharp_console_project::create}}, {project_language::objectivec, {objectivec_console_project {path_}, &objectivec_console_project::create}}} [language](name, create_solution); break;
+        default: std::map<project_language, xtd::action<const xtd::ustring&, bool>> {
+          {project_language::c, {c_console_project {path_}, &c_console_project::create}},
+          {project_language::cpp, {cpp_console_project {path_}, &cpp_console_project::create}},
+          {project_language::csharp, {csharp_console_project {path_}, &csharp_console_project::create}},
+          {project_language::objectivec, {objectivec_console_project {path_}, &objectivec_console_project::create}}
+        } [language](name, create_solution); break;
       }
     }
     
     void create_gui(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) const {
-      std::map<project_sdk, xtd::action<const xtd::ustring&, bool>> {{project_sdk::cocoa, {cocoa_gui_project {path_}, &cocoa_gui_project::create}}, {project_sdk::fltk, {fltk_gui_project {path_}, &fltk_gui_project::create}}, {project_sdk::gtk2, {gtk2_gui_project {path_}, &gtk2_gui_project::create}}, {project_sdk::gtk3, {gtk3_gui_project {path_}, &gtk3_gui_project::create}}, {project_sdk::gtk4, {gtk4_gui_project {path_}, &gtk4_gui_project::create}}, {project_sdk::gtkmm, {gtkmm_gui_project {path_}, &gtkmm_gui_project::create}}, {project_sdk::qt5, {qt5_gui_project {path_}, &qt5_gui_project::create}}, {project_sdk::qt6, {qt6_gui_project {path_}, &qt6_gui_project::create}}, {project_sdk::win32, {win32_gui_project {path_}, &win32_gui_project::create}}, {project_sdk::winforms, {winforms_gui_project {path_}, &winforms_gui_project::create}}, {project_sdk::wpf, {wpf_gui_project {path_}, &wpf_gui_project::create}}, {project_sdk::wxwidgets, {wxwidgets_gui_project {path_}, &wxwidgets_gui_project::create}}, {project_sdk::xtd, {xtd_gui_project {path_}, &xtd_gui_project::create}}, {project_sdk::xtd_c, {xtd_c_gui_project {path_}, &xtd_c_gui_project::create}}} [sdk](name, create_solution);
+      std::map<project_sdk, xtd::action<const xtd::ustring&, bool>> {
+        {project_sdk::cocoa, {cocoa_gui_project {path_}, &cocoa_gui_project::create}},
+        {project_sdk::fltk, {fltk_gui_project {path_}, &fltk_gui_project::create}},
+        {project_sdk::gtk2, {gtk2_gui_project {path_}, &gtk2_gui_project::create}},
+        {project_sdk::gtk3, {gtk3_gui_project {path_}, &gtk3_gui_project::create}},
+        {project_sdk::gtk4, {gtk4_gui_project {path_}, &gtk4_gui_project::create}},
+        {project_sdk::gtkmm, {gtkmm_gui_project {path_}, &gtkmm_gui_project::create}},
+        {project_sdk::qt5, {qt5_gui_project {path_}, &qt5_gui_project::create}},
+        {project_sdk::qt6, {qt6_gui_project {path_}, &qt6_gui_project::create}},
+        {project_sdk::win32, {win32_gui_project {path_}, &win32_gui_project::create}},
+        {project_sdk::winforms, {winforms_gui_project {path_}, &winforms_gui_project::create}},
+        {project_sdk::wpf, {wpf_gui_project {path_}, &wpf_gui_project::create}},
+        {project_sdk::wxwidgets, {wxwidgets_gui_project {path_}, &wxwidgets_gui_project::create}},
+        {project_sdk::xtd, {xtd_gui_project {path_}, &xtd_gui_project::create}},
+        {project_sdk::xtd_c, {xtd_c_gui_project {path_}, &xtd_c_gui_project::create}}
+      } [sdk](name, create_solution);
     }
     
     void create_shared_library(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) const {
@@ -418,6 +439,19 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(xtd::io::path::combine(path_, "README.md"), lines);
     }
     
+    void generate_console(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) const {
+      switch (sdk) {
+        case project_sdk::xtd: xtd_console_project(path_).generate(name, create_solution); break;
+        case project_sdk::xtd_c: xtd_c_console_project(path_).create(name, create_solution); break;
+        default: std::map<project_language, xtd::action<const xtd::ustring&, bool>> {
+          {project_language::c, {c_console_project {path_}, &c_console_project::create}},
+          {project_language::cpp, {cpp_console_project {path_}, &cpp_console_project::create}},
+          {project_language::csharp, {csharp_console_project {path_}, &csharp_console_project::create}},
+          {project_language::objectivec, {objectivec_console_project {path_}, &objectivec_console_project::create}}
+        } [language](name, create_solution); break;
+      }
+    }
+
     void generate_gui(const xtd::ustring& name, project_sdk sdk, project_language language) const {
       std::map<project_sdk, xtd::action<const xtd::ustring&, bool>> {
         {project_sdk::cocoa, {cocoa_gui_project {path_}, &cocoa_gui_project::create}},
