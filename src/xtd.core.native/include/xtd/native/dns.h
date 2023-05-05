@@ -12,6 +12,7 @@
 #include <cstddef>
 #include <string>
 #include <vector>
+#include <cstdint>
 
 /// @cond
 class __using_dns__;
