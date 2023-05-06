@@ -59,7 +59,10 @@ startup_(program);
 
 // This code produces the following output :
 //
-// Aspect ratio set to: 1.25
+// Pushing current position: 15
+// Rewinding position to: 0
+// Restoring position to: 15
+// Aspect ratios set to: 1.25 == 1.25
 // Temp directory is: c:\Temp
 // Auto save time set to: 10
 // Show status bar: true
