@@ -24,7 +24,7 @@ public:
   
   static void display_values() {
     float aspect1, aspect2;
-    ustring temp_directory; 
+    ustring temp_directory;
     int auto_save_time;
     bool show_status_bar;
     
@@ -36,10 +36,10 @@ public:
         console::write_line("Pushing current position: {}", reader.tellg());
         reader.push();
         console::write_line("Rewinding position to: {}", std::ios_base::beg);
-	reader.rewind();
-	reader >> aspect2;
+        reader.rewind();
+        reader >> aspect2;
         console::write_line("Restoring position to: {}", reader.pop());
-	reader >> auto_save_time;
+        reader >> auto_save_time;
         reader >> show_status_bar;
       }
       
@@ -63,4 +63,3 @@ startup_(program);
 // Temp directory is: c:\Temp
 // Auto save time set to: 10
 // Show status bar: true
-
