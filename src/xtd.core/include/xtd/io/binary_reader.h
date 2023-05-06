@@ -3,9 +3,11 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 
+#include <iostream>
 #include <fstream>
 #include <optional>
 #include <vector>
+#include <stack>
 #include "../object.h"
 #include "../ustring.h"
 
@@ -75,6 +77,30 @@ namespace xtd {
       /// @{
       /// @brief Closes the xtd::io::binary_reader object and the underlying stream, and releases any system resources associated with the reader.
       void close();
+      
+      /// @{
+      /// @brief Tell the current seek position of the readers stream;
+      /// @return The current seek position
+      std::streampos tellg();
+      
+      /// @{
+      /// @brief Change the position of the readers stream
+      /// @param off The offset being added to the direction
+      /// @param dir The seek direction. If ommited defaults to ios_base::cur
+      void seekg(std::streamoff off, std::ios_base::seekdir dir = std::ios_base::cur);
+      
+      /// @{
+      /// @brief Push the current position
+      /// @param pos The stream position to be push/saved relative to ios_base::beg direction
+      void push(std::streampos pos = 0);
+      
+      /// @{
+      /// @brief Pop the current top position
+      std::streampos pop();
+      
+      /// @{
+      /// @brief Rewind stream
+      void rewind();
       
       /// @brief Returns the next available character and does not advance the byte or character position.
       /// @return The next available character, or EOF if no more characters are available or the stream does not support seeking.
@@ -251,6 +277,7 @@ namespace xtd {
       
     private:
       std::istream* stream_ = nullptr;
+      std::stack<std::streampos> pos_stack_;
       bool delete_when_destroy_ = false;
     };
   }

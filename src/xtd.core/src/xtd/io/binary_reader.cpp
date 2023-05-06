@@ -33,6 +33,30 @@ bool binary_reader::end_of_stream() const {
   return peek_char() == EOF;
 }
 
+std::streampos binary_reader::tellg() {
+  return stream_->tellg();
+}
+
+void binary_reader::seekg(std::streamoff pos, std::ios_base::seekdir dir) {
+  stream_->seekg(pos, dir);
+}
+
+void binary_reader::push(std::streampos pos) {
+  pos_stack_.push(pos == 0 ? stream_->tellg() : pos);
+}
+
+std::streampos binary_reader::pop() {
+  if(!pos_stack_.empty()) {
+    stream_->seekg(pos_stack_.top(), std::ios_base::beg);
+    pos_stack_.pop();
+  }
+  return stream_->tellg();
+}
+
+void binary_reader::rewind() {
+  stream_->seekg(0, std::ios_base::beg);
+}
+
 void binary_reader::close() {
   if (stream_ && dynamic_cast<ifstream*>(stream_)) static_cast<ifstream*>(stream_)->close();
   if (delete_when_destroy_) delete stream_;
