@@ -33,30 +33,6 @@ bool binary_reader::end_of_stream() const {
   return peek_char() == EOF;
 }
 
-std::streampos binary_reader::tellg() {
-  return stream_->tellg();
-}
-
-void binary_reader::seekg(std::streamoff pos, std::ios_base::seekdir dir) {
-  stream_->seekg(pos, dir);
-}
-
-void binary_reader::push(std::streampos pos) {
-  pos_stack_.push(pos == 0 ? stream_->tellg() : pos);
-}
-
-std::streampos binary_reader::pop() {
-  if(!pos_stack_.empty()) {
-    stream_->seekg(pos_stack_.top(), std::ios_base::beg);
-    pos_stack_.pop();
-  }
-  return stream_->tellg();
-}
-
-void binary_reader::rewind() {
-  stream_->seekg(0, std::ios_base::beg);
-}
-
 void binary_reader::close() {
   if (stream_ && dynamic_cast<ifstream*>(stream_)) static_cast<ifstream*>(stream_)->close();
   if (delete_when_destroy_) delete stream_;
@@ -67,6 +43,18 @@ int32 binary_reader::peek_char() const {
   if (!stream_) return EOF;
   int32 value = stream_->peek();
   return value;
+}
+
+std::streampos binary_reader::pop() {
+  if(!pos_stack_.empty()) {
+    stream_->seekg(pos_stack_.top(), std::ios_base::beg);
+    pos_stack_.pop();
+  }
+  return stream_->tellg();
+}
+
+void binary_reader::push(std::streampos pos) {
+  pos_stack_.push(pos == 0 ? stream_->tellg() : pos);
 }
 
 int32 binary_reader::read() {
@@ -160,4 +148,16 @@ uint32 binary_reader::read_uint32() {
 
 uint64 binary_reader::read_uint64() {
   return bit_converter::to_int16(read_bytes(sizeof(int64)), 0);
+}
+
+void binary_reader::rewind() {
+  stream_->seekg(0, std::ios_base::beg);
+}
+
+void binary_reader::seekg(std::streamoff pos, std::ios_base::seekdir dir) {
+  stream_->seekg(pos, dir);
+}
+
+std::streampos binary_reader::tellg() {
+  return stream_->tellg();
 }
