@@ -78,35 +78,18 @@ namespace xtd {
       /// @brief Closes the xtd::io::binary_reader object and the underlying stream, and releases any system resources associated with the reader.
       void close();
       
-      /// @{
-      /// @brief Tell the current seek position of the readers stream;
-      /// @return The current seek position
-      std::streampos tellg();
-      
-      /// @{
-      /// @brief Change the position of the readers stream
-      /// @param off The offset being added to the direction
-      /// @param dir The seek direction. If ommited defaults to ios_base::cur
-      void seekg(std::streamoff off, std::ios_base::seekdir dir = std::ios_base::cur);
-      
-      /// @{
-      /// @brief Push the current position
-      /// @param pos The stream position to be push/saved relative to ios_base::beg direction
-      void push(std::streampos pos = 0);
-      
-      /// @{
-      /// @brief Pop the current top position
-      std::streampos pop();
-      
-      /// @{
-      /// @brief Rewind stream
-      void rewind();
-      
       /// @brief Returns the next available character and does not advance the byte or character position.
       /// @return The next available character, or EOF if no more characters are available or the stream does not support seeking.
       /// @exception xtd::io::io_exception An I/O error occurred.
       /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
       int32 peek_char() const;
+      
+      /// @brief Pop the current top position
+      std::streampos pop();
+      
+      /// @brief Push the current position
+      /// @param pos The stream position to be push/saved relative to ios_base::beg direction
+      void push(std::streampos pos = 0);
       
       /// @brief Reads characters from the underlying stream and advances the current position of the stream in accordance with the Encoding used and the specific character being read from the stream.
       /// @return The next character from the input stream, or EOF if no characters are currently available.
@@ -257,6 +240,18 @@ namespace xtd {
       /// @remarks xtd::io::binary_reader does not restore the file position after an unsuccessful read operation.
       /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
       virtual uint64 read_uint64();
+      
+      /// @brief Rewind stream
+      void rewind();
+
+      /// @brief Change the position of the readers stream
+      /// @param off The offset being added to the direction
+      /// @param dir The seek direction. If ommited defaults to ios_base::cur
+      void seekg(std::streamoff off, std::ios_base::seekdir dir = std::ios_base::cur);
+
+      /// @brief Tell the current seek position of the readers stream;
+      /// @return The current seek position
+      std::streampos tellg();
       /// @}
       
       /// @cond
