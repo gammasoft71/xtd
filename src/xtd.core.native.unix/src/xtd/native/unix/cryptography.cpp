@@ -2,6 +2,7 @@
 #include <xtd/native/cryptography.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <unistd.h>
+#include <cstdint>
 
 using namespace std;
 using namespace xtd::native;

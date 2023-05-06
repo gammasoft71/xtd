@@ -11,6 +11,7 @@
 #include <xtd/core_native_export.h>
 #include <cstddef>
 #include <ctime>
+#include <cstdint>
 #include <string>
 #include <vector>
 #include "types.h"

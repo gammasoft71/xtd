@@ -11,6 +11,7 @@
 #include <xtd/core_native_export.h>
 #include <string>
 #include <vector>
+#include <cstdint>
 
 /// @cond
 class __using_socket__;
