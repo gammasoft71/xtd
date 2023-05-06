@@ -176,6 +176,7 @@
 
 * [binary_reader](io/binary_reader/README.md) shows how to use [xtd::io::binary_reader](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1io_1_1binary__reader.html) class.
 * [binary_reader2](io/binary_reader2/README.md) shows how to use [xtd::io::binary_reader](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1io_1_1binary__reader.html) class.
+* [binary_reader3](io/binary_reader3/README.md) shows how to use [xtd::io::binary_reader](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1io_1_1binary__reader.html) class.
 * [directory_info](io/directory_info/README.md) shows how to use [xtd::io::directory_info](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1io_1_1directory__info.html) class.
 * [drive_info](io/drive_info/README.md) shows how to use [xtd::io::drive_info](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1io_1_1drive__info.html) class.
 * [file_info](io/file_info/README.md) shows how to use [xtd::io::file_info](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1io_1_1file__info.html) class.
