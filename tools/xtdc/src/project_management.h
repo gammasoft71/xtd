@@ -188,7 +188,7 @@ namespace xtdc_command {
       create_doxygen_txt(name);
       create_readme_md(name);
       std::map<project_type, xtd::action<const xtd::ustring&, project_sdk, project_language, bool>> {
-        {project_type::blank_solution, {*this, &project_management::create_blank_solution}},
+        {project_type::blank_solution, {*this, &project_management::generate_blank_solution}},
         {project_type::console, {*this, &project_management::generate_console}},
         {project_type::gui, {*this, &project_management::generate_gui}},
         {project_type::shared_library, {*this, &project_management::create_shared_library}},
