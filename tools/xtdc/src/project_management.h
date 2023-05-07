@@ -454,7 +454,7 @@ namespace xtdc_command {
         case project_sdk::xtd: xtd_console_project(path_).generate(name, create_solution); break;
         case project_sdk::xtd_c: xtd_c_console_project(path_).generate(name, create_solution); break;
         default: std::map<project_language, xtd::action<const xtd::ustring&, bool>> {
-          {project_language::c, {c_console_project {path_}, &c_console_project::create}},
+          {project_language::c, {c_console_project {path_}, &c_console_project::generate}},
           {project_language::cpp, {cpp_console_project {path_}, &cpp_console_project::create}},
           {project_language::csharp, {csharp_console_project {path_}, &csharp_console_project::create}},
           {project_language::objectivec, {objectivec_console_project {path_}, &objectivec_console_project::create}}
