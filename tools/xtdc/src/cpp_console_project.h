@@ -13,6 +13,10 @@ namespace xtdc_command {
       create_cpp_console_source(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
     }
     
+    void generate(const xtd::ustring& name, bool create_solution) const {
+      generate_cpp_console_cmakelists_txt(name, current_path());
+    }
+    
   private:
     void create_cmakelists_txt(const xtd::ustring& name) const {
       std::vector<xtd::ustring> lines {
@@ -61,6 +65,33 @@ namespace xtdc_command {
       };
       
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "program.cpp"), lines);
+    }
+    
+    void generate_cpp_console_cmakelists_txt(const xtd::ustring& name, const xtd::ustring& path) const {
+      std::vector<xtd::ustring> lines {
+        "cmake_minimum_required(VERSION 3.3)",
+        "",
+        "# Project",
+        xtd::ustring::format("project({} VERSION 1.0.0)", name),
+        "set(SOURCES",
+      };
+      auto [headers, sources] = get_cpp_sources(path, path);
+      for (auto file : headers)
+        lines.push_back(xtd::ustring::format("  {}", file));
+      for (auto file : sources)
+        lines.push_back(xtd::ustring::format("  {}", file));
+      lines.push_back(")");
+      lines.push_back("source_group(src FILES ${SOURCES})");
+      lines.push_back("");
+      lines.push_back("# Options");
+      lines.push_back("set(CMAKE_CXX_STANDARD 17)");
+      lines.push_back("set(CMAKE_CXX_STANDARD_REQUIRED ON)");
+      lines.push_back("set_property(GLOBAL PROPERTY USE_FOLDERS ON)");
+      lines.push_back("");
+      lines.push_back("# Application properties");
+      lines.push_back("add_executable(${PROJECT_NAME} ${SOURCES})");
+      
+      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "CMakeLists.txt"), lines);
     }
   };
 }
