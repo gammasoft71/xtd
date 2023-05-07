@@ -456,7 +456,7 @@ namespace xtdc_command {
         default: std::map<project_language, xtd::action<const xtd::ustring&, bool>> {
           {project_language::c, {c_console_project {path_}, &c_console_project::generate}},
           {project_language::cpp, {cpp_console_project {path_}, &cpp_console_project::generate}},
-          {project_language::csharp, {csharp_console_project {path_}, &csharp_console_project::create}},
+          {project_language::csharp, {csharp_console_project {path_}, &csharp_console_project::generate}},
           {project_language::objectivec, {objectivec_console_project {path_}, &objectivec_console_project::generate}}
         } [language](name, create_solution); break;
       }
