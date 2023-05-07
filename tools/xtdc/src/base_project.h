@@ -69,6 +69,20 @@ namespace xtdc_command {
       return std::make_tuple(headers, sources);
     }
     
+    static std::vector<xtd::ustring> get_csharp_sources(const xtd::ustring& current_path, const xtd::ustring& path) {
+      std::vector<xtd::ustring> sources;
+      for (auto file : xtd::io::directory::get_files(path, "*.cs"))
+        sources.push_back(file.replace(current_path + xtd::io::path::directory_separator_char(), ""));
+      
+      for (auto sub_path : xtd::io::directory::get_directories(path)) {
+        auto sub_sources = get_csharp_sources(current_path, sub_path);
+        for (auto file : sub_sources)
+          sources.push_back(file);
+      }
+      
+      return sources;
+    }
+
   private:
     xtd::ustring current_path_ = xtd::environment::current_directory();
   };
