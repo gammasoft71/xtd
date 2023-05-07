@@ -371,8 +371,10 @@ namespace xtdc_command {
     xtd::int32 last_exit_code() const {return last_exit_code_;}
     
     void create_blank_solution(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) {
-      std::map<project_sdk, xtd::action<const xtd::ustring&, bool>> {{project_sdk::none, {blank_solution_project {path_}, &blank_solution_project::create}}, {project_sdk::xtd, {xtd_blank_solution_project {path_}, &xtd_blank_solution_project::create}}, {project_sdk::xtd_c, {xtd_c_blank_solution_project {path_}, &xtd_c_blank_solution_project::create}}
-      
+      std::map<project_sdk, xtd::action<const xtd::ustring&, bool>> {
+        {project_sdk::none, {blank_solution_project {path_}, &blank_solution_project::create}},
+        {project_sdk::xtd, {xtd_blank_solution_project {path_}, &xtd_blank_solution_project::create}},
+        {project_sdk::xtd_c, {xtd_c_blank_solution_project {path_}, &xtd_c_blank_solution_project::create}}
       } [sdk](name, create_solution);
     }
     
@@ -439,10 +441,18 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(xtd::io::path::combine(path_, "README.md"), lines);
     }
     
+    void generate_blank_solution(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) {
+      std::map<project_sdk, xtd::action<const xtd::ustring&, bool>> {
+        {project_sdk::none, {blank_solution_project {path_}, &blank_solution_project::generate}},
+        {project_sdk::xtd, {xtd_blank_solution_project {path_}, &xtd_blank_solution_project::generate}},
+        {project_sdk::xtd_c, {xtd_c_blank_solution_project {path_}, &xtd_c_blank_solution_project::generate}}
+      } [sdk](name, create_solution);
+    }
+
     void generate_console(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) const {
       switch (sdk) {
         case project_sdk::xtd: xtd_console_project(path_).generate(name, create_solution); break;
-        case project_sdk::xtd_c: xtd_c_console_project(path_).create(name, create_solution); break;
+        case project_sdk::xtd_c: xtd_c_console_project(path_).generate(name, create_solution); break;
         default: std::map<project_language, xtd::action<const xtd::ustring&, bool>> {
           {project_language::c, {c_console_project {path_}, &c_console_project::create}},
           {project_language::cpp, {cpp_console_project {path_}, &cpp_console_project::create}},

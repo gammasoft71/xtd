@@ -116,7 +116,7 @@ namespace xtdc_command {
         "find_package(xtd REQUIRED)",
         "add_sources(",
       };
-      auto [headers, sources] = get_sources(path, path);
+      auto [headers, sources] = get_cpp_sources(path, path);
       for (auto file : headers)
         lines.push_back(xtd::ustring::format("  {}", file));
       for (auto file : sources)
