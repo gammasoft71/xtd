@@ -31,7 +31,26 @@ namespace xtdc_command {
     const xtd::ustring& current_path() const noexcept {return current_path_;}
     
   protected:
-    static std::tuple<std::vector<xtd::ustring>, std::vector<xtd::ustring>> get_sources(const xtd::ustring& current_path, const xtd::ustring& path) {
+    static std::tuple<std::vector<xtd::ustring>, std::vector<xtd::ustring>> get_c_sources(const xtd::ustring& current_path, const xtd::ustring& path) {
+      std::vector<xtd::ustring> headers;
+      std::vector<xtd::ustring> sources;
+      for (auto file : xtd::io::directory::get_files(path, "*.h"))
+        headers.push_back(file.replace(current_path + xtd::io::path::directory_separator_char(), ""));
+      for (auto file : xtd::io::directory::get_files(path, "*.c"))
+        sources.push_back(file.replace(current_path + xtd::io::path::directory_separator_char(), ""));
+      
+      for (auto sub_path : xtd::io::directory::get_directories(path)) {
+        auto [sub_headers, sub_sources] = get_c_sources(current_path, sub_path);
+        for (auto file : sub_headers)
+          headers.push_back(file);
+        for (auto file : sub_sources)
+          sources.push_back(file);
+      }
+      
+      return std::make_tuple(headers, sources);
+    }
+    
+    static std::tuple<std::vector<xtd::ustring>, std::vector<xtd::ustring>> get_cpp_sources(const xtd::ustring& current_path, const xtd::ustring& path) {
       std::vector<xtd::ustring> headers;
       std::vector<xtd::ustring> sources;
       for (auto file : xtd::io::directory::get_files(path, "*.h"))
@@ -40,7 +59,7 @@ namespace xtdc_command {
         sources.push_back(file.replace(current_path + xtd::io::path::directory_separator_char(), ""));
       
       for (auto sub_path : xtd::io::directory::get_directories(path)) {
-        auto [sub_headers, sub_sources] = get_sources(current_path, sub_path);
+        auto [sub_headers, sub_sources] = get_cpp_sources(current_path, sub_path);
         for (auto file : sub_headers)
           headers.push_back(file);
         for (auto file : sub_sources)
