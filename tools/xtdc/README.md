@@ -53,13 +53,13 @@ xtdc contains many project template. All project listed below are created with C
 
 # Usage
 
-```bash
+```
 xtdc [<options> | command [<command-argument>] [<command-options>]]
 ```
 
 The options are:
 
-```bash
+```
 -i, --info       Display information.
 -v, --version    Display version in use.
 -h, --help       Display help.
@@ -67,7 +67,7 @@ The options are:
 
 The commands are:
 
-```bash
+```
 new              Initializes project.
 generate         Generate project from existing source files.
 add              Adds new project to project.
