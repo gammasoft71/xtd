@@ -115,13 +115,12 @@ namespace xtdc_command {
     }
     
     void generate_cmakelists_txt(const xtd::ustring& name, const xtd::ustring& path) const {
-      std::vector<xtd::ustring> lines {
-        "cmake_minimum_required(VERSION 3.8)",
-        "",
-        "# Project",
-        xtd::ustring::format("project({} VERSION 1.0.0)", name),
-        "set(SOURCES",
-      };
+      std::vector<xtd::ustring> lines;
+      lines.push_back("cmake_minimum_required(VERSION 3.8)");
+      lines.push_back("");
+      lines.push_back("# Project");
+      lines.push_back(xtd::ustring::format("project({} VERSION 1.0.0)", name));
+      lines.push_back("set(SOURCES");
       auto [headers, sources] = get_objectivec_sources(path, path);
       for (auto file : headers)
         lines.push_back(xtd::ustring::format("  {}", file));

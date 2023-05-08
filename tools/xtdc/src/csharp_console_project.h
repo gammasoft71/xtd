@@ -73,14 +73,13 @@ namespace xtdc_command {
     }
     
     void generate_cmakelists_txt(const xtd::ustring& name, const xtd::ustring& path) const {
-      std::vector<xtd::ustring> lines {
-        "cmake_minimum_required(VERSION 3.8)",
-        "",
-        "# Project",
-        xtd::ustring::format("project({} VERSION 1.0.0 LANGUAGES CSharp)", name),
-        "include(CSharpUtilities)",
-        "set(SOURCES",
-      };
+      std::vector<xtd::ustring> lines;
+      lines.push_back("cmake_minimum_required(VERSION 3.8)");
+      lines.push_back("");
+      lines.push_back("# Project");
+      lines.push_back(xtd::ustring::format("project({} VERSION 1.0.0 LANGUAGES CSharp)", name));
+      lines.push_back("include(CSharpUtilities)");
+      lines.push_back("set(SOURCES");
       for (auto file : get_csharp_sources(path, path))
         lines.push_back(xtd::ustring::format("  {}", file));
       lines.push_back(")");
