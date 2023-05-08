@@ -13,6 +13,10 @@ namespace xtdc_command {
       create_source(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
     }
     
+    void generate(const xtd::ustring& name) const {
+      generate_cmakelists_txt(name, current_path());
+    }
+    
   private:
     void create_solution_cmakelists_txt(const xtd::ustring& name) const {
       std::vector<xtd::ustring> lines {
@@ -71,6 +75,38 @@ namespace xtdc_command {
       };
       
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "program.c"), lines);
+    }
+    
+    void generate_cmakelists_txt(const xtd::ustring& name, const xtd::ustring& path) const {
+      std::vector<xtd::ustring> lines {
+        "cmake_minimum_required(VERSION 3.8)",
+        "",
+        "# Project",
+        xtd::ustring::format("project({} VERSION 1.0.0)", name),
+        "set(SOURCES",
+      };
+      auto [headers, sources] = get_c_sources(path, path);
+      for (auto file : headers)
+        lines.push_back(xtd::ustring::format("  {}", file));
+      for (auto file : sources)
+        lines.push_back(xtd::ustring::format("  {}", file));
+      lines.push_back(")");
+      lines.push_back("source_group(src FILES ${SOURCES})");
+      lines.push_back("find_package(PkgConfig)");
+      lines.push_back("pkg_check_modules(GTK gtk+-2.0)");
+      lines.push_back("include_directories(${GTK_INCLUDE_DIRS})");
+      lines.push_back("link_directories(${GTK_LIBRARY_DIRS})");
+      lines.push_back("link_libraries(${GTK_LIBRARIES})");
+      lines.push_back("");
+      lines.push_back("# Options");
+      lines.push_back("set(CMAKE_C_STANDARD 11)");
+      lines.push_back("set(CMAKE_C_STANDARD_REQUIRED ON)");
+      lines.push_back("set_property(GLOBAL PROPERTY USE_FOLDERS ON)");
+      lines.push_back("");
+      lines.push_back("# Application properties");
+      lines.push_back("add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE ${SOURCES})");
+      
+      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "CMakeLists.txt"), lines);
     }
   };
 }
