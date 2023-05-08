@@ -472,7 +472,7 @@ namespace xtdc_command {
         {project_sdk::gtkmm, {gtkmm_gui_project {path_}, &gtkmm_gui_project::generate}},
         {project_sdk::qt5, {qt5_gui_project {path_}, &qt5_gui_project::generate}},
         {project_sdk::qt6, {qt6_gui_project {path_}, &qt6_gui_project::generate}},
-        {project_sdk::win32, {win32_gui_project {path_}, &win32_gui_project::create}},
+        {project_sdk::win32, {win32_gui_project {path_}, &win32_gui_project::generate}},
         {project_sdk::winforms, {winforms_gui_project {path_}, &winforms_gui_project::create}},
         {project_sdk::wpf, {wpf_gui_project {path_}, &wpf_gui_project::create}},
         {project_sdk::wxwidgets, {wxwidgets_gui_project {path_}, &wxwidgets_gui_project::create}},
