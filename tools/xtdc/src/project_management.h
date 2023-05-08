@@ -511,7 +511,7 @@ namespace xtdc_command {
     
     void generate_static_library(const xtd::ustring& name, project_sdk sdk, project_language language) const {
       switch (sdk) {
-        case project_sdk::xtd: xtd_static_library_project(path_).create(name, true); break;
+        case project_sdk::xtd: xtd_static_library_project(path_).generate(name); break;
         case project_sdk::xtd_c: xtd_c_static_library_project(path_).create(name, true); break;
         default: std::map<project_language, xtd::action<const xtd::ustring&, bool>> {
           {project_language::c, {c_static_library_project {path_}, &c_static_library_project::create}},
