@@ -51,6 +51,44 @@ xtdc contains many project template. All project listed below are created with C
 * gtest (c++)
 * catch2 (c++)
 
+# Usage
+
+```bash
+xtdc [<options> | command [<command-argument>] [<command-options>]]
+```
+
+The options are:
+
+```bash
+-i, --info       Display information.
+-v, --version    Display version in use.
+-h, --help       Display help.
+```
+
+The commands are:
+
+```bash
+new              Initializes project.
+generate         Generate project from existing source files.
+add              Adds new project to project.
+update           Regenerates a project.
+run              Compiles and immediately executes a project.
+build            Builds a project.
+install          Install a project.
+clean            Clean build output(s).
+open             Open a project in default ide.
+targets          List project targets.
+test             Runs unit tests using the test runner specified in the project.
+uninstall        Uninstall a project.
+documentation    Open xtd documentation.
+examples         Open xtd examples.
+guide            Open xtd reference guide.
+web              Open xtd website.
+help             Show help.
+```
+
+Run `xtdc command --help` for more information on a command.
+
 # Some examples
 
 ## Create and run a xtd GUI application project
