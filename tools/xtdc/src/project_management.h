@@ -412,11 +412,11 @@ namespace xtdc_command {
     
     void create_shared_library(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) const {
       switch (sdk) {
-        case project_sdk::xtd: xtd_shared_library_project(path_).generate(name); break;
-        case project_sdk::xtd_c: xtd_c_shared_library_project(path_).generate(name); break;
+        case project_sdk::xtd: xtd_shared_library_project(path_).create(name, create_solution); break;
+        case project_sdk::xtd_c: xtd_c_shared_library_project(path_).create(name, create_solution); break;
         default: std::map<project_language, xtd::action<const xtd::ustring&, bool>> {
-          {project_language::c, {c_shared_library_project {path_}, &c_shared_library_project::generate}},
-          {project_language::cpp, {cpp_shared_library_project {path_}, &cpp_shared_library_project::generate}},
+          {project_language::c, {c_shared_library_project {path_}, &c_shared_library_project::create}},
+          {project_language::cpp, {cpp_shared_library_project {path_}, &cpp_shared_library_project::create}},
           {project_language::csharp, {csharp_shared_library_project {path_}, &csharp_shared_library_project::create}},
           {project_language::objectivec, {objectivec_shared_library_project {path_}, &objectivec_shared_library_project::create}}
         } [language](name, create_solution); break;
@@ -498,12 +498,12 @@ namespace xtdc_command {
     
     void generate_shared_library(const xtd::ustring& name, project_sdk sdk, project_language language) const {
       switch (sdk) {
-        case project_sdk::xtd: xtd_shared_library_project(path_).create(name, true); break;
-        case project_sdk::xtd_c: xtd_c_shared_library_project(path_).create(name, true); break;
+        case project_sdk::xtd: xtd_shared_library_project(path_).generate(name); break;
+        case project_sdk::xtd_c: xtd_c_shared_library_project(path_).generate(name); break;
         default: std::map<project_language, xtd::action<const xtd::ustring&, bool>> {
-          {project_language::c, {c_shared_library_project {path_}, &c_shared_library_project::create}},
-          {project_language::cpp, {cpp_shared_library_project {path_}, &cpp_shared_library_project::create}},
-          {project_language::csharp, {csharp_shared_library_project {path_}, &csharp_shared_library_project::create}},
+          {project_language::c, {c_shared_library_project {path_}, &c_shared_library_project::generate}},
+          {project_language::cpp, {cpp_shared_library_project {path_}, &cpp_shared_library_project::generate}},
+          {project_language::csharp, {csharp_shared_library_project {path_}, &csharp_shared_library_project::generate}},
           {project_language::objectivec, {objectivec_shared_library_project {path_}, &objectivec_shared_library_project::create}}
         } [language](name, true); break;
       }
