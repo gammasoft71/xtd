@@ -10,7 +10,7 @@ namespace xtdc_command {
       create_solution_cmakelists_txt(name);
     }
     
-    void generate(const xtd::ustring& name, bool create_solution) const {
+    void generate(const xtd::ustring& name) const {
       create_solution_cmakelists_txt(name);
     }
 

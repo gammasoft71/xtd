@@ -441,15 +441,15 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(xtd::io::path::combine(path_, "README.md"), lines);
     }
     
-    void generate_blank_solution(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) {
-      std::map<project_sdk, xtd::action<const xtd::ustring&, bool>> {
+    void generate_blank_solution(const xtd::ustring& name, project_sdk sdk, project_language language) {
+      std::map<project_sdk, xtd::action<const xtd::ustring&>> {
         {project_sdk::none, {blank_solution_project {path_}, &blank_solution_project::generate}},
         {project_sdk::xtd, {xtd_blank_solution_project {path_}, &xtd_blank_solution_project::generate}},
         {project_sdk::xtd_c, {xtd_c_blank_solution_project {path_}, &xtd_c_blank_solution_project::generate}}
-      } [sdk](name, create_solution);
+      } [sdk](name);
     }
 
-    void generate_console(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) const {
+    void generate_console(const xtd::ustring& name, project_sdk sdk, project_language language) const {
       switch (sdk) {
         case project_sdk::xtd: xtd_console_project(path_).generate(name); break;
         case project_sdk::xtd_c: xtd_c_console_project(path_).generate(name); break;
