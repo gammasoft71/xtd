@@ -12,6 +12,7 @@ add_sources(
   src/xtd/forms/tests/check_box_tests.cpp 
   src/xtd/forms/tests/control_tests.cpp 
   src/xtd/forms/tests/form_tests.cpp
+  src/xtd/forms/tests/keys_tests.cpp
   src/xtd/forms/tests/lcd_label_tests.cpp
   src/xtd/forms/tests/list_box_tests.cpp
   src/xtd/forms/tests/main_menu_tests.cpp
