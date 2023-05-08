@@ -96,7 +96,12 @@ namespace xtdc_command {
       lines.push_back(xtd::ustring::format("project({} VERSION 1.0.0 LANGUAGES CSharp)", name));
       lines.push_back("include(CSharpUtilities)");
       lines.push_back("set(SOURCES");
-      for (auto file : get_csharp_sources(path, path))
+      auto [sources, configs, xamls] = get_csharp_sources(path, path);
+      for (auto file : sources)
+        lines.push_back(xtd::ustring::format("  {}", file));
+      for (auto file : configs)
+        lines.push_back(xtd::ustring::format("  {}", file));
+      for (auto file : xamls)
         lines.push_back(xtd::ustring::format("  {}", file));
       lines.push_back(")");
       lines.push_back("source_group(src FILES ${SOURCES})");

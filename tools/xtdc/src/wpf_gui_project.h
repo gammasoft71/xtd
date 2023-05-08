@@ -17,6 +17,11 @@ namespace xtdc_command {
       create_application_xaml(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
     }
     
+    void generate(const xtd::ustring& name) const {
+      generate_cmakelists_txt(name, current_path());
+    }
+
+  private:
     void create_solution_cmakelists_txt(const xtd::ustring& name) const {
       std::vector<xtd::ustring> lines {
         "cmake_minimum_required(VERSION 3.8)",
@@ -143,6 +148,48 @@ namespace xtdc_command {
       };
       
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "App.xaml"), lines);
+    }
+    
+    void generate_cmakelists_txt(const xtd::ustring& name, const xtd::ustring& path) const {
+      std::vector<xtd::ustring> lines;
+      lines.push_back("cmake_minimum_required(VERSION 3.8)");
+      lines.push_back("");
+      lines.push_back("# Project");
+      lines.push_back(xtd::ustring::format("project({} VERSION 1.0.0 LANGUAGES CSharp)", name));
+      lines.push_back("include(CSharpUtilities)");
+      lines.push_back("set(SOURCES");
+      lines.push_back("  src/App.config");
+      lines.push_back("  src/App.xaml");
+      lines.push_back("  src/App.xaml.cs");
+      lines.push_back("  src/Window1.xaml");
+      lines.push_back("  src/Window1.xaml.cs");
+      lines.push_back(")");
+      lines.push_back("csharp_set_xaml_cs_properties(");
+      lines.push_back("  src/App.xaml");
+      lines.push_back("  src/App.xaml.cs");
+      lines.push_back("  src/Window1.xaml");
+      lines.push_back("  src/Window1.xaml.cs");
+      lines.push_back(")");
+      lines.push_back("source_group(src FILES ${SOURCES})");
+      lines.push_back("");
+      lines.push_back("# Options");
+      lines.push_back("set_property(GLOBAL PROPERTY USE_FOLDERS ON)");
+      lines.push_back("set_property(SOURCE src/App.xaml PROPERTY VS_XAML_TYPE \"ApplicationDefinition\")");
+      lines.push_back("");
+      lines.push_back("# Application properties");
+      lines.push_back("add_executable(${PROJECT_NAME} WIN32 ${SOURCES})");
+      lines.push_back("set_property(TARGET ${PROJECT_NAME} PROPERTY VS_DOTNET_REFERENCES");
+      lines.push_back("  Microsoft.CSharp");
+      lines.push_back("  PresentationCore");
+      lines.push_back("  PresentationFramework");
+      lines.push_back("  System");
+      lines.push_back("  System.Xaml");
+      lines.push_back("  System.Xml");
+      lines.push_back("  System.Xml.Linq");
+      lines.push_back("  WindowsBase");
+      lines.push_back(")");
+      
+      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "CMakeLists.txt"), lines);
     }
   };
 }
