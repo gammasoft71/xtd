@@ -13,6 +13,10 @@ namespace xtdc_command {
       create_source(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
     }
     
+    void generate(const xtd::ustring& name) const {
+      generate_cmakelists_txt(name, current_path());
+    }
+    
   private:
     void create_solution_cmakelists_txt(const xtd::ustring& name) const {
       std::vector<xtd::ustring> lines {
@@ -82,6 +86,34 @@ namespace xtdc_command {
       };
       
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "Program.cs"), lines);
+    }
+    
+    void generate_cmakelists_txt(const xtd::ustring& name, const xtd::ustring& path) const {
+      std::vector<xtd::ustring> lines;
+      lines.push_back("cmake_minimum_required(VERSION 3.8)");
+      lines.push_back("");
+      lines.push_back("# Project");
+      lines.push_back(xtd::ustring::format("project({} VERSION 1.0.0 LANGUAGES CSharp)", name));
+      lines.push_back("include(CSharpUtilities)");
+      lines.push_back("set(SOURCES");
+      for (auto file : get_csharp_sources(path, path))
+        lines.push_back(xtd::ustring::format("  {}", file));
+      lines.push_back(")");
+      lines.push_back("source_group(src FILES ${SOURCES})");
+      lines.push_back("");
+      lines.push_back("# Options");
+      lines.push_back("set_property(GLOBAL PROPERTY USE_FOLDERS ON)");
+      lines.push_back("");
+      lines.push_back("# Application properties");
+      lines.push_back("add_executable(${PROJECT_NAME} WIN32 ${SOURCES})");
+      lines.push_back("set_property(TARGET ${PROJECT_NAME} PROPERTY VS_DOTNET_REFERENCES");
+      lines.push_back("  Microsoft.CSharp");
+      lines.push_back("  System");
+      lines.push_back("  System.Drawing");
+      lines.push_back("  System.Windows.Forms");
+      lines.push_back(")");
+      
+      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "CMakeLists.txt"), lines);
     }
   };
 }
