@@ -177,7 +177,7 @@ auto main()->int {
 }
 ```
 
-**or**
+**or simply**
 
 ```cpp
 #include <xtd/xtd>
@@ -263,7 +263,7 @@ auto main()->int {
 }
 ```
 
-**or**
+**or without helpers**
 
 ```cpp
 #include <xtd/xtd>
