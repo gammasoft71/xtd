@@ -464,8 +464,8 @@ namespace xtdc_command {
 
     void generate_gui(const xtd::ustring& name, project_sdk sdk, project_language language) const {
       std::map<project_sdk, xtd::action<const xtd::ustring&, bool>> {
-        {project_sdk::cocoa, {cocoa_gui_project {path_}, &cocoa_gui_project::create}},
-        {project_sdk::fltk, {fltk_gui_project {path_}, &fltk_gui_project::create}},
+        {project_sdk::cocoa, {cocoa_gui_project {path_}, &cocoa_gui_project::generate}},
+        {project_sdk::fltk, {fltk_gui_project {path_}, &fltk_gui_project::generate}},
         {project_sdk::gtk2, {gtk2_gui_project {path_}, &gtk2_gui_project::create}},
         {project_sdk::gtk3, {gtk3_gui_project {path_}, &gtk3_gui_project::create}},
         {project_sdk::gtk4, {gtk4_gui_project {path_}, &gtk4_gui_project::create}},
