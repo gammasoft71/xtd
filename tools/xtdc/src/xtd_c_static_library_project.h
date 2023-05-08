@@ -17,6 +17,10 @@ namespace xtdc_command {
       create_source(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
     }
     
+    void generate(const xtd::ustring& name) const {
+      generate_cmakelists_txt(name, current_path());
+    }
+
   private:
     void create_solution_cmakelists_txt(const xtd::ustring& name) const {
       std::vector<xtd::ustring> lines {
@@ -91,6 +95,30 @@ namespace xtdc_command {
       };
       
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "file1.c"), lines);
+    }
+    
+    void generate_cmakelists_txt(const xtd::ustring& name, const xtd::ustring& path) const {
+      std::vector<xtd::ustring> lines;
+      lines.push_back("cmake_minimum_required(VERSION 3.3)");
+      lines.push_back("");
+      lines.push_back("# Project");
+      lines.push_back(xtd::ustring::format("project({})", name));
+      lines.push_back("find_package(xtd_c REQUIRED)");
+      lines.push_back("add_include_directories(include)");
+      lines.push_back("add_sources(");
+      auto [headers, sources] = get_c_sources(path, path);
+      for (auto file : headers)
+        lines.push_back(xtd::ustring::format("  {}", file));
+      for (auto file : sources)
+        lines.push_back(xtd::ustring::format("  {}", file));
+      lines.push_back(")");
+      lines.push_back("target_type(C_STATIC_LIBRARY)");
+      lines.push_back("");
+      lines.push_back("# Install");
+      lines.push_back("add_install_include_directories(include)");
+      lines.push_back("install_component()");
+      
+      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "CMakeLists.txt"), lines);
     }
   };
 }
