@@ -19,6 +19,12 @@ namespace xtdc_command {
       create_main(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
     }
     
+    void generate(const xtd::ustring& name) const {
+      generate_cmakelists_txt(name, current_path());
+      generate_qmake_pro(name, current_path());
+    }
+
+  private:
     void create_solution_cmakelists_txt(const xtd::ustring& name) const {
       std::vector<xtd::ustring> lines {
         "cmake_minimum_required(VERSION 3.8)",
@@ -133,6 +139,48 @@ namespace xtdc_command {
       };
       
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "Program.cpp"), lines);
+    }
+    
+    void generate_cmakelists_txt(const xtd::ustring& name, const xtd::ustring& path) const {
+      std::vector<xtd::ustring> lines;
+      lines.push_back("cmake_minimum_required(VERSION 3.8)");
+      lines.push_back("");
+      lines.push_back("# Project");
+      lines.push_back(xtd::ustring::format("project({} VERSION 1.0.0)", name));
+      lines.push_back("set(SOURCES");
+      auto [headers, sources] = get_cpp_sources(path, path);
+      for (auto file : headers)
+        lines.push_back(xtd::ustring::format("  {}", file));
+      for (auto file : sources)
+        lines.push_back(xtd::ustring::format("  {}", file));
+      lines.push_back(")");
+      lines.push_back("source_group(src FILES ${SOURCES})");
+      lines.push_back("find_package(Qt5 COMPONENTS Widgets REQUIRED)");
+      lines.push_back("");
+      lines.push_back("# Options");
+      lines.push_back("set(CMAKE_AUTOMOC ON)");
+      lines.push_back("set(CMAKE_AUTORCC ON)");
+      lines.push_back("set(CMAKE_AUTOUIC ON)");
+      lines.push_back("set(CMAKE_CXX_STANDARD 17)");
+      lines.push_back("set(CMAKE_CXX_STANDARD_REQUIRED ON)");
+      lines.push_back("set_property(GLOBAL PROPERTY USE_FOLDERS ON)");
+      lines.push_back("");
+      lines.push_back("# Application properties");
+      lines.push_back("add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE ${SOURCES})");
+      lines.push_back("target_link_libraries(${PROJECT_NAME} Qt5::Widgets)");
+      
+      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "CMakeLists.txt"), lines);
+    }
+    
+    void generate_qmake_pro(const xtd::ustring& name, const xtd::ustring& path) const {
+      std::vector<xtd::ustring> lines;
+      lines.push_back("CONFIG += c++17");
+      lines.push_back("QT = widgets");
+      auto [headers, sources] = get_cpp_sources(path, path);
+      lines.push_back(xtd::ustring::format("HEADERS = {}", xtd::ustring::join(" ", headers)));
+      lines.push_back(xtd::ustring::format("SOURCES = {}", xtd::ustring::join(" ", sources)));
+    
+      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", xtd::ustring::format("{}.pro", name)), lines);
     }
   };
 }
