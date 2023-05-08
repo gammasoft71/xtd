@@ -525,7 +525,7 @@ namespace xtdc_command {
     void generate_unit_test_application(const xtd::ustring& name, project_sdk sdk, project_language language) const {
       std::map<project_sdk, xtd::action<const xtd::ustring&, bool>> {
         {project_sdk::catch2, {catch2_unit_test_application_project {path_}, &catch2_unit_test_application_project::generate}},
-        {project_sdk::gtest, {gtest_unit_test_application_project {path_}, &gtest_unit_test_application_project::create}},
+        {project_sdk::gtest, {gtest_unit_test_application_project {path_}, &gtest_unit_test_application_project::generate}},
         {project_sdk::xtd, {xtd_unit_test_application_project {path_}, &xtd_unit_test_application_project::create}},
         {project_sdk::xtd_c, {xtd_c_unit_test_application_project {path_}, &xtd_c_unit_test_application_project::create}}
       } [sdk](name, true);
