@@ -463,7 +463,7 @@ namespace xtdc_command {
     }
 
     void generate_gui(const xtd::ustring& name, project_sdk sdk, project_language language) const {
-      std::map<project_sdk, xtd::action<const xtd::ustring&, bool>> {
+      std::map<project_sdk, xtd::action<const xtd::ustring&>> {
         {project_sdk::cocoa, {cocoa_gui_project {path_}, &cocoa_gui_project::generate}},
         {project_sdk::fltk, {fltk_gui_project {path_}, &fltk_gui_project::generate}},
         {project_sdk::gtk2, {gtk2_gui_project {path_}, &gtk2_gui_project::generate}},
@@ -477,8 +477,8 @@ namespace xtdc_command {
         {project_sdk::wpf, {wpf_gui_project {path_}, &wpf_gui_project::generate}},
         {project_sdk::wxwidgets, {wxwidgets_gui_project {path_}, &wxwidgets_gui_project::generate}},
         {project_sdk::xtd, {xtd_gui_project {path_}, &xtd_gui_project::generate}},
-        {project_sdk::xtd_c, {xtd_c_gui_project {path_}, &xtd_c_gui_project::create}}
-      } [sdk](name, false);
+        {project_sdk::xtd_c, {xtd_c_gui_project {path_}, &xtd_c_gui_project::generate}}
+      } [sdk](name);
     }
     
     void generate_project() const {generate_project(xtd::io::path::get_file_name(path_));}
