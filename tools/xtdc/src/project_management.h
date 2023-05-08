@@ -515,7 +515,7 @@ namespace xtdc_command {
         case project_sdk::xtd_c: xtd_c_static_library_project(path_).generate(name); break;
         default: std::map<project_language, xtd::action<const xtd::ustring&, bool>> {
           {project_language::c, {c_static_library_project {path_}, &c_static_library_project::generate}},
-          {project_language::cpp, {cpp_static_library_project {path_}, &cpp_static_library_project::create}},
+          {project_language::cpp, {cpp_static_library_project {path_}, &cpp_static_library_project::generate}},
           {project_language::csharp, {csharp_static_library_project {path_}, &csharp_static_library_project::create}},
           {project_language::objectivec, {objectivec_static_library_project {path_}, &objectivec_static_library_project::create}}
         } [language](name, true); break;
