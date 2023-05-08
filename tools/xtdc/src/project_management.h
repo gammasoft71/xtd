@@ -451,14 +451,14 @@ namespace xtdc_command {
 
     void generate_console(const xtd::ustring& name, project_sdk sdk, project_language language, bool create_solution) const {
       switch (sdk) {
-        case project_sdk::xtd: xtd_console_project(path_).generate(name, create_solution); break;
-        case project_sdk::xtd_c: xtd_c_console_project(path_).generate(name, create_solution); break;
-        default: std::map<project_language, xtd::action<const xtd::ustring&, bool>> {
+        case project_sdk::xtd: xtd_console_project(path_).generate(name); break;
+        case project_sdk::xtd_c: xtd_c_console_project(path_).generate(name); break;
+        default: std::map<project_language, xtd::action<const xtd::ustring&>> {
           {project_language::c, {c_console_project {path_}, &c_console_project::generate}},
           {project_language::cpp, {cpp_console_project {path_}, &cpp_console_project::generate}},
           {project_language::csharp, {csharp_console_project {path_}, &csharp_console_project::generate}},
           {project_language::objectivec, {objectivec_console_project {path_}, &objectivec_console_project::generate}}
-        } [language](name, create_solution); break;
+        } [language](name); break;
       }
     }
 
