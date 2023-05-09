@@ -16,6 +16,7 @@ add_sources(
   src/xtd/tests/as_tests.cpp
   src/xtd/tests/bit_converter_tests.cpp
   src/xtd/tests/box_tests.cpp
+  src/xtd/tests/build_type_tests.cpp
   src/xtd/tests/bytes_assert.h
   src/xtd/tests/console_key_info_tests.cpp
   src/xtd/tests/convert_tests.cpp
