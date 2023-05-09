@@ -32,7 +32,7 @@ add_sources(
   src/xtd/tests/format_exception_tests.cpp
   src/xtd/tests/generic_stream_output_tests.cpp
   src/xtd/tests/guid_tests.cpp
-  src/xtd/tests/iequatable.cpp
+  src/xtd/tests/iequatable_tests.cpp
   src/xtd/tests/index_out_of_range_exception_tests.cpp
   src/xtd/tests/invalid_cast_exception_tests.cpp
   src/xtd/tests/invalid_operation_exception_tests.cpp
