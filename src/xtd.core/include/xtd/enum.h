@@ -186,7 +186,7 @@ namespace xtd {
       
       for (auto item : enum_object<enum_type>().entries()) {
         if (xtd::ustring::compare(str, item.second, ignore_case) == 0)
-          return (enum_type)item.first;
+          return static_cast<enum_type>(item.first);
       }
       
       return to_enum(xtd::parse<int64>(str));
@@ -259,7 +259,7 @@ namespace xtd {
     }
     
     template<typename attribute_t>
-    static enum_type to_enum(attribute_t value) noexcept {return (enum_type)value;}
+    static enum_type to_enum(attribute_t value) noexcept {return static_cast<enum_type>(value);}
     static int64 to_int(enum_type value) noexcept {return static_cast<int64>(value);}
     
     static xtd::enum_attribute attribute() noexcept {
