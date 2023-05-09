@@ -1,0 +1,34 @@
+#include <xtd/compiler_id.h>
+#include <xtd/xtd.tunit>
+
+using namespace xtd;
+using namespace xtd::tunit;
+
+namespace xtd::tests {
+  class test_class_(compiler_id_tests) {
+  public:
+    void test_method_(unknown) {
+      assert::are_equal(-1, enum_object<>::to_int32(compiler_id::unknown), csf_);
+      assert::are_equal("unknown", enum_object<>::to_string(compiler_id::unknown), csf_);
+      assert::are_equal(compiler_id::unknown, enum_object<>::parse<compiler_id>("unknown"), csf_);
+    }
+    
+    void test_method_(microsoft_visual_studio) {
+      assert::are_equal(0, enum_object<>::to_int32(compiler_id::microsoft_visual_studio), csf_);
+      assert::are_equal("microsoft_visual_studio", enum_object<>::to_string(compiler_id::microsoft_visual_studio), csf_);
+      assert::are_equal(compiler_id::microsoft_visual_studio, enum_object<>::parse<compiler_id>("microsoft_visual_studio"), csf_);
+    }
+    
+    void test_method_(clang) {
+      assert::are_equal(1, enum_object<>::to_int32(compiler_id::clang), csf_);
+      assert::are_equal("clang", enum_object<>::to_string(compiler_id::clang), csf_);
+      assert::are_equal(compiler_id::clang, enum_object<>::parse<compiler_id>("clang"), csf_);
+    }
+    
+    void test_method_(gcc) {
+      assert::are_equal(2, enum_object<>::to_int32(compiler_id::gcc), csf_);
+      assert::are_equal("gcc", enum_object<>::to_string(compiler_id::gcc), csf_);
+      assert::are_equal(compiler_id::gcc, enum_object<>::parse<compiler_id>("gcc"), csf_);
+    }
+  };
+}
