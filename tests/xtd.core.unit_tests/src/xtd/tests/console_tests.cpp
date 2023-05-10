@@ -92,9 +92,9 @@ namespace xtd::tests {
       console::write("Item2");
       console::write("Item3");
       os.close();
-      auto text = file::read_all_text(op);
-      assert::are_equal("Item1Item2Item3", text, csf_);
+      assert::are_equal("Item1Item2Item3", file::read_all_text(op), csf_);
       file::remove(op);
+      console::set_out(console::open_standard_output());
     }
     
     void test_method_(write_with_format) {
@@ -106,9 +106,9 @@ namespace xtd::tests {
       console::write("Item{}", i++);
       console::write("Item{}", i++);
       os.close();
-      auto text = file::read_all_text(op);
-      assert::are_equal("Item1Item2Item3", text, csf_);
+      assert::are_equal("Item1Item2Item3", file::read_all_text(op), csf_);
       file::remove(op);
+      console::set_out(console::open_standard_output());
     }
 
     void test_method_(write_line) {
@@ -119,9 +119,9 @@ namespace xtd::tests {
       console::write_line("Item2");
       console::write_line("Item3");
       os.close();
-      auto text = file::read_all_text(op);
       collection_assert::are_equal({"Item1", "Item2", "Item3"}, file::read_all_lines(op), csf_);
       file::remove(op);
+      console::set_out(console::open_standard_output());
     }
 
     void test_method_(write_line_with_format) {
@@ -133,9 +133,9 @@ namespace xtd::tests {
       console::write_line("Item{}", i++);
       console::write_line("Item{}", i++);
       os.close();
-      auto text = file::read_all_text(op);
       collection_assert::are_equal({"Item1", "Item2", "Item3"}, file::read_all_lines(op), csf_);
       file::remove(op);
+      console::set_out(console::open_standard_output());
     }
   };
 }
