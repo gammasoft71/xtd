@@ -17,5 +17,6 @@ add_projects(
   console_song
   console_title
   console_unicode
+  redirrect_output
   wconsole
 )
