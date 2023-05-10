@@ -1,8 +1,11 @@
+#include <algorithm>
 #include "../../include/xtd/compiler.h"
+#include "../../include/xtd/argument_exception.h"
 
 using namespace xtd;
 
-compiler::compiler(xtd::compiler_id compiler_id) : compiler_id_(compiler_id) {
+compiler::compiler(xtd::compiler_id compiler_id, const xtd::version& version, xtd::build_type build_type, bool is_64_bit) : compiler_id_(compiler_id), version_(version), build_type_(build_type), is_64_bit_(is_64_bit) {
+  if (!enum_object<>::contains(compiler_id)) throw argument_exception(csf_);
 }
 
 xtd::build_type compiler::build_type() const noexcept {
@@ -18,7 +21,7 @@ bool compiler::is_build_type_debug() const noexcept {
 }
 
 bool compiler::is_64_bit() noexcept {
-  return sizeof(size_t) == 8;
+  return is_64_bit_;
 }
 
 xtd::ustring compiler::name() const noexcept {

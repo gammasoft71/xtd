@@ -27,7 +27,10 @@ namespace xtd {
     /// @{
     /// @brief Initialise a new xtd::compiler class.
     /// @param compiler_id One of xtd::compiler_id values.
-    explicit compiler(xtd::compiler_id compiler_id);
+    /// @param version The compiler version.
+    /// @param build_type One of xtd::build_type values.
+    /// @param is_64_bit true if 64 bits; otherwise false.
+    compiler(xtd::compiler_id compiler_id, const xtd::version& version, xtd::build_type build_type, bool is_64_bit);
     /// @}
     
     /// @cond
@@ -53,7 +56,7 @@ namespace xtd {
     
     /// @brief Gets is 64 bits.
     /// @return true if 64 bits; otherwise false.
-    static bool is_64_bit() noexcept;
+    bool is_64_bit() noexcept;
     
     /// @brief Gets compiler name.
     /// @return The compiler name.
@@ -77,28 +80,9 @@ namespace xtd {
     /// @}
     
   private:
-    #if defined(_MSC_VER)
-    xtd::compiler_id compiler_id_ = xtd::compiler_id::microsoft_visual_studio;
-    #elif defined(__clang__)
-    xtd::compiler_id compiler_id_ = xtd::compiler_id::clang;
-    #elif defined(__GNUC__)
-    xtd::compiler_id compiler_id_ = xtd::compiler_id::gcc;
-    #else
     xtd::compiler_id compiler_id_ = xtd::compiler_id::unknown;
-    #endif
-    #if defined(_MSC_VER)
-    xtd::version version_ {_MSC_VER / 100, _MSC_VER % 100, 0};
-    #elif defined(__clang__)
-    xtd::version version_ {__clang_major__, __clang_minor__, __clang_patchlevel__};
-    #elif defined(__GNUC__)
-    xtd::version version_ {__GNUC__, __GNUC_MINOR__, __GNUC_PATCHLEVEL__};
-    #else
     xtd::version version_;
-    #endif
-    #if defined(NDEBUG)
-    xtd::build_type build_type_ = xtd::build_type::release;
-    #else
     xtd::build_type build_type_ = xtd::build_type::debug;
-    #endif
+    bool is_64_bit_ = false;
   };
 }

@@ -298,7 +298,30 @@ namespace xtd {
     /// @brief Gets an xtd::compiler object that contains the current compiler identifier and version number.
     /// @return An object that contains the compiler identifier and version number.
     static xtd::compiler compiler_version() noexcept {
-      static xtd::compiler compiler;
+#if defined(_MSC_VER)
+      static auto compiler_id = xtd::compiler_id::microsoft_visual_studio;
+#elif defined(__clang__)
+      static auto compiler_id = xtd::compiler_id::clang;
+#elif defined(__GNUC__)
+      static auto compiler_id = xtd::compiler_id::gcc;
+#else
+      static auto compiler_id = xtd::compiler_id::unknown;
+#endif
+#if defined(_MSC_VER)
+      static auto version = xtd::version {_MSC_VER / 100, _MSC_VER % 100, 0};
+#elif defined(__clang__)
+      static auto version = xtd::version {__clang_major__, __clang_minor__, __clang_patchlevel__};
+#elif defined(__GNUC__)
+      static auto version = xtd::version {__GNUC__, __GNUC_MINOR__, __GNUC_PATCHLEVEL__};
+#else
+      xtd::version version_;
+#endif
+#if defined(NDEBUG)
+      static auto build_type = xtd::build_type::release;
+#else
+      static auto build_type = xtd::build_type::debug;
+#endif
+      static xtd::compiler compiler {compiler_id, version, build_type, sizeof(size_t) == 8};
       return compiler;
     }
     
