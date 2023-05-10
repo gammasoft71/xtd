@@ -560,8 +560,7 @@ bool console::background_color(int_least32_t color) {
   auto it = colors.find(color);
   if (it == colors.end()) return false;
   back_color = color;
-  if (!terminal::is_ansi_supported()) return false;
-  std::cout << it->second << std::flush;
+  if (terminal::is_ansi_supported()) std::cout << it->second << std::flush;
   return true;
 }
 
@@ -687,14 +686,12 @@ bool console::caps_lock() {
 }
 
 bool console::clear() {
-  if (!terminal::is_ansi_supported()) return false;
-  std::cout << "\x1b[H\x1b[2J" << std::flush;
+  if (terminal::is_ansi_supported()) std::cout << "\x1b[H\x1b[2J" << std::flush;
   return true;
 }
 
 int_least32_t console::cursor_left() {
-  if (!terminal::is_ansi_supported()) return 0;
-  std::cout << "\x1b[6n" << std::flush;
+  if (terminal::is_ansi_supported()) std::cout << "\x1b[6n" << std::flush;
   terminal::terminal_.getch();
   terminal::terminal_.getch();
   for (char c = terminal::terminal_.getch(); c != ';'; c = terminal::terminal_.getch());
@@ -709,15 +706,14 @@ int_least32_t console::cursor_size() {
 }
 
 bool console::cursor_size(int_least32_t size) {
-  if (!terminal::is_ansi_supported()) return false;
+  if (!terminal::is_ansi_supported()) return true;
   if (size < 50) std::cout << "\x1b[4 q" << std::flush;
   else std::cout << "\x1b[2 q" << std::flush;
   return true;
 }
 
 int_least32_t console::cursor_top() {
-  if (!terminal::is_ansi_supported()) return 0;
-  std::cout << "\x1b[6n" << std::flush;
+  if (terminal::is_ansi_supported()) std::cout << "\x1b[6n" << std::flush;
   terminal::terminal_.getch();
   terminal::terminal_.getch();
   std::string top;
@@ -732,9 +728,8 @@ bool console::cursor_visible() {
 }
 
 bool console::cursor_visible(bool visible) {
-  if (!terminal::is_ansi_supported()) return false;
   ::cursor_visible = visible;
-  std::cout << (::cursor_visible ? "\x1b[?25h" : "\x1b[?25l") << std::flush;
+  if (terminal::is_ansi_supported()) std::cout << (::cursor_visible ? "\x1b[?25h" : "\x1b[?25l") << std::flush;
   return true;
 }
 
@@ -747,8 +742,7 @@ bool console::foreground_color(int_least32_t color) {
   auto it = colors.find(color);
   if (it == colors.end()) return false;
   fore_color = color;
-  if (!terminal::is_ansi_supported()) return false;
-  std::cout << it->second << std::flush;
+  if (terminal::is_ansi_supported()) std::cout << it->second << std::flush;
   return true;
 }
 
@@ -805,14 +799,12 @@ void console::register_user_cancel_callback(std::function<bool(int32_t)> user_ca
 bool console::reset_color() {
   back_color = CONSOLE_COLOR_BLACK;
   fore_color = CONSOLE_COLOR_WHITE;
-  if (!terminal::is_ansi_supported()) return false;
-  std::cout << "\033[49m\033[39m" << std::flush;
+  if (terminal::is_ansi_supported()) std::cout << "\033[49m\033[39m" << std::flush;
   return true;
 }
 
 bool console::set_cursor_position(int_least32_t left, int_least32_t top) {
-  if (!terminal::is_ansi_supported()) return false;
-  std::cout << "\x1b[" << top + 1 << ";" << left + 1 << "f" << std::flush;
+  if (terminal::is_ansi_supported()) std::cout << "\x1b[" << top + 1 << ";" << left + 1 << "f" << std::flush;
   return true;
 }
 
@@ -832,9 +824,8 @@ std::string console::title() {
 }
 
 bool console::title(const std::string& title) {
-  if (!terminal::is_ansi_supported()) return false;
   ::title = title;
-  std::cout << "\x1b]0;" << title.c_str() << "\x7" << std::flush;
+  if (terminal::is_ansi_supported()) std::cout << "\x1b]0;" << title.c_str() << "\x7" << std::flush;
   return true;
 }
 
@@ -848,7 +839,6 @@ bool console::treat_control_c_as_input(bool treat_control_c_as_input) {
 }
 
 int_least32_t console::window_height() {
-  if (!terminal::is_ansi_supported()) return 24;
   auto top = console::cursor_top();
   console::set_cursor_position(console::cursor_left(), 999);
   auto height = console::cursor_top() + 1;
@@ -882,7 +872,6 @@ bool console::window_top(int_least32_t top) {
 }
 
 int_least32_t console::window_width() {
-  if (!terminal::is_ansi_supported()) return 80;
   auto left = console::cursor_left();
   console::set_cursor_position(999, console::cursor_top());
   auto width = console::cursor_left() + 1;
