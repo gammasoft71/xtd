@@ -6,7 +6,7 @@ using namespace xtd::io;
 auto main()->int {
   auto output_file_path = path::combine(path::get_temp_path(), "xtd_example_write.txt");
   
-  auto output_stream = xtd::io::file::open_write(output_file_path);
+  auto output_stream = file::open_write(output_file_path);
   console::set_out(output_stream);
  
   console::write_line("Item1");
