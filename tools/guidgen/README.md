@@ -2,6 +2,26 @@
 
 guidgen is a guid generator command line tool.
 
+# Usage
+
+```
+guidgen [--format Format] [--count Count]
+```
+
+The options are:
+
+```
+-f, --format  : Indicates how to format the value of this Guid. The format parameter can be :
+                  N : 32 digits.
+                  D : 32 digits separated by hyphens.
+                  B : 32 digits separated by hyphens, enclosed in braces.
+                  P : 32 digits separated by hyphens, enclosed in parentheses.
+                  X : Four hexadecimal values enclosed in braces, where the fourth value is a subset of eight hexadecimal values that is also enclosed in braces.
+-c, --count   : indicate the number of generation (form 1 to 2147483647)
+-v, --version : Shows version information.
+-h, --help    : Shows this help page.
+```
+
 # Some examples
 
 ## generate one guid with 32 digits separated by hyphen format
