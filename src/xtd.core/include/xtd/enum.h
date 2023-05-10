@@ -293,6 +293,16 @@ namespace xtd {
   template<>
   class enum_object<std::nullptr_t> static_ {
   public:
+    /// @brief Check if enum contains the specified value.
+    /// @param value  The value to check if it is contained in the enum.
+    /// @return true if the specified value is contained in the enumeration values; otherwise false.
+    template<typename enum_t>
+    static bool contains(const enum_t& value) noexcept {
+      for (auto v : get_values<enum_t>())
+        if (v == value) return true;
+      return false;
+    }
+    
     /// @brief Retrieves an array of the std::pair<enum_t, xtd::ustring> of the constants in a specified enumeration.
     /// @return A xtd::ustring array of the values and names of the constants in enumType.
     template<typename enum_t>
