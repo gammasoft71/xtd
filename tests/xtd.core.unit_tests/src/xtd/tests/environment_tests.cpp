@@ -10,7 +10,7 @@ namespace xtd::tests {
     void test_method_(compiler_version) {
       auto compiler = environment::compiler_version();
 #if defined(_MSC_VER)
-      assert::are_equal(compiler_id::visual_studio, compiler.compiler_id(), csf_);
+      assert::are_equal(compiler_id::microsoft_visual_studio, compiler.compiler_id(), csf_);
       assert::are_equal(version {_MSC_VER / 100, _MSC_VER % 100}, compiler.version(), csf_);
 #elif defined(__clang__)
       assert::are_equal(compiler_id::clang, compiler.compiler_id(), csf_);
