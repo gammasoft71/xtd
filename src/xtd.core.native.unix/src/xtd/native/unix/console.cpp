@@ -798,8 +798,8 @@ void console::register_user_cancel_callback(std::function<bool(int32_t)> user_ca
 
 bool console::reset_color() {
   back_color = CONSOLE_COLOR_BLACK;
-  fore_color = CONSOLE_COLOR_WHITE;
-  if (terminal::is_ansi_supported()) std::cout << "\033[49m\033[39m" << std::flush;
+  fore_color = CONSOLE_COLOR_GRAY;
+  if (terminal::is_ansi_supported()) std::cout << "\033[49m\033[37m" << std::flush;
   return true;
 }
 
