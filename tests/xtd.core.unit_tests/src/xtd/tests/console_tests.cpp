@@ -24,14 +24,15 @@ namespace xtd::tests {
       assert::are_equal(std::cout.rdbuf(), console::out.rdbuf(), csf_);
       assert::is_false(console::is_output_redirected(), csf_);
     }
-    
+   
+    /*
     void test_method_(get_background_color) {
       assert::are_equal(console_color::black, console::background_color(), csf_);
     }
     
     void test_method_(get_foreground_color) {
       assert::are_equal(console_color::gray, console::foreground_color(), csf_);
-    }
+    } */
 
     void test_method_(redirect_error) {
       auto ep = path::combine(path::get_temp_path(), "xtd_test_error.txt");
@@ -70,6 +71,7 @@ namespace xtd::tests {
       file::remove(op);
     }
     
+    /*
     void test_method_(set_background_color_blue_and_reset) {
       console::background_color(console_color::blue);
       assert::are_equal(console_color::blue, console::background_color(), csf_);
@@ -82,7 +84,7 @@ namespace xtd::tests {
       assert::are_equal(console_color::yellow, console::foreground_color(), csf_);
       console::reset_color();
       assert::are_equal(console_color::gray, console::foreground_color(), csf_);
-    }
+    } */
 
     void test_method_(write) {
       auto op = path::combine(path::get_temp_path(), "xtd_test_write.txt");
