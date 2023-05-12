@@ -546,7 +546,7 @@ namespace {
   };
   
   auto back_color = CONSOLE_COLOR_BLACK;
-  auto fore_color = CONSOLE_COLOR_WHITE;
+  auto fore_color = CONSOLE_COLOR_GRAYs;
   auto cursor_visible = true;
   std::string title;
 }

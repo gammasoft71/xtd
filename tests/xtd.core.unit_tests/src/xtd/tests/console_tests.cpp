@@ -30,7 +30,7 @@ namespace xtd::tests {
     }
     
     void test_method_(get_foreground_color) {
-      assert::are_equal(console_color::white, console::foreground_color(), csf_);
+      assert::are_equal(console_color::gray, console::foreground_color(), csf_);
     }
 
     void test_method_(redirect_error) {
@@ -81,7 +81,7 @@ namespace xtd::tests {
       console::foreground_color(console_color::yellow);
       assert::are_equal(console_color::yellow, console::foreground_color(), csf_);
       console::reset_color();
-      assert::are_equal(console_color::white, console::foreground_color(), csf_);
+      assert::are_equal(console_color::gray, console::foreground_color(), csf_);
     }
 
     void test_method_(write) {
