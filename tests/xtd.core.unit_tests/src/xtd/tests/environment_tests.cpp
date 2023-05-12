@@ -11,7 +11,7 @@ namespace xtd::tests {
       auto compiler = environment::compiler_version();
 #if defined(_MSC_VER)
       assert::are_equal(compiler_id::microsoft_visual_studio, compiler.compiler_id(), csf_);
-      assert::are_equal(version {_MSC_VER / 100, _MSC_VER % 100}, compiler.version(), csf_);
+      assert::are_equal(version {_MSC_VER / 100, _MSC_VER % 100, 0}, compiler.version(), csf_);
 #elif defined(__clang__)
       assert::are_equal(compiler_id::clang, compiler.compiler_id(), csf_);
       assert::are_equal(version {__clang_major__, __clang_minor__, __clang_patchlevel__}, compiler.version(), csf_);
