@@ -18,13 +18,13 @@ namespace {
   
   int_least32_t __background_color() {
     CONSOLE_SCREEN_BUFFER_INFO csbi;
-    GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
+    if (GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi) != TRUE) return 0x00;
     return (csbi.wAttributes & 0x00F0) >> 4;
   }
   
   int_least32_t __foreground_color() {
     CONSOLE_SCREEN_BUFFER_INFO csbi;
-    GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
+    if (GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi) != TRUE) return 0x0F;
     return csbi.wAttributes & 0x000F;
   }
   
@@ -71,6 +71,7 @@ int_least32_t console::background_color() {
 }
 
 bool console::background_color(int_least32_t color) {
+  back_color = color;
   terminal::terminal_.force_compiler_optimizer_to_create_object();
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
@@ -171,6 +172,7 @@ int_least32_t console::foreground_color() {
 }
 
 bool console::foreground_color(int_least32_t color) {
+  fore_color = color;
   terminal::terminal_.force_compiler_optimizer_to_create_object();
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
