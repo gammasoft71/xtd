@@ -17,15 +17,21 @@ namespace {
   std::function<bool(int32_t)> user_cancel_callback;
   
   int_least32_t __background_color() {
+    static int_least32_t color = -1;
+    if (color != -1) return color;
     CONSOLE_SCREEN_BUFFER_INFO csbi;
-    if (GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi) != TRUE) return 0x00;
-    return (csbi.wAttributes & 0x00F0) >> 4;
+    if (GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi) != TRUE) color = 0x00;
+    color = (csbi.wAttributes & 0x00F0) >> 4;
+    return color;
   }
   
   int_least32_t __foreground_color() {
+    static int_least32_t color = -1;
+    if (color != -1) return color;
     CONSOLE_SCREEN_BUFFER_INFO csbi;
-    if (GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi) != TRUE) return 0x0F;
-    return csbi.wAttributes & 0x000F;
+    if (GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi) != TRUE) color = 0x07;
+    color = csbi.wAttributes & 0x000F;
+    return color;
   }
   
   BOOL WINAPI __handler_routine(DWORD ctrl_type) {
@@ -67,7 +73,9 @@ namespace {
 }
 
 int_least32_t console::background_color() {
-  return __background_color();
+  CONSOLE_SCREEN_BUFFER_INFO csbi;
+  if (GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi) == TRUE) back_color = (csbi.wAttributes & 0x00F0) >> 4;
+  return back_color;
 }
 
 bool console::background_color(int_least32_t color) {
@@ -168,7 +176,9 @@ bool console::cursor_visible(bool visible) {
 }
 
 int_least32_t console::foreground_color() {
-  return __foreground_color();
+  CONSOLE_SCREEN_BUFFER_INFO csbi;
+  if (GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi) == TRUE) fore_color = csbi.wAttributes & 0x000F;
+  return fore_color;
 }
 
 bool console::foreground_color(int_least32_t color) {
@@ -237,7 +247,7 @@ void console::register_user_cancel_callback(std::function<bool(int32_t)> user_ca
 }
 
 bool console::reset_color() {
-  return console::background_color(back_color) && console::foreground_color(fore_color);
+  return console::background_color(__background_color()) && console::foreground_color(__foreground_color());
 }
 
 bool console::set_cursor_position(int_least32_t left, int_least32_t top) {
