@@ -126,6 +126,7 @@ add_sources(
   src/xtd/net/sockets/tests/socket_tests.cpp
   src/xtd/net/sockets/tests/socket_exception_tests.cpp
   src/xtd/net/sockets/tests/socket_information_tests.cpp
+  src/xtd/reflection/tests/assembly_tests.cpp
   src/xtd/security/tests/secure_string_tests.cpp
   src/xtd/threading/tests/interlocked_tests.cpp
 )
