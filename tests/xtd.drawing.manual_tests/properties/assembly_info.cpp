@@ -11,7 +11,7 @@
 // Change them to the values specific to your project.
 
 assembly_title_("xtd.drawing.manual_tests");
-assembly_description_("xtd.drawing.manual_tests contains xtd.core manual tests.");
+assembly_description_("xtd.drawing.manual_tests contains xtd.drawing manual tests.");
 assembly_configuration_("Test");
 assembly_company_("Gammasoft");
 assembly_product_("xtd.drawing.manual_tests");
