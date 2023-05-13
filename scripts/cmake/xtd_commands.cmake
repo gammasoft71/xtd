@@ -1496,7 +1496,7 @@ macro(write_macos_target_informations_file)
   set(MACOSX_BUNDLE_BUNDLE_NAME "${ASSEMBLY_TITLE}")
   set(MACOSX_BUNDLE_COPYRIGHT ${ASSEMBLY_COPYRIGHT})
   # The following line produce the warning "[default] Unable to load Info.plist exceptions (eGPUOverrides)" in Xcode when Xcode run application.
-  set(MACOSX_BUNDLE_GUI_IDENTIFIER "${ASSEMBLY_GUID}")
+  #set(MACOSX_BUNDLE_GUI_IDENTIFIER "${ASSEMBLY_GUID}")
   get_filename_component(TARGET_ICON_FILENAME "${TARGET_ICON}" NAME)
   set(MACOSX_BUNDLE_ICON_FILE "${TARGET_ICON_FILENAME}")
   set(MACOSX_BUNDLE_INFO_STRING "${ASSEMBLY_DESCRIPTION}")
