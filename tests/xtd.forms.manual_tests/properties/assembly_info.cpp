@@ -21,7 +21,7 @@ assembly_culture_("en_US.UTF-8");
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 
-assembly_guid_("81e2cbc5-6a8b-4f59-a704-066cca9cfcac");
+assembly_guid_("d04f51ee-d2f6-4491-b50b-bb38260e7c68");
 
 // The assembly version has the format "{Major}.{Minor}.{Build}.{Revision}".
 // In not specify or empty or "*" the cmake project version is used.
