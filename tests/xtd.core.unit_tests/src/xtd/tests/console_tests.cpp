@@ -35,12 +35,55 @@ namespace xtd::tests {
       assert::are_equal(background_color, console::background_color(), csf_);
     }
     
+    void test_method_(background_color_with_invalid_value) {
+      assert::throws<argument_exception>([]{console::background_color(static_cast<console_color>(16));}, csf_);
+    }
+
+    void test_method_(buffer_height) {
+      auto buffer_height = console::buffer_height();
+      console::buffer_height(500);
+      assert::are_equal(500, console::buffer_height(), csf_);
+      console::buffer_height(buffer_height);
+      assert::are_equal(buffer_height, console::buffer_height(), csf_);
+    }
+    
+    void test_method_(buffer_height_with_invalid_values) {
+      assert::throws<argument_out_of_range_exception>([]{console::buffer_height(0);}, csf_);
+      assert::throws<argument_out_of_range_exception>([]{console::buffer_height(-1);}, csf_);
+      assert::throws<argument_out_of_range_exception>([]{console::buffer_height(int16_object::max_value);}, csf_);
+      assert::throws<argument_out_of_range_exception>([]{console::buffer_height(as<int32>(int16_object::max_value) + 1);}, csf_);
+    }
+    
+    void test_method_(buffer_width) {
+      auto buffer_width = console::buffer_width();
+      console::buffer_width(500);
+      assert::are_equal(500, console::buffer_width(), csf_);
+      console::buffer_width(buffer_width);
+      assert::are_equal(buffer_width, console::buffer_width(), csf_);
+    }
+    
+    void test_method_(buffer_width_with_invalid_values) {
+      assert::throws<argument_out_of_range_exception>([]{console::buffer_width(0);}, csf_);
+      assert::throws<argument_out_of_range_exception>([]{console::buffer_width(-1);}, csf_);
+      assert::throws<argument_out_of_range_exception>([]{console::buffer_width(int16_object::max_value);}, csf_);
+      assert::throws<argument_out_of_range_exception>([]{console::buffer_width(as<int32>(int16_object::max_value) + 1);}, csf_);
+    }
+
+    void test_method_(caps_lock) {
+      // Remarks if caps lock is set on by user, the folloowing test will be false.
+      assert::is_false(console::caps_lock(), csf_);
+    }
+
     void test_method_(foreground_color) {
       auto foreground_color = console::foreground_color();
       console::foreground_color(console_color::yellow);
       assert::are_equal(console_color::yellow, console::foreground_color(), csf_);
       console::foreground_color(foreground_color);
       assert::are_equal(foreground_color, console::foreground_color(), csf_);
+    }
+    
+    void test_method_(foreground_color_with_invalid_value) {
+      assert::throws<argument_exception>([]{console::foreground_color(static_cast<console_color>(16));}, csf_);
     }
 
     void test_method_(redirect_error) {
@@ -78,6 +121,17 @@ namespace xtd::tests {
       console::set_out(console::open_standard_output());
       assert::is_false(console::is_output_redirected(), csf_);
       file::remove(op);
+    }
+    
+    void test_method_(set_cursor_position) {
+      auto cursor_left = console::cursor_left();
+      auto cursor_top = console::cursor_top();
+      console::set_cursor_position(20, 10);
+      assert::are_equal(20, console::cursor_left(), csf_);
+      assert::are_equal(10, console::cursor_top(), csf_);
+      console::set_cursor_position(cursor_left, cursor_top);
+      assert::are_equal(cursor_left, console::cursor_left(), csf_);
+      assert::are_equal(cursor_top, console::cursor_top(), csf_);
     }
 
     void test_method_(write) {
