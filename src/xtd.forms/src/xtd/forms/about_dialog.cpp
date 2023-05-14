@@ -7,6 +7,7 @@
 #include <xtd/forms/native/about_dialog.h>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/diagnostics/process.h>
+#include <xtd/reflection/assembly.h>
 #include <xtd/drawing/system_icons.h>
 #include "../../../include/xtd/forms/about_dialog.h"
 #include "../../../include/xtd/forms/application.h"
@@ -24,6 +25,7 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
+using namespace xtd::reflection;
 
 namespace {
   class credits_item_panel : public horizontal_layout_panel {
@@ -422,6 +424,16 @@ xtd::ustring about_dialog::website_label() const noexcept {
 about_dialog& about_dialog::website_label(const xtd::ustring& website_label) {
   data_->website_label = website_label;
   return *this;
+}
+
+about_dialog about_dialog::from_executing_assembly_informations() {
+  about_dialog result;
+  assembly assembly = xtd::reflection::assembly::get_executing_assembly();
+  result.copyright(assembly.copyright());
+  result.description(assembly.description());
+  result.long_version(assembly.version());
+  result.name(assembly.title().empty() ? assembly.name() : assembly.title());
+  return result;
 }
 
 void about_dialog::reset() noexcept {
