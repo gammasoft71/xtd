@@ -548,6 +548,11 @@ namespace {
   auto back_color = CONSOLE_COLOR_BLACK;
   auto fore_color = CONSOLE_COLOR_GRAY;
   auto cursor_visible = true;
+  auto buffer_height = -1;
+  auto buffer_width = -1;
+  auto cursor_left = 0;
+  auto cursor_size = 100;
+  auto cursor_top = 0;
   std::string title;
 }
 
@@ -662,21 +667,25 @@ bool console::beep(uint_least32_t frequency, uint_least32_t duration) {
 
 int_least32_t console::buffer_height() {
   /// @todo console buffer Height on linux and macOS
-  return console::window_height();
+  if (::buffer_height == -1) ::buffer_height = console::window_height();
+  return ::buffer_height;
 }
 
 bool console::buffer_height(int_least32_t height) {
   /// @todo set console buffer height on linux and macOS
+  ::buffer_height = height;
   return true;
 }
 
 int_least32_t console::buffer_width() {
   /// @todo console buffer Width on linux and macOS
-  return console::window_width();
+  if (::buffer_width == -1) ::buffer_height = console::window_width();
+  return ::buffer_width;
 }
 
 bool console::buffer_width(int_least32_t width) {
   /// @todo set console buffer width on linux and macOS
+  ::buffer_width = width;
   return true;
 }
 
@@ -691,21 +700,24 @@ bool console::clear() {
 }
 
 int_least32_t console::cursor_left() {
-  if (terminal::is_ansi_supported()) std::cout << "\x1b[6n" << std::flush;
+  if (!terminal::is_ansi_supported()) return ::cursor_left;
+  std::cout << "\x1b[6n" << std::flush;
   terminal::terminal_.getch();
   terminal::terminal_.getch();
   for (char c = terminal::terminal_.getch(); c != ';'; c = terminal::terminal_.getch());
   std::string left;
   for (char c = terminal::terminal_.getch(); c != 'R'; c = terminal::terminal_.getch())
     left.push_back(c);
-  return atoi(left.c_str()) - 1;
+  ::cursor_left = atoi(left.c_str()) - 1;
+  return ::cursor_left;
 }
 
 int_least32_t console::cursor_size() {
-  return 100;
+  return ::cursor_size;
 }
 
 bool console::cursor_size(int_least32_t size) {
+  ::cursor_size = size;
   if (!terminal::is_ansi_supported()) return true;
   if (size < 50) std::cout << "\x1b[4 q" << std::flush;
   else std::cout << "\x1b[2 q" << std::flush;
@@ -713,14 +725,16 @@ bool console::cursor_size(int_least32_t size) {
 }
 
 int_least32_t console::cursor_top() {
-  if (terminal::is_ansi_supported()) std::cout << "\x1b[6n" << std::flush;
+  if (!terminal::is_ansi_supported()) return ::cursor_top;
+  std::cout << "\x1b[6n" << std::flush;
   terminal::terminal_.getch();
   terminal::terminal_.getch();
   std::string top;
   for (char c = terminal::terminal_.getch(); c != ';'; c = terminal::terminal_.getch())
     top.push_back(c);
   for (char c = terminal::terminal_.getch(); c != 'R'; c = terminal::terminal_.getch());
-  return atoi(top.c_str()) - 1;
+  ::cursor_top = atoi(top.c_str()) - 1;
+  return ::cursor_top;
 }
 
 bool console::cursor_visible() {
@@ -804,6 +818,8 @@ bool console::reset_color() {
 }
 
 bool console::set_cursor_position(int_least32_t left, int_least32_t top) {
+  ::cursor_left = left;
+  ::cursor_top = top;
   if (terminal::is_ansi_supported()) std::cout << "\x1b[" << top + 1 << ";" << left + 1 << "f" << std::flush;
   return true;
 }
