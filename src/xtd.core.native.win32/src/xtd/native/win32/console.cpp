@@ -83,7 +83,7 @@ namespace {
     }
     
     int_least32_t background_color_ = __background_color();
-    int_least32_tforeground_color_ = __foreground_color();
+    int_least32_t foreground_color_ = __foreground_color();
   };
   
   terminal terminal::terminal_;
