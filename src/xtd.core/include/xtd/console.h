@@ -73,7 +73,7 @@ namespace xtd {
     static int32 buffer_height();
     /// @brief Sets or sets the height of the buffer area.
     /// @param height The current height, in rows, of the buffer area.
-    /// @exception xtd::argument_out_of_range_exception  The value in a set operation is less than or equal to zero. -or- The value in a set operation is greater than or equal to xtd::int16_object::max_value.
+    /// @exception xtd::argument_out_of_range_exception  The value in a set operation is less than or equal to zero. <br>-or-<br> The value in a set operation is greater than or equal to xtd::int16_object::max_value.
     /// @par Examples
     /// This example demonstrates the buffer_height and buffer_width properties. The example reports the dimensions of an operating system window set to a buffer size of 300 rows and 85 columns.
     /// @include console_buffer.cpp
@@ -87,7 +87,7 @@ namespace xtd {
     static int32 buffer_width();
     /// @brief Sets the width of the buffer area.
     /// @param width The current width, in columns, of the buffer area.
-    /// @exception xtd::argument_out_of_range_exception  The value in a set operation is less than or equal to zero. -or- The value in a set operation is greater than or equal to xtd::int16_object::max_value.
+    /// @exception xtd::argument_out_of_range_exception  The value in a set operation is less than or equal to zero. <br>-or-<br> The value in a set operation is greater than or equal to xtd::int16_object::max_value.
     /// @par Examples
     /// This example demonstrates the BufferHeight and buffer_width properties. The example reports the dimensions of an operating system window set to a buffer size of 300 rows and 85 columns.
     /// @include console_buffer.cpp
@@ -105,7 +105,7 @@ namespace xtd {
     static int32 cursor_left();
     /// @brief Sets the column position of the cursor within the buffer area.
     /// @param left The current position, in columns, of the cursor.
-    /// @return true if cursor left changed; otherwise false.
+    /// @exception xtd::argument_out_of_range_exception The value in a set operation is less than zero <br>-or-<br> The value in a set operation is greater than or equal to xtd::console::buffer_width.
     /// @par Examples
     /// This example demonstrates the cursor_left and cursor_top properties, and the set_cursor_position and clear methods. The example positions the cursor, which determines where the next write will occur, to draw a 5 character by 5 character rectangle using a combination of "+", "|", and "-" strings. Note that the rectangle could be drawn with fewer steps using a combination of other strings.
     /// @include console_cursor.cpp
@@ -133,6 +133,7 @@ namespace xtd {
     /// @brief Sets the row position of the cursor within the buffer area.
     /// @param top The current position, in rows, of the cursor.
     /// @return true if cursor top changed; otherwise false.
+    /// @exception xtd::argument_out_of_range_exception The value in a set operation is less than zero <br>-or-<br> The value in a set operation is greater than or equal to xtd::console::buffer_height.
     /// @par Examples
     /// This example demonstrates the cursor_left and cursor_top properties, and the set_cursor_position and clear methods. The example positions the cursor, which determines where the next write will occur, to draw a 5 character by 5 character rectangle using a combination of "+", "|", and "-" strings. Note that the rectangle could be drawn with fewer steps using a combination of other strings.
     /// @include console_cursor.cpp
@@ -336,6 +337,7 @@ namespace xtd {
     /// @brief Sets the position of the cursor.
     /// @param left The column position of the cursor. Columns are numbered from left to right starting at 0.
     /// @param top The row position of the cursor. Rows are numbered from top to bottom starting at 0.
+    /// @exception xtd::argument_out_of_range_exception The left in a set operation is less than zero <br>-or-<br> The left in a set operation is greater than or equal to xtd::console::buffer_width <br>-or-<br> the top in a set operation is less than zero <br>-or-<br> The topo in a set operation is greater than or equal to xtd::console::buffer_height.
     /// @remarks Use the set_cursor_position method to specify where the next write operation in the console window is to begin. If the specified cursor position is outside the area that is currently visible in the console window, the window origin changes automatically to make the cursor visible.
     /// @remarks The cursor automatically moves to the next character position each time a character is written to the console window. If the cursor is at the bottom right character position of the console window, the next write operation causes the console window to scroll so the cursor remains visible. If you want to write a character to the bottom right character position without causing the console window to scroll, use the move_buffer_area method to move a character to that position.
     static void set_cursor_position(int32 left, int32 top);
@@ -364,7 +366,7 @@ namespace xtd {
     /// @brief Sets the height and width of the console window to the specified values.
     /// @param width The width of the console window measured in columns.
     /// @param height The height of the console window measured in rows.
-    /// @exception ArgumentOutOfRangeException width or height is less than or equal to zero. <br>-or-<br> width plus WindowLeft or height plus WindowTop is greater than or equal to Int16.MaxValue. <br>-or-<br> width or height is greater than the largest possible window width or height for the current screen resolution and console font.
+    /// @exception ArgumentOutOfRangeException width or height is less than or equal to zero. <br><br>-or-<br><br> width plus WindowLeft or height plus WindowTop is greater than or equal to Int16.MaxValue. <br><br>-or-<br><br> width or height is greater than the largest possible window width or height for the current screen resolution and console font.
     /// @par Examples
     /// This example demonstrates the SetWindowSize method, and the WindowWidth and WindowHeight properties. You must run the example to see the full effect of changing the console window size.
     /// The example reports the dimensions of a console window set to 85 columns and 43 rows, then waits for a key press. When any key is pressed, the dimensions of the console window are halved, the new dimensions are reported, and the example waits for another key press. Finally, when any key is pressed the console window is restored to its original dimensions and the example terminates.
