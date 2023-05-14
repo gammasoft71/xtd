@@ -568,10 +568,10 @@ namespace {
   auto number_lock = true;
   auto output_code_page = 65001;
   std::string title;
-  auto window_height = -1;
+  auto window_height = 25;
   auto window_left = 0;
   auto window_top = 0;
-  auto window_width = -1;
+  auto window_width = 80;
 }
 
 int_least32_t console::background_color() {
@@ -872,12 +872,14 @@ bool console::treat_control_c_as_input(bool treat_control_c_as_input) {
 }
 
 int_least32_t console::window_height() {
+  /*
   auto top = console::cursor_top();
   console::set_cursor_position(console::cursor_left(), 999);
   auto height = console::cursor_top() + 1;
   console::set_cursor_position(console::cursor_left(), top);
   ::window_height = height;
-  return height;
+   */
+  return ::window_height;
 }
 
 bool console::window_height(int_least32_t height) {
@@ -909,12 +911,14 @@ bool console::window_top(int_least32_t top) {
 }
 
 int_least32_t console::window_width() {
+  /*
   auto left = console::cursor_left();
   console::set_cursor_position(999, console::cursor_top());
   auto width = console::cursor_left() + 1;
   console::set_cursor_position(left, console::cursor_top());
   ::window_width = width;
-  return width;
+   */
+  return ::window_width;
 }
 
 bool console::window_width(int_least32_t width) {
