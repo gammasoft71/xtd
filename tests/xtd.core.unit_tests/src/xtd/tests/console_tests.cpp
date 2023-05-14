@@ -73,6 +73,55 @@ namespace xtd::tests {
       // Remarks if caps lock is set on by user, the folloowing test will be false.
       assert::is_false(console::caps_lock(), csf_);
     }
+    
+    void test_method_(cursor_left) {
+      auto cursor_left = console::cursor_left();
+      console::cursor_left(20);
+      assert::are_equal(20, console::cursor_left(), csf_);
+      console::cursor_left(cursor_left);
+      assert::are_equal(cursor_left, console::cursor_left(), csf_);
+    }
+    
+    void test_method_(cursor_left_with_invalid_values) {
+      assert::throws<argument_out_of_range_exception>([]{console::cursor_left(-1);}, csf_);
+      assert::throws<argument_out_of_range_exception>([]{console::cursor_left(console::buffer_width());}, csf_);
+    }
+    
+    void test_method_(cursor_size) {
+      auto cursor_size = console::cursor_size();
+      console::cursor_size(10);
+      assert::are_equal(10, console::cursor_size(), csf_);
+      console::cursor_size(cursor_size);
+      assert::are_equal(cursor_size, console::cursor_size(), csf_);
+    }
+    
+    void test_method_(cursor_size_with_invalid_values) {
+      assert::throws<argument_out_of_range_exception>([]{console::cursor_size(0);}, csf_);
+      assert::throws<argument_out_of_range_exception>([]{console::cursor_size(101);}, csf_);
+    }
+    
+    void test_method_(cursor_top) {
+      auto cursor_top = console::cursor_top();
+      console::cursor_top(10);
+      assert::are_equal(10, console::cursor_top(), csf_);
+      console::cursor_top(cursor_top);
+      assert::are_equal(cursor_top, console::cursor_top(), csf_);
+    }
+    
+    void test_method_(cursor_top_with_invalid_values) {
+      assert::throws<argument_out_of_range_exception>([]{console::cursor_top(-1);}, csf_);
+      assert::throws<argument_out_of_range_exception>([]{console::cursor_top(console::buffer_height());}, csf_);
+    }
+    
+    void test_method_(cursor_visible) {
+      auto cursor_visible = console::cursor_visible();
+      console::cursor_visible(false);
+      assert::is_false(console::cursor_visible(), csf_);
+      console::cursor_visible(true);
+      assert::is_true(console::cursor_visible(), csf_);
+      console::cursor_visible(cursor_visible);
+      assert::are_equal(cursor_visible, console::cursor_visible(), csf_);
+    }
 
     void test_method_(foreground_color) {
       auto foreground_color = console::foreground_color();
@@ -132,6 +181,13 @@ namespace xtd::tests {
       console::set_cursor_position(cursor_left, cursor_top);
       assert::are_equal(cursor_left, console::cursor_left(), csf_);
       assert::are_equal(cursor_top, console::cursor_top(), csf_);
+    }
+    
+    void test_method_(set_cursor_position_with_invalid_values) {
+      assert::throws<argument_out_of_range_exception>([]{console::set_cursor_position(-1, 0);}, csf_);
+      assert::throws<argument_out_of_range_exception>([]{console::set_cursor_position(console::buffer_width(), 0);}, csf_);
+      assert::throws<argument_out_of_range_exception>([]{console::set_cursor_position(0, -1);}, csf_);
+      assert::throws<argument_out_of_range_exception>([]{console::set_cursor_position(0, console::buffer_height());}, csf_);
     }
 
     void test_method_(write) {
