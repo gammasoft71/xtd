@@ -309,6 +309,8 @@ bool console::reset_color() {
 }
 
 void console::set_cursor_position(int32 left, int32 top) {
+  if (left < 0 || left >= buffer_width()) throw argument_out_of_range_exception(csf_);
+  if (top < 0 || top >= buffer_height()) throw argument_out_of_range_exception(csf_);
   register_cancel_key_press(); // Must be first...
   native::console::set_cursor_position(left, top);
 }
