@@ -679,7 +679,7 @@ bool console::buffer_height(int_least32_t height) {
 
 int_least32_t console::buffer_width() {
   /// @todo console buffer Width on linux and macOS
-  if (::buffer_width == -1) ::buffer_height = console::window_width();
+  if (::buffer_width == -1) ::buffer_width = console::window_width();
   return ::buffer_width;
 }
 
