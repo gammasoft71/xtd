@@ -198,6 +198,10 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      /// @brief Create a new xtd::forms::about_dialog from executing xtd::reflecction::assembly informations.
+      /// @return New xtd::forms::about_dialog with executing xtd::reflecction::assembly informations.
+      static about_dialog from_executing_assembly_informations();
+      
       /// @brief Resets all properties to empty string.
       void reset() noexcept;
       
