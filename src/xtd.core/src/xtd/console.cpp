@@ -4,7 +4,9 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/console.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
+#include "../../include/xtd/argument_out_of_range_exception.h"
 #include "../../include/xtd/console.h"
+#include "../../include/xtd/box_integer.h"
 #include "../../include/xtd/io/stream_reader.h"
 #define __XTD_CORE_INTERNAL__
 #include "../../include/xtd/internal/__generic_stream_output.h"
@@ -53,6 +55,7 @@ int32 console::buffer_height() {
 }
 
 void console::buffer_height(int32 height) {
+  if (height <= 0 || height >= int16_object::max_value) throw argument_out_of_range_exception(csf_);
   register_cancel_key_press(); // Must be first...
   native::console::buffer_height(height);
 }
@@ -63,6 +66,7 @@ int32 console::buffer_width() {
 }
 
 void console::buffer_width(int32 width) {
+  if (width <= 0 || width >= int16_object::max_value) throw argument_out_of_range_exception(csf_);
   register_cancel_key_press(); // Must be first...
   native::console::buffer_width(width);
 }
