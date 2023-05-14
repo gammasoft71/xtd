@@ -218,7 +218,7 @@ int_least32_t console::input_code_page() {
   return ::input_code_page;
 }
 
-bool console::input_code_page(int_least32_t code_pPage) {
+bool console::input_code_page(int_least32_t code_page) {
   ::input_code_page = code_page;
   return SetConsoleCP(code_page) == TRUE;
 }
