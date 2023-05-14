@@ -8,11 +8,11 @@ auto main()->int {
   
   auto output_stream = file::open_write(output_file_path);
   console::set_out(output_stream);
- 
+  
   console::write_line("Item1");
   console::write_line("Item2");
   console::write_line("Item3");
-
+  
   output_stream.close();
   console::set_out(console::open_standard_output());
   

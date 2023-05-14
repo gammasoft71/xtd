@@ -1,10 +1,10 @@
-# redirrect_output
+# redirect_output
 
 Shows how to use [xtd::console](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html) class.
 
 # Sources
 
-[src/redirrect_output.cpp](src/redirrect_output.cpp)
+[src/redirect_output.cpp](src/redirect_output.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
