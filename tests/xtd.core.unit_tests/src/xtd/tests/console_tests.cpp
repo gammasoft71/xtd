@@ -70,7 +70,7 @@ namespace xtd::tests {
     }
 
     void test_method_(caps_lock) {
-      // Remarks if caps lock is set on by user, the folloowing test will be false.
+      // Remarks if caps lock is set on by user, the following test will be false.
       assert::is_false(console::caps_lock(), csf_);
     }
     
@@ -135,6 +135,140 @@ namespace xtd::tests {
       assert::throws<argument_exception>([]{console::foreground_color(as<console_color>(16));}, csf_);
     }
 
+    void test_method_(input_code_page) {
+      auto input_code_page = console::input_code_page();
+      console::input_code_page(850);
+      assert::are_equal(850, console::input_code_page(), csf_);
+      console::input_code_page(input_code_page);
+      assert::are_equal(input_code_page, console::input_code_page(), csf_);
+    }
+
+    void test_method_(is_error_redirected) {
+      assert::is_false(console::is_error_redirected(), csf_);
+      auto ep = path::combine(path::get_temp_path(), "xtd_test_error.txt");
+      auto es = xtd::io::file::open_write(ep);
+      console::set_error(es);
+      assert::is_true(console::is_error_redirected(), csf_);
+      console::set_error(console::open_standard_error());
+      assert::is_false(console::is_error_redirected(), csf_);
+      file::remove(ep);
+    }
+    
+    void test_method_(is_input_redirected) {
+      assert::is_false(console::is_input_redirected(), csf_);
+      auto ip = path::combine(path::get_temp_path(), "xtd_test_in.txt");
+      file::write_all_lines(ip, {""});
+      auto is = xtd::io::file::open_read(ip);
+      console::set_in(is);
+      assert::is_true(console::is_input_redirected(), csf_);
+      console::set_in(console::open_standard_input());
+      assert::is_false(console::is_input_redirected(), csf_);
+      file::remove(ip);
+    }
+    
+    void test_method_(is_output_redirected) {
+      assert::is_false(console::is_output_redirected(), csf_);
+      auto op = path::combine(path::get_temp_path(), "xtd_test_out.txt");
+      auto os = xtd::io::file::open_write(op);
+      console::set_out(os);
+      assert::is_true(console::is_output_redirected(), csf_);
+      console::set_out(console::open_standard_output());
+      assert::is_false(console::is_output_redirected(), csf_);
+      file::remove(op);
+    }
+    
+    void test_method_(larget_wxindoow_height) {
+      assert::is_not_zero(console::largest_window_height());
+    }
+    
+    void test_method_(largest_window_width) {
+      assert::is_not_zero(console::largest_window_width());
+    }
+
+    void test_method_(number_lock) {
+      // Remarks if number lock is set off by user, the following test will be false.
+      assert::is_true(console::number_lock(), csf_);
+    }
+    
+    void test_method_(output_code_page) {
+      auto output_code_page = console::output_code_page();
+      console::output_code_page(850);
+      assert::are_equal(850, console::output_code_page(), csf_);
+      console::output_code_page(output_code_page);
+      assert::are_equal(output_code_page, console::output_code_page(), csf_);
+    }
+    
+    void test_method_(title) {
+      auto title = console::title();
+      console::title("xtd test console title");
+      assert::are_equal("xtd test console title", console::title(), csf_);
+      console::title(title);
+      assert::are_equal(title, console::title(), csf_);
+    }
+    
+    void test_method_(treat_control_c_as_input) {
+      auto treat_control_c_as_input = console::treat_control_c_as_input();
+      console::treat_control_c_as_input(false);
+      assert::is_false(console::treat_control_c_as_input(), csf_);
+      console::treat_control_c_as_input(true);
+      assert::is_true(console::treat_control_c_as_input(), csf_);
+      console::treat_control_c_as_input(treat_control_c_as_input);
+      assert::are_equal(treat_control_c_as_input, console::treat_control_c_as_input(), csf_);
+    }
+    
+    void test_method_(window_height) {
+      auto window_height = console::window_height();
+      console::window_height(40);
+      assert::are_equal(40, console::window_height(), csf_);
+      console::window_height(window_height);
+      assert::are_equal(window_height, console::window_height(), csf_);
+    }
+    
+    void test_method_(window_left) {
+      auto window_left = console::window_left();
+      console::window_left(5);
+      assert::are_equal(5, console::window_left(), csf_);
+      console::window_left(window_left);
+      assert::are_equal(window_left, console::window_left(), csf_);
+    }
+    
+    void test_method_(window_top) {
+      auto window_top = console::window_top();
+      console::window_top(5);
+      assert::are_equal(5, console::window_top(), csf_);
+      console::window_top(window_top);
+      assert::are_equal(window_top, console::window_top(), csf_);
+    }
+    
+    void test_method_(window_width) {
+      auto window_width = console::window_width();
+      console::window_width(100);
+      assert::are_equal(100, console::window_width(), csf_);
+      console::window_width(window_width);
+      assert::are_equal(window_width, console::window_width(), csf_);
+    }
+    
+    void test_method_(get_cursor_position) {
+      auto [cursor_left, cursor_top] = console::get_cursor_position();
+      console::cursor_left(20);
+      console::cursor_top(10);
+      assert::are_equal(make_pair(20, 10), console::get_cursor_position(), csf_);
+      console::set_cursor_position(cursor_left, cursor_top);
+      assert::are_equal(make_pair(cursor_left, cursor_top), console::get_cursor_position(), csf_);
+    }
+
+    void test_method_(open_standard_error) {
+      assert::are_equal(std::cerr.rdbuf(), console::open_standard_error().rdbuf(), csf_);
+    }
+    
+    void test_method_(open_standard_input) {
+      assert::are_equal(std::cin.rdbuf(), console::open_standard_input().rdbuf(), csf_);
+    }
+    
+    void test_method_(open_standard_output) {
+      assert::are_equal(std::cout.rdbuf(), console::open_standard_output().rdbuf(), csf_);
+    }
+
     void test_method_(redirect_error) {
       auto ep = path::combine(path::get_temp_path(), "xtd_test_error.txt");
       auto es = xtd::io::file::open_write(ep);
@@ -146,7 +280,7 @@ namespace xtd::tests {
       assert::is_false(console::is_error_redirected(), csf_);
       file::remove(ep);
     }
-    
+
     void test_method_(redirect_in) {
       auto ip = path::combine(path::get_temp_path(), "xtd_test_in.txt");
       file::write_all_lines(ip, {""});
@@ -173,8 +307,7 @@ namespace xtd::tests {
     }
     
     void test_method_(set_cursor_position) {
-      auto cursor_left = console::cursor_left();
-      auto cursor_top = console::cursor_top();
+      auto [cursor_left, cursor_top] = console::get_cursor_position();
       console::set_cursor_position(20, 10);
       assert::are_equal(20, console::cursor_left(), csf_);
       assert::are_equal(10, console::cursor_top(), csf_);
@@ -333,4 +466,3 @@ namespace xtd::tests {
     }
   };
 }
-
