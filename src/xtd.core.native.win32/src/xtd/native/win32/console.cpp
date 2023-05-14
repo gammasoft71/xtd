@@ -40,6 +40,10 @@ namespace {
     return FALSE;
   }
   
+  bool treat_control_c_as_input = []()-> bool {
+    SetConsoleCtrlHandler(&__handler_routine, TRUE);
+    return false;
+  }();
   auto background_color = __background_color();
   auto foreground_color = __foreground_color();
   auto buffer_height = -1;
@@ -55,15 +59,10 @@ namespace {
   auto number_lock = true;
   auto output_code_page = 65001;
   std::string title;
-  auto treat_control_c_as_input = false;
   auto window_height = -1;
   auto window_left = 0;
   auto window_top = 0;
   auto window_width = -1;
-  bool treat_control_c_as_input = []()-> bool {
-    SetConsoleCtrlHandler(&__handler_routine, TRUE);
-    return false;
-  }();
   
   class terminal final {
   public:
@@ -301,7 +300,7 @@ bool console::title(const std::string& title) {
 bool console::treat_control_c_as_input() {
   DWORD mode = 0;
   ::treat_control_c_as_input = GetConsoleMode(GetStdHandle(STD_INPUT_HANDLE), &mode) == TRUE ? (mode & ENABLE_PROCESSED_INPUT) != ENABLE_PROCESSED_INPUT : false;
-  return treat_control_c_as_input;
+  return ::treat_control_c_as_input;
 }
 
 bool console::treat_control_c_as_input(bool treat_control_c_as_input) {
