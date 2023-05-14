@@ -119,6 +119,7 @@ namespace xtd {
     static int32 cursor_size();
     /// @brief Sets the height of the cursor within a character cell.
     /// @param size The size of the cursor expressed as a percentage of the height of a character cell. The property value ranges from 1 to 100.
+    /// @exception xtd::argument_out_of_range_exception The value specified in a set operation is less than 1 or greater than 100.
     /// @par Examples
     /// This example demonstrates the cursor_size property. The example increases the size of the cursor each time any console key is pressed, then restores the cursor to its original size before terminating.
     /// @include console_cursor_size.cpp

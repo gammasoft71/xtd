@@ -93,6 +93,7 @@ int32 console::cursor_size() {
 }
 
 void console::cursor_size(int32 size) {
+  if (size < 1 || size > 100) throw argument_out_of_range_exception(csf_);
   register_cancel_key_press(); // Must be first...
   native::console::cursor_size(size);
 }
