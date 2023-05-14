@@ -3,6 +3,8 @@
 #include <xtd/io/path.h>
 #include <xtd/xtd.tunit>
 
+using namespace std;
+using namespace std::literals;
 using namespace xtd;
 using namespace xtd::io;
 using namespace xtd::tunit;
@@ -79,7 +81,7 @@ namespace xtd::tests {
     }
 
     void test_method_(write) {
-      auto op = path::combine(path::get_temp_path(), "xtd_test_write.txt");
+      auto op = path::combine(path::get_temp_path(), "xtd_console_test.txt");
       auto os = xtd::io::file::open_write(op);
       console::set_out(os);
       console::write("Item1");
@@ -90,9 +92,53 @@ namespace xtd::tests {
       file::remove(op);
       console::set_out(console::open_standard_output());
     }
-    
+
+    void test_method_(write_literal_strings) {
+      auto op = path::combine(path::get_temp_path(), "xtd_console_test.txt");
+      auto os = xtd::io::file::open_write(op);
+      console::set_out(os);
+      console::write("Item1");
+      console::write(u8"Item2");
+      console::write(u"Item3");
+      console::write(U"Item4");
+      console::write(L"Item5");
+      os.close();
+      assert::are_equal("Item1Item2Item3Item4Item5", file::read_all_text(op), csf_);
+      file::remove(op);
+      console::set_out(console::open_standard_output());
+    }
+
+    void test_method_(write_strings) {
+      auto op = path::combine(path::get_temp_path(), "xtd_console_test.txt");
+      auto os = xtd::io::file::open_write(op);
+      console::set_out(os);
+      console::write("Item1"s);
+      console::write(u8"Item2"s);
+      console::write(u"Item3"s);
+      console::write(U"Item4"s);
+      console::write(L"Item5"s);
+      console::write("Item6"_s);
+      os.close();
+      assert::are_equal("Item1Item2Item3Item4Item5Item6", file::read_all_text(op), csf_);
+      file::remove(op);
+      console::set_out(console::open_standard_output());
+    }
+
+    void test_method_(write_some_objects) {
+      auto op = path::combine(path::get_temp_path(), "xtd_console_test.txt");
+      auto os = xtd::io::file::open_write(op);
+      console::set_out(os);
+      console::write(3_h + 42_min + 35_s);
+      console::write(guid("3fcf73d9-6c77-4bd1-a030-1e1fad500a47"));
+      console::write({1, 2, 3});
+      os.close();
+      assert::are_equal("03:42:353fcf73d9-6c77-4bd1-a030-1e1fad500a47[1, 2, 3]", file::read_all_text(op), csf_);
+      file::remove(op);
+      console::set_out(console::open_standard_output());
+    }
+
     void test_method_(write_with_format) {
-      auto op = path::combine(path::get_temp_path(), "xtd_test_write.txt");
+      auto op = path::combine(path::get_temp_path(), "xtd_console_test.txt");
       auto os = xtd::io::file::open_write(op);
       console::set_out(os);
       auto i = 1;
@@ -106,7 +152,7 @@ namespace xtd::tests {
     }
 
     void test_method_(write_line) {
-      auto op = path::combine(path::get_temp_path(), "xtd_test_write.txt");
+      auto op = path::combine(path::get_temp_path(), "xtd_console_test.txt");
       auto os = xtd::io::file::open_write(op);
       console::set_out(os);
       console::write_line("Item1");
@@ -118,8 +164,52 @@ namespace xtd::tests {
       console::set_out(console::open_standard_output());
     }
 
+    void test_method_(write_line_literal_strings) {
+      auto op = path::combine(path::get_temp_path(), "xtd_console_test.txt");
+      auto os = xtd::io::file::open_write(op);
+      console::set_out(os);
+      console::write_line("Item1");
+      console::write_line(u8"Item2");
+      console::write_line(u"Item3");
+      console::write_line(U"Item4");
+      console::write_line(L"Item5");
+      os.close();
+      collection_assert::are_equal({"Item1", "Item2", "Item3", "Item4", "Item5"}, file::read_all_lines(op), csf_);
+      file::remove(op);
+      console::set_out(console::open_standard_output());
+    }
+
+    void test_method_(write_line_strings) {
+      auto op = path::combine(path::get_temp_path(), "xtd_console_test.txt");
+      auto os = xtd::io::file::open_write(op);
+      console::set_out(os);
+      console::write_line("Item1"s);
+      console::write_line(u8"Item2"s);
+      console::write_line(u"Item3"s);
+      console::write_line(U"Item4"s);
+      console::write_line(L"Item5"s);
+      console::write_line(L"Item6"_s);
+      os.close();
+      collection_assert::are_equal({"Item1", "Item2", "Item3", "Item4", "Item5", "Item6"}, file::read_all_lines(op), csf_);
+      file::remove(op);
+      console::set_out(console::open_standard_output());
+    }
+
+    void test_method_(write_line_some_objects) {
+      auto op = path::combine(path::get_temp_path(), "xtd_console_test.txt");
+      auto os = xtd::io::file::open_write(op);
+      console::set_out(os);
+      console::write_line(3_h + 42_min + 35_s);
+      console::write_line(guid("3fcf73d9-6c77-4bd1-a030-1e1fad500a47"));
+      console::write_line({1, 2, 3});
+      os.close();
+      collection_assert::are_equal({"03:42:35", "3fcf73d9-6c77-4bd1-a030-1e1fad500a47", "[1, 2, 3]"}, file::read_all_lines(op), csf_);
+      file::remove(op);
+      console::set_out(console::open_standard_output());
+    }
+
     void test_method_(write_line_with_format) {
-      auto op = path::combine(path::get_temp_path(), "xtd_test_write.txt");
+      auto op = path::combine(path::get_temp_path(), "xtd_console_test.txt");
       auto os = xtd::io::file::open_write(op);
       console::set_out(os);
       auto i = 1;
