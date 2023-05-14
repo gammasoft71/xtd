@@ -72,6 +72,7 @@ namespace xtd {
     static int32 buffer_height();
     /// @brief Sets or sets the height of the buffer area.
     /// @param height The current height, in rows, of the buffer area.
+    /// @exception xtd::argument_out_of_range_exception  The value in a set operation is less than or equal to zero. -or- The value in a set operation is greater than or equal to xtd::int16_object::max_value.
     /// @par Examples
     /// This example demonstrates the buffer_height and buffer_width properties. The example reports the dimensions of an operating system window set to a buffer size of 300 rows and 85 columns.
     /// @include console_buffer.cpp
@@ -85,6 +86,7 @@ namespace xtd {
     static int32 buffer_width();
     /// @brief Sets the width of the buffer area.
     /// @param width The current width, in columns, of the buffer area.
+    /// @exception xtd::argument_out_of_range_exception  The value in a set operation is less than or equal to zero. -or- The value in a set operation is greater than or equal to xtd::int16_object::max_value.
     /// @par Examples
     /// This example demonstrates the BufferHeight and buffer_width properties. The example reports the dimensions of an operating system window set to a buffer size of 300 rows and 85 columns.
     /// @include console_buffer.cpp
