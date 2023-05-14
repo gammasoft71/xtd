@@ -5,6 +5,7 @@ find_package(xtd REQUIRED)
 
 add_projects(
   about_dialog_system
+  about_dialog_from_executing_assembly_informations
   anchors
   application_run
   auto_scroll
