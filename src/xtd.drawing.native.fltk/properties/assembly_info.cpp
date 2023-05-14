@@ -11,7 +11,7 @@
 // Change them to the values specific to your project.
 
 assembly_title_("xtd.drawing.native.fltk");
-assembly_description_("xtd.drawing.native.fltk ibrary is based on Fltk toolkit.");
+assembly_description_("xtd.drawing.native.fltk library is based on Fltk toolkit.");
 assembly_configuration_("");
 assembly_company_("Gammasoft");
 assembly_product_("xtd.drawing.native.fltk");

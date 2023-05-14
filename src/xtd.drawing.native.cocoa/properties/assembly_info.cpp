@@ -11,7 +11,7 @@
 // Change them to the values specific to your project.
 
 assembly_title_("xtd.drawing.native.cocoa");
-assembly_description_("xtd.drawing.native.cocoa ibrary is based on Apple AppKit toolkit.");
+assembly_description_("xtd.drawing.native.cocoa library is based on Apple AppKit toolkit.");
 assembly_configuration_("");
 assembly_company_("Gammasoft");
 assembly_product_("xtd.drawing.native.cocoa");

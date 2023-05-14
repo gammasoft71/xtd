@@ -11,7 +11,7 @@
 // Change them to the values specific to your project.
 
 assembly_title_("xtd.drawing.native.gtk4");
-assembly_description_("xtd.drawing.native.gtk4 ibrary is based on Gtk+ 4 toolkit.");
+assembly_description_("xtd.drawing.native.gtk4 library is based on Gtk+ 4 toolkit.");
 assembly_configuration_("");
 assembly_company_("Gammasoft");
 assembly_product_("xtd.drawing.native.gtk4");
