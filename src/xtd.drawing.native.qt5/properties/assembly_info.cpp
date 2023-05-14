@@ -11,7 +11,7 @@
 // Change them to the values specific to your project.
 
 assembly_title_("xtd.drawing.native.qt5");
-assembly_description_("xtd.drawing.native.qt5 ibrary is based on Qt 5 toolkit.");
+assembly_description_("xtd.drawing.native.qt5 library is based on Qt 5 toolkit.");
 assembly_configuration_("");
 assembly_company_("Gammasoft");
 assembly_product_("xtd.drawing.native.qt5");

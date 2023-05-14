@@ -10,18 +10,18 @@
 // Information about this assembly is defined by the following attributes.
 // Change them to the values specific to your project.
 
-assembly_title_("xtd.drawing.native.win32");
-assembly_description_("xtd.drawing.native.win32 library is based on Microsoft Win32 toolkit.");
+assembly_title_("xtd.forms.native.cocoa");
+assembly_description_("xtd.forms.native.cocoa library is based on Apple AppKit toolkit.");
 assembly_configuration_("");
 assembly_company_("Gammasoft");
-assembly_product_("xtd.drawing.native.win32");
+assembly_product_("xtd.forms.native.cocoa");
 assembly_copyright_("Copyright © Gammasoft 2023");
 assembly_trademark_("");
 assembly_culture_("en_US.UTF-8");
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 
-assembly_guid_("bd96632d-021d-4f3d-961d-ed8451cdedbb");
+assembly_guid_("ac8ee947-9542-4678-bd75-bb500e767596");
 
 // The assembly version has the format "{Major}.{Minor}.{Build}.{Revision}".
 // In not specify or empty or "*" the cmake project version is used.
