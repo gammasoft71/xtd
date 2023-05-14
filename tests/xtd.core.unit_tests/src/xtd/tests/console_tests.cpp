@@ -36,7 +36,7 @@ namespace xtd::tests {
     }
     
     void test_method_(background_color_with_invalid_value) {
-      assert::throws<argument_exception>([]{console::background_color(static_cast<console_color>(16));}, csf_);
+      assert::throws<argument_exception>([]{console::background_color(as<console_color>(16));}, csf_);
     }
 
     void test_method_(buffer_height) {
@@ -83,7 +83,7 @@ namespace xtd::tests {
     }
     
     void test_method_(foreground_color_with_invalid_value) {
-      assert::throws<argument_exception>([]{console::foreground_color(static_cast<console_color>(16));}, csf_);
+      assert::throws<argument_exception>([]{console::foreground_color(as<console_color>(16));}, csf_);
     }
 
     void test_method_(redirect_error) {
