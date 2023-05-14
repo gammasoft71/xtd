@@ -545,26 +545,44 @@ namespace {
     {"z", {90, U'z', false, false, false}}, // z
   };
   
-  auto back_color = CONSOLE_COLOR_BLACK;
-  auto fore_color = CONSOLE_COLOR_GRAY;
-  auto cursor_visible = true;
+  int_least32_t __background_color() {
+    return CONSOLE_COLOR_BLACK;
+  }
+  
+  int_least32_t __foreground_color() {
+    return CONSOLE_COLOR_GRAY;
+  }
+  
+  auto background_color = __background_color();
+  auto foreground_color = __foreground_color();
   auto buffer_height = -1;
   auto buffer_width = -1;
+  auto caps_lock = false;
   auto cursor_left = 0;
   auto cursor_size = 100;
   auto cursor_top = 0;
+  auto cursor_visible = true;
+  auto input_code_page = 65001;
+  auto largest_window_height = 1000;
+  auto largest_window_width = 1000;
+  auto number_lock = true;
+  auto output_code_page = 65001;
   std::string title;
+  auto window_height = -1;
+  auto window_left = 0;
+  auto window_top = 0;
+  auto window_width = -1;
 }
 
 int_least32_t console::background_color() {
-  return back_color;
+  return ::background_color;
 }
 
 bool console::background_color(int_least32_t color) {
   static std::map<int_least32_t, const char*> colors {{CONSOLE_COLOR_BLACK, "\033[40m"}, {CONSOLE_COLOR_DARK_BLUE, "\033[44m"}, {CONSOLE_COLOR_DARK_GREEN, "\033[42m"}, {CONSOLE_COLOR_DARK_CYAN, "\033[46m"}, {CONSOLE_COLOR_DARK_RED, "\033[41m"}, {CONSOLE_COLOR_DARK_MAGENTA, "\033[45m"}, {CONSOLE_COLOR_DARK_YELLOW, "\033[43m"}, {CONSOLE_COLOR_GRAY, "\033[47m"}, {CONSOLE_COLOR_DARK_GRAY, "\033[100m"}, {CONSOLE_COLOR_BLUE, "\033[104m"}, {CONSOLE_COLOR_GREEN, "\033[102m"}, {CONSOLE_COLOR_CYAN, "\033[106m"}, {CONSOLE_COLOR_RED, "\033[101m"}, {CONSOLE_COLOR_MAGENTA, "\033[105m"}, {CONSOLE_COLOR_YELLOW, "\033[103m"}, {CONSOLE_COLOR_WHITE, "\033[107m"}};
   auto it = colors.find(color);
   if (it == colors.end()) return false;
-  back_color = color;
+  ::background_color = color;
   if (terminal::is_ansi_supported()) std::cout << it->second << std::flush;
   return true;
 }
@@ -691,12 +709,12 @@ bool console::buffer_width(int_least32_t width) {
 
 bool console::caps_lock() {
   /// @todo caps lock status on linux and macOS
-  return false;
+  return ::caps_lock;
 }
 
 bool console::clear() {
   if (terminal::is_ansi_supported()) std::cout << "\x1b[H\x1b[2J" << std::flush;
-  return true;
+  return set_cursor_position(0, 0);
 }
 
 int_least32_t console::cursor_left() {
@@ -748,25 +766,26 @@ bool console::cursor_visible(bool visible) {
 }
 
 int_least32_t console::foreground_color() {
-  return fore_color;
+  return ::foreground_color;
 }
 
 bool console::foreground_color(int_least32_t color) {
   static std::map<int_least32_t, const char*> colors {{CONSOLE_COLOR_BLACK, "\033[30m"}, {CONSOLE_COLOR_DARK_BLUE, "\033[34m"}, {CONSOLE_COLOR_DARK_GREEN, "\033[32m"}, {CONSOLE_COLOR_DARK_CYAN, "\033[36m"}, {CONSOLE_COLOR_DARK_RED, "\033[31m"}, {CONSOLE_COLOR_DARK_MAGENTA, "\033[35m"}, {CONSOLE_COLOR_DARK_YELLOW, "\033[33m"}, {CONSOLE_COLOR_GRAY, "\033[37m"}, {CONSOLE_COLOR_DARK_GRAY, "\033[90m"}, {CONSOLE_COLOR_BLUE, "\033[94m"}, {CONSOLE_COLOR_GREEN, "\033[92m"}, {CONSOLE_COLOR_CYAN, "\033[96m"}, {CONSOLE_COLOR_RED, "\033[91m"}, {CONSOLE_COLOR_MAGENTA, "\033[95m"}, {CONSOLE_COLOR_YELLOW, "\033[93m"}, {CONSOLE_COLOR_WHITE, "\033[97m"}};
   auto it = colors.find(color);
   if (it == colors.end()) return false;
-  fore_color = color;
+  ::foreground_color = color;
   if (terminal::is_ansi_supported()) std::cout << it->second << std::flush;
   return true;
 }
 
 int_least32_t console::input_code_page() {
   /// @todo console input code page status on linux and macOS
-  return 65001;
+  return ::input_code_page;
 }
 
-bool console::input_code_page(int_least32_t codePage) {
+bool console::input_code_page(int_least32_t code_page) {
   /// @todo set console input code page on linux and macOS
+  ::input_code_page = code_page;
   return true;
 }
 
@@ -775,25 +794,26 @@ bool console::key_available() {
 }
 
 int_least32_t console::largest_window_height() {
-  return 1000;
+  return ::largest_window_height;
 }
 
 int_least32_t console::largest_window_width() {
-  return 1000;
+  return ::largest_window_width;
 }
 
 bool console::number_lock() {
   /// @todo number lock status on linux and macOS
-  return false;
+  return ::number_lock;
 }
 
 int_least32_t console::output_code_page() {
   /// @todo console output code page status on linux and macOS
-  return 65001;
+  return ::output_code_page;
 }
 
-bool console::output_code_page(int_least32_t codePage) {
+bool console::output_code_page(int_least32_t code_page) {
   /// @todo set console output code page on linux and macOS
+  ::output_code_page = code_page;
   return true;
 }
 
@@ -811,10 +831,7 @@ void console::register_user_cancel_callback(std::function<bool(int32_t)> user_ca
 }
 
 bool console::reset_color() {
-  back_color = CONSOLE_COLOR_BLACK;
-  fore_color = CONSOLE_COLOR_GRAY;
-  if (terminal::is_ansi_supported()) std::cout << "\033[49m\033[37m" << std::flush;
-  return true;
+  return console::background_color(__background_color()) && console::foreground_color(__foreground_color());
 }
 
 bool console::set_cursor_position(int_least32_t left, int_least32_t top) {
@@ -859,31 +876,35 @@ int_least32_t console::window_height() {
   console::set_cursor_position(console::cursor_left(), 999);
   auto height = console::cursor_top() + 1;
   console::set_cursor_position(console::cursor_left(), top);
+  ::window_height = height;
   return height;
 }
 
 bool console::window_height(int_least32_t height) {
   /// @todo set console window height on linux and macOS
+  ::window_height = height;
   return true;
 }
 
 int_least32_t console::window_left() {
   /// @todo get console window left on linux and macOS
-  return 0;
+  return ::window_left;
 }
 
 bool console::window_left(int_least32_t left) {
   /// @todo set console window left on linux and macOS
+  ::window_left = left;
   return true;
 }
 
 int_least32_t console::window_top() {
   /// @todo get console window top on linux and macOS
-  return 0;
+  return ::window_top;
 }
 
 bool console::window_top(int_least32_t top) {
   /// @todo set console window top on linux and macOS
+  ::window_top = top;
   return true;
 }
 
@@ -892,10 +913,12 @@ int_least32_t console::window_width() {
   console::set_cursor_position(999, console::cursor_top());
   auto width = console::cursor_left() + 1;
   console::set_cursor_position(left, console::cursor_top());
+  ::window_width = width;
   return width;
 }
 
 bool console::window_width(int_least32_t width) {
   /// @todo set console window width on linux and macOS
+  ::window_width = width;
   return true;
 }
