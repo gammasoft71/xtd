@@ -24,15 +24,22 @@ namespace xtd::tests {
       assert::are_equal(std::cout.rdbuf(), console::out.rdbuf(), csf_);
       assert::is_false(console::is_output_redirected(), csf_);
     }
-   
-    /*
-    void test_method_(get_background_color) {
-      assert::are_equal(console_color::black, console::background_color(), csf_);
+    
+    void test_method_(background_color) {
+      auto background_color = console::background_color();
+      console::background_color(console_color::blue);
+      assert::are_equal(console_color::blue, console::background_color(), csf_);
+      console::background_color(background_color);
+      assert::are_equal(background_color, console::background_color(), csf_);
     }
     
-    void test_method_(get_foreground_color) {
-      assert::are_equal(console_color::gray, console::foreground_color(), csf_);
-    } */
+    void test_method_(foreground_color) {
+      auto foreground_color = console::foreground_color();
+      console::foreground_color(console_color::yellow);
+      assert::are_equal(console_color::yellow, console::foreground_color(), csf_);
+      console::foreground_color(foreground_color);
+      assert::are_equal(foreground_color, console::foreground_color(), csf_);
+    }
 
     void test_method_(redirect_error) {
       auto ep = path::combine(path::get_temp_path(), "xtd_test_error.txt");
@@ -70,21 +77,6 @@ namespace xtd::tests {
       assert::is_false(console::is_output_redirected(), csf_);
       file::remove(op);
     }
-    
-    /*
-    void test_method_(set_background_color_blue_and_reset) {
-      console::background_color(console_color::blue);
-      assert::are_equal(console_color::blue, console::background_color(), csf_);
-      console::reset_color();
-      assert::are_equal(console_color::black, console::background_color(), csf_);
-    }
-    
-    void test_method_(set_foreground_color_yellow_and_reset) {
-      console::foreground_color(console_color::yellow);
-      assert::are_equal(console_color::yellow, console::foreground_color(), csf_);
-      console::reset_color();
-      assert::are_equal(console_color::gray, console::foreground_color(), csf_);
-    } */
 
     void test_method_(write) {
       auto op = path::combine(path::get_temp_path(), "xtd_test_write.txt");
