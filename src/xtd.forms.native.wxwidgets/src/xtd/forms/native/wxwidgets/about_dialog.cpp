@@ -30,7 +30,7 @@ void about_dialog::show(intptr hwnd, const xtd::drawing::icon& icon, const ustri
   wxAboutDialogInfo about_info;
   about_info.SetName(convert_string::to_wstring(name));
   about_info.SetDescription(convert_string::to_wstring(description));
-  about_info.SetVersion(convert_string::to_wstring(version), convert_string::to_wstring(long_version));
+  if (!long_version.empty() || !version.empty()) about_info.SetVersion(version.empty() ? convert_string::to_wstring(long_version) : convert_string::to_wstring(version), convert_string::to_wstring(long_version));
   about_info.SetCopyright(convert_string::to_wstring(ustring(copyright).replace(u8"\u00A9"_s, u8"(c)"_s)));
   #if defined(__WXGTK__)
   about_info.SetIcon(reinterpret_cast<wxIconBundle*>(icon.handle())->GetIcon());
