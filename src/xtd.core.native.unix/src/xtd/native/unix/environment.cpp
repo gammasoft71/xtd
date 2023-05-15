@@ -62,10 +62,9 @@ namespace {
         auto distribution_string = create_process("sw_vers");
         auto distribution_lines = xtd::native::unix::strings::split(distribution_string, {'\n'});
         for (auto distribution_line : distribution_lines) {
-          auto key_value =xtd::native::unix::strings::split(distribution_line, {'\t'});
-          if (key_value.size() != 3) continue;
-          if (key_value[0] == "BuildVersion:") build_version = key_value[2];
-          if (key_value[0] == "ProductVersion:") version = key_value[2];
+          auto key_value = xtd::native::unix::strings::split(distribution_line, {'\t'});
+          if (key_value[0] == "BuildVersion:") build_version = key_value[key_value.size() - 1];
+          if (key_value[0] == "ProductVersion:") version = key_value[key_value.size() - 1];
         }
         auto versions = xtd::native::unix::strings::split(version, {'.'});
         if (versions.size() == 2) {
