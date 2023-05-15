@@ -286,7 +286,9 @@ void console::register_user_cancel_callback(std::function<bool(int32_t)> user_ca
 }
 
 bool console::reset_color() {
-  return console::background_color(__background_color()) && console::foreground_color(__foreground_color());
+  auto result1 = console::background_color(__background_color());
+  auto result2 = console::foreground_color(__foreground_color());
+  return result1 && result2;
 }
 
 bool console::set_cursor_position(int_least32_t left, int_least32_t top) {
