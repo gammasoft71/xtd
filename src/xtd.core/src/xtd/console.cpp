@@ -211,6 +211,7 @@ int32 console::window_height() {
 
 void console::window_height(int32 height) {
   register_cancel_key_press(); // Must be first...
+  if (height <= 0 || height >= int16_object::max_value) throw argument_out_of_range_exception(csf_);
   native::console::window_height(height);
 }
 
@@ -221,6 +222,7 @@ int32 console::window_left() {
 
 void console::window_left(int32 left) {
   register_cancel_key_press(); // Must be first...
+  if (left < 0 || left >= buffer_width()) throw argument_out_of_range_exception(csf_);
   native::console::window_left(left);
 }
 
@@ -231,6 +233,7 @@ int32 console::window_top() {
 
 void console::window_top(int32 top) {
   register_cancel_key_press(); // Must be first...
+  if (top < 0 || top >= buffer_height()) throw argument_out_of_range_exception(csf_);
   native::console::window_top(top);
 }
 
@@ -241,6 +244,7 @@ int32 console::window_width() {
 
 void console::window_width(int32 width) {
   register_cancel_key_press(); // Must be first...
+  if (width <= 0 || width >= int16_object::max_value) throw argument_out_of_range_exception(csf_);
   native::console::window_width(width);
 }
 
