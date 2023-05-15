@@ -1,5 +1,4 @@
 #include <xtd/convert.h>
-#include <xtd/date_time.h>
 #include <xtd/guid.h>
 #include <xtd/xtd.core>
 #include <xtd/xtd.tunit>
@@ -35,11 +34,25 @@ namespace xtd::tests {
       delete g;
     }
     
+    void test_method_(const_object_to_invalid_other_ptr) {
+      const guid* g = new guid();
+      
+      assert::throws<invalid_cast_exception>([&]{convert_pointer::to_ptr<ustring>(*g);}, csf_);
+      delete g;
+    }
+
     void test_method_(object_to_other_ptr) {
       guid* g = new guid();
       
       object* o = convert_pointer::to_ptr<object>(*g);
       assert::are_equal(g, o, csf_);
+      delete g;
+    }
+    
+    void test_method_(object_to_invalid_other_ptr) {
+      guid* g = new guid();
+      
+      assert::throws<invalid_cast_exception>([&]{convert_pointer::to_ptr<ustring>(*g);}, csf_);
       delete g;
     }
     
@@ -51,6 +64,13 @@ namespace xtd::tests {
       delete g1;
     }
     
+    void test_method_(const_null_ptr_to_ptr) {
+      const guid* g1 = null;
+      
+      const guid* g2 = convert_pointer::to_ptr(g1);
+      assert::is_null(g2, csf_);
+    }
+    
     void test_method_(ptr_to_ptr) {
       guid* g1 = new guid();
       
@@ -59,6 +79,13 @@ namespace xtd::tests {
       delete g1;
     }
     
+    void test_method_(null_ptr_to_ptr) {
+      guid* g1 = null;
+      
+      guid* g2 = convert_pointer::to_ptr(g1);
+      assert::is_null(g2, csf_);
+    }
+
     void test_method_(const_ptr_to_other_ptr) {
       const guid* g = new guid();
       
@@ -67,11 +94,39 @@ namespace xtd::tests {
       delete g;
     }
     
+    void test_method_(const_null_ptr_to_other_ptr) {
+      const guid* g = null;
+      
+      const object* o = convert_pointer::to_ptr<object>(g);
+      assert::is_null(o, csf_);
+    }
+
+    void test_method_(const_ptr_to_invalid_other_ptr) {
+      const guid* g = new guid();
+      
+      assert::throws<invalid_cast_exception>([&]{convert_pointer::to_ptr<ustring>(g);}, csf_);
+      delete g;
+    }
+
     void test_method_(ptr_to_other_ptr) {
       guid* g = new guid();
       
       object* o = convert_pointer::to_ptr<object>(g);
       assert::are_equal(g, o, csf_);
+      delete g;
+    }
+    
+    void test_method_(ptr_null_to_other_ptr) {
+      guid* g = null;
+      
+      object* o = convert_pointer::to_ptr<object>(g);
+      assert::is_null(o, csf_);
+    }
+
+    void test_method_(ptr_to_invvalid_other_ptr) {
+      guid* g = new guid();
+      
+      assert::throws<invalid_cast_exception>([&]{convert_pointer::to_ptr<ustring>(g);}, csf_);
       delete g;
     }
 
@@ -93,9 +148,16 @@ namespace xtd::tests {
     
     void test_method_(const_object_to_other_ref) {
       const guid* g = new guid();
-
+      
       const object& o = convert_pointer::to_ref<object>(*g);
       assert::are_equal(g, &o, csf_);
+      delete g;
+    }
+    
+    void test_method_(const_object_to_invalid_other_ref) {
+      const guid* g = new guid();
+      
+      assert::throws<invalid_cast_exception>([&]{convert_pointer::to_ref<ustring>(*g);}, csf_);
       delete g;
     }
     
@@ -107,32 +169,71 @@ namespace xtd::tests {
       delete g;
     }
     
+    void test_method_(object_to_invalid_other_ref) {
+      guid* g = new guid();
+      
+      assert::throws<invalid_cast_exception>([&]{convert_pointer::to_ref<ustring>(*g);}, csf_);
+      delete g;
+    }
+
     void test_method_(const_pointer_to_ref) {
-      const date_time* d1 = new date_time();
-      const date_time& d2 = convert_pointer::to_ref(d1);
-      assert::are_equal(d1, &d2, csf_);
-      delete d1;
+      const guid* g1 = new guid();
+      const guid& g2 = convert_pointer::to_ref(g1);
+      assert::are_equal(g1, &g2, csf_);
+      delete g1;
+    }
+    
+    void test_method_(const_null_pointer_to_ref) {
+      const guid* g1 = null;
+      assert::throws<argument_null_exception>([&]{convert_pointer::to_ref(g1);}, csf_);
     }
     
     void test_method_(pointer_to_ref) {
-      date_time* d1 = new date_time();
-      date_time& d2 = convert_pointer::to_ref(d1);
-      assert::are_equal(d1, &d2, csf_);
-      delete d1;
+      guid* g1 = new guid();
+      guid& g2 = convert_pointer::to_ref(g1);
+      assert::are_equal(g1, &g2, csf_);
+      delete g1;
+    }
+    
+    void test_method_(null_pointer_to_ref) {
+      guid* g = null;
+      assert::throws<argument_null_exception>([&]{convert_pointer::to_ref(g);}, csf_);
     }
     
     void test_method_(const_pointer_to_other_ref) {
-      const date_time* d = new date_time();
-      const object& o = convert_pointer::to_ref<object>(d);
-      assert::are_equal(d, &o, csf_);
-      delete d;
+      const guid* g = new guid();
+      const object& o = convert_pointer::to_ref<object>(g);
+      assert::are_equal(g, &o, csf_);
+      delete g;
     }
     
+    void test_method_(const_null_pointer_to_other_ref) {
+      const guid* g = null;
+      assert::throws<argument_null_exception>([&]{convert_pointer::to_ref<object>(g);}, csf_);
+    }
+    
+    void test_method_(const_pointer_to_invalid_other_ref) {
+      const guid* g = new guid();
+      assert::throws<invalid_cast_exception>([&]{convert_pointer::to_ref<ustring>(g);}, csf_);
+      delete g;
+    }
+
     void test_method_(pointer_to_other_ref) {
-      date_time* d = new date_time();
-      object& o = convert_pointer::to_ref<object>(d);
-      assert::are_equal(d, &o, csf_);
-      delete d;
+      guid* g = new guid();
+      object& o = convert_pointer::to_ref<object>(g);
+      assert::are_equal(g, &o, csf_);
+      delete g;
+    }
+    
+    void test_method_(null_pointer_to_other_ref) {
+      guid* g = null;
+      assert::throws<argument_null_exception>([&]{convert_pointer::to_ref<object>(g);}, csf_);
+    }
+
+    void test_method_(pointer_to_invalid_other_ref) {
+      guid* g = new guid();
+      assert::throws<invalid_cast_exception>([&]{convert_pointer::to_ref<ustring>(g);}, csf_);
+      delete g;
     }
   };
 }
