@@ -75,7 +75,7 @@ namespace xtd {
     
     /// @brief Gets The version of cpp language.
     /// @return The version.
-    const xtd::version& version() const noexcept;
+    xtd::version version() const noexcept;
     
     /// @brief Gets the year when the cpp language was released.
     /// @return The year when the cpp version was released.
@@ -91,6 +91,6 @@ namespace xtd {
     /// @}
     
   private:
-    uint32 cpp_ = __cplusplus;
+    uint32 cpp_ = 0;
   };
 }
