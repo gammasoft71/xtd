@@ -235,5 +235,18 @@ namespace xtd::tests {
       assert::throws<invalid_cast_exception>([&]{convert_pointer::to_ref<ustring>(g);}, csf_);
       delete g;
     }
+
+    void test_method_(to_unique_ptr) {
+      unique_ptr<guid> g = make_unique<guid>();
+      guid* ptr = g.get();
+      unique_ptr<object> o = convert_pointer::to_unique_ptr<object>(g);
+      assert::are_equal(ptr, o.get(), csf_);
+      assert::is_null(g, csf_);
+    }
+
+    void test_method_(move_to_unique_ptr) {
+      unique_ptr<object> o = convert_pointer::to_unique_ptr<object>(make_unique<guid>());
+      assert::is_not_null(o.get(), csf_);
+    }
   };
 }
