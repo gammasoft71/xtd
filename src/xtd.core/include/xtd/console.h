@@ -362,12 +362,13 @@ namespace xtd {
     /// @brief Sets the position of the console window relative to the screen buffer.
     /// @param left The column position of the upper left corner of the console window.
     /// @param top The row position of the upper left corner of the console window.
+    /// @exception xtd::argument_out_of_range_exception The left in a set operation is less than zero <br>-or-<br> The left in a set operation is greater than or equal to xtd::console::buffer_width <br>-or-<br> the top in a set operation is less than zero <br>-or-<br> The topo in a set operation is greater than or equal to xtd::console::buffer_height.
     static void set_window_position(int32 left, int32 top);
     
     /// @brief Sets the height and width of the console window to the specified values.
     /// @param width The width of the console window measured in columns.
     /// @param height The height of the console window measured in rows.
-    /// @exception ArgumentOutOfRangeException width or height is less than or equal to zero. <br><br>-or-<br><br> width plus WindowLeft or height plus WindowTop is greater than or equal to Int16.MaxValue. <br><br>-or-<br><br> width or height is greater than the largest possible window width or height for the current screen resolution and console font.
+    /// @exception xtd::argument_out_of_range_exception width or height is less than or equal to zero. <br>-or-<br>width plus WindowLeft or height plus WindowTop is greater than or equal to xtd::int16_object.max_value. <br>-or-<br>width or height is greater than the largest possible window width or height for the current screen resolution and console font.
     /// @par Examples
     /// This example demonstrates the SetWindowSize method, and the WindowWidth and WindowHeight properties. You must run the example to see the full effect of changing the console window size.
     /// The example reports the dimensions of a console window set to 85 columns and 43 rows, then waits for a key press. When any key is pressed, the dimensions of the console window are halved, the new dimensions are reported, and the example waits for another key press. Finally, when any key is pressed the console window is restored to its original dimensions and the example terminates.
