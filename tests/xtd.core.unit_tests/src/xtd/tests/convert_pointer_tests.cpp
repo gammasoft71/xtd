@@ -244,9 +244,49 @@ namespace xtd::tests {
       assert::is_null(g, csf_);
     }
 
+    void test_method_(to_unique_ptr_invalid) {
+      unique_ptr<guid> g = make_unique<guid>();
+      assert::throws<invalid_cast_exception>([&]{convert_pointer::to_unique_ptr<ustring>(g);}, csf_);
+    }
+
     void test_method_(move_to_unique_ptr) {
       unique_ptr<object> o = convert_pointer::to_unique_ptr<object>(make_unique<guid>());
       assert::is_not_null(o.get(), csf_);
+    }
+
+    void test_method_(move_to_unique_ptr_invalid) {
+      assert::throws<invalid_cast_exception>([]{convert_pointer::to_unique_ptr<ustring>(make_unique<guid>());}, csf_);
+    }
+
+    void test_method_(to_shared_ptr) {
+      shared_ptr<guid> g = make_shared<guid>();
+      shared_ptr<object> o = convert_pointer::to_shared_ptr<object>(g);
+      assert::are_equal(g, o, csf_);
+    }
+
+    void test_method_(to_shared_ptr_invalid) {
+      shared_ptr<guid> g = make_shared<guid>();
+      assert::throws<invalid_cast_exception>([&]{convert_pointer::to_shared_ptr<ustring>(g);}, csf_);
+    }
+
+    void test_method_(const_to_shared_ptr) {
+      const shared_ptr<guid> g = make_shared<guid>();
+      shared_ptr<object> o = convert_pointer::to_shared_ptr<object>(g);
+      assert::are_equal(g, o, csf_);
+    }
+
+    void test_method_(const_to_shared_ptr_invalid) {
+      const shared_ptr<guid> g = make_shared<guid>();
+      assert::throws<invalid_cast_exception>([&]{convert_pointer::to_shared_ptr<ustring>(g);}, csf_);
+    }
+
+    void test_method_(move_to_shared_ptr) {
+      shared_ptr<object> o = convert_pointer::to_shared_ptr<object>(make_shared<guid>());
+      assert::is_not_null(o.get(), csf_);
+    }
+
+    void test_method_(move_to_shared_ptr_invalid) {
+      assert::throws<invalid_cast_exception>([]{convert_pointer::to_shared_ptr<ustring>(make_shared<guid>());}, csf_);
     }
   };
 }
