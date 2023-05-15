@@ -97,17 +97,17 @@ namespace xtd {
     
     /// @brief Returns the angle whose cosine is the specified number.
     /// @param value A number representing a cosine, where -1 <= value <= 1.
-    /// @return An angle, A, measured in radians, such that 0 <= A <= PI. -or- math::NaN if value < -1 or d > 1.
+    /// @return An angle, A, measured in radians, such that 0 <= A <= PI. <br>-or-<br> math::NaN if value < -1 or d > 1.
     static double acos(double value);
     
     /// @brief Returns the angle whose sine is the specified number.
     /// @param value A number representing a sine, where -1 <= value <= 1.
-    /// @return An angle, A, measured in radians, such that -PI/2 <= A <= PI/2. -or- math::NaN if value < -1 or d > 1.
+    /// @return An angle, A, measured in radians, such that -PI/2 <= A <= PI/2. <br>-or-<br> math::NaN if value < -1 or d > 1.
     static double asin(double value);
     
     /// @brief Returns the angle whose tangent is the specified number.
     /// @param value A number representing a tangent.
-    /// @return An angle, A, measured in radians, such that -PI/2 <= ? <= PI/2. -or- math::NaN if value equals math::NaN, -PI/2 rounded to double precision (-1.5707963267949) if d equals math::negative_infinity, or PI/2 rounded to double precision (1.5707963267949) if d equals math::positive_infinity
+    /// @return An angle, A, measured in radians, such that -PI/2 <= ? <= PI/2. <br>-or-<br> math::NaN if value equals math::NaN, -PI/2 rounded to double precision (-1.5707963267949) if d equals math::negative_infinity, or PI/2 rounded to double precision (1.5707963267949) if d equals math::positive_infinity
     static double atan(double value);
     
     /// @brief Returns the angle whose tangent is the specified number.
@@ -314,7 +314,7 @@ namespace xtd {
     ///
     /// | a                                | new_base                                | Return value                 |
     /// | -------------------------------- | --------------------------------------- | ---------------------------- |
-    /// | a > 0                            | (0 < new_base < 1) -or- (new_base > 1)  | log new_base (a)             |
+    /// | a > 0                            | (0 < new_base < 1) <br>-or-<br> (new_base > 1)  | log new_base (a)             |
     /// | a < 0                            | (any value)                             | xtd::math::NaN               |
     /// | (any value)                      | new_base < 0                            | xtd::math::NaN               |
     /// | a != 1                           | new_base = 0                            | xtd::math::NaN               |
