@@ -7,6 +7,43 @@ include(../../scripts/cmake/xtd_version.cmake)
 add_references(xtd.core)
 add_sources(
   src/main.cpp 
+  src/xtd/collections/tests/key_not_found_exception_tests.cpp
+  src/xtd/diagnostics/tests/process_start_info_tests.cpp
+  src/xtd/diagnostics/tests/stopwatch_tests.cpp
+  src/xtd/diagnostics/tests/trace_listener_tests.cpp
+  src/xtd/io/tests/directory_tests.cpp
+  src/xtd/io/tests/directory_info_tests.cpp
+  src/xtd/io/tests/directory_not_found_exception_tests.cpp
+  src/xtd/io/tests/drive_not_found_exception_tests.cpp
+  src/xtd/io/tests/end_of_stream_exception_tests.cpp
+  src/xtd/io/tests/file_tests.cpp
+  src/xtd/io/tests/file_format_exception_tests.cpp
+  src/xtd/io/tests/file_load_exception_tests.cpp
+  src/xtd/io/tests/file_not_found_exception_tests.cpp
+  src/xtd/io/tests/io_exception_tests.cpp
+  src/xtd/io/tests/path_tests.cpp
+  src/xtd/io/tests/path_too_long_exception_tests.cpp
+  src/xtd/io/tests/stream_writer_tests.cpp
+  src/xtd/io/tests/string_reader_tests.cpp
+  src/xtd/net/tests/cookie_exception_tests.cpp
+  src/xtd/net/tests/dns_tests.cpp
+  src/xtd/net/tests/dns_end_point_tests.cpp
+  src/xtd/net/tests/end_point_tests.cpp
+  src/xtd/net/tests/ip_address_tests.cpp
+  src/xtd/net/tests/ip_end_point_tests.cpp
+  src/xtd/net/tests/ip_host_entry_tests.cpp
+  src/xtd/net/tests/network_credential_tests.cpp
+  src/xtd/net/tests/protocol_violation_exception_tests.cpp
+  src/xtd/net/tests/socket_address_tests.cpp
+  src/xtd/net/tests/web_exception_tests.cpp
+  src/xtd/net/sockets/tests/ip_v6_multicast_option_tests.cpp
+  src/xtd/net/sockets/tests/linger_option_tests.cpp
+  src/xtd/net/sockets/tests/multicast_option_tests.cpp
+  src/xtd/net/sockets/tests/socket_tests.cpp
+  src/xtd/net/sockets/tests/socket_exception_tests.cpp
+  src/xtd/net/sockets/tests/socket_information_tests.cpp
+  src/xtd/reflection/tests/assembly_tests.cpp
+  src/xtd/security/tests/secure_string_tests.cpp
   src/xtd/tests/any_tests.cpp
   src/xtd/tests/architecture_id_tests.cpp
   src/xtd/tests/argument_exception_tests.cpp
@@ -20,6 +57,7 @@ add_sources(
   src/xtd/tests/bytes_assert.h
   src/xtd/tests/compiler_tests.cpp
   src/xtd/tests/compiler_id_tests.cpp
+  src/xtd/tests/console_cancel_event_args_tests.cpp
   src/xtd/tests/console_color_tests.cpp
   src/xtd/tests/console_key_info_tests.cpp
   src/xtd/tests/console_key_tests.cpp
@@ -91,43 +129,6 @@ add_sources(
   src/xtd/tests/wstring_object_format_without_xtd_to_string_tests.cpp
   src/xtd/tests/wstring_string_format_tests.cpp
   src/xtd/tests/xml_syntax_exception_tests.cpp
-  src/xtd/collections/tests/key_not_found_exception_tests.cpp
-  src/xtd/diagnostics/tests/process_start_info_tests.cpp
-  src/xtd/diagnostics/tests/stopwatch_tests.cpp
-  src/xtd/diagnostics/tests/trace_listener_tests.cpp
-  src/xtd/io/tests/directory_tests.cpp
-  src/xtd/io/tests/directory_info_tests.cpp
-  src/xtd/io/tests/directory_not_found_exception_tests.cpp
-  src/xtd/io/tests/drive_not_found_exception_tests.cpp
-  src/xtd/io/tests/end_of_stream_exception_tests.cpp
-  src/xtd/io/tests/file_tests.cpp
-  src/xtd/io/tests/file_format_exception_tests.cpp
-  src/xtd/io/tests/file_load_exception_tests.cpp
-  src/xtd/io/tests/file_not_found_exception_tests.cpp
-  src/xtd/io/tests/io_exception_tests.cpp
-  src/xtd/io/tests/path_tests.cpp
-  src/xtd/io/tests/path_too_long_exception_tests.cpp
-  src/xtd/io/tests/stream_writer_tests.cpp
-  src/xtd/io/tests/string_reader_tests.cpp
-  src/xtd/net/tests/cookie_exception_tests.cpp
-  src/xtd/net/tests/dns_tests.cpp
-  src/xtd/net/tests/dns_end_point_tests.cpp
-  src/xtd/net/tests/end_point_tests.cpp
-  src/xtd/net/tests/ip_address_tests.cpp
-  src/xtd/net/tests/ip_end_point_tests.cpp
-  src/xtd/net/tests/ip_host_entry_tests.cpp
-  src/xtd/net/tests/network_credential_tests.cpp
-  src/xtd/net/tests/protocol_violation_exception_tests.cpp
-  src/xtd/net/tests/socket_address_tests.cpp
-  src/xtd/net/tests/web_exception_tests.cpp
-  src/xtd/net/sockets/tests/ip_v6_multicast_option_tests.cpp
-  src/xtd/net/sockets/tests/linger_option_tests.cpp
-  src/xtd/net/sockets/tests/multicast_option_tests.cpp
-  src/xtd/net/sockets/tests/socket_tests.cpp
-  src/xtd/net/sockets/tests/socket_exception_tests.cpp
-  src/xtd/net/sockets/tests/socket_information_tests.cpp
-  src/xtd/reflection/tests/assembly_tests.cpp
-  src/xtd/security/tests/secure_string_tests.cpp
   src/xtd/threading/tests/interlocked_tests.cpp
 )
 target_type(TEST_APPLICATION)
