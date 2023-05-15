@@ -404,6 +404,27 @@ namespace xtd::tests {
       assert::throws<argument_out_of_range_exception>([]{console::set_window_position(0, console::buffer_height());}, csf_);
     }
 
+    void test_method_(set_window_size) {
+      auto window_width = console::window_width();
+      auto window_height = console::window_height();
+      console::set_window_size(20, 10);
+      // During a unit test on CI, there is not always a graphical OS, only a console mode OS. So you can't change the size of the console window.
+      //assert::are_equal(20, console::window_width(), csf_);
+      //assert::are_equal(10, console::window_height(), csf_);
+      console::set_window_size(window_width, window_height);
+      assert::are_equal(window_width, console::window_width(), csf_);
+      assert::are_equal(window_height, console::window_height(), csf_);
+    }
+    
+    void test_method_(set_window_size_with_invalid_values) {
+      assert::throws<argument_out_of_range_exception>([]{console::set_window_size(0, 10);}, csf_);
+      assert::throws<argument_out_of_range_exception>([]{console::set_window_size(-1, 10);}, csf_);
+      assert::throws<argument_out_of_range_exception>([]{console::set_window_size(int16_object::max_value, 10);}, csf_);
+      assert::throws<argument_out_of_range_exception>([]{console::set_window_size(10, 0);}, csf_);
+      assert::throws<argument_out_of_range_exception>([]{console::set_window_size(10, -1);}, csf_);
+      assert::throws<argument_out_of_range_exception>([]{console::set_window_size(10, int16_object::max_value);}, csf_);
+    }
+
     void test_method_(write) {
       auto op = path::combine(path::get_temp_path(), "xtd_console_test.txt");
       auto os = xtd::io::file::open_write(op);
