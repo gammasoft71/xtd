@@ -5,6 +5,7 @@
 #include <any>
 #include "static.h"
 #include "types.h"
+#include "argument_null_exception.h"
 #include "invalid_cast_exception.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -198,6 +199,7 @@ namespace xtd {
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
     template<typename type_t>
     static const type_t& to_ref(const type_t* value) {
+      if (value == nullptr) throw argument_null_exception(csf_);
       return *value;
     }
     /// @brief Casts a type into another type.
@@ -214,6 +216,7 @@ namespace xtd {
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
     template<typename type_t>
     static type_t& to_ref(type_t* value) { // value parameter can't be const by design.
+      if (value == nullptr) throw argument_null_exception(csf_);
       return *value;
     }
     
@@ -275,6 +278,7 @@ namespace xtd {
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
     template<typename new_type_t, typename current_type_t>
     static const new_type_t& to_ref(const current_type_t* value) {
+      if (value == nullptr) throw argument_null_exception(csf_);
       try {
         return dynamic_cast<const new_type_t&>(*value);
       } catch (const std::exception& e) {
@@ -297,6 +301,7 @@ namespace xtd {
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
     template<typename new_type_t, typename current_type_t>
     static new_type_t& to_ref(current_type_t* value) {
+      if (value == nullptr) throw argument_null_exception(csf_);
       try {
         return dynamic_cast<new_type_t&>(*value);
       } catch (const std::exception& e) {
