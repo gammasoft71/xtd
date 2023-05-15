@@ -56,8 +56,8 @@ int32 console::buffer_height() {
 }
 
 void console::buffer_height(int32 height) {
-  if (height <= 0 || height >= int16_object::max_value) throw argument_out_of_range_exception(csf_);
   register_cancel_key_press(); // Must be first...
+  if (height <= 0 || height >= int16_object::max_value) throw argument_out_of_range_exception(csf_);
   native::console::buffer_height(height);
 }
 
@@ -67,8 +67,8 @@ int32 console::buffer_width() {
 }
 
 void console::buffer_width(int32 width) {
-  if (width <= 0 || width >= int16_object::max_value) throw argument_out_of_range_exception(csf_);
   register_cancel_key_press(); // Must be first...
+  if (width <= 0 || width >= int16_object::max_value) throw argument_out_of_range_exception(csf_);
   native::console::buffer_width(width);
 }
 
@@ -93,8 +93,8 @@ int32 console::cursor_size() {
 }
 
 void console::cursor_size(int32 size) {
-  if (size < 1 || size > 100) throw argument_out_of_range_exception(csf_);
   register_cancel_key_press(); // Must be first...
+  if (size < 1 || size > 100) throw argument_out_of_range_exception(csf_);
   native::console::cursor_size(size);
 }
 
@@ -124,8 +124,8 @@ console_color console::foreground_color() {
 }
 
 bool console::foreground_color(console_color color) {
-  if (!enum_object<>::contains(color)) throw argument_exception(csf_);
   register_cancel_key_press(); // Must be first...
+  if (!enum_object<>::contains(color)) throw argument_exception(csf_);
   return native::console::foreground_color(static_cast<int32>(color));
 }
 
@@ -310,9 +310,9 @@ bool console::reset_color() {
 }
 
 void console::set_cursor_position(int32 left, int32 top) {
+  register_cancel_key_press(); // Must be first...
   if (left < 0 || left >= buffer_width()) throw argument_out_of_range_exception(csf_);
   if (top < 0 || top >= buffer_height()) throw argument_out_of_range_exception(csf_);
-  register_cancel_key_press(); // Must be first...
   native::console::set_cursor_position(left, top);
 }
 
@@ -344,8 +344,8 @@ void console::set_window_size(int32 width, int32 height) {
 }
 
 void console::write_line() {
-  write_line_("");
   register_cancel_key_press(); // Must be first...
+  write_line_("");
 }
 
 bool console::on_cancel_key_press(int32 special_key) {
