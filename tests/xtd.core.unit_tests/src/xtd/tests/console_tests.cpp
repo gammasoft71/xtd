@@ -275,44 +275,38 @@ namespace xtd::tests {
     void test_method_(open_standard_output) {
       assert::are_equal(std::cout.rdbuf(), console::open_standard_output().rdbuf(), csf_);
     }
-
-    void test_method_(redirect_error) {
-      auto ep = path::combine(path::get_temp_path(), "xtd_test_error.txt");
-      auto es = xtd::io::file::open_write(ep);
-      console::set_error(es);
-      assert::are_not_equal(std::cerr.rdbuf(), console::error.rdbuf(), csf_);
-      assert::is_true(console::is_error_redirected(), csf_);
-      es.close();
-      console::set_error(console::open_standard_error());
-      assert::is_false(console::is_error_redirected(), csf_);
-      file::remove(ep);
-    }
-
-    void test_method_(redirect_in) {
+    
+    void test_method_(read_line) {
       auto ip = path::combine(path::get_temp_path(), "xtd_test_in.txt");
-      file::write_all_lines(ip, {""});
+      file::write_all_lines(ip, {"line 1", "line 2", "line 3"});
       auto is = xtd::io::file::open_read(ip);
       console::set_in(is);
-      assert::are_not_equal(std::cin.rdbuf(), console::in.rdbuf(), csf_);
-      assert::is_true(console::is_input_redirected(), csf_);
+
+      assert::are_equal("line 1", console::read_line(), csf_);
+      assert::are_equal("line 2", console::read_line(), csf_);
+      assert::are_equal("line 3", console::read_line(), csf_);
+
       is.close();
       console::set_in(console::open_standard_input());
-      assert::is_false(console::is_input_redirected(), csf_);
       file::remove(ip);
     }
     
-    void test_method_(redirect_out) {
-      auto op = path::combine(path::get_temp_path(), "xtd_test_out.txt");
-      auto os = xtd::io::file::open_write(op);
-      console::set_out(os);
-      assert::are_not_equal(std::cout.rdbuf(), console::out.rdbuf(), csf_);
-      assert::is_true(console::is_output_redirected(), csf_);
-      os.close();
-      console::set_out(console::open_standard_output());
-      assert::is_false(console::is_output_redirected(), csf_);
-      file::remove(op);
+    void test_method_(read_key) {
+      // Can not be tested by unit test.
+      //assert::are_equal(console_key_info('a', console_key::a, false, false, false), console::read_key(), csf_);
+      //assert::are_equal(console_key_info('a', console_key::a, false, false, false), console::read_key(true), csf_);
     }
     
+    void test_method_(reset_color) {
+      auto background_color = console::background_color();
+      auto foreground_color = console::foreground_color();
+      console::background_color(console_color::blue);
+      console::foreground_color(console_color::yellow);
+      console::reset_color();
+      assert::are_equal(background_color, console::background_color(), csf_);
+      assert::are_equal(foreground_color, console::foreground_color(), csf_);
+    }
+
     void test_method_(set_cursor_position) {
       auto [cursor_left, cursor_top] = console::get_cursor_position();
       console::set_cursor_position(20, 10);
@@ -328,6 +322,62 @@ namespace xtd::tests {
       assert::throws<argument_out_of_range_exception>([]{console::set_cursor_position(console::buffer_width(), 0);}, csf_);
       assert::throws<argument_out_of_range_exception>([]{console::set_cursor_position(0, -1);}, csf_);
       assert::throws<argument_out_of_range_exception>([]{console::set_cursor_position(0, console::buffer_height());}, csf_);
+    }
+
+    void test_method_(set_error) {
+      auto ep = path::combine(path::get_temp_path(), "xtd_test_error.txt");
+      auto es = xtd::io::file::open_write(ep);
+      console::set_error(es);
+      assert::are_not_equal(std::cerr.rdbuf(), console::error.rdbuf(), csf_);
+      assert::is_true(console::is_error_redirected(), csf_);
+      es.close();
+      console::set_error(console::open_standard_error());
+      assert::is_false(console::is_error_redirected(), csf_);
+      file::remove(ep);
+    }
+    
+    void test_method_(set_in) {
+      auto ip = path::combine(path::get_temp_path(), "xtd_test_in.txt");
+      file::write_all_lines(ip, {""});
+      auto is = xtd::io::file::open_read(ip);
+      console::set_in(is);
+      assert::are_not_equal(std::cin.rdbuf(), console::in.rdbuf(), csf_);
+      assert::is_true(console::is_input_redirected(), csf_);
+      is.close();
+      console::set_in(console::open_standard_input());
+      assert::is_false(console::is_input_redirected(), csf_);
+      file::remove(ip);
+    }
+    
+    void test_method_(set_out) {
+      auto op = path::combine(path::get_temp_path(), "xtd_test_out.txt");
+      auto os = xtd::io::file::open_write(op);
+      console::set_out(os);
+      assert::are_not_equal(std::cout.rdbuf(), console::out.rdbuf(), csf_);
+      assert::is_true(console::is_output_redirected(), csf_);
+      os.close();
+      console::set_out(console::open_standard_output());
+      assert::is_false(console::is_output_redirected(), csf_);
+      file::remove(op);
+    }
+
+    void test_method_(set_window_position) {
+      auto window_left = console::window_left();
+      auto window_top = console::window_top();
+      console::set_window_position(20, 10);
+      // During a unit test on CI, there is not always a graphical OS, only a console mode OS. So you can't change the positioon of the console window.
+      //assert::are_equal(20, console::window_left(), csf_);
+      //assert::are_equal(10, console::window_top(), csf_);
+      console::set_window_position(window_left, window_top);
+      assert::are_equal(window_left, console::window_left(), csf_);
+      assert::are_equal(window_top, console::window_top(), csf_);
+    }
+    
+    void test_method_(set_window_position_with_invalid_values) {
+      assert::throws<argument_out_of_range_exception>([]{console::set_window_position(-1, 0);}, csf_);
+      assert::throws<argument_out_of_range_exception>([]{console::set_window_position(console::buffer_width(), 0);}, csf_);
+      assert::throws<argument_out_of_range_exception>([]{console::set_window_position(0, -1);}, csf_);
+      assert::throws<argument_out_of_range_exception>([]{console::set_window_position(0, console::buffer_height());}, csf_);
     }
 
     void test_method_(write) {
