@@ -325,7 +325,6 @@ namespace xtd {
     template<typename new_type_t, typename current_type_t>
     static std::unique_ptr<new_type_t> to_unique_ptr(std::unique_ptr<current_type_t>& value) {
       try {
-        //return move(value);
         return std::unique_ptr<new_type_t>(as<new_type_t>(value.release()));
       } catch (const std::exception& e) {
         throw invalid_cast_exception(e.what(), csf_);
@@ -347,7 +346,6 @@ namespace xtd {
     template<typename new_type_t, typename current_type_t>
     static std::unique_ptr<new_type_t> to_unique_ptr(std::unique_ptr<current_type_t>&& value) {
       try {
-        //return move(value);
         return std::unique_ptr<new_type_t>(as<new_type_t>(value.release()));
       } catch (const std::exception& e) {
         throw invalid_cast_exception(e.what(), csf_);
