@@ -228,6 +228,13 @@ namespace xtd::tests {
       assert::are_equal(window_height, console::window_height(), csf_);
     }
     
+    void test_method_(window_height_with_invalid_values) {
+      assert::throws<argument_out_of_range_exception>([]{console::window_height(0);}, csf_);
+      assert::throws<argument_out_of_range_exception>([]{console::window_height(-1);}, csf_);
+      assert::throws<argument_out_of_range_exception>([]{console::window_height(int16_object::max_value);}, csf_);
+      assert::throws<argument_out_of_range_exception>([]{console::window_height(as<int32>(int16_object::max_value) + 1);}, csf_);
+    }
+
     void test_method_(window_left) {
       auto window_left = console::window_left();
       console::window_left(5);
@@ -237,6 +244,11 @@ namespace xtd::tests {
       assert::are_equal(window_left, console::window_left(), csf_);
     }
     
+    void test_method_(window_left_with_invalid_values) {
+      assert::throws<argument_out_of_range_exception>([]{console::window_left(-1);}, csf_);
+      assert::throws<argument_out_of_range_exception>([]{console::window_left(console::buffer_width());}, csf_);
+    }
+
     void test_method_(window_top) {
       auto window_top = console::window_top();
       console::window_top(5);
@@ -246,6 +258,11 @@ namespace xtd::tests {
       assert::are_equal(window_top, console::window_top(), csf_);
     }
     
+    void test_method_(window_top_with_invalid_values) {
+      assert::throws<argument_out_of_range_exception>([]{console::window_top(-1);}, csf_);
+      assert::throws<argument_out_of_range_exception>([]{console::window_top(console::buffer_width());}, csf_);
+    }
+
     void test_method_(window_width) {
       auto window_width = console::window_width();
       console::window_width(100);
@@ -255,6 +272,13 @@ namespace xtd::tests {
       assert::are_equal(window_width, console::window_width(), csf_);
     }
     
+    void test_method_(window_width_with_invalid_values) {
+      assert::throws<argument_out_of_range_exception>([]{console::window_width(0);}, csf_);
+      assert::throws<argument_out_of_range_exception>([]{console::window_width(-1);}, csf_);
+      assert::throws<argument_out_of_range_exception>([]{console::window_width(int16_object::max_value);}, csf_);
+      assert::throws<argument_out_of_range_exception>([]{console::window_width(as<int32>(int16_object::max_value) + 1);}, csf_);
+    }
+
     void test_method_(get_cursor_position) {
       auto [cursor_left, cursor_top] = console::get_cursor_position();
       console::cursor_left(20);
