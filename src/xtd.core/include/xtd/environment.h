@@ -328,7 +328,7 @@ namespace xtd {
     /// @brief Gets an xtd::cpp_language object that contains the current c++ standard identifier and version number.
     /// @return An object that contains the c++ standard identifier and version number.
     static xtd::cpp_language cpp_version() noexcept {
-      static xtd::cpp_language cpp_language;
+      static auto cpp_language = xtd::cpp_language {__cplusplus};
       return cpp_language;
     }
     

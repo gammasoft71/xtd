@@ -55,9 +55,8 @@ xtd::ustring cpp_language::version_string() const noexcept {
   return ustring::format("{} {}", name(), version());
 }
 
-const xtd::version& cpp_language::version() const noexcept {
-  static xtd::version ver(cpp_ / 100, cpp_ % 100);
-  return ver;
+xtd::version cpp_language::version() const noexcept {
+  return xtd::version(cpp_ / 100, cpp_ % 100);
 }
 
 int32 cpp_language::year() const noexcept {return cpp_ / 100;}
