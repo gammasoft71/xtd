@@ -40,10 +40,11 @@ namespace {
     return FALSE;
   }
   
-  bool treat_control_c_as_input = []()-> bool {
+  bool init_treat_control_c_as_input = []()-> bool {
     SetConsoleCtrlHandler(&__handler_routine, TRUE);
     return false;
   }();
+  bool treat_control_c_as_input =  false;
   auto background_color = __background_color();
   auto foreground_color = __foreground_color();
   auto buffer_height = -1;
@@ -112,31 +113,41 @@ bool console::beep(uint_least32_t frequency, uint_least32_t duration) {
 }
 
 int_least32_t console::buffer_height() {
+  /*
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   ::buffer_height = GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi) == TRUE ? csbi.dwSize.Y : console::window_height();
+   */
   return ::buffer_height;
 }
 
 bool console::buffer_height(int_least32_t height) {
   ::buffer_height = height;
+  /*
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   csbi.dwSize.Y = static_cast<int_least16_t>(height);
   return SetConsoleScreenBufferSize(GetStdHandle(STD_OUTPUT_HANDLE), csbi.dwSize) == TRUE;
+   */
+  return true;
 }
 
 int_least32_t console::buffer_width() {
+  /*
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   ::buffer_width = GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi) == TRUE ? csbi.dwSize.X : console::window_width();
+   */
   return ::buffer_width;
 }
 
 bool console::buffer_width(int_least32_t width) {
   ::buffer_width = width;
+  /*
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   csbi.dwSize.X = static_cast<int_least16_t>(width);
   return SetConsoleScreenBufferSize(GetStdHandle(STD_OUTPUT_HANDLE), csbi.dwSize) == TRUE;
+   */
+  return true;
 }
 
 bool console::caps_lock() {
