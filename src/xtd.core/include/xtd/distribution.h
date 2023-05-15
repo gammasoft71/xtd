@@ -28,58 +28,6 @@ namespace xtd {
     /// @name Constructors
     
     /// @{
-    /// @brief Initializes a new instance of the distribution class, using the specified name.
-    /// @param name The operating system distribution name.
-    explicit distribution(const xtd::ustring& name);
-    /// @brief Initializes a new instance of the distribution class, using the specified name, and version.
-    /// @param name The operating system distribution name.
-    /// @param version A Version object that indicates the version of the operating system distribution.
-    distribution(const xtd::ustring& name, const xtd::version& version);
-    /// @brief Initializes a new instance of the distribution class, using the specified name, version, and code name.
-    /// @param name The operating system distribution name.
-    /// @param version A Version object that indicates the version of the operating system distribution.
-    /// @param code_name The operating system distribution code name.
-    distribution(const xtd::ustring& name, const xtd::version& version, const xtd::ustring& code_name);
-    /// @brief Initializes a new instance of the distribution class, using the specified name, version, code name, and decription.
-    /// @param name The operating system distribution name.
-    /// @param version A Version object that indicates the version of the operating system distribution.
-    /// @param code_name The operating system distribution code name.
-    /// @param description The operating system distribution description.
-    distribution(const xtd::ustring& name, const xtd::version& version, const xtd::ustring& code_name, const xtd::ustring& description);
-    /// @brief Initializes a new instance of the distribution class, using the specified name, version, code name, decription, and identifier.
-    /// @param name The operating system distribution name.
-    /// @param version A Version object that indicates the version of the operating system distribution.
-    /// @param code_name The operating system distribution code name.
-    /// @param description The operating system distribution description.
-    /// @param id The operating system distribution identifier.
-    distribution(const xtd::ustring& name, const xtd::version& version, const xtd::ustring& code_name, const xtd::ustring& description, const xtd::ustring& id);
-    /// @brief Initializes a new instance of the distribution class, using the specified name, version, code name, decription, identifier, and like identifiers array.
-    /// @param name The operating system distribution name.
-    /// @param version A Version object that indicates the version of the operating system distribution.
-    /// @param code_name The operating system distribution code name.
-    /// @param description The operating system distribution description.
-    /// @param id The operating system distribution identifier.
-    /// @param like_ids The operating system distribution like identifiers array.
-    distribution(const xtd::ustring& name, const xtd::version& version, const xtd::ustring& code_name, const xtd::ustring& description, const xtd::ustring& id, const id_collection& like_ids);
-    /// @brief Initializes a new instance of the distribution class, using the specified name, version, code name, decription, identifier, like identifiers array, and version string.
-    /// @param name The operating system distribution name.
-    /// @param version A Version object that indicates the version of the operating system distribution.
-    /// @param code_name The operating system distribution code name.
-    /// @param description The operating system distribution description.
-    /// @param id The operating system distribution identifier.
-    /// @param like_ids The operating system distribution like identifiers array.
-    /// @param version_string The operating system distribution version string.
-    distribution(const xtd::ustring& name, const xtd::version& version, const xtd::ustring& code_name, const xtd::ustring& description, const xtd::ustring& id, const id_collection& like_ids, const xtd::ustring& version_string);
-    /// @brief Initializes a new instance of the distribution class, using the specified name, version, code name, decription, identifier, like identifiers array, version string, and home url.
-    /// @param name The operating system distribution name.
-    /// @param version A Version object that indicates the version of the operating system distribution.
-    /// @param code_name The operating system distribution code name.
-    /// @param description The operating system distribution description.
-    /// @param id The operating system distribution identifier.
-    /// @param like_ids The operating system distribution like identifiers array.
-    /// @param version_string The operating system distribution version string.
-    /// @param home The operating system distribution home url.
-    distribution(const xtd::ustring& name, const xtd::version& version, const xtd::ustring& code_name, const xtd::ustring& description, const xtd::ustring& id, const id_collection& like_ids, const xtd::ustring& version_string, const xtd::uri& home);
     /// @brief Initializes a new instance of the distribution class, using the specified name, version, code name, decription, identifier, like identifiers array, version string, home url and bug repport url.
     /// @param name The operating system distribution name.
     /// @param version A Version object that indicates the version of the operating system distribution.

@@ -2,30 +2,6 @@
 
 using namespace xtd;
 
-distribution::distribution(const xtd::ustring& name) : name_(name) {
-}
-
-distribution::distribution(const xtd::ustring& name, const xtd::version& version) : name_(name), version_(version) {
-}
-
-distribution::distribution(const xtd::ustring& name, const xtd::version& version, const xtd::ustring& code_name) : name_(name), version_(version), code_name_(code_name) {
-}
-
-distribution::distribution(const xtd::ustring& name, const xtd::version& version, const xtd::ustring& code_name, const xtd::ustring& description) : name_(name), version_(version), code_name_(code_name), description_(description) {
-}
-
-distribution::distribution(const xtd::ustring& name, const xtd::version& version, const xtd::ustring& code_name, const xtd::ustring& description, const xtd::ustring& id) : name_(name), version_(version), code_name_(code_name), description_(description), id_(id) {
-}
-
-distribution::distribution(const xtd::ustring& name, const xtd::version& version, const xtd::ustring& code_name, const xtd::ustring& description, const xtd::ustring& id, const id_collection& like_ids) : name_(name), version_(version), code_name_(code_name), description_(description), id_(id), like_ids_(like_ids) {
-}
-
-distribution::distribution(const xtd::ustring& name, const xtd::version& version, const xtd::ustring& code_name, const xtd::ustring& description, const xtd::ustring& id, const id_collection& like_ids, const xtd::ustring& version_string) : name_(name), version_(version), code_name_(code_name), description_(description), id_(id), like_ids_(like_ids), version_string_(version_string) {
-}
-
-distribution::distribution(const xtd::ustring& name, const xtd::version& version, const xtd::ustring& code_name, const xtd::ustring& description, const xtd::ustring& id, const id_collection& like_ids, const xtd::ustring& version_string, const xtd::uri& home) : name_(name), version_(version), code_name_(code_name), description_(description), id_(id), like_ids_(like_ids), version_string_(version_string), home_(home) {
-}
-
 distribution::distribution(const xtd::ustring& name, const xtd::version& version, const xtd::ustring& code_name, const xtd::ustring& description, const xtd::ustring& id, const id_collection& like_ids, const xtd::ustring& version_string, const xtd::uri& home, const xtd::uri& bug_repport) : name_(name), version_(version), code_name_(code_name), description_(description), id_(id), like_ids_(like_ids), version_string_(version_string), home_(home), bug_repport_(bug_repport) {
 }
 
