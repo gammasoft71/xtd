@@ -137,6 +137,7 @@ int_least32_t console::buffer_width() {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   ::buffer_width = GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi) == TRUE ? csbi.dwSize.X : console::window_width();
    */
+  if (::buffer_width == -1) ::buffer_width = console::window_width();
   return ::buffer_width;
 }
 
@@ -148,7 +149,6 @@ bool console::buffer_width(int_least32_t width) {
   csbi.dwSize.X = static_cast<int_least16_t>(width);
   return SetConsoleScreenBufferSize(GetStdHandle(STD_OUTPUT_HANDLE), csbi.dwSize) == TRUE;
    */
-  if (::buffer_width == -1) ::buffer_width = console::window_width();
   return true;
 }
 
