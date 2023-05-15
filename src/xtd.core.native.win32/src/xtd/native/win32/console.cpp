@@ -117,6 +117,7 @@ int_least32_t console::buffer_height() {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   ::buffer_height = GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi) == TRUE ? csbi.dwSize.Y : console::window_height();
    */
+  if (::buffer_height == -1) ::buffer_height = console::window_height();
   return ::buffer_height;
 }
 
@@ -147,6 +148,7 @@ bool console::buffer_width(int_least32_t width) {
   csbi.dwSize.X = static_cast<int_least16_t>(width);
   return SetConsoleScreenBufferSize(GetStdHandle(STD_OUTPUT_HANDLE), csbi.dwSize) == TRUE;
    */
+  if (::buffer_width == -1) ::buffer_width = console::window_width();
   return true;
 }
 
@@ -309,8 +311,8 @@ bool console::title(const std::string& title) {
 }
 
 bool console::treat_control_c_as_input() {
-  DWORD mode = 0;
-  ::treat_control_c_as_input = GetConsoleMode(GetStdHandle(STD_INPUT_HANDLE), &mode) == TRUE ? (mode & ENABLE_PROCESSED_INPUT) != ENABLE_PROCESSED_INPUT : false;
+  //DWORD mode = 0;
+  //::treat_control_c_as_input = GetConsoleMode(GetStdHandle(STD_INPUT_HANDLE), &mode) == TRUE ? (mode & ENABLE_PROCESSED_INPUT) != ENABLE_PROCESSED_INPUT : false;
   return ::treat_control_c_as_input;
 }
 
