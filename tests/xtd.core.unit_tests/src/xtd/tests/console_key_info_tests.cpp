@@ -29,9 +29,9 @@ namespace xtd::tests {
       
       assert::are_equal(U' ', cki.key_char(), csf_);
       assert::are_equal(as<int32>(console_key::spacebar), as<int32>(cki.key()), csf_);
-      assert::is_zero(as<int32>(cki.modifiers()) & as<int32>(console_modifiers::alt), csf_);
-      assert::are_equal(as<int32>(console_modifiers::shift), as<int32>(cki.modifiers()) & as<int32>(console_modifiers::shift), csf_);
-      assert::is_zero(as<int32>(cki.modifiers()) & as<int32>(console_modifiers::control), csf_);
+      assert::is_false((cki.modifiers() & console_modifiers::alt) == console_modifiers::alt, csf_);
+      assert::is_true((cki.modifiers() & console_modifiers::shift) == console_modifiers::shift, csf_);
+      assert::is_false((cki.modifiers() & console_modifiers::control) == console_modifiers::control, csf_);
     }
     
     void test_method_(create_console_key_info_with_key_char_key_and_alt) {
@@ -39,9 +39,9 @@ namespace xtd::tests {
       
       assert::are_equal(U'\0', cki.key_char(), csf_);
       assert::are_equal(as<int32>(console_key::up_arrow), as<int32>(cki.key()), csf_);
-      assert::are_equal(as<int32>(console_modifiers::alt), as<int32>(cki.modifiers()) & as<int32>(console_modifiers::alt), csf_);
-      assert::is_zero(as<int32>(cki.modifiers()) & as<int32>(console_modifiers::shift), csf_);
-      assert::is_zero(as<int32>(cki.modifiers()) & as<int32>(console_modifiers::control), csf_);
+      assert::is_true((cki.modifiers() & console_modifiers::alt) == console_modifiers::alt, csf_);
+      assert::is_false((cki.modifiers() & console_modifiers::shift) == console_modifiers::shift, csf_);
+      assert::is_false((cki.modifiers() & console_modifiers::control) == console_modifiers::control, csf_);
     }
     
     void test_method_(create_console_key_info_with_key_char_key_and_control) {
@@ -49,9 +49,9 @@ namespace xtd::tests {
       
       assert::are_equal(U'\t', cki.key_char(), csf_);
       assert::are_equal(as<int32>(console_key::tab), as<int32>(cki.key()), csf_);
-      assert::is_zero(as<int32>(cki.modifiers()) & as<int32>(console_modifiers::alt), csf_);
-      assert::is_zero(as<int32>(cki.modifiers()) & as<int32>(console_modifiers::shift), csf_);
-      assert::are_equal(as<int32>(console_modifiers::control), as<int32>(cki.modifiers()) & as<int32>(console_modifiers::control), csf_);
+      assert::is_false((cki.modifiers() & console_modifiers::alt) == console_modifiers::alt, csf_);
+      assert::is_false((cki.modifiers() & console_modifiers::shift) == console_modifiers::shift, csf_);
+      assert::is_true((cki.modifiers() & console_modifiers::control) == console_modifiers::control, csf_);
     }
   };
 }
