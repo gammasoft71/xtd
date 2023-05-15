@@ -5,6 +5,7 @@
 #include <any>
 #include "static.h"
 #include "types.h"
+#include "unused.h"
 #include "argument_null_exception.h"
 #include "invalid_cast_exception.h"
 
@@ -368,11 +369,11 @@ namespace xtd {
     template<typename new_type_t, typename current_type_t>
     static std::shared_ptr<new_type_t> to_shared_ptr(const std::shared_ptr<current_type_t>& value) {
       try {
-        return dynamic_pointer_cast<new_type_t>(value);
+        unused_(dynamic_cast<new_type_t&>(*value.get()));
       } catch (const std::exception& e) {
         throw invalid_cast_exception(e.what(), csf_);
       }
-      throw invalid_cast_exception(csf_);
+      return std::dynamic_pointer_cast<new_type_t>(value);
     }
     
     /// @brief Casts a type into another type.
@@ -389,11 +390,11 @@ namespace xtd {
     template<typename new_type_t, typename current_type_t>
     static std::shared_ptr<new_type_t> to_shared_ptr(std::shared_ptr<current_type_t>& value) {
       try {
-        return dynamic_pointer_cast<new_type_t>(value);
+        unused_(dynamic_cast<new_type_t&>(*value.get()));
       } catch (const std::exception& e) {
         throw invalid_cast_exception(e.what(), csf_);
       }
-      throw invalid_cast_exception(csf_);
+      return std::dynamic_pointer_cast<new_type_t>(value);
     }
     
     /// @brief Casts a type into another type.
@@ -411,11 +412,12 @@ namespace xtd {
     template<typename new_type_t, typename current_type_t>
     static std::shared_ptr<new_type_t> to_shared_ptr(std::shared_ptr<current_type_t>&& value) {
       try {
-        return move(value);
+        unused_(dynamic_cast<new_type_t&>(*value.get()));
       } catch (const std::exception& e) {
         throw invalid_cast_exception(e.what(), csf_);
       }
-      throw invalid_cast_exception(csf_);
+      //return std::move(value);
+      return std::dynamic_pointer_cast<new_type_t>(std::move(value));
     }
     /// @}
   };
