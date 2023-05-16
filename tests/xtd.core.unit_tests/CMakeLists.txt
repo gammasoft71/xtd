@@ -101,8 +101,9 @@ add_sources(
   src/xtd/tests/overflow_exception_tests.cpp
   src/xtd/tests/parse_tests.cpp
   src/xtd/tests/platform_not_supported_exception_tests.cpp
-  src/xtd/tests/registered_enum_class_tests.cpp
   src/xtd/tests/registered_enum_class_flags_tests.cpp
+  src/xtd/tests/registered_enum_class_tests.cpp
+  src/xtd/tests/registered_enum_flags_tests.cpp
   src/xtd/tests/registered_enum_tests.cpp
   src/xtd/tests/string_boolean_format_tests.cpp
   src/xtd/tests/string_date_time_format_tests.cpp
@@ -120,8 +121,8 @@ add_sources(
   src/xtd/tests/time_out_exception_tests.cpp
   src/xtd/tests/unauthorized_access_exception_tests.cpp
   src/xtd/tests/underflow_exception_tests.cpp
-  src/xtd/tests/unregistered_enum_class_tests.cpp
   src/xtd/tests/unregistered_enum_class_flags_tests.cpp
+  src/xtd/tests/unregistered_enum_class_tests.cpp
   src/xtd/tests/uri_tests.cpp
   src/xtd/tests/ustring_tests.cpp
   src/xtd/tests/version_tests.cpp
