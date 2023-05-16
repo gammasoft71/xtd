@@ -124,6 +124,7 @@ add_sources(
   src/xtd/tests/unregistered_enum_class_flags_tests.cpp
   src/xtd/tests/unregistered_enum_class_tests.cpp
   src/xtd/tests/unregistered_enum_flags_tests.cpp
+  src/xtd/tests/unregistered_enum_tests.cpp
   src/xtd/tests/uri_tests.cpp
   src/xtd/tests/ustring_tests.cpp
   src/xtd/tests/version_tests.cpp

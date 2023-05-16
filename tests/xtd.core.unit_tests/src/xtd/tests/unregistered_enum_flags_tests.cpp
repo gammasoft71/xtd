@@ -4,7 +4,7 @@
 using namespace xtd;
 using namespace xtd::tunit;
 
-enum class unregistered_enum_flags_test {
+enum unregistered_enum_flags_test {
   none,
   one = 0b1,
   two = 0b10,
