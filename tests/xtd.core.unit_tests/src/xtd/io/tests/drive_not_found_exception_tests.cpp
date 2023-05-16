@@ -63,7 +63,7 @@ namespace xtd::io::tests {
       assert::is_false(e.inner_exception().has_value(), csf_);
       assert::are_equal(0U, e.line_number(), csf_);
       assert::is_empty(e.member_name(), csf_);
-      assert::are_equal("", e.message(), csf_);
+      assert::is_empty(e.message(), csf_);
       assert::are_equal("xtd::io::drive_not_found_exception", e.name(), csf_);
       assert::is_empty(e.stack_trace(), csf_);
       assert::are_equal("xtd::io::drive_not_found_exception", e.to_string(), csf_);
@@ -80,7 +80,7 @@ namespace xtd::io::tests {
       assert::are_equal(std::system_category(), e.error_code().category(), csf_);
       assert::are_equal(info.get_file_line_number(), e.line_number(), csf_);
       assert::are_equal(info.get_method(), e.member_name(), csf_);
-      assert::are_equal("", e.message(), csf_);
+      assert::is_empty(e.message(), csf_);
       assert::are_equal("xtd::io::drive_not_found_exception", e.name(), csf_);
       assert::are_equal(info.to_string(), e.stack_trace(), csf_);
       assert::are_equal("xtd::io::drive_not_found_exception\n" + info.to_string(), e.to_string(), csf_);

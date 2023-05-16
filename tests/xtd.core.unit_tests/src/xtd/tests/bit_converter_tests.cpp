@@ -531,7 +531,7 @@ namespace xtd::tests {
       assert::are_equal("0F-00-00-00-00-10-00-FF-03-00-00-CA-9A-3B-FF-FF-FF-FF-7F", bit_converter::to_string(vectorFour), csf_);
       
       vector<xtd::byte> vectorEmpty;
-      assert::are_equal("", bit_converter::to_string(vectorEmpty), csf_);
+      assert::is_empty(bit_converter::to_string(vectorEmpty), csf_);
     }
     
     void test_method_(to_string_with_start_index) {
@@ -542,25 +542,25 @@ namespace xtd::tests {
       assert::throws<argument_out_of_range_exception>([&] {bit_converter::to_string(vectorOne, 3);}, csf_);
       
       vector<xtd::byte> vectorEmpty;
-      assert::are_equal("", bit_converter::to_string(vectorEmpty, 0), csf_);
+      assert::is_empty(bit_converter::to_string(vectorEmpty, 0), csf_);
       assert::throws<argument_out_of_range_exception>([&] {bit_converter::to_string(vectorEmpty, 1);}, csf_);
     }
     
     void test_method_(to_string_with_start_index_and_length) {
       vector<xtd::byte> vectorOne = {3, 6, 9};
       
-      assert::are_equal("", bit_converter::to_string(vectorOne, 0, 0), csf_);
+      assert::is_empty(bit_converter::to_string(vectorOne, 0, 0), csf_);
       assert::are_equal("03", bit_converter::to_string(vectorOne, 0, 1), csf_);
       assert::are_equal("03-06", bit_converter::to_string(vectorOne, 0, 2), csf_);
       assert::are_equal("03-06-09", bit_converter::to_string(vectorOne, 0, 3), csf_);
       assert::throws<argument_out_of_range_exception>([&] {bit_converter::to_string(vectorOne, 0, 4);}, csf_);
       
-      assert::are_equal("", bit_converter::to_string(vectorOne, 1, 0), csf_);
+      assert::is_empty(bit_converter::to_string(vectorOne, 1, 0), csf_);
       assert::are_equal("06", bit_converter::to_string(vectorOne, 1, 1), csf_);
       assert::are_equal("06-09", bit_converter::to_string(vectorOne, 1, 2), csf_);
       assert::throws<argument_out_of_range_exception>([&] {bit_converter::to_string(vectorOne, 1, 3);}, csf_);
       
-      assert::are_equal("", bit_converter::to_string(vectorOne, 2, 0), csf_);
+      assert::is_empty(bit_converter::to_string(vectorOne, 2, 0), csf_);
       assert::are_equal("09", bit_converter::to_string(vectorOne, 2, 1), csf_);
       assert::throws<argument_out_of_range_exception>([&] {bit_converter::to_string(vectorOne, 2, 2);}, csf_);
       

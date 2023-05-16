@@ -31,7 +31,7 @@ namespace xtd::reflection::tests {
     }
 
     void test_method_(assembly_file_version) {
-      assert::are_equal("", assembly::get_executing_assembly().file_version(), csf_);
+      assert::is_empty(assembly::get_executing_assembly().file_version(), csf_);
     }
 
     void test_method_(assembly_guid) {
@@ -39,11 +39,11 @@ namespace xtd::reflection::tests {
     }
 
     void test_method_(assembly_identifier) {
-      assert::are_equal("", assembly::get_executing_assembly().identifier(), csf_);
+      assert::is_empty(assembly::get_executing_assembly().identifier(), csf_);
     }
 
     void test_method_(assembly_name) {
-      assert::are_equal("", assembly::get_executing_assembly().name(), csf_);
+      assert::is_empty(assembly::get_executing_assembly().name(), csf_);
     }
 
     void test_method_(assembly_product) {
@@ -55,11 +55,11 @@ namespace xtd::reflection::tests {
     }
 
     void test_method_(assembly_trademark) {
-      assert::are_equal("", assembly::get_executing_assembly().trademarks(), csf_);
+      assert::is_empty(assembly::get_executing_assembly().trademarks(), csf_);
     }
 
     void test_method_(assembly_version) {
-      assert::are_equal("", assembly::get_executing_assembly().version(), csf_);
+      assert::is_empty(assembly::get_executing_assembly().version(), csf_);
     }
   };
 }
