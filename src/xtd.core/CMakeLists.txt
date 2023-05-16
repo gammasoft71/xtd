@@ -57,6 +57,7 @@ add_sources(
   include/xtd/enum.h
   include/xtd/enum_attribute.h
   include/xtd/enum_collection.h
+  include/xtd/enum_object.h
   include/xtd/enum_register.h
   include/xtd/enum_set_attribute.h
   include/xtd/environment.h
