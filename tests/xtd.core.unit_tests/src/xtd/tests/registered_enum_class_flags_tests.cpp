@@ -66,5 +66,6 @@ namespace xtd::tests {
     void test_method_(parse_with_invalid_enum) {
       assert::are_equal(as<registered_enum_class_flags_test>(16), ustring::parse<registered_enum_class_flags_test>("16"), csf_);
       assert::throws<format_exception>([]{ustring::parse<registered_enum_class_flags_test>("five");}, csf_);
-    }  };
+    }
+  };
 }
