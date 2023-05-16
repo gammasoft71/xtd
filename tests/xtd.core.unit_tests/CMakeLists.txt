@@ -101,6 +101,7 @@ add_sources(
   src/xtd/tests/overflow_exception_tests.cpp
   src/xtd/tests/parse_tests.cpp
   src/xtd/tests/platform_not_supported_exception_tests.cpp
+  src/xtd/tests/registered_enum_class_tests.cpp
   src/xtd/tests/string_boolean_format_tests.cpp
   src/xtd/tests/string_date_time_format_tests.cpp
   src/xtd/tests/string_duration_format_tests.cpp
