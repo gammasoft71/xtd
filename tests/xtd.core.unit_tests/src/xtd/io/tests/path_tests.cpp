@@ -90,15 +90,15 @@ namespace xtd::io::tests {
     }
     
     void test_method_(get_directory_name_without_path) {
-      assert::are_equal("", path::get_directory_name("file.ext"), csf_);
+      assert::is_empty(path::get_directory_name("file.ext"), csf_);
     }
     
     void test_method_(get_directory_name_without_path_and_without_extension) {
-      assert::are_equal("", path::get_directory_name("file"), csf_);
+      assert::is_empty(path::get_directory_name("file"), csf_);
     }
     
     void test_method_(get_directory_name_with_empty_source) {
-      assert::are_equal("", path::get_directory_name(""), csf_);
+      assert::is_empty(path::get_directory_name(""), csf_);
     }
     
     void test_method_(get_extension) {
@@ -110,7 +110,7 @@ namespace xtd::io::tests {
     }
     
     void test_method_(get_extension_without_extension) {
-      assert::are_equal("", path::get_extension("path1/path2/file"), csf_);
+      assert::is_empty(path::get_extension("path1/path2/file"), csf_);
     }
     
     void test_method_(get_extension_without_file_name) {
@@ -118,11 +118,11 @@ namespace xtd::io::tests {
     }
     
     void test_method_(get_extension_without_file) {
-      assert::are_equal("", path::get_extension("path1/path2/"), csf_);
+      assert::is_empty(path::get_extension("path1/path2/"), csf_);
     }
     
     void test_method_(get_extension_with_empty_source) {
-      assert::are_equal("", path::get_extension(""), csf_);
+      assert::is_empty(path::get_extension(""), csf_);
     }
     
     // Remove following tests as they do not work on Github actions...

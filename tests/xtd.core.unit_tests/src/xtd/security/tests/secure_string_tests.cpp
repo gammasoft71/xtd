@@ -16,7 +16,7 @@ namespace xtd::security::tests {
     void test_method_(create_secure_string_with_null_pointer) {
       secure_string ss(nullptr, 14);
       assert::are_equal(0U, ss.size(), csf_);
-      assert::are_equal("", ss.to_unsecure_string(), csf_);
+      assert::is_empty(ss.to_unsecure_string(), csf_);
     }
   };
 }

@@ -30,11 +30,11 @@ namespace xtd::io::tests {
     }
     
     void test_method_(read_line_with_empty_string) {
-      assert::are_equal("", string_reader("").read_line(), csf_);
+      assert::is_empty(string_reader("").read_line(), csf_);
     }
     
     void test_method_(read_to_end_with_empty_string) {
-      assert::are_equal("", string_reader("").read_to_end(), csf_);
+      assert::is_empty(string_reader("").read_to_end(), csf_);
     }
     
     void test_method_(peek_with_one_char_string) {
@@ -139,13 +139,13 @@ namespace xtd::io::tests {
       assert::are_equal("Line 1", sr.read_line(), csf_);
       assert::are_equal("Line 2", sr.read_line(), csf_);
       assert::are_equal("Line 3", sr.read_line(), csf_);
-      assert::are_equal("", sr.read_line(), csf_);
+      assert::is_empty(sr.read_line(), csf_);
     }
     
     void test_method_(read_to_end) {
       string_reader sr("Line 1\nLine 2\nLine 3");
       assert::are_equal("Line 1\nLine 2\nLine 3", sr.read_to_end(), csf_);
-      assert::are_equal("", sr.read_to_end(), csf_);
+      assert::is_empty(sr.read_to_end(), csf_);
     }
     
     void test_method_(read_and_read_to_end) {

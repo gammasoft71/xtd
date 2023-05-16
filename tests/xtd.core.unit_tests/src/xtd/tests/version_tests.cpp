@@ -165,11 +165,11 @@ namespace xtd::tests {
     }
     
     void test_method_(to_string_field_0_with_empty_version) {
-      assert::are_equal("", version().to_string(0), csf_);
+      assert::is_empty(version().to_string(0), csf_);
     }
     
     void test_method_(to_string_field_0_with_full_version) {
-      assert::are_equal("", version(1, 2, 3, 4).to_string(0), csf_);
+      assert::is_empty(version(1, 2, 3, 4).to_string(0), csf_);
     }
     
     void test_method_(to_string_field_1_with_empty_version) {

@@ -417,7 +417,7 @@ namespace xtd::tests {
     }
     
     void test_method_(substring_start_index_out_of_range) {
-      assert::are_equal("", ustring("0123456").substring(10), csf_);
+      assert::is_empty(ustring("0123456").substring(10), csf_);
     }
     
     void test_method_(substring_count_out_of_range) {
