@@ -105,6 +105,7 @@ add_sources(
   src/xtd/tests/registered_enum_class_tests.cpp
   src/xtd/tests/registered_enum_flags_tests.cpp
   src/xtd/tests/registered_enum_struct_flags_tests.cpp
+  src/xtd/tests/registered_enum_struct_tests.cpp
   src/xtd/tests/registered_enum_tests.cpp
   src/xtd/tests/string_boolean_format_tests.cpp
   src/xtd/tests/string_date_time_format_tests.cpp
