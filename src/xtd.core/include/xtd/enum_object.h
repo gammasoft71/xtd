@@ -195,7 +195,7 @@ namespace xtd {
     static enum_type parse_flags(const xtd::ustring& value, bool ignore_case) {
       std::vector<xtd::ustring> values = value.split({','});
       for (xtd::ustring& str : values)
-        str = str.trim_start(' ').trim_end(' ');
+        str = str.trim(' ');
         
       if (values.size() == 1) {
         for (auto item : enum_object<enum_type>().entries()) {

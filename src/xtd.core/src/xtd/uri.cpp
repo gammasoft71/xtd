@@ -473,7 +473,7 @@ void uri::set_uri(const ustring& uri, uri_kind kind) {
   original_uri_ = uri;
   kind_ = kind;
   
-  auto original_uri = original_uri_.trim_start(' ').trim_end(' ');
+  auto original_uri = original_uri_.trim(' ');
   
   set_scheme(original_uri);
   if (scheme_ != "news") {
