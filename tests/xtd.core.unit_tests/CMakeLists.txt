@@ -67,6 +67,7 @@ add_sources(
   src/xtd/tests/convert_string_tests.cpp
   src/xtd/tests/cpp_language_tests.cpp
   src/xtd/tests/date_time_tests.cpp
+  src/xtd/tests/distribution_tests.cpp
   src/xtd/tests/divided_by_zero_exception_tests.cpp
   src/xtd/tests/domain_exception_tests.cpp
   src/xtd/tests/delegate_tests.cpp
