@@ -51,8 +51,8 @@ namespace xtd::tests {
       assert::are_equal(registered_enum_flags_test::two, ustring::parse<registered_enum_flags_test>("two"), csf_);
       assert::are_equal(registered_enum_flags_test::three, ustring::parse<registered_enum_flags_test>("three"), csf_);
       assert::are_equal(registered_enum_flags_test::four, ustring::parse<registered_enum_flags_test>("four"), csf_);
-      //assert::are_equal(registered_enum_flags_test::one | registered_enum_flags_test::two, ustring::parse<registered_enum_flags_test>("oone, two"), csf_);
-      //assert::are_equal(registered_enum_flags_test::three | registered_enum_flags_test::four, ustring::parse<registered_enum_flags_test>("three, four"), csf_);
+      assert::are_equal(registered_enum_flags_test::one | registered_enum_flags_test::two, ustring::parse<registered_enum_flags_test>("one, two"), csf_);
+      assert::are_equal(registered_enum_flags_test::three | registered_enum_flags_test::four, ustring::parse<registered_enum_flags_test>("three, four"), csf_);
 
       assert::are_equal(registered_enum_flags_test::none, ustring::parse<registered_enum_flags_test>("0"), csf_);
       assert::are_equal(registered_enum_flags_test::one, ustring::parse<registered_enum_flags_test>("1"), csf_);
