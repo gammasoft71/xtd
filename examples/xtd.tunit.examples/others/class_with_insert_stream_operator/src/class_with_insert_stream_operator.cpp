@@ -13,7 +13,7 @@ namespace unit_tests {
     bool operator==(const class_with_insert_stream_operator& c) const noexcept {return value_ == c.value_;}
     bool operator!=(const class_with_insert_stream_operator& c) const noexcept {return !operator==(c);}
     
-    friend std::ostream& operator<<(std::ostream& os, const class_with_insert_stream_operator& c) {
+    friend std::ostream& operator <<(std::ostream& os, const class_with_insert_stream_operator& c) {
       return os << "(value = " << c.value_ << ")";
     }
     

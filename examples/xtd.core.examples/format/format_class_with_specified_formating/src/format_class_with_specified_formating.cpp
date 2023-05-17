@@ -19,7 +19,7 @@ public:
   }
   
   // Only this operator is needed for character class to be recognized by ustring::format() without specified formating.
-  friend ostream& operator<<(ostream& os, const character& value) noexcept {return os << value.to_string();}
+  friend ostream& operator <<(ostream& os, const character& value) noexcept {return os << value.to_string();}
   
 private:
   ustring name_;
