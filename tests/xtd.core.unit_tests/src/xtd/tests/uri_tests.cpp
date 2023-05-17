@@ -151,7 +151,7 @@ namespace xtd::tests {
     }
     
     void test_method_(host_name_type) {
-      assert::are_equal(uri_host_name_type::dns, uri("  Http://yfi:MyPass@www.Contoso.com:8080/C:a ta%20log/ShowNew.htm?Date=ToDay#bOdy  ").host_name_type(),  csf_);
+      assert::are_equal(uri_host_name_type::dns, uri("  Http://yfi:MyPass@www.Contoso.com:8080/C:a ta%20log/ShowNew.htm?Date=ToDay#bOdy  ").host_name_type(), csf_);
       assert::are_equal(uri_host_name_type::dns, uri("http://www.contoso.com/index.htm?date=today").host_name_type(), csf_);
       assert::are_equal(uri_host_name_type::dns, uri("http://www.contoso.com/index.htm#main").host_name_type(), csf_);
       assert::are_equal(uri_host_name_type::dns, uri("mailto:user@contoso.com?subject=uri").host_name_type(), csf_);
