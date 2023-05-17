@@ -73,6 +73,7 @@ add_sources(
   src/xtd/tests/delegate_tests.cpp
   src/xtd/tests/enum_object_with_registered_enum_class_tests.cpp
   src/xtd/tests/enum_object_with_registered_enum_struct_tests.cpp
+  src/xtd/tests/enum_object_with_registered_enum_tests.cpp
   src/xtd/tests/environment_tests.cpp
   src/xtd/tests/event_tests.cpp
   src/xtd/tests/format_exception_tests.cpp
