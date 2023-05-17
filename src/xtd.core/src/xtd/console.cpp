@@ -45,7 +45,7 @@ console_color console::background_color() {
 }
 
 void console::background_color(console_color color) {
-  if (!enum_object<>::contains(color)) throw argument_exception(csf_);
+  if (!enum_object<>::is_defined(color)) throw argument_exception(csf_);
   register_cancel_key_press(); // Must be first...
   native::console::background_color(static_cast<int32>(color));
 }
@@ -125,7 +125,7 @@ console_color console::foreground_color() {
 
 bool console::foreground_color(console_color color) {
   register_cancel_key_press(); // Must be first...
-  if (!enum_object<>::contains(color)) throw argument_exception(csf_);
+  if (!enum_object<>::is_defined(color)) throw argument_exception(csf_);
   return native::console::foreground_color(static_cast<int32>(color));
 }
 
