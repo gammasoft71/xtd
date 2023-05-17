@@ -220,8 +220,7 @@ namespace xtd {
       }
       
       return to_enum(result);
-    }
-    
+    }    
     /// @endcond
     
   private:
