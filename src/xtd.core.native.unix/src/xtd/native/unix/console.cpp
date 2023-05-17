@@ -872,13 +872,12 @@ bool console::treat_control_c_as_input(bool treat_control_c_as_input) {
 }
 
 int_least32_t console::window_height() {
-  /*
+  if (!terminal::is_ansi_supported()) return ::window_height;
   auto top = console::cursor_top();
   console::set_cursor_position(console::cursor_left(), 999);
   auto height = console::cursor_top() + 1;
   console::set_cursor_position(console::cursor_left(), top);
   ::window_height = height;
-   */
   return ::window_height;
 }
 
@@ -911,13 +910,12 @@ bool console::window_top(int_least32_t top) {
 }
 
 int_least32_t console::window_width() {
-  /*
+  if (!terminal::is_ansi_supported()) return ::window_width;
   auto left = console::cursor_left();
   console::set_cursor_position(999, console::cursor_top());
   auto width = console::cursor_left() + 1;
   console::set_cursor_position(left, console::cursor_top());
   ::window_width = width;
-   */
   return ::window_width;
 }
 
