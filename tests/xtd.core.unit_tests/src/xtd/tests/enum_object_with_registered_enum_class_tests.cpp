@@ -432,5 +432,46 @@ namespace xtd::tests {
       assert::is_false(enum_object<>::try_parse<enum_object_with_registered_enum_class_test>("OnE", result), csf_);
       assert::are_equal(as<enum_object_with_registered_enum_class_test>(-1), result, csf_);
     }
+    
+    void test_method_(try_parse_with_ignore_case_to_false) {
+      enum_object_with_registered_enum_class_test result = as<enum_object_with_registered_enum_class_test>(-1);
+      assert::is_true(enum_object<>::try_parse<enum_object_with_registered_enum_class_test>("none", false, result), csf_);
+      assert::are_equal(enum_object_with_registered_enum_class_test::none, result, csf_);
+
+      result = as<enum_object_with_registered_enum_class_test>(-1);
+      assert::is_false(enum_object<>::try_parse<enum_object_with_registered_enum_class_test>("OnE", false, result), csf_);
+      assert::are_equal(as<enum_object_with_registered_enum_class_test>(-1), result, csf_);
+
+      assert::is_false(enum_object<>::try_parse<enum_object_with_registered_enum_class_test>("TWO", false, result), csf_);
+      assert::are_equal(as<enum_object_with_registered_enum_class_test>(-1), result, csf_);
+
+      assert::is_false(enum_object<>::try_parse<enum_object_with_registered_enum_class_test>("tHREE", false, result), csf_);
+      assert::are_equal(as<enum_object_with_registered_enum_class_test>(-1), result, csf_);
+
+      assert::is_false(enum_object<>::try_parse<enum_object_with_registered_enum_class_test>("Four", false, result), csf_);
+      assert::are_equal(as<enum_object_with_registered_enum_class_test>(-1), result, csf_);
+    }
+    
+    void test_method_(try_parse_with_ignore_case_to_true) {
+      enum_object_with_registered_enum_class_test result = as<enum_object_with_registered_enum_class_test>(-1);
+      assert::is_true(enum_object<>::try_parse<enum_object_with_registered_enum_class_test>("none", true, result), csf_);
+      assert::are_equal(enum_object_with_registered_enum_class_test::none, result, csf_);
+      
+      result = as<enum_object_with_registered_enum_class_test>(-1);
+      assert::is_true(enum_object<>::try_parse<enum_object_with_registered_enum_class_test>("OnE", true, result), csf_);
+      assert::are_equal(enum_object_with_registered_enum_class_test::one, result, csf_);
+      
+      result = as<enum_object_with_registered_enum_class_test>(-1);
+      assert::is_true(enum_object<>::try_parse<enum_object_with_registered_enum_class_test>("TWO", true, result), csf_);
+      assert::are_equal(enum_object_with_registered_enum_class_test::two, result, csf_);
+      
+      result = as<enum_object_with_registered_enum_class_test>(-1);
+      assert::is_true(enum_object<>::try_parse<enum_object_with_registered_enum_class_test>("tHREE", true, result), csf_);
+      assert::are_equal(enum_object_with_registered_enum_class_test::three, result, csf_);
+      
+      result = as<enum_object_with_registered_enum_class_test>(-1);
+      assert::is_true(enum_object<>::try_parse<enum_object_with_registered_enum_class_test>("Four", true, result), csf_);
+      assert::are_equal(enum_object_with_registered_enum_class_test::four, result, csf_);
+    }
   };
 }
