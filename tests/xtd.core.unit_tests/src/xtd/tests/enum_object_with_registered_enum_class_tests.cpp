@@ -144,54 +144,39 @@ namespace xtd::tests {
       auto expected_entries = enum_collection<enum_object_with_registered_enum_class_test> {{enum_object_with_registered_enum_class_test::none, "none"}, {enum_object_with_registered_enum_class_test::one, "one"}, {enum_object_with_registered_enum_class_test::two, "two"}, {enum_object_with_registered_enum_class_test::three, "three"}, {enum_object_with_registered_enum_class_test::four, "four"}};
       auto actual_entries = enum_object<>::get_entries<enum_object_with_registered_enum_class_test>();
       assert::is_true(std::equal(actual_entries.begin(), actual_entries.end(), expected_entries.begin(), expected_entries.end()), csf_);
+      //collection_assert::are_equal(enum_collection<enum_object_with_registered_enum_class_test> {{enum_object_with_registered_enum_class_test::none, "none"}, {enum_object_with_registered_enum_class_test::one, "one"}, {enum_object_with_registered_enum_class_test::two, "two"}, {enum_object_with_registered_enum_class_test::three, "three"}, {enum_object_with_registered_enum_class_test::four, "four"}}, enum_object<>::get_entries<enum_object_with_registered_enum_class_test>(),  csf_);
     }
     
     void test_method_(get_entries_as_byte) {
-      auto expected_entries = enum_collection<byte> {{0, "none"}, {1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}};
-      auto actual_entries = enum_object<>::get_entries_as_byte<enum_object_with_registered_enum_class_test>();
-      assert::is_true(std::equal(actual_entries.begin(), actual_entries.end(), expected_entries.begin(), expected_entries.end()), csf_);
+      collection_assert::are_equal(enum_collection<byte> {{0, "none"}, {1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}}, enum_object<>::get_entries_as_byte<enum_object_with_registered_enum_class_test>(),  csf_);
     }
     
     void test_method_(get_entries_as_int16) {
-      auto expected_entries = enum_collection<int16> {{0, "none"}, {1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}};
-      auto actual_entries = enum_object<>::get_entries_as_int16<enum_object_with_registered_enum_class_test>();
-      assert::is_true(std::equal(actual_entries.begin(), actual_entries.end(), expected_entries.begin(), expected_entries.end()), csf_);
+      collection_assert::are_equal(enum_collection<int16> {{0, "none"}, {1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}}, enum_object<>::get_entries_as_int16<enum_object_with_registered_enum_class_test>(),  csf_);
     }
     
     void test_method_(get_entries_as_int32) {
-      auto expected_entries = enum_collection<int32> {{0, "none"}, {1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}};
-      auto actual_entries = enum_object<>::get_entries_as_int32<enum_object_with_registered_enum_class_test>();
-      assert::is_true(std::equal(actual_entries.begin(), actual_entries.end(), expected_entries.begin(), expected_entries.end()), csf_);
+      collection_assert::are_equal(enum_collection<int32> {{0, "none"}, {1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}}, enum_object<>::get_entries_as_int32<enum_object_with_registered_enum_class_test>(),  csf_);
     }
     
     void test_method_(get_entries_as_int64) {
-      auto expected_entries = enum_collection<int64> {{0, "none"}, {1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}};
-      auto actual_entries = enum_object<>::get_entries_as_int64<enum_object_with_registered_enum_class_test>();
-      assert::is_true(std::equal(actual_entries.begin(), actual_entries.end(), expected_entries.begin(), expected_entries.end()), csf_);
+      collection_assert::are_equal(enum_collection<int64> {{0, "none"}, {1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}}, enum_object<>::get_entries_as_int64<enum_object_with_registered_enum_class_test>(),  csf_);
     }
     
     void test_method_(get_entries_as_sbyte) {
-      auto expected_entries = enum_collection<sbyte> {{0, "none"}, {1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}};
-      auto actual_entries = enum_object<>::get_entries_as_sbyte<enum_object_with_registered_enum_class_test>();
-      assert::is_true(std::equal(actual_entries.begin(), actual_entries.end(), expected_entries.begin(), expected_entries.end()), csf_);
+      collection_assert::are_equal(enum_collection<sbyte> {{0, "none"}, {1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}}, enum_object<>::get_entries_as_sbyte<enum_object_with_registered_enum_class_test>(),  csf_);
     }
     
     void test_method_(get_entries_as_uint16) {
-      auto expected_entries = enum_collection<uint16> {{0, "none"}, {1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}};
-      auto actual_entries = enum_object<>::get_entries_as_uint16<enum_object_with_registered_enum_class_test>();
-      assert::is_true(std::equal(actual_entries.begin(), actual_entries.end(), expected_entries.begin(), expected_entries.end()), csf_);
+      collection_assert::are_equal(enum_collection<uint16> {{0, "none"}, {1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}}, enum_object<>::get_entries_as_uint16<enum_object_with_registered_enum_class_test>(),  csf_);
     }
     
     void test_method_(get_entries_as_uint32) {
-      auto expected_entries = enum_collection<uint32> {{0, "none"}, {1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}};
-      auto actual_entries = enum_object<>::get_entries_as_uint32<enum_object_with_registered_enum_class_test>();
-      assert::is_true(std::equal(actual_entries.begin(), actual_entries.end(), expected_entries.begin(), expected_entries.end()), csf_);
+      collection_assert::are_equal(enum_collection<uint32> {{0, "none"}, {1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}}, enum_object<>::get_entries_as_uint32<enum_object_with_registered_enum_class_test>(),  csf_);
     }
     
     void test_method_(get_entries_as_uint64) {
-      auto expected_entries = enum_collection<uint64> {{0, "none"}, {1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}};
-      auto actual_entries = enum_object<>::get_entries_as_uint64<enum_object_with_registered_enum_class_test>();
-      assert::is_true(std::equal(actual_entries.begin(), actual_entries.end(), expected_entries.begin(), expected_entries.end()), csf_);
+      collection_assert::are_equal(enum_collection<uint64> {{0, "none"}, {1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}}, enum_object<>::get_entries_as_uint64<enum_object_with_registered_enum_class_test>(),  csf_);
     }
     
     void test_method_(get_name) {
@@ -270,6 +255,127 @@ namespace xtd::tests {
     
     void test_method_(get_values_as_uint64) {
       collection_assert::are_equal({0, 1, 2, 3, 4}, enum_object<>::get_values_as_uint64<enum_object_with_registered_enum_class_test>(),  csf_);
+    }
+    
+    void test_method_(is_defined) {
+      assert::is_true(enum_object<>::is_defined(enum_object_with_registered_enum_class_test::none),  csf_);
+      assert::is_true(enum_object<>::is_defined(enum_object_with_registered_enum_class_test::one),  csf_);
+      assert::is_true(enum_object<>::is_defined(enum_object_with_registered_enum_class_test::two),  csf_);
+      assert::is_true(enum_object<>::is_defined(enum_object_with_registered_enum_class_test::three),  csf_);
+      assert::is_true(enum_object<>::is_defined(enum_object_with_registered_enum_class_test::four),  csf_);
+      
+      assert::is_true(enum_object<>::is_defined(as<enum_object_with_registered_enum_class_test>(0)),  csf_);
+      assert::is_true(enum_object<>::is_defined(as<enum_object_with_registered_enum_class_test>(1)),  csf_);
+      assert::is_true(enum_object<>::is_defined(as<enum_object_with_registered_enum_class_test>(2)),  csf_);
+      assert::is_true(enum_object<>::is_defined(as<enum_object_with_registered_enum_class_test>(3)),  csf_);
+      assert::is_true(enum_object<>::is_defined(as<enum_object_with_registered_enum_class_test>(4)),  csf_);
+      assert::is_false(enum_object<>::is_defined(as<enum_object_with_registered_enum_class_test>(5)),  csf_);
+    }
+    
+    void test_method_(is_defined_enum_object) {
+      assert::is_true(enum_object<>::is_defined(enum_object<enum_object_with_registered_enum_class_test> {enum_object_with_registered_enum_class_test::none}),  csf_);
+      assert::is_true(enum_object<>::is_defined(enum_object<enum_object_with_registered_enum_class_test> {enum_object_with_registered_enum_class_test::one}),  csf_);
+      assert::is_true(enum_object<>::is_defined(enum_object<enum_object_with_registered_enum_class_test> {enum_object_with_registered_enum_class_test::two}),  csf_);
+      assert::is_true(enum_object<>::is_defined(enum_object<enum_object_with_registered_enum_class_test> {enum_object_with_registered_enum_class_test::three}),  csf_);
+      assert::is_true(enum_object<>::is_defined(enum_object<enum_object_with_registered_enum_class_test> {enum_object_with_registered_enum_class_test::four}),  csf_);
+      
+      assert::is_true(enum_object<>::is_defined(enum_object<enum_object_with_registered_enum_class_test> {as<enum_object_with_registered_enum_class_test>(0)}),  csf_);
+      assert::is_true(enum_object<>::is_defined(enum_object<enum_object_with_registered_enum_class_test> {as<enum_object_with_registered_enum_class_test>(1)}),  csf_);
+      assert::is_true(enum_object<>::is_defined(enum_object<enum_object_with_registered_enum_class_test> {as<enum_object_with_registered_enum_class_test>(2)}),  csf_);
+      assert::is_true(enum_object<>::is_defined(enum_object<enum_object_with_registered_enum_class_test> {as<enum_object_with_registered_enum_class_test>(3)}),  csf_);
+      assert::is_true(enum_object<>::is_defined(enum_object<enum_object_with_registered_enum_class_test> {as<enum_object_with_registered_enum_class_test>(4)}),  csf_);
+      assert::is_false(enum_object<>::is_defined(enum_object<enum_object_with_registered_enum_class_test> {as<enum_object_with_registered_enum_class_test>(5)}),  csf_);
+    }
+    
+    void test_method_(parse) {
+      assert::are_equal(enum_object_with_registered_enum_class_test::none, enum_object<>::parse<enum_object_with_registered_enum_class_test>("none"), csf_);
+      assert::are_equal(enum_object_with_registered_enum_class_test::one, enum_object<>::parse<enum_object_with_registered_enum_class_test>("one"), csf_);
+      assert::are_equal(enum_object_with_registered_enum_class_test::two, enum_object<>::parse<enum_object_with_registered_enum_class_test>("two"), csf_);
+      assert::are_equal(enum_object_with_registered_enum_class_test::three, enum_object<>::parse<enum_object_with_registered_enum_class_test>("three"), csf_);
+      assert::are_equal(enum_object_with_registered_enum_class_test::four, enum_object<>::parse<enum_object_with_registered_enum_class_test>("four"), csf_);
+
+      assert::are_equal(enum_object_with_registered_enum_class_test::none, enum_object<>::parse<enum_object_with_registered_enum_class_test>("0"), csf_);
+      assert::are_equal(enum_object_with_registered_enum_class_test::one, enum_object<>::parse<enum_object_with_registered_enum_class_test>("1"), csf_);
+      assert::are_equal(enum_object_with_registered_enum_class_test::two, enum_object<>::parse<enum_object_with_registered_enum_class_test>("2"), csf_);
+      assert::are_equal(enum_object_with_registered_enum_class_test::three, enum_object<>::parse<enum_object_with_registered_enum_class_test>("3"), csf_);
+      assert::are_equal(enum_object_with_registered_enum_class_test::four, enum_object<>::parse<enum_object_with_registered_enum_class_test>("4"), csf_);
+    }
+    
+    void test_method_(parse_with_invalid_enum) {
+      assert::are_equal(as<enum_object_with_registered_enum_class_test>(5), enum_object<>::parse<enum_object_with_registered_enum_class_test>("5"), csf_);
+      assert::throws<format_exception>([]{enum_object<>::parse<enum_object_with_registered_enum_class_test>("five");}, csf_);
+    }
+    
+    void test_method_(to_byte) {
+      assert::are_equal(as<byte>(0), enum_object<>::to_byte(enum_object_with_registered_enum_class_test::none), csf_);
+      assert::are_equal(as<byte>(1), enum_object<>::to_byte(enum_object_with_registered_enum_class_test::one), csf_);
+      assert::are_equal(as<byte>(2), enum_object<>::to_byte(enum_object_with_registered_enum_class_test::two), csf_);
+      assert::are_equal(as<byte>(3), enum_object<>::to_byte(enum_object_with_registered_enum_class_test::three), csf_);
+      assert::are_equal(as<byte>(4), enum_object<>::to_byte(enum_object_with_registered_enum_class_test::four), csf_);
+      assert::are_equal(as<byte>(5), enum_object<>::to_byte(as<enum_object_with_registered_enum_class_test>(5)), csf_);
+    }
+    
+    void test_method_(to_int16) {
+      assert::are_equal(as<int16>(0), enum_object<>::to_int16(enum_object_with_registered_enum_class_test::none), csf_);
+      assert::are_equal(as<int16>(1), enum_object<>::to_int16(enum_object_with_registered_enum_class_test::one), csf_);
+      assert::are_equal(as<int16>(2), enum_object<>::to_int16(enum_object_with_registered_enum_class_test::two), csf_);
+      assert::are_equal(as<int16>(3), enum_object<>::to_int16(enum_object_with_registered_enum_class_test::three), csf_);
+      assert::are_equal(as<int16>(4), enum_object<>::to_int16(enum_object_with_registered_enum_class_test::four), csf_);
+      assert::are_equal(as<int16>(5), enum_object<>::to_int16(as<enum_object_with_registered_enum_class_test>(5)), csf_);
+    }
+    
+    void test_method_(to_int32) {
+      assert::are_equal(as<int32>(0), enum_object<>::to_int32(enum_object_with_registered_enum_class_test::none), csf_);
+      assert::are_equal(as<int32>(1), enum_object<>::to_int32(enum_object_with_registered_enum_class_test::one), csf_);
+      assert::are_equal(as<int32>(2), enum_object<>::to_int32(enum_object_with_registered_enum_class_test::two), csf_);
+      assert::are_equal(as<int32>(3), enum_object<>::to_int32(enum_object_with_registered_enum_class_test::three), csf_);
+      assert::are_equal(as<int32>(4), enum_object<>::to_int32(enum_object_with_registered_enum_class_test::four), csf_);
+      assert::are_equal(as<int32>(5), enum_object<>::to_int32(as<enum_object_with_registered_enum_class_test>(5)), csf_);
+    }
+    
+    void test_method_(to_int64) {
+      assert::are_equal(as<int64>(0), enum_object<>::to_int64(enum_object_with_registered_enum_class_test::none), csf_);
+      assert::are_equal(as<int64>(1), enum_object<>::to_int64(enum_object_with_registered_enum_class_test::one), csf_);
+      assert::are_equal(as<int64>(2), enum_object<>::to_int64(enum_object_with_registered_enum_class_test::two), csf_);
+      assert::are_equal(as<int64>(3), enum_object<>::to_int64(enum_object_with_registered_enum_class_test::three), csf_);
+      assert::are_equal(as<int64>(4), enum_object<>::to_int64(enum_object_with_registered_enum_class_test::four), csf_);
+      assert::are_equal(as<int64>(5), enum_object<>::to_int64(as<enum_object_with_registered_enum_class_test>(5)), csf_);
+    }
+    
+    void test_method_(to_sbyte) {
+      assert::are_equal(as<sbyte>(0), enum_object<>::to_sbyte(enum_object_with_registered_enum_class_test::none), csf_);
+      assert::are_equal(as<sbyte>(1), enum_object<>::to_sbyte(enum_object_with_registered_enum_class_test::one), csf_);
+      assert::are_equal(as<sbyte>(2), enum_object<>::to_sbyte(enum_object_with_registered_enum_class_test::two), csf_);
+      assert::are_equal(as<sbyte>(3), enum_object<>::to_sbyte(enum_object_with_registered_enum_class_test::three), csf_);
+      assert::are_equal(as<sbyte>(4), enum_object<>::to_sbyte(enum_object_with_registered_enum_class_test::four), csf_);
+      assert::are_equal(as<sbyte>(5), enum_object<>::to_sbyte(as<enum_object_with_registered_enum_class_test>(5)), csf_);
+    }
+    
+    void test_method_(to_uint16) {
+      assert::are_equal(as<uint16>(0), enum_object<>::to_uint16(enum_object_with_registered_enum_class_test::none), csf_);
+      assert::are_equal(as<uint16>(1), enum_object<>::to_uint16(enum_object_with_registered_enum_class_test::one), csf_);
+      assert::are_equal(as<uint16>(2), enum_object<>::to_uint16(enum_object_with_registered_enum_class_test::two), csf_);
+      assert::are_equal(as<uint16>(3), enum_object<>::to_uint16(enum_object_with_registered_enum_class_test::three), csf_);
+      assert::are_equal(as<uint16>(4), enum_object<>::to_uint16(enum_object_with_registered_enum_class_test::four), csf_);
+      assert::are_equal(as<uint16>(5), enum_object<>::to_uint16(as<enum_object_with_registered_enum_class_test>(5)), csf_);
+    }
+    
+    void test_method_(to_uint32) {
+      assert::are_equal(as<uint32>(0), enum_object<>::to_uint32(enum_object_with_registered_enum_class_test::none), csf_);
+      assert::are_equal(as<uint32>(1), enum_object<>::to_uint32(enum_object_with_registered_enum_class_test::one), csf_);
+      assert::are_equal(as<uint32>(2), enum_object<>::to_uint32(enum_object_with_registered_enum_class_test::two), csf_);
+      assert::are_equal(as<uint32>(3), enum_object<>::to_uint32(enum_object_with_registered_enum_class_test::three), csf_);
+      assert::are_equal(as<uint32>(4), enum_object<>::to_uint32(enum_object_with_registered_enum_class_test::four), csf_);
+      assert::are_equal(as<uint32>(5), enum_object<>::to_uint32(as<enum_object_with_registered_enum_class_test>(5)), csf_);
+    }
+    
+    void test_method_(to_uint64) {
+      assert::are_equal(as<uint64>(0), enum_object<>::to_uint64(enum_object_with_registered_enum_class_test::none), csf_);
+      assert::are_equal(as<uint64>(1), enum_object<>::to_uint64(enum_object_with_registered_enum_class_test::one), csf_);
+      assert::are_equal(as<uint64>(2), enum_object<>::to_uint64(enum_object_with_registered_enum_class_test::two), csf_);
+      assert::are_equal(as<uint64>(3), enum_object<>::to_uint64(enum_object_with_registered_enum_class_test::three), csf_);
+      assert::are_equal(as<uint64>(4), enum_object<>::to_uint64(enum_object_with_registered_enum_class_test::four), csf_);
+      assert::are_equal(as<uint64>(5), enum_object<>::to_uint64(as<enum_object_with_registered_enum_class_test>(5)), csf_);
     }
   };
 }
