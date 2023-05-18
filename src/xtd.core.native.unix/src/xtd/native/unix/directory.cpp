@@ -252,8 +252,15 @@ bool directory::exists(const std::string& path) {
 }
 
 string directory::get_current_directory() {
-  char path[MAXPATHLEN + 1];
-  return getcwd(path, MAXPATHLEN) ? path : "";
+  std::string path(MAXPATHLEN + 1, 0);
+  auto result = getcwd(path.data(), MAXPATHLEN);
+  //path.shrink_to_fit();
+  path.erase(std::find(path.begin(), path.end(), '\0'), path.end());
+#if defined(__APPLE__)
+  if (path.starts_with("/private"))
+    path.replace(0, 8, "");
+#endif
+  return result ? path : "";
 }
 
 int_least32_t directory::remove(const std::string& directory_name) {

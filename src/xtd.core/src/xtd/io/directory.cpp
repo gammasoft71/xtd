@@ -223,7 +223,7 @@ date_time directory::get_creation_time(const ustring& path) {
 }
 
 ustring directory::get_current_directory() {
-  auto path = native::directory::get_current_directory();
+  auto path = io::path::get_full_path(native::directory::get_current_directory());
   if (path.empty()) throw not_supported_exception(csf_);
   return path;
 }
