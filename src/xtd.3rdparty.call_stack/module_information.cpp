@@ -20,8 +20,9 @@ namespace stacktrace {
   static std::string ToString(const wchar_t* str) {
     std::string output(2 * wcslen(str) + 1, 0);
     WideCharToMultiByte(CP_ACP, 0, str, -1, output.data(), output.size(), 0, nullptr);
-    output.shrink_to_fit();
-    return output;
+    //output.shrink_to_fit();
+    output.erase(std::find(output.begin(), output.end(), '\0'), output.end());
+return output;
   }
   
   ModuleInformations ModuleInformation::GetModuleInformations() {
