@@ -7,6 +7,10 @@ using namespace xtd::tunit;
 namespace xtd::tests {
   class test_class_(environment_tests) {
   public:
+    void test_method_(command_line) {
+      assert::is_true(environment::command_line().contains("xtd.core.unit_tests"), csf_);
+    }
+    
     void test_method_(compiler_version) {
       auto compiler = environment::compiler_version();
 #if defined(_MSC_VER)
@@ -31,6 +35,10 @@ namespace xtd::tests {
       assert::is_false(compiler.is_build_type_debug(), csf_);
 #endif
       assert::are_equal(sizeof(size_t) == 8, compiler.is_64_bit(), csf_);
+    }
+    
+    void test_method_(cpp_version) {
+      assert::is_true(environment::cpp_version().language() == language_id::cpp17 || environment::cpp_version().language() == language_id::cpp20, csf_);
     }
     
     void test_method_(new_line) {
