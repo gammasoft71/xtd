@@ -41,6 +41,51 @@ namespace xtd::tests {
       assert::is_true(environment::cpp_version().language() == language_id::cpp17 || environment::cpp_version().language() == language_id::cpp20, csf_);
     }
     
+    void test_method_(current_directory) {
+      auto current_directory = environment::current_directory();
+      auto directory = io::path::combine(io::path::get_temp_path(), "xtd_environment_test");
+      if (!io::directory::exists(directory)) io::directory::create_directory(directory);
+      environment::current_directory(directory);
+      assert::are_equal(directory, environment::current_directory(), csf_);
+      environment::current_directory(current_directory);
+      io::directory::remove(directory);
+    }
+    
+    void test_method_(current_thread_id) {
+      assert::are_equal(std::this_thread::get_id(), environment::current_thread_id(), csf_);
+    }
+    
+    void test_method_(exit_code) {
+      assert::is_zero(environment::exit_code(), csf_);
+      environment::exit_code(42);
+      assert::are_equal(42, environment::exit_code(), csf_);
+      environment::exit_code(0);
+      assert::is_zero(environment::exit_code(), csf_);
+    }
+    
+    void test_method_(has_shutdown_started) {
+      assert::is_false(environment::has_shutdown_started(), csf_);
+    }
+    
+    void test_method_(is_64_bit_operating_system) {
+      // Not possible to check in the unit test
+      //assert::is_true(environment::is_64_bit_operating_system(), csf_);
+      //assert::is_false(environment::is_64_bit_operating_system(), csf_);
+    }
+    
+    void test_method_(is_64_bit_process) {
+      assert::are_equal(sizeof(size_t) == 8, environment::is_64_bit_process(), csf_);
+    }
+    
+    void test_method_(locale) {
+      assert::are_equal(std::locale(), environment::locale(), csf_);
+    }
+    
+    void test_method_(machine_name) {
+      // Not possible to check in the unit test
+      //assert::is_not_empty(environment::machine_name(), csf_);
+    }
+
     void test_method_(new_line) {
       assert::are_equal("\n", environment::new_line(), csf_);
     }
