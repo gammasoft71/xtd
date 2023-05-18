@@ -122,7 +122,9 @@ ustring path::get_temp_file_name() {
 }
 
 ustring path::get_temp_path() noexcept {
-  return native::path::get_temp_path();
+  ustring temp_path = native::path::get_temp_path();
+  if (temp_path.ends_with(directory_separator_char())) temp_path = temp_path.remove(temp_path.size() - 1);
+  return temp_path;
 }
 
 bool path::has_extension(const ustring& path) {
