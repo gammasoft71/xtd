@@ -133,6 +133,8 @@ if (XTD_BUILD_TOOL_XTDC_GUI AND NOT XTD_BUILD_LIBRARIES_XTD_FORMS)
 endif ()
 
 # set core native library
+add_definitions(-D__XTD_NATIVE_OPERATING_SYSTEM__="${XTD_NATIVE_OPERATING_SYSTEM}")
+
 if ("${XTD_NATIVE_OPERATING_SYSTEM}" STREQUAL "Windows")
   set(XTD_CORE_NATIVE_LIBRARY xtd.core.native.win32)
 else ()
@@ -140,6 +142,7 @@ else ()
 endif ()
 
 # set drawing and forms native library
+add_definitions(-D__XTD_NATIVE_GRAPHIC_TOOLKIT__="${XTD_NATIVE_GRAPHIC_TOOLKIT}")
 if ("${XTD_NATIVE_GRAPHIC_TOOLKIT}" STREQUAL "cocoa")
   message(WARNING "Cocoa toolkit is only supported for development, used wxwidgets instead.\nCocoa toolkit will be disponible in a future release.")
   set(XTD_DRAWING_NATIVE_LIBRARY xtd.drawing.native.cocoa)
