@@ -1,3 +1,9 @@
+#include "architecture_name.h"
+#include "build_type.h"
+#include "compiler_name.h"
+#include "compiler_version.h"
+#include "platform_name.h"
+#include "standard_name.h"
 #include <xtd/environment.h>
 #include <xtd/xtd.tunit>
 
@@ -13,32 +19,16 @@ namespace xtd::tests {
     
     void test_method_(compiler_version) {
       auto compiler = environment::compiler_version();
-#if defined(_MSC_VER)
-      assert::are_equal(compiler_id::microsoft_visual_studio, compiler.compiler_id(), csf_);
-      assert::are_equal(version {_MSC_VER / 100, _MSC_VER % 100, 0}, compiler.version(), csf_);
-#elif defined(__clang__)
-      assert::are_equal(compiler_id::clang, compiler.compiler_id(), csf_);
-      assert::are_equal(version {__clang_major__, __clang_minor__, __clang_patchlevel__}, compiler.version(), csf_);
-#elif defined(__GNUC__)
-      assert::are_equal(compiler_id::gcc, compiler.compiler_id(), csf_);
-      assert::are_equal(version {__GNUC__, __GNUC_MINOR__, __GNUC_PATCHLEVEL__}, compiler.version(), csf_);
-#else
-      assert::are_equal(compiler_id::unknown, compiler.compiler_id(), csf_);
-      assert::are_equal(version {}, compiler.version(), csf_);
-#endif
-      
-#if !defined(NDEBUG)
-      assert::are_equal(build_type::debug, compiler.build_type(), csf_);
-      assert::is_true(compiler.is_build_type_debug(), csf_);
-#else
-      assert::are_equal(build_type::release, compiler.build_type());
-      assert::is_false(compiler.is_build_type_debug(), csf_);
-#endif
+      assert::are_equal(__compiler_name__, compiler.name(), csf_);
+      assert::are_equal(__compiler_version__, compiler.version(), csf_);
+      assert::are_equal(__build_type__, compiler.build_type(), csf_);
+      assert::are_equal(__build_type__ == build_type::debug, compiler.is_build_type_debug(), csf_);
       assert::are_equal(sizeof(size_t) == 8, compiler.is_64_bit(), csf_);
     }
     
     void test_method_(cpp_version) {
-      assert::is_true(environment::cpp_version().language() == language_id::cpp17 || environment::cpp_version().language() == language_id::cpp20, csf_);
+      cpp_language l = environment::cpp_version();
+      assert::are_equal(__standard_name__, l.name(), csf_);
     }
     
     void test_method_(current_directory) {
@@ -88,6 +78,48 @@ namespace xtd::tests {
 
     void test_method_(new_line) {
       assert::are_equal("\n", environment::new_line(), csf_);
+    }
+    
+    void test_method_(os_version) {
+      operating_system os = environment::os_version();
+      assert::are_equal(__platform_name__, os.name(), csf_);
+      assert::are_not_equal(platform_id::unknown, os.platform(), csf_);
+      assert::are_not_equal(version {}, os.version(), csf_);
+    }
+    
+    void test_method_(processor_count) {
+      assert::is_greater_or_equal(environment::processor_count(), 1U, csf_);
+    }
+    
+    void test_method_(processor_information) {
+      processor p = environment::processor_information();
+      assert::are_equal(__architecture_name__, p.architecture_string(), csf_);
+      assert::are_equal(ustring(__architecture_name__).ends_with("64"), p.is_64_bit(), csf_);
+    }
+    
+    void test_method_(stack_trace) {
+      assert::is_not_empty(environment::stack_trace(), csf_);
+    }
+    
+    void test_method_(system_directory) {
+      assert::are_equal(environment::get_folder_path(environment::special_folder::system), environment::system_directory(), csf_);
+    }
+    
+    void test_method_(system_page_size) {
+      // here is no unit test poossible.
+      //assert::is_not_zero(environment::system_page_size(), csf_);
+    }
+    
+    void test_method_(target_type) {
+      xtd::target_type tt = environment::target_type();
+      assert::is_false(tt.is_console_application(), csf_);
+      assert::is_false(tt.is_guid_application(), csf_);
+      assert::is_false(tt.is_shared_library(), csf_);
+      assert::is_false(tt.is_static_library(), csf_);
+      assert::is_true(tt.is_test_application(), csf_);
+      assert::are_equal("test application", tt.name(), csf_);
+      assert::are_equal(target_id::test_application, tt.target_id(), csf_);
+      assert::are_equal("test application", tt.to_string(), csf_);
     }
   };
 }
