@@ -84,7 +84,7 @@ namespace xtd::tests {
       operating_system os = environment::os_version();
       assert::are_equal(__platform_name__, os.name(), csf_);
       assert::are_not_equal(platform_id::unknown, os.platform(), csf_);
-      assert::are_not_equal(version {}, os.version(), csf_);
+      assert::are_not_equal(xtd::version {}, os.version(), csf_);
     }
     
     void test_method_(processor_count) {
@@ -106,7 +106,7 @@ namespace xtd::tests {
     }
     
     void test_method_(system_page_size) {
-      // here is no unit test poossible.
+      // There is no unit test possible.
       //assert::is_not_zero(environment::system_page_size(), csf_);
     }
     
@@ -120,6 +120,62 @@ namespace xtd::tests {
       assert::are_equal("test application", tt.name(), csf_);
       assert::are_equal(target_id::test_application, tt.target_id(), csf_);
       assert::are_equal("test application", tt.to_string(), csf_);
+    }
+    
+    void test_method_(tick_count) {
+      // There is no unit test possible.
+      assert::is_not_zero(environment::tick_count().count(), csf_);
+    }
+    
+    void test_method_(toolkit) {
+      xtd::toolkit t = environment::toolkit_version();
+      assert::are_equal("No toolkit defined.", t.description(), csf_);
+      assert::are_equal("Unknown", t.name(), csf_);
+      assert::are_equal(xtd::version {}, t.version(), csf_);
+    }
+    
+    void test_method_(user_administrator) {
+      assert::is_false(environment::user_administrator(), csf_);
+    }
+    
+    void test_method_(user_domain_name) {
+      // There is no unit test possible.
+      assert::is_not_empty(environment::user_domain_name(), csf_);
+    }
+
+    void test_method_(user_interactive) {
+      assert::is_true(environment::user_interactive(), csf_);
+    }
+    
+    void test_method_(user_name) {
+      // There is no unit test possible.
+      assert::is_not_empty(environment::user_name(), csf_);
+    }
+    
+    void test_method_(version) {
+      assert::are_equal(xtd::version {0, 2, 0}, environment::version(), csf_);
+    }
+      
+    void test_method_(working_set) {
+      // There is no unit test possible.
+      //assert::is_not_zero(environment::working_set(), csf_);
+    }
+    
+    void test_method_(exit) {
+      // There is no unit test possible.
+      //assert::does_not_throw([]{environment::exit(42);}, csf_);
+    }
+    
+    void test_method_(expand_environment_variables) {
+      environment::set_environment_variable("xtd_test_core_value1", "First value");
+      environment::set_environment_variable("xtd_test_core_value2", "Second value");
+
+      assert::are_equal("value1 = \"First value\" and value2 = \"Second value\"", environment::expand_environment_variables("value1 = \"%xtd_test_core_value1%\" and value2 = \"%xtd_test_core_value2%\""), csf_);
+      assert::are_equal("value1 = \"%xtd_test_core_value1\" and value2 = \"xtd_test_core_value2%\"", environment::expand_environment_variables("value1 = \"%xtd_test_core_value1\" and value2 = \"xtd_test_core_value2%\""), csf_);
+      assert::are_equal("value1 = \"%xtd_test_core_value1\" and value2 = \"%xtd_test_core_value2%\"", environment::expand_environment_variables("value1 = \"%xtd_test_core_value1\" and value2 = \"%xtd_test_core_value2%\""), csf_);
+
+      environment::set_environment_variable("xtd_test_core_value1", "");
+      environment::set_environment_variable("xtd_test_core_value2", "");
     }
   };
 }
