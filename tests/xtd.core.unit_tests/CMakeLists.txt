@@ -46,6 +46,7 @@ add_sources(
   src/xtd/security/tests/secure_string_tests.cpp
   src/xtd/tests/any_tests.cpp
   src/xtd/tests/architecture_id_tests.cpp
+  src/xtd/tests/architecture_name.h
   src/xtd/tests/argument_exception_tests.cpp
   src/xtd/tests/argument_null_exception_tests.cpp
   src/xtd/tests/argument_out_of_range_exception_tests.cpp
@@ -55,8 +56,10 @@ add_sources(
   src/xtd/tests/box_tests.cpp
   src/xtd/tests/build_type_tests.cpp
   src/xtd/tests/bytes_assert.h
+  src/xtd/tests/compiler_name.h
   src/xtd/tests/compiler_tests.cpp
   src/xtd/tests/compiler_id_tests.cpp
+  src/xtd/tests/compiler_version.h
   src/xtd/tests/console_cancel_event_args_tests.cpp
   src/xtd/tests/console_color_tests.cpp
   src/xtd/tests/console_key_info_tests.cpp
@@ -114,6 +117,7 @@ add_sources(
   src/xtd/tests/operation_canceled_exception_tests.cpp
   src/xtd/tests/overflow_exception_tests.cpp
   src/xtd/tests/parse_tests.cpp
+  src/xtd/tests/platform_name.h
   src/xtd/tests/platform_not_supported_exception_tests.cpp
   src/xtd/tests/registered_enum_class_flags_tests.cpp
   src/xtd/tests/registered_enum_class_tests.cpp
@@ -121,6 +125,7 @@ add_sources(
   src/xtd/tests/registered_enum_struct_flags_tests.cpp
   src/xtd/tests/registered_enum_struct_tests.cpp
   src/xtd/tests/registered_enum_tests.cpp
+  src/xtd/tests/standard_name.h
   src/xtd/tests/string_boolean_format_tests.cpp
   src/xtd/tests/string_date_time_format_tests.cpp
   src/xtd/tests/string_duration_format_tests.cpp
