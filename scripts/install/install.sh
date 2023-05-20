@@ -42,6 +42,9 @@ echo  "Using up to ${build_cores} build cores"
 
 #_______________________________________________________________________________
 #                   Install needed packages and libraries for known distribution
+
+# Add wxWdigets 3.2 or above in MINGW64 and MSYS (see https://packages.msys2.org/package/mingw-w64-x86_64-wxwidgets3.2-gtk3-libs?repo=mingw64 for more info).
+
 echo "Installing needed packages and libraries..."
 case "$OSTYPE" in
   *"Darwin"*) brew update; brew install cmake;;
