@@ -1,8 +1,12 @@
 #if defined(__cplusplus)
 #  if __cplusplus == 202002L
 #    define __standard_name__ "C++ 20"
+#  elif __cplusplus < 202002L && __cplusplus > 201703L
+#    define __standard_name__ "Experimental C++ 20"
 #  elif __cplusplus == 201703L
 #    define __standard_name__ "C++ 17"
+#  elif __cplusplus < 201703L && __cplusplus > 201402L
+#    define __standard_name__ "Experimental C++ 17"
 #  elif __cplusplus == 201402L
 #    define __standard_name__ "C++ 14 (not supported)"
 #  elif __cplusplus == 201103L
