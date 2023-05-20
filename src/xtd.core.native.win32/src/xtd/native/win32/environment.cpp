@@ -21,7 +21,6 @@ using namespace xtd::native;
 #undef min
 #undef max
 
-__declspec(dllimport) extern char** environ;
 __declspec(dllimport) extern int __argc;
 __declspec(dllimport) extern char** __argv;
 int __environment_argc = __argc;
@@ -191,13 +190,16 @@ map<string, string>& environment::get_environment_variables(int_least32_t target
   auto& envs = __none_envs__;
   
   if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS) {
+    std::vector<std::string> environments;
+    for (wchar_t* line = GetEnvironmentStrings(); line[0] != 0; line += wcslen(line) + 1)
+      environments.push_back(win32::strings::to_string(line));
+    
     envs = __process_envs__;
     envs.clear();
     
-    for (size_t index = 0; environ[index] != nullptr; index++) {
-      vector<string> key_value = win32::strings::split(environ[index], {'='});
-      if (key_value.size() == 2)
-        envs.insert({key_value[0], key_value[1]});
+    for (auto environment : environments) {
+      vector<string> key_value = win32::strings::split(environment, { '=' });
+      if (key_value.size() == 2) envs.insert({ key_value[0], key_value[1] });
     }
     return envs;
   }
