@@ -287,61 +287,6 @@ namespace xtd::tests {
        */
     }
     
-    void test_method_(set_environment_variable) {
-      environment::set_environment_variable("xtd_test_core_value1", "First value");
-      environment::set_environment_variable("xtd_test_core_value2", "Second value");
-      
-      assert::are_equal("First value", environment::get_environment_variable("xtd_test_core_value1"), csf_);
-      assert::are_equal("Second value", environment::get_environment_variable("xtd_test_core_value2"), csf_);
-      assert::are_equal("", environment::get_environment_variable("xtd_test_core_value3"), csf_);
-      
-      environment::set_environment_variable("xtd_test_core_value1", "");
-      environment::set_environment_variable("xtd_test_core_value2", "");
-    }
-    
-    void test_method_(set_environment_variable_with_environment_variable_target_process) {
-      environment::set_environment_variable("xtd_test_core_value1", "First value");
-      environment::set_environment_variable("xtd_test_core_value1", "First value", environment_variable_target::process);
-      environment::set_environment_variable("xtd_test_core_value2", "Second value", environment_variable_target::process);
-      
-      assert::are_equal("First value", environment::get_environment_variable("xtd_test_core_value1", environment_variable_target::process), csf_);
-      assert::are_equal("Second value", environment::get_environment_variable("xtd_test_core_value2", environment_variable_target::process), csf_);
-      assert::are_equal("", environment::get_environment_variable("xtd_test_core_value3", environment_variable_target::process), csf_);
-      
-      environment::set_environment_variable("xtd_test_core_value1", "", environment_variable_target::process);
-      environment::set_environment_variable("xtd_test_core_value2", "", environment_variable_target::process);
-    }
-    
-    void test_method_(set_environment_variable_with_environment_variable_target_user) {
-      // Not yet implemented.
-      /*
-       environment::set_environment_variable("xtd_test_core_value1", "First value", environment_variable_target::user);
-       environment::set_environment_variable("xtd_test_core_value2", "Second value", environment_variable_target::user);
-       
-       assert::are_equal("First value", environment::get_environment_variable("xtd_test_core_value1", environment_variable_target::user), csf_);
-       assert::are_equal("Second value", environment::get_environment_variable("xtd_test_core_value2", environment_variable_target::user), csf_);
-       assert::are_equal("", environment::get_environment_variable("xtd_test_core_value3", environment_variable_target::user), csf_);
-       
-       environment::set_environment_variable("xtd_test_core_value1", "", environment_variable_target::user);
-       environment::set_environment_variable("xtd_test_core_value2", "", environment_variable_target::user);
-       */
-    }
-    
-    void test_method_(set_environment_variable_with_environment_variable_target_machine) {
-      // Not yet implemented.
-      /*
-       environment::set_environment_variable("xtd_test_core_value1", "First value", environment_variable_target::machine);
-       environment::set_environment_variable("xtd_test_core_value2", "Second value", environment_variable_target::machine);
-       
-       assert::are_equal("First value", environment::get_environment_variable("xtd_test_core_value1", environment_variable_target::machine), csf_);
-       assert::are_equal("Second value", environment::get_environment_variable("xtd_test_core_value2", environment_variable_target::machine), csf_);
-       assert::are_equal("", environment::get_environment_variable("xtd_test_core_value3", environment_variable_target::machine), csf_);
-       
-       environment::set_environment_variable("xtd_test_core_value1", "", environment_variable_target::machine);
-       environment::set_environment_variable("xtd_test_core_value2", "", environment_variable_target::machine);
-       */
-    }
-    
     void test_method_(get_folder_path_special_folder_desktop) {
       auto sf = environment::special_folder::desktop;
       if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
@@ -772,6 +717,66 @@ namespace xtd::tests {
     
     void test_method_(get_folder_path_special_folder_xtd_tunit_libraries) {
       assert::are_equal(__XTD_TUNIT_LIB_PATH__, environment::get_folder_path(environment::special_folder::xtd_tunit_libraries, environment::special_folder_option::do_not_verify), csf_);
+    }
+    
+    void test_method_(get_logical_drives) {
+      // There is no unit test possible.
+      assert::is_not_empty(environment::get_logical_drives(), csf_);
+    }
+    
+    void test_method_(set_environment_variable) {
+      environment::set_environment_variable("xtd_test_core_value1", "First value");
+      environment::set_environment_variable("xtd_test_core_value2", "Second value");
+      
+      assert::are_equal("First value", environment::get_environment_variable("xtd_test_core_value1"), csf_);
+      assert::are_equal("Second value", environment::get_environment_variable("xtd_test_core_value2"), csf_);
+      assert::are_equal("", environment::get_environment_variable("xtd_test_core_value3"), csf_);
+      
+      environment::set_environment_variable("xtd_test_core_value1", "");
+      environment::set_environment_variable("xtd_test_core_value2", "");
+    }
+    
+    void test_method_(set_environment_variable_with_environment_variable_target_process) {
+      environment::set_environment_variable("xtd_test_core_value1", "First value");
+      environment::set_environment_variable("xtd_test_core_value1", "First value", environment_variable_target::process);
+      environment::set_environment_variable("xtd_test_core_value2", "Second value", environment_variable_target::process);
+      
+      assert::are_equal("First value", environment::get_environment_variable("xtd_test_core_value1", environment_variable_target::process), csf_);
+      assert::are_equal("Second value", environment::get_environment_variable("xtd_test_core_value2", environment_variable_target::process), csf_);
+      assert::are_equal("", environment::get_environment_variable("xtd_test_core_value3", environment_variable_target::process), csf_);
+      
+      environment::set_environment_variable("xtd_test_core_value1", "", environment_variable_target::process);
+      environment::set_environment_variable("xtd_test_core_value2", "", environment_variable_target::process);
+    }
+    
+    void test_method_(set_environment_variable_with_environment_variable_target_user) {
+      // Not yet implemented.
+      /*
+       environment::set_environment_variable("xtd_test_core_value1", "First value", environment_variable_target::user);
+       environment::set_environment_variable("xtd_test_core_value2", "Second value", environment_variable_target::user);
+       
+       assert::are_equal("First value", environment::get_environment_variable("xtd_test_core_value1", environment_variable_target::user), csf_);
+       assert::are_equal("Second value", environment::get_environment_variable("xtd_test_core_value2", environment_variable_target::user), csf_);
+       assert::are_equal("", environment::get_environment_variable("xtd_test_core_value3", environment_variable_target::user), csf_);
+       
+       environment::set_environment_variable("xtd_test_core_value1", "", environment_variable_target::user);
+       environment::set_environment_variable("xtd_test_core_value2", "", environment_variable_target::user);
+       */
+    }
+    
+    void test_method_(set_environment_variable_with_environment_variable_target_machine) {
+      // Not yet implemented.
+      /*
+       environment::set_environment_variable("xtd_test_core_value1", "First value", environment_variable_target::machine);
+       environment::set_environment_variable("xtd_test_core_value2", "Second value", environment_variable_target::machine);
+       
+       assert::are_equal("First value", environment::get_environment_variable("xtd_test_core_value1", environment_variable_target::machine), csf_);
+       assert::are_equal("Second value", environment::get_environment_variable("xtd_test_core_value2", environment_variable_target::machine), csf_);
+       assert::are_equal("", environment::get_environment_variable("xtd_test_core_value3", environment_variable_target::machine), csf_);
+       
+       environment::set_environment_variable("xtd_test_core_value1", "", environment_variable_target::machine);
+       environment::set_environment_variable("xtd_test_core_value2", "", environment_variable_target::machine);
+       */
     }
   };
 }
