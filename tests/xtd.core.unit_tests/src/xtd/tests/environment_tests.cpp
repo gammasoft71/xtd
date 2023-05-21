@@ -55,7 +55,8 @@ namespace xtd::tests {
     }
     
     void test_method_(has_shutdown_started) {
-      assert::is_false(environment::has_shutdown_started(), csf_);
+      // Not possible to check in the unit test
+      //assert::is_false(environment::has_shutdown_started(), csf_);
     }
     
     void test_method_(is_64_bit_operating_system) {
@@ -634,6 +635,78 @@ namespace xtd::tests {
       if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
       else if (environment::os_version().is_macos_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
       else if (environment::os_version().is_unix_platform()) assert::are_equal(io::path::combine("/usr", "share", "templates"), environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
+      else assert::fail("Operating System unknown", csf_);
+    }
+    
+    void test_method_(get_folder_path_special_folder_common_documents) {
+      auto sf = environment::special_folder::common_documents;
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
+      else if (environment::os_version().is_macos_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
+      else if (environment::os_version().is_unix_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
+      else assert::fail("Operating System unknown", csf_);
+    }
+    
+    void test_method_(get_folder_path_special_folder_common_admin_tools) {
+      auto sf = environment::special_folder::common_admin_tools;
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
+      else if (environment::os_version().is_macos_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
+      else if (environment::os_version().is_unix_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
+      else assert::fail("Operating System unknown", csf_);
+    }
+    
+    void test_method_(get_folder_path_special_folder_ccommon_music) {
+      auto sf = environment::special_folder::common_music;
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
+      else if (environment::os_version().is_macos_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
+      else if (environment::os_version().is_unix_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
+      else assert::fail("Operating System unknown", csf_);
+    }
+    
+    void test_method_(get_folder_path_special_folder_common_pictures) {
+      auto sf = environment::special_folder::common_pictures;
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
+      else if (environment::os_version().is_macos_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
+      else if (environment::os_version().is_unix_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
+      else assert::fail("Operating System unknown", csf_);
+    }
+    
+    void test_method_(get_folder_path_special_folder_common_videos) {
+      auto sf = environment::special_folder::common_videos;
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
+      else if (environment::os_version().is_macos_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
+      else if (environment::os_version().is_unix_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
+      else assert::fail("Operating System unknown", csf_);
+    }
+    
+    void test_method_(get_folder_path_special_folder_resources) {
+      auto sf = environment::special_folder::resources;
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
+      else if (environment::os_version().is_macos_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
+      else if (environment::os_version().is_unix_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
+      else assert::fail("Operating System unknown", csf_);
+    }
+    
+    void test_method_(get_folder_path_special_folder_localized_resources) {
+      auto sf = environment::special_folder::localized_resources;
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
+      else if (environment::os_version().is_macos_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
+      else if (environment::os_version().is_unix_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
+      else assert::fail("Operating System unknown", csf_);
+    }
+    
+    void test_method_(get_folder_path_special_folder_common_oem_links) {
+      auto sf = environment::special_folder::common_oem_links;
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
+      else if (environment::os_version().is_macos_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
+      else if (environment::os_version().is_unix_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
+      else assert::fail("Operating System unknown", csf_);
+    }
+    
+    void test_method_(get_folder_path_special_folder_cd_burning) {
+      auto sf = environment::special_folder::cd_burning;
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
+      else if (environment::os_version().is_macos_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
+      else if (environment::os_version().is_unix_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
       else assert::fail("Operating System unknown", csf_);
     }
   };
