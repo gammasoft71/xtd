@@ -1,4 +1,4 @@
-#pragma one
+#pragma once
 #if defined(_MSC_VER)
 #  define __compiler_name__ "Microsoft Visual Studio"
 #elif defined(__clang__)

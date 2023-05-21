@@ -1,4 +1,4 @@
-#pragma one
+#pragma once
 #if defined(__amd64__)
 #  define __architecture_name__ "x86_64"
 #elif defined(__arm__)
