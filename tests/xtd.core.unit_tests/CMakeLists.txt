@@ -92,6 +92,7 @@ add_sources(
   src/xtd/tests/event_tests.cpp
   src/xtd/tests/format_exception_tests.cpp
   src/xtd/tests/generic_stream_output_tests.cpp
+  src/xtd/tests/get_know_folder_path.h
   src/xtd/tests/guid_tests.cpp
   src/xtd/tests/iequatable_tests.cpp
   src/xtd/tests/index_out_of_range_exception_tests.cpp

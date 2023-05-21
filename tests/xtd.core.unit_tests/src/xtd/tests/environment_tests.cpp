@@ -2,6 +2,7 @@
 #include "build_type.h"
 #include "compiler_name.h"
 #include "compiler_version.h"
+#include "get_know_folder_path.h"
 #include "platform_name.h"
 #include "standard_name.h"
 #include <xtd/environment.h>
@@ -75,7 +76,7 @@ namespace xtd::tests {
       // Not possible to check in the unit test
       //assert::is_not_empty(environment::machine_name(), csf_);
     }
-
+    
     void test_method_(new_line) {
       assert::are_equal("\n", environment::new_line(), csf_);
     }
@@ -84,7 +85,7 @@ namespace xtd::tests {
       operating_system os = environment::os_version();
       assert::are_equal(__platform_name__, os.name(), csf_);
       assert::are_not_equal(platform_id::unknown, os.platform(), csf_);
-      assert::are_not_equal(xtd::version {}, os.version(), csf_);
+      assert::are_not_equal(xtd::version{}, os.version(), csf_);
     }
     
     void test_method_(processor_count) {
@@ -95,8 +96,8 @@ namespace xtd::tests {
       processor p = environment::processor_information();
       // There is no unit test possible.
       /*
-      assert::are_equal(__architecture_name__, p.architecture_string(), csf_);
-      assert::are_equal(ustring(__architecture_name__).ends_with("64"), p.is_64_bit(), csf_);
+       assert::are_equal(__architecture_name__, p.architecture_string(), csf_);
+       assert::are_equal(ustring(__architecture_name__).ends_with("64"), p.is_64_bit(), csf_);
        */
     }
     
@@ -135,19 +136,19 @@ namespace xtd::tests {
       xtd::toolkit t = environment::toolkit_version();
       assert::are_equal("No toolkit defined.", t.description(), csf_);
       assert::are_equal("Unknown", t.name(), csf_);
-      assert::are_equal(xtd::version {}, t.version(), csf_);
+      assert::are_equal(xtd::version{}, t.version(), csf_);
     }
     
     void test_method_(user_administrator) {
       // There is no unit test possible.
-     //  assert::is_false(environment::user_administrator(), csf_);
+      //  assert::is_false(environment::user_administrator(), csf_);
     }
     
     void test_method_(user_domain_name) {
       // There is no unit test possible.
       assert::is_not_empty(environment::user_domain_name(), csf_);
     }
-
+    
     void test_method_(user_interactive) {
       assert::is_true(environment::user_interactive(), csf_);
     }
@@ -158,9 +159,9 @@ namespace xtd::tests {
     }
     
     void test_method_(version) {
-      assert::are_equal(xtd::version {0, 2, 0}, environment::version(), csf_);
+      assert::are_equal(xtd::version{ 0, 2, 0 }, environment::version(), csf_);
     }
-      
+    
     void test_method_(working_set) {
       // There is no unit test possible.
       //assert::is_not_zero(environment::working_set(), csf_);
@@ -196,7 +197,7 @@ namespace xtd::tests {
       assert::are_equal("First value", environment::get_environment_variable("xtd_test_core_value1"), csf_);
       assert::are_equal("Second value", environment::get_environment_variable("xtd_test_core_value2"), csf_);
       assert::are_equal("", environment::get_environment_variable("xtd_test_core_value3"), csf_);
-
+      
       environment::set_environment_variable("xtd_test_core_value1", "");
       environment::set_environment_variable("xtd_test_core_value2", "");
     }
@@ -216,31 +217,31 @@ namespace xtd::tests {
     void test_method_(get_environment_variable_with_environment_variable_target_user) {
       // Not yet implemented.
       /*
-      environment::set_environment_variable("xtd_test_core_value1", "First value", environment_variable_target::user);
-      environment::set_environment_variable("xtd_test_core_value2", "Second value", environment_variable_target::user);
-      
-      assert::are_equal("First value", environment::get_environment_variable("xtd_test_core_value1", environment_variable_target::user), csf_);
-      assert::are_equal("Second value", environment::get_environment_variable("xtd_test_core_value2", environment_variable_target::user), csf_);
-      assert::are_equal("", environment::get_environment_variable("xtd_test_core_value3", environment_variable_target::user), csf_);
-      
-      environment::set_environment_variable("xtd_test_core_value1", "", environment_variable_target::user);
-      environment::set_environment_variable("xtd_test_core_value2", "", environment_variable_target::user);
-      */
+       environment::set_environment_variable("xtd_test_core_value1", "First value", environment_variable_target::user);
+       environment::set_environment_variable("xtd_test_core_value2", "Second value", environment_variable_target::user);
+       
+       assert::are_equal("First value", environment::get_environment_variable("xtd_test_core_value1", environment_variable_target::user), csf_);
+       assert::are_equal("Second value", environment::get_environment_variable("xtd_test_core_value2", environment_variable_target::user), csf_);
+       assert::are_equal("", environment::get_environment_variable("xtd_test_core_value3", environment_variable_target::user), csf_);
+       
+       environment::set_environment_variable("xtd_test_core_value1", "", environment_variable_target::user);
+       environment::set_environment_variable("xtd_test_core_value2", "", environment_variable_target::user);
+       */
     }
     
     void test_method_(get_environment_variable_with_environment_variable_target_machine) {
       // Not yet implemented.
       /*
-      environment::set_environment_variable("xtd_test_core_value1", "First value", environment_variable_target::machine);
-      environment::set_environment_variable("xtd_test_core_value2", "Second value", environment_variable_target::machine);
-      
-      assert::are_equal("First value", environment::get_environment_variable("xtd_test_core_value1", environment_variable_target::machine), csf_);
-      assert::are_equal("Second value", environment::get_environment_variable("xtd_test_core_value2", environment_variable_target::machine), csf_);
-      assert::are_equal("", environment::get_environment_variable("xtd_test_core_value3", environment_variable_target::machine), csf_);
-      
-      environment::set_environment_variable("xtd_test_core_value1", "", environment_variable_target::machine);
-      environment::set_environment_variable("xtd_test_core_value2", "", environment_variable_target::machine);
-      */
+       environment::set_environment_variable("xtd_test_core_value1", "First value", environment_variable_target::machine);
+       environment::set_environment_variable("xtd_test_core_value2", "Second value", environment_variable_target::machine);
+       
+       assert::are_equal("First value", environment::get_environment_variable("xtd_test_core_value1", environment_variable_target::machine), csf_);
+       assert::are_equal("Second value", environment::get_environment_variable("xtd_test_core_value2", environment_variable_target::machine), csf_);
+       assert::are_equal("", environment::get_environment_variable("xtd_test_core_value3", environment_variable_target::machine), csf_);
+       
+       environment::set_environment_variable("xtd_test_core_value1", "", environment_variable_target::machine);
+       environment::set_environment_variable("xtd_test_core_value2", "", environment_variable_target::machine);
+       */
     }
     
     void test_method_(get_environment_variables) {
@@ -284,7 +285,7 @@ namespace xtd::tests {
        assert::are_equal("Second value", envs["xtd_test_core_value2"], csf_);
        */
     }
-
+    
     void test_method_(set_environment_variable) {
       environment::set_environment_variable("xtd_test_core_value1", "First value");
       environment::set_environment_variable("xtd_test_core_value2", "Second value");
@@ -342,7 +343,7 @@ namespace xtd::tests {
     
     void test_method_(get_folder_path_special_folder_desktop) {
       auto sf = environment::special_folder::desktop;
-      if (environment::os_version().is_windows_platform()) assert::are_equal(io::path::combine(environment::get_folder_path(environment::special_folder::user_profile), "Desktop"), environment::get_folder_path(sf), csf_);
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
       else if (environment::os_version().is_macos_platform()) assert::are_equal(io::path::combine(environment::get_folder_path(environment::special_folder::user_profile), "Desktop"), environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
       else if (environment::os_version().is_unix_platform()) assert::are_equal(io::path::combine(environment::get_folder_path(environment::special_folder::user_profile), "Desktop"), environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
       else assert::fail("Operating System unknown", csf_);
@@ -350,7 +351,7 @@ namespace xtd::tests {
     
     void test_method_(get_folder_path_special_folder_programs) {
       auto sf = environment::special_folder::programs;
-      if (environment::os_version().is_windows_platform()) assert::are_equal(io::path::combine({environment::get_folder_path(environment::special_folder::application_data), "Microsoft", "Windows", "Start Menu", "Programs"}), environment::get_folder_path(sf), csf_);
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
       else if (environment::os_version().is_macos_platform()) assert::is_empty(environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
       else if (environment::os_version().is_unix_platform()) assert::is_empty(environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
       else assert::fail("Operating System unknown", csf_);
@@ -358,55 +359,55 @@ namespace xtd::tests {
     
     void test_method_(get_folder_path_special_folder_my_documents) {
       auto sf = environment::special_folder::my_documents;
-      if (environment::os_version().is_windows_platform()) assert::are_equal(io::path::combine(environment::get_folder_path(environment::special_folder::user_profile), "Documents"), environment::get_folder_path(sf), csf_);
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
       else if (environment::os_version().is_macos_platform()) assert::are_equal(environment::get_folder_path(environment::special_folder::user_profile), environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
       else if (environment::os_version().is_unix_platform()) assert::are_equal(environment::get_folder_path(environment::special_folder::user_profile), environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
       else assert::fail("Operating System unknown", csf_);
     }
-
+    
     void test_method_(get_folder_path_special_folder_personal) {
       auto sf = environment::special_folder::personal;
-      if (environment::os_version().is_windows_platform()) assert::are_equal(io::path::combine(environment::get_folder_path(environment::special_folder::user_profile), "Documents"), environment::get_folder_path(sf), csf_);
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
       else if (environment::os_version().is_macos_platform()) assert::are_equal(environment::get_folder_path(environment::special_folder::user_profile), environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
       else if (environment::os_version().is_unix_platform()) assert::are_equal(environment::get_folder_path(environment::special_folder::user_profile), environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
       else assert::fail("Operating System unknown", csf_);
     }
-
+    
     void test_method_(get_folder_path_special_folder_favorites) {
       auto sf = environment::special_folder::favorites;
-      if (environment::os_version().is_windows_platform()) assert::are_equal(io::path::combine(environment::get_folder_path(environment::special_folder::user_profile), "Favorites"), environment::get_folder_path(sf), csf_);
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
       else if (environment::os_version().is_macos_platform()) assert::are_equal(io::path::combine(environment::get_folder_path(environment::special_folder::user_profile), "Library", "Favorites"), environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
       else if (environment::os_version().is_unix_platform()) assert::is_empty(environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
       else assert::fail("Operating System unknown", csf_);
     }
-
+    
     void test_method_(get_folder_path_special_folder_startup) {
       auto sf = environment::special_folder::startup;
-      if (environment::os_version().is_windows_platform()) assert::are_equal(io::path::combine({environment::get_folder_path(environment::special_folder::application_data), "Microsoft", "Windows", "Start Menu", "Programs", "Startup"}), environment::get_folder_path(sf), csf_);
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
       else if (environment::os_version().is_macos_platform()) assert::is_empty(environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
       else if (environment::os_version().is_unix_platform()) assert::is_empty(environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
       else assert::fail("Operating System unknown", csf_);
     }
-
+    
     void test_method_(get_folder_path_special_folder_recent) {
       auto sf = environment::special_folder::recent;
-      if (environment::os_version().is_windows_platform()) assert::are_equal(io::path::combine({environment::get_folder_path(environment::special_folder::application_data), "Microsoft", "Windows", "Recent"}), environment::get_folder_path(sf), csf_);
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
       else if (environment::os_version().is_macos_platform()) assert::is_empty(environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
       else if (environment::os_version().is_unix_platform()) assert::is_empty(environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
       else assert::fail("Operating System unknown", csf_);
     }
-
+    
     void test_method_(get_folder_path_special_send_to) {
       auto sf = environment::special_folder::send_to;
-      if (environment::os_version().is_windows_platform()) assert::are_equal(io::path::combine({environment::get_folder_path(environment::special_folder::application_data), "Microsoft", "Windows", "SendTo"}), environment::get_folder_path(sf), csf_);
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
       else if (environment::os_version().is_macos_platform()) assert::is_empty(environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
       else if (environment::os_version().is_unix_platform()) assert::is_empty(environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
       else assert::fail("Operating System unknown", csf_);
     }
-
+    
     void test_method_(get_folder_path_special_start_menu) {
       auto sf = environment::special_folder::start_menu;
-      if (environment::os_version().is_windows_platform()) assert::are_equal(io::path::combine({environment::get_folder_path(environment::special_folder::application_data), "Microsoft", "Windows", "Start Menu"}), environment::get_folder_path(sf), csf_);
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
       else if (environment::os_version().is_macos_platform()) assert::is_empty(environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
       else if (environment::os_version().is_unix_platform()) assert::is_empty(environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
       else assert::fail("Operating System unknown", csf_);
@@ -414,7 +415,7 @@ namespace xtd::tests {
     
     void test_method_(get_folder_path_special_folder_my_music) {
       auto sf = environment::special_folder::my_music;
-      if (environment::os_version().is_windows_platform()) assert::are_equal(io::path::combine(environment::get_folder_path(environment::special_folder::user_profile), "Music"), environment::get_folder_path(sf), csf_);
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
       else if (environment::os_version().is_macos_platform()) assert::are_equal(io::path::combine(environment::get_folder_path(environment::special_folder::user_profile), "Music"), environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
       else if (environment::os_version().is_unix_platform()) assert::are_equal(io::path::combine(environment::get_folder_path(environment::special_folder::user_profile), "Music"), environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
       else assert::fail("Operating System unknown", csf_);
@@ -422,7 +423,7 @@ namespace xtd::tests {
     
     void test_method_(get_folder_path_special_folder_my_videos) {
       auto sf = environment::special_folder::my_videos;
-      if (environment::os_version().is_windows_platform()) assert::are_equal(io::path::combine(environment::get_folder_path(environment::special_folder::user_profile), "Videos"), environment::get_folder_path(sf), csf_);
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
       else if (environment::os_version().is_macos_platform()) assert::are_equal(io::path::combine(environment::get_folder_path(environment::special_folder::user_profile), "Movies"), environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
       else if (environment::os_version().is_unix_platform()) assert::are_equal(io::path::combine(environment::get_folder_path(environment::special_folder::user_profile), "Videos"), environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
       else assert::fail("Operating System unknown", csf_);
@@ -430,23 +431,23 @@ namespace xtd::tests {
     
     void test_method_(get_folder_path_special_folder_desktop_directory) {
       auto sf = environment::special_folder::desktop_directory;
-      if (environment::os_version().is_windows_platform()) assert::are_equal(io::path::combine(environment::get_folder_path(environment::special_folder::user_profile), "Desktop"), environment::get_folder_path(sf), csf_);
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
       else if (environment::os_version().is_macos_platform()) assert::are_equal(io::path::combine(environment::get_folder_path(environment::special_folder::user_profile), "Desktop"), environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
       else if (environment::os_version().is_unix_platform()) assert::are_equal(io::path::combine(environment::get_folder_path(environment::special_folder::user_profile), "Desktop"), environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
       else assert::fail("Operating System unknown", csf_);
     }
-
+    
     void test_method_(get_folder_path_special_my_computer) {
       auto sf = environment::special_folder::my_computer;
-      if (environment::os_version().is_windows_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
       else if (environment::os_version().is_macos_platform()) assert::is_empty(environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
       else if (environment::os_version().is_unix_platform()) assert::is_empty(environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
       else assert::fail("Operating System unknown", csf_);
     }
-
+    
     void test_method_(get_folder_path_special_network_shortcuts) {
       auto sf = environment::special_folder::network_shortcuts;
-      if (environment::os_version().is_windows_platform()) assert::are_equal(io::path::combine({environment::get_folder_path(environment::special_folder::application_data), "Microsoft", "Windows", "Network Shortcuts"}), environment::get_folder_path(sf), csf_);
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
       else if (environment::os_version().is_macos_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
       else if (environment::os_version().is_unix_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
       else assert::fail("Operating System unknown", csf_);
@@ -454,7 +455,7 @@ namespace xtd::tests {
     
     void test_method_(get_folder_path_special_folder_fonts) {
       auto sf = environment::special_folder::fonts;
-      if (environment::os_version().is_windows_platform()) assert::are_equal(io::path::combine(environment::get_folder_path(environment::special_folder::windows), "Fonts"), environment::get_folder_path(sf), csf_);
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
       else if (environment::os_version().is_macos_platform()) assert::are_equal(io::path::combine(environment::get_folder_path(environment::special_folder::user_profile), "Library", "Fonts"), environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
       else if (environment::os_version().is_unix_platform()) assert::are_equal(io::path::combine(environment::get_folder_path(environment::special_folder::user_profile), ".fonts"), environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
       else assert::fail("Operating System unknown", csf_);
@@ -462,7 +463,7 @@ namespace xtd::tests {
     
     void test_method_(get_folder_path_special_folder_templates) {
       auto sf = environment::special_folder::templates;
-      if (environment::os_version().is_windows_platform()) assert::are_equal(io::path::combine({environment::get_folder_path(environment::special_folder::application_data), "Microsoft", "Windows", "Templates"}), environment::get_folder_path(sf), csf_);
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
       else if (environment::os_version().is_macos_platform()) assert::are_equal(io::path::combine(environment::get_folder_path(environment::special_folder::user_profile), "Templates"), environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
       else if (environment::os_version().is_unix_platform()) assert::are_equal(io::path::combine(environment::get_folder_path(environment::special_folder::user_profile), "Templates"), environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
       else assert::fail("Operating System unknown", csf_);
@@ -470,7 +471,7 @@ namespace xtd::tests {
     
     void test_method_(get_folder_path_special_folder_common_start_menu) {
       auto sf = environment::special_folder::common_start_menu;
-      if (environment::os_version().is_windows_platform()) assert::are_equal(io::path::combine({environment::get_folder_path(environment::special_folder::common_application_data), "Microsoft", "Windows", "Start Menu"}), environment::get_folder_path(sf), csf_);
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
       else if (environment::os_version().is_macos_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
       else if (environment::os_version().is_unix_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
       else assert::fail("Operating System unknown", csf_);
@@ -478,7 +479,7 @@ namespace xtd::tests {
     
     void test_method_(get_folder_path_special_folder_common_programs) {
       auto sf = environment::special_folder::common_programs;
-      if (environment::os_version().is_windows_platform()) assert::are_equal(io::path::combine({environment::get_folder_path(environment::special_folder::common_application_data), "Microsoft", "Windows", "Start Menu", "Programs"}), environment::get_folder_path(sf), csf_);
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
       else if (environment::os_version().is_macos_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
       else if (environment::os_version().is_unix_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
       else assert::fail("Operating System unknown", csf_);
@@ -486,7 +487,7 @@ namespace xtd::tests {
     
     void test_method_(get_folder_path_special_folder_common_startup) {
       auto sf = environment::special_folder::common_startup;
-      if (environment::os_version().is_windows_platform()) assert::are_equal(io::path::combine({environment::get_folder_path(environment::special_folder::common_application_data), "Microsoft", "Windows", "Start Menu", "Programs", "Startup"}), environment::get_folder_path(sf), csf_);
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
       else if (environment::os_version().is_macos_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
       else if (environment::os_version().is_unix_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
       else assert::fail("Operating System unknown", csf_);
@@ -494,57 +495,145 @@ namespace xtd::tests {
     
     void test_method_(get_folder_path_special_folder_common_desktop_directory) {
       auto sf = environment::special_folder::common_desktop_directory;
-      if (environment::os_version().is_windows_platform()) assert::are_equal(io::path::combine({"C:", "Users", "Public", "Desktop"}), environment::get_folder_path(sf), csf_);
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
       else if (environment::os_version().is_macos_platform()) assert::is_empty(environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
       else if (environment::os_version().is_unix_platform()) assert::is_empty(environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
       else assert::fail("Operating System unknown", csf_);
     }
-
+    
     void test_method_(get_folder_path_special_folder_application_data) {
       auto sf = environment::special_folder::application_data;
-      if (environment::os_version().is_windows_platform()) assert::are_equal(io::path::combine({environment::get_folder_path(environment::special_folder::user_profile), "AppData", "Roaming"}), environment::get_folder_path(sf), csf_);
-      else if (environment::os_version().is_macos_platform()) assert::are_equal(io::path::combine({environment::get_folder_path(environment::special_folder::user_profile), ".config"}), environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
-      else if (environment::os_version().is_unix_platform()) assert::are_equal(io::path::combine({environment::get_folder_path(environment::special_folder::user_profile), ".config"}), environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
+      else if (environment::os_version().is_macos_platform()) assert::are_equal(io::path::combine({ environment::get_folder_path(environment::special_folder::user_profile), ".config" }), environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
+      else if (environment::os_version().is_unix_platform()) assert::are_equal(io::path::combine({ environment::get_folder_path(environment::special_folder::user_profile), ".config" }), environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
       else assert::fail("Operating System unknown", csf_);
     }
-
+    
     void test_method_(get_folder_path_special_printer_shortcuts) {
       auto sf = environment::special_folder::printer_shortcuts;
-      if (environment::os_version().is_windows_platform()) assert::are_equal(io::path::combine({environment::get_folder_path(environment::special_folder::application_data), "Microsoft", "Windows", "Printer Shortcuts"}), environment::get_folder_path(sf), csf_);
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
       else if (environment::os_version().is_macos_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
       else if (environment::os_version().is_unix_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
       else assert::fail("Operating System unknown", csf_);
     }
-
+    
     void test_method_(get_folder_path_special_local_application_data) {
       auto sf = environment::special_folder::local_application_data;
-      if (environment::os_version().is_windows_platform()) assert::are_equal(io::path::combine({"C:", "Users", environment::user_name(), "AppData", "Local"}), environment::get_folder_path(sf), csf_);
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
       else if (environment::os_version().is_macos_platform()) assert::are_equal(io::path::combine(environment::get_folder_path(environment::special_folder::user_profile), ".local", "share"), environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
       else if (environment::os_version().is_unix_platform()) assert::are_equal(io::path::combine(environment::get_folder_path(environment::special_folder::user_profile), ".local", "share"), environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
       else assert::fail("Operating System unknown", csf_);
     }
-
+    
     void test_method_(get_folder_path_special_internet_cache) {
       auto sf = environment::special_folder::internet_cache;
-      if (environment::os_version().is_windows_platform()) assert::are_equal(io::path::combine({environment::get_folder_path(environment::special_folder::local_application_data), "Microsoft", "Windows", "Temporary Internet Files"}), environment::get_folder_path(sf), csf_);
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
       else if (environment::os_version().is_macos_platform()) assert::are_equal(io::path::combine(environment::get_folder_path(environment::special_folder::user_profile), "Library", "Caches"), environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
       else if (environment::os_version().is_unix_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
       else assert::fail("Operating System unknown", csf_);
     }
-
+    
     void test_method_(get_folder_path_special_cookies) {
       auto sf = environment::special_folder::cookies;
-      if (environment::os_version().is_windows_platform()) assert::are_equal(io::path::combine({environment::get_folder_path(environment::special_folder::application_data), "Microsoft", "Windows", "Cookies"}), environment::get_folder_path(sf), csf_);
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
       else if (environment::os_version().is_macos_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
       else if (environment::os_version().is_unix_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
       else assert::fail("Operating System unknown", csf_);
     }
-
+    
     void test_method_(get_folder_path_special_history) {
       auto sf = environment::special_folder::history;
-      if (environment::os_version().is_windows_platform()) assert::are_equal(io::path::combine({environment::get_folder_path(environment::special_folder::local_application_data), "Microsoft", "Windows", "History"}), environment::get_folder_path(sf), csf_);
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
       else if (environment::os_version().is_macos_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
       else if (environment::os_version().is_unix_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
+      else assert::fail("Operating System unknown", csf_);
+    }
+    
+    void test_method_(get_folder_path_special_common_application_data) {
+      auto sf = environment::special_folder::common_application_data;
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
+      else if (environment::os_version().is_macos_platform()) assert::are_equal(io::path::combine("/usr", "share"), environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
+      else if (environment::os_version().is_unix_platform()) assert::are_equal(io::path::combine("/usr", "share"), environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
+      else assert::fail("Operating System unknown", csf_);
+    }
+    
+    void test_method_(get_folder_path_special_windows) {
+      auto sf = environment::special_folder::windows;
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
+      else if (environment::os_version().is_macos_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
+      else if (environment::os_version().is_unix_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
+      else assert::fail("Operating System unknown", csf_);
+    }
+    
+    void test_method_(get_folder_path_special_system) {
+      auto sf = environment::special_folder::system;
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
+      else if (environment::os_version().is_macos_platform()) assert::are_equal("/System", environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
+      else if (environment::os_version().is_unix_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
+      else assert::fail("Operating System unknown", csf_);
+    }
+    
+    void test_method_(get_folder_path_special_program_files) {
+      auto sf = environment::special_folder::program_files;
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
+      else if (environment::os_version().is_macos_platform()) assert::are_equal("/Applications", environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
+      else if (environment::os_version().is_unix_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
+      else assert::fail("Operating System unknown", csf_);
+    }
+    
+    void test_method_(get_folder_path_special_folder_my_pictures) {
+      auto sf = environment::special_folder::my_pictures;
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
+      else if (environment::os_version().is_macos_platform()) assert::are_equal(io::path::combine(environment::get_folder_path(environment::special_folder::user_profile), "Pictures"), environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
+      else if (environment::os_version().is_unix_platform()) assert::are_equal(io::path::combine(environment::get_folder_path(environment::special_folder::user_profile), "Pictures"), environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
+      else assert::fail("Operating System unknown", csf_);
+    }
+    
+    void test_method_(get_folder_path_special_folder_user_profile) {
+      auto sf = environment::special_folder::user_profile;
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
+      else if (environment::os_version().is_macos_platform()) assert::are_equal(io::path::combine("/Users", environment::user_name()), environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
+      else if (environment::os_version().is_unix_platform()) assert::are_equal(io::path::combine("/home", environment::user_name()), environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
+      else assert::fail("Operating System unknown", csf_);
+    }
+    
+    void test_method_(get_folder_path_special_system_x86) {
+      auto sf = environment::special_folder::system_x86;
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
+      else if (environment::os_version().is_macos_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
+      else if (environment::os_version().is_unix_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
+      else assert::fail("Operating System unknown", csf_);
+    }
+    
+    void test_method_(get_folder_path_special_program_files_x86) {
+      auto sf = environment::special_folder::program_files_x86;
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
+      else if (environment::os_version().is_macos_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
+      else if (environment::os_version().is_unix_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
+      else assert::fail("Operating System unknown", csf_);
+    }
+    
+    void test_method_(get_folder_path_special_common_program_files) {
+      auto sf = environment::special_folder::common_program_files;
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
+      else if (environment::os_version().is_macos_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
+      else if (environment::os_version().is_unix_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
+      else assert::fail("Operating System unknown", csf_);
+    }
+    
+    void test_method_(get_folder_path_special_common_program_files_x86) {
+      auto sf = environment::special_folder::common_program_files_x86;
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
+      else if (environment::os_version().is_macos_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
+      else if (environment::os_version().is_unix_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
+      else assert::fail("Operating System unknown", csf_);
+    }
+    
+    void test_method_(get_folder_path_special_folder_common_templates) {
+      auto sf = environment::special_folder::common_templates;
+      if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
+      else if (environment::os_version().is_macos_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
+      else if (environment::os_version().is_unix_platform()) assert::are_equal(io::path::combine("/usr", "share", "templates"), environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
       else assert::fail("Operating System unknown", csf_);
     }
   };
