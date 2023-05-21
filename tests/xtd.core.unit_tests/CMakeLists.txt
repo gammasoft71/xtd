@@ -89,6 +89,8 @@ add_sources(
   src/xtd/tests/environment_special_folder_tests.cpp
   src/xtd/tests/environment_special_folder_option_tests.cpp
   src/xtd/tests/environment_tests.cpp
+  src/xtd/tests/event_args_tests.cpp
+  src/xtd/tests/event_tests.cpp
   src/xtd/tests/event_tests.cpp
   src/xtd/tests/format_exception_tests.cpp
   src/xtd/tests/generic_stream_output_tests.cpp
