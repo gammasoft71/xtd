@@ -1,4 +1,4 @@
-#pragma one
+#pragma once
 #if defined(_MSC_VER)
 #  define __compiler_version__ xtd::version {_MSC_VER / 100, _MSC_VER % 100, 0}
 #elif defined(__clang__)

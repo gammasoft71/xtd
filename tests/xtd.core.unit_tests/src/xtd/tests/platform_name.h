@@ -1,4 +1,4 @@
-#pragma one
+#pragma once
 #ifdef HAVE_UNISTD_H // needed for _POSIX_VERSION (see https://www.gnu.org/software/autoconf/manual/autoconf-2.64/html_node/Particular-Headers.html#index-g_t_005fPOSIX_005fVERSION-585)
 #  include <unistd.h>
 #endif
