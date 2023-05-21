@@ -6,7 +6,6 @@ using namespace xtd;
 using namespace xtd::tunit;
 
 namespace xtd::tests {
-  // The class test must be declared with test_class_ helper.
   class test_class_(delegate_tests) {
     class container {
     public:
