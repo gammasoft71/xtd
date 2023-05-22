@@ -97,6 +97,7 @@ add_sources(
   src/xtd/tests/get_know_folder_path.h
   src/xtd/tests/guid_tests.cpp
   src/xtd/tests/iasync_result_tests.cpp
+  src/xtd/tests/icomparable_tests.cpp
   src/xtd/tests/iequatable_tests.cpp
   src/xtd/tests/index_out_of_range_exception_tests.cpp
   src/xtd/tests/invalid_cast_exception_tests.cpp
