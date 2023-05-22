@@ -2,7 +2,7 @@
 /// @brief Contains xtd::io::file_access enum class.
 /// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
 #pragma once
-#include "../ustring.h"
+#include "../enum.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -20,21 +20,14 @@ namespace xtd {
       /// @brief The file is a read_write file. The file is part of the operating read_write or is used exclusively by the operating read_write.
       read_write = 0b11,
     };
-    
-    /// @cond
-    inline file_access& operator^=(file_access& lhs, file_access rhs) {lhs = static_cast<file_access>(static_cast<int>(lhs) ^ static_cast<int>(rhs)); return lhs;}
-    inline file_access& operator&=(file_access& lhs, file_access rhs) {lhs = static_cast<file_access>(static_cast<int>(lhs) & static_cast<int>(rhs)); return lhs;}
-    inline file_access& operator|=(file_access& lhs, file_access rhs) {lhs = static_cast<file_access>(static_cast<int>(lhs) | static_cast<int>(rhs)); return lhs;}
-    inline file_access& operator+=(file_access& lhs, file_access rhs) {lhs = static_cast<file_access>(static_cast<int>(lhs) + static_cast<int>(rhs)); return lhs;}
-    inline file_access& operator-=(file_access& lhs, file_access rhs) {lhs = static_cast<file_access>(static_cast<int>(lhs) - static_cast<int>(rhs)); return lhs;}
-    inline file_access operator^(file_access lhs, file_access rhs) {return static_cast<file_access>(static_cast<int>(lhs) ^ static_cast<int>(rhs));}
-    inline file_access operator&(file_access lhs, file_access rhs) {return static_cast<file_access>(static_cast<int>(lhs) & static_cast<int>(rhs));}
-    inline file_access operator|(file_access lhs, file_access rhs) {return static_cast<file_access>(static_cast<int>(lhs) | static_cast<int>(rhs));}
-    inline file_access operator+(file_access lhs, file_access rhs) {return static_cast<file_access>(static_cast<int>(lhs) + static_cast<int>(rhs));}
-    inline file_access operator-(file_access lhs, file_access rhs) {return static_cast<file_access>(static_cast<int>(lhs) - static_cast<int>(rhs));}
-    inline file_access operator~(file_access lhs) {return static_cast<file_access>(~static_cast<int>(lhs));}
-    inline std::ostream& operator<<(std::ostream& os, file_access value) {return os << to_string(value, {{file_access::read, "read"}, {file_access::write, "write"}, {file_access::read_write, "read_write"}});}
-    inline std::wostream& operator<<(std::wostream& os, file_access value) {return os << to_string(value, {{file_access::read, L"read"}, {file_access::write, L"write"}, {file_access::read_write, L"read_write"}});}
-    /// @endcond
   }
 }
+
+
+/// @cond
+flags_attribute_(xtd::io, file_access);
+
+template<> struct xtd::enum_register<xtd::io::file_access> {
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::io::file_access> {{xtd::io::file_access::read, L"read"}, {xtd::io::file_access::write, L"write"}, {xtd::io::file_access::read_write, L"read_write"}};}
+};
+/// @endcond
