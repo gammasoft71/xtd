@@ -18,6 +18,7 @@ add_sources(
   src/xtd/io/tests/drive_not_found_exception_tests.cpp
   src/xtd/io/tests/end_of_stream_exception_tests.cpp
   src/xtd/io/tests/file_access_tests.cpp
+  src/xtd/io/tests/file_attributes_tests.cpp
   src/xtd/io/tests/file_tests.cpp
   src/xtd/io/tests/file_format_exception_tests.cpp
   src/xtd/io/tests/file_load_exception_tests.cpp
