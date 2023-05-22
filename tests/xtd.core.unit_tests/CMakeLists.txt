@@ -80,6 +80,7 @@ add_sources(
   src/xtd/tests/divided_by_zero_exception_tests.cpp
   src/xtd/tests/domain_exception_tests.cpp
   src/xtd/tests/delegate_tests.cpp
+  src/xtd/tests/enum_attribute_tests.cpp
   src/xtd/tests/enum_object_with_registered_enum_class_flags_tests.cpp
   src/xtd/tests/enum_object_with_registered_enum_class_tests.cpp
   src/xtd/tests/enum_object_with_registered_enum_flags_tests.cpp
