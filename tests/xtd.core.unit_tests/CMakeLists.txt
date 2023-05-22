@@ -25,6 +25,13 @@ add_sources(
   src/xtd/io/tests/path_too_long_exception_tests.cpp
   src/xtd/io/tests/stream_writer_tests.cpp
   src/xtd/io/tests/string_reader_tests.cpp
+  src/xtd/net/sockets/tests/address_family_tests.cpp
+  src/xtd/net/sockets/tests/ip_v6_multicast_option_tests.cpp
+  src/xtd/net/sockets/tests/linger_option_tests.cpp
+  src/xtd/net/sockets/tests/multicast_option_tests.cpp
+  src/xtd/net/sockets/tests/socket_tests.cpp
+  src/xtd/net/sockets/tests/socket_exception_tests.cpp
+  src/xtd/net/sockets/tests/socket_information_tests.cpp
   src/xtd/net/tests/cookie_exception_tests.cpp
   src/xtd/net/tests/dns_tests.cpp
   src/xtd/net/tests/dns_end_point_tests.cpp
@@ -36,12 +43,6 @@ add_sources(
   src/xtd/net/tests/protocol_violation_exception_tests.cpp
   src/xtd/net/tests/socket_address_tests.cpp
   src/xtd/net/tests/web_exception_tests.cpp
-  src/xtd/net/sockets/tests/ip_v6_multicast_option_tests.cpp
-  src/xtd/net/sockets/tests/linger_option_tests.cpp
-  src/xtd/net/sockets/tests/multicast_option_tests.cpp
-  src/xtd/net/sockets/tests/socket_tests.cpp
-  src/xtd/net/sockets/tests/socket_exception_tests.cpp
-  src/xtd/net/sockets/tests/socket_information_tests.cpp
   src/xtd/reflection/tests/assembly_tests.cpp
   src/xtd/security/tests/secure_string_tests.cpp
   src/xtd/tests/any_tests.cpp
