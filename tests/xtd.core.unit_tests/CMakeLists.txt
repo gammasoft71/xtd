@@ -100,6 +100,7 @@ add_sources(
   src/xtd/tests/icomparable_tests.cpp
   src/xtd/tests/iequatable_tests.cpp
   src/xtd/tests/index_out_of_range_exception_tests.cpp
+  src/xtd/tests/interface_tests.cpp
   src/xtd/tests/invalid_cast_exception_tests.cpp
   src/xtd/tests/invalid_operation_exception_tests.cpp
   src/xtd/tests/invalid_program_exception_tests.cpp
