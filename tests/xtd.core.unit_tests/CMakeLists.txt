@@ -31,6 +31,7 @@ add_sources(
   src/xtd/io/tests/string_reader_tests.cpp
   src/xtd/net/sockets/tests/address_family_tests.cpp
   src/xtd/net/sockets/tests/io_control_code_tests.cpp
+  src/xtd/net/sockets/tests/ip_protection_level_tests.cpp
   src/xtd/net/sockets/tests/ip_v6_multicast_option_tests.cpp
   src/xtd/net/sockets/tests/linger_option_tests.cpp
   src/xtd/net/sockets/tests/multicast_option_tests.cpp
