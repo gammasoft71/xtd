@@ -118,6 +118,7 @@ add_sources(
   src/xtd/tests/invalid_operation_exception_tests.cpp
   src/xtd/tests/invalid_program_exception_tests.cpp
   src/xtd/tests/is_tests.cpp
+  src/xtd/tests/language_id_tests.cpp
   src/xtd/tests/length_exception_tests.cpp
   src/xtd/tests/literals_tests.cpp
   src/xtd/tests/math_tests.cpp
