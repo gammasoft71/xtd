@@ -11,7 +11,7 @@
 
 /// @cond
 template<> struct xtd::enum_register<xtd::enum_attribute> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::enum_attribute> {{enum_attribute::standard, L"standard"}, {enum_attribute::flags, L"flags"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::enum_attribute> {{enum_attribute::standard, "standard"}, {enum_attribute::flags, "flags"}};}
 };
 
 template<> struct xtd::enum_set_attribute<xtd::number_styles> {
