@@ -29,7 +29,7 @@ namespace xtd {
       /// @brief File owner has read, write and execute/search permission. Equivalent to xtd::io::file_permissions::owner_read | xtd::io::file_permissions::owner_write | xtd::io::file_permissions::owner_execute.
       owner_all = owner_read | owner_write | owner_execute,
       /// @brief The file's ueer group has read permission.
-      group_read = 010,
+      group_read = 040,
       /// @brief The file's ueer group has write permission.
       group_write = 020,
       /// @brief The file's ueer group has execute/search permission.
@@ -64,6 +64,6 @@ namespace xtd {
 flags_attribute_(xtd::io, file_permissions);
 
 template<> struct xtd::enum_register<xtd::io::file_permissions> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::io::file_permissions> {{xtd::io::file_permissions::none, L"none"}, {xtd::io::file_permissions::owner_read, L"owner_read"}, {xtd::io::file_permissions::owner_write, L"owner_write"}, {xtd::io::file_permissions::owner_execute, L"owner_execute"}, {xtd::io::file_permissions::group_read, L"group_read"}, {xtd::io::file_permissions::group_execute, L"group_execute"}, {xtd::io::file_permissions::others_read, L"others_read"}, {xtd::io::file_permissions::others_write, L"others_write"}, {xtd::io::file_permissions::others_execute, L"others_execute"}, {xtd::io::file_permissions::set_uid, L"set_uid"}, {xtd::io::file_permissions::set_gid, L"set_gid"}, {xtd::io::file_permissions::sticky_bit, L"sticky_bit"}, {xtd::io::file_permissions::unknown, L"unknown"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::io::file_permissions> {{xtd::io::file_permissions::none, L"none"}, {xtd::io::file_permissions::owner_read, L"owner_read"}, {xtd::io::file_permissions::owner_write, L"owner_write"}, {xtd::io::file_permissions::owner_execute, L"owner_execute"}, {xtd::io::file_permissions::group_read, L"group_read"}, {xtd::io::file_permissions::group_write, L"group_write"}, {xtd::io::file_permissions::group_execute, L"group_execute"}, {xtd::io::file_permissions::others_read, L"others_read"}, {xtd::io::file_permissions::others_write, L"others_write"}, {xtd::io::file_permissions::others_execute, L"others_execute"}, {xtd::io::file_permissions::set_uid, L"set_uid"}, {xtd::io::file_permissions::set_gid, L"set_gid"}, {xtd::io::file_permissions::sticky_bit, L"sticky_bit"}, {xtd::io::file_permissions::unknown, L"unknown"}};}
 };
 /// @endcond
