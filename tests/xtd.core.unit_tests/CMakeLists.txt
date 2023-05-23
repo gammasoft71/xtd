@@ -122,6 +122,7 @@ add_sources(
   src/xtd/tests/length_exception_tests.cpp
   src/xtd/tests/literals_tests.cpp
   src/xtd/tests/math_tests.cpp
+  src/xtd/tests/month_of_year_tests.cpp
   src/xtd/tests/not_finite_number_exception_tests.cpp
   src/xtd/tests/not_implemented_exception_tests.cpp
   src/xtd/tests/not_supported_exception_tests.cpp
