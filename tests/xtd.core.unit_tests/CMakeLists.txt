@@ -139,6 +139,7 @@ add_sources(
   src/xtd/tests/operation_canceled_exception_tests.cpp
   src/xtd/tests/overflow_exception_tests.cpp
   src/xtd/tests/parse_tests.cpp
+  src/xtd/tests/platform_id_tests.cpp
   src/xtd/tests/platform_name.h
   src/xtd/tests/platform_not_supported_exception_tests.cpp
   src/xtd/tests/registered_enum_class_flags_tests.cpp
