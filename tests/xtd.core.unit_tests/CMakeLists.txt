@@ -175,6 +175,7 @@ add_sources(
   src/xtd/tests/string_numeric_format_tests.cpp
   src/xtd/tests/string_object_format_tests.cpp
   src/xtd/tests/string_object_format_without_xtd_to_string_tests.cpp
+  src/xtd/tests/string_split_options_tests.cpp
   src/xtd/tests/string_string_format_tests.cpp
   src/xtd/tests/system_exception_tests.cpp
   src/xtd/tests/tick_tests.cpp
