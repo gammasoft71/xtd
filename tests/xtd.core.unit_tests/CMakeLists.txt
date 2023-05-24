@@ -127,6 +127,7 @@ add_sources(
   src/xtd/tests/not_implemented_exception_tests.cpp
   src/xtd/tests/not_supported_exception_tests.cpp
   src/xtd/tests/null_pointer_exception_tests.cpp
+  src/xtd/tests/number_styles_tests.cpp
   src/xtd/tests/numeric_parse_currency_tests.cpp
   src/xtd/tests/numeric_parse_default_tests.cpp
   src/xtd/tests/numeric_parse_fixed_point_tests.cpp
