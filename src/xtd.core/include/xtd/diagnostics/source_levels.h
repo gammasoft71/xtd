@@ -19,8 +19,6 @@ namespace xtd {
     /// @ingroup xtd_core
     /// @remarks The source levels identify the trace_event_type events that are to be traced. The source_switch class uses the source_levels enumeration to define the event level of the trace message to use for filtering messages to send to the trace listener.
     enum class source_levels {
-      /// @brief Allows all events through.
-      all = 0b1111111111111111,
       /// @brief Does not allow any events through.
       off = 0,
       /// @brief Allows only Critical events through.
@@ -35,6 +33,8 @@ namespace xtd {
       verbose = 0b11111,
       /// @brief Allows the stop, start, suspend, transfer, and resume events through.
       activity_tracing = 0b1111111100000000,
+      /// @brief Allows all events through.
+      all = 0b1111111111111111,
     };
   }
 }
@@ -43,6 +43,6 @@ namespace xtd {
 flags_attribute_(xtd::diagnostics, source_levels);
 
 template<> struct xtd::enum_register<xtd::diagnostics::source_levels> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::diagnostics::source_levels> {{xtd::diagnostics::source_levels::all, "all"}, {xtd::diagnostics::source_levels::off, "off"}, {xtd::diagnostics::source_levels::critical, "critical"}, {xtd::diagnostics::source_levels::error, "error"}, {xtd::diagnostics::source_levels::warning, "warning"}, {xtd::diagnostics::source_levels::information, "information"}, {xtd::diagnostics::source_levels::verbose, "verbose"}, {xtd::diagnostics::source_levels::activity_tracing, "activity_tracing"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::diagnostics::source_levels> {{xtd::diagnostics::source_levels::off, "off"}, {xtd::diagnostics::source_levels::critical, "critical"}, {xtd::diagnostics::source_levels::error, "error"}, {xtd::diagnostics::source_levels::warning, "warning"}, {xtd::diagnostics::source_levels::information, "information"}, {xtd::diagnostics::source_levels::verbose, "verbose"}, {xtd::diagnostics::source_levels::activity_tracing, "activity_tracing"}, {xtd::diagnostics::source_levels::all, "all"}};}
 };
 /// @endcond
