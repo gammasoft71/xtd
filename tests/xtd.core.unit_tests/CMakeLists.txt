@@ -49,6 +49,7 @@ add_sources(
   src/xtd/net/sockets/tests/socket_information_tests.cpp
   src/xtd/net/sockets/tests/socket_option_level_tests.cpp
   src/xtd/net/sockets/tests/socket_option_name_tests.cpp
+  src/xtd/net/sockets/tests/socket_shutdown_tests.cpp
   src/xtd/net/sockets/tests/socket_tests.cpp
   src/xtd/net/tests/cookie_exception_tests.cpp
   src/xtd/net/tests/dns_tests.cpp
