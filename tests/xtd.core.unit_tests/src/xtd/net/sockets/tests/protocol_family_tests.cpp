@@ -50,15 +50,16 @@ namespace xtd::tests {
     }
     
     void test_method_(ns) {
+      // Duplicate value with ipx
       assert::are_equal(6, enum_object<>::to_int32(protocol_family::ns), csf_);
-      assert::are_equal("ns", enum_object<>::to_string(protocol_family::ns), csf_);
-      assert::are_equal(protocol_family::ns, enum_object<>::parse<protocol_family>("ns"), csf_);
+      assert::are_equal("ipx", enum_object<>::to_string(protocol_family::ns), csf_);
+      assert::are_equal(protocol_family::ns, enum_object<>::parse<protocol_family>("ipx"), csf_);
     }
     
-    void test_method_(ns) {
+    void test_method_(ipx) {
       assert::are_equal(6, enum_object<>::to_int32(protocol_family::ipx), csf_);
-      assert::are_equal("ns", enum_object<>::to_string(protocol_family::ipx), csf_);
-      assert::are_equal(protocol_family::ipx, enum_object<>::parse<protocol_family>("ns"), csf_);
+      assert::are_equal("ipx", enum_object<>::to_string(protocol_family::ipx), csf_);
+      assert::are_equal(protocol_family::ipx, enum_object<>::parse<protocol_family>("ipx"), csf_);
     }
     
     void test_method_(iso) {
@@ -67,7 +68,8 @@ namespace xtd::tests {
       assert::are_equal(protocol_family::iso, enum_object<>::parse<protocol_family>("iso"), csf_);
     }
     
-    void test_method_(iso) {
+    void test_method_(osi) {
+      // Duplicate value with iso
       assert::are_equal(7, enum_object<>::to_int32(protocol_family::osi), csf_);
       assert::are_equal("iso", enum_object<>::to_string(protocol_family::osi), csf_);
       assert::are_equal(protocol_family::osi, enum_object<>::parse<protocol_family>("iso"), csf_);
