@@ -7,12 +7,6 @@ using namespace xtd::tunit;
 namespace xtd::tests {
   class test_class_(source_levels_tests) {
   public:
-    void test_method_(65535) {
-      assert::are_equal(65535, enum_object<>::to_int32(source_levels::all), csf_);
-      assert::are_equal("65535", enum_object<>::to_string(source_levels::all), csf_);
-      assert::are_equal(source_levels::all, enum_object<>::parse<source_levels>("65535"), csf_);
-    }
-    
     void test_method_(off) {
       assert::are_equal(0, enum_object<>::to_int32(source_levels::off), csf_);
       assert::are_equal("off", enum_object<>::to_string(source_levels::off), csf_);
@@ -53,6 +47,11 @@ namespace xtd::tests {
       assert::are_equal(65280, enum_object<>::to_int32(source_levels::activity_tracing), csf_);
       assert::are_equal("activity_tracing", enum_object<>::to_string(source_levels::activity_tracing), csf_);
       assert::are_equal(source_levels::activity_tracing, enum_object<>::parse<source_levels>("activity_tracing"), csf_);
+    }
+    void test_method_(all) {
+      assert::are_equal(65535, enum_object<>::to_int32(source_levels::all), csf_);
+      assert::are_equal("65535", enum_object<>::to_string(source_levels::all), csf_);
+      assert::are_equal(source_levels::all, enum_object<>::parse<source_levels>("65535"), csf_);
     }
   };
 }
