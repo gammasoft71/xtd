@@ -50,8 +50,8 @@ namespace xtd::tests {
     }
     void test_method_(all) {
       assert::are_equal(65535, enum_object<>::to_int32(source_levels::all), csf_);
-      assert::are_equal("65535", enum_object<>::to_string(source_levels::all), csf_);
-      assert::are_equal(source_levels::all, enum_object<>::parse<source_levels>("65535"), csf_);
+      assert::are_equal("all", enum_object<>::to_string(source_levels::all), csf_);
+      assert::are_equal(source_levels::all, enum_object<>::parse<source_levels>("all"), csf_);
     }
   };
 }
