@@ -29,6 +29,7 @@ add_sources(
   src/xtd/io/tests/io_exception_tests.cpp
   src/xtd/io/tests/path_tests.cpp
   src/xtd/io/tests/path_too_long_exception_tests.cpp
+  src/xtd/io/tests/search_option_tests.cpp
   src/xtd/io/tests/stream_writer_tests.cpp
   src/xtd/io/tests/string_reader_tests.cpp
   src/xtd/net/sockets/tests/address_family_tests.cpp
