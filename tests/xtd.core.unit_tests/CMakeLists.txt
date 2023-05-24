@@ -166,6 +166,7 @@ add_sources(
   src/xtd/tests/signal_tests.cpp
   src/xtd/tests/standard_name.h
   src/xtd/tests/string_boolean_format_tests.cpp
+  src/xtd/tests/string_comparison_tests.cpp
   src/xtd/tests/string_date_time_format_tests.cpp
   src/xtd/tests/string_duration_format_tests.cpp
   src/xtd/tests/string_enum_format_tests.cpp
