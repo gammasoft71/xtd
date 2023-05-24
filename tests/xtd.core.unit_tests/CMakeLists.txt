@@ -42,6 +42,7 @@ add_sources(
   src/xtd/net/sockets/tests/protocol_type_tests.cpp
   src/xtd/net/sockets/tests/select_mode_tests.cpp
   src/xtd/net/sockets/tests/socket_async_operation_tests.cpp
+  src/xtd/net/sockets/tests/socket_error_tests.cpp
   src/xtd/net/sockets/tests/socket_tests.cpp
   src/xtd/net/sockets/tests/socket_exception_tests.cpp
   src/xtd/net/sockets/tests/socket_information_tests.cpp
