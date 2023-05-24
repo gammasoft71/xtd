@@ -12,6 +12,7 @@ add_sources(
   src/xtd/diagnostics/tests/process_priority_class_tests.cpp
   src/xtd/diagnostics/tests/process_window_style_tests.cpp
   src/xtd/diagnostics/tests/process_start_info_tests.cpp
+  src/xtd/diagnostics/tests/source_levels_tests.cpp
   src/xtd/diagnostics/tests/stopwatch_tests.cpp
   src/xtd/diagnostics/tests/trace_listener_tests.cpp
   src/xtd/io/tests/directory_tests.cpp
