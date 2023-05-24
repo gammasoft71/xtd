@@ -45,6 +45,9 @@ inline std::basic_string<xtd::wchar> __sprintf<xtd::wchar>(const xtd::wchar* fmt
     size *= 2;
   } while (error);
   formatted_string.resize(length);
+  if (formatted_string == L"INF") formatted_string = {'i', 'n', 'f'};
+  if (formatted_string == L"-INF") formatted_string = {'-', 'i', 'n', 'f'};
+  if (formatted_string == L"NAN") formatted_string = {'n', 'a', 'n'};
   return formatted_string;
 }
 /// @endcond
