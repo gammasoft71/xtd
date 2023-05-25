@@ -9,6 +9,7 @@ add_sources(
   src/main.cpp 
   src/xtd/drawing/drawing_2d/tests/compositing_mode_tests.cpp
   src/xtd/drawing/drawing_2d/tests/compositing_quality_tests.cpp
+  src/xtd/drawing/drawing_2d/tests/fill_mode_tests.cpp
   src/xtd/drawing/imaging/tests/encoder_parameter_value_type_tests.cpp
   src/xtd/drawing/tests/known_color_tests.cpp
   src/xtd/drawing/tests/color_tests.cpp
