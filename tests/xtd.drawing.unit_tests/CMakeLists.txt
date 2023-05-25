@@ -11,6 +11,7 @@ add_sources(
   src/xtd/drawing/drawing_2d/tests/compositing_quality_tests.cpp
   src/xtd/drawing/tests/known_color_tests.cpp
   src/xtd/drawing/tests/color_tests.cpp
+  src/xtd/drawing/tests/copy_pixel_operation_tests.cpp
   src/xtd/drawing/tests/point_tests.cpp
   src/xtd/drawing/tests/size_tests.cpp
 )
