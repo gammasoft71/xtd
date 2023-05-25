@@ -66,6 +66,7 @@ add_sources(
   src/xtd/net/tests/web_exception_tests.cpp
   src/xtd/reflection/tests/assembly_tests.cpp
   src/xtd/security/tests/secure_string_tests.cpp
+  src/xtd/speech/synthesis/tests/synthesizer_state_tests.cpp
   src/xtd/tests/any_tests.cpp
   src/xtd/tests/architecture_id_tests.cpp
   src/xtd/tests/architecture_name.h
