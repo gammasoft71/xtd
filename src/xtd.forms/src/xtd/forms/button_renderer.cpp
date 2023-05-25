@@ -11,7 +11,7 @@
 #include <xtd/drawing/pen.h>
 #include <xtd/drawing/solid_brush.h>
 #include <xtd/drawing/system_colors.h>
-#include <xtd/drawing/drawing2d/linear_gradient_brush.h>
+#include <xtd/drawing/drawing_2d/linear_gradient_brush.h>
 
 using namespace std;
 using namespace xtd;

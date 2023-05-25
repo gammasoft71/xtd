@@ -4,7 +4,7 @@
 #include <xtd/drawing/solid_brush.h>
 #include <xtd/drawing/texture_brush.h>
 #include <xtd/drawing/system_colors.h>
-#include <xtd/drawing/drawing2d/linear_gradient_brush.h>
+#include <xtd/drawing/drawing_2d/linear_gradient_brush.h>
 #include <xtd/not_supported_exception.h>
 
 using namespace std;

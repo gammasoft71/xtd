@@ -3,7 +3,7 @@
 #include <xtd/as.h>
 #include <xtd/is.h>
 #include <xtd/math.h>
-#include <xtd/drawing/drawing2d/linear_gradient_brush.h>
+#include <xtd/drawing/drawing_2d/linear_gradient_brush.h>
 
 using namespace std;
 using namespace xtd;

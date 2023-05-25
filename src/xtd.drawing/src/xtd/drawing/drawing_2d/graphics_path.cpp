@@ -1,5 +1,5 @@
 #include <stdexcept>
-#include "../../../../include/xtd/drawing/drawing2d/graphics_path.h"
+#include "../../../../include/xtd/drawing/drawing_2d/graphics_path.h"
 #include "../../../../include/xtd/drawing/graphics.h"
 #include <xtd/argument_exception.h>
 #include <xtd/as.h>

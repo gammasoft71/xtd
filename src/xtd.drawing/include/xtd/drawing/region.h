@@ -5,7 +5,7 @@
 #include "../drawing_export.h"
 #include <xtd/iequatable.h>
 #include <xtd/object.h>
-#include "drawing2d/graphics_path.h"
+#include "drawing_2d/graphics_path.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

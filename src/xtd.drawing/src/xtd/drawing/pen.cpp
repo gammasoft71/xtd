@@ -2,10 +2,10 @@
 #include "../../../include/xtd/drawing/pen.h"
 #include "../../../include/xtd/drawing/bitmap.h"
 #include "../../../include/xtd/drawing/solid_brush.h"
-#include "../../../include/xtd/drawing/drawing2d/hatch_brush.h"
-#include "../../../include/xtd/drawing/drawing2d/conical_gradient_brush.h"
-#include "../../../include/xtd/drawing/drawing2d/linear_gradient_brush.h"
-#include "../../../include/xtd/drawing/drawing2d/radial_gradient_brush.h"
+#include "../../../include/xtd/drawing/drawing_2d/hatch_brush.h"
+#include "../../../include/xtd/drawing/drawing_2d/conical_gradient_brush.h"
+#include "../../../include/xtd/drawing/drawing_2d/linear_gradient_brush.h"
+#include "../../../include/xtd/drawing/drawing_2d/radial_gradient_brush.h"
 #include "../../../include/xtd/drawing/texture_brush.h"
 #include <xtd/argument_exception.h>
 #include <xtd/as.h>

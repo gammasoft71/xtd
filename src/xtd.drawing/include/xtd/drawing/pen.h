@@ -9,10 +9,10 @@
 #include <xtd/object.h>
 #include <xtd/ustring.h>
 #include "../drawing_export.h"
-#include "drawing2d/line_cap.h"
-#include "drawing2d/line_join.h"
-#include "drawing2d/pen_alignment.h"
-#include "drawing2d/pen_type.h"
+#include "drawing_2d/line_cap.h"
+#include "drawing_2d/line_join.h"
+#include "drawing_2d/pen_alignment.h"
+#include "drawing_2d/pen_type.h"
 #include "brush.h"
 #include "color.h"
 #include "dash_style.h"

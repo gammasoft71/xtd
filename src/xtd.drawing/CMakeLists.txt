@@ -64,30 +64,30 @@ add_sources(
   include/xtd/drawing/violet_colors.h
   include/xtd/drawing/white_colors.h
   include/xtd/drawing/yellow_colors.h
-  include/xtd/drawing/drawing2d/conical_gradient_brush.h
-  include/xtd/drawing/drawing2d/compositing_mode.h
-  include/xtd/drawing/drawing2d/compositing_quality.h
-  include/xtd/drawing/drawing2d/drawing2d.h
-  include/xtd/drawing/drawing2d/fill_mode.h
-  include/xtd/drawing/drawing2d/flush_intention.h
-  include/xtd/drawing/drawing2d/gradient_stop_collection.h
-  include/xtd/drawing/drawing2d/gradient_stop.h
-  include/xtd/drawing/drawing2d/graphics_path.h
-  include/xtd/drawing/drawing2d/graphics_state.h
-  include/xtd/drawing/drawing2d/hatch_brush.h
-  include/xtd/drawing/drawing2d/hatch_style.h
-  include/xtd/drawing/drawing2d/interpolation_mode.h
-  include/xtd/drawing/drawing2d/line_cap.h
-  include/xtd/drawing/drawing2d/line_join.h
-  include/xtd/drawing/drawing2d/linear_gradient_brush.h
-  include/xtd/drawing/drawing2d/linear_gradient_mode.h
-  include/xtd/drawing/drawing2d/matrix.h
-  include/xtd/drawing/drawing2d/matrix_order.h
-  include/xtd/drawing/drawing2d/pen_alignment.h
-  include/xtd/drawing/drawing2d/pen_type.h
-  include/xtd/drawing/drawing2d/pixel_offset_mode.h
-  include/xtd/drawing/drawing2d/radial_gradient_brush.h
-  include/xtd/drawing/drawing2d/smoothing_mode.h
+  include/xtd/drawing/drawing_2d/conical_gradient_brush.h
+  include/xtd/drawing/drawing_2d/compositing_mode.h
+  include/xtd/drawing/drawing_2d/compositing_quality.h
+  include/xtd/drawing/drawing_2d/drawing2d.h
+  include/xtd/drawing/drawing_2d/fill_mode.h
+  include/xtd/drawing/drawing_2d/flush_intention.h
+  include/xtd/drawing/drawing_2d/gradient_stop_collection.h
+  include/xtd/drawing/drawing_2d/gradient_stop.h
+  include/xtd/drawing/drawing_2d/graphics_path.h
+  include/xtd/drawing/drawing_2d/graphics_state.h
+  include/xtd/drawing/drawing_2d/hatch_brush.h
+  include/xtd/drawing/drawing_2d/hatch_style.h
+  include/xtd/drawing/drawing_2d/interpolation_mode.h
+  include/xtd/drawing/drawing_2d/line_cap.h
+  include/xtd/drawing/drawing_2d/line_join.h
+  include/xtd/drawing/drawing_2d/linear_gradient_brush.h
+  include/xtd/drawing/drawing_2d/linear_gradient_mode.h
+  include/xtd/drawing/drawing_2d/matrix.h
+  include/xtd/drawing/drawing_2d/matrix_order.h
+  include/xtd/drawing/drawing_2d/pen_alignment.h
+  include/xtd/drawing/drawing_2d/pen_type.h
+  include/xtd/drawing/drawing_2d/pixel_offset_mode.h
+  include/xtd/drawing/drawing_2d/radial_gradient_brush.h
+  include/xtd/drawing/drawing_2d/smoothing_mode.h
   include/xtd/drawing/imaging/bitmap_data.h
   include/xtd/drawing/imaging/color_palette.h
   include/xtd/drawing/imaging/encoder.h
@@ -148,13 +148,13 @@ add_sources(
   src/xtd/drawing/texture_brush.cpp
   src/xtd/drawing/white_colors.cpp
   src/xtd/drawing/yellow_colors.cpp
-  src/xtd/drawing/drawing2d/hatch_brush.cpp
-  src/xtd/drawing/drawing2d/conical_gradient_brush.cpp
-  src/xtd/drawing/drawing2d/graphics_path.cpp
-  src/xtd/drawing/drawing2d/graphics_state.cpp
-  src/xtd/drawing/drawing2d/linear_gradient_brush.cpp
-  src/xtd/drawing/drawing2d/matrix.cpp
-  src/xtd/drawing/drawing2d/radial_gradient_brush.cpp
+  src/xtd/drawing/drawing_2d/hatch_brush.cpp
+  src/xtd/drawing/drawing_2d/conical_gradient_brush.cpp
+  src/xtd/drawing/drawing_2d/graphics_path.cpp
+  src/xtd/drawing/drawing_2d/graphics_state.cpp
+  src/xtd/drawing/drawing_2d/linear_gradient_brush.cpp
+  src/xtd/drawing/drawing_2d/matrix.cpp
+  src/xtd/drawing/drawing_2d/radial_gradient_brush.cpp
   src/xtd/drawing/imaging/bitmap_data.cpp
   src/xtd/drawing/imaging/encoder_parameter.cpp
   src/xtd/drawing/text/installed_font_collection.cpp
