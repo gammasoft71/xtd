@@ -15,7 +15,7 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
+  /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing_2d/, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
     /// @brief Stores a set of four integers that represent the location and size of a rectangle.
     /// @code
@@ -40,7 +40,7 @@ namespace xtd {
     /// @endcode
     /// @remarks A rectangle is defined by its xtd::drawing::rectangle::width, xtd::drawing::rectangle::height, and upper-left corner represented by the xtd::drawing::rectangle::location property.
     /// @remarks To draw rectangles, you need a xtd::drawing::graphics object and a xtd::drawing::pen object. The xtd::drawing::graphics object provides the xtd::drawing::graphics::draw_rectangle method, and the xtd::drawing::pen object stores features of the line, such as color and width. The units the rectangle is drawn in is determined by the xtd::drawing::graphics::page_unit and xtd::drawing::graphics::page_scale properties of the graphics object used for drawing. The default unit is pixels.
-    /// @remarks To draw a xtd::drawing::rectangle filled with color, you need a xtd::drawing::graphics object and an object derived from xtd::drawing::brush such as xtd::drawing::solid_brush or xtd::drawing::texture_brush or xtd::drawing::drawing2d::conical_gradient_brush or xtd::drawing::drawing2d::hatch_gradient_brush or xtd::drawing::drawing2d::linear_gradient_brush or xtd::drawing::drawing2d::radial_gradient_brush. The xtd::drawing::graphics object provides the xtd::drawing::graphics::fill_rectangle method and the xtd::drawing::brush object provides the color and fill information.
+    /// @remarks To draw a xtd::drawing::rectangle filled with color, you need a xtd::drawing::graphics object and an object derived from xtd::drawing::brush such as xtd::drawing::solid_brush or xtd::drawing::texture_brush or xtd::drawing::drawing_2d/::conical_gradient_brush or xtd::drawing::drawing_2d/::hatch_gradient_brush or xtd::drawing::drawing_2d/::linear_gradient_brush or xtd::drawing::drawing_2d/::radial_gradient_brush. The xtd::drawing::graphics object provides the xtd::drawing::graphics::fill_rectangle method and the xtd::drawing::brush object provides the color and fill information.
     /// @remarks For more advanced shapes, use a xtd::drawing::region object.
     class drawing_export_ rectangle : public xtd::object, public xtd::iequatable<rectangle> {
     public:

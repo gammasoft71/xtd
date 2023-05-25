@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::drawing::drawing2d::conical_gradient_brush class.
+/// @brief Contains xtd::drawing::drawing_2d/::conical_gradient_brush class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include <array>
@@ -14,18 +14,18 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
+  /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing_2d/, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
-    /// @brief The xtd::drawing::drawing2d namespace provides advanced two-dimensional and vector graphics functionality.
+    /// @brief The xtd::drawing::drawing_2d/ namespace provides advanced two-dimensional and vector graphics functionality.
     namespace drawing_2d {
       /// @brief Encapsulates a xtd::drawing::brush with a conical gradient. This class cannot be inherited.
       /// @code
       /// class drawing_export_ conical_gradient_brush final : public brush
       /// @endcode
       /// @par Inheritance
-      /// xtd::object → xtd::drawing::brush → xtd::drawing::drawing2d::conical_gradient_brush
+      /// xtd::object → xtd::drawing::brush → xtd::drawing::drawing_2d/::conical_gradient_brush
       /// @par Namespace
-      /// xtd::drawing::drawing2d
+      /// xtd::drawing::drawing_2d/
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing drawing
@@ -40,48 +40,48 @@ namespace xtd {
         /// @name Constructors
         
         /// @{
-        /// @brief Initializes a new instance of the xtd::drawing::drawing2d::conical_gradient_brush class with default values.
+        /// @brief Initializes a new instance of the xtd::drawing::drawing_2d/::conical_gradient_brush class with default values.
         /// @remarks Center and focal points are set to {0, 0} and colors are set with two transparent colors.
         conical_gradient_brush();
-        /// @brief Initializes a new instance of the xtd::drawing::drawing2d::conical_gradient_brush class with the specified center point and colors.
+        /// @brief Initializes a new instance of the xtd::drawing::drawing_2d/::conical_gradient_brush class with the specified center point and colors.
         /// @param center A xtd::drawing::point structure that represents the center point of the conical gradient.
         /// @param color1 A xtd::drawing::color structure that represents the starting color of the conical gradient.
         /// @param color2 A xtd::drawing::color structure that represents the ending color of the conical gradient.
         conical_gradient_brush(const xtd::drawing::point& center, const xtd::drawing::color& color1, const xtd::drawing::color& color2);
-        /// @brief Initializes a new instance of the xtd::drawing::drawing2d::conical_gradient_brush class with the specified center point and colors.
+        /// @brief Initializes a new instance of the xtd::drawing::drawing_2d/::conical_gradient_brush class with the specified center point and colors.
         /// @param center A xtd::drawing::point structure that represents the center point of the conical gradient.
         /// @param color1 A xtd::drawing::color structure that represents the starting color of the conical gradient.
         /// @param color2 A xtd::drawing::color structure that represents the ending color of the conical gradient.
         conical_gradient_brush(const xtd::drawing::point_f& center, const xtd::drawing::color& color1, const xtd::drawing::color& color2);
-        /// @brief Initializes a new instance of the xtd::drawing::drawing2d::conical_gradient_brush class with the specified center point ,colors and angle.
+        /// @brief Initializes a new instance of the xtd::drawing::drawing_2d/::conical_gradient_brush class with the specified center point ,colors and angle.
         /// @param center A xtd::drawing::point structure that represents the center point of the conical gradient.
         /// @param color1 A xtd::drawing::color structure that represents the starting color of the conical gradient.
         /// @param color2 A xtd::drawing::color structure that represents the ending color of the conical gradient.
         /// @param angle A float hat represents the angle of the conical gradient.
         conical_gradient_brush(const xtd::drawing::point& center, const xtd::drawing::color& color1, const xtd::drawing::color& color2, float angle);
-        /// @brief Initializes a new instance of the xtd::drawing::drawing2d::conical_gradient_brush class with the specified center point, colors and radiuus.
+        /// @brief Initializes a new instance of the xtd::drawing::drawing_2d/::conical_gradient_brush class with the specified center point, colors and radiuus.
         /// @param center A xtd::drawing::point structure that represents the center point of the conical gradient.
         /// @param color1 A xtd::drawing::color structure that represents the starting color of the conical gradient.
         /// @param color2 A xtd::drawing::color structure that represents the ending color of the conical gradient.
         /// @param angle A float hat represents the angle of the conical gradient.
         conical_gradient_brush(const xtd::drawing::point_f& center, const xtd::drawing::color& color1, const xtd::drawing::color& color2, float angle);
-        /// @brief Initializes a new instance of the xtd::drawing::drawing2d::conical_gradient_brush class with the specified center point and colors.
+        /// @brief Initializes a new instance of the xtd::drawing::drawing_2d/::conical_gradient_brush class with the specified center point and colors.
         /// @param center A xtd::drawing::point structure that represents the center point of the conical gradient.
         /// @param color1 A xtd::drawing::color structure that represents the starting color of the conical gradient.
         /// @param color2 A xtd::drawing::color structure that represents the ending color of the conical gradient.
         conical_gradient_brush(const xtd::drawing::point& center, const std::vector<xtd::drawing::color>& conical_colors);
-        /// @brief Initializes a new instance of the xtd::drawing::drawing2d::conical_gradient_brush class with the specified center point and colors.
+        /// @brief Initializes a new instance of the xtd::drawing::drawing_2d/::conical_gradient_brush class with the specified center point and colors.
         /// @param center A xtd::drawing::point structure that represents the center point of the conical gradient.
         /// @param color1 A xtd::drawing::color structure that represents the starting color of the conical gradient.
         /// @param color2 A xtd::drawing::color structure that represents the ending color of the conical gradient.
         conical_gradient_brush(const xtd::drawing::point_f& center, const std::vector<xtd::drawing::color>& conical_colors);
-        /// @brief Initializes a new instance of the xtd::drawing::drawing2d::conical_gradient_brush class with the specified center poin, colors and angle.
+        /// @brief Initializes a new instance of the xtd::drawing::drawing_2d/::conical_gradient_brush class with the specified center poin, colors and angle.
         /// @param center A xtd::drawing::point structure that represents the center point of the conical gradient.
         /// @param color1 A xtd::drawing::color structure that represents the starting color of the conical gradient.
         /// @param color2 A xtd::drawing::color structure that represents the ending color of the conical gradient.
         /// @param angle A float hat represents the angle of the conical gradient.
         conical_gradient_brush(const xtd::drawing::point& center, const std::vector<xtd::drawing::color>& conical_colors, float angle);
-        /// @brief Initializes a new instance of the xtd::drawing::drawing2d::conical_gradient_brush class with the specified center point, colors and angle.
+        /// @brief Initializes a new instance of the xtd::drawing::drawing_2d/::conical_gradient_brush class with the specified center point, colors and angle.
         /// @param center A xtd::drawing::point structure that represents the center point of the conical gradient.
         /// @param color1 A xtd::drawing::color structure that represents the starting color of the conical gradient.
         /// @param color2 A xtd::drawing::color structure that represents the ending color of the conical gradient.
