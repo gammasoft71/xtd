@@ -112,7 +112,7 @@ namespace examples {
       top_most(true);
       
       /// Set round rectangle form :
-      drawing::drawing2d::graphics_path path;
+      drawing::drawing_2d::graphics_path path;
       path.add_rounded_rectangle(client_rectangle(), 7);
       region(drawing::region(path));
       
@@ -169,7 +169,7 @@ namespace examples {
       top_most(true);
       
       /// Set round rectangle form :
-      drawing::drawing2d::graphics_path path;
+      drawing::drawing_2d::graphics_path path;
       path.add_rounded_rectangle(client_rectangle(), 7);
       region(drawing::region(path));
       
@@ -230,7 +230,7 @@ namespace examples {
       //padding(forms::padding(5));
       
       /// Set round rectangle form :
-      drawing::drawing2d::graphics_path path;
+      drawing::drawing_2d::graphics_path path;
       path.add_rounded_rectangle(client_rectangle(), 10);
       region(drawing::region(path));
       

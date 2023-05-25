@@ -3,13 +3,14 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/enum.h>
+#include "drawing2d.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
     /// @brief The xtd::drawing::drawing2d namespace provides advanced two-dimensional and vector graphics functionality.
-    namespace drawing2d {
+    namespace drawing_2d {
       /// @brief Specifies how pixels are offset during rendering.
       /// @par Namespace
       /// xtd::drawing::drawing2d
@@ -36,7 +37,7 @@ namespace xtd {
 }
 
 /// @cond
-template<> struct xtd::enum_register<xtd::drawing::drawing2d::pixel_offset_mode> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::drawing::drawing2d::pixel_offset_mode> {{xtd::drawing::drawing2d::pixel_offset_mode::invalid, "invalid"}, {xtd::drawing::drawing2d::pixel_offset_mode::default_value, "default_value"}, {xtd::drawing::drawing2d::pixel_offset_mode::high_speed, "high_speed"}, {xtd::drawing::drawing2d::pixel_offset_mode::high_quality, "high_quality"}, {xtd::drawing::drawing2d::pixel_offset_mode::none, "none"}, {xtd::drawing::drawing2d::pixel_offset_mode::half, "half"}};}
+template<> struct xtd::enum_register<xtd::drawing::drawing_2d::pixel_offset_mode> {
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::drawing::drawing_2d::pixel_offset_mode> {{xtd::drawing::drawing_2d::pixel_offset_mode::invalid, "invalid"}, {xtd::drawing::drawing_2d::pixel_offset_mode::default_value, "default_value"}, {xtd::drawing::drawing_2d::pixel_offset_mode::high_speed, "high_speed"}, {xtd::drawing::drawing_2d::pixel_offset_mode::high_quality, "high_quality"}, {xtd::drawing::drawing_2d::pixel_offset_mode::none, "none"}, {xtd::drawing::drawing_2d::pixel_offset_mode::half, "half"}};}
 };
 /// @endcond

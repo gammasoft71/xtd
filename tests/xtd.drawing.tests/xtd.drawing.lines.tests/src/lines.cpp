@@ -2,7 +2,7 @@
 
 using namespace xtd;
 using namespace xtd::drawing;
-using namespace xtd::drawing::drawing2d;
+using namespace xtd::drawing::drawing_2d;
 using namespace xtd::forms;
 
 class lines_form : public form {
@@ -79,7 +79,7 @@ private:
     draw_grid(e.clip_rectangle(), e.graphics());
     
     e.graphics().draw_line(pen(solid_brush(color::yellow), 20), point(50, 50), point(250, 50));
-    e.graphics().draw_line(pen(hatch_brush(xtd::drawing::drawing2d::hatch_style::solid_diamond, color::blue, color::yellow), 20), point(50, 100), point(250, 100));
+    e.graphics().draw_line(pen(hatch_brush(xtd::drawing::drawing_2d::hatch_style::solid_diamond, color::blue, color::yellow), 20), point(50, 100), point(250, 100));
     e.graphics().draw_line(pen(conical_gradient_brush(point(150, 150), {color::blue, color::yellow}, 0), 20), point(50, 150), point(250, 150));
     e.graphics().draw_line(pen(linear_gradient_brush(rectangle(50, 200, 250, 10), {color::blue, color::yellow}, 0), 20), point(50, 200), point(250, 200));
     e.graphics().draw_line(pen(radial_gradient_brush(point(150, 250), {color::blue, color::yellow}, 20), 20), point(50, 250), point(250, 250));
@@ -99,15 +99,15 @@ private:
     draw_grid(e.clip_rectangle(), e.graphics());
     
     e.graphics().draw_line(pen(solid_brush(color::red), 10), point(50, 50), point(250, 50));
-    e.graphics().draw_line(pen(solid_brush(color::red), 10).start_cap(xtd::drawing::drawing2d::line_cap::square).end_cap(xtd::drawing::drawing2d::line_cap::square), point(50, 100), point(250, 100));
-    e.graphics().draw_line(pen(solid_brush(color::red), 10).start_cap(xtd::drawing::drawing2d::line_cap::round).end_cap(xtd::drawing::drawing2d::line_cap::round), point(50, 150), point(250, 150));
+    e.graphics().draw_line(pen(solid_brush(color::red), 10).start_cap(xtd::drawing::drawing_2d::line_cap::square).end_cap(xtd::drawing::drawing_2d::line_cap::square), point(50, 100), point(250, 100));
+    e.graphics().draw_line(pen(solid_brush(color::red), 10).start_cap(xtd::drawing::drawing_2d::line_cap::round).end_cap(xtd::drawing::drawing_2d::line_cap::round), point(50, 150), point(250, 150));
   }
   
   void draw_pens_with_alignment(object& sender, paint_event_args& e) {
     draw_grid(e.clip_rectangle(), e.graphics());
     
-    e.graphics().draw_line(pen(color::red, 10).alignment(xtd::drawing::drawing2d::pen_alignment::center), point(50, 50), point(250, 50));
-    e.graphics().draw_line(pen(color::red, 10).alignment(xtd::drawing::drawing2d::pen_alignment::inset), point(50, 100), point(250, 100));
+    e.graphics().draw_line(pen(color::red, 10).alignment(xtd::drawing::drawing_2d::pen_alignment::center), point(50, 50), point(250, 50));
+    e.graphics().draw_line(pen(color::red, 10).alignment(xtd::drawing::drawing_2d::pen_alignment::inset), point(50, 100), point(250, 100));
   }
   
   static image create_circle_texture_image(const color& foreground_color, const color& background_color) {

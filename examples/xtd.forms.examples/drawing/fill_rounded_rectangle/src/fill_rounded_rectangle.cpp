@@ -2,7 +2,7 @@
 
 using namespace xtd;
 using namespace xtd::drawing;
-using namespace xtd::drawing::drawing2d;
+using namespace xtd::drawing::drawing_2d;
 using namespace xtd::forms;
 
 namespace fill_rounded_rectangle_example {
@@ -29,7 +29,7 @@ namespace fill_rounded_rectangle_example {
       e.graphics().fill_rounded_rectangle(texture_brush(create_circle_texture(fore_color, back_color)), rectangle(350, 10, 150, 150), 20);
       e.graphics().draw_rounded_rectangle(pen(fore_color, 4), rectangle(350, 10, 150, 150), 20);
       
-      e.graphics().fill_rounded_rectangle(hatch_brush(xtd::drawing::drawing2d::hatch_style::diagonal_brick, color::white, back_color), rectangle(520, 10, 150, 150), 20);
+      e.graphics().fill_rounded_rectangle(hatch_brush(xtd::drawing::drawing_2d::hatch_style::diagonal_brick, color::white, back_color), rectangle(520, 10, 150, 150), 20);
       e.graphics().draw_rounded_rectangle(pen(color::white, 4), rectangle(520, 10, 150, 150), 20);
       
       e.graphics().fill_rounded_rectangle(conical_gradient_brush(point(85, 255), back_color, fore_color, 0), rectangle(10, 180, 150, 150), 20);

@@ -4,7 +4,7 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::drawing;
-using namespace xtd::drawing::drawing2d;
+using namespace xtd::drawing::drawing_2d;
 using namespace xtd::io;
 
 auto main()->int {

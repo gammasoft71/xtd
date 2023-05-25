@@ -100,23 +100,23 @@ namespace xtd {
       /// @return This property specifies a member of the xtd::drawing::drawing2d::compositing_mode enumeration. The default is xtd::drawing::drawing2d::compositing_mode::source_over.
       /// @remarks The compositing mode determines whether pixels from a source image overwrite or are combined with background pixels.
       /// @note You should not use a xtd::drawing::graphics::compositing_mode property value of xtd::drawing::graphics::source_copy when the xtd::drawing::graphics::text_rendering_hint property is set to xtd::drawing::graphics::text_rendering_hint::clear_type_grid_fit. An exception could occur or the image may not render correctly.
-      xtd::drawing::drawing2d::compositing_mode compositing_mode() const noexcept;
+      xtd::drawing::drawing_2d::compositing_mode compositing_mode() const noexcept;
       /// @brief Sets a value that specifies how composited images are drawn to this xtd::drawing::graphics.
       /// @param value This property specifies a member of the CompositingMode enumeration. The default is SourceOver.
       /// @return This current instance.
       /// @remarks The compositing mode determines whether pixels from a source image overwrite or are combined with background pixels.
       /// @note You should not use a xtd::drawing::graphics::compositing_mode property value of xtd::drawing::graphics::source_copy when the xtd::drawing::graphics::text_rendering_hint property is set to xtd::drawing::graphics::text_rendering_hint::clear_type_grid_fit. An exception could occur or the image may not render correctly.
-      graphics& compositing_mode(xtd::drawing::drawing2d::compositing_mode value);
+      graphics& compositing_mode(xtd::drawing::drawing_2d::compositing_mode value);
       
       /// @brief Gets the rendering quality of composited images drawn to this xtd::drawing::graphics.
       /// @return This property specifies a member of the xtd::drawing::drawing2d::compositing_quality enumeration. The xtd::drawing::drawing2d::compositing_quality::default_value is Default.
       /// @remarks The compositing quality determines the rendering quality level of composited images.
-      xtd::drawing::drawing2d::compositing_quality compositing_quality() const noexcept;
+      xtd::drawing::drawing_2d::compositing_quality compositing_quality() const noexcept;
       /// @brief Sets the rendering quality of composited images drawn to this xtd::drawing::graphics.
       /// @param value This property specifies a member of the xtd::drawing::drawing2d::compositing_quality enumeration. The xtd::drawing::drawing2d::compositing_quality::default_value is Default.
       /// @return This current instance.
       /// @remarks The compositing quality determines the rendering quality level of composited images.
-      graphics& compositing_quality(xtd::drawing::drawing2d::compositing_quality value);
+      graphics& compositing_quality(xtd::drawing::drawing_2d::compositing_quality value);
       
       /// @brief Gets the horizontal resolution of this xtd::drawing::graphics.
       /// @return The value, in dots per inch, for the horizontal resolution supported by this xtd::drawing::graphics.
@@ -133,12 +133,12 @@ namespace xtd {
       /// @brief Gets the interpolation mode associated with this xtd::drawing::graphics.
       /// @return One of the xtd::drawing::drawing2d::interpolation_mode values.
       /// @remarks The interpolation mode determines how intermediate values between two endpoints are calculated.
-      xtd::drawing::drawing2d::interpolation_mode interpolation_mode() const noexcept;
+      xtd::drawing::drawing_2d::interpolation_mode interpolation_mode() const noexcept;
       /// @brief Sets the interpolation mode associated with this xtd::drawing::graphics.
       /// @param value One of the xtd::drawing::drawing2d::interpolation_mode values.
       /// @return This current instance.
       /// @remarks The interpolation mode determines how intermediate values between two endpoints are calculated.
-      graphics& interpolation_mode(xtd::drawing::drawing2d::interpolation_mode value) noexcept;
+      graphics& interpolation_mode(xtd::drawing::drawing_2d::interpolation_mode value) noexcept;
       
       /// @brief Gets the scaling between world units and page units for this xtd::drawing::graphics.
       /// @return This property specifies a value for the scaling between world units and page units for this xtd::drawing::graphics.
@@ -162,22 +162,22 @@ namespace xtd {
       /// @brief Gets a value specifying how pixels are offset during rendering of this xtd::drawing::graphics.
       /// @return This property specifies a member of the xtd::drawing::drawing2d::pixel_offset_mode enumeration.
       /// @remarks Use this property to specify either higher quality, slower rendering, or lower quality, faster rendering of the contents of this xtd::drawing::graphics object.
-      xtd::drawing::drawing2d::pixel_offset_mode pixel_offset_mode() const noexcept;
+      xtd::drawing::drawing_2d::pixel_offset_mode pixel_offset_mode() const noexcept;
       /// @brief Sets a value specifying how pixels are offset during rendering of this xtd::drawing::graphics.
       /// @param value This property specifies a member of the xtd::drawing::drawing2d::pixel_offset_mode enumeration.
       /// @return This current instance.
       /// @remarks Use this property to specify either higher quality, slower rendering, or lower quality, faster rendering of the contents of this xtd::drawing::graphics object.
-      graphics& pixel_offset_mode(xtd::drawing::drawing2d::pixel_offset_mode value) noexcept;
+      graphics& pixel_offset_mode(xtd::drawing::drawing_2d::pixel_offset_mode value) noexcept;
       
       /// @brief Gets the rendering quality for this xtd::drawing::graphics.
       /// @return One of the xtd::drawing::drawing2d::smoothing_mode values.
       /// @remarks The smoothing mode specifies whether lines, curves, and the edges of filled areas use smoothing (also called antialiasing). One exception is that path gradient brushes do not obey the smoothing mode. Areas filled using a xtd::drawing::drawing2d::path_gradient_brush are rendered the same way (aliased) regardless of the xtd::drawing::graphics::smoothing_mode property.
-      xtd::drawing::drawing2d::smoothing_mode smoothing_mode() const noexcept;
+      xtd::drawing::drawing_2d::smoothing_mode smoothing_mode() const noexcept;
       /// @brief Sets the rendering quality for this xtd::drawing::graphics.
       /// @param value One of the xtd::drawing::drawing2d::smoothing_mode values.
       /// @return This current instance.
       /// @remarks The smoothing mode specifies whether lines, curves, and the edges of filled areas use smoothing (also called antialiasing). One exception is that path gradient brushes do not obey the smoothing mode. Areas filled using a xtd::drawing::drawing2d::path_gradient_brush are rendered the same way (aliased) regardless of the xtd::drawing::graphics::smoothing_mode property.
-      graphics& smoothing_mode(xtd::drawing::drawing2d::smoothing_mode value) noexcept;
+      graphics& smoothing_mode(xtd::drawing::drawing_2d::smoothing_mode value) noexcept;
       
       /// @brief Gets the gamma correction value for rendering text.
       /// @return The gamma correction value used for rendering antialiased and ClearType text.
@@ -205,13 +205,13 @@ namespace xtd {
       /// @return A copy of the xtd::drawing::drawing2d::matrix that represents the geometric world transformation for this xtd::drawing::graphics.
       /// @remarks GDI+ uses three coordinate spaces: world, page, and device. World coordinates are the coordinates used to model a particular graphic world and are the coordinates you pass to methods in the .NET Framework. Page coordinates refer to the coordinate system used by a drawing surface, such as a form or a control. Device coordinates are the coordinates used by the physical device being drawn on, such as a screen or a printer. The xtd::drawing::graphics::transform property represents the world transformation, which maps world coordinates to page coordinates.
       /// @remarks Because the matrix returned and by the xtd::drawing::graphics::transform property is a copy of the geometric transform, you should dispose of the matrix when you no longer need it.
-      xtd::drawing::drawing2d::matrix transform() const noexcept;
+      xtd::drawing::drawing_2d::matrix transform() const noexcept;
       /// @brief Sets a copy of the geometric world transformation for this xtd::drawing::graphics.
       /// @param value A copy of the xtd::drawing::drawing2d::matrix that represents the geometric world transformation for this xtd::drawing::graphics.
       /// @return This current instance.
       /// @remarks GDI+ uses three coordinate spaces: world, page, and device. World coordinates are the coordinates used to model a particular graphic world and are the coordinates you pass to methods in the .NET Framework. Page coordinates refer to the coordinate system used by a drawing surface, such as a form or a control. Device coordinates are the coordinates used by the physical device being drawn on, such as a screen or a printer. The xtd::drawing::graphics::transform property represents the world transformation, which maps world coordinates to page coordinates.
       /// @remarks Because the matrix returned and by the xtd::drawing::graphics::transform property is a copy of the geometric transform, you should dispose of the matrix when you no longer need it.
-      graphics& transform(const xtd::drawing::drawing2d::matrix& value) noexcept;
+      graphics& transform(const xtd::drawing::drawing_2d::matrix& value) noexcept;
       
       /// @brief Gets the bounding rectangle of the visible clipping region of this xtd::drawing::graphics.
       /// @return A xtd::drawing::rectangle_f structure that represents a bounding rectangle for the visible clipping region of this xtd::drawing::graphics.
@@ -661,7 +661,7 @@ namespace xtd {
       /// @param pen xtd::drawing::pen that determines the color, width, and style of the path.
       /// @param path xtd::drawing::drawing2d::graphics_path to draw.
       /// @remarks The current transformation in the graphic context is applied to the xtd::drawing::drawing2d::graphics_path before it is drawn.
-      void draw_path(const xtd::drawing::pen& pen, const xtd::drawing::drawing2d::graphics_path& path);
+      void draw_path(const xtd::drawing::pen& pen, const xtd::drawing::drawing_2d::graphics_path& path);
       
       /// @brief Draws a pie shape defined by an ellipse specified by a xtd::drawing::rectangle structure and two radial lines.
       /// @param pen xtd::drawing::pen that determines the color, width, and style of the pie shape.
@@ -885,7 +885,7 @@ namespace xtd {
       /// @remarks This method fills the interior of a closed cardinal spline that passes through each point in the array. If the last point does not match the first point, an additional curve segment is added from the last point to the first point to close it.
       /// @remarks The array of points must contain at least four xtd::drawing::point structures.
       /// @remarks This method uses a default tension of 0.0.
-      void fill_closed_curve(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point>& points, xtd::drawing::drawing2d::fill_mode fill_mode);
+      void fill_closed_curve(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point>& points, xtd::drawing::drawing_2d::fill_mode fill_mode);
       /// @brief Fills the interior of a closed cardinal spline curve defined by an array of xtd::drawing::point_f structures using the specified fill mode.
       /// @param brush A xtd::drawing::brush that determines the characteristics of the fill.
       /// @param points Array of xtd::drawing::point_f structures that define the spline.
@@ -893,7 +893,7 @@ namespace xtd {
       /// @remarks This method fills the interior of a closed cardinal spline that passes through each point in the array. If the last point does not match the first point, an additional curve segment is added from the last point to the first point to close it.
       /// @remarks The array of points must contain at least four xtd::drawing::point_f structures.
       /// @remarks This method uses a default tension of 0.0.
-      void fill_closed_curve(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point_f>& points, xtd::drawing::drawing2d::fill_mode fill_mode);
+      void fill_closed_curve(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point_f>& points, xtd::drawing::drawing_2d::fill_mode fill_mode);
       /// @brief Fills the interior of a closed cardinal spline curve defined by an array of xtd::drawing::point structures using the specified fill mode and tension.
       /// @param brush A xtd::drawing::brush that determines the characteristics of the fill.
       /// @param points Array of xtd::drawing::point structures that define the spline.
@@ -902,7 +902,7 @@ namespace xtd {
       /// @remarks This method fills the interior of a closed cardinal spline that passes through each point in the array. If the last point does not match the first point, an additional curve segment is added from the last point to the first point to close it.
       /// @remarks The array of points must contain at least four xtd::drawing::point structures.
       /// @remarks The tension parameter determines the shape of the spline. If the value of the tension parameter is 0.0F, this method draws straight line segments to connect the points. Usually, the tension parameter is less than or equal to 1.0F. Values over 1.0F produce unusual results.
-      void fill_closed_curve(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point>& points, xtd::drawing::drawing2d::fill_mode fill_mode, float tension);
+      void fill_closed_curve(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point>& points, xtd::drawing::drawing_2d::fill_mode fill_mode, float tension);
       /// @brief Fills the interior of a closed cardinal spline curve defined by an array of xtd::drawing::point_f structures using the specified fill mode and tension.
       /// @param brush A xtd::drawing::brush that determines the characteristics of the fill.
       /// @param points Array of xtd::drawing::point_f structures that define the spline.
@@ -911,7 +911,7 @@ namespace xtd {
       /// @remarks This method fills the interior of a closed cardinal spline that passes through each point in the array. If the last point does not match the first point, an additional curve segment is added from the last point to the first point to close it.
       /// @remarks The array of points must contain at least four xtd::drawing::point_f structures.
       /// @remarks The tension parameter determines the shape of the spline. If the value of the tension parameter is 0.0F, this method draws straight line segments to connect the points. Usually, the tension parameter is less than or equal to 1.0F. Values over 1.0F produce unusual results.
-      void fill_closed_curve(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point_f>& points, xtd::drawing::drawing2d::fill_mode fill_mode, float tension);
+      void fill_closed_curve(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point_f>& points, xtd::drawing::drawing_2d::fill_mode fill_mode, float tension);
       
       /// @brief Fills the interior of an ellipse defined by a bounding rectangle specified by a xtd::drawing::rectangle structure.
       /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
@@ -944,7 +944,7 @@ namespace xtd {
       /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
       /// @param path xtd::drawing::drawing2d::graphics_path that represents the path to fill.
       /// @remarks A xtd::drawing::drawing2d::graphics_path consists of a series of line and curve segments. If the path represented by the path parameter is not closed, an additional segment is added from the last point to the first point to close the path.
-      void fill_path(const xtd::drawing::brush& brush, const xtd::drawing::drawing2d::graphics_path& path);
+      void fill_path(const xtd::drawing::brush& brush, const xtd::drawing::drawing_2d::graphics_path& path);
       
       /// @brief Fills the interior of a pie section defined by an ellipse specified by a xtd::drawing::rectangle structure and two radial lines.
       /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
@@ -1000,13 +1000,13 @@ namespace xtd {
       /// @param points Array of xtd::drawing::point structures that represent the vertices of the polygon to fill.
       /// @param fill_mode Member of the xtd::drawing::drawing2d::fill_mode enumeration that determines the style of the fill.
       /// @remarks Every two consecutive points in the array specify a side of the polygon. In addition, if the last point and the first point do not coincide, they specify the closing side of the polygon.
-      void fill_polygon(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point>& points, xtd::drawing::drawing2d::fill_mode fill_mode);
+      void fill_polygon(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point>& points, xtd::drawing::drawing_2d::fill_mode fill_mode);
       /// @brief Fills the interior of a polygon defined by an array of points specified by xtd::drawing::point_f structures using the specified fill mode.
       /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
       /// @param points Array of xtd::drawing::point_f structures that represent the vertices of the polygon to fill.
       /// @param fill_mode Member of the xtd::drawing::drawing2d::fill_mode enumeration that determines the style of the fill.
       /// @remarks Every two consecutive points in the array specify a side of the polygon. In addition, if the last point and the first point do not coincide, they specify the closing side of the polygon.
-      void fill_polygon(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point_f>& points, xtd::drawing::drawing2d::fill_mode fill_mode);
+      void fill_polygon(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point_f>& points, xtd::drawing::drawing_2d::fill_mode fill_mode);
       
       /// @brief Fills the interior of a rectangle specified by a xtd::drawing::rectangle structure.
       /// @param brush xtd::drawing::brush that determines the characteristics of the fill.
@@ -1087,7 +1087,7 @@ namespace xtd {
       /// @brief Forces execution of all pending graphics operations with the method waiting or not waiting, as specified, to return before the operations finish.
       /// @param intention Member of the xtd::drawing::drawing2d::flush_intention enumeration that specifies whether the method returns immediately or waits for any existing operations to finish.
       /// @remarks A value of xtd::drawing::graphics::flush for the intention parameter specifies that the method return immediately after beginning the flush, while a value of xtd::drawing::drawing2d::flush_intention::sync specifies that the method wait before returning until any existing operations finish.
-      void flush(xtd::drawing::drawing2d::flush_intention intention);
+      void flush(xtd::drawing::drawing_2d::flush_intention intention);
       
       /// @brief Creates a new xtd::drawing::graphics from the specified handle to a device context.
       /// @param hdc Handle to a device context.
@@ -1239,12 +1239,12 @@ namespace xtd {
       /// @brief Multiplies the world transformation of this xtd::drawing::graphics and specified the xtd::drawing::drawing2d::matrix.
       /// @param matrix 4x4 xtd::drawing::drawing2d::matrix that multiplies the world transformation.
       /// @remarks This method prepends the matrix specified by the matrix parameter, so that the result is matrix x world transformation.
-      void multiply_transform(const xtd::drawing::drawing2d::matrix& matrix);
+      void multiply_transform(const xtd::drawing::drawing_2d::matrix& matrix);
       /// @brief Multiplies the world transformation of this xtd::drawing::graphics and specified the xtd::drawing::drawing2d::matrix with specified order.
       /// @param matrix 4x4 xtd::drawing::drawing2d::matrix that multiplies the world transformation.
       /// @param order Member of the xtd::drawing::drawing2d::matrix_order enumeration that determines the order of the multiplication.
       /// @remarks This method prepends the matrix specified by the matrix parameter, so that the result is matrix x world transformation.
-      void multiply_transform(const xtd::drawing::drawing2d::matrix& matrix, xtd::drawing::drawing2d::matrix_order order);
+      void multiply_transform(const xtd::drawing::drawing_2d::matrix& matrix, xtd::drawing::drawing_2d::matrix_order order);
       
       /// @brief Releases a device context handle obtained by a previous call to the xtd::drawing::graphics::get_hdc() method of this xtd::drawing::graphics.
       /// @param hdc Handle to a device context obtained by a previous call to the xtd::drawing::graphics::get_hdc() method of this xtd::drawing::graphics.
@@ -1264,7 +1264,7 @@ namespace xtd {
       /// @param gstate xtd::drawing::drawing2d::graphics_state that represents the state to which to restore this xtd::drawing::graphics.
       /// @remarks When you call the xtd::drawing::graphics::save method of a xtd::drawing::graphics, an information block that holds the state of the xtd::drawing::graphics is put on a stack. The xtd::drawing::graphics::save method returns a xtd::drawing::drawing2d::graphics_state that identifies that information block. When you pass the identifying xtd::drawing::drawing2d::graphics_state to the xtd::drawing::graphics::restore method, the information block is removed from the stack and is used to restore the xtd::drawing::graphics to the state it was in at the time of the xtd::drawing::graphics::save method call. Note that the xtd::drawing::drawing2d::graphics_state returned by a given call to the Save method can be passed only once to the xtd::drawing::graphics::restore method.
       /// @remarks Calls to the xtd::drawing::graphics::save method can be nested; that is, you can call the xtd::drawing::graphics::save method several times before you call the xtd::drawing::graphics::restore method. Each time you call the xtd::drawing::graphics::save method, an information block is put on the stack, and you receive a xtd::drawing::drawing2d::graphics_state for the information block. When you pass one of those objects to the xtd::drawing::graphics::restore method, the xtd::drawing::graphics is returned to the state it was in at the time of the xtd::drawing::graphics::save method call that returned that particular xtd::drawing::drawing2d::graphics_state. The information block placed on the stack by thatxtd::drawing::graphics::sSave method call is removed from the stack, and all information blocks placed on that stack after that xtd::drawing::graphics::save method call are also removed.
-      void restore(const xtd::drawing::drawing2d::graphics_state& gstate);
+      void restore(const xtd::drawing::drawing_2d::graphics_state& gstate);
       
       /// @brief Applies the specified rotation to the transformation matrix of this xtd::drawing::graphics.
       /// @param angle Angle of rotation in degrees.
@@ -1274,13 +1274,13 @@ namespace xtd {
       /// @param angle Angle of rotation in degrees.
       /// @param order Member of the xtd::drawing::drawing2d::matrix_order enumeration that specifies whether the rotation is prepended or appended to the transformation matrix.
       /// @remarks The rotation operation consists of multiplying the transformation matrix by a matrix whose elements are derived from the angle parameter. This method applies the rotation by prepending it to the transformation matrix.
-      void rotate_transform(float angle, xtd::drawing::drawing2d::matrix_order order);
+      void rotate_transform(float angle, xtd::drawing::drawing_2d::matrix_order order);
       
       /// @brief Saves the current state of this xtd::drawing::graphics and identifies the saved state with a xtd::drawing::drawing2d::graphics_state.
       /// @return This method returns a xtd::drawing::drawing2d::graphics_state that represents the saved state of this xtd::drawing::graphics.
       /// @remarks When you call the xtd::drawing::graphics::save method of a xtd::drawing::graphics, an information block that holds the state of the xtd::drawing::graphics is put on a stack. The xtd::drawing::graphics::save method returns a xtd::drawing::drawing2d::graphics_state that identifies that information block. When you pass the identifying xtd::drawing::drawing2d::graphics_state to the xtd::drawing::graphics::restore method, the information block is removed from the stack and is used to restore the xtd::drawing::graphics to the state it was in at the time of the xtd::drawing::graphics::save method call. Note that the xtd::drawing::drawing2d::graphics_state returned by a given call to the Save method can be passed only once to the xtd::drawing::graphics::restore method.
       /// @remarks Calls to the xtd::drawing::graphics::save method can be nested; that is, you can call the xtd::drawing::graphics::save method several times before you call the xtd::drawing::graphics::restore method. Each time you call the xtd::drawing::graphics::save method, an information block is put on the stack, and you receive a xtd::drawing::drawing2d::graphics_state for the information block. When you pass one of those objects to the xtd::drawing::graphics::restore method, the xtd::drawing::graphics is returned to the state it was in at the time of the xtd::drawing::graphics::save method call that returned that particular xtd::drawing::drawing2d::graphics_state. The information block placed on the stack by thatxtd::drawing::graphics::sSave method call is removed from the stack, and all information blocks placed on that stack after that xtd::drawing::graphics::save method call are also removed.
-      xtd::drawing::drawing2d::graphics_state save();
+      xtd::drawing::drawing_2d::graphics_state save();
       
       /// @brief Applies the specified scaling operation to the transformation matrix of this xtd::drawing::graphics by prepending it to the object's transformation matrix.
       /// @param sx Scale factor in the x direction.
@@ -1292,7 +1292,7 @@ namespace xtd {
       /// @param sy Scale factor in the y direction.
       /// @param order Member of the xtd::drawing::drawing2d::matrix_order enumeration that specifies whether the scaling operation is prepended or appended to the transformation matrix.
       /// @remarks The scaling operation consists of multiplying the transformation matrix by a diagonal matrix whose elements are (sx, sy, 1). This method prepends the transformation matrix of the xtd::drawing::graphics by the scaling matrix.
-      void scale_transform(float sx, float sy, xtd::drawing::drawing2d::matrix_order order);
+      void scale_transform(float sx, float sy, xtd::drawing::drawing_2d::matrix_order order);
       
       /// @brief Translates the clipping region of this xtd::drawing::graphics by specified amounts in the horizontal and vertical directions.
       /// @param dx The x-coordinate of the translation.
@@ -1313,7 +1313,7 @@ namespace xtd {
       /// @param dy The y-coordinate of the translation.
       /// @param order Member of the xtd::drawing::drawing2d::matrix_order enumeration that specifies whether the translation is prepended or appended to the transformation matrix.
       /// @remarks The translation operation consists of multiplying the transformation matrix by a matrix whose translation part is the dx and dy parameters. This method prepends or appends the transformation matrix of the xtd::drawing::graphics by the translation matrix according to the order parameter.
-      void translate_transform(float dx, float dy, xtd::drawing::drawing2d::matrix_order order);
+      void translate_transform(float dx, float dy, xtd::drawing::drawing_2d::matrix_order order);
       
       /// @brief Trims the specified string for a specified width with the specified xtd::drawing::font and with the specified xtd::drawing::string_trimming.
       /// @param text xtd::ustring to measure.

@@ -13,6 +13,7 @@
 #include "../point_f.h"
 #include "../rectangle.h"
 #include "../rectangle_f.h"
+#include "drawing2d.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -23,7 +24,7 @@ namespace xtd {
     /// @endcond
     
     /// @brief The xtd::drawing::drawing2d namespace provides advanced two-dimensional and vector graphics functionality.
-    namespace drawing2d {
+    namespace drawing_2d {
       /// @brief Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inherited.
       /// @code
       /// class drawing_export_ matrix final : public object
@@ -99,8 +100,8 @@ namespace xtd {
         /// @}
         
         /// @cond
-        matrix(const xtd::drawing::drawing2d::matrix& value);
-        matrix& operator =(const xtd::drawing::drawing2d::matrix& value);
+        matrix(const xtd::drawing::drawing_2d::matrix& value);
+        matrix& operator =(const xtd::drawing::drawing_2d::matrix& value);
         ~matrix();
         /// @endcond
         
@@ -136,18 +137,18 @@ namespace xtd {
         /// @name Methods
         
         /// @{
-        bool equals(const xtd::drawing::drawing2d::matrix& value) const noexcept override;
+        bool equals(const xtd::drawing::drawing_2d::matrix& value) const noexcept override;
         
         /// @brief Inverts this xtd::drawing::drawing2d::matrix, if it is invertible.
         void invert();
         
         /// @brief Multiplies this xtd::drawing::drawing2d::matrix by the matrix specified in the matrix parameter, by prepending the specified xtd::drawing::drawing2d::matrix.
         /// @param matrix The xtd::drawing::drawing2d::matrix by which this xtd::drawing::drawing2d::matrix is to be multiplied.
-        void multiply(const xtd::drawing::drawing2d::matrix& matrix);
+        void multiply(const xtd::drawing::drawing_2d::matrix& matrix);
         /// @brief Multiplies this xtd::drawing::drawing2d::matrix by the matrix specified in the matrix parameter, and in the order specified in the order parameter.
         /// @param matrix The xtd::drawing::drawing2d::matrix by which this xtd::drawing::drawing2d::matrix is to be multiplied.
         /// @param order The xtd::drawing::drawing2d::matrix_order that represents the order of the multiplication.
-        void multiply(const xtd::drawing::drawing2d::matrix& matrix, xtd::drawing::drawing2d::matrix_order order);
+        void multiply(const xtd::drawing::drawing_2d::matrix& matrix, xtd::drawing::drawing_2d::matrix_order order);
         
         /// @brief Resets this xtd::drawing::drawing2d::matrix to have the elements of the identity matrix.
         /// @remarks The elements on the main diagonal of the identity matrix are 1. All other elements of the identity matrix are 0.
@@ -159,7 +160,7 @@ namespace xtd {
         /// @brief Applies a clockwise rotation of an amount specified in the angle parameter, around the origin (zero x and y coordinates) for this xtd::drawing::drawing2d::matrix.
         /// @param angle The angle (extent) of the rotation, in degrees.
         /// @param order A xtd::drawing::drawing2d::matrix_order that specifies the order (append or prepend) in which the rotation is applied to this xtd::drawing::drawing2d::matrix.
-        void rotate(float angle, xtd::drawing::drawing2d::matrix_order order);
+        void rotate(float angle, xtd::drawing::drawing_2d::matrix_order order);
         
         /// @brief Applies a clockwise rotation to this xtd::drawing::drawing2d::matrix around the point specified in the point parameter, and by prepending the rotation.
         /// @param angle The angle (extent) of the rotation, in degrees.
@@ -169,7 +170,7 @@ namespace xtd {
         /// @param angle The angle (extent) of the rotation, in degrees.
         /// @param point A xtd::drawing::point_f that represents the center of the rotation.
         /// @param order A xtd::drawing::drawing2d::matrix_order that specifies the order (append or prepend) in which the rotation is applied.
-        void rotate_at(float angle, const xtd::drawing::point_f& point, xtd::drawing::drawing2d::matrix_order order);
+        void rotate_at(float angle, const xtd::drawing::point_f& point, xtd::drawing::drawing_2d::matrix_order order);
         
         /// @brief Applies the specified scale vector to this xtd::drawing::drawing2d::matrix by prepending the scale vector.
         /// @param scale_x The value by which to scale this xtd::drawing::drawing2d::matrix in the x-axis direction.
@@ -179,7 +180,7 @@ namespace xtd {
         /// @param scale_x The value by which to scale this xtd::drawing::drawing2d::matrix in the x-axis direction.
         /// @param scale_y The value by which to scale this xtd::drawing::drawing2d::matrix in the y-axis direction.
         /// @param order A xtd::drawing::drawing2d::matrix_order that specifies the order (append or prepend) in which the scale vector is applied to this xtd::drawing::drawing2d::matrix.
-        void scale(float scale_x, float scale_y, xtd::drawing::drawing2d::matrix_order order);
+        void scale(float scale_x, float scale_y, xtd::drawing::drawing_2d::matrix_order order);
         
         /// @brief Applies the specified shear vector to this xtd::drawing::drawing2d::matrix.
         /// @param scale_x The horizontal shear factor.
@@ -191,7 +192,7 @@ namespace xtd {
         /// @param scale_y The vertical shear factor.
         /// @param order A xtd::drawing::drawing2d::matrix_order that specifies the order (append or prepend) in which the shear is applied.
         /// @remarks The transformation applied in this method is a pure shear only if one of the parameters is 0. Applied to a rectangle at the origin, when the shear_y factor is 0, the transformation moves the bottom edge horizontally by shear_x times the height of the rectangle. When the shearX factor is 0, it moves the right edge vertically by shearY times the width of the rectangle. Caution is in order when both parameters are nonzero, because the results are hard to predict. For example, if both factors are 1, the transformation is singular (hence noninvertible), squeezing the entire plane to a single line.
-        void shear(float scale_x, float scale_y, xtd::drawing::drawing2d::matrix_order order);
+        void shear(float scale_x, float scale_y, xtd::drawing::drawing_2d::matrix_order order);
         
         /// @brief Applies the geometric transform represented by this xtd::drawing::drawing2d::matrix to a specified array of points.
         /// @param points An array of xtd::drawing::point structures that represents the points to transform.
@@ -215,7 +216,7 @@ namespace xtd {
         /// @param offset_x The x value by which to translate this xtd::drawing::drawing2d::matrix.
         /// @param offset_y The y value by which to translate this xtd::drawing::drawing2d::matrix.
         /// @param order A xtd::drawing::drawing2d::matrix_order that specifies the order (append or prepend) in which the translation is applied to this xtd::drawing::drawing2d::matrix.
-        void translate(float offset_x, float offset_y, xtd::drawing::drawing2d::matrix_order order);
+        void translate(float offset_x, float offset_y, xtd::drawing::drawing_2d::matrix_order order);
         
         /// @brief Multiplies each vector in an array by the matrix. The translation elements of this matrix (third row) are ignored.
         /// @param points An array of xtd::drawing::point structures that represents the points to transform.

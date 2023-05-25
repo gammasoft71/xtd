@@ -3,7 +3,7 @@
 using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
-using namespace xtd::drawing::drawing2d;
+using namespace xtd::drawing::drawing_2d;
 using namespace xtd::forms;
 
 class lines_form : public form {
@@ -177,10 +177,10 @@ private:
     e.graphics().fill_rectangle(linear_gradient_brush(rectangle(450, 200, 150, 100), {color1, color2, color3, color4}, 270), rectangle(450, 200, 150, 100));
     e.graphics().fill_rectangle(linear_gradient_brush(rectangle(650, 200, 150, 100), {color1, color2, color3, color4}, 315), rectangle(650, 200, 150, 100));
     
-    e.graphics().fill_rectangle(linear_gradient_brush(rectangle(50, 400, 150, 100), {color::from_argb(128, color1), color::from_argb(128, color2), color::from_argb(128, color3), color::from_argb(128, color4)}, xtd::drawing::drawing2d::linear_gradient_mode::horizontal), rectangle(50, 400, 150, 100));
-    e.graphics().fill_rectangle(linear_gradient_brush(rectangle(250, 400, 150, 100), {color::from_argb(128, color1), color::from_argb(128, color2), color::from_argb(128, color3), color::from_argb(128, color4)}, xtd::drawing::drawing2d::linear_gradient_mode::vertical), rectangle(250, 400, 150, 100));
-    e.graphics().fill_rectangle(linear_gradient_brush(rectangle(450, 400, 150, 100), {color::from_argb(128, color1), color::from_argb(128, color2), color::from_argb(128, color3), color::from_argb(128, color4)}, xtd::drawing::drawing2d::linear_gradient_mode::forward_diagonal), rectangle(450, 400, 150, 100));
-    e.graphics().fill_rectangle(linear_gradient_brush(rectangle(650, 400, 150, 100), {color::from_argb(128, color1), color::from_argb(128, color2), color::from_argb(128, color3), color::from_argb(128, color4)}, xtd::drawing::drawing2d::linear_gradient_mode::backward_diagonal), rectangle(650, 400, 150, 100));
+    e.graphics().fill_rectangle(linear_gradient_brush(rectangle(50, 400, 150, 100), {color::from_argb(128, color1), color::from_argb(128, color2), color::from_argb(128, color3), color::from_argb(128, color4)}, xtd::drawing::drawing_2d::linear_gradient_mode::horizontal), rectangle(50, 400, 150, 100));
+    e.graphics().fill_rectangle(linear_gradient_brush(rectangle(250, 400, 150, 100), {color::from_argb(128, color1), color::from_argb(128, color2), color::from_argb(128, color3), color::from_argb(128, color4)}, xtd::drawing::drawing_2d::linear_gradient_mode::vertical), rectangle(250, 400, 150, 100));
+    e.graphics().fill_rectangle(linear_gradient_brush(rectangle(450, 400, 150, 100), {color::from_argb(128, color1), color::from_argb(128, color2), color::from_argb(128, color3), color::from_argb(128, color4)}, xtd::drawing::drawing_2d::linear_gradient_mode::forward_diagonal), rectangle(450, 400, 150, 100));
+    e.graphics().fill_rectangle(linear_gradient_brush(rectangle(650, 400, 150, 100), {color::from_argb(128, color1), color::from_argb(128, color2), color::from_argb(128, color3), color::from_argb(128, color4)}, xtd::drawing::drawing_2d::linear_gradient_mode::backward_diagonal), rectangle(650, 400, 150, 100));
   }
   
   void fill_rectangle_with_radial_gradient(object& sender, paint_event_args& e) {

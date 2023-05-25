@@ -9,7 +9,7 @@
 using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
-using namespace xtd::drawing::drawing2d;
+using namespace xtd::drawing::drawing_2d;
 
 struct matrix::data {
   intptr handle = 0;
@@ -75,11 +75,11 @@ void matrix::invert() {
   native::matrix::invert(handle());
 }
 
-void matrix::multiply(const xtd::drawing::drawing2d::matrix& matrix) {
-  multiply(matrix, xtd::drawing::drawing2d::matrix_order::prepend);
+void matrix::multiply(const xtd::drawing::drawing_2d::matrix& matrix) {
+  multiply(matrix, xtd::drawing::drawing_2d::matrix_order::prepend);
 }
 
-void matrix::multiply(const xtd::drawing::drawing2d::matrix& matrix, xtd::drawing::drawing2d::matrix_order order) {
+void matrix::multiply(const xtd::drawing::drawing_2d::matrix& matrix, xtd::drawing::drawing_2d::matrix_order order) {
   native::matrix::multiply(handle(), matrix.handle(), static_cast<int32>(order));
 }
 
@@ -88,18 +88,18 @@ void matrix::reset() {
 }
 
 void matrix::rotate(float angle) {
-  rotate(angle, xtd::drawing::drawing2d::matrix_order::prepend);
+  rotate(angle, xtd::drawing::drawing_2d::matrix_order::prepend);
 }
 
-void matrix::rotate(float angle, xtd::drawing::drawing2d::matrix_order order) {
+void matrix::rotate(float angle, xtd::drawing::drawing_2d::matrix_order order) {
   native::matrix::rotate(handle(), angle, static_cast<int32>(order));
 }
 
 void matrix::rotate_at(float angle, const point_f& point) {
-  rotate_at(angle, point, xtd::drawing::drawing2d::matrix_order::prepend);
+  rotate_at(angle, point, xtd::drawing::drawing_2d::matrix_order::prepend);
 }
 
-void matrix::rotate_at(float angle, const point_f& point, xtd::drawing::drawing2d::matrix_order order) {
+void matrix::rotate_at(float angle, const point_f& point, xtd::drawing::drawing_2d::matrix_order order) {
   native::matrix::rotate_at(handle(), angle, point.x(), point.y(), static_cast<int32>(order));
 }
 
@@ -107,15 +107,15 @@ void matrix::scale(float scale_x, float scale_y) {
   scale(scale_x, scale_y, matrix_order::prepend);
 }
 
-void matrix::scale(float scale_x, float scale_y, xtd::drawing::drawing2d::matrix_order order) {
+void matrix::scale(float scale_x, float scale_y, xtd::drawing::drawing_2d::matrix_order order) {
   native::matrix::scale(handle(), scale_x, scale_y, static_cast<int32>(order));
 }
 
 void matrix::shear(float scale_x, float scale_y) {
-  shear(scale_x, scale_y, xtd::drawing::drawing2d::matrix_order::prepend);
+  shear(scale_x, scale_y, xtd::drawing::drawing_2d::matrix_order::prepend);
 }
 
-void matrix::shear(float scale_x, float scale_y, xtd::drawing::drawing2d::matrix_order order) {
+void matrix::shear(float scale_x, float scale_y, xtd::drawing::drawing_2d::matrix_order order) {
   native::matrix::shear(handle(), scale_x, scale_y, static_cast<int32>(order));
 }
 
@@ -154,10 +154,10 @@ void matrix::transform_vectors(std::vector<xtd::drawing::point_f>& points) {
 }
 
 void matrix::translate(float offset_x, float offset_y) {
-  translate(offset_x, offset_y, xtd::drawing::drawing2d::matrix_order::prepend);
+  translate(offset_x, offset_y, xtd::drawing::drawing_2d::matrix_order::prepend);
 }
 
-void matrix::translate(float offset_x, float offset_y, xtd::drawing::drawing2d::matrix_order order) {
+void matrix::translate(float offset_x, float offset_y, xtd::drawing::drawing_2d::matrix_order order) {
   native::matrix::translate(handle(), offset_x, offset_y, static_cast<int32>(order));
 }
 

@@ -9,6 +9,7 @@
 #include "../brush.h"
 #include "../point.h"
 #include "../rectangle.h"
+#include "drawing2d.h"
 #include "gradient_stop_collection.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -16,7 +17,7 @@ namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
     /// @brief The xtd::drawing::drawing2d namespace provides advanced two-dimensional and vector graphics functionality.
-    namespace drawing2d {
+    namespace drawing_2d {
       /// @brief Encapsulates a xtd::drawing::brush with a conical gradient. This class cannot be inherited.
       /// @code
       /// class drawing_export_ conical_gradient_brush final : public brush
@@ -120,11 +121,11 @@ namespace xtd {
         
         /// @brief Gets the starting and ending colors of the gradient.
         /// @return An array of two xtd::drawing::color structures that represents the starting and ending colors of the gradient.
-        const xtd::drawing::drawing2d::gradient_stop_collection& conical_colors() const noexcept;
+        const xtd::drawing::drawing_2d::gradient_stop_collection& conical_colors() const noexcept;
         /// @brief sets the starting and ending colors of the gradient.
         /// @param conical_colors An array of two xtd::drawing::color structures that represents the starting and ending colors of the gradient.
         /// @return Current conical_gradient_brush instance.
-        xtd::drawing::drawing2d::conical_gradient_brush& conical_colors(const xtd::drawing::drawing2d::gradient_stop_collection& conical_colors);
+        xtd::drawing::drawing_2d::conical_gradient_brush& conical_colors(const xtd::drawing::drawing_2d::gradient_stop_collection& conical_colors);
         /// @}
         
         /// @name Methods

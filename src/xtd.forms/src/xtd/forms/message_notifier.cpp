@@ -38,7 +38,7 @@ namespace {
         // Top right screen location
         location({screen::primary_screen().working_area().right() - client_size().width() - 5, screen::primary_screen().working_area().top() + 5});
         // Set round rectangle form
-        drawing::drawing2d::graphics_path path;
+        drawing::drawing_2d::graphics_path path;
         path.add_rounded_rectangle(client_rectangle(), 7);
         region(drawing::region(path));
         // Set opacity
@@ -47,7 +47,7 @@ namespace {
         // Top right screen location
         location({screen::primary_screen().working_area().right() - client_size().width() - 5, screen::primary_screen().working_area().top() + 5});
         // Set round rectangle form
-        drawing::drawing2d::graphics_path path;
+        drawing::drawing_2d::graphics_path path;
         path.add_rounded_rectangle(client_rectangle(), 7);
         region(drawing::region(path));
         // Set opacity

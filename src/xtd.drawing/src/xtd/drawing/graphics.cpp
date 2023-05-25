@@ -14,18 +14,18 @@
 using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
-using namespace xtd::drawing::drawing2d;
+using namespace xtd::drawing::drawing_2d;
 
 struct graphics::data {
   xtd::drawing::region clip;
-  xtd::drawing::drawing2d::compositing_mode compositing_mode = xtd::drawing::drawing2d::compositing_mode::source_over;
-  xtd::drawing::drawing2d::compositing_quality compositing_quality = xtd::drawing::drawing2d::compositing_quality::default_value;
+  xtd::drawing::drawing_2d::compositing_mode compositing_mode = xtd::drawing::drawing_2d::compositing_mode::source_over;
+  xtd::drawing::drawing_2d::compositing_quality compositing_quality = xtd::drawing::drawing_2d::compositing_quality::default_value;
   intptr handle = 0;
-  xtd::drawing::drawing2d::interpolation_mode interpolation_mode = xtd::drawing::drawing2d::interpolation_mode::default_value;
+  xtd::drawing::drawing_2d::interpolation_mode interpolation_mode = xtd::drawing::drawing_2d::interpolation_mode::default_value;
   float page_scale = 1.0f;
   xtd::drawing::graphics_unit page_unit = xtd::drawing::graphics_unit::pixel;
-  xtd::drawing::drawing2d::pixel_offset_mode pixel_offset_mode = xtd::drawing::drawing2d::pixel_offset_mode::default_value;
-  xtd::drawing::drawing2d::smoothing_mode smoothing_mode = xtd::drawing::drawing2d::smoothing_mode::default_value;
+  xtd::drawing::drawing_2d::pixel_offset_mode pixel_offset_mode = xtd::drawing::drawing_2d::pixel_offset_mode::default_value;
+  xtd::drawing::drawing_2d::smoothing_mode smoothing_mode = xtd::drawing::drawing_2d::smoothing_mode::default_value;
   xtd::drawing::text::text_rendering_hint text_rendering_hint = xtd::drawing::text::text_rendering_hint::system_default;
   int32 text_contrast = 4;
 };
@@ -72,24 +72,24 @@ rectangle_f graphics::clip_bounds() const noexcept {
   return rectangle_f(to_page_unit(rect_pixels.x()), to_page_unit(rect_pixels.y()), to_page_unit(rect_pixels.width()), to_page_unit(rect_pixels.height()));
 }
 
-xtd::drawing::drawing2d::compositing_mode graphics::compositing_mode() const noexcept {
+xtd::drawing::drawing_2d::compositing_mode graphics::compositing_mode() const noexcept {
   return data_->compositing_mode;
 }
 
-graphics& graphics::compositing_mode(xtd::drawing::drawing2d::compositing_mode value) {
+graphics& graphics::compositing_mode(xtd::drawing::drawing_2d::compositing_mode value) {
   if (data_->compositing_mode != value) {
     data_->compositing_mode = value;
-    if (data_->text_rendering_hint == xtd::drawing::text::text_rendering_hint::clear_type_grid_fit && data_->compositing_mode == xtd::drawing::drawing2d::compositing_mode::source_copy) throw argument_exception(csf_);
+    if (data_->text_rendering_hint == xtd::drawing::text::text_rendering_hint::clear_type_grid_fit && data_->compositing_mode == xtd::drawing::drawing_2d::compositing_mode::source_copy) throw argument_exception(csf_);
     native::graphics::compositing_mode(handle(), static_cast<int32>(data_->compositing_mode));
   }
   return *this;
 }
 
-xtd::drawing::drawing2d::compositing_quality graphics::compositing_quality() const noexcept {
+xtd::drawing::drawing_2d::compositing_quality graphics::compositing_quality() const noexcept {
   return data_->compositing_quality;
 }
 
-graphics& graphics::compositing_quality(xtd::drawing::drawing2d::compositing_quality value) {
+graphics& graphics::compositing_quality(xtd::drawing::drawing_2d::compositing_quality value) {
   if (data_->compositing_quality != value) {
     data_->compositing_quality = value;
     native::graphics::compositing_quality(handle(), static_cast<int32>(data_->compositing_quality));
@@ -109,11 +109,11 @@ intptr graphics::handle() const noexcept {
   return data_->handle;
 }
 
-xtd::drawing::drawing2d::interpolation_mode graphics::interpolation_mode() const noexcept {
+xtd::drawing::drawing_2d::interpolation_mode graphics::interpolation_mode() const noexcept {
   return data_->interpolation_mode;
 }
 
-graphics& graphics::interpolation_mode(xtd::drawing::drawing2d::interpolation_mode value) noexcept {
+graphics& graphics::interpolation_mode(xtd::drawing::drawing_2d::interpolation_mode value) noexcept {
   if (data_->interpolation_mode != value) {
     data_->interpolation_mode = value;
     native::graphics::interpolation_mode(handle(), static_cast<int32>(data_->interpolation_mode));
@@ -139,11 +139,11 @@ graphics& graphics::page_unit(xtd::drawing::graphics_unit value) {
   return *this;
 }
 
-xtd::drawing::drawing2d::pixel_offset_mode graphics::pixel_offset_mode() const noexcept {
+xtd::drawing::drawing_2d::pixel_offset_mode graphics::pixel_offset_mode() const noexcept {
   return data_->pixel_offset_mode;
 }
 
-graphics& graphics::pixel_offset_mode(xtd::drawing::drawing2d::pixel_offset_mode value) noexcept {
+graphics& graphics::pixel_offset_mode(xtd::drawing::drawing_2d::pixel_offset_mode value) noexcept {
   if (data_->pixel_offset_mode != value) {
     data_->pixel_offset_mode = value;
     native::graphics::pixel_offset_mode(handle(), static_cast<int32>(data_->pixel_offset_mode));
@@ -151,10 +151,10 @@ graphics& graphics::pixel_offset_mode(xtd::drawing::drawing2d::pixel_offset_mode
   return *this;
 }
 
-xtd::drawing::drawing2d::smoothing_mode graphics::smoothing_mode() const noexcept {
+xtd::drawing::drawing_2d::smoothing_mode graphics::smoothing_mode() const noexcept {
   return data_->smoothing_mode;
 }
-graphics& graphics::smoothing_mode(xtd::drawing::drawing2d::smoothing_mode value) noexcept {
+graphics& graphics::smoothing_mode(xtd::drawing::drawing_2d::smoothing_mode value) noexcept {
   if (data_->smoothing_mode != value) {
     data_->smoothing_mode = value;
     native::graphics::smoothing_mode(handle(), static_cast<int32>(data_->smoothing_mode));
@@ -181,17 +181,17 @@ xtd::drawing::text::text_rendering_hint graphics::text_rendering_hint() const no
 graphics& graphics::text_rendering_hint(xtd::drawing::text::text_rendering_hint value) {
   if (data_->text_rendering_hint != value) {
     data_->text_rendering_hint = value;
-    if (data_->text_rendering_hint == xtd::drawing::text::text_rendering_hint::clear_type_grid_fit && data_->compositing_mode == xtd::drawing::drawing2d::compositing_mode::source_copy) throw argument_exception(csf_);
+    if (data_->text_rendering_hint == xtd::drawing::text::text_rendering_hint::clear_type_grid_fit && data_->compositing_mode == xtd::drawing::drawing_2d::compositing_mode::source_copy) throw argument_exception(csf_);
     native::graphics::text_rendering_hint(handle(), static_cast<int32>(data_->text_rendering_hint));
   }
   return *this;
 }
 
-xtd::drawing::drawing2d::matrix graphics::transform() const noexcept {
+xtd::drawing::drawing_2d::matrix graphics::transform() const noexcept {
   return matrix(native::graphics::transform(handle()));
 }
 
-graphics& graphics::transform(const xtd::drawing::drawing2d::matrix& value) noexcept {
+graphics& graphics::transform(const xtd::drawing::drawing_2d::matrix& value) noexcept {
   native::graphics::transform(handle(), value.handle());
   return *this;
 }
@@ -457,7 +457,7 @@ void graphics::draw_lines(const xtd::drawing::pen& pen, const std::vector<xtd::d
   native::graphics::draw_lines(handle(), pen.handle(), line_points);
 }
 
-void graphics::draw_path(const xtd::drawing::pen& pen, const xtd::drawing::drawing2d::graphics_path& path) {
+void graphics::draw_path(const xtd::drawing::pen& pen, const xtd::drawing::drawing_2d::graphics_path& path) {
   native::graphics::draw_path(handle(), pen.handle(), path.handle());
 }
 
@@ -595,28 +595,28 @@ void graphics::exclude_clip(const xtd::drawing::rectangle_f& rect) {
 }
 
 void graphics::fill_closed_curve(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point>& points) {
-  fill_closed_curve(brush, points, drawing2d::fill_mode::alternate, 0.0f);
+  fill_closed_curve(brush, points, drawing_2d::fill_mode::alternate, 0.0f);
 }
 
 void graphics::fill_closed_curve(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point_f>& points) {
-  fill_closed_curve(brush, points, drawing2d::fill_mode::alternate, 0.0f);
+  fill_closed_curve(brush, points, drawing_2d::fill_mode::alternate, 0.0f);
 }
 
-void graphics::fill_closed_curve(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point>& points, xtd::drawing::drawing2d::fill_mode fill_mode) {
+void graphics::fill_closed_curve(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point>& points, xtd::drawing::drawing_2d::fill_mode fill_mode) {
   fill_closed_curve(brush, points, fill_mode, 0.0f);
 }
 
-void graphics::fill_closed_curve(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point_f>& points, xtd::drawing::drawing2d::fill_mode fill_mode) {
+void graphics::fill_closed_curve(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point_f>& points, xtd::drawing::drawing_2d::fill_mode fill_mode) {
   fill_closed_curve(brush, points, fill_mode, 0.0f);
 }
 
-void graphics::fill_closed_curve(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point>& points, xtd::drawing::drawing2d::fill_mode fill_mode, float tension) {
+void graphics::fill_closed_curve(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point>& points, xtd::drawing::drawing_2d::fill_mode fill_mode, float tension) {
   vector<point_f> close_curve_points;
   for_each(points.begin(), points.end(), [&](auto pt) {close_curve_points.push_back(point_f(pt));});
   fill_closed_curve(brush, close_curve_points, fill_mode, tension);
 }
 
-void graphics::fill_closed_curve(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point_f>& points, xtd::drawing::drawing2d::fill_mode fill_mode, float tension) {
+void graphics::fill_closed_curve(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point_f>& points, xtd::drawing::drawing_2d::fill_mode fill_mode, float tension) {
   vector<pair<float, float>> closed_curve_points;
   for_each(points.begin(), points.end(), [&](auto pt) {closed_curve_points.emplace_back(to_pixels(pt.x()), to_pixels(pt.y()));});
   native::graphics::fill_closed_curve(handle(), brush.handle(), closed_curve_points, static_cast<int32>(fill_mode), tension);
@@ -638,7 +638,7 @@ void graphics::fill_ellipse(const xtd::drawing::brush& brush, float x, float y, 
   native::graphics::fill_ellipse(handle(), brush.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height));
 }
 
-void graphics::fill_path(const brush& brush, const drawing2d::graphics_path& path) {
+void graphics::fill_path(const brush& brush, const drawing_2d::graphics_path& path) {
   native::graphics::fill_path(handle(), brush.handle(), path.handle(), static_cast<int32>(path.fill_mode()));
 }
 
@@ -659,20 +659,20 @@ void graphics::fill_pie(const xtd::drawing::brush& brush, float x, float y, floa
 }
 
 void graphics::fill_polygon(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point>& points) {
-  fill_polygon(brush, points, drawing2d::fill_mode::alternate);
+  fill_polygon(brush, points, drawing_2d::fill_mode::alternate);
 }
 
 void graphics::fill_polygon(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point_f>& points) {
-  fill_polygon(brush, points, drawing2d::fill_mode::alternate);
+  fill_polygon(brush, points, drawing_2d::fill_mode::alternate);
 }
 
-void graphics::fill_polygon(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point>& points, xtd::drawing::drawing2d::fill_mode fill_mode) {
+void graphics::fill_polygon(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point>& points, xtd::drawing::drawing_2d::fill_mode fill_mode) {
   vector<point_f> lines_points;
   for_each(points.begin(), points.end(), [&](auto pt) {lines_points.push_back(point_f(pt));});
   fill_polygon(brush, lines_points);
 }
 
-void graphics::fill_polygon(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point_f>& points, xtd::drawing::drawing2d::fill_mode fill_mode) {
+void graphics::fill_polygon(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::point_f>& points, xtd::drawing::drawing_2d::fill_mode fill_mode) {
   vector<pair<float, float>> line_points;
   for_each(points.begin(), points.end(), [&](auto pt) {line_points.emplace_back(to_pixels(pt.x()), to_pixels(pt.y()));});
   native::graphics::fill_polygon(handle(), brush.handle(), line_points, static_cast<int32>(fill_mode));
@@ -727,10 +727,10 @@ void graphics::fill_rounded_rectangle(const xtd::drawing::brush& brush, float x,
 }
 
 void graphics::flush() {
-  flush(xtd::drawing::drawing2d::flush_intention::flush);
+  flush(xtd::drawing::drawing_2d::flush_intention::flush);
 }
 
-void graphics::flush(xtd::drawing::drawing2d::flush_intention intention) {
+void graphics::flush(xtd::drawing::drawing_2d::flush_intention intention) {
   native::graphics::flush(handle(), static_cast<int32>(intention));
 }
 
@@ -836,13 +836,13 @@ size_f graphics::measure_string(const xtd::ustring& text, const xtd::drawing::fo
   return size_f(to_page_unit(string_width), to_page_unit(string_height));
 }
 
-void graphics::multiply_transform(const xtd::drawing::drawing2d::matrix& matrix) {
+void graphics::multiply_transform(const xtd::drawing::drawing_2d::matrix& matrix) {
   auto new_matrix = transform();
   new_matrix.multiply(matrix);
   transform(new_matrix);
 }
 
-void graphics::multiply_transform(const xtd::drawing::drawing2d::matrix& matrix, xtd::drawing::drawing2d::matrix_order order) {
+void graphics::multiply_transform(const xtd::drawing::drawing_2d::matrix& matrix, xtd::drawing::drawing_2d::matrix_order order) {
   auto new_matrix = transform();
   new_matrix.multiply(matrix, order);
   transform(new_matrix);
@@ -861,7 +861,7 @@ void graphics::reset_transform() {
   native::graphics::reset_transform(handle());
 }
 
-void graphics::restore(const xtd::drawing::drawing2d::graphics_state& gstate) {
+void graphics::restore(const xtd::drawing::drawing_2d::graphics_state& gstate) {
   native::graphics::restore(handle(), gstate.handle_);
 }
 

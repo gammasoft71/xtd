@@ -8,6 +8,7 @@
 #include <xtd/object.h>
 #include <xtd/ustring.h>
 #include "../../drawing_export.h"
+#include "drawing2d.h"
 #include "fill_mode.h"
 #include "../font_family.h"
 #include "../font_style.h"
@@ -20,7 +21,7 @@ namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
     /// @brief The xtd::drawing::drawing2d namespace provides advanced two-dimensional and vector graphics functionality.
-    namespace drawing2d {
+    namespace drawing_2d {
       /// @brief Defines an object used to draw lines and curves. This class cannot be inherited.
       /// @code
       /// class drawing_export_ graphics_path final : public object
@@ -42,12 +43,12 @@ namespace xtd {
         graphics_path();
         /// @brief Initializes a new instance of the xtd::drawing::drawing2d::graphics_path class with the specified xtd::drawing::drawing2d::fil_mode enumeration.
         /// @param mode The xtd::drawing::drawing2d::fill_mode enumeration that determines how the interior of this xtd::drawing::drawing2d::graphics_path is filled.
-        explicit graphics_path(xtd::drawing::drawing2d::fill_mode mode);
+        explicit graphics_path(xtd::drawing::drawing_2d::fill_mode mode);
         /// @}
         
         /// @cond
-        graphics_path(const xtd::drawing::drawing2d::graphics_path& value);
-        graphics_path& operator =(const xtd::drawing::drawing2d::graphics_path& value);
+        graphics_path(const xtd::drawing::drawing_2d::graphics_path& value);
+        graphics_path& operator =(const xtd::drawing::drawing_2d::graphics_path& value);
         ~graphics_path();
         /// @endcond
         
@@ -61,10 +62,10 @@ namespace xtd {
         
         /// @brief Gets a xtd::drawing::drawing2d::fill_mode enumeration that determines how the interiors of shapes in this xtd::drawing::drawing2d::graphics_path are filled.
         /// @return A xtd::drawing::drawing2d::fill_mode enumeration that specifies how the interiors of shapes in this xtd::drawing::drawing2d::graphics_path are filled.
-        xtd::drawing::drawing2d::fill_mode fill_mode() const noexcept;
+        xtd::drawing::drawing_2d::fill_mode fill_mode() const noexcept;
         /// @brief Sets a xtd::drawing::drawing2d::fill_mode enumeration that determines how the interiors of shapes in this xtd::drawing::drawing2d::graphics_path are filled.
         /// @param value A xtd::drawing::drawing2d::fill_mode enumeration that specifies how the interiors of shapes in this xtd::drawing::drawing2d::graphics_path are filled.
-        graphics_path& fill_mode(xtd::drawing::drawing2d::fill_mode value) noexcept;
+        graphics_path& fill_mode(xtd::drawing::drawing_2d::fill_mode value) noexcept;
         /// @}
         
         /// @name Methods
@@ -394,7 +395,7 @@ namespace xtd {
         /// @brief Closes the current figure and starts a new figure. If the current figure contains a sequence of connected lines and curves, the method closes the loop by connecting a line from the endpoint to the starting point.
         void close_figure();
         
-        bool equals(const xtd::drawing::drawing2d::graphics_path& value) const noexcept override;
+        bool equals(const xtd::drawing::drawing_2d::graphics_path& value) const noexcept override;
         
         /// @brief Converts each curve in this path into a sequence of connected line segments.
         void flatten();

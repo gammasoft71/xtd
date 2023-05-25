@@ -9,13 +9,13 @@
 using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
-using namespace xtd::drawing::drawing2d;
+using namespace xtd::drawing::drawing_2d;
 
 struct radial_gradient_brush::data {
   xtd::drawing::point_f center_point;
   xtd::drawing::point_f focal_point;
   float radius = 0;
-  xtd::drawing::drawing2d::gradient_stop_collection radial_colors;
+  xtd::drawing::drawing_2d::gradient_stop_collection radial_colors;
 };
 
 radial_gradient_brush::radial_gradient_brush() : radial_gradient_brush(point_f(.0f, .0f), {color::transparent, color::transparent}, .0f) {
