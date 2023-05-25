@@ -14,6 +14,7 @@ add_sources(
   src/xtd/diagnostics/tests/process_start_info_tests.cpp
   src/xtd/diagnostics/tests/source_levels_tests.cpp
   src/xtd/diagnostics/tests/stopwatch_tests.cpp
+  src/xtd/diagnostics/tests/trace_event_type_tests.cpp
   src/xtd/diagnostics/tests/trace_listener_tests.cpp
   src/xtd/io/tests/directory_tests.cpp
   src/xtd/io/tests/directory_info_tests.cpp
