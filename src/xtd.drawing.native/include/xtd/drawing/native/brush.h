@@ -17,7 +17,7 @@ namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
     /// @cond
-    namespace drawing2d {
+    namespace drawing_2d {
       class hatch_brush;
       class conical_gradient_brush;
       class linear_gradient_brush;
@@ -39,10 +39,10 @@ namespace xtd {
       /// @ingroup xtd_drawing_native native
       /// @warning Internal use only
       class drawing_native_export_ brush final static_ {
-        friend xtd::drawing::drawing2d::hatch_brush;
-        friend xtd::drawing::drawing2d::conical_gradient_brush;
-        friend xtd::drawing::drawing2d::linear_gradient_brush;
-        friend xtd::drawing::drawing2d::radial_gradient_brush;
+        friend xtd::drawing::drawing_2d::hatch_brush;
+        friend xtd::drawing::drawing_2d::conical_gradient_brush;
+        friend xtd::drawing::drawing_2d::linear_gradient_brush;
+        friend xtd::drawing::drawing_2d::radial_gradient_brush;
         friend xtd::drawing::brush;
         friend xtd::drawing::solid_brush;
         friend xtd::drawing::texture_brush;

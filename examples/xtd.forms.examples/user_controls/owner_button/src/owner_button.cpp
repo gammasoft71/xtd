@@ -30,7 +30,7 @@ namespace owner_button_example {
         text_color = application::style_sheet().system_colors().gray_text();
       }
       
-      e.graphics().fill_rounded_rectangle(drawing2d::linear_gradient_brush(e.clip_rectangle(), control_paint::light(button_color, .2), control_paint::dark(button_color), drawing2d::linear_gradient_mode::vertical), e.clip_rectangle().x(), e.clip_rectangle().y(), e.clip_rectangle().width(), e.clip_rectangle().height(), e.clip_rectangle().height() / 2);
+      e.graphics().fill_rounded_rectangle(drawing_2d::linear_gradient_brush(e.clip_rectangle(), control_paint::light(button_color, .2), control_paint::dark(button_color), drawing_2d::linear_gradient_mode::vertical), e.clip_rectangle().x(), e.clip_rectangle().y(), e.clip_rectangle().width(), e.clip_rectangle().height(), e.clip_rectangle().height() / 2);
       e.graphics().draw_rounded_rectangle(pen(border_color, 1), e.clip_rectangle().x(), e.clip_rectangle().y(), e.clip_rectangle().width() - 1, e.clip_rectangle().height() - 1, e.clip_rectangle().height() / 2);
       e.graphics().draw_string(text(), font(), solid_brush(text_color), rectangle(e.clip_rectangle().x() + 5, e.clip_rectangle().y() + 3, e.clip_rectangle().width() - 10, e.clip_rectangle().height() - 7), string_format().alignment(string_alignment::center).line_alignment(string_alignment::center));
     }

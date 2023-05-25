@@ -11,17 +11,17 @@
 using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
-using namespace xtd::drawing::drawing2d;
+using namespace xtd::drawing::drawing_2d;
 
 struct graphics_path::data {
   intptr handle = 0;
-  xtd::drawing::drawing2d::fill_mode fill_mode = xtd::drawing::drawing2d::fill_mode::alternate;
+  xtd::drawing::drawing_2d::fill_mode fill_mode = xtd::drawing::drawing_2d::fill_mode::alternate;
 };
 
-graphics_path::graphics_path() : graphics_path(drawing2d::fill_mode::alternate) {
+graphics_path::graphics_path() : graphics_path(drawing_2d::fill_mode::alternate) {
 }
 
-graphics_path::graphics_path(drawing2d::fill_mode mode) : data_(std::make_shared<data>()) {
+graphics_path::graphics_path(drawing_2d::fill_mode mode) : data_(std::make_shared<data>()) {
   data_->fill_mode = mode;
   recreate_handle();
 }
@@ -37,11 +37,11 @@ intptr graphics_path::handle() const noexcept {
   return data_->handle;
 }
 
-xtd::drawing::drawing2d::fill_mode graphics_path::fill_mode() const noexcept {
+xtd::drawing::drawing_2d::fill_mode graphics_path::fill_mode() const noexcept {
   return data_->fill_mode;
 }
 
-graphics_path& graphics_path::fill_mode(xtd::drawing::drawing2d::fill_mode value) noexcept {
+graphics_path& graphics_path::fill_mode(xtd::drawing::drawing_2d::fill_mode value) noexcept {
   data_->fill_mode = value;
   return *this;
 }

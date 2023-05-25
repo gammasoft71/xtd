@@ -8,7 +8,7 @@
 
 using namespace xtd;
 using namespace xtd::drawing;
-using namespace xtd::drawing::drawing2d;
+using namespace xtd::drawing::drawing_2d;
 
 struct region::data {
   intptr handle = 0;
@@ -37,7 +37,7 @@ intptr region::handle() const noexcept {
   return data_->handle;
 }
 
-void region::complement(const xtd::drawing::drawing2d::graphics_path& path) noexcept {
+void region::complement(const xtd::drawing::drawing_2d::graphics_path& path) noexcept {
   complement(region(path));
 }
 
@@ -57,7 +57,7 @@ bool region::equals(const region& value) const noexcept {
   return data_ == value.data_;
 }
 
-void region::exclude(const xtd::drawing::drawing2d::graphics_path& path) noexcept {
+void region::exclude(const xtd::drawing::drawing_2d::graphics_path& path) noexcept {
   exclude(region(path));
 }
 
@@ -98,7 +98,7 @@ intptr region::get_hrgn(const xtd::drawing::graphics& g) const noexcept {
   return native::region::get_hrgn(handle(), g.handle());
 }
 
-void region::intersect(const xtd::drawing::drawing2d::graphics_path& path) noexcept {
+void region::intersect(const xtd::drawing::drawing_2d::graphics_path& path) noexcept {
   intersect(region(path));
 }
 
@@ -202,7 +202,7 @@ void region::make_infinite() noexcept {
   *this = region();
 }
 
-void region::make_union(const xtd::drawing::drawing2d::graphics_path& path) noexcept {
+void region::make_union(const xtd::drawing::drawing_2d::graphics_path& path) noexcept {
   make_union(region(path));
 }
 
@@ -218,7 +218,7 @@ void region::make_union(const xtd::drawing::region& region) noexcept {
   native::region::make_union(data_->handle, region.data_->handle);
 }
 
-void region::make_xor(const xtd::drawing::drawing2d::graphics_path& path) noexcept {
+void region::make_xor(const xtd::drawing::drawing_2d::graphics_path& path) noexcept {
   make_xor(region(path));
 }
 

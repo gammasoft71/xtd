@@ -10,6 +10,7 @@
 #include "../image.h"
 #include "../point.h"
 #include "../rectangle.h"
+#include "drawing2d.h"
 #include "hatch_style.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -17,7 +18,7 @@ namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
     /// @brief The xtd::drawing::drawing2d namespace provides advanced two-dimensional and vector graphics functionality.
-    namespace drawing2d {
+    namespace drawing_2d {
       /// @brief Defines a rectangular xtd::drawing::brush with a hatch style, a foreground color, and a background color. This class cannot be inherited.
       /// @par Namespace
       /// xtd::drawing::drawing2d
@@ -40,12 +41,12 @@ namespace xtd {
         /// @param hatch_style One of the xtd::drawing::drawing2d::hatch_style values that represents the pattern drawn by this xtd::drawing::drawing2d::hatch_brush.
         /// @param fore_color The xtd::drawing::color structure that represents the color of lines drawn by this xtd::drawing::drawing2d::hatch_brush.
         /// @remarks The background color is initialized to black.
-        hatch_brush(xtd::drawing::drawing2d::hatch_style hatch_style, const xtd::drawing::color& fore_color);
+        hatch_brush(xtd::drawing::drawing_2d::hatch_style hatch_style, const xtd::drawing::color& fore_color);
         /// @brief Initializes a new instance of the xtd::drawing::drawing2d::hatch_brush class with the specified xtd::drawing::drawing2d::hatch_style enumeration, foreground color and background color.
         /// @param hatch_style One of the xtd::drawing::drawing2d::hatch_style values that represents the pattern drawn by this xtd::drawing::drawing2d::hatch_brush.
         /// @param fore_color The xtd::drawing::color structure that represents the color of lines drawn by this xtd::drawing::drawing2d::hatch_brush.
         /// @param back_color The xtd::drawing::color structure that represents the color of spaces between the lines drawn by this xtd::drawing::drawing2d::hatch_brush.
-        hatch_brush(xtd::drawing::drawing2d::hatch_style hatch_style, const xtd::drawing::color& fore_color, const xtd::drawing::color& back_color);
+        hatch_brush(xtd::drawing::drawing_2d::hatch_style hatch_style, const xtd::drawing::color& fore_color, const xtd::drawing::color& back_color);
         /// @}
         
         /// @cond
@@ -66,7 +67,7 @@ namespace xtd {
         
         /// @brief Gets the hatch style of this hatch_brush object.
         /// @return One of the xtd::drawing::drawing2d::hatch_style values that represents the pattern of this hatch_brush.
-        xtd::drawing::drawing2d::hatch_style hatch_style() const noexcept;
+        xtd::drawing::drawing_2d::hatch_style hatch_style() const noexcept;
         /// @}
         
         /// @name Methods

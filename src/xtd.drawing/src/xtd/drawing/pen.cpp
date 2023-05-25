@@ -17,21 +17,21 @@
 using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
-using namespace xtd::drawing::drawing2d;
+using namespace xtd::drawing::drawing_2d;
 
 struct pen::data {
   intptr handle_ = 0;
-  xtd::drawing::drawing2d::pen_alignment alignment = xtd::drawing::drawing2d::pen_alignment::center;
+  xtd::drawing::drawing_2d::pen_alignment alignment = xtd::drawing::drawing_2d::pen_alignment::center;
   std::unique_ptr<xtd::drawing::brush> brush;
   xtd::drawing::color color;
   float dash_offset = 0.0f;
   std::vector<float> dash_pattern;
   xtd::drawing::dash_style dash_style = xtd::drawing::dash_style::solid;
-  xtd::drawing::drawing2d::line_cap end_cap = xtd::drawing::drawing2d::line_cap::flat;
-  xtd::drawing::drawing2d::line_join line_join = xtd::drawing::drawing2d::line_join::miter;
+  xtd::drawing::drawing_2d::line_cap end_cap = xtd::drawing::drawing_2d::line_cap::flat;
+  xtd::drawing::drawing_2d::line_join line_join = xtd::drawing::drawing_2d::line_join::miter;
   float miter_limit = 10.0f;
-  xtd::drawing::drawing2d::line_cap start_cap = xtd::drawing::drawing2d::line_cap::flat;
-  xtd::drawing::drawing2d::pen_type type = xtd::drawing::drawing2d::pen_type::solid_color;
+  xtd::drawing::drawing_2d::line_cap start_cap = xtd::drawing::drawing_2d::line_cap::flat;
+  xtd::drawing::drawing_2d::pen_type type = xtd::drawing::drawing_2d::pen_type::solid_color;
   float width = 1.0f;
 };
 
@@ -65,7 +65,7 @@ pen_alignment pen::alignment() const noexcept {
   return data_->alignment;
 }
 
-pen& pen::alignment(drawing2d::pen_alignment value) {
+pen& pen::alignment(drawing_2d::pen_alignment value) {
   if (data_->alignment != value) {
     data_->alignment = value;
     recreate_handle();
@@ -119,11 +119,11 @@ pen& pen::dash_style(drawing::dash_style value) {
   return *this;
 }
 
-xtd::drawing::drawing2d::line_cap pen::end_cap() const noexcept {
+xtd::drawing::drawing_2d::line_cap pen::end_cap() const noexcept {
   return data_->end_cap;
 }
 
-xtd::drawing::pen& pen::end_cap(xtd::drawing::drawing2d::line_cap value) {
+xtd::drawing::pen& pen::end_cap(xtd::drawing::drawing_2d::line_cap value) {
   if (data_->end_cap != value) {
     data_->end_cap = value;
     recreate_handle();
@@ -135,11 +135,11 @@ intptr pen::handle() const noexcept {
   return data_->handle_;
 }
 
-xtd::drawing::drawing2d::line_join pen::line_join() const noexcept {
+xtd::drawing::drawing_2d::line_join pen::line_join() const noexcept {
   return data_->line_join;
 }
 
-xtd::drawing::pen& pen::line_join(xtd::drawing::drawing2d::line_join value) {
+xtd::drawing::pen& pen::line_join(xtd::drawing::drawing_2d::line_join value) {
   if (data_->line_join != value) {
     data_->line_join = value;
     recreate_handle();
@@ -159,11 +159,11 @@ xtd::drawing::pen& pen::miter_limit(float value) {
   return *this;
 }
 
-xtd::drawing::drawing2d::line_cap pen::start_cap() const noexcept {
+xtd::drawing::drawing_2d::line_cap pen::start_cap() const noexcept {
   return data_->start_cap;
 }
 
-xtd::drawing::pen& pen::start_cap(xtd::drawing::drawing2d::line_cap value) {
+xtd::drawing::pen& pen::start_cap(xtd::drawing::drawing_2d::line_cap value) {
   if (data_->start_cap != value) {
     data_->start_cap = value;
     recreate_handle();
@@ -171,7 +171,7 @@ xtd::drawing::pen& pen::start_cap(xtd::drawing::drawing2d::line_cap value) {
   return *this;
 }
 
-xtd::drawing::drawing2d::pen_type pen::type() const noexcept {
+xtd::drawing::drawing_2d::pen_type pen::type() const noexcept {
   return data_->type;
 }
 

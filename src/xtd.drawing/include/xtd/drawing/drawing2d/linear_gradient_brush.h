@@ -11,13 +11,14 @@
 #include "../rectangle.h"
 #include "gradient_stop_collection.h"
 #include "linear_gradient_mode.h"
+#include "drawing2d.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
     /// @brief The xtd::drawing::drawing2d namespace provides advanced two-dimensional and vector graphics functionality.
-    namespace drawing2d {
+    namespace drawing_2d {
       /// @brief Encapsulates a xtd::drawing::brush with a linear gradient. This class cannot be inherited.
       /// @par Namespace
       /// xtd::drawing::drawing2d
@@ -55,7 +56,7 @@ namespace xtd {
         /// @param color1 A xtd::drawing::color structure that represents the starting color of the linear gradient.
         /// @param color2 A xtd::drawing::color structure that represents the ending color of the linear gradient.
         /// @param linear_gradient_mode A xtd::drawing::drawing2d::linear_gradient_mode enumeration element that specifies the orientation of the gradient. The orientation determines the starting and ending points of the gradient. For example, xtd::drawing::drawing2d::linear_gradient_mode::forward_diagonal specifies that the starting point is the upper-left corner of the rectangle and the ending point is the lower-right corner of the rectangle.
-        linear_gradient_brush(const xtd::drawing::rectangle& rect, const xtd::drawing::color& color1, const xtd::drawing::color& color2, xtd::drawing::drawing2d::linear_gradient_mode linear_gradient_mode);
+        linear_gradient_brush(const xtd::drawing::rectangle& rect, const xtd::drawing::color& color1, const xtd::drawing::color& color2, xtd::drawing::drawing_2d::linear_gradient_mode linear_gradient_mode);
         /// @brief Initializes a new instance of the linear_gradient_brush class with the specified rectangle, colors, and orientation angle.
         /// @param rect A xtd::drawing::rectangle structure that specifies the bounds of the linear gradient.
         /// @param color1 A xtd::drawing::color structure that represents the starting color of the linear gradient.
@@ -67,7 +68,7 @@ namespace xtd {
         /// @param color1 A xtd::drawing::color structure that represents the starting color of the linear gradient.
         /// @param color2 A xtd::drawing::color structure that represents the ending color of the linear gradient.
         /// @param linear_gradient_mode A xtd::drawing::drawing2d::linear_gradient_mode enumeration element that specifies the orientation of the gradient. The orientation determines the starting and ending points of the gradient. For example, xtd::drawing::drawing2d::linear_gradient_mode::forward_diagonal specifies that the starting point is the upper-left corner of the rectangle and the ending point is the lower-right corner of the rectangle.
-        linear_gradient_brush(const xtd::drawing::rectangle_f& rect, const xtd::drawing::color& color1, const xtd::drawing::color& color2, xtd::drawing::drawing2d::linear_gradient_mode linear_gradient_mode);
+        linear_gradient_brush(const xtd::drawing::rectangle_f& rect, const xtd::drawing::color& color1, const xtd::drawing::color& color2, xtd::drawing::drawing_2d::linear_gradient_mode linear_gradient_mode);
         /// @brief Initializes a new instance of the linear_gradient_brush class with the specified rectangle, colors, and orientation angle.
         /// @param rect A xtd::drawing::rectangle_f structure that specifies the bounds of the linear gradient.
         /// @param color1 A xtd::drawing::color structure that represents the starting color of the linear gradient.
@@ -101,7 +102,7 @@ namespace xtd {
         /// @param color1 A xtd::drawing::color structure that represents the starting color of the linear gradient.
         /// @param color2 A xtd::drawing::color structure that represents the ending color of the linear gradient.
         /// @param linear_gradient_mode A xtd::drawing::drawing2d::linear_gradient_mode enumeration element that specifies the orientation of the gradient. The orientation determines the starting and ending points of the gradient. For example, xtd::drawing::drawing2d::linear_gradient_mode::forward_diagonal specifies that the starting point is the upper-left corner of the rectangle and the ending point is the lower-right corner of the rectangle.
-        linear_gradient_brush(const xtd::drawing::rectangle& rect, const std::vector<xtd::drawing::color>& linear_colors, xtd::drawing::drawing2d::linear_gradient_mode linear_gradient_mode);
+        linear_gradient_brush(const xtd::drawing::rectangle& rect, const std::vector<xtd::drawing::color>& linear_colors, xtd::drawing::drawing_2d::linear_gradient_mode linear_gradient_mode);
         /// @brief Initializes a new instance of the linear_gradient_brush class with the specified rectangle, colors, and orientation angle.
         /// @param rect A xtd::drawing::rectangle structure that specifies the bounds of the linear gradient.
         /// @param color1 A xtd::drawing::color structure that represents the starting color of the linear gradient.
@@ -113,7 +114,7 @@ namespace xtd {
         /// @param color1 A xtd::drawing::color structure that represents the starting color of the linear gradient.
         /// @param color2 A xtd::drawing::color structure that represents the ending color of the linear gradient.
         /// @param linear_gradient_mode A xtd::drawing::drawing2d::linear_gradient_mode enumeration element that specifies the orientation of the gradient. The orientation determines the starting and ending points of the gradient. For example, xtd::drawing::drawing2d::linear_gradient_mode::forward_diagonal specifies that the starting point is the upper-left corner of the rectangle and the ending point is the lower-right corner of the rectangle.
-        linear_gradient_brush(const xtd::drawing::rectangle_f& rect, const std::vector<xtd::drawing::color>& linear_colors, xtd::drawing::drawing2d::linear_gradient_mode linear_gradient_mode);
+        linear_gradient_brush(const xtd::drawing::rectangle_f& rect, const std::vector<xtd::drawing::color>& linear_colors, xtd::drawing::drawing_2d::linear_gradient_mode linear_gradient_mode);
         /// @brief Initializes a new instance of the linear_gradient_brush class with the specified rectangle, colors, and orientation angle.
         /// @param rect A xtd::drawing::rectangle_f structure that specifies the bounds of the linear gradient.
         /// @param color1 A xtd::drawing::color structure that represents the starting color of the linear gradient.
@@ -150,11 +151,11 @@ namespace xtd {
         
         /// @brief Gets the starting and ending colors of the gradient.
         /// @return An array of two xtd::drawing::color structures that represents the starting and ending colors of the linear gradient.
-        const xtd::drawing::drawing2d::gradient_stop_collection& linear_colors() const noexcept;
+        const xtd::drawing::drawing_2d::gradient_stop_collection& linear_colors() const noexcept;
         /// @brief sets the starting and ending colors of the gradient.
         /// @param value An array of two xtd::drawing::color structures that represents the starting and ending colors of the linear gradient.
         /// @return Current linear_gradient_brush instance.
-        xtd::drawing::drawing2d::linear_gradient_brush& linear_colors(const xtd::drawing::drawing2d::gradient_stop_collection& value);
+        xtd::drawing::drawing_2d::linear_gradient_brush& linear_colors(const xtd::drawing::drawing_2d::gradient_stop_collection& value);
         
         /// @brief Gets a rectangular region that defines the starting and ending points of the linear gradient.
         /// @return A xtd::drawing::rectangle_f structure that specifies the starting and ending points of the linear gradient.
@@ -177,7 +178,7 @@ namespace xtd {
         /// @}
         
       private:
-        static float linear_gradient_mode_to_angle(xtd::drawing::drawing2d::linear_gradient_mode);
+        static float linear_gradient_mode_to_angle(xtd::drawing::drawing_2d::linear_gradient_mode);
         void recreate_handle();
         
         std::shared_ptr<data> data_;

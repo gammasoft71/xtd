@@ -7,7 +7,7 @@
 
 using namespace xtd;
 using namespace xtd::drawing;
-using namespace xtd::drawing::drawing2d;
+using namespace xtd::drawing::drawing_2d;
 
 namespace {
   using point_collection = std::vector<xtd::drawing::point>;
@@ -531,18 +531,18 @@ namespace {
 }
 
 struct hatch_brush::data {
-  xtd::drawing::drawing2d::hatch_style hatch_style_ = xtd::drawing::drawing2d::hatch_style::horizontal;
+  xtd::drawing::drawing_2d::hatch_style hatch_style_ = xtd::drawing::drawing_2d::hatch_style::horizontal;
   xtd::drawing::color fore_color_;
   xtd::drawing::color back_color_;
 };
 
-hatch_brush::hatch_brush() : hatch_brush(xtd::drawing::drawing2d::hatch_style::horizontal, xtd::drawing::color::black, xtd::drawing::color::black) {
+hatch_brush::hatch_brush() : hatch_brush(xtd::drawing::drawing_2d::hatch_style::horizontal, xtd::drawing::color::black, xtd::drawing::color::black) {
 }
 
-hatch_brush::hatch_brush(xtd::drawing::drawing2d::hatch_style hatch_style, const xtd::drawing::color& fore_color) : hatch_brush(hatch_style, fore_color, xtd::drawing::color::black) {
+hatch_brush::hatch_brush(xtd::drawing::drawing_2d::hatch_style hatch_style, const xtd::drawing::color& fore_color) : hatch_brush(hatch_style, fore_color, xtd::drawing::color::black) {
 }
 
-hatch_brush::hatch_brush(xtd::drawing::drawing2d::hatch_style hatch_style, const xtd::drawing::color& fore_color, const xtd::drawing::color& back_color) : data_(std::make_shared<data>()) {
+hatch_brush::hatch_brush(xtd::drawing::drawing_2d::hatch_style hatch_style, const xtd::drawing::color& fore_color, const xtd::drawing::color& back_color) : data_(std::make_shared<data>()) {
   data_->hatch_style_ = hatch_style;
   data_->fore_color_ = fore_color;
   data_->back_color_ = back_color;
@@ -550,7 +550,7 @@ hatch_brush::hatch_brush(xtd::drawing::drawing2d::hatch_style hatch_style, const
 }
 
 void hatch_brush::recreate_handle() {
-  static std::map<xtd::drawing::drawing2d::hatch_style, delegate<image(const color&, const color&)>> textures {{hatch_style::horizontal, {create_horizontal_texture}}, {hatch_style::vertical, {create_vertical_texture}}, {hatch_style::forward_diagonal, {create_forward_diagonal_texture}}, {hatch_style::backward_diagonal, {create_backward_diagonal_texture}}, {hatch_style::cross, {create_cross_texture}}, {hatch_style::diagonal_cross, {create_diagonal_cross_texture}}, {hatch_style::percent_05, {create_percent_05_texture}}, {hatch_style::percent_10, {create_percent_10_texture}}, {hatch_style::percent_20, {create_percent_20_texture}}, {hatch_style::percent_25, {create_percent_25_texture}}, {hatch_style::percent_30, {create_percent_30_texture}}, {hatch_style::percent_40, {create_percent_40_texture}}, {hatch_style::percent_50, {create_percent_50_texture}}, {hatch_style::percent_60, {create_percent_60_texture}}, {hatch_style::percent_70, {create_percent_70_texture}}, {hatch_style::percent_75, {create_percent_75_texture}}, {hatch_style::percent_80, {create_percent_80_texture}}, {hatch_style::percent_90, {create_percent_90_texture}}, {hatch_style::light_downward_diagonal, {create_light_downward_diagonal_texture}}, {hatch_style::light_upward_diagonal, {create_light_upward_diagonal_texture}}, {hatch_style::dark_downward_diagonal, {create_dark_downward_diagonal_texture}}, {hatch_style::dark_upward_diagonal, {create_dark_upward_diagonal_texture}}, {hatch_style::wide_downward_diagonal, {create_wide_downward_diagonal_texture}}, {hatch_style::wide_upward_diagonal, {create_wide_upward_diagonal_texture}}, {hatch_style::light_horizontal, {create_light_horizontal_texture}}, {hatch_style::light_vertical, {create_light_vertical_texture}}, {hatch_style::narrow_horizontal, {create_narrow_horizontal_texture}}, {hatch_style::narrow_vertical, {create_narrow_vertical_texture}}, {hatch_style::dark_horizontal, {create_dark_horizontal_texture}}, {hatch_style::dark_vertical, {create_dark_vertical_texture}}, {hatch_style::dashed_downward_diagonal, {create_dashed_downward_diagonal_texture}}, {hatch_style::dashed_upward_diagonal, {create_dashed_upward_diagonal_texture}}, {hatch_style::dashed_horizontal, {create_dashed_horizontal_texture}}, {hatch_style::dashed_vertical, {create_dashed_vertical_texture}}, {hatch_style::small_confetti, {create_small_confetti_texture}}, {hatch_style::large_confetti, {create_large_confetti_texture}}, {hatch_style::zig_zag, {create_zig_zag_texture}}, {hatch_style::wave, {create_wave_texture}}, {hatch_style::diagonal_brick, {create_diagonal_brick_texture}}, {hatch_style::horizontal_brick, {create_horizontal_brick_texture}}, {hatch_style::weave, {create_weave_texture}}, {hatch_style::plaid, {create_plaid_texture}}, {hatch_style::divot, {create_divot_texture}}, {hatch_style::dotted_grid, {create_dotted_grid_texture}}, {hatch_style::dotted_diamond, {create_dotted_diamond_texture}}, {hatch_style::shingle, {create_shingle_texture}}, {hatch_style::trellis, {create_trellis_texture}}, {hatch_style::sphere, {create_sphere_texture}}, {hatch_style::small_grid, {create_small_grid_texture}}, {hatch_style::small_checker_board, {create_small_checker_board_texture}}, {hatch_style::large_checker_board, {create_large_checker_board_texture}}, {hatch_style::outlined_diamond, {create_outlined_diamond_texture}}, {hatch_style::solid_diamond, {create_solid_diamond_texture}}, {hatch_style::wide_checker_board, {create_wide_checker_board_texture}}};
+  static std::map<xtd::drawing::drawing_2d::hatch_style, delegate<image(const color&, const color&)>> textures {{hatch_style::horizontal, {create_horizontal_texture}}, {hatch_style::vertical, {create_vertical_texture}}, {hatch_style::forward_diagonal, {create_forward_diagonal_texture}}, {hatch_style::backward_diagonal, {create_backward_diagonal_texture}}, {hatch_style::cross, {create_cross_texture}}, {hatch_style::diagonal_cross, {create_diagonal_cross_texture}}, {hatch_style::percent_05, {create_percent_05_texture}}, {hatch_style::percent_10, {create_percent_10_texture}}, {hatch_style::percent_20, {create_percent_20_texture}}, {hatch_style::percent_25, {create_percent_25_texture}}, {hatch_style::percent_30, {create_percent_30_texture}}, {hatch_style::percent_40, {create_percent_40_texture}}, {hatch_style::percent_50, {create_percent_50_texture}}, {hatch_style::percent_60, {create_percent_60_texture}}, {hatch_style::percent_70, {create_percent_70_texture}}, {hatch_style::percent_75, {create_percent_75_texture}}, {hatch_style::percent_80, {create_percent_80_texture}}, {hatch_style::percent_90, {create_percent_90_texture}}, {hatch_style::light_downward_diagonal, {create_light_downward_diagonal_texture}}, {hatch_style::light_upward_diagonal, {create_light_upward_diagonal_texture}}, {hatch_style::dark_downward_diagonal, {create_dark_downward_diagonal_texture}}, {hatch_style::dark_upward_diagonal, {create_dark_upward_diagonal_texture}}, {hatch_style::wide_downward_diagonal, {create_wide_downward_diagonal_texture}}, {hatch_style::wide_upward_diagonal, {create_wide_upward_diagonal_texture}}, {hatch_style::light_horizontal, {create_light_horizontal_texture}}, {hatch_style::light_vertical, {create_light_vertical_texture}}, {hatch_style::narrow_horizontal, {create_narrow_horizontal_texture}}, {hatch_style::narrow_vertical, {create_narrow_vertical_texture}}, {hatch_style::dark_horizontal, {create_dark_horizontal_texture}}, {hatch_style::dark_vertical, {create_dark_vertical_texture}}, {hatch_style::dashed_downward_diagonal, {create_dashed_downward_diagonal_texture}}, {hatch_style::dashed_upward_diagonal, {create_dashed_upward_diagonal_texture}}, {hatch_style::dashed_horizontal, {create_dashed_horizontal_texture}}, {hatch_style::dashed_vertical, {create_dashed_vertical_texture}}, {hatch_style::small_confetti, {create_small_confetti_texture}}, {hatch_style::large_confetti, {create_large_confetti_texture}}, {hatch_style::zig_zag, {create_zig_zag_texture}}, {hatch_style::wave, {create_wave_texture}}, {hatch_style::diagonal_brick, {create_diagonal_brick_texture}}, {hatch_style::horizontal_brick, {create_horizontal_brick_texture}}, {hatch_style::weave, {create_weave_texture}}, {hatch_style::plaid, {create_plaid_texture}}, {hatch_style::divot, {create_divot_texture}}, {hatch_style::dotted_grid, {create_dotted_grid_texture}}, {hatch_style::dotted_diamond, {create_dotted_diamond_texture}}, {hatch_style::shingle, {create_shingle_texture}}, {hatch_style::trellis, {create_trellis_texture}}, {hatch_style::sphere, {create_sphere_texture}}, {hatch_style::small_grid, {create_small_grid_texture}}, {hatch_style::small_checker_board, {create_small_checker_board_texture}}, {hatch_style::large_checker_board, {create_large_checker_board_texture}}, {hatch_style::outlined_diamond, {create_outlined_diamond_texture}}, {hatch_style::solid_diamond, {create_solid_diamond_texture}}, {hatch_style::wide_checker_board, {create_wide_checker_board_texture}}};
   auto it = textures.find(data_->hatch_style_);
   native::brush::texture(handle(), (it != textures.end() ? it->second(data_->fore_color_, data_->back_color_) : create_empty_texture(data_->fore_color_, data_->back_color_)).handle());
 }
@@ -570,7 +570,7 @@ xtd::drawing::color hatch_brush::foreground_color() const noexcept {
   return data_->fore_color_;
 }
 
-xtd::drawing::drawing2d::hatch_style hatch_brush::hatch_style() const noexcept {
+xtd::drawing::drawing_2d::hatch_style hatch_brush::hatch_style() const noexcept {
   return data_->hatch_style_;
 }
 

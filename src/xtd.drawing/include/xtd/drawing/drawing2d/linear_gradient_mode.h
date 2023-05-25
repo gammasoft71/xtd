@@ -3,13 +3,14 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/enum.h>
+#include "drawing2d.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
     /// @brief The xtd::drawing::drawing2d namespace provides advanced two-dimensional and vector graphics functionality.
-    namespace drawing2d {
+    namespace drawing_2d {
       /// @brief Specifies the direction of a linear gradient.
       /// @par Namespace
       /// xtd::drawing::drawing2d
@@ -31,7 +32,7 @@ namespace xtd {
 }
 
 /// @cond
-template<> struct xtd::enum_register<xtd::drawing::drawing2d::linear_gradient_mode> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::drawing::drawing2d::linear_gradient_mode> {{xtd::drawing::drawing2d::linear_gradient_mode::horizontal, "horizontal"}, {xtd::drawing::drawing2d::linear_gradient_mode::vertical, "vertical"}, {xtd::drawing::drawing2d::linear_gradient_mode::forward_diagonal, "forward_diagonal"}, {xtd::drawing::drawing2d::linear_gradient_mode::backward_diagonal, "backward_diagonal"}};}
+template<> struct xtd::enum_register<xtd::drawing::drawing_2d::linear_gradient_mode> {
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::drawing::drawing_2d::linear_gradient_mode> {{xtd::drawing::drawing_2d::linear_gradient_mode::horizontal, "horizontal"}, {xtd::drawing::drawing_2d::linear_gradient_mode::vertical, "vertical"}, {xtd::drawing::drawing_2d::linear_gradient_mode::forward_diagonal, "forward_diagonal"}, {xtd::drawing::drawing_2d::linear_gradient_mode::backward_diagonal, "backward_diagonal"}};}
 };
 /// @endcond

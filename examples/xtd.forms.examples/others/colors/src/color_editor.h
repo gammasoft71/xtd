@@ -115,7 +115,7 @@ namespace colors_example {
       panel_color_box.border_style(xtd::forms::border_style::fixed_3d);
       panel_color_box.anchor(xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::right | xtd::forms::anchor_styles::bottom);
       panel_color_box.paint += [&](xtd::object& sender, xtd::forms::paint_event_args& e) {
-        e.graphics().fill_rectangle(xtd::drawing::drawing2d::hatch_brush(xtd::drawing::drawing2d::hatch_style::wide_checker_board, xtd::drawing::color::from_argb(0x54, 0x54, 0x54), xtd::drawing::color::from_argb(0xA8, 0xA8, 0xA8)), e.clip_rectangle());
+        e.graphics().fill_rectangle(xtd::drawing::drawing_2d::hatch_brush(xtd::drawing::drawing_2d::hatch_style::wide_checker_board, xtd::drawing::color::from_argb(0x54, 0x54, 0x54), xtd::drawing::color::from_argb(0xA8, 0xA8, 0xA8)), e.clip_rectangle());
         e.graphics().fill_rectangle(xtd::drawing::solid_brush(color_), e.clip_rectangle());
         xtd::forms::control_paint::draw_border(panel_color_box, e.graphics(), panel_color_box.border_style(), panel_color_box.border_sides(), xtd::forms::application::style_sheet().system_colors().control_text(), e.clip_rectangle());
       };

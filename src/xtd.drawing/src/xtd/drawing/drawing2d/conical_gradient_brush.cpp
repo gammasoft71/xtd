@@ -9,12 +9,12 @@
 using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
-using namespace xtd::drawing::drawing2d;
+using namespace xtd::drawing::drawing_2d;
 
 struct conical_gradient_brush::data {
   xtd::drawing::point_f center_point;
   float angle = 0;
-  xtd::drawing::drawing2d::gradient_stop_collection conical_colors;
+  xtd::drawing::drawing_2d::gradient_stop_collection conical_colors;
 };
 
 conical_gradient_brush::conical_gradient_brush() : conical_gradient_brush(point_f(.0f, .0f), {color::transparent, color::transparent}, .0f) {

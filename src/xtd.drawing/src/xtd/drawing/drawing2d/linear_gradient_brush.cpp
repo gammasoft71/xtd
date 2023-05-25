@@ -9,12 +9,12 @@
 using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
-using namespace xtd::drawing::drawing2d;
+using namespace xtd::drawing::drawing_2d;
 
 struct linear_gradient_brush::data {
   xtd::drawing::rectangle_f rect;
   float angle = 0;
-  xtd::drawing::drawing2d::gradient_stop_collection linear_colors;
+  xtd::drawing::drawing_2d::gradient_stop_collection linear_colors;
 };
 
 linear_gradient_brush::linear_gradient_brush() : linear_gradient_brush(rectangle_f(.0f, .0f, .0f, .0f), {color::transparent, color::transparent}) {
@@ -26,13 +26,13 @@ linear_gradient_brush::linear_gradient_brush(const xtd::drawing::point& point1, 
 linear_gradient_brush::linear_gradient_brush(const xtd::drawing::point_f& point1, const xtd::drawing::point_f& point2, const xtd::drawing::color& color1, const xtd::drawing::color& color2) : linear_gradient_brush(rectangle_f::from_ltrb(point1.x(), point1.y(), point2.x(), point2.y()), {color1, color2}, .0) {
 }
 
-linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle& rect, const xtd::drawing::color& color1, const xtd::drawing::color& color2, xtd::drawing::drawing2d::linear_gradient_mode linear_gradient_mode) : linear_gradient_brush(rectangle_f(rect), {color1, color2}, linear_gradient_mode_to_angle(linear_gradient_mode)) {
+linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle& rect, const xtd::drawing::color& color1, const xtd::drawing::color& color2, xtd::drawing::drawing_2d::linear_gradient_mode linear_gradient_mode) : linear_gradient_brush(rectangle_f(rect), {color1, color2}, linear_gradient_mode_to_angle(linear_gradient_mode)) {
 }
 
 linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle& rect, const xtd::drawing::color& color1, const xtd::drawing::color& color2, float angle): linear_gradient_brush(rectangle_f(rect), {color1, color2}, angle) {
 }
 
-linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle_f& rect, const xtd::drawing::color& color1, const xtd::drawing::color& color2, xtd::drawing::drawing2d::linear_gradient_mode linear_gradient_mode) : linear_gradient_brush(rect, {color1, color2}, linear_gradient_mode_to_angle(linear_gradient_mode)) {
+linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle_f& rect, const xtd::drawing::color& color1, const xtd::drawing::color& color2, xtd::drawing::drawing_2d::linear_gradient_mode linear_gradient_mode) : linear_gradient_brush(rect, {color1, color2}, linear_gradient_mode_to_angle(linear_gradient_mode)) {
 }
 
 linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle_f& rect, const xtd::drawing::color& color1, const xtd::drawing::color& color2, float angle) : linear_gradient_brush(rect, {color1, color2}, angle) {
@@ -50,13 +50,13 @@ linear_gradient_brush::linear_gradient_brush(const xtd::drawing::point& point1, 
 linear_gradient_brush::linear_gradient_brush(const xtd::drawing::point_f& point1, const xtd::drawing::point_f& point2, const std::vector<xtd::drawing::color>& linear_colors) : linear_gradient_brush(rectangle_f::from_ltrb(point1.x(), point1.y(), point2.x(), point2.y()), linear_colors, .0) {
 }
 
-linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle& rect, const std::vector<xtd::drawing::color>& linear_colors, xtd::drawing::drawing2d::linear_gradient_mode linear_gradient_mode) : linear_gradient_brush(rectangle_f(rect), linear_colors, linear_gradient_mode_to_angle(linear_gradient_mode)) {
+linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle& rect, const std::vector<xtd::drawing::color>& linear_colors, xtd::drawing::drawing_2d::linear_gradient_mode linear_gradient_mode) : linear_gradient_brush(rectangle_f(rect), linear_colors, linear_gradient_mode_to_angle(linear_gradient_mode)) {
 }
 
 linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle& rect, const std::vector<xtd::drawing::color>& linear_colors, float angle): linear_gradient_brush(rectangle_f(rect), linear_colors, angle) {
 }
 
-linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle_f& rect, const std::vector<xtd::drawing::color>& linear_colors, xtd::drawing::drawing2d::linear_gradient_mode linear_gradient_mode) : linear_gradient_brush(rect, linear_colors, linear_gradient_mode_to_angle(linear_gradient_mode)) {
+linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle_f& rect, const std::vector<xtd::drawing::color>& linear_colors, xtd::drawing::drawing_2d::linear_gradient_mode linear_gradient_mode) : linear_gradient_brush(rect, linear_colors, linear_gradient_mode_to_angle(linear_gradient_mode)) {
 }
 
 linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle_f& rect, const std::vector<xtd::drawing::color>& linear_colors, float angle) : data_(std::make_shared<data>()) {
@@ -131,12 +131,12 @@ bool linear_gradient_brush::equals(const linear_gradient_brush& value) const noe
   return data_ == value.data_;
 }
 
-float linear_gradient_brush::linear_gradient_mode_to_angle(xtd::drawing::drawing2d::linear_gradient_mode linear_gradient_mode) {
+float linear_gradient_brush::linear_gradient_mode_to_angle(xtd::drawing::drawing_2d::linear_gradient_mode linear_gradient_mode) {
   switch (linear_gradient_mode) {
-    case drawing2d::linear_gradient_mode::horizontal : return 0.0;
-    case drawing2d::linear_gradient_mode::vertical : return 90.0;
-    case drawing2d::linear_gradient_mode::forward_diagonal : return 45.0;
-    case drawing2d::linear_gradient_mode::backward_diagonal : return 315.0;
+    case drawing_2d::linear_gradient_mode::horizontal : return 0.0;
+    case drawing_2d::linear_gradient_mode::vertical : return 90.0;
+    case drawing_2d::linear_gradient_mode::forward_diagonal : return 45.0;
+    case drawing_2d::linear_gradient_mode::backward_diagonal : return 315.0;
   }
   throw argument_exception(csf_);
 }
