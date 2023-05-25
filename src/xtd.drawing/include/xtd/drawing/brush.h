@@ -12,7 +12,7 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
+  /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing_2d/, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
     /// @brief Defines objects used to fill the interiors of graphical shapes such as rectangles, ellipses, pies, polygons, and paths.
     /// @code
@@ -25,11 +25,11 @@ namespace xtd {
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing
-    /// @remarks This is an abstract base class and cannot be instantiated. To create a brush object, use classes derived from xtd::drawing::brush, such as xtd::drawing::solid_brush, xtd::drawing::texture_brush, xtd::drawing::drawing2d::hatch_brush, xtd::drawing::drawing2d::conical_gradient_brush, xtd::drawing::drawing2d::linear_gradient_brush, and xtd::drawing::drawing2d::radial_gradient_brush.<br>
+    /// @remarks This is an abstract base class and cannot be instantiated. To create a brush object, use classes derived from xtd::drawing::brush, such as xtd::drawing::solid_brush, xtd::drawing::texture_brush, xtd::drawing::drawing_2d/::hatch_brush, xtd::drawing::drawing_2d/::conical_gradient_brush, xtd::drawing::drawing_2d/::linear_gradient_brush, and xtd::drawing::drawing_2d/::radial_gradient_brush.<br>
     /// |                                                                                             |                                                                                           |                                                                                           |
     /// | ------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-    /// | xtd::drawing::solid_brush<br> @image html solid_brush.png                                   | xtd::drawing::texture_brush<br> @image html texture_brush1.png                            | xtd::drawing::drawing2d::hatch_brush<br> @image html hatch_brush.png                      |
-    /// | xtd::drawing::drawing2d::conical_gradient_brush<br> @image html conical_gradient_brush.png  | xtd::drawing::drawing2d::linear_gradient_brush<br> @image html linear_gradient_brush.png  | xtd::drawing::drawing2d::radial_gradient_brush<br> @image html radial_gradient_brush.png  |
+    /// | xtd::drawing::solid_brush<br> @image html solid_brush.png                                   | xtd::drawing::texture_brush<br> @image html texture_brush1.png                            | xtd::drawing::drawing_2d/::hatch_brush<br> @image html hatch_brush.png                      |
+    /// | xtd::drawing::drawing_2d/::conical_gradient_brush<br> @image html conical_gradient_brush.png  | xtd::drawing::drawing_2d/::linear_gradient_brush<br> @image html linear_gradient_brush.png  | xtd::drawing::drawing_2d/::radial_gradient_brush<br> @image html radial_gradient_brush.png  |
     class drawing_export_ brush : public xtd::object, public xtd::iequatable<brush> {
       struct data;
       
