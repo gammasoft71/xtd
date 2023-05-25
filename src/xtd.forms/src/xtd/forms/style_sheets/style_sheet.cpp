@@ -4,7 +4,7 @@
 #include <xtd/is.h>
 #include <xtd/environment.h>
 #include <xtd/drawing/system_colors.h>
-#include <xtd/drawing/drawing2d/linear_gradient_brush.h>
+#include <xtd/drawing/drawing_2d/linear_gradient_brush.h>
 #include <xtd/forms/window_messages.h>
 #include <xtd/io/directory.h>
 #include <xtd/io/file.h>

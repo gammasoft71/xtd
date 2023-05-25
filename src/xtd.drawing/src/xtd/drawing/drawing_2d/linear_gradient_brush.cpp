@@ -1,4 +1,4 @@
-#include "../../../../include/xtd/drawing/drawing2d/linear_gradient_brush.h"
+#include "../../../../include/xtd/drawing/drawing_2d/linear_gradient_brush.h"
 #include <xtd/argument_exception.h>
 #include <xtd/as.h>
 #include <tuple>
