@@ -179,6 +179,7 @@ add_sources(
   src/xtd/tests/string_split_options_tests.cpp
   src/xtd/tests/string_string_format_tests.cpp
   src/xtd/tests/system_exception_tests.cpp
+  src/xtd/tests/target_id_tests.cpp
   src/xtd/tests/tick_tests.cpp
   src/xtd/tests/ticks_tests.cpp
   src/xtd/tests/time_out_exception_tests.cpp
