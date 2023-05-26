@@ -13,7 +13,7 @@
 #elif defined(__clang__)
 #  define __compiler_version xtd::version {__clang_major__, __clang_minor__, __clang_patchlevel__}
 #elif defined(__GNUC__)
-#  define __compiler_version__compiler_version xtd::version {__GNUC__, __GNUC_MINOR__, __GNUC_PATCHLEVEL__}
+#  define __compiler_version xtd::version {__GNUC__, __GNUC_MINOR__, __GNUC_PATCHLEVEL__}
 #else
 #  define __compiler_version xtd::version {}
 #endif
