@@ -17,6 +17,7 @@ add_sources(
   src/xtd/drawing/drawing_2d/tests/line_join_tests.cpp
   src/xtd/drawing/drawing_2d/tests/linear_gradient_mode_tests.cpp
   src/xtd/drawing/drawing_2d/tests/matrix_order_tests.cpp
+  src/xtd/drawing/drawing_2d/tests/pixel_offset_mode_tests.cpp
   src/xtd/drawing/drawing_2d/tests/pen_alignment_tests.cpp
   src/xtd/drawing/drawing_2d/tests/pen_type_tests.cpp
   src/xtd/drawing/imaging/tests/encoder_parameter_value_type_tests.cpp
