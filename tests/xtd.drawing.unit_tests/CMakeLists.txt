@@ -39,5 +39,6 @@ add_sources(
   src/xtd/drawing/tests/size_tests.cpp
   src/xtd/drawing/text/tests/generic_font_families_tests.cpp
   src/xtd/drawing/text/tests/hotkey_prefix_tests.cpp
+  src/xtd/drawing/text/tests/text_rendering_hint_tests.cpp
 )
 target_type(TEST_APPLICATION)
