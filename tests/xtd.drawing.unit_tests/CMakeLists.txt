@@ -13,6 +13,7 @@ add_sources(
   src/xtd/drawing/drawing_2d/tests/flush_intention_tests.cpp
   src/xtd/drawing/drawing_2d/tests/hatch_style_tests.cpp
   src/xtd/drawing/imaging/tests/encoder_parameter_value_type_tests.cpp
+  src/xtd/drawing/imaging/tests/image_flags_tests.cpp
   src/xtd/drawing/tests/known_color_tests.cpp
   src/xtd/drawing/tests/color_tests.cpp
   src/xtd/drawing/tests/copy_pixel_operation_tests.cpp
