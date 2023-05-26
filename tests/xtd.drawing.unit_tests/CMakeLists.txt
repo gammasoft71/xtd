@@ -19,5 +19,6 @@ add_sources(
   src/xtd/drawing/tests/font_style_tests.cpp
   src/xtd/drawing/tests/point_tests.cpp
   src/xtd/drawing/tests/size_tests.cpp
+  src/xtd/drawing/text/tests/generic_font_families_tests.cpp
 )
 target_type(TEST_APPLICATION)
