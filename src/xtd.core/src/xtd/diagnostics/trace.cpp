@@ -63,19 +63,19 @@ void trace::use_global_lock(bool use_global_lock) noexcept {
 }
 
 void trace::cassert(bool condition) {
-  if (__should_aborted__(condition, "", csf_)) __std_abort__();
+  if (__should_aborted__(condition, "", csf_)) __std_abort();
 }
 
 void trace::cassert(bool condition, const ustring& message) {
-  if (__should_aborted__(condition, message, csf_)) __std_abort__();
+  if (__should_aborted__(condition, message, csf_)) __std_abort();
 }
 
 void trace::cassert(bool condition, const ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-  if (__should_aborted__(condition, message, stack_frame)) __std_abort__();
+  if (__should_aborted__(condition, message, stack_frame)) __std_abort();
 }
 
 void trace::cassert(bool condition, const xtd::diagnostics::stack_frame& stack_frame) {
-  if (__should_aborted__(condition, "", stack_frame)) __std_abort__();
+  if (__should_aborted__(condition, "", stack_frame)) __std_abort();
 }
 
 void trace::indent() noexcept {
