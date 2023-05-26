@@ -185,8 +185,12 @@ add_sources(
   include/xtd/internal/__as_enum.h
   include/xtd/internal/__binary_formatter.h
   include/xtd/internal/__boolean_formatter.h
+  include/xtd/internal/__build_type.h
   include/xtd/internal/__char8_t.h
   include/xtd/internal/__character_formatter.h
+  include/xtd/internal/__compiler_id.h
+  include/xtd/internal/__compiler_version.h
+  include/xtd/internal/__cpp_language.h
   include/xtd/internal/__currency_formatter.h
   include/xtd/internal/__date_time_formatter.h
   include/xtd/internal/__duration_formatter.h
@@ -203,6 +207,7 @@ add_sources(
   include/xtd/internal/__numeric_formatter.h
   include/xtd/internal/__parse.h
   include/xtd/internal/__sprintf.h
+  include/xtd/internal/__std_abort.h
   include/xtd/internal/__string_formatter.h
   include/xtd/io/binary_reader.h
   include/xtd/io/binary_writer.h

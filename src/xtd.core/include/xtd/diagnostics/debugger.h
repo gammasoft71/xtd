@@ -9,14 +9,9 @@
 #include "../static.h"
 #include "../ustring.h"
 
-/// @cond
-// Workaround : the std::abort function on Visual Studio shows a message box.
-#if defined(_MSC_VER)
-#define __std_abort__ __debugbreak
-#else
-#define __std_abort__ std::abort
-#endif
-/// @endcond
+#define __XTD_CORE_INTERNAL__
+#include "../internal/__std_abort.h"
+#undef __XTD_CORE_INTERNAL__
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -84,4 +79,4 @@ namespace xtd {
 /// console::write_line("Hello, world.");
 /// @endcode
 #define debug_break_() \
-  if (xtd::diagnostics::debugger::launch()) __std_abort__()
+  if (xtd::diagnostics::debugger::launch()) __std_abort()
