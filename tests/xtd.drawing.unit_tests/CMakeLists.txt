@@ -32,6 +32,7 @@ add_sources(
   src/xtd/drawing/tests/font_style_tests.cpp
   src/xtd/drawing/tests/graphics_unit_tests.cpp
   src/xtd/drawing/tests/rotate_flip_type_tests.cpp
+  src/xtd/drawing/tests/string_alignment_tests.cpp
   src/xtd/drawing/tests/point_tests.cpp
   src/xtd/drawing/tests/size_tests.cpp
   src/xtd/drawing/text/tests/generic_font_families_tests.cpp
