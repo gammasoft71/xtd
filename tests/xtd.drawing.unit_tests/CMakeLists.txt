@@ -15,13 +15,14 @@ add_sources(
   src/xtd/drawing/drawing_2d/tests/interpolation_mode_tests.cpp
   src/xtd/drawing/drawing_2d/tests/line_cap_tests.cpp
   src/xtd/drawing/drawing_2d/tests/line_join_tests.cpp
+  src/xtd/drawing/drawing_2d/tests/linear_gradient_mode_tests.cpp
   src/xtd/drawing/imaging/tests/encoder_parameter_value_type_tests.cpp
   src/xtd/drawing/imaging/tests/image_flags_tests.cpp
   src/xtd/drawing/imaging/tests/image_lock_mode_tests.cpp
   src/xtd/drawing/tests/known_color_tests.cpp
   src/xtd/drawing/tests/color_tests.cpp
   src/xtd/drawing/tests/copy_pixel_operation_tests.cpp
-  src/xtd/drawing/tests/dash_style_tests.cpwp
+  src/xtd/drawing/tests/dash_style_tests.cpp
   src/xtd/drawing/tests/font_style_tests.cpp
   src/xtd/drawing/tests/graphics_unit_tests.cpp
   src/xtd/drawing/tests/point_tests.cpp
