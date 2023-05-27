@@ -152,7 +152,7 @@ add_sources(
   src/xtd/tunit/tests/directory_assert_exists_string_succeed_tests.cpp
   src/xtd/tunit/tests/file_assert_are_equal_istream_failed_tests.cpp
   src/xtd/tunit/tests/file_assert_are_equal_istream_succeed_tests.cpp
-  src/xtd/tunit/tests/file_assert_are_equal_string_Failed_tests.cpp
+  src/xtd/tunit/tests/file_assert_are_equal_string_failed_tests.cpp
   src/xtd/tunit/tests/file_assert_are_equal_string_succeed_tests.cpp
   src/xtd/tunit/tests/string_assert_are_equal_ignoring_case_const_char_pointer_failed_tests.cpp
   src/xtd/tunit/tests/string_assert_are_equal_ignoring_case_const_char_pointer_succeed_tests.cpp
