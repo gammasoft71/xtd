@@ -160,6 +160,8 @@ add_sources(
   src/xtd/tunit/tests/file_assert_are_not_equal_string_succeed_tests.cpp
   src/xtd/tunit/tests/file_assert_exists_failed_tests.cpp
   src/xtd/tunit/tests/file_assert_exists_succeed_tests.cpp
+  src/xtd/tunit/tests/file_assert_does_not_exist_failed_tests.cpp
+  src/xtd/tunit/tests/file_assert_does_not_exist_succeed_tests.cpp
   src/xtd/tunit/tests/string_assert_are_equal_ignoring_case_const_char_pointer_failed_tests.cpp
   src/xtd/tunit/tests/string_assert_are_equal_ignoring_case_const_char_pointer_succeed_tests.cpp
   src/xtd/tunit/tests/string_assert_are_equal_ignoring_case_const_char16_t_pointer_failed_tests.cpp

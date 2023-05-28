@@ -510,10 +510,13 @@ namespace xtd {
       /// @endcode
       template<typename char_t>
       static void exists(const std::basic_string<char_t>& file, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        if (std::basic_ifstream<char_t>(file).good() == false)
+        auto is = std::basic_ifstream<char_t>(file);
+        if (is.good() == false)
           base_assert::fail("file exists", base_assert::to_string(file), message, stack_frame);
-        else
+        else {
+          is.close();
           assert::succeed(message, stack_frame);
+        }
       }
       
       /// @cond
@@ -583,8 +586,11 @@ namespace xtd {
       /// @endcode
       template<typename char_t>
       static void does_not_exist(const std::basic_string<char_t>& file, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        if (std::basic_ifstream<char_t>(file).good() == true)
+        auto is = std::basic_ifstream<char_t>(file);
+        if (is.good() == true) {
+          is.close();
           base_assert::fail("not file exists", base_assert::to_string(file), message, stack_frame);
+        }
         else
           assert::succeed(message, stack_frame);
       }
