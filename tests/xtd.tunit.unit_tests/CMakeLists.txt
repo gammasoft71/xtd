@@ -182,5 +182,7 @@ add_sources(
   src/xtd/tunit/tests/string_assert_are_equal_ignoring_case_wstring_succeed_tests.cpp
   src/xtd/tunit/tests/two_tests_five_test_cases_tests.cpp
   src/xtd/tunit/tests/unit_tests_event_listener.h
+  src/xtd/tunit/tests/valid_are_equal_const_char_pointer_failed_tests.cpp
+  src/xtd/tunit/tests/valid_are_equal_const_char_pointer_succeed_tests.cpp
 )
 target_type(TEST_APPLICATION)
