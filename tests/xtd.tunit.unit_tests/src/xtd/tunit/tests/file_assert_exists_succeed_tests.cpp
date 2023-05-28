@@ -5,7 +5,7 @@ namespace xtd::tunit::tests {
   class test_class_(file_assert_exists_succeed_tests) {
   public:
     void test_method_(test_case_succeed) {
-      xtd::io::file::write_all_text(xtd::io::path::combine(xtd::io::path::get_temp_path(), "test_tunit_file.txt"), "Test xtd::tunit::file_assert::are_equal.");
+      xtd::io::file::write_all_text(xtd::io::path::combine(xtd::io::path::get_temp_path(), "test_tunit_file.txt"), "Test xtd::tunit::file_assert::exists.");
       
       file_assert::exists(xtd::io::path::combine(xtd::io::path::get_temp_path(), "test_tunit_file.txt"), csf_);
       
