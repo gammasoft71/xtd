@@ -16,11 +16,11 @@ void test_(file_assert_are_not_equal_istream_failed_tests, test_output) {
   xtd::tunit::settings::default_settings().filter_tests("file_assert_are_not_equal_istream_failed_tests.*");
   std::stringstream ss;
   xtd::tunit::unit_test(std::make_unique<assert_unit_tests::unit_tests_event_listener>(ss)).run();
-  assert_value_("Start 1 test from 1 test case\n"
+  assert_value_(xtd::ustring::format("Start 1 test from 1 test case\n"
     "  FAILED  file_assert_are_not_equal_istream_failed_tests.test_case_failed\n"
-    "    Expected: not equal <std::__1::basic_istringstream<char, std::__1::char_traits<char>, std::__1::allocator<char> >>\n"
-    "    But was:  <std::__1::basic_istringstream<char, std::__1::char_traits<char>, std::__1::allocator<char> >>\n"
-    "End 1 test from 1 test case ran.\n", ss.str());
+    "    Expected: not equal <{0}>\n"
+    "    But was:  <{0}>\n"
+    "End 1 test from 1 test case ran.\n", xtd::ustring::full_class_name<std::istringstream>()), ss.str());
 }
 
 void test_(file_assert_are_not_equal_istream_failed_tests, test_result) {
