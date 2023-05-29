@@ -235,5 +235,9 @@ add_sources(
   src/xtd/tunit/tests/valid_contains_string_succeed_tests.cpp
   src/xtd/tunit/tests/valid_does_not_throw_failed_tests.cpp
   src/xtd/tunit/tests/valid_does_not_throw_succeed_tests.cpp
+  src/xtd/tunit/tests/valid_is_empty_collection_failed_tests.cpp
+  src/xtd/tunit/tests/valid_is_empty_collection_succeed_tests.cpp
+  src/xtd/tunit/tests/valid_is_empty_string_failed_tests.cpp
+  src/xtd/tunit/tests/valid_is_empty_string_succeed_tests.cpp
 )
 target_type(TEST_APPLICATION)
