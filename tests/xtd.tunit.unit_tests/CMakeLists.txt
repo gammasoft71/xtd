@@ -102,6 +102,7 @@ add_sources(
   src/xtd/tunit/tests/assert_is_not_null_weak_ptr_succeed_tests.cpp
   src/xtd/tunit/tests/assert_is_not_zero_failed_tests.cpp
   src/xtd/tunit/tests/assert_is_not_zero_succeed_tests.cpp
+  src/xtd/tunit/tests/assert_is_null_nullptr_failed_tests.cpp
   src/xtd/tunit/tests/assert_is_null_nullptr_succeed_tests.cpp
   src/xtd/tunit/tests/assert_is_null_pointer_failed_tests.cpp
   src/xtd/tunit/tests/assert_is_null_pointer_succeed_tests.cpp
@@ -279,5 +280,15 @@ add_sources(
   src/xtd/tunit/tests/valid_is_not_null_weak_ptr_succeed_tests.cpp
   src/xtd/tunit/tests/valid_is_not_zero_failed_tests.cpp
   src/xtd/tunit/tests/valid_is_not_zero_succeed_tests.cpp
+  src/xtd/tunit/tests/valid_is_null_nullptr_failed_tests.cpp
+  src/xtd/tunit/tests/valid_is_null_nullptr_succeed_tests.cpp
+  src/xtd/tunit/tests/valid_is_null_pointer_failed_tests.cpp
+  src/xtd/tunit/tests/valid_is_null_pointer_succeed_tests.cpp
+  src/xtd/tunit/tests/valid_is_null_unique_ptr_failed_tests.cpp
+  src/xtd/tunit/tests/valid_is_null_unique_ptr_succeed_tests.cpp
+  src/xtd/tunit/tests/valid_is_null_shared_ptr_failed_tests.cpp
+  src/xtd/tunit/tests/valid_is_null_shared_ptr_succeed_tests.cpp
+  src/xtd/tunit/tests/valid_is_null_weak_ptr_failed_tests.cpp
+  src/xtd/tunit/tests/valid_is_null_weak_ptr_succeed_tests.cpp
 )
 target_type(TEST_APPLICATION)
