@@ -9,6 +9,11 @@ namespace xtd {
   /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
     /// @brief Represents a test cleanup attribute.
+    /// @par Namespace
+    /// xtd::tunit
+    /// @par Library
+    /// xtd.tunit
+    /// @ingroup xtd_tunit tunit
     /// @remarks The test cleanup method is the method that is called right after a test method is finished. It is called for each test.
     /// @par Examples
     /// The following example shows how to use xtd::tunit::test_cleanup_attribute class.
