@@ -8,8 +8,6 @@
 #include <vector>
 #include "unit_tests_event_listener.h"
 
-#define __TUNIT_UNIT_TESTS_MODE true
-
 namespace assert_unit_tests {
   class unit_test_error : public std::exception {
   public:
@@ -81,7 +79,8 @@ namespace assert_unit_tests {
   };
 }
 
-#define assert_value_(expected, actual) assert_unit_tests::assert_value(name, expected, actual, __FILE__, __LINE__)
+#define assert_value_(expected, actual) \
+  assert_unit_tests::assert_value(name, expected, actual, __FILE__, __LINE__)
 
 #define test_(class_name, function_name) \
   __##class_name##_##function_name##_unused() {} \
