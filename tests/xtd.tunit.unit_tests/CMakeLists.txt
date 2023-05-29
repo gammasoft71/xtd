@@ -257,5 +257,7 @@ add_sources(
   src/xtd/tunit/tests/valid_is_NaN_float_succeed_tests.cpp
   src/xtd/tunit/tests/valid_is_NaN_long_double_failed_tests.cpp
   src/xtd/tunit/tests/valid_is_NaN_long_double_succeed_tests.cpp
+  src/xtd/tunit/tests/valid_is_negative_failed_tests.cpp
+  src/xtd/tunit/tests/valid_is_negative_succeed_tests.cpp
 )
 target_type(TEST_APPLICATION)
