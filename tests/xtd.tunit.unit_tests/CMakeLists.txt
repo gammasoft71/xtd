@@ -189,5 +189,10 @@ add_sources(
   src/xtd/tunit/tests/valid_are_equal_const_char_pointer_succeed_tests.cpp
   src/xtd/tunit/tests/valid_are_equal_const_wchar_t_pointer_failed_tests.cpp
   src/xtd/tunit/tests/valid_are_equal_const_wchar_t_pointer_succeed_tests.cpp
+  src/xtd/tunit/tests/valid_are_equal_double_failed_tests.cpp
+  src/xtd/tunit/tests/valid_are_equal_double_succeed_tests.cpp
+  src/xtd/tunit/tests/valid_are_equal_double_NaN_tests.cpp
+  src/xtd/tunit/tests/valid_are_equal_double_with_tolerence_failed_tests.cpp
+  src/xtd/tunit/tests/valid_are_equal_double_with_tolerence_succeed_tests.cpp
 )
 target_type(TEST_APPLICATION)
