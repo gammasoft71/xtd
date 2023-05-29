@@ -13,14 +13,12 @@ add_sources(
   src/main.cpp
   src/xtd/tunit/tests/assert_unit_tests.h
   src/xtd/tunit/tests/assert_abort_aborted_tests.cpp
-  src/xtd/tunit/tests/assert_are_equal_const_char_pointer_failed_tests.cpp
-  src/xtd/tunit/tests/assert_are_equal_const_char_pointer_succeed_tests.cpp
   src/xtd/tunit/tests/assert_are_equal_const_char16_t_pointer_failed_tests.cpp
   src/xtd/tunit/tests/assert_are_equal_const_char16_t_pointer_succeed_tests.cpp
   src/xtd/tunit/tests/assert_are_equal_const_char32_t_pointer_failed_tests.cpp
   src/xtd/tunit/tests/assert_are_equal_const_char32_t_pointer_succeed_tests.cpp
-  src/xtd/tunit/tests/assert_are_equal_const_wchar_t_pointer_failed_tests.cpp
-  src/xtd/tunit/tests/assert_are_equal_const_wchar_t_pointer_succeed_tests.cpp
+  src/xtd/tunit/tests/assert_are_equal_const_char_pointer_failed_tests.cpp
+  src/xtd/tunit/tests/assert_are_equal_const_char_pointer_succeed_tests.cpp
   src/xtd/tunit/tests/assert_are_equal_double_failed_tests.cpp
   src/xtd/tunit/tests/assert_are_equal_double_succeed_tests.cpp
   src/xtd/tunit/tests/assert_are_equal_double_NaN_tests.cpp
@@ -183,9 +181,13 @@ add_sources(
   src/xtd/tunit/tests/string_assert_are_equal_ignoring_case_wstring_succeed_tests.cpp
   src/xtd/tunit/tests/two_tests_five_test_cases_tests.cpp
   src/xtd/tunit/tests/unit_tests_event_listener.h
-  src/xtd/tunit/tests/valid_are_equal_const_char_pointer_failed_tests.cpp
-  src/xtd/tunit/tests/valid_are_equal_const_char_pointer_succeed_tests.cpp
   src/xtd/tunit/tests/valid_are_equal_const_char16_t_pointer_failed_tests.cpp
   src/xtd/tunit/tests/valid_are_equal_const_char16_t_pointer_succeed_tests.cpp
+  src/xtd/tunit/tests/valid_are_equal_const_char32_t_pointer_failed_tests.cpp
+  src/xtd/tunit/tests/valid_are_equal_const_char32_t_pointer_succeed_tests.cpp
+  src/xtd/tunit/tests/valid_are_equal_const_char_pointer_failed_tests.cpp
+  src/xtd/tunit/tests/valid_are_equal_const_char_pointer_succeed_tests.cpp
+  src/xtd/tunit/tests/valid_are_equal_const_wchar_t_pointer_failed_tests.cpp
+  src/xtd/tunit/tests/valid_are_equal_const_wchar_t_pointer_succeed_tests.cpp
 )
 target_type(TEST_APPLICATION)
