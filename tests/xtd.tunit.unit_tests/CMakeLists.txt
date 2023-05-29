@@ -233,5 +233,7 @@ add_sources(
   src/xtd/tunit/tests/valid_contains_collection_succeed_tests.cpp
   src/xtd/tunit/tests/valid_contains_string_failed_tests.cpp
   src/xtd/tunit/tests/valid_contains_string_succeed_tests.cpp
+  src/xtd/tunit/tests/valid_does_not_throw_failed_tests.cpp
+  src/xtd/tunit/tests/valid_does_not_throw_succeed_tests.cpp
 )
 target_type(TEST_APPLICATION)
