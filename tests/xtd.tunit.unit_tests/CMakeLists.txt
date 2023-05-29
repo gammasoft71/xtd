@@ -11,6 +11,7 @@ include(../../scripts/cmake/xtd_commands.cmake)
 include(../../scripts/cmake/xtd_version.cmake)
 add_sources(
   src/main.cpp
+  src/assert_unit_tests/assert_unit_tests.cpp
   src/assert_unit_tests/assert_unit_tests.h
   src/assert_unit_tests/unit_tests_event_listener.h
   src/xtd/tunit/tests/assert_abort_aborted_tests.cpp
