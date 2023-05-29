@@ -17,6 +17,7 @@ add_sources(
   src/xtd/tunit/tests/assert_are_equal_const_char_pointer_succeed_tests.cpp
   src/xtd/tunit/tests/assert_are_equal_const_char16_t_pointer_failed_tests.cpp
   src/xtd/tunit/tests/assert_are_equal_const_char16_t_pointer_succeed_tests.cpp
+  src/xtd/tunit/tests/assert_are_equal_const_char32_t_pointer_failed_tests.cpp
   src/xtd/tunit/tests/assert_are_equal_const_char32_t_pointer_succeed_tests.cpp
   src/xtd/tunit/tests/assert_are_equal_const_wchar_t_pointer_failed_tests.cpp
   src/xtd/tunit/tests/assert_are_equal_const_wchar_t_pointer_succeed_tests.cpp
@@ -184,5 +185,7 @@ add_sources(
   src/xtd/tunit/tests/unit_tests_event_listener.h
   src/xtd/tunit/tests/valid_are_equal_const_char_pointer_failed_tests.cpp
   src/xtd/tunit/tests/valid_are_equal_const_char_pointer_succeed_tests.cpp
+  src/xtd/tunit/tests/valid_are_equal_const_char16_t_pointer_failed_tests.cpp
+  src/xtd/tunit/tests/valid_are_equal_const_char16_t_pointer_succeed_tests.cpp
 )
 target_type(TEST_APPLICATION)
