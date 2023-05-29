@@ -11,6 +11,11 @@ namespace xtd {
   /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
     /// @brief Represents a test class attribute.
+    /// @par Namespace
+    /// xtd::tunit
+    /// @par Library
+    /// xtd.tunit
+    /// @ingroup xtd_tunit tunit
     /// @remarks The test class attribute is used to to declare a test class in a unit test. It is called for each test.
     /// @par Examples
     /// The following example shows how to use xtd::tunit::test_class_attribute class.
