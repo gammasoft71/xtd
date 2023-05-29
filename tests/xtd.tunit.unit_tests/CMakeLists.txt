@@ -251,5 +251,11 @@ add_sources(
   src/xtd/tunit/tests/valid_is_less_succeed_tests.cpp
   src/xtd/tunit/tests/valid_is_less_or_equal_failed_tests.cpp
   src/xtd/tunit/tests/valid_is_less_or_equal_succeed_tests.cpp
+  src/xtd/tunit/tests/valid_is_NaN_double_failed_tests.cpp
+  src/xtd/tunit/tests/valid_is_NaN_double_succeed_tests.cpp
+  src/xtd/tunit/tests/valid_is_NaN_float_failed_tests.cpp
+  src/xtd/tunit/tests/valid_is_NaN_float_succeed_tests.cpp
+  src/xtd/tunit/tests/valid_is_NaN_long_double_failed_tests.cpp
+  src/xtd/tunit/tests/valid_is_NaN_long_double_succeed_tests.cpp
 )
 target_type(TEST_APPLICATION)
