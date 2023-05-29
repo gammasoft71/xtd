@@ -220,5 +220,6 @@ add_sources(
   src/xtd/tunit/tests/valid_are_not_equal_double_failed_tests.cpp
   src/xtd/tunit/tests/valid_are_not_equal_double_NaN_tests.cpp
   src/xtd/tunit/tests/valid_are_not_equal_double_succeed_tests.cpp
+  src/xtd/tunit/tests/valid_are_not_equal_failed_tests.cpp
 )
 target_type(TEST_APPLICATION)
