@@ -294,5 +294,7 @@ add_sources(
   src/xtd/tunit/tests/valid_is_positive_succeed_tests.cpp
   src/xtd/tunit/tests/valid_is_true_failed_tests.cpp
   src/xtd/tunit/tests/valid_is_true_succeed_tests.cpp
+  src/xtd/tunit/tests/valid_is_zero_failed_tests.cpp
+  src/xtd/tunit/tests/valid_is_zero_succeed_tests.cpp
 )
 target_type(TEST_APPLICATION)
