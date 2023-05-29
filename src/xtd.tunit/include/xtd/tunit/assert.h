@@ -1595,7 +1595,6 @@ namespace xtd {
       }
       /// @brief Asserts that the pointer is not null.
       /// @param pointer The pointer to check is null.
-      /// @remarks Always true, a weaptr can't be equal to nullptr by contruction or assignation.
       /// @par Examples
       /// @code
       /// std::shared_ptr<std::string> s = std::make_shared<std::string>("Anything");
@@ -1609,7 +1608,6 @@ namespace xtd {
       /// @brief Asserts that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param stack_frame Contains information about current file and current line.
-      /// @remarks Always true, a weaptr can't be equal to nullptr by contruction or assignation.
       /// @par Examples
       /// @code
       /// std::shared_ptr<std::string> s = std::make_shared<std::string>("Anything");
@@ -1623,7 +1621,6 @@ namespace xtd {
       /// @brief Asserts that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @remarks Always true, a weaptr can't be equal to nullptr by contruction or assignation.
       /// @par Examples
       /// @code
       /// std::shared_ptr<std::string> s = std::make_shared<std::string>("Anything");
@@ -1638,7 +1635,6 @@ namespace xtd {
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
-      /// @remarks Always true, a weaptr can't be equal to nullptr by contruction or assignation.
       /// @par Examples
       /// @code
       /// std::shared_ptr<std::string> s = std::make_shared<std::string>("Anything");
@@ -1648,7 +1644,12 @@ namespace xtd {
       /// xtd::tunit::assert::is_not_null(s2, "User message...", csf_); // test ok.
       /// @endcode
       template<typename pointer_t>
-      static void is_not_null(const std::weak_ptr<pointer_t>& pointer, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {succeed(message, stack_frame);}
+      static void is_not_null(const std::weak_ptr<pointer_t>& pointer, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
+        if (pointer.owner_before(std::weak_ptr<pointer_t> {}) || std::weak_ptr<pointer_t> {}.owner_before(pointer))
+          succeed(message, stack_frame);
+        else
+          base_assert::fail("not null", "null", message, stack_frame);
+      }
       /// @brief Asserts that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @exception xtd::tunit::assert_error If bad assertion.
@@ -2035,7 +2036,12 @@ namespace xtd {
       /// xtd::tunit::assert::is_null(s2, "User message...", csf_); // test throws an assert_error exception.
       /// @endcode
       template<typename pointer_t>
-      static void is_null(const std::weak_ptr<pointer_t>& pointer, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {base_assert::fail("null", "not null", message, stack_frame);}
+      static void is_null(const std::weak_ptr<pointer_t>& pointer, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
+        if (!pointer.owner_before(std::weak_ptr<pointer_t> {}) && !std::weak_ptr<pointer_t> {}.owner_before(pointer))
+          succeed(message, stack_frame);
+        else
+          base_assert::fail("null", "not null", message, stack_frame);
+      }
       /// @brief Asserts that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @exception xtd::tunit::assert_error If bad assertion.

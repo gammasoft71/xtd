@@ -1597,7 +1597,6 @@ namespace xtd {
       }
       /// @brief Assumes that the pointer is not null.
       /// @param pointer The pointer to check is null.
-      /// @remarks Always true, a weaptr can't be equal to nullptr by contruction or assignation.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// @code
@@ -1612,7 +1611,6 @@ namespace xtd {
       /// @brief Assumes that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param stack_frame Contains information about current file and current line.
-      /// @remarks Always true, a weaptr can't be equal to nullptr by contruction or assignation.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// @code
@@ -1627,7 +1625,6 @@ namespace xtd {
       /// @brief Assumes that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @remarks Always true, a weaptr can't be equal to nullptr by contruction or assignation.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// @code
@@ -1643,7 +1640,6 @@ namespace xtd {
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
-      /// @remarks Always true, a weaptr can't be equal to nullptr by contruction or assignation.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// @code
@@ -1654,7 +1650,13 @@ namespace xtd {
       /// xtd::tunit::assume::is_not_null(s2, "User message...", csf_); // test ok.
       /// @endcode
       template<typename pointer_t>
-      static void is_not_null(const std::weak_ptr<pointer_t>& pointer, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {assert::succeed(message, stack_frame);}
+      static void is_not_null(const std::weak_ptr<pointer_t>& pointer, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
+        try {
+          assert::is_not_null(pointer, message, stack_frame);
+        } catch (...) {
+          assert::abort();
+        }
+      }
       /// @brief Assumes that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @remarks Always false, a nullptr_t is always equal to nullptr.
