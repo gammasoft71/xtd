@@ -195,5 +195,10 @@ add_sources(
   src/xtd/tunit/tests/valid_are_equal_double_with_tolerence_failed_tests.cpp
   src/xtd/tunit/tests/valid_are_equal_double_with_tolerence_succeed_tests.cpp
   src/xtd/tunit/tests/valid_are_equal_failed_tests.cpp
+  src/xtd/tunit/tests/valid_are_equal_float_failed_tests.cpp
+  src/xtd/tunit/tests/valid_are_equal_float_succeed_tests.cpp
+  src/xtd/tunit/tests/valid_are_equal_float_NaN_tests.cpp
+  src/xtd/tunit/tests/valid_are_equal_float_with_tolerence_failed_tests.cpp
+  src/xtd/tunit/tests/valid_are_equal_float_with_tolerence_succeed_tests.cpp
 )
 target_type(TEST_APPLICATION)
