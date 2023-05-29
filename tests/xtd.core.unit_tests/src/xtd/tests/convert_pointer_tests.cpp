@@ -123,7 +123,7 @@ namespace xtd::tests {
       assert::is_null(o, csf_);
     }
 
-    void test_method_(ptr_to_invvalid_other_ptr) {
+    void test_method_(ptr_to_invalid_other_ptr) {
       guid* g = new guid();
       
       assert::throws<invalid_cast_exception>([&]{convert_pointer::to_ptr<ustring>(g);}, csf_);
