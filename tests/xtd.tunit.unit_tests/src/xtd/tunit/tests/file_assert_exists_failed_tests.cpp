@@ -18,7 +18,7 @@ void test_(file_assert_exists_failed_tests, test_output) {
   assert_value_(xtd::ustring::format("Start 1 test from 1 test case\n"
     "  FAILED  file_assert_exists_failed_tests.test_case_failed\n"
     "    Expected: file exists\n"
-    "    But was:  \"{}\"\n"
+    "    But was:  {}\n"
     "End 1 test from 1 test case ran.\n", std::quoted(xtd::io::path::combine(xtd::io::path::get_temp_path(), "test_tunit_file.txt"))), ss.str());
 }
 
