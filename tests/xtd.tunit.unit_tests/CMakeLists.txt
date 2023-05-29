@@ -241,5 +241,9 @@ add_sources(
   src/xtd/tunit/tests/valid_is_empty_string_succeed_tests.cpp
   src/xtd/tunit/tests/valid_is_false_failed_tests.cpp
   src/xtd/tunit/tests/valid_is_false_succeed_tests.cpp
+  src/xtd/tunit/tests/valid_is_greater_failed_tests.cpp
+  src/xtd/tunit/tests/valid_is_greater_succeed_tests.cpp
+  src/xtd/tunit/tests/valid_is_greater_or_equal_failed_tests.cpp
+  src/xtd/tunit/tests/valid_is_greater_or_equal_succeed_tests.cpp
 )
 target_type(TEST_APPLICATION)
