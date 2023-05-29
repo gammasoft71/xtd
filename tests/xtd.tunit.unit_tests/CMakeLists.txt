@@ -209,5 +209,13 @@ add_sources(
   src/xtd/tunit/tests/valid_are_equal_long_double_with_tolerence_failed_tests.cpp
   src/xtd/tunit/tests/valid_are_equal_long_double_with_tolerence_succeed_tests.cpp
   src/xtd/tunit/tests/valid_are_equal_succeed_tests.cpp
+  src/xtd/tunit/tests/valid_are_not_equal_const_char16_t_pointer_failed_tests.cpp
+  src/xtd/tunit/tests/valid_are_not_equal_const_char16_t_pointer_succeed_tests.cpp
+  src/xtd/tunit/tests/valid_are_not_equal_const_char32_t_pointer_failed_tests.cpp
+  src/xtd/tunit/tests/valid_are_not_equal_const_char32_t_pointer_succeed_tests.cpp
+  src/xtd/tunit/tests/valid_are_not_equal_const_char_pointer_failed_tests.cpp
+  src/xtd/tunit/tests/valid_are_not_equal_const_char_pointer_succeed_tests.cpp
+  src/xtd/tunit/tests/valid_are_not_equal_const_wchar_t_pointer_failed_tests.cpp
+  src/xtd/tunit/tests/valid_are_not_equal_const_wchar_t_pointer_succeed_tests.cpp
 )
 target_type(TEST_APPLICATION)
