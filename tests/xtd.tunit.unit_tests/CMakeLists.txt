@@ -277,5 +277,7 @@ add_sources(
   src/xtd/tunit/tests/valid_is_not_null_shared_ptr_succeed_tests.cpp
   src/xtd/tunit/tests/valid_is_not_null_weak_ptr_failed_tests.cpp
   src/xtd/tunit/tests/valid_is_not_null_weak_ptr_succeed_tests.cpp
+  src/xtd/tunit/tests/valid_is_not_zero_failed_tests.cpp
+  src/xtd/tunit/tests/valid_is_not_zero_succeed_tests.cpp
 )
 target_type(TEST_APPLICATION)
