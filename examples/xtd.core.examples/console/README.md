@@ -15,5 +15,5 @@
 * [console_song](console_song/README.md) shows how to use [xtd::console::beep](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html#aab2e161c3a72cb14f808ed40e2b59ef2) method.
 * [console_title](console_title/README.md) shows how to use [xtd::console::title](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html#a717eaf6693dab615adf8f6b8b1763586) method.
 * [console_unicode](console_unicode/README.md) shows how to use [xtd::console](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html) with unicode characters.
-* [redirrect_output](redirrect_output/README.md) shows how to use [xtd::console](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html) class.
+* [redirect_output](redirect_output/README.md) shows how to use [xtd::console](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html) class.
 * [wconsole](wconsole/README.md) shows how to use [xtd::console](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html) class.
