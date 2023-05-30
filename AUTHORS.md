@@ -13,6 +13,7 @@ This file lists all persons who contributed to xtd (in alphabetical order). If y
 * [Fireblaze-A47](https://github.com/Fireblaze-A47) - Contributor
 * [GermanAizek](https://github.com/GermanAizek) - Contributor
 * [jimorc](https://github.com/jimorc) - Contributor
+* [jopadan](https://github.com/jopadan) - Contributor
 * [niansa](https://github.com/niansa) - Contributor
 
 ## Remarks
