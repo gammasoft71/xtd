@@ -19,6 +19,6 @@ void test_(assert_abort_aborted_tests, test_output) {
 }
 
 void test_(assert_abort_aborted_tests, test_result) {
-  auto [result, v] = run_test_("assert_abort_aborted_tests.*");
+  auto [result, output] = run_test_("assert_abort_aborted_tests.*");
   assert_value_(0, result);
 }
