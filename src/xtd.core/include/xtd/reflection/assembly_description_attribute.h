@@ -2,6 +2,7 @@
 /// @brief Contains xtd::reflection::assembly_description_attribute attribute.
 #pragma once
 
+#include "../core_export.h"
 #include "../attribute.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -19,6 +20,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
+    /// @todo Check build under Windows with the XTD_BUILD_SHARED_LIBRARIES option enabled.
     class core_export_ assembly_description_attribute final : public xtd::attribute {
     public:
       /// @name Constructors
@@ -26,7 +28,7 @@ namespace xtd {
       /// @{
       /// @brief Initializes a new instance of the xtd::reflection::assembly_description_attribute class.
       /// @param description The description information.
-      explicit core_export_ assembly_description_attribute(const ustring& description);
+      explicit assembly_description_attribute(const ustring& description);
       
       /// @cond
       /// Internal used only
@@ -69,4 +71,3 @@ std::shared_ptr<xtd::reflection::assembly_description_attribute>& __assembly_des
 /// @include assembly_info.cpp
 #define assembly_description_(description) \
   xtd::reflection::assembly_description_attribute __assembly_description_attribute {description, xtd::object()}
-
