@@ -17,15 +17,15 @@ namespace assert_unit_tests {
     register_assert_unit_test(const register_assert_unit_test&) = default;
     register_assert_unit_test& operator =(const register_assert_unit_test&) = default;
     
-    static std::unique_ptr<std::stringstream> init_test(const std::string& filter_tests) {
+    static std::stringstream init_test(const std::string& filter_tests) {
       xtd::tunit::settings::default_settings().exit_status(0);
       xtd::tunit::settings::default_settings().filter_tests(filter_tests);
-      return std::make_unique<std::stringstream>();
+      return std::stringstream {};
     }
     
-    static std::pair<int, std::unique_ptr<std::stringstream>> run_test(const std::string& filter_tests) {
-      auto stringstream = init_test(filter_tests);
-      return std::make_pair(xtd::tunit::unit_test(std::make_unique<unit_tests_event_listener>(*stringstream)).run(), std::move(stringstream));
+    static std::pair<int, std::string> run_test(const std::string& filter_tests) {
+      auto output_stream = init_test(filter_tests);
+      return std::make_pair(xtd::tunit::unit_test(std::make_unique<unit_tests_event_listener>(output_stream)).run(), output_stream.str());
     }
 
     static int run_all_tests() {
