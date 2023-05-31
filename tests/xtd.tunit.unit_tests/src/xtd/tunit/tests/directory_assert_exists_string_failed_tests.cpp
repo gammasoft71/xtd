@@ -12,28 +12,23 @@ namespace xtd::tunit::tests {
 }
 
 void test_(directory_assert_exists_string_failed_tests, test_output) {
-  xtd::tunit::settings::default_settings().exit_status(0);
-  xtd::tunit::settings::default_settings().filter_tests("directory_assert_exists_string_failed_tests.*");
-  std::stringstream ss;
-  xtd::tunit::unit_test(std::make_unique<assert_unit_tests::unit_tests_event_listener>(ss)).run();
+  auto [result, output] = run_test_("directory_assert_exists_string_failed_tests.*");
   #if defined (_WIN32)
   assert_value_("Start 1 test from 1 test case\n"
     "  FAILED  directory_assert_exists_string_failed_tests.test_case_failed\n"
     "    Expected: directory exists\n"
     "    But was:  \"C:\\ProgramData\\__xtd_test_directory_not_found__\"\n"
-    "End 1 test from 1 test case ran.\n", ss.str());
+    "End 1 test from 1 test case ran.\n", output);
   #else
   assert_value_("Start 1 test from 1 test case\n"
     "  FAILED  directory_assert_exists_string_failed_tests.test_case_failed\n"
     "    Expected: directory exists\n"
     "    But was:  \"/usr/share/__xtd_test_directory_not_found__\"\n"
-    "End 1 test from 1 test case ran.\n", ss.str());
+    "End 1 test from 1 test case ran.\n", output);
   #endif
 }
 
 void test_(directory_assert_exists_string_failed_tests, test_result) {
-  xtd::tunit::settings::default_settings().exit_status(0);
-  xtd::tunit::settings::default_settings().filter_tests("directory_assert_exists_string_failed_tests.*");
-  std::stringstream ss;
-  assert_value_(1, xtd::tunit::unit_test(std::make_unique<assert_unit_tests::unit_tests_event_listener>(ss)).run());
+  auto [result, output] = run_test_("directory_assert_exists_string_failed_tests.*");
+  assert_value_(1, result);
 }
