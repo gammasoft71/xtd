@@ -10,18 +10,13 @@ namespace xtd::tunit::tests {
 }
 
 void test_(one_test_one_test_case_tests, test_output) {
-  xtd::tunit::settings::default_settings().exit_status(0);
-  xtd::tunit::settings::default_settings().filter_tests("one_test_one_test_case_tests.*");
-  std::stringstream ss;
-  xtd::tunit::unit_test(std::make_unique<assert_unit_tests::unit_tests_event_listener>(ss)).run();
+  auto [result, output] = run_test_("one_test_one_test_case_tests.*");
   assert_value_("Start 1 test from 1 test case\n"
     "  SUCCEED one_test_one_test_case_tests.test_case1\n"
-    "End 1 test from 1 test case ran.\n", ss.str());
+    "End 1 test from 1 test case ran.\n", output);
 }
 
 void test_(one_test_one_test_case_tests, test_result) {
-  xtd::tunit::settings::default_settings().exit_status(0);
-  xtd::tunit::settings::default_settings().filter_tests("one_test_one_test_case_tests.*");
-  std::stringstream ss;
-  assert_value_(0, xtd::tunit::unit_test(std::make_unique<assert_unit_tests::unit_tests_event_listener>(ss)).run());
+  auto [result, output] = run_test_("one_test_one_test_case_tests.*");
+  assert_value_(0, result);
 }
