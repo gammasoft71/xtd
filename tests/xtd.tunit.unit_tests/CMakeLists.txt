@@ -238,6 +238,22 @@ add_sources(
   src/xtd/tunit/tests/string_assert_are_equal_ignoring_case_u32string_succeed_tests.cpp
   src/xtd/tunit/tests/string_assert_are_equal_ignoring_case_wstring_failed_tests.cpp
   src/xtd/tunit/tests/string_assert_are_equal_ignoring_case_wstring_succeed_tests.cpp
+  src/xtd/tunit/tests/string_valid_are_equal_ignoring_case_const_char_pointer_failed_tests.cpp
+  src/xtd/tunit/tests/string_valid_are_equal_ignoring_case_const_char_pointer_succeed_tests.cpp
+  src/xtd/tunit/tests/string_valid_are_equal_ignoring_case_const_char16_t_pointer_failed_tests.cpp
+  src/xtd/tunit/tests/string_valid_are_equal_ignoring_case_const_char16_t_pointer_succeed_tests.cpp
+  src/xtd/tunit/tests/string_valid_are_equal_ignoring_case_const_char32_t_pointer_failed_tests.cpp
+  src/xtd/tunit/tests/string_valid_are_equal_ignoring_case_const_char32_t_pointer_succeed_tests.cpp
+  src/xtd/tunit/tests/string_valid_are_equal_ignoring_case_const_wchar_t_pointer_failed_tests.cpp
+  src/xtd/tunit/tests/string_valid_are_equal_ignoring_case_const_wchar_t_pointer_succeed_tests.cpp
+  src/xtd/tunit/tests/string_valid_are_equal_ignoring_case_string_failed_tests.cpp
+  src/xtd/tunit/tests/string_valid_are_equal_ignoring_case_string_succeed_tests.cpp
+  src/xtd/tunit/tests/string_valid_are_equal_ignoring_case_u16string_failed_tests.cpp
+  src/xtd/tunit/tests/string_valid_are_equal_ignoring_case_u16string_succeed_tests.cpp
+  src/xtd/tunit/tests/string_valid_are_equal_ignoring_case_u32string_failed_tests.cpp
+  src/xtd/tunit/tests/string_valid_are_equal_ignoring_case_u32string_succeed_tests.cpp
+  src/xtd/tunit/tests/string_valid_are_equal_ignoring_case_wstring_failed_tests.cpp
+  src/xtd/tunit/tests/string_valid_are_equal_ignoring_case_wstring_succeed_tests.cpp
   src/xtd/tunit/tests/two_tests_five_test_cases_tests.cpp
   src/xtd/tunit/tests/valid_are_equal_const_char16_t_pointer_failed_tests.cpp
   src/xtd/tunit/tests/valid_are_equal_const_char16_t_pointer_succeed_tests.cpp
