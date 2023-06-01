@@ -130,8 +130,24 @@ add_sources(
   src/xtd/tunit/tests/assert_throws_any_succeed_tests.cpp
   src/xtd/tunit/tests/assume_are_equal_const_char16_t_pointer_failed_tests.cpp
   src/xtd/tunit/tests/assume_are_equal_const_char16_t_pointer_succeed_tests.cpp
+  src/xtd/tunit/tests/assume_are_equal_const_char32_t_pointer_failed_tests.cpp
+  src/xtd/tunit/tests/assume_are_equal_const_char32_t_pointer_succeed_tests.cpp
   src/xtd/tunit/tests/assume_are_equal_const_char_pointer_failed_tests.cpp
   src/xtd/tunit/tests/assume_are_equal_const_char_pointer_succeed_tests.cpp
+  src/xtd/tunit/tests/assume_are_equal_double_failed_tests.cpp
+  src/xtd/tunit/tests/assume_are_equal_double_NaN_tests.cpp
+  src/xtd/tunit/tests/assume_are_equal_double_succeed_tests.cpp
+  src/xtd/tunit/tests/assume_are_equal_double_with_tolerence_failed_tests.cpp
+  src/xtd/tunit/tests/assume_are_equal_double_with_tolerence_succeed_tests.cpp
+  src/xtd/tunit/tests/assume_are_equal_failed_tests.cpp
+  src/xtd/tunit/tests/assume_are_equal_float_failed_tests.cpp
+  src/xtd/tunit/tests/assume_are_equal_float_NaN_tests.cpp
+  src/xtd/tunit/tests/assume_are_equal_float_succeed_tests.cpp
+  src/xtd/tunit/tests/assume_are_equal_float_with_tolerence_failed_tests.cpp
+  src/xtd/tunit/tests/assume_are_equal_float_with_tolerence_succeed_tests.cpp
+  src/xtd/tunit/tests/assume_are_equal_long_double_with_tolerence_failed_tests.cpp
+  src/xtd/tunit/tests/assume_are_equal_long_double_with_tolerence_succeed_tests.cpp
+  src/xtd/tunit/tests/assume_are_equal_succeed_tests.cpp
   src/xtd/tunit/tests/insert_basic_output_stream_operator_tests.cpp
   src/xtd/tunit/tests/one_test_one_test_case_tests.cpp
   src/xtd/tunit/tests/one_test_two_test_cases_tests.cpp
