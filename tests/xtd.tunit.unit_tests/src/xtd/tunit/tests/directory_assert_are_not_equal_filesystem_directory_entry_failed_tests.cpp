@@ -14,7 +14,7 @@ namespace xtd::tunit::tests {
 }
 
 void test_(directory_assert_are_not_equal_filesystem_directory_entry_failed_tests, test_output) {
-  auto [result, output] = run_test_("directory_assert_are_not_equal_filesystem_directory_entry_failed_tests.*");
+  auto [output, result] = run_test_("directory_assert_are_not_equal_filesystem_directory_entry_failed_tests.*");
   assert_value_(xtd::ustring::format("Start 1 test from 1 test case\n"
       "  FAILED  directory_assert_are_not_equal_filesystem_directory_entry_failed_tests.test_case_failed\n"
       "    Expected: not {0}\n"
@@ -23,7 +23,7 @@ void test_(directory_assert_are_not_equal_filesystem_directory_entry_failed_test
 }
 
 void test_(directory_assert_are_not_equal_filesystem_directory_entry_failed_tests, test_result) {
-  auto [result, output] = run_test_("directory_assert_are_not_equal_filesystem_directory_entry_failed_tests.*");
+  auto [output, result] = run_test_("directory_assert_are_not_equal_filesystem_directory_entry_failed_tests.*");
   assert_value_(1, result);
 }
 #endif

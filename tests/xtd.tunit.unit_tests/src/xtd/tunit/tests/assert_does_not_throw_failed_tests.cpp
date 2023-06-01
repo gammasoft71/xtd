@@ -13,7 +13,7 @@ namespace xtd::tunit::tests {
 }
 
 void test_(assert_does_not_throw_failed_tests, test_output) {
-  auto [result, output] = run_test_("assert_does_not_throw_failed_tests.*");
+  auto [output, result] = run_test_("assert_does_not_throw_failed_tests.*");
   assert_value_("Start 1 test from 1 test case\n"
     "  FAILED  assert_does_not_throw_failed_tests.test_case_failed\n"
     "    Expected: No Exception to be thrown\n"
@@ -22,6 +22,6 @@ void test_(assert_does_not_throw_failed_tests, test_output) {
 }
 
 void test_(assert_does_not_throw_failed_tests, test_result) {
-  auto [result, output] = run_test_("assert_does_not_throw_failed_tests.*");
+  auto [output, result] = run_test_("assert_does_not_throw_failed_tests.*");
   assert_value_(1, result);
 }

@@ -12,7 +12,7 @@ namespace xtd::tunit::tests {
 }
 
 void test_(directory_assert_does_not_exist_string_failed_tests, test_output) {
-  auto [result, output] = run_test_("directory_assert_does_not_exist_string_failed_tests.*");
+  auto [output, result] = run_test_("directory_assert_does_not_exist_string_failed_tests.*");
   #if defined (_WIN32)
   assert_value_("Start 1 test from 1 test case\n"
     "  FAILED  directory_assert_does_not_exist_string_failed_tests.test_case_failed\n"
@@ -29,6 +29,6 @@ void test_(directory_assert_does_not_exist_string_failed_tests, test_output) {
 }
 
 void test_(directory_assert_does_not_exist_string_failed_tests, test_result) {
-  auto [result, output] = run_test_("directory_assert_does_not_exist_string_failed_tests.*");
+  auto [output, result] = run_test_("directory_assert_does_not_exist_string_failed_tests.*");
   assert_value_(1, result);
 }

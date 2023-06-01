@@ -12,7 +12,7 @@ namespace xtd::tunit::tests {
 }
 
 void test_(valid_are_not_equal_const_wchar_t_pointer_failed__tests, test_output) {
-  auto [result, output] = run_test_("valid_are_not_equal_const_wchar_t_pointer_failed__tests.*");
+  auto [output, result] = run_test_("valid_are_not_equal_const_wchar_t_pointer_failed__tests.*");
   assert_value_("Start 1 test from 1 test case\n"
     "  FAILED  valid_are_not_equal_const_wchar_t_pointer_failed__tests.test_case_failed\n"
     "    Expected: not \"value\"\n"
@@ -21,6 +21,6 @@ void test_(valid_are_not_equal_const_wchar_t_pointer_failed__tests, test_output)
 }
 
 void test_(valid_are_not_equal_const_wchar_t_pointer_failed__tests, test_result) {
-  auto [result, output] = run_test_("valid_are_not_equal_const_wchar_t_pointer_failed__tests.*");
+  auto [output, result] = run_test_("valid_are_not_equal_const_wchar_t_pointer_failed__tests.*");
   assert_value_(1, result);
 }
