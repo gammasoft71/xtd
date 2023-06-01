@@ -14,7 +14,7 @@ namespace xtd::tunit::tests {
 }
 
 void test_(valid_is_null_weak_ptr_failed_tests, test_output) {
-  auto [result, output] = run_test_("valid_is_null_weak_ptr_failed_tests.*");
+  auto [output, result] = run_test_("valid_is_null_weak_ptr_failed_tests.*");
   assert_value_("Start 1 test from 1 test case\n"
     "  FAILED  valid_is_null_weak_ptr_failed_tests.test_case_failed\n"
     "    Expected: null\n"
@@ -23,6 +23,6 @@ void test_(valid_is_null_weak_ptr_failed_tests, test_output) {
 }
 
 void test_(valid_is_null_weak_ptr_failed_tests, test_result) {
-  auto [result, output] = run_test_("valid_is_null_weak_ptr_failed_tests.*");
+  auto [output, result] = run_test_("valid_is_null_weak_ptr_failed_tests.*");
   assert_value_(1, result);
 }

@@ -15,7 +15,7 @@
 }
 
 void test_(collection_assert_all_items_are_instances_of_vector_failed_tests, test_output) {
-  auto [result, output] = run_test_("collection_assert_all_items_are_instances_of_vector_failed_tests.*");
+  auto [output, result] = run_test_("collection_assert_all_items_are_instances_of_vector_failed_tests.*");
   assert_value_("Start 1 test from 1 test case\n"
     "  FAILED  collection_assert_all_items_are_instances_of_vector_failed_tests.test_case_failed\n"
     "    Expected: all items instance of <std::__1::basic_ostream<char, std::__1::char_traits<char> >*>\n"
@@ -24,7 +24,7 @@ void test_(collection_assert_all_items_are_instances_of_vector_failed_tests, tes
 }
 
 void test_(collection_assert_all_items_are_instances_of_vector_failed_tests, test_result) {
-  auto [result, output] = run_test_("collection_assert_all_items_are_instances_of_vector_failed_tests.*");
+  auto [output, result] = run_test_("collection_assert_all_items_are_instances_of_vector_failed_tests.*");
   assert_value_(1, result);
 }
 */

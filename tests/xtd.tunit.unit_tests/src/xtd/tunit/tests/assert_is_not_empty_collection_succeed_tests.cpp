@@ -13,13 +13,13 @@ namespace xtd::tunit::tests {
 }
 
 void test_(assert_is_not_empty_collection_succeed_testst, test_output) {
-  auto [result, output] = run_test_("assert_is_not_empty_collection_succeed_testst.*");
+  auto [output, result] = run_test_("assert_is_not_empty_collection_succeed_testst.*");
   assert_value_("Start 1 test from 1 test case\n"
     "  SUCCEED assert_is_not_empty_collection_succeed_testst.test_case_succeed\n"
     "End 1 test from 1 test case ran.\n", output);
 }
 
 void test_(assert_is_not_empty_collection_succeed_testst, test_result) {
-  auto [result, output] = run_test_("assert_is_not_empty_collection_succeed_testst.*");
+  auto [output, result] = run_test_("assert_is_not_empty_collection_succeed_testst.*");
   assert_value_(0, result);
 }

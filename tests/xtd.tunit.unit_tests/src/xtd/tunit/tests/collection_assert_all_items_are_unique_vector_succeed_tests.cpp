@@ -12,13 +12,13 @@ namespace xtd::tunit::tests {
 }
 
 void test_(collection_assert_all_items_are_unqiue_vector_succeed_tests, test_output) {
-  auto [result, output] = run_test_("collection_assert_all_items_are_unqiue_vector_succeed_tests.*");
+  auto [output, result] = run_test_("collection_assert_all_items_are_unqiue_vector_succeed_tests.*");
   assert_value_("Start 1 test from 1 test case\n"
     "  SUCCEED collection_assert_all_items_are_unqiue_vector_succeed_tests.test_case_succeed\n"
     "End 1 test from 1 test case ran.\n", output);
 }
 
 void test_(collection_assert_all_items_are_unqiue_vector_succeed_tests, test_result) {
-  auto [result, output] = run_test_("collection_assert_all_items_are_unqiue_vector_succeed_tests.*");
+  auto [output, result] = run_test_("collection_assert_all_items_are_unqiue_vector_succeed_tests.*");
   assert_value_(0, result);
 }
