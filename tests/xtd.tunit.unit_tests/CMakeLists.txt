@@ -128,6 +128,8 @@ add_sources(
   src/xtd/tunit/tests/assert_throws_succeed_tests.cpp
   src/xtd/tunit/tests/assert_throws_any_failed_tests.cpp
   src/xtd/tunit/tests/assert_throws_any_succeed_tests.cpp
+  src/xtd/tunit/tests/assume_are_equal_const_char16_t_pointer_failed_tests.cpp
+  src/xtd/tunit/tests/assume_are_equal_const_char16_t_pointer_succeed_tests.cpp
   src/xtd/tunit/tests/assume_are_equal_const_char_pointer_failed_tests.cpp
   src/xtd/tunit/tests/assume_are_equal_const_char_pointer_succeed_tests.cpp
   src/xtd/tunit/tests/insert_basic_output_stream_operator_tests.cpp
