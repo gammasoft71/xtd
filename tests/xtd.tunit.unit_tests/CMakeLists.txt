@@ -158,6 +158,30 @@ add_sources(
   src/xtd/tunit/tests/collection_assert_is_ordered_vector_failed_tests.cpp
   src/xtd/tunit/tests/collection_assert_is_ordered_vector_succeed_tests.cpp
   src/xtd/tunit/tests/collection_assert_is_not_empty_vector_succeed_tests.cpp
+  src/xtd/tunit/tests/collection_valid_all_items_are_instances_of_vector_failed_tests.cpp
+  src/xtd/tunit/tests/collection_valid_all_items_are_instances_of_vector_succeed_tests.cpp
+  src/xtd/tunit/tests/collection_valid_all_items_are_not_null_vector_failed_tests.cpp
+  src/xtd/tunit/tests/collection_valid_all_items_are_not_null_vector_succeed_tests.cpp
+  src/xtd/tunit/tests/collection_valid_all_items_are_unique_vector_failed_tests.cpp
+  src/xtd/tunit/tests/collection_valid_all_items_are_unique_vector_succeed_tests.cpp
+  src/xtd/tunit/tests/collection_valid_are_equal_vector_failed_tests.cpp
+  src/xtd/tunit/tests/collection_valid_are_equal_vector_succeed_tests.cpp
+  src/xtd/tunit/tests/collection_valid_are_equivalent_vector_failed_tests.cpp
+  src/xtd/tunit/tests/collection_valid_are_equivalent_vector_succeed_tests.cpp
+  src/xtd/tunit/tests/collection_valid_are_not_equal_vector_failed_tests.cpp
+  src/xtd/tunit/tests/collection_valid_are_not_equal_vector_succeed_tests.cpp
+  src/xtd/tunit/tests/collection_valid_are_not_equivalent_vector_failed_tests.cpp
+  src/xtd/tunit/tests/collection_valid_are_not_equivalent_vector_succeed_tests.cpp
+  src/xtd/tunit/tests/collection_valid_contains_vector_failed_tests.cpp
+  src/xtd/tunit/tests/collection_valid_contains_vector_succeed_tests.cpp
+  src/xtd/tunit/tests/collection_valid_does_not_contain_vector_failed_tests.cpp
+  src/xtd/tunit/tests/collection_valid_does_not_contain_vector_succeed_tests.cpp
+  src/xtd/tunit/tests/collection_valid_is_empty_vector_failed_tests.cpp
+  src/xtd/tunit/tests/collection_valid_is_empty_vector_succeed_tests.cpp
+  src/xtd/tunit/tests/collection_valid_is_not_empty_vector_failed_tests.cpp
+  src/xtd/tunit/tests/collection_valid_is_ordered_vector_failed_tests.cpp
+  src/xtd/tunit/tests/collection_valid_is_ordered_vector_succeed_tests.cpp
+  src/xtd/tunit/tests/collection_valid_is_not_empty_vector_succeed_tests.cpp
   src/xtd/tunit/tests/directory_assert_are_equal_filesystem_directory_entry_failed_tests.cpp
   src/xtd/tunit/tests/directory_assert_are_equal_filesystem_directory_entry_succeed_tests.cpp
   src/xtd/tunit/tests/directory_assert_are_not_equal_filesystem_directory_entry_failed_tests.cpp
