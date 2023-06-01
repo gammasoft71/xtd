@@ -15,7 +15,7 @@ namespace xtd::tunit::tests {
 }
 
 void test_(one_test_two_test_cases_and_one_ignore_test_case_tests, test_output) {
-  auto [result, output] = run_test_("one_test_two_test_cases_and_one_ignore_test_case_tests*");
+  auto [result, output] = run_test_("one_test_two_test_cases_and_one_ignore_test_case_tests.*");
   assert_value_("Start 3 tests from 1 test case\n"
     "  SUCCEED one_test_two_test_cases_and_one_ignore_test_case_tests.test_case1\n"
     "  SUCCEED one_test_two_test_cases_and_one_ignore_test_case_tests.test_case2\n"
@@ -25,6 +25,6 @@ void test_(one_test_two_test_cases_and_one_ignore_test_case_tests, test_output) 
 }
 
 void test_(one_test_two_test_cases_and_one_ignore_test_case_tests, test_result) {
-  auto [result, output] = run_test_("one_test_two_test_cases_and_one_ignore_test_case_tests*");
+  auto [result, output] = run_test_("one_test_two_test_cases_and_one_ignore_test_case_tests.*");
   assert_value_(0, result);
 }
