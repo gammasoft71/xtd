@@ -264,6 +264,30 @@ add_sources(
   src/xtd/tunit/tests/collection_assert_is_ordered_vector_failed_tests.cpp
   src/xtd/tunit/tests/collection_assert_is_ordered_vector_succeed_tests.cpp
   src/xtd/tunit/tests/collection_assert_is_not_empty_vector_succeed_tests.cpp
+  src/xtd/tunit/tests/collection_assume_all_items_are_instances_of_vector_failed_tests.cpp
+  src/xtd/tunit/tests/collection_assume_all_items_are_instances_of_vector_succeed_tests.cpp
+  src/xtd/tunit/tests/collection_assume_all_items_are_not_null_vector_failed_tests.cpp
+  src/xtd/tunit/tests/collection_assume_all_items_are_not_null_vector_succeed_tests.cpp
+  src/xtd/tunit/tests/collection_assume_all_items_are_unique_vector_failed_tests.cpp
+  src/xtd/tunit/tests/collection_assume_all_items_are_unique_vector_succeed_tests.cpp
+  src/xtd/tunit/tests/collection_assume_are_equal_vector_failed_tests.cpp
+  src/xtd/tunit/tests/collection_assume_are_equal_vector_succeed_tests.cpp
+  src/xtd/tunit/tests/collection_assume_are_equivalent_vector_failed_tests.cpp
+  src/xtd/tunit/tests/collection_assume_are_equivalent_vector_succeed_tests.cpp
+  src/xtd/tunit/tests/collection_assume_are_not_equal_vector_failed_tests.cpp
+  src/xtd/tunit/tests/collection_assume_are_not_equal_vector_succeed_tests.cpp
+  src/xtd/tunit/tests/collection_assume_are_not_equivalent_vector_failed_tests.cpp
+  src/xtd/tunit/tests/collection_assume_are_not_equivalent_vector_succeed_tests.cpp
+  src/xtd/tunit/tests/collection_assume_contains_vector_failed_tests.cpp
+  src/xtd/tunit/tests/collection_assume_contains_vector_succeed_tests.cpp
+  src/xtd/tunit/tests/collection_assume_does_not_contain_vector_failed_tests.cpp
+  src/xtd/tunit/tests/collection_assume_does_not_contain_vector_succeed_tests.cpp
+  src/xtd/tunit/tests/collection_assume_is_empty_vector_failed_tests.cpp
+  src/xtd/tunit/tests/collection_assume_is_empty_vector_succeed_tests.cpp
+  src/xtd/tunit/tests/collection_assume_is_not_empty_vector_failed_tests.cpp
+  src/xtd/tunit/tests/collection_assume_is_ordered_vector_failed_tests.cpp
+  src/xtd/tunit/tests/collection_assume_is_ordered_vector_succeed_tests.cpp
+  src/xtd/tunit/tests/collection_assume_is_not_empty_vector_succeed_tests.cpp
   src/xtd/tunit/tests/collection_valid_all_items_are_instances_of_vector_failed_tests.cpp
   src/xtd/tunit/tests/collection_valid_all_items_are_instances_of_vector_succeed_tests.cpp
   src/xtd/tunit/tests/collection_valid_all_items_are_not_null_vector_failed_tests.cpp
