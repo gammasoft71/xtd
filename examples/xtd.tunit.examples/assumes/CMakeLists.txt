@@ -4,5 +4,5 @@ project(assumes)
 find_package(xtd REQUIRED)
 
 add_projects(
-  
+  assume
 )
