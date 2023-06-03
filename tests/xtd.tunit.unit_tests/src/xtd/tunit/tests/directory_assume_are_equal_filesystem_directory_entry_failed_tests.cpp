@@ -15,10 +15,10 @@ namespace xtd::tunit::tests {
 
 void test_(directory_assume_are_equal_filesystem_directory_entry_failed_tests, test_output) {
   auto [output, result] = run_test_("directory_assume_are_equal_filesystem_directory_entry_failed_tests.*");
-  assert_value_(xtd::ustring::format("Start 1 test from 1 test case\n"
-      "  ABORTED directory_assume_are_equal_filesystem_directory_entry_failed_tests.test_case_failed\n"
-     "    Test aborted\n"
-      "End 1 test from 1 test case ran.\n", xtd::environment::get_folder_path(xtd::environment::special_folder::common_application_data).quoted(), xtd::io::path::combine(xtd::environment::get_folder_path(xtd::environment::special_folder::common_application_data), "subdir").quoted()), output);
+  assert_value_("Start 1 test from 1 test case\n"
+    "  ABORTED directory_assume_are_equal_filesystem_directory_entry_failed_tests.test_case_failed\n"
+    "    Test aborted\n"
+    "End 1 test from 1 test case ran.\n", output);
 }
 
 void test_(directory_assume_are_equal_filesystem_directory_entry_failed_tests, test_result) {

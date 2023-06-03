@@ -348,6 +348,18 @@ add_sources(
   src/xtd/tunit/tests/file_assert_exists_succeed_tests.cpp
   src/xtd/tunit/tests/file_assert_does_not_exist_failed_tests.cpp
   src/xtd/tunit/tests/file_assert_does_not_exist_succeed_tests.cpp
+  src/xtd/tunit/tests/file_assume_are_equal_istream_failed_tests.cpp
+  src/xtd/tunit/tests/file_assume_are_equal_istream_succeed_tests.cpp
+  src/xtd/tunit/tests/file_assume_are_equal_string_failed_tests.cpp
+  src/xtd/tunit/tests/file_assume_are_equal_string_succeed_tests.cpp
+  src/xtd/tunit/tests/file_assume_are_not_equal_istream_failed_tests.cpp
+  src/xtd/tunit/tests/file_assume_are_not_equal_istream_succeed_tests.cpp
+  src/xtd/tunit/tests/file_assume_are_not_equal_string_failed_tests.cpp
+  src/xtd/tunit/tests/file_assume_are_not_equal_string_succeed_tests.cpp
+  src/xtd/tunit/tests/file_assume_exists_failed_tests.cpp
+  src/xtd/tunit/tests/file_assume_exists_succeed_tests.cpp
+  src/xtd/tunit/tests/file_assume_does_not_exist_failed_tests.cpp
+  src/xtd/tunit/tests/file_assume_does_not_exist_succeed_tests.cpp  
   src/xtd/tunit/tests/file_valid_are_equal_istream_failed_tests.cpp
   src/xtd/tunit/tests/file_valid_are_equal_istream_succeed_tests.cpp
   src/xtd/tunit/tests/file_valid_are_equal_string_failed_tests.cpp
