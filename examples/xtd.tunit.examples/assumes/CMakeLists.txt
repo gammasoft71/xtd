@@ -5,4 +5,5 @@ find_package(xtd REQUIRED)
 
 add_projects(
   assume
+  assume_are_equal
 )
