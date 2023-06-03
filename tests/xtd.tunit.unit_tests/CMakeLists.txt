@@ -186,6 +186,10 @@ add_sources(
   src/xtd/tunit/tests/assume_is_greater_or_equal_succeed_tests.cpp
   src/xtd/tunit/tests/assume_is_instance_of_failed_tests.cpp
   src/xtd/tunit/tests/assume_is_instance_of_succeed_tests.cpp
+  src/xtd/tunit/tests/assume_is_less_failed_tests.cpp
+  src/xtd/tunit/tests/assume_is_less_succeed_tests.cpp
+  src/xtd/tunit/tests/assume_is_less_or_equal_failed_tests.cpp
+  src/xtd/tunit/tests/assume_is_less_or_equal_succeed_tests.cpp
   src/xtd/tunit/tests/insert_basic_output_stream_operator_tests.cpp
   src/xtd/tunit/tests/one_test_one_test_case_tests.cpp
   src/xtd/tunit/tests/one_test_two_test_cases_tests.cpp
