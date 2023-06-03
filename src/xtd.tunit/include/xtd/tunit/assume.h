@@ -1751,7 +1751,7 @@ namespace xtd {
       template<typename value_t>
       static void is_not_zero(const value_t& value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         try {
-          assert::is_zero(value, message, stack_frame);
+          assert::is_not_zero(value, message, stack_frame);
         } catch (...) {
           assert::abort();
         }
