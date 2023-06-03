@@ -16,7 +16,7 @@ namespace xtd::tunit::tests {
 void test_(assume_is_null_weak_ptr_failed_tests, test_output) {
   auto [output, result] = run_test_("assume_is_null_weak_ptr_failed_tests.*");
   assert_value_("Start 1 test from 1 test case\n"
-    "  FAILED  assume_is_null_weak_ptr_failed_tests.test_case_failed\n"
+    "  ABORTED assume_is_null_weak_ptr_failed_tests.test_case_failed\n"
     "    Test aborted\n"
     "End 1 test from 1 test case ran.\n", output);
 }
