@@ -232,6 +232,10 @@ add_sources(
   src/xtd/tunit/tests/assume_is_true_succeed_tests.cpp
   src/xtd/tunit/tests/assume_is_zero_failed_tests.cpp
   src/xtd/tunit/tests/assume_is_zero_succeed_tests.cpp
+  src/xtd/tunit/tests/assume_throws_failed_tests.cpp
+  src/xtd/tunit/tests/assume_throws_succeed_tests.cpp
+  src/xtd/tunit/tests/assume_throws_any_failed_tests.cpp
+  src/xtd/tunit/tests/assume_throws_any_succeed_tests.cpp
   src/xtd/tunit/tests/insert_basic_output_stream_operator_tests.cpp
   src/xtd/tunit/tests/one_test_one_test_case_tests.cpp
   src/xtd/tunit/tests/one_test_two_test_cases_tests.cpp
