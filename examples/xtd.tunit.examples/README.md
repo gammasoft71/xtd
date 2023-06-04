@@ -80,6 +80,7 @@
 * [assume_is_not_empty](assumes/assume_is_not_empty/README.md) shows how to use [xtd::tunit::assume::is_not_empty](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#af240b85297b3a31a53707a017d002d0e) method.
 * [assume_is_not_instance_of](assumes/assume_is_not_instance_of/README.md) shows how to use [xtd::tunit::assume::is_not_instance_of](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#a900d37ef976e03ce07b3a4ee21cf1ec9) method.
 * [assume_is_not_null](assumes/assume_is_not_null/README.md) shows how to use [xtd::tunit::assume::is_not_null](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#a2bb9f260ce023e6ba5b2c574e722716a) method.
+* [assume_is_not_zero](assumes/assume_is_not_zero/README.md) shows how to use [xtd::tunit::assume::is_not_zero](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#a56338a72e52bb2f534be14d95ce1dcda) method.
 
 ## [Valids](valids/README.md)
 
