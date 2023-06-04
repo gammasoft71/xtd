@@ -107,7 +107,56 @@ Inheritance diagram for xtd::tunit::valid:</div>
 <dl class="section remark"><dt>Remarks</dt><dd>Validations are the same as assertions with the difference, no exception is thrown, but an error is generated. </dd>
 <dd>
 If a validation fails, he test can be continued to the end or to an assertion is generated. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>This example show how to used some methods : <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>This example show how to used some methods : <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd.tunit&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1tunit.html">xtd::tunit</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span>unit_tests {</div>
+<div class="line">  <span class="comment">// The class test must be declared with test_class_ helper.</span></div>
+<div class="line">  <span class="keyword">class </span>test_class_(test) {</div>
+<div class="line">  <span class="keyword">public</span>:</div>
+<div class="line">    <span class="keywordtype">void</span> <a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case1) {</div>
+<div class="line">      valid::is_true(<span class="keyword">true</span>);</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordtype">void</span> <a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case2) {</div>
+<div class="line">      valid::is_false(<span class="keyword">true</span>);</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordtype">void</span> <a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case3) {</div>
+<div class="line">      valid::does_not_throw([] {<span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;error&quot;</span>);});</div>
+<div class="line">    }</div>
+<div class="line">  };</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line">  <span class="keywordflow">return</span> <a class="code hl_class" href="classxtd_1_1tunit_1_1console__unit__test.html">console_unit_test</a>().<a class="code hl_function" href="classxtd_1_1tunit_1_1unit__test.html#a8da8a3353d5c71e0afa0de307fc40916">run</a>();</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code can produce the following output:</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Start 3 tests from 1 test case</span></div>
+<div class="line"><span class="comment">// Run tests:</span></div>
+<div class="line"><span class="comment">//   SUCCEED test.test_case1 (0 ms total)</span></div>
+<div class="line"><span class="comment">//   FAILED  test.test_case2 (0 ms total)</span></div>
+<div class="line"><span class="comment">//     Expected: false</span></div>
+<div class="line"><span class="comment">//     But was:  true</span></div>
+<div class="line"><span class="comment">//     Stack Trace: in |---OMITTED---|/valid.cpp:14</span></div>
+<div class="line"><span class="comment">//   FAILED  test.test_case3 (0 ms total)</span></div>
+<div class="line"><span class="comment">//     Expected: No Exception to be thrown</span></div>
+<div class="line"><span class="comment">//     But was:  &lt;std::range_error&gt;</span></div>
+<div class="line"><span class="comment">//     Stack Trace: in |---OMITTED---|/valid.cpp:18</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Test results:</span></div>
+<div class="line"><span class="comment">//   SUCCEED 1 test.</span></div>
+<div class="line"><span class="comment">//   FAILED  2 tests.</span></div>
+<div class="line"><span class="comment">// End 3 tests from 1 test case ran. (0 ms total)</span></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1console__unit__test_html"><div class="ttname"><a href="classxtd_1_1tunit_1_1console__unit__test.html">xtd::tunit::console_unit_test</a></div><div class="ttdoc">The console_unit_test class is console unit test interface.</div><div class="ttdef"><b>Definition:</b> console_unit_test.h:23</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1unit__test_html_a8da8a3353d5c71e0afa0de307fc40916"><div class="ttname"><a href="classxtd_1_1tunit_1_1unit__test.html#a8da8a3353d5c71e0afa0de307fc40916">xtd::tunit::unit_test::run</a></div><div class="ttdeci">int32 run()</div><div class="ttdoc">Runs all tests in this unit_test object and prints the result.</div></div>
+<div class="ttc" id="agroup__tunit_html_ga1fa6dc01b83d00ce9e92402c9694c6af"><div class="ttname"><a href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a></div><div class="ttdeci">#define test_method_(method_name)</div><div class="ttdoc">Add test method to class test.</div><div class="ttdef"><b>Definition:</b> test_method_attribute.h:88</div></div>
+<div class="ttc" id="anamespacextd_1_1tunit_html"><div class="ttname"><a href="namespacextd_1_1tunit.html">xtd::tunit</a></div><div class="ttdoc">The tunit namespace contains a unit test library.</div><div class="ttdef"><b>Definition:</b> abort_error.h:10</div></div>
+</div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Methods</h2></td></tr>
 <tr class="memitem:a598d6a0f4ad3407701650da7be7bdb0d"><td class="memTemplParams" colspan="2">template&lt;typename expected_t , typename actual_t &gt; </td></tr>
@@ -254,6 +303,34 @@ If a validation fails, he test can be continued to the end or to an assertion is
 <tr class="memitem:abdb4ee0ade84bf52c34f40f9d105bcd2"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1valid.html#abdb4ee0ade84bf52c34f40f9d105bcd2">is_empty</a> (const value_t &amp;value, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame)</td></tr>
 <tr class="memdesc:abdb4ee0ade84bf52c34f40f9d105bcd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that collection contains an item.  <br /></td></tr>
 <tr class="separator:abdb4ee0ade84bf52c34f40f9d105bcd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8637a74ce9ba5c3247e4645ded7cb42e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1valid.html#a8637a74ce9ba5c3247e4645ded7cb42e">is_false</a> (bool condition)</td></tr>
+<tr class="memdesc:a8637a74ce9ba5c3247e4645ded7cb42e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that ta condition is false.  <br /></td></tr>
+<tr class="separator:a8637a74ce9ba5c3247e4645ded7cb42e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a147f3b904c62763ec517ee4c1870be30"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1valid.html#a147f3b904c62763ec517ee4c1870be30">is_false</a> (bool condition, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame)</td></tr>
+<tr class="memdesc:a147f3b904c62763ec517ee4c1870be30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that a condition is false.  <br /></td></tr>
+<tr class="separator:a147f3b904c62763ec517ee4c1870be30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42702cb1c00707ca930841dc52d3b004"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1valid.html#a42702cb1c00707ca930841dc52d3b004">is_false</a> (bool condition, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;message)</td></tr>
+<tr class="memdesc:a42702cb1c00707ca930841dc52d3b004"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that a condition is false.  <br /></td></tr>
+<tr class="separator:a42702cb1c00707ca930841dc52d3b004"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04279c405fbc7eef47e847423574431f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1valid.html#a04279c405fbc7eef47e847423574431f">is_false</a> (bool condition, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame)</td></tr>
+<tr class="memdesc:a04279c405fbc7eef47e847423574431f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that a condition is false.  <br /></td></tr>
+<tr class="separator:a04279c405fbc7eef47e847423574431f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0352815c341dc8461b7a20918c15f8dc"><td class="memTemplParams" colspan="2">template&lt;typename value1_t , typename value2_t &gt; </td></tr>
+<tr class="memitem:a0352815c341dc8461b7a20918c15f8dc"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1valid.html#a0352815c341dc8461b7a20918c15f8dc">is_greater</a> (const value1_t &amp;val1, const value2_t &amp;val2)</td></tr>
+<tr class="memdesc:a0352815c341dc8461b7a20918c15f8dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that the first value is greater than the second value.  <br /></td></tr>
+<tr class="separator:a0352815c341dc8461b7a20918c15f8dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabbf3231fe7d8ff05b9d9641bcac7f74"><td class="memTemplParams" colspan="2">template&lt;typename value1_t , typename value2_t &gt; </td></tr>
+<tr class="memitem:aabbf3231fe7d8ff05b9d9641bcac7f74"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1valid.html#aabbf3231fe7d8ff05b9d9641bcac7f74">is_greater</a> (const value1_t &amp;val1, const value2_t &amp;val2, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame)</td></tr>
+<tr class="memdesc:aabbf3231fe7d8ff05b9d9641bcac7f74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that the first value is greater than the second value.  <br /></td></tr>
+<tr class="separator:aabbf3231fe7d8ff05b9d9641bcac7f74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3b807e9e3955d670b30e276cefc7702"><td class="memTemplParams" colspan="2">template&lt;typename value1_t , typename value2_t &gt; </td></tr>
+<tr class="memitem:ae3b807e9e3955d670b30e276cefc7702"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1valid.html#ae3b807e9e3955d670b30e276cefc7702">is_greater</a> (const value1_t &amp;val1, const value2_t &amp;val2, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;message)</td></tr>
+<tr class="memdesc:ae3b807e9e3955d670b30e276cefc7702"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that the first value is greater than the second value.  <br /></td></tr>
+<tr class="separator:ae3b807e9e3955d670b30e276cefc7702"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5577775211576f04dfdc7fda14f20bd3"><td class="memTemplParams" colspan="2">template&lt;typename value1_t , typename value2_t &gt; </td></tr>
+<tr class="memitem:a5577775211576f04dfdc7fda14f20bd3"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1valid.html#a5577775211576f04dfdc7fda14f20bd3">is_greater</a> (const value1_t &amp;val1, const value2_t &amp;val2, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame)</td></tr>
+<tr class="memdesc:a5577775211576f04dfdc7fda14f20bd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that the first value is greater than the second value.  <br /></td></tr>
+<tr class="separator:a5577775211576f04dfdc7fda14f20bd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f92b97c65ad6d9a94831b74abf09068"><td class="memTemplParams" colspan="2">template&lt;typename value1_t , typename value2_t &gt; </td></tr>
 <tr class="memitem:a6f92b97c65ad6d9a94831b74abf09068"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1valid.html#a6f92b97c65ad6d9a94831b74abf09068">is_greater_or_equal</a> (const value1_t &amp;val1, const value2_t &amp;val2)</td></tr>
 <tr class="memdesc:a6f92b97c65ad6d9a94831b74abf09068"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that the first value is greater than or equal to the second value.  <br /></td></tr>
@@ -3005,6 +3082,432 @@ template&lt;typename value_t &gt; </div>
 <div class="line">std::vector&lt;int&gt; v2 = {0, 1, 2, 3};</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#ab54a71b2edaedb16b959d67cf65ac97e">xtd::tunit::valid::is_empty</a>(v1, <span class="stringliteral">&quot;User message...&quot;</span>, <a class="code hl_define" href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a>); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#ab54a71b2edaedb16b959d67cf65ac97e">xtd::tunit::valid::is_empty</a>(v2, <span class="stringliteral">&quot;User message...&quot;</span>, <a class="code hl_define" href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a>); <span class="comment">// test fails.</span></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a8637a74ce9ba5c3247e4645ded7cb42e" name="a8637a74ce9ba5c3247e4645ded7cb42e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8637a74ce9ba5c3247e4645ded7cb42e">&#9670;&#160;</a></span>is_false() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::tunit::valid::is_false </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>condition</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Validates that ta condition is false. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">condition</td><td>The condition to check is false. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::string s1 = <span class="stringliteral">&quot;Anything&quot;</span>;</div>
+<div class="line">std::string s2;</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#a8637a74ce9ba5c3247e4645ded7cb42e">xtd::tunit::valid::is_false</a>(std::empty(s1)); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#a8637a74ce9ba5c3247e4645ded7cb42e">xtd::tunit::valid::is_false</a>(std::empty(s2)); <span class="comment">// test fails.</span></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1valid_html_a8637a74ce9ba5c3247e4645ded7cb42e"><div class="ttname"><a href="classxtd_1_1tunit_1_1valid.html#a8637a74ce9ba5c3247e4645ded7cb42e">xtd::tunit::valid::is_false</a></div><div class="ttdeci">static void is_false(bool condition)</div><div class="ttdoc">Validates that ta condition is false.</div></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a147f3b904c62763ec517ee4c1870be30" name="a147f3b904c62763ec517ee4c1870be30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a147f3b904c62763ec517ee4c1870be30">&#9670;&#160;</a></span>is_false() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::tunit::valid::is_false </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>condition</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;&#160;</td>
+          <td class="paramname"><em>stack_frame</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Validates that a condition is false. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">condition</td><td>The condition to check is false. </td></tr>
+    <tr><td class="paramname">stack_frame</td><td>Contains information about current file and current line. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::string s1 = <span class="stringliteral">&quot;Anything&quot;</span>;</div>
+<div class="line">std::string s2;</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#a8637a74ce9ba5c3247e4645ded7cb42e">xtd::tunit::valid::is_false</a>(std::empty(s1), <a class="code hl_define" href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#a8637a74ce9ba5c3247e4645ded7cb42e">xtd::tunit::valid::is_false</a>(std::empty(s2), <a class="code hl_define" href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a>); <span class="comment">// test fails.</span></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a42702cb1c00707ca930841dc52d3b004" name="a42702cb1c00707ca930841dc52d3b004"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42702cb1c00707ca930841dc52d3b004">&#9670;&#160;</a></span>is_false() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::tunit::valid::is_false </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>condition</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>message</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Validates that a condition is false. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">condition</td><td>The condition to check is false. </td></tr>
+    <tr><td class="paramname">message</td><td>A user message to display if the assertion fails. This message can be seen in the unit test results. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::string s1 = <span class="stringliteral">&quot;Anything&quot;</span>;</div>
+<div class="line">std::string s2;</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#a8637a74ce9ba5c3247e4645ded7cb42e">xtd::tunit::valid::is_false</a>(std::empty(s1), <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#a8637a74ce9ba5c3247e4645ded7cb42e">xtd::tunit::valid::is_false</a>(std::empty(s2), <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test fails.</span></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a04279c405fbc7eef47e847423574431f" name="a04279c405fbc7eef47e847423574431f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04279c405fbc7eef47e847423574431f">&#9670;&#160;</a></span>is_false() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::tunit::valid::is_false </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>condition</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>message</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;&#160;</td>
+          <td class="paramname"><em>stack_frame</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Validates that a condition is false. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">condition</td><td>The condition to check is false. </td></tr>
+    <tr><td class="paramname">message</td><td>A user message to display if the assertion fails. This message can be seen in the unit test results. </td></tr>
+    <tr><td class="paramname">stack_frame</td><td>Contains information about current file and current line. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::string s1 = <span class="stringliteral">&quot;Anything&quot;</span>;</div>
+<div class="line">std::string s2;</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#a8637a74ce9ba5c3247e4645ded7cb42e">xtd::tunit::valid::is_false</a>(std::empty(s1), <span class="stringliteral">&quot;User message...&quot;</span>, <a class="code hl_define" href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#a8637a74ce9ba5c3247e4645ded7cb42e">xtd::tunit::valid::is_false</a>(std::empty(s2), <span class="stringliteral">&quot;User message...&quot;</span>, <a class="code hl_define" href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a>); <span class="comment">// test fails.</span></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a0352815c341dc8461b7a20918c15f8dc" name="a0352815c341dc8461b7a20918c15f8dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0352815c341dc8461b7a20918c15f8dc">&#9670;&#160;</a></span>is_greater() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename value1_t , typename value2_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::tunit::valid::is_greater </td>
+          <td>(</td>
+          <td class="paramtype">const value1_t &amp;&#160;</td>
+          <td class="paramname"><em>val1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const value2_t &amp;&#160;</td>
+          <td class="paramname"><em>val2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Validates that the first value is greater than the second value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val1</td><td>the first value. </td></tr>
+    <tr><td class="paramname">val2</td><td>the second value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#a0352815c341dc8461b7a20918c15f8dc">xtd::tunit::valid::is_greater</a>(24, 12); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#a0352815c341dc8461b7a20918c15f8dc">xtd::tunit::valid::is_greater</a>(24, 48); <span class="comment">// test fails.</span></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1valid_html_a0352815c341dc8461b7a20918c15f8dc"><div class="ttname"><a href="classxtd_1_1tunit_1_1valid.html#a0352815c341dc8461b7a20918c15f8dc">xtd::tunit::valid::is_greater</a></div><div class="ttdeci">static void is_greater(const value1_t &amp;val1, const value2_t &amp;val2)</div><div class="ttdoc">Validates that the first value is greater than the second value.</div><div class="ttdef"><b>Definition:</b> valid.h:692</div></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="aabbf3231fe7d8ff05b9d9641bcac7f74" name="aabbf3231fe7d8ff05b9d9641bcac7f74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabbf3231fe7d8ff05b9d9641bcac7f74">&#9670;&#160;</a></span>is_greater() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename value1_t , typename value2_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::tunit::valid::is_greater </td>
+          <td>(</td>
+          <td class="paramtype">const value1_t &amp;&#160;</td>
+          <td class="paramname"><em>val1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const value2_t &amp;&#160;</td>
+          <td class="paramname"><em>val2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;&#160;</td>
+          <td class="paramname"><em>stack_frame</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Validates that the first value is greater than the second value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val1</td><td>the first value. </td></tr>
+    <tr><td class="paramname">val2</td><td>the second value. </td></tr>
+    <tr><td class="paramname">stack_frame</td><td>Contains information about current file and current line. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#a0352815c341dc8461b7a20918c15f8dc">xtd::tunit::valid::is_greater</a>(24, 12, <a class="code hl_define" href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#a0352815c341dc8461b7a20918c15f8dc">xtd::tunit::valid::is_greater</a>(24, 48, <a class="code hl_define" href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a>); <span class="comment">// test fails.</span></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="ae3b807e9e3955d670b30e276cefc7702" name="ae3b807e9e3955d670b30e276cefc7702"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3b807e9e3955d670b30e276cefc7702">&#9670;&#160;</a></span>is_greater() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename value1_t , typename value2_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::tunit::valid::is_greater </td>
+          <td>(</td>
+          <td class="paramtype">const value1_t &amp;&#160;</td>
+          <td class="paramname"><em>val1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const value2_t &amp;&#160;</td>
+          <td class="paramname"><em>val2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>message</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Validates that the first value is greater than the second value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val1</td><td>the first value. </td></tr>
+    <tr><td class="paramname">val2</td><td>the second value. </td></tr>
+    <tr><td class="paramname">message</td><td>A user message to display if the assertion fails. This message can be seen in the unit test results. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#a0352815c341dc8461b7a20918c15f8dc">xtd::tunit::valid::is_greater</a>(24, 12, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#a0352815c341dc8461b7a20918c15f8dc">xtd::tunit::valid::is_greater</a>(24, 48, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test fails.</span></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a5577775211576f04dfdc7fda14f20bd3" name="a5577775211576f04dfdc7fda14f20bd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5577775211576f04dfdc7fda14f20bd3">&#9670;&#160;</a></span>is_greater() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename value1_t , typename value2_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::tunit::valid::is_greater </td>
+          <td>(</td>
+          <td class="paramtype">const value1_t &amp;&#160;</td>
+          <td class="paramname"><em>val1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const value2_t &amp;&#160;</td>
+          <td class="paramname"><em>val2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>message</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;&#160;</td>
+          <td class="paramname"><em>stack_frame</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Validates that the first value is greater than the second value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val1</td><td>the first value. </td></tr>
+    <tr><td class="paramname">val2</td><td>the second value. </td></tr>
+    <tr><td class="paramname">message</td><td>A user message to display if the assertion fails. This message can be seen in the unit test results. </td></tr>
+    <tr><td class="paramname">stack_frame</td><td>Contains information about current file and current line. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#a0352815c341dc8461b7a20918c15f8dc">xtd::tunit::valid::is_greater</a>(24, 12, <span class="stringliteral">&quot;User message...&quot;</span>, <a class="code hl_define" href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#a0352815c341dc8461b7a20918c15f8dc">xtd::tunit::valid::is_greater</a>(24, 48, <span class="stringliteral">&quot;User message...&quot;</span>, <a class="code hl_define" href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a>); <span class="comment">// test fails.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -7989,8 +8492,8 @@ template&lt;typename value_t &gt; </div>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::string s1;</div>
 <div class="line">std::string s2 = <span class="stringliteral">&quot;Anything&quot;</span>;</div>
-<div class="line">xtd::tunit::valid::is_false(std::empty(s1)); <span class="comment">// test ok.</span></div>
-<div class="line">xtd::tunit::valid::is_false(std::empty(s2)); <span class="comment">// test fails.</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#a8637a74ce9ba5c3247e4645ded7cb42e">xtd::tunit::valid::is_false</a>(std::empty(s1)); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#a8637a74ce9ba5c3247e4645ded7cb42e">xtd::tunit::valid::is_false</a>(std::empty(s2)); <span class="comment">// test fails.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -8039,8 +8542,8 @@ template&lt;typename value_t &gt; </div>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::string s1;</div>
 <div class="line">std::string s2 = <span class="stringliteral">&quot;Anything&quot;</span>;</div>
-<div class="line">xtd::tunit::valid::is_false(std::empty(s1), <a class="code hl_define" href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a>); <span class="comment">// test ok.</span></div>
-<div class="line">xtd::tunit::valid::is_false(std::empty(s2), <a class="code hl_define" href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a>); <span class="comment">// test fails.</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#a8637a74ce9ba5c3247e4645ded7cb42e">xtd::tunit::valid::is_false</a>(std::empty(s1), <a class="code hl_define" href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#a8637a74ce9ba5c3247e4645ded7cb42e">xtd::tunit::valid::is_false</a>(std::empty(s2), <a class="code hl_define" href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a>); <span class="comment">// test fails.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -8089,8 +8592,8 @@ template&lt;typename value_t &gt; </div>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::string s1;</div>
 <div class="line">std::string s2 = <span class="stringliteral">&quot;Anything&quot;</span>;</div>
-<div class="line">xtd::tunit::valid::is_false(std::empty(s1), <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
-<div class="line">xtd::tunit::valid::is_false(std::empty(s2), <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test fails.</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#a8637a74ce9ba5c3247e4645ded7cb42e">xtd::tunit::valid::is_false</a>(std::empty(s1), <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#a8637a74ce9ba5c3247e4645ded7cb42e">xtd::tunit::valid::is_false</a>(std::empty(s2), <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test fails.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -8146,8 +8649,8 @@ template&lt;typename value_t &gt; </div>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::string s1;</div>
 <div class="line">std::string s2 = <span class="stringliteral">&quot;Anything&quot;</span>;</div>
-<div class="line">xtd::tunit::valid::is_false(std::empty(s1), <span class="stringliteral">&quot;User message...&quot;</span>, <a class="code hl_define" href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a>); <span class="comment">// test ok.</span></div>
-<div class="line">xtd::tunit::valid::is_false(std::empty(s2), <span class="stringliteral">&quot;User message...&quot;</span>, <a class="code hl_define" href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a>); <span class="comment">// test fails.</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#a8637a74ce9ba5c3247e4645ded7cb42e">xtd::tunit::valid::is_false</a>(std::empty(s1), <span class="stringliteral">&quot;User message...&quot;</span>, <a class="code hl_define" href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#a8637a74ce9ba5c3247e4645ded7cb42e">xtd::tunit::valid::is_false</a>(std::empty(s2), <span class="stringliteral">&quot;User message...&quot;</span>, <a class="code hl_define" href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a>); <span class="comment">// test fails.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -8781,7 +9284,7 @@ template&lt;typename exception_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 4 2023 18:33:19 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Jun 4 2023 22:42:43 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
