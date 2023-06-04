@@ -6,4 +6,5 @@ find_package(xtd REQUIRED)
 add_projects(
   assume
   assume_are_equal
+  assume_are_equal_with_tolerance
 )
