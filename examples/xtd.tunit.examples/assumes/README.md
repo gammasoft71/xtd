@@ -22,3 +22,4 @@
 * [assume_is_not_null](assume_is_not_null/README.md) shows how to use [xtd::tunit::assume::is_not_null](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#a2bb9f260ce023e6ba5b2c574e722716a) method.
 * [assume_is_not_zero](assume_is_not_zero/README.md) shows how to use [xtd::tunit::assume::is_not_zero](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#a56338a72e52bb2f534be14d95ce1dcda) method.
 * [assume_is_null](assume_is_null/README.md) shows how to use [xtd::tunit::assume::is_null](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#aa6bec68f958ef34957406d26146067de) method.
+* [assume_is_positive](assume_is_positive/README.md) shows how to use [xtd::tunit::assume::is_positive](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#a16309851aaa0b65893dd10500188ecf7) method.
