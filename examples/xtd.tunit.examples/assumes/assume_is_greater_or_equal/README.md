@@ -1,10 +1,10 @@
-# assert_is_greater_or_equal
+# assume_is_greater_or_equal
 
-Shows how to use [xtd::tunit::assert::is_greater_or_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#a3b7e300416362c4661f4d3758d84561b) method.
+Shows how to use [xtd::tunit::assume::is_greater_or_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#a3b7e300416362c4661f4d3758d84561b) method.
 
 ## Sources
 
-[src/assert_is_greater_or_equal.cpp](src/assert_is_greater_or_equal.cpp)
+[src/assume_is_greater_or_equal.cpp](src/assume_is_greater_or_equal.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -26,7 +26,7 @@ Run tests:
   ABORTED test.test_case_failed (0 ms total)
     Expected: greater than or equal to 48
     But was:  24
-    Stack Trace: in |---OMITTED---|/assert_is_greater_or_equal.cpp:18
+    Stack Trace: in |---OMITTED---|/assume_is_greater_or_equal.cpp:18
 
 Test results:
   SUCCEED 2 tests.

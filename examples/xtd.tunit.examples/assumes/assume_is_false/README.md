@@ -1,10 +1,10 @@
-# assert_is_false
+# assume_is_false
 
-Shows how to use [xtd::tunit::assert::is_false](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#a7a8a9392f55aaa14fc7d01cba25718ff) method.
+Shows how to use [xtd::tunit::assume::is_false](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#a7a8a9392f55aaa14fc7d01cba25718ff) method.
 
 ## Sources
 
-[src/assert_is_false.cpp](src/assert_is_false.cpp)
+[src/assume_is_false.cpp](src/assume_is_false.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -25,7 +25,7 @@ Run tests:
   ABORTED test.test_case_failed (0 ms total)
     Expected: false
     But was:  true
-    Stack Trace: in |---OMITTED---|/assert_is_false.cpp:16
+    Stack Trace: in |---OMITTED---|/assume_is_false.cpp:16
 
 Test results:
   SUCCEED 1 test.

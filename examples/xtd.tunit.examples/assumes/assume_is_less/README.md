@@ -1,10 +1,10 @@
-# assert_is_less
+# assume_is_less
 
-Shows how to use [xtd::tunit::assert::is_less](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#aa3f97beea3faa946b5731fcc89addb1c) method.
+Shows how to use [xtd::tunit::assume::is_less](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#aa3f97beea3faa946b5731fcc89addb1c) method.
 
 ## Sources
 
-[src/assert_is_less.cpp](src/assert_is_less.cpp)
+[src/assume_is_less.cpp](src/assume_is_less.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -25,7 +25,7 @@ Run tests:
   ABORTED test.test_case_failed (0 ms total)
     Expected: less than 12
     But was:  24
-    Stack Trace: in |---OMITTED---|/assert_is_less.cpp:13
+    Stack Trace: in |---OMITTED---|/assume_is_less.cpp:13
 
 Test results:
   SUCCEED 1 test.

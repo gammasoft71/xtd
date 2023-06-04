@@ -1,10 +1,10 @@
-# assert_is_NaN
+# assume_is_NaN
 
-Shows how to use [xtd::tunit::assert::is_NaN](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#ae0feb57a4c084d50894849e18d085788) method.
+Shows how to use [xtd::tunit::assume::is_NaN](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#ae0feb57a4c084d50894849e18d085788) method.
 
 ## Sources
 
-[src/assert_is_NaN.cpp](src/assert_is_NaN.cpp)
+[src/assume_is_NaN.cpp](src/assume_is_NaN.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -25,7 +25,7 @@ Run tests:
   ABORTED test.test_case_failed (0 ms total)
     Expected: NaN
     But was:  3.14159
-    Stack Trace: in |---OMITTED---|/assert_is_NaN.cpp:15
+    Stack Trace: in |---OMITTED---|/assume_is_NaN.cpp:15
 
 // Test results:
   SUCCEED 1 test.
