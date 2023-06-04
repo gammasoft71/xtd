@@ -1,10 +1,10 @@
-# assert_are_not_equal
+# valid_are_not_same
 
-Shows how to use [xtd::tunit::assert::are_not_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#a6d6ad4a4285106ef8e00d783fb1aca39) method.
+Shows how to use [xtd::tunit::valid::are_not_same](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#ad59ecd6c98bdeab3dedfcd6dc31cac61) method.
 
 ## Sources
 
-[src/assert_are_not_equal.cpp](src/assert_are_not_equal.cpp)
+[src/valid_are_not_same.cpp](src/valid_are_not_same.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -23,9 +23,9 @@ Start 2 tests from 1 test case
 Run tests:
   SUCCEED test.test_case_succeed (0 ms total)
   FAILED  test.test_case_failed (0 ms total)
-    Expected: not 24
+    Expected: not same as 24
     But was:  24
-    Stack Trace: in |---OMITTED---|/assert_are_not_equal.cpp:13
+    Stack Trace: in |---OMITTED---|/valid_are_not_same.cpp:14
 
 Test results:
   SUCCEED 1 test.
