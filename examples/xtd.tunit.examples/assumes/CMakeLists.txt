@@ -20,4 +20,5 @@ add_projects(
   assume_is_less
   assume_is_less_or_equal
   assume_is_NaN
+  assume_is_negative
 )
