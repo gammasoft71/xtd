@@ -13,4 +13,5 @@ add_projects(
   valid_contains
   valid_does_not_throw
   valid_is_empty
+  valid_is_false
 )
