@@ -67,6 +67,7 @@
 * [assume_are_not_same](assumes/assume_are_not_same/README.md) shows how to use [xtd::tunit::assume::are_not_same](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#a27df29a18fb50ab2793991a06d227276) method.
 * [assume_are_same](assumes/assume_are_same/README.md) shows how to use [xtd::tunit::assume::are_same](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#af93128c52d73fd842286247b428bfd09) method.
 * [assume_contains](assumes/assume_contains/README.md) shows how to use [xtd::tunit::assume::contains](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#af46db342cef45ea859709a544922585d) method.
+* [assume_does_not_throw](assumes/assume_does_not_throw/README.md) shows how to use [xtd::tunit::assume::does_not_throw](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#a37d29a60f5757e6afe290d7c6e6cb7ca) method.
 
 ## [Valids](valids/README.md)
 
