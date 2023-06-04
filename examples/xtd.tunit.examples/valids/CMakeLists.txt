@@ -4,5 +4,5 @@ project(valids)
 find_package(xtd REQUIRED)
 
 add_projects(
-  
+  valid
 )

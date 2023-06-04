@@ -90,6 +90,8 @@
 
 ## [Valids](valids/README.md)
 
+* [valid](valids/valid/README.md) shows how to use [xtd::tunit::valid](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html) class.
+
 ## [Test classes](test_classes/README.md)
 
 * [generic_test_class](test_classes/generic_test_class/README.md) shows how to use generic [xtd::tunit::test_class](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1test__class.html) class.
