@@ -28,4 +28,5 @@ add_projects(
   assume_is_null
   assume_is_positive
   assume_is_true
+  assume_is_zero
 )
