@@ -104,6 +104,7 @@
 * [valid_is_greater_or_equal](valids/valid_is_greater_or_equal/README.md) shows how to use [xtd::tunit::valid::is_greater_or_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#a6f92b97c65ad6d9a94831b74abf09068) method.
 * [valid_is_instance_of](valids/valid_is_instance_of/README.md) shows how to use [xtd::tunit::valid::is_instance_of](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#ac7457d49af1c34f16346fcae1a9fc022) method.
 * [valid_is_less](valids/valid_is_less/README.md) shows how to use [xtd::tunit::valid::is_less](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#a919ed90c86a9eb75bc5dd79e13f2fc8d) method.
+* [valid_is_less_or_equal](valids/valid_is_less_or_equal/README.md) shows how to use [xtd::tunit::valid::is_less_or_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#a5597456bbdd9dd4a53960648928b4c41) method.
 
 ## [Test classes](test_classes/README.md)
 
