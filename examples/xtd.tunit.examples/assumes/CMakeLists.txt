@@ -11,4 +11,5 @@ add_projects(
   assume_are_not_same
   assume_are_same
   assume_contains
+  assume_does_not_throw
 )
