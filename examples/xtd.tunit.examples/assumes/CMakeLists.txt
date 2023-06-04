@@ -18,4 +18,5 @@ add_projects(
   assume_is_greater_or_equal
   assume_is_instance_of
   assume_is_less
+  assume_is_less_or_equal
 )
