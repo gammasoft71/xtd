@@ -69,7 +69,7 @@ void assume::are_equal(long double expected, long double actual, const xtd::ustr
 }
 
 void assume::are_equal(float expected, float actual, float tolerance) {
-  are_equal(expected, actual, tolerance, "", csf_);
+  are_equal(expected, actual, tolerance, "", xtd::diagnostics::stack_frame::empty());
 }
 
 void assume::are_equal(float expected, float actual, float tolerance, const xtd::diagnostics::stack_frame& stack_frame) {
@@ -89,7 +89,7 @@ void assume::are_equal(float expected, float actual, float tolerance, const xtd:
 }
 
 void assume::are_equal(double expected, double actual, double tolerance) {
-  are_equal(expected, actual, tolerance, "", csf_);
+  are_equal(expected, actual, tolerance, "", xtd::diagnostics::stack_frame::empty());
 }
 
 void assume::are_equal(double expected, double actual, double tolerance, const xtd::diagnostics::stack_frame& stack_frame) {
@@ -109,7 +109,7 @@ void assume::are_equal(double expected, double actual, double tolerance, const x
 }
 
 void assume::are_equal(long double expected, long double actual, long double tolerance) {
-  are_equal(expected, actual, tolerance, "", csf_);
+  are_equal(expected, actual, tolerance, "", xtd::diagnostics::stack_frame::empty());
 }
 
 void assume::are_equal(long double expected, long double actual, long double tolerance, const xtd::diagnostics::stack_frame& stack_frame) {
