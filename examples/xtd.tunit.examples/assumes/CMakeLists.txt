@@ -23,4 +23,5 @@ add_projects(
   assume_is_negative
   assume_is_not_empty
   assume_is_not_instance_of
+  assume_is_not_null
 )
