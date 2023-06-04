@@ -25,3 +25,5 @@
 * [assume_is_positive](assume_is_positive/README.md) shows how to use [xtd::tunit::assume::is_positive](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#a16309851aaa0b65893dd10500188ecf7) method.
 * [assume_is_true](assume_is_true/README.md) shows how to use [xtd::tunit::assume::is_true](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#a5c48682d12f9aa2e4d1a2f3a8f5d3f37) method.
 * [assume_is_zero](assume_is_zero/README.md) shows how to use [xtd::tunit::assume::is_zero](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#a0383fc973d1fcc289da4b2573cdaaefb) method.
+* [assume_throws](assume_throws/README.md) shows how to use [xtd::tunit::assume::throws](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#a5ca1a96c7e4d73f154520a916a087a07) method.
+* [assume_throws_any](assume_throws_any/README.md) shows how to use [xtd::tunit::assume::throws_any](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#aaf380ce0f01ac3a31feb94956590f33c) method.
