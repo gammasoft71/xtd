@@ -20,4 +20,5 @@ add_projects(
   valid_is_less
   valid_is_less_or_equal
   valid_is_NaN
+  valid_is_negative
 )
