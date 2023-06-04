@@ -10,3 +10,4 @@
 * [valid_does_not_throw](valid_does_not_throw/README.md) shows how to use [xtd::tunit::valid::does_not_throw](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#ad5daf4889e0f44e20ad12e1db802e94f) method.
 * [valid_is_empty](valid_is_empty/README.md) shows how to use [xtd::tunit::valid::is_empty](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#ab54a71b2edaedb16b959d67cf65ac97e) method.
 * [valid_is_false](valid_is_false/README.md) shows how to use [xtd::tunit::valid::is_false](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#a8637a74ce9ba5c3247e4645ded7cb42e) method.
+* [valid_is_greater](valid_is_greater/README.md) shows how to use [xtd::tunit::valid::is_greater](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#a0352815c341dc8461b7a20918c15f8dc) method.
