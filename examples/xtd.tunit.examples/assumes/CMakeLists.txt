@@ -10,4 +10,5 @@ add_projects(
   assume_are_not_equal
   assume_are_not_same
   assume_are_same
+  assume_contains
 )
