@@ -15,4 +15,5 @@ add_projects(
   valid_is_empty
   valid_is_false
   valid_is_greater
+  valid_is_greater_or_equal
 )
