@@ -16,4 +16,5 @@ add_projects(
   assume_is_false
   assume_is_greater
   assume_is_greater_or_equal
+  assume_is_instance_of
 )
