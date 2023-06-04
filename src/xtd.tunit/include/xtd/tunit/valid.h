@@ -633,7 +633,7 @@ namespace xtd {
       static void is_empty(const char16* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
       static void is_empty(const char32* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
       static void is_empty(const wchar_t* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
-      /// @endocnd
+      /// @endcond
       
       /// @brief Validates that ta condition is false.
       /// @param condition The condition to check is false.
