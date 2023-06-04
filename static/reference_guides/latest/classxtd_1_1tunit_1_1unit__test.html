@@ -167,6 +167,9 @@ Inheritance diagram for xtd::tunit::unit_test:</div>
 <tr class="separator:a8da8a3353d5c71e0afa0de307fc40916"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Protected methods</h2></td></tr>
+<tr class="memitem:a675cc55ff1790a6893bd1f520eb4ac48"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1unit__test.html#a675cc55ff1790a6893bd1f520eb4ac48">count_tests</a> (<a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> count)</td></tr>
+<tr class="memdesc:a675cc55ff1790a6893bd1f520eb4ac48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counts the test names contained in the specified tests.  <br /></td></tr>
+<tr class="separator:a675cc55ff1790a6893bd1f520eb4ac48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4d2e247099f62c209e0daa3166ae06d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1unit__test.html#af4d2e247099f62c209e0daa3166ae06d">list_tests</a> (const std::vector&lt; std::string &gt; &amp;tests)</td></tr>
 <tr class="memdesc:af4d2e247099f62c209e0daa3166ae06d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lists the test names contained in the specified tests.  <br /></td></tr>
 <tr class="separator:af4d2e247099f62c209e0daa3166ae06d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -316,6 +319,46 @@ Inheritance diagram for xtd::tunit::unit_test:</div>
 
 <p>Gets the array of aborted test names. </p>
 <dl class="section return"><dt>Returns</dt><dd>The array of aborted test names. </dd></dl>
+
+</div>
+</div>
+<a id="a675cc55ff1790a6893bd1f520eb4ac48" name="a675cc55ff1790a6893bd1f520eb4ac48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a675cc55ff1790a6893bd1f520eb4ac48">&#9670;&#160;</a></span>count_tests()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> xtd::tunit::unit_test::count_tests </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a>&#160;</td>
+          <td class="paramname"><em>count</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Counts the test names contained in the specified tests. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">count</td><td>The tests count. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="classxtd_1_1tunit_1_1settings.html#a1c12d45fa2ddcffcf5bb0902c14c1110" title="Gets exit status.">xtd::tunit::settings::exit_status</a> value. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This method does nothing by default. The inheritor must overload this method to act as it wants when the unit_lest is asked for the test list. </dd>
+<dd>
+This method is typically used to display the list of tests in a stream, or whatever. It depends on the implementation chosen by the inheritor. </dd></dl>
+
+<p>Reimplemented in <a class="el" href="classxtd_1_1tunit_1_1ostream__unit__test.html#a196023f3d9c85121b444f8878fe316c4">xtd::tunit::ostream_unit_test</a>.</p>
 
 </div>
 </div>
@@ -764,7 +807,7 @@ This method is typically used to display the list of tests in a stream, or whate
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 17 2023 15:02:17 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Jun 4 2023 18:33:19 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

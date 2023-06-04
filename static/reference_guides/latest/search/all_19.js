@@ -4,7 +4,7 @@ var searchData=
   ['zambia_1',['zambia',['../classxtd_1_1forms_1_1countries.html#a38d577567bcebf1d6205b9444c14db44',1,'xtd::forms::countries']]],
   ['zebra_5fface_2',['zebra_face',['../classxtd_1_1forms_1_1emoticons.html#a2c8e0326de1c4ce3d6a65779175cdcbd',1,'xtd::forms::emoticons']]],
   ['zero_5fwidth_5fjoiner_3',['zero_width_joiner',['../classxtd_1_1forms_1_1emoticons.html#a530d086da6dea43b33923d5255957c61',1,'xtd::forms::emoticons']]],
-  ['zig_5fzag_4',['zig_zag',['../group__xtd__drawing.html#ggabe8298b6e158a1361d8de08d78bdbae1a49adcffb23e3d393872f5e5be09529f0',1,'xtd::drawing::drawing2d']]],
+  ['zig_5fzag_4',['zig_zag',['../group__xtd__drawing.html#ggae7711973ea9941238900716fbd331fcca49adcffb23e3d393872f5e5be09529f0',1,'xtd::drawing::drawing_2d']]],
   ['zimbabwe_5',['zimbabwe',['../classxtd_1_1forms_1_1countries.html#aa3c2e7db2f4fb5a76a23dac16c54daab',1,'xtd::forms::countries']]],
   ['zipper_5fmouth_5fface_6',['zipper_mouth_face',['../classxtd_1_1forms_1_1emoticons.html#adeb38ecacaaf260b9f35beadb73c77a5',1,'xtd::forms::emoticons']]],
   ['zombie_7',['zombie',['../classxtd_1_1forms_1_1emoticons.html#afe75ddcc1268714ce1ed72b56f9278f6',1,'xtd::forms::emoticons']]],

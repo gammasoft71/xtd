@@ -123,6 +123,9 @@ Inheritance diagram for xtd::tunit::ostream_unit_test:</div>
 <tr class="separator:afdd8405179918c5f9dffcb837fbb1b82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Methods</h2></td></tr>
+<tr class="memitem:a196023f3d9c85121b444f8878fe316c4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1ostream__unit__test.html#a196023f3d9c85121b444f8878fe316c4">count_tests</a> (<a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> count) override</td></tr>
+<tr class="memdesc:a196023f3d9c85121b444f8878fe316c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counts the test names contained in the specified tests.  <br /></td></tr>
+<tr class="separator:a196023f3d9c85121b444f8878fe316c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98421107910e2f80ed4ca790cc68909e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1ostream__unit__test.html#a98421107910e2f80ed4ca790cc68909e">list_tests</a> (const std::vector&lt; std::string &gt; &amp;tests) override</td></tr>
 <tr class="memdesc:a98421107910e2f80ed4ca790cc68909e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lists the test names contained in the specified tests.  <br /></td></tr>
 <tr class="separator:a98421107910e2f80ed4ca790cc68909e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -269,6 +272,46 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a196023f3d9c85121b444f8878fe316c4" name="a196023f3d9c85121b444f8878fe316c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a196023f3d9c85121b444f8878fe316c4">&#9670;&#160;</a></span>count_tests()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int xtd::tunit::ostream_unit_test::count_tests </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a>&#160;</td>
+          <td class="paramname"><em>count</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Counts the test names contained in the specified tests. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">count</td><td>The tests count. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="classxtd_1_1tunit_1_1settings.html#a1c12d45fa2ddcffcf5bb0902c14c1110" title="Gets exit status.">xtd::tunit::settings::exit_status</a> value. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This method does nothing by default. The inheritor must overload this method to act as it wants when the unit_lest is asked for the test list. </dd>
+<dd>
+This method is typically used to display the list of tests in a stream, or whatever. It depends on the implementation chosen by the inheritor. </dd></dl>
+
+<p>Reimplemented from <a class="el" href="classxtd_1_1tunit_1_1unit__test.html#a675cc55ff1790a6893bd1f520eb4ac48">xtd::tunit::unit_test</a>.</p>
+
+</div>
+</div>
 <a id="a98421107910e2f80ed4ca790cc68909e" name="a98421107910e2f80ed4ca790cc68909e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a98421107910e2f80ed4ca790cc68909e">&#9670;&#160;</a></span>list_tests()</h2>
 
@@ -394,7 +437,7 @@ This method is typically used to display the list of tests in a stream, or whate
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 17 2023 15:02:17 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Jun 4 2023 18:33:19 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

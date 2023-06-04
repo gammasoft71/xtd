@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['radial_5fgradient_5fbrush_0',['radial_gradient_brush',['../classxtd_1_1drawing_1_1drawing2d_1_1radial__gradient__brush.html',1,'xtd::drawing::drawing2d']]],
+  ['radial_5fgradient_5fbrush_0',['radial_gradient_brush',['../classxtd_1_1drawing_1_1drawing__2d_1_1radial__gradient__brush.html',1,'xtd::drawing::drawing_2d']]],
   ['radio_5fbutton_1',['radio_button',['../classxtd_1_1forms_1_1radio__button.html',1,'xtd::forms']]],
   ['radio_5fbutton_5frenderer_2',['radio_button_renderer',['../classxtd_1_1forms_1_1radio__button__renderer.html',1,'xtd::forms']]],
   ['radio_5fbuttons_3',['radio_buttons',['../classxtd_1_1forms_1_1radio__buttons.html',1,'xtd::forms']]],

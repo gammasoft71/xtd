@@ -26,7 +26,7 @@ var searchData=
   ['common_5fdialog_23',['common_dialog',['../classxtd_1_1forms_1_1common__dialog.html',1,'xtd::forms']]],
   ['compiler_24',['compiler',['../classxtd_1_1compiler.html',1,'xtd']]],
   ['component_25',['component',['../classxtd_1_1forms_1_1component.html',1,'xtd::forms']]],
-  ['conical_5fgradient_5fbrush_26',['conical_gradient_brush',['../classxtd_1_1drawing_1_1drawing2d_1_1conical__gradient__brush.html',1,'xtd::drawing::drawing2d']]],
+  ['conical_5fgradient_5fbrush_26',['conical_gradient_brush',['../classxtd_1_1drawing_1_1drawing__2d_1_1conical__gradient__brush.html',1,'xtd::drawing::drawing_2d']]],
   ['console_27',['console',['../classxtd_1_1console.html',1,'xtd']]],
   ['console_5fcancel_5fevent_5fargs_28',['console_cancel_event_args',['../classxtd_1_1console__cancel__event__args.html',1,'xtd']]],
   ['console_5fkey_5finfo_29',['console_key_info',['../classxtd_1_1console__key__info.html',1,'xtd']]],

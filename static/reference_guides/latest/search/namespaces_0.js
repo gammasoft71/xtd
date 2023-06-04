@@ -3,7 +3,7 @@ var searchData=
   ['collections_0',['collections',['../namespacextd_1_1collections.html',1,'xtd']]],
   ['diagnostics_1',['diagnostics',['../namespacextd_1_1diagnostics.html',1,'xtd']]],
   ['drawing_2',['drawing',['../namespacextd_1_1drawing.html',1,'xtd']]],
-  ['drawing2d_3',['drawing2d',['../namespacextd_1_1drawing_1_1drawing2d.html',1,'xtd::drawing']]],
+  ['drawing_5f2d_3',['drawing_2d',['../namespacextd_1_1drawing_1_1drawing__2d.html',1,'xtd::drawing']]],
   ['forms_4',['forms',['../namespacextd_1_1forms.html',1,'xtd']]],
   ['imaging_5',['imaging',['../namespacextd_1_1drawing_1_1imaging.html',1,'xtd::drawing']]],
   ['io_6',['io',['../namespacextd_1_1io.html',1,'xtd']]],

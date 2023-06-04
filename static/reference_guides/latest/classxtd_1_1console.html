@@ -124,7 +124,7 @@ Inheritance diagram for xtd::console:</div>
 <div class="line"><span class="comment">// Hello World!</span></div>
 <div class="line"><span class="comment">// Enter your name: James</span></div>
 <div class="line"><span class="comment">// Good day, James!</span></div>
-<div class="ttc" id="aclassxtd_1_1console_html_a636319332e94e01197105aab55ca6d76"><div class="ttname"><a href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">xtd::console::write</a></div><div class="ttdeci">static void write(arg_t &amp;&amp;value)</div><div class="ttdoc">Writes the text representation of the specified value to the standard output stream.</div><div class="ttdef"><b>Definition:</b> console.h:374</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html_a636319332e94e01197105aab55ca6d76"><div class="ttname"><a href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">xtd::console::write</a></div><div class="ttdeci">static void write(arg_t &amp;&amp;value)</div><div class="ttdoc">Writes the text representation of the specified value to the standard output stream.</div><div class="ttdef"><b>Definition:</b> console.h:382</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_aa8987e499bd2004bf0564b4fbca9161d"><div class="ttname"><a href="classxtd_1_1console.html#aa8987e499bd2004bf0564b4fbca9161d">xtd::console::read_line</a></div><div class="ttdeci">static xtd::ustring read_line()</div><div class="ttdoc">Reads the next line of characters from the standard input stream.</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition:</b> ustring.h:48</div></div>
@@ -533,6 +533,12 @@ Inheritance diagram for xtd::console:</div>
   </table>
   </dd>
 </dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>The color specified in a set operation is not a valid member of <a class="el" href="group__xtd__core.html#gab60a2a64b74b91771b667e4a079681f2" title="Specifies constants that define foreground and background colors for the console.">xtd::console_color</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section remark"><dt>Remarks</dt><dd>A change to the <a class="el" href="classxtd_1_1background__color.html" title="Represent background color output manipulator class.">background_color</a> method affects only output that is written to individual character cells after the background color is changed. To change the background color of the console window as a whole, set the BackgroundColor property and call the Clear method. The following example provides an illustration. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example saves the values of the <a class="el" href="group__xtd__core.html#gab60a2a64b74b91771b667e4a079681f2" title="Specifies constants that define foreground and background colors for the console.">xtd::console_color</a> enumeration to an array and stores the current values of the <a class="el" href="classxtd_1_1console.html#a7015d166663fd50f1983ec1e375a6cdf" title="Gets the background color of the console.">xtd::console::background_color</a> and <a class="el" href="classxtd_1_1console.html#a7828d85c021b5515a2eb94105ca6c149" title="Gets the foreground color of the console.">xtd::console::foreground_color</a> properties to variables. It then changes the foreground color to each color in the <a class="el" href="group__xtd__core.html#gab60a2a64b74b91771b667e4a079681f2" title="Specifies constants that define foreground and background colors for the console.">xtd::console_color</a> enumeration except to the color that matches the current background, and it changes the background color to each color in the <a class="el" href="group__xtd__core.html#gab60a2a64b74b91771b667e4a079681f2" title="Specifies constants that define foreground and background colors for the console.">xtd::console_color</a> enumeration except to the color that matches the current foreground. (If the foreground color is the same as the background color, the text isn't visible.) Finally, it calls the <a class="el" href="classxtd_1_1console.html#aa238558f28b619a37668f9129b098600" title="Sets the foreground and background console colors to their defaults.">xtd::console::reset_color</a> method to restore the original console colors. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;vector&gt;</span></div>
@@ -915,6 +921,14 @@ Inheritance diagram for xtd::console:</div>
   </table>
   </dd>
 </dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>The value in a set operation is less than or equal to zero. <br  />
+-or-<br  />
+ The value in a set operation is greater than or equal to <a class="el" href="classxtd_1_1box__integer.html#a21847edbb248c1b0d07a35e2a8c08232" title="Represents the largest possible value of type_t. This field is constant.">xtd::int16_object::max_value</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section user"><dt>Examples</dt><dd>This example demonstrates the buffer_height and buffer_width properties. The example reports the dimensions of an operating system window set to a buffer size of 300 rows and 85 columns. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -1002,6 +1016,14 @@ Inheritance diagram for xtd::console:</div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">width</td><td>The current width, in columns, of the buffer area. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>The value in a set operation is less than or equal to zero. <br  />
+-or-<br  />
+ The value in a set operation is greater than or equal to <a class="el" href="classxtd_1_1box__integer.html#a21847edbb248c1b0d07a35e2a8c08232" title="Represents the largest possible value of type_t. This field is constant.">xtd::int16_object::max_value</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1340,7 +1362,14 @@ When the Clear method is called, the cursor automatically scrolls to the top-lef
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if cursor left changed; otherwise false. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>The value in a set operation is less than zero <br  />
+-or-<br  />
+ The value in a set operation is greater than or equal to <a class="el" href="classxtd_1_1console.html#aec1066642f96e01b4623b9d56ba0fa24" title="Gets the width of the buffer area.">xtd::console::buffer_width</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section user"><dt>Examples</dt><dd>This example demonstrates the cursor_left and cursor_top properties, and the set_cursor_position and clear methods. The example positions the cursor, which determines where the next write will occur, to draw a 5 character by 5 character rectangle using a combination of "+", "|", and "-" strings. Note that the rectangle could be drawn with fewer steps using a combination of other strings. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -1457,6 +1486,12 @@ When the Clear method is called, the cursor automatically scrolls to the top-lef
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">size</td><td>The size of the cursor expressed as a percentage of the height of a character cell. The property value ranges from 1 to 100. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>The value specified in a set operation is less than 1 or greater than 100. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1580,6 +1615,14 @@ When the Clear method is called, the cursor automatically scrolls to the top-lef
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if cursor top changed; otherwise false. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>The value in a set operation is less than zero <br  />
+-or-<br  />
+ The value in a set operation is greater than or equal to <a class="el" href="classxtd_1_1console.html#a178dd87e25a2264d1d86f2e6864273c6" title="Gets the height of the buffer area.">xtd::console::buffer_height</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section user"><dt>Examples</dt><dd>This example demonstrates the cursor_left and cursor_top properties, and the set_cursor_position and clear methods. The example positions the cursor, which determines where the next write will occur, to draw a 5 character by 5 character rectangle using a combination of "+", "|", and "-" strings. Note that the rectangle could be drawn with fewer steps using a combination of other strings. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -1849,6 +1892,12 @@ When the Clear method is called, the cursor automatically scrolls to the top-lef
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">color</td><td>A console_color that specifies the foreground color of the console; that is, the color of each character that is displayed. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>The color specified in a set operation is not a valid member of <a class="el" href="group__xtd__core.html#gab60a2a64b74b91771b667e4a079681f2" title="Specifies constants that define foreground and background colors for the console.">xtd::console_color</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2577,6 +2626,18 @@ Use the key_available method in conjunction with only the read_key method, not t
   </table>
   </dd>
 </dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>The left in a set operation is less than zero <br  />
+-or-<br  />
+ The left in a set operation is greater than or equal to <a class="el" href="classxtd_1_1console.html#aec1066642f96e01b4623b9d56ba0fa24" title="Gets the width of the buffer area.">xtd::console::buffer_width</a> <br  />
+-or-<br  />
+ the top in a set operation is less than zero <br  />
+-or-<br  />
+ The topo in a set operation is greater than or equal to <a class="el" href="classxtd_1_1console.html#a178dd87e25a2264d1d86f2e6864273c6" title="Gets the height of the buffer area.">xtd::console::buffer_height</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Use the set_cursor_position method to specify where the next write operation in the console window is to begin. If the specified cursor position is outside the area that is currently visible in the console window, the window origin changes automatically to make the cursor visible. </dd>
 <dd>
 The cursor automatically moves to the next character position each time a character is written to the console window. If the cursor is at the bottom right character position of the console window, the next write operation causes the console window to scroll so the cursor remains visible. If you want to write a character to the bottom right character position without causing the console window to scroll, use the move_buffer_area method to move a character to that position. </dd></dl>
@@ -2736,6 +2797,18 @@ A std::ostream that encapsulates a std::ofstream can be used to send output to a
   </table>
   </dd>
 </dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>The left in a set operation is less than zero <br  />
+-or-<br  />
+ The left in a set operation is greater than or equal to <a class="el" href="classxtd_1_1console.html#aec1066642f96e01b4623b9d56ba0fa24" title="Gets the width of the buffer area.">xtd::console::buffer_width</a> <br  />
+-or-<br  />
+ the top in a set operation is less than zero <br  />
+-or-<br  />
+ The topo in a set operation is greater than or equal to <a class="el" href="classxtd_1_1console.html#a178dd87e25a2264d1d86f2e6864273c6" title="Gets the height of the buffer area.">xtd::console::buffer_height</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -2783,11 +2856,11 @@ A std::ostream that encapsulates a std::ofstream can be used to send output to a
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">ArgumentOutOfRangeException</td><td>width or height is less than or equal to zero. <br  />
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>width or height is less than or equal to zero. <br  />
 -or-<br  />
- width plus WindowLeft or height plus WindowTop is greater than or equal to Int16.MaxValue. <br  />
+width plus WindowLeft or height plus WindowTop is greater than or equal to <a class="el" href="classxtd_1_1box__integer.html#a21847edbb248c1b0d07a35e2a8c08232" title="Represents the largest possible value of type_t. This field is constant.">xtd::int16_object.max_value</a>. <br  />
 -or-<br  />
- width or height is greater than the largest possible window width or height for the current screen resolution and console font. </td></tr>
+width or height is greater than the largest possible window width or height for the current screen resolution and console font. </td></tr>
   </table>
   </dd>
 </dl>
@@ -3551,7 +3624,7 @@ The <a class="el" href="group__xtd__core.html#gga437764d898631d282f7d95b573328c7
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 17 2023 15:02:14 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Jun 4 2023 18:33:16 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -1955,8 +1955,6 @@ Enumerations</h2></td></tr>
 <tr class="memdesc:gaf6de7ef4df1f6e61afe1a90c441b6598"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies the type of socket that an instance of the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> class represents.  <a href="group__xtd__core.html#gaf6de7ef4df1f6e61afe1a90c441b6598">More...</a><br /></td></tr>
 <tr class="separator:gaf6de7ef4df1f6e61afe1a90c441b6598"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa67a4b789cb787af85a8a1337af56f99"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gaa67a4b789cb787af85a8a1337af56f99">xtd::diagnostics::source_levels</a> { <br />
-&#160;&#160;<a class="el" href="group__xtd__core.html#ggaa67a4b789cb787af85a8a1337af56f99aa181a603769c1f98ad927e7367c7aa51">xtd::diagnostics::source_levels::all</a>
-, <br />
 &#160;&#160;<a class="el" href="group__xtd__core.html#ggaa67a4b789cb787af85a8a1337af56f99a3262d48df5d75e3452f0f16b313b7808">xtd::diagnostics::source_levels::off</a>
 , <br />
 &#160;&#160;<a class="el" href="group__xtd__core.html#ggaa67a4b789cb787af85a8a1337af56f99a7e85bcb66fb9a809d5ab4f62a8b8bea8">xtd::diagnostics::source_levels::critical</a>
@@ -1970,6 +1968,8 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="group__xtd__core.html#ggaa67a4b789cb787af85a8a1337af56f99a2c7aea4237e25b4f8ee3b0bf77d6fed0">xtd::diagnostics::source_levels::verbose</a>
 , <br />
 &#160;&#160;<a class="el" href="group__xtd__core.html#ggaa67a4b789cb787af85a8a1337af56f99a69e3016169bf9b234c2f71d8c7cbbfea">xtd::diagnostics::source_levels::activity_tracing</a>
+, <br />
+&#160;&#160;<a class="el" href="group__xtd__core.html#ggaa67a4b789cb787af85a8a1337af56f99aa181a603769c1f98ad927e7367c7aa51">xtd::diagnostics::source_levels::all</a>
 <br />
  }</td></tr>
 <tr class="memdesc:gaa67a4b789cb787af85a8a1337af56f99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies the levels of trace messages filtered by the source switch and event type filter. This enumeration has a flags attribute that allows a bitwise combination of its member values.  <a href="group__xtd__core.html#gaa67a4b789cb787af85a8a1337af56f99">More...</a><br /></td></tr>
@@ -6636,6 +6636,38 @@ Variables</h2></td></tr>
 <tr class="separator:ga208cd246390887de6b38b2e5315ef1f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Methods</h2></td></tr>
+<tr class="memitem:gab82f235ef9fec1951ac7469f7f48bd61"><td class="memTemplParams" colspan="2">template&lt;typename type_t &gt; </td></tr>
+<tr class="memitem:gab82f235ef9fec1951ac7469f7f48bd61"><td class="memTemplItemLeft" align="right" valign="top">static const type_t *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gab82f235ef9fec1951ac7469f7f48bd61">xtd::convert_pointer::to_ptr</a> (const type_t &amp;value)</td></tr>
+<tr class="memdesc:gab82f235ef9fec1951ac7469f7f48bd61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
+<tr class="separator:gab82f235ef9fec1951ac7469f7f48bd61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadd4b41073f1b0b557827a1065d1d4b9c"><td class="memTemplParams" colspan="2">template&lt;typename type_t &gt; </td></tr>
+<tr class="memitem:gadd4b41073f1b0b557827a1065d1d4b9c"><td class="memTemplItemLeft" align="right" valign="top">static type_t *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gadd4b41073f1b0b557827a1065d1d4b9c">xtd::convert_pointer::to_ptr</a> (type_t &amp;value)</td></tr>
+<tr class="memdesc:gadd4b41073f1b0b557827a1065d1d4b9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
+<tr class="separator:gadd4b41073f1b0b557827a1065d1d4b9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga163db6c632f99222e3799a35fafee688"><td class="memTemplParams" colspan="2">template&lt;typename type_t &gt; </td></tr>
+<tr class="memitem:ga163db6c632f99222e3799a35fafee688"><td class="memTemplItemLeft" align="right" valign="top">static const type_t *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga163db6c632f99222e3799a35fafee688">xtd::convert_pointer::to_ptr</a> (const type_t *value)</td></tr>
+<tr class="memdesc:ga163db6c632f99222e3799a35fafee688"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
+<tr class="separator:ga163db6c632f99222e3799a35fafee688"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3625fbc5ee12188b4288b561183179a0"><td class="memTemplParams" colspan="2">template&lt;typename type_t &gt; </td></tr>
+<tr class="memitem:ga3625fbc5ee12188b4288b561183179a0"><td class="memTemplItemLeft" align="right" valign="top">static type_t *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga3625fbc5ee12188b4288b561183179a0">xtd::convert_pointer::to_ptr</a> (type_t *value)</td></tr>
+<tr class="memdesc:ga3625fbc5ee12188b4288b561183179a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
+<tr class="separator:ga3625fbc5ee12188b4288b561183179a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1c59b7a19559b8bbf8737066421b8a33"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t , typename current_type_t &gt; </td></tr>
+<tr class="memitem:ga1c59b7a19559b8bbf8737066421b8a33"><td class="memTemplItemLeft" align="right" valign="top">static const new_type_t *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga1c59b7a19559b8bbf8737066421b8a33">xtd::convert_pointer::to_ptr</a> (const current_type_t *value)</td></tr>
+<tr class="memdesc:ga1c59b7a19559b8bbf8737066421b8a33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
+<tr class="separator:ga1c59b7a19559b8bbf8737066421b8a33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga83355ce0e7f8e796131571578a6176bc"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t , typename current_type_t &gt; </td></tr>
+<tr class="memitem:ga83355ce0e7f8e796131571578a6176bc"><td class="memTemplItemLeft" align="right" valign="top">static new_type_t *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga83355ce0e7f8e796131571578a6176bc">xtd::convert_pointer::to_ptr</a> (current_type_t *value)</td></tr>
+<tr class="memdesc:ga83355ce0e7f8e796131571578a6176bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
+<tr class="separator:ga83355ce0e7f8e796131571578a6176bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga15b96cc09022ab255ef89aebba8ddf47"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t , typename current_type_t &gt; </td></tr>
+<tr class="memitem:ga15b96cc09022ab255ef89aebba8ddf47"><td class="memTemplItemLeft" align="right" valign="top">static const new_type_t *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga15b96cc09022ab255ef89aebba8ddf47">xtd::convert_pointer::to_ptr</a> (const current_type_t &amp;value)</td></tr>
+<tr class="memdesc:ga15b96cc09022ab255ef89aebba8ddf47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
+<tr class="separator:ga15b96cc09022ab255ef89aebba8ddf47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga416c4a8abc7b09c6c8d18ddbac24d588"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t , typename current_type_t &gt; </td></tr>
+<tr class="memitem:ga416c4a8abc7b09c6c8d18ddbac24d588"><td class="memTemplItemLeft" align="right" valign="top">static new_type_t *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga416c4a8abc7b09c6c8d18ddbac24d588">xtd::convert_pointer::to_ptr</a> (current_type_t &amp;value)</td></tr>
+<tr class="memdesc:ga416c4a8abc7b09c6c8d18ddbac24d588"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
+<tr class="separator:ga416c4a8abc7b09c6c8d18ddbac24d588"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga790894f2cff5c9245073355d816f7f72"><td class="memTemplParams" colspan="2">template&lt;typename type_t &gt; </td></tr>
 <tr class="memitem:ga790894f2cff5c9245073355d816f7f72"><td class="memTemplItemLeft" align="right" valign="top">static const type_t &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga790894f2cff5c9245073355d816f7f72">xtd::convert_pointer::to_ref</a> (const type_t &amp;value)</td></tr>
 <tr class="memdesc:ga790894f2cff5c9245073355d816f7f72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
@@ -6668,30 +6700,6 @@ Variables</h2></td></tr>
 <tr class="memitem:ga3167fa5dbed28d039fa3a97f7e341929"><td class="memTemplItemLeft" align="right" valign="top">static new_type_t &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga3167fa5dbed28d039fa3a97f7e341929">xtd::convert_pointer::to_ref</a> (current_type_t *value)</td></tr>
 <tr class="memdesc:ga3167fa5dbed28d039fa3a97f7e341929"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga3167fa5dbed28d039fa3a97f7e341929"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga163db6c632f99222e3799a35fafee688"><td class="memTemplParams" colspan="2">template&lt;typename type_t &gt; </td></tr>
-<tr class="memitem:ga163db6c632f99222e3799a35fafee688"><td class="memTemplItemLeft" align="right" valign="top">static const type_t *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga163db6c632f99222e3799a35fafee688">xtd::convert_pointer::to_ptr</a> (const type_t *value)</td></tr>
-<tr class="memdesc:ga163db6c632f99222e3799a35fafee688"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
-<tr class="separator:ga163db6c632f99222e3799a35fafee688"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3625fbc5ee12188b4288b561183179a0"><td class="memTemplParams" colspan="2">template&lt;typename type_t &gt; </td></tr>
-<tr class="memitem:ga3625fbc5ee12188b4288b561183179a0"><td class="memTemplItemLeft" align="right" valign="top">static type_t *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga3625fbc5ee12188b4288b561183179a0">xtd::convert_pointer::to_ptr</a> (type_t *value)</td></tr>
-<tr class="memdesc:ga3625fbc5ee12188b4288b561183179a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
-<tr class="separator:ga3625fbc5ee12188b4288b561183179a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1c59b7a19559b8bbf8737066421b8a33"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t , typename current_type_t &gt; </td></tr>
-<tr class="memitem:ga1c59b7a19559b8bbf8737066421b8a33"><td class="memTemplItemLeft" align="right" valign="top">static const new_type_t *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga1c59b7a19559b8bbf8737066421b8a33">xtd::convert_pointer::to_ptr</a> (const current_type_t *value)</td></tr>
-<tr class="memdesc:ga1c59b7a19559b8bbf8737066421b8a33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
-<tr class="separator:ga1c59b7a19559b8bbf8737066421b8a33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga83355ce0e7f8e796131571578a6176bc"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t , typename current_type_t &gt; </td></tr>
-<tr class="memitem:ga83355ce0e7f8e796131571578a6176bc"><td class="memTemplItemLeft" align="right" valign="top">static new_type_t *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga83355ce0e7f8e796131571578a6176bc">xtd::convert_pointer::to_ptr</a> (current_type_t *value)</td></tr>
-<tr class="memdesc:ga83355ce0e7f8e796131571578a6176bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
-<tr class="separator:ga83355ce0e7f8e796131571578a6176bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga15b96cc09022ab255ef89aebba8ddf47"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t , typename current_type_t &gt; </td></tr>
-<tr class="memitem:ga15b96cc09022ab255ef89aebba8ddf47"><td class="memTemplItemLeft" align="right" valign="top">static const new_type_t *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga15b96cc09022ab255ef89aebba8ddf47">xtd::convert_pointer::to_ptr</a> (const current_type_t &amp;value)</td></tr>
-<tr class="memdesc:ga15b96cc09022ab255ef89aebba8ddf47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
-<tr class="separator:ga15b96cc09022ab255ef89aebba8ddf47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga416c4a8abc7b09c6c8d18ddbac24d588"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t , typename current_type_t &gt; </td></tr>
-<tr class="memitem:ga416c4a8abc7b09c6c8d18ddbac24d588"><td class="memTemplItemLeft" align="right" valign="top">static new_type_t *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga416c4a8abc7b09c6c8d18ddbac24d588">xtd::convert_pointer::to_ptr</a> (current_type_t &amp;value)</td></tr>
-<tr class="memdesc:ga416c4a8abc7b09c6c8d18ddbac24d588"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
-<tr class="separator:ga416c4a8abc7b09c6c8d18ddbac24d588"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad07a5c51833c7dcf92a2e3fdb9146c1d"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t , typename current_type_t &gt; </td></tr>
 <tr class="memitem:gad07a5c51833c7dcf92a2e3fdb9146c1d"><td class="memTemplItemLeft" align="right" valign="top">static std::unique_ptr&lt; new_type_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gad07a5c51833c7dcf92a2e3fdb9146c1d">xtd::convert_pointer::to_unique_ptr</a> (std::unique_ptr&lt; current_type_t &gt; &amp;value)</td></tr>
 <tr class="memdesc:gad07a5c51833c7dcf92a2e3fdb9146c1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
@@ -9326,9 +9334,7 @@ The <a class="el" href="group__xtd__core.html#ga9aa34e8670a0bb6c5cb5d2a3813cfe95
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The source levels identify the trace_event_type events that are to be traced. The <a class="el" href="classxtd_1_1diagnostics_1_1source__switch.html" title="Provides a multilevel switch to control tracing and debug output without recompiling your code.">source_switch</a> class uses the source_levels enumeration to define the event level of the trace message to use for filtering messages to send to the trace listener. </dd></dl>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ggaa67a4b789cb787af85a8a1337af56f99aa181a603769c1f98ad927e7367c7aa51" name="ggaa67a4b789cb787af85a8a1337af56f99aa181a603769c1f98ad927e7367c7aa51"></a>all&#160;</td><td class="fielddoc"><p>Allows all events through. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ggaa67a4b789cb787af85a8a1337af56f99a3262d48df5d75e3452f0f16b313b7808" name="ggaa67a4b789cb787af85a8a1337af56f99a3262d48df5d75e3452f0f16b313b7808"></a>off&#160;</td><td class="fielddoc"><p>Does not allow any events through. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ggaa67a4b789cb787af85a8a1337af56f99a3262d48df5d75e3452f0f16b313b7808" name="ggaa67a4b789cb787af85a8a1337af56f99a3262d48df5d75e3452f0f16b313b7808"></a>off&#160;</td><td class="fielddoc"><p>Does not allow any events through. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="ggaa67a4b789cb787af85a8a1337af56f99a7e85bcb66fb9a809d5ab4f62a8b8bea8" name="ggaa67a4b789cb787af85a8a1337af56f99a7e85bcb66fb9a809d5ab4f62a8b8bea8"></a>critical&#160;</td><td class="fielddoc"><p>Allows only Critical events through. </p>
 </td></tr>
@@ -9341,6 +9347,8 @@ The <a class="el" href="group__xtd__core.html#ga9aa34e8670a0bb6c5cb5d2a3813cfe95
 <tr><td class="fieldname"><a id="ggaa67a4b789cb787af85a8a1337af56f99a2c7aea4237e25b4f8ee3b0bf77d6fed0" name="ggaa67a4b789cb787af85a8a1337af56f99a2c7aea4237e25b4f8ee3b0bf77d6fed0"></a>verbose&#160;</td><td class="fielddoc"><p>Allows critical, error, warning, information, and verbose events through. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="ggaa67a4b789cb787af85a8a1337af56f99a69e3016169bf9b234c2f71d8c7cbbfea" name="ggaa67a4b789cb787af85a8a1337af56f99a69e3016169bf9b234c2f71d8c7cbbfea"></a>activity_tracing&#160;</td><td class="fielddoc"><p>Allows the stop, start, suspend, transfer, and resume events through. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaa67a4b789cb787af85a8a1337af56f99aa181a603769c1f98ad927e7367c7aa51" name="ggaa67a4b789cb787af85a8a1337af56f99aa181a603769c1f98ad927e7367c7aa51"></a>all&#160;</td><td class="fielddoc"><p>Allows all events through. </p>
 </td></tr>
 </table>
 
@@ -57572,7 +57580,7 @@ template&lt;&gt; </div>
 </div>
 </div>
 <a id="ga15b96cc09022ab255ef89aebba8ddf47" name="ga15b96cc09022ab255ef89aebba8ddf47"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga15b96cc09022ab255ef89aebba8ddf47">&#9670;&#160;</a></span>to_ptr() <span class="overload">[1/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga15b96cc09022ab255ef89aebba8ddf47">&#9670;&#160;</a></span>to_ptr() <span class="overload">[1/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -57609,7 +57617,7 @@ template&lt;typename new_type_t , typename current_type_t &gt; </div>
 </div>
 </div>
 <a id="ga1c59b7a19559b8bbf8737066421b8a33" name="ga1c59b7a19559b8bbf8737066421b8a33"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga1c59b7a19559b8bbf8737066421b8a33">&#9670;&#160;</a></span>to_ptr() <span class="overload">[2/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1c59b7a19559b8bbf8737066421b8a33">&#9670;&#160;</a></span>to_ptr() <span class="overload">[2/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -57645,8 +57653,45 @@ template&lt;typename new_type_t , typename current_type_t &gt; </div>
 
 </div>
 </div>
+<a id="gab82f235ef9fec1951ac7469f7f48bd61" name="gab82f235ef9fec1951ac7469f7f48bd61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab82f235ef9fec1951ac7469f7f48bd61">&#9670;&#160;</a></span>to_ptr() <span class="overload">[3/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename type_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static const type_t * xtd::convert_pointer::to_ptr </td>
+          <td>(</td>
+          <td class="paramtype">const type_t &amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="convert__pointer_8h.html">xtd.core/include/xtd/convert_pointer.h</a>&gt;</code></p>
+
+<p>Casts a type into another type. </p>
+<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keyword">const</span> button* value = <span class="keyword">new</span> <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">xtd::forms::button</a>();</div>
+<div class="line"><span class="keyword">const</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggacc628237bd3e274afe3d5d836e2db786afc5364bf9dbfa34954526becad136d4b">control</a>* result = convert::to_ptr&lt;xtd::forms::control&gt;(value);</div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
 <a id="ga163db6c632f99222e3799a35fafee688" name="ga163db6c632f99222e3799a35fafee688"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga163db6c632f99222e3799a35fafee688">&#9670;&#160;</a></span>to_ptr() <span class="overload">[3/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga163db6c632f99222e3799a35fafee688">&#9670;&#160;</a></span>to_ptr() <span class="overload">[4/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -57683,7 +57728,7 @@ template&lt;typename type_t &gt; </div>
 </div>
 </div>
 <a id="ga416c4a8abc7b09c6c8d18ddbac24d588" name="ga416c4a8abc7b09c6c8d18ddbac24d588"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga416c4a8abc7b09c6c8d18ddbac24d588">&#9670;&#160;</a></span>to_ptr() <span class="overload">[4/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga416c4a8abc7b09c6c8d18ddbac24d588">&#9670;&#160;</a></span>to_ptr() <span class="overload">[5/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -57720,7 +57765,7 @@ template&lt;typename new_type_t , typename current_type_t &gt; </div>
 </div>
 </div>
 <a id="ga83355ce0e7f8e796131571578a6176bc" name="ga83355ce0e7f8e796131571578a6176bc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga83355ce0e7f8e796131571578a6176bc">&#9670;&#160;</a></span>to_ptr() <span class="overload">[5/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga83355ce0e7f8e796131571578a6176bc">&#9670;&#160;</a></span>to_ptr() <span class="overload">[6/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -57756,8 +57801,45 @@ template&lt;typename new_type_t , typename current_type_t &gt; </div>
 
 </div>
 </div>
+<a id="gadd4b41073f1b0b557827a1065d1d4b9c" name="gadd4b41073f1b0b557827a1065d1d4b9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadd4b41073f1b0b557827a1065d1d4b9c">&#9670;&#160;</a></span>to_ptr() <span class="overload">[7/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename type_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static type_t * xtd::convert_pointer::to_ptr </td>
+          <td>(</td>
+          <td class="paramtype">type_t &amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="convert__pointer_8h.html">xtd.core/include/xtd/convert_pointer.h</a>&gt;</code></p>
+
+<p>Casts a type into another type. </p>
+<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">button* value = <span class="keyword">new</span> <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">xtd::forms::button</a>();</div>
+<div class="line"><a class="code hl_enumvalue" href="group__xtd__core.html#ggacc628237bd3e274afe3d5d836e2db786afc5364bf9dbfa34954526becad136d4b">control</a>* result = convert::to_ptr&lt;xtd::forms::control&gt;(value);</div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
 <a id="ga3625fbc5ee12188b4288b561183179a0" name="ga3625fbc5ee12188b4288b561183179a0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga3625fbc5ee12188b4288b561183179a0">&#9670;&#160;</a></span>to_ptr() <span class="overload">[6/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3625fbc5ee12188b4288b561183179a0">&#9670;&#160;</a></span>to_ptr() <span class="overload">[8/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -61755,7 +61837,7 @@ template&lt;typename ... args_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 17 2023 15:02:14 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Jun 4 2023 18:33:15 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -931,7 +931,7 @@ The last two examples in this section use the xtd::diagnostics:process::start me
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">//      Successfully wrote 500 lines.</span></div>
 <div class="ttc" id="aclassxtd_1_1console_html_a07c2c9e615422f0ab7321b3331e83c73"><div class="ttname"><a href="classxtd_1_1console.html#a07c2c9e615422f0ab7321b3331e83c73">xtd::console::error</a></div><div class="ttdeci">static std::ostream error</div><div class="ttdoc">Gets the error output stream. A std::basic_ostream&lt;char_t&gt; that represents the error output stream.</div><div class="ttdef"><b>Definition:</b> console.h:36</div></div>
-<div class="ttc" id="anamespacextd_1_1io_html"><div class="ttname"><a href="namespacextd_1_1io.html">xtd::io</a></div><div class="ttdoc">The xtd::io namespace contains types that allow reading and writing to files and data streams,...</div><div class="ttdef"><b>Definition:</b> binary_reader.h:15</div></div>
+<div class="ttc" id="anamespacextd_1_1io_html"><div class="ttname"><a href="namespacextd_1_1io.html">xtd::io</a></div><div class="ttdoc">The xtd::io namespace contains types that allow reading and writing to files and data streams,...</div><div class="ttdef"><b>Definition:</b> binary_reader.h:17</div></div>
 </div><!-- fragment --> </dd>
 <dd>
 The following example shows how to read from a redirected error stream and wait for the child process to exit. It avoids a deadlock condition by calling stream_reader(p.standard_error()).read_to_end() before p.wait_for_exit. A deadlock condition can result if the parent process calls p.wait_for_exit before stream_reader(p.standard_error()).read_to_end() and the child process writes enough text to fill the redirected stream. The parent process would wait indefinitely for the child process to exit. The child process would wait indefinitely for the parent to read from the full <a class="el" href="classxtd_1_1diagnostics_1_1process.html#a9e09a8c158d401459b4ab4aa37a6f06e" title="Gets a stream used to read the error output of the application.">xtd::diagnostics::process::standard_error</a> stream. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
@@ -1896,7 +1896,7 @@ The event is enabled during asynchronous read operations on <a class="el" href="
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 17 2023 15:02:14 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Jun 4 2023 18:33:16 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

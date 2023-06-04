@@ -141,6 +141,12 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1test__class.html">xtd::tunit::test_class</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a test class.  <a href="classxtd_1_1tunit_1_1test__class.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1test__class__attribute.html">xtd::tunit::test_class_attribute&lt; test_class_t &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a test class attribute.  <a href="classxtd_1_1tunit_1_1test__class__attribute.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1test__cleanup__attribute.html">xtd::tunit::test_cleanup_attribute</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a test cleanup attribute.  <a href="classxtd_1_1tunit_1_1test__cleanup__attribute.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1test__event__args.html">xtd::tunit::test_event_args</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides data for the <a class="el" href="classxtd_1_1tunit_1_1test.html" title="Represents a test method.">xtd::tunit::test</a> events.  <a href="classxtd_1_1tunit_1_1test__event__args.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -907,7 +913,7 @@ Can be used with <a class="el" href="classxtd_1_1tunit_1_1assert.html" title="Th
 <div class="ttc" id="agroup__tunit_html_ga71bc78cb9e1ea9d8a968d69022f42120"><div class="ttname"><a href="group__tunit.html#ga71bc78cb9e1ea9d8a968d69022f42120">class_initialize_</a></div><div class="ttdeci">#define class_initialize_(method_name)</div><div class="ttdoc">add initialize class method to class test.</div><div class="ttdef"><b>Definition:</b> class_initialize_attribute.h:52</div></div>
 <div class="ttc" id="agroup__tunit_html_ga872266e06565f03f595fd60b8c6c4d73"><div class="ttname"><a href="group__tunit.html#ga872266e06565f03f595fd60b8c6c4d73">test_initialize_</a></div><div class="ttdeci">#define test_initialize_(method_name)</div><div class="ttdoc">Helper to create a test initialize method in a test class.</div><div class="ttdef"><b>Definition:</b> test_initialize_attribute.h:46</div></div>
 <div class="ttc" id="agroup__tunit_html_ga8bd2dd6a2b1d4aee6954c1e2e28041ac"><div class="ttname"><a href="group__tunit.html#ga8bd2dd6a2b1d4aee6954c1e2e28041ac">class_cleanup_</a></div><div class="ttdeci">#define class_cleanup_(method_name)</div><div class="ttdoc">Add class cleanup method to class test.</div><div class="ttdef"><b>Definition:</b> class_cleanup_attribute.h:52</div></div>
-<div class="ttc" id="agroup__tunit_html_gac5080d3ecd7735e7661f0bdf8c60cefd"><div class="ttname"><a href="group__tunit.html#gac5080d3ecd7735e7661f0bdf8c60cefd">test_cleanup_</a></div><div class="ttdeci">#define test_cleanup_(method_name)</div><div class="ttdoc">Helper to create a test cleanup method in a test class.</div><div class="ttdef"><b>Definition:</b> test_cleanup_attribute.h:46</div></div>
+<div class="ttc" id="agroup__tunit_html_gac5080d3ecd7735e7661f0bdf8c60cefd"><div class="ttname"><a href="group__tunit.html#gac5080d3ecd7735e7661f0bdf8c60cefd">test_cleanup_</a></div><div class="ttdeci">#define test_cleanup_(method_name)</div><div class="ttdoc">Helper to create a test cleanup method in a test class.</div><div class="ttdef"><b>Definition:</b> test_cleanup_attribute.h:51</div></div>
 <div class="ttc" id="agroup__tunit_html_gae6380e953939b23b1a9a4671b772bd60"><div class="ttname"><a href="group__tunit.html#gae6380e953939b23b1a9a4671b772bd60">ignore_test_method_</a></div><div class="ttdeci">#define ignore_test_method_(method_name)</div><div class="ttdoc">Add ignored test method to class test.</div><div class="ttdef"><b>Definition:</b> test_method_attribute.h:72</div></div>
 <div class="ttc" id="anamespacextd_1_1tunit_html"><div class="ttname"><a href="namespacextd_1_1tunit.html">xtd::tunit</a></div><div class="ttdoc">The tunit namespace contains a unit test library.</div><div class="ttdef"><b>Definition:</b> abort_error.h:10</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -2497,8 +2503,8 @@ Can be used with <a class="el" href="classxtd_1_1tunit_1_1assert.html" title="Th
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
 <div class="line">  <span class="keywordflow">return</span> <a class="code hl_class" href="classxtd_1_1tunit_1_1console__unit__test.html">console_unit_test</a>().<a class="code hl_function" href="classxtd_1_1tunit_1_1unit__test.html#a8da8a3353d5c71e0afa0de307fc40916">run</a>();</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__tunit_html_ga14fc641d752637ef79a213a129f925a0"><div class="ttname"><a href="group__tunit.html#ga14fc641d752637ef79a213a129f925a0">test_class_</a></div><div class="ttdeci">#define test_class_(class_name)</div><div class="ttdoc">Helper to create a test_class in a test unit.</div><div class="ttdef"><b>Definition:</b> test_class_attribute.h:38</div></div>
-<div class="ttc" id="agroup__tunit_html_ga7bf0fd397772b7a3b8caa47f79cea377"><div class="ttname"><a href="group__tunit.html#ga7bf0fd397772b7a3b8caa47f79cea377">test_class_from_</a></div><div class="ttdeci">#define test_class_from_(class_name, from_class_name)</div><div class="ttdoc">Helper to create a test_class in a test unit from a specified class base.</div><div class="ttdef"><b>Definition:</b> test_class_attribute.h:73</div></div>
+<div class="ttc" id="agroup__tunit_html_ga14fc641d752637ef79a213a129f925a0"><div class="ttname"><a href="group__tunit.html#ga14fc641d752637ef79a213a129f925a0">test_class_</a></div><div class="ttdeci">#define test_class_(class_name)</div><div class="ttdoc">Helper to create a test_class in a test unit.</div><div class="ttdef"><b>Definition:</b> test_class_attribute.h:43</div></div>
+<div class="ttc" id="agroup__tunit_html_ga7bf0fd397772b7a3b8caa47f79cea377"><div class="ttname"><a href="group__tunit.html#ga7bf0fd397772b7a3b8caa47f79cea377">test_class_from_</a></div><div class="ttdeci">#define test_class_from_(class_name, from_class_name)</div><div class="ttdoc">Helper to create a test_class in a test unit from a specified class base.</div><div class="ttdef"><b>Definition:</b> test_class_attribute.h:78</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -2961,7 +2967,7 @@ Can be used with <a class="el" href="classxtd_1_1tunit_1_1assert.html" title="Th
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 17 2023 15:02:14 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Jun 4 2023 18:33:15 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

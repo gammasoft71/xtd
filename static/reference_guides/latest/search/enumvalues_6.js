@@ -4,7 +4,7 @@ var searchData=
   ['g1_1',['g1',['../group__xtd__forms.html#ggaa3b7c1dbf42c3230c0c72610873e2714a0120a4f9196a5f9eb9f523f31f914da7',1,'xtd::forms']]],
   ['g2_2',['g2',['../group__xtd__forms.html#ggaa3b7c1dbf42c3230c0c72610873e2714ae1c80488853d86ab9d6decfe30d8930f',1,'xtd::forms']]],
   ['gainsboro_3',['gainsboro',['../group__xtd__drawing.html#ggabb6249e3fb8a4388778157257e99049ba2ca891b27d02c8a2fea622359be7c4dd',1,'xtd::drawing']]],
-  ['gamma_5fcorrected_4',['gamma_corrected',['../group__xtd__drawing.html#ggad4e96d77908287864ed615d4f2e820e1a2f67170067081ba5ca148d541fbe012b',1,'xtd::drawing::drawing2d']]],
+  ['gamma_5fcorrected_4',['gamma_corrected',['../group__xtd__drawing.html#ggafd60a6a6d05faefa464a894037aa6562a2f67170067081ba5ca148d541fbe012b',1,'xtd::drawing::drawing_2d']]],
   ['gcc_5',['gcc',['../group__xtd__core.html#ggaeb666968a02e2d1ea1aab56ec278ffc9ae0d511356bd44120af49cc96c9dcf3b3',1,'xtd']]],
   ['gdi_6',['gdi',['../group__xtd__drawing.html#gga9e8366816379505a879f17e5b0ce7be2a72aae47df19ab4330bdb83110094ebab',1,'xtd::drawing::imaging']]],
   ['get_5fbroadcast_5faddress_7',['get_broadcast_address',['../group__xtd__core.html#ggafcb65e427e8409a46ea4ddaee074a5b2aec1116a5bd84141a49ef76410567abd1',1,'xtd::net::sockets']]],

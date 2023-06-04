@@ -2,7 +2,7 @@ var searchData=
 [
   ['main_5fmenu_0',['main_menu',['../classxtd_1_1forms_1_1main__menu.html',1,'xtd::forms']]],
   ['math_1',['math',['../classxtd_1_1math.html',1,'xtd']]],
-  ['matrix_2',['matrix',['../classxtd_1_1drawing_1_1drawing2d_1_1matrix.html',1,'xtd::drawing::drawing2d']]],
+  ['matrix_2',['matrix',['../classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html',1,'xtd::drawing::drawing_2d']]],
   ['menu_3',['menu',['../classxtd_1_1forms_1_1menu.html',1,'xtd::forms']]],
   ['menu_5fimages_4',['menu_images',['../classxtd_1_1forms_1_1menu__images.html',1,'xtd::forms']]],
   ['menu_5fitem_5',['menu_item',['../classxtd_1_1forms_1_1menu__item.html',1,'xtd::forms']]],

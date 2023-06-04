@@ -91,7 +91,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="enum_8h_source.html">enum.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="enum__object_8h_source.html">enum_object.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for xtd::enum_object&lt; std::nullptr_t &gt;:</div>
 <div class="dyncontent">
@@ -236,6 +236,10 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a67969fa5530294c07e8fe0e7fa1daa4a"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga3d6cac730aeed730136cd058c136edee">sbyte</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1enum__object_3_01std_1_1nullptr__t_01_4.html#a67969fa5530294c07e8fe0e7fa1daa4a">to_sbyte</a> (enum_t value) noexcept</td></tr>
 <tr class="memdesc:a67969fa5530294c07e8fe0e7fa1daa4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts this instance to signed byte.  <br /></td></tr>
 <tr class="separator:a67969fa5530294c07e8fe0e7fa1daa4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1530e8b223dd5fffc3012bc6bd1366a"><td class="memTemplParams" colspan="2">template&lt;typename enum_t &gt; </td></tr>
+<tr class="memitem:ab1530e8b223dd5fffc3012bc6bd1366a"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1enum__object_3_01std_1_1nullptr__t_01_4.html#ab1530e8b223dd5fffc3012bc6bd1366a">to_string</a> (enum_t value) noexcept</td></tr>
+<tr class="memdesc:ab1530e8b223dd5fffc3012bc6bd1366a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts this instance to string.  <br /></td></tr>
+<tr class="separator:ab1530e8b223dd5fffc3012bc6bd1366a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad65dd7774b24b2b009b770bb7636e904"><td class="memTemplParams" colspan="2">template&lt;typename enum_t &gt; </td></tr>
 <tr class="memitem:ad65dd7774b24b2b009b770bb7636e904"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga7f48d085fbe8abdb92329be2bc04a236">uint16</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1enum__object_3_01std_1_1nullptr__t_01_4.html#ad65dd7774b24b2b009b770bb7636e904">to_uint16</a> (enum_t value) noexcept</td></tr>
 <tr class="memdesc:ad65dd7774b24b2b009b770bb7636e904"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts this instance to unsigned int16.  <br /></td></tr>
@@ -1428,6 +1432,43 @@ template&lt;typename enum_t &gt; </div>
 
 </div>
 </div>
+<a id="ab1530e8b223dd5fffc3012bc6bd1366a" name="ab1530e8b223dd5fffc3012bc6bd1366a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1530e8b223dd5fffc3012bc6bd1366a">&#9670;&#160;</a></span>to_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename enum_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> <a class="el" href="classxtd_1_1enum__object.html">xtd::enum_object</a>&lt; std::nullptr_t &gt;::to_string </td>
+          <td>(</td>
+          <td class="paramtype">enum_t&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts this instance to string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The value to convert. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A new <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> converted from this instance. </dd></dl>
+
+</div>
+</div>
 <a id="ad65dd7774b24b2b009b770bb7636e904" name="ad65dd7774b24b2b009b770bb7636e904"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad65dd7774b24b2b009b770bb7636e904">&#9670;&#160;</a></span>to_uint16()</h2>
 
@@ -1643,13 +1684,13 @@ template&lt;typename enum_t &gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>xtd.core/include/xtd/<a class="el" href="enum_8h_source.html">enum.h</a></li>
+<li>xtd.core/include/xtd/<a class="el" href="enum__object_8h_source.html">enum_object.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 17 2023 15:02:14 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Jun 4 2023 18:33:16 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

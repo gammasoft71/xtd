@@ -111,9 +111,9 @@ For information about current c++ libraries, retrieve the compiler object return
 By design, the <a class="el" href="classxtd_1_1operating__system.html" title="Represents information about an operating system, such as the version and platform identifier....">operating_system</a> class is not a general purpose means of describing an operating system, and you cannot derive a more inclusive type from the <a class="el" href="classxtd_1_1operating__system.html" title="Represents information about an operating system, such as the version and platform identifier....">operating_system</a> class. If you need a type to contain other information about C++ libraries, create your own type, then include a field of compiler type and any additional fields or methods that you require. </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Constructors</h2></td></tr>
-<tr class="memitem:a5b2a340687e452b44cd6aa55af4743cd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1compiler.html#a5b2a340687e452b44cd6aa55af4743cd">compiler</a> (<a class="el" href="group__xtd__core.html#gaeb666968a02e2d1ea1aab56ec278ffc9">xtd::compiler_id</a> <a class="el" href="group__xtd__core.html#gaeb666968a02e2d1ea1aab56ec278ffc9">compiler_id</a>)</td></tr>
-<tr class="memdesc:a5b2a340687e452b44cd6aa55af4743cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise a new <a class="el" href="classxtd_1_1compiler.html" title="Represents information about c++ libraries, such as the version and standard identifier....">xtd::compiler</a> class.  <br /></td></tr>
-<tr class="separator:a5b2a340687e452b44cd6aa55af4743cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2895d8819fe9e284745fc7854a84a6e3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1compiler.html#a2895d8819fe9e284745fc7854a84a6e3">compiler</a> (<a class="el" href="group__xtd__core.html#gaeb666968a02e2d1ea1aab56ec278ffc9">xtd::compiler_id</a> <a class="el" href="group__xtd__core.html#gaeb666968a02e2d1ea1aab56ec278ffc9">compiler_id</a>, const <a class="el" href="classxtd_1_1version.html">xtd::version</a> &amp;<a class="el" href="classxtd_1_1version.html">version</a>, <a class="el" href="group__xtd__core.html#ga8672853ea39d932089c60c4970d5bf4a">xtd::build_type</a> <a class="el" href="group__xtd__core.html#ga8672853ea39d932089c60c4970d5bf4a">build_type</a>, bool <a class="el" href="classxtd_1_1compiler.html#a56ed64db09a4efd757768d007b4f4124">is_64_bit</a>)</td></tr>
+<tr class="memdesc:a2895d8819fe9e284745fc7854a84a6e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise a new <a class="el" href="classxtd_1_1compiler.html" title="Represents information about c++ libraries, such as the version and standard identifier....">xtd::compiler</a> class.  <br /></td></tr>
+<tr class="separator:a2895d8819fe9e284745fc7854a84a6e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Properties</h2></td></tr>
 <tr class="memitem:a26e8527d072bb9417298a60a27046ad5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__xtd__core.html#ga8672853ea39d932089c60c4970d5bf4a">xtd::build_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1compiler.html#a26e8527d072bb9417298a60a27046ad5">build_type</a> () const noexcept</td></tr>
@@ -125,6 +125,9 @@ By design, the <a class="el" href="classxtd_1_1operating__system.html" title="Re
 <tr class="memitem:a5da7ecc466c732f8b016660e66a3490a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1compiler.html#a5da7ecc466c732f8b016660e66a3490a">is_build_type_debug</a> () const noexcept</td></tr>
 <tr class="memdesc:a5da7ecc466c732f8b016660e66a3490a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets build type is debug.  <br /></td></tr>
 <tr class="separator:a5da7ecc466c732f8b016660e66a3490a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56ed64db09a4efd757768d007b4f4124"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1compiler.html#a56ed64db09a4efd757768d007b4f4124">is_64_bit</a> () noexcept</td></tr>
+<tr class="memdesc:a56ed64db09a4efd757768d007b4f4124"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets is 64 bits.  <br /></td></tr>
+<tr class="separator:a56ed64db09a4efd757768d007b4f4124"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab184d7a2e4e77b194fd70a13f68fea4a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1compiler.html#ab184d7a2e4e77b194fd70a13f68fea4a">name</a> () const noexcept</td></tr>
 <tr class="memdesc:ab184d7a2e4e77b194fd70a13f68fea4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets compiler name.  <br /></td></tr>
 <tr class="separator:ab184d7a2e4e77b194fd70a13f68fea4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -134,9 +137,6 @@ By design, the <a class="el" href="classxtd_1_1operating__system.html" title="Re
 <tr class="memitem:a28e49b743d572853c1d337a15cb4ce25"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1version.html">xtd::version</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1compiler.html#a28e49b743d572853c1d337a15cb4ce25">version</a> () const noexcept</td></tr>
 <tr class="memdesc:a28e49b743d572853c1d337a15cb4ce25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets compiler version.  <br /></td></tr>
 <tr class="separator:a28e49b743d572853c1d337a15cb4ce25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a337683f9189465478050ad53f50a06d2"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1compiler.html#a337683f9189465478050ad53f50a06d2">is_64_bit</a> () noexcept</td></tr>
-<tr class="memdesc:a337683f9189465478050ad53f50a06d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets is 64 bits.  <br /></td></tr>
-<tr class="separator:a337683f9189465478050ad53f50a06d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Methods</h2></td></tr>
 <tr class="memitem:ab6673a4c14c6050f247b82fb6e2088c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1compiler.html#ab6673a4c14c6050f247b82fb6e2088c5">to_string</a> () const noexcept override</td></tr>
@@ -168,34 +168,51 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a1ee13700465eead7934f450749b952d7 inherit pub_static_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a5b2a340687e452b44cd6aa55af4743cd" name="a5b2a340687e452b44cd6aa55af4743cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b2a340687e452b44cd6aa55af4743cd">&#9670;&#160;</a></span>compiler()</h2>
+<a id="a2895d8819fe9e284745fc7854a84a6e3" name="a2895d8819fe9e284745fc7854a84a6e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2895d8819fe9e284745fc7854a84a6e3">&#9670;&#160;</a></span>compiler()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">xtd::compiler::compiler </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__xtd__core.html#gaeb666968a02e2d1ea1aab56ec278ffc9">xtd::compiler_id</a>&#160;</td>
-          <td class="paramname"><em>compiler_id</em></td><td>)</td>
+          <td class="paramname"><em>compiler_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1version.html">xtd::version</a> &amp;&#160;</td>
+          <td class="paramname"><em>version</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__xtd__core.html#ga8672853ea39d932089c60c4970d5bf4a">xtd::build_type</a>&#160;</td>
+          <td class="paramname"><em>build_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>is_64_bit</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Initialise a new <a class="el" href="classxtd_1_1compiler.html" title="Represents information about c++ libraries, such as the version and standard identifier....">xtd::compiler</a> class. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">compiler_id</td><td>One of <a class="el" href="group__xtd__core.html#gaeb666968a02e2d1ea1aab56ec278ffc9" title="Identifies the compiler, supported by an assembly.">xtd::compiler_id</a> values. </td></tr>
+    <tr><td class="paramname">version</td><td>The compiler version. </td></tr>
+    <tr><td class="paramname">build_type</td><td>One of <a class="el" href="group__xtd__core.html#ga8672853ea39d932089c60c4970d5bf4a" title="Identifies the build type.">xtd::build_type</a> values. </td></tr>
+    <tr><td class="paramname">is_64_bit</td><td>true if 64 bits; otherwise false. </td></tr>
   </table>
   </dd>
 </dl>
@@ -259,8 +276,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a337683f9189465478050ad53f50a06d2" name="a337683f9189465478050ad53f50a06d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a337683f9189465478050ad53f50a06d2">&#9670;&#160;</a></span>is_64_bit()</h2>
+<a id="a56ed64db09a4efd757768d007b4f4124" name="a56ed64db09a4efd757768d007b4f4124"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56ed64db09a4efd757768d007b4f4124">&#9670;&#160;</a></span>is_64_bit()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -269,7 +286,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool xtd::compiler::is_64_bit </td>
+          <td class="memname">bool xtd::compiler::is_64_bit </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -277,7 +294,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -436,7 +453,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 17 2023 15:02:14 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Jun 4 2023 18:33:16 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
