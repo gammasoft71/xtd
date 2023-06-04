@@ -12,3 +12,4 @@
 * [assume_is_false](assume_is_false/README.md) shows how to use [xtd::tunit::assume::is_false](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#a7a8a9392f55aaa14fc7d01cba25718ff) method.
 * [assume_is_greater](assume_is_greater/README.md) shows how to use [xtd::tunit::assume::is_greater](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#a87ea07cfd66d5717deac46fcb4b91bb1) method.
 * [assume_is_greater_or_equal](assume_is_greater_or_equal/README.md) shows how to use [xtd::tunit::assume::is_greater_or_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#a3b7e300416362c4661f4d3758d84561b) method.
+* [assume_is_instance_of](assume_is_instance_of/README.md) shows how to use [xtd::tunit::assume::is_instance_of](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#a4a507fca67fdd13672a40d376e9b2250) method.
