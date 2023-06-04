@@ -9,4 +9,5 @@ add_projects(
   valid_are_equal_with_tolerance
   valid_are_not_equal
   valid_are_not_same
+  valid_are_same
 )
