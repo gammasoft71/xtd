@@ -7,4 +7,5 @@ add_projects(
   assume
   assume_are_equal
   assume_are_equal_with_tolerance
+  assume_are_not_equal
 )
