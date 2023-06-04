@@ -71,6 +71,7 @@
 * [assume_is_empty](assumes/assume_is_empty/README.md) shows how to use [xtd::tunit::assume::is_empty](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#af6a6e19301a54df50339a84d425ed037) method.
 * [assume_is_false](assumes/assume_is_false/README.md) shows how to use [xtd::tunit::assume::is_false](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#a7a8a9392f55aaa14fc7d01cba25718ff) method.
 * [assume_is_greater](assumes/assume_is_greater/README.md) shows how to use [xtd::tunit::assume::is_greater](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#a87ea07cfd66d5717deac46fcb4b91bb1) method.
+* [assume_is_greater_or_equal](assumes/assume_is_greater_or_equal/README.md) shows how to use [xtd::tunit::assume::is_greater_or_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#a3b7e300416362c4661f4d3758d84561b) method.
 
 ## [Valids](valids/README.md)
 
