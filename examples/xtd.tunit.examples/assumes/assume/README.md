@@ -26,7 +26,7 @@ Run tests:
     Test aborted
     Expected: false
     But was:  true
-    Stack Trace: in |---OMITTED---|assume.cpp:14
+    Stack Trace: in |---OMITTED---|/assume.cpp:14
   ABORTED test.test_case3 (0 ms total)
     Test aborted
     Expected: No Exception to be thrown
