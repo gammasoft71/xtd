@@ -14,4 +14,5 @@ add_projects(
   assume_does_not_throw
   assume_is_empty
   assume_is_false
+  assume_is_greater
 )
