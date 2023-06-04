@@ -7,3 +7,4 @@
 * [valid_are_not_same](valid_are_not_same/README.md) shows how to use [xtd::tunit::valid::are_not_same](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#ad59ecd6c98bdeab3dedfcd6dc31cac61) method.
 * [valid_are_same](valid_are_same/README.md) shows how to use [xtd::tunit::valid::are_same](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#ae5549dcd1098cbba42fe513de727c4ec) method.
 * [valid_contains](valids/valid_contains/README.md) shows how to use [xtd::tunit::valid::contains](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#a3ac34fba7dcf30ee9d2205f361ab1857) method.
+* [valid_does_not_throw](valid_does_not_throw/README.md) shows how to use [xtd::tunit::valid::does_not_throw](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#ad5daf4889e0f44e20ad12e1db802e94f) method.

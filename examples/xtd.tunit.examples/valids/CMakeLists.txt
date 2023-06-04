@@ -11,4 +11,5 @@ add_projects(
   valid_are_not_same
   valid_are_same
   valid_contains
+  valid_does_not_throw
 )
