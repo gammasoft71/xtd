@@ -6,13 +6,13 @@ namespace unit_tests {
   class test_class_(test) {
   public:
     void test_method_(test_case_succeed) {
-      double d = 0.5999999999;
-      valid::are_equal(0.6, d, 0.000000001);
+      int i = 24;
+      assert::are_not_equal(23, i);
     }
     
     void test_method_(test_case_failed) {
-      double d = 0.5999999999;
-      valid::are_equal(0.6, d, 0.0000000001);
+      int i = 24;
+      assert::are_not_equal(24, i);
     }
   };
 }
@@ -27,9 +27,9 @@ auto main()->int {
 // Run tests:
 //   SUCCEED test.test_case_succeed (0 ms total)
 //   FAILED  test.test_case_failed (0 ms total)
-//     Expected: 0.6
-//     But was:  0.6
-//     Stack Trace: in |---OMITTED---|/valid_are_equal_with_validerance.cpp:13
+//     Expected: not 24
+//     But was:  24
+//     Stack Trace: in |---OMITTED---|/assert_are_not_equal.cpp:13
 //
 // Test results:
 //   SUCCEED 1 test.

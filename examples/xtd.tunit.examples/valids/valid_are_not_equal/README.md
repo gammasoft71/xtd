@@ -1,10 +1,10 @@
-# valid_are_equal_with_validerance
+# assert_are_not_equal
 
-Shows how to use [xtd::tunit::valid::are_equal_with_validerance](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#a189d508560ad830081bd12de04543862) method.
+Shows how to use [xtd::tunit::assert::are_not_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assert.html#ace6f054ea16c209831e41bb3ea9b358c) method.
 
 ## Sources
 
-[src/valid_are_equal_with_validerance.cpp](src/valid_are_equal_with_validerance.cpp)
+[src/assert_are_not_equal.cpp](src/assert_are_not_equal.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -23,9 +23,9 @@ Start 2 tests from 1 test case
 Run tests:
   SUCCEED test.test_case_succeed (0 ms total)
   FAILED  test.test_case_failed (0 ms total)
-    Expected: 0.6
-    But was:  0.6
-    Stack Trace: in |---OMITTED---|/valid_are_equal_with_validerance.cpp:13
+    Expected: not 24
+    But was:  24
+    Stack Trace: in |---OMITTED---|/assert_are_not_equal.cpp:13
 
 Test results:
   SUCCEED 1 test.
