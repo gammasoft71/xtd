@@ -17,4 +17,5 @@ add_projects(
   valid_is_greater
   valid_is_greater_or_equal
   valid_is_instance_of
+  valid_is_less
 )
