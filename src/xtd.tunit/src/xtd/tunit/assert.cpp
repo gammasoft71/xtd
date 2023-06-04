@@ -67,7 +67,7 @@ void assert::are_equal(long double expected, long double actual, const ustring& 
 }
 
 void assert::are_equal(float expected, float actual, float tolerance) {
-  are_equal(expected, actual, tolerance, "", csf_);
+  are_equal(expected, actual, tolerance, "", xtd::diagnostics::stack_frame::empty());
 }
 
 void assert::are_equal(float expected, float actual, float tolerance, const diagnostics::stack_frame& stack_frame) {
@@ -86,7 +86,7 @@ void assert::are_equal(float expected, float actual, float tolerance, const ustr
 }
 
 void assert::are_equal(double expected, double actual, double tolerance) {
-  are_equal(expected, actual, tolerance, "", csf_);
+  are_equal(expected, actual, tolerance, "", xtd::diagnostics::stack_frame::empty());
 }
 
 void assert::are_equal(double expected, double actual, double tolerance, const diagnostics::stack_frame& stack_frame) {
@@ -105,7 +105,7 @@ void assert::are_equal(double expected, double actual, double tolerance, const u
 }
 
 void assert::are_equal(long double expected, long double actual, long double tolerance) {
-  are_equal(expected, actual, tolerance, "", csf_);
+  are_equal(expected, actual, tolerance, "", xtd::diagnostics::stack_frame::empty());
 }
 
 void assert::are_equal(long double expected, long double actual, long double tolerance, const diagnostics::stack_frame& stack_frame) {
