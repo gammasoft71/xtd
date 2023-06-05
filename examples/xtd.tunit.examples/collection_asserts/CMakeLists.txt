@@ -15,4 +15,5 @@ add_projects(
   collection_assert_does_not_contain
   collection_assert_is_empty
   collection_assert_is_not_empty
+  collection_assert_is_ordered
 )
