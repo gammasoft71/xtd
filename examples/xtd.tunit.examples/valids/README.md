@@ -24,3 +24,4 @@
 * [valid_is_null](valid_is_null/README.md) shows how to use [xtd::tunit::valid::is_null](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#a27d63fc9c4cdc41ad374e652752e4023) method.
 * [valid_is_positive](valid_is_positive/README.md) shows how to use [xtd::tunit::valid::is_positive](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#aa104ebf5b860333bffcece69373e45a5) method.
 * [valid_is_true](valid_is_true/README.md) shows how to use [xtd::tunit::valid::is_true](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#a731700803a9b9e74e46e6dcf0f140161) method.
+* [valid_is_zero](valid_is_zero/README.md) shows how to use [xtd::tunit::valid::is_zero](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#a82842ce982e054e8145286d64e83266b) method.
