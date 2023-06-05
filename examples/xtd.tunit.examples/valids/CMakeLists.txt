@@ -23,4 +23,5 @@ add_projects(
   valid_is_negative
   valid_is_not_empty
   valid_is_not_instance_of
+  valid_is_not_null
 )
