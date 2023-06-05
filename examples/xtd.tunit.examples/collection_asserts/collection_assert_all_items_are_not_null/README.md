@@ -1,10 +1,10 @@
-# all_items_are_not_null
+# collection_assert_all_items_are_not_null
 
 Shows how to use [xtd::tunit::collection_assert::all_items_are_not_null](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assert.html#af705588fd1b6ec68f4f1703c98993021) method.
 
 ## Sources
 
-[src/all_items_are_not_null.cpp](src/all_items_are_not_null.cpp)
+[src/collection_assert_all_items_are_not_null.cpp](src/collection_assert_all_items_are_not_null.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 

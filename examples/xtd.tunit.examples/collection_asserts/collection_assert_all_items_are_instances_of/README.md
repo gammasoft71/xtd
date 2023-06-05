@@ -1,10 +1,10 @@
-# all_items_are_instances_of
+# collection_assert_all_items_are_instances_of
 
 Shows how to use [xtd::tunit::collection_assert::all_items_are_instances_of](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assert.html#ae0a5816d18fbb07f3697471a3d62665b) method.
 
 ## Sources
 
-[src/all_items_are_instances_of.cpp](src/all_items_are_instances_of.cpp)
+[src/collection_assert_all_items_are_instances_of.cpp](src/collection_assert_all_items_are_instances_of.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
