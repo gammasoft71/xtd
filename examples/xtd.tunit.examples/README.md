@@ -113,6 +113,7 @@
 * [valid_is_not_zero](valids/valid_is_not_zero/README.md) shows how to use [xtd::tunit::valid::is_not_zero](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#a2b6ced238a6f4dfefc171c39f330cb78) method.
 * [valid_is_null](valids/valid_is_null/README.md) shows how to use [xtd::tunit::valid::is_null](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#a27d63fc9c4cdc41ad374e652752e4023) method.
 * [valid_is_positive](valids/valid_is_positive/README.md) shows how to use [xtd::tunit::valid::is_positive](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#aa104ebf5b860333bffcece69373e45a5) method.
+* [valid_is_true](valids/valid_is_true/README.md) shows how to use [xtd::tunit::valid::is_true](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#a731700803a9b9e74e46e6dcf0f140161) method.
 
 ## [Test classes](test_classes/README.md)
 
@@ -124,7 +125,6 @@
 
 * [console_unit_test](unit_tests/console_unit_test/README.md) shows how to use [xtd::tunit::console_unit_test](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1console__unit__test.html) class.
 * [ostream_unit_test](unit_tests/ostream_unit_test/README.md) shows how to use [xtd::tunit::ostream_unit_test](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1ostream__unit__test.html) class.
-
 
 ## [Others](others/README.md)
 
