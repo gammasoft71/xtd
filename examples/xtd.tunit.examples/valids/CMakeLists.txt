@@ -25,4 +25,5 @@ add_projects(
   valid_is_not_instance_of
   valid_is_not_null
   valid_is_not_zero
+  valid_is_null
 )
