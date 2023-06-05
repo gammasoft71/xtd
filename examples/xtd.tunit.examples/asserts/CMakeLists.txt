@@ -25,6 +25,7 @@ add_projects(
   assert_is_less_or_equal
   assert_is_negative
   assert_is_not_empty
+  assert_is_not_instance_of
   assert_is_not_null
   assert_is_not_zero
   assert_is_null
