@@ -28,4 +28,5 @@ add_projects(
   valid_is_null
   valid_is_positive
   valid_is_true
+  valid_is_zero
 )
