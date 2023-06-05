@@ -10,4 +10,5 @@ add_projects(
   collection_assert_are_equal
   collection_assert_are_equivalent
   collection_assert_are_not_equal
+  collection_assert_are_not_equivalent
 )
