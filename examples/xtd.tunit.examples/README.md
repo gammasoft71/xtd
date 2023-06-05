@@ -48,6 +48,7 @@
 * [collection_assert_all_items_are_not_null](collection_asserts/collection_assert_all_items_are_not_null/README.md) shows how to use [xtd::tunit::collection_assert::all_items_are_not_null](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assert.html#af705588fd1b6ec68f4f1703c98993021) method.
 * [collection_assert_all_items_are_unique](collection_asserts/collection_assert_all_items_are_unique/README.md) shows how to use [xtd::tunit::collection_assert::all_items_are_unique](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assume.html#a27bcdcd1d0c91869ba1115f91ef01780) method.
 * [collection_assert_are_equal](collection_asserts/collection_assert_are_equal/README.md) shows how to use [xtd::tunit::collection_assert::are_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assume.html#a7ecd95170ccc9e601963ff97e56126ba) method.
+* [collection_assert_are_equivalent](collection_asserts/collection_assert_are_equivalent/README.md) shows how to use [xtd::tunit::collection_assert::are_equivalent](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assume.html#a3ad3f9cdf32d816d310b55ddf66654e5) method.
 
 ## [String asserts](string_asserts/README.md)
 
