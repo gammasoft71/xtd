@@ -18,3 +18,4 @@
 * [valid_is_NaN](valid_is_NaN/README.md) shows how to use [xtd::tunit::valid::is_NaN](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#afcd9ae5eef87fde316c19d2c47f631f7) method.
 * [valid_is_negative](valid_is_negative/README.md) shows how to use [xtd::tunit::valid::is_negative](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#aed095681e8c47aa686b95ccd33732792) method.
 * [valid_is_not_empty](valid_is_not_empty/README.md) shows how to use [xtd::tunit::valid::is_not_empty](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#a5873770dc074c8668b060b1ac5c436a2) method.
+* [valid_is_not_instance_of](valid_is_not_instance_of/README.md) shows how to use [xtd::tunit::valid::is_not_instance_of](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#a2b1acd4a95add6d5d61828cf58026bad) method.
