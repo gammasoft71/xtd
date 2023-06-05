@@ -55,6 +55,7 @@
 * [collection_assert_does_not_contain](collection_asserts/collection_assert_does_not_contain/README.md) shows how to use [xtd::tunit::collection_assert::does_not_contain](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assert.html#a119e481bfc5fbbfd46f33d57cf8e4360) method.
 * [collection_assert_is_empty](collection_asserts/collection_assert_is_empty/README.md) shows how to use [xtd::tunit::collection_assert::is_empty](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assert.html#a9c7837d7a624e3dda086f3eceaf6fd4e) method.
 * [collection_assert_is_not_empty](collection_asserts/collection_assert_is_not_empty/README.md) shows how to use [xtd::tunit::collection_assert::is_empty](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assert.html#ae90a7624d807c336badf3a19f9d0c5ee) method.
+* [collection_assert_is_ordered](collection_asserts/collection_assert_is_ordered/README.md) shows how to use [xtd::tunit::collection_assert::is_ordered](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assert.html#a5af8ad7461b20cf4a1b6528377a5be0f) method.
 
 ## [String asserts](string_asserts/README.md)
 
