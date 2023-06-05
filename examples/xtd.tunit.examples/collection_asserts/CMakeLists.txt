@@ -13,4 +13,5 @@ add_projects(
   collection_assert_are_not_equivalent
   collection_assert_contains
   collection_assert_does_not_contain
+  collection_assert_is_empty
 )
