@@ -21,4 +21,5 @@ add_projects(
   valid_is_less_or_equal
   valid_is_NaN
   valid_is_negative
+  valid_is_not_empty
 )
