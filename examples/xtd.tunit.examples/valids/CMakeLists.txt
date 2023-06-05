@@ -30,4 +30,5 @@ add_projects(
   valid_is_true
   valid_is_zero
   valid_throws
+  valid_throws_any
 )
