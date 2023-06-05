@@ -52,6 +52,7 @@
 * [collection_assert_are_not_equal](collection_asserts/collection_assert_are_not_equal/README.md) shows how to use [xtd::tunit::collection_assert::are_not_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assume.html#ac4a06f518139e34519771a3f32c370fa) method.
 * [collection_assert_are_not_equivalent](collection_asserts/collection_assert_are_not_equivalent/README.md) shows how to use [xtd::tunit::collection_assert::are_not_equivalent](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assert.html#a7daf01c760fb75d277dc53aac0027993) method.
 * [collection_assert_contains](collection_asserts/collection_assert_contains/README.md) shows how to use [xtd::tunit::collection_assert::contains](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assert.html#abf1433eff0dea381a6b7a3d90be8f706) method.
+* [collection_assert_does_not_contain](collection_asserts/collection_assert_does_not_contain/README.md) shows how to use [xtd::tunit::collection_assert::does_not_contain](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assert.html#a119e481bfc5fbbfd46f33d57cf8e4360) method.
 
 ## [String asserts](string_asserts/README.md)
 
