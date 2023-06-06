@@ -6,6 +6,11 @@ include(../../scripts/cmake/xtd_commands.cmake)
 include(../../scripts/cmake/xtd_version.cmake)
 add_include_directories(include)
 include(references.cmake)
+
+if (XTD_BUILD_LIBRARIES_XTD_FORMS AND XTD_BUILD_LIBRARIES_XTD_DRAWING AND XTD_BUILD_LIBRARIES_XTD_CORE)
+  set(SYSTEM_REPORT_FILES include/xtd/system_report.h src/xtd/system_report.cpp)
+endif ()
+
 add_sources(
   include/doxygen/cmake_build_options_page.dox
   include/doxygen/cmake_commands_page.dox
@@ -29,10 +34,9 @@ add_sources(
   include/doxygen/xtd_forms_examples.dox
   include/doxygen/xtd_tunit_examples.dox
   include/xtd/xtd
-  include/xtd/system_report.h
   include/xtd/xtd
   include/xtd/xtd.h
-  src/xtd/system_report.cpp
+  ${SYSTEM_REPORT_FILES}
 )
 target_type(${XTD_LIBRARY_TYPE})
 
