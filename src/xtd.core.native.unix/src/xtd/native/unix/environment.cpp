@@ -94,6 +94,7 @@ namespace {
     if (major == 11) return make_tuple("macOS", "Big Sur", version);
     if (major == 12) return make_tuple("macOS", "Monterey", version);
     if (major == 13) return make_tuple("macOS", "Ventura", version);
+    if (major == 14) return make_tuple("macOS", "Sonoma", version);
     return make_tuple(name, codename, version);
   }
 #endif
