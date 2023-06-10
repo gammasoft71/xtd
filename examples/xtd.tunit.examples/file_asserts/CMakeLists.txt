@@ -5,4 +5,5 @@ find_package(xtd REQUIRED)
 
 add_projects(
   file_assert
+  file_assert_are_equal
 )
