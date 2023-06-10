@@ -67,6 +67,10 @@
 * [directory_assert_does_not_exist](directory_asserts/directory_assert_does_not_exist/README.md) shows how to use [xtd::tunit::directory_assert::does_not_exist](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1directory__assert.html#ae7975e954f3fc3b6314c139ab191e9e2) method.
 * [directory_assert_exists](directory_asserts/directory_assert_exists/README.md) shows how to use [xtd::tunit::directory_assert::exists](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1directory__assert.html#ae7975e954f3fc3b6314c139ab191e9e2) method.
 
+## [File asserts](file_asserts/README.md)
+
+* [file_assert](file_asserts/file_assert/README.md) shows how to use [xtd::tunit::file_assert](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1file__assert.html) class.
+
 ## [String asserts](string_asserts/README.md)
 
 * [string_assert_are_equal_ignoring_case](string_asserts/string_assert_are_equal_ignoring_case/README.md) shows how to use [xtd::tunit::string_assert::are_equal_ignoring_case](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__assert.html#aad86b74256b792f6bb7e752303d94ca4) method.
@@ -76,7 +80,6 @@
 ## [User assert](user_asserts/README.md)
 
 * [math_assert](user_asserts/math_assert/README.md) shows how to create your own [xtd::tunit::assert](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assert.html) class.
-
 
 ## [Assumes](assumes/README.md)
 
