@@ -285,7 +285,7 @@ namespace unit_tests {
       assert::are_equal("Hello, World!", s);
     }
     
-    test_method_attribute create_string_from_chars_attr {"create_string_from_literal", *this, &hello_world_test::create_string_from_chars};
+    test_method_attribute create_string_from_chars_attr {"create_string_from_chars", *this, &hello_world_test::create_string_from_chars};
     void create_string_from_chars() {
       string s = {'H', 'e', 'l', 'l', 'o', ',', ' ', 'W', 'o', 'r', 'l', 'd', '!'};
       valid::are_equal(13, s.size());
