@@ -79,7 +79,7 @@
 * [Hello Worlds](xtd.tunit.examples/hello_worlds/README.md) contains xtd.tunit "Hello, World!" examples.
 * [Asserts](xtd.tunit.examples/asserts/README.md) contains asserts examples.
 * [Collection asserts](xtd.tunit.examples/collection_asserts/README.md) contains collection asserts examples.
-* [Directory asserts](xtd.tunit.examples/dyrectory_asserts/README.md) contains directory asserts examples.
+* [Directory asserts](xtd.tunit.examples/directory_asserts/README.md) contains directory asserts examples.
 * [String asserts](xtd.tunit.examples/string_asserts/README.md) contains string asserts examples.
 * [User asserts](xtd.tunit.examples/user_asserts/README.md) contains user asserts examples.
 * [Assumes](xtd.tunit.examples/assumes/README.md) contains assumes examples.
