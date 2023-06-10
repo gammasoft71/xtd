@@ -402,76 +402,6 @@ namespace xtd {
       static void are_not_equal(const char_t* expected, const char_t* actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {are_not_equal(std::basic_ifstream<char_t>(expected), std::basic_ifstream<char_t>(actual), message, stack_frame);}
       /// @endcond
       
-      /// @brief Validate that file exists.
-      /// @param expected the expected value.
-      /// @param actual the actual value.
-      /// @par Examples
-      /// @code
-      /// std::ifstream f1("Test1.txt");
-      /// f1.close();
-      /// xtd::tunit::file_valid::exists("Test1.txt"); // test ok.
-      /// xtd::tunit::file_valid::exists("Test2.txt"); // test fails
-      /// @endcode
-      template<typename char_t>
-      static void exists(const std::basic_string<char_t>& file) {exists(file, "", xtd::diagnostics::stack_frame::empty());}
-      /// @brief Validate that file exists.
-      /// @param expected the expected value.
-      /// @param actual the actual value.
-      /// @param stack_frame Contains information about current file and current line.
-      /// @par Examples
-      /// @code
-      /// std::ifstream f1("Test1.txt");
-      /// f1.close();
-      /// xtd::tunit::file_valid::exists("Test1.txt", csf_); // test ok.
-      /// xtd::tunit::file_valid::exists("Test2.txt", csf_); // test fails
-      /// @endcode
-      template<typename char_t>
-      static void exists(const std::basic_string<char_t>& file, const xtd::diagnostics::stack_frame& stack_frame) {exists(file, "", stack_frame);}
-      /// @brief Validate that file exists.
-      /// @param expected the expected value.
-      /// @param actual the actual value.
-      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @par Examples
-      /// @code
-      /// std::ifstream f1("Test1.txt");
-      /// f1.close();
-      /// xtd::tunit::file_valid::exists("Test1.txt", "User message..."); // test ok.
-      /// xtd::tunit::file_valid::exists("Test2.txt", "User message..."); // test fails
-      /// @endcode
-      template<typename char_t>
-      static void exists(const std::basic_string<char_t>& file, const std::string& message) {exists(file, message, xtd::diagnostics::stack_frame::empty());}
-      /// @brief Validate that file exists.
-      /// @param expected the expected value.
-      /// @param actual the actual value.
-      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @param stack_frame Contains information about current file and current line.
-      /// @par Examples
-      /// @code
-      /// std::ifstream f1("Test1.txt");
-      /// f1.close();
-      /// xtd::tunit::file_valid::exists("Test1.txt" "User message...", csf_); // test ok.
-      /// xtd::tunit::file_valid::exists("Test2.txt", "User message...", csf_); // test fails
-      /// @endcode
-      template<typename char_t>
-      static void exists(const std::basic_string<char_t>& file, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        try {
-          file_assert::exists(file, message, stack_frame);
-        } catch (...) {
-          base_assert::error();
-        }
-      }
-      
-      /// @cond
-      template<typename char_t>
-      static void exists(const char_t* file) {exists(file, "", xtd::diagnostics::stack_frame::empty());}
-      template<typename char_t>
-      static void exists(const char_t* file, const xtd::diagnostics::stack_frame& stack_frame) {exists(file, "", stack_frame);}
-      template<typename char_t>
-      static void exists(const char_t* file, const std::string& message) {exists(file, message, xtd::diagnostics::stack_frame::empty());}
-      template<typename char_t>
-      static void exists(const char_t* file, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {exists(std::basic_string<char_t>(file), message, stack_frame);}
-      /// @endcond
-      
       /// @brief Validate that file not exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -542,6 +472,76 @@ namespace xtd {
       static void does_not_exist(const char_t* file, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {does_not_exist(std::basic_string<char_t>(file), message, stack_frame);}
       /// @endcond
       /// @}
+
+      /// @brief Validate that file exists.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @par Examples
+      /// @code
+      /// std::ifstream f1("Test1.txt");
+      /// f1.close();
+      /// xtd::tunit::file_valid::exists("Test1.txt"); // test ok.
+      /// xtd::tunit::file_valid::exists("Test2.txt"); // test fails
+      /// @endcode
+      template<typename char_t>
+      static void exists(const std::basic_string<char_t>& file) {exists(file, "", xtd::diagnostics::stack_frame::empty());}
+      /// @brief Validate that file exists.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param stack_frame Contains information about current file and current line.
+      /// @par Examples
+      /// @code
+      /// std::ifstream f1("Test1.txt");
+      /// f1.close();
+      /// xtd::tunit::file_valid::exists("Test1.txt", csf_); // test ok.
+      /// xtd::tunit::file_valid::exists("Test2.txt", csf_); // test fails
+      /// @endcode
+      template<typename char_t>
+      static void exists(const std::basic_string<char_t>& file, const xtd::diagnostics::stack_frame& stack_frame) {exists(file, "", stack_frame);}
+      /// @brief Validate that file exists.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @par Examples
+      /// @code
+      /// std::ifstream f1("Test1.txt");
+      /// f1.close();
+      /// xtd::tunit::file_valid::exists("Test1.txt", "User message..."); // test ok.
+      /// xtd::tunit::file_valid::exists("Test2.txt", "User message..."); // test fails
+      /// @endcode
+      template<typename char_t>
+      static void exists(const std::basic_string<char_t>& file, const std::string& message) {exists(file, message, xtd::diagnostics::stack_frame::empty());}
+      /// @brief Validate that file exists.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param stack_frame Contains information about current file and current line.
+      /// @par Examples
+      /// @code
+      /// std::ifstream f1("Test1.txt");
+      /// f1.close();
+      /// xtd::tunit::file_valid::exists("Test1.txt" "User message...", csf_); // test ok.
+      /// xtd::tunit::file_valid::exists("Test2.txt", "User message...", csf_); // test fails
+      /// @endcode
+      template<typename char_t>
+      static void exists(const std::basic_string<char_t>& file, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
+        try {
+          file_assert::exists(file, message, stack_frame);
+        } catch (...) {
+          base_assert::error();
+        }
+      }
+      
+      /// @cond
+      template<typename char_t>
+      static void exists(const char_t* file) {exists(file, "", xtd::diagnostics::stack_frame::empty());}
+      template<typename char_t>
+      static void exists(const char_t* file, const xtd::diagnostics::stack_frame& stack_frame) {exists(file, "", stack_frame);}
+      template<typename char_t>
+      static void exists(const char_t* file, const std::string& message) {exists(file, message, xtd::diagnostics::stack_frame::empty());}
+      template<typename char_t>
+      static void exists(const char_t* file, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {exists(std::basic_string<char_t>(file), message, stack_frame);}
+      /// @endcond
     };
   }
 }
