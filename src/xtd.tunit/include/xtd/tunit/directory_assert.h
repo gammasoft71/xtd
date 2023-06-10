@@ -24,7 +24,7 @@ namespace xtd {
     /// @remarks Each method may be called without a message, with a simple text message or with a message and arguments. In the last case the message is formatted using the provided text and arguments.
     /// @par Examples
     /// This example show how to used some methods :
-    /// @include assert.cpp
+    /// @include directory_assert.cpp
     class tunit_export_ directory_assert final : private base_assert {
     public:
       /// @cond

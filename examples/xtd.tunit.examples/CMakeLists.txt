@@ -7,6 +7,7 @@ add_projects(
   asserts
   assumes
   collection_asserts
+  directory_asserts
   hello_worlds
   others
   string_asserts

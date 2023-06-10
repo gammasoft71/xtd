@@ -59,6 +59,10 @@
 * [collection_assert_is_not_empty](collection_asserts/collection_assert_is_not_empty/README.md) shows how to use [xtd::tunit::collection_assert::is_not_empty](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assert.html#ae90a7624d807c336badf3a19f9d0c5ee) method.
 * [collection_assert_is_ordered](collection_asserts/collection_assert_is_ordered/README.md) shows how to use [xtd::tunit::collection_assert::is_ordered](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assert.html#a5af8ad7461b20cf4a1b6528377a5be0f) method.
 
+## [Directory asserts](directory_asserts/README.md)
+
+* [directory_assert](directory_asserts/directory_assert/README.md) shows how to use [xtd::tunit::directory_assert](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1directory__assert.html) class.
+
 ## [String asserts](string_asserts/README.md)
 
 * [string_assert_are_equal_ignoring_case](string_asserts/string_assert_are_equal_ignoring_case/README.md) shows how to use [xtd::tunit::string_assert::are_equal_ignoring_case](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__assert.html#aad86b74256b792f6bb7e752303d94ca4) method.
