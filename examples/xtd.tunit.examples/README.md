@@ -7,6 +7,7 @@
 ## [Hello Worlds](hello_worlds/README.md)
 
 * [hello_world_tunit](hello_worlds/hello_world_tunit/README.md) shows the classic first application "hello, world!".
+* [hello_world_tunit_without_helpers](hello_worlds/hello_world_tunit_without_helpers/README.md) shows the classic first application "hello, world!" without helpers.
 
 ## [Asserts](asserts/README.md)
 
