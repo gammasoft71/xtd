@@ -7,5 +7,6 @@ add_projects(
   directory_assert
   directory_assert_are_equal
   directory_assert_are_not_equal
+  directory_assert_does_not_exist
   directory_assert_exists
 )
