@@ -454,82 +454,6 @@ namespace xtd {
       static void are_not_equal(const char_t* expected, const char_t* actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {are_not_equal(std::basic_ifstream<char_t>(expected), std::basic_ifstream<char_t>(actual), message, stack_frame);}
       /// @endcond
       
-      /// @brief Asserts that file exists.
-      /// @param expected the expected value.
-      /// @param actual the actual value.
-      /// @exception xtd::tunit::assert_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// std::ifstream f1("Test1.txt");
-      /// f1.close();
-      /// xtd::tunit::file_assert::exists("Test1.txt"); // test ok.
-      /// xtd::tunit::file_assert::exists("Test2.txt"); // test throws an assert_error exception.
-      /// @endcode
-      template<typename char_t>
-      static void exists(const std::basic_string<char_t>& file) {exists(file, "", xtd::diagnostics::stack_frame::empty());}
-      /// @brief Asserts that file exists.
-      /// @param expected the expected value.
-      /// @param actual the actual value.
-      /// @param stack_frame Contains information about current file and current line.
-      /// @exception xtd::tunit::assert_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// std::ifstream f1("Test1.txt");
-      /// f1.close();
-      /// xtd::tunit::file_assert::exists("Test1.txt", csf_); // test ok.
-      /// xtd::tunit::file_assert::exists("Test2.txt", csf_); // test throws an assert_error exception.
-      /// @endcode
-      template<typename char_t>
-      static void exists(const std::basic_string<char_t>& file, const xtd::diagnostics::stack_frame& stack_frame) {exists(file, "", stack_frame);}
-      /// @brief Asserts that file exists.
-      /// @param expected the expected value.
-      /// @param actual the actual value.
-      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @exception xtd::tunit::assert_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// std::ifstream f1("Test1.txt");
-      /// f1.close();
-      /// xtd::tunit::file_assert::exists("Test1.txt", "User message..."); // test ok.
-      /// xtd::tunit::file_assert::exists("Test2.txt", "User message..."); // test throws an assert_error exception.
-      /// @endcode
-      template<typename char_t>
-      static void exists(const std::basic_string<char_t>& file, const std::string& message) {exists(file, message, xtd::diagnostics::stack_frame::empty());}
-      /// @brief Asserts that file exists.
-      /// @param expected the expected value.
-      /// @param actual the actual value.
-      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @param stack_frame Contains information about current file and current line.
-      /// @exception xtd::tunit::assert_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// std::ifstream f1("Test1.txt");
-      /// f1.close();
-      /// xtd::tunit::file_assert::exists("Test1.txt" "User message...", csf_); // test ok.
-      /// xtd::tunit::file_assert::exists("Test2.txt", "User message...", csf_); // test throws an assert_error exception.
-      /// @endcode
-      template<typename char_t>
-      static void exists(const std::basic_string<char_t>& file, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        auto is = std::basic_ifstream<char_t>(file);
-        if (is.good() == false)
-          base_assert::fail("file exists", base_assert::to_string(file), message, stack_frame);
-        else {
-          is.close();
-          assert::succeed(message, stack_frame);
-        }
-      }
-      
-      /// @cond
-      template<typename char_t>
-      static void exists(const char_t* file) {exists(file, "", xtd::diagnostics::stack_frame::empty());}
-      template<typename char_t>
-      static void exists(const char_t* file, const xtd::diagnostics::stack_frame& stack_frame) {exists(file, "", stack_frame);}
-      template<typename char_t>
-      static void exists(const char_t* file, const std::string& message) {exists(file, message, xtd::diagnostics::stack_frame::empty());}
-      template<typename char_t>
-      static void exists(const char_t* file, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {exists(std::basic_string<char_t>(file), message, stack_frame);}
-      /// @endcond
-      
       /// @brief Asserts that file not exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -606,6 +530,82 @@ namespace xtd {
       static void does_not_exist(const char_t* file, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {does_not_exist(std::basic_string<char_t>(file), message, stack_frame);}
       /// @endcond
       /// @}
-    };
+
+      /// @brief Asserts that file exists.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @exception xtd::tunit::assert_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::ifstream f1("Test1.txt");
+      /// f1.close();
+      /// xtd::tunit::file_assert::exists("Test1.txt"); // test ok.
+      /// xtd::tunit::file_assert::exists("Test2.txt"); // test throws an assert_error exception.
+      /// @endcode
+      template<typename char_t>
+      static void exists(const std::basic_string<char_t>& file) {exists(file, "", xtd::diagnostics::stack_frame::empty());}
+      /// @brief Asserts that file exists.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param stack_frame Contains information about current file and current line.
+      /// @exception xtd::tunit::assert_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::ifstream f1("Test1.txt");
+      /// f1.close();
+      /// xtd::tunit::file_assert::exists("Test1.txt", csf_); // test ok.
+      /// xtd::tunit::file_assert::exists("Test2.txt", csf_); // test throws an assert_error exception.
+      /// @endcode
+      template<typename char_t>
+      static void exists(const std::basic_string<char_t>& file, const xtd::diagnostics::stack_frame& stack_frame) {exists(file, "", stack_frame);}
+      /// @brief Asserts that file exists.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assert_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::ifstream f1("Test1.txt");
+      /// f1.close();
+      /// xtd::tunit::file_assert::exists("Test1.txt", "User message..."); // test ok.
+      /// xtd::tunit::file_assert::exists("Test2.txt", "User message..."); // test throws an assert_error exception.
+      /// @endcode
+      template<typename char_t>
+      static void exists(const std::basic_string<char_t>& file, const std::string& message) {exists(file, message, xtd::diagnostics::stack_frame::empty());}
+      /// @brief Asserts that file exists.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param stack_frame Contains information about current file and current line.
+      /// @exception xtd::tunit::assert_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::ifstream f1("Test1.txt");
+      /// f1.close();
+      /// xtd::tunit::file_assert::exists("Test1.txt" "User message...", csf_); // test ok.
+      /// xtd::tunit::file_assert::exists("Test2.txt", "User message...", csf_); // test throws an assert_error exception.
+      /// @endcode
+      template<typename char_t>
+      static void exists(const std::basic_string<char_t>& file, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
+        auto is = std::basic_ifstream<char_t>(file);
+        if (is.good() == false)
+          base_assert::fail("file exists", base_assert::to_string(file), message, stack_frame);
+        else {
+          is.close();
+          assert::succeed(message, stack_frame);
+        }
+      }
+      
+      /// @cond
+      template<typename char_t>
+      static void exists(const char_t* file) {exists(file, "", xtd::diagnostics::stack_frame::empty());}
+      template<typename char_t>
+      static void exists(const char_t* file, const xtd::diagnostics::stack_frame& stack_frame) {exists(file, "", stack_frame);}
+      template<typename char_t>
+      static void exists(const char_t* file, const std::string& message) {exists(file, message, xtd::diagnostics::stack_frame::empty());}
+      template<typename char_t>
+      static void exists(const char_t* file, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {exists(std::basic_string<char_t>(file), message, stack_frame);}
+      /// @endcond
+     };
   }
 }
