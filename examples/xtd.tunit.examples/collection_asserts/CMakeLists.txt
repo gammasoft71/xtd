@@ -4,6 +4,7 @@ project(collection_asserts)
 find_package(xtd REQUIRED)
 
 add_projects(
+  collection_assert
   collection_assert_all_items_are_instances_of
   collection_assert_all_items_are_not_null
   collection_assert_all_items_are_unique
