@@ -266,35 +266,35 @@ namespace xtd::tests {
     }
     
     void test_method_(get_values_as_byte) {
-      collection_assert::are_equal({0, 1, 2, 4, 8}, enum_object<>::get_values_as_byte<enum_object_with_registered_enum_class_flags_test>(), csf_);
+      collection_assert::are_equal({0_u8, 1_u8, 2_u8, 4_u8, 8_u8}, enum_object<>::get_values_as_byte<enum_object_with_registered_enum_class_flags_test>(), csf_);
     }
     
     void test_method_(get_values_as_int16) {
-      collection_assert::are_equal({0, 1, 2, 4, 8}, enum_object<>::get_values_as_int16<enum_object_with_registered_enum_class_flags_test>(), csf_);
+      collection_assert::are_equal({0_s16, 1_s16, 2_s16, 4_s16, 8_s16}, enum_object<>::get_values_as_int16<enum_object_with_registered_enum_class_flags_test>(), csf_);
     }
     
     void test_method_(get_values_as_int32) {
-      collection_assert::are_equal({0, 1, 2, 4, 8}, enum_object<>::get_values_as_int32<enum_object_with_registered_enum_class_flags_test>(), csf_);
+      collection_assert::are_equal({0_s32, 1_s32, 2_s32, 4_s32, 8_s32}, enum_object<>::get_values_as_int32<enum_object_with_registered_enum_class_flags_test>(), csf_);
     }
     
     void test_method_(get_values_as_int64) {
-      collection_assert::are_equal({0, 1, 2, 4, 8}, enum_object<>::get_values_as_int64<enum_object_with_registered_enum_class_flags_test>(), csf_);
+      collection_assert::are_equal({0_s64, 1_s64, 2_s64, 4_s64, 8_s64}, enum_object<>::get_values_as_int64<enum_object_with_registered_enum_class_flags_test>(), csf_);
     }
     
     void test_method_(get_values_as_sbyte) {
-      collection_assert::are_equal({0, 1, 2, 4, 8}, enum_object<>::get_values_as_sbyte<enum_object_with_registered_enum_class_flags_test>(), csf_);
+      collection_assert::are_equal({0_s8, 1_s8, 2_s8, 4_s8, 8_s8}, enum_object<>::get_values_as_sbyte<enum_object_with_registered_enum_class_flags_test>(), csf_);
     }
     
     void test_method_(get_values_as_uint16) {
-      collection_assert::are_equal({0, 1, 2, 4, 8}, enum_object<>::get_values_as_uint16<enum_object_with_registered_enum_class_flags_test>(), csf_);
+      collection_assert::are_equal({0_u16, 1_u16, 2_u16, 4_u16, 8_u16}, enum_object<>::get_values_as_uint16<enum_object_with_registered_enum_class_flags_test>(), csf_);
     }
     
     void test_method_(get_values_as_uint32) {
-      collection_assert::are_equal({0, 1, 2, 4, 8}, enum_object<>::get_values_as_uint32<enum_object_with_registered_enum_class_flags_test>(), csf_);
+      collection_assert::are_equal({0_u32, 1_u32, 2_u32, 4_u32, 8_u32}, enum_object<>::get_values_as_uint32<enum_object_with_registered_enum_class_flags_test>(), csf_);
     }
     
     void test_method_(get_values_as_uint64) {
-      collection_assert::are_equal({0, 1, 2, 4, 8}, enum_object<>::get_values_as_uint64<enum_object_with_registered_enum_class_flags_test>(), csf_);
+      collection_assert::are_equal({0_u64, 1_u64, 2_u64, 4_u64, 8_u64}, enum_object<>::get_values_as_uint64<enum_object_with_registered_enum_class_flags_test>(), csf_);
     }
     
     void test_method_(is_defined) {
