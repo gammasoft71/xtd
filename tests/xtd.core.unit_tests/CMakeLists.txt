@@ -80,6 +80,7 @@ add_sources(
   src/xtd/tests/as_tests.cpp
   src/xtd/tests/bit_converter_tests.cpp
   src/xtd/tests/box_tests.cpp
+  src/xtd/tests/build_type.h
   src/xtd/tests/build_type_tests.cpp
   src/xtd/tests/bytes_assert.h
   src/xtd/tests/compiler_name.h
