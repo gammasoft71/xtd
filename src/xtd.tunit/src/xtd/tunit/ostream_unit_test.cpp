@@ -118,12 +118,12 @@ void ostream_unit_test::write_help() {
   os_ << __reset_color();
   os_ << "      Enable/disable the elapsed time of each test display." << std::endl;
   os_ << __foreground_color(__console_color::green);
-  os_ << "  --output_xml=xml";
+  os_ << "  --output=";
   os_ << __reset_color();
   os_ << __foreground_color(__console_color::yellow);
-  os_ << "[=PATH]" << std::endl;
+  os_ << "(json|xml)[:PATH]" << std::endl;
   os_ << __reset_color();
-  os_ << "      Generate an xml report in the given directory or with the given file" << std::endl;
-  os_ << "      name. PATH defaults to tests.xml." << std::endl;
+  os_ << "      Generate a JSON or XML report in the given directory or with the given" << std::endl;
+  os_ << "      file name. PATH defaults to tests.xml." << std::endl;
   os_ << std::endl;
 }
