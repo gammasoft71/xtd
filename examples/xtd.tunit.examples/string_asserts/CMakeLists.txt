@@ -9,5 +9,6 @@ add_projects(
   string_assert_are_not_equal_ignoring_case
   string_assert_contains
   string_assert_does_not_contain
+  string_assert_does_not_end_with
   string_assert_ends_with
 )
