@@ -47,11 +47,11 @@ namespace __enumeration_introspection {
       size_t size = sv.size();
       for (size_t i = 0; i < size; i++)
         destination[i] = source[i];
-      *offsets++ = current_offset;
+      *offsets++ = static_cast<unsigned>(current_offset);
       destination += size; // Known errors with assignment pointer parameter.
       current_offset += size;
     });
-    *offsets = current_offset;
+    *offsets = static_cast<unsigned>(current_offset);
   }
   
   constexpr auto get_top_name(std::string_view view) {
