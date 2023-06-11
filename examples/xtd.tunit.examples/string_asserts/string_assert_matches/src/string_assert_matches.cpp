@@ -10,12 +10,12 @@ namespace unit_tests {
   public:
     void test_method_(test_case_succeed) {
       auto s = "value"s;
-      string_assert::contains("alu", s);
+      string_assert::matches("^value", s);
     }
     
     void test_method_(test_case_failed) {
       auto s = L"value";
-      string_assert::contains(L"zor", s);
+      string_assert::matches(L"^item", s);
     }
   };
 }
@@ -30,9 +30,9 @@ auto main()->int {
 // Run tests:
 //   SUCCEED test.test_case_succeed (0 ms total)
 //   FAILED  test.test_case_failed (0 ms total)
-//     Expected: not "value"
+//     Expected: string matching "^item"
 //     But was:  "value"
-//     Stack Trace: in |---OMITTED---|/string_assert_contains.cpp:16
+//     Stack Trace: in |---OMITTED---|/string_assert_matches.cpp:16
 //
 // Test results:
 //   SUCCEED 1 test.
