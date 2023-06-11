@@ -110,8 +110,8 @@ If an assertion fails, the method call does not return and an error is reported.
 <dd>
 Each method may be called without a message, with a simple text message or with a message and arguments. In the last case the message is formatted using the provided text and arguments. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>This example show how to used some methods : <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd.tunit&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
 <div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1tunit.html">xtd::tunit</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>unit_tests {</div>
@@ -119,15 +119,15 @@ Each method may be called without a message, with a simple text message or with 
 <div class="line">  <span class="keyword">class </span>test_class_(test) {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    <span class="keywordtype">void</span> <a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case1) {</div>
-<div class="line">      assert::is_true(<span class="keyword">true</span>);</div>
+<div class="line">      collection_assert::is_empty(vector&lt;int&gt; {});</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">void</span> <a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case2) {</div>
-<div class="line">      assert::is_false(<span class="keyword">true</span>);</div>
+<div class="line">      collection_assert::is_empty(vector&lt;int&gt; {1, 2, 3});</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">void</span> <a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case3) {</div>
-<div class="line">      assert::does_not_throw([] {<span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;error&quot;</span>);});</div>
+<div class="line">      collection_assert::is_ordered(vector&lt;int&gt; {1, 3, 2});</div>
 <div class="line">    }</div>
 <div class="line">  };</div>
 <div class="line">}</div>
@@ -142,13 +142,13 @@ Each method may be called without a message, with a simple text message or with 
 <div class="line"><span class="comment">// Run tests:</span></div>
 <div class="line"><span class="comment">//   SUCCEED test.test_case1 (0 ms total)</span></div>
 <div class="line"><span class="comment">//   FAILED  test.test_case2 (0 ms total)</span></div>
-<div class="line"><span class="comment">//     Expected: false</span></div>
-<div class="line"><span class="comment">//     But was:  true</span></div>
-<div class="line"><span class="comment">//     Stack Trace: in |---OMITTED---|/assert.cpp:14</span></div>
+<div class="line"><span class="comment">//     Expected: &lt;empty&gt;</span></div>
+<div class="line"><span class="comment">//     But was:  &lt; 1, 2, 3 &gt;</span></div>
+<div class="line"><span class="comment">//     Stack Trace: in |---OMITTED---|/collection_assert.cpp:14</span></div>
 <div class="line"><span class="comment">//   FAILED  test.test_case3 (0 ms total)</span></div>
-<div class="line"><span class="comment">//     Expected: No Exception to be thrown</span></div>
-<div class="line"><span class="comment">//     But was:  &lt;std::range_error&gt;</span></div>
-<div class="line"><span class="comment">//     Stack Trace: in |---OMITTED---|/assert.cpp:18</span></div>
+<div class="line"><span class="comment">//     Expected: &lt; 1, 2, 3 &gt;</span></div>
+<div class="line"><span class="comment">//     But was: &lt; 1, 3, 2 &gt;</span></div>
+<div class="line"><span class="comment">//     Stack Trace: in |---OMITTED---|/collection_assert.cpp:18</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// Test results:</span></div>
 <div class="line"><span class="comment">//   SUCCEED 1 test.</span></div>
@@ -3291,7 +3291,7 @@ template&lt;typename value_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 4 2023 22:42:43 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Jun 11 2023 15:55:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
