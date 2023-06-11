@@ -1,4 +1,4 @@
-#pragma one
+#pragma once
 #if defined(NDEBUG)
 #  define __build_type__ xtd::build_type::release
 #else
