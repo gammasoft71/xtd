@@ -32,7 +32,7 @@ auto main()->int {
 //   FAILED  test.test_case_failed (0 ms total)
 //     Expected: not "value"
 //     But was:  "value"
-//     Stack Trace: in |---OMITTED---|/string_assert_are_not_equal.cpp:16
+//     Stack Trace: in |---OMITTED---|/string_assert_acontains.cpp:16
 //
 // Test results:
 //   SUCCEED 1 test.
