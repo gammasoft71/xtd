@@ -11,4 +11,5 @@ add_projects(
   string_assert_does_not_contain
   string_assert_does_not_end_with
   string_assert_ends_with
+  string_assert_starts_with
 )
