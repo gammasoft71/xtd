@@ -148,35 +148,35 @@ namespace xtd::tests {
     }
     
     void test_method_(get_entries_as_byte) {
-      collection_assert::are_equal(enum_collection<byte> {{0, "none"}, {1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}}, enum_object<>::get_entries_as_byte<enum_object_with_registered_enum_struct_test>(), csf_);
+      collection_assert::are_equal(enum_collection<byte> {{0_u8, "none"}, {1_u8, "one"}, {2_u8, "two"}, {3_u8, "three"}, {4_u8, "four"}}, enum_object<>::get_entries_as_byte<enum_object_with_registered_enum_struct_test>(), csf_);
     }
     
     void test_method_(get_entries_as_int16) {
-      collection_assert::are_equal(enum_collection<int16> {{0, "none"}, {1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}}, enum_object<>::get_entries_as_int16<enum_object_with_registered_enum_struct_test>(), csf_);
+      collection_assert::are_equal(enum_collection<int16> {{0_s16, "none"}, {1_s16, "one"}, {2_s16, "two"}, {3_s16, "three"}, {4_s16, "four"}}, enum_object<>::get_entries_as_int16<enum_object_with_registered_enum_struct_test>(), csf_);
     }
     
     void test_method_(get_entries_as_int32) {
-      collection_assert::are_equal(enum_collection<int32> {{0, "none"}, {1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}}, enum_object<>::get_entries_as_int32<enum_object_with_registered_enum_struct_test>(), csf_);
+      collection_assert::are_equal(enum_collection<int32> {{0_s32, "none"}, {1_s32, "one"}, {2_s32, "two"}, {3_s32, "three"}, {4_s32, "four"}}, enum_object<>::get_entries_as_int32<enum_object_with_registered_enum_struct_test>(), csf_);
     }
     
     void test_method_(get_entries_as_int64) {
-      collection_assert::are_equal(enum_collection<int64> {{0, "none"}, {1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}}, enum_object<>::get_entries_as_int64<enum_object_with_registered_enum_struct_test>(), csf_);
+      collection_assert::are_equal(enum_collection<int64> {{0_s64, "none"}, {1_s64, "one"}, {2_s64, "two"}, {3_s64, "three"}, {4_s64, "four"}}, enum_object<>::get_entries_as_int64<enum_object_with_registered_enum_struct_test>(), csf_);
     }
     
     void test_method_(get_entries_as_sbyte) {
-      collection_assert::are_equal(enum_collection<sbyte> {{0, "none"}, {1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}}, enum_object<>::get_entries_as_sbyte<enum_object_with_registered_enum_struct_test>(), csf_);
+      collection_assert::are_equal(enum_collection<sbyte> {{0_s8, "none"}, {1_s8, "one"}, {2_s8, "two"}, {3_s8, "three"}, {4_s8, "four"}}, enum_object<>::get_entries_as_sbyte<enum_object_with_registered_enum_struct_test>(), csf_);
     }
     
     void test_method_(get_entries_as_uint16) {
-      collection_assert::are_equal(enum_collection<uint16> {{0, "none"}, {1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}}, enum_object<>::get_entries_as_uint16<enum_object_with_registered_enum_struct_test>(), csf_);
+      collection_assert::are_equal(enum_collection<uint16> {{0_u16, "none"}, {1_u16, "one"}, {2_u16, "two"}, {3_u16, "three"}, {4_u16, "four"}}, enum_object<>::get_entries_as_uint16<enum_object_with_registered_enum_struct_test>(), csf_);
     }
     
     void test_method_(get_entries_as_uint32) {
-      collection_assert::are_equal(enum_collection<uint32> {{0, "none"}, {1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}}, enum_object<>::get_entries_as_uint32<enum_object_with_registered_enum_struct_test>(), csf_);
+      collection_assert::are_equal(enum_collection<uint32> {{0_u32, "none"}, {1_u32, "one"}, {2_u32, "two"}, {3_u32, "three"}, {4_u32, "four"}}, enum_object<>::get_entries_as_uint32<enum_object_with_registered_enum_struct_test>(), csf_);
     }
     
     void test_method_(get_entries_as_uint64) {
-      collection_assert::are_equal(enum_collection<uint64> {{0, "none"}, {1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}}, enum_object<>::get_entries_as_uint64<enum_object_with_registered_enum_struct_test>(), csf_);
+      collection_assert::are_equal(enum_collection<uint64> {{0_u64, "none"}, {1_u64, "one"}, {2_u64, "two"}, {3_u64, "three"}, {4_u64, "four"}}, enum_object<>::get_entries_as_uint64<enum_object_with_registered_enum_struct_test>(), csf_);
     }
     
     void test_method_(get_name) {
