@@ -41,7 +41,7 @@ namespace __enumeration_introspection {
   
   template <size_t count, size_t str_size>
   constexpr void write_names_and_sizes(char const(&str)[str_size], char* destination, unsigned* offsets) {
-    unsigned current_offset = 0;
+    size_t current_offset = 0;
     split_trim_apply<count>(str, [&](std::string_view sv) {
       char const* source = sv.data();
       size_t size = sv.size();
