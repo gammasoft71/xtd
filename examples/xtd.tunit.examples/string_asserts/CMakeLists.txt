@@ -8,4 +8,5 @@ add_projects(
   string_assert_are_equal_ignoring_case
   string_assert_are_not_equal_ignoring_case
   string_assert_contains
+  string_assert_does_not_contain
 )
