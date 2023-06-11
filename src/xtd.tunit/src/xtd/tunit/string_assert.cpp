@@ -93,7 +93,7 @@ void string_assert::does_not_end_with(const xtd::ustring& item, const xtd::ustri
 }
 
 void string_assert::does_not_end_with(const xtd::ustring& item, const xtd::ustring& string, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-  if (string.rfind(item) == xtd::ustring::npos)
+  if (string.rfind(item) + item.size() != string.size())
     assert::succeed(message, stack_frame);
   else
     base_assert::fail("not string ending with " + base_assert::to_string(item), base_assert::to_string(string), message, stack_frame);
