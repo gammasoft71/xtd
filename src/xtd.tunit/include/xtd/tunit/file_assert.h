@@ -124,8 +124,8 @@ namespace xtd {
         if_expected.seekg(0, std::ios::beg);
         if_actual.seekg(0, std::ios::beg);
         for (size_t offset = 0; offset < size_actual; ++offset) {
-          char_t value_expected = if_expected.get();
-          char_t value_actual = if_actual.get();
+          char_t value_expected = static_cast<char_t>(if_expected.get());
+          char_t value_actual = static_cast<char_t>(if_actual.get());
           if (value_expected != value_actual) {
             base_assert::fail("istream at offset " + base_assert::to_string(offset) + " value " + base_assert::to_string(value_expected), base_assert::to_string(value_actual), message, stack_frame);
             return;
@@ -336,8 +336,8 @@ namespace xtd {
         if_expected.seekg(0, std::ios::beg);
         if_actual.seekg(0, std::ios::beg);
         for (size_t offset = 0; offset < size_actual; ++offset) {
-          char_t value_expected = if_expected.get();
-          char_t value_actual = if_actual.get();
+          char_t value_expected = static_cast<char_t>(if_expected.get());
+          char_t value_actual = static_cast<char_t>(if_actual.get());
           if (value_expected != value_actual) {
             assert::succeed(message, stack_frame);
             return;
