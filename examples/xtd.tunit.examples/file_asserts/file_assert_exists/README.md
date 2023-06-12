@@ -20,7 +20,7 @@ xtdc run
 
 ```
 Start 2 tests from 1 test case
-  Run tests:
+Run tests:
   SUCCEED test.test_case_succeed (0 ms total)
   FAILED  test.test_case_failed (0 ms total)
     Expected: file exists
