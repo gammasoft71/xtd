@@ -19,7 +19,7 @@ namespace xtd {
     /// @remarks If a validation fails, he test can be continued to the end or to an assertion is generated.
     /// @par Examples
     /// This example show how to used some methods :
-    /// @include assert.cpp
+    /// @include directory_valid.cpp
     class tunit_export_ directory_valid final : private base_assert {
     public:
       /// @cond
