@@ -10,7 +10,7 @@ namespace unit_tests {
       collection_valid::is_ordered(a);
     }
     
-    void test_method_(test_case_Failed) {
+    void test_method_(test_case_failed) {
       std::vector a = {1, 2, 4, 3};
       collection_valid::is_ordered(a);
     }
@@ -26,7 +26,7 @@ auto main()->int {
 // Start 2 tests from 1 test case
 // Run tests:
 //   SUCCEED test.test_case_succeed (0 ms total)
-//   FAILED  test.test_case_Failed (0 ms total)
+//   FAILED  test.test_case_failed (0 ms total)
 //     Expected: <ordered>
 //     But was:  < 1, 2, 4, 3 >
 //     Stack Trace: in |---OMITTED---|/collection_valid_is_ordered.cpp:13
