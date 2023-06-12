@@ -18,7 +18,7 @@ namespace xtd {
     /// @remarks Assumptions are intended to express the state a test must be in to provide a meaningful result. They are functionally similar to assertions, however a unmet assumption will produce an aborted test result, as opposed to a failure.
     /// @par Examples
     /// This example show how to used some methods :
-    /// @include assert.cpp
+    /// @include file_assume.cpp
     class tunit_export_ file_assume final : private base_assert {
     public:
       /// @cond
@@ -489,7 +489,6 @@ namespace xtd {
       template<typename char_t>
       static void does_not_exist(const char_t* file, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {does_not_exist(std::basic_string<char_t>(file), message, stack_frame);}
       /// @endcond
-      /// @}
 
       /// @brief Assumes that file exists.
       /// @param expected the expected value.
@@ -564,6 +563,7 @@ namespace xtd {
       template<typename char_t>
       static void exists(const char_t* file, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {exists(std::basic_string<char_t>(file), message, stack_frame);}
       /// @endcond
+      /// @}
     };
   }
 }
