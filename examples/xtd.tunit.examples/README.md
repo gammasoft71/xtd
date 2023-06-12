@@ -177,6 +177,14 @@
 * [directory_valid_does_not_exist](directory_valids/directory_valid_does_not_exist/README.md) shows how to use [xtd::tunit::directory_valid::does_not_exist](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1directory__valid.html#afee3f5ebab426eb33a8d4d37df2696c5) method.
 * [directory_valid_exists](directory_valids/directory_valid_exists/README.md) shows how to use [xtd::tunit::directory_valid::exists](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1directory__valid.html#a16601aa9bc905b912c48c2fed1c18800) method.
 
+## [File valids](file_valids/README.md)
+
+* [file_valid](file_valids/file_valid/README.md) shows how to use [xtd::tunit::file_valid](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1file__valid.html) class.
+* [file_valid_are_equal](file_valids/file_valid_are_equal/README.md) shows how to use [xtd::tunit::file_valid::are_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1file__valid.html#afd1bb97a8f86b14d617c43a56d732ab6) method.
+* [file_valid_are_not_equal](file_valids/file_valid_are_not_equal/README.md) shows how to use [xtd::tunit::file_valid::are_not_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1file__valid.html#a65f48c856e111c54fc4db6a2a939585d) method.
+* [file_valid_does_not_exist](file_valids/file_valid_does_not_exist/README.md) shows how to use [xtd::tunit::file_valid::des_not_exist](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1file__valid.html#a80323f3e7b79c83017d86e0fde1cdb77) method.
+* [file_valid_exists](file_valids/file_valid_exists/README.md) shows how to use [xtd::tunit::file_valid::exists](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1file__valid.html#a59ee89d189f39f33115da632f6045b6b) method.
+
 ## [Test classes](test_classes/README.md)
 
 * [generic_test_class](test_classes/generic_test_class/README.md) shows how to use generic [xtd::tunit::test_class](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1test__class.html) class.
