@@ -9,6 +9,7 @@ add_projects(
   collection_asserts
   collection_valids
   directory_asserts
+  directory_valids
   file_asserts
   hello_worlds
   others

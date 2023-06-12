@@ -1,10 +1,10 @@
-# directory_assert_does_not_exist
+# directory_valid_does_not_exist
 
-Shows how to use [xtd::tunit::directory_assert::does_not_exist](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1directory__assert.html#a844fc0ffa68b7425a90afba83168e313) method.
+Shows how to use [xtd::tunit::directory_valid::does_not_exist](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1directory__valid.html#afee3f5ebab426eb33a8d4d37df2696c5) method.
 
 ## Sources
 
-[src/directory_assert_does_not_exist.cpp](src/directory_assert_does_not_exist.cpp)
+[src/directory_valid_does_not_exist.cpp](src/directory_valid_does_not_exist.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -25,7 +25,7 @@ Start 2 tests from 1 test case
   FAILED  test.test_case_failed (0 ms total)
     Expected: not directory exists
     But was:  "/var/folders/xg/2fvdl7v939g9kbp8xn1dpgg00000gn/T"
-    Stack Trace: in |---OMITTED---|/directory_assert_does_not_exist.cpp:14
+    Stack Trace: in |---OMITTED---|/directory_valid_does_not_exist.cpp:14
 
 Test results:
   SUCCEED 1 test.

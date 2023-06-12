@@ -1,5 +1,6 @@
 #include <xtd/xtd.tunit>
 
+using namespace xtd;
 using namespace xtd::io;
 using namespace xtd::tunit;
 
@@ -7,13 +8,13 @@ namespace unit_tests {
   class test_class_(test) {
   public:
     void test_method_(test_case_succeed) {
-      auto di = directory_info(path::combine("unknown folder 1", "unknown folder 2", "unknown folder 3"));
-      directory_valid::does_not_exist(di);
+      auto di = directory_info {path::get_temp_path()};
+      directory_assert::are_equal(directory_info {path::get_temp_path()}, di);
     }
     
     void test_method_(test_case_failed) {
-      auto di = directory_info {path::get_temp_path()};
-      directory_valid::does_not_exist(di);
+      auto di = directory_info(environment::get_folder_path(environment::special_folder::system));
+      directory_assert::are_equal(directory_info {path::get_temp_path()}, di);
     }
   };
 }
@@ -28,9 +29,9 @@ auto main()->int {
 // Run tests:
 //   SUCCEED test.test_case_succeed (0 ms total)
 //   FAILED  test.test_case_failed (0 ms total)
-//     Expected: not directory exists
-//     But was:  "/var/folders/xg/2fvdl7v939g9kbp8xn1dpgg00000gn/T"
-//     Stack Trace: in |---OMITTED---|/directory_valid_does_not_exist.cpp:14
+//     Expected: "/var/folders/xg/2fvdl7v939g9kbp8xn1dpgg00000gn/T"
+//     But was:  "/System"
+//     Stack Trace: in |---OMITTED---|/directory_assert_are_equal.cpp:15
 //
 // Test results:
 //   SUCCEED 1 test.
