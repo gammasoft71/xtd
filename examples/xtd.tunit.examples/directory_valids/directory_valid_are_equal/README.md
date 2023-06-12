@@ -1,10 +1,10 @@
-# directory_assert_are_equal
+# directory_valid_are_equal
 
-Shows how to use [xtd::tunit::directory_assert::are_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1directory__assert.html#a4edec5f6de69c86bc662ae063ad2179d) method.
+Shows how to use [xtd::tunit::directory_valid::are_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1directory__valid.html#a1f33cee10e467037525d6a0a0d3db7a9) method.
 
 ## Sources
 
-[src/directory_assert_are_equal.cpp](src/directory_assert_are_equal.cpp)
+[src/directory_valid_are_equal.cpp](src/directory_valid_are_equal.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -20,12 +20,12 @@ xtdc run
 
 ```
 Start 2 tests from 1 test case
-  Run tests:
+Run tests:
   SUCCEED test.test_case_succeed (0 ms total)
   FAILED  test.test_case_failed (0 ms total)
     Expected: "/var/folders/xg/2fvdl7v939g9kbp8xn1dpgg00000gn/T"
     But was:  "/System"
-    Stack Trace: in |---OMITTED---|/directory_assert_are_equal.cpp:15
+    Stack Trace: in |---OMITTED---|/directory_valid_are_equal.cpp:15
 
 Test results:
   SUCCEED 1 test.

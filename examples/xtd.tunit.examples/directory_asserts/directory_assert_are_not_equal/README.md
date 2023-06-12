@@ -1,10 +1,10 @@
-# directory_valid_are_not_equal
+# directory_assert_are_not_equal
 
-Shows how to use [xtd::tunit::directory_valid::are_not_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1directory__valid.html#a72574add46afa2be04f5791ea1f8e131) method.
+Shows how to use [xtd::tunit::directory_assert::are_not_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1directory__assert.html#adb6a94ab27ef36eaec266d8abc4cc60d) method.
 
 ## Sources
 
-[src/directory_valid_are_not_equal.cpp](src/directory_valid_are_not_equal.cpp)
+[src/directory_assert_are_not_equal.cpp](src/directory_assert_are_not_equal.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -20,12 +20,12 @@ xtdc run
 
 ```
 Start 2 tests from 1 test case
-  Run tests:
+Run tests:
   SUCCEED test.test_case_succeed (0 ms total)
   FAILED  test.test_case_failed (0 ms total)
     Expected: not "/var/folders/xg/2fvdl7v939g9kbp8xn1dpgg00000gn/T"
     But was:  "/var/folders/xg/2fvdl7v939g9kbp8xn1dpgg00000gn/T"
-    Stack Trace: in |---OMITTED---|/directory_valid_are_not_equal.cpp:15
+    Stack Trace: in |---OMITTED---|/directory_assert_are_not_equal.cpp:15
 
 Test results:
   SUCCEED 1 test.
