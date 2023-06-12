@@ -13,7 +13,7 @@ namespace unit_tests {
       assume::is_instance_of<logic_error>(except);
     }
     
-    void test_method_(test_case_failed) {
+    void test_method_(test_case_aborted) {
       invalid_argument except("invalid argument");
       assume::is_instance_of<bad_cast>(except);
     }
@@ -29,7 +29,7 @@ auto main()->int {
 // Start 2 tests from 1 test case
 // Run tests:
 //   SUCCEED test.test_case_succeed (0 ms total)
-//   ABORTED test.test_case_failed (0 ms total)
+//   ABORTED test.test_case_aborted (0 ms total)
 //     Expected: instance of <std::bad_cast>
 //     But was:  <std::invalid_argument>
 //     Stack Trace: in |---OMITTED---|/assume_is_instance_of.cpp:16

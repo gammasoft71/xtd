@@ -12,7 +12,7 @@ namespace unit_tests {
       assume::is_not_null(s);
     }
     
-    void test_method_(test_case_failed) {
+    void test_method_(test_case_aborted) {
       shared_ptr<string> s;
       assume::is_not_null(s);
     }
@@ -28,7 +28,7 @@ auto main()->int {
 // Start 2 tests from 1 test case
 // Run tests:
 //   SUCCEED test.test_case_succeed (0 ms total)
-//   ABORTED test.test_case_failed (0 ms total)
+//   ABORTED test.test_case_aborted (0 ms total)
 //     Expected: not null
 //     But was:  null
 //     Stack Trace: in |---OMITTED---|/assume_is_not_null.cpp:15

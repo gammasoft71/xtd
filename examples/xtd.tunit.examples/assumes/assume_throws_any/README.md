@@ -22,7 +22,7 @@ xtdc run
 Start 2 tests from 1 test case
 Run tests:
   SUCCEED test.test_case_succeed (0 ms total)
-  ABORTED test.test_case_failed (0 ms total)
+  ABORTED test.test_case_aborted (0 ms total)
     Expected: <exception>
     But was:  <nothing>
     Stack Trace: in |---OMITTED---|/assume_throws_any.cpp:15

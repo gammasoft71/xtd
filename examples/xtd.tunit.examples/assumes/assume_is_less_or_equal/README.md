@@ -23,7 +23,7 @@ Start 3 tests from 1 test case
 Run tests:
   SUCCEED test.test_case_succeed1 (0 ms total)
   SUCCEED test.test_case_succeed2 (0 ms total)
-  ABORTED test.test_case_failed (0 ms total)
+  ABORTED test.test_case_aborted (0 ms total)
     Expected: less than or equal to 12
     But was:  24
     Stack Trace: in |---OMITTED---|/assume_is_less_or_equal.cpp:18
