@@ -11,6 +11,7 @@ add_projects(
   directory_asserts
   directory_valids
   file_asserts
+  file_valids
   hello_worlds
   others
   string_asserts
