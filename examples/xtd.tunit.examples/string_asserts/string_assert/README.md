@@ -27,8 +27,8 @@ Run tests:
     But was:  "A string value"
     Stack Trace: in |---OMITTED---|/string_assert.cpp:17
   FAILED  test.test_case3 (0 ms total)
-    Expected: istream at offset 32 value e
-    But was:  string matching "item$"
+    Expected: string matching "item$"
+    But was:  "A string value"
     Stack Trace: in |---OMITTED---|/string_assert.cpp:22
 
 Test results:

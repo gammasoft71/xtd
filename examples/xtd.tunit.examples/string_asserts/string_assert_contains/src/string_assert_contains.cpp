@@ -30,7 +30,7 @@ auto main()->int {
 // Run tests:
 //   SUCCEED test.test_case_succeed (0 ms total)
 //   FAILED  test.test_case_failed (0 ms total)
-//     Expected: not "value"
+//     Expected: string containing "zor"
 //     But was:  "value"
 //     Stack Trace: in |---OMITTED---|/string_assert_contains.cpp:16
 //

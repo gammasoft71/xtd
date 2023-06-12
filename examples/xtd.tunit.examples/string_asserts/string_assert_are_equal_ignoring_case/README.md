@@ -23,7 +23,7 @@ Start 2 tests from 1 test case
 Run tests:
   SUCCEED test.test_case_succeed (0 ms total)
   FAILED  test.test_case_failed (0 ms total)
-    Expected: "key"
+    Expected: "key", ignoring case
     But was:  "VALUE"
     Stack Trace: in |---OMITTED---|/string_assert_are_equal_ignoring_case.cpp:16
 
