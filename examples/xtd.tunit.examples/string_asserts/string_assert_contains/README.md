@@ -23,7 +23,7 @@ Start 2 tests from 1 test case
 Run tests:
   SUCCEED test.test_case_succeed (0 ms total)
   FAILED  test.test_case_failed (0 ms total)
-    Expected: not "value"
+    Expected: string containing "zor"
     But was:  "value"
     Stack Trace: in |---OMITTED---|/string_assert_contains.cpp:16
 

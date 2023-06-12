@@ -30,7 +30,7 @@ auto main()->int {
 // Run tests:
 //   SUCCEED test.test_case_succeed (0 ms total)
 //   FAILED  test.test_case_failed (0 ms total)
-//     Expected: not "value"
+//     Expected: not "value", ignoring case
 //     But was:  "VALUE"
 //     Stack Trace: in |---OMITTED---|/string_assert_are_equal_ignoring_case.cpp:16
 //
