@@ -18,7 +18,7 @@ namespace xtd {
     /// @remarks Assumptions are intended to express the state a test must be in to provide a meaningful result. They are functionally similar to assertions, however a unmet assumption will produce an aborted test result, as opposed to a failure.
     /// @par Examples
     /// This example show how to used some methods :
-    /// @include assert.cpp
+    /// @include string_assume.cpp
     class tunit_export_ string_assume final : private base_assert {
     public:
       /// @cond
