@@ -1,10 +1,10 @@
-# directory_assert
+# directory_valid
 
-Shows how to use [xtd::tunit::directory_assert](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1directory__assert.html) class.
+Shows how to use [xtd::tunit::directory_valid](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1directory__valid.html) class.
 
 ## Sources
 
-[src/directory_assert.cpp](src/directory_assert.cpp)
+[src/directory_valid.cpp](src/directory_valid.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -25,11 +25,11 @@ Run tests:
   FAILED  test.test_case2 (0 ms total)
     Expected: directory exists
     But was:  "unknown root folder/unknown sub folder/unknown xtd example folder"
-    Stack Trace: in |---OMITTED---|/directory_assert.cpp:16
+    Stack Trace: in |---OMITTED---|/directory_valid.cpp:16
   FAILED  test.test_case3 (0 ms total)
     Expected: "|---OMITTED---|/Music"
     But was:  "|---OMITTED---|/Movies"
-    Stack Trace: in |---OMITTED---|/directory_assert.cpp:20
+    Stack Trace: in |---OMITTED---|/directory_valid.cpp:20
 
 Test results:
   SUCCEED 1 test.

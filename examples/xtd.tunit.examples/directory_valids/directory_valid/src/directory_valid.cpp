@@ -10,15 +10,15 @@ namespace unit_tests {
   class test_class_(test) {
   public:
     void test_method_(test_case1) {
-      directory_assert::exists(path::get_temp_path());
+      directory_valid::exists(path::get_temp_path());
     }
     
     void test_method_(test_case2) {
-      directory_assert::exists(path::combine("unknown root folder", "unknown sub folder", "unknown xtd example folder"));
+      directory_valid::exists(path::combine("unknown root folder", "unknown sub folder", "unknown xtd example folder"));
     }
     
     void test_method_(test_case3) {
-      directory_assert::are_equal(directory_info(environment::get_folder_path(environment::special_folder::my_music)), directory_info(environment::get_folder_path(environment::special_folder::my_videos)));
+      directory_valid::are_equal(directory_info(environment::get_folder_path(environment::special_folder::my_music)), directory_info(environment::get_folder_path(environment::special_folder::my_videos)));
     }
   };
 }
@@ -35,11 +35,11 @@ auto main()->int {
 //   FAILED  test.test_case2 (0 ms total)
 //     Expected: directory exists
 //     But was:  "unknown root folder/unknown sub folder/unknown xtd example folder"
-//     Stack Trace: in |---OMITTED---|/directory_assert.cpp:16
+//     Stack Trace: in |---OMITTED---|/directory_valid.cpp:16
 //   FAILED  test.test_case3 (0 ms total)
 //     Expected: "|---OMITTED---|/Music"
 //     But was:  "|---OMITTED---|/Movies"
-//     Stack Trace: in |---OMITTED---|/directory_assert.cpp:20
+//     Stack Trace: in |---OMITTED---|/directory_valid.cpp:20
 //
 // Test results:
 //   SUCCEED 1 test.

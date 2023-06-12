@@ -169,6 +169,14 @@
 * [collection_valid_is_not_empty](collection_valids/collection_valid_is_not_empty/README.md) shows how to use [xtd::tunit::collection_valid::is_not_empty](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__valid.html#a988063d96e516913628f442aec6c95b3) method.
 * [collection_valid_is_ordered](collection_valids/collection_valid_is_ordered/README.md) shows how to use [xtd::tunit::collection_valid::is_ordered](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__valid.html#abab68a7c738a9c696db3d6e8195d11d8) method.
 
+## [Directory valids](directory_valids/README.md)
+
+* [directory_valid](directory_valids/directory_valid/README.md) shows how to use [xtd::tunit::directory_valid](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1directory__valid.html) class.
+* [directory_valid_are_equal](directory_valids/directory_valid_are_equal/README.md) shows how to use [xtd::tunit::directory_valid::are_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1directory__valid.html#a1f33cee10e467037525d6a0a0d3db7a9) method.
+* [directory_valid_are_not_equal](directory_valids/directory_valid_are_not_equal/README.md) shows how to use [xtd::tunit::directory_valid::are_not_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1directory__valid.html#a72574add46afa2be04f5791ea1f8e131) method.
+* [directory_valid_does_not_exist](directory_valids/directory_valid_does_not_exist/README.md) shows how to use [xtd::tunit::directory_valid::does_not_exist](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1directory__valid.html#afee3f5ebab426eb33a8d4d37df2696c5) method.
+* [directory_valid_exists](directory_valids/directory_valid_exists/README.md) shows how to use [xtd::tunit::directory_valid::exists](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1directory__valid.html#a16601aa9bc905b912c48c2fed1c18800) method.
+
 ## [Test classes](test_classes/README.md)
 
 * [generic_test_class](test_classes/generic_test_class/README.md) shows how to use generic [xtd::tunit::test_class](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1test__class.html) class.
