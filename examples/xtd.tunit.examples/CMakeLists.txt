@@ -7,6 +7,7 @@ add_projects(
   asserts
   assumes
   collection_asserts
+  collection_assumes
   collection_valids
   directory_asserts
   directory_valids
