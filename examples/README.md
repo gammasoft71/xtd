@@ -84,7 +84,17 @@
 * [String asserts](xtd.tunit.examples/string_asserts/README.md) contains string asserts examples.
 * [User asserts](xtd.tunit.examples/user_asserts/README.md) contains user asserts examples.
 * [Assumes](xtd.tunit.examples/assumes/README.md) contains assumes examples.
+* [Collection assumes](xtd.tunit.examples/collection_assumes/README.md) contains collection assumes examples.
+* [Directory assumes](xtd.tunit.examples/directory_assumes/README.md) contains directory assumes examples.
+* [File assumes](xtd.tunit.examples/file_assumes/README.md) contains file assumes examples.
+* [String assumes](xtd.tunit.examples/string_assumes/README.md) contains string assumes examples.
+* [User assumes](xtd.tunit.examples/user_assumes/README.md) contains user assumes examples.
 * [Valids](xtd.tunit.examples/valids/README.md) contains valids examples.
+* [Collection valids](xtd.tunit.examples/collection_valids/README.md) contains collection valids examples.
+* [Directory valids](xtd.tunit.examples/directory_valids/README.md) contains directory valids examples.
+* [File valids](xtd.tunit.examples/file_valids/README.md) contains file valids examples.
+* [String valids](xtd.tunit.examples/string_valids/README.md) contains string valids examples.
+* [User valids](xtd.tunit.examples/user_valids/README.md) contains user valids examples.
 * [Test classes](xtd.tunit.examples/test_classes/README.md) contains test classes examples.
 * [Unit tests](xtd.tunit.examples/unit_tests/README.md) contains unit tests examples.
 * [Others](xtd.tunit.examples/others/README.md) contains others examples.
