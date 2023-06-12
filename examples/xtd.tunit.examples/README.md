@@ -89,7 +89,7 @@
 * [string_assert_matches](string_asserts/string_assert_matches/README.md) shows how to use [xtd::tunit::string_assert::matches](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__assert.html#ae2219060040a4aead8be62a283f36505) method.
 * [string_assert_starts_with](string_asserts/string_assert_starts_with/README.md) shows how to use [xtd::tunit::string_assert::starts_with](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__assert.html#a798f3ad026c80669f79045b8f5e96bee) method.
 
-## [User assert](user_asserts/README.md)
+## [User asserts](user_asserts/README.md)
 
 * [math_assert](user_asserts/math_assert/README.md) shows how to create your own [xtd::tunit::assert](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assert.html) class.
 
@@ -198,6 +198,10 @@
 * [string_valid_ends_with](string_valids/string_valid_ends_with/README.md) shows how to use [xtd::tunit::string_valid::ends_with](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__valid.html#abf0a6a55c5b4588c46d906d421fda56b) method.
 * [string_valid_matches](string_valids/string_valid_matches/README.md) shows how to use [xtd::tunit::string_valid::matches](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__valid.html#a96767fa89a4c5d96149b6abbd5752a70) method.
 * [string_valid_starts_with](string_valids/string_valid_starts_with/README.md) shows how to use [xtd::tunit::string_valid::starts_with](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__valid.html#a4095a956cb2d28231f29258166351a4f) method.
+
+## [User valids](user_valids/README.md)
+
+* [math_valid](user_valids/math_valid/README.md) shows how to create your own [xtd::tunit::valid](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html) class.
 
 ## [Test classes](test_classes/README.md)
 
