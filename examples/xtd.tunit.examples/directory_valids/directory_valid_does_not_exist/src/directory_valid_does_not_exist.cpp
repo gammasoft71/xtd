@@ -8,12 +8,12 @@ namespace unit_tests {
   public:
     void test_method_(test_case_succeed) {
       auto di = directory_info(path::combine("unknown folder 1", "unknown folder 2", "unknown folder 3"));
-      directory_assert::does_not_exist(di);
+      directory_valid::does_not_exist(di);
     }
     
     void test_method_(test_case_failed) {
       auto di = directory_info {path::get_temp_path()};
-      directory_assert::does_not_exist(di);
+      directory_valid::does_not_exist(di);
     }
   };
 }
@@ -30,7 +30,7 @@ auto main()->int {
 //   FAILED  test.test_case_failed (0 ms total)
 //     Expected: not directory exists
 //     But was:  "/var/folders/xg/2fvdl7v939g9kbp8xn1dpgg00000gn/T"
-//     Stack Trace: in |---OMITTED---|/directory_assert_does_not_exist.cpp:14
+//     Stack Trace: in |---OMITTED---|/directory_valid_does_not_exist.cpp:14
 //
 // Test results:
 //   SUCCEED 1 test.

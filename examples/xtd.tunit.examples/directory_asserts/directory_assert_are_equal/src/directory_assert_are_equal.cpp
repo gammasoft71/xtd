@@ -9,12 +9,12 @@ namespace unit_tests {
   public:
     void test_method_(test_case_succeed) {
       auto di = directory_info {path::get_temp_path()};
-      directory_valid::are_equal(directory_info {path::get_temp_path()}, di);
+      directory_assert::are_equal(directory_info {path::get_temp_path()}, di);
     }
     
     void test_method_(test_case_failed) {
       auto di = directory_info(environment::get_folder_path(environment::special_folder::system));
-      directory_valid::are_equal(directory_info {path::get_temp_path()}, di);
+      directory_assert::are_equal(directory_info {path::get_temp_path()}, di);
     }
   };
 }
@@ -31,7 +31,7 @@ auto main()->int {
 //   FAILED  test.test_case_failed (0 ms total)
 //     Expected: "/var/folders/xg/2fvdl7v939g9kbp8xn1dpgg00000gn/T"
 //     But was:  "/System"
-//     Stack Trace: in |---OMITTED---|/directory_valid_are_equal.cpp:15
+//     Stack Trace: in |---OMITTED---|/directory_assert_are_equal.cpp:15
 //
 // Test results:
 //   SUCCEED 1 test.
