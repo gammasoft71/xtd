@@ -19,7 +19,7 @@ namespace xtd {
     /// @remarks If a validation fails, he test can be continued to the end or to an assertion is generated.
     /// @par Examples
     /// This example show how to used some methods :
-    /// @include assert.cpp
+    /// @include file_valid.cpp
     class tunit_export_ file_valid final : private base_assert {
     public:
       /// @cond
@@ -471,7 +471,6 @@ namespace xtd {
       template<typename char_t>
       static void does_not_exist(const char_t* file, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {does_not_exist(std::basic_string<char_t>(file), message, stack_frame);}
       /// @endcond
-      /// @}
 
       /// @brief Validate that file exists.
       /// @param expected the expected value.
@@ -542,6 +541,7 @@ namespace xtd {
       template<typename char_t>
       static void exists(const char_t* file, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {exists(std::basic_string<char_t>(file), message, stack_frame);}
       /// @endcond
+      /// @}
     };
   }
 }
