@@ -10,6 +10,7 @@ add_projects(
   collection_assumes
   collection_valids
   directory_asserts
+  directory_assumes
   directory_valids
   file_asserts
   file_valids
