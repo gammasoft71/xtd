@@ -10,7 +10,7 @@ namespace unit_tests {
       collection_assume::contains({1, 2}, a);
     }
     
-    void test_method_(test_case_failed) {
+    void test_method_(test_case_aborted) {
       std::vector a = {1, 2, 3, 4};
       collection_assume::contains({1, 2, 6}, a);
     }
@@ -26,7 +26,7 @@ auto main()->int {
 // Start 2 tests from 1 test case
 // Run tests:
 //   SUCCEED test.test_case_succeed (0 ms total)
-//   ABORTED test.test_case_failed (0 ms total)
+//   ABORTED test.test_case_aborted (0 ms total)
 //     Test aborted
 //     Expected: contains < 1, 2, 6 >
 //     But was:  < 1, 2, 3, 4 >
