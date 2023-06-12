@@ -22,6 +22,7 @@ add_projects(
   test_classes
   unit_tests
   user_asserts
+  user_assumes
   user_valids
   valids
 )
