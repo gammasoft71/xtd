@@ -15,6 +15,7 @@ add_projects(
   hello_worlds
   others
   string_asserts
+  string_valids
   test_classes
   unit_tests
   user_asserts
