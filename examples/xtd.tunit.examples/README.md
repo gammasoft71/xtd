@@ -155,6 +155,10 @@
 * [file_assume_does_not_exist](file_assumes/file_assume_does_not_exist/README.md) shows how to use [xtd::tunit::file_assume::des_not_exist](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1file__assume.html#aa4fbfe0459fdf170107ae21736cd0ff6) method.
 * [file_assume_exists](file_assumes/file_assume_exists/README.md) shows how to use [xtd::tunit::file_assume::exists](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1file__assume.html#ad435ec0356abad2e9407c9c426a8498a) method.
 
+## [User assumes](user_assumes/README.md)
+
+* [math_assume](user_assumes/math_assume/README.md) shows how to create your own [xtd::tunit::assume](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html) class.
+
 ## [Valids](valids/README.md)
 
 * [valid](valids/valid/README.md) shows how to use [xtd::tunit::valid](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html) class.
