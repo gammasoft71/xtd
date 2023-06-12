@@ -110,6 +110,8 @@ If a validation fails, he test can be continued to the end or to an assertion is
 <dl class="section user"><dt>Examples</dt><dd>This example show how to used some methods : <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd.tunit&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
 <div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1tunit.html">xtd::tunit</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>unit_tests {</div>
@@ -117,15 +119,15 @@ If a validation fails, he test can be continued to the end or to an assertion is
 <div class="line">  <span class="keyword">class </span>test_class_(test) {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    <span class="keywordtype">void</span> <a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case1) {</div>
-<div class="line">      assert::is_true(<span class="keyword">true</span>);</div>
+<div class="line">      directory_valid::exists(path::get_temp_path());</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">void</span> <a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case2) {</div>
-<div class="line">      assert::is_false(<span class="keyword">true</span>);</div>
+<div class="line">      directory_valid::exists(path::combine(<span class="stringliteral">&quot;unknown root folder&quot;</span>, <span class="stringliteral">&quot;unknown sub folder&quot;</span>, <span class="stringliteral">&quot;unknown xtd example folder&quot;</span>));</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">void</span> <a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case3) {</div>
-<div class="line">      assert::does_not_throw([] {<span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;error&quot;</span>);});</div>
+<div class="line">      directory_valid::are_equal(<a class="code hl_class" href="classxtd_1_1io_1_1directory__info.html">directory_info</a>(environment::get_folder_path(environment::special_folder::my_music)), <a class="code hl_class" href="classxtd_1_1io_1_1directory__info.html">directory_info</a>(environment::get_folder_path(environment::special_folder::my_videos)));</div>
 <div class="line">    }</div>
 <div class="line">  };</div>
 <div class="line">}</div>
@@ -140,22 +142,25 @@ If a validation fails, he test can be continued to the end or to an assertion is
 <div class="line"><span class="comment">// Run tests:</span></div>
 <div class="line"><span class="comment">//   SUCCEED test.test_case1 (0 ms total)</span></div>
 <div class="line"><span class="comment">//   FAILED  test.test_case2 (0 ms total)</span></div>
-<div class="line"><span class="comment">//     Expected: false</span></div>
-<div class="line"><span class="comment">//     But was:  true</span></div>
-<div class="line"><span class="comment">//     Stack Trace: in |---OMITTED---|/assert.cpp:14</span></div>
+<div class="line"><span class="comment">//     Expected: directory exists</span></div>
+<div class="line"><span class="comment">//     But was:  &quot;unknown root folder/unknown sub folder/unknown xtd example folder&quot;</span></div>
+<div class="line"><span class="comment">//     Stack Trace: in |---OMITTED---|/directory_valid.cpp:16</span></div>
 <div class="line"><span class="comment">//   FAILED  test.test_case3 (0 ms total)</span></div>
-<div class="line"><span class="comment">//     Expected: No Exception to be thrown</span></div>
-<div class="line"><span class="comment">//     But was:  &lt;std::range_error&gt;</span></div>
-<div class="line"><span class="comment">//     Stack Trace: in |---OMITTED---|/assert.cpp:18</span></div>
+<div class="line"><span class="comment">//     Expected: &quot;|---OMITTED---|/Music&quot;</span></div>
+<div class="line"><span class="comment">//     But was:  &quot;|---OMITTED---|/Movies&quot;</span></div>
+<div class="line"><span class="comment">//     Stack Trace: in |---OMITTED---|/directory_valid.cpp:20</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// Test results:</span></div>
 <div class="line"><span class="comment">//   SUCCEED 1 test.</span></div>
 <div class="line"><span class="comment">//   FAILED  2 tests.</span></div>
 <div class="line"><span class="comment">// End 3 tests from 1 test case ran. (0 ms total)</span></div>
+<div class="ttc" id="aclassxtd_1_1io_1_1directory__info_html"><div class="ttname"><a href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a></div><div class="ttdoc">Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...</div><div class="ttdef"><b>Definition:</b> directory_info.h:126</div></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1console__unit__test_html"><div class="ttname"><a href="classxtd_1_1tunit_1_1console__unit__test.html">xtd::tunit::console_unit_test</a></div><div class="ttdoc">The console_unit_test class is console unit test interface.</div><div class="ttdef"><b>Definition:</b> console_unit_test.h:23</div></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1unit__test_html_a8da8a3353d5c71e0afa0de307fc40916"><div class="ttname"><a href="classxtd_1_1tunit_1_1unit__test.html#a8da8a3353d5c71e0afa0de307fc40916">xtd::tunit::unit_test::run</a></div><div class="ttdeci">int32 run()</div><div class="ttdoc">Runs all tests in this unit_test object and prints the result.</div></div>
 <div class="ttc" id="agroup__tunit_html_ga1fa6dc01b83d00ce9e92402c9694c6af"><div class="ttname"><a href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a></div><div class="ttdeci">#define test_method_(method_name)</div><div class="ttdoc">Add test method to class test.</div><div class="ttdef"><b>Definition:</b> test_method_attribute.h:88</div></div>
+<div class="ttc" id="anamespacextd_1_1io_html"><div class="ttname"><a href="namespacextd_1_1io.html">xtd::io</a></div><div class="ttdoc">The xtd::io namespace contains types that allow reading and writing to files and data streams,...</div><div class="ttdef"><b>Definition:</b> binary_reader.h:17</div></div>
 <div class="ttc" id="anamespacextd_1_1tunit_html"><div class="ttname"><a href="namespacextd_1_1tunit.html">xtd::tunit</a></div><div class="ttdoc">The tunit namespace contains a unit test library.</div><div class="ttdef"><b>Definition:</b> abort_error.h:10</div></div>
+<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition:</b> system_report.h:17</div></div>
 </div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Methods</h2></td></tr>
@@ -570,10 +575,8 @@ If a validation fails, he test can be continued to the end or to an assertion is
 <div class="line"><a class="code hl_namespace" href="namespacextd.html">xtd</a>::io::directory_info <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae53125275854402400f74fd6ab3f7659">d3</a>(&quot;..&quot;)</div>
 <div class="line"><a class="code hl_namespace" href="namespacextd.html">xtd</a>::tunit::<a class="code hl_class" href="classxtd_1_1tunit_1_1directory__valid.html">directory_valid</a>::<a class="code hl_function" href="classxtd_1_1tunit_1_1directory__valid.html#a1f33cee10e467037525d6a0a0d3db7a9">are_equal</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_namespace" href="namespacextd.html">xtd</a>::tunit::<a class="code hl_class" href="classxtd_1_1tunit_1_1directory__valid.html">directory_valid</a>::<a class="code hl_function" href="classxtd_1_1tunit_1_1directory__valid.html#a1f33cee10e467037525d6a0a0d3db7a9">are_equal</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae53125275854402400f74fd6ab3f7659">d3</a>); <span class="comment">// test throws an assert_error exception.</span></div>
-<div class="ttc" id="aclassxtd_1_1io_1_1directory__info_html"><div class="ttname"><a href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a></div><div class="ttdoc">Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...</div><div class="ttdef"><b>Definition:</b> directory_info.h:126</div></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1directory__valid_html"><div class="ttname"><a href="classxtd_1_1tunit_1_1directory__valid.html">xtd::tunit::directory_valid</a></div><div class="ttdoc">The directory_valid class contains a collection of static methods that implement the most directory a...</div><div class="ttdef"><b>Definition:</b> directory_valid.h:23</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae53125275854402400f74fd6ab3f7659"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae53125275854402400f74fd6ab3f7659">xtd::console_key::d3</a></div><div class="ttdeci">@ d3</div><div class="ttdoc">The 3 key.</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition:</b> system_report.h:17</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -2616,7 +2619,7 @@ template&lt;typename char_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 11 2023 15:55:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jun 12 2023 22:39:17 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

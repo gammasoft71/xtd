@@ -85,7 +85,6 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classxtd_1_1tunit_1_1file__assume-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">xtd::tunit::file_assume Class Reference<span class="mlabels"><span class="mlabel">final</span></span><div class="ingroups"><a class="el" href="group__libraries.html">libraries</a> &raquo; <a class="el" href="group__xtd__tunit.html">xtd.tunit</a> &#124; <a class="el" href="group__tunit.html">unit tests</a> &raquo; <a class="el" href="group__assumptions.html">assumptions</a></div></div></div>
 </div><!--header-->
@@ -109,6 +108,8 @@ Inheritance diagram for xtd::tunit::file_assume:</div>
 <dl class="section user"><dt>Examples</dt><dd>This example show how to used some methods : <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd.tunit&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
 <div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span>std;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1tunit.html">xtd::tunit</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>unit_tests {</div>
@@ -116,15 +117,20 @@ Inheritance diagram for xtd::tunit::file_assume:</div>
 <div class="line">  <span class="keyword">class </span>test_class_(test) {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    <span class="keywordtype">void</span> <a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case1) {</div>
-<div class="line">      assert::is_true(<span class="keyword">true</span>);</div>
+<div class="line">      <span class="keyword">auto</span> fn = path::get_temp_file_name();</div>
+<div class="line">      file_assume::exists(fn);</div>
+<div class="line">      file::remove(fn);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">void</span> <a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case2) {</div>
-<div class="line">      assert::is_false(<span class="keyword">true</span>);</div>
+<div class="line">      <span class="keyword">auto</span> fn = path::get_random_file_name();</div>
+<div class="line">      file_assume::exists(fn);</div>
+<div class="line">      <span class="comment">// No need to remove fn because the file does not exist.</span></div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">void</span> <a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case3) {</div>
-<div class="line">      assert::does_not_throw([] {<span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;error&quot;</span>);});</div>
+<div class="line">      <span class="keyword">auto</span> <a class="code hl_function" href="group__xtd__core.html#ga52ae9030016acf7d943cd428e943dc02">is</a> = istringstream {<span class="stringliteral">&quot;xtd::tunit::file_assume::are_equal example.&quot;</span>};</div>
+<div class="line">      file_assume::are_equal(istringstream {<span class="stringliteral">&quot;xtd::tunit::file_assume::are_equel example.&quot;</span>}, <a class="code hl_function" href="group__xtd__core.html#ga52ae9030016acf7d943cd428e943dc02">is</a>);</div>
 <div class="line">    }</div>
 <div class="line">  };</div>
 <div class="line">}</div>
@@ -138,44 +144,29 @@ Inheritance diagram for xtd::tunit::file_assume:</div>
 <div class="line"><span class="comment">// Start 3 tests from 1 test case</span></div>
 <div class="line"><span class="comment">// Run tests:</span></div>
 <div class="line"><span class="comment">//   SUCCEED test.test_case1 (0 ms total)</span></div>
-<div class="line"><span class="comment">//   FAILED  test.test_case2 (0 ms total)</span></div>
-<div class="line"><span class="comment">//     Expected: false</span></div>
-<div class="line"><span class="comment">//     But was:  true</span></div>
-<div class="line"><span class="comment">//     Stack Trace: in |---OMITTED---|/assert.cpp:14</span></div>
-<div class="line"><span class="comment">//   FAILED  test.test_case3 (0 ms total)</span></div>
-<div class="line"><span class="comment">//     Expected: No Exception to be thrown</span></div>
-<div class="line"><span class="comment">//     But was:  &lt;std::range_error&gt;</span></div>
-<div class="line"><span class="comment">//     Stack Trace: in |---OMITTED---|/assert.cpp:18</span></div>
+<div class="line"><span class="comment">//   ABORTED test.test_case2 (0 ms total)</span></div>
+<div class="line"><span class="comment">//     Test aborted</span></div>
+<div class="line"><span class="comment">//     Expected: file exists</span></div>
+<div class="line"><span class="comment">//     But was:  &quot;t35uk5my.8v2&quot;</span></div>
+<div class="line"><span class="comment">//     Stack Trace: in |---OMITTED---|/file_assume.cpp:18</span></div>
+<div class="line"><span class="comment">//   ABORTED test.test_case3 (0 ms total)</span></div>
+<div class="line"><span class="comment">//     Test aborted</span></div>
+<div class="line"><span class="comment">//     Expected: istream at offset 32 value e</span></div>
+<div class="line"><span class="comment">//     But was:  a</span></div>
+<div class="line"><span class="comment">//     Stack Trace: in |---OMITTED---|/file_assume.cpp:24</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// Test results:</span></div>
 <div class="line"><span class="comment">//   SUCCEED 1 test.</span></div>
-<div class="line"><span class="comment">//   FAILED  2 tests.</span></div>
+<div class="line"><span class="comment">//   ABORTED 2 tests.</span></div>
 <div class="line"><span class="comment">// End 3 tests from 1 test case ran. (0 ms total)</span></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1console__unit__test_html"><div class="ttname"><a href="classxtd_1_1tunit_1_1console__unit__test.html">xtd::tunit::console_unit_test</a></div><div class="ttdoc">The console_unit_test class is console unit test interface.</div><div class="ttdef"><b>Definition:</b> console_unit_test.h:23</div></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1unit__test_html_a8da8a3353d5c71e0afa0de307fc40916"><div class="ttname"><a href="classxtd_1_1tunit_1_1unit__test.html#a8da8a3353d5c71e0afa0de307fc40916">xtd::tunit::unit_test::run</a></div><div class="ttdeci">int32 run()</div><div class="ttdoc">Runs all tests in this unit_test object and prints the result.</div></div>
 <div class="ttc" id="agroup__tunit_html_ga1fa6dc01b83d00ce9e92402c9694c6af"><div class="ttname"><a href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a></div><div class="ttdeci">#define test_method_(method_name)</div><div class="ttdoc">Add test method to class test.</div><div class="ttdef"><b>Definition:</b> test_method_attribute.h:88</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ga52ae9030016acf7d943cd428e943dc02"><div class="ttname"><a href="group__xtd__core.html#ga52ae9030016acf7d943cd428e943dc02">xtd::is</a></div><div class="ttdeci">bool is(std::any value)</div><div class="ttdoc">Checks if the result of an expression is compatible with a given type.</div><div class="ttdef"><b>Definition:</b> is.h:305</div></div>
+<div class="ttc" id="anamespacextd_1_1io_html"><div class="ttname"><a href="namespacextd_1_1io.html">xtd::io</a></div><div class="ttdoc">The xtd::io namespace contains types that allow reading and writing to files and data streams,...</div><div class="ttdef"><b>Definition:</b> binary_reader.h:17</div></div>
 <div class="ttc" id="anamespacextd_1_1tunit_html"><div class="ttname"><a href="namespacextd_1_1tunit.html">xtd::tunit</a></div><div class="ttdoc">The tunit namespace contains a unit test library.</div><div class="ttdef"><b>Definition:</b> abort_error.h:10</div></div>
 </div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ad435ec0356abad2e9407c9c426a8498a"><td class="memTemplParams" colspan="2">template&lt;typename char_t &gt; </td></tr>
-<tr class="memitem:ad435ec0356abad2e9407c9c426a8498a"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assume.html#ad435ec0356abad2e9407c9c426a8498a">exists</a> (const std::basic_string&lt; char_t &gt; &amp;file)</td></tr>
-<tr class="memdesc:ad435ec0356abad2e9407c9c426a8498a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assumes that file exists.  <br /></td></tr>
-<tr class="separator:ad435ec0356abad2e9407c9c426a8498a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0eed1131e6e614f99c4b75bc5f89b5ae"><td class="memTemplParams" colspan="2">template&lt;typename char_t &gt; </td></tr>
-<tr class="memitem:a0eed1131e6e614f99c4b75bc5f89b5ae"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assume.html#a0eed1131e6e614f99c4b75bc5f89b5ae">exists</a> (const std::basic_string&lt; char_t &gt; &amp;file, const std::string &amp;message)</td></tr>
-<tr class="memdesc:a0eed1131e6e614f99c4b75bc5f89b5ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assumes that file exists.  <br /></td></tr>
-<tr class="separator:a0eed1131e6e614f99c4b75bc5f89b5ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f04a9732d2a81d072ac34f246212e9f"><td class="memTemplParams" colspan="2">template&lt;typename char_t &gt; </td></tr>
-<tr class="memitem:a0f04a9732d2a81d072ac34f246212e9f"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assume.html#a0f04a9732d2a81d072ac34f246212e9f">exists</a> (const std::basic_string&lt; char_t &gt; &amp;file, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame)</td></tr>
-<tr class="memdesc:a0f04a9732d2a81d072ac34f246212e9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assumes that file exists.  <br /></td></tr>
-<tr class="separator:a0f04a9732d2a81d072ac34f246212e9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22de17dfa9b3e96550d433a2a1aec7d9"><td class="memTemplParams" colspan="2">template&lt;typename char_t &gt; </td></tr>
-<tr class="memitem:a22de17dfa9b3e96550d433a2a1aec7d9"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assume.html#a22de17dfa9b3e96550d433a2a1aec7d9">exists</a> (const std::basic_string&lt; char_t &gt; &amp;file, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame)</td></tr>
-<tr class="memdesc:a22de17dfa9b3e96550d433a2a1aec7d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assumes that file exists.  <br /></td></tr>
-<tr class="separator:a22de17dfa9b3e96550d433a2a1aec7d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Methods</h2></td></tr>
 <tr class="memitem:ac8d2cb7182091f09fe9cd5375f9edb53"><td class="memTemplParams" colspan="2">template&lt;typename char_t &gt; </td></tr>
 <tr class="memitem:ac8d2cb7182091f09fe9cd5375f9edb53"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assume.html#ac8d2cb7182091f09fe9cd5375f9edb53">are_equal</a> (const std::basic_istream&lt; char_t &gt; &amp;expected, const std::basic_istream&lt; char_t &gt; &amp;actual)</td></tr>
@@ -257,6 +248,22 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a06ee549b50595e10c2b9505ddc57f759"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assume.html#a06ee549b50595e10c2b9505ddc57f759">does_not_exist</a> (const std::basic_string&lt; char_t &gt; &amp;file, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame)</td></tr>
 <tr class="memdesc:a06ee549b50595e10c2b9505ddc57f759"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assumes that file not exists.  <br /></td></tr>
 <tr class="separator:a06ee549b50595e10c2b9505ddc57f759"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad435ec0356abad2e9407c9c426a8498a"><td class="memTemplParams" colspan="2">template&lt;typename char_t &gt; </td></tr>
+<tr class="memitem:ad435ec0356abad2e9407c9c426a8498a"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assume.html#ad435ec0356abad2e9407c9c426a8498a">exists</a> (const std::basic_string&lt; char_t &gt; &amp;file)</td></tr>
+<tr class="memdesc:ad435ec0356abad2e9407c9c426a8498a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assumes that file exists.  <br /></td></tr>
+<tr class="separator:ad435ec0356abad2e9407c9c426a8498a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22de17dfa9b3e96550d433a2a1aec7d9"><td class="memTemplParams" colspan="2">template&lt;typename char_t &gt; </td></tr>
+<tr class="memitem:a22de17dfa9b3e96550d433a2a1aec7d9"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assume.html#a22de17dfa9b3e96550d433a2a1aec7d9">exists</a> (const std::basic_string&lt; char_t &gt; &amp;file, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame)</td></tr>
+<tr class="memdesc:a22de17dfa9b3e96550d433a2a1aec7d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assumes that file exists.  <br /></td></tr>
+<tr class="separator:a22de17dfa9b3e96550d433a2a1aec7d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0eed1131e6e614f99c4b75bc5f89b5ae"><td class="memTemplParams" colspan="2">template&lt;typename char_t &gt; </td></tr>
+<tr class="memitem:a0eed1131e6e614f99c4b75bc5f89b5ae"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assume.html#a0eed1131e6e614f99c4b75bc5f89b5ae">exists</a> (const std::basic_string&lt; char_t &gt; &amp;file, const std::string &amp;message)</td></tr>
+<tr class="memdesc:a0eed1131e6e614f99c4b75bc5f89b5ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assumes that file exists.  <br /></td></tr>
+<tr class="separator:a0eed1131e6e614f99c4b75bc5f89b5ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f04a9732d2a81d072ac34f246212e9f"><td class="memTemplParams" colspan="2">template&lt;typename char_t &gt; </td></tr>
+<tr class="memitem:a0f04a9732d2a81d072ac34f246212e9f"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1file__assume.html#a0f04a9732d2a81d072ac34f246212e9f">exists</a> (const std::basic_string&lt; char_t &gt; &amp;file, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame)</td></tr>
+<tr class="memdesc:a0f04a9732d2a81d072ac34f246212e9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assumes that file exists.  <br /></td></tr>
+<tr class="separator:a0f04a9732d2a81d072ac34f246212e9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="ac8d2cb7182091f09fe9cd5375f9edb53" name="ac8d2cb7182091f09fe9cd5375f9edb53"></a>
@@ -1676,7 +1683,7 @@ template&lt;typename char_t &gt; </div>
 <div class="line"><a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2abd19836ddb62c11c55ab251ccaca5645">f1</a>.close();</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1file__assume.html#ad435ec0356abad2e9407c9c426a8498a">xtd::tunit::file_assume::exists</a>(<span class="stringliteral">&quot;Test1.txt&quot;</span>); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1file__assume.html#ad435ec0356abad2e9407c9c426a8498a">xtd::tunit::file_assume::exists</a>(<span class="stringliteral">&quot;Test2.txt&quot;</span>);<span class="comment">// test throws an abort_error exception.</span></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1file__assume_html_ad435ec0356abad2e9407c9c426a8498a"><div class="ttname"><a href="classxtd_1_1tunit_1_1file__assume.html#ad435ec0356abad2e9407c9c426a8498a">xtd::tunit::file_assume::exists</a></div><div class="ttdeci">static void exists(const std::basic_string&lt; char_t &gt; &amp;file)</div><div class="ttdoc">Assumes that file exists.</div><div class="ttdef"><b>Definition:</b> file_assume.h:506</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1file__assume_html_ad435ec0356abad2e9407c9c426a8498a"><div class="ttname"><a href="classxtd_1_1tunit_1_1file__assume.html#ad435ec0356abad2e9407c9c426a8498a">xtd::tunit::file_assume::exists</a></div><div class="ttdeci">static void exists(const std::basic_string&lt; char_t &gt; &amp;file)</div><div class="ttdoc">Assumes that file exists.</div><div class="ttdef"><b>Definition:</b> file_assume.h:505</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -1872,7 +1879,7 @@ template&lt;typename char_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 11 2023 15:55:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jun 12 2023 22:39:17 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

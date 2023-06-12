@@ -110,6 +110,8 @@ If a validation fails, he test can be continued to the end or to an assertion is
 <dl class="section user"><dt>Examples</dt><dd>This example show how to used some methods : <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd.tunit&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
 <div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span>std;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1tunit.html">xtd::tunit</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>unit_tests {</div>
@@ -117,15 +119,18 @@ If a validation fails, he test can be continued to the end or to an assertion is
 <div class="line">  <span class="keyword">class </span>test_class_(test) {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    <span class="keywordtype">void</span> <a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case1) {</div>
-<div class="line">      assert::is_true(<span class="keyword">true</span>);</div>
+<div class="line">      <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a> = <span class="stringliteral">&quot;A string value&quot;</span>;</div>
+<div class="line">      string_valid::are_equal_ignoring_case(<span class="stringliteral">&quot;A STRING VALUE&quot;</span>, s);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">void</span> <a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case2) {</div>
-<div class="line">      assert::is_false(<span class="keyword">true</span>);</div>
+<div class="line">      <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a> = <span class="stringliteral">&quot;A string value&quot;</span>;</div>
+<div class="line">      string_valid::contains(<span class="stringliteral">&quot;item&quot;</span>, s);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">void</span> <a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case3) {</div>
-<div class="line">      assert::does_not_throw([] {<span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;error&quot;</span>);});</div>
+<div class="line">      <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a> = <span class="stringliteral">&quot;A string value&quot;</span>;</div>
+<div class="line">      string_valid::matches(<span class="stringliteral">&quot;item$&quot;</span>, s);</div>
 <div class="line">    }</div>
 <div class="line">  };</div>
 <div class="line">}</div>
@@ -140,13 +145,13 @@ If a validation fails, he test can be continued to the end or to an assertion is
 <div class="line"><span class="comment">// Run tests:</span></div>
 <div class="line"><span class="comment">//   SUCCEED test.test_case1 (0 ms total)</span></div>
 <div class="line"><span class="comment">//   FAILED  test.test_case2 (0 ms total)</span></div>
-<div class="line"><span class="comment">//     Expected: false</span></div>
-<div class="line"><span class="comment">//     But was:  true</span></div>
-<div class="line"><span class="comment">//     Stack Trace: in |---OMITTED---|/assert.cpp:14</span></div>
+<div class="line"><span class="comment">//     Expected: string containing &quot;item&quot;</span></div>
+<div class="line"><span class="comment">//     But was:  &quot;A string value&quot;</span></div>
+<div class="line"><span class="comment">//     Stack Trace: in |---OMITTED---|/string_valid.cpp:17</span></div>
 <div class="line"><span class="comment">//   FAILED  test.test_case3 (0 ms total)</span></div>
-<div class="line"><span class="comment">//     Expected: No Exception to be thrown</span></div>
-<div class="line"><span class="comment">//     But was:  &lt;std::range_error&gt;</span></div>
-<div class="line"><span class="comment">//     Stack Trace: in |---OMITTED---|/assert.cpp:18</span></div>
+<div class="line"><span class="comment">//     Expected: string matching &quot;item$&quot;</span></div>
+<div class="line"><span class="comment">//     But was:  &quot;A string value&quot;</span></div>
+<div class="line"><span class="comment">//     Stack Trace: in |---OMITTED---|/string_valid.cpp:22</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// Test results:</span></div>
 <div class="line"><span class="comment">//   SUCCEED 1 test.</span></div>
@@ -155,6 +160,8 @@ If a validation fails, he test can be continued to the end or to an assertion is
 <div class="ttc" id="aclassxtd_1_1tunit_1_1console__unit__test_html"><div class="ttname"><a href="classxtd_1_1tunit_1_1console__unit__test.html">xtd::tunit::console_unit_test</a></div><div class="ttdoc">The console_unit_test class is console unit test interface.</div><div class="ttdef"><b>Definition:</b> console_unit_test.h:23</div></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1unit__test_html_a8da8a3353d5c71e0afa0de307fc40916"><div class="ttname"><a href="classxtd_1_1tunit_1_1unit__test.html#a8da8a3353d5c71e0afa0de307fc40916">xtd::tunit::unit_test::run</a></div><div class="ttdeci">int32 run()</div><div class="ttdoc">Runs all tests in this unit_test object and prints the result.</div></div>
 <div class="ttc" id="agroup__tunit_html_ga1fa6dc01b83d00ce9e92402c9694c6af"><div class="ttname"><a href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a></div><div class="ttdeci">#define test_method_(method_name)</div><div class="ttdoc">Add test method to class test.</div><div class="ttdef"><b>Definition:</b> test_method_attribute.h:88</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">xtd::console_key::s</a></div><div class="ttdeci">@ s</div><div class="ttdoc">The S key.</div></div>
+<div class="ttc" id="anamespacextd_1_1io_html"><div class="ttname"><a href="namespacextd_1_1io.html">xtd::io</a></div><div class="ttdoc">The xtd::io namespace contains types that allow reading and writing to files and data streams,...</div><div class="ttdef"><b>Definition:</b> binary_reader.h:17</div></div>
 <div class="ttc" id="anamespacextd_1_1tunit_html"><div class="ttname"><a href="namespacextd_1_1tunit.html">xtd::tunit</a></div><div class="ttdoc">The tunit namespace contains a unit test library.</div><div class="ttdef"><b>Definition:</b> abort_error.h:10</div></div>
 </div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
@@ -771,7 +778,6 @@ If a validation fails, he test can be continued to the end or to an assertion is
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1string__valid.html#a0799b37471d8dd62f5db65935bcf15a2">xtd::tunit::string_valid::contains</a>(<span class="stringliteral">&quot;a&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1string__valid.html#a0799b37471d8dd62f5db65935bcf15a2">xtd::tunit::string_valid::contains</a>(<span class="stringliteral">&quot;z&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>); <span class="comment">// test fails.</span></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1string__valid_html_a0799b37471d8dd62f5db65935bcf15a2"><div class="ttname"><a href="classxtd_1_1tunit_1_1string__valid.html#a0799b37471d8dd62f5db65935bcf15a2">xtd::tunit::string_valid::contains</a></div><div class="ttdeci">static void contains(const xtd::ustring &amp;item, const xtd::ustring &amp;string)</div><div class="ttdoc">Validates that string contains an item.</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">xtd::console_key::s</a></div><div class="ttdeci">@ s</div><div class="ttdoc">The S key.</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -2524,7 +2530,7 @@ If a validation fails, he test can be continued to the end or to an assertion is
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 11 2023 15:55:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jun 12 2023 22:39:17 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
