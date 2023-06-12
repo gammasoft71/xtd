@@ -139,6 +139,22 @@
 * [collection_assume_is_not_empty](collection_assumes/collection_assume_is_not_empty/README.md) shows how to use [xtd::tunit::collection_assume::is_not_empty](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assume.html#a37f97542c1bd4390c96bdbf304ee5332) method.
 * [collection_assume_is_ordered](collection_assumes/collection_assume_is_ordered/README.md) shows how to use [xtd::tunit::collection_assume::is_ordered](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assume.html#a2526324a21a6bc7e3cdf36bed4d446aa) method.
 
+## [Directory assumes](directory_assumes/README.md)
+
+* [directory_assume](directory_assumes/directory_assume/README.md) shows how to use [xtd::tunit::directory_assume](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1directory__assume.html) class.
+* [directory_assume_are_equal](directory_assumes/directory_assume_are_equal/README.md) shows how to use [xtd::tunit::directory_assume::are_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1directory__assume.html#a410f1118dbe61c023150589c267821f8) method.
+* [directory_assume_are_not_equal](directory_assumes/directory_assume_are_not_equal/README.md) shows how to use [xtd::tunit::directory_assume::are_not_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1directory__assume.html#aa17faed41f0382ec9659a48f3f401ee8) method.
+* [directory_assume_does_not_exist](directory_assumes/directory_assume_does_not_exist/README.md) shows how to use [xtd::tunit::directory_assume::does_not_exist](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1directory__assume.html#a33fe8c263a3430933e90360c58f56238) method.
+* [directory_assume_exists](directory_assumes/directory_assume_exists/README.md) shows how to use [xtd::tunit::directory_assume::exists](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1directory__assume.html#ad1a19a732791903f424e012018d6c72d) method.
+
+## [File assumes](file_assumes/README.md)
+
+* [file_assume](file_assumes/file_assume/README.md) shows how to use [xtd::tunit::file_assume](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1file__assume.html) class.
+* [file_assume_are_equal](file_assumes/file_assume_are_equal/README.md) shows how to use [xtd::tunit::file_assume::are_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1file__assume.html#ac8d2cb7182091f09fe9cd5375f9edb53) method.
+* [file_assume_are_not_equal](file_assumes/file_assume_are_not_equal/README.md) shows how to use [xtd::tunit::file_assume::are_not_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1file__assume.html#a2f028d4c7ebe85856bbf37d19de47f9c) method.
+* [file_assume_does_not_exist](file_assumes/file_assume_does_not_exist/README.md) shows how to use [xtd::tunit::file_assume::des_not_exist](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1file__assume.html#aa4fbfe0459fdf170107ae21736cd0ff6) method.
+* [file_assume_exists](file_assumes/file_assume_exists/README.md) shows how to use [xtd::tunit::file_assume::exists](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1file__assume.html#ad435ec0356abad2e9407c9c426a8498a) method.
+
 ## [Valids](valids/README.md)
 
 * [valid](valids/valid/README.md) shows how to use [xtd::tunit::valid](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html) class.

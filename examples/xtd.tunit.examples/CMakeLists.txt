@@ -13,6 +13,7 @@ add_projects(
   directory_assumes
   directory_valids
   file_asserts
+  file_assumes
   file_valids
   hello_worlds
   others
