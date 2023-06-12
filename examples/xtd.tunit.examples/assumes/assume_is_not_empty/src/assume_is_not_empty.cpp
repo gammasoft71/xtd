@@ -10,7 +10,7 @@ namespace unit_tests {
       assume::is_not_empty({0, 1, 2, 3});
     }
     
-    void test_method_(test_case_collection_failed) {
+    void test_method_(test_case_collection_aborted) {
       assume::is_not_empty(initializer_list<int> {});
     }
     
@@ -18,7 +18,7 @@ namespace unit_tests {
       assume::is_not_empty("string");
     }
     
-    void test_method_(test_case_string_failed) {
+    void test_method_(test_case_string_aborted) {
       assume::is_not_empty("");
     }
   };
@@ -33,12 +33,12 @@ auto main()->int {
 // Start 4 tests from 1 test case
 // Run tests:
 //   SUCCEED test.test_case_collection_succeed (0 ms total)
-//   ABORTED  test.test_case_collection_failed (0 ms total)
+//   ABORTED  test.test_case_collection_aborted (0 ms total)
 //     Expected: collection not <empty>
 //     But was:  <empty>
 //     Stack Trace: in |---OMITTED---|/assume_is_not_empty.cpp:13
 //   SUCCEED test.test_case_string_succeed (0 ms total)
-//   ABORTED test.test_case_string_failed (0 ms total)
+//   ABORTED test.test_case_string_aborted (0 ms total)
 //     Expected: collection not <empty>
 //     But was:  <empty>
 //     Stack Trace: in |---OMITTED---|/assume_is_not_empty.cpp:21

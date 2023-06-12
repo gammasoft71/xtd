@@ -10,7 +10,7 @@ namespace unit_tests {
       assume::are_not_equal(23, i);
     }
     
-    void test_method_(test_case_failed) {
+    void test_method_(test_case_aborted) {
       int i = 24;
       assume::are_not_equal(24, i);
     }
@@ -26,7 +26,7 @@ auto main()->int {
 // Start 2 tests from 1 test case
 // Run tests:
 //   SUCCEED test.test_case_succeed (0 ms total)
-//   ABORTED test.test_case_failed (0 ms total)
+//   ABORTED test.test_case_aborted (0 ms total)
 //     Test aborted
 //     Expected: not 24
 //     But was:  24

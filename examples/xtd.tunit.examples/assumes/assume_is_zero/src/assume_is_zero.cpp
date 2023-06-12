@@ -13,7 +13,7 @@ namespace unit_tests {
       assume::is_zero(i);
     }
     
-    void test_method_(test_case_failed) {
+    void test_method_(test_case_aborted) {
       int i = 42;
       assume::is_zero(i);
     }
@@ -29,7 +29,7 @@ auto main()->int {
 // Start 2 tests from 1 test case
 // Run tests:
 //   SUCCEED test.test_case_succeed (0 ms total)
-//   ABORTED test.test_case_failed (0 ms total)
+//   ABORTED test.test_case_aborted (0 ms total)
 //     Expected: zero
 //     But was:  42
 //     Stack Trace: in |---OMITTED---|/assume_is_zero.cpp:16
