@@ -14,20 +14,12 @@ elseif (UNIX)
   add_references(dl rt)
 endif ()
 add_sources(
-  module_information.cpp
-  module_information.h
-  process_information.cpp
-  process_information.h
-  stack_frame.cpp
-  stack_frame.h
   StackWalker.cpp
   StackWalker.h
-  thread_information.cpp
-  thread_information.h
-  call_stack.h
+  call_stack.hpp
   call_stack_gcc.cpp
   call_stack_msvc.cpp
-  stack_exception.h
+  stack_exception.hpp
 )
 target_type(${XTD_LIBRARY_TYPE})
 
