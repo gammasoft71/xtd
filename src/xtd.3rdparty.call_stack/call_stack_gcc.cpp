@@ -62,12 +62,14 @@ namespace stacktrace {
         e.file     = dlinfo.dli_fname;
         e.line     = 0; // unsupported
         e.function = symname;
+        e.offset   = reinterpret_cast<size_t>(dlinfo.dli_saddr) - reinterpret_cast<size_t>(dlinfo.dli_fbase);
+        e.column = 0; // unsupported
         stack.push_back(e);
       } else {
         break; // skip last entries below main
       }
       
-      if (demangled) free(demangled);      
+      if (demangled) free(demangled);
       if (symname == std::string("main")) break;
     }
   }
