@@ -20,8 +20,8 @@ add_sources(
   process_information.h
   stack_frame.cpp
   stack_frame.h
-  stack_walker.cpp
-  stack_walker.h
+  StackWalker.cpp
+  StackWalker.h
   thread_information.cpp
   thread_information.h
   call_stack.h

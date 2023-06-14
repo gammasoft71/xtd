@@ -33,8 +33,8 @@ namespace stacktrace {
   call_stack::call_stack(size_t num_discard /*= 0*/) {
     using namespace abi;
 
-#if !defined(__APPLE__)
-    if (num_discard >= 2) num_discard -= 2;
+#if defined(__APPLE__)
+    if (num_discard >= 2) num_discard += 2;
 #endif
     
     // retrieve call-stack
@@ -73,16 +73,6 @@ namespace stacktrace {
       
       free(demangled);
     }
-
-#if !defined(__APPLE__)
-    entry e;    
-    e.file     = "";
-    e.line     = 0; // unsupported
-    e.function = "start";
-    e.offset   = 0;
-    e.column = 0; // unsupported
-    stack.push_back(e);
-#endif
   }
   
   call_stack::~call_stack() throw() {

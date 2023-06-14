@@ -98,7 +98,7 @@ ustring stack_frame::to_string() const noexcept {
 }
 
 std::vector<stack_frame> stack_frame::get_stack_frames(const ustring& str, size_t skip_frames, bool need_file_info) noexcept {
-  stacktrace::call_stack call_stack(4);
+  stacktrace::call_stack call_stack(2);
   size_t skip_frames_before_str = 0;
   if (!str.empty()) {
     skip_frames_before_str = call_stack.stack.size();
@@ -112,7 +112,7 @@ std::vector<stack_frame> stack_frame::get_stack_frames(const ustring& str, size_
   
   std::vector<stack_frame> stack_frames;
   if (call_stack.stack.size() == 0) return stack_frames;
-  for (size_t index = skip_frames_before_str + skip_frames; index < call_stack.stack.size() - 1; ++index)
+  for (size_t index = skip_frames_before_str + skip_frames; index < call_stack.stack.size(); ++index)
     stack_frames.emplace_back(stack_frame(need_file_info ? call_stack.stack[index].file : "", need_file_info ? static_cast<uint32>(call_stack.stack[index].line) : 0, call_stack.stack[index].function, need_file_info ? static_cast<uint32>(call_stack.stack[index].column) : 0, static_cast<uint32>(call_stack.stack[index].offset)));
   return stack_frames;
 }
