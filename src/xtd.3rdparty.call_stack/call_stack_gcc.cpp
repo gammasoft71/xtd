@@ -31,18 +31,19 @@ namespace stacktrace {
 
 namespace stacktrace {
   
-  call_stack::call_stack (size_t num_discard /*= 0*/) {
+  call_stack::call_stack (const size_t num_discard /*= 0*/) {
     using namespace abi;
 
+    auto discard_idx = num_discard;
 #if defined(__APPLE__)
-    if (num_discard >= 2) num_discard += 2;
+    discard_idx += 2;
 #endif
     
     // retrieve call-stack
     void * trace[MAX_DEPTH];
     int stack_depth = backtrace(trace, MAX_DEPTH);
     
-    for (int i = (int)num_discard+1; i < stack_depth; i++) {
+    for (int i = (int)discard_idx+1; i < stack_depth; i++) {
       Dl_info dlinfo;
       if(!dladdr(trace[i], &dlinfo))
         break;
