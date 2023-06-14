@@ -72,11 +72,8 @@ namespace stacktrace {
       }
       
       free(demangled);
+      if (symname == std::string("main")) break;
     }
-    
-#if defined(__APPLE__)
-    stack.pop_back();
-#endif
   }
   
   call_stack::~call_stack() throw() {
