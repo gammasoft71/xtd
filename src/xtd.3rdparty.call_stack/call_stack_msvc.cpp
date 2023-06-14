@@ -101,7 +101,10 @@ namespace stacktrace {
   call_stack::call_stack(const size_t num_discard /*= 0*/) {
     StackWalkerAdapter sw(num_discard);
     sw.ShowCallstack();
-    stack = sw.stack;
+    for (auto entry : sw.stack) {
+      stack.push_back(entry);
+      if (entry.function == "main") break;
+    }
   }
   
   call_stack::~call_stack() throw() {
