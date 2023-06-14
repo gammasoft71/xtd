@@ -252,7 +252,7 @@ void environment::set_environment_variable(const ustring& variable, const ustrin
 }
 
 xtd::ustring environment::stack_trace() {
-  return xtd::diagnostics::stack_trace().to_string();
+  return xtd::diagnostics::stack_trace(true).to_string();
 }
 
 xtd::ustring environment::system_directory() {
