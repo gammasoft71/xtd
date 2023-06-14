@@ -1,50 +1,8 @@
 /* Copyright (c) 2009, Fredrik Orderud
- License: BSD licence (http://www.opensource.org/licenses/bsd-license.php) */
+   License: BSD licence (http://www.opensource.org/licenses/bsd-license.php) */
 
 /* Windows (Microsoft visual studio) implementation of the call_stack class. */
 #ifdef _WIN32 // also defined in 64bit
-
-#if defined(_WIN32_WCE)
-
-#include "call_stack.h"
-#include "ProcessInformation.h"
-#include "ThreadInformation.h"
-#include <iostream>
-#include <fstream>
-#include <sstream>
-#include <iomanip>
-
-using namespace std;
-
-namespace stacktrace {
-  call_stack::call_stack(const size_t /*num_discard*/) {
-    ProcessInformation processInformation = ProcessInformation::GetProcessInformation();
-    
-    StackFrames::const_iterator it;
-    for (it = processInformation.GetStackFrames().begin(); it != processInformation.GetStackFrames().end(); ++it) {
-      stacktrace::entry e;
-      e.file = "";
-      e.line = 0;
-      stringstream ss;
-      ss << "0x";
-      ss << std::hex;
-      ss << std::setw(8);
-      ss << std::setfill('0');
-      ss << it->GetAbsoluteReturnAddress();
-      e.function = ss.str();
-      e.offset = it->GetFramePointer();
-      e.column = 0;
-      stack.push_back(e);
-    }
-  }
-  
-  call_stack::~call_stack() throw() {
-    // automatic cleanup
-  }
-} // namespace stacktrace
-
-
-#else
 
 #include "call_stack.hpp"
 #include "StackWalker.h"
@@ -62,7 +20,7 @@ protected:
   void OnCallstackEntry(CallstackEntryType /*eType*/, CallstackEntry& entry) override {
     if (entry.lineFileName[0] == 0)
       discard_idx = -1; // skip all entries from now on
-      
+    
     // discard first N stack entries
     if (discard_idx > 0)
       discard_idx--;
@@ -88,7 +46,7 @@ protected:
   void OnDbgHelpErr(LPCSTR /*szFuncName*/, DWORD /*gle*/, DWORD64 /*addr*/) override {
     // discard
   }
-  
+
 public:
   std::vector<stacktrace::entry> stack;       ///< populated stack trace
 private:
@@ -106,22 +64,11 @@ namespace stacktrace {
       if (entry.function == "main") break;
     }
   }
-  
+
   call_stack::~call_stack() throw() {
     // automatic cleanup
   }
-  
-  /*
-  std::string to_string () const {
-    std::ostringstream os;
-    for (size_t i = 0; i < stack.size(); i++)
-      os << stack[i].to_string() << std::endl;
-    return os.str();
-  }
-  */
-  
-} // namespace stacktrace
 
-#endif // _WIN32_WCE
+} // namespace stacktrace
 
 #endif // _WIN32
