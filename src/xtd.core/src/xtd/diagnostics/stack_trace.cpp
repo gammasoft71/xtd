@@ -1,6 +1,5 @@
 #include "../../../include/xtd/environment.h"
 #include "../../../include/xtd/diagnostics/stack_trace.h"
-#include <call_stack.h>
 
 using namespace xtd;
 using namespace xtd::diagnostics;
