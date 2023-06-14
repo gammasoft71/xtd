@@ -82,6 +82,8 @@
  *
  **********************************************************************/
 
+#ifdef _WIN32 // also defined in 64bit
+
 #include "StackWalker.h"
 
 #include <stdio.h>
@@ -1554,3 +1556,5 @@ void StackWalker::OnOutput(LPCSTR buffer)
 {
   OutputDebugStringA(buffer);
 }
+
+#endif
