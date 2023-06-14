@@ -46,7 +46,7 @@ namespace stacktrace {
 
 #else
 
-#include "call_stack.h"
+#include "call_stack.hpp"
 #include "StackWalker.h"
 
 /** Adapter class to interfaces with the StackWalker project.
