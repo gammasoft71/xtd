@@ -12,7 +12,7 @@ namespace stacktrace {
   /** Call-stack entry datastructure. */
   struct entry {
     /** Default constructor that clears all fields. */
-    entry() : file(""), line(0), function(""), offset(0), column(0) {}
+    entry () : line(0), offset(0), column(0) {}
     
     std::string file;     ///< filename
     size_t      line;     ///< line number
