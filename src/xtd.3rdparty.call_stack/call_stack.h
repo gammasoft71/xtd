@@ -33,7 +33,7 @@ namespace stacktrace {
   public:
     /** Stack-trace constructor.
      \param num_discard - number of stack entries to discard at the top. */
-    explicit call_stack(const size_t num_discard = 0);
+    explicit call_stack(size_t num_discard = 0);
     
     virtual ~call_stack() throw();
     
