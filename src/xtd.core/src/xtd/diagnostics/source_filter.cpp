@@ -1,5 +1,4 @@
 #include "../../../include/xtd/diagnostics/source_filter.h"
-#include <call_stack.h>
 
 using namespace std;
 using namespace xtd;
