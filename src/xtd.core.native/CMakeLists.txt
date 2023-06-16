@@ -45,6 +45,7 @@ add_sources(
   include/xtd/native/socket_type_constants.h
   include/xtd/native/sounds.h
   include/xtd/native/speech_synthesizer.h
+  include/xtd/native/stack_trace.h
   include/xtd/native/system_sound.h
   include/xtd/native/translator.h
   include/xtd/native/types.h

@@ -1,5 +1,11 @@
 #include "../../../include/xtd/diagnostics/stack_frame.h"
+#if !defined(__APPLE__)
 #include <call_stack.hpp>
+#else
+#define __XTD_CORE_NATIVE_LIBRARY__
+#include <xtd/native/stack_trace.h>
+#undef __XTD_CORE_NATIVE_LIBRARY__
+#endif
 
 using namespace std;
 using namespace xtd;
@@ -97,6 +103,7 @@ ustring stack_frame::to_string() const noexcept {
   return ustring::format("{} at offset {} in file:line:column {}:{}:{}", method_name_.empty() ? "<unknown method>" : method_name_, offset_ == OFFSET_UNKNOWN || file_name_.empty() ? "<unknown offset>" : std::to_string(offset_), file_name_.empty() ? "<filename unknown>" : file_name_, file_line_number_, file_column_number_);
 }
 
+#if !defined(__APPLE__)
 std::vector<stack_frame> stack_frame::get_stack_frames(const ustring& str, size_t skip_frames, bool need_file_info) noexcept {
   stacktrace::call_stack call_stack(2);
   size_t skip_frames_before_str = 0;
@@ -116,3 +123,27 @@ std::vector<stack_frame> stack_frame::get_stack_frames(const ustring& str, size_
     stack_frames.emplace_back(stack_frame(need_file_info ? call_stack.stack[index].file : "", need_file_info ? static_cast<uint32>(call_stack.stack[index].line) : 0, call_stack.stack[index].function, need_file_info ? static_cast<uint32>(call_stack.stack[index].column) : 0, static_cast<uint32>(call_stack.stack[index].offset)));
   return stack_frames;
 }
+#else
+std::vector<stack_frame> stack_frame::get_stack_frames(const ustring& str, size_t skip_frames, bool need_file_info) noexcept {
+  native::stack_trace::frames call_stack = native::stack_trace::get_frames(3, 1024);
+  size_t skip_frames_before_str = 0;
+  if (!str.empty()) {
+    skip_frames_before_str = call_stack.size();
+    for (size_t index = 0; index < call_stack.size(); ++index) {
+      auto [file, line, column, function, offset] = call_stack[index];
+      if (function.starts_with(str)) {
+        skip_frames_before_str = index;
+        break;
+      }
+    }
+  }
+  
+  std::vector<stack_frame> stack_frames;
+  if (call_stack.size() == 0) return stack_frames;
+  for (size_t index = skip_frames_before_str + skip_frames; index < call_stack.size(); ++index) {
+    auto [file, line, column, function, offset] = call_stack[index];
+    stack_frames.emplace_back(stack_frame(need_file_info ? file : "", need_file_info ? static_cast<uint32>(line) : 0, function, need_file_info ? static_cast<uint32>(column) : 0, static_cast<uint32>(offset)));
+  }
+  return stack_frames;
+}
+#endif
