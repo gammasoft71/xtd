@@ -12,13 +12,13 @@ namespace stacktrace {
   /** Call-stack entry datastructure. */
   struct entry {
     /** Default constructor that clears all fields. */
-    entry () : line(0), offset(0), column(0) {}
+    entry () : line(0), column(0), offset(0) {}
     
     std::string file;     ///< filename
     size_t      line;     ///< line number
+    size_t      column;   ///< column number
     std::string function; ///< name of function or method
     size_t      offset;   ///< offset
-    size_t      column;   ///< column number
     
     /** Serialize entry into a text string. */
     std::string to_string() const {

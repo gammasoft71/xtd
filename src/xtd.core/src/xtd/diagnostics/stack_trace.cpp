@@ -4,6 +4,7 @@
 using namespace xtd;
 using namespace xtd::diagnostics;
 
+#if !defined(__APPLE__)
 stack_trace::stack_trace() : stack_trace("", METHODS_TO_SKIP, false) {
 }
 
@@ -35,6 +36,47 @@ stack_trace::stack_trace(const std::exception& exception, size_t skip_frames) : 
 
 stack_trace::stack_trace(const std::exception& exception, size_t skip_frames, bool need_file_info) : stack_trace(ustring::full_class_name(exception), skip_frames, need_file_info) {
 }
+#else
+stack_trace::stack_trace() {
+  frames_ = stack_frame::get_stack_frames("", METHODS_TO_SKIP, false);
+}
+
+stack_trace::stack_trace(bool need_file_info) : stack_trace("", METHODS_TO_SKIP, need_file_info) {
+  frames_ = stack_frame::get_stack_frames("", METHODS_TO_SKIP, need_file_info);
+}
+
+stack_trace::stack_trace(const stack_frame& frame) {
+  frames_.push_back(frame);
+}
+
+stack_trace::stack_trace(const ustring& str, size_t skip_frames, bool need_file_info) {
+  frames_ = stack_frame::get_stack_frames(str, skip_frames + METHODS_TO_SKIP + 1, need_file_info);
+}
+
+stack_trace::stack_trace(size_t skip_frames) {
+  frames_ = stack_frame::get_stack_frames("", skip_frames + METHODS_TO_SKIP + 1, false);
+}
+
+stack_trace::stack_trace(size_t skip_frames, bool need_file_info) : stack_trace("", skip_frames, need_file_info) {
+  frames_ = stack_frame::get_stack_frames("", skip_frames + METHODS_TO_SKIP + 1, need_file_info);
+}
+
+stack_trace::stack_trace(const std::exception& exception) {
+  frames_ = stack_frame::get_stack_frames(ustring::full_class_name(exception), METHODS_TO_SKIP, false);
+}
+
+stack_trace::stack_trace(const std::exception& exception, bool need_file_info) {
+  frames_ = stack_frame::get_stack_frames(ustring::full_class_name(exception), METHODS_TO_SKIP, need_file_info);
+}
+
+stack_trace::stack_trace(const std::exception& exception, size_t skip_frames) {
+  frames_ = stack_frame::get_stack_frames(ustring::full_class_name(exception), skip_frames + METHODS_TO_SKIP + 1, false);
+}
+
+stack_trace::stack_trace(const std::exception& exception, size_t skip_frames, bool need_file_info) : stack_trace(ustring::full_class_name(exception), skip_frames, need_file_info) {
+  frames_ = stack_frame::get_stack_frames(ustring::full_class_name(exception), skip_frames + METHODS_TO_SKIP + 1, need_file_info);
+}
+#endif
 
 size_t stack_trace::frame_count() const noexcept {
   return frames_.size();
