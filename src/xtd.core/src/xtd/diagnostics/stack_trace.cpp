@@ -4,7 +4,7 @@
 using namespace xtd;
 using namespace xtd::diagnostics;
 
-#if !defined(__APPLE__)
+#if defined(_WIN32)
 stack_trace::stack_trace() : stack_trace("", METHODS_TO_SKIP, false) {
 }
 
