@@ -1,9 +1,9 @@
 
-# xtd.core.native.unix
+# xtd.core.native.macos
 
 xtd.core is made to have many Operating System: Windows, linux, macOS, ...
 
-The [xtd.core.native.unix](.) is based on unix Operating System.
+The [xtd.core.native.macos](.) is based on macOS Operating System.
 
 ______________________________________________________________________________________________
 
