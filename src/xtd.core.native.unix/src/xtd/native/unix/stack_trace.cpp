@@ -21,6 +21,7 @@ namespace {
 
 #if __ANDROID__ | __CYGWIN__ | __MINGW32__
 stack_trace::frames stack_trace::get_frames(size_t skip_frames, size_t max_frames) {
+  return {};
 }
 #else
 stack_trace::frames stack_trace::get_frames(size_t skip_frames) {
