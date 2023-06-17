@@ -19,6 +19,7 @@ public:
   stack_walker() : StackWalker(StackWalker::RetrieveVerbose | StackWalker::SymBuildPath) {}
 
   const std::vector<frame>& stack() const noexcept {return stack_;}
+
 protected:
   void OnCallstackEntry(CallstackEntryType type, CallstackEntry& entry) override {
     StackWalker::OnCallstackEntry(type, entry);
@@ -32,11 +33,11 @@ private:
 stack_trace::frames stack_trace::get_frames(size_t skip_frames) {
   stack_walker sw;
   sw.ShowCallstack();
+
   stack_trace::frames frames;
   for (size_t index = skip_frames + 2; index < sw.stack().size(); ++index) {
     frames.push_back(sw.stack()[index]);
     if (get<3>(sw.stack()[index]) == "main") break;
   }
-
   return frames;
 }
