@@ -4,13 +4,13 @@
 #include <xtd/native/file_attribute.h>
 #include <xtd/native/file_permission.h>
 #include <xtd/native/path.h>
-#include "../../../../include/xtd/native/unix/strings.h"
+#include "../../../../include/xtd/native/macos/strings.h"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <cstring>
 #include <unistd.h>
 #include <sys/stat.h>
 #include <utime.h>
-#include <linux/limits.h>
+#import <Foundation/Foundation.h>
 
 using namespace std;
 using namespace xtd::native;
@@ -35,36 +35,34 @@ int_least32_t file_system::get_attributes(const std::string& path, int_least32_t
 }
 
 int_least32_t file_system::get_file_times(const std::string& path, time_t& creation_time, time_t& last_access_time, time_t& last_write_time) {
-  struct stat status;
-  if (stat(path.c_str(), &status) != 0) return -1;
-  
-  creation_time = static_cast<time_t>(status.st_ctime);
-  last_access_time = static_cast<time_t>(status.st_atime);
-  last_write_time = static_cast<time_t>(status.st_mtime);
+  NSFileManager* fm = [NSFileManager defaultManager];
+  creation_time = [[[fm attributesOfItemAtPath:[NSString stringWithUTF8String:path.c_str()] error:Nil] fileCreationDate] timeIntervalSince1970];
+  last_access_time = [[[fm attributesOfItemAtPath:[NSString stringWithUTF8String:path.c_str()] error:Nil] fileModificationDate] timeIntervalSince1970];
+  last_write_time = [[[fm attributesOfItemAtPath:[NSString stringWithUTF8String:path.c_str()] error:Nil] fileModificationDate] timeIntervalSince1970];
   return 0;
 }
 
 string file_system::get_full_path(const string& relative_path) {
-  vector<string> directories = native::unix::strings::split(relative_path, {path::directory_separator_char()}, std::numeric_limits<size_t>::max(), true);
+  vector<string> directories = native::macos::strings::split(relative_path, {path::directory_separator_char()}, std::numeric_limits<size_t>::max(), true);
   string full_path;
   
   if (relative_path[0] != path::directory_separator_char())
     full_path = directory::get_current_directory();
-    
+  
   for (const string& item : directories) {
-    if (item == ".." && native::unix::strings::last_index_of(full_path, path::directory_separator_char()) != full_path.npos)
-      full_path = native::unix::strings::remove(full_path, native::unix::strings::last_index_of(full_path, path::directory_separator_char()));
+    if (item == ".." && native::macos::strings::last_index_of(full_path, path::directory_separator_char()) != full_path.npos)
+      full_path = native::macos::strings::remove(full_path, native::macos::strings::last_index_of(full_path, path::directory_separator_char()));
     else if (item != ".")
       full_path += path::directory_separator_char() + item;
   }
   
   if (relative_path[relative_path.size() - 1] == path::directory_separator_char())
     full_path += path::directory_separator_char();
-    
-  auto index = native::unix::strings::last_index_of(full_path, "/./");
+  
+  auto index = native::macos::strings::last_index_of(full_path, "/./");
   while (index != full_path.npos) {
-    full_path = native::unix::strings::remove(full_path, index, 2);
-    index = native::unix::strings::last_index_of(full_path, "/./");
+    full_path = native::macos::strings::remove(full_path, index, 2);
+    index = native::macos::strings::last_index_of(full_path, "/./");
   }
   
   return full_path;
@@ -118,7 +116,7 @@ int_least32_t file_system::set_attributes(const std::string& path, int_least32_t
     s.st_mode |= S_IWUSR;
   else if ((attributes & FILE_ATTRIBUTE_READONLY) == FILE_ATTRIBUTE_READONLY)
     s.st_mode &= ~S_IWUSR;
-    
+  
   // The other attributes can be modified under linux.
   
   return chmod(path.c_str(), s.st_mode);

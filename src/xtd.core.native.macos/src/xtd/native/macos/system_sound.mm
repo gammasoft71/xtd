@@ -1,4 +1,3 @@
-#if defined(__APPLE__)
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/sounds.h>
 #include <xtd/native/system_sound.h>
@@ -21,4 +20,3 @@ void system_sound::play(uint_least32_t sound) {
     }
   }
 }
-#endif
