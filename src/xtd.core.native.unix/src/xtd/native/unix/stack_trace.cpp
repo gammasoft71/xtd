@@ -23,13 +23,14 @@ namespace {
 stack_trace::frames stack_trace::get_frames(size_t skip_frames, size_t max_frames) {
 }
 #else
-stack_trace::frames stack_trace::get_frames(size_t skip_frames, size_t max_frames) {
+stack_trace::frames stack_trace::get_frames(size_t skip_frames) {
+  static constexpr size_t max_frames = 1024;
   stack_trace::frames frames;
   std::vector<void*> traces;
   traces.resize(max_frames);
   size_t nb_frames = backtrace(traces.data(), static_cast<int>(max_frames));
   
-  for (size_t index = skip_frames; index < nb_frames; ++index) {
+  for (size_t index = skip_frames + 1; index < nb_frames; ++index) {
     Dl_info dl_info;
     if (!dladdr(traces[index], &dl_info)|| !dl_info.dli_sname) break;
     frames.push_back(std::make_tuple(dl_info.dli_fname, 0, 0, demangle_string(dl_info.dli_sname), reinterpret_cast<size_t>(dl_info.dli_saddr) - reinterpret_cast<size_t>(dl_info.dli_fbase)));

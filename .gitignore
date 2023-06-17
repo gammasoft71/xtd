@@ -62,7 +62,6 @@ scripts/install/test_wxwidgets/wxwidgets.lck
 src/xtd/include/xtd/xtd.h
 src/xtd/include/xtd/export.h
 src/xtd/references.cmake
-src/xtd.3rdparty.call_stack/call_stack_export.h
 src/xtd.core.native.unix/include/xtd/core_native_export.h
 src/xtd.core.native.win32/include/xtd/core_native_export.h
 src/xtd.core/include/xtd/core_export.h

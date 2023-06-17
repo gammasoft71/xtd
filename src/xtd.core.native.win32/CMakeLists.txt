@@ -5,9 +5,7 @@ project(xtd.core.native.win32)
 include(../../scripts/cmake/xtd_commands.cmake)
 include(../../scripts/cmake/xtd_version.cmake)
 add_include_directories(include)
-add_references(rpcrt4)
-add_references(ws2_32)
-add_references(xtd.core.native)
+add_references(xtd.core.native rpcrt4 ws2_32 ${XTD_CORE_NATIVE_3RDPARTY_LIBRARIES})
 add_sources(
   include/xtd/xtd.core.native.win32.h
   include/xtd/xtd.core.native.win32
