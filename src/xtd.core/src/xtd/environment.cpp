@@ -91,7 +91,7 @@ public:
   }
   
   static void on_interrupt_occured(int32 signal) {
-    // The SIGINT signal catcher conflicts with with xtd::core::narive::unix::console for CTRL-C interception...
+    // The SIGINT signal catcher conflicts with with xtd::core::narive::macos::console for CTRL-C interception...
     std::signal(signal, signal_catcher::on_interrupt_occured);
     signal_cancel_event_args se {xtd::signal::interrupt};
     environment::on_cancel_signal(se);

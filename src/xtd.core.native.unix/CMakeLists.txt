@@ -7,12 +7,7 @@ include(../../scripts/cmake/xtd_version.cmake)
 add_include_directories(include)
 
 # add external packages
-if(MSVC)
-  add_references()
-elseif (APPLE)
-  add_references(dl)
-  add_references("-framework Foundation -framework Cocoa -framework AudioUnit")
-elseif (ANDROID)
+if (ANDROID)
   add_references()
 elseif (UNIX)
   find_package(PkgConfig REQUIRED)
@@ -60,14 +55,6 @@ add_sources(
   src/xtd/native/unix/translator.cpp
   src/xtd/native/unix/types.cpp
 )
-if (APPLE)
-  add_sources(
-    src/xtd/native/unix/debugger.mm
-    src/xtd/native/unix/file_system.mm
-    src/xtd/native/unix/system_sound.mm
-    src/xtd/native/unix/translator.mm
-  )
-endif()
 target_type(${XTD_LIBRARY_TYPE})
 
 # Install

@@ -1,4 +1,3 @@
-#if defined(__APPLE__)
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/debugger.h>
 #include <xtd/native/assert_dialog_results.h>
@@ -58,4 +57,3 @@ int_least32_t debugger::show_assert_dialog(const std::string& text, const std::s
 void debugger::log(int_least32_t level, const std::string& category, const std::string& message) {
   syslog(LOG_EMERG | LOG_USER, "%s", message.c_str());
 }
-#endif

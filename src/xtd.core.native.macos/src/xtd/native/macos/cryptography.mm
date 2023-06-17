@@ -23,7 +23,10 @@ namespace {
 }
 
 vector<uint_least8_t> cryptography::machine_guid() {
-  static string guid_str = create_process("{ uname -n ; cat /proc/meminfo | head -n1 ; cat /proc/cpuinfo ; } | md5sum");
+  static bool first = true;
+  static string guid_str = create_process("ioreg -rd1 -c IOPlatformExpertDevice | grep -E '(UUID)'");
+  if (first) guid_str = guid_str.substr(guid_str.find("=") + 1);
+  first = false;
   
   static const string guid_fallback = "30395f0ed6aa4a5eb4af6f90a608c605";
   static const string hex_chars = "0123456789ABCDEF";

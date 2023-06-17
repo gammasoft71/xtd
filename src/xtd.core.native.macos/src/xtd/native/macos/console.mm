@@ -16,9 +16,7 @@
 #include <unistd.h>
 #include <sys/ioctl.h>
 
-#define ALSA_PCM_NEW_HW_PARAMS_API
-#include <alsa/asoundlib.h>
-#include <linux/kd.h>
+#include <AudioUnit/AudioUnit.h>
 
 using namespace xtd::native;
 
@@ -583,25 +581,77 @@ bool console::background_color(int_least32_t color) {
   return true;
 }
 
+namespace {
+  class audio {
+  public:
+    static bool beep(uint_least32_t frequency, uint_least32_t duration) {
+      if (frequency < 37 || frequency > 32767) return false;
+      
+      dispatch_semaphore_wait(idle_semaphore, DISPATCH_TIME_FOREVER);
+      
+      static bool initialized = false;
+      if (!initialized) {
+        AudioComponentDescription audio_component_description {kAudioUnitType_Output, kAudioUnitSubType_DefaultOutput, kAudioUnitManufacturer_Apple, 0, 0};
+        AudioComponentInstanceNew(AudioComponentFindNext(nullptr, &audio_component_description), &audio_unit);
+        
+        AURenderCallbackStruct au_render_callback_struct {&audio::au_renderer_proc, nullptr};
+        AudioUnitSetProperty(audio_unit, kAudioUnitProperty_SetRenderCallback, kAudioUnitScope_Input, 0, &au_render_callback_struct, sizeof(au_render_callback_struct));
+        
+        AudioStreamBasicDescription audio_stream_basic_description {simple_rate, kAudioFormatLinearPCM, 0, 1, 1, 1, 1, bits_per_channel, 0};
+        AudioUnitSetProperty(audio_unit, kAudioUnitProperty_StreamFormat, kAudioUnitScope_Input, 0, &audio_stream_basic_description, sizeof(audio_stream_basic_description));
+        
+        AudioUnitInitialize(audio_unit);
+        AudioOutputUnitStart(audio_unit);
+      }
+      initialized = true;
+      
+      beep_freq = frequency;
+      beep_samples = duration * bits_per_channel;
+      
+      dispatch_semaphore_signal(start_playing_semaphore);
+      
+      dispatch_semaphore_wait(end_playing_semaphore, DISPATCH_TIME_FOREVER);
+      
+      //AudioOutputUnitStop(audio_unit);
+      //AudioUnitUninitialize(audio_unit);
+      dispatch_semaphore_signal(idle_semaphore);
+      return true;
+    }
+    
+  private:
+    static OSStatus au_renderer_proc(void* in_ref_con, AudioUnitRenderActionFlags* io_action_flags, const AudioTimeStamp* in_time_stamp, uint_least32_t in_bus_number, uint_least32_t in_number_frames, AudioBufferList* io_data) {
+      static int_least32_t counter = 0;
+      while (counter == 0) {
+        dispatch_semaphore_wait(start_playing_semaphore, DISPATCH_TIME_FOREVER);
+        counter = beep_samples;
+      }
+      
+      for (uint_least32_t frames_index = 0; frames_index < in_number_frames; ++frames_index) {
+        static unsigned char theta = 0;
+        reinterpret_cast<unsigned char*>(io_data->mBuffers[0].mData)[frames_index] = (beep_freq * 255 * theta++ / simple_rate);
+        if (--counter == 0) {
+          theta = 0;
+          counter = 0;
+          dispatch_semaphore_signal(end_playing_semaphore);
+          break;
+        }
+      }
+      return 0;
+    }
+    
+    inline static constexpr int_least32_t simple_rate = 8000;
+    inline static constexpr int_least32_t bits_per_channel = 8;
+    inline static dispatch_semaphore_t idle_semaphore = dispatch_semaphore_create(1);
+    inline static dispatch_semaphore_t start_playing_semaphore = dispatch_semaphore_create(0);
+    inline static dispatch_semaphore_t end_playing_semaphore = dispatch_semaphore_create(0);
+    inline static AudioUnit audio_unit;
+    inline static unsigned int beep_freq = 0;
+    inline static int_least32_t beep_samples = 0;
+  };
+}
+
 bool console::beep(uint_least32_t frequency, uint_least32_t duration) {
-  if (frequency < 37 || frequency > 32767) return false;
-  
-  static constexpr uint_least32_t simple_rate = 8000;
-  static snd_pcm_t* pcm_handle = nullptr;
-  if (pcm_handle == nullptr) {
-    if (snd_pcm_open(&pcm_handle, "default", SND_PCM_STREAM_PLAYBACK, 0)) return false;
-    snd_pcm_set_params(pcm_handle, SND_PCM_FORMAT_U8, SND_PCM_ACCESS_RW_INTERLEAVED, 1, simple_rate, 1, 20000);
-  }
-  
-  unsigned char buffer[2400];
-  for (uint_least32_t duration_index = 0; duration_index < duration / 200; ++duration_index) {
-    snd_pcm_prepare(pcm_handle);
-    for (uint_least32_t buffer_index = 0; buffer_index < sizeof(buffer); ++buffer_index)
-      buffer[buffer_index] = frequency > 0 ? (255 * buffer_index * frequency / simple_rate) : 0;
-    snd_pcm_sframes_t written_frames = snd_pcm_writei(pcm_handle, buffer, sizeof(buffer));
-    if (written_frames < 0) snd_pcm_recover(pcm_handle, written_frames, 0);
-  }
-  return true;
+  return audio::beep(frequency, duration);
 }
 
 int_least32_t console::buffer_height() {

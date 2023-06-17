@@ -138,6 +138,8 @@ add_definitions(-D__XTD_NATIVE_OPERATING_SYSTEM__="${XTD_NATIVE_OPERATING_SYSTEM
 if ("${XTD_NATIVE_OPERATING_SYSTEM}" STREQUAL "Windows")
   set(XTD_CORE_NATIVE_LIBRARY xtd.core.native.win32)
   set(XTD_CORE_NATIVE_3RDPARTY_LIBRARIES xtd.3rdparty.StackWalker)
+elseif ("${XTD_NATIVE_OPERATING_SYSTEM}" STREQUAL "macOS" OR "${XTD_NATIVE_OPERATING_SYSTEM}" STREQUAL "iOS")
+  set(XTD_CORE_NATIVE_LIBRARY xtd.core.native.macos)
 else ()
   set(XTD_CORE_NATIVE_LIBRARY xtd.core.native.unix)
 endif ()

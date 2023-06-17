@@ -4,13 +4,7 @@
 #include <numeric>
 #include <thread>
 
-#if defined(__APPLE__)
-#include "TargetConditionals.h"
-#include <time.h>
-#include <sys/sysctl.h>
-#else
 #include <sys/sysinfo.h>
-#endif
 #include <sys/param.h>
 #include <unistd.h>
 
@@ -45,77 +39,12 @@ namespace {
     __environment_argc = argc;
     __environment_argv = argv;
   }
-
-#if defined(__APPLE__)
-  tuple<string, string, string> macos_information() {
-    // https://en.wikipedia.org/wiki/MacOS_version_history
-    static auto build_version = ""s;
-    static auto codename = ""s;
-    static auto major = -1;
-    static auto minor = -1;
-    static auto name = "macOS"s;
-    static auto version = ""s;
-
-    if (version.empty()) {
-      try {
-        codename = xtd::native::unix::strings::replace(create_process("awk '/SOFTWARE LICENSE AGREEMENT FOR macOS/' '/System/Library/CoreServices/Setup Assistant.app/Contents/Resources/en.lproj/OSXSoftwareLicense.rtf' | awk -F 'macOS ' '{print $NF}' | awk '{print substr($0, 0, length($0)-1)}'"), "\n", "");
-        auto distribution_string = create_process("sw_vers");
-        auto distribution_lines = xtd::native::unix::strings::split(distribution_string, {'\n'});
-        for (auto distribution_line : distribution_lines) {
-          auto key_value = xtd::native::unix::strings::split(distribution_line, {'\t'});
-          if (key_value[0] == "BuildVersion:") build_version = key_value[key_value.size() - 1];
-          if (key_value[0] == "ProductVersion:") version = key_value[key_value.size() - 1];
-        }
-        auto versions = xtd::native::unix::strings::split(version, {'.'});
-        if (versions.size() == 2) {
-          major = stoi(versions[0]);
-          minor = stoi(versions[1]);
-        }
-      } catch(...) {
-      }
-    }
-
-    if (major == 10 && minor == 0) return make_tuple("OS X", "Cheetah", version);
-    if (major == 10 && minor == 1) return make_tuple("OS X", "Puma", version);
-    if (major == 10 && minor == 2) return make_tuple("OS X", "Jaguar", version);
-    if (major == 10 && minor == 3) return make_tuple("OS X", "Panther", version);
-    if (major == 10 && minor == 4) return make_tuple("OS X", "Tiger", version);
-    if (major == 10 && minor == 5) return make_tuple("OS X", "Leopard", version);
-    if (major == 10 && minor == 6) return make_tuple("OS X", "Snow Leopard", version);
-    if (major == 10 && minor == 7) return make_tuple("OS X", "Lion", version);
-    if (major == 10 && minor == 8) return make_tuple("OS X", "Montain Lion", version);
-    if (major == 10 && minor == 9) return make_tuple("OS X", "Mavericks", version);
-    if (major == 10 && minor == 10) return make_tuple("OS X", "Yosemite", version);
-    if (major == 10 && minor == 11) return make_tuple("OS X", "El Capitan", version);
-    if (major == 10 && minor == 12) return make_tuple("macOS", "Sierra", version);
-    if (major == 10 && minor == 13) return make_tuple("macOS", "High Sierra", version);
-    if (major == 10 && minor == 14) return make_tuple("macOS", "Mojave", version);
-    if (major == 10 && minor == 15) return make_tuple("macOS", "Catalina", version);
-    if (major == 11) return make_tuple("macOS", "Big Sur", version);
-    if (major == 12) return make_tuple("macOS", "Monterey", version);
-    if (major == 13) return make_tuple("macOS", "Ventura", version);
-    if (major == 14) return make_tuple("macOS", "Sonoma", version);
-    return make_tuple(name, codename, version);
-  }
-#endif
   
   using distribution_dictionary = map<string, string>;
   
   const distribution_dictionary& get_distribution_key_values() {
     static distribution_dictionary distribution_key_values;
     if (!distribution_key_values.empty()) return distribution_key_values;
-#if defined(__APPLE__)
-    auto [name, codename, version] = macos_information();
-    distribution_key_values.insert({"BUG_REPORT_URL", "https://support.apple.com/macos"});
-    distribution_key_values.insert({"HOME_URL", "https://www.apple.com/macos"});
-    distribution_key_values.insert({"ID", xtd::native::unix::strings::replace(xtd::native::unix::strings::to_lower(name), " ", "")});
-    distribution_key_values.insert({"ID_LIKE", "macos osx"});
-    distribution_key_values.insert({"NAME", name});
-    distribution_key_values.insert({"PRETTY_NAME", "Apple " + name + " " + version + " (" + codename + ")"});
-    distribution_key_values.insert({"VERSION", version + " (" + codename + ")"});
-    distribution_key_values.insert({"VERSION_ID", version});
-    distribution_key_values.insert({"VERSION_CODENAME", codename});
-#else
     auto distribution_string = create_process("cat /etc/os-release");
     auto distribution_lines = xtd::native::unix::strings::split(distribution_string, {'\n'});
     for (auto distribution_line : distribution_lines) {
@@ -123,7 +52,6 @@ namespace {
       if (key_value.size() != 2) continue;
       distribution_key_values.insert({key_value[0], xtd::native::unix::strings::replace(key_value[1], "\"", "")});
     }
-#endif
 
     return distribution_key_values;
   }
@@ -134,29 +62,21 @@ vector<string> environment::get_command_line_args() {
 }
 
 string environment::get_desktop_environment() {
-#if defined(__APPLE__)
-  return "macos";
-#else
   auto current_desktop = get_environment_variable("XDG_CURRENT_DESKTOP", ENVIRONMENT_VARIABLE_TARGET_PROCESS);
   if (current_desktop == "") current_desktop = get_environment_variable("XDG_DATA_DIRS", ENVIRONMENT_VARIABLE_TARGET_PROCESS);
   for (auto environment_desktop : {"budgie", "cinnamon", "deepin", "Enlightenment", "étoilé", "gnome", "kde", "lxqt", "mate", "pantheon", "razor", "unity", "xfce"}) {
     if (unix::strings::contains(unix::strings::to_lower(current_desktop), environment_desktop)) return environment_desktop;
   }
   return "";
-#endif
 }
 
 string environment::get_desktop_theme() {
-  #if defined(__APPLE__)
-  return unix::strings::contains(create_process("defaults read -g AppleInterfaceStyle"), "Dark") ? "macos dark" : "macos";
-  #else
   auto desktop = get_desktop_environment();
   if (desktop != "gnome") return desktop;
   auto current_theme = create_process("gsettings get org.gnome.desktop.interface gtk-theme");
   if (current_theme.size() >= 4)
     current_theme = unix::strings::substring(current_theme, 1, current_theme.size() - 3);
   return current_theme;
-  #endif
 }
 
 string environment::get_distribution_bug_report() {
@@ -256,11 +176,7 @@ map<string, string>& environment::get_environment_variables(int_least32_t target
 }
 
 string environment::get_know_folder_path(int_least32_t csidl) {
-  #if defined(__APPLE__)
-  static map<int_least32_t, string> special_folders = {{CSIDL_DESKTOP, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Desktop"}, {CSIDL_PERSONAL, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS)}, {CSIDL_FAVORITES, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Library/Favorites"}, {CSIDL_MYMUSIC, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Music"}, {CSIDL_MYVIDEO, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Movies"}, {CSIDL_DESKTOPDIRECTORY, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Desktop"}, {CSIDL_FONTS, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Library/Fonts"}, {CSIDL_TEMPLATES, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Templates"}, {CSIDL_APPDATA, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/.config"}, {CSIDL_LOCAL_APPDATA, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/.local/share"}, {CSIDL_INTERNET_CACHE, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Library/Caches"}, {CSIDL_COMMON_APPDATA, "/usr/share"}, {CSIDL_SYSTEM, "/System"}, {CSIDL_PROGRAM_FILES, "/Applications"}, {CSIDL_MYPICTURES, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Pictures"}, {CSIDL_PROFILE, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS)}, {CSIDL_COMMON_TEMPLATES, "/usr/share/templates"}, {CSIDL_HOME, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS)}};
-  #else
   static map<int_least32_t, string> special_folders = {{CSIDL_DESKTOP, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Desktop"}, {CSIDL_PERSONAL, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS)}, {CSIDL_MYMUSIC, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Music"}, {CSIDL_MYVIDEO, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Videos"}, {CSIDL_DESKTOPDIRECTORY, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Desktop"}, {CSIDL_FONTS, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/.fonts"}, {CSIDL_TEMPLATES, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Templates"}, {CSIDL_APPDATA, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/.config"}, {CSIDL_LOCAL_APPDATA, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/.local/share"}, {CSIDL_COMMON_APPDATA, "/usr/share"}, {CSIDL_MYPICTURES, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Pictures"}, {CSIDL_PROFILE, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS)}, {CSIDL_COMMON_TEMPLATES, "/usr/share/templates"}, {CSIDL_HOME, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS)}};
-  #endif
   auto it = special_folders.find(csidl);
   if (it == special_folders.end()) return "";
   return it->second;
@@ -271,27 +187,15 @@ string environment::get_machine_name() {
 }
 
 int_least32_t environment::get_os_platform_id() {
-  #if defined(__APPLE__)
-  #if TARGET_OS_SIMULATOR == 1 || TARGET_OS_IPHONE == 1
-  return PLATFORM_IOS;
-  #else
-  return PLATFORM_MACOS;
-  #endif
-  #else
   #if defined(__ANDROID__)
   return PLATFORM_ANDROID;
   #else
   return create_process("uname -a").find("Linux") != string::npos ? PLATFORM_LINUX : PLATFORM_UNIX;
   #endif
-  #endif
 }
 
 void environment::get_os_version(int_least32_t& major, int_least32_t& minor, int_least32_t& build, int_least32_t& revision) {
-  #if defined(__APPLE__)
-  vector<string> numbers = unix::strings::split(create_process("sw_vers -productVersion"), {'.', '\n'});
-  #else
   vector<string> numbers = unix::strings::split(create_process("uname -r"), {'.', '-', '\n'});
-  #endif
   if (numbers.size() < 1 || !unix::strings::try_parse(numbers[0], major)) major = 0;
   if (numbers.size() < 2 || !unix::strings::try_parse(numbers[1], minor)) minor = 0;
   if (numbers.size() < 3 || !unix::strings::try_parse(numbers[2], build)) build = 0;
@@ -311,21 +215,10 @@ size_t environment::get_system_page_size() {
 }
 
 uint_least32_t environment::get_tick_count() {
-  #if defined(__APPLE__)
-  // https://stackoverflow.com/questions/3269321/osx-programmatically-get-uptime
-  struct timeval boottime {};
-  struct timeval nowtime {};
-  auto len = sizeof(boottime);
-  int_least32_t mib[2] = {CTL_KERN, KERN_BOOTTIME};
-  sysctl(mib, 2, &boottime, &len, nullptr, 0);
-  gettimeofday(&nowtime, nullptr);
-  return static_cast<uint_least32_t>((nowtime.tv_sec - boottime.tv_sec) * 1000) + static_cast<uint_least32_t>((nowtime.tv_usec - boottime.tv_usec) / 1000);
-  #else
   // https://stackoverflow.com/questions/1540627/what-api-do-i-call-to-get-the-system-uptime
   struct sysinfo info {};
   sysinfo(&info);
   return info.uptime * 1000;
-  #endif
 }
 
 bool environment::get_user_administrator() {

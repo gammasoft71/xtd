@@ -38,7 +38,7 @@ intmax_t speech_synthesizer::create() {
   speech_synthesizer_data* data = new speech_synthesizer_data {get_unique_speak_cmd_file_name(), 0};
   ofstream cmd_file;
   cmd_file.open(data->say_cmd_file_name);
-  cmd_file << "spd-say \"$*\"\n";
+  cmd_file << "say \"$*\"\n";
   cmd_file.close();
   native::file_system::set_permissions(data->say_cmd_file_name, FILE_PERMISSIONS_OWNER_ALL);
   return reinterpret_cast<intmax_t>(data);
