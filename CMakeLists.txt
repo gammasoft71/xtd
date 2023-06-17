@@ -137,6 +137,7 @@ add_definitions(-D__XTD_NATIVE_OPERATING_SYSTEM__="${XTD_NATIVE_OPERATING_SYSTEM
 
 if ("${XTD_NATIVE_OPERATING_SYSTEM}" STREQUAL "Windows")
   set(XTD_CORE_NATIVE_LIBRARY xtd.core.native.win32)
+  set(XTD_CORE_NATIVE_3RDPARTY_LIBRARIES xtd.3rdparty.StackWalker)
 else ()
   set(XTD_CORE_NATIVE_LIBRARY xtd.core.native.unix)
 endif ()
@@ -209,7 +210,6 @@ if (XTD_ENABLE_RUN_DEVELOPPER_REFERENCE_GUIDE)
 endif ()
 
 # Updates export file
-xtd_update_export_file(src/xtd.3rdparty.call_stack/call_stack_export.h XTD_3RDPARTY_CALL_STACK_EXPORT call_stack_export_)
 string(REPLACE "." "_" XTD_CORE_NATIVE_LIBRARY_UPPER ${XTD_CORE_NATIVE_LIBRARY})
 string(TOUPPER ${XTD_CORE_NATIVE_LIBRARY_UPPER} XTD_CORE_NATIVE_LIBRARY_UPPER)
 xtd_update_export_file(src/${XTD_CORE_NATIVE_LIBRARY}/include/xtd/core_native_export.h ${XTD_CORE_NATIVE_LIBRARY_UPPER}_EXPORT core_native_export_)

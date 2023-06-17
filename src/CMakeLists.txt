@@ -30,7 +30,7 @@ file(WRITE ${XTD_CMAKE_REFERENCES}
 
 # Projects
 if (XTD_BUILD_LIBRARIES_XTD_CORE)
-  add_projects(xtd.3rdparty.call_stack xtd.core.native ${XTD_CORE_NATIVE_LIBRARY} xtd.core)
+  add_projects(${XTD_CORE_NATIVE_3RDPARTY_LIBRARIES} xtd.core.native ${XTD_CORE_NATIVE_LIBRARY} xtd.core)
   file(APPEND ${XTD_HEADER_FILE} "#include \"xtd/xtd.core\"\n")
   file(APPEND ${XTD_CMAKE_REFERENCES} "add_references(xtd.core)\n")
 endif ()

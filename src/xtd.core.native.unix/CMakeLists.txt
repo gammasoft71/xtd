@@ -7,9 +7,14 @@ include(../../scripts/cmake/xtd_version.cmake)
 add_include_directories(include)
 
 # add external packages
-if (APPLE)
+if(MSVC)
+  add_references()
+elseif (APPLE)
+  add_references(dl)
   add_references("-framework Foundation -framework Cocoa -framework AudioUnit")
-elseif (NOT ANDROID)
+elseif (ANDROID)
+  add_references()
+elseif (UNIX)
   find_package(PkgConfig REQUIRED)
 
   pkg_check_modules(GSOUND QUIET gsound)
@@ -25,7 +30,7 @@ elseif (NOT ANDROID)
   include_directories(${GTK_INCLUDE_DIRS})
   link_directories(${GTK_LIBRARY_DIRS})
 
-  add_references(asound uuid pthread ${GSOUND_LIBRARIES} ${GTK_LIBRARIES})
+  add_references(dl rt asound uuid pthread ${GSOUND_LIBRARIES} ${GTK_LIBRARIES})
 endif ()
 
 add_references(xtd.core.native)
