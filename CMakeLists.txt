@@ -124,6 +124,18 @@ if (XTD_BUILD_TOOL_GUIDGEN_GUI AND NOT XTD_BUILD_LIBRARIES_XTD_FORMS)
   message(FATAL_ERROR "Build xtd.forms libraries must must be set to ON: guidgen-gui GUI tool depends of xtd.forms")
 endif ()
 
+if (XTD_BUILD_TOOL_KEYCODES AND NOT XTD_BUILD_LIBRARIES_XTD_FORMS)
+  message(FATAL_ERROR "Build xtd.forms libraries must must be set to ON: keycodes GUI tool depends of xtd.forms")
+endif ()
+
+if (XTD_BUILD_TOOL_SET_PATH AND NOT XTD_BUILD_LIBRARIES_XTD_CORE)
+  message(FATAL_ERROR "Build xtd.core libraries must must be set to ON: set_path command line tool depends of xtd.core")
+endif ()
+
+if (XTD_BUILD_TOOL_SLEEPFOR_COMMAND_LINE AND NOT XTD_BUILD_LIBRARIES_XTD_CORE)
+  message(FATAL_ERROR "Build xtd.core libraries must must be set to ON: sleepfor command line tool depends of xtd.core")
+endif ()
+
 if (XTD_BUILD_TOOL_XTDC_COMMAND_LINE AND NOT XTD_BUILD_LIBRARIES_XTD_CORE)
   message(FATAL_ERROR "Build xtd.core libraries must must be set to ON: xtdc command line tool depends of xtd.core")
 endif ()
@@ -203,7 +215,10 @@ if (XTD_ENABLE_EXTRA_PROJECTS)
   add_projects(docs locale scripts)
 endif ()
 
-add_projects(src tests tools themes)
+add_projects(src tests tools)
+if (XTD_BUILD_LIBRARIES_XTD_FORMS)
+  add_projects(themes)
+endif ()
 
 # Run Developper Reference Guide generator command
 if (XTD_ENABLE_RUN_DEVELOPPER_REFERENCE_GUIDE)
@@ -232,26 +247,28 @@ xtd_update_export_file(src/xtd/include/xtd/export.h XTD_EXPORT export_)
 set(CMAKE_CTEST_ARGUMENTS ${CMAKE_CTEST_ARGUMENTS} --output-on-failure)
 
 # Install
-install_package()
-# override with specific xtd cmake config file
-set(XTD_CONFIG_CMAKE_FILE ${CMAKE_CURRENT_BINARY_DIR}/xtdConfig.cmake)
-file(WRITE "${XTD_CONFIG_CMAKE_FILE}"
-  "include(CMakeFindDependencyMacro)\n"
-  "include(\"\${CMAKE_CURRENT_LIST_DIR}/${PROJECT_NAME}.cmake\")\n"
-  "include(\"\${CMAKE_CURRENT_LIST_DIR}/xtd_modules/xtd_commands.cmake\")\n"
-  "set(CMAKE_MODULE_PATH \${CMAKE_MODULE_PATH} \${CMAKE_CURRENT_LIST_DIR}/xtd_modules)\n"
-  "\n"
-  "set(${PROJECT_NAME}_INCLUDE_DIRS \"\${CMAKE_CURRENT_LIST_DIR}/../include\")\n"
-  "set(${PROJECT_NAME}_LIBRARIES_DIRS \"\${CMAKE_CURRENT_LIST_DIR}/../lib\")\n"
-  "set(${PROJECT_NAME}_LIBRARIES ${PROJECT_NAME} xtd.3rdparty.call_stack xtd.core xtd.drawing xtd.forms xtd.tunit xtd)\n"
-  "set(${PROJECT_NAME}_FOUND TRUE)\n"
-)
-install(FILES scripts/cmake/xtd_commands.cmake DESTINATION cmake/xtd_modules)
-install(FILES scripts/cmake/MacOSXBundleInfo.plist.in DESTINATION cmake/xtd_modules)
-if (XTD_INSTALL_RESOURCES)
-  install(DIRECTORY resources DESTINATION share/xtd)
-  install(DIRECTORY docs/pictures/examples/. DESTINATION share/xtd/resources/pictures/examples)
-endif ()
-if (XTD_INSTALL_EXAMPLES)
-  install(DIRECTORY examples/. DESTINATION share/xtd/examples)
+if (XTD_BUILD_LIBRARIES_XTD_CORE OR XTD_BUILD_LIBRARIES_XTD_DRAWING OR XTD_BUILD_LIBRARIES_XTD_FORMS OR XTD_BUILD_LIBRARIES_XTD_TUNIT)
+  install_package()
+  # override with specific xtd cmake config file
+  set(XTD_CONFIG_CMAKE_FILE ${CMAKE_CURRENT_BINARY_DIR}/xtdConfig.cmake)
+  file(WRITE "${XTD_CONFIG_CMAKE_FILE}"
+    "include(CMakeFindDependencyMacro)\n"
+    "include(\"\${CMAKE_CURRENT_LIST_DIR}/${PROJECT_NAME}.cmake\")\n"
+    "include(\"\${CMAKE_CURRENT_LIST_DIR}/xtd_modules/xtd_commands.cmake\")\n"
+    "set(CMAKE_MODULE_PATH \${CMAKE_MODULE_PATH} \${CMAKE_CURRENT_LIST_DIR}/xtd_modules)\n"
+    "\n"
+    "set(${PROJECT_NAME}_INCLUDE_DIRS \"\${CMAKE_CURRENT_LIST_DIR}/../include\")\n"
+    "set(${PROJECT_NAME}_LIBRARIES_DIRS \"\${CMAKE_CURRENT_LIST_DIR}/../lib\")\n"
+    "set(${PROJECT_NAME}_LIBRARIES ${PROJECT_NAME} xtd.3rdparty.call_stack xtd.core xtd.drawing xtd.forms xtd.tunit xtd)\n"
+    "set(${PROJECT_NAME}_FOUND TRUE)\n"
+  )
+  install(FILES scripts/cmake/xtd_commands.cmake DESTINATION cmake/xtd_modules)
+  install(FILES scripts/cmake/MacOSXBundleInfo.plist.in DESTINATION cmake/xtd_modules)
+  if (XTD_INSTALL_RESOURCES)
+    install(DIRECTORY resources DESTINATION share/xtd)
+    install(DIRECTORY docs/pictures/examples/. DESTINATION share/xtd/resources/pictures/examples)
+  endif ()
+  if (XTD_INSTALL_EXAMPLES)
+    install(DIRECTORY examples/. DESTINATION share/xtd/examples)
+  endif ()
 endif ()

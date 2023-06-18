@@ -55,4 +55,6 @@ endif ()
 
 file(APPEND ${XTD_HEADER_FILE} "#include \"xtd/system_report.h\"\n")
 
-add_projects(xtd)
+if (XTD_BUILD_LIBRARIES_XTD_CORE OR XTD_BUILD_LIBRARIES_XTD_DRAWING OR XTD_BUILD_LIBRARIES_XTD_FORMS OR XTD_BUILD_LIBRARIES_XTD_TUNIT)
+  add_projects(xtd)
+endif ()
