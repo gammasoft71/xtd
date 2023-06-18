@@ -22,55 +22,6 @@ namespace xtd {
   /// @remarks The system_report class provides static properties that can be used to get information and creates a string and xml format string reports about the current system environment.
   class export_ system_report final static_ {
   public:
-    /// @brief Represents a xtd library that contains name, version and paths.
-    class xtd_library final : public xtd::object {
-    public:
-      /// @cond
-      xtd_library() = default;
-      xtd_library(const xtd_library&) = default;
-      xtd_library& operator =(const xtd_library&) = default;
-      /// @endcond
-      
-      /// @name Properties
-      
-      /// @{
-      /// @brief Gets The inlcude path of the library.
-      /// @return A string that represents the include path of the library.
-      const xtd::ustring& include_path() const noexcept;
-      
-      /// @brief Gets The library path of the library.
-      /// @return A string that represents the library path of the library.
-      const xtd::ustring& library_path() const noexcept;
-      
-      /// @brief Gets The name of the library.
-      /// @return A string that represents the name of the library.
-      const xtd::ustring& name() const noexcept;
-      
-      /// @brief Gets The resource path of the library.
-      /// @return A string that represents the resource path of the library.
-      const xtd::ustring& resources_path() const noexcept;
-
-      /// @brief Gets The version of the library.
-      /// @return An xtd::version object that represents the version of the library.
-      const xtd::version& version() const noexcept;
-      /// @}
-      
-      /// @name Methods
-      
-      /// @{
-      xtd::ustring to_string() const noexcept override;
-      /// @}
-      
-    private:
-      friend class system_report;
-      xtd_library(const xtd::ustring& name, const xtd::version& version, const xtd::ustring& include_path, const xtd::ustring& library_path, const xtd::ustring& resources_path);
-      xtd::ustring name_;
-      xtd::version version_;
-      xtd::ustring include_path_;
-      xtd::ustring library_path_;
-      xtd::ustring resources_path_;
-    };
-    
     /// @name Alias
     
     /// @{
@@ -86,8 +37,6 @@ namespace xtd {
     using system_font_family_collection = std::vector<std::pair<xtd::ustring, xtd::drawing::font_family>>;
     /// @brief Represents a system informations collection.
     using system_information_collection = std::vector<std::pair<xtd::ustring, xtd::ustring>>;
-    /// @brief Represents a xtd libraries collection.
-    using xtd_library_collection = std::vector<xtd_library>;
     /// @}
     
     /// @name Properties
@@ -145,7 +94,7 @@ namespace xtd {
 
     static xtd::toolkit toolkit() noexcept;
 
-    static const xtd_library_collection& xtd_libraries() noexcept;
+    static const environment::xtd_library_collection& xtd_libraries() noexcept;
     /// @}
     
     /// @name Methods

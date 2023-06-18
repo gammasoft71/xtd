@@ -8,6 +8,7 @@
 #include "../../include/xtd/invalid_operation_exception.h"
 #include "../../include/xtd/unused.h"
 #include "../../include/xtd/io/directory.h"
+#include "../../include/xtd/io/path.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/environment.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
@@ -118,6 +119,33 @@ public:
 event<environment, signal_cancel_event_handler> environment::cancel_signal;
 
 environment::signal_catcher environment::signal_catcher_;
+
+const ustring& environment::xtd_library::include_path() const noexcept {
+  return include_path_;
+}
+
+const ustring& environment::xtd_library::library_path() const noexcept {
+  return library_path_;
+}
+
+const ustring& environment::xtd_library::name() const noexcept {
+  return name_;
+}
+
+const ustring& environment::xtd_library::resources_path() const noexcept {
+  return resources_path_;
+}
+
+const xtd::version& environment::xtd_library::version() const noexcept {
+  return version_;
+}
+
+ustring environment::xtd_library::to_string() const noexcept {
+  return xtd::ustring::format("{} (version {})", name_, version_);
+}
+
+environment::xtd_library::xtd_library(const ustring& name, const xtd::version& version, const ustring& include_path, const ustring& library_path, const ustring& resources_path) : name_(name), version_(version), include_path_(include_path), library_path_(library_path), resources_path_(resources_path) {
+}
 
 xtd::ustring environment::command_line() noexcept {
   return xtd::ustring::join(" ", get_command_line_args());
@@ -290,6 +318,11 @@ ustring environment::user_name() {
 
 int64 environment::working_set() {
   return native::environment::working_set();
+}
+
+const xtd::environment::xtd_library_collection& environment::xtd_libraries() noexcept {
+  static xtd_library_collection libraries {{"xtd.core", environment::version(), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "include"), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "lib"), environment::get_folder_path(environment::special_folder::xtd_resources)}, {"xtd.drawing", environment::version(), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "include"), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "lib"), environment::get_folder_path(environment::special_folder::xtd_resources)}, {"xtd.forms", environment::version(), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "include"), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "lib"), environment::get_folder_path(environment::special_folder::xtd_resources)}, {"xtd.tunit", environment::version(), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "include"), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "lib"), environment::get_folder_path(environment::special_folder::xtd_resources)},};
+  return libraries;
 }
 
 void environment::exit(int32 exit_code) {
