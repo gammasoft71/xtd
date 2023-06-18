@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['k_0',['k',['../group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8ce4b16b22b58894aa86c421e8759df3',1,'xtd::k()'],['../group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970dea8ce4b16b22b58894aa86c421e8759df3',1,'xtd::forms::k()'],['../group__xtd__forms.html#ggaa3b7c1dbf42c3230c0c72610873e2714a8ce4b16b22b58894aa86c421e8759df3',1,'xtd::forms::k()']]],
+  ['k_0',['k',['../group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8ce4b16b22b58894aa86c421e8759df3',1,'xtd::k'],['../group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970dea8ce4b16b22b58894aa86c421e8759df3',1,'xtd::forms::k'],['../group__xtd__forms.html#ggaa3b7c1dbf42c3230c0c72610873e2714a8ce4b16b22b58894aa86c421e8759df3',1,'xtd::forms::k']]],
   ['kana_5fmode_1',['kana_mode',['../group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deaf8a54961781544cbf7a69e47dfad8b76',1,'xtd::forms']]],
   ['kanji_5fmode_2',['kanji_mode',['../group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970dea656d81d2a30f55930ca8b215cd00f1a4',1,'xtd::forms']]],
   ['keep_5falive_3',['keep_alive',['../group__xtd__core.html#ggaac9f71cf2a0b71c1b99cab47f8abc4cbac0a7c9828caaec18a9ab9f562e953150',1,'xtd::net::sockets']]],

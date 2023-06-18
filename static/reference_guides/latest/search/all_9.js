@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['j_0',['j',['../group__xtd__forms.html#ggaa3b7c1dbf42c3230c0c72610873e2714a363b122c528f54df4a0446b6bab05515',1,'xtd::forms::j()'],['../group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970dea363b122c528f54df4a0446b6bab05515',1,'xtd::forms::j()'],['../group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a363b122c528f54df4a0446b6bab05515',1,'xtd::j()']]],
+  ['j_0',['j',['../group__xtd__forms.html#ggaa3b7c1dbf42c3230c0c72610873e2714a363b122c528f54df4a0446b6bab05515',1,'xtd::forms::j'],['../group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970dea363b122c528f54df4a0446b6bab05515',1,'xtd::forms::j'],['../group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a363b122c528f54df4a0446b6bab05515',1,'xtd::j']]],
   ['jack_5fo_5flantern_1',['jack_o_lantern',['../classxtd_1_1forms_1_1emoticons.html#a67c570bad282c5c3aa06a682ed8af950',1,'xtd::forms::emoticons']]],
   ['jamaica_2',['jamaica',['../classxtd_1_1forms_1_1countries.html#abad4d1ba223a5eabf1c8d172ce34dac7',1,'xtd::forms::countries']]],
   ['january_3',['january',['../group__xtd__core.html#gga36069771a10417b78f9d4a7c08559006a467b6140fe3bb958f2332983914de787',1,'xtd']]],

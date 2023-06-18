@@ -7,7 +7,7 @@ var searchData=
   ['dialog_5fclosed_5fevent_5fhandler_4',['dialog_closed_event_handler',['../group__events.html#ga93712f46c124e6ca40b40a2d9e14fc60',1,'xtd::forms']]],
   ['difference_5ftype_5',['difference_type',['../classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#afb88f05ac01b300a28611ae1324af741',1,'xtd::forms::layout::arranged_element_collection']]],
   ['do_5fwork_5fevent_5fhandler_6',['do_work_event_handler',['../group__events.html#ga4167bc3bd2a98a460a6d5609572385f1',1,'xtd::forms']]],
-  ['documenter_5fcollection_7',['documenter_collection',['../classxtd_1_1forms_1_1about__box.html#ac11d77921b8604cfdf5d62342104d48f',1,'xtd::forms::about_box::documenter_collection()'],['../classxtd_1_1forms_1_1about__dialog.html#aa38867803024cbd495db08294833f867',1,'xtd::forms::about_dialog::documenter_collection()']]],
+  ['documenter_5fcollection_7',['documenter_collection',['../classxtd_1_1forms_1_1about__box.html#ac11d77921b8604cfdf5d62342104d48f',1,'xtd::forms::about_box::documenter_collection'],['../classxtd_1_1forms_1_1about__dialog.html#aa38867803024cbd495db08294833f867',1,'xtd::forms::about_dialog::documenter_collection']]],
   ['dots_5fcollection_8',['dots_collection',['../classxtd_1_1forms_1_1dot__matrix__display.html#a38999049e9af218dc762bcbc46a50713',1,'xtd::forms::dot_matrix_display']]],
   ['double_5fobject_9',['double_object',['../group__system.html#ga9c0f11ebf71e3121a21e785a0c97c99d',1,'xtd']]],
   ['draw_5fitem_5fevent_5fhandler_10',['draw_item_event_handler',['../group__events.html#ga681cdc1a5ee2d56d938e1301edf4edbe',1,'xtd::forms']]]

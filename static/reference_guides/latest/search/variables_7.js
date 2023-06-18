@@ -31,7 +31,7 @@ var searchData=
   ['hedgehog_28',['hedgehog',['../classxtd_1_1forms_1_1emoticons.html#a939f9df75643a0f837a5adcb06fd685c',1,'xtd::forms::emoticons']]],
   ['helicopter_29',['helicopter',['../classxtd_1_1forms_1_1emoticons.html#a7fa504f51fa0f1e376631062797f7a80',1,'xtd::forms::emoticons']]],
   ['helmet_5fwith_5fwhite_5fcross_30',['helmet_with_white_cross',['../classxtd_1_1forms_1_1emoticons.html#a2805f1bb2fa7f9f4084094a49a8e5582',1,'xtd::forms::emoticons']]],
-  ['help_5frequest_31',['help_request',['../classxtd_1_1forms_1_1common__dialog.html#a659fa6e69886eb7e87a9cfb4e5163384',1,'xtd::forms::common_dialog::help_request()'],['../classxtd_1_1forms_1_1message__dialog.html#ab7b63d10bb56fb1f4ead3366700c269c',1,'xtd::forms::message_dialog::help_request()']]],
+  ['help_5frequest_31',['help_request',['../classxtd_1_1forms_1_1common__dialog.html#a659fa6e69886eb7e87a9cfb4e5163384',1,'xtd::forms::common_dialog::help_request'],['../classxtd_1_1forms_1_1message__dialog.html#ab7b63d10bb56fb1f4ead3366700c269c',1,'xtd::forms::message_dialog::help_request']]],
   ['help_5frequested_32',['help_requested',['../classxtd_1_1forms_1_1control.html#a0d068514bbfa4a101ce0ddbbc3981cf5',1,'xtd::forms::control']]],
   ['herb_33',['herb',['../classxtd_1_1forms_1_1emoticons.html#a654e8e89f343d5d691c898a2693a81d1',1,'xtd::forms::emoticons']]],
   ['hibiscus_34',['hibiscus',['../classxtd_1_1forms_1_1emoticons.html#ad5fdde84cee0b0eb4ed22a7119659810',1,'xtd::forms::emoticons']]],
