@@ -15,10 +15,9 @@ sidebar_position: 13
 
 ## External libraries used
 
-| Product                                                                         | Copyright       | Description                               | Release |
-| ------------------------------------------------------------------------------- | --------------- | ----------------------------------------- | ------- |
-| [StackWalker](https://www.codeproject.com/Articles/11132/Walking-the-callstack) | Jochen Kalmbach | Walking the callstack                     | v5      |
-| [StackTrace](http://stacktrace.sourceforge.net/)                                | Fredrik Orderud | Provides information about the call stack | 2009    |
+| Product                                                      | Copyright       | Description                               | Release |
+| ------------------------------------------------------------ | --------------- | ----------------------------------------- | ------- |
+| [StackWalker](https://github.com/JochenKalmbach/StackWalker) | Jochen Kalmbach | Walking the callstack                     | 1.20    |
 
 ## External toolkits used
 
