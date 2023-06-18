@@ -511,6 +511,8 @@ namespace xtd {
     /// @include EnvironmentWorkingSet.cpp
     static int64 working_set();
 
+    /// @brief Gets an xtd::environment::xtd_library array that represent the xtd libraries status.
+    /// @return an xtd::environment::xtd_library array.
     static const xtd_library_collection& xtd_libraries() noexcept;
     /// @}
     
