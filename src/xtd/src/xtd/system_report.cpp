@@ -165,33 +165,6 @@ namespace {
   }
 }
 
-const ustring& system_report::xtd_library::include_path() const noexcept {
-  return include_path_;
-}
-
-const ustring& system_report::xtd_library::library_path() const noexcept {
-  return library_path_;
-}
-
-const ustring& system_report::xtd_library::name() const noexcept {
-  return name_;
-}
-
-const ustring& system_report::xtd_library::resources_path() const noexcept {
-  return resources_path_;
-}
-
-const xtd::version& system_report::xtd_library::version() const noexcept {
-  return version_;
-}
-
-ustring system_report::xtd_library::to_string() const noexcept {
-  return xtd::ustring::format("{} (version {})", name_, version_);
-}
-
-system_report::xtd_library::xtd_library(const ustring& name, const xtd::version& version, const ustring& include_path, const ustring& library_path, const ustring& resources_path) : name_(name), version_(version), include_path_(include_path), library_path_(library_path), resources_path_(resources_path) {
-}
-
 xtd::compiler system_report::compiler() noexcept {
   return xtd::environment::compiler_version();
 }
@@ -297,9 +270,8 @@ xtd::toolkit system_report::toolkit() noexcept {
   return xtd::environment::toolkit_version();
 }
 
-const xtd::system_report::xtd_library_collection& system_report::xtd_libraries() noexcept {
-  static xtd_library_collection libraries {{"xtd.core", environment::version(), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "include"), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "lib"), environment::get_folder_path(environment::special_folder::xtd_resources)}, {"xtd.drawing", environment::version(), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "include"), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "lib"), environment::get_folder_path(environment::special_folder::xtd_resources)}, {"xtd.forms", environment::version(), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "include"), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "lib"), environment::get_folder_path(environment::special_folder::xtd_resources)}, {"xtd.tunit", environment::version(), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "include"), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "lib"), environment::get_folder_path(environment::special_folder::xtd_resources)},};
-  return libraries;
+const xtd::environment::xtd_library_collection& system_report::xtd_libraries() noexcept {
+  return environment::xtd_libraries();
 }
 
 ustring system_report::to_string() noexcept {

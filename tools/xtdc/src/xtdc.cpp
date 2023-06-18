@@ -1,7 +1,6 @@
 #include "project_management.h"
 
 #include <xtd/xtd.core>
-#include <xtd/system_report.h>
 
 using namespace std;
 using namespace xtd;
@@ -391,30 +390,30 @@ namespace xtdc_command {
         get_xtd_version(),
         //"",
         "Operating System:",
-        ustring::format("  Name: {}", system_report::operating_system().name()),
-        ustring::format("  Version: {}", system_report::operating_system().version()),
-        ustring::format("  Service pack: {}", system_report::operating_system().service_pack()),
-        ustring::format("  Desktop environment: {}", system_report::operating_system().desktop_environment()),
-        ustring::format("  64 bit: {}", system_report::operating_system().is_64_bit()),
+        ustring::format("  Name: {}", environment::os_version().name()),
+        ustring::format("  Version: {}", environment::os_version().version()),
+        ustring::format("  Service pack: {}", environment::os_version().service_pack()),
+        ustring::format("  Desktop environment: {}", environment::os_version().desktop_environment()),
+        ustring::format("  64 bit: {}", environment::os_version().is_64_bit()),
         "",
         "Compiler:",
-        ustring::format("  Name: {}", system_report::compiler().name()),
-        ustring::format("  Version: {}", system_report::compiler().version()),
-        ustring::format("  Mode: {}", system_report::compiler().is_build_type_debug() ? "Debug" : "Release"),
-        ustring::format("  64 bit: {}", system_report::compiler().is_64_bit()),
+        ustring::format("  Name: {}", environment::compiler_version().name()),
+        ustring::format("  Version: {}", environment::compiler_version().version()),
+        ustring::format("  Mode: {}", environment::compiler_version().is_build_type_debug() ? "Debug" : "Release"),
+        ustring::format("  64 bit: {}", environment::compiler_version().is_64_bit()),
         "",
         "Language:",
-        ustring::format("  Name: {}", system_report::language().name()),
-        ustring::format("  Version: {}", system_report::language().version()),
-        ustring::format("  Experimental: {}", system_report::language().is_experimental_language()),
-        ustring::format("  Supported: {}", system_report::language().is_supported()),
+        ustring::format("  Name: {}", environment::cpp_version().name()),
+        ustring::format("  Version: {}", environment::cpp_version().version()),
+        ustring::format("  Experimental: {}", environment::cpp_version().is_experimental_language()),
+        ustring::format("  Supported: {}", environment::cpp_version().is_supported()),
         "",
       };
     }
     
     static ustring get_xtd_version() noexcept {
       auto result = ustring::format("xtd Framework:{}", environment::new_line());
-      for (auto library : system_report::xtd_libraries()) {
+      for (auto library : environment::xtd_libraries()) {
         result += ustring::format("  {}", library.name(), environment::new_line());
         result += ustring::format("    Version: {}{}", library.version(), environment::new_line());
         result += ustring::format("    include path: {}{}", library.include_path(), environment::new_line());
