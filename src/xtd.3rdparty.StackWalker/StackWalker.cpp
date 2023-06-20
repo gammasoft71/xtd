@@ -819,16 +819,18 @@ extern "C" void** __cdecl __current_exception_context();
 #endif
 
 static PCONTEXT get_current_exception_context() {
-  PCONTEXT* pctx = NULL;
-  #if defined(_MSC_VER) && _MSC_VER >= 1400 && _MSC_VER < 1900
+  #if defined(_MSC_VER)
+    PCONTEXT* pctx = NULL;
+  #if _MSC_VER >= 1400 && _MSC_VER < 1900
   LPSTR ptd = (LPSTR)_getptd();
   if (ptd)
     pctx = (PCONTEXT*)(ptd + (sizeof(void*) == 4 ? 0x8C : 0xF8));
   if (pctx) return *pctx;
   #endif
-  #if defined(_MSC_VER) && _MSC_VER >= 1900
+  #if _MSC_VER >= 1900
   pctx = (PCONTEXT*)__current_exception_context();
   if (pctx) return *pctx;
+  #endif
   #endif
   return NULL;
 }
