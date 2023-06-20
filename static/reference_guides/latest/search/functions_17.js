@@ -8,5 +8,6 @@ var searchData=
   ['xtd_5fconsole_5',['xtd_console',['../classxtd_1_1forms_1_1properties_1_1resources.html#aa4385505005f38d8c1fceb06b11b7b8e',1,'xtd::forms::properties::resources']]],
   ['xtd_5fforms_6',['xtd_forms',['../classxtd_1_1forms_1_1properties_1_1resources.html#a23b631401690454cec304e0e576d8c06',1,'xtd::forms::properties::resources']]],
   ['xtd_5fforms_5flogo_7',['xtd_forms_logo',['../classxtd_1_1drawing_1_1system__icons.html#a09ce66fa7521baa573c9e680e81005b7',1,'xtd::drawing::system_icons::xtd_forms_logo() noexcept'],['../classxtd_1_1drawing_1_1system__icons.html#a3dfd9021e3bfedfc0f272bcb96c90dd8',1,'xtd::drawing::system_icons::xtd_forms_logo(const xtd::drawing::size &amp;size) noexcept']]],
-  ['xtd_5flogo_8',['xtd_logo',['../classxtd_1_1drawing_1_1system__icons.html#aab6b9eaa922ea2d3fb5428e658d44b23',1,'xtd::drawing::system_icons::xtd_logo() noexcept'],['../classxtd_1_1drawing_1_1system__icons.html#a97eb1b0bec449b58bc692228cdac2cf1',1,'xtd::drawing::system_icons::xtd_logo(const xtd::drawing::size &amp;size) noexcept']]]
+  ['xtd_5flibraries_8',['xtd_libraries',['../classxtd_1_1environment.html#a6e9c2c98afadb2bd0c32835d2dd21b9f',1,'xtd::environment']]],
+  ['xtd_5flogo_9',['xtd_logo',['../classxtd_1_1drawing_1_1system__icons.html#aab6b9eaa922ea2d3fb5428e658d44b23',1,'xtd::drawing::system_icons::xtd_logo() noexcept'],['../classxtd_1_1drawing_1_1system__icons.html#a97eb1b0bec449b58bc692228cdac2cf1',1,'xtd::drawing::system_icons::xtd_logo(const xtd::drawing::size &amp;size) noexcept']]]
 ];

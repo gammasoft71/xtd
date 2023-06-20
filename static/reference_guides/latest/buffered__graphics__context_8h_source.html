@@ -106,22 +106,22 @@ $(function() {
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>      </div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classxtd_1_1drawing_1_1buffered__graphics__context.html#a67df8c7d6f3d9a2647fc16e1d14bbc3c">   48</a></span>      <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1drawing_1_1size.html">xtd::drawing::size</a>&amp; <a class="code hl_function" href="classxtd_1_1drawing_1_1buffered__graphics__context.html#a67df8c7d6f3d9a2647fc16e1d14bbc3c">maximum_buffer</a>() const noexcept;</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="classxtd_1_1drawing_1_1buffered__graphics__context.html#acf60620b6a582ca11b51416cc42058ba">   53</a></span>      <a class="code hl_class" href="classxtd_1_1drawing_1_1buffered__graphics__context.html">buffered_graphics_context</a>&amp; maximum_buffer(const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::drawing::<a class="code hl_class" href="classxtd_1_1drawing_1_1size.html">size</a>&amp; value);</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>      </div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>      </div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>      <span class="keywordtype">void</span> allocate(const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::drawing::<a class="code hl_class" href="classxtd_1_1drawing_1_1graphics.html">graphics</a>&amp; target_graphics, const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::drawing::<a class="code hl_class" href="classxtd_1_1drawing_1_1rectangle.html">rectangle</a>&amp; targat_rectangle);</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>      <span class="keywordtype">void</span> allocate(<a class="code hl_typedef" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> target_dc, const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::drawing::<a class="code hl_class" href="classxtd_1_1drawing_1_1rectangle.html">rectangle</a>&amp; targat_rectangle);</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>      </div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="classxtd_1_1drawing_1_1buffered__graphics__context.html#a6f8978e0237633ba3a57f1d1f2d4a186">   64</a></span>      <span class="keywordtype">void</span> invalidate();</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>      </div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    private:</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>      <span class="comment">//xtd::drawing::buffered_graphics alloc_buffer_in_temp_manager(const xtd::drawing::graphics* target_graphics, intptr target_dc, const xtd::drawing::rectangle&amp; target_rectangle);</span></div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>      <span class="comment">//xtd::drawing::buffered_graphics allocate_buffer(const xtd::drawing::graphics* target_graphics, intptr target_dc, const xtd::drawing::rectangle&amp; target_rectangle);</span></div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>      <span class="keywordtype">void</span> destroy();</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>      </div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>      inline static const <span class="keywordtype">int</span> BUFFER_FREE = 0; <span class="comment">//the graphics buffer is free to use</span></div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>      inline static const <span class="keywordtype">int</span> BUFFER_BUSY_PAINTING = 1; <span class="comment">//graphics buffer is busy being created/painting</span></div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>      inline static const <span class="keywordtype">int</span> BUFFER_BUSY_DESTROYING = 2; <span class="comment">//graphics buffer is busy destroying</span></div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>      </div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>      <a class="code hl_namespace" href="namespacextd.html">xtd</a>::drawing::<a class="code hl_class" href="classxtd_1_1drawing_1_1buffered__graphics.html">buffered_graphics</a> buffer_;</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>      <a class="code hl_namespace" href="namespacextd.html">xtd</a>::drawing::<a class="code hl_class" href="classxtd_1_1drawing_1_1size.html">size</a> buffered_size_;</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>      <span class="keywordtype">int</span> busy_ = BUFFER_FREE;</div>
@@ -155,7 +155,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 18 2023 20:34:54 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jun 20 2023 22:06:52 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
