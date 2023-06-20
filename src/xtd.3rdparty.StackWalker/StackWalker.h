@@ -95,9 +95,9 @@ public:
     OptionsAll = 0x3F
   } StackWalkOptions;
   
-  StackWalker(ExceptType extype, int options = OptionsAll, PEXCEPTION_POINTERS exp = NULL);
+  explicit StackWalker(ExceptType extype, int options = OptionsAll, PEXCEPTION_POINTERS exp = NULL);
   
-  StackWalker(int    options = OptionsAll, // 'int' is by design, to combine the enum-flags
+  explicit StackWalker(int    options = OptionsAll, // 'int' is by design, to combine the enum-flags
     LPCSTR szSymPath = NULL,
     DWORD  dwProcessId = GetCurrentProcessId(),
     HANDLE hProcess = GetCurrentProcess());
