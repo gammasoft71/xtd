@@ -100,6 +100,9 @@ virtualCallInConstructor:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/cont
 virtualCallInConstructor:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/menu.h //:208
 virtualCallInConstructor:@CMAKE_SOURCE_DIR@/src/xtd.forms/include/xtd/forms/timer.h //:57
 
+// It is used, but cpp_check considers that it is not.
+unusedStructMember:@CMAKE_SOURCE_DIR@/src/xtd.forms/src/xtd/forms/label.cpp //:34
+
 // __________________________________________________________________________________________________________________________
 //                                                                                                           xtd.forms.native
 
