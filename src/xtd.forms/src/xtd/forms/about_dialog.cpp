@@ -82,7 +82,6 @@ namespace {
       show_in_taskbar(false);
       client_size({476, 300});
       form_border_style(forms::form_border_style::fixed_dialog);
-      start_position(show_modal_ ? form_start_position::center_parent : form_start_position::center_screen);
       
       picture_box_icon_.height(74);
       picture_box_icon_.size_mode(picture_box_size_mode::center_image);
@@ -138,6 +137,7 @@ namespace {
         return about_dialog_.get();
       }
       about_dialog_ = std::make_unique<about_dialog_standard>();
+      about_dialog_->start_position(about_dialog_->show_modal_ ? form_start_position::center_parent : form_start_position::center_screen);
       auto has_credit = !(authors.empty() && documenters.empty() && translators.empty() && artists.empty());
       auto has_license = !license.empty();
       if (icon != xtd::drawing::bitmap::empty)
