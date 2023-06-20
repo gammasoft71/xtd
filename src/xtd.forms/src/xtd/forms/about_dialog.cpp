@@ -82,6 +82,7 @@ namespace {
       show_in_taskbar(false);
       client_size({476, 300});
       form_border_style(forms::form_border_style::fixed_dialog);
+      start_position(form_start_position::center_screen);
       
       picture_box_icon_.height(74);
       picture_box_icon_.size_mode(picture_box_size_mode::center_image);
@@ -137,7 +138,8 @@ namespace {
         return about_dialog_.get();
       }
       about_dialog_ = std::make_unique<about_dialog_standard>();
-      about_dialog_->start_position(about_dialog_->show_modal_ ? form_start_position::center_parent : form_start_position::center_screen);
+      /// @todo Activate the following commment if about dialog must be modal on Windows.
+      // if (about_dialog_->show_modal_) about_dialog_->start_position(form_start_position::center_parent);
       auto has_credit = !(authors.empty() && documenters.empty() && translators.empty() && artists.empty());
       auto has_license = !license.empty();
       if (icon != xtd::drawing::bitmap::empty)
@@ -217,19 +219,20 @@ namespace {
         about_dialog_->text_box_license_.text(license);
       }
       
+      /** @todo Activate the following commment if about dialog must be modal on Windows.
       if (show_modal_) {
         auto o = owner;
         if (!o && application::open_forms().size()) o = &application::open_forms()[0].get();
         if (o) about_dialog_->show_dialog(*o);
         else  about_dialog_->show_dialog();
-      } else about_dialog_->visible(true);
+      } else*/ about_dialog_->visible(true);
       return about_dialog_.get();
     }
     
   private:
     inline static std::unique_ptr<about_dialog_standard> about_dialog_;
-    // Activate the following commient if about dialog must be modal on Windows.
-    inline static bool show_modal_ = false; // environment::os_version().is_windows();
+    /// @todo Activate the following commment if about dialog must be modal on Windows.
+    //inline static bool show_modal_ = environment::os_version().is_windows();
     picture_box picture_box_icon_;
     label label_name_;
     panel panel_about_;
