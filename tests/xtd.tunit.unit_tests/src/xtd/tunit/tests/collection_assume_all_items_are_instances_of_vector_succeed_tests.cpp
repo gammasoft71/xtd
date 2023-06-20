@@ -15,7 +15,7 @@ void test_(collection_assume_all_items_are_instances_of_vector_succeed_tests, te
   auto [output, result] = run_test_("collection_assume_all_items_are_instances_of_vector_succeed_tests.*");
   assert_value_("Start 1 test from 1 test case\n"
     "  SUCCEED collection_assume_all_items_are_instances_of_vector_succeed_tests.test_case_succeed\n"
-    "End 1 test from 1 test case ran.\n",output);
+    "End 1 test from 1 test case ran.\n", output);
 }
 
 void test_(collection_assume_all_items_are_instances_of_vector_succeed_tests, test_result) {

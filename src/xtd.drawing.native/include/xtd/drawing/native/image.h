@@ -408,13 +408,13 @@ namespace xtd {
         /// @return A new bitmap handle.
         /// @warning Internal use only
         static intptr from_hicon(intptr icon);
-
+        
         /// @brief Creates a GDI bitmap object from this image.
         /// @param image A handle to an image.
         /// @return A new bitmap handle.
         /// @warning Internal use only
         static intptr get_hbitmap(intptr image);
-
+        
         /// @brief Creates a GDI bitmap object from this image.
         /// @param image A handle to an image.
         /// @param a The alpha componant of the background color.
@@ -430,7 +430,7 @@ namespace xtd {
         /// @return A new icon handle.
         /// @warning Internal use only
         static intptr get_hicon(intptr image);
-
+        
         /// @brief Gets the color of the specified pixel in the image.
         /// @param image The image handle.
         /// @param x The x-coordinate of the pixel to retrieve.
@@ -472,7 +472,7 @@ namespace xtd {
         /// @param transprent_color_g The byte that represents the green component of the color to make transparent.
         /// @param transprent_color_b The byte that represents the blue component of the color to make transparent.
         static void make_transparent(intptr image, xtd::byte transparent_color_a, xtd::byte transparent_color_r, xtd::byte transparent_color_g, xtd::byte transparent_color_b);
-
+        
         /// @brief Gets the width and height of this image.
         /// @param image The image handle.
         /// @param width A int32 that represents the width of the image.
@@ -557,7 +557,7 @@ namespace xtd {
         /// @param raw_format The image format that represents the file format of this image (see image_formats.h for more information).
         /// @warning Internal use only
         static void save(intptr image, std::ostream& stream, size_t raw_format);
-
+        
         /// @brief Get the screen dpi.
         /// @return The screen dpi.
         /// @warning Internal use only

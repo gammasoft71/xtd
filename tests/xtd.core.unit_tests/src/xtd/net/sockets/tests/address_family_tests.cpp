@@ -67,7 +67,7 @@ namespace xtd::tests {
       assert::are_equal("iso", enum_object<>::to_string(address_family::iso), csf_);
       assert::are_equal(address_family::iso, enum_object<>::parse<address_family>("iso"), csf_);
     }
-
+    
     void test_method_(osi) {
       // Duplicate value with iso
       assert::are_equal(7, enum_object<>::to_int32(address_family::osi), csf_);

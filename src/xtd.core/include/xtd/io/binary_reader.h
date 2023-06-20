@@ -243,12 +243,12 @@ namespace xtd {
       
       /// @brief Rewind stream
       void rewind();
-
+      
       /// @brief Change the position of the readers stream
       /// @param off The offset being added to the direction
       /// @param dir The seek direction. If ommited defaults to ios_base::cur
       void seekg(std::streamoff off, std::ios_base::seekdir dir = std::ios_base::cur);
-
+      
       /// @brief Tell the current seek position of the readers stream;
       /// @return The current seek position
       std::streampos tellg();

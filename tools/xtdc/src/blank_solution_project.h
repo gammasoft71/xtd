@@ -13,7 +13,7 @@ namespace xtdc_command {
     void generate(const xtd::ustring& name) const {
       create_solution_cmakelists_txt(name);
     }
-
+    
   private:
     void create_solution_cmakelists_txt(const xtd::ustring& name) const {
       std::vector<xtd::ustring> lines {

@@ -32,7 +32,7 @@ namespace xtd {
         bitmap_data(const bitmap_data&) = default;
         bitmap_data& operator =(const bitmap_data&) = default;
         /// @endcond
-
+        
         /// @name Properties
         
         /// @{
@@ -43,7 +43,7 @@ namespace xtd {
         /// @param value The pixel height of the xtd::drawing::bitmap object.
         /// @return This current instance.
         bitmap_data& height(int32 value) noexcept;
-
+        
         /// @brief Gets the format of the pixel information in the xtd::drawing::bitmap object that returned this xtd::drawing::imaging::bitmap_data object.
         /// @return A xtd::drawing::imaging::pixel_format that specifies the format of the pixel information in the associated xtd::drawing::bitmap object.
         /// @remarks The format defines how many bits of memory are needed to store the color information for a single pixel.
@@ -53,7 +53,7 @@ namespace xtd {
         /// @return This current instance.
         /// @remarks The format defines how many bits of memory are needed to store the color information for a single pixel.
         bitmap_data& pixel_format(xtd::drawing::imaging::pixel_format value) noexcept;
-
+        
         /// @brief Reserved. Do not use.
         /// @return Reserved. Do not use.
         int32 reserved() const noexcept;
@@ -61,7 +61,7 @@ namespace xtd {
         /// @param value Reserved. Do not use.
         /// @return This current instance.
         bitmap_data& reserved(int32 value) noexcept;
-
+        
         /// @brief Gets or sets the address of the first pixel data in the bitmap. This can also be thought of as the first scan line in the bitmap.
         /// @return The address of the first pixel data in the bitmap.
         intptr scan0() const noexcept;
@@ -69,7 +69,7 @@ namespace xtd {
         /// @param value The address of the first pixel data in the bitmap.
         /// @return This current instance.
         bitmap_data& scan0(intptr value) noexcept;
-
+        
         /// @brief Gets the stride width (also called scan width) of the xtd::drawing::bitmap object.
         /// @return The stride width, in bytes, of the xtd::drawing::bitmap object.
         /// @remarks The stride is the width of a single row of pixels (a scan line), rounded up to a four-byte boundary. If the stride is positive, the bitmap is top-down. If the stride is negative, the bitmap is bottom-up.
@@ -79,7 +79,7 @@ namespace xtd {
         /// @return This current instance.
         /// @remarks The stride is the width of a single row of pixels (a scan line), rounded up to a four-byte boundary. If the stride is positive, the bitmap is top-down. If the stride is negative, the bitmap is bottom-up.
         bitmap_data& stride(int32 value) noexcept;
-
+        
         /// @brief Gets or sets the pixel width of the xtd::drawing::bitmap object. This can also be thought of as the number of pixels in one scan line.
         /// @return The pixel width of the xtd::drawing::bitmap object.
         int32 width() const noexcept;

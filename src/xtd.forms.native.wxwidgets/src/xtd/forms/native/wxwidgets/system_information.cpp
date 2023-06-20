@@ -194,17 +194,17 @@ int32 system_information::font_smoothing_type() {
 }
 
 xtd::drawing::size system_information::frame_border_size() {
-#if defined(__WXMSW__)
+  #if defined(__WXMSW__)
   return { wxSystemSettings::GetMetric(wxSYS_EDGE_X), wxSystemSettings::GetMetric(wxSYS_EDGE_Y) };
-#else
+  #else
   return { 0, 0 };
-#endif
+  #endif
 }
 
 bool system_information::is_operating_system_double_buffered() {
-#if defined(__WXMSW__)
+  #if defined(__WXMSW__)
   return false;
-#else
+  #else
   return true;
-#endif
+  #endif
 }

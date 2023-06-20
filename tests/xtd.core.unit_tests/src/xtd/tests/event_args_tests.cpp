@@ -23,20 +23,20 @@ namespace xtd::tests {
     private:
       int32 args_ = 0;
     };
-
+    
   public:
     void test_method_(event_args_ctor) {
-      assert::does_not_throw([]{event_args {};}, csf_);
+      assert::does_not_throw([] {event_args {};}, csf_);
     }
     
     void test_method_(event_args_copy) {
       event_args e1;
-      assert::does_not_throw([&]{auto e2 = e1;}, csf_);
+      assert::does_not_throw([&] {auto e2 = e1;}, csf_);
     }
     
     void test_method_(event_args_using) {
       auto m_executed = false;
-      auto m = [&](const event_args& e) {
+      auto m = [&](const event_args & e) {
         m_executed = true;
       };
       
@@ -47,7 +47,7 @@ namespace xtd::tests {
     
     void test_method_(event_args_using_empty) {
       auto m_executed = false;
-      auto m = [&](const event_args& e) {
+      auto m = [&](const event_args & e) {
         m_executed = true;
       };
       
@@ -57,9 +57,9 @@ namespace xtd::tests {
     }
     
     void test_method_(event_args_copy_with_empty) {
-      assert::does_not_throw([&]{auto e = event_args::empty;;}, csf_);
+      assert::does_not_throw([&] {auto e = event_args::empty;;}, csf_);
     }
-
+    
     void test_method_(test_event_args_ctor) {
       test_event_args e{};
       assert::is_zero(e.args(), csf_);

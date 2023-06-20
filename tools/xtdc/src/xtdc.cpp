@@ -200,7 +200,7 @@ namespace xtdc_command {
         "    xtdc generate --help",
       };
     }
-
+    
     static vector<ustring> get_install_help() noexcept {
       return {
         "Install a project.",
@@ -559,7 +559,7 @@ namespace xtdc_command {
       }
       return 0;
     }
- 
+    
     static int help(const vector<ustring>& args) {
       console::write_line(ustring::join("\n", get_help()));
       return 0;
@@ -876,7 +876,7 @@ namespace xtdc_command {
       }
       return true;
     }
-
+    
     static bool process_install_arguments(const vector<ustring>& args, bool& show_help, bool& release, ustring& path, ustring& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
@@ -917,7 +917,7 @@ namespace xtdc_command {
       }
       return true;
     }
-
+    
     static bool process_open_arguments(const vector<ustring>& args, bool& show_help, bool& release, ustring& path, ustring& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")

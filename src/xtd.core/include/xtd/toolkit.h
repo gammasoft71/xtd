@@ -45,11 +45,11 @@ namespace xtd {
     /// @brief Gets the toolkit description.
     /// @return The toolkit description.
     const xtd::ustring& description() const noexcept;
-
+    
     /// @brief Gets the toolkit name.
     /// @return The toolkit name.
     const xtd::ustring& name() const noexcept;
-
+    
     /// @brief Gets the toolkit version.
     /// @return The toolkit version.
     const xtd::version& version() const noexcept;

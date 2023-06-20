@@ -9,7 +9,7 @@ namespace xtd {
   namespace drawing {
     /// @brief The xtd::drawing::drawing_2d/ namespace provides advanced two-dimensional and vector graphics functionality.
     namespace drawing_2d {}
-
+    
     /// @brief The xtd::drawing::drawing_2d/ namespace provides advanced two-dimensional and vector graphics functionality.
     /// @deprecated Replaced by xxtd::drawing::drawing_2d - Will be removed in version 0.4.0
     //[[deprecated("Replaced by xtd::drawing::drawing_2d - Will be removed in version 0.4.0")]]

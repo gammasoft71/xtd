@@ -41,7 +41,7 @@ namespace {
     __environment_argc = argc;
     __environment_argv = argv;
   }
-
+  
   tuple<string, string, string> macos_information() {
     // https://en.wikipedia.org/wiki/MacOS_version_history
     static auto build_version = ""s;
@@ -50,7 +50,7 @@ namespace {
     static auto minor = -1;
     static auto name = "macOS"s;
     static auto version = ""s;
-
+    
     if (version.empty()) {
       try {
         codename = xtd::native::macos::strings::replace(create_process("awk '/SOFTWARE LICENSE AGREEMENT FOR macOS/' '/System/Library/CoreServices/Setup Assistant.app/Contents/Resources/en.lproj/OSXSoftwareLicense.rtf' | awk -F 'macOS ' '{print $NF}' | awk '{print substr($0, 0, length($0)-1)}'"), "\n", "");
@@ -66,10 +66,10 @@ namespace {
           major = stoi(versions[0]);
           minor = stoi(versions[1]);
         }
-      } catch(...) {
+      } catch (...) {
       }
     }
-
+    
     if (major == 10 && minor == 0) return make_tuple("OS X", "Cheetah", version);
     if (major == 10 && minor == 1) return make_tuple("OS X", "Puma", version);
     if (major == 10 && minor == 2) return make_tuple("OS X", "Jaguar", version);
@@ -108,7 +108,7 @@ namespace {
     distribution_key_values.insert({"VERSION", version + " (" + codename + ")"});
     distribution_key_values.insert({"VERSION_ID", version});
     distribution_key_values.insert({"VERSION_CODENAME", codename});
-
+    
     return distribution_key_values;
   }
 }

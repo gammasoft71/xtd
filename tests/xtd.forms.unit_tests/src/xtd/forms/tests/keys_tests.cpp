@@ -156,13 +156,13 @@ namespace xtd::tests {
       assert::are_equal("ime_accept", enum_object<>::to_string(keys::ime_accept), csf_);
       assert::are_equal(keys::ime_accept, enum_object<>::parse<keys>("ime_accept"), csf_);
     }
-
+    
     void test_method_(ime_mode_change) {
       assert::are_equal(31, enum_object<>::to_int32(keys::ime_mode_change), csf_);
       //assert::are_equal("ime_mode_change", enum_object<>::to_string(keys::ime_mode_change), csf_);
       //assert::are_equal(keys::ime_mode_change, enum_object<>::parse<keys>("ime_mode_change"), csf_);
     }
-
+    
     void test_method_(space) {
       assert::are_equal(32, enum_object<>::to_int32(keys::space), csf_);
       assert::are_equal("space", enum_object<>::to_string(keys::space), csf_);
@@ -804,13 +804,13 @@ namespace xtd::tests {
       assert::are_equal("browser_stop", enum_object<>::to_string(keys::browser_stop), csf_);
       assert::are_equal(keys::browser_stop, enum_object<>::parse<keys>("browser_stop"), csf_);
     }
-
+    
     void test_method_(browser_search) {
       assert::are_equal(170, enum_object<>::to_int32(keys::browser_search), csf_);
       assert::are_equal("browser_search", enum_object<>::to_string(keys::browser_search), csf_);
       assert::are_equal(keys::browser_search, enum_object<>::parse<keys>("browser_search"), csf_);
     }
-
+    
     void test_method_(browser_favorites) {
       assert::are_equal(171, enum_object<>::to_int32(keys::browser_favorites), csf_);
       //assert::are_equal("browser_favorites", enum_object<>::to_string(keys::browser_favorites), csf_);
@@ -858,7 +858,7 @@ namespace xtd::tests {
       assert::are_equal("media_stop", enum_object<>::to_string(keys::media_stop), csf_);
       assert::are_equal(keys::media_stop, enum_object<>::parse<keys>("media_stop"), csf_);
     }
-
+    
     void test_method_(media_play_pause) {
       assert::are_equal(179, enum_object<>::to_int32(keys::media_play_pause), csf_);
       //assert::are_equal("media_play_pause", enum_object<>::to_string(keys::media_play_pause), csf_);
@@ -900,7 +900,7 @@ namespace xtd::tests {
       //assert::are_equal("oem_plus", enum_object<>::to_string(keys::oem_plus), csf_);
       //assert::are_equal(keys::oem_plus, enum_object<>::parse<keys>("oem_plus"), csf_);
     }
-
+    
     void test_method_(oem_comma) {
       assert::are_equal(188, enum_object<>::to_int32(keys::oem_comma), csf_);
       assert::are_equal("oem_comma", enum_object<>::to_string(keys::oem_comma), csf_);

@@ -514,8 +514,7 @@ namespace xtd {
         if (is.good() == true) {
           is.close();
           base_assert::fail("not file exists", base_assert::to_string(file), message, stack_frame);
-        }
-        else
+        } else
           assert::succeed(message, stack_frame);
       }
       
@@ -529,7 +528,7 @@ namespace xtd {
       template<typename char_t>
       static void does_not_exist(const char_t* file, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {does_not_exist(std::basic_string<char_t>(file), message, stack_frame);}
       /// @endcond
-
+      
       /// @brief Asserts that file exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -606,6 +605,6 @@ namespace xtd {
       static void exists(const char_t* file, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {exists(std::basic_string<char_t>(file), message, stack_frame);}
       /// @endcond
       /// @}
-     };
+    };
   }
 }

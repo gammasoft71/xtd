@@ -30,7 +30,7 @@ namespace xtd::tests {
     void test_method_(format_with_invalid_enum) {
       assert::are_equal("16", ustring::format("{}", as<unregistered_enum_struct_flags_test>(16)), csf_);
     }
-
+    
     void test_method_(format_with_specified_format) {
       assert::are_equal("0b1100", ustring::format("0b{:b}", unregistered_enum_struct_flags_test::three | unregistered_enum_struct_flags_test::four), csf_);
       assert::are_equal("0b1100", ustring::format("0b{:B}", unregistered_enum_struct_flags_test::three | unregistered_enum_struct_flags_test::four), csf_);
@@ -56,7 +56,7 @@ namespace xtd::tests {
     
     void test_method_(parse_with_invalid_enum) {
       assert::are_equal(as<unregistered_enum_struct_flags_test>(16), ustring::parse<unregistered_enum_struct_flags_test>("16"), csf_);
-      assert::throws<format_exception>([]{ustring::parse<unregistered_enum_struct_flags_test>("one");}, csf_);
+      assert::throws<format_exception>([] {ustring::parse<unregistered_enum_struct_flags_test>("one");}, csf_);
     }
   };
 }

@@ -33,11 +33,11 @@ namespace {
 intptr region::create() {
   toolkit::initialize(); // Must be first
   // Workaround for infinite region on linux
-#if defined(__WXGTK__)
+  #if defined(__WXGTK__)
   const auto max_value = 0xFFFFF;
-#else
+  #else
   const auto max_value = int32_object::max_value;
-#endif
+  #endif
   return reinterpret_cast<intptr>(new wxRegion(-max_value / 2, -max_value / 2, max_value, max_value));
 }
 

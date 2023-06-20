@@ -14,7 +14,7 @@ namespace xtdc_command {
       create_source(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
       create_main(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
     }
-
+    
     void generate(const xtd::ustring& name) const {
       generate_cmakelists_txt(name, current_path());
     }

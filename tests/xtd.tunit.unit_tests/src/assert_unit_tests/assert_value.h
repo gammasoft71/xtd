@@ -35,4 +35,4 @@ namespace assert_unit_tests {
   assert_unit_tests::assert_value(name, expected, actual, __FILE__, __LINE__)
 
 #define assert_value_(expected, actual) \
-assert_unit_tests::assert_value(name, expected, actual, __FILE__, __LINE__)
+  assert_unit_tests::assert_value(name, expected, actual, __FILE__, __LINE__)

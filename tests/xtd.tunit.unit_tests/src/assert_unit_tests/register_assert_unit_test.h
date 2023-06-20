@@ -24,7 +24,7 @@ namespace assert_unit_tests {
       auto result = xtd::tunit::unit_test(std::make_unique<unit_tests_event_listener>(output_stream)).run();
       return std::make_pair(output_stream.str(), result);
     }
-
+    
     static int run_all_tests() {
       std::cout << "Start unit tests" << std::endl;
       try {

@@ -93,7 +93,7 @@ namespace xtd {
       /// @return A xtd::drawing::graphics for the screen.
       /// @ingroup drawing
       static drawing::graphics create_graphics();
-
+      
       /// @brief Retrieves a screen for the display that contains the largest portion of the specified control.
       /// @param control A xtd::forms::control for which to retrieve a Screen.
       /// @return A screen for the display that contains the largest region of the specified control. In multiple display environments where no display contains the control, the display closest to the specified control is returned.

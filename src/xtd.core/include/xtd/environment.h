@@ -291,7 +291,7 @@ namespace xtd {
       /// @brief The path to the folder is created if it does not already exist.
       create = 32768
     };
-
+    
     /// @brief Represents a xtd library that contains name, version and paths.
     class xtd_library final : public xtd::object {
     public:
@@ -340,10 +340,10 @@ namespace xtd {
       xtd::ustring library_path_;
       xtd::ustring resources_path_;
     };
-
+    
     /// @brief Represents a xtd libraries collection.
     using xtd_library_collection = std::vector<xtd_library>;
-
+    
     /// @name Properties
     
     /// @{
@@ -419,7 +419,7 @@ namespace xtd {
     /// @return A copy of the global C++ locale.
     /// @remarks See <a href=https://en.cppreference.com/w/cpp/locale/locale/locale>std::locale</a> for more information.
     static std::locale locale() noexcept;
-
+    
     /// @brief Gets the NetBIOS name of this local computer.
     /// @return A string containing the name of this computer.
     /// @remarks The name of this computer is established at system startup when the name is read from the registry. If this computer is a node in a cluster, the name of the node is returned.
@@ -479,7 +479,7 @@ namespace xtd {
     /// @return The current toolkit version.
     static xtd::toolkit toolkit_version();
     
-
+    
     /// @brief Gets a value indicating whether the current user is an administrator.
     /// @return bool true if the current user is an administrator; otherwise, false.
     static bool user_administrator();
@@ -510,7 +510,7 @@ namespace xtd {
     /// The following example displays the size of the working set of the computer that runs the code example.
     /// @include EnvironmentWorkingSet.cpp
     static int64 working_set();
-
+    
     /// @brief Gets an xtd::environment::xtd_library array that represent the xtd libraries status.
     /// @return an xtd::environment::xtd_library array.
     static const xtd_library_collection& xtd_libraries() noexcept;

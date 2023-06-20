@@ -56,7 +56,7 @@ namespace xtd {
       /// @brief Sets count tests.
       /// @param count_tests true if count tests; otherwise false.
       void count_tests(bool count_tests) noexcept;
-
+      
       /// @brief Gets exit status.
       /// @return exit status.
       /// @remarks The value by default is EXIT_SUCCESS.

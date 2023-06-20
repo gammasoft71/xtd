@@ -16,7 +16,7 @@ namespace xtdc_command {
     void generate(const xtd::ustring& name) const {
       generate_cmakelists_txt(name, current_path());
     }
-
+    
   private:
     void create_solution_cmakelists_txt(const xtd::ustring& name) const {
       std::vector<xtd::ustring> lines {
@@ -95,7 +95,7 @@ namespace xtdc_command {
       lines.push_back("");
       lines.push_back("# Application properties");
       lines.push_back("add_executable(${PROJECT_NAME} ${SOURCES})");
-
+      
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "CMakeLists.txt"), lines);
     }
   };
