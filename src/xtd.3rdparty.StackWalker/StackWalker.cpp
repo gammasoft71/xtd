@@ -630,7 +630,7 @@ private:
       return FALSE;
     }
     
-    hMods = (HMODULE*)malloc(sizeof(HMODULE) * (TTBUFLEN / sizeof(HMODULE)));
+    hMods = reinterpret_cast<HMODULE*>(malloc(sizeof(HMODULE) * (TTBUFLEN / sizeof(HMODULE))));
     tt = reinterpret_cast<char*>(malloc(sizeof(char) * TTBUFLEN));
     tt2 = reinterpret_cast<char*>(malloc(sizeof(char) * TTBUFLEN));
     if ((hMods == NULL) || (tt == NULL) || (tt2 == NULL))
@@ -819,20 +819,16 @@ extern "C" void** __cdecl __current_exception_context();
 #endif
 
 static PCONTEXT get_current_exception_context() {
-  #if defined(_MSC_VER)
-    PCONTEXT* pctx = NULL;
-  #if _MSC_VER >= 1400 && _MSC_VER < 1900
+  PCONTEXT* pctx = NULL;
+#if defined(_MSC_VER) && _MSC_VER >= 1400 && _MSC_VER < 1900
   LPSTR ptd = (LPSTR)_getptd();
   if (ptd)
     pctx = (PCONTEXT*)(ptd + (sizeof(void*) == 4 ? 0x8C : 0xF8));
-  if (pctx) return *pctx;
-  #endif
-  #if _MSC_VER >= 1900
+#endif
+#if defined(_MSC_VER) && _MSC_VER >= 1900
   pctx = (PCONTEXT*)__current_exception_context();
-  if (pctx) return *pctx;
-  #endif
-  #endif
-  return NULL;
+#endif
+  return pctx ? *pctx : NULL;
 }
 
 bool StackWalker::Init(ExceptType extype, int options, LPCSTR szSymPath, DWORD dwProcessId,
