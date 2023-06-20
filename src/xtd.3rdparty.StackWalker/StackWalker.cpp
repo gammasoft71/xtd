@@ -232,7 +232,7 @@ typedef DWORD64(__stdcall* PTRANSLATE_ADDRESS_ROUTINE64)(HANDLE      hProcess,
 #endif
 
 static void MyStrCpy(char* szDest, size_t nMaxDestSize, const char* szSrc) {
-  if (nMaxDestSize <= 0)
+  if (nMaxDestSize == 0)
     return;
   strncpy_s(szDest, nMaxDestSize, szSrc, _TRUNCATE);
   // INFO: _TRUNCATE will ensure that it is null-terminated;
@@ -547,9 +547,9 @@ private:
       hToolhelp = LoadLibrary(dllname[i]);
       if (hToolhelp == NULL)
         continue;
-      pCT32S = (tCT32S)GetProcAddress(hToolhelp, "CreateToolhelp32Snapshot");
-      pM32F = (tM32F)GetProcAddress(hToolhelp, "Module32First");
-      pM32N = (tM32N)GetProcAddress(hToolhelp, "Module32Next");
+      pCT32S = reinterpret_cast<tCT32S>(GetProcAddress(hToolhelp, "CreateToolhelp32Snapshot"));
+      pM32F = reinterpret_cast<tM32F>(GetProcAddress(hToolhelp, "Module32First"));
+      pM32N = reinterpret_cast<tM32N>(GetProcAddress(hToolhelp, "Module32Next"));
       if ((pCT32S != NULL) && (pM32F != NULL) && (pM32N != NULL))
         break; // found the functions!
       FreeLibrary(hToolhelp);
@@ -620,10 +620,10 @@ private:
     if (hPsapi == NULL)
       return FALSE;
       
-    pEPM = (tEPM)GetProcAddress(hPsapi, "EnumProcessModules");
-    pGMFNE = (tGMFNE)GetProcAddress(hPsapi, "GetModuleFileNameExA");
-    pGMBN = (tGMFNE)GetProcAddress(hPsapi, "GetModuleBaseNameA");
-    pGMI = (tGMI)GetProcAddress(hPsapi, "GetModuleInformation");
+    pEPM = reinterpret_cast<tEPM>(GetProcAddress(hPsapi, "EnumProcessModules"));
+    pGMFNE = reinterpret_cast<tGMFNE>(GetProcAddress(hPsapi, "GetModuleFileNameExA"));
+    pGMBN = reinterpret_cast<tGMFNE>(GetProcAddress(hPsapi, "GetModuleBaseNameA"));
+    pGMI = reinterpret_cast<tGMI>(GetProcAddress(hPsapi, "GetModuleInformation"));
     if ((pEPM == NULL) || (pGMFNE == NULL) || (pGMBN == NULL) || (pGMI == NULL)) {
       // we couldn't find all functions
       FreeLibrary(hPsapi);
@@ -631,8 +631,8 @@ private:
     }
     
     hMods = (HMODULE*)malloc(sizeof(HMODULE) * (TTBUFLEN / sizeof(HMODULE)));
-    tt = (char*)malloc(sizeof(char) * TTBUFLEN);
-    tt2 = (char*)malloc(sizeof(char) * TTBUFLEN);
+    tt = reinterpret_cast<char*>(malloc(sizeof(char) * TTBUFLEN));
+    tt2 = reinterpret_cast<char*>(malloc(sizeof(char) * TTBUFLEN));
     if ((hMods == NULL) || (tt == NULL) || (tt2 == NULL))
       goto cleanup;
       
@@ -783,7 +783,7 @@ public:
     memcpy(pData, pModuleInfo, sizeof(IMAGEHLP_MODULE64_V3));
     static bool s_useV3Version = true;
     if (s_useV3Version) {
-      if (this->pSGMI(hProcess, baseAddr, (IMAGEHLP_MODULE64_V3*)pData) != FALSE) {
+      if (this->pSGMI(hProcess, baseAddr, reinterpret_cast<IMAGEHLP_MODULE64_V3*>(pData)) != FALSE) {
         // only copy as much memory as is reserved...
         memcpy(pModuleInfo, pData, sizeof(IMAGEHLP_MODULE64_V3));
         pModuleInfo->SizeOfStruct = sizeof(IMAGEHLP_MODULE64_V3);
@@ -796,7 +796,7 @@ public:
     // could not retrieve the bigger structure, try with the smaller one (as defined in VC7.1)...
     pModuleInfo->SizeOfStruct = sizeof(IMAGEHLP_MODULE64_V2);
     memcpy(pData, pModuleInfo, sizeof(IMAGEHLP_MODULE64_V2));
-    if (this->pSGMI(hProcess, baseAddr, (IMAGEHLP_MODULE64_V3*)pData) != FALSE) {
+    if (this->pSGMI(hProcess, baseAddr, reinterpret_cast<IMAGEHLP_MODULE64_V3*>(pData)) != FALSE) {
       // only copy as much memory as is reserved...
       memcpy(pModuleInfo, pData, sizeof(IMAGEHLP_MODULE64_V2));
       pModuleInfo->SizeOfStruct = sizeof(IMAGEHLP_MODULE64_V2);
@@ -824,11 +824,13 @@ static PCONTEXT get_current_exception_context() {
   LPSTR ptd = (LPSTR)_getptd();
   if (ptd)
     pctx = (PCONTEXT*)(ptd + (sizeof(void*) == 4 ? 0x8C : 0xF8));
+  if (pctx) return *pctx;
   #endif
   #if defined(_MSC_VER) && _MSC_VER >= 1900
   pctx = (PCONTEXT*)__current_exception_context();
+  if (pctx) return *pctx;
   #endif
-  return pctx ? *pctx : NULL;
+  return NULL;
 }
 
 bool StackWalker::Init(ExceptType extype, int options, LPCSTR szSymPath, DWORD dwProcessId,
@@ -911,7 +913,7 @@ BOOL StackWalker::LoadModules() {
   char* szSymPath = NULL;
   if ((this->m_options & SymBuildPath) != 0) {
     const size_t nSymPathLen = 4096;
-    szSymPath = (char*)malloc(nSymPathLen);
+    szSymPath = reinterpret_cast<char*>(malloc(nSymPathLen));
     if (szSymPath == NULL) {
       SetLastError(ERROR_NOT_ENOUGH_MEMORY);
       return FALSE;
@@ -1112,7 +1114,7 @@ BOOL StackWalker::ShowCallstack(HANDLE                    hThread,
 #error "Platform not supported!"
   #endif
   
-  pSym = (IMAGEHLP_SYMBOL64*)malloc(sizeof(IMAGEHLP_SYMBOL64) + STACKWALK_MAX_NAMELEN);
+  pSym = reinterpret_cast<IMAGEHLP_SYMBOL64*>(malloc(sizeof(IMAGEHLP_SYMBOL64) + STACKWALK_MAX_NAMELEN));
   if (!pSym)
     goto cleanup; // not enough memory...
   memset(pSym, 0, sizeof(IMAGEHLP_SYMBOL64) + STACKWALK_MAX_NAMELEN);
@@ -1272,7 +1274,7 @@ BOOL StackWalker::ShowObject(LPVOID pObject) {
   DWORD64            dwAddress = DWORD64(pObject);
   DWORD64            dwDisplacement = 0;
   const SIZE_T       symSize = sizeof(IMAGEHLP_SYMBOL64) + STACKWALK_MAX_NAMELEN;
-  IMAGEHLP_SYMBOL64* pSym = (IMAGEHLP_SYMBOL64*)malloc(symSize);
+  IMAGEHLP_SYMBOL64* pSym = reinterpret_cast<IMAGEHLP_SYMBOL64*>(malloc(symSize));
   if (!pSym)
     return FALSE;
   memset(pSym, 0, symSize);
@@ -1280,6 +1282,7 @@ BOOL StackWalker::ShowObject(LPVOID pObject) {
   pSym->MaxNameLength = STACKWALK_MAX_NAMELEN;
   if (this->m_sw->pSGSFA(this->m_hProcess, dwAddress, &dwDisplacement, pSym) == FALSE) {
     this->OnDbgHelpErr("SymGetSymFromAddr64", GetLastError(), dwAddress);
+    free(pSym);
     return FALSE;
   }
   // Object name output
