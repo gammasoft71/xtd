@@ -18,11 +18,14 @@ knownConditionTrueFalse:@CMAKE_SOURCE_DIR@/src/xtd.3rdparty.StackWalker/StackWal
 //                                                                                                                   xtd.dore
 
 // The following parameters can't be const by design.
+constParameter:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/box_integer.h
 constParameter:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/convert_pointer.h
 
 // The following constructors can't be explicit by design.
 noExplicitConstructor:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/internal/__enum_introspection.h //:72
 noExplicitConstructor:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/diagnostics/trace_listener_collection.h
+noExplicitConstructor:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/box_integer.h
+noExplicitConstructor:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/box.h
 noExplicitConstructor:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/delegate.h
 noExplicitConstructor:@CMAKE_SOURCE_DIR@/src/xtd.core/include/xtd/ustring.h
 
