@@ -24,5 +24,5 @@ auto main()->int {
 //
 // Message: Something happened.
 // Method name: main
-// File name: /!---OMITTED---!/current_stack_trace.cpp
+// File name: /!---OMITTED---!/current_stack_frame.cpp
 // File line number: 15
