@@ -102,7 +102,7 @@ public:
     DWORD  dwProcessId = GetCurrentProcessId(),
     HANDLE hProcess = GetCurrentProcess());
     
-  StackWalker(DWORD dwProcessId, HANDLE hProcess);
+  explicit StackWalker(DWORD dwProcessId, HANDLE hProcess);
   
   virtual ~StackWalker();
   
