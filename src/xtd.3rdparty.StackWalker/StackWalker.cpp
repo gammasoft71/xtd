@@ -245,11 +245,8 @@ static void MyStrCpy(char* szDest, size_t nMaxDestSize, const char* szSrc) {
 
 class StackWalkerInternal {
 public:
-  StackWalkerInternal(StackWalker* parent, HANDLE hProcess, PCONTEXT ctx) {
-    m_parent = parent;
-    m_hDbhHelp = NULL;
+  StackWalkerInternal(StackWalker* parent, HANDLE hProcess, PCONTEXT ctx) : m_parent(parent), m_hDbhHelp(NULL), m_hProcess(hProcess) {
     pSC = NULL;
-    m_hProcess = hProcess;
     pSFTA = NULL;
     pSGLFA = NULL;
     pSGMB = NULL;
