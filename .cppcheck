@@ -9,9 +9,9 @@
 //                                                                                                    xtd.3rdparty.call_stack
 
 // Do not change the following error in third paty libraries
-cstyleCast:@CMAKE_SOURCE_DIR@/src/xtd.3rdparty.call_stack/stack_walker.cpp //:459, :460, :461, :526, :527, :528, :529, :536, :537, :538, :539, :729, :529, :863
-sizeofDivisionMemfunc:@CMAKE_SOURCE_DIR@/src/xtd.3rdparty.call_stack/stack_walker.cpp //:536
-unusedStructMember:@CMAKE_SOURCE_DIR@/src/xtd.3rdparty.call_stack/stack_walker.cpp //:69
+cstyleCast:@CMAKE_SOURCE_DIR@/src/xtd.3rdparty.StackWalker/StackWalker.cpp //:459, :460, :461, :526, :527, :528, :529, :536, :537, :538, :539, :729, :529, :863
+sizeofDivisionMemfunc:@CMAKE_SOURCE_DIR@/src/xtd.3rdparty.StackWalker/StackWalker.cpp //:536
+unusedStructMember:@CMAKE_SOURCE_DIR@/src/xtd.3rdparty.StackWalker/StackWalker.cpp //:133
 
 // __________________________________________________________________________________________________________________________
 //                                                                                                                   xtd.dore
