@@ -80,7 +80,7 @@ namespace xtd {
         /// @return The toolkit name.
         /// @warning Internal use only
         static xtd::ustring name();
-
+        
         /// @brief Gets the toolkit version.
         /// @return The toolkit version.
         /// @warning Internal use only

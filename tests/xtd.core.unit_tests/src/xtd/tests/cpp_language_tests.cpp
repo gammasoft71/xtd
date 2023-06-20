@@ -14,7 +14,7 @@ namespace xtd::tests {
     static constexpr int32 cpp_pre98 = 1L;
     static constexpr int32 cpp_unknown = 0;
     static constexpr int32 cpp20_experimental = 201707L;
-
+    
   public:
     void test_method_(default_ctor) {
       cpp_language cl;
@@ -31,7 +31,7 @@ namespace xtd::tests {
       assert::is_zero(cl.year(), csf_);
       assert::are_equal("<unknown> 0.0", cl.to_string(), csf_);
     }
-
+    
     void test_method_(ctor_witth_cpp20) {
       cpp_language cl {cpp20};
       
@@ -47,7 +47,7 @@ namespace xtd::tests {
       assert::are_equal(2020, cl.year(), csf_);
       assert::are_equal("C++ 20 2020.2", cl.to_string(), csf_);
     }
-
+    
     void test_method_(ctor_witth_cpp17) {
       cpp_language cl {cpp17};
       
@@ -63,7 +63,7 @@ namespace xtd::tests {
       assert::are_equal(2017, cl.year(), csf_);
       assert::are_equal("C++ 17 2017.3", cl.to_string(), csf_);
     }
-
+    
     void test_method_(ctor_witth_cpp14) {
       cpp_language cl {cpp14};
       
@@ -79,7 +79,7 @@ namespace xtd::tests {
       assert::are_equal(2014, cl.year(), csf_);
       assert::are_equal("C++ 14 2014.2", cl.to_string(), csf_);
     }
-
+    
     void test_method_(ctor_witth_cpp11) {
       cpp_language cl {cpp11};
       
@@ -95,7 +95,7 @@ namespace xtd::tests {
       assert::are_equal(2011, cl.year(), csf_);
       assert::are_equal("C++ 11 2011.3", cl.to_string(), csf_);
     }
-
+    
     void test_method_(ctor_witth_cpp98) {
       cpp_language cl {cpp98};
       
@@ -111,7 +111,7 @@ namespace xtd::tests {
       assert::are_equal(1997, cl.year(), csf_);
       assert::are_equal("C++ 98 1997.11", cl.to_string(), csf_);
     }
-
+    
     void test_method_(ctor_witth_cpp_pre98) {
       cpp_language cl {cpp_pre98};
       
@@ -127,7 +127,7 @@ namespace xtd::tests {
       assert::is_zero(cl.year(), csf_);
       assert::are_equal("C++ Pre 98 0.1", cl.to_string(), csf_);
     }
-
+    
     void test_method_(ctor_with_cpp_unknown) {
       cpp_language cl {cpp_unknown};
       
@@ -143,7 +143,7 @@ namespace xtd::tests {
       assert::is_zero(cl.year(), csf_);
       assert::are_equal("<unknown> 0.0", cl.to_string(), csf_);
     }
-
+    
     void test_method_(ctor_with_cpp20_experimental) {
       cpp_language cl {cpp20_experimental};
       

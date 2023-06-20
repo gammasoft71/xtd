@@ -76,7 +76,7 @@ namespace xtdc_command {
       
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "program.c"), lines);
     }
-
+    
     void generate_xtd_console_cmakelists_txt(const xtd::ustring& name, const xtd::ustring& path) const {
       std::vector<xtd::ustring> lines;
       lines.push_back("cmake_minimum_required(VERSION 3.3)");

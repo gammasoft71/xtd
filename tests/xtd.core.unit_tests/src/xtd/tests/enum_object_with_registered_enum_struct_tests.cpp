@@ -51,7 +51,7 @@ namespace xtd::tests {
       assert::are_equal(as<uint64>(1), e.to_uint64(), csf_);
       assert::are_equal("one", e.to_string(), csf_);
     }
-
+    
     void test_method_(enum_object_with_registered_enum_struct_test_ctor_with_two) {
       enum_object<enum_object_with_registered_enum_struct_test> e {enum_object_with_registered_enum_struct_test::two};
       
@@ -123,7 +123,7 @@ namespace xtd::tests {
       assert::are_equal(as<uint64>(5), e.to_uint64(), csf_);
       assert::are_equal("5", e.to_string(), csf_);
     }
-
+    
     void test_method_(equals) {
       assert::is_true(enum_object<enum_object_with_registered_enum_struct_test>(enum_object_with_registered_enum_struct_test::one).equals(enum_object<enum_object_with_registered_enum_struct_test>(enum_object_with_registered_enum_struct_test::one)), csf_);
       assert::is_false(enum_object<enum_object_with_registered_enum_struct_test>(enum_object_with_registered_enum_struct_test::one).equals(enum_object<enum_object_with_registered_enum_struct_test>(enum_object_with_registered_enum_struct_test::two)), csf_);
@@ -131,7 +131,7 @@ namespace xtd::tests {
       assert::is_false(enum_object<enum_object_with_registered_enum_struct_test>(enum_object_with_registered_enum_struct_test::one) != enum_object<enum_object_with_registered_enum_struct_test>(enum_object_with_registered_enum_struct_test::one), csf_);
       assert::is_false(enum_object<enum_object_with_registered_enum_struct_test>(enum_object_with_registered_enum_struct_test::one) == enum_object<enum_object_with_registered_enum_struct_test>(enum_object_with_registered_enum_struct_test::two), csf_);
       assert::is_true(enum_object<enum_object_with_registered_enum_struct_test>(enum_object_with_registered_enum_struct_test::one) != enum_object<enum_object_with_registered_enum_struct_test>(enum_object_with_registered_enum_struct_test::two), csf_);
-
+      
       assert::is_true(enum_object<enum_object_with_registered_enum_struct_test>(enum_object_with_registered_enum_struct_test::one).equals(enum_object_with_registered_enum_struct_test::one), csf_);
       assert::is_false(enum_object<enum_object_with_registered_enum_struct_test>(enum_object_with_registered_enum_struct_test::one).equals(enum_object_with_registered_enum_struct_test::two), csf_);
       assert::is_true(enum_object<enum_object_with_registered_enum_struct_test>(enum_object_with_registered_enum_struct_test::one) == enum_object_with_registered_enum_struct_test::one, csf_);
@@ -293,7 +293,7 @@ namespace xtd::tests {
       assert::are_equal(enum_object_with_registered_enum_struct_test::two, enum_object<>::parse<enum_object_with_registered_enum_struct_test>("two"), csf_);
       assert::are_equal(enum_object_with_registered_enum_struct_test::three, enum_object<>::parse<enum_object_with_registered_enum_struct_test>("three"), csf_);
       assert::are_equal(enum_object_with_registered_enum_struct_test::four, enum_object<>::parse<enum_object_with_registered_enum_struct_test>("four"), csf_);
-
+      
       assert::are_equal(enum_object_with_registered_enum_struct_test::none, enum_object<>::parse<enum_object_with_registered_enum_struct_test>("0"), csf_);
       assert::are_equal(enum_object_with_registered_enum_struct_test::one, enum_object<>::parse<enum_object_with_registered_enum_struct_test>("1"), csf_);
       assert::are_equal(enum_object_with_registered_enum_struct_test::two, enum_object<>::parse<enum_object_with_registered_enum_struct_test>("2"), csf_);
@@ -303,7 +303,7 @@ namespace xtd::tests {
     
     void test_method_(parse_with_invalid_enum) {
       assert::are_equal(as<enum_object_with_registered_enum_struct_test>(5), enum_object<>::parse<enum_object_with_registered_enum_struct_test>("5"), csf_);
-      assert::throws<format_exception>([]{enum_object<>::parse<enum_object_with_registered_enum_struct_test>("five");}, csf_);
+      assert::throws<format_exception>([] {enum_object<>::parse<enum_object_with_registered_enum_struct_test>("five");}, csf_);
     }
     
     void test_method_(to_byte) {
@@ -382,23 +382,23 @@ namespace xtd::tests {
       enum_object_with_registered_enum_struct_test result = as<enum_object_with_registered_enum_struct_test>(-1);
       assert::is_true(enum_object<>::try_parse<enum_object_with_registered_enum_struct_test>("none", result), csf_);
       assert::are_equal(enum_object_with_registered_enum_struct_test::none, result, csf_);
-
+      
       result = as<enum_object_with_registered_enum_struct_test>(-1);
       assert::is_true(enum_object<>::try_parse<enum_object_with_registered_enum_struct_test>("one", result), csf_);
       assert::are_equal(enum_object_with_registered_enum_struct_test::one, result, csf_);
-
+      
       result = as<enum_object_with_registered_enum_struct_test>(-1);
       assert::is_true(enum_object<>::try_parse<enum_object_with_registered_enum_struct_test>("two", result), csf_);
       assert::are_equal(enum_object_with_registered_enum_struct_test::two, result, csf_);
-
+      
       result = as<enum_object_with_registered_enum_struct_test>(-1);
       assert::is_true(enum_object<>::try_parse<enum_object_with_registered_enum_struct_test>("three", result), csf_);
       assert::are_equal(enum_object_with_registered_enum_struct_test::three, result, csf_);
-
+      
       result = as<enum_object_with_registered_enum_struct_test>(-1);
       assert::is_true(enum_object<>::try_parse<enum_object_with_registered_enum_struct_test>("four", result), csf_);
       assert::are_equal(enum_object_with_registered_enum_struct_test::four, result, csf_);
-
+      
       result = as<enum_object_with_registered_enum_struct_test>(-1);
       assert::is_true(enum_object<>::try_parse<enum_object_with_registered_enum_struct_test>("0", result), csf_);
       assert::are_equal(enum_object_with_registered_enum_struct_test::none, result, csf_);
@@ -428,7 +428,7 @@ namespace xtd::tests {
       result = as<enum_object_with_registered_enum_struct_test>(-1);
       assert::is_false(enum_object<>::try_parse<enum_object_with_registered_enum_struct_test>("five", result), csf_);
       assert::are_equal(as<enum_object_with_registered_enum_struct_test>(-1), result, csf_);
-
+      
       assert::is_false(enum_object<>::try_parse<enum_object_with_registered_enum_struct_test>("OnE", result), csf_);
       assert::are_equal(as<enum_object_with_registered_enum_struct_test>(-1), result, csf_);
     }
@@ -437,17 +437,17 @@ namespace xtd::tests {
       enum_object_with_registered_enum_struct_test result = as<enum_object_with_registered_enum_struct_test>(-1);
       assert::is_true(enum_object<>::try_parse<enum_object_with_registered_enum_struct_test>("none", false, result), csf_);
       assert::are_equal(enum_object_with_registered_enum_struct_test::none, result, csf_);
-
+      
       result = as<enum_object_with_registered_enum_struct_test>(-1);
       assert::is_false(enum_object<>::try_parse<enum_object_with_registered_enum_struct_test>("OnE", false, result), csf_);
       assert::are_equal(as<enum_object_with_registered_enum_struct_test>(-1), result, csf_);
-
+      
       assert::is_false(enum_object<>::try_parse<enum_object_with_registered_enum_struct_test>("TWO", false, result), csf_);
       assert::are_equal(as<enum_object_with_registered_enum_struct_test>(-1), result, csf_);
-
+      
       assert::is_false(enum_object<>::try_parse<enum_object_with_registered_enum_struct_test>("tHREE", false, result), csf_);
       assert::are_equal(as<enum_object_with_registered_enum_struct_test>(-1), result, csf_);
-
+      
       assert::is_false(enum_object<>::try_parse<enum_object_with_registered_enum_struct_test>("Four", false, result), csf_);
       assert::are_equal(as<enum_object_with_registered_enum_struct_test>(-1), result, csf_);
     }

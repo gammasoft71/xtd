@@ -174,18 +174,18 @@ intmax_t process::shell_execute(const std::string& verb, const string& file_name
     }
     vector<string> command_line_args;
     if (is_shell_execute) {
-        if (verb == "" || verb == "open" || verb == "explore" || verb == "edit" || verb == "runas" || verb == "runasuser" || verb == "print") {
-          if (verb == "") command_line_args = split_arguments(arguments);
-          if ((verb == "open" || verb == "runas" || verb == "runasuser") && file_name == "") return 0;
-          if (verb == "explore" && (file_name == "" || !is_directory(file_name))) return 0;
-          if (verb == "edit" && (file_name == "" || !is_regular_file(file_name) || (status(file_name).permissions() & perms::owner_write) != perms::owner_write)) return 0;
-          if ((verb == "runas" || verb == "runasuser")  && (file_name == "" || (status(file_name).permissions() & perms::owner_exec) != perms::owner_exec)) return 0;
-          command_line_args.insert(command_line_args.begin(), get_full_file_name_with_extension(&unix::strings::split, file_name, working_directory));
-          command_line_args.insert(command_line_args.begin(), shell_execute_command());
-        } else {
-          command_line_args.insert(command_line_args.begin(), get_full_file_name_with_extension(&unix::strings::split, file_name, working_directory));
-          command_line_args.insert(command_line_args.begin(), verb);
-        }
+      if (verb == "" || verb == "open" || verb == "explore" || verb == "edit" || verb == "runas" || verb == "runasuser" || verb == "print") {
+        if (verb == "") command_line_args = split_arguments(arguments);
+        if ((verb == "open" || verb == "runas" || verb == "runasuser") && file_name == "") return 0;
+        if (verb == "explore" && (file_name == "" || !is_directory(file_name))) return 0;
+        if (verb == "edit" && (file_name == "" || !is_regular_file(file_name) || (status(file_name).permissions() & perms::owner_write) != perms::owner_write)) return 0;
+        if ((verb == "runas" || verb == "runasuser")  && (file_name == "" || (status(file_name).permissions() & perms::owner_exec) != perms::owner_exec)) return 0;
+        command_line_args.insert(command_line_args.begin(), get_full_file_name_with_extension(&unix::strings::split, file_name, working_directory));
+        command_line_args.insert(command_line_args.begin(), shell_execute_command());
+      } else {
+        command_line_args.insert(command_line_args.begin(), get_full_file_name_with_extension(&unix::strings::split, file_name, working_directory));
+        command_line_args.insert(command_line_args.begin(), verb);
+      }
     } else {
       command_line_args = split_arguments(arguments);
       if (working_directory != "") current_path(working_directory.c_str());

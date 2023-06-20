@@ -45,7 +45,7 @@ void buffered_graphics_context::invalidate() {
 xtd::drawing::buffered_graphics buffered_graphics_context::alloc_buffer_in_temp_manager(const xtd::drawing::graphics* target_graphics, intptr target_dc, const xtd::drawing::rectangle& target_rectangle) {
   buffered_graphics_context temp_context;
   buffered_graphics temp_buffer;
-  
+
   try {
       temp_buffer = temp_context.alloc_buffer(targetGraphics, targetDC, targetRectangle);
       temp_buffer.free_context(true);
@@ -56,36 +56,36 @@ xtd::drawing::buffered_graphics buffered_graphics_context::alloc_buffer_in_temp_
       temp_context.Dispose();
     }
   }
-  
+
   return temp_buffer;
 }
 
 buffered_graphics buffered_graphics_context::allocate_buffer(const graphics* target_graphics, intptr target_dc, const rectangle& target_rectangle) {
   int old_busy = interlocked::compare_exchange(busy_, BUFFER_BUSY_PAINTING, BUFFER_FREE);
-  
+
   // In the case were we have contention on the buffer - i.e. two threads trying to use the buffer at the same time, we just create a temp buffermanager and have the buffer dispose of it when it is done.
   //
   if (old_busy != BUFFER_FREE) {
     return alloc_buffer_in_temp_manager(target_graphics, target_dc, target_rectangle);
   }
-  
+
   optional<graphics> surface;
   target_location_ = point(target_rectangle.x(), target_rectangle.y());
-  
+
   try {
     if (target_graphics != null) {
       intptr dest_dc = target_graphics->get_hdc();
       try {
         surface = create_buffer(dest_dc, -target_location_.x(), -target_location_.y(), target_rectangle.width(), target_rectangle.height());
       } catch(...) {
-        
+
       }
       target_graphics->release_hdc(dest_dc);
     }
     else {
       surface = create_buffer(target_dc, -target_location_.x(), -target_location_.y(), target_rectangle.width(), target_rectangle.height());
     }
-    
+
     buffer_ = buffered_graphics(surface.value()// *, *this* /, *target_graphics, target_dc, target_location_, virtual_size_);
   } catch(...) {
     busy_ = BUFFER_FREE; // free the buffer so it can be disposed.
@@ -96,5 +96,5 @@ buffered_graphics buffered_graphics_context::allocate_buffer(const graphics* tar
 */
 
 void buffered_graphics_context::destroy() {
-  
+
 }

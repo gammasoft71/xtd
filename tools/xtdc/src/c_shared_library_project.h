@@ -19,7 +19,7 @@ namespace xtdc_command {
     void generate(const xtd::ustring& name) const {
       generate_cmakelists_txt(name, current_path());
     }
-
+    
   private:
     void create_solution_cmakelists_txt(const xtd::ustring& name) const {
       std::vector<xtd::ustring> lines {
@@ -182,7 +182,7 @@ namespace xtdc_command {
       lines.push_back("install(FILES $<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}.pdb DESTINATION lib CONFIGURATIONS Release OPTIONAL)");
       lines.push_back("install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME} DESTINATION lib)");
       lines.push_back("install(EXPORT ${PROJECT_NAME} DESTINATION cmake)");
-
+      
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "CMakeLists.txt"), lines);
     }
   };

@@ -18,7 +18,7 @@ namespace xtd::tests {
       assert::are_equal("<unknown> 0.0", c.version_string(), csf_);
       assert::are_equal("<unknown> 0.0", c.to_string(), csf_);
     }
-
+    
     void test_method_(create_compiler_with_compiler_id_unknown_version_build_type_release_and_is_64_bit) {
       compiler c {compiler_id::unknown, {1, 2, 3}, build_type::release, true};
       assert::are_equal(compiler_id::unknown, c.compiler_id(), csf_);
@@ -30,7 +30,7 @@ namespace xtd::tests {
       assert::are_equal("<unknown> 1.2.3", c.version_string(), csf_);
       assert::are_equal("<unknown> 1.2.3", c.to_string(), csf_);
     }
-
+    
     void test_method_(create_compiler_with_compiler_id_microsoft_visual_studio_version_build_type_release_and_is_64_bit) {
       compiler c {compiler_id::microsoft_visual_studio, {1, 2, 3}, build_type::release, true};
       assert::are_equal(compiler_id::microsoft_visual_studio, c.compiler_id(), csf_);
@@ -42,7 +42,7 @@ namespace xtd::tests {
       assert::are_equal("Microsoft Visual Studio 1.2.3", c.version_string(), csf_);
       assert::are_equal("Microsoft Visual Studio 1.2.3", c.to_string(), csf_);
     }
-
+    
     void test_method_(create_compiler_with_compiler_id_clang_version_build_type_release_and_is_64_bit) {
       compiler c {compiler_id::clang, {1, 2, 3}, build_type::release, true};
       assert::are_equal(compiler_id::clang, c.compiler_id(), csf_);
@@ -54,7 +54,7 @@ namespace xtd::tests {
       assert::are_equal("clang 1.2.3", c.version_string(), csf_);
       assert::are_equal("clang 1.2.3", c.to_string(), csf_);
     }
-
+    
     void test_method_(create_compiler_with_compiler_id_gcc_version_build_type_release_and_is_64_bit) {
       compiler c {compiler_id::gcc, {1, 2, 3}, build_type::release, true};
       assert::are_equal(compiler_id::gcc, c.compiler_id(), csf_);
@@ -66,9 +66,9 @@ namespace xtd::tests {
       assert::are_equal("gcc 1.2.3", c.version_string(), csf_);
       assert::are_equal("gcc 1.2.3", c.to_string(), csf_);
     }
-
+    
     void test_method_(create_compiler_with_compiler_id_invalid_version_build_type_release_and_is_64_bit) {
-      assert::throws<argument_exception>([]{compiler {static_cast<compiler_id>(3), {1, 2, 3}, build_type::release, true};}, csf_);
+      assert::throws<argument_exception>([] {compiler {static_cast<compiler_id>(3), {1, 2, 3}, build_type::release, true};}, csf_);
     }
   };
 }

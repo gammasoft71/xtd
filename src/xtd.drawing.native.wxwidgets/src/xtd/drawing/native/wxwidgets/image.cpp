@@ -80,7 +80,7 @@ namespace {
     return wxImage::GetImageCount(wxString(convert_string::to_wstring(filename)));
   }
    */
-
+  
   wxBitmapType to_bitmap_type(size_t raw_format) {
     switch (raw_format) {
       case IFM_BMP: return wxBitmapType::wxBITMAP_TYPE_BMP;

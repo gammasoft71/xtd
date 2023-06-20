@@ -29,7 +29,7 @@ namespace xtdc_command {
       };
       xtd::io::file::write_all_lines(xtd::io::path::combine(current_path(), "CMakeLists.txt"), lines);
     }
-
+    
     void generate_cmakelists_txt(const xtd::ustring& name, const xtd::ustring& path) const {
       std::vector<xtd::ustring> lines;
       lines.push_back("cmake_minimum_required(VERSION 3.3)");
@@ -50,7 +50,7 @@ namespace xtdc_command {
       lines.push_back("install_package()");
       lines.push_back("");
       lines.push_back("# Projects");
-
+      
       xtd::io::file::write_all_lines(xtd::io::path::combine(current_path(), "CMakeLists.txt"), lines);
     }
   };

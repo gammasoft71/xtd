@@ -19,7 +19,7 @@ namespace xtdc_command {
     void generate(const xtd::ustring& name) const {
       generate_xtd_console_cmakelists_txt(name, current_path());
     }
-
+    
   private:
     void create_cmakelists_txt(const xtd::ustring& name) const {
       std::vector<xtd::ustring> lines {
@@ -106,7 +106,7 @@ namespace xtdc_command {
       
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "program.cpp"), lines);
     }
-
+    
     void generate_xtd_console_cmakelists_txt(const xtd::ustring& name, const xtd::ustring& path) const {
       std::vector<xtd::ustring> lines;
       lines.push_back("cmake_minimum_required(VERSION 3.3)");

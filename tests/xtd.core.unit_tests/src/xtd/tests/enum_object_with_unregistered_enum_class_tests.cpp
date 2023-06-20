@@ -51,7 +51,7 @@ namespace xtd::tests {
       assert::are_equal(as<uint64>(1), e.to_uint64(), csf_);
       assert::are_equal("1", e.to_string(), csf_);
     }
-
+    
     void test_method_(enum_object_with_unregistered_enum_class_test_ctor_with_two) {
       enum_object<enum_object_with_unregistered_enum_class_test> e {enum_object_with_unregistered_enum_class_test::two};
       
@@ -123,7 +123,7 @@ namespace xtd::tests {
       assert::are_equal(as<uint64>(5), e.to_uint64(), csf_);
       assert::are_equal("5", e.to_string(), csf_);
     }
-
+    
     void test_method_(equals) {
       assert::is_true(enum_object<enum_object_with_unregistered_enum_class_test>(enum_object_with_unregistered_enum_class_test::one).equals(enum_object<enum_object_with_unregistered_enum_class_test>(enum_object_with_unregistered_enum_class_test::one)), csf_);
       assert::is_false(enum_object<enum_object_with_unregistered_enum_class_test>(enum_object_with_unregistered_enum_class_test::one).equals(enum_object<enum_object_with_unregistered_enum_class_test>(enum_object_with_unregistered_enum_class_test::two)), csf_);
@@ -131,7 +131,7 @@ namespace xtd::tests {
       assert::is_false(enum_object<enum_object_with_unregistered_enum_class_test>(enum_object_with_unregistered_enum_class_test::one) != enum_object<enum_object_with_unregistered_enum_class_test>(enum_object_with_unregistered_enum_class_test::one), csf_);
       assert::is_false(enum_object<enum_object_with_unregistered_enum_class_test>(enum_object_with_unregistered_enum_class_test::one) == enum_object<enum_object_with_unregistered_enum_class_test>(enum_object_with_unregistered_enum_class_test::two), csf_);
       assert::is_true(enum_object<enum_object_with_unregistered_enum_class_test>(enum_object_with_unregistered_enum_class_test::one) != enum_object<enum_object_with_unregistered_enum_class_test>(enum_object_with_unregistered_enum_class_test::two), csf_);
-
+      
       assert::is_true(enum_object<enum_object_with_unregistered_enum_class_test>(enum_object_with_unregistered_enum_class_test::one).equals(enum_object_with_unregistered_enum_class_test::one), csf_);
       assert::is_false(enum_object<enum_object_with_unregistered_enum_class_test>(enum_object_with_unregistered_enum_class_test::one).equals(enum_object_with_unregistered_enum_class_test::two), csf_);
       assert::is_true(enum_object<enum_object_with_unregistered_enum_class_test>(enum_object_with_unregistered_enum_class_test::one) == enum_object_with_unregistered_enum_class_test::one, csf_);
@@ -168,7 +168,7 @@ namespace xtd::tests {
     }
     
     void test_method_(get_entries_as_uint16) {
-      collection_assert::is_empty( enum_object<>::get_entries_as_uint16<enum_object_with_unregistered_enum_class_test>(), csf_);
+      collection_assert::is_empty(enum_object<>::get_entries_as_uint16<enum_object_with_unregistered_enum_class_test>(), csf_);
     }
     
     void test_method_(get_entries_as_uint32) {
@@ -297,13 +297,13 @@ namespace xtd::tests {
     
     void test_method_(parse_with_invalid_enum) {
       assert::are_equal(as<enum_object_with_unregistered_enum_class_test>(5), enum_object<>::parse<enum_object_with_unregistered_enum_class_test>("5"), csf_);
-
-      assert::throws<format_exception>([]{enum_object<>::parse<enum_object_with_unregistered_enum_class_test>("none");}, csf_);
-      assert::throws<format_exception>([]{enum_object<>::parse<enum_object_with_unregistered_enum_class_test>("one");}, csf_);
-      assert::throws<format_exception>([]{enum_object<>::parse<enum_object_with_unregistered_enum_class_test>("two");}, csf_);
-      assert::throws<format_exception>([]{enum_object<>::parse<enum_object_with_unregistered_enum_class_test>("three");}, csf_);
-      assert::throws<format_exception>([]{enum_object<>::parse<enum_object_with_unregistered_enum_class_test>("four");}, csf_);
-      assert::throws<format_exception>([]{enum_object<>::parse<enum_object_with_unregistered_enum_class_test>("five");}, csf_);
+      
+      assert::throws<format_exception>([] {enum_object<>::parse<enum_object_with_unregistered_enum_class_test>("none");}, csf_);
+      assert::throws<format_exception>([] {enum_object<>::parse<enum_object_with_unregistered_enum_class_test>("one");}, csf_);
+      assert::throws<format_exception>([] {enum_object<>::parse<enum_object_with_unregistered_enum_class_test>("two");}, csf_);
+      assert::throws<format_exception>([] {enum_object<>::parse<enum_object_with_unregistered_enum_class_test>("three");}, csf_);
+      assert::throws<format_exception>([] {enum_object<>::parse<enum_object_with_unregistered_enum_class_test>("four");}, csf_);
+      assert::throws<format_exception>([] {enum_object<>::parse<enum_object_with_unregistered_enum_class_test>("five");}, csf_);
     }
     
     void test_method_(to_byte) {
@@ -424,7 +424,7 @@ namespace xtd::tests {
       result = as<enum_object_with_unregistered_enum_class_test>(-1);
       assert::is_false(enum_object<>::try_parse<enum_object_with_unregistered_enum_class_test>("four", result), csf_);
       assert::are_equal(as<enum_object_with_unregistered_enum_class_test>(-1), result, csf_);
-
+      
       result = as<enum_object_with_unregistered_enum_class_test>(-1);
       assert::is_false(enum_object<>::try_parse<enum_object_with_unregistered_enum_class_test>("five", result), csf_);
       assert::are_equal(as<enum_object_with_unregistered_enum_class_test>(-1), result, csf_);

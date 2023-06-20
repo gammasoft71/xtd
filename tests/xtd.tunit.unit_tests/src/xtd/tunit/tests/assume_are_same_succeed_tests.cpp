@@ -16,7 +16,7 @@ void test_(assume_are_same_succeed_tests, test_output) {
   auto [output, result] = run_test_("assume_are_same_succeed_tests.*");
   assert_value_("Start 1 test from 1 test case\n"
     "  SUCCEED assume_are_same_succeed_tests.test_case_succeed\n"
-    "End 1 test from 1 test case ran.\n",output);
+    "End 1 test from 1 test case ran.\n", output);
 }
 
 void test_(assume_are_same_succeed_tests, test_result) {

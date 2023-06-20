@@ -15,7 +15,7 @@ namespace xtd::tests {
       icomparable_test(icomparable_test&&) noexcept = default;
       icomparable_test(const icomparable_test&) noexcept = default;
       icomparable_test& operator =(const icomparable_test&) noexcept = default;
-
+      
       int compare_to(const icomparable_test& ie) const noexcept override {return value_ < ie.value_ ? -1 : (value_ > ie.value_ ? 1 : 0);}
       
     private:

@@ -53,7 +53,7 @@ namespace xtd {
     /// @brief Gets a generic font_families.
     /// @return Generic font families collection.
     static const system_font_family_collection& generic_font_families() noexcept;
-
+    
     /// @brief Gets an xtd::cpp_language object that contains the current c++ standard identifier and version number.
     /// @return An object that contains the c++ standard identifier and version number.
     static xtd::cpp_language language() noexcept;
@@ -70,11 +70,11 @@ namespace xtd {
     /// @brief Gets an xtd::processor object that contains the processor identifier.
     /// @return An object that contains the procesor identifier.
     static xtd::processor processor() noexcept;
-
+    
     /// @brief Gets an array of all displays on the system.
     /// @return An array of type screen, containing all displays on the system.
     static std::vector<xtd::forms::screen> screens() noexcept;
-
+    
     static const special_folder_collection& special_folders() noexcept;
     
     /// @brief Gets current stack trace information.
@@ -91,9 +91,9 @@ namespace xtd {
     static const system_font_collection& system_fonts() noexcept;
     
     static system_information_collection system_informations() noexcept;
-
+    
     static xtd::toolkit toolkit() noexcept;
-
+    
     static const environment::xtd_library_collection& xtd_libraries() noexcept;
     /// @}
     

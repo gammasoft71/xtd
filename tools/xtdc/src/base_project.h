@@ -38,7 +38,7 @@ namespace xtdc_command {
         headers.push_back(file.replace(current_path + xtd::io::path::directory_separator_char(), ""));
       for (auto file : xtd::io::directory::get_files(path, "*.c"))
         sources.push_back(file.replace(current_path + xtd::io::path::directory_separator_char(), ""));
-      
+        
       for (auto sub_path : xtd::io::directory::get_directories(path)) {
         auto [sub_headers, sub_sources] = get_c_sources(current_path, sub_path);
         for (auto file : sub_headers)
@@ -57,7 +57,7 @@ namespace xtdc_command {
         headers.push_back(file.replace(current_path + xtd::io::path::directory_separator_char(), ""));
       for (auto file : xtd::io::directory::get_files(path, "*.cpp"))
         sources.push_back(file.replace(current_path + xtd::io::path::directory_separator_char(), ""));
-      
+        
       for (auto sub_path : xtd::io::directory::get_directories(path)) {
         auto [sub_headers, sub_sources] = get_cpp_sources(current_path, sub_path);
         for (auto file : sub_headers)
@@ -79,7 +79,7 @@ namespace xtdc_command {
         configs.push_back(file.replace(current_path + xtd::io::path::directory_separator_char(), ""));
       for (auto file : xtd::io::directory::get_files(path, "*.xaml"))
         xamls.push_back(file.replace(current_path + xtd::io::path::directory_separator_char(), ""));
-
+        
       for (auto sub_path : xtd::io::directory::get_directories(path)) {
         auto [sub_sources, sub_configs, sub_xamls] = get_csharp_sources(current_path, sub_path);
         for (auto file : sub_sources)
@@ -100,7 +100,7 @@ namespace xtdc_command {
         headers.push_back(file.replace(current_path + xtd::io::path::directory_separator_char(), ""));
       for (auto file : xtd::io::directory::get_files(path, "*.m"))
         sources.push_back(file.replace(current_path + xtd::io::path::directory_separator_char(), ""));
-      
+        
       for (auto sub_path : xtd::io::directory::get_directories(path)) {
         auto [sub_headers, sub_sources] = get_objectivec_sources(current_path, sub_path);
         for (auto file : sub_headers)
@@ -111,7 +111,7 @@ namespace xtdc_command {
       
       return std::make_tuple(headers, sources);
     }
-
+    
   private:
     xtd::ustring current_path_ = xtd::environment::current_directory();
   };

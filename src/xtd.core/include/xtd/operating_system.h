@@ -102,7 +102,7 @@ namespace xtd {
     /// @remarks On macOS is "macos" or 'macos dark'.
     /// @remarks On linux it can be "Adwaita", "Adwaita-dark",  "Breeze", "Breeze-Dark", "Yaru", "Yaru-dark", "Yaru-light", ...
     xtd::ustring desktop_theme() const noexcept;
-
+    
     /// @brief Gets the distribution.
     /// @return An xtd::distribution that contains the operating system distribution informations.
     xtd::distribution distribution() const noexcept;

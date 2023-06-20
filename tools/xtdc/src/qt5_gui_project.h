@@ -23,7 +23,7 @@ namespace xtdc_command {
       generate_cmakelists_txt(name, current_path());
       generate_qmake_pro(name, current_path());
     }
-
+    
   private:
     void create_solution_cmakelists_txt(const xtd::ustring& name) const {
       std::vector<xtd::ustring> lines {
@@ -179,7 +179,7 @@ namespace xtdc_command {
       auto [headers, sources] = get_cpp_sources(path, path);
       lines.push_back(xtd::ustring::format("HEADERS = {}", xtd::ustring::join(" ", headers)));
       lines.push_back(xtd::ustring::format("SOURCES = {}", xtd::ustring::join(" ", sources)));
-    
+      
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", xtd::ustring::format("{}.pro", name)), lines);
     }
   };

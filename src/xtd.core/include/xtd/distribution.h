@@ -53,7 +53,7 @@ namespace xtd {
     /// @brief Gets operating system distribution bug repport url.
     /// @return The operating system distribution bug repport url.
     const xtd::uri& bug_repport() const noexcept;
-
+    
     /// @brief Gets operating system distribution code name. For example "jammy".
     /// @return The operating system distribution code name.
     const xtd::ustring& code_name() const noexcept;
@@ -65,11 +65,11 @@ namespace xtd {
     /// @brief Gets operating system distribution home url.
     /// @return The operating system distribution home url.
     const xtd::uri& home() const noexcept;
-
+    
     /// @brief Gets operating system distribution identifier.
     /// @return The operating system distribution identifier.
     const xtd::ustring& id() const noexcept;
-
+    
     /// @brief Gets operating system distribution like identifiers array.
     /// @return The operating system distribution like identifiers array.
     const id_collection& like_ids() const noexcept;
@@ -81,7 +81,7 @@ namespace xtd {
     /// @brief Gets a xtd::version object that identifies the operating system distribution. For example xtd::version(22, 4).
     /// @return Version A Version object that describes the major version, minor version, build, and revision numbers for the operating system distribution.
     const xtd::version& version() const noexcept;
-
+    
     /// @brief Gets operating system distribution version string.
     /// @return The operating system distribution version string.
     const xtd::ustring& version_string() const noexcept;

@@ -37,9 +37,8 @@ int_least32_t drive::get_drive_type(const std::string& root_path_name) {
   if (find(ram_drives.begin(), ram_drives.end(), root_path_name) != ram_drives.end()) return DRIVE_RAMDISK;
   if (find(network_drives.begin(), network_drives.end(), root_path_name) != network_drives.end()) return DRIVE_REMOTE;
   for (auto network_drive : network_drive_points)
-    if (root_path_name.find(network_drive) == 0) {
+    if (root_path_name.find(network_drive) == 0)
       return DRIVE_REMOTE;
-    }
   for (auto amovible_mounted_point : amovible_mounted_points)
     if (root_path_name.find(amovible_mounted_point) == 0)
       return DRIVE_CDROM;

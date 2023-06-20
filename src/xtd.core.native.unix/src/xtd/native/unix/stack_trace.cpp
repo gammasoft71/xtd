@@ -33,7 +33,7 @@ stack_trace::frames stack_trace::get_frames(size_t skip_frames) {
   
   for (size_t index = skip_frames + 1; index < nb_frames; ++index) {
     Dl_info dl_info;
-    if (!dladdr(traces[index], &dl_info)|| !dl_info.dli_sname) break;
+    if (!dladdr(traces[index], &dl_info) || !dl_info.dli_sname) break;
     frames.push_back(std::make_tuple(dl_info.dli_fname, 0, 0, demangle_string(dl_info.dli_sname), reinterpret_cast<size_t>(dl_info.dli_saddr) - reinterpret_cast<size_t>(dl_info.dli_fbase)));
     if (demangle_string(dl_info.dli_sname) == std::string("main")) break;
   }

@@ -36,9 +36,9 @@ namespace xtd::tests {
     }
     
     void test_method_(background_color_with_invalid_value) {
-      assert::throws<argument_exception>([]{console::background_color(as<console_color>(16));}, csf_);
+      assert::throws<argument_exception>([] {console::background_color(as<console_color>(16));}, csf_);
     }
-
+    
     void test_method_(buffer_height) {
       auto buffer_height = console::buffer_height();
       console::buffer_height(500);
@@ -48,10 +48,10 @@ namespace xtd::tests {
     }
     
     void test_method_(buffer_height_with_invalid_values) {
-      assert::throws<argument_out_of_range_exception>([]{console::buffer_height(0);}, csf_);
-      assert::throws<argument_out_of_range_exception>([]{console::buffer_height(-1);}, csf_);
-      assert::throws<argument_out_of_range_exception>([]{console::buffer_height(int16_object::max_value);}, csf_);
-      assert::throws<argument_out_of_range_exception>([]{console::buffer_height(as<int32>(int16_object::max_value) + 1);}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {console::buffer_height(0);}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {console::buffer_height(-1);}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {console::buffer_height(int16_object::max_value);}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {console::buffer_height(as<int32>(int16_object::max_value) + 1);}, csf_);
     }
     
     void test_method_(buffer_width) {
@@ -63,12 +63,12 @@ namespace xtd::tests {
     }
     
     void test_method_(buffer_width_with_invalid_values) {
-      assert::throws<argument_out_of_range_exception>([]{console::buffer_width(0);}, csf_);
-      assert::throws<argument_out_of_range_exception>([]{console::buffer_width(-1);}, csf_);
-      assert::throws<argument_out_of_range_exception>([]{console::buffer_width(int16_object::max_value);}, csf_);
-      assert::throws<argument_out_of_range_exception>([]{console::buffer_width(as<int32>(int16_object::max_value) + 1);}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {console::buffer_width(0);}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {console::buffer_width(-1);}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {console::buffer_width(int16_object::max_value);}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {console::buffer_width(as<int32>(int16_object::max_value) + 1);}, csf_);
     }
-
+    
     void test_method_(caps_lock) {
       // Remarks if caps lock is set on by user, the following test will be false.
       assert::is_false(console::caps_lock(), csf_);
@@ -83,8 +83,8 @@ namespace xtd::tests {
     }
     
     void test_method_(cursor_left_with_invalid_values) {
-      assert::throws<argument_out_of_range_exception>([]{console::cursor_left(-1);}, csf_);
-      assert::throws<argument_out_of_range_exception>([]{console::cursor_left(console::buffer_width());}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {console::cursor_left(-1);}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {console::cursor_left(console::buffer_width());}, csf_);
     }
     
     void test_method_(cursor_size) {
@@ -96,8 +96,8 @@ namespace xtd::tests {
     }
     
     void test_method_(cursor_size_with_invalid_values) {
-      assert::throws<argument_out_of_range_exception>([]{console::cursor_size(0);}, csf_);
-      assert::throws<argument_out_of_range_exception>([]{console::cursor_size(101);}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {console::cursor_size(0);}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {console::cursor_size(101);}, csf_);
     }
     
     void test_method_(cursor_top) {
@@ -109,8 +109,8 @@ namespace xtd::tests {
     }
     
     void test_method_(cursor_top_with_invalid_values) {
-      assert::throws<argument_out_of_range_exception>([]{console::cursor_top(-1);}, csf_);
-      assert::throws<argument_out_of_range_exception>([]{console::cursor_top(console::buffer_height());}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {console::cursor_top(-1);}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {console::cursor_top(console::buffer_height());}, csf_);
     }
     
     void test_method_(cursor_visible) {
@@ -122,7 +122,7 @@ namespace xtd::tests {
       console::cursor_visible(cursor_visible);
       assert::are_equal(cursor_visible, console::cursor_visible(), csf_);
     }
-
+    
     void test_method_(foreground_color) {
       auto foreground_color = console::foreground_color();
       console::foreground_color(console_color::yellow);
@@ -132,9 +132,9 @@ namespace xtd::tests {
     }
     
     void test_method_(foreground_color_with_invalid_value) {
-      assert::throws<argument_exception>([]{console::foreground_color(as<console_color>(16));}, csf_);
+      assert::throws<argument_exception>([] {console::foreground_color(as<console_color>(16));}, csf_);
     }
-
+    
     void test_method_(input_code_page) {
       auto input_code_page = console::input_code_page();
       console::input_code_page(850);
@@ -142,7 +142,7 @@ namespace xtd::tests {
       console::input_code_page(input_code_page);
       assert::are_equal(input_code_page, console::input_code_page(), csf_);
     }
-
+    
     void test_method_(is_error_redirected) {
       assert::is_false(console::is_error_redirected(), csf_);
       auto ep = path::combine(path::get_temp_path(), "xtd_test_error.txt");
@@ -187,7 +187,7 @@ namespace xtd::tests {
     void test_method_(largest_window_width) {
       assert::is_not_zero(console::largest_window_width());
     }
-
+    
     void test_method_(number_lock) {
       // Remarks if number lock is set off by user, the following test will be false.
       // assert::is_true(console::number_lock(), csf_);
@@ -229,12 +229,12 @@ namespace xtd::tests {
     }
     
     void test_method_(window_height_with_invalid_values) {
-      assert::throws<argument_out_of_range_exception>([]{console::window_height(0);}, csf_);
-      assert::throws<argument_out_of_range_exception>([]{console::window_height(-1);}, csf_);
-      assert::throws<argument_out_of_range_exception>([]{console::window_height(int16_object::max_value);}, csf_);
-      assert::throws<argument_out_of_range_exception>([]{console::window_height(as<int32>(int16_object::max_value) + 1);}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {console::window_height(0);}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {console::window_height(-1);}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {console::window_height(int16_object::max_value);}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {console::window_height(as<int32>(int16_object::max_value) + 1);}, csf_);
     }
-
+    
     void test_method_(window_left) {
       auto window_left = console::window_left();
       console::window_left(5);
@@ -245,10 +245,10 @@ namespace xtd::tests {
     }
     
     void test_method_(window_left_with_invalid_values) {
-      assert::throws<argument_out_of_range_exception>([]{console::window_left(-1);}, csf_);
-      assert::throws<argument_out_of_range_exception>([]{console::window_left(console::buffer_width());}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {console::window_left(-1);}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {console::window_left(console::buffer_width());}, csf_);
     }
-
+    
     void test_method_(window_top) {
       auto window_top = console::window_top();
       console::window_top(5);
@@ -259,10 +259,10 @@ namespace xtd::tests {
     }
     
     void test_method_(window_top_with_invalid_values) {
-      assert::throws<argument_out_of_range_exception>([]{console::window_top(-1);}, csf_);
-      assert::throws<argument_out_of_range_exception>([]{console::window_top(console::buffer_width());}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {console::window_top(-1);}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {console::window_top(console::buffer_width());}, csf_);
     }
-
+    
     void test_method_(window_width) {
       auto window_width = console::window_width();
       console::window_width(100);
@@ -273,12 +273,12 @@ namespace xtd::tests {
     }
     
     void test_method_(window_width_with_invalid_values) {
-      assert::throws<argument_out_of_range_exception>([]{console::window_width(0);}, csf_);
-      assert::throws<argument_out_of_range_exception>([]{console::window_width(-1);}, csf_);
-      assert::throws<argument_out_of_range_exception>([]{console::window_width(int16_object::max_value);}, csf_);
-      assert::throws<argument_out_of_range_exception>([]{console::window_width(as<int32>(int16_object::max_value) + 1);}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {console::window_width(0);}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {console::window_width(-1);}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {console::window_width(int16_object::max_value);}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {console::window_width(as<int32>(int16_object::max_value) + 1);}, csf_);
     }
-
+    
     void test_method_(get_cursor_position) {
       auto [cursor_left, cursor_top] = console::get_cursor_position();
       console::cursor_left(20);
@@ -287,7 +287,7 @@ namespace xtd::tests {
       console::set_cursor_position(cursor_left, cursor_top);
       assert::are_equal(make_pair(cursor_left, cursor_top), console::get_cursor_position(), csf_);
     }
-
+    
     void test_method_(open_standard_error) {
       assert::are_equal(std::cerr.rdbuf(), console::open_standard_error().rdbuf(), csf_);
     }
@@ -305,11 +305,11 @@ namespace xtd::tests {
       file::write_all_lines(ip, {"line 1", "line 2", "line 3"});
       auto is = xtd::io::file::open_read(ip);
       console::set_in(is);
-
+      
       assert::are_equal("line 1", console::read_line(), csf_);
       assert::are_equal("line 2", console::read_line(), csf_);
       assert::are_equal("line 3", console::read_line(), csf_);
-
+      
       is.close();
       console::set_in(console::open_standard_input());
       file::remove(ip);
@@ -330,7 +330,7 @@ namespace xtd::tests {
       assert::are_equal(background_color, console::background_color(), csf_);
       assert::are_equal(foreground_color, console::foreground_color(), csf_);
     }
-
+    
     void test_method_(set_cursor_position) {
       auto [cursor_left, cursor_top] = console::get_cursor_position();
       console::set_cursor_position(20, 10);
@@ -342,12 +342,12 @@ namespace xtd::tests {
     }
     
     void test_method_(set_cursor_position_with_invalid_values) {
-      assert::throws<argument_out_of_range_exception>([]{console::set_cursor_position(-1, 0);}, csf_);
-      assert::throws<argument_out_of_range_exception>([]{console::set_cursor_position(console::buffer_width(), 0);}, csf_);
-      assert::throws<argument_out_of_range_exception>([]{console::set_cursor_position(0, -1);}, csf_);
-      assert::throws<argument_out_of_range_exception>([]{console::set_cursor_position(0, console::buffer_height());}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {console::set_cursor_position(-1, 0);}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {console::set_cursor_position(console::buffer_width(), 0);}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {console::set_cursor_position(0, -1);}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {console::set_cursor_position(0, console::buffer_height());}, csf_);
     }
-
+    
     void test_method_(set_error) {
       auto ep = path::combine(path::get_temp_path(), "xtd_test_error.txt");
       auto es = xtd::io::file::open_write(ep);
@@ -384,7 +384,7 @@ namespace xtd::tests {
       assert::is_false(console::is_output_redirected(), csf_);
       file::remove(op);
     }
-
+    
     void test_method_(set_window_position) {
       auto window_left = console::window_left();
       auto window_top = console::window_top();
@@ -398,12 +398,12 @@ namespace xtd::tests {
     }
     
     void test_method_(set_window_position_with_invalid_values) {
-      assert::throws<argument_out_of_range_exception>([]{console::set_window_position(-1, 0);}, csf_);
-      assert::throws<argument_out_of_range_exception>([]{console::set_window_position(console::buffer_width(), 0);}, csf_);
-      assert::throws<argument_out_of_range_exception>([]{console::set_window_position(0, -1);}, csf_);
-      assert::throws<argument_out_of_range_exception>([]{console::set_window_position(0, console::buffer_height());}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {console::set_window_position(-1, 0);}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {console::set_window_position(console::buffer_width(), 0);}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {console::set_window_position(0, -1);}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {console::set_window_position(0, console::buffer_height());}, csf_);
     }
-
+    
     void test_method_(set_window_size) {
       auto window_width = console::window_width();
       auto window_height = console::window_height();
@@ -417,14 +417,14 @@ namespace xtd::tests {
     }
     
     void test_method_(set_window_size_with_invalid_values) {
-      assert::throws<argument_out_of_range_exception>([]{console::set_window_size(0, 10);}, csf_);
-      assert::throws<argument_out_of_range_exception>([]{console::set_window_size(-1, 10);}, csf_);
-      assert::throws<argument_out_of_range_exception>([]{console::set_window_size(int16_object::max_value, 10);}, csf_);
-      assert::throws<argument_out_of_range_exception>([]{console::set_window_size(10, 0);}, csf_);
-      assert::throws<argument_out_of_range_exception>([]{console::set_window_size(10, -1);}, csf_);
-      assert::throws<argument_out_of_range_exception>([]{console::set_window_size(10, int16_object::max_value);}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {console::set_window_size(0, 10);}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {console::set_window_size(-1, 10);}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {console::set_window_size(int16_object::max_value, 10);}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {console::set_window_size(10, 0);}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {console::set_window_size(10, -1);}, csf_);
+      assert::throws<argument_out_of_range_exception>([] {console::set_window_size(10, int16_object::max_value);}, csf_);
     }
-
+    
     void test_method_(write) {
       auto op = path::combine(path::get_temp_path(), "xtd_console_test.txt");
       auto os = xtd::io::file::open_write(op);
@@ -437,7 +437,7 @@ namespace xtd::tests {
       file::remove(op);
       console::set_out(console::open_standard_output());
     }
-
+    
     void test_method_(write_literal_strings) {
       auto op = path::combine(path::get_temp_path(), "xtd_console_test.txt");
       auto os = xtd::io::file::open_write(op);
@@ -452,7 +452,7 @@ namespace xtd::tests {
       file::remove(op);
       console::set_out(console::open_standard_output());
     }
-
+    
     void test_method_(write_strings) {
       auto op = path::combine(path::get_temp_path(), "xtd_console_test.txt");
       auto os = xtd::io::file::open_write(op);
@@ -468,7 +468,7 @@ namespace xtd::tests {
       file::remove(op);
       console::set_out(console::open_standard_output());
     }
-
+    
     void test_method_(write_some_objects) {
       auto op = path::combine(path::get_temp_path(), "xtd_console_test.txt");
       auto os = xtd::io::file::open_write(op);
@@ -481,7 +481,7 @@ namespace xtd::tests {
       file::remove(op);
       console::set_out(console::open_standard_output());
     }
-
+    
     void test_method_(write_with_format) {
       auto op = path::combine(path::get_temp_path(), "xtd_console_test.txt");
       auto os = xtd::io::file::open_write(op);
@@ -495,7 +495,7 @@ namespace xtd::tests {
       file::remove(op);
       console::set_out(console::open_standard_output());
     }
-
+    
     void test_method_(write_line) {
       auto op = path::combine(path::get_temp_path(), "xtd_console_test.txt");
       auto os = xtd::io::file::open_write(op);
@@ -508,7 +508,7 @@ namespace xtd::tests {
       file::remove(op);
       console::set_out(console::open_standard_output());
     }
-
+    
     void test_method_(write_line_literal_strings) {
       auto op = path::combine(path::get_temp_path(), "xtd_console_test.txt");
       auto os = xtd::io::file::open_write(op);
@@ -523,7 +523,7 @@ namespace xtd::tests {
       file::remove(op);
       console::set_out(console::open_standard_output());
     }
-
+    
     void test_method_(write_line_strings) {
       auto op = path::combine(path::get_temp_path(), "xtd_console_test.txt");
       auto os = xtd::io::file::open_write(op);
@@ -539,7 +539,7 @@ namespace xtd::tests {
       file::remove(op);
       console::set_out(console::open_standard_output());
     }
-
+    
     void test_method_(write_line_some_objects) {
       auto op = path::combine(path::get_temp_path(), "xtd_console_test.txt");
       auto os = xtd::io::file::open_write(op);
@@ -552,7 +552,7 @@ namespace xtd::tests {
       file::remove(op);
       console::set_out(console::open_standard_output());
     }
-
+    
     void test_method_(write_line_with_format) {
       auto op = path::combine(path::get_temp_path(), "xtd_console_test.txt");
       auto os = xtd::io::file::open_write(op);

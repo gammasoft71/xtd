@@ -186,7 +186,7 @@ namespace xtd {
         /// @param value The xtd::forms::style_sheets::shadow array used to draw shadows under the text.
         /// @return This current instance.
         control& shadows(const xtd::forms::style_sheets::shadows& value) noexcept;
-
+        
         xtd::forms::content_alignment text_alignment() const noexcept override;
         /// @brief Sets the alignment of the text.
         /// @param value A combination of xtd::forms::content_alignment values.

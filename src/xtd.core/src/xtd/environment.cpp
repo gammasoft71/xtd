@@ -240,7 +240,7 @@ ustring environment::new_line() noexcept {
 }
 
 xtd::operating_system environment::os_version() noexcept {
-  static auto to_version = [](std::function<void(int32&, int32&, int32&, int32&method)> method) {
+  static auto to_version = [](std::function<void(int32&, int32&, int32&, int32& method)> method) {
     auto major = 0, minor = 0, build = -1, revision = -1;
     method(major, minor, build, revision);
     return build == -1 && revision == -1 ? xtd::version {major, minor} : revision == -1 ? xtd::version {major, minor, build} : xtd::version {major, minor, build, revision};

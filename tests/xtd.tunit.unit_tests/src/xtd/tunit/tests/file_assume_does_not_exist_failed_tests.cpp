@@ -18,7 +18,7 @@ void test_(file_assume_does_not_exist_failed_tests, test_output) {
     "  ABORTED file_assume_does_not_exist_failed_tests.test_case_failed\n"
     "    Test aborted\n"
     "End 1 test from 1 test case ran.\n", output);
-  
+    
   xtd::io::file::remove(xtd::io::path::combine(xtd::io::path::get_temp_path(), "test_tunit_file.txt"));
 }
 

@@ -48,7 +48,7 @@ string file_system::get_full_path(const string& relative_path) {
   
   if (relative_path[0] != path::directory_separator_char())
     full_path = directory::get_current_directory();
-  
+    
   for (const string& item : directories) {
     if (item == ".." && native::macos::strings::last_index_of(full_path, path::directory_separator_char()) != full_path.npos)
       full_path = native::macos::strings::remove(full_path, native::macos::strings::last_index_of(full_path, path::directory_separator_char()));
@@ -58,7 +58,7 @@ string file_system::get_full_path(const string& relative_path) {
   
   if (relative_path[relative_path.size() - 1] == path::directory_separator_char())
     full_path += path::directory_separator_char();
-  
+    
   auto index = native::macos::strings::last_index_of(full_path, "/./");
   while (index != full_path.npos) {
     full_path = native::macos::strings::remove(full_path, index, 2);
@@ -116,7 +116,7 @@ int_least32_t file_system::set_attributes(const std::string& path, int_least32_t
     s.st_mode |= S_IWUSR;
   else if ((attributes & FILE_ATTRIBUTE_READONLY) == FILE_ATTRIBUTE_READONLY)
     s.st_mode &= ~S_IWUSR;
-  
+    
   // The other attributes can be modified under linux.
   
   return chmod(path.c_str(), s.st_mode);

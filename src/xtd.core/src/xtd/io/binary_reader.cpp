@@ -46,7 +46,7 @@ int32 binary_reader::peek_char() const {
 }
 
 std::streampos binary_reader::pop() {
-  if(!pos_stack_.empty()) {
+  if (!pos_stack_.empty()) {
     stream_->seekg(pos_stack_.top(), std::ios_base::beg);
     pos_stack_.pop();
   }

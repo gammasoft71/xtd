@@ -36,7 +36,7 @@ namespace {
     // https://stackoverflow.com/questions/32115255/c-how-to-detect-windows-10
     NTSTATUS(WINAPI * RtlGetVersion)(LPOSVERSIONINFOEXW);
     OSVERSIONINFOEXW os_info;
-
+    
     *(FARPROC*)&RtlGetVersion = GetProcAddress(GetModuleHandleA("ntdll"), "RtlGetVersion");
     if (RtlGetVersion != nullptr) {
       os_info.dwOSVersionInfoSize = sizeof(os_info);
@@ -45,11 +45,10 @@ namespace {
       minor = os_info.dwMinorVersion;
       build = os_info.dwBuildNumber;
       revision = (os_info.wServicePackMajor << 10) | os_info.wServicePackMinor;
-    }
-    else {
+    } else {
 #pragma warning(push)
 #pragma warning(disable : 4996)
-      OSVERSIONINFOEX version_info{};
+      OSVERSIONINFOEX version_info {};
       version_info.dwOSVersionInfoSize = sizeof(OSVERSIONINFOEX);
       if (GetVersionEx((LPOSVERSIONINFO)&version_info)) {
         major = version_info.dwMajorVersion;
@@ -60,12 +59,12 @@ namespace {
 #pragma warning(pop)
     }
   }
-
+  
   tuple<string, string, string> get_windows_information() {
     // https://en.wikipedia.org/wiki/List_of_Microsoft_Windows_versions
     auto major = -1, minor = -1, build = -1, revision = -1;
     get_windows_version(major, minor, build, revision);
-
+    
     if (build == 103) return make_tuple("Windows 3.1", "", "");
     if (build == 102) return make_tuple("Windows 3.1", "Sparta", "");
     if (build == 528) return make_tuple("Windows NT 3.1", "Razzle", "");
@@ -165,7 +164,7 @@ string environment::get_distribution_version_string() {
   auto version_string = string("");
   auto major = -1, minor = -1, build = -1, revision = -1;
   get_distribution_version(major, minor, build, revision);
-
+  
   return version + (version.empty() ? "" : " ") + to_string(major) + "." + to_string(minor) + "." + (code_name.empty() ? "" : to_string(build) + " (" + code_name + ")");
 }
 
@@ -193,7 +192,7 @@ map<string, string>& environment::get_environment_variables(int_least32_t target
     std::vector<std::string> environments;
     for (wchar_t* line = GetEnvironmentStrings(); line[0] != 0; line += wcslen(line) + 1)
       environments.push_back(win32::strings::to_string(line));
-    
+      
     envs = __process_envs__;
     envs.clear();
     

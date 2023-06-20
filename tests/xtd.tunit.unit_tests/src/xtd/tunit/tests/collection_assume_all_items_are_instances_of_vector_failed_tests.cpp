@@ -1,7 +1,7 @@
 #include "../../../assert_unit_tests/assert_unit_tests.h"
 #include <xtd/xtd.tunit>
 
- namespace xtd::tunit::tests {
+namespace xtd::tunit::tests {
   class test_class_(collection_assume_all_items_are_instances_of_vector_failed_tests) {
   public:
     void test_method_(test_case_failed) {

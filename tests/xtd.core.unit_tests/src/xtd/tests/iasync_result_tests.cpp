@@ -14,16 +14,16 @@ namespace xtd::tests {
     public:
       test_async_result() = default;
       test_async_result(any state) : state_(state) {}
-
+      
       any async_state() const noexcept override {return state_;}
       void async_state(any value) noexcept {state_ = value;}
-
+      
       shared_mutex& async_mutex() override {return mutex_;}
       
       bool completed_synchronously() const noexcept override {return false;}
       
       bool is_completed() const noexcept override {return completed_;}
-      void is_completed (bool value) noexcept {completed_ = value;}
+      void is_completed(bool value) noexcept {completed_ = value;}
       
     private:
       shared_mutex mutex_;
@@ -38,7 +38,7 @@ namespace xtd::tests {
         result_.async_state(any {});
         result_.is_completed(false);
       }
-
+      
       iasync_result& start() {
         if (result_.async_state().has_value()) throw invalid_operation_exception("Already started", csf_);
         result_.async_state("Started");
@@ -60,12 +60,12 @@ namespace xtd::tests {
         result.async_mutex().lock();
         result.async_mutex().unlock();
       }
-
+      
     private:
       thread thread_;
       test_async_result result_;
     };
-
+    
   public:
     void test_method_(test_async_result_ctor) {
       test_async_result ar;
@@ -75,7 +75,7 @@ namespace xtd::tests {
       assert::is_false(ar.is_completed(), csf_);
       {assert::is_true(ar.async_mutex().try_lock(), csf_);}
     }
-
+    
     void test_method_(execute_test_async_runner) {
       test_async_runner runner;
       auto& result = runner.start();

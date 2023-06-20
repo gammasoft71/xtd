@@ -129,13 +129,13 @@ std::vector<std::string> unit_test::succeed_test_names() const noexcept {
 int32 unit_test::run() {
   if (parse_arguments(arguments))
     return xtd::tunit::settings::default_settings().exit_status();
-  
+    
   if (xtd::tunit::settings::default_settings().count_tests()) {
     auto count = 0;
     for (auto test_class : test_classes())
       for (auto test : test_class.test()->tests())
         count++;
-    
+        
     return count_tests(count);
   }
   
@@ -144,13 +144,13 @@ int32 unit_test::run() {
     for (auto test_class : test_classes())
       for (auto test : test_class.test()->tests())
         tests.push_back(test_class.test()->name() + '.' + test.name());
-    
+        
     if (xtd::tunit::settings::default_settings().output_json()) write_list_tests_json();
     if (xtd::tunit::settings::default_settings().output_xml()) write_list_tests_xml();
     
     return list_tests(tests);
   }
-
+  
   xtd::system_exception::enable_stack_trace(settings::default_settings().enable_stack_trace());
   
   auto random = xtd::tunit::settings::default_settings().random_seed() ? xtd::random(xtd::tunit::settings::default_settings().random_seed()) : xtd::random();

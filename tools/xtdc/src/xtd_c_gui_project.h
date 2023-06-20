@@ -22,7 +22,7 @@ namespace xtdc_command {
     void generate(const xtd::ustring& name) const {
       generate_cmakelists_txt(name, current_path());
     }
-
+    
   private:
     static xtd::ustring get_base_path() noexcept {return xtd::environment::get_folder_path(xtd::environment::special_folder::xtd_resources);}
     

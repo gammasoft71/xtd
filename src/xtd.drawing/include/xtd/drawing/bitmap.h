@@ -63,7 +63,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the bitmap class from the specified data stream.
       /// @param stream The data stream used to load the image.
       /// @remarks You must keep the stream open for the lifetime of the xtd::drawing::bitmap.
-        explicit bitmap(std::istream& stream);
+      explicit bitmap(std::istream& stream);
       /// @brief Initializes a new instance of the bitmap class from the specified data stream.
       /// @param stream The data stream used to load the image.
       /// @param use_icm true to use color correction for this xtd::drawing::bitmap; otherwise, false.
@@ -119,23 +119,23 @@ namespace xtd {
       /// @param hicon A handle to an icon.
       /// @return The xtd::drawing::bitmap that this method creates.
       static bitmap from_hicon(intptr icon);
-
+      
       /// @brief Creates a GDI bitmap object from this xtd::drawing::bitmap.
       /// @return A handle to the GDI bitmap object that this method creates.
       /// @remarks You are responsible for calling the GDI DeleteObject method to free the memory used by the GDI bitmap object. For more information about GDI bitmaps, see <a href=https://go.microsoft.com/fwlink/?LinkId=205685>Bitmaps</a> in the Windows GDI documentation.
       intptr get_hbitmap() const;
-
+      
       /// @brief Creates a GDI bitmap object from this xtd::drawing::bitmap.
       /// @param background A xtd::drawing::color structure that specifies the background color. This parameter is ignored if the bitmap is totally opaque.
       /// @return A handle to the GDI bitmap object that this method creates.
       /// @remarks You are responsible for calling the GDI DeleteObject method to free the memory used by the GDI bitmap object. For more information about GDI bitmaps, see <a href=https://go.microsoft.com/fwlink/?LinkId=205685>Bitmaps</a> in the Windows GDI documentation.
       intptr get_hbitmap(const color& background) const;
-
+      
       /// @brief Returns the handle to an icon.
       /// @return A Windows handle to an icon with the same image as the xtd::drawing::bitmap.
       /// @remarks Initially, an icon created from the handle will have the same size as the original bitmap.
       intptr get_hicon() const;
-
+      
       /// @brief Gets the color of the specified pixel in this bitmap.
       /// @param x The x-coordinate of the pixel to retrieve.
       /// @param y The y-coordinate of the pixel to retrieve.
@@ -161,7 +161,7 @@ namespace xtd {
       /// @remarks The xtd::drawing::imaging::bitmap_data specifies the attributes of the xtd::drawing::bitmap, such as size, pixel format, the starting address of the pixel data in memory, and length of each scan line (stride).
       /// @remarks When calling this method, you should use a member of the xtd::drawing::imaging::pixel_format enumeration that contains a specific bits-per-pixel (BPP) value. Using xtd::drawing::imaging::pixel_format values such as xtd::drawing::imaging::pixel_format::indexed and xtd::drawing::imaging::pixel_format::gdi will throw an xtd::argument_exception. Also, passing the incorrect pixel format for a bitmap will throw an xtd::argument_exception.
       xtd::drawing::imaging::bitmap_data lock_bits(const rectangle& rect, xtd::drawing::imaging::image_lock_mode flags, xtd::drawing::imaging::pixel_format format, const xtd::drawing::imaging::bitmap_data& data);
-
+      
       /// @brief Makes the default transparent color transparent for this xtd::drawing::bitmap.
       /// @remarks The system palette defines one color as the default transparent, or alpha, color. This method makes the default transparent color transparent for this xtd::drawing::bitmap. If no transparent color is specified by the system, xtd::drawing::color::light_gray is the transparent color.
       /// @remarks When you call xtd::drawing::bitmap::make_transparent, the bitmap will be converted to the xtd::drawing::imaging::pixel_format::format_32bpp_argb format, as this format supports an alpha channel.
@@ -182,7 +182,7 @@ namespace xtd {
       /// @param y_dpi The vertical resolution, in dots per inch, of the xtd::drawing::bitmap.
       /// @remarks Use this method to set the desired resolution on a newly created bitmap. Changing the resolution of the image does not change its physical size.
       void set_resolution(int32 x_dpi, int32 y_dpi);
-
+      
       /// @brief Unlocks this xtd::drawing::bitmap from system memory.
       /// @param data A xtd::drawing::imaging::bitmap_data that specifies information about the lock operation.
       /// @remarks The xtd::drawing::imaging::bitmap_data specifies the attributes of the xtd::drawing::bitmap, such as size, pixel format, the starting address of the pixel data in memory, and length of each scan line (stride).

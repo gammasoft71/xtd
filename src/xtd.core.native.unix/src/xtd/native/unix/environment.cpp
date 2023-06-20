@@ -48,11 +48,11 @@ namespace {
     auto distribution_string = create_process("cat /etc/os-release");
     auto distribution_lines = xtd::native::unix::strings::split(distribution_string, {'\n'});
     for (auto distribution_line : distribution_lines) {
-      auto key_value =xtd::native::unix::strings::split(distribution_line, {'='});
+      auto key_value = xtd::native::unix::strings::split(distribution_line, {'='});
       if (key_value.size() != 2) continue;
       distribution_key_values.insert({key_value[0], xtd::native::unix::strings::replace(key_value[1], "\"", "")});
     }
-
+    
     return distribution_key_values;
   }
 }
