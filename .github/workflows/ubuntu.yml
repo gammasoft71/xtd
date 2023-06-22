@@ -30,8 +30,8 @@ jobs:
     - name: Setup openGL
       uses: openrndr/setup-opengl@v1.1
 
-    #- name: xvfb-Run 
-    #  run: xvfb-run glxinfo
+    - name: xvfb-Run 
+      run: xvfb-run glxinfo
         
     - name: Installing asound gsound, gtk-3, doxygen
       run: sudo apt-get update && sudo apt-get install -y libasound2-dev libgsound-dev libgtk-3-dev doxygen
