@@ -16,7 +16,7 @@ jobs:
     # well on Windows or Mac.  You can convert this to a matrix build if you need
     # cross-platform coverage.
     # See: https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
 
     steps:
     - name: Setup gcc 11
@@ -27,8 +27,8 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: Setup openGL
-      uses: openrndr/setup-opengl@v1.1
+    #- name: Setup openGL
+    #  uses: openrndr/setup-opengl@v1.1
 
     #- name: xvfb-Run 
     #  run: xvfb-run glxinfo
