@@ -117,7 +117,10 @@ std::vector<stack_frame> stack_frame::get_stack_frames(const ustring& str, size_
   if (call_stack.size() == 0) return stack_frames;
   for (size_t index = skip_frames_before_str + skip_frames; index < call_stack.size(); ++index) {
     auto [file, line, column, function, offset] = call_stack[index];
-    if (ustring(function).starts_with("__startup__::run")) continue;
+    auto skip = false;
+    for (auto starting_str : {"__startup__::run", "decltype", "std::_", "std::invoke", "void std::_", "long std::_", "xtd::delegate<"})
+      if (ustring(function).starts_with(starting_str)) skip = true;
+    if (skip) continue;
     stack_frames.emplace_back(stack_frame(need_file_info ? file : "", need_file_info ? static_cast<uint32>(line) : 0, function, need_file_info ? static_cast<uint32>(column) : 0, static_cast<uint32>(offset)));
   }
   return stack_frames;
