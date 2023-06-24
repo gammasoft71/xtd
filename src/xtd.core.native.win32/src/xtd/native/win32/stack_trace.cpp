@@ -36,7 +36,7 @@ stack_trace::frames stack_trace::get_frames(size_t skip_frames) {
   
   auto result = stack_trace::frames {};
   auto frames = sw.get_frames();
-  for (auto index = skip_frames + 2; index < frames.size(); ++index) {
+  for (auto index = skip_frames + 1; index < frames.size(); ++index) {
     result.push_back(frames[index]);
     if (get<3>(frames[index]) == "main") break;
   }
