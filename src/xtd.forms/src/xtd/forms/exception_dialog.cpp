@@ -30,6 +30,7 @@ namespace {
       maximize_box(false);
       minimize_box(false);
       show_icon(false);
+      top_most(true);
       form_border_style(forms::form_border_style::fixed_dialog);
       start_position(form_start_position::center_screen);
       this->text(text);
