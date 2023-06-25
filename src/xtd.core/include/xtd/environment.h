@@ -526,6 +526,10 @@ namespace xtd {
     /// @warning The xtd::signal::interrupt and xtd::console_special_key::control_c use the same signal (<a href="https://en.cppreference.com/w/cpp/utility/program/signal">SIGINT</a>).
     /// @warning The xtd::signal::interrupt and xtd::console_special_key::control_c can be cancelled with xtd::environment::cancel_signal event or xtd::console::cancel_key_press event. Both of these events are called when <a href="https://en.cppreference.com/w/cpp/utility/program/signal">SIGINT</a> is raised.
     static event<environment, signal_cancel_event_handler> cancel_signal;
+    
+    /// @brief Occurs when the program is stopped (via xtd::environment::exit or returning from the main function).
+    /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
+    static event<environment, xtd::delegate<void(const xtd::event_args&)>> stopped;
     /// @}
     
     /// @name Methods
@@ -533,6 +537,7 @@ namespace xtd {
     /// @{
     /// @brief Causes abnormal program termination unless xtd::signal::abnormal_termination is being caught by a xtd::environment::cancel_signal event.
     static void abort();
+    
     /// @brief Terminates this process and returns an exit code to the operating system.
     /// @param exit_code The exit code to return to the operating system. Use 0 (zero) to indicate that the process completed successfully.
     /// @remarks For the exit_code parameter, use a non-zero number to indicate an error. In your application, you can define your own error codes in an enumeration, and return the appropriate error code based on the scenario. For example, return a value of 1 to indicate that the required file is not present, and a value of 2 to indicate that the file is in the wrong format.
@@ -640,7 +645,8 @@ namespace xtd {
     
   private:
     static void on_cancel_signal(signal_cancel_event_args& e);
-    
+    static void on_stopped();
+
     inline static constexpr const char* xtd_include_path = __XTD_INCLUDE_PATH__;
     inline static constexpr const char* xtd_libraries_path = __XTD_LIB_PATH__;
     inline static constexpr const char* xtd_resources_path = __XTD_RESOURCES_PATH__;
