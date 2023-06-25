@@ -20,9 +20,9 @@ namespace environment_cancel_sgnal_example {
           console::write('.');
           sleep_for(100_ms);
         }
+        console::write_line();
       });
       t.join();
-      console::write_line("");
       console::write_line("End");
     }
   };
