@@ -4,7 +4,7 @@ using namespace std;
 using namespace std::this_thread;
 using namespace xtd;
 
-namespace environment_cancel_sgnal_example {
+namespace environment_program_stopped_example {
   class program static_ {
   public:
     // The main entry point for the application.
@@ -15,20 +15,20 @@ namespace environment_cancel_sgnal_example {
       
       console::write_line("Start");
       // Do something...
-      auto t = thread([] {
+      auto do_something_thread = thread([] {
         for (auto step = 0; step < 50; ++step) {
           console::write('.');
           sleep_for(100_ms);
         }
         console::write_line();
       });
-      t.join();
+      do_something_thread.join();
       console::write_line("End");
     }
   };
 }
 
-startup_(environment_cancel_sgnal_example::program);
+startup_(environment_program_stopped_example::program);
 
 // This code produces the following output :
 //
