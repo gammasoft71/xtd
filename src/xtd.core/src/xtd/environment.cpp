@@ -51,6 +51,7 @@ namespace xtd {
 class environment::signal_catcher {
 public:
   signal_catcher() {
+    std::atexit(signal_catcher::on_stopped);
     std::signal(SIGABRT, signal_catcher::on_abnormal_termination_occured);
     std::signal(SIGFPE, signal_catcher::on_floating_point_exception_occured);
     std::signal(SIGILL, signal_catcher::on_illegal_instruction_occured);
@@ -73,6 +74,11 @@ public:
     signal_cancel_event_args e {xtd::signal::abnormal_termination};
     environment::on_cancel_signal(e);
     if (!e.cancel()) throw xtd::threading::thread_abort_exception(csf_);
+  }
+  
+  static void on_stopped() {
+    console::stopped = true;
+    environment::on_stopped();
   }
   
   static void on_floating_point_exception_occured(int32 signal) {
@@ -114,6 +120,8 @@ public:
 };
 
 event<environment, signal_cancel_event_handler> environment::cancel_signal;
+
+event<environment, xtd::delegate<void(const xtd::event_args&)>> environment::stopped;
 
 environment::signal_catcher environment::signal_catcher_;
 
@@ -381,6 +389,11 @@ void environment::set_environment_variable(const xtd::ustring& variable, const x
 void environment::on_cancel_signal(signal_cancel_event_args& e) {
   auto signal = cancel_signal;
   if (!signal.is_empty()) signal(e);
+}
+
+void environment::on_stopped() {
+  auto event = stopped;
+  if (!event.is_empty()) event(event_args::empty);
 }
 
 void environment::__signal_catcher_check__() {
