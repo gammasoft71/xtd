@@ -19,5 +19,8 @@ xtdc run
 # Output
 
 ```
+Start
+..................................................
+End
 The program is stopped!
 ```
