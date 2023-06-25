@@ -53,7 +53,7 @@
 * [to_int32](convert/to_int32/README.md) shows how to use [xtd::convert::to_int32](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert.html#a4d52bf96c567e100f5aba3eca94abe2b) method.
 * [to_ustring](convert/to_ustring/README.md) shows how to use [xtd::convert::to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert.html#a1de05be36bc70b03e74ec7d9586b0199) method and [xtd::convert_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert__string.html) class.
 
-# [Date time](date_time/README.md)
+## [Date time](date_time/README.md)
 
 * [date_time](date_time/date_time/README.md) shows how to use [xtd::date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) class.
 * [date_time_add](date_time/date_time_add/README.md) shows how to use [xtd::date_time::add](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#a383491b411dbc746d01caedb353882a4) method.
@@ -82,7 +82,7 @@
 * [date_time_to_string_format](date_time/date_time_to_string_format/README.md) shows how to use [xtd::date_time::to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#a58e9d766b5af37b77d5d8239a8320ab7) with format method.
 * [date_time_today](date_time/date_time_today/README.md) shows how to use [xtd::date_time::today](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#a59f1715a20ea00fdd56aabe19b704f70) property.
 
-# [Delegates](delegates/README.md)
+## [Delegates](delegates/README.md)
 
 * [action](delegates/action/README.md) shows how to use [xtd::action](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#ga53c721aac682a7ccf19ee17d92280e31) alias.
 * [action1](delegates/action1/README.md) shows how to simplify code by instantiating the action delegate instead of explicitly defining a new delegate and assigning a named method to it.
