@@ -72,9 +72,7 @@ public:
     std::signal(signal, signal_catcher::on_abnormal_termination_occured);
     signal_cancel_event_args e {xtd::signal::abnormal_termination};
     environment::on_cancel_signal(e);
-    if (!e.cancel()) exit(EXIT_FAILURE);
-    // Do not uncomment the next line, otherwise the exception is triggered forever.
-    //throw xtd::threading::thread_abort_exception(csf_);
+    if (!e.cancel()) throw xtd::threading::thread_abort_exception(csf_);
   }
   
   static void on_floating_point_exception_occured(int32 signal) {
@@ -92,7 +90,6 @@ public:
   }
   
   static void on_interrupt_occured(int32 signal) {
-    // The SIGINT signal catcher conflicts with with xtd::core::narive::macos::console for CTRL-C interception...
     std::signal(signal, signal_catcher::on_interrupt_occured);
     signal_cancel_event_args se {xtd::signal::interrupt};
     environment::on_cancel_signal(se);
@@ -106,6 +103,7 @@ public:
     signal_cancel_event_args e {xtd::signal::segmentation_violation};
     environment::on_cancel_signal(e);
     if (!e.cancel()) throw xtd::access_violation_exception(csf_);
+    exit(EXIT_FAILURE);
   }
   
   static void on_software_termination_occured(int32 signal) {
