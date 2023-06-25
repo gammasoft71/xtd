@@ -7,6 +7,12 @@ using namespace xtd::tunit;
 namespace xtd::tests {
   class test_class_(console_modifiers_tests) {
   public:
+    void test_method_(none) {
+      assert::are_equal(0, enum_object<>::to_int32(console_modifiers::none), csf_);
+      assert::are_equal("none", enum_object<>::to_string(console_modifiers::none), csf_);
+      assert::are_equal(console_modifiers::none, enum_object<>::parse<console_modifiers>("none"), csf_);
+    }
+    
     void test_method_(alt) {
       assert::are_equal(1, enum_object<>::to_int32(console_modifiers::alt), csf_);
       assert::are_equal("alt", enum_object<>::to_string(console_modifiers::alt), csf_);

@@ -14,6 +14,8 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @see Console
   enum class console_modifiers {
+    /// @brief No modifier key.
+    none = 0,
     /// @brief The left or right ALT modifier key.
     alt = 0b1,
     /// @brief The left or right SHIFT modifier key.
@@ -27,7 +29,7 @@ namespace xtd {
 flags_attribute_(xtd, console_modifiers);
 
 template<> struct xtd::enum_register<xtd::console_modifiers> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::console_modifiers> {{xtd::console_modifiers::alt, "alt"}, {xtd::console_modifiers::shift, "shift"}, {xtd::console_modifiers::control, "control"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::console_modifiers> {{xtd::console_modifiers::none, "none"}, {xtd::console_modifiers::alt, "alt"}, {xtd::console_modifiers::shift, "shift"}, {xtd::console_modifiers::control, "control"}};}
 };
 /// @endcond
 
