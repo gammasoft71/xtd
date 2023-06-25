@@ -3,7 +3,7 @@
 using namespace xtd;
 using namespace xtd::diagnostics;
 
-namespace test_console {
+namespace stack_trace_example {
   class main_class {
     static void method3() {
       console::write_line("stack_trace:");
@@ -25,13 +25,13 @@ namespace test_console {
   };
 }
 
-startup_(test_console::main_class);
+startup_(stack_trace_example::main_class);
 
 // This code produces the following output :
 //
 // stack_trace:
-//    at test_console::main_class::method3()
-//    at test_console::main_class::method2()
-//    at test_console::main_class::method1()
-//    at test_console::main_class::main()
+//    at stack_trace_example::main_class::method3()
+//    at stack_trace_example::main_class::method2()
+//    at stack_trace_example::main_class::method1()
+//    at stack_trace_example::main_class::main()
 //    at main
