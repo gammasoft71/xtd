@@ -50,8 +50,7 @@ namespace environment_cancel_sgnal_example {
     
     static void generate_abort_signal() {
       console::write_line("Generate abort signal");
-      // raise(SIGABRT);
-      abort();
+      raise(SIGABRT);
     }
     
     static void generate_floating_point_exceptiont_signal() {
@@ -71,9 +70,7 @@ namespace environment_cancel_sgnal_example {
     
     static void generate_segmentation_violation_signal() {
       console::write_line("Generate segmentation violation signal");
-      // raise(SIGSEGV);
-      char* ptr = nullptr;
-      *ptr = 'a';
+      raise(SIGSEGV);
     }
     
     static void generate_software_termination_signal() {
