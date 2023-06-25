@@ -17,10 +17,9 @@ namespace environment_cancel_sgnal_example {
           default: console::write_line("A {} signal occured!", e.signal()); break;
         }
         e.cancel(cancel);
-        //e.cancel(e.signal() == xtd::signal::interrupt || e.signal() == xtd::signal::floating_point_exception);
       };
 
-      //console::treat_control_c_as_input(true);
+      console::treat_control_c_as_input(true);
       show_help();
       
       while (true) {
@@ -29,7 +28,7 @@ namespace environment_cancel_sgnal_example {
           switch (key_info.key()) {
             case console_key::a: generate_abort_signal(); break;
             case console_key::c: generate_interrupt_signal(); break;
-           case console_key::escape:
+            case console_key::escape:
             case console_key::e: exit(); break;
             case console_key::f: generate_floating_point_exceptiont_signal(); break;
             case console_key::h: show_help(); break;
