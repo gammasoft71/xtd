@@ -617,7 +617,7 @@ namespace xtd {
     /// @return An array of strings where each element contains the name of a logical drive. For example, if the computer's hard drive is the first logical drive, the first element returned is "C:\".
     static xtd::collections::specialized::string_vector get_logical_drives();
     
-    /// @brief Sends signal sig to the program. The xtd::environment::cancel_signal event is invoked with the specified signal
+    /// @brief Sends xtd::signal to the program. The xtd::environment::cancel_signal event is invoked with the specified signal
     /// @param signal One of xtd::signal values that represents the signal sent to the program.
     static void raise(xtd::signal signal);
     
