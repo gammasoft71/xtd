@@ -19,5 +19,15 @@ xtdc run
 # Output
 
 ```
-
+Select a key :
+  a           : Generate abort signal
+  c or ctrl-c : Generate interrupt signal
+  e or Escape : Exit example
+  f           : Generate floating point exception signal
+  h           : Display this help
+  i           : Generate illegal instruction signal
+  t           : Generate software termination signal
+  u           : Update cancel signal status
+  v           : Generate segmentation violation signal
+The signal will not be cancelled!
 ```
