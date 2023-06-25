@@ -51,6 +51,7 @@
 #include "event.h"
 #include "event_args.h"
 #include "event_handler.h"
+#include "exit_status.h"
 #include "foreground_color.h"
 #include "format_exception.h"
 #include "func.h"
