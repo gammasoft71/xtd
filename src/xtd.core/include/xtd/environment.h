@@ -545,7 +545,7 @@ namespace xtd {
     /// @brief Terminates this process and returns an exit status to the operating system.
     /// @param exit_status One of xtd::exit_status values.
     [[noreturn]] static void exit(xtd::exit_status exit_status);
-
+    
     /// @brief Replaces the name of each environment variable embedded in the specified string with the string equivalent of the value of the variable, then returns the resulting string.
     /// @param name A string containing the names of zero or more environment variables. Each environment variable is quoted with the percent sign character (%).
     /// @return A string with each environment variable replaced by its value.
@@ -646,7 +646,7 @@ namespace xtd {
   private:
     static void on_cancel_signal(signal_cancel_event_args& e);
     static void on_program_stopped();
-
+    
     inline static constexpr const char* xtd_include_path = __XTD_INCLUDE_PATH__;
     inline static constexpr const char* xtd_libraries_path = __XTD_LIB_PATH__;
     inline static constexpr const char* xtd_resources_path = __XTD_RESOURCES_PATH__;
