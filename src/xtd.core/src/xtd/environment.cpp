@@ -262,6 +262,10 @@ xtd::processor environment::processor_information() {
   return proc;
 }
 
+void environment::raise(xtd::signal signal) {
+  std::raise(enum_object<>::to_int32(signal));
+}
+
 void environment::set_environment_variable(const ustring& variable, const ustring& value, environment_variable_target target) {
   if (ustring::is_empty(variable)) throw xtd::argument_exception("Environment variable name is empty"_t, csf_);
   
@@ -322,8 +326,16 @@ const xtd::environment::xtd_library_collection& environment::xtd_libraries() noe
   return libraries;
 }
 
+void environment::abort() {
+  raise(xtd::signal::abnormal_termination);
+}
+
 void environment::exit(int32 exit_code) {
-  _Exit(exit_code);
+  std::exit(exit_code);
+}
+
+void environment::exit(xtd::exit_status exit_status) {
+  std::exit(enum_object<>::to_int32(exit_status));
 }
 
 xtd::ustring environment::expand_environment_variables(const xtd::ustring& name) {

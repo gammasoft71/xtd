@@ -15,6 +15,7 @@
 #include "enum.h"
 #include "environment_variable_target.h"
 #include "event.h"
+#include "exit_status.h"
 #include "guid.h"
 #include "operating_system.h"
 #include "platform_id.h"
@@ -530,11 +531,16 @@ namespace xtd {
     /// @name Methods
     
     /// @{
+    /// @brief Causes abnormal program termination unless xtd::signal::abnormal_termination is being caught by a xtd::environment::cancel_signal event.
+    static void abort();
     /// @brief Terminates this process and returns an exit code to the operating system.
-    /// @param xtd::environment::exit_code The exit code to return to the operating system. Use 0 (zero) to indicate that the process completed successfully.
+    /// @param exit_code The exit code to return to the operating system. Use 0 (zero) to indicate that the process completed successfully.
     /// @remarks For the exit_code parameter, use a non-zero number to indicate an error. In your application, you can define your own error codes in an enumeration, and return the appropriate error code based on the scenario. For example, return a value of 1 to indicate that the required file is not present, and a value of 2 to indicate that the file is in the wrong format.
     [[noreturn]] static void exit(int32 exit_code);
-    
+    /// @brief Terminates this process and returns an exit status to the operating system.
+    /// @param exit_status One of xtd::exit_status values.
+    [[noreturn]] static void exit(xtd::exit_status exit_status);
+
     /// @brief Replaces the name of each environment variable embedded in the specified string with the string equivalent of the value of the variable, then returns the resulting string.
     /// @param name A string containing the names of zero or more environment variables. Each environment variable is quoted with the percent sign character (%).
     /// @return A string with each environment variable replaced by its value.
@@ -605,6 +611,10 @@ namespace xtd {
     /// @brief Returns an array of string containing the names of the logical drives on the current computer.
     /// @return An array of strings where each element contains the name of a logical drive. For example, if the computer's hard drive is the first logical drive, the first element returned is "C:\".
     static xtd::collections::specialized::string_vector get_logical_drives();
+    
+    /// @brief Sends signal sig to the program. The xtd::environment::cancel_signal event is invoked with the specified signal
+    /// @param signal One of xtd::signal values that represents the signal sent to the program.
+    static void raise(xtd::signal signal);
     
     /// @brief Creates, modifies, or deletes an environment variable stored in the current process.
     /// @param variable The name of an environment variable.
