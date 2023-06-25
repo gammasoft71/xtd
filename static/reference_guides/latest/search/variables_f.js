@@ -91,11 +91,12 @@ var searchData=
   ['prince_88',['prince',['../classxtd_1_1forms_1_1emoticons.html#ae819452767c6c2284bd74dd089fbbd98',1,'xtd::forms::emoticons']]],
   ['princess_89',['princess',['../classxtd_1_1forms_1_1emoticons.html#af45bf7a820905e62b4140697b86648d9',1,'xtd::forms::emoticons']]],
   ['printer_90',['printer',['../classxtd_1_1forms_1_1emoticons.html#a9264abe49de699f885d0a3882852a5cd',1,'xtd::forms::emoticons']]],
-  ['progress_5fchanged_91',['progress_changed',['../classxtd_1_1forms_1_1background__worker.html#a01b056bb600ffc6552edff4830361bf4',1,'xtd::forms::background_worker']]],
-  ['public_5faddress_5floudspeaker_92',['public_address_loudspeaker',['../classxtd_1_1forms_1_1emoticons.html#a07d5fa1e1bcdaf776be9adc8f6fdf181',1,'xtd::forms::emoticons']]],
-  ['purple_93',['purple',['../classxtd_1_1drawing_1_1color.html#abf55a8be46ed18e1882d9a92575365e2',1,'xtd::drawing::color']]],
-  ['purple_5fheart_94',['purple_heart',['../classxtd_1_1forms_1_1emoticons.html#a4f943235649279cbf0b2a356fd14e739',1,'xtd::forms::emoticons']]],
-  ['purse_95',['purse',['../classxtd_1_1forms_1_1emoticons.html#a0941342545522d1654ee51b36b51c972',1,'xtd::forms::emoticons']]],
-  ['pushpin_96',['pushpin',['../classxtd_1_1forms_1_1emoticons.html#a1a7ce801861b8bc4662fb7a3d5b099a4',1,'xtd::forms::emoticons']]],
-  ['put_5flitter_5fin_5fits_5fplace_5fsymbol_97',['put_litter_in_its_place_symbol',['../classxtd_1_1forms_1_1emoticons.html#a0e717ea8bd82f1d80359285327cb5dc5',1,'xtd::forms::emoticons']]]
+  ['program_5fstopped_91',['program_stopped',['../classxtd_1_1environment.html#abe21c5dab4d3c803aba05dd5743cea13',1,'xtd::environment']]],
+  ['progress_5fchanged_92',['progress_changed',['../classxtd_1_1forms_1_1background__worker.html#a01b056bb600ffc6552edff4830361bf4',1,'xtd::forms::background_worker']]],
+  ['public_5faddress_5floudspeaker_93',['public_address_loudspeaker',['../classxtd_1_1forms_1_1emoticons.html#a07d5fa1e1bcdaf776be9adc8f6fdf181',1,'xtd::forms::emoticons']]],
+  ['purple_94',['purple',['../classxtd_1_1drawing_1_1color.html#abf55a8be46ed18e1882d9a92575365e2',1,'xtd::drawing::color']]],
+  ['purple_5fheart_95',['purple_heart',['../classxtd_1_1forms_1_1emoticons.html#a4f943235649279cbf0b2a356fd14e739',1,'xtd::forms::emoticons']]],
+  ['purse_96',['purse',['../classxtd_1_1forms_1_1emoticons.html#a0941342545522d1654ee51b36b51c972',1,'xtd::forms::emoticons']]],
+  ['pushpin_97',['pushpin',['../classxtd_1_1forms_1_1emoticons.html#a1a7ce801861b8bc4662fb7a3d5b099a4',1,'xtd::forms::emoticons']]],
+  ['put_5flitter_5fin_5fits_5fplace_5fsymbol_98',['put_litter_in_its_place_symbol',['../classxtd_1_1forms_1_1emoticons.html#a0e717ea8bd82f1d80359285327cb5dc5',1,'xtd::forms::emoticons']]]
 ];
