@@ -103,7 +103,6 @@ public:
     signal_cancel_event_args e {xtd::signal::segmentation_violation};
     environment::on_cancel_signal(e);
     if (!e.cancel()) throw xtd::access_violation_exception(csf_);
-    exit(EXIT_FAILURE);
   }
   
   static void on_software_termination_occured(int32 signal) {
