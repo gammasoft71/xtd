@@ -3,6 +3,7 @@
 [This folder](.) contains environment examples used by [Reference Guide](https://gammasoft71.github.io/xtd/reference_guides/latest/) and more.
 
 * [environment](environment/README.md) shows how to use [xtd::environment](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1environment.html) class.
+* [environment_cancel_signal](environment_cancel_signal/README.md) shows how to use [xtd::environment::cancel_signal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1environment.html#a5eecf5ff0c77fe58bf24407004e0956a) event.
 * [environment_command_line](environment_command_line/README.md) shows how to use [xtd::environment::command_line](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1environment.html#a9e675a5b7bfbb96f8df5bca48051c0ee) method.
 * [environment_current_directory](environment_current_directory/README.md) shows how to use [xtd::environment::current_directory](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1environment.html#a981ec9665ba83e12a0241c37017c9ec7) method.
 * [environment_exit_code](environment_exit_code/README.md) shows how to use [xtd::environment::exit_code](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1environment.html#a592bc11cb5dce688a9e40aa6f866d496) method.
