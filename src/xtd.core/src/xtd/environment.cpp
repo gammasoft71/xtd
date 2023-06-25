@@ -77,8 +77,8 @@ public:
   }
   
   static void on_stopped() {
-    console::stopped = true;
-    environment::on_stopped();
+    console::program_stopped = true;
+    environment::on_program_stopped();
   }
   
   static void on_floating_point_exception_occured(int32 signal) {
@@ -121,7 +121,7 @@ public:
 
 event<environment, signal_cancel_event_handler> environment::cancel_signal;
 
-event<environment, xtd::delegate<void(const xtd::event_args&)>> environment::stopped;
+event<environment, xtd::delegate<void(const xtd::event_args&)>> environment::program_stopped;
 
 environment::signal_catcher environment::signal_catcher_;
 
@@ -391,8 +391,8 @@ void environment::on_cancel_signal(signal_cancel_event_args& e) {
   if (!signal.is_empty()) signal(e);
 }
 
-void environment::on_stopped() {
-  auto event = stopped;
+void environment::on_program_stopped() {
+  auto event = program_stopped;
   if (!event.is_empty()) event(event_args::empty);
 }
 
