@@ -529,7 +529,7 @@ namespace xtd {
     
     /// @brief Occurs when the program is stopped (via xtd::environment::exit or returning from the main function).
     /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
-    static event<environment, xtd::delegate<void(const xtd::event_args&)>> stopped;
+    static event<environment, xtd::delegate<void(const xtd::event_args&)>> program_stopped;
     /// @}
     
     /// @name Methods
@@ -645,7 +645,7 @@ namespace xtd {
     
   private:
     static void on_cancel_signal(signal_cancel_event_args& e);
-    static void on_stopped();
+    static void on_program_stopped();
 
     inline static constexpr const char* xtd_include_path = __XTD_INCLUDE_PATH__;
     inline static constexpr const char* xtd_libraries_path = __XTD_LIB_PATH__;

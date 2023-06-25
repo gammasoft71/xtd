@@ -365,11 +365,11 @@ void console::register_cancel_key_press() {
 }
 
 void console::write_(const ustring& value) {
-  if (!stopped) lock_guard<mutex> lock(console_mutex);
+  if (!program_stopped) lock_guard<mutex> lock(console_mutex);
   out << value;
 }
 
 void console::write_line_(const ustring& value) {
-  if (!stopped) lock_guard<mutex> lock(console_mutex);
+  if (!program_stopped) lock_guard<mutex> lock(console_mutex);
   out << value << std::endl;
 }
