@@ -12,7 +12,7 @@ namespace environment_cancel_sgnal_example {
         switch (e.signal()) {
           case xtd::signal::abnormal_termination: console::write_line("An abnormal termination signal occured!"); break;
           case xtd::signal::floating_point_exception: console::write_line("A floating point exception signal occured!"); break;
-          case xtd::signal::interrupt: console::write_line("An interrupt signal occured! (Cancel it)"); break;
+          case xtd::signal::interrupt: console::write_line("An interrupt signal occured!"); break;
           case xtd::signal::segmentation_violation: console::write_line("A segmentation violation signal occured!"); break;
           default: console::write_line("A {} signal occured!", e.signal()); break;
         }
