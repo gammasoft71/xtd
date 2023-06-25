@@ -65,6 +65,7 @@ add_sources(
   include/xtd/event.h
   include/xtd/event_args.h
   include/xtd/event_handler.h
+  include/xtd/exit_status.h
   include/xtd/foreground_color.h
   include/xtd/format_exception.h
   include/xtd/func.h
