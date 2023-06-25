@@ -5,6 +5,7 @@ find_package(xtd REQUIRED)
 
 add_projects(
   environment
+  environment_cancel_signal
   environment_command_line
   environment_current_directory
   environment_exit_code
