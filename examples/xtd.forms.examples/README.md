@@ -20,7 +20,6 @@
 * [application](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html) shows how to create an application with [xtd::forms::application](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html) class.
 * [application_and_assert](applications/application_and_assert/README.md) shows how to create an application with [xtd::forms::application](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html) class and hot to manage assert.
 * [application_and_exception](applications/application_and_exception/README.md) shows how to create an application with [xtd::forms::application](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html) class and hot to manage exception.
-* [application_application_exit](applications/application_application_exit/README.md) shows how to use [xtd::forms::application::application_exit](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1application.html#af1adab6813016a8eea1ea6382abeeadc) event.
 * [application_context](applications/application_context/README.md) shows how to create an application with [xtd::forms::application](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html) class.
 * [application_restart](applications/application_restart/README.md) shows how to restart application with [xtd::forms::application::restart](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html#a9d1de5b2f5e8ee4b46a24aa8f556a5c2) method.
 * [application_use_wait_cursor](applications/application_use_wait_cursor/README.md) shows how to show and hide wait cursor application with [xtd::forms::application::use_wait_cursor](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1use__wait__cursor.html) method.
@@ -199,6 +198,7 @@
 
 ## [Events](events/README.md)
 
+* [application_application_exit](events/application_application_exit/README.md) shows how to use [xtd::forms::application::application_exit](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1application.html#af1adab6813016a8eea1ea6382abeeadc) event.
 * [application_events](events/application_events/README.md) demonstrates the use of [xtd::forms::application](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html) events.
 * [application_idle](events/application_idle/README.md) demonstrates the use of [xtd::forms::application::idle](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga936f2c887b42e06ecb7e81d4d1bc33ba) event.
 * [enable_changed_event](events/enable_changed_event/README.md) demonstrates the use of [enable_changed](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga34c92d7fb3eb02179db90c13669b6a70) event.

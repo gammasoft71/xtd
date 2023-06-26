@@ -2,6 +2,7 @@
 
 [This folder](.) contains xtd.forms event examples.
 
+* [application_application_exit](application_application_exit/README.md) demonstrates the use of [xtd::forms::application::application_exit](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1application.html#af1adab6813016a8eea1ea6382abeeadc) event.
 * [application_events](application_events/README.md) demonstrates the use of [xtd::forms::application](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1application.html) events.
 * [application_idle](application_idle/README.md) demonstrates the use of [xtd::forms::application::idle](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga936f2c887b42e06ecb7e81d4d1bc33ba) event.
 * [enable_changed_event](enable_changed_event/README.md) demonstrates the use of [enable_changed](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga34c92d7fb3eb02179db90c13669b6a70) event.
