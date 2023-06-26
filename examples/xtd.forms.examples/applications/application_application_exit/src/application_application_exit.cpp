@@ -10,6 +10,6 @@ auto main()->int {
   application::application_exit += [] {trace::write_line("The application is stopped");};
   trace::write_line("Before application run");
   application::run(form {});
-  trace::write_line("Afer application exit");
+  trace::write_line("After application exit");
   trace::write_line("Before program exit");
 }
