@@ -51,7 +51,7 @@ namespace xtd {
 class environment::signal_catcher {
 public:
   signal_catcher() {
-    std::atexit(signal_catcher::on_stopped);
+    std::atexit(signal_catcher::on_program_exit);
     std::signal(SIGABRT, signal_catcher::on_abnormal_termination_occured);
     std::signal(SIGFPE, signal_catcher::on_floating_point_exception_occured);
     std::signal(SIGILL, signal_catcher::on_illegal_instruction_occured);
@@ -74,11 +74,6 @@ public:
     signal_cancel_event_args e {xtd::signal::abnormal_termination};
     environment::on_cancel_signal(e);
     if (!e.cancel()) throw xtd::threading::thread_abort_exception(csf_);
-  }
-  
-  static void on_stopped() {
-    console::program_stopped = true;
-    environment::on_program_stopped();
   }
   
   static void on_floating_point_exception_occured(int32 signal) {
@@ -104,6 +99,11 @@ public:
     if (!se.cancel() && !ce.cancel()) throw xtd::interrupt_exception(csf_);
   }
   
+  static void on_program_exit() {
+    console::program_exit = true;
+    environment::on_program_exit();
+  }
+  
   static void on_segmentation_violation_occured(int32 signal) {
     std::signal(signal, signal_catcher::on_segmentation_violation_occured);
     signal_cancel_event_args e {xtd::signal::segmentation_violation};
@@ -121,7 +121,7 @@ public:
 
 event<environment, signal_cancel_event_handler> environment::cancel_signal;
 
-event<environment, xtd::delegate<void(const xtd::event_args&)>> environment::program_stopped;
+event<environment, xtd::delegate<void(const xtd::event_args&)>> environment::program_exit;
 
 environment::signal_catcher environment::signal_catcher_;
 
@@ -338,12 +338,16 @@ void environment::abort() {
   raise(xtd::signal::abnormal_termination);
 }
 
+void environment::exit() {
+  exit(exit_code());
+}
+
 void environment::exit(int32 exit_code) {
   std::exit(exit_code);
 }
 
 void environment::exit(xtd::exit_status exit_status) {
-  std::exit(enum_object<>::to_int32(exit_status));
+  exit(enum_object<>::to_int32(exit_status));
 }
 
 xtd::ustring environment::expand_environment_variables(const xtd::ustring& name) {
@@ -391,8 +395,8 @@ void environment::on_cancel_signal(signal_cancel_event_args& e) {
   if (!signal.is_empty()) signal(e);
 }
 
-void environment::on_program_stopped() {
-  auto event = program_stopped;
+void environment::on_program_exit() {
+  auto event = program_exit;
   if (!event.is_empty()) event(event_args::empty);
 }
 

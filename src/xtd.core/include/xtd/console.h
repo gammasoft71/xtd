@@ -415,7 +415,7 @@ namespace xtd {
     
   private:
     friend class xtd::environment;
-    inline static bool program_stopped = false;
+    inline static bool program_exit = false;
     static bool on_cancel_key_press(int32 special_key);
     static void register_cancel_key_press();
     

@@ -11,7 +11,7 @@ add_projects(
   environment_exit
   environment_exit_code
   environment_expand_environment_variables
-  environment_program_stopped
+  environment_program_exit
   environment_stack_trace
   environment_tick_count
 )
