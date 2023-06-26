@@ -13,3 +13,11 @@ auto main()->int {
   trace::write_line("After application exit");
   trace::write_line("Before program exit");
 }
+
+// Trace
+//
+// Before application run
+// The application is stopped
+// After application exit
+// Before program exit
+// The program is stopped
