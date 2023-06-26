@@ -100,7 +100,6 @@ public:
   }
   
   static void on_program_exit() {
-    console::program_exit = true;
     environment::on_program_exit();
   }
   
