@@ -1,6 +1,5 @@
 #include <cstring>
 #include <iostream>
-#include <mutex>
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/console.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
@@ -17,7 +16,6 @@ using namespace xtd;
 using namespace xtd::io;
 
 namespace {
-  std::mutex console_mutex;
   std::streambuf* __get_err_rdbuf() {
     static std::streambuf* rdbuf = std::cerr.rdbuf();
     return rdbuf;
@@ -365,11 +363,11 @@ void console::register_cancel_key_press() {
 }
 
 void console::write_(const ustring& value) {
-  if (!program_exit) lock_guard<mutex> lock(console_mutex);
+  lock_guard<mutex> lock(console_mutex);
   out << value;
 }
 
 void console::write_line_(const ustring& value) {
-  if (!program_exit) lock_guard<mutex> lock(console_mutex);
+  lock_guard<mutex> lock(console_mutex);
   out << value << std::endl;
 }
