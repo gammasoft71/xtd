@@ -329,7 +329,6 @@ add_sources(
   src/xtd/cpp_language.cpp
   src/xtd/date_time.cpp
   src/xtd/distribution.cpp
-  src/xtd/environment.cpp
   src/xtd/event_args.cpp
   src/xtd/guid.cpp
   src/xtd/literals.cpp
@@ -430,6 +429,7 @@ add_sources(
   src/xtd/speech/synthesis/prompt.cpp
   src/xtd/speech/synthesis/speech_synthesizer.cpp
   src/xtd/threading/interlocked.cpp
+  src/xtd/environment.cpp # Must be the last file to be compiled, as the std::atexit method must be the first to be called before static variables are destroyed.
 )
 target_type(${XTD_LIBRARY_TYPE})
 
