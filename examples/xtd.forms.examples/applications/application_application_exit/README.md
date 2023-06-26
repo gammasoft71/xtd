@@ -34,3 +34,13 @@ xtdc run
 ![Screenshot](../../../../docs/pictures/examples/application_g.png)
 
 ![Screenshot](../../../../docs/pictures/examples/application_gd.png)
+
+# Trace
+
+```
+Before application run
+The application is stopped
+After application exit
+Before program exit
+The program is stopped
+```
