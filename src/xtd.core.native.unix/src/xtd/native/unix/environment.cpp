@@ -57,6 +57,10 @@ namespace {
   }
 }
 
+int_least32_t environment::at_quick_exit(void (*on_quick_exit)(void)) {
+  return std::at_quick_exit(on_quick_exit);
+}
+
 vector<string> environment::get_command_line_args() {
   return {__environment_argv, __environment_argv + __environment_argc};
 }
@@ -252,6 +256,10 @@ bool environment::is_os_64_bit() {
 
 string environment::new_line() {
   return "\n";
+}
+
+void environment::quick_exit(int_least32_t exit_code) noexcept {
+  std::quick_exit(exit_code)
 }
 
 void environment::set_environment_variable(const string& name, const string& value, int_least32_t target) {

@@ -20,6 +20,7 @@
 #include "operating_system.h"
 #include "platform_id.h"
 #include "processor.h"
+#include "program_exit_event_handler.h"
 #include "signal_cancel_event_handler.h"
 #include "static.h"
 #include "target_type.h"
@@ -529,7 +530,7 @@ namespace xtd {
     
     /// @brief Occurs when the terminates normally (via xtd::environment::exit or returning from the main function).
     /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
-    static event<environment, xtd::delegate<void(const xtd::event_args&)>> program_exit;
+    static event<environment, program_exit_event_handler> program_exit;
     /// @}
     
     /// @name Methods
@@ -619,7 +620,18 @@ namespace xtd {
     /// @brief Returns an array of string containing the names of the logical drives on the current computer.
     /// @return An array of strings where each element contains the name of a logical drive. For example, if the computer's hard drive is the first logical drive, the first element returned is "C:\".
     static xtd::collections::specialized::string_vector get_logical_drives();
-    
+
+    /// @brief Terminates this process and returns an exit code to the operating system without completely cleaning the resources..
+    /// @remarks Use xtd::environment::exit_code method to return to the operating system.
+    [[noreturn]] static void quick_exit() noexcept;
+    /// @brief Terminates this process and returns an exit code to the operating system without completely cleaning the resources..
+    /// @param exit_code The exit code to return to the operating system. Use 0 (zero) to indicate that the process completed successfully.
+    /// @remarks For the exit_code parameter, use a non-zero number to indicate an error. In your application, you can define your own error codes in an enumeration, and return the appropriate error code based on the scenario. For example, return a value of 1 to indicate that the required file is not present, and a value of 2 to indicate that the file is in the wrong format.
+    [[noreturn]] static void quick_exit(int32 exit_code) noexcept;
+    /// @brief Terminates this process and returns an exit status to the operating system without completely cleaning the resources..
+    /// @param exit_status One of xtd::exit_status values.
+    [[noreturn]] static void quick_exit(xtd::exit_status exit_status) noexcept;
+
     /// @brief Sends xtd::signal to the program. The xtd::environment::cancel_signal event is invoked with the specified signal
     /// @param signal One of xtd::signal values that represents the signal sent to the program.
     static void raise(xtd::signal signal);
@@ -648,8 +660,8 @@ namespace xtd {
     
   private:
     static void on_cancel_signal(signal_cancel_event_args& e);
-    static void on_program_exit();
-    
+    static void on_program_exit(const program_exit_event_args& e);
+
     inline static constexpr const char* xtd_include_path = __XTD_INCLUDE_PATH__;
     inline static constexpr const char* xtd_libraries_path = __XTD_LIB_PATH__;
     inline static constexpr const char* xtd_resources_path = __XTD_RESOURCES_PATH__;

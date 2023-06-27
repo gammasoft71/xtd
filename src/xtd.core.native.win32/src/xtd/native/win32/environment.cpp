@@ -60,6 +60,10 @@ namespace {
     }
   }
   
+  int_least32_t environment::at_quick_exit(void (*on_quick_exit)(void)) {
+    return std::at_quick_exit(on_quick_exit);
+  }
+  
   tuple<string, string, string> get_windows_information() {
     // https://en.wikipedia.org/wiki/List_of_Microsoft_Windows_versions
     auto major = -1, minor = -1, build = -1, revision = -1;
@@ -323,6 +327,10 @@ bool environment::is_os_64_bit() {
 
 string environment::new_line() {
   return "\n";
+}
+
+void environment::quick_exit(int_least32_t exit_code) noexcept {
+  std::quick_exit(exit_code)
 }
 
 void environment::set_environment_variable(const string& name, const string& value, int_least32_t target) {
