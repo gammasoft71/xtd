@@ -8,9 +8,9 @@ namespace environment_program_exit_example {
   class program static_ {
   public:
     // The main entry point for the application.
-    static auto main() {
-      environment::program_exit += [] {
-        console::write_line("The program is stopped!");
+    static auto main(auto args) {
+      environment::program_exit += [](auto e) {
+        console::write_line("The program is stopped {}ly!", e.exit_mode());
       };
       
       console::write_line("Start");
@@ -25,9 +25,15 @@ namespace environment_program_exit_example {
       do_something_thread.join();
       console::write_line("End");
       
-      // Uncomment the following lines to see the result with the environment::exit method.
-      //environment::exit(exit_status::success);
-      //console::write_line("After exit");
+      if (args.size() == 1 && args[0] == "exit") {
+        console::write_line("Before environment::exit");
+        environment::exit(exit_status::success);
+        console::write_line("After environment::exit");
+      } else if (args.size() == 1 && args[0] == "quick_exit") {
+        console::write_line("Before environment::quick_exit");
+        environment::quick_exit(exit_status::success);
+        console::write_line("After environment::quick_exit");
+      }
     }
   };
 }
