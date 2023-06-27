@@ -259,7 +259,7 @@ string environment::new_line() {
 }
 
 void environment::quick_exit(int_least32_t exit_code) noexcept {
-  std::quick_exit(exit_code)
+  std::quick_exit(exit_code);
 }
 
 void environment::set_environment_variable(const string& name, const string& value, int_least32_t target) {
