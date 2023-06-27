@@ -45,6 +45,12 @@ namespace xtd {
       /// @name Protected methods
       
       /// @{
+      /// @brief Registers the function pointed to by func to be called on quick program termination (via xtd::native::environment::quick_exit).
+      /// @param on_quick_exit pointer to a function to be called on quick program termination.
+      /// @return 0​ if the registration succeeds, nonzero value otherwise.
+      /// @warning Internal use only
+      static int_least32_t at_quick_exit(void (*on_quick_exit)(void));
+
       /// @brief Returns a string array containing the command-line arguments for the current process.
       /// @return An array of string where each element contains a command-line argument. The first element is the executable file name, and the following zero or more elements contain the remaining command-line arguments.
       /// @warning Internal use only
@@ -184,6 +190,10 @@ namespace xtd {
       /// @return A string containing "\r\n" for non-Unix platforms, or a string containing "\n" for Unix platforms.
       /// @warning Internal use only
       static std::string new_line();
+      /// @brief Terminates this process and returns an exit code to the operating system without completely cleaning the resources..
+      /// @param exit_code The exit code to return to the operating system. Use 0 (zero) to indicate that the process completed successfully.
+      /// @warning Internal use only
+      [[noreturn]] static void quick_exit(int_least32_t exit_code) noexcept;
       /// @brief Creates or modifies an environment variable stored in the current process.
       /// @param variable The name of an environment variable.
       /// @param value A value to assign to variable.

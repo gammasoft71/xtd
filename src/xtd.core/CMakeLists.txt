@@ -65,6 +65,7 @@ add_sources(
   include/xtd/event.h
   include/xtd/event_args.h
   include/xtd/event_handler.h
+  include/xtd/exit_mode.h
   include/xtd/exit_status.h
   include/xtd/foreground_color.h
   include/xtd/format_exception.h
@@ -104,6 +105,8 @@ add_sources(
   include/xtd/platform_not_supported_exception.h
   include/xtd/predicate.h
   include/xtd/processor.h
+  include/xtd/program_exit_event_args.h
+  include/xtd/program_exit_event_handler.h
   include/xtd/random.h
   include/xtd/reset_color.h
   include/xtd/signal.h

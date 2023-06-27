@@ -1,4 +1,5 @@
 #include <csignal>
+#include <cstdlib>
 #include "../../include/xtd/as.h"
 #include "../../include/xtd/environment.h"
 #include "../../include/xtd/argument_exception.h"
@@ -52,6 +53,9 @@ class environment::signal_catcher {
 public:
   signal_catcher() {
     std::atexit(signal_catcher::on_program_exit);
+    /// Workaround sts::quick_exit and std::at_quick_exit are not implemented on macOS !
+    /// See https://github.com/runtimeverification/k/issues/1580 for more informtion
+    native::environment::at_quick_exit(signal_catcher::on_program_quick_exit);
     std::signal(SIGABRT, signal_catcher::on_abnormal_termination_occured);
     std::signal(SIGFPE, signal_catcher::on_floating_point_exception_occured);
     std::signal(SIGILL, signal_catcher::on_illegal_instruction_occured);
@@ -100,7 +104,11 @@ public:
   }
   
   static void on_program_exit() {
-    environment::on_program_exit();
+    environment::on_program_exit(program_exit_event_args {});
+  }
+  
+  static void on_program_quick_exit() {
+    environment::on_program_exit(program_exit_event_args {xtd::exit_mode::quick});
   }
   
   static void on_segmentation_violation_occured(int32 signal) {
@@ -120,7 +128,7 @@ public:
 
 event<environment, signal_cancel_event_handler> environment::cancel_signal;
 
-event<environment, xtd::delegate<void(const xtd::event_args&)>> environment::program_exit;
+event<environment, program_exit_event_handler> environment::program_exit;
 
 environment::signal_catcher environment::signal_catcher_;
 
@@ -385,6 +393,20 @@ xtd::collections::specialized::string_vector environment::get_logical_drives() {
   return io::directory::get_logical_drives();
 }
 
+void environment::quick_exit() noexcept {
+  quick_exit(exit_code());
+}
+
+void environment::quick_exit(int32 exit_code) noexcept {
+  /// Workaround sts::quick_exit and std::at_quick_exit are not implemented on macOS !
+  /// See https://github.com/runtimeverification/k/issues/1580 for more informtion
+  native::environment::quick_exit(exit_code);
+}
+
+void environment::quick_exit(xtd::exit_status exit_status) noexcept {
+  quick_exit(enum_object<>::to_int32(exit_status));
+}
+
 void environment::set_environment_variable(const xtd::ustring& variable, const xtd::ustring& value) {
   set_environment_variable(variable, value, environment_variable_target::process);
 }
@@ -394,9 +416,9 @@ void environment::on_cancel_signal(signal_cancel_event_args& e) {
   if (!signal.is_empty()) signal(e);
 }
 
-void environment::on_program_exit() {
+void environment::on_program_exit(const program_exit_event_args& e) {
   auto event = program_exit;
-  if (!event.is_empty()) event(event_args::empty);
+  if (!event.is_empty()) event(e);
 }
 
 void environment::__signal_catcher_check__() {
