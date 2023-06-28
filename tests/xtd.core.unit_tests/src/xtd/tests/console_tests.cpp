@@ -1,7 +1,11 @@
 #include <xtd/console.h>
+#include <xtd/box_integer.h>
 #include <xtd/io/file.h>
 #include <xtd/io/path.h>
-#include <xtd/xtd.tunit>
+#include <xtd/tunit/assert.h>
+#include <xtd/tunit/collection_assert.h>
+#include <xtd/tunit/test_class_attribute.h>
+#include <xtd/tunit/test_method_attribute.h>
 
 using namespace std;
 using namespace std::literals;

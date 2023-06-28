@@ -4,6 +4,8 @@
 #include <xtd/argument_out_of_range_exception.h>
 #include <xtd/using.h>
 #include "bytes_assert.h"
+#include <xtd/tunit/test_class_attribute.h>
+#include <xtd/tunit/test_method_attribute.h>
 
 using namespace std;
 using namespace xtd;

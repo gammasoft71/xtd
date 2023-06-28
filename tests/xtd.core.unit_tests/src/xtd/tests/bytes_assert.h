@@ -1,5 +1,5 @@
 #pragma once
-#include <xtd/xtd.tunit>
+#include <xtd/tunit/base_assert.h>
 
 namespace xtd::tests {
   class bytes_assert final : private xtd::tunit::base_assert {

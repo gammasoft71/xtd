@@ -1,6 +1,9 @@
+#include <exception>
 #include <xtd/convert.h>
-#include <xtd/xtd.core>
-#include <xtd/xtd.tunit>
+#include <xtd/overflow_exception.h>
+#include <xtd/tunit/assert.h>
+#include <xtd/tunit/test_class_attribute.h>
+#include <xtd/tunit/test_method_attribute.h>
 
 using namespace std;
 using namespace xtd;
