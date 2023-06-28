@@ -52,10 +52,10 @@ namespace xtd {
     
     /// @{
     /// @brief Gets a value indicating whether the xtd::console::out will flush its buffer to the underlying stream after every call to xtd::console::write and xtd::console::write_line.
-    /// @return true to force xtd::console::out to flush its buffer; otherwise, false.
+    /// @return true to force xtd::console::out to flush its buffer; otherwise, false. The default value is true.
     static bool auto_flush_out();
     /// @brief Sets a value indicating whether the xtd::console::out will flush its buffer to the underlying stream after every call to xtd::console::write and xtd::console::write_line.
-    /// @param value true to force xtd::console::out to flush its buffer; otherwise, false.
+    /// @param value true to force xtd::console::out to flush its buffer; otherwise, false. The default value is true.
     static void auto_flush_out(bool value);
     
     /// @brief Gets the background color of the console.
