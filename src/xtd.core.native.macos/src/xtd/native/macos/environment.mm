@@ -116,7 +116,7 @@ namespace {
 }
 
 int_least32_t environment::at_quick_exit(void (*on_quick_exit)(void)) {
-  /// Workaround sts::quick_exit and std::at_quick_exit are not implemented on macOS !
+  /// Workaround std::quick_exit and std::at_quick_exit are not implemented on macOS !
   /// See https://github.com/runtimeverification/k/issues/1580 for more informtion
   //return std::at_quick_exit(on_quick_exit);
   __on_quick_exit__ = on_quick_exit;
@@ -315,7 +315,7 @@ string environment::new_line() {
 }
 
 void environment::quick_exit(int_least32_t exit_code) noexcept {
-  /// Workaround sts::quick_exit and std::at_quick_exit are not implemented on macOS !
+  /// Workaround std::quick_exit and std::at_quick_exit are not implemented on macOS !
   /// See https://github.com/runtimeverification/k/issues/1580 for more informtion
   //std::quick_exit(exit_code)
   if (__on_quick_exit__) __on_quick_exit__();
