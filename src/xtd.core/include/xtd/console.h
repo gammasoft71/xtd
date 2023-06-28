@@ -11,6 +11,7 @@
 #include "static.h"
 #include "types.h"
 #include "ustring.h"
+#include "io/stream_writer.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -50,6 +51,13 @@ namespace xtd {
     /// @name Properties
     
     /// @{
+    /// @brief Gets a value indicating whether the xtd::console::out will flush its buffer to the underlying stream after every call to xtd::console::write and xtd::console::write_line.
+    /// @return true to force xtd::console::out to flush its buffer; otherwise, false.
+    static bool auto_flush_out();
+    /// @brief Sets a value indicating whether the xtd::console::out will flush its buffer to the underlying stream after every call to xtd::console::write and xtd::console::write_line.
+    /// @param value true to force xtd::console::out to flush its buffer; otherwise, false.
+    static void auto_flush_out(bool value);
+    
     /// @brief Gets the background color of the console.
     /// @return the background xtd::console_color.
     /// @remarks A get operation for a Windows-based application, in which a console does not exist, returns xtd::console_color::black.

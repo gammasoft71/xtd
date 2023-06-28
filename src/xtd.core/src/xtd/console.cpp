@@ -30,12 +30,22 @@ namespace {
     static std::streambuf* rdbuf = std::cout.rdbuf();
     return rdbuf;
   }
+  
+  bool __auto_flush_out = true;
 }
 
 std::ostream console::error {__get_err_rdbuf()};
 std::istream console::in {__get_in_rdbuf()};
 std::ostream console::out {__get_out_rdbuf()};
 event<console, console_cancel_event_handler> console::cancel_key_press;
+
+bool console::auto_flush_out() {
+  return __auto_flush_out;
+}
+
+void console::auto_flush_out(bool value) {
+  __auto_flush_out = value;
+}
 
 console_color console::background_color() {
   register_cancel_key_press(); // Must be first...
@@ -365,9 +375,11 @@ void console::register_cancel_key_press() {
 void console::write_(const ustring& value) {
   lock_guard<mutex> lock(console_mutex);
   out << value;
+  if (auto_flush_out()) out.flush();
 }
 
 void console::write_line_(const ustring& value) {
   lock_guard<mutex> lock(console_mutex);
   out << value << std::endl;
+  if (auto_flush_out()) out.flush();
 }
