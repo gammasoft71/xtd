@@ -217,10 +217,10 @@ Inheritance diagram for xtd::environment:</div>
 <div class="line"><span class="comment">// !---OMITTED---!</span></div>
 <div class="line"><span class="comment">// get_folder_path: /System</span></div>
 <div class="line"><span class="comment">// GetLogicalDrives: /, /dev, /System/Volumes/Hardware, /System/Volumes/Update, /System/Volumes/Preboot, /System/Volumes/xarts, /System/Volumes/VM, /System/Volumes/Data, /System/Volumes/iSCPreboot, /System/Volumes/Data/home, /Volumes/Data</span></div>
-<div class="ttc" id="aclassxtd_1_1console_html"><div class="ttname"><a href="classxtd_1_1console.html">xtd::console</a></div><div class="ttdoc">Represents the standard input, output, and error streams for console applications.</div><div class="ttdef"><b>Definition</b> console.h:30</div></div>
-<div class="ttc" id="aclassxtd_1_1environment_html"><div class="ttname"><a href="classxtd_1_1environment.html">xtd::environment</a></div><div class="ttdoc">The environment class.</div><div class="ttdef"><b>Definition</b> environment.h:73</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html"><div class="ttname"><a href="classxtd_1_1console.html">xtd::console</a></div><div class="ttdoc">Represents the standard input, output, and error streams for console applications.</div><div class="ttdef"><b>Definition</b> console.h:32</div></div>
+<div class="ttc" id="aclassxtd_1_1environment_html"><div class="ttname"><a href="classxtd_1_1environment.html">xtd::environment</a></div><div class="ttdoc">The environment class.</div><div class="ttdef"><b>Definition</b> environment.h:74</div></div>
 <div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:48</div></div>
-<div class="ttc" id="agroup__keywords_html_gac9b8e6f22fb2fdc1bb915ee01aef848c"><div class="ttname"><a href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a></div><div class="ttdeci">#define startup_(main_class)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:59</div></div>
+<div class="ttc" id="agroup__keywords_html_gac9b8e6f22fb2fdc1bb915ee01aef848c"><div class="ttname"><a href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a></div><div class="ttdeci">#define startup_(main_class)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:57</div></div>
 <div class="ttc" id="agroup__xtd__core_html_gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb"><div class="ttname"><a href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb">xtd::uri_components::query</a></div><div class="ttdeci">@ query</div><div class="ttdoc">The xtd::uri::query data.</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -384,14 +384,17 @@ Public Types</h2></td></tr>
 <tr class="memitem:a5eecf5ff0c77fe58bf24407004e0956a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1event.html">event</a>&lt; <a class="el" href="classxtd_1_1environment.html">environment</a>, <a class="el" href="group__events.html#gabcbd275ea4718769d31cf61042c0bd77">signal_cancel_event_handler</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1environment.html#a5eecf5ff0c77fe58bf24407004e0956a">cancel_signal</a></td></tr>
 <tr class="memdesc:a5eecf5ff0c77fe58bf24407004e0956a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when a signal is sent to the current process.  <br /></td></tr>
 <tr class="separator:a5eecf5ff0c77fe58bf24407004e0956a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe21c5dab4d3c803aba05dd5743cea13"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1event.html">event</a>&lt; <a class="el" href="classxtd_1_1environment.html">environment</a>, xtd::delegate&lt; void(const <a class="el" href="classxtd_1_1event__args.html">xtd::event_args</a> &amp;)&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1environment.html#abe21c5dab4d3c803aba05dd5743cea13">program_stopped</a></td></tr>
-<tr class="memdesc:abe21c5dab4d3c803aba05dd5743cea13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when the program is stopped (via <a class="el" href="classxtd_1_1environment.html#ac301c0476514e1cf5036d7cf010db7c5" title="Terminates this process and returns an exit code to the operating system.">xtd::environment::exit</a> or returning from the main function).  <br /></td></tr>
-<tr class="separator:abe21c5dab4d3c803aba05dd5743cea13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01bdd261156b8faeb2854cd4753cdc34"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1event.html">event</a>&lt; <a class="el" href="classxtd_1_1environment.html">environment</a>, <a class="el" href="group__events.html#ga05028567f0783e489a1c6e338026b99d">program_exit_event_handler</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1environment.html#a01bdd261156b8faeb2854cd4753cdc34">program_exit</a></td></tr>
+<tr class="memdesc:a01bdd261156b8faeb2854cd4753cdc34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when the terminates normally (via <a class="el" href="classxtd_1_1environment.html#a04a82c5fb0f6ce7c81d92803d2038db1" title="Terminates this process and returns an exit code to the operating system.">xtd::environment::exit</a> or returning from the main function).  <br /></td></tr>
+<tr class="separator:a01bdd261156b8faeb2854cd4753cdc34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Methods</h2></td></tr>
 <tr class="memitem:abb600244871cbfce61a199ff76a44a86"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1environment.html#abb600244871cbfce61a199ff76a44a86">abort</a> ()</td></tr>
 <tr class="memdesc:abb600244871cbfce61a199ff76a44a86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Causes abnormal program termination unless <a class="el" href="group__xtd__core.html#gga437764d898631d282f7d95b573328c72a47374a9bd9a4035c62a754edd6a1f81b" title="Abnormal termination triggered by abort call. Is equal to SIGABRT.">xtd::signal::abnormal_termination</a> is being caught by a <a class="el" href="classxtd_1_1environment.html#a5eecf5ff0c77fe58bf24407004e0956a" title="Occurs when a signal is sent to the current process.">xtd::environment::cancel_signal</a> event.  <br /></td></tr>
 <tr class="separator:abb600244871cbfce61a199ff76a44a86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04a82c5fb0f6ce7c81d92803d2038db1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1environment.html#a04a82c5fb0f6ce7c81d92803d2038db1">exit</a> ()</td></tr>
+<tr class="memdesc:a04a82c5fb0f6ce7c81d92803d2038db1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Terminates this process and returns an exit code to the operating system.  <br /></td></tr>
+<tr class="separator:a04a82c5fb0f6ce7c81d92803d2038db1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac301c0476514e1cf5036d7cf010db7c5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1environment.html#ac301c0476514e1cf5036d7cf010db7c5">exit</a> (<a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> <a class="el" href="classxtd_1_1environment.html#ab8c69ac9963a6a51c9e56975aed98237">exit_code</a>)</td></tr>
 <tr class="memdesc:ac301c0476514e1cf5036d7cf010db7c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Terminates this process and returns an exit code to the operating system.  <br /></td></tr>
 <tr class="separator:ac301c0476514e1cf5036d7cf010db7c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -425,6 +428,15 @@ Public Types</h2></td></tr>
 <tr class="memitem:ab14aadec8d39b75867476f9f97267b96"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__collections.html#gadc1dbfbb41611242c5aa2e857e574256">xtd::collections::specialized::string_vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1environment.html#ab14aadec8d39b75867476f9f97267b96">get_logical_drives</a> ()</td></tr>
 <tr class="memdesc:ab14aadec8d39b75867476f9f97267b96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an array of string containing the names of the logical drives on the current computer.  <br /></td></tr>
 <tr class="separator:ab14aadec8d39b75867476f9f97267b96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a921f99140b6bc8d9ba6e769ab613c9ae"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1environment.html#a921f99140b6bc8d9ba6e769ab613c9ae">quick_exit</a> () noexcept</td></tr>
+<tr class="memdesc:a921f99140b6bc8d9ba6e769ab613c9ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Terminates this process and returns an exit code to the operating system without completely cleaning the resources..  <br /></td></tr>
+<tr class="separator:a921f99140b6bc8d9ba6e769ab613c9ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e146b08cf61c8eb640eb70d181aded7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1environment.html#a9e146b08cf61c8eb640eb70d181aded7">quick_exit</a> (<a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> <a class="el" href="classxtd_1_1environment.html#ab8c69ac9963a6a51c9e56975aed98237">exit_code</a>) noexcept</td></tr>
+<tr class="memdesc:a9e146b08cf61c8eb640eb70d181aded7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Terminates this process and returns an exit code to the operating system without completely cleaning the resources..  <br /></td></tr>
+<tr class="separator:a9e146b08cf61c8eb640eb70d181aded7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7565a1a4c238d785ec34d4dd3631a618"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1environment.html#a7565a1a4c238d785ec34d4dd3631a618">quick_exit</a> (<a class="el" href="group__xtd__core.html#ga6c8c305349ee97fd7fe886bd41995863">xtd::exit_status</a> <a class="el" href="group__xtd__core.html#ga6c8c305349ee97fd7fe886bd41995863">exit_status</a>) noexcept</td></tr>
+<tr class="memdesc:a7565a1a4c238d785ec34d4dd3631a618"><td class="mdescLeft">&#160;</td><td class="mdescRight">Terminates this process and returns an exit status to the operating system without completely cleaning the resources..  <br /></td></tr>
+<tr class="separator:a7565a1a4c238d785ec34d4dd3631a618"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b91849144289ae68816548fb3c6960a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1environment.html#a3b91849144289ae68816548fb3c6960a">raise</a> (<a class="el" href="group__xtd__core.html#ga437764d898631d282f7d95b573328c72">xtd::signal</a> <a class="el" href="group__xtd__core.html#ga437764d898631d282f7d95b573328c72">signal</a>)</td></tr>
 <tr class="memdesc:a3b91849144289ae68816548fb3c6960a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends <a class="el" href="group__xtd__core.html#ga437764d898631d282f7d95b573328c72" title="Specifies signals that can interrupt the current process.">xtd::signal</a> to the program. The <a class="el" href="classxtd_1_1environment.html#a5eecf5ff0c77fe58bf24407004e0956a" title="Occurs when a signal is sent to the current process.">xtd::environment::cancel_signal</a> event is invoked with the specified signal.  <br /></td></tr>
 <tr class="separator:a3b91849144289ae68816548fb3c6960a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -961,8 +973,36 @@ The maximum size of the command-line buffer is not set to a specific number of c
 
 </div>
 </div>
+<a id="a04a82c5fb0f6ce7c81d92803d2038db1" name="a04a82c5fb0f6ce7c81d92803d2038db1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04a82c5fb0f6ce7c81d92803d2038db1">&#9670;&#160;</a></span>exit() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::environment::exit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Terminates this process and returns an exit code to the operating system. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>Use <a class="el" href="classxtd_1_1environment.html#ab8c69ac9963a6a51c9e56975aed98237" title="Gets the exit code of the process.">xtd::environment::exit_code</a> method to return to the operating system. </dd></dl>
+
+</div>
+</div>
 <a id="ac301c0476514e1cf5036d7cf010db7c5" name="ac301c0476514e1cf5036d7cf010db7c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac301c0476514e1cf5036d7cf010db7c5">&#9670;&#160;</a></span>exit() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac301c0476514e1cf5036d7cf010db7c5">&#9670;&#160;</a></span>exit() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -997,7 +1037,7 @@ The maximum size of the command-line buffer is not set to a specific number of c
 </div>
 </div>
 <a id="a30c41e47904509a5228c9815bb42fc92" name="a30c41e47904509a5228c9815bb42fc92"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a30c41e47904509a5228c9815bb42fc92">&#9670;&#160;</a></span>exit() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a30c41e47904509a5228c9815bb42fc92">&#9670;&#160;</a></span>exit() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1760,6 +1800,103 @@ template&lt;class char_t , class traits_t &gt; </div>
 
 </div>
 </div>
+<a id="a921f99140b6bc8d9ba6e769ab613c9ae" name="a921f99140b6bc8d9ba6e769ab613c9ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a921f99140b6bc8d9ba6e769ab613c9ae">&#9670;&#160;</a></span>quick_exit() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::environment::quick_exit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Terminates this process and returns an exit code to the operating system without completely cleaning the resources.. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>Use <a class="el" href="classxtd_1_1environment.html#ab8c69ac9963a6a51c9e56975aed98237" title="Gets the exit code of the process.">xtd::environment::exit_code</a> method to return to the operating system. </dd></dl>
+
+</div>
+</div>
+<a id="a9e146b08cf61c8eb640eb70d181aded7" name="a9e146b08cf61c8eb640eb70d181aded7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e146b08cf61c8eb640eb70d181aded7">&#9670;&#160;</a></span>quick_exit() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::environment::quick_exit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a>&#160;</td>
+          <td class="paramname"><em>exit_code</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Terminates this process and returns an exit code to the operating system without completely cleaning the resources.. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">exit_code</td><td>The exit code to return to the operating system. Use 0 (zero) to indicate that the process completed successfully. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For the exit_code parameter, use a non-zero number to indicate an error. In your application, you can define your own error codes in an enumeration, and return the appropriate error code based on the scenario. For example, return a value of 1 to indicate that the required file is not present, and a value of 2 to indicate that the file is in the wrong format. </dd></dl>
+
+</div>
+</div>
+<a id="a7565a1a4c238d785ec34d4dd3631a618" name="a7565a1a4c238d785ec34d4dd3631a618"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7565a1a4c238d785ec34d4dd3631a618">&#9670;&#160;</a></span>quick_exit() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::environment::quick_exit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__xtd__core.html#ga6c8c305349ee97fd7fe886bd41995863">xtd::exit_status</a>&#160;</td>
+          <td class="paramname"><em>exit_status</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Terminates this process and returns an exit status to the operating system without completely cleaning the resources.. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">exit_status</td><td>One of <a class="el" href="group__xtd__core.html#ga6c8c305349ee97fd7fe886bd41995863" title="Specifies exit status for the xtd::environment::exit method.">xtd::exit_status</a> values. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a3b91849144289ae68816548fb3c6960a" name="a3b91849144289ae68816548fb3c6960a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3b91849144289ae68816548fb3c6960a">&#9670;&#160;</a></span>raise()</h2>
 
@@ -2309,8 +2446,8 @@ The <a class="el" href="group__xtd__core.html#gga437764d898631d282f7d95b573328c7
 
 </div>
 </div>
-<a id="abe21c5dab4d3c803aba05dd5743cea13" name="abe21c5dab4d3c803aba05dd5743cea13"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abe21c5dab4d3c803aba05dd5743cea13">&#9670;&#160;</a></span>program_stopped</h2>
+<a id="a01bdd261156b8faeb2854cd4753cdc34" name="a01bdd261156b8faeb2854cd4753cdc34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01bdd261156b8faeb2854cd4753cdc34">&#9670;&#160;</a></span>program_exit</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2319,7 +2456,7 @@ The <a class="el" href="group__xtd__core.html#gga437764d898631d282f7d95b573328c7
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1event.html">event</a>&lt;<a class="el" href="classxtd_1_1environment.html">environment</a>, xtd::delegate&lt;void(const <a class="el" href="classxtd_1_1event__args.html">xtd::event_args</a>&amp;)&gt; &gt; xtd::environment::program_stopped</td>
+          <td class="memname"><a class="el" href="classxtd_1_1event.html">event</a>&lt;<a class="el" href="classxtd_1_1environment.html">environment</a>, <a class="el" href="group__events.html#ga05028567f0783e489a1c6e338026b99d">program_exit_event_handler</a>&gt; xtd::environment::program_exit</td>
         </tr>
       </table>
   </td>
@@ -2329,7 +2466,7 @@ The <a class="el" href="group__xtd__core.html#gga437764d898631d282f7d95b573328c7
 </table>
 </div><div class="memdoc">
 
-<p>Occurs when the program is stopped (via <a class="el" href="classxtd_1_1environment.html#ac301c0476514e1cf5036d7cf010db7c5" title="Terminates this process and returns an exit code to the operating system.">xtd::environment::exit</a> or returning from the main function). </p>
+<p>Occurs when the terminates normally (via <a class="el" href="classxtd_1_1environment.html#a04a82c5fb0f6ce7c81d92803d2038db1" title="Terminates this process and returns an exit code to the operating system.">xtd::environment::exit</a> or returning from the main function). </p>
 <dl class="section remark"><dt>Remarks</dt><dd>For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>. </dd></dl>
 
 </div>
@@ -2341,7 +2478,7 @@ The <a class="el" href="group__xtd__core.html#gga437764d898631d282f7d95b573328c7
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 25 2023 21:53:37 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Jun 28 2023 22:51:47 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

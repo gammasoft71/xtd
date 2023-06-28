@@ -4,5 +4,6 @@ var searchData=
   ['endian_1',['endian',['../classxtd_1_1bit__converter.html#a8eb11b08f7f3076887b8b28a14f2390f',1,'xtd::bit_converter']]],
   ['enum_5fattribute_2',['enum_attribute',['../group__xtd__core.html#ga21077f4832fc4718f7095d1a560a89cd',1,'xtd']]],
   ['environment_5fvariable_5ftarget_3',['environment_variable_target',['../group__xtd__core.html#ga83c52fe4c5b8fa21b9bf0bba21b0634d',1,'xtd']]],
-  ['exit_5fstatus_4',['exit_status',['../group__xtd__core.html#ga6c8c305349ee97fd7fe886bd41995863',1,'xtd']]]
+  ['exit_5fmode_4',['exit_mode',['../group__xtd__core.html#gae9ba1696ebc733013c909c04118ae81a',1,'xtd']]],
+  ['exit_5fstatus_5',['exit_status',['../group__xtd__core.html#ga6c8c305349ee97fd7fe886bd41995863',1,'xtd']]]
 ];

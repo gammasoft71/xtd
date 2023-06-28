@@ -526,6 +526,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1processor.html">xtd::processor</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents information about a processor, such as the architecture. This class cannot be inherited.  <a href="classxtd_1_1processor.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1program__exit__event__args.html">xtd::program_exit_event_args</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides data for the environment program exit event. This class cannot be inherited.  <a href="classxtd_1_1program__exit__event__args.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1random.html">xtd::random</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a pseudo-random number generator, a device that produces a sequence of numbers that meet certain statistical requirements for randomness.  <a href="classxtd_1_1random.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1149,13 +1152,21 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:ga83c52fe4c5b8fa21b9bf0bba21b0634d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies the location where an environment variable is stored or retrieved in a set or get operation.  <a href="group__xtd__core.html#ga83c52fe4c5b8fa21b9bf0bba21b0634d">More...</a><br /></td></tr>
 <tr class="separator:ga83c52fe4c5b8fa21b9bf0bba21b0634d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae9ba1696ebc733013c909c04118ae81a"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gae9ba1696ebc733013c909c04118ae81a">xtd::exit_mode</a> { <br />
+&#160;&#160;<a class="el" href="group__xtd__core.html#ggae9ba1696ebc733013c909c04118ae81aafea087517c26fadd409bd4b9dc642555">xtd::exit_mode::normal</a>
+, <br />
+&#160;&#160;<a class="el" href="group__xtd__core.html#ggae9ba1696ebc733013c909c04118ae81aa1df3746a4728276afdc24f828186f73a">xtd::exit_mode::quick</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:gae9ba1696ebc733013c909c04118ae81a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies exit mode for the <a class="el" href="classxtd_1_1environment.html#a01bdd261156b8faeb2854cd4753cdc34" title="Occurs when the terminates normally (via xtd::environment::exit or returning from the main function).">xtd::environment::program_exit</a> event.  <a href="group__xtd__core.html#gae9ba1696ebc733013c909c04118ae81a">More...</a><br /></td></tr>
+<tr class="separator:gae9ba1696ebc733013c909c04118ae81a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6c8c305349ee97fd7fe886bd41995863"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga6c8c305349ee97fd7fe886bd41995863">xtd::exit_status</a> { <br />
 &#160;&#160;<a class="el" href="group__xtd__core.html#gga6c8c305349ee97fd7fe886bd41995863a260ca9dd8a4577fc00b7bd5810298076">xtd::exit_status::success</a>
 , <br />
 &#160;&#160;<a class="el" href="group__xtd__core.html#gga6c8c305349ee97fd7fe886bd41995863a3ee28fe1a60c95b89d29317f122c7021">xtd::exit_status::failure</a>
 <br />
  }</td></tr>
-<tr class="memdesc:ga6c8c305349ee97fd7fe886bd41995863"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies exit status for the <a class="el" href="classxtd_1_1environment.html#ac301c0476514e1cf5036d7cf010db7c5" title="Terminates this process and returns an exit code to the operating system.">xtd::environment::exit</a> method.  <a href="group__xtd__core.html#ga6c8c305349ee97fd7fe886bd41995863">More...</a><br /></td></tr>
+<tr class="memdesc:ga6c8c305349ee97fd7fe886bd41995863"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies exit status for the <a class="el" href="classxtd_1_1environment.html#a04a82c5fb0f6ce7c81d92803d2038db1" title="Terminates this process and returns an exit code to the operating system.">xtd::environment::exit</a> method.  <a href="group__xtd__core.html#ga6c8c305349ee97fd7fe886bd41995863">More...</a><br /></td></tr>
 <tr class="separator:ga6c8c305349ee97fd7fe886bd41995863"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab63628bce9e2d06ccfe647700d29e2a0"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gab63628bce9e2d06ccfe647700d29e2a0">xtd::io::file_access</a> { <br />
 &#160;&#160;<a class="el" href="group__xtd__core.html#ggab63628bce9e2d06ccfe647700d29e2a0aecae13117d6f0584c25a9da6c8f8415e">xtd::io::file_access::read</a>
@@ -7630,7 +7641,7 @@ The members of the <a class="el" href="group__xtd__core.html#ga03b78d9831d31a0a2
 <div class="line"><span class="comment">// Is Thursday the day of the week for 05/01/2003?: true</span></div>
 <div class="line"><span class="comment">// The day of the week for 05/01/2003 is thursday.</span></div>
 <div class="ttc" id="aclassxtd_1_1date__time_html"><div class="ttname"><a href="classxtd_1_1date__time.html">xtd::date_time</a></div><div class="ttdoc">Represents an instant in time, typically expressed as a date and time of day.</div><div class="ttdef"><b>Definition</b> date_time.h:72</div></div>
-<div class="ttc" id="agroup__keywords_html_gac9b8e6f22fb2fdc1bb915ee01aef848c"><div class="ttname"><a href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a></div><div class="ttdeci">#define startup_(main_class)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:59</div></div>
+<div class="ttc" id="agroup__keywords_html_gac9b8e6f22fb2fdc1bb915ee01aef848c"><div class="ttname"><a href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a></div><div class="ttdeci">#define startup_(main_class)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:57</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="group__xtd__core.html#gaf3aa09e1775eb8b85ca5974e8b926be2" title="Specifies the day of the week.">xtd::day_of_week</a> enumeration represents the day of the week in calendars that have seven days per week. The value of the constants in this enumeration ranges from <a class="el" href="group__xtd__core.html#ggaf3aa09e1775eb8b85ca5974e8b926be2a787c74a2e618a696e34e025adda33ad3" title="Indicates sunday.">xtd::day_of_week::sunday</a> to <a class="el" href="group__xtd__core.html#ggaf3aa09e1775eb8b85ca5974e8b926be2a6036c3d913f49f28f35d734589840310" title="Indicates saturday.">xtd::day_of_week::saturday</a>. If cast to an integer, its value ranges from zero (which indicates <a class="el" href="group__xtd__core.html#ggaf3aa09e1775eb8b85ca5974e8b926be2a787c74a2e618a696e34e025adda33ad3" title="Indicates sunday.">xtd::day_of_week::sunday</a>) to six (which indicates <a class="el" href="group__xtd__core.html#ggaf3aa09e1775eb8b85ca5974e8b926be2a6036c3d913f49f28f35d734589840310" title="Indicates saturday.">xtd::day_of_week::saturday</a>). </dd>
@@ -7732,6 +7743,43 @@ For more information about enumeration, see <a href="https://gammasoft71.github.
 
 </div>
 </div>
+<a id="gae9ba1696ebc733013c909c04118ae81a" name="gae9ba1696ebc733013c909c04118ae81a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae9ba1696ebc733013c909c04118ae81a">&#9670;&#160;</a></span>exit_mode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="group__xtd__core.html#gae9ba1696ebc733013c909c04118ae81a">xtd::exit_mode</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="exit__mode_8h.html">xtd.core/include/xtd/exit_mode.h</a>&gt;</code></p>
+
+<p>Specifies exit mode for the <a class="el" href="classxtd_1_1environment.html#a01bdd261156b8faeb2854cd4753cdc34" title="Occurs when the terminates normally (via xtd::environment::exit or returning from the main function).">xtd::environment::program_exit</a> event. </p>
+<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Each of the above values represents a constant, which represent different exit status of to the program. </dd>
+<dd>
+For more information about exit_mode, see <a href="https://en.cppreference.com/w/cpp/utility/program/EXIT_status">EXIT_status</a>. </dd></dl>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ggae9ba1696ebc733013c909c04118ae81aafea087517c26fadd409bd4b9dc642555" name="ggae9ba1696ebc733013c909c04118ae81aafea087517c26fadd409bd4b9dc642555"></a>normal&#160;</td><td class="fielddoc"><p>Represent the exit mode when the terminates normally (via <a class="el" href="classxtd_1_1environment.html#a04a82c5fb0f6ce7c81d92803d2038db1" title="Terminates this process and returns an exit code to the operating system.">xtd::environment::exit</a> or returning from the main function). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggae9ba1696ebc733013c909c04118ae81aa1df3746a4728276afdc24f828186f73a" name="ggae9ba1696ebc733013c909c04118ae81aa1df3746a4728276afdc24f828186f73a"></a>quick&#160;</td><td class="fielddoc"><p>Represent the exit mode when the terminates quickly (via <a class="el" href="classxtd_1_1environment.html#a921f99140b6bc8d9ba6e769ab613c9ae" title="Terminates this process and returns an exit code to the operating system without completely cleaning ...">xtd::environment::quick_exit</a>). </p>
+</td></tr>
+</table>
+
+</div>
+</div>
 <a id="ga6c8c305349ee97fd7fe886bd41995863" name="ga6c8c305349ee97fd7fe886bd41995863"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga6c8c305349ee97fd7fe886bd41995863">&#9670;&#160;</a></span>exit_status</h2>
 
@@ -7754,7 +7802,7 @@ For more information about enumeration, see <a href="https://gammasoft71.github.
 
 <p><code>#include &lt;<a class="el" href="exit__status_8h.html">xtd.core/include/xtd/exit_status.h</a>&gt;</code></p>
 
-<p>Specifies exit status for the <a class="el" href="classxtd_1_1environment.html#ac301c0476514e1cf5036d7cf010db7c5" title="Terminates this process and returns an exit code to the operating system.">xtd::environment::exit</a> method. </p>
+<p>Specifies exit status for the <a class="el" href="classxtd_1_1environment.html#a04a82c5fb0f6ce7c81d92803d2038db1" title="Terminates this process and returns an exit code to the operating system.">xtd::environment::exit</a> method. </p>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Each of the above values represents a constant, which represent different exit status of to the program. </dd>
@@ -61786,7 +61834,7 @@ template&lt;typename ... args_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 25 2023 21:53:37 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Jun 28 2023 22:51:47 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

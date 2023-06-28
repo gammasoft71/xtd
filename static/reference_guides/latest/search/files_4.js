@@ -24,7 +24,8 @@ var searchData=
   ['event_5ftype_5ffilter_2eh_21',['event_type_filter.h',['../event__type__filter_8h.html',1,'']]],
   ['exception_5fbox_2eh_22',['exception_box.h',['../exception__box_8h.html',1,'']]],
   ['exception_5fdialog_2eh_23',['exception_dialog.h',['../exception__dialog_8h.html',1,'']]],
-  ['exit_5fstatus_2eh_24',['exit_status.h',['../exit__status_8h.html',1,'']]],
-  ['export_2eh_25',['export.h',['../export_8h.html',1,'']]],
-  ['extended_5fcolors_2eh_26',['extended_colors.h',['../extended__colors_8h.html',1,'']]]
+  ['exit_5fmode_2eh_24',['exit_mode.h',['../exit__mode_8h.html',1,'']]],
+  ['exit_5fstatus_2eh_25',['exit_status.h',['../exit__status_8h.html',1,'']]],
+  ['export_2eh_26',['export.h',['../export_8h.html',1,'']]],
+  ['extended_5fcolors_2eh_27',['extended_colors.h',['../extended__colors_8h.html',1,'']]]
 ];

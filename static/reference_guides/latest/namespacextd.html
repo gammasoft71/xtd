@@ -340,6 +340,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1processor.html">processor</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents information about a processor, such as the architecture. This class cannot be inherited.  <a href="classxtd_1_1processor.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1program__exit__event__args.html">program_exit_event_args</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides data for the environment program exit event. This class cannot be inherited.  <a href="classxtd_1_1program__exit__event__args.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1random.html">random</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a pseudo-random number generator, a device that produces a sequence of numbers that meet certain statistical requirements for randomness.  <a href="classxtd_1_1random.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -495,6 +498,9 @@ Alias</h2></td></tr>
 <tr class="memitem:gaa083bb9debdfafabdf55431467759471"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gaa083bb9debdfafabdf55431467759471">predicate</a> = delegate&lt; bool(type_t)&gt;</td></tr>
 <tr class="memdesc:gaa083bb9debdfafabdf55431467759471"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a delegate that defines a set of criteria and determines whether the specified object meets those criteria.  <br /></td></tr>
 <tr class="separator:gaa083bb9debdfafabdf55431467759471"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga05028567f0783e489a1c6e338026b99d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__events.html#ga05028567f0783e489a1c6e338026b99d">program_exit_event_handler</a> = xtd::delegate&lt; void(const <a class="el" href="classxtd_1_1program__exit__event__args.html">program_exit_event_args</a> &amp;)&gt;</td></tr>
+<tr class="memdesc:ga05028567f0783e489a1c6e338026b99d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the method that will handle the program exit events of a <a class="el" href="classxtd_1_1environment.html" title="The environment class.">xtd::environment</a>.  <br /></td></tr>
+<tr class="separator:ga05028567f0783e489a1c6e338026b99d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac047942a62f03ba75e1b4f0bde7401ca"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__types.html#gac047942a62f03ba75e1b4f0bde7401ca">ptrdiff</a> = std::ptrdiff_t</td></tr>
 <tr class="memdesc:gac047942a62f03ba75e1b4f0bde7401ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represent the signed integer type of the result of subtracting two pointers.  <br /></td></tr>
 <tr class="separator:gac047942a62f03ba75e1b4f0bde7401ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -996,13 +1002,21 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:ga83c52fe4c5b8fa21b9bf0bba21b0634d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies the location where an environment variable is stored or retrieved in a set or get operation.  <a href="group__xtd__core.html#ga83c52fe4c5b8fa21b9bf0bba21b0634d">More...</a><br /></td></tr>
 <tr class="separator:ga83c52fe4c5b8fa21b9bf0bba21b0634d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae9ba1696ebc733013c909c04118ae81a"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gae9ba1696ebc733013c909c04118ae81a">exit_mode</a> { <br />
+&#160;&#160;<a class="el" href="group__xtd__core.html#ggae9ba1696ebc733013c909c04118ae81aafea087517c26fadd409bd4b9dc642555">exit_mode::normal</a>
+, <br />
+&#160;&#160;<a class="el" href="group__xtd__core.html#ggae9ba1696ebc733013c909c04118ae81aa1df3746a4728276afdc24f828186f73a">exit_mode::quick</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:gae9ba1696ebc733013c909c04118ae81a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies exit mode for the <a class="el" href="classxtd_1_1environment.html#a01bdd261156b8faeb2854cd4753cdc34" title="Occurs when the terminates normally (via xtd::environment::exit or returning from the main function).">xtd::environment::program_exit</a> event.  <a href="group__xtd__core.html#gae9ba1696ebc733013c909c04118ae81a">More...</a><br /></td></tr>
+<tr class="separator:gae9ba1696ebc733013c909c04118ae81a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6c8c305349ee97fd7fe886bd41995863"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga6c8c305349ee97fd7fe886bd41995863">exit_status</a> { <br />
 &#160;&#160;<a class="el" href="group__xtd__core.html#gga6c8c305349ee97fd7fe886bd41995863a260ca9dd8a4577fc00b7bd5810298076">exit_status::success</a>
 , <br />
 &#160;&#160;<a class="el" href="group__xtd__core.html#gga6c8c305349ee97fd7fe886bd41995863a3ee28fe1a60c95b89d29317f122c7021">exit_status::failure</a>
 <br />
  }</td></tr>
-<tr class="memdesc:ga6c8c305349ee97fd7fe886bd41995863"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies exit status for the <a class="el" href="classxtd_1_1environment.html#ac301c0476514e1cf5036d7cf010db7c5" title="Terminates this process and returns an exit code to the operating system.">xtd::environment::exit</a> method.  <a href="group__xtd__core.html#ga6c8c305349ee97fd7fe886bd41995863">More...</a><br /></td></tr>
+<tr class="memdesc:ga6c8c305349ee97fd7fe886bd41995863"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies exit status for the <a class="el" href="classxtd_1_1environment.html#a04a82c5fb0f6ce7c81d92803d2038db1" title="Terminates this process and returns an exit code to the operating system.">xtd::environment::exit</a> method.  <a href="group__xtd__core.html#ga6c8c305349ee97fd7fe886bd41995863">More...</a><br /></td></tr>
 <tr class="separator:ga6c8c305349ee97fd7fe886bd41995863"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5a66bba150a09fb625c5bed6c21249d9"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga5a66bba150a09fb625c5bed6c21249d9">language_id</a> { <br />
 &#160;&#160;<a class="el" href="group__xtd__core.html#gga5a66bba150a09fb625c5bed6c21249d9aad921d60486366258809553a3db49a4a">language_id::unknown</a>
@@ -6192,7 +6206,7 @@ template&lt;typename type_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 25 2023 21:53:37 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Jun 28 2023 22:51:47 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

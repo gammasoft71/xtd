@@ -183,6 +183,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1tool__bar__button__click__event__args.html">xtd::forms::tool_bar_button_click_event_args</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides data for the <a class="el" href="classxtd_1_1forms_1_1tool__bar.html#a3de173d95bd9e75f08febe9f98c180fd" title="Occurs when a xtd::forms::tool_bar_button on the xtd::forms::tool_bar is clicked.">xtd::forms::tool_bar::button_click</a> event.  <a href="classxtd_1_1forms_1_1tool__bar__button__click__event__args.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1program__exit__event__args.html">xtd::program_exit_event_args</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides data for the environment program exit event. This class cannot be inherited.  <a href="classxtd_1_1program__exit__event__args.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1signal__cancel__event__args.html">xtd::signal_cancel_event_args</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides data for the environment signal event. This class cannot be inherited.  <a href="classxtd_1_1signal__cancel__event__args.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -271,6 +274,9 @@ Typedefs</h2></td></tr>
 <tr class="memitem:ga77851102953af79e55212a7974d13fab"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__events.html#ga77851102953af79e55212a7974d13fab">xtd::forms::paint_event_handler</a> = delegate&lt; void(<a class="el" href="classxtd_1_1object.html">object</a> &amp;sender, <a class="el" href="classxtd_1_1forms_1_1paint__event__args.html">paint_event_args</a> &amp;<a class="el" href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deae1671797c52e15f763380b45e841ec32">e</a>)&gt;</td></tr>
 <tr class="memdesc:ga77851102953af79e55212a7974d13fab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the method that will handle the paint event of a control.  <br /></td></tr>
 <tr class="separator:ga77851102953af79e55212a7974d13fab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga05028567f0783e489a1c6e338026b99d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__events.html#ga05028567f0783e489a1c6e338026b99d">xtd::program_exit_event_handler</a> = xtd::delegate&lt; void(const <a class="el" href="classxtd_1_1program__exit__event__args.html">program_exit_event_args</a> &amp;)&gt;</td></tr>
+<tr class="memdesc:ga05028567f0783e489a1c6e338026b99d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the method that will handle the program exit events of a <a class="el" href="classxtd_1_1environment.html" title="The environment class.">xtd::environment</a>.  <br /></td></tr>
+<tr class="separator:ga05028567f0783e489a1c6e338026b99d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab622f963701c9e772309591048e9f180"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__events.html#gab622f963701c9e772309591048e9f180">xtd::forms::progress_changed_event_handler</a> = delegate&lt; void(<a class="el" href="classxtd_1_1object.html">object</a> &amp;sender, const <a class="el" href="classxtd_1_1forms_1_1progress__changed__event__args.html">progress_changed_event_args</a> &amp;<a class="el" href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deae1671797c52e15f763380b45e841ec32">e</a>)&gt;</td></tr>
 <tr class="memdesc:gab622f963701c9e772309591048e9f180"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the method that will handle the do_work event. This class cannot be inherited.  <br /></td></tr>
 <tr class="separator:gab622f963701c9e772309591048e9f180"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -962,6 +968,32 @@ template&lt;typename event_args_t  = const xtd::event_args&amp;&gt; </div>
 
 </div>
 </div>
+<a id="ga05028567f0783e489a1c6e338026b99d" name="ga05028567f0783e489a1c6e338026b99d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga05028567f0783e489a1c6e338026b99d">&#9670;&#160;</a></span>program_exit_event_handler</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="group__events.html#ga05028567f0783e489a1c6e338026b99d">xtd::program_exit_event_handler</a> = typedef xtd::delegate&lt;void(const <a class="el" href="classxtd_1_1program__exit__event__args.html">program_exit_event_args</a>&amp;)&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="program__exit__event__handler_8h.html">xtd.core/include/xtd/program_exit_event_handler.h</a>&gt;</code></p>
+
+<p>Represents the method that will handle the program exit events of a <a class="el" href="classxtd_1_1environment.html" title="The environment class.">xtd::environment</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>A <a class="el" href="classxtd_1_1program__exit__event__args.html" title="Provides data for the environment program exit event. This class cannot be inherited.">xtd::program_exit_event_args</a> object that contains the exit data. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core </dd></dl>
+
+</div>
+</div>
 <a id="gab622f963701c9e772309591048e9f180" name="gab622f963701c9e772309591048e9f180"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gab622f963701c9e772309591048e9f180">&#9670;&#160;</a></span>progress_changed_event_handler</h2>
 
@@ -1165,7 +1197,7 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 25 2023 21:53:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Jun 28 2023 22:51:46 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

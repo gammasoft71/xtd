@@ -8,7 +8,8 @@ var searchData=
   ['pointer_5',['pointer',['../classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#ac583e335292983f536a0f34b45052e59',1,'xtd::forms::layout::arranged_element_collection']]],
   ['points_5fcollection_6',['points_collection',['../classxtd_1_1forms_1_1dot__matrix__display.html#a8290530d8532857d7e620616c985891b',1,'xtd::forms::dot_matrix_display']]],
   ['predicate_7',['predicate',['../group__xtd__core.html#gaa083bb9debdfafabdf55431467759471',1,'xtd']]],
-  ['progress_5fchanged_5fevent_5fhandler_8',['progress_changed_event_handler',['../group__events.html#gab622f963701c9e772309591048e9f180',1,'xtd::forms']]],
-  ['property_5fmap_9',['property_map',['../property__map_8h.html#a8f98379cbe916d9dcf3e0cfac9eeaae6',1,'xtd::web::css']]],
-  ['ptrdiff_10',['ptrdiff',['../group__types.html#gac047942a62f03ba75e1b4f0bde7401ca',1,'xtd']]]
+  ['program_5fexit_5fevent_5fhandler_8',['program_exit_event_handler',['../group__events.html#ga05028567f0783e489a1c6e338026b99d',1,'xtd']]],
+  ['progress_5fchanged_5fevent_5fhandler_9',['progress_changed_event_handler',['../group__events.html#gab622f963701c9e772309591048e9f180',1,'xtd::forms']]],
+  ['property_5fmap_10',['property_map',['../property__map_8h.html#a8f98379cbe916d9dcf3e0cfac9eeaae6',1,'xtd::web::css']]],
+  ['ptrdiff_11',['ptrdiff',['../group__types.html#gac047942a62f03ba75e1b4f0bde7401ca',1,'xtd']]]
 ];
