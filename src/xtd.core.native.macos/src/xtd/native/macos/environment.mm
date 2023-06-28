@@ -111,13 +111,16 @@ namespace {
     
     return distribution_key_values;
   }
+  
+  void (*__on_quick_exit__)(void) = nullptr;
 }
 
 int_least32_t environment::at_quick_exit(void (*on_quick_exit)(void)) {
   /// Workaround sts::quick_exit and std::at_quick_exit are not implemented on macOS !
   /// See https://github.com/runtimeverification/k/issues/1580 for more informtion
   //return std::at_quick_exit(on_quick_exit);
-  return 1;
+  __on_quick_exit__ = on_quick_exit;
+  return 0;
 }
 
 vector<string> environment::get_command_line_args() {
@@ -315,6 +318,7 @@ void environment::quick_exit(int_least32_t exit_code) noexcept {
   /// Workaround sts::quick_exit and std::at_quick_exit are not implemented on macOS !
   /// See https://github.com/runtimeverification/k/issues/1580 for more informtion
   //std::quick_exit(exit_code)
+  if (__on_quick_exit__) __on_quick_exit__();
   std::_Exit(exit_code);
 }
 
@@ -322,7 +326,7 @@ void environment::set_environment_variable(const string& name, const string& val
   if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS)
     setenv(name.c_str(), value.c_str(), 1);
   else if (target == ENVIRONMENT_VARIABLE_TARGET_USER) {
-    /// @todo Snset registry value when implmented ???
+    /// @todo Set registry value when implmented ???
   } if (target == ENVIRONMENT_VARIABLE_TARGET_MACHINE) {
     /// @todo Set registry value when implmented ???
   }
