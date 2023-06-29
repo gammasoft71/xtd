@@ -1,8 +1,10 @@
 #define TRACE
 #include <xtd/diagnostics/trace_options.h>
 #include <xtd/diagnostics/trace_listener.h>
-#include <xtd/xtd.tunit>
 #include <sstream>
+#include <xtd/tunit/assert.h>
+#include <xtd/tunit/test_class_attribute.h>
+#include <xtd/tunit/test_method_attribute.h>
 
 using namespace xtd::diagnostics;
 using namespace xtd::tunit;
