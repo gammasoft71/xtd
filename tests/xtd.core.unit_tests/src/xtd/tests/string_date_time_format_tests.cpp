@@ -2,6 +2,7 @@
 #include <xtd/ustring.h>
 #include <xtd/format_exception.h>
 #include <xtd/tunit/assert.h>
+#include <xtd/tunit/string_assert.h>
 #include <xtd/tunit/test_class_attribute.h>
 #include <xtd/tunit/test_method_attribute.h>
 
