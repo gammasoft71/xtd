@@ -1,5 +1,7 @@
 #include <xtd/drawing/drawing_2d/linear_gradient_mode.h>
-#include <xtd/xtd.tunit>
+#include <xtd/tunit/assert.h>
+#include <xtd/tunit/test_class_attribute.h>
+#include <xtd/tunit/test_method_attribute.h>
 
 using namespace xtd::drawing::drawing_2d;
 using namespace xtd::tunit;
