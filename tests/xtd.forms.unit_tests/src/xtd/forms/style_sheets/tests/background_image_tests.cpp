@@ -1,6 +1,10 @@
 #include <xtd/forms/style_sheets/background_image.h>
 #include <xtd/drawing/system_colors.h>
-#include <xtd/xtd.tunit>
+#include <xtd/not_supported_exception.h>
+#include <xtd/tunit/assert.h>
+#include <xtd/tunit/collection_assert.h>
+#include <xtd/tunit/test_class_attribute.h>
+#include <xtd/tunit/test_method_attribute.h>
 
 using namespace xtd;
 using namespace xtd::drawing;
