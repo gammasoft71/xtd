@@ -6,7 +6,10 @@
 #include "platform_name.h"
 #include "standard_name.h"
 #include <xtd/environment.h>
-#include <xtd/xtd.tunit>
+#include <xtd/tunit/assert.h>
+#include <xtd/tunit/string_assert.h>
+#include <xtd/tunit/test_class_attribute.h>
+#include <xtd/tunit/test_method_attribute.h>
 
 using namespace xtd;
 using namespace xtd::tunit;
