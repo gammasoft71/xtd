@@ -15,6 +15,7 @@ namespace xtdc_command {
       xtd::io::file::copy(xtd::io::path::combine(get_base_path(), "icons", "xtd_forms.png"), xtd::io::path::combine(current_path(), (create_solution ? name : ""), "resources", xtd::ustring::format("{}.png", name)));
       if (create_solution) create_solution_cmakelists_txt(name);
       create_application_properties(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
+      create_assembly_info(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
       create_cmakelists_txt(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
       create_include(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
       create_source(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
@@ -75,6 +76,20 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "CMakeLists.txt"), lines);
     }
     
+    void create_assembly_info(const xtd::ustring& name, const xtd::ustring& path) const {
+      std::vector<xtd::ustring> lines{
+        xtd::ustring::format("assembly_title(\"{}\")", name),
+        "assembly_description(\"\")",
+        "assembly_company(\"\")",
+        "assembly_product(\"\")",
+        xtd::ustring::format("assembly_copyright(\"Copyright © YourCompanyName {}\")", xtd::date_time::now().year()),
+        "assembly_trademark(\"\")",
+        "assembly_version(\"1.0.*\")",
+      };
+      
+      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "properties", "assembly_info.cmake"), lines);
+    }
+
     void create_include(const xtd::ustring& name, const xtd::ustring& path) const {
       std::vector<xtd::ustring> lines {
         "/// @file",
