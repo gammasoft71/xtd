@@ -1,7 +1,9 @@
 #include <xtd/ustring.h>
 #include <xtd/ustring.h>
 #include <xtd/format_exception.h>
-#include <xtd/xtd.tunit>
+#include <xtd/tunit/assert.h>
+#include <xtd/tunit/test_class_attribute.h>
+#include <xtd/tunit/test_method_attribute.h>
 
 using namespace std;
 using namespace std::string_literals;
