@@ -11,6 +11,7 @@ namespace xtdc_command {
       xtd::io::directory::create_directory(create_solution ? xtd::io::path::combine(current_path(), name, "src") : xtd::io::path::combine(current_path(), "src"));
       if (create_solution) create_cmakelists_txt(name);
       create_xtd_console_application_properties(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
+      create_assembly_info(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
       create_xtd_console_cmakelists_txt(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
       create_xtd_console_include(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
       create_xtd_console_source(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
@@ -48,6 +49,20 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "properties", "target_properties.cmake"), lines);
     }
     
+    void create_assembly_info(const xtd::ustring& name, const xtd::ustring& path) const {
+      std::vector<xtd::ustring> lines{
+        xtd::ustring::format("assembly_title(\"{}\")", name),
+        "assembly_description(\"\")",
+        "assembly_company(\"\")",
+        "assembly_product(\"\")",
+        xtd::ustring::format("assembly_copyright(\"Copyright © YourCompanyName {}\")", xtd::date_time::now().year()),
+        "assembly_trademark(\"\")",
+        "assembly_version(\"1.0.*\")",
+      };
+      
+      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "properties", "assembly_info.cmake"), lines);
+    }
+
     void create_xtd_console_cmakelists_txt(const xtd::ustring& name, const xtd::ustring& path) const {
       std::vector<xtd::ustring> lines {
         "cmake_minimum_required(VERSION 3.3)",
