@@ -1,6 +1,8 @@
 #include <xtd/drawing/color.h>
 #include <xtd/argument_exception.h>
-#include <xtd/xtd.tunit>
+#include <xtd/tunit/assert.h>
+#include <xtd/tunit/test_class_attribute.h>
+#include <xtd/tunit/test_method_attribute.h>
 
 using namespace xtd;
 using namespace xtd::drawing;
