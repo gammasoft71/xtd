@@ -1,6 +1,10 @@
 #include <xtd/forms/progress_bar.h>
 #include <xtd/forms/form.h>
-#include <xtd/xtd.tunit>
+#include <xtd/diagnostics/debugger.h>
+#include <xtd/tunit/assert.h>
+#include <xtd/tunit/valid.h>
+#include <xtd/tunit/test_class_attribute.h>
+#include <xtd/tunit/test_method_attribute.h>
 
 using namespace xtd;
 using namespace xtd::drawing;
