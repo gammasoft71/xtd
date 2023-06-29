@@ -1,5 +1,7 @@
 #include <xtd/diagnostics/process_priority_class.h>
-#include <xtd/xtd.tunit>
+#include <xtd/tunit/assert.h>
+#include <xtd/tunit/test_class_attribute.h>
+#include <xtd/tunit/test_method_attribute.h>
 
 using namespace xtd::diagnostics;
 using namespace xtd::tunit;
