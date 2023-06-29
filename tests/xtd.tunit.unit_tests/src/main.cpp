@@ -1,5 +1,5 @@
+#include <xtd/tunit/test.h>
 #include "assert_unit_tests/assert_unit_tests.h"
-#include <xtd/xtd.tunit>
 
 auto main()->int {
   xtd::system_exception::enable_stack_trace(false);

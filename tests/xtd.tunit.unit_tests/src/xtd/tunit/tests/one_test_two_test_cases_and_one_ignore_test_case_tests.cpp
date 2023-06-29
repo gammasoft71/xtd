@@ -1,6 +1,6 @@
+#include <xtd/tunit/test_class_attribute.h>
+#include <xtd/tunit/test_method_attribute.h>
 #include "../../../assert_unit_tests/assert_unit_tests.h"
-#include <xtd/xtd.tunit>
-
 
 namespace xtd::tunit::tests {
   class test_class_(one_test_two_test_cases_and_one_ignore_test_case_tests) {
