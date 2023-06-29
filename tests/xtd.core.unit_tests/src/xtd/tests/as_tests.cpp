@@ -1,4 +1,5 @@
-#include <xtd/xtd.core>
+#include <xtd/as.h>
+#include <xtd/is.h>
 #include <xtd/tunit/assert.h>
 #include <xtd/tunit/test_class_attribute.h>
 #include <xtd/tunit/test_method_attribute.h>
