@@ -1,5 +1,7 @@
 #include <xtd/forms/style_sheets/border_color.h>
-#include <xtd/xtd.tunit>
+#include <xtd/tunit/assert.h>
+#include <xtd/tunit/test_class_attribute.h>
+#include <xtd/tunit/test_method_attribute.h>
 
 using namespace xtd;
 using namespace xtd::drawing;
