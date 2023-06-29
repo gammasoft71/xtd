@@ -283,9 +283,9 @@ macro(target_type TYPE)
   message(VERBOSE "Add application type [${TYPE}]...")
   set(TARGET_TYPE "${TYPE}")
 
-  include(${CMAKE_CURRENT_SOURCE_DIR}/properties/assembly_informations.cmake OPTIONAL)
-  if (EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/properties/assembly_informations.cmake)
-    set(CMAKE_ASSEMBLY_INFORMATIONS properties/assembly_informations.cmake)
+  include(${CMAKE_CURRENT_SOURCE_DIR}/properties/assembly_info.cmake OPTIONAL)
+  if (EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/properties/assembly_info.cmake)
+    set(CMAKE_ASSEMBLY_INFORMATIONS properties/assembly_info.cmake)
     auto_source_group(${CMAKE_ASSEMBLY_INFORMATIONS})
   endif ()
   
