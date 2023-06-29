@@ -1,6 +1,5 @@
 #include "project_management.h"
-
-#include <xtd/xtd.core>
+#include <xtd/startup.h>
 
 using namespace std;
 using namespace xtd;
