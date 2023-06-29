@@ -19,6 +19,7 @@
 #include <xtd/drawing/point.h>
 #include <xtd/drawing/rectangle.h>
 #include <xtd/drawing/size.h>
+#include <xtd/forms/window_messages.h>
 
 #include "../forms_export.h"
 #include "layout/arranged_element_collection.h"
