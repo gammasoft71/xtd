@@ -1,4 +1,6 @@
-#include <xtd/xtd.core>
+#include <xtd/console.h>
+#include <xtd/environment.h>
+#include <xtd/startup.h>
 
 using namespace xtd;
 
