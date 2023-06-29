@@ -1,5 +1,8 @@
 #include <xtd/net/ip_host_entry.h>
-#include <xtd/xtd.tunit>
+#include <xtd/tunit/assert.h>
+#include <xtd/tunit/collection_assert.h>
+#include <xtd/tunit/test_class_attribute.h>
+#include <xtd/tunit/test_method_attribute.h>
 
 using namespace xtd;
 using namespace xtd::net;
