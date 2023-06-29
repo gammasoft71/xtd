@@ -1,6 +1,8 @@
 #include <xtd/forms/system_information.h>
 #include <xtd/forms/form.h>
-#include <xtd/xtd.tunit>
+#include <xtd/tunit/assert.h>
+#include <xtd/tunit/test_class_attribute.h>
+#include <xtd/tunit/test_method_attribute.h>
 #if defined(_WIN32)
 #include <Windows.h>
 #undef max

@@ -2,7 +2,11 @@
 #include <xtd/drawing/system_images.h>
 #include <xtd/forms/application.h>
 #include <xtd/forms/form.h>
-#include <xtd/xtd.tunit>
+#include <xtd/diagnostics/debugger.h>
+#include <xtd/invalid_operation_exception.h>
+#include <xtd/tunit/assert.h>
+#include <xtd/tunit/test_class_attribute.h>
+#include <xtd/tunit/test_method_attribute.h>
 
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/class_styles.h>

@@ -1,7 +1,10 @@
 #include <xtd/forms/button.h>
 #include <xtd/drawing/system_images.h>
 #include <xtd/forms/form.h>
-#include <xtd/xtd.tunit>
+#include <xtd/diagnostics/debugger.h>
+#include <xtd/tunit/assert.h>
+#include <xtd/tunit/test_class_attribute.h>
+#include <xtd/tunit/test_method_attribute.h>
 
 using namespace xtd;
 using namespace xtd::drawing;
