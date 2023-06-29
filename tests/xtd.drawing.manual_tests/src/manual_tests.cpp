@@ -1,13 +1,17 @@
 #include <iostream>
-#include <xtd/xtd.drawing>
+#include <xtd/drawing/bitmap.h>
+#include <xtd/drawing/color.h>
+#include <xtd/io/file.h>
+#include <xtd/io/path.h>
+#include <xtd/ustring.h>
 //#include "logo.xpm"
 
 using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 
-void to_ppm(const std::string& filename, const xtd::drawing::bitmap& bitmap, const color& transparent_color = color::white) {
-  std::vector<std::string> lines;
+void to_ppm(const xtd::ustring& filename, const xtd::drawing::bitmap& bitmap, const color& transparent_color = color::white) {
+  std::vector<xtd::ustring> lines;
   lines.push_back("P3");
   lines.push_back("# Ppm.ppm");
   lines.push_back(xtd::ustring::format("{} {}", bitmap.width(), bitmap.height()));
@@ -24,7 +28,7 @@ void to_ppm(const std::string& filename, const xtd::drawing::bitmap& bitmap, con
   xtd::io::file::write_all_lines(ustring(filename), lines);
 }
 
-void to_ppm(const std::string& filename, const color& transparent_color = color::white) {
+void to_ppm(const xtd::ustring& filename, const color& transparent_color = color::white) {
   to_ppm(xtd::io::path::combine(xtd::io::path::get_directory_name(filename), xtd::ustring::format("{}{}", xtd::io::path::get_file_name_without_extension(filename), ".ppm")), bitmap(filename), transparent_color);
 }
 
