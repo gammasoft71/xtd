@@ -1,9 +1,16 @@
-#include <xtd/xtd.forms.h>
+#include <xtd/forms/application.h>
+#include <xtd/forms/choice.h>
+#include <xtd/forms/form.h>
+#include <xtd/forms/system_texts.h>
+#include <xtd/forms/tab_control.h>
+#include <xtd/forms/tab_page.h>
+#include <xtd/forms/tool_bar.h>
+#include <xtd/forms/tool_bar_images.h>
+#include <xtd/startup.h>
 
 using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
-using namespace xtd::drawing::drawing_2d;
 using namespace xtd::forms;
 
 class tool_bars_form : public form {

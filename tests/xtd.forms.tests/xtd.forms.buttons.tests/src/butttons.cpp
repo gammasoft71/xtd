@@ -1,9 +1,15 @@
-#include <xtd/xtd.forms.h>
+#include <xtd/forms/application.h>
+#include <xtd/forms/button.h>
+#include <xtd/forms/button_images.h>
+#include <xtd/forms/choice.h>
+#include <xtd/forms/form.h>
+#include <xtd/forms/tab_control.h>
+#include <xtd/forms/tab_page.h>
+#include <xtd/startup.h>
 
 using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
-using namespace xtd::drawing::drawing_2d;
 using namespace xtd::forms;
 
 class buttons_form : public form {
