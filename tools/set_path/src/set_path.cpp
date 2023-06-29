@@ -1,4 +1,8 @@
-#include <xtd/xtd.core>
+#include <xtd/io/path.h>
+#include <xtd/console.h>
+#include <xtd/environment.h>
+#include <xtd/startup.h>
+#include <xtd/ustring.h>
 #include <chrono>
 #if defined(_WIN32)
 #define UNICODE
@@ -36,7 +40,7 @@ namespace set_path {
         else if (environment::os_version().is_macos()) current_path = macos_read_system_path(system_path);
         else if (environment::os_version().is_linux()) current_path = linux_read_system_path(system_path);
         
-        auto paths = current_path.split({ io::path::path_separator() });
+        auto paths = current_path.split({io::path::path_separator()});
         auto it_folder = paths.end();
         for (auto it = paths.begin(); it != paths.end(); ++it) {
           if (*it == folder) {

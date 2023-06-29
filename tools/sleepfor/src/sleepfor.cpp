@@ -1,4 +1,6 @@
-#include <xtd/xtd.core>
+#include <xtd/console.h>
+#include <xtd/startup.h>
+#include <xtd/ustring.h>
 #include <chrono>
 #include <thread>
 
