@@ -1,6 +1,8 @@
 #include <xtd/threading/interlocked.h>
-#include <xtd/xtd.tunit>
 #include <limits>
+#include <xtd/tunit/assert.h>
+#include <xtd/tunit/test_class_attribute.h>
+#include <xtd/tunit/test_method_attribute.h>
 
 using namespace xtd;
 using namespace xtd::threading;
