@@ -9,7 +9,9 @@
 #undef max
 #undef min
 #include <xtd/convert_string.h>
-#include <xtd/ustring.h>
+#include <xtd/tunit/assert.h>
+#include <xtd/tunit/test_class_attribute.h>
+#include <xtd/tunit/test_method_attribute.h>
 
 constexpr xtd::int32 __CSIDL_HOME__ = 0x0040;
 
