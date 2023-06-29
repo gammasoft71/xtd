@@ -1,5 +1,7 @@
 #include <xtd/drawing/imaging/encoder_parameter_value_type.h>
-#include <xtd/xtd.tunit>
+#include <xtd/tunit/assert.h>
+#include <xtd/tunit/test_class_attribute.h>
+#include <xtd/tunit/test_method_attribute.h>
 
 using namespace xtd::drawing::imaging;
 using namespace xtd::tunit;
