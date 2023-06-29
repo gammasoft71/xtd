@@ -1,4 +1,5 @@
 #include "key_press_control.h"
+#include <xtd/forms/application.h>
 
 using namespace xtd;
 using namespace xtd::drawing;
