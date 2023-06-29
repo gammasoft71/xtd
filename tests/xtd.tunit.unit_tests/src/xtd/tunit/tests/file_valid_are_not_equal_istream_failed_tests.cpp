@@ -1,5 +1,7 @@
+#include <xtd/tunit/file_valid.h>
+#include <xtd/tunit/test_class_attribute.h>
+#include <xtd/tunit/test_method_attribute.h>
 #include "../../../assert_unit_tests/assert_unit_tests.h"
-#include <xtd/xtd.tunit>
 
 namespace xtd::tunit::tests {
   class test_class_(file_valid_are_not_equal_istream_failed_tests) {
