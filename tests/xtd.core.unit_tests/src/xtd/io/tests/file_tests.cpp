@@ -1,6 +1,9 @@
 #include <xtd/io/file.h>
-#include <xtd/xtd.tunit>
+#include <xtd/io/file_not_found_exception.h>
 #include <array>
+#include <xtd/tunit/assert.h>
+#include <xtd/tunit/test_class_attribute.h>
+#include <xtd/tunit/test_method_attribute.h>
 
 using namespace std;
 using namespace xtd;

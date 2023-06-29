@@ -1,6 +1,9 @@
-#include <xtd/io/stream_writer.h>
-#include <xtd/io/stream_reader.h>
-#include <xtd/xtd.tunit>
+#include <xtd/io/directory.h>
+#include <xtd/io/path_too_long_exception.h>
+#include <xtd/tunit/assert.h>
+#include <xtd/tunit/directory_assume.h>
+#include <xtd/tunit/test_class_attribute.h>
+#include <xtd/tunit/test_method_attribute.h>
 
 using namespace xtd;
 using namespace xtd::io;
