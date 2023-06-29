@@ -5,8 +5,6 @@
 
 #include <xtd/xtd.core>
 #include <xtd/xtd.drawing>
-#include <xtd/forms/create_params.h>
-#include <xtd/forms/window_messages.h>
 
 #include "xtd/forms/about_box.h"
 #include "xtd/forms/about_dialog.h"
@@ -71,6 +69,7 @@
 #include "xtd/forms/control.h"
 #include "xtd/forms/countries.h"
 #include "xtd/forms/country.h"
+#include "xtd/forms/create_params.h"
 #include "xtd/forms/cursor.h"
 #include "xtd/forms/cursors.h"
 #include "xtd/forms/date_range_event_args.h"

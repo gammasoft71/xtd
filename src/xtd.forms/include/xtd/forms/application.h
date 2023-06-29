@@ -12,6 +12,7 @@
 #include "imessage_filter.h"
 #include "message.h"
 #include "message_loop_callback.h"
+#include <xtd/forms/window_messages.h>
 #include <xtd/delegate.h>
 #include <xtd/event_args.h>
 #include <xtd/static.h>

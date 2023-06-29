@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 
-#include <xtd/xtd.core.h>
+#include <xtd/xtd.core>
 
 #include "tunit/abort_error.h"
 #include "tunit/assert.h"
