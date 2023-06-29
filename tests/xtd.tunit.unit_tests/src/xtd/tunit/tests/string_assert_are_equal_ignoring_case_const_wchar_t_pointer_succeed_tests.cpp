@@ -1,5 +1,7 @@
+#include <xtd/tunit/string_assert.h>
+#include <xtd/tunit/test_class_attribute.h>
+#include <xtd/tunit/test_method_attribute.h>
 #include "../../../assert_unit_tests/assert_unit_tests.h"
-#include <xtd/xtd.tunit>
 
 namespace xtd::tunit::tests {
   class test_class_(string_assert_are_equal_ignoring_case_const_wchar_t_pointer_succeed_tests) {
