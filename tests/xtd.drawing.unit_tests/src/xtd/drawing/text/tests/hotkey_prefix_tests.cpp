@@ -1,5 +1,7 @@
 #include <xtd/drawing/text/hotkey_prefix.h>
-#include <xtd/xtd.tunit>
+#include <xtd/tunit/assert.h>
+#include <xtd/tunit/test_class_attribute.h>
+#include <xtd/tunit/test_method_attribute.h>
 
 using namespace xtd::drawing::text;
 using namespace xtd::tunit;
