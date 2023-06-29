@@ -1,4 +1,15 @@
-#include <xtd/xtd.forms.h>
+#include <xtd/drawing/drawing_2d/conical_gradient_brush.h>
+#include <xtd/drawing/drawing_2d/hatch_brush.h>
+#include <xtd/drawing/drawing_2d/linear_gradient_brush.h>
+#include <xtd/drawing/drawing_2d/radial_gradient_brush.h>
+#include <xtd/drawing/pens.h>
+#include <xtd/drawing/system_images.h>
+#include <xtd/drawing/texture_brush.h>
+#include <xtd/forms/application.h>
+#include <xtd/forms/form.h>
+#include <xtd/forms/tab_control.h>
+#include <xtd/forms/tab_page.h>
+#include <xtd/startup.h>
 
 using namespace std;
 using namespace xtd;

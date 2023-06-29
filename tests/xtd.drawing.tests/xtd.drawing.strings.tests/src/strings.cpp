@@ -1,4 +1,14 @@
-#include <xtd/xtd.forms.h>
+#include <xtd/drawing/drawing_2d/linear_gradient_brush.h>
+#include <xtd/drawing/system_colors.h>
+#include <xtd/forms/application.h>
+#include <xtd/forms/check_box.h>
+#include <xtd/forms/combo_box.h>
+#include <xtd/forms/group_box.h>
+#include <xtd/forms/form.h>
+#include <xtd/forms/label.h>
+#include <xtd/forms/tab_control.h>
+#include <xtd/forms/tab_page.h>
+#include <xtd/startup.h>
 
 using namespace xtd;
 using namespace xtd::drawing;

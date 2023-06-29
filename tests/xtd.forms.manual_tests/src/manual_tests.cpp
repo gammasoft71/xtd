@@ -1,4 +1,25 @@
-#include <xtd/xtd.forms.h>
+#include <xtd/drawing/drawing_2d/graphics_path.h>
+#include <xtd/drawing/pens.h>
+#include <xtd/drawing/region.h>
+#include <xtd/drawing/system_icons.h>
+#include <xtd/forms/application.h>
+#include <xtd/forms/button.h>
+#include <xtd/forms/form.h>
+#include <xtd/forms/group_box.h>
+#include <xtd/forms/horizontal_layout_panel.h>
+#include <xtd/forms/label.h>
+#include <xtd/forms/message_box.h>
+#include <xtd/forms/message_notifier.h>
+#include <xtd/forms/numeric_up_down.h>
+#include <xtd/forms/panel.h>
+#include <xtd/forms/picture_box.h>
+#include <xtd/forms/progress_bar.h>
+#include <xtd/forms/status_bar.h>
+#include <xtd/forms/text_box.h>
+#include <xtd/forms/timer.h>
+#include <xtd/forms/vertical_layout_panel.h>
+#include <xtd/startup.h>
+#include <xtd/diagnostics/debug.h>
 #include <chrono>
 
 using namespace xtd;
