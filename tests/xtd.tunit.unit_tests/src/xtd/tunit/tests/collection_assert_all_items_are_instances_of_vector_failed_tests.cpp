@@ -1,5 +1,7 @@
+#include <xtd/tunit/collection_assert.h>
+#include <xtd/tunit/test_class_attribute.h>
+#include <xtd/tunit/test_method_attribute.h>
 #include "../../../assert_unit_tests/assert_unit_tests.h"
-#include <xtd/xtd.tunit>
 
 /*
  This test is commented, it can't work because the pointer addresses change at each build...
