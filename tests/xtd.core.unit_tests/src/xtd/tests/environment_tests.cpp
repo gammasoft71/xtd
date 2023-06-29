@@ -501,8 +501,8 @@ namespace xtd::tests {
     void test_method_(get_folder_path_special_common_application_data) {
       auto sf = environment::special_folder::common_application_data;
       if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
-      else if (environment::os_version().is_macos_platform()) assert::are_equal(io::path::combine("/usr", "share"), environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
-      else if (environment::os_version().is_unix_platform()) assert::are_equal(io::path::combine("/usr", "share"), environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
+      else if (environment::os_version().is_macos_platform()) assert::are_equal(io::path::combine("/", "usr", "share"), environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
+      else if (environment::os_version().is_unix_platform()) assert::are_equal(io::path::combine("/", "usr", "share"), environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
       else assert::fail("Operating System unknown", csf_);
     }
     
@@ -541,8 +541,8 @@ namespace xtd::tests {
     void test_method_(get_folder_path_special_folder_user_profile) {
       auto sf = environment::special_folder::user_profile;
       if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
-      else if (environment::os_version().is_macos_platform()) assert::are_equal(io::path::combine("/Users", environment::user_name()), environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
-      else if (environment::os_version().is_unix_platform()) assert::are_equal(io::path::combine("/home", environment::user_name()), environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
+      else if (environment::os_version().is_macos_platform()) assert::are_equal(io::path::combine("/", "Users", environment::user_name()), environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
+      else if (environment::os_version().is_unix_platform()) assert::are_equal(io::path::combine("/", "home", environment::user_name()), environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
       else assert::fail("Operating System unknown", csf_);
     }
     
@@ -582,7 +582,7 @@ namespace xtd::tests {
       auto sf = environment::special_folder::common_templates;
       if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
       else if (environment::os_version().is_macos_platform()) assert::is_empty(environment::get_folder_path(sf), csf_);
-      else if (environment::os_version().is_unix_platform()) assert::are_equal(io::path::combine("/usr", "share", "templates"), environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
+      else if (environment::os_version().is_unix_platform()) assert::are_equal(io::path::combine("/", "usr", "share", "templates"), environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
       else assert::fail("Operating System unknown", csf_);
     }
     
