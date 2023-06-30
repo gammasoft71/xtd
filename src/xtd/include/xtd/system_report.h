@@ -100,6 +100,10 @@ namespace xtd {
     /// @name Methods
     
     /// @{
+    /// @brief Generates json format string report.
+    /// @return An json format string report.
+    /// @todo Implement json report
+    static xtd::ustring to_json() noexcept;
     /// @brief Generates string report.
     /// @return A string report.
     static xtd::ustring to_string() noexcept;
