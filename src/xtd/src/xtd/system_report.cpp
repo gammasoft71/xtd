@@ -274,6 +274,10 @@ const xtd::environment::xtd_library_collection& system_report::xtd_libraries() n
   return environment::xtd_libraries();
 }
 
+ustring system_report::to_json() noexcept {
+  return "(The JSON report is not yet implemented)";
+}
+
 ustring system_report::to_string() noexcept {
   int32 indent = 0;
   ustring report;
@@ -296,5 +300,5 @@ ustring system_report::to_string() noexcept {
 }
 
 ustring system_report::to_xml() noexcept {
-  return "(Not yet implemented)";
+  return "(The XML report is not yet implemented)";
 }
