@@ -5,7 +5,7 @@ This example demonstrates the use of [xtd::reflection::assembly](https://gammaso
 # Sources
 
 * [src/application_with_cmake_assembly_info.cpp](src/application_with_cmake_assembly_info.cpp)
-* [properties/assembly_îfo.cmake](properties/assembly_îfo.cmake)
+* [properties/assembly_înfo.cmake](properties/assembly_înfo.cmake)
 * [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
