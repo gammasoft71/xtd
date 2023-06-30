@@ -47,6 +47,8 @@ add_sources(
   src/xtd_c_static_library_project.h
   src/xtd_c_unit_test_application_project.h
   src/xtd_console_project.h
+  src/project_base.h
+  src/new_project.h
   src/xtd_gui_project.h
   src/xtd_shared_library_project.h
   src/xtd_static_library_project.h
