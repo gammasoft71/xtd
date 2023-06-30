@@ -1,4 +1,5 @@
-#include "project_management.h"
+#include "new_project.h"
+//#include "project_management.h"
 #include <xtd/startup.h>
 
 using namespace std;
@@ -6,7 +7,7 @@ using namespace xtd;
 using namespace xtd::diagnostics;
 
 namespace xtdc_command {
-  class xtdc final static_ {
+  class xtdc final :public project_base {
   public:
     static auto main(const vector<ustring>& args) {
       if (args.size() == 0) {
@@ -32,25 +33,6 @@ namespace xtdc_command {
     }
     
   private:
-    static ustring get_full_path() noexcept {return xtd::environment::get_folder_path(xtd::environment::special_folder::xtd_resources);}
-    
-    static ustring get_project_full_path_from_path(const xtd::ustring& path) noexcept {
-      if (path.empty() || path == ".") return environment::current_directory();
-      else if (path == "..") {
-        auto directories = environment::current_directory().split({io::path::directory_separator_char()});
-        if (directories.size() < 2) return "";
-        directories.erase(directories.begin() + directories.size() - 2);
-        return io::path::combine(directories);
-      }
-      return io::path::get_full_path(path);
-    }
-    
-    static ustring get_project_name_from_path(const xtd::ustring& path) noexcept {
-      auto directories = get_project_full_path_from_path(path).split({io::path::directory_separator_char()});
-      if (directories.size() == 0) return "";
-      return directories[directories.size() - 1];
-    }
-    
     static vector<ustring> get_help() noexcept {
       return {
         "",
@@ -242,41 +224,7 @@ namespace xtdc_command {
       };
     }
     
-    static vector<ustring> get_new_help() noexcept {
-      return {
-        "Initialize project.",
-        "Usage: new [template-short-name] [path] [<options>]",
-        "",
-        "template-short-name:",
-        "  A template short name of the following table. If no short name specified, gui is used.",
-        "  Templates               Short Name     SDK/Language                         ",
-        "  ----------------------------------------------------------------------------",
-        "  Console Application     console        [xtd], xtd_c, c++, c, c#, objective-c",
-        "  GUI Application         gui            [xtd], xtd_c, cocoa, fltk, gtk+2,",
-        "                                         gtk+3, gtk+4, gtkmm, wxwidgets, qt5,",
-        "                                         qt6, win32, winforms, wpf",
-        "  Shared library          sharedlib      [xtd], xtd_c, c++, c, c#, objective-c",
-        "  Static library          staticlib      [xtd], xtd_c, c++, c, c#, objective-c",
-        "  Unit Test Project       test           [xtd], xtd_c, gtest, catch2",
-        "  Solution File           sln            [xtd], xtd_c",
-        "",
-        "path:",
-        "  Location to place the generated output. If no path is specified, the current path is used.",
-        "",
-        "options:",
-        "  -h, --help          Displays help for this command.",
-        "  -n, --name          The name for the project. If no name is specified, the name of the specified path or of the current directory is used.",
-        "  --type              Filters templates based on available types. Predefined values are \"project\", \"item\" or \"other\".",
-        "  -s , --sdk          Filters templates based on SDK/language and specifies the SDK/language of the template to create.",
-        "",
-        "",
-        "Exemples:",
-        "    xtdc new console",
-        "    xtdc new gui my_app",
-        "    xtdc new --help",
-      };
-    }
-    
+
     static vector<ustring> get_update_help() noexcept {
       return {
         "Regenrates a project.",
@@ -584,49 +532,6 @@ namespace xtdc_command {
       return 0;
     }
     
-    static int new_project(const vector<ustring>& args) {
-      auto show_help = false;
-      ustring invalid_option;
-      ustring type;
-      ustring sdk;
-      ustring name;
-      ustring path;
-      if (!process_new_arguments(args, show_help, type, name, path, sdk, invalid_option)) {
-        if (!invalid_option.empty())
-          console::write_line("Unknown option: {0}", invalid_option);
-        else
-          console::write_line("Invalid parameters");
-        console::write_line(ustring::join("\n", get_new_help()));
-        return -1;
-      }
-      if (show_help)
-        console::write_line(ustring::join("\n", get_new_help()));
-      else {
-        if (type.empty()) type = "gui";
-        if (sdk.empty()) sdk = "xtd";
-        if (name.empty()) name = get_project_name_from_path(path);
-        
-        if (name.empty()) {
-          console::write_line("The name is empty.");
-          return -1;
-        }
-        if (std::find_if(name.begin(), name.end(), [](auto c) {return !(isalnum(c) || c == '_');}) != name.end()) {
-          console::write_line("The name : \"{}\" contains invalid charaters.", name);
-          return -1;
-        }
-        if (name.size() > 128) {
-          console::write_line("The size of the name is invalid, the size must be less than or equal to 128.");
-          return -1;
-        }
-        
-        xtdc_command::project_type project_type = map<string, xtdc_command::project_type> {{"sln", project_type::blank_solution}, {"gui", project_type::gui}, {"console", project_type::console}, {"sharedlib", project_type::shared_library}, {"staticlib", project_type::static_library}, {"test", project_type::unit_test_application}} [type];
-        xtdc_command::project_sdk project_sdk = map<string, xtdc_command::project_sdk> {{"none", xtdc_command::project_sdk::none}, {"catch2", xtdc_command::project_sdk::catch2}, {"cocoa", xtdc_command::project_sdk::cocoa}, {"fltk", xtdc_command::project_sdk::fltk}, {"gtest", xtdc_command::project_sdk::gtest}, {"gtk+2", xtdc_command::project_sdk::gtk2}, {"gtk+3", xtdc_command::project_sdk::gtk3}, {"gtk+4", xtdc_command::project_sdk::gtk4}, {"gtkmm", xtdc_command::project_sdk::gtkmm}, {"qt5", xtdc_command::project_sdk::qt5}, {"qt6", xtdc_command::project_sdk::qt6}, {"win32", xtdc_command::project_sdk::win32}, {"winforms", xtdc_command::project_sdk::winforms}, {"wpf", xtdc_command::project_sdk::wpf}, {"wxwidgets", xtdc_command::project_sdk::wxwidgets}, {"xtd", xtdc_command::project_sdk::xtd}, {"xtd_c", xtdc_command::project_sdk::xtd_c}} [sdk];
-        xtdc_command::project_language project_language = map<string, xtdc_command::project_language> {{"cocoa", xtdc_command::project_language::objectivec}, {"fltk", xtdc_command::project_language::cpp}, {"gtk+2", xtdc_command::project_language::cpp}, {"gtk+3", xtdc_command::project_language::cpp}, {"gtk+4", xtdc_command::project_language::cpp}, {"gtkmm", xtdc_command::project_language::cpp}, {"qt5", xtdc_command::project_language::cpp}, {"qt6", xtdc_command::project_language::cpp}, {"win32", xtdc_command::project_language::cpp}, {"winforms", xtdc_command::project_language::csharp}, {"wpf", xtdc_command::project_language::csharp}, {"wxwidgets", xtdc_command::project_language::cpp}, {"xtd", xtdc_command::project_language::cpp}, {"xtd_c", xtdc_command::project_language::c}, {"c++", xtdc_command::project_language::cpp}, {"cpp", xtdc_command::project_language::cpp}, {"c", xtdc_command::project_language::c}, {"c#", xtdc_command::project_language::csharp}, {"csharp", xtdc_command::project_language::csharp}, {"objective-c", xtdc_command::project_language::objectivec}, {"objectivec", xtdc_command::project_language::objectivec}} [sdk];
-        console::write_line(project_management(get_project_full_path_from_path(path)).create(name, project_type, project_sdk, project_language));
-      }
-      return 0;
-    }
-    
     static int open(const vector<ustring>& args) {
       auto show_help = false;
       ustring invalid_option;
@@ -894,29 +799,6 @@ namespace xtdc_command {
       return true;
     }
     
-    static bool process_new_arguments(const vector<ustring>& args, bool& show_help, ustring& type, ustring& name, ustring& path, ustring& sdk, ustring& invalid_option) {
-      for (size_t i = 1; i < args.size(); i += 1) {
-        if (args[i] == "-h" || args[i] == "--help")
-          show_help = true;
-        else if (args[i] == "-n" || args[i] == "--name") {
-          if (i + 1 >= args.size()) return false;
-          name = args[++i];
-        } else if (args[i] == "-s" || args[i] == "--sdk") {
-          if (i + 1 >= args.size()) return false;
-          sdk = args[++i];
-        } else if (args[i].starts_with('-')) {
-          invalid_option = args[i];
-          return false;
-        } else if (type.empty())
-          type = args[i];
-        else if (path.empty())
-          path = args[i];
-        else
-          return false;
-      }
-      return true;
-    }
-    
     static bool process_open_arguments(const vector<ustring>& args, bool& show_help, bool& release, ustring& path, ustring& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
@@ -1036,7 +918,7 @@ namespace xtdc_command {
         if (show_help) console::write_line(ustring::join("\n", get_help()));
         return 0;
       }
-      static map<ustring, function<int(const vector<ustring>&)>> commands {{"add", add}, {"build", build}, {"clean", clean}, {"documentation", documentation}, {"examples", examples}, {"generate", generate}, {"guide", guide}, {"help", help}, {"install", install}, {"new", new_project}, {"open", open}, {"update", update}, {"run", run}, {"targets", targets}, {"test", test}, {"uninstall", uninstall}, {"web", web}};
+      static map<ustring, function<int(const vector<ustring>&)>> commands {{"add", add}, {"build", build}, {"clean", clean}, {"documentation", documentation}, {"examples", examples}, {"generate", generate}, {"guide", guide}, {"help", help}, {"install", install}, {"new", new_project::execute}, {"open", open}, {"update", update}, {"run", run}, {"targets", targets}, {"test", test}, {"uninstall", uninstall}, {"web", web}};
       auto it = commands.find(command_args[0]);
       if (it == commands.end()) return invalid_command(command_args);
       return it->second(command_args);
