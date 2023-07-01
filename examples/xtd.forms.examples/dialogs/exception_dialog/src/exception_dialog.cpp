@@ -16,7 +16,7 @@ public:
       try {
         throw invalid_operation_exception("Throws an invalid operation exception to show an exception dialog.", current_stack_frame_);
       } catch (const xtd::system_exception& e) {
-        exception_dialog dialog;
+        auto dialog = exception_dialog {};
         dialog.exception(e);
         if (dialog.show_sheet_dialog(*this) == dialog_result::cancel)
           application::exit();
