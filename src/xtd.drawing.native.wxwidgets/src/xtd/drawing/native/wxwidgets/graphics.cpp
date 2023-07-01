@@ -665,7 +665,7 @@ void graphics::measure_string(intptr handle, const ustring& text, intptr font, f
   width = 0.0f;
   height = 0.0f;
   size_t line_index = 0U;
-  auto strings = text.split({ '\n' });
+  auto strings = text.split({'\n'});
   wxString formated_text;
   for (auto string : strings) {
     wxString line_string = wxDrawString::FormatString(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc(), convert_string::to_wstring(string), max_width, hot_key_prefix, trimming);
