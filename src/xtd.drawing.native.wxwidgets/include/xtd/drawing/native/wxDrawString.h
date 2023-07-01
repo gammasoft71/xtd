@@ -88,6 +88,10 @@ namespace xtd {
             #if !defined(__WXMSW__)
             if (font.GetStyle() > wxFontStyle::wxFONTSTYLE_NORMAL) width += std::ceil(dc.GetFontMetrics().averageWidth / 2.3f);
             #endif
+            // Workaround : with wxWidgets version <= 3.3 height size text is too small on macOS.
+            #if defined(__WXOSX__)
+            height += dc.GetFontMetrics().height / 4.0f;
+            #endif
           }
         }
         
