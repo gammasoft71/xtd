@@ -13,7 +13,7 @@ public:
     button1.location({10, 10});
     button1.text("About...");
     button1.click += [&] {
-      static about_dialog dialog;
+      static auto dialog = about_dialog {};
       dialog.icon(xtd::drawing::bitmap(gammasoft_64x64_xpm));
       dialog.name("About dialog");
       dialog.version("1.0");
