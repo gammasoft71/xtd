@@ -9,7 +9,7 @@ using namespace xtd::forms;
 
 struct color_dialog::data {
   drawing::color color = drawing::color::black;
-  std::vector<xtd::drawing::color> custom_colors {16, xtd::drawing::color::white};
+  colors custom_colors {16, xtd::drawing::color::white};
   size_t options = CC_ALPHACOLOR | CC_PREVENTFULLOPEN;
   xtd::ustring title;
 };
@@ -53,11 +53,11 @@ color_dialog& color_dialog::color(const drawing::color& color) {
   return *this;
 }
 
-const std::vector<xtd::drawing::color>& color_dialog::custom_colors() const noexcept {
+const color_dialog::colors& color_dialog::custom_colors() const noexcept {
   return data_->custom_colors;
 }
 
-color_dialog& color_dialog::custom_colors(const std::vector<xtd::drawing::color>& custom_colors)  {
+color_dialog& color_dialog::custom_colors(const colors& custom_colors)  {
   for (size_t index = 0; index < custom_colors.size(); index++)
     data_->custom_colors[index] = custom_colors[index];
   for (size_t index = custom_colors.size(); index < data_->custom_colors.size(); index++)
