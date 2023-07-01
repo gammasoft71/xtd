@@ -199,7 +199,7 @@ graphics& graphics::transform(const xtd::drawing::drawing_2d::matrix& value) noe
 rectangle_f graphics::visible_clip_bounds() const noexcept {
   float x = 0.0f, y = 0.0f, width = 0.0f, height = 0.0f;
   native::graphics::visible_clip_bounds(handle(), x, y, width, height);
-  return {x, y, width, height};
+  return {to_page_unit(x), to_page_unit(y), to_page_unit(width), to_page_unit(height)};
 }
 
 void graphics::clear(const color& color) {
@@ -219,7 +219,7 @@ void graphics::copy_from_graphics(const graphics& source, int32 source_x, int32 
 }
 
 void graphics::copy_from_graphics(const graphics& source, int32 source_x, int32 source_y, int32 destination_x, int32 destination_y, const xtd::drawing::size& block_region_size, xtd::drawing::copy_pixel_operation copy_pixel_operation) {
-  native::graphics::copy_from_graphics(handle(), source.handle(), source_x, source_y, destination_x, destination_y, block_region_size.width(), block_region_size.height(), static_cast<int32>(copy_pixel_operation));
+  native::graphics::copy_from_graphics(handle(), source.handle(), to_pixels(source_x), to_pixels(source_y), to_pixels(destination_x), to_pixels(destination_y), to_pixels(block_region_size.width()), to_pixels(block_region_size.height()), static_cast<int32>(copy_pixel_operation));
 }
 
 void graphics::copy_from_screen(const xtd::drawing::point& upper_left_source, const xtd::drawing::point& upper_left_destination, const xtd::drawing::size& block_region_size) {
@@ -235,7 +235,7 @@ void graphics::copy_from_screen(int32 source_x, int32 source_y, int32 destinatio
 }
 
 void graphics::copy_from_screen(int32 source_x, int32 source_y, int32 destination_x, int32 destination_y, const xtd::drawing::size& block_region_size, xtd::drawing::copy_pixel_operation copy_pixel_operation) {
-  native::graphics::copy_from_screen(handle(), source_x, source_y, destination_x, destination_y, block_region_size.width(), block_region_size.height(), static_cast<int32>(copy_pixel_operation));
+  native::graphics::copy_from_screen(handle(), to_pixels(source_x), to_pixels(source_y), to_pixels(destination_x), to_pixels(destination_y), to_pixels(block_region_size.width()), to_pixels(block_region_size.height()), static_cast<int32>(copy_pixel_operation));
 }
 
 void graphics::draw_arc(const xtd::drawing::pen& pen, const xtd::drawing::rectangle& rect, float start_angle, float sweep_angle) {
@@ -832,7 +832,7 @@ size_f graphics::measure_string(const xtd::ustring& text, const xtd::drawing::fo
 size_f graphics::measure_string(const xtd::ustring& text, const xtd::drawing::font& font, const xtd::drawing::size_f& layout_area, const xtd::drawing::string_format& format, size_t characters_fitted, size_t lines_filled) {
   float string_width = 0.0f;
   float string_height = 0.0f;
-  native::graphics::measure_string(handle(), text, font.handle(), string_width, string_height, layout_area.width(), layout_area.height(), static_cast<int32>(format.alignment()), static_cast<int32>(format.line_alignment()), static_cast<int32>(format.hotkey_prefix()), static_cast<int32>(format.trimming()), characters_fitted, lines_filled, (format.format_flags() & string_format_flags::measure_trailing_spaces) == string_format_flags::measure_trailing_spaces);
+  native::graphics::measure_string(handle(), text, font.handle(), string_width, string_height, to_pixels(layout_area.width()), to_pixels(layout_area.height()), static_cast<int32>(format.alignment()), static_cast<int32>(format.line_alignment()), static_cast<int32>(format.hotkey_prefix()), static_cast<int32>(format.trimming()), characters_fitted, lines_filled, (format.format_flags() & string_format_flags::measure_trailing_spaces) == string_format_flags::measure_trailing_spaces);
   return size_f(to_page_unit(string_width), to_page_unit(string_height));
 }
 
@@ -882,16 +882,16 @@ void graphics::scale_transform(float sx, float sy) {
 }
 
 void graphics::scale_transform(float sx, float sy, matrix_order order) {
-  native::graphics::scale_transform(handle(), sx, sy, static_cast<int32>(order));
+  native::graphics::scale_transform(handle(), to_pixels(sx), to_pixels(sy), static_cast<int32>(order));
 }
 
 void graphics::translate_clip(int32 dx, int32 dy) {
-  data_->clip.translate(dx, dy);
+  data_->clip.translate(to_pixels(dx), to_pixels(dy));
   native::graphics::clip(handle(), clip().handle());
 }
 
 void graphics::translate_clip(float dx, float dy) {
-  data_->clip.translate(dx, dy);
+  data_->clip.translate(to_pixels(dx), to_pixels(dy));
   native::graphics::clip(handle(), clip().handle());
 }
 
@@ -926,6 +926,10 @@ float graphics::to_page_unit(float value, graphics_unit page_unit, float page_sc
   }
 }
 
+int32 graphics::to_pixels(int32 value) const {
+  return as<int32>(to_pixels(as<float>(value)));
+}
+                   
 float graphics::to_pixels(float value) const {
   return to_pixels(value, data_->page_unit, data_->page_scale, dpi_x());
 }
