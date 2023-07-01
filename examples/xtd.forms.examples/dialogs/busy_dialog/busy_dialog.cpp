@@ -13,7 +13,7 @@ public:
     button1.parent(*this);
     button1.text("Do something...");
     button1.click += [&] {
-      busy_dialog dialog;
+      auto dialog = busy_dialog {};
       dialog.icon(xtd::drawing::system_icons::exclamation({64, 64}));
       dialog.text("Application busy");
       dialog.description("Please wait while do something...");
