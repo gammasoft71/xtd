@@ -1330,6 +1330,7 @@ namespace xtd {
       friend xtd::drawing::region;
       float to_page_unit(float value) const;
       static float to_page_unit(float value, xtd::drawing::graphics_unit page_unit, float page_scale, float dpi);
+      int32 to_pixels(int32 value) const;
       float to_pixels(float value) const;
       static float to_pixels(float value, xtd::drawing::graphics_unit page_unit, float page_scale, float dpi);
       friend xtd::forms::control;
