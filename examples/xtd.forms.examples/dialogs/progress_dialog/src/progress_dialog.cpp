@@ -31,7 +31,7 @@ public:
     button_indeterminate_process.parent(*this);
     button_indeterminate_process.text("Indeterminate process...");
     button_indeterminate_process.click += [this] {
-      progress_dialog dialog;
+      auto dialog = progress_dialog {};
       dialog.text("Indeterminate process running");
       dialog.message("Click \"Cancel\" to abort");
       dialog.marquee(true);
