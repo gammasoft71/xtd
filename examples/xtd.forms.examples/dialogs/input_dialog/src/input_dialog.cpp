@@ -13,12 +13,12 @@ namespace input_dialog_example {
       button1.location({10, 10});
       button1.text("Text...");
       button1.click += [&] {
-        input_dialog input_dialog;
-        input_dialog.text("Caption text");
-        input_dialog.message("Message text");
-        input_dialog.value(label1.text());
-        if (input_dialog.show_sheet_dialog(*this) == dialog_result::ok)
-          label1.text(input_dialog.value());
+        auto dialog = input_dialog {};
+        dialog.text("Caption text");
+        dialog.message("Message text");
+        dialog.value(label1.text());
+        if (dialog.show_sheet_dialog(*this) == dialog_result::ok)
+          label1.text(dialog.value());
       };
       
       label1.location({10, 50});
