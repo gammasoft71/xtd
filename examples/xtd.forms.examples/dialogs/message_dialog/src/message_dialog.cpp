@@ -15,7 +15,7 @@ public:
     button_show_message.text("Message...");
     button_show_message.width(100);
     button_show_message.click += [&] {
-      message_dialog dialog;
+      auto dialog = message_dialog {};
       dialog.buttons(message_dialog_buttons::ok_cancel);
       dialog.icon(message_dialog_icon::warning);
       dialog.message("Hello, World!");
