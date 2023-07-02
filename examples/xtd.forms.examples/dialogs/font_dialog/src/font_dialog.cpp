@@ -14,12 +14,12 @@ public:
     button1.location({10, 10});
     button1.text("Font...");
     button1.click += [&] {
-      font_dialog font_dialog;
-      font_dialog.color(label1.fore_color());
-      font_dialog.font(label1.font());
-      if (font_dialog.show_dialog(*this) == forms::dialog_result::ok) {
-        label1.fore_color(font_dialog.color());
-        label1.font(font_dialog.font());
+      auto dialog = font_dialog {};
+      dialog.color(label1.fore_color());
+      dialog.font(label1.font());
+      if (dialog.show_dialog(*this) == forms::dialog_result::ok) {
+        label1.fore_color(dialog.color());
+        label1.font(dialog.font());
       }
     };
     
