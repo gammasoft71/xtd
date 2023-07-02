@@ -13,7 +13,7 @@ public:
     button1.location({10, 10});
     button1.text("Save...");
     button1.click += [&] {
-      save_file_dialog dialog;
+      auto dialog = save_file_dialog {};
       dialog.initial_directory(environment::get_folder_path(environment::special_folder::desktop));
       dialog.file_name("MyFile.txt");
       dialog.filter("Text Files (*.txt)|*.txt;*.md|All Files (*.*)|*.*");
