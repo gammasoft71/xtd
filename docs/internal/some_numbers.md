@@ -4,7 +4,7 @@
 
 ## Key dates
 
-* start project : 2022-12-23
+* start project : 2019-02-06
 * First release (beta) : 2021-10-10
 
 ## Team
