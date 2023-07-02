@@ -14,8 +14,8 @@ public:
     button1.location({10, 10});
     button1.text("Open...");
     button1.click += [&] {
-      open_file_dialog dialog;
-      dialog.initial_directory(!file_name.empty() ? io::path::get_directory_name(file_name) : environment::get_folder_path(environment::special_folder::desktop));
+      auto dialog = open_file_dialog {};
+      dialog.initial_directory(file_name.empty() ? environment::get_folder_path(environment::special_folder::desktop) : io::path::get_directory_name(file_name));
       dialog.file_name(io::path::get_file_name(file_name));
       dialog.filter("Text Files (*.txt)|*.txt|All Files (*.*)|*.*");
       if (dialog.show_sheet_dialog(*this) == forms::dialog_result::ok) {
