@@ -37,7 +37,7 @@ namespace xtd {
     
     /// @cond
     friend std::ostream& operator <<(std::ostream& os, const beep& b) {
-      if (console::is_output_redirected() && os.rdbuf() == console::out.rdbuf())
+      if (!console::is_output_redirected() && os.rdbuf() == console::out.rdbuf())
         console::beep(b.frequency_, b.duration_);
       return os;
     }
