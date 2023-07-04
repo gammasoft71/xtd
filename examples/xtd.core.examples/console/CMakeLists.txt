@@ -23,6 +23,7 @@ add_projects(
   console_song
   console_title
   console_unicode
+  console_window_size
   redirect_output
   wconsole
 )
