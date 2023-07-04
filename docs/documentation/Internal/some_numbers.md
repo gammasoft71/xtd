@@ -6,7 +6,7 @@ sidebar_position: 15
 
 ## Key dates
 
-* start project : 2021-02-06
+* start project : 2019-02-06
 * First release (beta) : 2021-10-10
 
 ## Team
