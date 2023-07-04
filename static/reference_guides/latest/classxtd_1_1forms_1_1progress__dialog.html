@@ -170,7 +170,7 @@ Inheritance diagram for xtd::forms::progress_dialog:</div>
 <div class="line">    button_indeterminate_process.parent(*<span class="keyword">this</span>);</div>
 <div class="line">    button_indeterminate_process.text(<span class="stringliteral">&quot;Indeterminate process...&quot;</span>);</div>
 <div class="line">    button_indeterminate_process.click += [<span class="keyword">this</span>] {</div>
-<div class="line">      <a class="code hl_class" href="classxtd_1_1forms_1_1progress__dialog.html">progress_dialog</a> dialog;</div>
+<div class="line">      <span class="keyword">auto</span> dialog = <a class="code hl_class" href="classxtd_1_1forms_1_1progress__dialog.html">progress_dialog</a> {};</div>
 <div class="line">      dialog.<a class="code hl_function" href="classxtd_1_1forms_1_1progress__dialog.html#ac7d1e038ad0e99e4cab86d8a03a412f9">text</a>(<span class="stringliteral">&quot;Indeterminate process running&quot;</span>);</div>
 <div class="line">      dialog.<a class="code hl_function" href="classxtd_1_1forms_1_1progress__dialog.html#ad2f9ef960e5f9563d7a997cad1e86203">message</a>(<span class="stringliteral">&quot;Click \&quot;Cancel\&quot; to abort&quot;</span>);</div>
 <div class="line">      dialog.<a class="code hl_function" href="classxtd_1_1forms_1_1progress__dialog.html#abe4f386fb2b614fae044e0da2d4eae2e">marquee</a>(<span class="keyword">true</span>);</div>
@@ -209,7 +209,7 @@ Inheritance diagram for xtd::forms::progress_dialog:</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1progress__dialog_html_ae3f9b9a0f2879d998fd9a1590dc16501"><div class="ttname"><a href="classxtd_1_1forms_1_1progress__dialog.html#ae3f9b9a0f2879d998fd9a1590dc16501">xtd::forms::progress_dialog::value</a></div><div class="ttdeci">int32 value() const noexcept</div><div class="ttdoc">Gets the current position of the progress bar.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1progress__dialog_html_ae90304ec0b081346aebe5d32f3bc5a73"><div class="ttname"><a href="classxtd_1_1forms_1_1progress__dialog.html#ae90304ec0b081346aebe5d32f3bc5a73">xtd::forms::progress_dialog::show_cancel_button</a></div><div class="ttdeci">bool show_cancel_button() const noexcept</div><div class="ttdoc">Gets a value that indicates whether cancel button is shown.</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1"><div class="ttname"><a href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">xtd::forms::status_bar_panel_style::text</a></div><div class="ttdeci">@ text</div><div class="ttdoc">The xtd::forms::status_bar_panel displays text in the standard font.</div></div>
-<div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> about_box.h:13</div></div>
+<div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> debug.h:20</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="progress_dialog_8cpp-example.html#_a1">progress_dialog.cpp</a>.</dd>
@@ -428,8 +428,6 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Gets whether user has clicked on cancel button. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if user has clicked on cancel button; otherwise false. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="progress_dialog_8cpp-example.html#a13">progress_dialog.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -616,8 +614,6 @@ Because a <a class="el" href="classxtd_1_1forms_1_1progress__bar.html" title="Re
 
 <p>Gets a value that Indicates progress by continuously scrolling a block across a <a class="el" href="classxtd_1_1forms_1_1progress__bar.html" title="Represents a Windows progress bar control.">progress_bar</a> in a marquee fashion. </p>
 <dl class="section return"><dt>Returns</dt><dd>tree is marquee; otherwise false. The default is false. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="progress_dialog_8cpp-example.html#a10">progress_dialog.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -1014,8 +1010,6 @@ You can use this property to specify a value to which the value property must be
 
 <p>Gets a value that indicates whether cancel button is shown. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if cancel button shown; otherwise false. By default false. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="progress_dialog_8cpp-example.html#a11">progress_dialog.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -1112,8 +1106,6 @@ You can use this property to specify a value to which the value property must be
 
 <p>Gets a value that indicates whether elapsed time is shown. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if elapsed time is shown; otherwise false. By default false. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="progress_dialog_8cpp-example.html#a12">progress_dialog.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -1569,7 +1561,7 @@ The minimum and maximum values of the value property are specified by the minimu
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jun 28 2023 22:51:49 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 4 2023 15:54:12 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -84,6 +84,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="classxtd_1_1forms_1_1color__dialog-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">xtd::forms::color_dialog Class Reference<div class="ingroups"><a class="el" href="group__libraries.html">libraries</a> &raquo; <a class="el" href="group__xtd__forms.html">xtd.forms</a> &#124; <a class="el" href="group__gui.html">forms</a> &raquo; <a class="el" href="group__dialogs.html">dialogs</a></div></div></div>
 </div><!--header-->
@@ -143,7 +144,6 @@ When you create an instance of <a class="el" href="classxtd_1_1forms_1_1color__d
 </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1color__dialog.html" title="Represents a common dialog box that displays available colors along with controls that enable the use...">color_dialog</a> dialog. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1drawing.html">xtd::drawing</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
@@ -157,18 +157,18 @@ When you create an instance of <a class="el" href="classxtd_1_1forms_1_1color__d
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.location({10, 10});</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.text(<span class="stringliteral">&quot;Color...&quot;</span>);</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.click += [&amp;] {</div>
-<div class="line">      <a class="code hl_class" href="classxtd_1_1forms_1_1color__dialog.html">color_dialog</a> <a class="code hl_class" href="classxtd_1_1forms_1_1color__dialog.html">color_dialog</a>;</div>
-<div class="line">      <a class="code hl_class" href="classxtd_1_1forms_1_1color__dialog.html">color_dialog</a>.<a class="code hl_function" href="classxtd_1_1forms_1_1color__dialog.html#ae2df5d3690cea7a6ff44338e82bc085a">color</a>(back_color());</div>
-<div class="line">      <a class="code hl_class" href="classxtd_1_1forms_1_1color__dialog.html">color_dialog</a>.<a class="code hl_function" href="classxtd_1_1forms_1_1color__dialog.html#a92577ff763a15a760e2a7eaedfd578a2">custom_colors</a>(custom_colors);</div>
-<div class="line">      <span class="keywordflow">if</span> (<a class="code hl_class" href="classxtd_1_1forms_1_1color__dialog.html">color_dialog</a>.<a class="code hl_function" href="classxtd_1_1forms_1_1common__dialog.html#a2ebbe192a374a0f84ecbb4b96e60b8ed">show_dialog</a>(*<span class="keyword">this</span>) == forms::dialog_result::ok)</div>
-<div class="line">        back_color(<a class="code hl_class" href="classxtd_1_1forms_1_1color__dialog.html">color_dialog</a>.<a class="code hl_function" href="classxtd_1_1forms_1_1color__dialog.html#ae2df5d3690cea7a6ff44338e82bc085a">color</a>());</div>
-<div class="line">      custom_colors = <a class="code hl_class" href="classxtd_1_1forms_1_1color__dialog.html">color_dialog</a>.<a class="code hl_function" href="classxtd_1_1forms_1_1color__dialog.html#a92577ff763a15a760e2a7eaedfd578a2">custom_colors</a>();</div>
+<div class="line">      <span class="keyword">auto</span> dialog = <a class="code hl_class" href="classxtd_1_1forms_1_1color__dialog.html">color_dialog</a> {};</div>
+<div class="line">      dialog.<a class="code hl_function" href="classxtd_1_1forms_1_1color__dialog.html#ae2df5d3690cea7a6ff44338e82bc085a">color</a>(back_color());</div>
+<div class="line">      dialog.custom_colors(custom_colors);</div>
+<div class="line">      <span class="keywordflow">if</span> (dialog.show_dialog(*<span class="keyword">this</span>) == forms::dialog_result::ok)</div>
+<div class="line">        back_color(dialog.color());</div>
+<div class="line">      custom_colors = dialog.custom_colors();</div>
 <div class="line">    };</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> button1;</div>
-<div class="line">  vector&lt;color&gt; custom_colors = {color::red, color::green, color::blue, color::yellow, system_colors::control()};</div>
+<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>;</div>
+<div class="line">  <a class="code hl_typedef" href="classxtd_1_1forms_1_1color__dialog.html#a3727adcc036ed57d1a3149c0641fa729">color_dialog::colors</a> custom_colors = {color::red, color::green, color::blue, color::yellow, system_colors::control()};</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
@@ -177,19 +177,24 @@ When you create an instance of <a class="el" href="classxtd_1_1forms_1_1color__d
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a4ee49410f3156fd66b61c2567a59388e"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a></div><div class="ttdeci">static void run()</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1button_html"><div class="ttname"><a href="classxtd_1_1forms_1_1button.html">xtd::forms::button</a></div><div class="ttdoc">Represents a Windows button control.</div><div class="ttdef"><b>Definition</b> button.h:45</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1color__dialog_html"><div class="ttname"><a href="classxtd_1_1forms_1_1color__dialog.html">xtd::forms::color_dialog</a></div><div class="ttdoc">Represents a common dialog box that displays available colors along with controls that enable the use...</div><div class="ttdef"><b>Definition</b> color_dialog.h:30</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1color__dialog_html_a92577ff763a15a760e2a7eaedfd578a2"><div class="ttname"><a href="classxtd_1_1forms_1_1color__dialog.html#a92577ff763a15a760e2a7eaedfd578a2">xtd::forms::color_dialog::custom_colors</a></div><div class="ttdeci">const std::vector&lt; xtd::drawing::color &gt; &amp; custom_colors() const noexcept</div><div class="ttdoc">Gets the set of custom colors shown in the dialog box.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1color__dialog_html_a3727adcc036ed57d1a3149c0641fa729"><div class="ttname"><a href="classxtd_1_1forms_1_1color__dialog.html#a3727adcc036ed57d1a3149c0641fa729">xtd::forms::color_dialog::colors</a></div><div class="ttdeci">std::vector&lt; xtd::drawing::color &gt; colors</div><div class="ttdoc">@ brief Represents an xtd::drawing::color array.</div><div class="ttdef"><b>Definition</b> color_dialog.h:35</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1color__dialog_html_ae2df5d3690cea7a6ff44338e82bc085a"><div class="ttname"><a href="classxtd_1_1forms_1_1color__dialog.html#ae2df5d3690cea7a6ff44338e82bc085a">xtd::forms::color_dialog::color</a></div><div class="ttdeci">drawing::color color() const noexcept</div><div class="ttdoc">Gets the color selected by the user.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1common__dialog_html_a2ebbe192a374a0f84ecbb4b96e60b8ed"><div class="ttname"><a href="classxtd_1_1forms_1_1common__dialog.html#a2ebbe192a374a0f84ecbb4b96e60b8ed">xtd::forms::common_dialog::show_dialog</a></div><div class="ttdeci">xtd::forms::dialog_result show_dialog()</div><div class="ttdoc">Runs a common dialog box with a default owner.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application's user interface.</div><div class="ttdef"><b>Definition</b> form.h:49</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9"><div class="ttname"><a href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">xtd::forms::message_dialog_default_button::button1</a></div><div class="ttdeci">@ button1</div><div class="ttdoc">The first button on the message box is the default button.</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1"><div class="ttname"><a href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">xtd::forms::status_bar_panel_style::text</a></div><div class="ttdeci">@ text</div><div class="ttdoc">The xtd::forms::status_bar_panel displays text in the standard font.</div></div>
 <div class="ttc" id="anamespacextd_1_1drawing_html"><div class="ttname"><a href="namespacextd_1_1drawing.html">xtd::drawing</a></div><div class="ttdoc">The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functi...</div><div class="ttdef"><b>Definition</b> basic_colors.h:13</div></div>
-<div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> about_box.h:13</div></div>
+<div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> debug.h:20</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="color_dialog_8cpp-example.html#_a1">color_dialog.cpp</a>, and <a class="el" href="demo_8cpp-example.html#_a78">demo.cpp</a>.</dd>
 </dl>
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a3727adcc036ed57d1a3149c0641fa729"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1color__dialog.html#a3727adcc036ed57d1a3149c0641fa729">colors</a> = std::vector&lt; <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &gt;</td></tr>
+<tr class="memdesc:a3727adcc036ed57d1a3149c0641fa729"><td class="mdescLeft">&#160;</td><td class="mdescRight">@ brief Represents an <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> array.  <br /></td></tr>
+<tr class="separator:a3727adcc036ed57d1a3149c0641fa729"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Constructors</h2></td></tr>
 <tr class="memitem:ab783ee1342b249792cbf5d279a8db222"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1color__dialog.html#ab783ee1342b249792cbf5d279a8db222">color_dialog</a> ()</td></tr>
 <tr class="memdesc:ab783ee1342b249792cbf5d279a8db222"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1forms_1_1color__dialog.html" title="Represents a common dialog box that displays available colors along with controls that enable the use...">color_dialog</a> class.  <br /></td></tr>
@@ -220,12 +225,12 @@ When you create an instance of <a class="el" href="classxtd_1_1forms_1_1color__d
 <tr class="memitem:a1668ab63569715099c4576ef8488f487"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1forms_1_1color__dialog.html">color_dialog</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1color__dialog.html#a1668ab63569715099c4576ef8488f487">color</a> (const <a class="el" href="classxtd_1_1drawing_1_1color.html">drawing::color</a> &amp;color)</td></tr>
 <tr class="memdesc:a1668ab63569715099c4576ef8488f487"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the color selected by the user.  <br /></td></tr>
 <tr class="separator:a1668ab63569715099c4576ef8488f487"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92577ff763a15a760e2a7eaedfd578a2"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1color__dialog.html#a92577ff763a15a760e2a7eaedfd578a2">custom_colors</a> () const noexcept</td></tr>
-<tr class="memdesc:a92577ff763a15a760e2a7eaedfd578a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the set of custom colors shown in the dialog box.  <br /></td></tr>
-<tr class="separator:a92577ff763a15a760e2a7eaedfd578a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:accb64884a9a5f057cd006efacb23b01b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1forms_1_1color__dialog.html">color_dialog</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1color__dialog.html#accb64884a9a5f057cd006efacb23b01b">custom_colors</a> (const std::vector&lt; <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &gt; &amp;custom_colors)</td></tr>
-<tr class="memdesc:accb64884a9a5f057cd006efacb23b01b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the set of custom colors shown in the dialog box.  <br /></td></tr>
-<tr class="separator:accb64884a9a5f057cd006efacb23b01b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42ed751459b9b72adb1a5125681a59d2"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1forms_1_1color__dialog.html#a3727adcc036ed57d1a3149c0641fa729">colors</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1color__dialog.html#a42ed751459b9b72adb1a5125681a59d2">custom_colors</a> () const noexcept</td></tr>
+<tr class="memdesc:a42ed751459b9b72adb1a5125681a59d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the set of custom colors shown in the dialog box.  <br /></td></tr>
+<tr class="separator:a42ed751459b9b72adb1a5125681a59d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66085ab91c9597eafd4a0bed3705ab25"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1forms_1_1color__dialog.html">color_dialog</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1color__dialog.html#a66085ab91c9597eafd4a0bed3705ab25">custom_colors</a> (const <a class="el" href="classxtd_1_1forms_1_1color__dialog.html#a3727adcc036ed57d1a3149c0641fa729">colors</a> &amp;custom_colors)</td></tr>
+<tr class="memdesc:a66085ab91c9597eafd4a0bed3705ab25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the set of custom colors shown in the dialog box.  <br /></td></tr>
+<tr class="separator:a66085ab91c9597eafd4a0bed3705ab25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4920a59c7cfc56d658765d8064b24548"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1color__dialog.html#a4920a59c7cfc56d658765d8064b24548">full_open</a> () const noexcept</td></tr>
 <tr class="memdesc:a4920a59c7cfc56d658765d8064b24548"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the controls used to create custom colors are visible when the dialog box is opened.  <br /></td></tr>
 <tr class="separator:a4920a59c7cfc56d658765d8064b24548"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -346,6 +351,23 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:aee075564d621347a36cd8ecb963db462 inherit pro_methods_classxtd_1_1forms_1_1component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether the component is currently in design mode.  <br /></td></tr>
 <tr class="separator:aee075564d621347a36cd8ecb963db462 inherit pro_methods_classxtd_1_1forms_1_1component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a3727adcc036ed57d1a3149c0641fa729" name="a3727adcc036ed57d1a3149c0641fa729"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3727adcc036ed57d1a3149c0641fa729">&#9670;&#160;</a></span>colors</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classxtd_1_1forms_1_1color__dialog.html#a3727adcc036ed57d1a3149c0641fa729">xtd::forms::color_dialog::colors</a> =  std::vector&lt;<a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>@ brief Represents an <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> array. </p>
+
+</div>
+</div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ab783ee1342b249792cbf5d279a8db222" name="ab783ee1342b249792cbf5d279a8db222"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab783ee1342b249792cbf5d279a8db222">&#9670;&#160;</a></span>color_dialog()</h2>
@@ -610,8 +632,8 @@ You can change the value for any of these properties through a separate call to 
 
 </div>
 </div>
-<a id="a92577ff763a15a760e2a7eaedfd578a2" name="a92577ff763a15a760e2a7eaedfd578a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a92577ff763a15a760e2a7eaedfd578a2">&#9670;&#160;</a></span>custom_colors() <span class="overload">[1/2]</span></h2>
+<a id="a42ed751459b9b72adb1a5125681a59d2" name="a42ed751459b9b72adb1a5125681a59d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42ed751459b9b72adb1a5125681a59d2">&#9670;&#160;</a></span>custom_colors() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -620,7 +642,7 @@ You can change the value for any of these properties through a separate call to 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::vector&lt; <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &gt; &amp; xtd::forms::color_dialog::custom_colors </td>
+          <td class="memname">const <a class="el" href="classxtd_1_1forms_1_1color__dialog.html#a3727adcc036ed57d1a3149c0641fa729">colors</a> &amp; xtd::forms::color_dialog::custom_colors </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -638,13 +660,11 @@ You can change the value for any of these properties through a separate call to 
 <dl class="section remark"><dt>Remarks</dt><dd>Users can create their own set of custom colors. These colors are contained in an int32 composed of the BGR (blue, green, red) values necessary to create the color. </dd>
 <dd>
 Custom colors can only be defined if allow_full_open is set to true. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="color_dialog_8cpp-example.html#a3">color_dialog.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
-<a id="accb64884a9a5f057cd006efacb23b01b" name="accb64884a9a5f057cd006efacb23b01b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#accb64884a9a5f057cd006efacb23b01b">&#9670;&#160;</a></span>custom_colors() <span class="overload">[2/2]</span></h2>
+<a id="a66085ab91c9597eafd4a0bed3705ab25" name="a66085ab91c9597eafd4a0bed3705ab25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66085ab91c9597eafd4a0bed3705ab25">&#9670;&#160;</a></span>custom_colors() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -652,7 +672,7 @@ Custom colors can only be defined if allow_full_open is set to true. </dd></dl>
         <tr>
           <td class="memname"><a class="el" href="classxtd_1_1forms_1_1color__dialog.html">color_dialog</a> &amp; xtd::forms::color_dialog::custom_colors </td>
           <td>(</td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1color__dialog.html#a3727adcc036ed57d1a3149c0641fa729">colors</a> &amp;&#160;</td>
           <td class="paramname"><em>custom_colors</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1043,7 +1063,7 @@ Custom colors can only be defined if allow_full_open is set to true. </dd></dl>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jun 28 2023 22:51:48 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 4 2023 15:54:11 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -154,12 +154,12 @@ Inheritance diagram for xtd::forms::message_dialog:</div>
 <div class="line">    button_show_message.text(<span class="stringliteral">&quot;Message...&quot;</span>);</div>
 <div class="line">    button_show_message.width(100);</div>
 <div class="line">    button_show_message.click += [&amp;] {</div>
-<div class="line">      <a class="code hl_class" href="classxtd_1_1forms_1_1message__dialog.html">message_dialog</a> dialog;</div>
+<div class="line">      <span class="keyword">auto</span> dialog = <a class="code hl_class" href="classxtd_1_1forms_1_1message__dialog.html">message_dialog</a> {};</div>
 <div class="line">      dialog.<a class="code hl_function" href="classxtd_1_1forms_1_1message__dialog.html#a6223508aa83b08a91adf024ba3b7e440">buttons</a>(message_dialog_buttons::ok_cancel);</div>
-<div class="line">      dialog.<a class="code hl_function" href="classxtd_1_1forms_1_1message__dialog.html#aa8db25082473273089779d43c4f1978e">icon</a>(message_dialog_icon::warning);</div>
-<div class="line">      dialog.<a class="code hl_function" href="classxtd_1_1forms_1_1message__dialog.html#aac7057b6fcaf6e75110d507b7daf880b">message</a>(<span class="stringliteral">&quot;Hello, World!&quot;</span>);</div>
-<div class="line">      dialog.<a class="code hl_function" href="classxtd_1_1forms_1_1message__dialog.html#a27fe8eeff69beb557edae123798f179f">text</a>(<span class="stringliteral">&quot;Message&quot;</span>);</div>
-<div class="line">      label_dialog_result.text(ustring::format(<span class="stringliteral">&quot;dialog_result = {}&quot;</span>, dialog.<a class="code hl_function" href="classxtd_1_1forms_1_1message__dialog.html#ac9e4c7c7fdb43bb1d0fc9a2ed99066b7">show_sheet_dialog</a>(*<span class="keyword">this</span>)));</div>
+<div class="line">      dialog.icon(message_dialog_icon::warning);</div>
+<div class="line">      dialog.message(<span class="stringliteral">&quot;Hello, World!&quot;</span>);</div>
+<div class="line">      dialog.text(<span class="stringliteral">&quot;Message&quot;</span>);</div>
+<div class="line">      label_dialog_result.text(ustring::format(<span class="stringliteral">&quot;dialog_result = {}&quot;</span>, dialog.show_sheet_dialog(*<span class="keyword">this</span>)));</div>
 <div class="line">    };</div>
 <div class="line">    </div>
 <div class="line">    label_dialog_result.location({10, 55});</div>
@@ -179,13 +179,9 @@ Inheritance diagram for xtd::forms::message_dialog:</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application's user interface.</div><div class="ttdef"><b>Definition</b> form.h:49</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1label_html"><div class="ttname"><a href="classxtd_1_1forms_1_1label.html">xtd::forms::label</a></div><div class="ttdoc">Represents a standard Windows label.</div><div class="ttdef"><b>Definition</b> label.h:34</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1message__dialog_html"><div class="ttname"><a href="classxtd_1_1forms_1_1message__dialog.html">xtd::forms::message_dialog</a></div><div class="ttdoc">Displays a message window, also known as a dialog box, which presents a message to the user....</div><div class="ttdef"><b>Definition</b> message_dialog.h:39</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1message__dialog_html_a27fe8eeff69beb557edae123798f179f"><div class="ttname"><a href="classxtd_1_1forms_1_1message__dialog.html#a27fe8eeff69beb557edae123798f179f">xtd::forms::message_dialog::text</a></div><div class="ttdeci">xtd::ustring text() const noexcept</div><div class="ttdoc">Gets the dialog caption text.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1message__dialog_html_a6223508aa83b08a91adf024ba3b7e440"><div class="ttname"><a href="classxtd_1_1forms_1_1message__dialog.html#a6223508aa83b08a91adf024ba3b7e440">xtd::forms::message_dialog::buttons</a></div><div class="ttdeci">xtd::forms::message_dialog_buttons buttons() const noexcept</div><div class="ttdoc">Gets buttons to display in the message dialog.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1message__dialog_html_aa8db25082473273089779d43c4f1978e"><div class="ttname"><a href="classxtd_1_1forms_1_1message__dialog.html#aa8db25082473273089779d43c4f1978e">xtd::forms::message_dialog::icon</a></div><div class="ttdeci">xtd::forms::message_dialog_icon icon() const noexcept</div><div class="ttdoc">Gets icon to display in the message dialog.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1message__dialog_html_aac7057b6fcaf6e75110d507b7daf880b"><div class="ttname"><a href="classxtd_1_1forms_1_1message__dialog.html#aac7057b6fcaf6e75110d507b7daf880b">xtd::forms::message_dialog::message</a></div><div class="ttdeci">xtd::ustring message() const noexcept</div><div class="ttdoc">Gets the text message.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1message__dialog_html_ac9e4c7c7fdb43bb1d0fc9a2ed99066b7"><div class="ttname"><a href="classxtd_1_1forms_1_1message__dialog.html#ac9e4c7c7fdb43bb1d0fc9a2ed99066b7">xtd::forms::message_dialog::show_sheet_dialog</a></div><div class="ttdeci">xtd::forms::dialog_result show_sheet_dialog(const iwin32_window &amp;owner)</div><div class="ttdoc">Runs message dialog box.</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga475781e3c7baa300a81ab16d22b16962ad5189de027922f81005951e6efe0efd5"><div class="ttname"><a href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962ad5189de027922f81005951e6efe0efd5">xtd::forms::bounds_specified::location</a></div><div class="ttdeci">@ location</div><div class="ttdoc">Specifies that both the x and y coordinates of the control are defined.</div></div>
-<div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> about_box.h:13</div></div>
+<div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> debug.h:20</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="message_dialog_8cpp-example.html#_a1">message_dialog.cpp</a>.</dd>
@@ -607,8 +603,6 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Gets icon to display in the message dialog. </p>
 <dl class="section return"><dt>Returns</dt><dd>One of the <a class="el" href="group__xtd__forms.html#ga3ca2a1f60ab79bdedd6b519ae35d3841" title="Specifies constants defining which information to display.">xtd::forms::message_dialog_icon</a> values that specifies which icon to display in the message dialog. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="message_dialog_8cpp-example.html#a3">message_dialog.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -664,8 +658,6 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Gets the text message. </p>
 <dl class="section return"><dt>Returns</dt><dd>The text message. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="message_dialog_8cpp-example.html#a4">message_dialog.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -846,8 +838,6 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Runs message dialog box. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="message_dialog_8cpp-example.html#a6">message_dialog.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -876,8 +866,6 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Gets the dialog caption text. </p>
 <dl class="section return"><dt>Returns</dt><dd>The current dialog caption text. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="message_dialog_8cpp-example.html#a5">message_dialog.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -950,7 +938,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jun 28 2023 22:51:49 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 4 2023 15:54:12 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

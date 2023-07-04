@@ -150,9 +150,9 @@ Inheritance diagram for xtd::forms::trace_message_dialog:</div>
 <div class="line">    button_show_debug_message.text(<span class="stringliteral">&quot;Error...&quot;</span>);</div>
 <div class="line">    button_show_debug_message.auto_size(<span class="keyword">true</span>);</div>
 <div class="line">    button_show_debug_message.click += [&amp;] {</div>
-<div class="line">      <a class="code hl_class" href="classxtd_1_1forms_1_1trace__message__dialog.html">trace_message_dialog</a> dialog;</div>
+<div class="line">      <span class="keyword">auto</span> dialog = <a class="code hl_class" href="classxtd_1_1forms_1_1trace__message__dialog.html">trace_message_dialog</a> {};</div>
 <div class="line">      dialog.<a class="code hl_function" href="classxtd_1_1forms_1_1trace__message__dialog.html#aa84a5f2aab01c5e824d160585c348300">message</a>(<span class="stringliteral">&quot;An unknown process error occured.&quot;</span>);</div>
-<div class="line">      dialog.<a class="code hl_function" href="classxtd_1_1forms_1_1trace__message__dialog.html#abe17813a0b3fc33a680bfc653585b213">show_sheet_dialog</a>(*<span class="keyword">this</span>);</div>
+<div class="line">      dialog.show_sheet_dialog(*<span class="keyword">this</span>);</div>
 <div class="line">    };</div>
 <div class="line">  }</div>
 <div class="line">  </div>
@@ -171,8 +171,7 @@ Inheritance diagram for xtd::forms::trace_message_dialog:</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1trace__form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1trace__form.html">xtd::forms::trace_form</a></div><div class="ttdoc">Represents a form that displays trace form. This class cannot be inherited.</div><div class="ttdef"><b>Definition</b> trace_form.h:30</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1trace__message__dialog_html"><div class="ttname"><a href="classxtd_1_1forms_1_1trace__message__dialog.html">xtd::forms::trace_message_dialog</a></div><div class="ttdoc">Displays a message window and write debug, which presents a debug message to the user.</div><div class="ttdef"><b>Definition</b> trace_message_dialog.h:25</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1trace__message__dialog_html_aa84a5f2aab01c5e824d160585c348300"><div class="ttname"><a href="classxtd_1_1forms_1_1trace__message__dialog.html#aa84a5f2aab01c5e824d160585c348300">xtd::forms::trace_message_dialog::message</a></div><div class="ttdeci">xtd::ustring message() const noexcept</div><div class="ttdoc">Gets the text message.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1trace__message__dialog_html_abe17813a0b3fc33a680bfc653585b213"><div class="ttname"><a href="classxtd_1_1forms_1_1trace__message__dialog.html#abe17813a0b3fc33a680bfc653585b213">xtd::forms::trace_message_dialog::show_sheet_dialog</a></div><div class="ttdeci">xtd::forms::dialog_result show_sheet_dialog(const iwin32_window &amp;owner)</div><div class="ttdoc">Runs message dialog box.</div><div class="ttdef"><b>Definition</b> trace_message_dialog.h:89</div></div>
-<div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> about_box.h:13</div></div>
+<div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> debug.h:20</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="trace_message_dialog_8cpp-example.html#_a2">trace_message_dialog.cpp</a>.</dd>
 </dl>
@@ -493,8 +492,6 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Runs message dialog box. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="trace_message_dialog_8cpp-example.html#a4">trace_message_dialog.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -523,7 +520,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jun 28 2023 22:51:50 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 4 2023 15:54:13 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

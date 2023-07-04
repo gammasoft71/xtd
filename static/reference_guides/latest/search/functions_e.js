@@ -46,7 +46,7 @@ var searchData=
   ['on_5fdate_5fselected_43',['on_date_selected',['../classxtd_1_1forms_1_1month__calendar.html#aa8c0e2b6f96e928908d34b4f57e7ea84',1,'xtd::forms::month_calendar']]],
   ['on_5fdeactivate_44',['on_deactivate',['../classxtd_1_1forms_1_1form.html#a4ec2cad1821d971ab5d1b8b3e65b6921',1,'xtd::forms::form']]],
   ['on_5fdestroy_5fcontrol_45',['on_destroy_control',['../classxtd_1_1forms_1_1control.html#aa9213120cdef6eb7813df4487c5203fd',1,'xtd::forms::control']]],
-  ['on_5fdialog_5fclosed_46',['on_dialog_closed',['../classxtd_1_1forms_1_1common__dialog.html#aec6ad1efa8f725591df87eca73038fc2',1,'xtd::forms::common_dialog::on_dialog_closed()'],['../classxtd_1_1forms_1_1exception__dialog.html#a2b66049e5ea31dcb734c1bf15c7eb9e9',1,'xtd::forms::exception_dialog::on_dialog_closed()']]],
+  ['on_5fdialog_5fclosed_46',['on_dialog_closed',['../classxtd_1_1forms_1_1assert__dialog.html#a2d1ea070b3bca93dec67f1c620368425',1,'xtd::forms::assert_dialog::on_dialog_closed()'],['../classxtd_1_1forms_1_1common__dialog.html#aec6ad1efa8f725591df87eca73038fc2',1,'xtd::forms::common_dialog::on_dialog_closed()'],['../classxtd_1_1forms_1_1exception__dialog.html#a2b66049e5ea31dcb734c1bf15c7eb9e9',1,'xtd::forms::exception_dialog::on_dialog_closed()']]],
   ['on_5fdo_5fwork_47',['on_do_work',['../classxtd_1_1forms_1_1background__worker.html#a3edee9fbb9799146c4c77d709c076a5b',1,'xtd::forms::background_worker']]],
   ['on_5fdock_5fchanged_48',['on_dock_changed',['../classxtd_1_1forms_1_1control.html#a4c39151441aa86aa855985657d2fc0c6',1,'xtd::forms::control']]],
   ['on_5fdouble_5fclick_49',['on_double_click',['../classxtd_1_1forms_1_1control.html#a81123237cd5c5300f26a74a2d1dee064',1,'xtd::forms::control']]],

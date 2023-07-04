@@ -98,7 +98,7 @@ $(function() {
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classxtd_1_1foreground__color.html#ac232c0826d01070b87e8b768e47aa9ea">   31</a></span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classxtd_1_1foreground__color.html#ac232c0826d01070b87e8b768e47aa9ea">foreground_color</a>(<a class="code hl_enumeration" href="namespacextd.html#ab60a2a64b74b91771b667e4a079681f2">console_color</a> color) : color_(color) {}</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    </div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">friend</span> std::ostream&amp; operator &lt;&lt;(std::ostream&amp; os, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1foreground__color.html">foreground_color</a>&amp; color) {</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>      <span class="keywordflow">if</span> (<a class="code hl_function" href="classxtd_1_1console.html#ad080f53b0e3b34747e5e727f1066c0a8">console::is_output_redirected</a>() &amp;&amp; os.rdbuf() == <a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a>.rdbuf())</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>      <span class="keywordflow">if</span> (!<a class="code hl_function" href="classxtd_1_1console.html#ad080f53b0e3b34747e5e727f1066c0a8">console::is_output_redirected</a>() &amp;&amp; os.rdbuf() == <a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a>.rdbuf())</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <a class="code hl_function" href="classxtd_1_1console.html#a7828d85c021b5515a2eb94105ca6c149">console::foreground_color</a>(color.color_);</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>      <span class="keywordflow">return</span> os;</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    }</div>
@@ -121,7 +121,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jun 28 2023 22:51:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 4 2023 15:54:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

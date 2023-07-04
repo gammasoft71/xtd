@@ -150,9 +150,9 @@ Inheritance diagram for xtd::forms::debug_message_dialog:</div>
 <div class="line">    button_show_debug_message.text(<span class="stringliteral">&quot;Error...&quot;</span>);</div>
 <div class="line">    button_show_debug_message.auto_size(<span class="keyword">true</span>);</div>
 <div class="line">    button_show_debug_message.click += [&amp;] {</div>
-<div class="line">      <a class="code hl_class" href="classxtd_1_1forms_1_1debug__message__dialog.html">debug_message_dialog</a> dialog;</div>
+<div class="line">      <span class="keyword">auto</span> dialog = <a class="code hl_class" href="classxtd_1_1forms_1_1debug__message__dialog.html">debug_message_dialog</a> {};</div>
 <div class="line">      dialog.<a class="code hl_function" href="classxtd_1_1forms_1_1debug__message__dialog.html#ae2a2e2c3fe1769324f334a6b6e39a9be">message</a>(<span class="stringliteral">&quot;An unknown process error occured.&quot;</span>);</div>
-<div class="line">      dialog.<a class="code hl_function" href="classxtd_1_1forms_1_1debug__message__dialog.html#a19e6848bb0a23d1db12267b8c98edd57">show_sheet_dialog</a>(*<span class="keyword">this</span>);</div>
+<div class="line">      dialog.show_sheet_dialog(*<span class="keyword">this</span>);</div>
 <div class="line">    };</div>
 <div class="line">  }</div>
 <div class="line">  </div>
@@ -169,10 +169,9 @@ Inheritance diagram for xtd::forms::debug_message_dialog:</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_a53e5a75ad180a2efadc129e5a3c18cbd"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">xtd::forms::control::location</a></div><div class="ttdeci">virtual drawing::point location() const noexcept</div><div class="ttdoc">Gets the coordinates of the upper-left corner of the control relative to the upper-left corner of its...</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1debug__form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1debug__form.html">xtd::forms::debug_form</a></div><div class="ttdoc">Represents a form that displays debug form. This class cannot be inherited.</div><div class="ttdef"><b>Definition</b> debug_form.h:30</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1debug__message__dialog_html"><div class="ttname"><a href="classxtd_1_1forms_1_1debug__message__dialog.html">xtd::forms::debug_message_dialog</a></div><div class="ttdoc">Displays a message window and write debug, which presents a debug message to the user.</div><div class="ttdef"><b>Definition</b> debug_message_dialog.h:26</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1debug__message__dialog_html_a19e6848bb0a23d1db12267b8c98edd57"><div class="ttname"><a href="classxtd_1_1forms_1_1debug__message__dialog.html#a19e6848bb0a23d1db12267b8c98edd57">xtd::forms::debug_message_dialog::show_sheet_dialog</a></div><div class="ttdeci">xtd::forms::dialog_result show_sheet_dialog(const iwin32_window &amp;owner)</div><div class="ttdoc">Runs message dialog box.</div><div class="ttdef"><b>Definition</b> debug_message_dialog.h:90</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1debug__message__dialog_html_ae2a2e2c3fe1769324f334a6b6e39a9be"><div class="ttname"><a href="classxtd_1_1forms_1_1debug__message__dialog.html#ae2a2e2c3fe1769324f334a6b6e39a9be">xtd::forms::debug_message_dialog::message</a></div><div class="ttdeci">xtd::ustring message() const noexcept</div><div class="ttdoc">Gets the text message.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application's user interface.</div><div class="ttdef"><b>Definition</b> form.h:49</div></div>
-<div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> about_box.h:13</div></div>
+<div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> debug.h:20</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="debug_message_dialog_8cpp-example.html#_a2">debug_message_dialog.cpp</a>.</dd>
 </dl>
@@ -493,8 +492,6 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Runs message dialog box. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="debug_message_dialog_8cpp-example.html#a4">debug_message_dialog.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -523,7 +520,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jun 28 2023 22:51:48 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 4 2023 15:54:12 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
