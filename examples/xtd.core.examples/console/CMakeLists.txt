@@ -17,6 +17,7 @@ add_projects(
   console_info
   console_key_available
   console_out
+  console_read
   console_read_line
   console_read_key
   console_song
