@@ -10,6 +10,7 @@ add_projects(
   console_clear
   console_color
   console_cursor
+  console_cursor_size
   console_firework
   console_in_out
   console_info
