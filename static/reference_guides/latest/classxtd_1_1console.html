@@ -3254,7 +3254,51 @@ width or height is greater than the largest possible window width or height for 
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>This example demonstrates the SetWindowSize method, and the WindowWidth and WindowHeight properties. You must run the example to see the full effect of changing the console window size. The example reports the dimensions of a console window set to 85 columns and 43 rows, then waits for a key press. When any key is pressed, the dimensions of the console window are halved, the new dimensions are reported, and the example waits for another key press. Finally, when any key is pressed the console window is restored to its original dimensions and the example terminates. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>This example demonstrates the SetWindowSize method, and the WindowWidth and WindowHeight properties. You must run the example to see the full effect of changing the console window size. The example reports the dimensions of a console window set to 85 columns and 43 rows, then waits for a key press. When any key is pressed, the dimensions of the console window are halved, the new dimensions are reported, and the example waits for another key press. Finally, when any key is pressed the console window is restored to its original dimensions and the example terminates. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span>std::this_thread;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line">  <span class="keyword">auto</span> orig_width = 0, width = 0;</div>
+<div class="line">  <span class="keyword">auto</span> orig_height = 0, height = 0;</div>
+<div class="line">  <span class="keyword">auto</span> m1 = <span class="stringliteral">&quot;The current window width is {0}, and the current window height is {1}.&quot;</span>;</div>
+<div class="line">  <span class="keyword">auto</span> m2 = <span class="stringliteral">&quot;The new window width is {0}, and the new window height is {1}.&quot;</span>;</div>
+<div class="line">  <span class="keyword">auto</span> m4 = <span class="stringliteral">&quot;  (Press any key to continue...)&quot;</span>;</div>
+<div class="line">  <span class="comment">//</span></div>
+<div class="line">  <span class="comment">// Step 1: Get the current window dimensions.</span></div>
+<div class="line">  <span class="comment">//</span></div>
+<div class="line">  orig_width  = <a class="code hl_function" href="classxtd_1_1console.html#ae25244024152a9b981366b6f2e63c0d1">console::window_width</a>();</div>
+<div class="line">  orig_height = <a class="code hl_function" href="classxtd_1_1console.html#a25efe6a382a44b8ecccc23bbac00f096">console::window_height</a>();</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(m1, <a class="code hl_function" href="classxtd_1_1console.html#ae25244024152a9b981366b6f2e63c0d1">console::window_width</a>(), <a class="code hl_function" href="classxtd_1_1console.html#a25efe6a382a44b8ecccc23bbac00f096">console::window_height</a>());</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(m4);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ac0ebb643e4d3b01faa8380bd90d22aa0">console::read_key</a>(<span class="keyword">true</span>);</div>
+<div class="line">  <span class="comment">//</span></div>
+<div class="line">  <span class="comment">// Step 2: Cut the window to 1/4 its original size.</span></div>
+<div class="line">  <span class="comment">//</span></div>
+<div class="line">  width  = orig_width / 2;</div>
+<div class="line">  height = orig_height / 2;</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#a390011ad7e02c84804983afe83e40ad5">console::set_window_size</a>(width, height);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(m2, <a class="code hl_function" href="classxtd_1_1console.html#ae25244024152a9b981366b6f2e63c0d1">console::window_width</a>(), <a class="code hl_function" href="classxtd_1_1console.html#a25efe6a382a44b8ecccc23bbac00f096">console::window_height</a>());</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(m4);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ac0ebb643e4d3b01faa8380bd90d22aa0">console::read_key</a>(<span class="keyword">true</span>);</div>
+<div class="line">  <span class="comment">//</span></div>
+<div class="line">  <span class="comment">// Step 3: Restore the window to its original size.</span></div>
+<div class="line">  <span class="comment">//</span></div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#a390011ad7e02c84804983afe83e40ad5">console::set_window_size</a>(orig_width, orig_height);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(m1, <a class="code hl_function" href="classxtd_1_1console.html#ae25244024152a9b981366b6f2e63c0d1">console::window_width</a>(), <a class="code hl_function" href="classxtd_1_1console.html#a25efe6a382a44b8ecccc23bbac00f096">console::window_height</a>());}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output:</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// The current window width is 100, and the current window height is 60.</span></div>
+<div class="line"><span class="comment">//   (Press any key to continue...)</span></div>
+<div class="line"><span class="comment">// The new window width is 50, and the new window height is 30.</span></div>
+<div class="line"><span class="comment">//   (Press any key to continue...)</span></div>
+<div class="line"><span class="comment">// The current window width is 100, and the current window height is 60.</span></div>
+<div class="ttc" id="aclassxtd_1_1console_html_a25efe6a382a44b8ecccc23bbac00f096"><div class="ttname"><a href="classxtd_1_1console.html#a25efe6a382a44b8ecccc23bbac00f096">xtd::console::window_height</a></div><div class="ttdeci">static int32 window_height()</div><div class="ttdoc">Gets the height of the console window area.</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html_a390011ad7e02c84804983afe83e40ad5"><div class="ttname"><a href="classxtd_1_1console.html#a390011ad7e02c84804983afe83e40ad5">xtd::console::set_window_size</a></div><div class="ttdeci">static void set_window_size(int32 width, int32 height)</div><div class="ttdoc">Sets the height and width of the console window to the specified values.</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html_ae25244024152a9b981366b6f2e63c0d1"><div class="ttname"><a href="classxtd_1_1console.html#ae25244024152a9b981366b6f2e63c0d1">xtd::console::window_width</a></div><div class="ttdeci">static int32 window_width()</div><div class="ttdoc">Gets the width of the console window area.</div></div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -4014,7 +4058,7 @@ The <a class="el" href="group__xtd__core.html#gga437764d898631d282f7d95b573328c7
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 4 2023 15:54:10 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 4 2023 20:52:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
