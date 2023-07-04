@@ -24,4 +24,4 @@ guidgen is a guid generator GUI application.
 
 ______________________________________________________________________________________________
 
-© 2022 Gammasoft.
+© 2023 Gammasoft.

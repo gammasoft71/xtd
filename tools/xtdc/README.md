@@ -286,4 +286,4 @@ The following tables (organized by project) show the availability of SDKs and la
 
 ______________________________________________________________________________________________
 
-© 2022 Gammasoft.
+© 2023 Gammasoft.

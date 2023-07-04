@@ -7,4 +7,4 @@ The toolkit [xtd.form.native.fltk](.) is based on [FLTK](https://www.fltk.org) l
 
 ______________________________________________________________________________________________
 
-© 2022 Gammasoft.
+© 2023 Gammasoft.

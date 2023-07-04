@@ -7,4 +7,4 @@ The [xtd.core.native.macos](.) is based on macOS Operating System.
 
 ______________________________________________________________________________________________
 
-© 2022 Gammasoft.
+© 2023 Gammasoft.
