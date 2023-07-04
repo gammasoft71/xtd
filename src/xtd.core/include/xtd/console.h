@@ -327,6 +327,19 @@ namespace xtd {
     /// @remarks This method can be used to reacquire the standard output stream after it has been changed by the set_output method.
     static std::ostream open_standard_output();
     
+    /// @brief Reads the next character from the standard input stream.
+    /// @return int32 The next character from the input stream, or negative one (-1) if there are currently no more characters to be read
+    /// @remarks The Read method blocks its return while you type input characters; it terminates when you press the Enter key.
+    /// @remarks Pressing Enter appends a platform-dependent line termination sequence to your input (for example, Windows appends a carriage return-linefeed sequence).
+    /// @remarks Subsequent calls to the Read method retrieve your input one character at a time. After the final character is retrieved, Read blocks its return again and the cycle repeats.
+    /// @remarks Note that you will not get a property value of -1 unless you perform one of the following actions: simultaneously press the Control modifier key and Z console key (CTRL+Z),
+    /// @remarks which signals the end-of-file condition; press an equivalent key that signals the end-of-file condition, such as the F6 function key in Windows; or redirect the input stream to a source,
+    /// @remarks such as a text file, that has an actual end-of-file character.
+    /// @par Example
+    /// The following example demonstrates the Read method.
+    /// @include console_read.cpp
+    static int32 read();
+    
     /// @brief Reads the next line of characters from the standard input stream.
     /// @return The next line of characters from the input stream, or "" if no more lines are available.
     static xtd::ustring read_line();

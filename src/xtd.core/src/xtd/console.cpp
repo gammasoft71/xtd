@@ -291,6 +291,10 @@ std::ostream console::open_standard_output() {
   return std::ostream(__get_out_rdbuf());
 }
 
+int32 console::read() {
+  return in.get();
+}
+
 ustring console::read_line() {
   register_cancel_key_press(); // Must be first...
   out.flush();
