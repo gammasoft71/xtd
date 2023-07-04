@@ -11,6 +11,7 @@ add_projects(
   console_color
   console_cursor
   console_cursor_size
+  console_cursor_visible
   console_firework
   console_in_out
   console_info
