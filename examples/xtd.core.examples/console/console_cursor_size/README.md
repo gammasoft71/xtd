@@ -1,6 +1,6 @@
 # console_cursor_size
 
-Shows how to use [xtd::console::set_cursor_size](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html#a3fa30230b3bb51effe82807627275e9e) property.
+Shows how to use [xtd::console::cursor_size](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html#a3fa30230b3bb51effe82807627275e9e) property.
 
 # Sources
 
