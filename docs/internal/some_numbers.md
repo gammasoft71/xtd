@@ -59,7 +59,7 @@
    * tests : 10989
    
 * xtd.drawing.unit_tests : 
-   * test_case : 3
+   * test_case : 33
    * tests : 733
    
 * xtd.forms.unit_tests : 
