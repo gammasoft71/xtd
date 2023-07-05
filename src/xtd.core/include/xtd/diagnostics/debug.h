@@ -17,6 +17,12 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @cond
+  namespace forms {
+    class assert_dialog;
+  }
+  /// @endcond
+  
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
     /// @cond
@@ -455,7 +461,9 @@ namespace xtd {
       
     private:
       friend trace;
+      friend xtd::forms::assert_dialog;
       static xtd::diagnostics::assert_dialog_result assert_dialog(bool condition, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static xtd::ustring assert_dialog_caption();
       static void fail__(const xtd::ustring& message);
       static void fail__(const xtd::ustring& message, const xtd::ustring& detail_message);
       static void flush_();
