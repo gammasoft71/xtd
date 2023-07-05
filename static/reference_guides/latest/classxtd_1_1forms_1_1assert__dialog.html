@@ -137,11 +137,57 @@ Inheritance diagram for xtd::forms::assert_dialog:</div>
   </td></tr>
 </table>
 </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1assert__dialog.html" title="Represents a common dialog box that displays assert dialog.">assert_dialog</a> dialog. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1assert__dialog.html" title="Represents a common dialog box that displays assert dialog.">assert_dialog</a> dialog. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="assert__dialog_8h.html">xtd/forms/assert_dialog.h</a>&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">  form1() {</div>
+<div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;Assertion dialog example&quot;</span>);</div>
+<div class="line">    controls().push_back(button1);</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.location({10, 10});</div>
+<div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.auto_size(<span class="keyword">true</span>);</div>
+<div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.text(<span class="stringliteral">&quot;assert...&quot;</span>);</div>
+<div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.click += [&amp;] {</div>
+<div class="line">      <span class="keyword">auto</span> dialog = <a class="code hl_class" href="classxtd_1_1forms_1_1assert__dialog.html">assert_dialog</a> {};</div>
+<div class="line">      dialog.<a class="code hl_function" href="classxtd_1_1forms_1_1assert__dialog.html#aeea66d7e2374177d11b5a10feb75c47b">message</a>(<span class="stringliteral">&quot;Index must be &gt; 0&quot;</span>);</div>
+<div class="line">      dialog.stack_frame(<a class="code hl_define" href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a>);</div>
+<div class="line">      <span class="keywordflow">switch</span>(dialog.show_sheet_dialog(*<span class="keyword">this</span>)) {</div>
+<div class="line">        <span class="keywordflow">case</span> forms::dialog_result::abort: application::exit(); <span class="keywordflow">break</span>;</div>
+<div class="line">        <span class="keywordflow">case</span> forms::dialog_result::retry: <a class="code hl_define" href="group__debug.html#ga7a5088b030211d28a0a24ecc924f57b6">debug_break_</a>(); <span class="keywordflow">break</span>;</div>
+<div class="line">        <span class="keywordflow">default</span>: <span class="keywordflow">break</span>;</div>
+<div class="line">      }</div>
+<div class="line">    };</div>
+<div class="line">  }</div>
+<div class="line">  </div>
+<div class="line"><span class="keyword">private</span>:</div>
+<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>;</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(form1 {});</div>
+<div class="line">}</div>
+<div class="ttc" id="aassert__dialog_8h_html"><div class="ttname"><a href="assert__dialog_8h.html">assert_dialog.h</a></div><div class="ttdoc">Contains xtd::forms::assert_dialog dialog.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a4ee49410f3156fd66b61c2567a59388e"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a></div><div class="ttdeci">static void run()</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1assert__dialog_html"><div class="ttname"><a href="classxtd_1_1forms_1_1assert__dialog.html">xtd::forms::assert_dialog</a></div><div class="ttdoc">Represents a common dialog box that displays assert dialog.</div><div class="ttdef"><b>Definition</b> assert_dialog.h:31</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1assert__dialog_html_aeea66d7e2374177d11b5a10feb75c47b"><div class="ttname"><a href="classxtd_1_1forms_1_1assert__dialog.html#aeea66d7e2374177d11b5a10feb75c47b">xtd::forms::assert_dialog::message</a></div><div class="ttdeci">xtd::ustring message() const noexcept</div><div class="ttdoc">Gets the dialog message text.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1button_html"><div class="ttname"><a href="classxtd_1_1forms_1_1button.html">xtd::forms::button</a></div><div class="ttdoc">Represents a Windows button control.</div><div class="ttdef"><b>Definition</b> button.h:45</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application's user interface.</div><div class="ttdef"><b>Definition</b> form.h:49</div></div>
+<div class="ttc" id="agroup__debug_html_ga7a5088b030211d28a0a24ecc924f57b6"><div class="ttname"><a href="group__debug.html#ga7a5088b030211d28a0a24ecc924f57b6">debug_break_</a></div><div class="ttdeci">#define debug_break_()</div><div class="ttdoc">Signals a breakpoint to an attached debugger.</div><div class="ttdef"><b>Definition</b> debugger.h:81</div></div>
+<div class="ttc" id="agroup__keywords_html_gaf8b977f43d229f177b7b399c3b3a60a6"><div class="ttname"><a href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a></div><div class="ttdeci">#define csf_</div><div class="ttdoc">Provides information about the current stack frame.</div><div class="ttdef"><b>Definition</b> stack_frame.h:227</div></div>
+<div class="ttc" id="agroup__xtd__forms_html_gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9"><div class="ttname"><a href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">xtd::forms::message_dialog_default_button::button1</a></div><div class="ttdeci">@ button1</div><div class="ttdoc">The first button on the message box is the default button.</div></div>
+<div class="ttc" id="agroup__xtd__forms_html_gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1"><div class="ttname"><a href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">xtd::forms::status_bar_panel_style::text</a></div><div class="ttdeci">@ text</div><div class="ttdoc">The xtd::forms::status_bar_panel displays text in the standard font.</div></div>
+<div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> about_box.h:13</div></div>
+<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
+</div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Events</h2></td></tr>
 <tr class="memitem:a7fee3b8685122d0da472fa539044122b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1event.html">event</a>&lt; <a class="el" href="classxtd_1_1forms_1_1assert__dialog.html">assert_dialog</a>, <a class="el" href="group__events.html#ga93712f46c124e6ca40b40a2d9e14fc60">dialog_closed_event_handler</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1assert__dialog.html#a7fee3b8685122d0da472fa539044122b">dialog_closed</a></td></tr>
-<tr class="memdesc:a7fee3b8685122d0da472fa539044122b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when the user close an exception dialog box with dialog close button or other dialog buttons.  <br /></td></tr>
+<tr class="memdesc:a7fee3b8685122d0da472fa539044122b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when the user close an assert dialog box with dialog close button or other dialog buttons.  <br /></td></tr>
 <tr class="separator:a7fee3b8685122d0da472fa539044122b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Constructors</h2></td></tr>
@@ -159,34 +205,34 @@ Inheritance diagram for xtd::forms::assert_dialog:</div>
 <tr class="memitem:a36a16ee5640b8b8127e296bb2f2bb824"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1forms_1_1assert__dialog.html">assert_dialog</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1assert__dialog.html#a36a16ee5640b8b8127e296bb2f2bb824">dialog_style</a> (<a class="el" href="group__xtd__forms.html#ga7fd72f9f89441658953471a6ec525725">xtd::forms::dialog_style</a> <a class="el" href="group__xtd__forms.html#ga7fd72f9f89441658953471a6ec525725">dialog_style</a>)</td></tr>
 <tr class="memdesc:a36a16ee5640b8b8127e296bb2f2bb824"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the dialog style.  <br /></td></tr>
 <tr class="separator:a36a16ee5640b8b8127e296bb2f2bb824"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeea66d7e2374177d11b5a10feb75c47b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1assert__dialog.html#aeea66d7e2374177d11b5a10feb75c47b">message</a> () const noexcept</td></tr>
+<tr class="memdesc:aeea66d7e2374177d11b5a10feb75c47b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the dialog message text.  <br /></td></tr>
+<tr class="separator:aeea66d7e2374177d11b5a10feb75c47b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d1b38edb0e1062b5bc7751aed704581"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1forms_1_1assert__dialog.html">assert_dialog</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1assert__dialog.html#a4d1b38edb0e1062b5bc7751aed704581">message</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;value)</td></tr>
+<tr class="memdesc:a4d1b38edb0e1062b5bc7751aed704581"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the dialog message text.  <br /></td></tr>
+<tr class="separator:a4d1b38edb0e1062b5bc7751aed704581"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a36ee27300cf00d825d0627dba2bfbb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1assert__dialog.html#a3a36ee27300cf00d825d0627dba2bfbb">stack_frame</a> () const noexcept</td></tr>
-<tr class="memdesc:a3a36ee27300cf00d825d0627dba2bfbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets exception reference.  <br /></td></tr>
+<tr class="memdesc:a3a36ee27300cf00d825d0627dba2bfbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets stack frame.  <br /></td></tr>
 <tr class="separator:a3a36ee27300cf00d825d0627dba2bfbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8574db597a71365addadeca11834a335"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1forms_1_1assert__dialog.html">assert_dialog</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1assert__dialog.html#a8574db597a71365addadeca11834a335">stack_frame</a> (const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;value)</td></tr>
-<tr class="memdesc:a8574db597a71365addadeca11834a335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets exception.  <br /></td></tr>
+<tr class="memdesc:a8574db597a71365addadeca11834a335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets stack frame.  <br /></td></tr>
 <tr class="separator:a8574db597a71365addadeca11834a335"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a618fb4eac6e794bc9e90b68d539ac4a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1assert__dialog.html#a618fb4eac6e794bc9e90b68d539ac4a0">text</a> () const noexcept</td></tr>
-<tr class="memdesc:a618fb4eac6e794bc9e90b68d539ac4a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the dialog caption text.  <br /></td></tr>
-<tr class="separator:a618fb4eac6e794bc9e90b68d539ac4a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a052af0c10782b2dba43757a99656bd71"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1forms_1_1assert__dialog.html">assert_dialog</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1assert__dialog.html#a052af0c10782b2dba43757a99656bd71">text</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;value)</td></tr>
-<tr class="memdesc:a052af0c10782b2dba43757a99656bd71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the dialog caption text.  <br /></td></tr>
-<tr class="separator:a052af0c10782b2dba43757a99656bd71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Methods</h2></td></tr>
 <tr class="memitem:a9b2e3bf12617c4e277c8a7c4a7331019"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1assert__dialog.html#a9b2e3bf12617c4e277c8a7c4a7331019">reset</a> () noexcept</td></tr>
 <tr class="memdesc:a9b2e3bf12617c4e277c8a7c4a7331019"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets all properties to empty string.  <br /></td></tr>
 <tr class="separator:a9b2e3bf12617c4e277c8a7c4a7331019"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f1bfb92333b021b4f7831c8bf6586a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1assert__dialog.html#a7f1bfb92333b021b4f7831c8bf6586a4">show_dialog</a> ()</td></tr>
-<tr class="memdesc:a7f1bfb92333b021b4f7831c8bf6586a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs exception dialog box.  <br /></td></tr>
+<tr class="memdesc:a7f1bfb92333b021b4f7831c8bf6586a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs assert dialog box.  <br /></td></tr>
 <tr class="separator:a7f1bfb92333b021b4f7831c8bf6586a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62316e7661eb518532c498afa02a2fd7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1assert__dialog.html#a62316e7661eb518532c498afa02a2fd7">show_dialog</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;owner)</td></tr>
-<tr class="memdesc:a62316e7661eb518532c498afa02a2fd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs exception dialog box.  <br /></td></tr>
+<tr class="memdesc:a62316e7661eb518532c498afa02a2fd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs assert dialog box.  <br /></td></tr>
 <tr class="separator:a62316e7661eb518532c498afa02a2fd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79cd4fa7e3bbc70a54ff7a0d5a6b8eac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1assert__dialog.html#a79cd4fa7e3bbc70a54ff7a0d5a6b8eac">show_sheet</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;owner)</td></tr>
-<tr class="memdesc:a79cd4fa7e3bbc70a54ff7a0d5a6b8eac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs exception dialog box.  <br /></td></tr>
+<tr class="memdesc:a79cd4fa7e3bbc70a54ff7a0d5a6b8eac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs assert dialog box.  <br /></td></tr>
 <tr class="separator:a79cd4fa7e3bbc70a54ff7a0d5a6b8eac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93e12e04706d04babf4ef2cc086d1797"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1assert__dialog.html#a93e12e04706d04babf4ef2cc086d1797">show_sheet_dialog</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;owner)</td></tr>
-<tr class="memdesc:a93e12e04706d04babf4ef2cc086d1797"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs exception dialog box.  <br /></td></tr>
+<tr class="memdesc:a93e12e04706d04babf4ef2cc086d1797"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs assert dialog box.  <br /></td></tr>
 <tr class="separator:a93e12e04706d04babf4ef2cc086d1797"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Protected methods</h2></td></tr>
@@ -335,6 +381,61 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="aeea66d7e2374177d11b5a10feb75c47b" name="aeea66d7e2374177d11b5a10feb75c47b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeea66d7e2374177d11b5a10feb75c47b">&#9670;&#160;</a></span>message() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> xtd::forms::assert_dialog::message </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the dialog message text. </p>
+<dl class="section return"><dt>Returns</dt><dd>The current dialog message text. </dd></dl>
+
+</div>
+</div>
+<a id="a4d1b38edb0e1062b5bc7751aed704581" name="a4d1b38edb0e1062b5bc7751aed704581"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d1b38edb0e1062b5bc7751aed704581">&#9670;&#160;</a></span>message() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1forms_1_1assert__dialog.html">assert_dialog</a> &amp; xtd::forms::assert_dialog::message </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the dialog message text. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The new dialog message text. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Current <a class="el" href="classxtd_1_1forms_1_1input__dialog.html" title="Represents a common dialog box that displays input dialog.">input_dialog</a> instance. </dd></dl>
+
+</div>
+</div>
 <a id="a2d1ea070b3bca93dec67f1c620368425" name="a2d1ea070b3bca93dec67f1c620368425"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2d1ea070b3bca93dec67f1c620368425">&#9670;&#160;</a></span>on_dialog_closed()</h2>
 
@@ -366,7 +467,7 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>This method is invoked when the exception dialog box is closed. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This method is invoked when the assert dialog box is closed. </dd></dl>
 
 </div>
 </div>
@@ -412,7 +513,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Runs exception dialog box. </p>
+<p>Runs assert dialog box. </p>
 
 </div>
 </div>
@@ -432,7 +533,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Runs exception dialog box. </p>
+<p>Runs assert dialog box. </p>
 
 </div>
 </div>
@@ -452,7 +553,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Runs exception dialog box. </p>
+<p>Runs assert dialog box. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>The result will done in async. Check result_dialog property after dialog box closed to obtain the result. </dd></dl>
 
 </div>
@@ -473,7 +574,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Runs exception dialog box. </p>
+<p>Runs assert dialog box. </p>
 
 </div>
 </div>
@@ -500,8 +601,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Gets exception reference. </p>
-<dl class="section return"><dt>Returns</dt><dd>A exception reference. </dd></dl>
+<p>Gets stack frame. </p>
+<dl class="section return"><dt>Returns</dt><dd>The stzack frame. </dd></dl>
 
 </div>
 </div>
@@ -521,70 +622,14 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Sets exception. </p>
+<p>Sets stack frame. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>The exception. </td></tr>
+    <tr><td class="paramname">value</td><td>The stack frame. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Current <a class="el" href="classxtd_1_1forms_1_1assert__dialog.html" title="Represents a common dialog box that displays assert dialog.">assert_dialog</a> instance. </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>Contains only a reference on the parameter exception. Do not delete exception before closing dialog. </dd></dl>
-
-</div>
-</div>
-<a id="a618fb4eac6e794bc9e90b68d539ac4a0" name="a618fb4eac6e794bc9e90b68d539ac4a0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a618fb4eac6e794bc9e90b68d539ac4a0">&#9670;&#160;</a></span>text() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> xtd::forms::assert_dialog::text </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Gets the dialog caption text. </p>
-<dl class="section return"><dt>Returns</dt><dd>The current dialog caption text. </dd></dl>
-
-</div>
-</div>
-<a id="a052af0c10782b2dba43757a99656bd71" name="a052af0c10782b2dba43757a99656bd71"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a052af0c10782b2dba43757a99656bd71">&#9670;&#160;</a></span>text() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1forms_1_1assert__dialog.html">assert_dialog</a> &amp; xtd::forms::assert_dialog::text </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the dialog caption text. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>The new dialog caption text. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Current <a class="el" href="classxtd_1_1forms_1_1input__dialog.html" title="Represents a common dialog box that displays input dialog.">input_dialog</a> instance. </dd></dl>
 
 </div>
 </div>
@@ -601,7 +646,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Occurs when the user close an exception dialog box with dialog close button or other dialog buttons. </p>
+<p>Occurs when the user close an assert dialog box with dialog close button or other dialog buttons. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>. </dd></dl>
 
 </div>
@@ -613,7 +658,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 4 2023 20:52:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Jul 5 2023 22:00:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
