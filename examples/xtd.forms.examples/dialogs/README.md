@@ -4,6 +4,7 @@
 
 * [about_box](about_box/README.md) represents a dialog box that displays about box.
 * [about_dialog](about_dialog/README.md) represents a dialog box that displays about dialog.
+* [assert_dialog](assert_dialog/README.md) represents a dialog box that displays assert dialog.
 * [busy_box](busy_box/README.md) represents a dialog box that displays busy box.
 * [busy_dialog](busy_dialog/README.md) represents a dialog box that displays busy dialog.
 * [color_box](color_box/README.md) represents a common dialog box that displays available colors along with controls that enable the user to define custom colors.
