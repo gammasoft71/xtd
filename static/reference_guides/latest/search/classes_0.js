@@ -32,8 +32,9 @@ var searchData=
   ['assembly_5ftrademark_5fattribute_29',['assembly_trademark_attribute',['../classxtd_1_1reflection_1_1assembly__trademark__attribute.html',1,'xtd::reflection']]],
   ['assembly_5fversion_5fattribute_30',['assembly_version_attribute',['../classxtd_1_1reflection_1_1assembly__version__attribute.html',1,'xtd::reflection']]],
   ['assert_31',['assert',['../classxtd_1_1tunit_1_1assert.html',1,'xtd::tunit']]],
-  ['assert_5fdialog_32',['assert_dialog',['../classxtd_1_1forms_1_1assert__dialog.html',1,'xtd::forms']]],
-  ['assert_5ferror_33',['assert_error',['../classxtd_1_1tunit_1_1assert__error.html',1,'xtd::tunit']]],
-  ['assume_34',['assume',['../classxtd_1_1tunit_1_1assume.html',1,'xtd::tunit']]],
-  ['attribute_35',['attribute',['../classxtd_1_1attribute.html',1,'xtd']]]
+  ['assert_5fbox_32',['assert_box',['../classxtd_1_1forms_1_1assert__box.html',1,'xtd::forms']]],
+  ['assert_5fdialog_33',['assert_dialog',['../classxtd_1_1forms_1_1assert__dialog.html',1,'xtd::forms']]],
+  ['assert_5ferror_34',['assert_error',['../classxtd_1_1tunit_1_1assert__error.html',1,'xtd::tunit']]],
+  ['assume_35',['assume',['../classxtd_1_1tunit_1_1assume.html',1,'xtd::tunit']]],
+  ['attribute_36',['attribute',['../classxtd_1_1attribute.html',1,'xtd']]]
 ];
