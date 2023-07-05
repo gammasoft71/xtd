@@ -20,6 +20,7 @@ add_sources(
   include/xtd/forms/application_context.h
   include/xtd/forms/arrange_direction.h
   include/xtd/forms/arrange_starting_position.h
+  include/xtd/forms/assert_dialog.h
   include/xtd/forms/auto_size_mode.h
   include/xtd/forms/background_worker.h
   include/xtd/forms/battery_charge_status.h
@@ -369,6 +370,7 @@ add_sources(
   src/xtd/forms/animation.cpp
   src/xtd/forms/application.cpp
   src/xtd/forms/application_context.cpp
+  src/xtd/forms/assert_dialog.cpp
   src/xtd/forms/background_worker.cpp
   src/xtd/forms/box_renderer.cpp
   src/xtd/forms/busy_box.cpp

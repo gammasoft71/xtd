@@ -1,6 +1,7 @@
 #include "../../../include/xtd/diagnostics/debug.h"
 #include "../../../include/xtd/diagnostics/default_trace_listener.h"
 #include "../../../include/xtd/environment.h"
+#include "../../../include/xtd/literals.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/debugger.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
@@ -195,5 +196,9 @@ xtd::diagnostics::assert_dialog_result debug::assert_dialog(bool condition, cons
   write_line("");
   write_line(stack_trace(stack_frame).to_string());
   write_line("");
-  return show_assert_dialog_ ? static_cast<xtd::diagnostics::assert_dialog_result>(native::debugger::show_assert_dialog(ustring::format("{}\n\n{}", message, stack_trace(stack_frame)), "Assertion Failed: Abort=Quit, Retry=Debug, Ignore=Continue")) : assert_dialog_result::retry;
+  return show_assert_dialog_ ? static_cast<xtd::diagnostics::assert_dialog_result>(native::debugger::show_assert_dialog(ustring::format("{}\n\n{}", message, stack_trace(stack_frame)), assert_dialog_caption())) : assert_dialog_result::retry;
+}
+
+xtd::ustring debug::assert_dialog_caption() {
+  return "Assertion Failed: Abort=Quit, Retry=Debug, Ignore=Continue"_t;
 }
