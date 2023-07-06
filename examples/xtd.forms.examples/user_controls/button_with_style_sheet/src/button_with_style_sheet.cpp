@@ -11,7 +11,8 @@ namespace button_with_style_sheet_example {
       button1.location({145, 25});
       button1.size({80, 25});
       button1.text("Button 1");
-      button1.style_sheet("button {"
+      button1.style_sheet(
+        "button {"
         "  border-style: solid;"
         "  border-color: #00AA00;"
         "  color: #00AA00;"
@@ -31,7 +32,8 @@ namespace button_with_style_sheet_example {
       button2.location({105, 70});
       button2.size({160, 50});
       button2.text("Button 2");
-      button2.style_sheet("button {"
+      button2.style_sheet(
+        "button {"
         "  border-style: solid;"
         "  border-color: blue;"
         "  border-radius: 20px 0px 20px 0px;"
@@ -51,7 +53,8 @@ namespace button_with_style_sheet_example {
         
       button3.location({25, 145});
       button3.size({320, 100});
-      button3.style_sheet("button {"
+      button3.style_sheet(
+        "button {"
         "  margin: 0px 0px 0px 33vw;"
         "  border-style: solid;"
         "  border-color: red;"
