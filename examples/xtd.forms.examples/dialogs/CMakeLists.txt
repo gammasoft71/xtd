@@ -6,6 +6,7 @@ find_package(xtd REQUIRED)
 add_projects(
   about_box
   about_dialog
+  assert_box
   assert_dialog
   busy_box
   busy_dialog
