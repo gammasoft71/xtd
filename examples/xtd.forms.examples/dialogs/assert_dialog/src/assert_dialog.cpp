@@ -1,5 +1,4 @@
 #include <xtd/xtd>
-#include <xtd/forms/assert_dialog.h>
 
 using namespace xtd;
 using namespace xtd::forms;
@@ -7,7 +6,7 @@ using namespace xtd::forms;
 class form1 : public form {
 public:
   form1() {
-    text("Assertion dialog example");
+    text("Assert dialog example");
     controls().push_back(button1);
     
     button1.location({10, 10});
