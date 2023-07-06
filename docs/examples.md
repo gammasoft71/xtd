@@ -22,6 +22,18 @@ auto main()->int {
 }
 ```
 
+**or simply**
+
+```cpp
+#include <xtd/xtd>
+
+using namespace xtd;
+
+auto main()->int {
+  console::out << background_color(console_color::blue) << foreground_color(console_color::white) << "Hello, World!" << environment::new_line();
+}
+```
+
 ### CMakeLists.txt:
 
 ```cmake
