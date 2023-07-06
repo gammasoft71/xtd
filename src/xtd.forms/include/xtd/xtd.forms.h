@@ -17,6 +17,7 @@
 #include "xtd/forms/application.h"
 #include "xtd/forms/arrange_direction.h"
 #include "xtd/forms/arrange_starting_position.h"
+#include "xtd/forms/assert_dialog.h"
 #include "xtd/forms/auto_size_mode.h"
 #include "xtd/forms/background_worker.h"
 #include "xtd/forms/battery_charge_status.h"
