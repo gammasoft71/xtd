@@ -1,0 +1,16 @@
+@startuml
+
+skinparam backgroundcolor transparent
+skinparam classBackgroundColor white
+skinparam classBorderColor #60A5FF
+skinparam classArrowColor #60A5FF
+skinparam noteBackgroundColor white
+skinparam noteBorderColor #60A5FF
+
+class singleton {
+  -instance : singleton
+  -singleton()
+  +instance() : singleton
+}
+
+@enduml

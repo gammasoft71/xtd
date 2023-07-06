@@ -1,0 +1,15 @@
+@startuml
+
+skinparam backgroundcolor transparent
+skinparam classBackgroundColor white
+skinparam classBorderColor #60A5FF
+skinparam classArrowColor #60A5FF
+skinparam noteBackgroundColor white
+skinparam noteBorderColor #60A5FF
+
+xtd::forms::form <| - xtd::forms::container_control
+xtd::forms::container_control <| - xtd::forms::scrollable_control
+xtd::forms::scrollable_control <| - xtd::forms::component
+xtd::forms::component <| - xtd::object
+
+@enduml

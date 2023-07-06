@@ -1,0 +1,78 @@
+@startuml
+
+skinparam backgroundcolor transparent
+skinparam classBackgroundColor white
+skinparam classBorderColor #60A5FF
+skinparam classArrowColor #60A5FF
+skinparam noteBackgroundColor white
+skinparam noteBorderColor #60A5FF
+
+xtd::forms::timer <| - xtd::forms::component
+xtd::forms::progress_dialog <| - xtd::forms::component
+xtd::forms::message_dialog <| - xtd::forms::component
+xtd::forms::menu <| - xtd::forms::component
+xtd::forms::image_list <| - xtd::forms::component
+xtd::forms::exception_dialog <| - xtd::forms::component
+xtd::forms::finput_dialog <| - xtd::forms::common_dialog
+xtd::forms::font_dialog <| - xtd::forms::common_dialog
+xtd::forms::folder_browser_dialog <| - xtd::forms::common_dialog
+xtd::forms::save_file_dialog <| - xtd::forms::file_dialog
+xtd::forms::open_file_dialog <| - xtd::forms::file_dialog
+xtd::forms::file_dialog <| - xtd::forms::common_dialog
+xtd::forms::color_dialog <| - xtd::forms::common_dialog
+xtd::forms::common_dialog <| - xtd::forms::component
+xtd::forms::tree_view <| - xtd::forms::control
+xtd::forms::track_bar <| - xtd::forms::control
+xtd::forms::rich_text_box <| - xtd::forms::text_box_base
+xtd::forms::text_box <| - xtd::forms::text_box_base
+xtd::forms::text_box_base <| - xtd::forms::control
+xtd::forms::tab_control <| - xtd::forms::control
+xtd::forms::seven_segment_display <| - xtd::forms::control
+xtd::forms::vertical_layout_panel <| - xtd::forms::panel
+xtd::forms::table_layout_panel <| - xtd::forms::panel
+xtd::forms::tab_page <| - xtd::forms::panel
+xtd::forms::splitter_panel <| - xtd::forms::panel
+xtd::forms::horizontal_layout_panel <| - xtd::forms::panel
+xtd::forms::flow_layout_panel <| - xtd::forms::panel
+xtd::forms::fixed_layout_panel <| - xtd::forms::panel
+xtd::forms::panel <| - xtd::forms::scrollable_control
+xtd::forms::user_control <| - xtd::forms::container_control
+xtd::forms::trace_form <| - xtd::forms::trace_form_base
+xtd::forms::debug_form <| - xtd::forms::trace_form_base
+xtd::forms::trace_form_base <| - xtd::forms::form
+xtd::forms::form <| - xtd::forms::container_control
+xtd::forms::container_control <| - xtd::forms::scrollable_control
+xtd::forms::scrollable_control <| - xtd::forms::control
+xtd::forms::v_scroll_bar <| - xtd::forms::scroll_bar
+xtd::forms::h_scroll_bar <| - xtd::forms::scroll_bar
+xtd::forms::scroll_bar <| - xtd::forms::control
+xtd::forms::progress_bar <| - xtd::forms::control
+xtd::forms::picture_box <| - xtd::forms::control
+xtd::forms::loading_indicator <| - xtd::forms::control
+xtd::forms::list_view <| - xtd::forms::control
+xtd::forms::list_control <| - xtd::forms::control
+xtd::forms::lcd_label <| - xtd::forms::control
+xtd::forms::link_label <| - xtd::forms::label
+xtd::forms::label <| - xtd::forms::control
+xtd::forms::group_box <| - xtd::forms::control
+xtd::forms::font_picker <| - xtd::forms::control
+xtd::forms::dot_matrix_display <| - xtd::forms::control
+xtd::forms::date_time <| - xtd::forms::control
+xtd::forms::color_picker <| - xtd::forms::control
+xtd::forms::collapsible_panel <| - xtd::forms::control
+xtd::forms::up_down_button <| - xtd::forms::button_base
+xtd::forms::toggle_button <| - xtd::forms::button_base
+xtd::forms::switch_button <| - xtd::forms::button_base
+xtd::forms::radio_button <| - xtd::forms::button_base
+xtd::forms::light_button <| - xtd::forms::button_base
+xtd::forms::command_link_button <| - xtd::forms::button_base
+xtd::forms::check_box <| - xtd::forms::button_base
+xtd::forms::button <| - xtd::forms::button_base
+xtd::forms::button_base <| - xtd::forms::control
+xtd::forms::control <| - xtd::forms::component
+xtd::forms::busy_dialog <| - xtd::forms::component
+xtd::forms::background_worker <| - xtd::forms::component
+xtd::forms::about_dialog <| - xtd::forms::component
+xtd::forms::component <| - xtd::object
+
+@enduml

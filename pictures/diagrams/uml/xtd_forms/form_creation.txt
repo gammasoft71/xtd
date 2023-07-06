@@ -1,0 +1,28 @@
+@startuml
+
+skinparam backgroundcolor transparent
+skinparam classBackgroundColor white
+skinparam classBorderColor #60A5FF
+skinparam classArrowColor #60A5FF
+skinparam noteBackgroundColor white
+skinparam noteBorderColor #60A5FF
+skinparam packageBorderColor #60A5FF
+skinparam packageFontColor #60A5FF
+skinparam classArrowFontColor #60A5FF
+
+actor user as user
+participant xtd.forms as form
+participant xtd.forms.native as native
+participant xtd.forms.native.xxx as xxx
+
+user -> form : xtd::forms::form my_form
+form -> form : my_form.create_params()
+form -> xxx  : xtd::forms::native::control::create(create_params)
+form -> form : my_form::on_handle_created()
+form -> xxx  : update control::properties(properties)
+form -> xxx  : update form::properties(properties)
+form -> form : my_form.on_create_control()
+form -> user : my_form.handle_created event
+form -> form : create child controls
+
+@enduml
