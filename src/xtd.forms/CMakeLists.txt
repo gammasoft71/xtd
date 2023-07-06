@@ -11,7 +11,6 @@ add_sources(
   include/xtd/xtd.forms
   include/xtd/forms/about_box.h
   include/xtd/forms/about_dialog.h
-  include/xtd/forms/anchor_styles.h
   include/xtd/forms/animation_update_event_args.h
   include/xtd/forms/animation_update_event_handler.h
   include/xtd/forms/animation.h
@@ -20,6 +19,7 @@ add_sources(
   include/xtd/forms/application_context.h
   include/xtd/forms/arrange_direction.h
   include/xtd/forms/arrange_starting_position.h
+  include/xtd/forms/assert_box.h
   include/xtd/forms/assert_dialog.h
   include/xtd/forms/auto_size_mode.h
   include/xtd/forms/background_worker.h
@@ -370,6 +370,7 @@ add_sources(
   src/xtd/forms/animation.cpp
   src/xtd/forms/application.cpp
   src/xtd/forms/application_context.cpp
+  src/xtd/forms/assert_box.cpp
   src/xtd/forms/assert_dialog.cpp
   src/xtd/forms/background_worker.cpp
   src/xtd/forms/box_renderer.cpp
