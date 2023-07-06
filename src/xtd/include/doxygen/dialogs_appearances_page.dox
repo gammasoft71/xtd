@@ -10,6 +10,12 @@
 /// | Light                    |  @image html dialog_about_dialog_w.png   |  @image html dialog_about_dialog_m.png   |  @image html dialog_about_dialog_g.png   |
 /// | Dark                     |  @image html dialog_about_dialog_wd.png  |  @image html dialog_about_dialog_md.png  |  @image html dialog_about_dialog_gd.png  |
 ///
+/// @par assert dialog appearance
+/// | xtd::forms::assert_dialog | Windows                                   | macOS                                     | Gnome                                     |
+/// | ------------------------- | ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
+/// | Light                     |  @image html dialog_assert_dialog_w.png   |  @image html dialog_assert_dialog_m.png   |  @image html dialog_assert_dialog_g.png   |
+/// | Dark                      |  @image html dialog_assert_dialog_wd.png  |  @image html dialog_assert_dialog_md.png  |  @image html dialog_assert_dialog_gd.png  |
+///
 /// @par Busy dialog appearance
 /// | xtd::forms::busy_dialog | Windows                                 | macOS                                   | Gnome                                   |
 /// | ----------------------- | --------------------------------------- | --------------------------------------- | --------------------------------------- |
