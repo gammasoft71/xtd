@@ -272,12 +272,18 @@ namespace xtd {
       /// @warning You must call this method before xtd::forms::application::run.
       static void enable_menu_images();
       
+      /// @brief Enables standard control for the application.
+      /// @remarks By default, xtd uses the standard control (xtd::forms::control_appearance::standard) with this method you can change to force the use of system control (xtd::forms::control_appearance::system) instead.
+      /// @remarks You can always change the appearance of the control on the fly with the xtd::forms::control::control_appearance method.
+      /// @warning You must call this method before xtd::forms::application::run.
+      static void enable_standard_controls();
+      
       /// @brief Enables system control for the application.
       /// @remarks By default, xtd uses the standard control (xtd::forms::control_appearance::standard) with this method you can change to force the use of system control (xtd::forms::control_appearance::system) instead.
       /// @remarks You can always change the appearance of the control on the fly with the xtd::forms::control::control_appearance method.
       /// @warning You must call this method before xtd::forms::application::run.
       static void enable_system_controls();
-      
+
       /// @brief Enables system font size for the application.
       /// @remarks By default, xtd automatically limits the system font size to 9 points if it is larger than 9.
       /// @remarks If you enable this option, you can use the actual font size of the system if it exceeds 9 points and at the same time the default sizes of the different controls will be adapted as well.
