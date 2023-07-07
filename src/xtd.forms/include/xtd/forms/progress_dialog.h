@@ -5,7 +5,7 @@
 #include <xtd/ustring.h>
 #include <xtd/forms/progress_dialog_flags.h>
 #include "component.h"
-#include "dialog_style.h"
+#include "dialog_appearance.h"
 #include "iwin32_window.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -47,13 +47,13 @@ namespace xtd {
       /// @return true if user has clicked on cancel button; otherwise false.
       bool cancelled() const;
       
-      /// @brief Gets the dialog style.
-      /// @return One of the xtd::forms::dialog_style values. The default value is xtd::forms::dialog_style::standard.
-      xtd::forms::dialog_style dialog_style() const noexcept;
-      /// @brief Sets the dialog style.
-      /// @param dialog_style One of the xtd::forms::dialog_style values. The default value is xtd::forms::dialog_style::standard.
+      /// @brief Gets the dialog appearance.
+      /// @return One of the xtd::forms::dialog_appearance values. The default value is xtd::forms::dialog_appearance::standard.
+      xtd::forms::dialog_appearance dialog_appearance() const noexcept;
+      /// @brief Sets the dialog appearance.
+      /// @param dialog_appearance One of the xtd::forms::dialog_appearance values. The default value is xtd::forms::dialog_appearance::standard.
       /// @return Current progress dialog.
-      progress_dialog& dialog_style(xtd::forms::dialog_style dialog_style);
+      progress_dialog& dialog_appearance(xtd::forms::dialog_appearance dialog_appearance);
       
       /// @brief Gets the information texts.
       /// @return The information texts.

@@ -61,10 +61,10 @@ intptr replace_dialog::create(intptr hwnd, const std::optional<xtd::drawing::poi
   handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
   #endif
   
-  int32 dialog_style = wxFR_REPLACEDIALOG | wxFR_NOUPDOWN;
-  if (!show_whole_word) dialog_style |= wxFR_NOWHOLEWORD;
-  if (!show_match_case) dialog_style |= wxFR_NOMATCHCASE;
-  wxReplaceDialog* replace_dialog = new wxReplaceDialog(hwnd, find_replace_data, convert_string::to_wstring(title), dialog_style, find_next, replace, dialog_closed);
+  int32 style = wxFR_REPLACEDIALOG | wxFR_NOUPDOWN;
+  if (!show_whole_word) style |= wxFR_NOWHOLEWORD;
+  if (!show_match_case) style |= wxFR_NOMATCHCASE;
+  wxReplaceDialog* replace_dialog = new wxReplaceDialog(hwnd, find_replace_data, convert_string::to_wstring(title), style, find_next, replace, dialog_closed);
   #if !defined(__WXMSW__)
   replace_dialog->SetMinSize(replace_dialog->GetSize());
   replace_dialog->SetMaxSize(replace_dialog->GetSize());

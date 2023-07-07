@@ -4,7 +4,7 @@
 #pragma once
 #include <string>
 #include <xtd/delegate.h>
-#include "dialog_style.h"
+#include "dialog_appearance.h"
 #include "character_casing.h"
 #include "common_dialog.h"
 
@@ -49,17 +49,17 @@ namespace xtd {
       /// @return One of the xtd::forms::character_casing values. The default value is xtd::forms::character_casing::normal.
       xtd::forms::character_casing character_casing() const noexcept;
       /// @brief Sets the character casing.
-      /// @param dialog_style One of the xtd::forms::character_casing values. The default value is xtd::forms::character_casing::normal.
+      /// @param dialog_appearance One of the xtd::forms::character_casing values. The default value is xtd::forms::character_casing::normal.
       /// @return Current input instance.
       input_dialog& character_casing(xtd::forms::character_casing character_casing);
       
-      /// @brief Gets the dialog style.
-      /// @return One of the xtd::forms::dialog_style values. The default value is xtd::forms::dialog_style::standard.
-      xtd::forms::dialog_style dialog_style() const noexcept;
-      /// @brief Sets the dialog style.
-      /// @param dialog_style One of the xtd::forms::dialog_style values. The default value is xtd::forms::dialog_style::standard.
+      /// @brief Gets the dialog appearance.
+      /// @return One of the xtd::forms::dialog_appearance values. The default value is xtd::forms::dialog_appearance::standard.
+      xtd::forms::dialog_appearance dialog_appearance() const noexcept;
+      /// @brief Sets the dialog appearance.
+      /// @param dialog_appearance One of the xtd::forms::dialog_appearance values. The default value is xtd::forms::dialog_appearance::standard.
       /// @return Current input instance.
-      input_dialog& dialog_style(xtd::forms::dialog_style dialog_style);
+      input_dialog& dialog_appearance(xtd::forms::dialog_appearance dialog_appearance);
       
       /// @brief Gets multiline status.
       /// @return true if dialog text box is multiline; otherwise false.

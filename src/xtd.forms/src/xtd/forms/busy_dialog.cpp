@@ -12,7 +12,7 @@ using namespace xtd::forms;
 
 struct busy_dialog::data {
   xtd::drawing::color back_color = application::style_sheet().system_colors().control();
-  xtd::forms::dialog_style dialog_style = xtd::forms::dialog_style::system;
+  xtd::forms::dialog_appearance dialog_appearance = xtd::forms::dialog_appearance::system;
   xtd::drawing::color fore_color = application::style_sheet().system_colors().control_text();
   xtd::drawing::image icon;
   xtd::ustring text;
@@ -36,12 +36,12 @@ busy_dialog& busy_dialog::back_color(const xtd::drawing::color& color) {
   return *this;
 }
 
-xtd::forms::dialog_style busy_dialog::dialog_style() const noexcept {
-  return data_->dialog_style;
+xtd::forms::dialog_appearance busy_dialog::dialog_appearance() const noexcept {
+  return data_->dialog_appearance;
 }
 
-busy_dialog& busy_dialog::dialog_style(xtd::forms::dialog_style dialog_style) {
-  data_->dialog_style = dialog_style;
+busy_dialog& busy_dialog::dialog_appearance(xtd::forms::dialog_appearance dialog_appearance) {
+  data_->dialog_appearance = dialog_appearance;
   return *this;
 }
 
@@ -105,21 +105,21 @@ busy_dialog& busy_dialog::text(const xtd::ustring& text) {
 }
 
 void busy_dialog::reset() {
-  data_->dialog_style = xtd::forms::dialog_style::standard;
+  data_->dialog_appearance = xtd::forms::dialog_appearance::standard;
   data_->icon = xtd::drawing::image::empty;
   data_->text = "";
   data_->description = "";
 }
 
 void busy_dialog::show() {
-  data_->native = data_->dialog_style == xtd::forms::dialog_style::system;
+  data_->native = data_->dialog_appearance == xtd::forms::dialog_appearance::system;
   if (data_->native)
     data_->handle = native::busy_dialog::create(0, xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(data_->icon)), data_->text, data_->description, data_->back_color, data_->fore_color, data_->opacity);
   application::do_events();
 }
 
 void busy_dialog::show(const iwin32_window& owner) {
-  data_->native = data_->dialog_style == xtd::forms::dialog_style::system;
+  data_->native = data_->dialog_appearance == xtd::forms::dialog_appearance::system;
   if (data_->native)
     data_->handle = native::busy_dialog::create(owner.handle(), xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(data_->icon)), data_->text, data_->description, data_->back_color, data_->fore_color, data_->opacity);
   application::do_events();

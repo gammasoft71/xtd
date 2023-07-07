@@ -16,7 +16,7 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 struct find_dialog::data {
-  xtd::forms::dialog_style dialog_style = xtd::forms::dialog_style::standard;
+  xtd::forms::dialog_appearance dialog_appearance = xtd::forms::dialog_appearance::standard;
   xtd::ustring find_string;
   intptr handle = 0;
   std::optional<xtd::drawing::point> location;
@@ -153,7 +153,7 @@ void find_dialog::close() {
 }
 
 void find_dialog::reset() noexcept {
-  data_->dialog_style = xtd::forms::dialog_style::standard;
+  data_->dialog_appearance = xtd::forms::dialog_appearance::standard;
   data_->location.reset();
   data_->title = "";
   data_->find_string = "";

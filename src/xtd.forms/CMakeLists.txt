@@ -89,7 +89,7 @@ add_sources(
   include/xtd/forms/dialog_closed_event_args.h
   include/xtd/forms/dialog_closed_event_handler.h
   include/xtd/forms/dialog_result.h
-  include/xtd/forms/dialog_style.h
+  include/xtd/forms/dialog_appearance.h
   include/xtd/forms/do_work_event_args.h
   include/xtd/forms/do_work_event_handler.h
   include/xtd/forms/dock_style.h

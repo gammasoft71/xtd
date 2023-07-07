@@ -6,7 +6,7 @@
 #include <xtd/ustring.h>
 #include <xtd/drawing/icon.h>
 #include "component.h"
-#include "dialog_style.h"
+#include "dialog_appearance.h"
 #include "iwin32_window.h"
 #include "layout/arranged_element_collection.h"
 
@@ -111,13 +111,13 @@ namespace xtd {
       /// @return Current about_dialog instance.
       about_dialog& documenters(const documenter_collection& documenters);
       
-      /// @brief Gets the dialog style.
-      /// @return One of the xtd::forms::dialog_style values. The default value is xtd::forms::dialog_style::standard.
-      xtd::forms::dialog_style dialog_style() const noexcept;
-      /// @brief Sets the dialog style.
-      /// @param dialog_style One of the xtd::forms::dialog_style values. The default value is xtd::forms::dialog_style::standard.
+      /// @brief Gets the dialog appearance.
+      /// @return One of the xtd::forms::dialog_appearance values. The default value is xtd::forms::dialog_appearance::standard.
+      xtd::forms::dialog_appearance dialog_appearance() const noexcept;
+      /// @brief Sets the dialog appearance.
+      /// @param dialog_appearance One of the xtd::forms::dialog_appearance values. The default value is xtd::forms::dialog_appearance::standard.
       /// @return Current about_dialog instance.
-      about_dialog& dialog_style(xtd::forms::dialog_style dialog_style);
+      about_dialog& dialog_appearance(xtd::forms::dialog_appearance dialog_appearance);
       
       /// @brief Gets the product icon.
       /// @return The product icon.

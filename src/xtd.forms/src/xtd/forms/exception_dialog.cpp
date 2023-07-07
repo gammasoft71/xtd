@@ -189,7 +189,7 @@ namespace {
 
 struct exception_dialog::data {
   xtd::forms::dialog_result dialog_result = xtd::forms::dialog_result::none;
-  xtd::forms::dialog_style dialog_style = xtd::forms::dialog_style::standard;
+  xtd::forms::dialog_appearance dialog_appearance = xtd::forms::dialog_appearance::standard;
   const std::exception* exception = nullptr;
   xtd::ustring text;
 };
@@ -201,12 +201,12 @@ xtd::forms::dialog_result exception_dialog::dialog_result() const noexcept {
   return data_->dialog_result;
 }
 
-xtd::forms::dialog_style exception_dialog::dialog_style() const noexcept {
-  return data_->dialog_style;
+xtd::forms::dialog_appearance exception_dialog::dialog_appearance() const noexcept {
+  return data_->dialog_appearance;
 }
 
-exception_dialog& exception_dialog::dialog_style(xtd::forms::dialog_style dialog_style) {
-  data_->dialog_style = dialog_style;
+exception_dialog& exception_dialog::dialog_appearance(xtd::forms::dialog_appearance dialog_appearance) {
+  data_->dialog_appearance = dialog_appearance;
   return *this;
 }
 
@@ -230,7 +230,7 @@ exception_dialog& exception_dialog::text(const xtd::ustring& text) {
 
 
 void exception_dialog::reset() noexcept {
-  data_->dialog_style = xtd::forms::dialog_style::standard;
+  data_->dialog_appearance = xtd::forms::dialog_appearance::standard;
   data_->exception = nullptr;
   data_->text = "";
 }

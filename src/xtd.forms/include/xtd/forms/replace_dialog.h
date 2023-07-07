@@ -7,7 +7,7 @@
 #include <xtd/drawing/point.h>
 #include "component.h"
 #include "dialog_closed_event_handler.h"
-#include "dialog_style.h"
+#include "dialog_appearance.h"
 #include "find_event_handler.h"
 #include "replace_event_handler.h"
 #include "iwin32_window.h"

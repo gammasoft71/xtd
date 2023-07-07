@@ -55,11 +55,11 @@ intptr find_dialog::create(intptr hwnd, const std::optional<xtd::drawing::point>
   handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
   #endif
   
-  int32 dialog_style = 0;
-  if (!show_up_down) dialog_style |= wxFR_NOUPDOWN;
-  if (!show_whole_word) dialog_style |= wxFR_NOWHOLEWORD;
-  if (!show_match_case) dialog_style |= wxFR_NOMATCHCASE;
-  wxFindDialog* find_dialog = new wxFindDialog(hwnd, find_replace_data, convert_string::to_wstring(title), dialog_style, find_next, dialog_closed);
+  int32 style = 0;
+  if (!show_up_down) style |= wxFR_NOUPDOWN;
+  if (!show_whole_word) style |= wxFR_NOWHOLEWORD;
+  if (!show_match_case) style |= wxFR_NOMATCHCASE;
+  wxFindDialog* find_dialog = new wxFindDialog(hwnd, find_replace_data, convert_string::to_wstring(title), style, find_next, dialog_closed);
   #if !defined(__WXMSW__)
   find_dialog->SetMinSize(find_dialog->GetSize());
   find_dialog->SetMaxSize(find_dialog->GetSize());

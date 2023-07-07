@@ -9,7 +9,7 @@
 #include <xtd/system_exception.h>
 #include "component.h"
 #include "dialog_result.h"
-#include "dialog_style.h"
+#include "dialog_appearance.h"
 #include "dialog_closed_event_handler.h"
 #include "iwin32_window.h"
 #include "layout/arranged_element_collection.h"
@@ -50,13 +50,13 @@ namespace xtd {
       /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
       xtd::forms::dialog_result dialog_result() const noexcept;
       
-      /// @brief Gets the dialog style.
-      /// @return One of the xtd::forms::dialog_style values. The default value is xtd::forms::dialog_style::standard.
-      xtd::forms::dialog_style dialog_style() const noexcept;
-      /// @brief Sets the dialog style.
-      /// @param dialog_style One of the xtd::forms::dialog_style values. The default value is xtd::forms::dialog_style::standard.
+      /// @brief Gets the dialog appearance.
+      /// @return One of the xtd::forms::dialog_appearance values. The default value is xtd::forms::dialog_appearance::standard.
+      xtd::forms::dialog_appearance dialog_appearance() const noexcept;
+      /// @brief Sets the dialog appearance.
+      /// @param dialog_appearance One of the xtd::forms::dialog_appearance values. The default value is xtd::forms::dialog_appearance::standard.
       /// @return Current exception_dialog instance.
-      exception_dialog& dialog_style(xtd::forms::dialog_style dialog_style);
+      exception_dialog& dialog_appearance(xtd::forms::dialog_appearance dialog_appearance);
       
       /// @brief Gets exception reference.
       /// @return A exception reference.

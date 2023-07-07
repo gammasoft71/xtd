@@ -6,7 +6,7 @@
 #include <xtd/event.h>
 #include "component.h"
 #include "dialog_result.h"
-#include "dialog_style.h"
+#include "dialog_appearance.h"
 #include "dialog_closed_event_handler.h"
 #include "iwin32_window.h"
 
@@ -46,13 +46,13 @@ namespace xtd {
       /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
       xtd::forms::dialog_result dialog_result() const noexcept;
       
-      /// @brief Gets the dialog style.
-      /// @return One of the xtd::forms::dialog_style values. The default value is xtd::forms::dialog_style::standard.
-      xtd::forms::dialog_style dialog_style() const noexcept;
-      /// @brief Sets the dialog style.
-      /// @param dialog_style One of the xtd::forms::dialog_style values. The default value is xtd::forms::dialog_style::standard.
+      /// @brief Gets the dialog appearance.
+      /// @return One of the xtd::forms::dialog_appearance values. The default value is xtd::forms::dialog_appearance::standard.
+      xtd::forms::dialog_appearance dialog_appearance() const noexcept;
+      /// @brief Sets the dialog appearance.
+      /// @param dialog_appearance One of the xtd::forms::dialog_appearance values. The default value is xtd::forms::dialog_appearance::standard.
       /// @return Current assert_dialog instance.
-      assert_dialog& dialog_style(xtd::forms::dialog_style dialog_style);
+      assert_dialog& dialog_appearance(xtd::forms::dialog_appearance dialog_appearance);
       
       /// @brief Gets the dialog message text.
       /// @return The current dialog message text.

@@ -9,7 +9,7 @@ using namespace xtd;
 using namespace xtd::forms;
 
 struct progress_dialog::data {
-  xtd::forms::dialog_style dialog_style = xtd::forms::dialog_style::system;
+  xtd::forms::dialog_appearance dialog_appearance = xtd::forms::dialog_appearance::system;
   intptr handle = 0;
   std::vector<xtd::ustring> informations;
   size_t marquee_animation_speed = 100;
@@ -36,13 +36,13 @@ bool progress_dialog::cancelled() const {
   return native::progress_dialog::cancelled(data_->handle);
 }
 
-xtd::forms::dialog_style progress_dialog::dialog_style() const noexcept {
-  return data_->dialog_style;
+xtd::forms::dialog_appearance progress_dialog::dialog_appearance() const noexcept {
+  return data_->dialog_appearance;
 }
 
-progress_dialog& progress_dialog::dialog_style(xtd::forms::dialog_style dialog_style) {
-  if (data_->dialog_style != dialog_style) {
-    data_->dialog_style = dialog_style;
+progress_dialog& progress_dialog::dialog_appearance(xtd::forms::dialog_appearance dialog_appearance) {
+  if (data_->dialog_appearance != dialog_appearance) {
+    data_->dialog_appearance = dialog_appearance;
     recreate_dialog();
   }
   return *this;
@@ -245,7 +245,7 @@ void progress_dialog::perform_step() {
 }
 
 void progress_dialog::reset() noexcept {
-  data_->dialog_style = xtd::forms::dialog_style::system;
+  data_->dialog_appearance = xtd::forms::dialog_appearance::system;
   data_->informations.clear();
   data_->marquee_animation_speed = 100;
   data_->maximum = 100;
@@ -274,19 +274,19 @@ void progress_dialog::show_sheet_dialog(const iwin32_window& owner) {
 }
 
 void progress_dialog::show() {
-  data_->native = data_->dialog_style == xtd::forms::dialog_style::system;
+  data_->native = data_->dialog_appearance == xtd::forms::dialog_appearance::system;
   if (data_->native) data_->handle = native::progress_dialog::create(0, data_->text, data_->message, data_->informations, data_->marquee_animation_speed, data_->minimum, data_->maximum, data_->value, data_->options);
   native::progress_dialog::show(data_->handle);
 }
 
 void progress_dialog::show(const iwin32_window& owner) {
-  data_->native = data_->dialog_style == xtd::forms::dialog_style::system;
+  data_->native = data_->dialog_appearance == xtd::forms::dialog_appearance::system;
   if (data_->native) data_->handle = native::progress_dialog::create(owner.handle(), data_->text, data_->message, data_->informations, data_->marquee_animation_speed, data_->minimum, data_->maximum, data_->value, data_->options);
   native::progress_dialog::show(data_->handle);
 }
 
 void progress_dialog::show_sheet(const iwin32_window& owner) {
-  data_->native = data_->dialog_style == xtd::forms::dialog_style::system;
+  data_->native = data_->dialog_appearance == xtd::forms::dialog_appearance::system;
   if (data_->native) data_->handle = native::progress_dialog::create(owner.handle(), data_->text, data_->message, data_->informations, data_->marquee_animation_speed, data_->minimum, data_->maximum, data_->value, data_->options);
   native::progress_dialog::show_sheet(data_->handle);
 }
