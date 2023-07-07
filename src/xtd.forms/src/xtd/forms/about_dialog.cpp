@@ -253,7 +253,7 @@ namespace {
 }
 
 struct about_dialog::data {
-  xtd::forms::dialog_style dialog_style = xtd::forms::dialog_style::standard;
+  xtd::forms::dialog_appearance dialog_appearance = xtd::forms::dialog_appearance::standard;
   xtd::drawing::image icon;
   xtd::ustring name;
   xtd::ustring version;
@@ -334,12 +334,12 @@ about_dialog& about_dialog::documenters(const documenter_collection& documenters
   return *this;
 }
 
-xtd::forms::dialog_style about_dialog::dialog_style() const noexcept {
-  return data_->dialog_style;
+xtd::forms::dialog_appearance about_dialog::dialog_appearance() const noexcept {
+  return data_->dialog_appearance;
 }
 
-about_dialog& about_dialog::dialog_style(xtd::forms::dialog_style dialog_style) {
-  data_->dialog_style = dialog_style;
+about_dialog& about_dialog::dialog_appearance(xtd::forms::dialog_appearance dialog_appearance) {
+  data_->dialog_appearance = dialog_appearance;
   return *this;
 }
 
@@ -440,7 +440,7 @@ about_dialog about_dialog::from_executing_assembly_informations() {
 }
 
 void about_dialog::reset() noexcept {
-  data_->dialog_style = xtd::forms::dialog_style::standard;
+  data_->dialog_appearance = xtd::forms::dialog_appearance::standard;
   data_->icon = xtd::drawing::image::empty;
   data_->artists.clear();
   data_->authors.clear();
@@ -457,11 +457,11 @@ void about_dialog::reset() noexcept {
 }
 
 void about_dialog::show() {
-  if (data_->dialog_style == xtd::forms::dialog_style::system) native::about_dialog::show(0, xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(data_->icon)), data_->name, data_->description, data_->version, data_->long_version, data_->copyright, data_->website, data_->website_label, data_->authors.to_array(), data_->artists.to_array(), data_->documenters.to_array(), data_->translators.to_array(), data_->license);
+  if (data_->dialog_appearance == xtd::forms::dialog_appearance::system) native::about_dialog::show(0, xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(data_->icon)), data_->name, data_->description, data_->version, data_->long_version, data_->copyright, data_->website, data_->website_label, data_->authors.to_array(), data_->artists.to_array(), data_->documenters.to_array(), data_->translators.to_array(), data_->license);
   else data_->dialog = about_dialog_standard::show(nullptr, data_->icon, data_->name, data_->description, data_->version, data_->long_version, data_->copyright, data_->website, data_->website_label, data_->authors.to_array(), data_->artists.to_array(), data_->documenters.to_array(), data_->translators.to_array(), data_->license);
 }
 
 void about_dialog::show(const iwin32_window& owner) {
-  if (data_->dialog_style == xtd::forms::dialog_style::system) native::about_dialog::show(owner.handle(), xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(data_->icon)), data_->name, data_->description, data_->version, data_->long_version, data_->copyright, data_->website, data_->website_label, data_->authors.to_array(), data_->artists.to_array(), data_->documenters.to_array(), data_->translators.to_array(), data_->license);
+  if (data_->dialog_appearance == xtd::forms::dialog_appearance::system) native::about_dialog::show(owner.handle(), xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(data_->icon)), data_->name, data_->description, data_->version, data_->long_version, data_->copyright, data_->website, data_->website_label, data_->authors.to_array(), data_->artists.to_array(), data_->documenters.to_array(), data_->translators.to_array(), data_->license);
   else data_->dialog = about_dialog_standard::show(&owner, data_->icon, data_->name, data_->description, data_->version, data_->long_version, data_->copyright, data_->website, data_->website_label, data_->authors.to_array(), data_->artists.to_array(), data_->documenters.to_array(), data_->translators.to_array(), data_->license);
 }

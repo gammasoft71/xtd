@@ -23,12 +23,12 @@ forms::dialog_result assert_dialog::dialog_result() const noexcept {
   return data_->dialog_result;
 }
 
-forms::dialog_style assert_dialog::dialog_style() const noexcept {
-  return data_->dialog.dialog_style();
+forms::dialog_appearance assert_dialog::dialog_appearance() const noexcept {
+  return data_->dialog.dialog_appearance();
 }
 
-assert_dialog& assert_dialog::dialog_style(forms::dialog_style dialog_style) {
-  data_->dialog.dialog_style(dialog_style);
+assert_dialog& assert_dialog::dialog_appearance(forms::dialog_appearance dialog_appearance) {
+  data_->dialog.dialog_appearance(dialog_appearance);
   return *this;
 }
 

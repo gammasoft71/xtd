@@ -1,30 +1,19 @@
 /// @file
-/// @brief Contains xtd::forms::dialog_style enum class.
+/// @brief Contains xtd::forms::dialog_appearance enum class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/enum.h>
+#include "control_appearance.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-    /// @brief Specifies the style of a dialog.
+    /// @brief Specifies the appearance of a dialog.
     /// @par Namespace
     /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
-    enum class dialog_style {
-      /// @brief Standard style dialog.
-      standard = 0,
-      /// @brief System style dialog.
-      system = 1,
-    };
+    using dialog_appearance = control_appearance;
   }
 }
-
-/// @cond
-template<> struct xtd::enum_register<xtd::forms::dialog_style> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::dialog_style> {{xtd::forms::dialog_style::standard, "standard"}, {xtd::forms::dialog_style::system, "system"}};}
-};
-/// @endcond

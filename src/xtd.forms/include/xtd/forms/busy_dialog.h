@@ -9,7 +9,7 @@
 #include <xtd/drawing/icon.h>
 #include <xtd/forms/control.h>
 #include "component.h"
-#include "dialog_style.h"
+#include "dialog_appearance.h"
 #include "iwin32_window.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -55,13 +55,13 @@ namespace xtd {
       /// @return Current busy_dialog instance.
       busy_dialog& back_color(const xtd::drawing::color& color);
       
-      /// @brief Gets the dialog style color for the dialog.
-      /// @return A xtd::forms::dialog_style that represents the dialog style of the dialog.
-      xtd::forms::dialog_style dialog_style() const noexcept;
-      /// @brief Sets the dialog style color for the dialog.
-      /// @param dialog_style A xtd::forms::dialog_style that represents the dialog style of the dialog.
+      /// @brief Gets the dialog appearance color for the dialog.
+      /// @return A xtd::forms::dialog_appearance that represents the dialog appearance of the dialog.
+      xtd::forms::dialog_appearance dialog_appearance() const noexcept;
+      /// @brief Sets the dialog appearance color for the dialog.
+      /// @param dialog_appearance A xtd::forms::dialog_appearance that represents the dialog appearance of the dialog.
       /// @return Current busy_dialog instance.
-      busy_dialog& dialog_style(xtd::forms::dialog_style dialog_style);
+      busy_dialog& dialog_appearance(xtd::forms::dialog_appearance dialog_appearance);
       
       /// @brief Gets the product description.
       /// @return The product description.

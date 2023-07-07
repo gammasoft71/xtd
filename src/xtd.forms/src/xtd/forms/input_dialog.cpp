@@ -103,7 +103,7 @@ namespace {
 
 struct input_dialog::data {
   xtd::forms::character_casing character_casing = xtd::forms::character_casing::normal;
-  xtd::forms::dialog_style dialog_style = xtd::forms::dialog_style::standard;
+  xtd::forms::dialog_appearance dialog_appearance = xtd::forms::dialog_appearance::standard;
   bool multiline = false;
   xtd::ustring message;
   xtd::ustring text;
@@ -131,12 +131,12 @@ input_dialog& input_dialog::character_casing(xtd::forms::character_casing charac
   return *this;
 }
 
-xtd::forms::dialog_style input_dialog::dialog_style() const noexcept {
-  return data_->dialog_style;
+xtd::forms::dialog_appearance input_dialog::dialog_appearance() const noexcept {
+  return data_->dialog_appearance;
 }
 
-input_dialog& input_dialog::dialog_style(xtd::forms::dialog_style dialog_style) {
-  data_->dialog_style = dialog_style;
+input_dialog& input_dialog::dialog_appearance(xtd::forms::dialog_appearance dialog_appearance) {
+  data_->dialog_appearance = dialog_appearance;
   return *this;
 }
 
@@ -202,7 +202,7 @@ input_dialog& input_dialog::word_wrap(bool word_wrap) {
 
 void input_dialog::reset() noexcept {
   data_->character_casing = xtd::forms::character_casing::normal;
-  data_->dialog_style = xtd::forms::dialog_style::standard;
+  data_->dialog_appearance = xtd::forms::dialog_appearance::standard;
   data_->message = "";
   data_->multiline = false;
   data_->text = "";
@@ -217,7 +217,7 @@ bool input_dialog::run_dialog(intptr owner) {
     case xtd::forms::character_casing::lower: data_->value = data_->value.to_lower(); break;
     default: break;
   }
-  if (data_->dialog_style == xtd::forms::dialog_style::standard) {
+  if (data_->dialog_appearance == xtd::forms::dialog_appearance::standard) {
     input_dialog_standard dialog(data_->text, data_->message, data_->value, data_->character_casing, data_->multiline, data_->use_system_password_char, data_->word_wrap);
     auto result = dialog.run_dialog(owner);
     if (result) data_->value = dialog.value();
@@ -238,7 +238,7 @@ void input_dialog::run_sheet(intptr owner) {
   if (!owner)
     run_dialog(owner);
   else {
-    if (data_->dialog_style == xtd::forms::dialog_style::standard) {
+    if (data_->dialog_appearance == xtd::forms::dialog_appearance::standard) {
       std::shared_ptr<input_dialog_standard> dialog = std::make_shared<input_dialog_standard>(data_->text, data_->message, data_->value, data_->character_casing, data_->multiline, data_->use_system_password_char, data_->word_wrap);
       dialog->form_closed += [&, dialog](object & sender, const form_closed_event_args & e) {
         if (dialog->dialog_result() == dialog_result::ok) data_->value = dialog->value();

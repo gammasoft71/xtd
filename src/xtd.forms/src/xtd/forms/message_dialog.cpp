@@ -17,7 +17,7 @@ struct message_dialog::data {
   xtd::forms::message_dialog_buttons buttons = xtd::forms::message_dialog_buttons::ok;
   xtd::forms::message_dialog_default_button default_button = xtd::forms::message_dialog_default_button::button1;
   xtd::forms::dialog_result dialog_result = xtd::forms::dialog_result::none;
-  xtd::forms::dialog_style dialog_style = xtd::forms::dialog_style::system;
+  xtd::forms::dialog_appearance dialog_appearance = xtd::forms::dialog_appearance::system;
   bool display_help_button = false;
   xtd::forms::message_dialog_icon icon = xtd::forms::message_dialog_icon::none;
   xtd::forms::message_dialog_options options = static_cast<xtd::forms::message_dialog_options>(0);
@@ -59,12 +59,12 @@ xtd::forms::dialog_result message_dialog::dialog_result() const noexcept {
   return data_->dialog_result;
 }
 
-xtd::forms::dialog_style message_dialog::dialog_style() const noexcept {
-  return data_->dialog_style;
+xtd::forms::dialog_appearance message_dialog::dialog_appearance() const noexcept {
+  return data_->dialog_appearance;
 }
 
-message_dialog& message_dialog::dialog_style(xtd::forms::dialog_style dialog_style) {
-  data_->dialog_style = dialog_style;
+message_dialog& message_dialog::dialog_appearance(xtd::forms::dialog_appearance dialog_appearance) {
+  data_->dialog_appearance = dialog_appearance;
   return *this;
 }
 
@@ -107,7 +107,7 @@ message_dialog& message_dialog::text(const xtd::ustring& text) {
 void message_dialog::reset() {
   data_->buttons = xtd::forms::message_dialog_buttons::ok;
   data_->default_button = xtd::forms::message_dialog_default_button::button1;
-  data_->dialog_style = xtd::forms::dialog_style::standard;
+  data_->dialog_appearance = xtd::forms::dialog_appearance::standard;
   data_->display_help_button = false;
   data_->icon = xtd::forms::message_dialog_icon::none;
   data_->options = static_cast<xtd::forms::message_dialog_options>(0);
