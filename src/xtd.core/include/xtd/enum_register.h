@@ -63,8 +63,8 @@ namespace xtd {
 /// @param namespace_name The name of the the namespace. Empty if no namespace.
 /// @param enum_type The name of the enum.
 /// @param underlying_type The underying type.
-/// @param ... The nemumeration lists.
-/// @remaks This helper is created to facilitate to set the xtd::enum_register with the enumeration identifiers.
+/// @param ... The enumeration list.
+/// @remarks This helper is created to facilitate to set the xtd::enum_register with the enumeration identifiers.
 /// @warning The helper has one limitiation :
 ///  * The enumeration's cannot be in a class or struct. The enum must be in the global namespace or in a namespace hierarchy. If the enumeration is in a class or struct, add operators manually and use xtd::enum_register to register the enumeration identifiers.
 /// @par Examples
@@ -84,8 +84,8 @@ namespace xtd {
 /// @param namespace_name The name of the the namespace. Empty if no namespace.
 /// @param enum_class_type The name of the enum class.
 /// @param underlying_type The underying type.
-/// @param ... The nemumeration lists.
-/// @remaks This helper is created to facilitate to set the xtd::enum_register with the enumeration identifiers.
+/// @param ... The enumeration list.
+/// @remarks This helper is created to facilitate to set the xtd::enum_register with the enumeration identifiers.
 /// @warning The helper has one limitiation :
 ///  * The enumeration's cannot be in a class or struct. The enum must be in the global namespace or in a namespace hierarchy. If the enumeration is in a class or struct, add operators manually and use xtd::enum_register to register the enumeration identifiers.
 /// @par Examples
@@ -105,8 +105,8 @@ namespace xtd {
 /// @param namespace_name The name of the the namespace. Empty if no namespace.
 /// @param enum_struct_type The name of the enum struct.
 /// @param underlying_type The underying type.
-/// @param ... The nemumeration lists.
-/// @remaks This helper is created to facilitate to set the xtd::enum_register with the enumeration identifiers.
+/// @param ... The enumeration list.
+/// @remarks This helper is created to facilitate to set the xtd::enum_register with the enumeration identifiers.
 /// @warning The helper has one limitiation :
 ///  * The enumeration's cannot be in a class or struct. The enum must be in the global namespace or in a namespace hierarchy. If the enumeration is in a class or struct, add operators manually and use xtd::enum_register to register the enumeration identifiers.
 /// @par Examples
@@ -125,8 +125,8 @@ namespace xtd {
 /// @ingroup xtd_core system keywords
 /// @param namespace_name The name of the the namespace. Empty if no namespace.
 /// @param enum_type The name of the enum.
-/// @param ... The nemumeration lists.
-/// @remaks This helper is created to facilitate to set the xtd::enum_register with the enumeration identifiers.
+/// @param ... The enumeration list.
+/// @remarks This helper is created to facilitate to set the xtd::enum_register with the enumeration identifiers.
 /// @warning The helper has one limitiation :
 ///  * The enumeration's cannot be in a class or struct. The enum must be in the global namespace or in a namespace hierarchy. If the enumeration is in a class or struct, add operators manually and use xtd::enum_register to register the enumeration identifiers.
 /// @par Examples
@@ -143,8 +143,8 @@ namespace xtd {
 /// @ingroup xtd_core system keywords
 /// @param namespace_name The name of the the namespace. Empty if no namespace.
 /// @param enum_class_type The name of the enum class.
-/// @param ... The nemumeration lists.
-/// @remaks This helper is created to facilitate to set the xtd::enum_register with the enumeration identifiers.
+/// @param ... The enumeration list.
+/// @remarks This helper is created to facilitate to set the xtd::enum_register with the enumeration identifiers.
 /// @warning The helper has one limitiation :
 ///  * The enumeration's cannot be in a class or struct. The enum must be in the global namespace or in a namespace hierarchy. If the enumeration is in a class or struct, add operators manually and use xtd::enum_register to register the enumeration identifiers.
 /// @par Examples
@@ -161,8 +161,8 @@ namespace xtd {
 /// @ingroup xtd_core system keywords
 /// @param namespace_name The name of the the namespace. Empty if no namespace.
 /// @param enum_struct_type The name of the enum struct.
-/// @param ... The nemumeration lists.
-/// @remaks This helper is created to facilitate to set the xtd::enum_register with the enumeration identifiers.
+/// @param ... The enumeration list.
+/// @remarks This helper is created to facilitate to set the xtd::enum_register with the enumeration identifiers.
 /// @warning The helper has one limitiation :
 ///  * The enumeration's cannot be in a class or struct. The enum must be in the global namespace or in a namespace hierarchy. If the enumeration is in a class or struct, add operators manually and use xtd::enum_register to register the enumeration identifiers.
 /// @par Examples
