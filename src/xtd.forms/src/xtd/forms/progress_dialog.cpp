@@ -2,6 +2,7 @@
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/progress_dialog.h>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include "../../../include/xtd/forms/application.h"
 #include "../../../include/xtd/forms/progress_dialog.h"
 
 using namespace std;
@@ -25,6 +26,7 @@ struct progress_dialog::data {
 };
 
 progress_dialog::progress_dialog() : data_(std::make_shared<data>()) {
+  data_->dialog_appearance = application::use_system_controls() ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
 }
 
 progress_dialog::~progress_dialog() {
@@ -245,7 +247,7 @@ void progress_dialog::perform_step() {
 }
 
 void progress_dialog::reset() noexcept {
-  data_->dialog_appearance = xtd::forms::dialog_appearance::system;
+  data_->dialog_appearance = application::use_system_controls() ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
   data_->informations.clear();
   data_->marquee_animation_speed = 100;
   data_->maximum = 100;

@@ -8,6 +8,7 @@
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/diagnostics/process.h>
 #include <xtd/drawing/system_icons.h>
+#include "../../../include/xtd/forms/application.h"
 #include "../../../include/xtd/forms/replace_dialog.h"
 
 using namespace std;
@@ -31,6 +32,7 @@ struct replace_dialog::data {
 };
 
 replace_dialog::replace_dialog() : data_(std::make_shared<data>()) {
+  data_->dialog_appearance = application::use_system_controls() ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
 }
 
 replace_dialog::~replace_dialog() {
@@ -140,7 +142,7 @@ void replace_dialog::close() {
 }
 
 void replace_dialog::reset() noexcept {
-  data_->dialog_appearance = xtd::forms::dialog_appearance::standard;
+  data_->dialog_appearance = application::use_system_controls() ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
   data_->location.reset();
   data_->title = "";
   data_->find_string = "";

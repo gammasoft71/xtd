@@ -77,7 +77,11 @@ namespace {
   }
 }
 
+#if defined(__XTD_USE_SYSTEM_CONTROLS__)
+bool application::use_system_controls_ = true;
+#else
 bool application::use_system_controls_ = false;
+#endif
 bool application::use_visual_styles_ = false;
 bool application::use_wait_cursor_ = false;
 bool application::message_loop_ = false;
@@ -268,6 +272,11 @@ void application::enable_light_mode() {
 void application::enable_menu_images() {
   if (application::application::message_loop_ == true) throw invalid_operation_exception("Call application::enable_menu_images() before application::run()"_t, csf_);
   native::application::enable_menu_images();
+}
+
+void application::enable_standard_controls() {
+  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call application::enable_standard_controls() before application::run()"_t, csf_);
+  application::use_system_controls_ = false;
 }
 
 void application::enable_system_controls() {
