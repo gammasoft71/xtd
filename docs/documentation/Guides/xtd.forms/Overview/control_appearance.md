@@ -23,10 +23,10 @@ For any control or dialog box, you can decide to use the native version in the f
 
 - Dialogs
 
-  A dialog is not a control, so to avoid confusion, this property is called dialog_style.
+  A dialog is not a control, so to avoid confusion, this property is called dialog_appearance.
 
 ```cpp
- my_dialog.dialog_style(xtd::forms::dialog_style::system);
+ my_dialog.dialog_appearance(xtd::forms::dialog_appearance::system);
 ```
 
 ## Remarks
