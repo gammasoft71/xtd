@@ -302,6 +302,9 @@ You cannot create an instance of this class. </dd></dl>
 <tr class="memitem:a38695ee0d586fd727abfb42995f6d9cb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a38695ee0d586fd727abfb42995f6d9cb">enable_menu_images</a> ()</td></tr>
 <tr class="memdesc:a38695ee0d586fd727abfb42995f6d9cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables menu images for the application.  <br /></td></tr>
 <tr class="separator:a38695ee0d586fd727abfb42995f6d9cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1496ddd594d8502e5c64355434d9e73e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a1496ddd594d8502e5c64355434d9e73e">enable_standard_controls</a> ()</td></tr>
+<tr class="memdesc:a1496ddd594d8502e5c64355434d9e73e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables standard control for the application.  <br /></td></tr>
+<tr class="separator:a1496ddd594d8502e5c64355434d9e73e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28ad4db693e3bf228e5f0902fdf5882a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a28ad4db693e3bf228e5f0902fdf5882a">enable_system_controls</a> ()</td></tr>
 <tr class="memdesc:a28ad4db693e3bf228e5f0902fdf5882a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables system control for the application.  <br /></td></tr>
 <tr class="separator:a28ad4db693e3bf228e5f0902fdf5882a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -687,6 +690,37 @@ Typically, you use this method in a loop to process messages. </dd></dl>
 
 <p>Enables menu images for the application. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>This method has an effect only on linux. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>You must call this method before <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </dd></dl>
+
+</div>
+</div>
+<a id="a1496ddd594d8502e5c64355434d9e73e" name="a1496ddd594d8502e5c64355434d9e73e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1496ddd594d8502e5c64355434d9e73e">&#9670;&#160;</a></span>enable_standard_controls()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::application::enable_standard_controls </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enables standard control for the application. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>By default, xtd uses the standard control (<a class="el" href="group__xtd__forms.html#gga5d307293383256b1361069a8e6c57316ac00f0c4675b91fb8b918e4079a0b1bac" title="The appearance of the control is determined by current theme of xtd.">xtd::forms::control_appearance::standard</a>) with this method you can change to force the use of system control (<a class="el" href="group__xtd__forms.html#gga5d307293383256b1361069a8e6c57316a54b53072540eeeb8f8e9343e71f28176" title="The appearance of the control is determined by the user&#39;s operating system.">xtd::forms::control_appearance::system</a>) instead. </dd>
+<dd>
+You can always change the appearance of the control on the fly with the <a class="el" href="classxtd_1_1forms_1_1control.html#ab593d8b22a37ed66044f36820c0f25cd" title="Gets control appearance.">xtd::forms::control::control_appearance</a> method. </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>You must call this method before <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </dd></dl>
 
 </div>
@@ -1999,7 +2033,7 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 6 2023 22:39:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jul 7 2023 18:15:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
