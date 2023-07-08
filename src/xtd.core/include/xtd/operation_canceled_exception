@@ -1,0 +1,2 @@
+#pragma once
+#include "operation_canceled_exception.h"

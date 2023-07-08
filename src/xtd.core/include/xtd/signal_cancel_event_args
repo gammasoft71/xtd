@@ -1,0 +1,2 @@
+#pragma once
+#include "signal_cancel_event_args.h"

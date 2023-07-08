@@ -1,0 +1,2 @@
+#pragma once
+#include "program_exit_event_args.h"

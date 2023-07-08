@@ -1,0 +1,2 @@
+#pragma once
+#include "xml_syntax_exception.h"

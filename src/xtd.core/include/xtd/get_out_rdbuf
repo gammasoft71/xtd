@@ -1,0 +1,2 @@
+#pragma once
+#include "get_out_rdbuf.h"

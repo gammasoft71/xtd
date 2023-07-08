@@ -9,183 +9,361 @@ add_include_directories(include)
 add_references(${XTD_CORE_NATIVE_LIBRARY})
 add_sources(
   include/xtd/abstract.h
+  include/xtd/abstract
   include/xtd/action.h
+  include/xtd/action
   include/xtd/add_last_arg_to_command.h
+  include/xtd/add_last_arg_to_command
   include/xtd/any.h
+  include/xtd/any
   include/xtd/architecture_id.h
+  include/xtd/architecture_id
   include/xtd/argument_exception.h
+  include/xtd/argument_exception
   include/xtd/argument_null_exception.h
+  include/xtd/argument_null_exception
   include/xtd/argument_out_of_range_exception.h
+  include/xtd/argument_out_of_range_exception
   include/xtd/arithmetic_exception.h
+  include/xtd/arithmetic_exception
   include/xtd/as.h
+  include/xtd/as
   include/xtd/async_callback.h
+  include/xtd/async_callback
   include/xtd/attribute.h
+  include/xtd/attribute
   include/xtd/background_color.h
+  include/xtd/background_color
   include/xtd/beep.h
+  include/xtd/beep
   include/xtd/bit_converter.h
+  include/xtd/bit_converter
   include/xtd/block_scope.h
+  include/xtd/block_scope
   include/xtd/box.h
+  include/xtd/box
   include/xtd/box_char.h
+  include/xtd/box_char
   include/xtd/box_floating_point.h
+  include/xtd/box_floating_point
   include/xtd/box_integer.h
+  include/xtd/box_integer
   include/xtd/build_type.h
+  include/xtd/build_type
   include/xtd/cdebug.h
+  include/xtd/cdebug
   include/xtd/cnull.h
+  include/xtd/cnull
   include/xtd/compiler.h
+  include/xtd/compiler
   include/xtd/compiler_id.h
+  include/xtd/compiler_id
   include/xtd/console.h
+  include/xtd/console
   include/xtd/console_cancel_event_args.h
+  include/xtd/console_cancel_event_args
   include/xtd/console_cancel_event_handler.h
+  include/xtd/console_cancel_event_handler
   include/xtd/console_color.h
+  include/xtd/console_color
   include/xtd/console_key.h
+  include/xtd/console_key
   include/xtd/console_key_info.h
+  include/xtd/console_key_info
   include/xtd/console_modifiers.h
+  include/xtd/console_modifiers
   include/xtd/console_special_key.h
+  include/xtd/console_special_key
   include/xtd/convert.h
+  include/xtd/convert
   include/xtd/convert_pointer.h
+  include/xtd/convert_pointer
   include/xtd/convert_string.h
+  include/xtd/convert_string
   include/xtd/cpp_language.h
+  include/xtd/cpp_language
   include/xtd/ctrace.h
+  include/xtd/ctrace
   include/xtd/date_time.h
+  include/xtd/date_time
   include/xtd/date_time_kind.h
+  include/xtd/date_time_kind
   include/xtd/day_of_week.h
+  include/xtd/day_of_week
   include/xtd/debugstreambuf.h
+  include/xtd/debugstreambuf
   include/xtd/delegate.h
+  include/xtd/delegate
   include/xtd/distribution.h
+  include/xtd/distribution
   include/xtd/divided_by_zero_exception.h
+  include/xtd/divided_by_zero_exception
   include/xtd/domain_exception.h
+  include/xtd/domain_exception
   include/xtd/enum.h
+  include/xtd/enum
   include/xtd/enum_attribute.h
+  include/xtd/enum_attribute
   include/xtd/enum_collection.h
+  include/xtd/enum_collection
   include/xtd/enum_object.h
+  include/xtd/enum_object
   include/xtd/enum_register.h
+  include/xtd/enum_register
   include/xtd/enum_set_attribute.h
+  include/xtd/enum_set_attribute
   include/xtd/environment.h
+  include/xtd/environment
   include/xtd/environment_variable_target.h
+  include/xtd/environment_variable_target
   include/xtd/event.h
+  include/xtd/event
   include/xtd/event_args.h
+  include/xtd/event_args
   include/xtd/event_handler.h
+  include/xtd/event_handler
   include/xtd/exit_mode.h
+  include/xtd/exit_mode
   include/xtd/exit_status.h
+  include/xtd/exit_status
   include/xtd/foreground_color.h
+  include/xtd/foreground_color
   include/xtd/format_exception.h
+  include/xtd/format_exception
   include/xtd/func.h
+  include/xtd/func
   include/xtd/guid.h
+  include/xtd/guid
   include/xtd/iasync_result.h
+  include/xtd/iasync_result
   include/xtd/icomparable.h
+  include/xtd/icomparable
   include/xtd/iequatable.h
+  include/xtd/iequatable
   include/xtd/index_out_of_range_exception.h
+  include/xtd/index_out_of_range_exception
   include/xtd/interface.h
+  include/xtd/interface
   include/xtd/invalid_cast_exception.h
+  include/xtd/invalid_cast_exception
   include/xtd/invalid_operation_exception.h
+  include/xtd/invalid_operation_exception
   include/xtd/invalid_program_exception.h
+  include/xtd/invalid_program_exception
   include/xtd/iobservable.h
+  include/xtd/iobservable
   include/xtd/iobserver.h
+  include/xtd/iobserver
   include/xtd/iprogress.h
+  include/xtd/iprogress
   include/xtd/is.h
+  include/xtd/is
   include/xtd/language_id.h
+  include/xtd/language_id
   include/xtd/length_exception.h
+  include/xtd/length_exception
   include/xtd/literals.h
+  include/xtd/literals
   include/xtd/math.h
+  include/xtd/math
   include/xtd/month_of_year.h
+  include/xtd/month_of_year
   include/xtd/nameof.h
+  include/xtd/nameof
   include/xtd/not_finite_number_exception.h
+  include/xtd/not_finite_number_exception
   include/xtd/not_implemented_exception.h
+  include/xtd/not_implemented_exception
   include/xtd/not_supported_exception.h
+  include/xtd/not_supported_exception
   include/xtd/null_pointer_exception.h
+  include/xtd/null_pointer_exception
   include/xtd/number_styles.h
+  include/xtd/number_styles
   include/xtd/object.h
+  include/xtd/object
   include/xtd/object_closed_exception.h
+  include/xtd/object_closed_exception
   include/xtd/operation_canceled_exception.h
+  include/xtd/operation_canceled_exception
   include/xtd/operating_system.h
+  include/xtd/operating_system
   include/xtd/overflow_exception.h
+  include/xtd/overflow_exception
   include/xtd/overload.h
+  include/xtd/overload
   include/xtd/parse.h
+  include/xtd/parse
   include/xtd/platform_id.h
+  include/xtd/platform_id
   include/xtd/platform_not_supported_exception.h
+  include/xtd/platform_not_supported_exception
   include/xtd/predicate.h
+  include/xtd/predicate
   include/xtd/processor.h
+  include/xtd/processor
   include/xtd/program_exit_event_args.h
+  include/xtd/program_exit_event_args
   include/xtd/program_exit_event_handler.h
+  include/xtd/program_exit_event_handler
   include/xtd/random.h
+  include/xtd/random
   include/xtd/reset_color.h
+  include/xtd/reset_color
   include/xtd/signal.h
+  include/xtd/signal
   include/xtd/signal_cancel_event_args.h
+  include/xtd/signal_cancel_event_args
   include/xtd/signal_cancel_event_handler.h
+  include/xtd/signal_cancel_event_handler
   include/xtd/startup.h
+  include/xtd/startup
   include/xtd/static.h
+  include/xtd/static
   include/xtd/string_comparison.h
+  include/xtd/string_comparison
   include/xtd/string_split_options.h
+  include/xtd/string_split_options
   include/xtd/system_exception.h
+  include/xtd/system_exception
   include/xtd/target_id.h
+  include/xtd/target_id
   include/xtd/target_type.h
+  include/xtd/target_type
   include/xtd/tick.h
+  include/xtd/tick
   include/xtd/ticks.h
+  include/xtd/ticks
   include/xtd/time_out_exception.h
+  include/xtd/time_out_exception
   include/xtd/time_span.h
+  include/xtd/time_span
   include/xtd/time_zone_info.h
+  include/xtd/time_zone_info
   include/xtd/time_zone_not_found_exception.h
+  include/xtd/time_zone_not_found_exception
   include/xtd/to_string.h
+  include/xtd/to_string
   include/xtd/toolkit.h
+  include/xtd/toolkit
   include/xtd/tracestreambuf.h
+  include/xtd/tracestreambuf
   include/xtd/translator.h
+  include/xtd/translator
   include/xtd/typeof.h
+  include/xtd/typeof
   include/xtd/types.h
+  include/xtd/types
   include/xtd/unauthorized_access_exception.h
+  include/xtd/unauthorized_access_exception
   include/xtd/underflow_exception.h
+  include/xtd/underflow_exception
   include/xtd/unused.h
+  include/xtd/unused
   include/xtd/uri.h
+  include/xtd/uri
   include/xtd/uri_components.h
+  include/xtd/uri_components
   include/xtd/uri_format.h
+  include/xtd/uri_format
   include/xtd/uri_format_exception.h
+  include/xtd/uri_format_exception
   include/xtd/uri_host_name_type.h
+  include/xtd/uri_host_name_type
   include/xtd/uri_kind.h
+  include/xtd/uri_kind
   include/xtd/uri_partial.h
+  include/xtd/uri_partial
   include/xtd/uri_template_match_exception.h
+  include/xtd/uri_template_match_exception
   include/xtd/using.h
+  include/xtd/using
   include/xtd/ustring.h
+  include/xtd/ustring
   include/xtd/va_args_comma.h
+  include/xtd/va_args_comma
   include/xtd/version.h
+  include/xtd/version
   include/xtd/xml_syntax_exception.h
+  include/xtd/xml_syntax_exception
+  include/xtd/xtd.core
   include/xtd/xtd.core
   include/xtd/xtd.core.h
+  include/xtd/xtd.core
   include/xtd/collections/any_pair.h
+  include/xtd/collections/any_pair
   include/xtd/collections/key_not_found_exception.h
+  include/xtd/collections/key_not_found_exception
   include/xtd/collections/vector_list.h
+  include/xtd/collections/vector_list
   include/xtd/collections/specialized/string_map.h
+  include/xtd/collections/specialized/string_map
   include/xtd/collections/specialized/string_pair.h
+  include/xtd/collections/specialized/string_pair
   include/xtd/collections/specialized/string_vector.h
+  include/xtd/collections/specialized/string_vector
   include/xtd/diagnostics/assert_dialog_result.h
+  include/xtd/diagnostics/assert_dialog_result
   include/xtd/diagnostics/boolean_switch.h
+  include/xtd/diagnostics/boolean_switch
   include/xtd/diagnostics/console_trace_listener.h
+  include/xtd/diagnostics/console_trace_listener
   include/xtd/diagnostics/data_received_event_args.h
+  include/xtd/diagnostics/data_received_event_args
   include/xtd/diagnostics/data_received_event_handler.h
+  include/xtd/diagnostics/data_received_event_handler
   include/xtd/diagnostics/debug.h
+  include/xtd/diagnostics/debug
   include/xtd/diagnostics/debugger.h
+  include/xtd/diagnostics/debugger
   include/xtd/diagnostics/default_trace_listener.h
+  include/xtd/diagnostics/default_trace_listener
   include/xtd/diagnostics/event_type_filter.h
+  include/xtd/diagnostics/event_type_filter
   include/xtd/diagnostics/ostream_trace_listener.h
+  include/xtd/diagnostics/ostream_trace_listener
   include/xtd/diagnostics/process.h
+  include/xtd/diagnostics/process
   include/xtd/diagnostics/process_priority_class.h
+  include/xtd/diagnostics/process_priority_class
   include/xtd/diagnostics/process_start_info.h
+  include/xtd/diagnostics/process_start_info
   include/xtd/diagnostics/process_window_style.h
+  include/xtd/diagnostics/process_window_style
   include/xtd/diagnostics/source_filter.h
+  include/xtd/diagnostics/source_filter
   include/xtd/diagnostics/source_levels.h
+  include/xtd/diagnostics/source_levels
   include/xtd/diagnostics/source_switch.h
+  include/xtd/diagnostics/source_switch
   include/xtd/diagnostics/stack_frame.h
+  include/xtd/diagnostics/stack_frame
   include/xtd/diagnostics/stack_trace.h
+  include/xtd/diagnostics/stack_trace
   include/xtd/diagnostics/stopwatch.h
+  include/xtd/diagnostics/stopwatch
   include/xtd/diagnostics/switch_base.h
+  include/xtd/diagnostics/switch_base
   include/xtd/diagnostics/trace.h
+  include/xtd/diagnostics/trace
   include/xtd/diagnostics/trace_event_cache.h
+  include/xtd/diagnostics/trace_event_cache
   include/xtd/diagnostics/trace_event_type.h
+  include/xtd/diagnostics/trace_event_type
   include/xtd/diagnostics/trace_filter.h
+  include/xtd/diagnostics/trace_filter
   include/xtd/diagnostics/trace_level.h
+  include/xtd/diagnostics/trace_level
   include/xtd/diagnostics/trace_listener.h
+  include/xtd/diagnostics/trace_listener
   include/xtd/diagnostics/trace_listener_collection.h
+  include/xtd/diagnostics/trace_listener_collection
   include/xtd/diagnostics/trace_options.h
+  include/xtd/diagnostics/trace_options
   include/xtd/diagnostics/trace_source.h
+  include/xtd/diagnostics/trace_source
   include/xtd/diagnostics/trace_switch.h
+  include/xtd/diagnostics/trace_switch
   include/xtd/internal/__as_enum.h
   include/xtd/internal/__binary_formatter.h
   include/xtd/internal/__boolean_formatter.h
@@ -214,107 +392,209 @@ add_sources(
   include/xtd/internal/__std_abort.h
   include/xtd/internal/__string_formatter.h
   include/xtd/io/binary_reader.h
+  include/xtd/io/binary_reader
   include/xtd/io/binary_writer.h
+  include/xtd/io/binary_writer
   include/xtd/io/directory.h
+  include/xtd/io/directory
   include/xtd/io/directory_info.h
+  include/xtd/io/directory_info
   include/xtd/io/directory_not_found_exception.h
+  include/xtd/io/directory_not_found_exception
   include/xtd/io/drive_info.h
+  include/xtd/io/drive_info
   include/xtd/io/drive_type.h
+  include/xtd/io/drive_type
   include/xtd/io/drive_not_found_exception.h
+  include/xtd/io/drive_not_found_exception
   include/xtd/io/end_of_stream_exception.h
+  include/xtd/io/end_of_stream_exception
   include/xtd/io/file.h
+  include/xtd/io/file
   include/xtd/io/file_attributes.h
+  include/xtd/io/file_attributes
   include/xtd/io/file_format_exception.h
+  include/xtd/io/file_format_exception
   include/xtd/io/file_info.h
+  include/xtd/io/file_info
   include/xtd/io/file_load_exception.h
+  include/xtd/io/file_load_exception
   include/xtd/io/file_not_found_exception.h
+  include/xtd/io/file_not_found_exception
   include/xtd/io/file_permissions.h
+  include/xtd/io/file_permissions
   include/xtd/io/file_system_info.h
+  include/xtd/io/file_system_info
   include/xtd/io/io_exception.h
+  include/xtd/io/io_exception
   include/xtd/io/path.h
+  include/xtd/io/path
   include/xtd/io/path_too_long_exception.h
+  include/xtd/io/path_too_long_exception
   include/xtd/io/search_option.h
+  include/xtd/io/search_option
   include/xtd/io/stream_reader.h
+  include/xtd/io/stream_reader
   include/xtd/io/stream_writer.h
+  include/xtd/io/stream_writer
   include/xtd/io/string_reader.h
+  include/xtd/io/string_reader
   include/xtd/io/string_writer.h
+  include/xtd/io/string_writer
   include/xtd/io/text_reader.h
+  include/xtd/io/text_reader
   include/xtd/io/text_writer.h
+  include/xtd/io/text_writer
   include/xtd/media/system_sound.h
+  include/xtd/media/system_sound
   include/xtd/media/system_sounds.h
+  include/xtd/media/system_sounds
   include/xtd/net/cookie_exception.h
+  include/xtd/net/cookie_exception
   include/xtd/net/dns.h
+  include/xtd/net/dns
   include/xtd/net/dns_end_point.h
+  include/xtd/net/dns_end_point
   include/xtd/net/end_point.h
+  include/xtd/net/end_point
   include/xtd/net/ip_address.h
+  include/xtd/net/ip_address
   include/xtd/net/ip_end_point.h
+  include/xtd/net/ip_end_point
   include/xtd/net/ip_host_entry.h
+  include/xtd/net/ip_host_entry
   include/xtd/net/network_credential.h
+  include/xtd/net/network_credential
   include/xtd/net/protocol_violation_exception.h
+  include/xtd/net/protocol_violation_exception
   include/xtd/net/web_exception.h
+  include/xtd/net/web_exception
   include/xtd/net/socket_address.h
+  include/xtd/net/socket_address
   include/xtd/net/sockets/address_family.h
+  include/xtd/net/sockets/address_family
   include/xtd/net/sockets/io_control_code.h
+  include/xtd/net/sockets/io_control_code
   include/xtd/net/sockets/ip_packet_information.h
+  include/xtd/net/sockets/ip_packet_information
   include/xtd/net/sockets/ip_protection_level.h
+  include/xtd/net/sockets/ip_protection_level
   include/xtd/net/sockets/ip_v6_multicast_option.h
+  include/xtd/net/sockets/ip_v6_multicast_option
   include/xtd/net/sockets/linger_option.h
+  include/xtd/net/sockets/linger_option
   include/xtd/net/sockets/multicast_option.h
+  include/xtd/net/sockets/multicast_option
   include/xtd/net/sockets/network_stream.h
+  include/xtd/net/sockets/network_stream
   include/xtd/net/sockets/protocol_family.h
+  include/xtd/net/sockets/protocol_family
   include/xtd/net/sockets/protocol_type.h
+  include/xtd/net/sockets/protocol_type
   include/xtd/net/sockets/select_mode.h
+  include/xtd/net/sockets/select_mode
   include/xtd/net/sockets/send_packets_element.h
+  include/xtd/net/sockets/send_packets_element
   include/xtd/net/sockets/socket.h
+  include/xtd/net/sockets/socket
   include/xtd/net/sockets/socket_async_event_args.h
+  include/xtd/net/sockets/socket_async_event_args
   include/xtd/net/sockets/socket_async_operation.h
+  include/xtd/net/sockets/socket_async_operation
   include/xtd/net/sockets/socket_error.h
+  include/xtd/net/sockets/socket_error
   include/xtd/net/sockets/socket_exception.h
+  include/xtd/net/sockets/socket_exception
   include/xtd/net/sockets/socket_flags.h
+  include/xtd/net/sockets/socket_flags
   include/xtd/net/sockets/socket_information.h
+  include/xtd/net/sockets/socket_information
   include/xtd/net/sockets/socket_information_options.h
+  include/xtd/net/sockets/socket_information_options
   include/xtd/net/sockets/socket_option_level.h
+  include/xtd/net/sockets/socket_option_level
   include/xtd/net/sockets/socket_option_name.h
+  include/xtd/net/sockets/socket_option_name
   include/xtd/net/sockets/socket_shutdown.h
+  include/xtd/net/sockets/socket_shutdown
   include/xtd/net/sockets/socket_type.h
+  include/xtd/net/sockets/socket_type
   include/xtd/net/sockets/tcp_client.h
+  include/xtd/net/sockets/tcp_client
   include/xtd/net/sockets/tcp_listener.h
+  include/xtd/net/sockets/tcp_listener
   include/xtd/net/sockets/transmit_file_options.h
+  include/xtd/net/sockets/transmit_file_options
   include/xtd/net/sockets/udp_client.h
+  include/xtd/net/sockets/udp_client
   include/xtd/reflection/assembly_company_attribute.h
+  include/xtd/reflection/assembly_company_attribute
   include/xtd/reflection/assembly_configuration_attribute.h
+  include/xtd/reflection/assembly_configuration_attribute
   include/xtd/reflection/assembly_copyright_attribute.h
+  include/xtd/reflection/assembly_copyright_attribute
   include/xtd/reflection/assembly_culture_attribute.h
+  include/xtd/reflection/assembly_culture_attribute
   include/xtd/reflection/assembly_description_attribute.h
+  include/xtd/reflection/assembly_description_attribute
   include/xtd/reflection/assembly_file_version_attribute.h
+  include/xtd/reflection/assembly_file_version_attribute
   include/xtd/reflection/assembly_guid_attribute.h
+  include/xtd/reflection/assembly_guid_attribute
   include/xtd/reflection/assembly_identifier_attribute.h
+  include/xtd/reflection/assembly_identifier_attribute
   include/xtd/reflection/assembly_info.h
+  include/xtd/reflection/assembly_info
   include/xtd/reflection/assembly_name_attribute.h
+  include/xtd/reflection/assembly_name_attribute
   include/xtd/reflection/assembly_product_attribute.h
+  include/xtd/reflection/assembly_product_attribute
   include/xtd/reflection/assembly_title_attribute.h
+  include/xtd/reflection/assembly_title_attribute
   include/xtd/reflection/assembly_trademark_attribute.h
+  include/xtd/reflection/assembly_trademark_attribute
   include/xtd/reflection/assembly_version_attribute.h
+  include/xtd/reflection/assembly_version_attribute
   include/xtd/reflection/assembly.h
+  include/xtd/reflection/assembly
   include/xtd/security/secure_string.h
+  include/xtd/security/secure_string
   include/xtd/security/security_exception.h
+  include/xtd/security/security_exception
   include/xtd/speech/synthesis/prompt.h
+  include/xtd/speech/synthesis/prompt
   include/xtd/speech/synthesis/prompt_event_args.h
+  include/xtd/speech/synthesis/prompt_event_args
   include/xtd/speech/synthesis/speak_completed_event_args.h
+  include/xtd/speech/synthesis/speak_completed_event_args
   include/xtd/speech/synthesis/speak_completed_event_handler.h
+  include/xtd/speech/synthesis/speak_completed_event_handler
   include/xtd/speech/synthesis/speak_started_event_args.h
+  include/xtd/speech/synthesis/speak_started_event_args
   include/xtd/speech/synthesis/speak_started_event_handler.h
+  include/xtd/speech/synthesis/speak_started_event_handler
   include/xtd/speech/synthesis/speech_synthesizer.h
+  include/xtd/speech/synthesis/speech_synthesizer
   include/xtd/speech/synthesis/state_changed_event_args.h
+  include/xtd/speech/synthesis/state_changed_event_args
   include/xtd/speech/synthesis/state_changed_event_handler.h
+  include/xtd/speech/synthesis/state_changed_event_handler
   include/xtd/speech/synthesis/synthesizer_state.h
+  include/xtd/speech/synthesis/synthesizer_state
   include/xtd/threading/interlocked.h
+  include/xtd/threading/interlocked
   include/xtd/web/css/css_reader.h
+  include/xtd/web/css/css_reader
   include/xtd/web/css/css_writer.h
+  include/xtd/web/css/css_writer
   include/xtd/web/css/property.h
+  include/xtd/web/css/property
   include/xtd/web/css/property_map.h
+  include/xtd/web/css/property_map
   include/xtd/web/css/selector.h
+  include/xtd/web/css/selector
   include/xtd/web/css/selector_map.h
+  include/xtd/web/css/selector_map
 )
 add_sources(
   src/xtd/environment_version.cpp

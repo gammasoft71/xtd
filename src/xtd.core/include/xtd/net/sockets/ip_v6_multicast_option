@@ -1,0 +1,2 @@
+#pragma once
+#include "ip_v6_multicast_option.h"

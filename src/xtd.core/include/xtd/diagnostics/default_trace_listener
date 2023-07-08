@@ -1,0 +1,2 @@
+#pragma once
+#include "default_trace_listener.h"
