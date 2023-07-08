@@ -1,0 +1,2 @@
+#pragma once
+#include "linear_gradient_brush.h"
