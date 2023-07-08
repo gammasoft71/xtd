@@ -1,4 +1,7 @@
-#include <xtd/xtd>
+#include <xtd/forms/application.h>
+#include <xtd/forms/emoticons.h>
+#include <xtd/forms/form.h>
+#include <xtd/forms/label.h>
 
 using namespace xtd;
 using namespace xtd::forms;
