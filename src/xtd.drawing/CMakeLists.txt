@@ -10,102 +10,199 @@ add_sources(
   include/xtd/xtd.drawing
   include/xtd/xtd.drawing.h
   include/xtd/drawing/basic_colors.h
+  include/xtd/drawing/basic_colors
   include/xtd/drawing/bitmap.h
+  include/xtd/drawing/bitmap
   include/xtd/drawing/black_colors.h
+  include/xtd/drawing/black_colors
   include/xtd/drawing/blue_colors.h
+  include/xtd/drawing/blue_colors
   include/xtd/drawing/brown_colors.h
+  include/xtd/drawing/brown_colors
   include/xtd/drawing/brush.h
+  include/xtd/drawing/brush
   include/xtd/drawing/brushes.h
+  include/xtd/drawing/brushes
   include/xtd/drawing/buffered_graphics.h
+  include/xtd/drawing/buffered_graphics
   include/xtd/drawing/buffered_graphics_context.h
+  include/xtd/drawing/buffered_graphics_context
   include/xtd/drawing/color.h
+  include/xtd/drawing/color
   include/xtd/drawing/colors.h
+  include/xtd/drawing/colors
   include/xtd/drawing/copy_pixel_operation.h
+  include/xtd/drawing/copy_pixel_operation
   include/xtd/drawing/cyan_colors.h
+  include/xtd/drawing/cyan_colors
   include/xtd/drawing/dash_style.h
+  include/xtd/drawing/dash_style
   include/xtd/drawing/extended_colors.h
+  include/xtd/drawing/extended_colors
   include/xtd/drawing/font.h
+  include/xtd/drawing/font
   include/xtd/drawing/font_family.h
+  include/xtd/drawing/font_family
   include/xtd/drawing/font_style.h
+  include/xtd/drawing/font_style
   include/xtd/drawing/graphics.h
+  include/xtd/drawing/graphics
   include/xtd/drawing/graphics_unit.h
+  include/xtd/drawing/graphics_unit
   include/xtd/drawing/gray_colors.h
+  include/xtd/drawing/gray_colors
   include/xtd/drawing/green_colors.h
+  include/xtd/drawing/green_colors
   include/xtd/drawing/icon.h
+  include/xtd/drawing/icon
   include/xtd/drawing/image.h
+  include/xtd/drawing/image
   include/xtd/drawing/known_color.h
+  include/xtd/drawing/known_color
   include/xtd/drawing/magenta_colors.h
+  include/xtd/drawing/magenta_colors
   include/xtd/drawing/orange_colors.h
+  include/xtd/drawing/orange_colors
   include/xtd/drawing/pen.h
+  include/xtd/drawing/pen
   include/xtd/drawing/pens.h
+  include/xtd/drawing/pens
   include/xtd/drawing/pink_colors.h
+  include/xtd/drawing/pink_colors
   include/xtd/drawing/point.h
+  include/xtd/drawing/point
   include/xtd/drawing/point_f.h
+  include/xtd/drawing/point_f
   include/xtd/drawing/purple_colors.h
+  include/xtd/drawing/purple_colors
   include/xtd/drawing/rectangle.h
+  include/xtd/drawing/rectangle
   include/xtd/drawing/rectangle_f.h
+  include/xtd/drawing/rectangle_f
   include/xtd/drawing/red_colors.h
+  include/xtd/drawing/red_colors
   include/xtd/drawing/region.h
+  include/xtd/drawing/region
   include/xtd/drawing/rotate_flip_type.h
+  include/xtd/drawing/rotate_flip_type
   include/xtd/drawing/size.h
+  include/xtd/drawing/size
   include/xtd/drawing/size_f.h
+  include/xtd/drawing/size_f
   include/xtd/drawing/solid_brush.h
+  include/xtd/drawing/solid_brush
   include/xtd/drawing/string_alignment.h
+  include/xtd/drawing/string_alignment
   include/xtd/drawing/string_format.h
+  include/xtd/drawing/string_format
   include/xtd/drawing/string_format_flags.h
+  include/xtd/drawing/string_format_flags
   include/xtd/drawing/string_trimming.h
+  include/xtd/drawing/string_trimming
   include/xtd/drawing/system_brushes.h
+  include/xtd/drawing/system_brushes
   include/xtd/drawing/system_colors.h
+  include/xtd/drawing/system_colors
   include/xtd/drawing/system_fonts.h
+  include/xtd/drawing/system_fonts
   include/xtd/drawing/system_icons.h
+  include/xtd/drawing/system_icons
   include/xtd/drawing/system_images.h
+  include/xtd/drawing/system_images
   include/xtd/drawing/system_pens.h
+  include/xtd/drawing/system_pens
   include/xtd/drawing/texture_brush.h
+  include/xtd/drawing/texture_brush
   include/xtd/drawing/violet_colors.h
+  include/xtd/drawing/violet_colors
   include/xtd/drawing/white_colors.h
+  include/xtd/drawing/white_colors
   include/xtd/drawing/yellow_colors.h
+  include/xtd/drawing/yellow_colors
   include/xtd/drawing/drawing_2d/conical_gradient_brush.h
+  include/xtd/drawing/drawing_2d/conical_gradient_brush
   include/xtd/drawing/drawing_2d/compositing_mode.h
+  include/xtd/drawing/drawing_2d/compositing_mode
   include/xtd/drawing/drawing_2d/compositing_quality.h
+  include/xtd/drawing/drawing_2d/compositing_quality
   include/xtd/drawing/drawing_2d/drawing2d.h
+  include/xtd/drawing/drawing_2d/drawing2d
   include/xtd/drawing/drawing_2d/fill_mode.h
+  include/xtd/drawing/drawing_2d/fill_mode
   include/xtd/drawing/drawing_2d/flush_intention.h
+  include/xtd/drawing/drawing_2d/flush_intention
   include/xtd/drawing/drawing_2d/gradient_stop_collection.h
+  include/xtd/drawing/drawing_2d/gradient_stop_collection
   include/xtd/drawing/drawing_2d/gradient_stop.h
+  include/xtd/drawing/drawing_2d/gradient_stop
   include/xtd/drawing/drawing_2d/graphics_path.h
+  include/xtd/drawing/drawing_2d/graphics_path
   include/xtd/drawing/drawing_2d/graphics_state.h
+  include/xtd/drawing/drawing_2d/graphics_state
   include/xtd/drawing/drawing_2d/hatch_brush.h
+  include/xtd/drawing/drawing_2d/hatch_brush
   include/xtd/drawing/drawing_2d/hatch_style.h
+  include/xtd/drawing/drawing_2d/hatch_style
   include/xtd/drawing/drawing_2d/interpolation_mode.h
+  include/xtd/drawing/drawing_2d/interpolation_mode
   include/xtd/drawing/drawing_2d/line_cap.h
+  include/xtd/drawing/drawing_2d/line_cap
   include/xtd/drawing/drawing_2d/line_join.h
+  include/xtd/drawing/drawing_2d/line_join
   include/xtd/drawing/drawing_2d/linear_gradient_brush.h
+  include/xtd/drawing/drawing_2d/linear_gradient_brush
   include/xtd/drawing/drawing_2d/linear_gradient_mode.h
+  include/xtd/drawing/drawing_2d/linear_gradient_mode
   include/xtd/drawing/drawing_2d/matrix.h
+  include/xtd/drawing/drawing_2d/matrix
   include/xtd/drawing/drawing_2d/matrix_order.h
+  include/xtd/drawing/drawing_2d/matrix_order
   include/xtd/drawing/drawing_2d/pen_alignment.h
+  include/xtd/drawing/drawing_2d/pen_alignment
   include/xtd/drawing/drawing_2d/pen_type.h
+  include/xtd/drawing/drawing_2d/pen_type
   include/xtd/drawing/drawing_2d/pixel_offset_mode.h
+  include/xtd/drawing/drawing_2d/pixel_offset_mode
   include/xtd/drawing/drawing_2d/radial_gradient_brush.h
+  include/xtd/drawing/drawing_2d/radial_gradient_brush
   include/xtd/drawing/drawing_2d/smoothing_mode.h
+  include/xtd/drawing/drawing_2d/smoothing_mode
   include/xtd/drawing/imaging/bitmap_data.h
+  include/xtd/drawing/imaging/bitmap_data
   include/xtd/drawing/imaging/color_palette.h
+  include/xtd/drawing/imaging/color_palette
   include/xtd/drawing/imaging/encoder.h
+  include/xtd/drawing/imaging/encoder
   include/xtd/drawing/imaging/encoder_parameter.h
+  include/xtd/drawing/imaging/encoder_parameter
   include/xtd/drawing/imaging/encoder_parameter_value_type.h
+  include/xtd/drawing/imaging/encoder_parameter_value_type
   include/xtd/drawing/imaging/encoder_parameters.h
+  include/xtd/drawing/imaging/encoder_parameters
   include/xtd/drawing/imaging/frame_dimension.h
+  include/xtd/drawing/imaging/frame_dimension
   include/xtd/drawing/imaging/image_flags.h
+  include/xtd/drawing/imaging/image_flags
   include/xtd/drawing/imaging/image_format.h
+  include/xtd/drawing/imaging/image_format
   include/xtd/drawing/imaging/image_lock_mode.h
+  include/xtd/drawing/imaging/image_lock_mode
   include/xtd/drawing/imaging/pixel_format.h
+  include/xtd/drawing/imaging/pixel_format
   include/xtd/drawing/imaging/property_item.h
+  include/xtd/drawing/imaging/property_item
   include/xtd/drawing/text/font_collection.h
+  include/xtd/drawing/text/font_collection
   include/xtd/drawing/text/generic_font_families.h
+  include/xtd/drawing/text/generic_font_families
   include/xtd/drawing/text/hotkey_prefix.h
+  include/xtd/drawing/text/hotkey_prefix
   include/xtd/drawing/text/installed_font_collection.h
+  include/xtd/drawing/text/installed_font_collection
   include/xtd/drawing/text/private_font_collection.h
+  include/xtd/drawing/text/private_font_collection
   include/xtd/drawing/text/text_rendering_hint.h
+  include/xtd/drawing/text/text_rendering_hint
   src/xtd/drawing/basic_colors.cpp
   src/xtd/drawing/bitmap.cpp
   src/xtd/drawing/blue_colors.cpp
