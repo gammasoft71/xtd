@@ -3,7 +3,9 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include "../tunit_export.h"
+#define __XTD_TUNIT_INTERNAL__
 #include "__google_test_markers.h"
+#undef __XTD_TUNIT_INTERNAL__
 #include "class_initialize_attribute.h"
 #include "class_cleanup_attribute.h"
 #include "settings.h"

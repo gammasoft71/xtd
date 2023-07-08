@@ -2,7 +2,9 @@
 
 #include <unistd.h>
 #include <map>
+#define __XTD_TUNIT_INTERNAL__
 #include "../../../include/xtd/tunit/__console_color.h"
+#undef __XTD_TUNIT_INTERNAL__
 
 namespace {
   bool is_ansi_supported() noexcept {

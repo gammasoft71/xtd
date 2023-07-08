@@ -2,7 +2,13 @@
 /// @brief Contains__tunit_join__items functions.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "__default_insert_basic_ostream_operator.h"
+/// @cond
+#if !defined(__XTD_TUNIT_INTERNAL__)
+#error "Do not include this file: Internal use only"
+#endif
+/// @endcond
+
+//#include "__default_insert_basic_ostream_operator.h"
 #include <sstream>
 #include <string>
 
