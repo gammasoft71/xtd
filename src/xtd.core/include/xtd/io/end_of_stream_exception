@@ -1,0 +1,2 @@
+#pragma once
+#include "end_of_stream_exception.h"

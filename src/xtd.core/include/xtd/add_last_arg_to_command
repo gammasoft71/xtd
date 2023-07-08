@@ -1,0 +1,2 @@
+#pragma once
+#include "add_last_arg_to_command.h"

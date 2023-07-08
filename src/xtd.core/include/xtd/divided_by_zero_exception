@@ -1,0 +1,2 @@
+#pragma once
+#include "divided_by_zero_exception.h"

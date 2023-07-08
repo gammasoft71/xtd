@@ -1,0 +1,2 @@
+#pragma once
+#include "argument_out_of_range_exception.h"
