@@ -1,0 +1,2 @@
+#pragma once
+#include "abort_error.h"

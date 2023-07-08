@@ -13,47 +13,89 @@ add_sources(
   include/xtd/tunit/__google_test_markers.h
   include/xtd/tunit/__tunit_join__items.h
   include/xtd/tunit/abort_error.h
+  include/xtd/tunit/abort_error
   include/xtd/tunit/assert.h
+  include/xtd/tunit/assert
   include/xtd/tunit/assert_error.h
+  include/xtd/tunit/assert_error
   include/xtd/tunit/assume.h
+  include/xtd/tunit/assume
   include/xtd/tunit/base_assert.h
+  include/xtd/tunit/base_assert
   include/xtd/tunit/class_cleanup_attribute.h
+  include/xtd/tunit/class_cleanup_attribute
   include/xtd/tunit/class_event_args.h
+  include/xtd/tunit/class_event_args
   include/xtd/tunit/class_initialize_attribute.h
+  include/xtd/tunit/class_initialize_attribute
   include/xtd/tunit/collection_assert.h
+  include/xtd/tunit/collection_assert
   include/xtd/tunit/collection_assume.h
+  include/xtd/tunit/collection_assume
   include/xtd/tunit/collection_valid.h
+  include/xtd/tunit/collection_valid
   include/xtd/tunit/console_unit_test.h
+  include/xtd/tunit/console_unit_test
   include/xtd/tunit/default_main.h
+  include/xtd/tunit/default_main
   include/xtd/tunit/directory_assert.h
+  include/xtd/tunit/directory_assert
   include/xtd/tunit/directory_assume.h
+  include/xtd/tunit/directory_assume
   include/xtd/tunit/directory_valid.h
+  include/xtd/tunit/directory_valid
   include/xtd/tunit/event_listener.h
+  include/xtd/tunit/event_listener
   include/xtd/tunit/file_assert.h
+  include/xtd/tunit/file_assert
   include/xtd/tunit/file_assume.h
+  include/xtd/tunit/file_assume
   include/xtd/tunit/file_valid.h
+  include/xtd/tunit/file_valid
   include/xtd/tunit/ignore_error.h
+  include/xtd/tunit/ignore_error
   include/xtd/tunit/ostream_event_listener.h
+  include/xtd/tunit/ostream_event_listener
   include/xtd/tunit/ostream_unit_test.h
+  include/xtd/tunit/ostream_unit_test
   include/xtd/tunit/settings.h
+  include/xtd/tunit/settings
   include/xtd/tunit/string_assert.h
+  include/xtd/tunit/string_assert
   include/xtd/tunit/string_assume.h
+  include/xtd/tunit/string_assume
   include/xtd/tunit/string_valid.h
+  include/xtd/tunit/string_valid
   include/xtd/tunit/test.h
+  include/xtd/tunit/test
   include/xtd/tunit/registered_test_class.h
+  include/xtd/tunit/registered_test_class
   include/xtd/tunit/test_cleanup_attribute.h
+  include/xtd/tunit/test_cleanup_attribute
   include/xtd/tunit/test_event_args.h
+  include/xtd/tunit/test_event_args
   include/xtd/tunit/test_initialize_attribute.h
+  include/xtd/tunit/test_initialize_attribute
   include/xtd/tunit/test_method_attribute.h
+  include/xtd/tunit/test_method_attribute
   include/xtd/tunit/test_class.h
+  include/xtd/tunit/test_class
   include/xtd/tunit/test_class_attribute.h
+  include/xtd/tunit/test_class_attribute
   include/xtd/tunit/test_state.h
+  include/xtd/tunit/test_state
   include/xtd/tunit/tunit_event_args.h
+  include/xtd/tunit/tunit_event_args
   include/xtd/tunit/tunit_main.h
+  include/xtd/tunit/tunit_main
   include/xtd/tunit/unit_test.h
+  include/xtd/tunit/unit_test
   include/xtd/tunit/valid.h
+  include/xtd/tunit/valid
+  include/xtd/xtd.tunit
   include/xtd/xtd.tunit
   include/xtd/xtd.tunit.h
+  include/xtd/xtd.tunit
   src/xtd/tunit/__console_color_gcc.cpp
   src/xtd/tunit/__console_color_win32.cpp
   src/xtd/tunit/__demangle_gcc.cpp
