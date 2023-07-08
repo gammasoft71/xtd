@@ -1,0 +1,2 @@
+#pragma once
+#include "paint_event_args.h"
