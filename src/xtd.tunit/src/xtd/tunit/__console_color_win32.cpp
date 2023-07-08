@@ -1,6 +1,8 @@
 #if defined(_WIN32)
 
+#define __XTD_TUNIT_INTERNAL__
 #include "../../../include/xtd/tunit/__console_color.h"
+#undef __XTD_TUNIT_INTERNAL__
 #include <Windows.h>
 #undef max
 #undef min

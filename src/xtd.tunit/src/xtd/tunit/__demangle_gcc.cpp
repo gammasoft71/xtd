@@ -1,7 +1,9 @@
 #if defined(__linux__) || defined(__APPLE__)
 
 #include <cxxabi.h>
+#define __XTD_TUNIT_INTERNAL__
 #include "../../../include/xtd/tunit/__demangle.h"
+#undef __XTD_TUNIT_INTERNAL__
 #include <xtd/types.h>
 
 using namespace xtd;

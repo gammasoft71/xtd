@@ -1,6 +1,8 @@
 #if defined(_WIN32)
 
+#define __XTD_TUNIT_INTERNAL__
 #include "../../../include/xtd/tunit/__demangle.h"
+#undef __XTD_TUNIT_INTERNAL__
 
 using namespace std;
 using namespace std::literals;

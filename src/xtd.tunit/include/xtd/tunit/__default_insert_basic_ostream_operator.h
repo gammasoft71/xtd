@@ -2,6 +2,12 @@
 /// @brief Contains std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const type_t& value) function.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+/// @cond
+#if !defined(__XTD_TUNIT_INTERNAL__)
+#error "Do not include this file: Internal use only"
+#endif
+/// @endcond
+
 #include <array>
 #include <cstdint>
 #include <deque>

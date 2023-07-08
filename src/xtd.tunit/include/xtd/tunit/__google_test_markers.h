@@ -2,6 +2,12 @@
 /// @brief Contains google test markers definitions.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+/// @cond
+#if !defined(__XTD_TUNIT_INTERNAL__)
+#error "Do not include this file: Internal use only"
+#endif
+/// @endcond
+
 #include <xtd/unused.h>
 
 /// @cond
