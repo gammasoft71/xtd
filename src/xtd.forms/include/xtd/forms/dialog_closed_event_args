@@ -1,0 +1,2 @@
+#pragma once
+#include "dialog_closed_event_args.h"

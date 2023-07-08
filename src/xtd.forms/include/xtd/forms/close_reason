@@ -1,0 +1,2 @@
+#pragma once
+#include "close_reason.h"
