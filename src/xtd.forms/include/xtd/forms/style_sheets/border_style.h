@@ -21,6 +21,8 @@ namespace xtd {
       /// xtd::object → xtd::forms::style_sheets::border_style
       /// @par Implements
       /// xtd::iequatable <>
+      /// @par Header
+      /// @code #include <xtd/forms/style_sheets/border_style> @endcode
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

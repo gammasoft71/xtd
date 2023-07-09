@@ -29,6 +29,8 @@ namespace xtd {
       /// @endcode
       /// @par Inheritance
       /// xtd::object → xtd::forms::style_sheets::background_image
+      /// @par Header
+      /// @code #include <xtd/forms/style_sheets/background_image> @endcode
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

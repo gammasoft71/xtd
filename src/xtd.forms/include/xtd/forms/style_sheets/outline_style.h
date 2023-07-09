@@ -14,6 +14,8 @@ namespace xtd {
       /// @code
       /// using outline_style = xtd::forms::style_sheets::border_style
       /// @endcode
+      /// @par Header
+      /// @code #include <xtd/forms/style_sheets/outline_style> @endcode
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

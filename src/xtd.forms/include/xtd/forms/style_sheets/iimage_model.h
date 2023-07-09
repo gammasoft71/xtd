@@ -25,6 +25,8 @@ namespace xtd {
       /// @endcode
       /// @par Inheritance
       /// xtd::interface → xtd::forms::style_sheets::iimage_model
+      /// @par Header
+      /// @code #include <xtd/forms/style_sheets/iimage_model> @endcode
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

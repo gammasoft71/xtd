@@ -11,6 +11,8 @@ namespace xtd {
     /// @brief The xtd::forms::style_sheets namespace contains various properties, states, and subcontrols that make it possible to customize the look of control.
     namespace style_sheets {
       /// @brief The user_control data allows you to specify the box of a user_control control.
+      /// @par Header
+      /// @code #include <xtd/forms/style_sheets/user_control> @endcode
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

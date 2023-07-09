@@ -11,6 +11,8 @@ namespace xtd {
     /// @brief The xtd::forms::style_sheets namespace contains various properties, states, and subcontrols that make it possible to customize the look of control.
     namespace style_sheets {
       /// @brief The length_unit enum class specifies the units for xtd::forms::style_sheets::length.
+      /// @par Header
+      /// @code #include <xtd/forms/style_sheets/length_unit> @endcode
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library
