@@ -235,7 +235,7 @@ macro(target_startup ...)
     file(RELATIVE_PATH STARTUP_OBJECT_RELATIVE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/Properties ${CMAKE_CURRENT_SOURCE_DIR}/${MAIN_FILE})
     set(INCLUDE_FILE "#include \"${STARTUP_OBJECT_RELATIVE_PATH}\"\n")
   elseif ("${ARGV0}" STREQUAL "tunit_main_" OR "${ARGV0}" STREQUAL "tunit_main_with_gtest_compatibility_")
-    set(INCLUDE_FILE "#include <xtd/tunit/tunit_main.h>\n")
+    set(INCLUDE_FILE "#include <xtd/tunit/tunit_main>\n")
   endif ()
   file(WRITE ${STARTUP_FILE}
     "#pragma region xtd generated code\n"
@@ -244,7 +244,7 @@ macro(target_startup ...)
     "// Changes to this file may cause incorrect behavior and will be lost if the code is regenerated.\n"
     "\n"
     "${INCLUDE_FILE}"
-    "#include <xtd/startup.h>\n"
+    "#include <xtd/startup>\n"
     "\n"
     "startup_(${ARGV0});\n"
     "#pragma endregion\n"
@@ -1243,7 +1243,7 @@ macro(write_assembly_informations)
       "// Remarks : If this file was manually created, you need re-run cmake generator after creating\n"
       "//           or modifying any parameter bellow.\n"
       "\n"
-      "#include <xtd/reflection/assembly_info.h>\n"
+      "#include <xtd/reflection/assembly_info>\n"
       "\n"
       "// Information about this assembly is defined by the following attributes.\n"
       "// Change them to the values specific to your project.\n"
@@ -1712,7 +1712,7 @@ macro(write_resources_file_header)
     "\n"
     "#pragma once\n"
     "\n"
-    "#include <xtd/not_implemented_exception.h>\n"
+    "#include <xtd/not_implemented_exception>\n"
     "#include <${XTD_PROJECT_INCLUDE_FILE}>\n"
     "\n"
     "namespace ${TARGET_DEFAULT_NAMESPACE}::properties {\n"
