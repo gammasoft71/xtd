@@ -19,7 +19,7 @@
   <!-- Layout definition for a class page -->
   <class>
     <briefdescription visible="no"/>
-    <includes visible="$SHOW_INCLUDE_FILES"/>
+    <!-- <includes visible="$SHOW_INCLUDE_FILES"/> -->
     <collaborationgraph visible="$COLLABORATION_GRAPH"/>
     <inheritancegraph visible="$CLASS_GRAPH"/>
     <detaileddescription title="Definition"/>
