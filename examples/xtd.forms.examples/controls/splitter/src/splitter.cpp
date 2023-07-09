@@ -1,4 +1,7 @@
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/form>
+#include <xtd/forms/panel>
+#include <xtd/forms/splitter>
 
 using namespace xtd;
 using namespace xtd::drawing;
