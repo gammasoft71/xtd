@@ -1,6 +1,8 @@
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/form>
+#include <xtd/forms/label>
+#include <xtd/forms/switch_button>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
