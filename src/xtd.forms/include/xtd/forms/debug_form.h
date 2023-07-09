@@ -2,6 +2,7 @@
 /// @brief Contains xtd::forms::debug_form form.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "control_trace_listener.h"
 #include "trace_form_base.h"
 #include "icontrol_trace.h"
 
@@ -10,6 +11,8 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Represents a form that displays debug form. This class cannot be inherited.
+    /// @par Header
+    /// @code #include <xtd/forms/debug_form> @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library
