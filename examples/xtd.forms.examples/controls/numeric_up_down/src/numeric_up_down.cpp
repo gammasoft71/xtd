@@ -1,5 +1,10 @@
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/form>
+#include <xtd/forms/label>
+#include <xtd/forms/numeric_up_down>
+#include <xtd/cdebug>
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
@@ -17,7 +22,7 @@ namespace numeric_up_down_example {
         label1.text(ustring::format("value = {}", numeric_up_down1.value()));
       };
       numeric_up_down1.text_changed += [&] {
-        cdebug << ustring::format("text = {}", numeric_up_down1.text()) << std::endl;
+        cdebug << ustring::format("text = {}", numeric_up_down1.text()) << endl;
       };
       numeric_up_down1.value(50);
       
