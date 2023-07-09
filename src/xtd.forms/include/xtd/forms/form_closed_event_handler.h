@@ -13,6 +13,8 @@ namespace xtd {
     /// @brief Represents the method that handles a form_closed event.
     /// @param sender The source of the event.
     /// @param e A form_closed_event_args that contains the event data.
+    /// @par Header
+    /// @code #include <xtd/forms/form_closed_event_handler> @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

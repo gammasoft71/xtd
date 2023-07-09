@@ -13,6 +13,8 @@ namespace xtd {
     /// @brief Represents the method that will handle the xtd::forms::find_dialog::find_next event of the xtd::forms::find_dialog and the xtd::forms::replace_dialog::find_next event of the xtd::forms::replace_dialog.
     /// @param sender The source of the event.
     /// @param e A xtd::forms::find_event_args that contains the event data.
+    /// @par Header
+    /// @code #include <xtd/forms/find_event_handler> @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

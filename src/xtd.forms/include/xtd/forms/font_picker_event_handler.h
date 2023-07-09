@@ -13,6 +13,8 @@ namespace xtd {
     /// @brief Represents the method that will handle the xtd::forms::font_picker::color_changeds of the xtd::forms::font_picker class.
     /// @param sender The source of the event.
     /// @param e A control_event_args that contains the event data.
+    /// @par Header
+    /// @code #include <xtd/forms/font_picker_event_handler> @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

@@ -111,16 +111,18 @@ add_sources(
   include/xtd/forms/common_dialog
   include/xtd/forms/component.h
   include/xtd/forms/component
+  include/xtd/forms/const_control_ref.h
+  include/xtd/forms/const_control_ref
+  include/xtd/forms/const_control_ref_less.h
+  include/xtd/forms/const_control_ref_less
+  include/xtd/forms/const_form_ref.h
+  include/xtd/forms/const_form_ref
   include/xtd/forms/container_control.h
   include/xtd/forms/container_control
   include/xtd/forms/content_alignment.h
   include/xtd/forms/content_alignment
   include/xtd/forms/context_menu.h
   include/xtd/forms/context_menu
-  include/xtd/forms/const_control_ref.h
-  include/xtd/forms/const_control_ref
-  include/xtd/forms/const_control_ref_less.h
-  include/xtd/forms/const_control_ref_less
   include/xtd/forms/control.h
   include/xtd/forms/control
   include/xtd/forms/control_appearance.h

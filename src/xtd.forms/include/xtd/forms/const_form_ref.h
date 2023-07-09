@@ -12,14 +12,14 @@ namespace xtd {
     class form;
     /// @endcond
     
-    /// @brief Represent an xtd::forms::form reference.
+    /// @brief Represents a const xtd::forms::form reference.
     /// @par Header
-    /// @code #include <xtd/forms/form_ref> @endcode
+    /// @code #include <xtd/forms/const_form_ref> @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
-    using form_ref = std::reference_wrapper<form>;
+    using const_form_ref = std::reference_wrapper<const form>;
   }
 }
