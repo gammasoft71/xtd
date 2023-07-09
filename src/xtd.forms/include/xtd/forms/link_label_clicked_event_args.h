@@ -16,6 +16,8 @@ namespace xtd {
     /// @endcond
     
     /// @brief Represents a Windows label control that can display hyperlinks.
+    /// @par Header
+    /// @code #include <xtd/forms/link_label_clicked_event_args> @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library
