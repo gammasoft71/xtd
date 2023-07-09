@@ -1,6 +1,8 @@
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/form>
+#include <xtd/forms/lcd_label>
+#include <xtd/forms/numeric_up_down>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
