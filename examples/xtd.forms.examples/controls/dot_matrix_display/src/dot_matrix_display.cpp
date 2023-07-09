@@ -1,5 +1,9 @@
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/dot_matrix_display>
+#include <xtd/forms/form>
+#include <xtd/forms/timer>
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
@@ -29,7 +33,7 @@ public:
   
 private:
   int counter = 0;
-  std::vector<dot_matrix_display::points_collection> chase = {
+  vector<dot_matrix_display::points_collection> chase = {
     {},
     {{3, 3}},
     {{3, 3}, {2, 2}, {2, 3}, {2, 4}, {3, 2}, {3, 4}, {4, 2}, {4, 3}, {4, 4}},
@@ -37,7 +41,7 @@ private:
     {{3, 3}, {2, 2}, {2, 3}, {2, 4}, {3, 2}, {3, 4}, {4, 2}, {4, 3}, {4, 4}, {1, 1}, {1, 2}, {1, 3}, {1, 4}, {1, 5}, {2, 1}, {2, 5}, {3, 1}, {3, 5}, {4, 1}, {4, 5}, {5, 1}, {5, 2}, {5, 3}, {5, 4}, {5, 5}, {0, 0}, {0, 1}, {0, 2}, {0, 3}, {0, 4}, {0, 5}, {0, 6}, {1, 0}, {1, 6}, {2, 0}, {2, 6}, {3, 0}, {3, 6}, {4, 0}, {4, 6}, {5, 0}, {5, 6}, {6, 0}, {6, 1}, {6, 2}, {6, 3}, {6, 4}, {6, 5}, {6, 6}},
   };
   dot_matrix_display dot_matrix_display1;
-  std::vector<dot_matrix_style> dot_matrix_styles = {
+  vector<dot_matrix_style> dot_matrix_styles = {
     dot_matrix_style::standard,
     dot_matrix_style::square
   };
