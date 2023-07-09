@@ -1,4 +1,10 @@
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/button>
+#include <xtd/forms/form>
+#include <xtd/forms/message_box>
+#include <xtd/operation_canceled_exception>
+#include <xtd/startup>
+#include <stdexcept>
 
 using namespace std;
 using namespace xtd;
