@@ -1,4 +1,8 @@
-#include <xtd/xtd>
+#include <chrono>
+#include <xtd/forms/application>
+#include <xtd/forms/date_time_picker>
+#include <xtd/forms/form>
+#include <xtd/forms/label>
 
 using namespace std::chrono;
 using namespace xtd;
