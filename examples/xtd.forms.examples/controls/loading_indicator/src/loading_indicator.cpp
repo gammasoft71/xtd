@@ -1,4 +1,7 @@
-#include <xtd/xtd>
+#include <xtd/drawing/system_colors>
+#include <xtd/forms/application>
+#include <xtd/forms/form>
+#include <xtd/forms/loading_indicator>
 
 using namespace xtd::forms;
 
