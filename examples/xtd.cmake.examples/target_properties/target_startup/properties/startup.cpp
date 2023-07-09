@@ -4,7 +4,7 @@
 // Changes to this file may cause incorrect behavior and will be lost if the code is regenerated.
 
 #include "../src/target_startup.cpp"
-#include <xtd/startup.h>
+#include <xtd/startup>
 
 startup_(target_startup::program);
 #pragma endregion
