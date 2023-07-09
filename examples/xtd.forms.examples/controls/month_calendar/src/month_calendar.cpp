@@ -1,4 +1,8 @@
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/form>
+#include <xtd/forms/label>
+#include <xtd/forms/month_calendar>
+#include <chrono>
 
 using namespace std::chrono;
 using namespace xtd;
