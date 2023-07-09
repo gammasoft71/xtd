@@ -5,6 +5,7 @@
 #include <cstddef>
 #include <xtd/drawing/icon.h>
 #include <xtd/io/path.h>
+#include "const_form_ref.h"
 #include "form_border_style.h"
 #include "form_closed_event_handler.h"
 #include "form_closing_event_handler.h"
@@ -30,6 +31,8 @@ namespace xtd {
     /// @endcond
     
     /// @brief Represents a window or dialog box that makes up an application's user interface.
+    /// @par Header
+    /// @code #include <xtd/forms/form> @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library
