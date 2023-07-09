@@ -13,6 +13,8 @@ namespace xtd {
     /// @brief Represents the method that will handle the xtd::forms::tool_bar::button_click event of a xtd::forms::tool_bar.
     /// @param sender The source of the event.
     /// @param e A xtd::forms::status_bar_panel_click_event_args that contains the event data.
+    /// @par Header
+    /// @code #include <xtd/forms/statsu_bar_panel_click_event_handler> @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

@@ -9,6 +9,10 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Specifies how a xtd::forms::status_bar_panel on a xtd::forms::status_bar content behaves when the content resizes.
+    /// @par Header
+    /// @code #include <xtd/forms/status_bar_panel_auto_size> @endcode
+    /// @par Namespace
+    /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms

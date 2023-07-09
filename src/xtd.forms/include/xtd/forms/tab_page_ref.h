@@ -13,59 +13,13 @@ namespace xtd {
     /// @endcond
     
     /// @brief Represents a tab_page reference.
+    /// @par Header
+    /// @code #include <xtd/forms/tab_page_ref> @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
     using tab_page_ref = std::reference_wrapper<tab_page>;
-    
-    /// @brief Represents a const tab_page reference.
-    /// @par Namespace
-    /// xtd::forms
-    /// @par Library
-    /// xtd.forms
-    /// @ingroup xtd_forms
-    using const_tab_page_ref = std::reference_wrapper<const tab_page>;
-    
-    /// @brief Represents less comparator for tab_page_ref.
-    /// @par Namespace
-    /// xtd::forms
-    /// @par Library
-    /// xtd.forms
-    /// @ingroup xtd_forms
-    struct tab_page_ref_less : public object {
-      /// @name Operators
-      
-      /// @{
-      /// @brief Compare two specified tab_page_ref.
-      /// @param value1 The first value to compare.
-      /// @param value2 The second value to compare.
-      /// @return true if value1 < value2; otherwise false.
-      bool operator()(const tab_page_ref& value1, const tab_page_ref& value2) const {
-        return &value1.get() < &value2.get();
-      }
-      /// @}
-    };
-    
-    /// @brief Represents less comparator for const const_tab_page_ref.
-    /// @par Namespace
-    /// xtd::forms
-    /// @par Library
-    /// xtd.forms
-    /// @ingroup xtd_forms
-    struct const_tab_page_ref_less {
-      /// @name Operators
-      
-      /// @{
-      /// @brief Compare two specified const_tab_page_ref.
-      /// @param value1 The first value to compare.
-      /// @param value2 The second value to compare.
-      /// @return true if value1 < value2; otherwise false.
-      bool operator()(const const_tab_page_ref& value1, const const_tab_page_ref& value2) const {
-        return &value1.get() < &value2.get();
-      }
-      /// @}
-    };
   }
 }

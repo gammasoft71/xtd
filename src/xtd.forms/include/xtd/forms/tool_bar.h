@@ -28,6 +28,8 @@ namespace xtd {
     /// @endcode
     /// @par Inheritance
     /// xtd::object → xtd::forms::component → xtd::forms::control → xtd::forms::tool_bar
+    /// @par Header
+    /// @code #include <xtd/forms/tool_bar> @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library
