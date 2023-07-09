@@ -11,6 +11,8 @@ namespace xtd {
     /// @brief The xtd::forms::visual_styles namespace contains classes for rendering controls and other windows user interface (UI) elements with visual styles in operating systems that support them.
     namespace visual_styles {
       /// @brief Specifies the visual state of a user control that is drawn with visual styles.
+      /// @par Header
+      /// @code #include <xtd/forms/visual_styles/user_control_state> @endcode
       /// @par Namespace
       /// xtd::forms::visual_style
       /// @par Library

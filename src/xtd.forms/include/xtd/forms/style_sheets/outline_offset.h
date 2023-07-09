@@ -14,6 +14,8 @@ namespace xtd {
       /// @code
       /// using outline_offset = xtd::forms::style_sheets::lengths
       /// @endcode
+      /// @par Header
+      /// @code #include <xtd/forms/style_sheets/outline_offset> @endcode
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

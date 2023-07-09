@@ -22,6 +22,8 @@ namespace xtd {
       /// @endcode
       /// @par Inheritance
       /// xtd::object → xtd::forms::style_sheets::system_colors
+      /// @par Header
+      /// @code #include <xtd/forms/style_sheets/system_colors> @endcode
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

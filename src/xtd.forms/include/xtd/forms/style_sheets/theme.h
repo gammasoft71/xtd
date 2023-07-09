@@ -20,6 +20,8 @@ namespace xtd {
       /// @endcode
       /// @par Inheritance
       /// xtd::object → xtd::forms::style_sheets::theme
+      /// @par Header
+      /// @code #include <xtd/forms/style_sheets/theme> @endcode
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

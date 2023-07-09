@@ -21,6 +21,8 @@ namespace xtd {
       /// xtd::object → xtd::forms::style_sheets::border_radius
       /// @par Implements
       /// xtd::iequatable <>
+      /// @par Header
+      /// @code #include <xtd/forms/style_sheets/brer_rzdius> @endcode
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

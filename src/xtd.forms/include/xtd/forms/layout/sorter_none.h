@@ -11,6 +11,8 @@ namespace xtd {
     /// @brief The xtd::forms::layout namespace contains classes for implementing layout behaviors in your form or control.
     namespace layout {
       /// @brief Represents a sorter none of objects.
+      /// @par Header
+      /// @code #include <xtd/forms/layout/sorter_none> @endcode
       /// @par Namespace
       /// xtd::forms::layout
       /// @par Library
