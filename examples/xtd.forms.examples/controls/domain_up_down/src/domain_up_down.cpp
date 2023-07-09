@@ -1,4 +1,7 @@
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/domain_up_down>
+#include <xtd/forms/form>
+#include <xtd/forms/label>
 
 using namespace xtd;
 using namespace xtd::forms;
