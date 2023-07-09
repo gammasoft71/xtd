@@ -1,4 +1,8 @@
-#include <xtd/xtd>
+#include <xtd/boxing>
+#include <xtd/console>
+#include <xtd/date_time>
+#include <xtd/day_of_week>
+#include <xtd/typeof>
 
 using namespace xtd;
 

@@ -1,4 +1,8 @@
-#include <xtd/xtd>
+#include <xtd/collections/specialized/string_pair>
+#include <xtd/boxing>
+#include <xtd/console>
+#include <xtd/environment>
+#include <vector>
 
 using namespace xtd;
 using namespace xtd::collections::specialized;
