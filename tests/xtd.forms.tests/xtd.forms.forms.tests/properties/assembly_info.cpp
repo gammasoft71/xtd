@@ -5,7 +5,7 @@
 // Remarks : If this file was manually created, you need re-run cmake generator after creating
 //           or modifying any parameter bellow.
 
-#include <xtd/reflection/assembly_info.h>
+#include <xtd/reflection/assembly_info>
 
 // Information about this assembly is defined by the following attributes.
 // Change them to the values specific to your project.
