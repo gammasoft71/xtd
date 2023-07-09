@@ -1,5 +1,8 @@
+#include <xtd/drawing/system_brushes>
+#include <xtd/forms/application>
+#include <xtd/forms/form>
+#include <xtd/forms/user_control>
 #include <vector>
-#include <xtd/xtd>
 
 using namespace std;
 using namespace xtd;
