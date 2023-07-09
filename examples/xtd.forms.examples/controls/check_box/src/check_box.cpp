@@ -1,4 +1,6 @@
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/check_box>
+#include <xtd/forms/form>
 
 using namespace xtd;
 using namespace xtd::forms;
