@@ -1,7 +1,9 @@
+#include <xtd/diagnostics/process>
+#include <xtd/forms/application>
+#include <xtd/forms/form>
+#include <xtd/forms/link_label>
 #include <filesystem>
-#include <xtd/xtd>
 
-using namespace std;
 using namespace std::filesystem;
 using namespace xtd;
 using namespace xtd::diagnostics;
