@@ -1,4 +1,7 @@
-#include <xtd/xtd>
+#include <xtd/forms/Application>
+#include <xtd/forms/checked_list_box>
+#include <xtd/forms/form>
+#include <xtd/cdebug>
 
 using namespace std;
 using namespace xtd;
