@@ -14,6 +14,8 @@
 namespace xtd {
   namespace forms {
     /// @brief Implements a Windows message.
+    /// @par Header
+    /// @code #include <xtd/forms/message> @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

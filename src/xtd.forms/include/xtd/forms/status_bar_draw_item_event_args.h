@@ -12,6 +12,8 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Provides data for the xtd::forms::status_bar::draw_item event.
+    /// @par Header
+    /// @code #include <xtd/forms/status_bar_draw_item_event_args> @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

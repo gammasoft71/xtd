@@ -11,6 +11,8 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Represents a splitter control that enables the user to resize docked controls.
+    /// @par Header
+    /// @code #include <xtd/forms/splitter> @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

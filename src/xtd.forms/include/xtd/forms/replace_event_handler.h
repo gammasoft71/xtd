@@ -13,6 +13,8 @@ namespace xtd {
     /// @brief Represents the method that will handle the xtd::forms::replace_dialog::replace event and the xtd::forms::replace_dialog::replace_all event of the xtd::forms::replace_dialog.
     /// @param sender The source of the event.
     /// @param e A xtd::forms::replace_event_args that contains the event data.
+    /// @par Header
+    /// @code #include <xtd/forms/replace_event_handler> @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

@@ -13,6 +13,8 @@ namespace xtd {
     /// @brief Represents the method that will handle the paint event of a control.
     /// @param sender The source of the event.
     /// @param e A paint_event_args that contains the event data.
+    /// @par Header
+    /// @code #include <xtd/forms/paint_event_handler> @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

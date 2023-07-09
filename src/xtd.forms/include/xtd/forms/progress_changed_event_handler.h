@@ -13,6 +13,8 @@ namespace xtd {
     /// @brief Represents the method that will handle the do_work event. This class cannot be inherited.
     /// @param sender The source of the event.
     /// @param e A do_work_event_args that contains the event data.
+    /// @par Header
+    /// @code #include <xtd/forms/progress_changed_event_handler> @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library
