@@ -1,6 +1,10 @@
-#include <xtd/xtd>
+#include <xtd/diagnostics/debug>
+#include <xtd/diagnostics/debugger>
+#include <xtd/forms/application>
+#include <xtd/forms/button>
+#include <xtd/forms/form>
+#include <xtd/startup>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::forms;
@@ -15,7 +19,7 @@ public:
     text("application and assert example");
     
     // Uncomment following line to remove assert dialog
-    //diagnostics::debug::show_assert_dialog(false);
+    //debug::show_assert_dialog(false);
     
     generate_assert_button.auto_size(true);
     generate_assert_button.location({10, 10});
