@@ -18,6 +18,8 @@ namespace xtd {
     /// @endcond
     
     /// @brief Represents a common dialog box that displays assert box.
+    /// @par Header
+    /// @code #include <xtd/forms/assert_box> @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

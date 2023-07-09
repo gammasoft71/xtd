@@ -21,6 +21,8 @@ namespace xtd {
     /// xtd::object → xtd::forms::component → xtd::forms::control → xtd::forms::button_base → xtd::forms::button
     /// @par Implements
     /// xtd::forms::ibutton_control
+    /// @par Header
+    /// @code #include <xtd/forms/button> @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

@@ -642,8 +642,7 @@ namespace xtd {
     /// @return The demangled string of name.
     /// @par Examples
     /// The following example shows how to use xtd::ustring::demangle.
-    /// @code
-    /// #include <xtd/xtd>
+    /// @code #include <xtd/xtd>
     ///
     /// using namespace xtd;
     ///

@@ -117,6 +117,10 @@ add_sources(
   include/xtd/forms/content_alignment
   include/xtd/forms/context_menu.h
   include/xtd/forms/context_menu
+  include/xtd/forms/const_control_ref.h
+  include/xtd/forms/const_control_ref
+  include/xtd/forms/const_control_ref_less.h
+  include/xtd/forms/const_control_ref_less
   include/xtd/forms/control.h
   include/xtd/forms/control
   include/xtd/forms/control_appearance.h
@@ -131,6 +135,8 @@ add_sources(
   include/xtd/forms/control_paint
   include/xtd/forms/control_ref.h
   include/xtd/forms/control_ref
+  include/xtd/forms/control_ref_less.h
+  include/xtd/forms/control_ref_less
   include/xtd/forms/control_renderer.h
   include/xtd/forms/control_renderer
   include/xtd/forms/control_styles.h
@@ -235,6 +241,8 @@ add_sources(
   include/xtd/forms/font_picker_event_handler
   include/xtd/forms/form.h
   include/xtd/forms/form
+  include/xtd/forms/form_collection.h
+  include/xtd/forms/form_collection
   include/xtd/forms/form_ref.h
   include/xtd/forms/form_ref
   include/xtd/forms/form_border_style.h

@@ -27,6 +27,7 @@
 #include "auto_size_mode.h"
 #include "bounds_specified.h"
 #include "component.h"
+#include "const_control_ref.h"
 #include "context_menu.h"
 #include "control_appearance.h"
 #include "control_event_handler.h"
@@ -62,6 +63,8 @@ namespace xtd {
     /// @endcond
     
     /// @brief Defines the base class for controls, which are components with visual representation.
+    /// @par Header
+    /// @code #include <xtd/forms/control> @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

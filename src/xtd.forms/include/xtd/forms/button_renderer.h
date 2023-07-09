@@ -32,6 +32,8 @@ namespace xtd {
     /// @endcode
     /// @par Inheritance
     /// xtd::static → xtd::forms::button_renderer
+    /// @par Header
+    /// @code #include <xtd/forms/button_renderer> @endcode
     /// @par Namespace
     /// xtd::forms:
     /// @par Library

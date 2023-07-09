@@ -21,6 +21,8 @@ namespace xtd {
     /// @endcond
     
     /// @brief Represents the image used to paint the mouse pointer.
+    /// @par Header
+    /// @code #include <xtd/forms/cursor> @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library
