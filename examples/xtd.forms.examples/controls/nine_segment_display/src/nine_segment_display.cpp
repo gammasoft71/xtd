@@ -1,5 +1,9 @@
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/form>
+#include <xtd/forms/nine_segment_display>
+#include <xtd/forms/timer>
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
@@ -29,7 +33,7 @@ public:
   
 private:
   int counter = 0;
-  std::vector<segments> chase = {
+  vector<segments> chase = {
     segments::none,
     segments::a,
     segments::a | segments::b,
@@ -43,7 +47,7 @@ private:
     segments::dp,
     segments::pc
   };
-  std::vector<segment_style> segment_styles = {
+  vector<segment_style> segment_styles = {
     segment_style::standard,
     segment_style::modern,
     segment_style::mixed,
