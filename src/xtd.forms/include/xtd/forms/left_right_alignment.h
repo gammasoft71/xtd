@@ -9,6 +9,8 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Specifies whether an object or text is aligned to the left or right of a reference point.
+    /// @par Header
+    /// @code #include <xtd/forms/left_right_alignment> @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

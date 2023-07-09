@@ -12,6 +12,13 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Represents an area within a xtd::forms::link_label control that represents a hyperlink within the control.
+    /// @par Header
+    /// @code #include <xtd/forms/link_area> @endcode
+    /// @par Namespace
+    /// xtd::forms
+    /// @par Library
+    /// xtd.forms
+    /// @ingroup xtd_forms
     /// @remarks There are two ways to add a hyperlink to the text of a xtd::forms::link_label control. You can access the xtd::forms::link_label::link_collection::push_back method of the xtd::forms::link_label::link_collection class through the xtd::forms::link_label::links property of the xtd::forms::link_label to add multiple hyperlinks to the control's text. If you only need to add a single hyperlink to the text of the control, you can use the xtd::forms::link_label::link_area property of the xtd::forms::link_label. This property accepts a xtd::forms::link_area that defines the location of the hyperlink within the control's text. When a hyperlink is specified using the xtd::forms::link_label::link_area property, the link area is then added to the xtd::forms::link_label::link_collection in the same manner as adding the link using the xtd::forms::link_label::link_collection::push_back method of the xtd::forms::link_label::link_collection.
     /// @remarks The xtd::forms::link_area::length property specifies the number of characters within the text of the xtd::forms::link_label to include in the link area. The xtd::forms::link_area::start property specifies the first character in the control text to include in the hyperlink. If you want to determine whether a specific xtd::forms::link_area is empty, you can use the xtd::forms::link_area::is_empty property instead of checking the values of the xtd::form::link_area::start and xtd::form::link_area::length properties.
     forms_export_ struct link_area : public object, public xtd::iequatable<link_area> {

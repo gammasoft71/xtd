@@ -13,6 +13,8 @@ namespace xtd {
     /// @brief Represents the method that will handle the ItemCheck event of a CheckedListBox or ListView control.
     /// @param sender The source of the event.
     /// @param e An ItemCheckEventArgs that contains the event data.
+    /// @par Header
+    /// @code #include <xtd/forms/item_check_event_handler> @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

@@ -16,6 +16,8 @@ namespace xtd {
     /// @endcond
     
     /// @brief Provides data for the item_check event of the checked_list_box and list_view controls.
+    /// @par Header
+    /// @code #include <xtd/forms/item_check_event_args> @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

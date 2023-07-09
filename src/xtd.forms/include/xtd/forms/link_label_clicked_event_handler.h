@@ -11,6 +11,8 @@ namespace xtd {
     /// @brief Represents the method that will handle the xtd::forms::link_label::link_clicked event of a xtd::forms::link_label.
     /// @param sender The source of the event.
     /// @param e A xtd::forms::link_label_link_clicked_event_args that contains the event data.
+    /// @par Header
+    /// @code #include <xtd/forms/link_label_clicked_event_handler> @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library
