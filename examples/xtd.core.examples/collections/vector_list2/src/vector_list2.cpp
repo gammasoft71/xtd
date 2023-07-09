@@ -1,10 +1,14 @@
+#include <xtd/collections/vector_list>
+#include <xtd/any>
+#include <xtd/as>
+#include <xtd/console>
+#include <xtd/is>
+#include <xtd/platform_id>
 #include <any>
 #include <chrono>
 #include <locale>
 #include <ostream>
 #include <string>
-
-#include <xtd/xtd>
 
 using namespace std;
 using namespace std::chrono;
