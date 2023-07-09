@@ -88,8 +88,6 @@ $(function() {
   <div class="headertitle"><div class="title">xtd::forms::check_box Class Reference<div class="ingroups"><a class="el" href="group__libraries.html">libraries</a> &raquo; <a class="el" href="group__xtd__forms.html">xtd.forms</a> &#124; <a class="el" href="group__gui.html">forms</a> &raquo; <a class="el" href="group__controls.html">controls</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#include &lt;<a class="el" href="check__box_8h_source.html">check_box.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for xtd::forms::check_box:</div>
 <div class="dyncontent">
@@ -111,10 +109,12 @@ Inheritance diagram for xtd::forms::check_box:</div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
 <div class="textblock"><p>Represents a Windows <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a>. </p>
 <div class="fragment"><div class="line"><span class="keyword">class </span><a class="code hl_define" href="group__keywords.html#gaa2ab2e666648001a7d445dc452ac1767">forms_export_</a> <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1button__base.html">xtd::forms::button_base</a></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1button__base_html"><div class="ttname"><a href="classxtd_1_1forms_1_1button__base.html">xtd::forms::button_base</a></div><div class="ttdoc">Implements the basic functionality common to button controls.</div><div class="ttdef"><b>Definition</b> button_base.h:33</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1check__box_html"><div class="ttname"><a href="classxtd_1_1forms_1_1check__box.html">xtd::forms::check_box</a></div><div class="ttdoc">Represents a Windows check_box.</div><div class="ttdef"><b>Definition</b> check_box.h:41</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1button__base_html"><div class="ttname"><a href="classxtd_1_1forms_1_1button__base.html">xtd::forms::button_base</a></div><div class="ttdoc">Implements the basic functionality common to button controls.</div><div class="ttdef"><b>Definition</b> button_base.h:35</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1check__box_html"><div class="ttname"><a href="classxtd_1_1forms_1_1check__box.html">xtd::forms::check_box</a></div><div class="ttdoc">Represents a Windows check_box.</div><div class="ttdef"><b>Definition</b> check_box.h:43</div></div>
 <div class="ttc" id="agroup__keywords_html_gaa2ab2e666648001a7d445dc452ac1767"><div class="ttname"><a href="group__keywords.html#gaa2ab2e666648001a7d445dc452ac1767">forms_export_</a></div><div class="ttdeci">#define forms_export_</div><div class="ttdoc">Define shared library export.</div><div class="ttdef"><b>Definition</b> forms_export.h:13</div></div>
 </div><!-- fragment --> <dl class="section user"><dt>Inheritance</dt><dd><a class="el" href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....">xtd::object</a> → <a class="el" href="classxtd_1_1forms_1_1component.html" title="Provides the base implementation and enables object sharing between applications.">xtd::forms::component</a> → <a class="el" href="classxtd_1_1forms_1_1control.html" title="Defines the base class for controls, which are components with visual representation.">xtd::forms::control</a> → <a class="el" href="classxtd_1_1forms_1_1button__base.html" title="Implements the basic functionality common to button controls.">xtd::forms::button_base</a> → <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> </dd></dl>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/check_box&gt;</span> </div>
+</div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1forms.html" title="The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...">xtd::forms</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms.html" title="The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...">xtd.forms</a></dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Use a <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> to give the user an option, such as true/false or yes/no. The <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> control can display an image or text or both. </dd>
@@ -161,7 +161,9 @@ The three_state property determines whether the control supports two or three st
   </td></tr>
 </table>
 </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> control. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> control. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/check_box&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
@@ -229,7 +231,7 @@ The three_state property determines whether the control supports two or three st
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a4ee49410f3156fd66b61c2567a59388e"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a></div><div class="ttdeci">static void run()</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a6af4447091dec74038a54c6b9f5f8760"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a6af4447091dec74038a54c6b9f5f8760">xtd::forms::application::enable_visual_styles</a></div><div class="ttdeci">static void enable_visual_styles()</div><div class="ttdoc">Enables visual styles for the application.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application's user interface.</div><div class="ttdef"><b>Definition</b> form.h:49</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application's user interface.</div><div class="ttdef"><b>Definition</b> form.h:52</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1"><div class="ttname"><a href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">xtd::forms::status_bar_panel_style::text</a></div><div class="ttdeci">@ text</div><div class="ttdoc">The xtd::forms::status_bar_panel displays text in the standard font.</div></div>
 <div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> about_box.h:13</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
@@ -1296,7 +1298,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 
 <p>Initializes a new instance of the CheckBox class. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>By default, when a new <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> is instantiated, auto_check is set to true, checked is set to false, and appearance is set to normal. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> constructor. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> constructor. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/check_box&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
@@ -1393,7 +1397,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <p>Gets the value that determines the appearance of a <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> control. </p>
 <dl class="section return"><dt>Returns</dt><dd>One of the appearance values. The default value is normal. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If appearance value is set to normal, the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> has a typical appearance. If the value is set to button, the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> appears like a toggle button, which can be toggled to an up or down state. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> appearance. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> appearance. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/check_box&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
@@ -1526,7 +1532,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <p>Gets a value indicating whether the checked or check_state values and the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a>'s appearance are automatically changed when the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> is clicked. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if the checked value or check_state value and the appearance of the control are automatically changed on the click event; otherwise, false. The default value is true. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If auto_check is set to false, you will need to add code to update the checked or check_state values in the click event handler. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> auto_check. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> auto_check. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/check_box&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
@@ -1731,7 +1739,9 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 <td class="markdownTableBodyNone">indeterminate   </td><td class="markdownTableBodyNone">The CheckBox displays a check mark and is shaded.   </td><td class="markdownTableBodyNone">The control appears flat.   </td></tr>
 </table>
 </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> check_state. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> check_state. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/check_box&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
@@ -1845,7 +1855,9 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 <td class="markdownTableBodyNone">indeterminate   </td><td class="markdownTableBodyNone">The CheckBox displays a check mark and is shaded.   </td><td class="markdownTableBodyNone">The control appears flat.   </td></tr>
 </table>
 </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> check_state. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> check_state. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/check_box&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
@@ -1941,7 +1953,9 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 <p>Gets a value indicating whether the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> is in the checked state. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> is in the checked state; otherwise, false. The default value is false. If the three_state property is set to true, the checked property will return true for either a checked or indeterminate check_state. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>When the value is true, the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> portion of the control displays a check mark. If the appearance property is set to button, the control will appear sunken when checked is true and raised like a standard button when false. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> checked. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> checked. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/check_box&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
@@ -3042,7 +3056,9 @@ The on_checked_changed method also allows derived classes to handle the event wi
 <p>Gets a value indicating whether the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> will allow three check states rather than two. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> is able to display three check states; otherwise, false. The default value is false. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If the three_state property is set to false, the check_state property value can only be set to the indeterminate value of <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866" title="Specifies the state of a control, such as a check box, that can be checked, unchecked,...">xtd.forms.check_state</a> in code and not by user interaction. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> three_state. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> three_state. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/check_box&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
@@ -3246,7 +3262,7 @@ The on_checked_changed method also allows derived classes to handle the event wi
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jul 7 2023 22:37:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Jul 9 2023 22:20:35 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
