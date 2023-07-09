@@ -117,6 +117,8 @@ add_sources(
   include/xtd/forms/const_control_ref_less
   include/xtd/forms/const_form_ref.h
   include/xtd/forms/const_form_ref
+  include/xtd/forms/const_menu_item_ref.h
+  include/xtd/forms/const_menu_item_ref
   include/xtd/forms/container_control.h
   include/xtd/forms/container_control
   include/xtd/forms/content_alignment.h

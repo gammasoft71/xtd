@@ -11,7 +11,7 @@ namespace xtd {
   namespace forms {
     /// @brief Provides data for a dialog closed event.
     /// @par Header
-    /// @code #include <xtd/forms/dialog_close_event_args> @endcode
+    /// @code #include <xtd/forms/dialog_closed_event_args> @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

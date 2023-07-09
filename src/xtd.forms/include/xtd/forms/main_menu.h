@@ -17,6 +17,8 @@ namespace xtd {
     /// @endcond
     
     /// @brief Represents the menu structure of a form.
+    /// @par Header
+    /// @code #include <xtd/forms/main_menu> @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

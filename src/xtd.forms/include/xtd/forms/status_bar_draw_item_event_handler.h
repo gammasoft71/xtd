@@ -13,6 +13,8 @@ namespace xtd {
     /// @brief Represents the method that will handle the xtd::forms::status_bar::draw_item event of a xtd::forms::status_bar.
     /// @param sender The source of the event.
     /// @param e A xtd::forms::status_bar_draw_item_event_args that contains the event data.
+    /// @par Header
+    /// @code #include <xtd/forms/status_bar_draw_item_event_handler> @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

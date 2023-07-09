@@ -8,6 +8,7 @@
 #include <string>
 #include <xtd/iequatable.h>
 #include "component.h"
+#include "const_menu_item_ref.h"
 #include "menu_item_ref.h"
 #include "layout/arranged_element_collection.h"
 
@@ -21,6 +22,8 @@ namespace xtd {
     /// @endcond
     
     /// @brief Represents the base functionality for all menus. Although tool_strip_drop_down and tool_strip_drop_down_menu replace and add functionality to the menu control of previous versions, menu is retained for both backward compatibility and future use if you choose.
+    /// @par Header
+    /// @code #include <xtd/forms/menu> @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

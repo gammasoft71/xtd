@@ -12,19 +12,13 @@ namespace xtd {
     /// @endcond
     
     /// @brief Represents a menu item reference.
+    /// @par Header
+    /// @code #include <xtd/forms/menu_item_ref> @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
     using menu_item_ref = std::reference_wrapper<menu_item>;
-    
-    /// @brief Represents a menu item reference.
-    /// @par Namespace
-    /// xtd::forms
-    /// @par Library
-    /// xtd.forms
-    /// @ingroup xtd_forms
-    using const_menu_item_ref = std::reference_wrapper<const menu_item>;
   }
 }
