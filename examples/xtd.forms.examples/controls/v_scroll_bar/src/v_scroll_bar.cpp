@@ -1,4 +1,8 @@
-#include <xtd/xtd>
+#include <xtd/diagnostics/debug>
+#include <xtd/forms/application>
+#include <xtd/forms/debug_form>
+#include <xtd/forms/form>
+#include <xtd/forms/v_scroll_bar>
 
 using namespace xtd::forms;
 
