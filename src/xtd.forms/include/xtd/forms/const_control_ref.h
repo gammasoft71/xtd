@@ -1,25 +1,25 @@
 /// @file
-/// @brief Contains xtd::forms::key_event_handler event handler.
+/// @brief Contains xtd::forms::const_control_ref typedef.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
-#include <xtd/event_handler.h>
-#include "animation_update_event_args.h"
+#include <functional>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-    /// @brief Represents the method that will handle the update of xtd::forms::animation.
-    /// @param sender The source of the event.
-    /// @param e A xtd::forms::animation_updated_event_args that contains the event data.
+    /// @cond
+    class control;
+    /// @endcond
+
+    /// @brief Represents a const control reference.
     /// @par Header
-    /// @code #include <xtd/forms/animation_event_handler> @endcode
+    /// @code #include <xtd/forms/const_control_ref> @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms events
-    using animation_updated_event_handler = xtd::delegate<void(object&, const xtd::forms::animation_updated_event_args&)>;
+    /// @ingroup xtd_forms
+    using const_control_ref = std::reference_wrapper<const control>;
   }
 }

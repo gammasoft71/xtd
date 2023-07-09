@@ -17,6 +17,8 @@ namespace xtd {
     /// @endcode
     /// @par Inheritance
     /// xtd::object → xtd::forms::component → xtd::forms::control → xtd::forms::button_base → xtd::forms::check_box
+    /// @par Header
+    /// @code #include <xtd/forms/check_box> @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

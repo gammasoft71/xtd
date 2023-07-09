@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::control_ref typedef.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/object.h>
+#include <functional>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -13,59 +13,13 @@ namespace xtd {
     /// @endcond
     
     /// @brief Represents a control reference.
+    /// @par Header
+    /// @code #include <xtd/forms/control_ref> @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
     using control_ref = std::reference_wrapper<control>;
-    
-    /// @brief Represents a const control reference.
-    /// @par Namespace
-    /// xtd::forms
-    /// @par Library
-    /// xtd.forms
-    /// @ingroup xtd_forms
-    using const_control_ref = std::reference_wrapper<const control>;
-    
-    /// @brief Represents less comparator for control_ref.
-    /// @par Namespace
-    /// xtd::forms
-    /// @par Library
-    /// xtd.forms
-    /// @ingroup xtd_forms
-    struct control_ref_less : public object {
-      /// @name Operators
-      
-      /// @{
-      /// @brief Compare two specified control_ref.
-      /// @param value1 The first value to compare.
-      /// @param value2 The second value to compare.
-      /// @return true if value1 < value2; otherwise false.
-      bool operator()(const control_ref& value1, const control_ref& value2) const {
-        return &value1.get() < &value2.get();
-      }
-      /// @}
-    };
-    
-    /// @brief Represents less comparator for const const_control_ref.
-    /// @par Namespace
-    /// xtd::forms
-    /// @par Library
-    /// xtd.forms
-    /// @ingroup xtd_forms
-    struct const_control_ref_less {
-      /// @name Operators
-      
-      /// @{
-      /// @brief Compare two specified const_control_ref.
-      /// @param value1 The first value to compare.
-      /// @param value2 The second value to compare.
-      /// @return true if value1 < value2; otherwise false.
-      bool operator()(const const_control_ref& value1, const const_control_ref& value2) const {
-        return &value1.get() < &value2.get();
-      }
-      /// @}
-    };
   }
 }

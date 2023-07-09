@@ -18,6 +18,8 @@ namespace xtd {
     /// @endcode
     /// @par Inheritance
     /// xtd::object → xtd::forms::component → xtd::forms::control → xtd::forms::button_base → xtd::forms::command_link_button
+    /// @par Header
+    /// @code #include <xtd/forms/command_link_button> @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

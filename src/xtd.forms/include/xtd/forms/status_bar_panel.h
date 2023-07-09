@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include "component.h"
+#include "const_control_ref.h"
 #include "control_ref.h"
 #include <xtd/event.h>
 #include <xtd/event_handler.h>

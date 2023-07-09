@@ -30,8 +30,7 @@ namespace xtd {
     /// @ingroup xtd_core io
     /// @par Examples
     /// The following example demonstrates some of the main members of the xtd::io::directory_info class.
-    /// @code
-    /// #include <xtd/xtd>
+    /// @code #include <xtd/xtd>
     ///
     /// using namespace xtd;
     /// using namespace xtd::io;
@@ -67,8 +66,7 @@ namespace xtd {
     /// @endcode
     /// @par Examples
     /// The following example demonstrates how to copy a directory and its contents.
-    /// @code
-    /// #include <xtd/xtd>
+    /// @code #include <xtd/xtd>
     ///
     /// using namespace xtd;
     /// using namespace xtd::io;

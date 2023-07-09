@@ -9,6 +9,7 @@
 #include "../forms_namespace_aliases.h"
 #include "style_sheets/style_sheet.h"
 #include "application_context.h"
+#include "form_collection.h"
 #include "imessage_filter.h"
 #include "message.h"
 #include "message_loop_callback.h"
@@ -26,16 +27,11 @@ namespace xtd {
     class message_box;
     /// @endcond
     
-    /// @brief Represents a collection of form objects.
+    /// @brief Provides static methods and properties to manage an application, such as methods to start and stop an application, to process Windows messages, and methods to get information about an application. This class cannot be inherited.
+    /// @par Header
+    /// @code #include <xtd/forms/application> @endcode
     /// @par Namespace
     /// xtd::forms
-    /// @par Library
-    /// xtd.forms
-    /// @ingroup xtd_forms
-    /// @remarks form_collection is used by the application object to list the currently open forms in an application through the open_forms property.
-    using form_collection = std::vector<std::reference_wrapper<form>>;
-    
-    /// @brief Provides static methods and properties to manage an application, such as methods to start and stop an application, to process Windows messages, and methods to get information about an application. This class cannot be inherited.
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms application

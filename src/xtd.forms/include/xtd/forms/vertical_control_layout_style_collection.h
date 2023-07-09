@@ -4,6 +4,7 @@
 #pragma once
 #include <utility>
 #include <vector>
+#include "const_control_ref.h"
 #include "control_ref.h"
 #include "vertical_control_layout_style.h"
 

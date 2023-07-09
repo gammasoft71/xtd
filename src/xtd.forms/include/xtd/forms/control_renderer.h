@@ -18,6 +18,8 @@ namespace xtd {
     /// @endcode
     /// @par Inheritance
     /// xtd::static → xtd::forms::control_renderer
+    /// @par Header
+    /// @code #include <xtd/forms/control_renderer> @endcode
     /// @par Namespace
     /// xtd::forms::style_sheets
     /// @par Library
