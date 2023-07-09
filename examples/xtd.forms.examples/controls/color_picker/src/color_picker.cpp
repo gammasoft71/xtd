@@ -1,4 +1,9 @@
-#include <xtd/xtd>
+#include <xtd/drawing/drawing_2d/hatch_brush>
+#include <xtd/forms/application>
+#include <xtd/forms/color_picker>
+#include <xtd/forms/control_paint>
+#include <xtd/forms/form>
+#include <xtd/forms/panel>
 
 using namespace xtd;
 using namespace xtd::drawing;
