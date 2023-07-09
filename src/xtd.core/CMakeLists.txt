@@ -48,6 +48,8 @@ add_sources(
   include/xtd/box_floating_point
   include/xtd/box_integer.h
   include/xtd/box_integer
+  include/xtd/boxing.h
+  include/xtd/boxing
   include/xtd/build_type.h
   include/xtd/build_type
   include/xtd/cdebug.h
@@ -256,6 +258,8 @@ add_sources(
   include/xtd/types
   include/xtd/unauthorized_access_exception.h
   include/xtd/unauthorized_access_exception
+  include/xtd/unboxing.h
+  include/xtd/unboxing
   include/xtd/underflow_exception.h
   include/xtd/underflow_exception
   include/xtd/unused.h

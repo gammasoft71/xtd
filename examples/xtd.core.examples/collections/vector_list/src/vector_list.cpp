@@ -1,4 +1,5 @@
-#include <xtd/xtd>
+#include <xtd/collections/vector_list>
+#include <xtd/console>
 
 using namespace std;
 using namespace xtd;
