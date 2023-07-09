@@ -1,5 +1,10 @@
-#include <filesystem>
-#include <xtd/xtd>
+#include <xtd/diagnostics/debug>
+#include <xtd/drawing/basic_colors>
+#include <xtd/drawing/colors>
+#include <xtd/forms/animation>
+#include <xtd/forms/application>
+#include <xtd/forms/debug_form>
+#include <xtd/forms/form>
 
 using namespace std;
 using namespace xtd;
