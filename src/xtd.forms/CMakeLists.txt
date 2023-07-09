@@ -119,6 +119,10 @@ add_sources(
   include/xtd/forms/const_form_ref
   include/xtd/forms/const_menu_item_ref.h
   include/xtd/forms/const_menu_item_ref
+  include/xtd/forms/const_tab_page_ref.h
+  include/xtd/forms/const_tab_page_ref
+  include/xtd/forms/const_tab_page_ref_less.h
+  include/xtd/forms/const_tab_page_ref_less
   include/xtd/forms/container_control.h
   include/xtd/forms/container_control
   include/xtd/forms/content_alignment.h
@@ -557,6 +561,8 @@ add_sources(
   include/xtd/forms/tab_page
   include/xtd/forms/tab_page_ref.h
   include/xtd/forms/tab_page_ref
+  include/xtd/forms/tab_page_ref_less.h
+  include/xtd/forms/tab_page_ref_less
   include/xtd/forms/table_layout_panel.h
   include/xtd/forms/table_layout_panel
   include/xtd/forms/text_box_base.h

@@ -22,6 +22,8 @@ namespace xtd {
     /// @endcode
     /// @par Inheritance
     /// xtd::static → xtd::forms::status_bar_renderer
+    /// @par Header
+    /// @code #include <xtd/forms/status_bar_renderer> @endcode
     /// @par Namespace
     /// xtd::forms::style_sheets
     /// @par Library

@@ -2,6 +2,7 @@
 /// @brief Contains xtd::forms::tab_control container.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "const_tab_page_ref.h"
 #include "control.h"
 #include "image_list.h"
 #include "tab_alignment.h"
@@ -16,6 +17,8 @@ namespace xtd {
     /// @endcond
     
     /// @brief Manages a related set of tab pages.
+    /// @par Header
+    /// @code #include <xtd/forms/tab_control> @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

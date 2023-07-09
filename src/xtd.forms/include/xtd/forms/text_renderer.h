@@ -21,6 +21,8 @@ namespace xtd {
     /// @endcode
     /// @par Inheritance
     /// xtd::static → xtd::forms::text_renderer
+    /// @par Header
+    /// @code #include <xtd/forms/text_renderer> @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library
