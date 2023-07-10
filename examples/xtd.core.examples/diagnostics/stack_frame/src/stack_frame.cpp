@@ -1,4 +1,6 @@
-#include <xtd/xtd>
+#include <xtd/diagnostics/stack_frame>
+#include <xtd/diagnostics/stack_trace>
+#include <xtd/console>
 
 using namespace xtd;
 using namespace xtd::diagnostics;
