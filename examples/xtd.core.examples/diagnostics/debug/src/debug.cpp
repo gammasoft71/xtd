@@ -1,6 +1,8 @@
 // Specify -DDEBUG when compiling or add #define DEBUG in the source file.
 
-#include <xtd/xtd>
+#include <xtd/diagnostics/debug>
+#include <xtd/diagnostics/ostream_trace_listener>
+#include <xtd/console>
 
 using namespace std;
 using namespace xtd;
