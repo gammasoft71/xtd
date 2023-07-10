@@ -1,4 +1,6 @@
-#include <xtd/xtd>
+#include <xtd/io/path>
+#include <xtd/console>
+#include <xtd/environment>
 
 using namespace xtd;
 using namespace xtd::io;
@@ -10,4 +12,4 @@ auto main()->int {
 
 // This code produces the following output :
 //
-// Directory entry:   /!---OMITTED---!/Desktop/.
+// Directory entry:   /!---OMITTED---!/Desktop
