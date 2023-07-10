@@ -1,14 +1,13 @@
-#include <xtd/xtd>
-#include <iostream>
-#include <string>
+#include <xtd/console>
+#include <xtd/delegate>
+#include <xtd/environment>
 
-using namespace std;
 using namespace xtd;
 
 auto main()->int {
   // use delegate as std::function
   delegate<void(const ustring& str)> writer([](const ustring & str)  {
-    cout << str << endl;
+    console::out << str << environment::new_line();
   });
   
   writer("Value to write");
