@@ -1,4 +1,7 @@
-#include <xtd/xtd>
+#include <xtd/diagnostics/trace>
+#include <xtd/diagnostics/default_trace_listener>
+#include <xtd/console>
+#include <xtd/startup>
 
 using namespace std;
 using namespace xtd;
