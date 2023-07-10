@@ -1,4 +1,5 @@
-#include <xtd/xtd>
+#include <xtd/diagnostics/assert>
+#include <xtd/console>
 
 using namespace xtd;
 
