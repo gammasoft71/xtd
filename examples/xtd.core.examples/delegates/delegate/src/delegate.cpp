@@ -1,6 +1,6 @@
-#include <xtd/xtd>
+#include <xtd/console>
+#include <xtd/delegate>
 
-using namespace std;
 using namespace xtd;
 
 void goodbye(const ustring& s) {
