@@ -1,6 +1,6 @@
 #include <xtd/console>
 #include <xtd/environment>
-#include <xtd/usteing>
+#include <xtd/ustring>
 
 using namespace xtd;
 
