@@ -14,7 +14,7 @@ public:
     button1.text("About...");
     button1.click += [&] {
       static about_dialog dialog;
-      dialog.dialog_style(xtd::forms::dialog_style::system);
+      dialog.dialog_appearance(xtd::forms::dialog_appearance::system);
       dialog.icon(xtd::drawing::bitmap(gammasoft_64x64_xpm));
       dialog.name("About dialog system");
       dialog.version("1.0");
