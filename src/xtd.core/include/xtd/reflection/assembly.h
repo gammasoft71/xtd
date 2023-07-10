@@ -15,6 +15,8 @@ namespace xtd {
     /// @endcode
     /// @par Inheritance
     /// xtd::object → xtd::reflection::assembly
+    /// @par Header
+    /// @code #include <xtd/reflection/assembly> @endcode
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library
