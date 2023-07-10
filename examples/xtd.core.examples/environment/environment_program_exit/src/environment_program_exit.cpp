@@ -1,4 +1,7 @@
-#include <xtd/xtd>
+#include <xtd/console>
+#include <xtd/environment>
+#include <xtd/startup>
+#include <thread>
 
 using namespace std;
 using namespace std::this_thread;
