@@ -1,4 +1,7 @@
-#include <xtd/xtd>
+#include <xtd/as>
+#include <xtd/console>
+#include <xtd/convert>
+#include <any>
 
 using namespace std;
 using namespace xtd;
