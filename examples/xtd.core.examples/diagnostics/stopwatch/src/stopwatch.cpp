@@ -1,4 +1,6 @@
-#include <xtd/xtd>
+#include <xtd/diagnostics/stopwatch>
+#include <xtd/console>
+#include <limits>
 
 using namespace std;
 using namespace xtd;
@@ -32,7 +34,7 @@ public:
     for (int operation = 0; operation <= 3; operation++) {
       // Define variables for operation statistics.
       long long num_ticks = 0;
-      long long num_rollovers = 0;
+      [[maybe_unused]] long long num_rollovers = 0;
       long long max_ticks = 0;
       long long min_ticks = numeric_limits<long>::max();
       int index_fastest = -1;
