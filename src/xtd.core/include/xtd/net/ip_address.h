@@ -22,6 +22,8 @@ namespace xtd {
     /// @endcond
     
     /// @brief Provides an Internet Protocol (IP) address.
+    /// @par Header
+    /// @code #include <xtd/net/ip_address> @endcode
     /// @par Namespace
     /// xtd::net
     /// @par Library
