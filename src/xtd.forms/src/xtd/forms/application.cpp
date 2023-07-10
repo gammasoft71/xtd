@@ -4,7 +4,7 @@
 #include <xtd/environment.h>
 #include <xtd/invalid_operation_exception.h>
 #include <xtd/literals.h>
-#include <xtd/diagnostics/debug.h>
+#include <xtd/diagnostics/assert.h>
 #include <xtd/diagnostics/process.h>
 #include <xtd/io/directory.h>
 #include <xtd/reflection/assembly.h>

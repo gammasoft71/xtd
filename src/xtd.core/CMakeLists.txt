@@ -346,6 +346,8 @@ add_sources(
   include/xtd/collections/specialized/string_pair
   include/xtd/collections/specialized/string_vector.h
   include/xtd/collections/specialized/string_vector
+  include/xtd/diagnostics/assert.h
+  include/xtd/diagnostics/assert
   include/xtd/diagnostics/assert_dialog_result.h
   include/xtd/diagnostics/assert_dialog_result
   include/xtd/diagnostics/boolean_switch.h
@@ -358,6 +360,8 @@ add_sources(
   include/xtd/diagnostics/data_received_event_handler
   include/xtd/diagnostics/debug.h
   include/xtd/diagnostics/debug
+  include/xtd/diagnostics/debug_break.h
+  include/xtd/diagnostics/debug_break
   include/xtd/diagnostics/debugger.h
   include/xtd/diagnostics/debugger
   include/xtd/diagnostics/default_trace_listener.h
