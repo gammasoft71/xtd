@@ -1,6 +1,5 @@
-#include <xtd/xtd>
+#include <xtd/console>
 
-using namespace std::this_thread;
 using namespace xtd;
 
 auto main()->int {
