@@ -1,9 +1,11 @@
-#include <xtd/xtd>
+#include <xtd/as>
+#include <xtd/console>
 #include <chrono>
-#include <vector>
 #include <thread>
+#include <vector>
 
 using namespace std;
+using namespace std::chrono;
 using namespace std::this_thread;
 using namespace xtd;
 
@@ -41,11 +43,11 @@ enum class duration {
 struct note final {
 private:
   tone tone_val = tone::rest;
-  duration dur_val = duration::none;
+  ::duration dur_val = ::duration::none;
   
 public:
   // Define a constructor to create a specific note.
-  note(tone frequency, duration time) : tone_val(frequency), dur_val(time) {}
+  note(tone frequency, ::duration time) : tone_val(frequency), dur_val(time) {}
   
   note() = default;
   note(const note& note) = default;
@@ -53,14 +55,14 @@ public:
   
   // Define properties to return the note's tone and duration.
   tone note_tone() const noexcept {return tone_val;}
-  duration note_duration() const noexcept {return dur_val;}
+  ::duration note_duration() const noexcept {return dur_val;}
 };
 
 // Play the notes in a song.
 void play(const vector<note>& tune) {
   for (note n : tune) {
     if (n.note_tone() == tone::rest)
-      sleep_for(chrono::milliseconds(as<int>(n.note_duration())));
+      sleep_for(milliseconds(as<int>(n.note_duration())));
     else
       console::beep(as<unsigned int>(n.note_tone()), as<unsigned int>(n.note_duration()));
   }
@@ -69,19 +71,19 @@ void play(const vector<note>& tune) {
 auto main()->int {
   // Declare the first few notes of the song, "Mary Had A Little Lamb".
   vector mary = {
-    note(tone::b, duration::quarter),
-    note(tone::a, duration::quarter),
-    note(tone::g_below_c, duration::quarter),
-    note(tone::a, duration::quarter),
-    note(tone::b, duration::quarter),
-    note(tone::b, duration::quarter),
-    note(tone::b, duration::half),
-    note(tone::a, duration::quarter),
-    note(tone::a, duration::quarter),
-    note(tone::a, duration::half),
-    note(tone::b, duration::quarter),
-    note(tone::d, duration::quarter),
-    note(tone::d, duration::half)
+    note(tone::b, ::duration::quarter),
+    note(tone::a, ::duration::quarter),
+    note(tone::g_below_c, ::duration::quarter),
+    note(tone::a, ::duration::quarter),
+    note(tone::b, ::duration::quarter),
+    note(tone::b, ::duration::quarter),
+    note(tone::b, ::duration::half),
+    note(tone::a, ::duration::quarter),
+    note(tone::a, ::duration::quarter),
+    note(tone::a, ::duration::half),
+    note(tone::b, ::duration::quarter),
+    note(tone::d, ::duration::quarter),
+    note(tone::d, ::duration::half)
   };
   // Play the song
   play(mary);
