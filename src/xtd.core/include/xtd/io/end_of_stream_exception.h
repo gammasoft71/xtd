@@ -14,6 +14,8 @@ namespace xtd {
     /// @endcode
     /// @par Inheritance
     /// xtd::io::io_exception → xtd::io::end_of_stream_exception
+    /// @par Header
+    /// @code #include <xtd/io/end_of_stream_exception> @endcode
     /// @par Namespace
     /// xtd::io
     /// @par Library

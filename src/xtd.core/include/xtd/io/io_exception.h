@@ -14,6 +14,8 @@ namespace xtd {
     /// @endcode
     /// @par Inheritance
     /// xtd::system_exception → xtd::io::io_exception
+    /// @par Header
+    /// @code #include <xtd/io/io_exception> @endcode
     /// @par Namespace
     /// xtd::io
     /// @par Library

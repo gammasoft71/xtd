@@ -18,6 +18,8 @@ namespace xtd {
     /// @endcode
     /// @par Inheritance
     /// xtd::object → xtd::io::drive_info
+    /// @par Header
+    /// @code #include <xtd/io/drive_info> @endcode
     /// @par Namespace
     /// xtd::io
     /// @par Library
