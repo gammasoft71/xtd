@@ -1,4 +1,7 @@
-#include <xtd/xtd>
+#include <xtd/diagnostics/stopwatch>
+#include <xtd/console>
+#include <chrono>
+#include <thread>
 
 using namespace std::chrono;
 using namespace std::this_thread;
