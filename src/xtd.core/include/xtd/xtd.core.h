@@ -5,6 +5,7 @@
 
 #include "xtd_namespace_aliases.h"
 #include "abstract.h"
+#include "abstract_object.h"
 #include "action.h"
 #include "any.h"
 #include "argument_exception.h"

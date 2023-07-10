@@ -1,0 +1,2 @@
+#pragma once
+#include "abstract_object.h"
