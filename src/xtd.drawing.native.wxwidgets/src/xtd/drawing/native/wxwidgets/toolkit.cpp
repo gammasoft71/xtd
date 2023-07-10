@@ -1,7 +1,7 @@
 #include <xtd/delegate.h>
 #include <xtd/event.h>
 #include <xtd/diagnostics/boolean_switch.h>
-#include <xtd/diagnostics/debug.h>
+#include <xtd/diagnostics/assert.h>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/toolkit.h>
 #include <xtd/drawing/native/wx_application.h>

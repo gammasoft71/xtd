@@ -1,4 +1,5 @@
 #include "../../../include/xtd/diagnostics/debug.h"
+#include "../../../include/xtd/diagnostics/debug_break.h"
 #include "../../../include/xtd/diagnostics/default_trace_listener.h"
 #include "../../../include/xtd/environment.h"
 #include "../../../include/xtd/literals.h"
