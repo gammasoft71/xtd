@@ -10,6 +10,8 @@ add_references(${XTD_CORE_NATIVE_LIBRARY})
 add_sources(
   include/xtd/abstract.h
   include/xtd/abstract
+  include/xtd/abstract_object.h
+  include/xtd/abstract_object
   include/xtd/action.h
   include/xtd/action
   include/xtd/add_last_arg_to_command.h
