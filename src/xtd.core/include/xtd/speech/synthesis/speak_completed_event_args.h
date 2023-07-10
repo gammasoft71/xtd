@@ -12,6 +12,8 @@ namespace xtd {
     /// @brief Contains classes for initializing and configuring a speech synthesis engine, for creating prompts, for generating speech, for responding to events, and for modifying voice characteristics.
     namespace synthesis {
       /// @brief Returns notification from the xtd::speech::synthesis::speech_synthesizer::speak_completed event.
+      /// @par Header
+      /// @code #include <xtd/speech/synthesis/speak_completed_event_args> @endcode
       /// @par Namespace
       /// xtd::speech::synthesis
       /// @par Library
