@@ -15,6 +15,8 @@ namespace xtd {
     /// @endcode
     /// @par Inheritance
     /// xtd::object → xtd::abstract_object → xtd::diagnostics::trace_filter → xtd::diagnostics::event_type_filter
+    /// @par Header
+    /// @code #include <xtd/diagnostics/event_type_filter> @endcode
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library

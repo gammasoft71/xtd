@@ -12,6 +12,8 @@ namespace xtd {
     /// @code
     /// enum class process_priority_class
     /// @endcode
+    /// @par Header
+    /// @code #include <xtd/diagnostics/process_priority_class> @endcode
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library

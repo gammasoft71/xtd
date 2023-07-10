@@ -12,6 +12,8 @@ namespace xtd {
     /// @code
     /// enum class source_levels
     /// @endcode
+    /// @par Header
+    /// @code #include <xtd/diagnostics/source_levels> @endcode
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library

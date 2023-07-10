@@ -15,6 +15,8 @@ namespace xtd {
     /// @endcode
     /// @par Inheritance
     /// xtd::object → xtd::event_args → xtd::diagnostics::data_received_event_args
+    /// @par Header
+    /// @code #include <xtd/diagnostics/data_received_event_args> @endcode
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library

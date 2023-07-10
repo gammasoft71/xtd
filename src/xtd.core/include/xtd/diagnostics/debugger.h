@@ -23,6 +23,8 @@ namespace xtd {
     /// @endcode
     /// @par Inheritance
     /// xtd::static_object → xtd::diagnostics::debugger
+    /// @par Header
+    /// @code #include <xtd/diagnostics/debugger> @endcode
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library
