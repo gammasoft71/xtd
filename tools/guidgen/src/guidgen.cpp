@@ -1,47 +1,44 @@
-#include <xtd/console.h>
-#include <xtd/guid.h>
-#include <xtd/startup.h>
-#include <xtd/ustring.h>
-#include <chrono>
+#include <xtd/console>
+#include <xtd/guid>
+#include <xtd/startup>
 
-using namespace std;
 using namespace xtd;
 
 namespace guidgen {
   class program final static_ {
   public:
-    static auto main(const vector<ustring>& args) {
-      ustring format = "";
-      int count = 1;
-      bool show_help = false;
-      bool show_version = false;
+    static auto main(auto args) {
+      auto format = ustring::empty_string;
+      auto count = 1;
+      auto show_help = false;
+      auto show_version = false;
       if (!process_arguments(args, format, count, show_version, show_help)) {
         console::write_line(get_error());
-        return -1;
+        return as<int>(exit_status::failure);
       }
       
       if (show_version) {
         console::write_line(get_version());
-        return 0;
+        return as<int>(exit_status::success);
       }
       
       if (show_help) {
         console::write_line("{0}{1}{1}{2}", get_version(), environment::new_line(), get_usage());
-        return 0;
+        return as<int>(exit_status::success);
       }
       
-      for (int index = 0; index < count; index++)
+      for (auto index = 0; index < count; index++)
         console::write_line(guid::new_guid().to_string(format));
-      return 0;
+      return as<int>(exit_status::success);
     }
     
   private:
-    static ustring get_error() {
+    static auto get_error() noexcept -> ustring {
       return "guidgen : invalid params\n"
         "Try 'guidgen --help' for more information.";
     }
     
-    static ustring get_usage() {
+    static auto get_usage() noexcept -> ustring {
       return "Usage\n"
         "  guidgen [--format Format] [--count Count]\n"
         "\n"
@@ -56,25 +53,24 @@ namespace guidgen {
         "-h, --help    : Shows this help page.";
     }
     
-    static ustring get_version() {
+    static auto get_version() noexcept -> ustring {
       return ustring::format("guidgen version {}, (c) {:L} by Gammasoft", environment::version(), date_time::now());
     }
     
-    static bool process_arguments(const vector<ustring>& args, ustring& format, int& count, bool& show_version, bool& show_help) {
-      for (size_t index = 0; index < args.size(); index += 1) {
-        vector<ustring> format_types {"N", "D", "B", "P", "X"};
-        if ((args[index] == "-f" || args[index] == "--format") && index + 1 < args.size() && std::count(format_types.begin(), format_types.end(), args[index + 1]))
-          format = args[index++ + 1];
-        else if ((args[index] == "-c" || args[index] == "--count") && index + 1 < args.size() && ustring::try_parse(args[index++ + 1], count) && count >= 1) {
-          // nothing to do all is done
-        } else if (args[index] == "-v" || args[index] == "--version")
-          show_version = true;
-        else if (args[index] == "-h" || args[index] == "--help")
-          show_help = true;
-        else
-          return false;
+    static auto process_arguments(auto args, auto& format, auto& count, auto& show_version, auto& show_help) noexcept {
+      try {
+        for (auto index = 0U; index < args.size(); index += 1) {
+          static constexpr auto format_types = {"N", "D", "B", "P", "X"};
+          if ((args[index] == "-f" || args[index] == "--format") && index + 1 < args.size() && std::count(format_types.begin(), format_types.end(), args[index + 1])) format = args[index++ + 1];
+          else if ((args[index] == "-c" || args[index] == "--count") && index + 1 < args.size() && ustring::try_parse(args[index++ + 1], count) && count >= 1) ; // nothing to do all is done
+          else if (args[index] == "-v" || args[index] == "--version") show_version = true;
+          else if (args[index] == "-h" || args[index] == "--help") show_help = true;
+          else return false;
+        }
+        return true;
+      } catch(...) {
+        return false;
       }
-      return true;
     }
   };
 }
