@@ -1,4 +1,8 @@
-#include <xtd/xtd>
+#include <xtd/as>
+#include <xtd/console>
+#include <xtd/date_time>
+#include <xtd/startup>
+#include <array>
 
 using namespace std;
 using namespace xtd;
