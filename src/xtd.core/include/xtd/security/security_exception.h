@@ -9,6 +9,8 @@ namespace xtd {
   /// @brief Provides the underlying structure of the common language runtime security system, including base classes for permissions.
   namespace security {
     /// @brief The exception that is thrown when an I/O error occurs.
+    /// @par Header
+    /// @code #include <xtd/security/security_exception> @endcode
     /// @par Namespace
     /// xtd::io
     /// @par Library

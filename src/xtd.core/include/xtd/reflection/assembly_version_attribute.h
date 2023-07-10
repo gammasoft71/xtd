@@ -22,7 +22,7 @@ namespace xtd {
     /// @par Inheritance
     /// xtd::object → xtd::attribute → xtd::reflection::assembly_version_attribute
     /// @par Header
-    /// @code #include <xtd/reflection/reflection/assembly_version_attribute> @endcode
+    /// @code #include <xtd/reflection/assembly_version_attribute> @endcode
     /// @par Namespace
     /// xtd::reflection
     /// @par Library
