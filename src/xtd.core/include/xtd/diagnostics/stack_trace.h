@@ -24,6 +24,8 @@ namespace xtd {
     /// @endcode
     /// @par Inheritance
     /// xtd::object → xtd::diagnostics::stack_trace
+    /// @par Header
+    /// @code #include <xtd/diagnostics/stack_trace> @endcode
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library

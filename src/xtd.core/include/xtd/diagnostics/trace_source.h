@@ -20,6 +20,8 @@ namespace xtd {
     /// @endcode
     /// @par Inheritance
     /// xtd::object → xtd::diagnostics::trace_source
+    /// @par Header
+    /// @code #include <xtd/diagnostics/trace_source> @endcode
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library

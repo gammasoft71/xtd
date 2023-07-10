@@ -15,6 +15,8 @@ namespace xtd {
     /// @endcode
     /// @par Inheritance
     /// xtd::object → xtd::abstract_object → xtd::diagnostics::trace_listener → xtd::diagnostics::ostream_trace_listener → xtd::diagnostics::console_trace_listener
+    /// @par Header
+    /// @code #include <xtd/diagnostics/console_trace_listener> @endcode
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library

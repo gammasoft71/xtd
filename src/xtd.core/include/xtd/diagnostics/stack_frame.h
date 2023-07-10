@@ -22,6 +22,8 @@ namespace xtd {
     /// @endcode
     /// @par Inheritance
     /// xtd::object → xtd::diagnostics::stack_frame
+    /// @par Header
+    /// @code #include <xtd/diagnostics/stack_frame> @endcode
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library

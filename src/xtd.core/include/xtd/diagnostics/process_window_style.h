@@ -12,6 +12,8 @@ namespace xtd {
     /// @code
     /// enum class process_window_style
     /// @endcode
+    /// @par Header
+    /// @code #include <xtd/diagnostics/process_window_style> @endcode
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library
