@@ -19,6 +19,8 @@ namespace xtd {
     /// @endcode
     /// @par Inheritance
     /// xtd::static_object → xtd::io::directory
+    /// @par Header
+    /// @code #include <xtd/io/directory> @endcode
     /// @par Namespace
     /// xtd::io
     /// @par Library

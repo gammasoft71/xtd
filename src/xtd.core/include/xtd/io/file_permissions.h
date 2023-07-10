@@ -12,6 +12,8 @@ namespace xtd {
     /// @code
     /// enum class file_permissions
     /// @endcode
+    /// @par Header
+    /// @code #include <xtd/io/file_permissions> @endcode
     /// @par Namespace
     /// xtd::io
     /// @par Library

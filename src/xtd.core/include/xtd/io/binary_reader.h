@@ -21,6 +21,8 @@ namespace xtd {
     /// @endcode
     /// @par Inheritance
     /// xtd::object → xtd::io::binary_reader
+    /// @par Header
+    /// @code #include <xtd/io/binary_reader> @endcode
     /// @par Namespace
     /// xtd::io
     /// @par Library

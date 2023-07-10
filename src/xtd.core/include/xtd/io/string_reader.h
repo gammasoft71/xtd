@@ -16,6 +16,8 @@ namespace xtd {
     /// @endcode
     /// @par Inheritance
     /// xtd::io::text_reader → xtd::io::string_reader
+    /// @par Header
+    /// @code #include <xtd/io/string_reader> @endcode
     /// @par Namespace
     /// xtd::io
     /// @par Library

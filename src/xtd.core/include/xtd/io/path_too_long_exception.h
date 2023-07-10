@@ -14,6 +14,8 @@ namespace xtd {
     /// @endcode
     /// @par Inheritance
     /// xtd::io::io_exception → xtd::io::path_too_long_exception
+    /// @par Header
+    /// @code #include <xtd/io/path_too_long_exception> @endcode
     /// @par Namespace
     /// xtd::io
     /// @par Library

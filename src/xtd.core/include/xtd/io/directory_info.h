@@ -23,6 +23,8 @@ namespace xtd {
     /// @endcode
     /// @par Inheritance
     /// xtd::io::file_system_info → xtd::io::directory_info
+    /// @par Header
+    /// @code #include <xtd/io/directory_info> @endcode
     /// @par Namespace
     /// xtd::io
     /// @par Library
