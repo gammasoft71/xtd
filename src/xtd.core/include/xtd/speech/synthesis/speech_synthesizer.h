@@ -24,6 +24,8 @@ namespace xtd {
       /// @endcode
       /// @par Inheritance
       /// xtd::object → xtd::speech::synthesis::speech_synthesizer
+      /// @par Header
+      /// @code #include <xtd/speech/synthesis/speech_synthesizer> @endcode
       /// @par Namespace
       /// xtd::speech::synthesis
       /// @par Library
