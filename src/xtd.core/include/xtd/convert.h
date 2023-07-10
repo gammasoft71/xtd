@@ -3,7 +3,10 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include <any>
+#include "argument_exception.h"
+#include "format_exception.h"
 #include "invalid_cast_exception.h"
+#include "overflow_exception.h"
 #include "static.h"
 #include "types.h"
 #include "ustring.h"
