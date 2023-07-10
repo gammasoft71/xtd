@@ -7,6 +7,8 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief This keyword is used to represents an abstract class.
+  /// @par Header
+  /// @code #include <xtd/abstract> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library

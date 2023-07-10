@@ -8,7 +8,7 @@
 namespace xtd {
   /// @brief Represent an abstract class.
   /// @par Header
-  /// @code #include <xtd/abstract> @endcode
+  /// @code #include <xtd/abstract_object> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -38,6 +38,8 @@ namespace xtd {
   };
   
   /// @brief This keyword is used to represents an abstract class.
+  /// @par Header
+  /// @code #include <xtd/abstract_object> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
