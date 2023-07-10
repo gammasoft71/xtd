@@ -1,4 +1,5 @@
-#include <xtd/xtd>
+#include <xtd/console>
+#include <thread>
 
 using namespace std::this_thread;
 using namespace xtd;
