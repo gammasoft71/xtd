@@ -1,4 +1,5 @@
 #include <xtd/console>
+#include <xtd/int32_object>
 #include <thread>
 
 using namespace std;
