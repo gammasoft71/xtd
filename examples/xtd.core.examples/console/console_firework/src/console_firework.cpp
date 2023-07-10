@@ -1,9 +1,13 @@
-#include <algorithm>
-#include <list>
+#include <xtd/console>
+#include <xtd/is>
+#include <xtd/random>
+#include <xtd/startup>
+#include <memory>
+#include <vector>
 #include <thread>
-#include <xtd/xtd>
 
 using namespace std;
+using namespace std::this_thread;
 using namespace xtd;
 
 namespace console_firework_example {
@@ -153,7 +157,7 @@ namespace console_firework_example {
         for (auto& firework : fireworks_to_removed)
           fireworks.remove(firework);
         
-        this_thread::sleep_for(100_ms);
+        sleep_for(100_ms);
       }
       
       console::reset_color();
