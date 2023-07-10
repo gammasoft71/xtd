@@ -26,6 +26,8 @@ namespace xtd {
       /// @endcode
       /// @par Inheritance
       /// xtd::object → xtd::net::sockets::tcp_client
+      /// @par Header
+      /// @code #include <xtd/net/sockets/tcp_client> @endcode
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

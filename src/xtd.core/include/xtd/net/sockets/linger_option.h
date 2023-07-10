@@ -21,6 +21,8 @@ namespace xtd {
       /// @endcode
       /// @par Inheritance
       /// xtd::object → xtd::net::sockets::linger_option
+      /// @par Header
+      /// @code #include <xtd/net/sockets/linger_option> @endcode
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

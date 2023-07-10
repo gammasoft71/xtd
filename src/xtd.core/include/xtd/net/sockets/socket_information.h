@@ -21,6 +21,8 @@ namespace xtd {
       /// @endcode
       /// @par Inheritance
       /// xtd::object → xtd::net::sockets::socket_information
+      /// @par Header
+      /// @code #include <xtd/net/sockets/socket_information> @endcode
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

@@ -19,6 +19,8 @@ namespace xtd {
       /// @code
       /// enum class address_family
       /// @endcode
+      /// @par Header
+      /// @code #include <xtd/net/sockets/address_family> @endcode
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

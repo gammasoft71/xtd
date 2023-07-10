@@ -19,6 +19,8 @@ namespace xtd {
       /// @code
       /// enum class socket_option_name
       /// @endcode
+      /// @par Header
+      /// @code #include <xtd/net/sockets/socket_option_name> @endcode
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library
