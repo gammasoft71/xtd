@@ -1,7 +1,10 @@
 #define TRACE
-#include <xtd/xtd>
+#include <xtd/console>
+#include <xtd/cdebug>
+#include <xtd/ctrace>
+#include <xtd/delegate>
+#include <xtd/environment>
 
-using namespace std;
 using namespace xtd;
 
 using writer = delegate<void(const ustring& str)>;
@@ -17,7 +20,7 @@ public:
   }
   
   void write_trace2(const ustring& str) {
-    ctrace << "2 " << str << environment::new_line;
+    ctrace << "2 " << str << environment::new_line();
   }
 };
 
@@ -25,11 +28,11 @@ auto main()->int {
   writer write;
   
   write += [](const ustring & str)  {
-    console::out << str << environment::new_line;
+    console::out << str << environment::new_line();
   };
   
   write += [](auto str)  {
-    console::error << str << environment::new_line;
+    console::error << str << environment::new_line();
   };
   
   write += write_debug;
