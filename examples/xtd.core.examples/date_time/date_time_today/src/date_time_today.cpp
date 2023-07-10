@@ -1,4 +1,7 @@
-#include <xtd/xtd>
+#include <xtd/console>
+#include <xtd/date_time>
+#include <xtd/startup>
+#include <vector>
 
 using namespace std;
 using namespace xtd;
