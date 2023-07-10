@@ -1,4 +1,5 @@
-#include <xtd/xtd>
+#include <xtd/console>
+#include <vector>
 
 using namespace std;
 using namespace xtd;
@@ -8,8 +9,8 @@ auto main()->int {
   console::output_code_page(65001);
   
   // Create a Char array for the modern Cyrillic alphabet, from U+0410 to U+044F.
-  auto nchars = 0x044F - 0x0410 + 1;
-  vector<char32_t> chars(nchars);
+  constexpr auto nchars = 0x044F - 0x0410 + 1;
+  auto chars = vector<char32_t> {nchars};
   auto code_point = U'\U00000410';
   for (auto ctr = 0U; ctr < chars.size(); ctr++) {
     chars[ctr] = code_point;
