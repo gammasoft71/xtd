@@ -1,8 +1,4 @@
 #include "../../include/xtd/convert.h"
-#include "../../include/xtd/argument_exception.h"
-#include "../../include/xtd/format_exception.h"
-#include "../../include/xtd/invalid_cast_exception.h"
-#include "../../include/xtd/overflow_exception.h"
 #include "../../include/xtd/math.h"
 
 using namespace std;
