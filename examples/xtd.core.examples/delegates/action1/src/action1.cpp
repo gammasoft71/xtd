@@ -1,4 +1,7 @@
-#include <xtd/xtd>
+#include <xtd/console>
+#include <xtd/delegate>
+#include <xtd/environment>
+#include <xtd/forms/message_box>
 
 using namespace xtd;
 using namespace xtd::forms;
