@@ -1,8 +1,6 @@
-#include <xtd/xtd>
-#include <iostream>
-#include <string>
+#include <xtd/console>
+#include <xtd/delegate>
 
-using namespace std;
 using namespace xtd;
 
 class test_delegate {
