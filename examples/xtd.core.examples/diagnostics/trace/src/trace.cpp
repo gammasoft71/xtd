@@ -1,7 +1,9 @@
 // Specify -DTRACE when compiling or add #define TRACE in the source file.
 #define DEBUG
 
-#include <xtd/xtd>
+#include <xtd/diagnostics/trace>
+#include <xtd/diagnostics/ostream_trace_listener>
+#include <xtd/console>
 
 using namespace std;
 using namespace xtd;
