@@ -40,6 +40,8 @@ add_sources(
   include/xtd/bit_converter
   include/xtd/block_scope.h
   include/xtd/block_scope
+  include/xtd/boolean_object.h
+  include/xtd/boolean_object
   include/xtd/box.h
   include/xtd/box
   include/xtd/box_char.h
@@ -52,8 +54,20 @@ add_sources(
   include/xtd/boxing
   include/xtd/build_type.h
   include/xtd/build_type
+  include/xtd/byte_object.h
+  include/xtd/byte_object
   include/xtd/cdebug.h
   include/xtd/cdebug
+  include/xtd/char_object.h
+  include/xtd/char_object
+  include/xtd/char8_object.h
+  include/xtd/char8_object
+  include/xtd/char16_object.h
+  include/xtd/char16_object
+  include/xtd/char32_object.h
+  include/xtd/char32_object
+  include/xtd/wchar_object.h
+  include/xtd/wchar_object
   include/xtd/cnull.h
   include/xtd/cnull
   include/xtd/compiler.h
@@ -92,6 +106,8 @@ add_sources(
   include/xtd/date_time_kind
   include/xtd/day_of_week.h
   include/xtd/day_of_week
+  include/xtd/decimal_object.h
+  include/xtd/decimal_object
   include/xtd/debugstreambuf.h
   include/xtd/debugstreambuf
   include/xtd/delegate.h
@@ -102,6 +118,8 @@ add_sources(
   include/xtd/divided_by_zero_exception
   include/xtd/domain_exception.h
   include/xtd/domain_exception
+  include/xtd/double_object.h
+  include/xtd/double_object
   include/xtd/enum.h
   include/xtd/enum
   include/xtd/enum_attribute.h
@@ -144,8 +162,16 @@ add_sources(
   include/xtd/iequatable
   include/xtd/index_out_of_range_exception.h
   include/xtd/index_out_of_range_exception
+  include/xtd/int16_object.h
+  include/xtd/int16_object
+  include/xtd/int32_object.h
+  include/xtd/int32_object
+  include/xtd/int64_object.h
+  include/xtd/int64_object
   include/xtd/interface.h
   include/xtd/interface
+  include/xtd/intptr_object.h
+  include/xtd/intptr_object
   include/xtd/invalid_cast_exception.h
   include/xtd/invalid_cast_exception
   include/xtd/invalid_operation_exception.h
@@ -212,12 +238,18 @@ add_sources(
   include/xtd/random
   include/xtd/reset_color.h
   include/xtd/reset_color
+  include/xtd/sbyte_object.h
+  include/xtd/sbyte_object
   include/xtd/signal.h
   include/xtd/signal
   include/xtd/signal_cancel_event_args.h
   include/xtd/signal_cancel_event_args
   include/xtd/signal_cancel_event_handler.h
   include/xtd/signal_cancel_event_handler
+  include/xtd/single_object.h
+  include/xtd/single_object
+  include/xtd/size_object.h
+  include/xtd/size_object
   include/xtd/startup.h
   include/xtd/startup
   include/xtd/static.h
@@ -256,6 +288,14 @@ add_sources(
   include/xtd/typeof
   include/xtd/types.h
   include/xtd/types
+  include/xtd/uint16_object.h
+  include/xtd/uint16_object
+  include/xtd/uint32_object.h
+  include/xtd/uint32_object
+  include/xtd/uint64_object.h
+  include/xtd/uint64_object
+  include/xtd/uintptr_object.h
+  include/xtd/uintptr_object
   include/xtd/unauthorized_access_exception.h
   include/xtd/unauthorized_access_exception
   include/xtd/unboxing.h
@@ -371,6 +411,7 @@ add_sources(
   include/xtd/internal/__as_enum.h
   include/xtd/internal/__binary_formatter.h
   include/xtd/internal/__boolean_formatter.h
+  include/xtd/internal/__box_enum_or_object.h
   include/xtd/internal/__build_type.h
   include/xtd/internal/__char8_t.h
   include/xtd/internal/__character_formatter.h

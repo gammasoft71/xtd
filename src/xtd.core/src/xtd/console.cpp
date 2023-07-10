@@ -5,7 +5,7 @@
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include "../../include/xtd/argument_out_of_range_exception.h"
 #include "../../include/xtd/console.h"
-#include "../../include/xtd/box_integer.h"
+#include "../../include/xtd/int16_object.h"
 #include "../../include/xtd/io/stream_reader.h"
 #define __XTD_CORE_INTERNAL__
 #include "../../include/xtd/internal/__generic_stream_output.h"

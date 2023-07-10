@@ -1,0 +1,25 @@
+/// @file
+/// @brief Contains xtd::decimal_object alias.
+/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+#pragma once
+#include "box_floating_point.h"
+
+/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
+namespace xtd {
+  /// @brief Represent a boxed decimal.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core system
+  /// @par Examples
+  /// The following example shows how to create and use xtd::double_object.
+  /// @code
+  /// auto stringer = [](const object& value) {return value.to_string();};
+  /// decimal unboxed_object = 3.14;
+  /// decimal_object boxed_object = unboxed_object;
+  /// auto result = stringer(boxed_object);
+  /// console::write_line("result = {}", result); // Display: result = 3.14;
+  /// @endcode
+  using decimal_object = box_floating_point<decimal>;
+}
