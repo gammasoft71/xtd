@@ -19,6 +19,8 @@ namespace xtd {
       /// @code
       /// enum class protocol_type
       /// @endcode
+      /// @par Header
+      /// @code #include <xtd/net/sockets/protocol_type> @endcode
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

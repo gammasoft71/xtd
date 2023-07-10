@@ -32,6 +32,8 @@ namespace xtd {
       /// @endcode
       /// @par Inheritance
       /// xtd::event_args → xtd::net::sockets::socket_async_event_args
+      /// @par Header
+      /// @code #include <xtd/net/sockets/socket_async_event_args> @endcode
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

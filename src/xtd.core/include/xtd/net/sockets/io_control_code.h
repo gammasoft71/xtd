@@ -19,6 +19,8 @@ namespace xtd {
       /// @code
       /// enum class io_control_code : uint64
       /// @endcode
+      /// @par Header
+      /// @code #include <xtd/net/sockets/io_control_code> @endcode
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

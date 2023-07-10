@@ -19,6 +19,8 @@ namespace xtd {
       /// @code
       /// enum class transmit_file_options
       /// @endcode
+      /// @par Header
+      /// @code #include <xtd/net/sockets/transmit_file_options> @endcode
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

@@ -18,6 +18,8 @@ namespace xtd {
       /// @endcode
       /// @par Inheritance
       /// std::iostream → xtd::net::sockets::network_stream
+      /// @par Header
+      /// @code #include <xtd/net/sockets/network_stream> @endcode
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

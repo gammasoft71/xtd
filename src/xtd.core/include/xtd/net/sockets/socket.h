@@ -49,6 +49,8 @@ namespace xtd {
       /// @endcode
       /// @par Inheritance
       /// xtd::object → xtd::net::sockets::socket
+      /// @par Header
+      /// @code #include <xtd/net/sockets/socket> @endcode
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

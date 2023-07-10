@@ -21,6 +21,8 @@ namespace xtd {
       /// @endcode
       /// @par Inheritance
       /// xtd::object → xtd::net::sockets::ip_v6_multicast_option
+      /// @par Header
+      /// @code #include <xtd/net/sockets/ip_v6_multicast_option> @endcode
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

@@ -19,6 +19,8 @@ namespace xtd {
       /// @code
       /// enum class ip_protection_level
       /// @endcode
+      /// @par Header
+      /// @code #include <xtd/net/sockets/ip_protection_level> @endcode
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library
