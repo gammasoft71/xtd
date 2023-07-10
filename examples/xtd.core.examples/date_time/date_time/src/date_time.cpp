@@ -1,4 +1,9 @@
-#include <xtd/xtd>
+#include <xtd/console>
+#include <xtd/convert>
+#include <xtd/date_time>
+#include <xtd/math>
+#include <xtd/startup>
+#include <chrono>
 
 using namespace std::chrono;
 using namespace xtd;
