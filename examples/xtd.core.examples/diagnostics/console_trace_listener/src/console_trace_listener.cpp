@@ -1,7 +1,8 @@
 #define DEBUG // Force debug mode even if example is builded in release.
+#include <xtd/diagnostics/debug>
+#include <xtd/diagnostics/console_trace_listener>
 #include <memory>
 #include <thread>
-#include <xtd/xtd>
 
 using namespace std;
 using namespace std::this_thread;
