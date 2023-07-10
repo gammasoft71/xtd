@@ -1,9 +1,9 @@
-#include <xtd/xtd>
+#include <xtd/console>
 
 using namespace xtd;
 
-int orig_row = 0;
-int orig_col = 0;
+auto orig_row = 0;
+auto orig_col = 0;
 
 void write_at(const ustring& s, int x, int y) {
   console::set_cursor_position(orig_col + x, orig_row + y);
