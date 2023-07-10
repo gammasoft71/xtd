@@ -3,6 +3,25 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include "box.h"
+#include "byte_object.h"
+#include "char_object.h"
+#include "char16_object.h"
+#include "char32_object.h"
+#include "char8_object.h"
+#include "decimal_object.h"
+#include "double_object.h"
+#include "int16_object.h"
+#include "int32_object.h"
+#include "int64_object.h"
+#include "intptr_object.h"
+#include "sbyte_object.h"
+#include "single_object.h"
+#include "size_object.h"
+#include "uint16_object.h"
+#include "uint32_object.h"
+#include "uint64_object.h"
+#include "uintptr_object.h"
+#include "wchar_object.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -119,15 +138,62 @@ namespace xtd {
     return value;
   }
    */
-  
+
+  inline char unboxing(const char& value) noexcept {return value;}
+  inline char8 unboxing(const char8& value) noexcept {return value;}
+  inline char16 unboxing(const char16& value) noexcept {return value;}
+  inline char32 unboxing(const char32& value) noexcept {return value;}
+  inline wchar unboxing(const wchar& value) noexcept {return value;}
+  inline char unboxing(char& value) noexcept {return value;}
+  inline char8 unboxing(char8& value) noexcept {return value;}
+  inline char16 unboxing(char16& value) noexcept {return value;}
+  inline char32 unboxing(char32& value) noexcept {return value;}
+  inline wchar unboxing(wchar& value) noexcept {return value;}
+  inline xtd::byte unboxing(const xtd::byte& value) noexcept {return value;}
+  inline int16 unboxing(const int16& value) noexcept {return value;}
+  inline int32 unboxing(const int32& value) noexcept {return value;}
+  inline int64 unboxing(const int64& value) noexcept {return value;}
+  inline slong unboxing(const slong& value) noexcept {return value;}
+  inline sbyte unboxing(const sbyte& value) noexcept {return value;}
+  inline uint16 unboxing(const uint16& value) noexcept {return value;}
+  inline uint32 unboxing(const uint32& value) noexcept {return value;}
+  inline uint64 unboxing(const uint64& value) noexcept {return value;}
+  inline xtd::ulong unboxing(const xtd::ulong& value) noexcept {return value;}
+  inline xtd::byte unboxing(xtd::byte& value) noexcept {return value;}
+  inline int16 unboxing(int16& value) noexcept {return value;}
+  inline int32 unboxing(int32& value) noexcept {return value;}
+  inline int64 unboxing(int64& value) noexcept {return value;}
+  inline slong unboxing(slong& value) noexcept {return value;}
+  inline sbyte unboxing(sbyte& value) noexcept {return value;}
+  inline uint16 unboxing(uint16& value) noexcept {return value;}
+  inline uint32 unboxing(uint32& value) noexcept {return value;}
+  inline uint64 unboxing(uint64& value) noexcept {return value;}
+  inline xtd::ulong unboxing(xtd::ulong& value) noexcept {return value;}
+  inline float unboxing(const float& value) noexcept {return value;}
+  inline double unboxing(const double& value) noexcept {return value;}
+  inline decimal unboxing(const decimal& value) noexcept {return value;}
+  inline float unboxing(float& value) noexcept {return value;}
+  inline double unboxing(double& value) noexcept {return value;}
+  inline decimal unboxing(decimal& value) noexcept {return value;}
+
   template<typename type_t>
   inline std::string to_string(const xtd::box<type_t>& value, const std::string& fmt, const std::locale& loc) {
     return value.to_string(fmt);
   }
+  
+  template<typename type_t>
+  inline std::string to_string(const xtd::box_char<type_t>& value, const std::string& fmt, const std::locale& loc) {
+    return value.to_string(fmt);
+  }
+  
+  template<typename type_t>
+  inline std::string to_string(const xtd::box_integer<type_t>& value, const std::string& fmt, const std::locale& loc) {
+    return value.to_string(fmt);
+  }
+  
+  template<typename type_t>
+  inline std::string to_string(const xtd::box_floating_point<type_t>& value, const std::string& fmt, const std::locale& loc) {
+    return value.to_string(fmt);
+  }
   /// @endcond
 }
-
-//#include "box_integer.h"
-//#include "box_floating_point.h"
-//#include "box_char.h"
-

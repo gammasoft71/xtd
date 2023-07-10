@@ -1,0 +1,2 @@
+#pragma once
+#include "wchar_object.h"

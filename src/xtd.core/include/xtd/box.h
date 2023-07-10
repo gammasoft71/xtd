@@ -128,40 +128,4 @@ namespace xtd {
   private:
     type_t value_ {};
   };
-  
-  /// @brief Represent a boxed bool.
-  /// @par Namespace
-  /// xtd
-  /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core system
-  /// @par Examples
-  /// The following example shows how to create and use xtd::boolean_object.
-  /// @code
-  /// auto stringer = [](const object& value) {return value.to_string();};
-  /// bool unboxed_object = true;
-  /// boolean_object boxed_object = unboxed_bool;
-  /// auto result = stringer(boxed_object);
-  /// console::write_line("result = {}", result); // Display: result = true;
-  /// @endcode
-  using boolean_object = box<bool>;
-  
-  /// @cond
-  template<typename type_t, typename bool_t>
-  struct __box_enum_or_object__;
-  
-  template<typename type_t>
-  struct __box_enum_or_object__<type_t, std::true_type> {
-    using type = xtd::enum_object<type_t>;
-  };
-  
-  template<typename type_t>
-  struct __box_enum_or_object__<type_t, std::false_type> {
-    using type = typename std::conditional<std::is_base_of<xtd::object, type_t>::value, type_t, xtd::box<type_t>>::type;
-  };
 }
-
-//#include "box_integer.h"
-//#include "box_floating_point.h"
-//#include "box_char.h"
-

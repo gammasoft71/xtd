@@ -1,5 +1,5 @@
 #include <xtd/console.h>
-#include <xtd/box_integer.h>
+#include <xtd/int16_object.h>
 #include <xtd/io/file.h>
 #include <xtd/io/path.h>
 #include <xtd/tunit/assert.h>
