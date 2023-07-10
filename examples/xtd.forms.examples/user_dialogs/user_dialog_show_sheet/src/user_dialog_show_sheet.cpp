@@ -9,7 +9,7 @@ public:
   user_input_dialog() {
     accept_button(button_ok);
     cancel_button(button_cancel);
-    client_size({200, 85);
+    client_size({200, 85});
     form_border_style(forms::form_border_style::fixed_dialog);
     control_box(false);
     start_position(form_start_position::center_parent);
