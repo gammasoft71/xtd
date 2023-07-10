@@ -171,9 +171,12 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="debug_8h.html">xtd.core/include/xtd/diagnostics/debug.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="xtd_8core_2include_2xtd_2diagnostics_2assert_8h.html">xtd.core/include/xtd/diagnostics/assert.h</a>&gt;</code></p>
 
 <p>Checks for a condition; if the condition is false, displays a message box that shows the call stack. </p>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/assert&gt;</span> </div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1diagnostics.html" title="The xtd::diagnostics namespace provides classes that allow you to interact with system processes,...">xtd::diagnostics</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -210,7 +213,7 @@ Macros</h2></td></tr>
 <div class="line"><span class="comment">// &gt; If user clicks assert dialog &#39;Ignore&#39; button:</span></div>
 <div class="line"><span class="comment">// Start application</span></div>
 <div class="line"><span class="comment">// End application</span></div>
-<div class="ttc" id="agroup__debug_html_gad1e9d87aeb065b1eec47e92a49fd01e9"><div class="ttname"><a href="group__debug.html#gad1e9d87aeb065b1eec47e92a49fd01e9">assert_</a></div><div class="ttdeci">#define assert_(...)</div><div class="ttdoc">Checks for a condition; if the condition is false, displays a message box that shows the call stack.</div><div class="ttdef"><b>Definition</b> debug.h:519</div></div>
+<div class="ttc" id="agroup__debug_html_gad1e9d87aeb065b1eec47e92a49fd01e9"><div class="ttname"><a href="group__debug.html#gad1e9d87aeb065b1eec47e92a49fd01e9">assert_</a></div><div class="ttdeci">#define assert_(...)</div><div class="ttdoc">Checks for a condition; if the condition is false, displays a message box that shows the call stack.</div><div class="ttdef"><b>Definition</b> assert.h:24</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="group__debug.html#gad1e9d87aeb065b1eec47e92a49fd01e9" title="Checks for a condition; if the condition is false, displays a message box that shows the call stack.">assert_</a> macro with message. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
@@ -279,7 +282,8 @@ Macros</h2></td></tr>
 <li>xtd::diagnostics:trace::<a class="el" href="group__debug.html#gab8e6aea91a39c5e05d514044aa2b2ddf" title="Checks for a condition; if the condition is false, displays a message box that shows the call stack.">cassert_()</a>; </li>
 </ul>
 </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use xtd::diagnostics::debug::cassert_ method. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use xtd::diagnostics::debug::cassert_ method. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/debug&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
@@ -311,7 +315,8 @@ Macros</h2></td></tr>
 <div class="ttc" id="anamespacextd_1_1diagnostics_html"><div class="ttname"><a href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a></div><div class="ttdoc">The xtd::diagnostics namespace provides classes that allow you to interact with system processes,...</div><div class="ttdef"><b>Definition</b> assert_dialog_result.h:10</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to use xtd::diagnostics::trace::cassert_ method. <div class="fragment"><div class="line"><span class="preprocessor">#define TRACE</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/trace&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
@@ -359,13 +364,16 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="debugger_8h.html">xtd.core/include/xtd/diagnostics/debugger.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="debug__break_8h.html">xtd.core/include/xtd/diagnostics/debug_break.h</a>&gt;</code></p>
 
 <p>Signals a breakpoint to an attached debugger. </p>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/debug_break&gt;</span> </div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1diagnostics.html" title="The xtd::diagnostics namespace provides classes that allow you to interact with system processes,...">xtd::diagnostics</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to stop the debugger at the call to write_line. <div class="fragment"><div class="line"><a class="code hl_define" href="group__debug.html#ga7a5088b030211d28a0a24ecc924f57b6">debug_break_</a>();</div>
 <div class="line">console::write_line(<span class="stringliteral">&quot;Hello, world.&quot;</span>);</div>
-<div class="ttc" id="agroup__debug_html_ga7a5088b030211d28a0a24ecc924f57b6"><div class="ttname"><a href="group__debug.html#ga7a5088b030211d28a0a24ecc924f57b6">debug_break_</a></div><div class="ttdeci">#define debug_break_()</div><div class="ttdoc">Signals a breakpoint to an attached debugger.</div><div class="ttdef"><b>Definition</b> debugger.h:81</div></div>
+<div class="ttc" id="agroup__debug_html_ga7a5088b030211d28a0a24ecc924f57b6"><div class="ttname"><a href="group__debug.html#ga7a5088b030211d28a0a24ecc924f57b6">debug_break_</a></div><div class="ttdeci">#define debug_break_()</div><div class="ttdoc">Signals a breakpoint to an attached debugger.</div><div class="ttdef"><b>Definition</b> debug_break.h:21</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="application_and_assert_8cpp-example.html#a2">application_and_assert.cpp</a>.</dd>
 </dl>
@@ -376,7 +384,7 @@ Macros</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jul 9 2023 22:38:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jul 10 2023 22:54:50 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

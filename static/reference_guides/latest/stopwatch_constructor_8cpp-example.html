@@ -83,7 +83,10 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Initializes a <a class="el" href="classxtd_1_1diagnostics_1_1stopwatch.html" title="Provides a set of methods and properties that you can use to accurately measure elapsed time.">xtd::diagnostics::stopwatch</a> instance by using a simple class constructor.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/stopwatch&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;chrono&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;thread&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std::chrono;</div>
 <div class="line"><span class="keyword">using namespace </span>std::this_thread;</div>
@@ -106,7 +109,7 @@ $(function() {
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// RunTime 00:00:10.00</span></div>
-<div class="ttc" id="aclassxtd_1_1diagnostics_1_1stopwatch_html"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stopwatch.html">xtd::diagnostics::stopwatch</a></div><div class="ttdoc">Provides a set of methods and properties that you can use to accurately measure elapsed time.</div><div class="ttdef"><b>Definition</b> stopwatch.h:32</div></div>
+<div class="ttc" id="aclassxtd_1_1diagnostics_1_1stopwatch_html"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stopwatch.html">xtd::diagnostics::stopwatch</a></div><div class="ttdoc">Provides a set of methods and properties that you can use to accurately measure elapsed time.</div><div class="ttdef"><b>Definition</b> stopwatch.h:34</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stopwatch_html_a0d12ad4c46ff408b011aa8eb6a3510bc"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stopwatch.html#a0d12ad4c46ff408b011aa8eb6a3510bc">xtd::diagnostics::stopwatch::stop</a></div><div class="ttdeci">void stop() noexcept</div><div class="ttdoc">Stops measuring elapsed time for an interval.</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stopwatch_html_a1592c155072a3c41bd45350bfc64e767"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stopwatch.html#a1592c155072a3c41bd45350bfc64e767">xtd::diagnostics::stopwatch::elapsed</a></div><div class="ttdeci">std::chrono::nanoseconds elapsed() const noexcept</div><div class="ttdoc">Gets the total elapsed time measured by the current instance.</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stopwatch_html_a711a2e1fbe1eb3d439d225b9fa50eddf"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stopwatch.html#a711a2e1fbe1eb3d439d225b9fa50eddf">xtd::diagnostics::stopwatch::start</a></div><div class="ttdeci">void start() noexcept</div><div class="ttdoc">Starts, or resumes, measuring elapsed time for an interval.</div></div>
@@ -117,7 +120,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jul 9 2023 22:38:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jul 10 2023 22:54:47 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

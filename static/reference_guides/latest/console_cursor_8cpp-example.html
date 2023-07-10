@@ -83,12 +83,12 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Shows how to use <a class="el" href="classxtd_1_1console.html#ace49300f3a5875c474af63de69275025" title="Sets the position of the cursor.">xtd::console::set_cursor_position</a>, <a class="el" href="classxtd_1_1console.html#a79de2f1a60c607ca2fc58bf4691809b4" title="Gets the row position of the cursor within the buffer area.">xtd::console::cursor_top</a> and <a class="el" href="classxtd_1_1console.html#adc9a8ddb6e23fdd7a15b77810e5f3a9e" title="Gets the column position of the cursor within the buffer area.">xtd::console::cursor_left</a> methods.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">int</span> orig_row = 0;</div>
-<div class="line"><span class="keywordtype">int</span> orig_col = 0;</div>
+<div class="line"><span class="keyword">auto</span> orig_row = 0;</div>
+<div class="line"><span class="keyword">auto</span> orig_col = 0;</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> write_at(<span class="keyword">const</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>&amp; s, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) {</div>
 <div class="line">  console::set_cursor_position(orig_col + x, orig_row + y);</div>
@@ -144,7 +144,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jul 9 2023 22:38:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jul 10 2023 22:54:47 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

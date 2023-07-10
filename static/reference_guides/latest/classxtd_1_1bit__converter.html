@@ -126,7 +126,10 @@ Inheritance diagram for xtd::bit_converter:</div>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">uint64   </td><td class="markdownTableBodyNone"><a class="el" href="classxtd_1_1bit__converter.html#ae09200b38130a840b633e97c1851276a" title="Returns the specified uint64 value as an std::vector of bytes.">xtd::bit_converter::get_bytes(uint64)</a>   </td><td class="markdownTableBodyNone">xtd::bit_converter::to_uint64(const std::vector&lt; xtd::byte &gt;&amp;, int32)   </td></tr>
 </table>
-If you use <a class="el" href="classxtd_1_1bit__converter.html" title="Converts base data types to an std::vector of bytes, and an std::vector of bytes to base data types.">bit_converter</a> methods to round-trip data, make sure that the <a class="el" href="classxtd_1_1bit__converter.html#aba2941afaccf6d5f51303cae71e77c77" title="Returns the specified Boolean value as an std::vector of bytes.">xtd::bit_converter::get_bytes</a> overload and the to_&lt;type&gt; method specify the same type. As the following example illustrates, restoring an std::vector that represents a signed integer by calling the <a class="el" href="classxtd_1_1bit__converter.html#ac2b6502305169b51e810c3746c67a04b" title="Returns a 32-bit signed integer converted from two bytes at a specified position in a xtd::byte std::...">xtd::bit_converter::to_uint32</a> method can result in a value that is different from the original. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+If you use <a class="el" href="classxtd_1_1bit__converter.html" title="Converts base data types to an std::vector of bytes, and an std::vector of bytes to base data types.">bit_converter</a> methods to round-trip data, make sure that the <a class="el" href="classxtd_1_1bit__converter.html#aba2941afaccf6d5f51303cae71e77c77" title="Returns the specified Boolean value as an std::vector of bytes.">xtd::bit_converter::get_bytes</a> overload and the to_&lt;type&gt; method specify the same type. As the following example illustrates, restoring an std::vector that represents a signed integer by calling the <a class="el" href="classxtd_1_1bit__converter.html#ac2b6502305169b51e810c3746c67a04b" title="Returns a 32-bit signed integer converted from two bytes at a specified position in a xtd::byte std::...">xtd::bit_converter::to_uint32</a> method can result in a value that is different from the original. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/bit_converter&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -1795,7 +1798,9 @@ The order of hexadecimal strings returned by the to_string method depends on whe
 <p>Indicates the <a class="el" href="group__types.html#gaf8d0aa5786861bead085592c31c09849" title="Represents a 8-bit unsigned integer.">xtd::byte</a> order ("endianness") in which data is stored in this computer architecture. </p>
 <dl class="section return"><dt>Returns</dt><dd>Returns One of <a class="el" href="classxtd_1_1bit__converter.html#a8eb11b08f7f3076887b8b28a14f2390f" title="Represents the xtd::byte order (&quot;endianness&quot;) in which data is stored in this computer architecture.">xtd::bit_converter::endian</a> values. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Different computer architectures store data using different <a class="el" href="group__types.html#gaf8d0aa5786861bead085592c31c09849" title="Represents a 8-bit unsigned integer.">xtd::byte</a> orders. "Big-endian" means the most significant <a class="el" href="group__types.html#gaf8d0aa5786861bead085592c31c09849" title="Represents a 8-bit unsigned integer.">xtd::byte</a> is on the left end of a word. "Little-endian" means the most significant <a class="el" href="group__types.html#gaf8d0aa5786861bead085592c31c09849" title="Represents a 8-bit unsigned integer.">xtd::byte</a> is on the right end of a word. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example illustrates the use of the endianness field. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example illustrates the use of the endianness field. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/bit_converter&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
@@ -1849,7 +1854,9 @@ The order of hexadecimal strings returned by the to_string method depends on whe
 <p>Indicates the <a class="el" href="group__types.html#gaf8d0aa5786861bead085592c31c09849" title="Represents a 8-bit unsigned integer.">xtd::byte</a> order ("endianness") in which data is stored in this computer architecture. </p>
 <dl class="section return"><dt>Returns</dt><dd>Returns true if the architecture is big-endian; false if it is little-endian. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Different computer architectures store data using different <a class="el" href="group__types.html#gaf8d0aa5786861bead085592c31c09849" title="Represents a 8-bit unsigned integer.">xtd::byte</a> orders. "Big-endian" means the most significant <a class="el" href="group__types.html#gaf8d0aa5786861bead085592c31c09849" title="Represents a 8-bit unsigned integer.">xtd::byte</a> is on the left end of a word. "Little-endian" means the most significant <a class="el" href="group__types.html#gaf8d0aa5786861bead085592c31c09849" title="Represents a 8-bit unsigned integer.">xtd::byte</a> is on the right end of a word. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example illustrates the use of the is_big_endian field. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example illustrates the use of the is_big_endian field. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/bit_converter&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
@@ -1903,7 +1910,9 @@ The order of hexadecimal strings returned by the to_string method depends on whe
 <p>Indicates the <a class="el" href="group__types.html#gaf8d0aa5786861bead085592c31c09849" title="Represents a 8-bit unsigned integer.">xtd::byte</a> order ("endianness") in which data is stored in this computer architecture. </p>
 <dl class="section return"><dt>Returns</dt><dd>Returns true if the architecture is little-endian; false if it is big-endian. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Different computer architectures store data using different <a class="el" href="group__types.html#gaf8d0aa5786861bead085592c31c09849" title="Represents a 8-bit unsigned integer.">xtd::byte</a> orders. "Big-endian" means the most significant <a class="el" href="group__types.html#gaf8d0aa5786861bead085592c31c09849" title="Represents a 8-bit unsigned integer.">xtd::byte</a> is on the left end of a word. "Little-endian" means the most significant <a class="el" href="group__types.html#gaf8d0aa5786861bead085592c31c09849" title="Represents a 8-bit unsigned integer.">xtd::byte</a> is on the right end of a word. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example illustrates the use of the is_little_endian field. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example illustrates the use of the is_little_endian field. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/bit_converter&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
@@ -1941,7 +1950,7 @@ The order of hexadecimal strings returned by the to_string method depends on whe
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jul 9 2023 22:38:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jul 10 2023 22:54:51 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

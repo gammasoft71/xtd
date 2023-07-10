@@ -83,7 +83,8 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Shows how to use <a class="el" href="classxtd_1_1console.html" title="Represents the standard input, output, and error streams for console applications.">xtd::console</a> with unicode characters.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -93,8 +94,8 @@ $(function() {
 <div class="line">  console::output_code_page(65001);</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Create a Char array for the modern Cyrillic alphabet, from U+0410 to U+044F.</span></div>
-<div class="line">  <span class="keyword">auto</span> nchars = 0x044F - 0x0410 + 1;</div>
-<div class="line">  vector&lt;char32_t&gt; chars(nchars);</div>
+<div class="line">  <span class="keyword">constexpr</span> <span class="keyword">auto</span> nchars = 0x044F - 0x0410 + 1;</div>
+<div class="line">  <span class="keyword">auto</span> chars = vector&lt;char32_t&gt; {nchars};</div>
 <div class="line">  <span class="keyword">auto</span> code_point = U<span class="stringliteral">&#39;\U00000410&#39;</span>;</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> ctr = 0U; ctr &lt; chars.size(); ctr++) {</div>
 <div class="line">    chars[ctr] = code_point;</div>
@@ -123,7 +124,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jul 9 2023 22:38:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jul 10 2023 22:54:47 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

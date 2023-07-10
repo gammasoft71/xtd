@@ -83,7 +83,8 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Demonstrates how to create a simple <a class="el" href="classxtd_1_1diagnostics_1_1stack__trace.html" title="Represents a stack trace, which is an ordered collection of one or more stack frames.">xtd::diagnostics::stack_trace</a> class and iterate through its frames to obtain debugging and diagnostic information.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/stack_trace&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
@@ -162,11 +163,11 @@ $(function() {
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// High up the call stack, Method: main</span></div>
 <div class="line"><span class="comment">// High up the call stack, Line Number: 0</span></div>
-<div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a></div><div class="ttdoc">Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...</div><div class="ttdef"><b>Definition</b> stack_frame.h:35</div></div>
+<div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a></div><div class="ttdoc">Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...</div><div class="ttdef"><b>Definition</b> stack_frame.h:37</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html_a1832cdfb7233ada545f1af44983843ae"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__frame.html#a1832cdfb7233ada545f1af44983843ae">xtd::diagnostics::stack_frame::get_file_line_number</a></div><div class="ttdeci">virtual uint32 get_file_line_number() const noexcept</div><div class="ttdoc">Gets the line number in the file that contains the code that is executing. This information is typica...</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html_a3c7c3064010482060dc20aeb53b48797"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__frame.html#a3c7c3064010482060dc20aeb53b48797">xtd::diagnostics::stack_frame::get_file_name</a></div><div class="ttdeci">virtual const xtd::ustring &amp; get_file_name() const noexcept</div><div class="ttdoc">Gets the file name that contains the code that is executing. This information is typically extracted ...</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html_ae946fcdc9bfcf32e2a832815c40eeb08"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__frame.html#ae946fcdc9bfcf32e2a832815c40eeb08">xtd::diagnostics::stack_frame::get_method</a></div><div class="ttdeci">virtual const xtd::ustring &amp; get_method() const noexcept</div><div class="ttdoc">Gets the method in which the frame is executing.</div></div>
-<div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__trace_html"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__trace.html">xtd::diagnostics::stack_trace</a></div><div class="ttdoc">Represents a stack trace, which is an ordered collection of one or more stack frames.</div><div class="ttdef"><b>Definition</b> stack_trace.h:37</div></div>
+<div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__trace_html"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__trace.html">xtd::diagnostics::stack_trace</a></div><div class="ttdoc">Represents a stack trace, which is an ordered collection of one or more stack frames.</div><div class="ttdef"><b>Definition</b> stack_trace.h:39</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__trace_html_a424374815e3f722a156fedeb6a77e30e"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__trace.html#a424374815e3f722a156fedeb6a77e30e">xtd::diagnostics::stack_trace::frame_count</a></div><div class="ttdeci">size_t frame_count() const noexcept</div><div class="ttdoc">Gets the number of frames in the stack trace.</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__trace_html_afca6ea9bd4c06cb0d38fac6d699c1a61"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__trace.html#afca6ea9bd4c06cb0d38fac6d699c1a61">xtd::diagnostics::stack_trace::get_frame</a></div><div class="ttdeci">const xtd::diagnostics::stack_frame &amp; get_frame(size_t index) noexcept</div><div class="ttdoc">Gets the specified stack frame.</div></div>
 <div class="ttc" id="aclassxtd_1_1system__exception_html"><div class="ttname"><a href="classxtd_1_1system__exception.html">xtd::system_exception</a></div><div class="ttdoc">Defines the base class for predefined exceptions in the xtd namespace.</div><div class="ttdef"><b>Definition</b> system_exception.h:24</div></div>
@@ -178,7 +179,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jul 9 2023 22:38:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jul 10 2023 22:54:47 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

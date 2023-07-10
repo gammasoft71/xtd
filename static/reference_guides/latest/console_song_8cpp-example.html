@@ -83,12 +83,14 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Shows how to use <a class="el" href="classxtd_1_1console.html#aab2e161c3a72cb14f808ed40e2b59ef2" title="Plays the sound of a beep through the console speaker.">xtd::console::beep</a> method.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/as&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;chrono&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;thread&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
+<div class="line"><span class="keyword">using namespace </span>std::chrono;</div>
 <div class="line"><span class="keyword">using namespace </span>std::this_thread;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
@@ -126,11 +128,11 @@ $(function() {
 <div class="line"><span class="keyword">struct </span>note final {</div>
 <div class="line"><span class="keyword">private</span>:</div>
 <div class="line">  tone tone_val = tone::rest;</div>
-<div class="line">  duration dur_val = duration::none;</div>
+<div class="line">  ::duration dur_val = ::duration::none;</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="comment">// Define a constructor to create a specific note.</span></div>
-<div class="line">  note(tone frequency, duration time) : tone_val(frequency), dur_val(<a class="code hl_enumvalue" href="group__xtd__forms.html#gga3aba202fc852006258f3a8da4f7bd0d1a07cc694b9b3fc636710fa08b6922c42b">time</a>) {}</div>
+<div class="line">  note(tone frequency, ::duration time) : tone_val(frequency), dur_val(<a class="code hl_enumvalue" href="group__xtd__forms.html#gga3aba202fc852006258f3a8da4f7bd0d1a07cc694b9b3fc636710fa08b6922c42b">time</a>) {}</div>
 <div class="line">  </div>
 <div class="line">  note() = <span class="keywordflow">default</span>;</div>
 <div class="line">  note(<span class="keyword">const</span> note&amp; note) = <span class="keywordflow">default</span>;</div>
@@ -138,14 +140,14 @@ $(function() {
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Define properties to return the note&#39;s tone and duration.</span></div>
 <div class="line">  tone note_tone() const noexcept {<span class="keywordflow">return</span> tone_val;}</div>
-<div class="line">  duration note_duration() const noexcept {<span class="keywordflow">return</span> dur_val;}</div>
+<div class="line">  ::duration note_duration() const noexcept {<span class="keywordflow">return</span> dur_val;}</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Play the notes in a song.</span></div>
 <div class="line"><span class="keywordtype">void</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2aa3b34c0871dc2fd51eec5559b68f709d">play</a>(<span class="keyword">const</span> vector&lt;note&gt;&amp; tune) {</div>
 <div class="line">  <span class="keywordflow">for</span> (note n : tune) {</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>.note_tone() == tone::rest)</div>
-<div class="line">      sleep_for(chrono::milliseconds(as&lt;int&gt;(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>.note_duration())));</div>
+<div class="line">      sleep_for(milliseconds(as&lt;int&gt;(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>.note_duration())));</div>
 <div class="line">    <span class="keywordflow">else</span></div>
 <div class="line">      console::beep(as&lt;unsigned int&gt;(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>.note_tone()), as&lt;unsigned int&gt;(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>.note_duration()));</div>
 <div class="line">  }</div>
@@ -154,19 +156,19 @@ $(function() {
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
 <div class="line">  <span class="comment">// Declare the first few notes of the song, &quot;Mary Had A Little Lamb&quot;.</span></div>
 <div class="line">  vector mary = {</div>
-<div class="line">    note(tone::b, duration::quarter),</div>
-<div class="line">    note(tone::a, duration::quarter),</div>
-<div class="line">    note(tone::g_below_c, duration::quarter),</div>
-<div class="line">    note(tone::a, duration::quarter),</div>
-<div class="line">    note(tone::b, duration::quarter),</div>
-<div class="line">    note(tone::b, duration::quarter),</div>
-<div class="line">    note(tone::b, duration::half),</div>
-<div class="line">    note(tone::a, duration::quarter),</div>
-<div class="line">    note(tone::a, duration::quarter),</div>
-<div class="line">    note(tone::a, duration::half),</div>
-<div class="line">    note(tone::b, duration::quarter),</div>
-<div class="line">    note(tone::d, duration::quarter),</div>
-<div class="line">    note(tone::d, duration::half)</div>
+<div class="line">    note(tone::b, ::duration::quarter),</div>
+<div class="line">    note(tone::a, ::duration::quarter),</div>
+<div class="line">    note(tone::g_below_c, ::duration::quarter),</div>
+<div class="line">    note(tone::a, ::duration::quarter),</div>
+<div class="line">    note(tone::b, ::duration::quarter),</div>
+<div class="line">    note(tone::b, ::duration::quarter),</div>
+<div class="line">    note(tone::b, ::duration::half),</div>
+<div class="line">    note(tone::a, ::duration::quarter),</div>
+<div class="line">    note(tone::a, ::duration::quarter),</div>
+<div class="line">    note(tone::a, ::duration::half),</div>
+<div class="line">    note(tone::b, ::duration::quarter),</div>
+<div class="line">    note(tone::d, ::duration::quarter),</div>
+<div class="line">    note(tone::d, ::duration::half)</div>
 <div class="line">  };</div>
 <div class="line">  <span class="comment">// Play the song</span></div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2aa3b34c0871dc2fd51eec5559b68f709d">play</a>(mary);</div>
@@ -179,7 +181,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jul 9 2023 22:38:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jul 10 2023 22:54:47 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
