@@ -13,6 +13,8 @@ namespace xtd {
     /// @endcode
     /// @par Inheritance
     /// xtd::system_exception → xtd::collections::key_not_found_exception
+    /// @par Header
+    /// @code #include <xtd/collections/key_not_found_exception> @endcode
     /// @par Namespace
     /// xtd::collections
     /// @par Library
