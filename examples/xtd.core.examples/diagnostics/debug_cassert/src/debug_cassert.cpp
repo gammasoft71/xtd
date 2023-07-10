@@ -1,4 +1,5 @@
-#include <xtd/xtd>
+#include <xtd/diagnostics/debug>
+#include <xtd/console>
 
 using namespace xtd;
 using namespace xtd::diagnostics;
