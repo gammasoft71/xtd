@@ -1,4 +1,6 @@
-#include <xtd/xtd>
+#include <xtd/char32_object>
+#include <xtd/console>
+#include <xtd/startup>
 
 using namespace std;
 using namespace xtd;
