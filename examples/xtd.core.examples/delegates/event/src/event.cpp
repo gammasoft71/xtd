@@ -1,6 +1,9 @@
-#include <xtd/xtd>
-#include <iostream>
-#include <string>
+#include <xtd/as>
+#include <xtd/console>
+#include <xtd/environment>
+#include <xtd/event>
+#include <xtd/event_handler>
+#include <xtd/ustring>
 
 class control : public xtd::object {
 public:
@@ -39,11 +42,11 @@ auto main()->int {
   button button1;
   
   button1.text_changed += [](xtd::object & sender, const xtd::event_args & e)  {
-    std::cout << "text_changed [text=" << as<control>(sender).text() << "]" << std::endl;
+    xtd::console::out << "text_changed [text=" << as<control>(sender).text() << "]" << xtd::environment::new_line();
   };
   
   button1.click += []  {
-    std::cout << "click on button1" << std::endl;
+    xtd::console::out << "click on button1" << xtd::environment::new_line();
   };
   
   button1.text("button1");
