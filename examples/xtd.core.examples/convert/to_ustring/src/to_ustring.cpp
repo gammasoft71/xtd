@@ -1,4 +1,8 @@
-#include <xtd/xtd>
+#include <xtd/as>
+#include <xtd/console>
+#include <xtd/convert>
+#include <xtd/convert_string>
+#include <any>
 
 using namespace std;
 using namespace xtd;
