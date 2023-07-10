@@ -1,4 +1,6 @@
-#include <xtd/xtd>
+#include <xtd/environment>
+#include <xtd/startup>
+#include <vector>
 
 using namespace std;
 using namespace xtd;
