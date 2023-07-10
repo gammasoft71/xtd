@@ -15,7 +15,7 @@ namespace xtd {
     /// @par Inheritance
     /// xtd::object → xtd::attribute → xtd::reflection::assembly_product_attribute
     /// @par Header
-    /// @code #include <xtd/reflection/reflection/assembly_product_attribute> @endcode
+    /// @code #include <xtd/reflection/assembly_product_attribute> @endcode
     /// @par Namespace
     /// xtd::reflection
     /// @par Library
