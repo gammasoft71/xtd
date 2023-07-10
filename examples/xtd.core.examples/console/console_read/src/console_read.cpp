@@ -1,5 +1,6 @@
-#include <xtd/xtd>
-#include <string>
+#include <xtd/char_object>
+#include <xtd/console>
+#include <xtd/convert>
 
 using namespace xtd;
 
@@ -8,7 +9,7 @@ auto main()->int {
   "Type '+' anywhere in the text to quit:\n";
   auto m2 = "Character '{0}' is hexadecimal 0x{1:x4}.";
   auto m3 = "Character     is hexadecimal 0x{0:x4}.";
-  char32 ch;
+  auto ch = U'0';
   //
   console::write_line(m1);
   do {
