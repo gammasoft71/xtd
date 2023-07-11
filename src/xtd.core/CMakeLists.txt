@@ -54,20 +54,28 @@ add_sources(
   include/xtd/boxing
   include/xtd/build_type.h
   include/xtd/build_type
+  include/xtd/byte.h
+  include/xtd/byte
   include/xtd/byte_object.h
   include/xtd/byte_object
   include/xtd/cdebug.h
   include/xtd/cdebug
+  include/xtd/char.h
+  include/xtd/char
   include/xtd/char_object.h
   include/xtd/char_object
+  include/xtd/char8.h
+  include/xtd/char8
   include/xtd/char8_object.h
   include/xtd/char8_object
+  include/xtd/char16.h
+  include/xtd/char16
   include/xtd/char16_object.h
   include/xtd/char16_object
+  include/xtd/char32.h
+  include/xtd/char32
   include/xtd/char32_object.h
   include/xtd/char32_object
-  include/xtd/wchar_object.h
-  include/xtd/wchar_object
   include/xtd/cnull.h
   include/xtd/cnull
   include/xtd/compiler.h
@@ -106,6 +114,8 @@ add_sources(
   include/xtd/date_time_kind
   include/xtd/day_of_week.h
   include/xtd/day_of_week
+  include/xtd/decimal.h
+  include/xtd/decimal
   include/xtd/decimal_object.h
   include/xtd/decimal_object
   include/xtd/debugstreambuf.h
@@ -118,6 +128,8 @@ add_sources(
   include/xtd/divided_by_zero_exception
   include/xtd/domain_exception.h
   include/xtd/domain_exception
+  include/xtd/double.h
+  include/xtd/double
   include/xtd/double_object.h
   include/xtd/double_object
   include/xtd/enum.h
@@ -168,14 +180,22 @@ add_sources(
   include/xtd/iequatable
   include/xtd/index_out_of_range_exception.h
   include/xtd/index_out_of_range_exception
+  include/xtd/int16.h
+  include/xtd/int16
   include/xtd/int16_object.h
   include/xtd/int16_object
+  include/xtd/int32.h
+  include/xtd/int32
   include/xtd/int32_object.h
   include/xtd/int32_object
+  include/xtd/int64.h
+  include/xtd/int64
   include/xtd/int64_object.h
   include/xtd/int64_object
   include/xtd/interface.h
   include/xtd/interface
+  include/xtd/intptr.h
+  include/xtd/intptr
   include/xtd/intptr_object.h
   include/xtd/intptr_object
   include/xtd/invalid_cast_exception.h
@@ -246,6 +266,8 @@ add_sources(
   include/xtd/register_any_stringer
   include/xtd/reset_color.h
   include/xtd/reset_color
+  include/xtd/sbyte.h
+  include/xtd/sbyte
   include/xtd/sbyte_object.h
   include/xtd/sbyte_object
   include/xtd/signal.h
@@ -254,8 +276,12 @@ add_sources(
   include/xtd/signal_cancel_event_args
   include/xtd/signal_cancel_event_handler.h
   include/xtd/signal_cancel_event_handler
+  include/xtd/single.h
+  include/xtd/single
   include/xtd/single_object.h
   include/xtd/single_object
+  include/xtd/size.h
+  include/xtd/size
   include/xtd/size_object.h
   include/xtd/size_object
   include/xtd/startup.h
@@ -296,12 +322,20 @@ add_sources(
   include/xtd/typeof
   include/xtd/types.h
   include/xtd/types
+  include/xtd/uint16.h
+  include/xtd/uint16
   include/xtd/uint16_object.h
   include/xtd/uint16_object
+  include/xtd/uint32.h
+  include/xtd/uint32
   include/xtd/uint32_object.h
   include/xtd/uint32_object
+  include/xtd/uint64.h
+  include/xtd/uint64
   include/xtd/uint64_object.h
   include/xtd/uint64_object
+  include/xtd/uintptr.h
+  include/xtd/uintptr
   include/xtd/uintptr_object.h
   include/xtd/uintptr_object
   include/xtd/unauthorized_access_exception.h
@@ -338,6 +372,10 @@ add_sources(
   include/xtd/va_args_comma
   include/xtd/version.h
   include/xtd/version
+  include/xtd/wchar.h
+  include/xtd/wchar
+  include/xtd/wchar_object.h
+  include/xtd/wchar_object
   include/xtd/xml_syntax_exception.h
   include/xtd/xml_syntax_exception
   include/xtd/xtd.core
