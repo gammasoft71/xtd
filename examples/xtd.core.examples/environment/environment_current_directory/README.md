@@ -19,5 +19,5 @@ xtdc run
 # Output
 
 ```
-Directory entry:   /!---OMITTED---!/Desktop/.
+Directory entry:   /!---OMITTED---!/Desktop
 ```
