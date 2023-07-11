@@ -7,6 +7,8 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The exception that is thrown when one of the arguments provided to a method is null.
+  /// @par Header
+  /// @code #include <xtd/argument_null_exception> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -85,6 +87,8 @@ namespace xtd {
 }
 
 /// @brief Helper on xtd::argument_null_exception to call it with current stack frame information.
+/// @par Header
+/// @code #include <xtd/argument_null_exception> @endcode
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions

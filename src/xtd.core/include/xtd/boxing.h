@@ -32,6 +32,8 @@ namespace xtd {
   /// @param value Value used to initialize object.
   /// @return Boxed object.
   /// @remarks The boxed object must implement operator == and operator < because a xtd::box implement xtd::icomparable and xtd::iequatable interfaces.
+  /// @par Header
+  /// @code #include <xtd/boxing> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -43,6 +45,8 @@ namespace xtd {
   /// @param ...args  Params used to initialize object.
   /// @return Boxed object.
   /// @remarks The boxed object must implement operator == and operator < because a xtd::box implement xtd::icomparable and xtd::iequatable interfaces.
+  /// @par Header
+  /// @code #include <xtd/boxing> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library

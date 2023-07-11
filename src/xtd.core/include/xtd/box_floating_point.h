@@ -12,6 +12,8 @@ namespace xtd {
   /// @endcode
   /// @par Inheritance
   /// xtd::object → xtd::box <type_t> → xtd::box_integer <type_t> → box_floating_point <type_t>
+  /// @par Header
+  /// @code #include <xtd/box°floating_point> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library

@@ -28,6 +28,8 @@ namespace xtd {
   /// @brief Allows to unbox an object
   /// @param value Object to box.
   /// @return Unboxed object.
+  /// @par Header
+  /// @code #include <xtd/unboxing> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library

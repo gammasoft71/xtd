@@ -14,6 +14,8 @@ namespace xtd {
   /// @endcode
   /// @par Inheritance
   /// xtd::object → xtd::attribute
+  /// @par Header
+  /// @code #include <xtd/attribute> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library

@@ -7,6 +7,8 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Identifies the processor architecture, supported by an assembly.
+  /// @par Header
+  /// @code #include <xtd/architecture_id> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
