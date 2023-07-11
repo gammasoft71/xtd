@@ -21,7 +21,7 @@ var searchData=
   ['border_5fcolor_2eh_18',['border_color.h',['../border__color_8h.html',1,'']]],
   ['border_5fradius_2eh_19',['border_radius.h',['../border__radius_8h.html',1,'']]],
   ['border_5fsides_2eh_20',['border_sides.h',['../border__sides_8h.html',1,'']]],
-  ['border_5fstyle_2eh_21',['border_style.h',['../style__sheets_2border__style_8h.html',1,'(Global Namespace)'],['../border__style_8h.html',1,'(Global Namespace)']]],
+  ['border_5fstyle_2eh_21',['border_style.h',['../border__style_8h.html',1,'(Global Namespace)'],['../style__sheets_2border__style_8h.html',1,'(Global Namespace)']]],
   ['border_5ftype_2eh_22',['border_type.h',['../border__type_8h.html',1,'']]],
   ['border_5fwidth_2eh_23',['border_width.h',['../border__width_8h.html',1,'']]],
   ['bounds_5fspecified_2eh_24',['bounds_specified.h',['../bounds__specified_8h.html',1,'']]],
@@ -45,5 +45,6 @@ var searchData=
   ['button_5frenderer_2eh_42',['button_renderer.h',['../button__renderer_8h.html',1,'']]],
   ['button_5fstate_2eh_43',['button_state.h',['../button__state_8h.html',1,'']]],
   ['buttons_2eh_44',['buttons.h',['../buttons_8h.html',1,'']]],
-  ['byte_5fobject_2eh_45',['byte_object.h',['../byte__object_8h.html',1,'']]]
+  ['byte_2eh_45',['byte.h',['../byte_8h.html',1,'']]],
+  ['byte_5fobject_2eh_46',['byte_object.h',['../byte__object_8h.html',1,'']]]
 ];

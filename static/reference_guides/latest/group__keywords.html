@@ -95,6 +95,12 @@ Macros</h2></td></tr>
 <tr class="memitem:gac618f4bf4029759cf6ca31a94b89151a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__keywords.html#gac618f4bf4029759cf6ca31a94b89151a">abstract_object_</a></td></tr>
 <tr class="memdesc:gac618f4bf4029759cf6ca31a94b89151a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This keyword is used to represents an abstract class.  <br /></td></tr>
 <tr class="separator:gac618f4bf4029759cf6ca31a94b89151a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0586bf18163484f86413196776c0bf98"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__keywords.html#ga0586bf18163484f86413196776c0bf98">add_csf_</a></td></tr>
+<tr class="memdesc:ga0586bf18163484f86413196776c0bf98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add current stack frame to the <b>VA_ARGS</b> with a comma separator.  <br /></td></tr>
+<tr class="separator:ga0586bf18163484f86413196776c0bf98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab4cca34577f92c2f893cb53071686c84"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__keywords.html#gab4cca34577f92c2f893cb53071686c84">add_current_stack_frame_</a>(...)</td></tr>
+<tr class="memdesc:gab4cca34577f92c2f893cb53071686c84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add current stack frame to the <b>VA_ARGS</b> with a comma separator.  <br /></td></tr>
+<tr class="separator:gab4cca34577f92c2f893cb53071686c84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa9d9362b8802d11f00781c6293d6a2a1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__keywords.html#gaa9d9362b8802d11f00781c6293d6a2a1">assembly_company_</a>(company)</td></tr>
 <tr class="memdesc:gaa9d9362b8802d11f00781c6293d6a2a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the assembly company information. Must be called once in your application.  <br /></td></tr>
 <tr class="separator:gaa9d9362b8802d11f00781c6293d6a2a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -222,14 +228,13 @@ Macros</h2></td></tr>
 <p>This keyword is used to represents an abstract class. </p>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/abstract&gt;</span> </div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This keyword has no other use than to tag a class to abstract. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keyword">class </span>foo <a class="code hl_define" href="group__keywords.html#ga8bad3fd3f3b8afda1d635fa70ebaaa8e">abstract_</a> {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">virtual</span> std::string to_string() = 0;</div>
 <div class="line">};</div>
-<div class="ttc" id="agroup__keywords_html_ga8bad3fd3f3b8afda1d635fa70ebaaa8e"><div class="ttname"><a href="group__keywords.html#ga8bad3fd3f3b8afda1d635fa70ebaaa8e">abstract_</a></div><div class="ttdeci">#define abstract_</div><div class="ttdoc">This keyword is used to represents an abstract class.</div><div class="ttdef"><b>Definition</b> abstract.h:25</div></div>
+<div class="ttc" id="agroup__keywords_html_ga8bad3fd3f3b8afda1d635fa70ebaaa8e"><div class="ttname"><a href="group__keywords.html#ga8bad3fd3f3b8afda1d635fa70ebaaa8e">abstract_</a></div><div class="ttdeci">#define abstract_</div><div class="ttdoc">This keyword is used to represents an abstract class.</div><div class="ttdef"><b>Definition</b> abstract.h:23</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -251,15 +256,66 @@ Macros</h2></td></tr>
 <p>This keyword is used to represents an abstract class. </p>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/abstract_object&gt;</span> </div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This keyword has no other use than to tag a class to abstract. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keyword">class </span>foo <a class="code hl_define" href="group__keywords.html#gac618f4bf4029759cf6ca31a94b89151a">abstract_object_</a> {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">virtual</span> std::string to_string() = 0;</div>
 <div class="line">};</div>
-<div class="ttc" id="agroup__keywords_html_gac618f4bf4029759cf6ca31a94b89151a"><div class="ttname"><a href="group__keywords.html#gac618f4bf4029759cf6ca31a94b89151a">abstract_object_</a></div><div class="ttdeci">#define abstract_object_</div><div class="ttdoc">This keyword is used to represents an abstract class.</div><div class="ttdef"><b>Definition</b> abstract_object.h:56</div></div>
+<div class="ttc" id="agroup__keywords_html_gac618f4bf4029759cf6ca31a94b89151a"><div class="ttname"><a href="group__keywords.html#gac618f4bf4029759cf6ca31a94b89151a">abstract_object_</a></div><div class="ttdeci">#define abstract_object_</div><div class="ttdoc">This keyword is used to represents an abstract class.</div><div class="ttdef"><b>Definition</b> abstract_object.h:54</div></div>
 </div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="ga0586bf18163484f86413196776c0bf98" name="ga0586bf18163484f86413196776c0bf98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0586bf18163484f86413196776c0bf98">&#9670;&#160;</a></span>add_csf_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define add_csf_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="stack__frame_8h.html">xtd.core/include/xtd/diagnostics/stack_frame.h</a>&gt;</code></p>
+
+<p>Add current stack frame to the <b>VA_ARGS</b> with a comma separator. </p>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/stack_frame&gt;</span> </div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><b>VA_ARGS</b> with comma and current stack frame. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>same as <a class="el" href="group__keywords.html#gab4cca34577f92c2f893cb53071686c84" title="Add current stack frame to the VA_ARGS with a comma separator.">add_current_stack_frame_</a> </dd></dl>
+
+</div>
+</div>
+<a id="gab4cca34577f92c2f893cb53071686c84" name="gab4cca34577f92c2f893cb53071686c84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab4cca34577f92c2f893cb53071686c84">&#9670;&#160;</a></span>add_current_stack_frame_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define add_current_stack_frame_</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="stack__frame_8h.html">xtd.core/include/xtd/diagnostics/stack_frame.h</a>&gt;</code></p>
+
+<p>Add current stack frame to the <b>VA_ARGS</b> with a comma separator. </p>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/stack_frame&gt;</span> </div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><b>VA_ARGS</b> with comma and current stack frame. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>same as <a class="el" href="group__keywords.html#ga0586bf18163484f86413196776c0bf98" title="Add current stack frame to the VA_ARGS with a comma separator.">add_csf_</a> </dd></dl>
 
 </div>
 </div>
@@ -291,7 +347,8 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/reflection/assembly_company_attribute&gt;</span> </div>
+</div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to use assembly information manually. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
@@ -433,7 +490,8 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/reflection/assembly_configuration_attribute&gt;</span> </div>
+</div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to use assembly information manually. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
@@ -558,7 +616,8 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/reflection/assembly_copyright_attribute&gt;</span> </div>
+</div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to use assembly information manually. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
@@ -683,7 +742,8 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/reflection/assembly_culture_attribute&gt;</span> </div>
+</div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to use assembly information manually. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
@@ -808,7 +868,8 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/reflection/assembly_description_attribute&gt;</span> </div>
+</div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to use assembly information manually. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
@@ -933,7 +994,8 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/reflection/assembly_file_version_attribute&gt;</span> </div>
+</div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to use assembly information manually. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
@@ -1058,7 +1120,8 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/reflection/assembly_guid_attribute&gt;</span> </div>
+</div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to use assembly information manually. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
@@ -1183,7 +1246,8 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/reflection/assembly_identifier_attribute&gt;</span> </div>
+</div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to use assembly information manually. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
@@ -1308,7 +1372,8 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/reflection/assembly_name_attribute&gt;</span> </div>
+</div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to use assembly information manually. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
@@ -1433,7 +1498,8 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/reflection/assembly_product_attribute&gt;</span> </div>
+</div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to use assembly information manually. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
@@ -1558,7 +1624,8 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/reflection/assembly_title_attribute&gt;</span> </div>
+</div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to use assembly information manually. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
@@ -1683,7 +1750,8 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/reflection/assembly_trademark_attribute&gt;</span> </div>
+</div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to use assembly information manually. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
@@ -1808,7 +1876,8 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/reflection/assembly_version_attribute&gt;</span> </div>
+</div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to use assembly information manually. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
@@ -1924,13 +1993,15 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <p><code>#include &lt;<a class="el" href="block__scope_8h.html">xtd.core/include/xtd/block_scope.h</a>&gt;</code></p>
 
 <p>The specified expression is cleared automatically when the scope is ended. </p>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/block_scope&gt;</span> </div>
+</div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="comment">// values is released automatically after the end closure }.</span></div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga9ba81b3bf268ec1eb95752f516f563e9">block_scope_</a>(<span class="keyword">auto</span> values = {1, 2, 3, 4, 5}) {</div>
 <div class="line">  cout &lt;&lt; ustring::join(<span class="stringliteral">&quot;, &quot;</span>, values) &lt;&lt; endl;</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__keywords_html_ga9ba81b3bf268ec1eb95752f516f563e9"><div class="ttname"><a href="group__keywords.html#ga9ba81b3bf268ec1eb95752f516f563e9">block_scope_</a></div><div class="ttdeci">#define block_scope_(...)</div><div class="ttdoc">The specified expression is cleared automatically when the scope is ended.</div><div class="ttdef"><b>Definition</b> block_scope.h:22</div></div>
+<div class="ttc" id="agroup__keywords_html_ga9ba81b3bf268ec1eb95752f516f563e9"><div class="ttname"><a href="group__keywords.html#ga9ba81b3bf268ec1eb95752f516f563e9">block_scope_</a></div><div class="ttdeci">#define block_scope_(...)</div><div class="ttdoc">The specified expression is cleared automatically when the scope is ended.</div><div class="ttdef"><b>Definition</b> block_scope.h:24</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>same as <a class="el" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f" title="The specified expression is cleared automatically when the scope is ended.">using_</a> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="block_scope_8cpp-example.html#a0">block_scope.cpp</a>.</dd>
@@ -1972,6 +2043,8 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <p><code>#include &lt;<a class="el" href="stack__frame_8h.html">xtd.core/include/xtd/diagnostics/stack_frame.h</a>&gt;</code></p>
 
 <p>Provides information about the current stack frame. </p>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/stack_frame&gt;</span> </div>
+</div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>Informations about the current stack frame. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to use the <a class="el" href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6" title="Provides information about the current stack frame.">csf_</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
@@ -2007,7 +2080,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html_a3c7c3064010482060dc20aeb53b48797"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__frame.html#a3c7c3064010482060dc20aeb53b48797">xtd::diagnostics::stack_frame::get_file_name</a></div><div class="ttdeci">virtual const xtd::ustring &amp; get_file_name() const noexcept</div><div class="ttdoc">Gets the file name that contains the code that is executing. This information is typically extracted ...</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html_ae946fcdc9bfcf32e2a832815c40eeb08"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__frame.html#ae946fcdc9bfcf32e2a832815c40eeb08">xtd::diagnostics::stack_frame::get_method</a></div><div class="ttdeci">virtual const xtd::ustring &amp; get_method() const noexcept</div><div class="ttdoc">Gets the method in which the frame is executing.</div></div>
 <div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:48</div></div>
-<div class="ttc" id="agroup__keywords_html_gaf8b977f43d229f177b7b399c3b3a60a6"><div class="ttname"><a href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a></div><div class="ttdeci">#define csf_</div><div class="ttdoc">Provides information about the current stack frame.</div><div class="ttdef"><b>Definition</b> stack_frame.h:229</div></div>
+<div class="ttc" id="agroup__keywords_html_gaf8b977f43d229f177b7b399c3b3a60a6"><div class="ttname"><a href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a></div><div class="ttdeci">#define csf_</div><div class="ttdoc">Provides information about the current stack frame.</div><div class="ttdef"><b>Definition</b> stack_frame.h:231</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>same as <a class="el" href="group__keywords.html#gae15b54f63b03b198d02fc94bdd0479ee" title="Provides information about the current stack frame.">current_stack_frame_</a> </dd></dl>
@@ -2120,10 +2193,11 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
       </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="enum__register_8h.html">xtd.core/include/xtd/enum_register.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="enum_8h.html">xtd.core/include/xtd/enum.h</a>&gt;</code></p>
 
 <p>Provides the registration struct for enum. </p>
-<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/enum&gt;</span> </div>
+</div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -2138,7 +2212,9 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <li>The enumeration's cannot be in a class or struct. The enum must be in the global namespace or in a namespace hierarchy. If the enumeration is in a class or struct, add operators manually and use <a class="el" href="structxtd_1_1enum__register.html" title="Provides the registration struct for enumerations.">xtd::enum_register</a> to register the enumeration identifiers. </li>
 </ul>
 </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code show how to use <a class="el" href="group__keywords.html#ga5f48a70a2aa3ba1ba74bd8a4cfc44691" title="Provides the registration struct for enum.">enum_</a> helper. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code show how to use <a class="el" href="group__keywords.html#ga5f48a70a2aa3ba1ba74bd8a4cfc44691" title="Provides the registration struct for enum.">enum_</a> helper. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/as&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/enum&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
@@ -2166,8 +2242,8 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line"><span class="comment">// values = [0, 1, 2, 3]</span></div>
 <div class="line"><span class="comment">// names = [value_one, value_two, value_three, value_four]</span></div>
 <div class="line"><span class="comment">// entries = [(0, value_one), (1, value_two), (2, value_three), (3, value_four)]</span></div>
-<div class="ttc" id="aclassxtd_1_1enum__object_html"><div class="ttname"><a href="classxtd_1_1enum__object.html">xtd::enum_object</a></div><div class="ttdoc">Provides the base class for enumerations.</div><div class="ttdef"><b>Definition</b> enum_object.h:33</div></div>
-<div class="ttc" id="agroup__keywords_html_ga5f48a70a2aa3ba1ba74bd8a4cfc44691"><div class="ttname"><a href="group__keywords.html#ga5f48a70a2aa3ba1ba74bd8a4cfc44691">enum_</a></div><div class="ttdeci">#define enum_(namespace_name, enum_t,...)</div><div class="ttdoc">Provides the registration struct for enum.</div><div class="ttdef"><b>Definition</b> enum_register.h:135</div></div>
+<div class="ttc" id="aclassxtd_1_1enum__object_html"><div class="ttname"><a href="classxtd_1_1enum__object.html">xtd::enum_object</a></div><div class="ttdoc">Provides the base class for enumerations.</div><div class="ttdef"><b>Definition</b> enum_object.h:35</div></div>
+<div class="ttc" id="agroup__keywords_html_ga5f48a70a2aa3ba1ba74bd8a4cfc44691"><div class="ttname"><a href="group__keywords.html#ga5f48a70a2aa3ba1ba74bd8a4cfc44691">enum_</a></div><div class="ttdeci">#define enum_(namespace_name, enum_t,...)</div><div class="ttdoc">Provides the registration struct for enum.</div><div class="ttdef"><b>Definition</b> enum.h:49</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="enum_8cpp-example.html#a0">enum.cpp</a>, and <a class="el" href="parse_enum_8cpp-example.html#a0">parse_enum.cpp</a>.</dd>
 </dl>
@@ -2206,10 +2282,11 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
       </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="enum__register_8h.html">xtd.core/include/xtd/enum_register.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="enum__class_8h.html">xtd.core/include/xtd/enum_class.h</a>&gt;</code></p>
 
 <p>Provides the registration struct for enum class. </p>
-<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/enum&gt;</span> </div>
+</div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -2224,7 +2301,9 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <li>The enumeration's cannot be in a class or struct. The enum must be in the global namespace or in a namespace hierarchy. If the enumeration is in a class or struct, add operators manually and use <a class="el" href="structxtd_1_1enum__register.html" title="Provides the registration struct for enumerations.">xtd::enum_register</a> to register the enumeration identifiers. </li>
 </ul>
 </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code show how to use <a class="el" href="group__keywords.html#ga5f48a70a2aa3ba1ba74bd8a4cfc44691" title="Provides the registration struct for enum.">enum_</a> helper. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code show how to use <a class="el" href="group__keywords.html#ga5f48a70a2aa3ba1ba74bd8a4cfc44691" title="Provides the registration struct for enum.">enum_</a> helper. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/as&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/enum_class&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
@@ -2252,7 +2331,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line"><span class="comment">// values = [0, 1, 2, 3]</span></div>
 <div class="line"><span class="comment">// names = [value_one, value_two, value_three, value_four]</span></div>
 <div class="line"><span class="comment">// entries = [(0, value_one), (1, value_two), (2, value_three), (3, value_four)]</span></div>
-<div class="ttc" id="agroup__keywords_html_ga3cf593875eebd764cb406fa27ded6d93"><div class="ttname"><a href="group__keywords.html#ga3cf593875eebd764cb406fa27ded6d93">enum_class_</a></div><div class="ttdeci">#define enum_class_(namespace_name, enum_class_t,...)</div><div class="ttdoc">Provides the registration struct for enum class.</div><div class="ttdef"><b>Definition</b> enum_register.h:153</div></div>
+<div class="ttc" id="agroup__keywords_html_ga3cf593875eebd764cb406fa27ded6d93"><div class="ttname"><a href="group__keywords.html#ga3cf593875eebd764cb406fa27ded6d93">enum_class_</a></div><div class="ttdeci">#define enum_class_(namespace_name, enum_class_t,...)</div><div class="ttdoc">Provides the registration struct for enum class.</div><div class="ttdef"><b>Definition</b> enum_class.h:49</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="enum_class_8cpp-example.html#a0">enum_class.cpp</a>, <a class="el" href="enum_class_flags_8cpp-example.html#a0">enum_class_flags.cpp</a>, <a class="el" href="enum_class_flags_introspection_8cpp-example.html#a0">enum_class_flags_introspection.cpp</a>, <a class="el" href="enum_class_parse_8cpp-example.html#a0">enum_class_parse.cpp</a>, and <a class="el" href="parse_enum_class_8cpp-example.html#a0">parse_enum_class.cpp</a>.</dd>
 </dl>
@@ -2297,10 +2376,11 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
       </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="enum__register_8h.html">xtd.core/include/xtd/enum_register.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="enum__class_8h.html">xtd.core/include/xtd/enum_class.h</a>&gt;</code></p>
 
 <p>Provides the registration struct for enum class with specified underlying type. </p>
-<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/enum&gt;</span> </div>
+</div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -2316,7 +2396,9 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <li>The enumeration's cannot be in a class or struct. The enum must be in the global namespace or in a namespace hierarchy. If the enumeration is in a class or struct, add operators manually and use <a class="el" href="structxtd_1_1enum__register.html" title="Provides the registration struct for enumerations.">xtd::enum_register</a> to register the enumeration identifiers. </li>
 </ul>
 </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code show how to use <a class="el" href="group__keywords.html#ga23f683a98eff4df0bec973131eca5704" title="Provides the registration struct for enum class with specified underlying type.">enum_class_ut_</a> helper. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code show how to use <a class="el" href="group__keywords.html#ga23f683a98eff4df0bec973131eca5704" title="Provides the registration struct for enum class with specified underlying type.">enum_class_ut_</a> helper. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/as&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/enum_class&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
@@ -2344,7 +2426,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line"><span class="comment">// values = [0, 1, 2, 3]</span></div>
 <div class="line"><span class="comment">// names = [value_one, value_two, value_three, value_four]</span></div>
 <div class="line"><span class="comment">// entries = [(0, value_one), (1, value_two), (2, value_three), (3, value_four)]</span></div>
-<div class="ttc" id="agroup__keywords_html_ga23f683a98eff4df0bec973131eca5704"><div class="ttname"><a href="group__keywords.html#ga23f683a98eff4df0bec973131eca5704">enum_class_ut_</a></div><div class="ttdeci">#define enum_class_ut_(namespace_name, enum_class_t, underlying_t,...)</div><div class="ttdoc">Provides the registration struct for enum class with specified underlying type.</div><div class="ttdef"><b>Definition</b> enum_register.h:94</div></div>
+<div class="ttc" id="agroup__keywords_html_ga23f683a98eff4df0bec973131eca5704"><div class="ttname"><a href="group__keywords.html#ga23f683a98eff4df0bec973131eca5704">enum_class_ut_</a></div><div class="ttdeci">#define enum_class_ut_(namespace_name, enum_class_t, underlying_t,...)</div><div class="ttdoc">Provides the registration struct for enum class with specified underlying type.</div><div class="ttdef"><b>Definition</b> enum_class.h:29</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="enum_class_ut_8cpp-example.html#a0">enum_class_ut.cpp</a>.</dd>
 </dl>
@@ -2383,10 +2465,11 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
       </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="enum__register_8h.html">xtd.core/include/xtd/enum_register.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="enum__struct_8h.html">xtd.core/include/xtd/enum_struct.h</a>&gt;</code></p>
 
 <p>Provides the registration struct for enum struct. </p>
-<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/enum&gt;</span> </div>
+</div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -2401,7 +2484,9 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <li>The enumeration's cannot be in a class or struct. The enum must be in the global namespace or in a namespace hierarchy. If the enumeration is in a class or struct, add operators manually and use <a class="el" href="structxtd_1_1enum__register.html" title="Provides the registration struct for enumerations.">xtd::enum_register</a> to register the enumeration identifiers. </li>
 </ul>
 </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code show how to use <a class="el" href="group__keywords.html#ga5f48a70a2aa3ba1ba74bd8a4cfc44691" title="Provides the registration struct for enum.">enum_</a> helper. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code show how to use <a class="el" href="group__keywords.html#ga5f48a70a2aa3ba1ba74bd8a4cfc44691" title="Provides the registration struct for enum.">enum_</a> helper. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/as&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/enum_struct&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
@@ -2429,7 +2514,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line"><span class="comment">// values = [0, 1, 2, 3]</span></div>
 <div class="line"><span class="comment">// names = [value_one, value_two, value_three, value_four]</span></div>
 <div class="line"><span class="comment">// entries = [(0, value_one), (1, value_two), (2, value_three), (3, value_four)]</span></div>
-<div class="ttc" id="agroup__keywords_html_ga59ea5f69803bcfb367107f1cf66e5fff"><div class="ttname"><a href="group__keywords.html#ga59ea5f69803bcfb367107f1cf66e5fff">enum_struct_</a></div><div class="ttdeci">#define enum_struct_(namespace_name, enum_struct_t,...)</div><div class="ttdoc">Provides the registration struct for enum struct.</div><div class="ttdef"><b>Definition</b> enum_register.h:171</div></div>
+<div class="ttc" id="agroup__keywords_html_ga59ea5f69803bcfb367107f1cf66e5fff"><div class="ttname"><a href="group__keywords.html#ga59ea5f69803bcfb367107f1cf66e5fff">enum_struct_</a></div><div class="ttdeci">#define enum_struct_(namespace_name, enum_struct_t,...)</div><div class="ttdoc">Provides the registration struct for enum struct.</div><div class="ttdef"><b>Definition</b> enum_struct.h:49</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="enum_struct_8cpp-example.html#a0">enum_struct.cpp</a>, and <a class="el" href="parse_enum_struct_8cpp-example.html#a0">parse_enum_struct.cpp</a>.</dd>
 </dl>
@@ -2474,10 +2559,11 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
       </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="enum__register_8h.html">xtd.core/include/xtd/enum_register.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="enum__struct_8h.html">xtd.core/include/xtd/enum_struct.h</a>&gt;</code></p>
 
 <p>Provides the registration struct for enum with specified underlying type. </p>
-<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/enum&gt;</span> </div>
+</div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -2493,7 +2579,9 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <li>The enumeration's cannot be in a class or struct. The enum must be in the global namespace or in a namespace hierarchy. If the enumeration is in a class or struct, add operators manually and use <a class="el" href="structxtd_1_1enum__register.html" title="Provides the registration struct for enumerations.">xtd::enum_register</a> to register the enumeration identifiers. </li>
 </ul>
 </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code show how to use <a class="el" href="group__keywords.html#ga3844e63da56dbd2107788b5396857216" title="Provides the registration struct for enum with specified underlying type.">enum_struct_ut_</a> helper. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code show how to use <a class="el" href="group__keywords.html#ga3844e63da56dbd2107788b5396857216" title="Provides the registration struct for enum with specified underlying type.">enum_struct_ut_</a> helper. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/as&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/enum_struct&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
@@ -2522,7 +2610,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line"><span class="comment">// values = [0, 1, 2, 3]</span></div>
 <div class="line"><span class="comment">// names = [value_one, value_two, value_three, value_four]</span></div>
 <div class="line"><span class="comment">// entries = [(0, value_one), (1, value_two), (2, value_three), (3, value_four)]</span></div>
-<div class="ttc" id="agroup__keywords_html_ga3844e63da56dbd2107788b5396857216"><div class="ttname"><a href="group__keywords.html#ga3844e63da56dbd2107788b5396857216">enum_struct_ut_</a></div><div class="ttdeci">#define enum_struct_ut_(namespace_name, enum_struct_t, underlying_t,...)</div><div class="ttdoc">Provides the registration struct for enum with specified underlying type.</div><div class="ttdef"><b>Definition</b> enum_register.h:115</div></div>
+<div class="ttc" id="agroup__keywords_html_ga3844e63da56dbd2107788b5396857216"><div class="ttname"><a href="group__keywords.html#ga3844e63da56dbd2107788b5396857216">enum_struct_ut_</a></div><div class="ttdeci">#define enum_struct_ut_(namespace_name, enum_struct_t, underlying_t,...)</div><div class="ttdoc">Provides the registration struct for enum with specified underlying type.</div><div class="ttdef"><b>Definition</b> enum_struct.h:29</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="enum_struct_ut_8cpp-example.html#a0">enum_struct_ut.cpp</a>.</dd>
 </dl>
@@ -2567,10 +2655,11 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
       </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="enum__register_8h.html">xtd.core/include/xtd/enum_register.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="enum_8h.html">xtd.core/include/xtd/enum.h</a>&gt;</code></p>
 
 <p>Provides the registration struct for enum with specified underlying type. </p>
-<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/enum&gt;</span> </div>
+</div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -2586,7 +2675,9 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <li>The enumeration's cannot be in a class or struct. The enum must be in the global namespace or in a namespace hierarchy. If the enumeration is in a class or struct, add operators manually and use <a class="el" href="structxtd_1_1enum__register.html" title="Provides the registration struct for enumerations.">xtd::enum_register</a> to register the enumeration identifiers. </li>
 </ul>
 </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code show how to use <a class="el" href="group__keywords.html#gab2f79c6b0b3afc4eb78cb892fe72b373" title="Provides the registration struct for enum with specified underlying type.">enum_ut_</a> helper. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code show how to use <a class="el" href="group__keywords.html#gab2f79c6b0b3afc4eb78cb892fe72b373" title="Provides the registration struct for enum with specified underlying type.">enum_ut_</a> helper. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/as&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/enum&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
@@ -2614,7 +2705,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line"><span class="comment">// values = [0, 1, 2, 3]</span></div>
 <div class="line"><span class="comment">// names = [value_one, value_two, value_three, value_four]</span></div>
 <div class="line"><span class="comment">// entries = [(0, value_one), (1, value_two), (2, value_three), (3, value_four)]</span></div>
-<div class="ttc" id="agroup__keywords_html_gab2f79c6b0b3afc4eb78cb892fe72b373"><div class="ttname"><a href="group__keywords.html#gab2f79c6b0b3afc4eb78cb892fe72b373">enum_ut_</a></div><div class="ttdeci">#define enum_ut_(namespace_name, enum_t, underlying_t,...)</div><div class="ttdoc">Provides the registration struct for enum with specified underlying type.</div><div class="ttdef"><b>Definition</b> enum_register.h:73</div></div>
+<div class="ttc" id="agroup__keywords_html_gab2f79c6b0b3afc4eb78cb892fe72b373"><div class="ttname"><a href="group__keywords.html#gab2f79c6b0b3afc4eb78cb892fe72b373">enum_ut_</a></div><div class="ttdeci">#define enum_ut_(namespace_name, enum_t, underlying_t,...)</div><div class="ttdoc">Provides the registration struct for enum with specified underlying type.</div><div class="ttdef"><b>Definition</b> enum.h:29</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="enum_ut_8cpp-example.html#a0">enum_ut.cpp</a>.</dd>
 </dl>
@@ -2666,7 +2757,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
       </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="enum__set__attribute_8h.html">xtd.core/include/xtd/enum_set_attribute.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="flags__attribute_8h.html">xtd.core/include/xtd/flags_attribute.h</a>&gt;</code></p>
 
 <p>Provides the set attribute struct for enumerations helper. </p>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
@@ -2726,7 +2817,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line"> </div>
 <div class="line"><span class="comment">// Only this operator is needed for text_styles enum class to be recognized by xtd::ustring::format().</span></div>
 <div class="line"><span class="keyword">template</span>&lt;&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structxtd_1_1enum__register.html">xtd::enum_register</a>&lt;text_styles&gt; {</div>
-<div class="line">  <span class="keyword">explicit</span> <span class="keyword">operator</span> <span class="keyword">auto</span>() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> <a class="code hl_typedef" href="namespacextd.html#aa289cd12f69682df4a6d194b5b10e191">xtd::enum_collection&lt;text_styles&gt;</a> {{text_styles::normal, <span class="stringliteral">&quot;normal&quot;</span>}, {text_styles::bold, <span class="stringliteral">&quot;bold&quot;</span>}, {text_styles::italic, <span class="stringliteral">&quot;italic&quot;</span>}, {text_styles::underline, <span class="stringliteral">&quot;underline&quot;</span>}, {text_styles::strikeout, <span class="stringliteral">&quot;strikeout&quot;</span>}};}</div>
+<div class="line">  <span class="keyword">explicit</span> <span class="keyword">operator</span> <span class="keyword">auto</span>() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> <a class="code hl_typedef" href="group__xtd__core.html#gaa289cd12f69682df4a6d194b5b10e191">xtd::enum_collection&lt;text_styles&gt;</a> {{text_styles::normal, <span class="stringliteral">&quot;normal&quot;</span>}, {text_styles::bold, <span class="stringliteral">&quot;bold&quot;</span>}, {text_styles::italic, <span class="stringliteral">&quot;italic&quot;</span>}, {text_styles::underline, <span class="stringliteral">&quot;underline&quot;</span>}, {text_styles::strikeout, <span class="stringliteral">&quot;strikeout&quot;</span>}};}</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
@@ -2756,9 +2847,9 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line"><span class="comment">// 05</span></div>
 <div class="line"><span class="comment">// 0x5</span></div>
 <div class="line"><span class="comment">// 0x5</span></div>
-<div class="ttc" id="agroup__keywords_html_gaea49fae71107df8769685efb159c181a"><div class="ttname"><a href="group__keywords.html#gaea49fae71107df8769685efb159c181a">flags_attribute_</a></div><div class="ttdeci">#define flags_attribute_(namespace_name, enum_type)</div><div class="ttdoc">Provides the set attribute struct for enumerations helper.</div><div class="ttdef"><b>Definition</b> enum_set_attribute.h:78</div></div>
-<div class="ttc" id="anamespacextd_html_aa289cd12f69682df4a6d194b5b10e191"><div class="ttname"><a href="namespacextd.html#aa289cd12f69682df4a6d194b5b10e191">xtd::enum_collection</a></div><div class="ttdeci">std::vector&lt; std::pair&lt; enum_t, xtd::ustring &gt; &gt; enum_collection</div><div class="ttdoc">Represents a pair of an enum_t value and a string of an enum of type enum_t.</div><div class="ttdef"><b>Definition</b> enum_collection.h:12</div></div>
-<div class="ttc" id="astructxtd_1_1enum__register_html"><div class="ttname"><a href="structxtd_1_1enum__register.html">xtd::enum_register</a></div><div class="ttdoc">Provides the registration struct for enumerations.</div><div class="ttdef"><b>Definition</b> enum_register.h:36</div></div>
+<div class="ttc" id="agroup__keywords_html_gaea49fae71107df8769685efb159c181a"><div class="ttname"><a href="group__keywords.html#gaea49fae71107df8769685efb159c181a">flags_attribute_</a></div><div class="ttdeci">#define flags_attribute_(namespace_name, enum_type)</div><div class="ttdoc">Provides the set attribute struct for enumerations helper.</div><div class="ttdef"><b>Definition</b> flags_attribute.h:35</div></div>
+<div class="ttc" id="agroup__xtd__core_html_gaa289cd12f69682df4a6d194b5b10e191"><div class="ttname"><a href="group__xtd__core.html#gaa289cd12f69682df4a6d194b5b10e191">xtd::enum_collection</a></div><div class="ttdeci">std::vector&lt; std::pair&lt; enum_t, xtd::ustring &gt; &gt; enum_collection</div><div class="ttdoc">Represents a pair of an enum_t value and a string of an enum of type enum_t.</div><div class="ttdef"><b>Definition</b> enum_collection.h:19</div></div>
+<div class="ttc" id="astructxtd_1_1enum__register_html"><div class="ttname"><a href="structxtd_1_1enum__register.html">xtd::enum_register</a></div><div class="ttdoc">Provides the registration struct for enumerations.</div><div class="ttdef"><b>Definition</b> enum_register.h:38</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="enum_class_flags_8cpp-example.html#a1">enum_class_flags.cpp</a>, <a class="el" href="enum_class_flags_introspection_8cpp-example.html#a1">enum_class_flags_introspection.cpp</a>, and <a class="el" href="format_enum_class_flags_8cpp-example.html#a0">format_enum_class_flags.cpp</a>.</dd>
 </dl>
@@ -2920,7 +3011,7 @@ If you need to get the fully-qualified name, you can use the typeof_ expression 
 <div class="line"><span class="comment">// two</span></div>
 <div class="line"><span class="comment">// three four</span></div>
 <div class="line"><span class="comment">// five</span></div>
-<div class="ttc" id="aclassxtd_1_1console_html"><div class="ttname"><a href="classxtd_1_1console.html">xtd::console</a></div><div class="ttdoc">Represents the standard input, output, and error streams for console applications.</div><div class="ttdef"><b>Definition</b> console.h:32</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html"><div class="ttname"><a href="classxtd_1_1console.html">xtd::console</a></div><div class="ttdoc">Represents the standard input, output, and error streams for console applications.</div><div class="ttdef"><b>Definition</b> console.h:34</div></div>
 <div class="ttc" id="aclassxtd_1_1environment_html"><div class="ttname"><a href="classxtd_1_1environment.html">xtd::environment</a></div><div class="ttdoc">The environment class.</div><div class="ttdef"><b>Definition</b> environment.h:74</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt></dt><dd>This example show a main method with a return code and without arguments <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
@@ -3202,7 +3293,7 @@ If you need to get the fully-qualified name, you can use the typeof_ expression 
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 10 2023 22:54:51 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 11 2023 18:07:46 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -85,7 +85,9 @@ $(function() {
 <ul>
 <li>Shows how to use <a class="el" href="classxtd_1_1enum__object.html" title="Provides the base class for enumerations.">xtd::enum_object</a> and enum_register classes.</li>
 </ul>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/as&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/enum_class&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
@@ -97,7 +99,7 @@ $(function() {
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">template</span>&lt;&gt; <span class="keyword">struct </span><a id="_a0" name="_a0"></a><a class="code hl_struct" href="structxtd_1_1enum__register.html">xtd::enum_register</a>&lt;enum_test&gt; {</div>
-<div class="line">  <span class="keyword">explicit</span> <span class="keyword">operator</span> <span class="keyword">auto</span>() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> <a class="code hl_typedef" href="namespacextd.html#aa289cd12f69682df4a6d194b5b10e191">xtd::enum_collection&lt;enum_test&gt;</a> {{enum_test::value_one, <span class="stringliteral">&quot;value_one&quot;</span>}, {enum_test::value_two, <span class="stringliteral">&quot;value_two&quot;</span>}, {enum_test::value_three, <span class="stringliteral">&quot;value_three&quot;</span>}, {enum_test::value_four, <span class="stringliteral">&quot;value_four&quot;</span>}};}</div>
+<div class="line">  <span class="keyword">explicit</span> <span class="keyword">operator</span> <span class="keyword">auto</span>() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> <a class="code hl_typedef" href="group__xtd__core.html#gaa289cd12f69682df4a6d194b5b10e191">xtd::enum_collection&lt;enum_test&gt;</a> {{enum_test::value_one, <span class="stringliteral">&quot;value_one&quot;</span>}, {enum_test::value_two, <span class="stringliteral">&quot;value_two&quot;</span>}, {enum_test::value_three, <span class="stringliteral">&quot;value_three&quot;</span>}, {enum_test::value_four, <span class="stringliteral">&quot;value_four&quot;</span>}};}</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
@@ -117,15 +119,15 @@ $(function() {
 <div class="line"><span class="comment">// values = [0, 1, 2, 3]</span></div>
 <div class="line"><span class="comment">// names = [value_one, value_two, value_three, value_four]</span></div>
 <div class="line"><span class="comment">// entries = [(0, value_one), (1, value_two), (2, value_three), (3, value_four)]</span></div>
-<div class="ttc" id="aclassxtd_1_1enum__object_html"><div class="ttname"><a href="classxtd_1_1enum__object.html">xtd::enum_object</a></div><div class="ttdoc">Provides the base class for enumerations.</div><div class="ttdef"><b>Definition</b> enum_object.h:33</div></div>
+<div class="ttc" id="aclassxtd_1_1enum__object_html"><div class="ttname"><a href="classxtd_1_1enum__object.html">xtd::enum_object</a></div><div class="ttdoc">Provides the base class for enumerations.</div><div class="ttdef"><b>Definition</b> enum_object.h:35</div></div>
+<div class="ttc" id="agroup__xtd__core_html_gaa289cd12f69682df4a6d194b5b10e191"><div class="ttname"><a href="group__xtd__core.html#gaa289cd12f69682df4a6d194b5b10e191">xtd::enum_collection</a></div><div class="ttdeci">std::vector&lt; std::pair&lt; enum_t, xtd::ustring &gt; &gt; enum_collection</div><div class="ttdoc">Represents a pair of an enum_t value and a string of an enum of type enum_t.</div><div class="ttdef"><b>Definition</b> enum_collection.h:19</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
-<div class="ttc" id="anamespacextd_html_aa289cd12f69682df4a6d194b5b10e191"><div class="ttname"><a href="namespacextd.html#aa289cd12f69682df4a6d194b5b10e191">xtd::enum_collection</a></div><div class="ttdeci">std::vector&lt; std::pair&lt; enum_t, xtd::ustring &gt; &gt; enum_collection</div><div class="ttdoc">Represents a pair of an enum_t value and a string of an enum of type enum_t.</div><div class="ttdef"><b>Definition</b> enum_collection.h:12</div></div>
-<div class="ttc" id="astructxtd_1_1enum__register_html"><div class="ttname"><a href="structxtd_1_1enum__register.html">xtd::enum_register</a></div><div class="ttdoc">Provides the registration struct for enumerations.</div><div class="ttdef"><b>Definition</b> enum_register.h:36</div></div>
+<div class="ttc" id="astructxtd_1_1enum__register_html"><div class="ttname"><a href="structxtd_1_1enum__register.html">xtd::enum_register</a></div><div class="ttdoc">Provides the registration struct for enumerations.</div><div class="ttdef"><b>Definition</b> enum_register.h:38</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 10 2023 22:54:47 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 11 2023 18:07:43 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

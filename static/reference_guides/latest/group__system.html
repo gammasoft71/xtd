@@ -257,22 +257,10 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gab155c2e1615c761866911598011c74b3"><td class="memTemplParams" colspan="2">template&lt;typename type_t , typename ... args_t&gt; </td></tr>
-<tr class="memitem:gab155c2e1615c761866911598011c74b3"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1box.html">box</a>&lt; type_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__system.html#gab155c2e1615c761866911598011c74b3">xtd::boxing</a> (args_t &amp;&amp;...args) noexcept</td></tr>
-<tr class="memdesc:gab155c2e1615c761866911598011c74b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows to box an object.  <br /></td></tr>
-<tr class="separator:gab155c2e1615c761866911598011c74b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7352fcff0da12feb0aff421fc8c41d15"><td class="memTemplParams" colspan="2">template&lt;typename type_t &gt; </td></tr>
-<tr class="memitem:ga7352fcff0da12feb0aff421fc8c41d15"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__system.html#ga7352fcff0da12feb0aff421fc8c41d15">xtd::boxing</a> (const type_t &amp;value) noexcept</td></tr>
-<tr class="memdesc:ga7352fcff0da12feb0aff421fc8c41d15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows to box an object.  <br /></td></tr>
-<tr class="separator:ga7352fcff0da12feb0aff421fc8c41d15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad7c8890de68091b1a95110ec75c34e99"><td class="memTemplParams" colspan="2">template&lt;class type_t , class function_t &gt; </td></tr>
 <tr class="memitem:gad7c8890de68091b1a95110ec75c34e99"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__system.html#gad7c8890de68091b1a95110ec75c34e99">xtd::register_any_stringer</a> (const function_t &amp;<a class="el" href="group__xtd__core.html#ga655ac2d710f5daaa327ac82c8c235de9">func</a>)</td></tr>
 <tr class="memdesc:gad7c8890de68091b1a95110ec75c34e99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register an any stringer method for a specified type.  <br /></td></tr>
 <tr class="separator:gad7c8890de68091b1a95110ec75c34e99"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5aa911c016af5795d0482eefb481fcc9"><td class="memTemplParams" colspan="2">template&lt;typename type_t &gt; </td></tr>
-<tr class="memitem:ga5aa911c016af5795d0482eefb481fcc9"><td class="memTemplItemLeft" align="right" valign="top">type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__system.html#ga5aa911c016af5795d0482eefb481fcc9">xtd::unboxing</a> (const <a class="el" href="classxtd_1_1box.html">xtd::box</a>&lt; type_t &gt; &amp;value) noexcept</td></tr>
-<tr class="memdesc:ga5aa911c016af5795d0482eefb481fcc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows to unbox an object.  <br /></td></tr>
-<tr class="separator:ga5aa911c016af5795d0482eefb481fcc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga690f99e87ad4402abed7510a5e18bc15"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
 <tr class="memitem:ga690f99e87ad4402abed7510a5e18bc15"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__system.html#ga690f99e87ad4402abed7510a5e18bc15">xtd::unregister_any_stringer</a> ()</td></tr>
 <tr class="memdesc:ga690f99e87ad4402abed7510a5e18bc15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unregister an any stringer method for a specified type.  <br /></td></tr>
@@ -294,6 +282,8 @@ Functions</h2></td></tr>
 <p><code>#include &lt;<a class="el" href="boolean__object_8h.html">xtd.core/include/xtd/boolean_object.h</a>&gt;</code></p>
 
 <p>Represent a boxed bool. </p>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/boolean_object&gt;</span> </div>
+</div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to create and use <a class="el" href="group__system.html#ga020fbeceaf011505de3ac30168375664" title="Represent a boxed bool.">xtd::boolean_object</a>. <div class="fragment"><div class="line"><span class="keyword">auto</span> stringer = [](<span class="keyword">const</span> <span class="keywordtype">object</span>&amp; value) {<span class="keywordflow">return</span> value.to_string();};</div>
@@ -302,7 +292,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="keyword">auto</span> result = stringer(boxed_object);</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;result = {}&quot;</span>, result); <span class="comment">// Display: result = true;</span></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="agroup__system_html_ga020fbeceaf011505de3ac30168375664"><div class="ttname"><a href="group__system.html#ga020fbeceaf011505de3ac30168375664">xtd::boolean_object</a></div><div class="ttdeci">box&lt; bool &gt; boolean_object</div><div class="ttdoc">Represent a boxed bool.</div><div class="ttdef"><b>Definition</b> boolean_object.h:24</div></div>
+<div class="ttc" id="agroup__system_html_ga020fbeceaf011505de3ac30168375664"><div class="ttname"><a href="group__system.html#ga020fbeceaf011505de3ac30168375664">xtd::boolean_object</a></div><div class="ttdeci">box&lt; bool &gt; boolean_object</div><div class="ttdoc">Represent a boxed bool.</div><div class="ttdef"><b>Definition</b> boolean_object.h:26</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -322,6 +312,8 @@ Functions</h2></td></tr>
 <p><code>#include &lt;<a class="el" href="byte__object_8h.html">xtd.core/include/xtd/byte_object.h</a>&gt;</code></p>
 
 <p>Represent a boxed byte. </p>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/byte_object&gt;</span> </div>
+</div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to create and use <a class="el" href="group__system.html#ga94831211c5798071ff44bbe214d093ca" title="Represent a boxed byte.">xtd::byte_object</a>. <div class="fragment"><div class="line"><span class="keyword">auto</span> stringer = [](<span class="keyword">const</span> <span class="keywordtype">object</span>&amp; value) {<span class="keywordflow">return</span> value.to_string();};</div>
@@ -329,7 +321,7 @@ Functions</h2></td></tr>
 <div class="line"><a class="code hl_typedef" href="group__system.html#ga94831211c5798071ff44bbe214d093ca">byte_object</a> boxed_object = unboxed_object;</div>
 <div class="line"><span class="keyword">auto</span> result = stringer(boxed_object);</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;result = {}&quot;</span>, result); <span class="comment">// Display: result = 42;</span></div>
-<div class="ttc" id="agroup__system_html_ga94831211c5798071ff44bbe214d093ca"><div class="ttname"><a href="group__system.html#ga94831211c5798071ff44bbe214d093ca">xtd::byte_object</a></div><div class="ttdeci">box_integer&lt; xtd::byte &gt; byte_object</div><div class="ttdoc">Represent a boxed byte.</div><div class="ttdef"><b>Definition</b> byte_object.h:24</div></div>
+<div class="ttc" id="agroup__system_html_ga94831211c5798071ff44bbe214d093ca"><div class="ttname"><a href="group__system.html#ga94831211c5798071ff44bbe214d093ca">xtd::byte_object</a></div><div class="ttdeci">box_integer&lt; xtd::byte &gt; byte_object</div><div class="ttdoc">Represent a boxed byte.</div><div class="ttdef"><b>Definition</b> byte_object.h:26</div></div>
 <div class="ttc" id="agroup__types_html_gaf8d0aa5786861bead085592c31c09849"><div class="ttname"><a href="group__types.html#gaf8d0aa5786861bead085592c31c09849">xtd::byte</a></div><div class="ttdeci">uint_least8_t byte</div><div class="ttdoc">Represents a 8-bit unsigned integer.</div><div class="ttdef"><b>Definition</b> types.h:26</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -350,6 +342,8 @@ Functions</h2></td></tr>
 <p><code>#include &lt;<a class="el" href="char16__object_8h.html">xtd.core/include/xtd/char16_object.h</a>&gt;</code></p>
 
 <p>Represent a boxed char16. </p>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/char16_object&gt;</span> </div>
+</div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to create and use <a class="el" href="group__system.html#ga3d1ccaa0be09f9c2106e98d3cf646d93" title="Represent a boxed char16.">xtd::char16_object</a>. <div class="fragment"><div class="line"><span class="keyword">auto</span> stringer = [](<span class="keyword">const</span> <span class="keywordtype">object</span>&amp; value) {<span class="keywordflow">return</span> value.to_string();};</div>
@@ -357,7 +351,7 @@ Functions</h2></td></tr>
 <div class="line"><a class="code hl_typedef" href="group__system.html#ga3d1ccaa0be09f9c2106e98d3cf646d93">char16_object</a> boxed_object = unboxed_object;</div>
 <div class="line"><span class="keyword">auto</span> result = stringer(boxed_object);</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;result = {}&quot;</span>, result); <span class="comment">// Display: result = a;</span></div>
-<div class="ttc" id="agroup__system_html_ga3d1ccaa0be09f9c2106e98d3cf646d93"><div class="ttname"><a href="group__system.html#ga3d1ccaa0be09f9c2106e98d3cf646d93">xtd::char16_object</a></div><div class="ttdeci">box_char&lt; char16 &gt; char16_object</div><div class="ttdoc">Represent a boxed char16.</div><div class="ttdef"><b>Definition</b> char16_object.h:24</div></div>
+<div class="ttc" id="agroup__system_html_ga3d1ccaa0be09f9c2106e98d3cf646d93"><div class="ttname"><a href="group__system.html#ga3d1ccaa0be09f9c2106e98d3cf646d93">xtd::char16_object</a></div><div class="ttdeci">box_char&lt; char16 &gt; char16_object</div><div class="ttdoc">Represent a boxed char16.</div><div class="ttdef"><b>Definition</b> char16_object.h:26</div></div>
 <div class="ttc" id="agroup__types_html_ga39d5c4947c807e5f78b8a9abe3692570"><div class="ttname"><a href="group__types.html#ga39d5c4947c807e5f78b8a9abe3692570">xtd::char16</a></div><div class="ttdeci">char16_t char16</div><div class="ttdoc">Represents a 16-bit unicode character.</div><div class="ttdef"><b>Definition</b> types.h:42</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a7b774effe4a349c6dd82ad4f4f21d34c"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b774effe4a349c6dd82ad4f4f21d34c">xtd::console_key::u</a></div><div class="ttdeci">@ u</div><div class="ttdoc">The U key.</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -379,6 +373,8 @@ Functions</h2></td></tr>
 <p><code>#include &lt;<a class="el" href="char32__object_8h.html">xtd.core/include/xtd/char32_object.h</a>&gt;</code></p>
 
 <p>Represent a boxed char32. </p>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/char32_object&gt;</span> </div>
+</div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to create and use <a class="el" href="group__system.html#ga3c497741432681e6599591e1c7580cb2" title="Represent a boxed char32.">xtd::char32_object</a>. <div class="fragment"><div class="line"><span class="keyword">auto</span> stringer = [](<span class="keyword">const</span> <span class="keywordtype">object</span>&amp; value) {<span class="keywordflow">return</span> value.to_string();};</div>
@@ -386,7 +382,7 @@ Functions</h2></td></tr>
 <div class="line"><a class="code hl_typedef" href="group__system.html#ga3c497741432681e6599591e1c7580cb2">char32_object</a> boxed_object = unboxed_object;</div>
 <div class="line"><span class="keyword">auto</span> result = stringer(boxed_object);</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;result = {}&quot;</span>, result); <span class="comment">// Display: result = a;</span></div>
-<div class="ttc" id="agroup__system_html_ga3c497741432681e6599591e1c7580cb2"><div class="ttname"><a href="group__system.html#ga3c497741432681e6599591e1c7580cb2">xtd::char32_object</a></div><div class="ttdeci">box_char&lt; char32 &gt; char32_object</div><div class="ttdoc">Represent a boxed char32.</div><div class="ttdef"><b>Definition</b> char32_object.h:24</div></div>
+<div class="ttc" id="agroup__system_html_ga3c497741432681e6599591e1c7580cb2"><div class="ttname"><a href="group__system.html#ga3c497741432681e6599591e1c7580cb2">xtd::char32_object</a></div><div class="ttdeci">box_char&lt; char32 &gt; char32_object</div><div class="ttdoc">Represent a boxed char32.</div><div class="ttdef"><b>Definition</b> char32_object.h:26</div></div>
 <div class="ttc" id="agroup__types_html_ga989a1148b6ff15567dca430966b17c92"><div class="ttname"><a href="group__types.html#ga989a1148b6ff15567dca430966b17c92">xtd::char32</a></div><div class="ttdeci">char32_t char32</div><div class="ttdoc">Represents a 32-bit unicode character.</div><div class="ttdef"><b>Definition</b> types.h:50</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -407,6 +403,8 @@ Functions</h2></td></tr>
 <p><code>#include &lt;<a class="el" href="char8__object_8h.html">xtd.core/include/xtd/char8_object.h</a>&gt;</code></p>
 
 <p>Represent a boxed char8. </p>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/char8_object&gt;</span> </div>
+</div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to create and use <a class="el" href="group__system.html#ga7844f7ef362da9d6e8a6ca93760cba94" title="Represent a boxed char8.">xtd::char8_object</a>. <div class="fragment"><div class="line"><span class="keyword">auto</span> stringer = [](<span class="keyword">const</span> <span class="keywordtype">object</span>&amp; value) {<span class="keywordflow">return</span> value.to_string();};</div>
@@ -414,7 +412,7 @@ Functions</h2></td></tr>
 <div class="line"><a class="code hl_typedef" href="group__system.html#ga7844f7ef362da9d6e8a6ca93760cba94">char8_object</a> boxed_object = unboxed_object;</div>
 <div class="line"><span class="keyword">auto</span> result = stringer(boxed_object);</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;result = {}&quot;</span>, result); <span class="comment">// Display: result = a;</span></div>
-<div class="ttc" id="agroup__system_html_ga7844f7ef362da9d6e8a6ca93760cba94"><div class="ttname"><a href="group__system.html#ga7844f7ef362da9d6e8a6ca93760cba94">xtd::char8_object</a></div><div class="ttdeci">box_char&lt; char8 &gt; char8_object</div><div class="ttdoc">Represent a boxed char8.</div><div class="ttdef"><b>Definition</b> char8_object.h:24</div></div>
+<div class="ttc" id="agroup__system_html_ga7844f7ef362da9d6e8a6ca93760cba94"><div class="ttname"><a href="group__system.html#ga7844f7ef362da9d6e8a6ca93760cba94">xtd::char8_object</a></div><div class="ttdeci">box_char&lt; char8 &gt; char8_object</div><div class="ttdoc">Represent a boxed char8.</div><div class="ttdef"><b>Definition</b> char8_object.h:26</div></div>
 <div class="ttc" id="agroup__types_html_ga1259090c8918e75847a8cb2a64b8912a"><div class="ttname"><a href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">xtd::char8</a></div><div class="ttdeci">char8_t char8</div><div class="ttdoc">Represents a 8-bit unicode character.</div><div class="ttdef"><b>Definition</b> types.h:34</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -435,6 +433,8 @@ Functions</h2></td></tr>
 <p><code>#include &lt;<a class="el" href="char__object_8h.html">xtd.core/include/xtd/char_object.h</a>&gt;</code></p>
 
 <p>Represent a boxed char. </p>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/char_object&gt;</span> </div>
+</div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to create and use <a class="el" href="group__system.html#gaa1de2ea24769d6024df6172bd9355575" title="Represent a boxed char.">xtd::char_object</a>. <div class="fragment"><div class="line"><span class="keyword">auto</span> stringer = [](<span class="keyword">const</span> <span class="keywordtype">object</span>&amp; value) {<span class="keywordflow">return</span> value.to_string();};</div>
@@ -442,7 +442,7 @@ Functions</h2></td></tr>
 <div class="line"><a class="code hl_typedef" href="group__system.html#gaa1de2ea24769d6024df6172bd9355575">char_object</a> boxed_object = unboxed_object;</div>
 <div class="line"><span class="keyword">auto</span> result = stringer(boxed_object);</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;result = {}&quot;</span>, result); <span class="comment">// Display: result = a;</span></div>
-<div class="ttc" id="agroup__system_html_gaa1de2ea24769d6024df6172bd9355575"><div class="ttname"><a href="group__system.html#gaa1de2ea24769d6024df6172bd9355575">xtd::char_object</a></div><div class="ttdeci">box_char&lt; char &gt; char_object</div><div class="ttdoc">Represent a boxed char.</div><div class="ttdef"><b>Definition</b> char_object.h:24</div></div>
+<div class="ttc" id="agroup__system_html_gaa1de2ea24769d6024df6172bd9355575"><div class="ttname"><a href="group__system.html#gaa1de2ea24769d6024df6172bd9355575">xtd::char_object</a></div><div class="ttdeci">box_char&lt; char &gt; char_object</div><div class="ttdoc">Represent a boxed char.</div><div class="ttdef"><b>Definition</b> char_object.h:26</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -462,6 +462,8 @@ Functions</h2></td></tr>
 <p><code>#include &lt;<a class="el" href="decimal__object_8h.html">xtd.core/include/xtd/decimal_object.h</a>&gt;</code></p>
 
 <p>Represent a boxed decimal. </p>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/decimal_object&gt;</span> </div>
+</div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to create and use <a class="el" href="group__system.html#ga9c0f11ebf71e3121a21e785a0c97c99d" title="Represent a boxed double.">xtd::double_object</a>. <div class="fragment"><div class="line"><span class="keyword">auto</span> stringer = [](<span class="keyword">const</span> <span class="keywordtype">object</span>&amp; value) {<span class="keywordflow">return</span> value.to_string();};</div>
@@ -469,7 +471,7 @@ Functions</h2></td></tr>
 <div class="line"><a class="code hl_typedef" href="group__system.html#ga279a769163dd10eb201203036013a846">decimal_object</a> boxed_object = unboxed_object;</div>
 <div class="line"><span class="keyword">auto</span> result = stringer(boxed_object);</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;result = {}&quot;</span>, result); <span class="comment">// Display: result = 3.14;</span></div>
-<div class="ttc" id="agroup__system_html_ga279a769163dd10eb201203036013a846"><div class="ttname"><a href="group__system.html#ga279a769163dd10eb201203036013a846">xtd::decimal_object</a></div><div class="ttdeci">box_floating_point&lt; decimal &gt; decimal_object</div><div class="ttdoc">Represent a boxed decimal.</div><div class="ttdef"><b>Definition</b> decimal_object.h:24</div></div>
+<div class="ttc" id="agroup__system_html_ga279a769163dd10eb201203036013a846"><div class="ttname"><a href="group__system.html#ga279a769163dd10eb201203036013a846">xtd::decimal_object</a></div><div class="ttdeci">box_floating_point&lt; decimal &gt; decimal_object</div><div class="ttdoc">Represent a boxed decimal.</div><div class="ttdef"><b>Definition</b> decimal_object.h:26</div></div>
 <div class="ttc" id="agroup__types_html_ga255b88769d29fe91661cacc7720f265a"><div class="ttname"><a href="group__types.html#ga255b88769d29fe91661cacc7720f265a">xtd::decimal</a></div><div class="ttdeci">long double decimal</div><div class="ttdoc">Represents a decimal-precision floating-point number.</div><div class="ttdef"><b>Definition</b> types.h:58</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -490,6 +492,8 @@ Functions</h2></td></tr>
 <p><code>#include &lt;<a class="el" href="double__object_8h.html">xtd.core/include/xtd/double_object.h</a>&gt;</code></p>
 
 <p>Represent a boxed double. </p>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/double_object&gt;</span> </div>
+</div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to create and use <a class="el" href="group__system.html#ga9c0f11ebf71e3121a21e785a0c97c99d" title="Represent a boxed double.">xtd::double_object</a>. <div class="fragment"><div class="line"><span class="keyword">auto</span> stringer = [](<span class="keyword">const</span> <span class="keywordtype">object</span>&amp; value) {<span class="keywordflow">return</span> value.to_string();};</div>
@@ -497,7 +501,7 @@ Functions</h2></td></tr>
 <div class="line"><a class="code hl_typedef" href="group__system.html#ga9c0f11ebf71e3121a21e785a0c97c99d">double_object</a> boxed_object = unboxed_object;</div>
 <div class="line"><span class="keyword">auto</span> result = stringer(boxed_object);</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;result = {}&quot;</span>, result); <span class="comment">// Display: result = 3.14;</span></div>
-<div class="ttc" id="agroup__system_html_ga9c0f11ebf71e3121a21e785a0c97c99d"><div class="ttname"><a href="group__system.html#ga9c0f11ebf71e3121a21e785a0c97c99d">xtd::double_object</a></div><div class="ttdeci">box_floating_point&lt; double &gt; double_object</div><div class="ttdoc">Represent a boxed double.</div><div class="ttdef"><b>Definition</b> double_object.h:24</div></div>
+<div class="ttc" id="agroup__system_html_ga9c0f11ebf71e3121a21e785a0c97c99d"><div class="ttname"><a href="group__system.html#ga9c0f11ebf71e3121a21e785a0c97c99d">xtd::double_object</a></div><div class="ttdeci">box_floating_point&lt; double &gt; double_object</div><div class="ttdoc">Represent a boxed double.</div><div class="ttdef"><b>Definition</b> double_object.h:26</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -823,6 +827,8 @@ Functions</h2></td></tr>
 <p><code>#include &lt;<a class="el" href="wchar__object_8h.html">xtd.core/include/xtd/wchar_object.h</a>&gt;</code></p>
 
 <p>Represent a boxed wchar. </p>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/wchar_object&gt;</span> </div>
+</div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to create and use <a class="el" href="group__system.html#gaa5ac5641de5f9362829662a60349ecde" title="Represent a boxed wchar.">xtd::wchar_object</a>. <div class="fragment"><div class="line"><span class="keyword">auto</span> stringer = [](<span class="keyword">const</span> <span class="keywordtype">object</span>&amp; value) {<span class="keywordflow">return</span> value.to_string();};</div>
@@ -830,97 +836,13 @@ Functions</h2></td></tr>
 <div class="line"><a class="code hl_typedef" href="group__system.html#gaa5ac5641de5f9362829662a60349ecde">wchar_object</a> boxed_object = unboxed_object;</div>
 <div class="line"><span class="keyword">auto</span> result = stringer(boxed_object);</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;result = {}&quot;</span>, result); <span class="comment">// Display: result = a;</span></div>
-<div class="ttc" id="agroup__system_html_gaa5ac5641de5f9362829662a60349ecde"><div class="ttname"><a href="group__system.html#gaa5ac5641de5f9362829662a60349ecde">xtd::wchar_object</a></div><div class="ttdeci">box_char&lt; wchar &gt; wchar_object</div><div class="ttdoc">Represent a boxed wchar.</div><div class="ttdef"><b>Definition</b> wchar_object.h:24</div></div>
+<div class="ttc" id="agroup__system_html_gaa5ac5641de5f9362829662a60349ecde"><div class="ttname"><a href="group__system.html#gaa5ac5641de5f9362829662a60349ecde">xtd::wchar_object</a></div><div class="ttdeci">box_char&lt; wchar &gt; wchar_object</div><div class="ttdoc">Represent a boxed wchar.</div><div class="ttdef"><b>Definition</b> wchar_object.h:26</div></div>
 <div class="ttc" id="agroup__types_html_ga155357d92cf162b71b396e46accee518"><div class="ttname"><a href="group__types.html#ga155357d92cf162b71b396e46accee518">xtd::wchar</a></div><div class="ttdeci">wchar_t wchar</div><div class="ttdoc">Represents a wide character.</div><div class="ttdef"><b>Definition</b> types.h:185</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="gab155c2e1615c761866911598011c74b3" name="gab155c2e1615c761866911598011c74b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab155c2e1615c761866911598011c74b3">&#9670;&#160;</a></span>boxing() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename type_t , typename ... args_t&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1box.html">box</a>&lt; type_t &gt; xtd::boxing </td>
-          <td>(</td>
-          <td class="paramtype">args_t &amp;&amp;...&#160;</td>
-          <td class="paramname"><em>args</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><code>#include &lt;<a class="el" href="boxing_8h.html">xtd.core/include/xtd/boxing.h</a>&gt;</code></p>
-
-<p>Allows to box an object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">...args</td><td>Params used to initialize object. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Boxed object. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The boxed object must implement operator == and operator &lt; because a <a class="el" href="classxtd_1_1box.html" title="Represents a boxed object.">xtd::box</a> implement <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> and <a class="el" href="classxtd_1_1iequatable.html" title="Defines a generalized method that a value type or class implements to create a type-specific method f...">xtd::iequatable</a> interfaces. </dd></dl>
-<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
-<dl class="section user"><dt>Library</dt><dd>xtd.core </dd></dl>
-
-</div>
-</div>
-<a id="ga7352fcff0da12feb0aff421fc8c41d15" name="ga7352fcff0da12feb0aff421fc8c41d15"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga7352fcff0da12feb0aff421fc8c41d15">&#9670;&#160;</a></span>boxing() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename type_t &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto xtd::boxing </td>
-          <td>(</td>
-          <td class="paramtype">const type_t &amp;&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><code>#include &lt;<a class="el" href="boxing_8h.html">xtd.core/include/xtd/boxing.h</a>&gt;</code></p>
-
-<p>Allows to box an object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>Value used to initialize object. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Boxed object. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The boxed object must implement operator == and operator &lt; because a <a class="el" href="classxtd_1_1box.html" title="Represents a boxed object.">xtd::box</a> implement <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> and <a class="el" href="classxtd_1_1iequatable.html" title="Defines a generalized method that a value type or class implements to create a type-specific method f...">xtd::iequatable</a> interfaces. </dd></dl>
-<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
-<dl class="section user"><dt>Library</dt><dd>xtd.core </dd></dl>
-
-</div>
-</div>
 <a id="gad7c8890de68091b1a95110ec75c34e99" name="gad7c8890de68091b1a95110ec75c34e99"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gad7c8890de68091b1a95110ec75c34e99">&#9670;&#160;</a></span>register_any_stringer()</h2>
 
@@ -947,7 +869,7 @@ template&lt;class type_t , class function_t &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="any_8h.html">xtd.core/include/xtd/any.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="register__any__stringer_8h.html">xtd.core/include/xtd/register_any_stringer.h</a>&gt;</code></p>
 
 <p>Register an any stringer method for a specified type. </p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -958,7 +880,9 @@ template&lt;class type_t , class function_t &gt; </div>
 </dl>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>Show how to register your own class. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>Show how to register your own class. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/register_any_stringer&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/unregister_any_stringer&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/ustring&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -1003,51 +927,10 @@ template&lt;class type_t , class function_t &gt; </div>
 <div class="line"><span class="comment">// After unregister_any_stringer : (unregistered)</span></div>
 <div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:48</div></div>
 <div class="ttc" id="agroup__format__parse_html_ga3afd6d163bc6391a48a1f84f28a68ffd"><div class="ttname"><a href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">xtd::ustring::format</a></div><div class="ttdeci">static ustring format(const ustring &amp;fmt, args_t &amp;&amp;... args)</div><div class="ttdoc">Writes the text representation of the specified arguments list, to string using the specified format ...</div><div class="ttdef"><b>Definition</b> ustring.h:700</div></div>
-<div class="ttc" id="agroup__xtd__core_html_gabff6a04b06200c06d782196536e4a8af"><div class="ttname"><a href="group__xtd__core.html#gabff6a04b06200c06d782196536e4a8af">xtd::to_string</a></div><div class="ttdeci">std::string to_string(const date_time &amp;value, const std::string &amp;fmt, const std::locale &amp;loc)</div><div class="ttdoc">Convert a specified value into a string with specified format and locale.</div><div class="ttdef"><b>Definition</b> date_time.h:1098</div></div>
+<div class="ttc" id="agroup__xtd__core_html_gabff6a04b06200c06d782196536e4a8af"><div class="ttname"><a href="group__xtd__core.html#gabff6a04b06200c06d782196536e4a8af">xtd::to_string</a></div><div class="ttdeci">std::string to_string(const date_time &amp;value, const std::string &amp;fmt, const std::locale &amp;loc)</div><div class="ttdoc">Convert a specified value into a string with specified format and locale.</div><div class="ttdef"><b>Definition</b> date_time.h:1100</div></div>
 <div class="ttc" id="agroup__xtd__core_html_gga176c15b86e21b78ec7a3dd6f0a92c686a100b8cad7cf2a56f6df78f171f97a1ec"><div class="ttname"><a href="group__xtd__core.html#gga176c15b86e21b78ec7a3dd6f0a92c686a100b8cad7cf2a56f6df78f171f97a1ec">xtd::number_styles::any</a></div><div class="ttdeci">@ any</div><div class="ttdoc">Indicates that all styles except allow_binary_specifier, allow_octal_specifier and allow_hex_specifie...</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
 </div><!-- fragment --> </dd></dl>
-
-</div>
-</div>
-<a id="ga5aa911c016af5795d0482eefb481fcc9" name="ga5aa911c016af5795d0482eefb481fcc9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5aa911c016af5795d0482eefb481fcc9">&#9670;&#160;</a></span>unboxing()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename type_t &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">type_t xtd::unboxing </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1box.html">xtd::box</a>&lt; type_t &gt; &amp;&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><code>#include &lt;<a class="el" href="unboxing_8h.html">xtd.core/include/xtd/unboxing.h</a>&gt;</code></p>
-
-<p>Allows to unbox an object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>Object to box. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Unboxed object. </dd></dl>
-<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
-<dl class="section user"><dt>Library</dt><dd>xtd.core </dd></dl>
 
 </div>
 </div>
@@ -1076,12 +959,16 @@ template&lt;class type_t &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="any_8h.html">xtd.core/include/xtd/any.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="unregister__any__stringer_8h.html">xtd.core/include/xtd/unregister_any_stringer.h</a>&gt;</code></p>
 
 <p>Unregister an any stringer method for a specified type. </p>
-<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/any&gt;</span> </div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Namespace </dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>Show how to register your own class. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>Show how to register your own class. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/register_any_stringer&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/unregister_any_stringer&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/ustring&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -1132,7 +1019,7 @@ template&lt;class type_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 10 2023 22:54:51 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 11 2023 18:07:46 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

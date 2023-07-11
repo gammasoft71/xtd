@@ -108,22 +108,24 @@ Inheritance diagram for xtd::box_floating_point&lt; type_t &gt;:</div>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename type_t&gt;<br />
 class xtd::box_floating_point&lt; type_t &gt;</div><p>Represents a boxed floating point object. </p>
 <div class="fragment"><div class="line"><span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1box__floating__point.html">box_floating_point</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1box.html">xtd::box</a>&lt;type_t&gt;</div>
-<div class="ttc" id="aclassxtd_1_1box__floating__point_html"><div class="ttname"><a href="classxtd_1_1box__floating__point.html">xtd::box_floating_point</a></div><div class="ttdoc">Represents a boxed floating point object.</div><div class="ttdef"><b>Definition</b> box_floating_point.h:33</div></div>
-<div class="ttc" id="aclassxtd_1_1box_html"><div class="ttname"><a href="classxtd_1_1box.html">xtd::box</a></div><div class="ttdoc">Represents a boxed object.</div><div class="ttdef"><b>Definition</b> box.h:47</div></div>
+<div class="ttc" id="aclassxtd_1_1box__floating__point_html"><div class="ttname"><a href="classxtd_1_1box__floating__point.html">xtd::box_floating_point</a></div><div class="ttdoc">Represents a boxed floating point object.</div><div class="ttdef"><b>Definition</b> box_floating_point.h:35</div></div>
+<div class="ttc" id="aclassxtd_1_1box_html"><div class="ttname"><a href="classxtd_1_1box.html">xtd::box</a></div><div class="ttdoc">Represents a boxed object.</div><div class="ttdef"><b>Definition</b> box.h:49</div></div>
 </div><!-- fragment --> <dl class="section user"><dt>Inheritance</dt><dd><a class="el" href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....">xtd::object</a> → <a class="el" href="classxtd_1_1box.html" title="Represents a boxed object.">xtd::box</a> &lt;type_t&gt; → <a class="el" href="classxtd_1_1box__integer.html" title="Represents a boxed integer object.">xtd::box_integer</a> &lt;type_t&gt; → <a class="el" href="classxtd_1_1box__floating__point.html" title="Represents a boxed floating point object.">box_floating_point</a> &lt;type_t&gt; </dd></dl>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/box°floating_point&gt;</span> </div>
+</div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>You can use <a class="el" href="classxtd_1_1box.html" title="Represents a boxed object.">xtd::box</a> to represent a class or structure that does not inherit from <a class="el" href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....">xtd::object</a>. Typically used for integral types. </dd>
 <dd>
-Use <a class="el" href="group__system.html#ga7352fcff0da12feb0aff421fc8c41d15" title="Allows to box an object.">xtd::boxing</a> to box an object. </dd>
+Use xtd::boxing to box an object. </dd>
 <dd>
-Use <a class="el" href="group__system.html#ga5aa911c016af5795d0482eefb481fcc9" title="Allows to unbox an object.">xtd::unboxing</a> to unbox an object. </dd></dl>
+Use xtd::unboxing to unbox an object. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to create and use xtd::box_floating_point&lt;float&gt;. <div class="fragment"><div class="line"><span class="keyword">auto</span> stringer = [](<span class="keyword">const</span> <span class="keywordtype">object</span>&amp; <a class="code hl_function" href="classxtd_1_1box.html#abc6d47e0f1df482254595e035681a10f">value</a>) {<span class="keywordflow">return</span> <a class="code hl_function" href="classxtd_1_1box.html#abc6d47e0f1df482254595e035681a10f">value</a>.to_string();};</div>
 <div class="line"><span class="keywordtype">float</span> unboxed_object = 3.14f;</div>
 <div class="line"><a class="code hl_class" href="classxtd_1_1box__floating__point.html">box_floating_point&lt;float&gt;</a> boxed_object = unboxed_object;</div>
 <div class="line"><span class="keyword">auto</span> result = stringer(boxed_object);</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;result = {}&quot;</span>, result); <span class="comment">// Display: result = 3.14;</span></div>
-<div class="ttc" id="aclassxtd_1_1box_html_abc6d47e0f1df482254595e035681a10f"><div class="ttname"><a href="classxtd_1_1box.html#abc6d47e0f1df482254595e035681a10f">xtd::box::value</a></div><div class="ttdeci">const type_t &amp; value() const noexcept</div><div class="ttdoc">Gets the underlying value.</div><div class="ttdef"><b>Definition</b> box.h:79</div></div>
+<div class="ttc" id="aclassxtd_1_1box_html_abc6d47e0f1df482254595e035681a10f"><div class="ttname"><a href="classxtd_1_1box.html#abc6d47e0f1df482254595e035681a10f">xtd::box::value</a></div><div class="ttdeci">const type_t &amp; value() const noexcept</div><div class="ttdoc">Gets the underlying value.</div><div class="ttdef"><b>Definition</b> box.h:81</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 </div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
@@ -367,7 +369,7 @@ template&lt;typename type_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 10 2023 22:54:51 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 11 2023 18:07:46 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
