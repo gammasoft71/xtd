@@ -1,6 +1,7 @@
+#include <xtd/console>
+#include <xtd/invalid_operation_exception>
 #include <exception>
 #include <thread>
-#include <xtd/xtd>
 
 using namespace std;
 using namespace xtd;
