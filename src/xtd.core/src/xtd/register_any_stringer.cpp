@@ -1,5 +1,5 @@
 #include "../../include/xtd/ustring.h"
-#include "../../include/xtd/any.h"
+#include "../../include/xtd/register_any_stringer.h"
 #include "../../include/xtd/types.h"
 
 using namespace std;

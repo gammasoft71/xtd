@@ -1,0 +1,2 @@
+#pragma once
+#include "register_any_stringer.h"
