@@ -9,6 +9,8 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Provides an std::stringbuf for xtd::diagnostics::debug.
+  /// @par Header
+  /// @code #include <xtd/debugstreambuf> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library

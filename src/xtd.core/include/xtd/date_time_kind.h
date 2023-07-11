@@ -9,6 +9,8 @@ namespace xtd {
   /// @brief Specifies whether a DateTime object represents a local time, a Coordinated Universal Time (UTC), or is not specified as either local time or UTC.
   /// @par Namespace
   /// xtd
+  /// @par Header
+  /// @code #include <xtd/date_time_kind> @endcode
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core

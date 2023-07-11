@@ -28,6 +28,8 @@ namespace xtd {
   /// xtd::object → xtd::date_time
   /// @par Implements
   /// xtd::icomparable <>, xtd::iequatable <>
+  /// @par Header
+  /// @code #include <xtd/date_time> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library

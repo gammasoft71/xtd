@@ -19,6 +19,8 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Provides the base class for enumerations.
+  /// @par Header
+  /// @code #include <xtd/enum_object> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library

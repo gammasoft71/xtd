@@ -9,6 +9,8 @@ namespace xtd {
   /// @code
   /// enum class enum_attribute
   /// @endcode
+  /// @par Header
+  /// @code #include <xtd/enum_attribute> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
