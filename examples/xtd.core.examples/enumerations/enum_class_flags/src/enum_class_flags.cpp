@@ -1,4 +1,6 @@
-#include <xtd/xtd>
+#include <xtd/as>
+#include <xtd/console>
+#include <xtd/enum>
 
 using namespace xtd;
 
