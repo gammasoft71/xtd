@@ -326,6 +326,10 @@ add_sources(
   include/xtd/tracestreambuf
   include/xtd/translator.h
   include/xtd/translator
+  include/xtd/type.h
+  include/xtd/type
+  include/xtd/type_object.h
+  include/xtd/type_object
   include/xtd/typeof.h
   include/xtd/typeof
   include/xtd/types.h
@@ -736,7 +740,7 @@ add_sources(
   src/xtd/to_string.cpp
   src/xtd/toolkit.cpp
   src/xtd/translator.cpp
-  src/xtd/types.cpp
+  src/xtd/type_object.cpp
   src/xtd/types.cpp
   src/xtd/uri.cpp
   src/xtd/ustring.cpp

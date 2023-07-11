@@ -172,6 +172,8 @@ namespace xtd {
   using type = std::type_info;
   
   /// @brief Represents a 16-bit unsigned integer.
+  /// @par Header
+  /// @code #include <xtd/uint16> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -180,6 +182,8 @@ namespace xtd {
   using uint16 = uint_least16_t;
   
   /// @brief Represents a 32-bit unsigned integer.
+  /// @par Header
+  /// @code #include <xtd/uint32> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -188,6 +192,8 @@ namespace xtd {
   using uint32 = uint_least32_t;
   
   /// @brief Represents a 64-bit unsigned integer.
+  /// @par Header
+  /// @code #include <xtd/uint64> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -196,6 +202,8 @@ namespace xtd {
   using uint64 = uint_least64_t;
   
   /// @brief Represent a pointer or a handle.
+  /// @par Header
+  /// @code #include <xtd/uintptr> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -204,6 +212,8 @@ namespace xtd {
   using uintptr = uintmax_t;
   
   /// @brief Represents a 32-bit or 64-bit unsigned integer.
+  /// @par Header
+  /// @code #include <xtd/ulong> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -212,6 +222,8 @@ namespace xtd {
   using ulong = __ulong__; // Workaround: On linux 64 bits unfortunately 'uint_least64_t' is an alias on 'unigned long' and not on 'unsigned long long int' as other platforms. In order to avoid conflicts in operator or method overloads, it is necessary to give the type that is not taken into account.
   
   /// @brief Represents a wide character.
+  /// @par Header
+  /// @code #include <xtd/wchar> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
