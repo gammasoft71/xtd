@@ -94,6 +94,8 @@ namespace xtd {
 }
 
 /// @brief Helper on xtd::io::directory_not_found_exception to call it with current stack frame information.
+/// @par Header
+/// @code #include <xtd/io/directory_not_found_exception> @endcode
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions

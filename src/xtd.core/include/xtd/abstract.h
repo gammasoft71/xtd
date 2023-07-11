@@ -9,8 +9,6 @@ namespace xtd {
   /// @brief This keyword is used to represents an abstract class.
   /// @par Header
   /// @code #include <xtd/abstract> @endcode
-  /// @par Namespace
-  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core keywords

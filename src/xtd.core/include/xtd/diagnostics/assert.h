@@ -8,8 +8,6 @@
 /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
 /// @par Header
 /// @code #include <xtd/diagnostics/assert> @endcode
-/// @par Namespace
-/// xtd::diagnostics
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core debug

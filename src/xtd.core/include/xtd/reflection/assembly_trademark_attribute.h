@@ -57,8 +57,8 @@ std::shared_ptr<xtd::reflection::assembly_trademark_attribute>& __assembly_trade
 /// @remarks Use this keyword if you create create assembly informations manually.
 /// @remarks Use CMake assembly macro if you want create assembly informations with CMake scripts.
 /// @param version The version information.
-/// @par Namespace
-/// xtd
+/// @par Header
+/// @code #include <xtd/reflection/assembly_trademark_attribute> @endcode
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core keywords

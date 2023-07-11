@@ -487,6 +487,10 @@ namespace xtd {
 }
 
 /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
+/// @par Inheritance
+/// xtd::static_object → xtd::diagnostics::debug
+/// @par Header
+/// @code #include <xtd/diagnostics/debug> @endcode
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core debug

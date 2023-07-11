@@ -7,8 +7,6 @@
 /// @brief Signals a breakpoint to an attached debugger.
 /// @par Header
 /// @code #include <xtd/diagnostics/debug_break> @endcode
-/// @par Namespace
-/// xtd::diagnostics
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core debug

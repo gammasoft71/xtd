@@ -218,6 +218,8 @@ namespace xtd {
   xtd::diagnostics::stack_frame {__FILE__, __LINE__, __func__}
 
 /// @brief Provides information about the current stack frame.
+/// @par Header
+/// @code #include <xtd/diagnostics/stack_frame> @endcode
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core keywords
@@ -228,7 +230,25 @@ namespace xtd {
 /// @remarks same as #current_stack_frame_
 #define csf_ current_stack_frame_
 
+/// @brief Add current stack frame to the __VA_ARGS__ with a comma separator.
+/// @par Header
+/// @code #include <xtd/diagnostics/stack_frame> @endcode
+/// @par Library
+/// xtd.core
+/// @ingroup xtd_core keywords
+/// @return __VA_ARGS__ with comma and current stack frame.
+/// @par Examples
+/// @remarks same as #add_csf_
 #define add_current_stack_frame_(...) \
   __VA_ARGS__ __VA_ARGS_COMMA__(__VA_ARGS__) current_stack_frame_
 
+/// @brief Add current stack frame to the __VA_ARGS__ with a comma separator.
+/// @par Header
+/// @code #include <xtd/diagnostics/stack_frame> @endcode
+/// @par Library
+/// xtd.core
+/// @ingroup xtd_core keywords
+/// @return __VA_ARGS__ with comma and current stack frame.
+/// @par Examples
+/// @remarks same as #add_current_stack_frame_
 #define add_csf_ add_current_stack_frame_
