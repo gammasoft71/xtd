@@ -14,6 +14,8 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Represents information about an operating system distribution, such as the version and name. This class cannot be inherited.
+  /// @par Header
+  /// @code #include <xtd/distribution> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library

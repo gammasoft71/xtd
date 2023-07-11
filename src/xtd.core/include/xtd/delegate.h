@@ -19,6 +19,8 @@ namespace xtd {
   /// @endcond
   
   /// @brief Represents a delegate, which is a data structure that refers to a static method or to a class instance && an instance method of that class.
+  /// @par Header
+  /// @code #include <xtd/delegate> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -262,6 +264,8 @@ namespace xtd {
   };
   
   /// @brief Represents a delegate, which is a data structure that refers to a static method or to a class instance && an instance method of that class.
+  /// @par Header
+  /// @code #include <xtd/delegate> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
