@@ -49,9 +49,4 @@ namespace xtd {
     /// @remarks The value of this field is std::numeric_limits<type_t>::lowest().
     static constexpr type_t min_value = std::numeric_limits<type_t>::lowest();
   };
-  
-  /// @cond
-  using llong_object = box_integer<slong>;
-  using ullong_object = box_integer<xtd::ulong>;
-  /// @endcond
 }

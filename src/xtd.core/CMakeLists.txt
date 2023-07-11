@@ -230,6 +230,8 @@ add_sources(
   include/xtd/not_implemented_exception
   include/xtd/not_supported_exception.h
   include/xtd/not_supported_exception
+  include/xtd/null.h
+  include/xtd/null
   include/xtd/null_pointer_exception.h
   include/xtd/null_pointer_exception
   include/xtd/number_styles.h
@@ -260,6 +262,8 @@ add_sources(
   include/xtd/program_exit_event_args
   include/xtd/program_exit_event_handler.h
   include/xtd/program_exit_event_handler
+  include/xtd/ptrdiff.h
+  include/xtd/ptrdiff
   include/xtd/random.h
   include/xtd/random
   include/xtd/register_any_stringer.h
@@ -284,6 +288,10 @@ add_sources(
   include/xtd/size
   include/xtd/size_object.h
   include/xtd/size_object
+  include/xtd/slong.h
+  include/xtd/slong
+  include/xtd/slong_object.h
+  include/xtd/slong_object
   include/xtd/startup.h
   include/xtd/startup
   include/xtd/static.h
@@ -338,6 +346,10 @@ add_sources(
   include/xtd/uintptr
   include/xtd/uintptr_object.h
   include/xtd/uintptr_object
+  include/xtd/ulong.h
+  include/xtd/ulong
+  include/xtd/ulong_object.h
+  include/xtd/ulong_object
   include/xtd/unauthorized_access_exception.h
   include/xtd/unauthorized_access_exception
   include/xtd/unboxing.h

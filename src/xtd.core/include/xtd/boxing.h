@@ -17,10 +17,12 @@
 #include "sbyte.h"
 #include "single.h"
 #include "size.h"
+#include "slong.h"
 #include "uint16.h"
 #include "uint32.h"
 #include "uint64.h"
 #include "uintptr.h"
+#include "ulong.h"
 #include "wchar.h"
 #define __XTD_CORE_INTERNAL__
 #include "internal/__box_enum_or_object.h"
@@ -76,22 +78,22 @@ namespace xtd {
   inline int16_object boxing(const int16& value) noexcept {return int16_object(value);}
   inline int32_object boxing(const int32& value) noexcept {return int32_object(value);}
   inline int64_object boxing(const int64& value) noexcept {return int64_object(value);}
-  inline llong_object boxing(const slong& value) noexcept {return llong_object(value);}
+  inline slong_object boxing(const slong& value) noexcept {return slong_object(value);}
   inline sbyte_object boxing(const sbyte& value) noexcept {return sbyte_object(value);}
   inline uint16_object boxing(const uint16& value) noexcept {return uint16_object(value);}
   inline uint32_object boxing(const uint32& value) noexcept {return uint32_object(value);}
   inline uint64_object boxing(const uint64& value) noexcept {return uint64_object(value);}
-  inline ullong_object boxing(const xtd::ulong& value) noexcept {return ullong_object(value);}
+  inline ulong_object boxing(const xtd::ulong& value) noexcept {return ulong_object(value);}
   inline byte_object boxing(xtd::byte& value) noexcept {return byte_object(value);}
   inline int16_object boxing(int16& value) noexcept {return int16_object(value);}
   inline int32_object boxing(int32& value) noexcept {return int32_object(value);}
   inline int64_object boxing(int64& value) noexcept {return int64_object(value);}
-  inline llong_object boxing(slong& value) noexcept {return llong_object(value);}
+  inline slong_object boxing(slong& value) noexcept {return slong_object(value);}
   inline sbyte_object boxing(sbyte& value) noexcept {return sbyte_object(value);}
   inline uint16_object boxing(uint16& value) noexcept {return uint16_object(value);}
   inline uint32_object boxing(uint32& value) noexcept {return uint32_object(value);}
   inline uint64_object boxing(uint64& value) noexcept {return uint64_object(value);}
-  inline ullong_object boxing(xtd::ulong& value) noexcept {return ullong_object(value);}
+  inline ulong_object boxing(xtd::ulong& value) noexcept {return ulong_object(value);}
   inline single_object boxing(const float& value) noexcept {return single_object(value);}
   inline double_object boxing(const double& value) noexcept {return double_object(value);}
   inline decimal_object boxing(const decimal& value) noexcept {return decimal_object(value);}
