@@ -127,7 +127,7 @@ Use xtd::unboxing to unbox an object. </dd></dl>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;result = {}&quot;</span>, result); <span class="comment">// Display: result = a;</span></div>
 <div class="ttc" id="aclassxtd_1_1box_html_abc6d47e0f1df482254595e035681a10f"><div class="ttname"><a href="classxtd_1_1box.html#abc6d47e0f1df482254595e035681a10f">xtd::box::value</a></div><div class="ttdeci">const type_t &amp; value() const noexcept</div><div class="ttdoc">Gets the underlying value.</div><div class="ttdef"><b>Definition</b> box.h:81</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="agroup__types_html_ga1259090c8918e75847a8cb2a64b8912a"><div class="ttname"><a href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">xtd::char8</a></div><div class="ttdeci">char8_t char8</div><div class="ttdoc">Represents a 8-bit unicode character.</div><div class="ttdef"><b>Definition</b> types.h:34</div></div>
+<div class="ttc" id="agroup__types_html_ga1259090c8918e75847a8cb2a64b8912a"><div class="ttname"><a href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">xtd::char8</a></div><div class="ttdeci">char8_t char8</div><div class="ttdoc">Represents a 8-bit unicode character.</div><div class="ttdef"><b>Definition</b> types.h:38</div></div>
 </div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
@@ -285,9 +285,12 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>underlying_type</b> 
 <tr class="memitem:a1fea096f8a49ac5eef1f2431806109ca inherit pub_methods_classxtd_1_1object"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#a1fea096f8a49ac5eef1f2431806109ca">get_hash_code</a> () const noexcept</td></tr>
 <tr class="memdesc:a1fea096f8a49ac5eef1f2431806109ca inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
 <tr class="separator:a1fea096f8a49ac5eef1f2431806109ca inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a322144840e8ad539c039538997b0fe40 inherit pub_methods_classxtd_1_1object"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classxtd_1_1type__object.html">type_object</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#a322144840e8ad539c039538997b0fe40">get_type</a> () const noexcept</td></tr>
+<tr class="memdesc:a322144840e8ad539c039538997b0fe40 inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the current instance.  <br /></td></tr>
+<tr class="separator:a322144840e8ad539c039538997b0fe40 inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af734e36ea583a842339d7c4444fb6d86 inherit pub_methods_classxtd_1_1object"><td class="memTemplParams" colspan="2">template&lt;typename object_t &gt; </td></tr>
 <tr class="memitem:af734e36ea583a842339d7c4444fb6d86 inherit pub_methods_classxtd_1_1object"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; object_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#af734e36ea583a842339d7c4444fb6d86">memberwise_clone</a> () const noexcept</td></tr>
-<tr class="memdesc:af734e36ea583a842339d7c4444fb6d86 inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the current instance.  <br /></td></tr>
+<tr class="memdesc:af734e36ea583a842339d7c4444fb6d86 inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shallow copy of the current object.  <br /></td></tr>
 <tr class="separator:af734e36ea583a842339d7c4444fb6d86 inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -1465,7 +1468,7 @@ template&lt;typename type_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 11 2023 18:07:46 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 11 2023 23:31:15 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -49,5 +49,6 @@ var searchData=
   ['tracestreambuf_46',['tracestreambuf',['../classxtd_1_1tracestreambuf.html',1,'xtd']]],
   ['track_5fbar_47',['track_bar',['../classxtd_1_1forms_1_1track__bar.html',1,'xtd::forms']]],
   ['translator_48',['translator',['../classxtd_1_1translator.html',1,'xtd']]],
-  ['tunit_5fevent_5fargs_49',['tunit_event_args',['../classxtd_1_1tunit_1_1tunit__event__args.html',1,'xtd::tunit']]]
+  ['tunit_5fevent_5fargs_49',['tunit_event_args',['../classxtd_1_1tunit_1_1tunit__event__args.html',1,'xtd::tunit']]],
+  ['type_5fobject_50',['type_object',['../classxtd_1_1type__object.html',1,'xtd']]]
 ];

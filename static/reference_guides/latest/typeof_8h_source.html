@@ -89,31 +89,33 @@ $(function() {
 <a href="typeof_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="ustring_8h.html">ustring.h</a>&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>  <span class="keyword">namespace </span>__s__ {</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> type_t&gt;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    std::string __typeof_() {</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>      <span class="keywordflow">return</span> xtd::ustring::full_class_name&lt;type_t&gt;();</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    }</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> type_t&gt;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    std::string __typeof_(<span class="keyword">const</span> type_t&amp; value) {</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="classxtd_1_1ustring.html#aa6a65b727872715c7b99958e84a75f61">xtd::ustring::full_class_name</a>(value);</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    }</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  }</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">   37</a></span><span class="preprocessor">#define typeof_ \</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">  xtd::__s__::__typeof_</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>}</div>
-<div class="ttc" id="aclassxtd_1_1ustring_html_aa6a65b727872715c7b99958e84a75f61"><div class="ttname"><a href="classxtd_1_1ustring.html#aa6a65b727872715c7b99958e84a75f61">xtd::ustring::full_class_name</a></div><div class="ttdeci">static ustring full_class_name()</div><div class="ttdoc">Gets the fully qualified class name of the objec_t, including the namespace of the objec_t.</div><div class="ttdef"><b>Definition</b> ustring.h:779</div></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="type__object_8h.html">type_object.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>  <span class="keyword">namespace </span>__s__ {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> type_t&gt;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <a class="code hl_class" href="classxtd_1_1type__object.html">xtd::type_object</a> __typeof_() {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>      <span class="keywordflow">return</span> <a class="code hl_class" href="classxtd_1_1type__object.html">xtd::type_object</a>(<span class="keyword">typeid</span>(type_t));</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    }</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> type_t&gt;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <a class="code hl_class" href="classxtd_1_1type__object.html">xtd::type_object</a> __typeof_(<span class="keyword">const</span> type_t&amp; value) {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>      <span class="keywordflow">return</span> <a class="code hl_class" href="classxtd_1_1type__object.html">xtd::type_object</a>(<span class="keyword">typeid</span>(value));</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    }</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  }</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">   38</a></span><span class="preprocessor">#define typeof_ \</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">  xtd::__s__::__typeof_</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>}</div>
+<div class="ttc" id="aclassxtd_1_1type__object_html"><div class="ttname"><a href="classxtd_1_1type__object.html">xtd::type_object</a></div><div class="ttdoc">Represent a type_object.</div><div class="ttdef"><b>Definition</b> type_object.h:31</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
+<div class="ttc" id="atype__object_8h_html"><div class="ttname"><a href="type__object_8h.html">type_object.h</a></div><div class="ttdoc">Contains xtd::type_object class.</div></div>
 <div class="ttc" id="austring_8h_html"><div class="ttname"><a href="ustring_8h.html">ustring.h</a></div><div class="ttdoc">Contains xtd::ustring class.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 11 2023 18:07:44 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 11 2023 23:31:13 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

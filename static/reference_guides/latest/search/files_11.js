@@ -42,7 +42,7 @@ var searchData=
   ['toggle_5fbutton_5frenderer_2eh_39',['toggle_button_renderer.h',['../toggle__button__renderer_8h.html',1,'']]],
   ['toggle_5fbutton_5fstate_2eh_40',['toggle_button_state.h',['../toggle__button__state_8h.html',1,'']]],
   ['toggle_5fbuttons_2eh_41',['toggle_buttons.h',['../toggle__buttons_8h.html',1,'']]],
-  ['tool_5fbar_2eh_42',['tool_bar.h',['../tool__bar_8h.html',1,'(Global Namespace)'],['../style__sheets_2tool__bar_8h.html',1,'(Global Namespace)']]],
+  ['tool_5fbar_2eh_42',['tool_bar.h',['../style__sheets_2tool__bar_8h.html',1,'(Global Namespace)'],['../tool__bar_8h.html',1,'(Global Namespace)']]],
   ['tool_5fbar_5fappearance_2eh_43',['tool_bar_appearance.h',['../tool__bar__appearance_8h.html',1,'']]],
   ['tool_5fbar_5fbutton_2eh_44',['tool_bar_button.h',['../style__sheets_2tool__bar__button_8h.html',1,'(Global Namespace)'],['../tool__bar__button_8h.html',1,'(Global Namespace)']]],
   ['tool_5fbar_5fbutton_5fclick_5fevent_5fargs_2eh_45',['tool_bar_button_click_event_args.h',['../tool__bar__button__click__event__args_8h.html',1,'']]],
@@ -76,6 +76,8 @@ var searchData=
   ['tunit_5fevent_5fargs_2eh_73',['tunit_event_args.h',['../tunit__event__args_8h.html',1,'']]],
   ['tunit_5fexport_2eh_74',['tunit_export.h',['../tunit__export_8h.html',1,'']]],
   ['tunit_5fmain_2eh_75',['tunit_main.h',['../tunit__main_8h.html',1,'']]],
-  ['typeof_2eh_76',['typeof.h',['../typeof_8h.html',1,'']]],
-  ['types_2eh_77',['types.h',['../types_8h.html',1,'']]]
+  ['type_2eh_76',['type.h',['../type_8h.html',1,'']]],
+  ['type_5fobject_2eh_77',['type_object.h',['../type__object_8h.html',1,'']]],
+  ['typeof_2eh_78',['typeof.h',['../typeof_8h.html',1,'']]],
+  ['types_2eh_79',['types.h',['../types_8h.html',1,'']]]
 ];
