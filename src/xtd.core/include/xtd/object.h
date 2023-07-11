@@ -11,6 +11,7 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @cond
+  class type_object;
   class ustring;
   /// @endcond
   
@@ -79,7 +80,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates that GetType returns the runtime type of the current instance.
     /// @include object_get_type.cpp
-    //virtual type get_type() const;
+    virtual type_object get_type() const noexcept;
     
     /// @brief Creates a shallow copy of the current object.
     /// @return A shallow copy of the current object.
