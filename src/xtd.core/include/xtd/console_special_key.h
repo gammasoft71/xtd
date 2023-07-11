@@ -7,6 +7,8 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Specifies combinations of modifier and console keys that can interrupt the current process.
+  /// @par Header
+  /// @code #include <xtd/console_special_key> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library

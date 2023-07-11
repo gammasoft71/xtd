@@ -7,6 +7,8 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Identifies the build type
+  /// @par Header
+  /// @code #include <xtd/build_type> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library

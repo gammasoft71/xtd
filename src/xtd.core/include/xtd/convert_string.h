@@ -8,6 +8,8 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Represents API to convert string containers.
+  /// @par Header
+  /// @code #include <xtd/convert_string> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library

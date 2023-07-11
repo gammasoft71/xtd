@@ -14,6 +14,8 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Represents API to convert base type code.
+  /// @par Header
+  /// @code #include <xtd/convert> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
