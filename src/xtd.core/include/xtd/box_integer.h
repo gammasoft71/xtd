@@ -12,6 +12,9 @@ namespace xtd {
   /// @endcode
   /// @par Inheritance
   /// xtd::object → xtd::box <type_t> → xtd::box_integer <type_t>  /// @par Namespace
+  /// @par Header
+  /// @code #include <xtd/box_integer> @endcode
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

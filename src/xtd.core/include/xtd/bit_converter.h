@@ -13,6 +13,8 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Converts base data types to an std::vector of bytes, and an std::vector of bytes to base data types.
+  /// @par Header
+  /// @code #include <xtd/bit_converter> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library

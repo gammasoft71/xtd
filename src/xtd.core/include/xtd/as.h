@@ -21,6 +21,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new bool object converted from value.
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -43,6 +45,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -61,6 +65,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -79,6 +85,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -97,6 +105,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -115,6 +125,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -133,6 +145,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -151,6 +165,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -169,6 +185,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -187,6 +205,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -205,6 +225,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -223,6 +245,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -241,6 +265,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -259,6 +285,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -277,6 +305,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -295,6 +325,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -313,6 +345,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -331,6 +365,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -349,6 +385,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -367,6 +405,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -386,6 +426,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @exception xtd::invalid_cast_exception value bad type
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -410,6 +452,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @exception xtd::invalid_cast_exception value bad type
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -481,6 +525,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @exception xtd::invalid_cast_exception value bad type
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -500,6 +546,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @exception xtd::invalid_cast_exception value bad type
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -519,6 +567,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @exception xtd::invalid_cast_exception value bad type
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -538,6 +588,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @exception xtd::invalid_cast_exception value bad type
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -557,6 +609,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @exception xtd::invalid_cast_exception value bad type
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -576,6 +630,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @exception xtd::invalid_cast_exception value bad type
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -595,6 +651,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @exception xtd::invalid_cast_exception value bad type
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -614,6 +672,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @exception xtd::invalid_cast_exception value bad type
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -633,6 +693,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @exception xtd::invalid_cast_exception value bad type
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -652,6 +714,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @exception xtd::invalid_cast_exception value bad type
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -670,6 +734,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -688,6 +754,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -706,6 +774,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -724,6 +794,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -742,6 +814,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -760,6 +834,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -778,6 +854,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -796,6 +874,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -814,6 +894,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -832,6 +914,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -854,6 +938,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new bool object converted from value.
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -872,6 +958,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new bool object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -890,6 +978,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new bool object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -909,6 +999,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new bool object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -928,6 +1020,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new bool object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -947,6 +1041,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new bool object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -966,6 +1062,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new bool object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -985,6 +1083,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new bool object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1003,6 +1103,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new bool object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1021,6 +1123,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new bool object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1039,6 +1143,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new bool object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1057,6 +1163,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new bool object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1075,6 +1183,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new bool object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1093,6 +1203,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new bool object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1111,6 +1223,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new bool object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1129,6 +1243,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new bool object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1147,6 +1263,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new bool object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1165,6 +1283,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new bool object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1183,6 +1303,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new bool object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1201,6 +1323,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new bool object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1220,6 +1344,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new bool object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1239,6 +1365,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new bool object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1258,6 +1386,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new bool object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1277,6 +1407,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new bool object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1296,6 +1428,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new bool object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1315,6 +1449,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new bool object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1334,6 +1470,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new bool object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1353,6 +1491,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new bool object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1372,6 +1512,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new bool object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1391,6 +1533,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new bool object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1410,6 +1554,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new bool object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1429,6 +1575,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new bool object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1448,6 +1596,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new bool object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1467,6 +1617,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new bool object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1486,6 +1638,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new bool object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1505,6 +1659,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new bool object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1524,6 +1680,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::byte object converted from value.
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1542,6 +1700,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::byte object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1560,6 +1720,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::byte object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1579,6 +1741,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::byte object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1598,6 +1762,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::byte object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1617,6 +1783,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::byte object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1636,6 +1804,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::byte object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1655,6 +1825,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::byte object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1673,6 +1845,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::byte object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1691,6 +1865,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::byte object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1709,6 +1885,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::byte object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1727,6 +1905,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::byte object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1745,6 +1925,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::byte object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1763,6 +1945,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::byte object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1781,6 +1965,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::byte object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1799,6 +1985,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::byte object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1817,6 +2005,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::byte object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1835,6 +2025,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::byte object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1853,6 +2045,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::byte object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1871,6 +2065,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::byte object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1890,6 +2086,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::byte object converted from value.
   /// @exception xtd::argument_exception value does not represent a byte.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1910,6 +2108,8 @@ namespace xtd {
   /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
   /// @return A new xtd::byte object converted from value.
   /// @exception xtd::argument_exception value does not represent a byte.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1929,6 +2129,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::byte object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1948,6 +2150,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::byte object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1967,6 +2171,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::byte object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -1986,6 +2192,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::byte object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2005,6 +2213,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::byte object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2024,6 +2234,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::byte object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2043,6 +2255,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::byte object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2062,6 +2276,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::byte object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2081,6 +2297,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::byte object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2100,6 +2318,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::byte object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2119,6 +2339,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::byte object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2138,6 +2360,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::byte object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2157,6 +2381,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::byte object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2176,6 +2402,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::byte object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2195,6 +2423,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::byte object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2214,6 +2444,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char object converted from value.
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2232,6 +2464,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2250,6 +2484,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2269,6 +2505,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2288,6 +2526,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2307,6 +2547,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2326,6 +2568,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2345,6 +2589,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2363,6 +2609,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2381,6 +2629,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2399,6 +2649,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2417,6 +2669,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2435,6 +2689,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2453,6 +2709,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2471,6 +2729,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2489,6 +2749,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2507,6 +2769,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2525,6 +2789,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2543,6 +2809,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2561,6 +2829,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2580,6 +2850,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2599,6 +2871,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2618,6 +2892,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2637,6 +2913,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2656,6 +2934,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2675,6 +2955,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2694,6 +2976,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2713,6 +2997,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2732,6 +3018,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2751,6 +3039,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2770,6 +3060,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2789,6 +3081,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2808,6 +3102,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2827,6 +3123,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2846,6 +3144,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2865,6 +3165,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2884,6 +3186,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char8 object converted from value.
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2902,6 +3206,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char8 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2920,6 +3226,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char8 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2939,6 +3247,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char8 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2958,6 +3268,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char8 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2977,6 +3289,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char8 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -2996,6 +3310,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char8 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3015,6 +3331,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char8 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3033,6 +3351,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char8 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3051,6 +3371,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char8 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3069,6 +3391,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char8 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3087,6 +3411,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char8 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3105,6 +3431,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char8 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3123,6 +3451,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char8 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3141,6 +3471,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char8 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3159,6 +3491,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char8 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3177,6 +3511,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char8 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3195,6 +3531,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char8 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3213,6 +3551,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char8 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3231,6 +3571,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char8 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3250,6 +3592,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char8 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3269,6 +3613,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char8 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3288,6 +3634,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char8 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3307,6 +3655,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char8 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3326,6 +3676,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char8 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3345,6 +3697,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char8 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3364,6 +3718,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char8 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3383,6 +3739,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char8 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3402,6 +3760,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char8 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3421,6 +3781,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char8 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3440,6 +3802,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char8 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3459,6 +3823,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char8 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3478,6 +3844,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char8 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3497,6 +3865,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char8 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3516,6 +3886,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char8 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3535,6 +3907,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char8 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3554,6 +3928,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char16 object converted from value.
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3572,6 +3948,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char16 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3590,6 +3968,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char16 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3609,6 +3989,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char16 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3628,6 +4010,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char16 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3647,6 +4031,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char16 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3666,6 +4052,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char16 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3685,6 +4073,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char16 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3703,6 +4093,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char16 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3721,6 +4113,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char16 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3739,6 +4133,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char16 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3757,6 +4153,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char16 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3775,6 +4173,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char16 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3793,6 +4193,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char16 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3811,6 +4213,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char16 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3829,6 +4233,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char16 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3847,6 +4253,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char16 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3865,6 +4273,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char16 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3883,6 +4293,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char16 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3901,6 +4313,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char16 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3920,6 +4334,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3939,6 +4355,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3958,6 +4376,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3977,6 +4397,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -3996,6 +4418,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4015,6 +4439,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4034,6 +4460,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4053,6 +4481,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4072,6 +4502,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4091,6 +4523,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4110,6 +4544,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4129,6 +4565,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4148,6 +4586,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4167,6 +4607,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4186,6 +4628,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4205,6 +4649,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4224,6 +4670,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char32 object converted from value.
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4242,6 +4690,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char32 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4260,6 +4710,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char32 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4279,6 +4731,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char32 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4298,6 +4752,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char32 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4317,6 +4773,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char32 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4336,6 +4794,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char32 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4355,6 +4815,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char32 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4373,6 +4835,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char32 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4391,6 +4855,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char32 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4409,6 +4875,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char32 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4427,6 +4895,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char32 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4445,6 +4915,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char32 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4463,6 +4935,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char32 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4481,6 +4955,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char32 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4499,6 +4975,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char32 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4517,6 +4995,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char32 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4535,6 +5015,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char32 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4553,6 +5035,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char32 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4571,6 +5055,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char32 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4590,6 +5076,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4609,6 +5097,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4628,6 +5118,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4647,6 +5139,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4666,6 +5160,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4685,6 +5181,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4704,6 +5202,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4723,6 +5223,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4742,6 +5244,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4761,6 +5265,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4780,6 +5286,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4799,6 +5307,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4818,6 +5328,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4837,6 +5349,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4856,6 +5370,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4875,6 +5391,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new char32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4894,6 +5412,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new wchar object converted from value.
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4912,6 +5432,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new wchar object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4930,6 +5452,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new wchar object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4949,6 +5473,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new wchar object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4968,6 +5494,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new wchar object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -4987,6 +5515,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new wchar object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5006,6 +5536,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new wchar object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5025,6 +5557,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new wchar object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5043,6 +5577,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new wchar object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5061,6 +5597,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new wchar object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5079,6 +5617,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new wchar object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5097,6 +5637,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new wchar object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5115,6 +5657,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new wchar object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5133,6 +5677,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new wchar object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5151,6 +5697,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new wchar object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5169,6 +5717,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new wchar object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5187,6 +5737,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new wchar object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5205,6 +5757,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new wchar object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5223,6 +5777,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new wchar object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5241,6 +5797,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new wchar object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5260,6 +5818,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new wchar object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5279,6 +5839,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new wchar object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5298,6 +5860,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new wchar object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5317,6 +5881,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new wchar object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5336,6 +5902,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new wchar object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5355,6 +5923,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new wchar object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5374,6 +5944,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new wchar object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5393,6 +5965,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new wchar object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5412,6 +5986,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new wchar object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5431,6 +6007,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new wchar object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5450,6 +6028,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new wchar object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5469,6 +6049,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new wchar object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5488,6 +6070,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new wchar object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5507,6 +6091,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new wchar object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5526,6 +6112,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new wchar object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5545,6 +6133,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new wchar object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5564,6 +6154,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new decimal object converted from value.
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5582,6 +6174,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new decimal object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5600,6 +6194,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new decimal object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5619,6 +6215,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new decimal object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5638,6 +6236,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new decimal object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5657,6 +6257,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new decimal object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5676,6 +6278,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new decimal object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5695,6 +6299,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new decimal object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5713,6 +6319,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new decimal object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5731,6 +6339,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new decimal object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5749,6 +6359,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new decimal object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5767,6 +6379,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new decimal object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5785,6 +6399,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new decimal object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5803,6 +6419,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new decimal object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5821,6 +6439,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new decimal object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5839,6 +6459,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new decimal object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5857,6 +6479,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new decimal object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5875,6 +6499,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new decimal object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5893,6 +6519,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new decimal object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5911,6 +6539,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new decimal object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5930,6 +6560,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new decimal object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5949,6 +6581,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new decimal object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5968,6 +6602,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new decimal object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -5987,6 +6623,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new decimal object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6006,6 +6644,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new decimal object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6025,6 +6665,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new decimal object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6044,6 +6686,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new decimal object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6063,6 +6707,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new decimal object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6082,6 +6728,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new decimal object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6101,6 +6749,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new decimal object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6120,6 +6770,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new decimal object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6139,6 +6791,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new decimal object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6158,6 +6812,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new decimal object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6177,6 +6833,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new decimal object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6196,6 +6854,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new decimal object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6215,6 +6875,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new decimal object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6234,6 +6896,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new double object converted from value.
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6252,6 +6916,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new double object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6270,6 +6936,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new double object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6289,6 +6957,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new double object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6308,6 +6978,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new double object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6327,6 +6999,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new double object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6346,6 +7020,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new double object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6365,6 +7041,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new double object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6383,6 +7061,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new double object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6401,6 +7081,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new double object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6419,6 +7101,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new double object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6437,6 +7121,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new double object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6455,6 +7141,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new double object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6473,6 +7161,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new double object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6491,6 +7181,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new double object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6509,6 +7201,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new double object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6527,6 +7221,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new double object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6545,6 +7241,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new double object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6563,6 +7261,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new double object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6581,6 +7281,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new double object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6600,6 +7302,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new double object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6619,6 +7323,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new double object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6638,6 +7344,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new double object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6657,6 +7365,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new double object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6676,6 +7386,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new double object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6695,6 +7407,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new double object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6714,6 +7428,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new double object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6733,6 +7449,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new double object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6752,6 +7470,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new double object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6771,6 +7491,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new double object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6790,6 +7512,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new double object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6809,6 +7533,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new double object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6828,6 +7554,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new double object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6847,6 +7575,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new double object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6866,6 +7596,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new double object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6885,6 +7617,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new double object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6904,6 +7638,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new float object converted from value.
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6922,6 +7658,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new float object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6940,6 +7678,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new float object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6959,6 +7699,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new float object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6978,6 +7720,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new float object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -6997,6 +7741,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new float object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7016,6 +7762,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new float object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7035,6 +7783,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new float object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7053,6 +7803,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new float object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7071,6 +7823,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new float object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7089,6 +7843,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new float object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7107,6 +7863,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new float object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7125,6 +7883,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new float object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7143,6 +7903,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new float object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7161,6 +7923,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new float object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7179,6 +7943,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new float object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7197,6 +7963,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new float object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7215,6 +7983,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new float object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7233,6 +8003,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new float object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7251,6 +8023,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new float object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7270,6 +8044,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new float object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7289,6 +8065,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new float object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7308,6 +8086,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new float object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7327,6 +8107,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new float object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7346,6 +8128,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new float object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7365,6 +8149,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new float object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7384,6 +8170,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new float object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7403,6 +8191,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new float object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7422,6 +8212,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new float object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7441,6 +8233,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new float object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7460,6 +8254,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new float object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7479,6 +8275,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new float object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7498,6 +8296,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new float object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7517,6 +8317,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new float object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7536,6 +8338,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new float object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7555,6 +8359,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new float object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7574,6 +8380,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int16 object converted from value.
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7592,6 +8400,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int16 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7610,6 +8420,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int16 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7629,6 +8441,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int16 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7648,6 +8462,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int16 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7667,6 +8483,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int16 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7686,6 +8504,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int16 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7705,6 +8525,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int16 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7723,6 +8545,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int16 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7741,6 +8565,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int16 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7759,6 +8585,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int16 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7777,6 +8605,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int16 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7795,6 +8625,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int16 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7813,6 +8645,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int16 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7831,6 +8665,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int16 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7849,6 +8685,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int16 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7867,6 +8705,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int16 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7885,6 +8725,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int16 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7903,6 +8745,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int16 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7921,6 +8765,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int16 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7940,6 +8786,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7960,6 +8808,8 @@ namespace xtd {
   /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
   /// @return A new int16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a int16.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7979,6 +8829,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -7998,6 +8850,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8017,6 +8871,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8036,6 +8892,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8055,6 +8913,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8074,6 +8934,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8093,6 +8955,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8112,6 +8976,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8131,6 +8997,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8150,6 +9018,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8169,6 +9039,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8188,6 +9060,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8207,6 +9081,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8226,6 +9102,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8245,6 +9123,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8264,6 +9144,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int32 object converted from value.
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8282,6 +9164,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int32 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8300,6 +9184,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int32 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8319,6 +9205,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int32 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8338,6 +9226,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int32 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8357,6 +9247,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int32 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8376,6 +9268,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int32 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8395,6 +9289,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int32 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8413,6 +9309,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int32 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8431,6 +9329,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int32 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8449,6 +9349,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int32 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8467,6 +9369,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int32 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8485,6 +9389,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int32 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8503,6 +9409,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int32 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8521,6 +9429,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int32 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8539,6 +9449,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int32 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8557,6 +9469,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int32 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8575,6 +9489,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int32 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8593,6 +9509,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int32 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8611,6 +9529,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int32 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8630,6 +9550,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8650,6 +9572,8 @@ namespace xtd {
   /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
   /// @return A new int32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a int32.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8669,6 +9593,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8688,6 +9614,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8707,6 +9635,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8726,6 +9656,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8745,6 +9677,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8764,6 +9698,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8783,6 +9719,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8802,6 +9740,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8821,6 +9761,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8840,6 +9782,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8859,6 +9803,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8878,6 +9824,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8897,6 +9845,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8916,6 +9866,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8935,6 +9887,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8954,6 +9908,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8972,6 +9928,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -8990,6 +9948,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9009,6 +9969,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9028,6 +9990,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9047,6 +10011,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9066,6 +10032,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9085,6 +10053,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9103,6 +10073,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9121,6 +10093,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9139,6 +10113,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9157,6 +10133,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9175,6 +10153,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9193,6 +10173,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9211,6 +10193,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9229,6 +10213,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9247,6 +10233,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9265,6 +10253,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9283,6 +10273,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9301,6 +10293,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9320,6 +10314,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9340,6 +10336,8 @@ namespace xtd {
   /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
   /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a int64.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9359,6 +10357,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9378,6 +10378,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9397,6 +10399,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9416,6 +10420,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9435,6 +10441,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9454,6 +10462,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9473,6 +10483,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9492,6 +10504,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9511,6 +10525,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9530,6 +10546,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9549,6 +10567,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9568,6 +10588,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9587,6 +10609,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9606,6 +10630,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9625,6 +10651,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9644,6 +10672,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new slong object converted from value.
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9662,6 +10692,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new slong object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9680,6 +10712,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new slong object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9699,6 +10733,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new slong object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9718,6 +10754,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new slong object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9737,6 +10775,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new slong object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9756,6 +10796,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new slong object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9775,6 +10817,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new slong object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9793,6 +10837,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new slong object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9811,6 +10857,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new slong object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9829,6 +10877,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new slong object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9847,6 +10897,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new slong object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9865,6 +10917,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new slong object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9883,6 +10937,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new slong object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9901,6 +10957,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new slong object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9919,6 +10977,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new slong object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9937,6 +10997,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new slong object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9955,6 +11017,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new slong object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9973,6 +11037,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new slong object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -9991,6 +11057,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new slong object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10010,6 +11078,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new slong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10030,6 +11100,8 @@ namespace xtd {
   /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
   /// @return A new slong object converted from value.
   /// @exception xtd::argument_exception value does not represent a slong.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10049,6 +11121,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new slong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10068,6 +11142,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new slong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10087,6 +11163,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new slong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10106,6 +11184,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new slong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10125,6 +11205,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new slong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10144,6 +11226,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new slong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10163,6 +11247,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new slong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10182,6 +11268,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new slong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10201,6 +11289,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new slong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10220,6 +11310,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new slong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10239,6 +11331,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new slong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10258,6 +11352,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new slong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10277,6 +11373,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new slong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10296,6 +11394,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new slong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10315,6 +11415,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new slong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10334,6 +11436,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new sbyte object converted from value.
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10352,6 +11456,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new sbyte object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10370,6 +11476,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new sbyte object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10389,6 +11497,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new sbyte object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10408,6 +11518,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new sbyte object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10427,6 +11539,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new sbyte object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10446,6 +11560,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new sbyte object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10465,6 +11581,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new sbyte object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10483,6 +11601,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new sbyte object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10501,6 +11621,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new sbyte object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10519,6 +11641,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new sbyte object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10537,6 +11661,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new sbyte object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10555,6 +11681,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new sbyte object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10573,6 +11701,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new sbyte object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10591,6 +11721,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new sbyte object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10609,6 +11741,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new sbyte object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10627,6 +11761,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new sbyte object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10645,6 +11781,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new sbyte object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10663,6 +11801,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new sbyte object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10681,6 +11821,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new sbyte object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10700,6 +11842,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new sbyte object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10720,6 +11864,8 @@ namespace xtd {
   /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
   /// @return A new sbyte object converted from value.
   /// @exception xtd::argument_exception value does not represent a sbyte.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10739,6 +11885,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new sbyte object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10758,6 +11906,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new sbyte object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10777,6 +11927,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new sbyte object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10796,6 +11948,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new sbyte object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10815,6 +11969,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new sbyte object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10834,6 +11990,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new sbyte object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10853,6 +12011,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new sbyte object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10872,6 +12032,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new sbyte object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10891,6 +12053,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new sbyte object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10910,6 +12074,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new sbyte object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10929,6 +12095,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new sbyte object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10948,6 +12116,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new sbyte object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10967,6 +12137,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new sbyte object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -10986,6 +12158,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new sbyte object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11005,6 +12179,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new sbyte object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11024,6 +12200,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint16 object converted from value.
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11042,6 +12220,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint16 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11060,6 +12240,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint16 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11079,6 +12261,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint16 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11098,6 +12282,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint16 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11117,6 +12303,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint16 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11136,6 +12324,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint16 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11155,6 +12345,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint16 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11173,6 +12365,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint16 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11191,6 +12385,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint16 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11209,6 +12405,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint16 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11227,6 +12425,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint16 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11245,6 +12445,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint16 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11263,6 +12465,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint16 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11281,6 +12485,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint16 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11299,6 +12505,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint16 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11317,6 +12525,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint16 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11335,6 +12545,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint16 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11353,6 +12565,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint16 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11371,6 +12585,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint16 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11390,6 +12606,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11410,6 +12628,8 @@ namespace xtd {
   /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
   /// @return A new uint16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a uint16.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11429,6 +12649,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11448,6 +12670,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11467,6 +12691,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11486,6 +12712,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11505,6 +12733,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11524,6 +12754,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11543,6 +12775,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11562,6 +12796,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11581,6 +12817,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11600,6 +12838,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11619,6 +12859,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11638,6 +12880,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11657,6 +12901,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11676,6 +12922,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11695,6 +12943,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11714,6 +12964,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint32 object converted from value.
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11732,6 +12984,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint32 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11750,6 +13004,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint32 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11769,6 +13025,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint32 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11788,6 +13046,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint32 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11807,6 +13067,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint32 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11826,6 +13088,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint32 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11845,6 +13109,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint32 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11863,6 +13129,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint32 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11881,6 +13149,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint32 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11899,6 +13169,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint32 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11917,6 +13189,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint32 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11935,6 +13209,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint32 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11953,6 +13229,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint32 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11971,6 +13249,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint32 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -11989,6 +13269,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint32 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12007,6 +13289,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint32 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12025,6 +13309,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint32 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12043,6 +13329,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint32 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12061,6 +13349,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint32 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12080,6 +13370,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12100,6 +13392,8 @@ namespace xtd {
   /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
   /// @return A new uint32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a uint32.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12119,6 +13413,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12138,6 +13434,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12157,6 +13455,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12176,6 +13476,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12195,6 +13497,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12214,6 +13518,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12233,6 +13539,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12252,6 +13560,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12271,6 +13581,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12290,6 +13602,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12309,6 +13623,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12328,6 +13644,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12347,6 +13665,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12366,6 +13686,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12385,6 +13707,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12404,6 +13728,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint64 object converted from value.
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12422,6 +13748,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint64 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12440,6 +13768,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint64 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12459,6 +13789,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint64 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12478,6 +13810,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint64 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12497,6 +13831,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint64 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12516,6 +13852,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint64 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12535,6 +13873,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint64 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12553,6 +13893,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint64 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12571,6 +13913,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint64 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12589,6 +13933,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint64 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12607,6 +13953,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint64 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12625,6 +13973,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint64 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12643,6 +13993,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint64 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12661,6 +14013,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint64 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12679,6 +14033,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint64 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12697,6 +14053,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint64 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12715,6 +14073,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint64 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12733,6 +14093,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint64 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12751,6 +14113,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint64 object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12770,6 +14134,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12790,6 +14156,8 @@ namespace xtd {
   /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
   /// @return A new uint64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a uint64.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12809,6 +14177,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12828,6 +14198,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12847,6 +14219,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12866,6 +14240,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12885,6 +14261,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12904,6 +14282,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12923,6 +14303,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12942,6 +14324,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12961,6 +14345,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12980,6 +14366,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -12999,6 +14387,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13018,6 +14408,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13037,6 +14429,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13056,6 +14450,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13075,6 +14471,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new uint64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13094,6 +14492,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13112,6 +14512,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13130,6 +14532,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13149,6 +14553,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13168,6 +14574,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13187,6 +14595,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13206,6 +14616,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13225,6 +14637,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13243,6 +14657,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13261,6 +14677,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13279,6 +14697,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13297,6 +14717,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13315,6 +14737,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13333,6 +14757,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13351,6 +14777,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13369,6 +14797,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13387,6 +14817,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13405,6 +14837,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13423,6 +14857,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13441,6 +14877,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13460,6 +14898,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13480,6 +14920,8 @@ namespace xtd {
   /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
   /// @return A new xtd::ulong object converted from value.
   /// @exception xtd::argument_exception value does not represent a xtd::ulong.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13499,6 +14941,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13518,6 +14962,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13537,6 +14983,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13556,6 +15004,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13575,6 +15025,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13594,6 +15046,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13613,6 +15067,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13632,6 +15088,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13651,6 +15109,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13670,6 +15130,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13689,6 +15151,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13708,6 +15172,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13727,6 +15193,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13746,6 +15214,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13765,6 +15235,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13784,6 +15256,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13802,6 +15276,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13820,6 +15296,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13840,6 +15318,8 @@ namespace xtd {
   /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
   /// @return A new ustring object converted from value.
   /// @exception xtd::argument_exception vfrom_base is not 2, 8, 10, or 16.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13859,6 +15339,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13878,6 +15360,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13897,6 +15381,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13916,6 +15402,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13935,6 +15423,8 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13953,6 +15443,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13971,6 +15463,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -13989,6 +15483,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14007,6 +15503,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14027,6 +15525,8 @@ namespace xtd {
   /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
   /// @return A new ustring object converted from value.
   /// @exception xtd::argument_exception vfrom_base is not 2, 8, 10, or 16.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14045,6 +15545,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14065,6 +15567,8 @@ namespace xtd {
   /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
   /// @return A new ustring object converted from value.
   /// @exception xtd::argument_exception vfrom_base is not 2, 8, 10, or 16.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14083,6 +15587,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14103,6 +15609,8 @@ namespace xtd {
   /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
   /// @return A new ustring object converted from value.
   /// @exception xtd::argument_exception vfrom_base is not 2, 8, 10, or 16.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14121,6 +15629,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14141,6 +15651,8 @@ namespace xtd {
   /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
   /// @return A new ustring object converted from value.
   /// @exception xtd::argument_exception vfrom_base is not 2, 8, 10, or 16.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14159,6 +15671,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14179,6 +15693,8 @@ namespace xtd {
   /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
   /// @return A new ustring object converted from value.
   /// @exception xtd::argument_exception vfrom_base is not 2, 8, 10, or 16.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14197,6 +15713,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14217,6 +15735,8 @@ namespace xtd {
   /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
   /// @return A new ustring object converted from value.
   /// @exception xtd::argument_exception vfrom_base is not 2, 8, 10, or 16.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14235,6 +15755,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14255,6 +15777,8 @@ namespace xtd {
   /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
   /// @return A new ustring object converted from value.
   /// @exception xtd::argument_exception vfrom_base is not 2, 8, 10, or 16.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14273,6 +15797,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14293,6 +15819,8 @@ namespace xtd {
   /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
   /// @return A new ustring object converted from value.
   /// @exception xtd::argument_exception vfrom_base is not 2, 8, 10, or 16.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14311,6 +15839,8 @@ namespace xtd {
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14331,6 +15861,8 @@ namespace xtd {
   /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
   /// @return A new ustring object converted from value.
   /// @exception xtd::argument_exception vfrom_base is not 2, 8, 10, or 16.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14350,6 +15882,8 @@ namespace xtd {
   //                                                         xtd::convert_pointer specialization
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14368,6 +15902,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14386,6 +15922,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14402,6 +15940,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14418,6 +15958,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14435,6 +15977,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14451,6 +15995,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14468,6 +16014,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14484,6 +16032,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14504,6 +16054,8 @@ namespace xtd {
   //                                                          xtd::convert_string specialization
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14528,6 +16080,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14544,6 +16098,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14560,6 +16116,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14576,6 +16134,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14592,6 +16152,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14608,6 +16170,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14624,6 +16188,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14640,6 +16206,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14656,6 +16224,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14672,6 +16242,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14688,6 +16260,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14704,6 +16278,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14720,6 +16296,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14736,6 +16314,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14752,6 +16332,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14768,6 +16350,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14784,6 +16368,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14800,6 +16386,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14816,6 +16404,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14832,6 +16422,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14848,6 +16440,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14864,6 +16458,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14880,6 +16476,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14896,6 +16494,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14912,6 +16512,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14928,6 +16530,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14944,6 +16548,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14960,6 +16566,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14976,6 +16584,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -14992,6 +16602,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15008,6 +16620,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15024,6 +16638,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15040,6 +16656,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15056,6 +16674,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15072,6 +16692,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15088,6 +16710,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15104,6 +16728,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15120,6 +16746,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15136,6 +16764,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15152,6 +16782,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15168,6 +16800,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15184,6 +16818,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15200,6 +16836,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15216,6 +16854,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15232,6 +16872,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15248,6 +16890,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15264,6 +16908,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15280,6 +16926,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15296,6 +16944,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15312,6 +16962,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15328,6 +16980,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15344,6 +16998,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15360,6 +17016,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15376,6 +17034,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15392,6 +17052,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15408,6 +17070,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15424,6 +17088,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15440,6 +17106,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15456,6 +17124,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15472,6 +17142,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15488,6 +17160,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15504,6 +17178,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15520,6 +17196,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15536,6 +17214,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15552,6 +17232,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15568,6 +17250,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15584,6 +17268,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15600,6 +17286,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15616,6 +17304,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15632,6 +17322,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15648,6 +17340,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15664,6 +17358,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15680,6 +17376,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15696,6 +17394,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15712,6 +17412,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15728,6 +17430,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15744,6 +17448,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15760,6 +17466,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15776,6 +17484,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15792,6 +17502,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15808,6 +17520,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15824,6 +17538,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15840,6 +17556,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15856,6 +17574,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15872,6 +17592,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15888,6 +17610,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15904,6 +17628,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15920,6 +17646,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15936,6 +17664,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15952,6 +17682,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15968,6 +17700,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -15984,6 +17718,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -16000,6 +17736,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -16016,6 +17754,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -16032,6 +17772,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -16048,6 +17790,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -16064,6 +17808,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -16080,6 +17826,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -16096,6 +17844,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -16112,6 +17862,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -16128,6 +17880,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -16144,6 +17898,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -16160,6 +17916,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -16176,6 +17934,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -16192,6 +17952,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -16208,6 +17970,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -16224,6 +17988,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -16240,6 +18006,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -16256,6 +18024,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -16272,6 +18042,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -16288,6 +18060,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -16304,6 +18078,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -16320,6 +18096,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -16336,6 +18114,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -16352,6 +18132,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -16368,6 +18150,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -16384,6 +18168,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -16400,6 +18186,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -16416,6 +18204,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -16432,6 +18222,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -16448,6 +18240,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -16464,6 +18258,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -16480,6 +18276,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -16496,6 +18294,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -16512,6 +18312,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -16528,6 +18330,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -16544,6 +18348,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -16560,6 +18366,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -16576,6 +18384,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -16592,6 +18402,8 @@ namespace xtd {
   }
   
   /// @brief Casts a type into another type.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library

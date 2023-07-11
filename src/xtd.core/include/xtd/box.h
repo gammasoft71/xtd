@@ -25,6 +25,8 @@ namespace xtd {
   /// xtd::object → xtd::box <type_t>
   /// @par Implements
   /// xtd::icomparable <>, xtd::iequatable <>
+  /// @par Header
+  /// @code #include <xtd/box> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library

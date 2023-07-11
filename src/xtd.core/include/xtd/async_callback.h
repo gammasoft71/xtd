@@ -10,6 +10,8 @@
 namespace xtd {
   /// @brief References a method to be called when a corresponding asynchronous operation completes.
   /// @param ar The result of the asynchronous operation.
+  /// @par Header
+  /// @code #include <xtd/async_callback> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
