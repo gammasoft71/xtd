@@ -18,6 +18,8 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Represents a 8-bit unsigned integer.
+  /// @par Header
+  /// @code #include <xtd/byte> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -26,6 +28,8 @@ namespace xtd {
   using byte = uint_least8_t;
   
   /// @brief Represents a 8-bit unicode character.
+  /// @par Header
+  /// @code #include <xtd/char8> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -34,6 +38,8 @@ namespace xtd {
   using char8 = char8_t;
   
   /// @brief Represents a 16-bit unicode character.
+  /// @par Header
+  /// @code #include <xtd/char16> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -42,6 +48,8 @@ namespace xtd {
   using char16 = char16_t;
   
   /// @brief Represents a 32-bit unicode character.
+  /// @par Header
+  /// @code #include <xtd/char32> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -50,6 +58,8 @@ namespace xtd {
   using char32 = char32_t;
   
   /// @brief Represents a decimal-precision floating-point number.
+  /// @par Header
+  /// @code #include <xtd/decimal> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -58,6 +68,8 @@ namespace xtd {
   using decimal = long double;
   
   /// @brief Represents a 16-bit signed integer.
+  /// @par Header
+  /// @code #include <xtd/int16> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -66,6 +78,8 @@ namespace xtd {
   using int16 = int_least16_t;
   
   /// @brief Represents a 32-bit signed integer.
+  /// @par Header
+  /// @code #include <xtd/int32> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -74,6 +88,8 @@ namespace xtd {
   using int32 = int_least32_t;
   
   /// @brief Represents a 64-bit signed integer.
+  /// @par Header
+  /// @code #include <xtd/int64> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -82,10 +98,18 @@ namespace xtd {
   using int64 = int_least64_t;
   
   /// @brief Represent a pointer or a handle.
+  /// @par Header
+  /// @code #include <xtd/intptr> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
   /// @ingroup xtd_core types
   using intptr = intmax_t;
   
   /// @brief Represents a null pointer value.
+  /// @par Header
+  /// @code #include <xtd/null> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -100,10 +124,18 @@ namespace xtd {
   extern core_export_ std::nullptr_t null;
   
   /// @brief Represent the signed integer type of the result of subtracting two pointers.
+  /// @par Header
+  /// @code #include <xtd/ptrdiff> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
   /// @ingroup xtd_core types
   using ptrdiff = std::ptrdiff_t;
   
   /// @brief Represents a 8-bit signed integer.
+  /// @par Header
+  /// @code #include <xtd/sbyte> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -112,6 +144,8 @@ namespace xtd {
   using sbyte = int_least8_t;
   
   /// @brief Represents a size of any object in bytes
+  /// @par Header
+  /// @code #include <xtd/size> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -120,6 +154,8 @@ namespace xtd {
   using size = size_t;
   
   /// @brief Represents a 32-bit or 64-bit signed integer.
+  /// @par Header
+  /// @code #include <xtd/slong> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
