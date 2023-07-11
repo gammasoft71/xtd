@@ -1,4 +1,6 @@
-#include <xtd/xtd>
+#include <xtd/register_any_stringer>
+#include <xtd/unregister_any_stringer>
+#include <xtd/ustring>
 
 using namespace std;
 using namespace xtd;
