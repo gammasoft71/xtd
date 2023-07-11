@@ -7,6 +7,8 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Represent a boxed char8.
+  /// @par Header
+  /// @code #include <xtd/char8_object> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library

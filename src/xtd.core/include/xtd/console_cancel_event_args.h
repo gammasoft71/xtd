@@ -8,6 +8,8 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Provides data for the console::cancel_key_press event. This class cannot be inherited.
+  /// @par Header
+  /// @code #include <xtd/console_cancel_event_args> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library

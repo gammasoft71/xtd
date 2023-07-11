@@ -12,6 +12,8 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Represents API to convert pointers.
+  /// @par Header
+  /// @code #include <xtd/convert_pointer> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library

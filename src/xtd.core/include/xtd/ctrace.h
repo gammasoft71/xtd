@@ -12,6 +12,8 @@ namespace xtd {
   inline xtd::tracestreambuf ctracestreambuf;
   
   /// @brief Provides an std::ostream for xtd::diagnostics::trace.
+  /// @par Header
+  /// @code #include <xtd/ctrace> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -20,6 +22,8 @@ namespace xtd {
   inline std::ostream ctrace(&ctracestreambuf);
   #else
   /// @brief Provides an std::ostream for xtd::diagnostics::trace.
+  /// @par Header
+  /// @code #include <xtd/ctrace> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
