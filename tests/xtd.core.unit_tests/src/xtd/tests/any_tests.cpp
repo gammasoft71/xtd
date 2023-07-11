@@ -1,4 +1,4 @@
-#include <xtd/any.h>
+#include <xtd/register_any_stringer.h>
 #include <xtd/tunit/assert.h>
 #include <xtd/tunit/test_class_attribute.h>
 #include <xtd/tunit/test_method_attribute.h>

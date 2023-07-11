@@ -16,8 +16,6 @@ add_sources(
   include/xtd/action
   include/xtd/add_last_arg_to_command.h
   include/xtd/add_last_arg_to_command
-  include/xtd/any.h
-  include/xtd/any
   include/xtd/architecture_id.h
   include/xtd/architecture_id
   include/xtd/argument_exception.h
@@ -238,6 +236,8 @@ add_sources(
   include/xtd/program_exit_event_handler
   include/xtd/random.h
   include/xtd/random
+  include/xtd/register_any_stringer.h
+  include/xtd/register_any_stringer
   include/xtd/reset_color.h
   include/xtd/reset_color
   include/xtd/sbyte_object.h
@@ -304,6 +304,8 @@ add_sources(
   include/xtd/unboxing
   include/xtd/underflow_exception.h
   include/xtd/underflow_exception
+  include/xtd/unregister_any_stringer.h
+  include/xtd/unregister_any_stringer
   include/xtd/unused.h
   include/xtd/unused
   include/xtd/uri.h
@@ -650,7 +652,7 @@ add_sources(
 add_sources(
   src/xtd/environment_version.cpp
   src/xtd/abstract.cpp
-  src/xtd/any.cpp
+  src/xtd/register_any_stringer.cpp
   src/xtd/attribute.cpp
   src/xtd/bit_converter.cpp
   src/xtd/compiler.cpp
