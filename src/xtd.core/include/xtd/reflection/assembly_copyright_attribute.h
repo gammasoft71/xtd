@@ -61,8 +61,8 @@ std::shared_ptr<xtd::reflection::assembly_copyright_attribute>& __assembly_copyr
 /// @remarks Use this keyword if you create create assembly informations manually.
 /// @remarks Use CMake assembly macro if you want create assembly informations with CMake scripts.
 /// @param version The version information.
-/// @par Namespace
-/// xtd
+/// @par Header
+/// @code #include <xtd/reflection/assembly_copyright_attribute> @endcode
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core keywords
@@ -72,5 +72,3 @@ std::shared_ptr<xtd::reflection::assembly_copyright_attribute>& __assembly_copyr
 /// @include assembly_info.cpp
 #define assembly_copyright_(copyright) \
   xtd::reflection::assembly_copyright_attribute __assembly_copyright_attribute {copyright, xtd::object()}
-
-
