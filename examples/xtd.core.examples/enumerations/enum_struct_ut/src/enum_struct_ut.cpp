@@ -1,6 +1,6 @@
 #include <xtd/as>
 #include <xtd/console>
-#include <xtd/enum>
+#include <xtd/enum_struct>
 
 using namespace xtd;
 

@@ -1,4 +1,4 @@
-#include <xtd/enum_object.h>
+#include <xtd/enum_class.h>
 #include <xtd/tunit/assert.h>
 #include <xtd/tunit/collection_assert.h>
 #include <xtd/tunit/test_class_attribute.h>

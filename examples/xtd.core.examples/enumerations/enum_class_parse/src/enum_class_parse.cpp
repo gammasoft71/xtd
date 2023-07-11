@@ -1,5 +1,5 @@
 #include <xtd/console>
-#include <xtd/enum>
+#include <xtd/enum_class>
 
 using namespace xtd;
 

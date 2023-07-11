@@ -124,6 +124,8 @@ add_sources(
   include/xtd/enum
   include/xtd/enum_attribute.h
   include/xtd/enum_attribute
+  include/xtd/enum_class.h
+  include/xtd/enum_class
   include/xtd/enum_collection.h
   include/xtd/enum_collection
   include/xtd/enum_object.h
@@ -132,6 +134,8 @@ add_sources(
   include/xtd/enum_register
   include/xtd/enum_set_attribute.h
   include/xtd/enum_set_attribute
+  include/xtd/enum_struct.h
+  include/xtd/enum_struct
   include/xtd/environment.h
   include/xtd/environment
   include/xtd/environment_variable_target.h
@@ -146,6 +150,8 @@ add_sources(
   include/xtd/exit_mode
   include/xtd/exit_status.h
   include/xtd/exit_status
+  include/xtd/flags_attribute.h
+  include/xtd/flags_attribute
   include/xtd/foreground_color.h
   include/xtd/foreground_color
   include/xtd/format_exception.h

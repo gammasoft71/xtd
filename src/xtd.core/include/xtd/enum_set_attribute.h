@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::enum_register.
+/// @brief Contains xtd::enum_set_attribute strcut.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 
@@ -12,6 +12,8 @@ namespace xtd {
   /// template<typename enum_t>
   /// struct enum_set_attribute
   /// @endcode
+  /// @par Header
+  /// @code #include <xtd/enum_set_attribute> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -48,45 +50,24 @@ namespace xtd {
   };
 }
 
-/// @brief Provides the set attribute struct for enumerations helper.
-/// @par Namespace
-/// xtd
-/// @par Library
-/// xtd.core
-/// @ingroup xtd_core system keywords
-/// @param namespace_name The name of the the namespace. Empty if no namespace.
-/// @param enum_type The name of the enum flags.
-/// @remaks This helper is created to facilitate to set the xtd::enum_set_attribute with the xtd::enum_attribute::flags atribute and the implementation of the following operators for enum flags:
-/// | Operator | Name                   |
-/// | -------- | ---------------------- |
-/// | ^=       | Bitwise XOR assignment |
-/// | &=       | Bitwise AND assignment |
-/// | \|=      | Bitwise OR assignment  |
-/// | +=       | Addition assignment    |
-/// | -=       | Subtraction assignment |
-/// | ^        | Bitwise XOR            |
-/// | &        | Bitwise AND            |
-/// | \|       | Bitwise OR             |
-/// | +        | Addition               |
-/// | -        | Subtraction            |
-/// | ~        | Bitwise NOT            |
-/// @warning The helper as one limitiation :
-///  * The enum's flags cannot be in a class or struct. The enum must be in the global namespace or in a namespace hierarchy. If the enum flags is in a class or struct, add operators manually and use xtd::enum_set_attribute to register the xtd::enum_attribute::flags attribute.
-/// @par Examples
-/// The following code show how to use #flags_attribute_ helper.
-/// @include format_enum_class_flags.cpp
-#define flags_attribute_(namespace_name, enum_type) \
-  namespace namespace_name { \
-    [[maybe_unused]] inline enum_type& operator ^=(enum_type& lhs, enum_type rhs) {lhs = static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) ^ static_cast<std::underlying_type<enum_type>::type>(rhs)); return lhs;} \
-    [[maybe_unused]] inline enum_type& operator &=(enum_type& lhs, enum_type rhs) {lhs = static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) & static_cast<std::underlying_type<enum_type>::type>(rhs)); return lhs;} \
-    [[maybe_unused]] inline enum_type& operator |=(enum_type& lhs, enum_type rhs) {lhs = static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) | static_cast<std::underlying_type<enum_type>::type>(rhs)); return lhs;} \
-    [[maybe_unused]] inline enum_type& operator +=(enum_type& lhs, enum_type rhs) {lhs = static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) + static_cast<std::underlying_type<enum_type>::type>(rhs)); return lhs;} \
-    [[maybe_unused]] inline enum_type& operator -=(enum_type& lhs, enum_type rhs) {lhs = static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) - static_cast<std::underlying_type<enum_type>::type>(rhs)); return lhs;} \
-    [[maybe_unused]] inline enum_type operator ^(enum_type lhs, enum_type rhs) {return static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) ^ static_cast<std::underlying_type<enum_type>::type>(rhs));} \
-    [[maybe_unused]] inline enum_type operator &(enum_type lhs, enum_type rhs) {return static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) & static_cast<std::underlying_type<enum_type>::type>(rhs));} \
-    [[maybe_unused]] inline enum_type operator |(enum_type lhs, enum_type rhs) {return static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) | static_cast<std::underlying_type<enum_type>::type>(rhs));} \
-    [[maybe_unused]] inline enum_type operator +(enum_type lhs, enum_type rhs) {return static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) + static_cast<std::underlying_type<enum_type>::type>(rhs));} \
-    [[maybe_unused]] inline enum_type operator -(enum_type lhs, enum_type rhs) {return static_cast<enum_type>(static_cast<std::underlying_type<enum_type>::type>(lhs) - static_cast<std::underlying_type<enum_type>::type>(rhs));} \
-    [[maybe_unused]] inline enum_type operator ~(enum_type lhs) {return static_cast<enum_type>(~static_cast<std::underlying_type<enum_type>::type>(lhs));} \
-  }\
-  template<> struct xtd::enum_set_attribute<namespace_name::enum_type> {explicit operator auto() const noexcept {return xtd::enum_attribute::flags;}}
+/// @cond
+template<> struct xtd::enum_register<xtd::enum_attribute> {
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::enum_attribute> {{enum_attribute::standard, "standard"}, {enum_attribute::flags, "flags"}};}
+};
+
+template<> struct xtd::enum_set_attribute<xtd::number_styles> {
+  explicit operator auto() const noexcept {return xtd::enum_attribute::flags;}
+};
+
+template<> struct xtd::enum_register<xtd::number_styles> {
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::number_styles> {{xtd::number_styles::none, "none"}, {xtd::number_styles::allow_leading_white, "allow_leading_white"}, {xtd::number_styles::allow_trailing_white, "allow_trailing_white"}, {xtd::number_styles::allow_leading_sign, "allow_leading_sign"}, {xtd::number_styles::allow_trailing_sign, "allow_trailing_sign"}, {xtd::number_styles::allow_parentheses, "allow_parentheses"}, {xtd::number_styles::allow_decimal_point, "allow_decimal_point"}, {xtd::number_styles::allow_thousands, "allow_thousands"}, {xtd::number_styles::allow_exponent, "allow_exponent"}, {xtd::number_styles::allow_currency_symbol, "allow_currency_symbol"}, {xtd::number_styles::allow_hex_specifier, "allow_hex_specifier"}, {xtd::number_styles::allow_binary_specifier, "allow_binary_specifier"}, {xtd::number_styles::allow_octal_specifier, "allow_octal_specifier"}, {xtd::number_styles::integer, "integer"}, {xtd::number_styles::number, "number"}, {xtd::number_styles::fixed_point, "fixed_point"}, {xtd::number_styles::currency, "currency"}, {xtd::number_styles::any, "any"}, {xtd::number_styles::hex_number, "hex_number"}, {xtd::number_styles::binary_number, "binary_number"}, {xtd::number_styles::octal_number, "octal_number"}};}
+};
+
+template<> struct xtd::enum_register<xtd::string_comparison> {
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::string_comparison> {{xtd::string_comparison::ordinal, "ordinal"}, {xtd::string_comparison::ordinal_ignore_case, "ordinal_ignore_case"}};}
+};
+
+template<> struct xtd::enum_register<xtd::string_split_options> {
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::string_split_options> {{xtd::string_split_options::none, "none"}, {xtd::string_split_options::remove_empty_entries, "remove_empty_entries"}};}
+};
+/// @endcond
