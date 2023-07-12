@@ -1,5 +1,9 @@
 #define DEBUG // Force debug mode even if example is builded in release.
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/button>
+#include <xtd/forms/debug_form>
+#include <xtd/forms/form>
+#include <xtd/diagnostics/debug>
 
 using namespace xtd::forms;
 
