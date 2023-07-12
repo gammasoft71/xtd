@@ -21,6 +21,9 @@ namespace xtd {
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @name Boxed types
+  
+  /// @{
   /// @brief Represents type declarations: class types, interface types, array types, value types, enumeration types, type parameters, generic type definitions, and open or closed constructed generic types.
   /// @par Header
   /// @code #include <xtd/type_object> @endcode
@@ -28,7 +31,8 @@ namespace xtd {
   /// xtd
   /// @par Library
   /// xtd.core
-  /// @ingroup xtd_core system
+  /// @ingroup xtd_core system types
+  /// @remarks For more information about types, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/types">Native types, boxing and unboxing</a>.
   class type_object : public object, public xtd::iequatable<type_object> {
   public:
     /// @cond
@@ -74,4 +78,5 @@ namespace xtd {
 
     const xtd::type& type_;
   };
+  /// @}
 }

@@ -18,6 +18,9 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @name Boxed types
+  
+  /// @{
   /// @brief Provides the base class for enumerations.
   /// @par Header
   /// @code #include <xtd/enum_object> @endcode
@@ -25,8 +28,9 @@ namespace xtd {
   /// xtd
   /// @par Library
   /// xtd.core
-  /// @ingroup xtd_core system
+  /// @ingroup xtd_core system types
   /// @remarks For more information about enumeration, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/enum_class">enum class</a> guide.
+  /// @remarks For more information about types, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/types">Native types, boxing and unboxing</a>.
   /// The following code show how to use xtd::enum_object class for an enum.
   /// @include enum_class.cpp
   /// The following code show how to use xtd::enum_object class for an enum flags.
@@ -292,7 +296,7 @@ namespace xtd {
   /// xtd
   /// @par Library
   /// xtd.core
-  /// @ingroup xtd_core system
+  /// @ingroup xtd_core system types
   template<>
   class enum_object<std::nullptr_t> static_ {
   public:
@@ -605,6 +609,7 @@ namespace xtd {
       }
     }
   };
+  /// @}
   
   /// @cond
   template<typename type_t>

@@ -40,6 +40,8 @@ add_sources(
   include/xtd/bit_converter
   include/xtd/block_scope.h
   include/xtd/block_scope
+  include/xtd/bool.h
+  include/xtd/bool
   include/xtd/boolean_object.h
   include/xtd/boolean_object
   include/xtd/box.h
