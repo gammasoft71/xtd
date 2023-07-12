@@ -1,5 +1,9 @@
 #define DEBUG
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/button>
+#include <xtd/forms/debug_form>
+#include <xtd/forms/debug_message_dialog>
+#include <xtd/forms/form>
 
 using namespace xtd::forms;
 

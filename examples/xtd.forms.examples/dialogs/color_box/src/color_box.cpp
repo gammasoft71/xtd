@@ -1,7 +1,9 @@
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/button>
+#include <xtd/forms/color_box>
+#include <xtd/forms/form>
 
 using namespace xtd;
-using namespace xtd::drawing;
 using namespace xtd::forms;
 
 class form1 : public form {
@@ -13,7 +15,7 @@ public:
     button1.location({10, 10});
     button1.text("Color...");
     button1.click += [&] {
-      color color = back_color();
+      auto color = back_color();
       if (color_box::show(color, *this) == forms::dialog_result::ok)
         back_color(color);
     };

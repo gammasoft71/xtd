@@ -1,6 +1,11 @@
+#include <xtd/drawing/system_icons>
+#include <xtd/forms/application>
+#include <xtd/forms/busy_dialog>
+#include <xtd/forms/button>
+#include <xtd/forms/form>
 #include <thread>
-#include <xtd/xtd>
 
+using namespace std::this_thread;
 using namespace xtd::forms;
 
 class form1 : public form {
@@ -23,7 +28,7 @@ public:
       dialog.show(*this);
       for (auto count = 0; count < 500; ++count) {
         application::do_events();
-        std::this_thread::sleep_for(std::chrono::milliseconds(10));
+        sleep_for(std::chrono::milliseconds(10));
       }
     };
   }

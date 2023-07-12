@@ -1,4 +1,7 @@
-#include <xtd/xtd>
+#include <xtd/forms/about_dialog>
+#include <xtd/forms/application>
+#include <xtd/forms/button>
+#include <xtd/forms/form>
 #include "../resources/gammasoft_64x64.xpm"
 
 using namespace xtd;

@@ -1,4 +1,8 @@
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/assert_box>
+#include <xtd/forms/button>
+#include <xtd/forms/form>
+#include <xtd/diagnostics/debug_break>
 
 using namespace xtd;
 using namespace xtd::forms;
