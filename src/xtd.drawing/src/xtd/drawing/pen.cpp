@@ -192,7 +192,7 @@ bool pen::equals(const xtd::drawing::pen& value) const noexcept {
 }
 
 xtd::ustring pen::to_string() const noexcept {
-  return ustring::full_class_name(*this);
+  return get_type().full_name();
 }
 
 void pen::brush_(std::unique_ptr<xtd::drawing::brush>&& brush) {

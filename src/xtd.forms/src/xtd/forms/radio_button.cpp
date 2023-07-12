@@ -122,7 +122,7 @@ void radio_button::perform_click() {
 }
 
 xtd::ustring radio_button::to_string() const noexcept {
-  return ustring::format("{}, checked: {}", ustring::full_class_name(*this), data_->checked);
+  return ustring::format("{}, checked: {}", get_type().full_name(), data_->checked);
 }
 
 forms::create_params radio_button::create_params() const noexcept {

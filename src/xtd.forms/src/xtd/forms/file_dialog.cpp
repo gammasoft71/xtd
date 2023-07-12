@@ -184,7 +184,7 @@ void file_dialog::reset() noexcept {
 }
 
 xtd::ustring file_dialog::to_string() const noexcept {
-  return ustring::format("{}: title: {}, filename: {}", ustring::full_class_name(*this), data_->title, data_->file_name);
+  return ustring::format("{}: title: {}, filename: {}", get_type().full_name(), data_->title, data_->file_name);
 }
 
 bool file_dialog::run_dialog(intptr hwnd_owner) {

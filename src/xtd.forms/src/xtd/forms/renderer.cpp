@@ -82,8 +82,8 @@ bool renderer::equals(const renderer& value) const noexcept {
 }
 
 xtd::ustring renderer::to_string() const noexcept {
-  if (!data_->name.empty()) return xtd::ustring::format("{}, name: {}", ustring::full_class_name(*this), data_->name);
-  return xtd::ustring::format(xtd::ustring::full_class_name(*this));
+  if (!data_->name.empty()) return xtd::ustring::format("{}, name: {}", get_type().full_name(), data_->name);
+  return xtd::ustring::format(get_type().full_name());
 }
 
 void renderer::default_button_renderer(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {

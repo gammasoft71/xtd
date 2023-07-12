@@ -251,5 +251,5 @@ intptr font::to_hfont() const {
 }
 
 xtd::ustring font::to_string() const noexcept {
-  return ustring::format("[{}: name={}, size={}, units={}, gdi_char_set={}, gdi_vertical_font={}]", ustring::class_name(*this), data_->font_family_.name(), data_->size_, (int32)data_->unit_, data_->gdi_char_set_, data_->gdi_vertical_font_);
+  return ustring::format("[{}: name={}, size={}, units={}, gdi_char_set={}, gdi_vertical_font={}]", get_type().name(), data_->font_family_.name(), data_->size_, (int32)data_->unit_, data_->gdi_char_set_, data_->gdi_vertical_font_);
 }

@@ -170,7 +170,7 @@ void matrix::vector_transform_points(std::vector<xtd::drawing::point>& points) {
 }
 
 xtd::ustring matrix::to_string() const noexcept {
-  return ustring::full_class_name(*this);
+  return get_type().full_name();
 }
 
 void matrix::init_from_rect_3points(const rectangle_f& rect, const point_f pt1, const point_f pt2, const point_f pt3) {

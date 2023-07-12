@@ -9,6 +9,7 @@
 #define __enum_introspection__(namespace_name, enum_t, base_t, ...)
 #else
 #include <string_view>
+#include "../typeof.h"
 #include "../ustring.h"
 
 namespace __enumeration_introspection {
@@ -151,7 +152,7 @@ namespace __enumeration_introspection {
   };
   
   template <class type_t>
-  constexpr std::string_view name_of_type = xtd::ustring::class_name<type_t>();
+  constexpr std::string_view name_of_type = typeof_<type_t>().name();
   
   template <class enum_t>
   struct enum_type_info_base {

@@ -210,7 +210,7 @@ void status_bar_panel::end_init() {
 }
 
 xtd::ustring status_bar_panel::to_string() const noexcept {
-  if (!data_->text.empty()) return ustring::format("{}, style: {}, text: {}", ustring::full_class_name(*this), data_->style, data_->text);
-  if (!data_->name.empty()) return ustring::format("{}, style: {}, name: {}", ustring::full_class_name(*this), data_->style, data_->name);
-  return ustring::format("{}, style: {}", ustring::full_class_name(*this), data_->style);
+  if (!data_->text.empty()) return ustring::format("{}, style: {}, text: {}", get_type().full_name(), data_->style, data_->text);
+  if (!data_->name.empty()) return ustring::format("{}, style: {}, name: {}", get_type().full_name(), data_->style, data_->name);
+  return ustring::format("{}, style: {}", get_type().full_name(), data_->style);
 }

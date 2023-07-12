@@ -50,7 +50,7 @@ const xtd::ustring& system_exception::name() const noexcept {
   //if (!init) __xtd__signal_catcher_check__();
   if (!init) environment::__signal_catcher_check__();
   init = true;
-  return (name_ = xtd::ustring::full_class_name(*this));
+  return (name_ = get_type().full_name());
 }
 
 xtd::ustring system_exception::stack_trace() const noexcept {

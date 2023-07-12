@@ -1,4 +1,5 @@
 #include "../../../include/xtd/environment.h"
+#include "../../../include/xtd/typeof.h"
 #include "../../../include/xtd/diagnostics/stack_trace.h"
 
 using namespace xtd;
@@ -29,19 +30,19 @@ stack_trace::stack_trace(size_t skip_frames, bool need_file_info) {
 }
 
 stack_trace::stack_trace(const std::exception& exception) {
-  frames_ = stack_frame::get_stack_frames(ustring::full_class_name(exception), METHODS_TO_SKIP + 1, false);
+  frames_ = stack_frame::get_stack_frames(typeof_(exception).full_name(), METHODS_TO_SKIP + 1, false);
 }
 
 stack_trace::stack_trace(const std::exception& exception, bool need_file_info) {
-  frames_ = stack_frame::get_stack_frames(ustring::full_class_name(exception), METHODS_TO_SKIP + 1, need_file_info);
+  frames_ = stack_frame::get_stack_frames(typeof_(exception).full_name(), METHODS_TO_SKIP + 1, need_file_info);
 }
 
 stack_trace::stack_trace(const std::exception& exception, size_t skip_frames) {
-  frames_ = stack_frame::get_stack_frames(ustring::full_class_name(exception), skip_frames + METHODS_TO_SKIP + 1, false);
+  frames_ = stack_frame::get_stack_frames(typeof_(exception).full_name(), skip_frames + METHODS_TO_SKIP + 1, false);
 }
 
 stack_trace::stack_trace(const std::exception& exception, size_t skip_frames, bool need_file_info) {
-  frames_ = stack_frame::get_stack_frames(ustring::full_class_name(exception), skip_frames + METHODS_TO_SKIP + 1, need_file_info);
+  frames_ = stack_frame::get_stack_frames(typeof_(exception).full_name(), skip_frames + METHODS_TO_SKIP + 1, need_file_info);
 }
 
 size_t stack_trace::frame_count() const noexcept {

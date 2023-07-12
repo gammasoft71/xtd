@@ -27,7 +27,7 @@ bool object::reference_equals(const object& object_a, const object& object_b) no
 }
 
 ustring object::to_string() const noexcept {
-  return ustring::full_class_name(*this);
+  return get_type().full_name();
 }
 
 std::ostream& xtd::operator <<(std::ostream& os, const object& obj) noexcept {

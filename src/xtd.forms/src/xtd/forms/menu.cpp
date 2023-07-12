@@ -135,7 +135,7 @@ optional<reference_wrapper<main_menu>> menu::get_main_menu() const noexcept {
 }
 
 ustring menu::to_string() const noexcept {
-  return ustring::format("{}, items.size: {}", ustring::full_class_name(*this), data_->menu_items.size());
+  return ustring::format("{}, items.size: {}", get_type().full_name(), data_->menu_items.size());
 }
 
 void menu::clone_menu(const menu& menu_src) {

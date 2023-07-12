@@ -1,6 +1,7 @@
 #include <xtd/tunit/file_assert.h>
 #include <xtd/tunit/test_class_attribute.h>
 #include <xtd/tunit/test_method_attribute.h>
+#include <xtd/typeof.h>
 #include "../../../assert_unit_tests/assert_unit_tests.h"
 
 namespace xtd::tunit::tests {
@@ -24,7 +25,7 @@ void test_(file_assert_are_not_equal_string_failed_tests, test_output) {
       "  FAILED  file_assert_are_not_equal_string_failed_tests.test_case_failed\n"
       "    Expected: not equal <{0}>\n"
       "    But was:  <{0}>\n"
-      "End 1 test from 1 test case ran.\n", xtd::ustring::full_class_name<std::ifstream>()), output);
+      "End 1 test from 1 test case ran.\n", typeof_<std::ifstream>()), output);
 }
 
 void test_(file_assert_are_not_equal_string_failed_tests, test_result) {

@@ -125,3 +125,5 @@ namespace xtd {
   std::ostream& operator <<(std::ostream& os, const object& obj) noexcept;
   /// @endcond
 }
+
+#include "type.h"

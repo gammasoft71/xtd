@@ -120,5 +120,5 @@ bitmap icon::to_bitmap() const {
 }
 
 xtd::ustring icon::to_string() const noexcept {
-  return ustring::full_class_name(*this);
+  return get_type().full_name();
 }

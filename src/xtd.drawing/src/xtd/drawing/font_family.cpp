@@ -104,5 +104,5 @@ bool font_family::is_style_available(font_style style) const {
 }
 
 xtd::ustring font_family::to_string() const noexcept {
-  return ustring::format("[{}: name={}]", ustring::class_name(*this), data_->name_);
+  return ustring::format("[{}: name={}]", get_type().name(), data_->name_);
 }

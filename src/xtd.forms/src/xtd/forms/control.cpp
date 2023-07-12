@@ -2,6 +2,7 @@
 #include <iostream>
 #include <set>
 #include <xtd/invalid_operation_exception.h>
+#include <xtd/typeof.h>
 #include <xtd/diagnostics/debug.h>
 #include <xtd/diagnostics/debugger.h>
 #include <xtd/diagnostics/trace_switch.h>
@@ -1510,9 +1511,9 @@ void control::suspend_layout() {
 }
 
 ustring control::to_string() const noexcept {
-  if (!data_->name.empty()) return ustring::format("{}, name: {}", ustring::full_class_name(*this), data_->name);
-  if (!data_->text.empty()) return ustring::format("{}, text: {}", ustring::full_class_name(*this), data_->text);
-  return ustring::full_class_name(*this);
+  if (!data_->name.empty()) return ustring::format("{}, name: {}", get_type().full_name(), data_->name);
+  if (!data_->text.empty()) return ustring::format("{}, text: {}", get_type().full_name(), data_->text);
+  return get_type().full_name();
 }
 
 void control::update() const {
@@ -1542,7 +1543,7 @@ intptr control::wnd_proc_(intptr hwnd, int32 msg, intptr wparam, intptr lparam, 
   return message.result();
   /*
   } catch(const exception& e) {
-    message_box::show(from_handle(hwnd).value(), xtd::ustring::format("message: {}", e.what()), xtd::ustring::format("Exception {}", xtd::ustring::class_name(e)), message_box_buttons::ok, message_box_icon::error);
+    message_box::show(from_handle(hwnd).value(), xtd::ustring::format("message: {}", e.what()), xtd::ustring::format("Exception {}", typeof_(e).name()), message_box_buttons::ok, message_box_icon::error);
   } catch(...) {
     message_box::show(from_handle(hwnd).value(), "message: An unknown exception occur", "Unknown Exception", message_box_buttons::ok, message_box_icon::error);
   }

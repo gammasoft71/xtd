@@ -132,7 +132,7 @@ void numeric_up_down::set_range(double min_value, double max_value) {
 }
 
 xtd::ustring numeric_up_down::to_string() const noexcept {
-  return ustring::format("{}, minimum: {}, maximum: {}, value: {}", ustring::full_class_name(*this), data_->minimum, data_->maximum, data_->value);
+  return ustring::format("{}, minimum: {}, maximum: {}, value: {}", get_type().full_name(), data_->minimum, data_->maximum, data_->value);
 }
 
 drawing::color numeric_up_down::default_back_color() const noexcept {

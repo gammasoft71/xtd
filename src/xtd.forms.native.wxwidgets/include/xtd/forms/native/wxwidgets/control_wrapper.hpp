@@ -4,6 +4,7 @@
 #error "Do not include this file: Internal use only"
 #endif
 /// @endcond
+#include <xtd/typeof.h>
 
 namespace xtd::forms::native {
   template<typename control_t>
@@ -37,7 +38,7 @@ namespace xtd::forms::native {
     if (event_handler_->control()->IsBeingDeleted()) return false;
     if (static_cast<xtd::drawing::native::wx_application*>(wxTheApp)->exceptionStored) return  process_result_;
 
-    //diagnostics::debug::write_line_if(event.GetEventType() != wxEVT_UPDATE_UI && event.GetEventType() != wxEVT_IDLE, ustring::format("control_wrapper<{}>::ProcessEvent {}", ustring::full_class_name<control_t>(), to_string(event)));
+    //diagnostics::debug::write_line_if(event.GetEventType() != wxEVT_UPDATE_UI && event.GetEventType() != wxEVT_IDLE, ustring::format("control_wrapper<{}>::ProcessEvent {}", typeof_<control_t>().full_name(), to_string(event)));
     
     // keyboard events
     if (event.GetEventType() == wxEVT_CHAR) wx_evt_char(event);
@@ -388,7 +389,7 @@ namespace xtd::forms::native {
   
   template<typename control_t>
   inline std::string control_wrapper<control_t>::to_string(const wxEvent& event) {
-    return ustring::format("{} {{type={}, id={}}}", ustring::full_class_name(event), to_string(event.GetEventType()), event.GetId());
+    return ustring::format("{} {{type={}, id={}}}", typeof_<control_t>().full_name(), to_string(event.GetEventType()), event.GetId());
   }
   
   template<typename control_t>
