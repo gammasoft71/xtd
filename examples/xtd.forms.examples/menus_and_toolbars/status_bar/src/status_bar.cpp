@@ -1,4 +1,9 @@
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/form>
+#include <xtd/forms/progress_bar>
+#include <xtd/forms/status_bar>
+#include <xtd/forms/timer>
+#include <xtd/drawing/pens>
 
 using namespace xtd;
 using namespace xtd::drawing;

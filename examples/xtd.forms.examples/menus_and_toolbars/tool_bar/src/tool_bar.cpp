@@ -1,4 +1,12 @@
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/choice>
+#include <xtd/forms/form>
+#include <xtd/forms/list_box>
+#include <xtd/forms/progress_bar>
+#include <xtd/forms/system_texts>
+#include <xtd/forms/timer>
+#include <xtd/forms/tool_bar>
+#include <xtd/forms/tool_bar_images>
 
 using namespace xtd;
 using namespace xtd::forms;
