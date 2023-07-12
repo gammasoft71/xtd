@@ -139,7 +139,7 @@ private:
   static void display_exception(const system_exception& ex) {
     ustring s;
     s += "An exception of type \"";
-    s += ustring::full_class_name(ex);
+    s += typeof_(ex).full_name();
     s += "\" has occurred.\r\n";
     s += ex.message();
     s += "\r\nStack trace information:\r\n";

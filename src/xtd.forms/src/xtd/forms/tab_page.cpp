@@ -50,7 +50,7 @@ tab_page& tab_page::image_index(size_t value) {
 }
 
 control& tab_page::parent(const control& parent) {
-  if (!is<tab_control>(parent)) throw argument_exception(ustring::format("tab_page cannot be added to a '{}'.  tab_page can only be added to tab_control"), ustring::full_class_name(parent));
+  if (!is<tab_control>(parent)) throw argument_exception(ustring::format("tab_page cannot be added to a '{}'.  tab_page can only be added to tab_control"), parent.get_type().full_name());
   as<tab_control>(const_cast<control&>(parent)).tab_pages().push_back(*this);
   return *this;
 }

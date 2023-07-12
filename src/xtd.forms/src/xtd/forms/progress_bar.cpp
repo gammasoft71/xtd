@@ -150,7 +150,7 @@ void progress_bar::set_range(int32 min_value, int32 max_value) {
 }
 
 xtd::ustring progress_bar::to_string() const noexcept {
-  return ustring::format("{}, minimum: {}, maximum: {}, value: {}", ustring::full_class_name(*this), data_->minimum, data_->maximum, data_->value);
+  return ustring::format("{}, minimum: {}, maximum: {}, value: {}", get_type().full_name(), data_->minimum, data_->maximum, data_->value);
 }
 
 forms::create_params progress_bar::create_params() const noexcept {

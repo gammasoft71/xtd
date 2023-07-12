@@ -114,5 +114,5 @@ void cursor::show() {
 }
 
 ustring cursor::to_string() const noexcept {
-  return ustring::format("[cursor: {}]", data_->name_ != "" ? data_->name_ : ustring::full_class_name(*this));
+  return ustring::format("[cursor: {}]", data_->name_ != "" ? data_->name_ : get_type().full_name());
 }

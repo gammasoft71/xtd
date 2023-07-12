@@ -3,6 +3,7 @@
 #include <xtd/system_exception.h>
 #include <xtd/drawing/system_icons.h>
 #include <xtd/io/path.h>
+#include <xtd/typeof.h>
 #include "../../../include/xtd/forms/exception_dialog.h"
 #include "../../../include/xtd/forms/application.h"
 #include "../../../include/xtd/forms/button.h"
@@ -119,7 +120,7 @@ namespace {
       if (exception_ && dynamic_cast<const xtd::system_exception*>(exception_))
         report += ustring::format("{}{}", static_cast<const xtd::system_exception*>(exception_)->to_string(), environment::new_line());
       else if (exception_ && dynamic_cast<const std::exception*>(exception_))
-        report += ustring::format("{0}: {1}{2}", xtd::ustring::full_class_name(*exception_), static_cast<const std::exception*>(exception_)->what(), environment::new_line());
+        report += ustring::format("{0}: {1}{2}", typeof_(*exception_), static_cast<const std::exception*>(exception_)->what(), environment::new_line());
       else
         report += ustring::format("(Unknown exception){0}"_t, environment::new_line());
       report += environment::new_line();

@@ -3,6 +3,7 @@
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <iomanip>
 #include "../../include/xtd/ustring.h"
+#include "../../include/xtd/typeof.h"
 #include "../../include/xtd/convert_string.h"
 #include "../../include/xtd/format_exception.h"
 #include "../../include/xtd/diagnostics/stack_frame.h"
@@ -545,7 +546,7 @@ ustring ustring::substr(size_type index, size_type count) const {
 }
 
 ustring ustring::class_name(const std::type_info& info) {
-  return get_class_name(full_class_name(info));
+  return typeof_(info).name();
 }
 
 int32 ustring::compare(const ustring& str_a, const ustring& str_b) noexcept {
@@ -664,7 +665,10 @@ bool ustring::ends_with(const ustring& value, xtd::string_comparison comparison_
   return rfind(value) + value.size() == size();
 }
 
-ustring ustring::full_class_name(const std::type_info& info) {return demangle(info.name());}
+ustring ustring::full_class_name(const std::type_info& info) {
+  return typeof_(info).full_name();
+}
+
 size_t ustring::get_hash_code() const noexcept {
   return std::hash<std::basic_string<value_type>>()(*this);
 }

@@ -1322,7 +1322,7 @@ namespace xtd {
       /// @param trimming One of xtd::drawing::string_trimming values.
       xtd::ustring trim_string(const xtd::ustring& text, const xtd::drawing::font& font, float width, xtd::drawing::string_trimming trimming);
       
-      xtd::ustring to_string() const noexcept override {return ustring::full_class_name(*this);}
+      xtd::ustring to_string() const noexcept override {return get_type().full_name();}
       /// @}
       
     private:

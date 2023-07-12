@@ -38,7 +38,7 @@ bool brush::equals(const brush& value) const noexcept {
 }
 
 xtd::ustring brush::to_string() const noexcept {
-  return ustring::full_class_name(*this);
+  return get_type().full_name();
 }
 
 void brush::set_native_brush(intptr brush) {

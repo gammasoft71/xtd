@@ -133,7 +133,7 @@ void track_bar::set_range(int32 min_value, int32 max_value) {
 }
 
 xtd::ustring track_bar::to_string() const noexcept {
-  return ustring::format("{}, minimum: {}, maximum: {}, value: {}", ustring::full_class_name(*this), data_->minimum, data_->maximum, data_->value);
+  return ustring::format("{}, minimum: {}, maximum: {}, value: {}", get_type().full_name(), data_->minimum, data_->maximum, data_->value);
 }
 
 forms::create_params track_bar::create_params() const noexcept {

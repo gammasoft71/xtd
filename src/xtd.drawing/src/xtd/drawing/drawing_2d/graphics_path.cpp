@@ -331,7 +331,7 @@ void graphics_path::start_figure() {
 }
 
 xtd::ustring graphics_path::to_string() const noexcept {
-  return ustring::full_class_name(*this);
+  return get_type().full_name();
 }
 
 void graphics_path::recreate_handle() {

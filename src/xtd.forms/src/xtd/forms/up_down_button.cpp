@@ -94,7 +94,7 @@ void up_down_button::set_range(int32 min_value, int32 max_value) {
 }
 
 xtd::ustring up_down_button::to_string() const noexcept {
-  return ustring::format("{}, minimum: {}, maximum: {}, value: {}", ustring::full_class_name(*this), data_->minimum, data_->maximum, data_->value);
+  return ustring::format("{}, minimum: {}, maximum: {}, value: {}", get_type().full_name(), data_->minimum, data_->maximum, data_->value);
 }
 
 forms::create_params up_down_button::create_params() const noexcept {
