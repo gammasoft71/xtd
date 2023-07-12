@@ -1,6 +1,11 @@
 #define TRACE
+#include <xtd/forms/application>
+#include <xtd/forms/button>
+#include <xtd/forms/collapsible_panel>
+#include <xtd/forms/form>
+#include <xtd/forms/label>
+#include <xtd/forms/toggle_button>
 #include <list>
-#include <xtd/xtd>
 
 using namespace std;
 using namespace xtd;

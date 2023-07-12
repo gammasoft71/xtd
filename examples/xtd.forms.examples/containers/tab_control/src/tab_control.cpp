@@ -1,4 +1,8 @@
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/form>
+#include <xtd/forms/label>
+#include <xtd/forms/tab_control>
+#include <xtd/forms/tab_page>
 
 using namespace xtd::forms;
 
