@@ -4,6 +4,7 @@
 #pragma once
 #include "trace_form_base.h"
 #include "icontrol_trace.h"
+#include <xtd/diagnostics/trace.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
