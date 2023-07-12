@@ -20,7 +20,9 @@ namespace xtd {
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief Represent a type_object.
+  /// @brief Represents type declarations: class types, interface types, array types, value types, enumeration types, type parameters, generic type definitions, and open or closed constructed generic types.
+  /// @par Header
+  /// @code #include <xtd/type_object> @endcode
   /// @par Namespace
   /// xtd
   /// @par Library
