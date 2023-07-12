@@ -1,9 +1,11 @@
 #define DEBUG
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/button>
+#include <xtd/forms/debug_form>
+#include <xtd/forms/debug_message_box>
+#include <xtd/forms/form>
+#include <xtd/startup>
 
-using namespace xtd;
-using namespace xtd::diagnostics;
-using namespace xtd::drawing;
 using namespace xtd::forms;
 
 class form_main : public form {
@@ -19,8 +21,9 @@ public:
   
   static auto main() {
     debug_form debug_form;
-    xtd::forms::application::run(form_main());
+    application::run(form_main {});
   }
+  
 private:
   button button_;
 };

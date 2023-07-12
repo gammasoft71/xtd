@@ -1,6 +1,10 @@
+#include <xtd/forms/application>
+#include <xtd/forms/busy_box>
+#include <xtd/forms/button>
+#include <xtd/forms/form>
 #include <thread>
-#include <xtd/xtd>
 
+using namespace std::this_thread;
 using namespace xtd::forms;
 
 class form1 : public form {
@@ -16,7 +20,7 @@ public:
       busy_box::show("Please wait while do something...", "Application busy");
       for (auto count = 0; count < 500; ++count) {
         application::do_events();
-        std::this_thread::sleep_for(std::chrono::milliseconds(10));
+        sleep_for(std::chrono::milliseconds(10));
       }
       busy_box::hide();
     };
