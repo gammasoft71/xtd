@@ -25,7 +25,7 @@ var searchData=
   ['waxing_5fgibbous_5fmoon_5fsymbol_22',['waxing_gibbous_moon_symbol',['../classxtd_1_1forms_1_1emoticons.html#a21f7d398d96bf56ccb89bf6da517a169',1,'xtd::forms::emoticons']]],
   ['wchar_23',['wchar',['../group__types.html#ga155357d92cf162b71b396e46accee518',1,'xtd']]],
   ['wchar_2eh_24',['wchar.h',['../wchar_8h.html',1,'']]],
-  ['wchar_5fobject_25',['wchar_object',['../group__system.html#gaa5ac5641de5f9362829662a60349ecde',1,'xtd']]],
+  ['wchar_5fobject_25',['wchar_object',['../group__types.html#gaa5ac5641de5f9362829662a60349ecde',1,'xtd']]],
   ['wchar_5fobject_2eh_26',['wchar_object.h',['../wchar__object_8h.html',1,'']]],
   ['weary_5fcat_5fface_27',['weary_cat_face',['../classxtd_1_1forms_1_1emoticons.html#a127d1064db4b784ce3fcaf5ed2d322d9',1,'xtd::forms::emoticons']]],
   ['weary_5fface_28',['weary_face',['../classxtd_1_1forms_1_1emoticons.html#a98535822cfd0601c5deb586df5c6d8d1',1,'xtd::forms::emoticons']]],

@@ -108,8 +108,8 @@ Inheritance diagram for xtd::box_char&lt; type_t &gt;:</div>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename type_t&gt;<br />
 class xtd::box_char&lt; type_t &gt;</div><p>Represents a boxed char object. </p>
 <div class="fragment"><div class="line"><span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1box__char.html">box_char</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1box__integer.html">xtd::box_integer</a>&lt;type_t&gt;</div>
-<div class="ttc" id="aclassxtd_1_1box__char_html"><div class="ttname"><a href="classxtd_1_1box__char.html">xtd::box_char</a></div><div class="ttdoc">Represents a boxed char object.</div><div class="ttdef"><b>Definition</b> box_char.h:35</div></div>
-<div class="ttc" id="aclassxtd_1_1box__integer_html"><div class="ttname"><a href="classxtd_1_1box__integer.html">xtd::box_integer</a></div><div class="ttdoc">Represents a boxed integer object.</div><div class="ttdef"><b>Definition</b> box_integer.h:35</div></div>
+<div class="ttc" id="aclassxtd_1_1box__char_html"><div class="ttname"><a href="classxtd_1_1box__char.html">xtd::box_char</a></div><div class="ttdoc">Represents a boxed char object.</div><div class="ttdef"><b>Definition</b> box_char.h:36</div></div>
+<div class="ttc" id="aclassxtd_1_1box__integer_html"><div class="ttname"><a href="classxtd_1_1box__integer.html">xtd::box_integer</a></div><div class="ttdoc">Represents a boxed integer object.</div><div class="ttdef"><b>Definition</b> box_integer.h:36</div></div>
 </div><!-- fragment --> <dl class="section user"><dt>Inheritance</dt><dd><a class="el" href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....">xtd::object</a> → <a class="el" href="classxtd_1_1box.html" title="Represents a boxed object.">xtd::box</a> &lt;type_t&gt; → <a class="el" href="classxtd_1_1box__integer.html" title="Represents a boxed integer object.">xtd::box_integer</a> &lt;type_t&gt; → <a class="el" href="classxtd_1_1box__char.html" title="Represents a boxed char object.">xtd::box_char</a> &lt;type_t&gt; </dd></dl>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/box_char&gt;</span> </div>
 </div><!-- fragment --> </dd></dl>
@@ -119,15 +119,17 @@ class xtd::box_char&lt; type_t &gt;</div><p>Represents a boxed char object. </p>
 <dd>
 Use xtd::boxing to box an object. </dd>
 <dd>
-Use xtd::unboxing to unbox an object. </dd></dl>
+Use xtd::unboxing to unbox an object. </dd>
+<dd>
+For more information about types, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/types">Native types, boxing and unboxing</a>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to create and use xtd::box_char&lt;char8&gt;. <div class="fragment"><div class="line"><span class="keyword">auto</span> stringer = [](<span class="keyword">const</span> <span class="keywordtype">object</span>&amp; <a class="code hl_function" href="classxtd_1_1box.html#abc6d47e0f1df482254595e035681a10f">value</a>) {<span class="keywordflow">return</span> <a class="code hl_function" href="classxtd_1_1box.html#abc6d47e0f1df482254595e035681a10f">value</a>.to_string();};</div>
 <div class="line"><a class="code hl_typedef" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">char8</a> unboxed_object = u8<span class="charliteral">&#39;a&#39;</span>;</div>
 <div class="line"><a class="code hl_class" href="classxtd_1_1box__char.html">box_char&lt;char8&gt;</a> boxed_object = unboxed_object;</div>
 <div class="line"><span class="keyword">auto</span> result = stringer(boxed_object);</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;result = {}&quot;</span>, result); <span class="comment">// Display: result = a;</span></div>
-<div class="ttc" id="aclassxtd_1_1box_html_abc6d47e0f1df482254595e035681a10f"><div class="ttname"><a href="classxtd_1_1box.html#abc6d47e0f1df482254595e035681a10f">xtd::box::value</a></div><div class="ttdeci">const type_t &amp; value() const noexcept</div><div class="ttdoc">Gets the underlying value.</div><div class="ttdef"><b>Definition</b> box.h:81</div></div>
+<div class="ttc" id="aclassxtd_1_1box_html_abc6d47e0f1df482254595e035681a10f"><div class="ttname"><a href="classxtd_1_1box.html#abc6d47e0f1df482254595e035681a10f">xtd::box::value</a></div><div class="ttdeci">const type_t &amp; value() const noexcept</div><div class="ttdoc">Gets the underlying value.</div><div class="ttdef"><b>Definition</b> box.h:82</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="agroup__types_html_ga1259090c8918e75847a8cb2a64b8912a"><div class="ttname"><a href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">xtd::char8</a></div><div class="ttdeci">char8_t char8</div><div class="ttdoc">Represents a 8-bit unicode character.</div><div class="ttdef"><b>Definition</b> types.h:38</div></div>
+<div class="ttc" id="agroup__types_html_ga1259090c8918e75847a8cb2a64b8912a"><div class="ttname"><a href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">xtd::char8</a></div><div class="ttdeci">char8_t char8</div><div class="ttdoc">Represents a 8-bit unicode character.</div><div class="ttdef"><b>Definition</b> types.h:64</div></div>
 </div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
@@ -1468,7 +1470,7 @@ template&lt;typename type_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 12 2023 15:22:24 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Jul 12 2023 18:07:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
