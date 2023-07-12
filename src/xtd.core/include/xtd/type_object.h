@@ -2,6 +2,7 @@
 /// @brief Contains xtd::type_object class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "iequatable.h"
 #include "object.h"
 #include "ustring.h"
 
@@ -28,7 +29,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
-  class type_object : public object {
+  class type_object : public object, public xtd::iequatable<type_object> {
   public:
     /// @cond
     type_object(const type_object&) noexcept = default;
@@ -55,6 +56,8 @@ namespace xtd {
     
     /// @par Methods
     /// @{
+    bool equals(const type_object& type) const noexcept override;
+
     xtd::ustring to_string() const noexcept override;
     /// @}
     
