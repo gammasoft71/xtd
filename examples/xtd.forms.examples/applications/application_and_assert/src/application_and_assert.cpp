@@ -1,4 +1,6 @@
+#include <xtd/diagnostics/assert>
 #include <xtd/diagnostics/debug>
+#include <xtd/diagnostics/debug_break>
 #include <xtd/diagnostics/debugger>
 #include <xtd/forms/application>
 #include <xtd/forms/button>

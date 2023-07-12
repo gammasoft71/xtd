@@ -1,5 +1,5 @@
 #include <xtd/collections/vector_list>
-#include <xtd/any>
+#include <xtd/register_any_stringer>
 #include <xtd/as>
 #include <xtd/console>
 #include <xtd/is>
