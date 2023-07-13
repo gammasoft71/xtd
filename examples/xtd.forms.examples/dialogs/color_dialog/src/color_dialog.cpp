@@ -1,7 +1,4 @@
 #include <xtd/drawing/system_colors>
-#include <xtd/forms/button>
-#include <xtd/forms/color_box>
-#include <xtd/forms/form>
 #include <xtd/forms/application>
 #include <xtd/forms/button>
 #include <xtd/forms/color_dialog>
