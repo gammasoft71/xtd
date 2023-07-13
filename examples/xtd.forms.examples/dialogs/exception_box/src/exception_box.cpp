@@ -1,4 +1,8 @@
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/button>
+#include <xtd/forms/exception_box>
+#include <xtd/forms/form>
+#include <xtd/invalid_operation_exception>
 
 using namespace xtd;
 using namespace xtd::forms;

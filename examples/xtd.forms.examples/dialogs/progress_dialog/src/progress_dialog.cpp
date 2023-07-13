@@ -1,6 +1,10 @@
+#include <xtd/forms/application>
+#include <xtd/forms/button>
+#include <xtd/forms/form>
+#include <xtd/forms/progress_dialog>
 #include <thread>
-#include <xtd/xtd>
 
+using namespace std::this_thread;
 using namespace xtd;
 using namespace xtd::forms;
 
@@ -14,7 +18,7 @@ public:
     button_process.parent(*this);
     button_process.text("Process...");
     button_process.click += [this] {
-      progress_dialog dialog;
+      auto dialog = progress_dialog {};
       dialog.text("Process running");
       dialog.show_skip_button(true);
       dialog.show_remaining_time(true);
@@ -22,7 +26,7 @@ public:
       for (auto step = 1; step <= dialog.maximum(); ++step) {
         dialog.value(step);
         dialog.message(ustring::format("Step {}/{} ==> {}", dialog.value(), dialog.maximum(), dialog.skipped() ? "skipped" : "done"));
-        std::this_thread::sleep_for(100_ms);
+        sleep_for(100_ms);
       }
     };
     
@@ -40,7 +44,7 @@ public:
       dialog.show_dialog(*this);
       while (!dialog.cancelled()) {
         application::do_events();
-        std::this_thread::sleep_for(100_ms);
+        sleep_for(100_ms);
       }
     };
   }

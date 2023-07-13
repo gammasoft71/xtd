@@ -1,6 +1,9 @@
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/button>
+#include <xtd/forms/form>
+#include <xtd/forms/label>
+#include <xtd/forms/open_file_dialog>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 

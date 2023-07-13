@@ -1,6 +1,9 @@
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/button>
+#include <xtd/forms/form>
+#include <xtd/forms/input_dialog>
+#include <xtd/forms/label>
 
-using namespace xtd;
 using namespace xtd::forms;
 
 namespace input_dialog_example {

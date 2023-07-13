@@ -1,5 +1,9 @@
 #define TRACE
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/button>
+#include <xtd/forms/form>
+#include <xtd/forms/trace_form>
+#include <xtd/forms/trace_message_dialog>
 
 using namespace xtd::forms;
 
@@ -22,6 +26,6 @@ private:
 };
 
 auto main()->int {
-  trace_form trace_form;
+  auto tf = trace_form {};
   application::run(form1 {});
 }

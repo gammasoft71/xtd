@@ -20,7 +20,7 @@ public:
   }
   
   static auto main() {
-    debug_form debug_form;
+    auto df = debug_form {};
     application::run(form_main {});
   }
   
