@@ -1,4 +1,11 @@
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/countries>
+#include <xtd/forms/form>
+#include <xtd/forms/label>
+#include <xtd/forms/list_box>
+#include <xtd/forms/picture_box>
+#include <xtd/drawing/system_colors>
+#include <xtd/startup>
 
 using namespace std;
 using namespace xtd;

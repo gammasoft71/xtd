@@ -1,7 +1,15 @@
+#include <xtd/forms/application>
+#include <xtd/forms/button>
+#include <xtd/forms/button_images>
+#include <xtd/forms/choice>
+#include <xtd/forms/form>
+#include <xtd/forms/label>
+#include <xtd/forms/picture_box>
+#include <xtd/forms/system_texts>
+#include <xtd/drawing/system_colors>
 #include <map>
 #include <string>
 #include <vector>
-#include <xtd/xtd>
 
 using namespace std;
 using namespace xtd;
@@ -43,7 +51,7 @@ namespace example {
       
       choice_size.bounds({75, 85, 280, 25});
       choice_size.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::right);
-      for (auto size  : images::sizes())
+      for (auto size : images::sizes())
         choice_size.items().push_back({ustring::format("{}x{} pixels", size.width(), size.height()), size});
       choice_size.selected_index(7);
       choice_size.selected_index_changed += event_handler(*this, &form1::update_form);

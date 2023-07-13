@@ -1,8 +1,14 @@
-#include <chrono>
+#include <xtd/forms/application>
+#include <xtd/forms/background_worker>
+#include <xtd/forms/button>
+#include <xtd/forms/form>
+#include <xtd/forms/label>
+#include <xtd/forms/panel>
+#include <xtd/forms/progress_bar>
+#include <xtd/forms/text_box>
 #include <thread>
-#include <xtd/xtd>
 
-using namespace std;
+using namespace std::this_thread;
 using namespace xtd;
 using namespace xtd::forms;
 
@@ -64,7 +70,7 @@ namespace background_worker_example {
       worker.do_work += [&] {
         for (auto step = 1; step <= progress.maximum(); ++step) {
           if (worker.cancellation_pending()) break; // stop work...
-          this_thread::sleep_for(100_ms); // simulate work...
+          sleep_for(100_ms); // simulate work...
           worker.report_progress(step, ustring::format("step {} / {}", step, progress.maximum()));
         }
       };
