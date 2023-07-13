@@ -1,5 +1,8 @@
+#include <xtd/forms/application>
+#include <xtd/forms/button>
+#include <xtd/forms/form>
+#include <xtd/forms/use_wait_cursor>
 #include <thread>
-#include <xtd/xtd>
 
 using namespace std::chrono;
 using namespace std::this_thread;

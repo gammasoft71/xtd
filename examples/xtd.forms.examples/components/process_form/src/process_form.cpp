@@ -1,4 +1,10 @@
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/button>
+#include <xtd/forms/button_images>
+#include <xtd/forms/form>
+#include <xtd/forms/vertical_layout_panel>
+#include <xtd/diagnostics/process>
+#include <xtd/invalid_operation_exception>
 
 using namespace xtd;
 using namespace xtd::diagnostics;

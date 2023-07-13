@@ -1,4 +1,10 @@
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/check_box>
+#include <xtd/forms/check_box_renderer>
+#include <xtd/forms/choice>
+#include <xtd/forms/color_picker>
+#include <xtd/forms/form>
+#include <xtd/cdebug>
 
 using namespace std;
 using namespace xtd;

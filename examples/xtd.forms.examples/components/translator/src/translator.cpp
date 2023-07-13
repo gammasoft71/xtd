@@ -1,4 +1,9 @@
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/button>
+#include <xtd/forms/form>
+#include <xtd/forms/label>
+#include <xtd/forms/message_box>
+#include <locale>
 
 using namespace std;
 using namespace xtd;
