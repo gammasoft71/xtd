@@ -1,6 +1,9 @@
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/button>
+#include <xtd/forms/form>
+#include <xtd/forms/input_box>
+#include <xtd/forms/label>
 
-using namespace xtd;
 using namespace xtd::forms;
 
 namespace input_box_example {
@@ -13,7 +16,7 @@ namespace input_box_example {
       button1.location({10, 10});
       button1.text("Text...");
       button1.click += [&] {
-        ustring value = label1.text();
+        auto value = label1.text();
         if (input_box::show(value, *this, "Message text", "Caption text") == dialog_result::ok)
           label1.text(value);
       };

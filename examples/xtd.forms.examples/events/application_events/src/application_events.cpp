@@ -6,7 +6,7 @@ using namespace xtd::diagnostics;
 using namespace xtd::forms;
 
 auto main()->int {
-  debug_form df;
+  auto df = debug_form {};
   
   form form1;
   button button1;

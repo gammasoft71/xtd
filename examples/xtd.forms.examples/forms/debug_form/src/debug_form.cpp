@@ -28,9 +28,9 @@ private:
 };
 
 auto main()->int {
-  debug_form debug_form;
-  debug_form.back_color(xtd::drawing::color::black);
-  debug_form.fore_color(xtd::drawing::color::lime);
+  auto df = debug_form {};
+  df.back_color(xtd::drawing::color::black);
+  df.fore_color(xtd::drawing::color::lime);
   
   application::run(form1 {});
 }

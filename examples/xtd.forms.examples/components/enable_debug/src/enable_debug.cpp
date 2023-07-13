@@ -28,7 +28,7 @@ private:
 };
 
 auto main()->int {
-  debug_form debug_form;
+  auto df = debug_form {};
   enable_debug::trace_switch().level(xtd::diagnostics::trace_level::verbose);
   enable_debug::set(enable_debug::key_events | enable_debug::mouse_events, true);
   application::run(form1 {});

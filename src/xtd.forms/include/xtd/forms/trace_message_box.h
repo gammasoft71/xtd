@@ -4,7 +4,11 @@
 #pragma once
 #include <xtd/diagnostics/trace.h>
 #include "application.h"
-#include "message_box.h"
+#include "message_box_buttons.h"
+#include "message_box_default_button.h"
+#include "message_box_icon.h"
+#include "message_box_options.h"
+#include "message_dialog.h"
 
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

@@ -1,6 +1,9 @@
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/button>
+#include <xtd/forms/font_dialog>
+#include <xtd/forms/form>
+#include <xtd/forms/label>
 
-using namespace xtd;
 using namespace xtd::forms;
 
 class form1 : public form {
@@ -17,7 +20,7 @@ public:
       auto dialog = font_dialog {};
       dialog.color(label1.fore_color());
       dialog.font(label1.font());
-      if (dialog.show_dialog(*this) == forms::dialog_result::ok) {
+      if (dialog.show_dialog(*this) == xtd::forms::dialog_result::ok) {
         label1.fore_color(dialog.color());
         label1.font(dialog.font());
       }

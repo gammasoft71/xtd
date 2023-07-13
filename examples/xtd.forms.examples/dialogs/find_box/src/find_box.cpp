@@ -1,4 +1,9 @@
-#include <xtd/xtd>
+#include <xtd/diagnostics/debug>
+#include <xtd/forms/application>
+#include <xtd/forms/button>
+#include <xtd/forms/debug_form>
+#include <xtd/forms/find_box>
+#include <xtd/forms/form>
 
 using namespace xtd;
 using namespace xtd::forms;
@@ -23,6 +28,6 @@ private:
 };
 
 auto main()->int {
-  debug_form df;
+  auto df = debug_form {};
   application::run(form1 {});
 }

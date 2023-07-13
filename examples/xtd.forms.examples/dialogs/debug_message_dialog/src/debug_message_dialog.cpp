@@ -26,6 +26,6 @@ private:
 };
 
 auto main()->int {
-  debug_form debug_form;
+  auto df = debug_form {};
   application::run(form1 {});
 }

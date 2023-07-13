@@ -1,6 +1,12 @@
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/button>
+#include <xtd/forms/font_box>
+#include <xtd/forms/form>
+#include <xtd/forms/message_box>
+#include <xtd/forms/label>
 
 using namespace xtd;
+using namespace xtd::drawing;
 using namespace xtd::forms;
 
 class form1 : public form {
@@ -15,7 +21,7 @@ public:
     .text("Select a font")
     .size({200, 45})
     .click += [this] {
-      drawing::font font = xtd::drawing::system_fonts::default_font();
+      auto font = system_fonts::default_font();
       auto res = font_box::show(font, *this);
       if (res == dialog_result::ok)
         message_box::show(ustring::format("Selected font is: {}", font));

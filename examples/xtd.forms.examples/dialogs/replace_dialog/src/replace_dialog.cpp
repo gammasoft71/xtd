@@ -1,4 +1,9 @@
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/button>
+#include <xtd/forms/debug_form>
+#include <xtd/forms/form>
+#include <xtd/forms/replace_dialog>
+#include <xtd/diagnostics/debug>
 
 using namespace xtd;
 using namespace xtd::forms;

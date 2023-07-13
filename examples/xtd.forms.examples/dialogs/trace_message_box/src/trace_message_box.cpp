@@ -1,5 +1,10 @@
 #define TRACE
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/button>
+#include <xtd/forms/form>
+#include <xtd/forms/trace_form>
+#include <xtd/forms/trace_message_box>
+#include <xtd/startup>
 
 using namespace xtd;
 using namespace xtd::diagnostics;
@@ -18,7 +23,7 @@ public:
   }
   
   static auto main() {
-    trace_form trace_form;
+    auto tf = trace_form {};
     xtd::forms::application::run(form_main());
   }
 private:
