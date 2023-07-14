@@ -1,4 +1,8 @@
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/button>
+#include <xtd/forms/form>
+#include <xtd/forms/label>
+#include <xtd/forms/text_box>
 
 using namespace std;
 using namespace xtd;
