@@ -16,9 +16,9 @@ add_projects(
   printing
   themes
   events
-  drawing
   user_dialogs
   user_controls
+  drawing
   games
   others
   tests
