@@ -1,6 +1,6 @@
 #pragma once
 #include "cell_state.h"
-#include <xtd/xtd>
+#include <xtd/drawing/size>
 
 /// @brief The namespace minesweeper contains all classes and enums needed for the game.
 namespace minesweeper {

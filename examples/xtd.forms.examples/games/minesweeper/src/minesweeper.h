@@ -1,10 +1,16 @@
 #pragma once
-#include "../properties/resources.h"
-#include "../properties/settings.h"
+#include <xtd/forms/application>
+#include <xtd/forms/button>
+#include <xtd/forms/form>
+#include <xtd/forms/lcd_label>
+#include <xtd/forms/main_menu>
+#include <xtd/forms/panel>
+#include <xtd/forms/timer>
 #include "cell.h"
 #include "high_scores_dialog.h"
 #include "level.h"
-#include <xtd/xtd>
+#include "../properties/resources.h"
+#include "../properties/settings.h"
 
 /// @brief The namespace minesweeper contains all classes and enums needed for the game.
 namespace minesweeper {

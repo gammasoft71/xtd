@@ -1,5 +1,7 @@
 #pragma once
-#include <xtd/xtd>
+#include <xtd/forms/button>
+#include <xtd/forms/form>
+#include <xtd/forms/label>
 
 /// @brief The namespace minesweeper contains all classes and enums needed for the game.
 namespace minesweeper {
