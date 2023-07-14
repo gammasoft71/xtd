@@ -1,4 +1,11 @@
-#include <xtd/xtd>
+#include <xtd/drawing/drawing_2d/conical_gradient_brush>
+#include <xtd/drawing/drawing_2d/hatch_brush>
+#include <xtd/drawing/drawing_2d/linear_gradient_brush>
+#include <xtd/drawing/drawing_2d/radial_gradient_brush>
+#include <xtd/drawing/solid_brush>
+#include <xtd/drawing/texture_brush>
+#include <xtd/forms/application>
+#include <xtd/forms/form>
 
 using namespace xtd;
 using namespace xtd::drawing;
@@ -29,7 +36,7 @@ namespace fill_rectangle_example {
       e.graphics().fill_rectangle(texture_brush {create_circle_texture(fore_color, back_color)}, rectangle {350, 10, 150, 150});
       e.graphics().draw_rectangle(pen {fore_color, 4}, rectangle {350, 10, 150, 150});
       
-      e.graphics().fill_rectangle(hatch_brush {xtd::drawing::drawing_2d::hatch_style::diagonal_brick, color::white, back_color}, rectangle {520, 10, 150, 150});
+      e.graphics().fill_rectangle(hatch_brush {hatch_style::diagonal_brick, color::white, back_color}, rectangle {520, 10, 150, 150});
       e.graphics().draw_rectangle(pen {color::white, 4}, rectangle {520, 10, 150, 150});
       
       e.graphics().fill_rectangle(conical_gradient_brush {point {85, 255}, back_color, fore_color, 0}, rectangle {10, 180, 150, 150});
@@ -43,7 +50,7 @@ namespace fill_rectangle_example {
     }
     
   private:
-    image create_circle_texture(const color& fore_color, const color& back_color) {
+    auto create_circle_texture(auto fore_color, auto back_color)->image {
       auto texture = bitmap {16, 16};
       auto graphics = texture.create_graphics();
       graphics.fill_ellipse(solid_brush {back_color}, 1, 1, texture.width() - 2, texture.height() - 2);

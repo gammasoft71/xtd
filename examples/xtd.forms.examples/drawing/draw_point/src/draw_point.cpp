@@ -1,4 +1,6 @@
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/form>
+#include <xtd/random>
 
 using namespace std;
 using namespace xtd;
