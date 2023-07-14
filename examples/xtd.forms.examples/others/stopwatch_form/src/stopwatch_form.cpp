@@ -1,8 +1,13 @@
-#include <xtd/xtd>
+#include <xtd/diagnostics/stopwatch>
+#include <xtd/forms/application>
+#include <xtd/forms/button>
+#include <xtd/forms/form>
+#include <xtd/forms/lcd_label>
+#include <xtd/forms/panel>
 #include "../properties/resources.h"
 
 using namespace xtd;
-using namespace xtd::diagnostics;
+using namespace xtd::drawing;
 using namespace xtd::forms;
 
 class main_form : public form {
@@ -18,8 +23,8 @@ public:
     watch_panel.parent(*this);
     watch_panel.border_style(forms::border_style::bevel_inset);
     watch_panel.bounds({20, 10, 235, 50});
-    watch_panel.back_color(drawing::color::average(drawing::color::black, drawing::color::lime, 0.25));
-    watch_panel.fore_color(drawing::color::lime);
+    watch_panel.back_color(color::average(color::black, color::lime, 0.25));
+    watch_panel.fore_color(color::lime);
     
     watch.parent(watch_panel);
     watch.bounds({10, 8, 214, 33});
@@ -89,5 +94,5 @@ private:
 };
 
 auto main()->int {
-  xtd::forms::application::run(main_form());
+  application::run(main_form());
 }
