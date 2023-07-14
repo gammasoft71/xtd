@@ -1,7 +1,6 @@
 #pragma once
-#include <vector>
 #include <xtd/event.h>
-#include <xtd/object.h>
+#include <vector>
 #include "cell.h"
 
 namespace game_of_life {

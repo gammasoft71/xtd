@@ -1,6 +1,6 @@
 
 #pragma once
-#include <cstdint>
+#include <xtd/enum_class>
 
 namespace game_of_life {
   enum class cell {

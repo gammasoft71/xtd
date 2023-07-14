@@ -1,8 +1,14 @@
 #pragma once
-#include <chrono>
-#include <random>
+#include <xtd/drawing/system_colors>
+#include <xtd/forms/application>
+#include <xtd/forms/button>
+#include <xtd/forms/choice>
+#include <xtd/forms/form>
+#include <xtd/forms/label>
+#include <xtd/forms/panel>
+#include <xtd/forms/track_bar>
+#include <xtd/random>
 #include <thread>
-#include <xtd/xtd>
 #include "grid.h"
 
 namespace game_of_life {
