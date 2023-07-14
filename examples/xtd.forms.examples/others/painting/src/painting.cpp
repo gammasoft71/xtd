@@ -1,4 +1,13 @@
-#include <xtd/xtd>
+#include <xtd/drawing/pens>
+#include <xtd/forms/application>
+#include <xtd/forms/button>
+#include <xtd/forms/form>
+#include <xtd/forms/label>
+#include <xtd/forms/message_box>
+#include <xtd/forms/numeric_up_down>
+#include <xtd/forms/open_file_dialog>
+#include <xtd/forms/panel>
+#include <xtd/forms/track_bar>
 
 using namespace std;
 using namespace xtd;
@@ -18,12 +27,12 @@ namespace painting_example {
       panel_colors_container.client_size({512, 32});
       
       for (auto color : {color::dark_magenta, color::dark_cyan, color::brown, color::dark_blue, color::dark_green, color::dark_red, color::gray, color::dark_gray, color::magenta, color::cyan, color::yellow, color::blue, color::green, color::red, color::white, color::black}) {
-        shared_ptr<panel> panel_color = make_unique<panel>();
+        auto panel_color = make_shared<panel>();
         panel_color->parent(panel_colors_container);
         panel_color->size({32, 32});
         panel_color->back_color(color);
         panel_color->dock(dock_style::left);
-        panel_color->click += event_handler(*this, &form1::choose_current_color);
+        panel_color->click += event_handler {*this, &form1::choose_current_color};
         panel_colors.push_back(panel_color);
       }
       current_color = panel_colors[panel_colors.size() - 1]->back_color();
@@ -33,7 +42,7 @@ namespace painting_example {
       button_clear.text("Clear");
       button_clear.location({542, 13});
       button_clear.click += [&] {
-        picture = bitmap(picture.width(), picture.height());
+        picture = bitmap {picture.width(), picture.height()};
         panel_painting.invalidate();
       };
       

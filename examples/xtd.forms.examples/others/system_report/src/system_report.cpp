@@ -1,4 +1,9 @@
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/form>
+#include <xtd/forms/tab_control>
+#include <xtd/forms/tab_page>
+#include <xtd/forms/text_box>
+#include <xtd/system_report>
 
 using namespace xtd;
 using namespace xtd::forms;
@@ -54,5 +59,5 @@ private:
 };
 
 auto main()->int {
-  xtd::forms::application::run(main_form());
+  application::run(main_form());
 }

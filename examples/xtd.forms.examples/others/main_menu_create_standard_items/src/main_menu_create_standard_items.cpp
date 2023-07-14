@@ -1,4 +1,7 @@
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/form>
+#include <xtd/forms/list_box>
+#include <xtd/forms/main_menu>
 
 using namespace std;
 using namespace xtd;

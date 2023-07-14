@@ -1,4 +1,10 @@
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/button>
+#include <xtd/forms/button_images>
+#include <xtd/forms/form>
+#include <xtd/forms/horizontal_layout_panel>
+#include <xtd/media/system_sounds>
+#include <xtd/startup>
 
 using namespace xtd;
 using namespace xtd::forms;

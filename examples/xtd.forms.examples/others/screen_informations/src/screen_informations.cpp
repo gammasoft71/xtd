@@ -1,4 +1,8 @@
-#include <xtd/xtd>
+#include <xtd/drawing/colors>
+#include <xtd/forms/application>
+#include <xtd/forms/form>
+#include <xtd/forms/screen>
+#include <xtd/forms/text_box>
 
 using namespace xtd;
 using namespace xtd::drawing;
