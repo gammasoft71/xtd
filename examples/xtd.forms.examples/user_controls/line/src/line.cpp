@@ -1,6 +1,8 @@
-#include <xtd/xtd>
+#include <xtd/drawing/system_colors>
+#include <xtd/forms/application>
+#include <xtd/forms/form>
+#include <xtd/forms/user_control>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
