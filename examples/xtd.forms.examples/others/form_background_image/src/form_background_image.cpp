@@ -1,4 +1,8 @@
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/button>
+#include <xtd/forms/form>
+#include <xtd/forms/images>
+#include <xtd/startup>
 
 using namespace xtd;
 using namespace xtd::drawing;

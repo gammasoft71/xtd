@@ -1,4 +1,8 @@
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/button>
+#include <xtd/forms/form>
+#include <xtd/forms/vertical_layout_panel>
+#include <xtd/startup>
 
 using namespace std;
 using namespace xtd;

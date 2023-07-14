@@ -1,4 +1,12 @@
-#include <xtd/xtd>
+#include <xtd/drawing/colors>
+#include <xtd/drawing/system_colors>
+#include <xtd/forms/application>
+#include <xtd/forms/choice>
+#include <xtd/forms/form>
+#include <xtd/forms/label>
+#include <xtd/forms/panel>
+#include <xtd/forms/toggle_button>
+#include <xtd/startup>
 
 using namespace std;
 using namespace xtd;

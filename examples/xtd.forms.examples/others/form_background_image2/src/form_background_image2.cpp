@@ -1,4 +1,7 @@
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/choice>
+#include <xtd/forms/form>
+#include <xtd/forms/link_label>
 #include "../properties/resources.h"
 
 using namespace xtd;

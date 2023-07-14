@@ -1,4 +1,4 @@
-assembly_title("About dialog from executng assemblY")
+assembly_title("About dialog from executng assembly")
 assembly_description("Create an about dialog from executng assembly informations.")
 assembly_company("Gammasoft")
 assembly_product("about_dialog_from_executing_assembly_informations")

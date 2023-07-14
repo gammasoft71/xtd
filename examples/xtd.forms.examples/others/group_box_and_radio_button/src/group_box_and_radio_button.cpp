@@ -1,7 +1,10 @@
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/form>
+#include <xtd/forms/horizontal_layout_panel>
+#include <xtd/forms/group_box>
+#include <xtd/forms/radio_button>
+#include <xtd/forms/vertical_layout_panel>
 
-using namespace std;
-using namespace xtd;
 using namespace xtd::forms;
 
 class form1 : public form {

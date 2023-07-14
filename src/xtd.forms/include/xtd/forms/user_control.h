@@ -4,6 +4,7 @@
 #pragma once
 #include <optional>
 #include "container_control.h"
+#include "border_sides.h"
 #include "border_style.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

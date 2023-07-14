@@ -1,10 +1,10 @@
+#include <xtd/drawing/colors>
+#include <xtd/forms/application>
+#include <xtd/forms/form>
+#include <xtd/forms/label>
+#include <xtd/literals>
 #include <utility>
 #include <vector>
-#include <xtd/literals.h>
-#include <xtd/drawing/colors.h>
-#include <xtd/forms/application.h>
-#include <xtd/forms/form.h>
-#include <xtd/forms/label.h>
 
 using namespace std;
 using namespace xtd;

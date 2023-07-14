@@ -1,9 +1,13 @@
-#include <map>
-#include <string>
-#include <vector>
-#include <xtd/xtd>
+#include <xtd/drawing/system_colors>
+#include <xtd/forms/application>
+#include <xtd/forms/button>
+#include <xtd/forms/button_images>
+#include <xtd/forms/form>
+#include <xtd/forms/images>
+#include <xtd/forms/label>
+#include <xtd/forms/picture_box>
+#include <xtd/forms/system_texts>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;

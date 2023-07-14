@@ -1,4 +1,10 @@
-#include <xtd/xtd>
+#include <xtd/drawing/colors>
+#include <xtd/drawing/pens>
+#include <xtd/forms/application>
+#include <xtd/forms/form>
+#include <xtd/forms/tab_control>
+#include <xtd/forms/tab_page>
+#include <xtd/cdebug>
 
 using namespace std;
 using namespace xtd;
@@ -9,35 +15,35 @@ class form1 : public form {
 public:
   form1() {
     text("Colored Tab pages example");
-    controls().push_back(tab_control_colored);
+    controls().push_back(colored_tab_control);
     size({600, 450});
     
-    image_list_.image_size({16, 16});
-    for_each(colors.begin(), colors.end(), [&](auto color) {
-      auto bitmap = drawing::bitmap(image_list_.image_size());
-      auto graphics = drawing::graphics::from_image(bitmap);
-      graphics.fill_ellipse(solid_brush(color), 0, 0, bitmap.width(), bitmap.height());
-      graphics.draw_ellipse(pens::black(), 0, 0, bitmap.width() - 1, bitmap.height() - 1);
-      image_list_.images().push_back(bitmap);
+    color_image_list.image_size({16, 16});
+    for(auto color : {colors::light_pink(), colors::light_green(), colors::light_blue(), colors::light_yellow()}) {
+      color_image_list.images().push_back(image_from_color(color_image_list.image_size(), color));
       
-      auto tab_page = make_unique<forms::tab_page>();
-      tab_page->parent(tab_control_colored);
-      tab_page->text(color.name());
-      tab_page->back_color(color);
-      tab_page->image_index(tab_pages.size());
-      tab_pages.push_back(std::move(tab_page));
-    });
+      auto colored_tab_page = make_unique<forms::tab_page>();
+      colored_tab_page->image_index(colored_tab_pages.size()).parent(colored_tab_control).text(color.name()).back_color(color);
+      colored_tab_pages.push_back(std::move(colored_tab_page));
+    };
     
-    tab_control_colored.image_list(image_list_);
-    tab_control_colored.dock(dock_style::fill);
-    tab_control_colored.alignment(tab_alignment::bottom);
+    colored_tab_control.image_list(color_image_list);
+    colored_tab_control.dock(dock_style::fill);
+    colored_tab_control.alignment(tab_alignment::bottom);
   }
   
 private:
-  vector<color> colors = {colors::light_pink(), colors::light_green(), colors::light_blue(), colors::light_yellow()};
-  image_list image_list_;
-  tab_control tab_control_colored;
-  vector<shared_ptr<tab_page>> tab_pages;
+  auto image_from_color(auto size, auto color)->image {
+    auto colored_bitmap = bitmap {size};
+    auto g = graphics::from_image(colored_bitmap);
+    g.fill_ellipse(solid_brush {color}, 0, 0, colored_bitmap.width(), colored_bitmap.height());
+    g.draw_ellipse(pens::black(), 0, 0, colored_bitmap.width() - 1, colored_bitmap.height() - 1);
+    return colored_bitmap;
+  }
+  
+  image_list color_image_list;
+  tab_control colored_tab_control;
+  vector<unique_ptr<tab_page>> colored_tab_pages;
 };
 
 auto main()->int {

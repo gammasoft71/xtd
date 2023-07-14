@@ -1,4 +1,7 @@
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/form>
+#include <xtd/forms/lcd_label>
+#include <xtd/forms/timer>
 
 using namespace xtd;
 using namespace xtd::drawing;

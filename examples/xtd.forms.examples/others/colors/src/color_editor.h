@@ -1,7 +1,13 @@
-#include <xtd/xtd>
+#include <xtd/drawing/drawing_2d/hatch_brush>
+#include <xtd/forms/control_paint>
+#include <xtd/forms/label>
+#include <xtd/forms/numeric_up_down>
+#include <xtd/forms/panel>
+#include <xtd/forms/track_bar>
+#include <xtd/forms/user_control>
 
 namespace colors_example {
-  class color_editor : public xtd::forms::user_control {
+  class color_editor final : public xtd::forms::user_control {
   public:
     color_editor() {
       border_style(xtd::forms::border_style::fixed_3d);
@@ -121,7 +127,7 @@ namespace colors_example {
       };
     }
     
-    void color(const xtd::drawing::color& value) {
+    void color(auto value) {
       if (color_ != value) {
         color_ = value;
         on_color_changed(xtd::event_args::empty);

@@ -1,26 +1,26 @@
-#include <ctime>
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/form>
+#include <xtd/forms/lcd_label>
+#include <xtd/forms/timer>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
 auto main()->int {
   auto show_seconds = true;
-  auto center_to_screen_next_time = false;
   
-  timer timer;
-  timer.interval(100_ms);
-  timer.enabled(true);
+  auto clock_timer = timer {};
+  clock_timer.interval(100_ms);
+  clock_timer.enabled(true);
   
-  form form_main;
+  auto form_main = form {};
   form_main.text("Clock");
   form_main.start_position(form_start_position::center_screen);
   form_main.auto_size_mode(forms::auto_size_mode::grow_and_shrink);
   form_main.auto_size(true);
   
-  lcd_label label;
+  auto label = lcd_label {};
   label.parent(form_main);
   label.height(403);
   label.digit_spacing(4);
@@ -30,21 +30,15 @@ auto main()->int {
   label.back_color(color::average(color::black, label.fore_color(), 0.20));
   label.segment_style(segment_style::modern);
   label.show_back_digit(false);
-  label.text(ustring::format("{:t}", std::chrono::system_clock::now()));
+  label.text(date_time::now().to_long_time_string());
   
-  timer.tick += [&] {
-    auto time_str = ustring::format(show_seconds ? "{:t}" : "{:v}", std::chrono::system_clock::now());
-    auto time = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
-    if (!show_seconds && std::localtime(&time)->tm_sec % 2) time_str = time_str.replace(':', ' ');
-    label.text(time_str);
-    if (center_to_screen_next_time) form_main.center_to_screen();
-    center_to_screen_next_time = false;
+  clock_timer.tick += [&] {
+    auto now = date_time::now();
+    label.text(show_seconds ? now.to_long_time_string() : now.to_short_time_string().replace(':', now.second() % 2 ? ' ' : ':'));
+    form_main.center_to_screen();
   };
   
-  label.click += [&] {
-    show_seconds = !show_seconds;
-    center_to_screen_next_time = true;
-  };
-  
+  label.click += [&] {show_seconds = !show_seconds;};
+
   application::run(form_main);
 }

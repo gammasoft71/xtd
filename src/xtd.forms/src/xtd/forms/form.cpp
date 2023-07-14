@@ -436,8 +436,10 @@ form form::create(const xtd::ustring& text, const drawing::size& size, const xtd
 form form::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   form item;
   item.text(text);
-  item.start_position(form_start_position::manual);
-  item.location(location);
+  if (location != point {-1, -1}) {
+    item.start_position(form_start_position::manual);
+    item.location(location);
+  }
   if (size != drawing::size {-1, -1}) item.size(size);
   item.name(name);
   return item;
@@ -456,7 +458,7 @@ form form::create(const xtd::ustring& text, form_start_position start_position, 
   form item;
   item.text(text);
   item.start_position(start_position);
-  item.location(location);
+  if (location != point {-1, -1}) item.location(location);
   if (size != drawing::size {-1, -1}) item.size(size);
   item.name(name);
   return item;
