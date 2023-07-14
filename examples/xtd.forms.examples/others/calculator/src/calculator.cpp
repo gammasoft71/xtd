@@ -1,5 +1,9 @@
+#include <xtd/forms/application>
+#include <xtd/forms/button>
+#include <xtd/forms/form>
+#include <xtd/forms/label>
+#include <xtd/startup>
 #include <array>
-#include <xtd/xtd>
 
 using namespace std;
 using namespace xtd;

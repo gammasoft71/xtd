@@ -1,4 +1,14 @@
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/check_box>
+#include <xtd/forms/form>
+#include <xtd/forms/horizontal_layout_panel>
+#include <xtd/forms/label>
+#include <xtd/forms/list_box>
+#include <xtd/forms/tab_control>
+#include <xtd/forms/tab_page>
+#include <xtd/forms/text_box>
+#include <xtd/forms/toggle_button>
+#include <xtd/startup>
 
 using namespace xtd;
 using namespace xtd::forms;

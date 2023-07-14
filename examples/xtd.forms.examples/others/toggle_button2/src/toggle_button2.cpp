@@ -46,11 +46,11 @@ private:
   }
   
   image image_from_color(const color& color) {
-    bitmap bitmap(16, 16);
-    auto g = graphics::from_image(bitmap);
-    g.fill_ellipse(solid_brush(color), 0, 0, bitmap.width(), bitmap.height());
-    g.draw_ellipse(pens::black(), 0, 0, bitmap.width() - 1, bitmap.height() - 1);
-    return bitmap;
+    auto colored_bitmap = bitmap {16, 16};
+    auto g = graphics::from_image(colored_bitmap);
+    g.fill_ellipse(solid_brush(color), 0, 0, colored_bitmap.width(), colored_bitmap.height());
+    g.draw_ellipse(pens::black(), 0, 0, colored_bitmap.width() - 1, colored_bitmap.height() - 1);
+    return colored_bitmap;
   }
   
   toggle_button button_red;

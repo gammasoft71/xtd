@@ -1,4 +1,5 @@
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/form>
 #include "color_chooser.h"
 #include "color_editor.h"
 
@@ -26,7 +27,7 @@ namespace colors_example {
       editor.size({300, 400});
       editor.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right | anchor_styles::bottom);
       
-      colors.selected_index(0);
+      colors.selected_index(0UL);
     }
     
   private:
@@ -36,5 +37,5 @@ namespace colors_example {
 }
 
 auto main()->int {
-  application::run(colors_example::main_form());
+  application::run(colors_example::main_form {});
 }

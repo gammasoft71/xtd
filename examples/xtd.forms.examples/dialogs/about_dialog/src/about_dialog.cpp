@@ -4,7 +4,6 @@
 #include <xtd/forms/form>
 #include "../resources/gammasoft_64x64.xpm"
 
-using namespace xtd;
 using namespace xtd::forms;
 
 class form1 : public form {
@@ -17,7 +16,7 @@ public:
     button1.text("About...");
     button1.click += [&] {
       static auto dialog = about_dialog {};
-      dialog.icon(xtd::drawing::bitmap(gammasoft_64x64_xpm));
+      dialog.icon(xtd::drawing::bitmap {gammasoft_64x64_xpm});
       dialog.name("About dialog");
       dialog.version("1.0");
       dialog.long_version("1.0.0");

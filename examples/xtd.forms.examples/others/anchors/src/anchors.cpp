@@ -1,4 +1,6 @@
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/button>
+#include <xtd/forms/form>
 
 using namespace xtd::forms;
 

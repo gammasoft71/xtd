@@ -1,5 +1,9 @@
 #define DEBUG
-#include <xtd/xtd>
+#include <xtd/diagnostics/debug>
+#include <xtd/diagnostics/stopwatch>
+#include <xtd/forms/application>
+#include <xtd/forms/form>
+#include <xtd/forms/lcd_label>
 
 using namespace xtd;
 using namespace xtd::diagnostics;

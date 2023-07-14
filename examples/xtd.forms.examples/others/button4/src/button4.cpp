@@ -1,4 +1,7 @@
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/button>
+#include <xtd/forms/form>
+#include <xtd/forms/label>
 
 auto main()->int {
   auto button1_clicked = 0, button2_clicked = 0;

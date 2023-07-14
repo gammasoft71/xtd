@@ -1,5 +1,8 @@
 #define TRACE
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/button>
+#include <xtd/forms/form>
+#include <xtd/ctrace>
 
 using namespace xtd;
 using namespace xtd::forms;

@@ -1,4 +1,7 @@
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/button>
+#include <xtd/forms/form>
+#include <xtd/forms/message_box>
 
 auto main()->int {
   auto form = xtd::forms::form::create("form1");

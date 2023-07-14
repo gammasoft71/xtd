@@ -1,4 +1,7 @@
-#include <xtd/xtd>
+#include <xtd/forms/about_dialog>
+#include <xtd/forms/application>
+#include <xtd/forms/button>
+#include <xtd/forms/form>
 #include "../resources/gammasoft_64x64.xpm"
 
 using namespace xtd;
@@ -13,8 +16,8 @@ public:
     button1.location({10, 10});
     button1.text("About...");
     button1.click += [&] {
-      static about_dialog dialog = about_dialog::from_executing_assembly_informations();
-      dialog.icon(xtd::drawing::bitmap(gammasoft_64x64_xpm));
+      static auto dialog = about_dialog::from_executing_assembly_informations();
+      dialog.icon(xtd::drawing::bitmap {gammasoft_64x64_xpm});
       dialog.show(*this);
     };
   }
