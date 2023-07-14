@@ -1,7 +1,10 @@
 #define TRACE
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/form>
+#include <xtd/forms/text_box>
+#include <xtd/ctrace>
+#include <xtd/environment>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
@@ -23,7 +26,7 @@ namespace numeric_tex_box_example {
   protected:
     void on_key_press(key_press_event_args& e) override {
       text_box::on_key_press(e);
-      e.handled((!isdigit(e.key_char()) && e.key_char() != '.') || (e.key_char() == '.' && as<ustring>(text()).index_of('.') != string::npos));
+      e.handled((!isdigit(e.key_char()) && e.key_char() != '.') || (e.key_char() == '.' && as<ustring>(text()).index_of('.') != ustring::npos));
     }
     
     void on_text_changed(const event_args& e) override {
@@ -48,7 +51,7 @@ namespace numeric_tex_box_example {
       numeric_text_box1.value(42);
       numeric_text_box1.location({10, 10});
       numeric_text_box1.value_changed += [&] {
-        ctrace << ustring::format("value_changed [value={}]", numeric_text_box1.value()) << endl;
+        ctrace << ustring::format("value_changed [value={}]", numeric_text_box1.value()) << environment::new_line();
       };
     }
     

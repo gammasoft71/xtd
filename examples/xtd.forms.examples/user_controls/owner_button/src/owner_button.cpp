@@ -1,4 +1,8 @@
-#include <xtd/xtd>
+#include <xtd/drawing/drawing_2d/linear_gradient_brush>
+#include <xtd/forms/application>
+#include <xtd/forms/button>
+#include <xtd/forms/control_paint>
+#include <xtd/forms/form>
 
 using namespace xtd;
 using namespace xtd::drawing;

@@ -1,7 +1,7 @@
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/button>
+#include <xtd/forms/form>
 
-using namespace xtd;
-using namespace xtd::drawing;
 using namespace xtd::forms;
 
 namespace button_with_style_sheet_example {
