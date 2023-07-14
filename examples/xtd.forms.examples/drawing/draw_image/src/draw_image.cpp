@@ -1,5 +1,8 @@
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/form>
+#include <xtd/forms/images>
 
+using namespace std;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
@@ -13,8 +16,8 @@ protected:
   void on_paint(paint_event_args& e) override {
     form::on_paint(e);
     
-    auto image_size = std::min(e.clip_rectangle().width(), e.clip_rectangle().height());
-    auto image_rect = xtd::drawing::rectangle((e.clip_rectangle().width() - image_size) / 2, (e.clip_rectangle().height() - image_size) / 2, image_size, image_size);
+    auto image_size = min(e.clip_rectangle().width(), e.clip_rectangle().height());
+    auto image_rect = rectangle((e.clip_rectangle().width() - image_size) / 2, (e.clip_rectangle().height() - image_size) / 2, image_size, image_size);
     e.graphics().draw_image(image, image_rect);
   }
   
