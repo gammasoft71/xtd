@@ -1,5 +1,8 @@
+#include <xtd/forms/application>
+#include <xtd/forms/button>
+#include <xtd/forms/form>
+#include <xtd/forms/list_box>
 #include <thread>
-#include <xtd/xtd>
 
 using namespace std;
 using namespace xtd;

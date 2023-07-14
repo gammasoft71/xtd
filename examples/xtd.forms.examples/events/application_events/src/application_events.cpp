@@ -1,5 +1,8 @@
 #define TRACE
-#include <xtd/xtd>
+#include <xtd/diagnostics/trace>
+#include <xtd/forms/application>
+#include <xtd/forms/debug_form>
+#include <xtd/forms/form>
 
 using namespace xtd;
 using namespace xtd::diagnostics;

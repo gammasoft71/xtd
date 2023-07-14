@@ -1,4 +1,6 @@
-#include <xtd/xtd>
+#include <xtd/drawing/system_brushes>
+#include <xtd/forms/application>
+#include <xtd/forms/form>
 
 using namespace xtd;
 using namespace xtd::drawing;

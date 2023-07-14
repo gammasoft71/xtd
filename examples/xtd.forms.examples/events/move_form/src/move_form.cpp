@@ -1,4 +1,5 @@
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/form>
 
 using namespace xtd;
 using namespace xtd::drawing;
