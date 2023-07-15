@@ -1,4 +1,6 @@
-#include <xtd/xtd>
+#include <xtd/system_exception>
+#include <xtd/argument_out_of_range_exception>
+#include <xtd/ustring>
 
 using namespace std;
 using namespace xtd;

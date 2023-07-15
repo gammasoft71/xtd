@@ -1,4 +1,5 @@
-#include <xtd/xtd>
+#include <xtd/double>
+#include <xtd/ustring>
 
 using namespace std;
 using namespace xtd;
@@ -18,9 +19,9 @@ auto main()->int {
   cout << ustring::format("{:N}", 12.345) << endl;
   cout << ustring::format("{:p}", .0012345) << endl;
   cout << ustring::format("{:P}", .0012345) << endl;
-  cout << ustring::format("{}", std::numeric_limits<double>::infinity()) << endl;
-  cout << ustring::format("{}", -std::numeric_limits<double>::infinity()) << endl;
-  cout << ustring::format("{}", std::numeric_limits<double>::quiet_NaN()) << endl;
+  cout << ustring::format("{}", double_object::positive_infinity) << endl;
+  cout << ustring::format("{}", double_object::negative_infinity) << endl;
+  cout << ustring::format("{}", double_object::NaN) << endl;
   cout << ustring::format("{}", std::numeric_limits<double>::signaling_NaN()) << endl;
 }
 
