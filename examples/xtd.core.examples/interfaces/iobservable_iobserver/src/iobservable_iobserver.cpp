@@ -1,4 +1,7 @@
-#include <xtd/xtd>
+#include <xtd/console>
+#include <xtd/iobservable>
+#include <xtd/iobserver>
+#include <xtd/system_exception>
 
 using namespace std;
 using namespace xtd;
