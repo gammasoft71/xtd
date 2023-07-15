@@ -49,9 +49,6 @@
 /// @example image_pcx.cpp
 /// Shows how to use xtd::drawing::image class with pcx image.
 ///
-/// @example image_pict.cpp
-/// Shows how to use xtd::drawing::image class with pict image.
-///
 /// @example image_png.cpp
 /// Shows how to use xtd::drawing::image class with png image.
 ///
