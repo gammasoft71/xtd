@@ -1231,6 +1231,36 @@
 /// <br>
 /// @image html about_dialog_gd.png
 ///
+/// @example assert_box.cpp
+/// demonstrates the use of xtd::forms::assert_box dialog.
+/// @par Windows
+/// @image html assert_box_w.png
+/// <br>
+/// @image html assert_box_wd.png
+/// @par macOS
+/// @image html assert_box_m.png
+/// <br>
+/// @image html assert_box_md.png
+/// @par Gnome
+/// @image html assert_box_g.png
+/// <br>
+/// @image html assert_box_gd.png
+///
+/// @example assert_dialog.cpp
+/// demonstrates the use of xtd::forms::assert_dialog dialog.
+/// @par Windows
+/// @image html assert_dialog_w.png
+/// <br>
+/// @image html assert_dialog_wd.png
+/// @par macOS
+/// @image html assert_dialog_m.png
+/// <br>
+/// @image html assert_dialog_md.png
+/// @par Gnome
+/// @image html assert_dialog_g.png
+/// <br>
+/// @image html assert_dialog_gd.png
+///
 /// @example busy_box.cpp
 /// demonstrates the use of xtd::forms::busy_box dialog.
 /// @par Windows
@@ -1786,6 +1816,21 @@
 /// <br>
 /// @image html fill_rounded_rectangle_gd.png
 ///
+/// @example application_application_exit.cpp
+/// Shows how to create an application with  xtd::forms::application::application_exit event.
+/// @par Windows
+/// @image html application_application_exit_w.png
+/// <br>
+/// @image html application_application_exit_wd.png
+/// @par macOS
+/// @image html application_application_exit_m.png
+/// <br>
+/// @image html application_application_exit_md.png
+/// @par Gnome
+/// @image html application_application_exit_g.png
+/// <br>
+/// @image html application_application_exit_gd.png
+///
 /// @example application_events.cpp
 /// demonstrates the use of application events.
 /// @par Windows
@@ -2265,6 +2310,21 @@
 /// @image html tool_bar_g.png
 /// <br>
 /// @image html tool_bar_gd.png
+///
+/// @example about_dialog_from_executing_assembly_informations.cpp
+/// demonstrates the use of xtd::forms::about_dialog::from_executing_assembly_informations method.
+/// @par Windows
+/// @image html about_dialog_from_executing_assembly_informations_w.png
+/// <br>
+/// @image html about_dialog_from_executing_assembly_informations_wd.png
+/// @par macOS
+/// @image html about_dialog_from_executing_assembly_informations_m.png
+/// <br>
+/// @image html about_dialog_from_executing_assembly_informations_md.png
+/// @par Gnome
+/// @image html about_dialog_from_executing_assembly_informations_g.png
+/// <br>
+/// @image html about_dialog_from_executing_assembly_informations_gd.png
 ///
 /// @example about_dialog_system.cpp
 /// demonstrates the use of xtd::forms::about_dialog dialog.

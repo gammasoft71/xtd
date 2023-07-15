@@ -43,11 +43,29 @@
 /// @example console_cursor.cpp
 /// Shows how to use xtd::console::set_cursor_position, xtd::console::cursor_top and xtd::console::cursor_left methods.
 ///
+/// @example console_cursor_size.cpp
+/// Shows how to use xtd::console::cursor_size property.
+///
+/// @example console_cursor_visible.cpp
+/// Shows how to use xtd::console::cursor_visible property.
+///
+/// @example console_firework.cpp
+/// Shows how to use some xtd::console methods.
+///
 /// @example console_in_out.cpp
 /// Shows how to use xtd::console::in and xtd::console::out streams.
 ///
 /// @example console_info.cpp
 /// Shows how to use xtd::console class.
+///
+/// @example console_key_available.cpp
+/// Shows how to use xtd::console::key_available and xtd::console::read_key methods.
+///
+/// @example console_out.cpp
+/// Shows how to use xtd::console::out stream.
+///
+/// @example console_read.cpp
+/// Shows how to use xtd::console::read method.
 ///
 /// @example console_read_key.cpp
 /// Shows how to use xtd::console::read_key and xtd::console::key_available methods.
@@ -63,6 +81,12 @@
 ///
 /// @example console_unicode.cpp
 /// Shows how to use xtd::console with unicode characters.
+///
+/// @example console_window_size.cpp
+/// Shows how to use xtd::console::set_window_size method.
+///
+/// @example redirect_output.cpp
+/// Shows how to use xtd::console class.
 ///
 /// @example wconsole.cpp
 /// Shows how to use xtd::console class.
@@ -259,17 +283,26 @@
 /// @example environment.cpp
 /// Shows how to use xtd::environment class.
 ///
+/// @example environment_cancel_signal.cpp
+/// Shows how to use xtd::environment::cancel_signal event.
+///
 /// @example environment_command_line.cpp
 /// Shows how to use xtd::environment::command_line method.
 ///
 /// @example environment_current_directory.cpp
 /// Shows how to use xtd::environment::current_directory method.
 ///
+/// @example environment_exit.cpp
+/// Shows how to use xtd::environment::exit method.
+///
 /// @example environment_exit_code.cpp
 /// Shows how to use xtd::environment::exit_code method.
 ///
 /// @example environment_expand_environment_variables.cpp
 /// Shows how to use xtd::environment::expand_environment_variables method.
+///
+/// @example environment_program_exit.cpp
+/// Shows how to use xtd::environment::program_stopped event.
 ///
 /// @example environment_stack_trace.cpp
 /// Shows how to use xtd::environment class.
@@ -395,6 +428,9 @@
 /// Show how to use xtd::io::binary_reader class.
 ///
 /// @example binary_reader2.cpp
+/// Show how to use xtd::io::binary_reader class.
+///
+/// @example binary_reader3.cpp
 /// Show how to use xtd::io::binary_reader class.
 ///
 /// @example directory_info.cpp
