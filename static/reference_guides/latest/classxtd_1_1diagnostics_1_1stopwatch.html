@@ -331,7 +331,7 @@ The <a class="el" href="classxtd_1_1diagnostics_1_1stopwatch.html" title="Provid
 <div class="ttc" id="anamespacextd_1_1diagnostics_html"><div class="ttname"><a href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a></div><div class="ttdoc">The xtd::diagnostics namespace provides classes that allow you to interact with system processes,...</div><div class="ttdef"><b>Definition</b> assert_dialog_result.h:10</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lcd_label2_8cpp-example.html#_a2">lcd_label2.cpp</a>, <a class="el" href="stopwatch_8cpp-example.html#_a0">stopwatch.cpp</a>, <a class="el" href="stopwatch_constructor_8cpp-example.html#_a0">stopwatch_constructor.cpp</a>, and <a class="el" href="stopwatch_form_8cpp-example.html#_a2">stopwatch_form.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lcd_label2_8cpp-example.html#_a2">lcd_label2.cpp</a>, <a class="el" href="stopwatch_8cpp-example.html#_a0">stopwatch.cpp</a>, <a class="el" href="stopwatch_constructor_8cpp-example.html#_a0">stopwatch_constructor.cpp</a>, and <a class="el" href="stopwatch_form_8cpp-example.html#_a3">stopwatch_form.cpp</a>.</dd>
 </dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Constructors</h2></td></tr>
@@ -545,7 +545,7 @@ By default, the elapsed time value of a <a class="el" href="classxtd_1_1diagnost
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// RunTime 00:00:10.00</span></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="stopwatch_constructor_8cpp-example.html#a3">stopwatch_constructor.cpp</a>, and <a class="el" href="stopwatch_form_8cpp-example.html#a7">stopwatch_form.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="stopwatch_constructor_8cpp-example.html#a3">stopwatch_constructor.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -1254,8 +1254,6 @@ Returns always true </dd></dl>
 <p>Gets a value indicating whether the stopwatch timer is running. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if the <a class="el" href="classxtd_1_1diagnostics_1_1stopwatch.html" title="Provides a set of methods and properties that you can use to accurately measure elapsed time.">xtd::diagnostics::stopwatch</a> instance is currently running and measuring elapsed time for an interval; otherwise, false. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>A <a class="el" href="classxtd_1_1diagnostics_1_1stopwatch.html" title="Provides a set of methods and properties that you can use to accurately measure elapsed time.">xtd::diagnostics::stopwatch</a> instance begins running with a call to <a class="el" href="classxtd_1_1diagnostics_1_1stopwatch.html#a711a2e1fbe1eb3d439d225b9fa50eddf" title="Starts, or resumes, measuring elapsed time for an interval.">xtd::diagnostics::stopwatch::start</a> or <a class="el" href="classxtd_1_1diagnostics_1_1stopwatch.html#ab800042249b55d1ee524956516873216" title="Initializes a new xtd::diagnostics::stopwatch instance, sets the xtd::diagnostics::stopwatch::elapsed...">xtd::diagnostics::stopwatch::start_new</a>. The instance stops running with a call to <a class="el" href="classxtd_1_1diagnostics_1_1stopwatch.html#a0d12ad4c46ff408b011aa8eb6a3510bc" title="Stops measuring elapsed time for an interval.">xtd::diagnostics::stopwatch::stop</a> or <a class="el" href="classxtd_1_1diagnostics_1_1stopwatch.html#a1c7494b2c6c7a720adfd00acc1189f1f" title="Stops time interval measurement and resets the elapsed time to zero.">xtd::diagnostics::stopwatch::reset</a>. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="stopwatch_form_8cpp-example.html#a3">stopwatch_form.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -1284,7 +1282,7 @@ Returns always true </dd></dl>
 
 <p>Stops time interval measurement and resets the elapsed time to zero. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>A <a class="el" href="classxtd_1_1diagnostics_1_1stopwatch.html" title="Provides a set of methods and properties that you can use to accurately measure elapsed time.">xtd::diagnostics::stopwatch</a> instance calculates and retains the cumulative elapsed time across multiple time intervals, until the instance is reset. Use <a class="el" href="classxtd_1_1diagnostics_1_1stopwatch.html#a0d12ad4c46ff408b011aa8eb6a3510bc" title="Stops measuring elapsed time for an interval.">xtd::diagnostics::stopwatch::stop</a> to stop the current interval measurement and retain the cumulative elapsed time value. Use <a class="el" href="classxtd_1_1diagnostics_1_1stopwatch.html#a1c7494b2c6c7a720adfd00acc1189f1f" title="Stops time interval measurement and resets the elapsed time to zero.">xtd::diagnostics::stopwatch::reset</a> to stop any interval measurement in progress and clear the elapsed time value. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lcd_label2_8cpp-example.html#a22">lcd_label2.cpp</a>, <a class="el" href="stopwatch_8cpp-example.html#a4">stopwatch.cpp</a>, and <a class="el" href="stopwatch_form_8cpp-example.html#a6">stopwatch_form.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lcd_label2_8cpp-example.html#a22">lcd_label2.cpp</a>, and <a class="el" href="stopwatch_8cpp-example.html#a4">stopwatch.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -1375,7 +1373,7 @@ When a stopwatch instance measures more than one interval, the start method resu
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// RunTime 00:00:10.00</span></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lcd_label2_8cpp-example.html#a19">lcd_label2.cpp</a>, <a class="el" href="stopwatch_8cpp-example.html#a5">stopwatch.cpp</a>, <a class="el" href="stopwatch_constructor_8cpp-example.html#a1">stopwatch_constructor.cpp</a>, and <a class="el" href="stopwatch_form_8cpp-example.html#a5">stopwatch_form.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lcd_label2_8cpp-example.html#a19">lcd_label2.cpp</a>, <a class="el" href="stopwatch_8cpp-example.html#a5">stopwatch.cpp</a>, and <a class="el" href="stopwatch_constructor_8cpp-example.html#a1">stopwatch_constructor.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -1666,7 +1664,7 @@ When a <a class="el" href="classxtd_1_1diagnostics_1_1stopwatch.html" title="Pro
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// RunTime 00:00:10.00</span></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lcd_label2_8cpp-example.html#a20">lcd_label2.cpp</a>, <a class="el" href="stopwatch_8cpp-example.html#a2">stopwatch.cpp</a>, <a class="el" href="stopwatch_constructor_8cpp-example.html#a2">stopwatch_constructor.cpp</a>, and <a class="el" href="stopwatch_form_8cpp-example.html#a4">stopwatch_form.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lcd_label2_8cpp-example.html#a20">lcd_label2.cpp</a>, <a class="el" href="stopwatch_8cpp-example.html#a2">stopwatch.cpp</a>, and <a class="el" href="stopwatch_constructor_8cpp-example.html#a2">stopwatch_constructor.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -1678,7 +1676,7 @@ When a <a class="el" href="classxtd_1_1diagnostics_1_1stopwatch.html" title="Pro
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 12 2023 18:07:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jul 15 2023 22:58:23 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

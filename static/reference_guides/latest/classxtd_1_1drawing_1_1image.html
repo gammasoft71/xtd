@@ -110,7 +110,7 @@ Inheritance diagram for xtd::drawing::image:</div>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1drawing.html" title="The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functi...">xtd::drawing</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing.html" title="The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functi...">xtd.drawing</a></dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>To draw an image on a Windows Form, you should use one of the draw_image methods. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="draw_image_8cpp-example.html#_a3">draw_image.cpp</a>, <a class="el" href="fill_ellipse_8cpp-example.html#_a12">fill_ellipse.cpp</a>, <a class="el" href="fill_rectangle_8cpp-example.html#_a12">fill_rectangle.cpp</a>, <a class="el" href="fill_rounded_rectangle_8cpp-example.html#_a12">fill_rounded_rectangle.cpp</a>, <a class="el" href="status_bar_8cpp-example.html#_a4">status_bar.cpp</a>, and <a class="el" href="toggle_button2_8cpp-example.html#_a2">toggle_button2.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="draw_image_8cpp-example.html#_a3">draw_image.cpp</a>, and <a class="el" href="toggle_button2_8cpp-example.html#_a2">toggle_button2.cpp</a>.</dd>
 </dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Fields</h2></td></tr>
@@ -813,7 +813,7 @@ The xtd::drawing::image::get_thumbnail_image method works well when the requeste
 
 <p>Gets the height, in pixels, of this image. </p>
 <dl class="section return"><dt>Returns</dt><dd>The height, in pixels, of this image. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="graphics_8cpp-example.html#a6">graphics.cpp</a>, <a class="el" href="painting_8cpp-example.html#a7">painting.cpp</a>, <a class="el" href="status_bar_8cpp-example.html#a9">status_bar.cpp</a>, and <a class="el" href="toggle_button2_8cpp-example.html#a7">toggle_button2.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="painting_8cpp-example.html#a7">painting.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -1218,7 +1218,7 @@ If you wish to draw on an image once it has been rotated, you should always retr
 <dl class="section remark"><dt>Remarks</dt><dd>If no encoder exists for the file format of the image, the Portable Network Graphics (PNG) encoder is used. When you use the <a class="el" href="classxtd_1_1drawing_1_1image.html#a5dbb39c4b87af777f49be06c7cc370e9" title="Saves this xtd::drawing::image to the specified file or stream.">xtd::drawing::image::save</a> method to save a graphic image as a Windows Metafile Format (WMF) or Enhanced Metafile Format (EMF) file, the resulting file is saved as a Portable Network Graphics (PNG) file. This behavior occurs because the GDI+ component of the .NET Framework does not have an encoder that you can use to save files as .wmf or .emf files. </dd>
 <dd>
 Saving the image to the same file it was constructed from is not allowed and throws an exception. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="graphics_8cpp-example.html#a16">graphics.cpp</a>, <a class="el" href="hello_world_png_8cpp-example.html#a7">hello_world_png.cpp</a>, <a class="el" href="image_ani_8cpp-example.html#a1">image_ani.cpp</a>, <a class="el" href="image_bmp_8cpp-example.html#a1">image_bmp.cpp</a>, <a class="el" href="image_cur_8cpp-example.html#a1">image_cur.cpp</a>, <a class="el" href="image_emf_8cpp-example.html#a1">image_emf.cpp</a>, <a class="el" href="image_gif_8cpp-example.html#a1">image_gif.cpp</a>, <a class="el" href="image_icns_8cpp-example.html#a1">image_icns.cpp</a>, <a class="el" href="image_ico_8cpp-example.html#a1">image_ico.cpp</a>, <a class="el" href="image_iif_8cpp-example.html#a1">image_iif.cpp</a>, <a class="el" href="image_jpeg_8cpp-example.html#a1">image_jpeg.cpp</a>, <a class="el" href="image_pcx_8cpp-example.html#a1">image_pcx.cpp</a>, <a class="el" href="image_png_8cpp-example.html#a1">image_png.cpp</a>, <a class="el" href="image_pnm_8cpp-example.html#a1">image_pnm.cpp</a>, <a class="el" href="image_tga_8cpp-example.html#a1">image_tga.cpp</a>, <a class="el" href="image_tiff_8cpp-example.html#a1">image_tiff.cpp</a>, <a class="el" href="image_wmf_8cpp-example.html#a1">image_wmf.cpp</a>, and <a class="el" href="image_xpm_8cpp-example.html#a1">image_xpm.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="image_ani_8cpp-example.html#a1">image_ani.cpp</a>, <a class="el" href="image_bmp_8cpp-example.html#a1">image_bmp.cpp</a>, <a class="el" href="image_cur_8cpp-example.html#a1">image_cur.cpp</a>, <a class="el" href="image_emf_8cpp-example.html#a1">image_emf.cpp</a>, <a class="el" href="image_gif_8cpp-example.html#a1">image_gif.cpp</a>, <a class="el" href="image_icns_8cpp-example.html#a1">image_icns.cpp</a>, <a class="el" href="image_ico_8cpp-example.html#a1">image_ico.cpp</a>, <a class="el" href="image_iif_8cpp-example.html#a1">image_iif.cpp</a>, <a class="el" href="image_jpeg_8cpp-example.html#a1">image_jpeg.cpp</a>, <a class="el" href="image_pcx_8cpp-example.html#a1">image_pcx.cpp</a>, <a class="el" href="image_png_8cpp-example.html#a1">image_png.cpp</a>, <a class="el" href="image_pnm_8cpp-example.html#a1">image_pnm.cpp</a>, <a class="el" href="image_tga_8cpp-example.html#a1">image_tga.cpp</a>, <a class="el" href="image_tiff_8cpp-example.html#a1">image_tiff.cpp</a>, <a class="el" href="image_wmf_8cpp-example.html#a1">image_wmf.cpp</a>, and <a class="el" href="image_xpm_8cpp-example.html#a1">image_xpm.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -1325,7 +1325,7 @@ The image must be saved to the stream at an offset of zero. If any additional da
 
 <p>Gets the width and height, in pixels, of this image. </p>
 <dl class="section return"><dt>Returns</dt><dd>A size structure that represents the width and height, in pixels, of this image. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="hello_world_png_8cpp-example.html#a4">hello_world_png.cpp</a>, <a class="el" href="image_8cpp-example.html#a6">image.cpp</a>, and <a class="el" href="painting_8cpp-example.html#a8">painting.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="image_8cpp-example.html#a6">image.cpp</a>, and <a class="el" href="painting_8cpp-example.html#a8">painting.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -1447,7 +1447,7 @@ The image must be saved to the stream at an offset of zero. If any additional da
 
 <p>Gets the width, in pixels, of this image. </p>
 <dl class="section return"><dt>Returns</dt><dd>The width, in pixels, of this image. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="graphics_8cpp-example.html#a5">graphics.cpp</a>, <a class="el" href="painting_8cpp-example.html#a6">painting.cpp</a>, <a class="el" href="status_bar_8cpp-example.html#a8">status_bar.cpp</a>, and <a class="el" href="toggle_button2_8cpp-example.html#a6">toggle_button2.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="painting_8cpp-example.html#a3">painting.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -1486,7 +1486,7 @@ The image must be saved to the stream at an offset of zero. If any additional da
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 12 2023 18:07:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jul 15 2023 22:58:23 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

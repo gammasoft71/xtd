@@ -113,7 +113,12 @@ Different cursor shapes are used to inform the user what operation the mouse wil
 <dd>
 All controls that derive from the Control class have a Cursor property. To change the cursor displayed by the mouse pointer when it is within the bounds of the control, assign a Cursor to the Cursor property of the control. Alternatively, you can display cursors at the application level by assigning a Cursor to the Current property. For example, if the purpose of your application is to edit a text file, you might set the Current property to Cursors.WaitCursor to display a wait cursor over the application while the file loads or saves to prevent any mouse events from being processed. When the process is complete, set the Current property to Cursors.Default for the application to display the appropriate cursor over each control type. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classxtd_1_1forms_1_1cursors.html" title="Provides a collection of xtd::forms::cursor objects for use by a Windows Forms application.">xtd::forms::cursors</a> </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of cursor component. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of cursor component. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/cursors&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/list_box&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/panel&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/drawing/system_colors&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -807,7 +812,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>equals</b> (const <a 
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 12 2023 18:07:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jul 15 2023 22:58:24 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

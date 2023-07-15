@@ -136,7 +136,11 @@ Inheritance diagram for xtd::forms::message_box:</div>
   </td></tr>
 </table>
 </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1message__box.html" title="Displays a message window, also known as a dialog box, which presents a message to the user....">message_box</a> dialog. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1message__box.html" title="Displays a message window, also known as a dialog box, which presents a message to the user....">message_box</a> dialog. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/button&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/label&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/message_box&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
@@ -153,7 +157,7 @@ Inheritance diagram for xtd::forms::message_box:</div>
 <div class="line">    button_show_message.text(<span class="stringliteral">&quot;Message...&quot;</span>);</div>
 <div class="line">    button_show_message.width(100);</div>
 <div class="line">    button_show_message.click += [&amp;] {</div>
-<div class="line">      <a class="code hl_enumeration" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">forms::dialog_result</a> result = message_box::show(*<span class="keyword">this</span>, <span class="stringliteral">&quot;Hello, World!&quot;</span>, <span class="stringliteral">&quot;Message&quot;</span>, message_box_buttons::ok_cancel, message_box_icon::warning);</div>
+<div class="line">      <span class="keyword">auto</span> result = message_box::show(*<span class="keyword">this</span>, <span class="stringliteral">&quot;Hello, World!&quot;</span>, <span class="stringliteral">&quot;Message&quot;</span>, message_box_buttons::ok_cancel, message_box_icon::warning);</div>
 <div class="line">      label_dialog_result.text(ustring::format(<span class="stringliteral">&quot;dialog_result = {}&quot;</span>, result));</div>
 <div class="line">    };</div>
 <div class="line">    </div>
@@ -173,7 +177,6 @@ Inheritance diagram for xtd::forms::message_box:</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1button_html"><div class="ttname"><a href="classxtd_1_1forms_1_1button.html">xtd::forms::button</a></div><div class="ttdoc">Represents a Windows button control.</div><div class="ttdef"><b>Definition</b> button.h:47</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application's user interface.</div><div class="ttdef"><b>Definition</b> form.h:52</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1label_html"><div class="ttname"><a href="classxtd_1_1forms_1_1label.html">xtd::forms::label</a></div><div class="ttdoc">Represents a standard Windows label.</div><div class="ttdef"><b>Definition</b> label.h:36</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_ga4f0cffaa8fcb3708782f28d60386c525"><div class="ttname"><a href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></div><div class="ttdeci">dialog_result</div><div class="ttdoc">Specifies identifiers to indicate the return value of a dialog box.</div><div class="ttdef"><b>Definition</b> dialog_result.h:41</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga475781e3c7baa300a81ab16d22b16962ad5189de027922f81005951e6efe0efd5"><div class="ttname"><a href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962ad5189de027922f81005951e6efe0efd5">xtd::forms::bounds_specified::location</a></div><div class="ttdeci">@ location</div><div class="ttdoc">Specifies that both the x and y coordinates of the control are defined.</div></div>
 <div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> about_box.h:13</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
@@ -1187,7 +1190,7 @@ Inheritance diagram for xtd::forms::message_box:</div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 12 2023 18:07:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jul 15 2023 22:58:24 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

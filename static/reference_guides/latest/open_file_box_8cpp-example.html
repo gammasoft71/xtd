@@ -106,11 +106,14 @@ $(function() {
 <img src="open_file_box_gd.png" alt=""/>
 </div>
 </dd></dl>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/button&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/message_box&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/open_file_box&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
 <div class="line"><span class="keyword">public</span>:</div>
@@ -135,7 +138,7 @@ $(function() {
 <div class="line">    .<a class="code hl_typedef" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>({150, 35})</div>
 <div class="line">    .text(<span class="stringliteral">&quot;Select multiple files&quot;</span>)</div>
 <div class="line">    .click += [] {</div>
-<div class="line">      vector&lt;ustring&gt; file_names;</div>
+<div class="line">      <span class="keyword">auto</span> file_names = std::vector&lt;ustring&gt; {};</div>
 <div class="line">      <span class="keyword">auto</span> res = open_file_box::show(file_names, <span class="stringliteral">&quot;Please select multiple files...&quot;</span>, open_file_box_options::check_file_exists | open_file_box_options::show_hidden_files);</div>
 <div class="line">      <span class="keywordflow">if</span> (res == dialog_result::ok)</div>
 <div class="line">        message_box::show(ustring::format(<span class="stringliteral">&quot;Selected files are:\n{}&quot;</span>, ustring::join(<span class="stringliteral">&quot;\n&quot;</span>, file_names)));</div>
@@ -160,7 +163,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 12 2023 18:07:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jul 15 2023 22:58:19 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

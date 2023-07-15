@@ -12,7 +12,7 @@ var searchData=
   ['incoming_5fenvelope_9',['incoming_envelope',['../classxtd_1_1forms_1_1emoticons.html#abd38f2f2640a493014e34ccb1435dfe9',1,'xtd::forms::emoticons']]],
   ['indian_5fred_10',['indian_red',['../classxtd_1_1drawing_1_1color.html#adf55add80030f16d559a3bfe22897e25',1,'xtd::drawing::color']]],
   ['indigo_11',['indigo',['../classxtd_1_1drawing_1_1color.html#ade6b65caed8427ee6e56eb4dec89e7fe',1,'xtd::drawing::color']]],
-  ['infinity_12',['infinity',['../classxtd_1_1box__floating__point.html#a84f2c190f35627852b909992c96db113',1,'xtd::box_floating_point::infinity'],['../classxtd_1_1math.html#a195ec4975e08b45edec707d0d9a3f79e',1,'xtd::math::infinity']]],
+  ['infinity_12',['infinity',['../classxtd_1_1math.html#a195ec4975e08b45edec707d0d9a3f79e',1,'xtd::math']]],
   ['information_5fdesk_5fperson_13',['information_desk_person',['../classxtd_1_1forms_1_1emoticons.html#aeb38ae400be279a331e5447d1514cbd2',1,'xtd::forms::emoticons']]],
   ['information_5fsource_14',['information_source',['../classxtd_1_1forms_1_1emoticons.html#a8fd09f8b2722083a6d3330baba58f1ee',1,'xtd::forms::emoticons']]],
   ['input_5fsymbol_5ffor_5flatin_5fcapital_5fletters_15',['input_symbol_for_latin_capital_letters',['../classxtd_1_1forms_1_1emoticons.html#aee4088e27d02518e509bf786ec327170',1,'xtd::forms::emoticons']]],

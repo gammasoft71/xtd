@@ -111,11 +111,17 @@ To execute a time-consuming operation in the background, create a <a class="el" 
 To set up for a background operation, add an event handler for the do_work event. Call your time-consuming operation in this event handler. To start the operation, call run_worker_async. To receive notifications of progress updates, handle the progress_changed event. To receive a notification when the operation is completed, handle the run_worker_completed event. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>You must be careful not to manipulate any user-interface objects in your do_work event handler. Instead, communicate to the user interface through the progress_changed and run_worker_completed events. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If your background operation requires a parameter, call run_worker_async with your parameter. Inside the do_work event handler, you can extract the parameter from the <a class="el" href="classxtd_1_1forms_1_1do__work__event__args.html#ab45d98310ac26bd1ec6b90389440f0dc" title="Gets a value that represents the argument of an asynchronous operation.">do_work_event_args.argument</a> property. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1background__worker.html" title="Executes an operation on a separate thread.">background_worker</a> component. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;chrono&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1background__worker.html" title="Executes an operation on a separate thread.">background_worker</a> component. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/background_worker&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/button&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/label&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/panel&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/progress_bar&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/text_box&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;thread&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
+<div class="line"><span class="keyword">using namespace </span>std::this_thread;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
 <div class="line"> </div>
@@ -177,7 +183,7 @@ To set up for a background operation, add an event handler for the do_work event
 <div class="line">      worker.do_work += [&amp;] {</div>
 <div class="line">        <span class="keywordflow">for</span> (<span class="keyword">auto</span> step = 1; step &lt;= progress.maximum(); ++step) {</div>
 <div class="line">          <span class="keywordflow">if</span> (worker.cancellation_pending()) <span class="keywordflow">break</span>; <span class="comment">// stop work...</span></div>
-<div class="line">          this_thread::sleep_for(100_ms); <span class="comment">// simulate work...</span></div>
+<div class="line">          sleep_for(100_ms); <span class="comment">// simulate work...</span></div>
 <div class="line">          worker.report_progress(step, ustring::format(<span class="stringliteral">&quot;step {} / {}&quot;</span>, step, progress.maximum()));</div>
 <div class="line">        }</div>
 <div class="line">      };</div>
@@ -834,7 +840,7 @@ template&lt;typename argument_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 12 2023 18:07:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jul 15 2023 22:58:23 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

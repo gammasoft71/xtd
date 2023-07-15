@@ -137,10 +137,12 @@ Inheritance diagram for xtd::forms::about_dialog:</div>
   </td></tr>
 </table>
 </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1about__dialog.html" title="Represents a dialog box that displays about dialog.">about_dialog</a> dialog. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1about__dialog.html" title="Represents a dialog box that displays about dialog.">about_dialog</a> dialog. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/about_dialog&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/button&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;../resources/gammasoft_64x64.xpm&quot;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
@@ -153,7 +155,7 @@ Inheritance diagram for xtd::forms::about_dialog:</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.text(<span class="stringliteral">&quot;About...&quot;</span>);</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.click += [&amp;] {</div>
 <div class="line">      <span class="keyword">static</span> <span class="keyword">auto</span> dialog = <a class="code hl_class" href="classxtd_1_1forms_1_1about__dialog.html">about_dialog</a> {};</div>
-<div class="line">      dialog.<a class="code hl_function" href="classxtd_1_1forms_1_1about__dialog.html#a717ec51d6be2038e594ea928debe26d8">icon</a>(<a class="code hl_class" href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a>(gammasoft_64x64_xpm));</div>
+<div class="line">      dialog.<a class="code hl_function" href="classxtd_1_1forms_1_1about__dialog.html#a717ec51d6be2038e594ea928debe26d8">icon</a>(<a class="code hl_class" href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a> {gammasoft_64x64_xpm});</div>
 <div class="line">      dialog.name(<span class="stringliteral">&quot;About dialog&quot;</span>);</div>
 <div class="line">      dialog.version(<span class="stringliteral">&quot;1.0&quot;</span>);</div>
 <div class="line">      dialog.long_version(<span class="stringliteral">&quot;1.0.0&quot;</span>);</div>
@@ -194,12 +196,13 @@ Inheritance diagram for xtd::forms::about_dialog:</div>
 <div class="ttc" id="agroup__xtd__forms_html_gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9"><div class="ttname"><a href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">xtd::forms::message_dialog_default_button::button1</a></div><div class="ttdeci">@ button1</div><div class="ttdoc">The first button on the message box is the default button.</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1"><div class="ttname"><a href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">xtd::forms::status_bar_panel_style::text</a></div><div class="ttdeci">@ text</div><div class="ttdoc">The xtd::forms::status_bar_panel displays text in the standard font.</div></div>
 <div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> about_box.h:13</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1about__dialog.html" title="Represents a dialog box that displays about dialog.">about_dialog</a> dialog with dialog_styledialog_style to system. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1about__dialog.html" title="Represents a dialog box that displays about dialog.">about_dialog</a> dialog with dialog_styledialog_style to system. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/about_dialog&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/button&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;../resources/gammasoft_64x64.xpm&quot;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
@@ -212,8 +215,8 @@ Inheritance diagram for xtd::forms::about_dialog:</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.text(<span class="stringliteral">&quot;About...&quot;</span>);</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.click += [&amp;] {</div>
 <div class="line">      <span class="keyword">static</span> <a class="code hl_class" href="classxtd_1_1forms_1_1about__dialog.html">about_dialog</a> dialog;</div>
-<div class="line">      dialog.<a class="code hl_function" href="classxtd_1_1forms_1_1about__dialog.html#adcc4704c07e084954189df7b7b8be4da">dialog_appearance</a>(<a class="code hl_enumvalue" href="group__xtd__forms.html#gga5d307293383256b1361069a8e6c57316a54b53072540eeeb8f8e9343e71f28176">xtd::forms::dialog_appearance::system</a>);</div>
-<div class="line">      dialog.<a class="code hl_function" href="classxtd_1_1forms_1_1about__dialog.html#a717ec51d6be2038e594ea928debe26d8">icon</a>(<a class="code hl_class" href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a>(gammasoft_64x64_xpm));</div>
+<div class="line">      dialog.<a class="code hl_function" href="classxtd_1_1forms_1_1about__dialog.html#adcc4704c07e084954189df7b7b8be4da">dialog_appearance</a>(dialog_appearance::system);</div>
+<div class="line">      dialog.<a class="code hl_function" href="classxtd_1_1forms_1_1about__dialog.html#a717ec51d6be2038e594ea928debe26d8">icon</a>(<a class="code hl_class" href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a> {gammasoft_64x64_xpm});</div>
 <div class="line">      dialog.<a class="code hl_function" href="classxtd_1_1forms_1_1about__dialog.html#a7430c2e0c4cff76b9e9c3622b3f468c9">name</a>(<span class="stringliteral">&quot;About dialog system&quot;</span>);</div>
 <div class="line">      dialog.<a class="code hl_function" href="classxtd_1_1forms_1_1about__dialog.html#ad6b97cb2418a166dabc21c78f2996507">version</a>(<span class="stringliteral">&quot;1.0&quot;</span>);</div>
 <div class="line">      dialog.<a class="code hl_function" href="classxtd_1_1forms_1_1about__dialog.html#af0108d926ab1e0be7cf102842c17e49e">long_version</a>(<span class="stringliteral">&quot;1.0.0&quot;</span>);</div>
@@ -274,9 +277,8 @@ Inheritance diagram for xtd::forms::about_dialog:</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1about__dialog_html_ad7d7f223e30f113a83cf0bfd595e76ef"><div class="ttname"><a href="classxtd_1_1forms_1_1about__dialog.html#ad7d7f223e30f113a83cf0bfd595e76ef">xtd::forms::about_dialog::authors</a></div><div class="ttdeci">const author_collection &amp; authors() const noexcept</div><div class="ttdoc">Gets the authors array.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1about__dialog_html_adcc4704c07e084954189df7b7b8be4da"><div class="ttname"><a href="classxtd_1_1forms_1_1about__dialog.html#adcc4704c07e084954189df7b7b8be4da">xtd::forms::about_dialog::dialog_appearance</a></div><div class="ttdeci">xtd::forms::dialog_appearance dialog_appearance() const noexcept</div><div class="ttdoc">Gets the dialog appearance.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1about__dialog_html_af0108d926ab1e0be7cf102842c17e49e"><div class="ttname"><a href="classxtd_1_1forms_1_1about__dialog.html#af0108d926ab1e0be7cf102842c17e49e">xtd::forms::about_dialog::long_version</a></div><div class="ttdeci">xtd::ustring long_version() const noexcept</div><div class="ttdoc">Gets the product long version.</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_gga5d307293383256b1361069a8e6c57316a54b53072540eeeb8f8e9343e71f28176"><div class="ttname"><a href="group__xtd__forms.html#gga5d307293383256b1361069a8e6c57316a54b53072540eeeb8f8e9343e71f28176">xtd::forms::control_appearance::system</a></div><div class="ttdeci">@ system</div><div class="ttdoc">The appearance of the control is determined by the user's operating system.</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="about_dialog_8cpp-example.html#_a1">about_dialog.cpp</a>, <a class="el" href="about_dialog_system_8cpp-example.html#_a1">about_dialog_system.cpp</a>, and <a class="el" href="minesweeper_8cpp-example.html#_a22">minesweeper.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="about_dialog_8cpp-example.html#_a1">about_dialog.cpp</a>, <a class="el" href="about_dialog_system_8cpp-example.html#_a1">about_dialog_system.cpp</a>, and <a class="el" href="minesweeper_8cpp-example.html#_a21">minesweeper.cpp</a>.</dd>
 </dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Alias</h2></td></tr>
@@ -567,7 +569,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Gets the artists array. </p>
 <dl class="section return"><dt>Returns</dt><dd>The artists array. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="about_dialog_system_8cpp-example.html#a16">about_dialog_system.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="about_dialog_system_8cpp-example.html#a15">about_dialog_system.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -652,7 +654,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Gets the authors array. </p>
 <dl class="section return"><dt>Returns</dt><dd>The author array. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="about_dialog_system_8cpp-example.html#a13">about_dialog_system.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="about_dialog_system_8cpp-example.html#a12">about_dialog_system.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -737,7 +739,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Gets the product copyright. </p>
 <dl class="section return"><dt>Returns</dt><dd>The product copyright. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="about_dialog_system_8cpp-example.html#a10">about_dialog_system.cpp</a>, and <a class="el" href="minesweeper_8cpp-example.html#a28">minesweeper.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="about_dialog_system_8cpp-example.html#a9">about_dialog_system.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -794,7 +796,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Gets the product description. </p>
 <dl class="section return"><dt>Returns</dt><dd>The product description. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="about_dialog_system_8cpp-example.html#a9">about_dialog_system.cpp</a>, and <a class="el" href="minesweeper_8cpp-example.html#a27">minesweeper.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="about_dialog_system_8cpp-example.html#a8">about_dialog_system.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -908,7 +910,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Gets the documentation writers array. </p>
 <dl class="section return"><dt>Returns</dt><dd>The documentation writers array. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="about_dialog_system_8cpp-example.html#a14">about_dialog_system.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="about_dialog_system_8cpp-example.html#a13">about_dialog_system.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -1021,7 +1023,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Gets the product icon. </p>
 <dl class="section return"><dt>Returns</dt><dd>The product icon. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="about_dialog_8cpp-example.html#a2">about_dialog.cpp</a>, <a class="el" href="about_dialog_system_8cpp-example.html#a4">about_dialog_system.cpp</a>, and <a class="el" href="minesweeper_8cpp-example.html#a23">minesweeper.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="about_dialog_8cpp-example.html#a2">about_dialog.cpp</a>, <a class="el" href="about_dialog_system_8cpp-example.html#a3">about_dialog_system.cpp</a>, and <a class="el" href="minesweeper_8cpp-example.html#a22">minesweeper.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -1132,7 +1134,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Gets the product license. </p>
 <dl class="section return"><dt>Returns</dt><dd>The product license. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="about_dialog_system_8cpp-example.html#a17">about_dialog_system.cpp</a>, and <a class="el" href="minesweeper_8cpp-example.html#a31">minesweeper.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="about_dialog_system_8cpp-example.html#a16">about_dialog_system.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -1189,7 +1191,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Gets the product long version. </p>
 <dl class="section return"><dt>Returns</dt><dd>The product long version. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="about_dialog_system_8cpp-example.html#a8">about_dialog_system.cpp</a>, and <a class="el" href="minesweeper_8cpp-example.html#a26">minesweeper.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="about_dialog_system_8cpp-example.html#a7">about_dialog_system.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -1246,7 +1248,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Gets the product name. </p>
 <dl class="section return"><dt>Returns</dt><dd>The product name. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="about_dialog_system_8cpp-example.html#a6">about_dialog_system.cpp</a>, and <a class="el" href="minesweeper_8cpp-example.html#a24">minesweeper.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="about_dialog_system_8cpp-example.html#a5">about_dialog_system.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -1321,7 +1323,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Runs about dialog box. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="about_dialog_system_8cpp-example.html#a18">about_dialog_system.cpp</a>, and <a class="el" href="minesweeper_8cpp-example.html#a32">minesweeper.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="about_dialog_system_8cpp-example.html#a17">about_dialog_system.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -1371,7 +1373,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Gets the translators array. </p>
 <dl class="section return"><dt>Returns</dt><dd>The translators array. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="about_dialog_system_8cpp-example.html#a15">about_dialog_system.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="about_dialog_system_8cpp-example.html#a14">about_dialog_system.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -1456,7 +1458,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Gets the product version. </p>
 <dl class="section return"><dt>Returns</dt><dd>The product version. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="about_dialog_system_8cpp-example.html#a7">about_dialog_system.cpp</a>, and <a class="el" href="minesweeper_8cpp-example.html#a25">minesweeper.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="about_dialog_system_8cpp-example.html#a6">about_dialog_system.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -1513,7 +1515,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Gets the product website. </p>
 <dl class="section return"><dt>Returns</dt><dd>The website. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="about_dialog_system_8cpp-example.html#a11">about_dialog_system.cpp</a>, and <a class="el" href="minesweeper_8cpp-example.html#a29">minesweeper.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="about_dialog_system_8cpp-example.html#a10">about_dialog_system.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -1570,7 +1572,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Gets the product website label. </p>
 <dl class="section return"><dt>Returns</dt><dd>The product website label. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="about_dialog_system_8cpp-example.html#a12">about_dialog_system.cpp</a>, and <a class="el" href="minesweeper_8cpp-example.html#a30">minesweeper.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="about_dialog_system_8cpp-example.html#a11">about_dialog_system.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -1609,7 +1611,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 12 2023 18:07:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jul 15 2023 22:58:23 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
