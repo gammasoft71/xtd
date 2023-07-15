@@ -101,6 +101,7 @@ add_sources(
   src/xtd/tests/date_time_tests.cpp
   src/xtd/tests/date_time_kind_tests.cpp
   src/xtd/tests/day_of_week_tests.cpp
+  src/xtd/tests/decimal_object_tests.cpp
   src/xtd/tests/delegate_tests.cpp
   src/xtd/tests/distribution_tests.cpp
   src/xtd/tests/divided_by_zero_exception_tests.cpp
