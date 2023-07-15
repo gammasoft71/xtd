@@ -1,5 +1,6 @@
 #include "../../include/xtd/math.h"
 #include "../../include/xtd/as.h"
+#include "../../include/xtd/double_object.h"
 #include "../../include/xtd/overflow_exception.h"
 #include <algorithm>
 #include <cmath>
@@ -62,7 +63,7 @@ double math::atan(double value) {
 }
 
 double math::atan2(double y, double x) {
-  return is_infinity(y) && is_infinity(x) ? NaN : std::atan2(y, x);
+  return double_object::is_infinity(y) && double_object::is_infinity(x) ? double_object::NaN : std::atan2(y, x);
 }
 
 int64 math::big_mul(int32 a, int32 b) {
@@ -156,7 +157,7 @@ double math::exp(double value) {
 }
 
 double math::ieee_remainder(double dividend, double divisor) {
-  return divisor == 0 ? NaN : dividend - (divisor * math::round(dividend / divisor));
+  return divisor == 0 ? double_object::NaN : dividend - (divisor * math::round(dividend / divisor));
 }
 
 decimal math::floor(decimal value) {
@@ -172,11 +173,11 @@ bool math::is_infinity(double value) noexcept {
 }
 
 bool math::is_negative_infinity(double value) noexcept {
-  return value <= negative_infinity;
+  return value <= double_object::negative_infinity;
 }
 
 bool math::is_positive_infinity(double value) noexcept {
-  return value >= positive_infinity;
+  return value >= double_object::positive_infinity;
 }
 
 bool math::is_NaN(double value) noexcept {
@@ -188,9 +189,9 @@ double math::log(double value) {
 }
 
 double math::log(double a, double newBase) {
-  if (a < 0 || newBase < 0 || (a != 1 && newBase == 0) || (a != 1 && math::is_positive_infinity(newBase)) || math::is_NaN(a) || math::is_NaN(newBase) || newBase == 1) return math::NaN;
-  if ((a == 0 && 0 < newBase && newBase < 1) || (math::is_positive_infinity(a) && newBase > 1)) return math::positive_infinity;
-  if ((a == 0 && newBase > 1) || (math::is_positive_infinity(a) && 0 < newBase && newBase < 1)) return math::negative_infinity;
+  if (a < 0 || newBase < 0 || (a != 1 && newBase == 0) || (a != 1 && double_object::is_positive_infinity(newBase)) || double_object::is_NaN(a) || double_object::is_NaN(newBase) || newBase == 1) return double_object::NaN;
+  if ((a == 0 && 0 < newBase && newBase < 1) || (double_object::is_positive_infinity(a) && newBase > 1)) return double_object::positive_infinity;
+  if ((a == 0 && newBase > 1) || (double_object::is_positive_infinity(a) && 0 < newBase && newBase < 1)) return double_object::negative_infinity;
   return (math::log(a) / math::log(newBase));
 }
 
@@ -338,7 +339,7 @@ int32 math::sign(decimal value) {
 }
 
 int32 math::sign(double value) {
-  if (is_NaN(value)) throw arithmetic_exception(csf_);
+  if (double_object::is_NaN(value)) throw arithmetic_exception(csf_);
   return value < 0.0 ? -1 : value == 0.0 ? 0 : 1;
 }
 

@@ -1,4 +1,5 @@
 #include <xtd/math.h>
+#include <xtd/double_object.h>
 #include <xtd/overflow_exception.h>
 #include <xtd/using.h>
 #include <xtd/tunit/assert.h>
@@ -16,32 +17,8 @@ namespace xtd::tests {
       assert::are_equal(2.7182818284590452354, math::e, csf_);
     }
     
-    void test_method_(epsilon) {
-      assert::are_equal(4.94066e-324, math::epsilon, csf_);
-    }
-    
-    void test_method_(max_value) {
-      assert::are_equal(numeric_limits<double>::max(), math::max_value, csf_);
-    }
-    
-    void test_method_(min_value) {
-      assert::are_equal(numeric_limits<double>::lowest(), math::min_value, csf_);
-    }
-    
-    void test_method_(NaN) {
-      assert::is_NaN(math::NaN, csf_);
-    }
-    
-    void test_method_(negative_infinity) {
-      assert::are_equal(-numeric_limits<double>::infinity(), math::negative_infinity, csf_);
-    }
-    
     void test_method_(pi) {
       assert::are_equal(3.14159265358979323846, math::pi, csf_);
-    }
-    
-    void test_method_(positive_infinity) {
-      assert::are_equal(numeric_limits<double>::infinity(), math::positive_infinity, csf_);
     }
     
     void test_method_(tau) {
@@ -59,13 +36,13 @@ namespace xtd::tests {
     }
     
     void test_method_(abs_double) {
-      assert::are_equal(math::max_value, math::abs(math::max_value), csf_);
+      assert::are_equal(double_object::max_value, math::abs(double_object::max_value), csf_);
       assert::are_equal(1.6354E-16, math::abs(1.6354E-16), csf_);
       assert::are_equal(15.098123, math::abs(15.098123), csf_);
       assert::are_equal(.0, math::abs(.0), csf_);
       assert::are_equal(19.069713, math::abs(-19.069713), csf_);
       assert::are_equal(15.058e18, math::abs(-15.058e18), csf_);
-      assert::are_equal(-math::min_value, math::abs(math::min_value), csf_);
+      assert::are_equal(-double_object::min_value, math::abs(double_object::min_value), csf_);
     }
     
     void test_method_(abs_single) {
@@ -139,8 +116,8 @@ namespace xtd::tests {
     }
     
     void test_method_(atan) {
-      assert::is_NaN(math::atan(math::NaN), csf_);
-      assert::are_equal(-1.5707963267949, math::atan(math::negative_infinity), .000000001, csf_);
+      assert::is_NaN(math::atan(double_object::NaN), csf_);
+      assert::are_equal(-1.5707963267949, math::atan(double_object::negative_infinity), .000000001, csf_);
       assert::are_equal(-1.41296513650674, math::atan(math::degrees_to_radians(-360)), .000000001, csf_);
       assert::are_equal(-1.36169168297116, math::atan(math::degrees_to_radians(-270)), .000000001, csf_);
       assert::are_equal(-1.26262725567891, math::atan(math::degrees_to_radians(-180)), .000000001, csf_);
@@ -150,7 +127,7 @@ namespace xtd::tests {
       assert::are_equal(1.26262725567891, math::atan(math::degrees_to_radians(180)), .000000001, csf_);
       assert::are_equal(1.36169168297116, math::atan(math::degrees_to_radians(270)), .000000001, csf_);
       assert::are_equal(1.41296513650674, math::atan(math::degrees_to_radians(360)), .000000001, csf_);
-      assert::are_equal(1.5707963267949, math::atan(math::positive_infinity), .000000001, csf_);
+      assert::are_equal(1.5707963267949, math::atan(double_object::positive_infinity), .000000001, csf_);
     }
     
     void test_method_(atan2) {
@@ -160,12 +137,12 @@ namespace xtd::tests {
       assert::are_equal(math::pi, math::atan2(0, -1), csf_);
       assert::are_equal(math::pi / 2, math::atan2(1, 0), csf_);
       assert::are_equal(-math::pi / 2, math::atan2(-1, 0), csf_);
-      assert::is_NaN(math::atan2(math::NaN, 1), csf_);
-      assert::is_NaN(math::atan2(1, math::NaN), csf_);
-      assert::is_NaN(math::atan2(math::positive_infinity, math::positive_infinity), csf_);
-      assert::is_NaN(math::atan2(math::positive_infinity, math::negative_infinity), csf_);
-      assert::is_NaN(math::atan2(math::negative_infinity, math::negative_infinity), csf_);
-      assert::is_NaN(math::atan2(math::negative_infinity, math::positive_infinity), csf_);
+      assert::is_NaN(math::atan2(double_object::NaN, 1), csf_);
+      assert::is_NaN(math::atan2(1, double_object::NaN), csf_);
+      assert::is_NaN(math::atan2(double_object::positive_infinity, double_object::positive_infinity), csf_);
+      assert::is_NaN(math::atan2(double_object::positive_infinity, double_object::negative_infinity), csf_);
+      assert::is_NaN(math::atan2(double_object::negative_infinity, double_object::negative_infinity), csf_);
+      assert::is_NaN(math::atan2(double_object::negative_infinity, double_object::positive_infinity), csf_);
     }
     
     void test_method_(big_mul) {
@@ -184,18 +161,18 @@ namespace xtd::tests {
     void test_method_(cos) {
       assert::are_equal(1, math::cos(math::degrees_to_radians(0.0)), csf_);
       assert::are_equal(6.12303176911189E-17, math::cos(math::degrees_to_radians(90.0)), .0001, csf_);
-      assert::is_NaN(math::cos(math::NaN), csf_);
-      assert::is_NaN(math::cos(math::negative_infinity), csf_);
-      assert::is_NaN(math::cos(math::positive_infinity), csf_);
+      assert::is_NaN(math::cos(double_object::NaN), csf_);
+      assert::is_NaN(math::cos(double_object::negative_infinity), csf_);
+      assert::is_NaN(math::cos(double_object::positive_infinity), csf_);
     }
     
     void test_method_(cosh) {
       assert::are_equal(1, math::cosh(0.0), csf_);
       assert::are_equal(10.0676619957778, math::cosh(3.0), .0000000000001, csf_);
       assert::are_equal(11013.2329201033, math::cosh(10.0), .0000000001, csf_);
-      assert::is_true(math::is_positive_infinity(math::cosh(math::positive_infinity)), csf_);
-      assert::is_true(math::is_positive_infinity(math::cosh(math::negative_infinity)), csf_);
-      assert::is_NaN(math::cosh(math::NaN), csf_);
+      assert::is_true(double_object::is_positive_infinity(math::cosh(double_object::positive_infinity)), csf_);
+      assert::is_true(double_object::is_positive_infinity(math::cosh(double_object::negative_infinity)), csf_);
+      assert::is_NaN(math::cosh(double_object::NaN), csf_);
     }
     
     void test_method_(degrees_to_radians) {
@@ -317,9 +294,9 @@ namespace xtd::tests {
     void test_method_(exp) {
       assert::are_equal(1.0, math::exp(0.0), csf_);
       assert::are_equal(148.413159, math::exp(5.0), .000001, csf_);
-      assert::is_NaN(math::exp(math::NaN), csf_);
-      assert::is_true(math::is_positive_infinity(math::exp(math::positive_infinity)), csf_);
-      assert::are_equal(0.0, math::exp(math::negative_infinity), csf_);
+      assert::is_NaN(math::exp(double_object::NaN), csf_);
+      assert::is_true(double_object::is_positive_infinity(math::exp(double_object::positive_infinity)), csf_);
+      assert::are_equal(0.0, math::exp(double_object::negative_infinity), csf_);
     }
     
     void test_method_(ieee_remainder) {
@@ -345,85 +322,13 @@ namespace xtd::tests {
       assert::are_equal(-8.0, math::floor(-7.1), csf_);
       assert::are_equal(-8.0, math::floor(-7.6), csf_);
     }
-    
-    void test_method_(is_infinity) {
-      assert::is_false(math::is_infinity(0.0), csf_);
-      assert::is_false(math::is_infinity(1.0), csf_);
-      assert::is_false(math::is_infinity(255.0), csf_);
-      assert::is_false(math::is_infinity(4294967295.0), csf_);
-      assert::is_false(math::is_infinity(0.00390625), csf_);
-      assert::is_false(math::is_infinity(0.00000000023283064365386962890625), csf_);
-      assert::is_false(math::is_infinity(1.23456789012345E-300), csf_);
-      assert::is_false(math::is_infinity(1.2345678901234565), csf_);
-      assert::is_false(math::is_infinity(1.23456789012345678E+300), csf_);
-      assert::is_false(math::is_infinity(math::epsilon), csf_);
-      assert::is_false(math::is_infinity(math::min_value), csf_);
-      assert::is_false(math::is_infinity(math::max_value), csf_);
-      assert::is_false(math::is_infinity(math::NaN), csf_);
-      assert::is_true(math::is_infinity(math::negative_infinity), csf_);
-      assert::is_true(math::is_infinity(math::positive_infinity), csf_);
-    }
-    
-    void test_method_(is_negative_infinity) {
-      assert::is_false(math::is_negative_infinity(0.0), csf_);
-      assert::is_false(math::is_negative_infinity(1.0), csf_);
-      assert::is_false(math::is_negative_infinity(255.0), csf_);
-      assert::is_false(math::is_negative_infinity(4294967295.0), csf_);
-      assert::is_false(math::is_negative_infinity(0.00390625), csf_);
-      assert::is_false(math::is_negative_infinity(0.00000000023283064365386962890625), csf_);
-      assert::is_false(math::is_negative_infinity(1.23456789012345E-300), csf_);
-      assert::is_false(math::is_negative_infinity(1.2345678901234565), csf_);
-      assert::is_false(math::is_negative_infinity(1.23456789012345678E+300), csf_);
-      assert::is_false(math::is_negative_infinity(math::epsilon), csf_);
-      assert::is_false(math::is_negative_infinity(math::min_value), csf_);
-      assert::is_false(math::is_negative_infinity(math::max_value), csf_);
-      assert::is_false(math::is_negative_infinity(math::NaN), csf_);
-      assert::is_true(math::is_negative_infinity(math::negative_infinity), csf_);
-      assert::is_false(math::is_negative_infinity(math::positive_infinity), csf_);
-    }
-    
-    void test_method_(is_positive_infinity) {
-      assert::is_false(math::is_positive_infinity(0.0), csf_);
-      assert::is_false(math::is_positive_infinity(1.0), csf_);
-      assert::is_false(math::is_positive_infinity(255.0), csf_);
-      assert::is_false(math::is_positive_infinity(4294967295.0), csf_);
-      assert::is_false(math::is_positive_infinity(0.00390625), csf_);
-      assert::is_false(math::is_positive_infinity(0.00000000023283064365386962890625), csf_);
-      assert::is_false(math::is_positive_infinity(1.23456789012345E-300), csf_);
-      assert::is_false(math::is_positive_infinity(1.2345678901234565), csf_);
-      assert::is_false(math::is_positive_infinity(1.23456789012345678E+300), csf_);
-      assert::is_false(math::is_positive_infinity(math::epsilon), csf_);
-      assert::is_false(math::is_positive_infinity(math::min_value), csf_);
-      assert::is_false(math::is_positive_infinity(math::max_value), csf_);
-      assert::is_false(math::is_positive_infinity(math::NaN), csf_);
-      assert::is_false(math::is_positive_infinity(math::negative_infinity), csf_);
-      assert::is_true(math::is_positive_infinity(math::positive_infinity), csf_);
-    }
-    
-    void test_method_(is_NaN) {
-      assert::is_false(math::is_NaN(0.0), csf_);
-      assert::is_false(math::is_NaN(1.0), csf_);
-      assert::is_false(math::is_NaN(255.0), csf_);
-      assert::is_false(math::is_NaN(4294967295.0), csf_);
-      assert::is_false(math::is_NaN(0.00390625), csf_);
-      assert::is_false(math::is_NaN(0.00000000023283064365386962890625), csf_);
-      assert::is_false(math::is_NaN(1.23456789012345E-300), csf_);
-      assert::is_false(math::is_NaN(1.2345678901234565), csf_);
-      assert::is_false(math::is_NaN(1.23456789012345678E+300), csf_);
-      assert::is_false(math::is_NaN(math::epsilon), csf_);
-      assert::is_false(math::is_NaN(math::min_value), csf_);
-      assert::is_false(math::is_NaN(math::max_value), csf_);
-      assert::is_true(math::is_NaN(math::NaN), csf_);
-      assert::is_false(math::is_NaN(math::negative_infinity), csf_);
-      assert::is_false(math::is_NaN(math::positive_infinity), csf_);
-    }
-    
+        
     void test_method_(log) {
       assert::are_equal(0.18232155679395459, math::log(1.2), 0.0000000000000001, csf_);
-      assert::is_true(math::is_negative_infinity(math::log(0)), csf_);
+      assert::is_true(double_object::is_negative_infinity(math::log(0)), csf_);
       assert::is_NaN(math::log(-1), csf_);
-      assert::is_NaN(math::log(math::NaN), csf_);
-      assert::is_true(math::is_positive_infinity(math::log(math::positive_infinity)), csf_);
+      assert::is_NaN(math::log(double_object::NaN), csf_);
+      assert::is_true(double_object::is_positive_infinity(math::log(double_object::positive_infinity)), csf_);
     }
     
     void test_method_(log_with_new_base) {
@@ -433,24 +338,24 @@ namespace xtd::tests {
       assert::is_NaN(math::log(-1, 10), csf_);
       assert::is_NaN(math::log(100, -1), csf_);
       assert::is_NaN(math::log(2, 0), csf_);
-      assert::is_NaN(math::log(2, math::positive_infinity), csf_);
-      assert::is_NaN(math::log(math::NaN, 10), csf_);
-      assert::is_NaN(math::log(100, math::NaN), csf_);
+      assert::is_NaN(math::log(2, double_object::positive_infinity), csf_);
+      assert::is_NaN(math::log(double_object::NaN, 10), csf_);
+      assert::is_NaN(math::log(100, double_object::NaN), csf_);
       assert::is_NaN(math::log(100, 1), csf_);
-      assert::is_true(math::is_positive_infinity(math::log(0, 0.5)), csf_);
-      assert::is_true(math::is_positive_infinity(math::log(math::positive_infinity, 2)), csf_);
-      assert::is_true(math::is_negative_infinity(math::log(0, 2)), csf_);
-      assert::is_true(math::is_negative_infinity(math::log(math::positive_infinity, 0.5)), csf_);
+      assert::is_true(double_object::is_positive_infinity(math::log(0, 0.5)), csf_);
+      assert::is_true(double_object::is_positive_infinity(math::log(double_object::positive_infinity, 2)), csf_);
+      assert::is_true(double_object::is_negative_infinity(math::log(0, 2)), csf_);
+      assert::is_true(double_object::is_negative_infinity(math::log(double_object::positive_infinity, 0.5)), csf_);
     }
     
     void test_method_(log10) {
       assert::are_equal(0.0, math::log10(1), csf_);
       assert::are_equal(1.0, math::log10(10), csf_);
       assert::are_equal(3.0, math::log10(1000), csf_);
-      assert::is_true(math::is_negative_infinity(math::log10(0)), csf_);
+      assert::is_true(double_object::is_negative_infinity(math::log10(0)), csf_);
       assert::is_NaN(math::log10(-1), csf_);
-      assert::is_NaN(math::log10(math::NaN), csf_);
-      assert::is_true(math::is_positive_infinity(math::log10(math::positive_infinity)), csf_);
+      assert::is_NaN(math::log10(double_object::NaN), csf_);
+      assert::is_true(double_object::is_positive_infinity(math::log10(double_object::positive_infinity)), csf_);
     }
     
     void test_method_(max_byte) {
@@ -611,24 +516,24 @@ namespace xtd::tests {
     
     void test_method_(pow) {
       assert::are_equal(8, math::pow(2, 3), csf_);
-      assert::is_NaN(math::pow(math::NaN, 3), csf_);
-      assert::is_NaN(math::pow(2, math::NaN), csf_);
+      assert::is_NaN(math::pow(double_object::NaN, 3), csf_);
+      assert::is_NaN(math::pow(2, double_object::NaN), csf_);
       assert::are_equal(1, math::pow(2, 0), csf_);
-      assert::are_equal(0, math::pow(math::negative_infinity, -1), csf_);
-      assert::is_true(math::is_negative_infinity(math::pow(math::negative_infinity, 11)), csf_);
-      assert::is_true(math::is_positive_infinity(math::pow(math::negative_infinity, 10)), csf_);
+      assert::are_equal(0, math::pow(double_object::negative_infinity, -1), csf_);
+      assert::is_true(double_object::is_negative_infinity(math::pow(double_object::negative_infinity, 11)), csf_);
+      assert::is_true(double_object::is_positive_infinity(math::pow(double_object::negative_infinity, 10)), csf_);
       assert::is_NaN(math::pow(-1, 0.5), csf_);
-      assert::is_true(math::is_positive_infinity(math::pow(0, math::negative_infinity)), csf_);
-      assert::are_equal(0, math::pow(0, math::positive_infinity), csf_);
-      assert::are_equal(0, math::pow(-2, math::negative_infinity), csf_);
-      assert::are_equal(0, math::pow(2, math::negative_infinity), csf_);
-      assert::is_true(math::is_positive_infinity(math::pow(-2, math::positive_infinity)), csf_);
-      assert::is_true(math::is_positive_infinity(math::pow(2, math::positive_infinity)), csf_);
-      assert::is_true(math::is_positive_infinity(math::pow(0, -1)), csf_);
+      assert::is_true(double_object::is_positive_infinity(math::pow(0, double_object::negative_infinity)), csf_);
+      assert::are_equal(0, math::pow(0, double_object::positive_infinity), csf_);
+      assert::are_equal(0, math::pow(-2, double_object::negative_infinity), csf_);
+      assert::are_equal(0, math::pow(2, double_object::negative_infinity), csf_);
+      assert::is_true(double_object::is_positive_infinity(math::pow(-2, double_object::positive_infinity)), csf_);
+      assert::is_true(double_object::is_positive_infinity(math::pow(2, double_object::positive_infinity)), csf_);
+      assert::is_true(double_object::is_positive_infinity(math::pow(0, -1)), csf_);
       assert::are_equal(0, math::pow(0, 1), csf_);
       assert::are_equal(1, math::pow(1, 3), csf_);
-      assert::are_equal(0, math::pow(math::positive_infinity, -1), csf_);
-      assert::is_true(math::is_positive_infinity(math::pow(math::positive_infinity, 1)), csf_);
+      assert::are_equal(0, math::pow(double_object::positive_infinity, -1), csf_);
+      assert::is_true(double_object::is_positive_infinity(math::pow(double_object::positive_infinity, 1)), csf_);
     }
     
     void test_method_(radians_to_degrees) {
@@ -680,7 +585,7 @@ namespace xtd::tests {
       assert::are_equal(-1.0, math::sign(-10.0), csf_);
       assert::are_equal(0.0, math::sign(0.0), csf_);
       assert::are_equal(1.0, math::sign(10.0), csf_);
-      assert::throws<arithmetic_exception>([] {math::sign(math::NaN);}, csf_);
+      assert::throws<arithmetic_exception>([] {math::sign(double_object::NaN);}, csf_);
     }
     
     void test_method_(sign_int16) {
@@ -718,17 +623,17 @@ namespace xtd::tests {
       assert::are_equal(0.0, math::sin(math::degrees_to_radians(0.0)), csf_);
       assert::are_equal(0.707106781186547, math::sin(math::degrees_to_radians(45)), .0000000001, csf_);
       assert::are_equal(1.0, math::sin(math::degrees_to_radians(90.0)), csf_);
-      assert::is_NaN(math::sin(math::NaN), csf_);
-      assert::is_NaN(math::sin(math::negative_infinity), csf_);
-      assert::is_NaN(math::sin(math::positive_infinity), csf_);
+      assert::is_NaN(math::sin(double_object::NaN), csf_);
+      assert::is_NaN(math::sin(double_object::negative_infinity), csf_);
+      assert::is_NaN(math::sin(double_object::positive_infinity), csf_);
     }
     
     void test_method_(sinh) {
       assert::are_equal(0.0, math::sinh(0.0));
       assert::are_equal(2.30129890230729, math::sinh(math::degrees_to_radians(90)), .00000000000001, csf_);
-      assert::is_true(math::is_positive_infinity(math::sinh(math::positive_infinity)), csf_);
-      assert::is_true(math::is_negative_infinity(math::sinh(math::negative_infinity)), csf_);
-      assert::is_NaN(math::sinh(math::NaN), csf_);
+      assert::is_true(double_object::is_positive_infinity(math::sinh(double_object::positive_infinity)), csf_);
+      assert::is_true(double_object::is_negative_infinity(math::sinh(double_object::negative_infinity)), csf_);
+      assert::is_NaN(math::sinh(double_object::NaN), csf_);
     }
     
     void test_method_(sqrt) {
@@ -737,21 +642,21 @@ namespace xtd::tests {
       assert::are_equal(2.0, math::sqrt(4.0), csf_);
       assert::are_equal(3.0, math::sqrt(9.0), csf_);
       assert::is_NaN(math::sqrt(-1.0), csf_);
-      assert::is_NaN(math::sqrt(math::NaN), csf_);
-      assert::is_true(math::is_positive_infinity(math::sqrt(math::positive_infinity)), csf_);
+      assert::is_NaN(math::sqrt(double_object::NaN), csf_);
+      assert::is_true(double_object::is_positive_infinity(math::sqrt(double_object::positive_infinity)), csf_);
     }
     
     void test_method_(tan) {
       assert::are_equal(0.0, math::tan(0.0), csf_);
-      assert::is_NaN(math::tan(math::NaN), csf_);
-      assert::is_NaN(math::tan(math::negative_infinity), csf_);
-      assert::is_NaN(math::tan(math::positive_infinity), csf_);
+      assert::is_NaN(math::tan(double_object::NaN), csf_);
+      assert::is_NaN(math::tan(double_object::negative_infinity), csf_);
+      assert::is_NaN(math::tan(double_object::positive_infinity), csf_);
     }
     
     void test_method_(tanh) {
-      assert::are_equal(-1.0, math::tanh(math::negative_infinity), csf_);
-      assert::are_equal(1.0, math::tanh(math::positive_infinity), csf_);
-      assert::is_NaN(math::tanh(math::NaN), csf_);
+      assert::are_equal(-1.0, math::tanh(double_object::negative_infinity), csf_);
+      assert::are_equal(1.0, math::tanh(double_object::positive_infinity), csf_);
+      assert::is_NaN(math::tanh(double_object::NaN), csf_);
     }
     
     void test_method_(truncate_decimal) {
