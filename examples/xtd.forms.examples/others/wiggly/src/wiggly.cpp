@@ -1,4 +1,9 @@
-#include <xtd/xtd>
+#include <xtd/drawing/system_colors>
+#include <xtd/forms/application>
+#include <xtd/forms/form>
+#include <xtd/forms/text_box>
+#include <xtd/forms/timer>
+#include <xtd/forms/user_control>
 
 using namespace std;
 using namespace xtd;

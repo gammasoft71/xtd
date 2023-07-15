@@ -1,4 +1,8 @@
-#include <xtd/xtd>
+#include <xtd/drawing/pens>
+#include <xtd/forms/application>
+#include <xtd/forms/form>
+#include <xtd/forms/label>
+#include <xtd/forms/toggle_button>
 
 using namespace xtd;
 using namespace xtd::drawing;
