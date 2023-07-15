@@ -83,7 +83,9 @@ namespace xtdc_command {
     
     void create_source(const xtd::ustring& name, const xtd::ustring& path) const {
       std::vector<xtd::ustring> lines {
-        "#include <xtd/xtd.tunit>",
+        "#include <xtd/tunit/assert.h>",
+        "#include <xtd/tunit/test_class_attribute.h>",
+        "#include <xtd/tunit/test_method_attribute.h>",
         "",
         "using namespace xtd::tunit;",
         "",

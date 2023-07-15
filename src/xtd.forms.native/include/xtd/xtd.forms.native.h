@@ -8,9 +8,7 @@
 #endif
 /// @endcond
 
-#include <xtd/xtd.core>
 #include <xtd/xtd.drawing>
-
 #include "forms/browser_info_flags.h"
 #include "forms/choose_color_flags.h"
 #include "forms/choose_font_flags.h"

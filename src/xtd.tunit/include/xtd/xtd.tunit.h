@@ -4,7 +4,6 @@
 #pragma once
 
 #include <xtd/xtd.core>
-
 #include "tunit/abort_error.h"
 #include "tunit/assert.h"
 #include "tunit/assert_error.h"
