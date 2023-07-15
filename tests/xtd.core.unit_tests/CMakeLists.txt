@@ -101,10 +101,11 @@ add_sources(
   src/xtd/tests/date_time_tests.cpp
   src/xtd/tests/date_time_kind_tests.cpp
   src/xtd/tests/day_of_week_tests.cpp
+  src/xtd/tests/delegate_tests.cpp
   src/xtd/tests/distribution_tests.cpp
   src/xtd/tests/divided_by_zero_exception_tests.cpp
   src/xtd/tests/domain_exception_tests.cpp
-  src/xtd/tests/delegate_tests.cpp
+  src/xtd/tests/double_object_tests.cpp
   src/xtd/tests/enum_attribute_tests.cpp
   src/xtd/tests/enum_object_with_registered_enum_class_flags_tests.cpp
   src/xtd/tests/enum_object_with_registered_enum_class_tests.cpp
@@ -170,6 +171,7 @@ add_sources(
   src/xtd/tests/registered_enum_struct_flags_tests.cpp
   src/xtd/tests/registered_enum_struct_tests.cpp
   src/xtd/tests/registered_enum_tests.cpp
+  src/xtd/tests/single_object_tests.cpp
   src/xtd/tests/signal_tests.cpp
   src/xtd/tests/standard_name.h
   src/xtd/tests/string_boolean_format_tests.cpp
