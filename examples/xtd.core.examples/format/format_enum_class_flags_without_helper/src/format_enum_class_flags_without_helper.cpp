@@ -1,4 +1,6 @@
-#include <xtd/xtd>
+#include <xtd/as>
+#include <xtd/enum_class>
+#include <xtd/ustring>
 
 using namespace std;
 using namespace xtd;
