@@ -1,4 +1,6 @@
-#include <xtd/xtd>
+#include <xtd/console>
+#include <xtd/environment>
+#include <xtd/startup>
 
 using namespace xtd;
 
@@ -7,7 +9,7 @@ namespace main1_example {
   public:
     static void main() {
       // Write arguments to the console output
-      for (ustring arg : environment::get_command_line_args())
+      for (auto arg : environment::get_command_line_args())
         console::write_line(arg);
         
       // return 42

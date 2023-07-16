@@ -1,14 +1,15 @@
-#include <xtd/xtd>
+#include <xtd/console>
+#include <xtd/environment>
+#include <xtd/startup>
 
-using namespace std;
 using namespace xtd;
 
 namespace main4_example {
   class program {
   public:
-    static int main(const vector<ustring>& args) {
+    static int main(auto args) {
       // Write arguments to the console output
-      for (ustring arg : args)
+      for (auto arg : args)
         console::write_line(arg);
         
       return 42;
