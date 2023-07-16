@@ -7,7 +7,7 @@ using namespace xtd;
 using namespace xtd::forms;
 
 auto main()->int {
-  action<const ustring&> message_target;
+  auto message_target = action<const ustring&> {};
   
   if (environment::get_command_line_args().size() > 1)
     message_target = [](const ustring & message) {message_box::show(message);};

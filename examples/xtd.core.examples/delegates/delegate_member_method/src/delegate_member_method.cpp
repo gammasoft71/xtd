@@ -14,8 +14,8 @@ public:
 
 auto main()->int {
   // use delegate as std::function with std::bind
-  test_delegate td;
-  delegate<void(const ustring& str)> writer(td, &test_delegate::write);
+  auto td = test_delegate {};
+  auto writer = delegate<void(const ustring& str)> {td, &test_delegate::write};
   
   writer("String to write");
 }

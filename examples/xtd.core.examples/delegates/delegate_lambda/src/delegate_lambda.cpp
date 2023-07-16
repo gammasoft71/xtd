@@ -6,9 +6,9 @@ using namespace xtd;
 
 auto main()->int {
   // use delegate as std::function
-  delegate<void(const ustring& str)> writer([](const ustring & str)  {
+  auto writer = delegate<void(const ustring& str)> {[](const ustring & str)  {
     console::out << str << environment::new_line();
-  });
+  }};
   
   writer("Value to write");
 }

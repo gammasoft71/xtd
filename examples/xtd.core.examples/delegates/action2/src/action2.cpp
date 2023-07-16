@@ -17,7 +17,7 @@ void write_line(const ustring& message) {
 }
 
 auto main()->int {
-  display_message message_target;
+  auto message_target = display_message {};
   
   if (environment::get_command_line_args().size() > 1)
     message_target = show_windows_message;

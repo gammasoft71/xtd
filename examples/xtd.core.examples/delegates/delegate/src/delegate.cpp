@@ -16,11 +16,11 @@ public:
 
 auto main()->int {
   using example_function = delegate<void(const ustring&)>;
-  ::object instance;
-  ustring str("World");
+  auto instance = ::object {};
+  auto str = ustring {"World"};
   
   //equivanet to : example_function f = {std::bind(&::object::hello, &instance, std::placeholders::_1)};
-  example_function f = {instance, &::object::hello};
+  auto f = example_function {instance, &::object::hello};
   
   // equivalent to : instance.hello(str)
   f(str);
