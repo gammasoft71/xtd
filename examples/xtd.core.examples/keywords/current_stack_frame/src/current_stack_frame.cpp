@@ -1,6 +1,6 @@
-#include <xtd/xtd>
+#include <xtd/diagnostics/stack_frame>
+#include <xtd/console>
 
-using namespace std;
 using namespace xtd;
 
 void trace_message(const ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {

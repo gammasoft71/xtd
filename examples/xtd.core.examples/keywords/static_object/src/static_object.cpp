@@ -1,4 +1,5 @@
-#include <xtd/xtd>
+#include <xtd/console>
+#include <xtd/static>
 
 using namespace std;
 using namespace xtd;
@@ -12,9 +13,9 @@ namespace static_object_example {
 
 auto main()->int {
   // uncomment next line cause build error with call implicitly-deleted default constructor.
-  //static_object_example::program program;
+  //auto program = static_object_example::program {};
   
-  cout << static_object_example::program::to_string() << endl;
+  console::write_line(static_object_example::program::to_string());
 }
 
 // This code produces the following output:
