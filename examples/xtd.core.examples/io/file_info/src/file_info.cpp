@@ -1,4 +1,8 @@
-#include <xtd/xtd>
+#include <xtd/io/file_info>
+#include <xtd/io/path>
+#include <xtd/console>
+#include <xtd/startup>
+#include <xtd/using>
 
 using namespace xtd;
 using namespace xtd::io;
@@ -6,25 +10,25 @@ using namespace xtd::io;
 class program {
 public:
   static auto main() {
-    ustring path = path::get_temp_file_name();
+    auto path = path::get_temp_file_name();
     file_info fi1(path);
     
     // Create a file to write to.
     
-    using_(stream_writer sw = fi1.create_text()) {
+    using_(auto sw = fi1.create_text()) {
       sw.write_line("Hello");
       sw.write_line("And");
       sw.write_line("Welcome");
     }
     
     // Open the file to read from.
-    using_(stream_reader sr = fi1.open_text()) {
+    using_(auto sr = fi1.open_text()) {
       while (!sr.end_of_stream())
         console::write_line(sr.read_line());
     }
     
     try {
-      ustring path2 = path::get_temp_file_name();
+      auto path2 = path::get_temp_file_name();
       file_info fi2(path2);
       
       // Ensure that the target does not exist.
