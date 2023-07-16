@@ -12,7 +12,7 @@ public:
   
 protected:
   void my_protected_method() {
-    my_internal_class mic;
+    auto mic = my_internal_class {};
     mic.throws_exception();
   }
   
@@ -24,11 +24,11 @@ private:
         throw system_exception("A problem was encountered.");
       } catch (const system_exception&) {
         // Create a StackTrace that captures filename, line number and column information.
-        stack_trace st(true);
+        auto st = stack_trace {true};
         ustring stack_indent = "";
-        for (size_t i = 0; i < st.frame_count(); i++) {
+        for (auto i = 0UL; i < st.frame_count(); i++) {
           // Note that at this level, there are four stack frames, one for each method invocation.
-          stack_frame sf = st.get_frame(i);
+          auto sf = st.get_frame(i);
           console::write_line();
           console::write_line(stack_indent + " Method: {0}", sf.get_method());
           console::write_line(stack_indent + " File: {0}", sf.get_file_name());
@@ -42,15 +42,15 @@ private:
 };
 
 auto main()->int {
-  stack_trace_sample sample;
+  auto sample = stack_trace_sample {};
   try {
     sample.my_public_method();
   } catch (const system_exception&) {
     // Create a StackTrace that captures filename, line number, and column information for the current thread.
-    stack_trace st(true);
-    for (size_t i = 0; i < st.frame_count(); i++) {
+    auto st = stack_trace {true};
+    for (auto i = 0UL; i < st.frame_count(); i++) {
       // Note that high up the call stack, there is only one stack frame.
-      stack_frame sf = st.get_frame(i);
+      auto sf = st.get_frame(i);
       console::write_line();
       console::write_line("High up the call stack, Method: {0}", sf.get_method());
       
