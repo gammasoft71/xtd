@@ -35,7 +35,7 @@ You have to call the method [applicati::exit](https://gammasoft71.github.io/xtd/
 using namespace xtd::forms;
 
 auto main()->int {
-  form form1;
+  auto form1 = form {};
   form1.show();
   form1.form_closed += [] {
     // If you comment the following line the application will not exit when you close the form.
@@ -80,14 +80,14 @@ The following code shows how to create an [application_context](https://gammasof
 using namespace xtd::forms;
 
 auto main()->int {
-  form form1;
+  auto form1 = form {};
   form1.text("form 1;");
   form1.show();
 
-  form form2;
+  auto form2 = form {};
   form2.text("form 2");
 
-  application_context context;
+  auto context = application_context {};
   context.main_form(form2);
   
   application::run(context);
