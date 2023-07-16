@@ -10,11 +10,11 @@ namespace environment_exit_code_example {
   public:
     // The main entry point for the application.
     static auto main() {
-      vector<ustring> args = environment::get_command_line_args();
+      auto args = environment::get_command_line_args();
       if (args.size() == 1)
         environment::exit_code(ECANCELED);
       else {
-        long long value = 0;
+        auto value = 0L;
         if (try_parse(args[1], value))
           if (value <= numeric_limits<int>::min() || value >= numeric_limits<int>::max())
             environment::exit_code(ERANGE);

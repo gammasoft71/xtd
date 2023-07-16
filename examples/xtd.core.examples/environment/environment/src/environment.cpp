@@ -9,8 +9,8 @@ namespace environment_example {
   public:
     // The main entry point for the application.
     static auto main() {
-      ustring str;
-      ustring nl = environment::new_line();
+      auto str = ustring::empty_string;
+      auto nl = environment::new_line();
       //
       console::write_line();
       console::write_line("-- environment members --");
@@ -57,7 +57,7 @@ namespace environment_example {
       //  No example for Exit(exitCode) because doing so would terminate this example.
       
       //  <-- Keep this information secure! -->
-      ustring query = ustring::format("My home folder is %{}% and user is %{}%", environment::os_version().is_windows_platform() ? "HOMEPATH" : "HOME", environment::os_version().is_windows_platform() ? "USERNAME" : "USER");
+      auto query = ustring::format("My home folder is %{}% and user is %{}%", environment::os_version().is_windows_platform() ? "HOMEPATH" : "HOME", environment::os_version().is_windows_platform() ? "USERNAME" : "USER");
       str = environment::expand_environment_variables(query);
       console::write_line("expand_environment_variables: {}  {}",  nl, str);
       
