@@ -1,14 +1,14 @@
-#include <xtd/xtd>
-#include <iostream>
+#include <xtd/console>
+#include <xtd/environment>
+#include <xtd/startup>
 
-using namespace std;
 using namespace xtd;
 
 namespace startup_example {
   class program {
   public:
-    static auto main(const vector<ustring>& args) {
-      cout << ustring::format("args = {}", ustring::join(", ", args)) << endl;
+    static auto main(auto args) {
+      console::write_line("args = {}", ustring::join(", ", args));
       environment::exit_code(42);
     }
   };

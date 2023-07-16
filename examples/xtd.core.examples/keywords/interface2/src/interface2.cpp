@@ -1,4 +1,6 @@
-#include <xtd/xtd>
+#include <xtd/as>
+#include <xtd/interface>
+#include <xtd/console>
 
 using namespace std;
 using namespace xtd;
@@ -17,8 +19,8 @@ namespace interface2_example {
 }
 
 auto main()->int {
-  std::shared_ptr<interface2_example::istringable> stringable = std::make_shared<interface2_example::program>();
-  cout << stringable->to_string() << endl;
+  auto stringable = as<interface2_example::istringable>(make_shared<interface2_example::program>());
+  console::write_line(stringable->to_string());
 }
 
 // This code produces the following output:

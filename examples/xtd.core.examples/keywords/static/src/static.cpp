@@ -1,6 +1,6 @@
-#include <xtd/xtd>
+#include <xtd/console>
+#include <xtd/static>
 
-using namespace std;
 using namespace xtd;
 
 namespace static_example {
@@ -12,9 +12,9 @@ namespace static_example {
 
 auto main()->int {
   // uncomment next line cause build error with call implicitly-deleted default constructor.
-  //static_example::program program;
+  //auto program = static_example::program {};
   
-  cout << static_example::program::to_string() << endl;
+  console::write_line(static_example::program::to_string());
 }
 
 // This code produces the following output:
