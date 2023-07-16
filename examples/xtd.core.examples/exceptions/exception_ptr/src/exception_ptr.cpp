@@ -7,7 +7,7 @@ using namespace std;
 using namespace xtd;
 
 auto main()->int {
-  exception_ptr exception_pointer;
+  auto exception_pointer = exception_ptr {};
   
   thread thread1([&] {
     try {
