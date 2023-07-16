@@ -10,8 +10,8 @@ void method2(int count) {
     if (count < 5)
       throw argument_exception("count too large", "count");
   } catch (const system_exception&) {
-    stack_trace st;
-    stack_trace st1(stack_frame(2, true));
+    auto st = stack_trace {};
+    auto st1 = stack_trace {stack_frame {2, true}};
     console::write_line(" Stack trace for Method2: {0}", st1.to_string());
     console::write_line(st.to_string());
     throw;
@@ -22,12 +22,12 @@ void method1() {
   try {
     method2(4);
   } catch (const system_exception&) {
-    stack_trace st;
-    stack_trace st1(stack_frame(true));
+    auto st = stack_trace {};
+    auto st1 = stack_trace {stack_frame {true}};
     console::write_line(" Stack trace for Method1: {0}", st1.to_string());
     console::write_line(st.to_string());
     // Build a stack trace for the next frame.
-    stack_trace st2(stack_frame(1, true));
+    auto st2 = stack_trace {stack_frame {1, true}};
     console::write_line(" Stack trace for next level frame: {0}", st2.to_string());
     throw;
   }
@@ -37,8 +37,8 @@ auto main()->int {
   try {
     method1();
   } catch (const system_exception&) {
-    stack_trace st;
-    stack_trace st1(stack_frame(true));
+    auto st = stack_trace {};
+    auto st1 = stack_trace {stack_frame {true}};
     console::write_line(" Stack trace for Main: {0}", st1.to_string());
     console::write_line(st.to_string());
   }

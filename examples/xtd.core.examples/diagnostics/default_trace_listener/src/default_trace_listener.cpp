@@ -12,14 +12,14 @@ public:
   // args(0) is the number of possibilities for binomial coefficients.
   // args(1) is the file specification for the trace log file.
   static auto main(const vector<ustring>& args) {
-    decimal possibilities;
-    decimal iter;
+    auto possibilities = .0l;
+    auto iter = .0l;
     
     // Remove the original default trace listener.
     trace::listeners().erase(trace::listeners().begin());
     
     // Create and add a new default trace listener.
-    shared_ptr<default_trace_listener> default_listener = make_shared<default_trace_listener>();
+    auto default_listener = make_shared<default_trace_listener>();
     trace::listeners().push_back(default_listener);
     
     // Assign the log file specification from the command line, if entered.
@@ -30,12 +30,12 @@ public:
     if (args.size() >= 1) {
       // Verify that the argument is a number within the correct range.
       try {
-        const decimal MAX_POSSIBILITIES = 99;
+        const auto MAX_POSSIBILITIES = 99.0l;
         possibilities = parse<decimal>(args[0]);
         if (possibilities < 0 || possibilities > MAX_POSSIBILITIES)
           throw new system_exception(ustring::format("The number of possibilities must be in the range 0..{}.", MAX_POSSIBILITIES));
       } catch (const system_exception& ex) {
-        ustring fail_message = ustring::format("\"{}\" is not a valid number of possibilities.", args[0]);
+        auto fail_message = ustring::format("\"{}\" is not a valid number of possibilities.", args[0]);
         default_listener->fail(fail_message, ex.message());
         if (!default_listener->assert_ui_enabled())
           console::write_line(fail_message + "\n" + ex.message());
@@ -43,7 +43,7 @@ public:
       }
     } else {
       // Report that the required argument is not present.
-      const ustring ENTER_PARAM = "Enter the number of possibilities as a command line argument.";
+      const auto ENTER_PARAM = "Enter the number of possibilities as a command line argument.";
       default_listener->fail(ENTER_PARAM);
       if (!default_listener->assert_ui_enabled())
         console::write_line(ENTER_PARAM);
@@ -51,14 +51,14 @@ public:
     }
     
     for (iter = 0; iter <= possibilities; iter++) {
-      decimal result;
-      ustring binomial;
+      auto result = .0l;
+      auto binomial = ustring::empty_string;
       
       // Compute the next binomial coefficient and handle all exceptions.
       try {
         result = calc_binomial(possibilities, iter);
       } catch (const system_exception& ex) {
-        ustring fail_message = ustring::format("An exception was raised when calculating Binomial( {}, {} ).", possibilities, iter);
+        auto fail_message = ustring::format("An exception was raised when calculating Binomial( {}, {} ).", possibilities, iter);
         default_listener->fail(fail_message, ex.message());
         if (!default_listener->assert_ui_enabled())
           console::write_line(fail_message + "\n" + ex.message());
@@ -75,9 +75,9 @@ public:
   
   static decimal calc_binomial(xtd::decimal possibilities, decimal outcomes) {
     // Calculate a binomial coefficient, and minimize the chance of overflow.
-    decimal result = 1;
-    decimal iter;
-    for (iter = 1; iter <= possibilities - outcomes; iter++) {
+    auto result = 1.0l;
+    auto iter = .0l;
+    for (iter = 1.0l; iter <= possibilities - outcomes; iter++) {
       result *= outcomes + iter;
       result /= iter;
     }

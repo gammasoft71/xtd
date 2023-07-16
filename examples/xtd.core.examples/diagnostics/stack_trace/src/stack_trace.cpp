@@ -9,7 +9,7 @@ namespace stack_trace_example {
   class main_class {
     static void method3() {
       console::write_line("stack_trace:");
-      console::write_line(stack_trace());
+      console::write_line(stack_trace {});
     }
     
     static void method2() {
