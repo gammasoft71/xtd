@@ -1,3 +1,4 @@
+#include <xtd/as>
 #include <xtd/console>
 #include <xtd/enum_class>
 
@@ -19,7 +20,7 @@ auto main()->int {
     console::write_line("enum_test::value_five does not exists!");
   }
   
-  enum_test result;
+  auto result = as<enum_test>(0);
   if (enum_object<>::try_parse<enum_test>("value_three", result)) console::write_line("result = {}", result);
   if (enum_object<>::try_parse<enum_test>("vAlUe_OnE", true, result)) console::write_line("result = {}", result);
   if (enum_object<>::try_parse<enum_test>("value_six", result)) console::write_line("result = {}", result);
