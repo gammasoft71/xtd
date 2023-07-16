@@ -20,7 +20,7 @@ private:
 };
 
 auto main()->int {
-  any value = make_any<int>(42);
+  auto value = make_any<int>(42);
   cout << ustring::format("{}", value) << endl;
   
   value = make_any<ustring>("Star Trek: The Next Generation");
