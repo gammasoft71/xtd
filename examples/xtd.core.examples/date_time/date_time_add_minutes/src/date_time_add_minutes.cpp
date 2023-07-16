@@ -9,10 +9,10 @@ using namespace xtd;
 class program {
 public:
   static auto main() {
-    date_time date_value(2013, 9, 15, 12, 0, 0);
-    vector<double> minutes = {.01667, .08333, .16667, .25, .33333, .5, .66667, 1, 2, 15, 30, 17, 45, 60, 180, 60 * 24};
+    auto date_value = date_time {2013, 9, 15, 12, 0, 0};
+    auto minutes = vector {.01667, .08333, .16667, .25, .33333, .5, .66667, 1.0, 2.0, 15.0, 30.0, 17.0, 45.0, 60.0, 180.0, 60.0 * 24.0};
     
-    for (double minute : minutes)
+    for (auto minute : minutes)
       console::write_line("{0:u} + {1} minute(s) = {2:u}", date_value, minute, date_value.add_minutes(minute));
   }
 };

@@ -7,7 +7,7 @@ using namespace xtd;
 class program {
 public:
   static auto main() {
-    date_time date1(2008, 4, 1, 18, 7, 5, 16);
+    auto date1 = date_time {2008, 4, 1, 18, 7, 5, 16};
     console::write_line(date1.to_string("a")); // PM
     console::write_line(date1.to_string("b")); // 016
     console::write_line(date1.to_string("B")); // 16

@@ -8,7 +8,7 @@ class program {
 public:
   static auto main() {
     // Get the current date.
-    date_time this_day = date_time::today();
+    auto this_day = date_time::today();
     // Display the date in the default (general) format.
     console::write_line(this_day.to_string());
     console::write_line();

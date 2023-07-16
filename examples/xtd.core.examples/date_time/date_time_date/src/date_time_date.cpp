@@ -7,11 +7,11 @@ using namespace xtd;
 class program {
 public:
   static auto main() {
-    date_time date1(2008, 6, 1, 7, 47, 0);
+    auto date1 = date_time {2008, 6, 1, 7, 47, 0};
     console::write_line(date1.to_string());
     
     // Get date-only portion of date, without its time.
-    date_time date_only = date1.date();
+    auto date_only = date1.date();
     // Display date using short date string.
     console::write_line(date_only.to_string("d"));
     // Display date using 24-hour clock.

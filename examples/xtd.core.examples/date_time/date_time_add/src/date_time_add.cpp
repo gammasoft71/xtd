@@ -7,9 +7,9 @@ class program {
 public:
   static auto main() {
     // Calculate what day of the week is 36 days from this instant.
-    xtd::date_time today = xtd::date_time::now();
-    std::chrono::days duration(36);
-    xtd::date_time answer = today.add(duration);
+    auto today = xtd::date_time::now();
+    auto duration = std::chrono::days {36};
+    auto answer = today.add(duration);
     xtd::console::write_line("{0}", today);
     xtd::console::write_line("{0}", answer);
   }
