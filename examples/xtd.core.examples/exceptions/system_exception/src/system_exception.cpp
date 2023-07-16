@@ -14,7 +14,7 @@ void destroy_handle(long handle) {
 
 auto main()->int {
   try {
-    long handle = 0;
+    auto handle = 0L;
     // The following line is commented out so that the exception is generated.
     //handle = create_handle();
     
