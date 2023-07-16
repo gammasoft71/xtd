@@ -169,7 +169,7 @@ double math::floor(double value) {
 }
 
 bool math::is_infinity(double value) noexcept {
-  return is_negative_infinity(value) || is_positive_infinity(value);
+  return double_object::is_negative_infinity(value) || double_object::is_positive_infinity(value);
 }
 
 bool math::is_negative_infinity(double value) noexcept {
