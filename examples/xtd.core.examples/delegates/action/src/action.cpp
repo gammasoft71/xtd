@@ -6,11 +6,11 @@ using namespace std;
 using namespace xtd;
 
 auto main()->int {
-  vector<ustring> names {"Bruce", "Alfred", "Tim", "Richard"};
+  auto names = vector {"Bruce", "Alfred", "Tim", "Richard"};
   
-  action<const ustring&> print([](const ustring & value) {
+  auto print = action<const ustring&> {[](const ustring & value) {
     console::write_line(value);
-  });
+  }};
   
   // Display the contents of the list using the print delegate.
   for_each(names.begin(), names.end(), print);

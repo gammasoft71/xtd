@@ -25,7 +25,7 @@ public:
 };
 
 auto main()->int {
-  writer write;
+  auto write = writer {};
   
   write += [](const ustring & str)  {
     console::out << str << environment::new_line();
@@ -38,7 +38,7 @@ auto main()->int {
   write += write_debug;
   write += {tracer(), &tracer::write_trace};
   
-  tracer t;
+  auto t = tracer {};
   write += {t, &tracer::write_trace2}; // add
   write -= {t, &tracer::write_trace2}; // then remove
   

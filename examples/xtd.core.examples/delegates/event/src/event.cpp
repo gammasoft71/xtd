@@ -39,7 +39,7 @@ protected:
 };
 
 auto main()->int {
-  button button1;
+  auto button1 = button {};
   
   button1.text_changed += [](xtd::object & sender, const xtd::event_args & e)  {
     xtd::console::out << "text_changed [text=" << as<control>(sender).text() << "]" << xtd::environment::new_line();
