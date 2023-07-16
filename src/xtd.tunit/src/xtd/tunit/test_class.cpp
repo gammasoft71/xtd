@@ -6,8 +6,8 @@ using namespace xtd::tunit;
 std::chrono::milliseconds test_class::elapsed_time() const noexcept {
   using namespace std::chrono_literals;
   if (start_time_.ticks() == 0ms && end_time_point.ticks() == 0ms) return 0ms;
-  if (end_time_point.ticks() == 0ms) return std::chrono::duration_cast<std::chrono::milliseconds>((date_time::now() - start_time_).ticks());
-  return std::chrono::duration_cast<std::chrono::milliseconds>((end_time_point - start_time_).ticks());
+  if (end_time_point.ticks() == 0ms) return std::chrono::duration_cast<std::chrono::milliseconds>((date_time::now() - start_time_));
+  return std::chrono::duration_cast<std::chrono::milliseconds>((end_time_point - start_time_));
 }
 
 std::string test_class::name() const noexcept {

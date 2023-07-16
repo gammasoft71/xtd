@@ -75,8 +75,8 @@ std::vector<std::string> unit_test::aborted_test_names() const noexcept {
 std::chrono::milliseconds unit_test::elapsed_time() const noexcept {
   using namespace std::chrono_literals;
   if (start_time_point_.ticks() == 0ms && end_time_point_.ticks() == 0ms) return 0ms;
-  if (end_time_point_.ticks() == 0ms) return std::chrono::duration_cast<std::chrono::milliseconds>((xtd::date_time::now() - start_time_point_).ticks());
-  return std::chrono::duration_cast<std::chrono::milliseconds>((end_time_point_ - start_time_point_).ticks());
+  if (end_time_point_.ticks() == 0ms) return std::chrono::duration_cast<std::chrono::milliseconds>((xtd::date_time::now() - start_time_point_));
+  return std::chrono::duration_cast<std::chrono::milliseconds>((end_time_point_ - start_time_point_));
 }
 
 size_t unit_test::ignored_test_count() const noexcept {

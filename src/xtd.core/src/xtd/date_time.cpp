@@ -513,14 +513,8 @@ date_time date_time::to_universal_time() const {
   return date_time(ticks() - utc_offset, date_time_kind::utc);
 }
 
-date_time& date_time::operator +=(const date_time& value) {
-  value_ += value.value_;
-  return *this;
-}
-
-date_time& date_time::operator -=(const date_time& value) {
-  value_ -= value.value_;
-  return *this;
+time_span date_time::operator -=(const date_time& value) {
+  return subtract(value);
 }
 
 date_time date_time::operator +() {
@@ -531,16 +525,8 @@ date_time date_time::operator -() {
   return date_time(-value_, kind_);
 }
 
-date_time date_time::operator +(const date_time& value) const {
-  date_time result = *this;
-  result.value_ += value.value_;
-  return result;
-}
-
-date_time date_time::operator -(const date_time& value) const {
-  date_time result = *this;
-  result.value_ -= value.value_;
-  return result;
+time_span date_time::operator -(const date_time& value) const {
+  return subtract(value);
 }
 
 date_time& date_time::operator ++() {
