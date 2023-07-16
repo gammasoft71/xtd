@@ -19,7 +19,7 @@ namespace environment_cancel_sgnal_example {
       console::treat_control_c_as_input(true);
       while (true) {
         if (console::key_available()) {
-          console_key_info key_info = console::read_key(true);
+          auto key_info = console::read_key(true);
           if (key_info.modifiers() == console_modifiers::none && key_info.key() == console_key::escape) exit();
           else if (key_info.modifiers() == console_modifiers::control && key_info.key() == console_key::c) generate_signal(signal::interrupt);
           else switch (key_info.key_char()) {
