@@ -5,7 +5,7 @@ using namespace xtd;
 auto orig_row = 0;
 auto orig_col = 0;
 
-void write_at(const ustring& s, int x, int y) {
+void write_at(auto s, auto x, auto y) {
   console::set_cursor_position(orig_col + x, orig_row + y);
   console::write(s);
 }

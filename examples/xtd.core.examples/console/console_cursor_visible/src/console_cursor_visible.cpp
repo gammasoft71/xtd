@@ -3,11 +3,11 @@
 using namespace xtd;
 
 auto main()->int {
-  ustring m1 = "\nThe cursor is {0}.\nType any text then press Enter. "
+  auto m1 = "\nThe cursor is {0}.\nType any text then press Enter. "
   "Type '+' in the first column to show \n"
   "the cursor, '-' to hide the cursor, "
-  "or lowercase 'x' to quit:";
-  ustring s;
+  "or lowercase 'x' to quit:"_s;
+  auto s = ustring::empty_string;
 
   auto save_cursor_visibile = console::cursor_visible();
   auto save_cursor_size = console::cursor_size();

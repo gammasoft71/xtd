@@ -11,7 +11,7 @@ auto main()->int {
   
   while (true) {
     if (console::key_available()) {
-      console_key_info key_info = console::read_key(true);
+      auto key_info = console::read_key(true);
       console::write_line("Key = {} ({}), Char = '{}' ({}), Modifiers = {}", key_info.key(), as<int>(key_info.key()), key_info.key_char(), as<int>(key_info.key_char()), key_info.modifiers());
       if (key_info.key() == console_key::escape) break;
     }

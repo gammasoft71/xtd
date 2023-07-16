@@ -5,7 +5,7 @@ using namespace std::this_thread;
 using namespace xtd;
 
 auto main()->int {
-  console_key_info cki;
+  auto cki = console_key_info {};
   
   do {
     console::write_line("\nPress a key to display; press the 'x' key to quit.");

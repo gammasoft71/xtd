@@ -11,16 +11,16 @@ namespace console_clear_example {
     // The main entry point for the application.
     static auto main(const vector<ustring>& args) {
       // Save colors so they can be restored when use finishes input.
-      console_color dft_fore_color = console::foreground_color();
-      console_color dft_back_color = console::background_color();
-      bool continue_flag = true;
+      auto dft_fore_color = console::foreground_color();
+      auto dft_back_color = console::background_color();
+      auto continue_flag = true;
       console::clear();
       
       do {
-        console_color new_fore_color = console_color::white;
-        console_color new_back_color = console_color::black;
+        auto new_fore_color = console_color::white;
+        auto new_back_color = console_color::black;
         
-        char32_t fore_color_selection = get_key_press("Select Text Color (B for Blue, R for Red, Y for Yellow): ", vector<char32_t> { 'B', 'R', 'Y' });
+        auto fore_color_selection = get_key_press("Select Text Color (B for Blue, R for Red, Y for Yellow): ", vector<char32_t> { 'B', 'R', 'Y' });
         switch (fore_color_selection) {
           case 'B':
           case 'b': new_fore_color = console_color::dark_blue; break;
@@ -30,7 +30,7 @@ namespace console_clear_example {
           case 'y': new_fore_color = console_color::dark_yellow; break;
         }
         
-        char32_t back_color_selection = get_key_press("Select Background Color (W for White, G for Green, M for Magenta): ", vector<char32_t> { 'W', 'G', 'M' });
+        auto back_color_selection = get_key_press("Select Background Color (W for White, G for Green, M for Magenta): ", vector<char32_t> { 'W', 'G', 'M' });
         switch (back_color_selection) {
           case 'W':
           case 'w': new_back_color = console_color::white; break;
@@ -60,8 +60,8 @@ namespace console_clear_example {
     
   private:
     static char32_t get_key_press(const ustring& msg, const vector<char32_t>& valid_chars) {
-      console_key_info key_pressed;
-      bool valid = false;
+      auto key_pressed = console_key_info {};
+      auto valid = false;
       
       console::write_line();
       do {

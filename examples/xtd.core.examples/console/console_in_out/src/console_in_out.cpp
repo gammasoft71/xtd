@@ -4,12 +4,12 @@ using namespace std;
 using namespace xtd;
 
 auto main()->int {
-  istream& is = console::in;
-  ostream& os = console::out;
+  auto& is = console::in;
+  auto& os = console::out;
   
   os << "Ola Mundo!" << endl;
   os << "What is your name: ";
-  ustring name;
+  auto name = ustring::empty_string;
   is >> name;
   
   os << "Buenos Dias, " << name << endl;
