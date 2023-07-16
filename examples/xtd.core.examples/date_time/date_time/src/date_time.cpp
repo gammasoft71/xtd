@@ -11,20 +11,20 @@ using namespace xtd;
 class program {
 public:
   static auto main() {
-    int window = 10;
-    int freq = 60 * 60 * 2; // 2 hours;
+    auto window = 10;
+    auto freq = 60 * 60 * 2; // 2 hours;
     
-    date_time d1 = date_time::now();
+    auto d1 = date_time::now();
     
-    date_time d2 = d1.add_seconds(2 * window);
-    date_time d3 = d1.add_seconds(-2 * window);
-    date_time d4 = d1.add_seconds(window / 2);
-    date_time d5 = d1.add_seconds(-window / 2);
+    auto d2 = d1.add_seconds(2 * window);
+    auto d3 = d1.add_seconds(-2 * window);
+    auto d4 = d1.add_seconds(window / 2);
+    auto d5 = d1.add_seconds(-window / 2);
     
-    date_time d6 = (d1.add_hours(2)).add_seconds(2 * window);
-    date_time d7 = (d1.add_hours(2)).add_seconds(-2 * window);
-    date_time d8 = (d1.add_hours(2)).add_seconds(window / 2);
-    date_time d9 = (d1.add_hours(2)).add_seconds(-window / 2);
+    auto d6 = (d1.add_hours(2)).add_seconds(2 * window);
+    auto d7 = (d1.add_hours(2)).add_seconds(-2 * window);
+    auto d8 = (d1.add_hours(2)).add_seconds(window / 2);
+    auto d9 = (d1.add_hours(2)).add_seconds(-window / 2);
     
     console::write_line("d1 ({0}) ~= d1 ({1}): {2}", d1, d1, roughly_equals(d1, d1, window, freq));
     console::write_line("d1 ({0}) ~= d2 ({1}): {2}", d1, d2, roughly_equals(d1, d2, window, freq));
@@ -40,7 +40,7 @@ public:
   
 private:
   static bool roughly_equals(const date_time& time, const date_time& time_with_window, int window_in_seconds, int frequency_in_seconds) {
-    int delta = convert::to_int32(duration_cast<seconds>((time_with_window - time).ticks()).count()) % frequency_in_seconds;
+    auto delta = convert::to_int32(duration_cast<seconds>((time_with_window - time)).count()) % frequency_in_seconds;
     
     delta = delta > window_in_seconds ? frequency_in_seconds - delta : delta;
     

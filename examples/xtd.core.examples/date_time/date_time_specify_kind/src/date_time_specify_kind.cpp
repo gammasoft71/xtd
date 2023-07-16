@@ -10,13 +10,13 @@ public:
     // Get the date and time for the current moment, adjusted
     // to the local time zone.
     
-    date_time save_now = date_time::now();
+    auto save_now = date_time::now();
     
     // Get the date and time for the current moment expressed
     // as coordinated universal time (UTC).
     
-    date_time save_utc_now = date_time::utc_now();
-    date_time my_dt;
+    auto save_utc_now = date_time::utc_now();
+    auto my_dt = date_time {};
     
     // display the value and kind property of the current moment
     // expressed as UTC and local time.
@@ -49,8 +49,8 @@ public:
   // structure converted to universal time.
   
   static void display(const ustring& title, const date_time& input_dt) {
-    date_time disp_dt = input_dt;
-    ustring dt_string;
+    auto disp_dt = input_dt;
+    auto dt_string = ustring::empty_string;
     
     // display the original date_time.
     
@@ -82,7 +82,7 @@ public:
   // display the value and kind property for date_time::now() and date_time::utc_now().
   
   static void display_now(const ustring& title, const date_time& input_dt) {
-    ustring dt_string = input_dt.to_string("u");
+    auto dt_string = input_dt.to_string("u");
     console::write_line("{0} {1}, kind = {2}", title, dt_string, input_dt.kind());
   }
 };

@@ -1,4 +1,9 @@
-#include <xtd/xtd>
+#include <xtd/io/binary_reader>
+#include <xtd/io/binary_writer>
+#include <xtd/io/file>
+#include <xtd/console>
+#include <xtd/startup>
+#include <xtd/using>
 
 using namespace std;
 using namespace xtd;
@@ -13,8 +18,8 @@ public:
   }
   
   static void write_default_values() {
-    using_(fstream fs = file::open(file_name, ios::out | ios::binary | ios::trunc)) {
-      binary_writer writer(fs);
+    using_(auto fs = file::open(file_name, ios::out | ios::binary | ios::trunc)) {
+      auto writer = binary_writer {fs};
       writer << 1.250F;
       writer << R"(c:\Temp)";
       writer << 10;
@@ -23,14 +28,14 @@ public:
   }
   
   static void display_values() {
-    float aspect_ratio;
-    ustring temp_directory;
-    int auto_save_time;
-    bool show_status_bar;
-    
+    auto aspect_ratio = .0f;
+    auto temp_directory = ustring::empty_string;
+    auto auto_save_time = 0;
+    auto show_status_bar = false;
+
     if (file::exists(file_name)) {
-      using_(fstream fs = file::open(file_name, ios::in | ios::binary)) {
-        binary_reader reader(fs);
+      using_(auto fs = file::open(file_name, ios::in | ios::binary)) {
+        auto reader = binary_reader {fs};
         reader >> aspect_ratio;
         reader >> temp_directory;
         reader >> auto_save_time;

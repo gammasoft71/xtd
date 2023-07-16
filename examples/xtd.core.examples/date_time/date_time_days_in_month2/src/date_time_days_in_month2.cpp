@@ -10,12 +10,12 @@ using namespace xtd;
 class program {
 public:
   static auto main() {
-    array<unsigned int, 2> years = {2012, 2014};
+    auto years = array<unsigned int, 2> {2012, 2014};
     console::write_line("Days in the Month for the Gregorian calendar\n");
     console::write_line("{0,-10}{1,-15}{2,4}\n", "Year", "Month", "Days");
     
     for (auto year : years) {
-      for (unsigned int ctr = 1U; ctr <= 12U; ctr++)
+      for (auto ctr = 1U; ctr <= 12U; ctr++)
         console::write_line("{0,-10}{1,-15}{2,4}", year, as<month_of_year>(ctr), date_time::days_in_month(year, ctr));
       console::write_line();
     }

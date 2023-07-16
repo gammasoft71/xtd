@@ -8,12 +8,12 @@ using namespace xtd;
 class program {
 public:
   static auto main() {
-    date_time local_date = date_time::now();
-    vector<ustring> locale_names = {"en_US", "en_GB", "fr_FR", "de_DE", "ru_RU"};
+    auto local_date = date_time::now();
+    auto locale_names = vector {"en_US", "en_GB", "fr_FR", "de_DE", "ru_RU"};
     
     for (auto locale_name : locale_names) {
       try {
-        locale::global(locale(locale_name + ".utf-8"));
+        locale::global(locale(locale_name + ".utf-8"_s));
         console::write_line("{}: {}", locale_name, local_date.sprintf("%x %T"));
       } catch (const exception& e) {
         console::write_line(ustring::format("Make sure {} locale is installed on your system :\n\n{}\n", locale_name, e.what()), "Exception");

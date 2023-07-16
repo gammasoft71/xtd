@@ -8,16 +8,16 @@ using namespace xtd;
 class program {
 public:
   static auto main() {
-    date_time base_date(2000, 2, 29);
+    auto base_date = date_time {2000, 2, 29};
     console::write_line("     Base Date:        {0:d}\n", base_date);
     
     // Show dates of previous fifteen years.
-    for (int ctr = -1; ctr >= -15; ctr--)
+    for (auto ctr = -1; ctr >= -15; ctr--)
       console::write_line("{0,2} year(s) ago:        {1:d}", math::abs(ctr), base_date.add_years(ctr));
     console::write_line();
     
     // Show dates of next fifteen years.
-    for (int ctr = 1; ctr <= 15; ctr++)
+    for (auto ctr = 1; ctr <= 15; ctr++)
       console::write_line("{0,2} year(s) from now:   {1:d}", ctr, base_date.add_years(ctr));
   }
 };

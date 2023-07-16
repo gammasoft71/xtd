@@ -8,10 +8,10 @@ using namespace xtd;
 class program {
 public:
   static auto main() {
-    date_time century_begin(2001, 1, 1);
-    date_time current_date = date_time::now();
+    auto century_begin = date_time {2001, 1, 1};
+    auto current_date = date_time::now();
     
-    ticks elapsed_ticks = current_date.ticks() - century_begin.ticks();
+    auto elapsed_ticks = current_date.ticks() - century_begin.ticks();
     
     console::write_line("Elapsed from the beginning of the century to {0:f}:", current_date);
     console::write_line("   {0:N0} nanoseconds", elapsed_ticks.count() * 100);

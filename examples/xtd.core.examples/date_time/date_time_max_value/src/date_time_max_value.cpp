@@ -8,8 +8,8 @@ class program {
 public:
   static auto main() {
     // Attempt to assign an out-of-range value to a date_time constructor.
-    ticks number_of_ticks = ticks::max();
-    date_time valid_date;
+    auto number_of_ticks = ticks::max();
+    auto valid_date = date_time {};
     
     // Validate the value.
     if (number_of_ticks >= date_time::min_value.ticks() && number_of_ticks <= date_time::max_value.ticks()) {

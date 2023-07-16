@@ -1,10 +1,11 @@
-#include <xtd/xtd>
+#include <xtd/io/directory_info>
+#include <xtd/console>
 
 using namespace xtd;
 using namespace xtd::io;
 
 auto main()->int {
-  directory_info di(".");
+  auto di = directory_info {"."};
   console::write_line("full_name = {}", di.full_name());
   console::write_line("  attributes = {}", di.attributes());
   console::write_line("  creation_time = {}", di.creation_time());
