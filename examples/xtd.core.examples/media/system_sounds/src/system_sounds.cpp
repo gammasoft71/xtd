@@ -1,4 +1,6 @@
-#include <xtd/xtd>
+#include <xtd/media/system_sounds>
+#include <xtd/console>
+#include <xtd/startup>
 
 using namespace xtd;
 using namespace xtd::media;
@@ -19,7 +21,7 @@ namespace system_sound_example {
       console::write_line("  Esc : exit");
       
       while (true) {
-        console_key_info key_info = console::read_key(true);
+        auto key_info = console::read_key(true);
         switch (key_info.key()) {
           case console_key::a: system_sounds::asterisk().play(); break;
           case console_key::b: system_sounds::beep().play(); break;
