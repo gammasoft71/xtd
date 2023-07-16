@@ -4,20 +4,20 @@ using namespace std;
 using namespace xtd;
 
 auto main()->int {
-  int* ptr = nullptr;
+  auto ptr = static_cast<int*>(nullptr);
   cout << ustring::format("{}", ptr) << endl;
   ptr = new int(42);
   cout << ustring::format("{}", ptr) << endl;
   cout << ustring::format("{}", *ptr) << endl;
   delete ptr;
   
-  shared_ptr<int> sptr;
+  auto sptr = shared_ptr<int> {};
   cout << ustring::format("{}", sptr) << endl;
   sptr = make_shared<int>(42);
   cout << ustring::format("{}", sptr) << endl;
   cout << ustring::format("{}", *sptr) << endl;
   
-  unique_ptr<int> uptr;
+  auto uptr = unique_ptr<int> {};
   cout << ustring::format("{}", uptr) << endl;
   uptr = make_unique<int>(42);
   cout << ustring::format("{}", uptr) << endl;
