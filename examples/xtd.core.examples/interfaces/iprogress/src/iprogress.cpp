@@ -81,8 +81,8 @@ public:
 auto main()->int {
   console::write_line("Started");
   
-  print_generic_progress print_progress;
-  generic_progress progress {0, 0, 5, "Initialized"};
+  auto print_progress = print_generic_progress {};
+  auto progress = generic_progress {0, 0, 5, "Initialized"};
   print_progress.report(progress);
   
   // Open device....

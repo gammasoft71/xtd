@@ -1,4 +1,6 @@
-#include <xtd/xtd>
+#include <xtd/io/drive_info>
+#include <xtd/console>
+#include <xtd/startup>
 
 using namespace std;
 using namespace xtd;
@@ -7,9 +9,9 @@ using namespace xtd::io;
 class program {
 public:
   static auto main() {
-    vector<drive_info> all_drives = drive_info::get_drives();
+    auto all_drives = drive_info::get_drives();
     
-    for (drive_info d : all_drives) {
+    for (auto d : all_drives) {
       console::write_line("Drive {0}", d.name());
       console::write_line("  Drive type: {0}", d.drive_type());
       if (d.is_ready() == true) {

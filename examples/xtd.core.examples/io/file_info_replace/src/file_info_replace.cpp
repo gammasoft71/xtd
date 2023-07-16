@@ -1,6 +1,8 @@
-#include <xtd/xtd>
+#include <xtd/io/file>
+#include <xtd/io/file_info>
+#include <xtd/console>
+#include <xtd/startup>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::io;
 
@@ -11,9 +13,9 @@ public:
       // original_file and file_to_replace must contain the path to files that already exist in the
       // file system. backup_of_file_to_replace is created during the execution of the Replace method.
       
-      ustring original_file  = "test.txt";
-      ustring file_to_replace = "test2.txt";
-      ustring backup_of_file_to_replace = "test2.txt.bak";
+      auto original_file  = "test.txt"_s;
+      auto file_to_replace = "test2.txt"_s;
+      auto backup_of_file_to_replace = "test2.txt.bak"_s;
       
       if (file::exists(original_file) && file::exists(file_to_replace)) {
         console::write_line("Move the contents of " + original_file + " into " + file_to_replace + ", delete " + original_file + ", and create a backup of " + file_to_replace + ".");
@@ -34,7 +36,7 @@ public:
   // Move a file into another file, delete the original, and create a backup of the replaced file.
   static void replace_file(const ustring& file_to_move_and_delete, const ustring& file_to_replace, const ustring& backup_of_file_to_replace) {
     // Create a new file_info object.
-    file_info f_info(file_to_move_and_delete);
+    auto f_info = file_info {file_to_move_and_delete};
     
     // replace the file.
     f_info.replace(file_to_replace, backup_of_file_to_replace);

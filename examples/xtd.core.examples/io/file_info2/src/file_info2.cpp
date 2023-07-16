@@ -1,4 +1,7 @@
-#include <xtd/xtd>
+#include <xtd/io/file>
+#include <xtd/io/file_info>
+#include <xtd/io/path>
+#include <xtd/console>
 
 using namespace xtd;
 using namespace xtd::io;

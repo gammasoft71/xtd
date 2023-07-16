@@ -1,4 +1,8 @@
-#include <xtd/xtd>
+#include <xtd/io/file_info>
+#include <xtd/io/directory_info>
+#include <xtd/io/path>
+#include <xtd/console>
+#include <xtd/startup>
 
 using namespace std;
 using namespace xtd;
@@ -28,7 +32,7 @@ public:
     console::write("    Checking whether ");
     console::write(source_path);
     console::write_line(" exists.");
-    file_info f_info(source_path);
+    auto f_info = file_info {source_path};
     ensure_source_file_exists();
     display_file_properties(f_info);
     console::write_line("Preparing to move the file to ");
@@ -61,8 +65,8 @@ private:
   // and the file FromFile.xml all exist.
   //
   static void ensure_source_file_exists() {
-    file_info f_info(source_path);
-    ustring dir_path = f_info.directory().full_name();
+    auto f_info = file_info {source_path};
+    auto dir_path = f_info.directory().full_name();
     if (!directory::exists(dir_path))
       directory::create_directory(dir_path);
     if (file::exists(dest_path))
@@ -85,9 +89,9 @@ private:
   // Creates and saves an Xml file to source_path.
   //
   static void write_file_content(int total_element) {
-    vector<ustring> lines;
+    auto lines = vector<ustring> {};
     lines.push_back("<?xml version=\"1.0\" standalone=\"yes\"?>");
-    for (int index  = 0; index < total_element; ++index)
+    for (auto index  = 0; index < total_element; ++index)
       lines.push_back(ustring::format("<MyElement Index=\"{0}\">\nMyElement at position {0}.", index));
     file::write_all_lines(source_path, lines);
   }
@@ -122,7 +126,7 @@ private:
   //
   static void delete_files() {
     try {
-      directory_info d_info(path::combine(environment::get_folder_path(environment::special_folder::my_documents), "file_infoTestDirectory"));
+      auto d_info = directory_info {path::combine(environment::get_folder_path(environment::special_folder::my_documents), "file_infoTestDirectory")};
       if (d_info.exists()) {
         d_info.remove(true);
         console::write_line("Successfully deleted directories and files.");
@@ -137,7 +141,7 @@ private:
   // code is not suitable for production applications.
   //
   static void display_exception(const system_exception& ex) {
-    ustring s;
+    auto s = ustring::empty_string;
     s += "An exception of type \"";
     s += typeof_(ex).full_name();
     s += "\" has occurred.\r\n";

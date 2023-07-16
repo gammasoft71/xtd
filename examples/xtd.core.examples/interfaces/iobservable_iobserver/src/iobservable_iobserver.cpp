@@ -94,10 +94,10 @@ private:
 
 auto main()->int {
   // Define a provider and two observers.
-  location_tracker provider;
-  location_reporter reporter1 {"Fixed GPS"};
+  auto provider = location_tracker {};
+  auto reporter1 = location_reporter {"Fixed GPS"};
   reporter1.subscribe(provider);
-  location_reporter reporter2 {"Mobile GPS"};
+  auto reporter2 = location_reporter {"Mobile GPS"};
   reporter2.subscribe(provider);
   
   provider.track_location(location {47.6456, -122.1312});

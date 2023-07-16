@@ -1,18 +1,21 @@
-#include <xtd/xtd>
+#include <xtd/io/file_info>
+#include <xtd/io/path>
+#include <xtd/console>
+#include <xtd/startup>
+#include <xtd/using>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::io;
 
 class program {
 public:
   static auto main() {
-    ustring path = xtd::io::path::combine(xtd::io::path::get_temp_path(), "MyTest.txt");
-    file_info fi(path);
+    auto path = path::combine(path::get_temp_path(), "MyTest.txt");
+    auto fi = file_info {path};
     
     if (!fi.exists()) {
       //Create a file to write to.
-      using_(stream_writer sw = fi.create_text()) {
+      using_(auto sw = fi.create_text()) {
         sw.write_line("Hello");
         sw.write_line("And");
         sw.write_line("Welcome");
@@ -20,7 +23,7 @@ public:
     }
     
     //Open the file to read from.
-    using_(stream_reader sr = fi.open_text()) {
+    using_(auto sr = fi.open_text()) {
       while (!sr.end_of_stream())
         console::write_line(sr.read_line());
     }
