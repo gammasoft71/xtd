@@ -214,6 +214,8 @@ add_sources(
   include/xtd/iprogress
   include/xtd/is.h
   include/xtd/is
+  include/xtd/keywords.h
+  include/xtd/keywords
   include/xtd/language_id.h
   include/xtd/language_id
   include/xtd/length_exception.h
