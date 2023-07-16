@@ -13,7 +13,7 @@ auto main()->int {
   //
   console::write_line(m1);
   do {
-    int x = console::read();
+    auto x = console::read();
     try {
       ch = convert::to_char32(x);
       if (char_object::is_white_space(ch)) {

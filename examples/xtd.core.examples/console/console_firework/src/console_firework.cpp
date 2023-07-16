@@ -141,14 +141,14 @@ namespace console_firework_example {
       console::cursor_visible(false);
       console::clear();
       
-      xtd::random rand;
-      list < shared_ptr<firework >> fireworks;
-      vector colors = {console_color::blue, console_color::green, console_color::cyan, console_color::red, console_color::magenta, console_color::yellow, console_color::white};
+      auto rand = xtd::random {};
+      auto fireworks = list<shared_ptr<firework>> {};
+      auto colors = vector {console_color::blue, console_color::green, console_color::cyan, console_color::red, console_color::magenta, console_color::yellow, console_color::white};
       
       while (!console::key_available()) {
         fireworks.push_back(make_shared<firework_start>(rand.next(2, console_width - 2), rand.next(2, console_height - 2), colors[rand.next(colors.size())], rand.next(1, 5)));
         
-        list < shared_ptr<firework >> fireworks_to_removed;
+        auto fireworks_to_removed = list<shared_ptr<firework>> {};
         for (auto& firework : fireworks) {
           if (is<firework_end>(firework)) fireworks_to_removed.push_back(firework);
           explode(firework);
@@ -175,7 +175,6 @@ namespace console_firework_example {
       if (is<firework_exploded>(firework)) firework = make_shared<firework_start_expanded1>(*firework);
       if (date_time::now().ticks().count() % firework->delay() == 0 && is<firework_start>(firework)) firework = make_shared<firework_exploded>(*firework);
     }
-
   };
 }
 
