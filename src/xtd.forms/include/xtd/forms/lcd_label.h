@@ -2,7 +2,6 @@
 /// @brief Contains xtd::forms::lcd_label control.
 /// @copyright Copyright (c) 2021 Gammasoft. All rights reserved.
 #pragma once
-#include <codecvt>
 #include <xtd/argument_out_of_range_exception.h>
 #include <xtd/as.h>
 #include <xtd/interface.h>
@@ -701,7 +700,7 @@ namespace xtd {
       control& text(const xtd::ustring& value) override {
         if (text_ != value) {
           suspend_layout();
-          std::wstring str = std::wstring_convert<std::codecvt_utf8<wchar_t>, wchar_t>().from_bytes(value.c_str());
+          std::wstring str = to_wstring(value.c_str());
           if (str.size() < digits_.size())
             digits_.erase(digits_.begin() + value.size(), digits_.end());
           if (str.size() > digits_.size())
@@ -777,6 +776,30 @@ namespace xtd {
       }
 
     private:
+      static std::wstring to_wstring(const char* str) noexcept {
+        std::wstring out;
+        int32 codepoint = 0;
+        while (*str != 0) {
+          unsigned char ch = static_cast<unsigned char>(*str);
+          if (ch <= 0x7f) codepoint = ch;
+          else if (ch <= 0xbf) codepoint = (codepoint << 6) | (ch & 0x3f);
+          else if (ch <= 0xdf) codepoint = ch & 0x1f;
+          else if (ch <= 0xef) codepoint = ch & 0x0f;
+          else codepoint = ch & 0x07;
+          ++str;
+          if (((*str & 0xc0) != 0x80) && (codepoint <= 0x10ffff)) {
+            if (sizeof(wchar) > 2)
+              out.append(1, static_cast<wchar>(codepoint));
+            else if (codepoint > 0xffff) {
+              out.append(1, static_cast<wchar>(0xd800 + (static_cast<wchar>(codepoint) >> 10)));
+              out.append(1, static_cast<wchar>(0xdc00 + (static_cast<wchar>(codepoint) & 0x03ff)));
+            } else if (codepoint < 0xd800 || codepoint >= 0xe000)
+              out.append(1, static_cast<wchar>(codepoint));
+          }
+        }
+        return out;
+      }
+      
       void set_digits_params() {
         int32_t offset_left = 0;
         for (auto& digit : digits_) {

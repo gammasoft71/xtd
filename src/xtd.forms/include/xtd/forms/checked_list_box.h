@@ -59,6 +59,7 @@ namespace xtd {
         /// @cond
         item(const char* value) : list_box::item(value) {}
         item(const item& value) = default;
+        item& operator=(const item& value) = default;
         bool operator==(const item& value) const {return list_box::item::operator==(value);}
         bool operator!=(const item& value) const {return list_box::item::operator!=(value);}
         bool operator<(const item& value) const {return list_box::item::operator<(value);}

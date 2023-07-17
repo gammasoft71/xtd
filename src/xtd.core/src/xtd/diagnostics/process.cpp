@@ -249,9 +249,9 @@ bool process::start() {
         process.data_->handle_ = handle;
         process.data_->id_ = id;
         process.data_->machine_name_ = ".";
-        process.data_->standard_input_ = move(standard_input);
-        process.data_->standard_output_ = move(standard_output);
-        process.data_->standard_error_ = move(standard_error);
+        process.data_->standard_input_ = std::move(standard_input);
+        process.data_->standard_output_ = std::move(standard_output);
+        process.data_->standard_error_ = std::move(standard_error);
       }
       if (process.data_->handle_ == 0) throw invalid_operation_exception("The system cannot find the file specified", current_stack_frame_);
       allow_to_continue = true;

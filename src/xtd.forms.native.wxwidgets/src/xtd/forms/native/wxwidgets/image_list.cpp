@@ -30,8 +30,8 @@ void image_list::insert_item(intptr_t image_list, size_t pos, const drawing::ima
   else {
     std::list<wxBitmap> bitmaps;
     for (size_t index = static_cast<size_t>(reinterpret_cast<wxImageList*>(image_list)->GetImageCount()) - 1; index > pos; index--) {
-      bitmaps.push_front(reinterpret_cast<wxImageList*>(image_list)->GetBitmap(index));
-      reinterpret_cast<wxImageList*>(image_list)->Remove(index);
+      bitmaps.push_front(reinterpret_cast<wxImageList*>(image_list)->GetBitmap(static_cast<int>(index)));
+      reinterpret_cast<wxImageList*>(image_list)->Remove(static_cast<int>(index));
     }
 
     for (auto& bitmap : bitmaps) {

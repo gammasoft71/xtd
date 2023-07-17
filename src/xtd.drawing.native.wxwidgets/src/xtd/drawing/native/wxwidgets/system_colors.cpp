@@ -47,7 +47,7 @@ namespace {
 }
 
 uint32_t system_colors::to_argb(intptr_t color) {
-  return color;
+  return static_cast<uint32_t>(color);
 }
 
 intptr_t system_colors::accent() {
