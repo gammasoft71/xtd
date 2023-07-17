@@ -37,7 +37,7 @@ namespace {
 
   int32_t backColor = __background_color();
   int32_t foreColor = __foreground_color();
-  bool treat_control_c_as_input = [&]()-> bool {
+  bool treat_control_c_as_input = []()-> bool {
     SetConsoleCtrlHandler(&__handler_routine, TRUE);
     return false;
   }();
