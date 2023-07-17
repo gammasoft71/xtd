@@ -17,7 +17,7 @@ The latest development version of the manual is also available.
 
 ## Latest beta version
 
-* [v0.1.0 Reference Guide](https://gammasoft71.github.io/xtd/reference_guides/v0.1.0/index.html)
+* [v0.1.1 Reference Guide](https://gammasoft71.github.io/xtd/reference_guides/v0.1.1/index.html)
 
 ## Older versions
 

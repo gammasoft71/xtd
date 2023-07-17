@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['collections_5890',['collections',['../namespacextd_1_1collections.html',1,'xtd']]],
+  ['diagnostics_5891',['diagnostics',['../namespacextd_1_1diagnostics.html',1,'xtd']]],
+  ['drawing_5892',['drawing',['../namespacextd_1_1drawing.html',1,'xtd']]],
+  ['drawing2d_5893',['drawing2d',['../namespacextd_1_1drawing_1_1drawing2d.html',1,'xtd::drawing']]],
+  ['forms_5894',['forms',['../namespacextd_1_1forms.html',1,'xtd']]],
+  ['imaging_5895',['imaging',['../namespacextd_1_1drawing_1_1imaging.html',1,'xtd::drawing']]],
+  ['io_5896',['io',['../namespacextd_1_1io.html',1,'xtd']]],
+  ['layout_5897',['layout',['../namespacextd_1_1forms_1_1layout.html',1,'xtd::forms']]],
+  ['linux_5898',['linux',['../namespacextd_1_1linux.html',1,'xtd']]],
+  ['macos_5899',['macos',['../namespacextd_1_1macos.html',1,'xtd']]],
+  ['media_5900',['media',['../namespacextd_1_1media.html',1,'xtd']]],
+  ['net_5901',['net',['../namespacextd_1_1net.html',1,'xtd']]],
+  ['properties_5902',['properties',['../namespacextd_1_1forms_1_1properties.html',1,'xtd::forms']]],
+  ['security_5903',['security',['../namespacextd_1_1security.html',1,'xtd']]],
+  ['sockets_5904',['sockets',['../namespacextd_1_1net_1_1sockets.html',1,'xtd::net']]],
+  ['specialized_5905',['specialized',['../namespacextd_1_1collections_1_1specialized.html',1,'xtd::collections']]],
+  ['text_5906',['text',['../namespacextd_1_1drawing_1_1text.html',1,'xtd::drawing']]],
+  ['tunit_5907',['tunit',['../namespacextd_1_1tunit.html',1,'xtd']]],
+  ['visual_5fstyles_5908',['visual_styles',['../namespacextd_1_1forms_1_1visual__styles.html',1,'xtd::forms']]],
+  ['web_5909',['web',['../namespacextd_1_1web.html',1,'xtd']]],
+  ['windows_5910',['windows',['../namespacextd_1_1windows.html',1,'xtd']]],
+  ['xtd_5911',['xtd',['../namespacextd.html',1,'']]]
+];
