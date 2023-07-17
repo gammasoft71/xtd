@@ -1,4 +1,8 @@
-#include <xtd/xtd>
+#include <xtd/net/sockets/socket>
+#include <xtd/net/dns>
+#include <xtd/net/ip_address>
+#include <xtd/console>
+#include <xtd/startup>
 #include <regex>
 
 using namespace std;
@@ -9,12 +13,12 @@ using namespace xtd::net::sockets;
 class test_ip_address {
 public:
   static auto main(const vector<ustring>& args) {
-    ustring server;
+    auto server = ustring::empty_string;
     
     // Define a regular expression to parse user's input.
     // This is a security check. It allows only
     // alphanumeric input string between 2 to 40 character long.
-    regex rex(R"(^[a-zA-Z]\w{1,39}$)");
+    auto rex = regex {R"(^[a-zA-Z]\w{1,39}$)"};
     
     if (args.size() < 1) {
       // If no server name is passed as an argument to this program, use the current
@@ -42,13 +46,13 @@ private:
    * It then displays the type of address family supported by the server and its
    * IP address in standard and byte format.
    **/
-  static void ip_addresses(const ustring& server) {
+  static void ip_addresses(auto server) {
     try {
       // Get server related information.
-      ip_host_entry heserver = dns::get_host_entry(server);
+      auto heserver = dns::get_host_entry(server);
       
       // Loop on the AddressList
-      for (ip_address cur_add : heserver.address_list()) {
+      for (auto cur_add : heserver.address_list()) {
         // Display the type of address family supported by the server. If the
         // server is IPv6-enabled this value is: InterNetworkV6. If the server
         // is also IPv4-enabled there will be an additional value of InterNetwork.
