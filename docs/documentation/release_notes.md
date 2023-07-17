@@ -133,6 +133,9 @@ sidebar_position: 5
 
 ---
 
+c
+---
+
 ![0.1.0](/pictures/releases/version_0_1_0.png) (beta) October 10, 2021
 
 * ![added](/pictures/releases/status/added.png) xtd - CMake commands - Specific CMake commands to manage project, assembly informations and application properties
