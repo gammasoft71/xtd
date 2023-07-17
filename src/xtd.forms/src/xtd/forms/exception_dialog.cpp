@@ -84,6 +84,7 @@ namespace {
       text_box_details_.text(generate_report());
     }
     
+    using form::show_dialog;
     static xtd::forms::dialog_result show_dialog(const std::exception* exception, const string& text, delegate<void(const dialog_closed_event_args& e)>* on_dialog_closed) {
       exception_dialog_standard dialog(exception, text, on_dialog_closed);
       return dialog.form::show_dialog();
@@ -94,11 +95,13 @@ namespace {
       return dialog.form::show_dialog(owner);
     }
     
+    using form::show_sheet;
     static void show_sheet(const iwin32_window& owner, const std::exception* exception, const string& text, delegate<void(const dialog_closed_event_args& e)>* on_dialog_closed) {
       exception_dialog_standard dialog(exception, text, on_dialog_closed);
       dialog.form::show_sheet_dialog(owner);
     }
     
+    using form::show_sheet_dialog;
     static xtd::forms::dialog_result show_sheet_dialog(const iwin32_window& owner, const std::exception* exception, const string& text, delegate<void(const dialog_closed_event_args& e)>* on_dialog_closed) {
       exception_dialog_standard dialog(exception, text, on_dialog_closed);
       return dialog.form::show_sheet_dialog(owner);
