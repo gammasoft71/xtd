@@ -147,6 +147,7 @@ namespace {
       
     }
     
+    using form::show;
     static void show([[maybe_unused]] intptr hwnd, const message_notifier& mn) {
       message_notifier_.reset(new message_notifier_standard(mn));
       dynamic_cast<form&>(*message_notifier_).show();
