@@ -1,6 +1,10 @@
-#include <xtd/xtd>
+#include <xtd/net/sockets/socket>
+#include <xtd/net/ip_end_point>
+#include <xtd/console>
+#include <thread>
 
 using namespace std;
+using namespace std::this_thread;
 using namespace xtd;
 using namespace xtd::net;
 using namespace xtd::net::sockets;
@@ -8,30 +12,30 @@ using namespace xtd::net::sockets;
 auto main()->int {
   auto terminate_app = false;
   
-  thread server([&] {
-    socket server_socket(address_family::inter_network_v6, socket_type::stream, protocol_type::tcp);
-    server_socket.bind(ip_end_point(ip_address::ip_v6_any, 9400));
+  auto server = thread {[&] {
+    auto server_socket = socket {address_family::inter_network_v6, socket_type::stream, protocol_type::tcp};
+    server_socket.bind(ip_end_point {ip_address::ip_v6_any, 9400});
     server_socket.listen();
-    socket new_socket = server_socket.accept();
+    auto new_socket = server_socket.accept();
     
     while (!terminate_app) {
-      vector<unsigned char> buffer(256);
-      size_t number_of_byte_received = new_socket.receive(buffer);
+      auto buffer = vector<unsigned char>(256);
+      auto number_of_byte_received = new_socket.receive(buffer);
       if (number_of_byte_received) console::write_line(ustring(buffer.begin(), buffer.begin() + number_of_byte_received));
     }
-  });
+  }};
   
-  thread client([&] {
-    socket client_socket(address_family::inter_network_v6, socket_type::stream, protocol_type::tcp);
+  auto client = thread {[&] {
+    auto client_socket = socket {address_family::inter_network_v6, socket_type::stream, protocol_type::tcp};
     client_socket.connect(ip_address::ip_v6_loopback, 9400);
     
     auto counter = 1;
     while (!terminate_app) {
       auto str = ustring::format("counter={}", counter++);
-      client_socket.send(vector<unsigned char>(str.begin(), str.end()));
-      this_thread::sleep_for(50_ms);
+      client_socket.send(vector<unsigned char> {str.begin(), str.end()});
+      sleep_for(50_ms);
     }
-  });
+  }};
   
   console::read_key();
   terminate_app = true;

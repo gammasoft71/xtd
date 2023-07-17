@@ -1,6 +1,11 @@
-#include <xtd/xtd>
+#include <xtd/net/sockets/socket>
+#include <xtd/net/ip_end_point>
+#include <xtd/as>
+#include <xtd/console>
+#include <thread>
 
 using namespace std;
+using namespace std::this_thread;
 using namespace xtd;
 using namespace xtd::net;
 using namespace xtd::net::sockets;
@@ -9,37 +14,37 @@ auto main()->int {
   auto terminate_app = false;
   
   auto on_server_accept = [&](shared_ptr<iasync_result> ar) {
-    xtd::net::sockets::socket socket = as<xtd::net::sockets::socket>(ar->async_state()).end_accept(ar);
+    auto socket = as<xtd::net::sockets::socket>(ar->async_state()).end_accept(ar);
     
     while (!terminate_app) {
-      vector<unsigned char> buffer(256);
-      size_t number_of_byte_received = socket.receive(buffer);
-      if (number_of_byte_received) console::write_line(ustring(buffer.begin(), buffer.begin() + number_of_byte_received));
+      auto buffer = vector<unsigned char>(256);
+      auto number_of_byte_received = socket.receive(buffer);
+      if (number_of_byte_received) console::write_line(ustring {buffer.begin(), buffer.begin() + number_of_byte_received});
     }
   };
   
   auto on_client_connect = [&](shared_ptr<iasync_result> ar) {
-    xtd::net::sockets::socket socket = as<xtd::net::sockets::socket>(ar->async_state());
+    auto socket = as<xtd::net::sockets::socket>(ar->async_state());
     socket.end_connect(ar);
     
     auto counter = 1;
     while (!terminate_app) {
       auto str = ustring::format("socket={}, counter={}", socket.handle(), counter++);
-      socket.send(vector<unsigned char>(str.begin(), str.end()));
-      this_thread::sleep_for(50_ms);
+      socket.send(vector<unsigned char> {str.begin(), str.end()});
+      sleep_for(50_ms);
     }
   };
   
   const size_t client_count = 10;
   
-  socket server_socket(address_family::inter_network, socket_type::stream, protocol_type::tcp);
-  server_socket.bind(ip_end_point(ip_address::any, 9400));
+  auto server_socket = socket {address_family::inter_network, socket_type::stream, protocol_type::tcp};
+  server_socket.bind(ip_end_point {ip_address::any, 9400});
   server_socket.listen();
   for (auto index = 0U; index < client_count; ++index)
     server_socket.begin_accept(async_callback(on_server_accept), server_socket);
     
   for (auto index = 0U; index < client_count; ++index) {
-    xtd::net::sockets::socket socket(address_family::inter_network, socket_type::stream, protocol_type::tcp);
+    auto socket = xtd::net::sockets::socket(address_family::inter_network, socket_type::stream, protocol_type::tcp);
     socket.begin_connect(ip_address::loopback, 9400, async_callback(on_client_connect), socket);
   }
   
