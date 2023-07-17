@@ -166,7 +166,7 @@ void matrix::vector_transform_points(std::vector<xtd::drawing::point>& points) {
   for_each(points.begin(), points.end(), [&](auto point) {tr_points.emplace_back(point.x(), point.y());});
   native::matrix::vector_transform_points(handle(), tr_points);
   points.clear();
-  for_each(tr_points.begin(), tr_points.end(), [&](auto point) {points.push_back(xtd::drawing::point(point.first, point.second));});
+  for_each(tr_points.begin(), tr_points.end(), [&](const pair<float, float>& point) {points.push_back(xtd::drawing::point(point.first, point.second));});
 }
 
 xtd::ustring matrix::to_string() const noexcept {
