@@ -21,7 +21,8 @@ The latest development version of the manual is also available.
 
 ## Older versions
 
-* There are no older versions of xtd yet.
+* [v0.1.0 Reference Guide](https://gammasoft71.github.io/xtd/reference_guides/v0.1.0/index.html)
+
 
 ## See also
 
