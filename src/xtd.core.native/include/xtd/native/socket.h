@@ -9,6 +9,7 @@
 /// @endcond
 
 #include <xtd/core_native_export.h>
+#include <cstdint>
 #include <string>
 #include <vector>
 

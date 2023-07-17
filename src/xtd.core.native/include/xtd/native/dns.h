@@ -10,6 +10,7 @@
 
 #include <xtd/core_native_export.h>
 #include <cstddef>
+#include <cstdint>
 #include <string>
 #include <vector>
 

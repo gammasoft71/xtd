@@ -134,6 +134,7 @@ namespace {
       text_box_license_.dock(dock_style::fill);
     }
     
+    using form::show;
     static void show(intptr_t hwnd, const xtd::drawing::image& icon, const xtd::ustring& name, const xtd::ustring& description, const xtd::ustring& version, const xtd::ustring& long_version, const xtd::ustring& copyright, const xtd::ustring& website, const xtd::ustring& website_label, const std::vector<ustring>& authors, const std::vector<ustring>& artists, const std::vector<ustring>& documenters, const std::vector<ustring>& translators, const xtd::ustring& license) {
       static std::unique_ptr<about_dialog_standard> about_dialog_standard;
       if (about_dialog_standard != nullptr) {
