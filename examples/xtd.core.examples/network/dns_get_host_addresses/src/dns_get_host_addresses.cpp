@@ -1,11 +1,11 @@
-#include <xtd/xtd>
+#include <xtd/net/dns>
+#include <xtd/console>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::net;
 
 auto main()->int {
-  vector<ip_address> addresses = dns::get_host_addresses("www.google.com");
+  auto addresses = dns::get_host_addresses("www.google.com");
   console::write_line("www.google.com addresses:");
   for (auto address : addresses)
     console::write_line("  * {}", address);
