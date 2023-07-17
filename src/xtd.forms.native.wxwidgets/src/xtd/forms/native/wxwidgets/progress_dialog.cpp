@@ -61,7 +61,7 @@ namespace {
       else {
         timer_marquee.Stop();
         Pulse(convert_string::to_wstring(message));
-        timer_marquee.Start(animation_speed_);
+        timer_marquee.Start(static_cast<int>(animation_speed_));
       }
     }
     

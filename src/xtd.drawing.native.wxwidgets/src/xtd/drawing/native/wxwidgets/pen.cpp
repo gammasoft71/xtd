@@ -29,7 +29,7 @@ void pen::dash_pattern(intptr_t pen, std::vector<float> dash_pattern) {
   reinterpret_cast<wx_pen*>(pen)->dashes.clear();
   for (auto dash : dash_pattern)
     reinterpret_cast<wx_pen*>(pen)->dashes.push_back(static_cast<wxDash>(dash));
-  reinterpret_cast<wxPen*>(pen)->SetDashes(reinterpret_cast<wx_pen*>(pen)->dashes.size(), reinterpret_cast<wx_pen*>(pen)->dashes.data());
+  reinterpret_cast<wxPen*>(pen)->SetDashes(static_cast<int>(reinterpret_cast<wx_pen*>(pen)->dashes.size()), reinterpret_cast<wx_pen*>(pen)->dashes.data());
 }
 
 void pen::dash_style(intptr_t pen, uint32_t dash_style) {
@@ -42,7 +42,7 @@ void pen::dash_style(intptr_t pen, uint32_t dash_style) {
     case 4: reinterpret_cast<wx_pen*>(pen)->dashes = {3, 1, 1, 1, 1, 1}; break;
     default: break;
   }
-  reinterpret_cast<wxPen*>(pen)->SetDashes(reinterpret_cast<wx_pen*>(pen)->dashes.size(), reinterpret_cast<wx_pen*>(pen)->dashes.data());
+  reinterpret_cast<wxPen*>(pen)->SetDashes(static_cast<int>(reinterpret_cast<wx_pen*>(pen)->dashes.size()), reinterpret_cast<wx_pen*>(pen)->dashes.data());
 }
 
 void pen::width(intptr_t pen, float width) {

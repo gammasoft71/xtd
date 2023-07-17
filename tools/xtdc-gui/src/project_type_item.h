@@ -15,6 +15,7 @@ namespace xtdc_gui {
     /// @brief Initializes a new instance of the project_type_item class.
     project_type_item() = default;
     project_type_item(const project_type_item&) = default;
+    project_type_item& operator=(const project_type_item&) = default;
     bool operator==(const project_type_item& value) const {return icon_ == value.icon_ && name_ == value.name_ && description_ == value.description_ && project_language_ == value.project_language_ && project_platform_ == value.project_platform_ && project_sdk_ == value.project_sdk_ && project_type_ == value.project_type_;}
     bool operator!=(const project_type_item& value) const {return !operator==(value);}
 

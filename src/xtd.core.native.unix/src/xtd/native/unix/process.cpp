@@ -171,7 +171,7 @@ bool process::kill(intptr_t process) {
 bool process::priority_class(intptr_t process, int32_t priority) {
   int32_t base_priority = PRIO_MIN + (PRIO_MAX - PRIO_MIN)/2;
   if (compute_base_priority(priority, base_priority) == false) return false;
-  return setpriority(PRIO_PROCESS, process, base_priority) == 0;
+  return setpriority(PRIO_PROCESS, static_cast<id_t>(process), base_priority) == 0;
 }
 
 intptr_t process::shell_execute(const std::string& verb, const string& file_name, const string& arguments, const string& working_directory, int32_t process_window_style) {
