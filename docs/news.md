@@ -28,4 +28,4 @@ sidebar_position: 1
 * After 3 years of development, we are happy to release the first beta version of xtd. This version contains a lot of functionalities. It is the first of a long serie.
 * Read the [release note](documentation/release_notes.md) for more informations.
 * [Installation](downloads.md) provides download and install documentation.
-* For more information about all functionalities read the [Reference Guide](https://gammasoft71.github.io/xtd/reference_guides/latest/index.html).
+* For more information about all functionalities read the [Reference Guide](https://gammasoft71.github.io/xtd/reference_guides/v0.1.0/index.html).
