@@ -661,7 +661,7 @@ namespace xtd {
       }
       
       static void contains(char8_t item, const char8_t* values, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        ustring s(values);
+        std::u8string s(values);
         auto result = std::find(s.begin(), s.end(), item);
         if (result != s.end())
           succeed(message, stack_frame);
@@ -670,7 +670,7 @@ namespace xtd {
       }
 
       static void contains(char16_t item, const char16_t* values, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        ustring s(values);
+        std::u16string s(values);
         auto result = std::find(s.begin(), s.end(), item);
         if (result != s.end())
           succeed(message, stack_frame);
@@ -679,7 +679,7 @@ namespace xtd {
       }
       
       static void contains(char32_t item, const char32_t* values, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        ustring s(values);
+        std::u32string s(values);
         auto result = std::find(s.begin(), s.end(), item);
         if (result != s.end())
           succeed(message, stack_frame);
@@ -688,7 +688,7 @@ namespace xtd {
       }
 
       static void contains(wchar_t item, const wchar_t* values, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        ustring s(values);
+        std::wstring s(values);
         auto result = std::find(s.begin(), s.end(), item);
         if (result != s.end())
           succeed(message, stack_frame);

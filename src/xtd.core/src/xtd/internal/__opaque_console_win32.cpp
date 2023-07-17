@@ -35,7 +35,7 @@ namespace {
 
   xtd::console_color backColor = __background_color();
   xtd::console_color foreColor = __foreground_color();
-  bool treat_control_c_as_input = [&]()-> bool {
+  bool treat_control_c_as_input = []()-> bool {
     SetConsoleCtrlHandler(&__handler_routine, TRUE);
     return false;
   }();
