@@ -9,7 +9,7 @@ sidebar_position: 1
 * This release is only a bug fix on version 0.1.0. Some users report warnings (converted to errors) when building with a recent compiler or IDE on all platforms.
 * Read the [release note](documentation/release_notes.md) for more informations.
 * [Installation](downloads.md) provides download and install documentation.
-* For more information about all functionalities read the [Reference Guide](https://gammasoft71.github.io/xtd/reference_guides/latest/index.html).
+* For more information about all functionalities read the [Reference Guide](https://gammasoft71.github.io/xtd/reference_guides/v0.1.1/index.html).
 
 ## The new xtd website is online - February 9, 2023
 
