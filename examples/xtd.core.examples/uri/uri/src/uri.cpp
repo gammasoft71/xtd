@@ -1,34 +1,34 @@
-#include <xtd/xtd>
-
-using namespace xtd;
+#include <xtd/console>
+#include <xtd/startup>
+#include <xtd/uri>
 
 namespace uri_example {
   class program {
   public:
     // The main entry point for the application.
     static auto main() {
-      auto uri = xtd::uri("https://user:password@www.contoso.com:80/Home/Index.htm?q1=v1&q2=v2#FragmentName");
+      auto uri = xtd::uri {"https://user:password@www.contoso.com:80/Home/Index.htm?q1=v1&q2=v2#FragmentName"};
       
-      console::write_line("absolute_path: {}", uri.absolute_path());
-      console::write_line("absolute_uri: {}", uri.absolute_uri());
-      console::write_line("dns_safe_host: {}", uri.dns_safe_host());
-      console::write_line("fragment: {}", uri.fragment());
-      console::write_line("host: {}", uri.host());
-      console::write_line("host_name_type: {}", uri.host_name_type());
-      console::write_line("idn_host: {}", uri.idn_host());
-      console::write_line("is_absolute_uri: {}", uri.is_absolute_uri());
-      console::write_line("is_default_port: {}", uri.is_default_port());
-      console::write_line("is_file: {}", uri.is_file());
-      console::write_line("is_loopback: {}", uri.is_loopback());
-      console::write_line("is_unc: {}", uri.is_unc());
-      console::write_line("local_path: {}", uri.local_path());
-      console::write_line("original_string: {}", uri.original_string());
-      console::write_line("path_and_query: {}", uri.path_and_query());
-      console::write_line("port: {}", uri.port());
-      console::write_line("query: {}", uri.query());
-      console::write_line("scheme: {}", uri.scheme());
-      console::write_line("segments: {}", ustring::join(", ", uri.segments()));
-      console::write_line("user_info: {}", uri.user_info());
+      xtd::console::write_line("absolute_path: {}", uri.absolute_path());
+      xtd::console::write_line("absolute_uri: {}", uri.absolute_uri());
+      xtd::console::write_line("dns_safe_host: {}", uri.dns_safe_host());
+      xtd::console::write_line("fragment: {}", uri.fragment());
+      xtd::console::write_line("host: {}", uri.host());
+      xtd::console::write_line("host_name_type: {}", uri.host_name_type());
+      xtd::console::write_line("idn_host: {}", uri.idn_host());
+      xtd::console::write_line("is_absolute_uri: {}", uri.is_absolute_uri());
+      xtd::console::write_line("is_default_port: {}", uri.is_default_port());
+      xtd::console::write_line("is_file: {}", uri.is_file());
+      xtd::console::write_line("is_loopback: {}", uri.is_loopback());
+      xtd::console::write_line("is_unc: {}", uri.is_unc());
+      xtd::console::write_line("local_path: {}", uri.local_path());
+      xtd::console::write_line("original_string: {}", uri.original_string());
+      xtd::console::write_line("path_and_query: {}", uri.path_and_query());
+      xtd::console::write_line("port: {}", uri.port());
+      xtd::console::write_line("query: {}", uri.query());
+      xtd::console::write_line("scheme: {}", uri.scheme());
+      xtd::console::write_line("segments: {}", xtd::ustring::join(", ", uri.segments()));
+      xtd::console::write_line("user_info: {}", uri.user_info());
     }
   };
 }
