@@ -1,14 +1,12 @@
-#include <xtd/xtd>
-#include <iostream>
+#include <xtd/console>
+#include <xtd/ustring>
 
-using namespace std;
-using namespace string_literals;
 using namespace xtd;
 
 auto main()->int {
   auto s = "This is a literal string";
-  cout << "The string: \"" << s << "\"" << (ustring(s).contains("is") ? " contains " : " does not contain ") << "\"is\" substring." << endl;
-  cout << "The string: \"" << s << "\"" << (ustring(s).contains("z") ? " contains " : " does not contain ") << "\"z\" character." << endl;
+  console::write_line("The string: \""_s + s + "\""_s + (ustring {s}.contains("is") ? " contains " : " does not contain ") + "\"is\" substring."_s);
+  console::write_line("The string: \""_s + s + "\""_s + (ustring {s}.contains("z") ? " contains " : " does not contain ") + "\"z\" character."_s);
 }
 
 // This code produces the following output:

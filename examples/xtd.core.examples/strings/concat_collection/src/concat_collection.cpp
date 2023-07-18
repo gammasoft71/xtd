@@ -1,13 +1,11 @@
-#include <xtd/xtd>
-#include <iostream>
+#include <xtd/console>
+#include <xtd/ustring>
 
-using namespace std;
-using namespace string_literals;
 using namespace xtd;
 
 auto main()->int {
-  vector items = {"One ", "Two ", "Three ", "Four "};
-  cout << ustring::concat(items) << endl;
+  auto items = {"One ", "Two ", "Three ", "Four "};
+  console::write_line(ustring::concat(items));
 }
 
 // This code produces the following output:

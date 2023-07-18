@@ -1,18 +1,16 @@
-#include <xtd/xtd>
-#include <iostream>
+#include <xtd/console>
+#include <xtd/ustring>
 
-using namespace std;
-using namespace string_literals;
 using namespace xtd;
 
 auto main()->int {
-  int result = ustring::compare("Aaa", "aaa", true);
+  auto result = ustring::compare("Aaa", "aaa", true);
   if (result < 0)
-    cout << "Aaa < aaa" << endl;
+    console::write_line("Aaa < aaa");
   else if (result > 0)
-    cout << "Aaa > aaa" << endl;
+    console::write_line("Aaa > aaa");
   else
-    cout << "Aaa == aaa" << endl;
+    console::write_line("Aaa == aaa");
 }
 
 // This code produces the following output:

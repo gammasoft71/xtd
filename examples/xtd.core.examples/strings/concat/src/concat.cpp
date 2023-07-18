@@ -1,12 +1,10 @@
-#include <xtd/xtd>
-#include <iostream>
+#include <xtd/console>
+#include <xtd/ustring>
 
-using namespace std;
-using namespace string_literals;
 using namespace xtd;
 
 auto main()->int {
-  cout << ustring::concat("Hello", ", ", "World", "!") << endl;
+  console::write_line(ustring::concat("Hello", ", ", "World", "!"));
 }
 
 // This code produces the following output:
