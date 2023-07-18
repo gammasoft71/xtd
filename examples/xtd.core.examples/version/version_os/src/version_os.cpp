@@ -1,4 +1,6 @@
-#include <xtd/xtd>
+#include <xtd/console>
+#include <xtd/environment>
+#include <xtd/startup>
 
 using namespace xtd;
 
@@ -8,8 +10,8 @@ namespace version_os_example {
     // The main entry point for the application.
     static auto main() {
       // Get the operating system version.
-      operating_system os = environment::os_version();
-      version ver = os.version();
+      auto os = environment::os_version();
+      auto ver = os.version();
       console::write_line("Operating System: {0} ({1})", os.version_string(), ver.to_string());
     }
   };
