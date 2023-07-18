@@ -17,12 +17,12 @@ public:
       
     auto frequency = stopwatch::frequency();
     console::write_line("  Timer frequency in ticks per second = {0}", frequency);
-    auto nanosec_per_tick = (1000L * 1000L * 1000L) / frequency;
+    auto nanosec_per_tick = (1000l * 1000l * 1000l) / frequency;
     console::write_line("  Timer is accurate within {0} nanoseconds", nanosec_per_tick);
   }
   
   static void time_operations() {
-    auto nanosec_per_tick = (1000L * 1000L * 1000L) / stopwatch::frequency();
+    auto nanosec_per_tick = (1000l * 1000l * 1000l) / stopwatch::frequency();
     constexpr auto num_iterations = 10000;
     
     // Define the operation title names.
@@ -33,13 +33,13 @@ public:
     
     for (auto operation = 0; operation <= 3; operation++) {
       // Define variables for operation statistics.
-      auto num_ticks = 0L;
-      [[maybe_unused]] auto num_rollovers = 0L;
-      auto max_ticks = 0L;
+      auto num_ticks = 0l;
+      [[maybe_unused]] auto num_rollovers = 0l;
+      auto max_ticks = 0l;
       auto min_ticks = numeric_limits<long>::max();
       auto index_fastest = -1;
       auto index_slowest = -1;
-      auto milli_sec = 0L;
+      auto milli_sec = 0l;
       
       auto time_10k_operations = stopwatch::start_new();
       
@@ -47,7 +47,7 @@ public:
       // The first execution time will be tossed out, since it can skew the average time.
       
       for (auto i = 0; i <= num_iterations; i++) {
-        auto ticks_this_time = 0L;
+        auto ticks_this_time = 0l;
         auto input_num = 0;
         auto time_per_parse = stopwatch {};
         

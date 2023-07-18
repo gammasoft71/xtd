@@ -14,7 +14,7 @@ namespace environment_exit_code_example {
       if (args.size() == 1)
         environment::exit_code(ECANCELED);
       else {
-        auto value = 0L;
+        auto value = 0l;
         if (try_parse(args[1], value))
           if (value <= numeric_limits<int>::min() || value >= numeric_limits<int>::max())
             environment::exit_code(ERANGE);

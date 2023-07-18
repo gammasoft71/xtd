@@ -16,7 +16,7 @@ namespace main_example {
       }
       
       console::write_line("The factorial of {} is {}", number, [&] {
-        auto result = 1L;
+        auto result = 1l;
         for (auto i = 1; i <= number; ++i)
           result *= i;
         return result;

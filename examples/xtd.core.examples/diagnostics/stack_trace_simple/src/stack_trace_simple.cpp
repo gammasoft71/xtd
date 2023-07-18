@@ -26,7 +26,7 @@ private:
         // Create a StackTrace that captures filename, line number and column information.
         auto st = stack_trace {true};
         ustring stack_indent = "";
-        for (auto i = 0UL; i < st.frame_count(); i++) {
+        for (auto i = 0ul; i < st.frame_count(); i++) {
           // Note that at this level, there are four stack frames, one for each method invocation.
           auto sf = st.get_frame(i);
           console::write_line();
@@ -48,7 +48,7 @@ auto main()->int {
   } catch (const system_exception&) {
     // Create a StackTrace that captures filename, line number, and column information for the current thread.
     auto st = stack_trace {true};
-    for (auto i = 0UL; i < st.frame_count(); i++) {
+    for (auto i = 0ul; i < st.frame_count(); i++) {
       // Note that high up the call stack, there is only one stack frame.
       auto sf = st.get_frame(i);
       console::write_line();
