@@ -1,4 +1,5 @@
-#include <xtd/xtd>
+#include <xtd/format_exception>
+#include <xtd/ustring>
 
 using namespace std;
 using namespace xtd;

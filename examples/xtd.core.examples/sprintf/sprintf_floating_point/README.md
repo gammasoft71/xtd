@@ -27,8 +27,9 @@ xtdc run
 12.345
 0x0x1.8b0a3d70a3d71p+3
 0x0X1.8B0A3D70A3D71P+3
+4.94066E-324
+nan
 inf
-nan
-nan
+-inf
 ```
 
