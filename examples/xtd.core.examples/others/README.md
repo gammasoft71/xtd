@@ -2,7 +2,6 @@
 
 [This folder](.) contains others examples used by [Reference Guide](https://gammasoft71.github.io/xtd/reference_guides/latest/) and more.
 
-* [bit_converter](bit_converter/README.md) shows hows how to use [xtd::bit_converter](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1bit__converter.html) class.
 * [console_background_color2](console_background_color2/README.md) shows how to use [xtd::console::background_color](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1background__color.html) method.
 * [console_background_color3](console_background_color3/README.md) shows how to use [xtd::console::background_color](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1background__color.html) method.
 * [console_beep2](console_beep2/README.md) shows how to use [xtd::console::beep](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html#aab2e161c3a72cb14f808ed40e2b59ef2) method.

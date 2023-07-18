@@ -14,6 +14,7 @@
 
 ## [Bit converter](bit_converter/README.md)
 
+* [bit_converter](bit_converter/bit_converter/README.md) shows hows how to use [xtd::bit_converter](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1bit__converter.html) class.
 * [bit_converter_endianness](bit_converter/bit_converter_endianness/README.md) shows how to use [xtd::bit_converter::endianness](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1bit__converter.html#a74775c90de1b900dda7995b804274b1b) method.
 * [bit_converter_is_big_endian](bit_converter/bit_converter_is_big_endian/README.md) shows how to use [xtd::bit_converter::is_big_endian](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1bit__converter.html#a604c4e12079655a803ed3a3e78dde225) method.
 * [bit_converter_is_little_endian](bit_converter/bit_converter_is_little_endian/README.md) shows how to use [xtd::bit_converter::is_little_endian](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1bit__converter.html#a163edd918104e0923f51d774809313b9) method.
@@ -291,7 +292,6 @@
 
 ## [Others](others/README.md)
 
-* [bit_converter](others/bit_converter/README.md) shows hows how to use [xtd::bit_converter](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1bit__converter.html) class.
 * [console_background_color2](others/console_background_color2/README.md) shows how to use [xtd::console::background_color](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1background__color.html) method.
 * [console_background_color3](others/console_background_color3/README.md) shows how to use [xtd::console::background_color](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1background__color.html) method.
 * [console_beep2](others/console_beep2/README.md) shows how to use [xtd::console::beep](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html#aab2e161c3a72cb14f808ed40e2b59ef2) method.
