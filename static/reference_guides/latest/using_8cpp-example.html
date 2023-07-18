@@ -83,14 +83,14 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Shows how to use xtd::using class.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/using&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
 <div class="line">  <a id="a0" name="a0"></a><a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(<span class="keyword">auto</span> values = {1, 2, 3, 4, 5})</div>
-<div class="line">    cout &lt;&lt; ustring::join(<span class="stringliteral">&quot;, &quot;</span>, values) &lt;&lt; endl;</div>
+<div class="line">    console::write_line(ustring::join(<span class="stringliteral">&quot;, &quot;</span>, values));</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// uncomment next line cause build error with undeclared identifier &#39;values&#39;.</span></div>
 <div class="line">  <span class="comment">// cout &lt;&lt; ustring::join(&quot;, &quot;, values) &lt;&lt; endl;</span></div>
@@ -105,7 +105,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 15 2023 23:07:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 18 2023 22:19:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -95,12 +95,12 @@ $(function() {
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">    array&lt;unsigned int, 2&gt; years = {2012, 2014};</div>
+<div class="line">    <span class="keyword">auto</span> years = array&lt;unsigned int, 2&gt; {2012, 2014};</div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot;Days in the Month for the Gregorian calendar\n&quot;</span>);</div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot;{0,-10}{1,-15}{2,4}\n&quot;</span>, <span class="stringliteral">&quot;Year&quot;</span>, <span class="stringliteral">&quot;Month&quot;</span>, <span class="stringliteral">&quot;Days&quot;</span>);</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> year : years) {</div>
-<div class="line">      <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> ctr = 1U; ctr &lt;= 12U; ctr++)</div>
+<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> ctr = 1U; ctr &lt;= 12U; ctr++)</div>
 <div class="line">        console::write_line(<span class="stringliteral">&quot;{0,-10}{1,-15}{2,4}&quot;</span>, year, as&lt;month_of_year&gt;(ctr), date_time::days_in_month(year, ctr));</div>
 <div class="line">      console::write_line();</div>
 <div class="line">    }</div>
@@ -146,7 +146,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 15 2023 23:07:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 18 2023 22:19:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

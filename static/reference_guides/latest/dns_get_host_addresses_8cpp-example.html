@@ -83,14 +83,14 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Shows how to use <a class="el" href="classxtd_1_1net_1_1dns.html" title="Provides simple domain name resolution functionality.">xtd::net::dns</a> class.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/net/dns&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1net.html">xtd::net</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
-<div class="line">  vector&lt;ip_address&gt; addresses = dns::get_host_addresses(<span class="stringliteral">&quot;www.google.com&quot;</span>);</div>
+<div class="line">  <span class="keyword">auto</span> addresses = dns::get_host_addresses(<span class="stringliteral">&quot;www.google.com&quot;</span>);</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;www.google.com addresses:&quot;</span>);</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> address : addresses)</div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot;  * {}&quot;</span>, address);</div>
@@ -106,7 +106,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 15 2023 23:07:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 18 2023 22:19:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

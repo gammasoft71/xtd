@@ -83,7 +83,11 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Show how to use <a class="el" href="classxtd_1_1io_1_1file__info.html#a518d205507601c6de179fab492750dbc" title="Moves a specified file to a new location, providing the option to specify a new file name.">xtd::io::file_info::move_to</a> method.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/io/file_info&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/io/directory_info&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/io/path&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -113,7 +117,7 @@ $(function() {
 <div class="line">    console::write(<span class="stringliteral">&quot;    Checking whether &quot;</span>);</div>
 <div class="line">    console::write(source_path);</div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot; exists.&quot;</span>);</div>
-<div class="line">    <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1io_1_1file__info.html">file_info</a> f_info(source_path);</div>
+<div class="line">    <span class="keyword">auto</span> f_info = <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1io_1_1file__info.html">file_info</a> {source_path};</div>
 <div class="line">    ensure_source_file_exists();</div>
 <div class="line">    display_file_properties(f_info);</div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot;Preparing to move the file to &quot;</span>);</div>
@@ -146,8 +150,8 @@ $(function() {
 <div class="line">  <span class="comment">// and the file FromFile.xml all exist.</span></div>
 <div class="line">  <span class="comment">//</span></div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> ensure_source_file_exists() {</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1io_1_1file__info.html">file_info</a> f_info(source_path);</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> dir_path = f_info.<a id="a4" name="a4"></a><a class="code hl_function" href="classxtd_1_1io_1_1file__info.html#a5f525f2417d754c1967e09a955528df8">directory</a>().<a id="a5" name="a5"></a><a class="code hl_function" href="classxtd_1_1io_1_1file__system__info.html#a34649c2f8db1b1d13b7be1ecf4ecc52a">full_name</a>();</div>
+<div class="line">    <span class="keyword">auto</span> f_info = <a class="code hl_class" href="classxtd_1_1io_1_1file__info.html">file_info</a> {source_path};</div>
+<div class="line">    <span class="keyword">auto</span> dir_path = f_info.<a id="a4" name="a4"></a><a class="code hl_function" href="classxtd_1_1io_1_1file__info.html#a5f525f2417d754c1967e09a955528df8">directory</a>().<a id="a5" name="a5"></a><a class="code hl_function" href="classxtd_1_1io_1_1file__system__info.html#a34649c2f8db1b1d13b7be1ecf4ecc52a">full_name</a>();</div>
 <div class="line">    <span class="keywordflow">if</span> (!directory::exists(dir_path))</div>
 <div class="line">      directory::create_directory(dir_path);</div>
 <div class="line">    <span class="keywordflow">if</span> (file::exists(dest_path))</div>
@@ -170,9 +174,9 @@ $(function() {
 <div class="line">  <span class="comment">// Creates and saves an Xml file to source_path.</span></div>
 <div class="line">  <span class="comment">//</span></div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> write_file_content(<span class="keywordtype">int</span> total_element) {</div>
-<div class="line">    vector&lt;ustring&gt; lines;</div>
+<div class="line">    <span class="keyword">auto</span> lines = vector&lt;ustring&gt; {};</div>
 <div class="line">    lines.push_back(<span class="stringliteral">&quot;&lt;?xml version=\&quot;1.0\&quot; standalone=\&quot;yes\&quot;?&gt;&quot;</span>);</div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> index  = 0; index &lt; total_element; ++index)</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> index  = 0; index &lt; total_element; ++index)</div>
 <div class="line">      lines.push_back(ustring::format(<span class="stringliteral">&quot;&lt;MyElement Index=\&quot;{0}\&quot;&gt;\nMyElement at position {0}.&quot;</span>, index));</div>
 <div class="line">    file::write_all_lines(source_path, lines);</div>
 <div class="line">  }</div>
@@ -207,9 +211,9 @@ $(function() {
 <div class="line">  <span class="comment">//</span></div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> delete_files() {</div>
 <div class="line">    <span class="keywordflow">try</span> {</div>
-<div class="line">      <a id="_a12" name="_a12"></a><a class="code hl_class" href="classxtd_1_1io_1_1directory__info.html">directory_info</a> d_info(path::combine(environment::get_folder_path(environment::special_folder::my_documents), <span class="stringliteral">&quot;file_infoTestDirectory&quot;</span>));</div>
-<div class="line">      <span class="keywordflow">if</span> (d_info.<a id="a13" name="a13"></a><a class="code hl_function" href="classxtd_1_1io_1_1directory__info.html#a709d534c9cb3afe7ed511057530de6cb">exists</a>()) {</div>
-<div class="line">        d_info.<a id="a14" name="a14"></a><a class="code hl_function" href="classxtd_1_1io_1_1directory__info.html#a77aaaba9fe19490908ee2fc105776dcd">remove</a>(<span class="keyword">true</span>);</div>
+<div class="line">      <span class="keyword">auto</span> d_info = <a id="_a12" name="_a12"></a><a class="code hl_class" href="classxtd_1_1io_1_1directory__info.html">directory_info</a> {path::combine(environment::get_folder_path(environment::special_folder::my_documents), <span class="stringliteral">&quot;file_infoTestDirectory&quot;</span>)};</div>
+<div class="line">      <span class="keywordflow">if</span> (d_info.exists()) {</div>
+<div class="line">        d_info.<a id="a13" name="a13"></a><a class="code hl_function" href="classxtd_1_1io_1_1directory__info.html#a77aaaba9fe19490908ee2fc105776dcd">remove</a>(<span class="keyword">true</span>);</div>
 <div class="line">        console::write_line(<span class="stringliteral">&quot;Successfully deleted directories and files.&quot;</span>);</div>
 <div class="line">      }</div>
 <div class="line">    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1system__exception.html">system_exception</a>&amp; ex) {</div>
@@ -222,18 +226,18 @@ $(function() {
 <div class="line">  <span class="comment">// code is not suitable for production applications.</span></div>
 <div class="line">  <span class="comment">//</span></div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> display_exception(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1system__exception.html">system_exception</a>&amp; ex) {</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> s;</div>
+<div class="line">    <span class="keyword">auto</span> s = ustring::empty_string;</div>
 <div class="line">    s += <span class="stringliteral">&quot;An exception of type \&quot;&quot;</span>;</div>
-<div class="line">    s += <a id="a15" name="a15"></a><a class="code hl_define" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a>(ex).full_name();</div>
+<div class="line">    s += <a id="a14" name="a14"></a><a class="code hl_define" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a>(ex).full_name();</div>
 <div class="line">    s += <span class="stringliteral">&quot;\&quot; has occurred.\r\n&quot;</span>;</div>
-<div class="line">    s += ex.<a id="a16" name="a16"></a><a class="code hl_function" href="classxtd_1_1system__exception.html#a052e0b18f39fb7bd976bf3bc6d06e324">message</a>();</div>
+<div class="line">    s += ex.<a id="a15" name="a15"></a><a class="code hl_function" href="classxtd_1_1system__exception.html#a052e0b18f39fb7bd976bf3bc6d06e324">message</a>();</div>
 <div class="line">    s += <span class="stringliteral">&quot;\r\nStack trace information:\r\n&quot;</span>;</div>
-<div class="line">    s += ex.<a id="a17" name="a17"></a><a class="code hl_function" href="classxtd_1_1system__exception.html#a8b9a7cb7911fc8a9c627db0522df6382">stack_trace</a>();</div>
+<div class="line">    s += ex.<a id="a16" name="a16"></a><a class="code hl_function" href="classxtd_1_1system__exception.html#a8b9a7cb7911fc8a9c627db0522df6382">stack_trace</a>();</div>
 <div class="line">    console::write_line(s);</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a id="a18" name="a18"></a><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(program);</div>
+<div class="line"><a id="a17" name="a17"></a><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(program);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">// results may vary based on the computer/file structure/etc.:</span></div>
@@ -312,7 +316,6 @@ $(function() {
 <div class="line"><span class="comment">// Successfully deleted directories and files.</span></div>
 <div class="line"><span class="comment">// Press the ENTER key to close this application.</span></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1directory__info_html"><div class="ttname"><a href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a></div><div class="ttdoc">Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...</div><div class="ttdef"><b>Definition</b> directory_info.h:126</div></div>
-<div class="ttc" id="aclassxtd_1_1io_1_1directory__info_html_a709d534c9cb3afe7ed511057530de6cb"><div class="ttname"><a href="classxtd_1_1io_1_1directory__info.html#a709d534c9cb3afe7ed511057530de6cb">xtd::io::directory_info::exists</a></div><div class="ttdeci">bool exists() const override</div><div class="ttdoc">Gets a value indicating whether the directory exists.</div></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1directory__info_html_a77aaaba9fe19490908ee2fc105776dcd"><div class="ttname"><a href="classxtd_1_1io_1_1directory__info.html#a77aaaba9fe19490908ee2fc105776dcd">xtd::io::directory_info::remove</a></div><div class="ttdeci">void remove() const override</div><div class="ttdoc">Deletes this xtd::io::directory_info if it is empty.</div></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1file__info_html"><div class="ttname"><a href="classxtd_1_1io_1_1file__info.html">xtd::io::file_info</a></div><div class="ttdoc">Provides static methods for the creation, copying, deletion, moving, and opening of files,...</div><div class="ttdef"><b>Definition</b> file_info.h:40</div></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1file__info_html_a4f1abebe6cf1b8fb6646b5bd03817440"><div class="ttname"><a href="classxtd_1_1io_1_1file__info.html#a4f1abebe6cf1b8fb6646b5bd03817440">xtd::io::file_info::exists</a></div><div class="ttdeci">bool exists() const override</div><div class="ttdoc">Gets a value indicating whether a file exists.</div></div>
@@ -336,7 +339,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 15 2023 23:07:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 18 2023 22:19:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

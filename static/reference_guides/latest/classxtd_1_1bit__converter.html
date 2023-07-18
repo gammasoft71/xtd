@@ -141,14 +141,14 @@ If you use <a class="el" href="classxtd_1_1bit__converter.html" title="Converts 
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    <span class="comment">// The main entry point for the application.</span></div>
 <div class="line">    <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">      <span class="keywordtype">int</span> value = -16;</div>
-<div class="line">      vector&lt;unsigned char&gt; bytes = bit_converter::get_bytes(value);</div>
+<div class="line">      <span class="keyword">auto</span> value = -16;</div>
+<div class="line">      <span class="keyword">auto</span> bytes = bit_converter::get_bytes(value);</div>
 <div class="line">      </div>
 <div class="line">      <span class="comment">// Convert bytes back to int.</span></div>
-<div class="line">      <span class="keywordtype">int</span> int_value = bit_converter::to_int32(bytes, 0);</div>
+<div class="line">      <span class="keyword">auto</span> int_value = bit_converter::to_int32(bytes, 0);</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;{0} = {1}: {2}&quot;</span>, value, int_value, value == int_value ? <span class="stringliteral">&quot;Round-trips&quot;</span> : <span class="stringliteral">&quot;Does not round-trip&quot;</span>);</div>
 <div class="line">      <span class="comment">// Convert bytes to unsigned int.</span></div>
-<div class="line">      uint uint_value = bit_converter::to_uint32(bytes, 0);</div>
+<div class="line">      <span class="keyword">auto</span> uint_value = bit_converter::to_uint32(bytes, 0);</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;{0} = {1}: {2}&quot;</span>, value, uint_value, <span class="keyword">static_cast&lt;</span>uint<span class="keyword">&gt;</span>(value) == uint_value ? <span class="stringliteral">&quot;Round-trips&quot;</span> : <span class="stringliteral">&quot;Does not round-trip&quot;</span>);</div>
 <div class="line">    }</div>
 <div class="line">  };</div>
@@ -176,20 +176,22 @@ Because the return value of some methods depends on system architecture, be care
 <li>If systems sending and receiving data can have different endianness and the data to be transmitted consists of signed integers, call the IPAddress.HostToNetworkOrder method to convert the data to network <a class="el" href="group__types.html#gaf8d0aa5786861bead085592c31c09849" title="Represents a 8-bit unsigned integer.">xtd::byte</a> order and the IPAddress.NetworkToHostOrder method to convert it to the order required by the recipient. </li>
 </ul>
 </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example illustrates the use of several <a class="el" href="classxtd_1_1bit__converter.html" title="Converts base data types to an std::vector of bytes, and an std::vector of bytes to base data types.">bit_converter</a> class methods. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example illustrates the use of several <a class="el" href="classxtd_1_1bit__converter.html" title="Converts base data types to an std::vector of bytes, and an std::vector of bytes to base data types.">bit_converter</a> class methods. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/bit_converter&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/literals&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
-<div class="line">  <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> formatter = <span class="stringliteral">&quot;{0,25}{1,30}&quot;</span>;</div>
+<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span> formatter = <span class="stringliteral">&quot;{0,25}{1,30}&quot;</span>;</div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordtype">double</span> a_double = 0.1111111111111111111;</div>
-<div class="line">  <span class="keywordtype">float</span> a_single = 0.1111111111111111111F;</div>
-<div class="line">  <span class="keywordtype">long</span> <span class="keywordtype">long</span> a_long = 1111111111111111111;</div>
-<div class="line">  <span class="keywordtype">int</span> an_int = 1111111111;</div>
-<div class="line">  <span class="keywordtype">short</span> a_short = 11111;</div>
-<div class="line">  <span class="keywordtype">char</span> a_char = <span class="charliteral">&#39;*&#39;</span>;</div>
-<div class="line">  <span class="keywordtype">bool</span> a_bool = <span class="keyword">true</span>;</div>
+<div class="line">  <span class="keyword">auto</span> a_double = 0.1111111111111111111;</div>
+<div class="line">  <span class="keyword">auto</span> a_single = 0.1111111111111111111f;</div>
+<div class="line">  <span class="keyword">auto</span> a_long = 1111111111111111111;</div>
+<div class="line">  <span class="keyword">auto</span> an_int = 1111111111;</div>
+<div class="line">  <span class="keyword">auto</span> a_short = 11111_u16;</div>
+<div class="line">  <span class="keyword">auto</span> a_char = <span class="charliteral">&#39;*&#39;</span>;</div>
+<div class="line">  <span class="keyword">auto</span> a_bool = <span class="keyword">true</span>;</div>
 <div class="line">  </div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;This example of methods of the BitConverter class&quot;</span></div>
 <div class="line">    <span class="stringliteral">&quot;\ngenerates the following output.\n&quot;</span>);</div>
@@ -223,7 +225,6 @@ Because the return value of some methods depends on system architecture, be care
 <div class="ttc" id="aclassxtd_1_1bit__converter_html_a974979eea8bc06c7731617915a747b4e"><div class="ttname"><a href="classxtd_1_1bit__converter.html#a974979eea8bc06c7731617915a747b4e">xtd::bit_converter::to_string</a></div><div class="ttdeci">static xtd::ustring to_string(const std::vector&lt; xtd::byte &gt; &amp;value)</div><div class="ttdoc">Converts the numeric value of each element of a specified std::vector of bytes to its equivalent hexa...</div></div>
 <div class="ttc" id="aclassxtd_1_1bit__converter_html_aba2941afaccf6d5f51303cae71e77c77"><div class="ttname"><a href="classxtd_1_1bit__converter.html#aba2941afaccf6d5f51303cae71e77c77">xtd::bit_converter::get_bytes</a></div><div class="ttdeci">static std::vector&lt; xtd::byte &gt; get_bytes(bool value) noexcept</div><div class="ttdoc">Returns the specified Boolean value as an std::vector of bytes.</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:48</div></div>
 </div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
@@ -1952,7 +1953,7 @@ The order of hexadecimal strings returned by the to_string method depends on whe
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 15 2023 23:07:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 18 2023 22:19:50 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -83,18 +83,19 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Shows how to use xtd::web::css:css_writer class.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;strstream&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/web/css/css_writer&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;strstream&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span>xtd::web::css;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
-<div class="line">  stringstream string_stream;</div>
-<div class="line">  <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1web_1_1css_1_1css__writer.html">css_writer</a> writer(string_stream);</div>
+<div class="line">  <span class="keyword">auto</span> stream = stringstream {};</div>
+<div class="line">  <span class="keyword">auto</span>  writer = <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1web_1_1css_1_1css__writer.html">css_writer</a> {stream};</div>
 <div class="line">  </div>
-<div class="line">  writer.<a id="a1" name="a1"></a>selectors()[<span class="stringliteral">&quot;.user_box&quot;</span>].properties()[<span class="stringliteral">&quot;display&quot;</span>] = property::from(<span class="stringliteral">&quot;none&quot;</span>);</div>
+<div class="line">  writer.selectors()[<span class="stringliteral">&quot;.user_box&quot;</span>].properties()[<span class="stringliteral">&quot;display&quot;</span>] = property::from(<span class="stringliteral">&quot;none&quot;</span>);</div>
 <div class="line">  writer.selectors()[<span class="stringliteral">&quot;.user_box&quot;</span>].properties()[<span class="stringliteral">&quot;position&quot;</span>] = property::from(<span class="stringliteral">&quot;fixed&quot;</span>);</div>
 <div class="line">  writer.selectors()[<span class="stringliteral">&quot;.user_box&quot;</span>].properties()[<span class="stringliteral">&quot;z-index&quot;</span>] = property::from(100);</div>
 <div class="line">  writer.selectors()[<span class="stringliteral">&quot;.user_box&quot;</span>].properties()[<span class="stringliteral">&quot;width&quot;</span>] = property::from(<span class="stringliteral">&quot;100%&quot;</span>);</div>
@@ -104,11 +105,11 @@ $(function() {
 <div class="line">  writer.selectors()[<span class="stringliteral">&quot;.user_box&quot;</span>].properties()[<span class="stringliteral">&quot;background&quot;</span>] = property::from(<span class="stringliteral">&quot;#4080FA&quot;</span>);</div>
 <div class="line">  writer.selectors()[<span class="stringliteral">&quot;.user_box&quot;</span>].properties()[<span class="stringliteral">&quot;filter&quot;</span>] = property::from(<span class="stringliteral">&quot;alpha(opacity=40)&quot;</span>);</div>
 <div class="line">  writer.selectors()[<span class="stringliteral">&quot;.user_box&quot;</span>].properties()[<span class="stringliteral">&quot;opacity&quot;</span>] = property::from(0.4);</div>
-<div class="line">  writer.<a id="a2" name="a2"></a>write();</div>
+<div class="line">  writer.write();</div>
 <div class="line">  </div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;String stream :&quot;</span>);</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;---------------&quot;</span>);</div>
-<div class="line">  console::write_line(string_stream.str());</div>
+<div class="line">  console::write_line(stream.str());</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code can produces the following output :</span></div>
@@ -133,7 +134,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 15 2023 23:07:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 18 2023 22:19:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

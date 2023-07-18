@@ -83,7 +83,11 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Shows how to use <a class="el" href="classxtd_1_1net_1_1dns.html" title="Provides simple domain name resolution functionality.">xtd::net::dns</a> class.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/net/sockets/socket&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/net/dns&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/net/ip_address&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;regex&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
@@ -94,12 +98,12 @@ $(function() {
 <div class="line"><span class="keyword">class </span>test_ip_address {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main(<span class="keyword">const</span> vector&lt;ustring&gt;&amp; args) {</div>
-<div class="line">    <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> server;</div>
+<div class="line">    <span class="keyword">auto</span> server = ustring::empty_string;</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Define a regular expression to parse user&#39;s input.</span></div>
 <div class="line">    <span class="comment">// This is a security check. It allows only</span></div>
 <div class="line">    <span class="comment">// alphanumeric input string between 2 to 40 character long.</span></div>
-<div class="line">    regex rex(R<span class="stringliteral">&quot;(^[a-zA-Z]\w{1,39}$)&quot;);</span></div>
+<div class="line">    <span class="keyword">auto</span> rex = regex {R<span class="stringliteral">&quot;(^[a-zA-Z]\w{1,39}$)&quot;};</span></div>
 <div class="line"><span class="stringliteral">    </span></div>
 <div class="line"><span class="stringliteral">    </span><span class="keywordflow">if</span> (args.size() &lt; 1) {</div>
 <div class="line">      <span class="comment">// If no server name is passed as an argument to this program, use the current</span></div>
@@ -122,13 +126,13 @@ $(function() {
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
-<div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> ip_addresses(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>&amp; server) {</div>
+<div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> ip_addresses(<span class="keyword">auto</span> server) {</div>
 <div class="line">    <span class="keywordflow">try</span> {</div>
 <div class="line">      <span class="comment">// Get server related information.</span></div>
-<div class="line">      <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1net_1_1ip__host__entry.html">ip_host_entry</a> heserver = dns::get_host_entry(server);</div>
+<div class="line">      <span class="keyword">auto</span> heserver = dns::get_host_entry(server);</div>
 <div class="line">      </div>
 <div class="line">      <span class="comment">// Loop on the AddressList</span></div>
-<div class="line">      <span class="keywordflow">for</span> (<a id="_a2" name="_a2"></a><a class="code hl_class" href="classxtd_1_1net_1_1ip__address.html">ip_address</a> cur_add : heserver.<a id="a3" name="a3"></a><a class="code hl_function" href="classxtd_1_1net_1_1ip__host__entry.html#ac33bf997ce05de495e715f3aad98c31b">address_list</a>()) {</div>
+<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> cur_add : heserver.address_list()) {</div>
 <div class="line">        <span class="comment">// Display the type of address family supported by the server. If the</span></div>
 <div class="line">        <span class="comment">// server is IPv6-enabled this value is: InterNetworkV6. If the server</span></div>
 <div class="line">        <span class="comment">// is also IPv4-enabled there will be an additional value of InterNetwork.</span></div>
@@ -152,7 +156,7 @@ $(function() {
 <div class="line">          console::write(bytes[i]);</div>
 <div class="line">        console::write_line(<span class="stringliteral">&quot;\r\n&quot;</span>);</div>
 <div class="line">      }</div>
-<div class="line">    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a id="_a4" name="_a4"></a><a class="code hl_class" href="classxtd_1_1system__exception.html">system_exception</a>&amp; e) {</div>
+<div class="line">    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1system__exception.html">system_exception</a>&amp; e) {</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;[do_resolve] exception: {}&quot;</span>, e);</div>
 <div class="line">    }</div>
 <div class="line">  }</div>
@@ -185,7 +189,7 @@ $(function() {
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a id="a5" name="a5"></a><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(test_ip_address);</div>
+<div class="line"><a id="a1" name="a1"></a><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(test_ip_address);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output if no args:</span></div>
 <div class="line"><span class="comment">//</span></div>
@@ -203,11 +207,7 @@ $(function() {
 <div class="line"><span class="comment">// ip_v6_none: ::</span></div>
 <div class="line"><span class="comment">// is_loopback(ip_v6_loopback): true</span></div>
 <div class="line"><span class="comment">// is_loopback(loopback):true</span></div>
-<div class="ttc" id="aclassxtd_1_1net_1_1ip__address_html"><div class="ttname"><a href="classxtd_1_1net_1_1ip__address.html">xtd::net::ip_address</a></div><div class="ttdoc">Provides an Internet Protocol (IP) address.</div><div class="ttdef"><b>Definition</b> ip_address.h:36</div></div>
-<div class="ttc" id="aclassxtd_1_1net_1_1ip__host__entry_html"><div class="ttname"><a href="classxtd_1_1net_1_1ip__host__entry.html">xtd::net::ip_host_entry</a></div><div class="ttdoc">Provides a container class for Internet host address information.</div><div class="ttdef"><b>Definition</b> ip_host_entry.h:25</div></div>
-<div class="ttc" id="aclassxtd_1_1net_1_1ip__host__entry_html_ac33bf997ce05de495e715f3aad98c31b"><div class="ttname"><a href="classxtd_1_1net_1_1ip__host__entry.html#ac33bf997ce05de495e715f3aad98c31b">xtd::net::ip_host_entry::address_list</a></div><div class="ttdeci">const std::vector&lt; xtd::net::ip_address &gt; &amp; address_list() const noexcept</div><div class="ttdoc">Gets List of IP addresses that are associated with a host.</div></div>
 <div class="ttc" id="aclassxtd_1_1system__exception_html"><div class="ttname"><a href="classxtd_1_1system__exception.html">xtd::system_exception</a></div><div class="ttdoc">Defines the base class for predefined exceptions in the xtd namespace.</div><div class="ttdef"><b>Definition</b> system_exception.h:24</div></div>
-<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:48</div></div>
 <div class="ttc" id="agroup__keywords_html_gac9b8e6f22fb2fdc1bb915ee01aef848c"><div class="ttname"><a href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a></div><div class="ttdeci">#define startup_(main_class)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:57</div></div>
 <div class="ttc" id="anamespacextd_1_1net_1_1sockets_html"><div class="ttname"><a href="namespacextd_1_1net_1_1sockets.html">xtd::net::sockets</a></div><div class="ttdoc">The xtd::net::sockets namespace provides a managed implementation of the Berkeley Sockets interface f...</div><div class="ttdef"><b>Definition</b> address_family.h:17</div></div>
 <div class="ttc" id="anamespacextd_1_1net_html"><div class="ttname"><a href="namespacextd_1_1net.html">xtd::net</a></div><div class="ttdoc">The xtd::net namespace provides a simple programming interface for many of the protocols used on netw...</div><div class="ttdef"><b>Definition</b> cookie_exception.h:10</div></div>
@@ -216,7 +216,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 15 2023 23:07:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 18 2023 22:19:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -102,7 +102,9 @@ Inheritance diagram for xtd::math:</div>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This class cannot be inherited. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example uses several mathematical and trigonometric functions from the <a class="el" href="classxtd_1_1math.html" title="Provides constants and static methods for trigonometric, logarithmic, and other common mathematical f...">xtd::math</a> class to calculate the inner angles of a trapezoid. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example uses several mathematical and trigonometric functions from the <a class="el" href="classxtd_1_1math.html" title="Provides constants and static methods for trigonometric, logarithmic, and other common mathematical f...">xtd::math</a> class to calculate the inner angles of a trapezoid. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/math&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
@@ -112,66 +114,66 @@ Inheritance diagram for xtd::math:</div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    <span class="comment">// The main entry point for the application.</span></div>
 <div class="line">    <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">      math_trapezoid_sample trpz(20.0, 10.0, 8.0, 6.0);</div>
+<div class="line">      <span class="keyword">auto</span> trpz = math_trapezoid_sample {20.0, 10.0, 8.0, 6.0};</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;The trapezoid&#39;s bases are 20.0 and 10.0, the trapezoid&#39;s legs are 8.0 and 6.0&quot;</span>);</div>
-<div class="line">      <span class="keywordtype">double</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a2510c39011c5be704182423e3a695e91">h</a> = trpz.get_height();</div>
+<div class="line">      <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a2510c39011c5be704182423e3a695e91">h</a> = trpz.get_height();</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;trapezoid height is: {0}&quot;</span>, h);</div>
-<div class="line">      <span class="keywordtype">double</span> dx_r = trpz.get_left_base_radian_angle();</div>
+<div class="line">      <span class="keyword">auto</span> dx_r = trpz.get_left_base_radian_angle();</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;trapezoid left base angle is: {0} Radians&quot;</span>, dx_r);</div>
-<div class="line">      <span class="keywordtype">double</span> dy_r = trpz.get_right_base_radian_angle();</div>
+<div class="line">      <span class="keyword">auto</span> dy_r = trpz.get_right_base_radian_angle();</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;trapezoid right base angle is: {0} Radians&quot;</span>, dy_r);</div>
-<div class="line">      <span class="keywordtype">double</span> dx_d = trpz.get_left_base_degree_angle();</div>
+<div class="line">      <span class="keyword">auto</span> dx_d = trpz.get_left_base_degree_angle();</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;trapezoid left base angle is: {0} Degrees&quot;</span>, dx_d);</div>
-<div class="line">      <span class="keywordtype">double</span> dy_d = trpz.get_right_base_degree_angle();</div>
+<div class="line">      <span class="keyword">auto</span> dy_d = trpz.get_right_base_degree_angle();</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;trapezoid left base angle is: {0} Degrees&quot;</span>, dy_d);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    math_trapezoid_sample(<span class="keywordtype">double</span> long_base, <span class="keywordtype">double</span> short_base, <span class="keywordtype">double</span> left_leg, <span class="keywordtype">double</span> right_leg) {</div>
+<div class="line">    math_trapezoid_sample(<span class="keyword">auto</span> long_base, <span class="keyword">auto</span> short_base, <span class="keyword">auto</span> left_leg, <span class="keyword">auto</span> right_leg) {</div>
 <div class="line">      long_base_ = math::abs(long_base);</div>
 <div class="line">      short_base_ = math::abs(short_base);</div>
 <div class="line">      left_leg_ = math::abs(left_leg);</div>
 <div class="line">      right_leg_ = math::abs(right_leg);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">double</span> get_height() {</div>
-<div class="line">      <span class="keywordtype">double</span> x = get_right_small_base();</div>
+<div class="line">    <span class="keyword">auto</span> get_height()-&gt;double {</div>
+<div class="line">      <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a> = get_right_small_base();</div>
 <div class="line">      <span class="keywordflow">return</span> math::sqrt(math::pow(right_leg_, 2.0) - math::pow(x, 2.0));</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">double</span> get_square() {</div>
+<div class="line">    <span class="keyword">auto</span> get_square()-&gt;double {</div>
 <div class="line">      <span class="keywordflow">return</span> get_height() * long_base_ / 2.0;</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">double</span> get_left_base_radian_angle() {</div>
-<div class="line">      <span class="keywordtype">double</span> sin_x = get_height() / left_leg_;</div>
+<div class="line">    <span class="keyword">auto</span> get_left_base_radian_angle()-&gt;double {</div>
+<div class="line">      <span class="keyword">auto</span> sin_x = get_height() / left_leg_;</div>
 <div class="line">      <span class="keywordflow">return</span> math::round(math::asin(sin_x), 2);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">double</span> get_right_base_radian_angle() {</div>
-<div class="line">      <span class="keywordtype">double</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a> = get_right_small_base();</div>
-<div class="line">      <span class="keywordtype">double</span> cos_x = (math::pow(right_leg_, 2.0) + math::pow(x, 2.0) - math::pow(get_height(), 2.0)) / (2 * x * right_leg_);</div>
+<div class="line">    <span class="keyword">auto</span> get_right_base_radian_angle()-&gt;double {</div>
+<div class="line">      <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a> = get_right_small_base();</div>
+<div class="line">      <span class="keyword">auto</span> cos_x = (math::pow(right_leg_, 2.0) + math::pow(x, 2.0) - math::pow(get_height(), 2.0)) / (2 * x * right_leg_);</div>
 <div class="line">      <span class="keywordflow">return</span> math::round(math::acos(cos_x), 2);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">double</span> get_left_base_degree_angle() {</div>
-<div class="line">      <span class="keywordtype">double</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a> = math::radians_to_degrees(get_left_base_radian_angle());</div>
+<div class="line">    <span class="keyword">auto</span> get_left_base_degree_angle()-&gt;double {</div>
+<div class="line">      <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a> = math::radians_to_degrees(get_left_base_radian_angle());</div>
 <div class="line">      <span class="keywordflow">return</span> math::round(x, 2);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">double</span> get_right_base_degree_angle() {</div>
-<div class="line">      <span class="keywordtype">double</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a> = math::radians_to_degrees(get_right_base_radian_angle());</div>
+<div class="line">    <span class="keyword">auto</span> get_right_base_degree_angle()-&gt;double {</div>
+<div class="line">      <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a> = math::radians_to_degrees(get_right_base_radian_angle());</div>
 <div class="line">      <span class="keywordflow">return</span> math::round(x, 2);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
-<div class="line">    <span class="keywordtype">double</span> long_base_;</div>
-<div class="line">    <span class="keywordtype">double</span> short_base_;</div>
-<div class="line">    <span class="keywordtype">double</span> left_leg_;</div>
-<div class="line">    <span class="keywordtype">double</span> right_leg_;</div>
-<div class="line">    </div>
-<div class="line">    <span class="keywordtype">double</span> get_right_small_base() {</div>
+<div class="line">    <span class="keyword">auto</span> get_right_small_base()-&gt;double {</div>
 <div class="line">      <span class="keywordflow">return</span> (math::pow(right_leg_, 2.0) - math::pow(left_leg_, 2.0) + math::pow(long_base_, 2.0) + math::pow(short_base_, 2.0) - 2 * short_base_ * long_base_) / (2 * (long_base_ - short_base_));</div>
 <div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">double</span> long_base_ = .0;</div>
+<div class="line">    <span class="keywordtype">double</span> short_base_ = .0;</div>
+<div class="line">    <span class="keywordtype">double</span> left_leg_ = .0;</div>
+<div class="line">    <span class="keywordtype">double</span> right_leg_ = .0;</div>
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -4921,7 +4923,7 @@ max if max &lt; value. </dd></dl>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 15 2023 23:07:42 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 18 2023 22:19:50 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

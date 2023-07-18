@@ -83,9 +83,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Shows how to use xtd::static class.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/static&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>static_object2_example {</div>
@@ -97,9 +97,9 @@ $(function() {
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
 <div class="line">  <span class="comment">// uncomment next line cause build error with call implicitly-deleted default constructor.</span></div>
-<div class="line">  <span class="comment">//static_object2_example::program program;</span></div>
+<div class="line">  <span class="comment">//auto program = static_object2_example::program {};</span></div>
 <div class="line">  </div>
-<div class="line">  cout &lt;&lt; static_object2_example::program::to_string() &lt;&lt; endl;</div>
+<div class="line">  console::write_line(static_object2_example::program::to_string());</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output:</span></div>
@@ -112,7 +112,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 15 2023 23:07:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 18 2023 22:19:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

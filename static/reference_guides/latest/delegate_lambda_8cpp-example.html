@@ -91,9 +91,9 @@ $(function() {
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
 <div class="line">  <span class="comment">// use delegate as std::function</span></div>
-<div class="line">  delegate&lt;void(<span class="keyword">const</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>&amp; str)&gt; writer([](<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> &amp; str)  {</div>
-<div class="line">    console::out &lt;&lt; str &lt;&lt; environment::new_line();</div>
-<div class="line">  });</div>
+<div class="line">  <span class="keyword">auto</span> writer = delegate&lt;void(<span class="keyword">const</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>&amp; str)&gt; {[](<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> &amp; str)  {</div>
+<div class="line">    console::out &lt;&lt; str &lt;&lt; environment::new_line;</div>
+<div class="line">  }};</div>
 <div class="line">  </div>
 <div class="line">  writer(<span class="stringliteral">&quot;Value to write&quot;</span>);</div>
 <div class="line">}</div>
@@ -107,7 +107,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 15 2023 23:07:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 18 2023 22:19:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

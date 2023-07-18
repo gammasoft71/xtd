@@ -94,17 +94,17 @@ $(function() {
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">    <span class="comment">// Instead of using the implicit, default &quot;G&quot; date and time format string, we</span></div>
 <div class="line">    <span class="comment">// use a custom format string that aligns the results and inserts leading zeroes.</span></div>
-<div class="line">    <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> format = <span class="stringliteral">&quot;{0}) The {1} date and time is {2:k}/{2:i}/{2:L} {2:t}&quot;</span>;</div>
+<div class="line">    <span class="keyword">auto</span> format = <span class="stringliteral">&quot;{0}) The {1} date and time is {2:k}/{2:i}/{2:L} {2:t}&quot;</span>;</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Create a DateTime for the maximum date and time using ticks.</span></div>
-<div class="line">    <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a> dt1(date_time::max_value.<a class="code hl_typedef" href="group__types.html#gaf6b556b49d28b448fc2c5af1d820f3ea">ticks</a>());</div>
+<div class="line">    <span class="keyword">auto</span> dt1 = <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a> {date_time::max_value.<a id="a1" name="a1"></a><a class="code hl_function" href="classxtd_1_1date__time.html#ae8ee2b1e004ff0ee7934e1a94ea44f91">ticks</a>()};</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Create a DateTime for the minimum date and time using ticks.</span></div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a> dt2(date_time::min_value.<a class="code hl_typedef" href="group__types.html#gaf6b556b49d28b448fc2c5af1d820f3ea">ticks</a>());</div>
+<div class="line">    <span class="keyword">auto</span> dt2 = <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a> {date_time::min_value.<a class="code hl_function" href="classxtd_1_1date__time.html#ae8ee2b1e004ff0ee7934e1a94ea44f91">ticks</a>()};</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Create a custom DateTime for 1/5/1971 at 21:10:30 using ticks</span></div>
-<div class="line">    <a class="code hl_typedef" href="group__types.html#gaf6b556b49d28b448fc2c5af1d820f3ea">xtd::ticks</a> <a class="code hl_typedef" href="group__types.html#gaf6b556b49d28b448fc2c5af1d820f3ea">ticks</a> = <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a>(1971, 1, 5, 21, 10, 30).<a id="a2" name="a2"></a><a class="code hl_function" href="classxtd_1_1date__time.html#ae8ee2b1e004ff0ee7934e1a94ea44f91">ticks</a>();</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a> dt3(<a class="code hl_typedef" href="group__types.html#gaf6b556b49d28b448fc2c5af1d820f3ea">ticks</a>);</div>
+<div class="line">    <span class="keyword">auto</span> <a class="code hl_typedef" href="group__types.html#gaf6b556b49d28b448fc2c5af1d820f3ea">ticks</a> = <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a> {1971, 1, 5, 21, 10, 30}.<a class="code hl_function" href="classxtd_1_1date__time.html#ae8ee2b1e004ff0ee7934e1a94ea44f91">ticks</a>();</div>
+<div class="line">    <span class="keyword">auto</span> dt3 = <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a> {<a class="code hl_typedef" href="group__types.html#gaf6b556b49d28b448fc2c5af1d820f3ea">ticks</a>};</div>
 <div class="line">    </div>
 <div class="line">    console::write_line(format, 1, <span class="stringliteral">&quot;maximum&quot;</span>, dt1);</div>
 <div class="line">    console::write_line(format, 2, <span class="stringliteral">&quot;minimum&quot;</span>, dt2);</div>
@@ -113,7 +113,7 @@ $(function() {
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a id="a3" name="a3"></a><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(program);</div>
+<div class="line"><a id="a2" name="a2"></a><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(program);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code can produces the following output:</span></div>
 <div class="line"><span class="comment">//</span></div>
@@ -124,7 +124,6 @@ $(function() {
 <div class="line"><span class="comment">// The custom date and time is created from 621675546300000000 ticks.</span></div>
 <div class="ttc" id="aclassxtd_1_1date__time_html"><div class="ttname"><a href="classxtd_1_1date__time.html">xtd::date_time</a></div><div class="ttdoc">Represents an instant in time, typically expressed as a date and time of day.</div><div class="ttdef"><b>Definition</b> date_time.h:78</div></div>
 <div class="ttc" id="aclassxtd_1_1date__time_html_ae8ee2b1e004ff0ee7934e1a94ea44f91"><div class="ttname"><a href="classxtd_1_1date__time.html#ae8ee2b1e004ff0ee7934e1a94ea44f91">xtd::date_time::ticks</a></div><div class="ttdeci">xtd::ticks ticks() const noexcept</div><div class="ttdoc">Gets the number of ticks that represent the date and time of this instance.</div></div>
-<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:48</div></div>
 <div class="ttc" id="agroup__keywords_html_gac9b8e6f22fb2fdc1bb915ee01aef848c"><div class="ttname"><a href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a></div><div class="ttdeci">#define startup_(main_class)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:57</div></div>
 <div class="ttc" id="agroup__types_html_gaf6b556b49d28b448fc2c5af1d820f3ea"><div class="ttname"><a href="group__types.html#gaf6b556b49d28b448fc2c5af1d820f3ea">xtd::ticks</a></div><div class="ttdeci">std::chrono::duration&lt; int64, tick &gt; ticks</div><div class="ttdoc">Represents a tick duration.</div><div class="ttdef"><b>Definition</b> ticks.h:22</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
@@ -132,7 +131,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 15 2023 23:07:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 18 2023 22:19:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

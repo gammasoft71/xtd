@@ -83,7 +83,8 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Shows how to use xtd::startup class.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -91,20 +92,20 @@ $(function() {
 <div class="line"><span class="keyword">namespace </span>main_example {</div>
 <div class="line">  <span class="keyword">class </span>program {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
-<div class="line">    <span class="keyword">static</span> <span class="keyword">auto</span> main(<span class="keyword">const</span> vector&lt;ustring&gt;&amp; args) {</div>
-<div class="line">      <span class="keywordtype">int</span> number;</div>
+<div class="line">    <span class="keyword">static</span> <span class="keyword">auto</span> main(<span class="keyword">auto</span> args) {</div>
+<div class="line">      <span class="keyword">auto</span> number = 0;</div>
 <div class="line">      <span class="keywordflow">if</span> (args.size() != 1 || try_parse(args[0], number) == <span class="keyword">false</span> || number &lt; 0 || number &gt; 20) {</div>
-<div class="line">        cout &lt;&lt; <span class="stringliteral">&quot;Please enter an integer argument betwween 0 and 20.&quot;</span> &lt;&lt; endl;</div>
-<div class="line">        cout &lt;&lt; <span class="stringliteral">&quot;Usage: factorial &lt;integer&gt;&quot;</span> &lt;&lt; endl;</div>
+<div class="line">        console::write_line(<span class="stringliteral">&quot;Please enter an integer argument betwween 0 and 20.&quot;</span>);</div>
+<div class="line">        console::write_line(<span class="stringliteral">&quot;Usage: factorial &lt;integer&gt;&quot;</span>);</div>
 <div class="line">        <span class="keywordflow">return</span> -1;</div>
 <div class="line">      }</div>
 <div class="line">      </div>
-<div class="line">      cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;The factorial of {0} is {1}&quot;</span>, number, [&amp;] {</div>
-<div class="line">        <span class="keywordtype">long</span> <span class="keywordtype">long</span> result = 1;</div>
-<div class="line">        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt;= number; ++i)</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;The factorial of {} is {}&quot;</span>, number, [&amp;] {</div>
+<div class="line">        <span class="keyword">auto</span> result = 1l;</div>
+<div class="line">        <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 1; i &lt;= number; ++i)</div>
 <div class="line">          result *= i;</div>
 <div class="line">        <span class="keywordflow">return</span> result;</div>
-<div class="line">      }()) &lt;&lt; endl;</div>
+<div class="line">      }());</div>
 <div class="line">      <span class="keywordflow">return</span> 0;</div>
 <div class="line">    }</div>
 <div class="line">  };</div>
@@ -121,7 +122,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 15 2023 23:07:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 18 2023 22:19:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

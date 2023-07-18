@@ -83,33 +83,33 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Shows how to use format <a class="el" href="group__xtd__core.html#ga46dbfc56869f6f4ce73f65568c49429c" title="Convert a string into a type.">xtd::parse&lt;bool&gt;</a> method with boolean values.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/parse&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
-<div class="line">  <span class="keywordtype">bool</span> b1 = <a id="a0" name="a0"></a><a class="code hl_function" href="group__xtd__core.html#ga46dbfc56869f6f4ce73f65568c49429c">xtd::parse&lt;bool&gt;</a>(<span class="stringliteral">&quot;true&quot;</span>);</div>
+<div class="line">  <span class="keyword">auto</span> b1 = <a id="a0" name="a0"></a><a class="code hl_function" href="group__xtd__core.html#ga46dbfc56869f6f4ce73f65568c49429c">xtd::parse&lt;bool&gt;</a>(<span class="stringliteral">&quot;true&quot;</span>);</div>
 <div class="line">  console::write_line(b1);</div>
-<div class="line">  <span class="keywordtype">bool</span> b2 = <a class="code hl_function" href="group__xtd__core.html#ga46dbfc56869f6f4ce73f65568c49429c">xtd::parse&lt;bool&gt;</a>(<span class="stringliteral">&quot;false&quot;</span>);</div>
+<div class="line">  <span class="keyword">auto</span> b2 = <a class="code hl_function" href="group__xtd__core.html#ga46dbfc56869f6f4ce73f65568c49429c">xtd::parse&lt;bool&gt;</a>(<span class="stringliteral">&quot;false&quot;</span>);</div>
 <div class="line">  console::write_line(b2);</div>
-<div class="line">  <span class="keywordtype">bool</span> b3 = <a class="code hl_function" href="group__xtd__core.html#ga46dbfc56869f6f4ce73f65568c49429c">xtd::parse&lt;bool&gt;</a>(<span class="stringliteral">&quot;TRUE&quot;</span>);</div>
+<div class="line">  <span class="keyword">auto</span> b3 = <a class="code hl_function" href="group__xtd__core.html#ga46dbfc56869f6f4ce73f65568c49429c">xtd::parse&lt;bool&gt;</a>(<span class="stringliteral">&quot;TRUE&quot;</span>);</div>
 <div class="line">  console::write_line(b3);</div>
-<div class="line">  <span class="keywordtype">bool</span> b4 = <a class="code hl_function" href="group__xtd__core.html#ga46dbfc56869f6f4ce73f65568c49429c">xtd::parse&lt;bool&gt;</a>(<span class="stringliteral">&quot;FALSE&quot;</span>);</div>
+<div class="line">  <span class="keyword">auto</span> b4 = <a class="code hl_function" href="group__xtd__core.html#ga46dbfc56869f6f4ce73f65568c49429c">xtd::parse&lt;bool&gt;</a>(<span class="stringliteral">&quot;FALSE&quot;</span>);</div>
 <div class="line">  console::write_line(b4);</div>
-<div class="line">  <span class="keywordtype">bool</span> b5 = <a class="code hl_function" href="group__xtd__core.html#ga46dbfc56869f6f4ce73f65568c49429c">xtd::parse&lt;bool&gt;</a>(<span class="stringliteral">&quot;1&quot;</span>);</div>
+<div class="line">  <span class="keyword">auto</span> b5 = <a class="code hl_function" href="group__xtd__core.html#ga46dbfc56869f6f4ce73f65568c49429c">xtd::parse&lt;bool&gt;</a>(<span class="stringliteral">&quot;1&quot;</span>);</div>
 <div class="line">  console::write_line(b5);</div>
-<div class="line">  <span class="keywordtype">bool</span> b6 = <a class="code hl_function" href="group__xtd__core.html#ga46dbfc56869f6f4ce73f65568c49429c">xtd::parse&lt;bool&gt;</a>(<span class="stringliteral">&quot;0&quot;</span>);</div>
+<div class="line">  <span class="keyword">auto</span> b6 = <a class="code hl_function" href="group__xtd__core.html#ga46dbfc56869f6f4ce73f65568c49429c">xtd::parse&lt;bool&gt;</a>(<span class="stringliteral">&quot;0&quot;</span>);</div>
 <div class="line">  console::write_line(b6);</div>
-<div class="line">  <span class="keywordtype">bool</span> b7 = <a class="code hl_function" href="group__xtd__core.html#ga46dbfc56869f6f4ce73f65568c49429c">xtd::parse&lt;bool&gt;</a>(<span class="stringliteral">&quot;  TrUe   &quot;</span>);</div>
+<div class="line">  <span class="keyword">auto</span> b7 = <a class="code hl_function" href="group__xtd__core.html#ga46dbfc56869f6f4ce73f65568c49429c">xtd::parse&lt;bool&gt;</a>(<span class="stringliteral">&quot;  TrUe   &quot;</span>);</div>
 <div class="line">  console::write_line(b7);</div>
-<div class="line">  <span class="keywordtype">bool</span> b8 = <a class="code hl_function" href="group__xtd__core.html#ga46dbfc56869f6f4ce73f65568c49429c">xtd::parse&lt;bool&gt;</a>(<span class="stringliteral">&quot;   fAlSe  &quot;</span>);</div>
+<div class="line">  <span class="keyword">auto</span> b8 = <a class="code hl_function" href="group__xtd__core.html#ga46dbfc56869f6f4ce73f65568c49429c">xtd::parse&lt;bool&gt;</a>(<span class="stringliteral">&quot;   fAlSe  &quot;</span>);</div>
 <div class="line">  console::write_line(b8);</div>
 <div class="line">  <span class="keywordflow">try</span> {</div>
-<div class="line">    <span class="keywordtype">bool</span> b9 = <a class="code hl_function" href="group__xtd__core.html#ga46dbfc56869f6f4ce73f65568c49429c">xtd::parse&lt;bool&gt;</a>(<span class="stringliteral">&quot;None&quot;</span>);</div>
+<div class="line">    <span class="keyword">auto</span> b9 = <a class="code hl_function" href="group__xtd__core.html#ga46dbfc56869f6f4ce73f65568c49429c">xtd::parse&lt;bool&gt;</a>(<span class="stringliteral">&quot;None&quot;</span>);</div>
 <div class="line">    console::write_line(b9);</div>
-<div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> exception&amp; e) {</div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;Exception : {}&quot;</span>, e.what());</div>
+<div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1system__exception.html">system_exception</a>&amp; e) {</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;Exception : {}&quot;</span>, e.message());</div>
 <div class="line">  }</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -124,13 +124,14 @@ $(function() {
 <div class="line"><span class="comment">// true</span></div>
 <div class="line"><span class="comment">// false</span></div>
 <div class="line"><span class="comment">// Exception : Invalid string format</span></div>
+<div class="ttc" id="aclassxtd_1_1system__exception_html"><div class="ttname"><a href="classxtd_1_1system__exception.html">xtd::system_exception</a></div><div class="ttdoc">Defines the base class for predefined exceptions in the xtd namespace.</div><div class="ttdef"><b>Definition</b> system_exception.h:24</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga46dbfc56869f6f4ce73f65568c49429c"><div class="ttname"><a href="group__xtd__core.html#ga46dbfc56869f6f4ce73f65568c49429c">xtd::parse&lt; bool &gt;</a></div><div class="ttdeci">bool parse&lt; bool &gt;(const std::string &amp;str)</div><div class="ttdoc">Convert a string into a type.</div><div class="ttdef"><b>Definition</b> parse.h:360</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 15 2023 23:07:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 18 2023 22:19:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

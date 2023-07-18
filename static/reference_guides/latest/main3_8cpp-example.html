@@ -83,7 +83,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Shows how to use xtd::startup class.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/environment&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -91,9 +93,9 @@ $(function() {
 <div class="line"><span class="keyword">namespace </span>main3_example {</div>
 <div class="line">  <span class="keyword">class </span>program {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
-<div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> main(<span class="keyword">const</span> vector&lt;ustring&gt;&amp; args) {</div>
+<div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> main(<span class="keyword">auto</span> args) {</div>
 <div class="line">      <span class="comment">// Write arguments to the console output</span></div>
-<div class="line">      <span class="keywordflow">for</span> (<a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> arg : args)</div>
+<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> arg : args)</div>
 <div class="line">        console::write_line(arg);</div>
 <div class="line">        </div>
 <div class="line">      <span class="comment">// return 42</span></div>
@@ -102,7 +104,7 @@ $(function() {
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><a id="a1" name="a1"></a><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(main3_example::program);</div>
+<div class="line"><a id="a0" name="a0"></a><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(main3_example::program);</div>
 <div class="line"><span class="comment">// startup_(main3_example::program); is same as :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// auto main(int argc, char* argv[])-&gt;int {</span></div>
@@ -117,14 +119,13 @@ $(function() {
 <div class="line"><span class="comment">// two</span></div>
 <div class="line"><span class="comment">// three four</span></div>
 <div class="line"><span class="comment">// five</span></div>
-<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:48</div></div>
 <div class="ttc" id="agroup__keywords_html_gac9b8e6f22fb2fdc1bb915ee01aef848c"><div class="ttname"><a href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a></div><div class="ttdeci">#define startup_(main_class)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:57</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 15 2023 23:07:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 18 2023 22:19:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

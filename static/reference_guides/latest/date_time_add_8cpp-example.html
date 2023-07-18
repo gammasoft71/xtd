@@ -92,30 +92,28 @@ $(function() {
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">    <span class="comment">// Calculate what day of the week is 36 days from this instant.</span></div>
-<div class="line">    <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1date__time.html">xtd::date_time</a> today = <a id="a1" name="a1"></a><a class="code hl_function" href="classxtd_1_1date__time.html#ad94505e74efe9f353836901eda9230ed">xtd::date_time::now</a>();</div>
-<div class="line">    std::chrono::days duration(36);</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1date__time.html">xtd::date_time</a> answer = today.<a id="a2" name="a2"></a><a class="code hl_function" href="classxtd_1_1date__time.html#a383491b411dbc746d01caedb353882a4">add</a>(duration);</div>
-<div class="line">    <a id="a3" name="a3"></a><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;{0}&quot;</span>, today);</div>
+<div class="line">    <span class="keyword">auto</span> today = <a id="a0" name="a0"></a><a class="code hl_function" href="classxtd_1_1date__time.html#ad94505e74efe9f353836901eda9230ed">xtd::date_time::now</a>();</div>
+<div class="line">    <span class="keyword">auto</span> duration = std::chrono::days {36};</div>
+<div class="line">    <span class="keyword">auto</span> answer = today.add(duration);</div>
+<div class="line">    <a id="a1" name="a1"></a><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;{0}&quot;</span>, today);</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;{0}&quot;</span>, answer);</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a id="a4" name="a4"></a><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(program);</div>
+<div class="line"><a id="a2" name="a2"></a><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(program);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code can produces the following output:</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// Wed Jan 12 14:06:34 2022</span></div>
 <div class="line"><span class="comment">// Thu Feb 17 14:06:34 2022</span></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="aclassxtd_1_1date__time_html"><div class="ttname"><a href="classxtd_1_1date__time.html">xtd::date_time</a></div><div class="ttdoc">Represents an instant in time, typically expressed as a date and time of day.</div><div class="ttdef"><b>Definition</b> date_time.h:78</div></div>
-<div class="ttc" id="aclassxtd_1_1date__time_html_a383491b411dbc746d01caedb353882a4"><div class="ttname"><a href="classxtd_1_1date__time.html#a383491b411dbc746d01caedb353882a4">xtd::date_time::add</a></div><div class="ttdeci">date_time add(std::chrono::duration&lt; rep_t, period_t &gt; value) const</div><div class="ttdoc">Returns a new xtd::date_time that adds the value of the specified std::chrono::duration to the value ...</div><div class="ttdef"><b>Definition</b> date_time.h:520</div></div>
 <div class="ttc" id="aclassxtd_1_1date__time_html_ad94505e74efe9f353836901eda9230ed"><div class="ttname"><a href="classxtd_1_1date__time.html#ad94505e74efe9f353836901eda9230ed">xtd::date_time::now</a></div><div class="ttdeci">static date_time now() noexcept</div><div class="ttdoc">Gets a xtd::date_time object that is set to the current date and time on this computer,...</div></div>
 <div class="ttc" id="agroup__keywords_html_gac9b8e6f22fb2fdc1bb915ee01aef848c"><div class="ttname"><a href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a></div><div class="ttdeci">#define startup_(main_class)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:57</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 15 2023 23:07:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 18 2023 22:19:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

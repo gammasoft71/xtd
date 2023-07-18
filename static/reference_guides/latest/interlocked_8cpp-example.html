@@ -83,12 +83,15 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Shows how to use <a class="el" href="classxtd_1_1threading_1_1interlocked.html" title="Provides atomic operations for variables that are shared by multiple threads.">xtd::threading::interlocked</a> class.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/threading/interlocked&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/random&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;thread&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span>std::chrono;</div>
+<div class="line"><span class="keyword">using namespace </span>std::this_thread;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1threading.html">xtd::threading</a>;</div>
 <div class="line"> </div>
@@ -97,68 +100,67 @@ $(function() {
 <div class="line">    std::thread thread;</div>
 <div class="line">    <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> name;</div>
 <div class="line">  };</div>
+<div class="line">  </div>
 <div class="line">  <span class="keyword">class </span>my_interlocked_exchange_class {</div>
 <div class="line">  <span class="keyword">private</span>:</div>
 <div class="line">    <span class="comment">//0 for False, 1 for True.</span></div>
 <div class="line">    <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keywordtype">int</span> using_resource = 0;</div>
 <div class="line">    </div>
-<div class="line">    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> num_thread_iterations = 5;</div>
-<div class="line">    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> num_threads = 10;</div>
+<div class="line">    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> num_thread_iterations = 5;</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    <span class="comment">// The main entry point for the application.</span></div>
 <div class="line">    <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">      vector&lt;my_thread&gt; my_threads(num_threads);</div>
-<div class="line">      <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1random.html">xtd::random</a> rnd;</div>
+<div class="line">      <span class="keyword">auto</span> my_threads = array&lt;my_thread, 10&gt; {};</div>
+<div class="line">      <span class="keyword">auto</span> rnd = <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1random.html">xtd::random</a> {};</div>
 <div class="line">      </div>
-<div class="line">      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_threads; ++i) {</div>
-<div class="line">        my_threads[i].name = ustring::format(<span class="stringliteral">&quot;Thread{0}&quot;</span>, i + 1);</div>
+<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> index = 0ul; index &lt; my_threads.size(); ++index) {</div>
+<div class="line">        my_threads[index].name = ustring::format(<span class="stringliteral">&quot;Thread{}&quot;</span>, index + 1);</div>
 <div class="line">        </div>
 <div class="line">        <span class="comment">//Wait a random amount of time before starting next thread.</span></div>
-<div class="line">        this_thread::sleep_for(milliseconds(rnd.<a id="a2" name="a2"></a><a class="code hl_function" href="classxtd_1_1random.html#a629a30d5ddd8035f45afe7d982fda712">next</a>(0, 1000)));</div>
-<div class="line">        my_threads[i].thread = thread(my_thread_proc, my_threads[i].name);</div>
+<div class="line">        sleep_for(milliseconds(rnd.next(0, 1000)));</div>
+<div class="line">        my_threads[index].thread = thread {my_thread_proc, my_threads[index].name};</div>
 <div class="line">      }</div>
 <div class="line">      </div>
-<div class="line">      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_threads; ++i)</div>
-<div class="line">        my_threads[i].thread.join();</div>
+<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> index = 0ul; index &lt; my_threads.size(); ++index)</div>
+<div class="line">        my_threads[index].thread.join();</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> my_thread_proc(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>&amp; name) {</div>
-<div class="line">      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_thread_iterations; i++) {</div>
+<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> index = 0; index &lt; num_thread_iterations; ++index) {</div>
 <div class="line">        use_resource(name);</div>
 <div class="line">        </div>
 <div class="line">        <span class="comment">//Wait 1 second before next attempt.</span></div>
-<div class="line">        this_thread::sleep_for(milliseconds(1000));</div>
+<div class="line">        sleep_for(milliseconds(1000));</div>
 <div class="line">      }</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">//A simple method that denies reentrancy.</span></div>
-<div class="line">    <span class="keyword">static</span> <span class="keywordtype">bool</span> use_resource(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>&amp; name) {</div>
+<div class="line">    <span class="keyword">static</span> <span class="keyword">auto</span> use_resource(<span class="keyword">auto</span> name)-&gt;bool {</div>
 <div class="line">      <span class="comment">//0 indicates that the method is not in use.</span></div>
 <div class="line">      <span class="keywordflow">if</span> (0 == interlocked::exchange(using_resource, 1)) {</div>
-<div class="line">        console::write_line(<span class="stringliteral">&quot;{0} acquired the lock&quot;</span>, name);</div>
+<div class="line">        console::write_line(<span class="stringliteral">&quot;{} acquired the lock&quot;</span>, name);</div>
 <div class="line">        </div>
 <div class="line">        <span class="comment">//Code to access a resource that is not thread safe would go here.</span></div>
 <div class="line">        </div>
 <div class="line">        <span class="comment">//Simulate some work</span></div>
-<div class="line">        this_thread::sleep_for(milliseconds(500));</div>
+<div class="line">        sleep_for(milliseconds(500));</div>
 <div class="line">        </div>
-<div class="line">        console::write_line(<span class="stringliteral">&quot;{0} exiting lock&quot;</span>, name);</div>
+<div class="line">        console::write_line(<span class="stringliteral">&quot;{} exiting lock&quot;</span>, name);</div>
 <div class="line">        </div>
 <div class="line">        <span class="comment">//Release the lock</span></div>
 <div class="line">        interlocked::exchange(using_resource, 0);</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line">      } <span class="keywordflow">else</span> {</div>
-<div class="line">        console::write_line(<span class="stringliteral">&quot;   {0} was denied the lock&quot;</span>, name);</div>
+<div class="line">        console::write_line(<span class="stringliteral">&quot;   {} was denied the lock&quot;</span>, name);</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">      }</div>
 <div class="line">    }</div>
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><a id="a3" name="a3"></a><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(interlocked_example::my_interlocked_exchange_class);</div>
+<div class="line"><a id="a2" name="a2"></a><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(interlocked_example::my_interlocked_exchange_class);</div>
 <div class="ttc" id="aclassxtd_1_1random_html"><div class="ttname"><a href="classxtd_1_1random.html">xtd::random</a></div><div class="ttdoc">Represents a pseudo-random number generator, a device that produces a sequence of numbers that meet c...</div><div class="ttdef"><b>Definition</b> random.h:37</div></div>
-<div class="ttc" id="aclassxtd_1_1random_html_a629a30d5ddd8035f45afe7d982fda712"><div class="ttname"><a href="classxtd_1_1random.html#a629a30d5ddd8035f45afe7d982fda712">xtd::random::next</a></div><div class="ttdeci">virtual int32 next() const</div><div class="ttdoc">Returns a nonnegative random number.</div></div>
 <div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:48</div></div>
 <div class="ttc" id="agroup__keywords_html_gac9b8e6f22fb2fdc1bb915ee01aef848c"><div class="ttname"><a href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a></div><div class="ttdeci">#define startup_(main_class)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:57</div></div>
 <div class="ttc" id="anamespacextd_1_1threading_html"><div class="ttname"><a href="namespacextd_1_1threading.html">xtd::threading</a></div><div class="ttdoc">The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....</div><div class="ttdef"><b>Definition</b> interlocked.h:18</div></div>
@@ -167,7 +169,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 15 2023 23:07:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 18 2023 22:19:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

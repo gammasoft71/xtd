@@ -108,7 +108,9 @@ Inheritance diagram for xtd::io::drive_info:</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1io.html" title="The xtd::io namespace contains types that allow reading and writing to files and data streams,...">xtd::io</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of the <a class="el" href="classxtd_1_1io_1_1drive__info.html" title="Provides access to information on a drive.">xtd::io::drive_info</a> class to display information about all of the drives on the current system. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of the <a class="el" href="classxtd_1_1io_1_1drive__info.html" title="Provides access to information on a drive.">xtd::io::drive_info</a> class to display information about all of the drives on the current system. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/io/drive_info&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -117,9 +119,9 @@ Inheritance diagram for xtd::io::drive_info:</div>
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">    vector&lt;drive_info&gt; all_drives = drive_info::get_drives();</div>
+<div class="line">    <span class="keyword">auto</span> all_drives = drive_info::get_drives();</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordflow">for</span> (<a class="code hl_class" href="classxtd_1_1io_1_1drive__info.html">drive_info</a> d : all_drives) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> d : all_drives) {</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;Drive {0}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a>.name());</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;  Drive type: {0}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a>.drive_type());</div>
 <div class="line">      <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a>.is_ready() == <span class="keyword">true</span>) {</div>
@@ -164,8 +166,6 @@ Inheritance diagram for xtd::io::drive_info:</div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This class models a drive and provides methods and properties to query for drive information. Use <a class="el" href="classxtd_1_1io_1_1drive__info.html" title="Provides access to information on a drive.">xtd::io::drive_info</a> to determine what drives are available, and what type of drives they are. You can also query to determine the capacity and available free space on the drive. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="drive_info_8cpp-example.html#_a0">drive_info.cpp</a>.</dd>
-</dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Constructors</h2></td></tr>
 <tr class="memitem:ad540d433d41acbe61382b867a90c0ea7"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classxtd_1_1io_1_1drive__info.html">drive_info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1drive__info.html#ad540d433d41acbe61382b867a90c0ea7">empty</a></td></tr>
@@ -307,7 +307,9 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of the <a class="el" href="classxtd_1_1io_1_1drive__info.html" title="Provides access to information on a drive.">xtd::io::drive_info</a> class to display information about all of the drives on the current system. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of the <a class="el" href="classxtd_1_1io_1_1drive__info.html" title="Provides access to information on a drive.">xtd::io::drive_info</a> class to display information about all of the drives on the current system. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/io/drive_info&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -316,9 +318,9 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">    vector&lt;drive_info&gt; all_drives = drive_info::get_drives();</div>
+<div class="line">    <span class="keyword">auto</span> all_drives = drive_info::get_drives();</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordflow">for</span> (<a class="code hl_class" href="classxtd_1_1io_1_1drive__info.html">drive_info</a> d : all_drives) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> d : all_drives) {</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;Drive {0}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a>.name());</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;  Drive type: {0}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a>.drive_type());</div>
 <div class="line">      <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a>.is_ready() == <span class="keyword">true</span>) {</div>
@@ -387,7 +389,9 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of the <a class="el" href="classxtd_1_1io_1_1drive__info.html" title="Provides access to information on a drive.">xtd::io::drive_info</a> class to display information about all of the drives on the current system. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of the <a class="el" href="classxtd_1_1io_1_1drive__info.html" title="Provides access to information on a drive.">xtd::io::drive_info</a> class to display information about all of the drives on the current system. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/io/drive_info&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -396,9 +400,9 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">    vector&lt;drive_info&gt; all_drives = drive_info::get_drives();</div>
+<div class="line">    <span class="keyword">auto</span> all_drives = drive_info::get_drives();</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordflow">for</span> (<a class="code hl_class" href="classxtd_1_1io_1_1drive__info.html">drive_info</a> d : all_drives) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> d : all_drives) {</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;Drive {0}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a>.name());</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;  Drive type: {0}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a>.drive_type());</div>
 <div class="line">      <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a>.is_ready() == <span class="keyword">true</span>) {</div>
@@ -459,7 +463,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Gets the drive type, such as CD-ROM, removable, network, or fixed. </p>
 <dl class="section return"><dt>Returns</dt><dd>One of the enumeration values that specifies a drive type. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of the <a class="el" href="classxtd_1_1io_1_1drive__info.html" title="Provides access to information on a drive.">xtd::io::drive_info</a> class to display information about all of the drives on the current system. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of the <a class="el" href="classxtd_1_1io_1_1drive__info.html" title="Provides access to information on a drive.">xtd::io::drive_info</a> class to display information about all of the drives on the current system. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/io/drive_info&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -468,9 +474,9 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">    vector&lt;drive_info&gt; all_drives = drive_info::get_drives();</div>
+<div class="line">    <span class="keyword">auto</span> all_drives = drive_info::get_drives();</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordflow">for</span> (<a class="code hl_class" href="classxtd_1_1io_1_1drive__info.html">drive_info</a> d : all_drives) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> d : all_drives) {</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;Drive {0}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a>.name());</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;  Drive type: {0}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a>.drive_type());</div>
 <div class="line">      <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a>.is_ready() == <span class="keyword">true</span>) {</div>
@@ -546,7 +552,9 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of the <a class="el" href="classxtd_1_1io_1_1drive__info.html" title="Provides access to information on a drive.">xtd::io::drive_info</a> class to display information about all of the drives on the current system. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of the <a class="el" href="classxtd_1_1io_1_1drive__info.html" title="Provides access to information on a drive.">xtd::io::drive_info</a> class to display information about all of the drives on the current system. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/io/drive_info&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -555,9 +563,9 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">    vector&lt;drive_info&gt; all_drives = drive_info::get_drives();</div>
+<div class="line">    <span class="keyword">auto</span> all_drives = drive_info::get_drives();</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordflow">for</span> (<a class="code hl_class" href="classxtd_1_1io_1_1drive__info.html">drive_info</a> d : all_drives) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> d : all_drives) {</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;Drive {0}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a>.name());</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;  Drive type: {0}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a>.drive_type());</div>
 <div class="line">      <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a>.is_ready() == <span class="keyword">true</span>) {</div>
@@ -626,7 +634,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Gets a value that indicates whether a drive is ready. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if the drive is ready; false if the drive is not ready. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of the <a class="el" href="classxtd_1_1io_1_1drive__info.html" title="Provides access to information on a drive.">xtd::io::drive_info</a> class to display information about all of the drives on the current system. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of the <a class="el" href="classxtd_1_1io_1_1drive__info.html" title="Provides access to information on a drive.">xtd::io::drive_info</a> class to display information about all of the drives on the current system. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/io/drive_info&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -635,9 +645,9 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">    vector&lt;drive_info&gt; all_drives = drive_info::get_drives();</div>
+<div class="line">    <span class="keyword">auto</span> all_drives = drive_info::get_drives();</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordflow">for</span> (<a class="code hl_class" href="classxtd_1_1io_1_1drive__info.html">drive_info</a> d : all_drives) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> d : all_drives) {</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;Drive {0}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a>.name());</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;  Drive type: {0}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a>.drive_type());</div>
 <div class="line">      <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a>.is_ready() == <span class="keyword">true</span>) {</div>
@@ -708,7 +718,9 @@ Do not rely on <a class="el" href="classxtd_1_1io_1_1drive__info.html#a8cab39eb6
 
 <p>Gets the name of a drive, such as C:. </p>
 <dl class="section return"><dt>Returns</dt><dd>The name of the drive. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of the <a class="el" href="classxtd_1_1io_1_1drive__info.html" title="Provides access to information on a drive.">xtd::io::drive_info</a> class to display information about all of the drives on the current system. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of the <a class="el" href="classxtd_1_1io_1_1drive__info.html" title="Provides access to information on a drive.">xtd::io::drive_info</a> class to display information about all of the drives on the current system. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/io/drive_info&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -717,9 +729,9 @@ Do not rely on <a class="el" href="classxtd_1_1io_1_1drive__info.html#a8cab39eb6
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">    vector&lt;drive_info&gt; all_drives = drive_info::get_drives();</div>
+<div class="line">    <span class="keyword">auto</span> all_drives = drive_info::get_drives();</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordflow">for</span> (<a class="code hl_class" href="classxtd_1_1io_1_1drive__info.html">drive_info</a> d : all_drives) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> d : all_drives) {</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;Drive {0}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a>.name());</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;  Drive type: {0}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a>.drive_type());</div>
 <div class="line">      <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a>.is_ready() == <span class="keyword">true</span>) {</div>
@@ -847,7 +859,9 @@ Do not rely on <a class="el" href="classxtd_1_1io_1_1drive__info.html#a8cab39eb6
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of the <a class="el" href="classxtd_1_1io_1_1drive__info.html" title="Provides access to information on a drive.">xtd::io::drive_info</a> class to display information about all of the drives on the current system. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of the <a class="el" href="classxtd_1_1io_1_1drive__info.html" title="Provides access to information on a drive.">xtd::io::drive_info</a> class to display information about all of the drives on the current system. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/io/drive_info&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -856,9 +870,9 @@ Do not rely on <a class="el" href="classxtd_1_1io_1_1drive__info.html#a8cab39eb6
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">    vector&lt;drive_info&gt; all_drives = drive_info::get_drives();</div>
+<div class="line">    <span class="keyword">auto</span> all_drives = drive_info::get_drives();</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordflow">for</span> (<a class="code hl_class" href="classxtd_1_1io_1_1drive__info.html">drive_info</a> d : all_drives) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> d : all_drives) {</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;Drive {0}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a>.name());</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;  Drive type: {0}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a>.drive_type());</div>
 <div class="line">      <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a>.is_ready() == <span class="keyword">true</span>) {</div>
@@ -927,7 +941,9 @@ Do not rely on <a class="el" href="classxtd_1_1io_1_1drive__info.html#a8cab39eb6
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of the <a class="el" href="classxtd_1_1io_1_1drive__info.html" title="Provides access to information on a drive.">xtd::io::drive_info</a> class to display information about all of the drives on the current system. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of the <a class="el" href="classxtd_1_1io_1_1drive__info.html" title="Provides access to information on a drive.">xtd::io::drive_info</a> class to display information about all of the drives on the current system. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/io/drive_info&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -936,9 +952,9 @@ Do not rely on <a class="el" href="classxtd_1_1io_1_1drive__info.html#a8cab39eb6
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">    vector&lt;drive_info&gt; all_drives = drive_info::get_drives();</div>
+<div class="line">    <span class="keyword">auto</span> all_drives = drive_info::get_drives();</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordflow">for</span> (<a class="code hl_class" href="classxtd_1_1io_1_1drive__info.html">drive_info</a> d : all_drives) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> d : all_drives) {</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;Drive {0}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a>.name());</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;  Drive type: {0}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a>.drive_type());</div>
 <div class="line">      <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a>.is_ready() == <span class="keyword">true</span>) {</div>
@@ -1007,7 +1023,9 @@ Do not rely on <a class="el" href="classxtd_1_1io_1_1drive__info.html#a8cab39eb6
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of the <a class="el" href="classxtd_1_1io_1_1drive__info.html" title="Provides access to information on a drive.">xtd::io::drive_info</a> class to display information about all of the drives on the current system. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of the <a class="el" href="classxtd_1_1io_1_1drive__info.html" title="Provides access to information on a drive.">xtd::io::drive_info</a> class to display information about all of the drives on the current system. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/io/drive_info&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -1016,9 +1034,9 @@ Do not rely on <a class="el" href="classxtd_1_1io_1_1drive__info.html#a8cab39eb6
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">    vector&lt;drive_info&gt; all_drives = drive_info::get_drives();</div>
+<div class="line">    <span class="keyword">auto</span> all_drives = drive_info::get_drives();</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordflow">for</span> (<a class="code hl_class" href="classxtd_1_1io_1_1drive__info.html">drive_info</a> d : all_drives) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> d : all_drives) {</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;Drive {0}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a>.name());</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;  Drive type: {0}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a>.drive_type());</div>
 <div class="line">      <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a>.is_ready() == <span class="keyword">true</span>) {</div>
@@ -1094,7 +1112,7 @@ Do not rely on <a class="el" href="classxtd_1_1io_1_1drive__info.html#a8cab39eb6
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 15 2023 23:07:44 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 18 2023 22:19:54 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

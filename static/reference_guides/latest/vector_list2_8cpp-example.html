@@ -105,12 +105,12 @@ $(function() {
 <div class="line">  register_any_stringer&lt;seconds&gt;([](<span class="keyword">auto</span> value) {<span class="keywordflow">return</span> ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, value);});</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Creates and initializes a new vector_list.</span></div>
-<div class="line">  <a class="code hl_typedef" href="group__collections.html#gaf18249e78122f5f0f0f09003cf6abc5c">vector_list</a> <a class="code hl_typedef" href="group__collections.html#gaf18249e78122f5f0f0f09003cf6abc5c">vector_list</a> = {<span class="keyword">true</span>, 42, <span class="stringliteral">&quot;This is a string&quot;</span>_s, platform_id::win32s, u8<span class="stringliteral">&quot;Another string&quot;</span>_s, 4.2f, hours(2) + minutes(25) + seconds(43)};</div>
+<div class="line">  <span class="keyword">auto</span> list = <a class="code hl_typedef" href="group__collections.html#gaf18249e78122f5f0f0f09003cf6abc5c">vector_list</a> {<span class="keyword">true</span>, 42, <span class="stringliteral">&quot;This is a string&quot;</span>_s, platform_id::win32s, u8<span class="stringliteral">&quot;Another string&quot;</span>_s, 4.2f, hours(2) + minutes(25) + seconds(43)};</div>
 <div class="line">  </div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;vector_list = {{{}}}&quot;</span>, ustring::join(<span class="stringliteral">&quot;, &quot;</span>, <a class="code hl_typedef" href="group__collections.html#gaf18249e78122f5f0f0f09003cf6abc5c">vector_list</a>));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;vector_list = {{{}}}&quot;</span>, ustring::join(<span class="stringliteral">&quot;, &quot;</span>, list));</div>
 <div class="line">  console::write_line();</div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> any&amp; item : <a class="code hl_typedef" href="group__collections.html#gaf18249e78122f5f0f0f09003cf6abc5c">vector_list</a>) {</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> any&amp; item : list) {</div>
 <div class="line">    <span class="keywordflow">if</span> (is&lt;ustring&gt;(item)) console::write_line(<span class="stringliteral">&quot;{}&quot;</span>, std::quoted(as&lt;ustring&gt;(item).to_upper()));</div>
 <div class="line">    <span class="keywordflow">else</span> console::write_line(<span class="stringliteral">&quot;{}&quot;</span>, item);</div>
 <div class="line">  }</div>
@@ -133,7 +133,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 15 2023 23:07:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 18 2023 22:19:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -94,21 +94,21 @@ $(function() {
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">    <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> date_format = <span class="stringliteral">&quot;{0:d}/{0:t}.{0:c}&quot;</span>;</div>
-<div class="line">    <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a> date1(2010, 9, 8, 16, 0, 0);</div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;Original date: {0} ({1:N0} ticks)\n&quot;</span>, ustring::format(date_format, date1), date1.<a id="a2" name="a2"></a><a class="code hl_function" href="classxtd_1_1date__time.html#ae8ee2b1e004ff0ee7934e1a94ea44f91">ticks</a>().count());</div>
+<div class="line">    <span class="keyword">auto</span> date_format = <span class="stringliteral">&quot;{0:d}/{0:t}.{0:c}&quot;</span>_s;</div>
+<div class="line">    <span class="keyword">auto</span> date1 = <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a> {2010, 9, 8, 16, 0, 0};</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;Original date: {0} ({1:N0} ticks)\n&quot;</span>, ustring::format(date_format, date1), date1.ticks().count());</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a> date2 = date1.<a id="a3" name="a3"></a><a class="code hl_function" href="classxtd_1_1date__time.html#a0c0b9b22d495ed1096b74dd9c72df2e4">add_milliseconds</a>(1);</div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;Second date:   {0} ({1:N0} ticks)&quot;</span>, ustring::format(date_format, date2), date2.<a class="code hl_function" href="classxtd_1_1date__time.html#ae8ee2b1e004ff0ee7934e1a94ea44f91">ticks</a>().count());</div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;Difference between dates: {0} ({1:N0} ticks)\n&quot;</span>, date2 - date1, (date2.<a class="code hl_function" href="classxtd_1_1date__time.html#ae8ee2b1e004ff0ee7934e1a94ea44f91">ticks</a>() - date1.<a class="code hl_function" href="classxtd_1_1date__time.html#ae8ee2b1e004ff0ee7934e1a94ea44f91">ticks</a>()).count());</div>
+<div class="line">    <span class="keyword">auto</span> date2 = date1.add_milliseconds(1);</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;Second date:   {0} ({1:N0} ticks)&quot;</span>, ustring::format(date_format, date2), date2.ticks().count());</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;Difference between dates: {0} ({1:N0} ticks)\n&quot;</span>, date2 - date1, (date2.ticks() - date1.ticks()).count());</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a> date3 = date1.<a class="code hl_function" href="classxtd_1_1date__time.html#a0c0b9b22d495ed1096b74dd9c72df2e4">add_milliseconds</a>(1.5);</div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;Third date:    {0} ({1:N0} ticks)&quot;</span>, ustring::format(date_format, date3), date3.<a class="code hl_function" href="classxtd_1_1date__time.html#ae8ee2b1e004ff0ee7934e1a94ea44f91">ticks</a>().count());</div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;Difference between dates: {0} ({1:N0} ticks)&quot;</span>, date3 - date1, (date3.<a class="code hl_function" href="classxtd_1_1date__time.html#ae8ee2b1e004ff0ee7934e1a94ea44f91">ticks</a>() - date1.<a class="code hl_function" href="classxtd_1_1date__time.html#ae8ee2b1e004ff0ee7934e1a94ea44f91">ticks</a>()).count());</div>
+<div class="line">    <span class="keyword">auto</span> date3 = date1.add_milliseconds(1.5);</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;Third date:    {0} ({1:N0} ticks)&quot;</span>, ustring::format(date_format, date3), date3.ticks().count());</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;Difference between dates: {0} ({1:N0} ticks)&quot;</span>, date3 - date1, (date3.ticks() - date1.ticks()).count());</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a id="a4" name="a4"></a><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(program);</div>
+<div class="line"><a id="a1" name="a1"></a><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(program);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code can produces the following output:</span></div>
 <div class="line"><span class="comment">//</span></div>
@@ -120,16 +120,13 @@ $(function() {
 <div class="line"><span class="comment">// Third date:    09/08/2010/16:00:00.0005000 (634195584000015000 ticks)</span></div>
 <div class="line"><span class="comment">// Difference between dates: Mon Jan  1 00:00:00 0001 (15000 ticks)</span></div>
 <div class="ttc" id="aclassxtd_1_1date__time_html"><div class="ttname"><a href="classxtd_1_1date__time.html">xtd::date_time</a></div><div class="ttdoc">Represents an instant in time, typically expressed as a date and time of day.</div><div class="ttdef"><b>Definition</b> date_time.h:78</div></div>
-<div class="ttc" id="aclassxtd_1_1date__time_html_a0c0b9b22d495ed1096b74dd9c72df2e4"><div class="ttname"><a href="classxtd_1_1date__time.html#a0c0b9b22d495ed1096b74dd9c72df2e4">xtd::date_time::add_milliseconds</a></div><div class="ttdeci">date_time add_milliseconds(double value) const</div><div class="ttdoc">Returns a new xtd::date_time that adds the specified number of milliseconds to the value of this inst...</div></div>
-<div class="ttc" id="aclassxtd_1_1date__time_html_ae8ee2b1e004ff0ee7934e1a94ea44f91"><div class="ttname"><a href="classxtd_1_1date__time.html#ae8ee2b1e004ff0ee7934e1a94ea44f91">xtd::date_time::ticks</a></div><div class="ttdeci">xtd::ticks ticks() const noexcept</div><div class="ttdoc">Gets the number of ticks that represent the date and time of this instance.</div></div>
-<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:48</div></div>
 <div class="ttc" id="agroup__keywords_html_gac9b8e6f22fb2fdc1bb915ee01aef848c"><div class="ttname"><a href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a></div><div class="ttdeci">#define startup_(main_class)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:57</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 15 2023 23:07:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 18 2023 22:19:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

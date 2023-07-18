@@ -95,10 +95,10 @@ $(function() {
 <div class="line">    <span class="keywordflow">if</span> (count &lt; 5)</div>
 <div class="line">      <span class="keywordflow">throw</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1argument__exception.html">argument_exception</a>(<span class="stringliteral">&quot;count too large&quot;</span>, <span class="stringliteral">&quot;count&quot;</span>);</div>
 <div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1system__exception.html">system_exception</a>&amp;) {</div>
-<div class="line">    <a id="_a2" name="_a2"></a><a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> st;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> st1(<a id="_a3" name="_a3"></a><a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__frame.html">stack_frame</a>(2, <span class="keyword">true</span>));</div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot; Stack trace for Method2: {0}&quot;</span>, st1.<a id="a4" name="a4"></a><a class="code hl_function" href="classxtd_1_1diagnostics_1_1stack__trace.html#a45340399230b6ac22957236d2bbe7fb2">to_string</a>());</div>
-<div class="line">    console::write_line(st.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1stack__trace.html#a45340399230b6ac22957236d2bbe7fb2">to_string</a>());</div>
+<div class="line">    <span class="keyword">auto</span> st = <a id="_a2" name="_a2"></a><a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> {};</div>
+<div class="line">    <span class="keyword">auto</span> st1 = <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> {<a id="_a3" name="_a3"></a><a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__frame.html">stack_frame</a> {2, <span class="keyword">true</span>}};</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot; Stack trace for Method2: {0}&quot;</span>, st1.to_string());</div>
+<div class="line">    console::write_line(st.to_string());</div>
 <div class="line">    <span class="keywordflow">throw</span>;</div>
 <div class="line">  }</div>
 <div class="line">}</div>
@@ -107,12 +107,12 @@ $(function() {
 <div class="line">  <span class="keywordflow">try</span> {</div>
 <div class="line">    method2(4);</div>
 <div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1system__exception.html">system_exception</a>&amp;) {</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> st;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> st1(<a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__frame.html">stack_frame</a>(<span class="keyword">true</span>));</div>
+<div class="line">    <span class="keyword">auto</span> st = <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> {};</div>
+<div class="line">    <span class="keyword">auto</span> st1 = <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> {<a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__frame.html">stack_frame</a> {<span class="keyword">true</span>}};</div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot; Stack trace for Method1: {0}&quot;</span>, st1.to_string());</div>
-<div class="line">    console::write_line(st.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1stack__trace.html#a45340399230b6ac22957236d2bbe7fb2">to_string</a>());</div>
+<div class="line">    console::write_line(st.to_string());</div>
 <div class="line">    <span class="comment">// Build a stack trace for the next frame.</span></div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> st2(<a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__frame.html">stack_frame</a>(1, <span class="keyword">true</span>));</div>
+<div class="line">    <span class="keyword">auto</span> st2 = <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> {<a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__frame.html">stack_frame</a> {1, <span class="keyword">true</span>}};</div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot; Stack trace for next level frame: {0}&quot;</span>, st2.to_string());</div>
 <div class="line">    <span class="keywordflow">throw</span>;</div>
 <div class="line">  }</div>
@@ -122,10 +122,10 @@ $(function() {
 <div class="line">  <span class="keywordflow">try</span> {</div>
 <div class="line">    method1();</div>
 <div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1system__exception.html">system_exception</a>&amp;) {</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> st;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> st1(<a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__frame.html">stack_frame</a>(<span class="keyword">true</span>));</div>
+<div class="line">    <span class="keyword">auto</span> st = <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> {};</div>
+<div class="line">    <span class="keyword">auto</span> st1 = <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> {<a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__frame.html">stack_frame</a> {<span class="keyword">true</span>}};</div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot; Stack trace for Main: {0}&quot;</span>, st1.to_string());</div>
-<div class="line">    console::write_line(st.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1stack__trace.html#a45340399230b6ac22957236d2bbe7fb2">to_string</a>());</div>
+<div class="line">    console::write_line(st.to_string());</div>
 <div class="line">  }</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;Press Enter to exit.&quot;</span>);</div>
 <div class="line">  console::read_key();</div>
@@ -147,7 +147,6 @@ $(function() {
 <div class="ttc" id="aclassxtd_1_1argument__exception_html"><div class="ttname"><a href="classxtd_1_1argument__exception.html">xtd::argument_exception</a></div><div class="ttdoc">The exception that is thrown when one of the arguments provided to a method is not valid.</div><div class="ttdef"><b>Definition</b> argument_exception.h:21</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a></div><div class="ttdoc">Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...</div><div class="ttdef"><b>Definition</b> stack_frame.h:37</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__trace_html"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__trace.html">xtd::diagnostics::stack_trace</a></div><div class="ttdoc">Represents a stack trace, which is an ordered collection of one or more stack frames.</div><div class="ttdef"><b>Definition</b> stack_trace.h:39</div></div>
-<div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__trace_html_a45340399230b6ac22957236d2bbe7fb2"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__trace.html#a45340399230b6ac22957236d2bbe7fb2">xtd::diagnostics::stack_trace::to_string</a></div><div class="ttdeci">xtd::ustring to_string() const noexcept override</div><div class="ttdoc">Builds a readable representation of the stack trace.</div></div>
 <div class="ttc" id="aclassxtd_1_1system__exception_html"><div class="ttname"><a href="classxtd_1_1system__exception.html">xtd::system_exception</a></div><div class="ttdoc">Defines the base class for predefined exceptions in the xtd namespace.</div><div class="ttdef"><b>Definition</b> system_exception.h:24</div></div>
 <div class="ttc" id="anamespacextd_1_1diagnostics_html"><div class="ttname"><a href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a></div><div class="ttdoc">The xtd::diagnostics namespace provides classes that allow you to interact with system processes,...</div><div class="ttdef"><b>Definition</b> assert_dialog_result.h:10</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
@@ -155,7 +154,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 15 2023 23:07:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 18 2023 22:19:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

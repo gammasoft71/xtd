@@ -83,21 +83,20 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Shows how to use <a class="el" href="classxtd_1_1drawing_1_1font.html" title="Defines a particular format for text, including font face, size, and style attributes....">xtd::drawing::font</a> class.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/drawing/font&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1drawing.html">xtd::drawing</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
-<div class="line">  <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1drawing_1_1font.html">font</a> font1(font_family::generic_monospace(), 42.0f, font_style::bold);</div>
+<div class="line">  <span class="keyword">auto</span> font1 = <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1drawing_1_1font.html">font</a> {font_family::generic_monospace(), 42.0f, font_style::bold};</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;font1 = {0}&quot;</span>, font1);</div>
 <div class="line">  </div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1drawing_1_1font.html">font</a> font2(<span class="stringliteral">&quot;Times New Roman&quot;</span>, 24.0f);</div>
+<div class="line">  <span class="keyword">auto</span> font2 = <a class="code hl_class" href="classxtd_1_1drawing_1_1font.html">font</a> {<span class="stringliteral">&quot;Times New Roman&quot;</span>, 24.0f};</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;font2 = {0}&quot;</span>, font2);</div>
 <div class="line">  </div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1drawing_1_1font.html">font</a> font3(font_family::generic_serif(), 24.0f);</div>
+<div class="line">  <span class="keyword">auto</span> font3 = <a class="code hl_class" href="classxtd_1_1drawing_1_1font.html">font</a> {font_family::generic_serif(), 24.0f};</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;font3 = {0}&quot;</span>, font3);</div>
 <div class="line">  </div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;font1 {0} font2&quot;</span>, font1 == font2 ? <span class="stringliteral">&quot;==&quot;</span> : <span class="stringliteral">&quot;!=&quot;</span>);</div>
@@ -118,7 +117,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 15 2023 23:07:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 18 2023 22:19:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

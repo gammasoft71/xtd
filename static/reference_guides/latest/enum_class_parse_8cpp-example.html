@@ -85,7 +85,8 @@ $(function() {
 <ul>
 <li>Shows how to use xtd::enum_object::parse method.</li>
 </ul>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/as&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/enum_class&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -106,7 +107,7 @@ $(function() {
 <div class="line">    console::write_line(<span class="stringliteral">&quot;enum_test::value_five does not exists!&quot;</span>);</div>
 <div class="line">  }</div>
 <div class="line">  </div>
-<div class="line">  enum_test result;</div>
+<div class="line">  <span class="keyword">auto</span> result = as&lt;enum_test&gt;(0);</div>
 <div class="line">  <span class="keywordflow">if</span> (<a class="code hl_class" href="classxtd_1_1enum__object.html">enum_object&lt;&gt;::try_parse&lt;enum_test&gt;</a>(<span class="stringliteral">&quot;value_three&quot;</span>, result)) console::write_line(<span class="stringliteral">&quot;result = {}&quot;</span>, result);</div>
 <div class="line">  <span class="keywordflow">if</span> (<a class="code hl_class" href="classxtd_1_1enum__object.html">enum_object&lt;&gt;::try_parse&lt;enum_test&gt;</a>(<span class="stringliteral">&quot;vAlUe_OnE&quot;</span>, <span class="keyword">true</span>, result)) console::write_line(<span class="stringliteral">&quot;result = {}&quot;</span>, result);</div>
 <div class="line">  <span class="keywordflow">if</span> (<a class="code hl_class" href="classxtd_1_1enum__object.html">enum_object&lt;&gt;::try_parse&lt;enum_test&gt;</a>(<span class="stringliteral">&quot;value_six&quot;</span>, result)) console::write_line(<span class="stringliteral">&quot;result = {}&quot;</span>, result);</div>
@@ -120,7 +121,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 15 2023 23:07:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 18 2023 22:19:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

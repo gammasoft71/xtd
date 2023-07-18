@@ -89,12 +89,12 @@ $(function() {
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
-<div class="line">  <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> str;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> nl = environment::new_line();</div>
+<div class="line">  <span class="keyword">auto</span> str = ustring::empty_string;</div>
+<div class="line">  <span class="keyword">auto</span> nl = environment::new_line();</div>
 <div class="line">  </div>
 <div class="line">  console::write_line();</div>
 <div class="line">  <span class="comment">//  &lt;-- Keep this information secure! --&gt;</span></div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> query = <span class="stringliteral">&quot;My system drive is %SystemDrive% and my system root is %SystemRoot%&quot;</span>;</div>
+<div class="line">  <span class="keyword">auto</span> query = <span class="stringliteral">&quot;My system drive is %SystemDrive% and my system root is %SystemRoot%&quot;</span>;</div>
 <div class="line">  str = environment::expand_environment_variables(query);</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;expand_environment_variables: {0}  {1}&quot;</span>, nl, str);</div>
 <div class="line">}</div>
@@ -103,13 +103,12 @@ $(function() {
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// expand_environment_variables:</span></div>
 <div class="line"><span class="comment">//   My system drive is C: and my system root is C:\windows</span></div>
-<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:48</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 15 2023 23:07:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 18 2023 22:19:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

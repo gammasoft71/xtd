@@ -105,7 +105,11 @@ Inheritance diagram for xtd::net::ip_address:</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1net.html" title="The xtd::net namespace provides a simple programming interface for many of the protocols used on netw...">xtd::net</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example shows how to query a server to obtain the family addresses and the IP addresses it supports. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example shows how to query a server to obtain the family addresses and the IP addresses it supports. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/net/sockets/socket&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/net/dns&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/net/ip_address&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;regex&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
@@ -116,12 +120,12 @@ Inheritance diagram for xtd::net::ip_address:</div>
 <div class="line"><span class="keyword">class </span>test_ip_address {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main(<span class="keyword">const</span> vector&lt;ustring&gt;&amp; args) {</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> server;</div>
+<div class="line">    <span class="keyword">auto</span> server = ustring::empty_string;</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Define a regular expression to parse user&#39;s input.</span></div>
 <div class="line">    <span class="comment">// This is a security check. It allows only</span></div>
 <div class="line">    <span class="comment">// alphanumeric input string between 2 to 40 character long.</span></div>
-<div class="line">    regex rex(R<span class="stringliteral">&quot;(^[a-zA-Z]\w{1,39}$)&quot;);</span></div>
+<div class="line">    <span class="keyword">auto</span> rex = regex {R<span class="stringliteral">&quot;(^[a-zA-Z]\w{1,39}$)&quot;};</span></div>
 <div class="line"><span class="stringliteral">    </span></div>
 <div class="line"><span class="stringliteral">    </span><span class="keywordflow">if</span> (args.size() &lt; 1) {</div>
 <div class="line">      <span class="comment">// If no server name is passed as an argument to this program, use the current</span></div>
@@ -144,13 +148,13 @@ Inheritance diagram for xtd::net::ip_address:</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
-<div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> ip_addresses(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>&amp; server) {</div>
+<div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> ip_addresses(<span class="keyword">auto</span> server) {</div>
 <div class="line">    <span class="keywordflow">try</span> {</div>
 <div class="line">      <span class="comment">// Get server related information.</span></div>
-<div class="line">      <a class="code hl_class" href="classxtd_1_1net_1_1ip__host__entry.html">ip_host_entry</a> heserver = dns::get_host_entry(server);</div>
+<div class="line">      <span class="keyword">auto</span> heserver = dns::get_host_entry(server);</div>
 <div class="line">      </div>
 <div class="line">      <span class="comment">// Loop on the AddressList</span></div>
-<div class="line">      <span class="keywordflow">for</span> (<a class="code hl_class" href="classxtd_1_1net_1_1ip__address.html">ip_address</a> cur_add : heserver.address_list()) {</div>
+<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> cur_add : heserver.address_list()) {</div>
 <div class="line">        <span class="comment">// Display the type of address family supported by the server. If the</span></div>
 <div class="line">        <span class="comment">// server is IPv6-enabled this value is: InterNetworkV6. If the server</span></div>
 <div class="line">        <span class="comment">// is also IPv4-enabled there will be an additional value of InterNetwork.</span></div>
@@ -225,10 +229,7 @@ Inheritance diagram for xtd::net::ip_address:</div>
 <div class="line"><span class="comment">// ip_v6_none: ::</span></div>
 <div class="line"><span class="comment">// is_loopback(ip_v6_loopback): true</span></div>
 <div class="line"><span class="comment">// is_loopback(loopback):true</span></div>
-<div class="ttc" id="aclassxtd_1_1net_1_1ip__address_html"><div class="ttname"><a href="classxtd_1_1net_1_1ip__address.html">xtd::net::ip_address</a></div><div class="ttdoc">Provides an Internet Protocol (IP) address.</div><div class="ttdef"><b>Definition</b> ip_address.h:36</div></div>
-<div class="ttc" id="aclassxtd_1_1net_1_1ip__host__entry_html"><div class="ttname"><a href="classxtd_1_1net_1_1ip__host__entry.html">xtd::net::ip_host_entry</a></div><div class="ttdoc">Provides a container class for Internet host address information.</div><div class="ttdef"><b>Definition</b> ip_host_entry.h:25</div></div>
 <div class="ttc" id="aclassxtd_1_1system__exception_html"><div class="ttname"><a href="classxtd_1_1system__exception.html">xtd::system_exception</a></div><div class="ttdoc">Defines the base class for predefined exceptions in the xtd namespace.</div><div class="ttdef"><b>Definition</b> system_exception.h:24</div></div>
-<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:48</div></div>
 <div class="ttc" id="agroup__keywords_html_gac9b8e6f22fb2fdc1bb915ee01aef848c"><div class="ttname"><a href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a></div><div class="ttdeci">#define startup_(main_class)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:57</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">xtd::console_key::i</a></div><div class="ttdeci">@ i</div><div class="ttdoc">The I key.</div></div>
 <div class="ttc" id="anamespacextd_1_1net_1_1sockets_html"><div class="ttname"><a href="namespacextd_1_1net_1_1sockets.html">xtd::net::sockets</a></div><div class="ttdoc">The xtd::net::sockets namespace provides a managed implementation of the Berkeley Sockets interface f...</div><div class="ttdef"><b>Definition</b> address_family.h:17</div></div>
@@ -236,8 +237,6 @@ Inheritance diagram for xtd::net::ip_address:</div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The xtd::ip_address class contains the address of a computer on an IP network. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="ip_address_8cpp-example.html#_a2">ip_address.cpp</a>.</dd>
-</dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Fields</h2></td></tr>
 <tr class="memitem:a7c9f9e74d8b2b7c4e003f20736cb3d7a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1net_1_1ip__address.html">ip_address</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1net_1_1ip__address.html#a7c9f9e74d8b2b7c4e003f20736cb3d7a">any</a></td></tr>
@@ -1861,7 +1860,7 @@ The td::net::ip_address::ip_v6_none field is equivalent to 0:0:0:0:0:0:0:0 in co
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 15 2023 23:07:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 18 2023 22:19:54 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

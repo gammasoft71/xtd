@@ -83,31 +83,28 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Shows how to use <a class="el" href="classxtd_1_1drawing_1_1image.html" title="An abstract base class that provides functionality for the bitmap and metafile descended classes.">xtd::drawing::image</a> class with emf image.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/process&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/drawing/bitmap&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/io/path&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;../properties/resources.h&quot;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1drawing.html">xtd::drawing</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
-<div class="line">  <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1drawing_1_1bitmap.html">bitmap</a> img = <a class="code hl_class" href="classxtd_1_1drawing_1_1bitmap.html">bitmap</a>(image_emf::properties::resources::gammasoft_emf());</div>
-<div class="line">  img.<a id="a1" name="a1"></a><a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#a5dbb39c4b87af777f49be06c7cc370e9">save</a>(path::combine(path::get_temp_path(), <span class="stringliteral">&quot;image_emf.png&quot;</span>));</div>
+<div class="line">  <span class="keyword">auto</span> bmp = image_emf::properties::resources::gammasoft_emf();</div>
+<div class="line">  bmp.save(path::combine(path::get_temp_path(), <span class="stringliteral">&quot;image_emf.png&quot;</span>));</div>
 <div class="line">  process::start(path::combine(path::get_temp_path(), <span class="stringliteral">&quot;image_emf.png&quot;</span>));</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1bitmap_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a></div><div class="ttdoc">Encapsulates a GDI+ bitmap, which consists of the pixel data for a graphics image and its attributes....</div><div class="ttdef"><b>Definition</b> bitmap.h:26</div></div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1image_html_a5dbb39c4b87af777f49be06c7cc370e9"><div class="ttname"><a href="classxtd_1_1drawing_1_1image.html#a5dbb39c4b87af777f49be06c7cc370e9">xtd::drawing::image::save</a></div><div class="ttdeci">void save(const xtd::ustring &amp;filename) const</div><div class="ttdoc">Saves this xtd::drawing::image to the specified file or stream.</div></div>
 <div class="ttc" id="anamespacextd_1_1diagnostics_html"><div class="ttname"><a href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a></div><div class="ttdoc">The xtd::diagnostics namespace provides classes that allow you to interact with system processes,...</div><div class="ttdef"><b>Definition</b> assert_dialog_result.h:10</div></div>
 <div class="ttc" id="anamespacextd_1_1drawing_html"><div class="ttname"><a href="namespacextd_1_1drawing.html">xtd::drawing</a></div><div class="ttdoc">The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functi...</div><div class="ttdef"><b>Definition</b> basic_colors.h:13</div></div>
 <div class="ttc" id="anamespacextd_1_1io_html"><div class="ttname"><a href="namespacextd_1_1io.html">xtd::io</a></div><div class="ttdoc">The xtd::io namespace contains types that allow reading and writing to files and data streams,...</div><div class="ttdef"><b>Definition</b> binary_reader.h:17</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 15 2023 23:07:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 18 2023 22:19:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -125,10 +125,10 @@ Inheritance diagram for xtd::diagnostics::stack_frame:</div>
 <div class="line">    <span class="keywordflow">if</span> (count &lt; 5)</div>
 <div class="line">      <span class="keywordflow">throw</span> <a class="code hl_class" href="classxtd_1_1argument__exception.html">argument_exception</a>(<span class="stringliteral">&quot;count too large&quot;</span>, <span class="stringliteral">&quot;count&quot;</span>);</div>
 <div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1system__exception.html">system_exception</a>&amp;) {</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> st;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> st1(<a class="code hl_function" href="classxtd_1_1diagnostics_1_1stack__frame.html#a43999f81ef9259a28a3a0a6880da3276">stack_frame</a>(2, <span class="keyword">true</span>));</div>
+<div class="line">    <span class="keyword">auto</span> st = <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> {};</div>
+<div class="line">    <span class="keyword">auto</span> st1 = <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> {<a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__frame.html">stack_frame</a> {2, <span class="keyword">true</span>}};</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot; Stack trace for Method2: {0}&quot;</span>, st1.to_string());</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(st.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1stack__trace.html#a45340399230b6ac22957236d2bbe7fb2">to_string</a>());</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(st.to_string());</div>
 <div class="line">    <span class="keywordflow">throw</span>;</div>
 <div class="line">  }</div>
 <div class="line">}</div>
@@ -137,12 +137,12 @@ Inheritance diagram for xtd::diagnostics::stack_frame:</div>
 <div class="line">  <span class="keywordflow">try</span> {</div>
 <div class="line">    method2(4);</div>
 <div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1system__exception.html">system_exception</a>&amp;) {</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> st;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> st1(<a class="code hl_function" href="classxtd_1_1diagnostics_1_1stack__frame.html#a43999f81ef9259a28a3a0a6880da3276">stack_frame</a>(<span class="keyword">true</span>));</div>
+<div class="line">    <span class="keyword">auto</span> st = <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> {};</div>
+<div class="line">    <span class="keyword">auto</span> st1 = <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> {<a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__frame.html">stack_frame</a> {<span class="keyword">true</span>}};</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot; Stack trace for Method1: {0}&quot;</span>, st1.to_string());</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(st.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1stack__trace.html#a45340399230b6ac22957236d2bbe7fb2">to_string</a>());</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(st.to_string());</div>
 <div class="line">    <span class="comment">// Build a stack trace for the next frame.</span></div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> st2(<a class="code hl_function" href="classxtd_1_1diagnostics_1_1stack__frame.html#a43999f81ef9259a28a3a0a6880da3276">stack_frame</a>(1, <span class="keyword">true</span>));</div>
+<div class="line">    <span class="keyword">auto</span> st2 = <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> {<a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__frame.html">stack_frame</a> {1, <span class="keyword">true</span>}};</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot; Stack trace for next level frame: {0}&quot;</span>, st2.to_string());</div>
 <div class="line">    <span class="keywordflow">throw</span>;</div>
 <div class="line">  }</div>
@@ -152,10 +152,10 @@ Inheritance diagram for xtd::diagnostics::stack_frame:</div>
 <div class="line">  <span class="keywordflow">try</span> {</div>
 <div class="line">    method1();</div>
 <div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1system__exception.html">system_exception</a>&amp;) {</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> st;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> st1(<a class="code hl_function" href="classxtd_1_1diagnostics_1_1stack__frame.html#a43999f81ef9259a28a3a0a6880da3276">stack_frame</a>(<span class="keyword">true</span>));</div>
+<div class="line">    <span class="keyword">auto</span> st = <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> {};</div>
+<div class="line">    <span class="keyword">auto</span> st1 = <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> {<a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__frame.html">stack_frame</a> {<span class="keyword">true</span>}};</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot; Stack trace for Main: {0}&quot;</span>, st1.to_string());</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(st.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1stack__trace.html#a45340399230b6ac22957236d2bbe7fb2">to_string</a>());</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(st.to_string());</div>
 <div class="line">  }</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Press Enter to exit.&quot;</span>);</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ac0ebb643e4d3b01faa8380bd90d22aa0">console::read_key</a>();</div>
@@ -177,14 +177,12 @@ Inheritance diagram for xtd::diagnostics::stack_frame:</div>
 <div class="ttc" id="aclassxtd_1_1argument__exception_html"><div class="ttname"><a href="classxtd_1_1argument__exception.html">xtd::argument_exception</a></div><div class="ttdoc">The exception that is thrown when one of the arguments provided to a method is not valid.</div><div class="ttdef"><b>Definition</b> argument_exception.h:21</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ac0ebb643e4d3b01faa8380bd90d22aa0"><div class="ttname"><a href="classxtd_1_1console.html#ac0ebb643e4d3b01faa8380bd90d22aa0">xtd::console::read_key</a></div><div class="ttdeci">static console_key_info read_key()</div><div class="ttdoc">Obtains the next character or function key pressed by the user. The pressed key is displayed in the c...</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html_a43999f81ef9259a28a3a0a6880da3276"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__frame.html#a43999f81ef9259a28a3a0a6880da3276">xtd::diagnostics::stack_frame::stack_frame</a></div><div class="ttdeci">stack_frame()</div><div class="ttdoc">Initializes a new instance of the xtd::diagnostics::stack_frame class.</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__trace_html"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__trace.html">xtd::diagnostics::stack_trace</a></div><div class="ttdoc">Represents a stack trace, which is an ordered collection of one or more stack frames.</div><div class="ttdef"><b>Definition</b> stack_trace.h:39</div></div>
-<div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__trace_html_a45340399230b6ac22957236d2bbe7fb2"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__trace.html#a45340399230b6ac22957236d2bbe7fb2">xtd::diagnostics::stack_trace::to_string</a></div><div class="ttdeci">xtd::ustring to_string() const noexcept override</div><div class="ttdoc">Builds a readable representation of the stack trace.</div></div>
 <div class="ttc" id="aclassxtd_1_1system__exception_html"><div class="ttname"><a href="classxtd_1_1system__exception.html">xtd::system_exception</a></div><div class="ttdoc">Defines the base class for predefined exceptions in the xtd namespace.</div><div class="ttdef"><b>Definition</b> system_exception.h:24</div></div>
 <div class="ttc" id="anamespacextd_1_1diagnostics_html"><div class="ttname"><a href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a></div><div class="ttdoc">The xtd::diagnostics namespace provides classes that allow you to interact with system processes,...</div><div class="ttdef"><b>Definition</b> assert_dialog_result.h:10</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="csf_8cpp-example.html#_a1">csf.cpp</a>, <a class="el" href="current_stack_frame_8cpp-example.html#_a1">current_stack_frame.cpp</a>, <a class="el" href="line_info_8cpp-example.html#_a0">line_info.cpp</a>, <a class="el" href="math_assert_8cpp-example.html#_a1">math_assert.cpp</a>, <a class="el" href="math_assume_8cpp-example.html#_a1">math_assume.cpp</a>, <a class="el" href="math_valid_8cpp-example.html#_a1">math_valid.cpp</a>, <a class="el" href="stack_frame_8cpp-example.html#_a3">stack_frame.cpp</a>, and <a class="el" href="stack_trace_simple_8cpp-example.html#_a4">stack_trace_simple.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="csf_8cpp-example.html#_a1">csf.cpp</a>, <a class="el" href="current_stack_frame_8cpp-example.html#_a1">current_stack_frame.cpp</a>, <a class="el" href="line_info_8cpp-example.html#_a0">line_info.cpp</a>, <a class="el" href="math_assert_8cpp-example.html#_a1">math_assert.cpp</a>, <a class="el" href="math_assume_8cpp-example.html#_a1">math_assume.cpp</a>, <a class="el" href="math_valid_8cpp-example.html#_a1">math_valid.cpp</a>, and <a class="el" href="stack_frame_8cpp-example.html#_a3">stack_frame.cpp</a>.</dd>
 </dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Fields</h2></td></tr>
@@ -746,7 +744,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="keywordflow">if</span> (sf.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1stack__frame.html#a5d3c0caad738e5c22c17909a7e8db9ce">get_offset</a>() != <a class="code hl_variable" href="classxtd_1_1diagnostics_1_1stack__frame.html#a905552095a96ae3144ea7e63fd38b859">stack_frame::OFFSET_UNKNOWN</a>)</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot; Offset: {}&quot;</span>, sf.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1stack__frame.html#a5d3c0caad738e5c22c17909a7e8db9ce">get_offset</a>());</div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="csf_8cpp-example.html#a4">csf.cpp</a>, <a class="el" href="current_stack_frame_8cpp-example.html#a4">current_stack_frame.cpp</a>, <a class="el" href="line_info_8cpp-example.html#a3">line_info.cpp</a>, and <a class="el" href="stack_trace_simple_8cpp-example.html#a8">stack_trace_simple.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="csf_8cpp-example.html#a4">csf.cpp</a>, <a class="el" href="current_stack_frame_8cpp-example.html#a4">current_stack_frame.cpp</a>, and <a class="el" href="line_info_8cpp-example.html#a3">line_info.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -786,7 +784,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="keywordflow">if</span> (sf.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1stack__frame.html#a5d3c0caad738e5c22c17909a7e8db9ce">get_offset</a>() != <a class="code hl_variable" href="classxtd_1_1diagnostics_1_1stack__frame.html#a905552095a96ae3144ea7e63fd38b859">stack_frame::OFFSET_UNKNOWN</a>)</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot; Offset: {}&quot;</span>, sf.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1stack__frame.html#a5d3c0caad738e5c22c17909a7e8db9ce">get_offset</a>());</div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="csf_8cpp-example.html#a3">csf.cpp</a>, <a class="el" href="current_stack_frame_8cpp-example.html#a3">current_stack_frame.cpp</a>, <a class="el" href="line_info_8cpp-example.html#a2">line_info.cpp</a>, and <a class="el" href="stack_trace_simple_8cpp-example.html#a7">stack_trace_simple.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="csf_8cpp-example.html#a3">csf.cpp</a>, <a class="el" href="current_stack_frame_8cpp-example.html#a3">current_stack_frame.cpp</a>, and <a class="el" href="line_info_8cpp-example.html#a2">line_info.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -826,7 +824,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="keywordflow">if</span> (sf.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1stack__frame.html#a5d3c0caad738e5c22c17909a7e8db9ce">get_offset</a>() != <a class="code hl_variable" href="classxtd_1_1diagnostics_1_1stack__frame.html#a905552095a96ae3144ea7e63fd38b859">stack_frame::OFFSET_UNKNOWN</a>)</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot; Offset: {}&quot;</span>, sf.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1stack__frame.html#a5d3c0caad738e5c22c17909a7e8db9ce">get_offset</a>());</div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="csf_8cpp-example.html#a2">csf.cpp</a>, <a class="el" href="current_stack_frame_8cpp-example.html#a2">current_stack_frame.cpp</a>, <a class="el" href="line_info_8cpp-example.html#a1">line_info.cpp</a>, and <a class="el" href="stack_trace_simple_8cpp-example.html#a6">stack_trace_simple.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="csf_8cpp-example.html#a2">csf.cpp</a>, <a class="el" href="current_stack_frame_8cpp-example.html#a2">current_stack_frame.cpp</a>, and <a class="el" href="line_info_8cpp-example.html#a1">line_info.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -932,7 +930,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 15 2023 23:07:42 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 18 2023 22:19:51 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

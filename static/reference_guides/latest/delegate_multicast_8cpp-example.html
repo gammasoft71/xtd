@@ -105,25 +105,25 @@ $(function() {
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="keywordtype">void</span> write_trace2(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>&amp; str) {</div>
-<div class="line">    <a class="code hl_function" href="group__xtd__core.html#ga20a8c5c8813e84b0831d7b236d1f1459">ctrace</a> &lt;&lt; <span class="stringliteral">&quot;2 &quot;</span> &lt;&lt; str &lt;&lt; environment::new_line();</div>
+<div class="line">    <a class="code hl_function" href="group__xtd__core.html#ga20a8c5c8813e84b0831d7b236d1f1459">ctrace</a> &lt;&lt; <span class="stringliteral">&quot;2 &quot;</span> &lt;&lt; str &lt;&lt; environment::new_line;</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
-<div class="line">  writer <a class="code hl_enumvalue" href="group__xtd__core.html#ggab63628bce9e2d06ccfe647700d29e2a0aefb2a684e4afb7d55e6147fbe5a332ee">write</a>;</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggab63628bce9e2d06ccfe647700d29e2a0aefb2a684e4afb7d55e6147fbe5a332ee">write</a> = writer {};</div>
 <div class="line">  </div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggab63628bce9e2d06ccfe647700d29e2a0aefb2a684e4afb7d55e6147fbe5a332ee">write</a> += [](<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> &amp; str)  {</div>
-<div class="line">    console::out &lt;&lt; str &lt;&lt; environment::new_line();</div>
+<div class="line">    console::out &lt;&lt; str &lt;&lt; environment::new_line;</div>
 <div class="line">  };</div>
 <div class="line">  </div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggab63628bce9e2d06ccfe647700d29e2a0aefb2a684e4afb7d55e6147fbe5a332ee">write</a> += [](<span class="keyword">auto</span> str)  {</div>
-<div class="line">    console::error &lt;&lt; str &lt;&lt; environment::new_line();</div>
+<div class="line">    console::error &lt;&lt; str &lt;&lt; environment::new_line;</div>
 <div class="line">  };</div>
 <div class="line">  </div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggab63628bce9e2d06ccfe647700d29e2a0aefb2a684e4afb7d55e6147fbe5a332ee">write</a> += write_debug;</div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggab63628bce9e2d06ccfe647700d29e2a0aefb2a684e4afb7d55e6147fbe5a332ee">write</a> += {tracer(), &amp;tracer::write_trace};</div>
 <div class="line">  </div>
-<div class="line">  tracer <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae358efa489f58062f10dd7316b65649e">t</a>;</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae358efa489f58062f10dd7316b65649e">t</a> = tracer {};</div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggab63628bce9e2d06ccfe647700d29e2a0aefb2a684e4afb7d55e6147fbe5a332ee">write</a> += {<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae358efa489f58062f10dd7316b65649e">t</a>, &amp;tracer::write_trace2}; <span class="comment">// add</span></div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggab63628bce9e2d06ccfe647700d29e2a0aefb2a684e4afb7d55e6147fbe5a332ee">write</a> -= {<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae358efa489f58062f10dd7316b65649e">t</a>, &amp;tracer::write_trace2}; <span class="comment">// then remove</span></div>
 <div class="line">  </div>
@@ -155,7 +155,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 15 2023 23:07:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 18 2023 22:19:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -83,9 +83,11 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Shows how to use <a class="el" href="classxtd_1_1threading_1_1interlocked.html#a87dc180d9e778435f75b8314c2139792" title="Decrements a specified variable and stores the result, as an atomic operation.">xtd::threading::interlocked::decrement</a> and <a class="el" href="classxtd_1_1threading_1_1interlocked.html#a66c4f39315d4166efc26075e14b8e74b" title="Increments a specified variable and stores the result, as an atomic operation.">xtd::threading::interlocked::increment</a> methods.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/threading/interlocked&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;thread&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -112,8 +114,8 @@ $(function() {
 <div class="line">    </div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">      thread thread1(thread_method);</div>
-<div class="line">      thread thread2(thread_method);</div>
+<div class="line">      <span class="keyword">auto</span> thread1 = thread {thread_method};</div>
+<div class="line">      <span class="keyword">auto</span> thread2 = thread {thread_method};</div>
 <div class="line">      thread1.join();</div>
 <div class="line">      thread2.join();</div>
 <div class="line">      </div>
@@ -122,10 +124,10 @@ $(function() {
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
 <div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> thread_method() {</div>
-<div class="line">      unique_ptr&lt;count_class&gt; cc;</div>
+<div class="line">      <span class="keyword">auto</span> cc = unique_ptr&lt;count_class&gt; {};</div>
 <div class="line">      </div>
 <div class="line">      <span class="comment">// Create 100000 instances of count_class.</span></div>
-<div class="line">      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 100000; ++i)</div>
+<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0; i &lt; 100000; ++i)</div>
 <div class="line">        cc = make_unique&lt;count_class&gt;();</div>
 <div class="line">    }</div>
 <div class="line">  };</div>
@@ -144,7 +146,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 15 2023 23:07:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 18 2023 22:19:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -83,21 +83,23 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Shows how to use <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a5075140835d0bc504791c76b04c33d2b" title="The IME PROCESS key.">xtd::process</a> class with standard output redirection.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/process&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/io/stream_reader&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
-<div class="line">  <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1diagnostics_1_1process__start__info.html">process_start_info</a> start_info(<span class="stringliteral">&quot;xtdc&quot;</span>, <span class="stringliteral">&quot;--help&quot;</span>);</div>
+<div class="line">  <span class="keyword">auto</span> start_info = <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1diagnostics_1_1process__start__info.html">process_start_info</a> {<span class="stringliteral">&quot;xtdc&quot;</span>, <span class="stringliteral">&quot;--help&quot;</span>};</div>
 <div class="line">  start_info.<a id="a1" name="a1"></a><a class="code hl_function" href="classxtd_1_1diagnostics_1_1process__start__info.html#afbe7913a04289abf0dcf6b51f6c0186b">use_shell_execute</a>(<span class="keyword">false</span>);</div>
-<div class="line">  start_info.<a id="a2" name="a2"></a><a class="code hl_function" href="classxtd_1_1diagnostics_1_1process__start__info.html#a2e12dcf466c131ba8562e1342af4f3aa">redirect_standard_output</a>(<span class="keyword">true</span>);</div>
+<div class="line">  start_info.redirect_standard_output(<span class="keyword">true</span>);</div>
 <div class="line">  </div>
-<div class="line">  std::istream&amp; standard_output = process::start(start_info).standard_output();</div>
+<div class="line">  <span class="keyword">auto</span>&amp; standard_output = process::start(start_info).standard_output();</div>
 <div class="line">  </div>
-<div class="line">  <a id="_a3" name="_a3"></a><a class="code hl_class" href="classxtd_1_1io_1_1stream__reader.html">stream_reader</a> reader(standard_output);</div>
-<div class="line">  console::write(reader.<a id="a4" name="a4"></a><a class="code hl_function" href="classxtd_1_1io_1_1text__reader.html#a7aa7e1f298ff39f28980df4875098438">read_to_end</a>());</div>
+<div class="line">  <span class="keyword">auto</span> reader = <a id="_a2" name="_a2"></a><a class="code hl_class" href="classxtd_1_1io_1_1stream__reader.html">stream_reader</a> {standard_output};</div>
+<div class="line">  console::write(reader.read_to_end());</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -131,10 +133,8 @@ $(function() {
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">//   Run &#39;xtdc command --help&#39; for more information on a command.</span></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1process__start__info_html"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1process__start__info.html">xtd::diagnostics::process_start_info</a></div><div class="ttdoc">Specifies a set of values that are used when you start a process.</div><div class="ttdef"><b>Definition</b> process_start_info.h:37</div></div>
-<div class="ttc" id="aclassxtd_1_1diagnostics_1_1process__start__info_html_a2e12dcf466c131ba8562e1342af4f3aa"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1process__start__info.html#a2e12dcf466c131ba8562e1342af4f3aa">xtd::diagnostics::process_start_info::redirect_standard_output</a></div><div class="ttdeci">bool redirect_standard_output() const noexcept</div><div class="ttdoc">Gets a value that indicates whether the textual output of an application is written to the xtd::diagn...</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1process__start__info_html_afbe7913a04289abf0dcf6b51f6c0186b"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1process__start__info.html#afbe7913a04289abf0dcf6b51f6c0186b">xtd::diagnostics::process_start_info::use_shell_execute</a></div><div class="ttdeci">bool use_shell_execute() const noexcept</div><div class="ttdoc">Gets a value indicating whether to use the operating system shell to start the process.</div></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1stream__reader_html"><div class="ttname"><a href="classxtd_1_1io_1_1stream__reader.html">xtd::io::stream_reader</a></div><div class="ttdoc">Implements a xtd::io::text_reader that reads characters from a byte stream.</div><div class="ttdef"><b>Definition</b> stream_reader.h:27</div></div>
-<div class="ttc" id="aclassxtd_1_1io_1_1text__reader_html_a7aa7e1f298ff39f28980df4875098438"><div class="ttname"><a href="classxtd_1_1io_1_1text__reader.html#a7aa7e1f298ff39f28980df4875098438">xtd::io::text_reader::read_to_end</a></div><div class="ttdeci">virtual xtd::ustring read_to_end()</div><div class="ttdoc">Reads all characters from the current position to the end of the text_reader and returns them as one ...</div></div>
 <div class="ttc" id="anamespacextd_1_1diagnostics_html"><div class="ttname"><a href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a></div><div class="ttdoc">The xtd::diagnostics namespace provides classes that allow you to interact with system processes,...</div><div class="ttdef"><b>Definition</b> assert_dialog_result.h:10</div></div>
 <div class="ttc" id="anamespacextd_1_1io_html"><div class="ttname"><a href="namespacextd_1_1io.html">xtd::io</a></div><div class="ttdoc">The xtd::io namespace contains types that allow reading and writing to files and data streams,...</div><div class="ttdef"><b>Definition</b> binary_reader.h:17</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
@@ -142,7 +142,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 15 2023 23:07:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 18 2023 22:19:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

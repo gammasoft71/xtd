@@ -83,17 +83,17 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Show how to use format xtd::format class.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/ustring&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
 <div class="line">  cout &lt;&lt; ustring::sprintf(<span class="stringliteral">&quot;%c&quot;</span>, <span class="charliteral">&#39;a&#39;</span>) &lt;&lt; endl;</div>
-<div class="line">  <span class="comment">//cout &lt;&lt; ustring::sprintf(&quot;%c&quot;, L&#39;\u4eb0&#39;) &lt;&lt; endl; // Does not work</span></div>
+<div class="line">  <span class="comment">//cout &lt;&lt; ustring::sprintf(&quot;%c&quot;, L&#39;\u4eb0&#39;) &lt;&lt; endl; // Does not work correctly</span></div>
 <div class="line">  cout &lt;&lt; ustring::sprintf(<span class="stringliteral">&quot;%c&quot;</span>, u8<span class="charliteral">&#39;a&#39;</span>) &lt;&lt; endl;</div>
-<div class="line">      <span class="comment">//cout &lt;&lt; ustring::sprintf(&quot;%c&quot;, u&#39;\u4eb0&#39;) &lt;&lt; endl; // Does not work</span></div>
-<div class="line">      <span class="comment">//cout &lt;&lt; ustring::sprintf(&quot;%c&quot;, U&#39;\U0001F428&#39;) &lt;&lt; endl; // Does not work</span></div>
+<div class="line">  <span class="comment">//cout &lt;&lt; ustring::sprintf(&quot;%c&quot;, u&#39;\u4eb0&#39;) &lt;&lt; endl; // Does not work correctly</span></div>
+<div class="line">  <span class="comment">//cout &lt;&lt; ustring::sprintf(&quot;%c&quot;, U&#39;\U0001F428&#39;) &lt;&lt; endl; // Does not work correctly</span></div>
 <div class="line">}</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// This code produces the following output :</span></div>
@@ -106,7 +106,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 15 2023 23:07:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 18 2023 22:19:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

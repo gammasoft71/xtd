@@ -90,45 +90,51 @@ $(function() {
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">    <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1date__time.html">xtd::date_time</a> date1(1996, 6, 3, 22, 15, 0);</div>
+<div class="line">    <span class="keyword">auto</span> date1 = <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1date__time.html">xtd::date_time</a> {1996, 6, 3, 22, 15, 0};</div>
 <div class="line">    <a id="a1" name="a1"></a><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;date1 = {:u}&quot;</span>, date1);</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1date__time.html">xtd::date_time</a> date2(1996, 12, 6, 13, 2, 0);</div>
+<div class="line">    <span class="keyword">auto</span> date2 = <a class="code hl_class" href="classxtd_1_1date__time.html">xtd::date_time</a> {1996, 12, 6, 13, 2, 0};</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;date2 = {:u}&quot;</span>, date2);</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1date__time.html">xtd::date_time</a> date3(1996, 10, 12, 8, 42, 0);</div>
+<div class="line">    <span class="keyword">auto</span> date3 = <a class="code hl_class" href="classxtd_1_1date__time.html">xtd::date_time</a> {1996, 10, 12, 8, 42, 0};</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;date3 = {:u}&quot;</span>, date3);</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// diff1 gets 185 days, 14 hours, and 47 minutes.</span></div>
-<div class="line">    <a class="code hl_typedef" href="group__types.html#gad013431819ca97998d1dc5910b475f80">xtd::time_span</a> diff1 = date2.<a id="a2" name="a2"></a><a class="code hl_function" href="classxtd_1_1date__time.html#aaf1f38f9b51733e38b5db3b5dfde6bb6">subtract</a>(date1);</div>
+<div class="line">    <span class="keyword">auto</span> diff1 = date2.subtract(date1);</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;diff1 = {}&quot;</span>, diff1);</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// date4 gets 4/9/1996 5:55:00 PM.</span></div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1date__time.html">xtd::date_time</a> date4 = date3.<a class="code hl_function" href="classxtd_1_1date__time.html#aaf1f38f9b51733e38b5db3b5dfde6bb6">subtract</a>(diff1);</div>
+<div class="line">    <span class="keyword">auto</span> date4 = date3.subtract(diff1);</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;date4 = {:u}&quot;</span>, date4);</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// diff2 gets 55 days 4 hours and 20 minutes.</span></div>
-<div class="line">    <a class="code hl_typedef" href="group__types.html#gad013431819ca97998d1dc5910b475f80">xtd::time_span</a> diff2 = date2 - date3;</div>
+<div class="line">    <span class="keyword">auto</span> diff2 = date2 - date3;</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;diff2 = {}&quot;</span>, diff2);</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// date5 gets 4/9/1996 5:55:00 PM.</span></div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1date__time.html">xtd::date_time</a> date5 = date1 - diff2;</div>
+<div class="line">    <span class="keyword">auto</span> date5 = date1 - diff2;</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;date5 = {:u}&quot;</span>, date5);</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a id="a3" name="a3"></a><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(program);</div>
+<div class="line"><a id="a2" name="a2"></a><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(program);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code can produces the following output:</span></div>
 <div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// date1 = 1996-06-03 22:15:00</span></div>
+<div class="line"><span class="comment">// date2 = 1996-12-06 13:02:00</span></div>
+<div class="line"><span class="comment">// date3 = 1996-10-12 08:42:00</span></div>
+<div class="line"><span class="comment">// diff1 = 185.14:47:00</span></div>
+<div class="line"><span class="comment">// date4 = 1996-04-09 17:55:00</span></div>
+<div class="line"><span class="comment">// diff2 = Sun Feb 25 04:20:00 0001</span></div>
+<div class="line"><span class="comment">// date5 = 1996-04-09 17:55:00</span></div>
+<div class="line"> </div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="aclassxtd_1_1date__time_html"><div class="ttname"><a href="classxtd_1_1date__time.html">xtd::date_time</a></div><div class="ttdoc">Represents an instant in time, typically expressed as a date and time of day.</div><div class="ttdef"><b>Definition</b> date_time.h:78</div></div>
-<div class="ttc" id="aclassxtd_1_1date__time_html_aaf1f38f9b51733e38b5db3b5dfde6bb6"><div class="ttname"><a href="classxtd_1_1date__time.html#aaf1f38f9b51733e38b5db3b5dfde6bb6">xtd::date_time::subtract</a></div><div class="ttdeci">xtd::time_span subtract(const date_time &amp;value) const</div><div class="ttdoc">Returns a new xtd::time_span that subtracts the specified date and time from the value of this instan...</div></div>
 <div class="ttc" id="agroup__keywords_html_gac9b8e6f22fb2fdc1bb915ee01aef848c"><div class="ttname"><a href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a></div><div class="ttdeci">#define startup_(main_class)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:57</div></div>
-<div class="ttc" id="agroup__types_html_gad013431819ca97998d1dc5910b475f80"><div class="ttname"><a href="group__types.html#gad013431819ca97998d1dc5910b475f80">xtd::time_span</a></div><div class="ttdeci">xtd::ticks time_span</div><div class="ttdoc">Represents a time interval.</div><div class="ttdef"><b>Definition</b> time_span.h:20</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 15 2023 23:07:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 18 2023 22:19:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

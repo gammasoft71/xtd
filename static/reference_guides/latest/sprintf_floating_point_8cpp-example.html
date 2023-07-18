@@ -83,7 +83,8 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Show how to use format xtd::format class.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/double_object&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/ustring&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -97,9 +98,10 @@ $(function() {
 <div class="line">  cout &lt;&lt; ustring::sprintf(<span class="stringliteral">&quot;%G&quot;</span>, 12.345) &lt;&lt; endl;</div>
 <div class="line">  cout &lt;&lt; ustring::sprintf(<span class="stringliteral">&quot;0x%a&quot;</span>, 12.345) &lt;&lt; endl;</div>
 <div class="line">  cout &lt;&lt; ustring::sprintf(<span class="stringliteral">&quot;0x%A&quot;</span>, 12.345) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::sprintf(<span class="stringliteral">&quot;%f&quot;</span>, std::numeric_limits&lt;double&gt;::infinity()) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::sprintf(<span class="stringliteral">&quot;%f&quot;</span>, std::numeric_limits&lt;double&gt;::quiet_NaN()) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::sprintf(<span class="stringliteral">&quot;%f&quot;</span>, std::numeric_limits&lt;double&gt;::signaling_NaN()) &lt;&lt; endl;</div>
+<div class="line">  cout &lt;&lt; ustring::sprintf(<span class="stringliteral">&quot;%G&quot;</span>, double_object::epsilon) &lt;&lt; endl;</div>
+<div class="line">  cout &lt;&lt; ustring::sprintf(<span class="stringliteral">&quot;%f&quot;</span>, double_object::NaN) &lt;&lt; endl;</div>
+<div class="line">  cout &lt;&lt; ustring::sprintf(<span class="stringliteral">&quot;%f&quot;</span>, double_object::positive_infinity) &lt;&lt; endl;</div>
+<div class="line">  cout &lt;&lt; ustring::sprintf(<span class="stringliteral">&quot;%f&quot;</span>, double_object::negative_infinity) &lt;&lt; endl;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -112,15 +114,16 @@ $(function() {
 <div class="line"><span class="comment">// 12.345</span></div>
 <div class="line"><span class="comment">// 0x0x1.8b0a3d70a3d71p+3</span></div>
 <div class="line"><span class="comment">// 0x0X1.8B0A3D70A3D71P+3</span></div>
+<div class="line"><span class="comment">// 4.94066E-324</span></div>
+<div class="line"><span class="comment">// nan</span></div>
 <div class="line"><span class="comment">// inf</span></div>
-<div class="line"><span class="comment">// nan</span></div>
-<div class="line"><span class="comment">// nan</span></div>
+<div class="line"><span class="comment">// -inf</span></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 15 2023 23:07:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 18 2023 22:19:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -109,7 +109,9 @@ Inheritance diagram for xtd::diagnostics::process:</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1diagnostics.html" title="The xtd::diagnostics namespace provides classes that allow you to interact with system processes,...">xtd::diagnostics</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<p>The following example populates a StartInfo with the file to execute, the action performed on it and whether it should displays a user interface. For additional examples, refer to the reference pages for properties of the ProcessStartInfo class. </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<p>The following example populates a StartInfo with the file to execute, the action performed on it and whether it should displays a user interface. For additional examples, refer to the reference pages for properties of the ProcessStartInfo class. </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/process&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/using&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -117,12 +119,12 @@ Inheritance diagram for xtd::diagnostics::process:</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
 <div class="line">  <span class="keywordflow">try</span> {</div>
-<div class="line">    <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(<a class="code hl_class" href="classxtd_1_1diagnostics_1_1process.html">process</a> my_process) {</div>
-<div class="line">      my_process.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process.html#a764c6d95b61925b947ff01f150ea9ae4">start_info</a>().<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process__start__info.html#afbe7913a04289abf0dcf6b51f6c0186b">use_shell_execute</a>(<span class="keyword">false</span>);</div>
+<div class="line">    <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(<span class="keyword">auto</span> my_process = <a class="code hl_class" href="classxtd_1_1diagnostics_1_1process.html">process</a> {}) {</div>
+<div class="line">      my_process.start_info().use_shell_execute(<span class="keyword">false</span>);</div>
 <div class="line">      <span class="comment">// You can start any process other guidgen.</span></div>
-<div class="line">      my_process.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process.html#a764c6d95b61925b947ff01f150ea9ae4">start_info</a>().<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process__start__info.html#a451273cb1bd889af9cf173f6a6467a16">file_name</a>(<span class="stringliteral">&quot;guidgen&quot;</span>);</div>
-<div class="line">      my_process.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process.html#a764c6d95b61925b947ff01f150ea9ae4">start_info</a>().<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process__start__info.html#a5f000d55cd7307d55b8f8e14f0c7b6e7">create_no_window</a>(<span class="keyword">true</span>);</div>
-<div class="line">      my_process.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process.html#ad2e7a8e4f20f883bda963515cd8e5e44">start</a>();</div>
+<div class="line">      my_process.start_info().file_name(<span class="stringliteral">&quot;guidgen&quot;</span>);</div>
+<div class="line">      my_process.start_info().create_no_window(<span class="keyword">true</span>);</div>
+<div class="line">      my_process.start();</div>
 <div class="line">      <span class="comment">// This code assumes the process you are starting will terminate itself.</span></div>
 <div class="line">      <span class="comment">// Given that it is started without a window so you cannot terminate it</span></div>
 <div class="line">      <span class="comment">// on the desktop, it must terminate itself or you can do it programmatically</span></div>
@@ -137,11 +139,6 @@ Inheritance diagram for xtd::diagnostics::process:</div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// 1549cf47-b1c9-4333-96e5-4eabffbd9fbd</span></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="aclassxtd_1_1diagnostics_1_1process__start__info_html_a451273cb1bd889af9cf173f6a6467a16"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1process__start__info.html#a451273cb1bd889af9cf173f6a6467a16">xtd::diagnostics::process_start_info::file_name</a></div><div class="ttdeci">const xtd::ustring &amp; file_name() const noexcept</div><div class="ttdoc">Gets the application or document to start.</div></div>
-<div class="ttc" id="aclassxtd_1_1diagnostics_1_1process__start__info_html_a5f000d55cd7307d55b8f8e14f0c7b6e7"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1process__start__info.html#a5f000d55cd7307d55b8f8e14f0c7b6e7">xtd::diagnostics::process_start_info::create_no_window</a></div><div class="ttdeci">bool create_no_window() const noexcept</div><div class="ttdoc">Gets a value indicating whether to start the process in a new window.</div></div>
-<div class="ttc" id="aclassxtd_1_1diagnostics_1_1process__start__info_html_afbe7913a04289abf0dcf6b51f6c0186b"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1process__start__info.html#afbe7913a04289abf0dcf6b51f6c0186b">xtd::diagnostics::process_start_info::use_shell_execute</a></div><div class="ttdeci">bool use_shell_execute() const noexcept</div><div class="ttdoc">Gets a value indicating whether to use the operating system shell to start the process.</div></div>
-<div class="ttc" id="aclassxtd_1_1diagnostics_1_1process_html_a764c6d95b61925b947ff01f150ea9ae4"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1process.html#a764c6d95b61925b947ff01f150ea9ae4">xtd::diagnostics::process::start_info</a></div><div class="ttdeci">const xtd::diagnostics::process_start_info &amp; start_info() const</div><div class="ttdoc">Gets the properties to pass to the xtd::diagnostics::process::start() method of the xtd::diagnostics:...</div></div>
-<div class="ttc" id="aclassxtd_1_1diagnostics_1_1process_html_ad2e7a8e4f20f883bda963515cd8e5e44"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1process.html#ad2e7a8e4f20f883bda963515cd8e5e44">xtd::diagnostics::process::start</a></div><div class="ttdeci">bool start()</div><div class="ttdoc">Starts (or reuses) the process resource that is specified by the xtd::diagnostics::process::start_inf...</div></div>
 <div class="ttc" id="agroup__keywords_html_ga73249a3d4ad48e36724bccf5f3e48f2f"><div class="ttname"><a href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a></div><div class="ttdeci">#define using_(...)</div><div class="ttdoc">The specified expression is cleared automatically when the scope is ended.</div><div class="ttdef"><b>Definition</b> using.h:34</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">xtd::console_key::e</a></div><div class="ttdeci">@ e</div><div class="ttdoc">The E key.</div></div>
 <div class="ttc" id="anamespacextd_1_1diagnostics_html"><div class="ttname"><a href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a></div><div class="ttdoc">The xtd::diagnostics namespace provides classes that allow you to interact with system processes,...</div><div class="ttdef"><b>Definition</b> assert_dialog_result.h:10</div></div>
@@ -903,7 +900,9 @@ You can call xtd::diagnostics::process::get_processes_by_name, passing it an exe
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(my_stream_reader.read_line());</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1process__start__info_html"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1process__start__info.html">xtd::diagnostics::process_start_info</a></div><div class="ttdoc">Specifies a set of values that are used when you start a process.</div><div class="ttdef"><b>Definition</b> process_start_info.h:37</div></div>
+<div class="ttc" id="aclassxtd_1_1diagnostics_1_1process_html_a764c6d95b61925b947ff01f150ea9ae4"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1process.html#a764c6d95b61925b947ff01f150ea9ae4">xtd::diagnostics::process::start_info</a></div><div class="ttdeci">const xtd::diagnostics::process_start_info &amp; start_info() const</div><div class="ttdoc">Gets the properties to pass to the xtd::diagnostics::process::start() method of the xtd::diagnostics:...</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1process_html_a9e09a8c158d401459b4ab4aa37a6f06e"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1process.html#a9e09a8c158d401459b4ab4aa37a6f06e">xtd::diagnostics::process::standard_error</a></div><div class="ttdeci">std::istream &amp; standard_error()</div><div class="ttdoc">Gets a stream used to read the error output of the application.</div></div>
+<div class="ttc" id="aclassxtd_1_1diagnostics_1_1process_html_ad2e7a8e4f20f883bda963515cd8e5e44"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1process.html#ad2e7a8e4f20f883bda963515cd8e5e44">xtd::diagnostics::process::start</a></div><div class="ttdeci">bool start()</div><div class="ttdoc">Starts (or reuses) the process resource that is specified by the xtd::diagnostics::process::start_inf...</div></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1stream__reader_html"><div class="ttname"><a href="classxtd_1_1io_1_1stream__reader.html">xtd::io::stream_reader</a></div><div class="ttdoc">Implements a xtd::io::text_reader that reads characters from a byte stream.</div><div class="ttdef"><b>Definition</b> stream_reader.h:27</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>When a <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a> writes text to its standard error stream, that text is normally displayed on the console. By redirecting the <a class="el" href="classxtd_1_1diagnostics_1_1process.html#a9e09a8c158d401459b4ab4aa37a6f06e" title="Gets a stream used to read the error output of the application.">xtd::diagnostics::process::standard_error</a> stream, you can manipulate or suppress the error output of a process. For example, you can filter the text, format it differently, or write the output to both the console and a designated log file. </dd></dl>
@@ -1083,6 +1082,8 @@ You can use asynchronous read operations to avoid these dependencies and their d
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1console_html_aa8987e499bd2004bf0564b4fbca9161d"><div class="ttname"><a href="classxtd_1_1console.html#aa8987e499bd2004bf0564b4fbca9161d">xtd::console::read_line</a></div><div class="ttdeci">static xtd::ustring read_line()</div><div class="ttdoc">Reads the next line of characters from the standard input stream.</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1process__start__info_html_a428aa0165e841e20ca4f852d97539479"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1process__start__info.html#a428aa0165e841e20ca4f852d97539479">xtd::diagnostics::process_start_info::redirect_standard_input</a></div><div class="ttdeci">bool redirect_standard_input() const noexcept</div><div class="ttdoc">Gets a value indicating whether the input for an application is read from the Process....</div></div>
+<div class="ttc" id="aclassxtd_1_1diagnostics_1_1process__start__info_html_a451273cb1bd889af9cf173f6a6467a16"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1process__start__info.html#a451273cb1bd889af9cf173f6a6467a16">xtd::diagnostics::process_start_info::file_name</a></div><div class="ttdeci">const xtd::ustring &amp; file_name() const noexcept</div><div class="ttdoc">Gets the application or document to start.</div></div>
+<div class="ttc" id="aclassxtd_1_1diagnostics_1_1process__start__info_html_afbe7913a04289abf0dcf6b51f6c0186b"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1process__start__info.html#afbe7913a04289abf0dcf6b51f6c0186b">xtd::diagnostics::process_start_info::use_shell_execute</a></div><div class="ttdeci">bool use_shell_execute() const noexcept</div><div class="ttdoc">Gets a value indicating whether to use the operating system shell to start the process.</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1process_html_a847f429e7d5a0a3c584213ab693d27b0"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1process.html#a847f429e7d5a0a3c584213ab693d27b0">xtd::diagnostics::process::standard_input</a></div><div class="ttdeci">std::ostream &amp; standard_input()</div><div class="ttdoc">Gets a stream used to write the input of the application.</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1process_html_aebe25c21845a596c2e657d1b054fdeaa"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1process.html#aebe25c21845a596c2e657d1b054fdeaa">xtd::diagnostics::process::wait_for_exit</a></div><div class="ttdeci">process &amp; wait_for_exit()</div><div class="ttdoc">Instructs the xtd::diagnostics::process component to wait indefinitely for the associated process to ...</div></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1stream__writer_html"><div class="ttname"><a href="classxtd_1_1io_1_1stream__writer.html">xtd::io::stream_writer</a></div><div class="ttdoc">Implements a xtd::io::text_writer for writing characters to a stream.</div><div class="ttdef"><b>Definition</b> stream_writer.h:27</div></div>
@@ -1260,7 +1261,9 @@ You can use asynchronous read operations to avoid these dependencies and their d
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example populates a StartInfo with the file to execute, the action performed on it and whether it should displays a user interface. For additional examples, refer to the reference pages for properties of the ProcessStartInfo class. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example populates a StartInfo with the file to execute, the action performed on it and whether it should displays a user interface. For additional examples, refer to the reference pages for properties of the ProcessStartInfo class. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/process&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/using&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -1268,12 +1271,12 @@ You can use asynchronous read operations to avoid these dependencies and their d
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
 <div class="line">  <span class="keywordflow">try</span> {</div>
-<div class="line">    <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(<a class="code hl_class" href="classxtd_1_1diagnostics_1_1process.html">process</a> my_process) {</div>
-<div class="line">      my_process.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process.html#a764c6d95b61925b947ff01f150ea9ae4">start_info</a>().<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process__start__info.html#afbe7913a04289abf0dcf6b51f6c0186b">use_shell_execute</a>(<span class="keyword">false</span>);</div>
+<div class="line">    <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(<span class="keyword">auto</span> my_process = <a class="code hl_class" href="classxtd_1_1diagnostics_1_1process.html">process</a> {}) {</div>
+<div class="line">      my_process.start_info().use_shell_execute(<span class="keyword">false</span>);</div>
 <div class="line">      <span class="comment">// You can start any process other guidgen.</span></div>
-<div class="line">      my_process.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process.html#a764c6d95b61925b947ff01f150ea9ae4">start_info</a>().<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process__start__info.html#a451273cb1bd889af9cf173f6a6467a16">file_name</a>(<span class="stringliteral">&quot;guidgen&quot;</span>);</div>
-<div class="line">      my_process.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process.html#a764c6d95b61925b947ff01f150ea9ae4">start_info</a>().<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process__start__info.html#a5f000d55cd7307d55b8f8e14f0c7b6e7">create_no_window</a>(<span class="keyword">true</span>);</div>
-<div class="line">      my_process.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process.html#ad2e7a8e4f20f883bda963515cd8e5e44">start</a>();</div>
+<div class="line">      my_process.start_info().file_name(<span class="stringliteral">&quot;guidgen&quot;</span>);</div>
+<div class="line">      my_process.start_info().create_no_window(<span class="keyword">true</span>);</div>
+<div class="line">      my_process.start();</div>
 <div class="line">      <span class="comment">// This code assumes the process you are starting will terminate itself.</span></div>
 <div class="line">      <span class="comment">// Given that it is started without a window so you cannot terminate it</span></div>
 <div class="line">      <span class="comment">// on the desktop, it must terminate itself or you can do it programmatically</span></div>
@@ -1288,8 +1291,6 @@ You can use asynchronous read operations to avoid these dependencies and their d
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// 1549cf47-b1c9-4333-96e5-4eabffbd9fbd</span></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="process_8cpp-example.html#a6">process.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -1577,7 +1578,9 @@ Whenever you use <a class="el" href="classxtd_1_1diagnostics_1_1process.html#ad2
 
 <p>Gets the properties to pass to the <a class="el" href="classxtd_1_1diagnostics_1_1process.html#ad2e7a8e4f20f883bda963515cd8e5e44" title="Starts (or reuses) the process resource that is specified by the xtd::diagnostics::process::start_inf...">xtd::diagnostics::process::start()</a> method of the <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="classxtd_1_1diagnostics_1_1process__start__info.html" title="Specifies a set of values that are used when you start a process.">xtd::diagnostics::process_start_info</a> that represents the data with which to start the process. These arguments include the name of the executable file or document used to start the process. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example populates a StartInfo with the file to execute, the action performed on it and whether it should displays a user interface. For additional examples, refer to the reference pages for properties of the ProcessStartInfo class. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example populates a StartInfo with the file to execute, the action performed on it and whether it should displays a user interface. For additional examples, refer to the reference pages for properties of the ProcessStartInfo class. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/process&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/using&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -1585,12 +1588,12 @@ Whenever you use <a class="el" href="classxtd_1_1diagnostics_1_1process.html#ad2
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
 <div class="line">  <span class="keywordflow">try</span> {</div>
-<div class="line">    <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(<a class="code hl_class" href="classxtd_1_1diagnostics_1_1process.html">process</a> my_process) {</div>
-<div class="line">      my_process.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process.html#a764c6d95b61925b947ff01f150ea9ae4">start_info</a>().<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process__start__info.html#afbe7913a04289abf0dcf6b51f6c0186b">use_shell_execute</a>(<span class="keyword">false</span>);</div>
+<div class="line">    <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(<span class="keyword">auto</span> my_process = <a class="code hl_class" href="classxtd_1_1diagnostics_1_1process.html">process</a> {}) {</div>
+<div class="line">      my_process.start_info().use_shell_execute(<span class="keyword">false</span>);</div>
 <div class="line">      <span class="comment">// You can start any process other guidgen.</span></div>
-<div class="line">      my_process.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process.html#a764c6d95b61925b947ff01f150ea9ae4">start_info</a>().<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process__start__info.html#a451273cb1bd889af9cf173f6a6467a16">file_name</a>(<span class="stringliteral">&quot;guidgen&quot;</span>);</div>
-<div class="line">      my_process.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process.html#a764c6d95b61925b947ff01f150ea9ae4">start_info</a>().<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process__start__info.html#a5f000d55cd7307d55b8f8e14f0c7b6e7">create_no_window</a>(<span class="keyword">true</span>);</div>
-<div class="line">      my_process.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process.html#ad2e7a8e4f20f883bda963515cd8e5e44">start</a>();</div>
+<div class="line">      my_process.start_info().file_name(<span class="stringliteral">&quot;guidgen&quot;</span>);</div>
+<div class="line">      my_process.start_info().create_no_window(<span class="keyword">true</span>);</div>
+<div class="line">      my_process.start();</div>
 <div class="line">      <span class="comment">// This code assumes the process you are starting will terminate itself.</span></div>
 <div class="line">      <span class="comment">// Given that it is started without a window so you cannot terminate it</span></div>
 <div class="line">      <span class="comment">// on the desktop, it must terminate itself or you can do it programmatically</span></div>
@@ -1632,7 +1635,9 @@ You should only access the <a class="el" href="classxtd_1_1diagnostics_1_1proces
 
 <p>Gets the properties to pass to the <a class="el" href="classxtd_1_1diagnostics_1_1process.html#ad2e7a8e4f20f883bda963515cd8e5e44" title="Starts (or reuses) the process resource that is specified by the xtd::diagnostics::process::start_inf...">xtd::diagnostics::process::start()</a> method of the <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="classxtd_1_1diagnostics_1_1process__start__info.html" title="Specifies a set of values that are used when you start a process.">xtd::diagnostics::process_start_info</a> that represents the data with which to start the process. These arguments include the name of the executable file or document used to start the process. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example populates a StartInfo with the file to execute, the action performed on it and whether it should displays a user interface. For additional examples, refer to the reference pages for properties of the ProcessStartInfo class. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example populates a StartInfo with the file to execute, the action performed on it and whether it should displays a user interface. For additional examples, refer to the reference pages for properties of the ProcessStartInfo class. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/process&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/using&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -1640,12 +1645,12 @@ You should only access the <a class="el" href="classxtd_1_1diagnostics_1_1proces
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
 <div class="line">  <span class="keywordflow">try</span> {</div>
-<div class="line">    <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(<a class="code hl_class" href="classxtd_1_1diagnostics_1_1process.html">process</a> my_process) {</div>
-<div class="line">      my_process.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process.html#a764c6d95b61925b947ff01f150ea9ae4">start_info</a>().<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process__start__info.html#afbe7913a04289abf0dcf6b51f6c0186b">use_shell_execute</a>(<span class="keyword">false</span>);</div>
+<div class="line">    <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(<span class="keyword">auto</span> my_process = <a class="code hl_class" href="classxtd_1_1diagnostics_1_1process.html">process</a> {}) {</div>
+<div class="line">      my_process.start_info().use_shell_execute(<span class="keyword">false</span>);</div>
 <div class="line">      <span class="comment">// You can start any process other guidgen.</span></div>
-<div class="line">      my_process.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process.html#a764c6d95b61925b947ff01f150ea9ae4">start_info</a>().<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process__start__info.html#a451273cb1bd889af9cf173f6a6467a16">file_name</a>(<span class="stringliteral">&quot;guidgen&quot;</span>);</div>
-<div class="line">      my_process.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process.html#a764c6d95b61925b947ff01f150ea9ae4">start_info</a>().<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process__start__info.html#a5f000d55cd7307d55b8f8e14f0c7b6e7">create_no_window</a>(<span class="keyword">true</span>);</div>
-<div class="line">      my_process.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process.html#ad2e7a8e4f20f883bda963515cd8e5e44">start</a>();</div>
+<div class="line">      my_process.start_info().file_name(<span class="stringliteral">&quot;guidgen&quot;</span>);</div>
+<div class="line">      my_process.start_info().create_no_window(<span class="keyword">true</span>);</div>
+<div class="line">      my_process.start();</div>
 <div class="line">      <span class="comment">// This code assumes the process you are starting will terminate itself.</span></div>
 <div class="line">      <span class="comment">// Given that it is started without a window so you cannot terminate it</span></div>
 <div class="line">      <span class="comment">// on the desktop, it must terminate itself or you can do it programmatically</span></div>
@@ -1667,8 +1672,6 @@ If the file name involves a nonexecutable file, such as a .doc file, you can inc
 You can change the parameters specified in the <a class="el" href="classxtd_1_1diagnostics_1_1process.html#a764c6d95b61925b947ff01f150ea9ae4" title="Gets the properties to pass to the xtd::diagnostics::process::start() method of the xtd::diagnostics:...">xtd::diagnostics::process::start_info</a> property up to the time that you call the <a class="el" href="classxtd_1_1diagnostics_1_1process.html#ad2e7a8e4f20f883bda963515cd8e5e44" title="Starts (or reuses) the process resource that is specified by the xtd::diagnostics::process::start_inf...">xtd::diagnostics::process::start</a> method on the process. After you start the process, changing the <a class="el" href="classxtd_1_1diagnostics_1_1process.html#a764c6d95b61925b947ff01f150ea9ae4" title="Gets the properties to pass to the xtd::diagnostics::process::start() method of the xtd::diagnostics:...">xtd::diagnostics::process::start_info</a> values does not affect or restart the associated process. If you call the xtd::diagnostics::process::start(xtd::diagnostics::process_start_info) method with the <a class="el" href="classxtd_1_1diagnostics_1_1process__start__info.html" title="Specifies a set of values that are used when you start a process.">xtd::diagnostics::process_start_info</a>. xtd::diagnostics::process::start_info::user_name and xtd::diagnostics::process::start_info::password properties set, the unmanaged CreateProcessWithLogonW function is called, which starts the process in a new window even if the xtd::diagnostics::process::start_info::create_no_window property value is true or the xtd::diagnostics::process::start_info::window_style property value is <a class="el" href="group__xtd__core.html#gga3c48664c704ae96774328c9bde1d450aa662f707d5491e9bce8238a6c0be92190" title="The hidden window style. A window can be either visible or hidden. The system displays a hidden windo...">xtd::diagnostics::process_window_style::hidden</a>. </dd>
 <dd>
 You should only access the <a class="el" href="classxtd_1_1diagnostics_1_1process.html#a764c6d95b61925b947ff01f150ea9ae4" title="Gets the properties to pass to the xtd::diagnostics::process::start() method of the xtd::diagnostics:...">xtd::diagnostics::process::start_info</a> property on a <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a> object returned by the Start method. For example, you should not access the <a class="el" href="classxtd_1_1diagnostics_1_1process.html#a764c6d95b61925b947ff01f150ea9ae4" title="Gets the properties to pass to the xtd::diagnostics::process::start() method of the xtd::diagnostics:...">xtd::diagnostics::process::start_info</a> property on a <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a> object returned by xtd::diagnostics::process::get_processes. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="process_8cpp-example.html#a2">process.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -1695,7 +1698,9 @@ You should only access the <a class="el" href="classxtd_1_1diagnostics_1_1proces
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example populates a StartInfo with the file to execute, the action performed on it and whether it should displays a user interface. For additional examples, refer to the reference pages for properties of the ProcessStartInfo class. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example populates a StartInfo with the file to execute, the action performed on it and whether it should displays a user interface. For additional examples, refer to the reference pages for properties of the ProcessStartInfo class. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/process&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/using&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -1703,12 +1708,12 @@ You should only access the <a class="el" href="classxtd_1_1diagnostics_1_1proces
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
 <div class="line">  <span class="keywordflow">try</span> {</div>
-<div class="line">    <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(<a class="code hl_class" href="classxtd_1_1diagnostics_1_1process.html">process</a> my_process) {</div>
-<div class="line">      my_process.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process.html#a764c6d95b61925b947ff01f150ea9ae4">start_info</a>().<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process__start__info.html#afbe7913a04289abf0dcf6b51f6c0186b">use_shell_execute</a>(<span class="keyword">false</span>);</div>
+<div class="line">    <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(<span class="keyword">auto</span> my_process = <a class="code hl_class" href="classxtd_1_1diagnostics_1_1process.html">process</a> {}) {</div>
+<div class="line">      my_process.start_info().use_shell_execute(<span class="keyword">false</span>);</div>
 <div class="line">      <span class="comment">// You can start any process other guidgen.</span></div>
-<div class="line">      my_process.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process.html#a764c6d95b61925b947ff01f150ea9ae4">start_info</a>().<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process__start__info.html#a451273cb1bd889af9cf173f6a6467a16">file_name</a>(<span class="stringliteral">&quot;guidgen&quot;</span>);</div>
-<div class="line">      my_process.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process.html#a764c6d95b61925b947ff01f150ea9ae4">start_info</a>().<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process__start__info.html#a5f000d55cd7307d55b8f8e14f0c7b6e7">create_no_window</a>(<span class="keyword">true</span>);</div>
-<div class="line">      my_process.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process.html#ad2e7a8e4f20f883bda963515cd8e5e44">start</a>();</div>
+<div class="line">      my_process.start_info().file_name(<span class="stringliteral">&quot;guidgen&quot;</span>);</div>
+<div class="line">      my_process.start_info().create_no_window(<span class="keyword">true</span>);</div>
+<div class="line">      my_process.start();</div>
 <div class="line">      <span class="comment">// This code assumes the process you are starting will terminate itself.</span></div>
 <div class="line">      <span class="comment">// Given that it is started without a window so you cannot terminate it</span></div>
 <div class="line">      <span class="comment">// on the desktop, it must terminate itself or you can do it programmatically</span></div>
@@ -1904,7 +1909,7 @@ The event is enabled during asynchronous read operations on <a class="el" href="
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 15 2023 23:07:42 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 18 2023 22:19:51 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

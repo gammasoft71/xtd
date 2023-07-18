@@ -122,7 +122,7 @@ Inheritance diagram for xtd::diagnostics::stack_trace:</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">protected</span>:</div>
 <div class="line">  <span class="keywordtype">void</span> my_protected_method() {</div>
-<div class="line">    my_internal_class mic;</div>
+<div class="line">    <span class="keyword">auto</span> mic = my_internal_class {};</div>
 <div class="line">    mic.throws_exception();</div>
 <div class="line">  }</div>
 <div class="line">  </div>
@@ -134,15 +134,15 @@ Inheritance diagram for xtd::diagnostics::stack_trace:</div>
 <div class="line">        <span class="keywordflow">throw</span> <a class="code hl_class" href="classxtd_1_1system__exception.html">system_exception</a>(<span class="stringliteral">&quot;A problem was encountered.&quot;</span>);</div>
 <div class="line">      } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1system__exception.html">system_exception</a>&amp;) {</div>
 <div class="line">        <span class="comment">// Create a StackTrace that captures filename, line number and column information.</span></div>
-<div class="line">        <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> st(<span class="keyword">true</span>);</div>
+<div class="line">        <span class="keyword">auto</span> st = <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> {<span class="keyword">true</span>};</div>
 <div class="line">        <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> stack_indent = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line">        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; st.frame_count(); i++) {</div>
+<div class="line">        <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0ul; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; st.frame_count(); <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>++) {</div>
 <div class="line">          <span class="comment">// Note that at this level, there are four stack frames, one for each method invocation.</span></div>
-<div class="line">          <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__frame.html">stack_frame</a> sf = st.get_frame(i);</div>
+<div class="line">          <span class="keyword">auto</span> sf = st.get_frame(i);</div>
 <div class="line">          console::write_line();</div>
-<div class="line">          console::write_line(stack_indent + <span class="stringliteral">&quot; Method: {0}&quot;</span>, sf.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1stack__frame.html#ae946fcdc9bfcf32e2a832815c40eeb08">get_method</a>());</div>
-<div class="line">          console::write_line(stack_indent + <span class="stringliteral">&quot; File: {0}&quot;</span>, sf.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1stack__frame.html#a3c7c3064010482060dc20aeb53b48797">get_file_name</a>());</div>
-<div class="line">          console::write_line(stack_indent + <span class="stringliteral">&quot; Line Number: {0}&quot;</span>, sf.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1stack__frame.html#a1832cdfb7233ada545f1af44983843ae">get_file_line_number</a>());</div>
+<div class="line">          console::write_line(stack_indent + <span class="stringliteral">&quot; Method: {0}&quot;</span>, sf.get_method());</div>
+<div class="line">          console::write_line(stack_indent + <span class="stringliteral">&quot; File: {0}&quot;</span>, sf.get_file_name());</div>
+<div class="line">          console::write_line(stack_indent + <span class="stringliteral">&quot; Line Number: {0}&quot;</span>, sf.get_file_line_number());</div>
 <div class="line">          stack_indent += <span class="stringliteral">&quot;  &quot;</span>;</div>
 <div class="line">        }</div>
 <div class="line">        <span class="keywordflow">throw</span>;</div>
@@ -152,19 +152,19 @@ Inheritance diagram for xtd::diagnostics::stack_trace:</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
-<div class="line">  stack_trace_sample sample;</div>
+<div class="line">  <span class="keyword">auto</span> sample = stack_trace_sample {};</div>
 <div class="line">  <span class="keywordflow">try</span> {</div>
 <div class="line">    sample.my_public_method();</div>
 <div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1system__exception.html">system_exception</a>&amp;) {</div>
 <div class="line">    <span class="comment">// Create a StackTrace that captures filename, line number, and column information for the current thread.</span></div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> st(<span class="keyword">true</span>);</div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> = 0; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; st.frame_count(); <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>++) {</div>
+<div class="line">    <span class="keyword">auto</span> st = <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> {<span class="keyword">true</span>};</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> = 0ul; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; st.frame_count(); <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>++) {</div>
 <div class="line">      <span class="comment">// Note that high up the call stack, there is only one stack frame.</span></div>
-<div class="line">      <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__frame.html">stack_frame</a> sf = st.get_frame(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>);</div>
+<div class="line">      <span class="keyword">auto</span> sf = st.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1stack__trace.html#afca6ea9bd4c06cb0d38fac6d699c1a61">get_frame</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>);</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;High up the call stack, Method: {0}&quot;</span>, sf.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1stack__frame.html#ae946fcdc9bfcf32e2a832815c40eeb08">get_method</a>());</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;High up the call stack, Method: {0}&quot;</span>, sf.get_method());</div>
 <div class="line">      </div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;High up the call stack, Line Number: {0}&quot;</span>, sf.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1stack__frame.html#a1832cdfb7233ada545f1af44983843ae">get_file_line_number</a>());</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;High up the call stack, Line Number: {0}&quot;</span>, sf.get_file_line_number());</div>
 <div class="line">    }</div>
 <div class="line">  }</div>
 <div class="line">}</div>
@@ -189,10 +189,7 @@ Inheritance diagram for xtd::diagnostics::stack_trace:</div>
 <div class="line"><span class="comment">// High up the call stack, Method: main</span></div>
 <div class="line"><span class="comment">// High up the call stack, Line Number: 0</span></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a></div><div class="ttdoc">Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...</div><div class="ttdef"><b>Definition</b> stack_frame.h:37</div></div>
-<div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html_a1832cdfb7233ada545f1af44983843ae"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__frame.html#a1832cdfb7233ada545f1af44983843ae">xtd::diagnostics::stack_frame::get_file_line_number</a></div><div class="ttdeci">virtual uint32 get_file_line_number() const noexcept</div><div class="ttdoc">Gets the line number in the file that contains the code that is executing. This information is typica...</div></div>
-<div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html_a3c7c3064010482060dc20aeb53b48797"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__frame.html#a3c7c3064010482060dc20aeb53b48797">xtd::diagnostics::stack_frame::get_file_name</a></div><div class="ttdeci">virtual const xtd::ustring &amp; get_file_name() const noexcept</div><div class="ttdoc">Gets the file name that contains the code that is executing. This information is typically extracted ...</div></div>
-<div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html_ae946fcdc9bfcf32e2a832815c40eeb08"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__frame.html#ae946fcdc9bfcf32e2a832815c40eeb08">xtd::diagnostics::stack_frame::get_method</a></div><div class="ttdeci">virtual const xtd::ustring &amp; get_method() const noexcept</div><div class="ttdoc">Gets the method in which the frame is executing.</div></div>
+<div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__trace_html_afca6ea9bd4c06cb0d38fac6d699c1a61"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__trace.html#afca6ea9bd4c06cb0d38fac6d699c1a61">xtd::diagnostics::stack_trace::get_frame</a></div><div class="ttdeci">const xtd::diagnostics::stack_frame &amp; get_frame(size_t index) noexcept</div><div class="ttdoc">Gets the specified stack frame.</div></div>
 <div class="ttc" id="aclassxtd_1_1system__exception_html"><div class="ttname"><a href="classxtd_1_1system__exception.html">xtd::system_exception</a></div><div class="ttdoc">Defines the base class for predefined exceptions in the xtd namespace.</div><div class="ttdef"><b>Definition</b> system_exception.h:24</div></div>
 <div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:48</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">xtd::console_key::i</a></div><div class="ttdeci">@ i</div><div class="ttdoc">The I key.</div></div>
@@ -350,8 +347,9 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    <span class="keywordflow">throw</span>;</div>
 <div class="line">  }</div>
 <div class="line">}</div>
+<div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a></div><div class="ttdoc">Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...</div><div class="ttdef"><b>Definition</b> stack_frame.h:37</div></div>
+<div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html_ae946fcdc9bfcf32e2a832815c40eeb08"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__frame.html#ae946fcdc9bfcf32e2a832815c40eeb08">xtd::diagnostics::stack_frame::get_method</a></div><div class="ttdeci">virtual const xtd::ustring &amp; get_method() const noexcept</div><div class="ttdoc">Gets the method in which the frame is executing.</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__trace_html_a424374815e3f722a156fedeb6a77e30e"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__trace.html#a424374815e3f722a156fedeb6a77e30e">xtd::diagnostics::stack_trace::frame_count</a></div><div class="ttdeci">size_t frame_count() const noexcept</div><div class="ttdoc">Gets the number of frames in the stack trace.</div></div>
-<div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__trace_html_afca6ea9bd4c06cb0d38fac6d699c1a61"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__trace.html#afca6ea9bd4c06cb0d38fac6d699c1a61">xtd::diagnostics::stack_trace::get_frame</a></div><div class="ttdeci">const xtd::diagnostics::stack_frame &amp; get_frame(size_t index) noexcept</div><div class="ttdoc">Gets the specified stack frame.</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">xtd::console_key::e</a></div><div class="ttdeci">@ e</div><div class="ttdoc">The E key.</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1diagnostics_1_1stack__trace.html" title="Represents a stack trace, which is an ordered collection of one or more stack frames.">xtd::diagnostics::stack_trace</a> is created with the caller's current thread, and does not contain file name, line number, or column information. </dd>
@@ -791,8 +789,6 @@ If the number of frames to skip is greater than or equal to the total number of 
 <div class="line">  }</div>
 <div class="line">}</div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="stack_trace_simple_8cpp-example.html#a3">stack_trace_simple.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -859,7 +855,7 @@ If the number of frames to skip is greater than or equal to the total number of 
 <div class="line">}</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Stack frames are numbered starting at 0, which is the last stack frame pushed. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="stack_trace_simple_8cpp-example.html#a5">stack_trace_simple.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="stack_trace_simple_8cpp-example.html#a3">stack_trace_simple.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -936,8 +932,6 @@ Use the <a class="el" href="classxtd_1_1diagnostics_1_1stack__trace.html#a0dc007
 </div><!-- fragment --> </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classxtd_1_1object.html#a5682215ee76ab97c48580ab162c49507">xtd::object</a>.</p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="stack_frame_8cpp-example.html#a4">stack_frame.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -974,7 +968,7 @@ Use the <a class="el" href="classxtd_1_1diagnostics_1_1stack__trace.html#a0dc007
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 15 2023 23:07:42 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 18 2023 22:19:51 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

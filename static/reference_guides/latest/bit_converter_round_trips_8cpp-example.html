@@ -96,14 +96,14 @@ $(function() {
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    <span class="comment">// The main entry point for the application.</span></div>
 <div class="line">    <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">      <span class="keywordtype">int</span> value = -16;</div>
-<div class="line">      vector&lt;unsigned char&gt; bytes = bit_converter::get_bytes(value);</div>
+<div class="line">      <span class="keyword">auto</span> value = -16;</div>
+<div class="line">      <span class="keyword">auto</span> bytes = bit_converter::get_bytes(value);</div>
 <div class="line">      </div>
 <div class="line">      <span class="comment">// Convert bytes back to int.</span></div>
-<div class="line">      <span class="keywordtype">int</span> int_value = bit_converter::to_int32(bytes, 0);</div>
+<div class="line">      <span class="keyword">auto</span> int_value = bit_converter::to_int32(bytes, 0);</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;{0} = {1}: {2}&quot;</span>, value, int_value, value == int_value ? <span class="stringliteral">&quot;Round-trips&quot;</span> : <span class="stringliteral">&quot;Does not round-trip&quot;</span>);</div>
 <div class="line">      <span class="comment">// Convert bytes to unsigned int.</span></div>
-<div class="line">      uint uint_value = bit_converter::to_uint32(bytes, 0);</div>
+<div class="line">      <span class="keyword">auto</span> uint_value = bit_converter::to_uint32(bytes, 0);</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;{0} = {1}: {2}&quot;</span>, value, uint_value, <span class="keyword">static_cast&lt;</span>uint<span class="keyword">&gt;</span>(value) == uint_value ? <span class="stringliteral">&quot;Round-trips&quot;</span> : <span class="stringliteral">&quot;Does not round-trip&quot;</span>);</div>
 <div class="line">    }</div>
 <div class="line">  };</div>
@@ -121,7 +121,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 15 2023 23:07:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 18 2023 22:19:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

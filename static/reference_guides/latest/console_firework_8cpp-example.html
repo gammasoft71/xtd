@@ -226,14 +226,14 @@ $(function() {
 <div class="line">      console::cursor_visible(<span class="keyword">false</span>);</div>
 <div class="line">      console::clear();</div>
 <div class="line">      </div>
-<div class="line">      <a id="_a3" name="_a3"></a><a class="code hl_class" href="classxtd_1_1random.html">xtd::random</a> rand;</div>
-<div class="line">      list &lt; shared_ptr&lt;firework &gt;&gt; fireworks;</div>
-<div class="line">      vector colors = {console_color::blue, console_color::green, console_color::cyan, console_color::red, console_color::magenta, console_color::yellow, console_color::white};</div>
+<div class="line">      <span class="keyword">auto</span> rand = <a id="_a3" name="_a3"></a><a class="code hl_class" href="classxtd_1_1random.html">xtd::random</a> {};</div>
+<div class="line">      <span class="keyword">auto</span> fireworks = list&lt;shared_ptr&lt;firework&gt;&gt; {};</div>
+<div class="line">      <span class="keyword">auto</span> colors = vector {console_color::blue, console_color::green, console_color::cyan, console_color::red, console_color::magenta, console_color::yellow, console_color::white};</div>
 <div class="line">      </div>
 <div class="line">      <span class="keywordflow">while</span> (!console::key_available()) {</div>
-<div class="line">        fireworks.push_back(make_shared&lt;firework_start&gt;(rand.<a id="a4" name="a4"></a><a class="code hl_function" href="classxtd_1_1random.html#a629a30d5ddd8035f45afe7d982fda712">next</a>(2, console_width - 2), rand.<a class="code hl_function" href="classxtd_1_1random.html#a629a30d5ddd8035f45afe7d982fda712">next</a>(2, console_height - 2), colors[rand.<a class="code hl_function" href="classxtd_1_1random.html#a629a30d5ddd8035f45afe7d982fda712">next</a>(colors.size())], rand.<a class="code hl_function" href="classxtd_1_1random.html#a629a30d5ddd8035f45afe7d982fda712">next</a>(1, 5)));</div>
+<div class="line">        fireworks.push_back(make_shared&lt;firework_start&gt;(rand.next(2, console_width - 2), rand.next(2, console_height - 2), colors[rand.next(colors.size())], rand.next(1, 5)));</div>
 <div class="line">        </div>
-<div class="line">        list &lt; shared_ptr&lt;firework &gt;&gt; fireworks_to_removed;</div>
+<div class="line">        <span class="keyword">auto</span> fireworks_to_removed = list&lt;shared_ptr&lt;firework&gt;&gt; {};</div>
 <div class="line">        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; firework : fireworks) {</div>
 <div class="line">          <span class="keywordflow">if</span> (is&lt;firework_end&gt;(firework)) fireworks_to_removed.push_back(firework);</div>
 <div class="line">          explode(firework);</div>
@@ -260,11 +260,10 @@ $(function() {
 <div class="line">      <span class="keywordflow">if</span> (is&lt;firework_exploded&gt;(firework)) firework = make_shared&lt;firework_start_expanded1&gt;(*firework);</div>
 <div class="line">      <span class="keywordflow">if</span> (date_time::now().<a class="code hl_typedef" href="group__types.html#gaf6b556b49d28b448fc2c5af1d820f3ea">ticks</a>().count() % firework-&gt;delay() == 0 &amp;&amp; is&lt;firework_start&gt;(firework)) firework = make_shared&lt;firework_exploded&gt;(*firework);</div>
 <div class="line">    }</div>
-<div class="line"> </div>
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><a id="a5" name="a5"></a><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(console_firework_example::program);</div>
+<div class="line"><a id="a4" name="a4"></a><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(console_firework_example::program);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code can produces the following output with colors:</span></div>
 <div class="line"><span class="comment">//</span></div>
@@ -294,7 +293,6 @@ $(function() {
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="ttc" id="aclassxtd_1_1random_html"><div class="ttname"><a href="classxtd_1_1random.html">xtd::random</a></div><div class="ttdoc">Represents a pseudo-random number generator, a device that produces a sequence of numbers that meet c...</div><div class="ttdef"><b>Definition</b> random.h:37</div></div>
-<div class="ttc" id="aclassxtd_1_1random_html_a629a30d5ddd8035f45afe7d982fda712"><div class="ttname"><a href="classxtd_1_1random.html#a629a30d5ddd8035f45afe7d982fda712">xtd::random::next</a></div><div class="ttdeci">virtual int32 next() const</div><div class="ttdoc">Returns a nonnegative random number.</div></div>
 <div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:48</div></div>
 <div class="ttc" id="agroup__keywords_html_ga28796443ec37b938df7072c79595e3f6"><div class="ttname"><a href="group__keywords.html#ga28796443ec37b938df7072c79595e3f6">static_</a></div><div class="ttdeci">#define static_</div><div class="ttdoc">This keyword is use to represent a static object. A static object can't be instantiated (constructors...</div><div class="ttdef"><b>Definition</b> static.h:38</div></div>
 <div class="ttc" id="agroup__keywords_html_ga8bad3fd3f3b8afda1d635fa70ebaaa8e"><div class="ttname"><a href="group__keywords.html#ga8bad3fd3f3b8afda1d635fa70ebaaa8e">abstract_</a></div><div class="ttdeci">#define abstract_</div><div class="ttdoc">This keyword is used to represents an abstract class.</div><div class="ttdef"><b>Definition</b> abstract.h:23</div></div>
@@ -306,7 +304,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 15 2023 23:07:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 18 2023 22:19:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -83,22 +83,21 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Shows how to use <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> class.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/drawing/color&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1drawing.html">xtd::drawing</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;color::black = {0}&quot;</span>, color::black) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;color::withe = {0}&quot;</span>, color::white) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;color::blue = {0}&quot;</span>, color::blue) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;Color::light_green = {0}&quot;</span>, color::light_green) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;Color::from_argb(255, 253, 2, 0) = {0}&quot;</span>, color::from_argb(255, 253, 2, 0)) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;color::from_name(\&quot;dodger_blue\&quot;) = {0}&quot;</span>, color::from_name(<span class="stringliteral">&quot;dodger_blue&quot;</span>)) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;color::from_name(\&quot;dodger blue\&quot;) = {0}&quot;</span>, color::from_name(<span class="stringliteral">&quot;dodger blue&quot;</span>)) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;color::from_name(\&quot;dodgerblue\&quot;) = {0}&quot;</span>, color::from_name(<span class="stringliteral">&quot;dodgerblue&quot;</span>)) &lt;&lt; endl;</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;color::black = {}&quot;</span>, color::black);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;color::withe = {}&quot;</span>, color::white);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;color::blue = {}&quot;</span>, color::blue);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;Color::light_green = {}&quot;</span>, color::light_green);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;Color::from_argb(255, 253, 2, 0) = {}&quot;</span>, color::from_argb(255, 253, 2, 0));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;color::from_name(\&quot;dodger_blue\&quot;) = {}&quot;</span>, color::from_name(<span class="stringliteral">&quot;dodger_blue&quot;</span>));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;color::from_name(\&quot;dodger blue\&quot;) = {}&quot;</span>, color::from_name(<span class="stringliteral">&quot;dodger blue&quot;</span>));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;color::from_name(\&quot;dodgerblue\&quot;) = {}&quot;</span>, color::from_name(<span class="stringliteral">&quot;dodgerblue&quot;</span>));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output:</span></div>
@@ -117,7 +116,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 15 2023 23:07:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 18 2023 22:19:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -83,22 +83,21 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Shows how to use <a class="el" href="classxtd_1_1drawing_1_1system__fonts.html" title="Specifies the fonts used to display text in Windows display elements.">xtd::drawing::system_fonts</a> class.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/drawing/system_fonts&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1drawing.html">xtd::drawing</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;caption_font       : {}&quot;</span>, system_fonts::caption_font()) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;default_font       : {}&quot;</span>, system_fonts::default_font()) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;dialog_font        : {}&quot;</span>, system_fonts::dialog_font()) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;icon_title_font    : {}&quot;</span>, system_fonts::icon_title_font()) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;menu_font          : {}&quot;</span>, system_fonts::menu_font()) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;message_box_font   : {}&quot;</span>, system_fonts::message_box_font()) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;small_caption_font : {}&quot;</span>, system_fonts::small_caption_font()) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;status_font        : {}&quot;</span>, system_fonts::status_font()) &lt;&lt; endl;</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;caption_font       : {}&quot;</span>, system_fonts::caption_font());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;default_font       : {}&quot;</span>, system_fonts::default_font());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;dialog_font        : {}&quot;</span>, system_fonts::dialog_font());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;icon_title_font    : {}&quot;</span>, system_fonts::icon_title_font());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;menu_font          : {}&quot;</span>, system_fonts::menu_font());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;message_box_font   : {}&quot;</span>, system_fonts::message_box_font());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;small_caption_font : {}&quot;</span>, system_fonts::small_caption_font());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;status_font        : {}&quot;</span>, system_fonts::status_font());</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code can produce the following output:</span></div>
@@ -117,7 +116,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 15 2023 23:07:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 18 2023 22:19:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

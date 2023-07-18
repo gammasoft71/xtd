@@ -108,7 +108,12 @@ Inheritance diagram for xtd::io::binary_reader:</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1io.html" title="The xtd::io namespace contains types that allow reading and writing to files and data streams,...">xtd::io</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to store and retrieve application settings in a file. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to store and retrieve application settings in a file. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/io/binary_reader&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/io/binary_writer&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/io/file&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/using&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -123,9 +128,9 @@ Inheritance diagram for xtd::io::binary_reader:</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> write_default_values() {</div>
-<div class="line">    <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(fstream fs = file::open(file_name, ios::out | ios::binary | ios::trunc)) {</div>
-<div class="line">      <a class="code hl_class" href="classxtd_1_1io_1_1binary__writer.html">binary_writer</a> writer(fs);</div>
-<div class="line">      writer.write(1.250F);</div>
+<div class="line">    <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(<span class="keyword">auto</span> fs = file::open(file_name, ios::out | ios::binary | ios::trunc)) {</div>
+<div class="line">      <span class="keyword">auto</span> writer = <a class="code hl_class" href="classxtd_1_1io_1_1binary__writer.html">binary_writer</a> {fs};</div>
+<div class="line">      writer.<a class="code hl_function" href="classxtd_1_1io_1_1binary__writer.html#ac41c07a8df723bcaed30d973800fe109">write</a>(1.250F);</div>
 <div class="line">      writer.write(R<span class="stringliteral">&quot;(c:\Temp)&quot;);</span></div>
 <div class="line"><span class="stringliteral">      writer.write(10);</span></div>
 <div class="line"><span class="stringliteral">      writer.write(</span><span class="keyword">true</span>);</div>
@@ -133,15 +138,15 @@ Inheritance diagram for xtd::io::binary_reader:</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> display_values() {</div>
-<div class="line">    <span class="keywordtype">float</span> aspect_ratio;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> temp_directory;</div>
-<div class="line">    <span class="keywordtype">int</span> auto_save_time;</div>
-<div class="line">    <span class="keywordtype">bool</span> show_status_bar;</div>
+<div class="line">    <span class="keyword">auto</span> aspect_ratio = .0f;</div>
+<div class="line">    <span class="keyword">auto</span> temp_directory = ustring::empty_string;</div>
+<div class="line">    <span class="keyword">auto</span> auto_save_time = 0;</div>
+<div class="line">    <span class="keyword">auto</span> show_status_bar = <span class="keyword">false</span>;</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">if</span> (file::exists(file_name)) {</div>
-<div class="line">      <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(fstream fs = file::open(file_name, ios::in | ios::binary)) {</div>
-<div class="line">        <a class="code hl_class" href="classxtd_1_1io_1_1binary__reader.html">binary_reader</a> reader(fs);</div>
-<div class="line">        aspect_ratio = reader.read_single();</div>
+<div class="line">      <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(<span class="keyword">auto</span> fs = file::open(file_name, ios::in | ios::binary)) {</div>
+<div class="line">        <span class="keyword">auto</span> reader = <a class="code hl_class" href="classxtd_1_1io_1_1binary__reader.html">binary_reader</a> {fs};</div>
+<div class="line">        aspect_ratio = reader.<a class="code hl_function" href="classxtd_1_1io_1_1binary__reader.html#a26b57a62d9b712ed33438d40adcd569c">read_single</a>();</div>
 <div class="line">        temp_directory = reader.read_string();</div>
 <div class="line">        auto_save_time = reader.read_int32();</div>
 <div class="line">        show_status_bar = reader.read_boolean();</div>
@@ -164,14 +169,21 @@ Inheritance diagram for xtd::io::binary_reader:</div>
 <div class="line"><span class="comment">// Auto save time set to: 10</span></div>
 <div class="line"><span class="comment">// Show status bar: true</span></div>
 <div class="line"> </div>
+<div class="ttc" id="aclassxtd_1_1io_1_1binary__reader_html_a26b57a62d9b712ed33438d40adcd569c"><div class="ttname"><a href="classxtd_1_1io_1_1binary__reader.html#a26b57a62d9b712ed33438d40adcd569c">xtd::io::binary_reader::read_single</a></div><div class="ttdeci">virtual float read_single()</div><div class="ttdoc">Reads an 4-byte floating point value from the current stream and advances the current position of the...</div></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1binary__writer_html"><div class="ttname"><a href="classxtd_1_1io_1_1binary__writer.html">xtd::io::binary_writer</a></div><div class="ttdoc">Writes primitive types in binary to a stream and supports writing strings.</div><div class="ttdef"><b>Definition</b> binary_writer.h:38</div></div>
+<div class="ttc" id="aclassxtd_1_1io_1_1binary__writer_html_ac41c07a8df723bcaed30d973800fe109"><div class="ttname"><a href="classxtd_1_1io_1_1binary__writer.html#ac41c07a8df723bcaed30d973800fe109">xtd::io::binary_writer::write</a></div><div class="ttdeci">virtual void write(bool value)</div><div class="ttdoc">Writes a one-byte boolean value to the current stream, with 0 representing false and 1 representing t...</div></div>
 <div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:48</div></div>
 <div class="ttc" id="agroup__keywords_html_ga73249a3d4ad48e36724bccf5f3e48f2f"><div class="ttname"><a href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a></div><div class="ttdeci">#define using_(...)</div><div class="ttdoc">The specified expression is cleared automatically when the scope is ended.</div><div class="ttdef"><b>Definition</b> using.h:34</div></div>
 <div class="ttc" id="agroup__keywords_html_gac9b8e6f22fb2fdc1bb915ee01aef848c"><div class="ttname"><a href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a></div><div class="ttdeci">#define startup_(main_class)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:57</div></div>
 <div class="ttc" id="anamespacextd_1_1io_html"><div class="ttname"><a href="namespacextd_1_1io.html">xtd::io</a></div><div class="ttdoc">The xtd::io namespace contains types that allow reading and writing to files and data streams,...</div><div class="ttdef"><b>Definition</b> binary_reader.h:17</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The same example with stream operators. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The same example with stream operators. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/io/binary_reader&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/io/binary_writer&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/io/file&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/using&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -186,8 +198,8 @@ Inheritance diagram for xtd::io::binary_reader:</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> write_default_values() {</div>
-<div class="line">    <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(fstream fs = file::open(file_name, ios::out | ios::binary | ios::trunc)) {</div>
-<div class="line">      <a class="code hl_class" href="classxtd_1_1io_1_1binary__writer.html">binary_writer</a> writer(fs);</div>
+<div class="line">    <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(<span class="keyword">auto</span> fs = file::open(file_name, ios::out | ios::binary | ios::trunc)) {</div>
+<div class="line">      <span class="keyword">auto</span> writer = <a class="code hl_class" href="classxtd_1_1io_1_1binary__writer.html">binary_writer</a> {fs};</div>
 <div class="line">      writer &lt;&lt; 1.250F;</div>
 <div class="line">      writer &lt;&lt; R<span class="stringliteral">&quot;(c:\Temp)&quot;;</span></div>
 <div class="line"><span class="stringliteral">      writer &lt;&lt; 10;</span></div>
@@ -196,14 +208,14 @@ Inheritance diagram for xtd::io::binary_reader:</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> display_values() {</div>
-<div class="line">    <span class="keywordtype">float</span> aspect_ratio;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> temp_directory;</div>
-<div class="line">    <span class="keywordtype">int</span> auto_save_time;</div>
-<div class="line">    <span class="keywordtype">bool</span> show_status_bar;</div>
-<div class="line">    </div>
+<div class="line">    <span class="keyword">auto</span> aspect_ratio = .0f;</div>
+<div class="line">    <span class="keyword">auto</span> temp_directory = ustring::empty_string;</div>
+<div class="line">    <span class="keyword">auto</span> auto_save_time = 0;</div>
+<div class="line">    <span class="keyword">auto</span> show_status_bar = <span class="keyword">false</span>;</div>
+<div class="line"> </div>
 <div class="line">    <span class="keywordflow">if</span> (file::exists(file_name)) {</div>
-<div class="line">      <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(fstream fs = file::open(file_name, ios::in | ios::binary)) {</div>
-<div class="line">        <a class="code hl_class" href="classxtd_1_1io_1_1binary__reader.html">binary_reader</a> reader(fs);</div>
+<div class="line">      <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(<span class="keyword">auto</span> fs = file::open(file_name, ios::in | ios::binary)) {</div>
+<div class="line">        <span class="keyword">auto</span> reader = <a class="code hl_class" href="classxtd_1_1io_1_1binary__reader.html">binary_reader</a> {fs};</div>
 <div class="line">        reader &gt;&gt; aspect_ratio;</div>
 <div class="line">        reader &gt;&gt; temp_directory;</div>
 <div class="line">        reader &gt;&gt; auto_save_time;</div>
@@ -430,7 +442,12 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to store and retrieve application settings in a file. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to store and retrieve application settings in a file. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/io/binary_reader&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/io/binary_writer&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/io/file&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/using&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -445,9 +462,9 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> write_default_values() {</div>
-<div class="line">    <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(fstream fs = file::open(file_name, ios::out | ios::binary | ios::trunc)) {</div>
-<div class="line">      <a class="code hl_class" href="classxtd_1_1io_1_1binary__writer.html">binary_writer</a> writer(fs);</div>
-<div class="line">      writer.write(1.250F);</div>
+<div class="line">    <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(<span class="keyword">auto</span> fs = file::open(file_name, ios::out | ios::binary | ios::trunc)) {</div>
+<div class="line">      <span class="keyword">auto</span> writer = <a class="code hl_class" href="classxtd_1_1io_1_1binary__writer.html">binary_writer</a> {fs};</div>
+<div class="line">      writer.<a class="code hl_function" href="classxtd_1_1io_1_1binary__writer.html#ac41c07a8df723bcaed30d973800fe109">write</a>(1.250F);</div>
 <div class="line">      writer.write(R<span class="stringliteral">&quot;(c:\Temp)&quot;);</span></div>
 <div class="line"><span class="stringliteral">      writer.write(10);</span></div>
 <div class="line"><span class="stringliteral">      writer.write(</span><span class="keyword">true</span>);</div>
@@ -455,15 +472,15 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> display_values() {</div>
-<div class="line">    <span class="keywordtype">float</span> aspect_ratio;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> temp_directory;</div>
-<div class="line">    <span class="keywordtype">int</span> auto_save_time;</div>
-<div class="line">    <span class="keywordtype">bool</span> show_status_bar;</div>
+<div class="line">    <span class="keyword">auto</span> aspect_ratio = .0f;</div>
+<div class="line">    <span class="keyword">auto</span> temp_directory = ustring::empty_string;</div>
+<div class="line">    <span class="keyword">auto</span> auto_save_time = 0;</div>
+<div class="line">    <span class="keyword">auto</span> show_status_bar = <span class="keyword">false</span>;</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">if</span> (file::exists(file_name)) {</div>
-<div class="line">      <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(fstream fs = file::open(file_name, ios::in | ios::binary)) {</div>
-<div class="line">        <a class="code hl_class" href="classxtd_1_1io_1_1binary__reader.html">binary_reader</a> reader(fs);</div>
-<div class="line">        aspect_ratio = reader.read_single();</div>
+<div class="line">      <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(<span class="keyword">auto</span> fs = file::open(file_name, ios::in | ios::binary)) {</div>
+<div class="line">        <span class="keyword">auto</span> reader = <a class="code hl_class" href="classxtd_1_1io_1_1binary__reader.html">binary_reader</a> {fs};</div>
+<div class="line">        aspect_ratio = reader.<a class="code hl_function" href="classxtd_1_1io_1_1binary__reader.html#a26b57a62d9b712ed33438d40adcd569c">read_single</a>();</div>
 <div class="line">        temp_directory = reader.read_string();</div>
 <div class="line">        auto_save_time = reader.read_int32();</div>
 <div class="line">        show_status_bar = reader.read_boolean();</div>
@@ -826,8 +843,6 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 <dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="classxtd_1_1io_1_1binary__reader.html" title="Reads primitive data types as binary values in a specific encoding.">xtd::io::binary_reader</a> does not restore the file position after an unsuccessful read operation. </dd>
 <dd>
 For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="binary_reader_8cpp-example.html#a8">binary_reader.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -1108,8 +1123,6 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 <dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="classxtd_1_1io_1_1binary__reader.html" title="Reads primitive data types as binary values in a specific encoding.">xtd::io::binary_reader</a> does not restore the file position after an unsuccessful read operation. </dd>
 <dd>
 For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="binary_reader_8cpp-example.html#a7">binary_reader.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -1264,8 +1277,6 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 <dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="classxtd_1_1io_1_1binary__reader.html" title="Reads primitive data types as binary values in a specific encoding.">xtd::io::binary_reader</a> does not restore the file position after an unsuccessful read operation. </dd>
 <dd>
 For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="binary_reader_8cpp-example.html#a6">binary_reader.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -1470,7 +1481,7 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 15 2023 23:07:44 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 18 2023 22:19:54 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
