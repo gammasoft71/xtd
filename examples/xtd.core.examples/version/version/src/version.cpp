@@ -1,4 +1,6 @@
-#include <xtd/xtd>
+#include <xtd/console>
+#include <xtd/startup>
+#include <xtd/version>
 
 using namespace xtd;
 
@@ -7,13 +9,13 @@ namespace version_example {
   public:
     // The main entry point for the application.
     static auto main() {
-      ustring fmt_std = "Standard version:\n"
+      auto fmt_std = "Standard version:\n"
         "  major.minor.build.revision = {0}.{1}.{2}.{3}";
-      ustring fmt_int = "Interim version:\n"
+      auto fmt_int = "Interim version:\n"
         "  major.minor.build.maj_rev/min_rev = {0}.{1}.{2}.{3}/{4}";
         
-      version std(2, 4, 1128, 2);
-      version interim(2, 4, 1128, (100 << 16) + 2);
+      auto std = version {2, 4, 1128, 2};
+      auto interim = version {2, 4, 1128, (100 << 16) + 2};
       
       console::write_line(fmt_std, std.major(), std.minor(), std.build(), std.revision());
       console::write_line(fmt_int, interim.major(), interim.minor(), interim.build(), interim.major_revision(), interim.minor_revision());
