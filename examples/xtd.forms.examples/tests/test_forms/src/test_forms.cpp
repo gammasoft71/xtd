@@ -1,4 +1,9 @@
-#include <xtd/xtd>
+#include <xtd/diagnostics/process>
+#include <xtd/forms/application>
+#include <xtd/forms/form>
+#include <xtd/forms/text_box>
+#include <xtd/environment>
+#include <xtd/startup>
 
 class virtual_console : public xtd::forms::text_box {
 public:

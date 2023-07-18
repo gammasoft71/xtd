@@ -1,4 +1,10 @@
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/button>
+#include <xtd/forms/form>
+#include <xtd/forms/message_box>
+#include <xtd/forms/save_file_box>
+#include <xtd/environment>
+#include <xtd/literals>
 
 using namespace xtd;
 using namespace xtd::forms;
@@ -15,7 +21,7 @@ public:
     .size({150, 35})
     .text("Save file")
     .click += [this] {
-      ustring file_name = "MyFile.txt";
+      auto file_name = "MyFile.txt"_s;
       auto res = save_file_box::show(file_name, *this, "Save file as...", environment::get_folder_path(environment::special_folder::my_documents), "*.txt");
       if (res == dialog_result::ok)
         message_box::show(ustring::format("File will be saved as:\n{}", file_name));

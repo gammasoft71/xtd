@@ -1,6 +1,11 @@
 #define TRACE
-#include <xtd/xtd>
+#include <xtd/forms/application>
+#include <xtd/forms/button>
+#include <xtd/forms/form>
+#include <xtd/forms/trace_form>
 
+using namespace xtd::diagnostics;
+using namespace xtd::drawing;
 using namespace xtd::forms;
 
 class form1 : public form {
@@ -14,8 +19,8 @@ public:
     button1.parent(*this);
     button1.text("Write line...");
     button1.click += [&] {
-      static int counter = 0;
-      xtd::diagnostics::trace::write_line("Write line {}...", ++counter);
+      static auto counter = 0;
+      trace::write_line("Write line {}...", ++counter);
     };
   }
   
@@ -24,8 +29,8 @@ private:
 };
 
 auto main()->int {
-  trace_form trace_form;
-  trace_form.back_color(xtd::drawing::color::navy);
-  trace_form.fore_color(xtd::drawing::color::white);
+  auto tf = trace_form {};
+  tf.back_color(color::navy);
+  tf.fore_color(color::white);
   application::run(form1 {});
 }
