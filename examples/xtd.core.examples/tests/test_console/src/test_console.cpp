@@ -1,4 +1,6 @@
-#include <xtd/xtd>
+#include <xtd/forms/message_box>
+#include <xtd/console>
+#include <xtd/startup>
 
 using namespace xtd;
 
