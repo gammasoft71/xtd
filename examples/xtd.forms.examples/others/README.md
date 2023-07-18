@@ -51,6 +51,7 @@
 * [settings2](settings_example2/README.md) represents settings application.
 * [smileys](smileys/README.md) demonstrates the use of [xtd::forms::label](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1label.html) control.
 * [some_controls](some_controls/README.md) demonstrates the use of some controls.
+* [some_system_controls](some_system_controls/README.md) demonstrates the use of some system controls.
 * [status_bar_without_panels](status_bar_without_panels/README.md) represents a Windows status bar control without panels.
 * [stopwatch_form](stopwatch_form/README.md) demonstrates the use of stopwatch class, [xtd::forms::label](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1label.html) and [xtd::forms::button](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1button.html) controls.
 * [system_report](system_report/README.md) shows system_report with [xtd::forms::text_box](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1text__box.html) control.
