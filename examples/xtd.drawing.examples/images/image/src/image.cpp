@@ -1,21 +1,20 @@
-#include <iostream>
-#include <xtd/xtd>
+#include <xtd/drawing/bitmap>
+#include <xtd/console>
 #include "logo.xpm"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 
 auto main()->int {
-  bitmap img = bitmap(logo_xpm);
+  auto bmp = bitmap {logo_xpm};
   
-  cout << ustring::format("handle = 0x{:X}", img.handle()) << endl;
-  cout << ustring::format("horizontal resolution = {}", img.horizontal_resolution()) << endl;
-  cout << ustring::format("physical dimension = {}", img.physical_dimension()) << endl;
-  cout << ustring::format("raw format = {}", img.raw_format()) << endl;
-  cout << ustring::format("vertcal resolution = {}", img.vertical_resolution()) << endl;
-  cout << ustring::format("size = {}", img.size()) << endl;
-  cout << ustring::format("pixel[50][100] = {}", img.get_pixel(50, 100)) << endl;
+  console::write_line("handle = 0x{:X}", bmp.handle());
+  console::write_line("horizontal resolution = {}", bmp.horizontal_resolution());
+  console::write_line("physical dimension = {}", bmp.physical_dimension());
+  console::write_line("raw format = {}", bmp.raw_format());
+  console::write_line("vertcal resolution = {}", bmp.vertical_resolution());
+  console::write_line("size = {}", bmp.size());
+  console::write_line("pixel[50][100] = {}", bmp.get_pixel(50, 100));
 }
 
 // This code produces the following output:

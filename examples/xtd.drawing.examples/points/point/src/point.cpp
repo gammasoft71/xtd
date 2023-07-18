@@ -1,23 +1,23 @@
-#include <iostream>
-#include <xtd/xtd>
+#include <xtd/drawing/point>
+#include <xtd/drawing/size>
+#include <xtd/console>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 
 auto main()->int {
-  point location = {10, 235};
-  cout << ustring::format("location = {}", location) << endl;
+  auto location = point {10, 235};
+  console::write_line("location = {}", location);
   
   location.x(location.x() + 20);
   location.y(location.y() - 15);
-  cout << ustring::format("location = {}", location) << endl;
+  console::write_line("location = {}", location);
   
-  location = point(10, 10) + drawing::size(20, 50);
-  cout << ustring::format("location = {}", location) << endl;
+  location = point {10, 10} + drawing::size {20, 50};
+  console::write_line("location = {}", location);
   
   location.offset({70, 140});
-  cout << ustring::format("location = {}", location) << endl;
+  console::write_line("location = {}", location);
 }
 
 // This code produces the following output:
