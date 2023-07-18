@@ -1,4 +1,6 @@
-#include <xtd/xtd>
+#include <xtd/diagnostics/process>
+#include <xtd/console>
+#include <xtd/using>
 
 using namespace std;
 using namespace xtd;
@@ -6,7 +8,7 @@ using namespace xtd::diagnostics;
 
 auto main()->int {
   try {
-    using_(process my_process) {
+    using_(auto my_process = process {}) {
       my_process.start_info().use_shell_execute(false);
       // You can start any process other guidgen.
       my_process.start_info().file_name("guidgen");

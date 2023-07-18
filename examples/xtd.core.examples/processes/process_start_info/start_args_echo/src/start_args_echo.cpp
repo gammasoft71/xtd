@@ -1,11 +1,10 @@
-#include <xtd/xtd>
+#include <xtd/diagnostics/process>
 
 using namespace xtd;
-using namespace xtd::io;
 using namespace xtd::diagnostics;
 
 auto main()->int {
-  process_start_info start_info("args_echo");
+  auto start_info = process_start_info {"args_echo"};
   start_info.use_shell_execute(false);
   
   // Start with one argument.
