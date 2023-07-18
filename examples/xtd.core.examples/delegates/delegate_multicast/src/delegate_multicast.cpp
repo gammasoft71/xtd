@@ -20,7 +20,7 @@ public:
   }
   
   void write_trace2(const ustring& str) {
-    ctrace << "2 " << str << environment::new_line();
+    ctrace << "2 " << str << environment::new_line;
   }
 };
 
@@ -28,11 +28,11 @@ auto main()->int {
   auto write = writer {};
   
   write += [](const ustring & str)  {
-    console::out << str << environment::new_line();
+    console::out << str << environment::new_line;
   };
   
   write += [](auto str)  {
-    console::error << str << environment::new_line();
+    console::error << str << environment::new_line;
   };
   
   write += write_debug;

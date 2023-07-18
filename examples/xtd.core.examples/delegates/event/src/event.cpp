@@ -42,11 +42,11 @@ auto main()->int {
   auto button1 = button {};
   
   button1.text_changed += [](xtd::object & sender, const xtd::event_args & e)  {
-    xtd::console::out << "text_changed [text=" << as<control>(sender).text() << "]" << xtd::environment::new_line();
+    xtd::console::out << "text_changed [text=" << as<control>(sender).text() << "]" << xtd::environment::new_line;
   };
   
   button1.click += []  {
-    xtd::console::out << "click on button1" << xtd::environment::new_line();
+    xtd::console::out << "click on button1" << xtd::environment::new_line;
   };
   
   button1.text("button1");

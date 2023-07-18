@@ -1,5 +1,5 @@
 #define TRACE
-#include <xtd/xtd>
+#include <xtd/ctrace>
 
 using namespace std;
 using namespace xtd;

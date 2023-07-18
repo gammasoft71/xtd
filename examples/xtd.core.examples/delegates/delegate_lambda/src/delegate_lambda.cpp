@@ -7,7 +7,7 @@ using namespace xtd;
 auto main()->int {
   // use delegate as std::function
   auto writer = delegate<void(const ustring& str)> {[](const ustring & str)  {
-    console::out << str << environment::new_line();
+    console::out << str << environment::new_line;
   }};
   
   writer("Value to write");
