@@ -133,9 +133,6 @@ sidebar_position: 5
 
 ---
 
-
-______________________________________________________________________________________________
-
 ![0.1.1](/pictures/releases/version_0_1_1.png) (beta) Jully 17, 2023
 
 * ![added](/pictures/releases/status/added.png) xtd - Deactivate by default the option to convert warnings into errors during construction. - [#229](https://github.com/gammasoft71/xtd/issues/229)
