@@ -1,6 +1,6 @@
-#include <xtd/xtd>
-#include <chrono>
-#include <vector>
+#include <xtd/as>
+#include <xtd/beep>
+#include <xtd/console>
 #include <thread>
 
 using namespace std;
@@ -58,7 +58,7 @@ public:
 
 // Play the notes in a song.
 void play(const vector<note>& tune) {
-  for (note n : tune) {
+  for (auto n : tune) {
     if (n.note_tone() == tone::rest)
       sleep_for(chrono::milliseconds(as<int>(n.note_duration())));
     else

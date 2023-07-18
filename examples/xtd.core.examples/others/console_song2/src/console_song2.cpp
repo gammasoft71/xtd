@@ -58,7 +58,7 @@ public:
 
 // Play the notes in a song.
 void play(const vector<note>& tune) {
-  for (note n : tune) {
+  for (auto n : tune) {
     if (n.note_tone() == tone::rest)
       sleep_for(chrono::milliseconds(as<int>(n.note_duration())));
     else
@@ -68,7 +68,7 @@ void play(const vector<note>& tune) {
 
 auto main()->int {
   // Declare the first few notes of the song, "Mary Had A Little Lamb".
-  vector mary = {
+  auto mary = vector {
     note(tone::b, duration::quarter),
     note(tone::a, duration::quarter),
     note(tone::g_below_c, duration::quarter),

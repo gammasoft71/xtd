@@ -1,11 +1,14 @@
-#include <xtd/xtd>
+#include <xtd/background_color>
+#include <xtd/console>
+#include <xtd/foreground_color>
+#include <xtd/reset_color>
 #include <vector>
 
 using namespace std;
 using namespace xtd;
 
 auto main()->int {
-  const vector logo = {
+  const auto logo = vector {
     u8"████████████████████████████████████████████████████████████",
     u8"██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░██████",
     u8"██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░████░░████████",
@@ -42,7 +45,7 @@ auto main()->int {
   
   console::output_code_page(65001);
   
-  for (size_t index = 0; index < logo.size(); ++index)
+  for (auto index = 0ul; index < logo.size(); ++index)
     console::out << (index == 0 || index == logo.size() - 1 ? "       " : "     ") << background_color(console_color::white) << foreground_color(console_color::dark_blue) << logo[index] << reset_color() << endl;
     
   console::out << foreground_color(console_color::dark_blue) << u8"                                    Gammasoft                                   " << endl;

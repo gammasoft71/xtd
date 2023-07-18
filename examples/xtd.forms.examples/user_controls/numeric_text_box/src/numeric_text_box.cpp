@@ -51,7 +51,7 @@ namespace numeric_tex_box_example {
       numeric_text_box1.value(42);
       numeric_text_box1.location({10, 10});
       numeric_text_box1.value_changed += [&] {
-        ctrace << ustring::format("value_changed [value={}]", numeric_text_box1.value()) << environment::new_line();
+        ctrace << ustring::format("value_changed [value={}]", numeric_text_box1.value()) << environment::new_line;
       };
     }
     

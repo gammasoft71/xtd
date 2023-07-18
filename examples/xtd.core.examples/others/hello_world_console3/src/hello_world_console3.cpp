@@ -1,4 +1,6 @@
-#include <xtd/xtd>
+#include <xtd/background_color>
+#include <xtd/foreground_color>
+#include <xtd/reset_color>
 
 using namespace std;
 using namespace xtd;

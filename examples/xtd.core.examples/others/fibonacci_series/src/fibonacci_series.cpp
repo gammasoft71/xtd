@@ -3,8 +3,8 @@
 using namespace std;
 using namespace xtd;
 
-vector<int> fibonacci_series(int n) noexcept {
-  vector numbers = {0};
+auto fibonacci_series(auto n) noexcept {
+  auto numbers = vector {0};
   auto a = 1, b = 1;
   while (a < n) {
     numbers.emplace_back(a);
