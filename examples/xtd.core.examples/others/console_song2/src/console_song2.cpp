@@ -1,4 +1,6 @@
-#include <xtd/xtd>
+#include <xtd/as>
+#include <xtd/beep>
+#include <xtd/console>
 #include <chrono>
 #include <vector>
 #include <thread>
