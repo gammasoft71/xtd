@@ -484,6 +484,7 @@ add_sources(
   include/xtd/internal/__binary_formatter.h
   include/xtd/internal/__boolean_formatter.h
   include/xtd/internal/__box_enum_or_object.h
+  include/xtd/internal/__box_floating_point.h
   include/xtd/internal/__build_type.h
   include/xtd/internal/__char8_t.h
   include/xtd/internal/__character_formatter.h
@@ -501,7 +502,6 @@ add_sources(
   include/xtd/internal/__format_exception.h
   include/xtd/internal/__format_information.h
   include/xtd/internal/__format_stringer.h
-  include/xtd/internal/__math.h
   include/xtd/internal/__natural_formatter.h
   include/xtd/internal/__numeric_formatter.h
   include/xtd/internal/__parse.h

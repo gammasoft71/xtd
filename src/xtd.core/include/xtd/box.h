@@ -11,9 +11,6 @@
 #include "object.h"
 #include "ustring.h"
 #include "types.h"
-#define __XTD_CORE_INTERNAL__
-#include "internal/__math.h"
-#undef __XTD_CORE_INTERNAL__
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
