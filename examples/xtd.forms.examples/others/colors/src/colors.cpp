@@ -27,7 +27,7 @@ namespace colors_example {
       editor.size({300, 400});
       editor.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right | anchor_styles::bottom);
       
-      colors.selected_index(0UL);
+      colors.selected_index(0ul);
     }
     
   private:

@@ -30,7 +30,7 @@ namespace border_style_example {
       colored_panel.controls().push_back_range(bordered_labels);
       colored_panel.dock(dock_style::fill);
       
-      for (auto index = 0UL; index < bordered_labels.size(); ++index) {
+      for (auto index = 0ul; index < bordered_labels.size(); ++index) {
         bordered_labels[index].border_style(border_styles[index]);
         bordered_labels[index].bounds(rectangle(as<int>(20 + index % 4 * 170), as<int>(20 + index / 4 * 70), 150, 50));
         bordered_labels[index].text(convert::to_string(border_styles[index]));

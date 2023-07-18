@@ -1,19 +1,20 @@
-#include <xtd/xtd>
+#include <xtd/console>
+#include <xtd/random>
 
 using namespace std;
 using namespace xtd;
 
 auto main()->int {
-  vector<unsigned char> bytes1(100);
-  vector<unsigned char> bytes2(100);
-  xtd::random rnd1;
-  xtd::random rnd2;
+  auto bytes1 = vector<unsigned char>(100);
+  auto bytes2 = vector<unsigned char>(100);
+  auto rnd1 = xtd::random {};
+  auto rnd2 = xtd::random {};
   
   rnd1.next_bytes(bytes1);
   rnd2.next_bytes(bytes2);
   
   console::write_line("First Series:");
-  for (size_t i = 0; i < bytes1.size(); i++) {
+  for (auto i = 0ul; i < bytes1.size(); i++) {
     console::write("{, 5}", bytes1[i]);
     if ((i + 1) % 10 == 0)
       console::write_line();
@@ -21,7 +22,7 @@ auto main()->int {
   
   console::write_line();
   console::write_line("Second Series:");
-  for (size_t i = 0; i < bytes2.size(); i++) {
+  for (auto i = 0ul; i < bytes2.size(); i++) {
     console::write("{, 5}", bytes2[i]);
     if ((i + 1) % 10 == 0)
       console::write_line();

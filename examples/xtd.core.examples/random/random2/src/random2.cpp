@@ -1,48 +1,49 @@
-#include <xtd/xtd>
+#include <xtd/console>
+#include <xtd/random>
 
 using namespace std;
 using namespace xtd;
 
 auto main()->int {
   // Instantiate random number generator using system-supplied value as seed.
-  xtd::random rand;
+  auto rand = xtd::random {};
   
   // Generate and display 5 random byte (integer) values.
-  vector<unsigned char> bytes(5);
+  auto bytes = vector<unsigned char>(5);
   rand.next_bytes(bytes);
   
   console::write_line("Five random byte values:");
-  for (unsigned char byte_value : bytes)
+  for (auto byte_value : bytes)
     console::write("{, 5}", byte_value);
   console::write_line();
   
   // Generate and display 5 random integers.
   console::write_line("Five random integer values:");
-  for (int ctr = 0; ctr <= 4; ctr++)
+  for (auto ctr = 0; ctr <= 4; ctr++)
     console::write("{, 15}", rand.next());
   console::write_line();
   
   // Generate and display 5 random integers between 0 and 100.//
   console::write_line("Five random integers between 0 and 100:");
-  for (int ctr = 0; ctr <= 4; ctr++)
+  for (auto ctr = 0; ctr <= 4; ctr++)
     console::write("{, 10}", rand.next(101));
   console::write_line();
   
   // Generate and display 5 random integers from 50 to 100.
   console::write_line("Five random integers between 50 and 100:");
-  for (int ctr = 0; ctr <= 4; ctr++)
+  for (auto ctr = 0; ctr <= 4; ctr++)
     console::write("{, 10}", rand.next(50, 101));
   console::write_line();
   
   // Generate and display 5 random floating point values from 0 to 1.
   console::write_line("Five Doubles:");
-  for (int ctr = 0; ctr <= 4; ctr++)
+  for (auto ctr = 0; ctr <= 4; ctr++)
     console::write("{, 10}", rand.next_double());
   console::write_line();
   
   // Generate and display 5 random floating point values from 0 to 5.
   console::write_line("Five Doubles between 0 and 5:");
-  for (int ctr = 0; ctr <= 4; ctr++)
+  for (auto ctr = 0; ctr <= 4; ctr++)
     console::write("{, 10}", rand.next_double() * 5);
   console::write_line();
 }
