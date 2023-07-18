@@ -779,6 +779,7 @@ namespace xtd {
     
     /// @brief Returns a xtd::ustring that represents the current xtd::date_time.
     /// @param format Format-control String.
+    /// @param value The xtd::date_time object to format.
     /// @return A xtd::ustring that represents the current xtd::date_time.
     /// @par Examples
     /// The foloowwing example shows how to use xtd::date_time::sprintf with differentt formats.
@@ -843,7 +844,7 @@ namespace xtd {
     /// | \%n    | writes newline character.                                                                                                   |
     /// | \%t    | writes horizontal tab character.                                                                                            |
     /// @remarks See <a href="https://en.cppreference.com/w/cpp/io/manip/put_time">std::put_time</a> for more information.
-    xtd::ustring sprintf(const ustring& format) const;
+    static xtd::ustring sprintf(const ustring& format, const date_time& value);
     
     /// @brief Returns a new xtd::time_span that subtracts the specified date and time from the value of this instance.
     /// @param value The date and time value to subtract.
