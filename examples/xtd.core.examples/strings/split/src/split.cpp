@@ -1,15 +1,14 @@
-#include <xtd/xtd>
-#include <iostream>
+#include <xtd/console>
+#include <xtd/ustring>
 
-using namespace std;
 using namespace xtd;
 
 auto main()->int {
-  vector<ustring> strings = ustring("One Two Three\tFour\nFive").split();
+  auto strings = ustring("One Two Three\tFour\nFive").split();
   
-  cout << "strings.size = " << strings.size() << endl;
-  for (auto s : strings)
-    cout << s << endl;
+  console::write_line("strings.size = {}", strings.size());
+  for (auto string : strings)
+    console::write_line(string);
 }
 
 // This code produces the following output:

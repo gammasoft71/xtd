@@ -1,12 +1,11 @@
-#include <xtd/xtd>
-#include <iostream>
+#include <xtd/console>
+#include <xtd/ustring>
 
-using namespace std;
 using namespace xtd;
 
 auto main()->int {
-  ustring strings = ustring::join(", ", {"One", "Two", "Three", "Four", "Five"});
-  cout << strings << endl;
+  auto result_str = ustring::join(", ", {"One", "Two", "Three", "Four", "Five"});
+  console::write_line(result_str);
 }
 
 // This code produces the following output:
