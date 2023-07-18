@@ -1,6 +1,7 @@
-#include <xtd/xtd>
+#include <xtd/console>
+#include <xtd/enum_class>
+#include <xtd/parse>
 
-using namespace std;
 using namespace xtd;
 
 enum_class_(, week_day,
@@ -14,17 +15,17 @@ enum_class_(, week_day,
 );
 
 auto main()->int {
-  week_day wd1 = parse<week_day>("wednesday");
+  auto wd1 = parse<week_day>("wednesday");
   console::write_line(wd1);
-  week_day wd2 = enum_object<>::parse<week_day>("WEDNESDAY", true);
+  auto wd2 = enum_object<>::parse<week_day>("WEDNESDAY", true);
   console::write_line(wd2);
-  week_day wd3 = parse<week_day>("2");
+  auto wd3 = parse<week_day>("2");
   console::write_line(wd3);
   try {
-    week_day wd4 = parse<week_day>("january");
+    auto wd4 = parse<week_day>("january");
     console::write_line(wd4);
-  } catch (const exception& e) {
-    console::write_line("Exception : {}", e.what());
+  } catch (const system_exception& e) {
+    console::write_line("Exception : {}", e.message());
   }
 }
 
