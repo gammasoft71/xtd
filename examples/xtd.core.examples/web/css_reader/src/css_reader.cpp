@@ -1,9 +1,10 @@
-#include <xtd/xtd>
+#include <xtd/web/css/css_reader>
+#include <xtd/console>
 
 using namespace xtd;
 using namespace xtd::web::css;
 
-void write_selectors(const selector_map& selectors) {
+void write_selectors(auto selectors) {
   for (auto [name, contents] : selectors) {
     console::write_line("{} {{", name);
     for (auto [key, value] : contents.properties())
@@ -13,7 +14,7 @@ void write_selectors(const selector_map& selectors) {
 }
 
 auto main()->int {
-  css_reader reader(".user_box {\n"
+  auto reader = css_reader {".user_box {\n"
     "  display: none;\n"
     "  position: fixed;\n"
     "  z-index: 100;\n"
@@ -24,7 +25,7 @@ auto main()->int {
     "  background: #4080FA;\n"
     "  filter: alpha(opacity=40);\n"
     "  opacity: 0.4;\n"
-    "}");
+    "}"};
     
   console::write_line("Write all selectors and all properties :");
   console::write_line("----------------------------------------");

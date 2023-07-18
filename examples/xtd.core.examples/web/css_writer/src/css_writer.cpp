@@ -1,13 +1,14 @@
+#include <xtd/web/css/css_writer>
+#include <xtd/console>
 #include <strstream>
-#include <xtd/xtd>
 
 using namespace std;
 using namespace xtd;
 using namespace xtd::web::css;
 
 auto main()->int {
-  stringstream string_stream;
-  css_writer writer(string_stream);
+  auto stream = stringstream {};
+  auto  writer = css_writer {stream};
   
   writer.selectors()[".user_box"].properties()["display"] = property::from("none");
   writer.selectors()[".user_box"].properties()["position"] = property::from("fixed");
@@ -23,7 +24,7 @@ auto main()->int {
   
   console::write_line("String stream :");
   console::write_line("---------------");
-  console::write_line(string_stream.str());
+  console::write_line(stream.str());
 }
 
 // This code can produces the following output :
