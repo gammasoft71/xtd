@@ -1,8 +1,8 @@
+#include <xtd/io/stream_reader>
+#include <xtd/io/stream_writer>
 #include <xtd/net/sockets/socket>
 #include <xtd/net/sockets/network_stream>
 #include <xtd/net/ip_end_point>
-#include <xtd/io/stream_reader>
-#include <xtd/io/stream_writer>
 #include <xtd/console>
 #include <thread>
 
@@ -32,9 +32,9 @@ auto main()->int {
     stream.socket().connect(ip_address::loopback, 9400);
     auto writer = stream_writer {stream};
     
-    auto counter = 1;
+    auto counter = 0;
     while (!terminate_app) {
-      writer.write_line(ustring::format("counter={}", counter++));
+      writer.write_line(ustring::format("counter={}", ++counter));
       sleep_for(50_ms);
     }
   }};

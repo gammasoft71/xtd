@@ -27,9 +27,9 @@ auto main()->int {
     auto socket = as<xtd::net::sockets::socket>(ar->async_state());
     socket.end_connect(ar);
     
-    auto counter = 1;
+    auto counter = 0;
     while (!terminate_app) {
-      auto str = ustring::format("socket={}, counter={}", socket.handle(), counter++);
+      auto str = ustring::format("socket={}, counter={}", socket.handle(), ++counter);
       socket.send(vector<unsigned char> {str.begin(), str.end()});
       sleep_for(50_ms);
     }

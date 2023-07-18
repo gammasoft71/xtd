@@ -29,9 +29,9 @@ auto main()->int {
     auto client_socket = socket {address_family::inter_network, socket_type::stream, protocol_type::tcp};
     client_socket.connect(ip_address::loopback, 9400);
     
-    auto counter = 1;
+    auto counter = 0;
     while (!terminate_app) {
-      auto str = ustring::format("counter={}", counter++);
+      auto str = ustring::format("counter={}", ++counter);
       client_socket.send(vector<unsigned char> {str.begin(), str.end()});
       sleep_for(50_ms);
     }

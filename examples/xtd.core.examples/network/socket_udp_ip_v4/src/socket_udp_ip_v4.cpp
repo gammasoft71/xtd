@@ -28,9 +28,9 @@ auto main()->int {
   auto client = thread{[&] {
     auto client_socket = socket {address_family::inter_network, socket_type::dgram, protocol_type::udp};
     
-    auto counter = 1;
+    auto counter = 0;
     while (!terminate_app) {
-      auto str = ustring::format("counter={}", counter++);
+      auto str = ustring::format("counter={}", ++counter);
       client_socket.send_to(vector<unsigned char> {str.begin(), str.end()}, ip_end_point {ip_address::loopback, 9400});
       sleep_for(50_ms);
     }
