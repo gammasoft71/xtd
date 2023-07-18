@@ -1,6 +1,8 @@
+#include <xtd/threading/interlocked>
+#include <xtd/console>
+#include <xtd/startup>
 #include <vector>
 #include <thread>
-#include <xtd/xtd>
 
 using namespace std;
 using namespace xtd;
@@ -27,8 +29,8 @@ namespace interlocked_decrement_example {
     
   public:
     static auto main() {
-      thread thread1(thread_method);
-      thread thread2(thread_method);
+      auto thread1 = thread {thread_method};
+      auto thread2 = thread {thread_method};
       thread1.join();
       thread2.join();
       
@@ -37,10 +39,10 @@ namespace interlocked_decrement_example {
     
   private:
     static void thread_method() {
-      unique_ptr<count_class> cc;
+      auto cc = unique_ptr<count_class> {};
       
       // Create 100000 instances of count_class.
-      for (int i = 0; i < 100000; ++i)
+      for (auto i = 0; i < 100000; ++i)
         cc = make_unique<count_class>();
     }
   };
