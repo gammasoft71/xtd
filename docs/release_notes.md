@@ -3,13 +3,21 @@
 # Release Notes
 
 ![0.2.0](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/version_0_2_0.png) (beta) Not yet planned
+
 ├── ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.forms - xtd::forms::message_notifier - [#180](https://github.com/gammasoft71/xtd/issues/180)
+
 ├── ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.forms - themes - [#97](https://github.com/gammasoft71/xtd/issues/97)
+
 ├── ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.forms - switch_button_renderer - [#95](https://github.com/gammasoft71/xtd/issues/95)
+
 ├── ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.forms - style_sheets - [#94](https://github.com/gammasoft71/xtd/issues/94)
+
 ├── ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.forms - status_bar - [#93](https://github.com/gammasoft71/xtd/issues/93)
+
 ├── ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.forms - split_container - [#92](https://github.com/gammasoft71/xtd/issues/92)
+
 ├──![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.forms - sixteen_segment_display_renderer - [#91](https://github.com/gammasoft71/xtd/issues/91)
+
 ├── ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.forms - seven_segment_display_renderer - [#90](https://github.com/gammasoft71/xtd/issues/90)
 ├── ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.forms - radio_button_renderer - [#86](https://github.com/gammasoft71/xtd/issues/86)
 ├── ![todo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/todo.png) [ENHANCEMENT] xtd.forms - nine_segment_display_renderer - [#82](https://github.com/gammasoft71/xtd/issues/82)
