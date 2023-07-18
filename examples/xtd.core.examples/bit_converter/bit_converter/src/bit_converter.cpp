@@ -1,17 +1,19 @@
-#include <xtd/xtd>
+#include <xtd/bit_converter>
+#include <xtd/literals>
+#include <xtd/console>
 
 using namespace xtd;
 
 auto main()->int {
-  const ustring formatter = "{0,25}{1,30}";
+  const auto formatter = "{0,25}{1,30}";
   
-  double a_double = 0.1111111111111111111;
-  float a_single = 0.1111111111111111111F;
-  long long a_long = 1111111111111111111;
-  int an_int = 1111111111;
-  short a_short = 11111;
-  char a_char = '*';
-  bool a_bool = true;
+  auto a_double = 0.1111111111111111111;
+  auto a_single = 0.1111111111111111111f;
+  auto a_long = 1111111111111111111;
+  auto an_int = 1111111111;
+  auto a_short = 11111_u16;
+  auto a_char = '*';
+  auto a_bool = true;
   
   console::write_line("This example of methods of the BitConverter class"
     "\ngenerates the following output.\n");
