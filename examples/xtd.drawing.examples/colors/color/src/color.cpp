@@ -1,19 +1,18 @@
-#include <iostream>
-#include <xtd/xtd>
+#include <xtd/drawing/color>
+#include <xtd/console>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 
 auto main()->int {
-  cout << ustring::format("color::black = {0}", color::black) << endl;
-  cout << ustring::format("color::withe = {0}", color::white) << endl;
-  cout << ustring::format("color::blue = {0}", color::blue) << endl;
-  cout << ustring::format("Color::light_green = {0}", color::light_green) << endl;
-  cout << ustring::format("Color::from_argb(255, 253, 2, 0) = {0}", color::from_argb(255, 253, 2, 0)) << endl;
-  cout << ustring::format("color::from_name(\"dodger_blue\") = {0}", color::from_name("dodger_blue")) << endl;
-  cout << ustring::format("color::from_name(\"dodger blue\") = {0}", color::from_name("dodger blue")) << endl;
-  cout << ustring::format("color::from_name(\"dodgerblue\") = {0}", color::from_name("dodgerblue")) << endl;
+  console::write_line("color::black = {}", color::black);
+  console::write_line("color::withe = {}", color::white);
+  console::write_line("color::blue = {}", color::blue);
+  console::write_line("Color::light_green = {}", color::light_green);
+  console::write_line("Color::from_argb(255, 253, 2, 0) = {}", color::from_argb(255, 253, 2, 0));
+  console::write_line("color::from_name(\"dodger_blue\") = {}", color::from_name("dodger_blue"));
+  console::write_line("color::from_name(\"dodger blue\") = {}", color::from_name("dodger blue"));
+  console::write_line("color::from_name(\"dodgerblue\") = {}", color::from_name("dodgerblue"));
 }
 
 // This code produces the following output:
