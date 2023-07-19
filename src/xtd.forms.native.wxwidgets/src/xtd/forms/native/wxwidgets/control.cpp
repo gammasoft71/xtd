@@ -214,6 +214,11 @@ intptr control::def_wnd_proc(intptr control, intptr hwnd, uint32 msg, intptr wpa
     return static_cast<intptr>(-1);
   }
   
+  wxEvent* event = reinterpret_cast<wxEvent*>(handle);
+  // Workaround to remove Ctrl-Alt-middle click that shows information about wx version
+  wxMouseEvent* mouse_event = dynamic_cast<wxMouseEvent*>(event);
+  if (mouse_event && mouse_event->GetEventType() == wxEVT_MIDDLE_DOWN && mouse_event->ControlDown() && mouse_event->AltDown()) return 0;
+
   return reinterpret_cast<control_handler*>(control)->call_def_wnd_proc(hwnd, msg, wparam, lparam, presult, handle);
 }
 
