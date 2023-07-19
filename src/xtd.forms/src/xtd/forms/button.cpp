@@ -161,9 +161,12 @@ void button::on_enabled_changed(const event_args& e) {
 }
 
 void button::on_mouse_down(const mouse_event_args& e) {
-  data_->auto_repeat_timer.interval_milliseconds(data_->auto_repeat_delay);
-  data_->auto_repeat_timer.enabled(data_->auto_repeat);
-  if (flat_style() != xtd::forms::flat_style::system && enabled()) data_->state = xtd::forms::visual_styles::push_button_state::pressed;
+  data_->auto_repeat_timer.enabled(false);
+  if (e.button() == mouse_buttons::left) {
+    data_->auto_repeat_timer.interval_milliseconds(data_->auto_repeat_delay);
+    data_->auto_repeat_timer.enabled(data_->auto_repeat);
+    if (flat_style() != xtd::forms::flat_style::system && enabled()) data_->state = xtd::forms::visual_styles::push_button_state::pressed;
+  }
   button_base::on_mouse_down(e);
 }
 
@@ -173,13 +176,14 @@ void button::on_mouse_enter(const event_args& e) {
 }
 
 void button::on_mouse_leave(const event_args& e) {
+  data_->auto_repeat_timer.enabled(false);
   if (flat_style() != xtd::forms::flat_style::system && enabled()) data_->state = is_default() ? xtd::forms::visual_styles::push_button_state::default_state : xtd::forms::visual_styles::push_button_state::normal;
   button_base::on_mouse_leave(e);
 }
 
 void button::on_mouse_up(const mouse_event_args& e) {
   data_->auto_repeat_timer.enabled(false);
-  if (flat_style() != xtd::forms::flat_style::system && enabled() && data_->state == xtd::forms::visual_styles::push_button_state::pressed) data_->state = xtd::forms::visual_styles::push_button_state::hot;
+  if (e.button() == mouse_buttons::left && flat_style() != xtd::forms::flat_style::system && enabled() && data_->state == xtd::forms::visual_styles::push_button_state::pressed) data_->state = xtd::forms::visual_styles::push_button_state::hot;
   button_base::on_mouse_up(e);
 }
 
