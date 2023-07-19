@@ -33,6 +33,24 @@ namespace xtd {
         }
         
         int32 MainLoop() override {
+          class PreProcessFilter : public wxEventFilter {
+          public:
+            PreProcessFilter() {wxEvtHandler::AddFilter(this);}
+            ~PreProcessFilter() {wxEvtHandler::RemoveFilter(this);}
+            
+            // Return always Event_ignore because xtd use def_wnd_proc...
+            int FilterEvent(wxEvent& event) override {return Event_Ignore;}
+
+            // Workaround to remove Ctrl-Alt-middle click that shows information about wx version
+            /*
+            int FilterEvent(wxEvent& event) override {
+              auto mouseEVent = dynamic_cast<wxMouseEvent*>(&event);
+              return mouseEVent && mouseEVent->GetEventType() == wxEVT_MIDDLE_DOWN && mouseEVent->ControlDown() && mouseEVent->AltDown() ? Event_Ignore : Event_Skip;
+            }*/
+            
+          };
+          auto pre_process_filer = PreProcessFilter {};
+          
           struct CallOnExit {
             ~CallOnExit() {wxTheApp->OnExit();}
           } callOnExit;
@@ -40,7 +58,7 @@ namespace xtd {
           if (exceptionStored) std::rethrow_exception(exceptionStored);
           return result;
         }
-        
+
         bool ProcessEvent(wxEvent& event) override {
           if (exceptionStored) return wxApp::ProcessEvent(event);
           if (event.GetEventType() == wxEVT_ACTIVATE_APP) {
