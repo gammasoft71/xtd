@@ -16,6 +16,18 @@ public:
     controls().push_back_range({up_button, left_button, right_button, down_button, shrink_button, grow_button});
     text("Form resize example");
     
+    key_down += [&](auto sender, auto e) {
+      if (e.key_code() == keys::right) left(left() + 10);
+      else if (e.key_code() == keys::left) left(left() - 10);
+      else if (e.key_code() == keys::down) top(top() + 10);
+      else if (e.key_code() == keys::up) top(top() - 10);
+    };
+    
+    key_press += [&](auto sender, auto e) {
+      if (e.key_char() == '+') size(size() + drawing::size {10, 10});
+      else if (e.key_char() == '-') size(size() - drawing::size {10, 10});
+    };
+        
     up_button.auto_repeat(true);
     up_button.bounds({45, 10, 25, 25});
     up_button.image(button_images::from_name("go-up"));
