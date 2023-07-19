@@ -38,8 +38,8 @@ namespace xtd {
             PreProcessFilter() {wxEvtHandler::AddFilter(this);}
             ~PreProcessFilter() {wxEvtHandler::RemoveFilter(this);}
             
-            // Return always Event_ignore because xtd use def_wnd_proc...
-            int FilterEvent(wxEvent& event) override {return Event_Ignore;}
+            // Return  Event_ignore For some events...
+            int FilterEvent(wxEvent& event) override {return dynamic_cast<wxMouseEvent*>(&event) != nullptr || dynamic_cast<wxKeyEvent*>(&event) != nullptr ? Event_Ignore : Event_Skip;}
 
             // Workaround to remove Ctrl-Alt-middle click that shows information about wx version
             /*
