@@ -1997,7 +1997,7 @@ void control::wm_mouse_up(message& message) {
   mouse_event_args e = mouse_event_args::create(message);
   mouse_buttons_ &= ~e.button();
   if (client_rectangle().contains(e.location())) {
-    if (get_style(control_styles::standard_click) || control_appearance() == control_appearance::standard) on_click(event_args::empty);
+    if (e.button() == mouse_buttons::left && (get_style(control_styles::standard_click) || control_appearance() == control_appearance::standard)) on_click(event_args::empty);
     on_mouse_click(e);
   }
   on_mouse_up(e);
