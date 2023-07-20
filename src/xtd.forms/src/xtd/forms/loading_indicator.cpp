@@ -82,7 +82,10 @@ drawing::size loading_indicator::measure_control() const noexcept {
 
 void loading_indicator::on_handle_created(const event_args& e) {
   control::on_handle_created(e);
-  if (data_->running) start();
+  if (data_->loading_indicator_style == xtd::forms::loading_indicator_style::system) {
+    if (data_->running) native::loading_indicator::start(handle());
+    else native::loading_indicator::stop(handle());
+  }
 }
 
 void loading_indicator::on_paint(paint_event_args& e) {
