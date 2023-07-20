@@ -15,6 +15,10 @@ namespace loading_indicator_example {
       loading_indicator1.location({10, 10});
       loading_indicator1.fore_color(xtd::drawing::system_colors::accent());
       loading_indicator1.running(true);
+      
+      click += loading_indicator1.click += [&] {
+        loading_indicator1.running(!loading_indicator1.running());
+      };
     }
     
   private:
