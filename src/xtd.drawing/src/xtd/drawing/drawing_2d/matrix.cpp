@@ -142,7 +142,7 @@ void matrix::transform_vectors(std::vector<xtd::drawing::point>& points) {
   for_each(points.begin(), points.end(), [&](auto point) {tr_points.emplace_back(point.x(), point.y());});
   native::matrix::transform_vectors(handle(), tr_points);
   points.clear();
-  for_each(tr_points.begin(), tr_points.end(), [&](auto point) {points.push_back(xtd::drawing::point(point.first, point.second));});
+  for_each(tr_points.begin(), tr_points.end(), [&](const pair<int32, int32>& point) {points.push_back(xtd::drawing::point(point.first, point.second));});
 }
 
 void matrix::transform_vectors(std::vector<xtd::drawing::point_f>& points) {
@@ -150,7 +150,7 @@ void matrix::transform_vectors(std::vector<xtd::drawing::point_f>& points) {
   for_each(points.begin(), points.end(), [&](auto point) {tr_points.emplace_back(point.x(), point.y());});
   native::matrix::transform_vectors(handle(), tr_points);
   points.clear();
-  for_each(tr_points.begin(), tr_points.end(), [&](auto point) {points.push_back(xtd::drawing::point_f(point.first, point.second));});
+  for_each(tr_points.begin(), tr_points.end(), [&](const pair<float, float>&  point) {points.push_back(xtd::drawing::point_f(point.first, point.second));});
 }
 
 void matrix::translate(float offset_x, float offset_y) {
