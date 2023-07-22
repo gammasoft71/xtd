@@ -205,7 +205,7 @@ bool time_zone_info::is_daylight_saving_time(const xtd::date_time& date_time) co
   return false;
 }
 
-const time_zone_info& time_zone_info::time_find_system_time_zone_by_id(const ustring& id) {
+time_zone_info time_zone_info::time_find_system_time_zone_by_id(const ustring& id) {
   if (local().id_ == id) return local();
   if (utc().id_ == id) return utc();
   
