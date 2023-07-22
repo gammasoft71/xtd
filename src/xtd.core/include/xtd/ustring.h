@@ -359,16 +359,16 @@ namespace xtd {
     ustring(const type_t& object, size_t count, const allocator_type& allocator) : std::basic_string<value_type>(object, 0, count, allocator) {}
      */
     
-    ustring& operator =(const ustring& str);
-    ustring& operator =(const std::string& str);
+    ustring& operator =(const ustring& str) noexcept;
+    ustring& operator =(const std::string& str) noexcept;
     ustring& operator =(const value_type* str);
-    ustring& operator =(const std::u8string& str);
+    ustring& operator =(const std::u8string& str) noexcept;
     ustring& operator =(const char8* str);
-    ustring& operator =(const std::u16string& str);
+    ustring& operator =(const std::u16string& str) noexcept;
     ustring& operator =(const char16* str);
-    ustring& operator =(const std::u32string& str);
+    ustring& operator =(const std::u32string& str) noexcept;
     ustring& operator =(const char32* str);
-    ustring& operator =(const std::wstring& str);
+    ustring& operator =(const std::wstring& str) noexcept;
     ustring& operator =(const wchar* str);
     ustring& operator =(ustring&& str) noexcept;
     
@@ -392,6 +392,20 @@ namespace xtd {
       return result;
     }
     
+    template<typename type_t>
+    ustring operator +(const type_t* object) const {
+      ustring result(*this);
+      result.append(ustring(object));
+      return result;
+    }
+    
+    template<typename type_t>
+    ustring operator +(type_t* object) const {
+      ustring result(*this);
+      result.append(ustring(object));
+      return result;
+    }
+
     ustring& operator +=(const ustring& str);
     ustring& operator +=(const std::string& str);
     ustring& operator +=(const value_type* str);
