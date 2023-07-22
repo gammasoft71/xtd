@@ -12,7 +12,7 @@ struct prompt::data {
 prompt::prompt() : data_(std::make_shared<data>()) {
 }
 
-prompt::prompt(const ustring& text_to_speak) {
+prompt::prompt(const ustring& text_to_speak) : data_(std::make_shared<data>()) {
   data_->text_to_speak = text_to_speak;
 }
 
