@@ -387,7 +387,7 @@ namespace xtd {
     /// @return An object whose identifier is the value of the id parameter.
     /// @exception ArgumentNullException The id parameter is null.
     /// @exception TimeZoneNotFoundException The time zone identifier specified by id was not found. This means that a registry key whose name matches id does not exist, or that the key exists but does not contain any time zone data.
-    static const time_zone_info& time_find_system_time_zone_by_id(const ustring& id);
+    static time_zone_info time_find_system_time_zone_by_id(const ustring& id);
     
     xtd::ustring to_string() const noexcept override;
     /// @}
