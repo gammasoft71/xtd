@@ -97,10 +97,12 @@ namespace xtd {
       virtual void on_run_worker_completed(const run_worker_completed_event_args& e);
       
       /// @brief Starts execution of a background operation.
+      /// @exception xtd::invalid_operaton_exception xtd::background_worker::is_busy is true;
       void run_worker_async();
       
       /// @brief Starts execution of a background operation.
       /// @param argument A parameter for use by the background operation to be executed in the do_work event handler.
+      /// @exception xtd::invalid_operaton_exception xtd::background_worker::is_busy is true;
       template<typename argument_t>
       void run_worker_async(argument_t argument) {
         argument_(std::any(argument));
