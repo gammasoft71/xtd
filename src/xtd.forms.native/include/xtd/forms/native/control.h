@@ -211,7 +211,7 @@ namespace xtd {
         /// | "colorpicker"       | 104    | 25     |
         /// | "combobox"          | 130    | 23 *   |
         /// | "commandlinkbutton" | 200    | 60     |
-        /// | "datetimepicker"    | 104    | 25     |
+        /// | "datetimepicker"    | 104    | 25 **  |
         /// | "domainupdown"      | 150    | 23 **  |
         /// | "fontpicker"        | 104    | 25     |
         /// | "form"              | 300    | 300    |

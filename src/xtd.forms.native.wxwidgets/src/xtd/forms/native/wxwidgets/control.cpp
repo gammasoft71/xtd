@@ -233,7 +233,7 @@ xtd::drawing::size control::default_size(const xtd::ustring& class_name) {
   if (class_name == "colorpicker") return {104, __enable_system_font_size__ ? 34 : 25};
   if (class_name == "combobox") return {130, __enable_system_font_size__ ? 34 : is_macos ? 21 : 23};
   if (class_name == "commandlinkbutton") return {200, 60};
-  if (class_name == "datetimepicker") return {104, __enable_system_font_size__ ? 34 :  25};
+  if (class_name == "datetimepicker") return {140, is_gnome ? 34 :  25};
   if (class_name == "domainupdown") return {150, is_gnome ? 34 : 23};
   if (class_name == "fontpicker") return {104, __enable_system_font_size__ ? 34 : 25};
   if (class_name == "form") return {300, 300};
