@@ -6,6 +6,7 @@
 #include "../../include/xtd/typeof.h"
 #include "../../include/xtd/convert_string.h"
 #include "../../include/xtd/format_exception.h"
+#include "../../include/xtd/null_pointer_exception.h"
 #include "../../include/xtd/diagnostics/stack_frame.h"
 
 using namespace std;
@@ -83,22 +84,34 @@ ustring::ustring(const ustring& str, size_t index) : basic_string<value_type>(st
 ustring::ustring(const ustring& str, size_t index, const allocator_type& allocator) : basic_string<value_type>(str, index, allocator) {
 }
 
-ustring::ustring(const value_type* str, size_t count) : basic_string<value_type>(str, count) {
+ustring::ustring(const value_type* str, size_t count) {
+  if (str == nullptr) throw null_pointer_exception(csf_);
+  assign(str, count);
 }
 
-ustring::ustring(const value_type* str, size_t count, const allocator_type& allocator) : basic_string<value_type>(str, count, allocator) {
+ustring::ustring(const value_type* str, size_t count, const allocator_type& allocator) : basic_string<value_type>(allocator) {
+  if (str == nullptr) throw null_pointer_exception(csf_);
+  assign(str, count);
 }
 
-ustring::ustring(const value_type* str) : basic_string<value_type>(str) {
+ustring::ustring(const value_type* str) {
+  if (str == nullptr) throw null_pointer_exception(csf_);
+  assign(str);
 }
 
-ustring::ustring(const value_type* str, const allocator_type& allocator) : basic_string<value_type>(str, allocator) {
+ustring::ustring(const value_type* str, const allocator_type& allocator) : basic_string<value_type>(allocator) {
+  if (str == nullptr) throw null_pointer_exception(csf_);
+  assign(str);
 }
 
-ustring::ustring(value_type* str) : basic_string<value_type>(str) {
+ustring::ustring(value_type* str) {
+  if (str == nullptr) throw null_pointer_exception(csf_);
+  assign(str);
 }
 
-ustring::ustring(value_type* str, const allocator_type& allocator) : basic_string<value_type>(str, allocator) {
+ustring::ustring(value_type* str, const allocator_type& allocator) : basic_string<value_type>(allocator) {
+  if (str == nullptr) throw null_pointer_exception(csf_);
+  assign(str);
 }
 
 ustring::ustring(const ustring& str) noexcept : basic_string<value_type>(str) {
@@ -119,16 +132,24 @@ ustring::ustring(const u8string& str) noexcept : basic_string<value_type>(reinte
 ustring::ustring(const u8string& str, const allocator_type& allocator) noexcept : basic_string<value_type>(reinterpret_cast<const value_type*>(str.c_str()), allocator) {
 }
 
-ustring::ustring(const char8* str) : basic_string<value_type>(reinterpret_cast<const value_type*>(str)) {
+ustring::ustring(const char8* str) {
+  if (str == nullptr) throw null_pointer_exception(csf_);
+  assign(reinterpret_cast<const value_type*>(str));
 }
 
-ustring::ustring(const char8* str, const allocator_type& allocator) : basic_string<value_type>(reinterpret_cast<const value_type*>(str), allocator) {
+ustring::ustring(const char8* str, const allocator_type& allocator) : basic_string<value_type>(allocator) {
+  if (str == nullptr) throw null_pointer_exception(csf_);
+  assign(reinterpret_cast<const value_type*>(str));
 }
 
-ustring::ustring(char8* str) : basic_string<value_type>(reinterpret_cast<const value_type*>(str)) {
+ustring::ustring(char8* str) {
+  if (str == nullptr) throw null_pointer_exception(csf_);
+  assign(reinterpret_cast<value_type*>(str));
 }
 
-ustring::ustring(char8* str, const allocator_type& allocator) : basic_string<value_type>(reinterpret_cast<const value_type*>(str), allocator) {
+ustring::ustring(char8* str, const allocator_type& allocator) : basic_string<value_type>(allocator) {
+  if (str == nullptr) throw null_pointer_exception(csf_);
+  assign(reinterpret_cast<value_type*>(str));
 }
 
 ustring::ustring(const std::u16string& str) noexcept : ustring(str, allocator_type()) {
@@ -138,16 +159,20 @@ ustring::ustring(const std::u16string& str, const allocator_type& allocator) noe
   *this = convert_string::to_ustring(str);
 }
 
-ustring::ustring(const char16* str) : ustring(u16string(str)) {
+ustring::ustring(const char16* str) {
+  *this = str;
 }
 
-ustring::ustring(const char16* str, const allocator_type& allocator) : ustring(u16string(str), allocator) {
+ustring::ustring(const char16* str, const allocator_type& allocator) : ustring(allocator) {
+  *this = str;
 }
 
-ustring::ustring(char16* str) : ustring(u16string(str)) {
+ustring::ustring(char16* str) {
+  *this = str;
 }
 
-ustring::ustring(char16* str, const allocator_type& allocator) : ustring(u16string(str), allocator) {
+ustring::ustring(char16* str, const allocator_type& allocator) : ustring(allocator) {
+  *this = str;
 }
 
 ustring::ustring(const std::u32string& str) noexcept : ustring(str, allocator_type()) {
@@ -157,16 +182,20 @@ ustring::ustring(const std::u32string& str, const allocator_type& allocator) noe
   *this = convert_string::to_ustring(str);
 }
 
-ustring::ustring(const char32* str) : ustring(u32string(str)) {
+ustring::ustring(const char32* str) {
+  *this = str;
 }
 
-ustring::ustring(const char32* str, const allocator_type& allocator) : ustring(u32string(str), allocator) {
+ustring::ustring(const char32* str, const allocator_type& allocator) : ustring(allocator) {
+  *this = str;
 }
 
-ustring::ustring(char32* str) : ustring(u32string(str)) {
+ustring::ustring(char32* str) {
+  *this = str;
 }
 
-ustring::ustring(char32* str, const allocator_type& allocator) : ustring(u32string(str), allocator) {
+ustring::ustring(char32* str, const allocator_type& allocator) : ustring(allocator) {
+  *this = str;
 }
 
 ustring::ustring(const std::wstring& str) noexcept : ustring(str, allocator_type()) {
@@ -176,16 +205,20 @@ ustring::ustring(const std::wstring& str, const allocator_type& allocator) noexc
   *this = convert_string::to_ustring(str);
 }
 
-ustring::ustring(const wchar* str) : ustring(wstring(str)) {
+ustring::ustring(const wchar* str) {
+  *this = str;
 }
 
-ustring::ustring(const wchar* str, const allocator_type& allocator) : ustring(wstring(str), allocator) {
+ustring::ustring(const wchar* str, const allocator_type& allocator) : ustring(allocator) {
+  *this = str;
 }
 
-ustring::ustring(wchar* str) : ustring(wstring(str)) {
+ustring::ustring(wchar* str) {
+  *this = str;
 }
 
-ustring::ustring(wchar* str, const allocator_type& allocator) : ustring(wstring(str), allocator) {
+ustring::ustring(wchar* str, const allocator_type& allocator) : ustring(allocator) {
+  *this = str;
 }
 
 ustring::ustring(ustring&& str) noexcept : basic_string<value_type>(str) {
@@ -234,58 +267,60 @@ ustring::ustring(initializer_list<wchar> il, const allocator_type& allocator) : 
   *this = convert_string::to_ustring(wstring(il));
 }
 
-ustring& ustring::operator =(const ustring& str) {
+ustring& ustring::operator =(const ustring& str) noexcept {
   assign(str);
   return *this;
 }
 
-ustring& ustring::operator =(const std::string& str) {
+ustring& ustring::operator =(const std::string& str) noexcept {
   assign(str.c_str());
   return *this;
 }
 
 ustring& ustring::operator =(const value_type* str) {
+  if (str == nullptr) throw null_pointer_exception(csf_);
   assign(str);
   return *this;
 }
 
-ustring& ustring::operator =(const std::u8string& str) {
+ustring& ustring::operator =(const std::u8string& str) noexcept {
   assign(reinterpret_cast<const value_type*>(str.c_str()));
   return *this;
 }
 
 ustring& ustring::operator =(const char8* str) {
+  if (str == nullptr) throw null_pointer_exception(csf_);
   assign(reinterpret_cast<const value_type*>(str));
   return *this;
 }
 
-ustring& ustring::operator =(const std::u16string& str) {
-  clear();
+ustring& ustring::operator =(const std::u16string& str) noexcept {
   *this = convert_string::to_ustring(str);
   return *this;
 }
 
 ustring& ustring::operator =(const char16* str) {
+  if (str == nullptr) throw null_pointer_exception(csf_);
   return operator =(u16string(str));
 }
 
-ustring& ustring::operator =(const std::u32string& str) {
-  clear();
+ustring& ustring::operator =(const std::u32string& str) noexcept {
   *this = convert_string::to_ustring(str);
   return *this;
 }
 
 ustring& ustring::operator =(const char32* str) {
+  if (str == nullptr) throw null_pointer_exception(csf_);
   return operator =(u32string(str));
 }
 
-ustring& ustring::operator =(const std::wstring& str) {
-  clear();
+ustring& ustring::operator =(const std::wstring& str) noexcept {
   *this = convert_string::to_ustring(str);
   return *this;
 }
 
 ustring& ustring::operator =(const wchar* str) {
+  if (str == nullptr) throw null_pointer_exception(csf_);
   return operator =(wstring(str));
 }
 

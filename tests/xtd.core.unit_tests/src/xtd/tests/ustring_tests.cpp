@@ -1,4 +1,5 @@
 #include <xtd/ustring.h>
+#include <xtd/null_pointer_exception.h>
 #include <xtd/tunit/assert.h>
 #include <xtd/tunit/collection_assert.h>
 #include <xtd/tunit/test_class_attribute.h>
@@ -89,6 +90,620 @@ namespace xtd::tests {
       assert::are_equal("test", s2, csf_);
     }
     
+    void test_method_(constructor_with_char_ptr_null) {
+      char* ptr = nullptr;
+      assert::throws<null_pointer_exception>([&]{ustring s = ptr;}, csf_);
+    }
+
+    void test_method_(constructor_with_const_char_ptr_null) {
+      const char* ptr = nullptr;
+      assert::throws<null_pointer_exception>([&]{ustring s = ptr;}, csf_);
+    }
+    
+    void test_method_(constructor_with_char8_ptr_null) {
+      char8* ptr = nullptr;
+      assert::throws<null_pointer_exception>([&]{ustring s = ptr;}, csf_);
+    }
+    
+    void test_method_(constructor_with_const_char8_ptr_null) {
+      const char8* ptr = nullptr;
+      assert::throws<null_pointer_exception>([&]{ustring s = ptr;}, csf_);
+    }
+    
+    void test_method_(constructor_with_char16_ptr_null) {
+      char16* ptr = nullptr;
+      assert::throws<null_pointer_exception>([&]{ustring s = ptr;}, csf_);
+    }
+    
+    void test_method_(constructor_with_const_char16_ptr_null) {
+      const char16* ptr = nullptr;
+      assert::throws<null_pointer_exception>([&]{ustring s = ptr;}, csf_);
+    }
+    
+    void test_method_(constructor_with_char32_ptr_null) {
+      char32* ptr = nullptr;
+      assert::throws<null_pointer_exception>([&]{ustring s = ptr;}, csf_);
+    }
+    
+    void test_method_(constructor_with_const_char32_ptr_null) {
+      const char32* ptr = nullptr;
+      assert::throws<null_pointer_exception>([&]{ustring s = ptr;}, csf_);
+    }
+    
+    void test_method_(constructor_with_wchar_ptr_null) {
+      wchar* ptr = nullptr;
+      assert::throws<null_pointer_exception>([&]{ustring s = ptr;}, csf_);
+    }
+    
+    void test_method_(constructor_with_const_wchar_ptr_null) {
+      const wchar* ptr = nullptr;
+      assert::throws<null_pointer_exception>([&]{ustring s = ptr;}, csf_);
+    }
+    
+    void test_method_(operator_equal_with_string) {
+      auto s1 = string {"test"};
+      ustring s2;
+      s2 = s1;
+      assert::are_equal(4U, s2.length(), csf_);
+      assert::are_equal("test", s2, csf_);
+    }
+    
+    void test_method_(operator_equal_with_u8string1) {
+      auto s1 = u8string {u8"test"};
+      ustring s2;
+      s2 = s1;
+      assert::are_equal(4U, s2.length(), csf_);
+      assert::are_equal("test", s2, csf_);
+    }
+    
+    void test_method_(operator_equal_with_u16string1) {
+      auto s1 = u16string {u"test"};
+      ustring s2;
+      s2 = s1;
+      assert::are_equal(4U, s2.length(), csf_);
+      assert::are_equal("test", s2, csf_);
+    }
+    
+    void test_method_(operator_equal_with_u32string1) {
+      auto s1 = u32string {U"test"};
+      ustring s2;
+      s2 = s1;
+      assert::are_equal(4U, s2.length(), csf_);
+      assert::are_equal("test", s2, csf_);
+    }
+    
+    void test_method_(operator_equal_with_ustring1) {
+      auto s1 = ustring {"test"};
+      ustring s2;
+      s2 = s1;
+      assert::are_equal(4U, s2.length(), csf_);
+      assert::are_equal("test", s2, csf_);
+    }
+    
+    void test_method_(operator_equal_with_wstring1) {
+      auto s1 = wstring {L"test"};
+      ustring s2;
+      s2 = s1;
+      assert::are_equal(4U, s2.length(), csf_);
+      assert::are_equal("test", s2, csf_);
+    }
+
+    void test_method_(operator_equal_with_literal) {
+      auto p = "test";
+      ustring s;
+      s = p;
+      assert::are_equal(4U, s.length(), csf_);
+      assert::are_equal("test", s, csf_);
+    }
+
+    void test_method_(operator_equal_with_non_const_literal) {
+      auto p = "test";
+      ustring s;
+      s = const_cast<char*>(p);
+      assert::are_equal(4U, s.length(), csf_);
+      assert::are_equal("test", s, csf_);
+    }
+
+    void test_method_(operator_equal_with_u8_literal) {
+      auto p = u8"test";
+      ustring s;
+      s = p;
+      assert::are_equal(4U, s.length(), csf_);
+      assert::are_equal("test", s, csf_);
+    }
+    
+    void test_method_(operator_equal_with_non_const_u8_literal) {
+      auto p = u8"test";
+      ustring s;
+      s = const_cast<char8*>(p);
+      assert::are_equal(4U, s.length(), csf_);
+      assert::are_equal("test", s, csf_);
+    }
+
+    void test_method_(operator_equal_with_u16_literal) {
+      auto p = u"test";
+      ustring s;
+      s = p;
+      assert::are_equal(4U, s.length(), csf_);
+      assert::are_equal("test", s, csf_);
+    }
+    
+    void test_method_(operator_equal_with_non_const_u16_literal) {
+      auto p = u"test";
+      ustring s;
+      s = const_cast<char16*>(p);
+      assert::are_equal(4U, s.length(), csf_);
+      assert::are_equal("test", s, csf_);
+    }
+
+    void test_method_(operator_equal_with_u32_literal) {
+      auto p = U"test";
+      ustring s;
+      s = p;
+      assert::are_equal(4U, s.length(), csf_);
+      assert::are_equal("test", s, csf_);
+    }
+    
+    void test_method_(operator_equal_with_non_const_u32_literal) {
+      auto p = U"test";
+      ustring s;
+      s = const_cast<char32*>(p);
+      assert::are_equal(4U, s.length(), csf_);
+      assert::are_equal("test", s, csf_);
+    }
+
+    void test_method_(operator_equal_with_w_literal) {
+      auto p = L"test";
+      ustring s;
+      s = p;
+      assert::are_equal(4U, s.length(), csf_);
+      assert::are_equal("test", s, csf_);
+    }
+    
+    void test_method_(operator_equal_with_non_const_w_literal) {
+      auto p = L"test";
+      ustring s;
+      s = const_cast<wchar*>(p);
+      assert::are_equal(4U, s.length(), csf_);
+      assert::are_equal("test", s, csf_);
+    }
+
+    void test_method_(operator_equal_with_char_ptr_null) {
+      char* ptr = nullptr;
+      ustring s;
+      assert::throws<null_pointer_exception>([&]{s = ptr;}, csf_);
+    }
+    
+    void test_method_(operator_equal_with_const_char_ptr_null) {
+      const char* ptr = nullptr;
+      ustring s;
+      assert::throws<null_pointer_exception>([&]{s = ptr;}, csf_);
+    }
+    
+    void test_method_(operator_equal_with_char8_ptr_null) {
+      char8* ptr = nullptr;
+      ustring s;
+      assert::throws<null_pointer_exception>([&]{s = ptr;}, csf_);
+    }
+    
+    void test_method_(operator_equal_with_const_char8_ptr_null) {
+      const char8* ptr = nullptr;
+      ustring s;
+      assert::throws<null_pointer_exception>([&]{s = ptr;}, csf_);
+    }
+    
+    void test_method_(operator_equal_with_char16_ptr_null) {
+      char16* ptr = nullptr;
+      ustring s;
+      assert::throws<null_pointer_exception>([&]{s = ptr;}, csf_);
+    }
+    
+    void test_method_(operator_equal_with_const_char16_ptr_null) {
+      const char16* ptr = nullptr;
+      ustring s;
+      assert::throws<null_pointer_exception>([&]{s = ptr;}, csf_);
+    }
+    
+    void test_method_(operator_equal_with_char32_ptr_null) {
+      char32* ptr = nullptr;
+      ustring s;
+      assert::throws<null_pointer_exception>([&]{s = ptr;}, csf_);
+    }
+    
+    void test_method_(operator_equal_with_const_char32_ptr_null) {
+      const char32* ptr = nullptr;
+      ustring s;
+      assert::throws<null_pointer_exception>([&]{s = ptr;}, csf_);
+    }
+    
+    void test_method_(operator_equal_with_wchar_ptr_null) {
+      wchar* ptr = nullptr;
+      ustring s;
+      assert::throws<null_pointer_exception>([&]{s = ptr;}, csf_);
+    }
+    
+    void test_method_(operator_equal_with_const_wchar_ptr_null) {
+      const wchar* ptr = nullptr;
+      ustring s;
+      assert::throws<null_pointer_exception>([&]{s = ptr;}, csf_);
+    }
+    
+    void test_method_(operator_plus_equal_with_string) {
+      auto s1 = string {"s1"};
+      ustring s2 = "s2";
+      s2 += s1;
+      assert::are_equal(4U, s2.length(), csf_);
+      assert::are_equal("s2s1", s2, csf_);
+    }
+    
+    void test_method_(operator_plus_equal_with_u8string) {
+      auto s1 = u8string {u8"s1"};
+      ustring s2 = "s2";
+      s2 += s1;
+      assert::are_equal(4U, s2.length(), csf_);
+      assert::are_equal("s2s1", s2, csf_);
+    }
+    
+    void test_method_(operator_plus_equal_with_u16string) {
+      auto s1 = u16string {u"s1"};
+      ustring s2 = "s2";
+      s2 += s1;
+      assert::are_equal(4U, s2.length(), csf_);
+      assert::are_equal("s2s1", s2, csf_);
+    }
+    
+    void test_method_(operator_plus_equal_with_u32string) {
+      auto s1 = u32string {U"s1"};
+      ustring s2 = "s2";
+      s2 += s1;
+      assert::are_equal(4U, s2.length(), csf_);
+      assert::are_equal("s2s1", s2, csf_);
+    }
+    
+    void test_method_(operator_plus_equal_with_ustring) {
+      auto s1 = ustring {"s1"};
+      ustring s2 = "s2";
+      s2 += s1;
+      assert::are_equal(4U, s2.length(), csf_);
+      assert::are_equal("s2s1", s2, csf_);
+    }
+    
+    void test_method_(operator_plus_equal_with_wstring) {
+      auto s1 = wstring {L"s1"};
+      ustring s2 = "s2";
+      s2 += s1;
+      assert::are_equal(4U, s2.length(), csf_);
+      assert::are_equal("s2s1", s2, csf_);
+    }
+    
+    void test_method_(operator_plus_equal_with_literal) {
+      auto s1 = "s1";
+      ustring s2 = "s2";
+      s2 += s1;
+      assert::are_equal(4U, s2.length(), csf_);
+      assert::are_equal("s2s1", s2, csf_);
+    }
+    
+    void test_method_(operator_plus_equal_with_u8_literal) {
+      auto s1 = u8"s1";
+      ustring s2 = "s2";
+      s2 += s1;
+      assert::are_equal(4U, s2.length(), csf_);
+      assert::are_equal("s2s1", s2, csf_);
+    }
+    
+    void test_method_(operator_plus_equal_with_u16_literal) {
+      auto s1 = u"s1";
+      ustring s2 = "s2";
+      s2 += s1;
+      assert::are_equal(4U, s2.length(), csf_);
+      assert::are_equal("s2s1", s2, csf_);
+    }
+    
+    void test_method_(operator_plus_equal_with_u32_literal) {
+      auto s1 = U"s1";
+      ustring s2 = "s2";
+      s2 += s1;
+      assert::are_equal(4U, s2.length(), csf_);
+      assert::are_equal("s2s1", s2, csf_);
+    }
+    
+    void test_method_(operator_plus_equal_with_w_literal) {
+      auto s1 = L"s1";
+      ustring s2 = "s2";
+      s2 += s1;
+      assert::are_equal(4U, s2.length(), csf_);
+      assert::are_equal("s2s1", s2, csf_);
+    }
+    
+    void test_method_(operator_plus_equal_with_const_cast_literal) {
+      auto s1 = "s1";
+      ustring s2 = "s2";
+      s2 += const_cast<char*>(s1);
+      assert::are_equal(4U, s2.length(), csf_);
+      assert::are_equal("s2s1", s2, csf_);
+    }
+    
+    void test_method_(operator_plus_equal_with_const_cast_u8_literal) {
+      auto s1 = u8"s1";
+      ustring s2 = "s2";
+      s2 += const_cast<char8*>(s1);
+      assert::are_equal(4U, s2.length(), csf_);
+      assert::are_equal("s2s1", s2, csf_);
+    }
+    
+    void test_method_(operator_plus_equal_with_const_cast_u16_literal) {
+      auto s1 = u"s1";
+      ustring s2 = "s2";
+      s2 += const_cast<char16*>(s1);
+      assert::are_equal(4U, s2.length(), csf_);
+      assert::are_equal("s2s1", s2, csf_);
+    }
+    
+    void test_method_(operator_plus_equal_with_const_cast_u32_literal) {
+      auto s1 = U"s1";
+      ustring s2 = "s2";
+      s2 += const_cast<char32*>(s1);
+      assert::are_equal(4U, s2.length(), csf_);
+      assert::are_equal("s2s1", s2, csf_);
+    }
+    
+    void test_method_(operator_plus_equal_with_const_cast_w_literal) {
+      auto s1 = L"s1";
+      ustring s2 = "s2";
+      s2 += const_cast<wchar*>(s1);
+      assert::are_equal(4U, s2.length(), csf_);
+      assert::are_equal("s2s1", s2, csf_);
+    }
+    
+    void test_method_(operator_plus_equal_with_char_ptr_null) {
+      char* s1 = nullptr;
+      ustring s2 = "s2";
+      assert::throws<null_pointer_exception>([&] {s2 += s1;}, csf_);
+    }
+    
+    void test_method_(operator_plus_equal_with_const_char_ptr_null) {
+      const char* s1 = nullptr;
+      ustring s2 = "s2";
+      assert::throws<null_pointer_exception>([&] {s2 += s1;}, csf_);
+    }
+    
+    void test_method_(operator_plus_equal_with_char8_ptr_null) {
+      char8* s1 = nullptr;
+      ustring s2 = "s2";
+      assert::throws<null_pointer_exception>([&] {s2 += s1;}, csf_);
+    }
+    
+    void test_method_(operator_plus_equal_with_const_char8_ptr_null) {
+      const char8* s1 = nullptr;
+      ustring s2 = "s2";
+      assert::throws<null_pointer_exception>([&] {s2 += s1;}, csf_);
+    }
+    
+    void test_method_(operator_plus_equal_with_char16_ptr_null) {
+      char16* s1 = nullptr;
+      ustring s2 = "s2";
+      assert::throws<null_pointer_exception>([&] {s2 += s1;}, csf_);
+    }
+    
+    void test_method_(operator_plus_equal_with_const_char16_ptr_null) {
+      const char16* s1 = nullptr;
+      ustring s2 = "s2";
+      assert::throws<null_pointer_exception>([&] {s2 += s1;}, csf_);
+    }
+    
+    void test_method_(operator_plus_equal_with_char32_ptr_null) {
+      char32* s1 = nullptr;
+      ustring s2 = "s2";
+      assert::throws<null_pointer_exception>([&] {s2 += s1;}, csf_);
+    }
+    
+    void test_method_(operator_plus_equal_with_const_char32_ptr_null) {
+      const char32* s1 = nullptr;
+      ustring s2 = "s2";
+      assert::throws<null_pointer_exception>([&] {s2 += s1;}, csf_);
+    }
+    
+    void test_method_(operator_plus_equal_with_wchar_ptr_null) {
+      wchar* s1 = nullptr;
+      ustring s2 = "s2";
+      assert::throws<null_pointer_exception>([&] {s2 += s1;}, csf_);
+    }
+    
+    void test_method_(operator_plus_equal_with_const_wchar_ptr_null) {
+      const wchar* s1 = nullptr;
+      ustring s2 = "s2";
+      assert::throws<null_pointer_exception>([&] {s2 += s1;}, csf_);
+    }
+
+    void test_method_(operator_plus_with_string) {
+      auto s1 = string {"s1"};
+      ustring s2 = "s2";
+      ustring s3 = s2 + s1;
+      assert::are_equal(4U, s3.length(), csf_);
+      assert::are_equal("s2s1", s3, csf_);
+    }
+    
+    void test_method_(operator_plus_with_u8string) {
+      auto s1 = u8string {u8"s1"};
+      ustring s2 = "s2";
+      ustring s3 = s2 + s1;
+      assert::are_equal(4U, s3.length(), csf_);
+      assert::are_equal("s2s1", s3, csf_);
+    }
+    
+    void test_method_(operator_plus_with_u16string) {
+      auto s1 = u16string {u"s1"};
+      ustring s2 = "s2";
+      ustring s3 = s2 + s1;
+      assert::are_equal(4U, s3.length(), csf_);
+      assert::are_equal("s2s1", s3, csf_);
+    }
+    
+    void test_method_(operator_plus_with_u32string) {
+      auto s1 = u32string {U"s1"};
+      ustring s2 = "s2";
+      ustring s3 = s2 + s1;
+      assert::are_equal(4U, s3.length(), csf_);
+      assert::are_equal("s2s1", s3, csf_);
+    }
+    
+    void test_method_(operator_plus_with_ustring) {
+      auto s1 = ustring {"s1"};
+      ustring s2 = "s2";
+      ustring s3 = s2 + s1;
+      assert::are_equal(4U, s3.length(), csf_);
+      assert::are_equal("s2s1", s3, csf_);
+    }
+    
+    void test_method_(operator_plus_with_wstring) {
+      auto s1 = wstring {L"s1"};
+      ustring s2 = "s2";
+      ustring s3 = s2 + s1;
+      assert::are_equal(4U, s3.length(), csf_);
+      assert::are_equal("s2s1", s3, csf_);
+    }
+
+    void test_method_(operator_plus_with_literal) {
+      auto s1 = "s1";
+      ustring s2 = "s2";
+      ustring s3 = s2 + s1;
+      assert::are_equal(4U, s3.length(), csf_);
+      assert::are_equal("s2s1", s3, csf_);
+    }
+
+    void test_method_(operator_plus_with_u8_literal) {
+      auto s1 = u8"s1";
+      ustring s2 = "s2";
+      ustring s3 = s2 + s1;
+      assert::are_equal(4U, s3.length(), csf_);
+      assert::are_equal("s2s1", s3, csf_);
+    }
+
+    void test_method_(operator_plus_with_u16_literal) {
+      auto s1 = u"s1";
+      ustring s2 = "s2";
+      ustring s3 = s2 + s1;
+      assert::are_equal(4U, s3.length(), csf_);
+      assert::are_equal("s2s1", s3, csf_);
+    }
+
+    void test_method_(operator_plus_with_u32_literal) {
+      auto s1 = U"s1";
+      ustring s2 = "s2";
+      ustring s3 = s2 + s1;
+      assert::are_equal(4U, s3.length(), csf_);
+      assert::are_equal("s2s1", s3, csf_);
+    }
+
+    void test_method_(operator_plus_with_w_literal) {
+      auto s1 = L"s1";
+      ustring s2 = "s2";
+      ustring s3 = s2 + s1;
+      assert::are_equal(4U, s3.length(), csf_);
+      assert::are_equal("s2s1", s3, csf_);
+    }
+
+    void test_method_(operator_plus_with_const_cast_literal) {
+      auto s1 = "s1";
+      ustring s2 = "s2";
+      ustring s3 = s2 + const_cast<char*>(s1);
+      assert::are_equal(4U, s3.length(), csf_);
+      assert::are_equal("s2s1", s3, csf_);
+    }
+
+    void test_method_(operator_plus_with_const_cast_u8_literal) {
+      auto s1 = u8"s1";
+      ustring s2 = "s2";
+      ustring s3 = s2 + const_cast<char8*>(s1);
+      assert::are_equal(4U, s3.length(), csf_);
+      assert::are_equal("s2s1", s3, csf_);
+    }
+
+    void test_method_(operator_plus_with_const_cast_u16_literal) {
+      auto s1 = u"s1";
+      ustring s2 = "s2";
+      ustring s3 = s2 + const_cast<char16*>(s1);
+      assert::are_equal(4U, s3.length(), csf_);
+      assert::are_equal("s2s1", s3, csf_);
+    }
+
+    void test_method_(operator_plus_with_const_cast_u32_literal) {
+      auto s1 = U"s1";
+      ustring s2 = "s2";
+      ustring s3 = s2 + const_cast<char32*>(s1);
+      assert::are_equal(4U, s3.length(), csf_);
+      assert::are_equal("s2s1", s3, csf_);
+    }
+
+    void test_method_(operator_plus_with_const_cast_w_literal) {
+      auto s1 = L"s1";
+      ustring s2 = "s2";
+      ustring s3 = s2 + const_cast<wchar*>(s1);
+      assert::are_equal(4U, s3.length(), csf_);
+      assert::are_equal("s2s1", s3, csf_);
+    }
+
+    void test_method_(operator_plus_with_char_ptr_null) {
+      char* s1 = nullptr;
+      ustring s2 = "s2";
+      assert::throws<null_pointer_exception>([&]{ustring s3 = s2 + s1;}, csf_);
+    }
+    
+    void test_method_(operator_plus_with_const_char_ptr_null) {
+      const char* s1 = nullptr;
+      ustring s2 = "s2";
+      assert::throws<null_pointer_exception>([&]{ustring s3 = s2 + s1;}, csf_);
+    }
+
+    void test_method_(operator_plus_with_char8_ptr_null) {
+      char8* s1 = nullptr;
+      ustring s2 = "s2";
+      assert::throws<null_pointer_exception>([&]{ustring s3 = s2 + s1;}, csf_);
+    }
+    
+    void test_method_(operator_plus_with_const_char8_ptr_null) {
+      const char8* s1 = nullptr;
+      ustring s2 = "s2";
+      assert::throws<null_pointer_exception>([&]{ustring s3 = s2 + s1;}, csf_);
+    }
+
+    void test_method_(operator_plus_with_char16_ptr_null) {
+      char16* s1 = nullptr;
+      ustring s2 = "s2";
+      assert::throws<null_pointer_exception>([&]{ustring s3 = s2 + s1;}, csf_);
+    }
+    
+    void test_method_(operator_plus_with_const_char16_ptr_null) {
+      const char16* s1 = nullptr;
+      ustring s2 = "s2";
+      assert::throws<null_pointer_exception>([&]{ustring s3 = s2 + s1;}, csf_);
+    }
+
+    void test_method_(operator_plus_with_char32_ptr_null) {
+      char32* s1 = nullptr;
+      ustring s2 = "s2";
+      assert::throws<null_pointer_exception>([&]{ustring s3 = s2 + s1;}, csf_);
+    }
+    
+    void test_method_(operator_plus_with_const_char32_ptr_null) {
+      const char32* s1 = nullptr;
+      ustring s2 = "s2";
+      assert::throws<null_pointer_exception>([&]{ustring s3 = s2 + s1;}, csf_);
+    }
+
+    void test_method_(operator_plus_with_wchar_ptr_null) {
+      wchar* s1 = nullptr;
+      ustring s2 = "s2";
+      assert::throws<null_pointer_exception>([&]{ustring s3 = s2 + s1;}, csf_);
+    }
+    
+    void test_method_(operator_plus_with_const_wchar_ptr_null) {
+      const wchar* s1 = nullptr;
+      ustring s2 = "s2";
+      assert::throws<null_pointer_exception>([&]{ustring s3 = s2 + s1;}, csf_);
+    }
+
     void test_method_(compare) {
       assert::is_zero(ustring::compare("a", "a"), csf_);
       assert::is_negative(ustring::compare("a", "b"), csf_);
