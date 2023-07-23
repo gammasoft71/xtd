@@ -276,19 +276,22 @@ void progress_dialog::show_sheet_dialog(const iwin32_window& owner) {
 }
 
 void progress_dialog::show() {
-  data_->native = data_->dialog_appearance == xtd::forms::dialog_appearance::system;
+  /// @todo Delete the following comment when the standard dialog is ready.
+  data_->native = true; //data_->dialog_appearance == xtd::forms::dialog_appearance::system;
   if (data_->native) data_->handle = native::progress_dialog::create(0, data_->text, data_->message, data_->informations, data_->marquee_animation_speed, data_->minimum, data_->maximum, data_->value, data_->options);
   native::progress_dialog::show(data_->handle);
 }
 
 void progress_dialog::show(const iwin32_window& owner) {
-  data_->native = data_->dialog_appearance == xtd::forms::dialog_appearance::system;
+  /// @todo Delete the following comment when the standard dialog is ready.
+  data_->native = true; //data_->dialog_appearance == xtd::forms::dialog_appearance::system;
   if (data_->native) data_->handle = native::progress_dialog::create(owner.handle(), data_->text, data_->message, data_->informations, data_->marquee_animation_speed, data_->minimum, data_->maximum, data_->value, data_->options);
   native::progress_dialog::show(data_->handle);
 }
 
 void progress_dialog::show_sheet(const iwin32_window& owner) {
-  data_->native = data_->dialog_appearance == xtd::forms::dialog_appearance::system;
+  /// @todo Delete the following comment when the standard dialog is ready.
+  data_->native = true; //data_->dialog_appearance == xtd::forms::dialog_appearance::system;
   if (data_->native) data_->handle = native::progress_dialog::create(owner.handle(), data_->text, data_->message, data_->informations, data_->marquee_animation_speed, data_->minimum, data_->maximum, data_->value, data_->options);
   native::progress_dialog::show_sheet(data_->handle);
 }
