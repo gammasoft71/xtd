@@ -1,52 +1,42 @@
 /// @file
-/// @brief Contains xtd::drawing::system_images factory.
+/// @brief Contains xtd::drawing::system_images_base factory.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "system_images_base.h"
+#include <map>
+#include <xtd/static.h>
+#include "../drawing_export.h"
+#include "bitmap.h"
+#include "size.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing_2d/, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
-    /// @brief Each property of the xtd::drawing::system_images class is an xtd::drawing::image object for Windows system-wide images. This class cannot be inherited.
+    /// @cond
+    class system_icons;
+    /// @endcond
+    
+    /// @brief Represents the base for all system_images clases (xtd::drawing::system_images).
     /// @code
-    /// class drawing_export_ system_images final static_
+    /// class drawing_export_ system_images_base final static_
     /// @endcode
     /// @par Inheritance
-    /// xtd::static_object → xtd::drawing::system_images
+    /// xtd::static_object → xtd::drawing::system_images_base
     /// @par Namespace
     /// xtd::drawing
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing drawing
     /// @remarks Each property of the images class returns a xtd::drawing::image used to display a Windows system-wide images.
-    class drawing_export_ system_images final : private system_images_base {
-    public:
+    class drawing_export_ system_images_base static_ {
+    protected:
       /// @name Properties
       
       /// @{
       /// @brief Gets system image from specified name.
       /// @return The default size in pixels (32 x 32).
       static xtd::drawing::size default_size() noexcept;
-      /// @brief Gets the image loading.
-      /// @return The image loading.
-      /// @remarks This is mage can be used when an image is loading.
-      static xtd::drawing::image image_loading() noexcept;
-      /// @brief Gets the image loading with specified size.
-      /// @param size The system image size in pixels.
-      /// @return The image loading.
-      /// @remarks This is mage can be used when an image is loading.
-      static xtd::drawing::image image_loading(const xtd::drawing::size& size) noexcept ;
-      /// @brief Gets the image missing.
-      /// @return The image missing.
-      /// @remarks This is mage can be used when an image is missing.
-      static xtd::drawing::image image_missing() noexcept;
-      /// @brief Gets the image missing with specified size.
-      /// @param size The system image size in pixels.
-      /// @return The image missing.
-      /// @remarks This is mage can be used when an image is missing.
-      static xtd::drawing::image image_missing(const xtd::drawing::size& size) noexcept;
-      
+
       /// @brief Gets the image contexts.
       /// @return An wtd::ustring array that contains the image contexts.
       /// @remarks The system images are grouped by contaxt.
@@ -1283,6 +1273,12 @@ namespace xtd {
       /// @return An xtd::drawing::image object that contains the system image from specified name.
       static xtd::drawing::image from_name(const xtd::ustring& theme, const xtd::ustring& name, const xtd::drawing::size& size);
       /// @}
+      
+    private:
+      friend class system_icons;
+      static xtd::ustring default_theme() noexcept;
+      static xtd::ustring fallback_theme() noexcept;
+      static std::vector<xtd::ustring> themes() noexcept;
     };
   }
 }

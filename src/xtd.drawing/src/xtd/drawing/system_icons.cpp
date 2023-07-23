@@ -151,11 +151,11 @@ icon system_icons::xtd_forms_logo(const size& size) noexcept {
 }
 
 icon system_icons::from_name(const xtd::ustring& name) {
-  return from_name(system_images::default_theme(), name, default_size());
+  return from_name(system_images_base::default_theme(), name, default_size());
 }
 
 icon system_icons::from_name(const xtd::ustring& name, const size& size) {
-  return from_name(system_images::default_theme(), name, size);
+  return from_name(system_images_base::default_theme(), name, size);
 }
 
 icon system_icons::from_name(const xtd::ustring& theme, const xtd::ustring& name) {
