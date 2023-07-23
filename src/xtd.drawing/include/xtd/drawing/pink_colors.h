@@ -29,37 +29,37 @@ namespace xtd {
       /// @{
       /// @brief A system-defined color object.
       /// @image html colors_deep_pink.png
-      static xtd::drawing::color deep_pink();
+      static xtd::drawing::color deep_pink() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_hot_pink.png
-      static xtd::drawing::color hot_pink();
+      static xtd::drawing::color hot_pink() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_light_pink.png
-      static xtd::drawing::color light_pink();
+      static xtd::drawing::color light_pink() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_medium_violet_red.png
-      static xtd::drawing::color medium_violet_red();
+      static xtd::drawing::color medium_violet_red() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_pale_violet_red.png
-      static xtd::drawing::color pale_violet_red();
+      static xtd::drawing::color pale_violet_red() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_pink.png
-      static xtd::drawing::color pink();
+      static xtd::drawing::color pink() noexcept;
       /// @}
       
       /// @name Methods
       
       /// @{
       /// @brief Gets an array of colors.
-      static const std::vector<xtd::drawing::color>& get_colors();
+      static const std::vector<xtd::drawing::color>& get_colors() noexcept;
       
       /// @brief Gets an array of color names.
-      static const std::vector<xtd::ustring>& get_color_names();
+      static const std::vector<xtd::ustring>& get_color_names() noexcept;
       /// @}
     };
   }
