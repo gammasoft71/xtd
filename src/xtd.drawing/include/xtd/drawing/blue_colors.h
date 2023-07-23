@@ -29,73 +29,73 @@ namespace xtd {
       /// @{
       /// @brief A system-defined color object.
       /// @image html colors_blue.png
-      static xtd::drawing::color blue();
+      static xtd::drawing::color blue() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_cornflower_blue.png
-      static xtd::drawing::color cornflower_blue();
+      static xtd::drawing::color cornflower_blue() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_dark_blue.png
-      static xtd::drawing::color dark_blue();
+      static xtd::drawing::color dark_blue() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_deep_sky_blue.png
-      static xtd::drawing::color deep_sky_blue();
+      static xtd::drawing::color deep_sky_blue() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_dodger_blue.png
-      static xtd::drawing::color dodger_blue();
+      static xtd::drawing::color dodger_blue() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_light_blue.png
-      static xtd::drawing::color light_blue();
+      static xtd::drawing::color light_blue() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_light_sky_blue.png
-      static xtd::drawing::color light_sky_blue();
+      static xtd::drawing::color light_sky_blue() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_light_steel_blue.png
-      static xtd::drawing::color light_steel_blue();
+      static xtd::drawing::color light_steel_blue() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_medium_blue.png
-      static xtd::drawing::color medium_blue();
+      static xtd::drawing::color medium_blue() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_midnight_blue.png
-      static xtd::drawing::color midnight_blue();
+      static xtd::drawing::color midnight_blue() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_navy.png
-      static xtd::drawing::color navy();
+      static xtd::drawing::color navy() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_powder_blue.png
-      static xtd::drawing::color powder_blue();
+      static xtd::drawing::color powder_blue() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_royal_blue.png
-      static xtd::drawing::color royal_blue();
+      static xtd::drawing::color royal_blue() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_sky_blue.png
-      static xtd::drawing::color sky_blue();
+      static xtd::drawing::color sky_blue() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_steel_blue.png
-      static xtd::drawing::color steel_blue();
+      static xtd::drawing::color steel_blue() noexcept;
       /// @}
       
       /// @name Methods
       
       /// @{
       /// @brief Gets an array of colors.
-      static const std::vector<xtd::drawing::color>& get_colors();
+      static const std::vector<xtd::drawing::color>& get_colors() noexcept;
       
-      /// @brief Gets an array of color names.
-      static const std::vector<xtd::ustring>& get_color_names();
+
+      static const std::vector<xtd::ustring>& get_color_names() noexcept;
       /// @}
     };
   }
