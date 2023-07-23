@@ -29,81 +29,81 @@ namespace xtd {
       /// @{
       /// @brief A system-defined color object.
       /// @image html colors_bisque.png
-      static xtd::drawing::color bisque();
+      static xtd::drawing::color bisque() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_blanched_almond.png
-      static xtd::drawing::color blanched_almond();
+      static xtd::drawing::color blanched_almond() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_brown.png
-      static xtd::drawing::color brown();
+      static xtd::drawing::color brown() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_burly_wood.png
-      static xtd::drawing::color burly_wood();
+      static xtd::drawing::color burly_wood() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_chocolate.png
-      static xtd::drawing::color chocolate();
+      static xtd::drawing::color chocolate() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_cornsilk.png
-      static xtd::drawing::color cornsilk();
+      static xtd::drawing::color cornsilk() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_dark_goldenrod.png
-      static xtd::drawing::color dark_goldenrod();
+      static xtd::drawing::color dark_goldenrod() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_goldenrod.png
-      static xtd::drawing::color goldenrod();
+      static xtd::drawing::color goldenrod() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_maroon.png
-      static xtd::drawing::color maroon();
+      static xtd::drawing::color maroon() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_navajo_white.png
-      static xtd::drawing::color navajo_white();
+      static xtd::drawing::color navajo_white() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_peru.png
-      static xtd::drawing::color peru();
+      static xtd::drawing::color peru() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_rosy_brown.png
-      static xtd::drawing::color rosy_brown();
+      static xtd::drawing::color rosy_brown() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_saddle_brown.png
-      static xtd::drawing::color saddle_brown();
+      static xtd::drawing::color saddle_brown() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_sandy_brown.png
-      static xtd::drawing::color sandy_brown();
+      static xtd::drawing::color sandy_brown() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_sienna.png
-      static xtd::drawing::color sienna();
+      static xtd::drawing::color sienna() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_tan.png
-      static xtd::drawing::color tan();
+      static xtd::drawing::color tan() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_wheat.png
-      static xtd::drawing::color wheat();
+      static xtd::drawing::color wheat() noexcept;
       /// @}
       
       /// @name Methods
       
       /// @{
       /// @brief Gets an array of colors.
-      static const std::vector<xtd::drawing::color>& get_colors();
+      static const std::vector<xtd::drawing::color>& get_colors() noexcept;
       
       /// @brief Gets an array of color names.
-      static const std::vector<xtd::ustring>& get_color_names();
+      static const std::vector<xtd::ustring>& get_color_names() noexcept;
       /// @}
     };
   }
