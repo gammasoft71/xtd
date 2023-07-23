@@ -29,89 +29,89 @@ namespace xtd {
       /// @{
       /// @brief A system-defined color object.
       /// @image html colors_blue_violet.png
-      static xtd::drawing::color blue_violet();
+      static xtd::drawing::color blue_violet() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_dark_magenta.png
-      static xtd::drawing::color dark_magenta();
+      static xtd::drawing::color dark_magenta() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_dark_orchid.png
-      static xtd::drawing::color dark_orchid();
+      static xtd::drawing::color dark_orchid() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_dark_slate_blue.png
-      static xtd::drawing::color dark_slate_blue();
+      static xtd::drawing::color dark_slate_blue() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_dark_violet.png
-      static xtd::drawing::color dark_violet();
+      static xtd::drawing::color dark_violet() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_fuchsia.png
-      static xtd::drawing::color fuchsia();
+      static xtd::drawing::color fuchsia() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_indigo.png
-      static xtd::drawing::color indigo();
+      static xtd::drawing::color indigo() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_lavender.png
-      static xtd::drawing::color lavender();
+      static xtd::drawing::color lavender() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_magenta.png
-      static xtd::drawing::color magenta();
+      static xtd::drawing::color magenta() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_medium_orchid.png
-      static xtd::drawing::color medium_orchid();
+      static xtd::drawing::color medium_orchid() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_medium_purple.png
-      static xtd::drawing::color medium_purple();
+      static xtd::drawing::color medium_purple() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_medium_slate_blue.png
-      static xtd::drawing::color medium_slate_blue();
+      static xtd::drawing::color medium_slate_blue() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_orchid.png
-      static xtd::drawing::color orchid();
+      static xtd::drawing::color orchid() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_plum.png
-      static xtd::drawing::color plum();
+      static xtd::drawing::color plum() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_purple.png
-      static xtd::drawing::color purple();
+      static xtd::drawing::color purple() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_rebecca_purple.png
-      static xtd::drawing::color rebecca_purple();
+      static xtd::drawing::color rebecca_purple() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_slate_blue.png
-      static xtd::drawing::color slate_blue();
+      static xtd::drawing::color slate_blue() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_thistle.png
-      static xtd::drawing::color thistle();
+      static xtd::drawing::color thistle() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_violet.png
-      static xtd::drawing::color violet();
+      static xtd::drawing::color violet() noexcept;
       /// @}
       
       /// @name Methods
       
       /// @{
       /// @brief Gets an array of colors.
-      static const std::vector<xtd::drawing::color>& get_colors();
+      static const std::vector<xtd::drawing::color>& get_colors() noexcept;
       
       /// @brief Gets an array of color names.
-      static const std::vector<xtd::ustring>& get_color_names();
+      static const std::vector<xtd::ustring>& get_color_names() noexcept;
       /// @}
     };
   }
