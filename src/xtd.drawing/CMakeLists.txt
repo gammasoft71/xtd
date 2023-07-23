@@ -9,6 +9,9 @@ add_references(${XTD_DRAWING_NATIVE_LIBRARY})
 add_sources(
   include/xtd/xtd.drawing
   include/xtd/xtd.drawing.h
+  include/xtd/drawing/actions_system_images.h
+  include/xtd/drawing/animations_system_images.h
+  include/xtd/drawing/applications_system_images.h
   include/xtd/drawing/basic_colors.h
   include/xtd/drawing/basic_colors
   include/xtd/drawing/bitmap.h
@@ -27,6 +30,7 @@ add_sources(
   include/xtd/drawing/buffered_graphics
   include/xtd/drawing/buffered_graphics_context.h
   include/xtd/drawing/buffered_graphics_context
+  include/xtd/drawing/categories_system_images.h
   include/xtd/drawing/color.h
   include/xtd/drawing/color
   include/xtd/drawing/colors.h
@@ -37,6 +41,9 @@ add_sources(
   include/xtd/drawing/cyan_colors
   include/xtd/drawing/dash_style.h
   include/xtd/drawing/dash_style
+  include/xtd/drawing/devices_system_images.h
+  include/xtd/drawing/emblems_system_images.h
+  include/xtd/drawing/emotes_system_images.h
   include/xtd/drawing/extended_colors.h
   include/xtd/drawing/extended_colors
   include/xtd/drawing/font.h
@@ -57,10 +64,12 @@ add_sources(
   include/xtd/drawing/icon
   include/xtd/drawing/image.h
   include/xtd/drawing/image
+  include/xtd/drawing/international_system_images.h
   include/xtd/drawing/known_color.h
   include/xtd/drawing/known_color
   include/xtd/drawing/magenta_colors.h
   include/xtd/drawing/magenta_colors
+  include/xtd/drawing/mimetypes_system_images.h
   include/xtd/drawing/orange_colors.h
   include/xtd/drawing/orange_colors
   include/xtd/drawing/pen.h
@@ -69,6 +78,7 @@ add_sources(
   include/xtd/drawing/pens
   include/xtd/drawing/pink_colors.h
   include/xtd/drawing/pink_colors
+  include/xtd/drawing/places_system_images.h
   include/xtd/drawing/point.h
   include/xtd/drawing/point
   include/xtd/drawing/point_f.h
@@ -91,6 +101,7 @@ add_sources(
   include/xtd/drawing/size_f
   include/xtd/drawing/solid_brush.h
   include/xtd/drawing/solid_brush
+  include/xtd/drawing/status_system_images.h
   include/xtd/drawing/string_alignment.h
   include/xtd/drawing/string_alignment
   include/xtd/drawing/string_format.h
@@ -107,8 +118,9 @@ add_sources(
   include/xtd/drawing/system_fonts
   include/xtd/drawing/system_icons.h
   include/xtd/drawing/system_icons
-  include/xtd/drawing/system_images.h
   include/xtd/drawing/system_images_base.h
+  include/xtd/drawing/system_images_base
+  include/xtd/drawing/system_images.h
   include/xtd/drawing/system_images
   include/xtd/drawing/system_pens.h
   include/xtd/drawing/system_pens
@@ -118,6 +130,7 @@ add_sources(
   include/xtd/drawing/violet_colors
   include/xtd/drawing/white_colors.h
   include/xtd/drawing/white_colors
+  include/xtd/drawing/xtd_system_images.h
   include/xtd/drawing/yellow_colors.h
   include/xtd/drawing/yellow_colors
   include/xtd/drawing/drawing_2d/conical_gradient_brush.h
@@ -204,6 +217,9 @@ add_sources(
   include/xtd/drawing/text/private_font_collection
   include/xtd/drawing/text/text_rendering_hint.h
   include/xtd/drawing/text/text_rendering_hint
+  src/xtd/drawing/actions_system_images.cpp
+  src/xtd/drawing/animations_system_images.cpp
+  src/xtd/drawing/applications_system_images.cpp
   src/xtd/drawing/basic_colors.cpp
   src/xtd/drawing/bitmap.cpp
   src/xtd/drawing/blue_colors.cpp
@@ -212,20 +228,27 @@ add_sources(
   src/xtd/drawing/brushes.cpp
   src/xtd/drawing/buffered_graphics.cpp
   src/xtd/drawing/buffered_graphics_context.cpp
+  src/xtd/drawing/categories_system_images.cpp
   src/xtd/drawing/color.cpp
   src/xtd/drawing/colors.cpp
   src/xtd/drawing/cyan_colors.cpp
   src/xtd/drawing/font.cpp
   src/xtd/drawing/font_family.cpp
+  src/xtd/drawing/devices_system_images.cpp
+  src/xtd/drawing/emblems_system_images.cpp
+  src/xtd/drawing/emotes_system_images.cpp
   src/xtd/drawing/graphics.cpp
   src/xtd/drawing/gray_colors.cpp
   src/xtd/drawing/green_colors.cpp
   src/xtd/drawing/icon.cpp
   src/xtd/drawing/image.cpp
+  src/xtd/drawing/international_system_images.cpp
+  src/xtd/drawing/mimetypes_system_images.cpp
   src/xtd/drawing/orange_colors.cpp
   src/xtd/drawing/pen.cpp
   src/xtd/drawing/pens.cpp
   src/xtd/drawing/pink_colors.cpp
+  src/xtd/drawing/places_system_images.cpp
   src/xtd/drawing/point_f.cpp
   src/xtd/drawing/point.cpp
   src/xtd/drawing/purple_colors.cpp
@@ -236,6 +259,7 @@ add_sources(
   src/xtd/drawing/size_f.cpp
   src/xtd/drawing/size.cpp
   src/xtd/drawing/solid_brush.cpp
+  src/xtd/drawing/status_system_images.cpp
   src/xtd/drawing/string_format.cpp
   src/xtd/drawing/system_brushes.cpp
   src/xtd/drawing/system_colors.cpp
@@ -246,6 +270,7 @@ add_sources(
   src/xtd/drawing/system_pens.cpp
   src/xtd/drawing/texture_brush.cpp
   src/xtd/drawing/white_colors.cpp
+  src/xtd/drawing/xtd_system_images.cpp
   src/xtd/drawing/yellow_colors.cpp
   src/xtd/drawing/drawing_2d/hatch_brush.cpp
   src/xtd/drawing/drawing_2d/conical_gradient_brush.cpp
