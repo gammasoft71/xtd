@@ -630,6 +630,12 @@ When you call cancel_async, your worker method has an opportunity to stop its ex
 </div><div class="memdoc">
 
 <p>Starts execution of a background operation. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">xtd::invalid_operaton_exception</td><td>xtd::background_worker::is_busy is true; </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -663,6 +669,12 @@ template&lt;typename argument_t &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">argument</td><td>A parameter for use by the background operation to be executed in the do_work event handler. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">xtd::invalid_operaton_exception</td><td>xtd::background_worker::is_busy is true; </td></tr>
   </table>
   </dd>
 </dl>
@@ -840,7 +852,7 @@ template&lt;typename argument_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 18 2023 22:19:51 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Jul 23 2023 07:12:35 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
