@@ -69,7 +69,7 @@ namespace xtd {
     operator enum_type() const noexcept {return value_;}
     /// @endcond
     
-    /// @name Public properties
+    /// @name Properties
     
     /// @{
     /// @brief Retrieves an array of the values of the constants in a specified enumeration.
@@ -89,7 +89,7 @@ namespace xtd {
     }
     /// @}
     
-    /// @name Public methods
+    /// @name Methods
     
     /// @{
     int32 compare_to(const enum_object& value) const noexcept override {

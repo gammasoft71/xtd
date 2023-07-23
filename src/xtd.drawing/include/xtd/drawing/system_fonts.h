@@ -74,7 +74,7 @@ namespace xtd {
       static xtd::drawing::font tool_font();
       /// @}
       
-      /// @name Public methods
+      /// @name Methods
       
       /// @{
       /// @brief Gets an array of system fonts.

@@ -150,7 +150,7 @@ namespace xtd {
       static xtd::drawing::solid_brush window_text();
       /// @}
       
-      /// @name Public methods
+      /// @name Methods
       
       /// @{
       /// @brief Gets an array of system colors.

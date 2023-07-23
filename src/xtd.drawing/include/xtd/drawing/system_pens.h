@@ -187,7 +187,7 @@ namespace xtd {
       static xtd::drawing::pen window_text();
       /// @}
       
-      /// @name Public methods
+      /// @name Methods
       
       /// @{
       /// @brief Gets an array of system colors.

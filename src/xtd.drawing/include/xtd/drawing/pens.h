@@ -454,7 +454,7 @@ namespace xtd {
       static xtd::drawing::pen yellow_green();
       /// @}
       
-      /// @name Public methods
+      /// @name Methods
       
       /// @{
       /// @brief Gets an array of pens.
