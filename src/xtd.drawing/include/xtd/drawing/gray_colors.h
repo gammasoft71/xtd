@@ -29,53 +29,53 @@ namespace xtd {
       /// @{
       /// @brief A system-defined color object.
       /// @image html colors_black.png
-      static xtd::drawing::color black();
+      static xtd::drawing::color black() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_dark_gray.png
-      static xtd::drawing::color dark_gray();
+      static xtd::drawing::color dark_gray() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_dark_slate_gray.png
-      static xtd::drawing::color dark_slate_gray();
+      static xtd::drawing::color dark_slate_gray() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_dim_gray.png
-      static xtd::drawing::color dim_gray();
+      static xtd::drawing::color dim_gray() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_gainsboro.png
-      static xtd::drawing::color gainsboro();
+      static xtd::drawing::color gainsboro() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_gray.png
-      static xtd::drawing::color gray();
+      static xtd::drawing::color gray() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_light_gray.png
-      static xtd::drawing::color light_gray();
+      static xtd::drawing::color light_gray() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_light_slate_gray.png
-      static xtd::drawing::color light_slate_gray();
+      static xtd::drawing::color light_slate_gray() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_silver.png
-      static xtd::drawing::color silver();
+      static xtd::drawing::color silver() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_slate_gray.png
-      static xtd::drawing::color slate_gray();
+      static xtd::drawing::color slate_gray() noexcept;
       /// @}
       
       /// @name Methods
       
       /// @{
       /// @brief Gets an array of colors.
-      static const std::vector<xtd::drawing::color>& get_colors();
+      static const std::vector<xtd::drawing::color>& get_colors() noexcept;
       
       /// @brief Gets an array of color names.
-      static const std::vector<xtd::ustring>& get_color_names();
+      static const std::vector<xtd::ustring>& get_color_names() noexcept;
       /// @}
     };
   }
