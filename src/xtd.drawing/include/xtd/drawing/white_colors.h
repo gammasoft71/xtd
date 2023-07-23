@@ -24,7 +24,7 @@ namespace xtd {
     /// @ingroup xtd_drawing drawing
     class drawing_export_ white_colors final static_ {
     public:
-      /// @name Public properties
+      /// @name Properties
       
       /// @{
       /// @brief A system-defined color object.
@@ -96,7 +96,7 @@ namespace xtd {
       static xtd::drawing::color white_smoke();
       /// @}
       
-      /// @name Public methods
+      /// @name Methods
       
       /// @{
       /// @brief Gets an array of colors.
