@@ -11,10 +11,10 @@ namespace xtd {
   namespace drawing {
     /// @brief Each property of the xtd::drawing::emotes_system_images class is an xtd::drawing::image object for Windows system-wide images. This class cannot be inherited.
     /// @code
-    /// class drawing_export_ emotes_system_images final static_
+    /// class drawing_export_ emotes_system_images final : private system_images_base
     /// @endcode
     /// @par Inheritance
-    /// xtd::static_object → xtd::drawing::emotes_system_images
+    /// xtd::drawing::system_images_base → xtd::drawing::emotes_system_images
     /// @par Header
     /// @code #include <xtd/drawing/emotes_system_images> @endcode
     /// @par Namespace
