@@ -4,32 +4,32 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 
-color orange_colors::coral() {
+color orange_colors::coral() noexcept {
   return color::from_known_color(known_color::coral);
 }
 
-color orange_colors::dark_orange() {
+color orange_colors::dark_orange() noexcept {
   return color::from_known_color(known_color::dark_orange);
 }
 
-color orange_colors::orange_red() {
+color orange_colors::orange_red() noexcept {
   return color::from_known_color(known_color::orange_red);
 }
 
-color orange_colors::tomato() {
+color orange_colors::tomato() noexcept {
   return color::from_known_color(known_color::tomato);
 }
 
-color orange_colors::orange() {
+color orange_colors::orange() noexcept {
   return color::from_known_color(known_color::orange);
 }
 
-const vector<color>& orange_colors::get_colors() {
+const vector<color>& orange_colors::get_colors() noexcept {
   static vector colors {orange_colors::orange_red(), orange_colors::tomato(), orange_colors::dark_orange(), orange_colors::coral(), orange_colors::orange()};
   return colors;
 }
 
-const vector<ustring>& orange_colors::get_color_names() {
+const vector<ustring>& orange_colors::get_color_names() noexcept {
   static vector color_names {orange_colors::orange_red().name(), orange_colors::tomato().name(), orange_colors::dark_orange().name(), orange_colors::coral().name(), orange_colors::orange().name()};
   return color_names;
 }

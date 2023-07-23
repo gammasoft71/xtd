@@ -29,33 +29,33 @@ namespace xtd {
       /// @{
       /// @brief A system-defined color object.
       /// @image html colors_coral.png
-      static xtd::drawing::color coral();
+      static xtd::drawing::color coral() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_orange_red.png
-      static xtd::drawing::color orange_red();
+      static xtd::drawing::color orange_red() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_tomato.png
-      static xtd::drawing::color tomato();
+      static xtd::drawing::color tomato() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_dark_orange.png
-      static xtd::drawing::color dark_orange();
+      static xtd::drawing::color dark_orange() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_orange.png
-      static xtd::drawing::color orange();
+      static xtd::drawing::color orange() noexcept;
       /// @}
       
       /// @name Methods
       
       /// @{
       /// @brief Gets an array of colors.
-      static const std::vector<xtd::drawing::color>& get_colors();
+      static const std::vector<xtd::drawing::color>& get_colors() noexcept;
       
       /// @brief Gets an array of color names.
-      static const std::vector<xtd::ustring>& get_color_names();
+      static const std::vector<xtd::ustring>& get_color_names() noexcept;
       /// @}
     };
   }
