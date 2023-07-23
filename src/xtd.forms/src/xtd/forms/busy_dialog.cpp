@@ -113,16 +113,16 @@ void busy_dialog::reset() {
 }
 
 void busy_dialog::show() {
-  data_->native = data_->dialog_appearance == xtd::forms::dialog_appearance::system;
-  if (data_->native)
-    data_->handle = native::busy_dialog::create(0, xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(data_->icon)), data_->text, data_->description, data_->back_color, data_->fore_color, data_->opacity);
+  /// @todo Delete the following comment when the standard dialog is ready.
+  data_->native = true; //data_->dialog_appearance == xtd::forms::dialog_appearance::system;
+  if (data_->native) data_->handle = native::busy_dialog::create(0, xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(data_->icon)), data_->text, data_->description, data_->back_color, data_->fore_color, data_->opacity);
   application::do_events();
 }
 
 void busy_dialog::show(const iwin32_window& owner) {
-  data_->native = data_->dialog_appearance == xtd::forms::dialog_appearance::system;
-  if (data_->native)
-    data_->handle = native::busy_dialog::create(owner.handle(), xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(data_->icon)), data_->text, data_->description, data_->back_color, data_->fore_color, data_->opacity);
+  /// @todo Delete the following comment when the standard dialog is ready.
+  data_->native = true; //data_->dialog_appearance == xtd::forms::dialog_appearance::system;
+  if (data_->native) data_->handle = native::busy_dialog::create(owner.handle(), xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(data_->icon)), data_->text, data_->description, data_->back_color, data_->fore_color, data_->opacity);
   application::do_events();
 }
 
