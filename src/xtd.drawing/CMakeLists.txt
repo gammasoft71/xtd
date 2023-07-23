@@ -108,6 +108,7 @@ add_sources(
   include/xtd/drawing/system_icons.h
   include/xtd/drawing/system_icons
   include/xtd/drawing/system_images.h
+  include/xtd/drawing/system_images_base.h
   include/xtd/drawing/system_images
   include/xtd/drawing/system_pens.h
   include/xtd/drawing/system_pens
@@ -240,6 +241,7 @@ add_sources(
   src/xtd/drawing/system_colors.cpp
   src/xtd/drawing/system_fonts.cpp
   src/xtd/drawing/system_icons.cpp
+  src/xtd/drawing/system_images_base.cpp
   src/xtd/drawing/system_images.cpp
   src/xtd/drawing/system_pens.cpp
   src/xtd/drawing/texture_brush.cpp
