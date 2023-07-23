@@ -29,49 +29,49 @@ namespace xtd {
       /// @{
       /// @brief A system-defined color object.
       /// @image html colors_crimson.png
-      static xtd::drawing::color crimson();
+      static xtd::drawing::color crimson() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_dark_red.png
-      static xtd::drawing::color dark_red();
+      static xtd::drawing::color dark_red() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_dark_salmon.png
-      static xtd::drawing::color dark_salmon();
+      static xtd::drawing::color dark_salmon() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_firebrick.png
-      static xtd::drawing::color firebrick();
+      static xtd::drawing::color firebrick() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_indian_red.png
-      static xtd::drawing::color indian_red();
+      static xtd::drawing::color indian_red() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_light_coral.png
-      static xtd::drawing::color light_coral();
+      static xtd::drawing::color light_coral() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_light_salmon.png
-      static xtd::drawing::color light_salmon();
+      static xtd::drawing::color light_salmon() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_red.png
-      static xtd::drawing::color red();
+      static xtd::drawing::color red() noexcept;
       
       /// @brief A system-defined color object.
       /// @image html colors_salmon.png
-      static xtd::drawing::color salmon();
+      static xtd::drawing::color salmon() noexcept;
       /// @}
       
       /// @name Methods
       
       /// @{
       /// @brief Gets an array of colors.
-      static const std::vector<xtd::drawing::color>& get_colors();
+      static const std::vector<xtd::drawing::color>& get_colors() noexcept;
       
       /// @brief Gets an array of color names.
-      static const std::vector<xtd::ustring>& get_color_names();
+      static const std::vector<xtd::ustring>& get_color_names() noexcept;
       /// @}
     };
   }
