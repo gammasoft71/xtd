@@ -46,8 +46,24 @@ namespace xtd {
       bool also_run_ignored_tests() const noexcept;
       
       /// @brief Sets also run ignored test.
-      /// @param also_run_ignored_tests  true if also run ignored test; otherwise false.
+      /// @param also_run_ignored_tests true if also run ignored test; otherwise false.
       void also_run_ignored_tests(bool also_run_ignored_tests) noexcept;
+      
+      /// @brief Gets break immediatly on failure.
+      /// @return true if break immediatly on failure; otherwise false.
+      bool break_on_failure() const noexcept;
+      
+      /// @brief Sets break immediatly on failure.
+      /// @param break_on_failure true if break immediatly on failure; otherwise false.
+      void break_on_failure(bool break_on_failure) noexcept;
+      
+      /// @brief Gets throw on failure.
+      /// @return true if throw on failure; otherwise false.
+      bool throw_on_failure() const noexcept;
+      
+      /// @brief Sets throw on failure.
+      /// @param break_on_failure true if throw on failure; otherwise false.
+      void throw_on_failure(bool break_on_failure) noexcept;
       
       /// @brief Gets count tests.
       /// @return true if count tests; otherwise false.
@@ -207,6 +223,8 @@ namespace xtd {
       void start_time(const xtd::date_time& start_time) noexcept;
       
       bool also_run_ignored_tests_ = false;
+      bool break_on_failure_ = false;
+      bool throw_on_failure_ = false;
       std::string filter_tests_ = "*.*";
       int32 exit_status_ = EXIT_SUCCESS;
       bool gtest_compatibility_ = false;

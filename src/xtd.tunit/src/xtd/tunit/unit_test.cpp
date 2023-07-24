@@ -244,6 +244,11 @@ bool unit_test::parse_arguments(const std::vector<std::string>& args) {
       xtd::tunit::settings::default_settings().output_xml(true);
       if (arg[18] == ':') xtd::tunit::settings::default_settings().output_xml_path(arg.substr(19));
     }
+    // Assertion Behavior
+    else if (arg == "--break_on_failure")
+      settings::default_settings().break_on_failure(true);
+    else if (arg == "--throw_on_failure")
+      settings::default_settings().throw_on_failure(true);
   }
   xtd::tunit::settings::default_settings().gtest_compatibility(gtest_compatibility);
   return false;

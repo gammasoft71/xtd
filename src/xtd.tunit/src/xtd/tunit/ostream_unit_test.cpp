@@ -126,4 +126,14 @@ void ostream_unit_test::write_help() {
   os_ << "      Generate a JSON or XML report in the given directory or with the given" << std::endl;
   os_ << "      file name. PATH defaults to tests.xml." << std::endl;
   os_ << std::endl;
+  os_ << "Assertion Behavior:" << std::endl;
+  os_ << __foreground_color(__console_color::green);
+  os_ << "  --break_on_failure" << std::endl;
+  os_ << __reset_color();
+  os_ << "      Turn assertion failures into debugger break-points." << std::endl;
+  os_ << __foreground_color(__console_color::green);
+  os_ << "  --throw_on_failure" << std::endl;
+  os_ << __reset_color();
+  os_ << "      Turn assertion failures into C++ exceptions for use by an external test framework." << std::endl;
+  os_ << std::endl;
 }
