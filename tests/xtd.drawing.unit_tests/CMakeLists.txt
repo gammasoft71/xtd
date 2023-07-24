@@ -25,18 +25,30 @@ add_sources(
   src/xtd/drawing/imaging/tests/image_flags_tests.cpp
   src/xtd/drawing/imaging/tests/image_lock_mode_tests.cpp
   src/xtd/drawing/imaging/tests/pixel_format_tests.cpp
-  src/xtd/drawing/tests/known_color_tests.cpp
+  src/xtd/drawing/tests/actions_system_images_tests.cpp
+  src/xtd/drawing/tests/animations_system_images_tests.cpp
+  src/xtd/drawing/tests/applications_system_images_tests.cpp
+  src/xtd/drawing/tests/categories_system_images_tests.cpp
   src/xtd/drawing/tests/color_tests.cpp
   src/xtd/drawing/tests/copy_pixel_operation_tests.cpp
   src/xtd/drawing/tests/dash_style_tests.cpp
+  src/xtd/drawing/tests/devices_system_images_tests.cpp
+  src/xtd/drawing/tests/emblems_system_images_tests.cpp
+  src/xtd/drawing/tests/emotes_system_images_tests.cpp
   src/xtd/drawing/tests/font_style_tests.cpp
   src/xtd/drawing/tests/graphics_unit_tests.cpp
+  src/xtd/drawing/tests/international_system_images_tests.cpp
+  src/xtd/drawing/tests/known_color_tests.cpp
+  src/xtd/drawing/tests/mimetypes_system_images_tests.cpp
+  src/xtd/drawing/tests/places_system_images_tests.cpp
+  src/xtd/drawing/tests/point_tests.cpp
   src/xtd/drawing/tests/rotate_flip_type_tests.cpp
+  src/xtd/drawing/tests/size_tests.cpp
+  src/xtd/drawing/tests/status_system_images_tests.cpp
   src/xtd/drawing/tests/string_alignment_tests.cpp
   src/xtd/drawing/tests/string_format_flags_tests.cpp
   src/xtd/drawing/tests/string_trimming_tests.cpp
-  src/xtd/drawing/tests/point_tests.cpp
-  src/xtd/drawing/tests/size_tests.cpp
+  src/xtd/drawing/tests/xtd_system_images_tests.cpp
   src/xtd/drawing/text/tests/generic_font_families_tests.cpp
   src/xtd/drawing/text/tests/hotkey_prefix_tests.cpp
   src/xtd/drawing/text/tests/text_rendering_hint_tests.cpp
