@@ -12,24 +12,32 @@ bool settings::also_run_ignored_tests() const noexcept {
   return also_run_ignored_tests_;
 }
 
-void settings::break_on_failure(bool break_on_failure) noexcept {
-  break_on_failure_ = break_on_failure;
+void settings::also_run_ignored_tests(bool also_run_ignored_tests) noexcept {
+  also_run_ignored_tests_ = also_run_ignored_tests;
 }
 
 bool settings::break_on_failure() const noexcept {
   return break_on_failure_;
 }
 
-void settings::throw_on_failure(bool throw_on_failure) noexcept {
-  throw_on_failure_ = throw_on_failure;
+void settings::break_on_failure(bool break_on_failure) noexcept {
+  break_on_failure_ = break_on_failure;
+}
+
+bool settings::brief() const noexcept {
+  return brief_;
+}
+
+void settings::brief(bool brief) noexcept {
+  brief_ = brief;
 }
 
 bool settings::throw_on_failure() const noexcept {
   return throw_on_failure_;
 }
 
-void settings::also_run_ignored_tests(bool also_run_ignored_tests) noexcept {
-  also_run_ignored_tests_ = also_run_ignored_tests;
+void settings::throw_on_failure(bool throw_on_failure) noexcept {
+  throw_on_failure_ = throw_on_failure;
 }
 
 bool settings::count_tests() const noexcept {
