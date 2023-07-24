@@ -43,10 +43,10 @@ namespace xtd::tests {
       
       iasync_result& start() {
         if (result_.async_state().has_value()) throw invalid_operation_exception("Already started", csf_);
+        result_.async_mutex().lock();
         result_.async_state("Started");
         result_.is_completed(false);
         thread_ = thread([this] {
-          result_.async_mutex().lock();
           this_thread::sleep_for(chrono::milliseconds(2));
           result_.async_state("Ended");
           result_.is_completed(true);
