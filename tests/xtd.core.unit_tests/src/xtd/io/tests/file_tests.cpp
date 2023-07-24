@@ -45,7 +45,7 @@ namespace xtd::io::tests {
     
     void test_method_(copy) {
       assert::does_not_throw([] {file::append_all_text(test_file_name, "Text");}, csf_);
-      std::cout << file::read_all_text(test_file_name) << std::endl;
+      //std::cout << file::read_all_text(test_file_name) << std::endl;
       assert::does_not_throw([] {file::copy(test_file_name, "file2.txt");}, csf_);
       
       assert::is_true(ifstream(test_file_name).good(), csf_);
