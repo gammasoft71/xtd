@@ -35,7 +35,7 @@ namespace xtd {
     
     /// @brief An abstract base class that provides functionality for the bitmap and metafile descended classes.
     /// @code
-    /// class drawing_export_ image : public xtd::object
+    /// class drawing_export_ image : public xtd::object, public xtd::iequatable<image>
     /// @endcode
     /// @par Inheritance
     /// xtd::object → xtd::drawing::image
