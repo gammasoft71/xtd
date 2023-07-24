@@ -65,7 +65,8 @@ void settings::gtest_compatibility(bool gtest_compatibility) noexcept {
 }
 
 bool settings::is_match_test_name(const std::string& test_class_name, const std::string& test_name) const noexcept {
-  return pattern_compare(test_class_name + "." + test_name, filter_tests_);
+  auto result = pattern_compare(test_class_name + "." + test_name, not_filter_tests().empty() ? filter_tests() : not_filter_tests());
+  return not_filter_tests().empty() ? result : !result;
 }
 
 bool settings::list_tests() const noexcept {
@@ -74,6 +75,14 @@ bool settings::list_tests() const noexcept {
 
 void settings::list_tests(bool list_tests) noexcept {
   list_tests_ = list_tests;
+}
+
+const std::string& settings::not_filter_tests() const noexcept {
+  return not_filter_tests_;
+}
+
+void settings::not_filter_tests(const std::string& not_filter_tests) noexcept {
+  not_filter_tests_ = not_filter_tests;
 }
 
 bool settings::output_color() const noexcept {
