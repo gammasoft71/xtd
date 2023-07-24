@@ -1,5 +1,6 @@
 #include "../../../include/xtd/tunit/test.h"
 #include "../../../include/xtd/tunit/unit_test.h"
+#include <xtd/diagnostics//debug_break.h>
 #include <exception>
 
 using namespace xtd;
@@ -140,6 +141,10 @@ void test::run(const unit_test& unit_test, const xtd::tunit::test_class& test_cl
       } catch (const xtd::tunit::assert_error&) {
         xtd::tunit::settings::default_settings().exit_status(EXIT_FAILURE);
         unit_test.event_listener_->on_test_failed(xtd::tunit::test_event_args(*this, test_class, unit_test));
+        if (xtd::tunit::settings::default_settings().break_on_failure())
+          debug_break_();
+        if (xtd::tunit::settings::default_settings().throw_on_failure())
+          throw system_exception(csf_);
       } catch (const xtd::tunit::ignore_error&) {
         unit_test.event_listener_->on_test_ignored(xtd::tunit::test_event_args(*this, test_class, unit_test));
       } catch (const std::exception& e) {
