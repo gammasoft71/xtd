@@ -160,11 +160,11 @@ int32 unit_test::run() {
       std::shuffle(test_classes().begin(), test_classes().end(), random.generator());
       
     try {
-      event_listener_->on_unit_test_start(xtd::tunit::tunit_event_args(*this));
+      if (!settings::default_settings().brief()) event_listener_->on_unit_test_start(xtd::tunit::tunit_event_args(*this));
       
-      event_listener_->on_unit_test_initialize_start(xtd::tunit::tunit_event_args(*this));
+      if (!settings::default_settings().brief()) event_listener_->on_unit_test_initialize_start(xtd::tunit::tunit_event_args(*this));
       unit_test_initialize();
-      event_listener_->on_unit_test_initialize_end(xtd::tunit::tunit_event_args(*this));
+      if (!settings::default_settings().brief()) event_listener_->on_unit_test_initialize_end(xtd::tunit::tunit_event_args(*this));
       
       start_time_point_ = xtd::date_time::now();
       for (auto& test_class : test_classes())
@@ -172,9 +172,9 @@ int32 unit_test::run() {
           test_class.test()->run(*this);
       end_time_point_ = xtd::date_time::now();
       
-      event_listener_->on_unit_test_cleanup_start(xtd::tunit::tunit_event_args(*this));
+      if (!settings::default_settings().brief()) event_listener_->on_unit_test_cleanup_start(xtd::tunit::tunit_event_args(*this));
       unit_test_cleanup();
-      event_listener_->on_unit_test_cleanup_end(xtd::tunit::tunit_event_args(*this));
+      if (!settings::default_settings().brief()) event_listener_->on_unit_test_cleanup_end(xtd::tunit::tunit_event_args(*this));
       
       event_listener_->on_unit_test_end(xtd::tunit::tunit_event_args(*this));
     } catch (const std::exception&) {
@@ -228,6 +228,9 @@ bool unit_test::parse_arguments(const std::vector<ustring>& args) {
     else if (arg == "--gtest_color=auto" || arg == "--gtest_color=yes") xtd::tunit::settings::default_settings().output_color(true);
     else if (arg == "--output_color=false") xtd::tunit::settings::default_settings().output_color(false);
     else if (arg == "--gtest_color=no") xtd::tunit::settings::default_settings().output_color(false);
+    else if (arg == "--brief=true") xtd::tunit::settings::default_settings().brief(true);
+    else if (arg == "--gtest_brief=1") xtd::tunit::settings::default_settings().brief(true);
+    else if (arg == "--brief=false") xtd::tunit::settings::default_settings().brief(false);
     else if (arg == "--show_duration=true") xtd::tunit::settings::default_settings().show_duration(true);
     else if (arg == "--show_duration=false") xtd::tunit::settings::default_settings().show_duration(false);
     else if (arg == "--gtest_print_time=0") xtd::tunit::settings::default_settings().show_duration(false);

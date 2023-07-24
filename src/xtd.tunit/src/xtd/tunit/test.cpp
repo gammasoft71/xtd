@@ -114,22 +114,22 @@ void test::run(const unit_test& unit_test, const xtd::tunit::test_class& test_cl
       try {
         assert::ignore();
       } catch (const xtd::tunit::ignore_error&) {
-        unit_test.event_listener_->on_test_ignored(xtd::tunit::test_event_args(*this, test_class, unit_test));
+        if (!settings::default_settings().brief()) unit_test.event_listener_->on_test_ignored(xtd::tunit::test_event_args(*this, test_class, unit_test));
       }
     } else if (not_started()) {
-      unit_test.event_listener_->on_test_initialize_start(xtd::tunit::test_event_args(*this, test_class, unit_test));
+      if (!settings::default_settings().brief()) unit_test.event_listener_->on_test_initialize_start(xtd::tunit::test_event_args(*this, test_class, unit_test));
       if (test_class.test_initialize().method() != nullptr)
         test_class.test_initialize().method()();
-      unit_test.event_listener_->on_test_initialize_end(xtd::tunit::test_event_args(*this, test_class, unit_test));
+      if (!settings::default_settings().brief()) unit_test.event_listener_->on_test_initialize_end(xtd::tunit::test_event_args(*this, test_class, unit_test));
       
-      unit_test.event_listener_->on_test_start(xtd::tunit::test_event_args(*this, test_class, unit_test));
+      if (!settings::default_settings().brief()) unit_test.event_listener_->on_test_start(xtd::tunit::test_event_args(*this, test_class, unit_test));
       try {
         start_time_ = date_time::now();
         method()();
         end_time_point = date_time::now();
         if (not_started()) status_ = test_status::succeed;
         if (succeed())
-          unit_test.event_listener_->on_test_succeed(xtd::tunit::test_event_args(*this, test_class, unit_test));
+          if (!settings::default_settings().brief()) unit_test.event_listener_->on_test_succeed(xtd::tunit::test_event_args(*this, test_class, unit_test));
         /*
         else {
           xtd::tunit::settings::default_settings().exit_status(EXIT_FAILURE);
@@ -137,32 +137,43 @@ void test::run(const unit_test& unit_test, const xtd::tunit::test_class& test_cl
         }
          */
       } catch (const xtd::tunit::abort_error&) {
-        unit_test.event_listener_->on_test_aborted(xtd::tunit::test_event_args(*this, test_class, unit_test));
+        if (!settings::default_settings().brief()) unit_test.event_listener_->on_test_aborted(xtd::tunit::test_event_args(*this, test_class, unit_test));
       } catch (const xtd::tunit::assert_error&) {
         xtd::tunit::settings::default_settings().exit_status(EXIT_FAILURE);
+        if (settings::default_settings().brief()) unit_test.event_listener_->on_test_start(xtd::tunit::test_event_args(*this, test_class, unit_test));
         unit_test.event_listener_->on_test_failed(xtd::tunit::test_event_args(*this, test_class, unit_test));
         if (xtd::tunit::settings::default_settings().break_on_failure())
           debug_break_();
         if (xtd::tunit::settings::default_settings().throw_on_failure())
           throw system_exception(csf_);
       } catch (const xtd::tunit::ignore_error&) {
-        unit_test.event_listener_->on_test_ignored(xtd::tunit::test_event_args(*this, test_class, unit_test));
+        if (!settings::default_settings().brief()) unit_test.event_listener_->on_test_ignored(xtd::tunit::test_event_args(*this, test_class, unit_test));
       } catch (const std::exception& e) {
         xtd::tunit::settings::default_settings().exit_status(EXIT_FAILURE);
         xtd::tunit::test::current_test().message_ = "Exception <" + __tunit_demangle(typeid(e).name()) + "> throws" + " (" + e.what() + ")";
         xtd::tunit::test::current_test().status_ = test::test_status::failed;
+        if (settings::default_settings().brief()) unit_test.event_listener_->on_test_start(xtd::tunit::test_event_args(*this, test_class, unit_test));
         unit_test.event_listener_->on_test_failed(xtd::tunit::test_event_args(*this, test_class, unit_test));
+        if (xtd::tunit::settings::default_settings().break_on_failure())
+          debug_break_();
+        if (xtd::tunit::settings::default_settings().throw_on_failure())
+          throw system_exception(csf_);
       } catch (...) {
         xtd::tunit::settings::default_settings().exit_status(EXIT_FAILURE);
         xtd::tunit::test::current_test().message_ = "Exception <unknown> throws";
         xtd::tunit::test::current_test().status_ = test::test_status::failed;
+        if (settings::default_settings().brief()) unit_test.event_listener_->on_test_start(xtd::tunit::test_event_args(*this, test_class, unit_test));
         unit_test.event_listener_->on_test_failed(xtd::tunit::test_event_args(*this, test_class, unit_test));
+        if (xtd::tunit::settings::default_settings().break_on_failure())
+          debug_break_();
+        if (xtd::tunit::settings::default_settings().throw_on_failure())
+          throw system_exception(csf_);
       }
       
-      unit_test.event_listener_->on_test_cleanup_start(xtd::tunit::test_event_args(*this, test_class, unit_test));
+      if (!settings::default_settings().brief()) unit_test.event_listener_->on_test_cleanup_start(xtd::tunit::test_event_args(*this, test_class, unit_test));
       if (test_class.test_cleanup().method() != nullptr)
         test_class.test_cleanup().method()();
-      unit_test.event_listener_->on_test_cleanup_end(xtd::tunit::test_event_args(*this, test_class, unit_test));
+      if (!settings::default_settings().brief()) unit_test.event_listener_->on_test_cleanup_end(xtd::tunit::test_event_args(*this, test_class, unit_test));
       
       unit_test.event_listener_->on_test_end(xtd::tunit::test_event_args(*this, test_class, unit_test));
     }

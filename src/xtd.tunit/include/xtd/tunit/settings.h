@@ -53,6 +53,14 @@ namespace xtd {
       /// @return true if break immediatly on failure; otherwise false.
       bool break_on_failure() const noexcept;
       
+      /// @brief Gets brief.
+      /// @return true if brief; otherwise false.
+      bool brief() const noexcept;
+      
+      /// @brief Sets brief.
+      /// @param brief true if brief; otherwise false.
+      void brief(bool brief) noexcept;
+      
       /// @brief Sets break immediatly on failure.
       /// @param break_on_failure true if break immediatly on failure; otherwise false.
       void break_on_failure(bool break_on_failure) noexcept;
@@ -224,6 +232,7 @@ namespace xtd {
       
       bool also_run_ignored_tests_ = false;
       bool break_on_failure_ = false;
+      bool brief_ = false;
       bool throw_on_failure_ = false;
       std::vector<ustring> filter_tests_;
       int32 exit_status_ = EXIT_SUCCESS;

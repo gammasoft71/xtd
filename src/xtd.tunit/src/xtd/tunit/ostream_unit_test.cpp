@@ -111,6 +111,13 @@ void ostream_unit_test::write_help() {
   os_ << __reset_color();
   os_ << "      Enable/disable colored output." << std::endl;
   os_ << __foreground_color(__console_color::green);
+  os_ << "  --brief=";
+  os_ << __reset_color();
+  os_ << __foreground_color(__console_color::yellow);
+  os_ << "(true|false)" << std::endl;
+  os_ << __reset_color();
+  os_ << "      Enable/disable printing of test failures only." << std::endl;
+  os_ << __foreground_color(__console_color::green);
   os_ << "  --show_duration=";
   os_ << __reset_color();
   os_ << __foreground_color(__console_color::yellow);
