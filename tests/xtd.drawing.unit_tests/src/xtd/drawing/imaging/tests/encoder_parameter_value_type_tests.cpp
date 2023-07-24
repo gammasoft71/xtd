@@ -6,7 +6,7 @@
 using namespace xtd::drawing::imaging;
 using namespace xtd::tunit;
 
-namespace xtd::tests {
+namespace xtd::drawing::imaging::tests {
   class test_class_(encoder_parameter_value_type_tests) {
   public:
     void test_method_(value_type_byte) {

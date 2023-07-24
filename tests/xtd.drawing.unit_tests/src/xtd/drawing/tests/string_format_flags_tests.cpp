@@ -6,7 +6,7 @@
 using namespace xtd::drawing;
 using namespace xtd::tunit;
 
-namespace xtd::tests {
+namespace xtd::drawing::tests {
   class test_class_(string_format_flags_tests) {
   public:
     void test_method_(direction_right_to_left) {

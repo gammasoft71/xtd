@@ -6,7 +6,7 @@
 using namespace xtd::drawing::text;
 using namespace xtd::tunit;
 
-namespace xtd::tests {
+namespace xtd::drawing::text::tests {
   class test_class_(hotkey_prefix_tests) {
   public:
     void test_method_(none) {

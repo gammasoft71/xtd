@@ -6,7 +6,7 @@
 using namespace xtd::drawing::drawing_2d;
 using namespace xtd::tunit;
 
-namespace xtd::tests {
+namespace xtd::drawing::drawing_2d::tests {
   class test_class_(interpolation_mode_tests) {
   public:
     void test_method_(invalid) {

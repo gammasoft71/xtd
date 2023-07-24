@@ -6,7 +6,7 @@
 using namespace xtd::drawing;
 using namespace xtd::tunit;
 
-namespace xtd::tests {
+namespace xtd::drawing::tests {
   class test_class_(rotate_flip_type_tests) {
   public:
     void test_method_(rotate_none_flip_none) {
