@@ -6,7 +6,7 @@
 using namespace xtd::drawing::imaging;
 using namespace xtd::tunit;
 
-namespace xtd::tests {
+namespace xtd::drawing::imaging::tests {
   class test_class_(image_flags_tests) {
   public:
     void test_method_(none) {
