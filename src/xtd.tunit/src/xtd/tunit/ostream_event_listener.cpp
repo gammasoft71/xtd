@@ -40,7 +40,7 @@ void ostream_event_listener::on_test_aborted(const xtd::tunit::test_event_args& 
     os_ << __reset_color();
     os_ << e.test_class().name() << "." << e.test().name() << " (" << e.test().elapsed_time().count() << " ms)" << std::endl;
   } else {
-    os_ << __foreground_color(__console_color::magenta);
+    os_ << __foreground_color(__console_color::dark_magenta);
     os_ << "  ABORTED ";
     os_ << __reset_color();
     os_ << e.test_class().name() << "." << e.test().name();
@@ -94,7 +94,7 @@ void ostream_event_listener::on_test_failed(const xtd::tunit::test_event_args& e
     os_ << __reset_color();
     os_ << e.test_class().name() << "." << e.test().name() << " (" << e.test().elapsed_time().count() << " ms)" << std::endl;
   } else {
-    os_ << __foreground_color(__console_color::red);
+    os_ << __foreground_color(__console_color::dark_red);
     os_ << "  FAILED  ";
     os_ << __reset_color();
     os_ << e.test_class().name() << "." << e.test().name();
@@ -123,7 +123,7 @@ void ostream_event_listener::on_test_ignored(const xtd::tunit::test_event_args& 
     os_ << __reset_color();
     os_ << e.test_class().name() << "." << e.test().name() << std::endl;
   } else {
-    os_ << __foreground_color(__console_color::yellow);
+    os_ << __foreground_color(__console_color::dark_yellow);
     os_ << "  IGNORED ";
     os_ << __reset_color();
     os_ << e.test_class().name() << "." << e.test().name();
@@ -153,7 +153,7 @@ void ostream_event_listener::on_test_succeed(const xtd::tunit::test_event_args& 
     os_ << __reset_color();
     os_ << e.test_class().name() << "." << e.test().name() << " (" << e.test().elapsed_time().count() << " ms)" << std::endl;
   } else {
-    os_ << __foreground_color(__console_color::green);
+    os_ << __foreground_color(__console_color::dark_green);
     os_ << "  SUCCEED ";
     os_ << __reset_color();
     os_ << e.test_class().name() << "." << e.test().name();
@@ -201,25 +201,25 @@ void ostream_event_listener::on_unit_test_end(const xtd::tunit::tunit_event_args
     os_ << __reset_color();
     os_ << "Test results:" << std::endl;
     if (e.unit_test().succeed_test_count()) {
-      os_ << __foreground_color(__console_color::green);
+      os_ << __foreground_color(__console_color::dark_green);
       os_ << "  SUCCEED ";
       os_ << __reset_color();
       os_ << e.unit_test().succeed_test_count() << " test" << (e.unit_test().succeed_test_count() > 1 ? "s" : "") << "." << std::endl;
     }
     if (e.unit_test().aborted_test_count()) {
-      os_ << __foreground_color(__console_color::magenta);
+      os_ << __foreground_color(__console_color::dark_magenta);
       os_ << "  ABORTED ";
       os_ << __reset_color();
       os_ << e.unit_test().aborted_test_count() << " test" << (e.unit_test().aborted_test_count() > 1 ? "s" : "") << "." << std::endl;
     }
     if (e.unit_test().failed_test_count()) {
-      os_ << __foreground_color(__console_color::red);
+      os_ << __foreground_color(__console_color::dark_red);
       os_ << "  FAILED  ";
       os_ << __reset_color();
       os_ << e.unit_test().failed_test_count() << " test" << (e.unit_test().failed_test_count() > 1 ? "s" : "") << "." << std::endl;
     }
     if (e.unit_test().ignored_test_count()) {
-      os_ << __foreground_color(__console_color::yellow);
+      os_ << __foreground_color(__console_color::dark_yellow);
       os_ << "  IGNORED ";
       os_ << __reset_color();
       os_ << e.unit_test().ignored_test_count() << " test" << (e.unit_test().ignored_test_count() > 1 ? "s" : "") << "." << std::endl;
@@ -234,7 +234,7 @@ void ostream_event_listener::on_unit_test_end(const xtd::tunit::tunit_event_args
 
 void ostream_event_listener::on_unit_test_start(const xtd::tunit::tunit_event_args& e) const {
   if (e.unit_test().repeat_tests()) {
-    if (!settings::default_settings().gtest_compatibility()) os_ << __foreground_color(__console_color::cyan);
+    if (!settings::default_settings().gtest_compatibility()) os_ << __foreground_color(__console_color::dark_cyan);
     os_ << "Repeating all tests (iteration " << e.unit_test().repeat_iteration() << ") . . ." << std::endl << std::endl;
     os_ << __reset_color();
   }
