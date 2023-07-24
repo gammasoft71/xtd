@@ -1,12 +1,16 @@
 #include <csignal>
 #include <cstdlib>
+#include "../../include/xtd/threading/thread_abort_exception.h"
+#include "../../include/xtd/access_violation_exception.h"
 #include "../../include/xtd/as.h"
 #include "../../include/xtd/environment.h"
 #include "../../include/xtd/argument_exception.h"
 #include "../../include/xtd/arithmetic_exception.h"
 #include "../../include/xtd/console.h"
 #include "../../include/xtd/convert_string.h"
+#include "../../include/xtd/interrupt_exception.h"
 #include "../../include/xtd/invalid_operation_exception.h"
+#include "../../include/xtd/software_termination_exception.h"
 #include "../../include/xtd/unused.h"
 #include "../../include/xtd/io/directory.h"
 #include "../../include/xtd/io/path.h"
@@ -34,19 +38,6 @@ using namespace xtd::io;
 
 namespace {
   int32 exit_code = 0;
-}
-
-namespace xtd {
-  /// @todo create access_violation_exception class...
-  using access_violation_exception = xtd::system_exception;
-  /// @todo create software_termination_exception class...
-  using software_termination_exception = xtd::system_exception;
-  /// @todo create software_termination_exception class...
-  using interrupt_exception = xtd::system_exception;
-  namespace threading {
-    /// @todo create thread_abort_exception class...
-    using thread_abort_exception = xtd::system_exception;
-  }
 }
 
 class environment::signal_catcher {
