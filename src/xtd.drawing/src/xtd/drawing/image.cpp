@@ -229,23 +229,41 @@ graphics image::create_graphics() {
 }
 
 bool image::equals(const image& image) const noexcept {
-  return data_->handle_ == image.data_->handle_;
+  if (handle() == image.handle()) return true;
+  if (flags() != image.flags()) return false;
+  if (frame_dimentions_list() != image.frame_dimentions_list()) return false;
+  if (horizontal_resolution() != image.horizontal_resolution()) return false;
+  if (palette() != image.palette()) return false;
+  if (physical_dimension() != image.physical_dimension()) return false;
+  if (pixel_format() != image.pixel_format()) return false;
+  if (property_id_list() != image.property_id_list()) return false;
+  if (property_items() != image.property_items()) return false;
+  if (raw_format() != image.raw_format()) return false;
+  if (size() != image.size()) return false;
+  //if (tag() != image.tag()) return false;
+  if (vertical_resolution() != image.vertical_resolution()) return false;
+  auto bmp1 = bitmap {*this};
+  auto bmp2 = bitmap {image};
+  for (auto x = 0; x < width(); ++x)
+    for (auto y = 0; y < height(); ++y)
+      if (bmp1.get_pixel(x, y) != bmp2.get_pixel(x, y)) return false;
+  return true;
 }
 
 bitmap image::from_hbitmap(intptr hbitmap) {
-  return bitmap(image(hbitmap));
+  return bitmap {image {hbitmap}};
 }
 
 image image::from_stream(std::istream& stream) { // stream param can't be const by design.
-  return image(stream);
+  return image {stream};
 }
 
 image image::from_data(const char* const* bits) {
-  return image(bits);
+  return image {bits};
 }
 
 xtd::drawing::rectangle_f image::get_bounds(graphics_unit page_unit) const noexcept {
-  return rectangle_f(0.0f, 0.0f, graphics::to_page_unit(as<float>(data_->size_.width()), page_unit, 1.0f, native::image::screen_dpi()), graphics::to_page_unit(as<float>(data_->size_.height()), page_unit, 1.0f, native::image::screen_dpi()));
+  return rectangle_f {0.0f, 0.0f, graphics::to_page_unit(as<float>(data_->size_.width()), page_unit, 1.0f, native::image::screen_dpi()), graphics::to_page_unit(as<float>(data_->size_.height()), page_unit, 1.0f, native::image::screen_dpi())};
 }
 
 xtd::drawing::imaging::encoder_parameters image::get_encoder_parameter_list(xtd::guid encoder) const noexcept {
