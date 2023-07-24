@@ -210,7 +210,9 @@ bool unit_test::parse_arguments(const std::vector<std::string>& args) {
     if (arg == "--count_tests") xtd::tunit::settings::default_settings().count_tests(true);
     else if (arg == "--list_tests") xtd::tunit::settings::default_settings().list_tests(true);
     else if (arg == "--gtest_list_tests") xtd::tunit::settings::default_settings().list_tests(true);
+    else if (arg.find("--filter_tests=-") == 0) xtd::tunit::settings::default_settings().not_filter_tests(arg.substr(16));
     else if (arg.find("--filter_tests=") == 0) xtd::tunit::settings::default_settings().filter_tests(arg.substr(15));
+    else if (arg.find("--gtest_filter=-") == 0) xtd::tunit::settings::default_settings().not_filter_tests(arg.substr(16));
     else if (arg.find("--gtest_filter=") == 0) xtd::tunit::settings::default_settings().filter_tests(arg.substr(15));
     else if (arg == "--also_run_ignored_tests") xtd::tunit::settings::default_settings().also_run_ignored_tests(true);
     else if (arg == "--gtest_also_run_disabled_tests") xtd::tunit::settings::default_settings().also_run_ignored_tests(true);

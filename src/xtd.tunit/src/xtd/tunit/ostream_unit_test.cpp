@@ -65,7 +65,7 @@ void ostream_unit_test::write_help() {
   os_ << "  --filter_tests=";
   os_ << __reset_color();
   os_ << __foreground_color(__console_color::yellow);
-  os_ << "[PATTERN]" << std::endl;
+  os_ << "POSITIVE_PATTERN[–NEGATIVE_PATERN]" << std::endl;
   os_ << __reset_color();
   os_ << "      Run only the tests whose name matches one of the pattern." << std::endl;
   os_ << "      '?' matches any single character; '*' matches any substring." << std::endl;

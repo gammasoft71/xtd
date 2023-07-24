@@ -115,6 +115,16 @@ namespace xtd {
       /// @param list_tests true if list tests; otherwise false.
       void list_tests(bool list_tests) noexcept;
       
+      /// @brief Gets not filter tests.
+      /// @return Not filter tests.
+      /// @remarks The value by default is "*.*".
+      const std::string& not_filter_tests() const noexcept;
+      
+      /// @brief Sets not filter tests.
+      /// @param not_filter_tests Not filter tests.
+      /// @remarks The value by default is "*.*".
+      void not_filter_tests(const std::string& invert_filter_tests) noexcept;
+      
       /// @brief Gets output color.
       /// @return true for colored output; otherwise false.
       bool output_color() const noexcept;
@@ -230,6 +240,7 @@ namespace xtd {
       bool gtest_compatibility_ = false;
       bool count_tests_ = false;
       bool list_tests_ = false;
+      std::string not_filter_tests_ = "";
       bool output_color_ = true;
       bool output_json_ = false;
       bool output_xml_ = false;
