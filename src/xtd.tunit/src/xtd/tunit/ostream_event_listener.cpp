@@ -198,6 +198,7 @@ void ostream_event_listener::on_unit_test_end(const xtd::tunit::tunit_event_args
     }
   } else {
     os_ << std::endl;
+    os_ << __reset_color();
     os_ << "Test results:" << std::endl;
     if (e.unit_test().succeed_test_count()) {
       os_ << __foreground_color(__console_color::green);
