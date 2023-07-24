@@ -70,6 +70,7 @@ add_sources(
   src/xtd/reflection/tests/assembly_tests.cpp
   src/xtd/security/tests/secure_string_tests.cpp
   src/xtd/speech/synthesis/tests/synthesizer_state_tests.cpp
+  src/xtd/tests/access_violation_exception_tests.cpp
   src/xtd/tests/any_tests.cpp
   src/xtd/tests/architecture_id_tests.cpp
   src/xtd/tests/architecture_name.h
@@ -136,8 +137,9 @@ add_sources(
   src/xtd/tests/iasync_result_tests.cpp
   src/xtd/tests/icomparable_tests.cpp
   src/xtd/tests/iequatable_tests.cpp
-  src/xtd/tests/index_out_of_range_exception_tests.cpp
+  src/xtd/tests/interrupt_exception_tests.cpp
   src/xtd/tests/interface_tests.cpp
+  src/xtd/tests/access_violation_exception_tests.cpp
   src/xtd/tests/invalid_cast_exception_tests.cpp
   src/xtd/tests/invalid_operation_exception_tests.cpp
   src/xtd/tests/invalid_program_exception_tests.cpp
@@ -174,6 +176,7 @@ add_sources(
   src/xtd/tests/registered_enum_tests.cpp
   src/xtd/tests/single_object_tests.cpp
   src/xtd/tests/signal_tests.cpp
+  src/xtd/tests/software_termination_exception_tests.cpp
   src/xtd/tests/standard_name.h
   src/xtd/tests/string_boolean_format_tests.cpp
   src/xtd/tests/string_comparison_tests.cpp
@@ -219,5 +222,6 @@ add_sources(
   src/xtd/tests/wstring_string_format_tests.cpp
   src/xtd/tests/xml_syntax_exception_tests.cpp
   src/xtd/threading/tests/interlocked_tests.cpp
+  src/xtd/threading/tests/thread_abort_exception_tests.cpp
 )
 target_type(TEST_APPLICATION)
