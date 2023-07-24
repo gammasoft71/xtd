@@ -231,7 +231,9 @@ bool unit_test::parse_arguments(const std::vector<ustring>& args) {
     else if (arg == "--brief=true") xtd::tunit::settings::default_settings().brief(true);
     else if (arg == "--gtest_brief=1") xtd::tunit::settings::default_settings().brief(true);
     else if (arg == "--brief=false") xtd::tunit::settings::default_settings().brief(false);
+    else if (arg == "--gtest_brief=0") xtd::tunit::settings::default_settings().brief(false);
     else if (arg == "--show_duration=true") xtd::tunit::settings::default_settings().show_duration(true);
+    else if (arg == "--gtest_print_time=1") xtd::tunit::settings::default_settings().show_duration(true);
     else if (arg == "--show_duration=false") xtd::tunit::settings::default_settings().show_duration(false);
     else if (arg == "--gtest_print_time=0") xtd::tunit::settings::default_settings().show_duration(false);
     else if (arg.find("--output=json") == 0) {
