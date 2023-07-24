@@ -48,12 +48,12 @@ void settings::exit_status(int32 exit_status) noexcept {
   exit_status_ = exit_status;
 }
 
-const std::string& settings::filter_tests() const noexcept {
+const std::vector<ustring>& settings::filter_tests() const noexcept {
   return filter_tests_;
 }
 
-void settings::filter_tests(const std::string& filter_tests) noexcept {
-  filter_tests_ = !filter_tests.empty() ? filter_tests : "*.*";
+void settings::filter_tests(const std::vector<ustring>& filter_tests) noexcept {
+  filter_tests_ = !filter_tests.empty() ? filter_tests : std::vector<ustring> {"*.*"};
 }
 
 bool settings::gtest_compatibility() const noexcept {
@@ -65,8 +65,21 @@ void settings::gtest_compatibility(bool gtest_compatibility) noexcept {
 }
 
 bool settings::is_match_test_name(const std::string& test_class_name, const std::string& test_name) const noexcept {
-  auto result = pattern_compare(test_class_name + "." + test_name, not_filter_tests().empty() ? filter_tests() : not_filter_tests());
-  return not_filter_tests().empty() ? result : !result;
+  auto result = false;
+
+  auto found_filter_test_count = false;
+  for (auto filter_test : filter_tests())
+    if (!filter_test.starts_with('-')) {
+      result |= pattern_compare(test_class_name + "." + test_name, filter_test);
+      found_filter_test_count = true;
+    }
+  if (!found_filter_test_count) result = true; // same as filter_test {"*.*"}.
+  
+  for (auto filter_test : filter_tests())
+    if (filter_test.starts_with('-'))
+      result &= !pattern_compare(test_class_name + "." + test_name, filter_test.substring(1));
+
+  return result;
 }
 
 bool settings::list_tests() const noexcept {
@@ -75,14 +88,6 @@ bool settings::list_tests() const noexcept {
 
 void settings::list_tests(bool list_tests) noexcept {
   list_tests_ = list_tests;
-}
-
-const std::string& settings::not_filter_tests() const noexcept {
-  return not_filter_tests_;
-}
-
-void settings::not_filter_tests(const std::string& not_filter_tests) noexcept {
-  not_filter_tests_ = not_filter_tests;
 }
 
 bool settings::output_color() const noexcept {

@@ -202,7 +202,7 @@ int32 unit_test::list_tests(const std::vector<std::string>& tests) {
   return xtd::tunit::settings::default_settings().exit_status();
 }
 
-bool unit_test::parse_arguments(const std::vector<std::string>& args) {
+bool unit_test::parse_arguments(const std::vector<ustring>& args) {
   bool gtest_compatibility = xtd::tunit::settings::default_settings().gtest_compatibility();
   for (auto arg : args) {
     if (arg == "--gtest_compatibility" || arg.find("--gtest") == 0) gtest_compatibility = true;
@@ -210,19 +210,17 @@ bool unit_test::parse_arguments(const std::vector<std::string>& args) {
     if (arg == "--count_tests") xtd::tunit::settings::default_settings().count_tests(true);
     else if (arg == "--list_tests") xtd::tunit::settings::default_settings().list_tests(true);
     else if (arg == "--gtest_list_tests") xtd::tunit::settings::default_settings().list_tests(true);
-    else if (arg.find("--filter_tests=-") == 0) xtd::tunit::settings::default_settings().not_filter_tests(arg.substr(16));
-    else if (arg.find("--filter_tests=") == 0) xtd::tunit::settings::default_settings().filter_tests(arg.substr(15));
-    else if (arg.find("--gtest_filter=-") == 0) xtd::tunit::settings::default_settings().not_filter_tests(arg.substr(16));
-    else if (arg.find("--gtest_filter=") == 0) xtd::tunit::settings::default_settings().filter_tests(arg.substr(15));
+    else if (arg.find("--filter_tests=") == 0) xtd::tunit::settings::default_settings().filter_tests(arg.substring(15).split({':'}));
+    else if (arg.find("--gtest_filter=") == 0) xtd::tunit::settings::default_settings().filter_tests(arg.substring(15).split({':'}));
     else if (arg == "--also_run_ignored_tests") xtd::tunit::settings::default_settings().also_run_ignored_tests(true);
     else if (arg == "--gtest_also_run_disabled_tests") xtd::tunit::settings::default_settings().also_run_ignored_tests(true);
     // Test execution:
-    else if (arg.find("--repeat_tests=") == 0) xtd::tunit::settings::default_settings().repeat_tests(convert::to_int32(arg.substr(15)));
-    else if (arg.find("--gtest_repeat=") == 0) xtd::tunit::settings::default_settings().repeat_tests(convert::to_int32(arg.substr(15)));
+    else if (arg.find("--repeat_tests=") == 0) xtd::tunit::settings::default_settings().repeat_tests(convert::to_int32(arg.substring(15)));
+    else if (arg.find("--gtest_repeat=") == 0) xtd::tunit::settings::default_settings().repeat_tests(convert::to_int32(arg.substring(15)));
     else if (arg == "--shuffle_tests") xtd::tunit::settings::default_settings().shuffle_test(true);
     else if (arg == "--gtest_shuffle") xtd::tunit::settings::default_settings().shuffle_test(true);
-    else if (arg.find("--random_seed=") == 0) xtd::tunit::settings::default_settings().random_seed(convert::to_uint32(arg.substr(14)));
-    else if (arg.find("--gtest_random_seed=") == 0) xtd::tunit::settings::default_settings().random_seed(convert::to_uint32(arg.substr(20)));
+    else if (arg.find("--random_seed=") == 0) xtd::tunit::settings::default_settings().random_seed(convert::to_uint32(arg.substring(14)));
+    else if (arg.find("--gtest_random_seed=") == 0) xtd::tunit::settings::default_settings().random_seed(convert::to_uint32(arg.substring(20)));
     else if (arg == "--enable_stack_trace=true") xtd::tunit::settings::default_settings().enable_stack_trace(true);
     else if (arg == "--enable_stack_trace=false") xtd::tunit::settings::default_settings().enable_stack_trace(false);
     // Test output
@@ -235,16 +233,16 @@ bool unit_test::parse_arguments(const std::vector<std::string>& args) {
     else if (arg == "--gtest_print_time=0") xtd::tunit::settings::default_settings().show_duration(false);
     else if (arg.find("--output=json") == 0) {
       xtd::tunit::settings::default_settings().output_json(true);
-      if (arg[13] == ':') xtd::tunit::settings::default_settings().output_json_path(arg.substr(14));
+      if (arg[13] == ':') xtd::tunit::settings::default_settings().output_json_path(arg.substring(14));
     } else if (arg.find("--gtest_output=json") == 0) {
       xtd::tunit::settings::default_settings().output_json(true);
-      if (arg[19] == ':') xtd::tunit::settings::default_settings().output_json_path(arg.substr(20));
+      if (arg[19] == ':') xtd::tunit::settings::default_settings().output_json_path(arg.substring(20));
     } else if (arg.find("--output=xml") == 0) {
       xtd::tunit::settings::default_settings().output_xml(true);
-      if (arg[12] == ':') xtd::tunit::settings::default_settings().output_xml_path(arg.substr(13));
+      if (arg[12] == ':') xtd::tunit::settings::default_settings().output_xml_path(arg.substring(13));
     } else if (arg.find("--gtest_output=xml") == 0) {
       xtd::tunit::settings::default_settings().output_xml(true);
-      if (arg[18] == ':') xtd::tunit::settings::default_settings().output_xml_path(arg.substr(19));
+      if (arg[18] == ':') xtd::tunit::settings::default_settings().output_xml_path(arg.substring(19));
     }
     // Assertion Behavior
     else if (arg == "--break_on_failure")

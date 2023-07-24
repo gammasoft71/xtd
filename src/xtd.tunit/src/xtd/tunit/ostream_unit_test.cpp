@@ -5,7 +5,6 @@ using namespace xtd;
 using namespace xtd::tunit;
 
 ostream_unit_test::ostream_unit_test(std::ostream& os) noexcept : xtd::tunit::unit_test(std::make_unique<xtd::tunit::ostream_event_listener>(os)), os_(os) {
-
 }
 
 ostream_unit_test::ostream_unit_test(std::ostream& os, int argc, char* argv[]) : xtd::tunit::unit_test(std::make_unique<xtd::tunit::ostream_event_listener>(os), argc, argv), os_(os) {
@@ -43,7 +42,7 @@ int ostream_unit_test::list_tests(const std::vector<std::string>& tests) {
   return unit_test::list_tests(tests);
 }
 
-bool ostream_unit_test::parse_arguments(const std::vector<std::string>& args) {
+bool ostream_unit_test::parse_arguments(const std::vector<ustring>& args) {
   for (auto arg : args)
     if (arg == "--help") {
       write_help();
@@ -67,8 +66,9 @@ void ostream_unit_test::write_help() {
   os_ << __foreground_color(__console_color::yellow);
   os_ << "POSITIVE_PATTERN[–NEGATIVE_PATERN]" << std::endl;
   os_ << __reset_color();
-  os_ << "      Run only the tests whose name matches one of the pattern." << std::endl;
-  os_ << "      '?' matches any single character; '*' matches any substring." << std::endl;
+  os_ << "      Run only the tests whose name matches one of the positive patterns but" << std::endl;
+  os_ << "      none of the negative patterns. '?' matches any single character; '*'" << std::endl;
+  os_ << "      matches any substring; ':' separates two patterns." << std::endl;
   os_ << __foreground_color(__console_color::green);
   os_ << "  --also_run_ignored_tests" << std::endl;
   os_ << __reset_color();
