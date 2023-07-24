@@ -12,6 +12,8 @@ add_sources(
   include/xtd/abstract
   include/xtd/abstract_object.h
   include/xtd/abstract_object
+  include/xtd/access_violation_exception.h
+  include/xtd/access_violation_exception
   include/xtd/action.h
   include/xtd/action
   include/xtd/add_last_arg_to_command.h
@@ -196,6 +198,8 @@ add_sources(
   include/xtd/int64_object
   include/xtd/interface.h
   include/xtd/interface
+  include/xtd/interrupt_exception.h
+  include/xtd/interrupt_exception
   include/xtd/intptr.h
   include/xtd/intptr
   include/xtd/intptr_object.h
@@ -296,6 +300,8 @@ add_sources(
   include/xtd/slong
   include/xtd/slong_object.h
   include/xtd/slong_object
+  include/xtd/software_termination_exception.h
+  include/xtd/software_termination_exception
   include/xtd/startup.h
   include/xtd/startup
   include/xtd/static.h
@@ -700,6 +706,8 @@ add_sources(
   include/xtd/speech/synthesis/synthesizer_state
   include/xtd/threading/interlocked.h
   include/xtd/threading/interlocked
+  include/xtd/threading/thread_abort_exception.h
+  include/xtd/threading/thread_abort_exception
   include/xtd/web/css/css_reader.h
   include/xtd/web/css/css_reader
   include/xtd/web/css/css_writer.h
