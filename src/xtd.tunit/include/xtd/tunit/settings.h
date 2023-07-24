@@ -88,12 +88,12 @@ namespace xtd {
       /// @brief Gets filter tests.
       /// @return filter tests.
       /// @remarks The value by default is "*.*".
-      const std::string& filter_tests() const noexcept;
+      const std::vector<ustring>& filter_tests() const noexcept;
       
       /// @brief Sets filter tests.
       /// @param filter_tests filter tests.
       /// @remarks The value by default is "*.*".
-      void filter_tests(const std::string& filter_tests) noexcept;
+      void filter_tests(const std::vector<ustring>& filter_tests) noexcept;
       
       /// @brief Gets google test comaptibility.
       /// @return true if google test comaptibility; otherwise false.
@@ -114,16 +114,6 @@ namespace xtd {
       /// @brief Sets list tests.
       /// @param list_tests true if list tests; otherwise false.
       void list_tests(bool list_tests) noexcept;
-      
-      /// @brief Gets not filter tests.
-      /// @return Not filter tests.
-      /// @remarks The value by default is "*.*".
-      const std::string& not_filter_tests() const noexcept;
-      
-      /// @brief Sets not filter tests.
-      /// @param not_filter_tests Not filter tests.
-      /// @remarks The value by default is "*.*".
-      void not_filter_tests(const std::string& invert_filter_tests) noexcept;
       
       /// @brief Gets output color.
       /// @return true for colored output; otherwise false.
@@ -235,12 +225,11 @@ namespace xtd {
       bool also_run_ignored_tests_ = false;
       bool break_on_failure_ = false;
       bool throw_on_failure_ = false;
-      std::string filter_tests_ = "*.*";
+      std::vector<ustring> filter_tests_;
       int32 exit_status_ = EXIT_SUCCESS;
       bool gtest_compatibility_ = false;
       bool count_tests_ = false;
       bool list_tests_ = false;
-      std::string not_filter_tests_ = "";
       bool output_color_ = true;
       bool output_json_ = false;
       bool output_xml_ = false;

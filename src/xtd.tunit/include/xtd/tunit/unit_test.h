@@ -148,7 +148,7 @@ namespace xtd {
       /// @param The arguments to parse.
       /// @return true the execution process stops immediately after the analysis of the arguments; otherwise false the execution process continues its execution.
       /// @remarks This method can be overloaded by the heirs. It is typically in this method that the heirs can react to their own arguments. Like for example display a helper when the @p -help argument is passed.
-      virtual bool parse_arguments(const std::vector<std::string>& args);
+      virtual bool parse_arguments(const std::vector<ustring>& args);
       /// @}
       
     private:
@@ -178,7 +178,7 @@ namespace xtd {
       void write_tests_json();
       void write_tests_xml();
       
-      std::vector<std::string> arguments;
+      std::vector<ustring> arguments;
       std::string name_ = "AllTests";
       std::unique_ptr<xtd::tunit::event_listener> event_listener_;
       xtd::date_time end_time_point_;

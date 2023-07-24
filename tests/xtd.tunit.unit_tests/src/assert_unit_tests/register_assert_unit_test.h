@@ -19,7 +19,7 @@ namespace assert_unit_tests {
     
     static std::pair<std::string, int> run_test(const std::string& filter_tests) {
       xtd::tunit::settings::default_settings().exit_status(0);
-      xtd::tunit::settings::default_settings().filter_tests(filter_tests);
+      xtd::tunit::settings::default_settings().filter_tests({filter_tests});
       auto output_stream = std::stringstream {};
       auto result = xtd::tunit::unit_test(std::make_unique<unit_tests_event_listener>(output_stream)).run();
       return std::make_pair(output_stream.str(), result);

@@ -49,7 +49,7 @@ namespace xtd {
       /// @{
       int count_tests(int32 count) override;
       int list_tests(const std::vector<std::string>& tests) override;
-      bool parse_arguments(const std::vector<std::string>& args) override;
+      bool parse_arguments(const std::vector<ustring>& args) override;
       
       /// @brief Write usage help on the ostream of this instance.
       void write_help();
