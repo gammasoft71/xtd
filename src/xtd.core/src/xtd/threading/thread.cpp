@@ -98,7 +98,8 @@ bool thread::yield() {
 }
 
 bool thread::cancel() {
-  return native::thread::cancel(reinterpret_cast<intptr_t>(data_->thread.native_handle()));
+  // Double reinterpret_cast required to pass compilation with gcc.
+  return native::thread::cancel(reinterpret_cast<intptr_t>(reinterpret_cast<intptr_t*>(data_->thread.native_handle())));
 }
 
 bool thread::do_wait(wait_handle& wait_handle, int32_t milliseconds_timeout) {
