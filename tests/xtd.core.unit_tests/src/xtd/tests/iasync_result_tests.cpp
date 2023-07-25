@@ -7,6 +7,7 @@
 #include <xtd/tunit/test_method_attribute.h>
 
 using namespace std;
+using namespace std::this_thread;
 using namespace xtd;
 using namespace xtd::tunit;
 
@@ -37,8 +38,6 @@ namespace xtd::tests {
     public:
       ~test_async_runner() {
         if (thread_.joinable()) thread_.join();
-        result_.async_state(any {});
-        result_.is_completed(false);
       }
       
       iasync_result& start() {
@@ -58,8 +57,8 @@ namespace xtd::tests {
       void wait(iasync_result& result) {
         if (&result != &result_) throw invalid_operation_exception("iasync_result not valid", csf_);
         if (!result.async_state().has_value() || as<ustring>(result.async_state()) != "Started") throw invalid_operation_exception("Not started", csf_);
-        if (as<ustring>(result.async_state()) != "Ended") this_thread::sleep_for(chrono::milliseconds(1));
-        result.async_mutex().lock();
+        if (!result.async_mutex().try_lock())
+          sleep_for(10_ms);
         result.async_mutex().unlock();
       }
       
@@ -75,7 +74,8 @@ namespace xtd::tests {
       assert::is_false(ar.async_state().has_value(), csf_);
       assert::is_false(ar.completed_synchronously(), csf_);
       assert::is_false(ar.is_completed(), csf_);
-      {assert::is_true(ar.async_mutex().try_lock(), csf_);}
+      assert::is_true(ar.async_mutex().try_lock(), csf_);
+      ar.async_mutex().unlock();
     }
     
     void test_method_(execute_test_async_runner) {
