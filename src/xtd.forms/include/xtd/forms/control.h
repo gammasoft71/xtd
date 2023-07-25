@@ -131,7 +131,7 @@ namespace xtd {
       public:
         explicit async_result_invoke(std::any async_state);
         std::any async_state() const noexcept override;
-        std::timed_mutex& async_mutex() override;
+        std::timed_mutex& async_mutex() noexcept override;
         bool completed_synchronously() const noexcept override;
         bool is_completed() const noexcept override;
         
