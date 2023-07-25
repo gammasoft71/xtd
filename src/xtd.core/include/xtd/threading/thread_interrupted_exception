@@ -1,0 +1,2 @@
+#pragma once
+#include "thread_interrupted_exception.h"
