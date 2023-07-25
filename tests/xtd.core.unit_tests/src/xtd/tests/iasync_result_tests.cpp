@@ -19,7 +19,7 @@ namespace xtd::tests {
       any async_state() const noexcept override {return state_;}
       void async_state(any value) noexcept {state_ = value;}
       
-      timed_mutex& async_mutex() override {return mutex_;}
+      timed_mutex& async_mutex() noexcept override {return mutex_;}
       
       bool completed_synchronously() const noexcept override {return false;}
       

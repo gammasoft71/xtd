@@ -40,7 +40,7 @@ namespace xtd {
     /// @par Notes to Callers
     /// Clients that wait for the operation to complete (as opposed to polling) use this property to obtain a synchronization object to wait on.
     /// @par Notes to Implementers
-    virtual std::timed_mutex& async_mutex() = 0;
+    virtual std::timed_mutex& async_mutex() noexcept = 0;
     
     /// @brief Gets a value that indicates whether the asynchronous operation completed synchronously.
     /// @return true if the asynchronous operation completed synchronously; otherwise, false.

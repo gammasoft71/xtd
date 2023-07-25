@@ -74,7 +74,7 @@ std::any control::async_result_invoke::async_state() const noexcept {
   return data_->async_state;
 }
 
-std::timed_mutex& control::async_result_invoke::async_mutex() {
+std::timed_mutex& control::async_result_invoke::async_mutex() noexcept {
   return *data_->async_mutex;
 }
 

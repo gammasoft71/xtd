@@ -74,7 +74,7 @@ namespace xtd {
         public:
           explicit async_result_socket(std::any async_state) : async_state_(async_state) {}
           std::any async_state() const noexcept override {return async_state_;}
-          std::timed_mutex& async_mutex() override {return async_mutex_;}
+          std::timed_mutex& async_mutex() noexcept override {return async_mutex_;}
           bool completed_synchronously() const noexcept override {return false;}
           bool is_completed() const noexcept override {return is_completed_;};
           
