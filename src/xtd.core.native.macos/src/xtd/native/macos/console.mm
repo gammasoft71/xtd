@@ -338,8 +338,8 @@ namespace {
         case 49844 : return key_info(0, U'´', alt, false, false);
         case 50091 : return key_info(0, U'ë', alt, false, false);
         case -1644109184 : return key_info(0, U'„', alt, false, false);
-        case -1677663616 : return key_info(0, U'“', alt, false, false);
-        case -1660886400 : return key_info(0, U'”', alt, false, false);
+        case -1677663616 : return key_info(0, U'"', alt, false, false);
+        case -1660886400 : return key_info(0, U'"', alt, false, false);
         case -1744772480 : return key_info(0, U'‘', alt, false, false);
         case -1727995264 : return key_info(0, U'’', alt, false, false);
         case 49846 : return key_info(0, U'¶', alt, false, false);

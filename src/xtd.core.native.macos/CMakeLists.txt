@@ -57,6 +57,7 @@ add_sources(
   src/xtd/native/macos/speech_synthesizer.mm
   src/xtd/native/macos/stack_trace.mm
   src/xtd/native/macos/system_sound.mm
+  src/xtd/native/macos/thread.mm
   src/xtd/native/macos/translator.mm
   src/xtd/native/macos/types.mm
 )
