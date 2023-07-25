@@ -113,7 +113,7 @@ image system_images_base::from_name(const ustring& theme, const ustring& name, c
   auto it_sizes = find(default_sizes.begin(), default_sizes.end(), get_closed_size(size));
   
   if (theme == default_theme()) {
-    auto hbitmap = native::system_images::from_name(name, size.width(), size.height());
+    auto hbitmap = native_system_images_from_name_enabled() ? native::system_images::from_name(name, size.width(), size.height()) : intptr {0};
     if (hbitmap) return image::from_hbitmap(hbitmap);
   }
   
