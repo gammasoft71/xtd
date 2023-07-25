@@ -706,8 +706,22 @@ add_sources(
   include/xtd/speech/synthesis/synthesizer_state
   include/xtd/threading/interlocked.h
   include/xtd/threading/interlocked
+  include/xtd/threading/thread.h
+  include/xtd/threading/thread
   include/xtd/threading/thread_abort_exception.h
   include/xtd/threading/thread_abort_exception
+  include/xtd/threading/thread_interrupted_exception.h
+  include/xtd/threading/thread_interrupted_exception
+  include/xtd/threading/thread_priority.h
+  include/xtd/threading/thread_priority
+  include/xtd/threading/thread_state.h
+  include/xtd/threading/thread_state
+  include/xtd/threading/thread_state_exception.h
+  include/xtd/threading/thread_state_exception
+  include/xtd/threading/timeout.h
+  include/xtd/threading/timeout
+  include/xtd/threading/wait_handle.h
+  include/xtd/threading/wait_handle
   include/xtd/web/css/css_reader.h
   include/xtd/web/css/css_reader
   include/xtd/web/css/css_writer.h
@@ -837,6 +851,9 @@ add_sources(
   src/xtd/speech/synthesis/prompt.cpp
   src/xtd/speech/synthesis/speech_synthesizer.cpp
   src/xtd/threading/interlocked.cpp
+  src/xtd/threading/thread.cpp
+  src/xtd/threading/timeout.cpp
+  src/xtd/threading/wait_handle.cpp
   src/xtd/environment.cpp # Must be the last file to be compiled, as the std::atexit method must be the first to be called before static variables are destroyed.
 )
 target_type(${XTD_LIBRARY_TYPE})
