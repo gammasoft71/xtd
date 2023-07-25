@@ -25,9 +25,9 @@ namespace xtd {
     /// @par Header
     /// @code #include <xtd/threading/interlocked> @endcode
     /// @par Namespace
-    /// xtd
+    /// xtd::threading
     /// @par Library
-    /// xtd.core
+    /// xtd.core threading
     /// @ingroup xtd_core threading
     /// @remarks The methods of this class help protect against errors that can occur when the scheduler switches contexts while a thread is updating a variable that can be accessed by other threads, or when two threads are executing concurrently on separate processors. The members of this class do not throw exceptions.
     /// @remarks The xtd::threading::interlocked::increment and xtd::threading::interlocked::decrement methods increment or decrement a variable and store the resulting value in a single operation. On most computers, incrementing a variable is not an atomic operation, requiring the following steps:
