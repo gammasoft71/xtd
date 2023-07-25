@@ -40,13 +40,13 @@ namespace xtd {
         public:
           explicit async_result_socket(std::any async_state) : async_state_(async_state) {}
           std::any async_state() const noexcept override {return async_state_;}
-          std::shared_mutex& async_mutex() override {return async_mutex_;}
+          std::timed_mutex& async_mutex() override {return async_mutex_;}
           bool completed_synchronously() const noexcept override {return false;}
           bool is_completed() const noexcept override {return is_completed_;};
           
           std::any async_state_;
           bool is_completed_ = false;
-          std::shared_mutex async_mutex_;
+          std::timed_mutex async_mutex_;
           xtd::net::sockets::socket_error error_code_ = xtd::net::sockets::socket_error::success;
           std::exception_ptr exception_;
         };

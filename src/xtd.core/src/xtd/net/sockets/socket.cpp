@@ -586,7 +586,7 @@ void socket::disconnect(bool reuse_socket) {
 socket socket::end_accept(std::shared_ptr<xtd::iasync_result> ar) {
   if (ar == nullptr) throw argument_null_exception(csf_);
   if (!is<async_result_accept>(ar)) throw argument_exception(csf_);
-  lock_guard<shared_mutex> lock(ar->async_mutex());
+  lock_guard<timed_mutex> lock(ar->async_mutex());
   if (as<async_result_accept>(ar)->exception_) rethrow_exception(as<async_result_accept>(ar)->exception_);
   return as<socket>(as<async_result_accept>(ar)->socket_);
 }
@@ -594,21 +594,21 @@ socket socket::end_accept(std::shared_ptr<xtd::iasync_result> ar) {
 void socket::end_connect(std::shared_ptr<xtd::iasync_result> ar) {
   if (ar == nullptr) throw argument_null_exception(csf_);
   if (!is<async_result_connect>(ar)) throw argument_exception(csf_);
-  lock_guard<shared_mutex> lock(ar->async_mutex());
+  lock_guard<timed_mutex> lock(ar->async_mutex());
   if (as<async_result_connect>(ar)->exception_) rethrow_exception(as<async_result_connect>(ar)->exception_);
 }
 
 void socket::end_disconnect(std::shared_ptr<xtd::iasync_result> ar) {
   if (ar == nullptr) throw argument_null_exception(csf_);
   if (!is<async_result_disconnect>(ar)) throw argument_exception(csf_);
-  lock_guard<shared_mutex> lock(ar->async_mutex());
+  lock_guard<timed_mutex> lock(ar->async_mutex());
   if (as<async_result_disconnect>(ar)->exception_) rethrow_exception(as<async_result_disconnect>(ar)->exception_);
 }
 
 size_t socket::end_receive(std::shared_ptr<xtd::iasync_result> ar) {
   if (ar == nullptr) throw argument_null_exception(csf_);
   if (!is<async_result_receive>(ar)) throw argument_exception(csf_);
-  lock_guard<shared_mutex> lock(ar->async_mutex());
+  lock_guard<timed_mutex> lock(ar->async_mutex());
   if (as<async_result_receive>(ar)->exception_) rethrow_exception(as<async_result_receive>(ar)->exception_);
   return as<async_result_receive>(ar)->number_of_bytes_received_;
 }
@@ -616,7 +616,7 @@ size_t socket::end_receive(std::shared_ptr<xtd::iasync_result> ar) {
 size_t socket::end_receive(std::shared_ptr<xtd::iasync_result> ar, xtd::net::sockets::socket_error& error) {
   if (ar == nullptr) throw argument_null_exception(csf_);
   if (!is<async_result_receive>(ar)) throw argument_exception(csf_);
-  lock_guard<shared_mutex> lock(ar->async_mutex());
+  lock_guard<timed_mutex> lock(ar->async_mutex());
   if (as<async_result_receive>(ar)->exception_) rethrow_exception(as<async_result_receive>(ar)->exception_);
   error = as<async_result_receive>(ar)->error_code_;
   return as<async_result_receive>(ar)->number_of_bytes_received_;
@@ -625,7 +625,7 @@ size_t socket::end_receive(std::shared_ptr<xtd::iasync_result> ar, xtd::net::soc
 size_t socket::end_receive_from(std::shared_ptr<xtd::iasync_result> ar, std::shared_ptr<xtd::net::end_point>& end_point) {
   if (ar == nullptr) throw argument_null_exception(csf_);
   if (!is<async_result_receive_from>(ar)) throw argument_exception(csf_);
-  lock_guard<shared_mutex> lock(ar->async_mutex());
+  lock_guard<timed_mutex> lock(ar->async_mutex());
   if (as<async_result_receive_from>(ar)->exception_) rethrow_exception(as<async_result_receive_from>(ar)->exception_);
   end_point = as<async_result_receive_from>(ar)->end_point_;
   return as<async_result_receive_from>(ar)->number_of_bytes_received_;
@@ -634,7 +634,7 @@ size_t socket::end_receive_from(std::shared_ptr<xtd::iasync_result> ar, std::sha
 size_t socket::end_receive_message_from(std::shared_ptr<xtd::iasync_result> ar, xtd::net::sockets::socket_flags& socket_flags, std::shared_ptr<xtd::net::end_point>& end_point, ip_packet_information& ip_packet_information) {
   if (ar == nullptr) throw argument_null_exception(csf_);
   if (!is<async_result_receive_message_from>(ar)) throw argument_exception(csf_);
-  lock_guard<shared_mutex> lock(ar->async_mutex());
+  lock_guard<timed_mutex> lock(ar->async_mutex());
   if (as<async_result_receive_message_from>(ar)->exception_) rethrow_exception(as<async_result_receive_message_from>(ar)->exception_);
   end_point = as<async_result_receive_message_from>(ar)->end_point_;
   socket_flags = as<async_result_receive_message_from>(ar)->socket_flags_;
@@ -645,7 +645,7 @@ size_t socket::end_receive_message_from(std::shared_ptr<xtd::iasync_result> ar, 
 size_t socket::end_send(std::shared_ptr<xtd::iasync_result> ar) {
   if (ar == nullptr) throw argument_null_exception(csf_);
   if (!is<async_result_send>(ar)) throw argument_exception(csf_);
-  lock_guard<shared_mutex> lock(ar->async_mutex());
+  lock_guard<timed_mutex> lock(ar->async_mutex());
   if (as<async_result_send>(ar)->exception_) rethrow_exception(as<async_result_send>(ar)->exception_);
   return as<async_result_send>(ar)->number_of_bytes_sent_;
 }
@@ -653,7 +653,7 @@ size_t socket::end_send(std::shared_ptr<xtd::iasync_result> ar) {
 size_t socket::end_send(std::shared_ptr<xtd::iasync_result> ar, xtd::net::sockets::socket_error& error) {
   if (ar == nullptr) throw argument_null_exception(csf_);
   if (!is<async_result_send>(ar)) throw argument_exception(csf_);
-  lock_guard<shared_mutex> lock(ar->async_mutex());
+  lock_guard<timed_mutex> lock(ar->async_mutex());
   if (as<async_result_send>(ar)->exception_) rethrow_exception(as<async_result_send>(ar)->exception_);
   error = as<async_result_send>(ar)->error_code_;
   return as<async_result_send>(ar)->number_of_bytes_sent_;
@@ -662,7 +662,7 @@ size_t socket::end_send(std::shared_ptr<xtd::iasync_result> ar, xtd::net::socket
 size_t socket::end_send_to(std::shared_ptr<xtd::iasync_result> ar) {
   if (ar == nullptr) throw argument_null_exception(csf_);
   if (!is<async_result_send_to>(ar)) throw argument_exception(csf_);
-  lock_guard<shared_mutex> lock(ar->async_mutex());
+  lock_guard<timed_mutex> lock(ar->async_mutex());
   if (as<async_result_send_to>(ar)->exception_) rethrow_exception(as<async_result_send_to>(ar)->exception_);
   return as<async_result_send_to>(ar)->number_of_bytes_sent_;
 }
