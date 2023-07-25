@@ -170,9 +170,9 @@ Inheritance diagram for xtd::tunit::unit_test:</div>
 <tr class="memitem:af4d2e247099f62c209e0daa3166ae06d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1unit__test.html#af4d2e247099f62c209e0daa3166ae06d">list_tests</a> (const std::vector&lt; std::string &gt; &amp;tests)</td></tr>
 <tr class="memdesc:af4d2e247099f62c209e0daa3166ae06d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lists the test names contained in the specified tests.  <br /></td></tr>
 <tr class="separator:af4d2e247099f62c209e0daa3166ae06d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83041850f01489e1e281532b4afce524"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1unit__test.html#a83041850f01489e1e281532b4afce524">parse_arguments</a> (const std::vector&lt; std::string &gt; &amp;args)</td></tr>
-<tr class="memdesc:a83041850f01489e1e281532b4afce524"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses the specified arguments.  <br /></td></tr>
-<tr class="separator:a83041850f01489e1e281532b4afce524"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98f0d275c971ee308fcb0bd446579d23"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1tunit_1_1unit__test.html#a98f0d275c971ee308fcb0bd446579d23">parse_arguments</a> (const std::vector&lt; <a class="el" href="classxtd_1_1ustring.html">ustring</a> &gt; &amp;args)</td></tr>
+<tr class="memdesc:a98f0d275c971ee308fcb0bd446579d23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses the specified arguments.  <br /></td></tr>
+<tr class="separator:a98f0d275c971ee308fcb0bd446579d23"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a6b06b01004d749fa66c2281596206277" name="a6b06b01004d749fa66c2281596206277"></a>
@@ -539,8 +539,8 @@ This method is typically used to display the list of tests in a stream, or whate
 
 </div>
 </div>
-<a id="a83041850f01489e1e281532b4afce524" name="a83041850f01489e1e281532b4afce524"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a83041850f01489e1e281532b4afce524">&#9670;&#160;</a></span>parse_arguments()</h2>
+<a id="a98f0d275c971ee308fcb0bd446579d23" name="a98f0d275c971ee308fcb0bd446579d23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98f0d275c971ee308fcb0bd446579d23">&#9670;&#160;</a></span>parse_arguments()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -551,7 +551,7 @@ This method is typically used to display the list of tests in a stream, or whate
         <tr>
           <td class="memname">virtual bool xtd::tunit::unit_test::parse_arguments </td>
           <td>(</td>
-          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="classxtd_1_1ustring.html">ustring</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>args</em></td><td>)</td>
           <td></td>
         </tr>
@@ -573,7 +573,7 @@ This method is typically used to display the list of tests in a stream, or whate
 <dl class="section return"><dt>Returns</dt><dd>true the execution process stops immediately after the analysis of the arguments; otherwise false the execution process continues its execution. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This method can be overloaded by the heirs. It is typically in this method that the heirs can react to their own arguments. Like for example display a helper when the <code>-help</code> argument is passed. </dd></dl>
 
-<p>Reimplemented in <a class="el" href="classxtd_1_1tunit_1_1ostream__unit__test.html#a463e509791218b95ff0d6d4810c7ec04">xtd::tunit::ostream_unit_test</a>.</p>
+<p>Reimplemented in <a class="el" href="classxtd_1_1tunit_1_1ostream__unit__test.html#a7c10c9fe8ca1c57c9349258e1c524ff3">xtd::tunit::ostream_unit_test</a>.</p>
 
 </div>
 </div>
@@ -804,7 +804,7 @@ This method is typically used to display the list of tests in a stream, or whate
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jul 23 2023 22:24:35 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Jul 26 2023 00:07:11 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -103,13 +103,13 @@ $(function() {
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>          <span class="keyword">explicit</span> async_result_socket(std::any async_state) : async_state_(async_state) {}</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>          std::any async_state() <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> async_state_;}</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>          std::shared_mutex&amp; async_mutex()<span class="keyword"> override </span>{<span class="keywordflow">return</span> async_mutex_;}</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>          std::timed_mutex&amp; async_mutex() <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> async_mutex_;}</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>          <span class="keywordtype">bool</span> completed_synchronously() <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> <span class="keyword">false</span>;}</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>          <span class="keywordtype">bool</span> is_completed() <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> is_completed_;};</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>          </div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>          std::any async_state_;</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>          <span class="keywordtype">bool</span> is_completed_ = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>          std::shared_mutex async_mutex_;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>          std::timed_mutex async_mutex_;</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>          <a class="code hl_enumeration" href="group__xtd__core.html#ga0c933b52bdbb9399c8ec4b1dcf3e2e71">xtd::net::sockets::socket_error</a> error_code_ = <a class="code hl_enumvalue" href="group__xtd__core.html#gga0c933b52bdbb9399c8ec4b1dcf3e2e71a260ca9dd8a4577fc00b7bd5810298076">xtd::net::sockets::socket_error::success</a>;</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>          std::exception_ptr exception_;</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        };</div>
@@ -243,7 +243,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jul 23 2023 22:24:28 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Jul 26 2023 00:07:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
