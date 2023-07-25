@@ -6,6 +6,7 @@
 #include <xtd/tunit/test_method_attribute>
 
 using namespace std;
+using namespace std::this_thread;
 using namespace xtd;
 using namespace xtd::tunit;
 
@@ -43,12 +44,12 @@ namespace xtd::tests {
         result_.async_state("Started");
         result_.is_completed(false);
         result_.async_mutex().lock();
-        thread_ = thread([this] {
-          this_thread::sleep_for(chrono::milliseconds(2));
+        thread_ = thread {[this] {
+          sleep_for(2_ms);
           result_.async_state("Ended");
           result_.is_completed(true);
           result_.async_mutex().unlock();
-        });
+        }};
         return result_;
       }
       
