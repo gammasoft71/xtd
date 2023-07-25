@@ -63,7 +63,7 @@ namespace {
 struct control::async_result_invoke::data {
   std::any async_state;
   std::shared_ptr<bool> is_completed = std::make_shared<bool>(false);
-  std::shared_ptr<std::shared_mutex> async_mutex = std::make_shared<std::shared_mutex>();
+  std::shared_ptr<std::timed_mutex> async_mutex = std::make_shared<std::timed_mutex>();
 };
 
 control::async_result_invoke::async_result_invoke(std::any async_state) : data_(std::make_shared<data>()) {
@@ -74,7 +74,7 @@ std::any control::async_result_invoke::async_state() const noexcept {
   return data_->async_state;
 }
 
-std::shared_mutex& control::async_result_invoke::async_mutex() {
+std::timed_mutex& control::async_result_invoke::async_mutex() {
   return *data_->async_mutex;
 }
 
@@ -1000,7 +1000,7 @@ bool control::equals(const control& value) const noexcept {
 }
 
 void control::end_invoke(shared_ptr<iasync_result> async) {
-  lock_guard<shared_mutex> lock(async->async_mutex());
+  lock_guard<timed_mutex> lock(async->async_mutex());
 }
 
 xtd::forms::visual_styles::control_state control::control_state() const noexcept {

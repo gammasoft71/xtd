@@ -10,7 +10,7 @@
 
 #include <any>
 #include <map>
-#include <shared_mutex>
+#include <mutex>
 #include <list>
 #include <vector>
 #include <xtd/delegate.h>
@@ -314,7 +314,7 @@ namespace xtd {
         /// @param invoked A mutex for async invoke.
         /// @remarks Signal mutex when invoke is done.
         /// @warning Internal use only
-        static void invoke_in_control_thread(intptr control, delegate<void(std::vector<std::any>)> invoker, const std::vector<std::any>& args, std::shared_ptr<std::shared_mutex> invoked, std::shared_ptr<bool> completed);
+        static void invoke_in_control_thread(intptr control, delegate<void(std::vector<std::any>)> invoker, const std::vector<std::any>& args, std::shared_ptr<std::timed_mutex> invoked, std::shared_ptr<bool> completed);
         
         /// @brief Gets the coordinates of the upper-left corner of the control relative to the upper-left corner of its container.
         /// @param control Control window handle.

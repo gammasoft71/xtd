@@ -214,7 +214,7 @@ void udp_client::drop_multicast_group(const xtd::net::ip_address& multicast_addr
 vector<xtd::byte> udp_client::end_receive(shared_ptr<xtd::iasync_result> async_result, ip_end_point& remote_end_point) {
   if (async_result == nullptr) throw argument_null_exception(csf_);
   if (!is<async_result_receive>(async_result)) throw argument_exception(csf_);
-  lock_guard<shared_mutex> lock(async_result->async_mutex());
+  lock_guard<timed_mutex> lock(async_result->async_mutex());
   if (as<async_result_receive>(async_result)->exception_) rethrow_exception(as<async_result_receive>(async_result)->exception_);
   remote_end_point = as<async_result_receive>(async_result)->remote_end_point_;
   return as<async_result_receive>(async_result)->buffer_;
@@ -223,7 +223,7 @@ vector<xtd::byte> udp_client::end_receive(shared_ptr<xtd::iasync_result> async_r
 size_t udp_client::end_send(std::shared_ptr<xtd::iasync_result> async_result) {
   if (async_result == nullptr) throw argument_null_exception(csf_);
   if (!is<async_result_send>(async_result)) throw argument_exception(csf_);
-  lock_guard<shared_mutex> lock(async_result->async_mutex());
+  lock_guard<timed_mutex> lock(async_result->async_mutex());
   if (as<async_result_send>(async_result)->exception_) rethrow_exception(as<async_result_receive>(async_result)->exception_);
   return as<async_result_send>(async_result)->number_of_bytes_sent_;
 }
