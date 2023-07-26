@@ -116,6 +116,10 @@ private:
 mutex::mutex() : mutex_(std::make_shared<mutex::named_mutex>()) {
 }
 
+mutex::mutex(bool initially_owned) {
+  if (initially_owned) wait_one();
+}
+
 intptr_t mutex::handle() const noexcept {
   return mutex_->handle();
 }
