@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include "../abstract.h"
+#include "../as.h"
 #include "../time_span.h"
 #include "../types.h"
 #include "timeout.h"
@@ -25,6 +26,18 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core threading
+    /// @remarks The xtd::threading::wait_handle class encapsulates a native operating system synchronization handle and is used to represent all synchronization objects in the runtime that allow multiple wait operations.
+    /// @remarks The xtd::threading::wait_handle class itself is abstract. Classes derived from xtd::threading::wait_handle define a signaling mechanism to indicate taking or releasing access to a shared resource, but they use the inherited xtd::threading::wait_handle methods to block while waiting for access to shared resources. The classes derived from xtd::threading::wait_handle include:
+    /// * The xtd::threading::mutex class.
+    /// * The xtd::threading::event_wait_handle class and its derived classes, xtd::threading::auto_reset_event and xtd::threading::manual_reset_event.
+    /// * The xtd::threading::semaphore class.
+    /// @remarks Threads can block on an individual wait handle by calling the instance method xtd::threading::wait_handle::wait_one, which is inherited by classes derived from xtd::threading::wait_handle.
+    /// @remarks The derived classes of xtd::threading::wait_handle differ in their thread affinity. Event wait handles (xtd::threading::envent_wait_handle, xtd::threading::auto_reset_event, and xtd::threading::manual_reset_event) and semaphores do not have thread affinity; any thread can signal an event wait handle or semaphore. Mutexes, on the other hand, do have thread affinity; the thread that owns a mutex must release it, and an exception is thrown if a thread calls the xtd::threading::wait_handle::release_mutex method on a mutex that it does not own.
+    /// @remarks In addition to its derived classes, the xtd::threading::wait_handle class has a number of static methods that block a thread until one or more synchronization objects receive a signal. These include:
+    /// * xtd::threading::wait_handle::signal_and_wait, which allows a thread to signal one wait handle and immediately wait on another.
+    /// * xtd::threading::wait_handle::wait_all, which allows a thread to wait until all the wait handles in an array receive a signal.
+    /// * xtd::threading::wait_handle::wait_any, which allows a thread to wait until any one of a specified set of wait handles has been signaled.
+    /// @remarks The overloads of these methods provide timeout intervals for abandoning the wait, and the opportunity to exit a synchronization context before entering the wait, allowing other threads to use the synchronization context.
     class wait_handle abstract_ {
       friend class thread;
     public:
@@ -45,11 +58,21 @@ namespace xtd {
       wait_handle() = default;
       /// @}
       
-
       /// @cond
       ~wait_handle();
       /// @endcond
 
+      /// @name Properties
+      
+      /// @{
+      /// @brief Gets the native operating system handle.
+      /// @return An intptr representing the native operating system handle.
+      virtual intptr_t handle() const noexcept = 0;
+      /// @brief Sets the native operating system handle.
+      /// @param value An intptr representing the native operating system handle.
+      virtual void handle(intptr_t value) = 0;
+      /// @}
+      
       /// @name Methods
       
       /// @{
@@ -60,7 +83,7 @@ namespace xtd {
       /// @param to_signal The wait_handle to signal.
       /// @param to_wait The wait_handle to wait on.
       /// @return bool true if both the signal and the wait complete successfully; if the wait does not complete, the method does not return.
-      /// @exception ArgumentNullException to_signal is null or to_wait is null.
+      /// @exception xtd::argument_null_exception to_signal is null or to_wait is null.
       static bool signal_and_wait(wait_handle& to_signal, wait_handle& to_wait);
       
       /// @brief signals one wait_handle and waits on another, specifying a time-out interval as a 32-bit signed integer.
@@ -68,7 +91,7 @@ namespace xtd {
       /// @param to_wait The wait_handle to wait on.
       /// @param milliseconds_timeout An integer that represents the interval to wait. If the value is Timeout::Infinite, that is, -1, the wait is infinite
       /// @return bool true if both the signal and the wait complete successfully; if the wait does not complete, the method does not return.
-      /// @exception ArgumentNullException to_signal is null or to_wait is null.
+      /// @exception xtd::argument_null_exception to_signal is null or to_wait is null.
       static bool signal_and_wait(wait_handle& to_signal, wait_handle& to_wait, int32_t milliseconds_timeout);
       
       /// @brief signals one wait_handle and waits on another, specifying a time-out interval as a time_span.
@@ -76,80 +99,86 @@ namespace xtd {
       /// @param to_wait The wait_handle to wait on.
       /// @param timeout A time_span that represents the interval to wait. If the value is -1, the wait is infinite
       /// @return bool true if both the signal and the wait complete successfully; if the wait does not complete, the method does not return.
-      /// @exception ArgumentNullException to_signal is null or to_wait is null.
+      /// @exception xtd::argument_null_exception to_signal is null or to_wait is null.
       static bool signal_and_wait(wait_handle& to_signal, wait_handle& to_wait, const time_span& timeout);
       
       /// @brief Blocks the current thread until the current xtd::threading::wait_handle receives a signal.
       /// @return true if the current instance receives a signal. If the current instance is never signaled, xtd::threading::wait_handle.wait_one(int32_t, bool) never returns.
-      /// @exception ObjectDisposedException the handle is invalid
+      /// @exception xtd::object_closed_exception the handle is invalid
       virtual bool wait_one();
       
-      /// @brief Blocks the current thread until the current xtd::threading::wait_handle receives
-      /// a signal, using 32-bit signed integer to measure the time interval.
+      /// @brief Blocks the current thread until the current xtd::threading::wait_handle receives a signal, using 32-bit signed integer to measure the time interval.
       /// @param milliseconds_timeout The number of milliseconds to wait, or xtd::threading::Timeout.Infinite (-1) to wait indefinitely.
       /// @return if the current instance receives a signal. If the current instance is never signaled, xtd::threading::wait_handle.wait_one(int32_t, bool) never returns.
-      /// @exception ObjectDisposedException the handle is invalid
-      /// @exception ArgumentException millisecondsTimeout is a negative number other than -1, which represents an infinite time-out.
+      /// @exception xtd::object_closed_exception the handle is invalid
+      /// @exception xtd::argument_exception milliseconds_timeout is a negative number other than -1, which represents an infinite time-out.
       virtual bool wait_one(int32_t milliseconds_timeout);
       
-      /// @brief Blocks the current thread until the current instance receives a signal, using
-      /// a System.time_span to measure the time interval.
-      /// @param timeout A System.time_span that represents the number of milliseconds to wait, or
-      /// a System.time_span that represents -1 milliseconds to wait indefinitely.
-      /// @return true if the current instance receives a signal. If the current instance is never signaled, xtd::threading::wait_handle.wait_one(System.Int32, System.Boolean) never returns.
-      /// @exception ObjectDisposedException the handle is invalid
-      /// @exception ArgumentException timeout is a negative number other than -1 milliseconds, which represents an infinite time-out.  -or- timeout is greater than System.Int32.MaxValue.
+      /// @brief Blocks the current thread until the current instance receives a signal, using a xtd::time_span to measure the time interval.
+      /// @param timeout A xtd::time_span that represents the number of milliseconds to wait, or a xtd::time_span that represents -1 milliseconds to wait indefinitely.
+      /// @return true if the current instance receives a signal. If the current instance is never signaled, xtd::threading::wait_handle.wait_one(int32, bool) never returns.
+      /// @exception xtd::object_closed_exception the handle is invalid
+      /// @exception xtd::argument_exception timeout is a negative number other than -1 milliseconds, which represents an infinite time-out.  -or- timeout is greater than int32.MaxValue.
       virtual bool wait_one(const time_span& timeout);
       
+      
       /// @brief waits for all the elements in the specified array to receive a signal.
-      /// @param wait_handles A wait_handle array containing the objects for which the current instance
-      /// will wait. This array cannot contain multiple references to the same object.
+      /// @param wait_handles A wait_handle array containing the objects for which the current instance will wait. This array cannot contain multiple references to the same object.
       /// @return true when every element in wait_handles has received a signal; otherwise the method never returns.
-      /// @exception ArgumentNullException The wait_handles parameter is null
-      /// @exception ArgumentException The number of objects in wait_handles is greater than the system permits.
+      /// @exception xtd::argument_null_exception The wait_handles parameter is null
+      /// @exception xtd::argument_exception The number of objects in wait_handles is greater than the system permits.
       /// @exception AbandonedMutexException The wait completed because a thread exited without releasing a mutex.
-      static bool wait_all(std::vector<std::shared_ptr<wait_handle>> wait_handles);
+      template<typename collection_t>
+      static bool wait_all(const collection_t& wait_handles) {return wait_all(wait_handles, timeout::infinite);}
       
       /// @brief waits for all the elements in the specified array to receive a signal, using
-      /// an System.Int32 value to measure the time interval.
+      /// an int32 value to measure the time interval.
       /// @param wait_handles A wait_handle array containing the objects for which the current instance
       /// will wait. This array cannot contain multiple references to the same object.
       /// @param milliseconds_timeout The number of milliseconds to wait, or xtd::threading::Timeout.Infinite
       /// (-1) to wait indefinitely.
       /// @return true when every element in wait_handles has received a signal; otherwise the
       /// method never returns.
-      /// @exception ArgumentNullException The wait_handles parameter is null
-      /// @exception ArgumentException timeout is a negative number other than -1 milliseconds, which represents
+      /// @exception xtd::argument_null_exception The wait_handles parameter is null
+      /// @exception xtd::argument_exception timeout is a negative number other than -1 milliseconds, which represents
       /// an infinite time-out.
       /// -or-  The number of objects in wait_handles is greater than the system permits.
       /// @exception AbandonedMutexException The wait completed because a thread exited without releasing a mutex.
-      static bool wait_all(std::vector<std::shared_ptr<wait_handle>> wait_handles, int32_t milliseconds_timeout);
-      
+      template<typename collection_t>
+      static bool wait_all(const collection_t& wait_handles, int32_t milliseconds_timeout) {
+        std::vector<wait_handle*> wait_handle_pointers;
+        for (auto& item : wait_handles)
+          wait_handle_pointers.push_back(const_cast<wait_handle*>(as<wait_handle>(&item)));
+        return wait_all(wait_handle_pointers, milliseconds_timeout);
+      }
+
       /// @brief waits for all the elements in the specified array to receive a signal, using
-      /// a System.time_span value to measure the time interval.
+      /// a xtd::time_span value to measure the time interval.
       /// @param wait_handles A wait_handle array containing the objects for which the current instance
       /// will wait. This array cannot contain multiple references to the same object.
       /// @param timeout A xtd::time_span that represents the number of milliseconds to wait, or a xtd::time_span that represents -1 milliseconds, to wait indefinitely.
       /// @return true when every element in wait_handles has received a signal; otherwise the
       /// method never returns.
-      /// @exception ArgumentNullException The wait_handles parameter is null
-      /// @exception ArgumentException timeout is a negative number other than -1 milliseconds, which represents
+      /// @exception xtd::argument_null_exception The wait_handles parameter is null
+      /// @exception xtd::argument_exception timeout is a negative number other than -1 milliseconds, which represents
       /// an infinite time-out.
-      /// -or- timeout is greater than System.Int32.MaxValue.
+      /// -or- timeout is greater than int32.MaxValue.
       /// -or- The number of objects in wait_handles is greater than the system permits.
       /// @exception AbandonedMutexException The wait completed because a thread exited without releasing a mutex.
-      static bool wait_all(std::vector<std::shared_ptr<wait_handle>> wait_handles, const time_span& timeout);
+      template<typename collection_t>
+      static bool wait_all(const collection_t& wait_handles, const time_span& timeout) {return wait_all(wait_handles, to_milliseconds(timeout));}
       
       /// @brief waits for any of the elements in the specified array to receive a signal.
       /// @param wait_handles A wait_handle array containing the objects for which the current instance
       /// will wait. This array cannot contain multiple references to the same object.
       /// @return The array index of the object that satisfied the wait.
-      /// @exception ArgumentNullException The wait_handles parameter is null
-      /// @exception ArgumentException timeout is a negative number other than -1 milliseconds, which represents
+      /// @exception xtd::argument_null_exception The wait_handles parameter is null
+      /// @exception xtd::argument_exception timeout is a negative number other than -1 milliseconds, which represents
       /// an infinite time-out.
       /// -or-  The number of objects in wait_handles is greater than the system permits.
       /// @exception AbandonedMutexException The wait completed because a thread exited without releasing a mutex.
-      static size_t wait_any(std::vector<std::shared_ptr<wait_handle>> wait_handles);
+      template<typename collection_t>
+      static size_t wait_any(const collection_t& wait_handles) {return wait_any(wait_handles, timeout::infinite);}
       
       /// @brief waits for any of the elements in the specified array to receive a signal,
       /// using a 32-bit signed integer to measure the time interval.
@@ -158,30 +187,86 @@ namespace xtd {
       /// @param milliseconds_timeout The number of milliseconds to wait, or xtd::threading::Timeout.Infinite
       /// (-1) to wait indefinitely.
       /// @return The array index of the object that satisfied the wait, or xtd::threading::wait_handle.waitTimeout
-      /// if no object satisfied the wait and a time interval equivalent to millisecondsTimeout
+      /// if no object satisfied the wait and a time interval equivalent to milliseconds_timeout
       /// has passed.
-      /// @exception ArgumentNullException The wait_handles parameter is null
-      /// @exception ArgumentException timeout is a negative number other than -1 milliseconds, which represents
+      /// @exception xtd::argument_null_exception The wait_handles parameter is null
+      /// @exception xtd::argument_exception timeout is a negative number other than -1 milliseconds, which represents
       /// an infinite time-out.
       /// -or-  The number of objects in wait_handles is greater than the system permits.
       /// @exception AbandonedMutexException The wait completed because a thread exited without releasing a mutex.
-      static size_t wait_any(std::vector<std::shared_ptr<wait_handle>> wait_handles, int32_t milliseconds_timeout);
+      template<typename collection_t>
+      static size_t wait_any(const collection_t& wait_handles, int32_t milliseconds_timeout) {
+        std::vector<wait_handle*> wait_handle_pointers;
+        for (auto& item : wait_handles)
+          wait_handle_pointers.push_back(const_cast<wait_handle*>(as<wait_handle>(&item)));
+        return wait_any(wait_handle_pointers, milliseconds_timeout);
+      }
       
       /// @brief waits for any of the elements in the specified array to receive a signal,
-      /// using a System.time_span to measure the time interval.
+      /// using a xtd::time_span to measure the time interval.
       /// @param wait_handles A wait_handle array containing the objects for which the current instance
       /// will wait. This array cannot contain multiple references to the same object.
-      /// @param timeout A System.time_span that represents the number of milliseconds to wait, or
-      /// a System.time_span that represents -1 milliseconds to wait indefinitely.
+      /// @param timeout A xtd::time_span that represents the number of milliseconds to wait, or
+      /// a xtd::time_span that represents -1 milliseconds to wait indefinitely.
       /// @return The array index of the object that satisfied the wait, or xtd::threading::wait_handle.waitTimeout
       /// if no object satisfied the wait and a time interval equivalent to timeout
       /// has passed.
-      /// @exception ArgumentNullException The wait_handles parameter is null
-      /// @exception ArgumentException timeout is a negative number other than -1 milliseconds, which represents
+      /// @exception xtd::argument_null_exception The wait_handles parameter is null
+      /// @exception xtd::argument_exception timeout is a negative number other than -1 milliseconds, which represents
       /// an infinite time-out. -or-  The number of objects in wait_handles is greater than the system permits.
       /// @exception AbandonedMutexException The wait completed because a thread exited without releasing a mutex.
-      static size_t wait_any(std::vector<std::shared_ptr<wait_handle>> wait_handles, const time_span& timeout);
+      template<typename collection_t>
+      static size_t wait_any(const collection_t& wait_handles, const time_span& timeout) {return wait_any(wait_handles, to_milliseconds(timeout));}
       /// @}
+      
+      /// @cond
+      template<typename item_t>
+      static bool wait_all(const std::initializer_list<item_t>& wait_handles) {return wait_all(wait_handles, timeout::infinite);}
+      template<typename item_t>
+      static bool wait_all(const std::initializer_list<item_t>& wait_handles, int32_t milliseconds_timeout) {
+        std::vector<wait_handle*> wait_handle_pointers;
+        for (auto& item : wait_handles)
+          wait_handle_pointers.push_back(const_cast<wait_handle*>(as<wait_handle>(&item)));
+        return wait_all(wait_handle_pointers, milliseconds_timeout);
+      }
+      template<typename item_t>
+      static bool wait_all(const std::initializer_list<item_t>& wait_handles, const time_span& timeout) {return wait_all(wait_handles, to_milliseconds(timeout));}
+      static bool wait_all(const std::initializer_list<std::shared_ptr<wait_handle>>& wait_handles);
+      static bool wait_all(const std::initializer_list<std::shared_ptr<wait_handle>>& wait_handles, int32_t milliseconds_timeout);
+      static bool wait_all(const std::initializer_list<std::shared_ptr<wait_handle>>& wait_handles, const time_span& timeout);
+      static bool wait_all(const std::initializer_list<std::unique_ptr<wait_handle>>& wait_handles);
+      static bool wait_all(const std::initializer_list<std::unique_ptr<wait_handle>>& wait_handles, int32_t milliseconds_timeout);
+      static bool wait_all(const std::initializer_list<std::unique_ptr<wait_handle>>& wait_handles, const time_span& timeout);
+      static bool wait_all(const std::vector<std::shared_ptr<wait_handle>>& wait_handles);
+      static bool wait_all(const std::vector<std::shared_ptr<wait_handle>>& wait_handles, int32_t milliseconds_timeout);
+      static bool wait_all(const std::vector<std::shared_ptr<wait_handle>>& wait_handles, const time_span& timeout);
+      static bool wait_all(const std::vector<std::unique_ptr<wait_handle>>& wait_handles);
+      static bool wait_all(const std::vector<std::unique_ptr<wait_handle>>& wait_handles, int32_t milliseconds_timeout);
+      static bool wait_all(const std::vector<std::unique_ptr<wait_handle>>& wait_handles, const time_span& timeout);
+      template<typename item_t>
+      static size_t wait_any(const std::initializer_list<item_t>& wait_handles) {return wait_any(wait_handles, timeout::infinite);}
+      template<typename item_t>
+      static size_t wait_any(const std::initializer_list<item_t>& wait_handles, int32_t milliseconds_timeout) {
+        std::vector<wait_handle*> wait_handle_pointers;
+        for (auto& item : wait_handles)
+          wait_handle_pointers.push_back(const_cast<wait_handle*>(as<wait_handle>(&item)));
+        return wait_any(wait_handle_pointers, milliseconds_timeout);
+      }
+      template<typename item_t>
+      static size_t wait_any(const std::initializer_list<item_t>& wait_handles, const time_span& timeout) {return wait_any(wait_handles, to_milliseconds(timeout));}
+      static size_t wait_any(const std::initializer_list<std::shared_ptr<wait_handle>>& wait_handles);
+      static size_t wait_any(const std::initializer_list<std::shared_ptr<wait_handle>>& wait_handles, int32_t milliseconds_timeout);
+      static size_t wait_any(const std::initializer_list<std::shared_ptr<wait_handle>>& wait_handles, const time_span& timeout);
+      static size_t wait_any(const std::initializer_list<std::unique_ptr<wait_handle>>& wait_handles);
+      static size_t wait_any(const std::initializer_list<std::unique_ptr<wait_handle>>& wait_handles, int32_t milliseconds_timeout);
+      static size_t wait_any(const std::initializer_list<std::unique_ptr<wait_handle>>& wait_handles, const time_span& timeout);
+      static size_t wait_any(const std::vector<std::shared_ptr<wait_handle>>& wait_handles);
+      static size_t wait_any(const std::vector<std::shared_ptr<wait_handle>>& wait_handles, int32_t milliseconds_timeout);
+      static size_t wait_any(const std::vector<std::shared_ptr<wait_handle>>& wait_handles, const time_span& timeout);
+      static size_t wait_any(const std::vector<std::unique_ptr<wait_handle>>& wait_handles);
+      static size_t wait_any(const std::vector<std::unique_ptr<wait_handle>>& wait_handles, int32_t milliseconds_timeout);
+      static size_t wait_any(const std::vector<std::unique_ptr<wait_handle>>& wait_handles, const time_span& timeout);
+      /// @endcond
 
     protected:
       /// @name Protected methods
@@ -196,14 +281,16 @@ namespace xtd {
       /// @param handle A valid handle to an open object.
       /// @param milliseconds_timeout The number of milliseconds to wait, or -1 to wait indefinitely.
       /// @return true if the current instance receives a signal; otherwise, false.
-      /// @remarks If millisecondsTimeout is zero, the method does not block. It tests the state of the wait handle and returns immediately.
+      /// @remarks If milliseconds_timeout is zero, the method does not block. It tests the state of the wait handle and returns immediately.
       /// @remarks Override this function for all derived object
       virtual bool wait(int32_t milliseconds_timeout) = 0;
-      
-      /// @cond
-      bool do_wait(int32_t milliseconds_timeout);
-      /// @endcond
       /// @}
+
+    private:
+      static int32_t to_milliseconds(const time_span& value);
+      static bool wait_all(const std::vector<wait_handle*>& wait_handles, int32_t milliseconds_timeout);
+      static size_t wait_any(const std::vector<wait_handle*>& wait_handles, int32_t milliseconds_timeout);
+      bool do_wait(int32_t milliseconds_timeout);
     };
   }
 }
