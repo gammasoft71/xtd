@@ -3,6 +3,9 @@
 #include "../../../include/xtd/object_closed_exception.h"
 #include "../../../include/xtd/invalid_operation_exception.h"
 #include "../../../include/xtd/io//io_exception.h"
+#define __XTD_CORE_NATIVE_LIBRARY__
+#include <xtd/native/mutex.h>
+#undef __XTD_CORE_NATIVE_LIBRARY__
 
 using namespace xtd;
 using namespace xtd::threading;
