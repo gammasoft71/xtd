@@ -159,7 +159,7 @@ $(function() {
 <div class="line"><a id="l00202" name="l00202"></a><span class="lineno"><a class="line" href="classxtd_1_1threading_1_1interlocked.html#a270b1d6b07eb8012eb4aa5ea37a9e35b">  202</a></span>      static <a class="code hl_typedef" href="group__types.html#ga7ab879ebcae19d6021222f00537cfdce">int64</a> read(<a class="code hl_typedef" href="group__types.html#ga7ab879ebcae19d6021222f00537cfdce">int64</a>&amp; location) noexcept;</div>
 <div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>      </div>
 <div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    private:</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>      static std::mutex guard;</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>      static std::<a class="code hl_class" href="classxtd_1_1threading_1_1mutex.html">mutex</a> guard;</div>
 <div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    };</div>
 <div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>  }</div>
 <div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>}</div>
@@ -185,6 +185,7 @@ $(function() {
 <div class="ttc" id="aclassxtd_1_1threading_1_1interlocked_html_acb977ef29126f5d6d36438b477a53d83"><div class="ttname"><a href="classxtd_1_1threading_1_1interlocked.html#acb977ef29126f5d6d36438b477a53d83">xtd::threading::interlocked::decrement</a></div><div class="ttdeci">static int64 decrement(int64 &amp;location) noexcept</div><div class="ttdoc">Decrements a specified variable and stores the result, as an atomic operation.</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1interlocked_html_ace7d65e5175e9352cb135a83492797ec"><div class="ttname"><a href="classxtd_1_1threading_1_1interlocked.html#ace7d65e5175e9352cb135a83492797ec">xtd::threading::interlocked::exchange</a></div><div class="ttdeci">static int32 exchange(int32 &amp;location, int32 value) noexcept</div><div class="ttdoc">Sets a 32-bit signed integer to a specified value and returns the original value, as an atomic operat...</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1interlocked_html_af651a4e7265de60e36605b2b2bc6fe02"><div class="ttname"><a href="classxtd_1_1threading_1_1interlocked.html#af651a4e7265de60e36605b2b2bc6fe02">xtd::threading::interlocked::exchange</a></div><div class="ttdeci">static type_t exchange(type_t &amp;location, type_t value)</div><div class="ttdoc">Sets a variable of the specified type type_t to a specified value and returns the original value,...</div><div class="ttdef"><b>Definition</b> interlocked.h:132</div></div>
+<div class="ttc" id="aclassxtd_1_1threading_1_1mutex_html"><div class="ttname"><a href="classxtd_1_1threading_1_1mutex.html">xtd::threading::mutex</a></div><div class="ttdoc">A synchronization primitive that can also be used for interprocess synchronization.</div><div class="ttdef"><b>Definition</b> mutex.h:20</div></div>
 <div class="ttc" id="agroup__keywords_html_ga28796443ec37b938df7072c79595e3f6"><div class="ttname"><a href="group__keywords.html#ga28796443ec37b938df7072c79595e3f6">static_</a></div><div class="ttdeci">#define static_</div><div class="ttdoc">This keyword is use to represent a static object. A static object can't be instantiated (constructors...</div><div class="ttdef"><b>Definition</b> static.h:38</div></div>
 <div class="ttc" id="agroup__keywords_html_gabc8f9c2aa36f6cee610a37f0e8227fd1"><div class="ttname"><a href="group__keywords.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a></div><div class="ttdeci">#define core_export_</div><div class="ttdoc">Define shared library export.</div><div class="ttdef"><b>Definition</b> core_export.h:13</div></div>
 <div class="ttc" id="agroup__types_html_ga7ab879ebcae19d6021222f00537cfdce"><div class="ttname"><a href="group__types.html#ga7ab879ebcae19d6021222f00537cfdce">xtd::int64</a></div><div class="ttdeci">int_least64_t int64</div><div class="ttdoc">Represents a 64-bit signed integer.</div><div class="ttdef"><b>Definition</b> types.h:141</div></div>
@@ -195,7 +196,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 26 2023 00:07:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Jul 27 2023 01:02:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
