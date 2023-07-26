@@ -7,8 +7,7 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief The xtd::threading namespace provides classes and interfaces that enable multithread_stateed programming.
-  /// In addition to classes for synchronizing thread_state activities and access to data ( xtd::threading::mutex, xtd::threading::monitor, xtd::threading::thread_state, xtd::threading::auto_reset_event, and so on), this namespace includes a xtd::threading::thread_state_pool class that allows you to use a pool of system-supplied thread_states, and a xtd::threading::timer class that executes callback methods on thread_state pool thread_states.
+  /// @brief The xtd::threading namespace provides classes and interfaces that enable multithreaded programming. In addition to classes for synchronizing thread activities and access to data ( xtd::threading::mutex, xtd::threading::monitor, xtd::threading::interlocked, xtd::threading::auto_reset_event, and so on), this namespace includes a xtd::threading::thread_pool class that allows you to use a pool of system-supplied threads, and a xtd::threading::timer class that executes callback methods on thread pool threads.
   namespace threading {
     /// @brief Specifies the execution states of a System::Threading::Thread.
     /// @par Header

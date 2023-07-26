@@ -6,8 +6,7 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief The xtd::threading namespace provides classes and interfaces that enable multithreaded programming.
-  /// In addition to classes for synchronizing thread activities and access to data ( xtd::threading::mutex, xtd::threading::monitor, xtd::threading::interlocked, xtd::threading::auto_reset_event, and so on), this namespace includes a xtd::threading::thread_pool class that allows you to use a pool of system-supplied threads, and a xtd::threading::timer class that executes callback methods on thread pool threads.
+  /// @brief The xtd::threading namespace provides classes and interfaces that enable multithreaded programming. In addition to classes for synchronizing thread activities and access to data ( xtd::threading::mutex, xtd::threading::monitor, xtd::threading::interlocked, xtd::threading::auto_reset_event, and so on), this namespace includes a xtd::threading::thread_pool class that allows you to use a pool of system-supplied threads, and a xtd::threading::timer class that executes callback methods on thread pool threads.
   namespace threading {
     /// @brief A synchronization primitive that can also be used for interprocess synchronization.
     /// @par Header
@@ -53,8 +52,12 @@ namespace xtd {
       /// @exception xtd::argument_exception is a zero-length string <br>-or-<br> name is longer than 128 characters
       /// @exception xtd::io::io_Exception An Io error occurred.
       mutex open_existing(const ustring& name);
-      
+      /// @}
+
     protected:
+      /// @name Protected methods
+      
+      /// @{
       bool signal() override;
 
       bool wait(int32_t milliseconds_timeout) override;
