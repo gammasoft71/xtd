@@ -20,7 +20,7 @@ namespace xtd::tests {
       
       void release_mutex() {signal();}
       
-      void close() override {if (mutex_.unique()) mutex_.reset();}
+      void close() override {if (mutex_.use_count() == 1) mutex_.reset();}
       
       bool locked() {return locked_;};
       
