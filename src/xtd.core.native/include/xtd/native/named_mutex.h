@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains mutex API.
+/// @brief Contains named_mutex API.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 /// @cond
@@ -24,15 +24,15 @@ namespace xtd {
   /// @brief The xtd::native namespace contains internal native API definitions to access underlying operating system components used by xtd.core library.
   /// @warning Internal use only
   namespace native {
-    /// @brief Contains mutex native API.
+    /// @brief Contains named_mutex native API.
     /// @par Namespace
     /// xtd::native
     /// @par Library
     /// xtd.core.native
     /// @ingroup xtd_core_native native
     /// @warning Internal use only
-    class core_native_export_ mutex final {
-      mutex() = delete;
+    class core_native_export_ named_mutex final {
+      named_mutex() = delete;
       friend xtd::threading::mutex;
     protected:
       /// @name Protected methods
