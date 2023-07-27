@@ -1275,7 +1275,7 @@ namespace xtd {
       /// @}
       
     private:
-      // This method is only needed to disable the native::system::image::form_name function during unit testing.<
+      // This method is only needed to disable the native::system::image::form_name function during unit testing.
       static bool native_system_images_from_name_enabled() noexcept {return __XTD_CURRENT_TARGET_ID__ != __XTD_TARGET_ID_TEST_APPLICATION__;}
       friend class system_icons;
       static xtd::ustring default_theme() noexcept;
