@@ -222,6 +222,7 @@ add_sources(
   src/xtd/tests/wstring_string_format_tests.cpp
   src/xtd/tests/xml_syntax_exception_tests.cpp
   src/xtd/threading/tests/interlocked_tests.cpp
+  src/xtd/threading/tests/mutex_tests.cpp
   src/xtd/threading/tests/thread_tests.cpp
   src/xtd/threading/tests/thread_abort_exception_tests.cpp
   src/xtd/threading/tests/thread_interrupted_exception_tests.cpp
