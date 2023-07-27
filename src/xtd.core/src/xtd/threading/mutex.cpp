@@ -4,7 +4,7 @@
 #include "../../../include/xtd/invalid_operation_exception.h"
 #include "../../../include/xtd/io//io_exception.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/mutex.h>
+#include <xtd/native/named_mutex.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <mutex>
 
@@ -53,23 +53,23 @@ public:
   
   bool create(const ustring& name, bool& create_new) override {
     name_ = name;
-    handle_ = native::mutex::create(name, create_new);
+    handle_ = native::named_mutex::create(name, create_new);
     return handle_ != invalid_handle;
   }
   
   void destroy() override {
     if (!handle_) return;
-    native::mutex::destroy(handle_, name_);
+    native::named_mutex::destroy(handle_, name_);
   }
   
   bool signal(bool& io_error) override {
     io_error = false;
-    return native::mutex::signal(handle_, io_error);
+    return native::named_mutex::signal(handle_, io_error);
   }
   
   bool wait(int32_t milliseconds_timeout, bool& io_error) override {
     io_error = false;
-    return native::mutex::wait(handle_, milliseconds_timeout, io_error);
+    return native::named_mutex::wait(handle_, milliseconds_timeout, io_error);
   }
   
 private:
