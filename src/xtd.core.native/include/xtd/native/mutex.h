@@ -16,7 +16,7 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @cond
-  namespace mutexing {
+  namespace threading {
     class mutex;
   }
   /// @endcond
@@ -33,7 +33,7 @@ namespace xtd {
     /// @warning Internal use only
     class core_native_export_ mutex final {
       mutex() = delete;
-      friend xtd::mutexing::mutex;
+      friend xtd::threading::mutex;
     protected:
       /// @name Protected methods
       
