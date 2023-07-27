@@ -32,6 +32,10 @@ namespace xtd {
       /// @exception xtd::io::io_xception An Io error occurred.
       mutex(bool initially_owned);
 
+      mutex(bool initially_owned, const ustring& name);
+
+      mutex(bool initially_owned, const ustring& name, bool created_new);
+
       /// @}
       
       /// @name Properties
@@ -51,7 +55,9 @@ namespace xtd {
       /// @return A xtd::threading::mutex object that represents a named system mutex.
       /// @exception xtd::argument_exception is a zero-length string <br>-or-<br> name is longer than 128 characters
       /// @exception xtd::io::io_Exception An Io error occurred.
-      mutex open_existing(const ustring& name);
+      static mutex open_existing(const ustring& name);
+
+      static bool try_open_existing(const ustring& name, mutex& result);
       /// @}
 
     protected:
@@ -64,7 +70,9 @@ namespace xtd {
       /// @}
 
     private:
+      void create(bool initially_owned, bool& created_new);
       std::shared_ptr<mutex_base> mutex_;
+      ustring name_;
     };
   }
 }

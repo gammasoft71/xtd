@@ -45,9 +45,10 @@ namespace xtd {
       /// @warning Internal use only
       static intmax_t create(const std::string& name, bool& create_new);
       /// @brief Destroy named mutex with specified mutex handle.
+      /// @param name The name of the mutex.
       /// @param handle The mutex handle to destroy.
       /// @warning Internal use only
-      static void destroy(intmax_t handle);
+      static void destroy(intmax_t handle, const std::string& name);
       /// @brief Signal named mutex with specified mutex handle.
       /// @param handle The mutex handle to signal.
       /// @return true if succeed; otherwhise false.
