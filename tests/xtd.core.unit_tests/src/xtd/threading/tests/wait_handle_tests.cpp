@@ -50,7 +50,7 @@ namespace xtd::tests {
     
   public:
     void test_method_(invalid_handle) {
-      assert::are_equal(0ul, wait_handle::invalid_handle, csf_);
+      assert::are_equal(0, wait_handle::invalid_handle, csf_);
     }
 
     void test_method_(wait_timeout) {
@@ -127,7 +127,7 @@ namespace xtd::tests {
       auto m1 = unnamed_mutex {};
       auto m2 = unnamed_mutex {};
       auto m3 = unnamed_mutex {};
-      assert::are_equal(0UL, wait_handle::wait_any({m1, m2, m3}), csf_);
+      assert::are_equal(0ul, wait_handle::wait_any({m1, m2, m3}), csf_);
     }
   };
 }
