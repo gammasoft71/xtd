@@ -108,14 +108,12 @@ bool thread::do_wait(wait_handle& wait_handle, int32_t milliseconds_timeout) {
   current_thread().data_->state |= xtd::threading::thread_state::wait_sleep_join;
   if (current_thread().data_->interrupted)
     current_thread().interrupt();
-  bool result = false;
   try {
-    result = wait_handle.wait(milliseconds_timeout);
+    auto result = wait_handle.wait(milliseconds_timeout);
     current_thread().data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
     return result;
   } catch (...) {
     current_thread().data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
     throw;
   }
-  return result;
 }
