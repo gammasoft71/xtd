@@ -6,6 +6,7 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/mutex.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
+#include <mutex>
 
 using namespace xtd;
 using namespace xtd::threading;
@@ -93,20 +94,26 @@ public:
   }
   
   void create() override {
+    bool create_new = false;
+    handle_ = native::mutex::create("", create_new);
+    if (handle() == invalid_handle) throw io::io_exception {csf_};
   }
   
   void create(const ustring& name, bool& create_new) override {
+    handle_ = native::mutex::create(name, create_new);
+    if (handle() == invalid_handle) throw io::io_exception {csf_};
   }
 
   void destroy() override {
+    native::mutex::destroy(handle_);
   }
   
  bool signal() override {
-    return false;
+    return native::mutex::signal(handle_);
   }
   
   bool wait(int32_t milliseconds_timeout) override {
-    return false;
+    return native::mutex::wait(handle_, milliseconds_timeout);
   }
 
 private:
@@ -137,7 +144,6 @@ mutex mutex::open_existing(const ustring& name) {
   auto result = mutex {};
   bool create_new = false;
   result.mutex_->create(name, create_new);
-  if (handle() == invalid_handle) throw io::io_exception {csf_};
   return result;
 }
 
