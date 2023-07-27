@@ -175,7 +175,7 @@ bool wait_handle::wait_all(const std::vector<wait_handle*>& wait_handles, int32_
   }
   
   int32_t timeout = milliseconds_timeout;
-  int64 start = std::chrono::nanoseconds(std::chrono::high_resolution_clock::now().time_since_epoch()).count() / 1000000;
+  int64_t start = std::chrono::nanoseconds(std::chrono::high_resolution_clock::now().time_since_epoch()).count() / 1000000;
   for (auto& item : wait_handles) {
     if (item->wait_one(timeout) == false) return false;
     timeout = milliseconds_timeout - as<int32_t>(std::chrono::nanoseconds(std::chrono::high_resolution_clock::now().time_since_epoch()).count() / 1000000 - start);
@@ -194,19 +194,19 @@ size_t wait_handle::wait_any(const std::vector<wait_handle*>& wait_handles, int3
       thread::yield();
       thread::sleep(1);
     }
-    return wait_timeout;
+    return as<size_t>(wait_timeout);
   }
   
   int32_t timeout = milliseconds_timeout;
-  int64 start = std::chrono::nanoseconds(std::chrono::high_resolution_clock::now().time_since_epoch()).count() / 1000000;
+  int64_t start = std::chrono::nanoseconds(std::chrono::high_resolution_clock::now().time_since_epoch()).count() / 1000000;
   do {
     for (auto index = 0ul; index < wait_handles.size(); index++) {
       if (wait_handles[index]->wait_one(0) == true) return index;
       timeout = milliseconds_timeout - as<int32_t>(std::chrono::nanoseconds(std::chrono::high_resolution_clock::now().time_since_epoch()).count() / 1000000 - start);
-      if (timeout < 0) return wait_timeout;
+      if (timeout < 0) return as<size_t>(wait_timeout);
       thread::yield();
       thread::sleep(1);
     }
   } while (timeout >= 0);
-  return wait_timeout;
+  return as<size_t>(wait_timeout);
 }
