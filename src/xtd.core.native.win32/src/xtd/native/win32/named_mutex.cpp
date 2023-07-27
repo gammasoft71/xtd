@@ -16,7 +16,7 @@ intmax_t named_mutex::create(const std::string& name, bool& create_new) {
   return reinterpret_cast<intmax_t>(handle);
 }
 
-void named_mutex::destroy(intmax_t handle) {
+void named_mutex::destroy(intmax_t handle, const std::string& name) {
   CloseHandle(reinterpret_cast<HANDLE>(handle));
 }
 
