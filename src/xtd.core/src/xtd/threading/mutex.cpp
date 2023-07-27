@@ -26,8 +26,8 @@ public:
   virtual bool create() = 0;
   virtual bool create(const ustring& name, bool& create_new) = 0;
   virtual void destroy() = 0;
-  virtual bool signal() = 0;
-  virtual bool wait(int32_t milliseconds_timeout) = 0;
+  virtual bool signal(bool& io_error) = 0;
+  virtual bool wait(int32_t milliseconds_timeout, bool& io_error) = 0;
 };
 
 class mutex::named_mutex : public mutex_base {
@@ -58,15 +58,18 @@ public:
   }
   
   void destroy() override {
+    if (!handle_) return;
     native::mutex::destroy(handle_, name_);
   }
   
-  bool signal() override {
-    return native::mutex::signal(handle_);
+  bool signal(bool& io_error) override {
+    io_error = false;
+    return native::mutex::signal(handle_, io_error);
   }
   
-  bool wait(int32_t milliseconds_timeout) override {
-    return native::mutex::wait(handle_, milliseconds_timeout);
+  bool wait(int32_t milliseconds_timeout, bool& io_error) override {
+    io_error = false;
+    return native::mutex::wait(handle_, milliseconds_timeout, io_error);
   }
   
 private:
@@ -101,26 +104,25 @@ public:
   }
 
   void destroy() override {
+    if (!handle_) return;
     handle_.reset();
   }
 
-  bool signal() override {
-    auto result = false;
+  bool signal(bool& io_error) override {
+    io_error = false;
     handle_->unlock();
-    std::swap(locked_, result);
-    return result;
+    return true;
   }
 
-  bool wait(int32_t milliseconds_timeout) override {
-    if (milliseconds_timeout != timeout::infinite) return (locked_ = handle_->try_lock_for(std::chrono::milliseconds {milliseconds_timeout}));
+  bool wait(int32_t milliseconds_timeout, bool& io_error) override {
+    io_error = false;
+    if (milliseconds_timeout != timeout::infinite) return handle_->try_lock_for(std::chrono::milliseconds {milliseconds_timeout});
     handle_->lock();
-    locked_ = true;
-    return locked_;
+    return true;
   }
   
 private:
   std::shared_ptr<std::recursive_timed_mutex> handle_;
-  bool locked_ = false;
 };
 
 mutex::mutex() {
@@ -142,8 +144,12 @@ mutex::mutex(bool initially_owned, const ustring& name, bool created_new) : name
   create(initially_owned, created_new);
 }
 
+mutex::~mutex() {
+  close();
+}
+
 intptr_t mutex::handle() const noexcept {
-  return mutex_->handle();
+  return mutex_ ? mutex_->handle() : invalid_handle;
 }
 
 void mutex::handle(intptr_t value) {
@@ -151,13 +157,20 @@ void mutex::handle(intptr_t value) {
 }
 
 void mutex::close() {
-  if (mutex_.use_count() == 1) mutex_->destroy();
+  if (mutex_.use_count() == 1) {
+    mutex_->destroy();
+    mutex_.reset();
+  }
 }
 
 mutex mutex::open_existing(const ustring& name) {
   auto result = mutex{};
   if (!try_open_existing(name, result)) throw argument_exception {csf_};
   return result;
+}
+
+void mutex::release_mutex() {
+  if (!signal()) throw io::io_exception {csf_};
 }
 
 bool mutex::try_open_existing(const ustring& name, mutex& result) {
@@ -174,13 +187,19 @@ bool mutex::try_open_existing(const ustring& name, mutex& result) {
 
 bool mutex::signal() {
   if (!mutex_) throw object_closed_exception {csf_};
-  return mutex_->signal();
+  bool io_error = false;
+  auto result = mutex_->signal(io_error);
+  if (io_error) throw io::io_exception {csf_};
+  return result;
 }
 
 bool mutex::wait(int32_t milliseconds_timeout) {
   if (!mutex_) throw object_closed_exception {csf_};
   if (milliseconds_timeout < -1) throw argument_out_of_range_exception {csf_};
-  return mutex_->wait(milliseconds_timeout);
+  bool io_error = false;
+  auto result = mutex_->wait(milliseconds_timeout, io_error);
+  if (io_error) throw io::io_exception {csf_};
+  return result;
 }
 
 void mutex::create(bool initially_owned, bool& created_new) {

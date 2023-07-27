@@ -35,9 +35,12 @@ namespace xtd {
       mutex(bool initially_owned, const ustring& name);
 
       mutex(bool initially_owned, const ustring& name, bool created_new);
-
       /// @}
-      
+
+      /// @cond
+      ~mutex();
+      /// @endcond
+
       /// @name Properties
       
       /// @{
@@ -57,6 +60,8 @@ namespace xtd {
       /// @exception xtd::io::io_Exception An Io error occurred.
       static mutex open_existing(const ustring& name);
 
+      void release_mutex();
+      
       static bool try_open_existing(const ustring& name, mutex& result);
       /// @}
 

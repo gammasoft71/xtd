@@ -53,13 +53,13 @@ namespace xtd {
       /// @param handle The mutex handle to signal.
       /// @return true if succeed; otherwhise false.
       /// @warning Internal use only
-      static bool signal(intmax_t handle);
+      static bool signal(intmax_t handle, bool& io_error);
       /// @brief Wait named mutex with specified mutex handle and timeout.
       /// @param handle The mutex handle to wait.
       /// @param milliseconds_timeout The timeout in milliseconds (-1 is infinite timeout).
       /// @return true if succeed; otherwhise false.
       /// @warning Internal use only
-      static bool wait(intmax_t handle, int_least32_t milliseconds_timeout);
+      static bool wait(intmax_t handle, int_least32_t milliseconds_timeout, bool& io_error);
       /// @}
     };
   }

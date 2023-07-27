@@ -38,6 +38,7 @@ add_references(xtd.core.native)
 add_sources(
   include/xtd/xtd.core.native.macos.h
   include/xtd/xtd.core.native.macos
+  include/xtd/native/macos/semaphore.h
   include/xtd/native/macos/strings.h
   src/xtd/native/macos/console.mm
   src/xtd/native/macos/cryptography.mm

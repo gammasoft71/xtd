@@ -15,10 +15,10 @@ void mutex::destroy(intmax_t handle) {
   
 }
 
-bool mutex::signal(intmax_t handle) {
+bool mutex::signal(intmax_t handle, bool& io_error) {
   return false;
 }
 
-bool mutex::wait(intmax_t handle, int_least32_t milliseconds_timeout) {
+bool mutex::wait(intmax_t handle, int_least32_t milliseconds_timeout, bool& io_error) {
   return false;
 }
