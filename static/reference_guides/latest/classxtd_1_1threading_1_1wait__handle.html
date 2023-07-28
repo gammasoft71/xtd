@@ -118,21 +118,21 @@ Threads can block on an individual wait handle by calling the instance method <a
 The derived classes of <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> differ in their thread affinity. Event wait handles (xtd::threading::envent_wait_handle, xtd::threading::auto_reset_event, and xtd::threading::manual_reset_event) and semaphores do not have thread affinity; any thread can signal an event wait handle or semaphore. Mutexes, on the other hand, do have thread affinity; the thread that owns a mutex must release it, and an exception is thrown if a thread calls the xtd::threading::wait_handle::release_mutex method on a mutex that it does not own. </dd>
 <dd>
 In addition to its derived classes, the <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> class has a number of static methods that block a thread until one or more synchronization objects receive a signal. These include:<ul>
-<li><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a01c82b06ca8a5d14aba5f1fb396c16f7" title="signals one wait_handle and waits on another.">xtd::threading::wait_handle::signal_and_wait</a>, which allows a thread to signal one wait handle and immediately wait on another.</li>
-<li><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a217129669f17b6f14201dccd0405450c" title="waits for all the elements in the specified array to receive a signal.">xtd::threading::wait_handle::wait_all</a>, which allows a thread to wait until all the wait handles in an array receive a signal.</li>
-<li><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#aee2a73d9052723690ff0e15a338cce35" title="waits for any of the elements in the specified array to receive a signal.">xtd::threading::wait_handle::wait_any</a>, which allows a thread to wait until any one of a specified set of wait handles has been signaled. </li>
+<li><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a01c82b06ca8a5d14aba5f1fb396c16f7" title="Signals one xtd::threading::wait_handle and waits on another.">xtd::threading::wait_handle::signal_and_wait</a>, which allows a thread to signal one wait handle and immediately wait on another.</li>
+<li><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a217129669f17b6f14201dccd0405450c" title="Waits for all the elements in the specified collection to receive a signal.">xtd::threading::wait_handle::wait_all</a>, which allows a thread to wait until all the wait handles in an array receive a signal.</li>
+<li><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#aee2a73d9052723690ff0e15a338cce35" title="Waits for any of the elements in the specified collection to receive a signal.">xtd::threading::wait_handle::wait_any</a>, which allows a thread to wait until any one of a specified set of wait handles has been signaled. </li>
 </ul>
 </dd>
 <dd>
 The overloads of these methods provide timeout intervals for abandoning the wait, and the opportunity to exit a synchronization context before entering the wait, allowing other threads to use the synchronization context. </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Fields</h2></td></tr>
-<tr class="memitem:a1e8c795b6aa1dfe8c2579f56bd17c837"><td class="memItemLeft" align="right" valign="top">static constexpr intptr_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a1e8c795b6aa1dfe8c2579f56bd17c837">invalid_handle</a></td></tr>
-<tr class="memdesc:a1e8c795b6aa1dfe8c2579f56bd17c837"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents an invalid native operating system handle. This field is constant.  <br /></td></tr>
-<tr class="separator:a1e8c795b6aa1dfe8c2579f56bd17c837"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a118b32c267cc3787810f7b46ac5c3128"><td class="memItemLeft" align="right" valign="top">static constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a118b32c267cc3787810f7b46ac5c3128">wait_timeout</a></td></tr>
-<tr class="memdesc:a118b32c267cc3787810f7b46ac5c3128"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates that a xtd::tThreading::wait_handle::wait_any(const xtd::threading::wait_handle[], int32_t, bool) operation timed out before any of the wait handles were signaled. This field is constant.  <br /></td></tr>
-<tr class="separator:a118b32c267cc3787810f7b46ac5c3128"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff40193401e5dac803c50e750fcb1c01"><td class="memItemLeft" align="right" valign="top">static const intptr_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#aff40193401e5dac803c50e750fcb1c01">invalid_handle</a></td></tr>
+<tr class="memdesc:aff40193401e5dac803c50e750fcb1c01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents an invalid native operating system handle. This field is read-only.  <br /></td></tr>
+<tr class="separator:aff40193401e5dac803c50e750fcb1c01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88cd044ea1e43ec86d62960d667ec67d"><td class="memItemLeft" align="right" valign="top">static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a88cd044ea1e43ec86d62960d667ec67d">wait_timeout</a></td></tr>
+<tr class="memdesc:a88cd044ea1e43ec86d62960d667ec67d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates that a <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#aee2a73d9052723690ff0e15a338cce35" title="Waits for any of the elements in the specified collection to receive a signal.">xtd::threading::wait_handle::wait_any</a> operation timed out before any of the wait handles were signaled. This field is constant. @remrarks This field is one of the possible return values of <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#aee2a73d9052723690ff0e15a338cce35" title="Waits for any of the elements in the specified collection to receive a signal.">xtd::threading::wait_handle::wait_any</a>.  <br /></td></tr>
+<tr class="separator:a88cd044ea1e43ec86d62960d667ec67d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Constructors</h2></td></tr>
 <tr class="memitem:a73af88726a64d8720c4075f540ff14da"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a73af88726a64d8720c4075f540ff14da">wait_handle</a> ()=default</td></tr>
@@ -149,7 +149,7 @@ The overloads of these methods provide timeout intervals for abandoning the wait
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Methods</h2></td></tr>
 <tr class="memitem:a177d4ddb89f80c3932de535af29e7c76"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a177d4ddb89f80c3932de535af29e7c76">close</a> ()</td></tr>
-<tr class="memdesc:a177d4ddb89f80c3932de535af29e7c76"><td class="mdescLeft">&#160;</td><td class="mdescRight">When overridden in a derived class, releases all resources held by the current <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a>.  <br /></td></tr>
+<tr class="memdesc:a177d4ddb89f80c3932de535af29e7c76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases all resources held by the current <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a>.  <br /></td></tr>
 <tr class="separator:a177d4ddb89f80c3932de535af29e7c76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab53dcefc6844ecf0d6d9967ac489ac87"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#ab53dcefc6844ecf0d6d9967ac489ac87">wait_one</a> ()</td></tr>
 <tr class="memdesc:ab53dcefc6844ecf0d6d9967ac489ac87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocks the current thread until the current <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> receives a signal.  <br /></td></tr>
@@ -161,37 +161,37 @@ The overloads of these methods provide timeout intervals for abandoning the wait
 <tr class="memdesc:a6ffdfd0f2f35f6768cb78bded574aa01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocks the current thread until the current instance receives a signal, using a <a class="el" href="group__types.html#gad013431819ca97998d1dc5910b475f80" title="Represents a time interval.">xtd::time_span</a> to measure the time interval.  <br /></td></tr>
 <tr class="separator:a6ffdfd0f2f35f6768cb78bded574aa01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01c82b06ca8a5d14aba5f1fb396c16f7"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a01c82b06ca8a5d14aba5f1fb396c16f7">signal_and_wait</a> (<a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;to_signal, <a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;to_wait)</td></tr>
-<tr class="memdesc:a01c82b06ca8a5d14aba5f1fb396c16f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">signals one <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">wait_handle</a> and waits on another.  <br /></td></tr>
+<tr class="memdesc:a01c82b06ca8a5d14aba5f1fb396c16f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signals one <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> and waits on another.  <br /></td></tr>
 <tr class="separator:a01c82b06ca8a5d14aba5f1fb396c16f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4b22dc2ba5ce260325ae744ada2558e"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#ac4b22dc2ba5ce260325ae744ada2558e">signal_and_wait</a> (<a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;to_signal, <a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;to_wait, int32_t milliseconds_timeout)</td></tr>
-<tr class="memdesc:ac4b22dc2ba5ce260325ae744ada2558e"><td class="mdescLeft">&#160;</td><td class="mdescRight">signals one <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">wait_handle</a> and waits on another, specifying a time-out interval as a 32-bit signed integer.  <br /></td></tr>
+<tr class="memdesc:ac4b22dc2ba5ce260325ae744ada2558e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signals one <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> and waits on another, specifying a time-out interval as a 32-bit signed integer.  <br /></td></tr>
 <tr class="separator:ac4b22dc2ba5ce260325ae744ada2558e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2056ee81b21f23f6b0a7bd7f3bc232e8"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a2056ee81b21f23f6b0a7bd7f3bc232e8">signal_and_wait</a> (<a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;to_signal, <a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;to_wait, const <a class="el" href="group__types.html#gad013431819ca97998d1dc5910b475f80">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>)</td></tr>
-<tr class="memdesc:a2056ee81b21f23f6b0a7bd7f3bc232e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">signals one <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">wait_handle</a> and waits on another, specifying a time-out interval as a time_span.  <br /></td></tr>
+<tr class="memdesc:a2056ee81b21f23f6b0a7bd7f3bc232e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signals one <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> and waits on another, specifying a time-out interval as a time_span.  <br /></td></tr>
 <tr class="separator:a2056ee81b21f23f6b0a7bd7f3bc232e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a217129669f17b6f14201dccd0405450c"><td class="memTemplParams" colspan="2">template&lt;typename collection_t &gt; </td></tr>
 <tr class="memitem:a217129669f17b6f14201dccd0405450c"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a217129669f17b6f14201dccd0405450c">wait_all</a> (const collection_t &amp;wait_handles)</td></tr>
-<tr class="memdesc:a217129669f17b6f14201dccd0405450c"><td class="mdescLeft">&#160;</td><td class="mdescRight">waits for all the elements in the specified array to receive a signal.  <br /></td></tr>
+<tr class="memdesc:a217129669f17b6f14201dccd0405450c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for all the elements in the specified collection to receive a signal.  <br /></td></tr>
 <tr class="separator:a217129669f17b6f14201dccd0405450c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33e19149fd94303f4b346b58caeec2e4"><td class="memTemplParams" colspan="2">template&lt;typename collection_t &gt; </td></tr>
 <tr class="memitem:a33e19149fd94303f4b346b58caeec2e4"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a33e19149fd94303f4b346b58caeec2e4">wait_all</a> (const collection_t &amp;wait_handles, int32_t milliseconds_timeout)</td></tr>
-<tr class="memdesc:a33e19149fd94303f4b346b58caeec2e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">waits for all the elements in the specified array to receive a signal, using an int32 value to measure the time interval.  <br /></td></tr>
+<tr class="memdesc:a33e19149fd94303f4b346b58caeec2e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for all the elements in the specified collection to receive a signal, using an int32 value to measure the time interval.  <br /></td></tr>
 <tr class="separator:a33e19149fd94303f4b346b58caeec2e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeda61f20a00dfc9a8b0f125edc9e8aa6"><td class="memTemplParams" colspan="2">template&lt;typename collection_t &gt; </td></tr>
 <tr class="memitem:aeda61f20a00dfc9a8b0f125edc9e8aa6"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#aeda61f20a00dfc9a8b0f125edc9e8aa6">wait_all</a> (const collection_t &amp;wait_handles, const <a class="el" href="group__types.html#gad013431819ca97998d1dc5910b475f80">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>)</td></tr>
-<tr class="memdesc:aeda61f20a00dfc9a8b0f125edc9e8aa6"><td class="mdescLeft">&#160;</td><td class="mdescRight">waits for all the elements in the specified array to receive a signal, using a <a class="el" href="group__types.html#gad013431819ca97998d1dc5910b475f80" title="Represents a time interval.">xtd::time_span</a> value to measure the time interval.  <br /></td></tr>
+<tr class="memdesc:aeda61f20a00dfc9a8b0f125edc9e8aa6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for all the elements in the specified collection to receive a signal, using a <a class="el" href="group__types.html#gad013431819ca97998d1dc5910b475f80" title="Represents a time interval.">xtd::time_span</a> value to measure the time interval.  <br /></td></tr>
 <tr class="separator:aeda61f20a00dfc9a8b0f125edc9e8aa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee2a73d9052723690ff0e15a338cce35"><td class="memTemplParams" colspan="2">template&lt;typename collection_t &gt; </td></tr>
 <tr class="memitem:aee2a73d9052723690ff0e15a338cce35"><td class="memTemplItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#aee2a73d9052723690ff0e15a338cce35">wait_any</a> (const collection_t &amp;wait_handles)</td></tr>
-<tr class="memdesc:aee2a73d9052723690ff0e15a338cce35"><td class="mdescLeft">&#160;</td><td class="mdescRight">waits for any of the elements in the specified array to receive a signal.  <br /></td></tr>
+<tr class="memdesc:aee2a73d9052723690ff0e15a338cce35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for any of the elements in the specified collection to receive a signal.  <br /></td></tr>
 <tr class="separator:aee2a73d9052723690ff0e15a338cce35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adda49d77e4cb38fd372ce9c04bde3834"><td class="memTemplParams" colspan="2">template&lt;typename collection_t &gt; </td></tr>
 <tr class="memitem:adda49d77e4cb38fd372ce9c04bde3834"><td class="memTemplItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#adda49d77e4cb38fd372ce9c04bde3834">wait_any</a> (const collection_t &amp;wait_handles, int32_t milliseconds_timeout)</td></tr>
-<tr class="memdesc:adda49d77e4cb38fd372ce9c04bde3834"><td class="mdescLeft">&#160;</td><td class="mdescRight">waits for any of the elements in the specified array to receive a signal, using a 32-bit signed integer to measure the time interval.  <br /></td></tr>
+<tr class="memdesc:adda49d77e4cb38fd372ce9c04bde3834"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for any of the elements in the specified collection to receive a signal, using a 32-bit signed integer to measure the time interval.  <br /></td></tr>
 <tr class="separator:adda49d77e4cb38fd372ce9c04bde3834"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa704be64592eed6531ec3953bb9897e"><td class="memTemplParams" colspan="2">template&lt;typename collection_t &gt; </td></tr>
 <tr class="memitem:afa704be64592eed6531ec3953bb9897e"><td class="memTemplItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#afa704be64592eed6531ec3953bb9897e">wait_any</a> (const collection_t &amp;wait_handles, const <a class="el" href="group__types.html#gad013431819ca97998d1dc5910b475f80">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>)</td></tr>
-<tr class="memdesc:afa704be64592eed6531ec3953bb9897e"><td class="mdescLeft">&#160;</td><td class="mdescRight">waits for any of the elements in the specified array to receive a signal, using a <a class="el" href="group__types.html#gad013431819ca97998d1dc5910b475f80" title="Represents a time interval.">xtd::time_span</a> to measure the time interval.  <br /></td></tr>
+<tr class="memdesc:afa704be64592eed6531ec3953bb9897e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for any of the elements in the specified collection to receive a signal, using a <a class="el" href="group__types.html#gad013431819ca97998d1dc5910b475f80" title="Represents a time interval.">xtd::time_span</a> to measure the time interval.  <br /></td></tr>
 <tr class="separator:afa704be64592eed6531ec3953bb9897e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Protected methods</h2></td></tr>
@@ -254,7 +254,8 @@ The overloads of these methods provide timeout intervals for abandoning the wait
 </table>
 </div><div class="memdoc">
 
-<p>When overridden in a derived class, releases all resources held by the current <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a>. </p>
+<p>Releases all resources held by the current <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a>. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>You to call this method in the destructor of the inherited class. </dd></dl>
 
 <p>Reimplemented in <a class="el" href="classxtd_1_1threading_1_1mutex.html#aad7c66ee04153877e8933cdcfa375043">xtd::threading::mutex</a>.</p>
 
@@ -391,18 +392,20 @@ The overloads of these methods provide timeout intervals for abandoning the wait
 </table>
 </div><div class="memdoc">
 
-<p>signals one <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">wait_handle</a> and waits on another. </p>
+<p>Signals one <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> and waits on another. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">to_signal</td><td>The <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">wait_handle</a> to signal. </td></tr>
-    <tr><td class="paramname">to_wait</td><td>The <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">wait_handle</a> to wait on. </td></tr>
+    <tr><td class="paramname">to_signal</td><td>The <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> to signal. </td></tr>
+    <tr><td class="paramname">to_wait</td><td>The <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> to wait on. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool true if both the signal and the wait complete successfully; if the wait does not complete, the method does not return. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__null__exception.html" title="The exception that is thrown when one of the arguments provided to a method is null.">xtd::argument_null_exception</a></td><td>to_signal is null or to_wait is null. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1object__closed__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::object_closed_exception</a></td><td>the to_signal and/or to_wait are invalid </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>to_signal is a semaphore, and it already has a full count. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">xtd::threading::abandoned_mutex_exception</a></td><td>The wait completed because a thread exited without releasing a mutex. </td></tr>
   </table>
   </dd>
 </dl>
@@ -449,7 +452,7 @@ The overloads of these methods provide timeout intervals for abandoning the wait
 </table>
 </div><div class="memdoc">
 
-<p>signals one <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">wait_handle</a> and waits on another, specifying a time-out interval as a time_span. </p>
+<p>Signals one <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> and waits on another, specifying a time-out interval as a time_span. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">to_signal</td><td>The <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">wait_handle</a> to signal. </td></tr>
@@ -461,7 +464,9 @@ The overloads of these methods provide timeout intervals for abandoning the wait
 <dl class="section return"><dt>Returns</dt><dd>bool true if both the signal and the wait complete successfully; if the wait does not complete, the method does not return. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__null__exception.html" title="The exception that is thrown when one of the arguments provided to a method is null.">xtd::argument_null_exception</a></td><td>to_signal is null or to_wait is null. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1object__closed__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::object_closed_exception</a></td><td>the to_signal and/or to_wait are invalid </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>to_signal is a semaphore, and it already has a full count. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">xtd::threading::abandoned_mutex_exception</a></td><td>The wait completed because a thread exited without releasing a mutex. </td></tr>
   </table>
   </dd>
 </dl>
@@ -508,19 +513,21 @@ The overloads of these methods provide timeout intervals for abandoning the wait
 </table>
 </div><div class="memdoc">
 
-<p>signals one <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">wait_handle</a> and waits on another, specifying a time-out interval as a 32-bit signed integer. </p>
+<p>Signals one <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> and waits on another, specifying a time-out interval as a 32-bit signed integer. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">to_signal</td><td>The <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">wait_handle</a> to signal. </td></tr>
-    <tr><td class="paramname">to_wait</td><td>The <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">wait_handle</a> to wait on. </td></tr>
-    <tr><td class="paramname">milliseconds_timeout</td><td>An integer that represents the interval to wait. If the value is Timeout::Infinite, that is, -1, the wait is infinite </td></tr>
+    <tr><td class="paramname">to_signal</td><td>The <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> to signal. </td></tr>
+    <tr><td class="paramname">to_wait</td><td>The <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> to wait on. </td></tr>
+    <tr><td class="paramname">milliseconds_timeout</td><td>An integer that represents the interval to wait. If the value is <a class="el" href="classxtd_1_1threading_1_1timeout.html#a1806e538587f1c63b79e4e0d7b9110b1" title="A constant used to specify an infinite waiting period. This field is constant.">xtd::threading::timeout::infinite</a>, that is, -1, the wait is infinite </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool true if both the signal and the wait complete successfully; if the wait does not complete, the method does not return. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__null__exception.html" title="The exception that is thrown when one of the arguments provided to a method is null.">xtd::argument_null_exception</a></td><td>to_signal is null or to_wait is null. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1object__closed__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::object_closed_exception</a></td><td>the to_signal and/or to_wait are invalid </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>to_signal is a semaphore, and it already has a full count. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">xtd::threading::abandoned_mutex_exception</a></td><td>The wait completed because a thread exited without releasing a mutex. </td></tr>
   </table>
   </dd>
 </dl>
@@ -594,19 +601,19 @@ template&lt;typename collection_t &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>waits for all the elements in the specified array to receive a signal. </p>
+<p>Waits for all the elements in the specified collection to receive a signal. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">wait_handles</td><td>A <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">wait_handle</a> array containing the objects for which the current instance will wait. This array cannot contain multiple references to the same object. </td></tr>
+    <tr><td class="paramname">wait_handles</td><td>A <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> collection containing the objects for which the current instance will wait. This array cannot contain multiple references to the same object. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when every element in wait_handles has received a signal; otherwise the method never returns. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__null__exception.html" title="The exception that is thrown when one of the arguments provided to a method is null.">xtd::argument_null_exception</a></td><td>The wait_handles parameter is null </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1object__closed__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::object_closed_exception</a></td><td>the to_signal and/or to_wait are invalid </td></tr>
     <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>The number of objects in wait_handles is greater than the system permits. </td></tr>
-    <tr><td class="paramname">AbandonedMutexException</td><td>The wait completed because a thread exited without releasing a mutex. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">xtd::threading::abandoned_mutex_exception</a></td><td>The wait completed because a thread exited without releasing a mutex. </td></tr>
   </table>
   </dd>
 </dl>
@@ -649,10 +656,10 @@ template&lt;typename collection_t &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>waits for all the elements in the specified array to receive a signal, using a <a class="el" href="group__types.html#gad013431819ca97998d1dc5910b475f80" title="Represents a time interval.">xtd::time_span</a> value to measure the time interval. </p>
+<p>Waits for all the elements in the specified collection to receive a signal, using a <a class="el" href="group__types.html#gad013431819ca97998d1dc5910b475f80" title="Represents a time interval.">xtd::time_span</a> value to measure the time interval. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">wait_handles</td><td>A <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">wait_handle</a> array containing the objects for which the current instance will wait. This array cannot contain multiple references to the same object. </td></tr>
+    <tr><td class="paramname">wait_handles</td><td>A <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> collection containing the objects for which the current instance will wait. This array cannot contain multiple references to the same object. </td></tr>
     <tr><td class="paramname">timeout</td><td>A <a class="el" href="group__types.html#gad013431819ca97998d1dc5910b475f80" title="Represents a time interval.">xtd::time_span</a> that represents the number of milliseconds to wait, or a <a class="el" href="group__types.html#gad013431819ca97998d1dc5910b475f80" title="Represents a time interval.">xtd::time_span</a> that represents -1 milliseconds, to wait indefinitely. </td></tr>
   </table>
   </dd>
@@ -660,9 +667,12 @@ template&lt;typename collection_t &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>true when every element in wait_handles has received a signal; otherwise the method never returns. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__null__exception.html" title="The exception that is thrown when one of the arguments provided to a method is null.">xtd::argument_null_exception</a></td><td>The wait_handles parameter is null </td></tr>
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>timeout is a negative number other than -1 milliseconds, which represents an infinite time-out. -or- timeout is greater than int32.MaxValue. -or- The number of objects in wait_handles is greater than the system permits. </td></tr>
-    <tr><td class="paramname">AbandonedMutexException</td><td>The wait completed because a thread exited without releasing a mutex. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>timeout is a negative number other than -1 milliseconds, which represents an infinite time-out.<br  />
+-or-<br  />
+The number of objects in wait_handles is greater than the system permits. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1object__closed__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::object_closed_exception</a></td><td>the to_signal and/or to_wait are invalid </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>The number of objects in wait_handles is greater than the system permits. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">xtd::threading::abandoned_mutex_exception</a></td><td>The wait completed because a thread exited without releasing a mutex. </td></tr>
   </table>
   </dd>
 </dl>
@@ -705,20 +715,23 @@ template&lt;typename collection_t &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>waits for all the elements in the specified array to receive a signal, using an int32 value to measure the time interval. </p>
+<p>Waits for all the elements in the specified collection to receive a signal, using an int32 value to measure the time interval. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">wait_handles</td><td>A <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">wait_handle</a> array containing the objects for which the current instance will wait. This array cannot contain multiple references to the same object. </td></tr>
-    <tr><td class="paramname">milliseconds_timeout</td><td>The number of milliseconds to wait, or xtd::threading::Timeout.Infinite (-1) to wait indefinitely. </td></tr>
+    <tr><td class="paramname">wait_handles</td><td>A <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> collection containing the objects for which the current instance will wait. This array cannot contain multiple references to the same object. </td></tr>
+    <tr><td class="paramname">milliseconds_timeout</td><td>The number of milliseconds to wait, or <a class="el" href="classxtd_1_1threading_1_1timeout.html#a1806e538587f1c63b79e4e0d7b9110b1" title="A constant used to specify an infinite waiting period. This field is constant.">xtd::threading::timeout::infinite</a> (-1) to wait indefinitely. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when every element in wait_handles has received a signal; otherwise the method never returns. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__null__exception.html" title="The exception that is thrown when one of the arguments provided to a method is null.">xtd::argument_null_exception</a></td><td>The wait_handles parameter is null </td></tr>
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>timeout is a negative number other than -1 milliseconds, which represents an infinite time-out. -or- The number of objects in wait_handles is greater than the system permits. </td></tr>
-    <tr><td class="paramname">AbandonedMutexException</td><td>The wait completed because a thread exited without releasing a mutex. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>timeout is a negative number other than -1 milliseconds, which represents an infinite time-out.<br  />
+-or-<br  />
+The number of objects in wait_handles is greater than the system permits. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1object__closed__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::object_closed_exception</a></td><td>the to_signal and/or to_wait are invalid </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>The number of objects in wait_handles is greater than the system permits. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">xtd::threading::abandoned_mutex_exception</a></td><td>The wait completed because a thread exited without releasing a mutex. </td></tr>
   </table>
   </dd>
 </dl>
@@ -751,19 +764,22 @@ template&lt;typename collection_t &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>waits for any of the elements in the specified array to receive a signal. </p>
+<p>Waits for any of the elements in the specified collection to receive a signal. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">wait_handles</td><td>A <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">wait_handle</a> array containing the objects for which the current instance will wait. This array cannot contain multiple references to the same object. </td></tr>
+    <tr><td class="paramname">wait_handles</td><td>A <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> collection containing the objects for which the current instance will wait. This array cannot contain multiple references to the same object. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The array index of the object that satisfied the wait. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__null__exception.html" title="The exception that is thrown when one of the arguments provided to a method is null.">xtd::argument_null_exception</a></td><td>The wait_handles parameter is null </td></tr>
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>timeout is a negative number other than -1 milliseconds, which represents an infinite time-out. -or- The number of objects in wait_handles is greater than the system permits. </td></tr>
-    <tr><td class="paramname">AbandonedMutexException</td><td>The wait completed because a thread exited without releasing a mutex. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>timeout is a negative number other than -1 milliseconds, which represents an infinite time-out.<br  />
+-or-<br  />
+The number of objects in wait_handles is greater than the system permits. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1object__closed__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::object_closed_exception</a></td><td>the to_signal and/or to_wait are invalid </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>The number of objects in wait_handles is greater than the system permits. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">xtd::threading::abandoned_mutex_exception</a></td><td>The wait completed because a thread exited without releasing a mutex. </td></tr>
   </table>
   </dd>
 </dl>
@@ -806,10 +822,10 @@ template&lt;typename collection_t &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>waits for any of the elements in the specified array to receive a signal, using a <a class="el" href="group__types.html#gad013431819ca97998d1dc5910b475f80" title="Represents a time interval.">xtd::time_span</a> to measure the time interval. </p>
+<p>Waits for any of the elements in the specified collection to receive a signal, using a <a class="el" href="group__types.html#gad013431819ca97998d1dc5910b475f80" title="Represents a time interval.">xtd::time_span</a> to measure the time interval. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">wait_handles</td><td>A <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">wait_handle</a> array containing the objects for which the current instance will wait. This array cannot contain multiple references to the same object. </td></tr>
+    <tr><td class="paramname">wait_handles</td><td>A <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> collection containing the objects for which the current instance will wait. This array cannot contain multiple references to the same object. </td></tr>
     <tr><td class="paramname">timeout</td><td>A <a class="el" href="group__types.html#gad013431819ca97998d1dc5910b475f80" title="Represents a time interval.">xtd::time_span</a> that represents the number of milliseconds to wait, or a <a class="el" href="group__types.html#gad013431819ca97998d1dc5910b475f80" title="Represents a time interval.">xtd::time_span</a> that represents -1 milliseconds to wait indefinitely. </td></tr>
   </table>
   </dd>
@@ -817,9 +833,12 @@ template&lt;typename collection_t &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The array index of the object that satisfied the wait, or xtd::threading::wait_handle.waitTimeout if no object satisfied the wait and a time interval equivalent to timeout has passed. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__null__exception.html" title="The exception that is thrown when one of the arguments provided to a method is null.">xtd::argument_null_exception</a></td><td>The wait_handles parameter is null </td></tr>
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>timeout is a negative number other than -1 milliseconds, which represents an infinite time-out. -or- The number of objects in wait_handles is greater than the system permits. </td></tr>
-    <tr><td class="paramname">AbandonedMutexException</td><td>The wait completed because a thread exited without releasing a mutex. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>timeout is a negative number other than -1 milliseconds, which represents an infinite time-out.<br  />
+-or-<br  />
+The number of objects in wait_handles is greater than the system permits. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1object__closed__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::object_closed_exception</a></td><td>the to_signal and/or to_wait are invalid </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>The number of objects in wait_handles is greater than the system permits. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">xtd::threading::abandoned_mutex_exception</a></td><td>The wait completed because a thread exited without releasing a mutex. </td></tr>
   </table>
   </dd>
 </dl>
@@ -862,20 +881,23 @@ template&lt;typename collection_t &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>waits for any of the elements in the specified array to receive a signal, using a 32-bit signed integer to measure the time interval. </p>
+<p>Waits for any of the elements in the specified collection to receive a signal, using a 32-bit signed integer to measure the time interval. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">wait_handles</td><td>A <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">wait_handle</a> array containing the objects for which the current instance will wait. This array cannot contain multiple references to the same object. </td></tr>
-    <tr><td class="paramname">milliseconds_timeout</td><td>The number of milliseconds to wait, or xtd::threading::Timeout.Infinite (-1) to wait indefinitely. </td></tr>
+    <tr><td class="paramname">wait_handles</td><td>A <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> collection containing the objects for which the current instance will wait. This array cannot contain multiple references to the same object. </td></tr>
+    <tr><td class="paramname">milliseconds_timeout</td><td>The number of milliseconds to wait, or <a class="el" href="classxtd_1_1threading_1_1timeout.html#a1806e538587f1c63b79e4e0d7b9110b1" title="A constant used to specify an infinite waiting period. This field is constant.">xtd::threading::timeout::infinite</a> (-1) to wait indefinitely. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The array index of the object that satisfied the wait, or xtd::threading::wait_handle.waitTimeout if no object satisfied the wait and a time interval equivalent to milliseconds_timeout has passed. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__null__exception.html" title="The exception that is thrown when one of the arguments provided to a method is null.">xtd::argument_null_exception</a></td><td>The wait_handles parameter is null </td></tr>
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>timeout is a negative number other than -1 milliseconds, which represents an infinite time-out. -or- The number of objects in wait_handles is greater than the system permits. </td></tr>
-    <tr><td class="paramname">AbandonedMutexException</td><td>The wait completed because a thread exited without releasing a mutex. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>timeout is a negative number other than -1 milliseconds, which represents an infinite time-out.<br  />
+-or-<br  />
+The number of objects in wait_handles is greater than the system permits. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1object__closed__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::object_closed_exception</a></td><td>the to_signal and/or to_wait are invalid </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>The number of objects in wait_handles is greater than the system permits. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">xtd::threading::abandoned_mutex_exception</a></td><td>The wait completed because a thread exited without releasing a mutex. </td></tr>
   </table>
   </dd>
 </dl>
@@ -910,6 +932,7 @@ template&lt;typename collection_t &gt; </div>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1object__closed__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::object_closed_exception</a></td><td>the handle is invalid </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">xtd::threading::abandoned_mutex_exception</a></td><td>The wait completed because a thread exited without releasing a mutex. </td></tr>
   </table>
   </dd>
 </dl>
@@ -951,7 +974,8 @@ template&lt;typename collection_t &gt; </div>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1object__closed__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::object_closed_exception</a></td><td>the handle is invalid </td></tr>
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>timeout is a negative number other than -1 milliseconds, which represents an infinite time-out. -or- timeout is greater than int32.MaxValue. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">xtd::threading::abandoned_mutex_exception</a></td><td>The wait completed because a thread exited without releasing a mutex. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>milliseconds_timeout is a negative number other than -1, which represents an infinite time-out. </td></tr>
   </table>
   </dd>
 </dl>
@@ -985,7 +1009,7 @@ template&lt;typename collection_t &gt; </div>
 <p>Blocks the current thread until the current <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> receives a signal, using 32-bit signed integer to measure the time interval. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">milliseconds_timeout</td><td>The number of milliseconds to wait, or xtd::threading::Timeout.Infinite (-1) to wait indefinitely. </td></tr>
+    <tr><td class="paramname">milliseconds_timeout</td><td>The number of milliseconds to wait, or <a class="el" href="classxtd_1_1threading_1_1timeout.html#a1806e538587f1c63b79e4e0d7b9110b1" title="A constant used to specify an infinite waiting period. This field is constant.">xtd::threading::timeout::infinite</a> (-1) to wait indefinitely. </td></tr>
   </table>
   </dd>
 </dl>
@@ -993,6 +1017,7 @@ template&lt;typename collection_t &gt; </div>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1object__closed__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::object_closed_exception</a></td><td>the handle is invalid </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">xtd::threading::abandoned_mutex_exception</a></td><td>The wait completed because a thread exited without releasing a mutex. </td></tr>
     <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>milliseconds_timeout is a negative number other than -1, which represents an infinite time-out. </td></tr>
   </table>
   </dd>
@@ -1001,8 +1026,8 @@ template&lt;typename collection_t &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a1e8c795b6aa1dfe8c2579f56bd17c837" name="a1e8c795b6aa1dfe8c2579f56bd17c837"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1e8c795b6aa1dfe8c2579f56bd17c837">&#9670;&#160;</a></span>invalid_handle</h2>
+<a id="aff40193401e5dac803c50e750fcb1c01" name="aff40193401e5dac803c50e750fcb1c01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff40193401e5dac803c50e750fcb1c01">&#9670;&#160;</a></span>invalid_handle</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1011,7 +1036,33 @@ template&lt;typename collection_t &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr intptr_t xtd::threading::wait_handle::invalid_handle</td>
+          <td class="memname">const intptr_t xtd::threading::wait_handle::invalid_handle</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Represents an invalid native operating system handle. This field is read-only. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>Used internally to initialize the <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#abb44fe0a6e8b3084dda3b1498b55d77b" title="Gets the native operating system handle.">xtd::threading::wait_handle::handle</a> property. </dd></dl>
+<dl class="section user"><dt>Notes to Inheritors</dt><dd>You can use this value to determine whether the <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#abb44fe0a6e8b3084dda3b1498b55d77b" title="Gets the native operating system handle.">xtd::threading::wait_handle::handle</a> property contains a valid native operating system handle. </dd></dl>
+
+</div>
+</div>
+<a id="a88cd044ea1e43ec86d62960d667ec67d" name="a88cd044ea1e43ec86d62960d667ec67d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88cd044ea1e43ec86d62960d667ec67d">&#9670;&#160;</a></span>wait_timeout</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t xtd::threading::wait_handle::wait_timeout</td>
         </tr>
       </table>
   </td>
@@ -1021,31 +1072,7 @@ template&lt;typename collection_t &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Represents an invalid native operating system handle. This field is constant. </p>
-
-</div>
-</div>
-<a id="a118b32c267cc3787810f7b46ac5c3128" name="a118b32c267cc3787810f7b46ac5c3128"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a118b32c267cc3787810f7b46ac5c3128">&#9670;&#160;</a></span>wait_timeout</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr int32_t xtd::threading::wait_handle::wait_timeout</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Indicates that a xtd::tThreading::wait_handle::wait_any(const xtd::threading::wait_handle[], int32_t, bool) operation timed out before any of the wait handles were signaled. This field is constant. </p>
+<p>Indicates that a <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#aee2a73d9052723690ff0e15a338cce35" title="Waits for any of the elements in the specified collection to receive a signal.">xtd::threading::wait_handle::wait_any</a> operation timed out before any of the wait handles were signaled. This field is constant. @remrarks This field is one of the possible return values of <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#aee2a73d9052723690ff0e15a338cce35" title="Waits for any of the elements in the specified collection to receive a signal.">xtd::threading::wait_handle::wait_any</a>. </p>
 
 </div>
 </div>
@@ -1056,7 +1083,7 @@ template&lt;typename collection_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 27 2023 01:21:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jul 28 2023 20:41:48 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

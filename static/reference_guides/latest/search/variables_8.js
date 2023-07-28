@@ -22,7 +22,7 @@ var searchData=
   ['input_5fsymbol_5ffor_5flatin_5fsmall_5fletters_19',['input_symbol_for_latin_small_letters',['../classxtd_1_1forms_1_1emoticons.html#a5ab939f7bc93a8f4f105ba1349abcb18',1,'xtd::forms::emoticons']]],
   ['input_5fsymbol_5ffor_5fnumbers_20',['input_symbol_for_numbers',['../classxtd_1_1forms_1_1emoticons.html#a71e568d0494f1c1bfdc6159de979fb3c',1,'xtd::forms::emoticons']]],
   ['input_5fsymbol_5ffor_5fsymbols_21',['input_symbol_for_symbols',['../classxtd_1_1forms_1_1emoticons.html#a6d631472a0b3ff75f83baf24f50476dc',1,'xtd::forms::emoticons']]],
-  ['invalid_5fhandle_22',['invalid_handle',['../classxtd_1_1threading_1_1wait__handle.html#a1e8c795b6aa1dfe8c2579f56bd17c837',1,'xtd::threading::wait_handle']]],
+  ['invalid_5fhandle_22',['invalid_handle',['../classxtd_1_1threading_1_1wait__handle.html#aff40193401e5dac803c50e750fcb1c01',1,'xtd::threading::wait_handle']]],
   ['ip_5fv6_5fany_23',['ip_v6_any',['../classxtd_1_1net_1_1ip__address.html#a09ad2c7df265c44764e325d02df1895e',1,'xtd::net::ip_address']]],
   ['ip_5fv6_5floopback_24',['ip_v6_loopback',['../classxtd_1_1net_1_1ip__address.html#aec19e1f22b8910e852dce40a4c6caf60',1,'xtd::net::ip_address']]],
   ['ip_5fv6_5fnone_25',['ip_v6_none',['../classxtd_1_1net_1_1ip__address.html#a0e65be30fda89784598cf8292360a25a',1,'xtd::net::ip_address']]],

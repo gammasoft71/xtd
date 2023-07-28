@@ -204,6 +204,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__exception.html">xtd::system_exception</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the base class for predefined exceptions in the xtd namespace.  <a href="classxtd_1_1system__exception.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html">xtd::threading::abandoned_mutex_exception</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The exception that is thrown when a Thread is in an invalid ThreadState for the method call.  <a href="classxtd_1_1threading_1_1abandoned__mutex__exception.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1thread__abort__exception.html">xtd::threading::thread_abort_exception</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The exception that is thrown when a method call is invalid for the object's current state.  <a href="classxtd_1_1threading_1_1thread__abort__exception.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -246,6 +249,9 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
+<tr class="memitem:ga713a2462ea55b59ed0bcc21dd9a9eeb8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__exceptions.html#ga713a2462ea55b59ed0bcc21dd9a9eeb8">abandoned_mutex_exception_</a>(...)</td></tr>
+<tr class="memdesc:ga713a2462ea55b59ed0bcc21dd9a9eeb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper on xtd::abandoned_mutex_exception to call it with current stack frame information.  <br /></td></tr>
+<tr class="separator:ga713a2462ea55b59ed0bcc21dd9a9eeb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9e1f5da6ab49dd27c1041ae8c1f9d1db"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__exceptions.html#ga9e1f5da6ab49dd27c1041ae8c1f9d1db">access_violation_exception_</a>(...)</td></tr>
 <tr class="memdesc:ga9e1f5da6ab49dd27c1041ae8c1f9d1db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper on <a class="el" href="classxtd_1_1access__violation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::access_violation_exception</a> to call it with current stack frame information.  <br /></td></tr>
 <tr class="separator:ga9e1f5da6ab49dd27c1041ae8c1f9d1db"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -392,6 +398,36 @@ Macros</h2></td></tr>
 <tr class="separator:gaa3dcab114f653d1058d059727a99a2ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ga713a2462ea55b59ed0bcc21dd9a9eeb8" name="ga713a2462ea55b59ed0bcc21dd9a9eeb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga713a2462ea55b59ed0bcc21dd9a9eeb8">&#9670;&#160;</a></span>abandoned_mutex_exception_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define abandoned_mutex_exception_</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="abandoned__mutex__exception_8h.html">xtd.core/include/xtd/threading/abandoned_mutex_exception.h</a>&gt;</code></p>
+
+<p>Helper on xtd::abandoned_mutex_exception to call it with current stack frame information. </p>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Is equivalent to xtd::abandoned_mutex_exception({any argument}, csf_) <div class="fragment"><div class="line"><span class="keywordtype">void</span> my_func() {</div>
+<div class="line">  <span class="keywordflow">if</span> (invalid_info) <span class="keywordflow">throw</span> <a class="code hl_define" href="group__exceptions.html#ga713a2462ea55b59ed0bcc21dd9a9eeb8">abandoned_mutex_exception_</a>(); <span class="comment">// same as : throw abandoned_mutex_exception(csf_);</span></div>
+<div class="line">  <span class="keywordflow">if</span> (invalid_value) <span class="keywordflow">throw</span> <a class="code hl_define" href="group__exceptions.html#ga713a2462ea55b59ed0bcc21dd9a9eeb8">abandoned_mutex_exception_</a>(<span class="stringliteral">&quot;Bad value&quot;</span>); <span class="comment">// same as : throw abandoned_mutex_exception(&quot;Bad value&quot;, csf_);</span></div>
+<div class="line">  ...</div>
+<div class="line">}</div>
+<div class="ttc" id="agroup__exceptions_html_ga713a2462ea55b59ed0bcc21dd9a9eeb8"><div class="ttname"><a href="group__exceptions.html#ga713a2462ea55b59ed0bcc21dd9a9eeb8">abandoned_mutex_exception_</a></div><div class="ttdeci">#define abandoned_mutex_exception_(...)</div><div class="ttdoc">Helper on xtd::abandoned_mutex_exception to call it with current stack frame information.</div><div class="ttdef"><b>Definition</b> abandoned_mutex_exception.h:104</div></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
 <a id="ga9e1f5da6ab49dd27c1041ae8c1f9d1db" name="ga9e1f5da6ab49dd27c1041ae8c1f9d1db"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga9e1f5da6ab49dd27c1041ae8c1f9d1db">&#9670;&#160;</a></span>access_violation_exception_</h2>
 
@@ -1876,7 +1912,7 @@ Macros</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 27 2023 01:21:34 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jul 28 2023 20:41:43 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
