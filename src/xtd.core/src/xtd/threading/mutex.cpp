@@ -13,13 +13,7 @@ using namespace xtd::threading;
 
 class mutex::mutex_base {
 public:
-  /*
-  mutex_base() = default;
-  mutex_base(mutex_base&&) = default;
-  mutex_base(const mutex_base&) = default;
-  mutex_base& operator=(const mutex_base&) = default;
-   */
-  virtual ~mutex_base() {}
+  virtual ~mutex_base() = default;
   
   virtual intptr_t handle() const noexcept = 0;
   virtual void handle(intptr_t value) = 0;
@@ -32,13 +26,8 @@ public:
 
 class mutex::named_mutex : public mutex_base {
 public:
-  /*
-  named_mutex() = default;
-  named_mutex(named_mutex&&) = default;
-  named_mutex(const named_mutex&) = default;
-  named_mutex& operator=(const named_mutex&) = default;
-   */
-  
+  ~named_mutex() {destroy();}
+
   intptr_t handle() const noexcept override {
     return handle_;
   }
@@ -58,8 +47,9 @@ public:
   }
   
   void destroy() override {
-    if (!handle_) return;
+    if (handle_ == invalid_handle) return;
     native::named_mutex::destroy(handle_, name_);
+    handle_ = invalid_handle;
   }
   
   bool signal(bool& io_error) override {
@@ -79,12 +69,7 @@ private:
 
 class mutex::unnamed_mutex : public mutex_base {
 public:
-  /*
-  unnamed_mutex() = default;
-  unnamed_mutex(unnamed_mutex&&) = default;
-  unnamed_mutex(const unnamed_mutex&) = default;
-  unnamed_mutex& operator=(const unnamed_mutex&) = default;
-   */
+  ~unnamed_mutex() {destroy();}
 
   intptr_t handle() const noexcept override {
     return reinterpret_cast<intptr_t>(handle_.get());
