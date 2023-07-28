@@ -704,6 +704,8 @@ add_sources(
   include/xtd/speech/synthesis/state_changed_event_handler
   include/xtd/speech/synthesis/synthesizer_state.h
   include/xtd/speech/synthesis/synthesizer_state
+  include/xtd/threading/abandoned_mutex_exception.h
+  include/xtd/threading/abandoned_mutex_exception
   include/xtd/threading/interlocked.h
   include/xtd/threading/interlocked
   include/xtd/threading/mutex.h
