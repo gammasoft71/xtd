@@ -144,6 +144,7 @@
 #include "speech/synthesis/state_changed_event_args.h"
 #include "speech/synthesis/state_changed_event_handler.h"
 #include "speech/synthesis/synthesizer_state.h"
+#include "threading/abandoned_mutex_exception.h"
 #include "threading/interlocked.h"
 #include "threading/mutex.h"
 #include "threading/thread.h"
