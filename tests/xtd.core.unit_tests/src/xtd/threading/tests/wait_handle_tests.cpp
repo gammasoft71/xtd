@@ -18,7 +18,7 @@ namespace xtd::tests {
       unnamed_mutex(const unnamed_mutex&) = default;
       unnamed_mutex& operator=(const unnamed_mutex&) = default;
 
-      intptr_t handle() const noexcept override {return reinterpret_cast<intptr_t>(mutex_.get());}
+      intptr_t handle() const noexcept override {return mutex_ ? reinterpret_cast<intptr_t>(mutex_.get()) : invalid_handle;}
       void handle(intptr_t value) override {mutex_.reset(reinterpret_cast<std::recursive_timed_mutex*>(value));}
       
       void release_mutex() {signal();}

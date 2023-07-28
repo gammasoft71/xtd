@@ -72,7 +72,7 @@ public:
   ~unnamed_mutex() {destroy();}
 
   intptr_t handle() const noexcept override {
-    return reinterpret_cast<intptr_t>(handle_.get());
+    return handle_ ? reinterpret_cast<intptr_t>(handle_.get()) : invalid_handle;
   }
   
   void handle(intptr_t value) override {
