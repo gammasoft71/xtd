@@ -22,6 +22,6 @@ string types::demangle(const string& name) {
   return auto_delete_char_pointer(result)();
 }
 
-uintmax_t types::invalid_handle() noexcept {
+intmax_t types::invalid_handle() noexcept {
   return 0;
 }
