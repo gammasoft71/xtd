@@ -710,6 +710,8 @@ add_sources(
   include/xtd/threading/interlocked
   include/xtd/threading/mutex.h
   include/xtd/threading/mutex
+  include/xtd/threading/semaphore.h
+  include/xtd/threading/semaphore
   include/xtd/threading/thread.h
   include/xtd/threading/thread
   include/xtd/threading/thread_abort_exception.h
@@ -858,6 +860,7 @@ add_sources(
   src/xtd/speech/synthesis/speech_synthesizer.cpp
   src/xtd/threading/interlocked.cpp
   src/xtd/threading/mutex.cpp
+  src/xtd/threading/semaphore.cpp
   src/xtd/threading/thread.cpp
   src/xtd/threading/timeout.cpp
   src/xtd/threading/wait_handle.cpp

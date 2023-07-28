@@ -53,6 +53,7 @@ add_sources(
   src/xtd/native/macos/guid.mm
   src/xtd/native/macos/interlocked.mm
   src/xtd/native/macos/named_mutex.mm
+  src/xtd/native/macos/named_semaphore.mm
   src/xtd/native/macos/path.mm
   src/xtd/native/macos/process.mm
   src/xtd/native/macos/socket.mm
