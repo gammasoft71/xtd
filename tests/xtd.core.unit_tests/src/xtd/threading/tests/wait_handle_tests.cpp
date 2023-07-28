@@ -54,7 +54,7 @@ namespace xtd::tests {
   public:
     void test_method_(invalid_handle) {
 #if defined(_WIN32)
-      assert::are_equal(INVALID_HANDLE_VALUE, wait_handle::invalid_handle, csf_);
+      assert::are_equal(reinterpret_cast<intptr_t>(INVALID_HANDLE_VALUE), wait_handle::invalid_handle, csf_);
 #else
       assert::are_equal(0, wait_handle::invalid_handle, csf_);
 #endif
