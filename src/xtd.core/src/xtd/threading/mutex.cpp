@@ -17,8 +17,8 @@ public:
   
   virtual intptr_t handle() const noexcept = 0;
   virtual void handle(intptr_t value) = 0;
-  virtual bool create() = 0;
-  virtual bool create(const ustring& name, bool& create_new) = 0;
+  virtual bool create(bool initially_owned) = 0;
+  virtual bool create(bool initially_owned, const ustring& name, bool& create_new) = 0;
   virtual void destroy() = 0;
   virtual bool signal(bool& io_error) = 0;
   virtual bool wait(int32_t milliseconds_timeout, bool& io_error) = 0;
@@ -36,13 +36,13 @@ public:
     handle_ = value;
   }
   
-  bool create() override {
+  bool create(bool initially_owned) override {
     throw invalid_operation_exception {csf_};
   }
   
-  bool create(const ustring& name, bool& create_new) override {
+  bool create(bool initially_owned, const ustring& name, bool& create_new) override {
     name_ = name;
-    handle_ = native::named_mutex::create(name, create_new);
+    handle_ = native::named_mutex::create(initially_owned, name, create_new);
     return handle_ != invalid_handle;
   }
   
@@ -79,12 +79,14 @@ public:
     handle_.reset(reinterpret_cast<std::recursive_timed_mutex*>(value));
   }
 
-  bool create() override {
+  bool create(bool initially_owned) override {
     handle_ = std::make_shared<std::recursive_timed_mutex>();
+    bool io_error = false;
+    if (initially_owned) return wait(-1, io_error);
     return true;
   }
   
-  bool create(const ustring& name, bool& create_new) override {
+  bool create(bool initially_owned, const ustring& name, bool& create_new) override {
     throw invalid_operation_exception {csf_};
   }
 
@@ -162,7 +164,7 @@ bool mutex::try_open_existing(const ustring& name, mutex& result) noexcept {
   new_mutex.name_ = name;
   new_mutex.mutex_ = std::make_shared<mutex::named_mutex>();
   bool created_new = true;
-  if (new_mutex.mutex_->create(new_mutex.name_, created_new)) return false;
+  if (new_mutex.mutex_->create(false, new_mutex.name_, created_new)) return false;
   if (created_new) return false;
   result = new_mutex;
   return true;
@@ -189,10 +191,9 @@ void mutex::create(bool initially_owned, bool& created_new) {
   created_new = true;
   if (name_.empty()) {
     mutex_ = std::make_shared<mutex::unnamed_mutex>();
-    if (!mutex_->create()) throw io::io_exception(csf_);
+    if (!mutex_->create(initially_owned)) throw io::io_exception(csf_);
   } else {
     mutex_ = std::make_shared<mutex::named_mutex>();
-    if (!mutex_->create(name_, created_new)) throw io::io_exception(csf_);
+    if (!mutex_->create(initially_owned, name_, created_new)) throw io::io_exception(csf_);
   }
-  if (initially_owned) wait_one();
 }
