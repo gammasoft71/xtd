@@ -32,6 +32,9 @@ using __ulong__ = unsigned long; // Workaround: On linux 64 bits unfortunately '
 namespace xtd {
   /// @cond
   class ustring;
+  namespace threading {
+    class wait_handle;
+  }
   /// @endcond
   
   /// @brief The xtd::native namespace contains internal native API definitions to access underlying operating system components used by xtd.core library.
@@ -47,6 +50,7 @@ namespace xtd {
     class core_native_export_ types final {
       types() = delete;
       friend xtd::ustring;
+      friend xtd::threading::wait_handle;
     protected:
       /// @name Protected methods
       
@@ -56,6 +60,10 @@ namespace xtd {
       /// @return The demangled string of name.
       /// @warning Internal use only
       static std::string demangle(const std::string& name);
+      
+      /// @brief Gets an invalid native operating system handle.
+      /// @return An invalid native operating system handle.
+      static uintmax_t invalid_handle() noexcept;
       /// @}
     };
   }
