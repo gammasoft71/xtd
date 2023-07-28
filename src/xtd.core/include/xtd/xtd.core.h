@@ -155,6 +155,7 @@
 #include "threading/thread_state_exception.h"
 #include "threading/timeout.h"
 #include "threading/wait_handle.h"
+#include "threading/wait_handle_cannot_be_opened_exception.h"
 #include "web/css/css_reader.h"
 #include "web/css/css_writer.h"
 #include "web/css/property.h"

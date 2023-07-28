@@ -232,5 +232,6 @@ add_sources(
   src/xtd/threading/tests/thread_state_tests.cpp
   src/xtd/threading/tests/timeout_tests.cpp
   src/xtd/threading/tests/wait_handle_tests.cpp
+  src/xtd/threading/tests/wait_handle_cannot_be_opened_exception_tests.cpp
 )
 target_type(TEST_APPLICATION)
