@@ -363,7 +363,7 @@
 
 | Name                                                                                                                                                                 | Type         | Status                                 |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | -------------------------------------- |
-| [abandoned_mutex_exception](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/threading/abandoned_mutex_exception.h)                           | exception    | ![progress](/pictures/progress0.png)   |
+| [abandoned_mutex_exception](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/threading/abandoned_mutex_exception.h)                           | exception    | ![progress](/pictures/progress100.png) |
 | [auto_reset_event](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/threading/auto_reset_event.h)                                             | class        | ![progress](/pictures/progress0.png)   |
 | [event_reset_mode](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/threading/event_reset_mode.h)                                             | enumeration  | ![progress](/pictures/progress0.png)   |
 | [event_wait_handle](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/threading/event_wait_handle.h)                                           | class        | ![progress](/pictures/progress0.png)   |
@@ -371,7 +371,7 @@
 | [lock_recursion_exception](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/threading/lock_recursion_exception.h)                             | exception    | ![progress](/pictures/progress0.png)   |
 | [manual_reset_event](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/threading/manual_reset_event.h)                                         | class        | ![progress](/pictures/progress0.png)   |
 | [monitor](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/threading/monitor.h)                                                               | class        | ![progress](/pictures/progress0.png)   |
-| [mutex](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/threading/mutex.h)                                                                   | class        | ![progress](/pictures/progress75.png)  |
+| [mutex](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/threading/mutex.h)                                                                   | class        | ![progress](/pictures/progress100.png) |
 | [registered_wait_handle](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/threading/registered_wait_handle.h)                                 | class        | ![progress](/pictures/progress0.png)   |
 | [synchronization_lock_exception](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/threading/synchronization_lock_exception.h)                 | exception    | ![progress](/pictures/progress0.png)   |
 | [thread](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/threading/thread.h)                                                                 | class        | ![progress](/pictures/progress50.png)  |
