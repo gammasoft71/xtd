@@ -30,19 +30,6 @@ bool wait_handle::signal_and_wait(wait_handle& to_signal, wait_handle& to_wait, 
   return signal_and_wait(to_signal, to_wait, to_milliseconds(timeout));
 }
 
-bool wait_handle::wait_one() {
-  return do_wait(timeout::infinite);
-}
-
-bool wait_handle::wait_one(int32_t milliseconds_timeout) {
-  if (milliseconds_timeout < timeout::infinite) throw argument_exception(csf_);
-  return do_wait(milliseconds_timeout);
-}
-
-bool wait_handle::wait_one(const time_span& timeout) {
-  return do_wait(to_milliseconds(timeout));
-}
-
 bool wait_handle::wait_all(const std::initializer_list<std::shared_ptr<wait_handle>>& wait_handles){
   return wait_all(wait_handles, timeout::infinite);
 }
@@ -160,6 +147,19 @@ size_t wait_handle::wait_any(const vector<unique_ptr<wait_handle>>& wait_handles
 
 size_t wait_handle::wait_any(const vector<unique_ptr<wait_handle>>& wait_handles, const time_span& timeout) {
   return wait_any(wait_handles, to_milliseconds(timeout));
+}
+
+bool wait_handle::wait_one() {
+  return do_wait(timeout::infinite);
+}
+
+bool wait_handle::wait_one(int32_t milliseconds_timeout) {
+  if (milliseconds_timeout < timeout::infinite) throw argument_exception(csf_);
+  return do_wait(milliseconds_timeout);
+}
+
+bool wait_handle::wait_one(const time_span& timeout) {
+  return do_wait(to_milliseconds(timeout));
 }
 
 bool wait_handle::do_wait(int32_t milliseconds_timeout) {
