@@ -1,3 +1,6 @@
+#define __XTD_CORE_NATIVE_LIBRARY__
+#include <xtd/native/types.h>
+#undef __XTD_CORE_NATIVE_LIBRARY__
 #include "../../../include/xtd/threading/thread.h"
 #include "../../../include/xtd/threading/wait_handle.h"
 #include "../../../include/xtd/argument_exception.h"
@@ -6,6 +9,8 @@ using namespace std;
 using namespace std::chrono;
 using namespace xtd;
 using namespace xtd::threading;
+
+const intptr_t wait_handle::invalid_handle = native::types::invalid_handle();
 
 wait_handle::~wait_handle() {
   close();
@@ -194,7 +199,7 @@ size_t wait_handle::wait_any(const std::vector<wait_handle*>& wait_handles, int3
       thread::yield();
       thread::sleep(1);
     }
-    return as<size_t>(wait_timeout);
+    return wait_timeout;
   }
   
   int32_t timeout = milliseconds_timeout;
@@ -203,10 +208,10 @@ size_t wait_handle::wait_any(const std::vector<wait_handle*>& wait_handles, int3
     for (auto index = 0ul; index < wait_handles.size(); index++) {
       if (wait_handles[index]->wait_one(0) == true) return index;
       timeout = milliseconds_timeout - as<int32_t>(std::chrono::nanoseconds(std::chrono::high_resolution_clock::now().time_since_epoch()).count() / 1000000 - start);
-      if (timeout < 0) return as<size_t>(wait_timeout);
+      if (timeout < 0) return wait_timeout;
       thread::yield();
       thread::sleep(1);
     }
   } while (timeout >= 0);
-  return as<size_t>(wait_timeout);
+  return wait_timeout;
 }

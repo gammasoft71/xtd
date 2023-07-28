@@ -43,11 +43,15 @@ namespace xtd {
       /// @name Fields
       
       /// @{
-      /// @brief Represents an invalid native operating system handle. This field is constant.
-      static constexpr intptr_t invalid_handle = 0;
+      /// @brief Represents an invalid native operating system handle. This field is read-only.
+      /// @remarks Used internally to initialize the xtd::threading::wait_handle::handle property.
+      /// @par Notes to Inheritors
+      /// You can use this value to determine whether the xtd::threading::wait_handle::handle property contains a valid native operating system handle.
+      static const intptr_t invalid_handle;
       
-      /// @brief Indicates that a xtd::tThreading::wait_handle::wait_any(const xtd::threading::wait_handle[], int32_t, bool) operation timed out before any of the wait handles were signaled. This field is constant.
-      static constexpr int32_t wait_timeout = -1;
+      /// @brief Indicates that a xtd::threading::wait_handle::wait_any operation timed out before any of the wait handles were signaled. This field is constant.
+      /// @remrarks This field is one of the possible return values of xtd::threading::wait_handle::wait_any.
+      static constexpr size_t wait_timeout = 0xFFFFFFFFFFFFFFFF;
       
 
       /// @name Constructors
