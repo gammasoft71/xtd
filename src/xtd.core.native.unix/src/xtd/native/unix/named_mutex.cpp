@@ -8,11 +8,15 @@
 
 using namespace xtd::native;
 
-intmax_t named_mutex::create(const std::string& name, bool& create_new) {
+intmax_t named_mutex::create(bool initially_owned, const std::string& name, bool& create_new) {
   sem_t* semaphore = nullptr;
   semaphore = sem_open(name.c_str(), O_CREAT | O_EXCL, S_IRUSR | S_IWUSR, 1);
   create_new = semaphore != SEM_FAILED;
   if (semaphore == SEM_FAILED) semaphore = sem_open(name.c_str(), O_CREAT, S_IRUSR | S_IWUSR, 1);
+  if (semaphore != SEM_FAILED && initially_owned) {
+    bool io_error = false;
+    wait(reinterpret_cast<intmax_t>(semaphore), -1, io_error);
+  }
   return semaphore != SEM_FAILED ? reinterpret_cast<intmax_t>(semaphore) : 0;
 }
 

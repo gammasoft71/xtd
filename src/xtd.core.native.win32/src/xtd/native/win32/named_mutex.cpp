@@ -9,8 +9,8 @@
 
 using namespace xtd::native;
 
-intmax_t named_mutex::create(const std::string& name, bool& create_new) {
-  auto handle = CreateMutex(nullptr, FALSE, win32::strings::to_wstring(name).c_str());
+intmax_t named_mutex::create(bool initially_owned, const std::string& name, bool& create_new) {
+  auto handle = CreateMutex(nullptr, initially_owned, win32::strings::to_wstring(name).c_str());
   create_new = handle != INVALID_HANDLE_VALUE;
   if (!handle && GetLastError() == ERROR_ALREADY_EXISTS) handle = OpenMutex(MUTEX_ALL_ACCESS, FALSE, win32::strings::to_wstring(name).c_str());
   return reinterpret_cast<intmax_t>(handle);
