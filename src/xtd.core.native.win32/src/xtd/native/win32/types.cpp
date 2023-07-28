@@ -1,6 +1,9 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/types.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
+#include <Windows.h>
+#undef max
+#undef min
 
 using namespace std;
 using namespace std::literals;
@@ -17,4 +20,8 @@ string types::demangle(const string& name) {
     }
   }
   return result;
+}
+
+uintmax_t types::invalid_handle() noexcept {
+  return INVALID_HANDLE_VALUE;
 }
