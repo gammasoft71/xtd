@@ -110,9 +110,7 @@ private:
   std::shared_ptr<std::recursive_timed_mutex> handle_;
 };
 
-mutex::mutex() {
-  bool created_new = false;
-  create(false, created_new);
+mutex::mutex() : mutex(false) {
 }
 
 mutex::mutex(bool initially_owned) {
@@ -158,7 +156,7 @@ void mutex::release_mutex() {
   if (!signal()) throw io::io_exception {csf_};
 }
 
-bool mutex::try_open_existing(const ustring& name, mutex& result) {
+bool mutex::try_open_existing(const ustring& name, mutex& result) noexcept {
   if (ustring::is_empty(name)) return false;
   auto new_mutex = mutex {};
   new_mutex.name_ = name;
