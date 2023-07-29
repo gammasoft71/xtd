@@ -114,8 +114,8 @@ namespace xtd {
         
         if_expected.seekg(0, std::ios::end);
         if_actual.seekg(0, std::ios::end);
-        size_t size_expected = if_expected.tellg();
-        size_t size_actual = if_actual.tellg();
+        size_t size_expected = static_cast<size_t>(if_expected.tellg());
+        size_t size_actual = static_cast<size_t>(if_actual.tellg());
         if (size_expected != size_actual) {
           base_assert::fail("istream length " + base_assert::to_string(size_expected), base_assert::to_string(size_actual), message, stack_frame);
           return;
@@ -326,8 +326,8 @@ namespace xtd {
         
         if_expected.seekg(0, std::ios::end);
         if_actual.seekg(0, std::ios::end);
-        size_t size_expected = if_expected.tellg();
-        size_t size_actual = if_actual.tellg();
+        size_t size_expected = static_cast<size_t>(if_expected.tellg());
+        size_t size_actual = static_cast<size_t>(if_actual.tellg());
         if (size_expected != size_actual) {
           assert::succeed(message, stack_frame);
           return;
