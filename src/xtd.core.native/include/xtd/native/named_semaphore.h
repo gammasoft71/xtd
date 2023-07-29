@@ -43,23 +43,23 @@ namespace xtd {
       /// @param creat_new When this method returns, contains a boolthat is true if the specified named system semaphore was created; false if the specified named system semaphore already existed.
       /// @return The handle of the created or open semaphore.
       /// @warning Internal use only
-      static intmax_t create(const std::string& name, bool& create_new);
+      static intptr_t create(const std::string& name, bool& create_new);
       /// @brief Destroy named semaphore with specified semaphore handle.
       /// @param name The name of the semaphore.
       /// @param handle The semaphore handle to destroy.
       /// @warning Internal use only
-      static void destroy(intmax_t handle, const std::string& name);
+      static void destroy(intptr_t handle, const std::string& name);
       /// @brief Signal named semaphore with specified semaphore handle.
       /// @param handle The semaphore handle to signal.
       /// @return true if succeed; otherwhise false.
       /// @warning Internal use only
-      static bool signal(intmax_t handle, bool& io_error);
+      static bool signal(intptr_t handle, bool& io_error);
       /// @brief Wait named semaphore with specified semaphore handle and timeout.
       /// @param handle The semaphore handle to wait.
       /// @param milliseconds_timeout The timeout in milliseconds (-1 is infinite timeout).
       /// @return true if succeed; otherwhise false.
       /// @warning Internal use only
-      static bool wait(intmax_t handle, int_least32_t milliseconds_timeout, bool& io_error);
+      static bool wait(intptr_t handle, int_least32_t milliseconds_timeout, bool& io_error);
       /// @}
     };
   }

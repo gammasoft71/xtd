@@ -60,14 +60,14 @@ int_least32_t socket::native_to_address_family(int_least32_t address_family) {
   return it->second;
 }
 
-intmax_t socket::accept(intmax_t handle, vector<uint_least8_t>& socket_address) {
+intptr_t socket::accept(intptr_t handle, vector<uint_least8_t>& socket_address) {
   int_least32_t address_length = static_cast<int_least32_t>(socket_address.size());
-  intmax_t socket = static_cast<intmax_t>(::accept(static_cast<SOCKET>(handle), reinterpret_cast<SOCKADDR*>(socket_address.data()), &address_length));
+  intptr_t socket = static_cast<intptr_t>(::accept(static_cast<SOCKET>(handle), reinterpret_cast<SOCKADDR*>(socket_address.data()), &address_length));
   if (socket_address.size() != static_cast<size_t>(address_length)) socket_address.resize(static_cast<size_t>(address_length));
   return socket;
 }
 
-int_least32_t socket::bind(intmax_t handle, const vector<uint_least8_t>& socket_address) {
+int_least32_t socket::bind(intptr_t handle, const vector<uint_least8_t>& socket_address) {
   return ::bind(static_cast<SOCKET>(handle), reinterpret_cast<const SOCKADDR*>(socket_address.data()), static_cast<int_least32_t>(socket_address.size()));
 }
 
@@ -75,19 +75,19 @@ void socket::cleanup() {
   WSACleanup();
 }
 
-int_least32_t socket::connect(intmax_t handle, const vector<uint_least8_t>& socket_address) {
+int_least32_t socket::connect(intptr_t handle, const vector<uint_least8_t>& socket_address) {
   return ::connect(static_cast<SOCKET>(handle), reinterpret_cast<const SOCKADDR*>(socket_address.data()), static_cast<int_least32_t>(socket_address.size()));
 }
 
-intmax_t socket::create(int_least32_t address_family, int_least32_t socket_type, int_least32_t protocol_type) {
-  return static_cast<intmax_t>(::socket(address_family_to_native(address_family), socket_type_to_native(socket_type), protocol_type_to_native(protocol_type)));
+intptr_t socket::create(int_least32_t address_family, int_least32_t socket_type, int_least32_t protocol_type) {
+  return static_cast<intptr_t>(::socket(address_family_to_native(address_family), socket_type_to_native(socket_type), protocol_type_to_native(protocol_type)));
 }
 
-int_least32_t socket::destroy(intmax_t handle) {
+int_least32_t socket::destroy(intptr_t handle) {
   return ::closesocket(static_cast<SOCKET>(handle));
 }
 
-size_t socket::get_available(intmax_t handle) {
+size_t socket::get_available(intptr_t handle) {
   u_long nbr_bytes_available = 0;
   if (::ioctlsocket(static_cast<SOCKET>(handle), FIONREAD, &nbr_bytes_available) != 0) return static_cast<size_t>(-1);
   return static_cast<size_t>(nbr_bytes_available);
@@ -111,15 +111,15 @@ bool socket::get_os_supports_ip_v6() noexcept {
   return true;
 }
 
-int_least32_t socket::get_raw_socket_option(intmax_t handle, int_least32_t socket_option_level, int_least32_t socket_option_name, intmax_t option, size_t& option_length) {
+int_least32_t socket::get_raw_socket_option(intptr_t handle, int_least32_t socket_option_level, int_least32_t socket_option_name, intptr_t option, size_t& option_length) {
   return ::getsockopt(static_cast<SOCKET>(handle), socket_option_level, socket_option_name, reinterpret_cast<char*>(option), reinterpret_cast<int_least32_t*>(&option_length));
 }
 
-int_least32_t socket::get_socket_option(intmax_t handle, int_least32_t socket_option_level, int_least32_t socket_option_name, intmax_t option, size_t& option_length) {
+int_least32_t socket::get_socket_option(intptr_t handle, int_least32_t socket_option_level, int_least32_t socket_option_name, intptr_t option, size_t& option_length) {
   return ::getsockopt(static_cast<SOCKET>(handle), socket_option_level_to_native(socket_option_level), socket_option_name_to_native(socket_option_name), reinterpret_cast<char*>(option), reinterpret_cast<int_least32_t*>(&option_length));
 }
 
-int_least32_t socket::get_socket_linger_option(intmax_t handle, bool& enabled, uint_least32_t& linger_time) {
+int_least32_t socket::get_socket_linger_option(intptr_t handle, bool& enabled, uint_least32_t& linger_time) {
   LINGER l {static_cast<u_short>(enabled), static_cast<u_short>(linger_time)};
   size_t linger_size = sizeof(LINGER);
   int_least32_t result = ::getsockopt(static_cast<SOCKET>(handle), SOL_SOCKET, SO_LINGER, reinterpret_cast<char*>(&l), reinterpret_cast<int_least32_t*>(&linger_size));
@@ -130,7 +130,7 @@ int_least32_t socket::get_socket_linger_option(intmax_t handle, bool& enabled, u
   return result;
 }
 
-int_least32_t socket::get_socket_multicast_option(intmax_t handle, int_least32_t socket_option_name, uint_least32_t& multicast_address, uint_least32_t& interface_index) {
+int_least32_t socket::get_socket_multicast_option(intptr_t handle, int_least32_t socket_option_name, uint_least32_t& multicast_address, uint_least32_t& interface_index) {
   struct multicast {
     uint_least32_t multicast_address;
     uint_least32_t interface_index;
@@ -144,7 +144,7 @@ int_least32_t socket::get_socket_multicast_option(intmax_t handle, int_least32_t
   return result;
 }
 
-int_least32_t socket::get_socket_ip_v6_multicast_option(intmax_t handle, int_least32_t socket_option_name, vector<uint_least8_t>& multicast_address, uint_least32_t& interface_index) {
+int_least32_t socket::get_socket_ip_v6_multicast_option(intptr_t handle, int_least32_t socket_option_name, vector<uint_least8_t>& multicast_address, uint_least32_t& interface_index) {
   struct multicast {
     uint_least8_t multicast_address[16];
     uint_least32_t interface_index;
@@ -159,19 +159,19 @@ int_least32_t socket::get_socket_ip_v6_multicast_option(intmax_t handle, int_lea
   return result;
 }
 
-int_least32_t socket::io_control(intmax_t handle, int_least32_t io_control, vector<uint_least8_t>& option_in_value, vector<uint_least8_t>& option_out_value) {
+int_least32_t socket::io_control(intptr_t handle, int_least32_t io_control, vector<uint_least8_t>& option_in_value, vector<uint_least8_t>& option_out_value) {
   size_t option_out_value_size = 0;
   int_least32_t result = WSAIoctl(static_cast<SOCKET>(handle), io_control, option_in_value.data(), static_cast<int_least32_t>(option_in_value.size()), option_out_value.data(), static_cast<int_least32_t>(option_out_value.size()), reinterpret_cast<LPDWORD>(&option_out_value_size), nullptr, nullptr);
   if (option_out_value.size() != option_out_value_size) option_out_value.resize(option_out_value_size);
   return result;
 }
 
-int_least32_t socket::listen(intmax_t handle, size_t backlog) {
+int_least32_t socket::listen(intptr_t handle, size_t backlog) {
   int_least32_t backlog_value = backlog != static_cast<size_t>(-1) ? static_cast<int_least32_t>(backlog) : SOMAXCONN;
   return ::listen(static_cast<SOCKET>(handle), backlog_value);
 }
 
-int_least32_t socket::poll(intmax_t handle, int_least32_t microseconds, int_least32_t mode) {
+int_least32_t socket::poll(intptr_t handle, int_least32_t microseconds, int_least32_t mode) {
   if (handle == 0 || microseconds < 0) return -1;
   
   timeval timeout = {microseconds / 1000000, microseconds % 1000000};
@@ -186,18 +186,18 @@ int_least32_t socket::poll(intmax_t handle, int_least32_t microseconds, int_leas
   }
 }
 
-int_least32_t socket::receive(intmax_t handle, vector<uint_least8_t>& buffer, size_t offset, size_t size, int_least32_t flags) {
+int_least32_t socket::receive(intptr_t handle, vector<uint_least8_t>& buffer, size_t offset, size_t size, int_least32_t flags) {
   return static_cast<int_least32_t>(::recv(static_cast<SOCKET>(handle), reinterpret_cast<char*>(&buffer.data()[offset]), static_cast<int_least32_t>(size), flags));
 }
 
-int_least32_t socket::receive_from(intmax_t handle, vector<uint_least8_t>& buffer, size_t offset, size_t size, int_least32_t flags, vector<uint_least8_t>& socket_address) {
+int_least32_t socket::receive_from(intptr_t handle, vector<uint_least8_t>& buffer, size_t offset, size_t size, int_least32_t flags, vector<uint_least8_t>& socket_address) {
   int_least32_t address_length = static_cast<int_least32_t>(socket_address.size());
   int_least32_t result = static_cast<int_least32_t>(::recvfrom(static_cast<SOCKET>(handle), reinterpret_cast<char*>(&buffer.data()[offset]), static_cast<int_least32_t>(size), flags, reinterpret_cast<SOCKADDR*>(socket_address.data()), &address_length));
   if (socket_address.size() != static_cast<size_t>(address_length)) socket_address.resize(static_cast<size_t>(address_length));
   return result;
 }
 
-int_least32_t socket::select(vector<intmax_t>& check_read, vector<intmax_t>& check_write, vector<intmax_t>& check_error, int_least32_t microseconds) {
+int_least32_t socket::select(vector<intptr_t>& check_read, vector<intptr_t>& check_write, vector<intptr_t>& check_error, int_least32_t microseconds) {
   size_t nfds = 0;
   
   fd_set read_fds;
@@ -243,33 +243,33 @@ int_least32_t socket::select(vector<intmax_t>& check_read, vector<intmax_t>& che
   return result;
 }
 
-int_least32_t socket::send(intmax_t handle, const vector<uint_least8_t>& buffer, size_t offset, size_t size, int_least32_t flags) {
+int_least32_t socket::send(intptr_t handle, const vector<uint_least8_t>& buffer, size_t offset, size_t size, int_least32_t flags) {
   return static_cast<int_least32_t>(::send(static_cast<SOCKET>(handle), reinterpret_cast<const char*>(&buffer.data()[offset]), static_cast<int_least32_t>(size), flags));
 }
 
-int_least32_t socket::send_to(intmax_t handle, const vector<uint_least8_t>& buffer, size_t offset, size_t size, int_least32_t flags, const vector<uint_least8_t>& socket_address) {
+int_least32_t socket::send_to(intptr_t handle, const vector<uint_least8_t>& buffer, size_t offset, size_t size, int_least32_t flags, const vector<uint_least8_t>& socket_address) {
   return static_cast<int_least32_t>(::sendto(static_cast<SOCKET>(handle), reinterpret_cast<const char*>(&buffer.data()[offset]), static_cast<int_least32_t>(size), flags, reinterpret_cast<const SOCKADDR*>(socket_address.data()), static_cast<int_least32_t>(socket_address.size())));
 }
 
-int_least32_t socket::set_blocking(intmax_t handle, bool blocking) {
+int_least32_t socket::set_blocking(intptr_t handle, bool blocking) {
   u_long mode = blocking ? 0 : 1;
   return ioctlsocket(static_cast<SOCKET>(handle), FIONBIO, &mode);
 }
 
-int_least32_t socket::set_raw_socket_option(intmax_t handle, int_least32_t socket_option_level, int_least32_t socket_option_name, intmax_t option, size_t option_length) {
+int_least32_t socket::set_raw_socket_option(intptr_t handle, int_least32_t socket_option_level, int_least32_t socket_option_name, intptr_t option, size_t option_length) {
   return setsockopt(static_cast<SOCKET>(handle), socket_option_level, socket_option_name, reinterpret_cast<const char*>(option), static_cast<int_least32_t>(option_length));
 }
 
-int_least32_t socket::set_socket_option(intmax_t handle, int_least32_t socket_option_level, int_least32_t socket_option_name, intmax_t option, size_t option_length) {
+int_least32_t socket::set_socket_option(intptr_t handle, int_least32_t socket_option_level, int_least32_t socket_option_name, intptr_t option, size_t option_length) {
   return setsockopt(static_cast<SOCKET>(handle), socket_option_level_to_native(socket_option_level), socket_option_name_to_native(socket_option_name), reinterpret_cast<const char*>(option), static_cast<int_least32_t>(option_length));
 }
 
-int_least32_t socket::set_socket_linger_option(intmax_t handle, bool enabled, uint_least32_t linger_time) {
+int_least32_t socket::set_socket_linger_option(intptr_t handle, bool enabled, uint_least32_t linger_time) {
   LINGER l {static_cast<u_short>(enabled), static_cast<u_short>(linger_time)};
   return setsockopt(static_cast<SOCKET>(handle), SOL_SOCKET, SO_LINGER, reinterpret_cast<const char*>(&l), static_cast<int_least32_t>(sizeof(LINGER)));
 }
 
-int_least32_t socket::set_socket_multicast_option(intmax_t handle, int_least32_t socket_option_name, uint_least32_t multicast_address, uint_least32_t interface_index) {
+int_least32_t socket::set_socket_multicast_option(intptr_t handle, int_least32_t socket_option_name, uint_least32_t multicast_address, uint_least32_t interface_index) {
   struct multicast {
     uint_least32_t multicast_address;
     uint_least32_t interface_index;
@@ -277,7 +277,7 @@ int_least32_t socket::set_socket_multicast_option(intmax_t handle, int_least32_t
   return setsockopt(static_cast<SOCKET>(handle), IPPROTO_TCP, socket_option_name_to_native(socket_option_name), reinterpret_cast<const char*>(&m), static_cast<int_least32_t>(sizeof(multicast)));
 }
 
-int_least32_t socket::set_socket_ip_v6_multicast_option(intmax_t handle, int_least32_t socket_option_name, const vector<uint_least8_t>& multicast_address, uint_least32_t interface_index) {
+int_least32_t socket::set_socket_ip_v6_multicast_option(intptr_t handle, int_least32_t socket_option_name, const vector<uint_least8_t>& multicast_address, uint_least32_t interface_index) {
   struct multicast {
     uint_least8_t multicast_address[16];
     uint_least32_t interface_index;
@@ -288,7 +288,7 @@ int_least32_t socket::set_socket_ip_v6_multicast_option(intmax_t handle, int_lea
   return setsockopt(static_cast<SOCKET>(handle), IPPROTO_TCP, socket_option_name_to_native(socket_option_name), reinterpret_cast<const char*>(&m), static_cast<int_least32_t>(sizeof(multicast)));
 }
 
-int_least32_t socket::shutdown(intmax_t handle, int_least32_t how) {
+int_least32_t socket::shutdown(intptr_t handle, int_least32_t how) {
   return ::shutdown(static_cast<SOCKET>(handle), how);
 }
 

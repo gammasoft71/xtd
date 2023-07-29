@@ -1190,7 +1190,7 @@ namespace xtd {
     /// | h      | short int     | unsigned short int     |                 |       |          |       | short int*     |
     /// | l      | long int      | unsigned long int      |                 | win_t | wchar* |       | long int*      |
     /// | ll     | long long int | unsigned long long int |                 |       |          |       | long long int* |
-    /// | j      | intmax_t      | uintmax_t              |                 |       |          |       | intmax_t*      |
+    /// | j      | intptr_t      | uintptr_t              |                 |       |          |       | intptr_t*      |
     /// | z      | size_t        | size_t                 |                 |       |          |       | size_t*        |
     /// | t      | ptrdiff_t     | ptrdiff_t              |                 |       |          |       | ptrdiff_t*     |
     /// | L      |               |                        | long double     |       |          |       |                |
