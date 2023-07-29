@@ -5,12 +5,12 @@
 #endif
 /// @endcond
 
-#include <cstdint>
 #include <istream>
 #include <map>
 #include <tuple>
 #include <vector>
 #include <xtd/static.h>
+#include <xtd/types.h>
 #include <xtd/ustring.h>
 #include <xtd/drawing_native_export.h>
 
