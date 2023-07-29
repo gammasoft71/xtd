@@ -50,7 +50,7 @@ namespace xtd {
       /// * [2] : The created ostream for the standard input.
       /// * [3] : The created istream for the standard output.
       /// * [4] : The created istream for the standard error.
-      using started_process = std::tuple<intmax_t, int_least32_t, std::unique_ptr<std::ostream>, std::unique_ptr<std::istream>, std::unique_ptr<std::istream>>;
+      using started_process = std::tuple<intptr_t, int_least32_t, std::unique_ptr<std::ostream>, std::unique_ptr<std::istream>, std::unique_ptr<std::istream>>;
       /// @brief Gets the base priority xof the associated process.
       /// @param priority The process handle.
       /// @return The base priority, which is computed from the process priority class of the associated process. (see priority_class.h file).
@@ -68,13 +68,13 @@ namespace xtd {
       /// @param process The process handle to kill.
       /// @return true if succeed; otherwise false.
       /// @warning Internal use only
-      static bool kill(intmax_t process);
+      static bool kill(intptr_t process);
       /// @brief Sets the overall priority category for the associated process.
       /// @param process The process handle to set priority class.
       /// @param priority The priority category for the associated process, from which the base_priority of the process is calculated. (see priority_class.h file).
       /// @return true if succeed; otherwise false.
       /// @warning Internal use only
-      static bool priority_class(intmax_t process, int_least32_t priority);
+      static bool priority_class(intptr_t process, int_least32_t priority);
       /// @brief Creates a process with specified file name, specified arguments, specified working directory, specified process creation flags, and specified process window style.
       /// @param file_name the name of the application file to run in process launched by the shell execute.
       /// @param arguments Command-line arguments to pass when starting the process.
@@ -82,7 +82,7 @@ namespace xtd {
       /// @param process_window_style One of the values that indicates whether the process is started in a window that is maximized, minimized, normal (neither maximized nor minimized), or not visible. The default is Normal. (see process_window_window_style.h file).
       /// @return The created process handle.
       /// @warning Internal use only
-      static intmax_t shell_execute(const std::string& verb, const std::string& file_name, const std::string& arguments, const std::string& working_directory, int_least32_t process_window_style);
+      static intptr_t shell_execute(const std::string& verb, const std::string& file_name, const std::string& arguments, const std::string& working_directory, int_least32_t process_window_style);
       /// @brief Starts a process with specified file name, specified arguments, specified working directory, specified process window style, specified process creation flags, and specified boolean tuples that represent redirect standard streams.
       /// @param file_name the name of the application file to run in the process.
       /// @param arguments Command-line arguments to pass when starting the process.
@@ -101,7 +101,7 @@ namespace xtd {
       /// @param exit Receives the process exit code.
       /// @return true if succeed; otherwise false.
       /// @warning Internal use only
-      static bool wait(intmax_t process, int_least32_t& exit_code);
+      static bool wait(intptr_t process, int_least32_t& exit_code);
       /// @}
     };
   }

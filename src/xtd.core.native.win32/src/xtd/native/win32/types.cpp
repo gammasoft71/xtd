@@ -22,6 +22,6 @@ string types::demangle(const string& name) {
   return result;
 }
 
-intmax_t types::invalid_handle() noexcept {
-  return reinterpret_cast<intmax_t>(INVALID_HANDLE_VALUE);
+intptr_t types::invalid_handle() noexcept {
+  return reinterpret_cast<intptr_t>(INVALID_HANDLE_VALUE);
 }

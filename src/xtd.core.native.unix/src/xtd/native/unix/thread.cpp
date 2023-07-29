@@ -4,7 +4,7 @@
 
 using namespace xtd::native;
 
-bool thread::cancel(intmax_t handle) {
+bool thread::cancel(intptr_t handle) {
   /// @todo Make mplementation for unix
   return false;
 }
