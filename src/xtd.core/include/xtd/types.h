@@ -39,7 +39,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core types
   /// @remarks For more information about types, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/types">Native types, boxing and unboxing</a>.
-  using byte = uint8_t;
+  using byte = uint_least8_t;
   /// @brief Represents a character.
   /// @par Header
   /// @code #include <xtd/char> @endcode
@@ -116,7 +116,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core types
   /// @remarks For more information about types, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/types">Native types, boxing and unboxing</a>.
-  using int16 = int16_t;
+  using int16 = int_least16_t;
   
   /// @brief Represents a 32-bit signed integer.
   /// @par Header
@@ -127,7 +127,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core types
   /// @remarks For more information about types, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/types">Native types, boxing and unboxing</a>.
-  using int32 = int32_t;
+  using int32 = int_least32_t;
   
   /// @brief Represents a 64-bit signed integer.
   /// @par Header
@@ -138,7 +138,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core types
   /// @remarks For more information about types, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/types">Native types, boxing and unboxing</a>.
-  using int64 = int64_t;
+  using int64 = int_least64_t;
   
   /// @brief Represent a pointer or a handle.
   /// @par Header
@@ -171,7 +171,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core types
   /// @remarks For more information about types, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/types">Native types, boxing and unboxing</a>.
-  using sbyte = int8_t;
+  using sbyte = int_least8_t;
 
   /// @brief Represents a single-precision floating-point number.
   /// @par Header
@@ -204,7 +204,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core types
   /// @remarks For more information about types, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/types">Native types, boxing and unboxing</a>.
-  using slong = __slong__; // Workaround: On linux 64 bits unfortunately 'int64_t' is an alias on 'long' and not on 'long long int' as other platforms. In order to avoid conflicts in operator or method overloads, it is necessary to give the type that is not taken into account.
+  using slong = __slong__; // Workaround: On linux 64 bits unfortunately 'int_least64_t' is an alias on 'long' and not on 'long long int' as other platforms. In order to avoid conflicts in operator or method overloads, it is necessary to give the type that is not taken into account.
   
   /// @brief Stores information about a type.
   /// @par Header
@@ -226,7 +226,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core types
   /// @remarks For more information about types, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/types">Native types, boxing and unboxing</a>.
-  using uint16 = uint16_t;
+  using uint16 = uint_least16_t;
   
   /// @brief Represents a 32-bit unsigned integer.
   /// @par Header
@@ -237,7 +237,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core types
   /// @remarks For more information about types, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/types">Native types, boxing and unboxing</a>.
-  using uint32 = uint32_t;
+  using uint32 = uint_least32_t;
   
   /// @brief Represents a 64-bit unsigned integer.
   /// @par Header
@@ -248,7 +248,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core types
   /// @remarks For more information about types, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/types">Native types, boxing and unboxing</a>.
-  using uint64 = uint64_t;
+  using uint64 = uint_least64_t;
   
   /// @brief Represent a pointer or a handle.
   /// @par Header
@@ -270,7 +270,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core types
   /// @remarks For more information about types, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/types">Native types, boxing and unboxing</a>.
-  using ulong = __ulong__; // Workaround: On linux 64 bits unfortunately 'uint64_t' is an alias on 'unigned long' and not on 'unsigned long long int' as other platforms. In order to avoid conflicts in operator or method overloads, it is necessary to give the type that is not taken into account.
+  using ulong = __ulong__; // Workaround: On linux 64 bits unfortunately 'uint_least64_t' is an alias on 'unigned long' and not on 'unsigned long long int' as other platforms. In order to avoid conflicts in operator or method overloads, it is necessary to give the type that is not taken into account.
   
   /// @brief Represents a wide character.
   /// @par Header

@@ -5,13 +5,13 @@
 using namespace xtd;
 using namespace xtd::forms::native;
 
-intptr_t timer::create(int32_t interval, const delegate<void(const event_args&)>& tick) {
+intmax_t timer::create(int_least32_t interval, const delegate<void(const event_args&)>& tick) {
   fl_timer* timer = new class fl_timer(tick);
   timer->Start(interval);
-  return reinterpret_cast<intptr_t>(timer);
+  return reinterpret_cast<intmax_t>(timer);
 }
 
-void timer::destroy(intptr_t handle) {
+void timer::destroy(intmax_t handle) {
   reinterpret_cast<class fl_timer*>(handle)->Stop();
   delete reinterpret_cast<class fl_timer*>(handle);
 }

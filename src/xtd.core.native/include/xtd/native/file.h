@@ -45,7 +45,7 @@ namespace xtd {
       /// @param target_file The target file where copy.
       /// @return 0 if success; otherwise failed.
       /// @warning Internal use only
-      static int32_t copy(const std::string& source_file, const std::string& target_file);
+      static int_least32_t copy(const std::string& source_file, const std::string& target_file);
       /// @brief Check if specified file exist.
       /// @param path The file path to check.
       /// @return true is file exist; otherwise false.
@@ -61,12 +61,12 @@ namespace xtd {
       /// @param new_path The path to the new location for old_path. If old_path is a file, then new_path must also be a file name.
       /// @return 0 if success; otherwise failed.
       /// @warning Internal use only
-      static int32_t move(const std::string& old_path, const std::string& new_path);
+      static int_least32_t move(const std::string& old_path, const std::string& new_path);
       /// @brief Permanently deletes a speccified file.
       /// @param file The file name to delete.
       /// @return 0 if success; otherwise failed.
       /// @warning Internal use only
-      static int32_t remove(const std::string& file);
+      static int_least32_t remove(const std::string& file);
       /// @}
     };
   }

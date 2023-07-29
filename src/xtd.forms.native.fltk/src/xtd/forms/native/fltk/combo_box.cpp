@@ -9,11 +9,11 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
-void combo_box::begin_update(intptr_t control) {
+void combo_box::begin_update(intmax_t control) {
   if (control == 0) return;
 }
 
-void combo_box::delete_item(intptr_t control, size_t index) {
+void combo_box::delete_item(intmax_t control, size_t index) {
   if (control == 0) return;
   if (dynamic_cast<Fl_Choice*>(reinterpret_cast<control_handler*>(control)->control()))
     static_cast<Fl_Choice*>(reinterpret_cast<control_handler*>(control)->control())->remove(index);
@@ -21,11 +21,11 @@ void combo_box::delete_item(intptr_t control, size_t index) {
     static_cast<Fl_Input_Choice*>(reinterpret_cast<control_handler*>(control)->control())->remove(index);
 }
 
-void combo_box::end_update(intptr_t control) {
+void combo_box::end_update(intmax_t control) {
   if (control == 0) return;
 }
 
-void combo_box::insert_item(intptr_t control, size_t index, const ustring& value) {
+void combo_box::insert_item(intmax_t control, size_t index, const ustring& value) {
   if (control == 0) return;
   if (dynamic_cast<Fl_Choice*>(reinterpret_cast<control_handler*>(control)->control()))
     static_cast<Fl_Choice*>(reinterpret_cast<control_handler*>(control)->control())->add(value.c_str());
@@ -33,14 +33,14 @@ void combo_box::insert_item(intptr_t control, size_t index, const ustring& value
     static_cast<Fl_Input_Choice*>(reinterpret_cast<control_handler*>(control)->control())->add(value.c_str());
 }
 
-size_t combo_box::selected_index(intptr_t control) {
+size_t combo_box::selected_index(intmax_t control) {
   if (control == 0) return -1;
   if (dynamic_cast<Fl_Choice*>(reinterpret_cast<control_handler*>(control)->control()))
     return static_cast<Fl_Choice*>(reinterpret_cast<control_handler*>(control)->control())->value();
   return static_cast<Fl_Input_Choice*>(reinterpret_cast<control_handler*>(control)->control())->input()->position();
 }
 
-void combo_box::selected_index(intptr_t control, size_t index) {
+void combo_box::selected_index(intmax_t control, size_t index) {
   if (control == 0) return;
   if (dynamic_cast<Fl_Choice*>(reinterpret_cast<control_handler*>(control)->control()))
     static_cast<Fl_Choice*>(reinterpret_cast<control_handler*>(control)->control())->value(index);

@@ -11,15 +11,15 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
-intptr_t cursor::create() {
-  return static_cast<intptr_t>(FL_CURSOR_DEFAULT);
+intmax_t cursor::create() {
+  return static_cast<intmax_t>(FL_CURSOR_DEFAULT);
 }
 
-intptr_t cursor::copy(intptr_t cursor) {
+intmax_t cursor::copy(intmax_t cursor) {
   return cursor;
 }
 
-void cursor::destroy(intptr_t cursor) {
+void cursor::destroy(intmax_t cursor) {
 }
 
 
@@ -33,7 +33,7 @@ void cursor::hide() {
 }
 #endif
 
-point cursor::hot_spot(intptr_t cursor) {
+point cursor::hot_spot(intmax_t cursor) {
   if (cursor == 0) return {};
   return {};
 }
@@ -52,7 +52,7 @@ void cursor::position(const point& position) {
 }
 #endif
 
-drawing::size cursor::size(intptr_t cursor) {
+drawing::size cursor::size(intmax_t cursor) {
   return {32, 32};
 }
 

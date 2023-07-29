@@ -4,6 +4,6 @@
 using namespace xtd;
 using namespace xtd::forms::native;
 
-void button::default_button(intptr_t control, bool default_button) {
+void button::default_button(intmax_t control, bool default_button) {
   if (control == 0) return;
 }

@@ -59,7 +59,7 @@ namespace xtd {
       /// @param milliseconds_timeout The timeout in milliseconds (-1 is infinite timeout).
       /// @return true if succeed; otherwhise false.
       /// @warning Internal use only
-      static bool wait(intmax_t handle, int32_t milliseconds_timeout, bool& io_error);
+      static bool wait(intmax_t handle, int_least32_t milliseconds_timeout, bool& io_error);
       /// @}
     };
   }

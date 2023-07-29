@@ -9,7 +9,7 @@ namespace xtd {
       public:
         fl_timer(delegate<void(const event_args&)> tick) : tick_(tick) {}
         
-        void Start(int32_t interval) {
+        void Start(int_least32_t interval) {
           enable_timer_ = true;
           interval_ = (double)interval / 1000;
           Fl::add_timeout(interval_, on_timer_tick);

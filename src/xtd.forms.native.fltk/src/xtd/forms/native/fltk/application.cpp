@@ -66,11 +66,11 @@ void application::initialize() {
   }
 }
 
-void application::register_message_filter(const delegate<bool(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& message_filter_proc) {
+void application::register_message_filter(const delegate<bool(intmax_t, int_least32_t, intmax_t, intmax_t, intmax_t)>& message_filter_proc) {
   initialize(); // Must be first
 }
 
-void application::register_wnd_proc(const delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& wnd_proc) {
+void application::register_wnd_proc(const delegate<intmax_t(intmax_t, int_least32_t, intmax_t, intmax_t, intmax_t)>& wnd_proc) {
   initialize(); // Must be first
 }
 

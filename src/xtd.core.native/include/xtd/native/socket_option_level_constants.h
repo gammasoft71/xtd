@@ -17,7 +17,7 @@
 /// @ingroup xtd_core_native socket_option_level
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t SOCKET_OPTION_LEVEL_SOCKET = 65535;
+constexpr int_least32_t SOCKET_OPTION_LEVEL_SOCKET = 65535;
 
 /// @brief Socket options apply only to IP sockets.
 /// @par Library
@@ -25,7 +25,7 @@ constexpr int32_t SOCKET_OPTION_LEVEL_SOCKET = 65535;
 /// @ingroup xtd_core_native socket_option_level
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t SOCKET_OPTION_LEVEL_IP = 0;
+constexpr int_least32_t SOCKET_OPTION_LEVEL_IP = 0;
 
 /// @brief Socket options apply only to IPv6 sockets.
 /// @par Library
@@ -33,7 +33,7 @@ constexpr int32_t SOCKET_OPTION_LEVEL_IP = 0;
 /// @ingroup xtd_core_native socket_option_level
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t SOCKET_OPTION_LEVEL_IP_V6 = 41;
+constexpr int_least32_t SOCKET_OPTION_LEVEL_IP_V6 = 41;
 
 /// @brief Socket options apply only to TCP sockets.
 /// @par Library
@@ -41,7 +41,7 @@ constexpr int32_t SOCKET_OPTION_LEVEL_IP_V6 = 41;
 /// @ingroup xtd_core_native socket_option_level
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t SOCKET_OPTION_LEVEL_TCP = 6;
+constexpr int_least32_t SOCKET_OPTION_LEVEL_TCP = 6;
 
 /// @brief Socket options apply only to UDP sockets.
 /// @par Library
@@ -49,4 +49,4 @@ constexpr int32_t SOCKET_OPTION_LEVEL_TCP = 6;
 /// @ingroup xtd_core_native socket_option_level
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t SOCKET_OPTION_LEVEL_UDP = 17;
+constexpr int_least32_t SOCKET_OPTION_LEVEL_UDP = 17;

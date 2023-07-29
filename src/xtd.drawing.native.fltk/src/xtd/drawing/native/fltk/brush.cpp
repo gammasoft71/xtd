@@ -3,14 +3,14 @@
 
 using namespace xtd::drawing::native;
 
-intptr_t brush::create() {
-  return reinterpret_cast<intptr_t>(new fl_brush());
+intmax_t brush::create() {
+  return reinterpret_cast<intmax_t>(new fl_brush());
 }
 
-void brush::color(intptr_t brush, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
+void brush::color(intmax_t brush, uint_least8_t a, uint_least8_t r, uint_least8_t g, uint_least8_t b) {
   reinterpret_cast<fl_brush*>(brush)->color(fl_rgb_color(r, g, b));
 }
 
-void brush::destroy(intptr_t brush) {
+void brush::destroy(intmax_t brush) {
   delete reinterpret_cast<fl_brush*>(brush);
 }

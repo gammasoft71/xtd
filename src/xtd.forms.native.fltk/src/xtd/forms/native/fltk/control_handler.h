@@ -26,17 +26,17 @@ namespace xtd {
         control_wrapper(control_handler* event_handler, args_type&& ...args) : TControl(args...), event_handler_(event_handler) {}
         
         
-        virtual int32_t handle(int32_t event);
+        virtual int_least32_t handle(int_least32_t event);
         
       private:
-        intptr_t convert_to_virtual_key(intptr_t fl_key) {
+        intmax_t convert_to_virtual_key(intmax_t fl_key) {
           return fl_key;
         }
         
         control_handler* event_handler_;
         bool process_result_ = true;
-        int32_t height_ = 0;
-        int32_t width_ = 0;
+        int_least32_t height_ = 0;
+        int_least32_t width_ = 0;
       };
       
       class control_handler {
@@ -56,7 +56,7 @@ namespace xtd {
         Fl_Cursor cursor() const {return this->cursor_;}
         void cursor(Fl_Cursor cursor) {this->cursor_ = cursor;}
         
-        intptr_t call_def_wnd_proc(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t result, intptr_t handle) {return this->def_wnd_proc(hwnd, msg, wparam, lparam, result, handle);}
+        intmax_t call_def_wnd_proc(intmax_t hwnd, int_least32_t msg, intmax_t wparam, intmax_t lparam, intmax_t result, intmax_t handle) {return this->def_wnd_proc(hwnd, msg, wparam, lparam, result, handle);}
         
         void destroy() {
           delete this->control_;
@@ -64,20 +64,20 @@ namespace xtd {
           //this->def_wnd_proc -= {static_cast<control_wrapper<control_type>&>(*this->control_), &control_wrapper<control_type>::def_wnd_proc};
         }
         
-        intptr_t send_message(intptr_t hwnd, intptr_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
+        intmax_t send_message(intmax_t hwnd, intmax_t msg, intmax_t wparam, intmax_t lparam, intmax_t handle) {
           if (this->control_ == nullptr) return 0;
           //if (fl_application::message_filter(hwnd, msg, wparam, lparam, handle)) return this->call_def_wnd_proc(hwnd, msg, wparam, lparam, 1, handle);
           if (this->wnd_proc.is_empty()) return this->call_def_wnd_proc(hwnd, msg, wparam, lparam, 0, handle);
           
           //return this->wnd_proc(hwnd, msg, wparam, lparam, handle);
-          intptr_t result = 0;
+          intmax_t result = 0;
           for (auto& fct : this->wnd_proc.functions())
             if (this->control_ != nullptr && fct != nullptr) result = fct(hwnd, msg, wparam, lparam, handle);
           return result;
         }
         
-        event<control_handler, delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>> wnd_proc;
-        event<control_handler, delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t, intptr_t)>> def_wnd_proc;
+        event<control_handler, delegate<intmax_t(intmax_t, int_least32_t, intmax_t, intmax_t, intmax_t)>> wnd_proc;
+        event<control_handler, delegate<intmax_t(intmax_t, int_least32_t, intmax_t, intmax_t, intmax_t, intmax_t)>> def_wnd_proc;
         
       private:
         Fl_Widget* control_ = nullptr;
@@ -85,7 +85,7 @@ namespace xtd {
       };
       
       template<typename control_t>
-      inline int32_t control_wrapper<control_t>::handle(int32_t event) {
+      inline int_least32_t control_wrapper<control_t>::handle(int_least32_t event) {
         return this->control_t::handle(event);
         /*
         bool intercepted_event = this->control_t::handle(event) != 0;

@@ -52,7 +52,7 @@ namespace xtd {
       /// @param root_path_name root path name to get drive type.
       /// @return The drive type (see drive_type.h file).
       /// @warning Internal use only
-      static int32_t get_drive_type(const std::string& root_path_name);
+      static int_least32_t get_drive_type(const std::string& root_path_name);
       /// @brief Gets system drive names array.
       /// @return An array of system drive names.
       /// @warning Internal use only

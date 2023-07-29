@@ -24,11 +24,11 @@ using namespace xtd::native;
 namespace {
   class file_descriptor_streambuf : public streambuf {
   public:
-    explicit file_descriptor_streambuf(int32_t file_descriptor) : file_descriptor_(file_descriptor) {}
+    explicit file_descriptor_streambuf(int_least32_t file_descriptor) : file_descriptor_(file_descriptor) {}
     ~file_descriptor_streambuf() {close(file_descriptor_);}
     
   protected:
-    int32_t underflow() override {
+    int_least32_t underflow() override {
       if (read(file_descriptor_, &value_, 1) == 1) {
         this->setg(&value_, &value_, &value_ + 1);
         return value_;
@@ -36,7 +36,7 @@ namespace {
       return streambuf::underflow(); // EOF
     }
     
-    int32_t overflow(int32_t c) override {
+    int_least32_t overflow(int_least32_t c) override {
       value_ = static_cast<char>(c);
       if (write(file_descriptor_, &value_, 1) != -1) {
         this->setp(&value_, &value_);
@@ -45,13 +45,13 @@ namespace {
       return streambuf::overflow(c); // EOF
     }
     
-    int32_t file_descriptor_;
+    int_least32_t file_descriptor_;
     char value_ = EOF;
   };
   
   class process_istream : public istream {
   public:
-    explicit process_istream(int32_t file_descriptor) : istream(&stream_buf_), stream_buf_(file_descriptor) {}
+    explicit process_istream(int_least32_t file_descriptor) : istream(&stream_buf_), stream_buf_(file_descriptor) {}
     
   private:
     file_descriptor_streambuf stream_buf_;
@@ -59,7 +59,7 @@ namespace {
   
   class process_ostream : public ostream {
   public:
-    explicit process_ostream(int32_t file_descriptor) : ostream(&stream_buf_), stream_buf_(file_descriptor) {}
+    explicit process_ostream(int_least32_t file_descriptor) : ostream(&stream_buf_), stream_buf_(file_descriptor) {}
     
   private:
     file_descriptor_streambuf stream_buf_;
@@ -107,8 +107,8 @@ namespace {
     vector<string> arguments;
     bool skip_next_space = false;
     bool quotes_empty = false;
-    int32_t left_space_count = 0;
-    int32_t right_space_count = 0;
+    int_least32_t left_space_count = 0;
+    int_least32_t right_space_count = 0;
     string argument;
     
     for (size_t index = 0; index < line_argument.size(); index++) {
@@ -142,8 +142,8 @@ namespace {
     return arguments;
   }
   
-  bool compute_base_priority(int32_t priority, int32_t& base_priority) {
-    static map<int32_t, int32_t> base_priorities {{IDLE_PRIORITY_CLASS, PRIO_MIN}, {BELOW_NORMAL_PRIORITY_CLASS, PRIO_MIN + (PRIO_MAX - PRIO_MIN) / 4}, {NORMAL_PRIORITY_CLASS, PRIO_MIN + (PRIO_MAX - PRIO_MIN) / 2}, {ABOVE_NORMAL_PRIORITY_CLASS, PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 4}, {HIGH_PRIORITY_CLASS, PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 8}, {REALTIME_PRIORITY_CLASS, PRIO_MAX}};
+  bool compute_base_priority(int_least32_t priority, int_least32_t& base_priority) {
+    static map<int_least32_t, int_least32_t> base_priorities {{IDLE_PRIORITY_CLASS, PRIO_MIN}, {BELOW_NORMAL_PRIORITY_CLASS, PRIO_MIN + (PRIO_MAX - PRIO_MIN) / 4}, {NORMAL_PRIORITY_CLASS, PRIO_MIN + (PRIO_MAX - PRIO_MIN) / 2}, {ABOVE_NORMAL_PRIORITY_CLASS, PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 4}, {HIGH_PRIORITY_CLASS, PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 8}, {REALTIME_PRIORITY_CLASS, PRIO_MAX}};
     auto it = base_priorities.find(priority);
     if (it == base_priorities.end()) return false;
     base_priority = it->second;
@@ -151,8 +151,8 @@ namespace {
   }
 }
 
-int32_t process::base_priority(int32_t priority) {
-  int32_t base_priority = PRIO_MIN + (PRIO_MAX - PRIO_MIN) / 2;
+int_least32_t process::base_priority(int_least32_t priority) {
+  int_least32_t base_priority = PRIO_MIN + (PRIO_MAX - PRIO_MIN) / 2;
   compute_base_priority(priority, base_priority);
   return base_priority;
 }
@@ -162,13 +162,13 @@ bool process::kill(intmax_t process) {
   return ::kill(static_cast<pid_t>(process), SIGTERM) == 0;
 }
 
-bool process::priority_class(intmax_t process, int32_t priority) {
-  int32_t base_priority = PRIO_MIN + (PRIO_MAX - PRIO_MIN) / 2;
+bool process::priority_class(intmax_t process, int_least32_t priority) {
+  int_least32_t base_priority = PRIO_MIN + (PRIO_MAX - PRIO_MIN) / 2;
   if (compute_base_priority(priority, base_priority) == false) return false;
   return setpriority(PRIO_PROCESS, static_cast<id_t>(process), base_priority) == 0;
 }
 
-intmax_t process::shell_execute(const std::string& verb, const string& file_name, const string& arguments, const string& working_directory, int32_t process_window_style) {
+intmax_t process::shell_execute(const std::string& verb, const string& file_name, const string& arguments, const string& working_directory, int_least32_t process_window_style) {
   pid_t process = fork();
   if (process == 0) {
     bool is_shell_execute = is_valid_shell_execute_process(&macos::strings::split, file_name, working_directory);
@@ -214,15 +214,15 @@ intmax_t process::shell_execute(const std::string& verb, const string& file_name
   return static_cast<intmax_t>(process);
 }
 
-process::started_process process::start(const string& file_name, const string& arguments, const string& working_directory, int32_t process_window_style, int32_t process_creation_flags, tuple<bool, bool, bool> redirect_standard_streams) {
+process::started_process process::start(const string& file_name, const string& arguments, const string& working_directory, int_least32_t process_window_style, int_least32_t process_creation_flags, tuple<bool, bool, bool> redirect_standard_streams) {
   auto [redirect_standard_input, redirect_standard_output, redirect_standard_error] = redirect_standard_streams;
   
-  int32_t pipe_result = 0;
-  int32_t pipe_stdin[2];
+  int_least32_t pipe_result = 0;
+  int_least32_t pipe_stdin[2];
   if (redirect_standard_input) pipe_result = pipe(pipe_stdin);
-  int32_t pipe_stdout[2];
+  int_least32_t pipe_stdout[2];
   if (redirect_standard_output) pipe_result = pipe(pipe_stdout);
-  int32_t pipe_stderr[2];
+  int_least32_t pipe_stderr[2];
   if (redirect_standard_error) pipe_result = pipe(pipe_stderr);
   if (pipe_result) {/*do nothing*/}
   
@@ -261,10 +261,10 @@ process::started_process process::start(const string& file_name, const string& a
   if (redirect_standard_output) close(pipe_stdout[1]);
   if (redirect_standard_error) close(pipe_stderr[1]);
   
-  return make_tuple(static_cast<intmax_t>(process), static_cast<int32_t>(process), make_unique<process_ostream>(pipe_stdin[1]), make_unique<process_istream>(pipe_stdout[0]), make_unique<process_istream>(pipe_stderr[0]));
+  return make_tuple(static_cast<intmax_t>(process), static_cast<int_least32_t>(process), make_unique<process_ostream>(pipe_stdin[1]), make_unique<process_istream>(pipe_stdout[0]), make_unique<process_istream>(pipe_stderr[0]));
 }
 
-bool process::wait(intmax_t process, int32_t& exit_code) {
+bool process::wait(intmax_t process, int_least32_t& exit_code) {
   if (process == 0) return false;
   siginfo_t wait_info {};
   wait_info.si_pid = static_cast<pid_t>(process);

@@ -29,7 +29,7 @@ bool debugger::launch() {
   return true;
 }
 
-int32_t debugger::show_assert_dialog(const std::string& text, const std::string& caption) {
+int_least32_t debugger::show_assert_dialog(const std::string& text, const std::string& caption) {
   //#if !defined(TARGET_IPHONE_SIMULATOR) && !defined(TARGET_OS_MACCATALYST) && !defined(TARGET_OS_IPHONE)
   [NSApplication sharedApplication];
   [NSApp finishLaunching];
@@ -54,6 +54,6 @@ int32_t debugger::show_assert_dialog(const std::string& text, const std::string&
   //#endif
 }
 
-void debugger::log(int32_t level, const std::string& category, const std::string& message) {
+void debugger::log(int_least32_t level, const std::string& category, const std::string& message) {
   syslog(LOG_EMERG | LOG_USER, "%s", message.c_str());
 }

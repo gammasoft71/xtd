@@ -27,54 +27,54 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
-extern int32_t __mainloop_runnning__;
+extern int_least32_t __mainloop_runnning__;
 
-color control::back_color(intptr_t control) {
+color control::back_color(intmax_t control) {
   if (control == 0) return color::empty;
   
   return color::from_argb(0xFF000000 + (reinterpret_cast<control_handler*>(control)->control()->color() >> 8));
 }
 
-void control::back_color(intptr_t control, const color& color) {
+void control::back_color(intmax_t control, const color& color) {
   if (control == 0) return;
   
   reinterpret_cast<control_handler*>(control)->control()->color(fl_rgb_color(color.r(), color.g(), color.b()));
 }
 
-intptr_t control::create(const forms::create_params& create_params) {
+intmax_t control::create(const forms::create_params& create_params) {
   application::initialize(); // Must be first
-  if (create_params.class_name() == "button") return reinterpret_cast<intptr_t>(new fl_button(create_params));
-  if (create_params.class_name() == "checkbox") return reinterpret_cast<intptr_t>(new fl_check_box(create_params));
-  if (create_params.class_name() == "checkedlistbox") return reinterpret_cast<intptr_t>(new fl_checked_list_box(create_params));
-  if (create_params.class_name() == "combobox") return reinterpret_cast<intptr_t>(new fl_combo_box(create_params));
-  if (create_params.class_name() == "form") return reinterpret_cast<intptr_t>(new fl_form(create_params));
-  if (create_params.class_name() == "groupbox") return reinterpret_cast<intptr_t>(new fl_group_box(create_params));
-  if (create_params.class_name() == "label") return reinterpret_cast<intptr_t>(new fl_label(create_params));
-  if (create_params.class_name() == "listbox") return reinterpret_cast<intptr_t>(new fl_list_box(create_params));
-  if (create_params.class_name() == "panel") return reinterpret_cast<intptr_t>(new fl_panel(create_params));
-  if (create_params.class_name() == "progressbar") return reinterpret_cast<intptr_t>(new fl_progress_bar(create_params));
-  if (create_params.class_name() == "radiobutton") return reinterpret_cast<intptr_t>(new fl_radio_button(create_params));
-  if (create_params.class_name() == "tabcontrol") return reinterpret_cast<intptr_t>(new fl_tab_control(create_params));
-  if (create_params.class_name() == "tabpage") return reinterpret_cast<intptr_t>(new fl_tab_page(create_params));
-  if (create_params.class_name() == "textbox") return reinterpret_cast<intptr_t>(new fl_text_box(create_params));
-  if (create_params.class_name() == "trackbar") return reinterpret_cast<intptr_t>(new fl_track_bar(create_params));
-  if (create_params.class_name() == "usercontrol") return reinterpret_cast<intptr_t>(new fl_user_control(create_params));
-  return reinterpret_cast<intptr_t>(new fl_control(create_params));
+  if (create_params.class_name() == "button") return reinterpret_cast<intmax_t>(new fl_button(create_params));
+  if (create_params.class_name() == "checkbox") return reinterpret_cast<intmax_t>(new fl_check_box(create_params));
+  if (create_params.class_name() == "checkedlistbox") return reinterpret_cast<intmax_t>(new fl_checked_list_box(create_params));
+  if (create_params.class_name() == "combobox") return reinterpret_cast<intmax_t>(new fl_combo_box(create_params));
+  if (create_params.class_name() == "form") return reinterpret_cast<intmax_t>(new fl_form(create_params));
+  if (create_params.class_name() == "groupbox") return reinterpret_cast<intmax_t>(new fl_group_box(create_params));
+  if (create_params.class_name() == "label") return reinterpret_cast<intmax_t>(new fl_label(create_params));
+  if (create_params.class_name() == "listbox") return reinterpret_cast<intmax_t>(new fl_list_box(create_params));
+  if (create_params.class_name() == "panel") return reinterpret_cast<intmax_t>(new fl_panel(create_params));
+  if (create_params.class_name() == "progressbar") return reinterpret_cast<intmax_t>(new fl_progress_bar(create_params));
+  if (create_params.class_name() == "radiobutton") return reinterpret_cast<intmax_t>(new fl_radio_button(create_params));
+  if (create_params.class_name() == "tabcontrol") return reinterpret_cast<intmax_t>(new fl_tab_control(create_params));
+  if (create_params.class_name() == "tabpage") return reinterpret_cast<intmax_t>(new fl_tab_page(create_params));
+  if (create_params.class_name() == "textbox") return reinterpret_cast<intmax_t>(new fl_text_box(create_params));
+  if (create_params.class_name() == "trackbar") return reinterpret_cast<intmax_t>(new fl_track_bar(create_params));
+  if (create_params.class_name() == "usercontrol") return reinterpret_cast<intmax_t>(new fl_user_control(create_params));
+  return reinterpret_cast<intmax_t>(new fl_control(create_params));
 }
 
-intptr_t control::create_paint_graphics(intptr_t control) {
+intmax_t control::create_paint_graphics(intmax_t control) {
   return control;
 }
 
-intptr_t control::create_double_buffered_paint_graphics(intptr_t control) {
+intmax_t control::create_double_buffered_paint_graphics(intmax_t control) {
   return control;
 }
 
-intptr_t control::create_graphics(intptr_t control) {
+intmax_t control::create_graphics(intmax_t control) {
   return control;
 }
 
-intptr_t control::def_wnd_proc(intptr_t control, intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t presult, intptr_t handle) {
+intmax_t control::def_wnd_proc(intmax_t control, intmax_t hwnd, int_least32_t msg, intmax_t wparam, intmax_t lparam, intmax_t presult, intmax_t handle) {
   if (!control || handle == 0) return 0;
   return reinterpret_cast<control_handler*>(control)->call_def_wnd_proc(hwnd, msg, wparam, lparam, presult, handle);
 }
@@ -83,7 +83,7 @@ font control::default_font() {
   return system_fonts::default_font();
 }
 
-void control::destroy(intptr_t control) {
+void control::destroy(intmax_t control) {
   if (control == 0) return;
   if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
   reinterpret_cast<control_handler*>(control)->destroy();
@@ -94,32 +94,32 @@ void control::init() {
   application::initialize(); // Must be first
 }
 
-drawing::rectangle control::client_rectangle(intptr_t control) {
+drawing::rectangle control::client_rectangle(intmax_t control) {
   if (control == 0) return {};
   return {reinterpret_cast<control_handler*>(control)->control()->x(), reinterpret_cast<control_handler*>(control)->control()->y(), reinterpret_cast<control_handler*>(control)->control()->w() - Fl::box_dw(reinterpret_cast<control_handler*>(control)->control()->box()), reinterpret_cast<control_handler*>(control)->control()->h() - Fl::box_dh(reinterpret_cast<control_handler*>(control)->control()->box())};
 }
 
-drawing::size control::client_size(intptr_t control) {
+drawing::size control::client_size(intmax_t control) {
   if (control == 0) return {};
   return {reinterpret_cast<control_handler*>(control)->control()->w() - Fl::box_dw(reinterpret_cast<control_handler*>(control)->control()->box()), reinterpret_cast<control_handler*>(control)->control()->h() - Fl::box_dh(reinterpret_cast<control_handler*>(control)->control()->box())};
 }
 
-void control::client_size(intptr_t control, const drawing::size& size) {
+void control::client_size(intmax_t control, const drawing::size& size) {
   if (control == 0) return;
   reinterpret_cast<control_handler*>(control)->control()->size(size.width() + Fl::box_dw(reinterpret_cast<control_handler*>(control)->control()->box()), size.height() + Fl::box_dh(reinterpret_cast<control_handler*>(control)->control()->box()));
 }
 
-void control::cursor(intptr_t control, intptr_t cursor) {
+void control::cursor(intmax_t control, intmax_t cursor) {
   if (control == 0) return;
   reinterpret_cast<control_handler*>(control)->cursor(static_cast<Fl_Cursor>(cursor));
 }
 
-bool control::enabled(intptr_t control) {
+bool control::enabled(intmax_t control) {
   if (control == 0) return false;
   return reinterpret_cast<control_handler*>(control)->control()->active();
 }
 
-void control::enabled(intptr_t control, bool enabled) {
+void control::enabled(intmax_t control, bool enabled) {
   if (control == 0) return;
   if (enabled)
     reinterpret_cast<control_handler*>(control)->control()->activate();
@@ -127,41 +127,41 @@ void control::enabled(intptr_t control, bool enabled) {
     reinterpret_cast<control_handler*>(control)->control()->deactivate();
 }
 
-void control ::focus(intptr_t control) {
+void control ::focus(intmax_t control) {
   if (control == 0) return;
   Fl::focus(reinterpret_cast<control_handler*>(control)->control());
 }
 
-color control::fore_color(intptr_t control) {
+color control::fore_color(intmax_t control) {
   if (control == 0) return color::empty;
   return color::from_argb(0xFF000000 + (reinterpret_cast<control_handler*>(control)->control()->labelcolor() >> 8));
 }
 
-void control::fore_color(intptr_t control, const color& color) {
+void control::fore_color(intmax_t control, const color& color) {
   if (control == 0) return;
   reinterpret_cast<control_handler*>(control)->control()->labelcolor(fl_rgb_color(color.r(), color.g(), color.b()));
 }
 
-drawing::font control::font(intptr_t control) {
-  return drawing::font::from_hfont(static_cast<intptr_t>(reinterpret_cast<control_handler*>(control)->control()->labelfont()));
+drawing::font control::font(intmax_t control) {
+  return drawing::font::from_hfont(static_cast<intmax_t>(reinterpret_cast<control_handler*>(control)->control()->labelfont()));
 }
 
-void control::font(intptr_t control, const drawing::font& font) {
+void control::font(intmax_t control, const drawing::font& font) {
   if (control == 0) return;
   //reinterpret_cast<control_handler*>(control)->control()->labelfont(static_cast<Fl_Font>(font.handle()));
 }
 
-point control::location(intptr_t control) {
+point control::location(intmax_t control) {
   if (control == 0) return {};
   return {reinterpret_cast<control_handler*>(control)->control()->x(), reinterpret_cast<control_handler*>(control)->control()->y()};
 }
 
-void control::location(intptr_t control, const point& location) {
+void control::location(intmax_t control, const point& location) {
   if (control == 0) return;
   reinterpret_cast<control_handler*>(control)->control()->position(location.x(), location.y());
 }
 
-drawing::point control::point_to_screen(intptr_t control, const drawing::point& p) {
+drawing::point control::point_to_screen(intmax_t control, const drawing::point& p) {
   if (control == 0) return p;
   drawing::point screen = p + drawing::size(reinterpret_cast<control_handler*>(control)->control()->x(), reinterpret_cast<control_handler*>(control)->control()->y());
   Fl_Widget* parent = reinterpret_cast<control_handler*>(control)->control()->parent();
@@ -172,7 +172,7 @@ drawing::point control::point_to_screen(intptr_t control, const drawing::point& 
   return screen;
 }
 
-drawing::point control::point_to_client(intptr_t control, const drawing::point& p) {
+drawing::point control::point_to_client(intmax_t control, const drawing::point& p) {
   if (control == 0) return p;
   drawing::point client = p - drawing::size(reinterpret_cast<control_handler*>(control)->control()->x(), reinterpret_cast<control_handler*>(control)->control()->y());
   Fl_Widget* parent = reinterpret_cast<control_handler*>(control)->control()->parent();
@@ -183,32 +183,32 @@ drawing::point control::point_to_client(intptr_t control, const drawing::point& 
   return client;
 }
 
-drawing::size control::size(intptr_t control) {
+drawing::size control::size(intmax_t control) {
   if (control == 0) return {};
   return {reinterpret_cast<control_handler*>(control)->control()->w(), reinterpret_cast<control_handler*>(control)->control()->h()};
 }
 
-void control::size(intptr_t control, const drawing::size& size) {
+void control::size(intmax_t control, const drawing::size& size) {
   if (control == 0) return;
   reinterpret_cast<control_handler*>(control)->control()->size(size.width(), size.height());
 }
 
-ustring control::text(intptr_t control) {
+ustring control::text(intmax_t control) {
   if (control == 0) return {};
   return reinterpret_cast<control_handler*>(control)->control()->label();
 }
 
-void control::text(intptr_t control, const ustring& text) {
+void control::text(intmax_t control, const ustring& text) {
   if (control == 0) return;
   reinterpret_cast<control_handler*>(control)->control()->copy_label(text.c_str());
 }
 
-bool control::visible(intptr_t control) {
+bool control::visible(intmax_t control) {
   if (control == 0) return false;
   return reinterpret_cast<control_handler*>(control)->control()->visible();
 }
 
-void control::visible(intptr_t control, bool visible) {
+void control::visible(intmax_t control, bool visible) {
   if (control == 0) return;
   if (visible)
     reinterpret_cast<control_handler*>(control)->control()->show();
@@ -216,34 +216,34 @@ void control::visible(intptr_t control, bool visible) {
     reinterpret_cast<control_handler*>(control)->control()->hide();
 }
 
-void control::invalidate(intptr_t control, const drawing::rectangle& rect, bool invalidate_children) {
+void control::invalidate(intmax_t control, const drawing::rectangle& rect, bool invalidate_children) {
   if (control == 0) return;
   reinterpret_cast<control_handler*>(control)->control()->damage(255, rect.x(), rect.y(), rect.width(), rect.height());
 }
 
-void control::refresh(intptr_t control) {
+void control::refresh(intmax_t control) {
   if (control == 0) return;
   
   reinterpret_cast<control_handler*>(control)->control()->redraw();
 }
 
-void control::update(intptr_t control) {
+void control::update(intmax_t control) {
   if (control == 0) return;
   
   reinterpret_cast<control_handler*>(control)->control()->redraw();
 }
 
-void control::register_wnd_proc(intptr_t control, const delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& wnd_proc) {
+void control::register_wnd_proc(intmax_t control, const delegate<intmax_t(intmax_t, int_least32_t, intmax_t, intmax_t, intmax_t)>& wnd_proc) {
   if (control == 0) return;
   reinterpret_cast<control_handler*>(control)->wnd_proc += wnd_proc;
 }
 
-void control::unregister_wnd_proc(intptr_t control, const delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& wnd_proc) {
+void control::unregister_wnd_proc(intmax_t control, const delegate<intmax_t(intmax_t, int_least32_t, intmax_t, intmax_t, intmax_t)>& wnd_proc) {
   if (control == 0) return;
   reinterpret_cast<control_handler*>(control)->wnd_proc -= wnd_proc;
 }
 
-intptr_t control::send_message(intptr_t control, intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam) {
+intmax_t control::send_message(intmax_t control, intmax_t hwnd, int_least32_t msg, intmax_t wparam, intmax_t lparam) {
   if (hwnd == 0) return -1;
   return reinterpret_cast<control_handler*>(control)->send_message(hwnd, msg, wparam, lparam, 0);
 }

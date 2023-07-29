@@ -26,7 +26,7 @@ bool debugger::launch() {
   return true;
 }
 
-int32_t debugger::show_assert_dialog(const std::string& text, const std::string& caption) {
+int_least32_t debugger::show_assert_dialog(const std::string& text, const std::string& caption) {
   gtk_init_check(0, nullptr);
   auto dialog = gtk_message_dialog_new(nullptr, GtkDialogFlags::GTK_DIALOG_MODAL, GtkMessageType::GTK_MESSAGE_ERROR, GtkButtonsType::GTK_BUTTONS_NONE, "%s", text.c_str());
   gtk_window_set_title(GTK_WINDOW(dialog), caption.c_str());
@@ -38,7 +38,7 @@ int32_t debugger::show_assert_dialog(const std::string& text, const std::string&
   return return_code == GTK_RESPONSE_YES ? ADR_ABORT : (return_code == GTK_RESPONSE_NO ? ADR_RETRY : ADR_IGNORE);
 }
 
-void debugger::log(int32_t level, const std::string& category, const std::string& message) {
+void debugger::log(int_least32_t level, const std::string& category, const std::string& message) {
   syslog(LOG_EMERG | LOG_USER, "%s", message.c_str());
   std::cerr << message << std::flush;
 }
