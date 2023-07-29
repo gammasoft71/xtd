@@ -56,7 +56,7 @@ namespace xtd::tests {
       void wait(iasync_result& result) {
         if (&result != &result_) throw invalid_operation_exception("iasync_result not valid", csf_);
         if (!result.async_state().has_value() || as<ustring>(result.async_state()) != "Started") throw invalid_operation_exception("Not started", csf_);
-        lock_guard<timed_mutex> {result.async_mutex()};
+        lock_guard<timed_mutex> lock {result.async_mutex()};
       }
       
     private:
