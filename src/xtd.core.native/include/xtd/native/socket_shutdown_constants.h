@@ -17,7 +17,7 @@
 /// @ingroup xtd_core_native socket_shutdown
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int_least32_t SOCKET_SHUTDOWN_RECEIVE = 0;
+constexpr int32_t SOCKET_SHUTDOWN_RECEIVE = 0;
 
 /// @brief Disables a xtd::net::sockets::socket for sending.
 /// @par Library
@@ -25,7 +25,7 @@ constexpr int_least32_t SOCKET_SHUTDOWN_RECEIVE = 0;
 /// @ingroup xtd_core_native socket_shutdown
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int_least32_t SOCKET_SHUTDOWN_SEND = 1;
+constexpr int32_t SOCKET_SHUTDOWN_SEND = 1;
 
 /// @brief Disables a xtd::net::sockets::socket for both sending and receiving.
 /// @par Library
@@ -33,4 +33,4 @@ constexpr int_least32_t SOCKET_SHUTDOWN_SEND = 1;
 /// @ingroup xtd_core_native socket_shutdown
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int_least32_t SOCKET_SHUTDOWN_BOTH = 2;
+constexpr int32_t SOCKET_SHUTDOWN_BOTH = 2;

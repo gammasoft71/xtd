@@ -8,21 +8,21 @@
 using namespace std;
 using namespace xtd::native;
 
-int_least32_t interlocked::add(int_least32_t& location, int_least32_t value) {
+int32_t interlocked::add(int32_t& location, int32_t value) {
   InterlockedExchange((long*)&location, location + value);
   return location;
 }
 
-int_least64_t interlocked::add(int_least64_t& location, int_least64_t value) {
+int64_t interlocked::add(int64_t& location, int64_t value) {
   InterlockedExchange64((long long*)&location, location + value);
   return location;
 }
 
-int_least32_t interlocked::compare_exchange(int_least32_t& location, int_least32_t value, int_least32_t comparand) {
+int32_t interlocked::compare_exchange(int32_t& location, int32_t value, int32_t comparand) {
   return InterlockedCompareExchange((long*)&location, value, comparand);
 }
 
-int_least64_t interlocked::compare_exchange(int_least64_t& location, int_least64_t value, int_least64_t comparand) {
+int64_t interlocked::compare_exchange(int64_t& location, int64_t value, int64_t comparand) {
   return InterlockedCompareExchange64((long long*)&location, value, comparand);
 }
 
@@ -41,19 +41,19 @@ void* interlocked::compare_exchange(void*& location, void* value, void* comparan
 }
 #pragma warning(pop)
 
-int_least32_t interlocked::decrement(int_least32_t& location) {
+int32_t interlocked::decrement(int32_t& location) {
   return InterlockedDecrement((long*)&location);
 }
 
-int_least64_t interlocked::decrement(int_least64_t& location) {
+int64_t interlocked::decrement(int64_t& location) {
   return InterlockedDecrement64((long long*)&location);
 }
 
-int_least32_t interlocked::exchange(int_least32_t& location, int_least32_t value) {
+int32_t interlocked::exchange(int32_t& location, int32_t value) {
   return InterlockedExchange((long*)&location, value);
 }
 
-int_least64_t interlocked::exchange(int_least64_t& location, int_least64_t value) {
+int64_t interlocked::exchange(int64_t& location, int64_t value) {
   return InterlockedExchange64((long long*)&location, value);
 }
 
@@ -72,10 +72,10 @@ void* interlocked::exchange(void*& location, void* value) {
 }
 #pragma warning(pop)
 
-int_least32_t interlocked::increment(int_least32_t& location) {
+int32_t interlocked::increment(int32_t& location) {
   return InterlockedIncrement((long*)&location);
 }
 
-int_least64_t interlocked::increment(int_least64_t& location) {
+int64_t interlocked::increment(int64_t& location) {
   return InterlockedIncrement64((long long*)&location);
 }

@@ -135,7 +135,7 @@ namespace xtd::native::macos {
       return result;
     }
     
-    static bool try_parse(const std::string& str, int_least32_t& value) noexcept {
+    static bool try_parse(const std::string& str, int32_t& value) noexcept {
       try {
         value = std::atoi(str.c_str());
         return true;

@@ -16,8 +16,8 @@ using namespace xtd::native;
 namespace {
   std::function<bool(int32_t)> user_cancel_callback;
   
-  int_least32_t __background_color() {
-    static int_least32_t color = -1;
+  int32_t __background_color() {
+    static int32_t color = -1;
     if (color != -1) return color;
     CONSOLE_SCREEN_BUFFER_INFO csbi;
     if (GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi) != TRUE) color = 0x00;
@@ -25,8 +25,8 @@ namespace {
     return color;
   }
   
-  int_least32_t __foreground_color() {
-    static int_least32_t color = -1;
+  int32_t __foreground_color() {
+    static int32_t color = -1;
     if (color != -1) return color;
     CONSOLE_SCREEN_BUFFER_INFO csbi;
     if (GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi) != TRUE) color = 0x07;
@@ -79,24 +79,24 @@ namespace {
       GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
       
       csbi.wAttributes &= 0xFF0F;
-      csbi.wAttributes |= ((int_least32_t)background_color_ << 4) | (int_least32_t)foreground_color_;
+      csbi.wAttributes |= ((int32_t)background_color_ << 4) | (int32_t)foreground_color_;
       SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), csbi.wAttributes);
     }
     
-    int_least32_t background_color_ = __background_color();
-    int_least32_t foreground_color_ = __foreground_color();
+    int32_t background_color_ = __background_color();
+    int32_t foreground_color_ = __foreground_color();
   };
   
   terminal terminal::terminal_;
 }
 
-int_least32_t console::background_color() {
+int32_t console::background_color() {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   if (GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi) == TRUE) ::background_color = (csbi.wAttributes & 0x00F0) >> 4;
   return ::background_color;
 }
 
-bool console::background_color(int_least32_t color) {
+bool console::background_color(int32_t color) {
   ::background_color = color;
   terminal::terminal_.force_compiler_optimizer_to_create_object();
   CONSOLE_SCREEN_BUFFER_INFO csbi;
@@ -107,12 +107,12 @@ bool console::background_color(int_least32_t color) {
   return SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), csbi.wAttributes) == TRUE;
 }
 
-bool console::beep(uint_least32_t frequency, uint_least32_t duration) {
+bool console::beep(uint32_t frequency, uint32_t duration) {
   if (frequency < 37 || frequency > 32767) return false;
   return Beep(frequency, duration) == TRUE;
 }
 
-int_least32_t console::buffer_height() {
+int32_t console::buffer_height() {
   /*
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   ::buffer_height = GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi) == TRUE ? csbi.dwSize.Y : console::window_height();
@@ -121,18 +121,18 @@ int_least32_t console::buffer_height() {
   return ::buffer_height;
 }
 
-bool console::buffer_height(int_least32_t height) {
+bool console::buffer_height(int32_t height) {
   ::buffer_height = height;
   /*
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
-  csbi.dwSize.Y = static_cast<int_least16_t>(height);
+  csbi.dwSize.Y = static_cast<int16_t>(height);
   return SetConsoleScreenBufferSize(GetStdHandle(STD_OUTPUT_HANDLE), csbi.dwSize) == TRUE;
    */
   return true;
 }
 
-int_least32_t console::buffer_width() {
+int32_t console::buffer_width() {
   /*
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   ::buffer_width = GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi) == TRUE ? csbi.dwSize.X : console::window_width();
@@ -141,12 +141,12 @@ int_least32_t console::buffer_width() {
   return ::buffer_width;
 }
 
-bool console::buffer_width(int_least32_t width) {
+bool console::buffer_width(int32_t width) {
   ::buffer_width = width;
   /*
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
-  csbi.dwSize.X = static_cast<int_least16_t>(width);
+  csbi.dwSize.X = static_cast<int16_t>(width);
   return SetConsoleScreenBufferSize(GetStdHandle(STD_OUTPUT_HANDLE), csbi.dwSize) == TRUE;
    */
   return true;
@@ -168,19 +168,19 @@ bool console::clear() {
   return console::set_cursor_position(0, 0);
 }
 
-int_least32_t console::cursor_left() {
+int32_t console::cursor_left() {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   if (GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi) == TRUE) ::cursor_left = csbi.dwCursorPosition.X;
   return ::cursor_left;
 }
 
-int_least32_t console::cursor_size() {
+int32_t console::cursor_size() {
   CONSOLE_CURSOR_INFO cci;
   if (GetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cci) == TRUE) ::cursor_size = cci.dwSize;
   return ::cursor_size;
 }
 
-bool console::cursor_size(int_least32_t size) {
+bool console::cursor_size(int32_t size) {
   ::cursor_size = size;
   CONSOLE_CURSOR_INFO cci;
   GetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cci);
@@ -189,7 +189,7 @@ bool console::cursor_size(int_least32_t size) {
   return SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cci) == TRUE;
 }
 
-int_least32_t console::cursor_top() {
+int32_t console::cursor_top() {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   if (GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi) == TRUE) ::cursor_top = csbi.dwCursorPosition.Y;
   return ::cursor_top;
@@ -209,13 +209,13 @@ bool console::cursor_visible(bool visible) {
   return SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cci) == TRUE;
 }
 
-int_least32_t console::foreground_color() {
+int32_t console::foreground_color() {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   if (GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi) == TRUE) ::foreground_color = csbi.wAttributes & 0x000F;
   return ::foreground_color;
 }
 
-bool console::foreground_color(int_least32_t color) {
+bool console::foreground_color(int32_t color) {
   ::foreground_color = color;
   terminal::terminal_.force_compiler_optimizer_to_create_object();
   CONSOLE_SCREEN_BUFFER_INFO csbi;
@@ -226,12 +226,12 @@ bool console::foreground_color(int_least32_t color) {
   return SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), csbi.wAttributes) == TRUE;
 }
 
-int_least32_t console::input_code_page() {
+int32_t console::input_code_page() {
   ::input_code_page = GetConsoleCP();
   return ::input_code_page;
 }
 
-bool console::input_code_page(int_least32_t code_page) {
+bool console::input_code_page(int32_t code_page) {
   ::input_code_page = code_page;
   return SetConsoleCP(code_page) == TRUE;
 }
@@ -240,13 +240,13 @@ bool console::key_available() {
   return _kbhit() != 0;
 }
 
-int_least32_t console::largest_window_height() {
+int32_t console::largest_window_height() {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   if (GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi) == TRUE) ::largest_window_height = csbi.srWindow.Bottom - csbi.srWindow.Top + 1;
   return ::largest_window_height;
 }
 
-int_least32_t console::largest_window_width() {
+int32_t console::largest_window_width() {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   if (GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi) == TRUE) ::largest_window_width = csbi.srWindow.Right - csbi.srWindow.Left + 1;
   return ::largest_window_width;
@@ -257,12 +257,12 @@ bool console::number_lock() {
   return ::number_lock;
 }
 
-int_least32_t console::output_code_page() {
+int32_t console::output_code_page() {
   ::output_code_page = GetConsoleOutputCP();
   return ::output_code_page;
 }
 
-bool console::output_code_page(int_least32_t code_page) {
+bool console::output_code_page(int32_t code_page) {
   ::output_code_page = code_page;
   return SetConsoleOutputCP(code_page) == TRUE;
 }
@@ -291,13 +291,13 @@ bool console::reset_color() {
   return result1 && result2;
 }
 
-bool console::set_cursor_position(int_least32_t left, int_least32_t top) {
+bool console::set_cursor_position(int32_t left, int32_t top) {
   ::cursor_left = left;
   ::cursor_top = top;
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
-  csbi.dwCursorPosition.X = static_cast<int_least16_t>(left);
-  csbi.dwCursorPosition.Y = static_cast<int_least16_t>(top);
+  csbi.dwCursorPosition.X = static_cast<int16_t>(left);
+  csbi.dwCursorPosition.Y = static_cast<int16_t>(top);
   return SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), csbi.dwCursorPosition) == TRUE;
 }
 
@@ -327,58 +327,58 @@ bool console::treat_control_c_as_input(bool treat_control_c_as_input) {
   return SetConsoleMode(GetStdHandle(STD_INPUT_HANDLE), mode) == TRUE;
 }
 
-int_least32_t console::window_height() {
+int32_t console::window_height() {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   ::window_height = GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi) == TRUE ? csbi.srWindow.Bottom - csbi.srWindow.Top + 1 : 25;
   return ::window_height;
 }
 
-bool console::window_height(int_least32_t height) {
+bool console::window_height(int32_t height) {
   ::window_height = height;
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
-  csbi.srWindow.Bottom = static_cast<int_least16_t>(csbi.srWindow.Top + height - 1);
+  csbi.srWindow.Bottom = static_cast<int16_t>(csbi.srWindow.Top + height - 1);
   return SetConsoleWindowInfo(GetStdHandle(STD_OUTPUT_HANDLE), TRUE, &csbi.srWindow) == TRUE;
 }
 
-int_least32_t console::window_left() {
+int32_t console::window_left() {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   ::window_left = GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi) == TRUE ? csbi.srWindow.Left : 0;
   return ::window_left;
 }
 
-bool console::window_left(int_least32_t left) {
+bool console::window_left(int32_t left) {
   ::window_left = left;
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
-  csbi.srWindow.Left = static_cast<int_least16_t>(left);
+  csbi.srWindow.Left = static_cast<int16_t>(left);
   return SetConsoleWindowInfo(GetStdHandle(STD_OUTPUT_HANDLE), TRUE, &csbi.srWindow) == TRUE;
 }
 
-int_least32_t console::window_top() {
+int32_t console::window_top() {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   ::window_top = GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi) == TRUE ? csbi.srWindow.Top : 0;
   return ::window_top;
 }
 
-bool console::window_top(int_least32_t top) {
+bool console::window_top(int32_t top) {
   ::window_top = top;
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
-  csbi.srWindow.Top = static_cast<int_least16_t>(top);
+  csbi.srWindow.Top = static_cast<int16_t>(top);
   return SetConsoleWindowInfo(GetStdHandle(STD_OUTPUT_HANDLE), TRUE, &csbi.srWindow) == TRUE;
 }
 
-int_least32_t console::window_width() {
+int32_t console::window_width() {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   ::window_width = GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi) == TRUE ? csbi.srWindow.Right - csbi.srWindow.Left + 1 : 80;
   return ::window_width;
 }
 
-bool console::window_width(int_least32_t width) {
+bool console::window_width(int32_t width) {
   ::window_width = width;
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
-  csbi.srWindow.Right = static_cast<int_least16_t>(csbi.srWindow.Left + width - 1);
+  csbi.srWindow.Right = static_cast<int16_t>(csbi.srWindow.Left + width - 1);
   return SetConsoleWindowInfo(GetStdHandle(STD_OUTPUT_HANDLE), TRUE, &csbi.srWindow) == TRUE;
 }
