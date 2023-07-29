@@ -21,7 +21,7 @@ public:
   virtual bool create(bool initially_owned, const ustring& name, bool& create_new) = 0;
   virtual void destroy() = 0;
   virtual bool signal(bool& io_error) = 0;
-  virtual bool wait(int32_t milliseconds_timeout, bool& io_error) = 0;
+  virtual bool wait(int32 milliseconds_timeout, bool& io_error) = 0;
 };
 
 class mutex::named_mutex : public mutex_base {
@@ -57,7 +57,7 @@ public:
     return native::named_mutex::signal(handle_, io_error);
   }
   
-  bool wait(int32_t milliseconds_timeout, bool& io_error) override {
+  bool wait(int32 milliseconds_timeout, bool& io_error) override {
     io_error = false;
     return native::named_mutex::wait(handle_, milliseconds_timeout, io_error);
   }
@@ -101,7 +101,7 @@ public:
     return true;
   }
 
-  bool wait(int32_t milliseconds_timeout, bool& io_error) override {
+  bool wait(int32 milliseconds_timeout, bool& io_error) override {
     io_error = false;
     if (milliseconds_timeout != timeout::infinite) return handle_->try_lock_for(std::chrono::milliseconds {milliseconds_timeout});
     handle_->lock();
@@ -178,7 +178,7 @@ bool mutex::signal() {
   return result;
 }
 
-bool mutex::wait(int32_t milliseconds_timeout) {
+bool mutex::wait(int32 milliseconds_timeout) {
   if (!mutex_) throw object_closed_exception {csf_};
   if (milliseconds_timeout < -1) throw argument_out_of_range_exception {csf_};
   bool io_error = false;

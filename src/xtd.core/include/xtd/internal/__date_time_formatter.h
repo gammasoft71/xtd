@@ -7,6 +7,7 @@
 #endif
 /// @endcond
 
+#include "../types.h"
 #include "__format_exception.h"
 #include "__sprintf.h"
 

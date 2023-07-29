@@ -97,7 +97,7 @@ namespace xtd {
       /// @{
       bool signal() override;
 
-      bool wait(int32_t milliseconds_timeout) override;
+      bool wait(int32 milliseconds_timeout) override;
       /// @}
 
     private:

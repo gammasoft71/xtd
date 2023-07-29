@@ -75,7 +75,7 @@ namespace xtd {
       /// @brief Suspends the current thread for a specified time.
       /// @param milliseconds_timeout The number of milliseconds for which the thread is blocked. Specify zero (0) to indicate that this thread should be suspended to allow other waiting threads to execute. Specify xtd::threading::Timeout.Infinite to block the thread indefinitely.
       /// @exception ArgumentException milliseconds_timeout is a negative number other than -1, which represents an infinite time-out.
-      static void sleep(int32_t milliseconds_timeout);
+      static void sleep(int32 milliseconds_timeout);
       
       /// @brief Suspends the current thread for a specified time.
       /// @param timeout A xtd::time_span set to the amount of time for which the thread is blocked. Specify zero to indicate that this thread should be suspended to allow other waiting threads to execute. Specify xtd::threading::Timeout.Infinite to block the thread indefinitely.
@@ -94,14 +94,14 @@ namespace xtd {
       
     private:
       bool cancel();
-      static bool do_wait(wait_handle& wait_handle, int32_t milliseconds_timeout);
+      static bool do_wait(wait_handle& wait_handle, int32 milliseconds_timeout);
 
       std::shared_ptr<data> data_;
       static thread_id main_thread_id_;
       static std::recursive_mutex mutex_;
       static thread_collection threads_;
-      static constexpr int32_t unmanaged_thread_id = 0;
-      static constexpr int32_t main_managed_thread_id = 1;
+      static constexpr int32 unmanaged_thread_id = 0;
+      static constexpr int32 main_managed_thread_id = 1;
     };
   }
 }
