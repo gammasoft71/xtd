@@ -41,7 +41,7 @@ namespace xtd {
       /// @brief Cancel thread with specified handle.
       /// @param handle The thread handle.
       /// @warning Internal use only
-      static bool cancel(intptr_t handle);
+      static bool cancel(intmax_t handle);
       /// @}
     };
   }

@@ -10,7 +10,7 @@ using namespace std::chrono;
 using namespace xtd;
 using namespace xtd::threading;
 
-const intptr_t wait_handle::invalid_handle = native::types::invalid_handle();
+const intptr wait_handle::invalid_handle = native::types::invalid_handle();
 
 wait_handle::~wait_handle() {
   close();

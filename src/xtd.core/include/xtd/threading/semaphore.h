@@ -41,8 +41,8 @@ namespace xtd {
       /// @name Properties
       
       /// @{
-      intptr_t handle() const noexcept override;
-      void handle(intptr_t value) override;
+      intptr handle() const noexcept override;
+      void handle(intptr value) override;
       /// @}
       
       /// @name Methods

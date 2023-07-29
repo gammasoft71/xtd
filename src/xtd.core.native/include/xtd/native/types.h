@@ -65,7 +65,7 @@ namespace xtd {
       
       /// @brief Gets an invalid native operating system handle.
       /// @return An invalid native operating system handle.
-      static intptr_t invalid_handle() noexcept;
+      static intmax_t invalid_handle() noexcept;
       /// @}
     };
   }

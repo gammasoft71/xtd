@@ -15,8 +15,8 @@ class mutex::mutex_base {
 public:
   virtual ~mutex_base() = default;
   
-  virtual intptr_t handle() const noexcept = 0;
-  virtual void handle(intptr_t value) = 0;
+  virtual intptr handle() const noexcept = 0;
+  virtual void handle(intptr value) = 0;
   virtual bool create(bool initially_owned) = 0;
   virtual bool create(bool initially_owned, const ustring& name, bool& create_new) = 0;
   virtual void destroy() = 0;
@@ -28,11 +28,11 @@ class mutex::named_mutex : public mutex_base {
 public:
   ~named_mutex() {destroy();}
 
-  intptr_t handle() const noexcept override {
+  intptr handle() const noexcept override {
     return handle_;
   }
   
-  void handle(intptr_t value) override {
+  void handle(intptr value) override {
     handle_ = value;
   }
   
@@ -63,7 +63,7 @@ public:
   }
   
 private:
-  intptr_t handle_ = invalid_handle;
+  intptr handle_ = invalid_handle;
   ustring name_;
 };
 
@@ -71,11 +71,11 @@ class mutex::unnamed_mutex : public mutex_base {
 public:
   ~unnamed_mutex() {destroy();}
 
-  intptr_t handle() const noexcept override {
-    return handle_ ? reinterpret_cast<intptr_t>(handle_.get()) : invalid_handle;
+  intptr handle() const noexcept override {
+    return handle_ ? reinterpret_cast<intptr>(handle_.get()) : invalid_handle;
   }
   
-  void handle(intptr_t value) override {
+  void handle(intptr value) override {
     handle_.reset(reinterpret_cast<std::recursive_timed_mutex*>(value));
   }
 
@@ -133,11 +133,11 @@ mutex::~mutex() {
   close();
 }
 
-intptr_t mutex::handle() const noexcept {
+intptr mutex::handle() const noexcept {
   return mutex_ ? mutex_->handle() : invalid_handle;
 }
 
-void mutex::handle(intptr_t value) {
+void mutex::handle(intptr value) {
   mutex_->handle(value);
 }
 

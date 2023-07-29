@@ -149,7 +149,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core types
   /// @remarks For more information about types, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/types">Native types, boxing and unboxing</a>.
-  using intptr = intptr_t;
+  using intptr = intmax_t;
   
   /// @brief Represent the signed integer type of the result of subtracting two pointers.
   /// @par Header
@@ -259,7 +259,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core types
   /// @remarks For more information about types, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/types">Native types, boxing and unboxing</a>.
-  using uintptr = uintptr_t;
+  using uintptr = uintmax_t;
   
   /// @brief Represents a 32-bit or 64-bit unsigned integer.
   /// @par Header

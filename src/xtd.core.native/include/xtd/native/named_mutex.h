@@ -44,23 +44,23 @@ namespace xtd {
       /// @param creat_new When this method returns, contains a boolthat is true if the specified named system mutex was created; false if the specified named system mutex already existed.
       /// @return The handle of the created or open mutex.
       /// @warning Internal use only
-      static intptr_t create(bool initially_owned, const std::string& name, bool& create_new);
+      static intmax_t create(bool initially_owned, const std::string& name, bool& create_new);
       /// @brief Destroy named mutex with specified mutex handle.
       /// @param name The name of the mutex.
       /// @param handle The mutex handle to destroy.
       /// @warning Internal use only
-      static void destroy(intptr_t handle, const std::string& name);
+      static void destroy(intmax_t handle, const std::string& name);
       /// @brief Signal named mutex with specified mutex handle.
       /// @param handle The mutex handle to signal.
       /// @return true if succeed; otherwhise false.
       /// @warning Internal use only
-      static bool signal(intptr_t handle, bool& io_error);
+      static bool signal(intmax_t handle, bool& io_error);
       /// @brief Wait named mutex with specified mutex handle and timeout.
       /// @param handle The mutex handle to wait.
       /// @param milliseconds_timeout The timeout in milliseconds (-1 is infinite timeout).
       /// @return true if succeed; otherwhise false.
       /// @warning Internal use only
-      static bool wait(intptr_t handle, int32_t milliseconds_timeout, bool& io_error);
+      static bool wait(intmax_t handle, int32_t milliseconds_timeout, bool& io_error);
       /// @}
     };
   }

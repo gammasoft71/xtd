@@ -22,27 +22,27 @@ void dns::cleanup() {
   #endif
 }
 
-void dns::destroy(intptr_t host) {
+void dns::destroy(intmax_t host) {
   delete reinterpret_cast<hostent*>(host);
 }
 
-intptr_t dns::get_host_by_address(const string& host_address, int32_t host_address_type) {
+intmax_t dns::get_host_by_address(const string& host_address, int32_t host_address_type) {
   lock_guard<mutex> lock(dns_mutex);
   int64_t internet_address = 0;
   inet_pton(host_address_type, host_address.c_str(), &internet_address);
   hostent* host = gethostbyaddr(reinterpret_cast<char*>(&internet_address), host_address_type == ADDRESS_FAMILY_INTER_NETWORK ? 4 : 16, host_address_type);
   if (host == nullptr) return 0;
-  return reinterpret_cast<intptr_t>(new hostent(*host));
+  return reinterpret_cast<intmax_t>(new hostent(*host));
 }
 
-intptr_t dns::get_host_by_name(const string& host_name) {
+intmax_t dns::get_host_by_name(const string& host_name) {
   lock_guard<mutex> lock(dns_mutex);
   hostent* host = gethostbyname(host_name.c_str());
   if (host == nullptr) return 0;
-  return reinterpret_cast<intptr_t>(new hostent(*host));
+  return reinterpret_cast<intmax_t>(new hostent(*host));
 }
 
-vector<string> dns::get_aliases(intptr_t host) {
+vector<string> dns::get_aliases(intmax_t host) {
   vector<string> aliases;
   size_t index = 0;
   while (reinterpret_cast<hostent*>(host)->h_aliases[index] != nullptr)
@@ -50,7 +50,7 @@ vector<string> dns::get_aliases(intptr_t host) {
   return aliases;
 }
 
-vector<vector<uint8_t>> dns::get_addresses(intptr_t host) {
+vector<vector<uint8_t>> dns::get_addresses(intmax_t host) {
   size_t index = 0;
   vector<vector<uint8_t>> addresses;
   while (reinterpret_cast<hostent*>(host)->h_addr_list[index] != nullptr) {
@@ -60,7 +60,7 @@ vector<vector<uint8_t>> dns::get_addresses(intptr_t host) {
   return addresses;
 }
 
-string dns::get_host_name(intptr_t host) {
+string dns::get_host_name(intmax_t host) {
   return reinterpret_cast<hostent*>(host)->h_name;
 }
 

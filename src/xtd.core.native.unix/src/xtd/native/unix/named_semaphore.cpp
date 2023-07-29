@@ -8,20 +8,20 @@
 
 using namespace xtd::native;
 
-intptr_t named_semaphore::create(const std::string& name, bool& create_new) {
+intmax_t named_semaphore::create(const std::string& name, bool& create_new) {
   sem_t* semaphore = nullptr;
   semaphore = sem_open(name.c_str(), O_CREAT | O_EXCL, S_IRUSR | S_IWUSR, 1);
   create_new = semaphore != SEM_FAILED;
   if (semaphore == SEM_FAILED) semaphore = sem_open(name.c_str(), O_CREAT, S_IRUSR | S_IWUSR, 1);
-  return semaphore != SEM_FAILED ? reinterpret_cast<intptr_t>(semaphore) : 0;
+  return semaphore != SEM_FAILED ? reinterpret_cast<intmax_t>(semaphore) : 0;
 }
 
-void named_semaphore::destroy(intptr_t handle, const std::string& name) {
+void named_semaphore::destroy(intmax_t handle, const std::string& name) {
   if (sem_close(reinterpret_cast<sem_t*>(handle)) == 0)
     sem_unlink(name.c_str());
 }
 
-bool named_semaphore::signal(intptr_t handle, bool& io_error) {
+bool named_semaphore::signal(intmax_t handle, bool& io_error) {
   io_error = false;
   if (sem_post(reinterpret_cast<sem_t*>(handle)) == -1) {
     if (errno == EINVAL) io_error = true;
@@ -30,7 +30,7 @@ bool named_semaphore::signal(intptr_t handle, bool& io_error) {
   return true;
 }
 
-bool named_semaphore::wait(intptr_t handle, int32_t milliseconds_timeout, bool& io_error) {
+bool named_semaphore::wait(intmax_t handle, int32_t milliseconds_timeout, bool& io_error) {
   io_error = false;
   if (milliseconds_timeout == -1) {
     if (sem_wait(reinterpret_cast<sem_t*>(handle)) == -1) {
