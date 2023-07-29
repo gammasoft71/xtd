@@ -19,6 +19,7 @@ namespace xtd::native {
   class file;
   class file_system;
   class named_mutex;
+  class named_semaphore;
   class path;
   class process;
   class translator;
@@ -33,6 +34,7 @@ namespace xtd::native {
       friend xtd::native::file;
       friend xtd::native::file_system;
       friend xtd::native::named_mutex;
+      friend xtd::native::named_semaphore;
       friend xtd::native::path;
       friend xtd::native::process;
       friend xtd::native::translator;
