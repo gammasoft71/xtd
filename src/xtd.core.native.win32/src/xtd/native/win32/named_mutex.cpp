@@ -26,7 +26,7 @@ bool named_mutex::signal(intmax_t handle, bool& io_error) {
   return result;
 }
 
-bool named_mutex::wait(intmax_t handle, int32_t milliseconds_timeout, bool& io_error) {
+bool named_mutex::wait(intmax_t handle, int_least32_t milliseconds_timeout, bool& io_error) {
   auto result = WaitForSingleObject(reinterpret_cast<HANDLE>(handle), milliseconds_timeout) == TRUE;
   io_error = !result;
   return result;

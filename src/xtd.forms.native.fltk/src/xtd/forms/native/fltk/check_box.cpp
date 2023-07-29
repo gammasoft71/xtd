@@ -25,12 +25,12 @@ namespace {
   }
 }
 
-int check_box::check_state(intptr_t control) {
+int check_box::check_state(intmax_t control) {
   if (control == 0) return false;
   return from_check_box_state(static_cast<Fl_Check_Box*>(reinterpret_cast<control_handler*>(control)->control())->state());
 }
 
-void check_box::check_state(intptr_t control, int state) {
+void check_box::check_state(intmax_t control, int state) {
   if (control == 0) return;
   static_cast<Fl_Check_Box*>(reinterpret_cast<control_handler*>(control)->control())->state(to_check_box_state(state));
 }

@@ -32,7 +32,7 @@ bool drive::get_available_free_space(const std::string& root_path_name, size_t& 
   return true;
 }
 
-int32_t drive::get_drive_type(const std::string& root_path_name) {
+int_least32_t drive::get_drive_type(const std::string& root_path_name) {
   if (root_drive == root_path_name) return DRIVE_FIXED;
   if (find(ram_drives.begin(), ram_drives.end(), root_path_name) != ram_drives.end()) return DRIVE_RAMDISK;
   if (find(network_drives.begin(), network_drives.end(), root_path_name) != network_drives.end()) return DRIVE_REMOTE;
@@ -58,7 +58,7 @@ std::vector<std::string> drive::get_drives() {
   
   drives.insert(drives.end(), amovible_mounteds.begin(), amovible_mounteds.end());
   
-  int32_t file_attributes = 0;
+  int_least32_t file_attributes = 0;
   for (auto amovible_mounted_point : amovible_mounted_points) {
     if ((file_system::get_attributes(amovible_mounted_point, file_attributes) == 0 && (file_attributes & FILE_ATTRIBUTE_DIRECTORY) == FILE_ATTRIBUTE_DIRECTORY)) {
       for (string drive : directory::enumerate_directories(amovible_mounted_point, "*")) {

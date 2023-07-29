@@ -10,9 +10,9 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
-intptr_t screen::create_graphics() {
+intmax_t screen::create_graphics() {
   application::initialize();
-  return reinterpret_cast<intptr_t>(new drawing::native::fl_screen_dc());
+  return reinterpret_cast<intmax_t>(new drawing::native::fl_screen_dc());
 }
 
 size_t screen::count() {
@@ -20,7 +20,7 @@ size_t screen::count() {
   return Fl::screen_count();
 }
 
-int32_t screen::bits_per_pixel(size_t index) {
+int_least32_t screen::bits_per_pixel(size_t index) {
   application::initialize();
   float h = 0, v = 0;
   Fl::screen_dpi(h, v, index);
@@ -51,7 +51,7 @@ rectangle screen::working_area(size_t index) {
   return {x, y, w, h};
 }
 
-size_t screen::from_handle(intptr_t handle) {
+size_t screen::from_handle(intmax_t handle) {
   application::initialize();
   int x = 0, y = 0;
   Fl_Widget* widget = reinterpret_cast<Fl_Widget*>(handle);

@@ -70,8 +70,8 @@ namespace {
   }
 }
 
-int32_t process::base_priority(int32_t priority) {
-  static map<int32_t, int32_t> base_priorities {{IDLE_PRIORITY_CLASS, 4}, {BELOW_NORMAL_PRIORITY_CLASS, 6}, {NORMAL_PRIORITY_CLASS, 8}, {ABOVE_NORMAL_PRIORITY_CLASS, 10}, {HIGH_PRIORITY_CLASS, 13}, {REALTIME_PRIORITY_CLASS, 24}};
+int_least32_t process::base_priority(int_least32_t priority) {
+  static map<int_least32_t, int_least32_t> base_priorities {{IDLE_PRIORITY_CLASS, 4}, {BELOW_NORMAL_PRIORITY_CLASS, 6}, {NORMAL_PRIORITY_CLASS, 8}, {ABOVE_NORMAL_PRIORITY_CLASS, 10}, {HIGH_PRIORITY_CLASS, 13}, {REALTIME_PRIORITY_CLASS, 24}};
   auto it = base_priorities.find(priority);
   if (it == base_priorities.end()) it = base_priorities.find(NORMAL_PRIORITY_CLASS);
   return it->second;
@@ -79,16 +79,16 @@ int32_t process::base_priority(int32_t priority) {
 
 bool process::kill(intmax_t handle) {
   if (handle == 0) return false;
-  return TerminateProcess(reinterpret_cast<HANDLE>(handle), static_cast<uint32_t>(-1)) != 0;
+  return TerminateProcess(reinterpret_cast<HANDLE>(handle), static_cast<uint_least32_t>(-1)) != 0;
 }
 
-bool process::priority_class(intmax_t process, int32_t priority) {
+bool process::priority_class(intmax_t process, int_least32_t priority) {
   return SetPriorityClass(reinterpret_cast<HANDLE>(process), priority) == TRUE;
 }
 
-intmax_t process::shell_execute(const std::string& verb, const std::string& file_name, const std::string& arguments, const std::string& working_directory, int32_t process_window_style) {
+intmax_t process::shell_execute(const std::string& verb, const std::string& file_name, const std::string& arguments, const std::string& working_directory, int_least32_t process_window_style) {
   initialize();
-  static map<int32_t, int32_t> window_styles{{PROCESS_WINDOW_STYLE_NORMAL, SW_NORMAL}, {PROCESS_WINDOW_STYLE_HIDDEN, SW_HIDE}, {PROCESS_WINDOW_STYLE_MINIMIZED, SW_SHOWMINIMIZED}, {PROCESS_WINDOW_STYLE_MAXIMIZED, SW_SHOWMAXIMIZED}};
+  static map<int_least32_t, int_least32_t> window_styles{{PROCESS_WINDOW_STYLE_NORMAL, SW_NORMAL}, {PROCESS_WINDOW_STYLE_HIDDEN, SW_HIDE}, {PROCESS_WINDOW_STYLE_MINIMIZED, SW_SHOWMINIMIZED}, {PROCESS_WINDOW_STYLE_MAXIMIZED, SW_SHOWMAXIMIZED}};
   auto wverb = win32::strings::to_wstring(verb);
   auto wfile_name = win32::strings::to_wstring(file_name);
   auto warguments = win32::strings::to_wstring(arguments);
@@ -108,7 +108,7 @@ intmax_t process::shell_execute(const std::string& verb, const std::string& file
   return reinterpret_cast<intmax_t>(shell_execute_info.hInstApp);
 }
 
-process::started_process process::start(const string& file_name, const string& arguments, const string& working_directory, int32_t process_window_style, int32_t process_creation_flags, tuple<bool, bool, bool> redirect_standard_streams) {
+process::started_process process::start(const string& file_name, const string& arguments, const string& working_directory, int_least32_t process_window_style, int_least32_t process_creation_flags, tuple<bool, bool, bool> redirect_standard_streams) {
   initialize();
   auto [redirect_standard_input, redirect_standard_output, redirect_standard_error] = redirect_standard_streams;
   STARTUPINFO startup_info {};
@@ -148,10 +148,10 @@ process::started_process process::start(const string& file_name, const string& a
   
   process_infos[reinterpret_cast<intmax_t>(process_information.hProcess)] = make_tuple(reinterpret_cast<intmax_t>(process_information.hProcess), reinterpret_cast<intmax_t>(process_information.hThread), L"", win32::strings::to_wstring(file_name), win32::strings::to_wstring(arguments), win32::strings::to_wstring(working_directory));
   
-  return make_tuple(reinterpret_cast<intmax_t>(process_information.hProcess), static_cast<int32_t>(process_information.dwProcessId), make_unique<process_ostream>(pipe_stdin[1]), make_unique<process_istream>(pipe_stdout[0]), make_unique<process_istream>(pipe_stderr[0]));
+  return make_tuple(reinterpret_cast<intmax_t>(process_information.hProcess), static_cast<int_least32_t>(process_information.dwProcessId), make_unique<process_ostream>(pipe_stdin[1]), make_unique<process_istream>(pipe_stdout[0]), make_unique<process_istream>(pipe_stderr[0]));
 }
 
-bool process::wait(intmax_t process, int32_t& exit_code) {
+bool process::wait(intmax_t process, int_least32_t& exit_code) {
   initialize();
   if (process == 0) return false;
   auto it = process_infos.find(process);

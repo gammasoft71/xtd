@@ -32,7 +32,7 @@ bool drive::get_available_free_space(const std::string& root_path_name, size_t& 
   return true;
 }
 
-int32_t drive::get_drive_type(const std::string& root_path_name) {
+int_least32_t drive::get_drive_type(const std::string& root_path_name) {
   if (root_drive == root_path_name) return DRIVE_FIXED;
   if (find(ram_drives.begin(), ram_drives.end(), root_path_name) != ram_drives.end()) return DRIVE_RAMDISK;
   if (find(network_drives.begin(), network_drives.end(), root_path_name) != network_drives.end()) return DRIVE_REMOTE;
@@ -52,7 +52,7 @@ std::vector<std::string> drive::get_drives() {
   
   drives.insert(drives.end(), amovible_mounteds.begin(), amovible_mounteds.end());
   
-  int32_t file_attributes = 0;
+  int_least32_t file_attributes = 0;
   for (auto amovible_mounted_point : amovible_mounted_points) {
     if ((file_system::get_attributes(amovible_mounted_point, file_attributes) == 0 && (file_attributes & FILE_ATTRIBUTE_DIRECTORY) == FILE_ATTRIBUTE_DIRECTORY)) {
       for (string drive : directory::enumerate_directories(amovible_mounted_point, "*")) {
@@ -83,7 +83,7 @@ bool drive::get_volume_information(const std::string& root_path_name, std::strin
     return false;
     
   volume_name = root_path_name;
-  static map<uint32_t, string> file_system_names = {{0x0000adf5, "adfs"}, {0x0000adff, "adfs"}, {0x42465331, "befs"}, {0x1BADFACE, "bfs"}, {0xFF534D42, "cifs"}, {0x73757245, "coda"}, {0x012FF7B7, "coh"}, {0x28cd3d45, "cramfs"}, {0x00001373, "devfs"}, {0x00414A53, "efs"}, {0x0000137D, "ext"}, {0x0000EF51, "ext2"}, {0x0000EF52, "ext3"}, {0x0000EF53, "ext4"}, {0x00004244, "hfs"}, {0xF995E849, "hpfs"}, {0x958458f6, "hgfs"}, {0x00009660, "isofs"}, {0x000072b6, "jffs2"}, {0x3153464a, "jfs"}, {0x0000137F, "minix"}, {0x0000138F, "minix"}, {0x00002468, "minix2"}, {0x00002478, "minix2"}, {0x00004d44, "fat32"}, {0x0000564c, "ncp"}, {0x00006969, "nfs"}, {0x5346544e, "ntfs"}, {0x00009fa1, "openprom"}, {0x00009fa0, "proc"}, {0x0000002f, "qnx4"}, {0x52654973, "reiserfs"}, {0x00007275, "romfs"}, {0x0000517B, "smb"}, {0x012FF7B6, "sysv2"}, {0x012FF7B5, "sysv4"}, {0x01021994, "tmpfs"}, {0x15013346, "udf"}, {0x00011954, "ufs"}, {0x00009fa2, "usb device"}, {0xa501FCF5, "vxfs"}, {0x012FF7B4, "xenix"}, {0x58465342, "xfs"}, {0x012FD16D, "_xiafs"}};
+  static map<uint_least32_t, string> file_system_names = {{0x0000adf5, "adfs"}, {0x0000adff, "adfs"}, {0x42465331, "befs"}, {0x1BADFACE, "bfs"}, {0xFF534D42, "cifs"}, {0x73757245, "coda"}, {0x012FF7B7, "coh"}, {0x28cd3d45, "cramfs"}, {0x00001373, "devfs"}, {0x00414A53, "efs"}, {0x0000137D, "ext"}, {0x0000EF51, "ext2"}, {0x0000EF52, "ext3"}, {0x0000EF53, "ext4"}, {0x00004244, "hfs"}, {0xF995E849, "hpfs"}, {0x958458f6, "hgfs"}, {0x00009660, "isofs"}, {0x000072b6, "jffs2"}, {0x3153464a, "jfs"}, {0x0000137F, "minix"}, {0x0000138F, "minix"}, {0x00002468, "minix2"}, {0x00002478, "minix2"}, {0x00004d44, "fat32"}, {0x0000564c, "ncp"}, {0x00006969, "nfs"}, {0x5346544e, "ntfs"}, {0x00009fa1, "openprom"}, {0x00009fa0, "proc"}, {0x0000002f, "qnx4"}, {0x52654973, "reiserfs"}, {0x00007275, "romfs"}, {0x0000517B, "smb"}, {0x012FF7B6, "sysv2"}, {0x012FF7B5, "sysv4"}, {0x01021994, "tmpfs"}, {0x15013346, "udf"}, {0x00011954, "ufs"}, {0x00009fa2, "usb device"}, {0xa501FCF5, "vxfs"}, {0x012FF7B4, "xenix"}, {0x58465342, "xfs"}, {0x012FD16D, "_xiafs"}};
   auto it = file_system_names.find(stat.f_type);
   file_system_name = it == file_system_names.end() ? "unknown" : it->second;
   return true;

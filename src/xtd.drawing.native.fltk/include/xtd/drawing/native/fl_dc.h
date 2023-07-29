@@ -31,7 +31,7 @@ namespace xtd::drawing::native {
   public:
     virtual ~fl_dc() {}
     
-    int32_t ascent(Fl_Font font, Fl_Fontsize font_size) {
+    int_least32_t ascent(Fl_Font font, Fl_Fontsize font_size) {
       context c;
       fl_font(font, font_size);
       return font_size - fl_descent();
@@ -41,55 +41,55 @@ namespace xtd::drawing::native {
       fl_draw_box(Fl_Boxtype::FL_FLAT_BOX, x_, y_, w_, h_, color);
     }
     
-    int32_t descent(Fl_Font font, Fl_Fontsize font_size) {
+    int_least32_t descent(Fl_Font font, Fl_Fontsize font_size) {
       context c;
       fl_font(font, font_size);
       return fl_descent();
     }
     
-    void draw_arc(Fl_Color color, int thick, int style, int32_t x, int32_t y, int32_t w, int32_t h, int32_t start_angle, int32_t sweep_angle) {
+    void draw_arc(Fl_Color color, int thick, int style, int_least32_t x, int_least32_t y, int_least32_t w, int_least32_t h, int_least32_t start_angle, int_least32_t sweep_angle) {
       context c;
       fl_color(color);
       fl_line_style(style, thick);
       fl_arc(x_ + x, y_ + y, w, h, start_angle, start_angle + sweep_angle);
     }
     
-    void draw_bezier(Fl_Color color, int thick, int style, int32_t x1, int32_t y1, int32_t x2, int32_t y2, int32_t x3, int32_t y3, int32_t x4, int32_t y4) {
+    void draw_bezier(Fl_Color color, int thick, int style, int_least32_t x1, int_least32_t y1, int_least32_t x2, int_least32_t y2, int_least32_t x3, int_least32_t y3, int_least32_t x4, int_least32_t y4) {
       context c;
       fl_color(color);
       fl_line_style(style, thick);
       fl_curve(x_ + x1, y_ + y1, x_ + x2, y_ + y2, x_ + x3, y_ + y3, x_ + x4, y_ + y4);
     }
     
-    void draw_ellipse(Fl_Color color, int thick, int style, int32_t x, int32_t y, int32_t w, int32_t h) {
+    void draw_ellipse(Fl_Color color, int thick, int style, int_least32_t x, int_least32_t y, int_least32_t w, int_least32_t h) {
       context c;
       fl_color(color);
       fl_line_style(style, thick);
       fl_arc(x_ + x, y_ + y, w, h, 0, 360);
     }
     
-    void draw_line(Fl_Color color, int thick, int style, int32_t x1, int32_t y1, int32_t x2, int32_t y2) {
+    void draw_line(Fl_Color color, int thick, int style, int_least32_t x1, int_least32_t y1, int_least32_t x2, int_least32_t y2) {
       context c;
       fl_color(color);
       fl_line_style(style, thick);
       fl_line(x_ + x1, y_ + y1, x_ + x2, y_ + y2);
     }
     
-    void draw_rectangle(Fl_Color color, int thick, int style, int32_t x, int32_t y, int32_t w, int32_t h) {
+    void draw_rectangle(Fl_Color color, int thick, int style, int_least32_t x, int_least32_t y, int_least32_t w, int_least32_t h) {
       context c;
       fl_color(color);
       fl_line_style(style, thick);
       fl_rect(x_ + x, y_ + y, w, h);
     }
     
-    void draw_string(const std::string& text, int32_t x, int32_t y, Fl_Font font, Fl_Fontsize font_size, Fl_Color color) {
+    void draw_string(const std::string& text, int_least32_t x, int_least32_t y, Fl_Font font, Fl_Fontsize font_size, Fl_Color color) {
       context c;
       fl_color(color);
       fl_font(font, font_size);
       fl_draw(text.c_str(), x_ + x, y_ + y + font_size);
     }
     
-    void draw_string(const std::string& text, int32_t x1, int32_t y1, int32_t x2, int32_t y2, Fl_Font font, Fl_Fontsize font_size, Fl_Color color) {
+    void draw_string(const std::string& text, int_least32_t x1, int_least32_t y1, int_least32_t x2, int_least32_t y2, Fl_Font font, Fl_Fontsize font_size, Fl_Color color) {
       context c;
       fl_push_clip(x_ + x1, y_ + y2, x_ + x2, y_ + y2);
       fl_color(color);
@@ -98,33 +98,33 @@ namespace xtd::drawing::native {
       fl_pop_clip();
     }
     
-    void fill_ellipse(Fl_Color color, int32_t x, int32_t y, int32_t w, int32_t h) {
+    void fill_ellipse(Fl_Color color, int_least32_t x, int_least32_t y, int_least32_t w, int_least32_t h) {
       context c;
       fl_color(color);
       fl_pie(x_ + x, y_ + y, w, h, 0, 360);
     }
     
-    void fill_pie(Fl_Color color, int32_t x, int32_t y, int32_t w, int32_t h, int32_t start_angle, int32_t sweep_angle) {
+    void fill_pie(Fl_Color color, int_least32_t x, int_least32_t y, int_least32_t w, int_least32_t h, int_least32_t start_angle, int_least32_t sweep_angle) {
       context c;
       fl_color(color);
       fl_pie(x_ + x, y_ + y, w, h, start_angle, start_angle + sweep_angle);
     }
     
-    void fill_rectangle(Fl_Color color, int32_t x, int32_t y, int32_t w, int32_t h) {
+    void fill_rectangle(Fl_Color color, int_least32_t x, int_least32_t y, int_least32_t w, int_least32_t h) {
       fl_draw_box(Fl_Boxtype::FL_FLAT_BOX, x_ + x, y_ + x, w, h, color);
     }
     
-    void measure_string(const std::string& text, Fl_Font font, Fl_Fontsize font_size, int32_t& width, int32_t& height) {
+    void measure_string(const std::string& text, Fl_Font font, Fl_Fontsize font_size, int_least32_t& width, int_least32_t& height) {
       context c;
       fl_font(font, font_size);
       fl_measure(text.c_str(), width, height);
     }
     
   protected:
-    int32_t x_ = 0;
-    int32_t y_ = 0;
-    int32_t w_ = 0;
-    int32_t h_ = 0;
+    int_least32_t x_ = 0;
+    int_least32_t y_ = 0;
+    int_least32_t w_ = 0;
+    int_least32_t h_ = 0;
   };
   
   class fl_paint_dc : public fl_dc {

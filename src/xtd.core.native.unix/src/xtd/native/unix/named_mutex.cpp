@@ -34,7 +34,7 @@ bool named_mutex::signal(intmax_t handle, bool& io_error) {
   return true;
 }
 
-bool named_mutex::wait(intmax_t handle, int32_t milliseconds_timeout, bool& io_error) {
+bool named_mutex::wait(intmax_t handle, int_least32_t milliseconds_timeout, bool& io_error) {
   io_error = false;
   if (milliseconds_timeout == -1) {
     if (sem_wait(reinterpret_cast<sem_t*>(handle)) == -1) {

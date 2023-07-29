@@ -5,7 +5,7 @@
 using namespace xtd;
 using namespace xtd::forms::native;
 
-bool color_dialog::run_dialog(intptr_t hwnd, drawing::color& color, std::optional<std::vector<int32_t>>& custom_colors, size_t options) {
+bool color_dialog::run_dialog(intmax_t hwnd, drawing::color& color, std::optional<std::vector<int_least32_t>>& custom_colors, size_t options) {
   uchar r = color.r();
   uchar g = color.g();
   uchar b = color.b();

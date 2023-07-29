@@ -31,7 +31,7 @@ map<string, string> __process_envs__;
 map<string, string> __user_envs__;
 
 namespace {
-  void get_windows_version(int32_t& major, int32_t& minor, int32_t& build, int32_t& revision) {
+  void get_windows_version(int_least32_t& major, int_least32_t& minor, int_least32_t& build, int_least32_t& revision) {
     // GetVersionEx (https://docs.microsoft.com/en-us/windows/win32/api/sysinfoapi/nf-sysinfoapi-getversionexa) allows you to get the version for a Windows 8 at most. For Windows 10 and more see :
     // https://stackoverflow.com/questions/32115255/c-how-to-detect-windows-10
     NTSTATUS(WINAPI * RtlGetVersion)(LPOSVERSIONINFOEXW);
@@ -106,7 +106,7 @@ namespace {
   }
 }
 
-int32_t environment::at_quick_exit(void (*on_quick_exit)(void)) {
+int_least32_t environment::at_quick_exit(void (*on_quick_exit)(void)) {
   return std::at_quick_exit(on_quick_exit);
 }
 
@@ -158,7 +158,7 @@ string environment::get_distribution_name() {
   return name;
 }
 
-void environment::get_distribution_version(int32_t& major, int32_t& minor, int32_t& build, int32_t& revision) {
+void environment::get_distribution_version(int_least32_t& major, int_least32_t& minor, int_least32_t& build, int_least32_t& revision) {
   auto dummy = -1;
   get_os_version(major, minor, build, dummy);
 }
@@ -172,7 +172,7 @@ string environment::get_distribution_version_string() {
   return version + (version.empty() ? "" : " ") + to_string(major) + "." + to_string(minor) + "." + (code_name.empty() ? "" : to_string(build) + " (" + code_name + ")");
 }
 
-string environment::get_environment_variable(const string& variable, int32_t target) {
+string environment::get_environment_variable(const string& variable, int_least32_t target) {
   if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS) {
     DWORD environent_variable_size = 65535;
     wstring environment_variable(environent_variable_size, 0);
@@ -189,7 +189,7 @@ string environment::get_environment_variable(const string& variable, int32_t tar
   return "";
 }
 
-map<string, string>& environment::get_environment_variables(int32_t target) {
+map<string, string>& environment::get_environment_variables(int_least32_t target) {
   auto& envs = __none_envs__;
   
   if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS) {
@@ -233,7 +233,7 @@ map<string, string>& environment::get_environment_variables(int32_t target) {
   return envs;
 }
 
-string environment::get_know_folder_path(int32_t id) {
+string environment::get_know_folder_path(int_least32_t id) {
   if (id == CSIDL_HOME)
     return get_environment_variable("HOMEPATH", ENVIRONMENT_VARIABLE_TARGET_PROCESS);
   DWORD path_size = 65535;
@@ -250,11 +250,11 @@ string environment::get_machine_name() {
   return win32::strings::to_string(machine_name);
 }
 
-int32_t environment::get_os_platform_id() {
+int_least32_t environment::get_os_platform_id() {
   return PLATFORM_WIN32_NT;
 }
 
-void environment::get_os_version(int32_t& major, int32_t& minor, int32_t& build, int32_t& revision) {
+void environment::get_os_version(int_least32_t& major, int_least32_t& minor, int_least32_t& build, int_least32_t& revision) {
   return get_windows_version(major, minor, build, revision);
 }
 
@@ -269,7 +269,7 @@ string environment::get_service_pack() {
   return "";
 }
 
-uint32_t environment::get_processor_count() {
+uint_least32_t environment::get_processor_count() {
   SYSTEM_INFO system_info {};
   GetNativeSystemInfo(&system_info);
   return system_info.dwNumberOfProcessors;
@@ -281,7 +281,7 @@ size_t environment::get_system_page_size() {
   return system_info.dwPageSize;
 }
 
-uint32_t environment::get_tick_count() {
+uint_least32_t environment::get_tick_count() {
   return GetTickCount();
 }
 
@@ -329,11 +329,11 @@ string environment::new_line() {
   return "\n";
 }
 
-void environment::quick_exit(int32_t exit_code) noexcept {
+void environment::quick_exit(int_least32_t exit_code) noexcept {
   std::quick_exit(exit_code);
 }
 
-void environment::set_environment_variable(const string& name, const string& value, int32_t target) {
+void environment::set_environment_variable(const string& name, const string& value, int_least32_t target) {
   if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS)
     SetEnvironmentVariable(win32::strings::to_wstring(name).c_str(), win32::strings::to_wstring(value).c_str());
   else if (target == ENVIRONMENT_VARIABLE_TARGET_USER) {
@@ -343,7 +343,7 @@ void environment::set_environment_variable(const string& name, const string& val
   }
 }
 
-void environment::unset_environment_variable(const string& name, int32_t target) {
+void environment::unset_environment_variable(const string& name, int_least32_t target) {
   if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS)
     SetEnvironmentVariable(win32::strings::to_wstring(name).c_str(), nullptr);
   else if (target == ENVIRONMENT_VARIABLE_TARGET_USER) {
@@ -353,6 +353,6 @@ void environment::unset_environment_variable(const string& name, int32_t target)
   }
 }
 
-int64_t environment::working_set() {
+int_least64_t environment::working_set() {
   return 0;
 }
