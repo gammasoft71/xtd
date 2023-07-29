@@ -23,18 +23,18 @@ namespace xtd::tests {
   test_class_attribute<string_numeric_format_tests<unsigned long>> string_numeric_format_tests_class_unsigned_long_attr {"string_numeric_format_tests<unsigned_long>"};
   test_class_attribute<string_numeric_format_tests<long long>> string_numeric_format_tests_class_long_long_attr {"string_numeric_format_tests<long_long>"};
   test_class_attribute<string_numeric_format_tests<unsigned long long>> string_numeric_format_tests_class_unsigned_long_long_attr {"string_numeric_format_tests<unsigned_long_long>"};
-  test_class_attribute<string_numeric_format_tests<sbyte>> string_numeric_format_tests_class_int8_t_attr {"string_numeric_format_tests<sbyte>"};
-  test_class_attribute<string_numeric_format_tests<int16>> string_numeric_format_tests_class_int16_t_attr {"string_numeric_format_tests<int16>"};
-  test_class_attribute<string_numeric_format_tests<int32>> string_numeric_format_tests_class_int32_t_attr {"string_numeric_format_tests<int32>"};
-  test_class_attribute<string_numeric_format_tests<int64>> string_numeric_format_tests_class_int64_t_attr {"string_numeric_format_tests<int64>"};
-  test_class_attribute<string_numeric_format_tests<intptr>> string_numeric_format_tests_class_intptr_t_attr {"string_numeric_format_tests<intptr>"};
+  test_class_attribute<string_numeric_format_tests<sbyte>> string_numeric_format_tests_class_sbyte_attr {"string_numeric_format_tests<sbyte>"};
+  test_class_attribute<string_numeric_format_tests<int16>> string_numeric_format_tests_class_int16_attr {"string_numeric_format_tests<int16>"};
+  test_class_attribute<string_numeric_format_tests<int32>> string_numeric_format_tests_class_int32_attr {"string_numeric_format_tests<int32>"};
+  test_class_attribute<string_numeric_format_tests<int64>> string_numeric_format_tests_class_int64_attr {"string_numeric_format_tests<int64>"};
+  test_class_attribute<string_numeric_format_tests<intptr>> string_numeric_format_tests_class_intptr_attr {"string_numeric_format_tests<intptr>"};
   test_class_attribute<string_numeric_format_tests<ptrdiff_t>> string_numeric_format_tests_class_ptrdiff_t_attr {"string_numeric_format_tests<ptrdiff_t>"};
   test_class_attribute<string_numeric_format_tests<size_t>> string_numeric_format_tests_class_size_t_attr {"string_numeric_format_tests<size_t>"};
-  test_class_attribute<string_numeric_format_tests<xtd::byte>> string_numeric_format_tests_class_uint8_t_attr {"string_numeric_format_tests<xtd::byte>"};
-  test_class_attribute<string_numeric_format_tests<uint16>> string_numeric_format_tests_class_uint16_t_attr {"string_numeric_format_tests<uint16>"};
-  test_class_attribute<string_numeric_format_tests<uint32>> string_numeric_format_tests_class_uint32_t_attr {"string_numeric_format_tests<uint32>"};
-  test_class_attribute<string_numeric_format_tests<uint64>> string_numeric_format_tests_class_uint64_t_attr {"string_numeric_format_tests<uint64>"};
-  test_class_attribute<string_numeric_format_tests<uintptr>> string_numeric_format_tests_class_uintptr_t_attr {"string_numeric_format_tests<uintptr>"};
+  test_class_attribute<string_numeric_format_tests<xtd::byte>> string_numeric_format_tests_class_byte_attr {"string_numeric_format_tests<xtd::byte>"};
+  test_class_attribute<string_numeric_format_tests<uint16>> string_numeric_format_tests_class_uint16_attr {"string_numeric_format_tests<uint16>"};
+  test_class_attribute<string_numeric_format_tests<uint32>> string_numeric_format_tests_class_uint32_attr {"string_numeric_format_tests<uint32>"};
+  test_class_attribute<string_numeric_format_tests<uint64>> string_numeric_format_tests_class_uint64_attr {"string_numeric_format_tests<uint64>"};
+  test_class_attribute<string_numeric_format_tests<uintptr>> string_numeric_format_tests_class_uintptr_attr {"string_numeric_format_tests<uintptr>"};
   
   template<typename Value>
   class string_numeric_format_tests : public test_class {

@@ -23,18 +23,18 @@ namespace xtd::tests {
   test_class_attribute<numeric_parse_string_number_tests<unsigned long>> numeric_parse_string_number_tests_class_unsigned_long_attr {"numeric_parse_string_number_tests<unsigned_long>"};
   test_class_attribute<numeric_parse_string_number_tests<long long>> numeric_parse_string_number_tests_class_long_long_attr {"numeric_parse_string_number_tests<long_long>"};
   test_class_attribute<numeric_parse_string_number_tests<unsigned long long>> numeric_parse_string_number_tests_class_unsigned_long_long_attr {"numeric_parse_string_number_tests<unsigned_long_long>"};
-  test_class_attribute<numeric_parse_string_number_tests<sbyte>> numeric_parse_string_number_tests_class_int8_t_attr {"numeric_parse_string_number_tests<sbyte>"};
-  test_class_attribute<numeric_parse_string_number_tests<int16>> numeric_parse_string_number_tests_class_int16_t_attr {"numeric_parse_string_number_tests<int16>"};
-  test_class_attribute<numeric_parse_string_number_tests<int32>> numeric_parse_string_number_tests_class_int32_t_attr {"numeric_parse_string_number_tests<int32>"};
-  test_class_attribute<numeric_parse_string_number_tests<int64>> numeric_parse_string_number_tests_class_int64_t_attr {"numeric_parse_string_number_tests<int64>"};
-  test_class_attribute<numeric_parse_string_number_tests<intptr>> numeric_parse_string_number_tests_class_intptr_t_attr {"numeric_parse_string_number_tests<intptr>"};
+  test_class_attribute<numeric_parse_string_number_tests<sbyte>> numeric_parse_string_number_tests_class_sbyte_attr {"numeric_parse_string_number_tests<sbyte>"};
+  test_class_attribute<numeric_parse_string_number_tests<int16>> numeric_parse_string_number_tests_class_int16_attr {"numeric_parse_string_number_tests<int16>"};
+  test_class_attribute<numeric_parse_string_number_tests<int32>> numeric_parse_string_number_tests_class_int32_attr {"numeric_parse_string_number_tests<int32>"};
+  test_class_attribute<numeric_parse_string_number_tests<int64>> numeric_parse_string_number_tests_class_int64_attr {"numeric_parse_string_number_tests<int64>"};
+  test_class_attribute<numeric_parse_string_number_tests<intptr>> numeric_parse_string_number_tests_class_intptr_attr {"numeric_parse_string_number_tests<intptr>"};
   test_class_attribute<numeric_parse_string_number_tests<ptrdiff_t>> numeric_parse_string_number_tests_class_ptrdiff_t_attr {"numeric_parse_string_number_tests<ptrdiff_t>"};
   test_class_attribute<numeric_parse_string_number_tests<size_t>> numeric_parse_string_number_tests_class_size_t_attr {"numeric_parse_string_number_tests<size_t>"};
-  test_class_attribute<numeric_parse_string_number_tests<xtd::byte>> numeric_parse_string_number_tests_class_uint8_t_attr {"numeric_parse_string_number_tests<xtd::byte>"};
-  test_class_attribute<numeric_parse_string_number_tests<uint16>> numeric_parse_string_number_tests_class_uint16_t_attr {"numeric_parse_string_number_tests<uint16>"};
-  test_class_attribute<numeric_parse_string_number_tests<uint32>> numeric_parse_string_number_tests_class_uint32_t_attr {"numeric_parse_string_number_tests<uint32>"};
-  test_class_attribute<numeric_parse_string_number_tests<uint64>> numeric_parse_string_number_tests_class_uint64_t_attr {"numeric_parse_string_number_tests<uint64>"};
-  test_class_attribute<numeric_parse_string_number_tests<uintptr>> numeric_parse_string_number_tests_class_uintptr_t_attr {"numeric_parse_string_number_tests<uintptr>"};
+  test_class_attribute<numeric_parse_string_number_tests<xtd::byte>> numeric_parse_string_number_tests_class_byte_attr {"numeric_parse_string_number_tests<xtd::byte>"};
+  test_class_attribute<numeric_parse_string_number_tests<uint16>> numeric_parse_string_number_tests_class_uint16_attr {"numeric_parse_string_number_tests<uint16>"};
+  test_class_attribute<numeric_parse_string_number_tests<uint32>> numeric_parse_string_number_tests_class_uint32_attr {"numeric_parse_string_number_tests<uint32>"};
+  test_class_attribute<numeric_parse_string_number_tests<uint64>> numeric_parse_string_number_tests_class_uint64_attr {"numeric_parse_string_number_tests<uint64>"};
+  test_class_attribute<numeric_parse_string_number_tests<uintptr>> numeric_parse_string_number_tests_class_uintptr_attr {"numeric_parse_string_number_tests<uintptr>"};
   
   template <typename Value>
   class numeric_parse_string_number_tests : public test_class {
