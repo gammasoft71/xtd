@@ -10,6 +10,10 @@ add_sources(
 )
 target_type(${XTD_LIBRARY_TYPE})
 
+if (MSVC)
+  add_compile_options(/wd4324)
+endif()
+
 # Install
 add_install_include_directories(.)
 install_component()
