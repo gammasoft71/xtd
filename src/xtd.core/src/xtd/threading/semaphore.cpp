@@ -15,8 +15,8 @@ class semaphore::semaphore_base {
 public:
   virtual ~semaphore_base() = default;
   
-  virtual intptr_t handle() const noexcept = 0;
-  virtual void handle(intptr_t value) = 0;
+  virtual intptr handle() const noexcept = 0;
+  virtual void handle(intptr value) = 0;
   virtual bool create(int32 initial_count, int32 maximum_count) = 0;
   virtual bool create(int32 initial_count, int32 maximum_count, const ustring& name, bool& create_new) = 0;
   virtual void destroy() = 0;
@@ -29,11 +29,11 @@ class semaphore::named_semaphore : public semaphore_base {
 public:
   ~named_semaphore() {destroy();}
 
-  intptr_t handle() const noexcept override {
+  intptr handle() const noexcept override {
     return handle_;
   }
   
-  void handle(intptr_t value) override {
+  void handle(intptr value) override {
     handle_ = value;
   }
   
@@ -70,7 +70,7 @@ public:
   }
   
 private:
-  intptr_t handle_ = invalid_handle;
+  intptr handle_ = invalid_handle;
   ustring name_;
 };
 
@@ -78,11 +78,11 @@ class semaphore::unnamed_semaphore : public semaphore_base {
 public:
   ~unnamed_semaphore() {destroy();}
 
-  intptr_t handle() const noexcept override {
-    return handle_ ? reinterpret_cast<intptr_t>(handle_.get()) : invalid_handle;
+  intptr handle() const noexcept override {
+    return handle_ ? reinterpret_cast<intptr>(handle_.get()) : invalid_handle;
   }
   
-  void handle(intptr_t value) override {
+  void handle(intptr value) override {
     handle_.reset(reinterpret_cast<std::timed_mutex*>(value));
   }
 
@@ -142,11 +142,11 @@ semaphore::~semaphore() {
   close();
 }
 
-intptr_t semaphore::handle() const noexcept {
+intptr semaphore::handle() const noexcept {
   return semaphore_ ? semaphore_->handle() : invalid_handle;
 }
 
-void semaphore::handle(intptr_t value) {
+void semaphore::handle(intptr value) {
   semaphore_->handle(value);
 }
 

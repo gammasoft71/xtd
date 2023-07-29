@@ -7,7 +7,7 @@
 
 using namespace xtd::native;
 
-bool thread::cancel(intptr_t handle) {
+bool thread::cancel(intmax_t handle) {
   /// @todo Make mplementation for macOS
   return false;
 }

@@ -62,7 +62,7 @@ namespace xtd::tests {
     }
 
     void test_method_(wait_timeout) {
-      assert::are_equal(0xFFFFFFFFFFFFFFFF, wait_handle::wait_timeout, csf_);
+      assert::are_equal(std::numeric_limits<size_t>::max(), wait_handle::wait_timeout, csf_);
     }
     
     void test_method_(handle) {

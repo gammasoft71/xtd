@@ -153,18 +153,18 @@ int32_t process::base_priority(int32_t priority) {
   return base_priority;
 }
 
-bool process::kill(intptr_t process) {
+bool process::kill(intmax_t process) {
   if (process == 0) return false;
   return ::kill(static_cast<pid_t>(process), SIGTERM) == 0;
 }
 
-bool process::priority_class(intptr_t process, int32_t priority) {
+bool process::priority_class(intmax_t process, int32_t priority) {
   int32_t base_priority = PRIO_MIN + (PRIO_MAX - PRIO_MIN) / 2;
   if (compute_base_priority(priority, base_priority) == false) return false;
   return setpriority(PRIO_PROCESS, static_cast<id_t>(process), base_priority) == 0;
 }
 
-intptr_t process::shell_execute(const std::string& verb, const string& file_name, const string& arguments, const string& working_directory, int32_t process_window_style) {
+intmax_t process::shell_execute(const std::string& verb, const string& file_name, const string& arguments, const string& working_directory, int32_t process_window_style) {
   pid_t process = fork();
   if (process == 0) {
     bool is_shell_execute = is_valid_shell_execute_process(&unix::strings::split, file_name, working_directory);
@@ -198,7 +198,7 @@ intptr_t process::shell_execute(const std::string& verb, const string& file_name
     execvp(execvp_args[0], execvp_args.data());
     exit(-1);
   }
-  return static_cast<intptr_t>(process);
+  return static_cast<intmax_t>(process);
 }
 
 process::started_process process::start(const string& file_name, const string& arguments, const string& working_directory, int32_t process_window_style, int32_t process_creation_flags, tuple<bool, bool, bool> redirect_standard_streams) {
@@ -248,10 +248,10 @@ process::started_process process::start(const string& file_name, const string& a
   if (redirect_standard_output) close(pipe_stdout[1]);
   if (redirect_standard_error) close(pipe_stderr[1]);
   
-  return make_tuple(static_cast<intptr_t>(process), static_cast<int32_t>(process), make_unique<process_ostream>(pipe_stdin[1]), make_unique<process_istream>(pipe_stdout[0]), make_unique<process_istream>(pipe_stderr[0]));
+  return make_tuple(static_cast<intmax_t>(process), static_cast<int32_t>(process), make_unique<process_ostream>(pipe_stdin[1]), make_unique<process_istream>(pipe_stdout[0]), make_unique<process_istream>(pipe_stderr[0]));
 }
 
-bool process::wait(intptr_t process, int32_t& exit_code) {
+bool process::wait(intmax_t process, int32_t& exit_code) {
   if (process == 0) return false;
   siginfo_t wait_info {};
   wait_info.si_pid = static_cast<pid_t>(process);

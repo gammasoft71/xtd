@@ -43,16 +43,16 @@ namespace xtd {
       /// @name Protected methods
       
       /// @{
-      static intptr_t create();
-      static void destroy(intptr_t handle);
-      static void pause(intptr_t handle);
-      static void resume(intptr_t handle);
+      static intmax_t create();
+      static void destroy(intmax_t handle);
+      static void pause(intmax_t handle);
+      static void resume(intmax_t handle);
       /// @brief Synchronously speaks the contents of a string.
       /// @return The text to speak.
       /// @warning Internal use only
-      static void speak(intptr_t handle, const std::string& text_to_speak);
-      static void speak_async(intptr_t handle, const std::string& text_to_speak, std::function<void()> on_speak_completed);
-      static void stop(intptr_t handle);
+      static void speak(intmax_t handle, const std::string& text_to_speak);
+      static void speak_async(intmax_t handle, const std::string& text_to_speak, std::function<void()> on_speak_completed);
+      static void stop(intmax_t handle);
       /// @}
     };
   }

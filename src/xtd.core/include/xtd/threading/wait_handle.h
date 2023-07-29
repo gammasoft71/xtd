@@ -7,6 +7,7 @@
 #include "../time_span.h"
 #include "../types.h"
 #include "timeout.h"
+#include <limits>
 #include <vector>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -47,13 +48,12 @@ namespace xtd {
       /// @remarks Used internally to initialize the xtd::threading::wait_handle::handle property.
       /// @par Notes to Inheritors
       /// You can use this value to determine whether the xtd::threading::wait_handle::handle property contains a valid native operating system handle.
-      static const intptr_t invalid_handle;
+      static const intptr invalid_handle;
       
       /// @brief Indicates that a xtd::threading::wait_handle::wait_any operation timed out before any of the wait handles were signaled. This field is constant.
       /// @remrarks This field is one of the possible return values of xtd::threading::wait_handle::wait_any.
-      static constexpr size_t wait_timeout = 0xFFFFFFFFFFFFFFFF;
+      static constexpr size_t wait_timeout = std::numeric_limits<size_t>::max();
       
-
       /// @name Constructors
       
       /// @{
@@ -70,10 +70,10 @@ namespace xtd {
       /// @{
       /// @brief Gets the native operating system handle.
       /// @return An intptr representing the native operating system handle.
-      virtual intptr_t handle() const noexcept = 0;
+      virtual intptr handle() const noexcept = 0;
       /// @brief Sets the native operating system handle.
       /// @param value An intptr representing the native operating system handle.
-      virtual void handle(intptr_t value) = 0;
+      virtual void handle(intptr value) = 0;
       /// @}
       
       /// @name Methods

@@ -10,6 +10,7 @@
 #else
 #include <string_view>
 #include "../typeof.h"
+#include "../types.h"
 #include "../ustring.h"
 
 namespace __enumeration_introspection {
@@ -115,7 +116,7 @@ namespace __enumeration_introspection {
       indices++;
       return previous_state;
     }
-    constexpr intptr_t operator -(string_block_iterator const& other) const noexcept {return indices - other.indices;}
+    constexpr xtd::intptr operator -(string_block_iterator const& other) const noexcept {return indices - other.indices;}
     constexpr bool operator ==(string_block_iterator const& other) const noexcept {return indices == other.indices;}
     constexpr bool operator !=(string_block_iterator const& other) const noexcept {return indices != other.indices;}
     constexpr auto operator *() const noexcept -> std::string_view {
