@@ -19,8 +19,8 @@ namespace xtd::tests {
       unnamed_mutex(const unnamed_mutex&) = default;
       unnamed_mutex& operator=(const unnamed_mutex&) = default;
 
-      intptr_t handle() const noexcept override {return mutex_ ? reinterpret_cast<intptr_t>(mutex_.get()) : invalid_handle;}
-      void handle(intptr_t value) override {mutex_.reset(reinterpret_cast<std::recursive_timed_mutex*>(value));}
+      intptr handle() const noexcept override {return mutex_ ? reinterpret_cast<intptr>(mutex_.get()) : invalid_handle;}
+      void handle(intptr value) override {mutex_.reset(reinterpret_cast<std::recursive_timed_mutex*>(value));}
       
       void release_mutex() {signal();}
       
@@ -55,7 +55,7 @@ namespace xtd::tests {
   public:
     void test_method_(invalid_handle) {
 #if defined(_WIN32)
-      assert::are_equal(reinterpret_cast<intptr_t>(INVALID_HANDLE_VALUE), wait_handle::invalid_handle, csf_);
+      assert::are_equal(reinterpret_cast<intptr>(INVALID_HANDLE_VALUE), wait_handle::invalid_handle, csf_);
 #else
       assert::are_equal(0, wait_handle::invalid_handle, csf_);
 #endif
