@@ -4,6 +4,7 @@
 #include <utility>
 #if defined(_WIN32)
 #include <Windows.h>
+#undef max
 #endif
 
 using namespace xtd::threading;
