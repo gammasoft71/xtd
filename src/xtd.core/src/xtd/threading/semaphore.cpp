@@ -6,7 +6,7 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/named_semaphore.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
-#include <semaphore>
+#include <mutex>
 
 using namespace xtd;
 using namespace xtd::threading;
