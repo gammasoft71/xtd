@@ -8,6 +8,8 @@
 #endif
 /// @endcond
 
+#include <cstdint>
+
 #if defined(__linux__) && defined(_LP64)
 /// @brief Represents a 32-bit or 64-bit signed integer.
 /// @warning Internal use only
