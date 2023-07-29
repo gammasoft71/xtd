@@ -154,7 +154,7 @@ namespace xtd::native {
         return result;
       }
       
-      static bool try_parse(const std::string& str, int_least32_t& value) {
+      static bool try_parse(const std::string& str, int32_t& value) {
         try {
           value = std::atoi(str.c_str());
           return true;

@@ -56,7 +56,7 @@ namespace xtd {
       /// @param host_address_type The  address family (see address_family_constants.h) to resolve.
       /// @return The host handle.
       /// @warning Internal use only
-      static intptr_t get_host_by_address(const std::string& host_address, int_least32_t host_address_type);
+      static intptr_t get_host_by_address(const std::string& host_address, int32_t host_address_type);
       /// @brief Gets host by host name.
       /// @param host_name The name to resolve.
       /// @return The host handle.
@@ -71,7 +71,7 @@ namespace xtd {
       /// @param host The host handle to retrieve IP addresses.
       /// @return An IP address array for yhe host.
       /// @warning Internal use only
-      static std::vector<std::vector<uint_least8_t>> get_addresses(intptr_t host);
+      static std::vector<std::vector<uint8_t>> get_addresses(intptr_t host);
       /// @brief Gets name for a host.
       /// @param host The host handle to retrieve name.
       /// @return A string that represent the host.
@@ -81,7 +81,7 @@ namespace xtd {
       /// @param host_name The string that will contain the host name.
       /// @return 0 if succeed; otherwise error.
       /// @warning Internal use only
-      static int_least32_t get_host_name(std::string& host_name);
+      static int32_t get_host_name(std::string& host_name);
       /// @brief Opens the file /etc/hosts.
       /// @warning Internal use only
       static void startup();

@@ -69,14 +69,14 @@ namespace xtd {
       /// @return The assert dialog result. (see assert_dialog_results.h file).
       /// @remarks In general the assert dialog is a system message box.
       /// @warning Internal use only
-      static int_least32_t show_assert_dialog(const std::string& text, const std::string& caption);
+      static int32_t show_assert_dialog(const std::string& text, const std::string& caption);
       /// @brief Posts a message for the attached debugger.
       /// @param level A description of the importance of the message.
       /// @param category The category of the message.
       /// @param message The message to show.
       /// @remarks If there is no debugger attached, this method has no effect. The debugger might or might not report the message, depending upon its settings.
       /// @warning Internal use only
-      static void log(int_least32_t level, const std::string& category, const std::string& message);
+      static void log(int32_t level, const std::string& category, const std::string& message);
       /// @}
     };
   }

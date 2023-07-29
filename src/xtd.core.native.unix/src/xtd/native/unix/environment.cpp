@@ -18,7 +18,7 @@ using namespace std::literals;
 using namespace xtd::native;
 
 extern char** environ;
-int_least32_t __environment_argc;
+int32_t __environment_argc;
 char** __environment_argv;
 
 namespace {
@@ -35,7 +35,7 @@ namespace {
     return result;
   }
   
-  __attribute__((constructor)) void startup_program(int_least32_t argc, char** argv) {
+  __attribute__((constructor)) void startup_program(int32_t argc, char** argv) {
     __environment_argc = argc;
     __environment_argv = argv;
   }
@@ -57,7 +57,7 @@ namespace {
   }
 }
 
-int_least32_t environment::at_quick_exit(void (*on_quick_exit)(void)) {
+int32_t environment::at_quick_exit(void (*on_quick_exit)(void)) {
   return std::at_quick_exit(on_quick_exit);
 }
 
@@ -125,7 +125,7 @@ string environment::get_distribution_name() {
   return name_it->second;
 }
 
-void environment::get_distribution_version(int_least32_t& major, int_least32_t& minor, int_least32_t& build, int_least32_t& revision) {
+void environment::get_distribution_version(int32_t& major, int32_t& minor, int32_t& build, int32_t& revision) {
   auto name_it = get_distribution_key_values().find("VERSION_ID");
   if (name_it == get_distribution_key_values().end()) return;
   auto versions = xtd::native::unix::strings::split(name_it->second, {'.'});
@@ -139,7 +139,7 @@ string environment::get_distribution_version_string() {
   return iterator->second;
 }
 
-string environment::get_environment_variable(const string& variable, int_least32_t target) {
+string environment::get_environment_variable(const string& variable, int32_t target) {
   if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS) {
     auto value = getenv(variable.c_str());
     return value ? value : "";
@@ -153,7 +153,7 @@ string environment::get_environment_variable(const string& variable, int_least32
   return "";
 }
 
-map<string, string>& environment::get_environment_variables(int_least32_t target) {
+map<string, string>& environment::get_environment_variables(int32_t target) {
   if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS) {
     static map<string, string> envs;
     if (envs.size() == 0) {
@@ -179,8 +179,8 @@ map<string, string>& environment::get_environment_variables(int_least32_t target
   return envs;
 }
 
-string environment::get_know_folder_path(int_least32_t csidl) {
-  static map<int_least32_t, string> special_folders = {{CSIDL_DESKTOP, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Desktop"}, {CSIDL_PERSONAL, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS)}, {CSIDL_MYMUSIC, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Music"}, {CSIDL_MYVIDEO, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Videos"}, {CSIDL_DESKTOPDIRECTORY, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Desktop"}, {CSIDL_FONTS, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/.fonts"}, {CSIDL_TEMPLATES, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Templates"}, {CSIDL_APPDATA, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/.config"}, {CSIDL_LOCAL_APPDATA, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/.local/share"}, {CSIDL_COMMON_APPDATA, "/usr/share"}, {CSIDL_MYPICTURES, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Pictures"}, {CSIDL_PROFILE, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS)}, {CSIDL_COMMON_TEMPLATES, "/usr/share/templates"}, {CSIDL_HOME, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS)}};
+string environment::get_know_folder_path(int32_t csidl) {
+  static map<int32_t, string> special_folders = {{CSIDL_DESKTOP, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Desktop"}, {CSIDL_PERSONAL, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS)}, {CSIDL_MYMUSIC, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Music"}, {CSIDL_MYVIDEO, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Videos"}, {CSIDL_DESKTOPDIRECTORY, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Desktop"}, {CSIDL_FONTS, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/.fonts"}, {CSIDL_TEMPLATES, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Templates"}, {CSIDL_APPDATA, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/.config"}, {CSIDL_LOCAL_APPDATA, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/.local/share"}, {CSIDL_COMMON_APPDATA, "/usr/share"}, {CSIDL_MYPICTURES, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Pictures"}, {CSIDL_PROFILE, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS)}, {CSIDL_COMMON_TEMPLATES, "/usr/share/templates"}, {CSIDL_HOME, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS)}};
   auto it = special_folders.find(csidl);
   if (it == special_folders.end()) return "";
   return it->second;
@@ -190,7 +190,7 @@ string environment::get_machine_name() {
   return unix::strings::replace(create_process("uname -n"), "\n", "");
 }
 
-int_least32_t environment::get_os_platform_id() {
+int32_t environment::get_os_platform_id() {
   #if defined(__ANDROID__)
   return PLATFORM_ANDROID;
   #else
@@ -198,7 +198,7 @@ int_least32_t environment::get_os_platform_id() {
   #endif
 }
 
-void environment::get_os_version(int_least32_t& major, int_least32_t& minor, int_least32_t& build, int_least32_t& revision) {
+void environment::get_os_version(int32_t& major, int32_t& minor, int32_t& build, int32_t& revision) {
   vector<string> numbers = unix::strings::split(create_process("uname -r"), {'.', '-', '\n'});
   if (numbers.size() < 1 || !unix::strings::try_parse(numbers[0], major)) major = 0;
   if (numbers.size() < 2 || !unix::strings::try_parse(numbers[1], minor)) minor = 0;
@@ -210,7 +210,7 @@ string environment::get_service_pack() {
   return "";
 }
 
-uint_least32_t environment::get_processor_count() {
+uint32_t environment::get_processor_count() {
   return thread::hardware_concurrency();
 }
 
@@ -218,7 +218,7 @@ size_t environment::get_system_page_size() {
   return sysconf(_SC_PAGESIZE);
 }
 
-uint_least32_t environment::get_tick_count() {
+uint32_t environment::get_tick_count() {
   // https://stackoverflow.com/questions/1540627/what-api-do-i-call-to-get-the-system-uptime
   struct sysinfo info {};
   sysinfo(&info);
@@ -258,11 +258,11 @@ string environment::new_line() {
   return "\n";
 }
 
-void environment::quick_exit(int_least32_t exit_code) noexcept {
+void environment::quick_exit(int32_t exit_code) noexcept {
   std::quick_exit(exit_code);
 }
 
-void environment::set_environment_variable(const string& name, const string& value, int_least32_t target) {
+void environment::set_environment_variable(const string& name, const string& value, int32_t target) {
   if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS)
     setenv(name.c_str(), value.c_str(), 1);
   else if (target == ENVIRONMENT_VARIABLE_TARGET_USER) {
@@ -272,7 +272,7 @@ void environment::set_environment_variable(const string& name, const string& val
   }
 }
 
-void environment::unset_environment_variable(const string& name, int_least32_t target) {
+void environment::unset_environment_variable(const string& name, int32_t target) {
   if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS)
     unsetenv(name.c_str());
   else if (target == ENVIRONMENT_VARIABLE_TARGET_USER) {
@@ -282,6 +282,6 @@ void environment::unset_environment_variable(const string& name, int_least32_t t
   }
 }
 
-int_least64_t environment::working_set() {
+int64_t environment::working_set() {
   return 0;
 }

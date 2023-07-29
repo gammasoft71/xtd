@@ -63,7 +63,7 @@ namespace xtd {
       /// @param attribute The file or path attribute. (see file_attribute.h)
       /// @return 0 if success; otherwise failed.
       /// @warning Internal use only
-      static int_least32_t get_attributes(const std::string& path, int_least32_t& attributes);
+      static int32_t get_attributes(const std::string& path, int32_t& attributes);
       /// @brief Gets file creeation time, last access time and lastt write time of specified path.
       /// @param path The relative or absolute path to the directory to get times.
       /// @param creation_time That contains the creation time.
@@ -71,7 +71,7 @@ namespace xtd {
       /// @param last_write_time That contains the last write time.
       /// @return 0 if success; otherwise failed.
       /// @warning Internal use only
-      static int_least32_t get_file_times(const std::string& path, time_t& creation_time, time_t& last_access_time, time_t& last_write_time);
+      static int32_t get_file_times(const std::string& path, time_t& creation_time, time_t& last_access_time, time_t& last_write_time);
       /// @brief Gets full path of specified path.
       /// @param relative_path The relative path to the directory to search.
       /// @return The fulll path.
@@ -87,37 +87,37 @@ namespace xtd {
       /// @param attribute The file or path attribute. (see file_attribute.h)
       /// @return 0 if success; -1 operation is not supported; otherwise failed.
       /// @warning Internal use only
-      static int_least32_t set_attributes(const std::string& path, int_least32_t attributes);
+      static int32_t set_attributes(const std::string& path, int32_t attributes);
       /// @brief Sets the creation time for the specified file or directory path.
       /// @param path The relative or absolute path to the directory to get attribute.
       /// @param creation_time The file or path creation time.
       /// @return 0 if success; -1 operation is not supported; otherwise failed.
       /// @warning Internal use only
-      static int_least32_t set_creation_time(const std::string& path, time_t creation_time);
+      static int32_t set_creation_time(const std::string& path, time_t creation_time);
       /// @brief Sets the last access time for the specified file or directory path.
       /// @param path The relative or absolute path to the directory to get attribute.
       /// @param last_access_time The file or path last access time.
       /// @return 0 if success; -1 operation is not supported; otherwise failed.
       /// @warning Internal use only
-      static int_least32_t set_last_access_time(const std::string& path, time_t last_access_time);
+      static int32_t set_last_access_time(const std::string& path, time_t last_access_time);
       /// @brief Sets the last write time for the specified file or directory path.
       /// @param path The relative or absolute path to the directory to get attribute.
       /// @param last_write_time The file or path last write time.
       /// @return 0 if success; -1 operation is not supported; otherwise failed.
       /// @warning Internal use only
-      static int_least32_t set_last_write_time(const std::string& path, time_t last_write_time);
+      static int32_t set_last_write_time(const std::string& path, time_t last_write_time);
       /// @brief Gets the permissions for the specified file or directory path.
       /// @param path The relative or absolute path to the directory to get attribute.
       /// @param attribute The file or path permissions. (see file_permission.h)
       /// @return 0 if success; otherwise failed.
       /// @warning Internal use only
-      static int_least32_t get_permissions(const std::string& path, int_least32_t& permissions);
+      static int32_t get_permissions(const std::string& path, int32_t& permissions);
       /// @brief Sets the permissions for the specified file or directory path.
       /// @param path The relative or absolute path to the directory to get attribute.
       /// @param attribute The file or path permissions. (see file_permission.h)
       /// @return 0 if success; otherwise failed.
       /// @warning Internal use only
-      static int_least32_t set_permissions(const std::string& path, int_least32_t permissions);
+      static int32_t set_permissions(const std::string& path, int32_t permissions);
     };
   }
 }

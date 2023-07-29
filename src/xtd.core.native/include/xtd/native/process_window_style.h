@@ -17,7 +17,7 @@
 /// @ingroup xtd_core_native pws
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int_least32_t PROCESS_WINDOW_STYLE_NORMAL = 0;
+constexpr int32_t PROCESS_WINDOW_STYLE_NORMAL = 0;
 
 /// @brief The hidden window style. A window can be either visible or hidden. The system displays a hidden window by not drawing it. If a window is hidden, it is effectively disabled. A hidden window can process messages from the system or from other windows, but it cannot process input from the user or display output. Frequently, an application may keep a new window hidden while it customizes the window's appearance, and then make the window style Normal. To use process_window_style.Hidden, the ProcessStartInfo.UseShellExecute property must be false.
 /// @par Library
@@ -25,7 +25,7 @@ constexpr int_least32_t PROCESS_WINDOW_STYLE_NORMAL = 0;
 /// @ingroup xtd_core_native pws
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int_least32_t PROCESS_WINDOW_STYLE_HIDDEN = 1;
+constexpr int32_t PROCESS_WINDOW_STYLE_HIDDEN = 1;
 
 /// @brief The minimized window style. By default, the system reduces a minimized window to the size of its taskbar button and moves the minimized window to the taskbar.
 /// @par Library
@@ -33,7 +33,7 @@ constexpr int_least32_t PROCESS_WINDOW_STYLE_HIDDEN = 1;
 /// @ingroup xtd_core_native pws
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int_least32_t PROCESS_WINDOW_STYLE_MINIMIZED = 2;
+constexpr int32_t PROCESS_WINDOW_STYLE_MINIMIZED = 2;
 
 /// @brief The maximized window style. By default, the system enlarges a maximized window so that it fills the screen or, in the case of a child window, the parent window's client area. If the window has a title bar, the system automatically moves it to the top of the screen or to the top of the parent window's client area. Also, the system disables the window's sizing border and the window-positioning capability of the title bar so that the user cannot move the window by dragging the title bar.
 /// @par Library
@@ -41,4 +41,4 @@ constexpr int_least32_t PROCESS_WINDOW_STYLE_MINIMIZED = 2;
 /// @ingroup xtd_core_native pws
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int_least32_t PROCESS_WINDOW_STYLE_MAXIMIZED = 3;
+constexpr int32_t PROCESS_WINDOW_STYLE_MAXIMIZED = 3;

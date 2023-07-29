@@ -17,18 +17,18 @@
 /// @ingroup xtd_core_native adr
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int_least32_t ADR_ABORT = 3;
+constexpr int32_t ADR_ABORT = 3;
 /// @brief The assert dialog return value is Retry (usually sent from a button labeled Retry).
 /// @par Library
 /// xtd.core.native
 /// @ingroup xtd_core_native adr
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int_least32_t ADR_RETRY = 4;
+constexpr int32_t ADR_RETRY = 4;
 /// @brief The assert dialog return value is Ignore (usually sent from a button labeled Ignore).
 /// @par Library
 /// xtd.core.native
 /// @ingroup xtd_core_native adr
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int_least32_t ADR_IGNORE = 5;
+constexpr int32_t ADR_IGNORE = 5;

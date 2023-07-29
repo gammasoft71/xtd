@@ -30,7 +30,7 @@ bool named_semaphore::signal(intptr_t handle, bool& io_error) {
   return true;
 }
 
-bool named_semaphore::wait(intptr_t handle, int_least32_t milliseconds_timeout, bool& io_error) {
+bool named_semaphore::wait(intptr_t handle, int32_t milliseconds_timeout, bool& io_error) {
   io_error = false;
   if (milliseconds_timeout == -1) {
     if (sem_wait(reinterpret_cast<sem_t*>(handle)) == -1) {

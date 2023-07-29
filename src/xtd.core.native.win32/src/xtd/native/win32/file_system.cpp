@@ -32,13 +32,13 @@ namespace {
   }
 }
 
-int_least32_t file_system::get_attributes(const string& path, int_least32_t& attributes) {
+int32_t file_system::get_attributes(const string& path, int32_t& attributes) {
   auto attrib = GetFileAttributes(win32::strings::to_wstring(path).c_str());
-  if (attrib != INVALID_FILE_ATTRIBUTES) attributes = static_cast<int_least32_t>(attrib);
+  if (attrib != INVALID_FILE_ATTRIBUTES) attributes = static_cast<int32_t>(attrib);
   return attrib != INVALID_FILE_ATTRIBUTES ? 0 : -1;
 }
 
-int_least32_t file_system::get_file_times(const string& path, time_t& creation_time, time_t& last_access_time, time_t& last_write_time) {
+int32_t file_system::get_file_times(const string& path, time_t& creation_time, time_t& last_access_time, time_t& last_write_time) {
   HANDLE file_handle = CreateFile(win32::strings::to_wstring(path).c_str(), 0, 0, nullptr, OPEN_EXISTING, 0, nullptr);
   if (file_handle == INVALID_HANDLE_VALUE) file_handle = CreateFile(win32::strings::to_wstring(path).c_str(), 0, 0, nullptr, OPEN_EXISTING, FILE_FLAG_BACKUP_SEMANTICS, nullptr);
   if (file_handle == INVALID_HANDLE_VALUE) return 1;
@@ -63,10 +63,10 @@ string file_system::get_full_path(const string& relative_path) {
   return win32::strings::to_string(full_path);
 }
 
-int_least32_t file_system::get_permissions(const std::string& path, int_least32_t& permissions) {
+int32_t file_system::get_permissions(const std::string& path, int32_t& permissions) {
   struct system_permission_to_file_permission_converter {
-    int_least32_t operator()(std::filesystem::perms permission) {
-      int_least32_t file_permissions = 0;
+    int32_t operator()(std::filesystem::perms permission) {
+      int32_t file_permissions = 0;
       if ((permission & std::filesystem::perms::owner_read) == std::filesystem::perms::owner_read) file_permissions |= FILE_PERMISSIONS_OWNER_READ;
       if ((permission & std::filesystem::perms::owner_write) == std::filesystem::perms::owner_write) file_permissions |= FILE_PERMISSIONS_OWNER_WRITE;
       if ((permission & std::filesystem::perms::owner_exec) == std::filesystem::perms::owner_exec) file_permissions |= FILE_PERMISSIONS_OWNER_EXECUTE;
@@ -96,11 +96,11 @@ bool file_system::is_path_too_long(const string& path) {
   return path.size() > MAX_PATH;
 }
 
-int_least32_t file_system::set_attributes(const std::string& path, int_least32_t attributes) {
+int32_t file_system::set_attributes(const std::string& path, int32_t attributes) {
   return SetFileAttributes(win32::strings::to_wstring(path).c_str(), attributes) == TRUE ? 0 : -1;
 }
 
-int_least32_t file_system::set_creation_time(const string& path, time_t creation_time) {
+int32_t file_system::set_creation_time(const string& path, time_t creation_time) {
   HANDLE file_handle = CreateFile(win32::strings::to_wstring(path).c_str(), 0, 0, nullptr, OPEN_EXISTING, 0, nullptr);
   if (file_handle == INVALID_HANDLE_VALUE) file_handle = CreateFile(win32::strings::to_wstring(path).c_str(), 0, 0, nullptr, OPEN_EXISTING, FILE_FLAG_BACKUP_SEMANTICS, nullptr);
   if (file_handle == INVALID_HANDLE_VALUE) return 1;
@@ -112,7 +112,7 @@ int_least32_t file_system::set_creation_time(const string& path, time_t creation
   return result == TRUE ? 0 : 2;
 }
 
-int_least32_t file_system::set_last_access_time(const string& path, time_t last_access_time) {
+int32_t file_system::set_last_access_time(const string& path, time_t last_access_time) {
   HANDLE file_handle = CreateFile(win32::strings::to_wstring(path).c_str(), 0, 0, nullptr, OPEN_EXISTING, 0, nullptr);
   if (file_handle == INVALID_HANDLE_VALUE) file_handle = CreateFile(win32::strings::to_wstring(path).c_str(), 0, 0, nullptr, OPEN_EXISTING, FILE_FLAG_BACKUP_SEMANTICS, nullptr);
   if (file_handle == 0) return 1;
@@ -124,7 +124,7 @@ int_least32_t file_system::set_last_access_time(const string& path, time_t last_
   return result == TRUE ? 0 : 2;
 }
 
-int_least32_t file_system::set_last_write_time(const string& path, time_t last_write_time) {
+int32_t file_system::set_last_write_time(const string& path, time_t last_write_time) {
   HANDLE file_handle = CreateFile(win32::strings::to_wstring(path).c_str(), 0, 0, nullptr, OPEN_EXISTING, 0, nullptr);
   if (file_handle == INVALID_HANDLE_VALUE) file_handle = CreateFile(win32::strings::to_wstring(path).c_str(), 0, 0, nullptr, OPEN_EXISTING, FILE_FLAG_BACKUP_SEMANTICS, nullptr);
   if (file_handle == 0) return 1;
@@ -136,9 +136,9 @@ int_least32_t file_system::set_last_write_time(const string& path, time_t last_w
   return result == TRUE ? 0 : 2;
 }
 
-int_least32_t file_system::set_permissions(const std::string& path, int_least32_t permissions) {
+int32_t file_system::set_permissions(const std::string& path, int32_t permissions) {
   struct file_permission_to_system_permission_converter {
-    std::filesystem::perms operator()(int_least32_t permission) {
+    std::filesystem::perms operator()(int32_t permission) {
       std::filesystem::perms system_permissions = std::filesystem::perms::none;
       if ((permission & FILE_PERMISSIONS_OWNER_READ) == FILE_PERMISSIONS_OWNER_READ) system_permissions |= std::filesystem::perms::owner_read;
       if ((permission & FILE_PERMISSIONS_OWNER_WRITE) == FILE_PERMISSIONS_OWNER_WRITE) system_permissions |= std::filesystem::perms::owner_write;

@@ -22,7 +22,7 @@ namespace {
   }
 }
 
-vector<uint_least8_t> cryptography::machine_guid() {
+vector<uint8_t> cryptography::machine_guid() {
   static string guid_str = create_process("{ uname -n ; cat /proc/meminfo | head -n1 ; cat /proc/cpuinfo ; } | md5sum");
   
   static const string guid_fallback = "30395f0ed6aa4a5eb4af6f90a608c605";
@@ -31,8 +31,8 @@ vector<uint_least8_t> cryptography::machine_guid() {
     if (hex_chars.find(static_cast<char>(toupper(guid_str[index]))) == hex_chars.npos)  guid_str.erase(index--, 1);
   if (guid_str.size() != 32) guid_str = guid_fallback;
   
-  vector<uint_least8_t> bytes;
+  vector<uint8_t> bytes;
   for (auto index = 0U; index < guid_str.size(); index += 2)
-    bytes.push_back(static_cast<uint_least8_t>(stoi(guid_str.substr(index, 2), 0, 16)));
+    bytes.push_back(static_cast<uint8_t>(stoi(guid_str.substr(index, 2), 0, 16)));
   return bytes;
 }

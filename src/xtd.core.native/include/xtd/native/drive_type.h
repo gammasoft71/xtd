@@ -18,7 +18,7 @@
 /// @ingroup xtd_core_native drive_type
 /// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
-constexpr int_least32_t DRIVE_UNKNOWN = 0;
+constexpr int32_t DRIVE_UNKNOWN = 0;
 
 /// @brief The root path is invalid; for example, there is no volume mounted at the specified path.
 /// @par Library
@@ -26,7 +26,7 @@ constexpr int_least32_t DRIVE_UNKNOWN = 0;
 /// @ingroup xtd_core_native drive_type
 /// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
-constexpr int_least32_t DRIVE_NO_ROOT_DIR = 1;
+constexpr int32_t DRIVE_NO_ROOT_DIR = 1;
 
 /// @brief The drive has removable media; for example, a floppy drive, thumb drive, or flash card reader.
 /// @par Library
@@ -34,7 +34,7 @@ constexpr int_least32_t DRIVE_NO_ROOT_DIR = 1;
 /// @ingroup xtd_core_native drive_type
 /// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
-constexpr int_least32_t DRIVE_REMOVABLE = 2;
+constexpr int32_t DRIVE_REMOVABLE = 2;
 
 /// @brief The drive has fixed media; for example, a hard disk drive or flash drive.
 /// @par Library
@@ -42,7 +42,7 @@ constexpr int_least32_t DRIVE_REMOVABLE = 2;
 /// @ingroup xtd_core_native drive_type
 /// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
-constexpr int_least32_t DRIVE_FIXED = 3;
+constexpr int32_t DRIVE_FIXED = 3;
 
 /// @brief The drive is a remote (network) drive.
 /// @par Library
@@ -50,7 +50,7 @@ constexpr int_least32_t DRIVE_FIXED = 3;
 /// @ingroup xtd_core_native drive_type
 /// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
-constexpr int_least32_t DRIVE_REMOTE = 4;
+constexpr int32_t DRIVE_REMOTE = 4;
 
 /// @brief The drive is a CD-ROM drive.
 /// @par Library
@@ -58,7 +58,7 @@ constexpr int_least32_t DRIVE_REMOTE = 4;
 /// @ingroup xtd_core_native drive_type
 /// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
-constexpr int_least32_t DRIVE_CDROM = 5;
+constexpr int32_t DRIVE_CDROM = 5;
 
 /// @brief The drive is a RAM disk.
 /// @par Library
@@ -66,5 +66,5 @@ constexpr int_least32_t DRIVE_CDROM = 5;
 /// @ingroup xtd_core_native drive_type
 /// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
-constexpr int_least32_t DRIVE_RAMDISK = 6;
+constexpr int32_t DRIVE_RAMDISK = 6;
 #endif
