@@ -17,7 +17,7 @@ using namespace xtd::threading;
 struct thread::data {
   thread_id detached_thread_id;
   bool interrupted {false};
-  int32_t managed_thread_id {unmanaged_thread_id};
+  int32 managed_thread_id {unmanaged_thread_id};
   thread_priority priority {thread_priority::normal};
   thread_state state {thread_state::unstarted};
   std::thread thread;
@@ -74,7 +74,7 @@ void thread::interrupt() {
   data_->interrupted = true;
 }
 
-void thread::sleep(int32_t milliseconds_timeout) {
+void thread::sleep(int32 milliseconds_timeout) {
   if (milliseconds_timeout < timeout::infinite)
     throw argument_exception(csf_);
   
@@ -89,7 +89,7 @@ void thread::sleep(int32_t milliseconds_timeout) {
 }
 
 void thread::sleep(const time_span& timeout) {
-  sleep(as<int32_t>(timeout.count()));
+  sleep(as<int32>(timeout.count()));
 }
 
 bool thread::yield() {
@@ -102,7 +102,7 @@ bool thread::cancel() {
   return native::thread::cancel(reinterpret_cast<intptr_t>(reinterpret_cast<intptr_t*>(data_->thread.native_handle())));
 }
 
-bool thread::do_wait(wait_handle& wait_handle, int32_t milliseconds_timeout) {
+bool thread::do_wait(wait_handle& wait_handle, int32 milliseconds_timeout) {
   if (milliseconds_timeout < timeout::infinite) throw argument_exception(csf_);
   
   current_thread().data_->state |= xtd::threading::thread_state::wait_sleep_join;

@@ -31,9 +31,9 @@ namespace xtd {
 
       /// @{
       /// @brief A constant used to specify an infinite waiting period. This field is constant.
-      /// @remarks The value of this constant is -1. For threading methods that accept a timeout parameter, such as Thread::Sleep(int32_t) and Thread::Join(int32_t), this value is used to suppress timeout behavior.
+      /// @remarks The value of this constant is -1. For threading methods that accept a timeout parameter, such as Thread::Sleep(int32) and Thread::Join(int32), this value is used to suppress timeout behavior.
       /// @remarks The value of this field is -1 (0xFFFFFFFF).
-      static constexpr int32_t infinite = -1;
+      static constexpr int32 infinite = -1;
       
       /// @brief A constant used to specify an infinite waiting period, for methods that accept a TimeSpan parameter.
       /// @remarks For threading methods that accept a timeout parameter of type TimeSpan, such as Thread.Sleep(TimeSpan) and Thread.Join(TimeSpan), this value is used to suspend the thread indefinitely. However, in most cases, we recommend that you use other System.Threading classes such as Mutex, Monitor, EventWaitHandle, or Semaphore instead to sychronize threads or manage resources.

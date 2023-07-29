@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include "wait_handle.h"
+#include "../int32_object.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -26,12 +27,11 @@ namespace xtd {
       /// @{
       semaphore();
 
-      semaphore(bool initially_owned);
+      semaphore(int32 initial_count, int32 maximum_count);
 
-      semaphore(bool initially_owned, const ustring& name);
+      semaphore(int32 initial_count, int32 maximum_count, const ustring& name);
 
-      /// @brief
-      semaphore(bool initially_owned, const ustring& name, bool created_new);
+      semaphore(int32 initial_count, int32 maximum_count, const ustring& name, bool created_new);
       /// @}
 
       /// @cond
@@ -63,12 +63,13 @@ namespace xtd {
       /// @{
       bool signal() override;
 
-      bool wait(int32_t milliseconds_timeout) override;
+      bool wait(int32 milliseconds_timeout) override;
       /// @}
 
     private:
-      void create(bool initially_owned, bool& created_new);
+      void create(int32 initial_count, int32 maximum_count, bool& created_new);
       std::shared_ptr<semaphore_base> semaphore_;
+      int32 count_ = 0;
       ustring name_;
     };
   }

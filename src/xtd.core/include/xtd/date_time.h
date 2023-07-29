@@ -155,7 +155,7 @@ namespace xtd {
     /// @param kind One of the enumeration values that indicates whether year, month, day, hour, minute and second specify a local time, Coordinated Universal Time (UTC), or neither.
     /// @exception xtd::argument_out_of_range_exception year is less than 1 or greater than 9999.<br>-or-<br>month is less than 1 or greater than 12.<br>-or-<br>day is less than 1 or greater than the number of days in month.<br>-or-<br>hour is less than 0 or greater than 23.<br>-or-<br>minute is less than 0 or greater than 59<br>-or-<br>second is less than 0 or greater than 59.
     /// @par Examples
-    /// The following example uses the date_time(uint32, uint32, uint32_tt, uint32_tt, uint32, uint32, xtd::date_time_kind) constructor to instantiate a xtd::date_time value.
+    /// The following example uses the date_time(uint32, uint32, uint32t, uint32t, uint32, uint32, xtd::date_time_kind) constructor to instantiate a xtd::date_time value.
     /// @code
     /// date_time date1(2010, 8, 18, 16, 32, 0, date_time_kind::local);
     /// console::write_line("{0} {1}", date1, date1.kind());

@@ -22,7 +22,7 @@ bool wait_handle::signal_and_wait(wait_handle& to_signal, wait_handle& to_wait) 
   return signal_and_wait(to_signal, to_wait, timeout::infinite);
 }
 
-bool wait_handle::signal_and_wait(wait_handle& to_signal, wait_handle& to_wait, int32_t milliseconds_timeout) {
+bool wait_handle::signal_and_wait(wait_handle& to_signal, wait_handle& to_wait, int32 milliseconds_timeout) {
   return to_signal.signal() && to_wait.wait(milliseconds_timeout);
 }
 
@@ -34,7 +34,7 @@ bool wait_handle::wait_all(const std::initializer_list<std::shared_ptr<wait_hand
   return wait_all(wait_handles, timeout::infinite);
 }
 
-bool wait_handle::wait_all(const std::initializer_list<std::shared_ptr<wait_handle>>& wait_handles, int32_t milliseconds_timeout) {
+bool wait_handle::wait_all(const std::initializer_list<std::shared_ptr<wait_handle>>& wait_handles, int32 milliseconds_timeout) {
   vector<wait_handle*> wait_handle_pointers;
   for (auto& wait_handle : wait_handles)
     wait_handle_pointers.push_back(wait_handle.get());
@@ -49,7 +49,7 @@ bool wait_handle::wait_all(const std::initializer_list<std::unique_ptr<wait_hand
   return wait_all(wait_handles, timeout::infinite);
 }
 
-bool wait_handle::wait_all(const std::initializer_list<std::unique_ptr<wait_handle>>& wait_handles, int32_t milliseconds_timeout) {
+bool wait_handle::wait_all(const std::initializer_list<std::unique_ptr<wait_handle>>& wait_handles, int32 milliseconds_timeout) {
   vector<wait_handle*> wait_handle_pointers;
   for (auto& wait_handle : wait_handles)
     wait_handle_pointers.push_back(wait_handle.get());
@@ -64,7 +64,7 @@ bool wait_handle::wait_all(const vector<shared_ptr<wait_handle>>& wait_handles) 
   return wait_all(wait_handles, timeout::infinite);
 }
 
-bool wait_handle::wait_all(const vector<shared_ptr<wait_handle>>& wait_handles, int32_t milliseconds_timeout) {
+bool wait_handle::wait_all(const vector<shared_ptr<wait_handle>>& wait_handles, int32 milliseconds_timeout) {
   vector<wait_handle*> wait_handle_pointers;
   for (auto& wait_handle : wait_handles)
     wait_handle_pointers.push_back(wait_handle.get());
@@ -79,7 +79,7 @@ bool wait_handle::wait_all(const vector<unique_ptr<wait_handle>>& wait_handles) 
   return wait_all(wait_handles, timeout::infinite);
 }
 
-bool wait_handle::wait_all(const vector<unique_ptr<wait_handle>>& wait_handles, int32_t milliseconds_timeout) {
+bool wait_handle::wait_all(const vector<unique_ptr<wait_handle>>& wait_handles, int32 milliseconds_timeout) {
   vector<wait_handle*> wait_handle_pointers;
   for (auto& wait_handle : wait_handles)
     wait_handle_pointers.push_back(wait_handle.get());
@@ -94,7 +94,7 @@ size_t wait_handle::wait_any(const std::initializer_list<std::shared_ptr<wait_ha
   return wait_any(wait_handles, timeout::infinite);
 }
 
-size_t wait_handle::wait_any(const std::initializer_list<std::shared_ptr<wait_handle>>& wait_handles, int32_t milliseconds_timeout) {
+size_t wait_handle::wait_any(const std::initializer_list<std::shared_ptr<wait_handle>>& wait_handles, int32 milliseconds_timeout) {
   vector<wait_handle*> wait_handle_pointers;
   for (auto& wait_handle : wait_handles)
     wait_handle_pointers.push_back(wait_handle.get());
@@ -108,7 +108,7 @@ size_t wait_handle::wait_any(const std::initializer_list<std::unique_ptr<wait_ha
   return wait_any(wait_handles, timeout::infinite);
 }
 
-size_t wait_handle::wait_any(const std::initializer_list<std::unique_ptr<wait_handle>>& wait_handles, int32_t milliseconds_timeout) {
+size_t wait_handle::wait_any(const std::initializer_list<std::unique_ptr<wait_handle>>& wait_handles, int32 milliseconds_timeout) {
   vector<wait_handle*> wait_handle_pointers;
   for (auto& wait_handle : wait_handles)
     wait_handle_pointers.push_back(wait_handle.get());
@@ -123,7 +123,7 @@ size_t wait_handle::wait_any(const vector<shared_ptr<wait_handle>>& wait_handles
   return wait_any(wait_handles, timeout::infinite);
 }
 
-size_t wait_handle::wait_any(const vector<shared_ptr<wait_handle>>& wait_handles, int32_t milliseconds_timeout) {
+size_t wait_handle::wait_any(const vector<shared_ptr<wait_handle>>& wait_handles, int32 milliseconds_timeout) {
   vector<wait_handle*> wait_handle_pointers;
   for (auto& wait_handle : wait_handles)
     wait_handle_pointers.push_back(wait_handle.get());
@@ -138,7 +138,7 @@ size_t wait_handle::wait_any(const vector<unique_ptr<wait_handle>>& wait_handles
   return wait_any(wait_handles, timeout::infinite);
 }
 
-size_t wait_handle::wait_any(const vector<unique_ptr<wait_handle>>& wait_handles, int32_t milliseconds_timeout) {
+size_t wait_handle::wait_any(const vector<unique_ptr<wait_handle>>& wait_handles, int32 milliseconds_timeout) {
   vector<wait_handle*> wait_handle_pointers;
   for (auto& wait_handle : wait_handles)
     wait_handle_pointers.push_back(wait_handle.get());
@@ -153,7 +153,7 @@ bool wait_handle::wait_one() {
   return do_wait(timeout::infinite);
 }
 
-bool wait_handle::wait_one(int32_t milliseconds_timeout) {
+bool wait_handle::wait_one(int32 milliseconds_timeout) {
   if (milliseconds_timeout < timeout::infinite) throw argument_exception(csf_);
   return do_wait(milliseconds_timeout);
 }
@@ -162,15 +162,15 @@ bool wait_handle::wait_one(const time_span& timeout) {
   return do_wait(to_milliseconds(timeout));
 }
 
-bool wait_handle::do_wait(int32_t milliseconds_timeout) {
+bool wait_handle::do_wait(int32 milliseconds_timeout) {
   return thread::do_wait(*this, milliseconds_timeout);
 }
 
-int32_t wait_handle::to_milliseconds(const time_span& value) {
-  return as<int32_t>(duration_cast<milliseconds>(value).count());
+int32 wait_handle::to_milliseconds(const time_span& value) {
+  return as<int32>(duration_cast<milliseconds>(value).count());
 }
 
-bool wait_handle::wait_all(const std::vector<wait_handle*>& wait_handles, int32_t milliseconds_timeout) {
+bool wait_handle::wait_all(const std::vector<wait_handle*>& wait_handles, int32 milliseconds_timeout) {
   if (milliseconds_timeout < timeout::infinite) throw argument_exception(csf_);
   
   if (milliseconds_timeout == timeout::infinite) {
@@ -179,17 +179,17 @@ bool wait_handle::wait_all(const std::vector<wait_handle*>& wait_handles, int32_
     return true;
   }
   
-  int32_t timeout = milliseconds_timeout;
-  int64_t start = std::chrono::nanoseconds(std::chrono::high_resolution_clock::now().time_since_epoch()).count() / 1000000;
+  int32 timeout = milliseconds_timeout;
+  int64 start = std::chrono::nanoseconds(std::chrono::high_resolution_clock::now().time_since_epoch()).count() / 1000000;
   for (auto& item : wait_handles) {
     if (item->wait_one(timeout) == false) return false;
-    timeout = milliseconds_timeout - as<int32_t>(std::chrono::nanoseconds(std::chrono::high_resolution_clock::now().time_since_epoch()).count() / 1000000 - start);
+    timeout = milliseconds_timeout - as<int32>(std::chrono::nanoseconds(std::chrono::high_resolution_clock::now().time_since_epoch()).count() / 1000000 - start);
     if (timeout < 0) return false;
   }
   return true;
 }
 
-size_t wait_handle::wait_any(const std::vector<wait_handle*>& wait_handles, int32_t milliseconds_timeout) {
+size_t wait_handle::wait_any(const std::vector<wait_handle*>& wait_handles, int32 milliseconds_timeout) {
   if (milliseconds_timeout < timeout::infinite) throw argument_exception(csf_);
   
   if (milliseconds_timeout == timeout::infinite) {
@@ -202,12 +202,12 @@ size_t wait_handle::wait_any(const std::vector<wait_handle*>& wait_handles, int3
     return wait_timeout;
   }
   
-  int32_t timeout = milliseconds_timeout;
-  int64_t start = std::chrono::nanoseconds(std::chrono::high_resolution_clock::now().time_since_epoch()).count() / 1000000;
+  int32 timeout = milliseconds_timeout;
+  int64 start = std::chrono::nanoseconds(std::chrono::high_resolution_clock::now().time_since_epoch()).count() / 1000000;
   do {
     for (auto index = 0ul; index < wait_handles.size(); index++) {
       if (wait_handles[index]->wait_one(0) == true) return index;
-      timeout = milliseconds_timeout - as<int32_t>(std::chrono::nanoseconds(std::chrono::high_resolution_clock::now().time_since_epoch()).count() / 1000000 - start);
+      timeout = milliseconds_timeout - as<int32>(std::chrono::nanoseconds(std::chrono::high_resolution_clock::now().time_since_epoch()).count() / 1000000 - start);
       if (timeout < 0) return wait_timeout;
       thread::yield();
       thread::sleep(1);

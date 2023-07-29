@@ -4481,7 +4481,7 @@ namespace xtd {
     /// @par Examples
     /// @code
     /// ustring value = "42";
-    /// uuint64_t result = convert::to_uint64(value);
+    /// uuint64 result = convert::to_uint64(value);
     /// @endcode
     static uint64 to_uint64(const xtd::ustring& value, xtd::byte from_base);
     /// @cond

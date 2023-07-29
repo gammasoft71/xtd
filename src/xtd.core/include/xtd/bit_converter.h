@@ -159,7 +159,7 @@ namespace xtd {
     /// @return An std::vector of bytes with length 2.
     /// @par Examples
     /// The following code example converts the bit patterns of int16 values to xtd::byte std::vectors with the get_bytes method.
-    /// @include bit_converterget_bytesint16_t.cpp
+    /// @include bit_converterget_bytesint16.cpp
     static std::vector<xtd::byte> get_bytes(int16 value) noexcept;
     
     /// @brief Returns the specified int32 value as an std::vector of bytes.
@@ -167,7 +167,7 @@ namespace xtd {
     /// @return An std::vector of bytes with length 4.
     /// @par Examples
     /// The following code example converts the bit patterns of int32 values to xtd::byte std::vectors with the get_bytes method.
-    /// @include bit_converterget_bytesint32_t.cpp
+    /// @include bit_converterget_bytesint32.cpp
     static std::vector<xtd::byte> get_bytes(int32 value) noexcept;
     
     /// @brief Returns the specified int64 value as an std::vector of bytes.
@@ -175,7 +175,7 @@ namespace xtd {
     /// @return An std::vector of bytes with length 8.
     /// @par Examples
     /// The following code example converts the bit patterns of int64 values to xtd::byte std::vectors with the get_bytes method.
-    /// @include bit_converterget_bytesint64_t.cpp
+    /// @include bit_converterget_bytesint64.cpp
     static std::vector<xtd::byte> get_bytes(int64 value) noexcept;
     
     /// @brief Returns the specified single value as an std::vector of bytes.
@@ -196,7 +196,7 @@ namespace xtd {
     /// @return An std::vector of bytes with length 2.
     /// @par Examples
     /// The following code example converts the bit patterns of uint16 values to xtd::byte std::vectors with the get_bytes method.
-    /// @include bit_converterget_bytesUint16_t.cpp
+    /// @include bit_converterget_bytesUint16.cpp
     static std::vector<xtd::byte> get_bytes(uint16 value) noexcept;
     
     /// @brief Returns the specified uint32 value as an std::vector of bytes.
@@ -204,7 +204,7 @@ namespace xtd {
     /// @return An std::vector of bytes with length 4.
     /// @par Examples
     /// The following code example converts the bit patterns of uint32 values to xtd::byte std::vectors with the get_bytes method.
-    /// @include bit_converterget_bytesUint32_t.cpp;
+    /// @include bit_converterget_bytesUint32.cpp;
     static std::vector<xtd::byte> get_bytes(uint32 value) noexcept;
     
     /// @brief Returns the specified uint64 value as an std::vector of bytes.
@@ -212,7 +212,7 @@ namespace xtd {
     /// @return An std::vector of bytes with length 8.
     /// @par Examples
     /// The following code example converts the bit patterns of uint64 values to xtd::byte std::vectors with the get_bytes method.
-    /// @include bit_converterget_bytesUint64_t.cpp
+    /// @include bit_converterget_bytesUint64.cpp
     static std::vector<xtd::byte> get_bytes(uint64 value) noexcept;
     
     /// @cond
@@ -316,7 +316,7 @@ namespace xtd {
     /// @exception argument_exception start_index equals the length of value minus 1.
     /// @exception argument_null_exception value is null
     /// @exception argument_out_of_range_exception start_index is less than zero or greater than the length of value minus 1.
-    /// @remarks The to_uint16 method converts the bytes from index start_index to start_index + 1 to an Uint16_t value. The order of bytes in the std::vector must reflect the endianness of the computer system's architecture; for more information, see the Remarks section of the bit_converter class topic.
+    /// @remarks The to_uint16 method converts the bytes from index start_index to start_index + 1 to an Uint16 value. The order of bytes in the std::vector must reflect the endianness of the computer system's architecture; for more information, see the Remarks section of the bit_converter class topic.
     static uint16 to_uint16(const std::vector<xtd::byte>& value, size_t start_index);
     
     /// @brief Returns a 32-bit signed integer converted from two bytes at a specified position in a xtd::byte std::vector.
@@ -326,7 +326,7 @@ namespace xtd {
     /// @exception argument_exception start_index equals the length of value minus 1.
     /// @exception argument_null_exception value is null
     /// @exception argument_out_of_range_exception start_index is less than zero or greater than the length of value minus 1.
-    /// @remarks The to_uint32 method converts the bytes from index start_index to start_index + 3 to an Uint32_t value. The order of bytes in the std::vector must reflect the endianness of the computer system's architecture; for more information, see the Remarks section of the bit_converter class topic.
+    /// @remarks The to_uint32 method converts the bytes from index start_index to start_index + 3 to an Uint32 value. The order of bytes in the std::vector must reflect the endianness of the computer system's architecture; for more information, see the Remarks section of the bit_converter class topic.
     static uint32 to_uint32(const std::vector<xtd::byte>& value, size_t start_index);
     
     /// @brief Returns a 64-bit unsigned integer converted from two bytes at a specified position in a xtd::byte std::vector.
@@ -336,7 +336,7 @@ namespace xtd {
     /// @exception argument_exception start_index equals the length of value minus 1.
     /// @exception argument_null_exception value is null
     /// @exception argument_out_of_range_exception start_index is less than zero or greater than the length of value minus 1.
-    /// @remarks The to_uint64 method converts the bytes from index start_index to start_index + 7 to an Uint64_t value. The order of bytes in the std::vector must reflect the endianness of the computer system's architecture; for more information, see the Remarks section of the bit_converter class topic.
+    /// @remarks The to_uint64 method converts the bytes from index start_index to start_index + 7 to an Uint64 value. The order of bytes in the std::vector must reflect the endianness of the computer system's architecture; for more information, see the Remarks section of the bit_converter class topic.
     static uint64 to_uint64(const std::vector<xtd::byte>& value, size_t start_index);
     
     /// @brief Converts the numeric value of each element of a specified std::vector of bytes to its equivalent hexadecimal xtd::ustring representation.
