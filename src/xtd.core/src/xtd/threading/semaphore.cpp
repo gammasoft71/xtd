@@ -18,9 +18,9 @@ public:
   virtual intptr handle() const noexcept = 0;
   virtual void handle(intptr value) = 0;
   virtual bool create(int32 initial_count, int32 maximum_count) = 0;
-  virtual bool create(int32 initial_count, int32 maximum_count, const ustring& name, bool& create_new) = 0;
+  virtual bool create(int32 initial_count, int32 maximum_count, const ustring& name) = 0;
   virtual void destroy() = 0;
-  virtual bool open(const ustring& name, bool& create_new) = 0;
+  virtual bool open(const ustring& name) = 0;
   virtual bool signal(bool& io_error) = 0;
   virtual bool wait(int32 milliseconds_timeout, bool& io_error) = 0;
 };
@@ -41,9 +41,9 @@ public:
     throw invalid_operation_exception {csf_};
   }
   
-  bool create(int32 initial_count, int32 maximum_count, const ustring& name, bool& create_new) override {
+  bool create(int32 initial_count, int32 maximum_count, const ustring& name) override {
     name_ = name;
-    handle_ = native::named_semaphore::create(name, create_new);
+    handle_ = native::named_semaphore::create(initial_count, maximum_count, name);
     return handle_ != invalid_handle;
   }
   
@@ -53,9 +53,9 @@ public:
     handle_ = invalid_handle;
   }
   
-  bool open(const ustring& name, bool& create_new) override {
+  bool open(const ustring& name) override {
     name_ = name;
-    handle_ = native::named_semaphore::create(name, create_new);
+    handle_ = native::named_semaphore::open(name);
     return handle_ != invalid_handle;
   }
 
@@ -83,15 +83,20 @@ public:
   }
   
   void handle(intptr value) override {
-    handle_.reset(reinterpret_cast<std::timed_mutex*>(value));
+    throw invalid_operation_exception {csf_};
   }
 
   bool create(int32 initial_count, int32 maximum_count) override {
-    handle_ = std::make_shared<std::timed_mutex>();
+    handle_ = std::make_shared<data>();
+    handle_->maximum_count = maximum_count;
+    bool io_error = false;
+    for (auto index = 0; !io_error && index < initial_count; ++index)
+      wait(-1, io_error);
+    if (io_error) return false;
     return true;
   }
   
-  bool create(int32 initial_count, int32 maximum_count, const ustring& name, bool& create_new) override {
+  bool create(int32 initial_count, int32 maximum_count, const ustring& name) override {
     throw invalid_operation_exception {csf_};
   }
 
@@ -100,25 +105,42 @@ public:
     handle_.reset();
   }
   
-  bool open(const ustring& name, bool& create_new) override {
+  bool open(const ustring& name) override {
     throw invalid_operation_exception {csf_};
   }
 
   bool signal(bool& io_error) override {
-    io_error = false;
-    handle_->unlock();
+    if (handle_->count + 1 >= handle_->maximum_count) {
+      io_error = true;
+      return false;
+    }
+    std::unique_lock<std::mutex> lock(handle_->mutex);
+    handle_->count++;
+    handle_->condition.notify_one();
     return true;
   }
 
   bool wait(int32 milliseconds_timeout, bool& io_error) override {
-    io_error = false;
-    if (milliseconds_timeout != timeout::infinite) return handle_->try_lock_for(std::chrono::milliseconds {milliseconds_timeout});
-    handle_->lock();
-    return true;
+    if (milliseconds_timeout == -1) {
+      std::unique_lock<std::mutex> lock(handle_->mutex);
+      while (handle_->count == 0)
+        handle_->condition.wait(lock);
+      return handle_->count--;
+    }
+    std::unique_lock<std::mutex> lock(handle_->mutex);
+    while (handle_->count == 0)
+      handle_->condition.wait_for(lock, std::chrono::milliseconds {milliseconds_timeout});
+    return handle_->count--;
   }
   
 private:
-  std::shared_ptr<std::timed_mutex> handle_;
+  struct data {
+    std::condition_variable condition;
+    int count = 0;
+    int maximum_count = std::numeric_limits<int>::max();
+    std::mutex mutex;
+  };
+  std::shared_ptr<data> handle_;
 };
 
 semaphore::semaphore() : semaphore(0, int32_object::max_value) {
@@ -163,8 +185,13 @@ semaphore semaphore::open_existing(const ustring& name) {
   return result;
 }
 
-void semaphore::release() {
-  if (!signal()) throw io::io_exception {csf_};
+int32 semaphore::release() {
+  if (!semaphore_) throw object_closed_exception {csf_};
+  if (count_ + 1 >= maximum_count_) throw semaphore_full_exception {csf_};
+  bool io_error = false;
+  semaphore_->signal(io_error);
+  if (io_error) throw io::io_exception {csf_};
+  return count_++;
 }
 
 bool semaphore::try_open_existing(const ustring& name, semaphore& result) noexcept {
@@ -172,19 +199,14 @@ bool semaphore::try_open_existing(const ustring& name, semaphore& result) noexce
   auto new_semaphore = semaphore {};
   new_semaphore.name_ = name;
   new_semaphore.semaphore_ = std::make_shared<semaphore::named_semaphore>();
-  bool created_new = true;
-  if (new_semaphore.semaphore_->open(new_semaphore.name_, created_new)) return false;
-  if (created_new) return false;
+  if (new_semaphore.semaphore_->open(new_semaphore.name_)) return false;
   result = new_semaphore;
   return true;
 }
 
 bool semaphore::signal() {
-  if (!semaphore_) throw object_closed_exception {csf_};
-  bool io_error = false;
-  auto result = semaphore_->signal(io_error);
-  if (io_error) throw io::io_exception {csf_};
-  return result;
+  release();
+  return true;
 }
 
 bool semaphore::wait(int32 milliseconds_timeout) {
@@ -203,6 +225,7 @@ void semaphore::create(int32 initial_count, int32 maximum_count, bool& created_n
     if (!semaphore_->create(initial_count, maximum_count)) throw io::io_exception(csf_);
   } else {
     semaphore_ = std::make_shared<semaphore::named_semaphore>();
-    if (!semaphore_->create(initial_count, maximum_count, name_, created_new)) throw io::io_exception(csf_);
+    created_new = semaphore_->create(initial_count, maximum_count, name_);
+    if (!created_new && !semaphore_->open(name_)) throw io::io_exception(csf_);
   }
 }
