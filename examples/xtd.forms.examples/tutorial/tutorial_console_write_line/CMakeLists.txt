@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.3)
+cmake_minimum_required(VERSION 3.5)
 
 project(tutorial_console_write_line)
 find_package(xtd.console REQUIRED)

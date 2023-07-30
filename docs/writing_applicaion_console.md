@@ -54,7 +54,7 @@ auto main()->int {
 1. Create CMakeLists.txt file in your project folder and add the cmake minimum version required.
 
 ```cmake
-cmake_minimum_required(VERSION 3.3)
+cmake_minimum_required(VERSION 3.5)
 ```
 
 2. Set the project name and add xtd.forms package.
@@ -147,7 +147,7 @@ auto main()->int {
 CMakeLists.txt:
 
 ```cmake
-cmake_minimum_required(VERSION 3.3)
+cmake_minimum_required(VERSION 3.5)
 
 project(console1)
 find_package(xtd REQUIRED)
