@@ -2,6 +2,7 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/types.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
+#include <semaphore.h>
 
 using namespace abi;
 using namespace std;
@@ -23,5 +24,5 @@ string types::demangle(const string& name) {
 }
 
 intmax_t types::invalid_handle() noexcept {
-  return 0;
+  return reinterpret_cast<intmax_t>(SEM_FAILED);
 }

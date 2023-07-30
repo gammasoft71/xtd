@@ -38,18 +38,22 @@ namespace xtd {
       /// @name Protected methods
       
       /// @{
-      /// @brief Create named mutex with specified name and a bool value that, when the method returns, indicates whether the calling thread was granted initial ownership of the mutex.
+      /// @brief Create named mutex with specified name and a bool value that.
       /// @param initially_owned true to give the calling thread initial ownership of the named system mutex if the named system mutex is created as a result of this call; otherwise, false.
       /// @param name The name, if the synchronization object is to be shared with other processes.
-      /// @param creat_new When this method returns, contains a boolthat is true if the specified named system mutex was created; false if the specified named system mutex already existed.
-      /// @return The handle of the created or open mutex.
+      /// @return The handle of the created mutex.
       /// @warning Internal use only
-      static intmax_t create(bool initially_owned, const std::string& name, bool& create_new);
+      static intmax_t create(bool initially_owned, const std::string& name);
       /// @brief Destroy named mutex with specified mutex handle.
       /// @param name The name of the mutex.
       /// @param handle The mutex handle to destroy.
       /// @warning Internal use only
       static void destroy(intmax_t handle, const std::string& name);
+      /// @brief Open named mutex with specified name.
+      /// @param name The name, if the synchronization object is to be shared with other processes.
+      /// @return The handle of the opened mutex.
+      /// @warning Internal use only
+      static intmax_t open(const std::string& name);
       /// @brief Signal named mutex with specified mutex handle.
       /// @param handle The mutex handle to signal.
       /// @return true if succeed; otherwhise false.
