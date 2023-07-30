@@ -34,7 +34,7 @@ void named_semaphore::destroy(intmax_t handle, const std::string& name) {
 
 intmax_t named_semaphore::open(const std::string& name) {
   sem_t* semaphore = nullptr;
-  semaphore = sem_open(name.c_str(), O_CREAT, S_IRUSR | S_IWUSR);
+  semaphore = sem_open(name.c_str(), O_RDWR, S_IRUSR | S_IWUSR);
   return reinterpret_cast<intmax_t>(semaphore);
 }
 
