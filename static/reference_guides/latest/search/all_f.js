@@ -389,7 +389,7 @@ var searchData=
   ['protocol_5fviolation_5fexception_5f_386',['protocol_violation_exception_',['../group__exceptions.html#ga2af71ba4f10740d77b2128f4e7e92e8c',1,'protocol_violation_exception.h']]],
   ['pseudo_5fstate_387',['pseudo_state',['../group__style__sheets.html#gade25a31d5bc8adf30e8852f986a5aad9',1,'xtd::forms::style_sheets']]],
   ['pseudo_5fstate_2eh_388',['pseudo_state.h',['../pseudo__state_8h.html',1,'']]],
-  ['ptrdiff_389',['ptrdiff',['../group__types.html#gac047942a62f03ba75e1b4f0bde7401ca',1,'xtd']]],
+  ['ptrdiff_389',['ptrdiff',['../group__types.html#gafc1f246c3bac57da997e1ebeb373d5db',1,'xtd']]],
   ['ptrdiff_2eh_390',['ptrdiff.h',['../ptrdiff_8h.html',1,'']]],
   ['public_5faddress_5floudspeaker_391',['public_address_loudspeaker',['../classxtd_1_1forms_1_1emoticons.html#a07d5fa1e1bcdaf776be9adc8f6fdf181',1,'xtd::forms::emoticons']]],
   ['puerto_5frico_392',['puerto_rico',['../classxtd_1_1forms_1_1countries.html#a02a196e50deced06260bcc73e41abb49',1,'xtd::forms::countries']]],

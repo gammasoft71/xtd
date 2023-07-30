@@ -112,7 +112,7 @@ You can use the <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a
 </ul>
 </dd>
 <dd>
-The <a class="el" href="classxtd_1_1threading_1_1mutex.html" title="A synchronization primitive that can also be used for interprocess synchronization.">xtd::threading::mutex</a> class enforces thread identity, so a mutex can be released only by the thread that acquired it. By contrast, the xtd::threading::semaphore class does not enforce thread identity. A mutex can also be passed across application domain boundaries. </dd>
+The <a class="el" href="classxtd_1_1threading_1_1mutex.html" title="A synchronization primitive that can also be used for interprocess synchronization.">xtd::threading::mutex</a> class enforces thread identity, so a mutex can be released only by the thread that acquired it. By contrast, the <a class="el" href="classxtd_1_1threading_1_1semaphore.html" title="Limits the number of threads that can access a resource or pool of resources concurrently.">xtd::threading::semaphore</a> class does not enforce thread identity. A mutex can also be passed across application domain boundaries. </dd>
 <dd>
 The thread that owns a mutex can request the same mutex in repeated calls to <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#ab53dcefc6844ecf0d6d9967ac489ac87" title="Blocks the current thread until the current xtd::threading::wait_handle receives a signal.">xtd::threading::wait_handle::wait_one</a> without blocking its execution. However, the thread must call the <a class="el" href="classxtd_1_1threading_1_1mutex.html#a02f2e273ef08cdf7008087b9966de53d" title="Releases the Mutex once.">xtd::threading::mutex::release_mutex</a> method the same number of times to release ownership of the mutex. </dd>
 <dd>
@@ -126,11 +126,11 @@ Mutexes are of two types: local mutexes, which are unnamed, and named system mut
 <dd>
 Named system mutexes are visible throughout the operating system, and can be used to synchronize the activities of processes. You can create a <a class="el" href="classxtd_1_1threading_1_1mutex.html" title="A synchronization primitive that can also be used for interprocess synchronization.">xtd::threading::mutex</a> object that represents a named system mutex by using a constructor that accepts a name. The operating-system object can be created at the same time, or it can exist before the creation of the <a class="el" href="classxtd_1_1threading_1_1mutex.html" title="A synchronization primitive that can also be used for interprocess synchronization.">xtd::threading::mutex</a> object. You can create multiple <a class="el" href="classxtd_1_1threading_1_1mutex.html" title="A synchronization primitive that can also be used for interprocess synchronization.">xtd::threading::mutex</a> objects that represent the same named system mutex, and you can use the <a class="el" href="classxtd_1_1threading_1_1mutex.html#a7aac64a1e68fe54acedadb5c48061887" title="Opens an existing named mutex.">xtd::threading::mutex::open_existing</a> method to open an existing named system mutex. </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>The backslash () and slash(/) are a reserved character in a mutex name. Don't use a backslash () and slash (/) in a mutex name except as specified in the note on using mutexes in terminal server sessions. Otherwise, a <a class="el" href="classxtd_1_1io_1_1directory__not__found__exception.html" title="The exception that is thrown when part of a file or directory cannot be found.">xtd::io::directory_not_found_exception</a> may be thrown, even though the name of the mutex represents an existing file. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The unnamed mutex is a std::recursive_timed_mutex of C++17. You can therefore use <a class="el" href="classxtd_1_1threading_1_1mutex.html" title="A synchronization primitive that can also be used for interprocess synchronization.">xtd::threading::mutex</a> or std::recursive_timed_mutex indifferently in your projects. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>The unnamed mutex is a <a href="https://en.cppreference.com/w/cpp/thread/recursive_timed_mutex">std::recursive_timed_mutex</a> of C++17. You can therefore use <a class="el" href="classxtd_1_1threading_1_1mutex.html" title="A synchronization primitive that can also be used for interprocess synchronization.">xtd::threading::mutex</a> or <a href="https://en.cppreference.com/w/cpp/thread/recursive_timed_mutex">std::recursive_timed_mutex</a> indifferently in your projects. </dd>
 <dd>
-If you use other synchronization objects for your threads and you use <a class="el" href="classxtd_1_1threading_1_1thread.html" title="Contains a constant used to specify an infinite amount of time. This class cannot be inherited.">xtd::threading::thread</a> you are interested in using <a class="el" href="classxtd_1_1threading_1_1mutex.html" title="A synchronization primitive that can also be used for interprocess synchronization.">xtd::threading::mutex</a>. You will also benefit from xtd::threding::wait_handle::wait_all and td::threding::wait_handle::wait_any among others to synchronize all your objects. </dd>
+If you use other synchronization objects for your threads and you use <a class="el" href="classxtd_1_1threading_1_1thread.html" title="Contains a constant used to specify an infinite amount of time. This class cannot be inherited.">xtd::threading::thread</a> you are interested in using <a class="el" href="classxtd_1_1threading_1_1mutex.html" title="A synchronization primitive that can also be used for interprocess synchronization.">xtd::threading::mutex</a>. You will also benefit from <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a217129669f17b6f14201dccd0405450c" title="Waits for all the elements in the specified collection to receive a signal.">xtd::threading::wait_handle::wait_all</a> and td::threading::wait_handle::wait_any among others to synchronize all your objects. </dd>
 <dd>
-On the other hand, if you only use mutexes and you use std::thread then you are interested in using std::recursive_timed_mutex. </dd></dl>
+On the other hand, if you only use mutexes and you use <a href="https://en.cppreference.com/w/cpp/thread/thread">std::thread</a> then you are interested in using <a href="https://en.cppreference.com/w/cpp/thread/recursive_timed_mutex">std::recursive_timed_mutex</a>. </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Constructors</h2></td></tr>
 <tr class="memitem:aa7652ef5f76f63d3c267fd07210bbbfd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1mutex.html#aa7652ef5f76f63d3c267fd07210bbbfd">mutex</a> ()</td></tr>
@@ -147,12 +147,12 @@ On the other hand, if you only use mutexes and you use std::thread then you are 
 <tr class="separator:adfd1499eba670db674e4de2b6a990a12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Properties</h2></td></tr>
-<tr class="memitem:ab4f1ec52d0cdcd482f631d367dc6ea4b"><td class="memItemLeft" align="right" valign="top">intptr_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1mutex.html#ab4f1ec52d0cdcd482f631d367dc6ea4b">handle</a> () const noexcept override</td></tr>
-<tr class="memdesc:ab4f1ec52d0cdcd482f631d367dc6ea4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the native operating system handle.  <br /></td></tr>
-<tr class="separator:ab4f1ec52d0cdcd482f631d367dc6ea4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93664c29c594add3b3deb42ee953893c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1mutex.html#a93664c29c594add3b3deb42ee953893c">handle</a> (intptr_t value) override</td></tr>
-<tr class="memdesc:a93664c29c594add3b3deb42ee953893c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the native operating system handle.  <br /></td></tr>
-<tr class="separator:a93664c29c594add3b3deb42ee953893c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4b414b099d21ce89c3dd9c6d9dd9793"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1mutex.html#aa4b414b099d21ce89c3dd9c6d9dd9793">handle</a> () const noexcept override</td></tr>
+<tr class="memdesc:aa4b414b099d21ce89c3dd9c6d9dd9793"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the native operating system handle.  <br /></td></tr>
+<tr class="separator:aa4b414b099d21ce89c3dd9c6d9dd9793"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0edfd2414178ff3f1e79ce4d29c8e972"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1mutex.html#a0edfd2414178ff3f1e79ce4d29c8e972">handle</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> value) override</td></tr>
+<tr class="memdesc:a0edfd2414178ff3f1e79ce4d29c8e972"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the native operating system handle.  <br /></td></tr>
+<tr class="separator:a0edfd2414178ff3f1e79ce4d29c8e972"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Methods</h2></td></tr>
 <tr class="memitem:aad7c66ee04153877e8933cdcfa375043"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1mutex.html#aad7c66ee04153877e8933cdcfa375043">close</a> () override</td></tr>
@@ -172,16 +172,16 @@ On the other hand, if you only use mutexes and you use std::thread then you are 
 <tr class="memitem:a9fdaa8f872d88a427616d3a309b8bdb9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1mutex.html#a9fdaa8f872d88a427616d3a309b8bdb9">signal</a> () override</td></tr>
 <tr class="memdesc:a9fdaa8f872d88a427616d3a309b8bdb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases ownership of the specified <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">wait_handle</a> object.  <br /></td></tr>
 <tr class="separator:a9fdaa8f872d88a427616d3a309b8bdb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae66c18be9cfa4cb51969c8a82ed124d5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1mutex.html#ae66c18be9cfa4cb51969c8a82ed124d5">wait</a> (int32_t milliseconds_timeout) override</td></tr>
-<tr class="memdesc:ae66c18be9cfa4cb51969c8a82ed124d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">wait ownership of the specified mutex object.  <br /></td></tr>
-<tr class="separator:ae66c18be9cfa4cb51969c8a82ed124d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9bb2824e6fda49dc1a7d843b269fcd4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1mutex.html#ae9bb2824e6fda49dc1a7d843b269fcd4">wait</a> (<a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> milliseconds_timeout) override</td></tr>
+<tr class="memdesc:ae9bb2824e6fda49dc1a7d843b269fcd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">wait ownership of the specified mutex object.  <br /></td></tr>
+<tr class="separator:ae9bb2824e6fda49dc1a7d843b269fcd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_static_attribs_classxtd_1_1threading_1_1wait__handle"><td colspan="2" onclick="javascript:toggleInherit('pub_static_attribs_classxtd_1_1threading_1_1wait__handle')"><img src="closed.png" alt="-"/>&#160;Static Public Attributes inherited from <a class="el" href="classxtd_1_1threading_1_1wait__handle.html">xtd::threading::wait_handle</a></td></tr>
-<tr class="memitem:aff40193401e5dac803c50e750fcb1c01 inherit pub_static_attribs_classxtd_1_1threading_1_1wait__handle"><td class="memItemLeft" align="right" valign="top">static const intptr_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#aff40193401e5dac803c50e750fcb1c01">invalid_handle</a></td></tr>
-<tr class="memdesc:aff40193401e5dac803c50e750fcb1c01 inherit pub_static_attribs_classxtd_1_1threading_1_1wait__handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents an invalid native operating system handle. This field is read-only.  <br /></td></tr>
-<tr class="separator:aff40193401e5dac803c50e750fcb1c01 inherit pub_static_attribs_classxtd_1_1threading_1_1wait__handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c98f88990d103ede2f1f9dcbed8956b inherit pub_static_attribs_classxtd_1_1threading_1_1wait__handle"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a1c98f88990d103ede2f1f9dcbed8956b">invalid_handle</a></td></tr>
+<tr class="memdesc:a1c98f88990d103ede2f1f9dcbed8956b inherit pub_static_attribs_classxtd_1_1threading_1_1wait__handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents an invalid native operating system handle. This field is read-only.  <br /></td></tr>
+<tr class="separator:a1c98f88990d103ede2f1f9dcbed8956b inherit pub_static_attribs_classxtd_1_1threading_1_1wait__handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88cd044ea1e43ec86d62960d667ec67d inherit pub_static_attribs_classxtd_1_1threading_1_1wait__handle"><td class="memItemLeft" align="right" valign="top">static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a88cd044ea1e43ec86d62960d667ec67d">wait_timeout</a></td></tr>
 <tr class="memdesc:a88cd044ea1e43ec86d62960d667ec67d inherit pub_static_attribs_classxtd_1_1threading_1_1wait__handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates that a <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#aee2a73d9052723690ff0e15a338cce35" title="Waits for any of the elements in the specified collection to receive a signal.">xtd::threading::wait_handle::wait_any</a> operation timed out before any of the wait handles were signaled. This field is constant. @remrarks This field is one of the possible return values of <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#aee2a73d9052723690ff0e15a338cce35" title="Waits for any of the elements in the specified collection to receive a signal.">xtd::threading::wait_handle::wait_any</a>.  <br /></td></tr>
 <tr class="separator:a88cd044ea1e43ec86d62960d667ec67d inherit pub_static_attribs_classxtd_1_1threading_1_1wait__handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -192,9 +192,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:ab53dcefc6844ecf0d6d9967ac489ac87 inherit pub_methods_classxtd_1_1threading_1_1wait__handle"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#ab53dcefc6844ecf0d6d9967ac489ac87">wait_one</a> ()</td></tr>
 <tr class="memdesc:ab53dcefc6844ecf0d6d9967ac489ac87 inherit pub_methods_classxtd_1_1threading_1_1wait__handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocks the current thread until the current <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> receives a signal.  <br /></td></tr>
 <tr class="separator:ab53dcefc6844ecf0d6d9967ac489ac87 inherit pub_methods_classxtd_1_1threading_1_1wait__handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59868b679ba96fd1788dc36d3a1af205 inherit pub_methods_classxtd_1_1threading_1_1wait__handle"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a59868b679ba96fd1788dc36d3a1af205">wait_one</a> (int32_t milliseconds_timeout)</td></tr>
-<tr class="memdesc:a59868b679ba96fd1788dc36d3a1af205 inherit pub_methods_classxtd_1_1threading_1_1wait__handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocks the current thread until the current <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> receives a signal, using 32-bit signed integer to measure the time interval.  <br /></td></tr>
-<tr class="separator:a59868b679ba96fd1788dc36d3a1af205 inherit pub_methods_classxtd_1_1threading_1_1wait__handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65749b3c963772bef5440b1c8faca6ea inherit pub_methods_classxtd_1_1threading_1_1wait__handle"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a65749b3c963772bef5440b1c8faca6ea">wait_one</a> (<a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> milliseconds_timeout)</td></tr>
+<tr class="memdesc:a65749b3c963772bef5440b1c8faca6ea inherit pub_methods_classxtd_1_1threading_1_1wait__handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocks the current thread until the current <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> receives a signal, using 32-bit signed integer to measure the time interval.  <br /></td></tr>
+<tr class="separator:a65749b3c963772bef5440b1c8faca6ea inherit pub_methods_classxtd_1_1threading_1_1wait__handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ffdfd0f2f35f6768cb78bded574aa01 inherit pub_methods_classxtd_1_1threading_1_1wait__handle"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a6ffdfd0f2f35f6768cb78bded574aa01">wait_one</a> (const <a class="el" href="group__types.html#gad013431819ca97998d1dc5910b475f80">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>)</td></tr>
 <tr class="memdesc:a6ffdfd0f2f35f6768cb78bded574aa01 inherit pub_methods_classxtd_1_1threading_1_1wait__handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocks the current thread until the current instance receives a signal, using a <a class="el" href="group__types.html#gad013431819ca97998d1dc5910b475f80" title="Represents a time interval.">xtd::time_span</a> to measure the time interval.  <br /></td></tr>
 <tr class="separator:a6ffdfd0f2f35f6768cb78bded574aa01 inherit pub_methods_classxtd_1_1threading_1_1wait__handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -202,9 +202,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a01c82b06ca8a5d14aba5f1fb396c16f7 inherit pub_static_methods_classxtd_1_1threading_1_1wait__handle"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a01c82b06ca8a5d14aba5f1fb396c16f7">signal_and_wait</a> (<a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;to_signal, <a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;to_wait)</td></tr>
 <tr class="memdesc:a01c82b06ca8a5d14aba5f1fb396c16f7 inherit pub_static_methods_classxtd_1_1threading_1_1wait__handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signals one <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> and waits on another.  <br /></td></tr>
 <tr class="separator:a01c82b06ca8a5d14aba5f1fb396c16f7 inherit pub_static_methods_classxtd_1_1threading_1_1wait__handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4b22dc2ba5ce260325ae744ada2558e inherit pub_static_methods_classxtd_1_1threading_1_1wait__handle"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#ac4b22dc2ba5ce260325ae744ada2558e">signal_and_wait</a> (<a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;to_signal, <a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;to_wait, int32_t milliseconds_timeout)</td></tr>
-<tr class="memdesc:ac4b22dc2ba5ce260325ae744ada2558e inherit pub_static_methods_classxtd_1_1threading_1_1wait__handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signals one <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> and waits on another, specifying a time-out interval as a 32-bit signed integer.  <br /></td></tr>
-<tr class="separator:ac4b22dc2ba5ce260325ae744ada2558e inherit pub_static_methods_classxtd_1_1threading_1_1wait__handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83aebea15b640d53b04a97306515768d inherit pub_static_methods_classxtd_1_1threading_1_1wait__handle"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a83aebea15b640d53b04a97306515768d">signal_and_wait</a> (<a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;to_signal, <a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;to_wait, <a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> milliseconds_timeout)</td></tr>
+<tr class="memdesc:a83aebea15b640d53b04a97306515768d inherit pub_static_methods_classxtd_1_1threading_1_1wait__handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signals one <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> and waits on another, specifying a time-out interval as a 32-bit signed integer.  <br /></td></tr>
+<tr class="separator:a83aebea15b640d53b04a97306515768d inherit pub_static_methods_classxtd_1_1threading_1_1wait__handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2056ee81b21f23f6b0a7bd7f3bc232e8 inherit pub_static_methods_classxtd_1_1threading_1_1wait__handle"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a2056ee81b21f23f6b0a7bd7f3bc232e8">signal_and_wait</a> (<a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;to_signal, <a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;to_wait, const <a class="el" href="group__types.html#gad013431819ca97998d1dc5910b475f80">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>)</td></tr>
 <tr class="memdesc:a2056ee81b21f23f6b0a7bd7f3bc232e8 inherit pub_static_methods_classxtd_1_1threading_1_1wait__handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signals one <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> and waits on another, specifying a time-out interval as a time_span.  <br /></td></tr>
 <tr class="separator:a2056ee81b21f23f6b0a7bd7f3bc232e8 inherit pub_static_methods_classxtd_1_1threading_1_1wait__handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -212,10 +212,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a217129669f17b6f14201dccd0405450c inherit pub_static_methods_classxtd_1_1threading_1_1wait__handle"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a217129669f17b6f14201dccd0405450c">wait_all</a> (const collection_t &amp;wait_handles)</td></tr>
 <tr class="memdesc:a217129669f17b6f14201dccd0405450c inherit pub_static_methods_classxtd_1_1threading_1_1wait__handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for all the elements in the specified collection to receive a signal.  <br /></td></tr>
 <tr class="separator:a217129669f17b6f14201dccd0405450c inherit pub_static_methods_classxtd_1_1threading_1_1wait__handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33e19149fd94303f4b346b58caeec2e4 inherit pub_static_methods_classxtd_1_1threading_1_1wait__handle"><td class="memTemplParams" colspan="2">template&lt;typename collection_t &gt; </td></tr>
-<tr class="memitem:a33e19149fd94303f4b346b58caeec2e4 inherit pub_static_methods_classxtd_1_1threading_1_1wait__handle"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a33e19149fd94303f4b346b58caeec2e4">wait_all</a> (const collection_t &amp;wait_handles, int32_t milliseconds_timeout)</td></tr>
-<tr class="memdesc:a33e19149fd94303f4b346b58caeec2e4 inherit pub_static_methods_classxtd_1_1threading_1_1wait__handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for all the elements in the specified collection to receive a signal, using an int32 value to measure the time interval.  <br /></td></tr>
-<tr class="separator:a33e19149fd94303f4b346b58caeec2e4 inherit pub_static_methods_classxtd_1_1threading_1_1wait__handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8aa977d4e62fe9fd5cc7c57cd4eb58f2 inherit pub_static_methods_classxtd_1_1threading_1_1wait__handle"><td class="memTemplParams" colspan="2">template&lt;typename collection_t &gt; </td></tr>
+<tr class="memitem:a8aa977d4e62fe9fd5cc7c57cd4eb58f2 inherit pub_static_methods_classxtd_1_1threading_1_1wait__handle"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a8aa977d4e62fe9fd5cc7c57cd4eb58f2">wait_all</a> (const collection_t &amp;wait_handles, <a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> milliseconds_timeout)</td></tr>
+<tr class="memdesc:a8aa977d4e62fe9fd5cc7c57cd4eb58f2 inherit pub_static_methods_classxtd_1_1threading_1_1wait__handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for all the elements in the specified collection to receive a signal, using an int32 value to measure the time interval.  <br /></td></tr>
+<tr class="separator:a8aa977d4e62fe9fd5cc7c57cd4eb58f2 inherit pub_static_methods_classxtd_1_1threading_1_1wait__handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeda61f20a00dfc9a8b0f125edc9e8aa6 inherit pub_static_methods_classxtd_1_1threading_1_1wait__handle"><td class="memTemplParams" colspan="2">template&lt;typename collection_t &gt; </td></tr>
 <tr class="memitem:aeda61f20a00dfc9a8b0f125edc9e8aa6 inherit pub_static_methods_classxtd_1_1threading_1_1wait__handle"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#aeda61f20a00dfc9a8b0f125edc9e8aa6">wait_all</a> (const collection_t &amp;wait_handles, const <a class="el" href="group__types.html#gad013431819ca97998d1dc5910b475f80">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>)</td></tr>
 <tr class="memdesc:aeda61f20a00dfc9a8b0f125edc9e8aa6 inherit pub_static_methods_classxtd_1_1threading_1_1wait__handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for all the elements in the specified collection to receive a signal, using a <a class="el" href="group__types.html#gad013431819ca97998d1dc5910b475f80" title="Represents a time interval.">xtd::time_span</a> value to measure the time interval.  <br /></td></tr>
@@ -224,10 +224,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:aee2a73d9052723690ff0e15a338cce35 inherit pub_static_methods_classxtd_1_1threading_1_1wait__handle"><td class="memTemplItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#aee2a73d9052723690ff0e15a338cce35">wait_any</a> (const collection_t &amp;wait_handles)</td></tr>
 <tr class="memdesc:aee2a73d9052723690ff0e15a338cce35 inherit pub_static_methods_classxtd_1_1threading_1_1wait__handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for any of the elements in the specified collection to receive a signal.  <br /></td></tr>
 <tr class="separator:aee2a73d9052723690ff0e15a338cce35 inherit pub_static_methods_classxtd_1_1threading_1_1wait__handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adda49d77e4cb38fd372ce9c04bde3834 inherit pub_static_methods_classxtd_1_1threading_1_1wait__handle"><td class="memTemplParams" colspan="2">template&lt;typename collection_t &gt; </td></tr>
-<tr class="memitem:adda49d77e4cb38fd372ce9c04bde3834 inherit pub_static_methods_classxtd_1_1threading_1_1wait__handle"><td class="memTemplItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#adda49d77e4cb38fd372ce9c04bde3834">wait_any</a> (const collection_t &amp;wait_handles, int32_t milliseconds_timeout)</td></tr>
-<tr class="memdesc:adda49d77e4cb38fd372ce9c04bde3834 inherit pub_static_methods_classxtd_1_1threading_1_1wait__handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for any of the elements in the specified collection to receive a signal, using a 32-bit signed integer to measure the time interval.  <br /></td></tr>
-<tr class="separator:adda49d77e4cb38fd372ce9c04bde3834 inherit pub_static_methods_classxtd_1_1threading_1_1wait__handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b1275f297e0dbddbf302edf0cd2a37d inherit pub_static_methods_classxtd_1_1threading_1_1wait__handle"><td class="memTemplParams" colspan="2">template&lt;typename collection_t &gt; </td></tr>
+<tr class="memitem:a5b1275f297e0dbddbf302edf0cd2a37d inherit pub_static_methods_classxtd_1_1threading_1_1wait__handle"><td class="memTemplItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a5b1275f297e0dbddbf302edf0cd2a37d">wait_any</a> (const collection_t &amp;wait_handles, <a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> milliseconds_timeout)</td></tr>
+<tr class="memdesc:a5b1275f297e0dbddbf302edf0cd2a37d inherit pub_static_methods_classxtd_1_1threading_1_1wait__handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for any of the elements in the specified collection to receive a signal, using a 32-bit signed integer to measure the time interval.  <br /></td></tr>
+<tr class="separator:a5b1275f297e0dbddbf302edf0cd2a37d inherit pub_static_methods_classxtd_1_1threading_1_1wait__handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa704be64592eed6531ec3953bb9897e inherit pub_static_methods_classxtd_1_1threading_1_1wait__handle"><td class="memTemplParams" colspan="2">template&lt;typename collection_t &gt; </td></tr>
 <tr class="memitem:afa704be64592eed6531ec3953bb9897e inherit pub_static_methods_classxtd_1_1threading_1_1wait__handle"><td class="memTemplItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#afa704be64592eed6531ec3953bb9897e">wait_any</a> (const collection_t &amp;wait_handles, const <a class="el" href="group__types.html#gad013431819ca97998d1dc5910b475f80">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>)</td></tr>
 <tr class="memdesc:afa704be64592eed6531ec3953bb9897e inherit pub_static_methods_classxtd_1_1threading_1_1wait__handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for any of the elements in the specified collection to receive a signal, using a <a class="el" href="group__types.html#gad013431819ca97998d1dc5910b475f80" title="Represents a time interval.">xtd::time_span</a> to measure the time interval.  <br /></td></tr>
@@ -357,8 +357,8 @@ There was some other error. The HResult property may provide more information. <
 
 </div>
 </div>
-<a id="ab4f1ec52d0cdcd482f631d367dc6ea4b" name="ab4f1ec52d0cdcd482f631d367dc6ea4b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab4f1ec52d0cdcd482f631d367dc6ea4b">&#9670;&#160;</a></span>handle() <span class="overload">[1/2]</span></h2>
+<a id="aa4b414b099d21ce89c3dd9c6d9dd9793" name="aa4b414b099d21ce89c3dd9c6d9dd9793"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4b414b099d21ce89c3dd9c6d9dd9793">&#9670;&#160;</a></span>handle() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -367,7 +367,7 @@ There was some other error. The HResult property may provide more information. <
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">intptr_t xtd::threading::mutex::handle </td>
+          <td class="memname"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> xtd::threading::mutex::handle </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -383,12 +383,12 @@ There was some other error. The HResult property may provide more information. <
 <p>Gets the native operating system handle. </p>
 <dl class="section return"><dt>Returns</dt><dd>An intptr representing the native operating system handle. </dd></dl>
 
-<p>Implements <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#abb44fe0a6e8b3084dda3b1498b55d77b">xtd::threading::wait_handle</a>.</p>
+<p>Implements <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#ac6ea513628eed434543d706fb69c144c">xtd::threading::wait_handle</a>.</p>
 
 </div>
 </div>
-<a id="a93664c29c594add3b3deb42ee953893c" name="a93664c29c594add3b3deb42ee953893c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a93664c29c594add3b3deb42ee953893c">&#9670;&#160;</a></span>handle() <span class="overload">[2/2]</span></h2>
+<a id="a0edfd2414178ff3f1e79ce4d29c8e972" name="a0edfd2414178ff3f1e79ce4d29c8e972"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0edfd2414178ff3f1e79ce4d29c8e972">&#9670;&#160;</a></span>handle() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -399,7 +399,7 @@ There was some other error. The HResult property may provide more information. <
         <tr>
           <td class="memname">void xtd::threading::mutex::handle </td>
           <td>(</td>
-          <td class="paramtype">intptr_t&#160;</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>
@@ -419,7 +419,7 @@ There was some other error. The HResult property may provide more information. <
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a231abd84a1bd5253c0a64f5f0006d059">xtd::threading::wait_handle</a>.</p>
+<p>Implements <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a1ae25cca055cc110953d333475ef5c3f">xtd::threading::wait_handle</a>.</p>
 
 </div>
 </div>
@@ -569,8 +569,8 @@ There was some other error. The HResult property may provide more information. <
 
 </div>
 </div>
-<a id="ae66c18be9cfa4cb51969c8a82ed124d5" name="ae66c18be9cfa4cb51969c8a82ed124d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae66c18be9cfa4cb51969c8a82ed124d5">&#9670;&#160;</a></span>wait()</h2>
+<a id="ae9bb2824e6fda49dc1a7d843b269fcd4" name="ae9bb2824e6fda49dc1a7d843b269fcd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9bb2824e6fda49dc1a7d843b269fcd4">&#9670;&#160;</a></span>wait()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -581,7 +581,7 @@ There was some other error. The HResult property may provide more information. <
         <tr>
           <td class="memname">bool xtd::threading::mutex::wait </td>
           <td>(</td>
-          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a>&#160;</td>
           <td class="paramname"><em>milliseconds_timeout</em></td><td>)</td>
           <td></td>
         </tr>
@@ -606,7 +606,7 @@ There was some other error. The HResult property may provide more information. <
 <dd>
 Override this function for all derived object </dd></dl>
 
-<p>Implements <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a65f59b1b857f1573856a57b05768c762">xtd::threading::wait_handle</a>.</p>
+<p>Implements <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a9bb413f1c6bf14c9a514896f972dd35b">xtd::threading::wait_handle</a>.</p>
 
 </div>
 </div>
@@ -617,7 +617,7 @@ Override this function for all derived object </dd></dl>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jul 28 2023 20:41:48 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Jul 30 2023 22:33:10 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

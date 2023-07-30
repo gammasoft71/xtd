@@ -110,8 +110,8 @@ $(function() {
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        </div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        if_expected.seekg(0, std::ios::end);</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        if_actual.seekg(0, std::ios::end);</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        <span class="keywordtype">size_t</span> size_expected = if_expected.tellg();</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        <span class="keywordtype">size_t</span> size_actual = if_actual.tellg();</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        <span class="keywordtype">size_t</span> size_expected = <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(if_expected.tellg());</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        <span class="keywordtype">size_t</span> size_actual = <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(if_actual.tellg());</div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        <span class="keywordflow">if</span> (size_expected != size_actual) {</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>          base_assert::fail(<span class="stringliteral">&quot;istream length &quot;</span> + base_assert::to_string(size_expected), base_assert::to_string(size_actual), message, stack_frame);</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>          <span class="keywordflow">return</span>;</div>
@@ -176,8 +176,8 @@ $(function() {
 <div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>        </div>
 <div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>        if_expected.seekg(0, std::ios::end);</div>
 <div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>        if_actual.seekg(0, std::ios::end);</div>
-<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>        <span class="keywordtype">size_t</span> size_expected = if_expected.tellg();</div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>        <span class="keywordtype">size_t</span> size_actual = if_actual.tellg();</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>        <span class="keywordtype">size_t</span> size_expected = <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(if_expected.tellg());</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>        <span class="keywordtype">size_t</span> size_actual = <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(if_actual.tellg());</div>
 <div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>        <span class="keywordflow">if</span> (size_expected != size_actual) {</div>
 <div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>          assert::succeed(message, stack_frame);</div>
 <div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>          <span class="keywordflow">return</span>;</div>
@@ -319,7 +319,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jul 28 2023 20:41:42 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Jul 30 2023 22:33:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
