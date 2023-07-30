@@ -31,7 +31,7 @@ intmax_t named_mutex::open(const std::string& name) {
 bool named_mutex::signal(intmax_t handle, bool& io_error) {
   if (reinterpret_cast<sem_t*>(handle) == SEM_FAILED) return !(io_error = true);
   io_error = false;
-  if (sem_post(reinterpret_cast<sem_t*>(handle)) == -1) && errno == EINVAL) io_error = true;
+  if (sem_post(reinterpret_cast<sem_t*>(handle)) == -1 && errno == EINVAL) io_error = true;
   return !io_error;
 }
 
