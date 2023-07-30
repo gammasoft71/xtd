@@ -57,7 +57,7 @@ namespace xtd {
       /// @param handle The semaphore handle to signal.
       /// @return true if succeed; otherwhise false.
       /// @warning Internal use only
-      static bool signal(intmax_t handle, int_least32_t& previous_count, bool& io_error);
+      static bool signal(intmax_t handle, int_least32_t release_count, int_least32_t& previous_count, bool& io_error);
       /// @brief Wait named semaphore with specified semaphore handle and timeout.
       /// @param handle The semaphore handle to wait.
       /// @param milliseconds_timeout The timeout in milliseconds (-1 is infinite timeout).
