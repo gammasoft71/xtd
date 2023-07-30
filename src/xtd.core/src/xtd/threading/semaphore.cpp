@@ -21,7 +21,7 @@ public:
   virtual bool create(int32 initial_count, int32 maximum_count, const ustring& name) = 0;
   virtual void destroy() = 0;
   virtual bool open(const ustring& name) = 0;
-  virtual bool signal(bool& io_error) = 0;
+  virtual bool signal(bool& io_error, int32& previous_count) = 0;
   virtual bool wait(int32 milliseconds_timeout, bool& io_error) = 0;
 };
 
@@ -59,9 +59,9 @@ public:
     return handle_ != invalid_handle;
   }
 
-  bool signal(bool& io_error) override {
+  bool signal(bool& io_error, int32& previous_count) override {
     io_error = false;
-    return native::named_semaphore::signal(handle_, io_error);
+    return native::named_semaphore::signal(handle_, previous_count, io_error);
   }
   
   bool wait(int32 milliseconds_timeout, bool& io_error) override {
@@ -109,11 +109,12 @@ public:
     throw invalid_operation_exception {csf_};
   }
 
-  bool signal(bool& io_error) override {
+  bool signal(bool& io_error, int32& previous_count) override {
     if (handle_->count + 1 >= handle_->maximum_count) {
       io_error = true;
       return false;
     }
+    previous_count = handle_->count;
     std::unique_lock<std::mutex> lock(handle_->mutex);
     handle_->count++;
     handle_->condition.notify_one();
@@ -189,7 +190,9 @@ int32 semaphore::release() {
   if (!semaphore_) throw object_closed_exception {csf_};
   if (count_ + 1 >= maximum_count_) throw semaphore_full_exception {csf_};
   bool io_error = false;
-  semaphore_->signal(io_error);
+  int32 previous_count = 0;
+  semaphore_->signal(io_error, previous_count);
+  if (previous_count != -1) count_ = previous_count;
   if (io_error) throw io::io_exception {csf_};
   return count_++;
 }

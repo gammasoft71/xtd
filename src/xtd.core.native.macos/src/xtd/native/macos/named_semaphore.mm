@@ -1,3 +1,10 @@
+// Hacking to remove deprecated warning.
+#include <sys/cdefs.h>
+#undef __deprecated
+#define __deprecated
+// end hacking
+#include <semaphore.h>
+
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/named_semaphore.h>
 #include "../../../../include/xtd/native/macos/semaphore.h"
@@ -31,8 +38,9 @@ intmax_t named_semaphore::open(const std::string& name) {
   return reinterpret_cast<intmax_t>(semaphore);
 }
 
-bool named_semaphore::signal(intmax_t handle, bool& io_error) {
+bool named_semaphore::signal(intmax_t handle, int_least32_t& previous_count, bool& io_error) {
   if (reinterpret_cast<sem_t*>(handle) == SEM_FAILED) return !(io_error = true);
+  sem_getvalue(reinterpret_cast<sem_t*>(handle), &previous_count);
   io_error = false;
   if (sem_post(reinterpret_cast<sem_t*>(handle)) == -1&& errno == EINVAL) io_error = true;
   return !io_error;
