@@ -126,9 +126,7 @@ private:
 mutex::mutex() : mutex(false) {
 }
 
-mutex::mutex(bool initially_owned) {
-  bool created_new = false;
-  create(initially_owned, created_new);
+mutex::mutex(bool initially_owned) : mutex(initially_owned, "") {
 }
 
 mutex::mutex(bool initially_owned, const ustring& name) : name_(name) {
@@ -160,6 +158,7 @@ void mutex::close() {
 }
 
 mutex mutex::open_existing(const ustring& name) {
+  if (name.empty()) throw argument_exception {csf_};
   auto result = mutex{};
   if (!try_open_existing(name, result)) throw argument_exception {csf_};
   return result;
