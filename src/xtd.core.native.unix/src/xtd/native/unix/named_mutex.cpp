@@ -14,7 +14,7 @@ intmax_t named_mutex::create(bool initially_owned, const std::string& name) {
     bool io_error = false;
     wait(reinterpret_cast<intmax_t>(semaphore), -1, io_error);
   }
-  return einterpret_cast<intmax_t>(semaphore);
+  return reinterpret_cast<intmax_t>(semaphore);
 }
 
 void named_mutex::destroy(intmax_t handle, const std::string& name) {
