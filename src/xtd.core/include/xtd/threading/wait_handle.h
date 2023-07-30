@@ -32,7 +32,7 @@ namespace xtd {
     /// * The xtd::threading::event_wait_handle class and its derived classes, xtd::threading::auto_reset_event and xtd::threading::manual_reset_event.
     /// * The xtd::threading::semaphore class.
     /// @remarks Threads can block on an individual wait handle by calling the instance method xtd::threading::wait_handle::wait_one, which is inherited by classes derived from xtd::threading::wait_handle.
-    /// @remarks The derived classes of xtd::threading::wait_handle differ in their thread affinity. Event wait handles (xtd::threading::envent_wait_handle, xtd::threading::auto_reset_event, and xtd::threading::manual_reset_event) and semaphores do not have thread affinity; any thread can signal an event wait handle or semaphore. Mutexes, on the other hand, do have thread affinity; the thread that owns a mutex must release it, and an exception is thrown if a thread calls the xtd::threading::wait_handle::release_mutex method on a mutex that it does not own.
+    /// @remarks The derived classes of xtd::threading::wait_handle differ in their thread affinity. Event wait handles (xtd::threading::envent_wait_handle, xtd::threading::auto_reset_event, and xtd::threading::manual_reset_event) and semaphores do not have thread affinity; any thread can signal an event wait handle or semaphore. Mutexes, on the other hand, do have thread affinity; the thread that owns a mutex must release it, and an exception is thrown if a thread calls the xtd::threading::mutex::release_mutex method on a mutex that it does not own.
     /// @remarks In addition to its derived classes, the xtd::threading::wait_handle class has a number of static methods that block a thread until one or more synchronization objects receive a signal. These include:
     /// * xtd::threading::wait_handle::signal_and_wait, which allows a thread to signal one wait handle and immediately wait on another.
     /// * xtd::threading::wait_handle::wait_all, which allows a thread to wait until all the wait handles in an array receive a signal.
@@ -161,7 +161,7 @@ namespace xtd {
       /// @brief Waits for any of the elements in the specified collection to receive a signal, using a 32-bit signed integer to measure the time interval.
       /// @param wait_handles A xtd::threading::wait_handle collection containing the objects for which the current instance will wait. This array cannot contain multiple references to the same object.
       /// @param milliseconds_timeout The number of milliseconds to wait, or xtd::threading::timeout::infinite (-1) to wait indefinitely.
-      /// @return The array index of the object that satisfied the wait, or xtd::threading::wait_handle.waitTimeout if no object satisfied the wait and a time interval equivalent to milliseconds_timeout has passed.
+      /// @return The array index of the object that satisfied the wait, or xtd::threading::wait_handle::wait_timeout if no object satisfied the wait and a time interval equivalent to milliseconds_timeout has passed.
       /// @exception xtd::argument_exception timeout is a negative number other than -1 milliseconds, which represents an infinite time-out.<br>-or-<br>The number of objects in wait_handles is greater than the system permits.
       /// @exception xtd::object_closed_exception the to_signal and/or to_wait are invalid
       /// @exception xtd::argument_exception The number of objects in wait_handles is greater than the system permits.
@@ -177,7 +177,7 @@ namespace xtd {
       /// @brief Waits for any of the elements in the specified collection to receive a signal, using a xtd::time_span to measure the time interval.
       /// @param wait_handles A xtd::threading::wait_handle collection containing the objects for which the current instance will wait. This array cannot contain multiple references to the same object.
       /// @param timeout A xtd::time_span that represents the number of milliseconds to wait, or a xtd::time_span that represents -1 milliseconds to wait indefinitely.
-      /// @return The array index of the object that satisfied the wait, or xtd::threading::wait_handle.waitTimeout if no object satisfied the wait and a time interval equivalent to timeout has passed.
+      /// @return The array index of the object that satisfied the wait, or xtd::threading::wait_handle::wait_timeout if no object satisfied the wait and a time interval equivalent to timeout has passed.
       /// @exception xtd::argument_exception timeout is a negative number other than -1 milliseconds, which represents an infinite time-out.<br>-or-<br>The number of objects in wait_handles is greater than the system permits.
       /// @exception xtd::object_closed_exception the to_signal and/or to_wait are invalid
       /// @exception xtd::argument_exception The number of objects in wait_handles is greater than the system permits.
