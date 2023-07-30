@@ -24,9 +24,9 @@ intmax_t named_semaphore::open(const std::string& name) {
   return reinterpret_cast<intmax_t>(handle);
 }
 
-bool named_semaphore::signal(intmax_t handle, bool& io_error) {
+bool named_semaphore::signal(intmax_t handle, int_least32_t& previous_count, bool& io_error) {
   if (reinterpret_cast<HANDLE>(handle) == INVALID_HANDLE_VALUE) return !(io_error = true);
-  io_error = ReleaseSemaphore(reinterpret_cast<HANDLE>(handle), 1, nullptr) == FALSE;
+  io_error = ReleaseSemaphore(reinterpret_cast<HANDLE>(handle), 1, &previous_count) == FALSE;
   return !io_error;
 }
 
