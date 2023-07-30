@@ -24,7 +24,7 @@ void named_mutex::destroy(intmax_t handle, const std::string& name) {
 }
 
 intmax_t named_mutex::open(const std::string& name) {
-  sem_t* semaphore  sem_open(name.c_str(), O_RDWR, S_IRUSR | S_IWUSR, 1);
+  sem_t* semaphore = sem_open(name.c_str(), O_RDWR, S_IRUSR | S_IWUSR, 1);
   return reinterpret_cast<intmax_t>(semaphore);
 }
 
