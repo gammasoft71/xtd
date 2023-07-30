@@ -712,6 +712,8 @@ add_sources(
   include/xtd/threading/mutex
   include/xtd/threading/semaphore.h
   include/xtd/threading/semaphore
+  include/xtd/threading/semaphore_full_exception.h
+  include/xtd/threading/semaphore_full_exception
   include/xtd/threading/thread.h
   include/xtd/threading/thread
   include/xtd/threading/thread_abort_exception.h
