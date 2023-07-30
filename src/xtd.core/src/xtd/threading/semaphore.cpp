@@ -154,6 +154,8 @@ semaphore::semaphore(int32 initial_count, int32 maximum_count) : semaphore(initi
 }
 
 semaphore::semaphore(int32 initial_count, int32 maximum_count, const ustring& name) : name_(name) {
+  if (initial_count > maximum_count) throw argument_exception {csf_};
+  if (maximum_count < 1 || initial_count < 0) throw argument_out_of_range_exception {csf_};
   bool created_new = false;
   create(initial_count, maximum_count, created_new);
 }
@@ -182,6 +184,7 @@ void semaphore::close() {
 }
 
 semaphore semaphore::open_existing(const ustring& name) {
+  if (name.empty()) throw argument_exception {csf_};
   auto result = semaphore{};
   if (!try_open_existing(name, result)) throw argument_exception {csf_};
   return result;
@@ -192,6 +195,7 @@ int32 semaphore::release() {
 }
 
 int32 semaphore::release(int32 release_count) {
+  if (release_count < 1) throw argument_out_of_range_exception {csf_};
   if (!semaphore_) throw object_closed_exception {csf_};
   if (count_ + release_count >= maximum_count_) throw semaphore_full_exception {csf_};
   bool io_error = false;
