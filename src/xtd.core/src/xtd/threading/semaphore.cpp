@@ -183,6 +183,10 @@ void semaphore::close() {
   }
 }
 
+bool semaphore::equals(const semaphore& value) const noexcept {
+  return semaphore_ == value.semaphore_ && name_ == value.name_;
+}
+
 semaphore semaphore::open_existing(const ustring& name) {
   if (name.empty()) throw argument_exception {csf_};
   auto result = semaphore{};
