@@ -2,6 +2,7 @@
 /// @brief Contains xtd::semaphore exception.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "semaphore_full_exception.h"
 #include "wait_handle.h"
 #include "../int32_object.h"
 
@@ -52,7 +53,7 @@ namespace xtd {
       
       static semaphore open_existing(const ustring& name);
 
-      void release();
+      int32 release();
       
       static bool try_open_existing(const ustring& name, semaphore& result) noexcept;
       /// @}
@@ -70,6 +71,7 @@ namespace xtd {
       void create(int32 initial_count, int32 maximum_count, bool& created_new);
       std::shared_ptr<semaphore_base> semaphore_;
       int32 count_ = 0;
+      int32 maximum_count_ = int32_object::max_value;
       ustring name_;
     };
   }

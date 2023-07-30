@@ -38,17 +38,21 @@ namespace xtd {
       /// @name Protected methods
       
       /// @{
-      /// @brief Create named semaphore with specified name and a bool value that, when the method returns, indicates whether the calling thread was granted initial ownership of the semaphore.
+      /// @brief Create named semaphore with specified name, initial count and maxixum count.
       /// @param name The name, if the synchronization object is to be shared with other processes.
-      /// @param creat_new When this method returns, contains a boolthat is true if the specified named system semaphore was created; false if the specified named system semaphore already existed.
-      /// @return The handle of the created or open semaphore.
+      /// @return The handle of the created semaphore.
       /// @warning Internal use only
-      static intmax_t create(const std::string& name, bool& create_new);
+      static intmax_t create(int_least32_t initial_count, int_least32_t max_count, const std::string& name);
       /// @brief Destroy named semaphore with specified semaphore handle.
       /// @param name The name of the semaphore.
       /// @param handle The semaphore handle to destroy.
       /// @warning Internal use only
       static void destroy(intmax_t handle, const std::string& name);
+      /// @brief Open named semaphore with specified name.
+      /// @param name The name, if the synchronization object is to be shared with other processes.
+      /// @return The handle of the opened semaphore.
+      /// @warning Internal use only
+      static intmax_t open(const std::string& name);
       /// @brief Signal named semaphore with specified semaphore handle.
       /// @param handle The semaphore handle to signal.
       /// @return true if succeed; otherwhise false.
