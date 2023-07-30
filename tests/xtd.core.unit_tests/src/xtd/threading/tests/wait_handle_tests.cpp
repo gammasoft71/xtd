@@ -5,7 +5,7 @@
 #if defined(_WIN32)
 #include <Windows.h>
 #undef max
-#elseif defined(__linux__) || defined(__APPLE__)
+#elif defined(__linux__) || defined(__APPLE__)
 #include <semaphore.h>
 #endif
 
@@ -59,7 +59,7 @@ namespace xtd::tests {
     void test_method_(invalid_handle) {
 #if defined(_WIN32)
       assert::are_equal(reinterpret_cast<intptr>(INVALID_HANDLE_VALUE), wait_handle::invalid_handle, csf_);
-#elseif defined(__linux__) || defined(__APPLE__)
+#elif defined(__linux__) || defined(__APPLE__)
       assert::are_equal(reinterpret_cast<intptr>(SEM_FAILED), wait_handle::invalid_handle, csf_);
 #endif
     }
