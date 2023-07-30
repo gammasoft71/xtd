@@ -24,14 +24,14 @@ void named_mutex::destroy(intmax_t handle, const std::string& name) {
 }
 
 intmax_t named_mutex::open(const std::string& name) {
-  sem_t* semaphore  sem_open(name.c_str(), O_RDWR, S_IRUSR | S_IWUSR, 1);
+  sem_t* semaphore = sem_open(name.c_str(), O_RDWR, S_IRUSR | S_IWUSR, 1);
   return reinterpret_cast<intmax_t>(semaphore);
 }
 
 bool named_mutex::signal(intmax_t handle, bool& io_error) {
   if (reinterpret_cast<sem_t*>(handle) == SEM_FAILED) return !(io_error = true);
   io_error = false;
-  if (sem_post(reinterpret_cast<sem_t*>(handle)) == -1) && errno == EINVAL) io_error = true;
+  if (sem_post(reinterpret_cast<sem_t*>(handle)) == -1 && errno == EINVAL) io_error = true;
   return !io_error;
 }
 

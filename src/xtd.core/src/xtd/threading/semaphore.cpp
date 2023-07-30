@@ -6,6 +6,7 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/named_semaphore.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
+#include <condition_variable>
 #include <mutex>
 
 using namespace xtd;
