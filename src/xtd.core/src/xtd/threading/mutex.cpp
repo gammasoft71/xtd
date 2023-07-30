@@ -157,6 +157,10 @@ void mutex::close() {
   }
 }
 
+bool mutex::equals(const mutex& value) const noexcept {
+  return mutex_ == value.mutex_ && name_ == value.name_;
+}
+
 mutex mutex::open_existing(const ustring& name) {
   if (name.empty()) throw argument_exception {csf_};
   auto result = mutex{};
