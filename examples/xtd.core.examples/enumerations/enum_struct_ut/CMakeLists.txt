@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.3)
+cmake_minimum_required(VERSION 3.5)
 
 project(enum_struct_ut)
 find_package(xtd REQUIRED)

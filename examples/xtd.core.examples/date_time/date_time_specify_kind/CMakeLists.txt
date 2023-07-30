@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.3)
+cmake_minimum_required(VERSION 3.5)
 
 project(date_time_specify_kind)
 find_package(xtd REQUIRED)

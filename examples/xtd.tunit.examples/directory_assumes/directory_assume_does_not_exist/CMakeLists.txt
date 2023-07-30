@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.3)
+cmake_minimum_required(VERSION 3.5)
 
 project(directory_assume_does_not_exist)
 find_package(xtd REQUIRED)

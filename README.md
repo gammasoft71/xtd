@@ -143,7 +143,7 @@ auto main()->int {
 #### CMakeLists.txt
 
 ```cmake
-cmake_minimum_required(VERSION 3.3)
+cmake_minimum_required(VERSION 3.5)
 
 project(hello_world_console)
 find_package(xtd REQUIRED)
@@ -210,7 +210,7 @@ auto main()->int {
 #### CMakeLists.txt
 
 ```cmake
-cmake_minimum_required(VERSION 3.3)
+cmake_minimum_required(VERSION 3.5)
 
 project(hello_world_forms)
 find_package(xtd REQUIRED)
@@ -320,7 +320,7 @@ auto main()->int {
 #### CMakeLists.txt
 
 ```cmake
-cmake_minimum_required(VERSION 3.3)
+cmake_minimum_required(VERSION 3.5)
 
 project(hello_world_test)
 find_package(xtd REQUIRED)

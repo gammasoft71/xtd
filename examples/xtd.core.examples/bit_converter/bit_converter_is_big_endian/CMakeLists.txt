@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.3)
+cmake_minimum_required(VERSION 3.5)
 
 project(bit_converter_is_big_endian)
 find_package(xtd REQUIRED)

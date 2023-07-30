@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.3)
+cmake_minimum_required(VERSION 3.5)
 
 project(about_dialog_from_executing_assembly_informations)
 find_package(xtd REQUIRED)
