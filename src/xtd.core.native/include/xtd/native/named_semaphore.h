@@ -70,9 +70,13 @@ namespace xtd {
       /// @brief Wait named semaphore with specified semaphore handle and timeout.
       /// @param handle The semaphore handle to wait.
       /// @param milliseconds_timeout The timeout in milliseconds (-1 is infinite timeout).
-      /// @return true if succeed; otherwhise false.
+      /// @return error code :
+      ///  * 0x00000000 : Sucess
+      ///  * 0x00000080 : Abandoned
+      ///  * 0x00000102 : Timeout
+      ///  * 0xFFFFFFFF : Failed
       /// @warning Internal use only
-      static bool wait(intmax_t handle, int_least32_t milliseconds_timeout, bool& io_error);
+      static uint_least32_t wait(intmax_t handle, int_least32_t milliseconds_timeout);
       /// @}
     };
   }

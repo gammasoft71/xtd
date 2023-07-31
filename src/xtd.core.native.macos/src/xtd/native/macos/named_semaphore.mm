@@ -48,21 +48,12 @@ bool named_semaphore::signal(intmax_t handle, int_least32_t release_count, int_l
   return !io_error;
 }
 
-bool named_semaphore::wait(intmax_t handle, int_least32_t milliseconds_timeout, bool& io_error) {
-  if (reinterpret_cast<sem_t*>(handle) == SEM_FAILED) return !(io_error = true);
-  io_error = false;
-  if (milliseconds_timeout == -1) {
-    if (sem_wait(reinterpret_cast<sem_t*>(handle)) == -1) io_error = true;
-    return !io_error;
-  }
-
-  struct timespec timeout;
-  clock_gettime(CLOCK_REALTIME, &timeout);
-  timeout.tv_sec += milliseconds_timeout / 1000;
-  timeout.tv_nsec += (milliseconds_timeout % 1000) * 1000000;
-  if (sem_timedwait(reinterpret_cast<sem_t*>(handle), &timeout) == -1) {
-    if (errno == ETIMEDOUT) return false;
-    io_error = true;
-  }
-  return !io_error;
+uint_least32_t named_semaphore::wait(intmax_t handle, int_least32_t milliseconds_timeout) {
+  if (reinterpret_cast<sem_t*>(handle) == SEM_FAILED) return 0xFFFFFFFF;
+  auto result = milliseconds_timeout == -1 ? sem_wait(reinterpret_cast<sem_t*>(handle)) : sem_milliseconds_timedwait(reinterpret_cast<sem_t*>(handle), milliseconds_timeout);
+  if (result && errno == EAGAIN) return 0xFFFFFFFF;
+  if (result && errno == EINVAL) return 0xFFFFFFFF;
+  if (result && errno == EINTR) return 0x00000080;
+  if (result && errno == ETIMEDOUT) return 0x00000102;
+  return 0x00000000;
 }

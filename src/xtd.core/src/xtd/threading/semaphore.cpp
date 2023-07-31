@@ -4,6 +4,7 @@
 #include "../../../include/xtd/invalid_operation_exception.h"
 #include "../../../include/xtd/io/io_exception.h"
 #include "../../../include/xtd/io/path_too_long_exception.h"
+#include "../../../include/xtd/threading/abandoned_mutex_exception.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/named_semaphore.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
@@ -24,7 +25,7 @@ public:
   virtual void destroy() = 0;
   virtual bool open(const ustring& name) = 0;
   virtual bool signal(bool& io_error, int32 release_count, int32& previous_count) = 0;
-  virtual bool wait(int32 milliseconds_timeout, bool& io_error) = 0;
+  virtual uint32 wait(int32 milliseconds_timeout) = 0;
 };
 
 class semaphore::named_semaphore : public semaphore_base {
@@ -66,9 +67,8 @@ public:
     return native::named_semaphore::signal(handle_, release_count, previous_count, io_error);
   }
   
-  bool wait(int32 milliseconds_timeout, bool& io_error) override {
-    io_error = false;
-    return native::named_semaphore::wait(handle_, milliseconds_timeout, io_error);
+  uint32 wait(int32 milliseconds_timeout) override {
+    return native::named_semaphore::wait(handle_, milliseconds_timeout);
   }
   
 private:
@@ -91,10 +91,10 @@ public:
   bool create(int32 initial_count, int32 maximum_count) override {
     handle_ = std::make_shared<data>();
     handle_->maximum_count = maximum_count;
-    bool io_error = false;
-    for (auto index = 0; !io_error && index < initial_count; ++index)
-      wait(-1, io_error);
-    if (io_error) return false;
+    uint32 error = 0;
+    for (auto index = 0; !error && index < initial_count; ++index)
+      error = wait(-1);
+    if (error) return false;
     return true;
   }
   
@@ -125,17 +125,18 @@ public:
     return true;
   }
 
-  bool wait(int32 milliseconds_timeout, bool& io_error) override {
-    if (milliseconds_timeout == -1) {
-      std::unique_lock<std::mutex> lock(handle_->mutex);
-      while (handle_->count == 0)
-        handle_->condition.wait(lock);
-      return handle_->count--;
-    }
+  uint32 wait(int32 milliseconds_timeout) override {
     std::unique_lock<std::mutex> lock(handle_->mutex);
-    while (handle_->count == 0)
-      handle_->condition.wait_for(lock, std::chrono::milliseconds {milliseconds_timeout});
-    return handle_->count--;
+    if (handle_->count == 0) return 0xFFFFFFFF;
+
+    if (milliseconds_timeout == -1) {
+      handle_->condition.wait(lock);
+      handle_->count--;
+      return 0x00000000;
+    }
+    if (handle_->condition.wait_for(lock, std::chrono::milliseconds {milliseconds_timeout}) == std::cv_status::timeout) return 0x00000102;
+    handle_->count--;
+    return 0x00000000;
   }
   
 private:
@@ -232,10 +233,11 @@ bool semaphore::signal() {
 bool semaphore::wait(int32 milliseconds_timeout) {
   if (!semaphore_) throw object_closed_exception {csf_};
   if (milliseconds_timeout < -1) throw argument_out_of_range_exception {csf_};
-  bool io_error = false;
-  auto result = semaphore_->wait(milliseconds_timeout, io_error);
-  if (io_error) throw io::io_exception {csf_};
-  return result;
+  auto result = semaphore_->wait(milliseconds_timeout);
+  if (result == 0xFFFFFFFF) throw io::io_exception {csf_};
+  if (result == 0x00000080) throw abandoned_mutex_exception {csf_};
+  if (result == 0x00000102) return false;
+  return true;
 }
 
 void semaphore::create(int32 initial_count, int32 maximum_count, bool& created_new) {
