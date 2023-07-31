@@ -26,6 +26,7 @@ intmax_t named_semaphore::open(const std::string& name) {
 
 bool named_semaphore::signal(intmax_t handle, int_least32_t release_count, int_least32_t& previous_count, bool& io_error) {
   if (reinterpret_cast<HANDLE>(handle) == INVALID_HANDLE_VALUE) return !(io_error = true);
+  previous_count = -1;
   io_error = ReleaseSemaphore(reinterpret_cast<HANDLE>(handle), static_cast<LONG>(release_count), reinterpret_cast<LPLONG>(&previous_count)) == FALSE;
   return !io_error;
 }
