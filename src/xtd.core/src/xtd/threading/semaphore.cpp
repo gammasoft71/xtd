@@ -2,7 +2,8 @@
 #include "../../../include/xtd/argument_out_of_range_exception.h"
 #include "../../../include/xtd/object_closed_exception.h"
 #include "../../../include/xtd/invalid_operation_exception.h"
-#include "../../../include/xtd/io//io_exception.h"
+#include "../../../include/xtd/io/io_exception.h"
+#include "../../../include/xtd/io/path_too_long_exception.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/named_semaphore.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
@@ -154,13 +155,14 @@ semaphore::semaphore(int32 initial_count, int32 maximum_count) : semaphore(initi
 }
 
 semaphore::semaphore(int32 initial_count, int32 maximum_count, const ustring& name) : name_(name) {
-  if (initial_count > maximum_count) throw argument_exception {csf_};
-  if (maximum_count < 1 || initial_count < 0) throw argument_out_of_range_exception {csf_};
   bool created_new = false;
   create(initial_count, maximum_count, created_new);
 }
 
 semaphore::semaphore(int32 initial_count, int32 maximum_count, const ustring& name, bool created_new) : name_(name) {
+  if (name.size() > native::named_semaphore::max_name_size()) throw io::path_too_long_exception {csf_};
+  if (initial_count > maximum_count) throw argument_exception {csf_};
+  if (maximum_count < 1 || initial_count < 0) throw argument_out_of_range_exception {csf_};
   create(initial_count, maximum_count, created_new);
 }
 
@@ -189,6 +191,7 @@ bool semaphore::equals(const semaphore& value) const noexcept {
 
 semaphore semaphore::open_existing(const ustring& name) {
   if (name.empty()) throw argument_exception {csf_};
+  if (name.size() > native::named_semaphore::max_name_size()) throw io::path_too_long_exception {csf_};
   auto result = semaphore{};
   if (!try_open_existing(name, result)) throw argument_exception {csf_};
   return result;
@@ -212,6 +215,7 @@ int32 semaphore::release(int32 release_count) {
 
 bool semaphore::try_open_existing(const ustring& name, semaphore& result) noexcept {
   if (ustring::is_empty(name)) return false;
+  if (name.size() > native::named_semaphore::max_name_size()) return false;
   auto new_semaphore = semaphore {};
   new_semaphore.name_ = name;
   new_semaphore.semaphore_ = std::make_shared<semaphore::named_semaphore>();
