@@ -46,7 +46,7 @@ namespace xtd {
       mutex();
       /// @brief Initializes a new instance of the xtd::threading::mutex with a bool value that indicates whether the calling thread should have initial ownership of the mutex.
       /// @param initially_owned true to give the calling thread initial ownership of the named system mutex if the named system mutex is created as a result of this call; otherwise, false.
-      mutex(bool initially_owned);
+      explicit mutex(bool initially_owned);
 
       /// @brief Initializes a new instance of the xtd::threading::mutex class with a bool value that indicates whether the calling thread should have initial ownership of the mutex, and a string that is the name of the mutex.
       /// @param initially_owned true to give the calling thread initial ownership of the named system mutex if the named system mutex is created as a result of this call; otherwise, false.
