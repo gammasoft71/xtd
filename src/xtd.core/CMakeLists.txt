@@ -864,10 +864,13 @@ add_sources(
   src/xtd/threading/mutex.cpp
   src/xtd/threading/mutex_base.h
   src/xtd/threading/named_mutex.h
+  src/xtd/threading/named_semaphore.h
   src/xtd/threading/semaphore.cpp
+  src/xtd/threading/semaphore_base.h
   src/xtd/threading/thread.cpp
   src/xtd/threading/timeout.cpp
   src/xtd/threading/unnamed_mutex.h
+  src/xtd/threading/unnamed_semaphore.h
   src/xtd/threading/wait_handle.cpp
   src/xtd/environment.cpp # Must be the last file to be compiled, as the std::atexit method must be the first to be called before static variables are destroyed.
 )

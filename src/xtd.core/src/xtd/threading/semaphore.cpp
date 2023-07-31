@@ -1,15 +1,11 @@
-#include "../../../include/xtd/threading/semaphore.h"
+#include "named_semaphore.h"
+#include "unnamed_semaphore.h"
 #include "../../../include/xtd/argument_out_of_range_exception.h"
 #include "../../../include/xtd/object_closed_exception.h"
 #include "../../../include/xtd/invalid_operation_exception.h"
 #include "../../../include/xtd/io/io_exception.h"
 #include "../../../include/xtd/io/path_too_long_exception.h"
 #include "../../../include/xtd/threading/abandoned_mutex_exception.h"
-#define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/named_semaphore.h>
-#undef __XTD_CORE_NATIVE_LIBRARY__
-#include <condition_variable>
-#include <mutex>
 
 using namespace xtd;
 using namespace xtd::threading;
