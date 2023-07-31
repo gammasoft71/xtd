@@ -44,9 +44,8 @@ public:
     return native::named_mutex::signal(handle_, io_error);
   }
   
-  bool wait(int32 milliseconds_timeout, bool& io_error) override {
-    io_error = false;
-    return native::named_mutex::wait(handle_, milliseconds_timeout, io_error);
+  uint32 wait(int32 milliseconds_timeout) override {
+    return native::named_mutex::wait(handle_, milliseconds_timeout);
   }
   
 private:
