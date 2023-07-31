@@ -9,21 +9,74 @@ namespace xtd::tests {
   class test_class_(mutex_tests) {
   public:
     void test_method_(constructor) {
-      auto m = mutex {};
-      assert::are_not_equal(mutex::invalid_handle, m.handle(), csf_);
-    }
-    
-    void test_method_(constructor_with_initially_owned_to_false_and_name) {
-      auto m = mutex {false, "xtd_mutex_test"};
-      assert::are_not_equal(mutex::invalid_handle, m.handle(), csf_);
+      auto m1 = mutex {};
+      auto m2 = mutex {};
+      assert::are_not_equal(mutex::invalid_handle, m1.handle(), csf_);
+      assert::are_not_equal(mutex::invalid_handle, m2.handle(), csf_);
+      assert::are_not_equal(m2, m1, csf_);
     }
     
     void test_method_(copy_constructor) {
       auto m1 = mutex {};
       auto m2 = m1;
-      assert::are_equal(m2.handle(), m1.handle(), csf_);
+      assert::are_equal(m2, m1, csf_);
     }
     
+    void test_method_(copy_operator) {
+      auto m1 = mutex {};
+      auto m2 = mutex {};
+      m2 = m1;
+      assert::are_equal(m2, m1, csf_);
+    }
+
+    void test_method_(constructor_with_initially_owned_to_false) {
+      auto m = mutex {false};
+      assert::are_not_equal(mutex::invalid_handle, m.handle(), csf_);
+      auto thread_ran = false;
+      auto thread = std::thread {[&] {
+        assert::is_true(m.wait_one(0), csf_);
+        thread_ran = true;
+      }};
+      thread.join();
+      assert::is_true(thread_ran, csf_);
+    }
+    
+    void test_method_(constructor_with_initially_owned_to_true) {
+      auto m = mutex {true};
+      assert::are_not_equal(mutex::invalid_handle, m.handle(), csf_);
+      auto thread_ran = false;
+      auto thread = std::thread {[&] {
+        assert::is_false(m.wait_one(0), csf_);
+        thread_ran = true;
+      }};
+      thread.join();
+      assert::is_true(thread_ran, csf_);
+    }
+
+    void test_method_(constructor_with_initially_owned_to_false_and_name) {
+      auto m = mutex {false, "xtd_mutex_test"};
+      assert::are_not_equal(mutex::invalid_handle, m.handle(), csf_);
+      auto thread_ran = false;
+      auto thread = std::thread {[&] {
+        assert::is_true(m.wait_one(0), csf_);
+        thread_ran = true;
+      }};
+      thread.join();
+      assert::is_true(thread_ran, csf_);
+    }
+
+    void test_method_(constructor_with_initially_owned_to_true_and_name) {
+      auto m = mutex {true, "xtd_mutex_test"};
+      assert::are_not_equal(mutex::invalid_handle, m.handle(), csf_);
+      auto thread_ran = false;
+      auto thread = std::thread {[&] {
+        assert::is_false(m.wait_one(0), csf_);
+        thread_ran = true;
+      }};
+      thread.join();
+      assert::is_true(thread_ran, csf_);
+    }
+
     void test_method_(copy_constructor_with_initially_owned_to_false_and_name) {
       auto m1 = mutex {false, "xtd_mutex_test"};
       auto m2 = m1;
@@ -47,11 +100,11 @@ namespace xtd::tests {
       assert::does_not_throw([&] {m.release_mutex();}, csf_);
       assert::does_not_throw([&] {m.release_mutex();}, csf_);
     }
-
+     
     void test_method_(wait_one_and_wait_one_and_release_mutex) {
-      auto m = mutex {};
-      assert::is_true(m.wait_one(), csf_);
-      assert::is_true(m.wait_one(), csf_);
+      auto m = mutex {false};
+      assert::is_true(m.wait_one(0), csf_);
+      assert::is_true(m.wait_one(0), csf_);
       assert::does_not_throw([&] {m.release_mutex();}, csf_);
     }
 
