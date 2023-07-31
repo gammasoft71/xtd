@@ -19,7 +19,7 @@ void named_mutex::destroy(intmax_t handle, const std::string& name) {
   CloseHandle(reinterpret_cast<HANDLE>(handle));
 }
 
-size_t named_semaphore::max_name_size() {
+size_t named_mutex::max_name_size() {
   return MAX_PATH;
 }
 
