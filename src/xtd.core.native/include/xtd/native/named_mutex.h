@@ -44,21 +44,31 @@ namespace xtd {
       /// @return The handle of the created mutex.
       /// @warning Internal use only
       static intmax_t create(bool initially_owned, const std::string& name);
+      
       /// @brief Destroy named mutex with specified mutex handle.
       /// @param name The name of the mutex.
       /// @param handle The mutex handle to destroy.
       /// @warning Internal use only
+      
       static void destroy(intmax_t handle, const std::string& name);
+      
+      /// @brief Gets the maximum name size supported.
+      /// @return The maximum name size supported.
+      /// @warning Internal use only
+      static size_t max_name_size();
+      
       /// @brief Open named mutex with specified name.
       /// @param name The name, if the synchronization object is to be shared with other processes.
       /// @return The handle of the opened mutex.
       /// @warning Internal use only
       static intmax_t open(const std::string& name);
+      
       /// @brief Signal named mutex with specified mutex handle.
       /// @param handle The mutex handle to signal.
       /// @return true if succeed; otherwhise false.
       /// @warning Internal use only
       static bool signal(intmax_t handle, bool& io_error);
+      
       /// @brief Wait named mutex with specified mutex handle and timeout.
       /// @param handle The mutex handle to wait.
       /// @param milliseconds_timeout The timeout in milliseconds (-1 is infinite timeout).

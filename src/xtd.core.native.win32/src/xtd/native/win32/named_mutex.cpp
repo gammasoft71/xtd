@@ -19,6 +19,10 @@ void named_mutex::destroy(intmax_t handle, const std::string& name) {
   CloseHandle(reinterpret_cast<HANDLE>(handle));
 }
 
+size_t named_semaphore::max_name_size() {
+  return MAX_PATH;
+}
+
 intmax_t named_mutex::open(const std::string& name) {
   auto handle = OpenMutex(MUTEX_ALL_ACCESS, FALSE, win32::strings::to_wstring(name).c_str());
   return reinterpret_cast<intmax_t>(handle);

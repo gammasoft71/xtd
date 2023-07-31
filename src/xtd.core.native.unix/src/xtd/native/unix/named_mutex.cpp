@@ -6,6 +6,8 @@
 #include <semaphore.h>
 #include <unistd.h>
 
+inline static constexpr size_t PSEMNAMLEN = 31;
+
 using namespace xtd::native;
 
 intmax_t named_mutex::create(bool initially_owned, const std::string& name) {
@@ -17,6 +19,10 @@ void named_mutex::destroy(intmax_t handle, const std::string& name) {
   if (reinterpret_cast<sem_t*>(handle) == SEM_FAILED) return;
   if (sem_close(reinterpret_cast<sem_t*>(handle)) == 0)
     sem_unlink(name.c_str());
+}
+
+size_t named_mutex::max_name_size() {
+  return PSEMNAMLEN;
 }
 
 intmax_t named_mutex::open(const std::string& name) {
