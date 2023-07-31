@@ -17,8 +17,7 @@ public:
 
   bool create(bool initially_owned) override {
     handle_ = std::make_shared<std::recursive_timed_mutex>();
-    bool io_error = false;
-    if (initially_owned) wait(0, io_error);
+    if (initially_owned) wait(0);
     return true;
   }
   
@@ -41,12 +40,11 @@ public:
     return true;
   }
 
-  bool wait(int32 milliseconds_timeout, bool& io_error) override {
-    io_error = false;
+  uint32 wait(int32 milliseconds_timeout) override {
     if (milliseconds_timeout != timeout::infinite)
-      return handle_->try_lock_for(std::chrono::milliseconds {milliseconds_timeout});
+      return handle_->try_lock_for(std::chrono::milliseconds {milliseconds_timeout}) ? 0x00000000 : 0x00000102;
     handle_->lock();
-    return true;
+    return 0x00000000;
   }
   
 private:

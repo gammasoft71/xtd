@@ -4,6 +4,7 @@
 #include "../../../include/xtd/object_closed_exception.h"
 #include "../../../include/xtd/io/io_exception.h"
 #include "../../../include/xtd/io/path_too_long_exception.h"
+#include "../../../include/xtd/threading/abandoned_mutex_exception.h"
 
 using namespace xtd;
 using namespace xtd::threading;
@@ -81,10 +82,11 @@ bool mutex::signal() {
 bool mutex::wait(int32 milliseconds_timeout) {
   if (!mutex_) throw object_closed_exception {csf_};
   if (milliseconds_timeout < -1) throw argument_out_of_range_exception {csf_};
-  bool io_error = false;
-  auto result = mutex_->wait(milliseconds_timeout, io_error);
-  if (io_error) throw io::io_exception {csf_};
-  return result;
+  auto result = mutex_->wait(milliseconds_timeout);
+  if (result == 0xFFFFFFFF) throw io::io_exception {csf_};
+  if (result == 0x00000080) throw abandoned_mutex_exception {csf_};
+  if (result == 0x00000102) return false;
+  return true;
 }
 
 void mutex::create(bool initially_owned, bool& created_new) {
