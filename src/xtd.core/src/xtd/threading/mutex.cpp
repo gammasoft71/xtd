@@ -2,7 +2,8 @@
 #include "unnamed_mutex.h"
 #include "../../../include/xtd/argument_out_of_range_exception.h"
 #include "../../../include/xtd/object_closed_exception.h"
-#include "../../../include/xtd/io//io_exception.h"
+#include "../../../include/xtd/io/io_exception.h"
+#include "../../../include/xtd/io/path_too_long_exception.h"
 
 using namespace xtd;
 using namespace xtd::threading;
@@ -14,6 +15,7 @@ mutex::mutex(bool initially_owned) : mutex(initially_owned, "") {
 }
 
 mutex::mutex(bool initially_owned, const ustring& name) : name_(name) {
+  if (name.size() > native::named_mutex::max_name_size()) throw io::path_too_long_exception {csf_};
   bool created_new = false;
   create(initially_owned, created_new);
 }
@@ -47,6 +49,7 @@ bool mutex::equals(const mutex& value) const noexcept {
 
 mutex mutex::open_existing(const ustring& name) {
   if (name.empty()) throw argument_exception {csf_};
+  if (name.size() > native::named_mutex::max_name_size()) throw io::path_too_long_exception {csf_};
   auto result = mutex{};
   if (!try_open_existing(name, result)) throw argument_exception {csf_};
   return result;
@@ -58,6 +61,7 @@ void mutex::release_mutex() {
 
 bool mutex::try_open_existing(const ustring& name, mutex& result) noexcept {
   if (ustring::is_empty(name)) return false;
+  if (name.size() > native::named_mutex::max_name_size()) return false;
   auto new_mutex = mutex {};
   new_mutex.name_ = name;
   new_mutex.mutex_ = std::make_shared<mutex::named_mutex>();

@@ -21,6 +21,10 @@ void named_mutex::destroy(intmax_t handle, const std::string& name) {
   if (sem_close(reinterpret_cast<sem_t*>(handle)) == 0) sem_unlink(name.c_str());
 }
 
+size_t named_mutex::max_name_size() {
+  return PSEMNAMLEN;
+}
+
 intmax_t named_mutex::open(const std::string& name) {
   sem_t* semaphore = sem_open(name.c_str(), O_RDWR, S_IRUSR | S_IWUSR);
   return reinterpret_cast<intmax_t>(semaphore);
