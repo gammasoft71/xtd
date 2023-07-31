@@ -38,7 +38,6 @@ uint_least32_t named_semaphore::wait(intmax_t handle, int_least32_t milliseconds
   if (reinterpret_cast<sem_t*>(handle) == SEM_FAILED) return 0xFFFFFFFF;
   auto result = milliseconds_timeout == -1 ? sem_wait(reinterpret_cast<sem_t*>(handle)) : sem_milliseconds_timedwait(reinterpret_cast<sem_t*>(handle), milliseconds_timeout);
   if (result && errno == EAGAIN) return 0xFFFFFFFF;
-  if (result && errno == EDEADLK) return 0xFFFFFFFF;
   if (result && errno == EINTR) return 0x00000080;
   if (result && errno == EINVAL) return 0xFFFFFFFF;
   if (result && errno == ETIMEDOUT) return 0x00000102;
