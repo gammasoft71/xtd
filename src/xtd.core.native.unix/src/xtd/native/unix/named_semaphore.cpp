@@ -6,6 +6,8 @@
 #include <semaphore.h>
 #include <unistd.h>
 
+inline static constexpr size_t PSEMNAMLEN = 31;
+
 using namespace xtd::native;
 
 intmax_t named_semaphore::create(int_least32_t initial_count, int_least32_t max_count, const std::string& name) {
@@ -16,6 +18,10 @@ intmax_t named_semaphore::create(int_least32_t initial_count, int_least32_t max_
 void named_semaphore::destroy(intmax_t handle, const std::string& name) {
   if (reinterpret_cast<sem_t*>(handle) == SEM_FAILED) return;
   if (sem_close(reinterpret_cast<sem_t*>(handle)) == 0) sem_unlink(name.c_str());
+}
+
+size_t named_semaphore::max_name_size() {
+  return PSEMNAMLEN;
 }
 
 intmax_t named_semaphore::open(const std::string& name) {

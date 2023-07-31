@@ -8,6 +8,8 @@
 #include <semaphore.h>
 #include <unistd.h>
 
+inline static constexpr size_t PSEMNAMLEN = 31;
+
 static inline int sem_timedwait(sem_t *sem, const struct timespec *abs_timeout) {
   while (sem_trywait(sem) == -1) {
     if (errno == EAGAIN) {
@@ -22,3 +24,4 @@ static inline int sem_timedwait(sem_t *sem, const struct timespec *abs_timeout) 
   }
   return 0;
 }
+
