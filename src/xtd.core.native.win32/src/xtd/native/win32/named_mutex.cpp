@@ -29,13 +29,22 @@ intmax_t named_mutex::open(const std::string& name) {
 }
 
 bool named_mutex::signal(intmax_t handle, bool& io_error) {
-  if (reinterpret_cast<HANDLE>(handle) == INVALID_HANDLE_VALUE) return !(io_error = true);
+  if (reinterpret_cast<HANDLE>(handle) == INVALID_HANDLE_VALUE) {
+    io_error = true;
+    return false;
+  }
   io_error = ReleaseMutex(reinterpret_cast<HANDLE>(handle)) == FALSE;
   return !io_error;
 }
 
 bool named_mutex::wait(intmax_t handle, int_least32_t milliseconds_timeout, bool& io_error) {
-  if (reinterpret_cast<HANDLE>(handle) == INVALID_HANDLE_VALUE) return !(io_error = true);
-  io_error = WaitForSingleObject(reinterpret_cast<HANDLE>(handle), milliseconds_timeout) == FALSE;
+  if (reinterpret_cast<HANDLE>(handle) == INVALID_HANDLE_VALUE) {
+    io_error = true;
+    return false;
+  }
+  auto result = WaitForSingleObject(reinterpret_cast<HANDLE>(handle), milliseconds_timeout == -1 ? INFINITE : milliseconds_timeout);
+  if (result == WAIT_TIMEOUT) return false;
+  if (result == WAIT_FAILED || result == WAIT_ABANDONED) io_error = true;
+  else if (result == WAIT_OBJECT_0) io_error = false;
   return !io_error;
 }
