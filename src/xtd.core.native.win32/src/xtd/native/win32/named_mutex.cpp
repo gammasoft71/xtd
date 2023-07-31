@@ -39,5 +39,5 @@ bool named_mutex::signal(intmax_t handle, bool& io_error) {
 
 uint_least32_t named_mutex::wait(intmax_t handle, int_least32_t milliseconds_timeout) {
   if (reinterpret_cast<HANDLE>(handle) == INVALID_HANDLE_VALUE) return WAIT_FAILED;
-  return static_cast<uint_least32_t>(WaitForSingleObject(reinterpret_cast<HANDLE>(handle), milliseconds_timeout == -1 ? INFINITE : milliseconds_timeout))
+  return static_cast<uint_least32_t>(WaitForSingleObject(reinterpret_cast<HANDLE>(handle), milliseconds_timeout == -1 ? INFINITE : milliseconds_timeout));
 }
