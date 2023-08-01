@@ -12,6 +12,15 @@ using namespace xtd::threading;
 semaphore::semaphore() : semaphore(0, int32_object::max_value) {
 }
 
+semaphore::semaphore(const ustring& name, bool& created_new) : semaphore(0, int32_object::max_value, name, created_new) {
+}
+
+semaphore::semaphore(int32 initial_count) : semaphore(initial_count, int32_object::max_value, "") {
+}
+
+semaphore::semaphore(int32 initial_count, const ustring& name, bool& created_new) : semaphore(initial_count, int32_object::max_value, name, created_new) {
+}
+
 semaphore::semaphore(int32 initial_count, int32 maximum_count) : semaphore(initial_count, maximum_count, "") {
 }
 
