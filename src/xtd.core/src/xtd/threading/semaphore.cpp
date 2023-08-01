@@ -20,7 +20,7 @@ semaphore::semaphore(int32 initial_count, int32 maximum_count, const ustring& na
   create(initial_count, maximum_count, created_new);
 }
 
-semaphore::semaphore(int32 initial_count, int32 maximum_count, const ustring& name, bool created_new) : name_(name) {
+semaphore::semaphore(int32 initial_count, int32 maximum_count, const ustring& name, bool& created_new) : name_(name) {
   if (name.size() > native::named_semaphore::max_name_size()) throw io::path_too_long_exception {csf_};
   if (initial_count > maximum_count) throw argument_exception {csf_};
   if (maximum_count < 1 || initial_count < 0) throw argument_out_of_range_exception {csf_};
