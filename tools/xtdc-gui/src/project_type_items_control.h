@@ -82,7 +82,7 @@ namespace xtdc_gui {
         item_control->tag(project_type_item_controls_.size());
         project_type_item_controls_.push_back(item_control);
         item_control->click += [&](object & sender, const xtd::event_args & e) {
-          selected_index(project_type_item_controls_.size() - 1 - std::any_cast<size_t>(as<control>(sender).tag()));
+          selected_index(project_type_item_controls_.size() - 1 - std::any_cast<size_t>(xtd::as<control>(sender).tag()));
         };
       }
       

@@ -42,11 +42,13 @@ ustring::ustring(size_t count, value_type character) : basic_string<value_type>(
 ustring::ustring(size_t count, value_type character, const allocator_type& allocator) : basic_string<value_type>(count, character, allocator) {
 }
 
+#if defined(__cpp_lib_char8_t)
 ustring::ustring(size_t count, char8 character) : basic_string<value_type>(count, static_cast<value_type>(character)) {
 }
 
 ustring::ustring(size_t count, char8 character, const allocator_type& allocator) : basic_string<value_type>(count, static_cast<value_type>(character), allocator) {
 }
+#endif
 
 ustring::ustring(size_t count, char16 character) {
   *this = convert_string::to_ustring(u16string(count, character));
@@ -126,6 +128,7 @@ ustring::ustring(const std::string& str) noexcept : basic_string<value_type>(str
 ustring::ustring(const std::string& str, const allocator_type& allocator) noexcept : basic_string<value_type>(reinterpret_cast<const value_type*>(str.c_str()), allocator) {
 }
 
+#if defined(__cpp_lib_char8_t)
 ustring::ustring(const u8string& str) noexcept : basic_string<value_type>(reinterpret_cast<const value_type*>(str.c_str())) {
 }
 
@@ -151,6 +154,7 @@ ustring::ustring(char8* str, const allocator_type& allocator) : basic_string<val
   if (str == nullptr) throw null_pointer_exception(csf_);
   assign(reinterpret_cast<value_type*>(str));
 }
+#endif
 
 ustring::ustring(const std::u16string& str) noexcept : ustring(str, allocator_type()) {
 }
@@ -233,6 +237,7 @@ ustring::ustring(initializer_list<value_type> il) : basic_string<value_type>(il)
 ustring::ustring(initializer_list<value_type> il, const allocator_type& allocator) : basic_string<value_type>(il, allocator) {
 }
 
+#if defined(__cpp_lib_char8_t)
 ustring::ustring(initializer_list<char8> il) {
   for (auto& c : il)
     push_back(static_cast<value_type>(c));
@@ -242,6 +247,7 @@ ustring::ustring(initializer_list<char8> il, const allocator_type& allocator) : 
   for (auto& c : il)
     push_back(static_cast<value_type>(c));
 }
+#endif
 
 ustring::ustring(initializer_list<char16> il) {
   *this = convert_string::to_ustring(u16string(il));
@@ -283,6 +289,7 @@ ustring& ustring::operator =(const value_type* str) {
   return *this;
 }
 
+#if defined(__cpp_lib_char8_t)
 ustring& ustring::operator =(const std::u8string& str) noexcept {
   assign(reinterpret_cast<const value_type*>(str.c_str()));
   return *this;
@@ -293,6 +300,7 @@ ustring& ustring::operator =(const char8* str) {
   assign(reinterpret_cast<const value_type*>(str));
   return *this;
 }
+#endif
 
 ustring& ustring::operator =(const std::u16string& str) noexcept {
   *this = convert_string::to_ustring(str);
@@ -334,10 +342,12 @@ ustring& ustring::operator =(value_type character) {
   return  *this;
 }
 
+#if defined(__cpp_lib_char8_t)
 ustring& ustring::operator =(char8 character) {
   *this = ustring(1, character);
   return  *this;
 }
+#endif
 
 ustring& ustring::operator =(char16 character) {
   *this = ustring(1, character);
@@ -359,11 +369,13 @@ ustring& ustring::operator =(const std::initializer_list<value_type>& il) {
   return *this;
 }
 
+#if defined(__cpp_lib_char8_t)
 ustring& ustring::operator =(const std::initializer_list<char8>& il) {
   for (auto c : il)
     *this += static_cast<value_type>(c);
   return *this;
 }
+#endif
 
 ustring& ustring::operator =(const std::initializer_list<char16>& il) {
   clear();
@@ -398,6 +410,7 @@ ustring& ustring::operator +=(const value_type* str) {
   return *this;
 }
 
+#if defined(__cpp_lib_char8_t)
 ustring& ustring::operator +=(const std::u8string& str) {
   *this = *this + str;
   return *this;
@@ -407,6 +420,7 @@ ustring& ustring::operator +=(const char8* str) {
   *this = *this + str;
   return *this;
 }
+#endif
 
 ustring& ustring::operator +=(const std::u16string& str) {
   *this = *this + str;
@@ -443,10 +457,12 @@ ustring& ustring::operator +=(value_type character) {
   return *this;
 }
 
+#if defined(__cpp_lib_char8_t)
 ustring& ustring::operator +=(char8 character) {
   *this = *this + character;
   return *this;
 }
+#endif
 
 ustring& ustring::operator +=(char16 character) {
   *this = *this + character;
@@ -468,10 +484,12 @@ ustring& ustring::operator +=(const std::initializer_list<value_type>& il) {
   return *this;
 }
 
+#if defined(__cpp_lib_char8_t)
 ustring& ustring::operator +=(const std::initializer_list<char8>& il) {
   *this = *this + il;
   return *this;
 }
+#endif
 
 ustring& ustring::operator +=(const std::initializer_list<char16>& il) {
   *this = *this + il;
@@ -512,6 +530,7 @@ bool ustring::operator !=(const value_type* other) const {
   return !operator ==(other);
 }
 
+#if defined(__cpp_lib_char8_t)
 bool ustring::operator ==(const char8* other) const {
   return *this == ustring(other);
 }
@@ -519,6 +538,7 @@ bool ustring::operator ==(const char8* other) const {
 bool ustring::operator !=(const char8* other) const {
   return !operator ==(other);
 }
+#endif
 
 bool ustring::operator ==(const std::u16string& other) const {
   return *this == ustring(other);
@@ -642,11 +662,13 @@ ustring ustring::concat(const std::vector<const value_type*>& values) noexcept {
   return result;
 }
 
+#if defined(__cpp_lib_char8_t)
 ustring ustring::concat(const std::vector<const char8*>& values) noexcept {
   ustring result;
   for_each(values.begin(), values.end(), [&](const auto & item) {result += ustring(item);});
   return result;
 }
+#endif
 
 ustring ustring::concat(const std::initializer_list<ustring>& values) noexcept {
   ustring result;
@@ -660,11 +682,13 @@ ustring ustring::concat(const std::initializer_list<const value_type*>& values) 
   return result;
 }
 
+#if defined(__cpp_lib_char8_t)
 ustring ustring::concat(const std::initializer_list<const char8*>& values) noexcept {
   ustring result;
   for_each(values.begin(), values.end(), [&](const auto & item) {result += ustring(item);});
   return result;
 }
+#endif
 
 ustring ustring::demangle(const ustring& name) {
   return native::types::demangle(name);
@@ -682,9 +706,11 @@ bool ustring::ends_with(value_type value) const noexcept {
   return rfind(value) == size() - 1;
 }
 
+#if defined(__cpp_lib_char8_t)
 bool ustring::ends_with(char8 value) const noexcept {
   return rfind(value) == size() - 1;
 }
+#endif
 
 bool ustring::ends_with(const ustring& value) const noexcept {
   return ends_with(value, false);

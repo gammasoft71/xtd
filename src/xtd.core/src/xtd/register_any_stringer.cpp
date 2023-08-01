@@ -9,7 +9,9 @@ std::unordered_map<std::type_index, std::function<std::string(std::any const&)>>
   __to_any_stringer__<void>([]()->std::string {return "{}";}),
   __to_any_stringer__<bool>([](auto value)->std::string {return ustring::format("{}", value);}),
   __to_any_stringer__<char>([](auto value)->std::string {return ustring::format("{}", value);}),
+#if defined(__cpp_lib_char8_t)
   //__to_any_stringer__<char8>([](auto value)->std::string {return ustring::format("{}", value);}),
+#endif
   __to_any_stringer__<char16>([](auto value)->std::string {return ustring::format("{}", value);}),
   __to_any_stringer__<char32>([](auto value)->std::string {return ustring::format("{}", value);}),
   __to_any_stringer__<wchar>([](auto value)->std::string {return ustring::format("{}", value);}),
@@ -28,17 +30,23 @@ std::unordered_map<std::type_index, std::function<std::string(std::any const&)>>
   __to_any_stringer__<decimal>([](auto value)->std::string {return ustring::format("{}", value);}),
   __to_any_stringer__<ustring>([](auto value)->std::string {return ustring::format("{}", value);}),
   __to_any_stringer__<std::string>([](auto value)->std::string {return ustring::format("{}", value);}),
+#if defined(__cpp_lib_char8_t)
   __to_any_stringer__<std::u8string>([](auto value)->std::string {return ustring::format("{}", value);}),
+#endif
   __to_any_stringer__<std::u16string>([](auto value)->std::string {return ustring::format("{}", value);}),
   __to_any_stringer__<std::u32string>([](auto value)->std::string {return ustring::format("{}", value);}),
   __to_any_stringer__<std::wstring>([](auto value)->std::string {return ustring::format("{}", value);}),
   __to_any_stringer__<const char*>([](auto value)->std::string {return ustring::format("{}", value);}),
+#if defined(__cpp_lib_char8_t)
   //__to_any_stringer__<const char8*>([](auto value)->std::string {return ustring::format("{}", value);}),
+#endif
   //__to_any_stringer__<const char16*>([](auto value)->std::string {return ustring::format("{}", value);}),
   //__to_any_stringer__<const char32*>([](auto value)->std::string {return ustring::format("{}", value);}),
   //__to_any_stringer__<const wchar*>([](auto value)->std::string {return ustring::format("{}", value);}),
   __to_any_stringer__<char*>([](auto value)->std::string {return ustring::format("{}", value);}),
+#if defined(__cpp_lib_char8_t)
   //__to_any_stringer__<char8*>([](auto value)->std::string {return ustring::format("{}", value);}),
+#endif
   //__to_any_stringer__<char16*>([](auto value)->std::string {return ustring::format("{}", value);}),
   //__to_any_stringer__<char32*>([](auto value)->std::string {return ustring::format("{}", value);}),
   //__to_any_stringer__<wchar*>([](auto value)->std::string {return ustring::format("{}", value);}),

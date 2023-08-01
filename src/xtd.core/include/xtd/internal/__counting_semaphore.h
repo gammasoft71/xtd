@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains internal char8_t type.
+/// @brief Contains internal counting_semaphore type.
 #pragma once
 /// @cond
 #if !defined(__XTD_CORE_COUNTING_SEMAPHORE_INTERNAL__)

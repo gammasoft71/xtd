@@ -38,7 +38,9 @@ template<> struct __tunit_is_printable<char> : std::true_type {};
 template<> struct __tunit_is_printable<signed char> : std::true_type {};
 template<> struct __tunit_is_printable<unsigned char> : std::true_type {};
 template<> struct __tunit_is_printable<wchar_t> : std::true_type {};
+#if defined(__cpp_lib_char8_t)
 template<> struct __tunit_is_printable<xtd::char8> : std::true_type {};
+#endif
 template<> struct __tunit_is_printable<xtd::char16> : std::true_type {};
 template<> struct __tunit_is_printable<xtd::char32> : std::true_type {};
 template<> struct __tunit_is_printable<short> : std::true_type {};
@@ -56,7 +58,9 @@ template<> struct __tunit_is_printable<double> : std::true_type {};
 template<> struct __tunit_is_printable<long double> : std::true_type {};
 template<> struct __tunit_is_printable<std::string> : std::true_type {};
 template<> struct __tunit_is_printable<xtd::ustring> : std::true_type {};
+#if defined(__cpp_lib_char8_t)
 template<> struct __tunit_is_printable<std::u8string> : std::true_type {};
+#endif
 template<> struct __tunit_is_printable<std::u16string> : std::true_type {};
 template<> struct __tunit_is_printable<std::u32string> : std::true_type {};
 template<> struct __tunit_is_printable<std::wstring> : std::true_type {};
@@ -147,12 +151,14 @@ struct __tunit_value_printer<char_t, char_traits_t, xtd::ustring> {
   }
 };
 
+#if defined(__cpp_lib_char8_t)
 template <typename char_t, typename char_traits_t>
 struct __tunit_value_printer<char_t, char_traits_t, std::u8string> {
   static void print(std::basic_ostream<char_t, char_traits_t>& os, const std::u8string& value) {
     __tunit_value_printer<char_t, char_traits_t, xtd::char8>::print(os, value.c_str());
   }
 };
+#endif
 
 template <typename char_t, typename char_traits_t>
 struct __tunit_value_printer<char_t, char_traits_t, std::u16string> {
@@ -205,24 +211,25 @@ struct __tunit_value_printer<char_t, char_traits_t, char> {
   }
 };
 
+#if defined(__cpp_lib_char8_t)
 template <typename char_t, typename char_traits_t>
 struct __tunit_value_printer<char_t, char_traits_t, const xtd::char8*> {
   static void print(std::basic_ostream<char_t, char_traits_t>& os, const xtd::char8* const& value) {
     os << "\"";
-    for (size_t index = 0; value[index] != L'\0'; index++)
+    for (size_t index = 0; value[index] != '\0'; index++)
       __tunit_value_printer<char_t, char_traits_t, xtd::char8>::print(os, value[index]);
     os << "\"";
   }
   
   static void print(std::basic_ostream<char_t, char_traits_t>& os, const xtd::char8*& value) {
     os << "\"";
-    for (size_t index = 0; value[index] != L'\0'; index++)
+    for (size_t index = 0; value[index] != '\0'; index++)
       __tunit_value_printer<char_t, char_traits_t, xtd::char8>::print(os, value[index]);
     os << "\"";
   }
   
   static void print(std::basic_ostream<char_t, char_traits_t>& os, xtd::char8 value) {
-    if (value <= 0xFF)
+    if (value <= char(0xFF))
       os << static_cast<char>(value);
     else
       os << "\\x" << std::hex << static_cast<int>(value);
@@ -233,14 +240,14 @@ template <typename char_t, typename char_traits_t>
 struct __tunit_value_printer<char_t, char_traits_t, xtd::char8> {
   static void print(std::basic_ostream<char_t, char_traits_t>& os, const xtd::char8* const& value) {
     os << "\"";
-    for (size_t index = 0; value[index] != L'\0'; index++)
+    for (size_t index = 0; value[index] != '\0'; index++)
       __tunit_value_printer<char_t, char_traits_t, xtd::char8>::print(os, value[index]);
     os << "\"";
   }
   
   static void print(std::basic_ostream<char_t, char_traits_t>& os, const xtd::char8*& value) {
     os << "\"";
-    for (size_t index = 0; value[index] != L'\0'; index++)
+    for (size_t index = 0; value[index] != '\0'; index++)
       __tunit_value_printer<char_t, char_traits_t, xtd::char8>::print(os, value[index]);
     os << "\"";
   }
@@ -249,12 +256,13 @@ struct __tunit_value_printer<char_t, char_traits_t, xtd::char8> {
     os << static_cast<char>(value);
   }
 };
+#endif
 
 template <typename char_t, typename char_traits_t>
 struct __tunit_value_printer<char_t, char_traits_t, const xtd::char16*> {
   static void print(std::basic_ostream<char_t, char_traits_t>& os, const xtd::char16* const& value) {
     os << "\"";
-    for (size_t index = 0; value[index] != L'\0'; index++)
+    for (size_t index = 0; value[index] != '\0'; index++)
       __tunit_value_printer<char_t, char_traits_t, xtd::char16>::print(os, value[index]);
     os << "\"";
   }
@@ -599,11 +607,13 @@ inline std::string __tunit_codepoint_to_string(xtd::char32 codepoint) {
   return result;
 }
 
+#if defined(__cpp_lib_char8_t)
 inline std::string __tunit_to_string(const xtd::char8& value) {
   std::stringstream ss;
   ss << std::quoted(__tunit_codepoint_to_string(value));
   return ss.str();
 }
+#endif
 
 inline std::string __tunit_to_string(const xtd::char16& value) {
   std::stringstream ss;
@@ -635,11 +645,13 @@ inline std::string __tunit_to_string(const xtd::ustring& value) {
   return ss.str();
 }
 
+#if defined(__cpp_lib_char8_t)
 inline std::string __tunit_to_string(const std::u8string& value) {
   std::stringstream ss;
   ss << std::quoted(value);
   return ss.str();
 }
+#endif
 
 inline std::string __tunit_to_string(const std::u16string& value) {
   std::string result;
@@ -686,9 +698,11 @@ inline std::string __tunit_to_string(const char* value) {
   return ss.str();
 }
 
+#if defined(__cpp_lib_char8_t)
 inline std::string __tunit_to_string(const xtd::char8* value) {
   return __tunit_to_string(std::u8string(value));
 }
+#endif
 
 inline std::string __tunit_to_string(const xtd::char16* value) {
   return __tunit_to_string(std::u16string(value));

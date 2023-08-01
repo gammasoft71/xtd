@@ -12,6 +12,7 @@ void valid::are_equal(const char* expected, const char* actual, const xtd::ustri
   }
 }
 
+#if defined(__cpp_lib_char8_t)
 void valid::are_equal(const char8* expected, const char8* actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
   try {
     assert::are_equal(expected, actual, message, stack_frame);
@@ -19,6 +20,7 @@ void valid::are_equal(const char8* expected, const char8* actual, const xtd::ust
     base_assert::error();
   }
 }
+#endif
 
 void valid::are_equal(const char16* expected, const char16* actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
   try {
@@ -136,6 +138,7 @@ void valid::are_not_equal(const char* expected, const char* actual, const xtd::u
   }
 }
 
+#if defined(__cpp_lib_char8_t)
 void valid::are_not_equal(const char8* expected, const char8* actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
   try {
     assert::are_not_equal(expected, actual, message, stack_frame);
@@ -143,6 +146,7 @@ void valid::are_not_equal(const char8* expected, const char8* actual, const xtd:
     base_assert::error();
   }
 }
+#endif
 
 void valid::are_not_equal(const char16* expected, const char16* actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
   try {
@@ -176,6 +180,7 @@ void valid::contains(char item, const char* values, const xtd::ustring& message,
   }
 }
 
+#if defined(__cpp_lib_char8_t)
 void valid::contains(char8 item, const char8* values, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
   try {
     assert::contains(item, values, message, stack_frame);
@@ -183,6 +188,7 @@ void valid::contains(char8 item, const char8* values, const xtd::ustring& messag
     base_assert::error();
   }
 }
+#endif
 
 void valid::contains(char16 item, const char16* values, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
   try {
@@ -236,6 +242,7 @@ void valid::is_empty(const char* value, const xtd::ustring& message, const xtd::
   }
 }
 
+#if defined(__cpp_lib_char8_t)
 void valid::is_empty(const char8* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
   try {
     assert::is_empty(value, message, stack_frame);
@@ -243,6 +250,7 @@ void valid::is_empty(const char8* value, const xtd::ustring& message, const xtd:
     base_assert::error();
   }
 }
+#endif
 
 void valid::is_empty(const char16* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
   try {
@@ -296,6 +304,7 @@ void valid::is_greater(const char* val1, const char* val2, const xtd::ustring& m
   }
 }
 
+#if defined(__cpp_lib_char8_t)
 void valid::is_greater(const char8* val1, const char8* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
   try {
     assert::is_greater(val1, val2, message, stack_frame);
@@ -303,6 +312,7 @@ void valid::is_greater(const char8* val1, const char8* val2, const xtd::ustring&
     base_assert::error();
   }
 }
+#endif
 
 void valid::is_greater(const char16* val1, const char16* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
   try {
@@ -336,6 +346,7 @@ void valid::is_greater_or_equal(const char* val1, const char* val2, const xtd::u
   }
 }
 
+#if defined(__cpp_lib_char8_t)
 void valid::is_greater_or_equal(const char8* val1, const char8* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
   try {
     assert::is_greater_or_equal(val1, val2, message, stack_frame);
@@ -343,6 +354,7 @@ void valid::is_greater_or_equal(const char8* val1, const char8* val2, const xtd:
     base_assert::error();
   }
 }
+#endif
 
 void valid::is_greater_or_equal(const char16* val1, const char16* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
   try {
@@ -376,6 +388,7 @@ void valid::is_less(const char* val1, const char* val2, const xtd::ustring& mess
   }
 }
 
+#if defined(__cpp_lib_char8_t)
 void valid::is_less(const char8* val1, const char8* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
   try {
     assert::is_less(val1, val2, message, stack_frame);
@@ -383,6 +396,7 @@ void valid::is_less(const char8* val1, const char8* val2, const xtd::ustring& me
     base_assert::error();
   }
 }
+#endif
 
 void valid::is_less(const char16* val1, const char16* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
   try {
@@ -416,6 +430,7 @@ void valid::is_less_or_equal(const char* val1, const char* val2, const xtd::ustr
   }
 }
 
+#if defined(__cpp_lib_char8_t)
 void valid::is_less_or_equal(const char8* val1, const char8* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
   try {
     assert::is_less_or_equal(val1, val2, message, stack_frame);
@@ -423,6 +438,7 @@ void valid::is_less_or_equal(const char8* val1, const char8* val2, const xtd::us
     base_assert::error();
   }
 }
+#endif
 
 void valid::is_less_or_equal(const char16* val1, const char16* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
   try {
@@ -516,6 +532,7 @@ void valid::is_not_empty(const char* value, const xtd::ustring& message, const x
   }
 }
 
+#if defined(__cpp_lib_char8_t)
 void valid::is_not_empty(const char8* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
   try {
     assert::is_not_empty(value, message, stack_frame);
@@ -523,6 +540,7 @@ void valid::is_not_empty(const char8* value, const xtd::ustring& message, const 
     base_assert::error();
   }
 }
+#endif
 
 void valid::is_not_empty(const char16* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
   try {

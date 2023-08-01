@@ -39,13 +39,13 @@ namespace xtd::forms::tests {
       
       assert::are_equal(4U, list_box.items().size(), csf_);
       assert::are_equal("d", list_box.items()[0], csf_);
-      assert::are_equal(4, any_cast<int>(list_box.items()[0].tag()), csf_);
+      assert::are_equal(4, std::any_cast<int>(list_box.items()[0].tag()), csf_);
       assert::are_equal("a", list_box.items()[1], csf_);
-      assert::are_equal(1, any_cast<int>(list_box.items()[1].tag()), csf_);
+      assert::are_equal(1, std::any_cast<int>(list_box.items()[1].tag()), csf_);
       assert::are_equal("c", list_box.items()[2], csf_);
-      assert::are_equal(3, any_cast<int>(list_box.items()[2].tag()), csf_);
+      assert::are_equal(3, std::any_cast<int>(list_box.items()[2].tag()), csf_);
       assert::are_equal("b", list_box.items()[3], csf_);
-      assert::are_equal(2, any_cast<int>(list_box.items()[3].tag()), csf_);
+      assert::are_equal(2, std::any_cast<int>(list_box.items()[3].tag()), csf_);
     }
     
     void test_method_(sorted_add_items) {

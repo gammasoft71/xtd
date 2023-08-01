@@ -9,19 +9,11 @@
 
 #include "__format_exception.h"
 #include "__sprintf.h"
-#include <chrono>
-#include <ratio>
+#define __XTD_CORE_DURATION_INTERNAL__
+#include "__duration.h"
+#undef __XTD_CORE_DURATION_INTERNAL__
 
 /// @cond
-#define __GCC_VERSION__ (__GNUC__ * 10000 + __GNUC_MINOR__ * 100 + __GNUC_PATCHLEVEL__)
-#if (_MSC_VER && _MSC_VER < 1929) || (!__clang__ && !_MSC_VER && __GCC_VERSION__ < 100000)
-namespace std {
-  namespace chrono {
-    using days = std::chrono::duration<long, std::ratio<86400>>;
-  }
-}
-#endif
-
 template<typename char_t, typename type_t, typename period_t = std::ratio<1>>
 inline std::basic_string<char_t> __make_string_from_duration(std::chrono::duration<type_t, period_t> value, bool constant = true) {
   std::basic_string<char_t> result;

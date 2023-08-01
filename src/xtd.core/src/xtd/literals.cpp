@@ -16,9 +16,11 @@ xtd::byte xtd::operator""_b(const char* s, size_t n) {
   return as<xtd::byte>(ustring(s, s + n));
 }
 
+#if defined(__cpp_lib_char8_t)
 xtd::byte xtd::operator""_b(const char8* s, size_t n) {
   return as<xtd::byte>(ustring(s, s + n));
 }
+#endif
 
 xtd::byte xtd::operator""_b(const char16* s, size_t n) {
   return as<xtd::byte>(u16string(s, s + n));
@@ -44,9 +46,11 @@ double xtd::operator""_d(const char* s, size_t n) {
   return as<double>(ustring(s, s + n));
 }
 
+#if defined(__cpp_lib_char8_t)
 double xtd::operator""_d(const char8* s, size_t n) {
   return as<double>(ustring(s, s + n));
 }
+#endif
 
 double xtd::operator""_d(const char16* s, size_t n) {
   return as<double>(u16string(s, s + n));
@@ -72,9 +76,11 @@ float xtd::operator""_f(const char* s, size_t n) {
   return as<float>(ustring(s, s + n));
 }
 
+#if defined(__cpp_lib_char8_t)
 float xtd::operator""_f(const char8* s, size_t n) {
   return as<float>(ustring(s, s + n));
 }
+#endif
 
 float xtd::operator""_f(const char16* s, size_t n) {
   return as<float>(u16string(s, s + n));
@@ -125,16 +131,18 @@ xtd::time_span xtd::operator""_ms(unsigned long long s) {
 }
 
 xtd::time_span xtd::operator""_ns(unsigned long long s) {
-  return duration_cast<time_span>(std::chrono::nanoseconds(s));
+  return std::chrono::duration_cast<time_span>(std::chrono::nanoseconds(s));
 }
 
 ustring xtd::operator""_s(const char* s, size_t n) {
   return ustring(s, s + n);
 }
 
+#if defined(__cpp_lib_char8_t)
 ustring xtd::operator""_s(const char8* s, size_t n) {
   return ustring(s, s + n);
 }
+#endif
 
 ustring xtd::operator""_s(const char16* s, size_t n) {
   return ustring(u16string(s, s + n));
@@ -232,9 +240,11 @@ sbyte xtd::operator""_s8(const char* s, size_t n) {
   return as<sbyte>(ustring(s, s + n));
 }
 
+#if defined(__cpp_lib_char8_t)
 sbyte xtd::operator""_s8(const char8* s, size_t n) {
   return as<sbyte>(ustring(s, s + n));
 }
+#endif
 
 sbyte xtd::operator""_s8(const char16* s, size_t n) {
   return as<sbyte>(u16string(s, s + n));
@@ -260,9 +270,11 @@ int16 xtd::operator""_s16(const char* s, size_t n) {
   return as<int16>(ustring(s, s + n));
 }
 
+#if defined(__cpp_lib_char8_t)
 int16 xtd::operator""_s16(const char8* s, size_t n) {
   return as<int16>(ustring(s, s + n));
 }
+#endif
 
 int16 xtd::operator""_s16(const char16* s, size_t n) {
   return as<int16>(u16string(s, s + n));
@@ -288,9 +300,11 @@ int32 xtd::operator""_s32(const char* s, size_t n) {
   return as<int32>(ustring(s, s + n));
 }
 
+#if defined(__cpp_lib_char8_t)
 int32 xtd::operator""_s32(const char8* s, size_t n) {
   return as<int32>(ustring(s, s + n));
 }
+#endif
 
 int32 xtd::operator""_s32(const char16* s, size_t n) {
   return as<int32>(u16string(s, s + n));
@@ -316,9 +330,11 @@ int64 xtd::operator""_s64(const char* s, size_t n) {
   return as<int64>(ustring(s, s + n));
 }
 
+#if defined(__cpp_lib_char8_t)
 int64 xtd::operator""_s64(const char8* s, size_t n) {
   return as<int64>(ustring(s, s + n));
 }
+#endif
 
 int64 xtd::operator""_s64(const char16* s, size_t n) {
   return as<int64>(u16string(s, s + n));
@@ -336,9 +352,11 @@ const char* xtd::operator""_t(const char* s, size_t n) noexcept {
   return translator::translate(s);
 }
 
+#if defined(__cpp_lib_char8_t)
 ustring xtd::operator""_t(const char8* s, size_t n) noexcept {
   return translator::translate(u8string(s, s + n));
 }
+#endif
 
 ustring xtd::operator""_t(const char16* s, size_t n) noexcept {
   return translator::translate(u16string(s, s + n));
@@ -368,9 +386,11 @@ xtd::byte xtd::operator""_u8(const char* s, size_t n) {
   return as<xtd::byte>(ustring(s, s + n));
 }
 
+#if defined(__cpp_lib_char8_t)
 xtd::byte xtd::operator""_u8(const char8* s, size_t n) {
   return as<xtd::byte>(ustring(s, s + n));
 }
+#endif
 
 xtd::byte xtd::operator""_u8(const char16* s, size_t n) {
   return as<xtd::byte>(u16string(s, s + n));
@@ -396,9 +416,11 @@ uint16 xtd::operator""_u16(const char* s, size_t n) {
   return as<uint16>(ustring(s, s + n));
 }
 
+#if defined(__cpp_lib_char8_t)
 uint16 xtd::operator""_u16(const char8* s, size_t n) {
   return as<uint16>(ustring(s, s + n));
 }
+#endif
 
 uint16 xtd::operator""_u16(const char16* s, size_t n) {
   return as<uint16>(u16string(s, s + n));
@@ -424,9 +446,11 @@ uint32 xtd::operator""_u32(const char* s, size_t n) {
   return as<uint32>(ustring(s, s + n));
 }
 
+#if defined(__cpp_lib_char8_t)
 uint32 xtd::operator""_u32(const char8* s, size_t n) {
   return as<uint32>(ustring(s, s + n));
 }
+#endif
 
 uint32 xtd::operator""_u32(const char16* s, size_t n) {
   return as<uint32>(u16string(s, s + n));
@@ -452,9 +476,11 @@ uint64 xtd::operator""_u64(const char* s, size_t n) {
   return as<uint64>(ustring(s, s + n));
 }
 
+#if defined(__cpp_lib_char8_t)
 uint64 xtd::operator""_u64(const char8* s, size_t n) {
   return as<uint64>(ustring(s, s + n));
 }
+#endif
 
 uint64 xtd::operator""_u64(const char16* s, size_t n) {
   return as<uint64>(u16string(s, s + n));

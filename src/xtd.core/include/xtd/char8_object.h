@@ -4,6 +4,7 @@
 #pragma once
 #include "box_char.h"
 
+#if defined(__cpp_lib_char8_t)
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @name Boxed types
@@ -30,3 +31,5 @@ namespace xtd {
   using char8_object = box_char<char8>;
   /// @}
 }
+#endif
+

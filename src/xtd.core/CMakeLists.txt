@@ -492,7 +492,6 @@ add_sources(
   include/xtd/internal/__box_enum_or_object.h
   include/xtd/internal/__box_floating_point.h
   include/xtd/internal/__build_type.h
-  include/xtd/internal/__char8_t.h
   include/xtd/internal/__character_formatter.h
   include/xtd/internal/__compiler_id.h
   include/xtd/internal/__compiler_version.h

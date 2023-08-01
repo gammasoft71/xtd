@@ -7,9 +7,6 @@
 #include <typeinfo>
 #include "core_export.h"
 /// @cond
-#define __XTD_CORE_CHAR8_T_INTERNAL__
-#include "internal/__char8_t.h"
-#undef __XTD_CORE_CHAR8_T_INTERNAL__
 #define __XTD_TYPE_NATIVE__
 #include <xtd/native/types.h>
 #undef __XTD_TYPE_NATIVE__
@@ -52,6 +49,7 @@ namespace xtd {
   /// @remarks For more information about types, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/types">Native types, boxing and unboxing</a>.
   using char_ = char;
 
+#if defined(__cpp_lib_char8_t)
   /// @brief Represents a 8-bit unicode character.
   /// @par Header
   /// @code #include <xtd/char8> @endcode
@@ -62,6 +60,7 @@ namespace xtd {
   /// @ingroup xtd_core types
   /// @remarks For more information about types, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/types">Native types, boxing and unboxing</a>.
   using char8 = char8_t;
+#endif
   
   /// @brief Represents a 16-bit unicode character.
   /// @par Header

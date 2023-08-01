@@ -334,7 +334,7 @@ namespace xtd {
   template<typename type_t>
   bool is(std::any value) {
     try {
-      any_cast<type_t>(value);
+      std::any_cast<type_t>(value);
       return true;
     } catch (const std::bad_cast&) {
       return false;
@@ -426,7 +426,7 @@ namespace xtd {
   /// @ingroup xtd_core
   template<typename new_type_t, typename current_type_t>
   bool is(std::shared_ptr<current_type_t>& value) {
-    auto result = dynamic_pointer_cast<new_type_t>(value);
+    auto result = std::dynamic_pointer_cast<new_type_t>(value);
     if (result) return true;
     return false;
   }

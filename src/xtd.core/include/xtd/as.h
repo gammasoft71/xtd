@@ -36,7 +36,7 @@ namespace xtd {
   template<typename new_type_t>
   new_type_t as(std::any value) {
     try {
-      return any_cast<new_type_t>(value);
+      return std::any_cast<new_type_t>(value);
     } catch (const std::exception& e) {
       throw invalid_cast_exception(e.what(), csf_);
     }
@@ -102,6 +102,7 @@ namespace xtd {
     return static_cast<new_type_t>(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
@@ -121,6 +122,7 @@ namespace xtd {
   new_type_t as(char8 value) {
     return static_cast<new_type_t>(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -563,6 +565,7 @@ namespace xtd {
     throw std::bad_cast();
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
@@ -604,6 +607,7 @@ namespace xtd {
     }
     throw std::bad_cast();
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -771,6 +775,7 @@ namespace xtd {
     return reinterpret_cast<new_type_t>(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
@@ -810,6 +815,7 @@ namespace xtd {
   new_type_t as(char8* value) {
     return reinterpret_cast<new_type_t>(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -1016,6 +1022,7 @@ namespace xtd {
     return xtd::convert::to_boolean(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new bool object converted from value.
@@ -1036,6 +1043,7 @@ namespace xtd {
   inline bool as<bool>(char8 value) {
     return xtd::convert::to_boolean(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -1382,6 +1390,7 @@ namespace xtd {
     return xtd::convert::to_boolean(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new bool object converted from value.
@@ -1402,6 +1411,7 @@ namespace xtd {
   inline bool as<bool>(const std::u8string& value) {
     return xtd::convert::to_boolean(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -1508,6 +1518,7 @@ namespace xtd {
     return xtd::convert::to_boolean(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new bool object converted from value.
@@ -1549,6 +1560,7 @@ namespace xtd {
   inline bool as<bool>(char8* value) {
     return xtd::convert::to_boolean(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -1758,6 +1770,7 @@ namespace xtd {
     return xtd::convert::to_byte(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::byte object converted from value.
@@ -1778,6 +1791,7 @@ namespace xtd {
   inline xtd::byte as<xtd::byte>(char8 value) {
     return xtd::convert::to_byte(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -2146,6 +2160,7 @@ namespace xtd {
     return xtd::convert::to_byte(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::byte object converted from value.
@@ -2166,6 +2181,7 @@ namespace xtd {
   inline xtd::byte as<xtd::byte>(const std::u8string& value) {
     return xtd::convert::to_byte(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -2272,7 +2288,8 @@ namespace xtd {
     return xtd::convert::to_byte(value);
   }
   
-  /// @brief Casts a type into another type.
+#if defined(__cpp_lib_char8_t)
+/// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::byte object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
@@ -2313,6 +2330,7 @@ namespace xtd {
   inline xtd::byte as<xtd::byte>(char8* value) {
     return xtd::convert::to_byte(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -2522,6 +2540,7 @@ namespace xtd {
     return xtd::convert::to_char(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char object converted from value.
@@ -2542,6 +2561,7 @@ namespace xtd {
   inline char as<char>(char8 value) {
     return xtd::convert::to_char(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -2888,6 +2908,7 @@ namespace xtd {
     return xtd::convert::to_char(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char object converted from value.
@@ -2908,6 +2929,7 @@ namespace xtd {
   inline char as<char>(const std::u8string& value) {
     return xtd::convert::to_char(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -3014,6 +3036,7 @@ namespace xtd {
     return xtd::convert::to_char(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char object converted from value.
@@ -3055,6 +3078,7 @@ namespace xtd {
   inline char as<char>(char8* value) {
     return xtd::convert::to_char(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -3182,6 +3206,7 @@ namespace xtd {
     return xtd::convert::to_char(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char8 object converted from value.
@@ -3923,6 +3948,7 @@ namespace xtd {
   inline char8 as<char8>(wchar* value) {
     return xtd::convert::to_char8(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -4006,6 +4032,7 @@ namespace xtd {
     return xtd::convert::to_char16(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char16 object converted from value.
@@ -4026,6 +4053,7 @@ namespace xtd {
   inline char16 as<char16>(char8 value) {
     return xtd::convert::to_char16(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -4372,6 +4400,7 @@ namespace xtd {
     return xtd::convert::to_char16(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char16 object converted from value.
@@ -4392,6 +4421,7 @@ namespace xtd {
   inline char16 as<char16>(const std::u8string& value) {
     return xtd::convert::to_char16(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -4498,6 +4528,7 @@ namespace xtd {
     return xtd::convert::to_char16(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char16 object converted from value.
@@ -4539,6 +4570,7 @@ namespace xtd {
   inline char16 as<char16>(char8* value) {
     return xtd::convert::to_char16(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -4748,6 +4780,7 @@ namespace xtd {
     return xtd::convert::to_char32(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char32 object converted from value.
@@ -4768,6 +4801,7 @@ namespace xtd {
   inline char32 as<char32>(char8 value) {
     return xtd::convert::to_char32(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -5114,6 +5148,7 @@ namespace xtd {
     return xtd::convert::to_char32(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char32 object converted from value.
@@ -5134,6 +5169,7 @@ namespace xtd {
   inline char32 as<char32>(const std::u8string& value) {
     return xtd::convert::to_char32(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -5240,6 +5276,7 @@ namespace xtd {
     return xtd::convert::to_char32(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char32 object converted from value.
@@ -5281,6 +5318,7 @@ namespace xtd {
   inline char32 as<char32>(char8* value) {
     return xtd::convert::to_char32(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -5490,6 +5528,7 @@ namespace xtd {
     return xtd::convert::to_wchar(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new wchar object converted from value.
@@ -5510,6 +5549,7 @@ namespace xtd {
   inline wchar as<wchar>(char8 value) {
     return xtd::convert::to_wchar(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -5856,6 +5896,7 @@ namespace xtd {
     return xtd::convert::to_wchar(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new wchar object converted from value.
@@ -5876,6 +5917,7 @@ namespace xtd {
   inline wchar as<wchar>(const std::u8string& value) {
     return xtd::convert::to_wchar(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -5982,6 +6024,7 @@ namespace xtd {
     return xtd::convert::to_wchar(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new wchar object converted from value.
@@ -6023,6 +6066,7 @@ namespace xtd {
   inline wchar as<wchar>(char8* value) {
     return xtd::convert::to_wchar(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -6232,6 +6276,7 @@ namespace xtd {
     return xtd::convert::to_decimal(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new decimal object converted from value.
@@ -6252,6 +6297,7 @@ namespace xtd {
   inline decimal as<decimal>(char8 value) {
     return xtd::convert::to_decimal(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -6598,6 +6644,7 @@ namespace xtd {
     return xtd::convert::to_decimal(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new decimal object converted from value.
@@ -6618,6 +6665,7 @@ namespace xtd {
   inline decimal as<decimal>(const std::u8string& value) {
     return xtd::convert::to_decimal(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -6724,6 +6772,7 @@ namespace xtd {
     return xtd::convert::to_decimal(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new decimal object converted from value.
@@ -6765,6 +6814,7 @@ namespace xtd {
   inline decimal as<decimal>(char8* value) {
     return xtd::convert::to_decimal(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -6974,6 +7024,7 @@ namespace xtd {
     return xtd::convert::to_double(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new double object converted from value.
@@ -6994,6 +7045,7 @@ namespace xtd {
   inline double as<double>(char8 value) {
     return xtd::convert::to_double(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -7340,6 +7392,7 @@ namespace xtd {
     return xtd::convert::to_double(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new double object converted from value.
@@ -7360,6 +7413,7 @@ namespace xtd {
   inline double as<double>(const std::u8string& value) {
     return xtd::convert::to_double(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -7466,6 +7520,7 @@ namespace xtd {
     return xtd::convert::to_double(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new double object converted from value.
@@ -7507,6 +7562,7 @@ namespace xtd {
   inline double as<double>(char8* value) {
     return xtd::convert::to_double(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -7716,6 +7772,7 @@ namespace xtd {
     return xtd::convert::to_single(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new float object converted from value.
@@ -7736,6 +7793,7 @@ namespace xtd {
   inline float as<float>(char8 value) {
     return xtd::convert::to_single(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -8082,6 +8140,7 @@ namespace xtd {
     return xtd::convert::to_single(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new float object converted from value.
@@ -8102,6 +8161,7 @@ namespace xtd {
   inline float as<float>(const std::u8string& value) {
     return xtd::convert::to_single(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -8208,6 +8268,7 @@ namespace xtd {
     return xtd::convert::to_single(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new float object converted from value.
@@ -8249,6 +8310,7 @@ namespace xtd {
   inline float as<float>(char8* value) {
     return xtd::convert::to_single(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -8458,6 +8520,7 @@ namespace xtd {
     return xtd::convert::to_int16(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int16 object converted from value.
@@ -8478,6 +8541,7 @@ namespace xtd {
   inline int16 as<int16>(char8 value) {
     return xtd::convert::to_int16(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -8846,6 +8910,7 @@ namespace xtd {
     return xtd::convert::to_int16(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int16 object converted from value.
@@ -8866,6 +8931,7 @@ namespace xtd {
   inline int16 as<int16>(const std::u8string& value) {
     return xtd::convert::to_int16(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -8972,6 +9038,7 @@ namespace xtd {
     return xtd::convert::to_int16(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int16 object converted from value.
@@ -9013,6 +9080,7 @@ namespace xtd {
   inline int16 as<int16>(char8* value) {
     return xtd::convert::to_int16(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -9222,6 +9290,7 @@ namespace xtd {
     return xtd::convert::to_int32(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int32 object converted from value.
@@ -9242,6 +9311,7 @@ namespace xtd {
   inline int32 as<int32>(char8 value) {
     return xtd::convert::to_int32(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -9610,6 +9680,7 @@ namespace xtd {
     return xtd::convert::to_int32(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int32 object converted from value.
@@ -9630,6 +9701,7 @@ namespace xtd {
   inline int32 as<int32>(const std::u8string& value) {
     return xtd::convert::to_int32(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -9736,6 +9808,7 @@ namespace xtd {
     return xtd::convert::to_int32(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int32 object converted from value.
@@ -9777,6 +9850,7 @@ namespace xtd {
   inline int32 as<int32>(char8* value) {
     return xtd::convert::to_int32(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -9986,6 +10060,7 @@ namespace xtd {
     return xtd::convert::to_int64(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
@@ -10006,6 +10081,7 @@ namespace xtd {
   inline int64 as<int64>(char8 value) {
     return xtd::convert::to_int64(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -10374,6 +10450,7 @@ namespace xtd {
     return xtd::convert::to_int64(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
@@ -10394,6 +10471,7 @@ namespace xtd {
   inline int64 as<int64>(const std::u8string& value) {
     return xtd::convert::to_int64(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -10500,6 +10578,7 @@ namespace xtd {
     return xtd::convert::to_int64(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
@@ -10541,6 +10620,7 @@ namespace xtd {
   inline int64 as<int64>(char8* value) {
     return xtd::convert::to_int64(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -10750,6 +10830,7 @@ namespace xtd {
     return xtd::convert::to_llong(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new slong object converted from value.
@@ -10770,6 +10851,7 @@ namespace xtd {
   inline slong as<slong>(char8 value) {
     return xtd::convert::to_llong(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -11138,6 +11220,7 @@ namespace xtd {
     return xtd::convert::to_llong(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new slong object converted from value.
@@ -11158,6 +11241,7 @@ namespace xtd {
   inline slong as<slong>(const std::u8string& value) {
     return xtd::convert::to_llong(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -11264,6 +11348,7 @@ namespace xtd {
     return xtd::convert::to_llong(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new slong object converted from value.
@@ -11305,6 +11390,7 @@ namespace xtd {
   inline slong as<slong>(char8* value) {
     return xtd::convert::to_llong(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -11514,6 +11600,7 @@ namespace xtd {
     return xtd::convert::to_sbyte(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new sbyte object converted from value.
@@ -11534,6 +11621,7 @@ namespace xtd {
   inline sbyte as<sbyte>(char8 value) {
     return xtd::convert::to_sbyte(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -11902,6 +11990,7 @@ namespace xtd {
     return xtd::convert::to_sbyte(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new sbyte object converted from value.
@@ -11922,6 +12011,7 @@ namespace xtd {
   inline sbyte as<sbyte>(const std::u8string& value) {
     return xtd::convert::to_sbyte(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -12028,6 +12118,7 @@ namespace xtd {
     return xtd::convert::to_sbyte(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new sbyte object converted from value.
@@ -12069,6 +12160,7 @@ namespace xtd {
   inline sbyte as<sbyte>(char8* value) {
     return xtd::convert::to_sbyte(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -12278,6 +12370,7 @@ namespace xtd {
     return xtd::convert::to_uint16(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint16 object converted from value.
@@ -12298,6 +12391,7 @@ namespace xtd {
   inline uint16 as<uint16>(char8 value) {
     return xtd::convert::to_uint16(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -12666,6 +12760,7 @@ namespace xtd {
     return xtd::convert::to_uint16(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint16 object converted from value.
@@ -12686,6 +12781,7 @@ namespace xtd {
   inline uint16 as<uint16>(const std::u8string& value) {
     return xtd::convert::to_uint16(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -12792,6 +12888,7 @@ namespace xtd {
     return xtd::convert::to_uint16(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint16 object converted from value.
@@ -12833,6 +12930,7 @@ namespace xtd {
   inline uint16 as<uint16>(char8* value) {
     return xtd::convert::to_uint16(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -13042,6 +13140,7 @@ namespace xtd {
     return xtd::convert::to_uint32(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint32 object converted from value.
@@ -13062,6 +13161,7 @@ namespace xtd {
   inline uint32 as<uint32>(char8 value) {
     return xtd::convert::to_uint32(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -13430,6 +13530,7 @@ namespace xtd {
     return xtd::convert::to_uint32(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint32 object converted from value.
@@ -13450,6 +13551,7 @@ namespace xtd {
   inline uint32 as<uint32>(const std::u8string& value) {
     return xtd::convert::to_uint32(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -13556,6 +13658,7 @@ namespace xtd {
     return xtd::convert::to_uint32(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint32 object converted from value.
@@ -13597,6 +13700,7 @@ namespace xtd {
   inline uint32 as<uint32>(char8* value) {
     return xtd::convert::to_uint32(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -13806,6 +13910,7 @@ namespace xtd {
     return xtd::convert::to_uint64(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint64 object converted from value.
@@ -13826,6 +13931,7 @@ namespace xtd {
   inline uint64 as<uint64>(char8 value) {
     return xtd::convert::to_uint64(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -14194,6 +14300,7 @@ namespace xtd {
     return xtd::convert::to_uint64(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint64 object converted from value.
@@ -14214,6 +14321,7 @@ namespace xtd {
   inline uint64 as<uint64>(const std::u8string& value) {
     return xtd::convert::to_uint64(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -14320,6 +14428,7 @@ namespace xtd {
     return xtd::convert::to_uint64(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint64 object converted from value.
@@ -14361,6 +14470,7 @@ namespace xtd {
   inline uint64 as<uint64>(char8* value) {
     return xtd::convert::to_uint64(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -14570,6 +14680,7 @@ namespace xtd {
     return xtd::convert::to_ullong(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
@@ -14590,6 +14701,7 @@ namespace xtd {
   inline xtd::ulong as<xtd::ulong>(char8 value) {
     return xtd::convert::to_ullong(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -14958,6 +15070,7 @@ namespace xtd {
     return xtd::convert::to_ullong(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
@@ -14978,6 +15091,7 @@ namespace xtd {
   inline xtd::ulong as<xtd::ulong>(const std::u8string& value) {
     return xtd::convert::to_ullong(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -15084,6 +15198,7 @@ namespace xtd {
     return xtd::convert::to_ullong(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
@@ -15125,6 +15240,7 @@ namespace xtd {
   inline xtd::ulong as<xtd::ulong>(char8* value) {
     return xtd::convert::to_ullong(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -15356,6 +15472,7 @@ namespace xtd {
     return xtd::convert::to_string(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
@@ -15376,6 +15493,7 @@ namespace xtd {
   inline ustring as<ustring>(char8 value) {
     return xtd::convert::to_string(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -16115,6 +16233,7 @@ namespace xtd {
     return xtd::convert_string::to_ustring(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @par Header
   /// @code #include <xtd/as> @endcode
@@ -16150,6 +16269,7 @@ namespace xtd {
   inline std::u8string as<std::u8string>(std::string& value) {
     return xtd::convert_string::to_u8string(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @par Header
@@ -16295,6 +16415,7 @@ namespace xtd {
     return xtd::convert_string::to_ustring(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @par Header
   /// @code #include <xtd/as> @endcode
@@ -16312,6 +16433,7 @@ namespace xtd {
   inline std::u8string as<std::u8string>(const char* value) {
     return xtd::convert_string::to_u8string(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @par Header
@@ -16403,6 +16525,7 @@ namespace xtd {
     return xtd::convert_string::to_ustring(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @par Header
   /// @code #include <xtd/as> @endcode
@@ -16420,6 +16543,7 @@ namespace xtd {
   inline std::u8string as<std::u8string>(char* value) {
     return xtd::convert_string::to_u8string(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @par Header
@@ -16547,6 +16671,7 @@ namespace xtd {
     return xtd::convert_string::to_ustring(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @par Header
   /// @code #include <xtd/as> @endcode
@@ -16582,6 +16707,7 @@ namespace xtd {
   inline std::u8string as<std::u8string>(xtd::ustring& value) {
     return xtd::convert_string::to_u8string(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @par Header
@@ -16691,6 +16817,7 @@ namespace xtd {
     return xtd::convert_string::to_wstring(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @par Header
   /// @code #include <xtd/as> @endcode
@@ -16906,7 +17033,9 @@ namespace xtd {
   inline std::wstring as<std::wstring>(std::u8string& value) {
     return xtd::convert_string::to_wstring(value);
   }
+#endif
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @par Header
   /// @code #include <xtd/as> @endcode
@@ -17122,6 +17251,7 @@ namespace xtd {
   inline std::wstring as<std::wstring>(char8* value) {
     return xtd::convert_string::to_wstring(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @par Header
@@ -17195,6 +17325,7 @@ namespace xtd {
     return xtd::convert_string::to_ustring(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @par Header
   /// @code #include <xtd/as> @endcode
@@ -17230,6 +17361,7 @@ namespace xtd {
   inline std::u8string as<std::u8string>(std::u16string& value) {
     return xtd::convert_string::to_u8string(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @par Header
@@ -17375,6 +17507,7 @@ namespace xtd {
     return xtd::convert_string::to_ustring(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @par Header
   /// @code #include <xtd/as> @endcode
@@ -17392,6 +17525,7 @@ namespace xtd {
   inline std::u8string as<std::u8string>(const char16* value) {
     return xtd::convert_string::to_u8string(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @par Header
@@ -17483,6 +17617,7 @@ namespace xtd {
     return xtd::convert_string::to_ustring(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @par Header
   /// @code #include <xtd/as> @endcode
@@ -17500,6 +17635,7 @@ namespace xtd {
   inline std::u8string as<std::u8string>(char16* value) {
     return xtd::convert_string::to_u8string(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @par Header
@@ -17627,6 +17763,7 @@ namespace xtd {
     return xtd::convert_string::to_ustring(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @par Header
   /// @code #include <xtd/as> @endcode
@@ -17662,6 +17799,7 @@ namespace xtd {
   inline std::u8string as<std::u8string>(std::u32string& value) {
     return xtd::convert_string::to_u8string(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @par Header
@@ -17807,6 +17945,7 @@ namespace xtd {
     return xtd::convert_string::to_ustring(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @par Header
   /// @code #include <xtd/as> @endcode
@@ -17824,6 +17963,7 @@ namespace xtd {
   inline std::u8string as<std::u8string>(const char32* value) {
     return xtd::convert_string::to_u8string(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @par Header
@@ -17915,6 +18055,7 @@ namespace xtd {
     return xtd::convert_string::to_ustring(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @par Header
   /// @code #include <xtd/as> @endcode
@@ -17932,6 +18073,7 @@ namespace xtd {
   inline std::u8string as<std::u8string>(char32* value) {
     return xtd::convert_string::to_u8string(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @par Header
@@ -18059,6 +18201,7 @@ namespace xtd {
     return xtd::convert_string::to_ustring(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @par Header
   /// @code #include <xtd/as> @endcode
@@ -18094,6 +18237,7 @@ namespace xtd {
   inline std::u8string as<std::u8string>(std::wstring& value) {
     return xtd::convert_string::to_u8string(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @par Header
@@ -18239,6 +18383,7 @@ namespace xtd {
     return xtd::convert_string::to_ustring(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @par Header
   /// @code #include <xtd/as> @endcode
@@ -18256,6 +18401,7 @@ namespace xtd {
   inline std::u8string as<std::u8string>(const wchar* value) {
     return xtd::convert_string::to_u8string(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @par Header
@@ -18347,6 +18493,7 @@ namespace xtd {
     return xtd::convert_string::to_ustring(value);
   }
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @par Header
   /// @code #include <xtd/as> @endcode
@@ -18364,6 +18511,7 @@ namespace xtd {
   inline std::u8string as<std::u8string>(wchar* value) {
     return xtd::convert_string::to_u8string(value);
   }
+#endif
   
   /// @brief Casts a type into another type.
   /// @par Header
@@ -18418,4 +18566,9 @@ namespace xtd {
   inline std::wstring as<std::wstring>(wchar* value) {
     return xtd::convert_string::to_wstring(value);
   }
+}
+
+template<typename new_type_t, typename current_type_t>
+new_type_t* __convert_value__(current_type_t* value) {
+  return xtd::as<new_type_t>(value);
 }
