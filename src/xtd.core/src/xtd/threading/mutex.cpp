@@ -21,7 +21,7 @@ mutex::mutex(bool initially_owned, const ustring& name) : name_(name) {
   create(initially_owned, created_new);
 }
 
-mutex::mutex(bool initially_owned, const ustring& name, bool created_new) : name_(name) {
+mutex::mutex(bool initially_owned, const ustring& name, bool& created_new) : name_(name) {
   create(initially_owned, created_new);
 }
 
