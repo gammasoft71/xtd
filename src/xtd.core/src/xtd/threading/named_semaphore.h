@@ -1,8 +1,9 @@
-#prafma once
-#include "../../../include/xtd/threading/semaphore.h"
+#pragma once
+#include "semaphore_base.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/named_semaphore.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
+#include "../../../include/xtd/invalid_operation_exception.h"
 
 class xtd::threading::semaphore::named_semaphore : public semaphore_base {
 public:
