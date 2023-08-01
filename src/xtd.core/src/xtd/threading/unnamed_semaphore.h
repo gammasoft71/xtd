@@ -1,7 +1,8 @@
 #pragma once
-#include "../../../include/xtd/threading/semaphore.h"
+#include "semaphore_base.h"
 #include <condition_variable>
 #include <mutex>
+#include "../../../include/xtd/invalid_operation_exception.h"
 
 class xtd::threading::semaphore::unnamed_semaphore : public semaphore_base {
 public:
