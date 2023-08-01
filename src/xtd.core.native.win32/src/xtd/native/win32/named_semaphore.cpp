@@ -11,6 +11,10 @@ using namespace xtd::native;
 
 intmax_t named_semaphore::create(int_least32_t initial_count, int_least32_t max_count, const std::string& name) {
   auto handle = CreateSemaphore(nullptr, initial_count, max_count, win32::strings::to_wstring(name).c_str());
+  if (handle != INVALID_HANDLE_VALUE && GetLastError() == ERROR_ALREADY_EXISTS) {
+    CloseHandle(handle);
+    return reinterpret_cast<intmax_t>(INVALID_HANDLE_VALUE);
+  }
   return reinterpret_cast<intmax_t>(handle);
 }
 
@@ -25,6 +29,7 @@ size_t named_semaphore::max_name_size() {
 
 intmax_t named_semaphore::open(const std::string& name) {
   auto handle = OpenSemaphore(MUTEX_ALL_ACCESS, FALSE, win32::strings::to_wstring(name).c_str());
+  if (handle == nullptr) handle = INVALID_HANDLE_VALUE;
   return reinterpret_cast<intmax_t>(handle);
 }
 
