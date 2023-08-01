@@ -266,13 +266,13 @@ private:
     
     string_format format;
     
-    format.alignment(any_cast<string_alignment>(alignmentComboBox.selected_item().tag()));
+    format.alignment(std::any_cast<string_alignment>(alignmentComboBox.selected_item().tag()));
     
-    format.line_alignment(any_cast<string_alignment>(lineAlignmentComboBox.selected_item().tag()));
+    format.line_alignment(std::any_cast<string_alignment>(lineAlignmentComboBox.selected_item().tag()));
     
-    format.trimming(any_cast<string_trimming>(trimmingComboBox.selected_item().tag()));
+    format.trimming(std::any_cast<string_trimming>(trimmingComboBox.selected_item().tag()));
     
-    format.hotkey_prefix(any_cast<hotkey_prefix>(hotKeyPrefixComboBox.selected_item().tag()));
+    format.hotkey_prefix(std::any_cast<hotkey_prefix>(hotKeyPrefixComboBox.selected_item().tag()));
     
     if (directionRightToLeftCheckBox.checked()) format.format_flags(format.format_flags() | string_format_flags::direction_right_to_left);
     if (directionVerticalCheckBox.checked()) format.format_flags(format.format_flags() | string_format_flags::direction_vertical);

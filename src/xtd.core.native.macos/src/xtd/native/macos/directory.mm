@@ -257,7 +257,7 @@ string directory::get_current_directory() {
   auto result = getcwd(path.data(), MAXPATHLEN);
   //path.shrink_to_fit();
   path.erase(std::find(path.begin(), path.end(), '\0'), path.end());
-  if (path.starts_with("/private"))
+  if (path.find("/private") == 0)
     path.replace(0, 8, "");
   return result ? path : "";
 }

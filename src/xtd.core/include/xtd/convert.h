@@ -63,6 +63,7 @@ namespace xtd {
     /// any result = convert::to_any(value);
     /// @endcode
     static std::any to_any(char value) noexcept;
+#if defined(__cpp_lib_char8_t)
     /// @brief Convert char8 to std::any.
     /// @param value object to convert.
     /// @return A new std::any object converted from value.
@@ -73,6 +74,7 @@ namespace xtd {
     /// any result = convert::to_any(value);
     /// @endcode
     static std::any to_any(char8 value);
+#endif
     /// @brief Convert char16 to std::any.
     /// @param value object to convert.
     /// @return A new std::any object converted from value.
@@ -222,14 +224,18 @@ namespace xtd {
     static std::any to_any(const xtd::ustring& value) noexcept;
     /// @cond
     static std::any to_any(const std::string& value) noexcept;
+#if defined(__cpp_lib_char8_t)
     static std::any to_any(const std::u8string& value) noexcept;
+#endif
     static std::any to_any(const std::u16string& value) noexcept;
     static std::any to_any(const std::u32string& value) noexcept;
     static std::any to_any(const std::wstring& value) noexcept;
     static std::any to_any(const char* value) noexcept;
     static std::any to_any(char* value) noexcept;
+#if defined(__cpp_lib_char8_t)
     static std::any to_any(const char8* value);
     static std::any to_any(char8* value);
+#endif
     static std::any to_any(const char16* value) noexcept;
     static std::any to_any(char16* value) noexcept;
     static std::any to_any(const char32* value) noexcept;
@@ -292,6 +298,7 @@ namespace xtd {
     /// bool result = convert::to_boolean(value);
     /// @endcode
     static bool to_boolean(char value);
+#if defined(__cpp_lib_char8_t)
     /// @brief Convert char8 to bool.
     /// @param value object to convert.
     /// @return A new bool object converted from value.
@@ -302,6 +309,7 @@ namespace xtd {
     /// bool result = convert::to_boolean(value);
     /// @endcode
     static bool to_boolean(char8 value);
+#endif
     /// @brief Convert char16 to bool.
     /// @param value object to convert.
     /// @return A new bool object converted from value.
@@ -455,14 +463,18 @@ namespace xtd {
     static bool to_boolean(const xtd::ustring& value);
     /// @cond
     static bool to_boolean(const std::string& value);
+#if defined(__cpp_lib_char8_t)
     static bool to_boolean(const std::u8string& value);
+#endif
     static bool to_boolean(const std::u16string& value);
     static bool to_boolean(const std::u32string& value);
     static bool to_boolean(const std::wstring& value);
     static bool to_boolean(const char* value);
     static bool to_boolean(char* value);
+#if defined(__cpp_lib_char8_t)
     static bool to_boolean(const char8* value);
     static bool to_boolean(char8* value);
+#endif
     static bool to_boolean(const char16* value);
     static bool to_boolean(char16* value);
     static bool to_boolean(const char32* value);
@@ -519,6 +531,7 @@ namespace xtd {
     /// xtd::byte result = convert::to_byte(value);
     /// @endcode
     static xtd::byte to_byte(char value) noexcept;
+#if defined(__cpp_lib_char8_t)
     /// @brief Convert char8 to byte.
     /// @param value object to convert.
     /// @return A new xtd::byte object converted from value.
@@ -528,6 +541,7 @@ namespace xtd {
     /// xtd::byte result = convert::to_byte(value);
     /// @endcode
     static xtd::byte to_byte(char8 value) noexcept;
+#endif
     /// @brief Convert char16 to byte.
     /// @param value object to convert.
     /// @return A new xtd::byte object converted from value.
@@ -704,14 +718,18 @@ namespace xtd {
     static xtd::byte to_byte(const xtd::ustring& value, xtd::byte from_base);
     /// @cond
     static xtd::byte to_byte(const std::string& value);
+#if defined(__cpp_lib_char8_t)
     static xtd::byte to_byte(const std::u8string& value);
+#endif
     static xtd::byte to_byte(const std::u16string& value);
     static xtd::byte to_byte(const std::u32string& value);
     static xtd::byte to_byte(const std::wstring& value);
     static xtd::byte to_byte(const char* value);
     static xtd::byte to_byte(char* value);
+#if defined(__cpp_lib_char8_t)
     static xtd::byte to_byte(const char8* value);
     static xtd::byte to_byte(char8* value);
+#endif
     static xtd::byte to_byte(const char16* value);
     static xtd::byte to_byte(char16* value);
     static xtd::byte to_byte(const char32* value);
@@ -768,6 +786,7 @@ namespace xtd {
     /// char result = convert::to_char(value);
     /// @endcode
     static char to_char(char value) noexcept;
+#if defined(__cpp_lib_char8_t)
     /// @brief Convert char8 to char.
     /// @param value object to convert.
     /// @return A new char object converted from value.
@@ -777,6 +796,7 @@ namespace xtd {
     /// char result = convert::to_char(value);
     /// @endcode
     static char to_char(char8 value) noexcept;
+#endif
     /// @brief Convert char16 to char.
     /// @param value object to convert.
     /// @return A new char object converted from value.
@@ -941,14 +961,18 @@ namespace xtd {
     static char to_char(const xtd::ustring& value);
     /// @cond
     static char to_char(const std::string& value);
+#if defined(__cpp_lib_char8_t)
     static char to_char(const std::u8string& value);
+#endif
     static char to_char(const std::u16string& value);
     static char to_char(const std::u32string& value);
     static char to_char(const std::wstring& value);
     static char to_char(const char* value);
     static char to_char(char* value);
+#if defined(__cpp_lib_char8_t)
     static char to_char(const char8* value);
     static char to_char(char8* value);
+#endif
     static char to_char(const char16* value);
     static char to_char(char16* value);
     static char to_char(const char32* value);
@@ -969,6 +993,7 @@ namespace xtd {
       return static_cast<char>(value);
     }
     
+#if defined(__cpp_lib_char8_t)
     /// @brief Convert std::any to char8.
     /// @param value object to convert.
     /// @return A new char8 object converted from value.
@@ -1205,6 +1230,7 @@ namespace xtd {
     static char8 to_char8(type_t value) noexcept {
       return static_cast<char8>(value);
     }
+#endif
     
     /// @brief Convert std::any to char16.
     /// @param value object to convert.
@@ -1242,6 +1268,7 @@ namespace xtd {
     /// char16 result = convert::to_char16(value);
     /// @endcode
     static char16 to_char16(char value) noexcept;
+#if defined(__cpp_lib_char8_t)
     /// @brief Convert char8 to char16.
     /// @param value object to convert.
     /// @return A new char16 object converted from value.
@@ -1251,6 +1278,7 @@ namespace xtd {
     /// char16 result = convert::to_char16(value);
     /// @endcode
     static char16 to_char16(char8 value) noexcept;
+#endif
     /// @brief Convert char16 to char16.
     /// @param value object to convert.
     /// @return A new char16 object converted from value.
@@ -1412,14 +1440,18 @@ namespace xtd {
     static char16 to_char16(const xtd::ustring& value);
     /// @cond
     static char16 to_char16(const std::string& value);
+#if defined(__cpp_lib_char8_t)
     static char16 to_char16(const std::u8string& value);
+#endif
     static char16 to_char16(const std::u16string& value);
     static char16 to_char16(const std::u32string& value);
     static char16 to_char16(const std::wstring& value);
     static char16 to_char16(const char* value);
     static char16 to_char16(char* value);
+#if defined(__cpp_lib_char8_t)
     static char16 to_char16(const char8* value);
     static char16 to_char16(char8* value);
+#endif
     static char16 to_char16(const char16* value);
     static char16 to_char16(char16* value);
     static char16 to_char16(const char32* value);
@@ -1476,6 +1508,7 @@ namespace xtd {
     /// char32 result = convert::to_char32(value);
     /// @endcode
     static char32 to_char32(char value) noexcept;
+#if defined(__cpp_lib_char8_t)
     /// @brief Convert char8 to char32.
     /// @param value object to convert.
     /// @return A new char32 object converted from value.
@@ -1485,6 +1518,7 @@ namespace xtd {
     /// char32 result = convert::to_char32(value);
     /// @endcode
     static char32 to_char32(char8 value) noexcept;
+#endif
     /// @brief Convert char16 to char32.
     /// @param value object to convert.
     /// @return A new char32 object converted from value.
@@ -1644,14 +1678,18 @@ namespace xtd {
     static char32 to_char32(const xtd::ustring& value);
     /// @cond
     static char32 to_char32(const std::string& value);
+#if defined(__cpp_lib_char8_t)
     static char32 to_char32(const std::u8string& value);
+#endif
     static char32 to_char32(const std::u16string& value);
     static char32 to_char32(const std::u32string& value);
     static char32 to_char32(const std::wstring& value);
     static char32 to_char32(const char* value);
     static char32 to_char32(char* value);
+#if defined(__cpp_lib_char8_t)
     static char32 to_char32(const char8* value);
     static char32 to_char32(char8* value);
+#endif
     static char32 to_char32(const char16* value);
     static char32 to_char32(char16* value);
     static char32 to_char32(const char32* value);
@@ -1708,6 +1746,7 @@ namespace xtd {
     /// wchar result = convert::to_wchar(value);
     /// @endcode
     static wchar to_wchar(char value) noexcept;
+#if defined(__cpp_lib_char8_t)
     /// @brief Convert char8 to wchar.
     /// @param value object to convert.
     /// @return A new wchar object converted from value.
@@ -1717,6 +1756,7 @@ namespace xtd {
     /// wchar result = convert::to_wchar(value);
     /// @endcode
     static wchar to_wchar(char8 value) noexcept;
+#endif
     /// @brief Convert char16 to wchar.
     /// @param value object to convert.
     /// @return A new wchar object converted from value.
@@ -1878,14 +1918,18 @@ namespace xtd {
     static wchar to_wchar(const xtd::ustring& value);
     /// @cond
     static wchar to_wchar(const std::string& value);
+#if defined(__cpp_lib_char8_t)
     static wchar to_wchar(const std::u8string& value);
+#endif
     static wchar to_wchar(const std::u16string& value);
     static wchar to_wchar(const std::u32string& value);
     static wchar to_wchar(const std::wstring& value);
     static wchar to_wchar(const char* value);
     static wchar to_wchar(char* value);
+#if defined(__cpp_lib_char8_t)
     static wchar to_wchar(const char8* value);
     static wchar to_wchar(char8* value);
+#endif
     static wchar to_wchar(const char16* value);
     static wchar to_wchar(char16* value);
     static wchar to_wchar(const char32* value);
@@ -1942,6 +1986,7 @@ namespace xtd {
     /// decimal result = convert::to_decimal(value);
     /// @endcode
     static decimal to_decimal(char value) noexcept;
+#if defined(__cpp_lib_char8_t)
     /// @brief Convert char8 to decimal.
     /// @param value object to convert.
     /// @return A new decimal object converted from value.
@@ -1951,6 +1996,7 @@ namespace xtd {
     /// decimal result = convert::to_decimal(value);
     /// @endcode
     static decimal to_decimal(char8 value) noexcept;
+#endif
     /// @brief Convert char16 to decimal.
     /// @param value object to convert.
     /// @return A new decimal object converted from value.
@@ -2101,14 +2147,18 @@ namespace xtd {
     static decimal to_decimal(const xtd::ustring& value);
     /// @cond
     static decimal to_decimal(const std::string& value);
+#if defined(__cpp_lib_char8_t)
     static decimal to_decimal(const std::u8string& value);
+#endif
     static decimal to_decimal(const std::u16string& value);
     static decimal to_decimal(const std::u32string& value);
     static decimal to_decimal(const std::wstring& value);
     static decimal to_decimal(const char* value);
     static decimal to_decimal(char* value);
+#if defined(__cpp_lib_char8_t)
     static decimal to_decimal(const char8* value);
     static decimal to_decimal(char8* value);
+#endif
     static decimal to_decimal(const char16* value);
     static decimal to_decimal(char16* value);
     static decimal to_decimal(const char32* value);
@@ -2165,6 +2215,7 @@ namespace xtd {
     /// double result = convert::to_double(value);
     /// @endcode
     static double to_double(char value) noexcept;
+#if defined(__cpp_lib_char8_t)
     /// @brief Convert char8 to double.
     /// @param value object to convert.
     /// @return A new double object converted from value.
@@ -2174,6 +2225,7 @@ namespace xtd {
     /// double result = convert::to_double(value);
     /// @endcode
     static double to_double(char8 value) noexcept;
+#endif
     /// @brief Convert char16 to double.
     /// @param value object to convert.
     /// @return A new double object converted from value.
@@ -2324,14 +2376,18 @@ namespace xtd {
     static double to_double(const xtd::ustring& value);
     /// @cond
     static double to_double(const std::string& value);
+#if defined(__cpp_lib_char8_t)
     static double to_double(const std::u8string& value);
+#endif
     static double to_double(const std::u16string& value);
     static double to_double(const std::u32string& value);
     static double to_double(const std::wstring& value);
     static double to_double(const char* value);
     static double to_double(char* value);
+#if defined(__cpp_lib_char8_t)
     static double to_double(const char8* value);
     static double to_double(char8* value);
+#endif
     static double to_double(const char16* value);
     static double to_double(char16* value);
     static double to_double(const char32* value);
@@ -2388,6 +2444,7 @@ namespace xtd {
     /// float result = convert::to_single(value);
     /// @endcode
     static float to_single(char value) noexcept;
+#if defined(__cpp_lib_char8_t)
     /// @brief Convert char8 to single.
     /// @param value object to convert.
     /// @return A new float object converted from value.
@@ -2397,6 +2454,7 @@ namespace xtd {
     /// float result = convert::to_single(value);
     /// @endcode
     static float to_single(char8 value) noexcept;
+#endif
     /// @brief Convert char16 to single.
     /// @param value object to convert.
     /// @return A new float object converted from value.
@@ -2547,14 +2605,18 @@ namespace xtd {
     static float to_single(const xtd::ustring& value);
     /// @cond
     static float to_single(const std::string& value);
+#if defined(__cpp_lib_char8_t)
     static float to_single(const std::u8string& value);
+#endif
     static float to_single(const std::u16string& value);
     static float to_single(const std::u32string& value);
     static float to_single(const std::wstring& value);
     static float to_single(const char* value);
     static float to_single(char* value);
+#if defined(__cpp_lib_char8_t)
     static float to_single(const char8* value);
     static float to_single(char8* value);
+#endif
     static float to_single(const char16* value);
     static float to_single(char16* value);
     static float to_single(const char32* value);
@@ -2611,6 +2673,7 @@ namespace xtd {
     /// int16 result = convert::to_int16(value);
     /// @endcode
     static int16 to_int16(char value) noexcept;
+#if defined(__cpp_lib_char8_t)
     /// @brief Convert char8 to int16.
     /// @param value object to convert.
     /// @return A new int16 object converted from value.
@@ -2620,6 +2683,7 @@ namespace xtd {
     /// int16 result = convert::to_int16(value);
     /// @endcode
     static int16 to_int16(char8 value) noexcept;
+#endif
     /// @brief Convert char16 to int16.
     /// @param value object to convert.
     /// @return A new int16 object converted from value.
@@ -2792,14 +2856,18 @@ namespace xtd {
     static int16 to_int16(const xtd::ustring& value, xtd::byte from_base);
     /// @cond
     static int16 to_int16(const std::string& value);
+#if defined(__cpp_lib_char8_t)
     static int16 to_int16(const std::u8string& value);
+#endif
     static int16 to_int16(const std::u16string& value);
     static int16 to_int16(const std::u32string& value);
     static int16 to_int16(const std::wstring& value);
     static int16 to_int16(const char* value);
     static int16 to_int16(char* value);
+#if defined(__cpp_lib_char8_t)
     static int16 to_int16(const char8* value);
     static int16 to_int16(char8* value);
+#endif
     static int16 to_int16(const char16* value);
     static int16 to_int16(char16* value);
     static int16 to_int16(const char32* value);
@@ -2856,6 +2924,7 @@ namespace xtd {
     /// int32 result = convert::to_int32(value);
     /// @endcode
     static int32 to_int32(char value) noexcept;
+#if defined(__cpp_lib_char8_t)
     /// @brief Convert char8 to int32.
     /// @param value object to convert.
     /// @return A new int32 object converted from value.
@@ -2865,6 +2934,7 @@ namespace xtd {
     /// int32 result = convert::to_int32(value);
     /// @endcode
     static int32 to_int32(char8 value) noexcept;
+#endif
     /// @brief Convert char16 to int32.
     /// @param value object to convert.
     /// @return A new int32 object converted from value.
@@ -3033,14 +3103,18 @@ namespace xtd {
     static int32 to_int32(const xtd::ustring& value, xtd::byte from_base);
     /// @cond
     static int32 to_int32(const std::string& value);
+#if defined(__cpp_lib_char8_t)
     static int32 to_int32(const std::u8string& value);
+#endif
     static int32 to_int32(const std::u16string& value);
     static int32 to_int32(const std::u32string& value);
     static int32 to_int32(const std::wstring& value);
     static int32 to_int32(const char* value);
     static int32 to_int32(char* value);
+#if defined(__cpp_lib_char8_t)
     static int32 to_int32(const char8* value);
     static int32 to_int32(char8* value);
+#endif
     static int32 to_int32(const char16* value);
     static int32 to_int32(char16* value);
     static int32 to_int32(const char32* value);
@@ -3097,6 +3171,7 @@ namespace xtd {
     /// int64 result = convert::to_int64(value);
     /// @endcode
     static int64 to_int64(char value) noexcept;
+#if defined(__cpp_lib_char8_t)
     /// @brief Convert char8 to int64.
     /// @param value object to convert.
     /// @return A new int64 object converted from value.
@@ -3106,6 +3181,7 @@ namespace xtd {
     /// int64 result = convert::to_int64(value);
     /// @endcode
     static int64 to_int64(char8 value) noexcept;
+#endif
     /// @brief Convert char16 to int64.
     /// @param value object to convert.
     /// @return A new int64 object converted from value.
@@ -3269,14 +3345,18 @@ namespace xtd {
     static int64 to_int64(const xtd::ustring& value, xtd::byte from_base);
     /// @cond
     static int64 to_int64(const std::string& value);
+#if defined(__cpp_lib_char8_t)
     static int64 to_int64(const std::u8string& value);
+#endif
     static int64 to_int64(const std::u16string& value);
     static int64 to_int64(const std::u32string& value);
     static int64 to_int64(const std::wstring& value);
     static int64 to_int64(const char* value);
     static int64 to_int64(char* value);
+#if defined(__cpp_lib_char8_t)
     static int64 to_int64(const char8* value);
     static int64 to_int64(char8* value);
+#endif
     static int64 to_int64(const char16* value);
     static int64 to_int64(char16* value);
     static int64 to_int64(const char32* value);
@@ -3333,6 +3413,7 @@ namespace xtd {
     /// slong result = convert::to_llong(value);
     /// @endcode
     static slong to_llong(char value) noexcept;
+#if defined(__cpp_lib_char8_t)
     /// @brief Convert char8 to slong.
     /// @param value object to convert.
     /// @return A new slong object converted from value.
@@ -3342,6 +3423,7 @@ namespace xtd {
     /// slong result = convert::to_llong(value);
     /// @endcode
     static slong to_llong(char8 value) noexcept;
+#endif
     /// @brief Convert char16 to slong.
     /// @param value object to convert.
     /// @return A new slong object converted from value.
@@ -3505,14 +3587,18 @@ namespace xtd {
     static slong to_llong(const xtd::ustring& value, xtd::byte from_base);
     /// @cond
     static slong to_llong(const std::string& value);
+#if defined(__cpp_lib_char8_t)
     static slong to_llong(const std::u8string& value);
+#endif
     static slong to_llong(const std::u16string& value);
     static slong to_llong(const std::u32string& value);
     static slong to_llong(const std::wstring& value);
     static slong to_llong(const char* value);
     static slong to_llong(char* value);
+#if defined(__cpp_lib_char8_t)
     static slong to_llong(const char8* value);
     static slong to_llong(char8* value);
+#endif
     static slong to_llong(const char16* value);
     static slong to_llong(char16* value);
     static slong to_llong(const char32* value);
@@ -3569,6 +3655,7 @@ namespace xtd {
     /// sbyte result = convert::to_sbyte(value);
     /// @endcode
     static sbyte to_sbyte(char value) noexcept;
+#if defined(__cpp_lib_char8_t)
     /// @brief Convert char8 to sbyte.
     /// @param value object to convert.
     /// @return A new sbyte object converted from value.
@@ -3578,6 +3665,7 @@ namespace xtd {
     /// sbyte result = convert::to_sbyte(value);
     /// @endcode
     static sbyte to_sbyte(char8 value) noexcept;
+#endif
     /// @brief Convert char16 to sbyte.
     /// @param value object to convert.
     /// @return A new sbyte object converted from value.
@@ -3754,14 +3842,18 @@ namespace xtd {
     static sbyte to_sbyte(const xtd::ustring& value, xtd::byte from_base);
     /// @cond
     static sbyte to_sbyte(const std::string& value);
+#if defined(__cpp_lib_char8_t)
     static sbyte to_sbyte(const std::u8string& value);
+#endif
     static sbyte to_sbyte(const std::u16string& value);
     static sbyte to_sbyte(const std::u32string& value);
     static sbyte to_sbyte(const std::wstring& value);
     static sbyte to_sbyte(const char* value);
     static sbyte to_sbyte(char* value);
+#if defined(__cpp_lib_char8_t)
     static sbyte to_sbyte(const char8* value);
     static sbyte to_sbyte(char8* value);
+#endif
     static sbyte to_sbyte(const char16* value);
     static sbyte to_sbyte(char16* value);
     static sbyte to_sbyte(const char32* value);
@@ -3818,6 +3910,7 @@ namespace xtd {
     /// uint16 result = convert::to_uint16(value);
     /// @endcode
     static uint16 to_uint16(char value) noexcept;
+#if defined(__cpp_lib_char8_t)
     /// @brief Convert char8 to uint16.
     /// @param value object to convert.
     /// @return A new uint16 object converted from value.
@@ -3827,6 +3920,7 @@ namespace xtd {
     /// uint16 result = convert::to_uint16(value);
     /// @endcode
     static uint16 to_uint16(char8 value) noexcept;
+#endif
     /// @brief Convert char16 to uint16.
     /// @param value object to convert.
     /// @return A new uint16 object converted from value.
@@ -4000,14 +4094,18 @@ namespace xtd {
     static uint16 to_uint16(const xtd::ustring& value, xtd::byte from_base);
     /// @cond
     static uint16 to_uint16(const std::string& value);
+#if defined(__cpp_lib_char8_t)
     static uint16 to_uint16(const std::u8string& value);
+#endif
     static uint16 to_uint16(const std::u16string& value);
     static uint16 to_uint16(const std::u32string& value);
     static uint16 to_uint16(const std::wstring& value);
     static uint16 to_uint16(const char* value);
     static uint16 to_uint16(char* value);
+#if defined(__cpp_lib_char8_t)
     static uint16 to_uint16(const char8* value);
     static uint16 to_uint16(char8* value);
+#endif
     static uint16 to_uint16(const char16* value);
     static uint16 to_uint16(char16* value);
     static uint16 to_uint16(const char32* value);
@@ -4064,6 +4162,7 @@ namespace xtd {
     /// uint32 result = convert::to_uint32(value);
     /// @endcode
     static uint32 to_uint32(char value) noexcept;
+#if defined(__cpp_lib_char8_t)
     /// @brief Convert char8 to uint32.
     /// @param value object to convert.
     /// @return A new uint32 object converted from value.
@@ -4073,6 +4172,7 @@ namespace xtd {
     /// uint32 result = convert::to_uint32(value);
     /// @endcode
     static uint32 to_uint32(char8 value) noexcept;
+#endif
     /// @brief Convert char16 to uint32.
     /// @param value object to convert.
     /// @return A new uint32 object converted from value.
@@ -4244,14 +4344,18 @@ namespace xtd {
     static uint32 to_uint32(const xtd::ustring& value, xtd::byte from_base);
     /// @cond
     static uint32 to_uint32(const std::string& value);
+#if defined(__cpp_lib_char8_t)
     static uint32 to_uint32(const std::u8string& value);
+#endif
     static uint32 to_uint32(const std::u16string& value);
     static uint32 to_uint32(const std::u32string& value);
     static uint32 to_uint32(const std::wstring& value);
     static uint32 to_uint32(const char* value);
     static uint32 to_uint32(char* value);
+#if defined(__cpp_lib_char8_t)
     static uint32 to_uint32(const char8* value);
     static uint32 to_uint32(char8* value);
+#endif
     static uint32 to_uint32(const char16* value);
     static uint32 to_uint32(char16* value);
     static uint32 to_uint32(const char32* value);
@@ -4308,6 +4412,7 @@ namespace xtd {
     /// uint64 result = convert::to_uint64(value);
     /// @endcode
     static uint64 to_uint64(char value) noexcept;
+#if defined(__cpp_lib_char8_t)
     /// @brief Convert char8 to uint64.
     /// @param value object to convert.
     /// @return A new uint64 object converted from value.
@@ -4317,6 +4422,7 @@ namespace xtd {
     /// uint64 result = convert::to_uint64(value);
     /// @endcode
     static uint64 to_uint64(char8 value) noexcept;
+#endif
     /// @brief Convert char16 to uint64.
     /// @param value object to convert.
     /// @return A new uint64 object converted from value.
@@ -4486,14 +4592,18 @@ namespace xtd {
     static uint64 to_uint64(const xtd::ustring& value, xtd::byte from_base);
     /// @cond
     static uint64 to_uint64(const std::string& value);
+#if defined(__cpp_lib_char8_t)
     static uint64 to_uint64(const std::u8string& value);
+#endif
     static uint64 to_uint64(const std::u16string& value);
     static uint64 to_uint64(const std::u32string& value);
     static uint64 to_uint64(const std::wstring& value);
     static uint64 to_uint64(const char* value);
     static uint64 to_uint64(char* value);
+#if defined(__cpp_lib_char8_t)
     static uint64 to_uint64(const char8* value);
     static uint64 to_uint64(char8* value);
+#endif
     static uint64 to_uint64(const char16* value);
     static uint64 to_uint64(char16* value);
     static uint64 to_uint64(const char32* value);
@@ -4550,6 +4660,7 @@ namespace xtd {
     /// xtd::ulong result = convert::to_ullong(value);
     /// @endcode
     static xtd::ulong to_ullong(char value) noexcept;
+#if defined(__cpp_lib_char8_t)
     /// @brief Convert char8 to xtd::ulong.
     /// @param value object to convert.
     /// @return A new xtd::ulong object converted from value.
@@ -4559,6 +4670,7 @@ namespace xtd {
     /// xtd::ulong result = convert::to_ullong(value);
     /// @endcode
     static xtd::ulong to_ullong(char8 value) noexcept;
+#endif
     /// @brief Convert char16 to xtd::ulong.
     /// @param value object to convert.
     /// @return A new xtd::ulong object converted from value.
@@ -4728,14 +4840,18 @@ namespace xtd {
     static xtd::ulong to_ullong(const xtd::ustring& value, xtd::byte from_base);
     /// @cond
     static xtd::ulong to_ullong(const std::string& value);
+#if defined(__cpp_lib_char8_t)
     static xtd::ulong to_ullong(const std::u8string& value);
+#endif
     static xtd::ulong to_ullong(const std::u16string& value);
     static xtd::ulong to_ullong(const std::u32string& value);
     static xtd::ulong to_ullong(const std::wstring& value);
     static xtd::ulong to_ullong(const char* value);
     static xtd::ulong to_ullong(char* value);
+#if defined(__cpp_lib_char8_t)
     static xtd::ulong to_ullong(const char8* value);
     static xtd::ulong to_ullong(char8* value);
+#endif
     static xtd::ulong to_ullong(const char16* value);
     static xtd::ulong to_ullong(char16* value);
     static xtd::ulong to_ullong(const char32* value);
@@ -4803,6 +4919,7 @@ namespace xtd {
     /// ustring result = convert::to_string(value);
     /// @endcode
     static ustring to_string(char value) noexcept;
+#if defined(__cpp_lib_char8_t)
     /// @brief Convert char8 to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.
@@ -4812,6 +4929,7 @@ namespace xtd {
     /// ustring result = convert::to_string(value);
     /// @endcode
     static ustring to_string(char8 value) noexcept;
+#endif
     /// @brief Convert char16 to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.
@@ -5069,14 +5187,18 @@ namespace xtd {
     static ustring to_string(const xtd::ustring& value);
     /// @cond
     static ustring to_string(const std::string& value);
+#if defined(__cpp_lib_char8_t)
     static ustring to_string(const std::u8string& value);
+#endif
     static ustring to_string(const std::u16string& value);
     static ustring to_string(const std::u32string& value);
     static ustring to_string(const std::wstring& value);
     static ustring to_string(const char* value);
     static ustring to_string(char* value);
+#if defined(__cpp_lib_char8_t)
     static ustring to_string(const char8* value);
     static ustring to_string(char8* value);
+#endif
     static ustring to_string(const char16* value);
     static ustring to_string(char16* value);
     static ustring to_string(const char32* value);
@@ -5144,6 +5266,7 @@ namespace xtd {
     /// ustring result = convert::to_ustring(value);
     /// @endcode
     static ustring to_ustring(char value) noexcept;
+#if defined(__cpp_lib_char8_t)
     /// @brief Convert char8 to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.
@@ -5153,6 +5276,7 @@ namespace xtd {
     /// ustring result = convert::to_ustring(value);
     /// @endcode
     static ustring to_ustring(char8 value) noexcept;
+#endif
     /// @brief Convert char16 to ustring.
     /// @param value object to convert.
     /// @return A new ustring object converted from value.
@@ -5410,14 +5534,18 @@ namespace xtd {
     static ustring to_ustring(const xtd::ustring& value);
     /// @cond
     static ustring to_ustring(const std::string& value);
+#if defined(__cpp_lib_char8_t)
     static ustring to_ustring(const std::u8string& value);
+#endif
     static ustring to_ustring(const std::u16string& value);
     static ustring to_ustring(const std::u32string& value);
     static ustring to_ustring(const std::wstring& value);
     static ustring to_ustring(const char* value);
     static ustring to_ustring(char* value);
+#if defined(__cpp_lib_char8_t)
     static ustring to_ustring(const char8* value);
     static ustring to_ustring(char8* value);
+#endif
     static ustring to_ustring(const char16* value);
     static ustring to_ustring(char16* value);
     static ustring to_ustring(const char32* value);

@@ -65,6 +65,7 @@ namespace xtd {
   template<>
   inline const char* unboxing<char>(ustring& value) {return value.c_str();}
   
+#if defined(__cpp_lib_char8_t)
   template<>
   inline const char8* unboxing<char8>(const ustring& value) {
     thread_local static std::u8string result;
@@ -77,6 +78,7 @@ namespace xtd {
     result = convert_string::to_u8string(value);
     return result.c_str();
   }
+#endif
   
   template<>
   inline const char16* unboxing<char16>(const ustring& value) {
@@ -143,12 +145,16 @@ namespace xtd {
    */
 
   inline char unboxing(const char& value) noexcept {return value;}
+#if defined(__cpp_lib_char8_t)
   inline char8 unboxing(const char8& value) noexcept {return value;}
+#endif
   inline char16 unboxing(const char16& value) noexcept {return value;}
   inline char32 unboxing(const char32& value) noexcept {return value;}
   inline wchar unboxing(const wchar& value) noexcept {return value;}
   inline char unboxing(char& value) noexcept {return value;}
+#if defined(__cpp_lib_char8_t)
   inline char8 unboxing(char8& value) noexcept {return value;}
+#endif
   inline char16 unboxing(char16& value) noexcept {return value;}
   inline char32 unboxing(char32& value) noexcept {return value;}
   inline wchar unboxing(wchar& value) noexcept {return value;}

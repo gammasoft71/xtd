@@ -7,7 +7,7 @@ using namespace xtd;
 namespace guidgen {
   class program final static_ {
   public:
-    static auto main(auto args) {
+    static auto main(const std::vector<ustring>& args) {
       auto format = ustring::empty_string;
       auto count = 1;
       auto show_help = false;
@@ -57,7 +57,7 @@ namespace guidgen {
       return ustring::format("guidgen version {}, (c) {:L} by Gammasoft", environment::version(), date_time::now());
     }
     
-    static auto process_arguments(auto args, auto& format, auto& count, auto& show_version, auto& show_help) noexcept {
+    static auto process_arguments(const std::vector<ustring>& args, ustring& format, int& count, bool& show_version, bool& show_help) noexcept->bool {
       try {
         for (auto index = 0U; index < args.size(); index += 1) {
           static constexpr auto format_types = {"N", "D", "B", "P", "X"};

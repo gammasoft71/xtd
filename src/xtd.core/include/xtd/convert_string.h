@@ -68,6 +68,7 @@ namespace xtd {
     /// string s2 = string_converter::to_string(s1);
     /// @endcode
     static std::string to_string(const xtd::ustring& str) noexcept;
+#if defined(__cpp_lib_char8_t)
     /// @brief Converts std::u8string to std::string.
     /// @param str string to convert.
     /// @return The converted string.
@@ -101,6 +102,7 @@ namespace xtd {
     /// string s1 = string_converter::to_string(c1);
     /// @endcode
     static std::string to_string(char8* str) noexcept;
+#endif
     /// @brief Converts std::u16string to std::string.
     /// @param str string to convert.
     /// @return The converted string.
@@ -245,6 +247,7 @@ namespace xtd {
     /// ustring s2 = string_converter::to_ustring(s1);
     /// @endcode
     static const xtd::ustring& to_ustring(const xtd::ustring& str) noexcept;
+#if defined(__cpp_lib_char8_t)
     /// @brief Converts std::u8string to xtd::ustring.
     /// @param str string to convert.
     /// @return The converted string.
@@ -278,6 +281,7 @@ namespace xtd {
     /// ustring s1 = string_converter::to_ustring(c1);
     /// @endcode
     static xtd::ustring to_ustring(char8* str) noexcept;
+#endif
     /// @brief Converts std::u16string to xtd::ustring.
     /// @param str string to convert.
     /// @return The converted string.
@@ -373,6 +377,7 @@ namespace xtd {
     /// @endcode
     static xtd::ustring to_ustring(wchar* str) noexcept;
     
+#if defined(__cpp_lib_char8_t)
     /// @brief Converts std::string to std::u8string.
     /// @param str string to convert.
     /// @return The converted string.
@@ -415,6 +420,7 @@ namespace xtd {
     /// u8string s2 = string_converter::to_u8string(s1);
     /// @endcode
     static std::u8string to_u8string(const xtd::ustring& str) noexcept;
+#if defined(__cpp_lib_char8_t)
     /// @brief Converts std::u8string to std::u8string.
     /// @param str string to convert.
     /// @return The converted string.
@@ -442,6 +448,7 @@ namespace xtd {
     /// @remarks This method is used to convert string container to another.
     /// @warning The content of the string must be encoded in UTF-8 (65001) format. Make sure it is, otherwise the result will be uncertain.
     static std::u8string to_u8string(char8* str) noexcept;
+#endif
     /// @brief Converts std::u16string to std::u8string.
     /// @param str string to convert.
     /// @return The converted string.
@@ -535,6 +542,7 @@ namespace xtd {
     /// u8string s1 = string_converter::to_u8string(c1);
     /// @endcode
     static std::u8string to_u8string(wchar* str) noexcept;
+#endif
     
     /// @brief Converts std::string to std::u16string.
     /// @param str string to convert.
@@ -578,6 +586,7 @@ namespace xtd {
     /// u16string s2 = string_converter::to_u16string(s1);
     /// @endcode
     static std::u16string to_u16string(const xtd::ustring& str) noexcept;
+#if defined(__cpp_lib_char8_t)
     /// @brief Converts std::u8string to std::u16string.
     /// @param str string to convert.
     /// @return The converted string.
@@ -611,6 +620,7 @@ namespace xtd {
     /// u16string s1 = string_converter::to_u16string(c1);
     /// @endcode
     static std::u16string to_u16string(char8* str) noexcept;
+#endif
     /// @brief Converts std::u16string to std::u16string.
     /// @param str string to convert.
     /// @return The converted string.
@@ -747,6 +757,7 @@ namespace xtd {
     /// u32string s2 = string_converter::to_u32string(s1);
     /// @endcode
     static std::u32string to_u32string(const xtd::ustring& str) noexcept;
+#if defined(__cpp_lib_char8_t)
     /// @brief Converts std::u8string to std::u32string.
     /// @param str string to convert.
     /// @return The converted string.
@@ -778,6 +789,7 @@ namespace xtd {
     /// u32string s1 = string_converter::to_u32string(c1);
     /// @endcode
     static std::u32string to_u32string(char8* str) noexcept;
+#endif
     /// @brief Converts std::u16string to std::u32string.
     /// @param str string to convert.
     /// @return The converted string.
@@ -914,6 +926,7 @@ namespace xtd {
     /// wstring s2 = string_converter::to_wstring(s1);
     /// @endcode
     static std::wstring to_wstring(const xtd::ustring& str) noexcept;
+#if defined(__cpp_lib_char8_t)
     /// @brief Converts std::u8string to std::wstring.
     /// @param str string to convert.
     /// @return The converted string.
@@ -945,6 +958,7 @@ namespace xtd {
     /// wstring s1 = string_converter::to_wstring(c1);
     /// @endcode
     static std::wstring to_wstring(char8* str) noexcept;
+#endif
     /// @brief Converts std::u16string to std::wstring.
     /// @param str string to convert.
     /// @return The converted string.

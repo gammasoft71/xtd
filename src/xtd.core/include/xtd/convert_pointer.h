@@ -9,6 +9,11 @@
 #include "argument_null_exception.h"
 #include "invalid_cast_exception.h"
 
+/// @cond
+template<typename new_type_t, typename current_type_t>
+new_type_t* __convert_value__(current_type_t* value);
+/// @endcond
+
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Represents API to convert pointers.
@@ -328,7 +333,7 @@ namespace xtd {
     template<typename new_type_t, typename current_type_t>
     static std::unique_ptr<new_type_t> to_unique_ptr(std::unique_ptr<current_type_t>& value) {
       try {
-        return std::unique_ptr<new_type_t>(as<new_type_t>(value.release()));
+        return std::unique_ptr<new_type_t>(__convert_value__<new_type_t>(value.release()));
       } catch (const std::exception& e) {
         throw invalid_cast_exception(e.what(), csf_);
       }
@@ -349,7 +354,7 @@ namespace xtd {
     template<typename new_type_t, typename current_type_t>
     static std::unique_ptr<new_type_t> to_unique_ptr(std::unique_ptr<current_type_t>&& value) {
       try {
-        return std::unique_ptr<new_type_t>(as<new_type_t>(value.release()));
+        return std::unique_ptr<new_type_t>(__convert_value__<new_type_t>(value.release()));
       } catch (const std::exception& e) {
         throw invalid_cast_exception(e.what(), csf_);
       }

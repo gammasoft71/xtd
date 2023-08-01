@@ -44,6 +44,7 @@ namespace xtd {
   /// @endcode
   xtd::byte operator""_b(const char* s, size_t n);
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
   /// xtd
@@ -55,6 +56,7 @@ namespace xtd {
   /// std::cout << u8"125"_b << std::endl;
   /// @endcode
   xtd::byte operator""_b(const char8* s, size_t n);
+#endif
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -128,6 +130,7 @@ namespace xtd {
   /// @endcode
   double operator""_d(const char* s, size_t n);
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
   /// xtd
@@ -139,6 +142,7 @@ namespace xtd {
   /// std::cout << u8"125"_d << std::endl;
   /// @endcode
   double operator""_d(const char8* s, size_t n);
+#endif
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -212,6 +216,7 @@ namespace xtd {
   /// @endcode
   float operator""_f(const char* s, size_t n);
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
   /// xtd
@@ -223,6 +228,7 @@ namespace xtd {
   /// std::cout << u8"125"_f << std::endl;
   /// @endcode
   float operator""_f(const char8* s, size_t n);
+#endif
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -398,6 +404,7 @@ namespace xtd {
   /// @endcode
   xtd::ustring operator""_s(const char* s, size_t n);
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Used to convert specified value into xtd::ustring.
   /// @par Namespace
   /// xtd
@@ -410,6 +417,7 @@ namespace xtd {
   /// std::cout << s << std::endl;
   /// @endcode
   xtd::ustring operator""_s(const char8* s, size_t n);
+#endif
   
   /// @brief Used to convert specified value into xtd::ustring.
   /// @par Namespace
@@ -720,6 +728,7 @@ namespace xtd {
   /// @endcode
   sbyte operator""_s8(const char* s, size_t n);
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
   /// xtd
@@ -731,6 +740,7 @@ namespace xtd {
   /// std::cout << u8"125"_s8 << std::endl;
   /// @endcode
   sbyte operator""_s8(const char8* s, size_t n);
+#endif
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -804,6 +814,7 @@ namespace xtd {
   /// @endcode
   int16 operator""_s16(const char* s, size_t n);
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
   /// xtd
@@ -815,6 +826,7 @@ namespace xtd {
   /// std::cout << u8"125"_s16 << std::endl;
   /// @endcode
   int16 operator""_s16(const char8* s, size_t n);
+#endif
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -888,6 +900,7 @@ namespace xtd {
   /// @endcode
   int32 operator""_s32(const char* s, size_t n);
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
   /// xtd
@@ -899,6 +912,7 @@ namespace xtd {
   /// std::cout << u8"125"_s32 << std::endl;
   /// @endcode
   int32 operator""_s32(const char8* s, size_t n);
+#endif
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -972,6 +986,7 @@ namespace xtd {
   /// @endcode
   int64 operator""_s64(const char* s, size_t n);
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
   /// xtd
@@ -983,6 +998,7 @@ namespace xtd {
   /// std::cout << u8"125"_s64 << std::endl;
   /// @endcode
   int64 operator""_s64(const char8* s, size_t n);
+#endif
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -1028,6 +1044,7 @@ namespace xtd {
   /// @ingroup xtd_core literals translate
   const char* operator""_t(const char* s, size_t n) noexcept;
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Used to translate specified string into locale.
   /// @par Namespace
   /// xtd
@@ -1035,6 +1052,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core literals translate
   xtd::ustring operator""_t(const char8* s, size_t n) noexcept;
+#endif
   
   /// @brief Used to translate specified string into locale.
   /// @par Namespace
@@ -1109,6 +1127,7 @@ namespace xtd {
   /// @endcode
   xtd::byte operator""_u8(const char* s, size_t n);
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
   /// xtd
@@ -1120,6 +1139,7 @@ namespace xtd {
   /// std::cout << u8"125"_u8 << std::endl;
   /// @endcode
   xtd::byte operator""_u8(const char8* s, size_t n);
+#endif
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -1193,6 +1213,7 @@ namespace xtd {
   /// @endcode
   uint16 operator""_u16(const char* s, size_t n);
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
   /// xtd
@@ -1204,6 +1225,7 @@ namespace xtd {
   /// std::cout << u8"125"_u16 << std::endl;
   /// @endcode
   uint16 operator""_u16(const char8* s, size_t n);
+#endif
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -1277,6 +1299,7 @@ namespace xtd {
   /// @endcode
   uint32 operator""_u32(const char* s, size_t n);
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
   /// xtd
@@ -1288,6 +1311,7 @@ namespace xtd {
   /// std::cout << u8"125"_u32 << std::endl;
   /// @endcode
   uint32 operator""_u32(const char8* s, size_t n);
+#endif
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
@@ -1361,6 +1385,7 @@ namespace xtd {
   /// @endcode
   uint64 operator""_u64(const char* s, size_t n);
   
+#if defined(__cpp_lib_char8_t)
   /// @brief Used to convert specified value into byte.
   /// @par Namespace
   /// xtd
@@ -1372,6 +1397,7 @@ namespace xtd {
   /// std::cout << u8"125"_u64 << std::endl;
   /// @endcode
   uint64 operator""_u64(const char8* s, size_t n);
+#endif
   
   /// @brief Used to convert specified value into byte.
   /// @par Namespace

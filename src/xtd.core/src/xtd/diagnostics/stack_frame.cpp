@@ -106,7 +106,7 @@ std::vector<stack_frame> stack_frame::get_stack_frames(const ustring& str, size_
     skip_frames_before_str = call_stack.size();
     for (size_t index = 0; index < call_stack.size(); ++index) {
       auto [file, line, column, function, offset] = call_stack[index];
-      if (function.starts_with(str)) {
+      if (ustring {function}.starts_with(str)) {
         skip_frames_before_str = index;
         break;
       }
