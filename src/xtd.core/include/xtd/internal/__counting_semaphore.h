@@ -86,6 +86,8 @@ namespace std {
     std::condition_variable condition_;
     std::ptrdiff_t count_;
   };
+  
+  using binary_semaphore = std::counting_semaphore<1>;
 }
 #endif
 /// @endcond
