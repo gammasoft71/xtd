@@ -31,7 +31,7 @@ namespace tutorial {
       button_plus_.click += [&] {
         count++;
         control& form = parent().value().get();
-        as<panel_right&>(form.controls()[0].get()).label_.text(xtd::ustring::format("{}", count));
+        xtd::as<panel_right&>(form.controls()[0].get()).label_.text(xtd::ustring::format("{}", count));
       };
       
       button_minus_.auto_repeat(true);
@@ -40,7 +40,7 @@ namespace tutorial {
       button_minus_.click += [&] {
         count--;
         control& form = parent().value().get();
-        as<panel_right&>(form.controls()[0].get()).label_.text(xtd::ustring::format("{}", count));
+        xtd::as<panel_right&>(form.controls()[0].get()).label_.text(xtd::ustring::format("{}", count));
       };
     }
     

@@ -127,7 +127,7 @@ namespace colors_example {
       };
     }
     
-    void color(auto value) {
+    void color(const xtd::drawing::color& value) {
       if (color_ != value) {
         color_ = value;
         on_color_changed(xtd::event_args::empty);

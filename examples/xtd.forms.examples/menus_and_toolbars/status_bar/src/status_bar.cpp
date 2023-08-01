@@ -41,7 +41,7 @@ namespace status_bar_example {
     }
     
   private:
-    static auto image_from_color(auto color)->image {
+    static auto image_from_color(const xtd::drawing::color& color)->image {
       auto colored_bitmap = bitmap{16, 16};
       auto g = graphics::from_image(colored_bitmap);
       g.fill_ellipse(solid_brush(color), 0, 0, colored_bitmap.width(), colored_bitmap.height());

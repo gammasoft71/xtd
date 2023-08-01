@@ -7,7 +7,7 @@ using namespace xtd;
 namespace main_example {
   class program {
   public:
-    static auto main(auto args) {
+    static auto main(const vector<ustring>& args) {
       auto number = 0;
       if (args.size() != 1 || try_parse(args[0], number) == false || number < 0 || number > 20) {
         console::write_line("Please enter an integer argument betwween 0 and 20.");

@@ -11,7 +11,7 @@ namespace environment_program_exit_example {
   class program static_ {
   public:
     // The main entry point for the application.
-    static auto main(auto args) {
+    static auto main(const vector<ustring>& args) {
       environment::program_exit += [](auto e) {
         console::write_line("The program is stopped {}ly!", e.exit_mode());
       };
