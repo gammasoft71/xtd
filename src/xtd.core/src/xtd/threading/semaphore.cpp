@@ -90,12 +90,13 @@ int32 semaphore::release(int32 release_count) {
 }
 
 bool semaphore::try_open_existing(const ustring& name, semaphore& result) noexcept {
+  result.close();
   if (ustring::is_empty(name)) return false;
   if (name.size() > native::named_semaphore::max_name_size()) return false;
   auto new_semaphore = semaphore {};
   new_semaphore.name_ = name;
   new_semaphore.semaphore_ = std::make_shared<semaphore::named_semaphore>();
-  if (new_semaphore.semaphore_->open(new_semaphore.name_)) return false;
+  if (!new_semaphore.semaphore_->open(new_semaphore.name_)) return false;
   result = new_semaphore;
   return true;
 }
