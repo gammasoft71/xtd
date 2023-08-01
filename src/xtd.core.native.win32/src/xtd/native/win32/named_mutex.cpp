@@ -11,6 +11,10 @@ using namespace xtd::native;
 
 intmax_t named_mutex::create(bool initially_owned, const std::string& name) {
   auto handle = CreateMutex(nullptr, initially_owned, win32::strings::to_wstring(name).c_str());
+  if (handle != INVALID_HANDLE_VALUE && GetLastError() == ERROR_ALREADY_EXISTS) {
+    CloseHandle(handle);
+    return reinterpret_cast<intmax_t>(INVALID_HANDLE_VALUE);
+  }
   return reinterpret_cast<intmax_t>(handle);
 }
 
@@ -25,6 +29,7 @@ size_t named_mutex::max_name_size() {
 
 intmax_t named_mutex::open(const std::string& name) {
   auto handle = OpenMutex(MUTEX_ALL_ACCESS, FALSE, win32::strings::to_wstring(name).c_str());
+  if (handle == nullptr) handle = INVALID_HANDLE_VALUE;
   return reinterpret_cast<intmax_t>(handle);
 }
 
