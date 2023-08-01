@@ -8,6 +8,10 @@ using namespace xtd::tunit;
 namespace xtd::tests {
   class test_class_(mutex_tests) {
   public:
+    static void class_initialize_(class_initialize) {
+      auto m = mutex {false, "xtd_mutex_test"};
+    }
+
     void test_method_(constructor) {
       auto m1 = mutex {};
       auto m2 = mutex {};
@@ -81,6 +85,33 @@ namespace xtd::tests {
       auto m1 = mutex {false, "xtd_mutex_test"};
       auto m2 = m1;
       assert::are_equal(m2.handle(), m1.handle(), csf_);
+    }
+
+    void test_method_(create_two_mutex_with_same_name) {
+      auto m1 = mutex {true, "xtd_mutex_test"};
+      auto thread_ran = false;
+      auto thread = std::thread {[&] {
+        auto m2 = mutex {false, "xtd_mutex_test"};
+        assert::is_false(m2.wait_one(0), csf_);
+        thread_ran = true;
+      }};
+      thread.join();
+      assert::is_true(thread_ran, csf_);
+    }
+
+    void test_method_(create_two_mutex_with_same_name_and_created_new) {
+      auto created_new = false;
+      auto m1 = mutex {true, "xtd_mutex_test", created_new};
+      assert::is_true(created_new, csf_);
+      auto thread_ran = false;
+      auto thread = std::thread {[&] {
+        auto m2 = mutex {false, "xtd_mutex_test", created_new};
+        assert::is_false(created_new, csf_);
+        assert::is_false(m2.wait_one(0), csf_);
+        thread_ran = true;
+      }};
+      thread.join();
+      assert::is_true(thread_ran, csf_);
     }
 
     void test_method_(wait_one) {
