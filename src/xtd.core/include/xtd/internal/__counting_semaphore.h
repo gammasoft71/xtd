@@ -20,9 +20,10 @@
 #include <condition_variable>
 
 namespace std {
+  template<std::ptrdiff_t least_max_value = std::numeric_limits<std::ptrdiff_t>::max()>
   class counting_semaphore {
   public:
-    constexpr std::ptrdiff_t max() noexcept {return std::numeric_limits<std::ptrdiff_t>::max();}
+    static constexpr std::ptrdiff_t max() noexcept {return least_max_value;}
     explicit counting_semaphore(std::ptrdiff_t desired = 0) : count_(desired) {}
     counting_semaphore(const counting_semaphore&) = delete;
     
@@ -85,7 +86,6 @@ namespace std {
     std::condition_variable condition_;
     std::ptrdiff_t count_;
   };
-}
 }
 #endif
 /// @endcond
