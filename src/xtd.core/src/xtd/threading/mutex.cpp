@@ -67,6 +67,7 @@ void mutex::release_mutex() {
 }
 
 bool mutex::try_open_existing(const ustring& name, mutex& result) noexcept {
+  result.close();
   if (ustring::is_empty(name)) return false;
   if (name.size() > native::named_mutex::max_name_size()) return false;
   auto new_mutex = mutex {};
