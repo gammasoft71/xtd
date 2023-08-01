@@ -46,7 +46,7 @@ private:
    * It then displays the type of address family supported by the server and its
    * IP address in standard and byte format.
    **/
-  static void ip_addresses(auto server) {
+  static void ip_addresses(const ustring& server) {
     try {
       // Get server related information.
       auto heserver = dns::get_host_entry(server);

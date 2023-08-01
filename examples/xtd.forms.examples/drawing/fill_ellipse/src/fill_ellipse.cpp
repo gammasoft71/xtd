@@ -50,7 +50,7 @@ namespace fill_ellipse_example {
     }
     
   private:
-    auto create_circle_texture(auto fore_color, auto back_color)->image {
+    auto create_circle_texture(const color& fore_color, const color& back_color)->image {
       auto texture = bitmap {16, 16};
       auto graphics = texture.create_graphics();
       graphics.fill_ellipse(solid_brush {back_color}, 1, 1, texture.width() - 2, texture.height() - 2);

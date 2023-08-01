@@ -3,7 +3,7 @@
 using namespace std;
 using namespace xtd;
 
-auto fibonacci_series(auto n) noexcept {
+auto fibonacci_series(int n) noexcept {
   auto numbers = vector {0};
   auto a = 1, b = 1;
   while (a < n) {

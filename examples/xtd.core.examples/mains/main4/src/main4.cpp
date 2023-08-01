@@ -7,7 +7,7 @@ using namespace xtd;
 namespace main4_example {
   class program {
   public:
-    static int main(auto args) {
+    static int main(const std::vector<ustring>& args) {
       // Write arguments to the console output
       for (auto arg : args)
         console::write_line(arg);

@@ -77,7 +77,7 @@ namespace background_worker_example {
       
       worker.progress_changed += [&](object & sender, const progress_changed_event_args & e) {
         progress.value(e.progress_percentage());
-        progress_text.append_text(ustring::format("{}{}", any_cast<ustring>(e.user_state()), environment::new_line()));
+        progress_text.append_text(ustring::format("{}{}", std::any_cast<ustring>(e.user_state()), environment::new_line()));
       };
       
       worker.run_worker_completed += [&](object & sender, const run_worker_completed_event_args & e) {

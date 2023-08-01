@@ -24,7 +24,7 @@ namespace math_example {
       console::write_line("trapezoid left base angle is: {0} Degrees", dy_d);
     }
     
-    math_trapezoid_sample(auto long_base, auto short_base, auto left_leg, auto right_leg) {
+    math_trapezoid_sample(double long_base, double short_base, double left_leg, double right_leg) {
       long_base_ = math::abs(long_base);
       short_base_ = math::abs(short_base);
       left_leg_ = math::abs(left_leg);

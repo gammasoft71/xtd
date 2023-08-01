@@ -7,7 +7,7 @@ using namespace xtd;
 namespace startup_example {
   class program {
   public:
-    static auto main(auto args) {
+    static auto main(const std::vector<ustring>& args) {
       console::write_line("args = {}", ustring::join(", ", args));
       environment::exit_code(42);
     }

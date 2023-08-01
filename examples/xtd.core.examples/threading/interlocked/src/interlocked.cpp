@@ -51,7 +51,7 @@ namespace interlocked_example {
     }
     
     //A simple method that denies reentrancy.
-    static auto use_resource(auto name)->bool {
+    static auto use_resource(const ustring& name)->bool {
       //0 indicates that the method is not in use.
       if (0 == interlocked::exchange(using_resource, 1)) {
         console::write_line("{} acquired the lock", name);

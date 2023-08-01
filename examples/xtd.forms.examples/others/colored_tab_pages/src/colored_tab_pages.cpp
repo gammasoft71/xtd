@@ -33,7 +33,7 @@ public:
   }
   
 private:
-  auto image_from_color(auto size, auto color)->image {
+  auto image_from_color(const drawing::size& size, const color& color)->image {
     auto colored_bitmap = bitmap {size};
     auto g = graphics::from_image(colored_bitmap);
     g.fill_ellipse(solid_brush {color}, 0, 0, colored_bitmap.width(), colored_bitmap.height());
