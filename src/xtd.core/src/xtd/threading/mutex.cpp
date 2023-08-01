@@ -66,7 +66,7 @@ bool mutex::try_open_existing(const ustring& name, mutex& result) noexcept {
   auto new_mutex = mutex {};
   new_mutex.name_ = name;
   new_mutex.mutex_ = std::make_shared<mutex::named_mutex>();
-  if (new_mutex.mutex_->open(new_mutex.name_)) return false;
+  if (!new_mutex.mutex_->open(new_mutex.name_)) return false;
   result = new_mutex;
   return true;
 }
