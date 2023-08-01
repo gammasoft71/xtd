@@ -497,6 +497,7 @@ add_sources(
   include/xtd/internal/__compiler_id.h
   include/xtd/internal/__compiler_version.h
   include/xtd/internal/__cpp_language.h
+  include/xtd/internal/__counting_semaphore.h
   include/xtd/internal/__currency_formatter.h
   include/xtd/internal/__date_time_formatter.h
   include/xtd/internal/__duration_formatter.h
