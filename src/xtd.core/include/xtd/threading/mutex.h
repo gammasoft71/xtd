@@ -47,14 +47,23 @@ namespace xtd {
       /// @brief Initializes a new instance of the xtd::threading::mutex with a bool value that indicates whether the calling thread should have initial ownership of the mutex.
       /// @param initially_owned true to give the calling thread initial ownership of the named system mutex if the named system mutex is created as a result of this call; otherwise, false.
       explicit mutex(bool initially_owned);
-
+      /// @brief Initializes a new instance of the xtd::threading::mutex class with a string that is the name of the mutex.
+      /// @param name The name, if the synchronization object is to be shared with other processes; otherwise, an empty string. The name is case-sensitive. The backslash character (\) and slsh (/) are reserved.
+      /// @exception xtd::io::io_xception name is invalid. This can be for various reasons, including some restrictions that may be placed by the operating system, such as an unknown prefix or invalid characters. Note that the name and common prefixes "Global\" and "Local\" are case-sensitive.<br>-or-<br>There was some other error. The HResult property may provide more information.
+      /// @remarks The initially owned is set to flase.
+      explicit mutex(const ustring& name);
+      /// @brief Initializes a new instance of the xtd::threading::mutex class with a string that is the name of the mutex, and a bool value that, when the method returns, indicates whether the calling thread was granted initial ownership of the mutex.
+      /// @param name The name, if the synchronization object is to be shared with other processes; otherwise, an empty string. The name is case-sensitive. The backslash character (\) and slsh (/) are reserved.
+      /// @param created_new When this method returns, contains a bool that is true if a local mutex was created (that is, if name is empty string) or if the specified named system mutex was created; false if the specified named system mutex already existed.
+      /// @exception xtd::io::io_xception name is invalid. This can be for various reasons, including some restrictions that may be placed by the operating system, such as an unknown prefix or invalid characters. Note that the name and common prefixes "Global\" and "Local\" are case-sensitive.<br>-or-<br>There was some other error. The HResult property may provide more information.
+      /// @remarks The initially owned is set to flase.
+      mutex(const ustring& name, bool& created_new);
       /// @brief Initializes a new instance of the xtd::threading::mutex class with a bool value that indicates whether the calling thread should have initial ownership of the mutex, and a string that is the name of the mutex.
       /// @param initially_owned true to give the calling thread initial ownership of the named system mutex if the named system mutex is created as a result of this call; otherwise, false.
       /// @param name The name, if the synchronization object is to be shared with other processes; otherwise, an empty string. The name is case-sensitive. The backslash character (\) and slsh (/) are reserved.
       /// @exception xtd::io::io_xception name is invalid. This can be for various reasons, including some restrictions that may be placed by the operating system, such as an unknown prefix or invalid characters. Note that the name and common prefixes "Global\" and "Local\" are case-sensitive.<br>-or-<br>There was some other error. The HResult property may provide more information.
       mutex(bool initially_owned, const ustring& name);
-
-      /// @brief Initializes a new instance of the xtd::threading::mutex class with a Boolean value that indicates whether the calling thread should have initial ownership of the mutex, a string that is the name of the mutex, and a Boolean value that, when the method returns, indicates whether the calling thread was granted initial ownership of the mutex.
+      /// @brief Initializes a new instance of the xtd::threading::mutex class with a bool value that indicates whether the calling thread should have initial ownership of the mutex, a string that is the name of the mutex, and a bool value that, when the method returns, indicates whether the calling thread was granted initial ownership of the mutex.
       /// @param initially_owned true to give the calling thread initial ownership of the named system mutex if the named system mutex is created as a result of this call; otherwise, false.
       /// @param name The name, if the synchronization object is to be shared with other processes; otherwise, an empty string. The name is case-sensitive. The backslash character (\) and slsh (/) are reserved.
       /// @param created_new When this method returns, contains a bool that is true if a local mutex was created (that is, if name is empty string) or if the specified named system mutex was created; false if the specified named system mutex already existed.
@@ -63,6 +72,8 @@ namespace xtd {
       /// @}
 
       /// @cond
+      template <typename char_t>
+      explicit mutex(const char_t* name) : mutex(ustring(name)) {}
       ~mutex();
       /// @endcond
 

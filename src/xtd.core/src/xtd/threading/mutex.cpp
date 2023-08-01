@@ -15,6 +15,12 @@ mutex::mutex() : mutex(false) {
 mutex::mutex(bool initially_owned) : mutex(initially_owned, "") {
 }
 
+mutex::mutex(const ustring& name) : mutex(false, name) {
+}
+
+mutex::mutex(const ustring& name, bool& created_new) : mutex(false, name, created_new) {
+}
+
 mutex::mutex(bool initially_owned, const ustring& name) : name_(name) {
   if (name.size() > native::named_mutex::max_name_size()) throw io::path_too_long_exception {csf_};
   bool created_new = false;
