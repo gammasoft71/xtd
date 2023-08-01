@@ -11,8 +11,7 @@
 using namespace xtd::native;
 
 intmax_t named_mutex::create(bool initially_owned, const std::string& name) {
-  sem_t* semaphore = nullptr;
-  semaphore = sem_open(name.c_str(), O_CREAT | O_EXCL, S_IRUSR | S_IWUSR, initially_owned ? 0 : 1);
+  sem_t* semaphore = sem_open(name.c_str(), O_CREAT | O_EXCL, S_IRUSR | S_IWUSR, initially_owned ? 0 : 1);
   return reinterpret_cast<intmax_t>(semaphore);
 }
 
