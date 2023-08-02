@@ -3,8 +3,8 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include <map>
-#include <optional>
 #include <vector>
+#include "optional.h"
 #include "object.h"
 #include "platform_id.h"
 #include "uri.h"

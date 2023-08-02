@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::picture_box control.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <optional>
+#include <xtd/optional.h>
 #include "control.h"
 #include "border_sides.h"
 #include "border_style.h"

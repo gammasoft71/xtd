@@ -18,7 +18,6 @@
 #include <iostream>
 #include <list>
 #include <map>
-#include <optional>
 #include <set>
 #include <stdexcept>
 #include <string>
@@ -29,6 +28,7 @@
 #include <unordered_set>
 #include <utility>
 #include <vector>
+#include <xtd/optional.h>
 #include <xtd/ustring.h>
 
 /// @cond

@@ -768,7 +768,7 @@ namespace xtd {
               fi.index = index++;
             else {
               size_t index_alignment_separator = ustring(format_str).index_of(',');
-              size_t index_format_separator = ustring(format_str).index_of(u8':');
+              size_t index_format_separator = ustring(format_str).index_of(u':');
               
               if (index_alignment_separator != std::string::npos && index_format_separator != std::string::npos && index_alignment_separator > index_format_separator)
                 index_alignment_separator = std::string::npos;

@@ -4,9 +4,9 @@
 #pragma once
 
 #include <fstream>
-#include <optional>
 #include <array>
 #include <vector>
+#include "../optional.h"
 #include "../object.h"
 #include "../ustring.h"
 

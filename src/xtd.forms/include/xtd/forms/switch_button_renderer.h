@@ -2,8 +2,8 @@
 /// @brief Contains xtd::forms::switch_button_renderer class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <optional>
 #include <string>
+#include <xtd/optional.h>
 #include <xtd/drawing/color.h>
 #include <xtd/drawing/font.h>
 #include <xtd/drawing/graphics.h>

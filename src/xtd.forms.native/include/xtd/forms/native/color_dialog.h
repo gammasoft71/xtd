@@ -9,8 +9,8 @@
 /// @endcond
 
 #include <cstdint>
-#include <optional>
 #include <vector>
+#include <xtd/optional.h>
 #include <xtd/delegate.h>
 #include <xtd/static.h>
 #include <xtd/drawing/color.h>

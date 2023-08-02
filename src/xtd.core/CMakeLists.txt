@@ -8,12 +8,6 @@ add_include_directories(include)
 
 add_references(${XTD_CORE_NATIVE_LIBRARY})
 add_sources(
-  include/std/any.h
-  include/std/any
-  include/std/chrono.h
-  include/std/chrono
-  include/std/semaphore.h
-  include/std/semaphore
   include/xtd/abstract.h
   include/xtd/abstract
   include/xtd/abstract_object.h
@@ -24,6 +18,8 @@ add_sources(
   include/xtd/action
   include/xtd/add_last_arg_to_command.h
   include/xtd/add_last_arg_to_command
+  include/xtd/any.h
+  include/xtd/any
   include/xtd/architecture_id.h
   include/xtd/architecture_id
   include/xtd/argument_exception.h
@@ -86,6 +82,8 @@ add_sources(
   include/xtd/char32
   include/xtd/char32_object.h
   include/xtd/char32_object
+  include/xtd/chrono.h
+  include/xtd/chrono
   include/xtd/cnull.h
   include/xtd/cnull
   include/xtd/compiler.h
@@ -258,6 +256,8 @@ add_sources(
   include/xtd/operation_canceled_exception
   include/xtd/operating_system.h
   include/xtd/operating_system
+  include/xtd/optional.h
+  include/xtd/optional
   include/xtd/overflow_exception.h
   include/xtd/overflow_exception
   include/xtd/overload.h
@@ -288,6 +288,8 @@ add_sources(
   include/xtd/sbyte
   include/xtd/sbyte_object.h
   include/xtd/sbyte_object
+  include/xtd/semaphore.h
+  include/xtd/semaphore
   include/xtd/signal.h
   include/xtd/signal
   include/xtd/signal_cancel_event_args.h

@@ -9,7 +9,7 @@
 
 #include "__format_exception.h"
 #include "__sprintf.h"
-#include "../../std/chrono.h"
+#include "../chrono.h"
 
 /// @cond
 template<typename char_t, typename type_t, typename period_t = std::ratio<1>>

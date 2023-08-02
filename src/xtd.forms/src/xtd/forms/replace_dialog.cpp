@@ -1,7 +1,7 @@
 #include <memory>
 #include <thread>
 #include <vector>
-#include <std/chrono>
+#include <xtd/chrono>
 #include <xtd/literals.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/replace_dialog.h>
