@@ -3,8 +3,8 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include <cstdint>
-#include <chrono>
 #include <memory>
+#include <std/chrono>
 #include <xtd/event.h>
 #include <xtd/event_handler.h>
 #include "component.h"

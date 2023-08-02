@@ -1,8 +1,8 @@
 /// @file
 /// @brief Contains xtd::as method.
 #pragma once
-#include <any>
 #include <memory>
+#include "std/any.h"
 #include "convert.h"
 #include "convert_pointer.h"
 #include "convert_string.h"

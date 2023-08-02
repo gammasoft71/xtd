@@ -1,9 +1,7 @@
 #pragma once
 #include "semaphore_base.h"
 #include <condition_variable>
-#define __XTD_CORE_COUNTING_SEMAPHORE_INTERNAL__
-#include "../../../include/xtd/internal/__counting_semaphore.h"
-#undef __XTD_CORE_COUNTING_SEMAPHORE_INTERNAL__
+#include "../../../include/std/semaphore.h"
 #include "../../../include/xtd/invalid_operation_exception.h"
 
 class xtd::threading::semaphore::unnamed_semaphore : public semaphore_base {

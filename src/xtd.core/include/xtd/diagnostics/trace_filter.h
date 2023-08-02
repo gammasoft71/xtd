@@ -2,9 +2,8 @@
 /// @brief Contains xtd::diagnostics::trace_filter class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <any>
-#include <map>
 #include <vector>
+#include "../../std/any.h"
 #include "../abstract.h"
 #include "../ustring.h"
 #include "default_trace_listener.h"

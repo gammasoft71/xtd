@@ -2,8 +2,8 @@
 /// @brief Contains xtd::iasync_result interface.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <any>
 #include <mutex>
+#include "std/any.h"
 #include "interface.h"
 #include "object.h"
 

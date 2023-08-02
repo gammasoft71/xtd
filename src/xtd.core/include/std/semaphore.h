@@ -1,23 +1,16 @@
 /// @file
-/// @brief Contains internal counting_semaphore type.
+/// @brief Contains std::counting_semaphore and std::binary_semaphore types.
 #pragma once
-/// @cond
-#if !defined(__XTD_CORE_COUNTING_SEMAPHORE_INTERNAL__)
-#error "Do not include this file: Internal use only"
-#endif
-/// @endcond
-
-#include <cstdint>
-#include <iostream>
-#include <string>
 
 /// @cond
-#if defined(__cpp_lib_semaphore)
+#if defined(__cpp_lib_semaphore) || __cplusplus >= 202002l
 #include <semaphore>
 #else
+#include <cstdint>
 #include <cstddef>
 #include <mutex>
 #include <condition_variable>
+#include <limits>
 
 namespace std {
   template<std::ptrdiff_t least_max_value = std::numeric_limits<std::ptrdiff_t>::max()>

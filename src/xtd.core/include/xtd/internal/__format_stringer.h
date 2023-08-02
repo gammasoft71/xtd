@@ -8,7 +8,6 @@
 /// @endcond
 
 #include <algorithm>
-#include <chrono>
 #include <cctype>
 #include <cstddef>
 #include <cstdint>
@@ -19,6 +18,7 @@
 #include <string>
 #include <type_traits>
 #include <vector>
+#include "../../std/chrono.h"
 #include "../types.h"
 
 /// @cond

@@ -9,9 +9,7 @@
 
 #include "__format_exception.h"
 #include "__sprintf.h"
-#define __XTD_CORE_DURATION_INTERNAL__
-#include "__duration.h"
-#undef __XTD_CORE_DURATION_INTERNAL__
+#include "../../std/chrono.h"
 
 /// @cond
 template<typename char_t, typename type_t, typename period_t = std::ratio<1>>

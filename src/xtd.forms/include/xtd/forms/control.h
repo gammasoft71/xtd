@@ -2,7 +2,6 @@
 /// @brief Contains xtd::forms::control control.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <any>
 #include <condition_variable>
 #include <cstdint>
 #include <functional>
@@ -12,6 +11,7 @@
 #include <string>
 #include <thread>
 #include <vector>
+#include <std/any.h>
 #include <xtd/iasync_result.h>
 #include <xtd/iequatable.h>
 #include <xtd/drawing/color.h>
