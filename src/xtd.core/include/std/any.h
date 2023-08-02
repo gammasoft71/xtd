@@ -6,7 +6,6 @@
 #if defined(__cpp_lib_any) || __cplusplus >= 201703l
 #include <any>
 #else
-#error "Impossible"
 #include <typeinfo>
 #include <utility>
 
