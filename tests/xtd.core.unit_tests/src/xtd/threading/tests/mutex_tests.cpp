@@ -160,6 +160,7 @@ namespace xtd::tests {
     }
 
     void test_method_(open_existing_with_same_name) {
+      if (environment::os_version().is_windows() && !environment::is_64_bit_operating_system()) assert::ignore();
       auto created_new = false;
       auto m = mutex {false, "xtd_mutex_test", created_new};
       assert::are_not_equal(wait_handle::invalid_handle, m.handle(), csf_);
