@@ -80,7 +80,7 @@ int32 semaphore::release() {
 int32 semaphore::release(int32 release_count) {
   if (release_count < 1) throw argument_out_of_range_exception {csf_};
   if (!semaphore_) throw object_closed_exception {csf_};
-  if (count_ + release_count >= maximum_count_) throw semaphore_full_exception {csf_};
+  if (count_ + release_count > maximum_count_) throw semaphore_full_exception {csf_};
   bool io_error = false;
   int32 previous_count = 0;
   semaphore_->signal(io_error, release_count, previous_count);
@@ -117,6 +117,8 @@ bool semaphore::wait(int32 milliseconds_timeout) {
 }
 
 void semaphore::create(int32 initial_count, int32 maximum_count, bool& created_new) {
+  count_ = initial_count;
+  maximum_count_ = maximum_count;
   created_new = true;
   if (name_.empty()) {
     semaphore_ = std::make_shared<semaphore::unnamed_semaphore>();
