@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 
-#include "../../std/chrono.h"
+#include "../chrono.h"
 #include <cstdint>
 #include <cstdio>
 #include <fstream>

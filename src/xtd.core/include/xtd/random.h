@@ -3,8 +3,8 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include <limits>
-#include <optional>
 #include <random>
+#include "optional.h"
 #include "argument_null_exception.h"
 #include "argument_out_of_range_exception.h"
 #include "core_export.h"

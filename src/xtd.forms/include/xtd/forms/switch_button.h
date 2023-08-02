@@ -1,7 +1,7 @@
 /// @file
 /// @brief Contains xtd::forms::switch_button control.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
-#include <optional>
+#include <xtd/optional.h>
 #include "button_base.h"
 
 namespace xtd {

@@ -2,8 +2,8 @@
 /// @brief Contains xtd::forms::busy_dialog dialog.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <optional>
 #include <string>
+#include <xtd/optional.h>
 #include <xtd/delegate.h>
 #include <xtd/drawing/color.h>
 #include <xtd/drawing/icon.h>

@@ -8,7 +8,7 @@
 #include <type_traits>
 #include <unordered_map>
 #include <vector>
-#include "std/any.h"
+#include "any.h"
 
 /// @cond
 extern std::unordered_map<std::type_index, std::function<std::string(std::any const&)>> __any_stringer__;

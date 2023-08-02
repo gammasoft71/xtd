@@ -3,8 +3,8 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include <thread>
-#include <std/any.h>
-#include <std/chrono>
+#include <xtd/any.h>
+#include <xtd/chrono>
 #include "application.h"
 #include "form.h"
 #include "component.h"

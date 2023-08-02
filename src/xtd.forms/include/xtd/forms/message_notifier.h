@@ -1,6 +1,7 @@
 #pragma once
 #include "component.h"
 
+#include <xtd/optional.h>
 #include <xtd/delegate.h>
 #include <xtd/ustring.h>
 #include <xtd/drawing/icon.h>
@@ -8,11 +9,10 @@
 #include <xtd/event_args.h>
 #include <xtd/not_implemented_exception.h>
 #include <xtd/forms/layout/arranged_element_collection.h>
-#include <std/chrono>
+#include <xtd/chrono>
 #include "notifier_style.h"
 #include "message_notifier_button.h"
 #include "iwin32_window.h"
-#include <optional>
 
 // TODO: Documentation
 

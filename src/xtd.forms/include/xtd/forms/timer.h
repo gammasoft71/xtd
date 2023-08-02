@@ -4,7 +4,7 @@
 #pragma once
 #include <cstdint>
 #include <memory>
-#include <std/chrono>
+#include <xtd/chrono>
 #include <xtd/event.h>
 #include <xtd/event_handler.h>
 #include "component.h"

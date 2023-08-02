@@ -8,12 +8,12 @@
 #include "../event_handler.h"
 #include "../object.h"
 #include "../ustring.h"
+#include "../optional.h"
 #include "data_received_event_handler.h"
 #include "process_priority_class.h"
 #include "process_start_info.h"
 #include <functional>
 #include <memory>
-#include <optional>
 #include <thread>
 
 /// @cond

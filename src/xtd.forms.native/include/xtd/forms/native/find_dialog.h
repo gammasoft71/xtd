@@ -9,7 +9,7 @@
 /// @endcond
 
 #include <cstdint>
-#include <optional>
+#include <xtd/optional.h>
 #include <xtd/static.h>
 #include <xtd/delegate.h>
 #include <xtd/ustring.h>

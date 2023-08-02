@@ -3,9 +3,9 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include <map>
-#include <optional>
 #include <string>
-#include <std/any.h>
+#include <xtd/optional.h>
+#include <xtd/any.h>
 #include <xtd/iequatable.h>
 #include "component.h"
 #include "const_menu_item_ref.h"

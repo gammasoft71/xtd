@@ -4,7 +4,7 @@
 #pragma once
 
 #include <fstream>
-#include <optional>
+#include "../optional.h"
 #include "text_reader.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

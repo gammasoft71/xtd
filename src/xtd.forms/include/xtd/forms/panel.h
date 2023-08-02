@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::panel container.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <optional>
+#include <xtd/optional.h>
 #include "scrollable_control.h"
 #include "border_sides.h"
 #include "border_style.h"

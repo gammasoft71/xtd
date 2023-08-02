@@ -18,7 +18,7 @@
 #include <string>
 #include <type_traits>
 #include <vector>
-#include "../../std/chrono.h"
+#include "../chrono.h"
 #include "../types.h"
 
 /// @cond
