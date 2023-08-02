@@ -8,6 +8,12 @@ add_include_directories(include)
 
 add_references(${XTD_CORE_NATIVE_LIBRARY})
 add_sources(
+  include/std/any.h
+  include/std/any
+  include/std/chrono.h
+  include/std/chrono
+  include/std/semaphore.h
+  include/std/semaphore
   include/xtd/abstract.h
   include/xtd/abstract
   include/xtd/abstract_object.h
@@ -496,7 +502,6 @@ add_sources(
   include/xtd/internal/__compiler_id.h
   include/xtd/internal/__compiler_version.h
   include/xtd/internal/__cpp_language.h
-  include/xtd/internal/__counting_semaphore.h
   include/xtd/internal/__currency_formatter.h
   include/xtd/internal/__date_time_formatter.h
   include/xtd/internal/__duration_formatter.h

@@ -2,9 +2,9 @@
 /// @brief Contains xtd::forms::cursor class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <any>
 #include <cstdint>
 #include <memory>
+#include <std/any.h>
 #include <xtd/iequatable.h>
 #include <xtd/object.h>
 #include <xtd/drawing/bitmap.h>

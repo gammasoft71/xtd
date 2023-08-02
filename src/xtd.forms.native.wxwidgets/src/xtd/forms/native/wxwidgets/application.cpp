@@ -1,5 +1,5 @@
-#include <chrono>
 #include <thread>
+#include <std/chrono>
 #include <xtd/environment.h>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/toolkit.h>

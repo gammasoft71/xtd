@@ -2,8 +2,8 @@
 /// @brief Contains xtd::forms::link_label class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <any>
 #include <tuple>
+#include <std/any.h>
 #include <xtd/drawing/system_colors.h>
 #include "cursors.h"
 #include "label.h"

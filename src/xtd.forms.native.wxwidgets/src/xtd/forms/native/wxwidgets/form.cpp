@@ -1,5 +1,5 @@
-#include <chrono>
 #include <thread>
+#include <std/chrono>
 #include <xtd/argument_exception.h>
 #include <xtd/diagnostics/debug.h>
 #include <xtd/not_implemented_exception.h>

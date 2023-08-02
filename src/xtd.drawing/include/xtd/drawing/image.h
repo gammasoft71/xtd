@@ -2,11 +2,11 @@
 /// @brief Contains xtd::drawing::image class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <any>
 #include <cstdint>
 #include <map>
 #include <memory>
 #include <iostream>
+#include <std/any.h>
 #include <xtd/iequatable.h>
 #include <xtd/object.h>
 #include <xtd/ustring.h>

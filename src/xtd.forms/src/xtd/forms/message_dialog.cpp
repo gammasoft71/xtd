@@ -1,5 +1,5 @@
-#include <chrono>
 #include <thread>
+#include <std/chrono>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/message_box.h>
 #undef __XTD_FORMS_NATIVE_LIBRARY__

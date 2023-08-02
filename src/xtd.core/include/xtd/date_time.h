@@ -2,7 +2,7 @@
 /// @brief Contains xtd::date_time class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <chrono>
+#include "../std/chrono.h"
 #include <ctime>
 #include "date_time_kind.h"
 #include "day_of_week.h"
@@ -699,7 +699,7 @@ namespace xtd {
     /// @param value A time interval from the start of the Clock's epoch.
     /// @return An object that represents the unspecified time equivalent of the date and time represented by the file_time parameter.
     /// @exception xtd::argument_out_of_range_exception value is less than xtd::date_time:::min_value or represents a time greater than xtd::date_time:::max_value.
-    /// @remarks See <a href="https://en.cppreference.com/w/c/chrono">std::chrono</a> for more information.
+    /// @remarks See <a href="https://en.cppreference.com/w/c/chrono.h">std::chrono</a> for more information.
     template<typename rep_t, typename period_t>
     static date_time from_duration(std::chrono::duration<rep_t, period_t> value) {
       return from_duration(value, date_time_kind::unspecified);
@@ -709,7 +709,7 @@ namespace xtd {
     /// @param kind One of the enumeration values that indicates whether ticks specifies a local time, Coordinated Universal Time (UTC), or neither.
     /// @return An object that represents the unspecified time equivalent of the date and time represented by the file_time parameter.
     /// @exception xtd::argument_out_of_range_exception value is less than xtd::date_time:::min_value or represents a time greater than xtd::date_time:::max_value.
-    /// @remarks See <a href="https://en.cppreference.com/w/c/chrono">std::chrono</a> for more information.
+    /// @remarks See <a href="https://en.cppreference.com/w/c/chrono.h">std::chrono</a> for more information.
     template<typename rep_t, typename period_t>
     static date_time from_duration(std::chrono::duration<rep_t, period_t> value, date_time_kind kind) {
       return date_time(std::chrono::duration_cast<xtd::ticks>(value), kind);
@@ -720,7 +720,7 @@ namespace xtd {
     /// @return An object that represents the unspecified time equivalent of the date and time represented by the value parameter.
     /// @exception xtd::argument_out_of_range_exception value is less than xtd::date_time:::min_value or represents a time greater than xtd::date_time:::max_value.
     /// @remarks <a href="https://en.cppreference.com/w/cpp/chrono/c/time_t">std::time_t</a> is almost always an integral value holding the number of seconds (not counting leap seconds) since 00:00, Jan 1 1970 UTC, corresponding to POSIX time.
-    /// @remarks See <a href="https://en.cppreference.com/w/c/chrono">std::chrono</a> for more information.
+    /// @remarks See <a href="https://en.cppreference.com/w/c/chrono.h">std::chrono</a> for more information.
     static date_time from_time_t(std::time_t value);
     /// @brief Converts the specified <a href="https://en.cppreference.com/w/cpp/chrono/c/time_t">std::time_t</a> to an equivalent to Coordinated Universal Time (UTC) or local time.
     /// @param value A time interval from the start of the Clock's epoch.
@@ -728,7 +728,7 @@ namespace xtd {
     /// @return An object that represents the unspecified time equivalent of the date and time represented by the value parameter.
     /// @exception xtd::argument_out_of_range_exception value is less than xtd::date_time:::min_value or represents a time greater than xtd::date_time:::max_value.
     /// @remarks <a href="https://en.cppreference.com/w/cpp/chrono/c/time_t">std::time_t</a> is almost always an integral value holding the number of seconds (not counting leap seconds) since 00:00, Jan 1 1970 UTC, corresponding to POSIX time.
-    /// @remarks See <a href="https://en.cppreference.com/w/c/chrono">std::chrono</a> for more information.
+    /// @remarks See <a href="https://en.cppreference.com/w/c/chrono.h">std::chrono</a> for more information.
     static date_time from_time_t(std::time_t value, date_time_kind kind);
     
     /// @brief Converts the specified <a href="https://en.cppreference.com/w/c/chrono/tm">std::tm</a> to an equivalent unspecified time.
@@ -736,7 +736,7 @@ namespace xtd {
     /// @return An object that represents the unspecified time equivalent of the date and time represented by the value parameter.
     /// @exception xtd::argument_out_of_range_exception value.ttm_year is less than 1 or greater than 9999.<br>-or-<br>tvalue.tm_mon is less than 1 or greater than 12.<br>-or-<br>value.tm_mday is less than 1 or greater than the number of days in month.<br>-or-<br>value.tm_hour is less than 0 or greater than 23.<br>-or-<br>value.tm_min is less than 0 or greater than 59<br>-or-<br>vale.tm_sec is less than 0 or greater than 59.
     /// @remarks <a href="https://en.cppreference.com/w/c/chrono/tm">std::tm</a> is a structure holding a calendar date and time broken down into its components. is almost always an integral value holding the number of seconds (not counting leap seconds) since 00:00, Jan 1 1970 UTC, corresponding to POSIX time.
-    /// @remarks See <a href="https://en.cppreference.com/w/c/chrono">std::chrono</a> for more information.
+    /// @remarks See <a href="https://en.cppreference.com/w/c/chrono.h">std::chrono</a> for more information.
     static date_time from_tm(const std::tm& value);
     /// @brief Converts the specified <a href="https://en.cppreference.com/w/c/chrono/tm">std::tm</a><a href="https://en.cppreference.com/w/c/chrono/tm">std::tm</a> to an equivalent to Coordinated Universal Time (UTC) or local time.
     /// @param value A <a href="https://en.cppreference.com/w/c/chrono/tm">std::tm</a> struct.
@@ -744,7 +744,7 @@ namespace xtd {
     /// @return An object that represents the unspecified time equivalent of the date and time represented by the value parameter.
     /// @exception xtd::argument_out_of_range_exception value.ttm_year is less than 1 or greater than 9999.<br>-or-<br>tvalue.tm_mon is less than 1 or greater than 12.<br>-or-<br>value.tm_mday is less than 1 or greater than the number of days in month.<br>-or-<br>value.tm_hour is less than 0 or greater than 23.<br>-or-<br>value.tm_min is less than 0 or greater than 59<br>-or-<br>vale.tm_sec is less than 0 or greater than 59.
     /// @remarks <a href="https://en.cppreference.com/w/c/chrono/tm">std::tm</a> is a structure holding a calendar date and time broken down into its components. is almost always an integral value holding the number of seconds (not counting leap seconds) since 00:00, Jan 1 1970 UTC, corresponding to POSIX time.
-    /// @remarks See <a href="https://en.cppreference.com/w/c/chrono">std::chrono</a> for more information.
+    /// @remarks See <a href="https://en.cppreference.com/w/c/chrono.h">std::chrono</a> for more information.
     static date_time from_tm(const std::tm& value, date_time_kind kind);
     
     /// @brief Indicates whether this instance of xtd::date_time is within the daylight saving time range for the current time zone.
@@ -1021,13 +1021,13 @@ namespace xtd {
     /// @remarks Converts the value of the current xtd::date_time object to <a href="https://en.cppreference.com/w/cpp/chrono/c/time_t">std::time_t</a>.
     /// @return The value of the current xtd::date_time object expressed as <a href="https://en.cppreference.com/w/cpp/chrono/c/time_t">std::time_t</a>.
     /// @remarks <a href="https://en.cppreference.com/w/cpp/chrono/c/time_t">std::time_t</a> is almost always an integral value holding the number of seconds (not counting leap seconds) since 00:00, Jan 1 1970 UTC, corresponding to POSIX time.
-    /// @remarks See <a href="https://en.cppreference.com/w/c/chrono">std::chrono</a> for more information.
+    /// @remarks See <a href="https://en.cppreference.com/w/c/chrono.h">std::chrono</a> for more information.
     std::time_t to_time_t() const;
     
     /// @remarks Converts the value of the current xtd::date_time object to <a href="https://en.cppreference.com/w/c/chrono/tm">std::tm</a>.
     /// @return The value of the current xtd::date_time object expressed as <a href="https://en.cppreference.com/w/c/chrono/tm">std::tm</a>.
     /// @remarks <a href="https://en.cppreference.com/w/c/chrono/tm">std::tm</a> is a structure holding a calendar date and time broken down into its components. is almost always an integral value holding the number of seconds (not counting leap seconds) since 00:00, Jan 1 1970 UTC, corresponding to POSIX time.
-    /// @remarks See <a href="https://en.cppreference.com/w/c/chrono">std::chrono</a> for more information.
+    /// @remarks See <a href="https://en.cppreference.com/w/c/chrono.h">std::chrono</a> for more information.
     std::tm to_tm() const;
     
     /// @brief Converts the value of the current xtd::date_time object to Coordinated Universal Time (UTC).

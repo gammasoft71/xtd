@@ -20,7 +20,7 @@
 #include <xtd/forms/vertical_layout_panel.h>
 #include <xtd/startup.h>
 #include <xtd/diagnostics/debug.h>
-#include <chrono>
+#include <std/chrono>
 
 using namespace xtd;
 using namespace xtd::drawing;
