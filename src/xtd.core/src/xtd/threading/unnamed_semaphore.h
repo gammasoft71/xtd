@@ -38,7 +38,7 @@ public:
   }
 
   bool signal(bool& io_error, int32 release_count, int32& previous_count) override {
-    if (handle_->count + release_count >= handle_->maximum_count) return false;
+    if (handle_->count + release_count > handle_->maximum_count) return false;
     previous_count = handle_->count;
     handle_->semaphore.release(static_cast<std::ptrdiff_t>(release_count));
     handle_->count += release_count;
