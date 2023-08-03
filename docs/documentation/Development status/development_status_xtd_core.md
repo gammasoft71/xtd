@@ -129,7 +129,6 @@
 | [tracestreambuf](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/tracestreambuf.h)                                         | class         | ![progress](/pictures/progress100.png) |
 | [translator](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/translator.h)                                                 | class         | ![progress](/pictures/progress100.png) |
 | [typeof_](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/typeof.h)                                                        | class         | ![progress](/pictures/progress100.png) |
-| [type](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/type.h)                                                             | enumeration   | ![progress](/pictures/progress100.png) |
 | [type_object](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/type_object.h)                                               | class         | ![progress](/pictures/progress100.png) |
 | [types](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/types.h)                                                           | aliases       | ![progress](/pictures/progress100.png) |
 | [underflow_exception](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/underflow_exception.h)                               | exception     | ![progress](/pictures/progress100.png) |
