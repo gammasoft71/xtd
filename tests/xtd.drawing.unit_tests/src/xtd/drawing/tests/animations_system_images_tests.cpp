@@ -16,7 +16,7 @@ namespace xtd::drawing::tests {
     }
 
     void test_method_(process_working) {
-      assert::ignore();
+      if (environment::os_version().is_linux()) assert::ignore();
       auto i = animations_system_images::process_working();
       assert::are_equal(size {32, 32}, i.size(), csf_);
       assert::are_not_equal(image::empty, i, csf_);
@@ -24,7 +24,7 @@ namespace xtd::drawing::tests {
     }
 
     void test_method_(process_working_with_specified_size) {
-      assert::ignore();
+      if (environment::os_version().is_linux()) assert::ignore();
       auto i = animations_system_images::process_working({64, 64});
       assert::are_equal(size {64, 64}, i.size(), csf_);
       assert::are_not_equal(image::empty, i, csf_);
