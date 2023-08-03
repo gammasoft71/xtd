@@ -185,7 +185,7 @@ $(function() {
 <div class="line">      </div>
 <div class="line">      worker.progress_changed += [&amp;](<span class="keywordtype">object</span> &amp; sender, <span class="keyword">const</span> <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1forms_1_1progress__changed__event__args.html">progress_changed_event_args</a> &amp; e) {</div>
 <div class="line">        progress.value(e.progress_percentage());</div>
-<div class="line">        progress_text.append_text(ustring::format(<span class="stringliteral">&quot;{}{}&quot;</span>, any_cast&lt;ustring&gt;(e.user_state()), environment::new_line()));</div>
+<div class="line">        progress_text.append_text(ustring::format(<span class="stringliteral">&quot;{}{}&quot;</span>, std::any_cast&lt;ustring&gt;(e.user_state()), environment::new_line()));</div>
 <div class="line">      };</div>
 <div class="line">      </div>
 <div class="line">      worker.run_worker_completed += [&amp;](<span class="keywordtype">object</span> &amp; sender, <span class="keyword">const</span> <a id="_a2" name="_a2"></a><a class="code hl_class" href="classxtd_1_1forms_1_1run__worker__completed__event__args.html">run_worker_completed_event_args</a> &amp; e) {</div>
@@ -229,7 +229,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jul 30 2023 22:33:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Aug 3 2023 21:41:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -149,7 +149,7 @@ $(function() {
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
-<div class="line">    <span class="keyword">static</span> <span class="keyword">auto</span> image_from_color(<span class="keyword">auto</span> <a id="_a4" name="_a4"></a><a class="code hl_class" href="classxtd_1_1drawing_1_1color.html">color</a>)-&gt;image {</div>
+<div class="line">    <span class="keyword">static</span> <span class="keyword">auto</span> image_from_color(<span class="keyword">const</span> <a id="_a4" name="_a4"></a><a class="code hl_class" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a>&amp; <a class="code hl_class" href="classxtd_1_1drawing_1_1color.html">color</a>)-&gt;image {</div>
 <div class="line">      <span class="keyword">auto</span> colored_bitmap = <a id="_a5" name="_a5"></a><a class="code hl_class" href="classxtd_1_1drawing_1_1bitmap.html">bitmap</a>{16, 16};</div>
 <div class="line">      <span class="keyword">auto</span> g = graphics::from_image(colored_bitmap);</div>
 <div class="line">      g.fill_ellipse(<a id="_a6" name="_a6"></a><a class="code hl_class" href="classxtd_1_1drawing_1_1solid__brush.html">solid_brush</a>(<a class="code hl_class" href="classxtd_1_1drawing_1_1color.html">color</a>), 0, 0, colored_bitmap.width(), colored_bitmap.height());</div>
@@ -188,7 +188,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jul 30 2023 22:33:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Aug 3 2023 21:41:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
