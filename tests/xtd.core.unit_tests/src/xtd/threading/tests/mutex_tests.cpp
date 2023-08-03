@@ -130,7 +130,7 @@ namespace xtd::tests {
       assert::is_true(thread_ran, csf_);
     }
 
-    void test_method_(unnamed_mutex_and_close) {
+    void test_method_(create_mutex_and_close) {
       auto m = mutex {};
       assert::are_not_equal(wait_handle::invalid_handle, m.handle(), csf_);
       auto thread_ran = false;
@@ -145,7 +145,7 @@ namespace xtd::tests {
       assert::are_equal(wait_handle::invalid_handle, m.handle(), csf_);
     }
 
-    void test_method_(named_mutex_and_close) {
+    void test_method_(create_mutex_with_name_and_close) {
       auto created_new = false;
       auto m = mutex {false, "xtd_mutex_test", created_new};
       assert::are_not_equal(wait_handle::invalid_handle, m.handle(), csf_);
