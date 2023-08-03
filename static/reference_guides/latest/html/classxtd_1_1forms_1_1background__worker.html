@@ -190,7 +190,7 @@ To set up for a background operation, add an event handler for the do_work event
 <div class="line">      </div>
 <div class="line">      worker.progress_changed += [&amp;](<span class="keywordtype">object</span> &amp; sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1forms_1_1progress__changed__event__args.html">progress_changed_event_args</a> &amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>) {</div>
 <div class="line">        progress.value(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.progress_percentage());</div>
-<div class="line">        progress_text.append_text(ustring::format(<span class="stringliteral">&quot;{}{}&quot;</span>, any_cast&lt;ustring&gt;(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.user_state()), environment::new_line()));</div>
+<div class="line">        progress_text.append_text(ustring::format(<span class="stringliteral">&quot;{}{}&quot;</span>, std::any_cast&lt;ustring&gt;(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.user_state()), environment::new_line()));</div>
 <div class="line">      };</div>
 <div class="line">      </div>
 <div class="line">      worker.run_worker_completed += [&amp;](<span class="keywordtype">object</span> &amp; sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1forms_1_1run__worker__completed__event__args.html">run_worker_completed_event_args</a> &amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>) {</div>
@@ -852,7 +852,7 @@ template&lt;typename argument_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jul 30 2023 23:01:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Aug 3 2023 17:52:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

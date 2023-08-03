@@ -166,7 +166,7 @@ Inheritance diagram for xtd::drawing::drawing_2d::conical_gradient_brush:</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
-<div class="line">    <span class="keyword">auto</span> create_circle_texture(<span class="keyword">auto</span> fore_color, <span class="keyword">auto</span> back_color)-&gt;image {</div>
+<div class="line">    <span class="keyword">auto</span> create_circle_texture(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1drawing_1_1color.html">color</a>&amp; fore_color, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1drawing_1_1color.html">color</a>&amp; back_color)-&gt;image {</div>
 <div class="line">      <span class="keyword">auto</span> texture = <a class="code hl_class" href="classxtd_1_1drawing_1_1bitmap.html">bitmap</a> {16, 16};</div>
 <div class="line">      <span class="keyword">auto</span> <a class="code hl_class" href="classxtd_1_1drawing_1_1graphics.html">graphics</a> = texture.create_graphics();</div>
 <div class="line">      <a class="code hl_class" href="classxtd_1_1drawing_1_1graphics.html">graphics</a>.<a class="code hl_function" href="classxtd_1_1drawing_1_1graphics.html#a8e7ed9a42291043b1a1a28e7605377d3">fill_ellipse</a>(<a class="code hl_class" href="classxtd_1_1drawing_1_1solid__brush.html">solid_brush</a> {back_color}, 1, 1, texture.width() - 2, texture.height() - 2);</div>
@@ -180,6 +180,7 @@ Inheritance diagram for xtd::drawing::drawing_2d::conical_gradient_brush:</div>
 <div class="line">  application::run(fill_rectangle_example::form1 {});</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1bitmap_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a></div><div class="ttdoc">Encapsulates a GDI+ bitmap, which consists of the pixel data for a graphics image and its attributes....</div><div class="ttdef"><b>Definition</b> bitmap.h:26</div></div>
+<div class="ttc" id="aclassxtd_1_1drawing_1_1color_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a></div><div class="ttdoc">Represents an ARGB (alpha, red, green, blue) color.</div><div class="ttdef"><b>Definition</b> color.h:45</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1drawing__2d_1_1hatch__brush_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1drawing__2d_1_1hatch__brush.html">xtd::drawing::drawing_2d::hatch_brush</a></div><div class="ttdoc">Defines a rectangular xtd::drawing::brush with a hatch style, a foreground color, and a background co...</div><div class="ttdef"><b>Definition</b> hatch_brush.h:33</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1drawing__2d_1_1linear__gradient__brush_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1drawing__2d_1_1linear__gradient__brush.html">xtd::drawing::drawing_2d::linear_gradient_brush</a></div><div class="ttdoc">Encapsulates a xtd::drawing::brush with a linear gradient. This class cannot be inherited.</div><div class="ttdef"><b>Definition</b> linear_gradient_brush.h:32</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1drawing__2d_1_1radial__gradient__brush_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1drawing__2d_1_1radial__gradient__brush.html">xtd::drawing::drawing_2d::radial_gradient_brush</a></div><div class="ttdoc">Encapsulates a xtd::drawing::brush with a radial gradient. This class cannot be inherited.</div><div class="ttdef"><b>Definition</b> radial_gradient_brush.h:31</div></div>
@@ -918,7 +919,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>equals</b> (const <a 
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jul 30 2023 23:01:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Aug 3 2023 17:52:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
