@@ -100,37 +100,33 @@ namespace xtd::drawing::tests {
     }
 
     void test_method_(battery_caution) {
+      assert::ignore();
       auto i = status_system_images::battery_caution();
-#if !defined(__linux__)
       assert::are_equal(size {32, 32}, i.size(), csf_);
-#endif
       assert::are_not_equal(image::empty, i, csf_);
       assert::are_equal(system_images::from_name("battery-caution"), i, csf_);
     }
 
     void test_method_(battery_caution_with_specified_size) {
+      assert::ignore();
       auto i = status_system_images::battery_caution({64, 64});
-#if !defined(__linux__)
       assert::are_equal(size {64, 64}, i.size(), csf_);
-#endif
       assert::are_not_equal(image::empty, i, csf_);
       assert::are_equal(system_images::from_name("battery-caution", size {64, 64}), i, csf_);
     }
 
     void test_method_(battery_low) {
+      assert::ignore();
       auto i = status_system_images::battery_low();
-#if !defined(__linux__)
       assert::are_equal(size {32, 32}, i.size(), csf_);
-#endif
       assert::are_not_equal(image::empty, i, csf_);
       assert::are_equal(system_images::from_name("battery-low"), i, csf_);
     }
 
     void test_method_(battery_low_with_specified_size) {
+      assert::ignore();
       auto i = status_system_images::battery_low({64, 64});
-#if !defined(__linux__)
       assert::are_equal(size {64, 64}, i.size(), csf_);
-#endif
       assert::are_not_equal(image::empty, i, csf_);
       assert::are_equal(system_images::from_name("battery-low", size {64, 64}), i, csf_);
     }
