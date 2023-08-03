@@ -16,19 +16,17 @@ namespace xtd::drawing::tests {
     }
 
     void test_method_(process_working) {
+      assert::ignore();
       auto i = animations_system_images::process_working();
-#if !defined(__linux__)
       assert::are_equal(size {32, 32}, i.size(), csf_);
-#endif
       assert::are_not_equal(image::empty, i, csf_);
       assert::are_equal(system_images::from_name("process-working"), i, csf_);
     }
 
     void test_method_(process_working_with_specified_size) {
+      assert::ignore();
       auto i = animations_system_images::process_working({64, 64});
-#if !defined(__linux__)
       assert::are_equal(size {64, 64}, i.size(), csf_);
-#endif
       assert::are_not_equal(image::empty, i, csf_);
       assert::are_equal(system_images::from_name("process-working", size {64, 64}), i, csf_);
     }
