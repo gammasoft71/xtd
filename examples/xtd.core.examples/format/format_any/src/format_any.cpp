@@ -13,7 +13,7 @@ public:
   const ustring& rank() const noexcept {return rank_;}
   
   ustring to_string() const noexcept {return name_ + " (" + rank_ + ")";}
-  
+   
 private:
   ustring name_;
   ustring rank_;
