@@ -64,6 +64,7 @@ add_sources(
   src/xtd/native/macos/thread.mm
   src/xtd/native/macos/translator.mm
   src/xtd/native/macos/types.mm
+  src/xtd/native/macos/unnamed_semaphore.mm
 )
 target_type(${XTD_LIBRARY_TYPE})
 

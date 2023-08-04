@@ -59,6 +59,7 @@ add_sources(
   src/xtd/native/unix/thread.cpp
   src/xtd/native/unix/translator.cpp
   src/xtd/native/unix/types.cpp
+  src/xtd/native/unix/unnamed_semaphore.cpp
 )
 target_type(${XTD_LIBRARY_TYPE})
 

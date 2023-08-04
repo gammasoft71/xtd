@@ -53,6 +53,7 @@ add_sources(
   include/xtd/native/thread.h
   include/xtd/native/translator.h
   include/xtd/native/types.h
+  include/xtd/native/unnamed_semaphore.h
 )
 target_type(INTERFACE_LIBRARY)
 
