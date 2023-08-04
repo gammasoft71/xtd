@@ -96,7 +96,8 @@ var searchData=
   ['event_5fargs_93',['event_args',['../classxtd_1_1event__args.html',1,'xtd']]],
   ['event_5flistener_94',['event_listener',['../classxtd_1_1tunit_1_1event__listener.html',1,'xtd::tunit']]],
   ['event_5ftype_5ffilter_95',['event_type_filter',['../classxtd_1_1diagnostics_1_1event__type__filter.html',1,'xtd::diagnostics']]],
-  ['exception_5fbox_96',['exception_box',['../classxtd_1_1forms_1_1exception__box.html',1,'xtd::forms']]],
-  ['exception_5fdialog_97',['exception_dialog',['../classxtd_1_1forms_1_1exception__dialog.html',1,'xtd::forms']]],
-  ['exit_5fevent_98',['exit_event',['../classxtd_1_1diagnostics_1_1process_1_1exit__event.html',1,'xtd::diagnostics::process']]]
+  ['event_5fwait_5fhandle_96',['event_wait_handle',['../classxtd_1_1threading_1_1event__wait__handle.html',1,'xtd::threading']]],
+  ['exception_5fbox_97',['exception_box',['../classxtd_1_1forms_1_1exception__box.html',1,'xtd::forms']]],
+  ['exception_5fdialog_98',['exception_dialog',['../classxtd_1_1forms_1_1exception__dialog.html',1,'xtd::forms']]],
+  ['exit_5fevent_99',['exit_event',['../classxtd_1_1diagnostics_1_1process_1_1exit__event.html',1,'xtd::diagnostics::process']]]
 ];

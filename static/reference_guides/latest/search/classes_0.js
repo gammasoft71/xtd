@@ -41,5 +41,6 @@ var searchData=
   ['assert_5fdialog_38',['assert_dialog',['../classxtd_1_1forms_1_1assert__dialog.html',1,'xtd::forms']]],
   ['assert_5ferror_39',['assert_error',['../classxtd_1_1tunit_1_1assert__error.html',1,'xtd::tunit']]],
   ['assume_40',['assume',['../classxtd_1_1tunit_1_1assume.html',1,'xtd::tunit']]],
-  ['attribute_41',['attribute',['../classxtd_1_1attribute.html',1,'xtd']]]
+  ['attribute_41',['attribute',['../classxtd_1_1attribute.html',1,'xtd']]],
+  ['auto_5freset_5fevent_42',['auto_reset_event',['../classxtd_1_1threading_1_1auto__reset__event.html',1,'xtd::threading']]]
 ];

@@ -94,9 +94,12 @@ Inheritance diagram for xtd::threading::wait_handle:</div>
  <div class="center">
   <img src="classxtd_1_1threading_1_1wait__handle.png" usemap="#xtd::threading::wait_5Fhandle_map" alt=""/>
   <map id="xtd::threading::wait_5Fhandle_map" name="xtd::threading::wait_5Fhandle_map">
-<area href="classxtd_1_1static__object.html" title="Represent a static object. A static class can&#39;t be instantiated (constructors are deleted)." alt="xtd::static_object" shape="rect" coords="85,0,245,24"/>
-<area href="classxtd_1_1threading_1_1mutex.html" title="A synchronization primitive that can also be used for interprocess synchronization." alt="xtd::threading::mutex" shape="rect" coords="0,112,160,136"/>
-<area href="classxtd_1_1threading_1_1semaphore.html" title="Limits the number of threads that can access a resource or pool of resources concurrently." alt="xtd::threading::semaphore" shape="rect" coords="170,112,330,136"/>
+<area href="classxtd_1_1static__object.html" title="Represent a static object. A static class can&#39;t be instantiated (constructors are deleted)." alt="xtd::static_object" shape="rect" coords="324,0,530,24"/>
+<area href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event." alt="xtd::threading::event_wait_handle" shape="rect" coords="108,112,314,136"/>
+<area href="classxtd_1_1threading_1_1mutex.html" title="A synchronization primitive that can also be used for interprocess synchronization." alt="xtd::threading::mutex" shape="rect" coords="324,112,530,136"/>
+<area href="classxtd_1_1threading_1_1semaphore.html" title="Limits the number of threads that can access a resource or pool of resources concurrently." alt="xtd::threading::semaphore" shape="rect" coords="540,112,746,136"/>
+<area href="classxtd_1_1threading_1_1auto__reset__event.html" title="Represents a thread synchronization event that, when signaled, resets automatically after releasing a..." alt="xtd::threading::auto_reset_event" shape="rect" coords="0,168,206,192"/>
+<area href="classxtd_1_1threading_1_1manual__reset__event.html" title="Represents a thread synchronization event that, when signaled, must be reset manually...." alt="xtd::threading::manual_reset_event" shape="rect" coords="216,168,422,192"/>
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
@@ -109,14 +112,14 @@ Inheritance diagram for xtd::threading::wait_handle:</div>
 <dd>
 The <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> class itself is abstract. Classes derived from <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> define a signaling mechanism to indicate taking or releasing access to a shared resource, but they use the inherited <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> methods to block while waiting for access to shared resources. The classes derived from <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> include:<ul>
 <li>The <a class="el" href="classxtd_1_1threading_1_1mutex.html" title="A synchronization primitive that can also be used for interprocess synchronization.">xtd::threading::mutex</a> class.</li>
-<li>The xtd::threading::event_wait_handle class and its derived classes, xtd::threading::auto_reset_event and xtd::threading::manual_reset_event.</li>
+<li>The <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle</a> class and its derived classes, <a class="el" href="classxtd_1_1threading_1_1auto__reset__event.html" title="Represents a thread synchronization event that, when signaled, resets automatically after releasing a...">xtd::threading::auto_reset_event</a> and <a class="el" href="classxtd_1_1threading_1_1manual__reset__event.html" title="Represents a thread synchronization event that, when signaled, must be reset manually....">xtd::threading::manual_reset_event</a>.</li>
 <li>The <a class="el" href="classxtd_1_1threading_1_1semaphore.html" title="Limits the number of threads that can access a resource or pool of resources concurrently.">xtd::threading::semaphore</a> class. </li>
 </ul>
 </dd>
 <dd>
 Threads can block on an individual wait handle by calling the instance method <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#ab53dcefc6844ecf0d6d9967ac489ac87" title="Blocks the current thread until the current xtd::threading::wait_handle receives a signal.">xtd::threading::wait_handle::wait_one</a>, which is inherited by classes derived from <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a>. </dd>
 <dd>
-The derived classes of <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> differ in their thread affinity. Event wait handles (xtd::threading::envent_wait_handle, xtd::threading::auto_reset_event, and xtd::threading::manual_reset_event) and semaphores do not have thread affinity; any thread can signal an event wait handle or semaphore. Mutexes, on the other hand, do have thread affinity; the thread that owns a mutex must release it, and an exception is thrown if a thread calls the <a class="el" href="classxtd_1_1threading_1_1mutex.html#a02f2e273ef08cdf7008087b9966de53d" title="Releases the Mutex once.">xtd::threading::mutex::release_mutex</a> method on a mutex that it does not own. </dd>
+The derived classes of <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> differ in their thread affinity. Event wait handles (xtd::threading::envent_wait_handle, <a class="el" href="classxtd_1_1threading_1_1auto__reset__event.html" title="Represents a thread synchronization event that, when signaled, resets automatically after releasing a...">xtd::threading::auto_reset_event</a>, and <a class="el" href="classxtd_1_1threading_1_1manual__reset__event.html" title="Represents a thread synchronization event that, when signaled, must be reset manually....">xtd::threading::manual_reset_event</a>) and semaphores do not have thread affinity; any thread can signal an event wait handle or semaphore. Mutexes, on the other hand, do have thread affinity; the thread that owns a mutex must release it, and an exception is thrown if a thread calls the <a class="el" href="classxtd_1_1threading_1_1mutex.html#a02f2e273ef08cdf7008087b9966de53d" title="Releases the Mutex once.">xtd::threading::mutex::release_mutex</a> method on a mutex that it does not own. </dd>
 <dd>
 In addition to its derived classes, the <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> class has a number of static methods that block a thread until one or more synchronization objects receive a signal. These include:<ul>
 <li><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a01c82b06ca8a5d14aba5f1fb396c16f7" title="Signals one xtd::threading::wait_handle and waits on another.">xtd::threading::wait_handle::signal_and_wait</a>, which allows a thread to signal one wait handle and immediately wait on another.</li>
@@ -258,7 +261,7 @@ The overloads of these methods provide timeout intervals for abandoning the wait
 <p>Releases all resources held by the current <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a>. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>You to call this method in the destructor of the inherited class. </dd></dl>
 
-<p>Reimplemented in <a class="el" href="classxtd_1_1threading_1_1mutex.html#aad7c66ee04153877e8933cdcfa375043">xtd::threading::mutex</a>, and <a class="el" href="classxtd_1_1threading_1_1semaphore.html#aa0dd699b9c1eb2f4cf87b4a42fdfa3b5">xtd::threading::semaphore</a>.</p>
+<p>Reimplemented in <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html#a25cd50beb10d27e546af15506fa98465">xtd::threading::event_wait_handle</a>, <a class="el" href="classxtd_1_1threading_1_1mutex.html#aad7c66ee04153877e8933cdcfa375043">xtd::threading::mutex</a>, and <a class="el" href="classxtd_1_1threading_1_1semaphore.html#aa0dd699b9c1eb2f4cf87b4a42fdfa3b5">xtd::threading::semaphore</a>.</p>
 
 </div>
 </div>
@@ -288,7 +291,7 @@ The overloads of these methods provide timeout intervals for abandoning the wait
 <p>Gets the native operating system handle. </p>
 <dl class="section return"><dt>Returns</dt><dd>An intptr representing the native operating system handle. </dd></dl>
 
-<p>Implemented in <a class="el" href="classxtd_1_1threading_1_1mutex.html#aa4b414b099d21ce89c3dd9c6d9dd9793">xtd::threading::mutex</a>, and <a class="el" href="classxtd_1_1threading_1_1semaphore.html#a9005ebcf73d9ee2f23b8c4b70ca7166e">xtd::threading::semaphore</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html#a96d6a6e016d598ac4eab6916b1fe756c">xtd::threading::event_wait_handle</a>, <a class="el" href="classxtd_1_1threading_1_1mutex.html#aa4b414b099d21ce89c3dd9c6d9dd9793">xtd::threading::mutex</a>, and <a class="el" href="classxtd_1_1threading_1_1semaphore.html#a9005ebcf73d9ee2f23b8c4b70ca7166e">xtd::threading::semaphore</a>.</p>
 
 </div>
 </div>
@@ -324,7 +327,7 @@ The overloads of these methods provide timeout intervals for abandoning the wait
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classxtd_1_1threading_1_1mutex.html#a0edfd2414178ff3f1e79ce4d29c8e972">xtd::threading::mutex</a>, and <a class="el" href="classxtd_1_1threading_1_1semaphore.html#aa15c99471106762834b06f16e67151a1">xtd::threading::semaphore</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html#a9768d5b08aa592b96e4fb7880471b041">xtd::threading::event_wait_handle</a>, <a class="el" href="classxtd_1_1threading_1_1mutex.html#a0edfd2414178ff3f1e79ce4d29c8e972">xtd::threading::mutex</a>, and <a class="el" href="classxtd_1_1threading_1_1semaphore.html#aa15c99471106762834b06f16e67151a1">xtd::threading::semaphore</a>.</p>
 
 </div>
 </div>
@@ -355,7 +358,7 @@ The overloads of these methods provide timeout intervals for abandoning the wait
 <dl class="section return"><dt>Returns</dt><dd>true If the function succeeds, false otherwise. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Override this function for all derived object </dd></dl>
 
-<p>Implemented in <a class="el" href="classxtd_1_1threading_1_1mutex.html#a9fdaa8f872d88a427616d3a309b8bdb9">xtd::threading::mutex</a>, and <a class="el" href="classxtd_1_1threading_1_1semaphore.html#aaa4697bd9662757ea8545edcaf66edb6">xtd::threading::semaphore</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html#aaa4488a58c5f9a3d9275edcef7db8506">xtd::threading::event_wait_handle</a>, <a class="el" href="classxtd_1_1threading_1_1mutex.html#a9fdaa8f872d88a427616d3a309b8bdb9">xtd::threading::mutex</a>, and <a class="el" href="classxtd_1_1threading_1_1semaphore.html#aaa4697bd9662757ea8545edcaf66edb6">xtd::threading::semaphore</a>.</p>
 
 </div>
 </div>
@@ -572,7 +575,7 @@ The overloads of these methods provide timeout intervals for abandoning the wait
 <dd>
 Override this function for all derived object </dd></dl>
 
-<p>Implemented in <a class="el" href="classxtd_1_1threading_1_1mutex.html#ae9bb2824e6fda49dc1a7d843b269fcd4">xtd::threading::mutex</a>, and <a class="el" href="classxtd_1_1threading_1_1semaphore.html#ae682af05e36bcda4a9270490678c9128">xtd::threading::semaphore</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html#a307798f8a6772759c3bd9941bb7eab5d">xtd::threading::event_wait_handle</a>, <a class="el" href="classxtd_1_1threading_1_1mutex.html#ae9bb2824e6fda49dc1a7d843b269fcd4">xtd::threading::mutex</a>, and <a class="el" href="classxtd_1_1threading_1_1semaphore.html#ae682af05e36bcda4a9270490678c9128">xtd::threading::semaphore</a>.</p>
 
 </div>
 </div>
@@ -1084,7 +1087,7 @@ The number of objects in wait_handles is greater than the system permits. </td><
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Aug 3 2023 21:41:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Aug 4 2023 17:31:40 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
