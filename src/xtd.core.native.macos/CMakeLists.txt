@@ -65,6 +65,7 @@ add_sources(
   src/xtd/native/macos/thread.mm
   src/xtd/native/macos/translator.mm
   src/xtd/native/macos/types.mm
+  src/xtd/native/macos/unnamed_event_wait_handle.mm
   src/xtd/native/macos/unnamed_mutex.mm
   src/xtd/native/macos/unnamed_semaphore.mm
 )

@@ -34,6 +34,7 @@ add_sources(
   src/xtd/native/win32/thread.cpp
   src/xtd/native/win32/translator.cpp
   src/xtd/native/win32/types.cpp
+  src/xtd/native/win32/unnamed_event_wait_handle.cpp
   src/xtd/native/win32/unnamed_mutex.cpp
   src/xtd/native/win32/unnamed_semaphore.cpp
 )

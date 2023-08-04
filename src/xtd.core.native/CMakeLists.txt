@@ -53,6 +53,7 @@ add_sources(
   include/xtd/native/thread.h
   include/xtd/native/translator.h
   include/xtd/native/types.h
+  include/xtd/native/unnamed_event_wait_handle.h
   include/xtd/native/unnamed_mutex.h
   include/xtd/native/unnamed_semaphore.h
 )
