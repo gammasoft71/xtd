@@ -33,6 +33,7 @@ add_references(xtd.core.native)
 add_sources(
   include/xtd/xtd.core.native.unix.h
   include/xtd/xtd.core.native.unix
+  include/xtd/native/unix/mutex.h
   include/xtd/native/unix/semaphore.h
   include/xtd/native/unix/strings.h
   src/xtd/native/unix/console.cpp
@@ -47,9 +48,9 @@ add_sources(
   src/xtd/native/unix/file_system.cpp
   src/xtd/native/unix/guid.cpp
   src/xtd/native/unix/interlocked.cpp
+  src/xtd/native/unix/named_event_wait_handle.cpp
   src/xtd/native/unix/named_mutex.cpp
   src/xtd/native/unix/named_semaphore.cpp
-  src/xtd/native/unix/named_event_wait_handle.cpp
   src/xtd/native/unix/path.cpp
   src/xtd/native/unix/process.cpp
   src/xtd/native/unix/socket.cpp
@@ -59,6 +60,7 @@ add_sources(
   src/xtd/native/unix/thread.cpp
   src/xtd/native/unix/translator.cpp
   src/xtd/native/unix/types.cpp
+  src/xtd/native/unix/unnamed_mutex.cpp
   src/xtd/native/unix/unnamed_semaphore.cpp
 )
 target_type(${XTD_LIBRARY_TYPE})
