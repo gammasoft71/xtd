@@ -38,7 +38,7 @@ bool named_event_wait_handle::set(intmax_t handle, bool& io_error) {
   return !io_error;
 }
 
-bool named_event wait handle::reset(intmax_t handle, bool& io_error) {
+bool named_event_wait_handle::reset(intmax_t handle, bool& io_error) {
   io_error = false;
   if (reinterpret_cast<sem_t*>(handle) == SEM_FAILED) {
     io_error = true;
