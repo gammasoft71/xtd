@@ -29,9 +29,9 @@ add_sources(
   include/xtd/native/file_system.h
   include/xtd/native/guid.h
   include/xtd/native/interlocked.h
+  include/xtd/native/named_event_wait_handle.h
   include/xtd/native/named_mutex.h
   include/xtd/native/named_semaphore.h
-  include/xtd/native/named_event_wait_handle.h
   include/xtd/native/path.h
   include/xtd/native/platform_ids.h
   include/xtd/native/priority_class.h
@@ -53,6 +53,7 @@ add_sources(
   include/xtd/native/thread.h
   include/xtd/native/translator.h
   include/xtd/native/types.h
+  include/xtd/native/unnamed_mutex.h
   include/xtd/native/unnamed_semaphore.h
 )
 target_type(INTERFACE_LIBRARY)
