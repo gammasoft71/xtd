@@ -6,14 +6,15 @@
 using namespace xtd::native;
 
 intmax_t unnamed_semaphore::create(int_least32_t initial_count, int_least32_t max_count) {
-  sem_t* semaphore = SEM_FAILED;
-  if (sem_int(semaphore, 0, std::min(initial_count, max_count)) == -1) return SEM_FAILED;
+  sem_t* semaphore = new sem_t;
+  if (sem_init(semaphore, 0, std::min(initial_count, max_count)) == -1) return reinterpret_cast<intmax_t>(SEM_FAILED);
   return reinterpret_cast<intmax_t>(semaphore);
 }
 
 void unnamed_semaphore::destroy(intmax_t handle) {
   if (reinterpret_cast<sem_t*>(handle) == SEM_FAILED) return;
   sem_destroy(reinterpret_cast<sem_t*>(handle));
+  delete reinterpret_cast<sem_t*>(handle);
 }
 
 bool unnamed_semaphore::signal(intmax_t handle, int_least32_t release_count, int_least32_t& previous_count, bool& io_error) {
