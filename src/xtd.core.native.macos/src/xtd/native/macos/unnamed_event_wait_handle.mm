@@ -52,5 +52,9 @@ uint_least32_t unnamed_event_wait_handle::wait(intmax_t handle, int_least32_t mi
   if (result && errno == EINTR) return 0x00000080;
   if (result && errno == EINVAL) return 0xFFFFFFFF;
   if (result && errno == ETIMEDOUT) return 0x00000102;
+  if (manual_reset) {
+    auto io_error = false;
+    set(handle, io_error);
+  }
   return 0x00000000;
 }
