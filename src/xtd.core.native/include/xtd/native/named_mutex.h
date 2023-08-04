@@ -49,7 +49,6 @@ namespace xtd {
       /// @param name The name of the mutex.
       /// @param handle The mutex handle to destroy.
       /// @warning Internal use only
-      
       static void destroy(intmax_t handle, const std::string& name);
       
       /// @brief Gets the maximum name size supported.
