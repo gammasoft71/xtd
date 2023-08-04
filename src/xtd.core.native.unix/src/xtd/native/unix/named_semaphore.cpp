@@ -25,10 +25,13 @@ intmax_t named_semaphore::open(const std::string& name) {
 }
 
 bool named_semaphore::signal(intmax_t handle, int_least32_t release_count, int_least32_t& previous_count, bool& io_error) {
-  if (reinterpret_cast<sem_t*>(handle) == SEM_FAILED) return !(io_error = true);
+  io_error = false;
+  if (reinterpret_cast<sem_t*>(handle) == SEM_FAILED) {
+    io_error = true;
+    return false;
+  }
   previous_count = -1;
   sem_getvalue(reinterpret_cast<sem_t*>(handle), &previous_count);
-  io_error = false;
   for (auto count = 0; !io_error && count < release_count; ++count)
     if (sem_post(reinterpret_cast<sem_t*>(handle)) == -1 && errno == EINVAL) io_error = true;
   return !io_error;
