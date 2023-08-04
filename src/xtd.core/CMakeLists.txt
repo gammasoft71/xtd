@@ -716,6 +716,7 @@ add_sources(
   include/xtd/threading/auto_reset_event.h
   include/xtd/threading/auto_reset_event
   include/xtd/threading/event_reset_mode.h
+  include/xtd/threading/event_reset_mode
   include/xtd/threading/event_wait_handle.h
   include/xtd/threading/event_wait_handle
   include/xtd/threading/interlocked.h

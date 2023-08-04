@@ -1,6 +1,7 @@
 #pragma once
 #include "semaphore_base.h"
 #include <condition_variable>
+#include "../../../include/xtd/int32_object.h"
 #include "../../../include/xtd/semaphore.h"
 #include "../../../include/xtd/invalid_operation_exception.h"
 
@@ -60,7 +61,7 @@ private:
   struct data {
     int count = 0;
     int maximum_count = std::numeric_limits<int>::max();
-    std::counting_semaphore<std::numeric_limits<std::ptrdiff_t>::max()> semaphore {0};
+    std::counting_semaphore<int32_object::max_value> semaphore {0};
   };
   std::shared_ptr<data> handle_;
 };

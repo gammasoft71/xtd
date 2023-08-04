@@ -1,20 +1,20 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/named_event_wait_handle.h>
+#include <xtd/native/unnamed_event_wait_handle.h>
 #include "../../../../include/xtd/native/unix/semaphore.h"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
 using namespace xtd::native;
 
 intmax_t unnamed_event_wait_handle::create(bool initial_state, bool manual_reset) {
-  semaphore_t semaphore;
-  if (semaphore_create(current_task(), &semaphore, SYNC_POLICY_FIFO, initial_state ? 1 : 0) != err_none)
-    return reinterpret_cast<intmax_t>(SEM_FAILED);
-  return static_cast<intmax_t>(semaphore);
+  sem_t* semaphore = new sem_t;
+  if (sem_init(semaphore, 0, initial_state ? 1 : 0) != 0) return reinterpret_cast<intmax_t>(SEM_FAILED);
+  return reinterpret_cast<intmax_t>(semaphore);
 }
 
 void unnamed_event_wait_handle::destroy(intmax_t handle) {
   if (reinterpret_cast<sem_t*>(handle) == SEM_FAILED) return;
-  semaphore_destroy(current_task(), static_cast<semaphore_t>(handle));
+  sem_destroy(reinterpret_cast<sem_t*>(handle));
+  delete reinterpret_cast<sem_t*>(handle);
 }
 
 bool unnamed_event_wait_handle::set(intmax_t handle, bool& io_error) {
@@ -26,7 +26,7 @@ bool unnamed_event_wait_handle::set(intmax_t handle, bool& io_error) {
   auto previous_count = -1;
   sem_getvalue(reinterpret_cast<sem_t*>(handle), &previous_count);
   if (previous_count == 1) return true;
-  if (semaphore_signal(static_cast<semaphore_t>(handle)) != err_none) io_error = true;
+  if (sem_post(reinterpret_cast<sem_t*>(handle)) == -1 && errno == EINVAL) io_error = true;
   return !io_error;
 }
 
