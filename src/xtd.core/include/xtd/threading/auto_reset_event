@@ -1,0 +1,2 @@
+#pragma once
+#include "auto_reset_event.h"
