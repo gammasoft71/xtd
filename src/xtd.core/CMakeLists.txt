@@ -721,6 +721,8 @@ add_sources(
   include/xtd/threading/event_wait_handle
   include/xtd/threading/interlocked.h
   include/xtd/threading/interlocked
+  include/xtd/threading/lock_recursion_exception.h
+  include/xtd/threading/lock_recursion_exception
   include/xtd/threading/manual_reset_event.h
   include/xtd/threading/manual_reset_event
   include/xtd/threading/mutex.h

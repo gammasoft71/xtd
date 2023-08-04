@@ -149,6 +149,7 @@
 #include "threading/event_reset_mode.h"
 #include "threading/event_wait_handle.h"
 #include "threading/interlocked.h"
+#include "threading/lock_recursion_exception.h"
 #include "threading/manual_reset_event.h"
 #include "threading/mutex.h"
 #include "threading/semaphore.h"
