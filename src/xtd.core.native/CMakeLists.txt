@@ -31,6 +31,7 @@ add_sources(
   include/xtd/native/interlocked.h
   include/xtd/native/named_mutex.h
   include/xtd/native/named_semaphore.h
+  include/xtd/native/named_event_wait_handle.h
   include/xtd/native/path.h
   include/xtd/native/platform_ids.h
   include/xtd/native/priority_class.h

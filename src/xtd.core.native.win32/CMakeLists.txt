@@ -24,6 +24,7 @@ add_sources(
   src/xtd/native/win32/interlocked.cpp
   src/xtd/native/win32/named_mutex.cpp
   src/xtd/native/win32/named_semaphore.cpp
+  src/xtd/native/win32/named_event_wait_handle.cpp
   src/xtd/native/win32/path.cpp
   src/xtd/native/win32/process.cpp
   src/xtd/native/win32/socket.cpp

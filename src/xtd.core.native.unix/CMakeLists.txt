@@ -49,6 +49,7 @@ add_sources(
   src/xtd/native/unix/interlocked.cpp
   src/xtd/native/unix/named_mutex.cpp
   src/xtd/native/unix/named_semaphore.cpp
+  src/xtd/native/unix/named_event_wait_handle.cpp
   src/xtd/native/unix/path.cpp
   src/xtd/native/unix/process.cpp
   src/xtd/native/unix/socket.cpp
