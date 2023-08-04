@@ -23,6 +23,9 @@ bool unnamed_event_wait_handle::set(intmax_t handle, bool& io_error) {
     io_error = true;
     return false;
   }
+  auto previous_count = -1;
+  sem_getvalue(reinterpret_cast<sem_t*>(handle), &previous_count);
+  if (previous_count == 1) return true;
   if (semaphore_signal(static_cast<semaphore_t>(handle)) != err_none) io_error = true;
   return !io_error;
 }
