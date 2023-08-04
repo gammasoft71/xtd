@@ -713,8 +713,15 @@ add_sources(
   include/xtd/speech/synthesis/synthesizer_state
   include/xtd/threading/abandoned_mutex_exception.h
   include/xtd/threading/abandoned_mutex_exception
+  include/xtd/threading/auto_reset_event.h
+  include/xtd/threading/auto_reset_event
+  include/xtd/threading/event_reset_mode.h
+  include/xtd/threading/event_wait_handle.h
+  include/xtd/threading/event_wait_handle
   include/xtd/threading/interlocked.h
   include/xtd/threading/interlocked
+  include/xtd/threading/manual_reset_event.h
+  include/xtd/threading/manual_reset_event
   include/xtd/threading/mutex.h
   include/xtd/threading/mutex
   include/xtd/threading/semaphore.h
@@ -867,15 +874,19 @@ add_sources(
   src/xtd/security/secure_string.cpp
   src/xtd/speech/synthesis/prompt.cpp
   src/xtd/speech/synthesis/speech_synthesizer.cpp
+  src/xtd/threading/event_wait_handle.cpp
+  src/xtd/threading/event_wait_handle_base.h
   src/xtd/threading/interlocked.cpp
   src/xtd/threading/mutex.cpp
   src/xtd/threading/mutex_base.h
+  src/xtd/threading/named_event_wait_handle.h
   src/xtd/threading/named_mutex.h
   src/xtd/threading/named_semaphore.h
   src/xtd/threading/semaphore.cpp
   src/xtd/threading/semaphore_base.h
   src/xtd/threading/thread.cpp
   src/xtd/threading/timeout.cpp
+  src/xtd/threading/unnamed_event_wait_handle.h
   src/xtd/threading/unnamed_mutex.h
   src/xtd/threading/unnamed_semaphore.h
   src/xtd/threading/wait_handle.cpp
