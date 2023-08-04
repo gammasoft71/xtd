@@ -4,6 +4,7 @@ project(threading)
 find_package(xtd REQUIRED)
 
 add_projects(
+  auto_reset_event
   interlocked
   interlocked_decrement
 )
