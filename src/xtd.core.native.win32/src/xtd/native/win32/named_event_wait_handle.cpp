@@ -51,7 +51,7 @@ bool named_event_wait_handle::reset(intmax_t handle, bool& io_error) {
   return !io_error;
 }
 
-uint_least32_t named_event_wait_handle::wait(intmax_t handle, bool manual_reset, int_least32_t milliseconds_timeout) {
+uint_least32_t named_event_wait_handle::wait(intmax_t handle, int_least32_t milliseconds_timeout, bool manual_reset) {
   if (reinterpret_cast<HANDLE>(handle) == INVALID_HANDLE_VALUE) return WAIT_FAILED;
   return static_cast<uint_least32_t>(WaitForSingleObject(reinterpret_cast<HANDLE>(handle), milliseconds_timeout == -1 ? INFINITE : milliseconds_timeout));
 }

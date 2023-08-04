@@ -18,6 +18,7 @@ namespace xtd::native {
   class environment;
   class file;
   class file_system;
+  class named_event_wait_handle;
   class named_mutex;
   class named_semaphore;
   class path;
@@ -33,6 +34,7 @@ namespace xtd::native {
       friend xtd::native::environment;
       friend xtd::native::file;
       friend xtd::native::file_system;
+      friend xtd::native::named_event_wait_handle;
       friend xtd::native::named_mutex;
       friend xtd::native::named_semaphore;
       friend xtd::native::path;
