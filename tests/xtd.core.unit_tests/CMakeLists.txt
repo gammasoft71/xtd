@@ -229,6 +229,7 @@ add_sources(
   src/xtd/threading/tests/mutex_tests.cpp
   src/xtd/threading/tests/semaphore_full_exception_tests.cpp
   src/xtd/threading/tests/semaphore_tests.cpp
+  src/xtd/threading/tests/synchronization_lock_exception_tests.cpp
   src/xtd/threading/tests/thread_tests.cpp
   src/xtd/threading/tests/thread_abort_exception_tests.cpp
   src/xtd/threading/tests/thread_interrupted_exception_tests.cpp
