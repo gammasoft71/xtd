@@ -743,6 +743,8 @@ add_sources(
   include/xtd/threading/thread_interrupted_exception
   include/xtd/threading/thread_priority.h
   include/xtd/threading/thread_priority
+  include/xtd/threading/thread_start.h
+  include/xtd/threading/thread_start
   include/xtd/threading/thread_state.h
   include/xtd/threading/thread_state
   include/xtd/threading/thread_state_exception.h
