@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::mutex exception.
+/// @brief Contains xtd::threading::mutex exception.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include "wait_handle.h"

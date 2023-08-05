@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::semaphore exception.
+/// @brief Contains xtd::threading::semaphore exception.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include "semaphore_full_exception.h"

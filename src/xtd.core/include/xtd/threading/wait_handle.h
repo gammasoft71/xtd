@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::wait_handle exception.
+/// @brief Contains xtd::threading::wait_handle exception.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include "../abstract.h"
