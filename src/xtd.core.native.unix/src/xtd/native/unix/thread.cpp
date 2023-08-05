@@ -4,20 +4,45 @@
 #include <cmath>
 #include <pthread.h>
 
+#define PTHREAD_FAILED ((pthread_t)-1)
+
 using namespace xtd::native;
 
 bool thread::cancel(intmax_t handle) {
-  if (static_cast<pthread_t>(handle)) return false;
+  if (static_cast<pthread_t>(handle) == PTHREAD_FAILED) return false;
   return pthread_cancel(static_cast<pthread_t>(handle)) == 0;
+}
+
+intmax_t thread::create(std::function<void(intmax_t)> start, intmax_t obj, int_least32_t max_stack_size) {
+  auto thread = pthread_t {};
+  int error = pthread_create(&thread, nullptr, [](void* thread_arg)->void* {
+    auto start_obj = reinterpret_cast<std::pair<std::function<int_least32_t(intmax_t)>, intmax_t>*>(thread_arg);
+    start_obj->first(start_obj->second);
+    delete start_obj;
+    return nullptr;
+  }, reinterpret_cast<void*>( new std::pair<std::function<void(intmax_t)>, intmax_t> {start, obj}));
+  if (error != 0) return reinterpret_cast<intmax_t>(PTHREAD_FAILED);
+  return static_cast<intmax_t>(thread);
 }
 
 intmax_t thread::get_current_thread_handle() {
   return static_cast<intmax_t>(pthread_self());
 }
 
+bool thread::join(intmax_t handle) {
+  if (static_cast<pthread_t>(handle) == PTHREAD_FAILED) return false;
+  return pthread_join(static_cast<pthread_t>(handle), nullptr) == 0;
+}
+
 bool thread::resume(intmax_t handle) {
+  if (static_cast<pthread_t>(handle) == PTHREAD_FAILED) return false;
   // The POSIX standard provides no mechanism by which a thread A can suspend the execution of another thread B, without cooperation from B. The only way to implement a suspend/resume mechanism is to have B check periodically some global variable for a suspend request and then suspend itself on a condition variable, which another thread can signal later to restart B.
   return false;
+}
+
+bool thread::set_background(intmax_t handle) {
+  if (reinterpret_cast<pthread_t>(handle) == PTHREAD_FAILED) return false;
+  return pthread_detach(reinterpret_cast<pthread_t>(handle)) == 0;
 }
 
 bool thread::set_current_thread_name(const std::string& name) {
@@ -26,6 +51,7 @@ bool thread::set_current_thread_name(const std::string& name) {
 }
 
 bool thread::set_priority(intmax_t handle, int_least32_t priority) {
+  if (static_cast<pthread_t>(handle) == PTHREAD_FAILED) return false;
   int_least32_t policy;
   sched_param schedParam;
   if (::pthread_getschedparam(static_cast<pthread_t>(handle), &policy, &schedParam) != 0)
@@ -36,6 +62,7 @@ bool thread::set_priority(intmax_t handle, int_least32_t priority) {
 }
 
 bool thread::suspend(intmax_t handle) {
+  if (static_cast<pthread_t>(handle) == PTHREAD_FAILED) return false;
   // The POSIX standard provides no mechanism by which a thread A can suspend the execution of another thread B, without cooperation from B. The only way to implement a suspend/resume mechanism is to have B check periodically some global variable for a suspend request and then suspend itself on a condition variable, which another thread can signal later to restart B.
   return false;
 }

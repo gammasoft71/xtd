@@ -44,16 +44,36 @@ namespace xtd {
       /// @warning Internal use only
       static bool cancel(intmax_t handle);
       
+      /// @brief Cancel thread with specified handle.
+      /// @param start The function to run in the new thread created.
+      /// @param obj The argument of the start function.
+      /// @param max_stack_size The maximum stack size, in bytes, to be used by the thread, or 0 to use the default maximum stack size specified in the header for the executable.
+      /// @return The thread handle.
+      /// @warning Internal use only
+      static intmax_t create(std::function<void(intmax_t)> start, intmax_t obj, int_least32_t max_stack_size);
+
       /// @brief Gets the current thread handle.
       /// @return The current thread handle.
       /// @warning Internal use only
       static intmax_t get_current_thread_handle();
 
+      /// @brief Join thread with specified handle.
+      /// @param handle The thread handle.
+      /// @return true if succeed; otherwise false.
+      /// @warning Internal use only
+      bool join(intmax_t handle);
+      
       /// @brief Resume thread with specified handle.
       /// @param handle The thread handle.
       /// @return true if succeed; otherwise false.
       /// @warning Internal use only
       static bool resume(intmax_t handle);
+      
+      /// @brief Set background (detach) thread with specified handle.
+      /// @param handle The thread handle.
+      /// @return true if succeed; otherwise false.
+      /// @warning Internal use only
+      bool set_background(intmax_t handle);
       
       /// @brief Sets the current thread name.
       /// @param name The current thread name.
