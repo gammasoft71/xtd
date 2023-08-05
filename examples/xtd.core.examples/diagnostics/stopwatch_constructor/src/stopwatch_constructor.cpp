@@ -1,16 +1,16 @@
+#include <xtd/threading/thread>
 #include <xtd/diagnostics/stopwatch>
 #include <xtd/console>
 #include <chrono>
-#include <thread>
 
 using namespace std::chrono;
-using namespace std::this_thread;
 using namespace xtd;
+using namespace xtd::threading;
 
 auto main()->int {
   auto stopwatch = xtd::diagnostics::stopwatch {};
   stopwatch.start();
-  sleep_for(10000_ms);
+  thread::sleep(10000_ms);
   stopwatch.stop();
   // Get the elapsed time as a duration value.
   auto ns = stopwatch.elapsed();

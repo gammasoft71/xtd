@@ -1,8 +1,8 @@
 #include <xtd/console>
-#include <thread>
+#include <xtd/threading/thread>
 
-using namespace std::this_thread;
 using namespace xtd;
+using namespace xtd::threading;
 
 auto main()->int {
   auto cki = console_key_info {};
@@ -14,7 +14,7 @@ auto main()->int {
     // for the sake of this example we'll merely pause for a quarter second.
     
     while (console::key_available() == false)
-      sleep_for(250_ms); // Loop until input is entered.
+      thread::sleep(250_ms); // Loop until input is entered.
     
     cki = console::read_key(true);
     console::write_line("You pressed the '{0}' key.", cki.key());

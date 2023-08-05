@@ -1,10 +1,9 @@
+#include <xtd/threading/thread>
 #include <xtd/console>
 #include <xtd/environment>
 #include <xtd/startup>
-#include <thread>
 
 using namespace std;
-using namespace std::this_thread;
 using namespace xtd;
 
 namespace environment_program_exit_example {
@@ -21,7 +20,7 @@ namespace environment_program_exit_example {
       auto do_something_thread = thread([] {
         for (auto step = 0; step < 50; ++step) {
           console::write('.');
-          sleep_for(100_ms);
+          threading::thread::sleep(100_ms);
         }
         console::write_line();
       });

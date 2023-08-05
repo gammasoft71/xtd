@@ -2,12 +2,11 @@
 #include <xtd/is>
 #include <xtd/random>
 #include <xtd/startup>
+#include <xtd/threading/thread>
 #include <memory>
 #include <vector>
-#include <thread>
 
 using namespace std;
-using namespace std::this_thread;
 using namespace xtd;
 
 namespace console_firework_example {
@@ -157,7 +156,7 @@ namespace console_firework_example {
         for (auto& firework : fireworks_to_removed)
           fireworks.remove(firework);
         
-        sleep_for(100_ms);
+        threading::thread::sleep(100_ms);
       }
       
       console::reset_color();
