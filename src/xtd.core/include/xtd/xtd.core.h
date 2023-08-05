@@ -154,6 +154,7 @@
 #include "threading/mutex.h"
 #include "threading/semaphore.h"
 #include "threading/semaphore_full_exception.h"
+#include "threading/synchronization_lock_exception.h"
 #include "threading/thread.h"
 #include "threading/thread_abort_exception.h"
 #include "threading/thread_interrupted_exception.h"
