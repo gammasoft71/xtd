@@ -42,6 +42,11 @@ namespace xtd {
       /// @param handle The thread handle.
       /// @warning Internal use only
       static bool cancel(intmax_t handle);
+      
+      /// @brief Gets the current thread handle.
+      /// @return The current thread handle.
+      /// @warning Internal use only
+      static intmax_t get_current_thread_handle();
       /// @}
     };
   }

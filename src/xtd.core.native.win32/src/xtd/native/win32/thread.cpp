@@ -8,6 +8,10 @@
 using namespace xtd::native;
 
 bool thread::cancel(intmax_t handle) {
-  /// @todo Make mplementation for Windows
-  return false;
+  if (reinterpret_cast<HANDLE>(handle) == INVALID_HANDLE_VALUE) return false;
+  return TerminateThread(reinterpret_cast<HANDLE>(handle), -1) != FALSE;
+}
+
+intmax_t thread::get_current_thread_handle() {
+  return reinterpret_cast<intmax_t>(GetCurrentThread());
 }
