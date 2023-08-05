@@ -52,6 +52,14 @@ namespace xtd {
       
       /// @{
       thread();
+      
+      explicit thread(xtd::threading::thread_start start);
+      
+      thread(xtd::threading::thread_start start, int32 max_stack_size);
+      
+      explicit thread(xtd::threading::parameterized_thread_start start);
+      
+      thread(xtd::threading::parameterized_thread_start start, int32 max_stack_size);
       /// @}
 
       /// @cond

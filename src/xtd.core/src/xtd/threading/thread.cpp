@@ -46,6 +46,22 @@ thread::thread_collection thread::threads_ {thread {}, thread {}};
 thread::thread() : data_(std::make_shared<data>()) {
 }
 
+thread::thread(xtd::threading::thread_start start) {
+  
+}
+
+thread::thread(xtd::threading::thread_start start, int32 max_stack_size) {
+  
+}
+
+thread::thread(xtd::threading::parameterized_thread_start start) {
+  
+}
+
+thread::thread(xtd::threading::parameterized_thread_start start, int32 max_stack_size) {
+  
+}
+
 thread& thread::current_thread() {
   std::lock_guard<std::recursive_mutex> lock(mutex_);
   std::thread::id id = std::this_thread::get_id();
