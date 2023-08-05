@@ -1,5 +1,4 @@
-#include <thread>
-#include <xtd/chrono>
+#include <xtd/threading/thread.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/message_box.h>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
@@ -7,11 +6,9 @@
 #include "../../../include/xtd/forms/message_dialog.h"
 #include "xtd_forms_message_dialog_closed_caller.h"
 
-using namespace std;
-using namespace std::literals;
-using namespace std::this_thread;
 using namespace xtd;
 using namespace xtd::forms;
+using namespace xtd::threading;
 
 struct message_dialog::data {
   xtd::forms::message_dialog_buttons buttons = xtd::forms::message_dialog_buttons::ok;
@@ -135,7 +132,7 @@ xtd::forms::dialog_result message_dialog::show_sheet_dialog(const iwin32_window&
   show_sheet(owner);
   while (data_->dialog_result == xtd::forms::dialog_result::none) {
     application::do_events();
-    sleep_for(100ms);
+    thread::sleep(100_ms);
   }
   return data_->dialog_result;
 }

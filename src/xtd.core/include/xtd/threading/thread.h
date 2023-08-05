@@ -11,7 +11,6 @@
 #include "../time_span.h"
 #include "../types.h"
 #include <mutex>
-#include <thread>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -32,8 +31,8 @@ namespace xtd {
     /// @ingroup xtd_core threading
     class core_export_ thread : public object {
       struct data;
-      using native_handle = std::thread::native_handle_type;
-      using thread_id = std::thread::id;
+      //using native_handle = std::thread::native_handle_type;
+      //using thread_id = std::thread::id;
       using thread_collection = std::vector<thread>;
 
       friend class wait_handle;
@@ -80,7 +79,10 @@ namespace xtd {
       /// @brief Suspends the current thread for a specified time.
       /// @param timeout A xtd::time_span set to the amount of time for which the thread is blocked. Specify zero to indicate that this thread should be suspended to allow other waiting threads to execute. Specify xtd::threading::Timeout.Infinite to block the thread indefinitely.
       /// @exception ArgumentException The value of timeout is negative and is not equal to xtd::threading::Timeout.Infinite in milliseconds, or is greater than xtd::Int32.MaxValue milliseconds.
-      static void sleep(const time_span& timeout);
+      template<typename duration_t, typename period_t = std::ratio<1>>
+      static void sleep(const std::chrono::duration<duration_t, period_t>& timeout) {
+        nano_sleep(duration_cast<std::chrono::nanoseconds>(timeout));
+      }
 
       /// @brief Causes the calling thread to yield execution to another thread that is ready to run on the current processor. The operating system selects the thread to yield to.
       /// @return true if the operating system switched execution to another thread; otherwise, false.
@@ -90,15 +92,19 @@ namespace xtd {
       static bool yield();
       /// @}
 
+      /// @cond
+      /// @endcond
+      
     protected:
       
     private:
       bool cancel();
       static bool do_wait(wait_handle& wait_handle, int32 milliseconds_timeout);
+      static void nano_sleep(const std::chrono::nanoseconds& timeout);
 
       std::shared_ptr<data> data_;
-      static thread_id main_thread_id_;
-      static std::recursive_mutex mutex_;
+      //static thread_id main_thread_id_;
+      //static std::recursive_mutex mutex_;
       static thread_collection threads_;
       static constexpr int32 unmanaged_thread_id = 0;
       static constexpr int32 main_managed_thread_id = 1;

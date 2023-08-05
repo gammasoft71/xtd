@@ -3,7 +3,6 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include <string>
-#include <thread>
 #include <vector>
 #include "../date_time.h"
 #include "../object.h"

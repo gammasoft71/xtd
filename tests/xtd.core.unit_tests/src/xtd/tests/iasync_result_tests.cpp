@@ -1,13 +1,14 @@
 #include <xtd/iasync_result>
 #include <xtd/invalid_operation_exception>
+#include <xtd/threading/thread.h>
 #include <thread>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
 
 using namespace std;
-using namespace std::this_thread;
 using namespace xtd;
+using namespace xtd::threading;
 using namespace xtd::tunit;
 
 namespace xtd::tests {
@@ -44,8 +45,8 @@ namespace xtd::tests {
         result_.async_state("Started");
         result_.is_completed(false);
         result_.async_mutex().lock();
-        thread_ = thread {[this] {
-          sleep_for(2_ms);
+        thread_ = std::thread {[this] {
+          threading::thread::sleep(2_ms);
           result_.async_state("Ended");
           result_.is_completed(true);
           result_.async_mutex().unlock();
@@ -60,7 +61,7 @@ namespace xtd::tests {
       }
       
     private:
-      thread thread_;
+      std::thread thread_;
       test_async_result result_;
     };
     

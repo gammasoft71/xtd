@@ -2,7 +2,6 @@
 /// @brief Contains xtd::forms::background_worker component.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <thread>
 #include "../forms_export.h"
 #include "component.h"
 #include "form.h"

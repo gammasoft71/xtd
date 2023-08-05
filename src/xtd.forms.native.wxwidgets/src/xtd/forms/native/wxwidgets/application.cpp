@@ -1,6 +1,6 @@
-#include <thread>
 #include <xtd/chrono>
 #include <xtd/environment.h>
+#include <xtd/threading/thread.h>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/toolkit.h>
 #include <xtd/drawing/native/wx_application.h>
@@ -56,12 +56,10 @@ bool __xtd_macos_dark_mode_enabled__();
 extern drawing_native_export_ bool __enable_system_font_size__ ;
 extern bool __enable_font_size_correction__;
 
-using namespace std;
-using namespace std::this_thread;
-using namespace std::literals;
 using namespace xtd;
 using namespace xtd::drawing::native;
 using namespace xtd::forms::native;
+using namespace xtd::threading;
 
 std::vector<control_handler*> __control_handler_to_delete_items__;
 
@@ -117,7 +115,7 @@ void application::do_events() {
 }
 
 void application::do_idle() {
-  sleep_for(20ms);
+  thread::sleep(20_ms);
   wxWakeUpIdle();
 }
 

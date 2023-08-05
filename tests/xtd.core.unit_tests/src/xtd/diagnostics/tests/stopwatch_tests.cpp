@@ -1,13 +1,11 @@
 #include <xtd/diagnostics/stopwatch.h>
-#include <thread>
+#include <xtd/threading/thread.h>
 #include <xtd/tunit/assert.h>
 #include <xtd/tunit/test_class_attribute.h>
 #include <xtd/tunit/test_method_attribute.h>
 
-using namespace std::chrono;
-using namespace std::literals;
-using namespace std::this_thread;
 using namespace xtd::diagnostics;
+using namespace xtd::threading;
 using namespace xtd::tunit;
 
 namespace xtd::diagnostics::tests {
@@ -15,9 +13,9 @@ namespace xtd::diagnostics::tests {
   public:
     void test_method_(create_stopwatch) {
       stopwatch s;
-      sleep_for(1ms);
+      thread::sleep(1_ms);
       assert::is_false(s.is_running(), csf_);
-      assert::are_equal(0ns, s.elapsed(), csf_);
+      assert::are_equal(0_ns, s.elapsed(), csf_);
       assert::are_equal(0, s.elapsed_milliseconds(), csf_);
       assert::are_equal(0, s.elapsed_nanoseconds(), csf_);
       assert::are_equal(0, s.elapsed_ticks(), csf_);
@@ -26,9 +24,9 @@ namespace xtd::diagnostics::tests {
     void test_method_(start_stopwatch) {
       stopwatch s;
       s.start();
-      sleep_for(1ms);
+      thread::sleep(1_ms);
       assert::is_true(s.is_running(), csf_);
-      assert::is_greater_or_equal(s.elapsed(), 1000000ns, csf_);
+      assert::is_greater_or_equal(s.elapsed(), 1000000_ns, csf_);
       assert::is_greater_or_equal(s.elapsed_milliseconds(), 1, csf_);
       assert::is_greater_or_equal(s.elapsed_nanoseconds(), 1000000, csf_);
       assert::is_greater_or_equal(s.elapsed_ticks(), 10000, csf_);
@@ -37,10 +35,10 @@ namespace xtd::diagnostics::tests {
     void test_method_(start_start_stopwatch) {
       stopwatch s;
       s.start();
-      sleep_for(1ms);
+      thread::sleep(1_ms);
       s.start();
       assert::is_true(s.is_running(), csf_);
-      assert::is_greater_or_equal(s.elapsed(), 1000000ns, csf_);
+      assert::is_greater_or_equal(s.elapsed(), 1000000_ns, csf_);
       assert::is_greater_or_equal(s.elapsed_milliseconds(), 1, csf_);
       assert::is_greater_or_equal(s.elapsed_nanoseconds(), 1000000, csf_);
       assert::is_greater_or_equal(s.elapsed_ticks(), 10000, csf_);
@@ -49,9 +47,9 @@ namespace xtd::diagnostics::tests {
     void test_method_(stop_without_start_stopwatch) {
       stopwatch s;
       s.stop();
-      sleep_for(1ms);
+      thread::sleep(1_ms);
       assert::is_false(s.is_running(), csf_);
-      assert::are_equal(0ns, s.elapsed(), csf_);
+      assert::are_equal(0_ns, s.elapsed(), csf_);
       assert::are_equal(0, s.elapsed_milliseconds(), csf_);
       assert::are_equal(0, s.elapsed_nanoseconds(), csf_);
       assert::are_equal(0, s.elapsed_ticks(), csf_);
@@ -60,10 +58,10 @@ namespace xtd::diagnostics::tests {
     void test_method_(start_stop_stopwatch) {
       stopwatch s;
       s.start();
-      sleep_for(1ms);
+      thread::sleep(1_ms);
       s.stop();
       assert::is_false(s.is_running(), csf_);
-      assert::is_greater_or_equal(s.elapsed(), 1000000ns, csf_);
+      assert::is_greater_or_equal(s.elapsed(), 1000000_ns, csf_);
       assert::is_greater_or_equal(s.elapsed_milliseconds(), 1, csf_);
       assert::is_greater_or_equal(s.elapsed_nanoseconds(), 1000000, csf_);
       assert::is_greater_or_equal(s.elapsed_ticks(), 10000, csf_);
@@ -72,11 +70,11 @@ namespace xtd::diagnostics::tests {
     void test_method_(start_stop_reset_stopwatch) {
       stopwatch s;
       s.start();
-      sleep_for(1ms);
+      thread::sleep(1_ms);
       s.stop();
       s.reset();
       assert::is_false(s.is_running(), csf_);
-      assert::are_equal(0ns, s.elapsed(), csf_);
+      assert::are_equal(0_ns, s.elapsed(), csf_);
       assert::are_equal(0, s.elapsed_milliseconds(), csf_);
       assert::are_equal(0, s.elapsed_nanoseconds(), csf_);
       assert::are_equal(0, s.elapsed_ticks(), csf_);
@@ -85,10 +83,10 @@ namespace xtd::diagnostics::tests {
     void test_method_(start_reset_stopwatch) {
       stopwatch s;
       s.start();
-      sleep_for(1ms);
+      thread::sleep(1_ms);
       s.reset();
       assert::is_false(s.is_running(), csf_);
-      assert::are_equal(0ns, s.elapsed(), csf_);
+      assert::are_equal(0_ns, s.elapsed(), csf_);
       assert::are_equal(0, s.elapsed_milliseconds(), csf_);
       assert::are_equal(0, s.elapsed_nanoseconds(), csf_);
       assert::are_equal(0, s.elapsed_ticks(), csf_);
@@ -98,7 +96,7 @@ namespace xtd::diagnostics::tests {
       stopwatch s;
       s.reset();
       assert::is_false(s.is_running(), csf_);
-      assert::are_equal(0ns, s.elapsed(), csf_);
+      assert::are_equal(0_ns, s.elapsed(), csf_);
       assert::are_equal(0, s.elapsed_milliseconds(), csf_);
       assert::are_equal(0, s.elapsed_nanoseconds(), csf_);
       assert::are_equal(0, s.elapsed_ticks(), csf_);
@@ -107,9 +105,9 @@ namespace xtd::diagnostics::tests {
     void test_method_(restart_stopwatch) {
       stopwatch s;
       s.restart();
-      sleep_for(1ms);
+      thread::sleep(1_ms);
       assert::is_true(s.is_running(), csf_);
-      assert::is_greater_or_equal(s.elapsed(), 1000000ns, csf_);
+      assert::is_greater_or_equal(s.elapsed(), 1000000_ns, csf_);
       assert::is_greater_or_equal(s.elapsed_milliseconds(), 1, csf_);
       assert::is_greater_or_equal(s.elapsed_nanoseconds(), 1000000, csf_);
       assert::is_greater_or_equal(s.elapsed_ticks(), 10000, csf_);
@@ -117,9 +115,9 @@ namespace xtd::diagnostics::tests {
     
     void test_method_(start_new_stopwatch) {
       auto s = stopwatch::start_new();
-      sleep_for(1ms);
+      thread::sleep(1_ms);
       assert::is_true(s.is_running(), csf_);
-      assert::is_greater_or_equal(s.elapsed(), 1000000ns, csf_);
+      assert::is_greater_or_equal(s.elapsed(), 1000000_ns, csf_);
       assert::is_greater_or_equal(s.elapsed_milliseconds(), 1, csf_);
       assert::is_greater_or_equal(s.elapsed_nanoseconds(), 1000000, csf_);
       assert::is_greater_or_equal(s.elapsed_ticks(), 10000, csf_);
@@ -128,17 +126,17 @@ namespace xtd::diagnostics::tests {
     void test_method_(cumulative_elapsed_stopwatch) {
       stopwatch s;
       s.start();
-      sleep_for(1ms);
+      thread::sleep(1_ms);
       s.stop();
       auto elapsed_1 = s.elapsed_milliseconds();
       assert::is_greater_or_equal(elapsed_1, 1, csf_);
       s.start();
-      sleep_for(1ms);
+      thread::sleep(1_ms);
       s.stop();
       auto elapsed_2 = s.elapsed_milliseconds();
       assert::is_greater(elapsed_2, elapsed_1, csf_);
       s.start();
-      sleep_for(1ms);
+      thread::sleep(1_ms);
       s.stop();
       auto elapsed_3 = s.elapsed_milliseconds();
       assert::is_greater(elapsed_3, elapsed_2, csf_);

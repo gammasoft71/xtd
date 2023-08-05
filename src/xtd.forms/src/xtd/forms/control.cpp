@@ -820,7 +820,7 @@ std::shared_ptr<xtd::iasync_result> control::begin_invoke(delegate<void()> value
 }
 
 shared_ptr<iasync_result> control::begin_invoke(delegate<void(vector<any>)> value, const vector<any>& args) {
-  //while (!xtd::forms::application::message_loop()) this_thread::sleep_for(10ms);
+  //while (!xtd::forms::application::message_loop()) xtd::threading::thread::sleep(10_ms);
   shared_ptr<async_result_invoke> async = make_shared<async_result_invoke>(std::reference_wrapper(*this));
   async->async_mutex().lock();
   if (is_handle_created()) native::control::invoke_in_control_thread(data_->handle, value, args, async->data_->async_mutex, async->data_->is_completed);
