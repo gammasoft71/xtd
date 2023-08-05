@@ -40,6 +40,7 @@ namespace xtd {
       /// @{
       /// @brief Cancel thread with specified handle.
       /// @param handle The thread handle.
+      /// @return true if succeed; otherwise false.
       /// @warning Internal use only
       static bool cancel(intmax_t handle);
       
@@ -47,6 +48,37 @@ namespace xtd {
       /// @return The current thread handle.
       /// @warning Internal use only
       static intmax_t get_current_thread_handle();
+
+      /// @brief Resume thread with specified handle.
+      /// @param handle The thread handle.
+      /// @return true if succeed; otherwise false.
+      /// @warning Internal use only
+      static bool resume(intmax_t handle);
+      
+      /// @brief Sets the current thread name.
+      /// @param name The current thread name.
+      /// @return true if succeed; otherwise false.
+      /// @warning Internal use only
+      static bool set_current_thread_name(const std::string& name);
+
+      /// @brief Sets the thread priority.
+      /// @param handle The thread handle.
+      /// @param priority The thread priority.
+      /// @return true if succeed; otherwise false.
+      /// @warning Internal use only
+      /// @remarks
+      /// * 0 : lowest
+      /// * 1 : below_normal
+      /// * 2 : normal
+      /// * 3 : above_normal
+      /// * 4 : highest
+      static bool set_priority(intmax_t handle, int_least32_t priority);
+
+      /// @brief Suspend thread with specified handle.
+      /// @param handle The thread handle.
+      /// @return true if succeed; otherwise false.
+      /// @warning Internal use only
+      static bool suspend(intmax_t handle);
       /// @}
     };
   }
