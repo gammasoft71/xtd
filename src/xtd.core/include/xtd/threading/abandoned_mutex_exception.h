@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::abandoned_mutex_exception exception.
+/// @brief Contains xtd::threading::abandoned_mutex_exception exception.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include "../system_exception.h"

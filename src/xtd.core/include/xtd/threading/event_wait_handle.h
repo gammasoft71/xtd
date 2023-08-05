@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::event_wait_handle exception.
+/// @brief Contains xtd::threading::event_wait_handle exception.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include "event_reset_mode.h"
