@@ -35,6 +35,7 @@ namespace xtd {
   /// @cond
   class ustring;
   namespace threading {
+    class thread;
     class wait_handle;
   }
   /// @endcond
@@ -52,6 +53,7 @@ namespace xtd {
     class core_native_export_ types final {
       types() = delete;
       friend xtd::ustring;
+      friend xtd::threading::thread;
       friend xtd::threading::wait_handle;
     protected:
       /// @name Protected methods
