@@ -35,13 +35,37 @@ bool thread::cancel(intmax_t handle) {
   return TerminateThread(reinterpret_cast<HANDLE>(handle), -1) != FALSE;
 }
 
+intmax_t thread::create(std::function<void(intmax_t)> start, intmax_t obj, int_least32_t max_stack_size) {
+  SECURITY_ATTRIBUTES sa;
+  sa.bInheritHandle = TRUE;
+  sa.lpSecurityDescriptor = nullptr;
+  sa.nLength = sizeof(SECURITY_ATTRIBUTES);
+  HANDLE thread = CreateThread(nullptr, max_stack_size, [](void* thread_arg)->DWORD {
+    auto start_obj = reinterpret_cast<std::pair<std::function<int_least32_t(intmax_t)>, intmax_t>*>(thread_arg);
+    start_obj->first(start_obj->second);
+    delete start_obj;
+    return 0;
+  }, reinterpret_cast<void*>(new std::pair<std::function<void(intmax_t)>, intmax_t>{ start, obj }), 0/*CREATE_SUSPENDED | STACK_SIZE_PARAM_IS_A_RESERVATION*/, nullptr);
+  return reinterpret_cast<intmax_t>(thread);
+}
+
 intmax_t thread::get_current_thread_handle() {
   return reinterpret_cast<intmax_t>(GetCurrentThread());
+}
+
+bool thread::join(intmax_t handle) {
+  if (reinterpret_cast<HANDLE>(handle) == INVALID_HANDLE_VALUE) return false;
+  return WaitForSingleObject(reinterpret_cast<HANDLE>(handle), INFINITE) == 0;
 }
 
 bool thread::resume(intmax_t handle) {
   if (reinterpret_cast<HANDLE>(handle) == INVALID_HANDLE_VALUE) return false;
   return ResumeThread(reinterpret_cast<HANDLE>(handle)) != -1;
+}
+
+bool thread::set_background(intmax_t handle) {
+  if (reinterpret_cast<HANDLE>(handle) == INVALID_HANDLE_VALUE) return false;
+  return CloseHandle(reinterpret_cast<HANDLE>(handle)) == TRUE;
 }
 
 bool thread::set_current_thread_name(const std::string& name) {
@@ -50,6 +74,7 @@ bool thread::set_current_thread_name(const std::string& name) {
 }
 
 bool thread::set_priority(intmax_t handle, int_least32_t priority) {
+  if (reinterpret_cast<HANDLE>(handle) == INVALID_HANDLE_VALUE) return false;
   return SetThreadPriority((HANDLE)handle, priority - 2) != FALSE;
 }
 
