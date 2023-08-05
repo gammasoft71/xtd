@@ -1,11 +1,9 @@
 #include <xtd/console>
 #include <xtd/int32_object>
-#include <thread>
+#include <xtd/threading/thread>
 
-using namespace std;
-using namespace std::chrono;
-using namespace std::this_thread;
 using namespace xtd;
+using namespace xtd::threading;
 
 auto main(int argc, char* argv[])->int {
   auto x = 0;
@@ -14,7 +12,7 @@ auto main(int argc, char* argv[])->int {
     for (auto i = 1; i <= x; i++) {
       console::write_line("Beep number {}.", i);
       console::beep();
-      sleep_for(milliseconds {100});
+      thread::sleep(100_ms);
     }
   } else
     console::write_line("Usage: Enter the number of times (between 1 and 9) to beep.");

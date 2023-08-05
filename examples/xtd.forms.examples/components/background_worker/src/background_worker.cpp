@@ -6,11 +6,11 @@
 #include <xtd/forms/panel>
 #include <xtd/forms/progress_bar>
 #include <xtd/forms/text_box>
-#include <thread>
+#include <xtd/threading/thread>
 
-using namespace std::this_thread;
 using namespace xtd;
 using namespace xtd::forms;
+using namespace xtd::threading;
 
 namespace background_worker_example {
   class form1 : public form {
@@ -70,7 +70,7 @@ namespace background_worker_example {
       worker.do_work += [&] {
         for (auto step = 1; step <= progress.maximum(); ++step) {
           if (worker.cancellation_pending()) break; // stop work...
-          sleep_for(100_ms); // simulate work...
+          thread::sleep(100_ms); // simulate work...
           worker.report_progress(step, ustring::format("step {} / {}", step, progress.maximum()));
         }
       };

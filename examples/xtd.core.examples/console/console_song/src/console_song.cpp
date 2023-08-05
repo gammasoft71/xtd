@@ -1,12 +1,11 @@
 #include <xtd/as>
 #include <xtd/console>
+#include <xtd/threading/thread>
 #include <chrono>
-#include <thread>
 #include <vector>
 
 using namespace std;
 using namespace std::chrono;
-using namespace std::this_thread;
 using namespace xtd;
 
 // Define the frequencies of notes in an octave, as well as
@@ -62,7 +61,7 @@ public:
 void play(const vector<note>& tune) {
   for (auto n : tune) {
     if (n.note_tone() == tone::rest)
-      sleep_for(milliseconds(as<int>(n.note_duration())));
+      threading::thread::sleep(milliseconds(as<int>(n.note_duration())));
     else
       console::beep(as<unsigned int>(n.note_tone()), as<unsigned int>(n.note_duration()));
   }
