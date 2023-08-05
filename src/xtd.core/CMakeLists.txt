@@ -727,6 +727,8 @@ add_sources(
   include/xtd/threading/manual_reset_event
   include/xtd/threading/mutex.h
   include/xtd/threading/mutex
+  include/xtd/threading/parameterized_thread_start.h
+  include/xtd/threading/parameterized_thread_start
   include/xtd/threading/semaphore.h
   include/xtd/threading/semaphore
   include/xtd/threading/semaphore_full_exception.h
