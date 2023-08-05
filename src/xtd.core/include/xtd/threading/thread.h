@@ -3,8 +3,10 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 
+#include "parameterized_thread_start.h"
 #include "wait_handle.h"
 #include "thread_priority.h"
+#include "thread_start.h"
 #include "thread_state.h"
 #include "../core_export.h"
 #include "../object.h"
@@ -59,7 +61,13 @@ namespace xtd {
       /// @name Properties
       
       /// @{
+      intptr handle() const noexcept;
+
+      int32 managed_thread_id() const noexcept;
+
+      int32 thread_id() const noexcept;
       
+      xtd::threading::thread_state thread_state() const noexcept;
       /// @}
 
       /// @name Methods
@@ -100,11 +108,11 @@ namespace xtd {
     private:
       bool cancel();
       static bool do_wait(wait_handle& wait_handle, int32 milliseconds_timeout);
+      static int32 generate_managed_thread_id() noexcept;
+      static intptr get_current_thread_handle();
       static void nano_sleep(const std::chrono::nanoseconds& timeout);
 
       std::shared_ptr<data> data_;
-      //static thread_id main_thread_id_;
-      //static std::recursive_mutex mutex_;
       static thread_collection threads_;
       static constexpr int32 unmanaged_thread_id = 0;
       static constexpr int32 main_managed_thread_id = 1;
