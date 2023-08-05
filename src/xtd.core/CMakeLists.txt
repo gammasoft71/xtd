@@ -745,6 +745,8 @@ add_sources(
   include/xtd/threading/thread_state
   include/xtd/threading/thread_state_exception.h
   include/xtd/threading/thread_state_exception
+  include/xtd/threading/timer_callback.h
+  include/xtd/threading/timer_callback
   include/xtd/threading/timeout.h
   include/xtd/threading/timeout
   include/xtd/threading/wait_handle.h
