@@ -89,7 +89,7 @@ namespace xtd {
       /// @exception ArgumentException The value of timeout is negative and is not equal to xtd::threading::Timeout.Infinite in milliseconds, or is greater than xtd::Int32.MaxValue milliseconds.
       template<typename duration_t, typename period_t = std::ratio<1>>
       static void sleep(const std::chrono::duration<duration_t, period_t>& timeout) {
-        nano_sleep(duration_cast<std::chrono::nanoseconds>(timeout));
+        nano_sleep(std::chrono::duration_cast<std::chrono::nanoseconds>(timeout));
       }
 
       /// @brief Causes the calling thread to yield execution to another thread that is ready to run on the current processor. The operating system selects the thread to yield to.
