@@ -749,6 +749,8 @@ add_sources(
   include/xtd/threading/timer_callback
   include/xtd/threading/timeout.h
   include/xtd/threading/timeout
+  include/xtd/threading/wait_callback.h
+  include/xtd/threading/wait_callback
   include/xtd/threading/wait_handle.h
   include/xtd/threading/wait_handle
   include/xtd/threading/wait_handle_cannot_be_opened_exception.h
