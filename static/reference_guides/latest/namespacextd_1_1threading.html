@@ -85,6 +85,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Alias</a> &#124;
 <a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle"><div class="title">xtd::threading Namespace Reference</div></div>
 </div><!--header-->
@@ -110,6 +111,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1interlocked.html">interlocked</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides atomic operations for variables that are shared by multiple threads.  <a href="classxtd_1_1threading_1_1interlocked.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1lock__recursion__exception.html">lock_recursion_exception</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The exception that is thrown when a Thread is in an invalid ThreadState for the method call.  <a href="classxtd_1_1threading_1_1lock__recursion__exception.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1manual__reset__event.html">manual_reset_event</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a thread synchronization event that, when signaled, must be reset manually. This class cannot be inherited.  <a href="classxtd_1_1threading_1_1manual__reset__event.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -121,6 +125,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1semaphore__full__exception.html">semaphore_full_exception</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The exception that is thrown when a method call is invalid for the object's current state.  <a href="classxtd_1_1threading_1_1semaphore__full__exception.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1synchronization__lock__exception.html">synchronization_lock_exception</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The exception that is thrown when a Thread is in an invalid ThreadState for the method call.  <a href="classxtd_1_1threading_1_1synchronization__lock__exception.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1thread.html">thread</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains a constant used to specify an infinite amount of time. This class cannot be inherited.  <a href="classxtd_1_1threading_1_1thread.html#details">More...</a><br /></td></tr>
@@ -143,6 +150,18 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle__cannot__be__opened__exception.html">wait_handle_cannot_be_opened_exception</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The exception that is thrown when a Thread is in an invalid ThreadState for the method call.  <a href="classxtd_1_1threading_1_1wait__handle__cannot__be__opened__exception.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Alias</h2></td></tr>
+<tr class="memitem:ga6543545992a549f7fdf31ce49769fd9e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga6543545992a549f7fdf31ce49769fd9e">timer_callback</a> = <a class="el" href="group__xtd__core.html#ga53c721aac682a7ccf19ee17d92280e31">action</a>&lt; <a class="el" href="classxtd_1_1object.html">object</a> &amp; &gt;</td></tr>
+<tr class="memdesc:ga6543545992a549f7fdf31ce49769fd9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the method that handles calls from a xtd::threading::timer.  <br /></td></tr>
+<tr class="separator:ga6543545992a549f7fdf31ce49769fd9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga19dbfc6bb44dd81a48b140b05e370f74"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga19dbfc6bb44dd81a48b140b05e370f74">wait_callback</a> = <a class="el" href="group__xtd__core.html#ga53c721aac682a7ccf19ee17d92280e31">action</a>&lt; <a class="el" href="classxtd_1_1object.html">object</a> &amp; &gt;</td></tr>
+<tr class="memdesc:ga19dbfc6bb44dd81a48b140b05e370f74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a callback method to be executed by a thread pool thread.  <br /></td></tr>
+<tr class="separator:ga19dbfc6bb44dd81a48b140b05e370f74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae048d2a80beaeb116c68cd5dafb3f70f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gae048d2a80beaeb116c68cd5dafb3f70f">wait_or_timer_callback</a> = <a class="el" href="group__xtd__core.html#ga53c721aac682a7ccf19ee17d92280e31">action</a>&lt; <a class="el" href="classxtd_1_1object.html">object</a> &amp;, bool &gt;</td></tr>
+<tr class="memdesc:gae048d2a80beaeb116c68cd5dafb3f70f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a method to be called when a <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> is signaled or times out.  <br /></td></tr>
+<tr class="separator:gae048d2a80beaeb116c68cd5dafb3f70f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -197,7 +216,7 @@ Enumerations</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Aug 4 2023 17:31:40 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Aug 5 2023 08:39:32 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -207,8 +207,14 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html">xtd::threading::abandoned_mutex_exception</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The exception that is thrown when a Thread is in an invalid ThreadState for the method call.  <a href="classxtd_1_1threading_1_1abandoned__mutex__exception.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1lock__recursion__exception.html">xtd::threading::lock_recursion_exception</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The exception that is thrown when a Thread is in an invalid ThreadState for the method call.  <a href="classxtd_1_1threading_1_1lock__recursion__exception.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1semaphore__full__exception.html">xtd::threading::semaphore_full_exception</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The exception that is thrown when a method call is invalid for the object's current state.  <a href="classxtd_1_1threading_1_1semaphore__full__exception.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1synchronization__lock__exception.html">xtd::threading::synchronization_lock_exception</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The exception that is thrown when a Thread is in an invalid ThreadState for the method call.  <a href="classxtd_1_1threading_1_1synchronization__lock__exception.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1thread__abort__exception.html">xtd::threading::thread_abort_exception</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The exception that is thrown when a method call is invalid for the object's current state.  <a href="classxtd_1_1threading_1_1thread__abort__exception.html#details">More...</a><br /></td></tr>
@@ -327,6 +333,9 @@ Macros</h2></td></tr>
 <tr class="memitem:ga1f0ba6a4589a5feb893fc183a341a8d6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__exceptions.html#ga1f0ba6a4589a5feb893fc183a341a8d6">length_exception_</a>(...)</td></tr>
 <tr class="memdesc:ga1f0ba6a4589a5feb893fc183a341a8d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper on <a class="el" href="classxtd_1_1length__exception.html" title="The exception that is thrown when an attempts to exceed implementation defined length limits for some...">xtd::length_exception</a> to call it with current stack frame information.  <br /></td></tr>
 <tr class="separator:ga1f0ba6a4589a5feb893fc183a341a8d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3658d56669f932967932feaa3d4d367f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__exceptions.html#ga3658d56669f932967932feaa3d4d367f">lock_recursion_exception_</a>(...)</td></tr>
+<tr class="memdesc:ga3658d56669f932967932feaa3d4d367f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper on xtd::lock_recursion_exception to call it with current stack frame information.  <br /></td></tr>
+<tr class="separator:ga3658d56669f932967932feaa3d4d367f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga26d5560a64fc74c63699a5be2ce287e7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__exceptions.html#ga26d5560a64fc74c63699a5be2ce287e7">not_finite_number_exception_</a>(...)</td></tr>
 <tr class="memdesc:ga26d5560a64fc74c63699a5be2ce287e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper on <a class="el" href="classxtd_1_1not__finite__number__exception.html" title="The exception that is thrown when a floating-point value is positive infinity, negative infinity,...">xtd::not_finite_number_exception</a> to call it with current stack frame information.  <br /></td></tr>
 <tr class="separator:ga26d5560a64fc74c63699a5be2ce287e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -369,6 +378,9 @@ Macros</h2></td></tr>
 <tr class="memitem:gad95df5a252437cbfda16fa452ff326d2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__exceptions.html#gad95df5a252437cbfda16fa452ff326d2">software_termination_exception_</a>(...)</td></tr>
 <tr class="memdesc:gad95df5a252437cbfda16fa452ff326d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper on <a class="el" href="classxtd_1_1software__termination__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::software_termination_exception</a> to call it with current stack frame information.  <br /></td></tr>
 <tr class="separator:gad95df5a252437cbfda16fa452ff326d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa0dc17767103cbe0c212dfcc4fc10724"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__exceptions.html#gaa0dc17767103cbe0c212dfcc4fc10724">synchronization_lock_exception_</a>(...)</td></tr>
+<tr class="memdesc:gaa0dc17767103cbe0c212dfcc4fc10724"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper on xtd::synchronization_lock_exception to call it with current stack frame information.  <br /></td></tr>
+<tr class="separator:gaa0dc17767103cbe0c212dfcc4fc10724"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf07161ee3c6661bd02d445084810f858"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__exceptions.html#gaf07161ee3c6661bd02d445084810f858">system_exception_</a>(...)</td></tr>
 <tr class="memdesc:gaf07161ee3c6661bd02d445084810f858"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper on <a class="el" href="classxtd_1_1system__exception.html" title="Defines the base class for predefined exceptions in the xtd namespace.">xtd::system_exception</a> to call it with current stack frame information.  <br /></td></tr>
 <tr class="separator:gaf07161ee3c6661bd02d445084810f858"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1160,6 +1172,36 @@ Macros</h2></td></tr>
 
 </div>
 </div>
+<a id="ga3658d56669f932967932feaa3d4d367f" name="ga3658d56669f932967932feaa3d4d367f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3658d56669f932967932feaa3d4d367f">&#9670;&#160;</a></span>lock_recursion_exception_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define lock_recursion_exception_</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="lock__recursion__exception_8h.html">xtd.core/include/xtd/threading/lock_recursion_exception.h</a>&gt;</code></p>
+
+<p>Helper on xtd::lock_recursion_exception to call it with current stack frame information. </p>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Is equivalent to xtd::lock_recursion_exception({any argument}, csf_) <div class="fragment"><div class="line"><span class="keywordtype">void</span> my_func() {</div>
+<div class="line">  <span class="keywordflow">if</span> (invalid_info) <span class="keywordflow">throw</span> <a class="code hl_define" href="group__exceptions.html#ga3658d56669f932967932feaa3d4d367f">lock_recursion_exception_</a>(); <span class="comment">// same as : throw lock_recursion_exception(csf_);</span></div>
+<div class="line">  <span class="keywordflow">if</span> (invalid_value) <span class="keywordflow">throw</span> <a class="code hl_define" href="group__exceptions.html#ga3658d56669f932967932feaa3d4d367f">lock_recursion_exception_</a>(<span class="stringliteral">&quot;Bad value&quot;</span>); <span class="comment">// same as : throw lock_recursion_exception(&quot;Bad value&quot;, csf_);</span></div>
+<div class="line">  ...</div>
+<div class="line">}</div>
+<div class="ttc" id="agroup__exceptions_html_ga3658d56669f932967932feaa3d4d367f"><div class="ttname"><a href="group__exceptions.html#ga3658d56669f932967932feaa3d4d367f">lock_recursion_exception_</a></div><div class="ttdeci">#define lock_recursion_exception_(...)</div><div class="ttdoc">Helper on xtd::lock_recursion_exception to call it with current stack frame information.</div><div class="ttdef"><b>Definition</b> lock_recursion_exception.h:105</div></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
 <a id="ga26d5560a64fc74c63699a5be2ce287e7" name="ga26d5560a64fc74c63699a5be2ce287e7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga26d5560a64fc74c63699a5be2ce287e7">&#9670;&#160;</a></span>not_finite_number_exception_</h2>
 
@@ -1588,6 +1630,36 @@ Macros</h2></td></tr>
 
 </div>
 </div>
+<a id="gaa0dc17767103cbe0c212dfcc4fc10724" name="gaa0dc17767103cbe0c212dfcc4fc10724"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa0dc17767103cbe0c212dfcc4fc10724">&#9670;&#160;</a></span>synchronization_lock_exception_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define synchronization_lock_exception_</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="synchronization__lock__exception_8h.html">xtd.core/include/xtd/threading/synchronization_lock_exception.h</a>&gt;</code></p>
+
+<p>Helper on xtd::synchronization_lock_exception to call it with current stack frame information. </p>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Is equivalent to xtd::synchronization_lock_exception({any argument}, csf_) <div class="fragment"><div class="line"><span class="keywordtype">void</span> my_func() {</div>
+<div class="line">  <span class="keywordflow">if</span> (invalid_info) <span class="keywordflow">throw</span> <a class="code hl_define" href="group__exceptions.html#gaa0dc17767103cbe0c212dfcc4fc10724">synchronization_lock_exception_</a>(); <span class="comment">// same as : throw synchronization_lock_exception(csf_);</span></div>
+<div class="line">  <span class="keywordflow">if</span> (invalid_value) <span class="keywordflow">throw</span> <a class="code hl_define" href="group__exceptions.html#gaa0dc17767103cbe0c212dfcc4fc10724">synchronization_lock_exception_</a>(<span class="stringliteral">&quot;Bad value&quot;</span>); <span class="comment">// same as : throw synchronization_lock_exception(&quot;Bad value&quot;, csf_);</span></div>
+<div class="line">  ...</div>
+<div class="line">}</div>
+<div class="ttc" id="agroup__exceptions_html_gaa0dc17767103cbe0c212dfcc4fc10724"><div class="ttname"><a href="group__exceptions.html#gaa0dc17767103cbe0c212dfcc4fc10724">synchronization_lock_exception_</a></div><div class="ttdeci">#define synchronization_lock_exception_(...)</div><div class="ttdoc">Helper on xtd::synchronization_lock_exception to call it with current stack frame information.</div><div class="ttdef"><b>Definition</b> synchronization_lock_exception.h:105</div></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
 <a id="gaf07161ee3c6661bd02d445084810f858" name="gaf07161ee3c6661bd02d445084810f858"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaf07161ee3c6661bd02d445084810f858">&#9670;&#160;</a></span>system_exception_</h2>
 
@@ -1984,7 +2056,7 @@ Macros</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Aug 4 2023 17:31:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Aug 5 2023 08:39:28 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
