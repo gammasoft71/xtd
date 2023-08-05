@@ -755,6 +755,8 @@ add_sources(
   include/xtd/threading/wait_handle
   include/xtd/threading/wait_handle_cannot_be_opened_exception.h
   include/xtd/threading/wait_handle_cannot_be_opened_exception
+  include/xtd/threading/wait_or_timer_callback.h
+  include/xtd/threading/wait_or_timer_callback
   include/xtd/web/css/css_reader.h
   include/xtd/web/css/css_reader
   include/xtd/web/css/css_writer.h

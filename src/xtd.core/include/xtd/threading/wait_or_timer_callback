@@ -1,0 +1,2 @@
+#pragma once
+#include "wait_or_timer_callback.h"
