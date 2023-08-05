@@ -14,7 +14,6 @@
 #include "process_start_info.h"
 #include <functional>
 #include <memory>
-#include <thread>
 
 /// @cond
 struct __init_process_message_box_message__;

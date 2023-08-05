@@ -10,9 +10,18 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/thread.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
+#include <thread>
 
 using namespace xtd;
 using namespace xtd::threading;
+
+using native_handle = std::thread::native_handle_type;
+using thread_id = std::thread::id;
+
+namespace {
+  static thread_id main_thread_id_ = std::this_thread::get_id();
+  static std::recursive_mutex mutex_;
+}
 
 struct thread::data {
   thread_id detached_thread_id;
@@ -25,8 +34,8 @@ struct thread::data {
   /// manual_reset_event end_thread_event {false};
 };
 
-thread::thread_id thread::main_thread_id_ = std::this_thread::get_id();
-std::recursive_mutex thread::mutex_ {};
+//thread::thread_id thread::main_thread_id_ = std::this_thread::get_id();
+//std::recursive_mutex thread::mutex_ {};
 thread::thread_collection thread::threads_ {thread {}, thread {}};
 
 thread::thread() : data_(std::make_shared<data>()) {
@@ -75,21 +84,7 @@ void thread::interrupt() {
 }
 
 void thread::sleep(int32 milliseconds_timeout) {
-  if (milliseconds_timeout < timeout::infinite)
-    throw argument_exception(csf_);
-  
-  if (current_thread().data_->interrupted)
-    current_thread().interrupt();
-  
-  current_thread().data_->state |= xtd::threading::thread_state::wait_sleep_join;
-  if (milliseconds_timeout == timeout::infinite) while (true) std::this_thread::sleep_for(std::chrono::hours::max());
-  else if (milliseconds_timeout == 0) yield();
-  else std::this_thread::sleep_for(std::chrono::milliseconds(milliseconds_timeout));
-  current_thread().data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
-}
-
-void thread::sleep(const time_span& timeout) {
-  sleep(as<int32>(timeout.count()));
+  sleep(std::chrono::milliseconds(milliseconds_timeout));
 }
 
 bool thread::yield() {
@@ -116,4 +111,17 @@ bool thread::do_wait(wait_handle& wait_handle, int32 milliseconds_timeout) {
     current_thread().data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
     throw;
   }
+}
+
+void thread::nano_sleep(const std::chrono::nanoseconds& timeout) {
+  auto nanoseconds_timeout = timeout.count();
+  if (nanoseconds_timeout < timeout::infinite) throw argument_exception(csf_);
+  
+  if (current_thread().data_->interrupted) current_thread().interrupt();
+  
+  current_thread().data_->state |= xtd::threading::thread_state::wait_sleep_join;
+  if (nanoseconds_timeout == timeout::infinite) while (true) std::this_thread::sleep_for(std::chrono::hours::max());
+  else if (nanoseconds_timeout == 0) yield();
+  else std::this_thread::sleep_for(timeout);
+  current_thread().data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
 }

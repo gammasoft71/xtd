@@ -1,9 +1,9 @@
+#include <xtd/threading/thread.h>
 #include "../../../include/xtd/forms/common_dialog.h"
 
-using namespace std::chrono;
-using namespace std::this_thread;
 using namespace xtd;
 using namespace xtd::forms;
+using namespace xtd::threading;
 
 struct common_dialog::data {
   std::any tag;
@@ -51,7 +51,7 @@ xtd::forms::dialog_result common_dialog::show_sheet_dialog(const iwin32_window& 
   show_sheet(owner);
   while (data_->dialog_result == xtd::forms::dialog_result::none) {
     application::do_events();
-    sleep_for(milliseconds(10));
+    thread::sleep(10_ms);
   }
   return data_->dialog_result;
 }

@@ -1,6 +1,7 @@
 #include "../../../include/xtd/diagnostics/trace_event_cache.h"
 #include "../../../include/xtd/diagnostics/stack_trace.h"
 #include "../../../include/xtd/diagnostics/stopwatch.h"
+#include <thread>
 
 using namespace xtd;
 using namespace xtd::diagnostics;

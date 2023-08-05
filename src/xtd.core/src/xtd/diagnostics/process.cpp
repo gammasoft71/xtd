@@ -9,6 +9,7 @@
 #include <xtd/native/process_creation_flags.h>
 #include <xtd/native/priority_class.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
+#include <thread>
 
 using namespace std;
 using namespace std::chrono;

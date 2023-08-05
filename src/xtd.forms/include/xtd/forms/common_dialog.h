@@ -2,7 +2,6 @@
 /// @brief Contains xtd::forms::common_dialog class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <thread>
 #include <xtd/any.h>
 #include <xtd/chrono>
 #include "application.h"

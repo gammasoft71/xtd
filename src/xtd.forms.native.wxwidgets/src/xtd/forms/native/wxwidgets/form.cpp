@@ -1,8 +1,7 @@
-#include <thread>
-#include <xtd/chrono>
 #include <xtd/argument_exception.h>
 #include <xtd/diagnostics/debug.h>
 #include <xtd/not_implemented_exception.h>
+#include <xtd/threading/thread.h>
 #include <wx/apptrait.h>
 #if defined(__WXMSW__)
 #include <winsock2.h>
@@ -20,11 +19,10 @@
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_form.h"
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 
-using namespace std::literals;
-using namespace std::this_thread;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
+using namespace xtd::threading;
 
 void __toggle_full_screen_frame__(wxTopLevelWindow* control, bool full_screen);
 
@@ -218,7 +216,7 @@ int32 form::show_sheet_dialog(intptr control) {
   });
   while (result == wxID_ANY) {
     application::do_events();
-    sleep_for(10ms);
+    thread::sleep(10_ms);
   }
   return result;
   #else
