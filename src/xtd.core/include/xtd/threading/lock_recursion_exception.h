@@ -85,10 +85,7 @@ namespace xtd {
       /// @endcond
       
     private:
-      const char* default_message() const noexcept {
-        static auto message = ustring::format("Exception of type '{}' was thrown.", typeof_(*this));
-        return message.c_str();
-      }
+      const char* default_message() const noexcept {return "Exception of type 'xtd::threading::lock_recursion_exception' was thrown.";}
     };
   }
 }
