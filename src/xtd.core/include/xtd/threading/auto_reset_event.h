@@ -27,7 +27,7 @@ namespace xtd {
     /// @par Examples
     /// The following example shows how to use xtd::threading::auto_reset_event to release one thread at a time, by calling the xtd::threading::event_wait_handle::set method (on the base class) each time the user presses the Enter key. The example starts three threads, which wait on an xtd::threading::auto_reset_event that was created in the signaled state. The first thread is released immediately, because the xtd::threading::auto_reset_event is already in the signaled state. This resets the xtd::threading::auto_reset_event to the non-signaled state, so that subsequent threads block. The blocked threads are not released until the user releases them one at a time by pressing the Enter key.
     /// After the threads are released from the first xtd::threading::auto_reset_event, they wait on another xtd::threading::auto_reset_event that was created in the non-signaled state. All three threads block, so the xtd::threading::event_wait_handle::set method must be called three times to release them all.
-    /// @include auto_reset_handle.cpp
+    /// @include auto_reset_event.cpp
     class auto_reset_event : public event_wait_handle {
     public:
       /// @name Constructors
