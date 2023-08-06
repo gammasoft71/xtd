@@ -68,7 +68,7 @@ namespace xtd {
       /// @param handle The thread handle.
       /// @return true if succeed; otherwise false.
       /// @warning Internal use only
-      bool join(intmax_t handle);
+      static bool join(intmax_t handle);
       
       /// @brief Resume thread with specified handle.
       /// @param handle The thread handle.
@@ -80,7 +80,7 @@ namespace xtd {
       /// @param handle The thread handle.
       /// @return true if succeed; otherwise false.
       /// @warning Internal use only
-      bool set_background(intmax_t handle);
+      static bool set_background(intmax_t handle);
       
       /// @brief Sets the current thread name.
       /// @param name The current thread name.
