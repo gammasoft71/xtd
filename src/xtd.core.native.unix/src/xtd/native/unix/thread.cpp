@@ -21,7 +21,7 @@ intmax_t thread::create(std::function<void(intmax_t)> start, intmax_t obj, int_l
     delete start_obj;
     return nullptr;
   }, reinterpret_cast<void*>( new std::pair<std::function<void(intmax_t)>, intmax_t> {start, obj}));
-  if (error != 0) return reinterpret_cast<intmax_t>(PTHREAD_FAILED);
+  if (error != 0) return static_cast<intmax_t>(PTHREAD_FAILED);
   return static_cast<intmax_t>(thread);
 }
 
@@ -41,8 +41,8 @@ bool thread::resume(intmax_t handle) {
 }
 
 bool thread::set_background(intmax_t handle) {
-  if (reinterpret_cast<pthread_t>(handle) == PTHREAD_FAILED) return false;
-  return pthread_detach(reinterpret_cast<pthread_t>(handle)) == 0;
+  if (static_cast<pthread_t>(handle) == PTHREAD_FAILED) return false;
+  return pthread_detach(static_cast<pthread_t>(handle)) == 0;
 }
 
 bool thread::set_current_thread_name(const std::string& name) {
