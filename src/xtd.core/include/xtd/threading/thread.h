@@ -14,6 +14,10 @@
 #include "../types.h"
 #include <mutex>
 
+/// @cond
+struct __current_thread_id__;
+/// @endcond
+
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The xtd::threading namespace provides classes and interfaces that enable multithreaded programming. In addition to classes for synchronizing thread activities and access to data ( xtd::threading::mutex, xtd::threading::monitor, xtd::threading::interlocked, xtd::threading::auto_reset_event, and so on), this namespace includes a xtd::threading::thread_pool class that allows you to use a pool of system-supplied threads, and a xtd::threading::timer class that executes callback methods on thread pool threads.
@@ -73,7 +77,7 @@ namespace xtd {
 
       int32 managed_thread_id() const noexcept;
 
-      int32 thread_id() const noexcept;
+      intptr thread_id() const noexcept;
       
       xtd::threading::thread_state thread_state() const noexcept;
       /// @}
@@ -97,7 +101,7 @@ namespace xtd {
       /// @exception ArgumentException The value of timeout is negative and is not equal to xtd::threading::Timeout.Infinite in milliseconds, or is greater than xtd::Int32.MaxValue milliseconds.
       template<typename duration_t, typename period_t = std::ratio<1>>
       static void sleep(const std::chrono::duration<duration_t, period_t>& timeout) {
-        nano_sleep(std::chrono::duration_cast<std::chrono::nanoseconds>(timeout));
+        sleep(std::chrono::duration_cast<std::chrono::milliseconds>(timeout).count());
       }
 
       /// @brief Causes the calling thread to yield execution to another thread that is ready to run on the current processor. The operating system selects the thread to yield to.
@@ -114,12 +118,13 @@ namespace xtd {
     protected:
       
     private:
+      friend struct ::__current_thread_id__;
       bool cancel();
       static bool do_wait(wait_handle& wait_handle, int32 milliseconds_timeout);
       static int32 generate_managed_thread_id() noexcept;
       static intptr get_current_thread_handle();
-      static void nano_sleep(const std::chrono::nanoseconds& timeout);
-
+      static intptr get_current_thread_id();
+      
       std::shared_ptr<data> data_;
       static thread_collection threads_;
       static constexpr int32 unmanaged_thread_id = 0;
