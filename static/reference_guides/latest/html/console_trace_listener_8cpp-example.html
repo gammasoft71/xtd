@@ -86,11 +86,10 @@ $(function() {
 <div class="fragment"><div class="line"><span class="preprocessor">#define DEBUG </span><span class="comment">// Force debug mode even if example is builded in release.</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/debug&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/console_trace_listener&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/threading/thread&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;thread&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
-<div class="line"><span class="keyword">using namespace </span>std::this_thread;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
 <div class="line"> </div>
@@ -100,7 +99,7 @@ $(function() {
 <div class="line">  debug::indent();</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> step = 1; step &lt;= 10; step++) {</div>
 <div class="line">    debug::write_line(<span class="stringliteral">&quot;working step {}...&quot;</span>, step);</div>
-<div class="line">    sleep_for(300_ms);</div>
+<div class="line">    threading::thread::sleep(300_ms);</div>
 <div class="line">  }</div>
 <div class="line">  debug::unindent();</div>
 <div class="line">  debug::write_line(<span class="stringliteral">&quot;End&quot;</span>);</div>
@@ -126,7 +125,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Aug 5 2023 08:50:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Aug 6 2023 17:35:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

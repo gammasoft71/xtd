@@ -85,12 +85,10 @@ $(function() {
 <p>Shows how to use <a class="el" href="classxtd_1_1console.html#aab2e161c3a72cb14f808ed40e2b59ef2" title="Plays the sound of a beep through the console speaker.">xtd::console::beep</a> method.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/int32_object&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;thread&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/threading/thread&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
-<div class="line"><span class="keyword">using namespace </span>std::chrono;</div>
-<div class="line"><span class="keyword">using namespace </span>std::this_thread;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1threading.html">xtd::threading</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[])-&gt;int {</div>
 <div class="line">  <span class="keyword">auto</span> x = 0;</div>
@@ -99,7 +97,7 @@ $(function() {
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 1; i &lt;= x; i++) {</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;Beep number {}.&quot;</span>, i);</div>
 <div class="line">      console::beep();</div>
-<div class="line">      sleep_for(milliseconds {100});</div>
+<div class="line">      thread::sleep(100_ms);</div>
 <div class="line">    }</div>
 <div class="line">  } <span class="keywordflow">else</span></div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot;Usage: Enter the number of times (between 1 and 9) to beep.&quot;</span>);</div>
@@ -111,12 +109,13 @@ $(function() {
 <div class="line"><span class="comment">// Beep number 2.</span></div>
 <div class="line"><span class="comment">// Beep number 3.</span></div>
 <div class="line"> </div>
+<div class="ttc" id="anamespacextd_1_1threading_html"><div class="ttname"><a href="namespacextd_1_1threading.html">xtd::threading</a></div><div class="ttdoc">The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....</div><div class="ttdef"><b>Definition</b> abandoned_mutex_exception.h:10</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Aug 5 2023 08:50:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Aug 6 2023 17:35:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
