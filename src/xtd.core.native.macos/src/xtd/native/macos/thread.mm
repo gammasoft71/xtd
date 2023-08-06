@@ -20,7 +20,7 @@ bool thread::cancel(intmax_t handle) {
 intmax_t thread::create(std::function<void(intmax_t)> start, intmax_t obj, int_least32_t max_stack_size, bool suspended, intmax_t& id) {
   auto thread = pthread_t {};
   int error = pthread_create(&thread, nullptr, [](void* thread_arg)->void* {
-    auto start_obj = reinterpret_cast<std::pair<std::function<int_least32_t(intmax_t)>, intmax_t>*>(thread_arg);
+    auto start_obj = reinterpret_cast<std::pair<std::function<void(intmax_t)>, intmax_t>*>(thread_arg);
     start_obj->first(start_obj->second);
     delete start_obj;
     return nullptr;
