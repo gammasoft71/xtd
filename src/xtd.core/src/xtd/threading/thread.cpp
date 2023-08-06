@@ -265,6 +265,10 @@ void thread::start(object& obj) {
   }, reinterpret_cast<intptr>(this), data_->max_stack_size, is_suspended(), data_->thread_id);
 }
 
+void thread::start(const object& obj) {
+  start(const_cast<object&>(obj));
+}
+
 bool thread::yield() {
   return native::thread::yield();
 }

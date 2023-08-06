@@ -169,6 +169,7 @@ namespace xtd {
       /// @}
 
       /// @cond
+      void start(const object& obj);
       /// @endcond
       
     protected:
