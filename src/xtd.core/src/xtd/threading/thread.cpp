@@ -13,29 +13,35 @@
 #include "../../../include/xtd/invalid_operation_exception.h"
 #include "../../../include/xtd/not_implemented_exception.h"
 #include "../../../include/xtd/as.h"
-#include <thread>
 
 using namespace xtd;
 using namespace xtd::threading;
 
+struct __current_thread_id__ {
+  static intptr get_current_thread_id() {
+    return xtd::threading::thread::get_current_thread_id();
+  }
+};
+
 namespace {
-  static std::thread::id main_thread_id_ = std::this_thread::get_id();
+  static intptr main_thread_id_ = __current_thread_id__::get_current_thread_id();
   static std::recursive_mutex mutex_;
 }
 
 struct thread::data {
   bool critical_region {false};
-  std::thread::id detached_thread_id;
+  intptr detached_thread_id;
   manual_reset_event end_thread_event {false};
   intptr handle {native::types::invalid_handle()};
   bool interrupted {false};
   bool is_thread_pool_thread {false};
   int32 managed_thread_id {unmanaged_thread_id};
+  int32 max_stack_size {0};
   xtd::ustring name;
   xtd::threading::parameterized_thread_start parameterized_thread_start;
   xtd::threading::thread_priority priority {xtd::threading::thread_priority::normal};
   xtd::threading::thread_state state {xtd::threading::thread_state::unstarted};
-  std::thread thread;
+  intptr thread_id;
   xtd::threading::thread_start thread_start;
 };
 
@@ -46,37 +52,44 @@ thread::thread_collection thread::threads_ {thread {}, thread {}};
 thread::thread() : data_(std::make_shared<data>()) {
 }
 
-thread::thread(xtd::threading::thread_start start) {
-  
+thread::thread(xtd::threading::thread_start start) : data_(std::make_shared<data>()) {
+  data_->managed_thread_id = generate_managed_thread_id();
+  data_->thread_start = start;
 }
 
-thread::thread(xtd::threading::thread_start start, int32 max_stack_size) {
-  
+thread::thread(xtd::threading::thread_start start, int32 max_stack_size) : data_(std::make_shared<data>()) {
+  data_->managed_thread_id = generate_managed_thread_id();
+  data_->thread_start = start;
+  data_->max_stack_size = max_stack_size;
 }
 
-thread::thread(xtd::threading::parameterized_thread_start start) {
-  
+thread::thread(xtd::threading::parameterized_thread_start start) : data_(std::make_shared<data>()) {
+  data_->managed_thread_id = generate_managed_thread_id();
+  data_->parameterized_thread_start = start;
 }
 
-thread::thread(xtd::threading::parameterized_thread_start start, int32 max_stack_size) {
-  
+thread::thread(xtd::threading::parameterized_thread_start start, int32 max_stack_size) : data_(std::make_shared<data>()) {
+  data_->managed_thread_id = generate_managed_thread_id();
+  data_->parameterized_thread_start = start;
+  data_->max_stack_size = max_stack_size;
 }
 
 thread& thread::current_thread() {
   std::lock_guard<std::recursive_mutex> lock(mutex_);
-  std::thread::id id = std::this_thread::get_id();
+  intptr id = get_current_thread_id();
   
   if (id == main_thread_id_) {
     if (threads_[0].data_->managed_thread_id != main_managed_thread_id) {
       threads_[0].data_->handle = get_current_thread_handle();
       threads_[0].data_->managed_thread_id = main_managed_thread_id;
       threads_[0].data_->state &= ~xtd::threading::thread_state::unstarted;
+      threads_[0].data_->thread_id = get_current_thread_id();
     }
     return threads_[0];
   }
   
   for (auto& item : threads_) {
-    if (item.data_->thread.get_id() == id || item.data_->detached_thread_id == id)
+    if (item.data_->thread_id == id || item.data_->detached_thread_id == id)
       return item;
   }
   
@@ -84,6 +97,7 @@ thread& thread::current_thread() {
     threads_[1].data_->handle = get_current_thread_handle();
     threads_[1].data_->state &= ~xtd::threading::thread_state::unstarted;
     threads_[1].data_->state |= xtd::threading::thread_state::background;
+    threads_[1].data_->thread_id = get_current_thread_id();
   }
   return threads_[1];
 }
@@ -96,8 +110,8 @@ int32 thread::managed_thread_id() const noexcept {
   return data_->managed_thread_id;
 }
 
-int32 thread::thread_id() const noexcept {
-  return managed_thread_id();
+intptr thread::thread_id() const noexcept {
+  return data_->thread_id;
 }
 
 xtd::threading::thread_state thread::thread_state() const noexcept {
@@ -123,17 +137,22 @@ void thread::interrupt() {
 }
 
 void thread::sleep(int32 milliseconds_timeout) {
-  sleep(std::chrono::milliseconds(milliseconds_timeout));
+  if (milliseconds_timeout < timeout::infinite) throw argument_exception(csf_);
+  
+  if (current_thread().data_->interrupted) current_thread().interrupt();
+  
+  current_thread().data_->state |= xtd::threading::thread_state::wait_sleep_join;
+  native::thread::sleep(milliseconds_timeout);
+  current_thread().data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
 }
 
 bool thread::yield() {
-  std::this_thread::yield();
-  return true;
+  return native::thread::yield();
 }
 
 bool thread::cancel() {
   // Double reinterpret_cast required to pass compilation with gcc.
-  return native::thread::cancel(reinterpret_cast<intptr>(reinterpret_cast<intptr*>(data_->thread.native_handle())));
+  return native::thread::cancel(reinterpret_cast<intptr>(reinterpret_cast<intptr*>(data_->handle)));
 }
 
 bool thread::do_wait(wait_handle& wait_handle, int32 milliseconds_timeout) {
@@ -162,15 +181,6 @@ intptr thread::get_current_thread_handle() {
   return native::thread::get_current_thread_handle();
 }
 
-void thread::nano_sleep(const std::chrono::nanoseconds& timeout) {
-  auto nanoseconds_timeout = timeout.count();
-  if (nanoseconds_timeout < timeout::infinite) throw argument_exception(csf_);
-  
-  if (current_thread().data_->interrupted) current_thread().interrupt();
-  
-  current_thread().data_->state |= xtd::threading::thread_state::wait_sleep_join;
-  if (nanoseconds_timeout == timeout::infinite) while (true) std::this_thread::sleep_for(std::chrono::hours::max());
-  else if (nanoseconds_timeout == 0) yield();
-  else std::this_thread::sleep_for(timeout);
-  current_thread().data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
+intptr thread::get_current_thread_id() {
+  return native::thread::get_thread_id(get_current_thread_handle());
 }
