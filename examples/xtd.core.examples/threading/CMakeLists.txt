@@ -7,4 +7,5 @@ add_projects(
   auto_reset_event
   interlocked
   interlocked_decrement
+  mixing_std_and_xtd_threads
 )
