@@ -84,6 +84,8 @@ namespace xtd {
 
       bool is_thread_pool_thread() const noexcept;
       
+      bool joinable() const noexcept;
+      
       int32 managed_thread_id() const noexcept;
       
       ustring name() const noexcept;

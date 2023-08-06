@@ -117,18 +117,19 @@ thread& thread::current_thread() {
 }
 
 intptr thread::handle() const noexcept {
-  return data_->handle;
+  return data_ ? data_->handle : native::types::invalid_handle();
 }
 
 bool thread::is_alive() const noexcept {
-  return !is_unstarted() && !is_stopped() && !is_aborted();
+  return data_ ? !is_unstarted() && !is_stopped() && !is_aborted() : false;
 }
 
 bool thread::is_background() const noexcept {
-  return enum_object<xtd::threading::thread_state>(data_->state).has_flag(xtd::threading::thread_state::background);
+  return data_ ? enum_object<xtd::threading::thread_state>(data_->state).has_flag(xtd::threading::thread_state::background) : false;
 }
 
 thread& thread::is_background(bool value) {
+  if (!data_) throw invalid_operation_exception {csf_};
   if (data_->managed_thread_id == unmanaged_thread_id || data_->managed_thread_id == main_managed_thread_id) throw invalid_operation_exception(csf_);
   
   if (value) data_->state |= xtd::threading::thread_state::background;
@@ -137,18 +138,23 @@ thread& thread::is_background(bool value) {
 }
 
 bool thread::is_thread_pool_thread() const noexcept {
-  return data_->is_thread_pool_thread;
+  return data_ ? data_->is_thread_pool_thread : false;
+}
+
+bool thread::joinable() const noexcept {
+  return data_ ? data_->joinable : false;
 }
 
 int32 thread::managed_thread_id() const noexcept {
-  return data_->managed_thread_id;
+  return data_ ? data_->managed_thread_id : 0;
 }
 
 ustring thread::name() const noexcept {
-  return data_->name;
+  return data_ ? data_->name : "";
 }
 
 thread& thread::name(const ustring& value) {
+  if (!data_) throw invalid_operation_exception {csf_};
   if (value == data_->name) return *this;
   data_->name = value;
   if (get_current_thread_id() == data_->thread_id) native::thread::set_current_thread_name(value);
@@ -156,14 +162,15 @@ thread& thread::name(const ustring& value) {
 }
 
 intptr thread::thread_id() const noexcept {
-  return data_->thread_id;
+  return data_ ? data_->thread_id : native::types::invalid_handle();
 }
 
 xtd::threading::thread_priority thread::thread_priority() const noexcept {
-  return data_->priority;
+  return data_ ? data_->priority : xtd::threading::thread_priority::normal;
 }
 
 thread& thread::thread_priority(xtd::threading::thread_priority value) {
+  if (!data_) throw invalid_operation_exception {csf_};
   if (!enum_object<>::is_defined(value)) throw argument_exception {csf_};
   if (is_aborted() || is_stopped()) throw thread_state_exception(csf_);
   
@@ -174,7 +181,7 @@ thread& thread::thread_priority(xtd::threading::thread_priority value) {
 }
 
 xtd::threading::thread_state thread::thread_state() const noexcept {
-  return data_->state;
+  return data_ ? data_->state : xtd::threading::thread_state::unstarted;
 }
 
 void thread::close() {
@@ -342,7 +349,7 @@ void thread::stop_thread() {
 
 void thread::thread_proc() {
   native::thread::set_current_thread_name(data_->name);
-  native::thread::set_priority(data_->handle, as<int32>(data_->priority));
+  if (data_->priority != xtd::threading::thread_priority::normal) native::thread::set_priority(data_->handle, as<int32>(data_->priority));
   if (!data_->thread_start.is_empty()) data_->thread_start();
   else if (!data_->parameterized_thread_start.is_empty()) data_->parameterized_thread_start(*data_->parameter);
   else throw invalid_operation_exception {csf_};
