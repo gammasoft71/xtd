@@ -52,12 +52,12 @@ startup_(thread_example);
 // Main thread: Start a second thread.
 // Main thread: Do some work.
 // Main thread: Do some work.
-// Main thread: Do some work.
-// Main thread: Do some work.
-// Main thread: Call Join(), to wait until thread_proc ends.
 // thread_proc: 0
+// Main thread: Do some work.
 // thread_proc: 1
+// Main thread: Do some work.
 // thread_proc: 2
+// Main thread: Call Join(), to wait until thread_proc ends.
 // thread_proc: 3
 // thread_proc: 4
 // thread_proc: 5
