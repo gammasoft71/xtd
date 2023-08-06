@@ -87,7 +87,16 @@ bool thread::set_priority(intmax_t handle, int_least32_t priority) {
   return SetThreadPriority((HANDLE)handle, priority - 2) != FALSE;
 }
 
+void thread::sleep(int_least32_t milliseconds_timeout) {
+  Sleep(milliseconds_timeout);
+}
+
 bool thread::suspend(intmax_t handle) {
   if (reinterpret_cast<HANDLE>(handle) == INVALID_HANDLE_VALUE) return false;
   return SuspendThread(reinterpret_cast<HANDLE>(handle)) != -1;
+}
+
+bool thread::yield() {
+  Sleep(0);
+  return true;
 }

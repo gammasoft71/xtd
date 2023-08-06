@@ -5,6 +5,8 @@
 #include <TargetConditionals.h>
 #import <Cocoa/Cocoa.h>
 #include <pthread.h>
+#include <chrono>
+#include <thread>
 
 #define PTHREAD_FAILED ((pthread_t)-1)
 
@@ -69,8 +71,19 @@ bool thread::set_priority(intmax_t handle, int_least32_t priority) {
   return pthread_setschedparam(reinterpret_cast<pthread_t>(handle), policy, &schedParam) == 0;
 }
 
+void thread::sleep(int_least32_t milliseconds_timeout) {
+  if (milliseconds_timeout == -1) while (true) std::this_thread::sleep_for(std::chrono::hours::max());
+  else if (milliseconds_timeout == 0) yield();
+  else std::this_thread::sleep_for(std::chrono::milliseconds {milliseconds_timeout});
+}
+
 bool thread::suspend(intmax_t handle) {
   if (reinterpret_cast<pthread_t>(handle) == PTHREAD_FAILED) return false;
   // The POSIX standard provides no mechanism by which a thread A can suspend the execution of another thread B, without cooperation from B. The only way to implement a suspend/resume mechanism is to have B check periodically some global variable for a suspend request and then suspend itself on a condition variable, which another thread can signal later to restart B.
   return false;
+}
+
+bool thread::yield() {
+  std::this_thread::yield();
+  return true;
 }

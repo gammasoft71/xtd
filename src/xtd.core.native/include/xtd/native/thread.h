@@ -101,11 +101,19 @@ namespace xtd {
       /// * 4 : highest
       static bool set_priority(intmax_t handle, int_least32_t priority);
 
+      /// @brief Suspends the current thread for a specified time.
+      /// @param milliseconds_timeout The number of milliseconds for which the thread is blocked. Specify zero (0) to indicate that this thread should be suspended to allow other waiting threads to execute. Specify -1 to block the thread indefinitely.
+      /// @return true if succeed; otherwise false.
+      /// @warning Internal use only
+      static void sleep(int_least32_t milliseconds_timeout);
+
       /// @brief Suspend thread with specified handle.
       /// @param handle The thread handle.
       /// @return true if succeed; otherwise false.
       /// @warning Internal use only
       static bool suspend(intmax_t handle);
+
+      static bool yield();
       /// @}
     };
   }
