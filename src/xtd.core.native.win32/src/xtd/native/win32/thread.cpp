@@ -32,7 +32,7 @@ namespace {
 
 bool thread::cancel(intmax_t handle) {
   if (reinterpret_cast<HANDLE>(handle) == INVALID_HANDLE_VALUE) return false;
-  return TerminateThread(reinterpret_cast<HANDLE>(handle), -1) != FALSE;
+  return TerminateThread(reinterpret_cast<HANDLE>(handle), static_cast<DWORD>(- 1)) != FALSE;
 }
 
 intmax_t thread::create(std::function<void(intmax_t)> start, intmax_t obj, int_least32_t max_stack_size) {
