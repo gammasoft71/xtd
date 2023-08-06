@@ -35,22 +35,31 @@ bool thread::cancel(intmax_t handle) {
   return TerminateThread(reinterpret_cast<HANDLE>(handle), static_cast<DWORD>(- 1)) != FALSE;
 }
 
-intmax_t thread::create(std::function<void(intmax_t)> start, intmax_t obj, int_least32_t max_stack_size) {
+intmax_t thread::create(std::function<void(intmax_t)> start, intmax_t obj, int_least32_t max_stack_size, bool suspended, intmax_t& id) {
   SECURITY_ATTRIBUTES sa;
   sa.bInheritHandle = TRUE;
   sa.lpSecurityDescriptor = nullptr;
   sa.nLength = sizeof(SECURITY_ATTRIBUTES);
+  DWORD flags = 0;
+  if (suspended) flags |= CREATE_SUSPENDED;
+  DWORD thread_id = 0;
   HANDLE thread = CreateThread(nullptr, max_stack_size, [](void* thread_arg)->DWORD {
     auto start_obj = reinterpret_cast<std::pair<std::function<int_least32_t(intmax_t)>, intmax_t>*>(thread_arg);
     start_obj->first(start_obj->second);
     delete start_obj;
     return 0;
-  }, reinterpret_cast<void*>(new std::pair<std::function<void(intmax_t)>, intmax_t>{ start, obj }), 0/*CREATE_SUSPENDED | STACK_SIZE_PARAM_IS_A_RESERVATION*/, nullptr);
+  }, reinterpret_cast<void*>(new std::pair<std::function<void(intmax_t)>, intmax_t>{ start, obj }), flags/* | STACK_SIZE_PARAM_IS_A_RESERVATION*/, &thread_id);
+  id = static_cast<intmax_t>(thread_id);
   return reinterpret_cast<intmax_t>(thread);
 }
 
 intmax_t thread::get_current_thread_handle() {
   return reinterpret_cast<intmax_t>(GetCurrentThread());
+}
+
+intmax_t thread::get_thread_id(intmax_t handle) {
+  if (reinterpret_cast<HANDLE>(handle) == INVALID_HANDLE_VALUE) return reinterpret_cast<intmax_t>(INVALID_HANDLE_VALUE);
+  return static_cast<intmax_t>(GetThreadId(reinterpret_cast<HANDLE>(handle)));
 }
 
 bool thread::join(intmax_t handle) {
