@@ -131,8 +131,8 @@ namespace xtd {
       /// @exception ArgumentException timeout is a negative number other than -1 milliseconds, which represents
       /// @return an infinite time-out.  -or- timeout is greater than System::Int32.MaxValue.
       template<typename duration_t, typename period_t = std::ratio<1>>
-      static bool join(const std::chrono::duration<duration_t, period_t>& timeout) {
-        return join(std::chrono::duration_cast<std::chrono::milliseconds>(timeout).count());
+      bool join(const std::chrono::duration<duration_t, period_t>& timeout) {
+        return join(static_cast<int32>(std::chrono::duration_cast<std::chrono::milliseconds>(timeout).count()));
       }
 
       /// @brief Suspends the current thread for a specified time.
@@ -145,7 +145,7 @@ namespace xtd {
       /// @exception xtd::argument_exception The value of timeout is negative and is not equal to xtd::threading::Timeout.Infinite in milliseconds, or is greater than xtd::Int32.MaxValue milliseconds.
       template<typename duration_t, typename period_t = std::ratio<1>>
       static void sleep(const std::chrono::duration<duration_t, period_t>& timeout) {
-        sleep(std::chrono::duration_cast<std::chrono::milliseconds>(timeout).count());
+        sleep(static_cast<int32>(std::chrono::duration_cast<std::chrono::milliseconds>(timeout).count()));
       }
       
       /// @brief Causes the operating system to change the state of the current instance to xtd::threading::thread_state::running.
