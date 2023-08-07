@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include "../action.h"
+#include <any>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -17,6 +18,6 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
-    using parameterized_thread_start = action<object&>;
+    using parameterized_thread_start = action<std::any>;
   }
 }
