@@ -5,6 +5,7 @@ find_package(xtd REQUIRED)
 
 add_projects(
   auto_reset_event
+  event_wait_handle
   interlocked
   interlocked_decrement
   mixing_std_and_xtd_threads
