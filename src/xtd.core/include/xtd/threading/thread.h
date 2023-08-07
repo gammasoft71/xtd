@@ -188,6 +188,7 @@ namespace xtd {
       bool is_suspended() const noexcept;
       bool is_unstarted() const noexcept;
       bool is_wait_sleep_join() const noexcept;
+      void set_background();
       void thread_proc();
 
       std::shared_ptr<data> data_;
