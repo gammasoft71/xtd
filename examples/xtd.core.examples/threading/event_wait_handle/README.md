@@ -1,10 +1,10 @@
-# auto_reset_event
+# event_wait_handle
 
-Shows how to use [xtd::threading::auto_reset_event](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1auto_reset_event.html) class.
+Shows how to use [xtd::threading::event_wait_handle](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1event__wait__handle.html) class.
 
 ## Sources
 
-[src/auto_reset_event.cpp](src/auto_reset_event.cpp)
+[src/event_wait_handle.cpp](src/event_wait_handle.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -19,36 +19,37 @@ xtdc run
 # Output
 
 ```
-Press Enter to create three threads and start them.
-The threads wait on auto_reset_event #1, which was created
-in the signaled state, so the first thread is released.
-This puts auto_reset_event #1 into the unsignaled state.
+Thread 2 blocks.
+Thread 4 blocks.
+Thread 0 blocks.
+Thread 1 blocks.
+Thread 3 blocks.
+Press ENTER to release a waiting thread.
 
-thread_0x16fe87000 waits on auto_reset_event #1.
-thread_0x16fe87000 is released from auto_reset_event #1.
-thread_0x16fe87000 waits on auto_reset_event #2.
-thread_0x16ff13000 waits on auto_reset_event #1.
-thread_0x16ff9f000 waits on auto_reset_event #1.
-Press Enter to release another thread.
+Thread 4 exits.
+Press ENTER to release a waiting thread.
 
-thread_0x16ff9f000 is released from auto_reset_event #1.
-thread_0x16ff9f000 waits on auto_reset_event #2.
-Press Enter to release another thread.
+Thread 2 exits.
+Press ENTER to release a waiting thread.
 
-thread_0x16ff13000 is released from auto_reset_event #1.
-thread_0x16ff13000 waits on auto_reset_event #2.
+Thread 0 exits.
+Press ENTER to release a waiting thread.
 
-All threads are now waiting on auto_reset_event #2.
-Press Enter to release a thread.
+Thread 1 exits.
+Press ENTER to release a waiting thread.
 
-thread_0x16ff9f000 is released from auto_reset_event #2.
-thread_0x16ff9f000 ends.
-Press Enter to release a thread.
+Thread 3 exits.
 
-thread_0x16fe87000 is released from auto_reset_event #2.
-thread_0x16fe87000 ends.
-Press Enter to release a thread.
+Thread 0 blocks.
+Thread 1 blocks.
+Thread 3 blocks.
+Thread 2 blocks.
+Thread 4 blocks.
+Press ENTER to release the waiting threads.
 
-thread_0x16ff13000 is released from auto_reset_event #2.
-thread_0x16ff13000 ends.
+Thread 2 exits.
+Thread 1 exits.
+Thread 4 exits.
+Thread 3 exits.
+Thread 0 exits.
 ```
