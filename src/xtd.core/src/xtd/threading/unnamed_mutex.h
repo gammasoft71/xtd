@@ -41,9 +41,9 @@ public:
   }
 
   uint32 wait(int32 milliseconds_timeout) override {
-    if (milliseconds_timeout != timeout::infinite)
-      return handle_->try_lock_for(std::chrono::milliseconds {milliseconds_timeout}) ? 0x00000000 : 0x00000102;
-    handle_->lock();
+    if (milliseconds_timeout == timeout::infinite) handle_->lock();
+    else if (handle_->try_lock_for(std::chrono::milliseconds {milliseconds_timeout}) == false) return 0x00000102;
+    
     return 0x00000000;
   }
   
