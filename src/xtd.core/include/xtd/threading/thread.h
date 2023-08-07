@@ -62,6 +62,10 @@ namespace xtd {
       explicit thread(const xtd::threading::parameterized_thread_start& start);
       
       thread(const xtd::threading::parameterized_thread_start& start, int32 max_stack_size);
+      
+      //explicit thread(const xtd::threading::parameterized_object_thread_start& start);
+      
+      //thread(const xtd::threading::parameterized_object_thread_start& start, int32 max_stack_size);
       /// @}
 
       /// @cond
@@ -157,8 +161,7 @@ namespace xtd {
       /// @brief Causes the operating system to change the state of the current instance to xtd::threading::thread_state::running.
       /// @param obj An object that contains data to be used by the method the thread executes.
       /// @exception xtd::threading::thread_state_exception The thread has already been started.
-      void start(object& obj);
-
+      void start(std::any obj);
 
       /// @brief Causes the calling thread to yield execution to another thread that is ready to run on the current processor. The operating system selects the thread to yield to.
       /// @return true if the operating system switched execution to another thread; otherwise, false.
@@ -169,7 +172,6 @@ namespace xtd {
       /// @}
 
       /// @cond
-      void start(const object& obj);
       /// @endcond
       
     protected:
@@ -186,8 +188,6 @@ namespace xtd {
       bool is_suspended() const noexcept;
       bool is_unstarted() const noexcept;
       bool is_wait_sleep_join() const noexcept;
-      void start_thread();
-      void stop_thread();
       void thread_proc();
 
       std::shared_ptr<data> data_;
