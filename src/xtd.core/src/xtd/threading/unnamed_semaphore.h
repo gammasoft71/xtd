@@ -47,12 +47,9 @@ public:
   }
 
   uint32 wait(int32 milliseconds_timeout) override {
-    if (milliseconds_timeout == -1) {
-      handle_->semaphore.acquire();
-      handle_->count--;
-      return 0x00000000;
-    }
-    if (handle_->semaphore.try_acquire_for(std::chrono::milliseconds {milliseconds_timeout}) == false) return 0x00000102;
+    if (milliseconds_timeout == timeout::infinite) handle_->semaphore.acquire();
+    else if (handle_->semaphore.try_acquire_for(std::chrono::milliseconds {milliseconds_timeout}) == false) return 0x00000102;
+
     handle_->count--;
     return 0x00000000;
   }
