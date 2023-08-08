@@ -50,6 +50,14 @@ namespace xtd {
       /// @return A System::Threading::Thread that is the representation of the currently running
       /// @return thread.
       static thread& current_thread();
+
+      /// @brief Represents an invalid native operating system handle. This field is read-only.
+      /// @remarks Used internally to initialize the xtd::thread::wait_handle::handle property.
+      static const intptr invalid_handle;
+
+      /// @brief Represents an invalid native operating system thread id. This field is read-only.
+      /// @remarks Used internally to initialize the xtd::threading::thread::thread_id property.
+      static const intptr invalid_thread_id;
       /// @}
 
       /// @name Cosntructors
@@ -69,8 +77,8 @@ namespace xtd {
       /// @}
 
       /// @cond
-      thread();
-      thread(thread&&) = default;
+      thread() = default;
+      //thread(thread&&) = default;
       thread(const thread&) = default;
       thread& operator=(const thread&);
       ~thread();
@@ -95,10 +103,10 @@ namespace xtd {
       ustring name() const noexcept;
       thread& name(const ustring& value);
 
-      intptr thread_id() const noexcept;
+      xtd::threading::thread_priority priority() const noexcept;
+      thread& priority(xtd::threading::thread_priority value);
 
-      xtd::threading::thread_priority thread_priority() const noexcept;
-      thread& thread_priority(xtd::threading::thread_priority value);
+      intptr thread_id() const noexcept;
 
       xtd::threading::thread_state thread_state() const noexcept;
       /// @}
@@ -178,6 +186,7 @@ namespace xtd {
       
     private:
       friend struct ::__current_thread_id__;
+      explicit thread(bool special_thread);
       bool cancel();
       static bool do_wait(wait_handle& wait_handle, int32 milliseconds_timeout);
       static int32 generate_managed_thread_id() noexcept;
@@ -189,10 +198,10 @@ namespace xtd {
       bool is_unstarted() const noexcept;
       bool is_wait_sleep_join() const noexcept;
       void set_background();
+      static thread_collection& threads();
       void thread_proc();
 
       std::shared_ptr<data> data_;
-      static thread_collection threads_;
       static constexpr int32 unmanaged_thread_id = 0;
       static constexpr int32 main_managed_thread_id = 1;
     };
