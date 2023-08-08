@@ -93,15 +93,11 @@ thread::thread() : data_(std::make_shared<data>()) {
 }
  */
 
-thread::thread(const xtd::threading::thread_start& start) : data_(std::make_shared<data>()) {
-  data_->managed_thread_id = generate_managed_thread_id();
-  data_->thread_start = start;
-  std::lock_guard<std::recursive_mutex> lock {mutex_for_threads_access()};
-  data_->index = threads().size();
-  threads().push_back(*this);
+thread::thread(const xtd::threading::thread_start& start) : thread::thread(start, 0) {
 }
 
 thread::thread(const xtd::threading::thread_start& start, int32 max_stack_size) : data_(std::make_shared<data>()) {
+  if (start.is_empty()) throw argument_exception {csf_};
   data_->managed_thread_id = generate_managed_thread_id();
   data_->thread_start = start;
   data_->max_stack_size = max_stack_size;
@@ -110,15 +106,11 @@ thread::thread(const xtd::threading::thread_start& start, int32 max_stack_size) 
   threads().push_back(*this);
 }
 
-thread::thread(const xtd::threading::parameterized_thread_start& start) : data_(std::make_shared<data>()) {
-  data_->managed_thread_id = generate_managed_thread_id();
-  data_->parameterized_thread_start = start;
-  std::lock_guard<std::recursive_mutex> lock {mutex_for_threads_access()};
-  data_->index = threads().size();
-  threads().push_back(*this);
+thread::thread(const xtd::threading::parameterized_thread_start& start) : thread(start, 0) {
 }
 
 thread::thread(const xtd::threading::parameterized_thread_start& start, int32 max_stack_size) : data_(std::make_shared<data>()) {
+  if (start.is_empty()) throw argument_exception {csf_};
   data_->managed_thread_id = generate_managed_thread_id();
   data_->parameterized_thread_start = start;
   data_->max_stack_size = max_stack_size;
