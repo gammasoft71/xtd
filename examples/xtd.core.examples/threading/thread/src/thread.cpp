@@ -5,7 +5,8 @@
 using namespace xtd;
 using namespace xtd::threading;
 
-// Simple threading scenario:  Start a static method running on a second thread.
+// Simple threading scenario:  Start a static method running
+// on a second thread.
 class thread_example {
 public:
   // The thread_proc method is called when the thread starts.
