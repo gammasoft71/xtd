@@ -97,7 +97,7 @@ thread::thread(const xtd::threading::thread_start& start) : thread::thread(start
 }
 
 thread::thread(const xtd::threading::thread_start& start, int32 max_stack_size) : data_(std::make_shared<data>()) {
-  if (start.is_empty()) throw argument_exception {csf_};
+  if (start.is_empty() || max_stack_size < 0) throw argument_exception {csf_};
   data_->managed_thread_id = generate_managed_thread_id();
   data_->thread_start = start;
   data_->max_stack_size = max_stack_size;
@@ -110,7 +110,7 @@ thread::thread(const xtd::threading::parameterized_thread_start& start) : thread
 }
 
 thread::thread(const xtd::threading::parameterized_thread_start& start, int32 max_stack_size) : data_(std::make_shared<data>()) {
-  if (start.is_empty()) throw argument_exception {csf_};
+  if (start.is_empty() || max_stack_size < 0) throw argument_exception {csf_};
   data_->managed_thread_id = generate_managed_thread_id();
   data_->parameterized_thread_start = start;
   data_->max_stack_size = max_stack_size;
