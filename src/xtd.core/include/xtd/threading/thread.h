@@ -16,6 +16,7 @@
 
 /// @cond
 struct __current_thread_id__;
+struct __threads__;
 /// @endcond
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -186,6 +187,7 @@ namespace xtd {
       
     private:
       friend struct ::__current_thread_id__;
+      friend struct ::__threads__;
       explicit thread(bool special_thread);
       bool cancel();
       static bool do_wait(wait_handle& wait_handle, int32 milliseconds_timeout);
