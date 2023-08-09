@@ -1,9 +1,8 @@
 #include <xtd/threading/auto_reset_event>
+#include <xtd/threading/thread>
 #include <xtd/console>
 #include <xtd/startup>
-#include <thread>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::threading;
 
@@ -19,17 +18,17 @@ namespace auto_reset_event_example {
       console::read_line();
       
       for (auto index = 1; index < 4; ++index) {
-        auto t = std::thread {thread_proc};
-        t.detach();
-        //t.name("Thread_" + index);
+        auto t = thread {thread_start {thread_proc}};
+        t.name(ustring::format("Thread_{}", index));
+        t.start();
       }
-      this_thread::sleep_for(250_ms);
+      thread::sleep(250_ms);
       
       for (auto index = 0; index < 2; ++index) {
         console::write_line("Press Enter to release another thread.");
         console::read_line();
         event_1.set();
-        this_thread::sleep_for(250_ms);
+        thread::sleep(250_ms);
       }
       
       console::write_line("\r\nAll threads are now waiting on auto_reset_event #2.");
@@ -37,12 +36,12 @@ namespace auto_reset_event_example {
         console::write_line("Press Enter to release a thread.");
         console::read_line();
         event_2.set();
-        this_thread::sleep_for(250_ms);
+        thread::sleep(250_ms);
       }
     }
     
     static void thread_proc() {
-      ustring name = ustring::format("thread_{}", this_thread::get_id()); //thread::current_thread::name();
+      ustring name = thread::current_thread().name();
       
       console::write_line("{0} waits on auto_reset_event #1.", name);
       event_1.wait_one();
@@ -56,6 +55,7 @@ namespace auto_reset_event_example {
     }
 
   private:
+    inline static std::vector<thread> threads {4};
     inline static auto_reset_event event_1 {true};
     inline static auto_reset_event event_2 {false};
   };
@@ -70,30 +70,30 @@ startup_(auto_reset_event_example::program);
 // in the signaled state, so the first thread is released.
 // This puts auto_reset_event #1 into the unsignaled state.
 //
-// thread_0x16fe87000 waits on auto_reset_event #1.
-// thread_0x16fe87000 is released from auto_reset_event #1.
-// thread_0x16fe87000 waits on auto_reset_event #2.
-// thread_0x16ff13000 waits on auto_reset_event #1.
-// thread_0x16ff9f000 waits on auto_reset_event #1.
+// Thread_1 waits on auto_reset_event #1.
+// Thread_1 is released from auto_reset_event #1.
+// Thread_1 waits on auto_reset_event #2.
+// Thread_2 waits on auto_reset_event #1.
+// Thread_3 waits on auto_reset_event #1.
 // Press Enter to release another thread.
 //
-// thread_0x16ff9f000 is released from auto_reset_event #1.
-// thread_0x16ff9f000 waits on auto_reset_event #2.
+// Thread_3 is released from auto_reset_event #1.
+// Thread_3 waits on auto_reset_event #2.
 // Press Enter to release another thread.
 //
-// thread_0x16ff13000 is released from auto_reset_event #1.
-// thread_0x16ff13000 waits on auto_reset_event #2.
+// Thread_2 is released from auto_reset_event #1.
+// Thread_2 waits on auto_reset_event #2.
 //
 // All threads are now waiting on auto_reset_event #2.
 // Press Enter to release a thread.
 //
-// thread_0x16ff9f000 is released from auto_reset_event #2.
-// thread_0x16ff9f000 ends.
+// Thread_1 is released from auto_reset_event #2.
+// Thread_1 ends.
 // Press Enter to release a thread.
 //
-// thread_0x16fe87000 is released from auto_reset_event #2.
-// thread_0x16fe87000 ends.
+// Thread_3 is released from auto_reset_event #2.
+// Thread_3 ends.
 // Press Enter to release a thread.
 //
-// thread_0x16ff13000 is released from auto_reset_event #2.
-// thread_0x16ff13000 ends.
+// Thread_2 is released from auto_reset_event #2.
+// Thread_2 ends.
