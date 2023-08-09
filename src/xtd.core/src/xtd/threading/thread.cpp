@@ -25,6 +25,13 @@ struct __current_thread_id__ {
   }
 };
 
+struct __threads__ {
+  thread::thread_collection operator()(bool write_debug = false) {
+    if (write_debug) xtd::threading::thread::debug_write_threads("threads");
+    return xtd::threading::thread::threads();
+  }
+};
+
 namespace {
   static intptr main_thread_id = __current_thread_id__ {}();
   
@@ -39,7 +46,6 @@ const intptr thread::invalid_handle = native::types::invalid_handle();
 const intptr thread::invalid_thread_id = native::types::invalid_handle();
 
 struct thread::data {
-  bool closing {false};
   bool critical_region {false};
   event_wait_handle end_thread_event {false, event_reset_mode::manual_reset};
   intptr handle {invalid_handle};
@@ -201,17 +207,7 @@ xtd::threading::thread_state thread::thread_state() const noexcept {
 }
 
 void thread::close() {
-  if (data_ == nullptr || data_->closing || data_->managed_thread_id == main_managed_thread_id || data_->managed_thread_id == unmanaged_thread_id) return;
-  
-  //data_->closing = true;
-  if (data_.use_count() == 2 && !is_alive()) {
-    std::lock_guard<std::recursive_mutex> lock {mutex_for_threads_access()};
-    thread_collection::iterator iterator = std::find_if(threads().begin(), threads().end(), [&](const auto& value) {return value->data_->managed_thread_id == data_->managed_thread_id;});
-    if (iterator != threads().end()) {
-      (*iterator)->data_ = nullptr;
-      threads().erase(iterator);
-    }
-  }
+  if (data_ == nullptr || data_->managed_thread_id == main_managed_thread_id || data_->managed_thread_id == unmanaged_thread_id) return;
 
   if (data_.use_count() == 1 && data_->joinable) join();
 }
@@ -272,10 +268,9 @@ void thread::start() {
   data_->state &= ~xtd::threading::thread_state::unstarted;
   data_->joinable = true;
   data_->parameter = nullptr;
-  auto arg = reinterpret_cast<intptr>(threads().at(data_->index).get());
   data_->handle = native::thread::create([&](intptr arg) {
     reinterpret_cast<threading::thread*>(arg)->thread_proc();
-  }, arg, data_->max_stack_size, is_suspended(), data_->thread_id);
+  }, reinterpret_cast<intptr>(threads().at(data_->index).get()), data_->max_stack_size, is_suspended(), data_->thread_id);
 }
 
 void thread::start(std::any param) {
@@ -368,6 +363,13 @@ void thread::thread_proc() {
   
   data_->state |= xtd::threading::thread_state::stopped;
   data_->end_thread_event.set();
+  
+  std::lock_guard<std::recursive_mutex> lock {mutex_for_threads_access()};
+  thread_collection::iterator iterator = std::find_if(threads().begin(), threads().end(), [&](const auto& value) {return value->data_->managed_thread_id == data_->managed_thread_id;});
+  if (iterator != threads().end()) {
+    (*iterator)->data_ = nullptr;
+    threads().erase(iterator);
+  }
 }
 
 void thread::debug_write_threads(const xtd::ustring& fct) {
