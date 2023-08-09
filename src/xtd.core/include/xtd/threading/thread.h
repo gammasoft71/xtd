@@ -39,7 +39,7 @@ namespace xtd {
       struct data;
       //using native_handle = std::thread::native_handle_type;
       //using thread_id = std::thread::id;
-      using thread_collection = std::vector<thread>;
+      using thread_collection = std::vector<std::shared_ptr<thread>>;
 
       friend class wait_handle;
     public:
@@ -199,6 +199,8 @@ namespace xtd {
       bool is_wait_sleep_join() const noexcept;
       static thread_collection& threads();
       void thread_proc();
+
+      static void debug_write_threads(const xtd::ustring& fct);
 
       std::shared_ptr<data> data_;
       static constexpr int32 unmanaged_thread_id = 0;
