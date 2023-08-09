@@ -77,8 +77,8 @@ namespace xtd {
       /// @}
 
       /// @cond
-      thread() = default;
-      //thread(thread&&) = default;
+      thread();
+      thread(thread&&) = default;
       thread(const thread&) = default;
       thread& operator=(const thread&);
       ~thread();
@@ -197,7 +197,6 @@ namespace xtd {
       bool is_suspended() const noexcept;
       bool is_unstarted() const noexcept;
       bool is_wait_sleep_join() const noexcept;
-      void set_background();
       static thread_collection& threads();
       void thread_proc();
 
