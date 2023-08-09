@@ -38,7 +38,6 @@ const intptr thread::invalid_handle = native::types::invalid_handle();
 
 const intptr thread::invalid_thread_id = native::types::invalid_handle();
 
-
 struct thread::data {
   bool closing {false};
   bool critical_region {false};
@@ -64,33 +63,33 @@ thread& thread::current_thread() {
   intptr id = get_current_thread_id();
   
   if (id == main_thread_id) {
-    if (threads().at(0).data_->managed_thread_id != main_managed_thread_id) {
-      threads().at(0).data_->handle = get_current_thread_handle();
-      threads().at(0).data_->managed_thread_id = main_managed_thread_id;
-      threads().at(0).data_->state &= ~xtd::threading::thread_state::unstarted;
-      threads().at(0).data_->thread_id = get_current_thread_id();
+    if (threads().at(0)->data_->managed_thread_id != main_managed_thread_id) {
+      threads().at(0)->data_->handle = get_current_thread_handle();
+      threads().at(0)->data_->managed_thread_id = main_managed_thread_id;
+      threads().at(0)->data_->state &= ~xtd::threading::thread_state::unstarted;
+      threads().at(0)->data_->thread_id = get_current_thread_id();
     }
-    return threads().at(0);
+    return *threads().at(0);
   }
   
   for (auto index = 2ul; index < threads().size(); ++index) {
-    if (threads()[index].data_->thread_id == id)
-      return threads().at(index);
+    if (threads()[index]->data_->thread_id == id)
+      return *threads().at(index);
   }
   
-  if ((threads().at(1).data_->state & xtd::threading::thread_state::unstarted) == xtd::threading::thread_state::unstarted) {
-    threads().at(1).data_->handle = get_current_thread_handle();
-    threads().at(1).data_->state &= ~xtd::threading::thread_state::unstarted;
-    threads().at(1).data_->state |= xtd::threading::thread_state::background;
-    threads().at(1).data_->thread_id = get_current_thread_id();
+  if ((threads().at(1)->data_->state & xtd::threading::thread_state::unstarted) == xtd::threading::thread_state::unstarted) {
+    threads().at(1)->data_->handle = get_current_thread_handle();
+    threads().at(1)->data_->state &= ~xtd::threading::thread_state::unstarted;
+    threads().at(1)->data_->state |= xtd::threading::thread_state::background;
+    threads().at(1)->data_->thread_id = get_current_thread_id();
   }
-  return threads().at(1);
+  return *threads().at(1);
 }
 
 thread::thread() : data_(std::make_shared<data>()) {
   std::lock_guard<std::recursive_mutex> lock {mutex_for_threads_access()};
   data_->index = threads().size();
-  threads().push_back(*this);
+  threads().push_back(std::make_shared<thread>(*this));
 }
 
 thread::thread(const xtd::threading::thread_start& start) : thread::thread(start, 0) {
@@ -103,7 +102,7 @@ thread::thread(const xtd::threading::thread_start& start, int32 max_stack_size) 
   data_->max_stack_size = max_stack_size;
   std::lock_guard<std::recursive_mutex> lock {mutex_for_threads_access()};
   data_->index = threads().size();
-  threads().push_back(*this);
+  threads().push_back(std::make_shared<thread>(*this));
 }
 
 thread::thread(const xtd::threading::parameterized_thread_start& start) : thread(start, 0) {
@@ -116,7 +115,7 @@ thread::thread(const xtd::threading::parameterized_thread_start& start, int32 ma
   data_->max_stack_size = max_stack_size;
   std::lock_guard<std::recursive_mutex> lock {mutex_for_threads_access()};
   data_->index = threads().size();
-  threads().push_back(*this);
+  threads().push_back(std::make_shared<thread>(*this));
 }
 
 thread::thread(bool special_thread) : data_(std::make_shared<data>()) {
@@ -207,9 +206,9 @@ void thread::close() {
   //data_->closing = true;
   if (data_.use_count() == 2 && !is_alive()) {
     std::lock_guard<std::recursive_mutex> lock {mutex_for_threads_access()};
-    thread_collection::iterator iterator = std::find_if(threads().begin(), threads().end(), [&](const auto& value) {return value.data_->managed_thread_id == data_->managed_thread_id;});
+    thread_collection::iterator iterator = std::find_if(threads().begin(), threads().end(), [&](const auto& value) {return value->data_->managed_thread_id == data_->managed_thread_id;});
     if (iterator != threads().end()) {
-      iterator->data_ = nullptr;
+      (*iterator)->data_ = nullptr;
       threads().erase(iterator);
     }
   }
@@ -273,10 +272,8 @@ void thread::start() {
   data_->state &= ~xtd::threading::thread_state::unstarted;
   data_->joinable = true;
   data_->parameter = nullptr;
-  auto arg = reinterpret_cast<intptr>(&threads().at(data_->index));
-  diagnostics::debug::write_line(ustring::format("(start) {{arg=0x{:x}, managed_thread_id={}}}", arg, managed_thread_id()));
+  auto arg = reinterpret_cast<intptr>(threads().at(data_->index).get());
   data_->handle = native::thread::create([&](intptr arg) {
-    diagnostics::debug::write_line(ustring::format("(start thread) {{arg=0x{:x}, managed_thread_id={}}}", arg, managed_thread_id()));
     reinterpret_cast<threading::thread*>(arg)->thread_proc();
   }, arg, data_->max_stack_size, is_suspended(), data_->thread_id);
 }
@@ -289,7 +286,7 @@ void thread::start(std::any param) {
   data_->parameter = param;
   data_->handle = native::thread::create([](intptr arg) {
     reinterpret_cast<thread*>(arg)->thread_proc();
-  }, reinterpret_cast<intptr>(&threads().at(data_->index)), data_->max_stack_size, is_suspended(), data_->thread_id);
+  }, reinterpret_cast<intptr>(threads().at(data_->index).get()), data_->max_stack_size, is_suspended(), data_->thread_id);
 }
 
 bool thread::yield() {
@@ -351,14 +348,13 @@ bool thread::is_wait_sleep_join() const noexcept {
 }
 
 thread::thread_collection& thread::threads() {
-  static thread_collection threads {thread {true}, thread {true}};
+  static thread_collection threads {std::shared_ptr<thread> {new thread {true}}, std::shared_ptr<thread> {new thread {true}}};
   return threads;
 }
 
 void thread::thread_proc() {
   if (!data_) {
-    for (auto index = 0ul; index < threads().size(); ++index)
-      diagnostics::debug::write_line("[{}] {{handle=0x{:x}, data_=0x{:x}, managed_thread_id={}, thread_id=0x{:x}, name=\"{}\" }}", index, reinterpret_cast<intptr>(&threads().at(index)), reinterpret_cast<intptr>(threads().at(index).data_.get()), threads().at(index).managed_thread_id(), threads().at(index).thread_id(), threads().at(index).name());
+    debug_write_threads(csf_.get_method());
     throw invalid_operation_exception {csf_};
   }
   
@@ -372,4 +368,9 @@ void thread::thread_proc() {
   
   data_->state |= xtd::threading::thread_state::stopped;
   data_->end_thread_event.set();
+}
+
+void thread::debug_write_threads(const xtd::ustring& fct) {
+  for (auto index = 0ul; index < threads().size(); ++index)
+    diagnostics::debug::write_line("({}) [{}] {{handle=0x{:x}, data_=0x{:x}, managed_thread_id={}, thread_id=0x{:x}, name=\"{}\" }}", fct, index, reinterpret_cast<intptr>(threads().at(index).get()), reinterpret_cast<intptr>(threads().at(index)->data_.get()), threads().at(index)->managed_thread_id(), threads().at(index)->thread_id(), threads().at(index)->name());
 }
