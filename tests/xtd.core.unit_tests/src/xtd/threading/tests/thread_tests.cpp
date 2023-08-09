@@ -1,4 +1,5 @@
 #include <xtd/threading/thread.h>
+#include <xtd/threading/interlocked.h>
 #include <xtd/xtd.tunit>
 
 using namespace xtd::threading;
@@ -120,6 +121,46 @@ namespace xtd::tests {
       if (t.joinable()) t.join();
       assert::is_true(thread_ran, csf_);
     }
+    
+    void test_method_(create_many_threads) {
+      auto counter = 0;
+      auto thread_proc = thread_start {[&] {
+        thread::sleep(1);
+        interlocked::increment(counter);
+      }};
+      
+      constexpr auto max_count_thread = 100ul;
+      auto threads = std::vector<thread> {};
 
+      for (auto index = 0ul; index < max_count_thread; ++index)
+        threads.emplace_back(thread_proc);
+      
+      for (auto& thread : threads)
+        thread.start();
+      
+      for (auto& thread : threads)
+        thread.join();
+      
+      assert::are_equal(max_count_thread, counter, csf_);
+    }
+    
+    void test_method_(create_many_threads_without_join) {
+      auto counter = 0;
+      auto thread_proc = thread_start {[&] {
+        thread::sleep(1);
+        interlocked::increment(counter);
+      }};
+      
+      constexpr auto max_count_thread = 100ul;
+      using_(auto threads = std::vector<thread> {}) {
+        for (auto index = 0ul; index < max_count_thread; ++index)
+          threads.emplace_back(thread_proc);
+        
+        for (auto& thread : threads)
+          thread.start();
+      }
+      
+      assert::are_not_equal(max_count_thread, counter, csf_);
+    }
   };
 }
