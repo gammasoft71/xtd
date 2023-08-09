@@ -35,9 +35,9 @@ public:
     // ParameterizedThreadStart delegate, so the thread
     // number can be passed as an argument to the Start
     // method.
-    for (int i = 0; i <= 4; i++) {
-      threads[i] = thread {parameterized_thread_start {thread_proc}};
-      threads[i].start(i);
+    for (auto i = 0; i <= 4; i++) {
+      auto t = thread {parameterized_thread_start {thread_proc}};
+      t.start(i);
     }
     
     // Wait until all the threads have started and blocked.
@@ -73,9 +73,9 @@ public:
     
     // Create and start five more numbered threads.
     //
-    for(int i = 0; i <= 4; i++) {
-      threads[i] = thread {parameterized_thread_start {thread_proc}};
-      threads[i].start(i);
+    for(auto i = 0; i <= 4; i++) {
+      auto t = thread {parameterized_thread_start {thread_proc}};
+      t.start(i);
     }
     
     // Wait until all the threads have started and blocked.
@@ -111,8 +111,6 @@ public:
     //
     clear_count.set();
   }
-  
-  inline static std::vector<thread> threads = std::vector<thread>(4);
 };
 
 startup_(example);
