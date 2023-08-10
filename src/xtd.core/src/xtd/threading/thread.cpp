@@ -2,7 +2,7 @@
 #include <xtd/native/types.h>
 #include <xtd/native/thread.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
-#include "../../../include/xtd/threading/event_wait_handle.h"
+#include "../../../include/xtd/threading/manual_reset_event.h"
 #include "../../../include/xtd/threading/thread_abort_exception.h"
 #include "../../../include/xtd/threading/thread_interrupted_exception.h"
 #include "../../../include/xtd/threading/thread_state_exception.h"
@@ -18,20 +18,14 @@
 using namespace xtd;
 using namespace xtd::threading;
 
-namespace {
-  // Don't use xtd::threading::mutex, otherwise you'll get reentrant calls up to a stack overflow in the do_wait method.
-  static std::recursive_mutex mutex_for_threads_access;
-}
-
-const intptr thread::invalid_handle = native::types::invalid_handle();
-
-const intptr thread::invalid_thread_id = native::types::invalid_handle();
+// Don't use xtd::threading::mutex, otherwise you'll get reentrant calls up to a stack overflow in the do_wait method.
+static std::recursive_mutex __mutex_for_threads_access__;
 
 struct thread::data {
   bool critical_region {false};
-  event_wait_handle end_thread_event {false, event_reset_mode::manual_reset};
+  manual_reset_event end_thread_event;
   intptr handle {invalid_handle};
-  size_t index = static_cast<size_t>(-1);
+  size_t index = std::numeric_limits<size_t>::max();
   bool interrupted {false};
   bool is_thread_pool_thread {false};
   bool joinable {false};
@@ -58,12 +52,16 @@ public:
   }
 };
 
+const intptr thread::invalid_handle = native::types::invalid_handle();
+
+const intptr thread::invalid_thread_id = native::types::invalid_handle();
+
 intptr thread::main_thread_id_ = thread::get_current_thread_id();
 
 thread::thread_collection thread::threads_ {std::make_shared<thread>(), std::make_shared<thread>()};
 
 thread& thread::current_thread() {
-  std::lock_guard<std::recursive_mutex> lock {mutex_for_threads_access};
+  std::lock_guard<std::recursive_mutex> lock {__mutex_for_threads_access__};
   intptr id = get_current_thread_id();
   
   if (id == main_thread_id_) {
@@ -101,7 +99,7 @@ thread::thread(const xtd::threading::thread_start& start, int32 max_stack_size) 
   data_->managed_thread_id = generate_managed_thread_id();
   data_->thread_start = start;
   data_->max_stack_size = max_stack_size;
-  std::lock_guard<std::recursive_mutex> lock {mutex_for_threads_access};
+  std::lock_guard<std::recursive_mutex> lock {__mutex_for_threads_access__};
   data_->index = threads_.size();
   threads_.push_back(std::make_shared<thread>(*this));
 }
@@ -114,7 +112,7 @@ thread::thread(const xtd::threading::parameterized_thread_start& start, int32 ma
   data_->managed_thread_id = generate_managed_thread_id();
   data_->parameterized_thread_start = start;
   data_->max_stack_size = max_stack_size;
-  std::lock_guard<std::recursive_mutex> lock {mutex_for_threads_access};
+  std::lock_guard<std::recursive_mutex> lock {__mutex_for_threads_access__};
   data_->index = threads_.size();
   threads_.push_back(std::make_shared<thread>(*this));
 }
@@ -325,6 +323,14 @@ intptr thread::get_current_thread_id() {
   return native::thread::get_thread_id(get_current_thread_handle());
 }
 
+void thread::reset_threads() {
+  if (threads_.size() > 2) {
+    for (auto& item : threads_)
+      if (item && item->data_ && !item->is_main_thread() && !item->is_unmanaged_thread()) while (item->is_wait_sleep_join()) native::thread::sleep(10);
+    threads_.erase(threads_.begin() + 2, threads_.end());
+  }
+}
+
 bool thread::is_aborted() const noexcept {
   return data_ ? enum_object<xtd::threading::thread_state>(data_->state).has_flag(xtd::threading::thread_state::aborted) : false;
 }
@@ -366,7 +372,7 @@ void thread::thread_proc() {
   data_->state |= xtd::threading::thread_state::stopped;
   data_->end_thread_event.set();
   
-  std::lock_guard<std::recursive_mutex> lock {mutex_for_threads_access};
+  std::lock_guard<std::recursive_mutex> lock {__mutex_for_threads_access__};
   thread_collection::iterator iterator = std::find_if(threads_.begin(), threads_.end(), [&](const auto& value) {return value->data_->managed_thread_id == data_->managed_thread_id;});
   if (iterator != threads_.end()) {
     (*iterator)->data_.reset();

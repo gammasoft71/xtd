@@ -13,6 +13,10 @@
 #include "../time_span.h"
 #include "../types.h"
 
+/// @cond
+struct __xtd_threads__; // Used by xtd::tests::thread_tests unit tests.
+/// @encond
+
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The xtd::threading namespace provides classes and interfaces that enable multithreaded programming. In addition to classes for synchronizing thread activities and access to data ( xtd::threading::mutex, xtd::threading::monitor, xtd::threading::interlocked, xtd::threading::auto_reset_event, and so on), this namespace includes a xtd::threading::thread_pool class that allows you to use a pool of system-supplied threads, and a xtd::threading::timer class that executes callback methods on thread pool threads.
@@ -170,6 +174,7 @@ namespace xtd {
       /// @}
       
     private:
+      friend struct ::__xtd_threads__;
       friend class wait_handle;
 
       bool cancel();
@@ -177,6 +182,7 @@ namespace xtd {
       static int32 generate_managed_thread_id() noexcept;
       static intptr get_current_thread_handle();
       static intptr get_current_thread_id();
+      static void reset_threads(); // Used by xtd::tests::thread_tests unit tests.
       bool is_aborted() const noexcept;
       bool is_main_thread() const noexcept;
       bool is_stopped() const noexcept;
