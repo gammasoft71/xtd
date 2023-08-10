@@ -5,6 +5,13 @@
 using namespace xtd::threading;
 using namespace xtd::tunit;
 
+// Used by xtd::tests::thread_tests unit tests.
+struct __xtd_threads__ {
+  static void reset_threads() {
+    xtd::threading::thread::reset_threads();
+  }
+};
+
 namespace xtd::tests {
   class test_class_(thread_tests) {
   public:
@@ -161,6 +168,9 @@ namespace xtd::tests {
       }
       
       assert::are_not_equal(max_count_thread, counter, csf_);
+      
+      // simulate end of main method
+      __xtd_threads__::reset_threads();
     }
   };
 }
