@@ -64,15 +64,7 @@ thread& thread::current_thread() {
   std::lock_guard<std::recursive_mutex> lock {__mutex_for_threads_access__};
   intptr id = get_current_thread_id();
   
-  if (id == main_thread_id_) {
-    if (threads_.at(0)->data_->managed_thread_id != main_managed_thread_id) {
-      threads_.at(0)->data_->handle = get_current_thread_handle();
-      threads_.at(0)->data_->managed_thread_id = main_managed_thread_id;
-      threads_.at(0)->data_->state &= ~xtd::threading::thread_state::unstarted;
-      threads_.at(0)->data_->thread_id = get_current_thread_id();
-    }
-    return *threads_.at(0);
-  }
+  if (id == main_thread_id_) return main_thread();
   
   for (auto index = 2ul; index < threads_.size(); ++index) {
     if (threads_[index]->data_->thread_id == id)
@@ -86,6 +78,17 @@ thread& thread::current_thread() {
     threads_.at(1)->data_->thread_id = get_current_thread_id();
   }
   return *threads_.at(1);
+}
+
+thread& thread::main_thread() {
+  std::lock_guard<std::recursive_mutex> lock {__mutex_for_threads_access__};
+  if (threads_.at(0)->data_->managed_thread_id != main_managed_thread_id) {
+    threads_.at(0)->data_->handle = get_current_thread_handle();
+    threads_.at(0)->data_->managed_thread_id = main_managed_thread_id;
+    threads_.at(0)->data_->state &= ~xtd::threading::thread_state::unstarted;
+    threads_.at(0)->data_->thread_id = get_current_thread_id();
+  }
+  return *threads_.at(0);
 }
 
 thread::thread() : data_(std::make_shared<data>()) {

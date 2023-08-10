@@ -46,6 +46,8 @@ namespace xtd {
       /// @return thread.
       static thread& current_thread();
 
+      static thread& main_thread();
+
       /// @brief Represents an invalid native operating system handle. This field is read-only.
       /// @remarks Used internally to initialize the xtd::thread::wait_handle::handle property.
       static const intptr invalid_handle;
