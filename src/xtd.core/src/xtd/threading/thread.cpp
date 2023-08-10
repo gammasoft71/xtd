@@ -3,6 +3,7 @@
 #include <xtd/native/thread.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include "../../../include/xtd/threading/manual_reset_event.h"
+#include "../../../include/xtd/threading/mutex.h"
 #include "../../../include/xtd/threading/thread_abort_exception.h"
 #include "../../../include/xtd/threading/thread_interrupted_exception.h"
 #include "../../../include/xtd/threading/thread_state_exception.h"
@@ -13,13 +14,22 @@
 #include "../../../include/xtd/invalid_operation_exception.h"
 #include "../../../include/xtd/not_implemented_exception.h"
 #include "../../../include/xtd/as.h"
-#include <mutex>
 
 using namespace xtd;
 using namespace xtd::threading;
 
-// Don't use xtd::threading::mutex, otherwise you'll get reentrant calls up to a stack overflow in the do_wait method.
-static std::recursive_mutex __mutex_for_threads_access__;
+namespace {
+  class lock_guard_threads {
+  public:
+    lock_guard_threads() {lock_.wait_one();}
+    ~lock_guard_threads() {lock_.release_mutex();}
+    
+    static xtd::threading::mutex& lock() {return lock_;}
+    
+  private:
+    inline static xtd::threading::mutex lock_;
+  };
+}
 
 struct thread::data {
   bool critical_region {false};
@@ -61,7 +71,7 @@ intptr thread::main_thread_id_ = thread::get_current_thread_id();
 thread::thread_collection thread::threads_ {std::make_shared<thread>(), std::make_shared<thread>()};
 
 thread& thread::current_thread() {
-  std::lock_guard<std::recursive_mutex> lock {__mutex_for_threads_access__};
+  lock_guard_threads lock;
   intptr id = get_current_thread_id();
   
   if (id == main_thread_id_) return main_thread();
@@ -81,7 +91,7 @@ thread& thread::current_thread() {
 }
 
 thread& thread::main_thread() {
-  std::lock_guard<std::recursive_mutex> lock {__mutex_for_threads_access__};
+  lock_guard_threads lock;
   if (threads_.at(0)->data_->managed_thread_id != main_managed_thread_id) {
     threads_.at(0)->data_->handle = get_current_thread_handle();
     threads_.at(0)->data_->managed_thread_id = main_managed_thread_id;
@@ -102,7 +112,7 @@ thread::thread(const xtd::threading::thread_start& start, int32 max_stack_size) 
   data_->managed_thread_id = generate_managed_thread_id();
   data_->thread_start = start;
   data_->max_stack_size = max_stack_size;
-  std::lock_guard<std::recursive_mutex> lock {__mutex_for_threads_access__};
+  lock_guard_threads lock;
   data_->index = threads_.size();
   threads_.push_back(std::make_shared<thread>(*this));
 }
@@ -115,7 +125,7 @@ thread::thread(const xtd::threading::parameterized_thread_start& start, int32 ma
   data_->managed_thread_id = generate_managed_thread_id();
   data_->parameterized_thread_start = start;
   data_->max_stack_size = max_stack_size;
-  std::lock_guard<std::recursive_mutex> lock {__mutex_for_threads_access__};
+  lock_guard_threads lock;
   data_->index = threads_.size();
   threads_.push_back(std::make_shared<thread>(*this));
 }
@@ -304,6 +314,9 @@ bool thread::cancel() {
 bool thread::do_wait(wait_handle& wait_handle, int32 milliseconds_timeout) {
   if (milliseconds_timeout < timeout::infinite) throw argument_exception(csf_);
   
+  // Don't use default way, otherwise you'll get reentrant calls up to a stack overflow in the do_wait method.
+  if (wait_handle.handle() == lock_guard_threads::lock().handle()) return lock_guard_threads::lock().wait(milliseconds_timeout);
+  
   current_thread().data_->state |= xtd::threading::thread_state::wait_sleep_join;
   if (current_thread().data_->interrupted) current_thread().interrupt();
   try {
@@ -375,7 +388,7 @@ void thread::thread_proc() {
   data_->state |= xtd::threading::thread_state::stopped;
   data_->end_thread_event.set();
   
-  std::lock_guard<std::recursive_mutex> lock {__mutex_for_threads_access__};
+  lock_guard_threads lock;
   thread_collection::iterator iterator = std::find_if(threads_.begin(), threads_.end(), [&](const auto& value) {return value->data_->managed_thread_id == data_->managed_thread_id;});
   if (iterator != threads_.end()) {
     (*iterator)->data_.reset();
