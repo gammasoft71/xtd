@@ -4,6 +4,7 @@
 #pragma once
 #include "semaphore_full_exception.h"
 #include "wait_handle.h"
+#include "../icomparable.h"
 #include "../iequatable.h"
 #include "../int32_object.h"
 
@@ -26,7 +27,7 @@ namespace xtd {
     /// @remarks The xtd::threading::semaphore class does not enforce thread identity on calls to xtd::threading::wait_handle::wait_one or xtd::threading::semaphore::release. It is the programmer's responsibility to ensure that threads do not release the semaphore too many times. For example, suppose a semaphore has a maximum count of two, and that thread A and thread B both enter the semaphore. If a programming error in thread B causes it to call xtd::threading::semaphore::release twice, both calls succeed. The count on the semaphore is full, and when thread A eventually calls xtd::threading::semaphore::release, a xtd::threading::semaphore_full_exception is thrown.
     /// @remarks Semaphores are of two types: local semaphores and named system semaphores. If you create a xtd::threading::semaphore object using a constructor that accepts a name, it is associated with an operating-system semaphore of that name. Named system semaphores are visible throughout the operating system, and can be used to synchronize the activities of processes. You can create multiple xtd::threading::semaphore objects that represent the same named system semaphore, and you can use the xtd::threading::semaphore::open_existing method to open an existing named system semaphore.
     /// @remarks A local semaphore exists only within your process. It can be used by any thread in your process that has a reference to the local xtd::threading::semaphore object. Each xtd::threading::semaphore object is a separate local semaphore.
-    class semaphore : public wait_handle, public iequatable<semaphore> {
+    class semaphore : public wait_handle, public icomparable<semaphore>, public iequatable<semaphore> {
       class semaphore_base;
       class named_semaphore;
       class unnamed_semaphore;
@@ -146,6 +147,8 @@ namespace xtd {
       
       /// @{
       void close() override;
+      
+      int32 compare_to(const semaphore& value) const noexcept override;
       
       bool equals(const semaphore& value) const noexcept override;
       
