@@ -61,8 +61,12 @@ void semaphore::close() {
   }
 }
 
+int32 semaphore::compare_to(const semaphore& value) const noexcept {
+  return handle() < value.handle() ? - 1 : handle() > value.handle() ? 1 : 0;
+}
+
 bool semaphore::equals(const semaphore& value) const noexcept {
-  return semaphore_ == value.semaphore_ && name_ == value.name_;
+  return handle() == value.handle();
 }
 
 semaphore semaphore::open_existing(const ustring& name) {
