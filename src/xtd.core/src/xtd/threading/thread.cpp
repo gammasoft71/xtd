@@ -149,6 +149,10 @@ thread& thread::is_background(bool value) {
   return *this;
 }
 
+bool thread::is_main_thread() const noexcept {
+  return data_ ? data_->managed_thread_id == main_managed_thread_id : false;
+}
+
 bool thread::is_thread_pool_thread() const noexcept {
   return data_ ? data_->is_thread_pool_thread : false;
 }
@@ -333,10 +337,6 @@ void thread::reset_threads() {
 
 bool thread::is_aborted() const noexcept {
   return data_ ? enum_object<xtd::threading::thread_state>(data_->state).has_flag(xtd::threading::thread_state::aborted) : false;
-}
-
-bool thread::is_main_thread() const noexcept {
-  return data_ ? data_->managed_thread_id == main_managed_thread_id : false;
 }
 
 bool thread::is_stopped() const noexcept {
