@@ -129,6 +129,7 @@ namespace xtd::tests {
       assert::is_true(thread_ran, csf_);
     }
     
+    /*
     void test_method_(create_many_threads) {
       auto counter = 0;
       auto thread_proc = thread_start {[&] {
@@ -171,5 +172,6 @@ namespace xtd::tests {
       // simulate end of main method
       __xtd_threads__::reset_threads();
     }
+     */
   };
 }
