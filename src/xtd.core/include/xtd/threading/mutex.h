@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include "wait_handle.h"
+#include "../icomparable.h"
 #include "../iequatable.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -33,7 +34,7 @@ namespace xtd {
     /// @remarks The unnamed mutex is a <a href="https://en.cppreference.com/w/cpp/thread/recursive_timed_mutex">std::recursive_timed_mutex</a> of C++17. You can therefore use xtd::threading::mutex or <a href="https://en.cppreference.com/w/cpp/thread/recursive_timed_mutex">std::recursive_timed_mutex</a> indifferently in your projects.
     /// @remarks If you use other synchronization objects for your threads and you use xtd::threading::thread you are interested in using xtd::threading::mutex. You will also benefit from xtd::threading::wait_handle::wait_all and td::threading::wait_handle::wait_any among others to synchronize all your objects.
     /// @remarks  On the other hand, if you only use mutexes and you use <a href="https://en.cppreference.com/w/cpp/thread/thread">std::thread</a> then you are interested in using <a href="https://en.cppreference.com/w/cpp/thread/recursive_timed_mutex">std::recursive_timed_mutex</a>.
-    class mutex : public wait_handle, public iequatable<mutex> {
+    class mutex : public wait_handle, public icomparable<mutex>, public iequatable<mutex> {
       class mutex_base;
       class named_mutex;
       class unnamed_mutex;
@@ -89,6 +90,8 @@ namespace xtd {
       /// @{
       void close() override;
       
+      int32 compare_to(const mutex& value) const noexcept override;
+      
       bool equals(const mutex& value) const noexcept override;
       
       /// @brief Opens an existing named mutex.
@@ -109,6 +112,15 @@ namespace xtd {
       static bool try_open_existing(const ustring& name, mutex& result) noexcept;
       /// @}
 
+      /// @cond
+      void lock();
+      template<typename duration_t, typename period_t = std::ratio<1>>
+      bool try_lock(const std::chrono::duration<duration_t, period_t>& timeout) {
+        return wait_one(static_cast<int32>(std::chrono::duration_cast<time_span>(timeout).count()));
+      }
+      void unlock();
+      /// @endcond
+      
     protected:
       /// @name Protected methods
       

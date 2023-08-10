@@ -50,6 +50,10 @@ void mutex::close() {
   }
 }
 
+int32 mutex::compare_to(const mutex& value) const noexcept {
+  return handle() < value.handle() ? - 1 : handle() > value.handle() ? 1 : 0;
+}
+
 bool mutex::equals(const mutex& value) const noexcept {
   return mutex_ == value.mutex_ && name_ == value.name_;
 }
@@ -76,6 +80,14 @@ bool mutex::try_open_existing(const ustring& name, mutex& result) noexcept {
   if (!new_mutex.mutex_->open(new_mutex.name_)) return false;
   result = new_mutex;
   return true;
+}
+
+void mutex::lock() {
+  wait_one();
+}
+
+void mutex::unlock() {
+  release_mutex();
 }
 
 bool mutex::signal() {
