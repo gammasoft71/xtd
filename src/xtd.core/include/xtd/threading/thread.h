@@ -111,6 +111,8 @@ namespace xtd {
       /// @{
       void close();
       
+      void detach();
+      
       /// @brief Interrupts a thread that is in the thread_state::wait_sleep_join thread state.
       /// @return One of the xt::threading::thread_state values indicating the state of the current thread. The initial value is thread_state::unstarted.
       /// @remarks If this thread is not currently blocked in a thread_state::wait, thread_state::sleep, or thread_state::join state, it will be interrupted when it next begins to block.
