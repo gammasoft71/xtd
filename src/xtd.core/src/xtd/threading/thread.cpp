@@ -57,8 +57,12 @@ public:
   }
   
   ~thread_collection() {
-    for (auto index = 2ul; index < size(); ++index)
-      if (at(index) && at(index)->data_) while (at(index)->is_wait_sleep_join()) native::thread::sleep(10);
+    for (auto index = 2ul; index < size(); ++index) {
+      if (at(index) && at(index)->data_) {
+        if (at(index)->is_background()) at(index)->detach();
+        else while (at(index)->is_wait_sleep_join()) native::thread::sleep(10);
+      }
+    }
   }
 };
 
@@ -221,6 +225,15 @@ void thread::close() {
   if (data_.use_count() == 1 && data_->joinable) join();
 }
 
+void thread::detach() {
+  if (!data_) throw invalid_operation_exception {csf_};
+  if (is_unstarted()) throw thread_state_exception {csf_};
+  if (!data_->joinable) return;
+  is_background(true);
+  data_->joinable = false;
+  native::thread::detach(data_->handle);
+}
+
 void thread::interrupt() {
   if (!data_) throw invalid_operation_exception {csf_};
   if (is_unmanaged_thread() || is_main_thread()) throw invalid_operation_exception(csf_);
@@ -250,15 +263,15 @@ bool thread::join(int32 milliseconds_timeout) {
   
   bool result = data_->end_thread_event.wait_one(milliseconds_timeout);
   if (result == true) {
-    data_->joinable = false;
     try {
       if (!is_main_thread()) current_thread().data_->state |= xtd::threading::thread_state::wait_sleep_join;
-      if (is_main_thread()) native::thread::set_background(data_->handle);
+      if (is_main_thread()) detach();
       native::thread::join(data_->handle);
       if (!is_main_thread()) current_thread().data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
     } catch (...) {
       if (!is_main_thread()) current_thread().data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
     }
+    data_->joinable = false;
   }
   return result;
 }
