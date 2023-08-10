@@ -50,7 +50,7 @@ bool thread::resume(intmax_t handle) {
   return false;
 }
 
-bool thread::set_background(intmax_t handle) {
+bool thread::detach(intmax_t handle) {
   if (reinterpret_cast<pthread_t>(handle) == PTHREAD_FAILED) return false;
   return pthread_detach(reinterpret_cast<pthread_t>(handle)) == 0;
 }
