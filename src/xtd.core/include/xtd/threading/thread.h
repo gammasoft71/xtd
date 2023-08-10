@@ -38,9 +38,7 @@ namespace xtd {
     /// @ingroup xtd_core threading
     class core_export_ thread : public object {
       struct data;
-      //using native_handle = std::thread::native_handle_type;
-      //using thread_id = std::thread::id;
-      using thread_collection = std::vector<std::shared_ptr<thread>>;
+      class thread_collection;
 
       friend class wait_handle;
     public:
@@ -71,10 +69,6 @@ namespace xtd {
       explicit thread(const xtd::threading::parameterized_thread_start& start);
       
       thread(const xtd::threading::parameterized_thread_start& start, int32 max_stack_size);
-      
-      //explicit thread(const xtd::threading::parameterized_object_thread_start& start);
-      
-      //thread(const xtd::threading::parameterized_object_thread_start& start, int32 max_stack_size);
       /// @}
 
       /// @cond
@@ -188,15 +182,16 @@ namespace xtd {
     private:
       friend struct ::__current_thread_id__;
       friend struct ::__threads__;
-      explicit thread(bool special_thread);
       bool cancel();
       static bool do_wait(wait_handle& wait_handle, int32 milliseconds_timeout);
       static int32 generate_managed_thread_id() noexcept;
       static intptr get_current_thread_handle();
       static intptr get_current_thread_id();
       bool is_aborted() const noexcept;
+      bool is_main_thread() const noexcept;
       bool is_stopped() const noexcept;
       bool is_suspended() const noexcept;
+      bool is_unmanaged_thread() const noexcept;
       bool is_unstarted() const noexcept;
       bool is_wait_sleep_join() const noexcept;
       static thread_collection& threads();
