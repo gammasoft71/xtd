@@ -79,7 +79,7 @@ namespace xtd::tests {
       assert::is_true(t.is_alive(), csf_);
       assert::is_false(t.is_background(), csf_);
       assert::is_false(t.is_thread_pool_thread(), csf_);
-      assert::is_false(t.joinable(), csf_);
+      assert::is_true(t.joinable(), csf_);
       assert::are_equal(1, t.managed_thread_id(), csf_);
       assert::is_empty(t.name(), csf_);
       assert::are_not_equal(thread::invalid_thread_id, t.thread_id(), csf_);
