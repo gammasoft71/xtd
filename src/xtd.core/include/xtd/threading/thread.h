@@ -12,12 +12,6 @@
 #include "../object.h"
 #include "../time_span.h"
 #include "../types.h"
-#include <mutex>
-
-/// @cond
-struct __current_thread_id__;
-struct __threads__;
-/// @endcond
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -25,7 +19,7 @@ namespace xtd {
   namespace threading {
     /// @brief Contains a constant used to specify an infinite amount of time. This class cannot be inherited.
     /// @code
-    /// class core_export_ thread : public xtd::object
+    /// class core_export_ thread final : public xtd::object
     /// @endcode
     /// @par Inheritance
     /// xtd::object → xtd::threading::thread
@@ -36,11 +30,9 @@ namespace xtd {
     /// @par Library
     /// xtd.core threading
     /// @ingroup xtd_core threading
-    class core_export_ thread : public object {
+    class core_export_ thread final : public object {
       struct data;
       class thread_collection;
-
-      friend class wait_handle;
     public:
       /// @name Fields
       
@@ -165,6 +157,9 @@ namespace xtd {
       /// @param obj An object that contains data to be used by the method the thread executes.
       /// @exception xtd::threading::thread_state_exception The thread has already been started.
       void start(std::any obj);
+      
+      static thread start_new(const xtd::threading::thread_start& start);
+      static thread start_new(const xtd::threading::parameterized_thread_start& start);
 
       /// @brief Causes the calling thread to yield execution to another thread that is ready to run on the current processor. The operating system selects the thread to yield to.
       /// @return true if the operating system switched execution to another thread; otherwise, false.
@@ -173,15 +168,10 @@ namespace xtd {
       /// @remarks This method is equivalent to using platform invoke to call the native Win32 switch_to_thread function. You should call the yield method instead of using platform invoke, because platform invoke bypasses any custom threading behavior the host has requested.
       static bool yield();
       /// @}
-
-      /// @cond
-      /// @endcond
-      
-    protected:
       
     private:
-      friend struct ::__current_thread_id__;
-      friend struct ::__threads__;
+      friend class wait_handle;
+
       bool cancel();
       static bool do_wait(wait_handle& wait_handle, int32 milliseconds_timeout);
       static int32 generate_managed_thread_id() noexcept;
@@ -194,14 +184,14 @@ namespace xtd {
       bool is_unmanaged_thread() const noexcept;
       bool is_unstarted() const noexcept;
       bool is_wait_sleep_join() const noexcept;
-      static thread_collection& threads();
       void thread_proc();
 
-      static void debug_write_threads(const xtd::ustring& fct);
+      static constexpr int32 main_managed_thread_id = 1;
+      static constexpr int32 unmanaged_thread_id = 0;
 
       std::shared_ptr<data> data_;
-      static constexpr int32 unmanaged_thread_id = 0;
-      static constexpr int32 main_managed_thread_id = 1;
+      static intptr main_thread_id_;
+      static thread_collection threads_;
     };
   }
 }
