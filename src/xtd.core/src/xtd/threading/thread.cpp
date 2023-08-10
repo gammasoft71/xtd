@@ -58,10 +58,9 @@ public:
   
   ~thread_collection() {
     for (auto index = 2ul; index < size(); ++index) {
-      if (at(index) && at(index)->data_) {
-        if (at(index)->is_background()) at(index)->detach();
-        else while (at(index)->is_wait_sleep_join()) native::thread::sleep(10);
-      }
+      if (!at(index) || !at(index)->data_) continue;
+      if (at(index)->is_background()) at(index)->detach();
+      else while (at(index)->is_wait_sleep_join()) native::thread::sleep(10);
     }
   }
 };
@@ -397,7 +396,7 @@ bool thread::is_wait_sleep_join() const noexcept {
 void thread::thread_proc() {
   if (!data_) throw invalid_operation_exception {csf_};
   
-  native::thread::set_current_thread_name(data_->name);
+  if (!data_->name.empty()) native::thread::set_current_thread_name(data_->name);
   if (data_->priority != xtd::threading::thread_priority::normal) native::thread::set_priority(data_->handle, as<int32>(data_->priority));
 
   if (!data_->thread_start.is_empty()) data_->thread_start();
