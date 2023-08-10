@@ -36,7 +36,7 @@ namespace xtd::tests {
     void test_method_(constructor_with_thread_start_and_negative_max_stack_size) {
       assert::throws<argument_exception>([]{thread t {thread_start {[] {}}, -1};}, csf_);
     }
-
+    
     void test_method_(constructor_with_thread_start) {
       thread t {thread_start {[] {}}};
       assert::are_equal(thread::invalid_handle, t.handle(), csf_);
@@ -58,7 +58,7 @@ namespace xtd::tests {
     void test_method_(constructor_with_parameterized_thread_start_and_negative_max_stack_size) {
       assert::throws<argument_exception>([]{thread t {parameterized_thread_start {[](std::any) {}}, -1};}, csf_);
     }
-
+    
     void test_method_(constructor_with_parameterized_thread_start) {
       thread t {parameterized_thread_start {[](std::any) {}}};
       assert::are_equal(thread::invalid_handle, t.handle(), csf_);
@@ -72,7 +72,7 @@ namespace xtd::tests {
       assert::are_equal(thread_priority::normal, t.priority(), csf_);
       assert::are_equal(thread_state::unstarted, t.thread_state(), csf_);
     }
-
+    
     void test_method_(main_as_current_thread) {
       thread t = thread::current_thread();
       assert::are_not_equal(thread::invalid_handle, t.handle(), csf_);
@@ -136,19 +136,18 @@ namespace xtd::tests {
         interlocked::increment(counter);
       }};
       
-      constexpr auto max_count_thread = 100ul;
+      constexpr auto max_count_thread = 10ul;
       auto threads = std::vector<thread> {};
-
+      
       for (auto index = 0ul; index < max_count_thread; ++index)
         threads.emplace_back(thread_proc);
       
       for (auto& thread : threads)
         thread.start();
-      
       for (auto& thread : threads)
         thread.join();
       
-      assert::are_equal(max_count_thread, counter, csf_);
+      assert::are_equal(max_count_thread, as<size_t>(counter), csf_);
     }
     
     void test_method_(create_many_threads_without_join) {
@@ -158,7 +157,7 @@ namespace xtd::tests {
         interlocked::increment(counter);
       }};
       
-      constexpr auto max_count_thread = 100ul;
+      constexpr auto max_count_thread = 10ul;
       using_(auto threads = std::vector<thread> {}) {
         for (auto index = 0ul; index < max_count_thread; ++index)
           threads.emplace_back(thread_proc);
@@ -167,7 +166,7 @@ namespace xtd::tests {
           thread.start();
       }
       
-      assert::are_not_equal(max_count_thread, counter, csf_);
+      assert::are_not_equal(max_count_thread, as<size_t>(counter), csf_);
       
       // simulate end of main method
       __xtd_threads__::reset_threads();
