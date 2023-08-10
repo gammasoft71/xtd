@@ -57,8 +57,8 @@ public:
   }
   
   ~thread_collection() {
-    for (auto& item : *this)
-      if (item && item->data_ && !item->is_main_thread() && !item->is_unmanaged_thread()) while (item->is_wait_sleep_join()) native::thread::sleep(10);
+    for (auto index = 2ul; index < size(); ++index)
+      if (at(index) && at(index)->data_) while (at(index)->is_wait_sleep_join()) native::thread::sleep(10);
   }
 };
 
@@ -93,7 +93,9 @@ thread& thread::current_thread() {
 thread& thread::main_thread() {
   lock_guard_threads lock;
   if (threads_.at(0)->data_->managed_thread_id != main_managed_thread_id) {
+    threads_.at(0)->data_->end_thread_event.set();
     threads_.at(0)->data_->handle = get_current_thread_handle();
+    threads_.at(0)->data_->joinable = true;
     threads_.at(0)->data_->managed_thread_id = main_managed_thread_id;
     threads_.at(0)->data_->state &= ~xtd::threading::thread_state::unstarted;
     threads_.at(0)->data_->thread_id = get_current_thread_id();
@@ -154,7 +156,7 @@ bool thread::is_background() const noexcept {
 
 thread& thread::is_background(bool value) {
   if (!data_) throw invalid_operation_exception {csf_};
-  if (is_unmanaged_thread() || is_main_thread()) throw invalid_operation_exception(csf_);
+  if (is_unmanaged_thread()) throw invalid_operation_exception(csf_);
   
   if (value) data_->state |= xtd::threading::thread_state::background;
   else data_->state &= ~xtd::threading::thread_state::background;
@@ -239,7 +241,7 @@ void thread::join() {
 }
 
 bool thread::join(int32 milliseconds_timeout) {
-  if (is_unmanaged_thread() || is_main_thread()) throw invalid_operation_exception {csf_};
+  if (is_unmanaged_thread()) throw invalid_operation_exception {csf_};
   if (is_unstarted()) throw thread_state_exception {csf_};
   if (milliseconds_timeout < timeout::infinite) throw argument_exception(csf_);
   
@@ -250,11 +252,12 @@ bool thread::join(int32 milliseconds_timeout) {
   if (result == true) {
     data_->joinable = false;
     try {
-      current_thread().data_->state |= xtd::threading::thread_state::wait_sleep_join;
+      if (!is_main_thread()) current_thread().data_->state |= xtd::threading::thread_state::wait_sleep_join;
+      if (is_main_thread()) native::thread::set_background(data_->handle);
       native::thread::join(data_->handle);
-      current_thread().data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
+      if (!is_main_thread()) current_thread().data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
     } catch (...) {
-      current_thread().data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
+      if (!is_main_thread()) current_thread().data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
     }
   }
   return result;
