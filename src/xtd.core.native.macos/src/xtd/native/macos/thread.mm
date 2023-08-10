@@ -72,7 +72,8 @@ bool thread::set_priority(intmax_t handle, int_least32_t priority) {
 }
 
 void thread::sleep(int_least32_t milliseconds_timeout) {
-  if (milliseconds_timeout == -1) while (true) std::this_thread::sleep_for(std::chrono::hours::max());
+  auto infinite_sleep = [] {while (true) std::this_thread::sleep_for(std::chrono::hours::max());};
+  if (milliseconds_timeout == -1) infinite_sleep();
   else if (milliseconds_timeout == 0) yield();
   else std::this_thread::sleep_for(std::chrono::milliseconds {milliseconds_timeout});
 }
