@@ -72,7 +72,7 @@ bool thread::resume(intmax_t handle) {
   return ResumeThread(reinterpret_cast<HANDLE>(handle)) != -1;
 }
 
-bool thread::set_background(intmax_t handle) {
+bool thread::detach(intmax_t handle) {
   if (reinterpret_cast<HANDLE>(handle) == INVALID_HANDLE_VALUE) return false;
   return CloseHandle(reinterpret_cast<HANDLE>(handle)) == TRUE;
 }

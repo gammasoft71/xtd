@@ -76,11 +76,11 @@ namespace xtd {
       /// @warning Internal use only
       static bool resume(intmax_t handle);
       
-      /// @brief Set background (detach) thread with specified handle.
+      /// @brief Detach thread with specified handle.
       /// @param handle The thread handle.
       /// @return true if succeed; otherwise false.
       /// @warning Internal use only
-      static bool set_background(intmax_t handle);
+      static bool detach(intmax_t handle);
       
       /// @brief Sets the current thread name.
       /// @param name The current thread name.
