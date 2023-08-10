@@ -9,7 +9,7 @@ namespace mixing_std_and_xtd_threads_example {
   class mixing_std_and_xtd_threads_class {
   private:
     static ustring to_string(const thread& thread) {
-      return ustring::format("  thread={{name={}, managed_thread_id={}, priority={}, thread_id=0x{:x}, state={}}}", thread.name(), thread.managed_thread_id(), thread.thread_priority(), thread.thread_id(), thread.thread_state());
+      return ustring::format("  thread={{name={}, managed_thread_id={}, priority={}, thread_id=0x{:x}, state={}}}", thread.name(), thread.managed_thread_id(), thread.priority(), thread.thread_id(), thread.thread_state());
     }
     
   public:
@@ -23,12 +23,12 @@ namespace mixing_std_and_xtd_threads_example {
         console::write_line(to_string(t1));
       }}};
       t1.name("xtd_thread_1");
-      t1.thread_priority(thread_priority::below_normal);
+      t1.priority(thread_priority::below_normal);
       t1.start();
       
       std::thread t2 {[] {
         thread::current_thread().name("std_thread_2");
-        thread::current_thread().thread_priority(thread_priority::highest);
+        thread::current_thread().priority(thread_priority::highest);
         console::write_line(to_string(thread::current_thread()));
       }};
       
@@ -42,7 +42,7 @@ namespace mixing_std_and_xtd_threads_example {
       std::thread t4 {[] {
         thread::sleep(10_ms);
         thread::current_thread().name("std_thread_4");
-        thread::current_thread().thread_priority(thread_priority::highest);
+        thread::current_thread().priority(thread_priority::highest);
         console::write_line(to_string(thread::current_thread()));
       }};
       
