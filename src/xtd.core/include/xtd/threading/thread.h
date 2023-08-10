@@ -85,6 +85,8 @@ namespace xtd {
       bool is_background() const noexcept;
       thread& is_background(bool value);
 
+      bool is_main_thread() const noexcept;
+
       bool is_thread_pool_thread() const noexcept;
       
       bool joinable() const noexcept;
@@ -184,7 +186,6 @@ namespace xtd {
       static intptr get_current_thread_id();
       static void reset_threads(); // Used by xtd::tests::thread_tests unit tests.
       bool is_aborted() const noexcept;
-      bool is_main_thread() const noexcept;
       bool is_stopped() const noexcept;
       bool is_suspended() const noexcept;
       bool is_unmanaged_thread() const noexcept;
