@@ -19,6 +19,7 @@ using namespace xtd;
 using namespace xtd::threading;
 
 namespace {
+  // Don't use xtd::threading::mutex, otherwise you'll get reentrant calls up to a stack overflow in the do_wait method.
   static std::recursive_mutex mutex_for_threads_access;
 }
 
