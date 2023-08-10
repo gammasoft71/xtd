@@ -60,8 +60,12 @@ void event_wait_handle::close() {
   }
 }
 
+int32 event_wait_handle::compare_to(const event_wait_handle& value) const noexcept {
+  return handle() < value.handle() ? - 1 : handle() > value.handle() ? 1 : 0;
+}
+
 bool event_wait_handle::equals(const event_wait_handle& value) const noexcept {
-  return event_wait_handle_ == value.event_wait_handle_ && name_ == value.name_;
+  return handle() == value.handle();
 }
 
 event_wait_handle event_wait_handle::open_existing(const ustring& name) {

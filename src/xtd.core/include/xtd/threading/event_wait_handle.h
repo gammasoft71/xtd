@@ -4,6 +4,7 @@
 #pragma once
 #include "event_reset_mode.h"
 #include "wait_handle.h"
+#include "../icomparable.h"
 #include "../iequatable.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -18,7 +19,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core threading
-    class event_wait_handle : public wait_handle, public iequatable<event_wait_handle> {
+    class event_wait_handle : public wait_handle, public icomparable<event_wait_handle>, public iequatable<event_wait_handle> {
       class event_wait_handle_base;
       class named_event_wait_handle;
       class unnamed_event_wait_handle;
@@ -100,6 +101,8 @@ namespace xtd {
       
       /// @{
       void close() override;
+      
+      int32 compare_to(const event_wait_handle& value) const noexcept override;
       
       bool equals(const event_wait_handle& value) const noexcept override;
       
