@@ -14,6 +14,7 @@
 #include "../../include/xtd/unused.h"
 #include "../../include/xtd/io/directory.h"
 #include "../../include/xtd/io/path.h"
+#include "../../include/xtd/threading/thread.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/environment.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
@@ -68,21 +69,21 @@ public:
     std::signal(signal, signal_catcher::on_abnormal_termination_occured);
     signal_cancel_event_args e {xtd::signal::abnormal_termination};
     environment::on_cancel_signal(e);
-    if (!e.cancel()) throw xtd::threading::thread_abort_exception(csf_);
+    if (xtd::threading::thread::current_thread().is_main_thread() && !e.cancel()) throw xtd::threading::thread_abort_exception(csf_);
   }
   
   static void on_floating_point_exception_occured(int32 signal) {
     std::signal(signal, signal_catcher::on_floating_point_exception_occured);
     signal_cancel_event_args e {xtd::signal::floating_point_exception};
     environment::on_cancel_signal(e);
-    if (!e.cancel()) throw xtd::arithmetic_exception(csf_);
+    if (xtd::threading::thread::current_thread().is_main_thread() && !e.cancel()) throw xtd::arithmetic_exception(csf_);
   }
   
   static void on_illegal_instruction_occured(int32 signal) {
     std::signal(signal, signal_catcher::on_illegal_instruction_occured);
     signal_cancel_event_args e {xtd::signal::illegal_instruction};
     environment::on_cancel_signal(e);
-    if (!e.cancel()) throw xtd::invalid_operation_exception(csf_);
+    if (xtd::threading::thread::current_thread().is_main_thread() && !e.cancel()) throw xtd::invalid_operation_exception(csf_);
   }
   
   static void on_interrupt_occured(int32 signal) {
@@ -91,7 +92,7 @@ public:
     environment::on_cancel_signal(se);
     console_cancel_event_args ce {console_special_key::control_c};
     ce.cancel(console::on_cancel_key_press(static_cast<int32>(console_special_key::control_c)));
-    if (!se.cancel() && !ce.cancel()) throw xtd::interrupt_exception(csf_);
+    if (xtd::threading::thread::current_thread().is_main_thread() && !se.cancel() && !ce.cancel()) throw xtd::interrupt_exception(csf_);
   }
   
   static void on_program_exit() {
