@@ -10,6 +10,7 @@
 #include "../../../include/xtd/threading/thread.h"
 #include "../../../include/xtd/threading/timeout.h"
 #include "../../../include/xtd/argument_exception.h"
+#include "../../../include/xtd/environment.h"
 #include "../../../include/xtd/int32_object.h"
 #include "../../../include/xtd/invalid_operation_exception.h"
 #include "../../../include/xtd/not_implemented_exception.h"
@@ -32,7 +33,6 @@ namespace {
 }
 
 struct thread::data {
-  bool critical_region {false};
   manual_reset_event end_thread_event;
   intptr handle {invalid_handle};
   size_t index = std::numeric_limits<size_t>::max();
@@ -221,6 +221,24 @@ xtd::threading::thread_state thread::thread_state() const noexcept {
   return data_ ? data_->state : xtd::threading::thread_state::unstarted;
 }
 
+void thread::abort() {
+  if (!data_) throw invalid_operation_exception {csf_};
+  if (is_unmanaged_thread()) throw invalid_operation_exception(csf_);
+  if (is_unstarted() || is_suspended()) throw thread_state_exception(csf_);
+  
+  data_->state |= xtd::threading::thread_state::abort_requested;
+  
+  if (is_main_thread()) environment::abort();
+  
+  if (!native::thread::cancel(data_->handle)) data_->state &= ~xtd::threading::thread_state::abort_requested;
+  else {
+    data_->state |= xtd::threading::thread_state::aborted;
+    data_->state &= ~xtd::threading::thread_state::abort_requested;
+    data_->end_thread_event.set();
+    throw thread_abort_exception(csf_);
+  }
+}
+
 void thread::detach() {
   is_background(true);
 }
@@ -230,7 +248,7 @@ void thread::interrupt() {
   if (is_unmanaged_thread() || is_main_thread()) throw invalid_operation_exception(csf_);
   if (is_unstarted()) throw thread_state_exception(csf_);
   
-  if (is_wait_sleep_join() && cancel()) {
+  if (is_wait_sleep_join() && native::thread::cancel(data_->handle)) {
     data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
     data_->interrupted = false;
     data_->end_thread_event.set();
@@ -264,6 +282,15 @@ bool thread::join(int32 milliseconds_timeout) {
     data_->joinable = false;
   }
   return result;
+}
+
+void thread::resume() {
+  if (!data_) throw invalid_operation_exception {csf_};
+  if (is_unmanaged_thread()) throw invalid_operation_exception(csf_);
+  if (is_unstarted() || !is_suspended()) throw thread_state_exception(csf_);
+  
+  native::thread::resume(data_->handle);
+  data_->state &= ~xtd::threading::thread_state::suspended;
 }
 
 void thread::sleep(int32 milliseconds_timeout) {
@@ -312,12 +339,19 @@ thread thread::start_new(const xtd::threading::parameterized_thread_start& start
   return thread;
 }
 
-bool thread::yield() {
-  return native::thread::yield();
+void thread::suspend() {
+  if (!data_) throw invalid_operation_exception {csf_};
+  if (is_unmanaged_thread()) throw invalid_operation_exception(csf_);
+  if (!is_alive()) throw thread_state_exception(csf_);
+  
+  data_->state |= xtd::threading::thread_state::suspend_requested;
+  native::thread::suspend(data_->handle);
+  data_->state |= xtd::threading::thread_state::suspended;
+  data_->state &= ~xtd::threading::thread_state::suspend_requested;
 }
 
-bool thread::cancel() {
-  return data_ ? native::thread::cancel(data_->handle) : false;
+bool thread::yield() {
+  return native::thread::yield();
 }
 
 void thread::close() {
