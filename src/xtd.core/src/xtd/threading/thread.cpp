@@ -221,12 +221,6 @@ xtd::threading::thread_state thread::thread_state() const noexcept {
   return data_ ? data_->state : xtd::threading::thread_state::unstarted;
 }
 
-void thread::close() {
-  if (data_ == nullptr || is_main_thread() || is_unmanaged_thread()) return;
-
-  if (data_.use_count() == 1 && data_->joinable) join();
-}
-
 void thread::detach() {
   is_background(true);
 }
@@ -324,6 +318,12 @@ bool thread::yield() {
 
 bool thread::cancel() {
   return data_ ? native::thread::cancel(data_->handle) : false;
+}
+
+void thread::close() {
+  if (data_ == nullptr || is_main_thread() || is_unmanaged_thread()) return;
+  
+  if (data_.use_count() == 1 && data_->joinable) join();
 }
 
 bool thread::do_wait(wait_handle& wait_handle, int32 milliseconds_timeout) {
