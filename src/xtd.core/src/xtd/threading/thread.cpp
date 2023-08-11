@@ -57,11 +57,8 @@ public:
   }
   
   ~thread_collection() {
-    for (auto index = 2ul; index < size(); ++index) {
-      if (!at(index) || !at(index)->data_) continue;
-      if (at(index)->is_background()) at(index)->detach();
-      else while (at(index)->is_wait_sleep_join()) native::thread::sleep(10);
-    }
+    for (auto& item : *this)
+      if (item && item->data_ && !item->is_main_thread() && !item->is_unmanaged_thread()) while (item->is_wait_sleep_join()) native::thread::sleep(10);
   }
 };
 
@@ -159,7 +156,7 @@ bool thread::is_background() const noexcept {
 
 thread& thread::is_background(bool value) {
   if (!data_) throw invalid_operation_exception {csf_};
-  if (is_unmanaged_thread()) throw invalid_operation_exception(csf_);
+  if (is_unmanaged_thread()) throw thread_state_exception(csf_);
   
   if (value) data_->state |= xtd::threading::thread_state::background;
   else data_->state &= ~xtd::threading::thread_state::background;
@@ -225,12 +222,7 @@ void thread::close() {
 }
 
 void thread::detach() {
-  if (!data_) throw invalid_operation_exception {csf_};
-  if (is_unstarted()) throw thread_state_exception {csf_};
-  if (!data_->joinable) return;
   is_background(true);
-  data_->joinable = false;
-  native::thread::detach(data_->handle);
 }
 
 void thread::interrupt() {
@@ -258,13 +250,13 @@ bool thread::join(int32 milliseconds_timeout) {
   if (milliseconds_timeout < timeout::infinite) throw argument_exception(csf_);
   
   if (data_ && data_->interrupted == true) interrupt();
-  if (!data_ || !data_->joinable) return false;
+  if (!data_ || !joinable()) return false;
   
   bool result = data_->end_thread_event.wait_one(milliseconds_timeout);
   if (result == true) {
     try {
       if (!is_main_thread()) current_thread().data_->state |= xtd::threading::thread_state::wait_sleep_join;
-      if (is_main_thread()) detach();
+      if (is_main_thread()) native::thread::detach(data_->handle);
       native::thread::join(data_->handle);
       if (!is_main_thread()) current_thread().data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
     } catch (...) {
