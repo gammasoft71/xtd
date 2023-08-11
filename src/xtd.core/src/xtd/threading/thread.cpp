@@ -57,9 +57,15 @@ public:
   }
   
   ~thread_collection() {
+    closing_ = true;
     for (auto& item : *this)
       if (item && item->data_ && !item->is_main_thread() && !item->is_unmanaged_thread()) while (item->is_wait_sleep_join()) native::thread::sleep(10);
   }
+  
+  bool closing() const noexcept {return closing_;}
+  
+private:
+  bool closing_ = false;
 };
 
 const intptr thread::invalid_handle = native::types::invalid_handle();
@@ -326,14 +332,14 @@ bool thread::do_wait(wait_handle& wait_handle, int32 milliseconds_timeout) {
   // Don't use default way, otherwise you'll get reentrant calls up to a stack overflow in the do_wait method.
   if (wait_handle.handle() == lock_guard_threads::lock().handle()) return lock_guard_threads::lock().wait(milliseconds_timeout);
   
-  if (current_thread().data_) current_thread().data_->state |= xtd::threading::thread_state::wait_sleep_join;
-  if (current_thread().data_ && current_thread().data_->interrupted) current_thread().interrupt();
+  if (!threads_.closing() && current_thread().data_) current_thread().data_->state |= xtd::threading::thread_state::wait_sleep_join;
+  if (!threads_.closing() && current_thread().data_ && current_thread().data_->interrupted) current_thread().interrupt();
   try {
     auto result = wait_handle.wait(milliseconds_timeout);
-    if (current_thread().data_) current_thread().data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
+    if (!threads_.closing() && current_thread().data_) current_thread().data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
     return result;
   } catch (...) {
-    if (current_thread().data_) current_thread().data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
+    if (!threads_.closing() && current_thread().data_) current_thread().data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
     throw;
   }
 }
