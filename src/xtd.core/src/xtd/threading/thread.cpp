@@ -256,7 +256,6 @@ bool thread::join(int32 milliseconds_timeout) {
   if (result == true) {
     try {
       if (!is_main_thread()) current_thread().data_->state |= xtd::threading::thread_state::wait_sleep_join;
-      if (is_main_thread()) native::thread::detach(data_->handle);
       native::thread::join(data_->handle);
       if (!is_main_thread()) current_thread().data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
     } catch (...) {
