@@ -15,13 +15,13 @@
 
 /// @cond
 struct __xtd_threads__; // Used by xtd::tests::thread_tests unit tests.
-/// @encond
+/// @endcond
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The xtd::threading namespace provides classes and interfaces that enable multithreaded programming. In addition to classes for synchronizing thread activities and access to data ( xtd::threading::mutex, xtd::threading::monitor, xtd::threading::interlocked, xtd::threading::auto_reset_event, and so on), this namespace includes a xtd::threading::thread_pool class that allows you to use a pool of system-supplied threads, and a xtd::threading::timer class that executes callback methods on thread pool threads.
   namespace threading {
-    /// @brief Contains a constant used to specify an infinite amount of time. This class cannot be inherited.
+    /// @brief Creates and controls a thread, sets its priority, and gets its status.
     /// @code
     /// class core_export_ thread final : public xtd::object
     /// @endcode
@@ -34,6 +34,10 @@ namespace xtd {
     /// @par Library
     /// xtd.core threading
     /// @ingroup xtd_core threading
+    /// @par Examples
+    /// The following example demonstrates simple threading functionality.
+    /// @include thread.cpp
+    /// @remarks When a process starts, the common language runtime automatically creates a single foreground thread to execute application code. Along with this main foreground thread, a process can create one or more threads to execute a portion of the program code associated with the process. These threads can execute either in the foreground or in the background. In addition, you can use the xtd::threading::thread_pool class to execute code on worker threads that are managed by the common language runtime.
     class core_export_ thread final : public object {
       struct data;
       class thread_collection;
@@ -41,13 +45,6 @@ namespace xtd {
       /// @name Fields
       
       /// @{
-      /// @brief Gets the currently running thread.
-      /// @return A System::Threading::Thread that is the representation of the currently running
-      /// @return thread.
-      static thread& current_thread();
-
-      static thread& main_thread();
-
       /// @brief Represents an invalid native operating system handle. This field is read-only.
       /// @remarks Used internally to initialize the xtd::thread::wait_handle::handle property.
       static const intptr invalid_handle;
@@ -60,13 +57,29 @@ namespace xtd {
       /// @name Cosntructors
       
       /// @{
-      explicit thread(const xtd::threading::thread_start& start);
-      
-      thread(const xtd::threading::thread_start& start, int32 max_stack_size);
-      
+      /// @brief Initializes a new instance of the xtd::threading::thread class, specifying a delegate that allows an object to be passed to the thread when the thread is started.
+      /// @param start A delegate that represents the methods to be invoked when this thread begins executing.
+      /// @exception xtd::argument_exception The start parameter is empty.
+      /// @remarks A thread does not begin executing when it is created. To schedule the thread for execution, call the xtd::threading::thread::start method. To pass a data object to the thread, use the xtd::threading::thread::start(std::any) method overload.
       explicit thread(const xtd::threading::parameterized_thread_start& start);
-      
+      /// @brief Initializes a new instance of the xtd::threading::thread class, specifying a delegate that allows an object to be passed to the thread when the thread is started and specifying the maximum stack size for the thread.
+      /// @param start A delegate that represents the methods to be invoked when this thread begins executing.
+      /// @param max_stack_size The maximum stack size, in bytes, to be used by the thread, or 0 to use the default maximum stack size specified in the header for the executable.<br>Important For partially trusted code, max_stack_size is ignored if it is greater than the default stack size. No exception is thrown.
+      /// @exception xtd::argument_exception The start parameter is empty.
+      /// @remarks A thread does not begin executing when it is created. To schedule the thread for execution, call the xtd::threading::thread::start method. To pass a data object to the thread, use the xtd::threading::thread::start(std::any) method overload.
       thread(const xtd::threading::parameterized_thread_start& start, int32 max_stack_size);
+      /// @brief Initializes a new instance of the xtd::threading::thread class.
+      /// @param start A xtd::threading::thread_start delegate that represents the methods to be invoked when this thread begins executing.
+      /// @param max_stack_size The maximum stack size, in bytes, to be used by the thread, or 0 to use the default maximum stack size specified in the header for the executable.<br>Important For partially trusted code, max_stack_size is ignored if it is greater than the default stack size. No exception is thrown.
+      /// @exception xtd::argument_exception The start parameter is empty.
+      /// @remarks A thread does not begin executing when it is created. To schedule the thread for execution, call the xtd::threading::thread::start method.
+      explicit thread(const xtd::threading::thread_start& start);
+      /// @brief Initializes a new instance of the xtd::threading::thread class, specifying the maximum stack size for the thread.
+      /// @param start A xtd::threading::thread_start delegate that represents the methods to be invoked when this thread begins executing.
+      /// @param max_stack_size The maximum stack size, in bytes, to be used by the thread, or 0 to use the default maximum stack size specified in the header for the executable.<br>Important For partially trusted code, max_stack_size is ignored if it is greater than the default stack size. No exception is thrown.
+      /// @exception xtd::argument_exception The start parameter is empty.
+      /// @remarks A thread does not begin executing when it is created. To schedule the thread for execution, call the xtd::threading::thread::start method.
+      thread(const xtd::threading::thread_start& start, int32 max_stack_size);
       /// @}
 
       /// @cond
@@ -80,37 +93,112 @@ namespace xtd {
       /// @name Properties
       
       /// @{
+      /// @brief Gets the currently running thread.
+      /// @return A xtd::threading::thread that is the representation of the currently running thread.
+      static thread& current_thread();
+      
+      /// @brief Gets the native operating system handle.
+      /// @return An intptr representing the native operating system handle.
       intptr handle() const noexcept;
 
+      /// @brief Gets a value indicating the execution status of the current thread.
+      /// @return true if this thread has been started and has not terminated normally or aborted; otherwise, false.
       bool is_alive() const noexcept;
       
+      /// @brief Gets a value indicating whether or not a thread is a background thread.
+      /// @return true if this thread is or is to become a background thread; otherwise, false.
+      /// @exception xtd::threadng::thread_state_exception The thread is dead.
+      /// @remarks A thread is either a background thread or a foreground thread. Background threads are identical to foreground threads, except that background threads do not prevent a process from terminating. Once all foreground threads belonging to a process have terminated, the system ends the process. Any remaining background threads are stopped and do not complete.
+      /// @remarks By default, the following threads execute in the foreground (that is, their xtd::threading::thread::is_background property returns false):
+      /// * The primary thread (or main application thread).
+      /// * All threads created by calling a xtd::threading::thread class constructor.
+      /// @remarks By default, the following threads execute in the background (that is, their xtd::threading::thread::is_background property returns true):
+      /// * Thread pool threads, which are a pool of worker threads maintained by the runtime. You can configure the thread pool and schedule work on thread pool threads by using the xtd::threading::thread_pool class.
+      /// * All threads create without xtd::threading::thread class (std::thread or threads create by oparating system API).
       bool is_background() const noexcept;
+      /// @brief Sets a value indicating whether or not a thread is a background thread.
+      /// @param value true if this thread is or is to become a background thread; otherwise, false.
+      /// @exception xtd::threadng::thread_state_exception The thread is dead.
+      /// @remarks A thread is either a background thread or a foreground thread. Background threads are identical to foreground threads, except that background threads do not prevent a process from terminating. Once all foreground threads belonging to a process have terminated, the system ends the process. Any remaining background threads are stopped and do not complete.
+      /// @remarks By default, the following threads execute in the foreground (that is, their xtd::threading::thread::is_background property returns false):
+      /// * The primary thread (or main application thread).
+      /// * All threads created by calling a xtd::threading::thread class constructor.
+      /// @remarks By default, the following threads execute in the background (that is, their xtd::threading::thread::is_background property returns true):
+      /// * Thread pool threads, which are a pool of worker threads maintained by the runtime. You can configure the thread pool and schedule work on thread pool threads by using the xtd::threading::thread_pool class.
+      /// * All threads create without xtd::threading::thread class (std::thread or threads create by oparating system API).
       thread& is_background(bool value);
 
+      /// @brief Gets a value indicating the current thread is the main thread.
+      /// @return true if this thread is the main thread; otherwise, false.
       bool is_main_thread() const noexcept;
 
+      /// @brief Gets a value indicating whether or not a thread belongs to the managed thread pool.
+      /// @return true if this thread belongs to the managed thread pool; otherwise, false.
+      /// @rermarks For more information see xtd::threading::thread_pool.
       bool is_thread_pool_thread() const noexcept;
       
+      /// @brief Gets a value indicating the current thread is joinable.
+      /// @return true if this thread is joinable; otherwise, false.
+      /// @remarks A thread is joinable if it started, not stopped and if is not a background thread.
+      /// @remarks if the thread is joinable you can call the xtd::threading::thread::join method.
       bool joinable() const noexcept;
       
+      /// @brief Gets the main thread.
+      /// @return A xtd::threading::thread that is the representation of the main thread.
+      /// @remarks if the thread is not started this method return xtd::threading::thread::invalid_handle.
+      static thread& main_thread();
+
+      /// @brief Gets a unique identifier for the current managed thread.
+      /// @return An integer that represents a unique identifier for this managed thread.
+      /// @remarks A thread's xtd::threading::thread::managed_thread_id property value serves to uniquely identify that thread within its process.
+      /// @remarks The value of the xtd::threading::thread::managed_thread_id property does not vary over time
       int32 managed_thread_id() const noexcept;
       
+      /// @brief Gets the name of the thread.
+      /// @return A string containing the name of the thread, or empty ("") if no name was set.
       ustring name() const noexcept;
+      /// @brief Sets the name of the thread.
+      /// @param value A string containing the name of the thread, or empty ("") if no name was set.
       thread& name(const ustring& value);
 
+      /// @brief Gets a value indicating the scheduling priority of a thread.
+      /// @return One of the xtd::threading::thread_priority values. The default value is xtd::threading::thread_priority::normal.
+      /// @exception xtd::threading::thread_state_exception The thread has reached a final state, such as Aborted.
+      /// @exception xtd::argument_exception The value specified for a set operation is not a valid xtd::threading::thread_priority value.
+      /// @remarks A thread can be assigned any one of the following priority xtd::threading::thread_priority values:
+      /// * highest
+      /// * above_normal
+      /// * normal
+      /// * below_normal
+      /// * lowest
       xtd::threading::thread_priority priority() const noexcept;
+      /// @brief Sets a value indicating the scheduling priority of a thread.
+      /// @param value One of the xtd::threading::thread_priority values. The default value is xtd::threading::thread_priority::normal.
+      /// @exception xtd::threading::thread_state_exception The thread has reached a final state, such as Aborted.
+      /// @exception xtd::argument_exception The value specified for a set operation is not a valid xtd::threading::thread_priority value.
+      /// @remarks A thread can be assigned any one of the following priority xtd::threading::thread_priority values:
+      /// * highest
+      /// * above_normal
+      /// * normal
+      /// * below_normal
+      /// * lowest
       thread& priority(xtd::threading::thread_priority value);
 
+      /// @brief Gets the native operating system thread id.
+      /// @return An intptr representing the native operating thread id.
+      /// @remarks if the thread is not started this method return xtd::threading::thread::invalid_thread_id.
       intptr thread_id() const noexcept;
 
+      /// @brief Gets a value containing the states of the current thread.
+      /// @return One of the xtd::threading::thread_state values indicating the state of the current thread. The initial value is xtd::threading::thread_state::unstarted.
+      /// @remarks The xtd::threading::thread::thread_state property provides more specific information than the xtd::threading::thread::is_alive property.
+      /// @warning Thread state is only of interest in debugging scenarios. Your code should never use thread state to synchronize the activities of threads.
       xtd::threading::thread_state thread_state() const noexcept;
       /// @}
 
       /// @name Methods
       
       /// @{
-      void close();
-      
       void detach();
       
       /// @brief Interrupts a thread that is in the thread_state::wait_sleep_join thread state.
@@ -184,6 +272,7 @@ namespace xtd {
       friend class wait_handle;
 
       bool cancel();
+      void close();
       static bool do_wait(wait_handle& wait_handle, int32 milliseconds_timeout);
       static int32 generate_managed_thread_id() noexcept;
       static intptr get_current_thread_handle();
