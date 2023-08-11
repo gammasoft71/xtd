@@ -53,6 +53,11 @@ intmax_t thread::create(std::function<void(intmax_t)> start, intmax_t obj, int_l
   return reinterpret_cast<intmax_t>(thread);
 }
 
+bool thread::detach(intmax_t handle) {
+  if (reinterpret_cast<HANDLE>(handle) == INVALID_HANDLE_VALUE) return false;
+  return CloseHandle(reinterpret_cast<HANDLE>(handle)) == TRUE;
+}
+
 intmax_t thread::get_current_thread_handle() {
   return reinterpret_cast<intmax_t>(GetCurrentThread());
 }
@@ -70,11 +75,6 @@ bool thread::join(intmax_t handle) {
 bool thread::resume(intmax_t handle) {
   if (reinterpret_cast<HANDLE>(handle) == INVALID_HANDLE_VALUE) return false;
   return ResumeThread(reinterpret_cast<HANDLE>(handle)) != -1;
-}
-
-bool thread::detach(intmax_t handle) {
-  if (reinterpret_cast<HANDLE>(handle) == INVALID_HANDLE_VALUE) return false;
-  return CloseHandle(reinterpret_cast<HANDLE>(handle)) == TRUE;
 }
 
 bool thread::set_current_thread_name(const std::string& name) {
