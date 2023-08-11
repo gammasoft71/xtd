@@ -13,7 +13,7 @@ public:
   // It loops ten times, writing to the console and yielding
   // the rest of its time slice each time, and then ends.
   static void thread_proc() {
-    for (int i = 0; i < 10; i++) {
+    for (auto i = 0; i < 10; ++i) {
       console::write_line("thread_proc: {0}", i);
       // Yield the rest of the time slice.
       thread::sleep(0);
@@ -22,19 +22,19 @@ public:
   
   static void main() {
     console::write_line("Main thread: Start a second thread.");
-    // The constructor for the Thread class requires a ThreadStart
+    // The constructor for the thread class requires a thread_start
     // delegate that represents the method to be executed on the
-    // thread.  C# simplifies the creation of this delegate.
-    thread t {thread_start {thread_proc}};
+    // thread.  xtd simplifies the creation of this delegate.
+    auto t = thread {thread_start {thread_proc}};
     
     // Start thread_proc.  Note that on a uniprocessor, the new
     // thread does not get any processor time until the main thread
-    // is preempted or yields.  Uncomment the Thread.Sleep that
-    // follows t.Start() to see the difference.
+    // is preempted or yields.  Uncomment the thread::sleep that
+    // follows t.start() to see the difference.
     t.start();
     //thread::sleep(0);
     
-    for (int i = 0; i < 4; i++) {
+    for (auto i = 0; i < 4; ++i) {
       console::write_line("Main thread: Do some work.");
       thread::sleep(0);
     }
