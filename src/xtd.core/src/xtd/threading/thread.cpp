@@ -162,7 +162,6 @@ bool thread::is_background() const noexcept {
 
 thread& thread::is_background(bool value) {
   if (!data_) throw invalid_operation_exception {csf_};
-  if (is_unmanaged_thread()) throw thread_state_exception(csf_);
   
   if (value) data_->state |= xtd::threading::thread_state::background;
   else data_->state &= ~xtd::threading::thread_state::background;
@@ -223,7 +222,6 @@ xtd::threading::thread_state thread::thread_state() const noexcept {
 
 void thread::abort() {
   if (!data_) throw invalid_operation_exception {csf_};
-  if (is_unmanaged_thread()) throw invalid_operation_exception(csf_);
   if (is_unstarted() || is_suspended()) throw thread_state_exception(csf_);
   
   data_->state |= xtd::threading::thread_state::abort_requested;
@@ -245,7 +243,6 @@ void thread::detach() {
 
 void thread::interrupt() {
   if (!data_) throw invalid_operation_exception {csf_};
-  if (is_unmanaged_thread() || is_main_thread()) throw invalid_operation_exception(csf_);
   if (is_unstarted()) throw thread_state_exception(csf_);
   
   if (is_wait_sleep_join() && native::thread::cancel(data_->handle)) {
@@ -263,7 +260,6 @@ void thread::join() {
 }
 
 bool thread::join(int32 milliseconds_timeout) {
-  if (is_unmanaged_thread()) throw invalid_operation_exception {csf_};
   if (is_unstarted()) throw thread_state_exception {csf_};
   if (milliseconds_timeout < timeout::infinite) throw argument_exception(csf_);
   
@@ -286,7 +282,6 @@ bool thread::join(int32 milliseconds_timeout) {
 
 void thread::resume() {
   if (!data_) throw invalid_operation_exception {csf_};
-  if (is_unmanaged_thread()) throw invalid_operation_exception(csf_);
   if (is_unstarted() || !is_suspended()) throw thread_state_exception(csf_);
   
   native::thread::resume(data_->handle);
@@ -341,7 +336,6 @@ thread thread::start_new(const xtd::threading::parameterized_thread_start& start
 
 void thread::suspend() {
   if (!data_) throw invalid_operation_exception {csf_};
-  if (is_unmanaged_thread()) throw invalid_operation_exception(csf_);
   if (!is_alive()) throw thread_state_exception(csf_);
   
   data_->state |= xtd::threading::thread_state::suspend_requested;
