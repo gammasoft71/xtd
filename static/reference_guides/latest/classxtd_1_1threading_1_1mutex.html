@@ -95,9 +95,11 @@ Inheritance diagram for xtd::threading::mutex:</div>
   <img src="classxtd_1_1threading_1_1mutex.png" usemap="#xtd::threading::mutex_map" alt=""/>
   <map id="xtd::threading::mutex_map" name="xtd::threading::mutex_map">
 <area href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources." alt="xtd::threading::wait_handle" shape="rect" coords="0,56,160,80"/>
-<area href="classxtd_1_1iequatable.html" alt="xtd::iequatable&lt; mutex &gt;" shape="rect" coords="170,56,330,80"/>
+<area href="classxtd_1_1icomparable.html" alt="xtd::icomparable&lt; mutex &gt;" shape="rect" coords="170,56,330,80"/>
+<area href="classxtd_1_1iequatable.html" alt="xtd::iequatable&lt; mutex &gt;" shape="rect" coords="340,56,500,80"/>
 <area href="classxtd_1_1static__object.html" title="Represent a static object. A static class can&#39;t be instantiated (constructors are deleted)." alt="xtd::static_object" shape="rect" coords="0,0,160,24"/>
 <area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="170,0,330,24"/>
+<area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="340,0,500,24"/>
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
@@ -130,7 +132,7 @@ Named system mutexes are visible throughout the operating system, and can be use
 <dl class="section warning"><dt>Warning</dt><dd>The backslash () and slash(/) are a reserved character in a mutex name. Don't use a backslash () and slash (/) in a mutex name except as specified in the note on using mutexes in terminal server sessions. Otherwise, a <a class="el" href="classxtd_1_1io_1_1directory__not__found__exception.html" title="The exception that is thrown when part of a file or directory cannot be found.">xtd::io::directory_not_found_exception</a> may be thrown, even though the name of the mutex represents an existing file. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The unnamed mutex is a <a href="https://en.cppreference.com/w/cpp/thread/recursive_timed_mutex">std::recursive_timed_mutex</a> of C++17. You can therefore use <a class="el" href="classxtd_1_1threading_1_1mutex.html" title="A synchronization primitive that can also be used for interprocess synchronization.">xtd::threading::mutex</a> or <a href="https://en.cppreference.com/w/cpp/thread/recursive_timed_mutex">std::recursive_timed_mutex</a> indifferently in your projects. </dd>
 <dd>
-If you use other synchronization objects for your threads and you use <a class="el" href="classxtd_1_1threading_1_1thread.html" title="Contains a constant used to specify an infinite amount of time. This class cannot be inherited.">xtd::threading::thread</a> you are interested in using <a class="el" href="classxtd_1_1threading_1_1mutex.html" title="A synchronization primitive that can also be used for interprocess synchronization.">xtd::threading::mutex</a>. You will also benefit from <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a217129669f17b6f14201dccd0405450c" title="Waits for all the elements in the specified collection to receive a signal.">xtd::threading::wait_handle::wait_all</a> and td::threading::wait_handle::wait_any among others to synchronize all your objects. </dd>
+If you use other synchronization objects for your threads and you use <a class="el" href="classxtd_1_1threading_1_1thread.html" title="Creates and controls a thread, sets its priority, and gets its status.">xtd::threading::thread</a> you are interested in using <a class="el" href="classxtd_1_1threading_1_1mutex.html" title="A synchronization primitive that can also be used for interprocess synchronization.">xtd::threading::mutex</a>. You will also benefit from <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a217129669f17b6f14201dccd0405450c" title="Waits for all the elements in the specified collection to receive a signal.">xtd::threading::wait_handle::wait_all</a> and td::threading::wait_handle::wait_any among others to synchronize all your objects. </dd>
 <dd>
 On the other hand, if you only use mutexes and you use <a href="https://en.cppreference.com/w/cpp/thread/thread">std::thread</a> then you are interested in using <a href="https://en.cppreference.com/w/cpp/thread/recursive_timed_mutex">std::recursive_timed_mutex</a>. </dd></dl>
 </div><table class="memberdecls">
@@ -166,6 +168,9 @@ On the other hand, if you only use mutexes and you use <a href="https://en.cppre
 <tr class="memitem:aad7c66ee04153877e8933cdcfa375043"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1mutex.html#aad7c66ee04153877e8933cdcfa375043">close</a> () override</td></tr>
 <tr class="memdesc:aad7c66ee04153877e8933cdcfa375043"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases all resources held by the current <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a>.  <br /></td></tr>
 <tr class="separator:aad7c66ee04153877e8933cdcfa375043"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a7bf412a6af20f33768a77951ad602b"><td class="memItemLeft" align="right" valign="top"><a id="a7a7bf412a6af20f33768a77951ad602b" name="a7a7bf412a6af20f33768a77951ad602b"></a>
+<a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><b>compare_to</b> (const <a class="el" href="classxtd_1_1threading_1_1mutex.html">mutex</a> &amp;value) const noexcept override</td></tr>
+<tr class="separator:a7a7bf412a6af20f33768a77951ad602b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1e4bd839ebc7afe43be0c00fa47a438"><td class="memItemLeft" align="right" valign="top"><a id="af1e4bd839ebc7afe43be0c00fa47a438" name="af1e4bd839ebc7afe43be0c00fa47a438"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>equals</b> (const <a class="el" href="classxtd_1_1threading_1_1mutex.html">mutex</a> &amp;value) const noexcept override</td></tr>
 <tr class="separator:af1e4bd839ebc7afe43be0c00fa47a438"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -209,6 +214,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a6ffdfd0f2f35f6768cb78bded574aa01 inherit pub_methods_classxtd_1_1threading_1_1wait__handle"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a6ffdfd0f2f35f6768cb78bded574aa01">wait_one</a> (const <a class="el" href="group__types.html#gad013431819ca97998d1dc5910b475f80">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>)</td></tr>
 <tr class="memdesc:a6ffdfd0f2f35f6768cb78bded574aa01 inherit pub_methods_classxtd_1_1threading_1_1wait__handle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocks the current thread until the current instance receives a signal, using a <a class="el" href="group__types.html#gad013431819ca97998d1dc5910b475f80" title="Represents a time interval.">xtd::time_span</a> to measure the time interval.  <br /></td></tr>
 <tr class="separator:a6ffdfd0f2f35f6768cb78bded574aa01 inherit pub_methods_classxtd_1_1threading_1_1wait__handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classxtd_1_1icomparable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classxtd_1_1icomparable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classxtd_1_1icomparable.html">xtd::icomparable&lt; mutex &gt;</a></td></tr>
+<tr class="memitem:a8e5ad6ed9d798584e8b9be5749d6faa5 inherit pub_methods_classxtd_1_1icomparable"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1icomparable.html#a8e5ad6ed9d798584e8b9be5749d6faa5">compare_to</a> (const mutex &amp;obj) const noexcept=0</td></tr>
+<tr class="memdesc:a8e5ad6ed9d798584e8b9be5749d6faa5 inherit pub_methods_classxtd_1_1icomparable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares the current instance with another object of the same type.  <br /></td></tr>
+<tr class="separator:a8e5ad6ed9d798584e8b9be5749d6faa5 inherit pub_methods_classxtd_1_1icomparable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classxtd_1_1iequatable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classxtd_1_1iequatable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classxtd_1_1iequatable.html">xtd::iequatable&lt; mutex &gt;</a></td></tr>
 <tr class="memitem:a1f8bbde943d2e5ecf565734c60e23903 inherit pub_methods_classxtd_1_1iequatable"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1iequatable.html#a1f8bbde943d2e5ecf565734c60e23903">equals</a> (const mutex &amp;) const noexcept=0</td></tr>
 <tr class="memdesc:a1f8bbde943d2e5ecf565734c60e23903 inherit pub_methods_classxtd_1_1iequatable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the current object is equal to another object of the same type.  <br /></td></tr>
@@ -781,7 +790,7 @@ Override this function for all derived object </dd></dl>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Aug 5 2023 08:39:32 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Aug 11 2023 10:36:18 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

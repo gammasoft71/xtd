@@ -119,11 +119,11 @@ To set up for a background operation, add an event handler for the do_work event
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/panel&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/progress_bar&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/text_box&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;thread&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/threading/thread&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std::this_thread;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1threading.html">xtd::threading</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>background_worker_example {</div>
 <div class="line">  <span class="keyword">class </span>form1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
@@ -183,7 +183,7 @@ To set up for a background operation, add an event handler for the do_work event
 <div class="line">      worker.do_work += [&amp;] {</div>
 <div class="line">        <span class="keywordflow">for</span> (<span class="keyword">auto</span> step = 1; step &lt;= progress.maximum(); ++step) {</div>
 <div class="line">          <span class="keywordflow">if</span> (worker.cancellation_pending()) <span class="keywordflow">break</span>; <span class="comment">// stop work...</span></div>
-<div class="line">          sleep_for(100_ms); <span class="comment">// simulate work...</span></div>
+<div class="line">          thread::sleep(100_ms); <span class="comment">// simulate work...</span></div>
 <div class="line">          worker.report_progress(step, ustring::format(<span class="stringliteral">&quot;step {} / {}&quot;</span>, step, progress.maximum()));</div>
 <div class="line">        }</div>
 <div class="line">      };</div>
@@ -219,7 +219,7 @@ To set up for a background operation, add an event handler for the do_work event
 <div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(background_worker_example::form1 {});</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a4ee49410f3156fd66b61c2567a59388e"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a></div><div class="ttdeci">static void run()</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1background__worker_html"><div class="ttname"><a href="classxtd_1_1forms_1_1background__worker.html">xtd::forms::background_worker</a></div><div class="ttdoc">Executes an operation on a separate thread.</div><div class="ttdef"><b>Definition</b> background_worker.h:33</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1background__worker_html"><div class="ttname"><a href="classxtd_1_1forms_1_1background__worker.html">xtd::forms::background_worker</a></div><div class="ttdoc">Executes an operation on a separate thread.</div><div class="ttdef"><b>Definition</b> background_worker.h:32</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1button_html"><div class="ttname"><a href="classxtd_1_1forms_1_1button.html">xtd::forms::button</a></div><div class="ttdoc">Represents a Windows button control.</div><div class="ttdef"><b>Definition</b> button.h:47</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application's user interface.</div><div class="ttdef"><b>Definition</b> form.h:52</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1label_html"><div class="ttname"><a href="classxtd_1_1forms_1_1label.html">xtd::forms::label</a></div><div class="ttdoc">Represents a standard Windows label.</div><div class="ttdef"><b>Definition</b> label.h:36</div></div>
@@ -233,6 +233,7 @@ To set up for a background operation, add an event handler for the do_work event
 <div class="ttc" id="agroup__xtd__forms_html_gga1bed745e8ce3f19294e1c4de1f3d97deac74b6cc0033c255d1b2a0e6f9660b1a5"><div class="ttname"><a href="group__xtd__forms.html#gga1bed745e8ce3f19294e1c4de1f3d97deac74b6cc0033c255d1b2a0e6f9660b1a5">xtd::forms::picture_box_size_mode::auto_size</a></div><div class="ttdeci">@ auto_size</div><div class="ttdoc">The picture_box is sized equal to the size of the image that it contains.</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1"><div class="ttname"><a href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">xtd::forms::status_bar_panel_style::text</a></div><div class="ttdeci">@ text</div><div class="ttdoc">The xtd::forms::status_bar_panel displays text in the standard font.</div></div>
 <div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> about_box.h:13</div></div>
+<div class="ttc" id="anamespacextd_1_1threading_html"><div class="ttname"><a href="namespacextd_1_1threading.html">xtd::threading</a></div><div class="ttdoc">The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....</div><div class="ttdef"><b>Definition</b> abandoned_mutex_exception.h:10</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="background_worker_8cpp-example.html#_a8">background_worker.cpp</a>.</dd>
@@ -852,7 +853,7 @@ template&lt;typename argument_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Aug 5 2023 08:39:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Aug 11 2023 10:36:16 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
