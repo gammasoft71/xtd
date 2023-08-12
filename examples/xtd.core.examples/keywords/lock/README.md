@@ -4,7 +4,7 @@ Shows how to use [xtd::lock](https://gammasoft71.github.io/xtd/reference_guides/
 
 ## Sources
 
-[src/using.cpp](src/lock.cpp)
+[src/lock.cpp](src/lock.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
