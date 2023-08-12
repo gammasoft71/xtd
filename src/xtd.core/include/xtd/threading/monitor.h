@@ -15,6 +15,7 @@
 #include "timeout.h"
 #include <chrono>
 #include <map>
+#include <utility>
 
 /// @cond
 struct __lock_guard;
@@ -54,6 +55,11 @@ namespace xtd {
         enter_ptr(get_ptr(obj), lock_taken);
       }
       
+      /// @cond
+      template<typename type_t>
+      static void enter(const type_t* str) {enter(ustring(str));}
+      /// @endcond
+
       /// @brief Acquires an exclusive lock on the specified obj.
       /// @param obj The object on which to acquire the monitor lock.
       /// @param lock_taken The result of the attempt to acquire the lock, passed by reference. The input must be false. The output is true if the lock is acquired; otherwise, the output is false. The output is set even if an exception occurs during the attempt to acquire the lock.
@@ -65,6 +71,11 @@ namespace xtd {
         enter_ptr(get_ptr(obj), lock_taken);
       }
       
+      /// @cond
+      template<typename type_t>
+      static void enter(const type_t* str, bool& lock_taken) {enter(ustring(str), lock_taken);}
+      /// @endcond
+
       /// @brief Acquires an exclusive lock on the specified obj.
       /// @param obj The object on which to acquire the monitor lock.
       /// @remarks Use Enter to acquire the Monitor on the object passed as the parameter. If another thread has executed an Enter on the object, but has not yet executed the corresponding Exit, the current thread will block until the other thread releases the object. It is legal for the same thread to invoke Enter more than once without it blocking; however, an equal number of Exit calls must be invoked before other threads waiting on the object will unblock.
@@ -73,6 +84,11 @@ namespace xtd {
       static bool is_entered(const object_t& obj) {
         return is_entered_ptr(get_ptr(obj));
       }
+
+      /// @cond
+      template<typename type_t>
+      static bool is_entered(const type_t* str) {return is_entered(ustring(str));}
+      /// @endcond
 
       /// @brief Notifies a thread in the waiting queue of a change in the locked object's state.
       /// @param obj The object a thread is waiting for.
@@ -83,6 +99,11 @@ namespace xtd {
         pulse_ptr(rget_ptr(obj));
       }
       
+      /// @cond
+      template<typename type_t>
+      static void pulse(const type_t* str) {pulse(ustring(str));}
+      /// @endcond
+
       /// @brief Notifies all waiting threads of a change in the object's state.
       /// @param obj The object a thread is waiting for.
       /// @remarks The thread that currently owns the lock on the specified object invokes this method to signal all threads waiting to acquire the lock on the object. After the signal is sent, the waiting threads are moved to the ready queue. When the thread that invoked PulseAll releases the lock, the next thread in the ready queue acquires the lock.
@@ -95,6 +116,11 @@ namespace xtd {
         pulse_all_ptr(get_ptr(obj));
       }
       
+      /// @cond
+      template<typename type_t>
+      static void pulse_all(const type_t* str) {pulse_all(ustring(str));}
+      /// @endcond
+
       /// @brief Releases an exclusive lock on the specified obj.
       /// @param obj The object on which to release the lock.
       /// @remarks The calling thread must own the lock on the obj parameter. If the calling thread owns the lock on the specified object, and has made an equal number of Exit and Enter calls for the object, then the lock is released. If the calling thread has not invoked Exit as many times as Enter, the lock is not released.
@@ -103,6 +129,11 @@ namespace xtd {
       static void exit(const object_t& obj) {
         exit_ptr(get_ptr(obj));
       }
+      
+      /// @cond
+      template<typename type_t>
+      static void exit(const type_t* str) {exit(ustring(str));}
+      /// @endcond
 
       /// @brief Attempts to acquire an exclusive lock on the specified object.
       /// @param obj The object on which to acquire the lock.
@@ -115,6 +146,11 @@ namespace xtd {
         return try_enter_ptr(get_ptr(obj), timeout::infinite, lock_taken);
       }
       
+      /// @cond
+      template<typename type_t>
+      static bool try_enter(const type_t* str) {return try_enter(ustring(str));}
+      /// @endcond
+
       /// @brief Attempts to acquire an exclusive lock on the specified object.
       /// @param obj The object on which to acquire the lock.
       /// @param lock_taken The result of the attempt to acquire the lock, passed by reference. The input must be false. The output is true if the lock is acquired; otherwise, the output is false. The output is set even if an exception occurs during the attempt to acquire the lock.
@@ -127,6 +163,11 @@ namespace xtd {
         return try_enter_ptr(get_ptr(obj), timeout::infinite, lock_taken);
       }
       
+      /// @cond
+      template<typename type_t>
+      static bool try_enter(const type_t* str, bool& lock_taken) {return try_enter(ustring(str), lock_taken);}
+      /// @endcond
+
       /// @brief Attempts, for the specified number of milliseconds, to acquire an exclusive lock on the specified object.
       /// @param obj The object on which to acquire the lock.
       /// @param milliseconds_timeout The number of milliseconds to wait for the lock.
@@ -138,6 +179,11 @@ namespace xtd {
         return try_enter_ptr(get_ptr(obj), milliseconds_timeout, lock_taken);
       }
       
+      /// @cond
+      template<typename type_t>
+      static bool try_enter(const type_t* str, int32 milliseconds_timeout) {return try_enter(ustring(str), milliseconds_timeout);}
+      /// @endcond
+
       /// @brief Attempts, for the specified number of milliseconds, to acquire an exclusive lock on the specified object.
       /// @param obj The object on which to acquire the lock.
       /// @param milliseconds_timeout The number of milliseconds to wait for the lock.
@@ -150,6 +196,11 @@ namespace xtd {
         return try_enter_ptr(get_ptr(obj), milliseconds_timeout, lock_taken);
       }
       
+      /// @cond
+      template<typename type_t>
+      static bool try_enter(const type_t* str, int32 milliseconds_timeout, bool& lock_taken) {return try_enter(ustring(str), milliseconds_timeout, lock_taken);}
+      /// @endcond
+
       /// @brief Attempts, for the specified number of milliseconds, to acquire an exclusive lock on the specified object.
       /// @param obj The object on which to acquire the lock.
       /// @param milliseconds_timeout The number of milliseconds to wait for the lock.
@@ -161,6 +212,11 @@ namespace xtd {
         return try_enter_ptr(get_ptr(obj), static_cast<int32>(milliseconds_timeout), lock_taken);
       }
       
+      /// @cond
+      template<typename type_t>
+      static bool try_enter(const type_t* str, int64 milliseconds_timeout) {return try_enter(ustring(str), milliseconds_timeout);}
+      /// @endcond
+
       /// @brief Attempts, for the specified number of milliseconds, to acquire an exclusive lock on the specified object.
       /// @param obj The object on which to acquire the lock.
       /// @param milliseconds_timeout The number of milliseconds to wait for the lock.
@@ -173,6 +229,11 @@ namespace xtd {
         return try_enter_ptr(get_ptr(obj), static_cast<int32>(milliseconds_timeout), lock_taken);
       }
       
+      /// @cond
+      template<typename type_t>
+      static bool try_enter(const type_t* str, int64 milliseconds_timeout, bool& lock_taken) {return try_enter(ustring(str), milliseconds_timeout, lock_taken);}
+      /// @endcond
+
       /// @brief Attempts, for the specified amount of time, to acquire an exclusive lock on the specified object.
       /// @param obj The object on which to acquire the lock.
       /// @param timeout A time_span representing the amount of time to wait for the lock. A value of -1 millisecond specifies an infinite wait.
@@ -184,6 +245,11 @@ namespace xtd {
         return try_enter_ptr(get_ptr(obj), std::chrono::duration_cast<std::chrono::milliseconds>(timeout).count(), lock_taken);
       }
       
+      /// @cond
+      template<typename type_t>
+      static bool try_enter(const type_t* str, const time_span& timeout) {return try_enter(ustring(str), timeout);}
+      /// @endcond
+
       /// @brief Attempts, for the specified amount of time, to acquire an exclusive lock on the specified object.
       /// @param obj The object on which to acquire the lock.
       /// @param timeout A time_span representing the amount of time to wait for the lock. A value of -1 millisecond specifies an infinite wait.
@@ -195,27 +261,36 @@ namespace xtd {
       static bool try_enter(const object_t& obj, const time_span& timeout, bool& lock_taken) noexcept {
         return try_enter_ptr(get_ptr(obj), std::chrono::duration_cast<std::chrono::milliseconds>(timeout).count(), lock_taken);
       }
+      
+      /// @cond
+      template<typename type_t>
+      static bool try_enter(const type_t* str, const time_span& timeout, bool& lock_taken) {return try_enter(ustring(str), timeout, lock_taken);}
+      /// @endcond
       /// @}
       
     private:
       friend struct ::__lock_guard;
 
       template<typename object_t>
-      static intptr get_ptr(const object_t& obj) noexcept {
-        return is<ustring>(obj) ? get_ustring_ptr(as<ustring>(obj)) : reinterpret_cast<intptr>(&obj);
+      static std::pair<intptr, bool> get_ptr(const object_t& obj) noexcept {
+        bool is_string = is<ustring>(obj);
+        return std::make_pair(is_string ? get_ustring_ptr(*(new ustring(as<ustring>(obj)))) : reinterpret_cast<intptr>(&obj), is_string);
       }
       
-      static void enter_ptr(intptr ptr);
-      static void enter_ptr(intptr ptr, bool& lock_taken);
-      static void exit_ptr(intptr ptr);
-      static intptr get_ustring_ptr(const ustring& str) noexcept;
-      static bool is_entered_ptr(intptr ptr) noexcept;
-      static void pulse_ptr(intptr obj);
-      static void pulse_all_ptr(intptr obj);
-      static bool try_enter_ptr(intptr ptr, int32 milliseconds_timeout, bool& lock_taken) noexcept;
+      template<typename type_t>
+      static std::pair<intptr, bool> get_ptr(const type_t* str) {return get_ptr(ustring(str));}
 
-      static item_collection items;
-      static mutex monitor_mutex;
+      static void enter_ptr(std::pair<intptr, bool> pair);
+      static void enter_ptr(std::pair<intptr, bool> pair, bool& lock_taken);
+      static void exit_ptr(std::pair<intptr, bool> pair);
+      static intptr get_ustring_ptr(const ustring& pair);
+      static bool is_entered_ptr(std::pair<intptr, bool> pair) noexcept;
+      static void pulse_ptr(std::pair<intptr, bool> obj);
+      static void pulse_all_ptr(std::pair<intptr, bool> obj);
+      static bool try_enter_ptr(std::pair<intptr, bool> pair, int32 milliseconds_timeout, bool& lock_taken) noexcept;
+
+      static item_collection& items();
+      static mutex& monitor_mutex();
     };
   }
 }
