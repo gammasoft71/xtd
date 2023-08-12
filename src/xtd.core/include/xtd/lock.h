@@ -34,11 +34,11 @@ namespace xtd {
   /// @ingroup xtd_core keywords
   /// @remarks The lock_ keyword ensures that one thread does not enter a critical section of code while another thread is in the critical section. If another thread tries to enter a locked code, it will wait, block, until the object is released.
   /// @remarks The section Threading discusses threading.
-  /// @remarks The lock_ keyword calls Enter at the start of the block and Exit at the end of the block. A ThreadInterruptedException is thrown if Interrupt interrupts a thread that is waiting to enter a lock statement.
-  /// @remarks In general, avoid locking on a public type, or instances beyond your code's control. The common constructs lock_ (*this), lock_ (typeof_<MyType>()), and lock_ ("myLock"_s) violate this guideline:
+  /// @remarks The lock_ keyword calls Enter at the start of the block and Exit at the end of the block. A xtd::threading::thread_interrupted_exception is thrown if xtd::threading::thread::interrupt interrupts a thread that is waiting to enter a lock statement.
+  /// @remarks In general, avoid locking on a public type, or instances beyond your code's control. The common constructs lock_ (*this), lock_ (typeof_<my_type>()), and lock_ ("myLock") violate this guideline:
   /// * lock_ (*this) is a problem if the instance can be accessed publicly.
-  /// * lock_ (typeof_<MyType>()) is a problem if MyType is publicly accessible.
-  /// * lock_ ("myLock"_s) is a problem because any other code in the process using the same string, will share the same lock.
+  /// * lock_ (typeof_<my_type>()) is a problem if my_type is publicly accessible.
+  /// * lock_ ("my_lock") is a problem because any other code in the process using the same string, will share the same lock.
   /// @remarks Best practice is to define a private object to lock on, or a private static object variable to protect data common to all instances.
   /// @remarks You can't use the await_ keyword in the body of a lock_ statement.
   /// @par Examples
