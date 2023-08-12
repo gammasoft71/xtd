@@ -274,6 +274,7 @@ namespace xtd {
       template<typename object_t>
       static std::pair<intptr, bool> get_ptr(const object_t& obj) noexcept {
         bool is_string = is<ustring>(obj);
+        // The newly created string will be deleted when the exit method is called, or if the lock has already been entered.
         return std::make_pair(is_string ? get_ustring_ptr(*(new ustring(as<ustring>(obj)))) : reinterpret_cast<intptr>(&obj), is_string);
       }
       
