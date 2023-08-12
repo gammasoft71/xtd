@@ -101,7 +101,7 @@
 | [not_supported_exception](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/not_supported_exception.h)                       | exception     | ![progress](/pictures/progress100.png) |
 | [null_pointer_exception](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/null_pointer_exception.h)                         | exception     | ![progress](/pictures/progress100.png) |
 | [number_styles](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/number_styles.h)                                           | enumeration   | ![progress](/pictures/progress100.png) |
-| [object](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/object.h)                                                         | class         | ![progress](/pictures/progress75.png)  |
+| [object](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/object.h)                                                         | class         | ![progress](/pictures/progres100.png) |
 | [object_closed_exception](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/object_closed_exception.h)                       | exception     | ![progress](/pictures/progress100.png) |
 | [operating_system](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/operating_system.h)                                     | class         | ![progress](/pictures/progress100.png) |
 | [operation_canceled_exception](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/operation_canceled_exception.h)             | exception     | ![progress](/pictures/progress100.png) |
