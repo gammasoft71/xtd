@@ -18,6 +18,6 @@ public:
   ~__lock_guard() {xtd::threading::monitor::exit_ptr(lock_);}
 
 private:
-  xtd::intptr lock_;
+  std::pair<xtd::intptr, bool> lock_;
 };
 /// @endcond
