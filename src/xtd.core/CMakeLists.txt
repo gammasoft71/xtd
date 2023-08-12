@@ -230,6 +230,8 @@ add_sources(
   include/xtd/length_exception
   include/xtd/literals.h
   include/xtd/literals
+  include/xtd/lock.h
+  include/xtd/lock
   include/xtd/math.h
   include/xtd/math
   include/xtd/month_of_year.h
@@ -511,10 +513,11 @@ add_sources(
   include/xtd/internal/__enum_definition_to_enum_collection.h
   include/xtd/internal/__enum_introspection.h
   include/xtd/internal/__fixed_point_formatter.h
-  include/xtd/internal/__generic_stream_output.h
   include/xtd/internal/__format_exception.h
   include/xtd/internal/__format_information.h
   include/xtd/internal/__format_stringer.h
+  include/xtd/internal/__generic_stream_output.h
+  include/xtd/internal/__lock_guard.h
   include/xtd/internal/__natural_formatter.h
   include/xtd/internal/__numeric_formatter.h
   include/xtd/internal/__parse.h
@@ -725,6 +728,8 @@ add_sources(
   include/xtd/threading/lock_recursion_exception
   include/xtd/threading/manual_reset_event.h
   include/xtd/threading/manual_reset_event
+  include/xtd/threading/monitor.h
+  include/xtd/threading/monitor
   include/xtd/threading/mutex.h
   include/xtd/threading/mutex
   include/xtd/threading/parameterized_thread_start.h
@@ -892,6 +897,7 @@ add_sources(
   src/xtd/threading/event_wait_handle.cpp
   src/xtd/threading/event_wait_handle_base.h
   src/xtd/threading/interlocked.cpp
+  src/xtd/threading/monitor.cpp
   src/xtd/threading/mutex.cpp
   src/xtd/threading/mutex_base.h
   src/xtd/threading/named_event_wait_handle.h
