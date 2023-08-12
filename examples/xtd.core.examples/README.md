@@ -208,6 +208,7 @@
 * [csf](keywords/csf/README.md) shows how to use [csf_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6) keyword.
 * [interface](keywords/interface/README.md) shows how to use [interface_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga64c32b24bd922fc8189a487213592ccf) keyword.
 * [interface2](keywords/interface2/README.md) shows how to use [interface_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga64c32b24bd922fc8189a487213592ccf) keyword.
+* [lock](keywords/lock/README.md) shows how to use [xtd::lock](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a) method.
 * [startup](keywords/startup/README.md) shows how to use [startup_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c) keyword.
 * [static](keywords/static/README.md) shows how to use [static_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga28796443ec37b938df7072c79595e3f6) keyword.
 * [static_object](keywords/static_object/README.md) shows how to use [static_object_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gadf2fc01c525cce1b8255c8308b2fb004) keyword.

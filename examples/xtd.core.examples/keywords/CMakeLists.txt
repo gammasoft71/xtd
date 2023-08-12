@@ -9,6 +9,7 @@ add_projects(
   csf
   interface
   interface2
+  lock
   startup
   static
   static_object
