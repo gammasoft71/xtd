@@ -35,7 +35,7 @@ namespace {
 struct thread::data {
   manual_reset_event end_thread_event;
   intptr handle {invalid_handle};
-  size_t index = std::numeric_limits<size_t>::max();
+  thread* safe_thread = nullptr;
   bool interrupted {false};
   bool is_thread_pool_thread {false};
   bool joinable {false};
@@ -121,8 +121,9 @@ thread::thread(const xtd::threading::thread_start& start, int32 max_stack_size) 
   data_->thread_start = start;
   data_->max_stack_size = max_stack_size;
   lock_guard_threads lock;
-  data_->index = threads_.size();
-  threads_.push_back(std::make_shared<thread>(*this));
+  auto safe_thread = std::make_shared<thread>(*this);
+  data_->safe_thread = safe_thread.get();
+  threads_.push_back(safe_thread);
 }
 
 thread::thread(const xtd::threading::parameterized_thread_start& start) : thread(start, 0) {
@@ -134,8 +135,9 @@ thread::thread(const xtd::threading::parameterized_thread_start& start, int32 ma
   data_->parameterized_thread_start = start;
   data_->max_stack_size = max_stack_size;
   lock_guard_threads lock;
-  data_->index = threads_.size();
-  threads_.push_back(std::make_shared<thread>(*this));
+  auto safe_thread = std::make_shared<thread>(*this);
+  data_->safe_thread = safe_thread.get();
+  threads_.push_back(safe_thread);
 }
 
 thread& thread::operator=(const thread& value) {
@@ -307,7 +309,7 @@ void thread::start() {
   data_->parameter = nullptr;
   data_->handle = native::thread::create([&](intptr arg) {
     reinterpret_cast<threading::thread*>(arg)->thread_proc();
-  }, reinterpret_cast<intptr>(threads_.at(data_->index).get()), data_->max_stack_size, is_suspended(), data_->thread_id);
+  }, reinterpret_cast<intptr>(data_->safe_thread), data_->max_stack_size, is_suspended(), data_->thread_id);
 }
 
 void thread::start(std::any param) {
@@ -319,7 +321,7 @@ void thread::start(std::any param) {
   data_->parameter = param;
   data_->handle = native::thread::create([](intptr arg) {
     reinterpret_cast<thread*>(arg)->thread_proc();
-  }, reinterpret_cast<intptr>(threads_.at(data_->index).get()), data_->max_stack_size, is_suspended(), data_->thread_id);
+  }, reinterpret_cast<intptr>(data_->safe_thread), data_->max_stack_size, is_suspended(), data_->thread_id);
 }
 
 thread thread::start_new(const xtd::threading::thread_start& start) {
