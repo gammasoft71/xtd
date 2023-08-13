@@ -15,6 +15,8 @@
 #include "../../../include/xtd/invalid_operation_exception.h"
 #include "../../../include/xtd/not_implemented_exception.h"
 #include "../../../include/xtd/as.h"
+#include <chrono>
+#include <thread>
 
 using namespace xtd;
 using namespace xtd::threading;
@@ -298,6 +300,13 @@ void thread::sleep(int32 milliseconds_timeout) {
   if (current_thread().data_) current_thread().data_->state |= xtd::threading::thread_state::wait_sleep_join;
   native::thread::sleep(milliseconds_timeout);
   if (current_thread().data_) current_thread().data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
+}
+
+void thread::spin_wait(int32 iterations) {
+  for (auto count = 0; count < iterations; ++count) {
+    if (count < iterations - 1) yield();
+    else std::this_thread::sleep_for(std::chrono::microseconds(1));
+  }
 }
 
 void thread::start() {
