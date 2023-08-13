@@ -52,8 +52,8 @@ namespace mutex_example {
                           thread::current_thread().name());
     }
 
-    // Create a new mutex. The creating thread does not own the mutex.
     inline static std::vector<thread> threads;
+    // Create a new mutex. The creating thread does not own the mutex.
     inline static mutex mut;
     inline static constexpr int num_iterations = 1;
     inline static constexpr int num_threads = 3;
