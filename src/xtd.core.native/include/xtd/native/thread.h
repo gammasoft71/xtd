@@ -113,6 +113,9 @@ namespace xtd {
       /// @warning Internal use only
       static bool suspend(intmax_t handle);
 
+      /// @brief Causes the calling thread to yield execution to another thread that is ready to run on the current processor.
+      /// @return true if succeed; otherwise false.
+      /// @warning Internal use only
       static bool yield();
       /// @}
     };
