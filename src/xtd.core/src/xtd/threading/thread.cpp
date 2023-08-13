@@ -53,18 +53,18 @@ struct thread::data {
 class thread::thread_collection : public std::vector<std::shared_ptr<thread>> {
 public:
   thread_collection() = default;
-  thread_collection(std::initializer_list<std::shared_ptr<thread>> init) : std::vector<std::shared_ptr<thread>>(init) {    
-  }
-  
-  ~thread_collection() {
-    closing_ = true;
-    for (auto& item : *this)
-      if (item && item->data_ && !item->is_main_thread() && !item->is_unmanaged_thread()) while (item->is_wait_sleep_join()) native::thread::sleep(10);
-  }
+  thread_collection(std::initializer_list<std::shared_ptr<thread>> init) : std::vector<std::shared_ptr<thread>>(init) {}  
+  ~thread_collection() {close();}
   
   bool closing() const noexcept {return closing_;}
   
 private:
+  void close() {
+    if (closing()) return;
+    closing_ = true;
+    for (auto& item : *this)
+      if (item && item->data_ && !item->is_main_thread() && !item->is_unmanaged_thread()) while (item->is_wait_sleep_join()) native::thread::sleep(10);
+  }
   bool closing_ = false;
 };
 
