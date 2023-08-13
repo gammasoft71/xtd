@@ -18,7 +18,7 @@ namespace examples {
         throw system_exception("Negative Balance", csf_);
       
       // Comment out the next line to see the effect of leaving out the lock keyword.
-      lock_(lock) {
+      lock_(balance) {
         if (balance >= amount) {
           console::write_line("Balance before Withdrawal :  {0}", balance);
           console::write_line("Amount to Withdraw        : -{0}", amount);
@@ -36,7 +36,6 @@ namespace examples {
     }
     
   private:
-    object lock;
     int balance;
     xtd::random random;
   };
