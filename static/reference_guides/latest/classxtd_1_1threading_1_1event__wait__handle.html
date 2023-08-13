@@ -109,7 +109,182 @@ Inheritance diagram for xtd::threading::event_wait_handle:</div>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/threading/event_wait_handle&gt;</span> </div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1threading.html" title="The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....">xtd::threading</a> </dd></dl>
-<dl class="section user"><dt>Library</dt><dd>xtd.core </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle</a> class allows threads to communicate with each other by signaling. Typically, one or more threads block on an <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle</a> until an unblocked thread calls the <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html#a3254163aa012cb3dc8f99ff16c0c7d6c" title="Sets the state of the event to signaled, allowing one or more waiting threads to proceed.">xtd::threading::event_wait_handle::set</a> method, releasing one or more of the blocked threads. A thread can signal an <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle</a> and then block on it, by calling the static <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a01c82b06ca8a5d14aba5f1fb396c16f7" title="Signals one xtd::threading::wait_handle and waits on another.">xtd::threading::wait_handle::signal_and_wait</a> method. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle</a> class provides access to named system synchronization events. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The behavior of an <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle</a> that has been signaled depends on its reset mode. An <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle</a> created with the <a class="el" href="group__xtd__core.html#gga0d88594f6d137d04a3d0aa7b102664b3ad15df6f4bb58577e7078575bd2924794" title="When signaled, the xtd::threading::event_wait_handle resets automatically after releasing a single th...">xtd::threading::event_reset_mode::auto_reset</a> flag resets automatically when signaled, after releasing a single waiting thread. An <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle</a> created with the <a class="el" href="group__xtd__core.html#gga0d88594f6d137d04a3d0aa7b102664b3ae24e926926861449731fb9418399a53d" title="When signaled, the xtd::threading::event_wait_handle releases all waiting threads and remains signale...">xtd::threading::event_reset_mode::manual_reset</a> flag remains signaled until its Reset method is called. </dd>
+<dd>
+Automatic reset events provide exclusive access to a resource. If an automatic reset event is signaled when no threads are waiting, it remains signaled until a thread attempts to wait on it. The event releases the thread and immediately resets, blocking subsequent threads. </dd>
+<dd>
+Manual reset events are like gates. When the event is not signaled, threads that wait on it will block. When the event is signaled, all waiting threads are released, and the event remains signaled (that is, subsequent waits do not block) until its <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html#afad8a8b6d18cec770c3688e02e2154da" title="Sets the state of the event to nonsignaled, causing threads to block.">xtd::threading::event_wait_handle::reset</a> method is called. Manual reset events are useful when one thread must complete an activity before other threads can proceed. </dd>
+<dd>
+<a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle</a> objects can be used with the static xtd::threading::wait_handle::wWait_all and <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#aee2a73d9052723690ff0e15a338cce35" title="Waits for any of the elements in the specified collection to receive a signal.">xtd::threading::wait_handle::wait_any</a> methods. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example uses the <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a01c82b06ca8a5d14aba5f1fb396c16f7" title="Signals one xtd::threading::wait_handle and waits on another.">xtd::threading::wait_handle::signal_and_wait(xtd::threading::wait_handle&amp;, xtd::threading::wait_handle&amp;)</a> method overload to allow the main thread to signal a blocked thread and then wait until the thread finishes a task.<br  />
+<br  />
+ The example starts five threads and allows them to block on an <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle</a> created with the <a class="el" href="group__xtd__core.html#gga0d88594f6d137d04a3d0aa7b102664b3ad15df6f4bb58577e7078575bd2924794" title="When signaled, the xtd::threading::event_wait_handle resets automatically after releasing a single th...">xtd::threading::event_reset_mode::auto_reset</a> flag, then releases one thread each time the user presses the Enter key. The example then queues another five threads and releases them all using an <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle</a> created with the <a class="el" href="group__xtd__core.html#gga0d88594f6d137d04a3d0aa7b102664b3ae24e926926861449731fb9418399a53d" title="When signaled, the xtd::threading::event_wait_handle releases all waiting threads and remains signale...">xtd::threading::event_reset_mode::manual_reset</a> flag. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/threading/event_wait_handle&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/threading/interlocked&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/threading/thread&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1threading.html">xtd::threading</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>example {</div>
+<div class="line"><span class="keyword">private</span>:</div>
+<div class="line">  <span class="comment">// The event_wait_handle used to demonstrate the difference</span></div>
+<div class="line">  <span class="comment">// between auto_reset and manual_reset synchronization events.</span></div>
+<div class="line">  <span class="comment">//</span></div>
+<div class="line">  <span class="keyword">inline</span> <span class="keyword">static</span> <a class="code hl_class" href="classxtd_1_1threading_1_1event__wait__handle.html">event_wait_handle</a> ewh;</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// A counter to make sure all threads are started and</span></div>
+<div class="line">  <span class="comment">// blocked before any are released. A Long is used to show</span></div>
+<div class="line">  <span class="comment">// the use of the 64-bit Interlocked methods.</span></div>
+<div class="line">  <span class="comment">//</span></div>
+<div class="line">  <span class="keyword">inline</span> <span class="keyword">static</span> <a class="code hl_typedef" href="group__types.html#ga7ab879ebcae19d6021222f00537cfdce">int64</a> thread_count = 0;</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// An auto_reset event that allows the main thread to block</span></div>
+<div class="line">  <span class="comment">// until an exiting thread has decremented the count.</span></div>
+<div class="line">  <span class="comment">//</span></div>
+<div class="line">  <span class="keyword">inline</span> <span class="keyword">static</span> <a class="code hl_class" href="classxtd_1_1threading_1_1event__wait__handle.html">event_wait_handle</a> clear_count {<span class="keyword">false</span>, event_reset_mode::auto_reset};</div>
+<div class="line">  </div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> main() {</div>
+<div class="line">    <span class="comment">// Create an auto_reset event_wait_handle.</span></div>
+<div class="line">    <span class="comment">//</span></div>
+<div class="line">    ewh = <a class="code hl_class" href="classxtd_1_1threading_1_1event__wait__handle.html">event_wait_handle</a> {<span class="keyword">false</span>, event_reset_mode::auto_reset};</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// Create and start five numbered threads. Use the</span></div>
+<div class="line">    <span class="comment">// ParameterizedThreadStart delegate, so the thread</span></div>
+<div class="line">    <span class="comment">// number can be passed as an argument to the Start</span></div>
+<div class="line">    <span class="comment">// method.</span></div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt;= 4; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>++) {</div>
+<div class="line">      <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae358efa489f58062f10dd7316b65649e">t</a> = <a class="code hl_class" href="classxtd_1_1threading_1_1thread.html">thread</a> {<a class="code hl_typedef" href="group__xtd__core.html#ga05ac25649af478143826babb1a9fae7c">parameterized_thread_start</a> {thread_proc}};</div>
+<div class="line">      <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae358efa489f58062f10dd7316b65649e">t</a>.start(i);</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// Wait until all the threads have started and blocked.</span></div>
+<div class="line">    <span class="comment">// When multiple threads use a 64-bit value on a 32-bit</span></div>
+<div class="line">    <span class="comment">// system, you must access the value through the</span></div>
+<div class="line">    <span class="comment">// Interlocked class to guarantee thread safety.</span></div>
+<div class="line">    <span class="comment">//</span></div>
+<div class="line">    <span class="keywordflow">while</span> (interlocked::read(thread_count) &lt; 5) {</div>
+<div class="line">      thread::sleep(500);</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// Release one thread each time the user presses ENTER,</span></div>
+<div class="line">    <span class="comment">// until all threads have been released.</span></div>
+<div class="line">    <span class="comment">//</span></div>
+<div class="line">    <span class="keywordflow">while</span> (interlocked::read(thread_count) &gt; 0) {</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;Press ENTER to release a waiting thread.&quot;</span>);</div>
+<div class="line">      console::read_line();</div>
+<div class="line">      </div>
+<div class="line">      <span class="comment">// SignalAndWait signals the event_wait_handle, which</span></div>
+<div class="line">      <span class="comment">// releases exactly one thread before resetting,</span></div>
+<div class="line">      <span class="comment">// because it was created with auto_reset mode.</span></div>
+<div class="line">      <span class="comment">// SignalAndWait then blocks on clear_count, to</span></div>
+<div class="line">      <span class="comment">// allow the signaled thread to decrement the count</span></div>
+<div class="line">      <span class="comment">// before looping again.</span></div>
+<div class="line">      <span class="comment">//</span></div>
+<div class="line">      wait_handle::signal_and_wait(ewh, clear_count);</div>
+<div class="line">    }</div>
+<div class="line">    console::write_line();</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// Create a manual_reset event_wait_handle.</span></div>
+<div class="line">    <span class="comment">//</span></div>
+<div class="line">    ewh = <a class="code hl_class" href="classxtd_1_1threading_1_1event__wait__handle.html">event_wait_handle</a>(<span class="keyword">false</span>, event_reset_mode::manual_reset);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// Create and start five more numbered threads.</span></div>
+<div class="line">    <span class="comment">//</span></div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keyword">auto</span> i = 0; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt;= 4; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>++) {</div>
+<div class="line">      <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae358efa489f58062f10dd7316b65649e">t</a> = <a class="code hl_class" href="classxtd_1_1threading_1_1thread.html">thread</a> {<a class="code hl_typedef" href="group__xtd__core.html#ga05ac25649af478143826babb1a9fae7c">parameterized_thread_start</a> {thread_proc}};</div>
+<div class="line">      <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae358efa489f58062f10dd7316b65649e">t</a>.start(i);</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// Wait until all the threads have started and blocked.</span></div>
+<div class="line">    <span class="comment">//</span></div>
+<div class="line">    <span class="keywordflow">while</span> (interlocked::read(thread_count) &lt; 5) {</div>
+<div class="line">      thread::sleep(500);</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// Because the event_wait_handle was created with</span></div>
+<div class="line">    <span class="comment">// manual_reset mode, signaling it releases all the</span></div>
+<div class="line">    <span class="comment">// waiting threads.</span></div>
+<div class="line">    <span class="comment">//</span></div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;Press ENTER to release the waiting threads.&quot;</span>);</div>
+<div class="line">    console::read_line();</div>
+<div class="line">    ewh.<a class="code hl_function" href="classxtd_1_1threading_1_1event__wait__handle.html#a3254163aa012cb3dc8f99ff16c0c7d6c">set</a>();</div>
+<div class="line">  }</div>
+<div class="line">  </div>
+<div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> thread_proc(std::any data) {</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;Thread {0} blocks.&quot;</span>, as&lt;int&gt;(data));</div>
+<div class="line">    <span class="comment">// Increment the count of blocked threads.</span></div>
+<div class="line">    interlocked::increment(thread_count);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// Wait on the event_wait_handle.</span></div>
+<div class="line">    ewh.<a class="code hl_function" href="classxtd_1_1threading_1_1wait__handle.html#ab53dcefc6844ecf0d6d9967ac489ac87">wait_one</a>();</div>
+<div class="line">    </div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;Thread {0} exits.&quot;</span>, as&lt;int&gt;(data));</div>
+<div class="line">    <span class="comment">// Decrement the count of blocked threads.</span></div>
+<div class="line">    interlocked::decrement(thread_count);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// After signaling ewh, the main thread blocks on</span></div>
+<div class="line">    <span class="comment">// clear_count until the signaled thread has</span></div>
+<div class="line">    <span class="comment">// decremented the count. Signal it now.</span></div>
+<div class="line">    <span class="comment">//</span></div>
+<div class="line">    clear_count.set();</div>
+<div class="line">  }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(example);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This example produces output similar to the following:</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Thread 2 blocks.</span></div>
+<div class="line"><span class="comment">// Thread 4 blocks.</span></div>
+<div class="line"><span class="comment">// Thread 0 blocks.</span></div>
+<div class="line"><span class="comment">// Thread 1 blocks.</span></div>
+<div class="line"><span class="comment">// Thread 3 blocks.</span></div>
+<div class="line"><span class="comment">// Press ENTER to release a waiting thread.</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Thread 4 exits.</span></div>
+<div class="line"><span class="comment">// Press ENTER to release a waiting thread.</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Thread 2 exits.</span></div>
+<div class="line"><span class="comment">// Press ENTER to release a waiting thread.</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Thread 0 exits.</span></div>
+<div class="line"><span class="comment">// Press ENTER to release a waiting thread.</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Thread 1 exits.</span></div>
+<div class="line"><span class="comment">// Press ENTER to release a waiting thread.</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Thread 3 exits.</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Thread 0 blocks.</span></div>
+<div class="line"><span class="comment">// Thread 1 blocks.</span></div>
+<div class="line"><span class="comment">// Thread 3 blocks.</span></div>
+<div class="line"><span class="comment">// Thread 2 blocks.</span></div>
+<div class="line"><span class="comment">// Thread 4 blocks.</span></div>
+<div class="line"><span class="comment">// Press ENTER to release the waiting threads.</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Thread 2 exits.</span></div>
+<div class="line"><span class="comment">// Thread 1 exits.</span></div>
+<div class="line"><span class="comment">// Thread 4 exits.</span></div>
+<div class="line"><span class="comment">// Thread 3 exits.</span></div>
+<div class="line"><span class="comment">// Thread 0 exits.</span></div>
+<div class="ttc" id="aclassxtd_1_1threading_1_1event__wait__handle_html"><div class="ttname"><a href="classxtd_1_1threading_1_1event__wait__handle.html">xtd::threading::event_wait_handle</a></div><div class="ttdoc">Represents a thread synchronization event.</div><div class="ttdef"><b>Definition</b> event_wait_handle.h:32</div></div>
+<div class="ttc" id="aclassxtd_1_1threading_1_1event__wait__handle_html_a3254163aa012cb3dc8f99ff16c0c7d6c"><div class="ttname"><a href="classxtd_1_1threading_1_1event__wait__handle.html#a3254163aa012cb3dc8f99ff16c0c7d6c">xtd::threading::event_wait_handle::set</a></div><div class="ttdeci">bool set()</div><div class="ttdoc">Sets the state of the event to signaled, allowing one or more waiting threads to proceed.</div></div>
+<div class="ttc" id="aclassxtd_1_1threading_1_1thread_html"><div class="ttname"><a href="classxtd_1_1threading_1_1thread.html">xtd::threading::thread</a></div><div class="ttdoc">Creates and controls a thread, sets its priority, and gets its status.</div><div class="ttdef"><b>Definition</b> thread.h:41</div></div>
+<div class="ttc" id="aclassxtd_1_1threading_1_1wait__handle_html_ab53dcefc6844ecf0d6d9967ac489ac87"><div class="ttname"><a href="classxtd_1_1threading_1_1wait__handle.html#ab53dcefc6844ecf0d6d9967ac489ac87">xtd::threading::wait_handle::wait_one</a></div><div class="ttdeci">virtual bool wait_one()</div><div class="ttdoc">Blocks the current thread until the current xtd::threading::wait_handle receives a signal.</div></div>
+<div class="ttc" id="agroup__keywords_html_gac9b8e6f22fb2fdc1bb915ee01aef848c"><div class="ttname"><a href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a></div><div class="ttdeci">#define startup_(main_class)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:57</div></div>
+<div class="ttc" id="agroup__types_html_ga7ab879ebcae19d6021222f00537cfdce"><div class="ttname"><a href="group__types.html#ga7ab879ebcae19d6021222f00537cfdce">xtd::int64</a></div><div class="ttdeci">int_least64_t int64</div><div class="ttdoc">Represents a 64-bit signed integer.</div><div class="ttdef"><b>Definition</b> types.h:140</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ga05ac25649af478143826babb1a9fae7c"><div class="ttname"><a href="group__xtd__core.html#ga05ac25649af478143826babb1a9fae7c">xtd::threading::parameterized_thread_start</a></div><div class="ttdeci">action&lt; std::any &gt; parameterized_thread_start</div><div class="ttdoc">Represents the method that executes on a xtd::threading::thread.</div><div class="ttdef"><b>Definition</b> parameterized_thread_start.h:21</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">xtd::console_key::i</a></div><div class="ttdeci">@ i</div><div class="ttdoc">The I key.</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae358efa489f58062f10dd7316b65649e"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae358efa489f58062f10dd7316b65649e">xtd::console_key::t</a></div><div class="ttdeci">@ t</div><div class="ttdoc">The T key.</div></div>
+<div class="ttc" id="anamespacextd_1_1threading_html"><div class="ttname"><a href="namespacextd_1_1threading.html">xtd::threading</a></div><div class="ttdoc">The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....</div><div class="ttdef"><b>Definition</b> abandoned_mutex_exception.h:10</div></div>
+<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
+</div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Constructors</h2></td></tr>
 <tr class="memitem:a955143ff0600450c82aa495a98584569"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html#a955143ff0600450c82aa495a98584569">event_wait_handle</a> (bool initial_state)</td></tr>
@@ -953,7 +1128,7 @@ Override this function for all derived object </dd></dl>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Aug 12 2023 22:10:17 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Aug 13 2023 13:17:52 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

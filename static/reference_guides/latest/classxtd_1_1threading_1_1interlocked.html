@@ -783,12 +783,11 @@ template&lt;typename type_t &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The decremented value. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example shows a thread-safe way to increment and decrement an integer value. SafeInstanceCount will always be zero. However, UnsafeInstanceCount will not necessarily be zero because a race condition occurs between incrementing and decrementing the count. This effect is especially marked on a multiprocessor computer. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/threading/interlocked&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/threading/thread&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;thread&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1threading.html">xtd::threading</a>;</div>
 <div class="line"> </div>
@@ -813,21 +812,23 @@ template&lt;typename type_t &gt; </div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">      <span class="keyword">auto</span> thread1 = <a class="code hl_class" href="classxtd_1_1threading_1_1thread.html">thread</a> {thread_method};</div>
-<div class="line">      <span class="keyword">auto</span> thread2 = <a class="code hl_class" href="classxtd_1_1threading_1_1thread.html">thread</a> {thread_method};</div>
-<div class="line">      thread1.<a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a65fc3f1079b67eb775925c7f1cb69a56">join</a>();</div>
+<div class="line">      <span class="keyword">auto</span> thread1 = <a class="code hl_class" href="classxtd_1_1threading_1_1thread.html">thread</a> {<a class="code hl_typedef" href="group__xtd__core.html#ga629e09da122fad73508fa0fb6286fd0a">thread_start</a> {thread_method}};</div>
+<div class="line">      <span class="keyword">auto</span> thread2 = <a class="code hl_class" href="classxtd_1_1threading_1_1thread.html">thread</a> {<a class="code hl_typedef" href="group__xtd__core.html#ga629e09da122fad73508fa0fb6286fd0a">thread_start</a> {thread_method}};</div>
+<div class="line">      thread1.<a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a573cca51d21d56dcf79eaace281b74b0">start</a>();</div>
+<div class="line">      thread2.start();</div>
+<div class="line">      thread1.join();</div>
 <div class="line">      thread2.join();</div>
-<div class="line">      </div>
+<div class="line"> </div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;unsafe_instance_count: {}\nsafe_instance_count: {}&quot;</span>, count_class::unsafe_instance_count, count_class::safe_instance_count);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
 <div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> thread_method() {</div>
-<div class="line">      <span class="keyword">auto</span> cc = unique_ptr&lt;count_class&gt; {};</div>
+<div class="line">      <span class="keyword">auto</span> cc = count_class {};</div>
 <div class="line">      </div>
 <div class="line">      <span class="comment">// Create 100000 instances of count_class.</span></div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; 100000; ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>)</div>
-<div class="line">        cc = make_unique&lt;count_class&gt;();</div>
+<div class="line">        cc = count_class {};</div>
 <div class="line">    }</div>
 <div class="line">  };</div>
 <div class="line">}</div>
@@ -836,8 +837,10 @@ template&lt;typename type_t &gt; </div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output:</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// unsafe_instance_count: 27401</span></div>
+<div class="line"><span class="comment">// unsafe_instance_count: 253</span></div>
 <div class="line"><span class="comment">// safe_instance_count: 0</span></div>
+<div class="ttc" id="aclassxtd_1_1threading_1_1thread_html_a573cca51d21d56dcf79eaace281b74b0"><div class="ttname"><a href="classxtd_1_1threading_1_1thread.html#a573cca51d21d56dcf79eaace281b74b0">xtd::threading::thread::start</a></div><div class="ttdeci">void start()</div><div class="ttdoc">Causes the operating system to change the state of the current instance to xtd::threading::thread_sta...</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ga629e09da122fad73508fa0fb6286fd0a"><div class="ttname"><a href="group__xtd__core.html#ga629e09da122fad73508fa0fb6286fd0a">xtd::threading::thread_start</a></div><div class="ttdeci">action&lt;&gt; thread_start</div><div class="ttdoc">Represents the method that executes on a xtd::threading::thread.</div><div class="ttdef"><b>Definition</b> thread_start.h:19</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">xtd::console_key::i</a></div><div class="ttdeci">@ i</div><div class="ttdoc">The I key.</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -1315,12 +1318,11 @@ template&lt;typename type_t &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The incremented value. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example shows a thread-safe way to increment and decrement an integer value. SafeInstanceCount will always be zero. However, UnsafeInstanceCount will not necessarily be zero because a race condition occurs between incrementing and decrementing the count. This effect is especially marked on a multiprocessor computer. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/threading/interlocked&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/threading/thread&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;thread&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1threading.html">xtd::threading</a>;</div>
 <div class="line"> </div>
@@ -1345,21 +1347,23 @@ template&lt;typename type_t &gt; </div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">      <span class="keyword">auto</span> thread1 = <a class="code hl_class" href="classxtd_1_1threading_1_1thread.html">thread</a> {thread_method};</div>
-<div class="line">      <span class="keyword">auto</span> thread2 = <a class="code hl_class" href="classxtd_1_1threading_1_1thread.html">thread</a> {thread_method};</div>
-<div class="line">      thread1.<a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a65fc3f1079b67eb775925c7f1cb69a56">join</a>();</div>
+<div class="line">      <span class="keyword">auto</span> thread1 = <a class="code hl_class" href="classxtd_1_1threading_1_1thread.html">thread</a> {<a class="code hl_typedef" href="group__xtd__core.html#ga629e09da122fad73508fa0fb6286fd0a">thread_start</a> {thread_method}};</div>
+<div class="line">      <span class="keyword">auto</span> thread2 = <a class="code hl_class" href="classxtd_1_1threading_1_1thread.html">thread</a> {<a class="code hl_typedef" href="group__xtd__core.html#ga629e09da122fad73508fa0fb6286fd0a">thread_start</a> {thread_method}};</div>
+<div class="line">      thread1.<a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a573cca51d21d56dcf79eaace281b74b0">start</a>();</div>
+<div class="line">      thread2.start();</div>
+<div class="line">      thread1.join();</div>
 <div class="line">      thread2.join();</div>
-<div class="line">      </div>
+<div class="line"> </div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;unsafe_instance_count: {}\nsafe_instance_count: {}&quot;</span>, count_class::unsafe_instance_count, count_class::safe_instance_count);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
 <div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> thread_method() {</div>
-<div class="line">      <span class="keyword">auto</span> cc = unique_ptr&lt;count_class&gt; {};</div>
+<div class="line">      <span class="keyword">auto</span> cc = count_class {};</div>
 <div class="line">      </div>
 <div class="line">      <span class="comment">// Create 100000 instances of count_class.</span></div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; 100000; ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>)</div>
-<div class="line">        cc = make_unique&lt;count_class&gt;();</div>
+<div class="line">        cc = count_class {};</div>
 <div class="line">    }</div>
 <div class="line">  };</div>
 <div class="line">}</div>
@@ -1368,7 +1372,7 @@ template&lt;typename type_t &gt; </div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output:</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// unsafe_instance_count: 27401</span></div>
+<div class="line"><span class="comment">// unsafe_instance_count: 253</span></div>
 <div class="line"><span class="comment">// safe_instance_count: 0</span></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -1483,7 +1487,7 @@ For most purposes, the lock_ statement, or the Monitor class provide easier ways
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Aug 12 2023 22:10:17 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Aug 13 2023 13:17:52 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

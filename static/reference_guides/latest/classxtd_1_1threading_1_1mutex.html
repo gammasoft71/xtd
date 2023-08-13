@@ -135,6 +135,92 @@ Named system mutexes are visible throughout the operating system, and can be use
 If you use other synchronization objects for your threads and you use <a class="el" href="classxtd_1_1threading_1_1thread.html" title="Creates and controls a thread, sets its priority, and gets its status.">xtd::threading::thread</a> you are interested in using <a class="el" href="classxtd_1_1threading_1_1mutex.html" title="A synchronization primitive that can also be used for interprocess synchronization.">xtd::threading::mutex</a>. You will also benefit from <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a217129669f17b6f14201dccd0405450c" title="Waits for all the elements in the specified collection to receive a signal.">xtd::threading::wait_handle::wait_all</a> and td::threading::wait_handle::wait_any among others to synchronize all your objects. </dd>
 <dd>
 On the other hand, if you only use mutexes and you use <a href="https://en.cppreference.com/w/cpp/thread/thread">std::thread</a> then you are interested in using <a href="https://en.cppreference.com/w/cpp/thread/recursive_timed_mutex">std::recursive_timed_mutex</a>. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>This example shows how a local <a class="el" href="classxtd_1_1threading_1_1mutex.html" title="A synchronization primitive that can also be used for interprocess synchronization.">xtd::threading::mutex</a> object is used to synchronize access to a protected resource. Because each calling thread is blocked until it acquires ownership of the mutex, it must call the <a class="el" href="classxtd_1_1threading_1_1mutex.html#a02f2e273ef08cdf7008087b9966de53d" title="Releases the Mutex once.">xtd::threading::mutex::release_mutex</a> method to release ownership of the mutex. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/threading/mutex&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/threading/thread&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1threading.html">xtd::threading</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span>mutex_example {</div>
+<div class="line">  <span class="keyword">class </span>program {</div>
+<div class="line">  <span class="keyword">public</span>:</div>
+<div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> main() {</div>
+<div class="line">      <span class="comment">// Create the threads that will use the protected resource.</span></div>
+<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; num_threads; ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>) {</div>
+<div class="line">        threads.emplace_back(<a class="code hl_typedef" href="group__xtd__core.html#ga629e09da122fad73508fa0fb6286fd0a">thread_start</a> {thread_proc});</div>
+<div class="line">        threads.back().name(ustring::format(<span class="stringliteral">&quot;thread_{0}&quot;</span>, i + 1));</div>
+<div class="line">        threads.back().start();</div>
+<div class="line">      }</div>
+<div class="line">      </div>
+<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_class" href="classxtd_1_1threading_1_1thread.html">thread</a> : threads)</div>
+<div class="line">        <a class="code hl_class" href="classxtd_1_1threading_1_1thread.html">thread</a>.join();</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> thread_proc() {</div>
+<div class="line">      <span class="keywordflow">for</span>(<span class="keyword">auto</span> i = 0; i &lt; num_iterations; ++i)</div>
+<div class="line">        Use_resource();</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">  <span class="keyword">private</span>:</div>
+<div class="line">    <span class="comment">// This method represents a resource that must be synchronized</span></div>
+<div class="line">    <span class="comment">// so that only one thread at a time can enter.</span></div>
+<div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> Use_resource() {</div>
+<div class="line">      <span class="comment">// Wait until it is safe to enter.</span></div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;{0} is requesting the mutex&quot;</span>,</div>
+<div class="line">                        thread::current_thread().name());</div>
+<div class="line">      mut.wait_one();</div>
+<div class="line">      </div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;{0} has entered the protected area&quot;</span>,</div>
+<div class="line">                          thread::current_thread().name());</div>
+<div class="line">      </div>
+<div class="line">      <span class="comment">// Place code to access non-reentrant resources here.</span></div>
+<div class="line">      </div>
+<div class="line">      <span class="comment">// Simulate some work.</span></div>
+<div class="line">      thread::sleep(500);</div>
+<div class="line">      </div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;{0} is leaving the protected area&quot;</span>,</div>
+<div class="line">                          thread::current_thread().name());</div>
+<div class="line">      </div>
+<div class="line">      <span class="comment">// Release the mutex.</span></div>
+<div class="line">      mut.release_mutex();</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;{0} has released the mutex&quot;</span>,</div>
+<div class="line">                          thread::current_thread().name());</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Create a new mutex. The creating thread does not own the mutex.</span></div>
+<div class="line">    <span class="keyword">inline</span> <span class="keyword">static</span> std::vector&lt;thread&gt; threads;</div>
+<div class="line">    <span class="keyword">inline</span> <span class="keyword">static</span> <a class="code hl_class" href="classxtd_1_1threading_1_1mutex.html">mutex</a> mut;</div>
+<div class="line">    <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> num_iterations = 1;</div>
+<div class="line">    <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> num_threads = 3;</div>
+<div class="line">  };</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(mutex_example::program);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This example produces output similar to the following:</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// thread_1 is requesting the mutex</span></div>
+<div class="line"><span class="comment">// thread_1 has entered the protected area</span></div>
+<div class="line"><span class="comment">// thread_2 is requesting the mutex</span></div>
+<div class="line"><span class="comment">// thread_3 is requesting the mutex</span></div>
+<div class="line"><span class="comment">// thread_1 is leaving the protected area</span></div>
+<div class="line"><span class="comment">// thread_1 has released the mutex</span></div>
+<div class="line"><span class="comment">// thread_2 has entered the protected area</span></div>
+<div class="line"><span class="comment">// thread_2 is leaving the protected area</span></div>
+<div class="line"><span class="comment">// thread_2 has released the mutex</span></div>
+<div class="line"><span class="comment">// thread_3 has entered the protected area</span></div>
+<div class="line"><span class="comment">// thread_3 is leaving the protected area</span></div>
+<div class="line"><span class="comment">// thread_3 has released the mutex</span></div>
+<div class="ttc" id="aclassxtd_1_1threading_1_1mutex_html"><div class="ttname"><a href="classxtd_1_1threading_1_1mutex.html">xtd::threading::mutex</a></div><div class="ttdoc">A synchronization primitive that can also be used for interprocess synchronization.</div><div class="ttdef"><b>Definition</b> mutex.h:44</div></div>
+<div class="ttc" id="aclassxtd_1_1threading_1_1thread_html"><div class="ttname"><a href="classxtd_1_1threading_1_1thread.html">xtd::threading::thread</a></div><div class="ttdoc">Creates and controls a thread, sets its priority, and gets its status.</div><div class="ttdef"><b>Definition</b> thread.h:41</div></div>
+<div class="ttc" id="agroup__keywords_html_gac9b8e6f22fb2fdc1bb915ee01aef848c"><div class="ttname"><a href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a></div><div class="ttdeci">#define startup_(main_class)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:57</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ga629e09da122fad73508fa0fb6286fd0a"><div class="ttname"><a href="group__xtd__core.html#ga629e09da122fad73508fa0fb6286fd0a">xtd::threading::thread_start</a></div><div class="ttdeci">action&lt;&gt; thread_start</div><div class="ttdoc">Represents the method that executes on a xtd::threading::thread.</div><div class="ttdef"><b>Definition</b> thread_start.h:19</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">xtd::console_key::i</a></div><div class="ttdeci">@ i</div><div class="ttdoc">The I key.</div></div>
+<div class="ttc" id="anamespacextd_1_1threading_html"><div class="ttname"><a href="namespacextd_1_1threading.html">xtd::threading</a></div><div class="ttdoc">The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....</div><div class="ttdef"><b>Definition</b> abandoned_mutex_exception.h:10</div></div>
+<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
+</div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Constructors</h2></td></tr>
 <tr class="memitem:aa7652ef5f76f63d3c267fd07210bbbfd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1mutex.html#aa7652ef5f76f63d3c267fd07210bbbfd">mutex</a> ()</td></tr>
@@ -790,7 +876,7 @@ Override this function for all derived object </dd></dl>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Aug 12 2023 22:10:17 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Aug 13 2023 13:17:52 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

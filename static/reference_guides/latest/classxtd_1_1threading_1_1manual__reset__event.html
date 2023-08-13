@@ -119,6 +119,132 @@ You can control the initial state of a <a class="el" href="classxtd_1_1threading
 <dd>
 <a class="el" href="classxtd_1_1threading_1_1manual__reset__event.html" title="Represents a thread synchronization event that, when signaled, must be reset manually....">xtd::threading::manual_reset_event</a> can also be used with the static <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a217129669f17b6f14201dccd0405450c" title="Waits for all the elements in the specified collection to receive a signal.">xtd::threading::wait_handle::wait_all</a> and <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#aee2a73d9052723690ff0e15a338cce35" title="Waits for any of the elements in the specified collection to receive a signal.">xtd::threading::wait_handle::wait_any</a> methods. </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>Unlike the <a class="el" href="classxtd_1_1threading_1_1manual__reset__event.html" title="Represents a thread synchronization event that, when signaled, must be reset manually....">xtd::threading::manual_reset_event</a> class, the <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle</a> class provides access to named system synchronization events. </dd></dl>
+<dl class="section user"><dt>example</dt><dd>The following example demonstrates how <a class="el" href="classxtd_1_1threading_1_1manual__reset__event.html" title="Represents a thread synchronization event that, when signaled, must be reset manually....">xtd::threading::manual_reset_event</a> works. The example starts with a <a class="el" href="classxtd_1_1threading_1_1manual__reset__event.html" title="Represents a thread synchronization event that, when signaled, must be reset manually....">xtd::threading::manual_reset_event</a> in the unsignaled state (that is, false is passed to the constructor). The example creates three threads, each of which blocks on the <a class="el" href="classxtd_1_1threading_1_1manual__reset__event.html" title="Represents a thread synchronization event that, when signaled, must be reset manually....">xtd::threading::manual_reset_event</a> by calling its wtd::threading::wait_handle::wait_one method. When the user presses the Enter key, the example calls the wtd::threading::event_wait_handle::set method, which releases all three threads. Contrast this with the behavior of the wtd::threading::auto_reset_event class, which releases threads one at a time, resetting automatically after each release.<br  />
+ Pressing the Enter key again demonstrates that the <a class="el" href="classxtd_1_1threading_1_1manual__reset__event.html" title="Represents a thread synchronization event that, when signaled, must be reset manually....">xtd::threading::manual_reset_event</a> remains in the signaled state until its wtd::threading::event_wait_handle::reset method is called: The example starts two more threads. These threads do not block when they call the wtd::threading::wait_handle::wait_one method, but instead run to completion.<br  />
+ Pressing the Enter key again causes the example to call the wtd::threading::event_wait_handle::reset method and to start one more thread, which blocks when it calls wtd::threading::wait_handle::wait_one. Pressing the Enter key one final time calls wtd::threading::event_wait_handle::set to release the last thread, and the program ends. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/threading/manual_reset_event&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/threading/thread&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1threading.html">xtd::threading</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span>manual_reset_event_example {</div>
+<div class="line">  <span class="keyword">class </span>program {</div>
+<div class="line">  <span class="keyword">public</span>:</div>
+<div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> main() {</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;\nStart 3 named threads that block on a ManualresetEvent:\n&quot;</span>);</div>
+<div class="line">      </div>
+<div class="line">      <span class="keywordflow">for</span>(<span class="keyword">auto</span> i = 0; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt;= 2; ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>) {</div>
+<div class="line">        <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae358efa489f58062f10dd7316b65649e">t</a> = <a class="code hl_class" href="classxtd_1_1threading_1_1thread.html">thread</a> {<a class="code hl_typedef" href="group__xtd__core.html#ga629e09da122fad73508fa0fb6286fd0a">thread_start</a> {thread_proc}};</div>
+<div class="line">        <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae358efa489f58062f10dd7316b65649e">t</a>.name(ustring::format(<span class="stringliteral">&quot;Thread_{}&quot;</span>, i));</div>
+<div class="line">        <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae358efa489f58062f10dd7316b65649e">t</a>.start();</div>
+<div class="line">      }</div>
+<div class="line">      </div>
+<div class="line">      thread::sleep(500);</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;\nWhen all three threads have started, press Enter to call set()&quot;</span></div>
+<div class="line">                          <span class="stringliteral">&quot;\nto release all the threads.\n&quot;</span>);</div>
+<div class="line">      console::read_line();</div>
+<div class="line">      </div>
+<div class="line">      mre.set();</div>
+<div class="line">      </div>
+<div class="line">      thread::sleep(500);</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;\nWhen a ManualresetEvent is signaled, threads that call WaitOne()&quot;</span></div>
+<div class="line">                          <span class="stringliteral">&quot;\ndo not block. Press Enter to show this.\n&quot;</span>);</div>
+<div class="line">      console::read_line();</div>
+<div class="line">      </div>
+<div class="line">      <span class="keywordflow">for</span>(<span class="keyword">auto</span> i = 3; i &lt;= 4; ++i) {</div>
+<div class="line">        <span class="keyword">auto</span> t = <a class="code hl_class" href="classxtd_1_1threading_1_1thread.html">thread</a> {<a class="code hl_typedef" href="group__xtd__core.html#ga629e09da122fad73508fa0fb6286fd0a">thread_start</a> {thread_proc}};</div>
+<div class="line">        <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae358efa489f58062f10dd7316b65649e">t</a>.name(ustring::format(<span class="stringliteral">&quot;Thread_{}&quot;</span>, i));</div>
+<div class="line">        <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae358efa489f58062f10dd7316b65649e">t</a>.start();</div>
+<div class="line">      }</div>
+<div class="line">      </div>
+<div class="line">      thread::sleep(500);</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;\nPress Enter to call reset(), so that threads once again block&quot;</span></div>
+<div class="line">                          <span class="stringliteral">&quot;\nwhen they call WaitOne().\n&quot;</span>);</div>
+<div class="line">      console::read_line();</div>
+<div class="line">      </div>
+<div class="line">      mre.reset();</div>
+<div class="line">      </div>
+<div class="line">      <span class="comment">// Start a thread that waits on the ManualresetEvent.</span></div>
+<div class="line">      <span class="keyword">auto</span> t5 = <a class="code hl_class" href="classxtd_1_1threading_1_1thread.html">thread</a> {<a class="code hl_typedef" href="group__xtd__core.html#ga629e09da122fad73508fa0fb6286fd0a">thread_start</a> {thread_proc}};</div>
+<div class="line">      t5.<a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a3052a857ff85892db9dd070d534cb087">name</a>(<span class="stringliteral">&quot;Thread_5&quot;</span>);</div>
+<div class="line">      t5.start();</div>
+<div class="line"> </div>
+<div class="line">      thread::sleep(500);</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;\nPress Enter to call set() and conclude the demo.&quot;</span>);</div>
+<div class="line">      console::read_line();</div>
+<div class="line">      </div>
+<div class="line">      mre.set();</div>
+<div class="line">      </div>
+<div class="line">      <span class="comment">// If you run this example in Visual Studio, uncomment the following line:</span></div>
+<div class="line">      <span class="comment">//console::read_line();</span></div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">  <span class="keyword">private</span>:</div>
+<div class="line">    <span class="comment">// mre is used to block and release threads manually. It is</span></div>
+<div class="line">    <span class="comment">// created in the unsignaled state.</span></div>
+<div class="line">    <span class="keyword">inline</span> <span class="keyword">static</span> <a class="code hl_class" href="classxtd_1_1threading_1_1manual__reset__event.html">manual_reset_event</a> mre {<span class="keyword">false</span>};</div>
+<div class="line">    </div>
+<div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> thread_proc() {</div>
+<div class="line">      <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> name = thread::current_thread().name();</div>
+<div class="line">      </div>
+<div class="line">      console::write_line(name + <span class="stringliteral">&quot; starts and calls mre.WaitOne()&quot;</span>);</div>
+<div class="line">      </div>
+<div class="line">      mre.wait_one();</div>
+<div class="line">      </div>
+<div class="line">      console::write_line(name + <span class="stringliteral">&quot; ends.&quot;</span>);</div>
+<div class="line">    }</div>
+<div class="line">  };</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(manual_reset_event_example::program);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This example produces output similar to the following:</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Start 3 named threads that block on a ManualresetEvent:</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Thread_0 starts and calls mre.WaitOne()</span></div>
+<div class="line"><span class="comment">// Thread_2 starts and calls mre.WaitOne()</span></div>
+<div class="line"><span class="comment">// Thread_1 starts and calls mre.WaitOne()</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// When all three threads have started, press Enter to call set()</span></div>
+<div class="line"><span class="comment">// to release all the threads.</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Thread_2 ends.</span></div>
+<div class="line"><span class="comment">// Thread_0 ends.</span></div>
+<div class="line"><span class="comment">// Thread_1 ends.</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// When a ManualresetEvent is signaled, threads that call WaitOne()</span></div>
+<div class="line"><span class="comment">// do not block. Press Enter to show this.</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Thread_3 starts and calls mre.WaitOne()</span></div>
+<div class="line"><span class="comment">// Thread_4 starts and calls mre.WaitOne()</span></div>
+<div class="line"><span class="comment">// Thread_3 ends.</span></div>
+<div class="line"><span class="comment">// Thread_4 ends.</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Press Enter to call reset(), so that threads once again block</span></div>
+<div class="line"><span class="comment">// when they call WaitOne().</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Thread_5 starts and calls mre.WaitOne()</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Press Enter to call set() and conclude the demo.</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Thread_5 ends.</span></div>
+<div class="ttc" id="aclassxtd_1_1threading_1_1manual__reset__event_html"><div class="ttname"><a href="classxtd_1_1threading_1_1manual__reset__event.html">xtd::threading::manual_reset_event</a></div><div class="ttdoc">Represents a thread synchronization event that, when signaled, must be reset manually....</div><div class="ttdef"><b>Definition</b> manual_reset_event.h:30</div></div>
+<div class="ttc" id="aclassxtd_1_1threading_1_1thread_html"><div class="ttname"><a href="classxtd_1_1threading_1_1thread.html">xtd::threading::thread</a></div><div class="ttdoc">Creates and controls a thread, sets its priority, and gets its status.</div><div class="ttdef"><b>Definition</b> thread.h:41</div></div>
+<div class="ttc" id="aclassxtd_1_1threading_1_1thread_html_a3052a857ff85892db9dd070d534cb087"><div class="ttname"><a href="classxtd_1_1threading_1_1thread.html#a3052a857ff85892db9dd070d534cb087">xtd::threading::thread::name</a></div><div class="ttdeci">ustring name() const noexcept</div><div class="ttdoc">Gets the name of the thread.</div></div>
+<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:48</div></div>
+<div class="ttc" id="agroup__keywords_html_gac9b8e6f22fb2fdc1bb915ee01aef848c"><div class="ttname"><a href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a></div><div class="ttdeci">#define startup_(main_class)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:57</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ga629e09da122fad73508fa0fb6286fd0a"><div class="ttname"><a href="group__xtd__core.html#ga629e09da122fad73508fa0fb6286fd0a">xtd::threading::thread_start</a></div><div class="ttdeci">action&lt;&gt; thread_start</div><div class="ttdoc">Represents the method that executes on a xtd::threading::thread.</div><div class="ttdef"><b>Definition</b> thread_start.h:19</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">xtd::console_key::i</a></div><div class="ttdeci">@ i</div><div class="ttdoc">The I key.</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae358efa489f58062f10dd7316b65649e"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae358efa489f58062f10dd7316b65649e">xtd::console_key::t</a></div><div class="ttdeci">@ t</div><div class="ttdoc">The T key.</div></div>
+<div class="ttc" id="anamespacextd_1_1threading_html"><div class="ttname"><a href="namespacextd_1_1threading.html">xtd::threading</a></div><div class="ttdoc">The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....</div><div class="ttdef"><b>Definition</b> abandoned_mutex_exception.h:10</div></div>
+<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
+</div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Constructors</h2></td></tr>
 <tr class="memitem:a4f3382853cd0a530744ba8fd507a679d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1manual__reset__event.html#a4f3382853cd0a530744ba8fd507a679d">manual_reset_event</a> (bool initial_state)</td></tr>
@@ -294,7 +420,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>equals</b> (const <a 
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Aug 12 2023 22:10:17 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Aug 13 2023 13:17:52 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
