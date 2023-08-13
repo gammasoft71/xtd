@@ -12,4 +12,5 @@
 * [mutex](mutex/README.md) shows how to use [xtd::threading:mutex](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1mutex.html) class.
 * [semaphore](semaphore/README.md) shows how to use [xtd::threading:semaphore](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1semaphore.html) class.
 * [thread](thread/README.md) shows hows how to use [xtd::threading::thread](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1thread.html) class.
+* [timeout](timeout/README.md) shows how to use [xtd::threading:timeout](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1timeout.html) class.
 

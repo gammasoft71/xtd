@@ -14,4 +14,5 @@ add_projects(
   mutex
   semaphore
   thread
+  timeout
 )
