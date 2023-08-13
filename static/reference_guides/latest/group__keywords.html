@@ -3009,7 +3009,7 @@ You can't use the await_ keyword in the body of a lock_ statement. </dd></dl>
 <div class="line">        <span class="keywordflow">throw</span> <a class="code hl_class" href="classxtd_1_1system__exception.html">system_exception</a>(<span class="stringliteral">&quot;Negative Balance&quot;</span>, <a class="code hl_define" href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a>);</div>
 <div class="line">      </div>
 <div class="line">      <span class="comment">// Comment out the next line to see the effect of leaving out the lock keyword.</span></div>
-<div class="line">      <a class="code hl_define" href="group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a">lock_</a>(lock) {</div>
+<div class="line">      <a class="code hl_define" href="group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a">lock_</a>(balance) {</div>
 <div class="line">        <span class="keywordflow">if</span> (balance &gt;= amount) {</div>
 <div class="line">          console::write_line(<span class="stringliteral">&quot;Balance before Withdrawal :  {0}&quot;</span>, balance);</div>
 <div class="line">          console::write_line(<span class="stringliteral">&quot;Amount to Withdraw        : -{0}&quot;</span>, amount);</div>
@@ -3027,7 +3027,6 @@ You can't use the await_ keyword in the body of a lock_ statement. </dd></dl>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
-<div class="line">    <span class="keywordtype">object</span> lock;</div>
 <div class="line">    <span class="keywordtype">int</span> balance;</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1random.html">xtd::random</a> <a class="code hl_class" href="classxtd_1_1random.html">random</a>;</div>
 <div class="line">  };</div>
@@ -3522,7 +3521,7 @@ If you need to get the fully-qualified name, you can use the typeof_ expression 
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 13 2023 13:17:48 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Aug 13 2023 21:59:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
