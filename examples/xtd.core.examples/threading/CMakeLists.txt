@@ -15,4 +15,5 @@ add_projects(
   semaphore
   thread
   timeout
+  wait_handle
 )

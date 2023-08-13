@@ -38,6 +38,9 @@ namespace xtd {
     /// * xtd::threading::wait_handle::wait_all, which allows a thread to wait until all the wait handles in an array receive a signal.
     /// * xtd::threading::wait_handle::wait_any, which allows a thread to wait until any one of a specified set of wait handles has been signaled.
     /// @remarks The overloads of these methods provide timeout intervals for abandoning the wait, and the opportunity to exit a synchronization context before entering the wait, allowing other threads to use the synchronization context.
+    /// @par Examples
+    /// The following code example shows how two threads can do background tasks while the Main thread waits for the tasks to complete using the static xtd::threading::wait_handle::wait_any and xtd::threading::wait_handle::wait_all methods of the xtd::threading::wait_handle class.
+    /// @include wait_handle.cpp
     class wait_handle abstract_ {
       friend class thread;
     public:
