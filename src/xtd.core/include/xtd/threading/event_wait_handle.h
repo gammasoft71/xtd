@@ -19,6 +19,15 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core threading
+    /// @remarks The xtd::threading::event_wait_handle class allows threads to communicate with each other by signaling. Typically, one or more threads block on an xtd::threading::event_wait_handle until an unblocked thread calls the xtd::threading::event_wait_handle::set method, releasing one or more of the blocked threads. A thread can signal an xtd::threading::event_wait_handle and then block on it, by calling the static xtd::threading::wait_handle::signal_and_wait method.
+    /// @note The xtd::threading::event_wait_handle class provides access to named system synchronization events.
+    /// @remarks The behavior of an xtd::threading::event_wait_handle that has been signaled depends on its reset mode. An xtd::threading::event_wait_handle created with the xtd::threading::event_reset_mode::auto_reset flag resets automatically when signaled, after releasing a single waiting thread. An xtd::threading::event_wait_handle created with the xtd::threading::event_reset_mode::manual_reset flag remains signaled until its Reset method is called.
+    /// @remarks Automatic reset events provide exclusive access to a resource. If an automatic reset event is signaled when no threads are waiting, it remains signaled until a thread attempts to wait on it. The event releases the thread and immediately resets, blocking subsequent threads.
+    /// @remarks Manual reset events are like gates. When the event is not signaled, threads that wait on it will block. When the event is signaled, all waiting threads are released, and the event remains signaled (that is, subsequent waits do not block) until its xtd::threading::event_wait_handle::reset method is called. Manual reset events are useful when one thread must complete an activity before other threads can proceed.
+    /// @remarks xtd::threading::event_wait_handle objects can be used with the static xtd::threading::wait_handle::wWait_all and xtd::threading::wait_handle::wait_any methods.
+    /// @par Examples
+    /// The following code example uses the xtd::threading::wait_handle::signal_and_wait(xtd::threading::wait_handle&, xtd::threading::wait_handle&) method overload to allow the main thread to signal a blocked thread and then wait until the thread finishes a task.<br><br>
+    /// The example starts five threads and allows them to block on an xtd::threading::event_wait_handle created with the xtd::threading::event_reset_mode::auto_reset flag, then releases one thread each time the user presses the Enter key. The example then queues another five threads and releases them all using an xtd::threading::event_wait_handle created with the xtd::threading::event_reset_mode::manual_reset flag.
     class event_wait_handle : public wait_handle, public icomparable<event_wait_handle>, public iequatable<event_wait_handle> {
       class event_wait_handle_base;
       class named_event_wait_handle;
