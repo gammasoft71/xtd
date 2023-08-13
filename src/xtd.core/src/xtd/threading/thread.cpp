@@ -339,9 +339,9 @@ thread thread::start_new(const xtd::threading::thread_start& start) {
   return thread;
 }
 
-thread thread::start_new(const xtd::threading::parameterized_thread_start& start) {
+thread thread::start_new(const xtd::threading::parameterized_thread_start& start, std::any obj) {
   auto thread = threading::thread {start};
-  thread.start();
+  thread.start(obj);
   return thread;
 }
 

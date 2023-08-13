@@ -274,8 +274,9 @@ namespace xtd {
       static thread start_new(const xtd::threading::thread_start& start);
       /// @brief Create and immedialtely start a xtd::threading::thread with specified method.
       /// @param start A delegate that represents the methods to be invoked when this thread begins executing.
+      /// @param obj An object that contains data to be used by the method the thread executes.
       /// @exception xtd::argument_exception The start parameter is empty.
-      static thread start_new(const xtd::threading::parameterized_thread_start& start);
+      static thread start_new(const xtd::threading::parameterized_thread_start& start, std::any obj);
 
       /// @brief Either suspends the thread, or if the thread is already suspended, has no effect (Should not be used).
       /// @exception xtd::threading::thread_state_exception The thread has not been started or is dead.
