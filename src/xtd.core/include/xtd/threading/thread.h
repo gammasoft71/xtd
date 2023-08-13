@@ -252,6 +252,13 @@ namespace xtd {
         sleep(static_cast<int32>(std::chrono::duration_cast<std::chrono::milliseconds>(timeout).count()));
       }
       
+      /// @brief Causes a thread to wait the number of times defined by the iterations parameter.
+      /// @param iterations A 32-bit signed integer that defines how long a thread is to wait.
+      /// @remarks The xtd::threading::thread::spin_wait method is useful for implementing locks. Classes in the xtd, such as xtd::threading::monitor and xtd::threading::reader_writer_lock, use this method internally. xtd::threading::thread::spin_wait essentially puts the processor into a very tight loop, with the loop count specified by the iterations parameter. The duration of the wait therefore depends on the speed of the processor.
+      /// @remarks Contrast this with the xtd::threading::thread::sleep method. A thread that calls xtd::threading::thread::sleep yields the rest of its current slice of processor time, even if the specified interval is zero. Specifying a non-zero interval for xtd::threading::thread::sleep removes the thread from consideration by the thread scheduler until the time interval has elapsed.
+      /// @remarks xtd::threading::thread::spin_wait is not generally useful for ordinary applications. In most cases, you should use the synchronization classes provided by the xtd Framework; for example, call xtd::threading::monitor::enter or a statement that wraps xtd::threading::thread::monitor::enter
+      static void spin_wait(int32 iterations);
+      
       /// @brief Causes the operating system to change the state of the current instance to xtd::threading::thread_state::running.
       /// @exception xtd::threading::thread_state_exception The thread has already been started.
       void start();
