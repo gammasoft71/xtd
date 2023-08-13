@@ -19,6 +19,6 @@ xtdc run
 # Output
 
 ```
-unsafe_instance_count: 27401
+unsafe_instance_count: 253
 safe_instance_count: 0
 ```

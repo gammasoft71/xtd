@@ -1,10 +1,9 @@
 #include <xtd/threading/interlocked>
+#include <xtd/threading/thread>
 #include <xtd/console>
 #include <xtd/startup>
 #include <vector>
-#include <thread>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::threading;
 
@@ -29,21 +28,23 @@ namespace interlocked_decrement_example {
     
   public:
     static auto main() {
-      auto thread1 = thread {thread_method};
-      auto thread2 = thread {thread_method};
+      auto thread1 = thread {thread_start {thread_method}};
+      auto thread2 = thread {thread_start {thread_method}};
+      thread1.start();
+      thread2.start();
       thread1.join();
       thread2.join();
-      
+
       console::write_line("unsafe_instance_count: {}\nsafe_instance_count: {}", count_class::unsafe_instance_count, count_class::safe_instance_count);
     }
     
   private:
     static void thread_method() {
-      auto cc = unique_ptr<count_class> {};
+      auto cc = count_class {};
       
       // Create 100000 instances of count_class.
       for (auto i = 0; i < 100000; ++i)
-        cc = make_unique<count_class>();
+        cc = count_class {};
     }
   };
 }
@@ -52,5 +53,5 @@ startup_(interlocked_decrement_example::my_interlocked_decrement_class);
 
 // This code produces the following output:
 //
-// unsafe_instance_count: 27401
+// unsafe_instance_count: 253
 // safe_instance_count: 0
