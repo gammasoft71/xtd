@@ -13,4 +13,4 @@
 * [semaphore](semaphore/README.md) shows how to use [xtd::threading:semaphore](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1semaphore.html) class.
 * [thread](thread/README.md) shows hows how to use [xtd::threading::thread](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1thread.html) class.
 * [timeout](timeout/README.md) shows how to use [xtd::threading:timeout](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1timeout.html) class.
-* [wait_handle](wait_handle/README.md) shows how to use [xtd::threading:semaphore](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1wait_handle.html) class.
+* [wait_handle](wait_handle/README.md) shows how to use [xtd::threading:wait_handle](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1wait__handle.html) class.
