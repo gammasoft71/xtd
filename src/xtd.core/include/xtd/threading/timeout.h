@@ -25,6 +25,10 @@ namespace xtd {
     /// @par Library
     /// xtd.core threading
     /// @ingroup xtd_core threading
+    /// @par Example
+    /// The following example shows a thread going to sleep for an infinite time and subsequently being woken up.
+    /// As the xtd::threading::thread::interrupt method only works on the Windows operating system, on other platforms the result may be different.
+    /// @include timeout.cpp
     class core_export_ timeout static_ {
     public:
       /// @name Fields
