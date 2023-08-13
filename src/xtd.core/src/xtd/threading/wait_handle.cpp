@@ -193,13 +193,13 @@ size_t wait_handle::wait_any(const std::vector<wait_handle*>& wait_handles, int3
   if (milliseconds_timeout < timeout::infinite) throw argument_exception(csf_);
   
   if (milliseconds_timeout == timeout::infinite) {
-    for (auto index = 0ul; index < wait_handles.size(); ++index) {
-      if (wait_handles[index]->wait_one(0) == true)
-        return index;
-      thread::yield();
-      thread::sleep(1);
-    }
-    return wait_timeout;
+    do {
+      for (auto index = 0ul; index < wait_handles.size(); ++index) {
+        if (wait_handles[index]->wait_one(0) == true) return index;
+        thread::yield();
+        thread::sleep(1);
+      }
+    } while (true);
   }
   
   int32 timeout = milliseconds_timeout;
@@ -213,5 +213,6 @@ size_t wait_handle::wait_any(const std::vector<wait_handle*>& wait_handles, int3
       thread::sleep(1);
     }
   } while (timeout >= 0);
+
   return wait_timeout;
 }
