@@ -12,5 +12,6 @@ add_projects(
   mixing_std_and_xtd_threads
   monitor
   mutex
+  semaphore
   thread
 )

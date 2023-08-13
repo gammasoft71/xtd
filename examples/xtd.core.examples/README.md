@@ -282,6 +282,7 @@
 * [mixing_std_and_xtd_threads](threading/mixing_std_and_xtd_threads/README.md) shows how to use and mixing [xtd::threading::thread](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1thread.html) and [std::thread](https://en.cppreference.com/w/cpp/thread/thread) classes.
 * [monitor](threading/monitor/README.md) shows how to use [xtd::threading:monitor](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1monitor.html) class.
 * [mutex](threading/mutex/README.md) shows how to use [xtd::threading:mutex](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1mutex.html) class.
+* [semaphore](threading/semaphore/README.md) shows how to use [xtd::threading:semaphore](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1semaphore.html) class.
 * [thread](threading/thread/README.md) shows hows how to use [xtd::threading::thread](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1thread.html) class.
 
 ## [Uri](uri/README.md)
