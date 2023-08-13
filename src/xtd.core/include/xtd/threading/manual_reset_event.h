@@ -26,7 +26,7 @@ namespace xtd {
     /// The following example demonstrates how xtd::threading::manual_reset_event works. The example starts with a xtd::threading::manual_reset_event in the unsignaled state (that is, false is passed to the constructor). The example creates three threads, each of which blocks on the xtd::threading::manual_reset_event by calling its wtd::threading::wait_handle::wait_one method. When the user presses the Enter key, the example calls the wtd::threading::event_wait_handle::set method, which releases all three threads. Contrast this with the behavior of the wtd::threading::auto_reset_event class, which releases threads one at a time, resetting automatically after each release.<br>
     /// Pressing the Enter key again demonstrates that the xtd::threading::manual_reset_event remains in the signaled state until its wtd::threading::event_wait_handle::reset method is called: The example starts two more threads. These threads do not block when they call the wtd::threading::wait_handle::wait_one method, but instead run to completion.<br>
     /// Pressing the Enter key again causes the example to call the wtd::threading::event_wait_handle::reset method and to start one more thread, which blocks when it calls wtd::threading::wait_handle::wait_one. Pressing the Enter key one final time calls wtd::threading::event_wait_handle::set to release the last thread, and the program ends.
-    /// &include manual_reset_event.cpp
+    /// @include manual_reset_event.cpp
     class manual_reset_event : public event_wait_handle {
     public:
       /// @name Constructors
