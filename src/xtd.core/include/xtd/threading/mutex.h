@@ -38,6 +38,9 @@ namespace xtd {
     /// @remarks The unnamed mutex is a <a href="https://en.cppreference.com/w/cpp/thread/recursive_timed_mutex">std::recursive_timed_mutex</a> of C++17. You can therefore use xtd::threading::mutex or <a href="https://en.cppreference.com/w/cpp/thread/recursive_timed_mutex">std::recursive_timed_mutex</a> indifferently in your projects.
     /// @remarks If you use other synchronization objects for your threads and you use xtd::threading::thread you are interested in using xtd::threading::mutex. You will also benefit from xtd::threading::wait_handle::wait_all and td::threading::wait_handle::wait_any among others to synchronize all your objects.
     /// @remarks  On the other hand, if you only use mutexes and you use <a href="https://en.cppreference.com/w/cpp/thread/thread">std::thread</a> then you are interested in using <a href="https://en.cppreference.com/w/cpp/thread/recursive_timed_mutex">std::recursive_timed_mutex</a>.
+    /// @par Examples
+    /// This example shows how a local xtd::threading::mutex object is used to synchronize access to a protected resource. Because each calling thread is blocked until it acquires ownership of the mutex, it must call the xtd::threading::mutex::release_mutex method to release ownership of the mutex.
+    /// @include mutex.cpp
     class mutex : public wait_handle, public icomparable<mutex>, public iequatable<mutex> {
       class mutex_base;
       class named_mutex;
