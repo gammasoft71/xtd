@@ -19,4 +19,8 @@ xtdc run
 # Output
 
 ```
+new_thread is executing thread_method.
+main thread calls interrupt on new_thread.
+new_thread going to sleep.
+new_thread cannot go to sleep - interrupted by main thread.
 ```
