@@ -20,7 +20,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core threading
-    /// @remarks Use the xtd::threading::semaphore class to control access to a pool of resources. Threads enter the semaphore by calling the xtd::threading::wait_handle::wait_one method, which is inherited from the xtd::threading::wait_handle class, and release the semaphore by calling the xtd::threading::semaphore=::release method.
+    /// @remarks Use the xtd::threading::semaphore class to control access to a pool of resources. Threads enter the semaphore by calling the xtd::threading::wait_handle::wait_one method, which is inherited from the xtd::threading::wait_handle class, and release the semaphore by calling the xtd::threading::semaphore::release method.
     /// @remarks The count on a semaphore is decremented each time a thread enters the semaphore, and incremented when a thread releases the semaphore. When the count is zero, subsequent requests block until other threads release the semaphore. When all threads have released the semaphore, the count is at the maximum value specified when the semaphore was created.
     /// @remarks There is no guaranteed order, such as FIFO or LIFO, in which blocked threads enter the semaphore.
     /// @remarks A thread can enter the semaphore multiple times, by calling the xtd::threading::wait_handle::wait_one method repeatedly. To release some or all of these entries, the thread can call the parameterless xtd::threading::semaphore::release() method overload multiple times, or it can call the xtd::threading::semaphore::release(int32) method overload that specifies the number of entries to be released.
