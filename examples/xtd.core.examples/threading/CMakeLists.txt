@@ -8,6 +8,7 @@ add_projects(
   event_wait_handle
   interlocked
   interlocked_decrement
+  manual_reset_event
   mixing_std_and_xtd_threads
   thread
 )
