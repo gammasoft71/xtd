@@ -10,8 +10,7 @@ using namespace xtd::threading;
 namespace mutex_example {
   class program {
   public:
-    static void main()
-    {
+    static void main() {
       // Create a semaphore that can satisfy up to three
       // concurrent requests. Use an initial count of zero,
       // so that the entire semaphore count is initially
