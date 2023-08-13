@@ -9,5 +9,6 @@
 * [manual_reset_event](manual_reset_event/README.md) shows how to use [xtd::threading:manual_reset_event](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1manual_reset_event.html) class.
 * [mixing_std_and_xtd_threads](mixing_std_and_xtd_threads/README.md) shows how to use and mixing [xtd::threading::thread](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1thread.html) and [std::thread](https://en.cppreference.com/w/cpp/thread/thread) classes.
 * [monitor](monitor/README.md) shows how to use [xtd::threading:monitor](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1monitor.html) class.
+* [mutex](mutex/README.md) shows how to use [xtd::threading:mutex](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1mutex.html) class.
 * [thread](thread/README.md) shows hows how to use [xtd::threading::thread](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1thread.html) class.
 

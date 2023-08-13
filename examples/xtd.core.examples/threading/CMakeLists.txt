@@ -11,5 +11,6 @@ add_projects(
   manual_reset_event
   mixing_std_and_xtd_threads
   monitor
+  mutex
   thread
 )
