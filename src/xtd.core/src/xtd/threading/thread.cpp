@@ -417,6 +417,11 @@ bool thread::is_suspended() const noexcept {
   return data_ ? enum_object<xtd::threading::thread_state>(data_->state).has_flag(xtd::threading::thread_state::suspended) : false;
 }
 
+void thread::is_thread_pool_thread(bool value) noexcept {
+  if (data_) return;
+  data_->is_thread_pool_thread = value;
+}
+
 bool thread::is_unmanaged_thread() const noexcept {
   return data_ ? data_->managed_thread_id == unmanaged_thread_id : false;
 }
