@@ -97,6 +97,32 @@ bool thread_pool::queue_user_work_item(const wait_callback& call_back, std::any 
   return true;
 }
 
+registered_wait_handle thread_pool::register_wait_for_single_object(wait_handle& waitObject, const wait_or_timer_callback& callBack, std::any state, int32 milliseconds_timeout_interval, bool execute_only_once) {
+  if (asynchronous_io_threads_.size() == 0)
+    create_asynchronous_io_threads();
+  registered_wait_handle result;
+  lock_(thread_pool_asynchronous_io_items_sync_root_) {
+    if (thread_pool_asynchronous_io_items_.size() == max_asynchronous_io_threads_)
+      return result;
+    thread_pool_asynchronous_io_items_.emplace_back(callBack, state, waitObject, milliseconds_timeout_interval, execute_only_once);
+    result.item_ = reinterpret_cast<intptr>(&thread_pool_asynchronous_io_items_.back());
+    asynchronous_io_semaphore_.release();
+  }
+  return result;
+}
+
+registered_wait_handle thread_pool::register_wait_for_single_object(wait_handle& waitObject, const wait_or_timer_callback& callBack, std::any state, int64 milliseconds_timeout_interval, bool execute_only_once)  {
+  return register_wait_for_single_object(waitObject, callBack, state, as<int32>(milliseconds_timeout_interval), execute_only_once);
+}
+
+registered_wait_handle thread_pool::register_wait_for_single_object(wait_handle& waitObject, const wait_or_timer_callback& callBack, std::any state, const time_span& timeout, bool execute_only_once) {
+  return register_wait_for_single_object(waitObject, callBack, state, as<int32>(std::chrono::duration_cast<std::chrono::milliseconds>(timeout).count()), execute_only_once);
+}
+
+registered_wait_handle thread_pool::register_wait_for_single_object(wait_handle& waitObject, const wait_or_timer_callback& callBack, std::any state, uint32 milliseconds_timeout_interval, bool execute_only_once) {
+  return register_wait_for_single_object(waitObject, callBack, state, as<int32>(milliseconds_timeout_interval), execute_only_once);
+}
+
 bool thread_pool::set_max_threads(size_t worker_threads, size_t completion_port_threads) {
   if (worker_threads < environment::processor_count() || completion_port_threads < environment::processor_count())
     return false;
