@@ -94,43 +94,32 @@ namespace xtd {
       /// @brief Retrieves the difference between the maximum number of thread pool threads returned by the GetMaxThreads method, and the number currently active.
       /// @param worker_threads The number of available worker threads
       /// @param completion_port_threads The number of available asynchronous I/O threads.
-      /// @exception ArgumentNullException The workerThreads or completionPortThreads param is null.
-      /// @remarks When GetAvailableThreads returns, the variable specified by workerThreads contains the number of additional worker threads that can be started, and the variable specified by completionPortThreads contains the number of additional asynchronous I/O threads that can be started.
+      /// @remarks When xtd::threading::thread_pool::get_available_threads returns, the variable specified by workerThreads contains the number of additional worker threads that can be started, and the variable specified by completionPortThreads contains the number of additional asynchronous I/O threads that can be started.
       static void get_available_threads(size_t& worker_threads, size_t& completion_port_threads);
 
       /// @brief Retrieves the number of requests to the thread pool that can be active concurrently. All requests above that number remain queued until thread pool threads become available.
       /// @param worker_threads The maximum number of worker threads in the thread pool.
       /// @param completion_port_threads The maximum number of asynchronous I/O threads in the thread pool.
-      /// @exception ArgumentNullException The workerThreads or completionPortThreads param is null.
       /// @remarks When GetMaxThreads returns, the variable specified by workerThreads contains the maximum number of worker threads allowed in the thread pool, and the variable specified by completionPortThreads contains the maximum number of asynchronous I/O threads allowed in the thread pool.
-      /// @remarks You can use the GetAvailableThreads method to determine the actual number of threads in the thread pool at any given time.
-      /// @remarks You can use the SetMaxThreads to set the maximum number of worker threads and asynchronous I/O threads in the thread pool.
+      /// @remarks You can use the xtd::threading::thread_pool::get_available_threads method to determine the actual number of threads in the thread pool at any given time.
+      /// @remarks You can use the xtd::threading::thread_pool::set_max_threads to set the maximum number of worker threads and asynchronous I/O threads in the thread pool.
       static void get_max_threads(size_t& worker_threads, size_t& completion_port_threads);
       
       /// @brief Retrieves the number of idle threads the thread pool maintains in anticipation of new requests. Always 0 for both.
       /// @param worker_threads The maximum number of worker threads in the thread pool.
       /// @param completion_port_threads The maximum number of asynchronous I/O threads in the thread pool.
-      /// @exception ArgumentNullException The workerThreads or completionPortThreads param is null.
-      /// @remarks To develop in the future for optimization.
       static void get_min_threads(size_t& worker_threads, size_t& completion_port_threads);
       
       /// @brief Sets the number of requests to the thread pool that can be active concurrently. All requests above that number remain queued until thread pool threads become available.
       /// @param worker_threads The maximum number of worker threads in the thread pool.
       /// @param completion_port_threads The maximum number of asynchronous I/O threads in the thread pool.
-      /// @return Boolean true if the change is successful; otherwise, false.
-      /// @exception ArgumentOutOfRangeException if the workerThreads  is < 0 or > MaxThreads  - or - if the completionPortThreads  is < 0 or > MaxAsynchronousIoThreads.
-      /// @remarks The maximum value that can be set is 256.
-      /// @see MaxThreads
-      /// @see MaxAsynchronousIoThreads
+      /// @return true if the change is successful; otherwise, false.
       static bool set_max_threads(size_t worker_threads, size_t completion_port_threads);
       
       /// @brief Sets the number of idle threads the thread pool maintains in anticipation of new requests.
       /// @param worker_threads The new minimum number of idle worker threads to be maintained by the thread pool.
       /// @param completion_port_threads The new minimum number of idle asynchronous I/O threads to be maintained by the thread pool.
-      /// @return Boolean true if the change is successful; otherwise, false.
-      /// @exception ArgumentOutOfRangeException if the workerThreads  is different of 0 - or - if the completionPortThreads  is different of 0.
-      /// @remarks The only value that can be set is 0.
-      /// @remarks To develop in the future for optimization.
+      /// @return true if the change is successful; otherwise, false.
       static bool set_min_threads(size_t worker_threads, size_t completion_port_threads);
 
     private:
