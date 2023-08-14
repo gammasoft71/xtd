@@ -26,6 +26,6 @@
 * **serial_port** represents a serial port resource.
 * **service_controler** represents a Windows service and allows you to connect to a running or stopped service, manipulate it, or get information about it.
 * [system_texts](texts/README.md) shows how to used [xtd::forms::system_texts](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1system__texts.html) collection.
-* [timer](timer/README.md) implements a timer that raises an event at user-defined intervals. This timer is optimized for use in Windows Forms applications and must be used in a window.
+* [timer](forms_timer/README.md) implements a timer that raises an event at user-defined intervals. This timer is optimized for use in Windows Forms applications and must be used in a window.
 * [translator](translator/README.md) demonstrates the use of [xtd::forms::translator](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1translator.html) strings.
 * [use_wait_cursor](use_wait_cursor/README.md) shows how to use [xtd::forms::use_wait_cursor](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1application.html#a70a9b0d8fd502111b7f4bba193135c46) component.

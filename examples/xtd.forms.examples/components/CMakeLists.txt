@@ -12,6 +12,7 @@ add_projects(
   cursors
   emoticons
   enable_debug
+  forms_timer
   image_list
   images
   process_form
@@ -19,7 +20,6 @@ add_projects(
   screen
   settings_example
   texts
-  timer
   translator
   use_wait_cursor
 )
