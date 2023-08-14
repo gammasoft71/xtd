@@ -57,14 +57,14 @@ namespace xtd {
         ~asynchronous_io_thread_vector();
       };
 
-      template<typename T>
+      template<typename callback_t>
       struct thread_item : public object {
-        thread_item() {}
-        thread_item(const T& callback) : callback(callback) {}
-        thread_item(const T& callback, std::any state) : callback(callback), state(&state) {}
-        thread_item(const T& callback, std::any state, wait_handle& wait_object, int32 milliseconds_timeout_interval, bool execute_only_once) : callback(callback), state(state), wait_object(&wait_object), milliseconds_timeout_interval(milliseconds_timeout_interval), execute_only_once(execute_only_once) {}
+        thread_item() = default;
+        thread_item(const callback_t& callback) : callback(callback) {}
+        thread_item(const callback_t& callback, std::any state) : callback(callback), state(state) {}
+        thread_item(const callback_t& callback, std::any state, wait_handle& wait_object, int32 milliseconds_timeout_interval, bool execute_only_once) : callback(callback), state(state), wait_object(&wait_object), milliseconds_timeout_interval(milliseconds_timeout_interval), execute_only_once(execute_only_once) {}
         
-        T callback;
+        callback_t callback;
         std::any state;
         wait_handle* wait_object = null;
         int32 milliseconds_timeout_interval;
@@ -104,6 +104,17 @@ namespace xtd {
       /// @remarks You can use the xtd::threading::thread_pool::get_available_threads method to determine the actual number of threads in the thread pool at any given time.
       /// @remarks You can use the xtd::threading::thread_pool::set_max_threads to set the maximum number of worker threads and asynchronous I/O threads in the thread pool.
       static void get_max_threads(size_t& worker_threads, size_t& completion_port_threads);
+      
+      /// @brief Queues a method for execution. The method executes when a thread pool thread becomes available.
+      /// @param call_back A pointer function that represents the method to be executed.
+      /// @return true if the method is successfully queued; NotSupportException is thrown if the work item could not be queued
+      static bool queue_user_work_item(const wait_callback& call_back);
+      
+      /// @brief Queues a method for execution. The method executes when a thread pool thread becomes available.
+      /// @param call_back A pointer function that represents the method to be executed.
+      /// @param state An object containing data to be used by the method.
+      /// @return true if the method is successfully queued; NotSupportedException is thrown if the work item could not be queued
+      static bool queue_user_work_item(const wait_callback& call_back, std::any state);
       
       /// @brief Retrieves the number of idle threads the thread pool maintains in anticipation of new requests. Always 0 for both.
       /// @param worker_threads The maximum number of worker threads in the thread pool.
