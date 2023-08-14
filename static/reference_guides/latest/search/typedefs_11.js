@@ -5,7 +5,7 @@ var searchData=
   ['tick_2',['tick',['../group__types.html#gad006729ac2ef808d4e071c3273776236',1,'xtd']]],
   ['ticks_3',['ticks',['../group__types.html#gaf6b556b49d28b448fc2c5af1d820f3ea',1,'xtd']]],
   ['time_5fspan_4',['time_span',['../group__types.html#gad013431819ca97998d1dc5910b475f80',1,'xtd']]],
-  ['timer_5fcallback_5',['timer_callback',['../group__xtd__core.html#ga6543545992a549f7fdf31ce49769fd9e',1,'xtd::threading']]],
+  ['timer_5fcallback_5',['timer_callback',['../group__xtd__core.html#ga9c5796114b4b8c6296894196f9898bc9',1,'xtd::threading']]],
   ['toggle_5fbutton_6',['toggle_button',['../group__style__sheets.html#gaaed6f22e35ba24cbe821dbd5cf5d7b37',1,'xtd::forms::style_sheets']]],
   ['toggle_5fbuttons_5ft_7',['toggle_buttons_t',['../classxtd_1_1forms_1_1style__sheets_1_1style__sheet.html#a230911379abcd8e49b354844609258b2',1,'xtd::forms::style_sheets::style_sheet']]],
   ['tool_5fbar_8',['tool_bar',['../group__style__sheets.html#ga5a0a6baea5209692038ff9e11cd760b8',1,'xtd::forms::style_sheets']]],

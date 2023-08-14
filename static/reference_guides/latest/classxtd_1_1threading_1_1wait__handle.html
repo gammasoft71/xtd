@@ -130,8 +130,7 @@ In addition to its derived classes, the <a class="el" href="classxtd_1_1threadin
 <dd>
 The overloads of these methods provide timeout intervals for abandoning the wait, and the opportunity to exit a synchronization context before entering the wait, allowing other threads to use the synchronization context. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example shows how two threads can do background tasks while the Main thread waits for the tasks to complete using the static <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#aee2a73d9052723690ff0e15a338cce35" title="Waits for any of the elements in the specified collection to receive a signal.">xtd::threading::wait_handle::wait_any</a> and <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a217129669f17b6f14201dccd0405450c" title="Waits for all the elements in the specified collection to receive a signal.">xtd::threading::wait_handle::wait_all</a> methods of the <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> class. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/threading/auto_reset_event&gt;</span></div>
-<div class="line"><span class="comment">//#include &lt;xtd/threading/thread_pool&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/threading/thread&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/threading/thread_pool&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/date_time&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/random&gt;</span></div>
@@ -148,10 +147,8 @@ The overloads of these methods provide timeout intervals for abandoning the wait
 <div class="line">      <span class="comment">// wait until all tasks are completed.</span></div>
 <div class="line">      <span class="keyword">auto</span> dt = date_time::now();</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;Main thread is waiting for BOTH tasks to complete.&quot;</span>);</div>
-<div class="line">      <span class="comment">//thread_pool::queue_user_work_item(wait_callback(do_task), event1);</span></div>
-<div class="line">      <span class="comment">//xthread_pool::queue_user_work_item(wait_callback(do_task), event2);</span></div>
-<div class="line">      <span class="keyword">auto</span> t1 = thread::start_new(<a class="code hl_typedef" href="group__xtd__core.html#ga05ac25649af478143826babb1a9fae7c">parameterized_thread_start</a> {do_task}, &amp;event1);</div>
-<div class="line">      <span class="keyword">auto</span> t2 = thread::start_new(<a class="code hl_typedef" href="group__xtd__core.html#ga05ac25649af478143826babb1a9fae7c">parameterized_thread_start</a> {do_task}, &amp;event2);</div>
+<div class="line">      thread_pool::queue_user_work_item(<a class="code hl_typedef" href="group__xtd__core.html#ga21b580a3c06173e69cd3a9bb4e247bc2">wait_callback</a>(do_task), event1);</div>
+<div class="line">      thread_pool::queue_user_work_item(<a class="code hl_typedef" href="group__xtd__core.html#ga21b580a3c06173e69cd3a9bb4e247bc2">wait_callback</a>(do_task), event2);</div>
 <div class="line">      wait_handle::wait_all({event1, event2});</div>
 <div class="line">      <span class="comment">// The time shown below should match the longest task.</span></div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;Both tasks are completed (time waited={0})&quot;</span>,</div>
@@ -162,10 +159,8 @@ The overloads of these methods provide timeout intervals for abandoning the wait
 <div class="line">      dt = date_time::now();</div>
 <div class="line">      console::write_line();</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;The main thread is waiting for either task to complete.&quot;</span>);</div>
-<div class="line">      <span class="comment">//thread_pool::queue_user_work_item(wait_callback(do_task), event1);</span></div>
-<div class="line">      <span class="comment">//thread_pool::queue_user_work_item(wait_callback(do_task), event2);</span></div>
-<div class="line">      <span class="keyword">auto</span> t3 = thread::start_new(<a class="code hl_typedef" href="group__xtd__core.html#ga05ac25649af478143826babb1a9fae7c">parameterized_thread_start</a> {do_task}, &amp;event1);</div>
-<div class="line">      <span class="keyword">auto</span> t4 = thread::start_new(<a class="code hl_typedef" href="group__xtd__core.html#ga05ac25649af478143826babb1a9fae7c">parameterized_thread_start</a> {do_task}, &amp;event2);</div>
+<div class="line">      thread_pool::queue_user_work_item(<a class="code hl_typedef" href="group__xtd__core.html#ga21b580a3c06173e69cd3a9bb4e247bc2">wait_callback</a>(do_task), event1);</div>
+<div class="line">      thread_pool::queue_user_work_item(<a class="code hl_typedef" href="group__xtd__core.html#ga21b580a3c06173e69cd3a9bb4e247bc2">wait_callback</a>(do_task), event2);</div>
 <div class="line">      <span class="keyword">auto</span> index = wait_handle::wait_any({event1, event2});</div>
 <div class="line">      <span class="comment">// The time shown below should match the shortest task.</span></div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;Task {0} finished first (time waited={1}).&quot;</span>,</div>
@@ -173,11 +168,11 @@ The overloads of these methods provide timeout intervals for abandoning the wait
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> do_task(std::any state) {</div>
-<div class="line">      <span class="keyword">auto</span> are = as&lt;auto_reset_event*&gt;(state);</div>
-<div class="line">      <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__forms.html#gga3aba202fc852006258f3a8da4f7bd0d1a07cc694b9b3fc636710fa08b6922c42b">time</a> = 1000 * <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a4b43b0aee35624cd95b910189b3dc231">r</a>.next(2, 10);</div>
+<div class="line">      <span class="keyword">auto</span> are = as&lt;auto_reset_event&gt;(state);</div>
+<div class="line">      <span class="keyword">auto</span> time = 1000 * r.next(2, 10);</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;Performing a task for {0} milliseconds.&quot;</span>, time);</div>
 <div class="line">      thread::sleep(time);</div>
-<div class="line">      are-&gt;set();</div>
+<div class="line">      are.set();</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
@@ -206,9 +201,8 @@ The overloads of these methods provide timeout intervals for abandoning the wait
 <div class="ttc" id="aclassxtd_1_1random_html"><div class="ttname"><a href="classxtd_1_1random.html">xtd::random</a></div><div class="ttdoc">Represents a pseudo-random number generator, a device that produces a sequence of numbers that meet c...</div><div class="ttdef"><b>Definition</b> random.h:37</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1auto__reset__event_html"><div class="ttname"><a href="classxtd_1_1threading_1_1auto__reset__event.html">xtd::threading::auto_reset_event</a></div><div class="ttdoc">Represents a thread synchronization event that, when signaled, resets automatically after releasing a...</div><div class="ttdef"><b>Definition</b> auto_reset_event.h:31</div></div>
 <div class="ttc" id="agroup__keywords_html_gac9b8e6f22fb2fdc1bb915ee01aef848c"><div class="ttname"><a href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a></div><div class="ttdeci">#define startup_(main_class)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:57</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ga05ac25649af478143826babb1a9fae7c"><div class="ttname"><a href="group__xtd__core.html#ga05ac25649af478143826babb1a9fae7c">xtd::threading::parameterized_thread_start</a></div><div class="ttdeci">action&lt; std::any &gt; parameterized_thread_start</div><div class="ttdoc">Represents the method that executes on a xtd::threading::thread.</div><div class="ttdef"><b>Definition</b> parameterized_thread_start.h:21</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ga21b580a3c06173e69cd3a9bb4e247bc2"><div class="ttname"><a href="group__xtd__core.html#ga21b580a3c06173e69cd3a9bb4e247bc2">xtd::threading::wait_callback</a></div><div class="ttdeci">action&lt; std::any &gt; wait_callback</div><div class="ttdoc">Represents a callback method to be executed by a thread pool thread.</div><div class="ttdef"><b>Definition</b> wait_callback.h:25</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a4b43b0aee35624cd95b910189b3dc231"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a4b43b0aee35624cd95b910189b3dc231">xtd::console_key::r</a></div><div class="ttdeci">@ r</div><div class="ttdoc">The R key.</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_gga3aba202fc852006258f3a8da4f7bd0d1a07cc694b9b3fc636710fa08b6922c42b"><div class="ttname"><a href="group__xtd__forms.html#gga3aba202fc852006258f3a8da4f7bd0d1a07cc694b9b3fc636710fa08b6922c42b">xtd::forms::date_time_picker_format::time</a></div><div class="ttdeci">@ time</div><div class="ttdoc">The date_time_picker control displays the date/time value in the time format set by the user's operat...</div></div>
 <div class="ttc" id="anamespacextd_1_1threading_html"><div class="ttname"><a href="namespacextd_1_1threading.html">xtd::threading</a></div><div class="ttdoc">The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....</div><div class="ttdef"><b>Definition</b> abandoned_mutex_exception.h:10</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -1170,7 +1164,7 @@ The number of objects in wait_handles is greater than the system permits. </td><
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 14 2023 07:24:49 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Aug 14 2023 15:10:23 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

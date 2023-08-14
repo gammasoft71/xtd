@@ -10,11 +10,12 @@ var searchData=
   ['red_5fcolors_7',['red_colors',['../classxtd_1_1drawing_1_1red__colors.html',1,'xtd::drawing']]],
   ['region_8',['region',['../classxtd_1_1drawing_1_1region.html',1,'xtd::drawing']]],
   ['registered_5ftest_5fclass_9',['registered_test_class',['../classxtd_1_1tunit_1_1registered__test__class.html',1,'xtd::tunit']]],
-  ['renderer_10',['renderer',['../classxtd_1_1forms_1_1renderer.html',1,'xtd::forms']]],
-  ['replace_5fbox_11',['replace_box',['../classxtd_1_1forms_1_1replace__box.html',1,'xtd::forms']]],
-  ['replace_5fdialog_12',['replace_dialog',['../classxtd_1_1forms_1_1replace__dialog.html',1,'xtd::forms']]],
-  ['replace_5fevent_5fargs_13',['replace_event_args',['../classxtd_1_1forms_1_1replace__event__args.html',1,'xtd::forms']]],
-  ['reset_5fcolor_14',['reset_color',['../classxtd_1_1reset__color.html',1,'xtd']]],
-  ['resources_15',['resources',['../classxtd_1_1forms_1_1properties_1_1resources.html',1,'xtd::forms::properties']]],
-  ['run_5fworker_5fcompleted_5fevent_5fargs_16',['run_worker_completed_event_args',['../classxtd_1_1forms_1_1run__worker__completed__event__args.html',1,'xtd::forms']]]
+  ['registered_5fwait_5fhandle_10',['registered_wait_handle',['../classxtd_1_1threading_1_1registered__wait__handle.html',1,'xtd::threading']]],
+  ['renderer_11',['renderer',['../classxtd_1_1forms_1_1renderer.html',1,'xtd::forms']]],
+  ['replace_5fbox_12',['replace_box',['../classxtd_1_1forms_1_1replace__box.html',1,'xtd::forms']]],
+  ['replace_5fdialog_13',['replace_dialog',['../classxtd_1_1forms_1_1replace__dialog.html',1,'xtd::forms']]],
+  ['replace_5fevent_5fargs_14',['replace_event_args',['../classxtd_1_1forms_1_1replace__event__args.html',1,'xtd::forms']]],
+  ['reset_5fcolor_15',['reset_color',['../classxtd_1_1reset__color.html',1,'xtd']]],
+  ['resources_16',['resources',['../classxtd_1_1forms_1_1properties_1_1resources.html',1,'xtd::forms::properties']]],
+  ['run_5fworker_5fcompleted_5fevent_5fargs_17',['run_worker_completed_event_args',['../classxtd_1_1forms_1_1run__worker__completed__event__args.html',1,'xtd::forms']]]
 ];
