@@ -65,7 +65,7 @@ private:
     if (closing()) return;
     closing_ = true;
     for (auto& item : *this)
-      if (item && item->data_ && !item->is_main_thread() && !item->is_unmanaged_thread()) while (item->is_wait_sleep_join()) native::thread::sleep(10);
+      if (item && item->data_ && !item->is_main_thread() && !item->is_unmanaged_thread() && !item->is_background()) while (item->is_wait_sleep_join()) native::thread::sleep(10);
   }
   bool closing_ = false;
 };
