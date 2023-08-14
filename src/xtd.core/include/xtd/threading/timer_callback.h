@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include "../action.h"
+#include <any>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -19,6 +20,6 @@ namespace xtd {
     /// @param state An object containing application-specific information relevant to the method invoked by this delegate.
     /// @remarks Use a xtd::threading::timer_callback delegate to specify the method that is called by a xtd::threading::timer. This method does not execute in the thread that created the timer; it executes in a separate thread pool thread that is provided by the system. The xtd::threading::timer_callback delegate invokes the method once after the start time elapses, and continues to invoke it once per timer interval until the xtd::threading::timer is destroy, or until the xtd::threading::timer::change method is called with the interval value Infinite.
     /// @note The timer delegate is specified when the timer is constructed, and cannot be changed. The start time for a xtd::threading::timer is passed in the due_time parameter of the xtd::threading::timer constructors, and the period is passed in the period parameter. For an example that demonstrates creating and using a xtd::threading::timer_callback delegate, see xtd::threading::timer.
-    using timer_callback = action<object&>;
+    using timer_callback = action<std::any>;
   }
 }

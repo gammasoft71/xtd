@@ -233,6 +233,7 @@ add_sources(
   src/xtd/threading/tests/thread_tests.cpp
   src/xtd/threading/tests/thread_abort_exception_tests.cpp
   src/xtd/threading/tests/thread_interrupted_exception_tests.cpp
+  src/xtd/threading/tests/thread_pool_tests.cpp
   src/xtd/threading/tests/thread_priority_tests.cpp
   src/xtd/threading/tests/thread_state_exception_tests.cpp
   src/xtd/threading/tests/thread_state_tests.cpp

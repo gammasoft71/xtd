@@ -734,6 +734,8 @@ add_sources(
   include/xtd/threading/mutex
   include/xtd/threading/parameterized_thread_start.h
   include/xtd/threading/parameterized_thread_start
+  include/xtd/threading/registered_wait_handle.h
+  include/xtd/threading/registered_wait_handle
   include/xtd/threading/semaphore.h
   include/xtd/threading/semaphore
   include/xtd/threading/semaphore_full_exception.h
@@ -746,6 +748,8 @@ add_sources(
   include/xtd/threading/thread_abort_exception
   include/xtd/threading/thread_interrupted_exception.h
   include/xtd/threading/thread_interrupted_exception
+  include/xtd/threading/thread_pool.h
+  include/xtd/threading/thread_pool
   include/xtd/threading/thread_priority.h
   include/xtd/threading/thread_priority
   include/xtd/threading/thread_start.h
@@ -903,9 +907,11 @@ add_sources(
   src/xtd/threading/named_event_wait_handle.h
   src/xtd/threading/named_mutex.h
   src/xtd/threading/named_semaphore.h
+  src/xtd/threading/registered_wait_handle.cpp
   src/xtd/threading/semaphore.cpp
   src/xtd/threading/semaphore_base.h
   src/xtd/threading/thread.cpp
+  src/xtd/threading/thread_pool.cpp
   src/xtd/threading/timeout.cpp
   src/xtd/threading/unnamed_event_wait_handle.h
   src/xtd/threading/unnamed_mutex.h
