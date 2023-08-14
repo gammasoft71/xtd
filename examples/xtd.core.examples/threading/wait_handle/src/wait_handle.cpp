@@ -1,6 +1,5 @@
 #include <xtd/threading/auto_reset_event>
-//#include <xtd/threading/thread_pool>
-#include <xtd/threading/thread>
+#include <xtd/threading/thread_pool>
 #include <xtd/console>
 #include <xtd/date_time>
 #include <xtd/random>
@@ -17,10 +16,8 @@ namespace wait_handle_example {
       // wait until all tasks are completed.
       auto dt = date_time::now();
       console::write_line("Main thread is waiting for BOTH tasks to complete.");
-      //thread_pool::queue_user_work_item(wait_callback(do_task), event1);
-      //xthread_pool::queue_user_work_item(wait_callback(do_task), event2);
-      auto t1 = thread::start_new(parameterized_thread_start {do_task}, &event1);
-      auto t2 = thread::start_new(parameterized_thread_start {do_task}, &event2);
+      thread_pool::queue_user_work_item(wait_callback(do_task), event1);
+      thread_pool::queue_user_work_item(wait_callback(do_task), event2);
       wait_handle::wait_all({event1, event2});
       // The time shown below should match the longest task.
       console::write_line("Both tasks are completed (time waited={0})",
@@ -31,10 +28,8 @@ namespace wait_handle_example {
       dt = date_time::now();
       console::write_line();
       console::write_line("The main thread is waiting for either task to complete.");
-      //thread_pool::queue_user_work_item(wait_callback(do_task), event1);
-      //thread_pool::queue_user_work_item(wait_callback(do_task), event2);
-      auto t3 = thread::start_new(parameterized_thread_start {do_task}, &event1);
-      auto t4 = thread::start_new(parameterized_thread_start {do_task}, &event2);
+      thread_pool::queue_user_work_item(wait_callback(do_task), event1);
+      thread_pool::queue_user_work_item(wait_callback(do_task), event2);
       auto index = wait_handle::wait_any({event1, event2});
       // The time shown below should match the shortest task.
       console::write_line("Task {0} finished first (time waited={1}).",
@@ -42,11 +37,11 @@ namespace wait_handle_example {
     }
     
     static void do_task(std::any state) {
-      auto are = as<auto_reset_event*>(state);
+      auto are = as<auto_reset_event>(state);
       auto time = 1000 * r.next(2, 10);
       console::write_line("Performing a task for {0} milliseconds.", time);
       thread::sleep(time);
-      are->set();
+      are.set();
     }
     
   private:
