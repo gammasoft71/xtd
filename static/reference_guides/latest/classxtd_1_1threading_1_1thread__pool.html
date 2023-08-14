@@ -110,7 +110,48 @@ Inheritance diagram for xtd::threading::thread_pool:</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1threading.html" title="The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....">xtd::threading</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core threading</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>In the following example, the main application thread queues a method named ThreadProc to execute on a thread pool thread, sleeps for one second, and then exits. The ThreadProc method simply displays a message. <div class="fragment"></div><!-- fragment --> If you comment out the call to the <a class="el" href="classxtd_1_1threading_1_1thread.html#a42bc6e2bb805f928e50ae73d243b95f2" title="Suspends the current thread for a specified time.">xtd::threading::thread::sleep</a> method, the main thread exits before method runs on the thread pool thread. The thread pool uses background threads, which do not keep the application running if all foreground threads have terminated. (This is a simple example of a race condition.) </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>In the following example, the main application thread queues a method named ThreadProc to execute on a thread pool thread, sleeps for one second, and then exits. The ThreadProc method simply displays a message. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/threading/auto_reset_event&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/threading/thread_pool&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/date_time&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/random&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1threading.html">xtd::threading</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span>wait_handle_example {</div>
+<div class="line">  <span class="keyword">class </span>program {</div>
+<div class="line">  <span class="keyword">public</span>:</div>
+<div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> main() {</div>
+<div class="line">      <span class="comment">// Queue the task.</span></div>
+<div class="line">      thread_pool::queue_user_work_item({thread_proc});</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;Main thread does some work, then sleeps.&quot;</span>);</div>
+<div class="line">      thread::sleep(1000);</div>
+<div class="line">      </div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;Main thread exits.&quot;</span>);</div>
+<div class="line">    }</div>
+<div class="line">   </div>
+<div class="line">  <span class="keyword">private</span>:</div>
+<div class="line">    <span class="comment">// This thread procedure performs the task.</span></div>
+<div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> thread_proc(std::any state_info) {</div>
+<div class="line">      <span class="comment">// No state object was passed to queue_user_work_item, so state_info has no value.</span></div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;Hello from the thread pool.&quot;</span>);</div>
+<div class="line">    }</div>
+<div class="line">  };</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(wait_handle_example::program);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This example produces output similar to the following:</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Main thread does some work, then sleeps.</span></div>
+<div class="line"><span class="comment">// Hello from the thread pool.</span></div>
+<div class="line"><span class="comment">// Main thread exits.</span></div>
+<div class="ttc" id="agroup__keywords_html_gac9b8e6f22fb2fdc1bb915ee01aef848c"><div class="ttname"><a href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a></div><div class="ttdeci">#define startup_(main_class)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:57</div></div>
+<div class="ttc" id="anamespacextd_1_1threading_html"><div class="ttname"><a href="namespacextd_1_1threading.html">xtd::threading</a></div><div class="ttdoc">The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....</div><div class="ttdef"><b>Definition</b> abandoned_mutex_exception.h:10</div></div>
+<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
+</div><!-- fragment --> If you comment out the call to the <a class="el" href="classxtd_1_1threading_1_1thread.html#a42bc6e2bb805f928e50ae73d243b95f2" title="Suspends the current thread for a specified time.">xtd::threading::thread::sleep</a> method, the main thread exits before method runs on the thread pool thread. The thread pool uses background threads, which do not keep the application running if all foreground threads have terminated. (This is a simple example of a race condition.) </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Many applications create threads that spend a great deal of time in the sleeping state, waiting for an event to occur. Other threads might enter a sleeping state only to be awakened periodically to poll for a change or update status information. The thread pool enables you to use threads more efficiently by providing your application with a pool of worker threads that are managed by the system. Examples of operations that use thread pool threads include the following:<ul>
 <li>When you create a xtd::threading::task::task or xtd::threading::task::task &lt; result_t &gt; object to perform some task asynchronously, by default the task is scheduled to run on a thread pool thread.</li>
 <li>Asynchronous timers use the thread pool. Thread pool threads execute callbacks from the xtd::threading::timer class and raise events from the xtd::timers::timer class.</li>
@@ -780,7 +821,7 @@ You can use the <a class="el" href="classxtd_1_1threading_1_1thread__pool.html#a
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 14 2023 15:10:22 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Aug 14 2023 15:51:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
