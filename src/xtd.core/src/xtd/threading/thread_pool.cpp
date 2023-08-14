@@ -75,6 +75,28 @@ void thread_pool::get_min_threads(size_t& worker_threads, size_t& completion_por
   completion_port_threads = min_asynchronous_io_threads_;
 }
 
+bool thread_pool::queue_user_work_item(const wait_callback& call_back) {
+  if (threads_.size() == 0)
+    create_threads();
+  lock_(thread_pool_items_sync_root_) {
+    if (thread_pool_items_.size() == max_threads_) return false;
+    thread_pool_items_.emplace_back(call_back);
+    semaphore_.release();
+  }
+  return true;
+}
+
+bool thread_pool::queue_user_work_item(const wait_callback& call_back, std::any state) {
+  if (threads_.size() == 0)
+    create_threads();
+  lock_(thread_pool_items_sync_root_) {
+    if (thread_pool_items_.size() == max_threads_) return false;
+    thread_pool_items_.emplace_back(call_back, state);
+    semaphore_.release();
+  }
+  return true;
+}
+
 bool thread_pool::set_max_threads(size_t worker_threads, size_t completion_port_threads) {
   if (worker_threads < environment::processor_count() || completion_port_threads < environment::processor_count())
     return false;
