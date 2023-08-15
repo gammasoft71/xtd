@@ -824,7 +824,7 @@ shared_ptr<iasync_result> control::begin_invoke(delegate<void(vector<any>)> valu
   shared_ptr<async_result_invoke> async = make_shared<async_result_invoke>(std::reference_wrapper(*this));
   async->async_mutex().lock();
   if (is_handle_created()) native::control::invoke_in_control_thread(data_->handle, value, args, async->data_->async_mutex, async->data_->is_completed);
-  this_thread::yield();
+  threading::thread::yield();
   return async;
 }
 
