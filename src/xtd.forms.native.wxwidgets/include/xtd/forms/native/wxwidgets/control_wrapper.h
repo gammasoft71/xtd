@@ -10,7 +10,6 @@
 #include <functional>
 #include <memory>
 #include <set>
-#include <thread>
 #include <xtd/delegate.h>
 #include <xtd/object.h>
 #include <xtd/using.h>
