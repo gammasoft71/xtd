@@ -1,10 +1,11 @@
 #include <xtd/forms/application>
 #include <xtd/forms/form>
 #include <xtd/forms/list_box>
+#include <xtd/threading/thread>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
+using namespace xtd::threading;
 
 class form_thread : public form {
 public:
@@ -12,34 +13,35 @@ public:
     text("Form and thread example");
     form_closed += [&] {
       closed = true;
-      for (auto index = 0U; index < threads.size(); ++index)
+      for (auto index = 0u; index < threads.size(); ++index)
         threads[index].join();
     };
     
     messages.parent(*this);
     messages.dock(dock_style::fill);
     
-    for (auto index = 0U; index < threads.size(); ++index) {
-      threads[index] = thread([&](auto user_thread_id) {
-        auto counter = 0U;
+    for (auto index = 0u; index < threads.size(); ++index) {
+      threads[index] = thread {parameterized_thread_start {[&](auto user_thread_id) {
+        auto counter = 0u;
         while (!closed) {
           /// simulate work...
-          this_thread::sleep_for(50_ms);
+          thread::sleep(50_ms);
           ++counter;
           /// call invoke method to update UI in the main thread.
           messages.begin_invoke([&, counter, user_thread_id] {
-            messages.items().push_back(ustring::format("thread: {}, counter: {}", user_thread_id, counter));
+            messages.items().push_back(ustring::format("thread {}: counter: {}", user_thread_id, counter));
             messages.selected_index(messages.items().size() - 1);
           });
         }
-      }, index);
+      }}};
+      threads[index].start(index);
     }
   }
   
 private:
   list_box messages;
   bool closed = false;
-  vector<thread> threads {environment::processor_count() - 1};
+  std::vector<thread> threads {environment::processor_count() - 1};
 };
 
 auto main()->int {
