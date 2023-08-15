@@ -7,8 +7,8 @@
 #include <xtd/forms/label>
 #include <xtd/forms/panel>
 #include <xtd/forms/track_bar>
+#include <xtd/threading/thread>
 #include <xtd/random>
-#include <thread>
 #include "grid.h"
 
 namespace game_of_life {
@@ -165,7 +165,7 @@ namespace game_of_life {
         });
       };
       
-      thread_run_ = std::thread([&] {
+      thread_run_ = xtd::threading::thread {xtd::threading::thread_start {[&] {
         while (!closed_) {
           if (!run_enabled_)
             std::this_thread::sleep_for(std::chrono::milliseconds(200));
@@ -178,7 +178,8 @@ namespace game_of_life {
             lastRunTime = std::chrono::high_resolution_clock::now();
           }
         }
-      });
+      }}};
+      thread_run_.start();
     }
     
   private:
@@ -447,7 +448,7 @@ namespace game_of_life {
     xtd::forms::label label_speed_;
     xtd::forms::track_bar track_bar_speed_;
     xtd::forms::panel panel_grid_;
-    std::thread thread_run_;
+    xtd::threading::thread thread_run_;
     xtd::drawing::color line_color_ = xtd::drawing::system_colors::window_text();
     xtd::drawing::color empty_color_ = xtd::drawing::system_colors::window();
     xtd::drawing::color populated_color_ = xtd::drawing::system_colors::window_text();
