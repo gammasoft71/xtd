@@ -11,22 +11,17 @@ struct timer::data {
   timer_callback callback;
   bool closed{false};
   int32 due_time{-1};
-  auto_reset_event event {false};
+  auto_reset_event event {true};
   int32 period {-1};
   std::any state{this};
-  threading::thread thread {
-    thread_start {
-      [&] {
-        bool run_once = false;
-        while (!closed) {
-          if (!event.wait_one(run_once ? period : due_time)) {
-            run_once = true;
-            thread_pool::queue_user_work_item(callback, state);
-          }
-        }
-      }
+  wait_callback timer_proc = wait_callback {[&] {
+    if (due_time > 0) thread::sleep(due_time);
+    while (!closed) {
+      callback(state);
+      thread::sleep(period);
     }
-  };
+    event.set();
+  }};
 };
 
 timer::timer(const timer_callback& callback) : timer(callback, *this, -1, -1) {
@@ -49,7 +44,6 @@ timer::timer(const timer_callback& callback, std::any state, int32 due_time, int
   data_->state = state;
   data_->due_time = due_time;
   data_->period = period;
-  data_->thread.start();
   change(due_time, period);
 }
 
@@ -76,14 +70,14 @@ timer::~timer() {
 }
 
 void timer::change(int32 due_time, int32 period) {
-  if (data_->callback.is_empty())
-    throw invalid_operation_exception {csf_};
-  if (due_time < timeout::infinite || period < timeout::infinite)
-    throw argument_out_of_range_exception {csf_};
+  if (data_->callback.is_empty()) throw invalid_operation_exception {csf_};
+  if (due_time < timeout::infinite || period < timeout::infinite) throw argument_out_of_range_exception {csf_};
   
   data_->due_time = due_time;
   data_->period = period;
-  data_->event.set();
+  close();
+  data_->closed = false;
+  thread_pool::queue_user_work_item(data_->timer_proc);
 }
 
 void timer::change(int64 due_time, int64 period) {
@@ -99,7 +93,7 @@ void timer::change(uint32 due_time, uint32 period) {
 }
 
 void timer::close() {
+  if (data_->closed) return;
   data_->closed = true;
-  data_->event.set();
-  data_->thread.join();
+  data_->event.wait_one();
 }
