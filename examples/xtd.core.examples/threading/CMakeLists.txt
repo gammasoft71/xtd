@@ -16,5 +16,6 @@ add_projects(
   thread
   thread_pool
   timeout
+  timer
   wait_handle
 )
