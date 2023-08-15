@@ -1,37 +1,36 @@
 #include <xtd/net/sockets/socket>
 #include <xtd/net/ip_end_point>
+#include <xtd/threading/thread>
 #include <xtd/as>
 #include <xtd/console>
-#include <thread>
 
-using namespace std;
-using namespace std::this_thread;
 using namespace xtd;
 using namespace xtd::net;
 using namespace xtd::net::sockets;
+using namespace xtd::threading;
 
 auto main()->int {
   auto terminate_app = false;
   
-  auto on_server_accept = [&](shared_ptr<iasync_result> ar) {
+  auto on_server_accept = [&](std::shared_ptr<iasync_result> ar) {
     auto socket = as<xtd::net::sockets::socket>(ar->async_state()).end_accept(ar);
     
     while (!terminate_app) {
-      auto buffer = vector<unsigned char>(256);
+      auto buffer = std::vector<unsigned char>(256);
       auto number_of_byte_received = socket.receive(buffer);
       if (number_of_byte_received) console::write_line(ustring {buffer.begin(), buffer.begin() + number_of_byte_received});
     }
   };
   
-  auto on_client_connect = [&](shared_ptr<iasync_result> ar) {
+  auto on_client_connect = [&](std::shared_ptr<iasync_result> ar) {
     auto socket = as<xtd::net::sockets::socket>(ar->async_state());
     socket.end_connect(ar);
     
     auto counter = 0;
     while (!terminate_app) {
       auto str = ustring::format("socket={}, counter={}", socket.handle(), ++counter);
-      socket.send(vector<unsigned char> {str.begin(), str.end()});
-      sleep_for(50_ms);
+      socket.send(std::vector<unsigned char> {str.begin(), str.end()});
+      thread::sleep(50_ms);
     }
   };
   

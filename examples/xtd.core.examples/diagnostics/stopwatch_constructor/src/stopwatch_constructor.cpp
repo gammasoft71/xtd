@@ -1,5 +1,5 @@
-#include <xtd/threading/thread>
 #include <xtd/diagnostics/stopwatch>
+#include <xtd/threading/thread>
 #include <xtd/console>
 #include <chrono>
 

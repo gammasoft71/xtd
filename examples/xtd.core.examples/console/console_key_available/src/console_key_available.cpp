@@ -1,5 +1,5 @@
-#include <xtd/console>
 #include <xtd/threading/thread>
+#include <xtd/console>
 
 using namespace xtd;
 using namespace xtd::threading;

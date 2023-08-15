@@ -1,10 +1,9 @@
+#include <xtd/threading/thread>
 #include <xtd/as>
 #include <xtd/beep>
 #include <xtd/console>
-#include <thread>
 
 using namespace std;
-using namespace std::this_thread;
 using namespace xtd;
 
 // Define the frequencies of notes in an octave, as well as
@@ -60,7 +59,7 @@ public:
 void play(const vector<note>& tune) {
   for (auto n : tune) {
     if (n.note_tone() == tone::rest)
-      sleep_for(chrono::milliseconds(as<int>(n.note_duration())));
+      threading::thread::sleep(as<int>(n.note_duration()));
     else
       cout << beep(as<unsigned int>(n.note_tone()), as<unsigned int>(n.note_duration()));
   }

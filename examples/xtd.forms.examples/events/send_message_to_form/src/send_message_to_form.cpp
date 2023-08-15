@@ -1,12 +1,12 @@
+#include <xtd/threading/thread_pool>
 #include <xtd/forms/application>
 #include <xtd/forms/button>
 #include <xtd/forms/form>
 #include <xtd/forms/list_box>
-#include <thread>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
+using namespace xtd::threading;
 
 class something_ready_notifier : public object {
 public:
@@ -47,11 +47,10 @@ public:
     button_send.location({10, 10});
     button_send.text("Send async notify something ready");
     button_send.click += [&] {
-      thread async_thread([&] {
-        this_thread::sleep_for(2_s);
+      thread_pool::queue_user_work_item(wait_callback {[&] {
+        thread::sleep(2_s);
         notifier.notify_something_ready();
-      });
-      async_thread.detach();
+      }});
     };
     
     list_box_messages.location({10, 50});
