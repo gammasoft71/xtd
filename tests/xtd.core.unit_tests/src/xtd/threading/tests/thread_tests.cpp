@@ -1,6 +1,7 @@
 #include <xtd/threading/thread.h>
 #include <xtd/threading/interlocked.h>
 #include <xtd/xtd.tunit>
+#include <thread>
 
 using namespace xtd::threading;
 using namespace xtd::tunit;
