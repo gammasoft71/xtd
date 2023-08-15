@@ -1,12 +1,12 @@
-#include <thread>
-#include <xtd/literals.h>
-#include <xtd/startup.h>
-#include <xtd/forms/application.h>
-#include <xtd/forms/button.h>
-#include <xtd/forms/choice.h>
-#include <xtd/forms/label.h>
-#include <xtd/forms/numeric_up_down.h>
-#include <xtd/forms/text_box.h>
+#include <xtd/literals>
+#include <xtd/startup>
+#include <xtd/forms/application>
+#include <xtd/forms/button>
+#include <xtd/forms/choice>
+#include <xtd/forms/label>
+#include <xtd/forms/numeric_up_down>
+#include <xtd/forms/text_box>
+#include <xtd/threading/thread>
 
 namespace guidgen_gui {
   class main_form : public xtd::forms::form {
@@ -16,7 +16,8 @@ namespace guidgen_gui {
       using namespace xtd;
       using namespace xtd::drawing;
       using namespace xtd::forms;
-      
+      using namespace xtd::threading;
+
       client_size({645, 350});
       minimum_client_size(client_size());
       controls().push_back_range({count_label_, count_numeric_up_down_, format_label_, format_choice_, generate_button_, result_text_box_});
@@ -47,7 +48,7 @@ namespace guidgen_gui {
       generate_button_.text("Generate"_t);
       generate_button_.click += [&] {
         result_text_box_.text("");
-        thread generate([&]{
+        auto generate = threading::thread {thread_start {[&]{
           begin_invoke([&] {
             count_numeric_up_down_.enabled(false);
             format_choice_.enabled(false);
@@ -72,7 +73,8 @@ namespace guidgen_gui {
             application::use_wait_cursor(false);
             application::do_events();
           });
-        });
+        }}};
+        generate.start();
         generate.detach();
       };
       
