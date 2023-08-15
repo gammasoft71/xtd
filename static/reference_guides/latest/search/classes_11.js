@@ -30,7 +30,7 @@ var searchData=
   ['time_5fout_5fexception_27',['time_out_exception',['../classxtd_1_1time__out__exception.html',1,'xtd']]],
   ['time_5fzone_5fnot_5ffound_5fexception_28',['time_zone_not_found_exception',['../classxtd_1_1time__zone__not__found__exception.html',1,'xtd']]],
   ['timeout_29',['timeout',['../classxtd_1_1threading_1_1timeout.html',1,'xtd::threading']]],
-  ['timer_30',['timer',['../classxtd_1_1forms_1_1timer.html',1,'xtd::forms']]],
+  ['timer_30',['timer',['../classxtd_1_1forms_1_1timer.html',1,'xtd::forms::timer'],['../classxtd_1_1threading_1_1timer.html',1,'xtd::threading::timer']]],
   ['toggle_5fbutton_31',['toggle_button',['../classxtd_1_1forms_1_1toggle__button.html',1,'xtd::forms']]],
   ['toggle_5fbutton_5frenderer_32',['toggle_button_renderer',['../classxtd_1_1forms_1_1toggle__button__renderer.html',1,'xtd::forms']]],
   ['toggle_5fbuttons_33',['toggle_buttons',['../classxtd_1_1forms_1_1toggle__buttons.html',1,'xtd::forms']]],
