@@ -19,31 +19,31 @@ xtdc run
 # Output
 
 ```
-08:45:24.070 Creating timer.
+10:37:37.167 Creating timer.
 
-08:45:25.076 Checking status  1.
-08:45:25.333 Checking status  2.
-08:45:25.591 Checking status  3.
-08:45:25.847 Checking status  4.
-08:45:26.101 Checking status  5.
-08:45:26.365 Checking status  6.
-08:45:26.611 Checking status  7.
-08:45:26.864 Checking status  8.
-08:45:27.118 Checking status  9.
-08:45:27.375 Checking status 10.
+10:37:38.172 Checking status  1.
+10:37:38.426 Checking status  2.
+10:37:38.679 Checking status  3.
+10:37:38.932 Checking status  4.
+10:37:39.185 Checking status  5.
+10:37:39.439 Checking status  6.
+10:37:39.691 Checking status  7.
+10:37:39.946 Checking status  8.
+10:37:40.200 Checking status  9.
+10:37:40.455 Checking status 10.
 
 Changing period to .5 seconds.
 
-08:45:27.885 Checking status  1.
-08:45:28.389 Checking status  2.
-08:45:28.897 Checking status  3.
-08:45:29.402 Checking status  4.
-08:45:29.913 Checking status  5.
-08:45:30.414 Checking status  6.
-08:45:30.922 Checking status  7.
-08:45:31.428 Checking status  8.
-08:45:31.934 Checking status  9.
-08:45:32.445 Checking status 10.
+10:37:40.719 Checking status  1.
+10:37:41.220 Checking status  2.
+10:37:41.725 Checking status  3.
+10:37:42.229 Checking status  4.
+10:37:42.733 Checking status  5.
+10:37:43.235 Checking status  6.
+10:37:43.740 Checking status  7.
+10:37:44.245 Checking status  8.
+10:37:44.746 Checking status  9.
+10:37:45.249 Checking status 10.
 
 Destroying timer.
 ```
