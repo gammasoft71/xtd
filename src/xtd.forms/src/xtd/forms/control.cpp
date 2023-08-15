@@ -528,7 +528,7 @@ control& control::height(int32 height) {
 }
 
 bool control::invoke_required() const noexcept {
-  return threading::thread::current_thread().is_main_thread();
+  return !threading::thread::current_thread().is_main_thread();
 }
 
 bool control::is_handle_created() const noexcept {
