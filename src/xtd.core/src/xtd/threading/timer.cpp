@@ -60,7 +60,7 @@ timer::timer(const timer& timer) : data_(timer.data_) {
 }
 
 timer& timer::operator=(const timer& timer) {
-  close();
+  if (data_.use_count() == 1) close();
   data_ = timer.data_;
   return *this;
 }
