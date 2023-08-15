@@ -163,8 +163,12 @@ void environment::current_directory(const ustring& directory_name) {
   io::directory::set_current_directory(directory_name);
 }
 
-std::thread::id environment::current_thread_id() noexcept {
-  return std::this_thread::get_id();
+int32 environment::current_managed_thread_id() noexcept {
+  return threading::thread::current_thread().managed_thread_id();
+}
+
+intptr environment::current_thread_id() noexcept {
+  return threading::thread::current_thread().thread_id();
 }
 
 int32 environment::exit_code() noexcept {
