@@ -7,6 +7,7 @@
 #include <xtd/diagnostics/debugger.h>
 #include <xtd/diagnostics/trace_switch.h>
 #include <xtd/drawing/system_fonts.h>
+#include <xtd/threading/thread.h>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/graphics.h>
 #include <xtd/drawing/native/system_colors.h>
@@ -55,7 +56,7 @@ namespace {
     return mouse_buttons::none;
   }
   
-  bool is_trace_form_or_control(const string& name) {
+  bool is_trace_form_or_control(const ustring& name) {
     return name == "9f5767d6-7a21-4ebe-adfe-2427b2024a55" || name == "d014d407-851c-49c1-a343-3380496a639a";
   }
 }
@@ -87,7 +88,6 @@ bool control::async_result_invoke::is_completed() const noexcept {
 }
 
 bool control::check_for_illegal_cross_thread_calls_ = diagnostics::debugger::is_attached();
-std::thread::id control::handle_created_on_thread_id_ = std::this_thread::get_id();
 forms::keys control::modifier_keys_ = forms::keys::none;
 forms::mouse_buttons control::mouse_buttons_ = forms::mouse_buttons::none;
 map<intptr, control*> control::handles_;
@@ -528,7 +528,7 @@ control& control::height(int32 height) {
 }
 
 bool control::invoke_required() const noexcept {
-  return handle_created_on_thread_id_ != this_thread::get_id();
+  return threading::thread::current_thread().is_main_thread();
 }
 
 bool control::is_handle_created() const noexcept {
