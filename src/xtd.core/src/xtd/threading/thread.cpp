@@ -143,13 +143,13 @@ thread::thread(const xtd::threading::parameterized_thread_start& start, int32 ma
 }
 
 thread& thread::operator=(const thread& value) {
-  close();
+  if (data_.use_count() == 1) close();
   data_ = value.data_;
   return *this;
 }
 
 thread::~thread() {
-  close();
+  if (data_.use_count() == 1) close();
 }
 
 intptr thread::handle() const noexcept {
@@ -362,7 +362,7 @@ bool thread::yield() {
 void thread::close() {
   if (data_ == nullptr || is_main_thread() || is_unmanaged_thread()) return;
   
-  if (data_.use_count() == 1 && data_->joinable) join();
+  if (data_->joinable) join();
 }
 
 bool thread::do_wait(wait_handle& wait_handle, int32 milliseconds_timeout) {
