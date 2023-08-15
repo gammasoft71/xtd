@@ -1,4 +1,5 @@
 #include <xtd/threading/mutex.h>
+#include <xtd/threading/thread.h>
 #include <xtd/xtd.tunit>
 #include <utility>
 
@@ -38,10 +39,11 @@ namespace xtd::tests {
       auto m = mutex {false};
       assert::are_not_equal(mutex::invalid_handle, m.handle(), csf_);
       auto thread_ran = false;
-      auto thread = std::thread {[&] {
+      auto thread = threading::thread {thread_start {[&] {
         assert::is_true(m.wait_one(0), csf_);
         thread_ran = true;
-      }};
+      }}};
+      thread.start();
       thread.join();
       assert::is_true(thread_ran, csf_);
     }
@@ -50,10 +52,11 @@ namespace xtd::tests {
       auto m = mutex {true};
       assert::are_not_equal(mutex::invalid_handle, m.handle(), csf_);
       auto thread_ran = false;
-      auto thread = std::thread {[&] {
+      auto thread = threading::thread {thread_start {[&] {
         assert::is_false(m.wait_one(0), csf_);
         thread_ran = true;
-      }};
+      }}};
+      thread.start();
       thread.join();
       assert::is_true(thread_ran, csf_);
     }
@@ -62,10 +65,11 @@ namespace xtd::tests {
       auto m = mutex {false, "xtd_mutex_test"};
       assert::are_not_equal(mutex::invalid_handle, m.handle(), csf_);
       auto thread_ran = false;
-      auto thread = std::thread {[&] {
+      auto thread = threading::thread {thread_start {[&] {
         assert::is_true(m.wait_one(0), csf_);
         thread_ran = true;
-      }};
+      }}};
+      thread.start();
       thread.join();
       assert::is_true(thread_ran, csf_);
     }
@@ -74,10 +78,11 @@ namespace xtd::tests {
       auto m = mutex {true, "xtd_mutex_test"};
       assert::are_not_equal(mutex::invalid_handle, m.handle(), csf_);
       auto thread_ran = false;
-      auto thread = std::thread {[&] {
+      auto thread = threading::thread {thread_start {[&] {
         assert::is_false(m.wait_one(0), csf_);
         thread_ran = true;
-      }};
+      }}};
+      thread.start();
       thread.join();
       assert::is_true(thread_ran, csf_);
     }
@@ -91,11 +96,12 @@ namespace xtd::tests {
     void test_method_(create_two_mutex_with_same_name) {
       auto m1 = mutex {true, "xtd_mutex_test"};
       auto thread_ran = false;
-      auto thread = std::thread {[&] {
+      auto thread = threading::thread {thread_start {[&] {
         auto m2 = mutex {false, "xtd_mutex_test"};
         assert::is_false(m2.wait_one(0), csf_);
         thread_ran = true;
-      }};
+      }}};
+      thread.start();
       thread.join();
       assert::is_true(thread_ran, csf_);
     }
@@ -105,12 +111,13 @@ namespace xtd::tests {
       auto m1 = mutex {true, "xtd_mutex_test", created_new};
       assert::is_true(created_new, csf_);
       auto thread_ran = false;
-      auto thread = std::thread {[&] {
+      auto thread = threading::thread {thread_start {[&] {
         auto m2 = mutex {false, "xtd_mutex_test", created_new};
         assert::is_false(created_new, csf_);
         assert::is_false(m2.wait_one(0), csf_);
         thread_ran = true;
-      }};
+      }}};
+      thread.start();
       thread.join();
       assert::is_true(thread_ran, csf_);
     }
@@ -120,12 +127,13 @@ namespace xtd::tests {
       auto m1 = mutex {true, "xtd_mutex_test", created_new};
       assert::is_true(created_new, csf_);
       auto thread_ran = false;
-      auto thread = std::thread {[&] {
+      auto thread = threading::thread {thread_start {[&] {
         auto m2 = mutex {false, "xtd_mutex_test_2", created_new};
         assert::is_true(created_new, csf_);
         assert::is_true(m2.wait_one(0), csf_);
         thread_ran = true;
-      }};
+      }}};
+      thread.start();
       thread.join();
       assert::is_true(thread_ran, csf_);
     }
@@ -134,12 +142,13 @@ namespace xtd::tests {
       auto m = mutex {};
       assert::are_not_equal(wait_handle::invalid_handle, m.handle(), csf_);
       auto thread_ran = false;
-      auto thread = std::thread {[&] {
+      auto thread = threading::thread {thread_start {[&] {
         auto m2 = mutex {};
         m.close();
         assert::are_equal(wait_handle::invalid_handle, m.handle(), csf_);
         thread_ran = true;
-      }};
+      }}};
+      thread.start();
       thread.join();
       assert::is_true(thread_ran, csf_);
       assert::are_equal(wait_handle::invalid_handle, m.handle(), csf_);
@@ -150,10 +159,11 @@ namespace xtd::tests {
       auto m = mutex {false, "xtd_mutex_test", created_new};
       assert::are_not_equal(wait_handle::invalid_handle, m.handle(), csf_);
       auto thread_ran = false;
-      auto thread = std::thread {[&] {
+      auto thread = threading::thread {thread_start {[&] {
         m.close();
         thread_ran = true;
-      }};
+      }}};
+      thread.start();
       thread.join();
       assert::is_true(thread_ran, csf_);
       assert::are_equal(wait_handle::invalid_handle, m.handle(), csf_);
@@ -165,11 +175,12 @@ namespace xtd::tests {
       auto m = mutex {"xtd_mutex_test", created_new};
       assert::are_not_equal(wait_handle::invalid_handle, m.handle(), csf_);
       auto thread_ran = false;
-      auto thread = std::thread {[&] {
+      auto thread = threading::thread {thread_start {[&] {
         auto m2 = mutex::open_existing("xtd_mutex_test");
         assert::are_not_equal(wait_handle::invalid_handle, m2.handle(), csf_);
         thread_ran = true;
-      }};
+      }}};
+      thread.start();
       thread.join();
       assert::is_true(thread_ran, csf_);
     }
@@ -180,10 +191,11 @@ namespace xtd::tests {
       auto m = mutex {"xtd_mutex_test", created_new};
       assert::are_not_equal(wait_handle::invalid_handle, m.handle(), csf_);
       auto thread_ran = false;
-      auto thread = std::thread {[&] {
+      auto thread = threading::thread {thread_start {[&] {
         assert::throws<io::io_exception>([] {auto m2 = mutex::open_existing("xtd_mutex_test_2");}, csf_);
         thread_ran = true;
-      }};
+      }}};
+      thread.start();
       thread.join();
       assert::is_true(thread_ran, csf_);
     }
@@ -194,10 +206,11 @@ namespace xtd::tests {
       auto m = mutex {"xtd_mutex_test", created_new};
       assert::are_not_equal(wait_handle::invalid_handle, m.handle(), csf_);
       auto thread_ran = false;
-      auto thread = std::thread {[&] {
+      auto thread = threading::thread {thread_start {[&] {
         assert::throws<argument_exception>([] {auto m2 = mutex::open_existing("");}, csf_);
         thread_ran = true;
-      }};
+      }}};
+      thread.start();
       thread.join();
       assert::is_true(thread_ran, csf_);
     }
@@ -208,13 +221,14 @@ namespace xtd::tests {
       auto m = mutex {"xtd_mutex_test", created_new};
       assert::are_not_equal(wait_handle::invalid_handle, m.handle(), csf_);
       auto thread_ran = false;
-      auto thread = std::thread {[&] {
+      auto thread = threading::thread {thread_start {[&] {
         auto m2 = mutex {};
         auto result = mutex::try_open_existing("xtd_mutex_test", m2);
         assert::is_true(result, csf_);
         assert::are_not_equal(wait_handle::invalid_handle, m2.handle(), csf_);
         thread_ran = true;
-      }};
+      }}};
+      thread.start();
       thread.join();
       assert::is_true(thread_ran, csf_);
     }
@@ -225,13 +239,14 @@ namespace xtd::tests {
       auto m = mutex {"xtd_mutex_test", created_new};
       assert::are_not_equal(wait_handle::invalid_handle, m.handle(), csf_);
       auto thread_ran = false;
-      auto thread = std::thread {[&] {
+      auto thread = threading::thread {thread_start {[&] {
         auto m2 = mutex {};
         auto result = mutex::try_open_existing("xtd_mutex_test_2", m2);
         assert::is_false(result, csf_);
         assert::are_equal(wait_handle::invalid_handle, m2.handle(), csf_);
         thread_ran = true;
-      }};
+      }}};
+      thread.start();
       thread.join();
       assert::is_true(thread_ran, csf_);
     }
@@ -242,13 +257,14 @@ namespace xtd::tests {
       auto m = mutex {"xtd_mutex_test", created_new};
       assert::are_not_equal(wait_handle::invalid_handle, m.handle(), csf_);
       auto thread_ran = false;
-      auto thread = std::thread {[&] {
+      auto thread = threading::thread {thread_start {[&] {
         auto m2 = mutex {};
         auto result = mutex::try_open_existing("", m2);
         assert::is_false(result, csf_);
         assert::are_equal(wait_handle::invalid_handle, m2.handle(), csf_);
         thread_ran = true;
-      }};
+      }}};
+      thread.start();
       thread.join();
       assert::is_true(thread_ran, csf_);
     }
