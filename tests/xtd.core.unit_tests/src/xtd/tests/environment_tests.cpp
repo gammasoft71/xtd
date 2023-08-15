@@ -6,6 +6,7 @@
 #include "platform_name.h"
 #include "standard_name.h"
 #include <xtd/environment.h>
+#include <xtd/threading/thread.h>
 #include <xtd/tunit/assert.h>
 #include <xtd/tunit/string_assert.h>
 #include <xtd/tunit/test_class_attribute.h>
@@ -45,10 +46,14 @@ namespace xtd::tests {
       io::directory::remove(directory);
     }
     
-    void test_method_(current_thread_id) {
-      assert::are_equal(std::this_thread::get_id(), environment::current_thread_id(), csf_);
+    void test_method_(current_managed_thread_id) {
+      assert::are_equal(threading::thread::current_thread().managed_thread_id(), environment::current_managed_thread_id(), csf_);
     }
     
+    void test_method_(current_thread_id) {
+      assert::are_equal(threading::thread::current_thread().thread_id(), environment::current_thread_id(), csf_);
+    }
+
     void test_method_(exit_code) {
       assert::is_zero(environment::exit_code(), csf_);
       environment::exit_code(42);
