@@ -166,6 +166,7 @@
 #include "threading/thread_state.h"
 #include "threading/thread_state_exception.h"
 #include "threading/timeout.h"
+#include "threading/timer.h"
 #include "threading/timer_callback.h"
 #include "threading/wait_callback.h"
 #include "threading/wait_handle.h"
