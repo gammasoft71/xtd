@@ -4,7 +4,6 @@
 #pragma once
 #include <map>
 #include <cstdlib>
-#include <thread>
 #include <vector>
 
 #include "argument_exception.h"
@@ -387,10 +386,14 @@ namespace xtd {
     /// @exception xtd::security::security_exception The caller does not have the appropriate permission.
     static void current_directory(const xtd::ustring& directory_name);
     
+    /// @brief Gets a unique identifier for the current managed thread.
+    /// @return A std::thread::id that represents a unique identifier for this thread.
+    static int32 current_managed_thread_id() noexcept;
+
     /// @brief Gets a unique identifier for the current thread.
     /// @return A std::thread::id that represents a unique identifier for this thread.
-    static std::thread::id current_thread_id() noexcept;
-    
+    static intptr current_thread_id() noexcept;
+
     /// @brief Gets the exit code of the process.
     /// @return A 32-bit signed integer containing the exit code. The default value is 0 (zero), which indicates that the process completed successfully.
     /// @remarks If the main method returns void, you can use this property to set the exit code that will be returned to the calling environment. If Main does not return void, this property is ignored. The initial value of this property is zero.
