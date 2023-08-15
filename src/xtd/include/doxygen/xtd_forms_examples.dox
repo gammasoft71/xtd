@@ -241,6 +241,21 @@
 /// <br>
 /// @image html enable_debug_gd.png
 ///
+/// @example forms_timer.cpp
+/// demonstrates the use of xtd::forms::timer component.
+/// @par Windows
+/// @image html forms_timer_w.png
+/// <br>
+/// @image html forms_timer_wd.png
+/// @par macOS
+/// @image html forms_timer_m.png
+/// <br>
+/// @image html forms_timer_md.png
+/// @par Gnome
+/// @image html forms_timer_g.png
+/// <br>
+/// @image html forms_timer_gd.png
+///
 /// @example image_list.cpp
 /// demonstrates the use of xtd::forms::image_list component.
 /// @par Windows
@@ -345,21 +360,6 @@
 /// @image html texts_g.png
 /// <br>
 /// @image html texts_gd.png
-///
-/// @example timer.cpp
-/// demonstrates the use of xtd::forms::timer component.
-/// @par Windows
-/// @image html timer_w.png
-/// <br>
-/// @image html timer_wd.png
-/// @par macOS
-/// @image html timer_m.png
-/// <br>
-/// @image html timer_md.png
-/// @par Gnome
-/// @image html timer_g.png
-/// <br>
-/// @image html timer_gd.png
 ///
 /// @example translator.cpp
 /// demonstrates the use of xtd::forms::translator strings.
@@ -3090,6 +3090,21 @@
 /// @image html some_controls_g.png
 /// <br>
 /// @image html some_controls_gd.png
+///
+/// @example some_system_controls.cpp
+/// This example demonstrates the use of some controls.
+/// @par Windows
+/// @image html some_system_controls_w.png
+/// <br>
+/// @image html some_system_controls_wd.png
+/// @par macOS
+/// @image html some_system_controls_m.png
+/// <br>
+/// @image html some_system_controls_md.png
+/// @par Gnome
+/// @image html some_system_controls_g.png
+/// <br>
+/// @image html some_system_controls_gd.png
 ///
 /// @example status_bar_without_panels.cpp
 /// demonstrates the use of xtd::forms::tool_bar component.
