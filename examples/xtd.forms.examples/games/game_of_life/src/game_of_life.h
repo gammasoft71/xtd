@@ -168,13 +168,13 @@ namespace game_of_life {
       thread_run_ = xtd::threading::thread {xtd::threading::thread_start {[&] {
         while (!closed_) {
           if (!run_enabled_)
-            std::this_thread::sleep_for(std::chrono::milliseconds(200));
+            xtd::threading::thread::sleep(std::chrono::milliseconds(200));
           else {
             next();
             static auto lastRunTime = std::chrono::high_resolution_clock::now();
             auto elapsedTime = std::chrono::high_resolution_clock::now() - lastRunTime;
-            if (elapsedTime < std::chrono::milliseconds(interval_milliseconds_)) std::this_thread::sleep_for(std::chrono::milliseconds(interval_milliseconds_) - elapsedTime);
-            else std::this_thread::yield();
+            if (elapsedTime < std::chrono::milliseconds(interval_milliseconds_)) xtd::threading::thread::sleep(std::chrono::milliseconds(interval_milliseconds_) - elapsedTime);
+            else xtd::threading::thread::yield();
             lastRunTime = std::chrono::high_resolution_clock::now();
           }
         }
