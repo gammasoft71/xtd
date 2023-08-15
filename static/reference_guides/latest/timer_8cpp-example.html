@@ -82,30 +82,7 @@ $(function() {
   <div class="headertitle"><div class="title">timer.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<p>demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1timer.html" title="Implements a timer that raises an event at user-defined intervals. This timer is optimized for use in...">xtd::forms::timer</a> component. </p><dl class="section user"><dt>Windows</dt><dd><div class="image">
-<img src="timer_w.png" alt=""/>
-</div>
- <br  />
- <div class="image">
-<img src="timer_wd.png" alt=""/>
-</div>
- </dd></dl>
-<dl class="section user"><dt>macOS</dt><dd><div class="image">
-<img src="timer_m.png" alt=""/>
-</div>
- <br  />
- <div class="image">
-<img src="timer_md.png" alt=""/>
-</div>
- </dd></dl>
-<dl class="section user"><dt>Gnome</dt><dd><div class="image">
-<img src="timer_g.png" alt=""/>
-</div>
- <br  />
- <div class="image">
-<img src="timer_gd.png" alt=""/>
-</div>
-</dd></dl>
+<p>Shows how to use <a class="el" href="classxtd_1_1threading_1_1timer.html" title="Provides a mechanism for executing a method on a thread pool thread at specified intervals....">xtd::threading::timer</a> class.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/threading/auto_reset_event&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/threading/timer&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
@@ -178,31 +155,31 @@ $(function() {
 <div class="line"> </div>
 <div class="line"><span class="comment">// This example produces output similar to the following:</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// 08:45:24.070 Creating timer.</span></div>
+<div class="line"><span class="comment">// 10:37:37.167 Creating timer.</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// 08:45:25.076 Checking status  1.</span></div>
-<div class="line"><span class="comment">// 08:45:25.333 Checking status  2.</span></div>
-<div class="line"><span class="comment">// 08:45:25.591 Checking status  3.</span></div>
-<div class="line"><span class="comment">// 08:45:25.847 Checking status  4.</span></div>
-<div class="line"><span class="comment">// 08:45:26.101 Checking status  5.</span></div>
-<div class="line"><span class="comment">// 08:45:26.365 Checking status  6.</span></div>
-<div class="line"><span class="comment">// 08:45:26.611 Checking status  7.</span></div>
-<div class="line"><span class="comment">// 08:45:26.864 Checking status  8.</span></div>
-<div class="line"><span class="comment">// 08:45:27.118 Checking status  9.</span></div>
-<div class="line"><span class="comment">// 08:45:27.375 Checking status 10.</span></div>
+<div class="line"><span class="comment">// 10:37:38.172 Checking status  1.</span></div>
+<div class="line"><span class="comment">// 10:37:38.426 Checking status  2.</span></div>
+<div class="line"><span class="comment">// 10:37:38.679 Checking status  3.</span></div>
+<div class="line"><span class="comment">// 10:37:38.932 Checking status  4.</span></div>
+<div class="line"><span class="comment">// 10:37:39.185 Checking status  5.</span></div>
+<div class="line"><span class="comment">// 10:37:39.439 Checking status  6.</span></div>
+<div class="line"><span class="comment">// 10:37:39.691 Checking status  7.</span></div>
+<div class="line"><span class="comment">// 10:37:39.946 Checking status  8.</span></div>
+<div class="line"><span class="comment">// 10:37:40.200 Checking status  9.</span></div>
+<div class="line"><span class="comment">// 10:37:40.455 Checking status 10.</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// Changing period to .5 seconds.</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// 08:45:27.885 Checking status  1.</span></div>
-<div class="line"><span class="comment">// 08:45:28.389 Checking status  2.</span></div>
-<div class="line"><span class="comment">// 08:45:28.897 Checking status  3.</span></div>
-<div class="line"><span class="comment">// 08:45:29.402 Checking status  4.</span></div>
-<div class="line"><span class="comment">// 08:45:29.913 Checking status  5.</span></div>
-<div class="line"><span class="comment">// 08:45:30.414 Checking status  6.</span></div>
-<div class="line"><span class="comment">// 08:45:30.922 Checking status  7.</span></div>
-<div class="line"><span class="comment">// 08:45:31.428 Checking status  8.</span></div>
-<div class="line"><span class="comment">// 08:45:31.934 Checking status  9.</span></div>
-<div class="line"><span class="comment">// 08:45:32.445 Checking status 10.</span></div>
+<div class="line"><span class="comment">// 10:37:40.719 Checking status  1.</span></div>
+<div class="line"><span class="comment">// 10:37:41.220 Checking status  2.</span></div>
+<div class="line"><span class="comment">// 10:37:41.725 Checking status  3.</span></div>
+<div class="line"><span class="comment">// 10:37:42.229 Checking status  4.</span></div>
+<div class="line"><span class="comment">// 10:37:42.733 Checking status  5.</span></div>
+<div class="line"><span class="comment">// 10:37:43.235 Checking status  6.</span></div>
+<div class="line"><span class="comment">// 10:37:43.740 Checking status  7.</span></div>
+<div class="line"><span class="comment">// 10:37:44.245 Checking status  8.</span></div>
+<div class="line"><span class="comment">// 10:37:44.746 Checking status  9.</span></div>
+<div class="line"><span class="comment">// 10:37:45.249 Checking status 10.</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// Destroying timer.</span></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1auto__reset__event_html"><div class="ttname"><a href="classxtd_1_1threading_1_1auto__reset__event.html">xtd::threading::auto_reset_event</a></div><div class="ttdoc">Represents a thread synchronization event that, when signaled, resets automatically after releasing a...</div><div class="ttdef"><b>Definition</b> auto_reset_event.h:31</div></div>
@@ -215,7 +192,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 15 2023 09:42:26 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Aug 15 2023 15:22:24 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

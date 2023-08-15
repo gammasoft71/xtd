@@ -185,7 +185,7 @@ Inheritance diagram for xtd::threading::thread:</div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>When a process starts, the common language runtime automatically creates a single foreground thread to execute application code. Along with this main foreground thread, a process can create one or more threads to execute a portion of the program code associated with the process. These threads can execute either in the foreground or in the background. In addition, you can use the <a class="el" href="classxtd_1_1threading_1_1thread__pool.html" title="Provides a pool of threads that can be used to execute tasks, post work items, process asynchronous I...">xtd::threading::thread_pool</a> class to execute code on worker threads that are managed by the common language runtime. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="interlocked_8cpp-example.html#_a0">interlocked.cpp</a>, and <a class="el" href="interlocked_decrement_8cpp-example.html#_a0">interlocked_decrement.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="auto_reset_event_8cpp-example.html#_a0">auto_reset_event.cpp</a>, <a class="el" href="environment_program_exit_8cpp-example.html#_a1">environment_program_exit.cpp</a>, <a class="el" href="event_wait_handle_8cpp-example.html#_a1">event_wait_handle.cpp</a>, <a class="el" href="exception_ptr_8cpp-example.html#_a0">exception_ptr.cpp</a>, <a class="el" href="form_and_thread_8cpp-example.html#_a1">form_and_thread.cpp</a>, <a class="el" href="interlocked_8cpp-example.html#_a0">interlocked.cpp</a>, <a class="el" href="interlocked_decrement_8cpp-example.html#_a0">interlocked_decrement.cpp</a>, <a class="el" href="lock_8cpp-example.html#_a6">lock.cpp</a>, <a class="el" href="manual_reset_event_8cpp-example.html#_a0">manual_reset_event.cpp</a>, <a class="el" href="mixing_std_and_xtd_threads_8cpp-example.html#_a1">mixing_std_and_xtd_threads.cpp</a>, <a class="el" href="monitor_8cpp-example.html#_a1">monitor.cpp</a>, <a class="el" href="mutex_8cpp-example.html#_a0">mutex.cpp</a>, <a class="el" href="network_stream_8cpp-example.html#_a0">network_stream.cpp</a>, <a class="el" href="semaphore_8cpp-example.html#_a1">semaphore.cpp</a>, <a class="el" href="socket_tcp_ip_v4_8cpp-example.html#_a0">socket_tcp_ip_v4.cpp</a>, <a class="el" href="socket_tcp_ip_v6_8cpp-example.html#_a0">socket_tcp_ip_v6.cpp</a>, <a class="el" href="socket_udp_ip_v4_8cpp-example.html#_a0">socket_udp_ip_v4.cpp</a>, <a class="el" href="socket_udp_ip_v6_8cpp-example.html#_a0">socket_udp_ip_v6.cpp</a>, <a class="el" href="tcp_client_ip_v4_8cpp-example.html#_a0">tcp_client_ip_v4.cpp</a>, <a class="el" href="tcp_client_ip_v6_8cpp-example.html#_a0">tcp_client_ip_v6.cpp</a>, <a class="el" href="thread_8cpp-example.html#_a0">thread.cpp</a>, <a class="el" href="timeout_8cpp-example.html#_a1">timeout.cpp</a>, <a class="el" href="udp_client_ip_v4_8cpp-example.html#_a0">udp_client_ip_v4.cpp</a>, and <a class="el" href="udp_client_ip_v6_8cpp-example.html#_a0">udp_client_ip_v6.cpp</a>.</dd>
 </dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Fields</h2></td></tr>
@@ -381,6 +381,8 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>A thread does not begin executing when it is created. To schedule the thread for execution, call the <a class="el" href="classxtd_1_1threading_1_1thread.html#a573cca51d21d56dcf79eaace281b74b0" title="Causes the operating system to change the state of the current instance to xtd::threading::thread_sta...">xtd::threading::thread::start</a> method. To pass a data object to the thread, use the <a class="el" href="classxtd_1_1threading_1_1thread.html#ac732b49fad655a44394375b25878fda5" title="Causes the operating system to change the state of the current instance to xtd::threading::thread_sta...">xtd::threading::thread::start(std::any)</a> method overload. </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="interlocked_8cpp-example.html#a3">interlocked.cpp</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -839,7 +841,7 @@ By default, the following threads execute in the background (that is, their <a c
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="interlocked_8cpp-example.html#a4">interlocked.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="interlocked_8cpp-example.html#a4">interlocked.cpp</a>, <a class="el" href="lock_8cpp-example.html#a7">lock.cpp</a>, <a class="el" href="monitor_8cpp-example.html#a2">monitor.cpp</a>, <a class="el" href="mutex_8cpp-example.html#a1">mutex.cpp</a>, and <a class="el" href="semaphore_8cpp-example.html#a2">semaphore.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -1012,6 +1014,8 @@ if the thread is joinable you can call the <a class="el" href="classxtd_1_1threa
 <dl class="section remark"><dt>Remarks</dt><dd>A thread's <a class="el" href="classxtd_1_1threading_1_1thread.html#a5a65a2da3e743b8d710749633e10eacc" title="Gets a unique identifier for the current managed thread.">xtd::threading::thread::managed_thread_id</a> property value serves to uniquely identify that thread within its process. </dd>
 <dd>
 The value of the <a class="el" href="classxtd_1_1threading_1_1thread.html#a5a65a2da3e743b8d710749633e10eacc" title="Gets a unique identifier for the current managed thread.">xtd::threading::thread::managed_thread_id</a> property does not vary over time </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="mixing_std_and_xtd_threads_8cpp-example.html#a3">mixing_std_and_xtd_threads.cpp</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -1040,7 +1044,7 @@ The value of the <a class="el" href="classxtd_1_1threading_1_1thread.html#a5a65a
 
 <p>Gets the name of the thread. </p>
 <dl class="section return"><dt>Returns</dt><dd>A string containing the name of the thread, or empty ("") if no name was set. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="interlocked_8cpp-example.html#a3">interlocked.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="manual_reset_event_8cpp-example.html#a1">manual_reset_event.cpp</a>, and <a class="el" href="mixing_std_and_xtd_threads_8cpp-example.html#a2">mixing_std_and_xtd_threads.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -1111,6 +1115,8 @@ The value of the <a class="el" href="classxtd_1_1threading_1_1thread.html#a5a65a
 <li>lowest </li>
 </ul>
 </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="mixing_std_and_xtd_threads_8cpp-example.html#a4">mixing_std_and_xtd_threads.cpp</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -1325,7 +1331,7 @@ Contrast this with the <a class="el" href="classxtd_1_1threading_1_1thread.html#
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="interlocked_decrement_8cpp-example.html#a1">interlocked_decrement.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="interlocked_decrement_8cpp-example.html#a1">interlocked_decrement.cpp</a>, and <a class="el" href="timeout_8cpp-example.html#a2">timeout.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -1506,6 +1512,8 @@ Contrast this with the <a class="el" href="classxtd_1_1threading_1_1thread.html#
 <p>Gets the native operating system thread id. </p>
 <dl class="section return"><dt>Returns</dt><dd>An intptr representing the native operating thread id. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>if the thread is not started this method return <a class="el" href="classxtd_1_1threading_1_1thread.html#aa32ae3359fdaed5d27be7ecca2e1d96f" title="Represents an invalid native operating system thread id. This field is read-only.">xtd::threading::thread::invalid_thread_id</a>. </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="mixing_std_and_xtd_threads_8cpp-example.html#a5">mixing_std_and_xtd_threads.cpp</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -1536,6 +1544,8 @@ Contrast this with the <a class="el" href="classxtd_1_1threading_1_1thread.html#
 <dl class="section return"><dt>Returns</dt><dd>One of the <a class="el" href="group__xtd__core.html#gad404f38f7d4e370680b792bc0f397d04" title="Specifies the execution states of a System::Threading::Thread.">xtd::threading::thread_state</a> values indicating the state of the current thread. The initial value is <a class="el" href="group__xtd__core.html#ggad404f38f7d4e370680b792bc0f397d04a28ee56ece67abbd7bfc38eb955412865" title="The System::Threading::Thread.Start() method has not been invoked on the thread_state.">xtd::threading::thread_state::unstarted</a>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1threading_1_1thread.html#ae289e05ff28dc8ac1d20cdba703381f4" title="Gets a value containing the states of the current thread.">xtd::threading::thread::thread_state</a> property provides more specific information than the <a class="el" href="classxtd_1_1threading_1_1thread.html#a85a5574f517670f6d31435c93584d933" title="Gets a value indicating the execution status of the current thread.">xtd::threading::thread::is_alive</a> property. </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>Thread state is only of interest in debugging scenarios. Your code should never use thread state to synchronize the activities of threads. </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="mixing_std_and_xtd_threads_8cpp-example.html#a6">mixing_std_and_xtd_threads.cpp</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -1630,7 +1640,7 @@ This method is equivalent to using platform invoke to call the native Win32 swit
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 15 2023 09:42:33 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Aug 15 2023 15:22:31 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

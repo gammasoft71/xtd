@@ -218,7 +218,7 @@ Inheritance diagram for xtd::environment:</div>
 <div class="line"><span class="comment">// get_folder_path: /System</span></div>
 <div class="line"><span class="comment">// GetLogicalDrives: /, /dev, /System/Volumes/Hardware, /System/Volumes/Update, /System/Volumes/Preboot, /System/Volumes/xarts, /System/Volumes/VM, /System/Volumes/Data, /System/Volumes/iSCPreboot, /System/Volumes/Data/home, /Volumes/Data</span></div>
 <div class="ttc" id="aclassxtd_1_1console_html"><div class="ttname"><a href="classxtd_1_1console.html">xtd::console</a></div><div class="ttdoc">Represents the standard input, output, and error streams for console applications.</div><div class="ttdef"><b>Definition</b> console.h:34</div></div>
-<div class="ttc" id="aclassxtd_1_1environment_html"><div class="ttname"><a href="classxtd_1_1environment.html">xtd::environment</a></div><div class="ttdoc">The environment class.</div><div class="ttdef"><b>Definition</b> environment.h:74</div></div>
+<div class="ttc" id="aclassxtd_1_1environment_html"><div class="ttname"><a href="classxtd_1_1environment.html">xtd::environment</a></div><div class="ttdoc">The environment class.</div><div class="ttdef"><b>Definition</b> environment.h:73</div></div>
 <div class="ttc" id="agroup__keywords_html_gac9b8e6f22fb2fdc1bb915ee01aef848c"><div class="ttname"><a href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a></div><div class="ttdeci">#define startup_(main_class)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:57</div></div>
 <div class="ttc" id="agroup__xtd__core_html_gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb"><div class="ttname"><a href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb">xtd::uri_components::query</a></div><div class="ttdeci">@ query</div><div class="ttdoc">The xtd::uri::query data.</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
@@ -462,9 +462,12 @@ Public Types</h2></td></tr>
 <tr class="memitem:adfab25c54dd72078601934170a61fdd4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1environment.html#adfab25c54dd72078601934170a61fdd4">current_directory</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;directory_name)</td></tr>
 <tr class="memdesc:adfab25c54dd72078601934170a61fdd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the fully qualified path of the current working directory.  <br /></td></tr>
 <tr class="separator:adfab25c54dd72078601934170a61fdd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0066fd5f5838fef3b836fc0409cfeafd"><td class="memItemLeft" align="right" valign="top">static std::thread::id&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1environment.html#a0066fd5f5838fef3b836fc0409cfeafd">current_thread_id</a> () noexcept</td></tr>
-<tr class="memdesc:a0066fd5f5838fef3b836fc0409cfeafd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a unique identifier for the current thread.  <br /></td></tr>
-<tr class="separator:a0066fd5f5838fef3b836fc0409cfeafd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61aec2e7d2c3610d675bf9d02bd3d653"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1environment.html#a61aec2e7d2c3610d675bf9d02bd3d653">current_managed_thread_id</a> () noexcept</td></tr>
+<tr class="memdesc:a61aec2e7d2c3610d675bf9d02bd3d653"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a unique identifier for the current managed thread.  <br /></td></tr>
+<tr class="separator:a61aec2e7d2c3610d675bf9d02bd3d653"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e466d8e5036d27f509f1f55752028d6"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1environment.html#a6e466d8e5036d27f509f1f55752028d6">current_thread_id</a> () noexcept</td></tr>
+<tr class="memdesc:a6e466d8e5036d27f509f1f55752028d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a unique identifier for the current thread.  <br /></td></tr>
+<tr class="separator:a6e466d8e5036d27f509f1f55752028d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8c69ac9963a6a51c9e56975aed98237"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1environment.html#ab8c69ac9963a6a51c9e56975aed98237">exit_code</a> () noexcept</td></tr>
 <tr class="memdesc:ab8c69ac9963a6a51c9e56975aed98237"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the exit code of the process.  <br /></td></tr>
 <tr class="separator:ab8c69ac9963a6a51c9e56975aed98237"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -944,8 +947,8 @@ The maximum size of the command-line buffer is not set to a specific number of c
 
 </div>
 </div>
-<a id="a0066fd5f5838fef3b836fc0409cfeafd" name="a0066fd5f5838fef3b836fc0409cfeafd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0066fd5f5838fef3b836fc0409cfeafd">&#9670;&#160;</a></span>current_thread_id()</h2>
+<a id="a61aec2e7d2c3610d675bf9d02bd3d653" name="a61aec2e7d2c3610d675bf9d02bd3d653"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61aec2e7d2c3610d675bf9d02bd3d653">&#9670;&#160;</a></span>current_managed_thread_id()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -954,7 +957,35 @@ The maximum size of the command-line buffer is not set to a specific number of c
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static std::thread::id xtd::environment::current_thread_id </td>
+          <td class="memname">static <a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> xtd::environment::current_managed_thread_id </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a unique identifier for the current managed thread. </p>
+<dl class="section return"><dt>Returns</dt><dd>A std::thread::id that represents a unique identifier for this thread. </dd></dl>
+
+</div>
+</div>
+<a id="a6e466d8e5036d27f509f1f55752028d6" name="a6e466d8e5036d27f509f1f55752028d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e466d8e5036d27f509f1f55752028d6">&#9670;&#160;</a></span>current_thread_id()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> xtd::environment::current_thread_id </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -2477,7 +2508,7 @@ The <a class="el" href="group__xtd__core.html#gga437764d898631d282f7d95b573328c7
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 15 2023 09:42:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Aug 15 2023 15:22:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

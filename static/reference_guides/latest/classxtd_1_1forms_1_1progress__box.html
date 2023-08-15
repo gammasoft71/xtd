@@ -140,9 +140,8 @@ Inheritance diagram for xtd::forms::progress_box:</div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/button&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/progress_box&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;thread&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/threading/thread&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std::this_thread;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
 <div class="line"> </div>
@@ -159,7 +158,7 @@ Inheritance diagram for xtd::forms::progress_box:</div>
 <div class="line">    .click += [<span class="keyword">this</span>] {</div>
 <div class="line">      progress_box::show(*<span class="keyword">this</span>, <span class="stringliteral">&quot;Downloading&quot;</span>, <span class="stringliteral">&quot;Please wait...&quot;</span>, 0, 0, 100, progress_box_options::show_cancel_button | progress_box_options::show_skip_button);</div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> index = progress_box::minimum(); index &lt;= progress_box::maximum(); ++index) {</div>
-<div class="line">        sleep_for(100_ms); <span class="comment">// Do some work...</span></div>
+<div class="line">        threading::thread::sleep(100_ms); <span class="comment">// Do some work...</span></div>
 <div class="line">        progress_box::update(index, <span class="stringliteral">&quot;Downloading&quot;</span>, <a class="code hl_function" href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">xtd::ustring::format</a>(<span class="stringliteral">&quot;{}/{}&quot;</span>, index, progress_box::maximum()));</div>
 <div class="line">        <span class="keywordflow">if</span> (progress_box::skipped()) index++;</div>
 <div class="line">        <span class="keywordflow">if</span> (progress_box::cancelled()) <span class="keywordflow">break</span>;</div>
@@ -2888,7 +2887,7 @@ Inheritance diagram for xtd::forms::progress_box:</div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 15 2023 09:42:32 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Aug 15 2023 15:22:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

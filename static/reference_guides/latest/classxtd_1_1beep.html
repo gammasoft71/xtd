@@ -171,13 +171,12 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Plays the sound of a beep through the console speaker. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>By default, the beep plays at a frequency of 800 hertz for a duration of 200 milliseconds </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates the beep method. The example accepts a number from 1 through 9 as a command line argument, and plays the beep that number of times. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/beep&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates the beep method. The example accepts a number from 1 through 9 as a command line argument, and plays the beep that number of times. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/threading/thread&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/beep&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/int32_object&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/literals&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;thread&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
-<div class="line"><span class="keyword">using namespace </span>std::this_thread;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[])-&gt;int {</div>
@@ -186,13 +185,14 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">  <span class="keywordflow">if</span> ((argc == 2) &amp;&amp; (<a class="code hl_function" href="classxtd_1_1box.html#ae3aed129628ac43dcb02f5054d355eb1">int32_object::try_parse</a>(argv[1], <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>) == <span class="keyword">true</span>) &amp;&amp; ((<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a> &gt;= 1) &amp;&amp; (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a> &lt;= 9))) {</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> = 1; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt;= <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>++) {</div>
 <div class="line">      cout &lt;&lt; <a class="code hl_function" href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">ustring::format</a>(<span class="stringliteral">&quot;Beep number {}.&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>) &lt;&lt; <a class="code hl_function" href="classxtd_1_1beep.html#a47f89731085173fb437b77eb0a2be439">beep</a>() &lt;&lt; endl;</div>
-<div class="line">      sleep_for(100_ms);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a42bc6e2bb805f928e50ae73d243b95f2">threading::thread::sleep</a>(100_ms);</div>
 <div class="line">    }</div>
 <div class="line">  } <span class="keywordflow">else</span></div>
 <div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;Usage: Enter the number of times (between 1 and 9) to beep.&quot;</span> &lt;&lt; endl;</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1beep_html_a47f89731085173fb437b77eb0a2be439"><div class="ttname"><a href="classxtd_1_1beep.html#a47f89731085173fb437b77eb0a2be439">xtd::beep::beep</a></div><div class="ttdeci">beep()=default</div><div class="ttdoc">Plays the sound of a beep through the console speaker.</div></div>
 <div class="ttc" id="aclassxtd_1_1box_html_ae3aed129628ac43dcb02f5054d355eb1"><div class="ttname"><a href="classxtd_1_1box.html#ae3aed129628ac43dcb02f5054d355eb1">xtd::box::try_parse</a></div><div class="ttdeci">static bool try_parse(const xtd::ustring &amp;value, type_t &amp;result) noexcept</div><div class="ttdoc">Converts the string to its type_t equivalent. A return value indicates whether the conversion succeed...</div><div class="ttdef"><b>Definition</b> box.h:125</div></div>
+<div class="ttc" id="aclassxtd_1_1threading_1_1thread_html_a42bc6e2bb805f928e50ae73d243b95f2"><div class="ttname"><a href="classxtd_1_1threading_1_1thread.html#a42bc6e2bb805f928e50ae73d243b95f2">xtd::threading::thread::sleep</a></div><div class="ttdeci">static void sleep(int32 milliseconds_timeout)</div><div class="ttdoc">Suspends the current thread for a specified time.</div></div>
 <div class="ttc" id="agroup__format__parse_html_ga3afd6d163bc6391a48a1f84f28a68ffd"><div class="ttname"><a href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">xtd::ustring::format</a></div><div class="ttdeci">static ustring format(const ustring &amp;fmt, args_t &amp;&amp;... args)</div><div class="ttdoc">Writes the text representation of the specified arguments list, to string using the specified format ...</div><div class="ttdef"><b>Definition</b> ustring.h:746</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">xtd::console_key::i</a></div><div class="ttdeci">@ i</div><div class="ttdoc">The I key.</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">xtd::console_key::x</a></div><div class="ttdeci">@ x</div><div class="ttdoc">The X key.</div></div>
@@ -243,13 +243,12 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>This example demonstrates the beep method by playing the first few notes of a song through the console speaker. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/as&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>This example demonstrates the beep method by playing the first few notes of a song through the console speaker. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/threading/thread&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/as&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/beep&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;thread&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
-<div class="line"><span class="keyword">using namespace </span>std::this_thread;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Define the frequencies of notes in an octave, as well as</span></div>
@@ -305,7 +304,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="keywordtype">void</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2aa3b34c0871dc2fd51eec5559b68f709d">play</a>(<span class="keyword">const</span> vector&lt;note&gt;&amp; tune) {</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a> : tune) {</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>.note_tone() == tone::rest)</div>
-<div class="line">      sleep_for(chrono::milliseconds(as&lt;int&gt;(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>.note_duration())));</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a42bc6e2bb805f928e50ae73d243b95f2">threading::thread::sleep</a>(as&lt;int&gt;(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>.note_duration()));</div>
 <div class="line">    <span class="keywordflow">else</span></div>
 <div class="line">      cout &lt;&lt; beep(as&lt;unsigned int&gt;(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>.note_tone()), as&lt;unsigned int&gt;(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>.note_duration()));</div>
 <div class="line">  }</div>
@@ -352,7 +351,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 15 2023 09:42:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Aug 15 2023 15:22:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
