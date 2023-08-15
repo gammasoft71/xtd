@@ -266,7 +266,7 @@ bool process::start() {
   //if (data_->handle_.has_value() && !data_->exit_code_.has_value()) return false;
   if (data_->thread_.joinable()) return false;
   bool allow_to_continue = false;
-  data_->thread_ = thread([](class process process, bool & allow_to_continue) {
+  data_->thread_ = thread {[](class process process, bool & allow_to_continue) {
     try {
       process.data_->handle_.reset();
       process.data_->exit_code_.reset();
@@ -299,7 +299,7 @@ bool process::start() {
       process.data_->exception_pointer_ = std::current_exception();
       allow_to_continue = true;
     }
-  }, *this, std::ref(allow_to_continue));
+  }, *this, std::ref(allow_to_continue)};
   while (!allow_to_continue) this_thread::yield();
   if (data_->exception_pointer_) {
     if (data_->start_info_.use_shell_execute() && data_->start_info_.error_dialog())  message_box_message_(data_->start_info_.file_name());
