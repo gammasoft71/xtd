@@ -92,6 +92,9 @@ namespace xtd {
       };
 
     public:
+      /// @name Methods
+
+      /// @{
       /// @brief Retrieves the difference between the maximum number of thread pool threads returned by the GetMaxThreads method, and the number currently active.
       /// @param worker_threads The number of available worker threads
       /// @param completion_port_threads The number of available asynchronous I/O threads.
@@ -169,6 +172,7 @@ namespace xtd {
       /// @param completion_port_threads The new minimum number of idle asynchronous I/O threads to be maintained by the thread pool.
       /// @return true if the change is successful; otherwise, false.
       static bool set_min_threads(size_t worker_threads, size_t completion_port_threads);
+      /// @}
 
     private:
       static void asynchronous_io_run();

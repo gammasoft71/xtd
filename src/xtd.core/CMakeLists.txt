@@ -758,6 +758,8 @@ add_sources(
   include/xtd/threading/thread_state
   include/xtd/threading/thread_state_exception.h
   include/xtd/threading/thread_state_exception
+  include/xtd/threading/timer.h
+  include/xtd/threading/timer
   include/xtd/threading/timer_callback.h
   include/xtd/threading/timer_callback
   include/xtd/threading/timeout.h
@@ -913,6 +915,7 @@ add_sources(
   src/xtd/threading/thread.cpp
   src/xtd/threading/thread_pool.cpp
   src/xtd/threading/timeout.cpp
+  src/xtd/threading/timer.cpp
   src/xtd/threading/unnamed_event_wait_handle.h
   src/xtd/threading/unnamed_mutex.h
   src/xtd/threading/unnamed_semaphore.h
