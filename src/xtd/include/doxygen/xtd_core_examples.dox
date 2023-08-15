@@ -1,6 +1,9 @@
 /// @file
 /// @brief Contains xtd.core examples.
 ///
+/// @example bit_converter.cpp
+/// Shows how to use xtd::bit_converter class.
+///
 /// @example bit_converter_endianness.cpp
 /// Shows how to use bit_converter::endianness method.
 ///
@@ -487,6 +490,9 @@
 /// @example interface2.cpp
 /// Shows how to use xtd::interface class.
 ///
+/// @example lock.cpp
+/// Shows how to use xtd::lock class.
+///
 /// @example startup.cpp
 /// Shows how to use xtd::startup class.
 ///
@@ -564,9 +570,6 @@
 ///
 /// @example udp_client_ip_v6.cpp
 /// Shows how to use xtd::net::sockets::udp_client class.
-///
-/// @example bit_converter.cpp
-/// Shows how to use xtd::bit_converter class.
 ///
 /// @example console_background_color2.cpp
 /// Shows how to use xtd::console::background_color method.
@@ -727,11 +730,47 @@
 /// @example test_console.cpp
 /// Shows how to set target startup with cmake xtd::console.
 ///
+/// @example auto_reset_event.cpp
+/// Shows how to use xtd::threading::auto_reset_event class.
+///
+/// @example event_wait_handle.cpp
+/// Shows how to use xtd::threading::event_wait_handle class.
+///
 /// @example interlocked.cpp
 /// Shows how to use xtd::threading::interlocked class.
 ///
 /// @example interlocked_decrement.cpp
 /// Shows how to use xtd::threading::interlocked::decrement and xtd::threading::interlocked::increment methods.
+///
+/// @example manual_reset_event.cpp
+/// Shows how to use xtd::threading::manual_reset_event class.
+///
+/// @example mixing_std_and_xtd_threads.cpp
+/// Shows how to use and mixing xtd::threading::thread and std::thread classes.
+///
+/// @example monitor.cpp
+/// Shows how to use xtd::threading::monitor class.
+///
+/// @example mutex.cpp
+/// Shows how to use xtd::threading::mutex class.
+///
+/// @example semaphore.cpp
+/// Shows how to use xtd::threading::semaphore class.
+///
+/// @example thread.cpp
+/// Shows how to use xtd::threading::thread class.
+///
+/// @example thread_pool.cpp
+/// Shows how to use xtd::threading::thread_pool class.
+///
+/// @example timeout.cpp
+/// Shows how to use xtd::threading::timeout class.
+///
+/// @example timer.cpp
+/// Shows how to use xtd::threading::timer class.
+///
+/// @example wait_handle.cpp
+/// Shows how to use xtd::threading::wait_handle class.
 ///
 /// @example uri.cpp
 /// Demonstrates the xtd::uri various properties.
