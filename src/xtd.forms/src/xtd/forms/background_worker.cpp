@@ -1,11 +1,12 @@
 #include "../../../include/xtd/forms/background_worker.h"
 #include "../../../include/xtd/forms/application.h"
 #include <xtd/invalid_operation_exception.h>
-#include <thread>
+#include <xtd/threading/thread.h>
 
 using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
+using namespace xtd::threading;
 
 struct background_worker::data {
   any argument;
@@ -15,7 +16,7 @@ struct background_worker::data {
   bool worker_supports_cancellation = false;
   progress_changed_event_args event {0, any()};
   unique_ptr<form> invoker;
-  std::thread thread;
+  threading::thread thread;
 };
 
 background_worker::background_worker() noexcept : data_(make_shared<data>()) {
@@ -87,7 +88,7 @@ void background_worker::run_worker_async() {
   data_->is_busy = true;
   if (data_->thread.joinable()) data_->thread.join();
   data_->invoker = make_unique<form>();
-  data_->thread = std::thread([&] {
+  data_->thread = threading::thread {thread_start {[&] {
     do_work_event_args e(data_->argument);
     on_do_work(e);
     data_->invoker->begin_invoke([&] {
@@ -96,7 +97,8 @@ void background_worker::run_worker_async() {
       data_->cancellation_pending = false;
     });
     data_->is_busy = false;
-  });
+  }}};
+  data_->thread.start();
 }
 
 void background_worker::argument_(any&& argument) {
