@@ -8,7 +8,6 @@
 #include <map>
 #include <memory>
 #include <string>
-#include <thread>
 #include <vector>
 #include <xtd/any.h>
 #include <xtd/optional.h>
@@ -1911,7 +1910,6 @@ namespace xtd {
       void wm_style_sheet_changed(message& message);
       
       static bool check_for_illegal_cross_thread_calls_;
-      static std::thread::id handle_created_on_thread_id_;
       static forms::keys modifier_keys_;
       static forms::mouse_buttons mouse_buttons_;
       static std::map<intptr, control*> handles_;
