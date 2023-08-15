@@ -1,9 +1,8 @@
 #include <xtd/forms/application>
 #include <xtd/forms/button>
 #include <xtd/forms/form>
-#include <thread>
+#include <xtd/threading/thread>
 
-using namespace std::this_thread;
 using namespace xtd;
 using namespace xtd::forms;
 
@@ -20,7 +19,7 @@ public:
       application::use_wait_cursor(true);
       for (auto count = 0; count < 500; ++count) {
         application::do_events();
-        sleep_for(10_ms); // Simulate work...
+        threading::thread::sleep(10_ms); // Simulate work...
       }
       application::use_wait_cursor(false);
     };

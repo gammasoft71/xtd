@@ -1,18 +1,15 @@
 #include <xtd/threading/interlocked>
+#include <xtd/threading/thread>
 #include <xtd/console>
 #include <xtd/random>
 #include <xtd/startup>
-#include <thread>
 
-using namespace std;
-using namespace std::chrono;
-using namespace std::this_thread;
 using namespace xtd;
 using namespace xtd::threading;
 
 namespace interlocked_example {
   struct my_thread {
-    std::thread thread;
+    threading::thread thread;
     ustring name;
   };
   
@@ -26,27 +23,28 @@ namespace interlocked_example {
   public:
     // The main entry point for the application.
     static auto main() {
-      auto my_threads = array<my_thread, 10> {};
+      auto my_threads = std::array<my_thread, 10> {};
       auto rnd = xtd::random {};
       
       for (auto index = 0ul; index < my_threads.size(); ++index) {
         my_threads[index].name = ustring::format("Thread{}", index + 1);
         
         //Wait a random amount of time before starting next thread.
-        sleep_for(milliseconds(rnd.next(0, 1000)));
-        my_threads[index].thread = thread {my_thread_proc, my_threads[index].name};
+        thread::sleep(rnd.next(0, 1000));
+        my_threads[index].thread = thread {parameterized_thread_start {my_thread_proc}};
+        my_threads[index].thread.start(my_threads[index].name);
       }
       
       for (auto index = 0ul; index < my_threads.size(); ++index)
         my_threads[index].thread.join();
     }
     
-    static void my_thread_proc(const ustring& name) {
+    static void my_thread_proc(std::any name) {
       for (auto index = 0; index < num_thread_iterations; ++index) {
-        use_resource(name);
+        use_resource(as<ustring>(name));
         
         //Wait 1 second before next attempt.
-        sleep_for(milliseconds(1000));
+        thread::sleep(1000);
       }
     }
     
@@ -59,7 +57,7 @@ namespace interlocked_example {
         //Code to access a resource that is not thread safe would go here.
         
         //Simulate some work
-        sleep_for(milliseconds(500));
+        thread::sleep(500);
         
         console::write_line("{} exiting lock", name);
         

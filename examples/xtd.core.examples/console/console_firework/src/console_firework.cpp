@@ -1,8 +1,8 @@
+#include <xtd/threading/thread>
 #include <xtd/console>
 #include <xtd/is>
 #include <xtd/random>
 #include <xtd/startup>
-#include <xtd/threading/thread>
 #include <memory>
 #include <vector>
 

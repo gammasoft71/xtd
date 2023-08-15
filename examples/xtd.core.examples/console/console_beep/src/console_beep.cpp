@@ -1,6 +1,6 @@
+#include <xtd/threading/thread>
 #include <xtd/console>
 #include <xtd/int32_object>
-#include <xtd/threading/thread>
 
 using namespace xtd;
 using namespace xtd::threading;

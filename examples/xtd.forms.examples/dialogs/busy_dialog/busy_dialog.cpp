@@ -3,10 +3,10 @@
 #include <xtd/forms/busy_dialog>
 #include <xtd/forms/button>
 #include <xtd/forms/form>
-#include <thread>
+#include <xtd/threading/thread>
 
-using namespace std::this_thread;
 using namespace xtd::forms;
+using namespace xtd::threading;
 
 class form1 : public form {
 public:
@@ -28,7 +28,7 @@ public:
       dialog.show(*this);
       for (auto count = 0; count < 500; ++count) {
         application::do_events();
-        sleep_for(std::chrono::milliseconds(10));
+        thread::sleep(10);
       }
     };
   }
