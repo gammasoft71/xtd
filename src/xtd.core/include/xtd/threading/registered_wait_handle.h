@@ -40,7 +40,6 @@ namespace xtd {
       bool unregister(wait_handle& wait_obbject);
       
     private:
-      registered_wait_handle() = default;
       intptr item_ = 0;
     };
   }
