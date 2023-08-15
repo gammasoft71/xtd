@@ -33,7 +33,7 @@ namespace xtd {
     /// max_count
     /// Determines the maximum number of times the callback method should be invoked.
     /// The application thread creates the timer, which waits one second and then executes the check_status callback method every 250 milliseconds. The application thread then blocks until the xtd::threading::auto_reset_event object is signaled. When the check_status callback method executes max_count times, it calls the auto_reset_event::set method to set the state of the xtd::threading::auto_reset_event object to signaled. The first time this happens, the application thread calls the xtd::threading::timer::change(int32, int32) method so that the callback method now executes every half second. It once again blocks until the xtd::threading::auto_reset_event object is signaled.
-    /// @include threading/timer.cpp
+    /// @include timer.cpp
     /// @remarks Use a xtd::threading::timer_callback delegate to specify the method you want the xtd::threading::timer to execute. The signature of the xtd::threading::timer_callback delegate is: @verbatim using timer_callback = action<std::any> @endverbatim.
     /// @remarks The timer delegate is specified when the timer is constructed, and cannot be changed. The method does not execute on the thread that created the timer; it executes on axtd::threading::thread-pool thread supplied by the system.
     /// @note xtd includes several timer classes, each of which offers different functionality:
