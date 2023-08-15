@@ -1,7 +1,7 @@
 #include "../../../include/xtd/diagnostics/trace_event_cache.h"
 #include "../../../include/xtd/diagnostics/stack_trace.h"
 #include "../../../include/xtd/diagnostics/stopwatch.h"
-#include <thread>
+#include "../../../include/xtd/threading/thread.h"
 
 using namespace xtd;
 using namespace xtd::diagnostics;
@@ -25,7 +25,7 @@ int32 trace_event_cache::process_id() const noexcept {
 }
 
 ustring trace_event_cache::thread_id() const noexcept {
-  return ustring::format("{}", std::this_thread::get_id());
+  return ustring::format("{}", threading::thread::current_thread().managed_thread_id());
 }
 
 std::chrono::nanoseconds trace_event_cache::timestamp() const noexcept {
