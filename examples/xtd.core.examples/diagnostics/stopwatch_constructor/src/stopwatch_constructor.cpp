@@ -16,7 +16,7 @@ auto main()->int {
   auto ts = stopwatch.elapsed();
   
   // Format and display the duration value.
-  auto elapsed_time = ustring::format("{0:H}:{0:M}:{0:S}.{1:D2}", ts.ticks(), ts.milliseconds() / 10);
+  auto elapsed_time = ustring::format("{0:H}:{0:M}:{0:S}.{1:D2}", ts, ts.milliseconds() / 10);
   console::write_line("RunTime " + elapsed_time);
 }
 
