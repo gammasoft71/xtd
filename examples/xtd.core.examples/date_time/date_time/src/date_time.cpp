@@ -40,7 +40,7 @@ public:
   
 private:
   static bool roughly_equals(const date_time& time, const date_time& time_with_window, int window_in_seconds, int frequency_in_seconds) {
-    auto delta = convert::to_int32(duration_cast<seconds>((time_with_window - time)).count()) % frequency_in_seconds;
+    auto delta = convert::to_int32((time_with_window - time).total_seconds().count()) % frequency_in_seconds;
     
     delta = delta > window_in_seconds ? frequency_in_seconds - delta : delta;
     
