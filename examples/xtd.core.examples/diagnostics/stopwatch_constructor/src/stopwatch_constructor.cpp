@@ -13,10 +13,10 @@ auto main()->int {
   thread::sleep(10000_ms);
   stopwatch.stop();
   // Get the elapsed time as a duration value.
-  auto ns = stopwatch.elapsed();
+  auto ts = stopwatch.elapsed();
   
   // Format and display the duration value.
-  auto elapsed_time = ustring::format("{0:H}:{0:M}:{0:S}.{1:D2}", ns, duration_cast<milliseconds>(ns).count() % 1000 / 10);
+  auto elapsed_time = ustring::format("{0:H}:{0:M}:{0:S}.{1:D2}", ts.ticks(), ts.milliseconds() / 10);
   console::write_line("RunTime " + elapsed_time);
 }
 
