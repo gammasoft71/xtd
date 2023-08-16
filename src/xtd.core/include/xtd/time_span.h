@@ -113,6 +113,17 @@ namespace xtd {
     /// @exception xtd::argument_out_of_range_exception The parameters specify a TimeSpan value less than TimeSpan::min_value or greater than TimeSpan::max_value.
     /// @remarks The specified days, hours, minutes, seconds, millisonds and microseconds are converted to ticks, and that value initializes this instance.
     time_span(int32 days, int32 hours, int32 minutes, int32 seconds, int32 milliseconds, int32 microseconds);
+    /// @brief Initializes a new instance of the TimeSpan structure to a specified number of days, hours, minutes, seconds, millisonds, and microseconds.
+    /// @param days Number of days.
+    /// @param hours Number of hours.
+    /// @param minutes Number of minutes.
+    /// @param seconds Number of seconds.
+    /// @param milliseconds Number of milliseconds.
+    /// @param microseconds Number of microseconds.
+    /// @param nanoseconds Number of nanoseconds.
+    /// @exception xtd::argument_out_of_range_exception The parameters specify a TimeSpan value less than TimeSpan::min_value or greater than TimeSpan::max_value.
+    /// @remarks The specified days, hours, minutes, seconds, millisonds and microseconds are converted to ticks, and that value initializes this instance.
+    time_span(int32 days, int32 hours, int32 minutes, int32 seconds, int32 milliseconds, int32 microseconds, int32 nanoseconds);
     /// @}
 
     /// @cond
@@ -152,21 +163,41 @@ namespace xtd {
    
     int32 minutes() const noexcept;
     
+    int32 nanoseconds() const noexcept;
+
     int32 seconds() const noexcept;
 
-    xtd::ticks ticks() const noexcept;
+    int64 ticks() const noexcept;
+    
+    xtd::ticks ticks_duration() const noexcept;
+    
+    double total_days() const noexcept;
+    
+    std::chrono::days total_days_duration() const noexcept;
+    
+    double total_hours() const noexcept;
+    
+    std::chrono::hours total_hours_duration() const noexcept;
 
-    std::chrono::days total_days() const noexcept;
-    
-    std::chrono::hours total_hours() const noexcept;
-    
-    std::chrono::microseconds total_microseconds() const noexcept;
-    
-    std::chrono::milliseconds total_milliseconds() const noexcept;
-    
-    std::chrono::minutes total_minutes() const noexcept;
-    
-    std::chrono::seconds total_seconds() const noexcept;
+    double total_microseconds() const noexcept;
+
+    std::chrono::microseconds total_microseconds_duration() const noexcept;
+
+    double total_milliseconds() const noexcept;
+
+    std::chrono::milliseconds total_milliseconds_duration() const noexcept;
+
+    double total_minutes() const noexcept;
+
+    std::chrono::minutes total_minutes_duration() const noexcept;
+
+    double total_nanoseconds() const noexcept;
+
+    std::chrono::nanoseconds total_nanoseconds_duration() const noexcept;
+
+    double total_seconds() const noexcept;
+
+    std::chrono::seconds total_seconds_duration() const noexcept;
 
     /// @}
 
@@ -174,14 +205,40 @@ namespace xtd {
     
     /// @{
     int32 compare_to(const time_span& value) const noexcept override;
+    
     bool equals(const time_span& value) const noexcept override;
+    
+    static time_span from_days(double days);
+    static time_span from_days(std::chrono::days days);
+    
+    static time_span from_hours(double hours);
+    static time_span from_hours(std::chrono::hours hours);
+    
+    static time_span from_microseconds(double microseconds);
+    static time_span from_microseconds(std::chrono::microseconds microseconds);
+    
+    static time_span from_milliseconds(double milliseconds);
+    static time_span from_milliseconds(std::chrono::milliseconds milliseconds);
+    
+    static time_span from_minutes(double minutes);
+    static time_span from_minutes(std::chrono::minutes minutes);
+    
+    static time_span from_nanoseconds(double nanoseconds);
+    static time_span from_nanoseconds(std::chrono::nanoseconds nanoseconds);
+    
+    static time_span from_seconds(double seconds);
+    static time_span from_seconds(std::chrono::seconds seconds);
+
+    static time_span from_ticks(int64 ticks);
+    static time_span from_ticks(xtd::ticks ticks);
+    
     xtd::ustring to_string() const noexcept override;
     ustring to_string(const ustring& format) const;
     /// @}
 
   private:
     ustring make_string_from_duration(bool constant) const;
-    int64 value_ = 0;
+    int64 nanoseconds_ = 0;
   };
   /// @}
 

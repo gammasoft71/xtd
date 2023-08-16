@@ -293,7 +293,7 @@ void thread::resume() {
 }
 
 void thread::sleep(const time_span& timeout) {
-  sleep(as<int32>(timeout.total_milliseconds().count()));
+  sleep(as<int32>(timeout.total_milliseconds_duration().count()));
 }
 
 void thread::sleep(int32 milliseconds_timeout) {

@@ -204,7 +204,11 @@ uint32 date_time::second() const noexcept {
   return second;
 }
 
-xtd::ticks date_time::ticks() const noexcept {
+int64 date_time::ticks() const noexcept {
+  return value_.count();
+}
+
+xtd::ticks date_time::ticks_duration() const noexcept {
   return value_;
 }
 
@@ -235,7 +239,7 @@ uint32 date_time::year() const noexcept {
 }
 
 date_time date_time::add(const time_span& value) const {
-  return date_time(value_ + value.ticks(), kind_);
+  return date_time(value_ + value.ticks_duration(), kind_);
 }
 
 date_time date_time::add_days(double days) const {
@@ -371,7 +375,7 @@ time_span date_time::subtract(const date_time& value) const {
 }
 
 date_time date_time::subtract(const time_span& value) const {
-  return date_time {value_ - value.ticks()};
+  return date_time {value_ - value.ticks_duration()};
 }
 
 int64 date_time::to_binary() const {
@@ -399,7 +403,7 @@ date_time date_time::to_local_time() const {
   int32 day_of_week = 0;
   get_date_time(year, month, day, hour, minute, second, day_of_year, day_of_week);
   
-  return date_time(ticks() + utc_offset, date_time_kind::local);
+  return date_time(ticks_duration() + utc_offset, date_time_kind::local);
 }
 
 const xtd::ustring date_time::to_long_date_string() const {
@@ -435,8 +439,8 @@ ustring date_time::to_string(const ustring& format) const {
     case 'a': return ustring::format("{}", hour / 12 ? "PM" : "AM");
     case 'b': return ustring::format("{:D3}", millisecond());
     case 'B': return ustring::format("{}", millisecond());
-    case 'c': return ustring::format("{:D7}", ticks().count() % ticks_per_millisecond);
-    case 'C': return ustring::format("{}", ticks().count() % ticks_per_millisecond);
+    case 'c': return ustring::format("{:D7}", ticks() % ticks_per_millisecond);
+    case 'C': return ustring::format("{}", ticks() % ticks_per_millisecond);
     case 'd': return ustring::format("{:D2}/{:D2}/{:D}", month, day, year);
     case 'D': return ustring::format("{:D}/{:D2}/{:D}", month, day, year);
     case 'e': return ustring::format("{:D2}", second);
@@ -519,7 +523,7 @@ date_time date_time::to_universal_time() const {
   int32 day_of_week = 0;
   get_date_time(year, month, day, hour, minute, second, day_of_year, day_of_week);
   
-  return date_time(ticks() - utc_offset, date_time_kind::utc);
+  return date_time(ticks_duration() - utc_offset, date_time_kind::utc);
 }
 
 time_span date_time::operator -=(const date_time& value) {
@@ -536,7 +540,7 @@ date_time date_time::operator -() {
 
 date_time date_time::operator +(const time_span& value) const {
   date_time result = *this;
-  result.value_ += value.ticks();
+  result.value_ += value.ticks_duration();
   return result;
 }
 
@@ -546,7 +550,7 @@ time_span date_time::operator -(const date_time& value) const {
 
 date_time date_time::operator -(const time_span& value) const {
   date_time result = *this;
-  result.value_ -= value.ticks();
+  result.value_ -= value.ticks_duration();
   return result;
 }
 

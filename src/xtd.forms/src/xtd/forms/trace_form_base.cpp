@@ -102,7 +102,7 @@ void trace_form_base::write_line(const xtd::ustring& trace) {
 
 void trace_form_base::write_header() {
   auto now =  xtd::date_time::now();
-  data_->text.append_text(xtd::ustring::format(data_->format, now, (now.ticks() / 10 % 1000000).count(), data_->header_separator));
+  data_->text.append_text(xtd::ustring::format(data_->format, now, (now.ticks() / 10 % 1000000), data_->header_separator));
   data_->need_header = false;
 }
 

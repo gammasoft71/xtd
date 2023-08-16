@@ -245,7 +245,7 @@ namespace xtd {
       template<typename object_t>
       static bool try_enter(const object_t& obj, const time_span& timeout) noexcept {
         auto lock_taken = false;
-        return try_enter_ptr(get_ptr(obj), timeout.milliseconds(), lock_taken);
+        return try_enter_ptr(get_ptr(obj), timeout.total_milliseconds_duration().count(), lock_taken);
       }
       
       /// @cond
@@ -262,7 +262,7 @@ namespace xtd {
       /// @remarks If the value of the timeout parameter converted to milliseconds equals -1, this method is equivalent to Enter. If the value of timeout equals 0, this method is equivalent to try_enter.
       template<typename object_t>
       static bool try_enter(const object_t& obj, const time_span& timeout, bool& lock_taken) noexcept {
-        return try_enter_ptr(get_ptr(obj), timeout.milliseconds(), lock_taken);
+        return try_enter_ptr(get_ptr(obj), timeout.total_milliseconds_duration().count(), lock_taken);
       }
       
       /// @cond

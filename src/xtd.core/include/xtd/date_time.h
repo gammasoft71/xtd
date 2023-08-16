@@ -449,13 +449,21 @@ namespace xtd {
     /// uint23_t millisecond = moment.millisecond();
     /// @endcode
     uint32 second() const noexcept;
+
     /// @brief Gets the number of ticks that represent the date and time of this instance.
     /// @return The number of ticks that represent the date and time of this instance. The value is between xtd::date_time::min_value.ticks and xtd::date_time::max_value.ticks.
     /// @par Examples
     /// The following example uses the xtd::date_time::ticks property to display the number of ticks that have elapsed since the beginning of the century.
     /// @include date_time_ticks2.cpp
-    xtd::ticks ticks() const noexcept;
+    int64 ticks() const noexcept;
     
+    /// @brief Gets the number of ticks that represent the date and time of this instance.
+    /// @return The number of ticks that represent the date and time of this instance. The value is between xtd::date_time::min_value.ticks and xtd::date_time::max_value.ticks.
+    /// @par Examples
+    /// The following example uses the xtd::date_time::ticks property to display the number of ticks that have elapsed since the beginning of the century.
+    /// @include date_time_ticks2.cpp
+    xtd::ticks ticks_duration() const noexcept;
+
     /// @brief Gets the time of day for this instance.
     /// @return A time interval that represents the fraction of the day that has elapsed since midnight.
     /// @par Examples
