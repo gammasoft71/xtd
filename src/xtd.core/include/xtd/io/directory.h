@@ -549,16 +549,16 @@ namespace xtd {
       ///     try {
       ///       // Get the creation time of a well-known directory.
       ///       date_time dt = directory::get_creation_time(environment::current_directory());
-      ///
+      ///       ///
       ///       // Give feedback to the user.
-      ///       if (duration_cast<days>(date_time::now().subtract(dt).ticks()).count() > 364) {
+      ///       if (date_time::now().subtract(dt).total_days().count() > 364) {
       ///         console::write_line("This directory is over a year old.");
-      ///       } else if (duration_cast<days>(date_time::now().subtract(dt).ticks()).count() > 30) {
+      ///       } else if (date_time::now().subtract(dt).total_days().count() > 30) {
       ///         console::write_line("This directory is over a month old.");
-      ///       } else if (duration_cast<days>(date_time::now().subtract(dt).ticks()).count() <= 1) {
+      ///       } else if (date_time::now().subtract(dt).total_days().count() <= 1) {
       ///         console::write_line("This directory is less than a day old.");
       ///       } else {
-      ///         console::write_line("This directory was created on {0}", tp);
+      ///         console::write_line("This directory was created on {0}", dt);
       ///       }
       ///     } catch (const system_exception& e) {
       ///       console::write_line("The process failed: {0}", e.to_string());

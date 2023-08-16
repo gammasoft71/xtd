@@ -2,6 +2,7 @@
 #include <xtd/native/date_time.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include "../include/xtd/argument_out_of_range_exception.h"
+#include "../include/xtd/as.h"
 #include "../include/xtd/format_exception.h"
 #include "../include/xtd/invalid_operation_exception.h"
 #include "../include/xtd/date_time.h"
@@ -97,8 +98,16 @@ namespace {
 const date_time date_time::max_value {max_ticks};
 const date_time date_time::min_value {min_ticks};
 
+date_time::date_time(int64 ticks) : value_(ticks) {
+  if (ticks < min_value.value_.count() || ticks > max_value.value_.count()) throw argument_out_of_range_exception(csf_);
+}
+
 date_time::date_time(xtd::ticks ticks) : value_(ticks) {
   if (ticks.count() < min_value.value_.count() || ticks.count() > max_value.value_.count()) throw argument_out_of_range_exception(csf_);
+}
+
+date_time::date_time(int64 ticks, xtd::date_time_kind kind) : value_(ticks), kind_(kind) {
+  if (ticks < min_value.value_.count() || ticks > max_value.value_.count()) throw argument_out_of_range_exception(csf_);
 }
 
 date_time::date_time(xtd::ticks ticks, xtd::date_time_kind kind) : value_(ticks), kind_(kind) {
@@ -203,7 +212,7 @@ time_span date_time::time_of_day() const noexcept {
   uint32 year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
   int32 day_of_week = 0;
   get_date_time(year, month, day, hour, minute, second, day_of_year,  day_of_week);
-  return duration_cast<time_span>(chrono::hours(hour)) + duration_cast<time_span>(chrono::minutes(minute)) + duration_cast<time_span>(chrono::seconds(second));
+  return time_span {hour, minute, second};
 }
 
 date_time date_time::today() noexcept {
@@ -225,8 +234,8 @@ uint32 date_time::year() const noexcept {
   return year;
 }
 
-date_time date_time::add(time_span value) const {
-  return date_time(value_ + value, kind_);
+date_time date_time::add(const time_span& value) const {
+  return date_time(value_ + value.ticks(), kind_);
 }
 
 date_time date_time::add_days(double days) const {
@@ -358,11 +367,11 @@ ustring date_time::sprintf(const ustring& format, const date_time& value) {
 }
 
 time_span date_time::subtract(const date_time& value) const {
-  return time_span(duration_cast<time_span>(value_ - value.value_));
+  return time_span {value_ - value.value_};
 }
 
-date_time date_time::subtract(time_span value) const {
-  return date_time(value_ - duration_cast<xtd::ticks>(value));
+date_time date_time::subtract(const time_span& value) const {
+  return date_time {value_ - value.ticks()};
 }
 
 int64 date_time::to_binary() const {
@@ -525,8 +534,20 @@ date_time date_time::operator -() {
   return date_time(-value_, kind_);
 }
 
+date_time date_time::operator +(const time_span& value) const {
+  date_time result = *this;
+  result.value_ += value.ticks();
+  return result;
+}
+
 time_span date_time::operator -(const date_time& value) const {
   return subtract(value);
+}
+
+date_time date_time::operator -(const time_span& value) const {
+  date_time result = *this;
+  result.value_ -= value.ticks();
+  return result;
 }
 
 date_time& date_time::operator ++() {

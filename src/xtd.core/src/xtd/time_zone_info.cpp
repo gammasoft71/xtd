@@ -72,7 +72,7 @@ const xtd::date_time& time_zone_info::adjustement_rule::date_start() const noexc
 }
 
 xtd::time_span time_zone_info::adjustement_rule::daylight_delta() const noexcept {
-  return daylight_delta_;
+  return xtd::time_span {daylight_delta_};
 }
 
 time_zone_info::transition_time time_zone_info::adjustement_rule::daylight_transition_end() const noexcept {

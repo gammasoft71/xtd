@@ -292,6 +292,10 @@ void thread::resume() {
   data_->state &= ~xtd::threading::thread_state::suspended;
 }
 
+void thread::sleep(const time_span& timeout) {
+  sleep(as<int32>(timeout.total_milliseconds().count()));
+}
+
 void thread::sleep(int32 milliseconds_timeout) {
   if (milliseconds_timeout < timeout::infinite) throw argument_exception(csf_);
   

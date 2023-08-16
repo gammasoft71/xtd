@@ -33,7 +33,7 @@ timer::timer(const timer_callback& callback, int32 due_time, int32 period) : tim
 timer::timer(const timer_callback& callback, int64 due_time, int64 period) : timer(callback, *this, as<int32>(due_time), as<int32>(period)) {
 }
 
-timer::timer(const timer_callback& callback, const time_span& due_time, const time_span& period) : timer(callback, *this, as<int32>(std::chrono::duration_cast<std::chrono::milliseconds>(due_time).count()), as<int32>(std::chrono::duration_cast<std::chrono::milliseconds>(period).count())) {
+timer::timer(const timer_callback& callback, const time_span& due_time, const time_span& period) : timer(callback, *this, due_time.milliseconds(), period.milliseconds()) {
 }
 
 timer::timer(const timer_callback& callback, uint32 due_time, uint32 period) : timer(callback, *this, as<int32>(due_time), as<int32>(period)) {
@@ -50,7 +50,7 @@ timer::timer(const timer_callback& callback, std::any state, int32 due_time, int
 timer::timer(const timer_callback& callback, std::any state, int64 due_time, int64 period) : timer(callback, state, as<int32>(due_time), as<int32>(period)) {
 }
 
-timer::timer(const timer_callback& callback, std::any state, const time_span& due_time, const time_span& period) : timer(callback, state, as<int32>(std::chrono::duration_cast<std::chrono::milliseconds>(due_time).count()), as<int32>(std::chrono::duration_cast<std::chrono::milliseconds>(period).count())) {
+timer::timer(const timer_callback& callback, std::any state, const time_span& due_time, const time_span& period) : timer(callback, state, due_time.milliseconds(), period.milliseconds()) {
 }
 
 timer::timer(const timer_callback& callback, std::any state, uint32 due_time, uint32 period) : timer(callback, state, as<int32>(due_time), as<int32>(period)) {
@@ -85,7 +85,7 @@ void timer::change(int64 due_time, int64 period) {
 }
 
 void timer::change(const time_span& due_time, const time_span& period) {
-  this->change(as<int32>(std::chrono::duration_cast<std::chrono::milliseconds>(due_time).count()), as<int32>(std::chrono::duration_cast<std::chrono::milliseconds>(period).count()));
+  this->change(due_time.milliseconds(), period.milliseconds());
 }
 
 void timer::change(uint32 due_time, uint32 period) {

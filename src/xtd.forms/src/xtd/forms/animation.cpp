@@ -24,7 +24,7 @@ drawing::size animation::default_size() const noexcept {
   return {200, 100};
 }
 
-std::chrono::nanoseconds animation::elapsed() const noexcept {
+time_span animation::elapsed() const noexcept {
   return data_->stopwatch.elapsed();
 }
 
@@ -100,7 +100,7 @@ void animation::on_updated(const animation_updated_event_args& e) {
 
 void animation::on_frames_timer_tick(object& timer, const event_args& e) {
   ++data_->frame_counter;
-  on_updated(animation_updated_event_args(data_->frame_counter, data_->stopwatch.elapsed()));
+  on_updated(animation_updated_event_args(data_->frame_counter, std::chrono::nanoseconds {data_->stopwatch.elapsed_nanoseconds()}));
   invalidate();
   data_->stopwatch = stopwatch::start_new();
 }

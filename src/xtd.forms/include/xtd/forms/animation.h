@@ -38,7 +38,7 @@ namespace xtd {
       /// @{
       /// @brief Gets the elapsed time for the current frame, in nanoseconds.
       /// @return A std::chrono::nanoseconds representing the elapsed time for the current frame, in nanoseconds.
-      virtual std::chrono::nanoseconds elapsed() const noexcept;
+      virtual time_span elapsed() const noexcept;
       
       /// @brief Gets the elapsed time for the current frame, in milliseconds.
       /// @return A long integer representing the elapsed time for the current frame, in milliseconds.

@@ -115,23 +115,23 @@ char32 xtd::operator""_c(unsigned long long c) {
 }
 
 xtd::time_span xtd::operator""_h(unsigned long long s) {
-  return std::chrono::hours(s);
+  return xtd::time_span {std::chrono::duration_cast<xtd::ticks>(std::chrono::hours(s))};
 }
 
 xtd::time_span xtd::operator""_m(unsigned long long s) {
-  return std::chrono::minutes(s);
+  return xtd::time_span {std::chrono::duration_cast<xtd::ticks>(std::chrono::minutes(s))};
 }
 
 xtd::time_span xtd::operator""_min(unsigned long long s) {
-  return std::chrono::minutes(s);
+  return xtd::time_span {std::chrono::duration_cast<xtd::ticks>(std::chrono::minutes(s))};
 }
 
 xtd::time_span xtd::operator""_ms(unsigned long long s) {
-  return std::chrono::milliseconds(s);
+  return xtd::time_span {std::chrono::duration_cast<xtd::ticks>(std::chrono::milliseconds(s))};
 }
 
 xtd::time_span xtd::operator""_ns(unsigned long long s) {
-  return std::chrono::duration_cast<time_span>(std::chrono::nanoseconds(s));
+  return xtd::time_span {std::chrono::duration_cast<xtd::ticks>(std::chrono::nanoseconds(s))};
 }
 
 ustring xtd::operator""_s(const char* s, size_t n) {
@@ -157,7 +157,7 @@ ustring xtd::operator""_s(const wchar* s, size_t n) {
 }
 
 xtd::time_span xtd::operator""_s(unsigned long long s) {
-  return std::chrono::seconds(s);
+  return xtd::time_span {std::chrono::duration_cast<xtd::ticks>(std::chrono::seconds(s))};
 }
 
 ustring xtd::operator""_sb(unsigned long long s) {
@@ -371,7 +371,7 @@ ustring xtd::operator""_t(const wchar* s, size_t n) noexcept {
 }
 
 xtd::time_span xtd::operator""_t(unsigned long long s) {
-  return xtd::ticks(s);
+  return xtd::time_span {xtd::ticks(s)};
 }
 
 xtd::byte xtd::operator""_u8(long double n) {
@@ -495,5 +495,5 @@ uint64 xtd::operator""_u64(const wchar* s, size_t n) {
 }
 
 xtd::time_span xtd::operator""_us(unsigned long long s) {
-  return std::chrono::microseconds(s);
+  return xtd::time_span {std::chrono::duration_cast<xtd::ticks>(std::chrono::microseconds(s))};
 }

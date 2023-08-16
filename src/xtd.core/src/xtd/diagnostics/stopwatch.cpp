@@ -13,12 +13,12 @@ bool stopwatch::is_high_resolution() noexcept {
   return true;
 }
 
-std::chrono::nanoseconds stopwatch::elapsed() const noexcept {
-  return std::chrono::nanoseconds(elapsed_nanoseconds());
+time_span stopwatch::elapsed() const noexcept {
+  return time_span {std::chrono::duration_cast<ticks>(std::chrono::nanoseconds {elapsed_nanoseconds()})};
 }
 
 int64 stopwatch::elapsed_milliseconds() const noexcept {
-  return std::chrono::duration_cast<std::chrono::milliseconds>(elapsed()).count();
+  return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::nanoseconds {elapsed_nanoseconds()}).count();
 }
 
 int64 stopwatch::elapsed_nanoseconds() const noexcept {
@@ -27,7 +27,7 @@ int64 stopwatch::elapsed_nanoseconds() const noexcept {
 }
 
 int64 stopwatch::elapsed_ticks() const noexcept {
-  return std::chrono::duration_cast<ticks>(elapsed()).count();
+  return elapsed().ticks().count();
 }
 
 bool stopwatch::is_running() const noexcept {
