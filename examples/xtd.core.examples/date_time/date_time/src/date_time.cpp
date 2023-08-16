@@ -3,9 +3,7 @@
 #include <xtd/date_time>
 #include <xtd/math>
 #include <xtd/startup>
-#include <chrono>
 
-using namespace std::chrono;
 using namespace xtd;
 
 class program {
@@ -40,7 +38,7 @@ public:
   
 private:
   static bool roughly_equals(const date_time& time, const date_time& time_with_window, int window_in_seconds, int frequency_in_seconds) {
-    auto delta = convert::to_int32((time_with_window - time).total_seconds().count()) % frequency_in_seconds;
+    auto delta = convert::to_int32((time_with_window - time).total_seconds_duration().count()) % frequency_in_seconds;
     
     delta = delta > window_in_seconds ? frequency_in_seconds - delta : delta;
     
