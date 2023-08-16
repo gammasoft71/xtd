@@ -182,10 +182,10 @@ xtd::date_time time_zone_info::convert_to_utc(const xtd::date_time& date_time, c
     
   ticks offset_local = -(source_time_zone.base_utc_offset() + daylight_saving_time_offset);
   
-  if (date_time.ticks() < offset_local)
+  if (date_time.ticks_duration() < offset_local)
     return xtd::date_time(date_time.ticks(), date_time_kind::utc);
     
-  return xtd::date_time(date_time.ticks() - offset_local, date_time_kind::utc);
+  return xtd::date_time(date_time.ticks_duration() - offset_local, date_time_kind::utc);
 }
 
 xtd::date_time time_zone_info::convert_to_utc(const xtd::date_time& date_time) {

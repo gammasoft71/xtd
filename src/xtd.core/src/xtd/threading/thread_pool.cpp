@@ -116,7 +116,7 @@ registered_wait_handle thread_pool::register_wait_for_single_object(wait_handle&
 }
 
 registered_wait_handle thread_pool::register_wait_for_single_object(wait_handle& waitObject, const wait_or_timer_callback& callBack, std::any state, const time_span& timeout, bool execute_only_once) {
-  return register_wait_for_single_object(waitObject, callBack, state, timeout.milliseconds(), execute_only_once);
+  return register_wait_for_single_object(waitObject, callBack, state, timeout.total_milliseconds_duration().count(), execute_only_once);
 }
 
 registered_wait_handle thread_pool::register_wait_for_single_object(wait_handle& waitObject, const wait_or_timer_callback& callBack, std::any state, uint32 milliseconds_timeout_interval, bool execute_only_once) {

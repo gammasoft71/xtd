@@ -418,7 +418,7 @@ void application::wm_activate_app(message& message) {
 
 void application::wm_app_idle(message& message) {
   static date_time last_idle_time;
-  if (raise_idle_ || ((date_time::now() - last_idle_time)).total_milliseconds() >= chrono::milliseconds(100)) {
+  if (raise_idle_ || ((date_time::now() - last_idle_time)).total_milliseconds_duration() >= chrono::milliseconds(100)) {
     last_idle_time = date_time::now();
     idle(event_args::empty);
     raise_idle_ = false;

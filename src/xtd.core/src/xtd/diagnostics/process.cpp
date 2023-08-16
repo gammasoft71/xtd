@@ -288,11 +288,11 @@ bool process::start() {
       }
       if (process.data_->handle_ == 0) throw invalid_operation_exception("The system cannot find the file specified"_t, csf_);
       allow_to_continue = true;
-      debug::write_line_if(show_debug_process.enabled(), ustring::format("process::start [handle={}, command_line={}, start_time={:u}.{:D6}, started]", process.data_->handle_, ustring::format("{}{}", process.start_info().file_name(), process.start_info().arguments() == "" ? "" : ustring::format(" {}", process.start_info().arguments())), process.data_->start_time_, (std::chrono::duration_cast<std::chrono::microseconds>(process.data_->start_time_.ticks())).count() % 1000000));
+      debug::write_line_if(show_debug_process.enabled(), ustring::format("process::start [handle={}, command_line={}, start_time={:u}.{:D6}, started]", process.data_->handle_, ustring::format("{}{}", process.start_info().file_name(), process.start_info().arguments() == "" ? "" : ustring::format(" {}", process.start_info().arguments())), process.data_->start_time_, (std::chrono::duration_cast<std::chrono::microseconds>(process.data_->start_time_.ticks_duration())).count() % 1000000));
       int32 exit_code = 0;
       process.data_->exit_code_ =  native::process::wait(process.data_->handle_.value(), exit_code) ? exit_code : -1;
       process.data_->exit_time_ = date_time::now();
-      debug::write_line_if(show_debug_process.enabled(), ustring::format("process::start [handle={}, exit_time={:u}.{:D6}, exit_code={}, exited]", process.data_->handle_, process.data_->exit_time_, std::chrono::duration_cast<std::chrono::microseconds>(process.data_->exit_time_.ticks()).count() % 1000000, process.data_->exit_code_));
+      debug::write_line_if(show_debug_process.enabled(), ustring::format("process::start [handle={}, exit_time={:u}.{:D6}, exit_code={}, exited]", process.data_->handle_, process.data_->exit_time_, std::chrono::duration_cast<std::chrono::microseconds>(process.data_->exit_time_.ticks_duration()).count() % 1000000, process.data_->exit_code_));
       if (!process.data_->exit_code_.has_value() || process.data_->exit_code_ == -1 || process.data_->exit_code_ == 0x00ffffff) throw invalid_operation_exception("The system cannot find the file specified", csf_);
       process.on_exited();
     } catch (...) {

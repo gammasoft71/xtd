@@ -27,7 +27,7 @@ bool wait_handle::signal_and_wait(wait_handle& to_signal, wait_handle& to_wait, 
 }
 
 bool wait_handle::signal_and_wait(wait_handle& to_signal, wait_handle& to_wait, const time_span& timeout) {
-  return signal_and_wait(to_signal, to_wait, as<int32>(timeout.total_milliseconds().count()));
+  return signal_and_wait(to_signal, to_wait, as<int32>(timeout.total_milliseconds_duration().count()));
 }
 
 bool wait_handle::wait_all(const std::initializer_list<std::shared_ptr<wait_handle>>& wait_handles){
@@ -42,7 +42,7 @@ bool wait_handle::wait_all(const std::initializer_list<std::shared_ptr<wait_hand
 }
 
 bool wait_handle::wait_all(const std::initializer_list<std::shared_ptr<wait_handle>>& wait_handles, const time_span& timeout) {
-  return wait_all(wait_handles, as<int32>(timeout.total_milliseconds().count()));
+  return wait_all(wait_handles, as<int32>(timeout.total_milliseconds_duration().count()));
 }
 
 bool wait_handle::wait_all(const std::initializer_list<std::unique_ptr<wait_handle>>& wait_handles){
@@ -57,7 +57,7 @@ bool wait_handle::wait_all(const std::initializer_list<std::unique_ptr<wait_hand
 }
 
 bool wait_handle::wait_all(const std::initializer_list<std::unique_ptr<wait_handle>>& wait_handles, const time_span& timeout) {
-  return wait_all(wait_handles, as<int32>(timeout.total_milliseconds().count()));
+  return wait_all(wait_handles, as<int32>(timeout.total_milliseconds_duration().count()));
 }
 
 bool wait_handle::wait_all(const vector<shared_ptr<wait_handle>>& wait_handles) {
@@ -72,7 +72,7 @@ bool wait_handle::wait_all(const vector<shared_ptr<wait_handle>>& wait_handles, 
 }
 
 bool wait_handle::wait_all(const vector<shared_ptr<wait_handle>>& wait_handles, const time_span& timeout) {
-  return wait_all(wait_handles, as<int32>(timeout.total_milliseconds().count()));
+  return wait_all(wait_handles, as<int32>(timeout.total_milliseconds_duration().count()));
 }
 
 bool wait_handle::wait_all(const vector<unique_ptr<wait_handle>>& wait_handles) {
@@ -87,7 +87,7 @@ bool wait_handle::wait_all(const vector<unique_ptr<wait_handle>>& wait_handles, 
 }
 
 bool wait_handle::wait_all(const vector<unique_ptr<wait_handle>>& wait_handles, const time_span& timeout) {
-  return wait_all(wait_handles, as<int32>(timeout.total_milliseconds().count()));
+  return wait_all(wait_handles, as<int32>(timeout.total_milliseconds_duration().count()));
 }
 
 size_t wait_handle::wait_any(const std::initializer_list<std::shared_ptr<wait_handle>>& wait_handles) {
@@ -102,7 +102,7 @@ size_t wait_handle::wait_any(const std::initializer_list<std::shared_ptr<wait_ha
 }
 
 size_t wait_handle::wait_any(const std::initializer_list<std::shared_ptr<wait_handle>>& wait_handles, const time_span& timeout) {
-  return wait_any(wait_handles, as<int32>(timeout.total_milliseconds().count()));
+  return wait_any(wait_handles, as<int32>(timeout.total_milliseconds_duration().count()));
 }
 size_t wait_handle::wait_any(const std::initializer_list<std::unique_ptr<wait_handle>>& wait_handles) {
   return wait_any(wait_handles, timeout::infinite);
@@ -116,7 +116,7 @@ size_t wait_handle::wait_any(const std::initializer_list<std::unique_ptr<wait_ha
 }
 
 size_t wait_handle::wait_any(const std::initializer_list<std::unique_ptr<wait_handle>>& wait_handles, const time_span& timeout) {
-  return wait_any(wait_handles, as<int32>(timeout.total_milliseconds().count()));
+  return wait_any(wait_handles, as<int32>(timeout.total_milliseconds_duration().count()));
 }
 
 size_t wait_handle::wait_any(const vector<shared_ptr<wait_handle>>& wait_handles) {
@@ -131,7 +131,7 @@ size_t wait_handle::wait_any(const vector<shared_ptr<wait_handle>>& wait_handles
 }
 
 size_t wait_handle::wait_any(const vector<shared_ptr<wait_handle>>& wait_handles, const time_span& timeout) {
-  return wait_any(wait_handles, as<int32>(timeout.total_milliseconds().count()));
+  return wait_any(wait_handles, as<int32>(timeout.total_milliseconds_duration().count()));
 }
 
 size_t wait_handle::wait_any(const vector<unique_ptr<wait_handle>>& wait_handles) {
@@ -146,7 +146,7 @@ size_t wait_handle::wait_any(const vector<unique_ptr<wait_handle>>& wait_handles
 }
 
 size_t wait_handle::wait_any(const vector<unique_ptr<wait_handle>>& wait_handles, const time_span& timeout) {
-  return wait_any(wait_handles, as<int32>(timeout.total_milliseconds().count()));
+  return wait_any(wait_handles, as<int32>(timeout.total_milliseconds_duration().count()));
 }
 
 bool wait_handle::wait_one() {
@@ -159,7 +159,7 @@ bool wait_handle::wait_one(int32 milliseconds_timeout) {
 }
 
 bool wait_handle::wait_one(const time_span& timeout) {
-  return do_wait(as<int32>(timeout.total_milliseconds().count()));
+  return do_wait(as<int32>(timeout.total_milliseconds_duration().count()));
 }
 
 bool wait_handle::do_wait(int32 milliseconds_timeout) {
