@@ -251,11 +251,16 @@ namespace xtd {
       /// @brief Suspends the current thread for a specified time.
       /// @param timeout A std::chrono::duration set to the amount of time for which the thread is blocked. Specify zero to indicate that this thread should be suspended to allow other waiting threads to execute. Specify xtd::threading::Timeout.Infinite to block the thread indefinitely.
       /// @exception xtd::argument_exception The value of timeout is negative and is not equal to xtd::threading::timeout::infinite in milliseconds, or is greater than xtd::Int32.MaxValue milliseconds.
+      static void sleep(const time_span& timeout);
+      
+      /// @brief Suspends the current thread for a specified time.
+      /// @param timeout A std::chrono::duration set to the amount of time for which the thread is blocked. Specify zero to indicate that this thread should be suspended to allow other waiting threads to execute. Specify xtd::threading::Timeout.Infinite to block the thread indefinitely.
+      /// @exception xtd::argument_exception The value of timeout is negative and is not equal to xtd::threading::timeout::infinite in milliseconds, or is greater than xtd::Int32.MaxValue milliseconds.
       template<typename duration_t, typename period_t = std::ratio<1>>
       static void sleep(const std::chrono::duration<duration_t, period_t>& timeout) {
         sleep(static_cast<int32>(std::chrono::duration_cast<std::chrono::milliseconds>(timeout).count()));
       }
-      
+
       /// @brief Causes a thread to wait the number of times defined by the iterations parameter.
       /// @param iterations A 32-bit signed integer that defines how long a thread is to wait.
       /// @remarks The xtd::threading::thread::spin_wait method is useful for implementing locks. Classes in the xtd, such as xtd::threading::monitor and xtd::threading::reader_writer_lock, use this method internally. xtd::threading::thread::spin_wait essentially puts the processor into a very tight loop, with the loop count specified by the iterations parameter. The duration of the wait therefore depends on the speed of the processor.

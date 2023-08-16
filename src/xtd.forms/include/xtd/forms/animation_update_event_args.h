@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/event_args.h>
-#include <xtd/chrono>
+#include <xtd/time_span.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -30,13 +30,13 @@ namespace xtd {
       /// @{
       /// @brief Gets elepased time in nanoseconds.
       /// @return Elapsed time in nanoseconds
-      std::chrono::nanoseconds elapsed() const {return elapsed_;}
+      time_span elapsed() const {return time_span {std::chrono::duration_cast<xtd::ticks>(elapsed_).count()};}
       /// @brief Gets elepased time in milliseconds.
       /// @return Elapsed time in milliseconds
       int64 elapsed_milliseconds() const {return std::chrono::duration_cast<std::chrono::milliseconds>(elapsed_).count();}
       /// @brief Gets elepased time in nanoseconds.
       /// @return Elapsed time in nanoseconds
-      int64 elapsed_nanoseconds() const {return std::chrono::duration_cast<std::chrono::nanoseconds>(elapsed_).count();}
+      int64 elapsed_nanoseconds() const {return elapsed_.count();}
       
       /// @brief Gets frame counter.
       /// @return Frame counter.

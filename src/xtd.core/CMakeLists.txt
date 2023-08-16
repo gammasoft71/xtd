@@ -812,6 +812,7 @@ add_sources(
   src/xtd/signal_cancel_event_args.cpp
   src/xtd/system_exception.cpp
   src/xtd/target_type.cpp
+  src/xtd/time_span.cpp
   src/xtd/time_zone_info.cpp
   src/xtd/to_string.cpp
   src/xtd/toolkit.cpp

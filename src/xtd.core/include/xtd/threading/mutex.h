@@ -123,7 +123,7 @@ namespace xtd {
       void lock();
       template<typename duration_t, typename period_t = std::ratio<1>>
       bool try_lock(const std::chrono::duration<duration_t, period_t>& timeout) {
-        return wait_one(static_cast<int32>(std::chrono::duration_cast<time_span>(timeout).count()));
+        return wait_one(static_cast<int32>(std::chrono::duration_cast<std::chrono::milliseconds>(timeout).count()));
       }
       void unlock();
       /// @endcond

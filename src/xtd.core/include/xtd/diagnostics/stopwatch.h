@@ -4,7 +4,7 @@
 #pragma once
 #include <string>
 #include "../object.h"
-#include "../ticks.h"
+#include "../time_span.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -73,7 +73,7 @@ namespace xtd {
       /// @par Examples
       /// The following example initializes a xtd::diagnostics::stopwatch instance by using a simple class constructor.
       /// @include stopwatch_constructor.cpp
-      std::chrono::nanoseconds elapsed() const noexcept;
+      time_span elapsed() const noexcept;
       
       /// @brief Gets the total elapsed time measured by the current instance, in milliseconds.
       /// @return A long integer representing the total number of milliseconds measured by the current instance.

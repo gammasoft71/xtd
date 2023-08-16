@@ -113,7 +113,20 @@ namespace xtd {
     /// @par Examples
     /// The following example demonstrates one of the xtd::date_time constructors.
     /// @include date_time_ticks.cpp
+    explicit date_time(int64 ticks);
+    /// @brief Initializes a new instance of the xtd::date_time structure to a specified number of ticks.
+    /// @param ticks A date and time expressed in the number of 100-nanosecond intervals that have elapsed since January 1, 0001 at 00:00:00.000 in the Gregorian calendar.
+    /// @exception xtd::argument_out_of_range_exception ticks is less than xtd::date_time::min_value or greater than xtd::date_time::max_value.
+    /// @remarks The xtd::date_time::kind property is initialized to xtd::date_time_kind::unspecified.
+    /// @par Examples
+    /// The following example demonstrates one of the xtd::date_time constructors.
+    /// @include date_time_ticks.cpp
     explicit date_time(xtd::ticks ticks);
+    /// @brief Initializes a new instance of the xtd::date_time structure to a specified number of ticks and to Coordinated Universal Time (UTC) or local time.
+    /// @param ticks A date and time expressed in the number of 100-nanosecond intervals that have elapsed since January 1, 0001 at 00:00:00.000 in the Gregorian calendar.
+    /// @param kind One of the enumeration values that indicates whether ticks specifies a local time, Coordinated Universal Time (UTC), or neither.
+    /// @exception xtd::argument_out_of_range_exception ticks is less than xtd::date_time::min_value or greater than xtd::date_time::max_value.
+    date_time(int64 ticks, xtd::date_time_kind kind);
     /// @brief Initializes a new instance of the xtd::date_time structure to a specified number of ticks and to Coordinated Universal Time (UTC) or local time.
     /// @param ticks A date and time expressed in the number of 100-nanosecond intervals that have elapsed since January 1, 0001 at 00:00:00.000 in the Gregorian calendar.
     /// @param kind One of the enumeration values that indicates whether ticks specifies a local time, Coordinated Universal Time (UTC), or neither.
@@ -518,7 +531,7 @@ namespace xtd {
     /// @remarks See <a href="https://en.cppreference.com/w/cpp/chrono/duration">std::chrono::duration</a> for more information.
     template<typename rep_t, typename period_t>
     date_time add(std::chrono::duration<rep_t, period_t> value) const {
-      return add(std::chrono::duration_cast<xtd::time_span>(value));
+      return add(time_span {std::chrono::duration_cast<xtd::ticks>(value)});
     }
     /// @brief Returns a new xtd::date_time that adds the value of the specified xtd::time_span to the value of this instance.
     /// @param value A positive or negative time interval.
@@ -530,7 +543,7 @@ namespace xtd {
     /// @remarks You can use the xtd::date_time::add method to add more than one kind of time interval (days, hours, minutes, seconds, or milliseconds) in a single operation. This method's behavior is identical to that of the addition operator. The xtd::date_time::addxtd::date_time structure also supports specialized addition methods (such as xtd::date_time::add_days, xtd::date_time::add_hours, and xtd::date_time::add_minutes) for each time interval.
     /// @remarks The xtd::date_time::add method takes into account leap years and the number of days in a month when performing date arithmetic.
     /// @remarks This method does not change the value of this xtd::date_time. Instead, it returns a new xtd::date_time whose value is the result of this operation. The xtd::date_time::kind property of the new xtd::date_time instance is the same as that of the current instance.
-    date_time add(xtd::time_span value) const;
+    date_time add(const xtd::time_span& value) const;
     
     /// @brief Returns a new xtd::date_time that adds the specified number of days to the value of this instance.
     /// @param value A number of whole and fractional days. The value parameter can be negative or positive.
@@ -879,7 +892,7 @@ namespace xtd {
     /// * xtd::date_time::add_ticks, to subtract a specific number of ticks from the current date and time instance.
     template<typename rep_t, typename period_t>
     date_time subtract(std::chrono::duration<rep_t, period_t> value) const {
-      return subtract(std::chrono::duration_cast<xtd::time_span>(value));
+      return subtract(std::chrono::duration_cast<xtd::ticks>(value));
     }
     /// @brief Returns a new xtd::date_time that subtracts the specified duration from the value of this instance.
     /// @param value The time interval to subtract.
@@ -900,7 +913,7 @@ namespace xtd {
     /// * xtd::date_time::add_seconds, to subtract a specific number of seconds from the current date and time instance.
     /// * xtd::date_time::add_milliseconds, to subtract a specific number of milliseconds from the current date and time instance.
     /// * xtd::date_time::add_ticks, to subtract a specific number of ticks from the current date and time instance.
-    date_time subtract(xtd::time_span value) const;
+    date_time subtract(const xtd::time_span& value) const;
     
     /// @brief Serializes the current xtd::date_time object to a 64-bit binary value that subsequently can be used to recreate the xtd::date_time object.
     /// @return A 64-bit signed integer that encodes the xtd::date_time::kind and xtd::date_time::ticks properties.
@@ -1062,13 +1075,15 @@ namespace xtd {
     date_time operator +();
     date_time operator -();
     date_time operator +(const date_time& value) const = delete;
-    time_span operator -(const date_time& value) const;
+    date_time operator +(const time_span& value) const;
     template<typename rep_t, typename period_t>
     date_time operator +(std::chrono::duration<rep_t, period_t> value) const {
       date_time result = *this;
       result += value;
       return result;
     }
+    time_span operator -(const date_time& value) const;
+    date_time operator -(const time_span& value) const;
     template<typename rep_t, typename period_t>
     date_time operator -(std::chrono::duration<rep_t, period_t> value) const {
       date_time result = *this;

@@ -2,6 +2,7 @@
 #include <xtd/forms/native/timer.h>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../include/xtd/forms/timer.h"
+#include <xtd/as.h>
 
 using namespace xtd;
 using namespace xtd::forms;
@@ -31,8 +32,12 @@ void timer::enabled(bool enabled) {
   }
 }
 
-std::chrono::milliseconds timer::interval() const noexcept {
-  return std::chrono::milliseconds(data_->interval);
+time_span timer::interval() const noexcept {
+  return time_span {data_->interval};
+}
+
+void timer::interval(const time_span& interval) {
+  interval_milliseconds(as<int32>(interval.total_microseconds().count()));
 }
 
 int32 timer::interval_milliseconds() const noexcept {

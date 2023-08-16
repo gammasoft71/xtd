@@ -366,7 +366,7 @@ namespace xtd::tests {
     }
     
     void test_method_(add_time_span) {
-      date_time d1(time_span(20), date_time_kind::local);
+      date_time d1(ticks(20), date_time_kind::local);
       date_time d2 = d1.add(time_span(22));
       assert::are_equal(date_time_kind::local, d2.kind(), csf_);
       assert::are_equal(ticks(42), d2.ticks(), csf_);
