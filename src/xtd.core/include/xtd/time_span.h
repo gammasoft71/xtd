@@ -25,11 +25,11 @@ namespace xtd {
     /// @name Fields
 
     /// @{
-    /// @brief Represents the maximum TimeSpan value. This field is read-only.
+    /// @brief Represents the maximum xtd::time_span value. This field is read-only.
     /// @remarks The value of this field is equivalent to xtd::int64_object::max_value ticks. The string representation of this value is positive 10675199.02:48:05.4775807, or slightly more than 10,675,199 days.
     static const time_span max_value;
     
-    /// @brief Represents the minimum TimeSpan value. This field is read-only.
+    /// @brief Represents the minimum xtd::time_span value. This field is read-only.
     /// @remarks The value of this field is equivalent to xtd::int64_object::min_value ticks. The string representation of this value is negative 10675199.02:48:05.4775808, or slightly more than negative 10,675,199 days.
     static const time_span min_value;
     
@@ -61,57 +61,63 @@ namespace xtd {
     /// @remarks he value of this constant is 10 million; that is, 10,000,000.
     static constexpr int64 ticks_per_second = 10000000ll;
 
-    /// @brief Represents the zero TimeSpan value. This field is read-only.
-    /// @remarks Because the value of the Zero field is a TimeSpan object that represents a zero time value, you can compare it with other TimeSpan objects to determine whether the latter represent positive, non-zero, or negative time intervals. You can also use this field to initialize a TimeSpan object to a zero time value.
+    /// @brief Represents the zero xtd::time_span value. This field is read-only.
+    /// @remarks Because the value of the Zero field is a xtd::time_span object that represents a zero time value, you can compare it with other xtd::time_span objects to determine whether the latter represent positive, non-zero, or negative time intervals. You can also use this field to initialize a xtd::time_span object to a zero time value.
     static const time_span zero;
     /// @}
     
     /// @name Constructors
     
     /// @{
-    /// @brief Initializes a new instance of the TimeSpan structure to the specified number of ticks.
+    /// @brief Initializes a new instance of the xtd::time_span structure to the specified number of ticks.
     /// @param tiks A time period expressed in 100-nanosecond units.
     /// @remarks A single tick represents one hundred nanoseconds or one ten-millionth of a second. There are 10,000 ticks in a millisecond.
     explicit time_span(int64 ticks);
-    /// @brief Initializes a new instance of the TimeSpan structure to the specified number of ticks.
+    /// @brief Initializes a new instance of the xtd::time_span structure to the specified number of ticks.
     /// @param tiks A time period expressed in 100-nanosecond units.
     /// @remarks A single tick represents one hundred nanoseconds or one ten-millionth of a second. There are 10,000 ticks in a millisecond.
     explicit time_span(xtd::ticks ticks);
-    /// @brief Initializes a new instance of the TimeSpan structure to a specified number of hours, minutes, and seconds.
+    /// @brief Initializes a new instance of the xtd::time_span structure to the specified number of ticks.
+    /// @param tiks A time period expressed in 100-nanosecond units.
+    /// @remarks A single tick represents one hundred nanoseconds or one ten-millionth of a second. There are 10,000 ticks in a millisecond.
+    /// @remarks See <a href="https://en.cppreference.com/w/cpp/chrono/duration">std::chrono::duration</a> for more information.
+    template<typename duration_t, typename period_t = std::ratio<1>> // Can't be explicit by design.
+    time_span(const std::chrono::duration<duration_t, period_t>& value) : time_span(static_cast<int64>(std::chrono::duration_cast<xtd::ticks>(value).count())) {}
+    /// @brief Initializes a new instance of the xtd::time_span structure to a specified number of hours, minutes, and seconds.
     /// @param hours Number of hours.
     /// @param minutes Number of minutes.
     /// @param seconds Number of seconds.
-    /// @exception xtd::argument_out_of_range_exception The parameters specify a TimeSpan value less than TimeSpan::min_value or greater than TimeSpan::max_value.
+    /// @exception xtd::argument_out_of_range_exception The parameters specify a xtd::time_span value less than xtd::time_span::min_value or greater than xtd::time_span::max_value.
     /// @remarks The specified hours, minutes, and seconds are converted to ticks, and that value initializes this instance.
     time_span(int32 hours, int32 minutes, int32 seconds);
-    /// @brief Initializes a new instance of the TimeSpan structure to a specified number of days, hours, minutes, and seconds.
+    /// @brief Initializes a new instance of the xtd::time_span structure to a specified number of days, hours, minutes, and seconds.
     /// @param days Number of days.
     /// @param hours Number of hours.
     /// @param minutes Number of minutes.
     /// @param seconds Number of seconds.
-    /// @exception xtd::argument_out_of_range_exception The parameters specify a TimeSpan value less than TimeSpan::min_value or greater than TimeSpan::max_value.
+    /// @exception xtd::argument_out_of_range_exception The parameters specify a xtd::time_span value less than xtd::time_span::min_value or greater than xtd::time_span::max_value.
     /// @remarks The specified days, hours, minutes, and seconds are converted to ticks, and that value initializes this instance.
     time_span(int32 days, int32 hours, int32 minutes, int32 seconds);
-    /// @brief Initializes a new instance of the TimeSpan structure to a specified number of days, hours, minutes, seconds, and millisonds.
+    /// @brief Initializes a new instance of the xtd::time_span structure to a specified number of days, hours, minutes, seconds, and millisonds.
     /// @param days Number of days.
     /// @param hours Number of hours.
     /// @param minutes Number of minutes.
     /// @param seconds Number of seconds.
     /// @param milliseconds Number of milliseconds.
-    /// @exception xtd::argument_out_of_range_exception The parameters specify a TimeSpan value less than TimeSpan::min_value or greater than TimeSpan::max_value.
+    /// @exception xtd::argument_out_of_range_exception The parameters specify a xtd::time_span value less than xtd::time_span::min_value or greater than xtd::time_span::max_value.
     /// @remarks The specified days, hours, minutes, seconds, and millisonds are converted to ticks, and that value initializes this instance.
     time_span(int32 days, int32 hours, int32 minutes, int32 seconds, int32 milliseconds);
-    /// @brief Initializes a new instance of the TimeSpan structure to a specified number of days, hours, minutes, seconds, millisonds, and microseconds.
+    /// @brief Initializes a new instance of the xtd::time_span structure to a specified number of days, hours, minutes, seconds, millisonds, and microseconds.
     /// @param days Number of days.
     /// @param hours Number of hours.
     /// @param minutes Number of minutes.
     /// @param seconds Number of seconds.
     /// @param milliseconds Number of milliseconds.
     /// @param microseconds Number of microseconds.
-    /// @exception xtd::argument_out_of_range_exception The parameters specify a TimeSpan value less than TimeSpan::min_value or greater than TimeSpan::max_value.
+    /// @exception xtd::argument_out_of_range_exception The parameters specify a xtd::time_span value less than xtd::time_span::min_value or greater than xtd::time_span::max_value.
     /// @remarks The specified days, hours, minutes, seconds, millisonds and microseconds are converted to ticks, and that value initializes this instance.
     time_span(int32 days, int32 hours, int32 minutes, int32 seconds, int32 milliseconds, int32 microseconds);
-    /// @brief Initializes a new instance of the TimeSpan structure to a specified number of days, hours, minutes, seconds, millisonds, and microseconds.
+    /// @brief Initializes a new instance of the xtd::time_span structure to a specified number of days, hours, minutes, seconds, millisonds, and microseconds.
     /// @param days Number of days.
     /// @param hours Number of hours.
     /// @param minutes Number of minutes.
@@ -119,7 +125,7 @@ namespace xtd {
     /// @param milliseconds Number of milliseconds.
     /// @param microseconds Number of microseconds.
     /// @param nanoseconds Number of nanoseconds.
-    /// @exception xtd::argument_out_of_range_exception The parameters specify a TimeSpan value less than TimeSpan::min_value or greater than TimeSpan::max_value.
+    /// @exception xtd::argument_out_of_range_exception The parameters specify a xtd::time_span value less than xtd::time_span::min_value or greater than xtd::time_span::max_value.
     /// @remarks The specified days, hours, minutes, seconds, millisonds and microseconds are converted to ticks, and that value initializes this instance.
     time_span(int32 days, int32 hours, int32 minutes, int32 seconds, int32 milliseconds, int32 microseconds, int32 nanoseconds);
     /// @}
@@ -147,12 +153,12 @@ namespace xtd {
     /// @name Properties
     
     /// @{
-    /// @brief Gets the days component of the time interval represented by the current TimeSpan structure.
+    /// @brief Gets the days component of the time interval represented by the current xtd::time_span structure.
     /// @return The day component of this instance. The return value can be positive or negative.
     int32 days() const noexcept;
     
-    /// @brief Gets the hours component of the time interval represented by the current TimeSpan structure.
-    /// @return The hour component of the current TimeSpan structure. The return value ranges from -23 through 23.
+    /// @brief Gets the hours component of the time interval represented by the current xtd::time_span structure.
+    /// @return The hour component of the current xtd::time_span structure. The return value ranges from -23 through 23.
     int32 hours() const noexcept;
     
     int32 microseconds() const noexcept;

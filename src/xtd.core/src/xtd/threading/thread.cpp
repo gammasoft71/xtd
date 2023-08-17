@@ -284,6 +284,10 @@ bool thread::join(int32 milliseconds_timeout) {
   return result;
 }
 
+bool thread::join(const time_span& timeout) {
+  return join(as<int32>(timeout.total_nanoseconds()));
+}
+
 void thread::resume() {
   if (!data_) throw invalid_operation_exception {csf_};
   if (is_unstarted() || !is_suspended()) throw thread_state_exception(csf_);

@@ -67,11 +67,6 @@ namespace xtd {
       /// @param interval An int32 specifying the number of milliseconds before the tick event is raised relative to the last occurrence of the tick event. The value cannot be less than one.
       /// @remarks To get the number of seconds in the interval, divide this number by 1,000.
       void interval(const time_span& interval);
-      /// @brief Sets the time, in milliseconds, before the tick event is raised relative to the last occurrence of the tick event.
-      /// @param interval An int32 specifying the number of milliseconds before the tick event is raised relative to the last occurrence of the tick event. The value cannot be less than one.
-      /// @remarks To get the number of seconds in the interval, divide this number by 1,000.
-      template<typename rep_t, typename period_t = std::ratio<1>>
-      void interval(const std::chrono::duration<rep_t, period_t>& interval) {interval_milliseconds(static_cast<int32>(std::chrono::duration_cast<std::chrono::milliseconds>(interval).count()));}
 
       /// @brief Gets the time, in milliseconds, before the tick event is raised relative to the last occurrence of the tick event.
       /// @return An int32 specifying the number of milliseconds before the tick event is raised relative to the last occurrence of the tick event. The value cannot be less than one.

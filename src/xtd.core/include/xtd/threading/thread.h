@@ -228,14 +228,11 @@ namespace xtd {
       bool join(int32 milliseconds_timeout);
       
       /// @brief Blocks the calling thread until this thread object terminates or the specified time elapses, while continuing to perform standard COM and SendMessage pumping.
-      /// @param timeout A std::chrono::duration set to the amount of time to wait for the thread to terminate.
-      /// @return true if the thread terminated; false if the thread has not terminated after the amount of time specified by the timeout parameter has elapsed.
+      /// @param timeout A xtd::time_span set to the amount of time to wait for the thread to terminate.
+      /// @return true if the thread has terminated; false if the thread has not terminated after the amount of time specified by the millisecondsTimeout parameter has elapsed.
       /// @exception xtd::threading::thread_state_exception The caller attempted to join a thread that is in the xtd::threading::thread_state::unstarted state.
       /// @exception xtd::argument_exception timeout is a negative number other than -1 milliseconds, which represents <br>-or-<br> timeout is greater than xtd::int32_object::max_value.
-      template<typename duration_t, typename period_t = std::ratio<1>>
-      bool join(const std::chrono::duration<duration_t, period_t>& timeout) {
-        return join(static_cast<int32>(std::chrono::duration_cast<std::chrono::milliseconds>(timeout).count()));
-      }
+      bool join(const time_span& timeout);
 
       /// @brief Resumes a thread that has been suspended (Should not be used).
       /// @exception xtd::threading::thread_state_exception The thread has not been started, is dead, or is not in the suspended state.
@@ -252,14 +249,6 @@ namespace xtd {
       /// @param timeout A std::chrono::duration set to the amount of time for which the thread is blocked. Specify zero to indicate that this thread should be suspended to allow other waiting threads to execute. Specify xtd::threading::Timeout.Infinite to block the thread indefinitely.
       /// @exception xtd::argument_exception The value of timeout is negative and is not equal to xtd::threading::timeout::infinite in milliseconds, or is greater than xtd::Int32.MaxValue milliseconds.
       static void sleep(const time_span& timeout);
-      
-      /// @brief Suspends the current thread for a specified time.
-      /// @param timeout A std::chrono::duration set to the amount of time for which the thread is blocked. Specify zero to indicate that this thread should be suspended to allow other waiting threads to execute. Specify xtd::threading::Timeout.Infinite to block the thread indefinitely.
-      /// @exception xtd::argument_exception The value of timeout is negative and is not equal to xtd::threading::timeout::infinite in milliseconds, or is greater than xtd::Int32.MaxValue milliseconds.
-      template<typename duration_t, typename period_t = std::ratio<1>>
-      static void sleep(const std::chrono::duration<duration_t, period_t>& timeout) {
-        sleep(static_cast<int32>(std::chrono::duration_cast<std::chrono::milliseconds>(timeout).count()));
-      }
 
       /// @brief Causes a thread to wait the number of times defined by the iterations parameter.
       /// @param iterations A 32-bit signed integer that defines how long a thread is to wait.

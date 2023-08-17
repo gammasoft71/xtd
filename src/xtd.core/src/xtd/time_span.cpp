@@ -1,6 +1,3 @@
-//#define __XTD_CORE_INTERNAL__
-//#include "../../include/xtd/internal/__duration_formatter.h"
-//#undef __XTD_CORE_INTERNAL__
 #include "../../include/xtd/time_span.h"
 #include "../../include/xtd/as.h"
 #include "../../include/xtd/int64_object.h"
