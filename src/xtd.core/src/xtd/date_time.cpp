@@ -316,6 +316,14 @@ date_time date_time::from_binary(int64 date_data) {
   return date_time(xtd::ticks(date_data & 0x3FFFFFFFFFFFFFFFLL), static_cast<date_time_kind>(static_cast<int32>(((date_data & 0xC000000000000000LL) >> 62) & 0x0000000000000003LL)));
 }
 
+date_time date_time::from_duration(const time_span& value) {
+  return from_duration(value, date_time_kind::unspecified);
+}
+
+date_time date_time::from_duration(const time_span& value, date_time_kind kind) {
+  return date_time(value.ticks(), kind);
+}
+
 date_time date_time::from_file_time(int64 file_time) {
   return from_file_time_utc(file_time).to_local_time();
 }
@@ -526,7 +534,15 @@ date_time date_time::to_universal_time() const {
   return date_time(ticks_duration() - utc_offset, date_time_kind::utc);
 }
 
+date_time date_time::operator +=(const time_span& value) {
+  return add(value);
+}
+
 time_span date_time::operator -=(const date_time& value) {
+  return subtract(value);
+}
+
+time_span date_time::operator -=(const time_span& value) {
   return subtract(value);
 }
 

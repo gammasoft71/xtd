@@ -101,6 +101,12 @@ namespace xtd {
       
       bool equals(const mutex& value) const noexcept override;
       
+      /// @brief Locks the mutex. If another thread has already locked the mutex, a call to lock will block execution until the lock is acquired.
+      /// @remarks If lock is called by a thread that already owns the mutex, the behavior is undefined: for example, the program may deadlock. An implementation that can detect the invalid usage is encouraged to throw a std::system_error with error condition resource_deadlock_would_occur instead of deadlocking.
+      /// @remarks Prior unlock() operations on the same mutex synchronize-with (as defined in std::memory_order) this operation.
+      /// @note xtd::threading::mutex::lock() is usually not called directly: std::unique_lock, std::scoped_lock, and std::lock_guard are used to manage exclusive locking.
+      void lock();
+
       /// @brief Opens an existing named mutex.
       /// @param name The name of a system-wide named mutex object.
       /// @return A xtd::threading::mutex object that represents a named system mutex.
@@ -112,21 +118,26 @@ namespace xtd {
       /// @exception xtd::object_closed_exception the handle is invalid
       void release_mutex();
       
+      /// @brief Tries to lock the mutex. Returns immediately. On successful lock acquisition returns true, otherwise returns false.
+      /// @param timeout timeout A xtd::time_span that represents the number of milliseconds to wait, or a xtd::time_span that represents -1 milliseconds to wait indefinitely.
+      /// @return true if the lock was acquired successfully, otherwise false.
+      /// @remarks This function is allowed to fail spuriously and return false even if the mutex is not currently locked by any other thread.
+      /// @remarks If try_lock is called by a thread that already owns the mutex, the behavior is undefined.
+      /// @remarks Prior unlock() operation on the same mutex synchronizes-with (as defined in std::memory_order) this operation if it returns true. Note that prior lock() does not synchronize with this operation if it returns false.
+      bool try_lock(const time_span& timeout);
+
       /// @brief Opens the specified named mutex, if it already exists, and returns a value that indicates whether the operation succeeded.
       /// @param name The name of the synchronization object to be shared with other processes. The name is case-sensitive. The backslash character (\) and (/) are reserved.
       /// @param result When this method returns, contains a xtd::threading::mutex object that represents the named mutex if the call succeeded.
       /// @return true if the named mutex was opened successfully; otherwise, false. In some cases, false may be returned for invalid names.
       static bool try_open_existing(const ustring& name, mutex& result) noexcept;
-      /// @}
 
-      /// @cond
-      void lock();
-      template<typename duration_t, typename period_t = std::ratio<1>>
-      bool try_lock(const std::chrono::duration<duration_t, period_t>& timeout) {
-        return wait_one(static_cast<int32>(std::chrono::duration_cast<std::chrono::milliseconds>(timeout).count()));
-      }
+      /// @brief Unlocks the mutex.
+      /// @remarks The mutex must be locked by the current thread of execution, otherwise, the behavior is undefined.
+      /// @remarks This operation synchronizes-with (as defined in std::memory_order) any subsequent lock operation that obtains ownership of the same mutex.
+      /// @remarks xtd::threading::mutex::unlock() is usually not called directly: std::unique_lock and std::lock_guard are used to manage exclusive locking.
       void unlock();
-      /// @endcond
+      /// @}
       
     protected:
       /// @name Protected methods

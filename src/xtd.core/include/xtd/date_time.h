@@ -526,21 +526,6 @@ namespace xtd {
     /// @name Methods
     
     /// @{
-    /// @brief Returns a new xtd::date_time that adds the value of the specified std::chrono::duration to the value of this instance.
-    /// @param value A positive or negative time interval.
-    /// @return An object whose value is the sum of the date and time represented by this instance and the time interval represented by value.
-    /// @exception xtd::argument_out_of_range_exception The resulting xtd::date_time is less than xtd::date_time::min_value or greater than xtd::date_time::max_value.
-    /// @par Examples
-    /// The following example demonstrates the xtd::date_time::add method. It calculates the day of the week that is 36 days (864 hours) from this moment.
-    /// @include date_time_add.cpp
-    /// @remarks You can use the xtd::date_time::add method to add more than one kind of time interval (days, hours, minutes, seconds, or milliseconds) in a single operation. This method's behavior is identical to that of the addition operator. The xtd::date_time::addxtd::date_time structure also supports specialized addition methods (such as xtd::date_time::add_days, xtd::date_time::add_hours, and xtd::date_time::add_minutes) for each time interval.
-    /// @remarks The xtd::date_time::add method takes into account leap years and the number of days in a month when performing date arithmetic.
-    /// @remarks This method does not change the value of this xtd::date_time. Instead, it returns a new xtd::date_time whose value is the result of this operation. The xtd::date_time::kind property of the new xtd::date_time instance is the same as that of the current instance.
-    /// @remarks See <a href="https://en.cppreference.com/w/cpp/chrono/duration">std::chrono::duration</a> for more information.
-    template<typename rep_t, typename period_t>
-    date_time add(std::chrono::duration<rep_t, period_t> value) const {
-      return add(time_span {std::chrono::duration_cast<xtd::ticks>(value)});
-    }
     /// @brief Returns a new xtd::date_time that adds the value of the specified xtd::time_span to the value of this instance.
     /// @param value A positive or negative time interval.
     /// @return An object whose value is the sum of the date and time represented by this instance and the time interval represented by value.
@@ -716,26 +701,18 @@ namespace xtd {
     /// @remarks The return value is a xtd::date_time whose xtd::date_time::kind property is xtd::date_time:::utc.
     static date_time from_file_time_utc(int64 file_time);
     
-    /// @brief Converts the specified <a href="https://en.cppreference.com/w/cpp/chrono/duration">std::chrono::duration</a> to an equivalent unspecified time.
+    /// @brief Converts the specified xtd::time_span to an equivalent unspecified time.
     /// @param value A time interval from the start of the Clock's epoch.
     /// @return An object that represents the unspecified time equivalent of the date and time represented by the file_time parameter.
     /// @exception xtd::argument_out_of_range_exception value is less than xtd::date_time:::min_value or represents a time greater than xtd::date_time:::max_value.
-    /// @remarks See <a href="https://en.cppreference.com/w/c/chrono.h">std::chrono</a> for more information.
-    template<typename rep_t, typename period_t>
-    static date_time from_duration(std::chrono::duration<rep_t, period_t> value) {
-      return from_duration(value, date_time_kind::unspecified);
-    }
-    /// @brief Converts the specified<a href="https://en.cppreference.com/w/cpp/chrono/duration">std::chrono::duration</a> to an equivalent to Coordinated Universal Time (UTC) or local time..
+    static date_time from_duration(const time_span& value);
+    /// @brief Converts the specified xtd::time_span to an equivalent to Coordinated Universal Time (UTC) or local time..
     /// @param value A time interval from the start of the Clock's epoch.
     /// @param kind One of the enumeration values that indicates whether ticks specifies a local time, Coordinated Universal Time (UTC), or neither.
     /// @return An object that represents the unspecified time equivalent of the date and time represented by the file_time parameter.
     /// @exception xtd::argument_out_of_range_exception value is less than xtd::date_time:::min_value or represents a time greater than xtd::date_time:::max_value.
-    /// @remarks See <a href="https://en.cppreference.com/w/c/chrono.h">std::chrono</a> for more information.
-    template<typename rep_t, typename period_t>
-    static date_time from_duration(std::chrono::duration<rep_t, period_t> value, date_time_kind kind) {
-      return date_time(std::chrono::duration_cast<xtd::ticks>(value), kind);
-    }
-    
+    static date_time from_duration(const time_span& value, date_time_kind kind);
+
     /// @brief Converts the specified <a href="https://en.cppreference.com/w/cpp/chrono/c/time_t">std::time_t</a> to an equivalent unspecified time.
     /// @param value A time interval from the start of the Clock's epoch.
     /// @return An object that represents the unspecified time equivalent of the date and time represented by the value parameter.
@@ -879,29 +856,6 @@ namespace xtd {
     /// @remarks The xtd::date_time::subtract(const xtd::date_time&) method does not consider the value of the xtd::date_time::kind property of the two xtd::date_time values when performing the subtraction. Before subtracting xtd::date_time::date_time objects, ensure that the objects represent times in the same time zone. Otherwise, the result will include the difference between time zones.
     /// @note The xtd::date_time_offset::subtract(const xtd::date_time_offset&) method does consider the difference between time zones when performing the subtraction.
     xtd::time_span subtract(const date_time& value) const;
-    /// @brief Returns a new xtd::date_time that subtracts the specified duration from the value of this instance.
-    /// @param value The time interval to subtract.
-    /// @return An object that is equal to the date and time represented by this instance minus the time interval represented by value.
-    /// @exception xtd::argument_out_of_range_exception The result is less than xtd::date_time:::min_value or represents a time greater than xtd::date_time:::max_value.
-    /// @par Examples
-    /// The following example demonstrates the xtd::date_time::subtract method and the subtraction operator.
-    /// @include date_time_subtract.cpp
-    /// @remarks The xtd::date_time::subtract(xtd::time_span) method returns the date that is a specified time interval difference from the current instance. To determine the time interval between two dates, call the xtd::date_time::subtract(const xtd::date_time&) method. To subtract a particular time interval from the current instance, call the method that adds that time interval to the current date, and supply a negative value as the method argument. For example, to subtract two months from the current date, call the xtd::date_time::add_months method with a value of -2.
-    /// @remarks This method does not change the value of this xtd::date_time. Instead, it returns a new xtd::date_time whose value is the result of this operation.
-    /// @remarks Ordinarily, the xtd::date_time::subtract(xtd::time_span) method subtracts a xtd::time_span object that represents a positive time span and returns a xtd::date_time value that is earlier than the date and time of the current instance. However, if the xtd::time_span object represents a negative time span, the xtd::date_time::subtract(xtd::time_span) method returns a xtd::date_time value that is later than the date and time of the current instance.
-    /// @remarks The xtd::date_time::subtract(xtd::time_span) method allows you to subtract a time interval that consists of more than one unit of time (such as a given number of hours and a given number of minutes). To subtract a single unit of time (such as years, months, or days) from the xtd::date_time instance, you can pass a negative numeric value as a parameter to any of the following methods:
-    /// * xtd::date_time::add_years, to subtract a specific number of years from the current date and time instance.
-    /// * xtd::date_time::add_months, to subtract a specific number of months from the current date and time instance.
-    /// * xtd::date_time::add_days, to subtract a specific number of days from the current date and time instance.
-    /// * xtd::date_time::add_hours, to subtract a specific number of hours from the current date and time instance.
-    /// * xtd::date_time::add_minutes, to subtract a specific number of minutes from the current date and time instance.
-    /// * xtd::date_time::add_seconds, to subtract a specific number of seconds from the current date and time instance.
-    /// * xtd::date_time::add_milliseconds, to subtract a specific number of milliseconds from the current date and time instance.
-    /// * xtd::date_time::add_ticks, to subtract a specific number of ticks from the current date and time instance.
-    template<typename rep_t, typename period_t>
-    date_time subtract(std::chrono::duration<rep_t, period_t> value) const {
-      return subtract(std::chrono::duration_cast<xtd::ticks>(value));
-    }
     /// @brief Returns a new xtd::date_time that subtracts the specified duration from the value of this instance.
     /// @param value The time interval to subtract.
     /// @return An object that is equal to the date and time represented by this instance minus the time interval represented by value.
@@ -1068,36 +1022,16 @@ namespace xtd {
     
     /// @cond
     operator xtd::time_span() const;
-    date_time& operator +=(const date_time& value) = delete;
+    date_time operator +=(const date_time& value) = delete;
+    date_time operator +=(const time_span& value);
     time_span operator -=(const date_time& value);
-    template<typename rep_t, typename period_t>
-    date_time& operator +=(std::chrono::duration<rep_t, period_t> value) {
-      value_ += std::chrono::duration_cast<xtd::ticks>(value);
-      return *this;
-    }
-    template<typename rep_t, typename period_t>
-    date_time& operator -=(std::chrono::duration<rep_t, period_t> value) {
-      value_ -= std::chrono::duration_cast<xtd::ticks>(value);
-      return *this;
-    }
+    time_span operator -=(const time_span& value);
     date_time operator +();
     date_time operator -();
     date_time operator +(const date_time& value) const = delete;
     date_time operator +(const time_span& value) const;
-    template<typename rep_t, typename period_t>
-    date_time operator +(std::chrono::duration<rep_t, period_t> value) const {
-      date_time result = *this;
-      result += value;
-      return result;
-    }
     time_span operator -(const date_time& value) const;
     date_time operator -(const time_span& value) const;
-    template<typename rep_t, typename period_t>
-    date_time operator -(std::chrono::duration<rep_t, period_t> value) const {
-      date_time result = *this;
-      result -= value;
-      return result;
-    }
     date_time& operator ++();
     date_time operator ++(int32);
     date_time& operator --();

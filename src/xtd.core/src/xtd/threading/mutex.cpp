@@ -86,6 +86,10 @@ void mutex::lock() {
   wait_one();
 }
 
+bool mutex::try_lock(const time_span& timeout) {
+  return wait_one(static_cast<int32>(timeout.total_milliseconds()));
+}
+
 void mutex::unlock() {
   release_mutex();
 }
