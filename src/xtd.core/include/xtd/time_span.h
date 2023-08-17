@@ -19,9 +19,7 @@ namespace xtd {
   /// xtd
   /// @par Library
   /// xtd.core
-  /// @ingroup xtd_core types
-  /// @remarks For more information about types, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/types">Native types, boxing and unboxing</a>.
-  //using time_span = xtd::ticks;
+  /// @ingroup xtd_core system
   struct time_span : /*public xtd::ticks,*/ public xtd::object, xtd::iequatable<time_span>, icomparable<time_span> {
   public:
     /// @name Fields
