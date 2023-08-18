@@ -8,6 +8,7 @@
 #include "thread_priority.h"
 #include "thread_start.h"
 #include "thread_state.h"
+#include "../as.h"
 #include "../core_export.h"
 #include "../object.h"
 #include "../time_span.h"
@@ -222,17 +223,59 @@ namespace xtd {
       
       /// @brief Blocks the calling thread until this thread object terminates or the specified time elapses, while continuing to perform standard COM and SendMessage pumping.
       /// @param milliseconds_timeout The number of milliseconds to wait for the thread to terminate.
-      /// @return true if the thread has terminated; false if the thread has not terminated after the amount of time specified by the millisecondsTimeout parameter has elapsed.
+      /// @return true if the thread has terminated; false if the thread has not terminated after the amount of time specified by the xtd::milliseconds_timeout parameter has elapsed.
       /// @exception xtd::threading::thread_state_exception The caller attempted to join a thread that is in the xtd::threading::thread_state::unstarted state.
       /// @exception xtd::argument_out_of_range_rxception milliseconds_timeout is a negative number other than -1, which represents an infinite time-out.
       bool join(int32 milliseconds_timeout);
       
       /// @brief Blocks the calling thread until this thread object terminates or the specified time elapses, while continuing to perform standard COM and SendMessage pumping.
       /// @param timeout A xtd::time_span set to the amount of time to wait for the thread to terminate.
-      /// @return true if the thread has terminated; false if the thread has not terminated after the amount of time specified by the millisecondsTimeout parameter has elapsed.
+      /// @return true if the thread has terminated; false if the thread has not terminated after the amount of time specified by the xtd::milliseconds_timeout parameter has elapsed.
       /// @exception xtd::threading::thread_state_exception The caller attempted to join a thread that is in the xtd::threading::thread_state::unstarted state.
       /// @exception xtd::argument_exception timeout is a negative number other than -1 milliseconds, which represents <br>-or-<br> timeout is greater than xtd::int32_object::max_value.
       bool join(const time_span& timeout);
+
+      /// @brief Blocks the calling thread until all joinable threads terminate.
+      /// @exception xtd::threading::thread_state_exception The caller attempted to join a thread that is in the xtd::threading::thread_state::unstarted state.
+      /// @remarks If one or more threads are not joinable, they will be skipped.
+      static void join_all();
+      /// @brief Blocks the calling thread until all joinable threads terminate or the specified time elapses, while continuing.
+      /// @param milliseconds_timeout The number of milliseconds to wait for all threads to terminate.
+      /// @return true if all threads have terminated; false if all threads have not terminated after the amount of time specified by the timeout parameter has elapsed.
+      /// @exception xtd::threading::thread_state_exception The caller attempted to join a thread that is in the xtd::threading::thread_state::unstarted state.
+      /// @remarks If one or more threads are not joinable, they will be skipped.
+      static bool join_all(int32 milliseconds_timeout);
+      /// @brief Blocks the calling thread until all joinable threads terminate or the specified time elapses, while continuing.
+      /// @param timeout A xtd::time_span set to the amount of time to wait for all threads to terminate.
+      /// @return true if all threads have terminated; false if all threads have not terminated after the amount of time specified by the timeout parameter has elapsed.
+      /// @exception xtd::threading::thread_state_exception The caller attempted to join a thread that is in the xtd::threading::thread_state::unstarted state.
+      /// @remarks If one or more threads are not joinable, they will be skipped.
+      static bool join_all(const time_span& timeout);
+
+      /// @brief Blocks the calling thread until all specified joinable threads collection terminate.
+      /// @exception xtd::threading::thread_state_exception The caller attempted to join a thread that is in the xtd::threading::thread_state::unstarted state.
+      /// @remarks If one or more threads are not joinable, they will be skipped.
+      template<typename collection_t>
+      static void join_all(const collection_t& threads) {join_all(threads, timeout::infinite);}
+      /// @brief Blocks the calling thread until all specified joinable threads collection terminate or the specified time elapses, while continuing.
+      /// @param milliseconds_timeout The number of milliseconds to wait for all threads to terminate.
+      /// @return true if all threads have terminated; false if all threads have not terminated after the amount of time specified by the timeout parameter has elapsed.
+      /// @exception xtd::threading::thread_state_exception The caller attempted to join a thread that is in the xtd::threading::thread_state::unstarted state.
+      /// @remarks If one or more threads are not joinable, they will be skipped.
+      template<typename collection_t>
+      static bool join_all(const collection_t& threads, int32 milliseconds_timeout) {
+        std::vector<thread*> thread_pointers;
+        for (auto& item : threads)
+          thread_pointers.push_back(const_cast<thread*>(&item));
+        return join_all(thread_pointers, milliseconds_timeout);
+      }
+      /// @brief Blocks the calling thread until all specified joinable threads collection terminate or the specified time elapses, while continuing.
+      /// @param timeout A xtd::time_span set to the amount of time to wait for all threads to terminate.
+      /// @return true if all threads have terminated; false if all threads have not terminated after the amount of time specified by the timeout parameter has elapsed.
+      /// @exception xtd::threading::thread_state_exception The caller attempted to join a thread that is in the xtd::threading::thread_state::unstarted state.
+      /// @remarks If one or more threads are not joinable, they will be skipped.
+      template<typename collection_t>
+      static bool join_all(const collection_t& threads, const time_span& timeout) {return join_all(threads, as<int32>(timeout.total_milliseconds_duration().count()));}
 
       /// @brief Resumes a thread that has been suspended (Should not be used).
       /// @exception xtd::threading::thread_state_exception The thread has not been started, is dead, or is not in the suspended state.
@@ -290,6 +333,33 @@ namespace xtd {
       static bool yield();
       /// @}
       
+      /// @cond
+      /// @cond
+      template<typename item_t>
+      static bool join_all(const std::initializer_list<item_t>& threads) {return join_all(threads, timeout::infinite);}
+      template<typename item_t>
+      static bool join_all(const std::initializer_list<item_t>& threads, int32 milliseconds_timeout) {
+        std::vector<thread*> thread_pointers;
+        for (auto& item : threads)
+          thread_pointers.push_back(const_cast<thread*>(&item));
+        return join_all(threads, milliseconds_timeout);
+      }
+      template<typename item_t>
+      static bool join_all(const std::initializer_list<item_t>& threads, const time_span& timeout) {return join_all(threads, as<int32>(timeout.total_milliseconds_duration().count()));}
+      static bool join_all(const std::initializer_list<std::shared_ptr<thread>>& threads);
+      static bool join_all(const std::initializer_list<std::shared_ptr<thread>>& threads, int32 milliseconds_timeout);
+      static bool join_all(const std::initializer_list<std::shared_ptr<thread>>& threads, const time_span& timeout);
+      static bool join_all(const std::initializer_list<std::unique_ptr<thread>>& threads);
+      static bool join_all(const std::initializer_list<std::unique_ptr<thread>>& threads, int32 milliseconds_timeout);
+      static bool join_all(const std::initializer_list<std::unique_ptr<thread>>& threads, const time_span& timeout);
+      static bool join_all(const std::vector<std::shared_ptr<thread>>& threads);
+      static bool join_all(const std::vector<std::shared_ptr<thread>>& threads, int32 milliseconds_timeout);
+      static bool join_all(const std::vector<std::shared_ptr<thread>>& threads, const time_span& timeout);
+      static bool join_all(const std::vector<std::unique_ptr<thread>>& threads);
+      static bool join_all(const std::vector<std::unique_ptr<thread>>& threads, int32 milliseconds_timeout);
+      static bool join_all(const std::vector<std::unique_ptr<thread>>& threads, const time_span& timeout);
+      /// @endcond
+      
     private:
       friend struct ::__xtd_threads__;
       friend class thread_pool;
@@ -308,6 +378,7 @@ namespace xtd {
       bool is_unmanaged_thread() const noexcept;
       bool is_unstarted() const noexcept;
       bool is_wait_sleep_join() const noexcept;
+      static bool join_all(const std::vector<thread*>& threads, int32 milliseconds_timeout);
       void thread_proc();
 
       static constexpr int32 main_managed_thread_id = 1;
