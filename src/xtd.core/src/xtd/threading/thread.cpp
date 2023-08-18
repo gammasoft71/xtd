@@ -15,22 +15,31 @@
 #include "../../../include/xtd/invalid_operation_exception.h"
 #include "../../../include/xtd/not_implemented_exception.h"
 #include "../../../include/xtd/as.h"
+#include "../../../include/xtd/using.h"
 #include <chrono>
 #include <thread>
 
 using namespace xtd;
 using namespace xtd::threading;
 
+namespace xtd {
+  template <typename target_t, typename source_t>
+  target_t hard_cast(source_t src) {
+    return *((target_t*)&src);
+  }
+}
+
 namespace {
   class lock_guard_threads {
   public:
-    lock_guard_threads() {lock_.wait_one();}
-    ~lock_guard_threads() {lock_.release_mutex();}
+    using mutex_type = std::recursive_mutex;
+    lock_guard_threads() {lock_.lock();}
+    ~lock_guard_threads() {lock_.unlock();}
     
-    static xtd::threading::mutex& lock() {return lock_;}
-    
+    static mutex_type& lock() {return lock_;}
+
   private:
-    inline static xtd::threading::mutex lock_;
+    inline static mutex_type lock_;
   };
 }
 
@@ -285,7 +294,57 @@ bool thread::join(int32 milliseconds_timeout) {
 }
 
 bool thread::join(const time_span& timeout) {
-  return join(as<int32>(timeout.total_nanoseconds()));
+  return join(as<int32>(timeout.total_milliseconds()));
+}
+
+void thread::join_all() {
+  join_all(timeout::infinite);
+}
+
+bool thread::join_all(int32 milliseconds_timeout) {
+  throw not_implemented_exception {csf_};
+
+  std::vector<thread*> thread_pointers;
+  // Skip unmanaged thread and main thread.
+  for (auto index = 2ul; index < threads_.size(); ++index)
+    thread_pointers.push_back(threads_[index].get());
+  return join_all(thread_pointers, milliseconds_timeout);
+
+  /*
+  if (milliseconds_timeout < timeout::infinite) throw argument_exception(csf_);
+  
+  if (milliseconds_timeout == timeout::infinite) {
+    auto thread = std::shared_ptr<threading::thread> {};
+    using_(lock_guard_threads lock)
+    thread = threads_.back();
+    while (!thread->is_main_thread() && !thread->is_unmanaged_thread() && thread->joinable()) {
+      if (thread->data_) thread->join(1);
+      using_(lock_guard_threads lock)
+        thread = threads_.back();
+      yield();
+    }
+    return true;
+  }
+  
+  int32 timeout = milliseconds_timeout;
+  int64 start = std::chrono::nanoseconds(std::chrono::high_resolution_clock::now().time_since_epoch()).count() / 1000000;
+  auto thread = std::shared_ptr<threading::thread> {};
+  using_(lock_guard_threads())
+  thread = threads_.back();
+  while (!thread->is_main_thread() && !thread->is_unmanaged_thread() && thread->joinable()) {
+    if (thread->join(timeout) == false) return false;
+    timeout = milliseconds_timeout - as<int32>(std::chrono::nanoseconds(std::chrono::high_resolution_clock::now().time_since_epoch()).count() / 1000000 - start);
+    if (timeout < 0) return false;
+    using_(lock_guard_threads())
+      thread = threads_.back();
+    yield();
+  }
+  return true;
+   */
+}
+
+bool thread::join_all(const time_span& timeout) {
+  return join_all(as<int32>(timeout.total_milliseconds()));
 }
 
 void thread::resume() {
@@ -367,6 +426,66 @@ bool thread::yield() {
   return native::thread::yield();
 }
 
+bool thread::join_all(const std::initializer_list<std::shared_ptr<thread>>& threads){
+  return join_all(threads, timeout::infinite);
+}
+
+bool thread::join_all(const std::initializer_list<std::shared_ptr<thread>>& threads, int32 milliseconds_timeout) {
+  std::vector<thread*> threads_pointers;
+  for (auto& thread : threads)
+    threads_pointers.push_back(thread.get());
+  return join_all(threads_pointers, milliseconds_timeout);
+}
+
+bool thread::join_all(const std::initializer_list<std::shared_ptr<thread>>& threads, const time_span& timeout) {
+  return join_all(threads, as<int32>(timeout.total_milliseconds_duration().count()));
+}
+
+bool thread::join_all(const std::initializer_list<std::unique_ptr<thread>>& threads){
+  return join_all(threads, timeout::infinite);
+}
+
+bool thread::join_all(const std::initializer_list<std::unique_ptr<thread>>& threads, int32 milliseconds_timeout) {
+  std::vector<thread*> threads_pointers;
+  for (auto& thread : threads)
+    threads_pointers.push_back(thread.get());
+  return join_all(threads_pointers, milliseconds_timeout);
+}
+
+bool thread::join_all(const std::initializer_list<std::unique_ptr<thread>>& threads, const time_span& timeout) {
+  return join_all(threads, as<int32>(timeout.total_milliseconds_duration().count()));
+}
+
+bool thread::join_all(const std::vector<std::shared_ptr<thread>>& threads) {
+  return join_all(threads, timeout::infinite);
+}
+
+bool thread::join_all(const std::vector<std::shared_ptr<thread>>& threads, int32 milliseconds_timeout) {
+  std::vector<thread*> threads_pointers;
+  for (auto& thread : threads)
+    threads_pointers.push_back(thread.get());
+  return join_all(threads_pointers, milliseconds_timeout);
+}
+
+bool thread::join_all(const std::vector<std::shared_ptr<thread>>& threads, const time_span& timeout) {
+  return join_all(threads, as<int32>(timeout.total_milliseconds_duration().count()));
+}
+
+bool thread::join_all(const std::vector<std::unique_ptr<thread>>& threads) {
+  return join_all(threads, timeout::infinite);
+}
+
+bool thread::join_all(const std::vector<std::unique_ptr<thread>>& threads, int32 milliseconds_timeout) {
+  std::vector<thread*> threads_pointers;
+  for (auto& thread : threads)
+    threads_pointers.push_back(thread.get());
+  return join_all(threads_pointers, milliseconds_timeout);
+}
+
+bool thread::join_all(const std::vector<std::unique_ptr<thread>>& threads, const time_span& timeout) {
+  return join_all(threads, as<int32>(timeout.total_milliseconds_duration().count()));
+}
+
 void thread::close() {
   if (data_ == nullptr || is_main_thread() || is_unmanaged_thread()) return;
   
@@ -375,9 +494,6 @@ void thread::close() {
 
 bool thread::do_wait(wait_handle& wait_handle, int32 milliseconds_timeout) {
   if (milliseconds_timeout < timeout::infinite) throw argument_exception(csf_);
-  
-  // Don't use default way, otherwise you'll get reentrant calls up to a stack overflow in the do_wait method.
-  if (wait_handle.handle() == lock_guard_threads::lock().handle()) return lock_guard_threads::lock().wait(milliseconds_timeout);
   
   if (!threads_.closing() && current_thread().data_) current_thread().data_->state |= xtd::threading::thread_state::wait_sleep_join;
   if (!threads_.closing() && current_thread().data_ && current_thread().data_->interrupted) current_thread().interrupt();
@@ -442,6 +558,25 @@ bool thread::is_wait_sleep_join() const noexcept {
   return data_ ? enum_object<xtd::threading::thread_state>(data_->state).has_flag(xtd::threading::thread_state::wait_sleep_join) : false;
 }
 
+bool thread::join_all(const std::vector<thread*>& threads, int32 milliseconds_timeout) {
+  if (milliseconds_timeout < timeout::infinite) throw argument_exception(csf_);
+  
+  if (milliseconds_timeout == timeout::infinite) {
+    for (auto thread : threads)
+      if (!thread->is_main_thread() && !thread->is_unmanaged_thread() && thread->joinable()) thread->join();
+    return true;
+  }
+  
+  int32 timeout = milliseconds_timeout;
+  int64 start = std::chrono::nanoseconds(std::chrono::high_resolution_clock::now().time_since_epoch()).count() / 1000000;
+  for (auto thread : threads) {
+    if (!thread->is_main_thread() && !thread->is_unmanaged_thread() && thread->joinable()&& thread->join(timeout) == false) return false;
+    timeout = milliseconds_timeout - as<int32>(std::chrono::nanoseconds(std::chrono::high_resolution_clock::now().time_since_epoch()).count() / 1000000 - start);
+    if (timeout < 0) return false;
+  }
+  return true;
+}
+
 void thread::thread_proc() {
   if (!data_) throw invalid_operation_exception {csf_};
   
@@ -457,8 +592,7 @@ void thread::thread_proc() {
   
   lock_guard_threads lock;
   thread_collection::iterator iterator = std::find_if(threads_.begin(), threads_.end(), [&](const auto& value) {return value->data_ ? value->data_->managed_thread_id == data_->managed_thread_id : false;});
-  if (iterator != threads_.end()) {
-    (*iterator)->data_.reset();
-    threads_.erase(iterator);
-  }
+  if (iterator == threads_.end()) return;
+  (*iterator)->data_.reset();
+  threads_.erase(iterator);
 }
