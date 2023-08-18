@@ -294,7 +294,6 @@ namespace xtd {
       static bool try_enter_ptr(std::pair<intptr, bool> pair, int32 milliseconds_timeout, bool& lock_taken) noexcept;
 
       static item_collection& items();
-      static mutex& monitor_mutex();
     };
   }
 }

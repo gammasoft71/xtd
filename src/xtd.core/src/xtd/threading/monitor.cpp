@@ -2,11 +2,17 @@
 #include "../../../include/xtd/threading/mutex.h"
 #include "../../../include/xtd/threading/synchronization_lock_exception.h"
 #include <optional>
-
-#include "../../../include/xtd/diagnostics/debug.h"
+#include <mutex>
 
 using namespace xtd;
 using namespace xtd::threading;
+
+namespace {
+  std::recursive_mutex& monitor_mutex() {
+    static auto monitor_mutex = std::recursive_mutex {};
+    return monitor_mutex;
+  }
+}
 
 struct monitor::item {
   mutex event {false};
@@ -25,9 +31,9 @@ void monitor::enter_ptr(std::pair<intptr, bool> pair, bool& lock_taken) {
 }
 
 void monitor::exit_ptr(std::pair<intptr, bool> pair) {
-  monitor_mutex().wait_one();
+  monitor_mutex().lock();
   if (!is_entered_ptr(pair)) {
-    monitor_mutex().release_mutex();
+    monitor_mutex().unlock();
     throw synchronization_lock_exception(csf_);
   }
   
@@ -39,14 +45,14 @@ void monitor::exit_ptr(std::pair<intptr, bool> pair) {
     items().erase(pair.first);
     monitor_data = &saved;
   }
-  monitor_mutex().release_mutex();
+  monitor_mutex().unlock();
   monitor_data->event.release_mutex();
 }
 
 intptr monitor::get_ustring_ptr(const ustring& str) {
   if (str.empty()) throw argument_exception {csf_};
   intptr ptr = reinterpret_cast<intptr>(&str);
-  monitor_mutex().wait_one();
+  monitor_mutex().lock();
   auto items = monitor::items();
   for (const auto& item : items)
     if (item.second.name.has_value() && item.second.name.value() == str) {
@@ -54,7 +60,7 @@ intptr monitor::get_ustring_ptr(const ustring& str) {
       delete &str;
       break;
     }
-  monitor_mutex().release_mutex();
+  monitor_mutex().unlock();
   return ptr;
 }
 
@@ -65,9 +71,9 @@ bool monitor::is_entered_ptr(std::pair<intptr, bool> pair) noexcept {
 
 void monitor::pulse_ptr(std::pair<intptr, bool> pair) {
   item* monitor_item = null;
-  monitor_mutex().wait_one();
+  monitor_mutex().lock();
   if (is_entered_ptr(pair)) monitor_item = &items()[pair.first];
-  monitor_mutex().release_mutex();
+  monitor_mutex().unlock();
   
   if (monitor_item == nullptr) throw invalid_operation_exception(csf_);
   
@@ -76,9 +82,9 @@ void monitor::pulse_ptr(std::pair<intptr, bool> pair) {
 
 void monitor::pulse_all_ptr(std::pair<intptr, bool> pair) {
   item* monitor_item = null;
-  monitor_mutex().wait_one();
+  monitor_mutex().lock();
   if (is_entered_ptr(pair)) monitor_item = &items()[pair.first];
-  monitor_mutex().release_mutex();
+  monitor_mutex().unlock();
   
   if (monitor_item == nullptr) throw invalid_operation_exception(csf_);
   
@@ -87,7 +93,7 @@ void monitor::pulse_all_ptr(std::pair<intptr, bool> pair) {
 
 bool monitor::try_enter_ptr(std::pair<intptr, bool> pair, int32 milliseconds_timeout, bool& lock_taken) noexcept {
   if (milliseconds_timeout < timeout::infinite) return false;
-  monitor_mutex().wait_one();
+  monitor_mutex().lock();
   if (!is_entered_ptr(pair)) {
     auto i = item {};
     if (pair.second) {
@@ -98,15 +104,11 @@ bool monitor::try_enter_ptr(std::pair<intptr, bool> pair, int32 milliseconds_tim
   }
   item* monitor_data = &items()[pair.first];
   ++monitor_data->used_counter;
-  monitor_mutex().release_mutex();
+  monitor_mutex().unlock();
   return lock_taken = monitor_data->event.wait_one(milliseconds_timeout);
 }
 
 monitor::item_collection& monitor::items() {
   static item_collection items;
   return items;
-}
-mutex& monitor::monitor_mutex() {
-  static mutex monitor_mutex;
-  return monitor_mutex;
 }
