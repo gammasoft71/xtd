@@ -283,7 +283,6 @@ namespace xtd {
     private:
       static bool wait_all(const std::vector<wait_handle*>& wait_handles, int32 milliseconds_timeout);
       static size_t wait_any(const std::vector<wait_handle*>& wait_handles, int32 milliseconds_timeout);
-      bool do_wait(int32 milliseconds_timeout);
     };
   }
 }

@@ -150,20 +150,16 @@ size_t wait_handle::wait_any(const vector<unique_ptr<wait_handle>>& wait_handles
 }
 
 bool wait_handle::wait_one() {
-  return do_wait(timeout::infinite);
+  return wait_one(timeout::infinite);
 }
 
 bool wait_handle::wait_one(int32 milliseconds_timeout) {
   if (milliseconds_timeout < timeout::infinite) throw argument_exception(csf_);
-  return do_wait(milliseconds_timeout);
+  return thread::do_wait(*this, milliseconds_timeout);
 }
 
 bool wait_handle::wait_one(const time_span& timeout) {
-  return do_wait(as<int32>(timeout.total_milliseconds_duration().count()));
-}
-
-bool wait_handle::do_wait(int32 milliseconds_timeout) {
-  return thread::do_wait(*this, milliseconds_timeout);
+  return wait_one(as<int32>(timeout.total_milliseconds()));
 }
 
 bool wait_handle::wait_all(const std::vector<wait_handle*>& wait_handles, int32 milliseconds_timeout) {
