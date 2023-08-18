@@ -67,16 +67,10 @@ public:
   thread_collection(std::initializer_list<std::shared_ptr<thread>> init) : std::vector<std::shared_ptr<thread>>(init) {}  
   ~thread_collection() {close();}
   
-  bool closing() const noexcept {return closing_;}
-  
 private:
   void close() {
-    if (closing()) return;
-    closing_ = true;
-    for (auto& item : *this)
-      if (item && item->data_ && !item->is_main_thread() && !item->is_unmanaged_thread() && !item->is_background()) while (item->is_wait_sleep_join()) native::thread::sleep(10);
+    thread::join_all();
   }
-  bool closing_ = false;
 };
 
 const intptr thread::invalid_handle = native::types::invalid_handle();
@@ -289,6 +283,11 @@ bool thread::join(int32 milliseconds_timeout) {
       if (!is_main_thread()) current_thread().data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
     }
     data_->joinable = false;
+    lock_guard_threads lock;
+    thread_collection::iterator iterator = std::find_if(threads_.begin(), threads_.end(), [&](const auto& value) {return value->data_ ? value->data_->managed_thread_id == data_->managed_thread_id : false;});
+    if (iterator == threads_.end()) return result;
+    (*iterator)->data_.reset();
+    threads_.erase(iterator);
   }
   return result;
 }
@@ -302,45 +301,11 @@ void thread::join_all() {
 }
 
 bool thread::join_all(int32 milliseconds_timeout) {
-  throw not_implemented_exception {csf_};
-
   std::vector<thread*> thread_pointers;
   // Skip unmanaged thread and main thread.
   for (auto index = 2ul; index < threads_.size(); ++index)
     thread_pointers.push_back(threads_[index].get());
   return join_all(thread_pointers, milliseconds_timeout);
-
-  /*
-  if (milliseconds_timeout < timeout::infinite) throw argument_exception(csf_);
-  
-  if (milliseconds_timeout == timeout::infinite) {
-    auto thread = std::shared_ptr<threading::thread> {};
-    using_(lock_guard_threads lock)
-    thread = threads_.back();
-    while (!thread->is_main_thread() && !thread->is_unmanaged_thread() && thread->joinable()) {
-      if (thread->data_) thread->join(1);
-      using_(lock_guard_threads lock)
-        thread = threads_.back();
-      yield();
-    }
-    return true;
-  }
-  
-  int32 timeout = milliseconds_timeout;
-  int64 start = std::chrono::nanoseconds(std::chrono::high_resolution_clock::now().time_since_epoch()).count() / 1000000;
-  auto thread = std::shared_ptr<threading::thread> {};
-  using_(lock_guard_threads())
-  thread = threads_.back();
-  while (!thread->is_main_thread() && !thread->is_unmanaged_thread() && thread->joinable()) {
-    if (thread->join(timeout) == false) return false;
-    timeout = milliseconds_timeout - as<int32>(std::chrono::nanoseconds(std::chrono::high_resolution_clock::now().time_since_epoch()).count() / 1000000 - start);
-    if (timeout < 0) return false;
-    using_(lock_guard_threads())
-      thread = threads_.back();
-    yield();
-  }
-  return true;
-   */
 }
 
 bool thread::join_all(const time_span& timeout) {
@@ -495,14 +460,14 @@ void thread::close() {
 bool thread::do_wait(wait_handle& wait_handle, int32 milliseconds_timeout) {
   if (milliseconds_timeout < timeout::infinite) throw argument_exception(csf_);
   
-  if (!threads_.closing() && current_thread().data_) current_thread().data_->state |= xtd::threading::thread_state::wait_sleep_join;
-  if (!threads_.closing() && current_thread().data_ && current_thread().data_->interrupted) current_thread().interrupt();
+  if (current_thread().data_) current_thread().data_->state |= xtd::threading::thread_state::wait_sleep_join;
+  if (current_thread().data_ && current_thread().data_->interrupted) current_thread().interrupt();
   try {
     auto result = wait_handle.wait(milliseconds_timeout);
-    if (!threads_.closing() && current_thread().data_) current_thread().data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
+    if (current_thread().data_) current_thread().data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
     return result;
   } catch (...) {
-    if (!threads_.closing() && current_thread().data_) current_thread().data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
+    if (current_thread().data_) current_thread().data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
     throw;
   }
 }
@@ -590,6 +555,7 @@ void thread::thread_proc() {
   data_->state |= xtd::threading::thread_state::stopped;
   data_->end_thread_event.set();
   
+  if (!is_background()) return;
   lock_guard_threads lock;
   thread_collection::iterator iterator = std::find_if(threads_.begin(), threads_.end(), [&](const auto& value) {return value->data_ ? value->data_->managed_thread_id == data_->managed_thread_id : false;});
   if (iterator == threads_.end()) return;
