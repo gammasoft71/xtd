@@ -3,11 +3,12 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 
+#include "collections/specialized/string_vector.h"
+#include "threading/thread.h"
 #include "environment.h"
 #include "static.h"
 #include "system_exception.h"
 #include "ustring.h"
-#include "collections/specialized/string_vector.h"
 #include "console.h"
 #if __XTD_CURRENT_TARGET_ID__ == __XTD_TARGET_ID_GUI_APPLICATION__
 #include "xtd/forms/application.h"
@@ -57,7 +58,9 @@ namespace xtd {
 #define startup_(main_class) \
   auto main(int argc, char* argv[])->int {\
     try {\
-      return __startup__::run(main_class::main, argc, argv);\
+      auto exit_code = __startup__::run(main_class::main, argc, argv);\
+      xtd::threading::thread::join_all();\
+      return exit_code;\
     } catch(const std::exception& e) {\
       __startup_catch_exception__(e);\
     } catch(...) {\
