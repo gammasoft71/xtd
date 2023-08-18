@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include "wait_handle.h"
+#include "../date_time.h"
 #include "../icomparable.h"
 #include "../iequatable.h"
 
@@ -46,6 +47,13 @@ namespace xtd {
       class named_mutex;
       class unnamed_mutex;
     public:
+      /// @name Alias
+      
+      /// @{
+      /// @brief Rpresents the native handle type.
+      using native_handle_type = intptr;
+      /// @}
+      
       /// @name Constructors
       
       /// @{
@@ -90,6 +98,10 @@ namespace xtd {
       /// @{
       intptr handle() const noexcept override;
       void handle(intptr value) override;
+
+      /// @brief Returns the underlying implementation-defined native handle object.
+      /// @return Implementation-defined native handle object.
+      native_handle_type native_handle() const noexcept;
       /// @}
       
       /// @name Methods
@@ -124,8 +136,30 @@ namespace xtd {
       /// @remarks This function is allowed to fail spuriously and return false even if the mutex is not currently locked by any other thread.
       /// @remarks If try_lock is called by a thread that already owns the mutex, the behavior is undefined.
       /// @remarks Prior unlock() operation on the same mutex synchronizes-with (as defined in std::memory_order) this operation if it returns true. Note that prior lock() does not synchronize with this operation if it returns false.
-      bool try_lock(const time_span& timeout);
-
+      bool try_lock() noexcept;
+      
+      /// @brief Tries to lock the mutex. Blocks until specified timeout_duration has elapsed or the lock is acquired, whichever comes first. On successful lock acquisition returns true, otherwise returns false.
+      /// @param timeout minimum duration to block for
+      /// @return true if the lock was acquired successfully, otherwise false.
+      /// @remarks If timeout_duration is less or equal timeout_duration.zero(), the function behaves like try_lock().
+      /// @remarks This function may block for longer than timeout_duration due to scheduling or resource contention delays.
+      /// @remarks The standard recommends that a steady_clock is used to measure the duration. If an implementation uses a system_clock instead, the wait time may also be sensitive to clock adjustments.
+      /// @remarks As with try_lock(), this function is allowed to fail spuriously and return false even if the mutex was not locked by any other thread at some point during timeout_duration.
+      /// @remarks Prior unlock() operation on the same mutex synchronizes-with (as defined in std::memory_order) this operation if it returns true.
+      /// @remarks If try_lock_for is called by a thread that already owns the mutex, the behavior is undefined.
+      bool try_lock_for(const time_span& timeout) noexcept;
+      
+      /// @brief Tries to lock the mutex. Blocks until specified timeout_time has been reached or the lock is acquired, whichever comes first. On successful lock acquisition returns true, otherwise returns false.
+      /// @param timeout_time maximum time point to block until
+      /// @return true if the lock was acquired successfully, otherwise false.
+      /// @remarks If timeout_time has already passed, this function behaves like try_lock().
+      /// @remarks Clock must meet the Clock requirements. The program is ill-formed if std::chrono::is_clock_v<Clock> is false (since C++20).
+      /// @remarks The standard recommends that the clock tied to timeout_time be used, in which case adjustments of the clock may be taken into account. Thus, the duration of the block might be more or less than timeout_time - Clock::now() at the time of the call, depending on the direction of the adjustment and whether it is honored by the implementation. The function also may block until after timeout_time has been reached due to process scheduling or resource contention delays.
+      /// @remarks As with try_lock(), this function is allowed to fail spuriously and return false even if the mutex was not locked by any other thread at some point before timeout_time.
+      /// @remarks Prior unlock() operation on the same mutex synchronizes-with (as defined in std::memory_order) this operation if it returns true.
+      /// @remarks If try_lock_until is called by a thread that already owns the mutex, the behavior is undefined.
+      bool try_lock_until(const date_time& timeout_time) noexcept;
+      
       /// @brief Opens the specified named mutex, if it already exists, and returns a value that indicates whether the operation succeeded.
       /// @param name The name of the synchronization object to be shared with other processes. The name is case-sensitive. The backslash character (\) and (/) are reserved.
       /// @param result When this method returns, contains a xtd::threading::mutex object that represents the named mutex if the call succeeded.
