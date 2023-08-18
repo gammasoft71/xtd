@@ -43,6 +43,10 @@ void mutex::handle(intptr value) {
   mutex_->handle(value);
 }
 
+mutex::native_handle_type mutex::native_handle() const noexcept {
+  return handle();
+}
+
 void mutex::close() {
   if (mutex_.use_count() == 1) {
     mutex_->destroy();
@@ -58,6 +62,10 @@ bool mutex::equals(const mutex& value) const noexcept {
   return mutex_ == value.mutex_ && name_ == value.name_;
 }
 
+void mutex::lock() {
+  wait_one();
+}
+
 mutex mutex::open_existing(const ustring& name) {
   if (name.empty()) throw argument_exception {csf_};
   if (name.size() > native::named_mutex::max_name_size()) throw io::path_too_long_exception {csf_};
@@ -70,6 +78,30 @@ void mutex::release_mutex() {
   if (!signal()) throw io::io_exception {csf_};
 }
 
+bool mutex::try_lock() noexcept {
+  try {
+    return wait_one(0);
+  } catch(...) {
+    return false;
+  }
+}
+
+bool mutex::try_lock_for(const time_span& timeout) noexcept {
+  try {
+    return wait_one(static_cast<int32>(timeout.total_milliseconds()));
+  } catch(...) {
+    return false;
+  }
+}
+
+bool mutex::try_lock_until(const date_time& timeout_time) noexcept {
+  try {
+    return try_lock_for(date_time::now() - timeout_time);
+  } catch(...) {
+    return false;
+  }
+}
+
 bool mutex::try_open_existing(const ustring& name, mutex& result) noexcept {
   result.close();
   if (ustring::is_empty(name)) return false;
@@ -80,14 +112,6 @@ bool mutex::try_open_existing(const ustring& name, mutex& result) noexcept {
   if (!new_mutex.mutex_->open(new_mutex.name_)) return false;
   result = new_mutex;
   return true;
-}
-
-void mutex::lock() {
-  wait_one();
-}
-
-bool mutex::try_lock(const time_span& timeout) {
-  return wait_one(static_cast<int32>(timeout.total_milliseconds()));
 }
 
 void mutex::unlock() {
