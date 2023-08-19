@@ -51,6 +51,7 @@ namespace xtd {
     class core_export_ thread_pool static_ {
       friend class registered_wait_handle;
 
+      //using asynchronous_io_thread_vector = std::vector<thread>;
       class asynchronous_io_thread_vector : public std::vector<thread> {
       public:
         asynchronous_io_thread_vector();
@@ -84,6 +85,7 @@ namespace xtd {
       using thread_pool_item_collection = std::vector<thread_pool_item>;
       using thread_pool_asynchronous_io_item_collection = std::vector<thread_pool_asynchronous_io_item>;
 
+      //using thread_vector = std::vector<thread>;
       class thread_vector : public std::vector<thread> {
       public:
         thread_vector();
@@ -95,6 +97,13 @@ namespace xtd {
       /// @name Methods
 
       /// @{
+      /// @brief Close all resources and worker threads.
+      /// @remarks The close method waits for the end of running worker threads, but will not wait for unstarted worker threads.
+      /// @remarks You can use this method to ensure that all pending threads are closed, and that resources are also closed.
+      /// @remarks #startup_calls xtd::thread_pool::close method.
+      /// @remarks xtd::threading::join_all, xtd::threading::join_all(int32), xtd::threading::join_all(xtd::time_span) methods call xtd::thread_pool::close method too.
+      static void close();
+
       /// @brief Retrieves the difference between the maximum number of thread pool threads returned by the GetMaxThreads method, and the number currently active.
       /// @param worker_threads The number of available worker threads
       /// @param completion_port_threads The number of available asynchronous I/O threads.
@@ -175,9 +184,15 @@ namespace xtd {
       /// @}
 
     private:
+      friend class xtd::threading::thread;
       static void asynchronous_io_run();
-      static void create_threads();
-      static void create_asynchronous_io_threads();
+      static void create_thread();
+      static void create_asynchronous_io_thread();
+      static void initialize_min_threads();
+      static void initialize_min_asynchronous_io_threads();
+      static bool join_all(int32 milliseconds_timeout);
+      static bool join_all_threads(int32 milliseconds_timeout);
+      static bool join_all_asynchronous_io_threads(int32 milliseconds_timeout);
       static void run();
 
       static semaphore  asynchronous_io_semaphore_;
