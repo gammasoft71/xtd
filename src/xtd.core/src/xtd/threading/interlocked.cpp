@@ -7,8 +7,6 @@
 using namespace xtd;
 using namespace xtd::threading;
 
-std::mutex interlocked::guard;
-
 int32 interlocked::add(int32& location, int32 value) noexcept {
   return native::interlocked::add(location, value);
 }
@@ -19,9 +17,10 @@ int64 interlocked::add(int64& location, int64 value) noexcept {
 
 double interlocked::compare_exchange(double& location, double value, double comparand) noexcept {
   double result = location;
-  std::lock_guard<std::mutex> lock(guard);
-  if (location == comparand)
-    location = value;
+  lock_(location) {
+    if (location == comparand)
+      location = value;
+  }
   return result;
 }
 
@@ -43,9 +42,10 @@ void* interlocked::compare_exchange(void*& location, void* value, void* comparan
 
 float interlocked::compare_exchange(float& location, float value, float comparand) noexcept {
   float result = location;
-  std::lock_guard<std::mutex> lock(guard);
-  if (location == comparand)
-    location = value;
+  lock_(location) {
+    if (location == comparand)
+      location = value;
+  }
   return result;
 }
 
@@ -59,8 +59,8 @@ int64 interlocked::decrement(int64& location) noexcept {
 
 double interlocked::exchange(double& location, double value) noexcept {
   double original = location;
-  std::lock_guard<std::mutex> lock(guard);
-  location = value;
+  lock_(location)
+    location = value;
   return original;
 }
 
@@ -82,8 +82,8 @@ void* interlocked::exchange(void*& location, void* value) noexcept {
 
 float interlocked::exchange(float& location, float value) noexcept {
   float original = location;
-  std::lock_guard<std::mutex> lock(guard);
-  location = value;
+  lock_(location)
+    location = value;
   return original;
 }
 

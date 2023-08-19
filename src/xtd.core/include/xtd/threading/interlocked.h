@@ -4,11 +4,11 @@
 #pragma once
 
 #include <atomic>
-#include <mutex>
 
 #include "../core_export.h"
-#include "../static.h"
+#include "../lock.h"
 #include "../object.h"
+#include "../static.h"
 #include "../types.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -86,9 +86,9 @@ namespace xtd {
       template<typename type_t>
       static type_t compare_exchange(object& location, const object& value, const object& comparand) noexcept {
         type_t retValue = location;
-        std::lock_guard<std::mutex> lock(guard);
-        if (location.equals(comparand))
-          location = value;
+        lock_(location) {
+          if (location.equals(comparand)) location = value;
+        }
         return retValue;
       }
       /// @brief Compares two instances of the specified reference type type_t for equality and, if they are equal, replaces one of them.
@@ -99,9 +99,9 @@ namespace xtd {
       template<typename type_t>
       static type_t compare_exchange(type_t& location, type_t value, type_t comparand) noexcept {
         type_t retValue = location;
-        std::lock_guard<std::mutex> lock(guard);
-        if (location == comparand)
-          location = value;
+        lock_(location) {
+          if (location == comparand) location = value;
+        }
         return retValue;
       }
       /// @brief Compares two Single for equality and, if they are equal, replaces one of the values.
@@ -130,8 +130,8 @@ namespace xtd {
       template<typename type_t>
       static type_t exchange(type_t& location, type_t value) {
         type_t original = location;
-        std::lock_guard<std::mutex> lock(guard);
-        location = value;
+        lock_(location)
+          location = value;
         return original;
       }
       /// @brief Sets a double-precision floating point number to a specified value and returns the original value, as an atomic operation.
@@ -167,8 +167,8 @@ namespace xtd {
       template<typename type_t>
       static type_t exchange(object& location, const object& value) noexcept {
         type_t original = location;
-        std::lock_guard<std::mutex> lock(guard);
-        location = value;
+        lock_(location)
+          location = value;
         return original;
       }
       /// @brief Sets a double-precision floating point number to a specified value and returns the original value, as an atomic operation.
@@ -201,8 +201,6 @@ namespace xtd {
       static int64 read(int64& location) noexcept;
       
     private:
-      /// @brief Represent The object used to create a lock section
-      static std::mutex guard;
     };
   }
 }
