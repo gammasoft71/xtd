@@ -277,12 +277,13 @@ bool thread::join(int32 milliseconds_timeout) {
   
   bool result = data_->end_thread_event.wait_one(milliseconds_timeout);
   if (result == true) {
+    auto current_thread = thread::current_thread();
     try {
-      if (!is_main_thread()) current_thread().data_->state |= xtd::threading::thread_state::wait_sleep_join;
+      if (!is_main_thread()) current_thread.data_->state |= xtd::threading::thread_state::wait_sleep_join;
       native::thread::join(data_->handle);
-      if (!is_main_thread()) current_thread().data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
+      if (!is_main_thread()) current_thread.data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
     } catch (...) {
-      if (!is_main_thread()) current_thread().data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
+      if (!is_main_thread()) current_thread.data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
     }
     data_->joinable = false;
     lock_guard_threads lock;
@@ -339,11 +340,12 @@ void thread::sleep(const time_span& timeout) {
 void thread::sleep(int32 milliseconds_timeout) {
   if (milliseconds_timeout < timeout::infinite) throw argument_exception(csf_);
   
-  if (current_thread().data_ && current_thread().data_->interrupted) current_thread().interrupt();
+  auto current_thread = thread::current_thread();
+  if (current_thread.data_ && current_thread.data_->interrupted) current_thread.interrupt();
   
-  if (current_thread().data_) current_thread().data_->state |= xtd::threading::thread_state::wait_sleep_join;
+  if (current_thread.data_) current_thread.data_->state |= xtd::threading::thread_state::wait_sleep_join;
   native::thread::sleep(milliseconds_timeout);
-  if (current_thread().data_) current_thread().data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
+  if (current_thread.data_) current_thread.data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
 }
 
 void thread::spin_wait(int32 iterations) {
@@ -471,15 +473,15 @@ void thread::close() {
 
 bool thread::do_wait(wait_handle& wait_handle, int32 milliseconds_timeout) {
   if (milliseconds_timeout < timeout::infinite) throw argument_exception(csf_);
-  
-  if (current_thread().data_) current_thread().data_->state |= xtd::threading::thread_state::wait_sleep_join;
-  if (current_thread().data_ && current_thread().data_->interrupted) current_thread().interrupt();
+  auto current_thread = thread::current_thread();
+  if (current_thread.data_) current_thread.data_->state |= xtd::threading::thread_state::wait_sleep_join;
+  if (current_thread.data_ && current_thread.data_->interrupted) current_thread.interrupt();
   try {
     auto result = wait_handle.wait(milliseconds_timeout);
-    if (current_thread().data_) current_thread().data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
+    if (current_thread.data_) current_thread.data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
     return result;
   } catch (...) {
-    if (current_thread().data_) current_thread().data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
+    if (current_thread.data_) current_thread.data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
     throw;
   }
 }
