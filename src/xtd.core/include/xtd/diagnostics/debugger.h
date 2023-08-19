@@ -4,7 +4,6 @@
 #pragma once
 #include <cstdint>
 #include <cstdlib>
-#include <mutex>
 #include "../core_export.h"
 #include "../static.h"
 #include "../ustring.h"
