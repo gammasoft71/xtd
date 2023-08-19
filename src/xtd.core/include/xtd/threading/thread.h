@@ -238,18 +238,22 @@ namespace xtd {
       /// @brief Blocks the calling thread until all joinable threads terminate.
       /// @exception xtd::threading::thread_state_exception The caller attempted to join a thread that is in the xtd::threading::thread_state::unstarted state.
       /// @remarks If one or more threads are not joinable, they will be skipped.
+      /// @remarks #startup_calls xtd::thread::join method.
+      /// @remarks Call xtd::thread_pool::close method to join the end of running worker threads too.
       static void join_all();
       /// @brief Blocks the calling thread until all joinable threads terminate or the specified time elapses, while continuing.
       /// @param milliseconds_timeout The number of milliseconds to wait for all threads to terminate.
       /// @return true if all threads have terminated; false if all threads have not terminated after the amount of time specified by the timeout parameter has elapsed.
       /// @exception xtd::threading::thread_state_exception The caller attempted to join a thread that is in the xtd::threading::thread_state::unstarted state.
       /// @remarks If one or more threads are not joinable, they will be skipped.
+      /// @remarks Call xtd::thread_pool::close method to join the end of running worker threads too.
       static bool join_all(int32 milliseconds_timeout);
       /// @brief Blocks the calling thread until all joinable threads terminate or the specified time elapses, while continuing.
       /// @param timeout A xtd::time_span set to the amount of time to wait for all threads to terminate.
       /// @return true if all threads have terminated; false if all threads have not terminated after the amount of time specified by the timeout parameter has elapsed.
       /// @exception xtd::threading::thread_state_exception The caller attempted to join a thread that is in the xtd::threading::thread_state::unstarted state.
       /// @remarks If one or more threads are not joinable, they will be skipped.
+      /// @remarks Call xtd::thread_pool::close method to join the end of running worker threads too.
       static bool join_all(const time_span& timeout);
 
       /// @brief Blocks the calling thread until all specified joinable threads collection terminate.
