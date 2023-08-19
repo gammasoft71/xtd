@@ -18,7 +18,6 @@
 #include "../../../include/xtd/as.h"
 #include "../../../include/xtd/using.h"
 #include <chrono>
-#include <mutex>
 #include <thread>
 
 using namespace xtd;
@@ -34,14 +33,13 @@ namespace xtd {
 namespace {
   class lock_guard_threads {
   public:
-    using mutex_type = std::recursive_mutex;
-    lock_guard_threads() {lock_.lock();}
-    ~lock_guard_threads() {lock_.unlock();}
+    lock_guard_threads() {lock_.wait_one();}
+    ~lock_guard_threads() {lock_.release_mutex();}
     
-    static mutex_type& lock() {return lock_;}
-
+    static xtd::threading::mutex& lock() {return lock_;}
+    
   private:
-    inline static mutex_type lock_;
+    inline static xtd::threading::mutex lock_;
   };
 }
 
@@ -473,6 +471,10 @@ void thread::close() {
 
 bool thread::do_wait(wait_handle& wait_handle, int32 milliseconds_timeout) {
   if (milliseconds_timeout < timeout::infinite) throw argument_exception(csf_);
+
+  // Don't use default way, otherwise you'll get reentrant calls up to a stack overflow in the do_wait method.
+  if (wait_handle.handle() == lock_guard_threads::lock().handle()) return lock_guard_threads::lock().wait(milliseconds_timeout);
+  
   auto current_thread = thread::current_thread();
   if (current_thread.data_) current_thread.data_->state |= xtd::threading::thread_state::wait_sleep_join;
   if (current_thread.data_ && current_thread.data_->interrupted) current_thread.interrupt();
