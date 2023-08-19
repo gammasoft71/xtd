@@ -3,7 +3,7 @@
 #include "../../../include/xtd/diagnostics/default_trace_listener.h"
 #include "../../../include/xtd/environment.h"
 #include "../../../include/xtd/literals.h"
-#include <mutex>
+#include "../../../include/xtd/lock.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/debugger.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
@@ -18,7 +18,6 @@ extern char** __diagnostics_argv;
 
 namespace {
   bool debug_use_debug_global_lock = true;
-  mutex debug_global_lock;
 }
 
 trace_listener_collection& debug::listeners_ = __listeners__;
@@ -102,8 +101,8 @@ void debug::fail__(const ustring& message) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
     if (!listener->is_thread_safe() && debug_use_debug_global_lock) {
-      std::lock_guard<std::mutex> lock(debug_global_lock);
-      listener->fail(message);
+      lock_(source_name_)
+        listener->fail(message);
     } else
       listener->fail(message);
   }
@@ -115,8 +114,8 @@ void debug::fail__(const ustring& message, const ustring& detail_message) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
     if (!listener->is_thread_safe() && debug_use_debug_global_lock) {
-      std::lock_guard<std::mutex> lock(debug_global_lock);
-      listener->fail(message, detail_message);
+      lock_(source_name_)
+        listener->fail(message, detail_message);
     } else
       listener->fail(message, detail_message);
   }
@@ -133,8 +132,8 @@ void debug::trace_event_(trace_event_type trace_event_type, const ustring& messa
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
     if (!listener->is_thread_safe() && debug_use_debug_global_lock) {
-      std::lock_guard<std::mutex> lock(debug_global_lock);
-      listener->trace_event(trace_event_cache(), source_name_, trace_event_type, 0, message);
+      lock_(source_name_)
+        listener->trace_event(trace_event_cache(), source_name_, trace_event_type, 0, message);
     } else
       listener->trace_event(trace_event_cache(), source_name_, trace_event_type, 0, message);
   }
@@ -146,8 +145,8 @@ void debug::write_(const ustring& message) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
     if (!listener->is_thread_safe() && debug_use_debug_global_lock) {
-      std::lock_guard<std::mutex> lock(debug_global_lock);
-      listener->write(message);
+      lock_(source_name_)
+        listener->write(message);
     } else
       listener->write(message);
   }
@@ -159,8 +158,8 @@ void debug::write_(const ustring& message, const ustring& category) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
     if (!listener->is_thread_safe() && debug_use_debug_global_lock) {
-      std::lock_guard<std::mutex> lock(debug_global_lock);
-      listener->write(message, category);
+      lock_(source_name_)
+        listener->write(message, category);
     } else
       listener->write(message, category);
   }
@@ -172,8 +171,8 @@ void debug::write_line_(const ustring& message) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
     if (!listener->is_thread_safe() && debug_use_debug_global_lock) {
-      std::lock_guard<std::mutex> lock(debug_global_lock);
-      listener->write_line(message);
+      lock_(source_name_)
+        listener->write_line(message);
     } else
       listener->write_line(message);
   }
@@ -185,8 +184,8 @@ void debug::write_line_(const ustring& message, const ustring& category) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
     if (!listener->is_thread_safe() && debug_use_debug_global_lock) {
-      std::lock_guard<std::mutex> lock(debug_global_lock);
-      listener->write_line(message, category);
+      lock_(source_name_)
+        listener->write_line(message, category);
     } else
       listener->write_line(message, category);
   }
