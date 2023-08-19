@@ -458,7 +458,6 @@ namespace xtd {
       static listener_collection& listeners_;
       static bool& show_assert_dialog_;
       inline static bool use_global_lock_ = true;
-      static std::mutex global_lock_;
       static xtd::ustring source_name_;
     };
   }
