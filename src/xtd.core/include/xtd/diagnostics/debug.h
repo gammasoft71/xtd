@@ -4,7 +4,6 @@
 #pragma once
 #include <cstdint>
 #include <cstdlib>
-#include <mutex>
 #include "../add_last_arg_to_command.h"
 #include "../core_export.h"
 #include "../environment.h"
@@ -479,8 +478,6 @@ namespace xtd {
       inline static uint32 indent_size_ = 4;
       static listener_collection& listeners_;
       static bool& show_assert_dialog_;
-      inline static bool use_global_lock_ = true;
-      static std::mutex global_lock_;
       static xtd::ustring source_name_;
     };
   }
