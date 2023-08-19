@@ -8,6 +8,7 @@
 #include "../../../include/xtd/threading/thread_interrupted_exception.h"
 #include "../../../include/xtd/threading/thread_state_exception.h"
 #include "../../../include/xtd/threading/thread.h"
+#include "../../../include/xtd/threading/thread_pool.h"
 #include "../../../include/xtd/threading/timeout.h"
 #include "../../../include/xtd/argument_exception.h"
 #include "../../../include/xtd/environment.h"
@@ -301,11 +302,21 @@ void thread::join_all() {
 }
 
 bool thread::join_all(int32 milliseconds_timeout) {
+  int32 timeout = milliseconds_timeout;
+  int64 start = std::chrono::nanoseconds(std::chrono::high_resolution_clock::now().time_since_epoch()).count() / 1000000;
+  if (!thread_pool::join_all(milliseconds_timeout)) return false;
+  
   std::vector<thread*> thread_pointers;
   // Skip unmanaged thread and main thread.
   for (auto index = 2ul; index < threads_.size(); ++index)
     thread_pointers.push_back(threads_[index].get());
-  return join_all(thread_pointers, milliseconds_timeout);
+
+  timeout = milliseconds_timeout - as<int32>(std::chrono::nanoseconds(std::chrono::high_resolution_clock::now().time_since_epoch()).count() / 1000000 - start);
+  if (timeout < 0) return false;
+
+  if (join_all(thread_pointers, timeout) == false) return false;
+  threads_.erase(threads_.begin() + 2, threads_.end());
+  return true;
 }
 
 bool thread::join_all(const time_span& timeout) {
