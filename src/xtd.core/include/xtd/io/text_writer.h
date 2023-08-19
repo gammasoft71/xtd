@@ -5,7 +5,6 @@
 
 #include <cstdio>
 #include <istream>
-#include <mutex>
 #include <string>
 #include "../core_export.h"
 #include "../object.h"
@@ -269,7 +268,6 @@ namespace xtd {
       explicit synchronized_text_writer(xtd::io::text_writer& writer);
       synchronized_text_writer() = delete;
       xtd::io::text_writer& writer_;
-      std::mutex mutex_;
     };
   }
 }
