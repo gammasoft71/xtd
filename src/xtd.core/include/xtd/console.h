@@ -2,7 +2,6 @@
 /// @brief Contains xtd::console class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <mutex>
 #include "console_cancel_event_handler.h"
 #include "console_color.h"
 #include "console_key_info.h"
@@ -444,6 +443,5 @@ namespace xtd {
     
     static void write_(const ustring& value);
     static void write_line_(const ustring& value);
-    inline static std::mutex console_mutex;
   };
 }
