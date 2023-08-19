@@ -79,7 +79,7 @@ const intptr thread::invalid_thread_id = native::types::invalid_handle();
 
 intptr thread::main_thread_id_ = thread::get_current_thread_id();
 
-thread::thread_collection thread::threads_ {std::make_shared<thread>(), std::make_shared<thread>()};
+thread::thread_collection thread::threads_;
 
 thread& thread::current_thread() {
   lock_guard_threads lock;
@@ -87,31 +87,12 @@ thread& thread::current_thread() {
   
   if (id == main_thread_id_) return main_thread();
   
-  for (auto index = 2ul; index < threads_.size(); ++index) {
-    if (threads_[index]->data_ && threads_[index]->data_->thread_id == id)
-      return *threads_.at(index);
+  for (auto& thread : threads_) {
+    if (thread->data_ && thread->data_->thread_id == id)
+      return *thread;
   }
   
-  if (threads_.at(1)->is_unstarted()) {
-    threads_.at(1)->data_->handle = get_current_thread_handle();
-    threads_.at(1)->data_->state &= ~xtd::threading::thread_state::unstarted;
-    threads_.at(1)->data_->state |= xtd::threading::thread_state::background;
-    threads_.at(1)->data_->thread_id = get_current_thread_id();
-  }
-  return *threads_.at(1);
-}
-
-thread& thread::main_thread() {
-  lock_guard_threads lock;
-  if (threads_.at(0)->data_->managed_thread_id != main_managed_thread_id) {
-    threads_.at(0)->data_->end_thread_event.set();
-    threads_.at(0)->data_->handle = get_current_thread_handle();
-    threads_.at(0)->data_->joinable = true;
-    threads_.at(0)->data_->managed_thread_id = main_managed_thread_id;
-    threads_.at(0)->data_->state &= ~xtd::threading::thread_state::unstarted;
-    threads_.at(0)->data_->thread_id = get_current_thread_id();
-  }
-  return *threads_.at(0);
+  return unmanaged_thread();
 }
 
 thread::thread() : data_(std::make_shared<data>()) {
@@ -186,6 +167,20 @@ bool thread::is_thread_pool_thread() const noexcept {
 
 bool thread::joinable() const noexcept {
   return data_ ? data_->joinable && !is_background() : false;
+}
+
+thread& thread::main_thread() {
+  static thread main_thread;
+  lock_guard_threads lock;
+  if (main_thread.data_->managed_thread_id != main_managed_thread_id) {
+    main_thread.data_->end_thread_event.set();
+    main_thread.data_->handle = get_current_thread_handle();
+    main_thread.data_->joinable = true;
+    main_thread.data_->managed_thread_id = main_managed_thread_id;
+    main_thread.data_->state &= ~xtd::threading::thread_state::unstarted;
+    main_thread.data_->thread_id = get_current_thread_id();
+  }
+  return main_thread;
 }
 
 int32 thread::managed_thread_id() const noexcept {
@@ -307,9 +302,8 @@ bool thread::join_all(int32 milliseconds_timeout) {
   if (!thread_pool::join_all(milliseconds_timeout)) return false;
   
   std::vector<thread*> thread_pointers;
-  // Skip unmanaged thread and main thread.
-  for (auto index = 2ul; index < threads_.size(); ++index)
-    thread_pointers.push_back(threads_[index].get());
+  for (auto& thread : threads_)
+    thread_pointers.push_back(thread.get());
 
   timeout = milliseconds_timeout - as<int32>(std::chrono::nanoseconds(std::chrono::high_resolution_clock::now().time_since_epoch()).count() / 1000000 - start);
   if (timeout < 0) return false;
@@ -577,4 +571,15 @@ void thread::thread_proc() {
   if (iterator == threads_.end()) return;
   (*iterator)->data_.reset();
   threads_.erase(iterator);
+}
+
+thread& thread::unmanaged_thread() {
+  static thread unmanaged_thread;
+  if (unmanaged_thread.is_unstarted()) {
+    unmanaged_thread.data_->state &= ~xtd::threading::thread_state::unstarted;
+    unmanaged_thread.data_->state |= xtd::threading::thread_state::background;
+  }
+  unmanaged_thread.data_->handle = get_current_thread_handle();
+  unmanaged_thread.data_->thread_id = get_current_thread_id();
+  return unmanaged_thread;
 }
