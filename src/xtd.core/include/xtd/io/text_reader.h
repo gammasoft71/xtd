@@ -5,7 +5,6 @@
 
 #include <cstdio>
 #include <istream>
-#include <mutex>
 #include <string>
 #include "../core_export.h"
 #include "../object.h"
@@ -142,7 +141,6 @@ namespace xtd {
       explicit synchronized_text_reader(xtd::io::text_reader& reader);
       synchronized_text_reader() = delete;
       xtd::io::text_reader& reader_;
-      std::mutex mutex_;
     };
   }
 }

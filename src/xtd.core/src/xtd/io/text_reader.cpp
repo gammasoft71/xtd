@@ -1,5 +1,6 @@
 #include "../../../include/xtd/io/text_reader.h"
 #include "../../../include/xtd/argument_out_of_range_exception.h"
+#include "../../../include/xtd/lock.h"
 
 using namespace xtd;
 using namespace xtd::io;
@@ -61,8 +62,9 @@ int32 null_text_reader::read() {
 }
 
 int32 synchronized_text_reader::read() {
-  std::lock_guard<std::mutex> lock(mutex_);
-  return reader_.read();
+  lock_(reader_);
+    return reader_.read();
+  return EOF;
 }
 
 synchronized_text_reader::synchronized_text_reader(xtd::io::text_reader& reader) : reader_(reader) {
