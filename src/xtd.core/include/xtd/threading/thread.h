@@ -384,6 +384,7 @@ namespace xtd {
       bool is_wait_sleep_join() const noexcept;
       static bool join_all(const std::vector<thread*>& threads, int32 milliseconds_timeout);
       void thread_proc();
+      static thread& unmanaged_thread();
 
       static constexpr int32 main_managed_thread_id = 1;
       static constexpr int32 unmanaged_thread_id = 0;
