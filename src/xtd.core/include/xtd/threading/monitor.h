@@ -14,7 +14,7 @@
 #include "mutex.h"
 #include "timeout.h"
 #include <chrono>
-#include <map>
+#include <unordered_map>
 #include <utility>
 
 /// @cond
@@ -43,7 +43,7 @@ namespace xtd {
     /// @include monitor.cpp
     class core_export_ monitor static_ {
       struct item;
-      using item_collection = std::map<intptr, item>;
+      using item_collection = std::unordered_map<intptr, item>;
     public:
       /// @name Methods
       
