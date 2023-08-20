@@ -45,7 +45,19 @@ namespace xtd {
     /// @remarks When a process starts, the common language runtime automatically creates a single foreground thread to execute application code. Along with this main foreground thread, a process can create one or more threads to execute a portion of the program code associated with the process. These threads can execute either in the foreground or in the background. In addition, you can use the xtd::threading::thread_pool class to execute code on worker threads that are managed by the common language runtime.
     class core_export_ thread final : public object {
       struct data;
-      class thread_collection;
+
+      class thread_collection : public std::vector<std::shared_ptr<thread>> {
+      public:
+        thread_collection() = default;
+        thread_collection(std::initializer_list<std::shared_ptr<thread>> init) : std::vector<std::shared_ptr<thread>>(init) {}
+        ~thread_collection() {close();}
+        
+      private:
+        void close() {
+          thread::join_all();
+        }
+      };
+
     public:
       /// @name Fields
       

@@ -63,25 +63,15 @@ struct thread::data {
   xtd::threading::thread_start thread_start;
 };
 
-class thread::thread_collection : public std::vector<std::shared_ptr<thread>> {
-public:
-  thread_collection() = default;
-  thread_collection(std::initializer_list<std::shared_ptr<thread>> init) : std::vector<std::shared_ptr<thread>>(init) {}  
-  ~thread_collection() {close();}
-  
-private:
-  void close() {
-    thread::join_all();
-  }
-};
-
 const intptr thread::invalid_handle = native::types::invalid_handle();
 
 const intptr thread::invalid_thread_id = native::types::invalid_handle();
 
 intptr thread::main_thread_id_ = thread::get_current_thread_id();
 
-thread::thread_collection thread::threads_;
+// The declaration threads_ collection is in the thread_pool.cpp file (just before thread_pool::asynchronous_io_threads_ and thread_pool::threads_)
+// to ensure allocation and deallocation order.
+//thread::thread_collection thread::threads_;
 
 thread& thread::current_thread() {
   lock_guard_threads lock;
@@ -90,7 +80,7 @@ thread& thread::current_thread() {
   if (id == main_thread_id_) return main_thread();
   
   for (auto& thread : threads_) {
-    if (thread->data_->thread_id == id)
+    if (thread->data_ && thread->data_->thread_id == id)
       return *thread;
   }
   
@@ -299,7 +289,6 @@ void thread::join_all() {
 }
 
 bool thread::join_all(int32 milliseconds_timeout) {
-  thread::yield();
   int32 timeout = milliseconds_timeout;
   int64 start = std::chrono::nanoseconds(std::chrono::high_resolution_clock::now().time_since_epoch()).count() / 1000000;
   if (!thread_pool::join_all(milliseconds_timeout)) return false;
@@ -464,7 +453,7 @@ void thread::close() {
 
 bool thread::do_wait(wait_handle& wait_handle, int32 milliseconds_timeout) {
   if (milliseconds_timeout < timeout::infinite) throw argument_exception(csf_);
-
+  
   auto current_thread = thread::current_thread();
   current_thread.data_->state |= xtd::threading::thread_state::wait_sleep_join;
   if (current_thread.data_->interrupted) current_thread.interrupt();
@@ -531,9 +520,12 @@ bool thread::is_wait_sleep_join() const noexcept {
 bool thread::join_all(const std::vector<thread*>& threads, int32 milliseconds_timeout) {
   if (milliseconds_timeout < timeout::infinite) throw argument_exception(csf_);
   
+  thread::yield();
   if (milliseconds_timeout == timeout::infinite) {
-    for (auto thread : threads)
+    for (auto thread : threads) {
       if (thread->joinable()) thread->join();
+      thread::yield();
+    }
     return true;
   }
   

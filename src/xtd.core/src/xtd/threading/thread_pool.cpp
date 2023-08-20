@@ -1,3 +1,4 @@
+#include "../../../include/xtd/threading/monitor.h"
 #include "../../../include/xtd/threading/thread_pool.h"
 #include "../../../include/xtd/lock.h"
 #include "../../../include/xtd/as.h"
@@ -30,6 +31,10 @@ size_t thread_pool::max_threads_ = 800;
 size_t thread_pool::max_asynchronous_io_threads_ = 800;
 size_t thread_pool::min_threads_ = environment::processor_count();
 size_t thread_pool::min_asynchronous_io_threads_ = environment::processor_count();
+
+std::recursive_mutex __monitor_mutex__;
+monitor::item_collection monitor::items_;
+thread::thread_collection thread::threads_;
 
 semaphore thread_pool::asynchronous_io_semaphore_ = semaphore(0, as<int32>(thread_pool::max_asynchronous_io_threads_));
 thread_pool::asynchronous_io_thread_vector thread_pool::asynchronous_io_threads_;
