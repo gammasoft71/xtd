@@ -2,7 +2,6 @@
 #include <xtd/threading/timer>
 #include <xtd/console>
 #include <xtd/date_time>
-#include <xtd/random>
 #include <xtd/startup>
 
 using namespace xtd;
