@@ -4,6 +4,7 @@
 #include "../../../../include/xtd/net/dns.h"
 #include "../../../../include/xtd/as.h"
 #include "../../../../include/xtd/is.h"
+#include <mutex>
 #include <thread>
 
 using namespace std;

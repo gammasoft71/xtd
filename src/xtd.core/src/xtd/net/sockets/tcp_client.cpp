@@ -2,6 +2,7 @@
 #include "../../../../include/xtd/net/sockets/socket.h"
 #include "../../../../include/xtd/net/sockets/socket_exception.h"
 #include "../../../../include/xtd/net/dns.h"
+#include <mutex>
 
 using namespace std;
 using namespace xtd;

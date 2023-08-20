@@ -3,6 +3,7 @@
 #include "../../../../include/xtd/invalid_operation_exception.h"
 #include "../../../../include/xtd/as.h"
 #include "../../../../include/xtd/is.h"
+#include <mutex>
 #include <thread>
 
 using namespace std;

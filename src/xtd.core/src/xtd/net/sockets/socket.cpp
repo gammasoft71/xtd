@@ -1,6 +1,3 @@
-#include <algorithm>
-#include <mutex>
-#include <thread>
 #include "../../../../include/xtd/bit_converter.h"
 #include "../../../../include/xtd/argument_out_of_range_exception.h"
 #include "../../../../include/xtd/invalid_operation_exception.h"
@@ -18,6 +15,9 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/socket.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
+#include <algorithm>
+#include <mutex>
+#include <thread>
 
 using namespace std;
 using namespace xtd;
