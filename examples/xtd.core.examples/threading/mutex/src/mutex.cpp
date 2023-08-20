@@ -17,8 +17,7 @@ namespace mutex_example {
         threads.back().start();
       }
       
-      for (auto thread : threads)
-        thread.join();
+      thread::join_all(threads);
     }
     
     static void thread_proc() {
