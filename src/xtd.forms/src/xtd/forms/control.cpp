@@ -7,6 +7,7 @@
 #include <xtd/diagnostics/debugger.h>
 #include <xtd/diagnostics/trace_switch.h>
 #include <xtd/drawing/system_fonts.h>
+#include <xtd/threading/mutex.h>
 #include <xtd/threading/thread.h>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/graphics.h>
@@ -64,7 +65,7 @@ namespace {
 struct control::async_result_invoke::data {
   std::any async_state;
   std::shared_ptr<bool> is_completed = std::make_shared<bool>(false);
-  std::shared_ptr<std::timed_mutex> async_mutex = std::make_shared<std::timed_mutex>();
+  std::shared_ptr<xtd::threading::mutex> async_mutex = std::make_shared<xtd::threading::mutex>();
 };
 
 control::async_result_invoke::async_result_invoke(std::any async_state) : data_(std::make_shared<data>()) {
@@ -75,7 +76,7 @@ std::any control::async_result_invoke::async_state() const noexcept {
   return data_->async_state;
 }
 
-std::timed_mutex& control::async_result_invoke::async_mutex() noexcept {
+xtd::threading::wait_handle& control::async_result_invoke::async_wait_handle() noexcept {
   return *data_->async_mutex;
 }
 
@@ -822,7 +823,7 @@ std::shared_ptr<xtd::iasync_result> control::begin_invoke(delegate<void()> value
 shared_ptr<iasync_result> control::begin_invoke(delegate<void(vector<any>)> value, const vector<any>& args) {
   //while (!xtd::forms::application::message_loop()) xtd::threading::thread::sleep(10_ms);
   shared_ptr<async_result_invoke> async = make_shared<async_result_invoke>(std::reference_wrapper(*this));
-  async->async_mutex().lock();
+  async->async_wait_handle().wait_one();
   if (is_handle_created()) native::control::invoke_in_control_thread(data_->handle, value, args, async->data_->async_mutex, async->data_->is_completed);
   threading::thread::yield();
   return async;
@@ -1000,7 +1001,7 @@ bool control::equals(const control& value) const noexcept {
 }
 
 void control::end_invoke(shared_ptr<iasync_result> async) {
-  lock_guard<timed_mutex> lock(async->async_mutex());
+  lock_guard<threading::mutex> lock {as<threading::mutex>(async->async_wait_handle())};
 }
 
 xtd::forms::visual_styles::control_state control::control_state() const noexcept {

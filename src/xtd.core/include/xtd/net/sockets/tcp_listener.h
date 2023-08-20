@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 
+#include "../../threading/mutex.h"
 #include "../../iequatable.h"
 #include "tcp_client.h"
 
@@ -40,13 +41,13 @@ namespace xtd {
         public:
           explicit async_result_socket(std::any async_state) : async_state_(async_state) {}
           std::any async_state() const noexcept override {return async_state_;}
-          std::timed_mutex& async_mutex() noexcept override {return async_mutex_;}
+          xtd::threading::wait_handle& async_wait_handle() noexcept override {return async_mutex_;}
           bool completed_synchronously() const noexcept override {return false;}
           bool is_completed() const noexcept override {return is_completed_;};
           
           std::any async_state_;
           bool is_completed_ = false;
-          std::timed_mutex async_mutex_;
+          xtd::threading::mutex async_mutex_;
           xtd::net::sockets::socket_error error_code_ = xtd::net::sockets::socket_error::success;
           std::exception_ptr exception_;
         };
