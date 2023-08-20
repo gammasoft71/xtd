@@ -299,10 +299,10 @@ void thread::join_all() {
 }
 
 bool thread::join_all(int32 milliseconds_timeout) {
+  thread::yield();
   int32 timeout = milliseconds_timeout;
   int64 start = std::chrono::nanoseconds(std::chrono::high_resolution_clock::now().time_since_epoch()).count() / 1000000;
-  thread_pool::join_all(milliseconds_timeout);
-  //if (!thread_pool::join_all(milliseconds_timeout)) return false;
+  if (!thread_pool::join_all(milliseconds_timeout)) return false;
 
   std::vector<thread*> thread_pointers;
   for (auto& thread : threads_)
