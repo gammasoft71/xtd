@@ -21,11 +21,11 @@ namespace mutex_example {
       // Create and start five numbered threads.
       //
       for(auto i = 1; i <= 5; ++i) {
-        auto thread = threading::thread{parameterized_thread_start {worker}};
+        threads.emplace_back(parameterized_thread_start {worker});
         
         // Start the thread, passing the number.
         //
-        thread.start(i);
+        threads.back().start(i);
       }
       
       // Wait for half a second, to allow all the
@@ -70,6 +70,8 @@ namespace mutex_example {
     }
     
   private:
+    inline static std::vector<thread> threads {5};
+
     // A semaphore that simulates a limited resource pool.
     //
     inline static semaphore pool;
