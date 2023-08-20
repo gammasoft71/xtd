@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <mutex>
 #include <thread>
 #include "../../../../include/xtd/bit_converter.h"
 #include "../../../../include/xtd/argument_out_of_range_exception.h"
