@@ -2,7 +2,7 @@
 /// @brief Contains xtd::iasync_result interface.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <mutex>
+#include "threading/wait_handle.h"
 #include "any.h"
 #include "interface.h"
 #include "object.h"
@@ -36,11 +36,11 @@ namespace xtd {
     /// @return A std::mutex that is used to wait for an asynchronous operation to complete.
     /// @remarks The return value allows the client to wait for an asynchronous operation to complete instead of polling xtd::iasync_result::is_completed until the operation concludes. The return value can be used to perform a wait operation.
     /// @par Notes to Implementers
-    /// The object that implements xtd::iasync_result does not need to create the std::mutex until the xtd::iasync_result::async_mutex property is read. It is the choice of the xtd::iasync_result implementer. However, if the implementer creates xtd::iasync_result::async_mutex, it is the responsibility of the implementer to signal the std::mutex that will terminate the wait at the appropriate time. Once created, xtd::iasync_result xtd::iasync_result::async_mutex should be kept alive until the user calls the method that concludes the asynchronous operation. At that time the object behind xtd::iasync_result::async_mutex can be discarded.
+    /// The object that implements xtd::iasync_result does not need to create the std::mutex until the xtd::iasync_result::async_wait_handle property is read. It is the choice of the xtd::iasync_result implementer. However, if the implementer creates xtd::iasync_result::async_wait_handle, it is the responsibility of the implementer to signal the std::mutex that will terminate the wait at the appropriate time. Once created, xtd::iasync_result xtd::iasync_result::async_wait_handle should be kept alive until the user calls the method that concludes the asynchronous operation. At that time the object behind xtd::iasync_result::async_wait_handle can be discarded.
     /// @par Notes to Callers
     /// Clients that wait for the operation to complete (as opposed to polling) use this property to obtain a synchronization object to wait on.
     /// @par Notes to Implementers
-    virtual std::timed_mutex& async_mutex() noexcept = 0;
+    virtual xtd::threading::wait_handle& async_wait_handle() noexcept = 0;
     
     /// @brief Gets a value that indicates whether the asynchronous operation completed synchronously.
     /// @return true if the asynchronous operation completed synchronously; otherwise, false.
