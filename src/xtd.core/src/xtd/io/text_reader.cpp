@@ -1,9 +1,11 @@
 #include "../../../include/xtd/io/text_reader.h"
 #include "../../../include/xtd/argument_out_of_range_exception.h"
-#include "../../../include/xtd/lock.h"
+#include <mutex>
 
 using namespace xtd;
 using namespace xtd::io;
+
+std::recursive_mutex __synchronized_text_reader_mutex__;
 
 null_text_reader& text_reader::null() noexcept {
   static null_text_reader null_text_reader;
@@ -62,9 +64,8 @@ int32 null_text_reader::read() {
 }
 
 int32 synchronized_text_reader::read() {
-  lock_(reader_);
-    return reader_.read();
-  return EOF;
+  std::lock_guard<std::recursive_mutex> lock(__synchronized_text_reader_mutex__);
+  return reader_.read();
 }
 
 synchronized_text_reader::synchronized_text_reader(xtd::io::text_reader& reader) : reader_(reader) {
