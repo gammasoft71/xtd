@@ -1,14 +1,15 @@
 #include "../../../include/xtd/threading/monitor.h"
 #include "../../../include/xtd/threading/mutex.h"
 #include "../../../include/xtd/threading/synchronization_lock_exception.h"
+#include <mutex>
 #include <optional>
 
 using namespace xtd;
 using namespace xtd::threading;
 
 namespace {
-  mutex& monitor_mutex() {
-    static auto monitor_mutex = mutex {};
+  std::recursive_mutex& monitor_mutex() {
+    static auto monitor_mutex = std::recursive_mutex {};
     return monitor_mutex;
   }
 }
