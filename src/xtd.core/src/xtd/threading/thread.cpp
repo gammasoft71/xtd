@@ -133,7 +133,7 @@ thread& thread::operator=(const thread& value) {
 }
 
 thread::~thread() {
-  if (data_.use_count() == 1) close();
+  //if (data_.use_count() == 1) close();
 }
 
 intptr thread::handle() const noexcept {
@@ -244,6 +244,7 @@ void thread::detach() {
 }
 
 void thread::interrupt() {
+  data_->interrupted = false;
   if (is_unstarted()) throw thread_state_exception(csf_);
   
   if (is_wait_sleep_join() && native::thread::cancel(data_->handle)) {
@@ -298,8 +299,9 @@ void thread::join_all() {
 bool thread::join_all(int32 milliseconds_timeout) {
   int32 timeout = milliseconds_timeout;
   int64 start = std::chrono::nanoseconds(std::chrono::high_resolution_clock::now().time_since_epoch()).count() / 1000000;
-  if (!thread_pool::join_all(milliseconds_timeout)) return false;
-  
+  thread_pool::join_all(milliseconds_timeout);
+  //if (!thread_pool::join_all(milliseconds_timeout)) return false;
+
   std::vector<thread*> thread_pointers;
   for (auto& thread : threads_)
     thread_pointers.push_back(thread.get());
