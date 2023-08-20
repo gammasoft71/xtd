@@ -3,6 +3,7 @@
 #include "../../../include/xtd/lock.h"
 #include "../../../include/xtd/as.h"
 #include "../../../include/xtd/environment.h"
+#include <mutex>
 
 using namespace xtd;
 using namespace xtd::threading;
