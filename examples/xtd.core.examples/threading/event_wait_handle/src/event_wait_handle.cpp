@@ -36,8 +36,8 @@ public:
     // number can be passed as an argument to the Start
     // method.
     for (auto i = 0; i <= 4; i++) {
-      auto t = thread {parameterized_thread_start {thread_proc}};
-      t.start(i);
+      threads_[i] = thread {parameterized_thread_start {thread_proc}};
+      threads_[i].start(i);
     }
     
     // Wait until all the threads have started and blocked.
@@ -74,8 +74,8 @@ public:
     // Create and start five more numbered threads.
     //
     for(auto i = 0; i <= 4; i++) {
-      auto t = thread {parameterized_thread_start {thread_proc}};
-      t.start(i);
+      threads_[i] = thread {parameterized_thread_start {thread_proc}};
+      threads_[i].start(i);
     }
     
     // Wait until all the threads have started and blocked.
@@ -91,8 +91,11 @@ public:
     console::write_line("Press ENTER to release the waiting threads.");
     console::read_line();
     ewh.set();
+    
+    thread::join_all(threads_);
   }
   
+private:
   static void thread_proc(std::any data) {
     console::write_line("Thread {0} blocks.", as<int>(data));
     // Increment the count of blocked threads.
@@ -111,6 +114,8 @@ public:
     //
     clear_count.set();
   }
+  
+  inline static std::array<thread, 5> threads_;
 };
 
 startup_(example);
