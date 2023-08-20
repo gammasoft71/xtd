@@ -11,7 +11,6 @@
 #include <xtd/argument_exception.h>
 #include <xtd/convert_string.h>
 #include <xtd/io/path.h>
-#include <atomic>
 #include <wx/bitmap.h>
 #include <wx/display.h>
 #include <wx/icon.h>
