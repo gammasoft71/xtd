@@ -33,9 +33,9 @@ struct __update__macos_path__ {
   }
 } __updmacpath__;
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::io;
+using namespace xtd::threading;
 
 namespace {
   int32 exit_code = 0;
@@ -69,21 +69,21 @@ public:
     std::signal(signal, signal_catcher::on_abnormal_termination_occured);
     signal_cancel_event_args e {xtd::signal::abnormal_termination};
     environment::on_cancel_signal(e);
-    if (xtd::threading::thread::current_thread().is_main_thread() && !e.cancel()) throw xtd::threading::thread_abort_exception(csf_);
+    if (thread::current_thread().is_main_thread() && !e.cancel()) throw thread_abort_exception(csf_);
   }
   
   static void on_floating_point_exception_occured(int32 signal) {
     std::signal(signal, signal_catcher::on_floating_point_exception_occured);
     signal_cancel_event_args e {xtd::signal::floating_point_exception};
     environment::on_cancel_signal(e);
-    if (xtd::threading::thread::current_thread().is_main_thread() && !e.cancel()) throw xtd::arithmetic_exception(csf_);
+    if (thread::current_thread().is_main_thread() && !e.cancel()) throw xtd::arithmetic_exception(csf_);
   }
   
   static void on_illegal_instruction_occured(int32 signal) {
     std::signal(signal, signal_catcher::on_illegal_instruction_occured);
     signal_cancel_event_args e {xtd::signal::illegal_instruction};
     environment::on_cancel_signal(e);
-    if (xtd::threading::thread::current_thread().is_main_thread() && !e.cancel()) throw xtd::invalid_operation_exception(csf_);
+    if (thread::current_thread().is_main_thread() && !e.cancel()) throw xtd::invalid_operation_exception(csf_);
   }
   
   static void on_interrupt_occured(int32 signal) {
@@ -92,7 +92,7 @@ public:
     environment::on_cancel_signal(se);
     console_cancel_event_args ce {console_special_key::control_c};
     ce.cancel(console::on_cancel_key_press(static_cast<int32>(console_special_key::control_c)));
-    if (xtd::threading::thread::current_thread().is_main_thread() && !se.cancel() && !ce.cancel()) throw xtd::interrupt_exception(csf_);
+    if (thread::current_thread().is_main_thread() && !se.cancel() && !ce.cancel()) throw xtd::interrupt_exception(csf_);
   }
   
   static void on_program_exit() {
@@ -329,7 +329,7 @@ std::map<std::string, std::string>& environment::get_environment_variables() {
   return get_environment_variables(environment_variable_target::process);
 }
 
-map<string, string>& environment::get_environment_variables(environment_variable_target target) {
+std::map<std::string, std::string>& environment::get_environment_variables(environment_variable_target target) {
   if (!enum_object<>::is_defined<environment_variable_target>(target)) throw xtd::argument_exception("Invalid environment variable target value"_t, csf_);
   return native::environment::get_environment_variables(as<int32>(target));
 }
