@@ -1,6 +1,7 @@
 #include <xtd/threading/wait_handle.h>
 #include <xtd/environment.h>
 #include <xtd/xtd.tunit>
+#include <mutex>
 #include <utility>
 #if defined(_WIN32)
 #include <Windows.h>
