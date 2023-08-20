@@ -3,8 +3,6 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 
-#include <atomic>
-
 #include "../core_export.h"
 #include "../lock.h"
 #include "../object.h"

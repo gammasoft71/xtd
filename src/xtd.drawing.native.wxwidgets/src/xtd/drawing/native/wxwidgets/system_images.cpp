@@ -1,4 +1,3 @@
-#include <atomic>
 #include <wx/image.h>
 #include <wx/bitmap.h>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
