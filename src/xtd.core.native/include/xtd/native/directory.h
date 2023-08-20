@@ -9,7 +9,6 @@
 /// @endcond
 
 #include <xtd/core_native_export.h>
-#include <chrono>
 #include <cstdint>
 #include <iterator>
 #include <memory>

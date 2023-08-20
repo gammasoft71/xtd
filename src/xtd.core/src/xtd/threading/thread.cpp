@@ -17,7 +17,6 @@
 #include "../../../include/xtd/not_implemented_exception.h"
 #include "../../../include/xtd/as.h"
 #include "../../../include/xtd/using.h"
-#include <chrono>
 #include <mutex>
 #include <thread>
 
