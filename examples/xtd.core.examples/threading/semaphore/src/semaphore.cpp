@@ -21,11 +21,11 @@ namespace mutex_example {
       // Create and start five numbered threads.
       //
       for(auto i = 1; i <= 5; ++i) {
-        threads.emplace_back(parameterized_thread_start {worker});
+        auto thread = threading::thread{parameterized_thread_start {worker}};
         
         // Start the thread, passing the number.
         //
-        threads.back().start(i);
+        thread.start(i);
       }
       
       // Wait for half a second, to allow all the
@@ -42,8 +42,7 @@ namespace mutex_example {
       console::write_line("Main thread calls Release(3).");
       pool.release(3);
       
-      for (auto& thread : threads)
-        thread.join();
+      thread::sleep(100);
       console::write_line("Main thread exits.");
     }
     
@@ -71,8 +70,6 @@ namespace mutex_example {
     }
     
   private:
-    inline static std::vector<thread> threads;
-
     // A semaphore that simulates a limited resource pool.
     //
     inline static semaphore pool;
