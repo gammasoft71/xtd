@@ -1,5 +1,7 @@
 #include "../../../include/xtd/io/text_writer.h"
-#include "../../../include/xtd/lock.h"
+#include <mutex>
+
+std::recursive_mutex __synchronized_text_writer_mutex__;
 
 using namespace xtd::io;
 
@@ -128,8 +130,8 @@ void null_text_writer::write(const xtd::ustring&) {
 }
 
 void synchronized_text_writer::write(const xtd::ustring& value) {
-  lock_(writer_);
-    writer_.write(value);
+  std::lock_guard<std::recursive_mutex> lock(__synchronized_text_writer_mutex__);
+  writer_.write(value);
 }
 
 synchronized_text_writer::synchronized_text_writer(xtd::io::text_writer& writer) : writer_(writer) {
