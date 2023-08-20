@@ -1,5 +1,6 @@
 #include <cstring>
 #include <iostream>
+#include <mutex>
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/console.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
@@ -33,6 +34,7 @@ namespace {
   }
   
   bool __auto_flush_out = true;
+  std::recursive_mutex __console_mutex__;
 }
 
 std::ostream console::error {__get_err_rdbuf()};
@@ -378,15 +380,13 @@ void console::register_cancel_key_press() {
 }
 
 void console::write_(const ustring& value) {
-  lock_(__auto_flush_out) {
-    out << value;
-    if (auto_flush_out()) out.flush();
-  }
+  std::lock_guard<std::recursive_mutex> lock {__console_mutex__};
+  out << value;
+  if (auto_flush_out()) out.flush();
 }
 
 void console::write_line_(const ustring& value) {
-  lock_(__auto_flush_out) {
-    out << value << std::endl;
-    if (auto_flush_out()) out.flush();
-  }
+  std::lock_guard<std::recursive_mutex> lock {__console_mutex__};
+  out << value << std::endl;
+  if (auto_flush_out()) out.flush();
 }
