@@ -44,6 +44,10 @@ namespace mutex_example {
       
       thread::sleep(100);
       console::write_line("Main thread exits.");
+      
+      // Join all threads with timeout because the pool
+      // semaphore released only for 3 threads.
+      thread::join_all(threads, 100);
     }
     
     static void worker(std::any num) {
