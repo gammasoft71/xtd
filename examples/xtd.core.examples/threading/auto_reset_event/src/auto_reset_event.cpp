@@ -18,9 +18,9 @@ namespace auto_reset_event_example {
       console::read_line();
       
       for (auto index = 1; index < 4; ++index) {
-        auto t = thread {thread_start {thread_proc}};
-        t.name(ustring::format("Thread_{}", index));
-        t.start();
+        threads.emplace_back(thread_start {thread_proc});
+        threads.back().name(ustring::format("Thread_{}", index));
+        threads.back().start();
       }
       thread::sleep(250_ms);
       
@@ -38,6 +38,8 @@ namespace auto_reset_event_example {
         event_2.set();
         thread::sleep(250_ms);
       }
+      
+      thread::join_all(threads);
     }
     
     static void thread_proc() {
