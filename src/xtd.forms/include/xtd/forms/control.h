@@ -2,7 +2,6 @@
 /// @brief Contains xtd::forms::control control.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <condition_variable>
 #include <cstdint>
 #include <functional>
 #include <map>
