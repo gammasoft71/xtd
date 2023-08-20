@@ -536,10 +536,8 @@ namespace xtd {
       /// @par Examples
       ///
       /// @code
-      /// #include <chrono>
       /// #include <xtd/xtd>
       ///
-      /// using namespace std::chrono;
       /// using namespace xtd;
       /// using namespace xtd::io;
       /// The following example gets the creation time of the specified directory.
@@ -551,11 +549,11 @@ namespace xtd {
       ///       date_time dt = directory::get_creation_time(environment::current_directory());
       ///       ///
       ///       // Give feedback to the user.
-      ///       if (date_time::now().subtract(dt).total_days().count() > 364) {
+      ///       if (date_time::now().subtract(dt).total_days() > 364) {
       ///         console::write_line("This directory is over a year old.");
-      ///       } else if (date_time::now().subtract(dt).total_days().count() > 30) {
+      ///       } else if (date_time::now().subtract(dt).total_days() > 30) {
       ///         console::write_line("This directory is over a month old.");
-      ///       } else if (date_time::now().subtract(dt).total_days().count() <= 1) {
+      ///       } else if (date_time::now().subtract(dt).total_days() <= 1) {
       ///         console::write_line("This directory is less than a day old.");
       ///       } else {
       ///         console::write_line("This directory was created on {0}", dt);

@@ -2,7 +2,6 @@
 #include <xtd/native/date_time.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <algorithm>
-#include <chrono>
 #include <cmath>
 #include <cstdarg>
 #include <cstdio>
@@ -11,7 +10,6 @@
 #include <map>
 
 using namespace std;
-using namespace std::chrono;
 using namespace xtd::native;
 
 namespace {

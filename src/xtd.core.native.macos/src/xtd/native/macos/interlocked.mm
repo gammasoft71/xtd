@@ -1,7 +1,6 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/interlocked.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
-#include <chrono>
 #include <cmath>
 #include <cstdarg>
 #include <cstdio>

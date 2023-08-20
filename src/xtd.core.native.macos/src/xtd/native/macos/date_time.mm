@@ -11,7 +11,7 @@
 #include <map>
 
 using namespace std;
-using namespace std::chrono;
+//using namespace std::chrono;
 using namespace xtd::native;
 
 namespace {

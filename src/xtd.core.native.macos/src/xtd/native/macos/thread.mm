@@ -5,7 +5,6 @@
 #include <TargetConditionals.h>
 #import <Cocoa/Cocoa.h>
 #include <pthread.h>
-#include <chrono>
 #include <thread>
 
 #define PTHREAD_FAILED ((pthread_t)-1)
