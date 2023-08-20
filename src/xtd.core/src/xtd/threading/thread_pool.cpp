@@ -121,7 +121,7 @@ bool thread_pool::set_max_threads(size_t worker_threads, size_t completion_port_
 }
 
 bool thread_pool::set_min_threads(size_t worker_threads, size_t completion_port_threads) {
-  if (worker_threads < 0 || completion_port_threads < 0 || worker_threads >= max_threads_ || completion_port_threads >= max_asynchronous_io_threads_)
+  if (worker_threads >= max_threads_ || completion_port_threads >= max_asynchronous_io_threads_)
     return false;
   
   min_threads_ = worker_threads;
