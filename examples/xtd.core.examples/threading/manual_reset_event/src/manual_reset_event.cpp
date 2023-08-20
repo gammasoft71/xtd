@@ -31,9 +31,9 @@ namespace manual_reset_event_example {
       console::read_line();
       
       for(auto i = 3; i <= 4; ++i) {
-        auto t = thread {thread_start {thread_proc}};
-        t.name(ustring::format("Thread_{}", i));
-        t.start();
+        threads.emplace_back(thread_start {thread_proc});
+        threads.back().name(ustring::format("Thread_{}", i));
+        threads.back().start();
       }
       
       thread::sleep(500);
@@ -54,11 +54,12 @@ namespace manual_reset_event_example {
       
       mre.set();
       
-      // If you run this example in Visual Studio, uncomment the following line:
-      //console::read_line();
+      thread::join_all(threads);
     }
     
   private:
+    inline static std::vector<thread> threads {4};
+
     // mre is used to block and release threads manually. It is
     // created in the unsignaled state.
     inline static manual_reset_event mre {false};
