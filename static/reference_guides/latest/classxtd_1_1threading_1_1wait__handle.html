@@ -200,7 +200,7 @@ The overloads of these methods provide timeout intervals for abandoning the wait
 <div class="line"><span class="comment">// Task 2 finished first (time waited=00:00:04:011925000).</span></div>
 <div class="ttc" id="aclassxtd_1_1random_html"><div class="ttname"><a href="classxtd_1_1random.html">xtd::random</a></div><div class="ttdoc">Represents a pseudo-random number generator, a device that produces a sequence of numbers that meet c...</div><div class="ttdef"><b>Definition</b> random.h:37</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1auto__reset__event_html"><div class="ttname"><a href="classxtd_1_1threading_1_1auto__reset__event.html">xtd::threading::auto_reset_event</a></div><div class="ttdoc">Represents a thread synchronization event that, when signaled, resets automatically after releasing a...</div><div class="ttdef"><b>Definition</b> auto_reset_event.h:31</div></div>
-<div class="ttc" id="agroup__keywords_html_gac9b8e6f22fb2fdc1bb915ee01aef848c"><div class="ttname"><a href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a></div><div class="ttdeci">#define startup_(main_class)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:57</div></div>
+<div class="ttc" id="agroup__keywords_html_gac9b8e6f22fb2fdc1bb915ee01aef848c"><div class="ttname"><a href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a></div><div class="ttdeci">#define startup_(main_class)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:58</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga21b580a3c06173e69cd3a9bb4e247bc2"><div class="ttname"><a href="group__xtd__core.html#ga21b580a3c06173e69cd3a9bb4e247bc2">xtd::threading::wait_callback</a></div><div class="ttdeci">action&lt; std::any &gt; wait_callback</div><div class="ttdoc">Represents a callback method to be executed by a thread pool thread.</div><div class="ttdef"><b>Definition</b> wait_callback.h:25</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a4b43b0aee35624cd95b910189b3dc231"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a4b43b0aee35624cd95b910189b3dc231">xtd::console_key::r</a></div><div class="ttdeci">@ r</div><div class="ttdoc">The R key.</div></div>
 <div class="ttc" id="anamespacextd_1_1threading_html"><div class="ttname"><a href="namespacextd_1_1threading.html">xtd::threading</a></div><div class="ttdoc">The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....</div><div class="ttdef"><b>Definition</b> abandoned_mutex_exception.h:10</div></div>
@@ -238,8 +238,8 @@ The overloads of these methods provide timeout intervals for abandoning the wait
 <tr class="memitem:a65749b3c963772bef5440b1c8faca6ea"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a65749b3c963772bef5440b1c8faca6ea">wait_one</a> (<a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> milliseconds_timeout)</td></tr>
 <tr class="memdesc:a65749b3c963772bef5440b1c8faca6ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocks the current thread until the current <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> receives a signal, using 32-bit signed integer to measure the time interval.  <br /></td></tr>
 <tr class="separator:a65749b3c963772bef5440b1c8faca6ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ffdfd0f2f35f6768cb78bded574aa01"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a6ffdfd0f2f35f6768cb78bded574aa01">wait_one</a> (const <a class="el" href="group__types.html#gad013431819ca97998d1dc5910b475f80">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>)</td></tr>
-<tr class="memdesc:a6ffdfd0f2f35f6768cb78bded574aa01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocks the current thread until the current instance receives a signal, using a <a class="el" href="group__types.html#gad013431819ca97998d1dc5910b475f80" title="Represents a time interval.">xtd::time_span</a> to measure the time interval.  <br /></td></tr>
+<tr class="memitem:a6ffdfd0f2f35f6768cb78bded574aa01"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a6ffdfd0f2f35f6768cb78bded574aa01">wait_one</a> (const <a class="el" href="structxtd_1_1time__span.html">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>)</td></tr>
+<tr class="memdesc:a6ffdfd0f2f35f6768cb78bded574aa01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocks the current thread until the current instance receives a signal, using a <a class="el" href="structxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> to measure the time interval.  <br /></td></tr>
 <tr class="separator:a6ffdfd0f2f35f6768cb78bded574aa01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01c82b06ca8a5d14aba5f1fb396c16f7"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a01c82b06ca8a5d14aba5f1fb396c16f7">signal_and_wait</a> (<a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;to_signal, <a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;to_wait)</td></tr>
 <tr class="memdesc:a01c82b06ca8a5d14aba5f1fb396c16f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signals one <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> and waits on another.  <br /></td></tr>
@@ -247,8 +247,8 @@ The overloads of these methods provide timeout intervals for abandoning the wait
 <tr class="memitem:a83aebea15b640d53b04a97306515768d"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a83aebea15b640d53b04a97306515768d">signal_and_wait</a> (<a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;to_signal, <a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;to_wait, <a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> milliseconds_timeout)</td></tr>
 <tr class="memdesc:a83aebea15b640d53b04a97306515768d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signals one <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> and waits on another, specifying a time-out interval as a 32-bit signed integer.  <br /></td></tr>
 <tr class="separator:a83aebea15b640d53b04a97306515768d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2056ee81b21f23f6b0a7bd7f3bc232e8"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a2056ee81b21f23f6b0a7bd7f3bc232e8">signal_and_wait</a> (<a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;to_signal, <a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;to_wait, const <a class="el" href="group__types.html#gad013431819ca97998d1dc5910b475f80">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>)</td></tr>
-<tr class="memdesc:a2056ee81b21f23f6b0a7bd7f3bc232e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signals one <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> and waits on another, specifying a time-out interval as a time_span.  <br /></td></tr>
+<tr class="memitem:a2056ee81b21f23f6b0a7bd7f3bc232e8"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a2056ee81b21f23f6b0a7bd7f3bc232e8">signal_and_wait</a> (<a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;to_signal, <a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;to_wait, const <a class="el" href="structxtd_1_1time__span.html">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>)</td></tr>
+<tr class="memdesc:a2056ee81b21f23f6b0a7bd7f3bc232e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signals one <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> and waits on another, specifying a time-out interval as a <a class="el" href="structxtd_1_1time__span.html" title="Represents a time interval.">time_span</a>.  <br /></td></tr>
 <tr class="separator:a2056ee81b21f23f6b0a7bd7f3bc232e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a217129669f17b6f14201dccd0405450c"><td class="memTemplParams" colspan="2">template&lt;typename collection_t &gt; </td></tr>
 <tr class="memitem:a217129669f17b6f14201dccd0405450c"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a217129669f17b6f14201dccd0405450c">wait_all</a> (const collection_t &amp;wait_handles)</td></tr>
@@ -259,8 +259,8 @@ The overloads of these methods provide timeout intervals for abandoning the wait
 <tr class="memdesc:a8aa977d4e62fe9fd5cc7c57cd4eb58f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for all the elements in the specified collection to receive a signal, using an int32 value to measure the time interval.  <br /></td></tr>
 <tr class="separator:a8aa977d4e62fe9fd5cc7c57cd4eb58f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeda61f20a00dfc9a8b0f125edc9e8aa6"><td class="memTemplParams" colspan="2">template&lt;typename collection_t &gt; </td></tr>
-<tr class="memitem:aeda61f20a00dfc9a8b0f125edc9e8aa6"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#aeda61f20a00dfc9a8b0f125edc9e8aa6">wait_all</a> (const collection_t &amp;wait_handles, const <a class="el" href="group__types.html#gad013431819ca97998d1dc5910b475f80">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>)</td></tr>
-<tr class="memdesc:aeda61f20a00dfc9a8b0f125edc9e8aa6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for all the elements in the specified collection to receive a signal, using a <a class="el" href="group__types.html#gad013431819ca97998d1dc5910b475f80" title="Represents a time interval.">xtd::time_span</a> value to measure the time interval.  <br /></td></tr>
+<tr class="memitem:aeda61f20a00dfc9a8b0f125edc9e8aa6"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#aeda61f20a00dfc9a8b0f125edc9e8aa6">wait_all</a> (const collection_t &amp;wait_handles, const <a class="el" href="structxtd_1_1time__span.html">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>)</td></tr>
+<tr class="memdesc:aeda61f20a00dfc9a8b0f125edc9e8aa6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for all the elements in the specified collection to receive a signal, using a <a class="el" href="structxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> value to measure the time interval.  <br /></td></tr>
 <tr class="separator:aeda61f20a00dfc9a8b0f125edc9e8aa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee2a73d9052723690ff0e15a338cce35"><td class="memTemplParams" colspan="2">template&lt;typename collection_t &gt; </td></tr>
 <tr class="memitem:aee2a73d9052723690ff0e15a338cce35"><td class="memTemplItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#aee2a73d9052723690ff0e15a338cce35">wait_any</a> (const collection_t &amp;wait_handles)</td></tr>
@@ -271,8 +271,8 @@ The overloads of these methods provide timeout intervals for abandoning the wait
 <tr class="memdesc:a5b1275f297e0dbddbf302edf0cd2a37d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for any of the elements in the specified collection to receive a signal, using a 32-bit signed integer to measure the time interval.  <br /></td></tr>
 <tr class="separator:a5b1275f297e0dbddbf302edf0cd2a37d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa704be64592eed6531ec3953bb9897e"><td class="memTemplParams" colspan="2">template&lt;typename collection_t &gt; </td></tr>
-<tr class="memitem:afa704be64592eed6531ec3953bb9897e"><td class="memTemplItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#afa704be64592eed6531ec3953bb9897e">wait_any</a> (const collection_t &amp;wait_handles, const <a class="el" href="group__types.html#gad013431819ca97998d1dc5910b475f80">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>)</td></tr>
-<tr class="memdesc:afa704be64592eed6531ec3953bb9897e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for any of the elements in the specified collection to receive a signal, using a <a class="el" href="group__types.html#gad013431819ca97998d1dc5910b475f80" title="Represents a time interval.">xtd::time_span</a> to measure the time interval.  <br /></td></tr>
+<tr class="memitem:afa704be64592eed6531ec3953bb9897e"><td class="memTemplItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#afa704be64592eed6531ec3953bb9897e">wait_any</a> (const collection_t &amp;wait_handles, const <a class="el" href="structxtd_1_1time__span.html">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>)</td></tr>
+<tr class="memdesc:afa704be64592eed6531ec3953bb9897e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for any of the elements in the specified collection to receive a signal, using a <a class="el" href="structxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> to measure the time interval.  <br /></td></tr>
 <tr class="separator:afa704be64592eed6531ec3953bb9897e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Protected methods</h2></td></tr>
@@ -517,7 +517,7 @@ The overloads of these methods provide timeout intervals for abandoning the wait
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__types.html#gad013431819ca97998d1dc5910b475f80">time_span</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1time__span.html">time_span</a> &amp;&#160;</td>
           <td class="paramname"><em>timeout</em>&#160;</td>
         </tr>
         <tr>
@@ -533,12 +533,12 @@ The overloads of these methods provide timeout intervals for abandoning the wait
 </table>
 </div><div class="memdoc">
 
-<p>Signals one <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> and waits on another, specifying a time-out interval as a time_span. </p>
+<p>Signals one <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> and waits on another, specifying a time-out interval as a <a class="el" href="structxtd_1_1time__span.html" title="Represents a time interval.">time_span</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">to_signal</td><td>The <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">wait_handle</a> to signal. </td></tr>
     <tr><td class="paramname">to_wait</td><td>The <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">wait_handle</a> to wait on. </td></tr>
-    <tr><td class="paramname">timeout</td><td>A time_span that represents the interval to wait. If the value is -1, the wait is infinite </td></tr>
+    <tr><td class="paramname">timeout</td><td>A <a class="el" href="structxtd_1_1time__span.html" title="Represents a time interval.">time_span</a> that represents the interval to wait. If the value is -1, the wait is infinite </td></tr>
   </table>
   </dd>
 </dl>
@@ -721,7 +721,7 @@ template&lt;typename collection_t &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__types.html#gad013431819ca97998d1dc5910b475f80">time_span</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1time__span.html">time_span</a> &amp;&#160;</td>
           <td class="paramname"><em>timeout</em>&#160;</td>
         </tr>
         <tr>
@@ -737,11 +737,11 @@ template&lt;typename collection_t &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Waits for all the elements in the specified collection to receive a signal, using a <a class="el" href="group__types.html#gad013431819ca97998d1dc5910b475f80" title="Represents a time interval.">xtd::time_span</a> value to measure the time interval. </p>
+<p>Waits for all the elements in the specified collection to receive a signal, using a <a class="el" href="structxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> value to measure the time interval. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">wait_handles</td><td>A <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> collection containing the objects for which the current instance will wait. This array cannot contain multiple references to the same object. </td></tr>
-    <tr><td class="paramname">timeout</td><td>A <a class="el" href="group__types.html#gad013431819ca97998d1dc5910b475f80" title="Represents a time interval.">xtd::time_span</a> that represents the number of milliseconds to wait, or a <a class="el" href="group__types.html#gad013431819ca97998d1dc5910b475f80" title="Represents a time interval.">xtd::time_span</a> that represents -1 milliseconds, to wait indefinitely. </td></tr>
+    <tr><td class="paramname">timeout</td><td>A <a class="el" href="structxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> that represents the number of milliseconds to wait, or a <a class="el" href="structxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> that represents -1 milliseconds, to wait indefinitely. </td></tr>
   </table>
   </dd>
 </dl>
@@ -887,7 +887,7 @@ template&lt;typename collection_t &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__types.html#gad013431819ca97998d1dc5910b475f80">time_span</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1time__span.html">time_span</a> &amp;&#160;</td>
           <td class="paramname"><em>timeout</em>&#160;</td>
         </tr>
         <tr>
@@ -903,11 +903,11 @@ template&lt;typename collection_t &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Waits for any of the elements in the specified collection to receive a signal, using a <a class="el" href="group__types.html#gad013431819ca97998d1dc5910b475f80" title="Represents a time interval.">xtd::time_span</a> to measure the time interval. </p>
+<p>Waits for any of the elements in the specified collection to receive a signal, using a <a class="el" href="structxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> to measure the time interval. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">wait_handles</td><td>A <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> collection containing the objects for which the current instance will wait. This array cannot contain multiple references to the same object. </td></tr>
-    <tr><td class="paramname">timeout</td><td>A <a class="el" href="group__types.html#gad013431819ca97998d1dc5910b475f80" title="Represents a time interval.">xtd::time_span</a> that represents the number of milliseconds to wait, or a <a class="el" href="group__types.html#gad013431819ca97998d1dc5910b475f80" title="Represents a time interval.">xtd::time_span</a> that represents -1 milliseconds to wait indefinitely. </td></tr>
+    <tr><td class="paramname">timeout</td><td>A <a class="el" href="structxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> that represents the number of milliseconds to wait, or a <a class="el" href="structxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> that represents -1 milliseconds to wait indefinitely. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1017,7 +1017,7 @@ The number of objects in wait_handles is greater than the system permits. </td><
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="event_wait_handle_8cpp-example.html#a3">event_wait_handle.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="event_wait_handle_8cpp-example.html#a4">event_wait_handle.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -1034,7 +1034,7 @@ The number of objects in wait_handles is greater than the system permits. </td><
         <tr>
           <td class="memname">virtual bool xtd::threading::wait_handle::wait_one </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__types.html#gad013431819ca97998d1dc5910b475f80">time_span</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1time__span.html">time_span</a> &amp;&#160;</td>
           <td class="paramname"><em>timeout</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1046,10 +1046,10 @@ The number of objects in wait_handles is greater than the system permits. </td><
 </table>
 </div><div class="memdoc">
 
-<p>Blocks the current thread until the current instance receives a signal, using a <a class="el" href="group__types.html#gad013431819ca97998d1dc5910b475f80" title="Represents a time interval.">xtd::time_span</a> to measure the time interval. </p>
+<p>Blocks the current thread until the current instance receives a signal, using a <a class="el" href="structxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> to measure the time interval. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">timeout</td><td>A <a class="el" href="group__types.html#gad013431819ca97998d1dc5910b475f80" title="Represents a time interval.">xtd::time_span</a> that represents the number of milliseconds to wait, or a <a class="el" href="group__types.html#gad013431819ca97998d1dc5910b475f80" title="Represents a time interval.">xtd::time_span</a> that represents -1 milliseconds to wait indefinitely. </td></tr>
+    <tr><td class="paramname">timeout</td><td>A <a class="el" href="structxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> that represents the number of milliseconds to wait, or a <a class="el" href="structxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> that represents -1 milliseconds to wait indefinitely. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1166,7 +1166,7 @@ The number of objects in wait_handles is greater than the system permits. </td><
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 15 2023 15:22:31 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Aug 21 2023 00:43:53 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

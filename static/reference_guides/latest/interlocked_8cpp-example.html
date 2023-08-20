@@ -158,12 +158,79 @@ $(function() {
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><a id="a5" name="a5"></a><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(interlocked_example::my_interlocked_exchange_class);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This example produces output similar to the following:</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Thread1 acquired the lock</span></div>
+<div class="line"><span class="comment">// Thread1 exiting lock</span></div>
+<div class="line"><span class="comment">// Thread2 acquired the lock</span></div>
+<div class="line"><span class="comment">//    Thread3 was denied the lock</span></div>
+<div class="line"><span class="comment">// Thread2 exiting lock</span></div>
+<div class="line"><span class="comment">// Thread1 acquired the lock</span></div>
+<div class="line"><span class="comment">//    Thread4 was denied the lock</span></div>
+<div class="line"><span class="comment">//    Thread5 was denied the lock</span></div>
+<div class="line"><span class="comment">// Thread1 exiting lock</span></div>
+<div class="line"><span class="comment">// Thread6 acquired the lock</span></div>
+<div class="line"><span class="comment">//    Thread3 was denied the lock</span></div>
+<div class="line"><span class="comment">//    Thread2 was denied the lock</span></div>
+<div class="line"><span class="comment">//    Thread7 was denied the lock</span></div>
+<div class="line"><span class="comment">// Thread6 exiting lock</span></div>
+<div class="line"><span class="comment">// Thread4 acquired the lock</span></div>
+<div class="line"><span class="comment">//    Thread5 was denied the lock</span></div>
+<div class="line"><span class="comment">//    Thread1 was denied the lock</span></div>
+<div class="line"><span class="comment">// Thread4 exiting lock</span></div>
+<div class="line"><span class="comment">// Thread8 acquired the lock</span></div>
+<div class="line"><span class="comment">//    Thread3 was denied the lock</span></div>
+<div class="line"><span class="comment">//    Thread2 was denied the lock</span></div>
+<div class="line"><span class="comment">//    Thread7 was denied the lock</span></div>
+<div class="line"><span class="comment">//    Thread6 was denied the lock</span></div>
+<div class="line"><span class="comment">//    Thread9 was denied the lock</span></div>
+<div class="line"><span class="comment">// Thread8 exiting lock</span></div>
+<div class="line"><span class="comment">// Thread5 acquired the lock</span></div>
+<div class="line"><span class="comment">//    Thread1 was denied the lock</span></div>
+<div class="line"><span class="comment">//    Thread4 was denied the lock</span></div>
+<div class="line"><span class="comment">//    Thread3 was denied the lock</span></div>
+<div class="line"><span class="comment">//    Thread10 was denied the lock</span></div>
+<div class="line"><span class="comment">//    Thread2 was denied the lock</span></div>
+<div class="line"><span class="comment">//    Thread7 was denied the lock</span></div>
+<div class="line"><span class="comment">// Thread5 exiting lock</span></div>
+<div class="line"><span class="comment">// Thread6 acquired the lock</span></div>
+<div class="line"><span class="comment">//    Thread9 was denied the lock</span></div>
+<div class="line"><span class="comment">//    Thread8 was denied the lock</span></div>
+<div class="line"><span class="comment">//    Thread1 was denied the lock</span></div>
+<div class="line"><span class="comment">// Thread6 exiting lock</span></div>
+<div class="line"><span class="comment">// Thread4 acquired the lock</span></div>
+<div class="line"><span class="comment">//    Thread3 was denied the lock</span></div>
+<div class="line"><span class="comment">//    Thread10 was denied the lock</span></div>
+<div class="line"><span class="comment">//    Thread2 was denied the lock</span></div>
+<div class="line"><span class="comment">//    Thread7 was denied the lock</span></div>
+<div class="line"><span class="comment">//    Thread5 was denied the lock</span></div>
+<div class="line"><span class="comment">// Thread4 exiting lock</span></div>
+<div class="line"><span class="comment">// Thread9 acquired the lock</span></div>
+<div class="line"><span class="comment">//    Thread8 was denied the lock</span></div>
+<div class="line"><span class="comment">//    Thread6 was denied the lock</span></div>
+<div class="line"><span class="comment">// Thread9 exiting lock</span></div>
+<div class="line"><span class="comment">// Thread10 acquired the lock</span></div>
+<div class="line"><span class="comment">//    Thread7 was denied the lock</span></div>
+<div class="line"><span class="comment">//    Thread5 was denied the lock</span></div>
+<div class="line"><span class="comment">//    Thread4 was denied the lock</span></div>
+<div class="line"><span class="comment">//    Thread8 was denied the lock</span></div>
+<div class="line"><span class="comment">// Thread10 exiting lock</span></div>
+<div class="line"><span class="comment">// Thread6 acquired the lock</span></div>
+<div class="line"><span class="comment">//    Thread9 was denied the lock</span></div>
+<div class="line"><span class="comment">// Thread6 exiting lock</span></div>
+<div class="line"><span class="comment">// Thread8 acquired the lock</span></div>
+<div class="line"><span class="comment">//    Thread10 was denied the lock</span></div>
+<div class="line"><span class="comment">//    Thread9 was denied the lock</span></div>
+<div class="line"><span class="comment">// Thread8 exiting lock</span></div>
+<div class="line"><span class="comment">// Thread10 acquired the lock</span></div>
+<div class="line"><span class="comment">// Thread10 exiting lock</span></div>
 <div class="ttc" id="aclassxtd_1_1random_html"><div class="ttname"><a href="classxtd_1_1random.html">xtd::random</a></div><div class="ttdoc">Represents a pseudo-random number generator, a device that produces a sequence of numbers that meet c...</div><div class="ttdef"><b>Definition</b> random.h:37</div></div>
-<div class="ttc" id="aclassxtd_1_1threading_1_1thread_html"><div class="ttname"><a href="classxtd_1_1threading_1_1thread.html">xtd::threading::thread</a></div><div class="ttdoc">Creates and controls a thread, sets its priority, and gets its status.</div><div class="ttdef"><b>Definition</b> thread.h:45</div></div>
+<div class="ttc" id="aclassxtd_1_1threading_1_1thread_html"><div class="ttname"><a href="classxtd_1_1threading_1_1thread.html">xtd::threading::thread</a></div><div class="ttdoc">Creates and controls a thread, sets its priority, and gets its status.</div><div class="ttdef"><b>Definition</b> thread.h:46</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1thread_html_a01ebb1fb46c9f74b982192f216f8951f"><div class="ttname"><a href="classxtd_1_1threading_1_1thread.html#a01ebb1fb46c9f74b982192f216f8951f">xtd::threading::thread::thread</a></div><div class="ttdeci">thread(const xtd::threading::parameterized_thread_start &amp;start)</div><div class="ttdoc">Initializes a new instance of the xtd::threading::thread class, specifying a delegate that allows an ...</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1thread_html_a65fc3f1079b67eb775925c7f1cb69a56"><div class="ttname"><a href="classxtd_1_1threading_1_1thread.html#a65fc3f1079b67eb775925c7f1cb69a56">xtd::threading::thread::join</a></div><div class="ttdeci">void join()</div><div class="ttdoc">Blocks the calling thread until this thread object terminates, while continuing to perform standard C...</div></div>
 <div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:48</div></div>
-<div class="ttc" id="agroup__keywords_html_gac9b8e6f22fb2fdc1bb915ee01aef848c"><div class="ttname"><a href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a></div><div class="ttdeci">#define startup_(main_class)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:57</div></div>
+<div class="ttc" id="agroup__keywords_html_gac9b8e6f22fb2fdc1bb915ee01aef848c"><div class="ttname"><a href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a></div><div class="ttdeci">#define startup_(main_class)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:58</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga05ac25649af478143826babb1a9fae7c"><div class="ttname"><a href="group__xtd__core.html#ga05ac25649af478143826babb1a9fae7c">xtd::threading::parameterized_thread_start</a></div><div class="ttdeci">action&lt; std::any &gt; parameterized_thread_start</div><div class="ttdoc">Represents the method that executes on a xtd::threading::thread.</div><div class="ttdef"><b>Definition</b> parameterized_thread_start.h:21</div></div>
 <div class="ttc" id="anamespacextd_1_1threading_html"><div class="ttname"><a href="namespacextd_1_1threading.html">xtd::threading</a></div><div class="ttdoc">The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....</div><div class="ttdef"><b>Definition</b> abandoned_mutex_exception.h:10</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
@@ -171,7 +238,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 15 2023 15:22:24 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Aug 21 2023 00:43:46 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

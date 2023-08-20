@@ -110,9 +110,9 @@ An object that supports the <a class="el" href="classxtd_1_1iasync__result.html"
 <tr class="memitem:a77ed9398ac044e6cc258add61eda6edc"><td class="memItemLeft" align="right" valign="top">virtual std::any&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1iasync__result.html#a77ed9398ac044e6cc258add61eda6edc">async_state</a> () const noexcept=0</td></tr>
 <tr class="memdesc:a77ed9398ac044e6cc258add61eda6edc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a user-defined object that qualifies or contains information about an asynchronous operation.  <br /></td></tr>
 <tr class="separator:a77ed9398ac044e6cc258add61eda6edc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16db5762839e4a3bb89e84636817641c"><td class="memItemLeft" align="right" valign="top">virtual std::timed_mutex &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1iasync__result.html#a16db5762839e4a3bb89e84636817641c">async_mutex</a> () noexcept=0</td></tr>
-<tr class="memdesc:a16db5762839e4a3bb89e84636817641c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a std::mutex that is used to wait for an asynchronous operation to complete.  <br /></td></tr>
-<tr class="separator:a16db5762839e4a3bb89e84636817641c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a643da6a18f0a1a8c0bdbc332842514ed"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classxtd_1_1threading_1_1wait__handle.html">xtd::threading::wait_handle</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1iasync__result.html#a643da6a18f0a1a8c0bdbc332842514ed">async_wait_handle</a> () noexcept=0</td></tr>
+<tr class="memdesc:a643da6a18f0a1a8c0bdbc332842514ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a std::mutex that is used to wait for an asynchronous operation to complete.  <br /></td></tr>
+<tr class="separator:a643da6a18f0a1a8c0bdbc332842514ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afff9b81a7c710af100a1e301b2b6c2df"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1iasync__result.html#afff9b81a7c710af100a1e301b2b6c2df">completed_synchronously</a> () const noexcept=0</td></tr>
 <tr class="memdesc:afff9b81a7c710af100a1e301b2b6c2df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether the asynchronous operation completed synchronously.  <br /></td></tr>
 <tr class="separator:afff9b81a7c710af100a1e301b2b6c2df"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -121,38 +121,6 @@ An object that supports the <a class="el" href="classxtd_1_1iasync__result.html"
 <tr class="separator:a73cc691010dd7db6993bb99ff231f11f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a16db5762839e4a3bb89e84636817641c" name="a16db5762839e4a3bb89e84636817641c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16db5762839e4a3bb89e84636817641c">&#9670;&#160;</a></span>async_mutex()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual std::timed_mutex &amp; xtd::iasync_result::async_mutex </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Gets a std::mutex that is used to wait for an asynchronous operation to complete. </p>
-<dl class="section return"><dt>Returns</dt><dd>A std::mutex that is used to wait for an asynchronous operation to complete. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The return value allows the client to wait for an asynchronous operation to complete instead of polling <a class="el" href="classxtd_1_1iasync__result.html#a73cc691010dd7db6993bb99ff231f11f" title="Gets a value that indicates whether the asynchronous operation has completed.">xtd::iasync_result::is_completed</a> until the operation concludes. The return value can be used to perform a wait operation. </dd></dl>
-<dl class="section user"><dt>Notes to Implementers</dt><dd>The object that implements <a class="el" href="classxtd_1_1iasync__result.html" title="Represents the status of an asynchronous operation.">xtd::iasync_result</a> does not need to create the std::mutex until the <a class="el" href="classxtd_1_1iasync__result.html#a16db5762839e4a3bb89e84636817641c" title="Gets a std::mutex that is used to wait for an asynchronous operation to complete.">xtd::iasync_result::async_mutex</a> property is read. It is the choice of the <a class="el" href="classxtd_1_1iasync__result.html" title="Represents the status of an asynchronous operation.">xtd::iasync_result</a> implementer. However, if the implementer creates <a class="el" href="classxtd_1_1iasync__result.html#a16db5762839e4a3bb89e84636817641c" title="Gets a std::mutex that is used to wait for an asynchronous operation to complete.">xtd::iasync_result::async_mutex</a>, it is the responsibility of the implementer to signal the std::mutex that will terminate the wait at the appropriate time. Once created, <a class="el" href="classxtd_1_1iasync__result.html" title="Represents the status of an asynchronous operation.">xtd::iasync_result</a> <a class="el" href="classxtd_1_1iasync__result.html#a16db5762839e4a3bb89e84636817641c" title="Gets a std::mutex that is used to wait for an asynchronous operation to complete.">xtd::iasync_result::async_mutex</a> should be kept alive until the user calls the method that concludes the asynchronous operation. At that time the object behind <a class="el" href="classxtd_1_1iasync__result.html#a16db5762839e4a3bb89e84636817641c" title="Gets a std::mutex that is used to wait for an asynchronous operation to complete.">xtd::iasync_result::async_mutex</a> can be discarded. </dd></dl>
-<dl class="section user"><dt>Notes to Callers</dt><dd>Clients that wait for the operation to complete (as opposed to polling) use this property to obtain a synchronization object to wait on. </dd></dl>
-<dl class="section user"><dt>Notes to Implementers </dt><dd></dd></dl>
-
-</div>
-</div>
 <a id="a77ed9398ac044e6cc258add61eda6edc" name="a77ed9398ac044e6cc258add61eda6edc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a77ed9398ac044e6cc258add61eda6edc">&#9670;&#160;</a></span>async_state()</h2>
 
@@ -181,6 +149,38 @@ An object that supports the <a class="el" href="classxtd_1_1iasync__result.html"
 <dl class="section remark"><dt>Remarks</dt><dd>This property returns the object that is the last parameter of the method that initiates an asynchronous operation. </dd></dl>
 <dl class="section user"><dt>Notes to Implementers</dt><dd>Implement this property to allow the caller of an asynchronous operation to obtain an application-defined object specified at the start of the operation. </dd></dl>
 <dl class="section user"><dt>Notes to Callers</dt><dd>This object can be used to pass state information for the asynchronous operation to an AsyncCallback that you provide. </dd></dl>
+
+</div>
+</div>
+<a id="a643da6a18f0a1a8c0bdbc332842514ed" name="a643da6a18f0a1a8c0bdbc332842514ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a643da6a18f0a1a8c0bdbc332842514ed">&#9670;&#160;</a></span>async_wait_handle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classxtd_1_1threading_1_1wait__handle.html">xtd::threading::wait_handle</a> &amp; xtd::iasync_result::async_wait_handle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a std::mutex that is used to wait for an asynchronous operation to complete. </p>
+<dl class="section return"><dt>Returns</dt><dd>A std::mutex that is used to wait for an asynchronous operation to complete. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The return value allows the client to wait for an asynchronous operation to complete instead of polling <a class="el" href="classxtd_1_1iasync__result.html#a73cc691010dd7db6993bb99ff231f11f" title="Gets a value that indicates whether the asynchronous operation has completed.">xtd::iasync_result::is_completed</a> until the operation concludes. The return value can be used to perform a wait operation. </dd></dl>
+<dl class="section user"><dt>Notes to Implementers</dt><dd>The object that implements <a class="el" href="classxtd_1_1iasync__result.html" title="Represents the status of an asynchronous operation.">xtd::iasync_result</a> does not need to create the std::mutex until the <a class="el" href="classxtd_1_1iasync__result.html#a643da6a18f0a1a8c0bdbc332842514ed" title="Gets a std::mutex that is used to wait for an asynchronous operation to complete.">xtd::iasync_result::async_wait_handle</a> property is read. It is the choice of the <a class="el" href="classxtd_1_1iasync__result.html" title="Represents the status of an asynchronous operation.">xtd::iasync_result</a> implementer. However, if the implementer creates <a class="el" href="classxtd_1_1iasync__result.html#a643da6a18f0a1a8c0bdbc332842514ed" title="Gets a std::mutex that is used to wait for an asynchronous operation to complete.">xtd::iasync_result::async_wait_handle</a>, it is the responsibility of the implementer to signal the std::mutex that will terminate the wait at the appropriate time. Once created, <a class="el" href="classxtd_1_1iasync__result.html" title="Represents the status of an asynchronous operation.">xtd::iasync_result</a> <a class="el" href="classxtd_1_1iasync__result.html#a643da6a18f0a1a8c0bdbc332842514ed" title="Gets a std::mutex that is used to wait for an asynchronous operation to complete.">xtd::iasync_result::async_wait_handle</a> should be kept alive until the user calls the method that concludes the asynchronous operation. At that time the object behind <a class="el" href="classxtd_1_1iasync__result.html#a643da6a18f0a1a8c0bdbc332842514ed" title="Gets a std::mutex that is used to wait for an asynchronous operation to complete.">xtd::iasync_result::async_wait_handle</a> can be discarded. </dd></dl>
+<dl class="section user"><dt>Notes to Callers</dt><dd>Clients that wait for the operation to complete (as opposed to polling) use this property to obtain a synchronization object to wait on. </dd></dl>
+<dl class="section user"><dt>Notes to Implementers </dt><dd></dd></dl>
 
 </div>
 </div>
@@ -252,7 +252,7 @@ An object that supports the <a class="el" href="classxtd_1_1iasync__result.html"
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 15 2023 15:22:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Aug 21 2023 00:43:49 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

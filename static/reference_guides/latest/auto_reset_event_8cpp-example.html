@@ -103,9 +103,9 @@ $(function() {
 <div class="line">      console::read_line();</div>
 <div class="line">      </div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> index = 1; index &lt; 4; ++index) {</div>
-<div class="line">        <span class="keyword">auto</span> t = <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1threading_1_1thread.html">thread</a> {<a class="code hl_typedef" href="group__xtd__core.html#ga629e09da122fad73508fa0fb6286fd0a">thread_start</a> {thread_proc}};</div>
-<div class="line">        t.name(ustring::format(<span class="stringliteral">&quot;Thread_{}&quot;</span>, index));</div>
-<div class="line">        t.start();</div>
+<div class="line">        threads.emplace_back(<a class="code hl_typedef" href="group__xtd__core.html#ga629e09da122fad73508fa0fb6286fd0a">thread_start</a> {thread_proc});</div>
+<div class="line">        threads.back().name(ustring::format(<span class="stringliteral">&quot;Thread_{}&quot;</span>, index));</div>
+<div class="line">        threads.back().start();</div>
 <div class="line">      }</div>
 <div class="line">      thread::sleep(250_ms);</div>
 <div class="line">      </div>
@@ -123,10 +123,12 @@ $(function() {
 <div class="line">        event_2.set();</div>
 <div class="line">        thread::sleep(250_ms);</div>
 <div class="line">      }</div>
+<div class="line">      </div>
+<div class="line">      thread::join_all(threads);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> thread_proc() {</div>
-<div class="line">      <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> name = thread::current_thread().name();</div>
+<div class="line">      <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> name = thread::current_thread().name();</div>
 <div class="line">      </div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;{0} waits on auto_reset_event #1.&quot;</span>, name);</div>
 <div class="line">      event_1.wait_one();</div>
@@ -141,12 +143,12 @@ $(function() {
 <div class="line"> </div>
 <div class="line">  <span class="keyword">private</span>:</div>
 <div class="line">    <span class="keyword">inline</span> <span class="keyword">static</span> std::vector&lt;thread&gt; threads {4};</div>
-<div class="line">    <span class="keyword">inline</span> <span class="keyword">static</span> <a id="_a2" name="_a2"></a><a class="code hl_class" href="classxtd_1_1threading_1_1auto__reset__event.html">auto_reset_event</a> event_1 {<span class="keyword">true</span>};</div>
+<div class="line">    <span class="keyword">inline</span> <span class="keyword">static</span> <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1threading_1_1auto__reset__event.html">auto_reset_event</a> event_1 {<span class="keyword">true</span>};</div>
 <div class="line">    <span class="keyword">inline</span> <span class="keyword">static</span> <a class="code hl_class" href="classxtd_1_1threading_1_1auto__reset__event.html">auto_reset_event</a> event_2 {<span class="keyword">false</span>};</div>
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><a id="a3" name="a3"></a><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(auto_reset_event_example::program);</div>
+<div class="line"><a id="a2" name="a2"></a><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(auto_reset_event_example::program);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This example produces output similar to the following:</span></div>
 <div class="line"><span class="comment">//</span></div>
@@ -183,9 +185,8 @@ $(function() {
 <div class="line"><span class="comment">// Thread_2 is released from auto_reset_event #2.</span></div>
 <div class="line"><span class="comment">// Thread_2 ends.</span></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1auto__reset__event_html"><div class="ttname"><a href="classxtd_1_1threading_1_1auto__reset__event.html">xtd::threading::auto_reset_event</a></div><div class="ttdoc">Represents a thread synchronization event that, when signaled, resets automatically after releasing a...</div><div class="ttdef"><b>Definition</b> auto_reset_event.h:31</div></div>
-<div class="ttc" id="aclassxtd_1_1threading_1_1thread_html"><div class="ttname"><a href="classxtd_1_1threading_1_1thread.html">xtd::threading::thread</a></div><div class="ttdoc">Creates and controls a thread, sets its priority, and gets its status.</div><div class="ttdef"><b>Definition</b> thread.h:45</div></div>
 <div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:48</div></div>
-<div class="ttc" id="agroup__keywords_html_gac9b8e6f22fb2fdc1bb915ee01aef848c"><div class="ttname"><a href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a></div><div class="ttdeci">#define startup_(main_class)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:57</div></div>
+<div class="ttc" id="agroup__keywords_html_gac9b8e6f22fb2fdc1bb915ee01aef848c"><div class="ttname"><a href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a></div><div class="ttdeci">#define startup_(main_class)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:58</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga629e09da122fad73508fa0fb6286fd0a"><div class="ttname"><a href="group__xtd__core.html#ga629e09da122fad73508fa0fb6286fd0a">xtd::threading::thread_start</a></div><div class="ttdeci">action&lt;&gt; thread_start</div><div class="ttdoc">Represents the method that executes on a xtd::threading::thread.</div><div class="ttdef"><b>Definition</b> thread_start.h:19</div></div>
 <div class="ttc" id="anamespacextd_1_1threading_html"><div class="ttname"><a href="namespacextd_1_1threading.html">xtd::threading</a></div><div class="ttdoc">The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....</div><div class="ttdef"><b>Definition</b> abandoned_mutex_exception.h:10</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
@@ -193,7 +194,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 15 2023 15:22:24 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Aug 21 2023 00:43:46 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

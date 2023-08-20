@@ -115,7 +115,6 @@ The Windows Forms Timer component is single-threaded, and is limited to an accur
 <div class="line"><span class="preprocessor">#include &lt;xtd/threading/timer&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/date_time&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/random&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -213,7 +212,7 @@ The Windows Forms Timer component is single-threaded, and is limited to an accur
 <div class="ttc" id="aclassxtd_1_1threading_1_1auto__reset__event_html"><div class="ttname"><a href="classxtd_1_1threading_1_1auto__reset__event.html">xtd::threading::auto_reset_event</a></div><div class="ttdoc">Represents a thread synchronization event that, when signaled, resets automatically after releasing a...</div><div class="ttdef"><b>Definition</b> auto_reset_event.h:31</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1timer_html"><div class="ttname"><a href="classxtd_1_1threading_1_1timer.html">xtd::threading::timer</a></div><div class="ttdoc">Provides a mechanism for executing a method on a thread pool thread at specified intervals....</div><div class="ttdef"><b>Definition</b> timer.h:48</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1timer_html_a40a6be3e9255cbd751f859efe127923e"><div class="ttname"><a href="classxtd_1_1threading_1_1timer.html#a40a6be3e9255cbd751f859efe127923e">xtd::threading::timer::change</a></div><div class="ttdeci">void change(int32 due_time, int32 period)</div><div class="ttdoc">changes the start time and the interval between method invocations for a timer, using 32-bit signed i...</div></div>
-<div class="ttc" id="agroup__keywords_html_gac9b8e6f22fb2fdc1bb915ee01aef848c"><div class="ttname"><a href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a></div><div class="ttdeci">#define startup_(main_class)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:57</div></div>
+<div class="ttc" id="agroup__keywords_html_gac9b8e6f22fb2fdc1bb915ee01aef848c"><div class="ttname"><a href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a></div><div class="ttdeci">#define startup_(main_class)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:58</div></div>
 <div class="ttc" id="anamespacextd_1_1threading_html"><div class="ttname"><a href="namespacextd_1_1threading.html">xtd::threading</a></div><div class="ttdoc">The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....</div><div class="ttdef"><b>Definition</b> abandoned_mutex_exception.h:10</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -237,17 +236,16 @@ The Windows Forms Timer component is single-threaded, and is limited to an accur
 <tr class="memitem:a5e486612483a08bcb57e0acadc1686dd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1timer.html#a5e486612483a08bcb57e0acadc1686dd">enabled</a> (bool enabled)</td></tr>
 <tr class="memdesc:a5e486612483a08bcb57e0acadc1686dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets whether the timer is running.  <br /></td></tr>
 <tr class="separator:a5e486612483a08bcb57e0acadc1686dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4141645a56a4a38785d3bd603228345"><td class="memItemLeft" align="right" valign="top">virtual std::chrono::milliseconds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1timer.html#af4141645a56a4a38785d3bd603228345">interval</a> () const noexcept</td></tr>
-<tr class="memdesc:af4141645a56a4a38785d3bd603228345"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the time, in milliseconds, before the tick event is raised relative to the last occurrence of the tick event.  <br /></td></tr>
-<tr class="separator:af4141645a56a4a38785d3bd603228345"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad64e67069ed0d1ef1bed1754d06e857e"><td class="memTemplParams" colspan="2">template&lt;typename rep_t , typename period_t  = std::ratio&lt;1&gt;&gt; </td></tr>
-<tr class="memitem:ad64e67069ed0d1ef1bed1754d06e857e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1timer.html#ad64e67069ed0d1ef1bed1754d06e857e">interval</a> (const std::chrono::duration&lt; rep_t, period_t &gt; &amp;interval)</td></tr>
-<tr class="memdesc:ad64e67069ed0d1ef1bed1754d06e857e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the time, in milliseconds, before the tick event is raised relative to the last occurrence of the tick event.  <br /></td></tr>
-<tr class="separator:ad64e67069ed0d1ef1bed1754d06e857e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07c15d7f98dcf3331c3f38c8ece68005"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structxtd_1_1time__span.html">time_span</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1timer.html#a07c15d7f98dcf3331c3f38c8ece68005">interval</a> () const noexcept</td></tr>
+<tr class="memdesc:a07c15d7f98dcf3331c3f38c8ece68005"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the time, in milliseconds, before the tick event is raised relative to the last occurrence of the tick event.  <br /></td></tr>
+<tr class="separator:a07c15d7f98dcf3331c3f38c8ece68005"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a941478f8c3e668accfe8232f8a067ceb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1timer.html#a941478f8c3e668accfe8232f8a067ceb">interval</a> (const <a class="el" href="structxtd_1_1time__span.html">time_span</a> &amp;interval)</td></tr>
+<tr class="memdesc:a941478f8c3e668accfe8232f8a067ceb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the time, in milliseconds, before the tick event is raised relative to the last occurrence of the tick event.  <br /></td></tr>
+<tr class="separator:a941478f8c3e668accfe8232f8a067ceb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad587b29d859f22e3d525348a14c776bb"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1timer.html#ad587b29d859f22e3d525348a14c776bb">interval_milliseconds</a> () const noexcept</td></tr>
 <tr class="memdesc:ad587b29d859f22e3d525348a14c776bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the time, in milliseconds, before the tick event is raised relative to the last occurrence of the tick event.  <br /></td></tr>
 <tr class="separator:ad587b29d859f22e3d525348a14c776bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf0992706234c2b6edf17e750dc6f109"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1timer.html#acf0992706234c2b6edf17e750dc6f109">interval_milliseconds</a> (<a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> <a class="el" href="classxtd_1_1forms_1_1timer.html#af4141645a56a4a38785d3bd603228345">interval</a>)</td></tr>
+<tr class="memitem:acf0992706234c2b6edf17e750dc6f109"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1timer.html#acf0992706234c2b6edf17e750dc6f109">interval_milliseconds</a> (<a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> <a class="el" href="classxtd_1_1forms_1_1timer.html#a07c15d7f98dcf3331c3f38c8ece68005">interval</a>)</td></tr>
 <tr class="memdesc:acf0992706234c2b6edf17e750dc6f109"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the time, in milliseconds, before the tick event is raised relative to the last occurrence of the tick event.  <br /></td></tr>
 <tr class="separator:acf0992706234c2b6edf17e750dc6f109"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -394,8 +392,8 @@ If the timer is disabled and the timer is out of scope, the timer will be destro
 
 </div>
 </div>
-<a id="af4141645a56a4a38785d3bd603228345" name="af4141645a56a4a38785d3bd603228345"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af4141645a56a4a38785d3bd603228345">&#9670;&#160;</a></span>interval() <span class="overload">[1/2]</span></h2>
+<a id="a07c15d7f98dcf3331c3f38c8ece68005" name="a07c15d7f98dcf3331c3f38c8ece68005"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07c15d7f98dcf3331c3f38c8ece68005">&#9670;&#160;</a></span>interval() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -404,7 +402,7 @@ If the timer is disabled and the timer is out of scope, the timer will be destro
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual std::chrono::milliseconds xtd::forms::timer::interval </td>
+          <td class="memname">virtual <a class="el" href="structxtd_1_1time__span.html">time_span</a> xtd::forms::timer::interval </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -425,30 +423,20 @@ If the timer is disabled and the timer is out of scope, the timer will be destro
 
 </div>
 </div>
-<a id="ad64e67069ed0d1ef1bed1754d06e857e" name="ad64e67069ed0d1ef1bed1754d06e857e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad64e67069ed0d1ef1bed1754d06e857e">&#9670;&#160;</a></span>interval() <span class="overload">[2/2]</span></h2>
+<a id="a941478f8c3e668accfe8232f8a067ceb" name="a941478f8c3e668accfe8232f8a067ceb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a941478f8c3e668accfe8232f8a067ceb">&#9670;&#160;</a></span>interval() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;typename rep_t , typename period_t  = std::ratio&lt;1&gt;&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void xtd::forms::timer::interval </td>
           <td>(</td>
-          <td class="paramtype">const std::chrono::duration&lt; rep_t, period_t &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1time__span.html">time_span</a> &amp;&#160;</td>
           <td class="paramname"><em>interval</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Sets the time, in milliseconds, before the tick event is raised relative to the last occurrence of the tick event. </p>
@@ -629,7 +617,7 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 15 2023 15:22:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Aug 21 2023 00:43:52 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

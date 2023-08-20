@@ -90,7 +90,7 @@ $(function() {
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;../object.h&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;../ticks.h&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;../time_span.h&quot;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  <span class="keyword">namespace </span>diagnostics {</div>
@@ -107,7 +107,7 @@ $(function() {
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>      </div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="classxtd_1_1diagnostics_1_1stopwatch.html#ae4c1e687a30dc0c9aea6ce736aa7e6fe">   64</a></span>      static <span class="keywordtype">bool</span> is_high_resolution() noexcept;</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>      </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="classxtd_1_1diagnostics_1_1stopwatch.html#a1592c155072a3c41bd45350bfc64e767">   76</a></span>      std::chrono::nanoseconds elapsed() const noexcept;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="classxtd_1_1diagnostics_1_1stopwatch.html#a43474e70916445d06eefc071ff1081e9">   76</a></span>      <a class="code hl_struct" href="structxtd_1_1time__span.html">time_span</a> elapsed() const noexcept;</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>      </div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="classxtd_1_1diagnostics_1_1stopwatch.html#ab089a1ba7f81f6335abda7f91f61694b">   86</a></span>      <a class="code hl_typedef" href="group__types.html#ga7ab879ebcae19d6021222f00537cfdce">int64</a> elapsed_milliseconds() const noexcept;</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>      </div>
@@ -151,11 +151,12 @@ $(function() {
 <div class="ttc" id="agroup__keywords_html_gabc8f9c2aa36f6cee610a37f0e8227fd1"><div class="ttname"><a href="group__keywords.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a></div><div class="ttdeci">#define core_export_</div><div class="ttdoc">Define shared library export.</div><div class="ttdef"><b>Definition</b> core_export.h:13</div></div>
 <div class="ttc" id="agroup__types_html_ga7ab879ebcae19d6021222f00537cfdce"><div class="ttname"><a href="group__types.html#ga7ab879ebcae19d6021222f00537cfdce">xtd::int64</a></div><div class="ttdeci">int_least64_t int64</div><div class="ttdoc">Represents a 64-bit signed integer.</div><div class="ttdef"><b>Definition</b> types.h:140</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
+<div class="ttc" id="astructxtd_1_1time__span_html"><div class="ttname"><a href="structxtd_1_1time__span.html">xtd::time_span</a></div><div class="ttdoc">Represents a time interval.</div><div class="ttdef"><b>Definition</b> time_span.h:24</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 15 2023 15:22:25 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Aug 21 2023 00:43:47 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

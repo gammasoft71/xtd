@@ -432,7 +432,7 @@ var searchData=
   ['from_5fcontrol_429',['from_control',['../group__drawing.html#gabcf62e97fb13a66f1744cd80f99d568d',1,'xtd::forms::screen']]],
   ['from_5fcss_430',['from_css',['../classxtd_1_1forms_1_1style__sheets_1_1theme.html#a6a9f6519280016f30414f326c88d9be8',1,'xtd::forms::style_sheets::theme']]],
   ['from_5fdata_431',['from_data',['../classxtd_1_1drawing_1_1image.html#a95b08796a65a639601f4beeaeac6d975',1,'xtd::drawing::image']]],
-  ['from_5fduration_432',['from_duration',['../classxtd_1_1date__time.html#ad194dedabbc79fbccbc9973d4751dc62',1,'xtd::date_time::from_duration(std::chrono::duration&lt; rep_t, period_t &gt; value)'],['../classxtd_1_1date__time.html#a7be33b5a07f192ce161c02e5778b8ffb',1,'xtd::date_time::from_duration(std::chrono::duration&lt; rep_t, period_t &gt; value, date_time_kind kind)']]],
+  ['from_5fduration_432',['from_duration',['../classxtd_1_1date__time.html#a5867aa1ef11f34cb16938c9bed583bbc',1,'xtd::date_time::from_duration(const time_span &amp;value)'],['../classxtd_1_1date__time.html#ae1a484104eadfe3430ef50219c504b38',1,'xtd::date_time::from_duration(const time_span &amp;value, date_time_kind kind)']]],
   ['from_5fexecuting_5fassembly_5finformations_433',['from_executing_assembly_informations',['../classxtd_1_1forms_1_1about__dialog.html#aee945a7ff758decf302edd37b24349b5',1,'xtd::forms::about_dialog']]],
   ['from_5ffile_434',['from_file',['../classxtd_1_1drawing_1_1image.html#a4f08b7764c620cf3886894ea26a23543',1,'xtd::drawing::image']]],
   ['from_5ffile_5ftime_435',['from_file_time',['../classxtd_1_1date__time.html#a54e1458a771b7ffe6c3ccb3efe7eec66',1,'xtd::date_time']]],
