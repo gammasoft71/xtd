@@ -331,8 +331,8 @@ SEARCH_INCLUDES        = YES
 INCLUDE_PATH           = 
 INCLUDE_FILE_PATTERNS  = 
 PREDEFINED             = "__cpp_lib_char8_t=true" \
-                         "abstract_=: public xtd::static_object" \
-                         "abstract_object_=: public xtd::static_object" \
+                         "abstract_=: public xtd::abstract_object" \
+                         "abstract_object_=: public xtd::abstract_object" \
                          "assert_=xtd::diagnostics::debug::cassert" \
                          "block_scope_=" \
                          "cassert_=cassert" \
