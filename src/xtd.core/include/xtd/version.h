@@ -31,7 +31,7 @@ namespace xtd {
   /// @remarks Subsequent versions of an assembly that differ only by build or revision numbers are considered to be Hotfix updates of the prior version.
   /// @warning The value of xtd::version properties that have not been explicitly assigned a value is undefined (-1).
   /// @par Retrieving Version Information
-  /// xtd::version objects are most frequently used to store version information about some system or application component (such as the operating system), the common language runtime, the current application's executable, or a particular assembly. The following examples illustrate some of the most common scenarios:
+  /// xtd::version objects are most frequently used to store version information about some system or application component (such as the operating system), the current application's executable, or a particular assembly. The following examples illustrate some of the most common scenarios:
   /// * Retrieving the operating system version. The following example uses the xtd::operating_system::version property to retrieve the version number of the operating system.
   /// @code
   /// // Get the operating system version.

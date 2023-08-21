@@ -6,7 +6,7 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief Provides the underlying structure of the common language runtime security system, including base classes for permissions.
+  /// @brief Provides the underlying structure of the security system, including base classes for permissions.
   namespace security {
     /// @brief The exception that is thrown when an I/O error occurs.
     /// @par Header
