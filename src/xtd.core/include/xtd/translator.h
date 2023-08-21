@@ -15,7 +15,7 @@ namespace xtd {
   /// xtd
   /// @par Library
   /// xtd.core
-  /// @ingroup xtd_core system
+  /// @ingroup xtd_core system translate
   /// @remarks This class is used to translate an application into different languages.
   /// @remarks For more information about internationalization, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/internationalization">Internationalizations</a>.
   /// @par Examples

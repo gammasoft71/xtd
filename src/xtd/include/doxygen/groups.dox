@@ -86,6 +86,10 @@
 /// @brief Control renderers definitions.
 /// @ingroup gui
 
+/// @defgroup security security
+/// @brief Contains the underlying structure of the security system, including base classes for permissions.
+/// @ingroup system
+
 /// @defgroup system system
 /// @brief Contains system classes.
 
@@ -95,6 +99,9 @@
 /// @defgroup threading threading
 /// @brief threading definitions.
 /// @ingroup system
+
+/// @defgroup translate translate
+/// @brief Contains translator definitions.
 
 /// @defgroup types types
 /// @brief Types definitions
