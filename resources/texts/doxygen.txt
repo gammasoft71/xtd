@@ -2267,8 +2267,9 @@ INCLUDE_FILE_PATTERNS  =
 # recursively expanded use the := operator instead of the = operator.
 # This tag requires that the tag ENABLE_PREPROCESSING is set to YES.
 
-PREDEFINED             = "abstract_=: public xtd::static_object" \
-                         "abstract_object_=: public xtd::static_object" \
+PREDEFINED             = "__cpp_lib_char8_t=true" \
+                         "abstract_=: public xtd::abstract_object" \
+                         "abstract_object_=: public xtd::abstract_object" \
                          "assert_=xtd::diagnostics::debug::cassert" \
                          "block_scope_=" \
                          "cassert_=cassert" \
@@ -2287,7 +2288,8 @@ PREDEFINED             = "abstract_=: public xtd::static_object" \
                          "tunit_export_=" \
                          "typeof_=xtd::__s__::__typeof_" \
                          "unused_=" \
-                         "using_="
+                         "using_=" \
+                         __cpp_lib_filesystem
 # If the MACRO_EXPANSION and EXPAND_ONLY_PREDEF tags are set to YES then this
 # tag can be used to specify a list of macro names that should be expanded. The
 # macro definition that is found in the sources will be used. Use the PREDEFINED
