@@ -35,6 +35,7 @@ size_t thread_pool::min_asynchronous_io_threads_ = environment::processor_count(
 
 std::recursive_mutex __monitor_mutex__;
 monitor::item_collection monitor::items_;
+std::recursive_mutex __threads_mutex__;
 thread::thread_collection thread::threads_;
 
 semaphore thread_pool::asynchronous_io_semaphore_ = semaphore(0, as<int32>(thread_pool::max_asynchronous_io_threads_));

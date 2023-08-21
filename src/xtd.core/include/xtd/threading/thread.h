@@ -46,16 +46,9 @@ namespace xtd {
     class core_export_ thread final : public object {
       struct data;
 
-      class thread_collection : public std::vector<std::shared_ptr<thread>> {
-      public:
+      struct thread_collection : public std::vector<std::shared_ptr<thread>> {
         thread_collection() = default;
-        thread_collection(std::initializer_list<std::shared_ptr<thread>> init) : std::vector<std::shared_ptr<thread>>(init) {}
-        ~thread_collection() {close();}
-        
-      private:
-        void close() {
-          thread::join_all();
-        }
+        ~thread_collection() {thread::join_all();}
       };
 
     public:
