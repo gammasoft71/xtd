@@ -67,6 +67,9 @@
 /// @defgroup libraries libraries
 /// @brief The xtd libraries.
 
+/// @defgroup literals literals
+/// @brief Literals can be used to produce integer, float, character, duration and string types.
+
 /// @defgroup media media
 /// @brief media definitions.
 /// @ingroup system
