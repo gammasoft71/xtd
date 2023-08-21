@@ -30,20 +30,6 @@ namespace xtd {
   }
 }
 
-namespace {
-  class lock_guard_threads {
-  public:
-    using mutex_type = std::recursive_mutex;
-    lock_guard_threads() {lock_.lock();}
-    ~lock_guard_threads() {lock_.unlock();}
-    
-    static mutex_type& lock() {return lock_;}
-    
-  private:
-    inline static mutex_type lock_;
-  };
-}
-
 struct thread::data {
   manual_reset_event end_thread_event;
   intptr handle {invalid_handle};
@@ -68,20 +54,21 @@ const intptr thread::invalid_thread_id = native::types::invalid_handle();
 
 intptr thread::main_thread_id_ = thread::get_current_thread_id();
 
+extern std::recursive_mutex __threads_mutex__;
+
 // The declaration threads_ collection is in the thread_pool.cpp file (just before thread_pool::asynchronous_io_threads_ and thread_pool::threads_)
 // to ensure allocation and deallocation order.
 //thread::thread_collection thread::threads_;
 
 thread& thread::current_thread() {
-  lock_guard_threads lock;
-  intptr id = get_current_thread_id();
+  std::lock_guard<std::recursive_mutex> lock {__threads_mutex__};
+  auto id = get_current_thread_id();
   
   if (id == main_thread_id_) return main_thread();
   
-  for (auto& thread : threads_) {
+  for (auto& thread : threads_)
     if (thread->data_ && thread->data_->thread_id == id)
       return *thread;
-  }
   
   return unmanaged_thread();
 }
@@ -97,7 +84,7 @@ thread::thread(const xtd::threading::thread_start& start, int32 max_stack_size) 
   data_->managed_thread_id = generate_managed_thread_id();
   data_->thread_start = start;
   data_->max_stack_size = max_stack_size;
-  lock_guard_threads lock;
+  std::lock_guard<std::recursive_mutex> lock {__threads_mutex__};
   auto safe_thread = std::make_shared<thread>(*this);
   data_->safe_thread = safe_thread.get();
   threads_.push_back(safe_thread);
@@ -111,7 +98,7 @@ thread::thread(const xtd::threading::parameterized_thread_start& start, int32 ma
   data_->managed_thread_id = generate_managed_thread_id();
   data_->parameterized_thread_start = start;
   data_->max_stack_size = max_stack_size;
-  lock_guard_threads lock;
+  std::lock_guard<std::recursive_mutex> lock {__threads_mutex__};
   auto safe_thread = std::make_shared<thread>(*this);
   data_->safe_thread = safe_thread.get();
   threads_.push_back(safe_thread);
@@ -160,7 +147,7 @@ bool thread::joinable() const noexcept {
 
 thread& thread::main_thread() {
   static thread main_thread;
-  lock_guard_threads lock;
+  std::lock_guard<std::recursive_mutex> lock {__threads_mutex__};
   if (main_thread.data_->managed_thread_id != main_managed_thread_id) {
     main_thread.data_->end_thread_event.set();
     main_thread.data_->handle = get_current_thread_handle();
@@ -270,7 +257,7 @@ bool thread::join(int32 milliseconds_timeout) {
       current_thread.data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
     }
     data_->joinable = false;
-    lock_guard_threads lock;
+    std::lock_guard<std::recursive_mutex> lock {__threads_mutex__};
     thread_collection::iterator iterator = std::find_if(threads_.begin(), threads_.end(), [&](const auto& value) {return value->data_ ? value->data_->managed_thread_id == data_->managed_thread_id : false;});
     if (iterator == threads_.end()) return result;
     (*iterator)->data_.reset();
@@ -550,7 +537,7 @@ void thread::thread_proc() {
   data_->end_thread_event.set();
   
   if (!is_background()) return;
-  lock_guard_threads lock;
+  std::lock_guard<std::recursive_mutex> lock {__threads_mutex__};
   thread_collection::iterator iterator = std::find_if(threads_.begin(), threads_.end(), [&](const auto& value) {return value->data_ ? value->data_->managed_thread_id == data_->managed_thread_id : false;});
   if (iterator == threads_.end()) return;
   (*iterator)->data_.reset();
