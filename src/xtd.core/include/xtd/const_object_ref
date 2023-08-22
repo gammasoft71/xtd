@@ -1,0 +1,2 @@
+#pragma once
+#include "const_object_ref.h"
