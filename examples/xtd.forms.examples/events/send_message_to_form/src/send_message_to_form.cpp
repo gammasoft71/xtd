@@ -3,6 +3,7 @@
 #include <xtd/forms/button>
 #include <xtd/forms/form>
 #include <xtd/forms/list_box>
+#include <xtd/startup>
 
 using namespace xtd;
 using namespace xtd::forms;
@@ -31,6 +32,10 @@ protected:
 
 class form1 : public form {
 public:
+  static void main() {
+    application::run(form1 {});
+  }
+
   form1() {
     text("Send messages to form");
     location({100, 100});
@@ -63,7 +68,4 @@ protected:
   something_ready_notifier notifier;
 };
 
-auto main()->int {
-  application::run(form1 {});
-  thread::join_all();
-}
+startup_(form1);
