@@ -12,6 +12,7 @@
 #include <xtd/optional.h>
 #include <xtd/iasync_result.h>
 #include <xtd/iequatable.h>
+#include <xtd/isynchronize_invoke.h>
 #include <xtd/drawing/color.h>
 #include <xtd/drawing/font.h>
 #include <xtd/drawing/point.h>
@@ -75,7 +76,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of control control.
     /// @include control.cpp
-    class forms_export_ control : public component, public iwin32_window, public icomparable<control>, public xtd::iequatable<control> {
+    class forms_export_ control : public component, public iwin32_window, public icomparable<control>, public xtd::iequatable<control>, public xtd::isynchronize_invoke {
       struct data;
       
     protected:
@@ -514,7 +515,7 @@ namespace xtd {
       
       /// @brief Gets a value indicating whether the caller must call an invoke method when making method calls to the control because the caller is on a different thread than the one the control was created on.
       /// @return true if the control's xttd::forms::control::handle was created on a different thread than the calling thread (indicating that you must make calls to the control through an invoke method); otherwise, false.
-      bool invoke_required() const noexcept;
+      bool invoke_required() const noexcept override;
       
       /// @brief Gets a value indicating whether the control has a handle associated with it.
       /// @return true if a handle has been assigned to the control; otherwise, false.
@@ -764,24 +765,17 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      using isynchronize_invoke::begin_invoke;
       /// @brief Executes the specified delegate asynchronously on the thread that the control's underlying handle was created on.
-      /// @param value A delegate to a method that takes no parameters.
+      /// @param method A delegate to a method that takes no parameters.
       /// @return An async_result_invoke that represents the result of the begin_invoke(delegate) operation.
-      std::shared_ptr<xtd::iasync_result> begin_invoke(delegate<void()> value);
+      std::shared_ptr<xtd::iasync_result> begin_invoke(delegate<void()> method) override;
       
       /// @brief Executes the specified delegate asynchronously with the specified arguments, on the thread that the control's underlying handle was created on.
-      /// @param value A delegate to a method that takes parameters of the same number and type that are contained in the args parameter.
+      /// @param method A delegate to a method that takes parameters of the same number and type that are contained in the args parameter.
       /// @param args An array of objects to pass as arguments to the given method. This can be empty if no arguments are needed.
       /// @return An async_result_invoke that represents the result of the begin_invoke(delegate) operation.
-      std::shared_ptr<xtd::iasync_result> begin_invoke(delegate<void(std::vector<std::any>)> value, const std::vector<std::any>& args);
-      
-      /// @cond
-      template<typename delegate_t>
-      std::shared_ptr<xtd::iasync_result> begin_invoke(delegate_t value, const std::vector<std::any>& args) {return begin_invoke(delegate<void(std::vector<std::any>)>(value), args);}
-      
-      template<typename delegate_t>
-      std::shared_ptr<xtd::iasync_result> begin_invoke(delegate_t value) {return begin_invoke(delegate<void(std::vector<std::any>)>(value), {});}
-      /// @endcond
+      std::shared_ptr<xtd::iasync_result> begin_invoke(delegate<void(std::vector<std::any>)> method, const std::vector<std::any>& args) override;
       
       /// @brief Brings the control to the front of the z-order.
       /// @remarks The control is moved to the front of the z-order. If the control is a child of another control, the child control is moved to the front of the z-order. bring_to_front does not make a control a top-level control, and it does not raise the paint event.
@@ -882,7 +876,7 @@ namespace xtd {
       
       /// @brief Retrieves the return value of the asynchronous operation represented by the async_result_invoke passed.
       /// @param async The async_result_invoke that represents a specific invoke asynchronous operation, returned when calling begin_invoke(delegate).
-      void end_invoke(std::shared_ptr<xtd::iasync_result> async);
+      std::optional<object_ref> end_invoke(std::shared_ptr<xtd::iasync_result> async) override;
       
       bool equals(const control& value) const noexcept override;
       
@@ -967,30 +961,18 @@ namespace xtd {
       /// @remarks Calling the invalidate method does not force a synchronous paint; to force a synchronous paint, call the update method after calling the Invalidate method. When this method is called with no parameters, the entire client area is added to the update region.
       virtual void invalidate(const drawing::region& region, bool invalidate_children) const;
       
+      using isynchronize_invoke::invoke;
       /// @brief Executes the specified delegate on the thread that owns the control's underlying window handle.
-      /// @param value A delegate that contains a method to be called in the control's thread context.
-      void invoke(delegate<void()> value);
-      
+      /// @param method A delegate that contains a method to be called in the control's thread context.
+      std::optional<object_ref> invoke(delegate<void()> method) override;
       /// @brief Executes the specified delegate, on the thread that owns the control's underlying window handle, with the specified list of arguments.
-      /// @param value A delegate to a method that takes parameters of the same number and type that are contained in the args parameter.
+      /// @param method A delegate to a method that takes parameters of the same number and type that are contained in the args parameter.
       /// @param args An array of objects to pass as arguments to the specified method. This parameter can be null if the method takes no arguments.
-      void invoke(delegate<void(std::vector<std::any>)> value, const std::vector<std::any>& args);
-      
+      std::optional<object_ref> invoke(delegate<void(std::vector<std::any>)> method, const std::vector<std::any>& args) override;
       /// @brief Executes the specified delegate, on the thread that owns the control's underlying window handle, with the specified list of arguments.
-      /// @param value A delegate to a method that takes parameters of the same number and type that are contained in the args parameter.
+      /// @param method A delegate to a method that takes parameters of the same number and type that are contained in the args parameter.
       /// @param args An array of objects to pass as arguments to the specified method. This parameter can be null if the method takes no arguments.
-      void invoke(delegate<void(std::vector<std::any>)> value, std::any arg);
-      
-      /// @cond
-      template<typename delegate_t>
-      void invoke(delegate_t value, const std::vector<std::any>& args) {invoke(delegate<void(std::vector<std::any>)>(value), args);}
-      
-      template<typename delegate_t, typename args_t>
-      void invoke(delegate_t value, args_t args) {invoke(delegate<void(std::vector<std::any>)>(value), std::any(args));}
-      
-      template<typename delegate_t>
-      void invoke(delegate_t value) {invoke(delegate<void(std::vector<std::any>)>(value), std::vector<std::any> {});}
-      /// @endcond
+      std::optional<object_ref> invoke(delegate<void(std::vector<std::any>)> method, std::any arg) override;
       
       /// @brief Forces the control to apply layout logic to all its child controls.
       /// @remarks If the suspend_layout method was called before calling the perform_layout method, the layout event is suppressed.
