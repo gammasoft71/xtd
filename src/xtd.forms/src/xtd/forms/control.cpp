@@ -816,15 +816,15 @@ control& control::width(int32 width) {
   return *this;
 }
 
-std::shared_ptr<xtd::iasync_result> control::begin_invoke(delegate<void()> value) {
-  return begin_invoke(delegate<void(std::vector<std::any>)>(value), {});
+std::shared_ptr<xtd::iasync_result> control::begin_invoke(delegate<void()> method) {
+  return begin_invoke(delegate<void(std::vector<std::any>)>(method), {});
 }
 
-shared_ptr<iasync_result> control::begin_invoke(delegate<void(vector<any>)> value, const vector<any>& args) {
+shared_ptr<iasync_result> control::begin_invoke(delegate<void(vector<any>)> method, const vector<any>& args) {
   //while (!xtd::forms::application::message_loop()) xtd::threading::thread::sleep(10_ms);
   shared_ptr<async_result_invoke> async = make_shared<async_result_invoke>(std::reference_wrapper(*this));
   async->async_wait_handle().wait_one();
-  if (is_handle_created()) native::control::invoke_in_control_thread(data_->handle, value, args, async->data_->async_mutex, async->data_->is_completed);
+  if (is_handle_created()) native::control::invoke_in_control_thread(data_->handle, method, args, async->data_->async_mutex, async->data_->is_completed);
   threading::thread::yield();
   return async;
 }
@@ -984,24 +984,25 @@ void control::invalidate(const drawing::region& region, bool invalidate_children
   if (is_handle_created()) native::control::invalidate(handle(), region, invalidate_children);
 }
 
-void control::invoke(delegate<void()> value) {
-  invoke(delegate<void(std::vector<std::any>)>(value), std::vector<std::any> {});
+std::optional<object_ref> control::invoke(delegate<void()> method) {
+  return invoke(delegate<void(std::vector<std::any>)>(method), std::vector<std::any> {});
 }
 
-void control::invoke(delegate<void(std::vector<std::any>)> value, const std::vector<std::any>& args) {
-  end_invoke(begin_invoke(value, args));
+std::optional<object_ref> control::invoke(delegate<void(std::vector<std::any>)> method, const std::vector<std::any>& args) {
+  return end_invoke(begin_invoke(method, args));
 }
 
-void control::invoke(delegate<void(std::vector<std::any>)> value, std::any arg) {
-  end_invoke(begin_invoke(value, std::vector<std::any> {arg}));
+std::optional<object_ref> control::invoke(delegate<void(std::vector<std::any>)> method, std::any arg) {
+  return end_invoke(begin_invoke(method, std::vector<std::any> {arg}));
 }
 
 bool control::equals(const control& value) const noexcept {
   return this == &value;
 }
 
-void control::end_invoke(shared_ptr<iasync_result> async) {
+std::optional<object_ref> control::end_invoke(shared_ptr<iasync_result> async) {
   lock_guard<threading::mutex> lock {as<threading::mutex>(async->async_wait_handle())};
+  return *this;
 }
 
 xtd::forms::visual_styles::control_state control::control_state() const noexcept {
