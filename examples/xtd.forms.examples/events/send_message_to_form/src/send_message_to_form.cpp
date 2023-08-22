@@ -65,4 +65,5 @@ protected:
 
 auto main()->int {
   application::run(form1 {});
+  thread::join_all();
 }
