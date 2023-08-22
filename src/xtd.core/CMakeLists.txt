@@ -106,6 +106,8 @@ add_sources(
   include/xtd/console_modifiers
   include/xtd/console_special_key.h
   include/xtd/console_special_key
+  include/xtd/const_object_ref.h
+  include/xtd/const_object_ref
   include/xtd/convert.h
   include/xtd/convert
   include/xtd/convert_pointer.h
@@ -222,6 +224,8 @@ add_sources(
   include/xtd/iprogress
   include/xtd/is.h
   include/xtd/is
+  include/xtd/isynchronize_invoke.h
+  include/xtd/isynchronize_invoke
   include/xtd/keywords.h
   include/xtd/keywords
   include/xtd/language_id.h
@@ -254,6 +258,8 @@ add_sources(
   include/xtd/object
   include/xtd/object_closed_exception.h
   include/xtd/object_closed_exception
+  include/xtd/object_ref.h
+  include/xtd/object_ref
   include/xtd/operation_canceled_exception.h
   include/xtd/operation_canceled_exception
   include/xtd/operating_system.h
@@ -772,6 +778,12 @@ add_sources(
   include/xtd/threading/wait_handle_cannot_be_opened_exception
   include/xtd/threading/wait_or_timer_callback.h
   include/xtd/threading/wait_or_timer_callback
+  include/xtd/timers/elapsed_event_args.h
+  include/xtd/timers/elapsed_event_args
+  include/xtd/timers/elapsed_event_handler.h
+  include/xtd/timers/elapsed_event_handler
+  include/xtd/timers/timer.h
+  include/xtd/timers/timer
   include/xtd/web/css/css_reader.h
   include/xtd/web/css/css_reader
   include/xtd/web/css/css_writer.h
@@ -921,6 +933,8 @@ add_sources(
   src/xtd/threading/unnamed_mutex.h
   src/xtd/threading/unnamed_semaphore.h
   src/xtd/threading/wait_handle.cpp
+  src/xtd/timers/elapsed_event_args.cpp
+  src/xtd/timers/timer.cpp
   src/xtd/environment.cpp # Must be the last file to be compiled, as the std::atexit method must be the first to be called before static variables are destroyed.
 )
 target_type(${XTD_LIBRARY_TYPE})
