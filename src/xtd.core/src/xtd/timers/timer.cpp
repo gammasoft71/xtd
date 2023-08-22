@@ -2,6 +2,7 @@
 #include "../../../include/xtd/threading/auto_reset_event.h"
 #include "../../../include/xtd/threading/thread_pool.h"
 #include "../../../include/xtd/threading/wait_callback.h"
+#include "../../../include/xtd/object_closed_exception.h"
 
 using namespace xtd;
 using namespace xtd::threading;
@@ -9,10 +10,13 @@ using namespace xtd::timers;
 
 struct timer::data {
   bool auto_reset {true};
+  bool closed {false};
   bool enabled {false};
   wait_callback timer_proc = wait_callback {[&](std::any arg) {
+    as<timer*>(arg)->data_->event.reset();
+    thread::sleep(interval);
     while (enabled) {
-      as<timer*>(arg)->elapsed(*as<timer*>(arg), elapsed_event_args(date_time::now()));
+      as<timer*>(arg)->on_elpased(elapsed_event_args(date_time::now()));
       thread::sleep(interval);
       if (!auto_reset) enabled = false;
     }
@@ -20,6 +24,7 @@ struct timer::data {
   }};
   auto_reset_event event {true};
   time_span interval {100};
+  isynchronize_invoke* synchronizing_object = nullptr;
   std::any state{this};
 };
 
@@ -43,7 +48,7 @@ timer& timer::operator=(const timer& timer) {
 }
 
 timer::~timer() {
-  if (data_.use_count() == 1)
+  if (data_.use_count() == 1 && !data_->closed)
     close();
 }
 
@@ -61,6 +66,7 @@ bool timer::enabled() const noexcept {
 }
 
 timer& timer::enabled(bool value) {
+  if (data_->closed) throw object_closed_exception {csf_};
   if (data_->enabled == value) return *this;
   data_->enabled = value;
   if (data_->enabled) thread_pool::queue_user_work_item(data_->timer_proc, this);
@@ -72,13 +78,30 @@ double timer::interval() const noexcept {
 }
 
 timer& timer::interval(double value) {
+  if (data_->closed) throw object_closed_exception {csf_};
   data_->interval = time_span::from_milliseconds(value);
   return *this;
 }
 
+std::optional<std::reference_wrapper<isynchronize_invoke>> timer::synchronizing_object() const noexcept {
+  if (!data_->synchronizing_object) return {};
+  return std::optional<std::reference_wrapper<isynchronize_invoke>> {*data_->synchronizing_object};
+}
+
+timer& timer::synchronizing_object(isynchronize_invoke& value) {
+  data_->synchronizing_object = &value;
+  return *this;
+}
+timer& timer::synchronizing_object(std::nullptr_t value) {
+  data_->synchronizing_object = nullptr;
+  return *this;
+}
+
 void timer::close() {
+  if (data_->closed) throw object_closed_exception {csf_};
   stop();
   data_->event.wait_one();
+  data_->closed = true;
 }
 
 void timer::start() {
@@ -87,4 +110,9 @@ void timer::start() {
 
 void timer::stop() {
   enabled(false);
+}
+
+void timer::on_elpased(const elapsed_event_args& e) {
+  if (data_->synchronizing_object) data_->synchronizing_object->invoke([&] {elapsed(*this, e);});
+  else elapsed(*this, e);
 }
