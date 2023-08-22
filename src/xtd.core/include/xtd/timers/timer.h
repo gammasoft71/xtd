@@ -57,6 +57,10 @@ namespace xtd {
 
       double interval() const noexcept;
       timer& interval(double value);
+      
+      std::optional<std::reference_wrapper<isynchronize_invoke>> synchronizing_object() const noexcept;
+      timer& synchronizing_object(isynchronize_invoke& value);
+      timer& synchronizing_object(std::nullptr_t value);
       /// @}
       
       /// @name Events
@@ -76,6 +80,7 @@ namespace xtd {
       /// @}
 
     private:
+      void on_elpased(const elapsed_event_args& e);
       std::shared_ptr<data> data_;
     };
   }
