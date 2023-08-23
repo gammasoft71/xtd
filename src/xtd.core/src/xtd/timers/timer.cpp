@@ -48,7 +48,7 @@ timer& timer::operator=(const timer& timer) {
 }
 
 timer::~timer() {
-  if (data_.use_count() == 1 && !data_->closed)
+  if (data_.use_count() == 1 && !data_->closed && data_->enabled)
     close();
 }
 

@@ -28,7 +28,7 @@ namespace xtd {
     /// @remarks The Windows Forms Timer component is single-threaded, and is limited to an accuracy of 55 milliseconds.
     /// @par Examples
     /// The following code example demonstrates the use of timer component.
-    /// @include timer.cpp
+    /// @include forms_timer.cpp
     class forms_export_ timer : public component {
       struct data;
       

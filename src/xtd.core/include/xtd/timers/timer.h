@@ -28,6 +28,9 @@ namespace xtd {
     /// @par Library
     /// xtd.core threading
     /// @ingroup xtd_core threading
+    /// @par Examples
+    /// The following example instantiates a xtd::timers::timer object that fires its xtd::timers::timer::elapsed event every two seconds (2,000 milliseconds), sets up an event handler for the event, and starts the timer. The event handler displays the value of the xtd::timers::elapsed_event_args::signal_time property each time it is raised.
+    /// @include timers_timer.cpp
     class core_export_ timer : public object {
       struct data;
     public:
