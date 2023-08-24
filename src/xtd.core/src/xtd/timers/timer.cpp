@@ -69,7 +69,7 @@ bool timer::enabled() const noexcept {
 
 timer& timer::enabled(bool value) {
   if (data_->closed) throw object_closed_exception {csf_};
-  if (!value) data_->sleep.set();
+  if (data_->enabled && !value) data_->sleep.set();
   data_->enabled = value;
   if (value) thread_pool::queue_user_work_item(data_->timer_proc, this);
   return *this;
@@ -108,11 +108,11 @@ void timer::close() {
 }
 
 void timer::start() {
-  enabled(true);
+  if (!enabled()) enabled(true);
 }
 
 void timer::stop() {
-  enabled(false);
+  if (enabled()) enabled(false);
 }
 
 void timer::on_elpased(const elapsed_event_args& e) {
