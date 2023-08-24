@@ -12,13 +12,14 @@ struct timer::data {
   bool closed{false};
   int32 due_time{-1};
   auto_reset_event event {true};
+  auto_reset_event sleep {true};
   int32 period {-1};
   std::any state{this};
   wait_callback timer_proc = wait_callback {[&] {
-    if (due_time > 0) thread::sleep(due_time);
+    if (due_time > 0) sleep.wait_one(due_time);
     while (!closed) {
       callback(state);
-      thread::sleep(period);
+      sleep.wait_one(period);
     }
     event.set();
   }};
