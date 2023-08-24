@@ -3,6 +3,7 @@
 #include "../../../include/xtd/threading/thread_pool.h"
 #include "../../../include/xtd/threading/wait_callback.h"
 #include "../../../include/xtd/object_closed_exception.h"
+#include "../../../include/xtd/math.h"
 
 using namespace xtd;
 using namespace xtd::threading;
@@ -32,11 +33,11 @@ struct timer::data {
 timer::timer() : timer(100) {
 }
 
-timer::timer(double interval) : timer(time_span::from_milliseconds(interval)) {
+timer::timer(double interval) : data_(std::make_shared<data>()) {
+  timer::interval(interval);
 }
 
-timer::timer(const time_span& interval) : data_(std::make_shared<data>()) {
-  data_->interval = interval;
+timer::timer(const time_span& interval) : timer(interval.total_milliseconds()) {
 }
 
 timer::timer(const timer& timer) : data_(timer.data_) {
@@ -68,10 +69,9 @@ bool timer::enabled() const noexcept {
 
 timer& timer::enabled(bool value) {
   if (data_->closed) throw object_closed_exception {csf_};
-  if (data_->enabled == value) return *this;
+  if (!value) data_->sleep.set();
   data_->enabled = value;
-  if (data_->enabled) thread_pool::queue_user_work_item(data_->timer_proc, this);
-  else data_->sleep.set();
+  if (value) thread_pool::queue_user_work_item(data_->timer_proc, this);
   return *this;
 }
 
@@ -81,6 +81,7 @@ double timer::interval() const noexcept {
 
 timer& timer::interval(double value) {
   if (data_->closed) throw object_closed_exception {csf_};
+  if (math::ceiling(value) < 0 || math::ceiling(value) > int32_object::max_value) throw argument_exception {csf_};
   data_->interval = time_span::from_milliseconds(value);
   return *this;
 }
