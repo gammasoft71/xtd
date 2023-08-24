@@ -22,9 +22,10 @@ var searchData=
   ['synthesis_19',['synthesis',['../namespacextd_1_1speech_1_1synthesis.html',1,'xtd::speech']]],
   ['text_20',['text',['../namespacextd_1_1drawing_1_1text.html',1,'xtd::drawing']]],
   ['threading_21',['threading',['../namespacextd_1_1threading.html',1,'xtd']]],
-  ['tunit_22',['tunit',['../namespacextd_1_1tunit.html',1,'xtd']]],
-  ['visual_5fstyles_23',['visual_styles',['../namespacextd_1_1forms_1_1visual__styles.html',1,'xtd::forms']]],
-  ['web_24',['web',['../namespacextd_1_1web.html',1,'xtd']]],
-  ['windows_25',['windows',['../namespacextd_1_1windows.html',1,'xtd']]],
-  ['xtd_26',['xtd',['../namespacextd.html',1,'']]]
+  ['timers_22',['timers',['../namespacextd_1_1timers.html',1,'xtd']]],
+  ['tunit_23',['tunit',['../namespacextd_1_1tunit.html',1,'xtd']]],
+  ['visual_5fstyles_24',['visual_styles',['../namespacextd_1_1forms_1_1visual__styles.html',1,'xtd::forms']]],
+  ['web_25',['web',['../namespacextd_1_1web.html',1,'xtd']]],
+  ['windows_26',['windows',['../namespacextd_1_1windows.html',1,'xtd']]],
+  ['xtd_27',['xtd',['../namespacextd.html',1,'']]]
 ];
