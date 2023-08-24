@@ -58,13 +58,13 @@ namespace timer_example {
       if (has_changed && !dialog_is_open) {
         elapsed_minutes++;
         dialog_is_open = true;
+        
         if (message_box::show(ustring::format("{0} minutes have elapsed since the text was saved. Save it now? ",
                                               elapsed_minutes), "Save Text",
-                              message_box_buttons::yes_no_cancel, message_box_icon::question) == dialog_result::yes) {
+                              message_box_buttons::yes_no_cancel, message_box_icon::question) == dialog_result::yes)
           button1_click(*this, event_args::empty);
-          dialog_is_open = false;
-        }
       }
+      dialog_is_open = false;
     }
     
     void button1_click(object& sender, const event_args& e) {
