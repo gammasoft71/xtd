@@ -35,7 +35,7 @@ namespace timer_example {
     
   private:
     // Create a timer with a two second interval.
-    inline static timer a_timer {2000};
+    inline static timer a_timer {2'000};
   };
 }
 
