@@ -96,5 +96,6 @@ void timer::change(uint32 due_time, uint32 period) {
 void timer::close() {
   if (data_->closed) return;
   data_->closed = true;
+  data_->sleep.set();
   data_->event.wait_one();
 }
