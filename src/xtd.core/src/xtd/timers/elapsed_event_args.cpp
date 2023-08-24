@@ -1,6 +1,7 @@
 #include "../../../include/xtd/timers/elapsed_event_args.h"
 
 using namespace xtd;
+using namespace xtd::timers;
 
 elapsed_event_args::elapsed_event_args(const xtd::date_time& signal_time) : signal_time_(signal_time) {
 }
