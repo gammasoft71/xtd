@@ -28,6 +28,10 @@ namespace xtd {
     /// @par Library
     /// xtd.core threading
     /// @ingroup xtd_core threading
+    /// @note xtd includes several timer classes, each of which offers different functionality:
+    /// * xtd::timers::timer, which fires an event and executes the code in one or more event sinks at regular intervals. The class is intended for use as a server-based or service component in a multithreaded environment; it has no user interface and is not visible at runtime.
+    /// * xtd::threading::timer, which executes a single callback method on a thread pool thread at regular intervals. The callback method is defined when the timer is instantiated and cannot be changed. Like the xtd::timers::timer class, this class is intended for use as a server-based or service component in a multithreaded environment; it has no user interface and is not visible at runtime.
+    /// * xtd::forms::timer, a Windows Forms component that fires an event and executes the code in one or more event sinks at regular intervals. The component has no user interface and is designed for use in a single-threaded environment; it executes on the UI thread.
     /// @par Examples
     /// The following example instantiates a xtd::timers::timer object that fires its xtd::timers::timer::elapsed event every two seconds (2,000 milliseconds), sets up an event handler for the event, and starts the timer. The event handler displays the value of the xtd::timers::elapsed_event_args::signal_time property each time it is raised.
     /// @include timers_timer.cpp
