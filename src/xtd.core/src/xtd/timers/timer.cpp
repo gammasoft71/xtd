@@ -12,18 +12,19 @@ struct timer::data {
   bool auto_reset {true};
   bool closed {false};
   bool enabled {false};
+  auto_reset_event event {true};
+  time_span interval {100};
+  auto_reset_event sleep {false};
   wait_callback timer_proc = wait_callback {[&](std::any arg) {
     as<timer*>(arg)->data_->event.reset();
-    thread::sleep(interval);
+    sleep.wait_one(interval);
     while (enabled) {
       as<timer*>(arg)->on_elpased(elapsed_event_args(date_time::now()));
-      thread::sleep(interval);
+      sleep.wait_one(interval);
       if (!auto_reset) enabled = false;
     }
     as<timer*>(arg)->data_->event.set();
   }};
-  auto_reset_event event {true};
-  time_span interval {100};
   isynchronize_invoke* synchronizing_object = nullptr;
   std::any state{this};
 };
@@ -70,6 +71,7 @@ timer& timer::enabled(bool value) {
   if (data_->enabled == value) return *this;
   data_->enabled = value;
   if (data_->enabled) thread_pool::queue_user_work_item(data_->timer_proc, this);
+  else data_->sleep.set();
   return *this;
 }
 
