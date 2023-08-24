@@ -18,12 +18,13 @@ var searchData=
   ['const_5fform_5fref_15',['const_form_ref',['../group__xtd__forms.html#ga6f3a0c556fa94dbc11ae257629355151',1,'xtd::forms']]],
   ['const_5fiterator_16',['const_iterator',['../classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a9c5c1afad003c5dea3a03dc7ff425cc4',1,'xtd::forms::layout::arranged_element_collection']]],
   ['const_5fmenu_5fitem_5fref_17',['const_menu_item_ref',['../group__xtd__forms.html#ga9e7985f42bfcde1b790f5392a2fcf48a',1,'xtd::forms']]],
-  ['const_5fpointer_18',['const_pointer',['../classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a637cc955e719191921c4756a97d63fd8',1,'xtd::forms::layout::arranged_element_collection']]],
-  ['const_5freference_19',['const_reference',['../classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a5e2a5b80a9156ffaebe4e74ecff45f5a',1,'xtd::forms::layout::arranged_element_collection']]],
-  ['const_5freverse_5fiterator_20',['const_reverse_iterator',['../classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#ae8764b9a0b2a7728229bcbeaa90bd46a',1,'xtd::forms::layout::arranged_element_collection']]],
-  ['const_5ftab_5fpage_5fref_21',['const_tab_page_ref',['../group__xtd__forms.html#gaf9a8dbd2d876e3652ca17f0f2e1cc1d3',1,'xtd::forms']]],
-  ['context_5fmenu_5fref_22',['context_menu_ref',['../classxtd_1_1forms_1_1control.html#a33cbe6be99355bf65754fae2a32d9145',1,'xtd::forms::control']]],
-  ['control_5fevent_5fhandler_23',['control_event_handler',['../group__events.html#ga85cf5329bfe9a3ddfde030837479b3b6',1,'xtd::forms']]],
-  ['control_5fref_24',['control_ref',['../group__xtd__forms.html#gafdd40a9deb594b248dfd59d2df804b2c',1,'xtd::forms']]],
-  ['controls_5ft_25',['controls_t',['../classxtd_1_1forms_1_1style__sheets_1_1style__sheet.html#a1d57ff0bd4a1e930dc0d0096c6e04286',1,'xtd::forms::style_sheets::style_sheet']]]
+  ['const_5fobject_5fref_18',['const_object_ref',['../group__xtd__core.html#ga1f5f8c3f8cde130d9b2c4d79b15542bf',1,'xtd']]],
+  ['const_5fpointer_19',['const_pointer',['../classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a637cc955e719191921c4756a97d63fd8',1,'xtd::forms::layout::arranged_element_collection']]],
+  ['const_5freference_20',['const_reference',['../classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a5e2a5b80a9156ffaebe4e74ecff45f5a',1,'xtd::forms::layout::arranged_element_collection']]],
+  ['const_5freverse_5fiterator_21',['const_reverse_iterator',['../classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#ae8764b9a0b2a7728229bcbeaa90bd46a',1,'xtd::forms::layout::arranged_element_collection']]],
+  ['const_5ftab_5fpage_5fref_22',['const_tab_page_ref',['../group__xtd__forms.html#gaf9a8dbd2d876e3652ca17f0f2e1cc1d3',1,'xtd::forms']]],
+  ['context_5fmenu_5fref_23',['context_menu_ref',['../classxtd_1_1forms_1_1control.html#a33cbe6be99355bf65754fae2a32d9145',1,'xtd::forms::control']]],
+  ['control_5fevent_5fhandler_24',['control_event_handler',['../group__events.html#ga85cf5329bfe9a3ddfde030837479b3b6',1,'xtd::forms']]],
+  ['control_5fref_25',['control_ref',['../group__xtd__forms.html#gafdd40a9deb594b248dfd59d2df804b2c',1,'xtd::forms']]],
+  ['controls_5ft_26',['controls_t',['../classxtd_1_1forms_1_1style__sheets_1_1style__sheet.html#a1d57ff0bd4a1e930dc0d0096c6e04286',1,'xtd::forms::style_sheets::style_sheet']]]
 ];

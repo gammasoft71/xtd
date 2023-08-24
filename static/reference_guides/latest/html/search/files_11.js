@@ -45,7 +45,7 @@ var searchData=
   ['time_5fzone_5finfo_2eh_42',['time_zone_info.h',['../time__zone__info_8h.html',1,'']]],
   ['time_5fzone_5fnot_5ffound_5fexception_2eh_43',['time_zone_not_found_exception.h',['../time__zone__not__found__exception_8h.html',1,'']]],
   ['timeout_2eh_44',['timeout.h',['../timeout_8h.html',1,'']]],
-  ['timer_2eh_45',['timer.h',['../xtd_8forms_2include_2xtd_2forms_2timer_8h.html',1,'(Global Namespace)'],['../xtd_8core_2include_2xtd_2threading_2timer_8h.html',1,'(Global Namespace)']]],
+  ['timer_2eh_45',['timer.h',['../xtd_8forms_2include_2xtd_2forms_2timer_8h.html',1,'(Global Namespace)'],['../xtd_8core_2include_2xtd_2timers_2timer_8h.html',1,'(Global Namespace)'],['../xtd_8core_2include_2xtd_2threading_2timer_8h.html',1,'(Global Namespace)']]],
   ['timer_5fcallback_2eh_46',['timer_callback.h',['../timer__callback_8h.html',1,'']]],
   ['to_5fstring_2eh_47',['to_string.h',['../to__string_8h.html',1,'']]],
   ['toggle_5fbutton_2eh_48',['toggle_button.h',['../style__sheets_2toggle__button_8h.html',1,'(Global Namespace)'],['../toggle__button_8h.html',1,'(Global Namespace)']]],
