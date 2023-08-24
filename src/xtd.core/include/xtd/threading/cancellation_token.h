@@ -90,6 +90,8 @@ namespace xtd {
 
     private:
       friend class cancellation_token_source;
+      explicit cancellation_token(cancellation_token_source& token_source);
+
       bool canceled_ = false;
       cancellation_token_source* token_source_ = nullptr;
       std::shared_ptr<threading::wait_handle> wait_handle_;

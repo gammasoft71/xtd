@@ -33,3 +33,7 @@ threading::wait_handle& cancellation_token::wait_handle() noexcept {
 bool cancellation_token::equals(const cancellation_token& other) const noexcept {
   return token_source_ == other.token_source_;
 }
+
+cancellation_token::cancellation_token(cancellation_token_source& token_source) {
+  token_source_ = &token_source;
+}
