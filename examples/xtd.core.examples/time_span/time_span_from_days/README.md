@@ -19,16 +19,19 @@ xtdc run
 # Output
 
 ```
-Wed Aug 18 13:30:30 2010 - Fri Jan  1 08:00:15 2010 = 229.05:30:15
-   Value of Days Component:                             229
-   Total Number of Days:                   229.229340277778
-   Value of Hours Component:                              5
-   Total Number of Hours:                  5501.50416666667
-   Value of Minutes Component:                           30
-   Total Number of Minutes:                       330090.25
-   Value of Seconds Component:                           15
-   Total Number of Seconds:                      19,805,415
-   Value of Milliseconds Component:                       0
-   Total Number of Milliseconds:             19,805,415,000
-   Ticks:                               198,054,150,000,000
+This example of time_span::from_days(double)
+generates the following output.
+
+            from_days          time_span
+            ---------          ---------
+                6E-09          00:00:00.0010000
+              1.7E-08          00:00:00.0010000
+          0.000123456          00:00:10.6670000
+          1.234567898        1.05:37:46.6660000
+      12345.678987654    12345.16:17:44.5330000
+           1.1574E-05          00:00:01        
+          0.000694444          00:01:00        
+          0.041666666          01:00:00        
+                    1        1.00:00:00        
+          20.84745602       20.20:20:20.2000000
 ```

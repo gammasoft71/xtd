@@ -6,5 +6,6 @@ find_package(xtd REQUIRED)
 add_projects(
   time_span
   time_span_from_days
+  time_span_from_hours
 )
 

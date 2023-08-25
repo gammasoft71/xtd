@@ -3,7 +3,6 @@
 #include <xtd/int64_object>
 #include <xtd/ustring>
 
-using namespace std;
 using namespace xtd;
 
 void gen_time_span_from_days (double days) {
@@ -24,10 +23,10 @@ void gen_time_span_from_days (double days) {
 int main() {
   console::write_line("This example of time_span::from_days(double)\n"
                       "generates the following output.\n" );
-  console::write_line("{0,21}{1,18}",
-                      "FromDays", "TimeSpan" );
-  console::write_line("{0,21}{1,18}",
-                      "--------", "--------" );
+  console::write_line("{0,21}{1,19}",
+                      "from_days", "time_span" );
+  console::write_line("{0,21}{1,19}",
+                      "---------", "---------" );
   
   gen_time_span_from_days(0.000000006);
   gen_time_span_from_days(0.000000017);
@@ -44,8 +43,8 @@ int main() {
 // This example of time_span::from_days(double)
 // generates the following output.
 //
-//              FromDays          TimeSpan
-//              --------          --------
+//             from_days          time_span
+//             ---------          ---------
 //                 6E-09          00:00:00.0010000
 //               1.7E-08          00:00:00.0010000
 //           0.000123456          00:00:10.6670000
