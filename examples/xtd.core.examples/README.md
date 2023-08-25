@@ -117,7 +117,7 @@
 * [trace](diagnostics/trace/README.md) shows how to use [xtd::diagnostics::trace](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1diagnostics_1_1trace.html) class.
 * [trace_cassert](diagnostics/trace_cassert/README.md) shows how to use [xtd::diagnostics::trace::cassert](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1diagnostics_1_1debug.html#acdb0d00e4b12fccc037cf3f965110d72) method.
 
-## [enumerations](enumerations/README.md)
+## [Enumerations](enumerations/README.md)
 
 * [enum](enumerations/enum/README.md) shows how to use [xtd::enum_object](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1enum__object.html) class and [enum_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga6c6a896cbec833fa1fac13b700cf8691) helper.
 * [enum_class](enumerations/enum_class/README.md) shows how to use [xtd::enum_object](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1enum__object.html) class and [enum_class_](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1enum__object.html) helper.
@@ -253,7 +253,7 @@
 * [process_start_info](processes/process_start_info/README.md) shows how to use [xtd::diagnostics::process_start_info](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1diagnostics_1_1process__start__info.html) class.
 * [process_with_standard_output_redirection](processes/process_with_standard_output_redirection/README.md) shows how to use [xtd::diagnostics::process](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1diagnostics_1_1process.html) class with standard output redirection.
 
-## [random](random/README.md)
+## [Random](random/README.md)
 
 * [random1](random/random1/README.md) shows how to use [xtd::random::next_bytes](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1random.html#a1075ee5aac60100ca2c6e60d2ac065d1) method.
 * [random2](random/random2/README.md) shows how to use [xtd::random](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1random.html) class.
@@ -289,9 +289,14 @@
 * [timer](threading/timer/README.md) shows how to use [xtd::threading:timer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1timer.html) class.
 * [wait_handle](threading/wait_handle/README.md) shows how to use [xtd::threading:wait_handle](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1wait__handle.html) class.
 
+## [Time span](time_span/README.md)
+
+* [time_span](uri/time_span/time_span/README.md) demonstrates the [xtd::time_span](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1time__span.html) class.
+
 ## [Timers](timers/README.md)
 
 * [timers_timer](timers/timers_timer/README.md) shows how to use [xtd::timers:timer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1timers_1_1timer.html) class.
+* [timers_timer_synchronizing_object](timers/timers_timer_synchronizing_object/README.md) shows how to use [xtd::timers:timer::synchronizing_object](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1timers_1_1timer.html#a0adab36b965cb0b092f3b0df6d73a032) property.
 
 ## [Uri](uri/README.md)
 

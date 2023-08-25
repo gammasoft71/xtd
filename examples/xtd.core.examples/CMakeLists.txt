@@ -31,6 +31,7 @@ add_projects(
   sprintf
   strings
   threading
+  time_span
   timers
   uri
   version
