@@ -183,14 +183,14 @@ bool time_span::equals(const time_span& value) const noexcept {
   return ticks_ == value.ticks_;
 }
 
-time_span time_span::from_days(double days) {
-  if (double_object::is_NaN(days)) throw argument_exception {csf_};
-  if (double_object::is_infinity(days) || days < as<double>(time_span::min_value.total_days()) || days > as<double>(time_span::max_value.total_days())) throw overflow_exception {csf_};
-  return from_ticks(as<int64>(days * ticks_per_day / ticks_per_milliecond) * ticks_per_milliecond);
+time_span time_span::from_days(double value) {
+  if (double_object::is_NaN(value)) throw argument_exception {csf_};
+  if (double_object::is_infinity(value) || value < as<double>(time_span::min_value.total_days()) || value > as<double>(time_span::max_value.total_days())) throw overflow_exception {csf_};
+  return from_ticks(as<int64>(value * ticks_per_day / ticks_per_milliecond) * ticks_per_milliecond);
 }
 
-time_span time_span::from_days(std::chrono::days days) {
-  return from_ticks(std::chrono::duration_cast<xtd::ticks>(days));
+time_span time_span::from_days(std::chrono::days value) {
+  return from_ticks(std::chrono::duration_cast<xtd::ticks>(value));
 }
 
 time_span time_span::from_hours(double hours) {
