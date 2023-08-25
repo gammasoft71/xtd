@@ -282,7 +282,7 @@ namespace xtd {
     bool equals(const time_span& value) const noexcept override;
     
     /// @brief Returns a xtd::time_span that represents a specified number of days, where the specification is accurate to the nearest millisecond.
-    /// @param A number of days, accurate to the nearest millisecond.
+    /// @param value A number of days, accurate to the nearest millisecond.
     /// @return An object that represents value.
     /// @exception xtd::overflow_exception value is less than xtd::time_span::min_value or greater than xtd::time_span::max_value.<br>-or-<br>value is xtd::double_object::positive_infinity.<br>-or-<br>value is xtd::double_object::negative_infinity.
     /// @exception xtd::argument_exception value is equal to xtd::double_object::NaN.
@@ -294,23 +294,22 @@ namespace xtd {
     /// // The following throws an xtd::overflow_exception at runtime
     /// auto max_span = time_span::from_days(time_span::max_value.total_days());
     /// @endcode
-    static time_span from_days(double days);
+    static time_span from_days(double value);
     /// @brief Returns a xtd::time_span that represents a specified number of days, where the specification is accurate to the nearest millisecond.
-    /// @param A number of days, accurate to the nearest millisecond.
+    /// @param value A number of days, accurate to the nearest millisecond.
+    /// @return An object that represents value.
+    static time_span from_days(std::chrono::days value);
+    
+    /// @brief Returns a xtd::time_span that represents a specified number of hours, where the specification is accurate to the nearest millisecond.
+    /// @param value A number of hours, accurate to the nearest millisecond.
     /// @return An object that represents value.
     /// @exception xtd::overflow_exception value is less than xtd::time_span::min_value or greater than xtd::time_span::max_value.<br>-or-<br>value is xtd::double_object::positive_infinity.<br>-or-<br>value is xtd::double_object::negative_infinity.
     /// @exception xtd::argument_exception value is equal to xtd::double_object::NaN.
-    /// @remarks The value parameter is converted to milliseconds, which is converted to ticks, and that number of ticks is used to initialize the new xd::time_span. Therefore, value will only be considered accurate to the nearest millisecond. Note that, because of the loss of precision of the Double data type, this conversion can cause an xtd::overflow_exception for values that are near to but still in the range of either xd::time_span::min_value or xd::time_span::max_value. For example, this causes an xtd:overflow_exception in the following attempt to instantiate a xd::time_span object.
-    /// @code
-    /// // The following throws an xtd::overflow_exception at runtime
-    /// auto max_span = time_span::from_days(time_span::max_value.total_days());
-    /// @endcode
-    static time_span from_days(std::chrono::days days);
-    
-    /// @brief
-    /// @param
-    /// @return
+    /// @par Examples
     static time_span from_hours(double hours);
+    /// @brief Returns a xtd::time_span that represents a specified number of hours, where the specification is accurate to the nearest millisecond.
+    /// @param value A number of hours, accurate to the nearest millisecond.
+    /// @return An object that represents value.
     static time_span from_hours(std::chrono::hours hours);
     
     /// @brief
