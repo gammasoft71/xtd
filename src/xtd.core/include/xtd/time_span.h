@@ -209,7 +209,7 @@ namespace xtd {
     
     /// @brief Gets the value of the current xtd::time_span structure expressed in whole and fractional days.
     /// @return The total number of days represented by this instance.
-    /// @remarks The xtd::time_span::total_days property represents whole and fractional days, whereas the xtd::time_span::days property represents whole days.
+    /// @remarks The xtd::time_span::total_days_duration property represents whole and fractional days, whereas the xtd::time_span::days property represents whole days.
     std::chrono::days total_days_duration() const noexcept;
     
     /// @brief Gets the value of the current xtd::time_span structure expressed in whole and fractional hours.
@@ -219,7 +219,7 @@ namespace xtd {
     
     /// @brief Gets the value of the current xtd::time_span structure expressed in whole and fractional hours.
     /// @return The total number of hours represented by this instance.
-    /// @remarks The xtd::time_span::total_hours property represents whole and fractional hours, whereas the xtd::time_span::hours property represents whole hours.
+    /// @remarks The xtd::time_span::total_hours_duration property represents whole and fractional hours, whereas the xtd::time_span::hours property represents whole hours.
     std::chrono::hours total_hours_duration() const noexcept;
 
     /// @brief Gets the value of the current xtd::time_span structure expressed in whole and fractional microseconds.
@@ -229,7 +229,7 @@ namespace xtd {
 
     /// @brief Gets the value of the current xtd::time_span structure expressed in whole and fractional microseconds.
     /// @return The total number of microseconds represented by this instance.
-    /// @remarks The xtd::time_span::total_microseconds property represents whole and fractional microseconds, whereas the xtd::time_span::microseconds property represents whole microseconds.
+    /// @remarks The xtd::time_span::total_microseconds_duration property represents whole and fractional microseconds, whereas the xtd::time_span::microseconds property represents whole microseconds.
     std::chrono::microseconds total_microseconds_duration() const noexcept;
 
     /// @brief Gets the value of the current xtd::time_span structure expressed in whole and fractional milliseconds.
@@ -239,28 +239,37 @@ namespace xtd {
 
     /// @brief Gets the value of the current xtd::time_span structure expressed in whole and fractional milliseconds.
     /// @return The total number of milliseconds represented by this instance.
-    /// @remarks The xtd::time_span::total_milliseconds property represents whole and fractional milliseconds, whereas the xtd::time_span::milliseconds property represents whole milliseconds.
+    /// @remarks The xtd::time_span::total_milliseconds_duration property represents whole and fractional milliseconds, whereas the xtd::time_span::milliseconds property represents whole milliseconds.
     std::chrono::milliseconds total_milliseconds_duration() const noexcept;
 
-    /// @brief
-    /// @return
-    /// @remarks
+    /// @brief Gets the value of the current xtd::time_span structure expressed in whole and fractional minutes.
+    /// @return The total number of minutes represented by this instance.
+    /// @remarks The xtd::time_span::total_minutes property represents whole and fractional minutes, whereas the xtd::time_span::minutes property represents whole minutes.
     double total_minutes() const noexcept;
 
+    /// @brief Gets the value of the current xtd::time_span structure expressed in whole and fractional minutes.
+    /// @return The total number of minutes represented by this instance.
+    /// @remarks The xtd::time_span::total_minutes_duration property represents whole and fractional minutes, whereas the xtd::time_span::minutes property represents whole minutes.
     std::chrono::minutes total_minutes_duration() const noexcept;
 
-    /// @brief
-    /// @return
-    /// @remarks
+    /// @brief Gets the value of the current xtd::time_span structure expressed in whole and fractional nanoseconds.
+    /// @return The total number of nanoseconds represented by this instance.
+    /// @remarks The xtd::time_span::total_nanoseconds property represents whole and fractional nanoseconds, whereas the xtd::time_span::nanoseconds property represents whole nanoseconds.
     double total_nanoseconds() const noexcept;
 
+    /// @brief Gets the value of the current xtd::time_span structure expressed in whole and fractional nanoseconds.
+    /// @return The total number of nanoseconds represented by this instance.
+    /// @remarks The xtd::time_span::total_nanoseconds_duration property represents whole and fractional nanoseconds, whereas the xtd::time_span::nanoseconds property represents whole nanoseconds.
     std::chrono::nanoseconds total_nanoseconds_duration() const noexcept;
 
-    /// @brief
-    /// @return
-    /// @remarks
+    /// @brief Gets the value of the current xtd::time_span structure expressed in whole and fractional seconds.
+    /// @return The total number of seconds represented by this instance.
+    /// @remarks The xtd::time_span::total_seconds property represents whole and fractional seconds, whereas the xtd::time_span::seconds property represents whole seconds.
     double total_seconds() const noexcept;
 
+    /// @brief Gets the value of the current xtd::time_span structure expressed in whole and fractional seconds.
+    /// @return The total number of seconds represented by this instance.
+    /// @remarks The xtd::time_span::total_seconds_duration property represents whole and fractional seconds, whereas the xtd::time_span::seconds property represents whole seconds.
     std::chrono::seconds total_seconds_duration() const noexcept;
 
     /// @}
@@ -272,37 +281,107 @@ namespace xtd {
     
     bool equals(const time_span& value) const noexcept override;
     
+    /// @brief Returns a xtd::time_span that represents a specified number of days, where the specification is accurate to the nearest millisecond.
+    /// @param A number of days, accurate to the nearest millisecond.
+    /// @return An object that represents value.
+    /// @exception xtd::overflow_exception value is less than xtd::time_span::min_value or greater than xtd::time_span::max_value.<br>-or-<br>value is xtd::double_object::positive_infinity.<br>-or-<br>value is xtd::double_object::negative_infinity.
+    /// @exception xtd::argument_exception value is equal to xtd::double_object::NaN.
+    /// @par Examples
+    /// The following example creates several xtd::time_span objects using the xtd::time_span::from_days method.
+    /// @include time_span_from_days.cpp
+    /// @remarks The value parameter is converted to milliseconds, which is converted to ticks, and that number of ticks is used to initialize the new xd::time_span. Therefore, value will only be considered accurate to the nearest millisecond. Note that, because of the loss of precision of the Double data type, this conversion can cause an xtd::overflow_exception for values that are near to but still in the range of either xd::time_span::min_value or xd::time_span::max_value. For example, this causes an xtd:overflow_exception in the following attempt to instantiate a xd::time_span object.
+    /// @code
+    /// // The following throws an xtd::overflow_exception at runtime
+    /// auto max_span = time_span::from_days(time_span::max_value.total_days());
+    /// @endcode
     static time_span from_days(double days);
+    /// @brief Returns a xtd::time_span that represents a specified number of days, where the specification is accurate to the nearest millisecond.
+    /// @param A number of days, accurate to the nearest millisecond.
+    /// @return An object that represents value.
+    /// @exception xtd::overflow_exception value is less than xtd::time_span::min_value or greater than xtd::time_span::max_value.<br>-or-<br>value is xtd::double_object::positive_infinity.<br>-or-<br>value is xtd::double_object::negative_infinity.
+    /// @exception xtd::argument_exception value is equal to xtd::double_object::NaN.
+    /// @remarks The value parameter is converted to milliseconds, which is converted to ticks, and that number of ticks is used to initialize the new xd::time_span. Therefore, value will only be considered accurate to the nearest millisecond. Note that, because of the loss of precision of the Double data type, this conversion can cause an xtd::overflow_exception for values that are near to but still in the range of either xd::time_span::min_value or xd::time_span::max_value. For example, this causes an xtd:overflow_exception in the following attempt to instantiate a xd::time_span object.
+    /// @code
+    /// // The following throws an xtd::overflow_exception at runtime
+    /// auto max_span = time_span::from_days(time_span::max_value.total_days());
+    /// @endcode
     static time_span from_days(std::chrono::days days);
     
+    /// @brief
+    /// @param
+    /// @return
     static time_span from_hours(double hours);
     static time_span from_hours(std::chrono::hours hours);
     
+    /// @brief
+    /// @param
+    /// @return
     static time_span from_microseconds(double microseconds);
     static time_span from_microseconds(std::chrono::microseconds microseconds);
     
+    /// @brief
+    /// @param
+    /// @return
     static time_span from_milliseconds(double milliseconds);
     static time_span from_milliseconds(std::chrono::milliseconds milliseconds);
     
+    /// @brief
+    /// @param
+    /// @return
     static time_span from_minutes(double minutes);
     static time_span from_minutes(std::chrono::minutes minutes);
     
+    /// @brief
+    /// @param
+    /// @return
     static time_span from_nanoseconds(double nanoseconds);
     static time_span from_nanoseconds(std::chrono::nanoseconds nanoseconds);
     
+    /// @brief
+    /// @param
+    /// @return
     static time_span from_seconds(double seconds);
     static time_span from_seconds(std::chrono::seconds seconds);
 
+    /// @brief
+    /// @param
+    /// @return
     static time_span from_ticks(int64 ticks);
     static time_span from_ticks(xtd::ticks ticks);
     
     xtd::ustring to_string() const noexcept override;
+    /// @brief Converts the value of the current xtd::time_span object to its equivalent string representation by using the specified format.
+    /// @return The string representation of the current xtd::time_span value in the format specified by the format parameter.
+    /// @exception xtd::format_exception The format parameter is not recognized or is not supported.
+    /// @remarks The format parameter can be any valid standard specifier for XTD::time_span values. If format is equal to xtd::ustring::empty_string (""), the return value of the current xtd::time_span object is formatted with the common format specifier ("c").
+    /// @remarks The formatting codes for xtd::time_span::to_string (const xtd::ustring&) are listed below:
+    /// | Format | Print                                                                                                                       |
+    /// | ------ | --------------------------------------------------------------------------------------------------------------------------- |
+    /// | 'c'    | write duration with optional ticks d.hh.mm.ss.ticks                                                                         |
+    /// | 'd'    | write days d                                                                                                                |
+    /// | 'd'    | write days dd                                                                                                               |
+    /// | 'f'    | write duration d.h.mm.ss.ticks                                                                                              |
+    /// | 'f'    | write duration d.hh.mm.ss.ticks                                                                                             |
+    /// | 'g'    | write duration with optional ticks d.h.mm.ss.ticks                                                                          |
+    /// | 'G'    | write duration with optional ticks d.hh.mm.ss.ticks                                                                         |
+    /// | 'h'    | write hours h                                                                                                               |
+    /// | 'H'    | write hours hh                                                                                                              |
+    /// | 'l'    | write milliseconds                                                                                                          |
+    /// | 'L'    | write milliseconds fixed at 3 digits                                                                                        |
+    /// | 'm'    | write minutes m                                                                                                             |
+    /// | 'M'    | write minutes mm                                                                                                            |
+    /// | 'o'    | write optional minus sign                                                                                                   |
+    /// | 'o'    | write minus or plus sign                                                                                                    |
+    /// | 's'    | write seconds s                                                                                                             |
+    /// | 'S'    | write seconds ss                                                                                                            |
+    /// | 't'    | write ticks fixed at 7 digits                                                                                               |
+    /// | 'T'    | write ticks fixed at 7 digits                                                                                               |
     ustring to_string(const ustring& format) const;
     /// @}
 
   private:
     ustring make_string_from_duration(bool constant) const;
-    int64 nanoseconds_ = 0;
+    int64 ticks_ = 0;
   };
   /// @}
 
