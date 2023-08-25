@@ -37,7 +37,7 @@ namespace xtd {
     /// @par Namespace
     /// xtd::threading
     /// @par Library
-    /// xtd.core threading
+    /// xtd.core
     /// @ingroup xtd_core threading
     /// @par Examples
     /// The following example demonstrates simple threading functionality.

@@ -23,7 +23,7 @@ namespace xtd {
     /// @par Namespace
     /// xtd::threading
     /// @par Library
-    /// xtd.core threading
+    /// xtd.core
     /// @ingroup xtd_core threading
     /// @remarks The xtd uses a unified model for cooperative cancellation of asynchronous or long-running synchronous operations that involves two objects:
     /// * A xtd::threading::cancellation_token_source object, which provides a cancellation token through its xtd::threading::cancellation_token_source::token property and sends a cancellation message by calling its xtd::threading::cancellation_token_source::cancel or xtd::threading::cancellation_token_sourcecancel_after method.

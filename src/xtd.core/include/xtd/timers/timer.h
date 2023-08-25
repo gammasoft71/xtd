@@ -26,8 +26,8 @@ namespace xtd {
     /// @par Namespace
     /// xtd::threading
     /// @par Library
-    /// xtd.core threading
-    /// @ingroup xtd_core threading
+    /// xtd.core
+    /// @ingroup xtd_core timers
     /// @remarks The xtd::timers::timer component is a server-based timer that raises an xtd::timers::timer::elapsed event in your application after the number of milliseconds in the xtd::timers::timer::interval property has elapsed. You can configure the xtd::timers::timer object to raise the event just once or repeatedly using the xtd::timers::timer::auto_reset property. Typically, a xtd::timers::timer object is declared at the class level so that it stays in scope as long as it is needed. You can then handle its xtd::timers::timer::elapsed event to provide regular processing. For example, suppose you have a critical server that must be kept running 24 hours a day, 7 days a week. You could create a service that uses a xtd::timers::timer object to periodically check the server and ensure that the system is up and running. If the system is not responding, the service could attempt to restart the server or notify an administrator.
     /// @remarks The server-based xtd::timers::timer class is designed for use with worker threads in a multithreaded environment. Server timers can move among threads to handle the raised xtd::timers::timer::elapsed event, resulting in more accuracy than Windows timers in raising the event on time.
     /// @remarks The xtd::timers::timer component raises the xtd::timers::timer::elapsed event, based on the value (in milliseconds) of the xtd::timers::timer::interval property. You can handle this event to perform the processing you need. For example, suppose that you have an online sales application that continuously posts sales orders to a database. The service that compiles the instructions for shipping operates on a batch of orders rather than processing each order individually. You could use a xtd::timers::timer to start the batch processing every 30 minutes.

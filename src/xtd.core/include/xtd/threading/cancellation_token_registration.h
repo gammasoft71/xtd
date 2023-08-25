@@ -22,7 +22,7 @@ namespace xtd {
     /// @par Namespace
     /// xtd::threading
     /// @par Library
-    /// xtd.core threading
+    /// xtd.core
     /// @ingroup xtd_core threading
     class core_export_ cancellation_token_registration : public object {
       struct data;

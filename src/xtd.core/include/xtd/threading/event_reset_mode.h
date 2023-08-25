@@ -15,8 +15,8 @@ namespace xtd {
     /// @par Namespace
     /// xtd::threading
     /// @par Library
-    /// xtd.core threading
-    /// @ingroup xtd_core
+    /// xtd.core
+    /// @ingroup xtd_core threading
     enum class event_reset_mode {
       /// @brief When signaled, the xtd::threading::event_wait_handle resets automatically after releasing a single thread. If no threads are waiting, the xtd::threading::event_wait_handle remains signaled until a thread blocks, and resets after releasing the thread.
       auto_reset = 0,

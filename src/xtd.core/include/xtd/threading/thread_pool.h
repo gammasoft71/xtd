@@ -29,7 +29,7 @@ namespace xtd {
     /// @par Namespace
     /// xtd::threading
     /// @par Library
-    /// xtd.core threading
+    /// xtd.core
     /// @ingroup xtd_core threading
     /// @par Examples
     /// In the following example, the main application thread queues a method named ThreadProc to execute on a thread pool thread, sleeps for one second, and then exits. The ThreadProc method simply displays a message.

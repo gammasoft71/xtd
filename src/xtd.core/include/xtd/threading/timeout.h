@@ -23,7 +23,7 @@ namespace xtd {
     /// @par Namespace
     /// xtd::threading
     /// @par Library
-    /// xtd.core threading
+    /// xtd.core
     /// @ingroup xtd_core threading
     /// @par Example
     /// The following example shows a thread going to sleep for an infinite time and subsequently being woken up.
