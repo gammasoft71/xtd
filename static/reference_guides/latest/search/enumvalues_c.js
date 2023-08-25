@@ -5,7 +5,7 @@ var searchData=
   ['macos_2',['macos',['../group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a43b9d8ea18c48c3a64c4e37338fc668f',1,'xtd']]],
   ['magenta_3',['magenta',['../namespacextd.html#ab60a2a64b74b91771b667e4a079681f2a4c2a4a7078da0ac6733464eacfd00f86',1,'xtd::magenta'],['../group__xtd__drawing.html#ggabb6249e3fb8a4388778157257e99049ba4c2a4a7078da0ac6733464eacfd00f86',1,'xtd::drawing::magenta']]],
   ['manual_4',['manual',['../group__xtd__forms.html#ggac490ea79fddd26e2c8354e1e58701019a3c78b35502b2693fefdfc51cba3a53a5',1,'xtd::forms']]],
-  ['manual_5freset_5',['manual_reset',['../group__xtd__core.html#gga0d88594f6d137d04a3d0aa7b102664b3ae24e926926861449731fb9418399a53d',1,'xtd::threading']]],
+  ['manual_5freset_5',['manual_reset',['../group__threading.html#gga0d88594f6d137d04a3d0aa7b102664b3ae24e926926861449731fb9418399a53d',1,'xtd::threading']]],
   ['march_6',['march',['../group__xtd__core.html#gga36069771a10417b78f9d4a7c08559006a4061838f4395ef541fb1b3f07e42bc21',1,'xtd']]],
   ['maroon_7',['maroon',['../group__xtd__drawing.html#ggabb6249e3fb8a4388778157257e99049ba04a3da97880fcedeb087378f29c3a102',1,'xtd::drawing']]],
   ['marquee_8',['marquee',['../group__xtd__forms.html#ggace31288a1ab6aa0ffabd4e55f2f39d43a90bec61be5ffe907d8a66f2484f95ba0',1,'xtd::forms']]],

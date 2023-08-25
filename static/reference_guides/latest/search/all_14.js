@@ -72,7 +72,7 @@ var searchData=
   ['unregister_5fany_5fstringer_2eh_69',['unregister_any_stringer.h',['../unregister__any__stringer_8h.html',1,'']]],
   ['unrestricted_70',['unrestricted',['../group__xtd__core.html#ggab2b5fea204d6ae76bca9bb203bc20397a46d65a50d77f12b530d95db1e8b0e547',1,'xtd::net::sockets']]],
   ['unspecified_71',['unspecified',['../group__xtd__core.html#ggac4690c745045463d3c96d043878cc1e3ad415f0e30c471dfdd9bc4f827329ef48',1,'xtd::net::sockets::unspecified'],['../group__xtd__core.html#gga33cbc7eb0a0fcda4d9f2a175b8062b23ad415f0e30c471dfdd9bc4f827329ef48',1,'xtd::net::sockets::unspecified'],['../group__xtd__core.html#ggab2b5fea204d6ae76bca9bb203bc20397ad415f0e30c471dfdd9bc4f827329ef48',1,'xtd::net::sockets::unspecified'],['../group__xtd__core.html#gga5c7a488efbbc9c766286c1485399aef3ad415f0e30c471dfdd9bc4f827329ef48',1,'xtd::net::sockets::unspecified'],['../group__xtd__core.html#gga03b78d9831d31a0a2ea100078219f2eaad415f0e30c471dfdd9bc4f827329ef48',1,'xtd::unspecified']]],
-  ['unstarted_72',['unstarted',['../group__xtd__core.html#ggad404f38f7d4e370680b792bc0f397d04a28ee56ece67abbd7bfc38eb955412865',1,'xtd::threading']]],
+  ['unstarted_72',['unstarted',['../group__threading.html#ggad404f38f7d4e370680b792bc0f397d04a28ee56ece67abbd7bfc38eb955412865',1,'xtd::threading']]],
   ['unsubscribe_73',['unsubscribe',['../classxtd_1_1iobservable.html#a8a262e67a558bd8811fb47bacc8917e6',1,'xtd::iobservable']]],
   ['unused_74',['unused',['../group__xtd__core.html#gae9b1d037b20137db8842fe5b1c6c1229',1,'xtd']]],
   ['unused_2eh_75',['unused.h',['../unused_8h.html',1,'']]],

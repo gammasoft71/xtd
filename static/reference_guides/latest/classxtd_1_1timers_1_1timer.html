@@ -85,7 +85,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="classxtd_1_1timers_1_1timer-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">xtd::timers::timer Class Reference<div class="ingroups"><a class="el" href="group__libraries.html">libraries</a> &raquo; <a class="el" href="group__xtd__core.html">xtd.core</a> &#124; <a class="el" href="group__system.html">system</a> &raquo; <a class="el" href="group__threading.html">threading</a></div></div></div>
+  <div class="headertitle"><div class="title">xtd::timers::timer Class Reference<div class="ingroups"><a class="el" href="group__libraries.html">libraries</a> &raquo; <a class="el" href="group__xtd__core.html">xtd.core</a> &#124; <a class="el" href="group__system.html">system</a> &raquo; <a class="el" href="group__timers.html">timers</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
@@ -107,7 +107,7 @@ Inheritance diagram for xtd::timers::timer:</div>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/threading/timer&gt;</span> </div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1threading.html" title="The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....">xtd::threading</a> </dd></dl>
-<dl class="section user"><dt>Library</dt><dd>xtd.core threading</dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1timers_1_1timer.html" title="Generates an event after a set interval, with an option to generate recurring events.">xtd::timers::timer</a> component is a server-based timer that raises an <a class="el" href="classxtd_1_1timers_1_1timer.html#af215ca0b8340a7031266ee49a7ca38c8" title="Occurs when the interval elapses.">xtd::timers::timer::elapsed</a> event in your application after the number of milliseconds in the <a class="el" href="classxtd_1_1timers_1_1timer.html#afc9cdc22482bfa4188aba3b36b457b0c" title="Gets the interval, expressed in milliseconds, at which to raise the xtd::timers::timer::elapsed event...">xtd::timers::timer::interval</a> property has elapsed. You can configure the <a class="el" href="classxtd_1_1timers_1_1timer.html" title="Generates an event after a set interval, with an option to generate recurring events.">xtd::timers::timer</a> object to raise the event just once or repeatedly using the <a class="el" href="classxtd_1_1timers_1_1timer.html#a17c1ce8aeb415b4bf066b1f9b8971a25" title="Gets a boolean indicating whether the xtd::timers::timer should raise the xtd::timers::timer::elapsed...">xtd::timers::timer::auto_reset</a> property. Typically, a <a class="el" href="classxtd_1_1timers_1_1timer.html" title="Generates an event after a set interval, with an option to generate recurring events.">xtd::timers::timer</a> object is declared at the class level so that it stays in scope as long as it is needed. You can then handle its <a class="el" href="classxtd_1_1timers_1_1timer.html#af215ca0b8340a7031266ee49a7ca38c8" title="Occurs when the interval elapses.">xtd::timers::timer::elapsed</a> event to provide regular processing. For example, suppose you have a critical server that must be kept running 24 hours a day, 7 days a week. You could create a service that uses a <a class="el" href="classxtd_1_1timers_1_1timer.html" title="Generates an event after a set interval, with an option to generate recurring events.">xtd::timers::timer</a> object to periodically check the server and ensure that the system is up and running. If the system is not responding, the service could attempt to restart the server or notify an administrator. </dd>
 <dd>
 The server-based <a class="el" href="classxtd_1_1timers_1_1timer.html" title="Generates an event after a set interval, with an option to generate recurring events.">xtd::timers::timer</a> class is designed for use with worker threads in a multithreaded environment. Server timers can move among threads to handle the raised <a class="el" href="classxtd_1_1timers_1_1timer.html#af215ca0b8340a7031266ee49a7ca38c8" title="Occurs when the interval elapses.">xtd::timers::timer::elapsed</a> event, resulting in more accuracy than Windows timers in raising the event on time. </dd>
@@ -130,7 +130,7 @@ For a list of default property values for an instance of <a class="el" href="cla
 <li><a class="el" href="classxtd_1_1forms_1_1timer.html" title="Implements a timer that raises an event at user-defined intervals. This timer is optimized for use in...">xtd::forms::timer</a>, a Windows Forms component that fires an event and executes the code in one or more event sinks at regular intervals. The component has no user interface and is designed for use in a single-threaded environment; it executes on the UI thread. </li>
 </ul>
 </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example instantiates a <a class="el" href="classxtd_1_1timers_1_1timer.html" title="Generates an event after a set interval, with an option to generate recurring events.">xtd::timers::timer</a> object that fires its <a class="el" href="classxtd_1_1timers_1_1timer.html#af215ca0b8340a7031266ee49a7ca38c8" title="Occurs when the interval elapses.">xtd::timers::timer::elapsed</a> event every two seconds (2,000 milliseconds), sets up an event handler for the event, and starts the timer. The event handler displays the value of the xtd::timers::elapsed_event_args::signal_time property each time it is raised. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/timers/timer&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example instantiates a <a class="el" href="classxtd_1_1timers_1_1timer.html" title="Generates an event after a set interval, with an option to generate recurring events.">xtd::timers::timer</a> object that fires its <a class="el" href="classxtd_1_1timers_1_1timer.html#af215ca0b8340a7031266ee49a7ca38c8" title="Occurs when the interval elapses.">xtd::timers::timer::elapsed</a> event every two seconds (2,000 milliseconds), sets up an event handler for the event, and starts the timer. The event handler displays the value of the <a class="el" href="classxtd_1_1timers_1_1elapsed__event__args.html#a46ce1c25f18577b473d637aa639140f5" title="Gets the date/time when the xtd::timers::timer::elapsed event was raised.">xtd::timers::elapsed_event_args::signal_time</a> property each time it is raised. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/timers/timer&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/date_time&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
@@ -160,7 +160,7 @@ For a list of default property values for an instance of <a class="el" href="cla
 <div class="line">      a_timer.enabled(<span class="keyword">true</span>);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> on_timed_event(<span class="keywordtype">object</span>&amp; source, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1elapsed__event__args.html">elapsed_event_args</a>&amp; e) {</div>
+<div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> on_timed_event(<span class="keywordtype">object</span>&amp; source, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1timers_1_1elapsed__event__args.html">elapsed_event_args</a>&amp; e) {</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;The elapsed event was raised at {:t}.{:d3}&quot;</span>,</div>
 <div class="line">                          <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.signal_time(), <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.signal_time().millisecond());</div>
 <div class="line">    }</div>
@@ -189,15 +189,15 @@ For a list of default property values for an instance of <a class="el" href="cla
 <div class="line"><span class="comment">// The elapsed event was raised at 22:12:55.570</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// Terminating the application...</span></div>
-<div class="ttc" id="aclassxtd_1_1elapsed__event__args_html"><div class="ttname"><a href="classxtd_1_1elapsed__event__args.html">xtd::elapsed_event_args</a></div><div class="ttdoc">Provides data for the xtd::timers::timer::elapsed event.</div><div class="ttdef"><b>Definition</b> elapsed_event_args.h:16</div></div>
+<div class="ttc" id="aclassxtd_1_1timers_1_1elapsed__event__args_html"><div class="ttname"><a href="classxtd_1_1timers_1_1elapsed__event__args.html">xtd::timers::elapsed_event_args</a></div><div class="ttdoc">Provides data for the xtd::timers::timer::elapsed event.</div><div class="ttdef"><b>Definition</b> elapsed_event_args.h:18</div></div>
 <div class="ttc" id="agroup__keywords_html_gac9b8e6f22fb2fdc1bb915ee01aef848c"><div class="ttname"><a href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a></div><div class="ttdeci">#define startup_(main_class)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:58</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">xtd::console_key::e</a></div><div class="ttdeci">@ e</div><div class="ttdoc">The E key.</div></div>
-<div class="ttc" id="anamespacextd_1_1timers_html"><div class="ttname"><a href="namespacextd_1_1timers.html">xtd::timers</a></div><div class="ttdoc">Provides the xtd::timers::timer component, which allows you to raise an event on a specified interval...</div><div class="ttdef"><b>Definition</b> timer.h:17</div></div>
+<div class="ttc" id="anamespacextd_1_1timers_html"><div class="ttname"><a href="namespacextd_1_1timers.html">xtd::timers</a></div><div class="ttdoc">Provides the xtd::timers::timer component, which allows you to raise an event on a specified interval...</div><div class="ttdef"><b>Definition</b> elapsed_event_args.h:11</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
 </div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Events</h2></td></tr>
-<tr class="memitem:af215ca0b8340a7031266ee49a7ca38c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1event.html">event</a>&lt; <a class="el" href="classxtd_1_1timers_1_1timer.html">timer</a>, <a class="el" href="group__events.html#gadca3c19f54562c8a95b695a5d1f3c4ac">elapsed_event_handler</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1timers_1_1timer.html#af215ca0b8340a7031266ee49a7ca38c8">elapsed</a></td></tr>
+<tr class="memitem:af215ca0b8340a7031266ee49a7ca38c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1event.html">event</a>&lt; <a class="el" href="classxtd_1_1timers_1_1timer.html">timer</a>, <a class="el" href="group__events.html#gaca6b2a5ebda108374322b3c6b0fbfcb8">elapsed_event_handler</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1timers_1_1timer.html#af215ca0b8340a7031266ee49a7ca38c8">elapsed</a></td></tr>
 <tr class="memdesc:af215ca0b8340a7031266ee49a7ca38c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when the interval elapses.  <br /></td></tr>
 <tr class="separator:af215ca0b8340a7031266ee49a7ca38c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -701,6 +701,128 @@ If <a class="el" href="classxtd_1_1timers_1_1timer.html#a43cf9fa6f8315d5bad6f800
 <dd>
 When the <a class="el" href="classxtd_1_1timers_1_1timer.html#af215ca0b8340a7031266ee49a7ca38c8" title="Occurs when the interval elapses.">xtd::timers::timer::elapsed</a> event is handled by a visual Windows Forms component, such as a button, accessing the component through the system-thread pool might result in an exception or just might not work. Avoid this effect by setting <a class="el" href="classxtd_1_1timers_1_1timer.html#a0adab36b965cb0b092f3b0df6d73a032" title="Gets the object used to marshal event-handler calls that are issued when an interval has elapsed.">xtd::timers::timer::synchronizing_object</a> to a Windows Forms component, which causes the method that handles the <a class="el" href="classxtd_1_1timers_1_1timer.html#af215ca0b8340a7031266ee49a7ca38c8" title="Occurs when the interval elapses.">xtd::timers::timer::elapsed</a> event to be called on the same thread that the component was created on. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Even if the <a class="el" href="classxtd_1_1timers_1_1timer.html#a0adab36b965cb0b092f3b0df6d73a032" title="Gets the object used to marshal event-handler calls that are issued when an interval has elapsed.">xtd::timers::timer::synchronizing_object</a> property is not std::nullopt, <a class="el" href="classxtd_1_1timers_1_1timer.html#af215ca0b8340a7031266ee49a7ca38c8" title="Occurs when the interval elapses.">xtd::timers::timer::elapsed</a> events can occur after the <a class="el" href="classxtd_1_1timers_1_1timer.html#a7fd38b13d0d219ee80d23344352638c9" title="Releases the resources used by the xtd::timers::timer.">xtd::timers::timer::close</a> or <a class="el" href="classxtd_1_1timers_1_1timer.html#a2b54a6dd46ef9a0d2bf3a6644388bd6b" title="Stops raising the xtd::timers::timer::elapsed event by setting xtd::timers::timer::enabled to false.">xtd::timers::timer::stop</a> method has been called or after the Enabled property has been set to false, because the signal to raise the <a class="el" href="classxtd_1_1timers_1_1timer.html#af215ca0b8340a7031266ee49a7ca38c8" title="Occurs when the interval elapses.">xtd::timers::timer::elapsed</a> event is always queued for execution on a thread pool thread. One way to resolve this race condition is to set a flag that tells the event handler for the <a class="el" href="classxtd_1_1timers_1_1timer.html#af215ca0b8340a7031266ee49a7ca38c8" title="Occurs when the interval elapses.">xtd::timers::timer::elapsed</a> event to ignore subsequent events. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example is a Windows Forms app that serves as a very simple text file editor. When the text in the text box has not been saved, the app asks the user at one-minute intervals whether they want to save the contents of the text box. To do this, the <a class="el" href="classxtd_1_1timers_1_1timer.html#afc9cdc22482bfa4188aba3b36b457b0c" title="Gets the interval, expressed in milliseconds, at which to raise the xtd::timers::timer::elapsed event...">xtd::timers::timer::interval</a> property is set to one minute (60,000 milliseconds), and the <a class="el" href="classxtd_1_1timers_1_1timer.html#a0adab36b965cb0b092f3b0df6d73a032" title="Gets the object used to marshal event-handler calls that are issued when an interval has elapsed.">xtd::timers::timer::synchronizing_object</a> property is set to the <a class="el" href="classxtd_1_1forms_1_1form.html" title="Represents a window or dialog box that makes up an application&#39;s user interface.">xtd::forms::form</a> object. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/button&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/message_box&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/save_file_dialog&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/text_box&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/io/stream_writer&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/timers/timer&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/date_time&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1timers.html">xtd::timers</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span>timer_example {</div>
+<div class="line">  <span class="keyword">class </span>form1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
+<div class="line">  <span class="keyword">public</span>:</div>
+<div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> main() {</div>
+<div class="line">      application::run(form1 {});</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    form1() {</div>
+<div class="line">      initialize_component();</div>
+<div class="line">      </div>
+<div class="line">      text(<span class="stringliteral">&quot;Quick Text Editor&quot;</span>);</div>
+<div class="line">      button1.text(<span class="stringliteral">&quot;Save&quot;</span>);</div>
+<div class="line">      text_box1.multiline(<span class="keyword">true</span>);</div>
+<div class="line"> </div>
+<div class="line">      <span class="comment">// Configure the SaveFile dialog</span></div>
+<div class="line">      save_file_dialog1.filter(<span class="stringliteral">&quot;txt files (*.txt)|*.txt|All files (*.*)|*.*&quot;</span>);</div>
+<div class="line">      save_file_dialog1.restore_directory(<span class="keyword">true</span>);</div>
+<div class="line">      </div>
+<div class="line">      <span class="comment">// Define the event handler</span></div>
+<div class="line">      <a class="code hl_class" href="classxtd_1_1forms_1_1timer.html">timer</a>.elapsed += {*<span class="keyword">this</span>, &amp;form1::prompt_for_save};</div>
+<div class="line">      <span class="comment">// Synchronize the timer with the text box</span></div>
+<div class="line">      <a class="code hl_class" href="classxtd_1_1forms_1_1timer.html">timer</a>.synchronizing_object(*<span class="keyword">this</span>);</div>
+<div class="line">      <span class="comment">// Start the timer</span></div>
+<div class="line">      <a class="code hl_class" href="classxtd_1_1forms_1_1timer.html">timer</a>.auto_reset(<span class="keyword">true</span>);</div>
+<div class="line"> </div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">  <span class="keyword">private</span>:</div>
+<div class="line">    <span class="keywordtype">void</span> initialize_component() {</div>
+<div class="line">      form_closing += {*<span class="keyword">this</span>, &amp;form1::form1_form_closing};</div>
+<div class="line">      controls().push_back_range({text_box1, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>});</div>
+<div class="line"> </div>
+<div class="line">      <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.dock(dock_style::bottom);</div>
+<div class="line">      <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.click += {*<span class="keyword">this</span>, &amp;form1::button1_click};</div>
+<div class="line"> </div>
+<div class="line">      text_box1.dock(dock_style::fill);</div>
+<div class="line">      text_box1.text_changed += {*<span class="keyword">this</span>, &amp;form1::text_box1__text_changed};</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">void</span> prompt_for_save(<span class="keywordtype">object</span>&amp; source, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1timers_1_1elapsed__event__args.html">elapsed_event_args</a>&amp; e) {</div>
+<div class="line">      <span class="keywordflow">if</span> (has_changed &amp;&amp; !dialog_is_open) {</div>
+<div class="line">        elapsed_minutes++;</div>
+<div class="line">        dialog_is_open = <span class="keyword">true</span>;</div>
+<div class="line">        </div>
+<div class="line">        <span class="keywordflow">if</span> (message_box::show(ustring::format(<span class="stringliteral">&quot;{0} minutes have elapsed since the text was saved. Save it now? &quot;</span>,</div>
+<div class="line">                                              elapsed_minutes), <span class="stringliteral">&quot;Save Text&quot;</span>,</div>
+<div class="line">                              message_box_buttons::yes_no_cancel, message_box_icon::question) == dialog_result::yes)</div>
+<div class="line">          button1_click(*<span class="keyword">this</span>, event_args::empty);</div>
+<div class="line">      }</div>
+<div class="line">      dialog_is_open = <span class="keyword">false</span>;</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordtype">void</span> button1_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a>&amp; e) {</div>
+<div class="line">      <span class="keywordflow">if</span> (ustring::is_empty(save_file_dialog1.file_name())) {</div>
+<div class="line">        <span class="keywordflow">if</span> (save_file_dialog1.show_dialog() == dialog_result::ok)</div>
+<div class="line">          sw = std::make_shared&lt;stream_writer&gt;(save_file_dialog1.file_name(), <span class="keyword">false</span>);</div>
+<div class="line">      }</div>
+<div class="line">      txt = text_box1.text();</div>
+<div class="line">      has_changed = <span class="keyword">false</span>;</div>
+<div class="line">      <a class="code hl_class" href="classxtd_1_1forms_1_1timer.html">timer</a>.<a class="code hl_function" href="classxtd_1_1forms_1_1timer.html#a8e5e5899873de193e14ea979e69536c2">stop</a>();</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordtype">void</span> form1_form_closing(<span class="keywordtype">object</span>&amp; sender, <a class="code hl_class" href="classxtd_1_1forms_1_1form__closing__event__args.html">form_closing_event_args</a>&amp; e) {</div>
+<div class="line">      <a class="code hl_class" href="classxtd_1_1forms_1_1timer.html">timer</a>.close();</div>
+<div class="line">      <span class="keywordflow">if</span> (sw != null) {</div>
+<div class="line">        sw-&gt;write(txt);</div>
+<div class="line">        sw-&gt;close();</div>
+<div class="line">      }</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordtype">void</span> text_box1__text_changed(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a>&amp; e) {</div>
+<div class="line">      has_changed = <span class="keyword">true</span>;</div>
+<div class="line">      <a class="code hl_class" href="classxtd_1_1forms_1_1timer.html">timer</a>.<a class="code hl_function" href="classxtd_1_1forms_1_1timer.html#aea8f18bb9d190d6b78abd9bf15b176ce">start</a>();</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>;</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1save__file__dialog.html">save_file_dialog</a> save_file_dialog1;</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> text_box1;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">bool</span> dialog_is_open = <span class="keyword">false</span>;</div>
+<div class="line">    <span class="keywordtype">int</span> elapsed_minutes = 0;</div>
+<div class="line">    <span class="keywordtype">bool</span> has_changed = <span class="keyword">false</span>;</div>
+<div class="line">    std::shared_ptr&lt;stream_writer&gt; sw;</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> txt;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Create a timer with a 1-minute interval</span></div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1timers_1_1timer.html">timers::timer</a> <a class="code hl_class" href="classxtd_1_1forms_1_1timer.html">timer</a> {60&#39;000};</div>
+<div class="line">  };</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(timer_example::form1);</div>
+<div class="ttc" id="aclassxtd_1_1event__args_html"><div class="ttname"><a href="classxtd_1_1event__args.html">xtd::event_args</a></div><div class="ttdoc">Represents the base class for classes that contain event data, and provides a value to use for events...</div><div class="ttdef"><b>Definition</b> event_args.h:18</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1button_html"><div class="ttname"><a href="classxtd_1_1forms_1_1button.html">xtd::forms::button</a></div><div class="ttdoc">Represents a Windows button control.</div><div class="ttdef"><b>Definition</b> button.h:47</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1form__closing__event__args_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form__closing__event__args.html">xtd::forms::form_closing_event_args</a></div><div class="ttdoc">Provides data for the form_closing event.</div><div class="ttdef"><b>Definition</b> form_closing_event_args.h:21</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application's user interface.</div><div class="ttdef"><b>Definition</b> form.h:52</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1save__file__dialog_html"><div class="ttname"><a href="classxtd_1_1forms_1_1save__file__dialog.html">xtd::forms::save_file_dialog</a></div><div class="ttdoc">Prompts the user to select a location for saving a file. This class cannot be inherited.</div><div class="ttdef"><b>Definition</b> save_file_dialog.h:28</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1text__box_html"><div class="ttname"><a href="classxtd_1_1forms_1_1text__box.html">xtd::forms::text_box</a></div><div class="ttdoc">Represents a standard Windows text box.</div><div class="ttdef"><b>Definition</b> text_box.h:29</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1timer_html"><div class="ttname"><a href="classxtd_1_1forms_1_1timer.html">xtd::forms::timer</a></div><div class="ttdoc">Implements a timer that raises an event at user-defined intervals. This timer is optimized for use in...</div><div class="ttdef"><b>Definition</b> timer.h:36</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1timer_html_a8e5e5899873de193e14ea979e69536c2"><div class="ttname"><a href="classxtd_1_1forms_1_1timer.html#a8e5e5899873de193e14ea979e69536c2">xtd::forms::timer::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdoc">Starts the timer.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1timer_html_aea8f18bb9d190d6b78abd9bf15b176ce"><div class="ttname"><a href="classxtd_1_1forms_1_1timer.html#aea8f18bb9d190d6b78abd9bf15b176ce">xtd::forms::timer::start</a></div><div class="ttdeci">void start()</div><div class="ttdoc">Stops the timer.</div></div>
+<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:48</div></div>
+<div class="ttc" id="agroup__xtd__forms_html_gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9"><div class="ttname"><a href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">xtd::forms::message_dialog_default_button::button1</a></div><div class="ttdeci">@ button1</div><div class="ttdoc">The first button on the message box is the default button.</div></div>
+<div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> about_box.h:13</div></div>
+<div class="ttc" id="anamespacextd_1_1io_html"><div class="ttname"><a href="namespacextd_1_1io.html">xtd::io</a></div><div class="ttdoc">The xtd::io namespace contains types that allow reading and writing to files and data streams,...</div><div class="ttdef"><b>Definition</b> binary_reader.h:17</div></div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -730,7 +852,115 @@ When the <a class="el" href="classxtd_1_1timers_1_1timer.html#af215ca0b8340a7031
 <dl class="section remark"><dt>Remarks</dt><dd>When <a class="el" href="classxtd_1_1timers_1_1timer.html#a0adab36b965cb0b092f3b0df6d73a032" title="Gets the object used to marshal event-handler calls that are issued when an interval has elapsed.">xtd::timers::timer::synchronizing_object</a> is std::nullopt, the method that handles the <a class="el" href="classxtd_1_1timers_1_1timer.html#af215ca0b8340a7031266ee49a7ca38c8" title="Occurs when the interval elapses.">xtd::timers::timer::elapsed</a> event is called on a thread from the system-thread pool. For more information on system-thread pools, see <a class="el" href="classxtd_1_1threading_1_1thread__pool.html" title="Provides a pool of threads that can be used to execute tasks, post work items, process asynchronous I...">xtd::threading::thread_pool</a>. </dd>
 <dd>
 When the <a class="el" href="classxtd_1_1timers_1_1timer.html#af215ca0b8340a7031266ee49a7ca38c8" title="Occurs when the interval elapses.">xtd::timers::timer::elapsed</a> event is handled by a visual Windows Forms component, such as a button, accessing the component through the system-thread pool might result in an exception or just might not work. Avoid this effect by setting <a class="el" href="classxtd_1_1timers_1_1timer.html#a0adab36b965cb0b092f3b0df6d73a032" title="Gets the object used to marshal event-handler calls that are issued when an interval has elapsed.">xtd::timers::timer::synchronizing_object</a> to a Windows Forms component, which causes the method that handles the <a class="el" href="classxtd_1_1timers_1_1timer.html#af215ca0b8340a7031266ee49a7ca38c8" title="Occurs when the interval elapses.">xtd::timers::timer::elapsed</a> event to be called on the same thread that the component was created on. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>Even if the <a class="el" href="classxtd_1_1timers_1_1timer.html#a0adab36b965cb0b092f3b0df6d73a032" title="Gets the object used to marshal event-handler calls that are issued when an interval has elapsed.">xtd::timers::timer::synchronizing_object</a> property is not std::nullopt, <a class="el" href="classxtd_1_1timers_1_1timer.html#af215ca0b8340a7031266ee49a7ca38c8" title="Occurs when the interval elapses.">xtd::timers::timer::elapsed</a> events can occur after the <a class="el" href="classxtd_1_1timers_1_1timer.html#a7fd38b13d0d219ee80d23344352638c9" title="Releases the resources used by the xtd::timers::timer.">xtd::timers::timer::close</a> or <a class="el" href="classxtd_1_1timers_1_1timer.html#a2b54a6dd46ef9a0d2bf3a6644388bd6b" title="Stops raising the xtd::timers::timer::elapsed event by setting xtd::timers::timer::enabled to false.">xtd::timers::timer::stop</a> method has been called or after the Enabled property has been set to false, because the signal to raise the <a class="el" href="classxtd_1_1timers_1_1timer.html#af215ca0b8340a7031266ee49a7ca38c8" title="Occurs when the interval elapses.">xtd::timers::timer::elapsed</a> event is always queued for execution on a thread pool thread. One way to resolve this race condition is to set a flag that tells the event handler for the <a class="el" href="classxtd_1_1timers_1_1timer.html#af215ca0b8340a7031266ee49a7ca38c8" title="Occurs when the interval elapses.">xtd::timers::timer::elapsed</a> event to ignore subsequent events. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Even if the <a class="el" href="classxtd_1_1timers_1_1timer.html#a0adab36b965cb0b092f3b0df6d73a032" title="Gets the object used to marshal event-handler calls that are issued when an interval has elapsed.">xtd::timers::timer::synchronizing_object</a> property is not std::nullopt, <a class="el" href="classxtd_1_1timers_1_1timer.html#af215ca0b8340a7031266ee49a7ca38c8" title="Occurs when the interval elapses.">xtd::timers::timer::elapsed</a> events can occur after the <a class="el" href="classxtd_1_1timers_1_1timer.html#a7fd38b13d0d219ee80d23344352638c9" title="Releases the resources used by the xtd::timers::timer.">xtd::timers::timer::close</a> or <a class="el" href="classxtd_1_1timers_1_1timer.html#a2b54a6dd46ef9a0d2bf3a6644388bd6b" title="Stops raising the xtd::timers::timer::elapsed event by setting xtd::timers::timer::enabled to false.">xtd::timers::timer::stop</a> method has been called or after the Enabled property has been set to false, because the signal to raise the <a class="el" href="classxtd_1_1timers_1_1timer.html#af215ca0b8340a7031266ee49a7ca38c8" title="Occurs when the interval elapses.">xtd::timers::timer::elapsed</a> event is always queued for execution on a thread pool thread. One way to resolve this race condition is to set a flag that tells the event handler for the <a class="el" href="classxtd_1_1timers_1_1timer.html#af215ca0b8340a7031266ee49a7ca38c8" title="Occurs when the interval elapses.">xtd::timers::timer::elapsed</a> event to ignore subsequent events. The following example is a Windows Forms app that serves as a very simple text file editor. When the text in the text box has not been saved, the app asks the user at one-minute intervals whether they want to save the contents of the text box. To do this, the <a class="el" href="classxtd_1_1timers_1_1timer.html#afc9cdc22482bfa4188aba3b36b457b0c" title="Gets the interval, expressed in milliseconds, at which to raise the xtd::timers::timer::elapsed event...">xtd::timers::timer::interval</a> property is set to one minute (60,000 milliseconds), and the <a class="el" href="classxtd_1_1timers_1_1timer.html#a0adab36b965cb0b092f3b0df6d73a032" title="Gets the object used to marshal event-handler calls that are issued when an interval has elapsed.">xtd::timers::timer::synchronizing_object</a> property is set to the <a class="el" href="classxtd_1_1forms_1_1form.html" title="Represents a window or dialog box that makes up an application&#39;s user interface.">xtd::forms::form</a> object. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/button&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/message_box&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/save_file_dialog&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/text_box&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/io/stream_writer&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/timers/timer&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/date_time&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1timers.html">xtd::timers</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span>timer_example {</div>
+<div class="line">  <span class="keyword">class </span>form1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
+<div class="line">  <span class="keyword">public</span>:</div>
+<div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> main() {</div>
+<div class="line">      application::run(form1 {});</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    form1() {</div>
+<div class="line">      initialize_component();</div>
+<div class="line">      </div>
+<div class="line">      text(<span class="stringliteral">&quot;Quick Text Editor&quot;</span>);</div>
+<div class="line">      button1.text(<span class="stringliteral">&quot;Save&quot;</span>);</div>
+<div class="line">      text_box1.multiline(<span class="keyword">true</span>);</div>
+<div class="line"> </div>
+<div class="line">      <span class="comment">// Configure the SaveFile dialog</span></div>
+<div class="line">      save_file_dialog1.filter(<span class="stringliteral">&quot;txt files (*.txt)|*.txt|All files (*.*)|*.*&quot;</span>);</div>
+<div class="line">      save_file_dialog1.restore_directory(<span class="keyword">true</span>);</div>
+<div class="line">      </div>
+<div class="line">      <span class="comment">// Define the event handler</span></div>
+<div class="line">      <a class="code hl_class" href="classxtd_1_1forms_1_1timer.html">timer</a>.elapsed += {*<span class="keyword">this</span>, &amp;form1::prompt_for_save};</div>
+<div class="line">      <span class="comment">// Synchronize the timer with the text box</span></div>
+<div class="line">      <a class="code hl_class" href="classxtd_1_1forms_1_1timer.html">timer</a>.synchronizing_object(*<span class="keyword">this</span>);</div>
+<div class="line">      <span class="comment">// Start the timer</span></div>
+<div class="line">      <a class="code hl_class" href="classxtd_1_1forms_1_1timer.html">timer</a>.auto_reset(<span class="keyword">true</span>);</div>
+<div class="line"> </div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">  <span class="keyword">private</span>:</div>
+<div class="line">    <span class="keywordtype">void</span> initialize_component() {</div>
+<div class="line">      form_closing += {*<span class="keyword">this</span>, &amp;form1::form1_form_closing};</div>
+<div class="line">      controls().push_back_range({text_box1, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>});</div>
+<div class="line"> </div>
+<div class="line">      <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.dock(dock_style::bottom);</div>
+<div class="line">      <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.click += {*<span class="keyword">this</span>, &amp;form1::button1_click};</div>
+<div class="line"> </div>
+<div class="line">      text_box1.dock(dock_style::fill);</div>
+<div class="line">      text_box1.text_changed += {*<span class="keyword">this</span>, &amp;form1::text_box1__text_changed};</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">void</span> prompt_for_save(<span class="keywordtype">object</span>&amp; source, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1timers_1_1elapsed__event__args.html">elapsed_event_args</a>&amp; e) {</div>
+<div class="line">      <span class="keywordflow">if</span> (has_changed &amp;&amp; !dialog_is_open) {</div>
+<div class="line">        elapsed_minutes++;</div>
+<div class="line">        dialog_is_open = <span class="keyword">true</span>;</div>
+<div class="line">        </div>
+<div class="line">        <span class="keywordflow">if</span> (message_box::show(ustring::format(<span class="stringliteral">&quot;{0} minutes have elapsed since the text was saved. Save it now? &quot;</span>,</div>
+<div class="line">                                              elapsed_minutes), <span class="stringliteral">&quot;Save Text&quot;</span>,</div>
+<div class="line">                              message_box_buttons::yes_no_cancel, message_box_icon::question) == dialog_result::yes)</div>
+<div class="line">          button1_click(*<span class="keyword">this</span>, event_args::empty);</div>
+<div class="line">      }</div>
+<div class="line">      dialog_is_open = <span class="keyword">false</span>;</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordtype">void</span> button1_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a>&amp; e) {</div>
+<div class="line">      <span class="keywordflow">if</span> (ustring::is_empty(save_file_dialog1.file_name())) {</div>
+<div class="line">        <span class="keywordflow">if</span> (save_file_dialog1.show_dialog() == dialog_result::ok)</div>
+<div class="line">          sw = std::make_shared&lt;stream_writer&gt;(save_file_dialog1.file_name(), <span class="keyword">false</span>);</div>
+<div class="line">      }</div>
+<div class="line">      txt = text_box1.text();</div>
+<div class="line">      has_changed = <span class="keyword">false</span>;</div>
+<div class="line">      <a class="code hl_class" href="classxtd_1_1forms_1_1timer.html">timer</a>.<a class="code hl_function" href="classxtd_1_1forms_1_1timer.html#a8e5e5899873de193e14ea979e69536c2">stop</a>();</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordtype">void</span> form1_form_closing(<span class="keywordtype">object</span>&amp; sender, <a class="code hl_class" href="classxtd_1_1forms_1_1form__closing__event__args.html">form_closing_event_args</a>&amp; e) {</div>
+<div class="line">      <a class="code hl_class" href="classxtd_1_1forms_1_1timer.html">timer</a>.close();</div>
+<div class="line">      <span class="keywordflow">if</span> (sw != null) {</div>
+<div class="line">        sw-&gt;write(txt);</div>
+<div class="line">        sw-&gt;close();</div>
+<div class="line">      }</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordtype">void</span> text_box1__text_changed(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a>&amp; e) {</div>
+<div class="line">      has_changed = <span class="keyword">true</span>;</div>
+<div class="line">      <a class="code hl_class" href="classxtd_1_1forms_1_1timer.html">timer</a>.<a class="code hl_function" href="classxtd_1_1forms_1_1timer.html#aea8f18bb9d190d6b78abd9bf15b176ce">start</a>();</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>;</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1save__file__dialog.html">save_file_dialog</a> save_file_dialog1;</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> text_box1;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">bool</span> dialog_is_open = <span class="keyword">false</span>;</div>
+<div class="line">    <span class="keywordtype">int</span> elapsed_minutes = 0;</div>
+<div class="line">    <span class="keywordtype">bool</span> has_changed = <span class="keyword">false</span>;</div>
+<div class="line">    std::shared_ptr&lt;stream_writer&gt; sw;</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> txt;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Create a timer with a 1-minute interval</span></div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1timers_1_1timer.html">timers::timer</a> <a class="code hl_class" href="classxtd_1_1forms_1_1timer.html">timer</a> {60&#39;000};</div>
+<div class="line">  };</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(timer_example::form1);</div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -760,7 +990,115 @@ When the <a class="el" href="classxtd_1_1timers_1_1timer.html#af215ca0b8340a7031
 <dl class="section remark"><dt>Remarks</dt><dd>When <a class="el" href="classxtd_1_1timers_1_1timer.html#a0adab36b965cb0b092f3b0df6d73a032" title="Gets the object used to marshal event-handler calls that are issued when an interval has elapsed.">xtd::timers::timer::synchronizing_object</a> is std::nullopt, the method that handles the <a class="el" href="classxtd_1_1timers_1_1timer.html#af215ca0b8340a7031266ee49a7ca38c8" title="Occurs when the interval elapses.">xtd::timers::timer::elapsed</a> event is called on a thread from the system-thread pool. For more information on system-thread pools, see <a class="el" href="classxtd_1_1threading_1_1thread__pool.html" title="Provides a pool of threads that can be used to execute tasks, post work items, process asynchronous I...">xtd::threading::thread_pool</a>. </dd>
 <dd>
 When the <a class="el" href="classxtd_1_1timers_1_1timer.html#af215ca0b8340a7031266ee49a7ca38c8" title="Occurs when the interval elapses.">xtd::timers::timer::elapsed</a> event is handled by a visual Windows Forms component, such as a button, accessing the component through the system-thread pool might result in an exception or just might not work. Avoid this effect by setting <a class="el" href="classxtd_1_1timers_1_1timer.html#a0adab36b965cb0b092f3b0df6d73a032" title="Gets the object used to marshal event-handler calls that are issued when an interval has elapsed.">xtd::timers::timer::synchronizing_object</a> to a Windows Forms component, which causes the method that handles the <a class="el" href="classxtd_1_1timers_1_1timer.html#af215ca0b8340a7031266ee49a7ca38c8" title="Occurs when the interval elapses.">xtd::timers::timer::elapsed</a> event to be called on the same thread that the component was created on. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>Even if the <a class="el" href="classxtd_1_1timers_1_1timer.html#a0adab36b965cb0b092f3b0df6d73a032" title="Gets the object used to marshal event-handler calls that are issued when an interval has elapsed.">xtd::timers::timer::synchronizing_object</a> property is not std::nullopt, <a class="el" href="classxtd_1_1timers_1_1timer.html#af215ca0b8340a7031266ee49a7ca38c8" title="Occurs when the interval elapses.">xtd::timers::timer::elapsed</a> events can occur after the <a class="el" href="classxtd_1_1timers_1_1timer.html#a7fd38b13d0d219ee80d23344352638c9" title="Releases the resources used by the xtd::timers::timer.">xtd::timers::timer::close</a> or <a class="el" href="classxtd_1_1timers_1_1timer.html#a2b54a6dd46ef9a0d2bf3a6644388bd6b" title="Stops raising the xtd::timers::timer::elapsed event by setting xtd::timers::timer::enabled to false.">xtd::timers::timer::stop</a> method has been called or after the Enabled property has been set to false, because the signal to raise the <a class="el" href="classxtd_1_1timers_1_1timer.html#af215ca0b8340a7031266ee49a7ca38c8" title="Occurs when the interval elapses.">xtd::timers::timer::elapsed</a> event is always queued for execution on a thread pool thread. One way to resolve this race condition is to set a flag that tells the event handler for the <a class="el" href="classxtd_1_1timers_1_1timer.html#af215ca0b8340a7031266ee49a7ca38c8" title="Occurs when the interval elapses.">xtd::timers::timer::elapsed</a> event to ignore subsequent events. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Even if the <a class="el" href="classxtd_1_1timers_1_1timer.html#a0adab36b965cb0b092f3b0df6d73a032" title="Gets the object used to marshal event-handler calls that are issued when an interval has elapsed.">xtd::timers::timer::synchronizing_object</a> property is not std::nullopt, <a class="el" href="classxtd_1_1timers_1_1timer.html#af215ca0b8340a7031266ee49a7ca38c8" title="Occurs when the interval elapses.">xtd::timers::timer::elapsed</a> events can occur after the <a class="el" href="classxtd_1_1timers_1_1timer.html#a7fd38b13d0d219ee80d23344352638c9" title="Releases the resources used by the xtd::timers::timer.">xtd::timers::timer::close</a> or <a class="el" href="classxtd_1_1timers_1_1timer.html#a2b54a6dd46ef9a0d2bf3a6644388bd6b" title="Stops raising the xtd::timers::timer::elapsed event by setting xtd::timers::timer::enabled to false.">xtd::timers::timer::stop</a> method has been called or after the Enabled property has been set to false, because the signal to raise the <a class="el" href="classxtd_1_1timers_1_1timer.html#af215ca0b8340a7031266ee49a7ca38c8" title="Occurs when the interval elapses.">xtd::timers::timer::elapsed</a> event is always queued for execution on a thread pool thread. One way to resolve this race condition is to set a flag that tells the event handler for the <a class="el" href="classxtd_1_1timers_1_1timer.html#af215ca0b8340a7031266ee49a7ca38c8" title="Occurs when the interval elapses.">xtd::timers::timer::elapsed</a> event to ignore subsequent events. The following example is a Windows Forms app that serves as a very simple text file editor. When the text in the text box has not been saved, the app asks the user at one-minute intervals whether they want to save the contents of the text box. To do this, the <a class="el" href="classxtd_1_1timers_1_1timer.html#afc9cdc22482bfa4188aba3b36b457b0c" title="Gets the interval, expressed in milliseconds, at which to raise the xtd::timers::timer::elapsed event...">xtd::timers::timer::interval</a> property is set to one minute (60,000 milliseconds), and the <a class="el" href="classxtd_1_1timers_1_1timer.html#a0adab36b965cb0b092f3b0df6d73a032" title="Gets the object used to marshal event-handler calls that are issued when an interval has elapsed.">xtd::timers::timer::synchronizing_object</a> property is set to the <a class="el" href="classxtd_1_1forms_1_1form.html" title="Represents a window or dialog box that makes up an application&#39;s user interface.">xtd::forms::form</a> object. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/button&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/message_box&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/save_file_dialog&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/text_box&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/io/stream_writer&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/timers/timer&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/date_time&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1timers.html">xtd::timers</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span>timer_example {</div>
+<div class="line">  <span class="keyword">class </span>form1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
+<div class="line">  <span class="keyword">public</span>:</div>
+<div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> main() {</div>
+<div class="line">      application::run(form1 {});</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    form1() {</div>
+<div class="line">      initialize_component();</div>
+<div class="line">      </div>
+<div class="line">      text(<span class="stringliteral">&quot;Quick Text Editor&quot;</span>);</div>
+<div class="line">      button1.text(<span class="stringliteral">&quot;Save&quot;</span>);</div>
+<div class="line">      text_box1.multiline(<span class="keyword">true</span>);</div>
+<div class="line"> </div>
+<div class="line">      <span class="comment">// Configure the SaveFile dialog</span></div>
+<div class="line">      save_file_dialog1.filter(<span class="stringliteral">&quot;txt files (*.txt)|*.txt|All files (*.*)|*.*&quot;</span>);</div>
+<div class="line">      save_file_dialog1.restore_directory(<span class="keyword">true</span>);</div>
+<div class="line">      </div>
+<div class="line">      <span class="comment">// Define the event handler</span></div>
+<div class="line">      <a class="code hl_class" href="classxtd_1_1forms_1_1timer.html">timer</a>.elapsed += {*<span class="keyword">this</span>, &amp;form1::prompt_for_save};</div>
+<div class="line">      <span class="comment">// Synchronize the timer with the text box</span></div>
+<div class="line">      <a class="code hl_class" href="classxtd_1_1forms_1_1timer.html">timer</a>.synchronizing_object(*<span class="keyword">this</span>);</div>
+<div class="line">      <span class="comment">// Start the timer</span></div>
+<div class="line">      <a class="code hl_class" href="classxtd_1_1forms_1_1timer.html">timer</a>.auto_reset(<span class="keyword">true</span>);</div>
+<div class="line"> </div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">  <span class="keyword">private</span>:</div>
+<div class="line">    <span class="keywordtype">void</span> initialize_component() {</div>
+<div class="line">      form_closing += {*<span class="keyword">this</span>, &amp;form1::form1_form_closing};</div>
+<div class="line">      controls().push_back_range({text_box1, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>});</div>
+<div class="line"> </div>
+<div class="line">      <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.dock(dock_style::bottom);</div>
+<div class="line">      <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.click += {*<span class="keyword">this</span>, &amp;form1::button1_click};</div>
+<div class="line"> </div>
+<div class="line">      text_box1.dock(dock_style::fill);</div>
+<div class="line">      text_box1.text_changed += {*<span class="keyword">this</span>, &amp;form1::text_box1__text_changed};</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">void</span> prompt_for_save(<span class="keywordtype">object</span>&amp; source, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1timers_1_1elapsed__event__args.html">elapsed_event_args</a>&amp; e) {</div>
+<div class="line">      <span class="keywordflow">if</span> (has_changed &amp;&amp; !dialog_is_open) {</div>
+<div class="line">        elapsed_minutes++;</div>
+<div class="line">        dialog_is_open = <span class="keyword">true</span>;</div>
+<div class="line">        </div>
+<div class="line">        <span class="keywordflow">if</span> (message_box::show(ustring::format(<span class="stringliteral">&quot;{0} minutes have elapsed since the text was saved. Save it now? &quot;</span>,</div>
+<div class="line">                                              elapsed_minutes), <span class="stringliteral">&quot;Save Text&quot;</span>,</div>
+<div class="line">                              message_box_buttons::yes_no_cancel, message_box_icon::question) == dialog_result::yes)</div>
+<div class="line">          button1_click(*<span class="keyword">this</span>, event_args::empty);</div>
+<div class="line">      }</div>
+<div class="line">      dialog_is_open = <span class="keyword">false</span>;</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordtype">void</span> button1_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a>&amp; e) {</div>
+<div class="line">      <span class="keywordflow">if</span> (ustring::is_empty(save_file_dialog1.file_name())) {</div>
+<div class="line">        <span class="keywordflow">if</span> (save_file_dialog1.show_dialog() == dialog_result::ok)</div>
+<div class="line">          sw = std::make_shared&lt;stream_writer&gt;(save_file_dialog1.file_name(), <span class="keyword">false</span>);</div>
+<div class="line">      }</div>
+<div class="line">      txt = text_box1.text();</div>
+<div class="line">      has_changed = <span class="keyword">false</span>;</div>
+<div class="line">      <a class="code hl_class" href="classxtd_1_1forms_1_1timer.html">timer</a>.<a class="code hl_function" href="classxtd_1_1forms_1_1timer.html#a8e5e5899873de193e14ea979e69536c2">stop</a>();</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordtype">void</span> form1_form_closing(<span class="keywordtype">object</span>&amp; sender, <a class="code hl_class" href="classxtd_1_1forms_1_1form__closing__event__args.html">form_closing_event_args</a>&amp; e) {</div>
+<div class="line">      <a class="code hl_class" href="classxtd_1_1forms_1_1timer.html">timer</a>.close();</div>
+<div class="line">      <span class="keywordflow">if</span> (sw != null) {</div>
+<div class="line">        sw-&gt;write(txt);</div>
+<div class="line">        sw-&gt;close();</div>
+<div class="line">      }</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordtype">void</span> text_box1__text_changed(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a>&amp; e) {</div>
+<div class="line">      has_changed = <span class="keyword">true</span>;</div>
+<div class="line">      <a class="code hl_class" href="classxtd_1_1forms_1_1timer.html">timer</a>.<a class="code hl_function" href="classxtd_1_1forms_1_1timer.html#aea8f18bb9d190d6b78abd9bf15b176ce">start</a>();</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>;</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1save__file__dialog.html">save_file_dialog</a> save_file_dialog1;</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> text_box1;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">bool</span> dialog_is_open = <span class="keyword">false</span>;</div>
+<div class="line">    <span class="keywordtype">int</span> elapsed_minutes = 0;</div>
+<div class="line">    <span class="keywordtype">bool</span> has_changed = <span class="keyword">false</span>;</div>
+<div class="line">    std::shared_ptr&lt;stream_writer&gt; sw;</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> txt;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Create a timer with a 1-minute interval</span></div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1timers_1_1timer.html">timers::timer</a> <a class="code hl_class" href="classxtd_1_1forms_1_1timer.html">timer</a> {60&#39;000};</div>
+<div class="line">  };</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(timer_example::form1);</div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -772,7 +1110,7 @@ When the <a class="el" href="classxtd_1_1timers_1_1timer.html#af215ca0b8340a7031
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1event.html">event</a>&lt;<a class="el" href="classxtd_1_1timers_1_1timer.html">timer</a>, <a class="el" href="group__events.html#gadca3c19f54562c8a95b695a5d1f3c4ac">elapsed_event_handler</a>&gt; xtd::timers::timer::elapsed</td>
+          <td class="memname"><a class="el" href="classxtd_1_1event.html">event</a>&lt;<a class="el" href="classxtd_1_1timers_1_1timer.html">timer</a>, <a class="el" href="group__events.html#gaca6b2a5ebda108374322b3c6b0fbfcb8">elapsed_event_handler</a>&gt; xtd::timers::timer::elapsed</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -795,7 +1133,7 @@ If the <a class="el" href="classxtd_1_1timers_1_1timer.html#a0adab36b965cb0b092f
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Aug 24 2023 22:53:12 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Aug 25 2023 20:57:42 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

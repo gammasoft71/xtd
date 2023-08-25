@@ -39,7 +39,7 @@ var searchData=
   ['ticks_5fper_5fday_36',['ticks_per_day',['../structxtd_1_1time__span.html#a5f60382ee3e9d245638ee2cdb14eca60',1,'xtd::time_span']]],
   ['ticks_5fper_5fhour_37',['ticks_per_hour',['../structxtd_1_1time__span.html#a87871472d7a6e0cb621df7dfc7b48f59',1,'xtd::time_span']]],
   ['ticks_5fper_5fmicrosecond_38',['ticks_per_microsecond',['../structxtd_1_1time__span.html#a4d7ec607a607e24bc33dc530820957e3',1,'xtd::time_span']]],
-  ['ticks_5fper_5fmilliecond_39',['ticks_per_milliecond',['../structxtd_1_1time__span.html#aff8441cd1667003f42f2de72d1a156f0',1,'xtd::time_span']]],
+  ['ticks_5fper_5fmillisecond_39',['ticks_per_millisecond',['../structxtd_1_1time__span.html#ad29c8b8563609bdf0d15badbf0ca707a',1,'xtd::time_span']]],
   ['ticks_5fper_5fminute_40',['ticks_per_minute',['../structxtd_1_1time__span.html#ab31aadb6b90479ea0b1b405e1c34f3dd',1,'xtd::time_span']]],
   ['ticks_5fper_5fsecond_41',['ticks_per_second',['../structxtd_1_1time__span.html#a0cdccee1108abbaf4edc6a4bed5b6072',1,'xtd::time_span']]],
   ['tiger_42',['tiger',['../classxtd_1_1forms_1_1emoticons.html#a328717e890f88bfa68410e3e34d8b642',1,'xtd::forms::emoticons']]],
