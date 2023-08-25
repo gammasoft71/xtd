@@ -27,6 +27,8 @@ add_sources(
   doxygen/doxygen/xtd_drawing_examples.dox
   doxygen/doxygen/xtd_forms_examples.dox
   doxygen/doxygen/xtd_tunit_examples.dox
+  doxygen/doxygen_developer/groups.dox
+  doxygen/doxygen_developer/main_page.dox
   README.md
   abstract_class_design.md
   abstract_factory.md
