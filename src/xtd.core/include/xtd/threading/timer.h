@@ -24,7 +24,7 @@ namespace xtd {
     /// @par Namespace
     /// xtd::threading
     /// @par Library
-    /// xtd.core threading
+    /// xtd.core
     /// @ingroup xtd_core threading
     /// @par Examples
     /// The following example defines a status_checker class that includes a check_status method whose signature is the same as the xtd::threading::timer_callback delegate. The state argument of the check_status method is an xtd::threading::auto_reset_event object that is used to synchronize the application thread and the thread pool thread that executes the callback delegate. The status_checker class also includes two state variables:

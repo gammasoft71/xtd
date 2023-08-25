@@ -15,8 +15,8 @@ namespace xtd {
     /// @par Namespace
     /// xtd::threading
     /// @par Library
-    /// xtd.core threading
-    /// @ingroup xtd_core
+    /// xtd.core
+    /// @ingroup xtd_core threading
     enum class thread_state {
       /// @brief The thread_state has been started, it is not blocked, and there is no pending System::Threading::ThreadAbortException.
       running = 0x0000,

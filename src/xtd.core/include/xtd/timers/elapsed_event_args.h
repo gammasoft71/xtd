@@ -42,7 +42,6 @@ namespace xtd {
       /// @}
       
     private:
-      bool cancel_ = false;
       xtd::date_time signal_time_;
     };
   }
