@@ -942,7 +942,7 @@ namespace xtd {
     /// @par Examples
     /// The foloowwing example shows how to use xtd::date_time::to_string(const xtd::ustring&) with differentt formats.
     /// @include date_time_to_string_format.cpp
-    /// @remarks The formatting codes for xtd::date_time::to_string(const xtd::ustring&) are listed below:
+    /// @remarks The formatting codes for xtd::date_time::to_string (const xtd::ustring&) are listed below:
     /// | Format | Print                                                                                                                       |
     /// | ------ | --------------------------------------------------------------------------------------------------------------------------- |
     /// | 'a'    | writes "PM" or "AM"                                                                                                         |
