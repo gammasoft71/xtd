@@ -10,7 +10,7 @@
 # Specific developer guide configuration options
 #---------------------------------------------------------------------------
 
-INPUT         = ../../src/xtd/include/doxygen_developer \
+INPUT         = ../../docs/doxygen/doxygen_developer \
                 ../../src/xtd/include \
                 ../../src/xtd.core.native/include \
                 ../../src/xtd.core/include \
