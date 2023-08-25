@@ -291,7 +291,8 @@
 
 ## [Time span](time_span/README.md)
 
-* [time_span](uri/time_span/time_span/README.md) demonstrates the [xtd::time_span](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1time__span.html) class.
+* [time_span](time_span/time_span/time_span/README.md) demonstrates the [xtd::time_span](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1time__span.html) struct.
+* [timers_timer_synchronizing_object](time_span/timers_timer_synchronizing_object/README.md) shows how to use [xtd::timers:timer::synchronizing_object](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1timers_1_1timer.html#a0adab36b965cb0b092f3b0df6d73a032) property.
 
 ## [Timers](timers/README.md)
 
