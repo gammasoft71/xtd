@@ -55,7 +55,7 @@ namespace xtd {
 
     /// @brief Represents the number of ticks in 1 millisecond. This field is constant.
     /// @remarks The value of this constant is 10 thousand; that is, 10,000.
-    static constexpr int64 ticks_per_milliecond = 10000ll;
+    static constexpr int64 ticks_per_millisecond = 10000ll;
 
     /// @brief Represents the number of ticks in 1 minute. This field is constant.
     /// @remarks The value of this constant is 600 million; that is, 600,000,000.
@@ -305,48 +305,60 @@ namespace xtd {
     /// @return An object that represents value.
     /// @exception xtd::overflow_exception value is less than xtd::time_span::min_value or greater than xtd::time_span::max_value.<br>-or-<br>value is xtd::double_object::positive_infinity.<br>-or-<br>value is xtd::double_object::negative_infinity.
     /// @exception xtd::argument_exception value is equal to xtd::double_object::NaN.
+    /// @remarks The value parameter is converted to milliseconds, which is converted to ticks, and that number of ticks is used to initialize the new xtd::time_span. Therefore, value will only be considered accurate to the nearest millisecond. Note that, because of the loss of precision of the double data type, this conversion can generate an xtd::overflow_exception for values that are near to but still in the range of either xtd::time_span::min_value or xtd::time_span::max_value. For example, this causes an xtd::overflow_exception in the following attempt to instantiate a xtd::time_span object.
+    /// @code
+    /// // The following throws an xtd::overflow_exception at runtime
+    /// auto max_span = time_span::from_hours(time_span::max_value::total_hours());
+    /// @endcode
     /// @par Examples
-    static time_span from_hours(double hours);
+    /// The following example creates several xtd::time_span objects using the xtd::time_span::from_hours method.
+    /// @include time_span_from_hours.cpp
+    static time_span from_hours(double value);
     /// @brief Returns a xtd::time_span that represents a specified number of hours, where the specification is accurate to the nearest millisecond.
     /// @param value A number of hours, accurate to the nearest millisecond.
     /// @return An object that represents value.
-    static time_span from_hours(std::chrono::hours hours);
+    static time_span from_hours(std::chrono::hours value);
+    
+    /// @brief Returns a xtd::time_span that represents a specified number of microseconds.
+    /// @param value A number of microseconds.
+    /// @return An object that represents value.
+    /// @exception xtd::overflow_exception value is less than xtd::time_span::min_value or greater than xtd::time_span::max_value.<br>-or-<br>value is xtd::double_object::positive_infinity.<br>-or-<br>value is xtd::double_object::negative_infinity.
+    /// @exception xtd::argument_exception value is equal to xtd::double_object::NaN.
+    static time_span from_microseconds(double value);
+    /// @brief Returns a xtd::time_span that represents a specified number of microseconds.
+    /// @param value A number of microseconds.
+    /// @return An object that represents value.
+    static time_span from_microseconds(std::chrono::microseconds value);
     
     /// @brief
     /// @param
     /// @return
-    static time_span from_microseconds(double microseconds);
-    static time_span from_microseconds(std::chrono::microseconds microseconds);
+    static time_span from_milliseconds(double value);
+    static time_span from_milliseconds(std::chrono::milliseconds value);
     
     /// @brief
     /// @param
     /// @return
-    static time_span from_milliseconds(double milliseconds);
-    static time_span from_milliseconds(std::chrono::milliseconds milliseconds);
+    static time_span from_minutes(double value);
+    static time_span from_minutes(std::chrono::minutes value);
     
     /// @brief
     /// @param
     /// @return
-    static time_span from_minutes(double minutes);
-    static time_span from_minutes(std::chrono::minutes minutes);
+    static time_span from_nanoseconds(double value);
+    static time_span from_nanoseconds(std::chrono::nanoseconds value);
     
     /// @brief
     /// @param
     /// @return
-    static time_span from_nanoseconds(double nanoseconds);
-    static time_span from_nanoseconds(std::chrono::nanoseconds nanoseconds);
-    
-    /// @brief
-    /// @param
-    /// @return
-    static time_span from_seconds(double seconds);
-    static time_span from_seconds(std::chrono::seconds seconds);
+    static time_span from_seconds(double value);
+    static time_span from_seconds(std::chrono::seconds value);
 
     /// @brief
     /// @param
     /// @return
-    static time_span from_ticks(int64 ticks);
-    static time_span from_ticks(xtd::ticks ticks);
+    static time_span from_ticks(int64 value);
+    static time_span from_ticks(xtd::ticks value);
     
     xtd::ustring to_string() const noexcept override;
     /// @brief Converts the value of the current xtd::time_span object to its equivalent string representation by using the specified format.
@@ -379,6 +391,12 @@ namespace xtd {
     /// @}
 
   private:
+    static constexpr int32 millis_per_second = 1000;
+    static constexpr int32 millis_per_minute = millis_per_second * 60; //     60,000
+    static constexpr int32 millis_per_hour = millis_per_minute * 60;   //  3,600,000
+    static constexpr int32 millis_per_day = millis_per_hour * 24;      // 86,400,000
+
+    static time_span interval(double value, int scale);
     ustring make_string_from_duration(bool constant) const;
     int64 ticks_ = 0;
   };
