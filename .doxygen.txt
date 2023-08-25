@@ -25,7 +25,7 @@ HTML_EXTRA_STYLESHEET = @CMAKE_CURRENT_SOURCE_DIR@/docs/doxygen/doxygen-awesome-
 HTML_FOOTER           = @CMAKE_CURRENT_SOURCE_DIR@/docs/doxygen/html_footer.html
 HTML_HEADER           = @CMAKE_CURRENT_SOURCE_DIR@/docs/doxygen/html_header.html
 IMAGE_PATH            = @CMAKE_CURRENT_SOURCE_DIR@/docs/pictures
-INPUT                 = @CMAKE_CURRENT_SOURCE_DIR@/src/xtd/include/doxygen \
+INPUT                 = @CMAKE_CURRENT_SOURCE_DIR@/docs/doxygen/doxygen \
                         @CMAKE_CURRENT_SOURCE_DIR@/src/xtd/include/xtd \
                         @CMAKE_CURRENT_SOURCE_DIR@/src/xtd.core/include \
                         @CMAKE_CURRENT_SOURCE_DIR@/src/xtd.drawing/include \

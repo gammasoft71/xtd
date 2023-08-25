@@ -22,7 +22,7 @@ HTML_EXTRA_STYLESHEET = ./docs/doxygen/doxygen-awesome-css/doxygen-awesome.css .
 HTML_FOOTER           = ./docs/doxygen/html_footer.html
 HTML_HEADER           = ./docs/doxygen/html_header.html
 IMAGE_PATH            = ./docs/pictures
-INPUT                 = ./src/xtd/include/doxygen \
+INPUT                 = ./docs/doxygen/doxygen \
                         ./src/xtd/include/xtd \
                         ./src/xtd.core/include \
                         ./src/xtd.drawing/include \

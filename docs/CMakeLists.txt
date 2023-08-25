@@ -6,6 +6,27 @@ include(../scripts/cmake/xtd_commands.cmake)
 include(../scripts/cmake/xtd_version.cmake)
 
 add_sources(
+  doxygen/doxygen/cmake_build_options_page.dox
+  doxygen/doxygen/cmake_commands_page.dox
+  doxygen/doxygen/colors_page.dox
+  doxygen/doxygen/containers_appearances_page.dox
+  doxygen/doxygen/controls_appearances_page.dox
+  doxygen/doxygen/countries_appearances_page.dox
+  doxygen/doxygen/cursors_appearances_page.dox
+  doxygen/doxygen/dialogs_appearances_page.dox
+  doxygen/doxygen/format_page.dox
+  doxygen/doxygen/forms_appearances_page.dox
+  doxygen/doxygen/groups.dox
+  doxygen/doxygen/images_appearances_page.dox
+  doxygen/doxygen/license_page.dox
+  doxygen/doxygen/main_page.dox
+  doxygen/doxygen/menus_ans_toolbars_appearances_page.dox
+  doxygen/doxygen/system_colors_page.dox
+  doxygen/doxygen/xtd_cmake_examples.dox
+  doxygen/doxygen/xtd_core_examples.dox
+  doxygen/doxygen/xtd_drawing_examples.dox
+  doxygen/doxygen/xtd_forms_examples.dox
+  doxygen/doxygen/xtd_tunit_examples.dox
   README.md
   abstract_class_design.md
   abstract_factory.md

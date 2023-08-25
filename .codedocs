@@ -133,7 +133,7 @@ IMAGE_PATH = docs/pictures
 # INLINE_INHERITED_MEMB =
 # INLINE_SIMPLE_STRUCTS =
 # INLINE_SOURCES =
-INPUT = src/xtd/include/doxygen \
+INPUT = docs/doxygen/doxygen \
         src/xtd/include/xtd \
         src/xtd.core/include \
         src/xtd.drawing/include \
