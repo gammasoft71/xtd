@@ -283,13 +283,11 @@ ustring time_span::to_string(const ustring& format) const {
 }
 
 time_span time_span::interval(double value, int scale) {
-  if (double_object::is_NaN(value))
-    throw argument_exception {csf_};
+  if (double_object::is_NaN(value)) throw argument_exception {csf_};
   double tmp = value * scale;
   double millis = tmp + (value >= 0? 0.5: -0.5);
-  if ((millis > int64_object::max_value / ticks_per_millisecond) || (millis < int64_object::min_value / ticks_per_millisecond))
-    throw overflow_exception {csf_};
-  return time_span(as<int64>(millis * ticks_per_millisecond));
+  if ((millis > int64_object::max_value / ticks_per_millisecond) || (millis < int64_object::min_value / ticks_per_millisecond))  throw overflow_exception {csf_};
+  return time_span(as<int64>(math::floor(millis)) * ticks_per_millisecond);
 }
 
 ustring time_span::make_string_from_duration(bool constant) const {
