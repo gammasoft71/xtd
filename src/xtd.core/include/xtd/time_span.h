@@ -21,7 +21,10 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
-  struct time_span : /*public xtd::ticks,*/ public xtd::object, xtd::iequatable<time_span>, icomparable<time_span> {
+  /// @par Examples
+  /// The following example instantiates a The following example instantiates a xtd::time_span object that represents the difference between two dates. It then displays the xtd::time_span object's properties. object that represents the difference between two dates. It then displays the xtd::time_span object's properties.
+  /// @include time_span.cpp
+  struct time_span : public xtd::object, xtd::iequatable<time_span>, icomparable<time_span> {
   public:
     /// @name Fields
 
@@ -156,50 +159,106 @@ namespace xtd {
     /// @{
     /// @brief Gets the days component of the time interval represented by the current xtd::time_span structure.
     /// @return The day component of this instance. The return value can be positive or negative.
+    /// @remarks The xtd::time_span::days property represents whole days, whereas the xtd::time_span::total_days property represents whole and fractional days.
     int32 days() const noexcept;
     
     /// @brief Gets the hours component of the time interval represented by the current xtd::time_span structure.
     /// @return The hour component of the current xtd::time_span structure. The return value ranges from -23 through 23.
+    /// @remarks The xtd::time_span::hours property represents whole hours, whereas the xtd::time_span::total_hours property represents whole and fractional hours.
     int32 hours() const noexcept;
     
+    /// @brief Gets the microseconds component of the time interval represented by the current xtd::time_span structure.
+    /// @return The hour component of the current xtd::time_span structure. The return value ranges from -999 through 999.
+    /// @remarks The xtd::time_span::microseconds property represents whole microseconds, whereas the xtd::time_span::total_microseconds property represents whole and fractional microseconds.
     int32 microseconds() const noexcept;
     
+    /// @brief Gets the milliseconds component of the time interval represented by the current xtd::time_span structure.
+    /// @return The millisecond component of the current xtd::time_span structure. The return value ranges from -999 through 999.
+    /// @remarks The xtd::time_span::milliseconds property represents whole milliseconds, whereas the xtd::time_span::total_milliseconds property represents whole and fractional milliseconds.
     int32 milliseconds() const noexcept;
    
+    /// @brief Gets the minutes component of the time interval represented by the current xtd::time_span structure.
+    /// @return The minute component of the current xtd::time_span structure. The return value ranges from -59 through 59.
+    /// @remarks The xtd::time_span::minutes property represents whole minutes, whereas the xtd::time_span::total_minutes property represents whole and fractional minutes.
     int32 minutes() const noexcept;
     
+    /// @brief Gets the nanoseconds component of the time interval represented by the current xtd::time_span structure.
+    /// @return The nanosecond component of the current xtd::time_span structure. The return value ranges from -999 through 999.
+    /// @remarks The xtd::time_span::nanoseconds property represents whole nanoseconds, whereas the xtd::time_span::total_nanoseconds property represents whole and fractional nanoseconds.
     int32 nanoseconds() const noexcept;
 
+    /// @brief Gets the seconds component of the time interval represented by the current xtd::time_span structure.
+    /// @return The second component of the current xtd::time_span structure. The return value ranges from -59 through 59.
+    /// @remarks The xtd::time_span::seconds property represents whole seconds, whereas the xtd::time_span::total_seconds property represents whole and fractional seconds.
     int32 seconds() const noexcept;
 
+    /// @brief Gets the number of ticks that represent the value of the current xtd::time_span structure.
+    /// @return The number of ticks contained in this instance.
+    /// @remarks The smallest unit of time is the tick, which is equal to 100 nanoseconds or one ten-millionth of a second. There are 10,000 ticks in a millisecond. The value of the xtd::time_span::ticks property can be negative or positive to represent a negative or positive time interval.
     int64 ticks() const noexcept;
     
+    /// @brief Gets the number of ticks that represent the value of the current xtd::time_span structure.
+    /// @return The number of ticks contained in this instance.
+    /// @remarks The smallest unit of time is the tick, which is equal to 100 nanoseconds or one ten-millionth of a second. There are 10,000 ticks in a millisecond. The value of the xtd::time_span::ticks property can be negative or positive to represent a negative or positive time interval.
     xtd::ticks ticks_duration() const noexcept;
     
+    /// @brief Gets the value of the current xtd::time_span structure expressed in whole and fractional days.
+    /// @return The total number of days represented by this instance.
+    /// @remarks The xtd::time_span::total_days property represents whole and fractional days, whereas the xtd::time_span::days property represents whole days.
     double total_days() const noexcept;
     
+    /// @brief Gets the value of the current xtd::time_span structure expressed in whole and fractional days.
+    /// @return The total number of days represented by this instance.
+    /// @remarks The xtd::time_span::total_days property represents whole and fractional days, whereas the xtd::time_span::days property represents whole days.
     std::chrono::days total_days_duration() const noexcept;
     
+    /// @brief Gets the value of the current xtd::time_span structure expressed in whole and fractional hours.
+    /// @return The total number of hours represented by this instance.
+    /// @remarks The xtd::time_span::total_hours property represents whole and fractional hours, whereas the xtd::time_span::hours property represents whole hours.
     double total_hours() const noexcept;
     
+    /// @brief Gets the value of the current xtd::time_span structure expressed in whole and fractional hours.
+    /// @return The total number of hours represented by this instance.
+    /// @remarks The xtd::time_span::total_hours property represents whole and fractional hours, whereas the xtd::time_span::hours property represents whole hours.
     std::chrono::hours total_hours_duration() const noexcept;
 
+    /// @brief Gets the value of the current xtd::time_span structure expressed in whole and fractional microseconds.
+    /// @return The total number of microseconds represented by this instance.
+    /// @remarks The xtd::time_span::total_microseconds property represents whole and fractional microseconds, whereas the xtd::time_span::microseconds property represents whole microseconds.
     double total_microseconds() const noexcept;
 
+    /// @brief Gets the value of the current xtd::time_span structure expressed in whole and fractional microseconds.
+    /// @return The total number of microseconds represented by this instance.
+    /// @remarks The xtd::time_span::total_microseconds property represents whole and fractional microseconds, whereas the xtd::time_span::microseconds property represents whole microseconds.
     std::chrono::microseconds total_microseconds_duration() const noexcept;
 
+    /// @brief Gets the value of the current xtd::time_span structure expressed in whole and fractional milliseconds.
+    /// @return The total number of milliseconds represented by this instance.
+    /// @remarks The xtd::time_span::total_milliseconds property represents whole and fractional milliseconds, whereas the xtd::time_span::milliseconds property represents whole milliseconds.
     double total_milliseconds() const noexcept;
 
+    /// @brief Gets the value of the current xtd::time_span structure expressed in whole and fractional milliseconds.
+    /// @return The total number of milliseconds represented by this instance.
+    /// @remarks The xtd::time_span::total_milliseconds property represents whole and fractional milliseconds, whereas the xtd::time_span::milliseconds property represents whole milliseconds.
     std::chrono::milliseconds total_milliseconds_duration() const noexcept;
 
+    /// @brief
+    /// @return
+    /// @remarks
     double total_minutes() const noexcept;
 
     std::chrono::minutes total_minutes_duration() const noexcept;
 
+    /// @brief
+    /// @return
+    /// @remarks
     double total_nanoseconds() const noexcept;
 
     std::chrono::nanoseconds total_nanoseconds_duration() const noexcept;
 
+    /// @brief
+    /// @return
+    /// @remarks
     double total_seconds() const noexcept;
 
     std::chrono::seconds total_seconds_duration() const noexcept;
