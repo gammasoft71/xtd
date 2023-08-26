@@ -19,28 +19,34 @@ time_span::time_span(int64 ticks) : ticks_(ticks) {
 time_span::time_span(xtd::ticks ticks) : ticks_(ticks.count()) {
 }
 
-time_span::time_span(int32 hours, int32 minutes, int32 seconds) : time_span(0, hours, minutes, seconds, 0, 0)  {
+time_span::time_span(int32 hours, int32 minutes, int32 seconds) : time_span(0, hours, minutes, seconds, 0, 0, 0)  {
 }
 
-time_span::time_span(int32 days, int32 hours, int32 minutes, int32 seconds) : time_span(days, hours, minutes, seconds, 0, 0)  {
+time_span::time_span(int32 days, int32 hours, int32 minutes, int32 seconds) : time_span(days, hours, minutes, seconds, 0, 0, 0)  {
 }
 
-time_span::time_span(int32 days, int32 hours, int32 minutes, int32 seconds, int32 millisocnds) : time_span(days, hours, minutes, seconds, millisocnds, 0)  {
+time_span::time_span(int32 days, int32 hours, int32 minutes, int32 seconds, int32 millisocnds) : time_span(days, hours, minutes, seconds, millisocnds, 0, 0)  {
 }
 
-time_span::time_span(int32 days, int32 hours, int32 minutes, int32 seconds, int32 millisocnds, int32) : ticks_((ticks_per_day * days + ticks_per_hour * hours + ticks_per_minute * minutes + ticks_per_second * seconds + ticks_per_microsecond * millisocnds + ticks_per_microsecond * ticks_per_microsecond))  {
+time_span::time_span(int32 days, int32 hours, int32 minutes, int32 seconds, int32 millisocnds, int32 microseconds) : time_span(days, hours, minutes, seconds, millisocnds, microseconds, 0)  {
 }
 
-time_span::time_span(uint32 hours, uint32 minutes, uint32 seconds) : time_span(0u, hours, minutes, seconds, 0u, 0u)  {
+time_span::time_span(int32 days, int32 hours, int32 minutes, int32 seconds, int32 millisocnds, int32 microseconds, int32 nanoseconds) : ticks_(ticks_per_day * days + ticks_per_hour * hours + ticks_per_minute * minutes + ticks_per_second * seconds + ticks_per_millisecond * millisocnds + ticks_per_microsecond * microseconds + nanoseconds / nanoseconds_per_tick)  {
 }
 
-time_span::time_span(uint32 days, uint32 hours, uint32 minutes, uint32 seconds) : time_span(days, hours, minutes, seconds, 0u, 0u)  {
+time_span::time_span(uint32 hours, uint32 minutes, uint32 seconds) : time_span(0u, hours, minutes, seconds, 0u, 0u, 0u)  {
 }
 
-time_span::time_span(uint32 days, uint32 hours, uint32 minutes, uint32 seconds, uint32 millisocnds) : time_span(days, hours, minutes, seconds, millisocnds, 0u)  {
+time_span::time_span(uint32 days, uint32 hours, uint32 minutes, uint32 seconds) : time_span(days, hours, minutes, seconds, 0u, 0u, 0u)  {
 }
 
-time_span::time_span(uint32 days, uint32 hours, uint32 minutes, uint32 seconds, uint32 millisocnds, uint32 nanoseconds) : ticks_((ticks_per_day * days + ticks_per_hour * hours + ticks_per_minute * minutes + ticks_per_second * seconds + ticks_per_microsecond * millisocnds + ticks_per_microsecond * ticks_per_microsecond) + nanoseconds / nanoseconds_per_tick)  {
+time_span::time_span(uint32 days, uint32 hours, uint32 minutes, uint32 seconds, uint32 millisocnds) : time_span(days, hours, minutes, seconds, millisocnds, 0u, 0u)  {
+}
+
+time_span::time_span(uint32 days, uint32 hours, uint32 minutes, uint32 seconds, uint32 millisocnds, uint32 microseconds) : time_span(days, hours, minutes, seconds, millisocnds, microseconds, 0u)  {
+}
+
+time_span::time_span(uint32 days, uint32 hours, uint32 minutes, uint32 seconds, uint32 millisocnds, uint32 microseconds, uint32 nanoseconds) : ticks_(as<int32>(ticks_per_day * days + ticks_per_hour * hours + ticks_per_minute * minutes + ticks_per_second * seconds + ticks_per_millisecond * millisocnds + ticks_per_microsecond * microseconds + nanoseconds / nanoseconds_per_tick))  {
 }
 
 time_span& time_span::operator +=(const time_span& value) {
@@ -179,6 +185,10 @@ int32 time_span::compare_to(const time_span& value) const noexcept {
   return ticks_ < value.ticks_ ? -1 : ticks_ > value.ticks_ ? 1 : 0;
 }
 
+time_span time_span::duration() const noexcept {
+  return time_span {math::abs(ticks_)};
+}
+
 bool time_span::equals(const time_span& value) const noexcept {
   return ticks_ == value.ticks_;
 }
@@ -201,8 +211,8 @@ time_span time_span::from_hours(std::chrono::hours value) {
 
 time_span time_span::from_microseconds(double value) {
   if (double_object::is_NaN(value)) throw argument_exception {csf_};
-  if (double_object::is_infinity(value) || value < as<double>(time_span::min_value.total_microseconds()) || value > as<double>(time_span::max_value.total_microseconds())) throw overflow_exception {csf_};
-  return from_ticks(as<int64>(value * ticks_per_microsecond));
+  if (double_object::is_infinity(value) || value < as<double>(time_span::min_value.ticks() / ticks_per_microsecond) || value > as<double>(time_span::max_value.ticks() / ticks_per_microsecond)) throw overflow_exception {csf_};
+  return from_ticks(static_cast<int64>(value * ticks_per_microsecond));
 }
 
 time_span time_span::from_microseconds(std::chrono::microseconds value) {
@@ -226,7 +236,8 @@ time_span time_span::from_minutes(std::chrono::minutes value) {
 }
 
 time_span time_span::from_nanoseconds(double value) {
-  return from_ticks(as<int64>(value / nanoseconds_per_tick));
+  if (double_object::is_NaN(value)) throw argument_exception {csf_};
+  return from_ticks(static_cast<int64>(value / nanoseconds_per_tick));
 }
 
 time_span time_span::from_nanoseconds(std::chrono::nanoseconds value) {
@@ -262,8 +273,8 @@ ustring time_span::to_string(const ustring& format) const {
     case 'c': return make_string_from_duration(true);
     case 'd': return ustring::format("{}", math::abs(days()));
     case 'D': return ustring::format("{:d2}", math::abs(days()));
-    case 'f': return ustring::format("{}{}:{}:{:d2}:{:d2}.{:d3}{:d4}", ticks() < 0 ? "-" : "", math::abs(days()), math::abs(hours()), math::abs(minutes()), math::abs(seconds()), math::abs(milliseconds()), math::abs(ticks() % ticks_per_millisecond));
-    case 'F': return ustring::format("{}{}:{:d2}:{:d2}:{:d2}.{:d3}{:d4}", ticks() < 0 ? "-" : "", math::abs(days()), math::abs(hours()), math::abs(minutes()), math::abs(seconds()), math::abs(milliseconds()), math::abs(ticks() % ticks_per_millisecond));
+    case 'f': return ustring::format("{}{}.{}:{:d2}:{:d2}.{:d7}", ticks() < 0 ? "-" : "", math::abs(days()), math::abs(hours()), math::abs(minutes()), math::abs(seconds()), math::abs(ticks() % ticks_per_second));
+    case 'F': return ustring::format("{}{}.{:d2}:{:d2}:{:d2}.{:d7}", ticks() < 0 ? "-" : "", math::abs(days()), math::abs(hours()), math::abs(minutes()), math::abs(seconds()), math::abs(ticks() % ticks_per_second));
     case 'g': return make_string_from_duration(false);
     case 'G': return make_string_from_duration(true);
     case 'h': return ustring::format("{}", math::abs(hours()));
@@ -276,18 +287,18 @@ ustring time_span::to_string(const ustring& format) const {
     case 'O': return ustring::format("{}", ticks() < 0 ? "-" : "+");
     case 's': return ustring::format("{}", math::abs(seconds()));
     case 'S': return ustring::format("{:d2}", math::abs(seconds()));
-    case 't': return ustring::format("{:d3}{:d4}", math::abs(milliseconds()), math::abs(ticks() % ticks_per_millisecond));
-    case 'T': return ustring::format("{:d3}{:d4}", math::abs(milliseconds()), math::abs(ticks() % ticks_per_millisecond));
-    default: __format_exception("Invalid format"); return {};
+    case 't': return ustring::format("{0:d}", math::abs(ticks() % ticks_per_second));
+    case 'T': return ustring::format("{:d7}", math::abs(ticks() % ticks_per_second));
+    default: throw xtd::format_exception("Invalid format");
   }
 }
 
 time_span time_span::interval(double value, int scale) {
   if (double_object::is_NaN(value)) throw argument_exception {csf_};
   double tmp = value * scale;
-  double millis = tmp + (value >= 0? 0.5: -0.5);
+  double millis = tmp + (value >= 0 ? 0.5 : -0.5);
   if ((millis > int64_object::max_value / ticks_per_millisecond) || (millis < int64_object::min_value / ticks_per_millisecond))  throw overflow_exception {csf_};
-  return time_span(as<int64>(math::floor(millis)) * ticks_per_millisecond);
+  return time_span(static_cast<int64>(millis) * ticks_per_millisecond);
 }
 
 ustring time_span::make_string_from_duration(bool constant) const {
@@ -295,6 +306,6 @@ ustring time_span::make_string_from_duration(bool constant) const {
   if (ticks() < 0) result += '-';
   if (days()) result += ustring::format("{}.", math::abs(days()));
   result += ustring::format(constant ? "{:d2}:{:d2}:{:d2}" : "{:d}:{:d2}:{:d2}", math::abs(hours()), math::abs(minutes()), math::abs(seconds()));
-  if (ticks() % ticks_per_second) result += ustring::format(".{:d3}{:d4}", math::abs(milliseconds()), math::abs(ticks() % ticks_per_millisecond));
+  if (ticks() % ticks_per_second) result += ustring::format(".{:d7}", math::abs(ticks() % ticks_per_second));
   return result;
 }
