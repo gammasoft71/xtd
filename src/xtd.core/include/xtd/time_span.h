@@ -41,29 +41,29 @@ namespace xtd {
     /// @remarks The value of this constant is 100.
     static constexpr int64 nanoseconds_per_tick = 100ll;
 
-    /// @brief Represents the number of ticks in 1 day. This field is constant.
-    /// @remarks The value of this constant is 864 billion; that is, 864,000,000,000.
-    static constexpr int64 ticks_per_day = 864000000000ll;
-
-    /// @brief Represents the number of ticks in 1 hour. This field is constant.
-    /// @remarks The value of this constant is 36 billion; that is, 36,000,000,000.
-    static constexpr int64 ticks_per_hour = 36000000000ll;
-
     /// @brief Represents the number of ticks in 1 microsecond. This field is constant.
     /// @remarks The value of this constant is 10.
     static constexpr int64 ticks_per_microsecond = 10ll;
 
     /// @brief Represents the number of ticks in 1 millisecond. This field is constant.
     /// @remarks The value of this constant is 10 thousand; that is, 10,000.
-    static constexpr int64 ticks_per_millisecond = 10000ll;
-
-    /// @brief Represents the number of ticks in 1 minute. This field is constant.
-    /// @remarks The value of this constant is 600 million; that is, 600,000,000.
-    static constexpr int64 ticks_per_minute = 600000000ll;
+    static constexpr int64 ticks_per_millisecond = ticks_per_microsecond * 1'000;
 
     /// @brief Represents the number of ticks in 1 second.
-    /// @remarks he value of this constant is 10 million; that is, 10,000,000.
-    static constexpr int64 ticks_per_second = 10000000ll;
+    /// @remarks he value of this constant is 10 million; that is, 10'000'000.
+    static constexpr int64 ticks_per_second = ticks_per_millisecond * 1'000;
+
+    /// @brief Represents the number of ticks in 1 minute. This field is constant.
+    /// @remarks The value of this constant is 600 million; that is, 600'000'000.
+    static constexpr int64 ticks_per_minute = ticks_per_second * 60;
+
+    /// @brief Represents the number of ticks in 1 hour. This field is constant.
+    /// @remarks The value of this constant is 36 billion; that is, 36'000'000'000.
+    static constexpr int64 ticks_per_hour = ticks_per_minute * 60;
+
+    /// @brief Represents the number of ticks in 1 day. This field is constant.
+    /// @remarks The value of this constant is 864 billion; that is, 864'000'000'000.
+    static constexpr int64 ticks_per_day = ticks_per_hour * 24;
 
     /// @brief Represents the zero xtd::time_span value. This field is read-only.
     /// @remarks Because the value of the Zero field is a xtd::time_span object that represents a zero time value, you can compare it with other xtd::time_span objects to determine whether the latter represent positive, non-zero, or negative time intervals. You can also use this field to initialize a xtd::time_span object to a zero time value.
@@ -142,6 +142,7 @@ namespace xtd {
     time_span(uint32 days, uint32 hours, uint32 minutes, uint32 seconds);
     time_span(uint32 days, uint32 hours, uint32 minutes, uint32 seconds, uint32 milliseconds);
     time_span(uint32 days, uint32 hours, uint32 minutes, uint32 seconds, uint32 milliseconds, uint32 microseconds);
+    time_span(uint32 days, uint32 hours, uint32 minutes, uint32 seconds, uint32 milliseconds, uint32 microseconds, uint32 nanoseconds);
 
     time_span& operator =(const time_span&) = default;
     time_span& operator+=(const time_span& value);
@@ -279,6 +280,8 @@ namespace xtd {
     /// @{
     int32 compare_to(const time_span& value) const noexcept override;
     
+    time_span duration() const noexcept;
+    
     bool equals(const time_span& value) const noexcept override;
     
     /// @brief Returns a xtd::time_span that represents a specified number of days, where the specification is accurate to the nearest millisecond.
@@ -369,24 +372,24 @@ namespace xtd {
     /// | Format | Print                                                                                                                       |
     /// | ------ | --------------------------------------------------------------------------------------------------------------------------- |
     /// | 'c'    | write duration with optional ticks d.hh.mm.ss.ticks                                                                         |
-    /// | 'd'    | write days d                                                                                                                |
-    /// | 'd'    | write days dd                                                                                                               |
+    /// | 'd'    | write absolute value of days d                                                                                              |
+    /// | 'D'    | write absolute value of days dd                                                                                              |
     /// | 'f'    | write duration d.h.mm.ss.ticks                                                                                              |
-    /// | 'f'    | write duration d.hh.mm.ss.ticks                                                                                             |
+    /// | 'F'    | write duration d.hh.mm.ss.ticks                                                                                             |
     /// | 'g'    | write duration with optional ticks d.h.mm.ss.ticks                                                                          |
     /// | 'G'    | write duration with optional ticks d.hh.mm.ss.ticks                                                                         |
-    /// | 'h'    | write hours h                                                                                                               |
-    /// | 'H'    | write hours hh                                                                                                              |
-    /// | 'l'    | write milliseconds                                                                                                          |
-    /// | 'L'    | write milliseconds fixed at 3 digits                                                                                        |
-    /// | 'm'    | write minutes m                                                                                                             |
-    /// | 'M'    | write minutes mm                                                                                                            |
+    /// | 'h'    | write absolute value of hours h                                                                                             |
+    /// | 'H'    | write absolute value of hours hh                                                                                            |
+    /// | 'l'    | write absolute value of milliseconds                                                                                        |
+    /// | 'L'    | write absolute value of milliseconds fixed at 3 digits                                                                      |
+    /// | 'm'    | write absolute value of minutes m                                                                                           |
+    /// | 'M'    | write absolute value of minutes mm                                                                                          |
     /// | 'o'    | write optional minus sign                                                                                                   |
     /// | 'o'    | write minus or plus sign                                                                                                    |
-    /// | 's'    | write seconds s                                                                                                             |
-    /// | 'S'    | write seconds ss                                                                                                            |
-    /// | 't'    | write ticks fixed at 7 digits                                                                                               |
-    /// | 'T'    | write ticks fixed at 7 digits                                                                                               |
+    /// | 's'    | write absolute value of seconds s                                                                                           |
+    /// | 'S'    | write absolute value of seconds ss                                                                                          |
+    /// | 't'    | write absolute value of ticks                                                                                               |
+    /// | 'T'    | write absolute value of ticks fixed at 7 digits                                                                             |
     ustring to_string(const ustring& format) const;
     /// @}
 
