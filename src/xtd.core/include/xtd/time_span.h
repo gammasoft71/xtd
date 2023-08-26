@@ -145,14 +145,20 @@ namespace xtd {
     time_span(uint32 days, uint32 hours, uint32 minutes, uint32 seconds, uint32 milliseconds, uint32 microseconds, uint32 nanoseconds);
 
     time_span& operator =(const time_span&) = default;
-    time_span& operator+=(const time_span& value);
-    time_span& operator-=(const time_span& value);
-    time_span operator+(const time_span& value);
-    time_span operator-(const time_span& value);
-    time_span& operator++();
-    time_span operator++(int);
-    time_span& operator--();
-    time_span operator--(int);
+    time_span& operator +=(const time_span& value);
+    time_span& operator -=(const time_span& value);
+    time_span operator +(const time_span& value);
+    time_span operator -(const time_span& value);
+    time_span operator *(const time_span& value);
+    time_span operator *(double value);
+    time_span operator /(const time_span& value);
+    time_span operator /(double value);
+    time_span operator +();
+    time_span operator -();
+    time_span& operator ++();
+    time_span operator ++(int);
+    time_span& operator --();
+    time_span operator --(int);
 /// @endcond
     
     /// @name Properties
@@ -278,8 +284,13 @@ namespace xtd {
     /// @name Methods
     
     /// @{
+    time_span add(const time_span& ts) const noexcept;
+
     int32 compare_to(const time_span& value) const noexcept override;
     
+    time_span divide(const time_span& ts) const;
+    time_span divide(double divisor) const;
+
     time_span duration() const noexcept;
     
     bool equals(const time_span& value) const noexcept override;
@@ -363,6 +374,13 @@ namespace xtd {
     static time_span from_ticks(int64 value);
     static time_span from_ticks(xtd::ticks value);
     
+    time_span multiply(const time_span& ts) const noexcept;
+    time_span multiply(double factor) const noexcept;
+
+    time_span negate() const noexcept;
+
+    time_span subtract(const time_span& ts) const noexcept;
+
     xtd::ustring to_string() const noexcept override;
     /// @brief Converts the value of the current xtd::time_span object to its equivalent string representation by using the specified format.
     /// @return The string representation of the current xtd::time_span value in the format specified by the format parameter.
