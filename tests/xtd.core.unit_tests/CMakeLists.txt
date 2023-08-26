@@ -195,6 +195,7 @@ add_sources(
   src/xtd/tests/tick_tests.cpp
   src/xtd/tests/ticks_tests.cpp
   src/xtd/tests/time_out_exception_tests.cpp
+  src/xtd/tests/time_span_tests.cpp
   src/xtd/tests/unauthorized_access_exception_tests.cpp
   src/xtd/tests/underflow_exception_tests.cpp
   src/xtd/tests/unregistered_enum_class_flags_tests.cpp
