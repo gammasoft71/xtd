@@ -78,22 +78,22 @@ namespace xtd::tests {
     
     void test_method_(format_with_alternative_full_argument) {
       #if !_WIN32 /// @todo Debug in Windows 32 bits...
-      assert::are_equal("1:2:03:32:024000500", xtd::ustring::format("{0:f}", 26h + 3min + 32s + 24ms + 500ns), csf_);
+      assert::are_equal("1.2:03:32:024000500", xtd::ustring::format("{0:f}", 26h + 3min + 32s + 24ms + 500ns), csf_);
       #endif
     }
     
     void test_method_(format_with_alternative_full_argument_without_days_milliseconds_and_nanoseconds) {
-      assert::are_equal("0:2:03:32:000000000", xtd::ustring::format("{0:f}", 2h + 3min + 32s), csf_);
+      assert::are_equal("0.2:03:32:000000000", xtd::ustring::format("{0:f}", 2h + 3min + 32s), csf_);
     }
     
     void test_method_(format_with_full_argument) {
       #if !_WIN32 /// @todo Debug in Windows 32 bits...
-      assert::are_equal("1:02:03:32:024000500", xtd::ustring::format("{0:F}", 26h + 3min + 32s + 24ms + 500ns), csf_);
+      assert::are_equal("1.02:03:32:024000500", xtd::ustring::format("{0:F}", 26h + 3min + 32s + 24ms + 500ns), csf_);
       #endif
     }
     
     void test_method_(format_with_full_argument_without_days_milliseconds_and_nanoseconds) {
-      assert::are_equal("0:02:03:32:000000000", xtd::ustring::format("{0:F}", 2h + 3min + 32s), csf_);
+      assert::are_equal("0.02:03:32:000000000", xtd::ustring::format("{0:F}", 2h + 3min + 32s), csf_);
     }
     
     void test_method_(format_with_alternative_genaral_argument) {
