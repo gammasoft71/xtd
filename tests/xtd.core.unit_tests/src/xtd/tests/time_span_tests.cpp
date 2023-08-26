@@ -349,5 +349,19 @@ namespace xtd::tests {
       assert::are_equal("0000023", time_span {23}.to_string("T"), csf_);
       assert::are_equal("0000023", time_span {-23}.to_string("T"), csf_);
     }
+    
+    void test_method_(add) {
+      assert::are_equal(66, time_span {42}.add(time_span {24}).ticks(), csf_);
+      assert::are_equal(18, time_span {42}.add(time_span {-24}).ticks(), csf_);
+      assert::are_equal(-18, time_span {-42}.add(time_span {24}).ticks(), csf_);
+      assert::are_equal(-66, time_span {-42}.add(time_span {-24}).ticks(), csf_);
+    }
+    
+    void test_method_(subtract) {
+      assert::are_equal(18, time_span {42}.subtract(time_span {24}).ticks(), csf_);
+      assert::are_equal(66, time_span {42}.subtract(time_span {-24}).ticks(), csf_);
+      assert::are_equal(-66, time_span {-42}.subtract(time_span {24}).ticks(), csf_);
+      assert::are_equal(-18, time_span {-42}.subtract(time_span {-24}).ticks(), csf_);
+    }
   };
 }
