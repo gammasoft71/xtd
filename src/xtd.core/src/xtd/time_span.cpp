@@ -1,5 +1,6 @@
 #include "../../include/xtd/time_span.h"
 #include "../../include/xtd/as.h"
+#include "../../include/xtd/divided_by_zero_exception.h"
 #include "../../include/xtd/double_object.h"
 #include "../../include/xtd/int64_object.h"
 #include "../../include/xtd/math.h"
@@ -60,15 +61,35 @@ time_span& time_span::operator -=(const time_span& value) {
 }
 
 time_span time_span::operator +(const time_span& value) {
-  time_span result = *this;
-  result += value;
-  return result;
+  return add(value);
 }
 
 time_span time_span::operator -(const time_span& value) {
-  time_span result = *this;
-  result -= value;
-  return result;
+  return subtract(value);
+}
+
+time_span time_span::operator *(const time_span& value) {
+  return multiply(value);
+}
+
+time_span time_span::operator *(double value) {
+  return multiply(value);
+}
+
+time_span time_span::operator /(const time_span& value) {
+  return divide(value);
+}
+
+time_span time_span::operator /(double value) {
+  return divide(value);
+}
+
+time_span time_span::operator +() {
+  return *this;
+}
+
+time_span time_span::operator -() {
+  return negate();
 }
 
 time_span& time_span::operator ++() {
@@ -181,8 +202,22 @@ std::chrono::seconds time_span::total_seconds_duration() const noexcept {
   return std::chrono::duration_cast<std::chrono::seconds>(ticks_duration());
 }
 
+time_span time_span::add(const time_span& ts) const noexcept {
+  return time_span {ticks_ + ts.ticks_};
+}
+
 int32 time_span::compare_to(const time_span& value) const noexcept {
   return ticks_ < value.ticks_ ? -1 : ticks_ > value.ticks_ ? 1 : 0;
+}
+
+time_span time_span::divide(const time_span& ts) const {
+  if (ts.ticks_ == 0) throw divided_by_zero_exception {csf_};
+  return time_span {ticks_ / ts.ticks_};
+}
+
+time_span time_span::divide(double divisor) const {
+  if (divisor == 0) throw divided_by_zero_exception {csf_};
+  return time_span {static_cast<int64>(ticks_ / divisor)};
 }
 
 time_span time_span::duration() const noexcept {
@@ -258,6 +293,22 @@ time_span time_span::from_ticks(int64 ticks) {
 
 time_span time_span::from_ticks(xtd::ticks ticks) {
   return time_span {ticks};
+}
+
+time_span time_span::multiply(const time_span& ts) const noexcept {
+  return time_span {ticks_ * ts.ticks_};
+}
+
+time_span time_span::multiply(double factor) const noexcept {
+  return time_span {static_cast<int64>(ticks_ * factor)};
+}
+
+time_span time_span::negate() const noexcept {
+  return time_span {-ticks_};
+}
+
+time_span time_span::subtract(const time_span& ts) const noexcept {
+  return time_span {ticks_ - ts.ticks_};
 }
 
 xtd::ustring time_span::to_string() const noexcept {
