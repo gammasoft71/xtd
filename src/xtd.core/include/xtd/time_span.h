@@ -379,6 +379,8 @@ namespace xtd {
 
     time_span negate() const noexcept;
 
+    static time_span parse(const ustring& value);
+    
     time_span subtract(const time_span& ts) const noexcept;
 
     xtd::ustring to_string() const noexcept override;
@@ -409,6 +411,8 @@ namespace xtd {
     /// | 't'    | write absolute value of ticks                                                                                               |
     /// | 'T'    | write absolute value of ticks fixed at 7 digits                                                                             |
     ustring to_string(const ustring& format) const;
+    
+    static bool try_parse(const ustring& value, time_span& result);
     /// @}
 
   private:
