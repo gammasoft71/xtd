@@ -23,9 +23,9 @@ namespace xtd {
     /// @ingroup xtd_forms components
     /// @remarks The background_worker class allows you to run an operation on a separate, dedicated thread. Time-consuming operations like downloads and database transactions can cause your user interface (UI) to seem as though it has stopped responding while they are running. When you want a responsive UI and you are faced with long delays associated with such operations, the background_worker class provides a convenient solution.
     /// @remarks To execute a time-consuming operation in the background, create a background_worker and listen for events that report the progress of your operation and signal when your operation is finished.
-    /// @remarks To set up for a background operation, add an event handler for the do_work event. Call your time-consuming operation in this event handler. To start the operation, call run_worker_async. To receive notifications of progress updates, handle the progress_changed event. To receive a notification when the operation is completed, handle the run_worker_completed event.
-    /// @note You must be careful not to manipulate any user-interface objects in your do_work event handler. Instead, communicate to the user interface through the progress_changed and run_worker_completed events.
-    /// @remarks If your background operation requires a parameter, call run_worker_async with your parameter. Inside the do_work event handler, you can extract the parameter from the do_work_event_args.argument property.
+    /// @remarks To set up for a background operation, add an event handler for the xtd::forms::background_worker::do_work event. Call your time-consuming operation in this event handler. To start the operation, call run_worker_async. To receive notifications of progress updates, handle the progress_changed event. To receive a notification when the operation is completed, handle the run_worker_completed event.
+    /// @note You must be careful not to manipulate any user-interface objects in your xtd::forms::background_worker::do_work event handler. Instead, communicate to the user interface through the progress_changed and run_worker_completed events.
+    /// @remarks If your background operation requires a parameter, call run_worker_async with your parameter. Inside the xtd::forms::background_worker::do_work event handler, you can extract the parameter from the do_work_event_args.argument property.
     /// @par Examples
     /// The following code example demonstrates the use of background_worker component.
     /// @include background_worker.cpp
@@ -100,7 +100,7 @@ namespace xtd {
       void run_worker_async();
       
       /// @brief Starts execution of a background operation.
-      /// @param argument A parameter for use by the background operation to be executed in the do_work event handler.
+      /// @param argument A parameter for use by the background operation to be executed in the xtd::forms::background_worker::do_work event handler.
       /// @exception xtd::invalid_operaton_exception xtd::background_worker::is_busy is true;
       template<typename argument_t>
       void run_worker_async(argument_t argument) {

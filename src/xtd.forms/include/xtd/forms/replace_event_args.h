@@ -10,7 +10,7 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-    /// @brief Provides data for the xtd::forms::fnd_dialog::find_next event.
+    /// @brief Provides data for the xtd::forms::replace_dialog::replace and xtd::forms::replace_dialog::replace_all events.
     /// @par Header
     /// @code #include <xtd/forms/replace_event_args> @endcode
     /// @par Namespace
