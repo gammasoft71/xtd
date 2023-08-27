@@ -166,15 +166,15 @@ namespace xtd {
         /// @warning Internal use only
         static intptr create_graphics(intptr control);
         
-        /// @brief Creates a graphics for the paint event control.
+        /// @brief Creates a graphics for the xtd::forms::control::paint event control.
         /// @param control Control window handle.
-        /// @return A graphics handle for the paint event control.
+        /// @return A graphics handle for the xtd::forms::control::paint event control.
         /// @warning Internal use only
         static intptr create_paint_graphics(intptr control);
         
-        /// @brief Creates a graphics for the double buffer paint event control.
+        /// @brief Creates a graphics for the double buffer xtd::forms::control::paint event control.
         /// @param control Control window handle.
-        /// @return A graphics handle for the double buffered paint event control.
+        /// @return A graphics handle for the double buffered xtd::forms::control::paint event control.
         /// @warning Internal use only
         static intptr create_double_buffered_paint_graphics(intptr control);
         

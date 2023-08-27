@@ -9,7 +9,7 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-    /// @brief Provides data for the xtd::fomrs::control::key_press event.
+    /// @brief Provides data for the xtd::forms::control::key_press event.
     /// @par Header
     /// @code #include <xtd/forms/key_press_event_args> @endcode
     /// @par Namespace
@@ -18,10 +18,10 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms events
     /// @remarks A xtd::forms::key_press_event_args specifies the character that is composed when the user presses a key. For example, when the user presses SHIFT + K, the key_char property returns an uppercase K.
-    /// @remarks A xtd::fomrs::control::key_press event occurs when the user presses a key. Two events that are closely related to the xtd::fomrs::control::key_press event are xtd::fomrs::control::key_up and xtd::fomrs::control::key_down. The xtd::fomrs::control::key_down event precedes each xtd::fomrs::control::key_press event when the user presses a key, and a xtd::fomrs::control::key_up event occurs when the user releases a key. When the user holds down a key, duplicate xtd::fomrs::control::key_down and xtd::fomrs::control::key_press events occur each time the character repeats. One xtd::fomrs::control::key_up event is generated upon release.
-    /// @remarks With each xtd::fomrs::control::key_press event, a xtd::forms::key_press_event_args is passed. A key_event_args is passed with each xtd::fomrs::control::key_down and xtd::fomrs::control::key_up event. A key_event_args specifies whether any modifier keys (CMD, CTRL, SHIFT, or ALT) were pressed along with another key. (This modifier information can also be obtained through the modifier_keys property of the control class.)
-    /// @remarks Set handled to true to cancel the xtd::fomrs::control::key_press event. This keeps the control from processing the key press.
-    /// @note Some controls will process certain key strokes on xtd::fomrs::control::key_down. For example, rich_text_box processes the Enter key before xtd::fomrs::control::key_press is called. In such cases, you cannot cancel the xtd::fomrs::control::key_press event, and must cancel the key stroke from xtd::fomrs::control::key_down instead.
+    /// @remarks A xtd::forms::control::key_press event occurs when the user presses a key. Two events that are closely related to the xtd::forms::control::key_press event are xtd::forms::control::key_up and xtd::forms::control::key_down. The xtd::forms::control::key_down event precedes each xtd::forms::control::key_press event when the user presses a key, and a xtd::forms::control::key_up event occurs when the user releases a key. When the user holds down a key, duplicate xtd::forms::control::key_down and xtd::forms::control::key_press events occur each time the character repeats. One xtd::forms::control::key_up event is generated upon release.
+    /// @remarks With each xtd::forms::control::key_press event, a xtd::forms::key_press_event_args is passed. A key_event_args is passed with each xtd::forms::control::key_down and xtd::forms::control::key_up event. A key_event_args specifies whether any modifier keys (CMD, CTRL, SHIFT, or ALT) were pressed along with another key. (This modifier information can also be obtained through the modifier_keys property of the control class.)
+    /// @remarks Set handled to true to cancel the xtd::forms::control::key_press event. This keeps the control from processing the key press.
+    /// @note Some controls will process certain key strokes on xtd::forms::control::key_down. For example, rich_text_box processes the Enter key before xtd::forms::control::key_press is called. In such cases, you cannot cancel the xtd::forms::control::key_press event, and must cancel the key stroke from xtd::forms::control::key_down instead.
     class key_press_event_args : public event_args {
     public:
       /// @name Constructors
@@ -44,13 +44,13 @@ namespace xtd {
       /// @name Properties
       
       /// @{
-      /// @brief Gets a value indicating whether the xtd::fomrs::control::key_press event was handled.
+      /// @brief Gets a value indicating whether the xtd::forms::control::key_press event was handled.
       /// @return true if the event is handled; otherwise, false.
-      /// @remarks If the event is not handled, it will be sent to the operating system for default processing. Set handled to true to cancel the xtd::fomrs::control::key_press event.
+      /// @remarks If the event is not handled, it will be sent to the operating system for default processing. Set handled to true to cancel the xtd::forms::control::key_press event.
       bool handled() const noexcept {return handled_;}
-      /// @brief Sets a value indicating whether the xtd::fomrs::control::key_press event was handled.
+      /// @brief Sets a value indicating whether the xtd::forms::control::key_press event was handled.
       /// @param handled true if the event is handled; otherwise, false.
-      /// @remarks If the event is not handled, it will be sent to the operating system for default processing. Set handled to true to cancel the xtd::fomrs::control::key_press event.
+      /// @remarks If the event is not handled, it will be sent to the operating system for default processing. Set handled to true to cancel the xtd::forms::control::key_press event.
       void handled(bool handled) {handled_ = handled;}
       
       /// @brief Gets the character corresponding to the key pressed.

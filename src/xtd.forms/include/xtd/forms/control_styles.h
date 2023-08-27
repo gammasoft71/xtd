@@ -26,14 +26,14 @@ namespace xtd {
     /// @remarks If the supports_transparent_back_color bit is set to true, and the back_color is set to a color whose alpha component is less than 255, on_paint_background will simulate transparency by asking its parent control to paint the background. This is not true transparency.
     /// @note If there is another control between the control and its parent, the current control will not show the control in the middle.
     /// @remarks When the user_mouse bit is set to true, the following methods are still called: control::on_mouse_down, control::on_mouse_up, control::on_mouse_enter, control::on_mouse_move, control::on_mouse_hover, control::on_mouse_leave, and control::on_mouse_wheel.
-    /// @remarks When the control is clicked, if the standard_click bit is set to true the control::on_click method is called and it raises the control::click event. When the control is double-clicked, and both the standard_click and standard_double_click bits are set to true, the click is passed on to the double_click event. Then the Control::on_double_click method is called and it raises the control::double_click event. However, the control can call on_click or on_double_click directly regardless of the standard_click and standard_double_click bit values. For more information on control click and double click behaviors, see the control::click and control::double_click topics.
+    /// @remarks When the control is clicked, if the standard_click bit is set to true the control::on_click method is called and it raises the control::click event. When the control is double-clicked, and both the standard_click and standard_double_click bits are set to true, the click is passed on to the xtd::forms::control::double_click event. Then the Control::on_double_click method is called and it raises the control::double_click event. However, the control can call on_click or on_double_click directly regardless of the standard_click and standard_double_click bit values. For more information on control click and double click behaviors, see the control::click and control::double_click topics.
     /// @remarks When the use_text_for_accessibility bit is set and there is a value in the control's text property, the value of that control's text property determines the control's default active accessibility name and shortcut key. Otherwise, the text of the preceding label control will be used instead. This style is set by default. Certain built-in control types, such as text_box and combo_box, reset this style so that the text property of those controls will not be used by active accessibility.
     enum class control_styles {
       /// @brief No control style..
       none = 0,
       /// @brief If true, the control is a container-like control.
       container_control = 0b1,
-      /// @brief If true, the control paints itself rather than the operating system doing so. If false, the paint event is not raised. This style only applies to classes derived from control.
+      /// @brief If true, the control paints itself rather than the operating system doing so. If false, the xtd::forms::control::paint event is not raised. This style only applies to classes derived from control.
       user_paint = 0b10,
       /// @brief If true, the control is drawn opaque and the background is not painted.
       opaque = 0b100,
