@@ -156,7 +156,7 @@ std::chrono::days time_span::total_days_duration() const noexcept {
 }
 
 double time_span::total_hours() const noexcept {
-  return as<double>(ticks_) / ticks_per_day;
+  return as<double>(ticks_) / ticks_per_hour;
 }
 
 std::chrono::hours time_span::total_hours_duration() const noexcept {
@@ -188,7 +188,7 @@ std::chrono::minutes time_span::total_minutes_duration() const noexcept {
 }
 
 double time_span::total_nanoseconds() const noexcept {
-  return as<double>(ticks_);
+  return as<double>(ticks_) * nanoseconds_per_tick;
 }
 
 std::chrono::nanoseconds time_span::total_nanoseconds_duration() const noexcept {
