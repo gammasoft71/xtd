@@ -14,7 +14,7 @@ namespace xtd {
     class control;
     /// @endcond
     
-    /// @brief Provides data for the control_added and control_removed events.
+    /// @brief Provides data for the xtd::forms::control::control_added and xtd::forms::control::control_removed events.
     /// @par Header
     /// @code #include <xtd/forms/control_event_args> @endcode
     /// @par Namespace

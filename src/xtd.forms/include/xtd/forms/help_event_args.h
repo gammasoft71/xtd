@@ -26,7 +26,7 @@ namespace xtd {
       /// @name Constructors
       
       /// @{
-      /// @brief Initializes a new instance of the help_event_args class.
+      /// @brief Initializes a new instance of the xtd::forms::help_event_args class.
       /// @param mouse_pos The coordinates of the mouse pointer.
       explicit help_event_args(const drawing::point& mouse_pos) : mouse_pos_(mouse_pos) {}
       /// @}

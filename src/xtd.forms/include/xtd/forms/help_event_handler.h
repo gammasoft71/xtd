@@ -12,7 +12,7 @@ namespace xtd {
   namespace forms {
     /// @brief Represents the method that will handle the help_requested event of a control.
     /// @param sender The source of the event.
-    /// @param e A help_event_args that contains the event data.
+    /// @param e A xtd::forms::help_event_args that contains the event data.
     /// @par Header
     /// @code #include <xtd/forms/help_event_handler> @endcode
     /// @par Namespace

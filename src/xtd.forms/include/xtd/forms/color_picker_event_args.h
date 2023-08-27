@@ -14,7 +14,7 @@ namespace xtd {
     class control;
     /// @endcond
     
-    /// @brief Provides data for the control_added and control_removed events.
+    /// @brief Provides data for the xtd::forms::color_picker::color_picker_changed event.
     /// @par Header
     /// @code #include <xtd/forms/color_picker_event_args> @endcode
     /// @par Namespace

@@ -10,7 +10,7 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-    /// @brief Represents the method that will handle the control_added and control_removed events of the control class.
+    /// @brief Represents the method that will handle the xtd::forms::control::control_added and xtd::forms::control::control_removed events of the control class.
     /// @param sender The source of the event.
     /// @param e A control_event_args that contains the event data.
     /// @par Header

@@ -50,7 +50,7 @@ namespace xtd {
     ///       // Determine whether the keystroke is a backspace.
     ///       if(e.key_code() != keys::back) {
     ///         // A non-numerical keystroke was pressed.
-    ///         // Set the flag to true and evaluate in key_press event.
+    ///         // Set the flag to true and evaluate in xtd::fomrs::control::key_press event.
     ///         non_number_entered = true;
     ///       }
     ///     }
@@ -63,8 +63,8 @@ namespace xtd {
     ///
     /// // This event occurs after the KeyDown event and can be used to prevent
     /// // characters from entering the control.
-    /// void text_box1_key_press(object& sender, key_press_event_args& e) {
-    ///   // Check for the flag being set in the key_down event.
+    /// void text_box1_key_press(object& sender, xtd::fomrs::key_press_event_args& e) {
+    ///   // Check for the flag being set in the xtd::fomrs::control::key_down event.
     ///   if (non_number_entered == true) {
     ///     // Stop the character from being entered into the control since it is non-numerical.
     ///     e.handled(true);

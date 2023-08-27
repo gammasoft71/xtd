@@ -10,7 +10,7 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-    /// @brief Represents the method that will handle the control_added and control_removed events of the control class.
+    /// @brief Represents the method that will handle the xtd::forms::month_calendar::date_changed and xtd::forms::month_calendar::date_selected events of the xtd::forms::month_calendar class.
     /// @param sender The source of the event.
     /// @param e A date_range_event_args that contains the event data.
     /// @par Header
