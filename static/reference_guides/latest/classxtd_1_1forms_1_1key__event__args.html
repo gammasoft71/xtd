@@ -99,25 +99,25 @@ Inheritance diagram for xtd::forms::key_event_args:</div>
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
-<div class="textblock"><p>Provides data for the key_down or key_up event. </p>
+<div class="textblock"><p>Provides data for the <a class="el" href="classxtd_1_1forms_1_1control.html#ac96010544d92d981406f0bfb477294b7" title="Occurs when a key is pressed while the xtd::forms::control has focus.">xtd::forms::control::key_down</a> or <a class="el" href="classxtd_1_1forms_1_1control.html#a2eea8414562abe46ea6772526c254b8f" title="Occurs when a key is released while the xtd::forms::control has focus.">xtd::forms::control::key_up</a> event. </p>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/key_event_args&gt;</span> </div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1forms.html" title="The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...">xtd::forms</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms.html" title="The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...">xtd.forms</a></dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>A <a class="el" href="classxtd_1_1forms_1_1key__event__args.html" title="Provides data for the key_down or key_up event.">key_event_args</a>, which specifies the key the user pressed and whether any modifier keys (CMD, CTRL, ALT, and SHIFT) were pressed at the same time, is passed with each key_down or key_up event. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>A <a class="el" href="classxtd_1_1forms_1_1key__event__args.html" title="Provides data for the xtd::forms::control::key_down or xtd::forms::control::key_up event.">key_event_args</a>, which specifies the key the user pressed and whether any modifier keys (CMD, CTRL, ALT, and SHIFT) were pressed at the same time, is passed with each <a class="el" href="classxtd_1_1forms_1_1control.html#ac96010544d92d981406f0bfb477294b7" title="Occurs when a key is pressed while the xtd::forms::control has focus.">xtd::forms::control::key_down</a> or <a class="el" href="classxtd_1_1forms_1_1control.html#a2eea8414562abe46ea6772526c254b8f" title="Occurs when a key is released while the xtd::forms::control has focus.">xtd::forms::control::key_up</a> event. </dd>
 <dd>
-The key_down event occurs when the user presses any key. The key_up event occurs when the user releases the key. Duplicate key_down events occur each time the key repeats, if the key is held down, but only one key_up event is generated when the user releases the key. </dd>
+The <a class="el" href="classxtd_1_1forms_1_1control.html#ac96010544d92d981406f0bfb477294b7" title="Occurs when a key is pressed while the xtd::forms::control has focus.">xtd::forms::control::key_down</a> event occurs when the user presses any key. The <a class="el" href="classxtd_1_1forms_1_1control.html#a2eea8414562abe46ea6772526c254b8f" title="Occurs when a key is released while the xtd::forms::control has focus.">xtd::forms::control::key_up</a> event occurs when the user releases the key. Duplicate <a class="el" href="classxtd_1_1forms_1_1control.html#ac96010544d92d981406f0bfb477294b7" title="Occurs when a key is pressed while the xtd::forms::control has focus.">xtd::forms::control::key_down</a> events occur each time the key repeats, if the key is held down, but only one <a class="el" href="classxtd_1_1forms_1_1control.html#a2eea8414562abe46ea6772526c254b8f" title="Occurs when a key is released while the xtd::forms::control has focus.">xtd::forms::control::key_up</a> event is generated when the user releases the key. </dd>
 <dd>
-The key_press event also occurs when a key is pressed. A <a class="el" href="classxtd_1_1forms_1_1key__press__event__args.html" title="Provides data for the key_press event.">key_press_event_args</a> is passed with each key_press event, and specifies the character that was composed as a result of each key press. </dd></dl>
+The <a class="el" href="classxtd_1_1forms_1_1control.html#a68f0c09a2af4b4311f0f0172000afb50" title="Occurs when a character. space or backspace key is pressed while the xtd::forms::control has focus.">xtd::forms::control::key_press</a> event also occurs when a key is pressed. A <a class="el" href="classxtd_1_1forms_1_1key__press__event__args.html" title="Provides data for the xtd::forms::control::key_press event.">xtd::forms::key_press_event_args</a> is passed with each <a class="el" href="classxtd_1_1forms_1_1control.html#a68f0c09a2af4b4311f0f0172000afb50" title="Occurs when a character. space or backspace key is pressed while the xtd::forms::control has focus.">xtd::forms::control::key_press</a> event, and specifies the character that was composed as a result of each key press. </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="form_show_8cpp-example.html#_a4">form_show.cpp</a>, <a class="el" href="key_events_8cpp-example.html#_a1">key_events.cpp</a>, and <a class="el" href="test_forms_8cpp-example.html#_a23">test_forms.cpp</a>.</dd>
 </dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Constructors</h2></td></tr>
 <tr class="memitem:ace80ea18aadea26153c1d227d1a091fd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1key__event__args.html#ace80ea18aadea26153c1d227d1a091fd">key_event_args</a> ()=default</td></tr>
-<tr class="memdesc:ace80ea18aadea26153c1d227d1a091fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1forms_1_1key__event__args.html" title="Provides data for the key_down or key_up event.">key_event_args</a> class.  <br /></td></tr>
+<tr class="memdesc:ace80ea18aadea26153c1d227d1a091fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1forms_1_1key__event__args.html" title="Provides data for the xtd::forms::control::key_down or xtd::forms::control::key_up event.">key_event_args</a> class.  <br /></td></tr>
 <tr class="separator:ace80ea18aadea26153c1d227d1a091fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24c2e689f41aefdc7904eca9849de8b6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1key__event__args.html#a24c2e689f41aefdc7904eca9849de8b6">key_event_args</a> (<a class="el" href="group__xtd__forms.html#ga2f00c1ad108efaddc951106e768970de">xtd::forms::keys</a> <a class="el" href="classxtd_1_1forms_1_1key__event__args.html#af5061225d6044dfb31cce8e990cd525f">key_data</a>)</td></tr>
-<tr class="memdesc:a24c2e689f41aefdc7904eca9849de8b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1forms_1_1key__event__args.html" title="Provides data for the key_down or key_up event.">key_event_args</a> class.  <br /></td></tr>
+<tr class="memdesc:a24c2e689f41aefdc7904eca9849de8b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1forms_1_1key__event__args.html" title="Provides data for the xtd::forms::control::key_down or xtd::forms::control::key_up event.">key_event_args</a> class.  <br /></td></tr>
 <tr class="separator:a24c2e689f41aefdc7904eca9849de8b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Properties</h2></td></tr>
@@ -137,16 +137,16 @@ The key_press event also occurs when a key is pressed. A <a class="el" href="cla
 <tr class="memdesc:a62dc5fc2b20d783986ee35c3eb1da995"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value indicating whether the event was handled.  <br /></td></tr>
 <tr class="separator:a62dc5fc2b20d783986ee35c3eb1da995"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93c5bba917e9d20f41747ff4b3c39f32"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__xtd__forms.html#ga2f00c1ad108efaddc951106e768970de">keys</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1key__event__args.html#a93c5bba917e9d20f41747ff4b3c39f32">key_code</a> () const noexcept</td></tr>
-<tr class="memdesc:a93c5bba917e9d20f41747ff4b3c39f32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the keyboard code for a key_down or key_up event.  <br /></td></tr>
+<tr class="memdesc:a93c5bba917e9d20f41747ff4b3c39f32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the keyboard code for a <a class="el" href="classxtd_1_1forms_1_1control.html#ac96010544d92d981406f0bfb477294b7" title="Occurs when a key is pressed while the xtd::forms::control has focus.">xtd::forms::control::key_down</a> or <a class="el" href="classxtd_1_1forms_1_1control.html#a2eea8414562abe46ea6772526c254b8f" title="Occurs when a key is released while the xtd::forms::control has focus.">xtd::forms::control::key_up</a> event.  <br /></td></tr>
 <tr class="separator:a93c5bba917e9d20f41747ff4b3c39f32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5061225d6044dfb31cce8e990cd525f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__xtd__forms.html#ga2f00c1ad108efaddc951106e768970de">keys</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1key__event__args.html#af5061225d6044dfb31cce8e990cd525f">key_data</a> () const noexcept</td></tr>
-<tr class="memdesc:af5061225d6044dfb31cce8e990cd525f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the key data for a key_down or key_up event.  <br /></td></tr>
+<tr class="memdesc:af5061225d6044dfb31cce8e990cd525f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the key data for a <a class="el" href="classxtd_1_1forms_1_1control.html#ac96010544d92d981406f0bfb477294b7" title="Occurs when a key is pressed while the xtd::forms::control has focus.">xtd::forms::control::key_down</a> or <a class="el" href="classxtd_1_1forms_1_1control.html#a2eea8414562abe46ea6772526c254b8f" title="Occurs when a key is released while the xtd::forms::control has focus.">xtd::forms::control::key_up</a> event.  <br /></td></tr>
 <tr class="separator:af5061225d6044dfb31cce8e990cd525f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6404cae336da8930dd3279f972101e1a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1key__event__args.html#a6404cae336da8930dd3279f972101e1a">key_value</a> () const noexcept</td></tr>
-<tr class="memdesc:a6404cae336da8930dd3279f972101e1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the keyboard value for a key_down or key_up event.  <br /></td></tr>
+<tr class="memdesc:a6404cae336da8930dd3279f972101e1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the keyboard value for a <a class="el" href="classxtd_1_1forms_1_1control.html#ac96010544d92d981406f0bfb477294b7" title="Occurs when a key is pressed while the xtd::forms::control has focus.">xtd::forms::control::key_down</a> or <a class="el" href="classxtd_1_1forms_1_1control.html#a2eea8414562abe46ea6772526c254b8f" title="Occurs when a key is released while the xtd::forms::control has focus.">xtd::forms::control::key_up</a> event.  <br /></td></tr>
 <tr class="separator:a6404cae336da8930dd3279f972101e1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a324d4daa4aa2eec08ddb66eec5887c5e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__xtd__forms.html#ga2f00c1ad108efaddc951106e768970de">keys</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1key__event__args.html#a324d4daa4aa2eec08ddb66eec5887c5e">modifiers</a> () const noexcept</td></tr>
-<tr class="memdesc:a324d4daa4aa2eec08ddb66eec5887c5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the modifier flags for a key_down or key_up event. The flags indicate which combination of CMD, CTRL, SHIFT, and ALT keys was pressed.  <br /></td></tr>
+<tr class="memdesc:a324d4daa4aa2eec08ddb66eec5887c5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the modifier flags for a <a class="el" href="classxtd_1_1forms_1_1control.html#ac96010544d92d981406f0bfb477294b7" title="Occurs when a key is pressed while the xtd::forms::control has focus.">xtd::forms::control::key_down</a> or <a class="el" href="classxtd_1_1forms_1_1control.html#a2eea8414562abe46ea6772526c254b8f" title="Occurs when a key is released while the xtd::forms::control has focus.">xtd::forms::control::key_up</a> event. The flags indicate which combination of CMD, CTRL, SHIFT, and ALT keys was pressed.  <br /></td></tr>
 <tr class="separator:a324d4daa4aa2eec08ddb66eec5887c5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66b241b1834623602ec722077daf557a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1key__event__args.html#a66b241b1834623602ec722077daf557a">shift</a> () const noexcept</td></tr>
 <tr class="memdesc:a66b241b1834623602ec722077daf557a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the SHIFT key was pressed.  <br /></td></tr>
@@ -220,7 +220,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Initializes a new instance of the <a class="el" href="classxtd_1_1forms_1_1key__event__args.html" title="Provides data for the key_down or key_up event.">key_event_args</a> class. </p>
+<p>Initializes a new instance of the <a class="el" href="classxtd_1_1forms_1_1key__event__args.html" title="Provides data for the xtd::forms::control::key_down or xtd::forms::control::key_up event.">key_event_args</a> class. </p>
 
 </div>
 </div>
@@ -248,7 +248,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Initializes a new instance of the <a class="el" href="classxtd_1_1forms_1_1key__event__args.html" title="Provides data for the key_down or key_up event.">key_event_args</a> class. </p>
+<p>Initializes a new instance of the <a class="el" href="classxtd_1_1forms_1_1key__event__args.html" title="Provides data for the xtd::forms::control::key_down or xtd::forms::control::key_up event.">key_event_args</a> class. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">key_data</td><td>A <a class="el" href="group__xtd__forms.html#ga2f00c1ad108efaddc951106e768970de" title="Specifies key codes and modifiers.">xtd::forms::keys</a> representing the key that was pressed, combined with any modifier flags that indicate which CMD, CTRL, SHIFT, and ALT keys were pressed at the same time. Possible values are obtained by applying the bitwise OR (|) operator to constants from the Keys enumeration. </td></tr>
@@ -430,7 +430,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Gets the keyboard code for a key_down or key_up event. </p>
+<p>Gets the keyboard code for a <a class="el" href="classxtd_1_1forms_1_1control.html#ac96010544d92d981406f0bfb477294b7" title="Occurs when a key is pressed while the xtd::forms::control has focus.">xtd::forms::control::key_down</a> or <a class="el" href="classxtd_1_1forms_1_1control.html#a2eea8414562abe46ea6772526c254b8f" title="Occurs when a key is released while the xtd::forms::control has focus.">xtd::forms::control::key_up</a> event. </p>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="group__xtd__forms.html#ga2f00c1ad108efaddc951106e768970de" title="Specifies key codes and modifiers.">xtd::forms::keys</a> value that is the key code for the event. </dd></dl>
 
 </div>
@@ -458,7 +458,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Gets the key data for a key_down or key_up event. </p>
+<p>Gets the key data for a <a class="el" href="classxtd_1_1forms_1_1control.html#ac96010544d92d981406f0bfb477294b7" title="Occurs when a key is pressed while the xtd::forms::control has focus.">xtd::forms::control::key_down</a> or <a class="el" href="classxtd_1_1forms_1_1control.html#a2eea8414562abe46ea6772526c254b8f" title="Occurs when a key is released while the xtd::forms::control has focus.">xtd::forms::control::key_up</a> event. </p>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="group__xtd__forms.html#ga2f00c1ad108efaddc951106e768970de" title="Specifies key codes and modifiers.">xtd::forms::keys</a> representing the key code for the key that was pressed, combined with modifier flags that indicate which combination of CMD, CTRL, SHIFT, and ALT keys was pressed at the same time. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>You can use constants from Keys to extract information from the key_data property. Use the bitwise AND operator to compare data returned by key_data with constants in Keys to obtain information about which keys the user pressed. To determine whether a specific modifier key was pressed, use the command, control, shift, and alt properties. </dd></dl>
 
@@ -487,7 +487,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Gets the keyboard value for a key_down or key_up event. </p>
+<p>Gets the keyboard value for a <a class="el" href="classxtd_1_1forms_1_1control.html#ac96010544d92d981406f0bfb477294b7" title="Occurs when a key is pressed while the xtd::forms::control has focus.">xtd::forms::control::key_down</a> or <a class="el" href="classxtd_1_1forms_1_1control.html#a2eea8414562abe46ea6772526c254b8f" title="Occurs when a key is released while the xtd::forms::control has focus.">xtd::forms::control::key_up</a> event. </p>
 <dl class="section return"><dt>Returns</dt><dd>The integer representation of the key_code property. </dd></dl>
 
 </div>
@@ -515,7 +515,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Gets the modifier flags for a key_down or key_up event. The flags indicate which combination of CMD, CTRL, SHIFT, and ALT keys was pressed. </p>
+<p>Gets the modifier flags for a <a class="el" href="classxtd_1_1forms_1_1control.html#ac96010544d92d981406f0bfb477294b7" title="Occurs when a key is pressed while the xtd::forms::control has focus.">xtd::forms::control::key_down</a> or <a class="el" href="classxtd_1_1forms_1_1control.html#a2eea8414562abe46ea6772526c254b8f" title="Occurs when a key is released while the xtd::forms::control has focus.">xtd::forms::control::key_up</a> event. The flags indicate which combination of CMD, CTRL, SHIFT, and ALT keys was pressed. </p>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="group__xtd__forms.html#ga2f00c1ad108efaddc951106e768970de" title="Specifies key codes and modifiers.">xtd::forms::keys</a> value representing one or more modifier flags. </dd></dl>
 
 </div>
@@ -573,7 +573,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Gets a value indicating whether the key event should be passed on to the underlying control. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if the key event should not be sent to the control; otherwise, false. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>You can assign true to this property in an event handler such as key_down in order to prevent user input. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>You can assign true to this property in an event handler such as <a class="el" href="classxtd_1_1forms_1_1control.html#ac96010544d92d981406f0bfb477294b7" title="Occurs when a key is pressed while the xtd::forms::control has focus.">xtd::forms::control::key_down</a> in order to prevent user input. </dd>
 <dd>
 Setting suppress_key_press to true also sets handled to true. </dd></dl>
 
@@ -610,7 +610,7 @@ Setting suppress_key_press to true also sets handled to true. </dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>You can assign true to this property in an event handler such as key_down in order to prevent user input. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>You can assign true to this property in an event handler such as <a class="el" href="classxtd_1_1forms_1_1control.html#ac96010544d92d981406f0bfb477294b7" title="Occurs when a key is pressed while the xtd::forms::control has focus.">xtd::forms::control::key_down</a> in order to prevent user input. </dd>
 <dd>
 Setting suppress_key_press to true also sets handled to true. </dd></dl>
 
@@ -623,7 +623,7 @@ Setting suppress_key_press to true also sets handled to true. </dd></dl>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 27 2023 14:54:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Aug 27 2023 20:46:01 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
