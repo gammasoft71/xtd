@@ -136,6 +136,122 @@ namespace xtd::tests {
       assert::are_equal(-36'288'000'000'000ll, time_span {days {-42}}.ticks(), csf_);
     }
 
+    void test_method_(operator_divide) {
+      assert::are_equal(21, (time_span {42} / time_span {2}).ticks(), csf_);
+      assert::are_equal(-21, (time_span {42} / time_span {-2}).ticks(), csf_);
+      assert::are_equal(21, (time_span {42} / 2.0).ticks(), csf_);
+      assert::are_equal(-21, (time_span {42} / -2.0).ticks(), csf_);
+    }
+    
+    void test_method_(operator_divide_by_zero) {
+      assert::throws<divided_by_zero_exception>([]{time_span {42} / time_span {0};}, csf_);
+      assert::throws<divided_by_zero_exception>([]{time_span {42} / .0;}, csf_);
+    }
+    
+    void test_method_(operator_minus) {
+      assert::are_equal(18, (time_span {42} - time_span {24}).ticks(), csf_);
+      assert::are_equal(66, (time_span {42} - time_span {-24}).ticks(), csf_);
+      assert::are_equal(-66, (time_span {-42} - time_span {24}).ticks(), csf_);
+      assert::are_equal(-18, (time_span {-42} - time_span {-24}).ticks(), csf_);
+    }
+    
+    void test_method_(operator_minus_equal) {
+      auto ts = time_span {42};
+      ts -= time_span {24};
+      assert::are_equal(18, ts.ticks(), csf_);
+    }
+    
+    void test_method_(operator_multiply) {
+      assert::are_equal(84, (time_span {42} * time_span {2}).ticks(), csf_);
+      assert::are_equal(-84, (time_span {42} * time_span {-2}).ticks(), csf_);
+      assert::are_equal(84, (time_span {42} * 2.0).ticks(), csf_);
+      assert::are_equal(-84, (time_span {42} * -2.0).ticks(), csf_);
+    }
+    
+    void test_method_(operator_plus) {
+      assert::are_equal(66, (time_span {42} + time_span {24}).ticks(), csf_);
+      assert::are_equal(18, (time_span {42} + time_span {-24}).ticks(), csf_);
+      assert::are_equal(-18, (time_span {-42} + time_span {24}).ticks(), csf_);
+      assert::are_equal(-66, (time_span {-42} + time_span {-24}).ticks(), csf_);
+    }
+    
+    void test_method_(operator_plus_equal) {
+      auto ts = time_span {42};
+      ts += time_span {24};
+      assert::are_equal(66, ts.ticks(), csf_);
+    }
+    
+    void test_method_(operator_post_decrement) {
+      auto ts = time_span {42};
+      assert::are_equal(42, (ts--).ticks(), csf_);
+      assert::are_equal(41, ts.ticks(), csf_);
+    }
+    
+    void test_method_(operator_post_increment) {
+      auto ts = time_span {42};
+      assert::are_equal(42, (ts++).ticks(), csf_);
+      assert::are_equal(43, ts.ticks(), csf_);
+    }
+    
+    void test_method_(operator_pre_decrement) {
+      auto ts = time_span {42};
+      assert::are_equal(41, (--ts).ticks(), csf_);
+    }
+    
+    void test_method_(operator_pre_increment) {
+      auto ts = time_span {42};
+      assert::are_equal(43, (++ts).ticks(), csf_);
+    }
+    
+    void test_method_(operator_unary_minus) {
+      assert::are_equal(-42, -time_span {42}.ticks(), csf_);
+      assert::are_equal(42, -time_span {-42}.ticks(), csf_);
+    }
+    
+    void test_method_(operator_unary_plus) {
+      assert::are_equal(42, +time_span {42}.ticks(), csf_);
+      assert::are_equal(-42, +time_span {-42}.ticks(), csf_);
+    }
+    
+    void test_method_(add) {
+      assert::are_equal(66, time_span {42}.add(time_span {24}).ticks(), csf_);
+      assert::are_equal(18, time_span {42}.add(time_span {-24}).ticks(), csf_);
+      assert::are_equal(-18, time_span {-42}.add(time_span {24}).ticks(), csf_);
+      assert::are_equal(-66, time_span {-42}.add(time_span {-24}).ticks(), csf_);
+    }
+    
+    void test_method_(compare_to) {
+      auto ts1 = time_span::from_days(1.5);
+      auto ts2 = time_span::from_hours(1.5);
+      auto ts3 = time_span::from_hours(-1.5);
+      
+      assert::are_equal(1, ts1.compare_to(ts2), csf_);
+      assert::are_equal(0, ts1.compare_to(ts1), csf_);
+      assert::are_equal(-1, ts3.compare_to(ts2), csf_);
+    }
+
+    void test_method_(divide) {
+      assert::are_equal(21, time_span {42}.divide(time_span {2}).ticks(), csf_);
+      assert::are_equal(-21, time_span {42}.divide(time_span {-2}).ticks(), csf_);
+      assert::are_equal(21, time_span {42}.divide(2.0).ticks(), csf_);
+      assert::are_equal(-21, time_span {42}.divide(-2.0).ticks(), csf_);
+    }
+    
+    void test_method_(divide_by_zero) {
+      assert::throws<divided_by_zero_exception>([]{time_span {42}.divide(time_span {0});}, csf_);
+      assert::throws<divided_by_zero_exception>([]{time_span {42}.divide(.0);}, csf_);
+    }
+    
+    void test_method_(duration) {
+      assert::are_equal(42, time_span {42}.duration().ticks(), csf_);
+      assert::are_equal(42, time_span {-42}.duration().ticks(), csf_);
+    }
+    
+    void test_method_(equals) {
+      assert::is_true(time_span {42}.equals(time_span {42}), csf_);
+      assert::is_false(time_span {42}.equals(time_span {-42}), csf_);
+    }
+
     void test_method_(from_ticks) {
       assert::are_equal(42ll, time_span::from_ticks(42).ticks(), csf_);
       assert::are_equal(-42ll, time_span::from_ticks(-42).ticks(), csf_);
@@ -217,6 +333,46 @@ namespace xtd::tests {
       assert::are_equal(36'288'000'000'000ll, time_span::from_days(days {42}).ticks(), csf_);
       assert::are_equal(-36'288'000'000'000ll, time_span::from_days(days {-42}).ticks(), csf_);
     }
+
+    void test_method_(multiply) {
+      assert::are_equal(84, time_span {42}.multiply(time_span {2}).ticks(), csf_);
+      assert::are_equal(-84, time_span {42}.multiply(time_span {-2}).ticks(), csf_);
+      assert::are_equal(84, time_span {42}.multiply(2.0).ticks(), csf_);
+      assert::are_equal(-84, time_span {42}.multiply(-2.0).ticks(), csf_);
+    }
+
+    void test_method_(negate) {
+      assert::are_equal(-42, time_span {42}.negate().ticks(), csf_);
+      assert::are_equal(42, time_span {-42}.negate().ticks(), csf_);
+    }
+    
+    void test_method_(parse) {
+      assert::are_equal("6.00:00:00", time_span::parse("6").to_string(), csf_);
+      assert::are_equal("06:12:00", time_span::parse("6:12").to_string(), csf_);
+      assert::are_equal("06:12:14", time_span::parse("6:12:14").to_string(), csf_);
+      assert::are_equal("06:12:14", time_span::parse("6:12:14").to_string(), csf_);
+      assert::are_equal("6.12:14:45", time_span::parse("6:12:14:45").to_string(), csf_);
+      assert::are_equal("6.12:14:45", time_span::parse("6.12:14:45").to_string(), csf_);
+      assert::are_equal("6.12:14:45.3440000", time_span::parse("6.12:14:45.3440000").to_string(), csf_);
+      assert::are_equal("-6.12:14:45.3440000", time_span::parse("-6.12:14:45.3440000").to_string(), csf_);
+    }
+    
+    void test_method_(parse_invalid) {
+      assert::throws<format_exception>([] {time_span::parse("25:12:00");}, csf_);
+      assert::throws<format_exception>([] {time_span::parse("6:61:00");}, csf_);
+      assert::throws<format_exception>([] {time_span::parse("6:00:61");}, csf_);      
+      assert::throws<format_exception>([] {time_span::parse("6.12:14:45.344");}, csf_);
+      assert::throws<format_exception>([] {time_span::parse("6.12:14:45.344000");}, csf_);
+      assert::throws<format_exception>([] {time_span::parse("6.12:14:45.34400000");}, csf_);
+      assert::throws<format_exception>([] {time_span::parse("6.2:12:14:45.3440000");}, csf_);
+    }
+    
+    void test_method_(subtract) {
+      assert::are_equal(18, time_span {42}.subtract(time_span {24}).ticks(), csf_);
+      assert::are_equal(66, time_span {42}.subtract(time_span {-24}).ticks(), csf_);
+      assert::are_equal(-66, time_span {-42}.subtract(time_span {24}).ticks(), csf_);
+      assert::are_equal(-18, time_span {-42}.subtract(time_span {-24}).ticks(), csf_);
+    }
     
     void test_method_(to_string) {
       assert::are_equal("00:00:00", time_span::zero.to_string(), csf_);
@@ -254,7 +410,7 @@ namespace xtd::tests {
       assert::are_equal("15", time_span {15, 3, 38, 45, 23, 42}.to_string("D"), csf_);
       assert::are_equal("04", time_span {-4, -3, -38, -45, -23, -42}.to_string("D"), csf_);
     }
-
+    
     void test_method_(to_string_with_format_f) {
       assert::are_equal("0.3:38:45.0000000", time_span {3, 38, 45}.to_string("f"), csf_);
       assert::are_equal("0.3:38:45.0230420", time_span {0, 3, 38, 45, 23, 42}.to_string("f"), csf_);
@@ -270,7 +426,7 @@ namespace xtd::tests {
       assert::are_equal("15.03:38:45.0230420", time_span {15, 3, 38, 45, 23, 42}.to_string("F"), csf_);
       assert::are_equal("-0.03:38:45.0000000", time_span {-3, -38, -45}.to_string("F"), csf_);
     }
-
+    
     void test_method_(to_string_with_format_g) {
       assert::are_equal("3:38:45", time_span {3, 38, 45}.to_string("g"), csf_);
       assert::are_equal("17:38:45", time_span {17, 38, 45}.to_string("g"), csf_);
@@ -340,140 +496,15 @@ namespace xtd::tests {
       assert::are_equal("05", time_span {3, 38, 5}.to_string("S"), csf_);
       assert::are_equal("05", time_span {-3, -38, -5}.to_string("S"), csf_);
     }
-
+    
     void test_method_(to_string_with_format_t) {
       assert::are_equal("23", time_span {23}.to_string("t"), csf_);
       assert::are_equal("23", time_span {-23}.to_string("t"), csf_);
     }
-
+    
     void test_method_(to_string_with_format_T) {
       assert::are_equal("0000023", time_span {23}.to_string("T"), csf_);
       assert::are_equal("0000023", time_span {-23}.to_string("T"), csf_);
-    }
-    
-    void test_method_(add) {
-      assert::are_equal(66, time_span {42}.add(time_span {24}).ticks(), csf_);
-      assert::are_equal(18, time_span {42}.add(time_span {-24}).ticks(), csf_);
-      assert::are_equal(-18, time_span {-42}.add(time_span {24}).ticks(), csf_);
-      assert::are_equal(-66, time_span {-42}.add(time_span {-24}).ticks(), csf_);
-    }
-    
-    void test_method_(divide) {
-      assert::are_equal(21, time_span {42}.divide(time_span {2}).ticks(), csf_);
-      assert::are_equal(-21, time_span {42}.divide(time_span {-2}).ticks(), csf_);
-      assert::are_equal(21, time_span {42}.divide(2.0).ticks(), csf_);
-      assert::are_equal(-21, time_span {42}.divide(-2.0).ticks(), csf_);
-    }
-    
-    void test_method_(divide_by_zero) {
-      assert::throws<divided_by_zero_exception>([]{time_span {42}.divide(time_span {0});}, csf_);
-      assert::throws<divided_by_zero_exception>([]{time_span {42}.divide(.0);}, csf_);
-    }
-
-    void test_method_(duration) {
-      assert::are_equal(42, time_span {42}.duration().ticks(), csf_);
-      assert::are_equal(42, time_span {-42}.duration().ticks(), csf_);
-    }
-
-    void test_method_(equals) {
-      assert::is_true(time_span {42}.equals(time_span {42}), csf_);
-      assert::is_false(time_span {42}.equals(time_span {-42}), csf_);
-    }
-
-    void test_method_(multiply) {
-      assert::are_equal(84, time_span {42}.multiply(time_span {2}).ticks(), csf_);
-      assert::are_equal(-84, time_span {42}.multiply(time_span {-2}).ticks(), csf_);
-      assert::are_equal(84, time_span {42}.multiply(2.0).ticks(), csf_);
-      assert::are_equal(-84, time_span {42}.multiply(-2.0).ticks(), csf_);
-    }
-
-    void test_method_(negate) {
-      assert::are_equal(-42, time_span {42}.negate().ticks(), csf_);
-      assert::are_equal(42, time_span {-42}.negate().ticks(), csf_);
-    }
-    
-    void test_method_(subtract) {
-      assert::are_equal(18, time_span {42}.subtract(time_span {24}).ticks(), csf_);
-      assert::are_equal(66, time_span {42}.subtract(time_span {-24}).ticks(), csf_);
-      assert::are_equal(-66, time_span {-42}.subtract(time_span {24}).ticks(), csf_);
-      assert::are_equal(-18, time_span {-42}.subtract(time_span {-24}).ticks(), csf_);
-    }
-    
-    void test_method_(operator_divide) {
-      assert::are_equal(21, (time_span {42} / time_span {2}).ticks(), csf_);
-      assert::are_equal(-21, (time_span {42} / time_span {-2}).ticks(), csf_);
-      assert::are_equal(21, (time_span {42} / 2.0).ticks(), csf_);
-      assert::are_equal(-21, (time_span {42} / -2.0).ticks(), csf_);
-    }
-    
-    void test_method_(operator_divide_by_zero) {
-      assert::throws<divided_by_zero_exception>([]{time_span {42} / time_span {0};}, csf_);
-      assert::throws<divided_by_zero_exception>([]{time_span {42} / .0;}, csf_);
-    }
-
-    void test_method_(operator_minus) {
-      assert::are_equal(18, (time_span {42} - time_span {24}).ticks(), csf_);
-      assert::are_equal(66, (time_span {42} - time_span {-24}).ticks(), csf_);
-      assert::are_equal(-66, (time_span {-42} - time_span {24}).ticks(), csf_);
-      assert::are_equal(-18, (time_span {-42} - time_span {-24}).ticks(), csf_);
-    }
-    
-    void test_method_(operator_minus_equal) {
-      auto ts = time_span {42};
-      ts -= time_span {24};
-      assert::are_equal(18, ts.ticks(), csf_);
-    }
-
-    void test_method_(operator_multiply) {
-      assert::are_equal(84, (time_span {42} * time_span {2}).ticks(), csf_);
-      assert::are_equal(-84, (time_span {42} * time_span {-2}).ticks(), csf_);
-      assert::are_equal(84, (time_span {42} * 2.0).ticks(), csf_);
-      assert::are_equal(-84, (time_span {42} * -2.0).ticks(), csf_);
-    }
-
-    void test_method_(operator_plus) {
-      assert::are_equal(66, (time_span {42} + time_span {24}).ticks(), csf_);
-      assert::are_equal(18, (time_span {42} + time_span {-24}).ticks(), csf_);
-      assert::are_equal(-18, (time_span {-42} + time_span {24}).ticks(), csf_);
-      assert::are_equal(-66, (time_span {-42} + time_span {-24}).ticks(), csf_);
-    }
-    
-    void test_method_(operator_plus_equal) {
-      auto ts = time_span {42};
-      ts += time_span {24};
-      assert::are_equal(66, ts.ticks(), csf_);
-    }
-    
-    void test_method_(operator_post_decrement) {
-      auto ts = time_span {42};
-      assert::are_equal(42, (ts--).ticks(), csf_);
-      assert::are_equal(41, ts.ticks(), csf_);
-    }
-    
-    void test_method_(operator_post_increment) {
-      auto ts = time_span {42};
-      assert::are_equal(42, (ts++).ticks(), csf_);
-      assert::are_equal(43, ts.ticks(), csf_);
-    }
-
-    void test_method_(operator_pre_decrement) {
-      auto ts = time_span {42};
-      assert::are_equal(41, (--ts).ticks(), csf_);
-    }
-
-    void test_method_(operator_pre_increment) {
-      auto ts = time_span {42};
-      assert::are_equal(43, (++ts).ticks(), csf_);
-    }
-
-    void test_method_(operator_unary_minus) {
-      assert::are_equal(-42, -time_span {42}.ticks(), csf_);
-      assert::are_equal(42, -time_span {-42}.ticks(), csf_);
-    }
-
-    void test_method_(operator_unary_plus) {
-      assert::are_equal(42, +time_span {42}.ticks(), csf_);
-      assert::are_equal(-42, +time_span {-42}.ticks(), csf_);
     }
   };
 }
