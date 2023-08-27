@@ -387,11 +387,15 @@ bool time_span::try_parse(const ustring& str, time_span& result) {
     if (int32_object::try_parse(items[4], ticks) == false) return false;
   }
   
-  if (items.size() > 5ul || str.last_index_of('-') > 0ul || (items.size() == 5ul && str.last_index_of(':') > str.last_index_of('.'))) return false;
+  if (items.size() > 5ul) return false;
+  if (str.last_index_of('-') != ustring::npos && str.last_index_of('-') != 0ul) return false;
+  if (items.size() == 5ul && str.last_index_of(':') > str.last_index_of('.')) return false;
   
-  if (0 > hours || hours > 24 || 0 > minutes || minutes > 60 || 0 > seconds || seconds > 60) return false;
-  
-  result = time_span {days * ticks_per_day + hours * ticks_per_hour + minutes * ticks_per_minute + seconds * ticks_per_second + ticks}.negate();
+  if (0 > hours || hours > 24) return false;
+  if (0 > minutes || minutes > 60) return false;
+  if (0 > seconds || seconds > 60) return false;
+
+  result = time_span {days * ticks_per_day + hours * ticks_per_hour + minutes * ticks_per_minute + seconds * ticks_per_second + ticks};
   if (str[0] == '-') result = result.negate();
   return true;
 }
