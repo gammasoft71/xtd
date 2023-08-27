@@ -70,8 +70,8 @@ namespace xtd::tests {
     }
 
     void test_method_(ctor_with_ticks_duration) {
-      assert::are_equal(42ll, time_span {ticks {42}}.ticks(), csf_);
-      assert::are_equal(-42ll, time_span {ticks {-42}}.ticks(), csf_);
+      assert::are_equal(42ll, time_span {xtd::ticks {42}}.ticks(), csf_);
+      assert::are_equal(-42ll, time_span {xtd::ticks {-42}}.ticks(), csf_);
     }
     
     void test_method_(ctor_with_hours_minutes_seconds) {
@@ -107,33 +107,33 @@ namespace xtd::tests {
     }
     
     void test_method_(ctor_with_microseconds_duration) {
-      assert::are_equal(420ll, time_span {microseconds {42}}.ticks(), csf_);
-      assert::are_equal(-420ll, time_span {microseconds {-42}}.ticks(), csf_);
+      assert::are_equal(420ll, time_span {chrono::microseconds {42}}.ticks(), csf_);
+      assert::are_equal(-420ll, time_span {chrono::microseconds {-42}}.ticks(), csf_);
     }
 
     void test_method_(ctor_with_milliseconds_duration) {
-      assert::are_equal(420'000ll, time_span {milliseconds {42}}.ticks(), csf_);
-      assert::are_equal(-420'000ll, time_span {milliseconds {-42}}.ticks(), csf_);
+      assert::are_equal(420'000ll, time_span {chrono::milliseconds {42}}.ticks(), csf_);
+      assert::are_equal(-420'000ll, time_span {chrono::milliseconds {-42}}.ticks(), csf_);
     }
 
     void test_method_(ctor_with_seconds_duration) {
-      assert::are_equal(420'000'000ll, time_span {seconds {42}}.ticks(), csf_);
-      assert::are_equal(-420'000'000ll, time_span {seconds {-42}}.ticks(), csf_);
+      assert::are_equal(420'000'000ll, time_span {chrono::seconds {42}}.ticks(), csf_);
+      assert::are_equal(-420'000'000ll, time_span {chrono::seconds {-42}}.ticks(), csf_);
     }
 
     void test_method_(ctor_with_minutes_duration) {
-      assert::are_equal(25'200'000'000ll, time_span {minutes {42}}.ticks(), csf_);
-      assert::are_equal(-25'200'000'000ll, time_span {minutes {-42}}.ticks(), csf_);
+      assert::are_equal(25'200'000'000ll, time_span {chrono::minutes {42}}.ticks(), csf_);
+      assert::are_equal(-25'200'000'000ll, time_span {chrono::minutes {-42}}.ticks(), csf_);
     }
 
     void test_method_(ctor_with_hours_duration) {
-      assert::are_equal(1'512'000'000'000ll, time_span {hours {42}}.ticks(), csf_);
-      assert::are_equal(-1'512'000'000'000ll, time_span {hours {-42}}.ticks(), csf_);
+      assert::are_equal(1'512'000'000'000ll, time_span {chrono::hours {42}}.ticks(), csf_);
+      assert::are_equal(-1'512'000'000'000ll, time_span {chrono::hours {-42}}.ticks(), csf_);
     }
 
     void test_method_(ctor_with_days_duration) {
-      assert::are_equal(36'288'000'000'000ll, time_span {days {42}}.ticks(), csf_);
-      assert::are_equal(-36'288'000'000'000ll, time_span {days {-42}}.ticks(), csf_);
+      assert::are_equal(36'288'000'000'000ll, time_span {chrono::days {42}}.ticks(), csf_);
+      assert::are_equal(-36'288'000'000'000ll, time_span {chrono::days {-42}}.ticks(), csf_);
     }
 
     void test_method_(operator_divide) {
@@ -213,6 +213,48 @@ namespace xtd::tests {
       assert::are_equal(-42, +time_span {-42}.ticks(), csf_);
     }
     
+    void test_method_(days) {
+      assert::is_zero(time_span {}.days(), csf_);
+      assert::is_zero(time_span {1, 2, 3}.days(), csf_);
+      assert::are_equal(1, time_span {1, 2, 3, 4}.days(), csf_);
+    }
+    
+    void test_method_(hours) {
+      assert::is_zero(time_span {}.hours(), csf_);
+      assert::are_equal(1, time_span {1, 2, 3}.hours(), csf_);
+    }
+    
+    void test_method_(microseconds) {
+      assert::is_zero(time_span {}.microseconds(), csf_);
+      assert::are_equal(6, time_span {1, 2, 3, 4, 5, 6}.microseconds(), csf_);
+    }
+    
+    void test_method_(milliseconds) {
+      assert::is_zero(time_span {}.milliseconds(), csf_);
+      assert::are_equal(5, time_span {1, 2, 3, 4, 5}.milliseconds(), csf_);
+    }
+
+    void test_method_(minutes) {
+      assert::is_zero(time_span {}.minutes(), csf_);
+      assert::are_equal(2, time_span {1, 2, 3}.minutes(), csf_);
+    }
+    
+    void test_method_(nanoseconds) {
+      assert::is_zero(time_span {}.nanoseconds(), csf_);
+      assert::is_zero(time_span {1, 2, 3, 4, 5, 6, 7}.nanoseconds(), csf_);
+      assert::are_equal(700, time_span {1, 2, 3, 4, 5, 6, 789}.nanoseconds(), csf_);
+    }
+
+    void test_method_(seconds) {
+      assert::is_zero(time_span {}.seconds(), csf_);
+      assert::are_equal(3, time_span {1, 2, 3}.seconds(), csf_);
+    }
+
+    void test_method_(ticks) {
+      assert::is_zero(time_span {}.ticks(), csf_);
+      assert::are_equal(37'230'000'000ll, time_span {1, 2, 3}.ticks(), csf_);
+    }
+
     void test_method_(add) {
       assert::are_equal(66, time_span {42}.add(time_span {24}).ticks(), csf_);
       assert::are_equal(18, time_span {42}.add(time_span {-24}).ticks(), csf_);
@@ -252,76 +294,6 @@ namespace xtd::tests {
       assert::is_false(time_span {42}.equals(time_span {-42}), csf_);
     }
 
-    void test_method_(from_ticks) {
-      assert::are_equal(42ll, time_span::from_ticks(42).ticks(), csf_);
-      assert::are_equal(-42ll, time_span::from_ticks(-42).ticks(), csf_);
-      assert::are_equal(678'434'567'745'603ll, time_span::from_ticks(678434567745603LL).ticks(), csf_);
-    }
-    
-    void test_method_(from_ticks_duration) {
-      assert::are_equal(42ll, time_span::from_ticks(ticks {42}).ticks(), csf_);
-      assert::are_equal(-42ll, time_span::from_ticks(ticks {-42}).ticks(), csf_);
-    }
-    
-    void test_method_(from_microseconds) {
-      assert::are_equal(420ll, time_span::from_microseconds(42.0).ticks(), csf_);
-      assert::are_equal(-420ll, time_span::from_microseconds(-42.0).ticks(), csf_);
-    }
-    
-    void test_method_(from_microseconds_duration) {
-      assert::are_equal(420ll, time_span::from_microseconds(microseconds {42}).ticks(), csf_);
-      assert::are_equal(-420ll, time_span::from_microseconds(microseconds {-42}).ticks(), csf_);
-    }
-
-    void test_method_(from_milliseconds) {
-      assert::are_equal(420'000ll, time_span::from_milliseconds(42.0).ticks(), csf_);
-      assert::are_equal(-420'000ll, time_span::from_milliseconds(-42.0).ticks(), csf_);
-      assert::are_equal(2'570'000ll, time_span::from_milliseconds(256.7).ticks(), csf_);
-      assert::are_equal(2'560'000ll, time_span::from_milliseconds((int64)256.7).ticks(), csf_);
-      assert::are_equal(290'000ll, time_span::from_milliseconds((29.0 / 100.0) * 100).ticks(), csf_);
-      assert::are_equal(280'000ll, time_span::from_milliseconds(int64((29.0 / 100.0) * 100)).ticks(), csf_);
-      assert::are_equal(-10'000ll, time_span::from_milliseconds(-1).ticks(), csf_);
-    }
-
-    void test_method_(from_milliseconds_duration) {
-      assert::are_equal(420'000ll, time_span::from_milliseconds(milliseconds {42}).ticks(), csf_);
-      assert::are_equal(-420'000ll, time_span::from_milliseconds(milliseconds {-42}).ticks(), csf_);
-    }
-
-    void test_method_(from_seconds) {
-      assert::are_equal(420'000'000ll, time_span::from_seconds(42.0).ticks(), csf_);
-      assert::are_equal(-420'000'000ll, time_span::from_seconds(-42.0).ticks(), csf_);
-      assert::are_equal(35'000'000ll, time_span::from_seconds(3.5).ticks(), csf_);
-    }
-
-    void test_method_(from_seconds_duration) {
-      assert::are_equal(420'000'000ll, time_span::from_seconds(seconds {42}).ticks(), csf_);
-      assert::are_equal(-420'000'000ll, time_span::from_seconds(seconds {-42}).ticks(), csf_);
-    }
-
-    void test_method_(from_minutes) {
-      assert::are_equal(25'200'000'000ll, time_span::from_minutes(42.0).ticks(), csf_);
-      assert::are_equal(-25'200'000'000ll, time_span::from_minutes(-42.0).ticks(), csf_);
-      assert::are_equal(458'070'000'000ll, time_span::from_minutes(763.45).ticks(), csf_);
-    }
-
-    void test_method_(from_minutes_duration) {
-      assert::are_equal(25'200'000'000ll, time_span::from_minutes(minutes {42}).ticks(), csf_);
-      assert::are_equal(-25'200'000'000ll, time_span::from_minutes(minutes {-42}).ticks(), csf_);
-    }
-
-    void test_method_(from_hours) {
-      assert::are_equal(1'512'000'000'000ll, time_span::from_hours(42.0).ticks(), csf_);
-      assert::are_equal(-1'512'000'000'000ll, time_span::from_hours(-42.0).ticks(), csf_);
-      assert::are_equal(54'000'000'000ll, time_span::from_hours(1.5).ticks(), csf_);
-      assert::are_equal(802'800'000'000ll, time_span::from_hours(22.3).ticks(), csf_);
-    }
-
-    void test_method_(from_hours_duration) {
-      assert::are_equal(1'512'000'000'000ll, time_span::from_hours(hours {42}).ticks(), csf_);
-      assert::are_equal(-1'512'000'000'000ll, time_span::from_hours(hours {-42}).ticks(), csf_);
-    }
-
     void test_method_(from_days) {
       assert::are_equal(36'288'000'000'000ll, time_span::from_days(42.0).ticks(), csf_);
       assert::are_equal(-36'288'000'000'000ll, time_span::from_days(-42.0).ticks(), csf_);
@@ -330,8 +302,94 @@ namespace xtd::tests {
     }
 
     void test_method_(from_days_duration) {
-      assert::are_equal(36'288'000'000'000ll, time_span::from_days(days {42}).ticks(), csf_);
-      assert::are_equal(-36'288'000'000'000ll, time_span::from_days(days {-42}).ticks(), csf_);
+      assert::are_equal(36'288'000'000'000ll, time_span::from_days(chrono::days {42}).ticks(), csf_);
+      assert::are_equal(-36'288'000'000'000ll, time_span::from_days(chrono::days {-42}).ticks(), csf_);
+    }
+
+    void test_method_(from_hours) {
+      assert::are_equal(1'512'000'000'000ll, time_span::from_hours(42.0).ticks(), csf_);
+      assert::are_equal(-1'512'000'000'000ll, time_span::from_hours(-42.0).ticks(), csf_);
+      assert::are_equal(54'000'000'000ll, time_span::from_hours(1.5).ticks(), csf_);
+      assert::are_equal(802'800'000'000ll, time_span::from_hours(22.3).ticks(), csf_);
+    }
+    
+    void test_method_(from_hours_duration) {
+      assert::are_equal(1'512'000'000'000ll, time_span::from_hours(chrono::hours {42}).ticks(), csf_);
+      assert::are_equal(-1'512'000'000'000ll, time_span::from_hours(chrono::hours {-42}).ticks(), csf_);
+    }
+    
+    void test_method_(from_microseconds) {
+      assert::are_equal(420ll, time_span::from_microseconds(42.0).ticks(), csf_);
+      assert::are_equal(-420ll, time_span::from_microseconds(-42.0).ticks(), csf_);
+    }
+    
+    void test_method_(from_microseconds_duration) {
+      assert::are_equal(420ll, time_span::from_microseconds(chrono::microseconds {42}).ticks(), csf_);
+      assert::are_equal(-420ll, time_span::from_microseconds(chrono::microseconds {-42}).ticks(), csf_);
+    }
+
+    void test_method_(from_milliseconds) {
+      assert::are_equal(420'000ll, time_span::from_milliseconds(42.0).ticks(), csf_);
+      assert::are_equal(-420'000ll, time_span::from_milliseconds(-42.0).ticks(), csf_);
+      assert::are_equal(2'570'000ll, time_span::from_milliseconds(256.7).ticks(), csf_);
+      assert::are_equal(2'560'000ll, time_span::from_milliseconds(static_cast<int64>(256.7)).ticks(), csf_);
+      assert::are_equal(290'000ll, time_span::from_milliseconds((29.0 / 100.0) * 100).ticks(), csf_);
+      assert::are_equal(280'000ll, time_span::from_milliseconds(static_cast<int64>((29.0 / 100.0) * 100)).ticks(), csf_);
+      assert::are_equal(-10'000ll, time_span::from_milliseconds(-1).ticks(), csf_);
+    }
+    
+    void test_method_(from_milliseconds_duration) {
+      assert::are_equal(420'000ll, time_span::from_milliseconds(chrono::milliseconds {42}).ticks(), csf_);
+      assert::are_equal(-420'000ll, time_span::from_milliseconds(chrono::milliseconds {-42}).ticks(), csf_);
+    }
+
+    void test_method_(from_minutes) {
+      assert::are_equal(25'200'000'000ll, time_span::from_minutes(42.0).ticks(), csf_);
+      assert::are_equal(-25'200'000'000ll, time_span::from_minutes(-42.0).ticks(), csf_);
+      assert::are_equal(458'070'000'000ll, time_span::from_minutes(763.45).ticks(), csf_);
+    }
+    
+    void test_method_(from_minutes_duration) {
+      assert::are_equal(25'200'000'000ll, time_span::from_minutes(chrono::minutes {42}).ticks(), csf_);
+      assert::are_equal(-25'200'000'000ll, time_span::from_minutes(chrono::minutes {-42}).ticks(), csf_);
+    }
+
+    void test_method_(from_nanoseconds) {
+      assert::is_zero(time_span::from_nanoseconds(42.0).ticks(), csf_);
+      assert::are_equal(4ll, time_span::from_nanoseconds(420.0).ticks(), csf_);
+      assert::are_equal(-4ll, time_span::from_nanoseconds(-420.0).ticks(), csf_);
+      assert::are_equal(2ll, time_span::from_nanoseconds(256.7).ticks(), csf_);
+      assert::are_equal(2ll, time_span::from_nanoseconds(static_cast<int64>(256.7)).ticks(), csf_);
+      assert::are_equal(2ll, time_span::from_nanoseconds((290.0 / 100.0) * 100).ticks(), csf_);
+      assert::are_equal(2ll, time_span::from_nanoseconds(static_cast<int64>((290.0 / 100.0) * 100)).ticks(), csf_);
+      assert::are_equal(-1ll, time_span::from_nanoseconds(-100).ticks(), csf_);
+    }
+
+    void test_method_(from_nanoseconds_duration) {
+      assert::are_equal(4ll, time_span::from_nanoseconds(chrono::nanoseconds {420}).ticks(), csf_);
+      assert::are_equal(-4ll, time_span::from_nanoseconds(chrono::nanoseconds {-420}).ticks(), csf_);
+    }
+
+    void test_method_(from_seconds) {
+      assert::are_equal(420'000'000ll, time_span::from_seconds(42.0).ticks(), csf_);
+      assert::are_equal(-420'000'000ll, time_span::from_seconds(-42.0).ticks(), csf_);
+      assert::are_equal(35'000'000ll, time_span::from_seconds(3.5).ticks(), csf_);
+    }
+    
+    void test_method_(from_seconds_duration) {
+      assert::are_equal(420'000'000ll, time_span::from_seconds(chrono::seconds {42}).ticks(), csf_);
+      assert::are_equal(-420'000'000ll, time_span::from_seconds(chrono::seconds {-42}).ticks(), csf_);
+    }
+
+    void test_method_(from_ticks) {
+      assert::are_equal(42ll, time_span::from_ticks(42).ticks(), csf_);
+      assert::are_equal(-42ll, time_span::from_ticks(-42).ticks(), csf_);
+      assert::are_equal(678'434'567'745'603ll, time_span::from_ticks(678434567745603LL).ticks(), csf_);
+    }
+    
+    void test_method_(from_ticks_duration) {
+      assert::are_equal(42ll, time_span::from_ticks(xtd::ticks {42}).ticks(), csf_);
+      assert::are_equal(-42ll, time_span::from_ticks(xtd::ticks {-42}).ticks(), csf_);
     }
 
     void test_method_(multiply) {
@@ -350,9 +408,9 @@ namespace xtd::tests {
       assert::are_equal("6.00:00:00", time_span::parse("6").to_string(), csf_);
       assert::are_equal("06:12:00", time_span::parse("6:12").to_string(), csf_);
       assert::are_equal("06:12:14", time_span::parse("6:12:14").to_string(), csf_);
-      assert::are_equal("06:12:14", time_span::parse("6:12:14").to_string(), csf_);
+      assert::are_equal("06:12:14", time_span::parse("06:12:14").to_string(), csf_);
       assert::are_equal("6.12:14:45", time_span::parse("6:12:14:45").to_string(), csf_);
-      assert::are_equal("6.12:14:45", time_span::parse("6.12:14:45").to_string(), csf_);
+      assert::are_equal("6.12:14:45", time_span::parse("06.12:14:45").to_string(), csf_);
       assert::are_equal("6.12:14:45.3440000", time_span::parse("6.12:14:45.3440000").to_string(), csf_);
       assert::are_equal("-6.12:14:45.3440000", time_span::parse("-6.12:14:45.3440000").to_string(), csf_);
     }
@@ -505,6 +563,56 @@ namespace xtd::tests {
     void test_method_(to_string_with_format_T) {
       assert::are_equal("0000023", time_span {23}.to_string("T"), csf_);
       assert::are_equal("0000023", time_span {-23}.to_string("T"), csf_);
+    }
+    
+    void test_method_(try_parse) {
+      auto ts = time_span::zero;
+      assert::is_true(time_span::try_parse("6", ts), csf_);
+      assert::are_equal("6.00:00:00", ts.to_string(), csf_);
+
+      assert::is_true(time_span::try_parse("6:12", ts), csf_);
+      assert::are_equal("06:12:00", ts.to_string(), csf_);
+
+      assert::is_true(time_span::try_parse("6:12:14", ts), csf_);
+      assert::are_equal("06:12:14", ts.to_string(), csf_);
+      
+      assert::is_true(time_span::try_parse("06:12:14", ts), csf_);
+      assert::are_equal("06:12:14", ts.to_string(), csf_);
+      
+      assert::is_true(time_span::try_parse("6:12:14:45", ts), csf_);
+      assert::are_equal("6.12:14:45", ts.to_string(), csf_);
+      
+      assert::is_true(time_span::try_parse("06.12:14:45", ts), csf_);
+      assert::are_equal("6.12:14:45", ts.to_string(), csf_);
+      
+      assert::is_true(time_span::try_parse("6.12:14:45.3440000", ts), csf_);
+      assert::are_equal("6.12:14:45.3440000", ts.to_string(), csf_);
+      
+      assert::is_true(time_span::try_parse("-6.12:14:45.3440000", ts), csf_);
+      assert::are_equal("-6.12:14:45.3440000", ts.to_string(), csf_);
+
+      ts = time_span::zero;
+
+      assert::is_false(time_span::try_parse("25:12:00", ts), csf_);
+      assert::are_equal("00:00:00", ts.to_string(), csf_);
+
+      assert::is_false(time_span::try_parse("6:61:00", ts), csf_);
+      assert::are_equal("00:00:00", ts.to_string(), csf_);
+      
+      assert::is_false(time_span::try_parse("6:00:61", ts), csf_);
+      assert::are_equal("00:00:00", ts.to_string(), csf_);
+      
+      assert::is_false(time_span::try_parse("6.12:14:45.344", ts), csf_);
+      assert::are_equal("00:00:00", ts.to_string(), csf_);
+      
+      assert::is_false(time_span::try_parse("6.12:14:45.344000", ts), csf_);
+      assert::are_equal("00:00:00", ts.to_string(), csf_);
+      
+      assert::is_false(time_span::try_parse("6.12:14:45.34400000", ts), csf_);
+      assert::are_equal("00:00:00", ts.to_string(), csf_);
+      
+      assert::is_false(time_span::try_parse("6.2:12:14:45.3440000", ts), csf_);
+      assert::are_equal("00:00:00", ts.to_string(), csf_);      
     }
   };
 }
