@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::time_out_exception exception.
+/// @brief Contains xtd::timeout_exception exception.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include "system_exception.h"
@@ -13,70 +13,70 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core exceptions
   /// @par Examples
-  /// The following example demonstrates how to throw and catch an time_out_exception.
-  /// @include time_out_exception.cpp
-  class time_out_exception : public system_exception {
+  /// The following example demonstrates how to throw and catch an timeout_exception.
+  /// @include timeout_exception.cpp
+  class timeout_exception : public system_exception {
   public:
     /// @name Constructors
     
     /// @{
-    /// @brief Create a new instance of class time_out_exception
+    /// @brief Create a new instance of class timeout_exception
     /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     /// @remarks Message is set with the default message associate to the exception.
-    explicit time_out_exception(const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(default_message(), info) {}
-    /// @brief Create a new instance of class time_out_exception
+    explicit timeout_exception(const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(default_message(), info) {}
+    /// @brief Create a new instance of class timeout_exception
     /// @param message Message string associate to the exception.
     /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-    explicit time_out_exception(const xtd::ustring& message, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, info) {}
-    /// @brief Create a new instance of class time_out_exception
+    explicit timeout_exception(const xtd::ustring& message, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, info) {}
+    /// @brief Create a new instance of class timeout_exception
     /// @param message Message string associate to the exception.
     /// @param error Error code associate to the exception.
     /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-    explicit time_out_exception(const xtd::ustring& message, const std::error_code& error, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, error, info) {}
-    /// @brief Create a new instance of class time_out_exception
+    explicit timeout_exception(const xtd::ustring& message, const std::error_code& error, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, error, info) {}
+    /// @brief Create a new instance of class timeout_exception
     /// @param message Message string associate to the exception.
     /// @param help_link Help link string associate to the exception.
     /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-    explicit time_out_exception(const xtd::ustring& message, const std::string& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, help_link, info) {}
-    /// @brief Create a new instance of class time_out_exception
+    explicit timeout_exception(const xtd::ustring& message, const std::string& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, help_link, info) {}
+    /// @brief Create a new instance of class timeout_exception
     /// @param message Message string associate to the exception.
     /// @param error Error code associate to the exception.
     /// @param help_link Help link string associate to the exception.
-    explicit time_out_exception(const xtd::ustring& message, const std::error_code& error, const std::string& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, error, help_link, info) {}
-    /// @brief Create a new instance of class time_out_exception
+    explicit timeout_exception(const xtd::ustring& message, const std::error_code& error, const std::string& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, error, help_link, info) {}
+    /// @brief Create a new instance of class timeout_exception
     /// @param inner_exception The exception that is the cause of the current exception.
     /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
     /// @remarks Message is set with the default message associate to the exception.
-    explicit time_out_exception(const std::exception& inner_exception, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(default_message(), inner_exception, info) {}
-    /// @brief Create a new instance of class time_out_exception
+    explicit timeout_exception(const std::exception& inner_exception, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(default_message(), inner_exception, info) {}
+    /// @brief Create a new instance of class timeout_exception
     /// @param message Message string associate to the exception.
     /// @param inner_exception The exception that is the cause of the current exception.
     /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-    explicit time_out_exception(const xtd::ustring& message, const std::exception& inner_exception, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, inner_exception, info) {}
-    /// @brief Create a new instance of class time_out_exception
+    explicit timeout_exception(const xtd::ustring& message, const std::exception& inner_exception, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, inner_exception, info) {}
+    /// @brief Create a new instance of class timeout_exception
     /// @param message Message string associate to the exception.
     /// @param inner_exception The exception that is the cause of the current exception.
     /// @param error Error code associate to the exception.
     /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-    explicit time_out_exception(const xtd::ustring& message, const std::exception& inner_exception, const std::error_code& error, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, inner_exception, error, info) {}
-    /// @brief Create a new instance of class time_out_exception
+    explicit timeout_exception(const xtd::ustring& message, const std::exception& inner_exception, const std::error_code& error, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, inner_exception, error, info) {}
+    /// @brief Create a new instance of class timeout_exception
     /// @param message Message string associate to the exception.
     /// @param inner_exception The exception that is the cause of the current exception.
     /// @param help_link Help link string associate to the exception.
     /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-    explicit time_out_exception(const xtd::ustring& message, const std::exception& inner_exception, const std::string& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, inner_exception, help_link, info) {}
-    /// @brief Create a new instance of class time_out_exception
+    explicit timeout_exception(const xtd::ustring& message, const std::exception& inner_exception, const std::string& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, inner_exception, help_link, info) {}
+    /// @brief Create a new instance of class timeout_exception
     /// @param message Message string associate to the exception.
     /// @param inner_exception The exception that is the cause of the current exception.
     /// @param error Error code associate to the exception.
     /// @param help_link Help link string associate to the exception.
     /// @param information (optional) Contains current information about member name, file path and  line number in the file where the exception is occurred. Typically #current_stack_frame_.
-    explicit time_out_exception(const xtd::ustring& message, const std::exception& inner_exception, const std::error_code& error, const std::string& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, inner_exception, error, help_link, info) {}
+    explicit timeout_exception(const xtd::ustring& message, const std::exception& inner_exception, const std::error_code& error, const std::string& help_link, const xtd::diagnostics::stack_frame& info = xtd::diagnostics::stack_frame::empty()) : system_exception(message, inner_exception, error, help_link, info) {}
     /// @}
     
     /// @cond
-    time_out_exception(const time_out_exception&) = default;
-    time_out_exception& operator =(const time_out_exception&) = default;
+    timeout_exception(const timeout_exception&) = default;
+    timeout_exception& operator =(const timeout_exception&) = default;
     /// @endcond
     
   private:
@@ -84,16 +84,16 @@ namespace xtd {
   };
 }
 
-/// @brief Helper on xtd::time_out_exception to call it with current stack frame information.
+/// @brief Helper on xtd::timeout_exception to call it with current stack frame information.
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to xtd::time_out_exception({any argument}, csf_)
+/// @remarks Is equivalent to xtd::timeout_exception({any argument}, csf_)
 /// @code
 /// void my_func() {
-///   if (invalid_info) throw time_out_exception_(); // same as : throw time_out_exception(csf_);
-///   if (invalid_value) throw time_out_exception_("Bad value"); // same as : throw time_out_exception("Bad value", csf_);
+///   if (invalid_info) throw timeout_exception_(); // same as : throw timeout_exception(csf_);
+///   if (invalid_value) throw timeout_exception_("Bad value"); // same as : throw timeout_exception("Bad value", csf_);
 ///   ...
 /// }
 /// @endcode
-#define time_out_exception_(...) time_out_exception(add_csf_(__VA_ARGS__))
+#define timeout_exception_(...) timeout_exception(add_csf_(__VA_ARGS__))

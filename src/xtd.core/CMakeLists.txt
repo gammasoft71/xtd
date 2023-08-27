@@ -336,8 +336,8 @@ add_sources(
   include/xtd/tick
   include/xtd/ticks.h
   include/xtd/ticks
-  include/xtd/time_out_exception.h
-  include/xtd/time_out_exception
+  include/xtd/timeout_exception.h
+  include/xtd/timeout_exception
   include/xtd/time_span.h
   include/xtd/time_span
   include/xtd/time_zone_info.h
