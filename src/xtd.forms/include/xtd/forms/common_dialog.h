@@ -111,7 +111,7 @@ namespace xtd {
       virtual void on_dialog_closed(const dialog_closed_event_args& e);
       
       /// @brief Raises the common_dialog::help_request event.
-      /// @param e An help_event_args that provides the event data.
+      /// @param e An xtd::forms::help_event_args that provides the event data.
       /// @remarks This method is invoked when the Help button is clicked. Inheriting classes can override this method to handle the event.
       virtual void on_help_request(help_event_args& e);
       

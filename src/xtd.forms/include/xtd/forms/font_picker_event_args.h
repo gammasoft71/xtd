@@ -15,7 +15,7 @@ namespace xtd {
     class control;
     /// @endcond
     
-    /// @brief Provides data for the control_added and control_removed events.
+    /// @brief Provides data for the xtd::forms::font_picker::font_picker_changed events.
     /// @par Header
     /// @code #include <xtd/forms/font_picker_event_args> @endcode
     /// @par Namespace

@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::elapsed_event_args event args.
+/// @brief Contains xtd::timers::elapsed_event_args event args.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include "../event_args.h"
