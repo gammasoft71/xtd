@@ -137,13 +137,13 @@ namespace xtd::tests {
     }
 
     void test_method_(operator_divide) {
-      assert::are_equal(21, (time_span {42} / time_span {2}).ticks(), csf_);
-      assert::are_equal(-21, (time_span {42} / time_span {-2}).ticks(), csf_);
+      assert::are_equal(21.0, (time_span {42} / time_span {2}), csf_);
+      assert::are_equal(-21.0, (time_span {42} / time_span {-2}), csf_);
       assert::are_equal(21, (time_span {42} / 2.0).ticks(), csf_);
       assert::are_equal(-21, (time_span {42} / -2.0).ticks(), csf_);
     }
     
-    void test_method_(operator_divide_by_zero) {
+    void test_method_(operator_divide_by_zero_exception) {
       assert::throws<divided_by_zero_exception>([]{time_span {42} / time_span {0};}, csf_);
       assert::throws<divided_by_zero_exception>([]{time_span {42} / .0;}, csf_);
     }
@@ -162,8 +162,8 @@ namespace xtd::tests {
     }
     
     void test_method_(operator_multiply) {
-      assert::are_equal(84, (time_span {42} * time_span {2}).ticks(), csf_);
-      assert::are_equal(-84, (time_span {42} * time_span {-2}).ticks(), csf_);
+      assert::are_equal(84, (time_span {42} * time_span {2}), csf_);
+      assert::are_equal(-84, (time_span {42} * time_span {-2}), csf_);
       assert::are_equal(84, (time_span {42} * 2.0).ticks(), csf_);
       assert::are_equal(-84, (time_span {42} * -2.0).ticks(), csf_);
     }
@@ -350,13 +350,13 @@ namespace xtd::tests {
     }
 
     void test_method_(divide) {
-      assert::are_equal(21, time_span {42}.divide(time_span {2}).ticks(), csf_);
-      assert::are_equal(-21, time_span {42}.divide(time_span {-2}).ticks(), csf_);
+      assert::are_equal(21.0, time_span {42}.divide(time_span {2}), csf_);
+      assert::are_equal(-21.0, time_span {42}.divide(time_span {-2}), csf_);
       assert::are_equal(21, time_span {42}.divide(2.0).ticks(), csf_);
       assert::are_equal(-21, time_span {42}.divide(-2.0).ticks(), csf_);
     }
     
-    void test_method_(divide_by_zero) {
+    void test_method_(divide_by_zero_exception) {
       assert::throws<divided_by_zero_exception>([]{time_span {42}.divide(time_span {0});}, csf_);
       assert::throws<divided_by_zero_exception>([]{time_span {42}.divide(.0);}, csf_);
     }
@@ -369,6 +369,11 @@ namespace xtd::tests {
     void test_method_(equals) {
       assert::is_true(time_span {42}.equals(time_span {42}), csf_);
       assert::is_false(time_span {42}.equals(time_span {-42}), csf_);
+    }
+    
+    void test_method_(equals_static) {
+      assert::is_true(time_span::equals(time_span {42}, time_span {42}), csf_);
+      assert::is_false(time_span::equals(time_span {42}, time_span {-42}), csf_);
     }
 
     void test_method_(from_days) {
@@ -470,8 +475,8 @@ namespace xtd::tests {
     }
 
     void test_method_(multiply) {
-      assert::are_equal(84, time_span {42}.multiply(time_span {2}).ticks(), csf_);
-      assert::are_equal(-84, time_span {42}.multiply(time_span {-2}).ticks(), csf_);
+      assert::are_equal(84, time_span {42}.multiply(time_span {2}), csf_);
+      assert::are_equal(-84, time_span {42}.multiply(time_span {-2}), csf_);
       assert::are_equal(84, time_span {42}.multiply(2.0).ticks(), csf_);
       assert::are_equal(-84, time_span {42}.multiply(-2.0).ticks(), csf_);
     }
@@ -492,10 +497,13 @@ namespace xtd::tests {
       assert::are_equal("-6.12:14:45.3440000", time_span::parse("-6.12:14:45.3440000").to_string(), csf_);
     }
     
-    void test_method_(parse_invalid) {
-      assert::throws<format_exception>([] {time_span::parse("25:12:00");}, csf_);
-      assert::throws<format_exception>([] {time_span::parse("6:61:00");}, csf_);
-      assert::throws<format_exception>([] {time_span::parse("6:00:61");}, csf_);      
+    void test_method_(parse_with_overflow_exception) {
+      assert::throws<overflow_exception>([] {time_span::parse("25:12:00");}, csf_);
+      assert::throws<overflow_exception>([] {time_span::parse("6:61:00");}, csf_);
+      assert::throws<overflow_exception>([] {time_span::parse("6:00:61");}, csf_);
+    }
+    
+    void test_method_(parse_with_format_exception) {
       assert::throws<format_exception>([] {time_span::parse("6.12:14:45.344");}, csf_);
       assert::throws<format_exception>([] {time_span::parse("6.12:14:45.344000");}, csf_);
       assert::throws<format_exception>([] {time_span::parse("6.12:14:45.34400000");}, csf_);
