@@ -2,6 +2,7 @@
 #include "../../include/xtd/as.h"
 #include "../../include/xtd/divided_by_zero_exception.h"
 #include "../../include/xtd/double_object.h"
+#include "../../include/xtd/int32_object.h"
 #include "../../include/xtd/int64_object.h"
 #include "../../include/xtd/math.h"
 
@@ -307,6 +308,12 @@ time_span time_span::negate() const noexcept {
   return time_span {-ticks_};
 }
 
+time_span parse(const ustring& value) {
+  time_span result;
+  if (try_parse(value, result) == false) throw format_exception {csf_};
+  return result;
+}
+
 time_span time_span::subtract(const time_span& ts) const noexcept {
   return time_span {ticks_ - ts.ticks_};
 }
@@ -342,6 +349,51 @@ ustring time_span::to_string(const ustring& format) const {
     case 'T': return ustring::format("{:d7}", math::abs(ticks() % ticks_per_second));
     default: throw xtd::format_exception("Invalid format");
   }
+}
+
+bool time_span::try_parse(const ustring& str, time_span& result) {
+  int32 days = 0, hours = 0, minutes = 0, seconds = 0, ticks = 0;
+  auto items = str.split({'-', ':', '.', '\0'}, string_split_options::remove_empty_entries);
+  
+  if (items.size() == 1ul) {
+    if (int32_object::try_parse(items[0], days) == false) return false;
+  }
+  
+  if (items.size() == 2ul) {
+    if (int32_object::try_parse(items[0], hours) == false) return false;
+    if (int32_object::try_parse(items[1], minutes) == false) return false;
+  }
+  
+  if (items.size() == 3ul) {
+    if (int32_object::try_parse(items[0], hours) == false) return false;
+    if (int32_object::try_parse(items[1], minutes) == false) return false;
+    if (int32_object::try_parse(items[2], seconds) == false) return false;
+  }
+  
+  if (items.size() == 4ul) {
+    if (int32_object::try_parse(items[0], days) == false) return false;
+    if (int32_object::try_parse(items[1], hours) == false) return false;
+    if (int32_object::try_parse(items[2], minutes) == false) return false;
+    if (int32_object::try_parse(items[3], seconds) == false) return false;
+  }
+  
+  if (items.size() == 5ul) {
+    if (items[4].size() != 7) return false;
+    
+    if (int32_object::try_parse(items[0], days) == false) return false;
+    if (int32_object::try_parse(items[1], hours) == false) return false;
+    if (int32_object::try_parse(items[2], minutes) == false) return false;
+    if (int32_object::try_parse(items[3], seconds) == false) return false;
+    if (int32_object::try_parse(items[4], ticks) == false) return false;
+  }
+  
+  if (items.size() > 5ul || str.last_index_of('-') > 0ul || (items.size() == 5ul && str.last_index_of(':') > str.last_index_of('.'))) return false;
+  
+  if (0 > hours || hours > 24 || 0 > minutes || minutes > 60 || 0 > seconds || seconds > 60) return false;
+  
+  result = time_span {days * ticks_per_day + hours * ticks_per_hour + minutes * ticks_per_minute + seconds * ticks_per_second + ticks}.negate();
+  if (str[0] == '-') result = result.negate();
+  return true;
 }
 
 time_span time_span::interval(double value, int scale) {
