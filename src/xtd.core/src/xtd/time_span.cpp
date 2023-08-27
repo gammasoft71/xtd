@@ -301,7 +301,7 @@ time_span time_span::from_ticks(xtd::ticks ticks) {
 }
 
 double time_span::multiply(const time_span& ts) const noexcept {
-  return ticks_ * ts.ticks_;
+  return as<double>(ticks_) * ts.ticks_;
 }
 
 time_span time_span::multiply(double factor) const noexcept {
