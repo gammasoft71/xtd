@@ -485,7 +485,7 @@ namespace xtd {
     /// | 'T'    | write absolute value of ticks fixed at 7 digits                                                                             |
     ustring to_string(const ustring& format) const;
     
-    /// @brief Converts the string representation of a time interval to its TimeSpan equivalent and returns a value that indicates whether the conversion succeeded.
+    /// @brief Converts the string representation of a time interval to its xtd::time_span equivalent and returns a value that indicates whether the conversion succeeded.
     /// @param value A string that specifies the time interval to convert.
     /// @param result When this method returns, contains an object that represents the time interval specified by value, or xtd::time_span::zero if the conversion failed.
     /// @return true if s was converted successfully; otherwise, false. This operation returns false if the value parameter is empty (""), has an invalid format, represents a time interval that is less than xtd::time_span::min_value or greater than xtd::time_span::max_value, or has at least one days, hours, minutes, or seconds component outside its valid range.
