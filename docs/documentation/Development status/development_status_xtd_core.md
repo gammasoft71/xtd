@@ -123,7 +123,7 @@
 | [system_exception_](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/system_exception.h)                                    | keyword       | ![progress](/pictures/progress100.png) |
 | [tick](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/tick.h)                                                             | class         | ![progress](/pictures/progress100.png) |
 | [ticks](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/ticks.h)                                                           | class         | ![progress](/pictures/progress100.png) |
-| [time_span](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/time_span.h)                                                   | class         | ![progress](/pictures/progress75.png)  |
+| [time_span](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/time_span.h)                                                   | class         | ![progress](/pictures/progress100.png) |
 | [time_zone_info](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/time_zone_info.h)                                         | class         | ![progress](/pictures/progress50.png)  |
 | [time_time_zone_not_found_exception](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/time_time_zone_not_found_exception.h) | exception     | ![progress](/pictures/progress100.png) |
 | [to_string](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/to_string.h)                                                   | operators     | ![progress](/pictures/progress100.png) |
@@ -396,9 +396,9 @@
 
 | Name                                                                                                                            | Type         | Status                                 |
 | ------------------------------------------------------------------------------------------------------------------------------- | ------------ | -------------------------------------- |
-| [elapsed_event_args](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/timers/elapsed_event_args.h)       | class        | ![progress](/pictures/progress0.png)   |
-| [elapsed_event_handler](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/timers/elapsed_event_handler.h) | delegate     | ![progress](/pictures/progress0.png)   |
-| [timer](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/timers/timer.h)                                 | class        | ![progress](/pictures/progress0.png)   |
+| [elapsed_event_args](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/timers/elapsed_event_args.h)       | class        | ![progress](/pictures/progress100.png) |
+| [elapsed_event_handler](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/timers/elapsed_event_handler.h) | delegate     | ![progress](/pictures/progress100.png) |
+| [timer](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/timers/timer.h)                                 | class        | ![progress](/pictures/progress100.png) |
 
 ## xtd::web::css
 
