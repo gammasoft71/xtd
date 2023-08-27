@@ -308,7 +308,7 @@ time_span time_span::negate() const noexcept {
   return time_span {-ticks_};
 }
 
-time_span parse(const ustring& value) {
+time_span time_span::parse(const ustring& value) {
   time_span result;
   if (try_parse(value, result) == false) throw format_exception {csf_};
   return result;
