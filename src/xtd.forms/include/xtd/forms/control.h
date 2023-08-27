@@ -778,7 +778,7 @@ namespace xtd {
       std::shared_ptr<xtd::iasync_result> begin_invoke(delegate<void(std::vector<std::any>)> method, const std::vector<std::any>& args) override;
       
       /// @brief Brings the control to the front of the z-order.
-      /// @remarks The control is moved to the front of the z-order. If the control is a child of another control, the child control is moved to the front of the z-order. bring_to_front does not make a control a top-level control, and it does not raise the paint event.
+      /// @remarks The control is moved to the front of the z-order. If the control is a child of another control, the child control is moved to the front of the z-order. bring_to_front does not make a control a top-level control, and it does not raise the xtd::forms::control::paint event.
       virtual void bring_to_front();
       
       int32 compare_to(const control& value) const noexcept override;
@@ -975,7 +975,7 @@ namespace xtd {
       std::optional<object_ref> invoke(delegate<void(std::vector<std::any>)> method, std::any arg) override;
       
       /// @brief Forces the control to apply layout logic to all its child controls.
-      /// @remarks If the suspend_layout method was called before calling the perform_layout method, the layout event is suppressed.
+      /// @remarks If the suspend_layout method was called before calling the perform_layout method, the xtd::forms::control::layout event is suppressed.
       void perform_layout();
       
       /// @brief Computes the location of the specified screen point into client coordinates.
@@ -1008,7 +1008,7 @@ namespace xtd {
       /// @brief Resumes usual layout logic, optionally forcing an immediate layout of pending layout requests.
       /// @param perform_layout true to execute pending layout requests; otherwise, false.
       /// @remarks Calling the resume_layout method forces an immediate layout if there are any pending layout requests. When the perform_layout parameter is set to true, an immediate layout occurs if there are any pending layout requests.
-      /// @remarks The suspend_layout and resume_layout methods are used in tandem to suppress multiple layout events while you adjust multiple attributes of the control. For example, you would typically call the suspend_layout method, then set the size, location, anchor, or dock properties of the control, and then call the resume_layout method to enable the changes to take effect.
+      /// @remarks The suspend_layout and resume_layout methods are used in tandem to suppress multiple xtd::forms::control::layout events while you adjust multiple attributes of the control. For example, you would typically call the suspend_layout method, then set the size, location, anchor, or dock properties of the control, and then call the resume_layout method to enable the changes to take effect.
       /// @remarks There must be no pending calls to suspend_layout for resume_layout to be successfully called.
       /// @note When adding several controls to a parent control, it is recommended that you call the suspend_layout method before initializing the controls to be added. After adding the controls to the parent control, call the resume_layout method. This will increase the performance of applications with many controls.
       void resume_layout(bool perform_layout);
@@ -1046,7 +1046,7 @@ namespace xtd {
       
       /// @brief Temporarily suspends the layout logic for the control.
       /// @remarks The layout logic of the control is suspended until the resume_layout method is called.
-      /// @remarks The suspend_layout and resume_layout methods are used in tandem to suppress multiple layout events while you adjust multiple attributes of the control. For example, you would typically call the suspend_layout method, then set the size, location, anchor, or dock properties of the control, and then call the resume_layout method to enable the changes to take effect.
+      /// @remarks The suspend_layout and resume_layout methods are used in tandem to suppress multiple xtd::forms::control::layout events while you adjust multiple attributes of the control. For example, you would typically call the suspend_layout method, then set the size, location, anchor, or dock properties of the control, and then call the resume_layout method to enable the changes to take effect.
       /// @remarks There must be no pending calls to suspend_layout for resume_layout to be successfully called.
       /// @note When adding several controls to a parent control, it is recommended that you call the suspend_layout method before initializing the controls to be added. After adding the controls to the parent control, call the resume_layout method. This will increase the performance of applications with many controls.
       void suspend_layout();
@@ -1109,13 +1109,13 @@ namespace xtd {
       event<control, event_handler> control_appearance_changed;
       
       /// @brief Occurs when the xtd::forms::control is clicked.
-      /// @remarks The click event passes an xtd::event_args to its event handler, so it only indicates that a click has occurred. If you need more specific mouse information (button, number of clicks, wheel rotation, or location), use the xtd::forms::control::mouse_click event. However, the xtd::forms::control::mouse_click event will not be raised if the click is caused by action other than that of the mouse, such as pressing the ENTER key.
-      /// @remarks A double-click is determined by the mouse settings of the user's operating system. The user can set the time between clicks of a mouse button that should be considered a double-click rather than two clicks. The click event is raised every time a control is double-clicked. For example, if you have event handlers for the click and double_click events of a xtd::forms::form, the click and double_click events are raised when the form is double-clicked and both methods are called. If a control is double-clicked and that control does not support the double_click event, the click event might be raised twice.
+      /// @remarks The xtd::forms::control::click event passes an xtd::event_args to its event handler, so it only indicates that a click has occurred. If you need more specific mouse information (button, number of clicks, wheel rotation, or location), use the xtd::forms::control::mouse_click event. However, the xtd::forms::control::mouse_click event will not be raised if the click is caused by action other than that of the mouse, such as pressing the ENTER key.
+      /// @remarks A double-click is determined by the mouse settings of the user's operating system. The user can set the time between clicks of a mouse button that should be considered a double-click rather than two clicks. The xtd::forms::control::click event is raised every time a control is double-clicked. For example, if you have event handlers for the xtd::forms::control::click and xtd::forms::control::double_click events of a xtd::forms::form, the xtd::forms::control::click and xtd::forms::control::double_click events are raised when the form is double-clicked and both methods are called. If a control is double-clicked and that control does not support the xtd::forms::control::double_click event, the xtd::forms::control::click event might be raised twice.
       /// @remarks You must set the standard_click value of xtd::forms::control_styles to true for this event to be raised.
       /// @note The following events are not raised for the xtd::forms::tab_control class unless there is at least one xtd::forms::tab_page in the xtd::forms::tab_control. xtd::forms::tab_control::tab_pages collection: xtd::forms::control::click, xtd::forms::control::double_click, xtd::forms::control::mouse_down, xtd::forms::control::mouse_up, xtd::forms::control::mouse_hover, xtd::forms::control::mouse_enter, xtd::forms::control::mouse_leave and xtd::forms::control::mouse_move. If there is at least one xtd::forms::tab_page in the collection, and the user interacts with the tab control's header (where the xtd::forms::tab_page names appear), the xtd::forms::tab_control raises the appropriate event. However, if the user interaction is within the client area of the tab page, the xtd::forms::tab_page raises the appropriate event.
       /// @par Notes to Inheritors
-      /// Inheriting from a standard Windows Forms control and changing the standard_click or standard_double_click values of xtd::forms::control_styles to true can cause unexpected behavior or have no effect at all if the control does not support the click or double_click events.
-      /// @remarks The following table lists Windows Forms controls and which event (click or double_click) is raised in response to the mouse action specified.
+      /// Inheriting from a standard Windows Forms control and changing the standard_click or standard_double_click values of xtd::forms::control_styles to true can cause unexpected behavior or have no effect at all if the control does not support the click or xtd::forms::control::double_click events.
+      /// @remarks The following table lists Windows Forms controls and which event (xtd::forms::control::click or xtd::forms::control::double_click) is raised in response to the mouse action specified.
       /// | Control                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | Left Mouse Click | Left Mouse Double Click | Right Mouse Click | Right Mouse Click   | Middle Mouse Click | Middle Mouse Double Click | XButton1 Mouse Click | XButton1 Mouse Double-Click | XButton2 Mouse Click | XButton2 Mouse Double-Click |
       /// | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- | ----------------------- | ----------------- | ------------------- | ------------------ | ------------------------- | -------------------- | --------------------------- | -------------------- | --------------------------- |
       /// | xtd::forms::month_calendar, xtd::forms::date_time_picker, xtd::forms::h_scroll_bar, xtd::forms::v_scroll_bar                                                                                                                                                                                                                                                                                                                                                                | none             | none                    | none              | none                | none               | none                      | none                 | none                        | none                 | none                        |
@@ -1157,12 +1157,12 @@ namespace xtd {
       event<control, event_handler> dock_changed;
       
       /// @brief Occurs when the xtd::forms::control is double-clicked.
-      /// @remarks A double-click is determined by the mouse settings of the user's operating system. The user can set the time between clicks of a mouse button that should be considered a double-click rather than two clicks. The click event is raised every time a control is double-clicked. For example, if you have event handlers for the click and double_click events of a xtd::forms::form, the click and double_click events are raised when the form is double-clicked and both methods are called. If a control is double-clicked and that control does not support the double_click event, the click event might be raised twice.
+      /// @remarks A double-click is determined by the mouse settings of the user's operating system. The user can set the time between clicks of a mouse button that should be considered a double-click rather than two clicks. The click event is raised every time a control is double-clicked. For example, if you have event handlers for the xtd::forms::control::click and xtd::forms::control::double_click events of a xtd::forms::form, the xtd::forms::control::click and xtd::forms::control::double_click events are raised when the form is double-clicked and both methods are called. If a control is double-clicked and that control does not support the xtd::forms::control::double_click event, the click event might be raised twice.
       /// @remarks You must set the standard_double_click and standard_click value of xtd::forms::control_styles to true for this event to be raised.
       /// @note The following events are not raised for the xtd::forms::tab_control class unless there is at least one xtd::forms::tab_page in the xtd::forms::tab_control. xtd::forms::tab_control::tab_pages collection: xtd::forms::control::click, xtd::forms::control::double_click, xtd::forms::control::mouse_down, xtd::forms::control::mouse_up, xtd::forms::control::mouse_hover, xtd::forms::control::mouse_enter, xtd::forms::control::mouse_leave and xtd::forms::control::mouse_move. If there is at least one xtd::forms::tab_page in the collection, and the user interacts with the tab control's header (where the xtd::forms::tab_page names appear), the xtd::forms::tab_control raises the appropriate event. However, if the user interaction is within the client area of the tab page, the xtd::forms::tab_page raises the appropriate event.
       /// @par Notes to Inheritors
-      /// Inheriting from a standard Windows Forms control and changing the standard_click or standard_double_click values of xtd::forms::control_styles to true can cause unexpected behavior or have no effect at all if the control does not support the click or double_click events.
-      /// @remarks The following table lists Windows Forms controls and which event (click or double_click) is raised in response to the mouse action specified.
+      /// Inheriting from a standard Windows Forms control and changing the standard_click or standard_double_click values of xtd::forms::control_styles to true can cause unexpected behavior or have no effect at all if the control does not support the xtd::forms::control::click or xtd::forms::control::double_click events.
+      /// @remarks The following table lists Windows Forms controls and which event (xtd::forms::control::click or xtd::forms::control::double_click) is raised in response to the mouse action specified.
       /// | Control                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | Left Mouse Click | Left Mouse Double Click | Right Mouse Click | Right Mouse Click   | Middle Mouse Click | Middle Mouse Double Click | XButton1 Mouse Click | XButton1 Mouse Double-Click | XButton2 Mouse Click | XButton2 Mouse Double-Click |
       /// | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- | ----------------------- | ----------------- | ------------------- | ------------------ | ------------------------- | -------------------- | --------------------------- | -------------------- | --------------------------- |
       /// | xtd::forms::month_calendar, xtd::forms::date_time_picker, xtd::forms::h_scroll_bar, xtd::forms::v_scroll_bar                                                                                                                                                                                                                                                                                                                                                                | none             | none                    | none              | none                | none               | none                      | none                 | none                        | none                 | none                        |
@@ -1196,18 +1196,18 @@ namespace xtd {
       /// 5. xtd::forms::control::validating event
       /// 6. xtd::forms::control::validated event
       /// @remarks If the causes_validation property is set to false, the xtd::forms::control::validating and xtd::forms::control::validated events are suppressed.
-      /// @remarks Note The got_focus and lost_focus events are low-level focus events that are tied to the WM_KILLFOCUS and WM_SETFOCUS Windows messages. Typically, the got_focus and lost_focus events are only used when updating when writing custom controls. Instead the enter and leave events should be used for all controls except the xtd::forms::form class, which uses the activated and deactivate events.
-      /// @warning Do not attempt to set focus from within the enter, got_focus, leave, lost_focus, validating, or validated event handlers. Doing so can cause your application or the operating system to stop responding.
+      /// @remarks Note The xtd::forms::control::got_focus and xtd::forms::control::lost_focus events are low-level focus events that are tied to the WM_KILLFOCUS and WM_SETFOCUS Windows messages. Typically, the xtd::forms::control::got_focus and xtd::forms::control::lost_focus events are only used when updating when writing custom controls. Instead the enter and leave events should be used for all controls except the xtd::forms::form class, which uses the activated and deactivate events.
+      /// @warning Do not attempt to set focus from within the xtd::forms::control::enter, xtd::forms::control::got_focus, xtd::forms::control::leave, xtd::forms::control::lost_focus, xtd::forms::control::validating, or xtd::forms::control::validated event handlers. Doing so can cause your application or the operating system to stop responding.
       /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
       event<control, event_handler> got_focus;
       
       /// @brief Occurs when a handle is created for the xtd::forms::control.
-      /// @remarks A handle is created when the xtd::forms::control is displayed for the first time. For example, if a xtd::forms::control is created that has visible set to false, the handle_created event will not be raised until visible is set to true.
+      /// @remarks A handle is created when the xtd::forms::control is displayed for the first time. For example, if a xtd::forms::control is created that has visible set to false, the xtd::forms::control::handle_created event will not be raised until visible is set to true.
       /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
       event<control, event_handler> handle_created;
       
       /// @brief Occurs when the control's handle is in the process of being destroyed.
-      /// @remarks During the handle_destroyed event, the control is still a valid Windows control and the handle can be recreated by calling the recreate_handle method.
+      /// @remarks During the xtd::forms::control::handle_destroyed event, the control is still a valid Windows control and the handle can be recreated by calling the recreate_handle method.
       /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
       event<control, event_handler> handle_destroyed;
       
@@ -1236,7 +1236,7 @@ namespace xtd {
       /// 1. xtd::forms::control::key_down event
       /// 1. xtd::forms::control::key_press event
       /// 1. xtd::forms::control::key_up event
-      /// @remarks To handle keyboard events only at the form level and not enable other controls to receive keyboard events, set the xtd::fomrs::key_press_event_args::handled property in your form's xtd::fomrs::control::key_press event-handling method to true. Certain keys, such as the TAB, RETURN, ESC, and arrow keys are handled by controls automatically. To have these keys raise the xtd::fomrs::control::key_down event, you must override the is_input_key method in each control on your form. The code for the override of the is_input_key would need to determine if one of the special keys is pressed and return a value of true. Instead of overriding the is_input_key method, you can handle the preview_key_down event and set the is_input_key property to true.
+      /// @remarks To handle keyboard events only at the form level and not enable other controls to receive keyboard events, set the xtd::forms::key_press_event_args::handled property in your form's xtd::forms::control::key_press event-handling method to true. Certain keys, such as the TAB, RETURN, ESC, and arrow keys are handled by controls automatically. To have these keys raise the xtd::forms::control::key_down event, you must override the is_input_key method in each control on your form. The code for the override of the is_input_key would need to determine if one of the special keys is pressed and return a value of true. Instead of overriding the is_input_key method, you can handle the preview_key_down event and set the is_input_key property to true.
       /// @par Examples
       /// The following code example demonstrates the use of control keyboard events.
       /// @include key_events.cpp
@@ -1248,9 +1248,9 @@ namespace xtd {
       /// 1. xtd::forms::control::key_down event
       /// 1. xtd::forms::control::key_press event
       /// 1. xtd::forms::control::key_up event
-      /// @remarks The xtd::fomrs::control::key_press event is not raised by non-character keys other than space and backspace; however, the non-character keys do raise the xtd::fomrs::control::key_down and xtd::fomrs::control::key_up events.
+      /// @remarks The xtd::forms::control::key_press event is not raised by non-character keys other than space and backspace; however, the non-character keys do raise the xtd::forms::control::key_down and xtd::forms::control::key_up events.
       /// @remarks Use the xtd::forms::key_press_event_args::key_char property to sample keystrokes at run time and to consume or modify a subset of common keystrokes.
-      /// @remarks To handle keyboard events only at the form level and not enable other controls to receive keyboard events, set the xtd::forms::key_press_event_args::handled property in your form's xtd::fomrs::control::key_press event-handling method to true.
+      /// @remarks To handle keyboard events only at the form level and not enable other controls to receive keyboard events, set the xtd::forms::key_press_event_args::handled property in your form's xtd::forms::control::key_press event-handling method to true.
       /// @par Examples
       /// The following code example demonstrates the use of control keyboard events.
       /// @include key_events.cpp
@@ -1262,7 +1262,7 @@ namespace xtd {
       /// 1. xtd::forms::control::key_down event
       /// 1. xtd::forms::control::key_press event
       /// 1. xtd::forms::control::key_up event
-      /// @remarks To handle keyboard events only at the form level and not enable other controls to receive keyboard events, set the xtd::forms::key_press_event_args::handled property in your form's xtd::fomrs::control::key_press event-handling method to true. Certain keys, such as the TAB, RETURN, ESC, and arrow keys are handled by controls automatically. To have these keys raise the xtd::fomrs::control::key_down event, you must override the is_input_key method in each control on your form. The code for the override of the is_input_key would need to determine if one of the special keys is pressed and return a value of true. Instead of overriding the is_input_key method, you can handle the preview_key_down event and set the is_input_key property to true.
+      /// @remarks To handle keyboard events only at the form level and not enable other controls to receive keyboard events, set the xtd::forms::key_press_event_args::handled property in your form's xtd::forms::control::key_press event-handling method to true. Certain keys, such as the TAB, RETURN, ESC, and arrow keys are handled by controls automatically. To have these keys raise the xtd::forms::control::key_down event, you must override the is_input_key method in each control on your form. The code for the override of the is_input_key would need to determine if one of the special keys is pressed and return a value of true. Instead of overriding the is_input_key method, you can handle the preview_key_down event and set the is_input_key property to true.
       /// @par Examples
       /// The following code example demonstrates the use of control keyboard events.
       /// @include key_events.cpp
@@ -1270,7 +1270,7 @@ namespace xtd {
       event<control, key_event_handler> key_up;
       
       /// @brief Occurs when a xtd::forms::control should reposition its child controls.
-      /// @remarks The layout event occurs when child controls are added or removed, when the bounds of the control changes, and when other changes occur that can affect the layout of the control. The layout event can be suppressed using the suspend_layout and resume_layout methods. Suspending layout enables you to perform multiple actions on a control without having to perform a layout for each change. For example, if you resize and move a control, each operation would raise a layout event.
+      /// @remarks The xtd::forms::control::layout event occurs when child controls are added or removed, when the bounds of the control changes, and when other changes occur that can affect the layout of the control. The xtd::forms::control::layout event can be suppressed using the suspend_layout and resume_layout methods. Suspending layout enables you to perform multiple actions on a control without having to perform a layout for each change. For example, if you resize and move a control, each operation would raise a xtd::forms::control::layout event.
       /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
       event<control, event_handler> layout;
       
@@ -1296,8 +1296,8 @@ namespace xtd {
       /// 6. xtd::forms::control::validated event
       /// @remarks If the causes_validation property is set to false, the xtd::forms::control::validating and xtd::forms::control::validated events are suppressed.
       /// @remarks If the cancel property of the xtd::forms::cancel_event_args is set to true in the validating event delegate, all events that would usually occur after the validating event are suppressed.
-      /// @remarks Note The got_focus and lost_focus events are low-level focus events that are tied to the WM_KILLFOCUS and WM_SETFOCUS Windows messages. Typically, the got_focus and lost_focus events are only used when updating when writing custom controls. Instead the enter and leave events should be used for all controls except the xtd::forms::form class, which uses the activated and deactivate events.
-      /// @warning Do not attempt to set focus from within the enter, got_focus, leave, lost_focus, validating, or validated event handlers. Doing so can cause your application or the operating system to stop responding.
+      /// @remarks Note The xtd::forms::control::got_focus and xtd::forms::control::lost_focus events are low-level focus events that are tied to the WM_KILLFOCUS and WM_SETFOCUS Windows messages. Typically, the xtd::forms::control::got_focus and xtd::forms::control::lost_focus events are only used when updating when writing custom controls. Instead the enter and leave events should be used for all controls except the xtd::forms::form class, which uses the activated and deactivate events.
+      /// @warning Do not attempt to set focus from within the xtd::forms::control::enter, xtd::forms::control::got_focus, xtd::forms::control::leave, xtd::forms::control::lost_focus, xtd::forms::control::validating, or xtd::forms::control::validated event handlers. Doing so can cause your application or the operating system to stop responding.
       /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
       event<control, event_handler> lost_focus;
       
@@ -1330,7 +1330,7 @@ namespace xtd {
       /// 8. xtd::forms::control::mouse_up event
       /// @remarks For this to occur, the various events cannot be disabled in the control's class.
       /// @par important
-      /// double_click events are logically higher-level events of a control. They may be raised by other user actions, such as shortcut key combinations.
+      /// xtd::forms::control::double_click events are logically higher-level events of a control. They may be raised by other user actions, such as shortcut key combinations.
       /// @par Examples
       /// The following code example demonstrates the use of control mouse events.
       /// @include mouse_events.cpp
@@ -1442,7 +1442,7 @@ namespace xtd {
       event<control, event_handler> move;
       
       /// @brief Occurs when the xtd::forms::control is redrawn.
-      /// @remarks The paint event is raised when the control is redrawn. It passes an instance of paint_event_args to the method(s) that handles the paint event. The paint event is raised when the control is redrawn. It passes an instance of paint_event_args to the method(s) that handles the paint event.
+      /// @remarks The xtd::forms::control::paint event is raised when the control is redrawn. It passes an instance of paint_event_args to the method(s) that handles the xtd::forms::control::paint event. The xtd::forms::control::paint event is raised when the control is redrawn. It passes an instance of paint_event_args to the method(s) that handles the xtd::forms::control::paint event.
       /// @remarks When creating a new custom control or an inherited control with a different visual appearance, you must provide code to render the control by overriding the on_paint method.
       /// @par Examples
       /// The following code example demonstrates the use of control paint events.
@@ -1462,9 +1462,9 @@ namespace xtd {
       
       /// @brief Occurs when the xtd::forms::control is resized.
       /// @remarks To determine the size of the resized control, you can cast the sender parameter of the registered control_event_handler method to a control and get its size property (or height and width properties individually).
-      /// @remarks To handle custom layouts, use the layout event instead of the resize event. The layout event is raised in response to a resize event, but also in response to other changes that affect the layout of the control.
+      /// @remarks To handle custom layouts, use the xtd::forms::control::layout event instead of the xtd::forms::control::resize event. The xtd::forms::control::layout event is raised in response to a xtd::forms::control::resize event, but also in response to other changes that affect the layout of the control.
       /// @par Examples
-      /// The following code example demonstrates the use of control resize event.
+      /// The following code example demonstrates the use of control xtd::forms::control::resize event.
       /// @include dot_matrix_display.cpp
       /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
       event<control, event_handler> resize;

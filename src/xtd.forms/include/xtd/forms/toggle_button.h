@@ -177,7 +177,7 @@ namespace xtd {
       
       void on_enabled_changed(const event_args& e) override;
       
-      /// @brief Raises the handle_created event.
+      /// @brief Raises the xtd::forms::control::handle_created event.
       /// @param e An event_args that contains the event data.
       void on_handle_created(const event_args& e) override;
       

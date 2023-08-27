@@ -194,12 +194,12 @@ namespace xtd {
       
       /// @brief Gets a value indicating whether the Help button is displayed in the file dialog box.
       /// @return true if the dialog box includes a help button; otherwise, false. The default value is false.
-      /// @remarks A help_requested event is raised when the user clicks the Help button.
+      /// @remarks A xtd::forms::control::help_requested event is raised when the user clicks the Help button.
       virtual bool show_help() const noexcept;
       /// @brief Sets a value indicating whether the Help button is displayed in the file dialog box.
       /// @param value true if the dialog box includes a help button; otherwise, false. The default value is false.
       /// @return Current file_dialog.
-      /// @remarks A help_requested event is raised when the user clicks the Help button.
+      /// @remarks A xtd::forms::control::help_requested event is raised when the user clicks the Help button.
       virtual file_dialog& show_help(bool value);
       
       /// @brief Gets a value indicating whether hidden files are displayed in the file dialog box.
