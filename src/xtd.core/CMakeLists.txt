@@ -724,6 +724,8 @@ add_sources(
   include/xtd/threading/abandoned_mutex_exception
   include/xtd/threading/auto_reset_event.h
   include/xtd/threading/auto_reset_event
+  include/xtd/threading/barrier.h
+  include/xtd/threading/barrier
   include/xtd/threading/cancellation_token.h
   include/xtd/threading/cancellation_token
   include/xtd/threading/cancellation_token_registration.h
@@ -919,6 +921,7 @@ add_sources(
   src/xtd/security/secure_string.cpp
   src/xtd/speech/synthesis/prompt.cpp
   src/xtd/speech/synthesis/speech_synthesizer.cpp
+  src/xtd/threading/barrier.cpp
   src/xtd/threading/cancellation_token.cpp
   src/xtd/threading/cancellation_token_registration.cpp
   src/xtd/threading/cancellation_token_source.cpp
