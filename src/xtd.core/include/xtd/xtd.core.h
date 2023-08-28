@@ -146,6 +146,8 @@
 #include "speech/synthesis/synthesizer_state.h"
 #include "threading/abandoned_mutex_exception.h"
 #include "threading/auto_reset_event.h"
+#include "threading/barrier.h"
+#include "threading/barrier_post_phase_exception.h"
 #include "threading/cancellation_token.h"
 #include "threading/cancellation_token_registration.h"
 #include "threading/cancellation_token_source.h"
