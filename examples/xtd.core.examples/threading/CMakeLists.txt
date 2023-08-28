@@ -5,6 +5,8 @@ find_package(xtd REQUIRED)
 
 add_projects(
   auto_reset_event
+  barrier
+  barrier_simple
   event_wait_handle
   interlocked
   interlocked_decrement
