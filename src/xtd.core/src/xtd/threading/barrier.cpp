@@ -1,5 +1,5 @@
-#include "../../../include/xtd/threading/manual_reset_event.h"
 #include "../../../include/xtd/threading/barrier.h"
+#include "../../../include/xtd/threading/barrier_post_phase_exception.h"
 #include "../../../include/xtd/threading/semaphore.h"
 #include "../../../include/xtd/argument_out_of_range_exception.h"
 #include "../../../include/xtd/as.h"
@@ -89,8 +89,21 @@ bool barrier::signal_and_wait(int32 milliseconds_timeout) {
     data_->participants_remaining--;
     
     if (data_->participants_remaining == 0) {
-      if (!data_->post_phase_action.is_empty()) data_->post_phase_action(*this);
-      
+      data_->run_post_phase_action = true;
+      try {
+        if (!data_->post_phase_action.is_empty()) data_->post_phase_action(*this);
+      } catch(...) {
+        data_->run_post_phase_action = false;
+        
+        data_->current_phase_number++;
+        data_->participants_remaining = data_->participant_count;
+        
+        for (int i = 0; i < data_->participant_count; i++)
+          data_->phase_semaphore.release();
+        throw barrier_post_phase_exception {csf_};
+      }
+      data_->run_post_phase_action = false;
+
       data_->current_phase_number++;
       data_->participants_remaining = data_->participant_count;
       
@@ -104,6 +117,7 @@ bool barrier::signal_and_wait(int32 milliseconds_timeout) {
 bool barrier::signal_and_wait(const cancellation_token& cancellation_token) {
   return signal_and_wait(timeout::infinite, cancellation_token);
 }
+
 bool barrier::signal_and_wait(const time_span& timeout) {
   return signal_and_wait(as<int32>(timeout.total_milliseconds()));
 }

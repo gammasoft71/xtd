@@ -726,6 +726,8 @@ add_sources(
   include/xtd/threading/auto_reset_event
   include/xtd/threading/barrier.h
   include/xtd/threading/barrier
+  include/xtd/threading/barrier_post_phase_exception.h
+  include/xtd/threading/barrier_post_phase_exception
   include/xtd/threading/cancellation_token.h
   include/xtd/threading/cancellation_token
   include/xtd/threading/cancellation_token_registration.h
