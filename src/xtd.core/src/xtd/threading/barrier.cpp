@@ -10,7 +10,7 @@ using namespace xtd;
 using namespace xtd::threading;
 
 struct barrier::data : object {
-  const cancellation_token* cancellation_token = nullptr;
+  const threading::cancellation_token* cancellation_token = nullptr;
   int32 current_phase_number = 0;
   int32 participant_count = 0;
   int32 participants_remaining = 0;
