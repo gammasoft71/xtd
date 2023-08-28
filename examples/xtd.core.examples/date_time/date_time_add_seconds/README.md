@@ -22,8 +22,8 @@ xtdc run
 Original date: 09/08/2014/16:00:00.0000000 (635457888000000000 ticks)
 
 Second date:   09/08/2014/16:00:30.0000000 (635457888300000000 ticks)
-Difference between dates: Mon Jan  1 00:00:30 0001 (300000000 ticks)
+Difference between dates: 00:00:30 (300000000 ticks)
 
 Third date:    09/09/2014/16:00:00.0000000 (635458752000000000 ticks)
-Difference between dates: Tue Jan  2 00:00:00 0001 (864000000000 ticks)
+Difference between dates: 1.00:00:00 (864000000000 ticks)
 ```
