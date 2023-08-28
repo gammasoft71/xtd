@@ -19,6 +19,7 @@
 * [xtd::speech::synthesis](#xtdspeechsynthesis)
 * [xtd::text](#xtdtext)
 * [xtd::threading](#xtdthreading)
+* [xtd::threading::tasks](#xtdthreadingtasks)
 * [xtd::timers](#xtdtimers)
 * [xtd::web::css](#xtdwebcss)
 
@@ -442,6 +443,8 @@
 
 | Name                                                                                                                                                                 | Type         | Status                                 |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | -------------------------------------- |
+| [barrier](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/threading/barrier.h)                                                               | class        | ![progress](/pictures/progress0.png)   |
+| [barrier_post_phase_exception](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/threading/barrier_post_phase_exception.h)                     | exception    | ![progress](/pictures/progress0.png)   |
 | [abandoned_mutex_exception](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/threading/abandoned_mutex_exception.h)                           | exception    | ![progress](/pictures/progress100.png) |
 | [auto_reset_event](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/threading/auto_reset_event.h)                                             | class        | ![progress](/pictures/progress100.png) |
 | [cancellation_token](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/threading/cancellation_token.h)                                         | class        | ![progress](/pictures/progress50.png)  |
@@ -458,6 +461,7 @@
 | [registered_wait_handle](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/threading/registered_wait_handle.h)                                 | class        | ![progress](/pictures/progress100.png) |
 | [semaphore](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/threading/semaphore.h)                                                           | class        | ![progress](/pictures/progress100.png) |
 | [semaphore_full_execption](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/threading/semaphore_full_execption.h)                             | exception    | ![progress](/pictures/progress100.png) |
+| [spin_lock](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/threading/spin_lock.h)                                                           | class        | ![progress](/pictures/progress0.png)   |
 | [synchronization_lock_exception](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/threading/synchronization_lock_exception.h)                 | exception    | ![progress](/pictures/progress100.png) |
 | [thread](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/threading/thread.h)                                                                 | class        | ![progress](/pictures/progress100.png) |
 | [thread_abort_exception](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/threading/thread_abort_exception.h)                                 | exception    | ![progress](/pictures/progress100.png) |
@@ -474,6 +478,16 @@
 | [wait_handle](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/threading/wait_handle.h)                                                       | class        | ![progress](/pictures/progress100.png) |
 | [wait_handle_cannot_be_opened_exception](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/threading/wait_handle_cannot_be_opened_exception.h) | exception    | ![progress](/pictures/progress100.png) |
 | [wait_or_timer_callback](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/threading/wait_or_timer_callback.h)                                 | delegate     | ![progress](/pictures/progress100.png) |
+
+## xtd::threading::tasks
+
+| Name                                                                                                                                                                 | Type         | Status                                 |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | -------------------------------------- |
+| [itask](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/threading/itask.h)                                                                   | interface    | ![progress](/pictures/progress0.png)   |
+| [parallel](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/threading/parallel.h)                                                             | class        | ![progress](/pictures/progress0.png)   |
+| [task](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/threading/task.h)                                                                     | class        | ![progress](/pictures/progress0.png)   |
+| [task_factory](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/threading/task_factory.h)                                                     | class        | ![progress](/pictures/progress0.png)   |
+| [task_status](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/threading/task_status.h)                                                       | enumeration  | ![progress](/pictures/progress0.png)   |
 
 ## xtd::timers
 
