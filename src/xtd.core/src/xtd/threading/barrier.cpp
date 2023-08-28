@@ -1,5 +1,4 @@
 #include "../../../include/xtd/threading/barrier.h"
-#include "../../../include/xtd/threading/barrier_post_phase_exception.h"
 #include "../../../include/xtd/threading/semaphore.h"
 #include "../../../include/xtd/argument_out_of_range_exception.h"
 #include "../../../include/xtd/as.h"
@@ -18,6 +17,7 @@ struct barrier::data : object {
   action<barrier&> post_phase_action;
   bool run_post_phase_action = false;
   semaphore phase_semaphore;
+  bool throw_barrier_post_phase_exception = false;
 };
 
 barrier::barrier() : barrier(0) {
@@ -93,14 +93,7 @@ bool barrier::signal_and_wait(int32 milliseconds_timeout) {
       try {
         if (!data_->post_phase_action.is_empty()) data_->post_phase_action(*this);
       } catch(...) {
-        data_->run_post_phase_action = false;
-        
-        data_->current_phase_number++;
-        data_->participants_remaining = data_->participant_count;
-        
-        for (int i = 0; i < data_->participant_count; i++)
-          data_->phase_semaphore.release();
-        throw barrier_post_phase_exception {csf_};
+        data_->throw_barrier_post_phase_exception = true;
       }
       data_->run_post_phase_action = false;
 
@@ -111,7 +104,9 @@ bool barrier::signal_and_wait(int32 milliseconds_timeout) {
         data_->phase_semaphore.release();
     }
   }
-  return data_->phase_semaphore.wait_one(milliseconds_timeout);
+  auto result = data_->phase_semaphore.wait_one(milliseconds_timeout);
+  if (data_->throw_barrier_post_phase_exception) throw barrier_post_phase_exception {csf_};
+  return result;
 }
 
 bool barrier::signal_and_wait(const cancellation_token& cancellation_token) {
