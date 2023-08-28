@@ -24,7 +24,7 @@ public:
     console::write_line(format, 1, "maximum", dt1);
     console::write_line(format, 2, "minimum", dt2);
     console::write_line(format, 3, "custom ", dt3);
-    console::write_line("\nThe custom date and time is created from {0} ticks.", ticks.count());
+    console::write_line("\nThe custom date and time is created from {0} ticks.", ticks);
   }
 };
 
