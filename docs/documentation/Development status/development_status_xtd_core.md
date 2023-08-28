@@ -16,6 +16,7 @@
 * [xtd::net::websockets](#xtdnetwebsockets)
 * [xtd::reflection](#xtdreflection)
 * [xtd::security](#xtdsecurity)
+* [xtd::speech::synthesis](#xtdspeechsynthesis)
 * [xtd::text](#xtdtext)
 * [xtd::threading](#xtdthreading)
 * [xtd::timers](#xtdtimers)
