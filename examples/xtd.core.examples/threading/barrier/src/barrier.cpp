@@ -7,10 +7,6 @@
 using namespace xtd;
 using namespace xtd::threading;
 
-namespace xtd {
-  using barrier_post_phase_exception = system_exception;
-};
-
 namespace barrier_example {
   class program {
   public:
@@ -22,7 +18,7 @@ namespace barrier_example {
       // And the third time through, it will throw an exception
       auto barrier = threading::barrier {3, action<threading::barrier&> {[&](threading::barrier& b) {
         console::write_line("Post-Phase action: count={0}, phase={1}", count, b.current_phase_number());
-        //if (b.current_phase_number() == 2) throw system_exception("D'oh!", csf_);
+        if (b.current_phase_number() == 2) throw system_exception("D'oh!", csf_);
       }}};
       
       // Nope -- changed my mind.  Let's make it five participants.
