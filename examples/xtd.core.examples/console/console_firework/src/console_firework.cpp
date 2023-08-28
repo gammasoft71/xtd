@@ -172,7 +172,7 @@ namespace console_firework_example {
       if (is<firework_start_expanded2>(firework)) firework = make_shared<firework_start_expanded3>(*firework);
       if (is<firework_start_expanded1>(firework)) firework = make_shared<firework_start_expanded2>(*firework);
       if (is<firework_exploded>(firework)) firework = make_shared<firework_start_expanded1>(*firework);
-      if (date_time::now().ticks().count() % firework->delay() == 0 && is<firework_start>(firework)) firework = make_shared<firework_exploded>(*firework);
+      if (date_time::now().ticks() % firework->delay() == 0 && is<firework_start>(firework)) firework = make_shared<firework_exploded>(*firework);
     }
   };
 }
