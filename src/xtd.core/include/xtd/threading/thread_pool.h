@@ -51,13 +51,7 @@ namespace xtd {
     class core_export_ thread_pool static_ {
       friend class registered_wait_handle;
 
-      //using asynchronous_io_thread_vector = std::vector<thread>;
-      class asynchronous_io_thread_vector : public std::vector<thread> {
-      public:
-        asynchronous_io_thread_vector();
-        asynchronous_io_thread_vector(size_t count);
-        ~asynchronous_io_thread_vector();
-      };
+      using asynchronous_io_thread_vector = std::vector<thread>;
 
       struct static_data;
 
@@ -87,13 +81,7 @@ namespace xtd {
       using thread_pool_item_collection = std::vector<thread_pool_item>;
       using thread_pool_asynchronous_io_item_collection = std::vector<thread_pool_asynchronous_io_item>;
 
-      //using thread_vector = std::vector<thread>;
-      class thread_vector : public std::vector<thread> {
-      public:
-        thread_vector();
-        thread_vector(size_t count);
-        ~thread_vector();
-      };
+      using thread_vector = std::vector<thread>;
 
     public:
       /// @name Methods
