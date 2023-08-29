@@ -7,13 +7,10 @@
 using namespace xtd;
 using namespace xtd::threading;
 
-// The declaration __monitor_mutex__ mutex is in the thread_pool.cpp file (just before monitor::items_, thread::threads_, thread_pool::asynchronous_io_threads_ and thread_pool::threads_)
-// to ensure allocation and deallocation order.
-extern std::recursive_mutex __monitor_mutex__;
-
-// The declaration items_ collection is in the thread_pool.cpp file (just before thread::threads_, thread_pool::asynchronous_io_threads_ and thread_pool::threads_)
-// to ensure allocation and deallocation order.
-//monitor::item_collection monitor::items_;
+struct monitor::static_data {
+  std::recursive_mutex monitor_mutex;
+  monitor::item_collection items;
+};
 
 void monitor::enter_ptr(std::pair<intptr, bool> pair) {
   bool lock_taken = false;
@@ -26,48 +23,48 @@ void monitor::enter_ptr(std::pair<intptr, bool> pair, bool& lock_taken) {
 }
 
 void monitor::exit_ptr(std::pair<intptr, bool> pair) {
-  __monitor_mutex__.lock();
+  get_static_data().monitor_mutex.lock();
   if (!is_entered_ptr(pair)) {
-    __monitor_mutex__.unlock();
+    get_static_data().monitor_mutex.unlock();
     throw synchronization_lock_exception(csf_);
   }
   
   item saved;
-  item* monitor_data = &items_[pair.first];
+  item* monitor_data = &get_static_data().items[pair.first];
   if (--monitor_data->used_counter == 0) {
-    saved = items_[pair.first];
+    saved = get_static_data().items[pair.first];
     if (pair.second) delete reinterpret_cast<const ustring*>(pair.first);
-    items_.erase(pair.first);
+    get_static_data().items.erase(pair.first);
     monitor_data = &saved;
   }
   monitor_data->event.release_mutex();
-  __monitor_mutex__.unlock();
+  get_static_data().monitor_mutex.unlock();
 }
 
 intptr monitor::get_ustring_ptr(const ustring& str) {
   if (str.empty()) throw argument_exception {csf_};
-  __monitor_mutex__.lock();
+  get_static_data().monitor_mutex.lock();
   intptr ptr = reinterpret_cast<intptr>(&str);
-  for (const auto& item : items_)
+  for (const auto& item : get_static_data().items)
     if (item.second.name.has_value() && item.second.name.value() == str) {
       ptr = item.first;
       delete &str;
       break;
     }
-  __monitor_mutex__.unlock();
+  get_static_data().monitor_mutex.unlock();
   return ptr;
 }
 
 bool monitor::is_entered_ptr(std::pair<intptr, bool> pair) noexcept {
-  auto found = items_.find(pair.first) != items_.end();
+  auto found = get_static_data().items.find(pair.first) != get_static_data().items.end();
   return found;
 }
 
 void monitor::pulse_ptr(std::pair<intptr, bool> pair) {
   item* monitor_item = null;
-  __monitor_mutex__.lock();
-  if (is_entered_ptr(pair)) monitor_item = &items_[pair.first];
-  __monitor_mutex__.unlock();
+  get_static_data().monitor_mutex.lock();
+  if (is_entered_ptr(pair)) monitor_item = &get_static_data().items[pair.first];
+  get_static_data().monitor_mutex.unlock();
   
   if (monitor_item == nullptr) throw invalid_operation_exception(csf_);
   
@@ -76,9 +73,9 @@ void monitor::pulse_ptr(std::pair<intptr, bool> pair) {
 
 void monitor::pulse_all_ptr(std::pair<intptr, bool> pair) {
   item* monitor_item = null;
-  __monitor_mutex__.lock();
-  if (is_entered_ptr(pair)) monitor_item = &items_[pair.first];
-  __monitor_mutex__.unlock();
+  get_static_data().monitor_mutex.lock();
+  if (is_entered_ptr(pair)) monitor_item = &get_static_data().items[pair.first];
+  get_static_data().monitor_mutex.unlock();
   
   if (monitor_item == nullptr) throw invalid_operation_exception(csf_);
   
@@ -87,17 +84,22 @@ void monitor::pulse_all_ptr(std::pair<intptr, bool> pair) {
 
 bool monitor::try_enter_ptr(std::pair<intptr, bool> pair, int32 milliseconds_timeout, bool& lock_taken) noexcept {
   if (milliseconds_timeout < timeout::infinite) return false;
-  __monitor_mutex__.lock();
+  get_static_data().monitor_mutex.lock();
   if (!is_entered_ptr(pair)) {
     auto i = item {};
     if (pair.second) {
       auto str = reinterpret_cast<const ustring*>(pair.first);
       i.name = *str;
     }
-    items_.insert({pair.first, i});
+    get_static_data().items.insert({pair.first, i});
   }
-  item* monitor_data = &items_[pair.first];
+  item* monitor_data = &get_static_data().items[pair.first];
   ++monitor_data->used_counter;
-  __monitor_mutex__.unlock();
+  get_static_data().monitor_mutex.unlock();
   return lock_taken = monitor_data->event.wait_one(milliseconds_timeout);
+}
+
+monitor::static_data& monitor::get_static_data() {
+  static static_data data;
+  return data;
 }

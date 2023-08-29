@@ -40,13 +40,17 @@ namespace xtd {
     /// @par Examples
     /// The following example uses the xtd::threading::monitor class to synchronize access to a single instance of a random number generator represented by the xtd::random class. The example creates ten threads, each of which executes asynchronously on a thread pool thread. Each thread generates 10,000 random numbers, calculates their average, and updates two procedure-level variables that maintain a running total of the number of random numbers generated and their sum. After all threads have executed, these two values are then used to calculate the overall mean.
     /// @include monitor.cpp
-    class core_export_ monitor static_ {
+    class core_export_ monitor static_ {      
       struct item {
         mutex event {false};
         int32 used_counter {0};
         std::optional<ustring> name;
       };
+
       using item_collection = std::unordered_map<intptr, item>;
+
+      struct static_data;
+      
     public:
       /// @name Methods
       
@@ -277,6 +281,8 @@ namespace xtd {
     private:
       friend struct ::__lock_guard;
 
+      static static_data& get_static_data();
+
       template<typename object_t>
       static std::pair<intptr, bool> get_ptr(const object_t& obj) noexcept {
         bool is_string = is<ustring>(obj);
@@ -295,8 +301,6 @@ namespace xtd {
       static void pulse_ptr(std::pair<intptr, bool> obj);
       static void pulse_all_ptr(std::pair<intptr, bool> obj);
       static bool try_enter_ptr(std::pair<intptr, bool> pair, int32 milliseconds_timeout, bool& lock_taken) noexcept;
-
-      static item_collection items_;
     };
   }
 }
