@@ -48,10 +48,7 @@ namespace xtd {
 
       struct static_data;
 
-      struct thread_collection : public std::vector<std::shared_ptr<thread>> {
-        thread_collection() = default;
-        ~thread_collection() {thread::join_all();}
-      };
+      using thread_collection = std::vector<std::shared_ptr<thread>>;
 
     public:
       /// @name Fields
