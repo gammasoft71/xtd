@@ -46,6 +46,8 @@ namespace xtd {
     class core_export_ thread final : public object {
       struct data;
 
+      struct static_data;
+
       struct thread_collection : public std::vector<std::shared_ptr<thread>> {
         thread_collection() = default;
         ~thread_collection() {thread::join_all();}
@@ -379,6 +381,7 @@ namespace xtd {
       static int32 generate_managed_thread_id() noexcept;
       static intptr get_current_thread_handle();
       static intptr get_current_thread_id();
+      static static_data& get_static_data();
       static void reset_threads(); // Used by xtd::tests::thread_tests unit tests.
       bool is_aborted() const noexcept;
       bool is_stopped() const noexcept;
@@ -396,7 +399,6 @@ namespace xtd {
 
       std::shared_ptr<data> data_;
       static intptr main_thread_id_;
-      static thread_collection threads_;
     };
   }
 }
