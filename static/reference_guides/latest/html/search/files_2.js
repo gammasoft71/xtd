@@ -104,8 +104,9 @@ var searchData=
   ['css_5freader_2eh_101',['css_reader.h',['../css__reader_8h.html',1,'']]],
   ['css_5fwriter_2eh_102',['css_writer.h',['../css__writer_8h.html',1,'']]],
   ['ctrace_2eh_103',['ctrace.h',['../ctrace_8h.html',1,'']]],
-  ['cursor_2eh_104',['cursor.h',['../cursor_8h.html',1,'']]],
-  ['cursors_2eh_105',['cursors.h',['../cursors_8h.html',1,'']]],
-  ['cursors_5fappearances_5fpage_2edox_106',['cursors_appearances_page.dox',['../cursors__appearances__page_8dox.html',1,'']]],
-  ['cyan_5fcolors_2eh_107',['cyan_colors.h',['../cyan__colors_8h.html',1,'']]]
+  ['current_5fstack_5fframe_2eh_104',['current_stack_frame.h',['../current__stack__frame_8h.html',1,'']]],
+  ['cursor_2eh_105',['cursor.h',['../cursor_8h.html',1,'']]],
+  ['cursors_2eh_106',['cursors.h',['../cursors_8h.html',1,'']]],
+  ['cursors_5fappearances_5fpage_2edox_107',['cursors_appearances_page.dox',['../cursors__appearances__page_8dox.html',1,'']]],
+  ['cyan_5fcolors_2eh_108',['cyan_colors.h',['../cyan__colors_8h.html',1,'']]]
 ];
