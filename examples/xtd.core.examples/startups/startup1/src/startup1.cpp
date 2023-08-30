@@ -18,12 +18,12 @@ namespace startup1_example {
   };
 }
 
-auto main(int argc, char* argv[])->int {
+auto main()->int {
   return startup::safe_run(startup1_example::program::main);
 }
 // Is approximately the same as :
 //
-// auto main(int argc, char* argv[])->int {
+// auto main()->int {
 //   try {
 //     startup1_example::program::main();
 //     return environment::exit_code();
