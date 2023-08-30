@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include "collections/specialized/string_vector.h"
+#include "core_export.h"
 #include "static.h"
 #include <exception>
 #include <optional>
@@ -15,7 +16,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
-  class startup final static_ {
+  class core_export_ startup final static_ {
   public:
     /// @brief Safely call the specified application's main entry point.
     /// @param main_function The main method to safety call.

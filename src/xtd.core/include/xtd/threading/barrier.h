@@ -22,7 +22,7 @@ namespace xtd {
     /// @ingroup xtd_core threading
     /// @par Examples
     /// @include barrier.cpp
-    class barrier : public object {
+    class core_export_ barrier : public object {
       struct data;
     public:
       /// @name Constructors

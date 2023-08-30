@@ -42,7 +42,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example shows how two threads can do background tasks while the Main thread waits for the tasks to complete using the static xtd::threading::wait_handle::wait_any and xtd::threading::wait_handle::wait_all methods of the xtd::threading::wait_handle class.
     /// @include wait_handle.cpp
-    class wait_handle abstract_ {
+    class core_export_ wait_handle abstract_ {
       friend class registered_wait_handle;
       friend class thread;
     public:
