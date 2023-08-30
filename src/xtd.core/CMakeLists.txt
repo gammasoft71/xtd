@@ -834,6 +834,7 @@ add_sources(
   src/xtd/processor.cpp
   src/xtd/random.cpp
   src/xtd/signal_cancel_event_args.cpp
+  src/xtd/startup.cpp
   src/xtd/system_exception.cpp
   src/xtd/target_type.cpp
   src/xtd/time_span.cpp

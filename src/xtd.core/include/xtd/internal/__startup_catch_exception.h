@@ -2,6 +2,11 @@
 /// @brief Contains #startup_ keyword.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+/// @cond
+#if !defined(__XTD_CORE_INTERNAL__)
+#error "Do not include this file: Internal use only"
+#endif
+/// @endcond
 
 #if __XTD_CURRENT_TARGET_ID__ == __XTD_TARGET_ID_GUI_APPLICATION__
 #include "xtd/forms/application.h"

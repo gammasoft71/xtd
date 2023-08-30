@@ -2,9 +2,9 @@
 /// @brief Contains startup class and #startup_ keyword.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#define __XTD_CORE_INTERNAL__
 #include "internal/__startup.h"
-#include "internal/__startup_catch_exception.h"
-#include "threading/thread.h"
+#undef __XTD_CORE_INTERNAL__
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -39,13 +39,14 @@ namespace xtd {
     template <typename main_function_t>
     static int safe_run(main_function_t main_function, int argc, char* argv[]) {
       try {
+        init_safe_run();
         auto exit_code = __startup__::run(main_function, argc, argv);
-        xtd::threading::thread::join_all();
+        end_safe_run();
         return exit_code;
       } catch(const std::exception& e) {
-        __startup_catch_exception__(e);
+        generic_exception_message(e);
       } catch(...) {\
-        __startup_catch_exception__();
+        generic_exception_message();
       }
       return 0;
     }
@@ -71,16 +72,23 @@ namespace xtd {
     template <typename main_function_t>
     static int safe_run(main_function_t main_function) {
       try {
+        init_safe_run();
         auto exit_code = __startup__::run(main_function);
-        xtd::threading::thread::join_all();
+        end_safe_run();
         return exit_code;
       } catch(const std::exception& e) {
-        __startup_catch_exception__(e);
+        generic_exception_message(e);
       } catch(...) {\
-        __startup_catch_exception__();
+        generic_exception_message();
       }
       return 0;
     }
+    
+  private:
+    static void init_safe_run();
+    static void end_safe_run();
+    static void generic_exception_message(const std::exception& e);
+    static void generic_exception_message();
   };
 }
 
