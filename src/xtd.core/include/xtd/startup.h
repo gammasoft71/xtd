@@ -17,6 +17,29 @@ namespace xtd {
   /// @ingroup xtd_core system
   class startup final static_ {
   public:
+    /// @brief Safely call the specified application's main entry point.
+    /// @param main_function The main method to safety call.
+    /// @remarks The main_function is called in try and catch. If an exception occurs, a generic message is displayed.
+    /// @remarks The xtd::threading::thread::join_all method are cal before exit. See xtd::threading::thread::join_all for more information.
+    /// @remarks The xtd::startup::run method is used by the keyword #startup_.
+    /// @param main_class The class that contains the static main method.
+    /// @par Examples
+    /// This example show a main_function without arguments and without return code
+    /// @include startup1.cpp
+    /// @par
+    /// This example show a main_function with a return code and without arguments
+    /// @include startup2.cpp
+    /// @par
+    /// This example show a main_function with argument and without return code
+    /// @include startup3.cpp
+    /// @par
+    /// This example show a main_function with argument and return code
+    /// @include startup4.cpp
+    template <typename main_function_t>
+    static int safe_run(main_function_t main_function) {
+      return internal_safe_run(main_function, std::nullopt, std::nullopt);
+    }
+
     /// @brief Safely call the specified application's main entry point, argc and argv.
     /// @param main_function The main method to safety call.
     /// @param argc the main argc param.
@@ -41,30 +64,18 @@ namespace xtd {
     static int safe_run(main_function_t main_function, int argc, char* argv[]) {
       return internal_safe_run(main_function, argc, argv);
     }
-    
-    /// @brief Safely call the specified application's main entry point.
-    /// @param main_function The main method to safety call.
-    /// @remarks The main_function is called in try and catch. If an exception occurs, a generic message is displayed.
-    /// @remarks The xtd::threading::thread::join_all method are cal before exit. See xtd::threading::thread::join_all for more information.
-    /// @remarks The xtd::startup::run method is used by the keyword #startup_.
-    /// @param main_class The class that contains the static main method.
-    /// @par Examples
-    /// This example show a main_function without arguments and without return code
-    /// @include startup1.cpp
-    /// @par
-    /// This example show a main_function with a return code and without arguments
-    /// @include startup2.cpp
-    /// @par
-    /// This example show a main_function with argument and without return code
-    /// @include startup3.cpp
-    /// @par
-    /// This example show a main_function with argument and return code
-    /// @include startup4.cpp
-    template <typename main_function_t>
-    static int safe_run(main_function_t main_function) {
-      return internal_safe_run(main_function, std::nullopt, std::nullopt);
-    }
-    
+
+    /// @cond
+    static int safe_run(void (*main_function)(int, char* []), int argc, char* argv[]);
+    static int safe_run(void (*main_function)(const xtd::collections::specialized::string_vector&), int argc, char* argv[]);
+    static int safe_run(int (*main_function)(int, char* []), int argc, char* argv[]);
+    static int safe_run(int (*main_function)(const xtd::collections::specialized::string_vector&), int argc, char* argv[]);
+    static int safe_run(void (*main_function)(int, char* []));
+    static int safe_run(void (*main_function)(const xtd::collections::specialized::string_vector&));
+    static int safe_run(int (*main_function)(int, char* []));
+    static int safe_run(int (*main_function)(const xtd::collections::specialized::string_vector&));
+    /// @endcond
+
   private:
     template <typename main_function_t>
     static int internal_safe_run(main_function_t main_function, std::optional<int> argc, std::optional<char**> argv) {

@@ -1,5 +1,4 @@
 #include "../../include/xtd/environment.h"
-#include "../../include/xtd/invalid_operation_exception.h"
 #include "../../include/xtd/startup.h"
 #include "../../include/xtd/threading/thread.h"
 
@@ -18,6 +17,38 @@ void startup::end_safe_run() {
   thread::join_all();
 }
 
+int startup::safe_run(void (*main_function)(int, char* []), int argc, char* argv[]) {
+  return internal_safe_run(main_function, argc, argv);
+}
+
+int startup::safe_run(void (*main_function)(const xtd::collections::specialized::string_vector&), int argc, char* argv[]) {
+  return internal_safe_run(main_function, argc, argv);
+}
+
+int startup::safe_run(int (*main_function)(int, char* []), int argc, char* argv[]) {
+  return internal_safe_run(main_function, argc, argv);
+}
+
+int startup::safe_run(int (*main_function)(const xtd::collections::specialized::string_vector&), int argc, char* argv[]) {
+  return internal_safe_run(main_function, argc, argv);
+}
+
+int startup::safe_run(void (*main_function)(int, char* [])) {
+  return internal_safe_run(main_function, std::nullopt, std::nullopt);
+}
+
+int startup::safe_run(void (*main_function)(const xtd::collections::specialized::string_vector&)) {
+  return internal_safe_run(main_function, std::nullopt, std::nullopt);
+}
+
+int startup::safe_run(int (*main_function)(int, char* [])) {
+  return internal_safe_run(main_function, std::nullopt, std::nullopt);
+}
+
+int startup::safe_run(int (*main_function)(const xtd::collections::specialized::string_vector&)) {
+  return internal_safe_run(main_function, std::nullopt, std::nullopt);
+}
+
 int startup::run(void (*main_function)(), int, char* []) {
   main_function(); return environment::exit_code();
 }
@@ -33,7 +64,13 @@ int startup::run(void (*main_function)(int, char* []), int argc, char* argv[]) {
 }
 
 int startup::run(void (*main_function)(int, char* [])) {
-  throw invalid_operation_exception {"Call xtd::startup::safe_run method with argc and argv parameters", csf_};
+  auto args = environment::get_command_line_args();
+  char** argv = new char*[args.size()];
+  for (auto index = 0ul; index < args.size(); ++index)
+    argv[index] = args[index].data();
+  main_function(as<int32>(args.size()), argv);
+  delete[] argv;
+  return environment::exit_code();
 }
 
 int startup::run(void (*main_function)(const string_vector&), int argc, char* argv[]) {
@@ -60,7 +97,13 @@ int startup::run(int (*main_function)(int, char* []), int argc, char* argv[]) {
 }
 
 int startup::run(int (*main_function)(int, char* [])) {
-  throw invalid_operation_exception {"Call xtd::startup::safe_run method with argc and argv parameters", csf_};
+  auto args = environment::get_command_line_args();
+  char** argv = new char*[args.size()];
+  for (auto index = 0ul; index < args.size(); ++index)
+    argv[index] = args[index].data();
+  auto exit_code = main_function(as<int32>(args.size()), argv);
+  delete[] argv;
+  return exit_code;
 }
 
 int startup::run(int (*main_function)(const string_vector&), int argc, char* argv[]) {
