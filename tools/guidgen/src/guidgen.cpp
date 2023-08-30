@@ -1,4 +1,5 @@
 #include <xtd/console>
+#include <xtd/environment>
 #include <xtd/guid>
 #include <xtd/startup>
 
