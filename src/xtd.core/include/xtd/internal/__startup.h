@@ -2,6 +2,11 @@
 /// @brief Contains __startup__ struct.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+/// @cond
+#if !defined(__XTD_CORE_INTERNAL__)
+#error "Do not include this file: Internal use only"
+#endif
+/// @endcond
 
 #include "../collections/specialized/string_vector.h"
 #include "../environment.h"
