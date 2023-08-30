@@ -16,19 +16,20 @@ namespace startup4_example {
   };
 }
 
-auto main(int argc, char* argv[])->int {
-  return startup::safe_run(startup4_example::program::main, argc, argv);
+auto main()->int {
+  return startup::safe_run(startup4_example::program::main);
 }
 // Is approximately the same as :
 //
-// auto main(int argc, char* argv[])->int {
+// auto main()->int {
 //   try {
-//     return startup34example::program::main({argv + 1, argv + argc});
+//     auto args = xtd::environment::get_command_line_args();
+//     return startup34example::program::main({args.begin() + 1, args.end()});
 //   } catch(const std::exception& e) {
-//     if (dynamic_cast<const system_exception*>(&e)) console::write_line(static_cast<const system_exception&>(e).to_string());
-//     else console::write_line(e.what());
+//     if (dynamic_cast<const xtd::system_exception*>(&e)) xtd::console::write_line(static_cast<const xtd::system_exception&>(e).to_string());
+//     else xtd::console::write_line(e.what());
 //   } catch(...) {
-//     console::write_line("Unhandled exception: Unknown exception occurred");
+//     xtd::console::write_line("Unhandled exception: Unknown exception occurred");
 //   }
 // }
 

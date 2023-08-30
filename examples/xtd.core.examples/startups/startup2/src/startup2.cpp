@@ -26,10 +26,10 @@ auto main()->int {
 //   try {
 //     return startup2_example::program::main();
 //   } catch(const std::exception& e) {
-//     if (dynamic_cast<const system_exception*>(&e)) console::write_line(static_cast<const system_exception&>(e).to_string());
-//     else console::write_line(e.what());
+//     if (dynamic_cast<const xtd::system_exception*>(&e)) xtd::console::write_line(static_cast<const xtd::system_exception&>(e).to_string());
+//     else xtd::console::write_line(e.what());
 //   } catch(...) {
-//     console::write_line("Unhandled exception: Unknown exception occurred");
+//     xtd::console::write_line("Unhandled exception: Unknown exception occurred");
 //   }
 // }
 
