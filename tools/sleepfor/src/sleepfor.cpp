@@ -1,4 +1,5 @@
 #include <xtd/console.h>
+#include <xtd/environment.h>
 #include <xtd/startup.h>
 #include <xtd/ustring.h>
 #include <xtd/chrono>
