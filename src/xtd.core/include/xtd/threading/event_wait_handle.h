@@ -29,7 +29,7 @@ namespace xtd {
     /// The following code example uses the xtd::threading::wait_handle::signal_and_wait(xtd::threading::wait_handle&, xtd::threading::wait_handle&) method overload to allow the main thread to signal a blocked thread and then wait until the thread finishes a task.<br><br>
     /// The example starts five threads and allows them to block on an xtd::threading::event_wait_handle created with the xtd::threading::event_reset_mode::auto_reset flag, then releases one thread each time the user presses the Enter key. The example then queues another five threads and releases them all using an xtd::threading::event_wait_handle created with the xtd::threading::event_reset_mode::manual_reset flag.
     /// @include event_wait_handle.cpp
-    class event_wait_handle : public wait_handle, public icomparable<event_wait_handle>, public iequatable<event_wait_handle> {
+    class core_export_ event_wait_handle : public wait_handle, public icomparable<event_wait_handle>, public iequatable<event_wait_handle> {
       class event_wait_handle_base;
       class named_event_wait_handle;
       class unnamed_event_wait_handle;

@@ -42,7 +42,7 @@ namespace xtd {
     /// @par Examples
     /// This example shows how a local xtd::threading::mutex object is used to synchronize access to a protected resource. Because each calling thread is blocked until it acquires ownership of the mutex, it must call the xtd::threading::mutex::release_mutex method to release ownership of the mutex.
     /// @include mutex.cpp
-    class mutex : public wait_handle, public icomparable<mutex>, public iequatable<mutex> {
+    class core_export_ mutex : public wait_handle, public icomparable<mutex>, public iequatable<mutex> {
       class mutex_base;
       class named_mutex;
       class unnamed_mutex;

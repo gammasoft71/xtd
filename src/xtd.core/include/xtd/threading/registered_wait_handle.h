@@ -21,7 +21,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core threading
-    class registered_wait_handle final : public object {
+    class core_export_ registered_wait_handle final : public object {
       friend class thread_pool;
     public:
       /// @name Methods

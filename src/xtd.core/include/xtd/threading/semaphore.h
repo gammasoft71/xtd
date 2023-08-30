@@ -30,7 +30,7 @@ namespace xtd {
     /// @par Example
     /// The following code example creates a semaphore with a maximum count of three and an initial count of zero. The example starts five threads, which block waiting for the semaphore. The main thread uses the xtd::threading::semaphore::release(int32) method overload to increase the semaphore count to its maximum, allowing three threads to enter the semaphore. Each thread uses the xtd::threading::thread::sleep method to wait for one second, to simulate work, and then calls the xtd::threading::semaphore::release() method overload to release the semaphore. Each time the semaphore is released, the previous semaphore count is displayed. Console messages track semaphore use. The simulated work interval is increased slightly for each thread, to make the output easier to read.
     /// @include semaphore.cpp
-    class semaphore : public wait_handle, public icomparable<semaphore>, public iequatable<semaphore> {
+    class core_export_ semaphore : public wait_handle, public icomparable<semaphore>, public iequatable<semaphore> {
       class semaphore_base;
       class named_semaphore;
       class unnamed_semaphore;
