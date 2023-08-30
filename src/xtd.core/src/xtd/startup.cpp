@@ -33,7 +33,7 @@ int startup::run(void (*main_function)(int, char* []), int argc, char* argv[]) {
 }
 
 int startup::run(void (*main_function)(int, char* [])) {
-  throw invalid_operation_exception {csf_};
+  throw invalid_operation_exception {"Call xtd::startup::safe_run method with argc and argv parameters", csf_};
 }
 
 int startup::run(void (*main_function)(const string_vector&), int argc, char* argv[]) {
@@ -42,7 +42,9 @@ int startup::run(void (*main_function)(const string_vector&), int argc, char* ar
 }
 
 int startup::run(void (*main_function)(const string_vector&)) {
-  throw invalid_operation_exception {csf_};
+  auto args = environment::get_command_line_args();
+  main_function({args.begin() + 1, args.end()});
+  return environment::exit_code();
 }
 
 int startup::run(int (*main_function)(), int, char* []) {
@@ -58,7 +60,7 @@ int startup::run(int (*main_function)(int, char* []), int argc, char* argv[]) {
 }
 
 int startup::run(int (*main_function)(int, char* [])) {
-  throw invalid_operation_exception {csf_};
+  throw invalid_operation_exception {"Call xtd::startup::safe_run method with argc and argv parameters", csf_};
 }
 
 int startup::run(int (*main_function)(const string_vector&), int argc, char* argv[]) {
@@ -66,7 +68,8 @@ int startup::run(int (*main_function)(const string_vector&), int argc, char* arg
 }
 
 int startup::run(int (*main_function)(const string_vector&)) {
-  throw invalid_operation_exception {csf_};
+  auto args = environment::get_command_line_args();
+  return main_function({args.begin() + 1, args.end()});
 }
 
 void startup::show_generic_exception_message(const std::exception& e) {
