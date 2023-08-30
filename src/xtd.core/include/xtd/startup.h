@@ -123,4 +123,4 @@ namespace xtd {
   auto main(int argc, char* argv[])->int {\
     return xtd::startup::safe_run(main_class::main, argc, argv);\
   }\
-  auto __startup_force_to_end_with_semicolon__ = 0
+  intptr_t __opaque_sftews__ = 0 // force to end with semicolon
