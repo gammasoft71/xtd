@@ -18,10 +18,10 @@ namespace main2_example {
 }
 
 startup_(main2_example::program);
-// startup_(main2_example::program); is same as :
+// Is the same as :
 //
 // auto main(int argc, char* argv[])->int {
-//   return main2_example::program::main();
+//   return startup::safe_run(main2_example::program::main, argc, argv);
 // }
 
 

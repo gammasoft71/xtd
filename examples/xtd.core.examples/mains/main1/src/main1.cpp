@@ -19,11 +19,10 @@ namespace main1_example {
 }
 
 startup_(main1_example::program);
-// startup_(main1_example::program); is same as :
+// Is the same as :
 //
 // auto main(int argc, char* argv[])->int {
-//   main1_example::program::main();
-//   return environment::exit_code();
+//   return startup::safe_run(main1_example::program::main, argc, argv);
 // }
 
 
