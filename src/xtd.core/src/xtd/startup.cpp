@@ -9,7 +9,6 @@ using namespace xtd;
 using namespace xtd::threading;
 
 void startup::init_safe_run() {
-  
 }
 
 void startup::end_safe_run() {
