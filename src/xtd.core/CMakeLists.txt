@@ -529,6 +529,8 @@ add_sources(
   include/xtd/internal/__parse.h
   include/xtd/internal/__sprintf.h
   include/xtd/internal/__std_abort.h
+  include/xtd/internal/__startup.h
+  include/xtd/internal/__startup_catch_exception.h
   include/xtd/internal/__string_formatter.h
   include/xtd/io/binary_reader.h
   include/xtd/io/binary_reader
