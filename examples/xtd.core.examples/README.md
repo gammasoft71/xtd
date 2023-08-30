@@ -209,11 +209,20 @@
 * [interface](keywords/interface/README.md) shows how to use [interface_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga64c32b24bd922fc8189a487213592ccf) keyword.
 * [interface2](keywords/interface2/README.md) shows how to use [interface_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga64c32b24bd922fc8189a487213592ccf) keyword.
 * [lock](keywords/lock/README.md) shows how to use [xtd::lock](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a) method.
-* [startup](keywords/startup/README.md) shows how to use [startup_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c) keyword.
+* [startup_keyword](keywords/startup_keyword/README.md) shows how to use [startup_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c) keyword.
 * [static](keywords/static/README.md) shows how to use [static_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga28796443ec37b938df7072c79595e3f6) keyword.
 * [static_object](keywords/static_object/README.md) shows how to use [static_object_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gadf2fc01c525cce1b8255c8308b2fb004) keyword.
 * [static_object2](keywords/static_object2/README.md) shows how to use [static_object_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gadf2fc01c525cce1b8255c8308b2fb004) keyword.
 * [using](keywords/using/README.md) shows how to use [using_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f) keyword.
+
+## [Mains](mains/README.md)
+
+* [main](mains/main/README.md) shows how to use [xtd::startup](https://gammasoft71.github.io/xtd/reference_guides/latest/startup_8h.html) method.
+* [main1](mains/main1/README.md) shows how to use [xtd::startup](https://gammasoft71.github.io/xtd/reference_guides/latest/startup_8h.html) method.
+* [main2](mains/main2/README.md) shows how to use [xtd::startup](https://gammasoft71.github.io/xtd/reference_guides/latest/startup_8h.html) method.
+* [main3](mains/main3/README.md) shows how to use [xtd::startup](https://gammasoft71.github.io/xtd/reference_guides/latest/startup_8h.html) method.
+* [main4](mains/main4/README.md) shows how to use [xtd::startup](https://gammasoft71.github.io/xtd/reference_guides/latest/startup_8h.html) method.
+* [main5](mains/main5/README.md) shows how to use [xtd::startup](https://gammasoft71.github.io/xtd/reference_guides/latest/startup_8h.html) method.
 
 ## [Math](math/README.md)
 
@@ -259,7 +268,15 @@
 * [random2](random/random2/README.md) shows how to use [xtd::random](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1random.html) class.
 * [random3](random/random3/README.md) shows how to use [xtd::random::next](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1random.html#aea69230c5fe2a5ecc5026aa568dc349c) method.
 
-## [strings](strings/README.md)
+## [Startups](startups/README.md)
+
+* [startup](startups/startup/README.md) shows how to use [xtd::startup](https://gammasoft71.github.io/xtd/reference_guides/latest/startup_8h.html) method.
+* [startup1](startups/startup1/README.md) shows how to use [xtd::startup](https://gammasoft71.github.io/xtd/reference_guides/latest/startup_8h.html) method.
+* [startup2](startups/startup2/README.md) shows how to use [xtd::startup](https://gammasoft71.github.io/xtd/reference_guides/latest/startup_8h.html) method.
+* [startup3](startups/startup3/README.md) shows how to use [xtd::startup](https://gammasoft71.github.io/xtd/reference_guides/latest/startup_8h.html) method.
+* [startup4](startups/startup4/README.md) shows how to use [xtd::startup](https://gammasoft71.github.io/xtd/reference_guides/latest/startup_8h.html) method.
+
+## [Strings](strings/README.md)
 
 * [compare](strings/compare/README.md) shows how to use [xtd::ustring::compare](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1ustring.html#a1e328e81c381bd2cef918f91fd107933) method.
 * [compare_ignore_case](strings/compare_ignore_case/README.md) shows how to use [xtd::ustring::compare](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1ustring.html#a1e328e81c381bd2cef918f91fd107933) method.

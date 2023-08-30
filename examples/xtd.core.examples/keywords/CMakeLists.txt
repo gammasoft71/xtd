@@ -10,7 +10,7 @@ add_projects(
   interface
   interface2
   lock
-  startup
+  startup_keyword
   static
   static_object
   static_object2

@@ -29,6 +29,7 @@ add_projects(
   processes
   random
   sprintf
+  startups
   strings
   threading
   time_span
