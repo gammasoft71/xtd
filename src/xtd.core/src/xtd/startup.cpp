@@ -1,4 +1,5 @@
 #include "../../include/xtd/environment.h"
+#include "../../include/xtd/invalid_operation_exception.h"
 #include "../../include/xtd/startup.h"
 #include "../../include/xtd/threading/thread.h"
 
@@ -31,10 +32,19 @@ int startup::run(void (*main_function)(int, char* []), int argc, char* argv[]) {
   return environment::exit_code();
 }
 
+int startup::run(void (*main_function)(int, char* [])) {
+  throw invalid_operation_exception {csf_};
+}
+
 int startup::run(void (*main_function)(const string_vector&), int argc, char* argv[]) {
   main_function({argv + 1, argv + argc});
   return environment::exit_code();
 }
+
+int startup::run(void (*main_function)(const string_vector&)) {
+  throw invalid_operation_exception {csf_};
+}
+
 int startup::run(int (*main_function)(), int, char* []) {
   return main_function();
 }
@@ -47,8 +57,16 @@ int startup::run(int (*main_function)(int, char* []), int argc, char* argv[]) {
   return main_function(argc, argv);
 }
 
+int startup::run(int (*main_function)(int, char* [])) {
+  throw invalid_operation_exception {csf_};
+}
+
 int startup::run(int (*main_function)(const string_vector&), int argc, char* argv[]) {
   return main_function({argv + 1, argv + argc});
+}
+
+int startup::run(int (*main_function)(const string_vector&)) {
+  throw invalid_operation_exception {csf_};
 }
 
 void startup::show_generic_exception_message(const std::exception& e) {

@@ -5,6 +5,7 @@
 #include "collections/specialized/string_vector.h"
 #include "static.h"
 #include <exception>
+#include <optional>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -38,17 +39,7 @@ namespace xtd {
     /// @include startup4.cpp
     template <typename main_function_t>
     static int safe_run(main_function_t main_function, int argc, char* argv[]) {
-      try {
-        init_safe_run();
-        auto exit_code = run(main_function, argc, argv);
-        end_safe_run();
-        return exit_code;
-      } catch(const std::exception& e) {
-        show_generic_exception_message(e);
-      } catch(...) {\
-        show_generic_exception_message();
-      }
-      return 0;
+      return internal_safe_run(main_function, argc, argv);
     }
     
     /// @brief Safely call the specified application's main entry point.
@@ -71,9 +62,15 @@ namespace xtd {
     /// @include startup4.cpp
     template <typename main_function_t>
     static int safe_run(main_function_t main_function) {
+      return internal_safe_run(main_function, std::nullopt, std::nullopt);
+    }
+    
+  private:
+    template <typename main_function_t>
+    static int internal_safe_run(main_function_t main_function, std::optional<int> argc, std::optional<char**> argv) {
       try {
         init_safe_run();
-        auto exit_code = run(main_function);
+        auto exit_code = argc == std::nullopt && argv == std::nullopt ? run(main_function) : run(main_function, argc.value(), argv.value());
         end_safe_run();
         return exit_code;
       } catch(const std::exception& e) {
@@ -83,18 +80,24 @@ namespace xtd {
       }
       return 0;
     }
-    
-  private:
+
     static void init_safe_run();
+    
     static void end_safe_run();
+    
     static int run(void (*main_function)(), int, char* []);
     static int run(void (*main_function)());
     static int run(void (*main_function)(int, char* []), int argc, char* argv[]);
+    static int run(void (*main_function)(int, char* []));
     static int run(void (*main_function)(const xtd::collections::specialized::string_vector&), int argc, char* argv[]);
+    static int run(void (*main_function)(const xtd::collections::specialized::string_vector&));
     static int run(int (*main_function)(), int, char* []);
     static int run(int (*main_function)());
     static int run(int (*main_function)(int, char* []), int argc, char* argv[]);
+    static int run(int (*main_function)(int, char* []));
     static int run(int (*main_function)(const xtd::collections::specialized::string_vector&), int argc, char* argv[]);
+    static int run(int (*main_function)(const xtd::collections::specialized::string_vector&));
+    
     static void show_generic_exception_message(const std::exception& e);
     static void show_generic_exception_message();
   };
