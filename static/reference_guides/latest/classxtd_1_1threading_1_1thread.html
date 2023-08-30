@@ -84,7 +84,6 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="classxtd_1_1threading_1_1thread-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">xtd::threading::thread Class Reference<span class="mlabels"><span class="mlabel">final</span></span><div class="ingroups"><a class="el" href="group__libraries.html">libraries</a> &raquo; <a class="el" href="group__xtd__core.html">xtd.core</a> &#124; <a class="el" href="group__system.html">system</a> &raquo; <a class="el" href="group__threading.html">threading</a></div></div></div>
 </div><!--header-->
@@ -178,7 +177,7 @@ Inheritance diagram for xtd::threading::thread:</div>
 <div class="line"><span class="comment">// thread_proc: 8</span></div>
 <div class="line"><span class="comment">// thread_proc: 9</span></div>
 <div class="line"><span class="comment">// Main thread: thread_proc.Join has returned.  Press Enter to end program.</span></div>
-<div class="ttc" id="agroup__keywords_html_gac9b8e6f22fb2fdc1bb915ee01aef848c"><div class="ttname"><a href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a></div><div class="ttdeci">#define startup_(main_class)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:58</div></div>
+<div class="ttc" id="agroup__keywords_html_gac9b8e6f22fb2fdc1bb915ee01aef848c"><div class="ttname"><a href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a></div><div class="ttdeci">#define startup_(main_class)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:136</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga629e09da122fad73508fa0fb6286fd0a"><div class="ttname"><a href="group__xtd__core.html#ga629e09da122fad73508fa0fb6286fd0a">xtd::threading::thread_start</a></div><div class="ttdeci">action&lt;&gt; thread_start</div><div class="ttdoc">Represents the method that executes on a xtd::threading::thread.</div><div class="ttdef"><b>Definition</b> thread_start.h:19</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">xtd::console_key::i</a></div><div class="ttdeci">@ i</div><div class="ttdoc">The I key.</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae358efa489f58062f10dd7316b65649e"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae358efa489f58062f10dd7316b65649e">xtd::console_key::t</a></div><div class="ttdeci">@ t</div><div class="ttdoc">The T key.</div></div>
@@ -968,9 +967,9 @@ By default, the following threads execute in the background (that is, their <a c
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If one or more threads are not joinable, they will be skipped. </dd>
 <dd>
-#startup_calls xtd::thread::join method. </dd>
+The xtd::startup::run method and <a class="el" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c" title="Defines the entry point to be called when the application loads. Generally this is set either to the ...">startup_</a> keyword call the <a class="el" href="classxtd_1_1threading_1_1thread.html#a6998fa3ca4218452ae93143d120174ba" title="Blocks the calling thread until all joinable threads terminate.">xtd::threading::thread::join_all</a> method. </dd>
 <dd>
-Call xtd::thread_pool::close method to join the end of running worker threads too. </dd></dl>
+Call <a class="el" href="classxtd_1_1threading_1_1thread__pool.html#a67c0921c9e154215c14cf459b9d0f3ed" title="Close all resources and worker threads.">xtd::threading::thread_pool::close</a> method to join the end of running worker threads too. </dd></dl>
 
 </div>
 </div>
@@ -1159,7 +1158,7 @@ template&lt;typename collection_t &gt; </div>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If one or more threads are not joinable, they will be skipped. </dd>
 <dd>
-Call xtd::thread_pool::close method to join the end of running worker threads too. </dd></dl>
+Call <a class="el" href="classxtd_1_1threading_1_1thread__pool.html#a67c0921c9e154215c14cf459b9d0f3ed" title="Close all resources and worker threads.">xtd::threading::thread_pool::close</a> method to join the end of running worker threads too. </dd></dl>
 
 </div>
 </div>
@@ -1203,7 +1202,7 @@ Call xtd::thread_pool::close method to join the end of running worker threads to
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If one or more threads are not joinable, they will be skipped. </dd>
 <dd>
-Call xtd::thread_pool::close method to join the end of running worker threads too. </dd></dl>
+Call <a class="el" href="classxtd_1_1threading_1_1thread__pool.html#a67c0921c9e154215c14cf459b9d0f3ed" title="Close all resources and worker threads.">xtd::threading::thread_pool::close</a> method to join the end of running worker threads too. </dd></dl>
 
 </div>
 </div>
@@ -1919,7 +1918,7 @@ This method is equivalent to using platform invoke to call the native Win32 swit
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 27 2023 20:46:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Aug 30 2023 23:20:13 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

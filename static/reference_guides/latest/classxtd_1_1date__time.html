@@ -208,7 +208,7 @@ Time values are measured in 100-nanosecond units called ticks. A particular date
 <div class="line"><span class="comment">// d1 (Thu Dec 30 16:18:10 2021) ~= d7 (Thu Dec 30 18:17:50 2021): false</span></div>
 <div class="line"><span class="comment">// d1 (Thu Dec 30 16:18:10 2021) ~= d8 (Thu Dec 30 18:18:15 2021): true</span></div>
 <div class="line"><span class="comment">// d1 (Thu Dec 30 16:18:10 2021) ~= d9 (Thu Dec 30 18:18:05 2021): true</span></div>
-<div class="ttc" id="agroup__keywords_html_gac9b8e6f22fb2fdc1bb915ee01aef848c"><div class="ttname"><a href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a></div><div class="ttdeci">#define startup_(main_class)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:58</div></div>
+<div class="ttc" id="agroup__keywords_html_gac9b8e6f22fb2fdc1bb915ee01aef848c"><div class="ttname"><a href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a></div><div class="ttdeci">#define startup_(main_class)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:136</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a45f9901d0370bc0facb9220619e6cbd7"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a45f9901d0370bc0facb9220619e6cbd7">xtd::console_key::d6</a></div><div class="ttdeci">@ d6</div><div class="ttdoc">The 6 key.</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a83c2d09a5dd1d1c5f4f7f484450be380"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a83c2d09a5dd1d1c5f4f7f484450be380">xtd::console_key::d8</a></div><div class="ttdeci">@ d8</div><div class="ttdoc">The 8 key.</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a87de66479aea0306221cb868869748ec"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a87de66479aea0306221cb868869748ec">xtd::console_key::d9</a></div><div class="ttdeci">@ d9</div><div class="ttdoc">The 9 key.</div></div>
@@ -561,7 +561,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    console::write_line(format, 1, <span class="stringliteral">&quot;maximum&quot;</span>, dt1);</div>
 <div class="line">    console::write_line(format, 2, <span class="stringliteral">&quot;minimum&quot;</span>, dt2);</div>
 <div class="line">    console::write_line(format, 3, <span class="stringliteral">&quot;custom &quot;</span>, dt3);</div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;\nThe custom date and time is created from {0} ticks.&quot;</span>, <a class="code hl_typedef" href="group__types.html#gaf6b556b49d28b448fc2c5af1d820f3ea">ticks</a>.count());</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;\nThe custom date and time is created from {0} ticks.&quot;</span>, <a class="code hl_typedef" href="group__types.html#gaf6b556b49d28b448fc2c5af1d820f3ea">ticks</a>);</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
@@ -644,7 +644,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    console::write_line(format, 1, <span class="stringliteral">&quot;maximum&quot;</span>, dt1);</div>
 <div class="line">    console::write_line(format, 2, <span class="stringliteral">&quot;minimum&quot;</span>, dt2);</div>
 <div class="line">    console::write_line(format, 3, <span class="stringliteral">&quot;custom &quot;</span>, dt3);</div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;\nThe custom date and time is created from {0} ticks.&quot;</span>, <a class="code hl_typedef" href="group__types.html#gaf6b556b49d28b448fc2c5af1d820f3ea">ticks</a>.count());</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;\nThe custom date and time is created from {0} ticks.&quot;</span>, <a class="code hl_typedef" href="group__types.html#gaf6b556b49d28b448fc2c5af1d820f3ea">ticks</a>);</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
@@ -1419,15 +1419,15 @@ Converting time intervals of less than an hour to a fraction can involve a loss 
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">    <span class="keyword">auto</span> date_format = <span class="stringliteral">&quot;{0:d}/{0:t}.{0:c}&quot;</span>_s;</div>
 <div class="line">    <span class="keyword">auto</span> date1 = <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a> {2010, 9, 8, 16, 0, 0};</div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;Original date: {0} ({1:N0} ticks)\n&quot;</span>, ustring::format(date_format, date1), date1.ticks().count());</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;Original date: {0} ({1:N0} ticks)\n&quot;</span>, ustring::format(date_format, date1), date1.ticks());</div>
 <div class="line">    </div>
 <div class="line">    <span class="keyword">auto</span> date2 = date1.add_milliseconds(1);</div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;Second date:   {0} ({1:N0} ticks)&quot;</span>, ustring::format(date_format, date2), date2.ticks().count());</div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;Difference between dates: {0} ({1:N0} ticks)\n&quot;</span>, date2 - date1, (date2.ticks() - date1.ticks()).count());</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;Second date:   {0} ({1:N0} ticks)&quot;</span>, ustring::format(date_format, date2), date2.ticks());</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;Difference between dates: {0} ({1:N0} ticks)\n&quot;</span>, date2 - date1, date2.ticks() - date1.ticks());</div>
 <div class="line">    </div>
 <div class="line">    <span class="keyword">auto</span> date3 = date1.add_milliseconds(1.5);</div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;Third date:    {0} ({1:N0} ticks)&quot;</span>, ustring::format(date_format, date3), date3.ticks().count());</div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;Difference between dates: {0} ({1:N0} ticks)&quot;</span>, date3 - date1, (date3.ticks() - date1.ticks()).count());</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;Third date:    {0} ({1:N0} ticks)&quot;</span>, ustring::format(date_format, date3), date3.ticks());</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;Difference between dates: {0} ({1:N0} ticks)&quot;</span>, date3 - date1, date3.ticks() - date1.ticks());</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
@@ -5154,6 +5154,7 @@ An alternative to using <a class="el" href="classxtd_1_1date__time.html#a15f9bf4
 <dl class="section remark"><dt>Remarks</dt><dd>The value of this constant is equivalent to 23:59:59.9999999 UTC, December 31, 9999 in the Gregorian calendar, exactly one 100-nanosecond tick before 00:00:00 UTC, January 1, 10000. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example instantiates a <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> object by passing its constructor an <a class="el" href="group__types.html#gaf6b556b49d28b448fc2c5af1d820f3ea" title="Represents a tick duration.">xtd::ticks</a> value that represents a number of ticks. Before invoking the constructor, the example ensures that this value is greater than or equal to date_time::min_value.ticks() and less than or equal to date_time::max_value.ticks(). If not, it throws an <a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/date_time&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/int64_object&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -5162,17 +5163,17 @@ An alternative to using <a class="el" href="classxtd_1_1date__time.html#a15f9bf4
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">    <span class="comment">// Attempt to assign an out-of-range value to a date_time constructor.</span></div>
-<div class="line">    <span class="keyword">auto</span> number_of_ticks = ticks::max();</div>
+<div class="line">    <span class="keyword">auto</span> number_of_ticks = int64_object::max_value;</div>
 <div class="line">    <span class="keyword">auto</span> valid_date = <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a> {};</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Validate the value.</span></div>
 <div class="line">    <span class="keywordflow">if</span> (number_of_ticks &gt;= date_time::min_value.<a class="code hl_typedef" href="group__types.html#gaf6b556b49d28b448fc2c5af1d820f3ea">ticks</a>() &amp;&amp; number_of_ticks &lt;= date_time::max_value.<a class="code hl_typedef" href="group__types.html#gaf6b556b49d28b448fc2c5af1d820f3ea">ticks</a>()) {</div>
 <div class="line">      valid_date = <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a>(number_of_ticks);</div>
-<div class="line">      console::write_line(<span class="stringliteral">&quot;{0} is valid.&quot;</span>, valid_date.ticks().count());</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;{0} is valid.&quot;</span>, valid_date.ticks());</div>
 <div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (number_of_ticks &lt; date_time::min_value.<a class="code hl_typedef" href="group__types.html#gaf6b556b49d28b448fc2c5af1d820f3ea">ticks</a>())</div>
-<div class="line">      console::write_line(<span class="stringliteral">&quot;{0} is less than {1} ticks.&quot;</span>, number_of_ticks.count(), date_time::min_value.ticks().count());</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;{0} is less than {1} ticks.&quot;</span>, number_of_ticks, date_time::min_value.<a class="code hl_typedef" href="group__types.html#gaf6b556b49d28b448fc2c5af1d820f3ea">ticks</a>());</div>
 <div class="line">    <span class="keywordflow">else</span></div>
-<div class="line">      console::write_line(<span class="stringliteral">&quot;{0} is greater than {1} ticks.&quot;</span>, number_of_ticks.count(), date_time::max_value.ticks().count());</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;{0} is greater than {1} ticks.&quot;</span>, number_of_ticks, date_time::max_value.<a class="code hl_typedef" href="group__types.html#gaf6b556b49d28b448fc2c5af1d820f3ea">ticks</a>());</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
@@ -5208,6 +5209,7 @@ An alternative to using <a class="el" href="classxtd_1_1date__time.html#a15f9bf4
 <p>Represents the smallest possible value of <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a>. This field is read-only. </p>
 <dl class="section user"><dt>Examples</dt><dd>The following example instantiates a <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> object by passing its constructor an <a class="el" href="group__types.html#gaf6b556b49d28b448fc2c5af1d820f3ea" title="Represents a tick duration.">xtd::ticks</a> value that represents a number of ticks. Before invoking the constructor, the example ensures that this value is greater than or equal to date_time::min_value.ticks() and less than or equal to date_time::max_value.ticks(). If not, it throws an <a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/date_time&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/int64_object&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -5216,17 +5218,17 @@ An alternative to using <a class="el" href="classxtd_1_1date__time.html#a15f9bf4
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">    <span class="comment">// Attempt to assign an out-of-range value to a date_time constructor.</span></div>
-<div class="line">    <span class="keyword">auto</span> number_of_ticks = ticks::max();</div>
+<div class="line">    <span class="keyword">auto</span> number_of_ticks = int64_object::max_value;</div>
 <div class="line">    <span class="keyword">auto</span> valid_date = <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a> {};</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Validate the value.</span></div>
 <div class="line">    <span class="keywordflow">if</span> (number_of_ticks &gt;= date_time::min_value.<a class="code hl_typedef" href="group__types.html#gaf6b556b49d28b448fc2c5af1d820f3ea">ticks</a>() &amp;&amp; number_of_ticks &lt;= date_time::max_value.<a class="code hl_typedef" href="group__types.html#gaf6b556b49d28b448fc2c5af1d820f3ea">ticks</a>()) {</div>
 <div class="line">      valid_date = <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a>(number_of_ticks);</div>
-<div class="line">      console::write_line(<span class="stringliteral">&quot;{0} is valid.&quot;</span>, valid_date.ticks().count());</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;{0} is valid.&quot;</span>, valid_date.ticks());</div>
 <div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (number_of_ticks &lt; date_time::min_value.<a class="code hl_typedef" href="group__types.html#gaf6b556b49d28b448fc2c5af1d820f3ea">ticks</a>())</div>
-<div class="line">      console::write_line(<span class="stringliteral">&quot;{0} is less than {1} ticks.&quot;</span>, number_of_ticks.count(), date_time::min_value.ticks().count());</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;{0} is less than {1} ticks.&quot;</span>, number_of_ticks, date_time::min_value.<a class="code hl_typedef" href="group__types.html#gaf6b556b49d28b448fc2c5af1d820f3ea">ticks</a>());</div>
 <div class="line">    <span class="keywordflow">else</span></div>
-<div class="line">      console::write_line(<span class="stringliteral">&quot;{0} is greater than {1} ticks.&quot;</span>, number_of_ticks.count(), date_time::max_value.ticks().count());</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;{0} is greater than {1} ticks.&quot;</span>, number_of_ticks, date_time::max_value.<a class="code hl_typedef" href="group__types.html#gaf6b556b49d28b448fc2c5af1d820f3ea">ticks</a>());</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
@@ -5271,7 +5273,7 @@ An alternative to using <a class="el" href="classxtd_1_1date__time.html#a15f9bf4
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 27 2023 20:45:59 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Aug 30 2023 23:20:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

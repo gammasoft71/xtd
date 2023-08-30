@@ -82,7 +82,7 @@ $(function() {
   <div class="headertitle"><div class="title">main1.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<p>Shows how to use xtd::startup class.</p>
+<p>Shows how to use <a class="el" href="classxtd_1_1startup.html" title="Defines the xtd::startup object that can be used in the main method to safely call the application&#39;s ...">xtd::startup</a> class.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/environment&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
@@ -104,11 +104,10 @@ $(function() {
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><a id="a0" name="a0"></a><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(main1_example::program);</div>
-<div class="line"><span class="comment">// startup_(main1_example::program); is same as :</span></div>
+<div class="line"><span class="comment">// Is the same as :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// auto main(int argc, char* argv[])-&gt;int {</span></div>
-<div class="line"><span class="comment">//   main1_example::program::main();</span></div>
-<div class="line"><span class="comment">//   return environment::exit_code();</span></div>
+<div class="line"><span class="comment">// auto main()-&gt;int {</span></div>
+<div class="line"><span class="comment">//   return startup::safe_run(main1_example::program::main);</span></div>
 <div class="line"><span class="comment">// }</span></div>
 <div class="line"> </div>
 <div class="line"> </div>
@@ -119,13 +118,13 @@ $(function() {
 <div class="line"><span class="comment">// two</span></div>
 <div class="line"><span class="comment">// three four</span></div>
 <div class="line"><span class="comment">// five</span></div>
-<div class="ttc" id="agroup__keywords_html_gac9b8e6f22fb2fdc1bb915ee01aef848c"><div class="ttname"><a href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a></div><div class="ttdeci">#define startup_(main_class)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:58</div></div>
+<div class="ttc" id="agroup__keywords_html_gac9b8e6f22fb2fdc1bb915ee01aef848c"><div class="ttname"><a href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a></div><div class="ttdeci">#define startup_(main_class)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:136</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 27 2023 20:45:56 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Aug 30 2023 23:20:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
