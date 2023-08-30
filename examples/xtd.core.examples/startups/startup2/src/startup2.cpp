@@ -36,7 +36,7 @@ auto main()->int {
 
 // This code produces the following output if one two "three four" five are entered on command line:
 //
-// /!---OMITTED---!/main2
+// /!---OMITTED---!/startup2
 // one
 // two
 // three four
