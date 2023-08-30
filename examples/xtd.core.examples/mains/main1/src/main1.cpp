@@ -21,8 +21,8 @@ namespace main1_example {
 startup_(main1_example::program);
 // Is the same as :
 //
-// auto main(int argc, char* argv[])->int {
-//   return startup::safe_run(main1_example::program::main, argc, argv);
+// auto main()->int {
+//   return startup::safe_run(main1_example::program::main);
 // }
 
 
