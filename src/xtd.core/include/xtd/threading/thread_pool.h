@@ -91,19 +91,19 @@ namespace xtd {
       /// @remarks The close method waits for the end of running worker threads, but will not wait for unstarted worker threads.
       /// @remarks You can use this method to ensure that all pending threads are closed, and that resources are also closed.
       /// @remarks #startup_calls xtd::thread_pool::close method.
-      /// @remarks xtd::threading::join_all, xtd::threading::join_all(int32), xtd::threading::join_all(xtd::time_span) methods call xtd::thread_pool::close method too.
+      /// @remarks xtd::threading::thread::join_all, xtd::threading::thread::join_all(int32), xtd::threading::thread::join_all(const xtd::time_span&) methods call xtd::threading::thread_pool::close method too.
       static void close();
 
       /// @brief Retrieves the difference between the maximum number of thread pool threads returned by the GetMaxThreads method, and the number currently active.
       /// @param worker_threads The number of available worker threads
       /// @param completion_port_threads The number of available asynchronous I/O threads.
-      /// @remarks When xtd::threading::thread_pool::get_available_threads returns, the variable specified by workerThreads contains the number of additional worker threads that can be started, and the variable specified by completionPortThreads contains the number of additional asynchronous I/O threads that can be started.
+      /// @remarks When xtd::threading::thread_pool::get_available_threads returns, the variable specified by worker_threads contains the number of additional worker threads that can be started, and the variable specified by completion_port_threads contains the number of additional asynchronous I/O threads that can be started.
       static void get_available_threads(size_t& worker_threads, size_t& completion_port_threads);
 
       /// @brief Retrieves the number of requests to the thread pool that can be active concurrently. All requests above that number remain queued until thread pool threads become available.
       /// @param worker_threads The maximum number of worker threads in the thread pool.
       /// @param completion_port_threads The maximum number of asynchronous I/O threads in the thread pool.
-      /// @remarks When GetMaxThreads returns, the variable specified by workerThreads contains the maximum number of worker threads allowed in the thread pool, and the variable specified by completionPortThreads contains the maximum number of asynchronous I/O threads allowed in the thread pool.
+      /// @remarks When GetMaxThreads returns, the variable specified by worker_threads contains the maximum number of worker threads allowed in the thread pool, and the variable specified by completion_port_threads contains the maximum number of asynchronous I/O threads allowed in the thread pool.
       /// @remarks You can use the xtd::threading::thread_pool::get_available_threads method to determine the actual number of threads in the thread pool at any given time.
       /// @remarks You can use the xtd::threading::thread_pool::set_max_threads to set the maximum number of worker threads and asynchronous I/O threads in the thread pool.
       static void get_max_threads(size_t& worker_threads, size_t& completion_port_threads);
