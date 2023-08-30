@@ -11,7 +11,6 @@
 #include "../collections/specialized/string_vector.h"
 #include "../environment.h"
 #include "../static.h"
-#include "../ustring.h"
 
 /// @cond
 struct __startup__ final static_ {
