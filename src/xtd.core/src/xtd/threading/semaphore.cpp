@@ -86,11 +86,13 @@ int32 semaphore::release(int32 release_count) {
   if (!semaphore_) throw object_closed_exception {csf_};
   if (count_ + release_count > maximum_count_) throw semaphore_full_exception {csf_};
   bool io_error = false;
-  int32 previous_count = 0;
+  int32 previous_count = -1;
   semaphore_->signal(io_error, release_count, previous_count);
-  if (previous_count != -1) count_ = previous_count;
+  if (previous_count != -1) interlocked::exchange(count_, previous_count);
   if (io_error) throw io::io_exception {csf_};
-  return count_++;
+  interlocked::exchange(previous_count, count_);
+  interlocked::exchange(count_, count_ + release_count);
+  return previous_count;
 }
 
 bool semaphore::try_open_existing(const ustring& name, semaphore& result) noexcept {
@@ -117,12 +119,12 @@ bool semaphore::wait(int32 milliseconds_timeout) {
   if (result == 0xFFFFFFFF) throw io::io_exception {csf_};
   if (result == 0x00000080) throw abandoned_mutex_exception {csf_};
   if (result == 0x00000102) return false;
-  --count_;
+  interlocked::decrement(count_);
   return true;
 }
 
 void semaphore::create(int32 initial_count, int32 maximum_count, bool& created_new) {
-  count_ = initial_count;
+  interlocked::exchange(count_, initial_count);
   maximum_count_ = maximum_count;
   created_new = true;
   if (name_.empty()) {
