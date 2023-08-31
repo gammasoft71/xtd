@@ -89,3 +89,4 @@ tools/xtdc-gui/properties/settings.h
 tools/keycodes/properties/resources.h
 tools/keycodes/properties/settings.h
 tools/keycodes/properties/startup.cpp
+tools/guidgen-gui/properties/startup.cpp
