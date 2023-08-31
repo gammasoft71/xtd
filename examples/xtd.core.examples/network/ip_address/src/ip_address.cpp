@@ -109,7 +109,7 @@ private:
   }
 };
 
-startup_(test_ip_address);
+startup_(test_ip_address::main);
 
 // This code produces the following output if no args:
 //

@@ -2,6 +2,7 @@
 #include <xtd/io/directory_info>
 #include <xtd/io/path>
 #include <xtd/console>
+#include <xtd/environment>
 #include <xtd/startup>
 
 using namespace std;
@@ -152,7 +153,7 @@ private:
   }
 };
 
-startup_(program);
+startup_(program::main);
 
 // This code produces the following output :
 // results may vary based on the computer/file structure/etc.:

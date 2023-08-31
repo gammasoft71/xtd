@@ -14,7 +14,7 @@ namespace startup_example {
   };
 }
 
-startup_(startup_example::program);
+startup_(startup_example::program::main);
 
 // This code produces the following output if one two "three four" five six are entered on command line:
 //

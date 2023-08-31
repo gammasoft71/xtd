@@ -19,7 +19,7 @@ namespace bit_converter_endianness_example {
   };
 }
 
-startup_(bit_converter_endianness_example::program);
+startup_(bit_converter_endianness_example::program::main);
 
 /*
  This example of the bit_converter::endianness field generates

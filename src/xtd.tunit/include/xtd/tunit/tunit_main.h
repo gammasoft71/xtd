@@ -39,10 +39,10 @@ public:
 ///   };
 /// }
 ///
-/// startup_(tunit_main_);
+/// startup_(tunit_main_::main);
 /// @endcode
 #define tunit_main_ \
-  __tunit_main
+  __tunit_main::main
 
 /// @brief Defines the entry point to be called with #startup_ for unit test application with Google test compatibility.
 /// @par Library
@@ -65,7 +65,7 @@ public:
 ///   };
 /// }
 ///
-/// startup_(tunit_main_with_gtest_compatibility_);
+/// startup_(tunit_main_with_gtest_compatibility_::main);
 /// @endcode
 #define tunit_main_with_gtest_compatibility_ \
-  __tunit_main_with_gtest_compatibility
+  __tunit_main_with_gtest_compatibility::main

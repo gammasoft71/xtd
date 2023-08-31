@@ -41,4 +41,4 @@ private:
   panel light_yellow_panel;
 };
 
-startup_(form_main);
+startup_(form_main::main);

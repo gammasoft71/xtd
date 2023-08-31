@@ -50,7 +50,7 @@ public:
   }
 };
 
-startup_(program);
+startup_(program::main);
 
 // This code produces the following output :
 //

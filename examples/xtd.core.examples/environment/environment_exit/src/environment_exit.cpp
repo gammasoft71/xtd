@@ -17,7 +17,7 @@ namespace environment_exit_code_example {
   };
 }
 
-startup_(environment_exit_code_example::program);
+startup_(environment_exit_code_example::program::main);
 
 // This code can be produce the following output :
 //

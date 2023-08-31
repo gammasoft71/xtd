@@ -75,4 +75,4 @@ namespace sleepfor {
   };
 }
 
-startup_(sleepfor::program);
+startup_(sleepfor::program::main);

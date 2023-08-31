@@ -136,4 +136,4 @@ namespace border_style_example {
   };
 }
 
-startup_(border_style_example::form1);
+startup_(border_style_example::form1::main);

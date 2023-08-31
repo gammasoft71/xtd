@@ -211,4 +211,4 @@ private:
   labels_t labels;
 };
 
-startup_(labels_form);
+startup_(labels_form::main);

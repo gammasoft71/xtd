@@ -128,4 +128,4 @@ private:
   button right_button;
 };
 
-startup_(form1);
+startup_(form1::main);

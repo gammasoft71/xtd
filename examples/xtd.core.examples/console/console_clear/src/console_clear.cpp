@@ -77,4 +77,4 @@ namespace console_clear_example {
   };
 }
 
-startup_(console_clear_example::program);
+startup_(console_clear_example::program::main);

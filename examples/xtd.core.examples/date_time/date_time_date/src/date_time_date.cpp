@@ -20,7 +20,7 @@ public:
   }
 };
 
-startup_(program);
+startup_(program::main);
 
 // This code can produces the following output:
 // Sun Jun  1 07:47:00 2008

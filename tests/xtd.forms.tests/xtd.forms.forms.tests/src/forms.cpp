@@ -256,4 +256,4 @@ private:
   vector<shared_ptr<form>> dialogs;
 };
 
-startup_(forms_form);
+startup_(forms_form::main);

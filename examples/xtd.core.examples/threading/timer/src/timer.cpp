@@ -65,7 +65,7 @@ namespace timer_example {
   };
 }
 
-startup_(timer_example::program);
+startup_(timer_example::program::main);
 
 // This example produces output similar to the following:
 //

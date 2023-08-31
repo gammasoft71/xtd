@@ -85,7 +85,7 @@ public:
   }
 };
 
-startup_(binomial);
+startup_(binomial::main);
 
 // This code can produces the following output :
 //

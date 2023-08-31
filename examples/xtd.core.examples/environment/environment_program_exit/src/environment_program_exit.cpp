@@ -41,7 +41,7 @@ namespace environment_program_exit_example {
   };
 }
 
-startup_(environment_program_exit_example::program);
+startup_(environment_program_exit_example::program::main);
 
 // This code produces the following output :
 //

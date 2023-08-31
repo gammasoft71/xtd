@@ -118,7 +118,7 @@ private:
   inline static std::array<thread, 5> threads_;
 };
 
-startup_(example);
+startup_(example::main);
 
 // This example produces output similar to the following:
 //

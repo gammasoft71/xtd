@@ -209,7 +209,7 @@ macro(target_registered REGISTERED)
 endmacro()
 
 ## @brief Specifies the entry point to be called when the application is load.
-## @param ARGV0 the object that contains the entry point.
+## @param ARGV0 the main entry point.
 ## @param ARGV1 the object definition file. (optional if you use TUnitMain_ or TUnitFrameworkMain_ entry point)
 ## @remarks Do not use this method of startup_(...) is present in your files or if you use standard c++ main() method.
 ## @remarks Call only once by project.
@@ -223,7 +223,7 @@ endmacro()
 ##  find_package(xtd REQUIRED)
 ##  add_sources(my_project.cpp)
 ##
-##  target_startup("my_project::my_class" my_project.cpp)
+##  target_startup("my_project::my_class::main" my_project.cpp)
 ##  target_type(GUI_APPLICATION)
 ## @endcode
 macro(target_startup ...)

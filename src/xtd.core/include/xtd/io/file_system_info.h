@@ -68,7 +68,7 @@ namespace xtd {
     ///   }
     /// };
     ///
-    /// startup_(program);
+    /// startup_(program::main);
     ///
     /// // Output will vary based on contents of drive C.
     ///
@@ -328,7 +328,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(touch);
+      /// startup_(touch::main);
       /// @endcode
       /// @note This method may return an inaccurate value because it uses native functions whose values may not be continuously updated by the operating system.
       /// @remarks The value of the xtd::io::file_system_info::last_access_time property is pre-cached if the current instance of the xtd::io::file_system_info object was returned from any of the following xtd::io::directory_info methods:
@@ -383,7 +383,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(touch);
+      /// startup_(touch::main);
       /// @endcode
       /// @note This method may return an inaccurate value because it uses native functions whose values may not be continuously updated by the operating system.
       /// @remarks The value of the xtd::io::file_system_info::last_access_time property is pre-cached if the current instance of the xtd::io::file_system_info object was returned from any of the following xtd::io::directory_info methods:
@@ -470,7 +470,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(touch);
+      /// startup_(touch::main);
       /// @endcode
       /// @note This method may return an inaccurate value because it uses native functions whose values may not be continuously updated by the operating system.
       /// @remarks The value of the xtd::io::file_system_info::last_write_time property is pre-cached if the current instance of the xtd::io::file_system_info object was returned from any of the following xtd::io::directory_info methods:
@@ -525,7 +525,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(touch);
+      /// startup_(touch::main);
       /// @endcode
       /// @note This method may set an inaccurate value because it uses native functions whose values may not be continuously updated by the operating system.
       /// @remarks The value of the xtd::io::file_system_info::last_write_time property is pre-cached if the current instance of the xtd::io::file_system_info object was returned from any of the following xtd::io::directory_info methods:

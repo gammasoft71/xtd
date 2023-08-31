@@ -1,5 +1,6 @@
 #include <xtd/media/system_sounds>
 #include <xtd/console>
+#include <xtd/environment>
 #include <xtd/startup>
 
 using namespace xtd;
@@ -36,7 +37,7 @@ namespace system_sound_example {
   };
 }
 
-startup_(system_sound_example::program);
+startup_(system_sound_example::program::main);
 
 // This code can produce the following output:
 //

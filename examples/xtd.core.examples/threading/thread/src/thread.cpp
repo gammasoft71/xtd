@@ -46,7 +46,7 @@ public:
   }
 };
 
-startup_(thread_example);
+startup_(thread_example::main);
 
 // This code can produce the following output:
 //

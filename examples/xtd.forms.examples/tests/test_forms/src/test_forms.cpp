@@ -127,4 +127,4 @@ private:
   class virtual_console virtual_console;
 };
 
-startup_(form_main);
+startup_(form_main::main);

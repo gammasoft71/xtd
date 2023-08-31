@@ -12,4 +12,4 @@ public:
   }
 };
 
-startup_(console_main);
+startup_(console_main::main);

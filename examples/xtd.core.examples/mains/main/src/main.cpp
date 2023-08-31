@@ -26,7 +26,7 @@ namespace main_example {
   };
 }
 
-startup_(main_example::program);
+startup_(main_example::program::main);
 
 // This code produces the following output if 3 is entered on command line:
 //

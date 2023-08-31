@@ -63,7 +63,7 @@ namespace timeout_example {
   };
 }
 
-startup_(timeout_example::thread_interrupt);
+startup_(timeout_example::thread_interrupt::main);
 
 // This example produces output similar to the following on Windows Operating System only:
 //

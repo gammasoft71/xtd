@@ -213,4 +213,4 @@ namespace calculator {
   };
 }
 
-startup_(calculator::form_main);
+startup_(calculator::form_main::main);

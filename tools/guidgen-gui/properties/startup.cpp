@@ -6,5 +6,5 @@
 #include "../src/main_form.h"
 #include <xtd/startup>
 
-startup_(guidgen_gui::main_form);
+startup_(guidgen_gui::main_form::main);
 #pragma endregion

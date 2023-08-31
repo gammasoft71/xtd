@@ -6,5 +6,5 @@
 #include "../src/game_of_life.h"
 #include <xtd/startup>
 
-startup_(game_of_life::form_game_of_life);
+startup_(game_of_life::form_game_of_life::main);
 #pragma endregion

@@ -31,4 +31,4 @@ namespace form_background_image_example {
   };
 }
 
-startup_(form_background_image_example::form_main);
+startup_(form_background_image_example::form_main::main);

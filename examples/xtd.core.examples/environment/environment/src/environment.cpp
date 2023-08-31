@@ -76,7 +76,7 @@ namespace environment_example {
   };
 }
 
-startup_(environment_example::program);
+startup_(environment_example::program::main);
 
 // This example produces results similar to the following:
 // (Any result that is lengthy or reveals information that should remain

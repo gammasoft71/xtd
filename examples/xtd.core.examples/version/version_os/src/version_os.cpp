@@ -17,7 +17,7 @@ namespace version_os_example {
   };
 }
 
-startup_(version_os_example::program);
+startup_(version_os_example::program::main);
 
 // This code can produce the following output:
 //

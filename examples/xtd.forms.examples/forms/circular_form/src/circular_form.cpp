@@ -55,4 +55,4 @@ private:
   point mouse_location = point::empty;
 };
 
-startup_(form_main);
+startup_(form_main::main);

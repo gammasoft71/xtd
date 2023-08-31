@@ -68,4 +68,4 @@ protected:
   something_ready_notifier notifier;
 };
 
-startup_(form1);
+startup_(form1::main);

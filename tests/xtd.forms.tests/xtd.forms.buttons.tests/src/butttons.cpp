@@ -245,4 +245,4 @@ private:
   buttons_t default_buttons;
 };
 
-startup_(buttons_form);
+startup_(buttons_form::main);

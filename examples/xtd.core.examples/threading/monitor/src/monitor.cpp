@@ -54,7 +54,7 @@ namespace monitor_example {
   };
 }
 
-startup_(monitor_example::program);
+startup_(monitor_example::program::main);
 
 // This example produces output similar to the following:
 //

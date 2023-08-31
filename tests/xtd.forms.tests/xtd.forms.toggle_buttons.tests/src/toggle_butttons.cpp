@@ -235,4 +235,4 @@ private:
   buttons_t default_buttons;
 };
 
-startup_(toggle_buttons_form);
+startup_(toggle_buttons_form::main);

@@ -66,4 +66,4 @@ namespace tutorial {
   };
 }
 
-startup_(tutorial::communicate);
+startup_(tutorial::communicate::main);

@@ -86,7 +86,7 @@ namespace mutex_example {
   };
 }
 
-startup_(mutex_example::program);
+startup_(mutex_example::program::main);
 
 // This example produces output similar to the following:
 //

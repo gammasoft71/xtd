@@ -76,7 +76,7 @@ namespace manual_reset_event_example {
   };
 }
 
-startup_(manual_reset_event_example::program);
+startup_(manual_reset_event_example::program::main);
 
 // This example produces output similar to the following:
 //

@@ -33,4 +33,4 @@ namespace form_and_main_example {
   };
 }
 
-startup_(form_and_main_example::form_main);
+startup_(form_and_main_example::form_main::main);
