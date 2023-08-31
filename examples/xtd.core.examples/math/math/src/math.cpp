@@ -73,7 +73,7 @@ namespace math_example {
   };
 }
 
-startup_(math_example::math_trapezoid_sample);
+startup_(math_example::math_trapezoid_sample::main);
 
 // This code produces the following output:
 //

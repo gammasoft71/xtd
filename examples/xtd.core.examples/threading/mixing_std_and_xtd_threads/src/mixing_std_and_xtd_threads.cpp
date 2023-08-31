@@ -56,7 +56,7 @@ namespace mixing_std_and_xtd_threads_example {
   };
 }
 
-startup_(mixing_std_and_xtd_threads_example::mixing_std_and_xtd_threads_class);
+startup_(mixing_std_and_xtd_threads_example::mixing_std_and_xtd_threads_class::main);
 
 // This code produces the following output:
 //

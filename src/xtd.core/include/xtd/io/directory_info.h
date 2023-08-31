@@ -64,7 +64,7 @@ namespace xtd {
     ///   }
     /// };
     ///
-    /// startup_(program);
+    /// startup_(program::main);
     /// @endcode
     /// @par Examples
     /// The following example demonstrates how to copy a directory and its contents.
@@ -109,7 +109,7 @@ namespace xtd {
     ///   }
     /// };
     ///
-    /// startup_(copy_dir);
+    /// startup_(copy_dir::main);
     ///
     /// // Output will vary based on the contents of the source directory.
     /// @endcode
@@ -275,7 +275,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       /// @endcode
       /// @remarks This constructor does not check if a directory exists. This constructor is a placeholder for a string that is used to access the disk in subsequent operations.
       /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
@@ -326,7 +326,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       /// @endcode
       /// @remarks The xtd::io::directory_info::exists property returns false if any error occurs while trying to determine if the specified file exists. This can occur in situations that raise exceptions such as passing a file name with invalid characters or too many characters, a failing or missing disk, or if the caller does not have permission to read the file.
       bool exists() const override;
@@ -350,7 +350,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       /// @endcode
       /// @remarks This xtd::io::directory_info::name property returns only the name of the directory, such as "Bin". To get the full path, such as "c:\public\Bin", use the xtd::io::directory_info::full_name property.
       /// @remarks The xtd::io::directory_info::name property of a xtd::io::directory_info requires no permission (beyond the read permission to the directory necessary to construct the Exists) but can give out the directory name. If it is necessary to hand out a xtd::io::directory_info to a protected directory with a cryptographically secure name, create a dummy directory for the untrusted code's use.
@@ -390,7 +390,7 @@ namespace xtd {
       ///   }
       /// };
       /// ///
-      /// startup_(program);
+      /// startup_(program::main);
       /// @endcode
       /// @remarks To ensure consistent behavior across versions and to make your intent explicit, retrieve the value of one of the following properties on the xtd::io::directory_info instance returned by xtd::io::directory_info::parent.
       /// * xtd::io::directory_info::name, which returns the simple name of the directory (such as bin).
@@ -424,7 +424,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       ///
       /// /*
       ///  This code produces output similar to the following:
@@ -478,7 +478,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       /// @endcode
       /// @remarks If the directory already exists, this method does nothing.
       /// @remarks If the directory did not exist before calling this method, then any cached attribute information about the directory will be flushed if the creation is successful.
@@ -526,7 +526,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       /// @endcode
       /// @remarks Any and all directories specified in path are created, unless some part of path is invalid. The path parameter specifies a directory path, not a file path. If the subdirectory already exists, this method does nothing.
       /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
@@ -558,7 +558,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       /// @endcode
       /// @remarks The xtd::io::directory_info::enumerate_directories and xtd::io::directory_info::get_directories methods differ as follows:
       /// @remarks * When you use xtd::io::directory_info::enumerate_directories, you can start enumerating the collection of xtd::io::directory_info objects before the whole collection is returned.
@@ -622,7 +622,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       /// @endcode
       /// @par Examples
       /// The following example shows how to enumerate files in a directory by using different search options. The example assumes a directory that has files named log1.txt, log2.txt, test1.txt, test2.txt, test3.txt.
@@ -657,7 +657,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       ///
       /// /*
       ///  This code produces output similar to the following:
@@ -728,7 +728,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       ///
       /// /*
       ///  This code produces output similar to the following:
@@ -834,7 +834,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       /// @endcode
       /// @remarks If there are no subdirectories, this method returns an empty array. This method is not recursive.
       /// @remarks This method pre-populates the values of the following xtd::io::directory_info properties:
@@ -877,7 +877,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       ///@endcode
       /// @remarks search_pattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in search_pattern.
       /// | Wildcard specifier | Matches                                   |
@@ -930,7 +930,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       ///
       /// /*
       ///  This code produces output similar to the following:
@@ -1001,7 +1001,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       ///
       /// /*
       ///  This code produces output similar to the following:
@@ -1112,7 +1112,7 @@ namespace xtd {
       ///   inline static long directories = 0;
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       /// @endcode
       /// @remarks The xtd::io::directory_info::enumerate_file_system_infos and xtd::io::directory_info::get_file_system_infos methods differ as follows:
       /// * When you use xtd::io::directory_info::enumerate_file_system_infos, you can start enumerating the collection of xtd::io::file_system_info objects before the whole collection is returned.
@@ -1201,7 +1201,7 @@ namespace xtd {
       ///   inline static long directories = 0;
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       /// @endcode
       /// @remarks search_pattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in search_pattern.
       /// | Wildcard specifier | Matches                                   |
@@ -1268,7 +1268,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       /// @endcode
       /// @remarks This method throws an IOException if, for example, you try to move c:\mydir to c:\public, and c:\public already exists. You must specify "c:\\public\\mydir" as the destDirName parameter, or specify a new directory name such as "c:\\newdir".
       /// @remarks This method permits moving a directory to a read-only directory. The read/write attribute of neither directory is affected.
@@ -1309,7 +1309,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       /// @endcode
       /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
       void remove() const override;
@@ -1353,7 +1353,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       /// @endcode
       /// @remarks If the xtd::io::directory_info has no files or subdirectories, this method deletes the xtd::io::directory_info even if recursive is false. Attempting to delete a xtd::io::directory_info that is not empty when recursive is false throws an xtd::io::io_exception.
       /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.

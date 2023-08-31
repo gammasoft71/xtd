@@ -23,7 +23,7 @@ namespace version_example {
   };
 }
 
-startup_(version_example::program);
+startup_(version_example::program::main);
 
 // This code can produce the following output:
 //

@@ -38,7 +38,7 @@ public:
   }
 };
 
-startup_(program);
+startup_(program::main);
 
 // This code produces output similar to the following;
 // results may vary based on the computer/file structure/etc.:

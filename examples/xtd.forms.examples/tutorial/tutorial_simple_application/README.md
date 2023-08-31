@@ -21,7 +21,7 @@ namespace tutorial {
   };
 }
 
-startup_(tutorial::simple);
+startup_(tutorial::simple::main);
 ```
 
 This very basic example shows a small window on the screen. The window is centered.
@@ -33,7 +33,7 @@ start_position(form_start_position::center_screen);
 This method centers the form on the screen, both horizontally and vertically.
 
 ```cpp
-startup_(tutorial::simple);
+startup_(tutorial::simple::main);
 ```
 
 The code behind startup_ macro can be replaced by :

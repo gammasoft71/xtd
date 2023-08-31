@@ -29,4 +29,4 @@ namespace tutorial {
   };
 }
 
-startup_(tutorial::form_button);
+startup_(tutorial::form_button::main);

@@ -73,4 +73,4 @@ private:
   button generate_debugger_debug_break_button;
 };
 
-startup_(main_form);
+startup_(main_form::main);

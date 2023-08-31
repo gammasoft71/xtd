@@ -75,4 +75,4 @@ namespace countries_example {
   };
 }
 
-startup_(countries_example::main_form);
+startup_(countries_example::main_form::main);

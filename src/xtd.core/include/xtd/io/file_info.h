@@ -187,7 +187,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       ///
       ///
       /// // This code produces output similar to the following;
@@ -256,7 +256,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       ///
       ///
       /// // This code produces output similar to the following;
@@ -398,7 +398,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       ///
       /// // This code produces output similar to the following;
       /// // results may vary based on the computer/file structure/etc.:
@@ -453,7 +453,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       /// // This code produces output similar to the following;
       /// // results may vary based on the computer/file structure/etc.:
       /// // Add as many lines as you like...
@@ -502,7 +502,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       ///
       /// // This code produces output similar to the following;
       /// // results may vary based on the computer/file structure/etc.:
@@ -565,7 +565,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       /// // This code produces output similar to the following;
       /// // results may vary based on the computer/file structure/etc.:
       /// // Add as many lines as you like...
@@ -610,7 +610,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       ///
       /// // This code produces output similar to the following;
       /// // results may vary based on the computer/file structure/etc.:
@@ -656,7 +656,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       /// @endcode
       /// @par Examples
       /// The following example creates a file, adds some text to it, and reads from the file.
@@ -793,8 +793,8 @@ namespace xtd {
       ///     }
       ///   }
       /// };
-      /// ///
-      /// /// startup_(program);
+      ///
+      /// startup_(program::main);
       ///
       /// // This code produces output similar to the following;
       /// // results may vary based on the computer/file structure/etc.:
@@ -824,7 +824,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       /// @endcode
       /// @remarks If the file does not exist, this method does nothing.
       void remove() const override;

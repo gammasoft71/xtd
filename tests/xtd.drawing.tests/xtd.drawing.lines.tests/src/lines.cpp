@@ -131,5 +131,5 @@ private:
   
 };
 
-startup_(lines_form);
+startup_(lines_form::main);
 

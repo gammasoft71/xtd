@@ -189,4 +189,4 @@ namespace set_path {
   };
 }
 
-startup_(set_path::program);
+startup_(set_path::program::main);

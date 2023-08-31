@@ -30,7 +30,7 @@ namespace barrier_example {
   };
 }
 
-startup_(barrier_example::program);
+startup_(barrier_example::program::main);
 
 // This example produces output similar to the following:
 //

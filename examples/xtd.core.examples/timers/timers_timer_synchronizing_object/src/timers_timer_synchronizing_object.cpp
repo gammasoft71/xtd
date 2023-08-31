@@ -105,4 +105,4 @@ namespace timer_example {
   };
 }
 
-startup_(timer_example::form1);
+startup_(timer_example::form1::main);

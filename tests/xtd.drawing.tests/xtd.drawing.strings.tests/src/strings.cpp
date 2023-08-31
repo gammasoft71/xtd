@@ -299,4 +299,4 @@ private:
   }
 };
 
-startup_(strings_form);
+startup_(strings_form::main);

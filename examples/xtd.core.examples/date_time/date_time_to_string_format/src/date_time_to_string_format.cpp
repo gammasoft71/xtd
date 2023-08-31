@@ -59,7 +59,7 @@ public:
   }
 };
 
-startup_(program);
+startup_(program::main);
 
 // This code can produces the following output:
 //

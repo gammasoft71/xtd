@@ -72,7 +72,7 @@ namespace interlocked_example {
   };
 }
 
-startup_(interlocked_example::my_interlocked_exchange_class);
+startup_(interlocked_example::my_interlocked_exchange_class::main);
 
 // This example produces output similar to the following:
 //

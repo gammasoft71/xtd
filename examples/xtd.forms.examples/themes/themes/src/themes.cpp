@@ -402,4 +402,4 @@ private:
   choice themes_choice;
 };
 
-startup_(form1);
+startup_(form1::main);

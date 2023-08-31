@@ -6,5 +6,5 @@
 #include "../src/target_startup.cpp"
 #include <xtd/startup>
 
-startup_(target_startup::program);
+startup_(target_startup::program::main);
 #pragma endregion

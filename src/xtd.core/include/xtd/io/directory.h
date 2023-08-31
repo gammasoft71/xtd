@@ -52,7 +52,7 @@ namespace xtd {
     ///   }
     /// };
     ///
-    /// startup_(program);
+    /// startup_(program::main);
     /// @endcode
     /// @par Examples
     /// The following example demonstrates how to move a directory and all its files to a new directory. The original directory no longer exists after it has been moved.
@@ -75,7 +75,7 @@ namespace xtd {
     ///   }
     /// };
     ///
-    /// startup_(program);
+    /// startup_(program::main);
     /// @endcode
     /// @remarks Use the xtd::io::directory class for typical operations such as copying, moving, renaming, creating, and deleting directories.
     /// * To create a directory, use one of the xtd::io::directory::create_directory methods.
@@ -235,7 +235,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       /// @endcode
       /// @par Examples
       /// To create the directory C:\Users\User1\Public\Html when the current directory is C:\Users\User1, use any of the following calls to ensure that the backslash is interpreted properly:
@@ -289,7 +289,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       /// @endcode
       /// @remarks You can specify relative or absolute path information in the path parameter. Relative path information is interpreted as relative to the current working directory, which you can determine by using the xtd::io::directory::get_current_directory method. The returned directory names are prefixed with the value you provided in the path parameter. For example, if you provide a relative path in the path parameter, the returned directory names will contain a relative path.
       /// @remarks The xtd::io::directory::enumerate_directories and xtd::io::directory::get_directories methods differ as follows: When you use xtd::io::directory::enumerate_directories, you can start enumerating the collection of names before the whole collection is returned; when you use xtd::io::directory::get_directories, you must wait for the whole array of names to be returned before you can access the array. Therefore, when you are working with many files and directories, xtd::io::directory::enumerate_directories can be more efficient.
@@ -335,7 +335,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       /// @endcode
       /// @remarks search_pattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in search_pattern.
       /// | Wildcard specifier | Matches                                   |
@@ -383,7 +383,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       /// @endcode
       /// @remarks You can specify relative path information with the path parameter. Relative path information is interpreted as relative to the current working directory, which you can determine by using the xtd::io::directory::get_current_directory method.
       /// @remarks The xtd::io::directory::enumerate_files and xtd::io::directory::get_files methods differ as follows: When you use xtd::io::directory::enumerate_files, you can start enumerating the collection of names before the whole collection is returned. When you use xtd::io::directory::get_files, you must wait for the whole array of names to be returned before you can access the array. Therefore, when you are working with many files and directories, xtd::io::directory::enumerate_files can be more efficient.
@@ -424,7 +424,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       /// @endcode
       /// @remarks search_pattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in searchPattern.
       /// | Wildcard specifier | Matches                                   |
@@ -516,7 +516,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       /// @endcode
       /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory.
       /// @remarks Trailing spaces are removed from the end of the path parameter before checking whether the directory exists.
@@ -564,7 +564,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       /// @endcode
       static xtd::date_time get_creation_time(const xtd::ustring& path);
       
@@ -605,7 +605,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       /// @endcode
       /// @remarks The current directory is distinct from the original directory, which is the one from which the process was started.
       /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
@@ -664,7 +664,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       /// @endcode
       /// @remarks This method is identical to xtd::io::directory::get_directories(ustring, ustring) with the asterisk (*) specified as the search pattern, so it returns all subdirectories.
       /// @remarks The xtd::io::directory::enumerate_directories and xtd::io::directory::get_directories methods differ as follows: When you use xtd::io::directory::enumerate_directories, you can start enumerating the collection of names before the whole collection is returned; when you use xtd::io::directory::get_directories, you must wait for the whole array of names to be returned before you can access the array. Therefore, when you are working with many files and directories, xtd::io::directory::enumerate_directories can be more efficient.
@@ -756,7 +756,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       /// @endcode
       /// @remarks This method obtains the fully qualified path name of path, as returned by xtd::io::path::get_full_path, and returns root directory information. The specified path is not required to exist.
       /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
@@ -817,7 +817,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       /// @endcode
       /// @remarks The xtd::io::directory::enumerate_files and xtd::io::directory::get_files methods differ as follows: When you use xtd::io::directory::enumerate_files, you can start enumerating the collection of names before the whole collection is returned; when you use xtd::io::directory::get_files, you must wait for the whole array of names to be returned before you can access the array. Therefore, when you are working with many files and directories, xtd::io::directory::enumerate_files can be more efficient.
       /// @remarks The returned file names are appended to the supplied path parameter.
@@ -861,7 +861,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       /// @endcode
       /// @remarks The returned file names are appended to the supplied path parameter and the order of the returned file names is not guaranteed; use the std::sort method if a specific sort order is required.
       /// @remarks search_pattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in search_pattern.
@@ -986,7 +986,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       /// @endcode
       /// @remarks The order of the returned file and directory names is not guaranteed; use the std::sort method if a specific sort order is required.
       /// @remarks The xtd::io::directory::enumerate_fileSystem_entries and xtd::io::directory::get_file_system_entries methods differ as follows: When you use xtd::io::directory::enumerate_file_system_entries, you can start enumerating the collection of entries before the whole collection is returned; when you use xtd::io::directory::get_file_system_entries, you must wait for the whole array of entries to be returned before you can access the array. Therefore, when you are working with many files and directories, xtd::io::directory::enumerate_file_system_enties can be more efficient.
@@ -1100,7 +1100,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       /// @endcode
       /// @endcode
       /// @remarks The returned file names are appended to the supplied path parameter and the order of the returned file names is not guaranteed; use the std::sort method if a specific sort order is required.
@@ -1165,7 +1165,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       /// @endcode
       /// @note This method may return an inaccurate value, because it uses native functions whose values may not be continuously updated by the operating system.
       /// @remarks This method is identical to xtd::io::file::get_last_access_time.
@@ -1218,7 +1218,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       /// @endcode
       /// @note This method may return an inaccurate value, because it uses native functions whose values may not be continuously updated by the operating system.
       /// @remarks If the directory described in the path parameter does not exist, this method returns 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC), adjusted to local time.
@@ -1327,7 +1327,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       /// @endcode
       /// @remarks xtd::io::directory::get_logical_drives returns all of the accessible drives on a particular machine, including the floppy drive and any optical drives.
       /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
@@ -1437,7 +1437,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       /// @endcode
       /// @remarks The path parameter can specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks Trailing spaces are removed from the end of the path parameter before getting the directory.
@@ -1481,7 +1481,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       /// @endcode
       /// @remarks This method creates a new directory with the name specified by destDirName and moves the contents of sourceDirName to the newly created destination directory. If you try to move a directory to a directory that already exists, an IOException will occur. For example, an exception will occur if you try to move c:\mydir to c:\public, and c:\public already exists. Alternatively, you could specify "c:\\public\\mydir" as the destDirName parameter, provided that "mydir" does not exist under "c:\\public", or specify a new directory name such as "c:\\newdir".
       /// @remarks The sourceDirName and destDirName arguments are permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see GetCurrentDirectory.
@@ -1524,7 +1524,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       /// @endcode
       /// @remarks This method behaves identically to Delete(String, Boolean) with false specified for the second parameter.
       /// @remarks The path parameter may specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see GetCurrentDirectory.
@@ -1574,7 +1574,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       /// @endcode
       /// @remarks The path parameter may specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks Trailing spaces are removed from the end of the path parameter before deleting the directory.
@@ -1628,7 +1628,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       ///
       /// // Obviously, since this sample deals with dates and times, the output will vary
       /// // depending on when you run the executable. Here is one example of the output:
@@ -1684,7 +1684,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       ///
       /// // Obviously, since this sample deals with dates and times, the output will vary
       /// // depending on when you run the executable. Here is one example of the output:
@@ -1729,7 +1729,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       /// @endcode
       /// @remarks When the application terminates, the working directory is restored to its original location (the directory where the process was started).
       /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
@@ -1784,7 +1784,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       /// @endcode
       /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks The path parameter is not case-sensitive.
@@ -1833,7 +1833,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       /// @endcode
       /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks The path parameter is not case-sensitive.

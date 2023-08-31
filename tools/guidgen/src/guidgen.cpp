@@ -76,4 +76,4 @@ namespace guidgen {
   };
 }
 
-startup_(guidgen::program);
+startup_(guidgen::program::main);

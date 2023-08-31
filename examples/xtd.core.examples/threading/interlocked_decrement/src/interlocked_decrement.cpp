@@ -49,7 +49,7 @@ namespace interlocked_decrement_example {
   };
 }
 
-startup_(interlocked_decrement_example::my_interlocked_decrement_class);
+startup_(interlocked_decrement_example::my_interlocked_decrement_class::main);
 
 // This code produces the following output:
 //

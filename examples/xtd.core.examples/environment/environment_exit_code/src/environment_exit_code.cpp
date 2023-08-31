@@ -1,3 +1,4 @@
+#include <xtd/console>
 #include <xtd/environment>
 #include <xtd/startup>
 #include <vector>
@@ -27,7 +28,7 @@ namespace environment_exit_code_example {
   };
 }
 
-startup_(environment_exit_code_example::program);
+startup_(environment_exit_code_example::program::main);
 
 // This code produces the following output :
 //

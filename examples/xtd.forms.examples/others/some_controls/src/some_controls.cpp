@@ -364,4 +364,4 @@ private:
   forms::status_bar status_bar1;
 };
 
-startup_(form1);
+startup_(form1::main);

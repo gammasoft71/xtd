@@ -29,7 +29,7 @@ public:
   }
 };
 
-startup_(program);
+startup_(program::main);
 
 // This code produces the following output :
 // results may vary based on the computer/file structure/etc.:

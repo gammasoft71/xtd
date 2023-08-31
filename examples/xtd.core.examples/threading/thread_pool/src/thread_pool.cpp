@@ -29,7 +29,7 @@ namespace wait_handle_example {
   };
 }
 
-startup_(wait_handle_example::program);
+startup_(wait_handle_example::program::main);
 
 // This example produces output similar to the following:
 //

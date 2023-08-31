@@ -5,7 +5,7 @@ project(target_startup)
 find_package(xtd REQUIRED)
 
 # Application properties
-target_startup("target_startup::program" src/target_startup.cpp)
+target_startup("target_startup::program::main" src/target_startup.cpp)
 
 # Sources
 add_sources(README.md src/target_startup.cpp)

@@ -926,4 +926,4 @@ namespace xtdc_command {
   };
 }
 
-startup_(xtdc_command::xtdc);
+startup_(xtdc_command::xtdc::main);

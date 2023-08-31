@@ -80,4 +80,4 @@ private:
   tool_bar_items_t tool_bar_items;
 };
 
-startup_(tool_bars_form);
+startup_(tool_bars_form::main);

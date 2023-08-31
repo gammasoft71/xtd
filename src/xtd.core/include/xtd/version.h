@@ -87,7 +87,7 @@ namespace xtd {
   ///   }
   /// };
   ///
-  /// startup_(example);
+  /// startup_(example::main);
   /// // The example displays the following output:
   /// //       Relationship of 1.1 to 1.1.0: earlier
   /// //       Relationship of 1.1.0.0 to 1.1.0: later

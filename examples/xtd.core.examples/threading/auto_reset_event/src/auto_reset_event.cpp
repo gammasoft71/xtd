@@ -63,7 +63,7 @@ namespace auto_reset_event_example {
   };
 }
 
-startup_(auto_reset_event_example::program);
+startup_(auto_reset_event_example::program::main);
 
 // This example produces output similar to the following:
 //

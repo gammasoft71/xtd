@@ -58,4 +58,4 @@ private:
   text_box product_version;
 };
 
-startup_(form1);
+startup_(form1::main);

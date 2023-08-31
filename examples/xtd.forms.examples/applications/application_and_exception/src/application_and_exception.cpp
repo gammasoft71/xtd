@@ -65,4 +65,4 @@ private:
   button generate_unknown_exception_button;
 };
 
-startup_(main_form);
+startup_(main_form::main);

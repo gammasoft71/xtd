@@ -19,7 +19,7 @@ namespace bit_converter_is_big_endian_example {
   };
 }
 
-startup_(bit_converter_is_big_endian_example::program);
+startup_(bit_converter_is_big_endian_example::program::main);
 
 /*
  This example of the bit_converter::is_big_endian field generates

@@ -15,4 +15,4 @@ namespace tutorial {
   };
 }
 
-startup_(tutorial::form_icon);
+startup_(tutorial::form_icon::main);

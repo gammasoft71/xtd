@@ -47,4 +47,4 @@ private:
   button button1;
 };
 
-startup_(form1);
+startup_(form1::main);

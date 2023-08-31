@@ -27,7 +27,7 @@ namespace stack_trace_example {
   };
 }
 
-startup_(stack_trace_example::main_class);
+startup_(stack_trace_example::main_class::main);
 
 // This code produces the following output :
 //

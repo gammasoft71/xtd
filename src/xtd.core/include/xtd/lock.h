@@ -62,7 +62,7 @@ namespace xtd {
   ///   }
   /// };
   ///
-  /// startup_(ThreadTest)
+  /// startup_(thread_test::main)
   ///
   /// // Output: run_me called
   /// @endcode

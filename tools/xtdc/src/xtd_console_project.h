@@ -43,7 +43,7 @@ namespace xtdc_command {
       std::vector<xtd::ustring> lines{
         xtd::ustring::format("target_default_namespace(\"{}\")", name),
         xtd::ustring::format("target_name(\"{}\")", name),
-        xtd::ustring::format("target_startup(\"{}::program\" src/program.h)", name),
+        xtd::ustring::format("target_startup(\"{}::program::main\" src/program.h)", name),
       };
       
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "properties", "target_properties.cmake"), lines);

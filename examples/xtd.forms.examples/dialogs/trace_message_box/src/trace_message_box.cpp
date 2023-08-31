@@ -30,4 +30,4 @@ private:
   button button_;
 };
 
-startup_(form_main);
+startup_(form_main::main);

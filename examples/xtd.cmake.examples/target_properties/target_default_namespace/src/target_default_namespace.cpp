@@ -17,4 +17,4 @@ namespace other_namespace {
   };
 }
 
-startup_(other_namespace::program);
+startup_(other_namespace::program::main);

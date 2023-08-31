@@ -17,7 +17,7 @@ namespace main2_example {
   };
 }
 
-startup_(main2_example::program);
+startup_(main2_example::program::main);
 // Is the same as :
 //
 // auto main()->int {

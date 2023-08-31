@@ -50,7 +50,7 @@ namespace xtdc_command {
         xtd::ustring::format("target_default_namespace(\"{}\")", name),
         xtd::ustring::format("target_icon(resources/{})", name),
         xtd::ustring::format("target_name(\"{}\")", name),
-        xtd::ustring::format("target_startup(\"{}::form1\" src/form1.h)", name),
+        xtd::ustring::format("target_startup(\"{}::form1::main\" src/form1.h)", name),
       };
       
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "properties", "target_properties.cmake"), lines);

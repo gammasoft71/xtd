@@ -14,4 +14,4 @@ namespace tutorial {
   };
 }
 
-startup_(tutorial::simple);
+startup_(tutorial::simple::main);
