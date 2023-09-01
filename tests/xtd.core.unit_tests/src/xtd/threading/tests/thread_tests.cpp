@@ -130,15 +130,13 @@ namespace xtd::tests {
       assert::is_true(thread_ran, csf_);
     }
     
-    /*
     void test_method_(create_many_threads) {
       auto counter = 0;
       auto thread_proc = thread_start {[&] {
-        thread::sleep(1);
         interlocked::increment(counter);
       }};
       
-      constexpr auto max_count_thread = 10ul;
+      constexpr auto max_count_thread = 1000ul;
       auto threads = std::vector<thread> {};
       
       for (auto index = 0ul; index < max_count_thread; ++index)
@@ -152,27 +150,24 @@ namespace xtd::tests {
       assert::are_equal(max_count_thread, as<size_t>(counter), csf_);
     }
     
-    void test_method_(create_many_threads_without_join) {
+    void test_method_(create_many_threads_with_join_all) {
       auto counter = 0;
       auto thread_proc = thread_start {[&] {
-        thread::sleep(1);
         interlocked::increment(counter);
       }};
       
-      constexpr auto max_count_thread = 10ul;
-      using_(auto threads = std::vector<thread> {}) {
-        for (auto index = 0ul; index < max_count_thread; ++index)
-          threads.emplace_back(thread_proc);
-        
-        for (auto& thread : threads)
-          thread.start();
-      }
+      constexpr auto max_count_thread = 1000ul;
+      auto threads = std::vector<thread> {};
       
-      assert::are_not_equal(max_count_thread, as<size_t>(counter), csf_);
+      for (auto index = 0ul; index < max_count_thread; ++index)
+        threads.emplace_back(thread_proc);
       
-      // simulate end of main method
-      __xtd_threads__::reset_threads();
+      for (auto& thread : threads)
+        thread.start();
+
+      thread::join_all(threads);
+      
+      assert::are_equal(max_count_thread, as<size_t>(counter), csf_);
     }
-     */
   };
 }
