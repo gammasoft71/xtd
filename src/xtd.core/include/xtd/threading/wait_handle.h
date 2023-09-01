@@ -214,6 +214,16 @@ namespace xtd {
       /// @}
       
       /// @cond
+      template <typename... items_t>
+      static size_t wait_all(items_t... items) {return wait_all(timeout::infinite, items...);}
+      template <typename... items_t>
+      static size_t wait_all(const time_span& timeout, items_t... items) {return wait_all(as<int32>(timeout.total_milliseconds()), items...);}
+      template <typename... items_t>
+      static size_t wait_all(int32 milliseconds_timeout, items_t... items) {
+        std::vector<wait_handle*> wait_handle_pointers;
+        fill_wait_handle_pointers(wait_handle_pointers, items...);
+        return wait_all(wait_handle_pointers, milliseconds_timeout);
+      }
       template<typename item_t>
       static bool wait_all(const std::initializer_list<item_t>& wait_handles) {return wait_all(wait_handles, timeout::infinite);}
       template<typename item_t>
@@ -237,6 +247,18 @@ namespace xtd {
       static bool wait_all(const std::vector<std::unique_ptr<wait_handle>>& wait_handles);
       static bool wait_all(const std::vector<std::unique_ptr<wait_handle>>& wait_handles, int32 milliseconds_timeout);
       static bool wait_all(const std::vector<std::unique_ptr<wait_handle>>& wait_handles, const time_span& timeout);
+      static bool wait_all(const std::vector<wait_handle*>& wait_handles, int32 milliseconds_timeout);
+
+      template <typename... items_t>
+      static size_t wait_any(items_t... items) {return wait_any(timeout::infinite, items...);}
+      template <typename... items_t>
+      static size_t wait_any(const time_span& timeout, items_t... items) {return wait_any(as<int32>(timeout.total_milliseconds()), items...);}
+      template <typename... items_t>
+      static size_t wait_any(int32 milliseconds_timeout, items_t... items) {
+        std::vector<wait_handle*> wait_handle_pointers;
+        fill_wait_handle_pointers(wait_handle_pointers, items...);
+        return wait_any(wait_handle_pointers, milliseconds_timeout);
+      }
       template<typename item_t>
       static size_t wait_any(const std::initializer_list<item_t>& wait_handles) {return wait_any(wait_handles, timeout::infinite);}
       template<typename item_t>
@@ -260,6 +282,7 @@ namespace xtd {
       static size_t wait_any(const std::vector<std::unique_ptr<wait_handle>>& wait_handles);
       static size_t wait_any(const std::vector<std::unique_ptr<wait_handle>>& wait_handles, int32 milliseconds_timeout);
       static size_t wait_any(const std::vector<std::unique_ptr<wait_handle>>& wait_handles, const time_span& timeout);
+      static size_t wait_any(const std::vector<wait_handle*>& wait_handles, int32 milliseconds_timeout);
       /// @endcond
 
     protected:
@@ -281,8 +304,15 @@ namespace xtd {
       /// @}
 
     private:
-      static bool wait_all(const std::vector<wait_handle*>& wait_handles, int32 milliseconds_timeout);
-      static size_t wait_any(const std::vector<wait_handle*>& wait_handles, int32 milliseconds_timeout);
+      template <typename item_t, typename... items_t>
+      static void fill_wait_handle_pointers(std::vector<wait_handle*>& wait_handle_pointers, item_t& first, items_t&... rest) {
+        wait_handle_pointers.push_back(const_cast<wait_handle*>(as<wait_handle>(&first)));
+        fill_wait_handle_pointers(wait_handle_pointers, rest...);
+      }
+      template <typename item_t>
+      static void fill_wait_handle_pointers(std::vector<wait_handle*>& wait_handle_pointers, item_t& item) {
+        wait_handle_pointers.push_back(const_cast<wait_handle*>(as<wait_handle>(&item)));
+      }
     };
   }
 }
