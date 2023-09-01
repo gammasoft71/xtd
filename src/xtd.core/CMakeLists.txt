@@ -266,6 +266,8 @@ add_sources(
   include/xtd/operating_system
   include/xtd/optional.h
   include/xtd/optional
+  include/xtd/out_of_memory_exception.h
+  include/xtd/out_of_memory_exception
   include/xtd/overflow_exception.h
   include/xtd/overflow_exception
   include/xtd/overload.h
