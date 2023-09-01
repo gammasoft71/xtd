@@ -1,6 +1,7 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/types.h>
 #include <xtd/native/thread.h>
+#include <xtd/native/types.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include "../../../include/xtd/threading/manual_reset_event.h"
 #include "../../../include/xtd/threading/mutex.h"
@@ -10,6 +11,7 @@
 #include "../../../include/xtd/threading/thread.h"
 #include "../../../include/xtd/threading/thread_pool.h"
 #include "../../../include/xtd/threading/timeout.h"
+#include "../../../include/xtd/io/io_exception.h"
 #include "../../../include/xtd/argument_exception.h"
 #include "../../../include/xtd/environment.h"
 #include "../../../include/xtd/int32_object.h"
@@ -23,11 +25,7 @@
 using namespace xtd;
 using namespace xtd::threading;
 
-namespace xtd {
-  template <typename target_t, typename source_t>
-  target_t hard_cast(source_t src) {
-    return *((target_t*)&src);
-  }
+namespace {
 }
 
 struct thread::data {
@@ -332,6 +330,7 @@ void thread::start() {
   data_->handle = native::thread::create([&](intptr arg) {
     reinterpret_cast<threading::thread*>(arg)->thread_proc();
   }, reinterpret_cast<intptr>(data_->safe_thread), data_->max_stack_size, is_suspended(), data_->thread_id);
+  if (data_->handle == invalid_handle) throw io::io_exception {csf_};
 }
 
 void thread::start(std::any param) {
@@ -343,6 +342,7 @@ void thread::start(std::any param) {
   data_->handle = native::thread::create([](intptr arg) {
     reinterpret_cast<thread*>(arg)->thread_proc();
   }, reinterpret_cast<intptr>(data_->safe_thread), data_->max_stack_size, is_suspended(), data_->thread_id);
+  if (data_->handle == invalid_handle) throw io::io_exception {csf_};
 }
 
 thread thread::start_new(const xtd::threading::thread_start& start) {
