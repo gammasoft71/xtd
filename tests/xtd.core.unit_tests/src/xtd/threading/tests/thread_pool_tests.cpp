@@ -33,6 +33,7 @@ namespace xtd::tests {
         interlocked::increment(count);
       }};
       thread_pool::queue_user_work_item(action);
+      thread::sleep(5);
       thread_pool::close();
       assert::are_equal(1, count, csf_);
     }
@@ -43,8 +44,10 @@ namespace xtd::tests {
         interlocked::increment(count);
       }};
       thread_pool::queue_user_work_item(action);
+      thread::sleep(5);
       thread_pool::close();
       thread_pool::queue_user_work_item(action);
+      thread::sleep(5);
       thread_pool::close();
       assert::are_equal(2, count, csf_);
     }
@@ -59,6 +62,7 @@ namespace xtd::tests {
       }};
       for (auto index = 0ul; index < min_worker_threads; ++index)
         thread_pool::queue_user_work_item(action);
+      thread::sleep(5);
       thread_pool::close();
       assert::are_equal(min_worker_threads, count, csf_);
     }
@@ -73,6 +77,7 @@ namespace xtd::tests {
       }};
       for (auto index = 0ul; index < max_worker_threads; ++index)
         thread_pool::queue_user_work_item(action);
+      thread::sleep(5);
       thread_pool::close();
       assert::are_equal(max_worker_threads, count, csf_);
     }
@@ -87,6 +92,7 @@ namespace xtd::tests {
       }};
       for (auto index = 0ul; index < 2 * max_worker_threads; ++index)
         thread_pool::queue_user_work_item(action);
+      thread::sleep(5);
       thread_pool::close();
       assert::are_equal(2 * max_worker_threads, count, csf_);
     }
