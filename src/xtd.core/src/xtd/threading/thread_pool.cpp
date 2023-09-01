@@ -1,12 +1,16 @@
-#include "../../../include/xtd/threading/monitor.h"
 #include "../../../include/xtd/threading/thread_pool.h"
-#include "../../../include/xtd/lock.h"
 #include "../../../include/xtd/as.h"
 #include "../../../include/xtd/environment.h"
+#include "../../../include/xtd/lock.h"
 #include <mutex>
 
 using namespace xtd;
 using namespace xtd::threading;
+
+size_t thread_pool::max_threads_ = 800;
+size_t thread_pool::max_asynchronous_io_threads_ = 800;
+size_t thread_pool::min_threads_ = environment::processor_count();
+size_t thread_pool::min_asynchronous_io_threads_ = environment::processor_count();
 
 struct thread_pool::static_data {
   threading::semaphore asynchronous_io_semaphore = threading::semaphore(0, as<int32>(thread_pool::max_asynchronous_io_threads_));
@@ -19,11 +23,6 @@ struct thread_pool::static_data {
   thread_pool_asynchronous_io_item_collection thread_pool_asynchronous_io_items;
   object thread_pool_asynchronous_io_items_sync_root;
 };
-
-size_t thread_pool::max_threads_ = 800;
-size_t thread_pool::max_asynchronous_io_threads_ = 800;
-size_t thread_pool::min_threads_ = environment::processor_count();
-size_t thread_pool::min_asynchronous_io_threads_ = environment::processor_count();
 
 void thread_pool::close() {
   join_all(timeout::infinite);
@@ -164,7 +163,6 @@ void thread_pool::initialize_min_asynchronous_io_threads() {
 }
 
 bool thread_pool::join_all(int32 milliseconds_timeout) {
-  thread::sleep(0);
   get_static_data().closed = true;
   auto result = join_all_threads(milliseconds_timeout);
   if (result) result = join_all_asynchronous_io_threads(milliseconds_timeout);
@@ -176,12 +174,12 @@ bool thread_pool::join_all(int32 milliseconds_timeout) {
 bool thread_pool::join_all_threads(int32 milliseconds_timeout) {
   if (!get_static_data().threads.size()) return true;
   
-  get_static_data().semaphore.release(as<int32>(get_static_data().threads.size()));
-  
   for (auto& thread : get_static_data().threads) {
     thread.is_background(false);
     thread.is_thread_pool_thread(false);
   }
+  
+  get_static_data().semaphore.release(as<int32>(get_static_data().threads.size()));
   
   auto result = thread::join_all(get_static_data().threads, milliseconds_timeout);
   get_static_data().threads.clear();
@@ -190,11 +188,13 @@ bool thread_pool::join_all_threads(int32 milliseconds_timeout) {
 
 bool thread_pool::join_all_asynchronous_io_threads(int32 milliseconds_timeout) {
   if (!get_static_data().asynchronous_io_threads.size()) return true;
-  get_static_data().asynchronous_io_semaphore.release(as<int32>(get_static_data().asynchronous_io_threads.size()));
+  
   for (auto& thread : get_static_data().asynchronous_io_threads) {
     thread.is_background(false);
     thread.is_thread_pool_thread(false);
   }
+  
+  get_static_data().asynchronous_io_semaphore.release(as<int32>(get_static_data().asynchronous_io_threads.size()));
   
   auto result = thread::join_all(get_static_data().asynchronous_io_threads, milliseconds_timeout);
   get_static_data().asynchronous_io_threads.clear();
