@@ -1,3 +1,4 @@
+#include "../../../include/xtd/threading/manual_reset_event.h"
 #include "../../../include/xtd/threading/thread_pool.h"
 #include "../../../include/xtd/as.h"
 #include "../../../include/xtd/environment.h"
@@ -15,7 +16,8 @@ size_t thread_pool::min_asynchronous_io_threads_ = environment::processor_count(
 struct thread_pool::static_data {
   threading::semaphore asynchronous_io_semaphore = threading::semaphore(0, as<int32>(thread_pool::max_asynchronous_io_threads_));
   asynchronous_io_thread_vector asynchronous_io_threads;
-  bool closed = false;
+  manual_reset_event close_asynchronous_io_threads_manual_reset_event {false};
+  manual_reset_event close_threads_manual_reset_event {false};
   threading::semaphore semaphore = threading::semaphore(0, as<int32>(thread_pool::max_threads_));
   thread_vector threads;
   thread_pool_item_collection thread_pool_items;
@@ -110,19 +112,19 @@ bool thread_pool::set_min_threads(size_t worker_threads, size_t completion_port_
 }
 
 void thread_pool::asynchronous_io_run() {
-  while (!get_static_data().closed) {
-    get_static_data().asynchronous_io_semaphore.wait_one();
+  while (true) {
+    if (wait_handle::wait_any(get_static_data().close_asynchronous_io_threads_manual_reset_event, get_static_data().asynchronous_io_semaphore) == 0) break;
     thread_pool_asynchronous_io_item item;
     lock_(get_static_data().thread_pool_asynchronous_io_items_sync_root) {
-      if (get_static_data().thread_pool_asynchronous_io_items.size() == 0) continue;
       item = get_static_data().thread_pool_asynchronous_io_items.back();
       get_static_data().thread_pool_asynchronous_io_items.pop_back();
     }
     
     do {
-      bool timeout = !item.wait_object->wait_one(item.milliseconds_timeout_interval);
-      if (!item.unregistered)
-        item.callback(item.state, timeout);
+      auto wait_result = wait_handle::wait_any({&get_static_data().close_asynchronous_io_threads_manual_reset_event, item.wait_object}, item.milliseconds_timeout_interval);
+      if (wait_result == 0) break;
+      bool timeout = wait_result == wait_handle::wait_timeout;
+      if (!item.unregistered) item.callback(item.state, timeout);
     } while (!item.execute_only_once && !item.unregistered);
   }
 }
@@ -163,11 +165,8 @@ void thread_pool::initialize_min_asynchronous_io_threads() {
 }
 
 bool thread_pool::join_all(int32 milliseconds_timeout) {
-  get_static_data().closed = true;
   auto result = join_all_threads(milliseconds_timeout);
   if (result) result = join_all_asynchronous_io_threads(milliseconds_timeout);
-  get_static_data().closed = false;
-
   return result;
 }
 
@@ -179,10 +178,10 @@ bool thread_pool::join_all_threads(int32 milliseconds_timeout) {
     thread.is_thread_pool_thread(false);
   }
   
-  get_static_data().semaphore.release(as<int32>(get_static_data().threads.size()));
-  
+  get_static_data().close_threads_manual_reset_event.set();
   auto result = thread::join_all(get_static_data().threads, milliseconds_timeout);
   get_static_data().threads.clear();
+  get_static_data().close_threads_manual_reset_event.reset();
   return result;
 }
 
@@ -194,19 +193,18 @@ bool thread_pool::join_all_asynchronous_io_threads(int32 milliseconds_timeout) {
     thread.is_thread_pool_thread(false);
   }
   
-  get_static_data().asynchronous_io_semaphore.release(as<int32>(get_static_data().asynchronous_io_threads.size()));
-  
+  get_static_data().close_asynchronous_io_threads_manual_reset_event.set();
   auto result = thread::join_all(get_static_data().asynchronous_io_threads, milliseconds_timeout);
   get_static_data().asynchronous_io_threads.clear();
+  get_static_data().close_asynchronous_io_threads_manual_reset_event.reset();
   return result;
 }
 
 void thread_pool::run() {
-  while (!get_static_data().closed) {
-    get_static_data().semaphore.wait_one();
+  while (true) {
+    if (wait_handle::wait_any(get_static_data().close_threads_manual_reset_event, get_static_data().semaphore) == 0) break;
     thread_pool_item item;
     lock_(get_static_data().thread_pool_items_sync_root) {
-      if (get_static_data().thread_pool_items.size() == 0) continue;
       item = get_static_data().thread_pool_items.back();
       get_static_data().thread_pool_items.pop_back();
     }
