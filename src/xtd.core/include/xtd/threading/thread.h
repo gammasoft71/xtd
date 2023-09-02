@@ -275,7 +275,7 @@ namespace xtd {
         std::vector<thread*> thread_pointers;
         for (auto& item : threads)
           thread_pointers.push_back(const_cast<thread*>(&item));
-        return join_all(thread_pointers, milliseconds_timeout);
+        return join_all_ptr(thread_pointers, milliseconds_timeout);
       }
       /// @brief Blocks the calling thread until all specified joinable threads collection terminate or the specified time elapses, while continuing.
       /// @param timeout A xtd::time_span set to the amount of time to wait for all threads to terminate.
@@ -350,7 +350,7 @@ namespace xtd {
         std::vector<thread*> thread_pointers;
         for (auto& item : threads)
           thread_pointers.push_back(const_cast<thread*>(&item));
-        return join_all(threads, milliseconds_timeout);
+        return join_all_ptr(thread_pointers, milliseconds_timeout);
       }
       template<typename item_t>
       static bool join_all(const std::initializer_list<item_t>& threads, const time_span& timeout) {return join_all(threads, as<int32>(timeout.total_milliseconds_duration().count()));}
@@ -387,7 +387,7 @@ namespace xtd {
       bool is_unmanaged_thread() const noexcept;
       bool is_unstarted() const noexcept;
       bool is_wait_sleep_join() const noexcept;
-      static bool join_all(const std::vector<thread*>& threads, int32 milliseconds_timeout);
+      static bool join_all_ptr(const std::vector<thread*>& threads, int32 milliseconds_timeout);
       static void reset_threads(); // Used by xtd::tests::thread_tests unit tests.
       void thread_proc();
       static thread& unmanaged_thread();
