@@ -18,17 +18,17 @@ namespace xtd::tests {
   class test_class_(thread_tests) {
   public:
     void test_method_(constructor_empty) {
-      thread t;
-      assert::are_equal(thread::invalid_handle, t.handle(), csf_);
-      assert::is_false(t.is_alive(), csf_);
-      assert::is_false(t.is_background(), csf_);
-      assert::is_false(t.is_thread_pool_thread(), csf_);
-      assert::is_false(t.joinable(), csf_);
-      assert::is_zero(t.managed_thread_id(), csf_);
-      assert::is_empty(t.name(), csf_);
-      assert::are_equal(thread::invalid_thread_id, t.thread_id(), csf_);
-      assert::are_equal(thread_priority::normal, t.priority(), csf_);
-      assert::are_equal(thread_state::unstarted, t.thread_state(), csf_);
+      auto thread = threading::thread {};
+      assert::are_equal(threading::thread::invalid_handle, thread.handle(), csf_);
+      assert::is_false(thread.is_alive(), csf_);
+      assert::is_false(thread.is_background(), csf_);
+      assert::is_false(thread.is_thread_pool_thread(), csf_);
+      assert::is_false(thread.joinable(), csf_);
+      assert::is_zero(thread.managed_thread_id(), csf_);
+      assert::is_empty(thread.name(), csf_);
+      assert::are_equal(threading::thread::invalid_thread_id, thread.thread_id(), csf_);
+      assert::are_equal(thread_priority::normal, thread.priority(), csf_);
+      assert::are_equal(thread_state::unstarted, thread.thread_state(), csf_);
     }
     
     void test_method_(constructor_with_empty_thread_start) {
@@ -40,17 +40,17 @@ namespace xtd::tests {
     }
     
     void test_method_(constructor_with_thread_start) {
-      thread t {thread_start {[] {}}};
-      assert::are_equal(thread::invalid_handle, t.handle(), csf_);
-      assert::is_false(t.is_alive(), csf_);
-      assert::is_false(t.is_background(), csf_);
-      assert::is_false(t.is_thread_pool_thread(), csf_);
-      assert::is_false(t.joinable(), csf_);
-      assert::is_not_zero(t.managed_thread_id(), csf_);
-      assert::is_empty(t.name(), csf_);
-      assert::are_equal(thread::invalid_thread_id, t.thread_id(), csf_);
-      assert::are_equal(thread_priority::normal, t.priority(), csf_);
-      assert::are_equal(thread_state::unstarted, t.thread_state(), csf_);
+      auto thread = threading::thread {thread_start {[] {}}};
+      assert::are_equal(threading::thread::invalid_handle, thread.handle(), csf_);
+      assert::is_false(thread.is_alive(), csf_);
+      assert::is_false(thread.is_background(), csf_);
+      assert::is_false(thread.is_thread_pool_thread(), csf_);
+      assert::is_false(thread.joinable(), csf_);
+      assert::is_not_zero(thread.managed_thread_id(), csf_);
+      assert::is_empty(thread.name(), csf_);
+      assert::are_equal(thread::invalid_thread_id, thread.thread_id(), csf_);
+      assert::are_equal(thread_priority::normal, thread.priority(), csf_);
+      assert::are_equal(thread_state::unstarted, thread.thread_state(), csf_);
     }
     
     void test_method_(constructor_with_empty_parameterized_thread_start) {
@@ -62,72 +62,72 @@ namespace xtd::tests {
     }
     
     void test_method_(constructor_with_parameterized_thread_start) {
-      thread t {parameterized_thread_start {[](std::any) {}}};
-      assert::are_equal(thread::invalid_handle, t.handle(), csf_);
-      assert::is_false(t.is_alive(), csf_);
-      assert::is_false(t.is_background(), csf_);
-      assert::is_false(t.is_thread_pool_thread(), csf_);
-      assert::is_false(t.joinable(), csf_);
-      assert::is_not_zero(t.managed_thread_id(), csf_);
-      assert::is_empty(t.name(), csf_);
-      assert::are_equal(thread::invalid_thread_id, t.thread_id(), csf_);
-      assert::are_equal(thread_priority::normal, t.priority(), csf_);
-      assert::are_equal(thread_state::unstarted, t.thread_state(), csf_);
+      auto thread = threading::thread {parameterized_thread_start {[](std::any) {}}};
+      assert::are_equal(threading::thread::invalid_handle, thread.handle(), csf_);
+      assert::is_false(thread.is_alive(), csf_);
+      assert::is_false(thread.is_background(), csf_);
+      assert::is_false(thread.is_thread_pool_thread(), csf_);
+      assert::is_false(thread.joinable(), csf_);
+      assert::is_not_zero(thread.managed_thread_id(), csf_);
+      assert::is_empty(thread.name(), csf_);
+      assert::are_equal(threading::thread::invalid_thread_id, thread.thread_id(), csf_);
+      assert::are_equal(thread_priority::normal, thread.priority(), csf_);
+      assert::are_equal(thread_state::unstarted, thread.thread_state(), csf_);
     }
     
     void test_method_(main_as_current_thread) {
-      thread t = thread::current_thread();
-      assert::are_not_equal(thread::invalid_handle, t.handle(), csf_);
-      assert::is_true(t.is_alive(), csf_);
-      assert::is_false(t.is_background(), csf_);
-      assert::is_false(t.is_thread_pool_thread(), csf_);
-      assert::is_true(t.joinable(), csf_);
-      assert::are_equal(1, t.managed_thread_id(), csf_);
-      assert::is_empty(t.name(), csf_);
-      assert::are_not_equal(thread::invalid_thread_id, t.thread_id(), csf_);
-      assert::are_equal(thread_priority::normal, t.priority(), csf_);
-      assert::are_equal(thread_state::running, t.thread_state(), csf_);
+      auto thread = threading::thread::current_thread();
+      assert::are_not_equal(threading::thread::invalid_handle, thread.handle(), csf_);
+      assert::is_true(thread.is_alive(), csf_);
+      assert::is_false(thread.is_background(), csf_);
+      assert::is_false(thread.is_thread_pool_thread(), csf_);
+      assert::is_true(thread.joinable(), csf_);
+      assert::are_equal(1, thread.managed_thread_id(), csf_);
+      assert::is_empty(thread.name(), csf_);
+      assert::are_not_equal(threading::thread::invalid_thread_id, thread.thread_id(), csf_);
+      assert::are_equal(thread_priority::normal, thread.priority(), csf_);
+      assert::are_equal(thread_state::running, thread.thread_state(), csf_);
     }
     
     void test_method_(std_thread_as_current_thread) {
       bool thread_ran = false;
-      std::thread t {[&] {
+      auto thread = std::thread {[&] {
         thread_ran = true;
-        thread t = thread::current_thread();
-        assert::are_not_equal(thread::invalid_handle, t.handle(), csf_);
-        assert::is_true(t.is_alive(), csf_);
-        assert::is_true(t.is_background(), csf_);
-        assert::is_false(t.is_thread_pool_thread(), csf_);
-        assert::is_false(t.joinable(), csf_);
-        assert::are_equal(0, t.managed_thread_id(), csf_);
-        assert::is_empty(t.name(), csf_);
-        assert::are_not_equal(thread::invalid_thread_id, t.thread_id(), csf_);
-        assert::are_equal(thread_priority::normal, t.priority(), csf_);
-        assert::are_equal(thread_state::running | thread_state::background, t.thread_state(), csf_);
+        auto thread = threading::thread::current_thread();
+        assert::are_not_equal(threading::thread::invalid_handle, thread.handle(), csf_);
+        assert::is_true(thread.is_alive(), csf_);
+        assert::is_true(thread.is_background(), csf_);
+        assert::is_false(thread.is_thread_pool_thread(), csf_);
+        assert::is_false(thread.joinable(), csf_);
+        assert::are_equal(0, thread.managed_thread_id(), csf_);
+        assert::is_empty(thread.name(), csf_);
+        assert::are_not_equal(threading::thread::invalid_thread_id, thread.thread_id(), csf_);
+        assert::are_equal(thread_priority::normal, thread.priority(), csf_);
+        assert::are_equal(thread_state::running | thread_state::background, thread.thread_state(), csf_);
       }};
-      if (t.joinable()) t.join();
+      if (thread.joinable()) thread.join();
       assert::is_true(thread_ran, csf_);
     }
     
     void test_method_(xtd_threading_as_current_thread) {
       bool thread_ran = false;
-      thread t {thread_start {[&] {
+      auto thread = threading::thread {thread_start {[&] {
         thread_ran = true;
-        thread t = thread::current_thread();
-        assert::are_not_equal(thread::invalid_handle, t.handle(), csf_);
-        assert::is_true(t.is_alive(), csf_);
-        assert::is_false(t.is_background(), csf_);
-        assert::is_false(t.is_thread_pool_thread(), csf_);
-        assert::is_true(t.joinable(), csf_);
-        assert::are_not_equal(0, t.managed_thread_id(), csf_);
-        assert::are_not_equal(1, t.managed_thread_id(), csf_);
-        assert::is_empty(t.name(), csf_);
-        assert::are_not_equal(thread::invalid_thread_id, t.thread_id(), csf_);
-        assert::are_equal(thread_priority::normal, t.priority(), csf_);
-        assert::are_equal(thread_state::running, t.thread_state(), csf_);
+        auto thread = threading::thread::current_thread();
+        assert::are_not_equal(threading::thread::invalid_handle, thread.handle(), csf_);
+        assert::is_true(thread.is_alive(), csf_);
+        assert::is_false(thread.is_background(), csf_);
+        assert::is_false(thread.is_thread_pool_thread(), csf_);
+        assert::is_true(thread.joinable(), csf_);
+        assert::are_not_equal(0, thread.managed_thread_id(), csf_);
+        assert::are_not_equal(1, thread.managed_thread_id(), csf_);
+        assert::is_empty(thread.name(), csf_);
+        assert::are_not_equal(threading::thread::invalid_thread_id, thread.thread_id(), csf_);
+        assert::are_equal(thread_priority::normal, thread.priority(), csf_);
+        assert::are_equal(thread_state::running, thread.thread_state(), csf_);
       }}};
-      t.start();
-      if (t.joinable()) t.join();
+      thread.start();
+      if (thread.joinable()) thread.join();
       assert::is_true(thread_ran, csf_);
     }
     
