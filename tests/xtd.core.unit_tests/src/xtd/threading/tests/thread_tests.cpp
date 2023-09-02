@@ -594,6 +594,22 @@ namespace xtd::tests {
       thread::sleep(time_span::from_milliseconds(10.0));
       assert::is_greater_or_equal(sw.elapsed_milliseconds(), 10, csf_);
     }
+    
+    void test_method_(start_new) {
+      auto thread = threading::thread::start_new(thread_start {[&] {thread::sleep(2);}});
+      assert::are_not_equal(threading::thread::invalid_handle, thread.handle(), csf_);
+      thread.join();
+    }
+    
+    void test_method_(start_new_with_arg) {
+      auto thread = threading::thread::start_new(parameterized_thread_start {[&] {thread::sleep(2);}}, 0);
+      assert::are_not_equal(threading::thread::invalid_handle, thread.handle(), csf_);
+      thread.join();
+    }
+    
+    void test_method_(yield) {
+      assert::is_true(thread::yield(), csf_);
+    }
 
     void test_method_(create_many_threads) {
       auto counter = 0;
