@@ -325,7 +325,7 @@ namespace xtd::tests {
     
     void test_method_(abort) {
       bool thread_aborted = false;
-     auto thread = threading::thread {thread_start {[&] {
+      auto thread = threading::thread {thread_start {[&] {
         thread_aborted = true;
         thread::sleep(5);
         thread_aborted = false;
@@ -343,15 +343,64 @@ namespace xtd::tests {
       bool main_thread_aborted = false;
       auto on_signal_event = signal_cancel_event_handler {[&](signal_cancel_event_args& e) {
         main_thread_aborted = e.signal() == signal::abnormal_termination;
+        e.cancel(e.signal() == signal::abnormal_termination);
       }};
 
       assert::is_false(main_thread_aborted, csf_);
       environment::cancel_signal += on_signal_event;
-      assert::throws<xtd::threading::thread_abort_exception>([] {threading::thread::current_thread().abort();}, csf_);
+      threading::thread::current_thread().abort();
       environment::cancel_signal -= on_signal_event;
       assert::is_true(main_thread_aborted, csf_);
     }
     
+    void test_method_(abort_state_exception) {
+      auto thread = threading::thread {thread_start {[&] {thread::sleep(2);}}};
+      assert::throws<thread_state_exception>([&] {thread.abort();}, csf_);
+    }
+    
+    void test_method_(detach) {
+      auto thread = threading::thread {thread_start {[] {thread::sleep(2);}}};
+      assert::is_false(thread.is_background(), csf_);
+      thread.detach();
+      assert::is_true(thread.is_background(), csf_);
+    }
+    
+    void test_method_(interrupt) {
+      bool thread_interrupted = false;
+      auto thread = threading::thread {thread_start {[&] {
+        try {
+          for (auto index  = 0; index < 5; ++index)
+            thread::sleep(1);
+          
+        } catch(const thread_interrupted_exception& e) {
+          thread_interrupted = true;
+        }
+      }}};
+      thread.start();
+      assert::is_false(thread_interrupted, csf_);
+      thread::sleep(1);
+      thread.interrupt();
+      thread::sleep(1);
+      assert::is_true(thread_interrupted, csf_);
+    }
+    
+    void test_method_(interrupt_main_thread) {
+      if (diagnostics::debugger::is_attached()) assert::ignore("Ignore \"interrupt_main_thread\" test when debugger is attached");
+      
+      bool thread_interrupted = false;
+      assert::is_false(thread_interrupted, csf_);
+      threading::thread::current_thread().interrupt();
+      auto on_signal_event = signal_cancel_event_handler {[&](signal_cancel_event_args& e) {
+        thread_interrupted = e.signal() == signal::interrupt;
+        e.cancel(e.signal() == signal::interrupt);
+      }};
+      
+      environment::cancel_signal += on_signal_event;
+      thread::sleep(1);
+      environment::cancel_signal -= on_signal_event;
+      assert::is_true(thread_interrupted, csf_);
+    }
+
     void test_method_(create_many_threads) {
       auto counter = 0;
       auto thread_proc = thread_start {[&] {
