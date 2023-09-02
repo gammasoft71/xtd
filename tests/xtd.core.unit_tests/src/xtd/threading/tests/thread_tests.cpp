@@ -400,6 +400,38 @@ namespace xtd::tests {
       environment::cancel_signal -= on_signal_event;
       assert::is_true(thread_interrupted, csf_);
     }
+    
+    void test_method_(join) {
+      auto thread = threading::thread {thread_start {[&] {thread::sleep(2);}}};
+      thread.start();
+      assert::does_not_throw([&] {thread.join();}, csf_);
+    }
+    
+    void test_method_(join_and_join) {
+      auto thread = threading::thread {thread_start {[&] {thread::sleep(2);}}};
+      thread.start();
+      assert::does_not_throw([&] {thread.join();}, csf_);
+      assert::does_not_throw([&] {thread.join();}, csf_);
+    }
+
+    void test_method_(join_with_milliseconds_timeout) {
+      auto thread = threading::thread {thread_start {[&] {thread::sleep(2);}}};
+      thread.start();
+      assert::is_false(thread.join(1), csf_);
+      assert::is_true(thread.join(2), csf_);
+    }
+    
+    void test_method_(join_with_timeout) {
+      auto thread = threading::thread {thread_start {[&] {thread::sleep(2);}}};
+      thread.start();
+      assert::is_false(thread.join(time_span::from_milliseconds(1.0)), csf_);
+      assert::is_true(thread.join(time_span::from_milliseconds(2.0)), csf_);
+    }
+    
+    void test_method_(join_without_start) {
+      auto thread = threading::thread {thread_start {[&] {thread::sleep(2);}}};
+      assert::throws<thread_state_exception>([&] {thread.join();}, csf_);
+    }
 
     void test_method_(create_many_threads) {
       auto counter = 0;
