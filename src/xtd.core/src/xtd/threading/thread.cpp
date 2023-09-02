@@ -210,7 +210,6 @@ void thread::abort() {
     data_->state |= xtd::threading::thread_state::aborted;
     data_->state &= ~xtd::threading::thread_state::abort_requested;
     data_->end_thread_event.set();
-    throw thread_abort_exception(csf_);
   }
 }
 
@@ -536,6 +535,8 @@ void thread::thread_proc() {
   if (!data_->thread_start.is_empty()) data_->thread_start();
   else if (!data_->parameterized_thread_start.is_empty()) data_->parameterized_thread_start(data_->parameter);
   else throw invalid_operation_exception {csf_};
+  
+  if (is_aborted()) throw thread_abort_exception {csf_};
   
   data_->state |= xtd::threading::thread_state::stopped;
   data_->end_thread_event.set();
