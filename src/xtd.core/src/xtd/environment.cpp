@@ -1,7 +1,10 @@
 #include <csignal>
 #include <cstdlib>
+#include "../../include/xtd/io/directory.h"
+#include "../../include/xtd/io/path.h"
 #include "../../include/xtd/threading/thread_abort_exception.h"
 #include "../../include/xtd/access_violation_exception.h"
+#include "../../include/xtd/threading/thread.h"
 #include "../../include/xtd/as.h"
 #include "../../include/xtd/environment.h"
 #include "../../include/xtd/argument_exception.h"
@@ -12,9 +15,6 @@
 #include "../../include/xtd/invalid_operation_exception.h"
 #include "../../include/xtd/software_termination_exception.h"
 #include "../../include/xtd/unused.h"
-#include "../../include/xtd/io/directory.h"
-#include "../../include/xtd/io/path.h"
-#include "../../include/xtd/threading/thread.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/environment.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
