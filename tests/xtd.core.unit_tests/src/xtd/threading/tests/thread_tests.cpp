@@ -433,6 +433,33 @@ namespace xtd::tests {
       assert::throws<thread_state_exception>([&] {thread.join();}, csf_);
     }
 
+    void test_method_(start) {
+      auto thread = threading::thread {thread_start {[&] {thread::sleep(2);}}};
+      assert::does_not_throw([&] {thread.start();}, csf_);
+      thread.join();
+    }
+    
+    void test_method_(start_with_parameterized_thread_start) {
+      auto thread = threading::thread {parameterized_thread_start {[&] {thread::sleep(2);}}};
+      assert::does_not_throw([&] {thread.start();}, csf_);
+    }
+    
+    void test_method_(start_without_thread_start) {
+      auto thread = threading::thread {};
+      assert::throws<invalid_operation_exception>([&] {thread.start();}, csf_);
+    }
+    
+    void test_method_(start_any) {
+      auto thread = threading::thread {parameterized_thread_start {[&] {thread::sleep(2);}}};
+      assert::does_not_throw([&] {thread.start(0);}, csf_);
+      thread.join();
+    }
+    
+    void test_method_(start_any_with_thread_start) {
+      auto thread = threading::thread {thread_start {[&] {thread::sleep(2);}}};
+      assert::throws<invalid_operation_exception>([&] {thread.start(0);}, csf_);
+    }
+
     void test_method_(create_many_threads) {
       auto counter = 0;
       auto thread_proc = thread_start {[&] {
