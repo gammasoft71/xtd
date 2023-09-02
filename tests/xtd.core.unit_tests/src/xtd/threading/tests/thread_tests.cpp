@@ -323,6 +323,20 @@ namespace xtd::tests {
       assert::are_equal(threading::thread_state::running, threading::thread::main_thread().thread_state(), csf_);
     }
     
+    void test_method_(abort) {
+      bool thread_aborted = false;
+     auto thread = threading::thread {thread_start {[&] {
+        thread_aborted = true;
+        thread::sleep(5);
+        thread_aborted = false;
+      }}};
+      thread.start();
+      assert::is_false(thread_aborted, csf_);
+      thread::sleep(1);
+      thread.abort();
+      assert::is_true(thread_aborted, csf_);
+    }
+    
     void test_method_(abort_main_thread) {
       if (diagnostics::debugger::is_attached()) assert::ignore("Ignore \"abort_main_thread\" test when debugger is attached");
       
