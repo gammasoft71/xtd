@@ -199,9 +199,9 @@ void thread::abort() {
   data_->state |= xtd::threading::thread_state::abort_requested;
   
   if (is_main_thread()) {
-    environment::abort();
     data_->state |= xtd::threading::thread_state::aborted;
     data_->state &= ~xtd::threading::thread_state::abort_requested;
+    environment::abort();
     return;
   }
   
@@ -218,16 +218,6 @@ void thread::detach() {
 }
 
 void thread::interrupt() {
-  data_->interrupted = false;
-  if (is_unstarted()) throw thread_state_exception(csf_);
-  
-  if (is_wait_sleep_join() && native::thread::cancel(data_->handle)) {
-    data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
-    data_->interrupted = false;
-    data_->end_thread_event.set();
-    throw thread_interrupted_exception(csf_);
-  }
-  
   data_->interrupted = true;
 }
 
@@ -239,7 +229,7 @@ bool thread::join(int32 milliseconds_timeout) {
   if (is_unstarted()) throw thread_state_exception {csf_};
   if (milliseconds_timeout < timeout::infinite) throw argument_exception(csf_);
   
-  if (data_->interrupted == true) interrupt();
+  if (data_->interrupted == true) interrupt_internal();
   if (!joinable()) return false;
   
   bool result = data_->end_thread_event.wait_one(milliseconds_timeout);
@@ -306,10 +296,11 @@ void thread::sleep(int32 milliseconds_timeout) {
   if (milliseconds_timeout < timeout::infinite) throw argument_exception(csf_);
   
   auto current_thread = thread::current_thread();
-  if (current_thread.data_ && current_thread.data_->interrupted) current_thread.interrupt();
   
   if (current_thread.data_) current_thread.data_->state |= xtd::threading::thread_state::wait_sleep_join;
+  if (current_thread.data_ && current_thread.data_->interrupted) current_thread.interrupt_internal();
   native::thread::sleep(milliseconds_timeout);
+  if (current_thread.data_ && current_thread.data_->interrupted) current_thread.interrupt_internal();
   if (current_thread.data_) current_thread.data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
 }
 
@@ -440,7 +431,7 @@ bool thread::do_wait(wait_handle& wait_handle, int32 milliseconds_timeout) {
   
   auto current_thread = thread::current_thread();
   current_thread.data_->state |= xtd::threading::thread_state::wait_sleep_join;
-  if (current_thread.data_->interrupted) current_thread.interrupt();
+  if (current_thread.data_->interrupted) current_thread.interrupt_internal();
   try {
     auto result = wait_handle.wait(milliseconds_timeout);
     current_thread.data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
@@ -470,12 +461,17 @@ thread::static_data& thread::get_static_data() {
   return data;
 }
 
-void thread::reset_threads() {
-  if (get_static_data().threads.size() > 2) {
-    for (auto& item : get_static_data().threads)
-      while (item->is_wait_sleep_join()) native::thread::sleep(10);
-    get_static_data().threads.erase(get_static_data().threads.begin() + 2, get_static_data().threads.end());
-  }
+
+void thread::interrupt_internal() {
+  struct cancel_thread {
+    ~cancel_thread() {
+      if (data_->managed_thread_id != 1) native::thread::cancel(data_->handle);}
+    thread::data* data_ = nullptr;
+  } cancel_thread {data_.get()};
+  data_->interrupted = false;
+  data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
+  if (data_->managed_thread_id == 1) environment::raise(signal::interrupt);
+  else throw thread_interrupted_exception {csf_};
 }
 
 bool thread::is_aborted() const noexcept {
@@ -528,6 +524,14 @@ bool thread::join_all(const std::vector<thread*>& threads, int32 milliseconds_ti
   return true;
 }
 
+void thread::reset_threads() {
+  if (get_static_data().threads.size() > 2) {
+    for (auto& item : get_static_data().threads)
+      while (item->is_wait_sleep_join()) native::thread::sleep(10);
+    get_static_data().threads.erase(get_static_data().threads.begin() + 2, get_static_data().threads.end());
+  }
+}
+
 void thread::thread_proc() {
   if (!data_->name.empty()) native::thread::set_current_thread_name(data_->name);
   if (data_->priority != xtd::threading::thread_priority::normal) native::thread::set_priority(data_->handle, as<int32>(data_->priority));
@@ -537,6 +541,8 @@ void thread::thread_proc() {
   else throw invalid_operation_exception {csf_};
   
   if (is_aborted()) throw thread_abort_exception {csf_};
+  if (is_aborted()) throw thread_interrupted_exception(csf_);
+
   
   data_->state |= xtd::threading::thread_state::stopped;
   data_->end_thread_event.set();

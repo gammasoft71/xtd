@@ -379,7 +379,7 @@ namespace xtd {
       static intptr get_current_thread_handle();
       static intptr get_current_thread_id();
       static static_data& get_static_data();
-      static void reset_threads(); // Used by xtd::tests::thread_tests unit tests.
+      void interrupt_internal();
       bool is_aborted() const noexcept;
       bool is_stopped() const noexcept;
       bool is_suspended() const noexcept;
@@ -388,6 +388,7 @@ namespace xtd {
       bool is_unstarted() const noexcept;
       bool is_wait_sleep_join() const noexcept;
       static bool join_all(const std::vector<thread*>& threads, int32 milliseconds_timeout);
+      static void reset_threads(); // Used by xtd::tests::thread_tests unit tests.
       void thread_proc();
       static thread& unmanaged_thread();
 
