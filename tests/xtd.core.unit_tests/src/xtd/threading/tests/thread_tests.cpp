@@ -235,6 +235,50 @@ namespace xtd::tests {
       thread.join();
       assert::throws<thread_state_exception>([&] {thread.priority(xtd::threading::thread_priority::lowest);}, csf_);
     }
+    
+    void test_method_(thread_id) {
+      assert::is_not_zero(threading::thread::current_thread().thread_id(), csf_);
+      assert::are_not_equal(threading::thread::invalid_handle, threading::thread::current_thread().thread_id(), csf_);
+      auto thread = threading::thread {thread_start {[] {thread::sleep(2);}}};
+      assert::are_equal(threading::thread::invalid_handle, thread.thread_id(), csf_);
+      auto thread2 = threading::thread {thread_start {[] {thread::sleep(2);}}};
+      assert::are_equal(threading::thread::invalid_handle, thread2.thread_id(), csf_);
+      thread.start();
+      assert::are_not_equal(threading::thread::invalid_handle, thread.thread_id(), csf_);
+      thread2.start();
+      assert::are_not_equal(threading::thread::invalid_handle, thread2.thread_id(), csf_);
+      assert::are_not_equal(thread.thread_id(), thread2.thread_id(), csf_);
+    }
+    
+    void test_method_(thread_state) {
+      assert::are_equal(threading::thread_state::running, threading::thread::current_thread().thread_state(), csf_);
+      auto thread = threading::thread {thread_start {[] {
+        assert::are_equal(threading::thread_state::running, threading::thread::current_thread().thread_state(), csf_);
+        thread::sleep(2);
+      }}};
+      assert::are_equal(threading::thread_state::unstarted, thread.thread_state(), csf_);
+      thread.start();
+      thread::sleep(1);
+      assert::are_equal(threading::thread_state::running | threading::thread_state::wait_sleep_join, thread.thread_state(), csf_);
+      thread.join();
+      assert::are_equal(threading::thread_state::stopped, thread.thread_state(), csf_);
+    }
+    
+    void test_method_(current_thread) {
+      threading::thread thread2;
+      threading::thread thread = threading::thread {thread_start {[&] {
+        assert::are_equal(thread.thread_id(), threading::thread::current_thread().thread_id(), csf_);
+        thread2 = threading::thread::current_thread();
+      }}};
+      thread.start();
+      thread.join();
+      assert::are_equal(thread2.thread_id(), thread.thread_id(), csf_);
+    }
+    
+    void test_method_(main_thread) {
+      assert::are_equal(1, threading::thread::main_thread().managed_thread_id());
+      assert::are_equal(threading::thread::current_thread().thread_id(), threading::thread::main_thread().thread_id());
+    }
 
     void test_method_(create_many_threads) {
       auto counter = 0;
