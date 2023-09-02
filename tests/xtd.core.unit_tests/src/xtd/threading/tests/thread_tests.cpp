@@ -432,6 +432,28 @@ namespace xtd::tests {
       auto thread = threading::thread {thread_start {[&] {thread::sleep(2);}}};
       assert::throws<thread_state_exception>([&] {thread.join();}, csf_);
     }
+    
+    void test_method_(resume) {
+      auto thread = threading::thread {thread_start {[&] {thread::sleep(2);}}};
+      thread.start();
+      thread.suspend();
+      assert::is_true(enum_object<threading::thread_state> {thread.thread_state()}.has_flag(threading::thread_state::suspended), csf_);
+      thread.resume();
+      assert::is_false(enum_object<threading::thread_state> {thread.thread_state()}.has_flag(threading::thread_state::suspended), csf_);
+      thread.join();
+    }
+    
+    void test_method_(resume_without_start) {
+      auto thread = threading::thread {thread_start {[&] {thread::sleep(2);}}};
+      assert::throws<thread_state_exception>([&] {thread.resume();}, csf_);
+    }
+    
+    void test_method_(resume_without_suspend) {
+      auto thread = threading::thread {thread_start {[&] {thread::sleep(2);}}};
+      thread.start();
+      assert::throws<thread_state_exception>([&] {thread.resume();}, csf_);
+      thread.join();
+    }
 
     void test_method_(start) {
       auto thread = threading::thread {thread_start {[&] {thread::sleep(2);}}};
@@ -458,6 +480,21 @@ namespace xtd::tests {
     void test_method_(start_any_with_thread_start) {
       auto thread = threading::thread {thread_start {[&] {thread::sleep(2);}}};
       assert::throws<invalid_operation_exception>([&] {thread.start(0);}, csf_);
+    }
+    
+    void test_method_(suspend) {
+      auto thread = threading::thread {thread_start {[&] {thread::sleep(2);}}};
+      thread.start();
+      thread.suspend();
+      assert::is_true(enum_object<threading::thread_state> {thread.thread_state()}.has_flag(threading::thread_state::suspended), csf_);
+      thread.resume();
+      assert::is_false(enum_object<threading::thread_state> {thread.thread_state()}.has_flag(threading::thread_state::suspended), csf_);
+      thread.join();
+    }
+    
+    void test_method_(suspend_without_start) {
+      auto thread = threading::thread {thread_start {[&] {thread::sleep(2);}}};
+      assert::throws<thread_state_exception>([&] {thread.suspend();}, csf_);
     }
 
     void test_method_(create_many_threads) {
