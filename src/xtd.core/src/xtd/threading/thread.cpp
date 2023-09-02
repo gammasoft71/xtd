@@ -313,7 +313,7 @@ void thread::spin_wait(int32 iterations) {
 
 void thread::start() {
   if (!is_unstarted()) throw thread_state_exception {csf_};
-  if (!data_->parameter.has_value() && data_->thread_start.is_empty()) throw invalid_operation_exception {csf_};
+  if (data_->thread_start.is_empty() && data_->parameterized_thread_start.is_empty()) throw invalid_operation_exception {csf_};
   data_->state &= ~xtd::threading::thread_state::unstarted;
   data_->joinable = true;
   data_->parameter = nullptr;
@@ -325,7 +325,7 @@ void thread::start() {
 
 void thread::start(std::any param) {
   if (!is_unstarted()) throw thread_state_exception {csf_};
-  if (data_->parameter.has_value() && data_->parameterized_thread_start.is_empty()) throw invalid_operation_exception {csf_};
+  if (data_->parameterized_thread_start.is_empty()) throw invalid_operation_exception {csf_};
   data_->state &= ~xtd::threading::thread_state::unstarted;
   data_->joinable = true;
   data_->parameter = param;
