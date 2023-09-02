@@ -272,7 +272,7 @@ bool thread::join_all(int32 milliseconds_timeout) {
   timeout = milliseconds_timeout - as<int32>(std::chrono::nanoseconds(std::chrono::high_resolution_clock::now().time_since_epoch()).count() / 1000000 - start);
   if (timeout < 0) return false;
 
-  if (join_all(thread_pointers, timeout) == false) return false;
+  if (join_all_ptr(thread_pointers, timeout) == false) return false;
   get_static_data().threads.erase(get_static_data().threads.begin() + 2, get_static_data().threads.end());
   return true;
 }
@@ -368,7 +368,7 @@ bool thread::join_all(const std::initializer_list<std::shared_ptr<thread>>& thre
   std::vector<thread*> threads_pointers;
   for (auto& thread : threads)
     threads_pointers.push_back(thread.get());
-  return join_all(threads_pointers, milliseconds_timeout);
+  return join_all_ptr(threads_pointers, milliseconds_timeout);
 }
 
 bool thread::join_all(const std::initializer_list<std::shared_ptr<thread>>& threads, const time_span& timeout) {
@@ -383,7 +383,7 @@ bool thread::join_all(const std::initializer_list<std::unique_ptr<thread>>& thre
   std::vector<thread*> threads_pointers;
   for (auto& thread : threads)
     threads_pointers.push_back(thread.get());
-  return join_all(threads_pointers, milliseconds_timeout);
+  return join_all_ptr(threads_pointers, milliseconds_timeout);
 }
 
 bool thread::join_all(const std::initializer_list<std::unique_ptr<thread>>& threads, const time_span& timeout) {
@@ -398,7 +398,7 @@ bool thread::join_all(const std::vector<std::shared_ptr<thread>>& threads, int32
   std::vector<thread*> threads_pointers;
   for (auto& thread : threads)
     threads_pointers.push_back(thread.get());
-  return join_all(threads_pointers, milliseconds_timeout);
+  return join_all_ptr(threads_pointers, milliseconds_timeout);
 }
 
 bool thread::join_all(const std::vector<std::shared_ptr<thread>>& threads, const time_span& timeout) {
@@ -413,7 +413,7 @@ bool thread::join_all(const std::vector<std::unique_ptr<thread>>& threads, int32
   std::vector<thread*> threads_pointers;
   for (auto& thread : threads)
     threads_pointers.push_back(thread.get());
-  return join_all(threads_pointers, milliseconds_timeout);
+  return join_all_ptr(threads_pointers, milliseconds_timeout);
 }
 
 bool thread::join_all(const std::vector<std::unique_ptr<thread>>& threads, const time_span& timeout) {
@@ -502,7 +502,7 @@ bool thread::is_wait_sleep_join() const noexcept {
   return enum_object<xtd::threading::thread_state>(data_->state).has_flag(xtd::threading::thread_state::wait_sleep_join);
 }
 
-bool thread::join_all(const std::vector<thread*>& threads, int32 milliseconds_timeout) {
+bool thread::join_all_ptr(const std::vector<thread*>& threads, int32 milliseconds_timeout) {
   if (milliseconds_timeout < timeout::infinite) throw argument_exception(csf_);
   
   thread::yield();
