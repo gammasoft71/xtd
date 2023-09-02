@@ -1,5 +1,6 @@
 #include <xtd/threading/thread.h>
 #include <xtd/threading/interlocked.h>
+#include <xtd/diagnostics/stopwatch.h>
 #include <xtd/xtd.tunit>
 #include <thread>
 
@@ -495,6 +496,103 @@ namespace xtd::tests {
     void test_method_(suspend_without_start) {
       auto thread = threading::thread {thread_start {[&] {thread::sleep(2);}}};
       assert::throws<thread_state_exception>([&] {thread.suspend();}, csf_);
+    }
+    
+    void test_method_(join_all) {
+      auto thread1 = threading::thread {thread_start {[&] {thread::sleep(2);}}};
+      auto thread2 = threading::thread {thread_start {[&] {thread::sleep(2);}}};
+      thread1.start();
+      thread2.start();
+      assert::does_not_throw([&] {threading::thread::join_all();}, csf_);
+    }
+    
+    void test_method_(join_all_without_thread) {
+      assert::does_not_throw([&] {threading::thread::join_all();}, csf_);
+    }
+    
+    void test_method_(join_all_with_milliseconds_timeout) {
+      auto thread1 = threading::thread {thread_start {[&] {thread::sleep(2);}}};
+      auto thread2 = threading::thread {thread_start {[&] {thread::sleep(2);}}};
+      thread1.start();
+      thread2.start();
+      assert::is_false(threading::thread::join_all(1), csf_);
+      assert::is_true(threading::thread::join_all(5), csf_);
+    }
+    
+    void test_method_(join_all_with_timeout) {
+      auto thread1 = threading::thread {thread_start {[&] {thread::sleep(2);}}};
+      auto thread2 = threading::thread {thread_start {[&] {thread::sleep(2);}}};
+      thread1.start();
+      thread2.start();
+      assert::is_false(threading::thread::join_all(time_span::from_milliseconds(1.0)), csf_);
+      assert::is_true(threading::thread::join_all(time_span::from_milliseconds(5.0)), csf_);
+    }
+    
+    void test_method_(join_all_with_collection) {
+      auto thread1 = threading::thread {thread_start {[&] {thread::sleep(2);}}};
+      auto thread2 = threading::thread {thread_start {[&] {thread::sleep(2);}}};
+      thread1.start();
+      thread2.start();
+      assert::does_not_throw([&] {threading::thread::join_all({thread1, thread2});}, csf_);
+    }
+    
+    void test_method_(join_all_with_collection_and_milliseconds_timeout) {
+      auto thread1 = threading::thread {thread_start {[&] {thread::sleep(2);}}};
+      auto thread2 = threading::thread {thread_start {[&] {thread::sleep(2);}}};
+      thread1.start();
+      thread2.start();
+      assert::is_false(threading::thread::join_all({thread1, thread2}, 1), csf_);
+      assert::is_true(threading::thread::join_all({thread1, thread2}, 5), csf_);
+    }
+    
+    void test_method_(join_all_with_collection_and_timeout) {
+      auto thread1 = threading::thread {thread_start {[&] {thread::sleep(2);}}};
+      auto thread2 = threading::thread {thread_start {[&] {thread::sleep(2);}}};
+      thread1.start();
+      thread2.start();
+      assert::is_false(threading::thread::join_all({thread1, thread2}, time_span::from_milliseconds(1.0)), csf_);
+      assert::is_true(threading::thread::join_all({thread1, thread2}, time_span::from_milliseconds(5.0)), csf_);
+    }
+    
+    void test_method_(join_all_with_vector) {
+      std::vector<thread> threads;
+      threads.emplace_back(thread_start {[&] {thread::sleep(2);}});
+      threads.back().start();
+      threads.emplace_back(thread_start {[&] {thread::sleep(2);}});
+      threads.back().start();
+      assert::does_not_throw([&] {threading::thread::join_all(threads);}, csf_);
+    }
+    
+    void test_method_(join_all_with_vector_and_milliseconds_timeout) {
+      std::vector<thread> threads;
+      threads.emplace_back(thread_start {[&] {thread::sleep(2);}});
+      threads.back().start();
+      threads.emplace_back(thread_start {[&] {thread::sleep(2);}});
+      threads.back().start();
+      assert::is_false(threading::thread::join_all(threads, 1), csf_);
+      assert::is_true(threading::thread::join_all(threads, 5), csf_);
+    }
+    
+    void test_method_(join_all_with_vector_and_timeout) {
+      std::vector<thread> threads;
+      threads.emplace_back(thread_start {[&] {thread::sleep(2);}});
+      threads.back().start();
+      threads.emplace_back(thread_start {[&] {thread::sleep(2);}});
+      threads.back().start();
+      assert::is_false(threading::thread::join_all(threads, time_span::from_milliseconds(1.0)), csf_);
+      assert::is_true(threading::thread::join_all(threads, time_span::from_milliseconds(5.0)), csf_);
+    }
+    
+    void test_method_(sleep_milliseconds_timeout) {
+      auto sw = diagnostics::stopwatch::start_new();
+      thread::sleep(10);
+      assert::is_greater_or_equal(sw.elapsed_milliseconds(), 10, csf_);
+    }
+    
+    void test_method_(sleep_timeout) {
+      auto sw = diagnostics::stopwatch::start_new();
+      thread::sleep(time_span::from_milliseconds(10.0));
+      assert::is_greater_or_equal(sw.elapsed_milliseconds(), 10, csf_);
     }
 
     void test_method_(create_many_threads) {
