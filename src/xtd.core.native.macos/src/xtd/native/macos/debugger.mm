@@ -10,6 +10,7 @@
 #import <Cocoa/Cocoa.h>
 //#endif
 #import <Foundation/Foundation.h>
+#include <libproc.h>
 
 using namespace xtd::native;
 
@@ -18,6 +19,10 @@ void debugger::debug_break() {
 }
 
 bool debugger::is_attached() {
+  pid_t ppid = getppid();
+  struct proc_bsdinfo parent_info;
+  if (proc_pidinfo(ppid, PROC_PIDTBSDINFO, 0, &parent_info, sizeof(parent_info)) != -1)
+    return std::string(parent_info.pbi_name).find("debugserver") !=std::string::npos;
   return false;
 }
 
