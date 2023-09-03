@@ -268,11 +268,11 @@ bool thread::join_all(int32 milliseconds_timeout) {
   for (auto& thread : get_static_data().threads)
     thread_pointers.push_back(thread.get());
 
-  timeout = milliseconds_timeout - as<int32>(std::chrono::nanoseconds(std::chrono::high_resolution_clock::now().time_since_epoch()).count() / 1000000 - start);
+  if (milliseconds_timeout != timeout::infinite) timeout = milliseconds_timeout - as<int32>(std::chrono::nanoseconds(std::chrono::high_resolution_clock::now().time_since_epoch()).count() / 1000000 - start);
   if (timeout < 0) return false;
 
   if (join_all_ptr(thread_pointers, timeout) == false) return false;
-  get_static_data().threads.erase(get_static_data().threads.begin() + 2, get_static_data().threads.end());
+  get_static_data().threads.clear();
   return true;
 }
 
@@ -521,14 +521,6 @@ bool thread::join_all_ptr(const std::vector<thread*>& threads, int32 millisecond
     if (timeout < 0) return false;
   }
   return true;
-}
-
-void thread::reset_threads() {
-  if (get_static_data().threads.size() > 2) {
-    for (auto& item : get_static_data().threads)
-      while (item->is_wait_sleep_join()) native::thread::sleep(10);
-    get_static_data().threads.erase(get_static_data().threads.begin() + 2, get_static_data().threads.end());
-  }
 }
 
 void thread::thread_proc() {
