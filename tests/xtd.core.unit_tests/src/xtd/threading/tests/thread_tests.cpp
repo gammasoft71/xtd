@@ -262,7 +262,7 @@ namespace xtd::tests {
       assert::are_equal(threading::thread_state::running, threading::thread::current_thread().thread_state(), csf_);
       auto thread = threading::thread {thread_start {[] {
         assert::are_equal(threading::thread_state::running, threading::thread::current_thread().thread_state(), csf_);
-        thread::sleep(20);
+        thread::sleep(50);
       }}};
       assert::are_equal(threading::thread_state::unstarted, thread.thread_state(), csf_);
       thread.start();
@@ -413,9 +413,10 @@ namespace xtd::tests {
     }
 
     void test_method_(join_with_milliseconds_timeout) {
-      auto thread = threading::thread {thread_start {[&] {thread::sleep(10);}}};
+      auto thread = threading::thread {thread_start {[&] {thread::sleep(50);}}};
       thread.start();
-      assert::is_false(thread.join(1), csf_);
+      thread::sleep(3);
+      assert::is_false(thread.join(5), csf_);
       thread.join();
     }
     
@@ -513,7 +514,7 @@ namespace xtd::tests {
       auto thread2 = threading::thread {thread_start {[&] {thread::sleep(10);}}};
       thread1.start();
       thread2.start();
-      assert::is_false(threading::thread::join_all(1), csf_);
+      assert::is_false(threading::thread::join_all(5), csf_);
       threading::thread::join_all();
     }
     
@@ -522,7 +523,7 @@ namespace xtd::tests {
       auto thread2 = threading::thread {thread_start {[&] {thread::sleep(10);}}};
       thread1.start();
       thread2.start();
-      assert::is_false(threading::thread::join_all(time_span::from_milliseconds(1.0)), csf_);
+      assert::is_false(threading::thread::join_all(time_span::from_milliseconds(5.0)), csf_);
       threading::thread::join_all();
     }
     
