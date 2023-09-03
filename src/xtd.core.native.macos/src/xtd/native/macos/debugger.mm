@@ -2,15 +2,13 @@
 #include <xtd/native/debugger.h>
 #include <xtd/native/assert_dialog_results.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
-#include <iostream>
-#include <cstdlib>
+#include <libproc.h>
 #include <syslog.h>
 #import <CoreFoundation/CoreFoundation.h>
 //#if !defined(TARGET_IPHONE_SIMULATOR) && !defined(TARGET_OS_MACCATALYST) && !defined(TARGET_OS_IPHONE)
 #import <Cocoa/Cocoa.h>
 //#endif
 #import <Foundation/Foundation.h>
-#include <libproc.h>
 
 using namespace xtd::native;
 
