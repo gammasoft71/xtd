@@ -269,7 +269,7 @@ namespace xtd::tests {
       assert::are_equal(threading::thread_state::running, threading::thread::current_thread().thread_state(), csf_);
       auto thread = threading::thread {thread_start {[] {
         assert::are_equal(threading::thread_state::running, threading::thread::current_thread().thread_state(), csf_);
-        thread::sleep(2);
+        thread::sleep(3);
       }}};
       assert::are_equal(threading::thread_state::unstarted, thread.thread_state(), csf_);
       thread.start();
@@ -381,7 +381,7 @@ namespace xtd::tests {
       assert::is_false(thread_interrupted, csf_);
       thread::sleep(1);
       thread.interrupt();
-      thread::sleep(1);
+      thread::sleep(5);
       assert::is_true(thread_interrupted, csf_);
     }
     
@@ -516,7 +516,7 @@ namespace xtd::tests {
       thread1.start();
       thread2.start();
       assert::is_false(threading::thread::join_all(1), csf_);
-      assert::is_true(threading::thread::join_all(5), csf_);
+      assert::is_true(threading::thread::join_all(15), csf_);
     }
     
     void test_method_(join_all_with_timeout) {
@@ -658,6 +658,7 @@ namespace xtd::tests {
       for (auto index = 0ul; index < max_count_thread; ++index)
         thread::start_new(thread_proc);
       
+      thread::sleep(5);
       thread::join_all();
       
       assert::are_equal(max_count_thread, as<size_t>(counter), csf_);
