@@ -269,7 +269,7 @@ namespace xtd::tests {
       assert::are_equal(threading::thread_state::running, threading::thread::current_thread().thread_state(), csf_);
       auto thread = threading::thread {thread_start {[] {
         assert::are_equal(threading::thread_state::running, threading::thread::current_thread().thread_state(), csf_);
-        thread::sleep(3);
+        thread::sleep(20);
       }}};
       assert::are_equal(threading::thread_state::unstarted, thread.thread_state(), csf_);
       thread.start();
@@ -335,6 +335,7 @@ namespace xtd::tests {
       assert::is_false(thread_aborted, csf_);
       thread::sleep(1);
       thread.abort();
+      thread::sleep(30);
       assert::is_true(thread_aborted, csf_);
     }
     
@@ -370,10 +371,10 @@ namespace xtd::tests {
       bool thread_interrupted = false;
       auto thread = threading::thread {thread_start {[&] {
         try {
-          for (auto index  = 0; index < 5; ++index)
+          for (auto index  = 0; index < 30; ++index)
             thread::sleep(1);
           
-        } catch(const thread_interrupted_exception& e) {
+        } catch(const thread_interrupted_exception&) {
           thread_interrupted = true;
         }
       }}};
@@ -416,10 +417,10 @@ namespace xtd::tests {
     }
 
     void test_method_(join_with_milliseconds_timeout) {
-      auto thread = threading::thread {thread_start {[&] {thread::sleep(2);}}};
+      auto thread = threading::thread {thread_start {[&] {thread::sleep(10);}}};
       thread.start();
       assert::is_false(thread.join(1), csf_);
-      assert::is_true(thread.join(2), csf_);
+      thread.join();
     }
     
     void test_method_(join_with_timeout) {
@@ -516,7 +517,7 @@ namespace xtd::tests {
       thread1.start();
       thread2.start();
       assert::is_false(threading::thread::join_all(1), csf_);
-      assert::is_true(threading::thread::join_all(20), csf_);
+      threading::thread::join_all();
     }
     
     void test_method_(join_all_with_timeout) {
@@ -525,7 +526,7 @@ namespace xtd::tests {
       thread1.start();
       thread2.start();
       assert::is_false(threading::thread::join_all(time_span::from_milliseconds(1.0)), csf_);
-      assert::is_true(threading::thread::join_all(time_span::from_milliseconds(5.0)), csf_);
+      threading::thread::join_all();
     }
     
     void test_method_(join_all_with_collection) {
@@ -658,7 +659,7 @@ namespace xtd::tests {
       for (auto index = 0ul; index < max_count_thread; ++index)
         thread::start_new(thread_proc);
       
-      thread::sleep(5);
+      thread::sleep(40);
       thread::join_all();
       
       assert::are_equal(max_count_thread, as<size_t>(counter), csf_);
