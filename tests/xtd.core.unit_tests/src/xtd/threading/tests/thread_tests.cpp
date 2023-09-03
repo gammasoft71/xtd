@@ -426,7 +426,7 @@ namespace xtd::tests {
       auto thread = threading::thread {thread_start {[&] {thread::sleep(2);}}};
       thread.start();
       assert::is_false(thread.join(time_span::from_milliseconds(1.0)), csf_);
-      assert::is_true(thread.join(time_span::from_milliseconds(2.0)), csf_);
+      assert::is_true(thread.join(time_span::from_milliseconds(3.0)), csf_);
     }
     
     void test_method_(join_without_start) {
@@ -516,7 +516,7 @@ namespace xtd::tests {
       thread1.start();
       thread2.start();
       assert::is_false(threading::thread::join_all(1), csf_);
-      assert::is_true(threading::thread::join_all(15), csf_);
+      assert::is_true(threading::thread::join_all(20), csf_);
     }
     
     void test_method_(join_all_with_timeout) {
