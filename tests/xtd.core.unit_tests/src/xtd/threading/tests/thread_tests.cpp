@@ -7,13 +7,6 @@
 using namespace xtd::threading;
 using namespace xtd::tunit;
 
-// Used by xtd::tests::thread_tests unit tests.
-struct __xtd_threads__ {
-  static void reset_threads() {
-    xtd::threading::thread::reset_threads();
-  }
-};
-
 namespace xtd::tests {
   class test_class_(thread_tests) {
   public:
