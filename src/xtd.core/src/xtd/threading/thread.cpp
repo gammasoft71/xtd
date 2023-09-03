@@ -268,7 +268,7 @@ bool thread::join_all(int32 milliseconds_timeout) {
   for (auto& thread : get_static_data().threads)
     thread_pointers.push_back(thread.get());
 
-  timeout = milliseconds_timeout - as<int32>(std::chrono::nanoseconds(std::chrono::high_resolution_clock::now().time_since_epoch()).count() / 1000000 - start);
+  if (milliseconds_timeout != timeout::infinite) timeout = milliseconds_timeout - as<int32>(std::chrono::nanoseconds(std::chrono::high_resolution_clock::now().time_since_epoch()).count() / 1000000 - start);
   if (timeout < 0) return false;
 
   if (join_all_ptr(thread_pointers, timeout) == false) return false;
