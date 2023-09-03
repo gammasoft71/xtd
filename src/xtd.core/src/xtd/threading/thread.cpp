@@ -199,7 +199,6 @@ void thread::abort() {
   data_->state |= xtd::threading::thread_state::abort_requested;
   
   if (is_main_thread()) {
-    data_->state |= xtd::threading::thread_state::aborted;
     data_->state &= ~xtd::threading::thread_state::abort_requested;
     environment::abort();
     return;
