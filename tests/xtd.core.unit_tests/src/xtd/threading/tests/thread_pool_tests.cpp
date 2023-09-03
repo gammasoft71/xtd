@@ -64,7 +64,7 @@ namespace xtd::tests {
         thread_pool::queue_user_work_item(action);
       thread::sleep(5);
       thread_pool::close();
-      assert::are_equal(min_worker_threads, count, csf_);
+      assert::are_equal(min_worker_threads, as<size_t>(count), csf_);
     }
     
     void test_method_(queue_user_work_item_max_thread) {
