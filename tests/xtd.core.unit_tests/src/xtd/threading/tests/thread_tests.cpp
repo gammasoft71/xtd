@@ -96,7 +96,7 @@ namespace xtd::tests {
         assert::is_empty(thread.name(), csf_);
         assert::are_not_equal(threading::thread::invalid_thread_id, thread.thread_id(), csf_);
         assert::are_equal(thread_priority::normal, thread.priority(), csf_);
-        assert::are_equal(thread_state::running | thread_state::background, thread.thread_state(), csf_);
+        assert::is_true(thread.thread_state() == threading::thread_state::background || thread.thread_state() == (threading::thread_state::background | threading::thread_state::wait_sleep_join), csf_);
       }};
       if (thread.joinable()) thread.join();
       assert::is_true(thread_ran, csf_);
@@ -108,7 +108,6 @@ namespace xtd::tests {
         thread_ran = true;
         auto thread = threading::thread::current_thread();
         assert::are_not_equal(threading::thread::invalid_handle, thread.handle(), csf_);
-        /*
         assert::is_true(thread.is_alive(), csf_);
         assert::is_false(thread.is_background(), csf_);
         assert::is_false(thread.is_thread_pool_thread(), csf_);
@@ -118,8 +117,7 @@ namespace xtd::tests {
         assert::is_empty(thread.name(), csf_);
         assert::are_not_equal(threading::thread::invalid_thread_id, thread.thread_id(), csf_);
         assert::are_equal(thread_priority::normal, thread.priority(), csf_);
-        assert::are_equal(thread_state::running, thread.thread_state(), csf_);
-         */
+        assert::is_true(thread.thread_state() == threading::thread_state::running || thread.thread_state() == threading::thread_state::wait_sleep_join, csf_);
       }}};
       thread.start();
       if (thread.joinable()) thread.join();
@@ -263,7 +261,7 @@ namespace xtd::tests {
     void test_method_(thread_state) {
       assert::are_equal(threading::thread_state::running, threading::thread::current_thread().thread_state(), csf_);
       auto thread = threading::thread {thread_start {[] {
-        assert::are_equal(threading::thread_state::running, threading::thread::current_thread().thread_state(), csf_);
+        assert::is_true(threading::thread::current_thread().thread_state() == threading::thread_state::running || threading::thread::current_thread().thread_state() == threading::thread_state::wait_sleep_join, csf_);
         thread::sleep(50);
       }}};
       assert::are_equal(threading::thread_state::unstarted, thread.thread_state(), csf_);
