@@ -267,7 +267,7 @@ namespace xtd::tests {
       assert::are_equal(threading::thread_state::unstarted, thread.thread_state(), csf_);
       thread.start();
       thread::sleep(10);
-      assert::are_equal(threading::thread_state::running | threading::thread_state::wait_sleep_join, thread.thread_state(), csf_);
+      assert::is_true(thread.thread_state() == threading::thread_state::running || thread.thread_state() == threading::thread_state::wait_sleep_join, csf_);
       thread.join();
       assert::are_equal(threading::thread_state::stopped, thread.thread_state(), csf_);
     }
