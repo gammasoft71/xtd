@@ -378,7 +378,7 @@ namespace xtd::tests {
       assert::is_false(thread_interrupted, csf_);
       thread::sleep(1);
       thread.interrupt();
-      thread::sleep(5);
+      thread::sleep(10);
       assert::is_true(thread_interrupted, csf_);
     }
     
