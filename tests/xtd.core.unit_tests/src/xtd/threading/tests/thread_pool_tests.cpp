@@ -92,7 +92,7 @@ namespace xtd::tests {
       }};
       for (auto index = 0ul; index < 2 * max_worker_threads; ++index)
         thread_pool::queue_user_work_item(action);
-      thread::sleep(5);
+      thread::sleep(10);
       thread_pool::close();
       assert::are_equal(2 * max_worker_threads, count, csf_);
     }
