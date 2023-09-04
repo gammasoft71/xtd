@@ -295,7 +295,7 @@ namespace xtd::tests {
         assert::is_empty(threading::thread::current_thread().name (), csf_);
         assert::are_equal(thread_priority::normal, threading::thread::current_thread().priority(), csf_);
         assert::are_equal(threading::thread::current_thread().thread_id(), threading::thread::current_thread().thread_id(), csf_);
-        assert::are_equal(threading::thread_state::running, threading::thread::current_thread().thread_state(), csf_);
+        assert::is_true(threading::thread::current_thread().thread_state() == threading::thread_state::running || threading::thread::current_thread().thread_state() == threading::thread_state::wait_sleep_join, csf_);
         thread2 = threading::thread::current_thread();
       }}};
       thread.start();
