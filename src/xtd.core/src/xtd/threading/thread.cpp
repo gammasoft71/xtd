@@ -524,6 +524,7 @@ bool thread::join_all_ptr(const std::vector<thread*>& threads, int32 millisecond
 }
 
 void thread::thread_proc() {
+  if (data_->thread_id == invalid_thread_id) data_->thread_id = get_current_thread_id();
   if (!data_->name.empty()) native::thread::set_current_thread_name(data_->name);
   if (data_->priority != xtd::threading::thread_priority::normal) native::thread::set_priority(data_->handle, as<int32>(data_->priority));
 
@@ -533,7 +534,6 @@ void thread::thread_proc() {
   
   if (is_aborted()) throw thread_abort_exception {csf_};
   if (is_aborted()) throw thread_interrupted_exception(csf_);
-
   
   data_->state |= xtd::threading::thread_state::stopped;
   data_->end_thread_event.set();
