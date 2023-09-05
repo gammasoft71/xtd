@@ -327,5 +327,20 @@ namespace xtd::tests {
       auto m3 = mutex {};
       assert::are_equal(0ul, mutex::wait_any({m1, m2, m3}), csf_);
     }
+    
+    void test_method_(wait_one_and_release_mutex_with_threads) {
+      auto m = mutex {};
+      auto count = 0;
+      for (auto index = 0; index < 10; ++index)
+        thread::start_new(thread_start {[&] {
+          m.wait_one();
+          m.release_mutex();
+          ++count;
+        }});
+      thread::sleep(10);
+      assert::is_true(m.wait_one(0), csf_);
+      assert::are_equal(10, count, csf_);
+      thread::join_all();
+    }
   };
 }
