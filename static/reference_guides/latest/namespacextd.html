@@ -91,9 +91,9 @@ $(function() {
 <div class="contents">
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
 <div class="textblock"><p>The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000012">Todo:</a></b></dt><dd>to remove </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000014">Todo:</a></b></dt><dd>to remove </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000013">Todo:</a></b></dt><dd>to remove </dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000015">Todo:</a></b></dt><dd>to remove </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000016">Todo:</a></b></dt><dd>to remove </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -339,6 +339,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1operation__canceled__exception.html">operation_canceled_exception</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The exception that is thrown in a thread upon cancellation of an operation that the thread was executing.  <a href="classxtd_1_1operation__canceled__exception.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1out__of__memory__exception.html">out_of_memory_exception</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The exception that is thrown when one of the arguments provided to a method is not valid.  <a href="classxtd_1_1out__of__memory__exception.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1overflow__exception.html">overflow_exception</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The exception that is thrown when an arithmetic, casting, or conversion operation in a checked context results in an overflow.  <a href="classxtd_1_1overflow__exception.html#details">More...</a><br /></td></tr>
@@ -5826,9 +5829,9 @@ Variables</h2></td></tr>
 <tr class="memitem:gaa7283e1dd31c385d954467f7ea324451"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> = intmax_t</td></tr>
 <tr class="memdesc:gaa7283e1dd31c385d954467f7ea324451"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represent a pointer or a handle.  <br /></td></tr>
 <tr class="separator:gaa7283e1dd31c385d954467f7ea324451"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafc1f246c3bac57da997e1ebeb373d5db"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__types.html#gafc1f246c3bac57da997e1ebeb373d5db">ptrdiff</a> = ptrdiff_t</td></tr>
-<tr class="memdesc:gafc1f246c3bac57da997e1ebeb373d5db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represent the signed integer type of the result of subtracting two pointers.  <br /></td></tr>
-<tr class="separator:gafc1f246c3bac57da997e1ebeb373d5db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac047942a62f03ba75e1b4f0bde7401ca"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__types.html#gac047942a62f03ba75e1b4f0bde7401ca">ptrdiff</a> = std::ptrdiff_t</td></tr>
+<tr class="memdesc:gac047942a62f03ba75e1b4f0bde7401ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represent the signed integer type of the result of subtracting two pointers.  <br /></td></tr>
+<tr class="separator:gac047942a62f03ba75e1b4f0bde7401ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3d6cac730aeed730136cd058c136edee"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__types.html#ga3d6cac730aeed730136cd058c136edee">sbyte</a> = int_least8_t</td></tr>
 <tr class="memdesc:ga3d6cac730aeed730136cd058c136edee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a 8-bit signed integer.  <br /></td></tr>
 <tr class="separator:ga3d6cac730aeed730136cd058c136edee"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -6227,7 +6230,7 @@ template&lt;typename type_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 30 2023 23:20:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Sep 5 2023 22:14:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

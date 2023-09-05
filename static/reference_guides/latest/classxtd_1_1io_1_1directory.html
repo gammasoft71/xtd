@@ -133,11 +133,11 @@ Inheritance diagram for xtd::io::directory:</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(program);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
 <div class="ttc" id="aclassxtd_1_1system__exception_html"><div class="ttname"><a href="classxtd_1_1system__exception.html">xtd::system_exception</a></div><div class="ttdoc">Defines the base class for predefined exceptions in the xtd namespace.</div><div class="ttdef"><b>Definition</b> system_exception.h:24</div></div>
 <div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:48</div></div>
 <div class="ttc" id="aclassxtd_1_1ustring_html_ad27e596eab3904c5084c2d2cb7ae05a1"><div class="ttname"><a href="classxtd_1_1ustring.html#ad27e596eab3904c5084c2d2cb7ae05a1">xtd::ustring::substring</a></div><div class="ttdeci">ustring substring(size_t start_index) const noexcept</div><div class="ttdoc">Retrieves a substring from this instance. The substring starts at a specified character position and ...</div></div>
-<div class="ttc" id="agroup__keywords_html_gac9b8e6f22fb2fdc1bb915ee01aef848c"><div class="ttname"><a href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a></div><div class="ttdeci">#define startup_(main_class)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:136</div></div>
+<div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:162</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">xtd::console_key::e</a></div><div class="ttdeci">@ e</div><div class="ttdoc">The E key.</div></div>
 <div class="ttc" id="anamespacextd_1_1io_html"><div class="ttname"><a href="namespacextd_1_1io.html">xtd::io</a></div><div class="ttdoc">The xtd::io namespace contains types that allow reading and writing to files and data streams,...</div><div class="ttdef"><b>Definition</b> binary_reader.h:17</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
@@ -161,7 +161,7 @@ Inheritance diagram for xtd::io::directory:</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(program);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Use the <a class="el" href="classxtd_1_1io_1_1directory.html" title="Exposes static methods for creating, moving, and enumerating through directories and subdirectories....">xtd::io::directory</a> class for typical operations such as copying, moving, renaming, creating, and deleting directories.<ul>
 <li>To create a directory, use one of the <a class="el" href="classxtd_1_1io_1_1directory.html#af99ad2cfbb3b599577722a3e11a0d2c1" title="Creates all directories and subdirectories in the specified path unless they already exist.">xtd::io::directory::create_directory</a> methods.</li>
@@ -372,7 +372,7 @@ public:
   }
 };
 
-startup_(program);
+startup_(program::main);
 @endcode
 @par Examples
 To create the directory C:\Users\User1\Public\Html when the current directory is C:\Users\User1, use any of the following calls to ensure that the backslash is interpreted properly:
@@ -459,7 +459,7 @@ public:
   </table>
   </dd>
 </dl>
-<p><a class="el" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c" title="Defines the entry point to be called when the application loads. Generally this is set either to the ...">startup_(program)</a>;  </p><dl class="section remark"><dt>Remarks</dt><dd>You can specify relative or absolute path information in the path parameter. Relative path information is interpreted as relative to the current working directory, which you can determine by using the <a class="el" href="classxtd_1_1io_1_1directory.html#a1f524943c71e5b0a48c767cc4a6ca797" title="Gets the current working directory of the application.">xtd::io::directory::get_current_directory</a> method. The returned directory names are prefixed with the value you provided in the path parameter. For example, if you provide a relative path in the path parameter, the returned directory names will contain a relative path. </dd>
+<p><a class="el" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd" title="Defines the entry point to be called when the application loads. Generally this is set either to the ...">startup_(program::main)</a>;  </p><dl class="section remark"><dt>Remarks</dt><dd>You can specify relative or absolute path information in the path parameter. Relative path information is interpreted as relative to the current working directory, which you can determine by using the <a class="el" href="classxtd_1_1io_1_1directory.html#a1f524943c71e5b0a48c767cc4a6ca797" title="Gets the current working directory of the application.">xtd::io::directory::get_current_directory</a> method. The returned directory names are prefixed with the value you provided in the path parameter. For example, if you provide a relative path in the path parameter, the returned directory names will contain a relative path. </dd>
 <dd>
 The <a class="el" href="classxtd_1_1io_1_1directory.html#a18b4ef2bf2e42182dfd412ffacba57b1" title="Returns an enumerable collection of directory full names in a specified path.">xtd::io::directory::enumerate_directories</a> and <a class="el" href="classxtd_1_1io_1_1directory.html#a73fb606bb2939f48fc3a45370e8dde27" title="Returns the names of subdirectories (including their paths) in the specified directory.">xtd::io::directory::get_directories</a> methods differ as follows: When you use <a class="el" href="classxtd_1_1io_1_1directory.html#a18b4ef2bf2e42182dfd412ffacba57b1" title="Returns an enumerable collection of directory full names in a specified path.">xtd::io::directory::enumerate_directories</a>, you can start enumerating the collection of names before the whole collection is returned; when you use <a class="el" href="classxtd_1_1io_1_1directory.html#a73fb606bb2939f48fc3a45370e8dde27" title="Returns the names of subdirectories (including their paths) in the specified directory.">xtd::io::directory::get_directories</a>, you must wait for the whole array of names to be returned before you can access the array. Therefore, when you are working with many files and directories, <a class="el" href="classxtd_1_1io_1_1directory.html#a18b4ef2bf2e42182dfd412ffacba57b1" title="Returns an enumerable collection of directory full names in a specified path.">xtd::io::directory::enumerate_directories</a> can be more efficient. </dd></dl>
 
@@ -547,7 +547,7 @@ public:
   }
 };
 
-startup_(program);
+startup_(program::main);
 @endcode
 @remarks search_pattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in search_pattern.
 &lt;table class="markdownTable"&gt;
@@ -744,7 +744,7 @@ public:
 </dl>
 <p>try { auto txt_files = directory::enumerate_files(source_directory);</p>
 <p>for (ustring current_file : txt_files) { ustring file_name = current_file.substring(source_directory.size() + 1); directory::move(current_file, path::combine(archive_directory, file_name)); } } catch (<a class="el" href="classxtd_1_1system__exception.html" title="Defines the base class for predefined exceptions in the xtd namespace.">system_exception</a>&amp; e) { <a class="el" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37" title="Writes the current line terminator to the standard output stream using the specified format informati...">console::write_line</a>(e.message()); } } };</p>
-<p><a class="el" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c" title="Defines the entry point to be called when the application loads. Generally this is set either to the ...">startup_(program)</a>;  </p><dl class="section remark"><dt>Remarks</dt><dd>You can specify relative path information with the path parameter. Relative path information is interpreted as relative to the current working directory, which you can determine by using the <a class="el" href="classxtd_1_1io_1_1directory.html#a1f524943c71e5b0a48c767cc4a6ca797" title="Gets the current working directory of the application.">xtd::io::directory::get_current_directory</a> method. </dd>
+<p><a class="el" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd" title="Defines the entry point to be called when the application loads. Generally this is set either to the ...">startup_(program::main)</a>;  </p><dl class="section remark"><dt>Remarks</dt><dd>You can specify relative path information with the path parameter. Relative path information is interpreted as relative to the current working directory, which you can determine by using the <a class="el" href="classxtd_1_1io_1_1directory.html#a1f524943c71e5b0a48c767cc4a6ca797" title="Gets the current working directory of the application.">xtd::io::directory::get_current_directory</a> method. </dd>
 <dd>
 The <a class="el" href="classxtd_1_1io_1_1directory.html#aecc4a0b18118e7e15e2fa43be4fcf237" title="Returns an enumerable collection of full file names in a specified path.">xtd::io::directory::enumerate_files</a> and <a class="el" href="classxtd_1_1io_1_1directory.html#a00b648a03a75d6614e914985639c9982" title="Returns the names of files (including their paths) in the specified directory.">xtd::io::directory::get_files</a> methods differ as follows: When you use <a class="el" href="classxtd_1_1io_1_1directory.html#aecc4a0b18118e7e15e2fa43be4fcf237" title="Returns an enumerable collection of full file names in a specified path.">xtd::io::directory::enumerate_files</a>, you can start enumerating the collection of names before the whole collection is returned. When you use <a class="el" href="classxtd_1_1io_1_1directory.html#a00b648a03a75d6614e914985639c9982" title="Returns the names of files (including their paths) in the specified directory.">xtd::io::directory::get_files</a>, you must wait for the whole array of names to be returned before you can access the array. Therefore, when you are working with many files and directories, <a class="el" href="classxtd_1_1io_1_1directory.html#aecc4a0b18118e7e15e2fa43be4fcf237" title="Returns an enumerable collection of full file names in a specified path.">xtd::io::directory::enumerate_files</a> can be more efficient. </dd></dl>
 
@@ -827,7 +827,7 @@ public:
   }
 };
 
-startup_(program);
+startup_(program::main);
 @endcode
 @remarks search_pattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in searchPattern.
 &lt;table class="markdownTable"&gt;
@@ -922,7 +922,7 @@ The <a class="el" href="classxtd_1_1io_1_1directory.html#aecc4a0b18118e7e15e2fa4
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(program);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
 <div class="ttc" id="aclassxtd_1_1io_1_1path_html"><div class="ttname"><a href="classxtd_1_1io_1_1path.html">xtd::io::path</a></div><div class="ttdoc">Performs operations on std::basic_string instances that contain file or directory path information....</div><div class="ttdef"><b>Definition</b> path.h:35</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. </dd>
@@ -1008,7 +1008,7 @@ public:
   </table>
   </dd>
 </dl>
-<p><a class="el" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c" title="Defines the entry point to be called when the application loads. Generally this is set either to the ...">startup_(program)</a>;  </p>
+<p><a class="el" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd" title="Defines the entry point to be called when the application loads. Generally this is set either to the ...">startup_(program::main)</a>;  </p>
 
 </div>
 </div>
@@ -1074,7 +1074,7 @@ public:
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(program);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The current directory is distinct from the original directory, which is the one from which the process was started. </dd>
 <dd>
@@ -1166,7 +1166,7 @@ public:
   }
 };
 
-startup_(program);
+startup_(program::main);
 @endcode
 @remarks This method is identical to xtd::io::directory::get_directories(ustring, ustring) with the asterisk (*) specified as the search pattern, so it returns all subdirectories.
 @remarks The xtd::io::directory::enumerate_directories and xtd::io::directory::get_directories methods differ as follows: When you use xtd::io::directory::enumerate_directories, you can start enumerating the collection of names before the whole collection is returned; when you use xtd::io::directory::get_directories, you must wait for the whole array of names to be returned before you can access the array. Therefore, when you are working with many files and directories, xtd::io::directory::enumerate_directories can be more efficient.
@@ -1346,7 +1346,7 @@ public:
   }
 };
 
-startup_(program);
+startup_(program::main);
 @endcode
 @remarks This method obtains the fully qualified path name of path, as returned by xtd::io::path::get_full_path, and returns root directory information. The specified path is not required to exist.
 @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
@@ -1493,7 +1493,7 @@ public:
   }
 };
 
-startup_(program);
+startup_(program::main);
 @endcode
 @remarks The order of the returned file and directory names is not guaranteed; use the std::sort method if a specific sort order is required.
 @remarks The xtd::io::directory::enumerate_fileSystem_entries and xtd::io::directory::get_file_system_entries methods differ as follows: When you use xtd::io::directory::enumerate_file_system_entries, you can start enumerating the collection of entries before the whole collection is returned; when you use xtd::io::directory::get_file_system_entries, you must wait for the whole array of entries to be returned before you can access the array. Therefore, when you are working with many files and directories, xtd::io::directory::enumerate_file_system_enties can be more efficient.
@@ -1653,7 +1653,7 @@ public:
   }
 };
 
-startup_(program);
+startup_(program::main);
 @endcode
 @endcode
 @remarks The returned file names are appended to the supplied path parameter and the order of the returned file names is not guaranteed; use the std::sort method if a specific sort order is required.
@@ -1773,7 +1773,7 @@ public:
   }
 };
 
-startup_(program);
+startup_(program::main);
 @endcode
 @remarks The xtd::io::directory::enumerate_files and xtd::io::directory::get_files methods differ as follows: When you use xtd::io::directory::enumerate_files, you can start enumerating the collection of names before the whole collection is returned; when you use xtd::io::directory::get_files, you must wait for the whole array of names to be returned before you can access the array. Therefore, when you are working with many files and directories, xtd::io::directory::enumerate_files can be more efficient.
 @remarks The returned file names are appended to the supplied path parameter.
@@ -1856,7 +1856,7 @@ public:
   </table>
   </dd>
 </dl>
-<p><a class="el" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c" title="Defines the entry point to be called when the application loads. Generally this is set either to the ...">startup_(program)</a>;  </p><dl class="section remark"><dt>Remarks</dt><dd>The returned file names are appended to the supplied path parameter and the order of the returned file names is not guaranteed; use the std::sort method if a specific sort order is required. </dd>
+<p><a class="el" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd" title="Defines the entry point to be called when the application loads. Generally this is set either to the ...">startup_(program::main)</a>;  </p><dl class="section remark"><dt>Remarks</dt><dd>The returned file names are appended to the supplied path parameter and the order of the returned file names is not guaranteed; use the std::sort method if a specific sort order is required. </dd>
 <dd>
 search_pattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in search_pattern. <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -1963,7 +1963,7 @@ public:
   }
 };
 
-startup_(program);
+startup_(program::main);
 @endcode
 @note This method may return an inaccurate value, because it uses native functions whose values may not be continuously updated by the operating system.
 @remarks This method is identical to xtd::io::file::get_last_access_time.
@@ -2051,7 +2051,7 @@ public:
   }
 };
 
-startup_(program);
+startup_(program::main);
 @endcode
 @note This method may return an inaccurate value, because it uses native functions whose values may not be continuously updated by the operating system.
 @remarks If the directory described in the path parameter does not exist, this method returns 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC), adjusted to local time.
@@ -2189,7 +2189,7 @@ startup_(program);
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(program);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
 <div class="ttc" id="aclassxtd_1_1argument__exception_html"><div class="ttname"><a href="classxtd_1_1argument__exception.html">xtd::argument_exception</a></div><div class="ttdoc">The exception that is thrown when one of the arguments provided to a method is not valid.</div><div class="ttdef"><b>Definition</b> argument_exception.h:21</div></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1directory__info_html"><div class="ttname"><a href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a></div><div class="ttdoc">Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...</div><div class="ttdef"><b>Definition</b> directory_info.h:126</div></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1directory__not__found__exception_html"><div class="ttname"><a href="classxtd_1_1io_1_1directory__not__found__exception.html">xtd::io::directory_not_found_exception</a></div><div class="ttdoc">The exception that is thrown when part of a file or directory cannot be found.</div><div class="ttdef"><b>Definition</b> directory_not_found_exception.h:27</div></div>
@@ -2338,7 +2338,7 @@ public:
   }
 };
 
-startup_(program);
+startup_(program::main);
 @endcode
 @remarks The path parameter can specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
 @remarks Trailing spaces are removed from the end of the path parameter before getting the directory.
@@ -2469,7 +2469,7 @@ The directory or a file within it is being used by another process. </td></tr>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(program);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This method creates a new directory with the name specified by destDirName and moves the contents of sourceDirName to the newly created destination directory. If you try to move a directory to a directory that already exists, an IOException will occur. For example, an exception will occur if you try to move c:\mydir to c:, and c:already exists. Alternatively, you could specify "c:\\public\\mydir" as the destDirName parameter, provided that "mydir" does not exist under "c:\\public", or specify a new directory name such as "c:\\newdir". </dd>
 <dd>
@@ -2553,7 +2553,7 @@ public:
   </table>
   </dd>
 </dl>
-<p><a class="el" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c" title="Defines the entry point to be called when the application loads. Generally this is set either to the ...">startup_(program)</a>;  </p><dl class="section remark"><dt>Remarks</dt><dd>This method behaves identically to Delete(String, Boolean) with false specified for the second parameter. </dd>
+<p><a class="el" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd" title="Defines the entry point to be called when the application loads. Generally this is set either to the ...">startup_(program::main)</a>;  </p><dl class="section remark"><dt>Remarks</dt><dd>This method behaves identically to Delete(String, Boolean) with false specified for the second parameter. </dd>
 <dd>
 The path parameter may specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see GetCurrentDirectory. </dd>
 <dd>
@@ -2655,7 +2655,7 @@ public:
   </table>
   </dd>
 </dl>
-<p><a class="el" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c" title="Defines the entry point to be called when the application loads. Generally this is set either to the ...">startup_(program)</a>;  </p><dl class="section remark"><dt>Remarks</dt><dd>The path parameter may specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see <a class="el" href="classxtd_1_1io_1_1directory.html#a1f524943c71e5b0a48c767cc4a6ca797" title="Gets the current working directory of the application.">xtd::io::directory::get_current_directory</a>. </dd>
+<p><a class="el" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd" title="Defines the entry point to be called when the application loads. Generally this is set either to the ...">startup_(program::main)</a>;  </p><dl class="section remark"><dt>Remarks</dt><dd>The path parameter may specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see <a class="el" href="classxtd_1_1io_1_1directory.html#a1f524943c71e5b0a48c767cc4a6ca797" title="Gets the current working directory of the application.">xtd::io::directory::get_current_directory</a>. </dd>
 <dd>
 Trailing spaces are removed from the end of the path parameter before deleting the directory. </dd>
 <dd>
@@ -2754,7 +2754,7 @@ public:
   </table>
   </dd>
 </dl>
-<p><a class="el" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c" title="Defines the entry point to be called when the application loads. Generally this is set either to the ...">startup_(program)</a>;</p>
+<p><a class="el" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd" title="Defines the entry point to be called when the application loads. Generally this is set either to the ...">startup_(program::main)</a>;</p>
 <p>// Obviously, since this sample deals with dates and times, the output will vary // depending on when you run the executable. Here is one example of the output: //Creation Date: 1/3/2002 12:00:00 AM //Last write time: 12/31/1998 4:00:00 PM //Last access time: 1/2/2002 4:00:00 PM //Changed last write time: 1/1/1999 12:00:00 AM  </p><dl class="section remark"><dt>Remarks</dt><dd>The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see <a class="el" href="classxtd_1_1io_1_1directory.html#a1f524943c71e5b0a48c767cc4a6ca797" title="Gets the current working directory of the application.">xtd::io::directory::get_current_directory</a>. </dd>
 <dd>
 The path parameter is not case-sensitive. </dd></dl>
@@ -2846,7 +2846,7 @@ public:
   </table>
   </dd>
 </dl>
-<p><a class="el" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c" title="Defines the entry point to be called when the application loads. Generally this is set either to the ...">startup_(program)</a>;</p>
+<p><a class="el" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd" title="Defines the entry point to be called when the application loads. Generally this is set either to the ...">startup_(program::main)</a>;</p>
 <p>// Obviously, since this sample deals with dates and times, the output will vary // depending on when you run the executable. Here is one example of the output: //Creation Date: 1/3/2002 12:00:00 AM //Last write time: 12/31/1998 4:00:00 PM //Last access time: 1/2/2002 4:00:00 PM //Changed last write time: 1/1/1999 12:00:00 AM  </p><dl class="section remark"><dt>Remarks</dt><dd>The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see <a class="el" href="classxtd_1_1io_1_1directory.html#a1f524943c71e5b0a48c767cc4a6ca797" title="Gets the current working directory of the application.">xtd::io::directory::get_current_directory</a>. </dd>
 <dd>
 The path parameter is not case-sensitive. </dd></dl>
@@ -2916,7 +2916,7 @@ The path parameter is not case-sensitive. </dd></dl>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(program);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>When the application terminates, the working directory is restored to its original location (the directory where the process was started). </dd>
 <dd>
@@ -3021,7 +3021,7 @@ If you are setting the directory to a drive with removable media (for example, "
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(program);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see <a class="el" href="classxtd_1_1io_1_1directory.html#a1f524943c71e5b0a48c767cc4a6ca797" title="Gets the current working directory of the application.">xtd::io::directory::get_current_directory</a>. </dd>
 <dd>
@@ -3114,7 +3114,7 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(program);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
 <div class="ttc" id="aclassxtd_1_1date__time_html"><div class="ttname"><a href="classxtd_1_1date__time.html">xtd::date_time</a></div><div class="ttdoc">Represents an instant in time, typically expressed as a date and time of day.</div><div class="ttdef"><b>Definition</b> date_time.h:78</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see <a class="el" href="classxtd_1_1io_1_1directory.html#a1f524943c71e5b0a48c767cc4a6ca797" title="Gets the current working directory of the application.">xtd::io::directory::get_current_directory</a>. </dd>
@@ -3189,7 +3189,7 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 30 2023 23:20:12 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Sep 5 2023 22:14:40 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

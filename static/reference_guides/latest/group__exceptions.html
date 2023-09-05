@@ -189,6 +189,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1operation__canceled__exception.html">xtd::operation_canceled_exception</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The exception that is thrown in a thread upon cancellation of an operation that the thread was executing.  <a href="classxtd_1_1operation__canceled__exception.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1out__of__memory__exception.html">xtd::out_of_memory_exception</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The exception that is thrown when one of the arguments provided to a method is not valid.  <a href="classxtd_1_1out__of__memory__exception.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1overflow__exception.html">xtd::overflow_exception</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The exception that is thrown when an arithmetic, casting, or conversion operation in a checked context results in an overflow.  <a href="classxtd_1_1overflow__exception.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -360,6 +363,9 @@ Macros</h2></td></tr>
 <tr class="memitem:gaa066bdf734eabbc5b61f0c7becc581be"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__exceptions.html#gaa066bdf734eabbc5b61f0c7becc581be">operation_canceled_exception_</a>(...)</td></tr>
 <tr class="memdesc:gaa066bdf734eabbc5b61f0c7becc581be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper on <a class="el" href="classxtd_1_1operation__canceled__exception.html" title="The exception that is thrown in a thread upon cancellation of an operation that the thread was execut...">xtd::operation_canceled_exception</a> to call it with current stack frame information.  <br /></td></tr>
 <tr class="separator:gaa066bdf734eabbc5b61f0c7becc581be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga913721d3ab483cb0437023fc77fe1766"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__exceptions.html#ga913721d3ab483cb0437023fc77fe1766">out_of_memory_exception_</a>(...)</td></tr>
+<tr class="memdesc:ga913721d3ab483cb0437023fc77fe1766"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper on <a class="el" href="classxtd_1_1out__of__memory__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::out_of_memory_exception</a> to call it with current stack frame information.  <br /></td></tr>
+<tr class="separator:ga913721d3ab483cb0437023fc77fe1766"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga174bd6da3c2ac760f11036bcf1326797"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__exceptions.html#ga174bd6da3c2ac760f11036bcf1326797">overflow_exception_</a>(...)</td></tr>
 <tr class="memdesc:ga174bd6da3c2ac760f11036bcf1326797"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper on <a class="el" href="classxtd_1_1overflow__exception.html" title="The exception that is thrown when an arithmetic, casting, or conversion operation in a checked contex...">xtd::overflow_exception</a> to call it with current stack frame information.  <br /></td></tr>
 <tr class="separator:ga174bd6da3c2ac760f11036bcf1326797"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1418,6 +1424,38 @@ Macros</h2></td></tr>
 
 </div>
 </div>
+<a id="ga913721d3ab483cb0437023fc77fe1766" name="ga913721d3ab483cb0437023fc77fe1766"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga913721d3ab483cb0437023fc77fe1766">&#9670;&#160;</a></span>out_of_memory_exception_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define out_of_memory_exception_</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="out__of__memory__exception_8h.html">xtd.core/include/xtd/out_of_memory_exception.h</a>&gt;</code></p>
+
+<p>Helper on <a class="el" href="classxtd_1_1out__of__memory__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::out_of_memory_exception</a> to call it with current stack frame information. </p>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/out_of_memory_exception&gt;</span> </div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Is equivalent to <a class="el" href="classxtd_1_1out__of__memory__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::out_of_memory_exception</a>({any argument}, csf_) <div class="fragment"><div class="line"><span class="keywordtype">void</span> my_func() {</div>
+<div class="line">  <span class="keywordflow">if</span> (invalid_info) <span class="keywordflow">throw</span> <a class="code hl_define" href="group__exceptions.html#ga913721d3ab483cb0437023fc77fe1766">out_of_memory_exception_</a>(); <span class="comment">// same as : throw out_of_memory_exception(csf_);</span></div>
+<div class="line">  <span class="keywordflow">if</span> (invalid_value) <span class="keywordflow">throw</span> <a class="code hl_define" href="group__exceptions.html#ga913721d3ab483cb0437023fc77fe1766">out_of_memory_exception_</a>(<span class="stringliteral">&quot;Bad value&quot;</span>); <span class="comment">// same as : throw out_of_memory_exception(&quot;Bad value&quot;, csf_);</span></div>
+<div class="line">  ...</div>
+<div class="line">}</div>
+<div class="ttc" id="agroup__exceptions_html_ga913721d3ab483cb0437023fc77fe1766"><div class="ttname"><a href="group__exceptions.html#ga913721d3ab483cb0437023fc77fe1766">out_of_memory_exception_</a></div><div class="ttdeci">#define out_of_memory_exception_(...)</div><div class="ttdoc">Helper on xtd::out_of_memory_exception to call it with current stack frame information.</div><div class="ttdef"><b>Definition</b> out_of_memory_exception.h:104</div></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
 <a id="ga174bd6da3c2ac760f11036bcf1326797" name="ga174bd6da3c2ac760f11036bcf1326797"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga174bd6da3c2ac760f11036bcf1326797">&#9670;&#160;</a></span>overflow_exception_</h2>
 
@@ -2092,7 +2130,7 @@ Macros</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 30 2023 23:20:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Sep 5 2023 22:14:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

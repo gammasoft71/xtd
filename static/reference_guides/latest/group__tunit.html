@@ -321,10 +321,10 @@ Macros</h2></td></tr>
 <tr class="memdesc:gaec8202e147b397e0e2fe6c973583501f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that the staement does not throw an exception.  <br /></td></tr>
 <tr class="separator:gaec8202e147b397e0e2fe6c973583501f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3717390138bb7497869306999933bc3a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tunit.html#ga3717390138bb7497869306999933bc3a">tunit_main_</a></td></tr>
-<tr class="memdesc:ga3717390138bb7497869306999933bc3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the entry point to be called with <a class="el" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c" title="Defines the entry point to be called when the application loads. Generally this is set either to the ...">startup_</a> for unit test application.  <br /></td></tr>
+<tr class="memdesc:ga3717390138bb7497869306999933bc3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the entry point to be called with <a class="el" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd" title="Defines the entry point to be called when the application loads. Generally this is set either to the ...">startup_</a> for unit test application.  <br /></td></tr>
 <tr class="separator:ga3717390138bb7497869306999933bc3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga4533e8faf3334dae0eda2a3621cc33db"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tunit.html#ga4533e8faf3334dae0eda2a3621cc33db">tunit_main_with_gtest_compatibility_</a></td></tr>
-<tr class="memdesc:ga4533e8faf3334dae0eda2a3621cc33db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the entry point to be called with <a class="el" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c" title="Defines the entry point to be called when the application loads. Generally this is set either to the ...">startup_</a> for unit test application with Google test compatibility.  <br /></td></tr>
+<tr class="memdesc:ga4533e8faf3334dae0eda2a3621cc33db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the entry point to be called with <a class="el" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd" title="Defines the entry point to be called when the application loads. Generally this is set either to the ...">startup_</a> for unit test application with Google test compatibility.  <br /></td></tr>
 <tr class="separator:ga4533e8faf3334dae0eda2a3621cc33db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
@@ -2868,7 +2868,7 @@ Can be used with <a class="el" href="classxtd_1_1tunit_1_1assert.html" title="Th
 
 <p><code>#include &lt;<a class="el" href="tunit__main_8h.html">xtd.tunit/include/xtd/tunit/tunit_main.h</a>&gt;</code></p>
 
-<p>Defines the entry point to be called with <a class="el" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c" title="Defines the entry point to be called when the application loads. Generally this is set either to the ...">startup_</a> for unit test application. </p>
+<p>Defines the entry point to be called with <a class="el" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd" title="Defines the entry point to be called when the application loads. Generally this is set either to the ...">startup_</a> for unit test application. </p>
 <dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1tunit.html" title="The tunit namespace contains a unit test library.">xtd.tunit</a></dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="group__tunit.html#ga3717390138bb7497869306999933bc3a" title="Defines the entry point to be called with startup_ for unit test application.">tunit_main_</a> contains a main method and launch <a class="el" href="classxtd_1_1tunit_1_1unit__test.html#a8da8a3353d5c71e0afa0de307fc40916" title="Runs all tests in this unit_test object and prints the result.">xtd::tunit::console_unit_test::run</a>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The followng code shows ho to use <a class="el" href="group__tunit.html#ga3717390138bb7497869306999933bc3a" title="Defines the entry point to be called with startup_ for unit test application.">tunit_main_</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd.tunit&gt;</span></div>
@@ -2884,9 +2884,8 @@ Can be used with <a class="el" href="classxtd_1_1tunit_1_1assert.html" title="Th
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(<a class="code hl_define" href="group__tunit.html#ga3717390138bb7497869306999933bc3a">tunit_main_</a>);</div>
-<div class="ttc" id="agroup__keywords_html_gac9b8e6f22fb2fdc1bb915ee01aef848c"><div class="ttname"><a href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a></div><div class="ttdeci">#define startup_(main_class)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:136</div></div>
-<div class="ttc" id="agroup__tunit_html_ga3717390138bb7497869306999933bc3a"><div class="ttname"><a href="group__tunit.html#ga3717390138bb7497869306999933bc3a">tunit_main_</a></div><div class="ttdeci">#define tunit_main_</div><div class="ttdoc">Defines the entry point to be called with startup_ for unit test application.</div><div class="ttdef"><b>Definition</b> tunit_main.h:44</div></div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(tunit_main_::main);</div>
+<div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:162</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -2905,7 +2904,7 @@ Can be used with <a class="el" href="classxtd_1_1tunit_1_1assert.html" title="Th
 
 <p><code>#include &lt;<a class="el" href="tunit__main_8h.html">xtd.tunit/include/xtd/tunit/tunit_main.h</a>&gt;</code></p>
 
-<p>Defines the entry point to be called with <a class="el" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c" title="Defines the entry point to be called when the application loads. Generally this is set either to the ...">startup_</a> for unit test application with Google test compatibility. </p>
+<p>Defines the entry point to be called with <a class="el" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd" title="Defines the entry point to be called when the application loads. Generally this is set either to the ...">startup_</a> for unit test application with Google test compatibility. </p>
 <dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1tunit.html" title="The tunit namespace contains a unit test library.">xtd.tunit</a></dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="group__tunit.html#ga3717390138bb7497869306999933bc3a" title="Defines the entry point to be called with startup_ for unit test application.">tunit_main_</a> contains main method, launch <a class="el" href="classxtd_1_1tunit_1_1unit__test.html#a8da8a3353d5c71e0afa0de307fc40916" title="Runs all tests in this unit_test object and prints the result.">xtd::tunit::console_unit_test::run</a> and set <a class="el" href="classxtd_1_1tunit_1_1settings.html#af17a5673cab59ee9434d7c1cfb7987aa" title="Gets google test comaptibility.">xtd::tunit::settings::gtest_compatibility</a> to true. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The followng code shows ho to use <a class="el" href="group__tunit.html#ga4533e8faf3334dae0eda2a3621cc33db" title="Defines the entry point to be called with startup_ for unit test application with Google test compati...">tunit_main_with_gtest_compatibility_</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd.tunit&gt;</span></div>
@@ -2921,8 +2920,7 @@ Can be used with <a class="el" href="classxtd_1_1tunit_1_1assert.html" title="Th
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(<a class="code hl_define" href="group__tunit.html#ga4533e8faf3334dae0eda2a3621cc33db">tunit_main_with_gtest_compatibility_</a>);</div>
-<div class="ttc" id="agroup__tunit_html_ga4533e8faf3334dae0eda2a3621cc33db"><div class="ttname"><a href="group__tunit.html#ga4533e8faf3334dae0eda2a3621cc33db">tunit_main_with_gtest_compatibility_</a></div><div class="ttdeci">#define tunit_main_with_gtest_compatibility_</div><div class="ttdoc">Defines the entry point to be called with startup_ for unit test application with Google test compati...</div><div class="ttdef"><b>Definition</b> tunit_main.h:70</div></div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(tunit_main_with_gtest_compatibility_::main);</div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -2966,7 +2964,7 @@ Can be used with <a class="el" href="classxtd_1_1tunit_1_1assert.html" title="Th
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 30 2023 23:20:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Sep 5 2023 22:14:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

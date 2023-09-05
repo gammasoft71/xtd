@@ -14,11 +14,12 @@ var searchData=
   ['ostream_5fevent_5flistener_2eh_11',['ostream_event_listener.h',['../ostream__event__listener_8h.html',1,'']]],
   ['ostream_5ftrace_5flistener_2eh_12',['ostream_trace_listener.h',['../ostream__trace__listener_8h.html',1,'']]],
   ['ostream_5funit_5ftest_2eh_13',['ostream_unit_test.h',['../ostream__unit__test_8h.html',1,'']]],
-  ['outline_5fcolor_2eh_14',['outline_color.h',['../outline__color_8h.html',1,'']]],
-  ['outline_5foffset_2eh_15',['outline_offset.h',['../outline__offset_8h.html',1,'']]],
-  ['outline_5fradius_2eh_16',['outline_radius.h',['../outline__radius_8h.html',1,'']]],
-  ['outline_5fstyle_2eh_17',['outline_style.h',['../outline__style_8h.html',1,'']]],
-  ['outline_5fwidth_2eh_18',['outline_width.h',['../outline__width_8h.html',1,'']]],
-  ['overflow_5fexception_2eh_19',['overflow_exception.h',['../overflow__exception_8h.html',1,'']]],
-  ['overload_2eh_20',['overload.h',['../overload_8h.html',1,'']]]
+  ['out_5fof_5fmemory_5fexception_2eh_14',['out_of_memory_exception.h',['../out__of__memory__exception_8h.html',1,'']]],
+  ['outline_5fcolor_2eh_15',['outline_color.h',['../outline__color_8h.html',1,'']]],
+  ['outline_5foffset_2eh_16',['outline_offset.h',['../outline__offset_8h.html',1,'']]],
+  ['outline_5fradius_2eh_17',['outline_radius.h',['../outline__radius_8h.html',1,'']]],
+  ['outline_5fstyle_2eh_18',['outline_style.h',['../outline__style_8h.html',1,'']]],
+  ['outline_5fwidth_2eh_19',['outline_width.h',['../outline__width_8h.html',1,'']]],
+  ['overflow_5fexception_2eh_20',['overflow_exception.h',['../overflow__exception_8h.html',1,'']]],
+  ['overload_2eh_21',['overload.h',['../overload_8h.html',1,'']]]
 ];

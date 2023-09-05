@@ -143,9 +143,9 @@ Inheritance diagram for xtd::io::directory_info:</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(program);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
 <div class="ttc" id="aclassxtd_1_1system__exception_html"><div class="ttname"><a href="classxtd_1_1system__exception.html">xtd::system_exception</a></div><div class="ttdoc">Defines the base class for predefined exceptions in the xtd namespace.</div><div class="ttdef"><b>Definition</b> system_exception.h:24</div></div>
-<div class="ttc" id="agroup__keywords_html_gac9b8e6f22fb2fdc1bb915ee01aef848c"><div class="ttname"><a href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a></div><div class="ttdeci">#define startup_(main_class)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:136</div></div>
+<div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:162</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">xtd::console_key::e</a></div><div class="ttdeci">@ e</div><div class="ttdoc">The E key.</div></div>
 <div class="ttc" id="anamespacextd_1_1io_html"><div class="ttname"><a href="namespacextd_1_1io.html">xtd::io</a></div><div class="ttdoc">The xtd::io namespace contains types that allow reading and writing to files and data streams,...</div><div class="ttdef"><b>Definition</b> binary_reader.h:17</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
@@ -191,7 +191,7 @@ Inheritance diagram for xtd::io::directory_info:</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(copy_dir);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(copy_dir::main);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Output will vary based on the contents of the source directory.</span></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1directory__info_html_a62a41f0bd02842efd70273f322459845"><div class="ttname"><a href="classxtd_1_1io_1_1directory__info.html#a62a41f0bd02842efd70273f322459845">xtd::io::directory_info::create_subdirectory</a></div><div class="ttdeci">xtd::io::directory_info create_subdirectory(const xtd::ustring &amp;path) const</div><div class="ttdoc">Creates a subdirectory or subdirectories on the specified path. The specified path can be relative to...</div></div>
@@ -478,7 +478,7 @@ public:
   }
 };
 
-startup_(program);
+startup_(program::main);
 @endcode
 @remarks This constructor does not check if a directory exists. This constructor is a placeholder for a string that is used to access the disk in subsequent operations.
 @remarks For a list of common I/O tasks, see &lt;a href="<a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks</a>"&gt;Common I/O Tasks. </td></tr>
@@ -543,7 +543,7 @@ startup_(program);
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(program);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If the directory already exists, this method does nothing. </dd>
 <dd>
@@ -619,7 +619,7 @@ public:
   }
 };
 
-startup_(program);
+startup_(program::main);
 @endcode
 @remarks Any and all directories specified in path are created, unless some part of path is invalid. The path parameter specifies a directory path, not a file path. If the subdirectory already exists, this method does nothing.
 @remarks For a list of common I/O tasks, see &lt;a href="<a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks</a>"&gt;Common I/O Tasks. </td></tr>
@@ -672,7 +672,7 @@ startup_(program);
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(program);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1io_1_1directory__info.html#ad0818557e5fbc58db748458c7e907c4b" title="Returns an enumerable collection of directory information in the current directory.">xtd::io::directory_info::enumerate_directories</a> and <a class="el" href="classxtd_1_1io_1_1directory__info.html#a8a774c45bca3d19a2f3a0c5b37335fc2" title="Returns the subdirectories of the current directory.">xtd::io::directory_info::get_directories</a> methods differ as follows: </dd>
 <dd>
@@ -904,7 +904,7 @@ This method pre-populates the values of the following <a class="el" href="classx
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(program);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a8fa14cdd754f91cc6554c9e71929cce7"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8fa14cdd754f91cc6554c9e71929cce7">xtd::console_key::f</a></div><div class="ttdeci">@ f</div><div class="ttdoc">The F key.</div></div>
 </div><!-- fragment --> <dl class="section user"><dt>Examples</dt><dd>The following example shows how to enumerate files in a directory by using different search options. The example assumes a directory that has files named log1.txt, log2.txt, test1.txt, test2.txt, test3.txt. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
@@ -936,7 +936,7 @@ This method pre-populates the values of the following <a class="el" href="classx
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(program);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">/*</span></div>
 <div class="line"><span class="comment"> This code produces output similar to the following:</span></div>
@@ -1038,7 +1038,7 @@ This method pre-populates the values of the following <a class="el" href="classx
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(program);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">/*</span></div>
 <div class="line"><span class="comment"> This code produces output similar to the following:</span></div>
@@ -1152,7 +1152,7 @@ This method pre-populates the values of the following <a class="el" href="classx
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(program);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a363b122c528f54df4a0446b6bab05515"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a363b122c528f54df4a0446b6bab05515">xtd::console_key::j</a></div><div class="ttdeci">@ j</div><div class="ttdoc">The J key.</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">xtd::console_key::i</a></div><div class="ttdeci">@ i</div><div class="ttdoc">The I key.</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -1207,7 +1207,7 @@ This method pre-populates the values of the following <a class="el" href="classx
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(program);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
 <div class="ttc" id="aclassxtd_1_1console_html"><div class="ttname"><a href="classxtd_1_1console.html">xtd::console</a></div><div class="ttdoc">Represents the standard input, output, and error streams for console applications.</div><div class="ttdef"><b>Definition</b> console.h:33</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If there are no subdirectories, this method returns an empty array. This method is not recursive. </dd>
@@ -1279,7 +1279,7 @@ This method pre-populates the values of the following <a class="el" href="classx
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(program);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>search_pattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in search_pattern. <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -1392,7 +1392,7 @@ This method pre-populates the values of the following <a class="el" href="classx
 <div class="line">  <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keywordtype">long</span> directories = 0;</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(program);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
 <div class="ttc" id="aclassxtd_1_1io_1_1directory__not__found__exception_html"><div class="ttname"><a href="classxtd_1_1io_1_1directory__not__found__exception.html">xtd::io::directory_not_found_exception</a></div><div class="ttdoc">The exception that is thrown when part of a file or directory cannot be found.</div><div class="ttdef"><b>Definition</b> directory_not_found_exception.h:27</div></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1directory_html"><div class="ttname"><a href="classxtd_1_1io_1_1directory.html">xtd::io::directory</a></div><div class="ttdoc">Exposes static methods for creating, moving, and enumerating through directories and subdirectories....</div><div class="ttdef"><b>Definition</b> directory.h:97</div></div>
 <div class="ttc" id="agroup__keywords_html_gaf8b977f43d229f177b7b399c3b3a60a6"><div class="ttname"><a href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a></div><div class="ttdeci">#define csf_</div><div class="ttdoc">Provides information about the current stack frame.</div><div class="ttdef"><b>Definition</b> current_stack_frame.h:30</div></div>
@@ -1515,7 +1515,7 @@ This method pre-populates the values of the following <a class="el" href="classx
 <div class="line">  <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keywordtype">long</span> directories = 0;</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(program);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>search_pattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in search_pattern. <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -1602,7 +1602,7 @@ This method pre-populates the values of the following <a class="el" href="classx
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(program);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">/*</span></div>
 <div class="line"><span class="comment"> This code produces output similar to the following:</span></div>
@@ -1704,7 +1704,7 @@ This method pre-populates the values of the following <a class="el" href="classx
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(program);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">/*</span></div>
 <div class="line"><span class="comment"> This code produces output similar to the following:</span></div>
@@ -1831,7 +1831,7 @@ There is an open handle on the directory. </td></tr>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(program);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
 <div class="ttc" id="aclassxtd_1_1io_1_1directory__info_html_a77aaaba9fe19490908ee2fc105776dcd"><div class="ttname"><a href="classxtd_1_1io_1_1directory__info.html#a77aaaba9fe19490908ee2fc105776dcd">xtd::io::directory_info::remove</a></div><div class="ttdeci">void remove() const override</div><div class="ttdoc">Deletes this xtd::io::directory_info if it is empty.</div></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1directory__info_html_a86eb5afd86b73947b228968548dbfa82"><div class="ttname"><a href="classxtd_1_1io_1_1directory__info.html#a86eb5afd86b73947b228968548dbfa82">xtd::io::directory_info::move_to</a></div><div class="ttdeci">void move_to(const xtd::ustring &amp;dest_dir_name)</div><div class="ttdoc">Moves a DirectoryInfo instance and its contents to a new path.</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -1882,7 +1882,7 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(program);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This <a class="el" href="classxtd_1_1io_1_1directory__info.html#a545a52b5175f08e9fe3f8f45600b893c" title="Gets the name of this xtd::io::directory_info instance.">xtd::io::directory_info::name</a> property returns only the name of the directory, such as "Bin". To get the full path, such as "c:\public\Bin", use the <a class="el" href="classxtd_1_1io_1_1file__system__info.html#a34649c2f8db1b1d13b7be1ecf4ecc52a" title="Gets the full path of the directory or file.">xtd::io::directory_info::full_name</a> property. </dd>
 <dd>
@@ -1943,7 +1943,7 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 <div class="line">    di.remove(<span class="keyword">true</span>);</div>
 <div class="line">  }</div>
 <div class="line">};</div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(program);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
 <div class="ttc" id="aclassxtd_1_1io_1_1directory__info_html_a3761a20ac0e305754d26805ebbf66435"><div class="ttname"><a href="classxtd_1_1io_1_1directory__info.html#a3761a20ac0e305754d26805ebbf66435">xtd::io::directory_info::parent</a></div><div class="ttdeci">xtd::io::directory_info parent() const</div><div class="ttdoc">Gets the parent directory of a specified subdirectory.</div></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1directory__info_html_a545a52b5175f08e9fe3f8f45600b893c"><div class="ttname"><a href="classxtd_1_1io_1_1directory__info.html#a545a52b5175f08e9fe3f8f45600b893c">xtd::io::directory_info::name</a></div><div class="ttdeci">xtd::ustring name() const override</div><div class="ttdoc">Gets the name of this xtd::io::directory_info instance.</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -2020,7 +2020,7 @@ There is an open handle on the directory. </td></tr>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(program);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>. </dd></dl>
 
@@ -2096,7 +2096,7 @@ There is an open handle on the directory. </td></tr>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(program);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If the <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> has no files or subdirectories, this method deletes the <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> even if recursive is false. Attempting to delete a <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> that is not empty when recursive is false throws an <a class="el" href="classxtd_1_1io_1_1io__exception.html" title="The exception that is thrown when an I/O error occurs.">xtd::io::io_exception</a>. </dd>
 <dd>
@@ -2147,7 +2147,7 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c">startup_</a>(program);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">/*</span></div>
 <div class="line"><span class="comment"> This code produces output similar to the following:</span></div>
@@ -2193,7 +2193,7 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 30 2023 23:20:12 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Sep 5 2023 22:14:40 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

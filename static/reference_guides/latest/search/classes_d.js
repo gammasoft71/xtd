@@ -10,7 +10,8 @@ var searchData=
   ['ostream_5fevent_5flistener_7',['ostream_event_listener',['../classxtd_1_1tunit_1_1ostream__event__listener.html',1,'xtd::tunit']]],
   ['ostream_5ftrace_5flistener_8',['ostream_trace_listener',['../classxtd_1_1diagnostics_1_1ostream__trace__listener.html',1,'xtd::diagnostics']]],
   ['ostream_5funit_5ftest_9',['ostream_unit_test',['../classxtd_1_1tunit_1_1ostream__unit__test.html',1,'xtd::tunit']]],
-  ['output_5fdata_5freceived_5fevent_10',['output_data_received_event',['../classxtd_1_1diagnostics_1_1process_1_1output__data__received__event.html',1,'xtd::diagnostics::process']]],
-  ['overflow_5fexception_11',['overflow_exception',['../classxtd_1_1overflow__exception.html',1,'xtd']]],
-  ['overload_12',['overload',['../structxtd_1_1overload.html',1,'xtd']]]
+  ['out_5fof_5fmemory_5fexception_10',['out_of_memory_exception',['../classxtd_1_1out__of__memory__exception.html',1,'xtd']]],
+  ['output_5fdata_5freceived_5fevent_11',['output_data_received_event',['../classxtd_1_1diagnostics_1_1process_1_1output__data__received__event.html',1,'xtd::diagnostics::process']]],
+  ['overflow_5fexception_12',['overflow_exception',['../classxtd_1_1overflow__exception.html',1,'xtd']]],
+  ['overload_13',['overload',['../structxtd_1_1overload.html',1,'xtd']]]
 ];
