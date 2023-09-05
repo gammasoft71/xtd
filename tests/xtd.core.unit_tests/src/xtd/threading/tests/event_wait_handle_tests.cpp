@@ -19,6 +19,112 @@ namespace xtd::tests {
       assert::are_not_equal(event_wait_handle::invalid_handle, e1.handle(), csf_);
       assert::are_not_equal(event_wait_handle::invalid_handle, e2.handle(), csf_);
       assert::are_not_equal(e2, e1, csf_);
+      assert::is_false(e1.wait_one(0), csf_);
+      assert::is_false(e2.wait_one(0), csf_);
+    }
+
+    void test_method_(constructor_initial_state_to_false) {
+      auto e = event_wait_handle {false};
+      assert::is_false(e.wait_one(0), csf_);
+      assert::is_false(e.wait_one(0), csf_);
+    }
+
+    void test_method_(constructor_initial_state_to_true) {
+      auto e = event_wait_handle {true};
+      assert::is_true(e.wait_one(0), csf_);
+      assert::is_false(e.wait_one(0), csf_);
+    }
+    
+    void test_method_(constructor_empty_name) {
+      auto e1 = event_wait_handle {""};
+      auto e2 = event_wait_handle {""};
+      assert::are_not_equal(event_wait_handle::invalid_handle, e1.handle(), csf_);
+      assert::are_not_equal(event_wait_handle::invalid_handle, e2.handle(), csf_);
+      assert::are_not_equal(e2, e1, csf_);
+      assert::is_false(e1.wait_one(0), csf_);
+      assert::is_false(e2.wait_one(0), csf_);
+    }
+    
+    void test_method_(constructor_same_name) {
+      auto e1 = event_wait_handle {"xtd_event_wait_handle"};
+      auto e2 = event_wait_handle {"xtd_event_wait_handle"};
+      assert::are_not_equal(event_wait_handle::invalid_handle, e1.handle(), csf_);
+      assert::are_not_equal(event_wait_handle::invalid_handle, e2.handle(), csf_);
+      e1.set();
+      assert::is_true(e2.wait_one(0), csf_);
+    }
+    
+    void test_method_(constructor_different_name) {
+      auto e1 = event_wait_handle {"xtd_event_wait_handle"};
+      auto e2 = event_wait_handle {"xtd_event_wait_handle2"};
+      assert::are_not_equal(event_wait_handle::invalid_handle, e1.handle(), csf_);
+      assert::are_not_equal(event_wait_handle::invalid_handle, e2.handle(), csf_);
+      assert::is_true(e1.set(), csf_);
+      assert::is_false(e2.wait_one(0), csf_);
+    }
+    
+    void test_method_(constructor_same_name_and_create_new) {
+      auto created_new = false;
+      auto e1 = event_wait_handle {"xtd_event_wait_handle", created_new};
+      assert::is_true(created_new, csf_);
+      auto e2 = event_wait_handle {"xtd_event_wait_handle", created_new};
+      assert::is_false(created_new, csf_);
+      assert::are_not_equal(event_wait_handle::invalid_handle, e1.handle(), csf_);
+      assert::are_not_equal(event_wait_handle::invalid_handle, e2.handle(), csf_);
+      assert::is_true(e1.set(), csf_);
+      assert::is_true(e2.wait_one(0), csf_);
+    }
+
+    void test_method_(constructor_initial_state_to_false_with_empty_name) {
+      auto e = event_wait_handle {false, ""};
+      assert::is_false(e.wait_one(0), csf_);
+      assert::is_false(e.wait_one(0), csf_);
+    }
+    
+    void test_method_(constructor_initial_state_to_true_with_empty_name) {
+      auto e = event_wait_handle {true, ""};
+      assert::is_true(e.wait_one(0), csf_);
+      assert::is_false(e.wait_one(0), csf_);
+    }
+
+    void test_method_(constructor_initial_state_to_false_with_name) {
+      auto e = event_wait_handle {false, "xtd_event_wait_handle"};
+      assert::is_false(e.wait_one(0), csf_);
+      assert::is_false(e.wait_one(0), csf_);
+    }
+    
+    void test_method_(constructor_initial_state_to_true_with_name) {
+      auto e = event_wait_handle {true, "xtd_event_wait_handle"};
+      assert::is_true(e.wait_one(0), csf_);
+      assert::is_false(e.wait_one(0), csf_);
+    }
+
+    void test_method_(constructor_initial_state_to_false_with_different_name) {
+      auto e1 = event_wait_handle {false, "xtd_event_wait_handle"};
+      auto e2 = event_wait_handle {"xtd_event_wait_handle2"};
+      assert::is_false(e2.wait_one(0), csf_);
+      assert::is_false(e1.wait_one(0), csf_);
+    }
+
+    void test_method_(constructor_initial_state_to_true_with_different_name) {
+      auto e1 = event_wait_handle {true, "xtd_event_wait_handle"};
+      auto e2 = event_wait_handle {"xtd_event_wait_handle2"};
+      assert::is_false(e2.wait_one(0), csf_);
+      assert::is_true(e1.wait_one(0), csf_);
+    }
+
+    void test_method_(constructor_initial_state_to_false_with_same_name) {
+      auto e1 = event_wait_handle {true, "xtd_event_wait_handle"};
+      auto e2 = event_wait_handle {"xtd_event_wait_handle"};
+      assert::is_true(e2.wait_one(0), csf_);
+      assert::is_false(e1.wait_one(0), csf_);
+    }
+    
+    void test_method_(constructor_initial_state_to_true_with_same_name) {
+      auto e1 = event_wait_handle {true, "xtd_event_wait_handle"};
+      auto e2 = event_wait_handle {"xtd_event_wait_handle"};
+      assert::is_true(e2.wait_one(0), csf_);
+      assert::is_false(e1.wait_one(0), csf_);
     }
   };
 }
