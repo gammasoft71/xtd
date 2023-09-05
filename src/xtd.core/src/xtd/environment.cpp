@@ -2,7 +2,7 @@
 #include <cstdlib>
 #include "../../include/xtd/io/directory.h"
 #include "../../include/xtd/io/path.h"
-#include "../../include/xtd/threading/thread_abort_exception.h"
+//#include "../../include/xtd/threading/thread_abort_exception.h"
 #include "../../include/xtd/access_violation_exception.h"
 #include "../../include/xtd/threading/thread.h"
 #include "../../include/xtd/as.h"
@@ -65,14 +65,12 @@ public:
     std::signal(SIGTERM, SIG_DFL);
   }
   
+private:
   static void on_abnormal_termination_occured(int32 signal) {
     std::signal(signal, signal_catcher::on_abnormal_termination_occured);
     signal_cancel_event_args e {xtd::signal::abnormal_termination};
     environment::on_cancel_signal(e);
-    if (!e.cancel()) {
-      if (thread::current_thread().is_main_thread()) throw thread_abort_exception(csf_);
-      else exit(signal);
-    }
+    if (!e.cancel()) environment::quick_exit(128 + last_signal_.value_or(signal)); //throw thread_abort_exception {ccsf_};
   }
   
   static void on_floating_point_exception_occured(int32 signal) {
@@ -80,8 +78,8 @@ public:
     signal_cancel_event_args e {xtd::signal::floating_point_exception};
     environment::on_cancel_signal(e);
     if (!e.cancel()) {
-      if (thread::current_thread().is_main_thread()) throw arithmetic_exception(csf_);
-      else exit(signal);
+      last_signal_ = signal;
+      throw arithmetic_exception(csf_);
     }
   }
   
@@ -90,8 +88,8 @@ public:
     signal_cancel_event_args e {xtd::signal::illegal_instruction};
     environment::on_cancel_signal(e);
     if (!e.cancel()) {
-      if (thread::current_thread().is_main_thread()) throw invalid_operation_exception(csf_);
-      else exit(signal);
+      last_signal_ = signal;
+      throw invalid_operation_exception(csf_);
     }
   }
   
@@ -102,8 +100,8 @@ public:
     console_cancel_event_args ce {console_special_key::control_c};
     ce.cancel(console::on_cancel_key_press(static_cast<int32>(console_special_key::control_c)));
     if (!se.cancel() && !ce.cancel()) {
-      if (thread::current_thread().is_main_thread()) throw interrupt_exception(csf_);
-      else exit(signal);
+      last_signal_ = signal;
+      throw interrupt_exception(csf_);
     }
   }
   
@@ -119,7 +117,10 @@ public:
     std::signal(signal, signal_catcher::on_segmentation_violation_occured);
     signal_cancel_event_args e {xtd::signal::segmentation_violation};
     environment::on_cancel_signal(e);
-    if (!e.cancel()) throw xtd::access_violation_exception(csf_);
+    if (!e.cancel()) {
+      last_signal_ = signal;
+      throw xtd::access_violation_exception(csf_); //exit(128 + signal);
+    }
   }
   
   static void on_software_termination_occured(int32 signal) {
@@ -128,6 +129,8 @@ public:
     environment::on_cancel_signal(e);
     if (!e.cancel()) throw xtd::software_termination_exception(csf_);
   }
+  
+  inline static std::optional<int32> last_signal_;
 };
 
 event<environment, signal_cancel_event_handler> environment::cancel_signal;
