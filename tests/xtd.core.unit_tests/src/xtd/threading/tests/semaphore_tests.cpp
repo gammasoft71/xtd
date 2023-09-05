@@ -241,19 +241,17 @@ namespace xtd::tests {
       assert::are_equal(3, s.release(), csf_);
       assert::are_equal(4, s.release(), csf_);
       assert::throws<semaphore_full_exception>([&]{s.release();}, csf_);
-      auto thread_ran = false;
-      auto thread = threading::thread {thread_start {[&] {
-        assert::is_true(s.wait_one(0), csf_);
-        assert::is_true(s.wait_one(0), csf_);
-        assert::is_true(s.wait_one(0), csf_);
-        assert::is_true(s.wait_one(0), csf_);
-        assert::is_true(s.wait_one(0), csf_);
-        assert::is_false(s.wait_one(0), csf_);
-        thread_ran = true;
-      }}};
-      thread.start();
-      thread.join();
-      assert::is_true(thread_ran, csf_);
+      auto thread_ran = 0;
+      auto threads = std::vector<thread> {};
+      for (auto index = 0; index < 5; ++index) {
+        threads.emplace_back(thread_start {[&] {
+          assert::is_true(s.wait_one(0), csf_);
+          ++thread_ran;
+        }});
+        threads.back().start();
+      }
+      thread::join_all(threads);
+      assert::are_equal(5, thread_ran, csf_);
     }
 
     void test_method_(create_semaphore_and_close) {
