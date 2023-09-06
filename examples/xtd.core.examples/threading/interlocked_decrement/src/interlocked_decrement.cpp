@@ -28,8 +28,8 @@ namespace interlocked_decrement_example {
     
   public:
     static auto main() {
-      auto thread1 = thread {thread_start {thread_method}};
-      auto thread2 = thread {thread_start {thread_method}};
+      auto thread1 = thread {thread_method};
+      auto thread2 = thread {thread_method};
       thread1.start();
       thread2.start();
       thread1.join();

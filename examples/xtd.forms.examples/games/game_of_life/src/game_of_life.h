@@ -165,7 +165,7 @@ namespace game_of_life {
         });
       };
       
-      thread_run_ = xtd::threading::thread {xtd::threading::thread_start {[&] {
+      thread_run_ = xtd::threading::thread {[&] {
         while (!closed_) {
           if (!run_enabled_)
             xtd::threading::thread::sleep(std::chrono::milliseconds(200));
@@ -178,7 +178,7 @@ namespace game_of_life {
             lastRunTime = std::chrono::high_resolution_clock::now();
           }
         }
-      }}};
+      }};
       thread_run_.start();
     }
     

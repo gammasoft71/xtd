@@ -17,13 +17,13 @@ namespace environment_program_exit_example {
       
       console::write_line("Start");
       // Do something...
-      auto do_something_thread = thread{thread_start {[] {
+      auto do_something_thread = thread{[] {
         for (auto step = 0; step < 50; ++step) {
           console::write('.');
           threading::thread::sleep(100_ms);
         }
         console::write_line();
-      }}};
+      }};
       do_something_thread.start();
       do_something_thread.join();
       console::write_line("End");

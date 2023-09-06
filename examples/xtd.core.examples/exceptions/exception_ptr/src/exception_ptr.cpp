@@ -8,13 +8,13 @@ using namespace xtd::threading;
 auto main()->int {
   auto exception_pointer = std::exception_ptr {};
   
-  auto thread1 = thread {thread_start {[&] {
+  auto thread1 = thread {[&] {
     try {
       throw invalid_operation_exception("Ouch there are an exception !", csf_);
     } catch (...) {
       exception_pointer = std::current_exception();
     }
-  }}};
+  }};
   
   thread1.start();
   thread1.join();

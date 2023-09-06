@@ -19,10 +19,10 @@ namespace mixing_std_and_xtd_threads_example {
       thread::current_thread().name("main");
       console::write_line(to_string(thread::current_thread()));
       
-      thread t1 {thread_start {[&] {
+      threading::thread t1 {[&] {
         thread::sleep(20_ms);
         console::write_line(to_string(t1));
-      }}};
+      }};
       t1.name("xtd_thread_1");
       t1.priority(thread_priority::below_normal);
       t1.start();
@@ -33,9 +33,9 @@ namespace mixing_std_and_xtd_threads_example {
         console::write_line(to_string(thread::current_thread()));
       }};
       
-      thread t3 {thread_start {[] {
+      threading::thread t3 {[] {
         console::write_line(to_string(thread::current_thread()));
-      }}};
+      }};
       t3.name("xtd_thread_3");
       t3.is_background(true);
       t3.start();
