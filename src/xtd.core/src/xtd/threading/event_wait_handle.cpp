@@ -69,10 +69,8 @@ void event_wait_handle::handle(intptr value) {
 }
 
 void event_wait_handle::close() {
-  if (data_.use_count() == 1) {
-    data_->event_wait_handle->destroy();
-    data_->event_wait_handle.reset();
-  }
+  if (data_.use_count() == 1) data_->event_wait_handle->destroy();
+  data_->event_wait_handle.reset();
 }
 
 int32 event_wait_handle::compare_to(const event_wait_handle& value) const noexcept {
@@ -92,7 +90,7 @@ event_wait_handle event_wait_handle::open_existing(const ustring& name) {
 }
 
 bool event_wait_handle::reset() {
-  if (!data_->event_wait_handle) throw object_closed_exception {csf_};
+  if (!data_) throw object_closed_exception {csf_};
   bool io_error = false;
   auto result = data_->event_wait_handle->reset(io_error);
   if (io_error) throw io::io_exception {csf_};
@@ -100,7 +98,7 @@ bool event_wait_handle::reset() {
 }
 
 bool event_wait_handle::set() {
-  if (!data_->event_wait_handle) throw object_closed_exception {csf_};
+  if (!data_) throw object_closed_exception {csf_};
   if (data_->is_set) return true;
   bool io_error = false;
   auto result = data_->event_wait_handle->set(io_error);
@@ -126,7 +124,7 @@ bool event_wait_handle::signal() {
 }
 
 bool event_wait_handle::wait(int32 milliseconds_timeout) {
-  if (!data_->event_wait_handle) throw object_closed_exception {csf_};
+  if (!data_) throw object_closed_exception {csf_};
   if (milliseconds_timeout < -1) throw argument_out_of_range_exception {csf_};
   auto result = data_->event_wait_handle->wait(milliseconds_timeout);
   if (result == 0xFFFFFFFF) throw io::io_exception {csf_};
