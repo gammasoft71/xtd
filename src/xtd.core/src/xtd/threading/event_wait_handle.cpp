@@ -30,13 +30,13 @@ event_wait_handle::event_wait_handle(const ustring& name) : event_wait_handle(fa
 event_wait_handle::event_wait_handle(const ustring& name, bool& created_new) : event_wait_handle(false, event_reset_mode::auto_reset, name, created_new) {
 }
 
-event_wait_handle::event_wait_handle(bool initial_state, const ustring& name)  : event_wait_handle(initial_state, event_reset_mode::auto_reset, name) {
+event_wait_handle::event_wait_handle(bool initial_state, const ustring& name) : event_wait_handle(initial_state, event_reset_mode::auto_reset, name) {
 }
 
-event_wait_handle::event_wait_handle(bool initial_state, const ustring& name, bool& created_new)  : event_wait_handle(initial_state, event_reset_mode::auto_reset, name, created_new) {
+event_wait_handle::event_wait_handle(bool initial_state, const ustring& name, bool& created_new) : event_wait_handle(initial_state, event_reset_mode::auto_reset, name, created_new) {
 }
 
-event_wait_handle::event_wait_handle(bool initial_state, event_reset_mode mode)  : event_wait_handle(initial_state, mode, "") {
+event_wait_handle::event_wait_handle(bool initial_state, event_reset_mode mode) : event_wait_handle(initial_state, mode, "") {
   
 }
 event_wait_handle::event_wait_handle(bool initial_state, event_reset_mode mode, const ustring& name) : data_(std::make_shared<event_wait_handle::data>()) {
@@ -69,8 +69,10 @@ void event_wait_handle::handle(intptr value) {
 }
 
 void event_wait_handle::close() {
-  if (data_.use_count() == 1) data_->event_wait_handle->destroy();
-  data_->event_wait_handle.reset();
+  if (data_.use_count() == 1) {
+    data_->event_wait_handle->destroy();
+    data_->event_wait_handle.reset();
+  }
 }
 
 int32 event_wait_handle::compare_to(const event_wait_handle& value) const noexcept {
