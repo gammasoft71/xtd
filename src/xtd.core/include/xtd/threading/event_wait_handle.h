@@ -33,6 +33,8 @@ namespace xtd {
       class event_wait_handle_base;
       class named_event_wait_handle;
       class unnamed_event_wait_handle;
+      struct data;
+    
     public:
       /// @name Constructors
       
@@ -168,9 +170,8 @@ namespace xtd {
 
     private:
       void create(bool initial_state, bool& created_new);
-      std::shared_ptr<event_wait_handle_base> event_wait_handle_;
-      event_reset_mode mode_ = event_reset_mode::auto_reset;
-      ustring name_;
+      
+      std::shared_ptr<data> data_;
     };
   }
 }

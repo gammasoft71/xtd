@@ -5,9 +5,18 @@
 #include "../../../include/xtd/io/io_exception.h"
 #include "../../../include/xtd/io/path_too_long_exception.h"
 #include "../../../include/xtd/threading/abandoned_mutex_exception.h"
+#include "../../../include/xtd/threading/event_wait_handle.h"
+#include <atomic>
 
 using namespace xtd;
 using namespace xtd::threading;
+
+struct event_wait_handle::data {
+  std::unique_ptr<event_wait_handle_base> event_wait_handle;
+  event_reset_mode mode = event_reset_mode::auto_reset;
+  std::atomic<bool> is_set = false;
+  ustring name;
+};
 
 event_wait_handle::event_wait_handle() : event_wait_handle(false) {
 }
@@ -30,14 +39,20 @@ event_wait_handle::event_wait_handle(bool initial_state, const ustring& name, bo
 event_wait_handle::event_wait_handle(bool initial_state, event_reset_mode mode)  : event_wait_handle(initial_state, mode, "") {
   
 }
-event_wait_handle::event_wait_handle(bool initial_state, event_reset_mode mode, const ustring& name) : mode_(mode), name_(name){
+event_wait_handle::event_wait_handle(bool initial_state, event_reset_mode mode, const ustring& name) : data_(std::make_shared<event_wait_handle::data>()) {
+  data_->mode = mode;
+  data_->name = name;
+  data_->is_set = initial_state;
   if (!enum_object<>::is_defined(mode)) throw argument_exception {csf_};
   if (name.size() > native::named_event_wait_handle::max_name_size()) throw io::path_too_long_exception {csf_};
   bool created_new = false;
   create(initial_state, created_new);
 }
 
-event_wait_handle::event_wait_handle(bool initial_state, event_reset_mode mode, const ustring& name, bool& created_new) : mode_(mode), name_(name) {
+event_wait_handle::event_wait_handle(bool initial_state, event_reset_mode mode, const ustring& name, bool& created_new) : data_(std::make_shared<event_wait_handle::data>()) {
+  data_->mode = mode;
+  data_->name = name;
+  data_->is_set = initial_state;
   create(initial_state, created_new);
 }
 
@@ -46,17 +61,17 @@ event_wait_handle::~event_wait_handle() {
 }
 
 intptr event_wait_handle::handle() const noexcept {
-  return event_wait_handle_ ? event_wait_handle_->handle() : invalid_handle;
+  return data_->event_wait_handle ? data_->event_wait_handle->handle() : invalid_handle;
 }
 
 void event_wait_handle::handle(intptr value) {
-  event_wait_handle_->handle(value);
+  data_->event_wait_handle->handle(value);
 }
 
 void event_wait_handle::close() {
-  if (event_wait_handle_.use_count() == 1) {
-    event_wait_handle_->destroy();
-    event_wait_handle_.reset();
+  if (data_.use_count() == 1) {
+    data_->event_wait_handle->destroy();
+    data_->event_wait_handle.reset();
   }
 }
 
@@ -77,18 +92,20 @@ event_wait_handle event_wait_handle::open_existing(const ustring& name) {
 }
 
 bool event_wait_handle::reset() {
-  if (!event_wait_handle_) throw object_closed_exception {csf_};
+  if (!data_->event_wait_handle) throw object_closed_exception {csf_};
   bool io_error = false;
-  auto result = event_wait_handle_->reset(io_error);
+  auto result = data_->event_wait_handle->reset(io_error);
   if (io_error) throw io::io_exception {csf_};
   return result;
 }
 
 bool event_wait_handle::set() {
-  if (!event_wait_handle_) throw object_closed_exception {csf_};
+  if (!data_->event_wait_handle) throw object_closed_exception {csf_};
+  if (data_->is_set) return true;
   bool io_error = false;
-  auto result = event_wait_handle_->set(io_error);
+  auto result = data_->event_wait_handle->set(io_error);
   if (io_error) throw io::io_exception {csf_};
+  data_->is_set = true;
   return result;
 }
 
@@ -97,9 +114,9 @@ bool event_wait_handle::try_open_existing(const ustring& name, event_wait_handle
   if (ustring::is_empty(name)) return false;
   if (name.size() > native::named_event_wait_handle::max_name_size()) return false;
   auto new_event_wait_handle = event_wait_handle {};
-  new_event_wait_handle.name_ = name;
-  new_event_wait_handle.event_wait_handle_ = std::make_shared<event_wait_handle::named_event_wait_handle>();
-  if (!new_event_wait_handle.event_wait_handle_->open(new_event_wait_handle.name_)) return false;
+  new_event_wait_handle.data_->name = name;
+  new_event_wait_handle.data_->event_wait_handle = std::make_unique<event_wait_handle::named_event_wait_handle>();
+  if (!new_event_wait_handle.data_->event_wait_handle->open(new_event_wait_handle.data_->name)) return false;
   result = new_event_wait_handle;
   return true;
 }
@@ -109,23 +126,24 @@ bool event_wait_handle::signal() {
 }
 
 bool event_wait_handle::wait(int32 milliseconds_timeout) {
-  if (!event_wait_handle_) throw object_closed_exception {csf_};
+  if (!data_->event_wait_handle) throw object_closed_exception {csf_};
   if (milliseconds_timeout < -1) throw argument_out_of_range_exception {csf_};
-  auto result = event_wait_handle_->wait(milliseconds_timeout);
+  auto result = data_->event_wait_handle->wait(milliseconds_timeout);
   if (result == 0xFFFFFFFF) throw io::io_exception {csf_};
   if (result == 0x00000080) throw abandoned_mutex_exception {csf_};
   if (result == 0x00000102) return false;
+  data_->is_set =  false;
   return true;
 }
 
 void event_wait_handle::create(bool initial_state, bool& created_new) {
   created_new = true;
-  if (name_.empty()) {
-    event_wait_handle_ = std::make_shared<event_wait_handle::unnamed_event_wait_handle>();
-    if (!event_wait_handle_->create(initial_state, mode_ == xtd::threading::event_reset_mode::manual_reset)) throw io::io_exception(csf_);
+  if (data_->name.empty()) {
+    data_->event_wait_handle = std::make_unique<event_wait_handle::unnamed_event_wait_handle>();
+    if (!data_->event_wait_handle->create(initial_state, data_->mode == xtd::threading::event_reset_mode::manual_reset)) throw io::io_exception(csf_);
   } else {
-    event_wait_handle_ = std::make_shared<event_wait_handle::named_event_wait_handle>();
-    created_new = event_wait_handle_->create(initial_state, mode_ == xtd::threading::event_reset_mode::manual_reset, name_);
-    if (!created_new && !event_wait_handle_->open(name_)) throw io::io_exception(csf_);
+    data_->event_wait_handle = std::make_unique<event_wait_handle::named_event_wait_handle>();
+    created_new = data_->event_wait_handle->create(initial_state, data_->mode == xtd::threading::event_reset_mode::manual_reset, data_->name);
+    if (!created_new && !data_->event_wait_handle->open(data_->name)) throw io::io_exception(csf_);
   }
 }
