@@ -352,6 +352,8 @@ bool console::window_left(int_least32_t left) {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   csbi.srWindow.Left = static_cast<int_least16_t>(left);
+  csbi.srWindow.Right += static_cast<int_least16_t>(left);
+
   return SetConsoleWindowInfo(GetStdHandle(STD_OUTPUT_HANDLE), TRUE, &csbi.srWindow) == TRUE;
 }
 
@@ -366,6 +368,7 @@ bool console::window_top(int_least32_t top) {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   csbi.srWindow.Top = static_cast<int_least16_t>(top);
+  csbi.srWindow.Bottom += static_cast<int_least16_t>(top);
   return SetConsoleWindowInfo(GetStdHandle(STD_OUTPUT_HANDLE), TRUE, &csbi.srWindow) == TRUE;
 }
 
