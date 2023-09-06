@@ -255,12 +255,44 @@ namespace xtd::tests {
       auto e1 = event_wait_handle {false, event_reset_mode::manual_reset, "xtd_event_wait_handle"};
       auto e2 = event_wait_handle {false, event_reset_mode::manual_reset, "xtd_event_wait_handle2"};
       assert::is_false(e1.wait_one(0), csf_);
-      assert::is_false(e1.wait_one(0), csf_);
+      assert::is_false(e2.wait_one(0), csf_);
     }
     
     void test_method_(constructor_initial_state_to_true_event_reset_mode_to_manual_reset_with_different_name) {
       auto e1 = event_wait_handle {true, event_reset_mode::manual_reset, "xtd_event_wait_handle"};
       auto e2 = event_wait_handle {true, event_reset_mode::manual_reset, "xtd_event_wait_handle2"};
+      assert::is_true(e1.wait_one(0), csf_);
+      assert::is_true(e1.wait_one(0), csf_);
+      assert::is_true(e2.wait_one(0), csf_);
+      assert::is_true(e2.wait_one(0), csf_);
+    }
+
+    void test_method_(constructor_initial_state_to_false_event_reset_mode_to_auto_reset_with_same_name) {
+      auto e1 = event_wait_handle {false, event_reset_mode::auto_reset, "xtd_event_wait_handle"};
+      auto e2 = event_wait_handle {false, event_reset_mode::auto_reset, "xtd_event_wait_handle"};
+      assert::is_false(e1.wait_one(0), csf_);
+      assert::is_false(e2.wait_one(0), csf_);
+    }
+    
+    void test_method_(constructor_initial_state_to_true_event_reset_mode_to_auto_reset_with_same_name) {
+      auto e1 = event_wait_handle {true, event_reset_mode::auto_reset, "xtd_event_wait_handle"};
+      auto e2 = event_wait_handle {true, event_reset_mode::auto_reset, "xtd_event_wait_handle"};
+      assert::is_true(e2.wait_one(0), csf_);
+      assert::is_false(e2.wait_one(0), csf_);
+      assert::is_false(e1.wait_one(0), csf_);
+      assert::is_false(e1.wait_one(0), csf_);
+    }
+    
+    void test_method_(constructor_initial_state_to_false_event_reset_mode_to_manual_reset_with_same_name) {
+      auto e1 = event_wait_handle {false, event_reset_mode::manual_reset, "xtd_event_wait_handle"};
+      auto e2 = event_wait_handle {false, event_reset_mode::manual_reset, "xtd_event_wait_handle"};
+      assert::is_false(e1.wait_one(0), csf_);
+      assert::is_false(e2.wait_one(0), csf_);
+    }
+    
+    void test_method_(constructor_initial_state_to_true_event_reset_mode_to_manual_reset_with_same_name) {
+      auto e1 = event_wait_handle {true, event_reset_mode::manual_reset, "xtd_event_wait_handle"};
+      auto e2 = event_wait_handle {true, event_reset_mode::manual_reset, "xtd_event_wait_handle"};
       assert::is_true(e1.wait_one(0), csf_);
       assert::is_true(e1.wait_one(0), csf_);
       assert::is_true(e2.wait_one(0), csf_);
