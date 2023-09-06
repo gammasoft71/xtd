@@ -317,7 +317,7 @@ namespace xtd::tests {
     }
     
     void test_method_(abort) {
-      if (environment::os_version().is_windows()) assert::ignore("Ignore \"abort\" unit test on Windows (The timing is not constant)");
+      if (environment::os_version().is_windows()) assert::ignore("Ignore \"abort\" unit test on Windows (The timing is not constant)", csf_);
       
       bool thread_aborted = false;
       auto thread = threading::thread {thread_start {[&] {
@@ -334,7 +334,7 @@ namespace xtd::tests {
     }
     
     void test_method_(abort_main_thread) {
-      if (diagnostics::debugger::is_attached()) assert::ignore("Ignore \"abort_main_thread\" test when debugger is attached");
+      if (diagnostics::debugger::is_attached()) assert::ignore("Ignore \"abort_main_thread\" test when debugger is attached", csf_);
       
       bool main_thread_aborted = false;
       auto on_signal_event = signal_cancel_event_handler {[&](signal_cancel_event_args& e) {
@@ -362,7 +362,7 @@ namespace xtd::tests {
     }
     
     void test_method_(interrupt) {
-      if (environment::os_version().is_windows()) assert::ignore("Ignore \"interrupt\" unit test on Windows (The timing is not constant)");
+      if (environment::os_version().is_windows()) assert::ignore("Ignore \"interrupt\" unit test on Windows (The timing is not constant)", csf_);
       bool thread_interrupted = false;
       auto thread = threading::thread {thread_start {[&] {
         try {
@@ -382,7 +382,7 @@ namespace xtd::tests {
     }
     
     void test_method_(interrupt_main_thread) {
-      if (diagnostics::debugger::is_attached()) assert::ignore("Ignore \"interrupt_main_thread\" test when debugger is attached");
+      if (diagnostics::debugger::is_attached()) assert::ignore("Ignore \"interrupt_main_thread\" test when debugger is attached", csf_);
       
       bool thread_interrupted = false;
       assert::is_false(thread_interrupted, csf_);

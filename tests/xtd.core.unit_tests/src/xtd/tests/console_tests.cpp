@@ -223,6 +223,7 @@ namespace xtd::tests {
       assert::are_equal(treat_control_c_as_input, console::treat_control_c_as_input(), csf_);
     }
     
+    /* Do not modify the console size and position in unit tests.
     void test_method_(window_height) {
       if (environment::os_version().is_windows() && !console::is_output_redirected()) assert::ignore("Ignore \"window_height\" test because it modify the console output", csf_);
       auto window_height = console::window_height();
@@ -232,6 +233,7 @@ namespace xtd::tests {
       console::window_height(window_height);
       assert::are_equal(window_height, console::window_height(), csf_);
     }
+    */
     
     void test_method_(window_height_with_invalid_values) {
       assert::throws<argument_out_of_range_exception>([] {console::window_height(0);}, csf_);
@@ -240,6 +242,7 @@ namespace xtd::tests {
       assert::throws<argument_out_of_range_exception>([] {console::window_height(as<int32>(int16_object::max_value) + 1);}, csf_);
     }
     
+    /* Do not modify the console size and position in unit tests.
     void test_method_(window_left) {
       if (environment::os_version().is_windows() && !console::is_output_redirected()) assert::ignore("Ignore \"window_left\" test because it modify the console output", csf_);
       auto window_left = console::window_left();
@@ -249,12 +252,14 @@ namespace xtd::tests {
       console::window_left(window_left);
       assert::are_equal(window_left, console::window_left(), csf_);
     }
+    */
     
     void test_method_(window_left_with_invalid_values) {
       assert::throws<argument_out_of_range_exception>([] {console::window_left(-1);}, csf_);
       assert::throws<argument_out_of_range_exception>([] {console::window_left(console::buffer_width());}, csf_);
     }
     
+    /* Do not modify the console size and position in unit tests.
     void test_method_(window_top) {
       if (environment::os_version().is_windows() && !console::is_output_redirected()) assert::ignore("Ignore \"window_top\" test because it modify the console output", csf_);
       auto window_top = console::window_top();
@@ -264,12 +269,14 @@ namespace xtd::tests {
       console::window_top(window_top);
       assert::are_equal(window_top, console::window_top(), csf_);
     }
+    */
     
     void test_method_(window_top_with_invalid_values) {
       assert::throws<argument_out_of_range_exception>([] {console::window_top(-1);}, csf_);
       assert::throws<argument_out_of_range_exception>([] {console::window_top(console::buffer_width());}, csf_);
     }
     
+    /* Do not modify the console size and position in unit tests.
     void test_method_(window_width) {
       if (environment::os_version().is_windows() && !console::is_output_redirected()) assert::ignore("Ignore \"window_width\" test because it modify the console output", csf_);
       auto window_width = console::window_width();
@@ -279,6 +286,7 @@ namespace xtd::tests {
       console::window_width(window_width);
       assert::are_equal(window_width, console::window_width(), csf_);
     }
+    */
     
     void test_method_(window_width_with_invalid_values) {
       assert::throws<argument_out_of_range_exception>([] {console::window_width(0);}, csf_);
@@ -393,6 +401,7 @@ namespace xtd::tests {
       file::remove(op);
     }
     
+    /* Do not modify the console size and position in unit tests.
     void test_method_(set_window_position) {
       if (!console::is_output_redirected()) assert::ignore("Ignore \"set_window_position\" test because it modify the console output", csf_);
       auto window_left = console::window_left();
@@ -405,6 +414,7 @@ namespace xtd::tests {
       assert::are_equal(window_left, console::window_left(), csf_);
       assert::are_equal(window_top, console::window_top(), csf_);
     }
+    */
     
     void test_method_(set_window_position_with_invalid_values) {
       assert::throws<argument_out_of_range_exception>([] {console::set_window_position(-1, 0);}, csf_);
@@ -413,6 +423,7 @@ namespace xtd::tests {
       assert::throws<argument_out_of_range_exception>([] {console::set_window_position(0, console::buffer_height());}, csf_);
     }
     
+    /* Do not modify the console size and position in unit tests.
     void test_method_(set_window_size) {
       if (!console::is_output_redirected()) assert::ignore("Ignore \"set_window_position\" test because it modify the console output", csf_);
       auto window_width = console::window_width();
@@ -425,6 +436,7 @@ namespace xtd::tests {
       assert::are_equal(window_width, console::window_width(), csf_);
       assert::are_equal(window_height, console::window_height(), csf_);
     }
+    */
     
     void test_method_(set_window_size_with_invalid_values) {
       assert::throws<argument_out_of_range_exception>([] {console::set_window_size(0, 10);}, csf_);
