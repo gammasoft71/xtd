@@ -12,7 +12,7 @@ using namespace xtd::threading;
 auto main()->int {
   auto terminate_app = false;
   
-  auto server = thread {thread_start {[&] {
+  auto server = thread {[&] {
     auto udp = udp_client {ip_end_point {ip_address::ip_v6_any, 9400}};
     while (!terminate_app) {
       auto incoming_end_point = ip_end_point {};
@@ -20,9 +20,9 @@ auto main()->int {
       if (buffer.size() && buffer[0] != 0xFF)
         console::write_line(ustring(buffer.begin(), buffer.end()));
     }
-  }}};
+  }};
   
-  auto client = thread {thread_start {[&] {
+  auto client = thread {[&] {
     auto udp = udp_client {address_family::inter_network_v6};
     auto counter = 0;
     while (!terminate_app) {
@@ -32,7 +32,7 @@ auto main()->int {
     }
     
     udp.send(std::vector<unsigned char> {0xFF}, 1, ip_end_point(ip_address::ip_v6_loopback, 9400));
-  }}};
+  }};
 
   server.start();
   client.start();

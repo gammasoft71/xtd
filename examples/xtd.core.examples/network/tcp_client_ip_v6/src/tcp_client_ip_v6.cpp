@@ -13,7 +13,7 @@ using namespace xtd::threading;
 auto main()->int {
   auto terminate_app = false;
   
-  auto server = thread {thread_start {[&] {
+  auto server = thread {[&] {
     auto listener = tcp_listener {ip_end_point(ip_address::ip_v6_any, 9400)};
     listener.start();
     auto stream = listener.accept_tcp_client().get_stream();
@@ -21,9 +21,9 @@ auto main()->int {
     
     while (!terminate_app)
       if (stream.data_available()) console::write_line(reader.read_line());
-  }}};
+  }};
   
-  auto client = thread {thread_start {[&] {
+  auto client = thread {[&] {
     auto client = tcp_client {address_family::inter_network_v6};
     client.connect(ip_address::ip_v6_loopback, 9400);
     auto stream = client.get_stream();
@@ -34,7 +34,7 @@ auto main()->int {
       writer.write_line(ustring::format("counter={}", ++counter));
       thread::sleep(50_ms);
     }
-  }}};
+  }};
 
   server.start();
   client.start();

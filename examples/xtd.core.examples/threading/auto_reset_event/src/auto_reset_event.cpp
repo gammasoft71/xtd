@@ -18,7 +18,7 @@ namespace auto_reset_event_example {
       console::read_line();
       
       for (auto index = 1; index < 4; ++index) {
-        threads.emplace_back(thread_start {thread_proc});
+        threads.emplace_back(thread_proc);
         threads.back().name(ustring::format("Thread_{}", index));
         threads.back().start();
       }
@@ -57,7 +57,7 @@ namespace auto_reset_event_example {
     }
 
   private:
-    inline static std::vector<thread> threads {4};
+    inline static std::vector<thread> threads = std::vector<thread>(4);
     inline static auto_reset_event event_1 {true};
     inline static auto_reset_event event_2 {false};
   };

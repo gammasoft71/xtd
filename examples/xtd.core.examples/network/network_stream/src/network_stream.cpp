@@ -15,7 +15,7 @@ using namespace xtd::threading;
 auto main()->int {
   auto terminate_app = false;
   
-  auto server = thread {thread_start {[&] {
+  auto server = thread {[&] {
     auto server_socket = socket {address_family::inter_network, socket_type::stream, protocol_type::tcp};
     server_socket.bind(ip_end_point {ip_address::any, 9400});
     server_socket.listen();
@@ -24,10 +24,10 @@ auto main()->int {
     
     while (!terminate_app)
       if (stream.data_available()) console::write_line(reader.read_line());
-  }}};
+  }};
   server.start();
   
-  auto client = thread {thread_start {[&] {
+  auto client = thread {[&] {
     auto stream = network_stream {socket {address_family::inter_network, socket_type::stream, protocol_type::tcp}};
     stream.socket().connect(ip_address::loopback, 9400);
     auto writer = stream_writer {stream};
@@ -37,7 +37,7 @@ auto main()->int {
       writer.write_line(ustring::format("counter={}", ++counter));
       thread::sleep(50_ms);
     }
-  }}};
+  }};
   client.start();
   
   console::read_key();

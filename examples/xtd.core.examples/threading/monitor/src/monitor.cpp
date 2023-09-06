@@ -21,7 +21,7 @@ namespace monitor_example {
       auto n = 0;
       
       for (auto thread_ctr = 0; thread_ctr < 10; ++thread_ctr)
-        threads.push_back(thread::start_new(thread_start {[&] {
+        threads.push_back(thread::start_new([&] {
           auto values = std::array<int, 10000> {};
           auto thread_total = 0;
           auto thread_n = 0;
@@ -40,7 +40,7 @@ namespace monitor_example {
                               (thread_total * 1.0) / thread_n, thread_n);
           interlocked::add(n, thread_n);
           interlocked::add(total, thread_total);
-        }}));
+        }));
       try {
         for (auto& thread : threads)
           thread.join();

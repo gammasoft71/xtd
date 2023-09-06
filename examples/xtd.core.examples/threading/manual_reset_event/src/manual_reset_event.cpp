@@ -13,7 +13,7 @@ namespace manual_reset_event_example {
       console::write_line("\nStart 3 named threads that block on a ManualresetEvent:\n");
       
       for(auto i = 0; i <= 2; ++i) {
-        threads.emplace_back(thread_start {thread_proc});
+        threads.emplace_back(thread_proc);
         threads.back().name(ustring::format("Thread_{}", i));
         threads.back().start();
       }
@@ -31,7 +31,7 @@ namespace manual_reset_event_example {
       console::read_line();
       
       for(auto i = 3; i <= 4; ++i) {
-        threads.emplace_back(thread_start {thread_proc});
+        threads.emplace_back(thread_proc);
         threads.back().name(ustring::format("Thread_{}", i));
         threads.back().start();
       }
@@ -44,7 +44,7 @@ namespace manual_reset_event_example {
       mre.reset();
       
       // Start a thread that waits on the ManualresetEvent.
-      threads.emplace_back(thread_start {thread_proc});
+      threads.emplace_back(thread_proc);
       threads.back().name("Thread_5");
       threads.back().start();
 
@@ -58,7 +58,7 @@ namespace manual_reset_event_example {
     }
     
   private:
-    inline static std::vector<thread> threads {4};
+    inline static std::vector<thread> threads = std::vector<thread>(4);
 
     // mre is used to block and release threads manually. It is
     // created in the unsignaled state.

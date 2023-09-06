@@ -21,7 +21,7 @@ public:
     messages.dock(dock_style::fill);
     
     for (auto index = 0u; index < threads.size(); ++index) {
-      threads[index] = thread {parameterized_thread_start {[&](auto user_thread_id) {
+      threads[index] = thread {[&](auto user_thread_id) {
         auto counter = 0u;
         while (!closed) {
           /// simulate work...
@@ -33,7 +33,7 @@ public:
             messages.selected_index(messages.items().size() - 1);
           });
         }
-      }}};
+      }};
       threads[index].start(index);
     }
   }
@@ -41,7 +41,7 @@ public:
 private:
   list_box messages;
   bool closed = false;
-  std::vector<thread> threads {environment::processor_count() - 1};
+  std::vector<thread> threads = std::vector<thread>(environment::processor_count() - 1);
 };
 
 auto main()->int {

@@ -36,7 +36,7 @@ public:
     // number can be passed as an argument to the Start
     // method.
     for (auto i = 0; i <= 4; i++) {
-      threads_[i] = thread {parameterized_thread_start {thread_proc}};
+      threads_[i] = thread {thread_proc};
       threads_[i].start(i);
     }
     
@@ -74,7 +74,7 @@ public:
     // Create and start five more numbered threads.
     //
     for(auto i = 0; i <= 4; i++) {
-      threads_[i] = thread {parameterized_thread_start {thread_proc}};
+      threads_[i] = thread {thread_proc};
       threads_[i].start(i);
     }
     

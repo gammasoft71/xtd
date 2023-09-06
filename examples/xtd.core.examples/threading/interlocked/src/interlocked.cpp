@@ -31,7 +31,7 @@ namespace interlocked_example {
         
         //Wait a random amount of time before starting next thread.
         thread::sleep(rnd.next(0, 1000));
-        my_threads[index].thread = thread {parameterized_thread_start {my_thread_proc}};
+        my_threads[index].thread = thread {my_thread_proc};
         my_threads[index].thread.start(my_threads[index].name);
       }
       

@@ -12,7 +12,7 @@ namespace mutex_example {
     static void main() {
       // Create the threads that will use the protected resource.
       for (auto i = 0; i < num_threads; ++i) {
-        threads.emplace_back(thread_start {thread_proc});
+        threads.emplace_back(thread_proc);
         threads.back().name(ustring::format("thread_{0}", i + 1));
         threads.back().start();
       }
