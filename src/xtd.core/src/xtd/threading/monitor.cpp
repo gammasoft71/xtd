@@ -7,6 +7,12 @@
 using namespace xtd;
 using namespace xtd::threading;
 
+struct monitor::item {
+  mutex event {false};
+  int32 used_counter {0};
+  std::optional<ustring> name;
+};
+
 struct monitor::static_data {
   std::recursive_mutex monitor_mutex;
   monitor::item_collection items;
