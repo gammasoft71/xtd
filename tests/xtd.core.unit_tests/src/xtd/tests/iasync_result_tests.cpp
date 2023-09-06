@@ -44,12 +44,12 @@ namespace xtd::tests {
         if (result_.async_state().has_value()) throw invalid_operation_exception("Already started", csf_);
         result_.async_state("Started");
         result_.is_completed(false);
-        thread_ = threading::thread {thread_start {[this] {
+        thread_ = threading::thread {[this] {
           threading::thread::sleep(2_ms);
           result_.async_state("Ended");
           result_.is_completed(true);
           as<xtd::threading::auto_reset_event>(result_.async_wait_handle()).set();
-        }}};
+        }};
         thread_.start();
         return result_;
       }

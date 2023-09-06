@@ -130,7 +130,7 @@ void thread_pool::asynchronous_io_run() {
 }
 
 void thread_pool::create_thread() {
-  get_static_data().threads.emplace_back(thread_start {&thread_pool::run});
+  get_static_data().threads.emplace_back(&thread_pool::run);
   get_static_data().threads.back().name("Thread Pool");
   get_static_data().threads.back().is_background(true);
   get_static_data().threads.back().is_thread_pool_thread(true);
@@ -138,7 +138,7 @@ void thread_pool::create_thread() {
 }
 
 void thread_pool::create_asynchronous_io_thread() {
-  get_static_data().asynchronous_io_threads.emplace_back(thread_start {&thread_pool::asynchronous_io_run});
+  get_static_data().asynchronous_io_threads.emplace_back(&thread_pool::asynchronous_io_run);
   get_static_data().asynchronous_io_threads.back().name("Thread Pool");
   get_static_data().asynchronous_io_threads.back().is_background(true);
   get_static_data().asynchronous_io_threads.back().is_thread_pool_thread(true);

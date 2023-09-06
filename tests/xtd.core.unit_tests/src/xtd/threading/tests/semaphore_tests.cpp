@@ -41,10 +41,10 @@ namespace xtd::tests {
       auto s = semaphore {0};
       assert::are_not_equal(semaphore::invalid_handle, s.handle(), csf_);
       auto thread_ran = false;
-      auto thread = threading::thread {thread_start {[&] {
+      auto thread = threading::thread {[&] {
         assert::is_false(s.wait_one(0), csf_);
         thread_ran = true;
-      }}};
+      }};
       thread.start();
       thread.join();
       assert::is_true(thread_ran, csf_);
@@ -54,11 +54,11 @@ namespace xtd::tests {
       auto s = semaphore {1};
       assert::are_not_equal(semaphore::invalid_handle, s.handle(), csf_);
       auto thread_ran = false;
-      auto thread = threading::thread {thread_start {[&] {
+      auto thread = threading::thread {[&] {
         assert::is_true(s.wait_one(0), csf_);
         assert::is_false(s.wait_one(0), csf_);
         thread_ran = true;
-      }}};
+      }};
       thread.start();
       thread.join();
       assert::is_true(thread_ran, csf_);
@@ -68,7 +68,7 @@ namespace xtd::tests {
       auto s = semaphore {5};
       assert::are_not_equal(semaphore::invalid_handle, s.handle(), csf_);
       auto thread_ran = false;
-      auto thread = threading::thread {thread_start {[&] {
+      auto thread = threading::thread {[&] {
         assert::is_true(s.wait_one(0), csf_);
         assert::is_true(s.wait_one(0), csf_);
         assert::is_true(s.wait_one(0), csf_);
@@ -76,7 +76,7 @@ namespace xtd::tests {
         assert::is_true(s.wait_one(0), csf_);
         assert::is_false(s.wait_one(0), csf_);
         thread_ran = true;
-      }}};
+      }};
       thread.start();
       thread.join();
       assert::is_true(thread_ran, csf_);
@@ -86,14 +86,14 @@ namespace xtd::tests {
       auto s = semaphore {0, 1};
       assert::are_not_equal(semaphore::invalid_handle, s.handle(), csf_);
       auto thread_ran = false;
-      auto thread = threading::thread {thread_start {[&] {
+      auto thread = threading::thread {[&] {
         assert::is_false(s.wait_one(0), csf_);
         assert::are_equal(0, s.release(), csf_);
         assert::throws<semaphore_full_exception>([&]{s.release();}, csf_);
         assert::is_true(s.wait_one(0), csf_);
         assert::is_false(s.wait_one(0), csf_);
         thread_ran = true;
-      }}};
+      }};
       thread.start();
       thread.join();
       assert::is_true(thread_ran, csf_);
@@ -103,12 +103,12 @@ namespace xtd::tests {
       auto s = semaphore {1, 1};
       assert::are_not_equal(semaphore::invalid_handle, s.handle(), csf_);
       auto thread_ran = false;
-      auto thread = threading::thread {thread_start {[&] {
+      auto thread = threading::thread {[&] {
         assert::throws<semaphore_full_exception>([&]{s.release();}, csf_);
         assert::is_true(s.wait_one(0), csf_);
         assert::is_false(s.wait_one(0), csf_);
         thread_ran = true;
-      }}};
+      }};
       thread.start();
       thread.join();
       assert::is_true(thread_ran, csf_);
@@ -125,7 +125,7 @@ namespace xtd::tests {
       assert::are_equal(4, s.release(), csf_);
       assert::throws<semaphore_full_exception>([&]{s.release();}, csf_);
       auto thread_ran = false;
-      auto thread = threading::thread {thread_start {[&] {
+      auto thread = threading::thread {[&] {
         assert::is_true(s.wait_one(0), csf_);
         assert::is_true(s.wait_one(0), csf_);
         assert::is_true(s.wait_one(0), csf_);
@@ -133,7 +133,7 @@ namespace xtd::tests {
         assert::is_true(s.wait_one(0), csf_);
         assert::is_false(s.wait_one(0), csf_);
         thread_ran = true;
-      }}};
+      }};
       thread.start();
       thread.join();
       assert::is_true(thread_ran, csf_);
@@ -158,10 +158,10 @@ namespace xtd::tests {
       auto s = semaphore {0, "xtd_semaphore_test"};
       assert::are_not_equal(semaphore::invalid_handle, s.handle(), csf_);
       auto thread_ran = false;
-      auto thread = threading::thread {thread_start {[&] {
+      auto thread = threading::thread {[&] {
         assert::is_false(s.wait_one(0), csf_);
         thread_ran = true;
-      }}};
+      }};
       thread.start();
       thread.join();
       assert::is_true(thread_ran, csf_);
@@ -171,11 +171,11 @@ namespace xtd::tests {
       auto s = semaphore {1, "xtd_semaphore_test"};
       assert::are_not_equal(semaphore::invalid_handle, s.handle(), csf_);
       auto thread_ran = false;
-      auto thread = threading::thread {thread_start {[&] {
+      auto thread = threading::thread {[&] {
         assert::is_true(s.wait_one(0), csf_);
         assert::is_false(s.wait_one(0), csf_);
         thread_ran = true;
-      }}};
+      }};
       thread.start();
       thread.join();
       assert::is_true(thread_ran, csf_);
@@ -185,7 +185,7 @@ namespace xtd::tests {
       auto s = semaphore {5, "xtd_semaphore_test"};
       assert::are_not_equal(semaphore::invalid_handle, s.handle(), csf_);
       auto thread_ran = false;
-      auto thread = threading::thread {thread_start {[&] {
+      auto thread = threading::thread {[&] {
         assert::is_true(s.wait_one(0), csf_);
         assert::is_true(s.wait_one(0), csf_);
         assert::is_true(s.wait_one(0), csf_);
@@ -193,7 +193,7 @@ namespace xtd::tests {
         assert::is_true(s.wait_one(0), csf_);
         assert::is_false(s.wait_one(0), csf_);
         thread_ran = true;
-      }}};
+      }};
       thread.start();
       thread.join();
       assert::is_true(thread_ran, csf_);
@@ -203,14 +203,14 @@ namespace xtd::tests {
       auto s = semaphore {0, 1, "xtd_semaphore_test"};
       assert::are_not_equal(semaphore::invalid_handle, s.handle(), csf_);
       auto thread_ran = false;
-      auto thread = threading::thread {thread_start {[&] {
+      auto thread = threading::thread {[&] {
         assert::is_false(s.wait_one(0), csf_);
         assert::are_equal(0, s.release(), csf_);
         assert::throws<semaphore_full_exception>([&]{s.release();}, csf_);
         assert::is_true(s.wait_one(0), csf_);
         assert::is_false(s.wait_one(0), csf_);
         thread_ran = true;
-      }}};
+      }};
       thread.start();
       thread.join();
       assert::is_true(thread_ran, csf_);
@@ -220,12 +220,12 @@ namespace xtd::tests {
       auto s = semaphore {1, 1, "xtd_semaphore_test"};
       assert::are_not_equal(semaphore::invalid_handle, s.handle(), csf_);
       auto thread_ran = false;
-      auto thread = threading::thread {thread_start {[&] {
+      auto thread = threading::thread {[&] {
         assert::throws<semaphore_full_exception>([&]{s.release();}, csf_);
         assert::is_true(s.wait_one(0), csf_);
         assert::is_false(s.wait_one(0), csf_);
         thread_ran = true;
-      }}};
+      }};
       thread.start();
       thread.join();
       assert::is_true(thread_ran, csf_);
@@ -244,10 +244,10 @@ namespace xtd::tests {
       auto thread_ran = 0;
       auto threads = std::vector<thread> {};
       for (auto index = 0; index < 5; ++index) {
-        threads.emplace_back(thread_start {[&] {
+        threads.emplace_back([&] {
           assert::is_true(s.wait_one(0), csf_);
           ++thread_ran;
-        }});
+        });
         threads.back().start();
       }
       thread::join_all(threads);
@@ -258,12 +258,12 @@ namespace xtd::tests {
       auto s = semaphore {};
       assert::are_not_equal(wait_handle::invalid_handle, s.handle(), csf_);
       auto thread_ran = false;
-      auto thread = threading::thread {thread_start {[&] {
+      auto thread = threading::thread {[&] {
         auto s2 = semaphore {};
         s.close();
         assert::are_equal(wait_handle::invalid_handle, s.handle(), csf_);
         thread_ran = true;
-      }}};
+      }};
       thread.start();
       thread.join();
       assert::is_true(thread_ran, csf_);
@@ -274,12 +274,12 @@ namespace xtd::tests {
       auto s = semaphore {"xtd_semaphore_test"};
       assert::are_not_equal(wait_handle::invalid_handle, s.handle(), csf_);
       auto thread_ran = false;
-      auto thread = threading::thread {thread_start {[&] {
+      auto thread = threading::thread {[&] {
         auto s2 = semaphore {};
         s.close();
         assert::are_equal(wait_handle::invalid_handle, s.handle(), csf_);
         thread_ran = true;
-      }}};
+      }};
       thread.start();
       thread.join();
       assert::is_true(thread_ran, csf_);
@@ -292,11 +292,11 @@ namespace xtd::tests {
       auto s = semaphore {"xtd_semaphore_test", created_new};
       assert::are_not_equal(wait_handle::invalid_handle, s.handle(), csf_);
       auto thread_ran = false;
-      auto thread = threading::thread {thread_start {[&] {
+      auto thread = threading::thread {[&] {
         auto s2 = semaphore::open_existing("xtd_semaphore_test");
         assert::are_not_equal(wait_handle::invalid_handle, s2.handle(), csf_);
         thread_ran = true;
-      }}};
+      }};
       thread.start();
       thread.join();
       assert::is_true(thread_ran, csf_);
@@ -308,10 +308,10 @@ namespace xtd::tests {
       auto s = semaphore {"xtd_semaphore_test", created_new};
       assert::are_not_equal(wait_handle::invalid_handle, s.handle(), csf_);
       auto thread_ran = false;
-      auto thread = threading::thread {thread_start {[&] {
+      auto thread = threading::thread {[&] {
         assert::throws<io::io_exception>([] {auto s2 = semaphore::open_existing("xtd_semaphore_test_2");}, csf_);
         thread_ran = true;
-      }}};
+      }};
       thread.start();
       thread.join();
       assert::is_true(thread_ran, csf_);
@@ -323,10 +323,10 @@ namespace xtd::tests {
       auto s = semaphore {"xtd_semaphore_test", created_new};
       assert::are_not_equal(wait_handle::invalid_handle, s.handle(), csf_);
       auto thread_ran = false;
-      auto thread = threading::thread {thread_start {[&] {
+      auto thread = threading::thread {[&] {
         assert::throws<argument_exception>([] {auto s2 = semaphore::open_existing("");}, csf_);
         thread_ran = true;
-      }}};
+      }};
       thread.start();
       thread.join();
       assert::is_true(thread_ran, csf_);
@@ -338,13 +338,13 @@ namespace xtd::tests {
       auto s = semaphore {"xtd_semaphore_test", created_new};
       assert::are_not_equal(wait_handle::invalid_handle, s.handle(), csf_);
       auto thread_ran = false;
-      auto thread = threading::thread {thread_start {[&] {
+      auto thread = threading::thread {[&] {
         auto s2 = semaphore {};
         auto result = semaphore::try_open_existing("xtd_semaphore_test", s2);
         assert::is_true(result, csf_);
         assert::are_not_equal(wait_handle::invalid_handle, s2.handle(), csf_);
         thread_ran = true;
-      }}};
+      }};
       thread.start();
       thread.join();
       assert::is_true(thread_ran, csf_);
@@ -356,13 +356,13 @@ namespace xtd::tests {
       auto s = semaphore {"xtd_semaphore_test", created_new};
       assert::are_not_equal(wait_handle::invalid_handle, s.handle(), csf_);
       auto thread_ran = false;
-      auto thread = threading::thread {thread_start {[&] {
+      auto thread = threading::thread {[&] {
         auto s2 = semaphore {};
         auto result = semaphore::try_open_existing("xtd_semaphore_test_2", s2);
         assert::is_false(result, csf_);
         assert::are_equal(wait_handle::invalid_handle, s2.handle(), csf_);
         thread_ran = true;
-      }}};
+      }};
       thread.start();
       thread.join();
       assert::is_true(thread_ran, csf_);
@@ -374,13 +374,13 @@ namespace xtd::tests {
       auto s = semaphore {"xtd_semaphore_test", created_new};
       assert::are_not_equal(wait_handle::invalid_handle, s.handle(), csf_);
       auto thread_ran = false;
-      auto thread = threading::thread {thread_start {[&] {
+      auto thread = threading::thread {[&] {
         auto s2 = semaphore {};
         auto result = semaphore::try_open_existing("", s2);
         assert::is_false(result, csf_);
         assert::are_equal(wait_handle::invalid_handle, s2.handle(), csf_);
         thread_ran = true;
-      }}};
+      }};
       thread.start();
       thread.join();
       assert::is_true(thread_ran, csf_);
