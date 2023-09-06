@@ -44,6 +44,7 @@ namespace xtd::tests {
     }
     
     void test_method_(buffer_height) {
+      if (environment::os_version().is_windows() && !console::is_output_redirected()) assert::ignore("Ignore \"buffer_height\" test because it modify the console output", csf_);
       auto buffer_height = console::buffer_height();
       console::buffer_height(500);
       assert::are_equal(500, console::buffer_height(), csf_);
@@ -59,6 +60,7 @@ namespace xtd::tests {
     }
     
     void test_method_(buffer_width) {
+      if (environment::os_version().is_windows() && !console::is_output_redirected()) assert::ignore("Ignore \"buffer_width\" test because it modify the console output", csf_);
       auto buffer_width = console::buffer_width();
       console::buffer_width(500);
       assert::are_equal(500, console::buffer_width(), csf_);
@@ -79,6 +81,7 @@ namespace xtd::tests {
     }
     
     void test_method_(cursor_left) {
+      if (environment::os_version().is_windows() && !console::is_output_redirected()) assert::ignore("Ignore \"cursor_left\" test because it modify the console output", csf_);
       auto cursor_left = console::cursor_left();
       console::cursor_left(20);
       assert::are_equal(20, console::cursor_left(), csf_);
@@ -92,6 +95,7 @@ namespace xtd::tests {
     }
     
     void test_method_(cursor_size) {
+      if (environment::os_version().is_windows() && !console::is_output_redirected()) assert::ignore("Ignore \"cursor_size\" test because it modify the console output", csf_);
       auto cursor_size = console::cursor_size();
       console::cursor_size(10);
       assert::are_equal(10, console::cursor_size(), csf_);
@@ -105,6 +109,7 @@ namespace xtd::tests {
     }
     
     void test_method_(cursor_top) {
+      if (environment::os_version().is_windows() && !console::is_output_redirected()) assert::ignore("Ignore \"cursor_top\" test because it modify the console output", csf_);
       auto cursor_top = console::cursor_top();
       console::cursor_top(10);
       assert::are_equal(10, console::cursor_top(), csf_);
@@ -224,6 +229,7 @@ namespace xtd::tests {
     }
     
     void test_method_(window_height) {
+      if (environment::os_version().is_windows() && !console::is_output_redirected()) assert::ignore("Ignore \"window_height\" test because it modify the console output", csf_);
       auto window_height = console::window_height();
       console::window_height(40);
       // During a unit test on CI, there is not always a graphical OS, only a console mode OS. So you can't change the height of the console window.
@@ -240,6 +246,7 @@ namespace xtd::tests {
     }
     
     void test_method_(window_left) {
+      if (environment::os_version().is_windows() && !console::is_output_redirected()) assert::ignore("Ignore \"window_left\" test because it modify the console output", csf_);
       auto window_left = console::window_left();
       console::window_left(5);
       // During a unit test on CI, there is not always a graphical OS, only a console mode OS. So you can't change the left of the console window.
@@ -254,6 +261,7 @@ namespace xtd::tests {
     }
     
     void test_method_(window_top) {
+      if (environment::os_version().is_windows() && !console::is_output_redirected()) assert::ignore("Ignore \"window_top\" test because it modify the console output", csf_);
       auto window_top = console::window_top();
       console::window_top(5);
       // During a unit test on CI, there is not always a graphical OS, only a console mode OS. So you can't change the top of the console window.
@@ -268,6 +276,7 @@ namespace xtd::tests {
     }
     
     void test_method_(window_width) {
+      if (environment::os_version().is_windows() && !console::is_output_redirected()) assert::ignore("Ignore \"window_width\" test because it modify the console output", csf_);
       auto window_width = console::window_width();
       console::window_width(100);
       // During a unit test on CI, there is not always a graphical OS, only a console mode OS. So you can't change the width of the console window.
@@ -284,6 +293,7 @@ namespace xtd::tests {
     }
     
     void test_method_(get_cursor_position) {
+      if (environment::os_version().is_windows() && !console::is_output_redirected()) assert::ignore("Ignore \"get_cursor_position\" test because it modify the console output", csf_);
       auto [cursor_left, cursor_top] = console::get_cursor_position();
       console::cursor_left(20);
       console::cursor_top(10);
@@ -336,6 +346,7 @@ namespace xtd::tests {
     }
     
     void test_method_(set_cursor_position) {
+      if (environment::os_version().is_windows() && !console::is_output_redirected()) assert::ignore("Ignore \"set_cursor_position\" test because it modify the console output", csf_);
       auto [cursor_left, cursor_top] = console::get_cursor_position();
       console::set_cursor_position(20, 10);
       assert::are_equal(20, console::cursor_left(), csf_);
@@ -390,6 +401,7 @@ namespace xtd::tests {
     }
     
     void test_method_(set_window_position) {
+      if (!console::is_output_redirected()) assert::ignore("Ignore \"set_window_position\" test because it modify the console output", csf_);
       auto window_left = console::window_left();
       auto window_top = console::window_top();
       console::set_window_position(20, 10);
