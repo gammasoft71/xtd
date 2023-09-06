@@ -88,7 +88,7 @@ void background_worker::run_worker_async() {
   data_->is_busy = true;
   if (data_->thread.joinable()) data_->thread.join();
   data_->invoker = make_unique<form>();
-  data_->thread = threading::thread {thread_start {[&] {
+  data_->thread = threading::thread {[&] {
     do_work_event_args e(data_->argument);
     on_do_work(e);
     data_->invoker->begin_invoke([&] {
@@ -97,7 +97,7 @@ void background_worker::run_worker_async() {
       data_->cancellation_pending = false;
     });
     data_->is_busy = false;
-  }}};
+  }};
   data_->thread.start();
 }
 
