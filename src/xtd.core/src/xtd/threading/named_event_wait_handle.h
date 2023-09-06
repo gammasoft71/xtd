@@ -26,6 +26,8 @@ public:
     name_ = name;
     interlocked::compare_exchange(is_set_, initial_state, false);
     handle_ = native::named_event_wait_handle::create(initial_state, manual_reset, name);
+    manual_reset_ = manual_reset;
+    
     return handle_ != invalid_handle;
   }
   
