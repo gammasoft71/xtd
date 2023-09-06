@@ -48,7 +48,7 @@ namespace guidgen_gui {
       generate_button_.text("Generate"_t);
       generate_button_.click += [&] {
         result_text_box_.text("");
-        auto generate = threading::thread {thread_start {[&]{
+        auto generate = threading::thread {[&]{
           begin_invoke([&] {
             count_numeric_up_down_.enabled(false);
             format_choice_.enabled(false);
@@ -73,7 +73,7 @@ namespace guidgen_gui {
             application::use_wait_cursor(false);
             application::do_events();
           });
-        }}};
+        }};
         generate.start();
         generate.detach();
       };
