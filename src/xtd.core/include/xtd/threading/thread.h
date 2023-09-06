@@ -89,6 +89,10 @@ namespace xtd {
 
       /// @cond
       thread();
+      template <typename start_t>
+      thread(start_t start) : thread(parameterized_thread_start {start}) {}
+      template <typename start_t>
+      thread(start_t start, int32 max_stack_size) : thread(parameterized_thread_start {start}, max_stack_size) {}
       thread(thread&&) = default;
       thread(const thread&) = default;
       thread& operator=(const thread&);
@@ -362,6 +366,10 @@ namespace xtd {
       static bool join_all(const std::vector<std::unique_ptr<thread>>& threads);
       static bool join_all(const std::vector<std::unique_ptr<thread>>& threads, int32 milliseconds_timeout);
       static bool join_all(const std::vector<std::unique_ptr<thread>>& threads, const time_span& timeout);
+      template <typename start_t>
+      static thread start_new(start_t start) {return start_new(thread_start {start});}
+      template <typename start_t>
+      static thread start_new(start_t start, std::any obj) {return start_new(parameterized_thread_start {start}, obj);}
       /// @endcond
       
     private:
