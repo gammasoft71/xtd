@@ -1,5 +1,7 @@
 #include "../../../include/xtd/threading/monitor.h"
+#include "../../../include/xtd/threading/interlocked.h"
 #include "../../../include/xtd/threading/mutex.h"
+#include "../../../include/xtd/threading/thread.h"
 #include "../../../include/xtd/threading/synchronization_lock_exception.h"
 #include <mutex>
 #include <optional>
@@ -17,6 +19,8 @@ struct monitor::static_data {
   std::recursive_mutex monitor_mutex;
   monitor::item_collection items;
 };
+
+thread_local monitor::item* monitor::current_locked_object = nullptr;
 
 void monitor::enter_ptr(std::pair<intptr, bool> pair) {
   bool lock_taken = false;
@@ -37,12 +41,13 @@ void monitor::exit_ptr(std::pair<intptr, bool> pair) {
   
   item saved;
   item* monitor_data = &get_static_data().items[pair.first];
-  if (--monitor_data->used_counter == 0) {
+  if (interlocked::decrement(monitor_data->used_counter) == 0) {
     saved = get_static_data().items[pair.first];
     if (pair.second) delete reinterpret_cast<const ustring*>(pair.first);
     get_static_data().items.erase(pair.first);
     monitor_data = &saved;
   }
+  current_locked_object = nullptr;
   monitor_data->event.release_mutex();
   get_static_data().monitor_mutex.unlock();
 }
@@ -78,14 +83,8 @@ void monitor::pulse_ptr(std::pair<intptr, bool> pair) {
 }
 
 void monitor::pulse_all_ptr(std::pair<intptr, bool> pair) {
-  item* monitor_item = null;
-  get_static_data().monitor_mutex.lock();
-  if (is_entered_ptr(pair)) monitor_item = &get_static_data().items[pair.first];
-  get_static_data().monitor_mutex.unlock();
-  
-  if (monitor_item == nullptr) throw invalid_operation_exception(csf_);
-  
-  monitor_item->event.release_mutex();
+  while (is_entered_ptr(pair))
+    pulse_ptr(pair);
 }
 
 bool monitor::try_enter_ptr(std::pair<intptr, bool> pair, int32 milliseconds_timeout, bool& lock_taken) noexcept {
@@ -100,8 +99,9 @@ bool monitor::try_enter_ptr(std::pair<intptr, bool> pair, int32 milliseconds_tim
     get_static_data().items.insert({pair.first, i});
   }
   item* monitor_data = &get_static_data().items[pair.first];
-  ++monitor_data->used_counter;
+  interlocked::increment(monitor_data->used_counter);
   get_static_data().monitor_mutex.unlock();
+  current_locked_object = monitor_data;
   return lock_taken = monitor_data->event.wait_one(milliseconds_timeout);
 }
 

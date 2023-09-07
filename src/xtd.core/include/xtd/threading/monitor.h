@@ -297,6 +297,7 @@ namespace xtd {
       static void pulse_ptr(std::pair<intptr, bool> obj);
       static void pulse_all_ptr(std::pair<intptr, bool> obj);
       static bool try_enter_ptr(std::pair<intptr, bool> pair, int32 milliseconds_timeout, bool& lock_taken) noexcept;
+      static thread_local item* current_locked_object;
     };
   }
 }
