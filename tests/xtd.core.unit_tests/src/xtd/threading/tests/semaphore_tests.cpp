@@ -9,11 +9,6 @@ using namespace xtd::tunit;
 namespace xtd::tests {
   class test_class_(semaphore_tests) {
   public:
-    static void class_initialize_(class_initialize) {
-      auto s = semaphore {"xtd_semaphore_test"};
-      auto s2 = semaphore {"xtd_semaphore_test_2"};
-    }
-    
     // unnamed
     
     void test_method_(constructor) {
