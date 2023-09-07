@@ -66,5 +66,30 @@ namespace xtd::tests {
       monitor::exit("lock_string");
       assert::is_false(monitor::is_entered("lock_string"), csf_);
     }
+
+    void test_method_(enter_lock_string_exit_other_string) {
+      monitor::enter("lock_string");
+      assert::throws<synchronization_lock_exception>([&] {monitor::exit("other_string");}, csf_);
+      monitor::exit("lock_string");
+    }
+    
+    void test_method_(try_enter_lock_string) {
+      assert::is_true(monitor::try_enter("lock_string"), csf_);
+      assert::is_true(monitor::try_enter("lock_string"), csf_);
+      monitor::exit("lock_string");
+      monitor::exit("lock_string");
+    }
+    
+    void test_method_(try_enter_lock_string_already_locked) {
+      assert::is_true(monitor::try_enter("lock_string"), csf_);
+      bool thread_ran = false;
+      auto thread = threading::thread::start_new([&] {
+        assert::is_false(monitor::try_enter("lock_string", 0), csf_);
+        thread_ran = true;
+      });
+      thread.join();
+      assert::is_true(thread_ran, csf_);
+      monitor::exit("lock_string");
+    }
   };
 }
