@@ -69,7 +69,7 @@ void event_wait_handle::handle(intptr value) {
 }
 
 void event_wait_handle::close() {
-  if (data_.use_count() == 1) {
+  if (data_.use_count() == 1 && data_->event_wait_handle) {
     data_->event_wait_handle->destroy();
     data_->event_wait_handle.reset();
   }
