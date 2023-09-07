@@ -8,11 +8,6 @@ using namespace xtd::tunit;
 namespace xtd::tests {
   class test_class_(event_wait_handle_tests) {
   public:
-    static void class_initialize_(class_initialize) {
-      auto e = event_wait_handle {"xtd_event_wait_handle_test"};
-      auto e2 = event_wait_handle {"xtd_event_wait_handle_test_2"};
-    }
-
     void test_method_(constructor) {
       auto e1 = event_wait_handle {};
       auto e2 = event_wait_handle {};
@@ -299,6 +294,52 @@ namespace xtd::tests {
       assert::is_true(e2.wait_one(0), csf_);
     }
     
+    void test_method_(open_existing_with_same_name) {
+      if (environment::os_version().is_windows() && !environment::is_64_bit_process()) assert::ignore();
+      auto created_new = false;
+      auto e = event_wait_handle {"xtd_event_wait_handle_test", created_new};
+      assert::are_not_equal(wait_handle::invalid_handle, e.handle(), csf_);
+      auto thread_ran = false;
+      auto thread = threading::thread {[&] {
+        auto e2 = event_wait_handle::open_existing("xtd_event_wait_handle_test");
+        assert::are_not_equal(wait_handle::invalid_handle, e2.handle(), csf_);
+        thread_ran = true;
+      }};
+      thread.start();
+      thread.join();
+      assert::is_true(thread_ran, csf_);
+    }
+    
+    void test_method_(open_existing_with_different_name) {
+      if (environment::os_version().is_windows() && !environment::is_64_bit_process()) assert::ignore();
+      auto created_new = false;
+      auto e = event_wait_handle {"xtd_event_wait_handle_test", created_new};
+      assert::are_not_equal(wait_handle::invalid_handle, e.handle(), csf_);
+      auto thread_ran = false;
+      auto thread = threading::thread {[&] {
+        assert::throws<io::io_exception>([] {auto e2 = event_wait_handle::open_existing("xtd_event_wait_handle_test_é");}, csf_);
+        thread_ran = true;
+      }};
+      thread.start();
+      thread.join();
+      assert::is_true(thread_ran, csf_);
+    }
+    
+    void test_method_(open_existing_with_empty_name) {
+      if (environment::os_version().is_windows() && !environment::is_64_bit_process()) assert::ignore();
+      auto created_new = false;
+      auto e = event_wait_handle {"xtd_event_wait_handle_test", created_new};
+      assert::are_not_equal(wait_handle::invalid_handle, e.handle(), csf_);
+      auto thread_ran = false;
+      auto thread = threading::thread {[&] {
+        assert::throws<argument_exception>([] {auto m2 = event_wait_handle::open_existing("");}, csf_);
+        thread_ran = true;
+      }};
+      thread.start();
+      thread.join();
+      assert::is_true(thread_ran, csf_);
+    }
+
     void test_method_(set_auto_reset_event_unnamed) {
       auto e = event_wait_handle {false, event_reset_mode::auto_reset};
       assert::is_false(e.wait_one(0), csf_);
@@ -393,6 +434,60 @@ namespace xtd::tests {
       assert::is_true(e.reset(), csf_);
       assert::is_false(e.wait_one(0), csf_);
       assert::is_false(e.wait_one(0), csf_);
+    }
+
+    void test_method_(try_open_existing_with_same_name) {
+      if (environment::os_version().is_windows() && !environment::is_64_bit_process()) assert::ignore();
+      auto created_new = false;
+      auto e = event_wait_handle {"xtd_event_wait_handle_test", created_new};
+      assert::are_not_equal(wait_handle::invalid_handle, e.handle(), csf_);
+      auto thread_ran = false;
+      auto thread = threading::thread {[&] {
+        auto e2 = event_wait_handle {};
+        auto result = event_wait_handle::try_open_existing("xtd_event_wait_handle_test", e2);
+        assert::is_true(result, csf_);
+        assert::are_not_equal(wait_handle::invalid_handle, e2.handle(), csf_);
+        thread_ran = true;
+      }};
+      thread.start();
+      thread.join();
+      assert::is_true(thread_ran, csf_);
+    }
+    
+    void test_method_(try_open_existing_with_different_name) {
+      if (environment::os_version().is_windows() && !environment::is_64_bit_process()) assert::ignore();
+      auto created_new = false;
+      auto e = event_wait_handle {"xtd_event_wait_handle_test", created_new};
+      assert::are_not_equal(wait_handle::invalid_handle, e.handle(), csf_);
+      auto thread_ran = false;
+      auto thread = threading::thread {[&] {
+        auto e2 = event_wait_handle {};
+        auto result = event_wait_handle::try_open_existing("xtd_event_wait_handle_test_é", e2);
+        assert::is_false(result, csf_);
+        assert::are_equal(wait_handle::invalid_handle, e2.handle(), csf_);
+        thread_ran = true;
+      }};
+      thread.start();
+      thread.join();
+      assert::is_true(thread_ran, csf_);
+    }
+    
+    void test_method_(try_open_existing_with_empty_name) {
+      if (environment::os_version().is_windows() && !environment::is_64_bit_process()) assert::ignore();
+      auto created_new = false;
+      auto e = event_wait_handle {"xtd_event_wait_handle_test", created_new};
+      assert::are_not_equal(wait_handle::invalid_handle, e.handle(), csf_);
+      auto thread_ran = false;
+      auto thread = threading::thread {[&] {
+        auto e2 = event_wait_handle {};
+        auto result = event_wait_handle::try_open_existing("", e2);
+        assert::is_false(result, csf_);
+        assert::are_equal(wait_handle::invalid_handle, e2.handle(), csf_);
+        thread_ran = true;
+      }};
+      thread.start();
+      thread.join();
+      assert::is_true(thread_ran, csf_);
     }
   };
 }
