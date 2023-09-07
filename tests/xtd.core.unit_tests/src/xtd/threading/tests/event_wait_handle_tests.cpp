@@ -299,7 +299,7 @@ namespace xtd::tests {
       assert::is_true(e2.wait_one(0), csf_);
     }
     
-    void test_method_(set_auto_reset_evnt_unnamed) {
+    void test_method_(set_auto_reset_event_unnamed) {
       auto e = event_wait_handle {false, event_reset_mode::auto_reset};
       assert::is_false(e.wait_one(0), csf_);
       assert::is_true(e.set(), csf_);
@@ -308,6 +308,90 @@ namespace xtd::tests {
       assert::is_true(e.set(), csf_);
       assert::is_true(e.set(), csf_);
       assert::is_true(e.wait_one(0), csf_);
+      assert::is_false(e.wait_one(0), csf_);
+    }
+    
+    void test_method_(set_manual_reset_event_unnamed) {
+      auto e = event_wait_handle {false, event_reset_mode::manual_reset};
+      assert::is_false(e.wait_one(0), csf_);
+      assert::is_true(e.set(), csf_);
+      assert::is_true(e.wait_one(0), csf_);
+      assert::is_true(e.wait_one(0), csf_);
+      assert::is_true(e.set(), csf_);
+      assert::is_true(e.set(), csf_);
+      assert::is_true(e.wait_one(0), csf_);
+      assert::is_true(e.wait_one(0), csf_);
+    }
+    
+    void test_method_(set_auto_reset_event_named) {
+      auto e = event_wait_handle {false, event_reset_mode::auto_reset, "xtd_event_wait_handle"};
+      assert::is_false(e.wait_one(0), csf_);
+      assert::is_true(e.set(), csf_);
+      assert::is_true(e.wait_one(0), csf_);
+      assert::is_false(e.wait_one(0), csf_);
+      assert::is_true(e.set(), csf_);
+      assert::is_true(e.set(), csf_);
+      assert::is_true(e.wait_one(0), csf_);
+      assert::is_false(e.wait_one(0), csf_);
+    }
+    
+    void test_method_(set_manual_reset_event_named) {
+      auto e = event_wait_handle {false, event_reset_mode::manual_reset, "xtd_event_wait_handle"};
+      assert::is_false(e.wait_one(0), csf_);
+      assert::is_true(e.set(), csf_);
+      assert::is_true(e.wait_one(0), csf_);
+      assert::is_true(e.wait_one(0), csf_);
+      assert::is_true(e.set(), csf_);
+      assert::is_true(e.set(), csf_);
+      assert::is_true(e.wait_one(0), csf_);
+      assert::is_true(e.wait_one(0), csf_);
+    }
+    
+    void test_method_(reset_auto_reset_event_unnamed) {
+      auto e = event_wait_handle {true, event_reset_mode::auto_reset};
+      assert::is_true(e.reset(), csf_);
+      assert::is_false(e.wait_one(0), csf_);
+      assert::is_false(e.wait_one(0), csf_);
+      assert::is_true(e.set(), csf_);
+      assert::is_true(e.reset(), csf_);
+      assert::is_true(e.reset(), csf_);
+      assert::is_false(e.wait_one(0), csf_);
+      assert::is_false(e.wait_one(0), csf_);
+    }
+    
+    void test_method_(reset_manual_reset_event_unnamed) {
+      auto e = event_wait_handle {true, event_reset_mode::manual_reset};
+      assert::is_true(e.reset(), csf_);
+      assert::is_false(e.wait_one(0), csf_);
+      assert::is_false(e.wait_one(0), csf_);
+      assert::is_true(e.set(), csf_);
+      assert::is_true(e.reset(), csf_);
+      assert::is_true(e.reset(), csf_);
+      assert::is_false(e.wait_one(0), csf_);
+      assert::is_false(e.wait_one(0), csf_);
+    }
+    
+    void test_method_(reset_auto_reset_event_named) {
+      auto e = event_wait_handle {true, event_reset_mode::auto_reset, "xtd_event_wait_handle"};
+      assert::is_true(e.reset(), csf_);
+      assert::is_false(e.wait_one(0), csf_);
+      assert::is_false(e.wait_one(0), csf_);
+      assert::is_true(e.set(), csf_);
+      assert::is_true(e.reset(), csf_);
+      assert::is_true(e.reset(), csf_);
+      assert::is_false(e.wait_one(0), csf_);
+      assert::is_false(e.wait_one(0), csf_);
+    }
+    
+    void test_method_(reset_manual_reset_event_named) {
+      auto e = event_wait_handle {true, event_reset_mode::manual_reset, "xtd_event_wait_handle"};
+      assert::is_true(e.reset(), csf_);
+      assert::is_false(e.wait_one(0), csf_);
+      assert::is_false(e.wait_one(0), csf_);
+      assert::is_true(e.set(), csf_);
+      assert::is_true(e.reset(), csf_);
+      assert::is_true(e.reset(), csf_);
+      assert::is_false(e.wait_one(0), csf_);
       assert::is_false(e.wait_one(0), csf_);
     }
   };
