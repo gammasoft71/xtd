@@ -563,9 +563,9 @@ namespace xtd::tests {
     
     void test_method_(join_all_with_vector_and_milliseconds_timeout) {
       std::vector<thread> threads;
-      threads.emplace_back(thread_start {[&] {thread::sleep(10);}});
+      threads.emplace_back(thread_start {[&] {thread::sleep(20);}});
       threads.back().start();
-      threads.emplace_back(thread_start {[&] {thread::sleep(10);}});
+      threads.emplace_back(thread_start {[&] {thread::sleep(20);}});
       threads.back().start();
       assert::is_false(threading::thread::join_all(threads, 5), csf_);
       threading::thread::join_all(threads);
