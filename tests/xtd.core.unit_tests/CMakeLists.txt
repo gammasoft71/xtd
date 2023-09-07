@@ -229,6 +229,7 @@ add_sources(
   src/xtd/threading/tests/event_wait_handle_tests.cpp
   src/xtd/threading/tests/interlocked_tests.cpp
   src/xtd/threading/tests/lock_recursion_exception_tests.cpp
+  src/xtd/threading/tests/monitor_tests.cpp
   src/xtd/threading/tests/mutex_tests.cpp
   src/xtd/threading/tests/semaphore_full_exception_tests.cpp
   src/xtd/threading/tests/semaphore_tests.cpp
