@@ -26,7 +26,7 @@ namespace xtd {
     /// @ingroup xtd_core threading
     /// @par Examples
     /// The following example uses the xtd::threading::monitor class to synchronize access to a single instance of a random number generator represented by the xtd::random class. The example creates ten threads, each of which executes asynchronously on a thread pool thread. Each thread generates 10,000 random numbers, calculates their average, and updates two procedure-level variables that maintain a running total of the number of random numbers generated and their sum. After all threads have executed, these two values are then used to calculate the overall mean.
-    /// @include monitor.cpp
+    /// @include lock_guard.cpp
     class core_export_ lock_guard final : public xtd::object {
     public:
       /// @name Constructors
