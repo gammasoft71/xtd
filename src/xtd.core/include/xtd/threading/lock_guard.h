@@ -18,7 +18,7 @@ namespace xtd {
     /// @par Inheritance
     /// xtd::object → xtd::lock_guard
     /// @par Header
-    /// @code #include <xtd/threading/monitor> @endcode
+    /// @code #include <xtd/threading/lock_guard> @endcode
     /// @par Namespace
     /// xtd::threading
     /// @par Library
