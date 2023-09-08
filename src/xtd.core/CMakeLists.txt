@@ -525,7 +525,6 @@ add_sources(
   include/xtd/internal/__format_information.h
   include/xtd/internal/__format_stringer.h
   include/xtd/internal/__generic_stream_output.h
-  include/xtd/internal/__lock_guard.h
   include/xtd/internal/__natural_formatter.h
   include/xtd/internal/__numeric_formatter.h
   include/xtd/internal/__parse.h
@@ -743,6 +742,8 @@ add_sources(
   include/xtd/threading/event_wait_handle
   include/xtd/threading/interlocked.h
   include/xtd/threading/interlocked
+  include/xtd/threading/lock_guard.h
+  include/xtd/threading/lock_guard
   include/xtd/threading/lock_recursion_exception.h
   include/xtd/threading/lock_recursion_exception
   include/xtd/threading/manual_reset_event.h
@@ -934,6 +935,7 @@ add_sources(
   src/xtd/threading/event_wait_handle.cpp
   src/xtd/threading/event_wait_handle_base.h
   src/xtd/threading/interlocked.cpp
+  src/xtd/threading/lock_guard.cpp
   src/xtd/threading/monitor.cpp
   src/xtd/threading/mutex.cpp
   src/xtd/threading/mutex_base.h

@@ -16,14 +16,14 @@
 #include <unordered_map>
 #include <utility>
 
-/// @cond
-struct __lock_guard;
-/// @endcond
-
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The xtd::threading namespace provides classes and interfaces that enable multithreaded programming. In addition to classes for synchronizing thread activities and access to data ( xtd::threading::mutex, xtd::threading::monitor, xtd::threading::interlocked, xtd::threading::auto_reset_event, and so on), this namespace includes a xtd::threading::thread_pool class that allows you to use a pool of system-supplied threads, and a xtd::threading::timer class that executes callback methods on thread pool threads.
   namespace threading {
+    /// @cond
+    class lock_guard;
+    /// @endcond
+    
     /// @brief Provides a mechanism that synchronizes access to objects.
     /// @code
     /// class core_export_ monitor static_
@@ -44,6 +44,8 @@ namespace xtd {
       struct item;
 
       using item_collection = std::unordered_map<intptr, item>;
+      
+      using ptr_item = std::pair<intptr, bool>;
 
       struct static_data;
       
@@ -98,8 +100,8 @@ namespace xtd {
 
       /// @brief Notifies a thread in the waiting queue of a change in the locked object's state.
       /// @param obj The object a thread is waiting for.
-      /// Only the current owner of the lock can signal a waiting object using Pulse.
-      /// The thread that currently owns the lock on the specified object invokes this method to signal the next thread in line for the lock. Upon receiving the pulse, the waiting thread is moved to the ready queue. When the thread that invoked Pulse releases the lock, the next thread in the ready queue (which is not necessarily the thread that was pulsed) acquires the lock.
+      /// @remarks Only the current owner of the lock can signal a waiting object using Pulse.
+      /// @remarks The thread that currently owns the lock on the specified object invokes this method to signal the next thread in line for the lock. Upon receiving the pulse, the waiting thread is moved to the ready queue. When the thread that invoked Pulse releases the lock, the next thread in the ready queue (which is not necessarily the thread that was pulsed) acquires the lock.
       template<typename object_t>
       static void pulse(const object_t& obj) {
         pulse_ptr(rget_ptr(obj));
@@ -275,28 +277,28 @@ namespace xtd {
       /// @}
       
     private:
-      friend struct ::__lock_guard;
+      friend class xtd::threading::lock_guard;
 
       static static_data& get_static_data();
 
       template<typename object_t>
-      static std::pair<intptr, bool> get_ptr(const object_t& obj) noexcept {
+      static ptr_item get_ptr(const object_t& obj) noexcept {
         bool is_string = is<ustring>(obj);
         // The newly created string will be deleted when the exit method is called, or if the lock has already been entered.
         return std::make_pair(is_string ? get_ustring_ptr(*(new ustring(as<ustring>(obj)))) : reinterpret_cast<intptr>(&obj), is_string);
       }
       
       template<typename type_t>
-      static std::pair<intptr, bool> get_ptr(const type_t* str) {return get_ptr(ustring(str));}
+      static ptr_item get_ptr(const type_t* str) {return get_ptr(ustring(str));}
 
-      static void enter_ptr(std::pair<intptr, bool> pair);
-      static void enter_ptr(std::pair<intptr, bool> pair, bool& lock_taken);
-      static void exit_ptr(std::pair<intptr, bool> pair);
-      static intptr get_ustring_ptr(const ustring& pair);
-      static bool is_entered_ptr(std::pair<intptr, bool> pair) noexcept;
-      static void pulse_ptr(std::pair<intptr, bool> obj);
-      static void pulse_all_ptr(std::pair<intptr, bool> obj);
-      static bool try_enter_ptr(std::pair<intptr, bool> pair, int32 milliseconds_timeout, bool& lock_taken) noexcept;
+      static void enter_ptr(ptr_item item);
+      static void enter_ptr(ptr_item item, bool& lock_taken);
+      static void exit_ptr(ptr_item item);
+      static intptr get_ustring_ptr(const ustring& ptr);
+      static bool is_entered_ptr(ptr_item item) noexcept;
+      static void pulse_ptr(ptr_item obj);
+      static void pulse_all_ptr(ptr_item obj);
+      static bool try_enter_ptr(ptr_item item, int32 milliseconds_timeout, bool& lock_taken) noexcept;
       static thread_local item* current_locked_object;
     };
   }
