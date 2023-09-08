@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['label_2eh_0',['label.h',['../label_8h.html',1,'(Global Namespace)'],['../style__sheets_2label_8h.html',1,'(Global Namespace)']]],
+  ['label_2eh_0',['label.h',['../style__sheets_2label_8h.html',1,'(Global Namespace)'],['../label_8h.html',1,'(Global Namespace)']]],
   ['label_5frenderer_2eh_1',['label_renderer.h',['../label__renderer_8h.html',1,'']]],
   ['label_5fstate_2eh_2',['label_state.h',['../label__state_8h.html',1,'']]],
   ['language_5fid_2eh_3',['language_id.h',['../language__id_8h.html',1,'']]],
@@ -32,5 +32,6 @@ var searchData=
   ['loading_5findicator_2eh_29',['loading_indicator.h',['../loading__indicator_8h.html',1,'']]],
   ['loading_5findicator_5fstyle_2eh_30',['loading_indicator_style.h',['../loading__indicator__style_8h.html',1,'']]],
   ['lock_2eh_31',['lock.h',['../lock_8h.html',1,'']]],
-  ['lock_5frecursion_5fexception_2eh_32',['lock_recursion_exception.h',['../lock__recursion__exception_8h.html',1,'']]]
+  ['lock_5fguard_2eh_32',['lock_guard.h',['../lock__guard_8h.html',1,'']]],
+  ['lock_5frecursion_5fexception_2eh_33',['lock_recursion_exception.h',['../lock__recursion__exception_8h.html',1,'']]]
 ];
