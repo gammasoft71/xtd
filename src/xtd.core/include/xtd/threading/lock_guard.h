@@ -28,7 +28,7 @@ namespace xtd {
     /// The following example uses the xtd::threading::lock_guard class to synchronize access to a single instance of a random number generator represented by the xtd::random class. The example creates ten threads, each of which executes asynchronously on a thread pool thread. Each thread generates 10,000 random numbers, calculates their average, and updates two procedure-level variables that maintain a running total of the number of random numbers generated and their sum. After all threads have executed, these two values are then used to calculate the overall mean.
     /// @include lock_guard.cpp
     /// @remarks See xtd::threading::monitor for more information.
-    class core_export_ lock_guard final : public xtd::object {
+    class core_export_ lock_guard final : public object {
     public:
       /// @name Constructors
 
@@ -37,7 +37,7 @@ namespace xtd {
       /// @param obj The object on which to acquire the monitor lock.
       /// @remarks When the xtd::threading::lock_guard destroyed it releases the exclusive lock specified in the constructor.
       template<typename object_t>
-      explicit lock_guard(const object_t& lock) : lock_(xtd::threading::monitor::get_ptr(lock)) {xtd::threading::monitor::enter_ptr(lock_);}
+      explicit lock_guard(const object_t& lock) : lock_(monitor::get_ptr(lock)) {monitor::enter_ptr(lock_);}
       /// @}
       
       /// @cond
@@ -112,7 +112,7 @@ namespace xtd {
       
     private:
       lock_guard() = delete;
-      std::pair<xtd::intptr, bool> lock_;
+      monitor::item_ptr lock_;
     };
   }
 }
