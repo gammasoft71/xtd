@@ -157,7 +157,7 @@ bool monitor::try_enter_ptr(ptr_item ptr, int32 milliseconds_timeout, bool& lock
   return lock_taken;
 }
 
-bool monitor::wait_ptr(ptr_item ptr, int32 milliseconds_timeout, bool exit_context) {
+bool monitor::wait_ptr(ptr_item ptr, int32 milliseconds_timeout) {
   item* monitor_item = nullptr;
   get_static_data().monitor_items_sync.enter();
   if (is_entered_ptr(ptr)) monitor_item = &get_static_data().monitor_items[ptr.first];
@@ -167,9 +167,6 @@ bool monitor::wait_ptr(ptr_item ptr, int32 milliseconds_timeout, bool exit_conte
   if (monitor_item->thread_id != thread::current_thread().thread_id()) throw synchronization_lock_exception {csf_};
 
   monitor_item->event.leave();
-  if (exit_context) {
-    /// @todo Make exit context when exist_context is true.
-  }
   interlocked::increment(monitor_item->wait_threads);
   auto result = monitor_item->wait_event.wait_one(milliseconds_timeout);
   interlocked::decrement(monitor_item->wait_threads);
