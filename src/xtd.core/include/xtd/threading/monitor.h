@@ -127,6 +127,7 @@ namespace xtd {
     /// * The xtd::threading::monitor class is purely managed, fully portable, and might be more efficient in terms of operating-system resource requirements.
     /// * xtd::threading::wait_handle objects represent operating-system waitable objects, are useful for synchronizing between managed and unmanaged code, and expose some advanced operating-system features like the ability to wait on many objects at once.
     class core_export_ monitor static_ {
+      class critical_sction;
       struct item;
 
       using item_collection = std::unordered_map<intptr, item>;
@@ -417,7 +418,6 @@ namespace xtd {
       static void pulse_all_ptr(ptr_item obj);
       static bool try_enter_ptr(ptr_item ptr, int32 milliseconds_timeout, bool& lock_taken) noexcept;
       static bool wait_ptr(ptr_item ptr, int32 milliseconds_timeout, bool exit_context) noexcept;
-      static thread_local item* current_locked_object;
     };
   }
 }
