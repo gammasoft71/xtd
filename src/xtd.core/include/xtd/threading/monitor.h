@@ -40,6 +40,35 @@ namespace xtd {
     /// @par Examples
     /// The following example uses the xtd::threading::monitor class to synchronize access to a single instance of a random number generator represented by the xtd::random class. The example creates ten threads, each of which executes asynchronously on a thread pool thread. Each thread generates 10,000 random numbers, calculates their average, and updates two procedure-level variables that maintain a running total of the number of random numbers generated and their sum. After all threads have executed, these two values are then used to calculate the overall mean.
     /// @include monitor.cpp
+    /// Because they can be accessed from any task running on a thread pool thread, access to the variables total and n must also be synchronized. The xtd::threading::interlocked::add method is used for this purpose.
+    /// <br><br>The following example demonstrates the combined use of the xtd::threading::monitor class (implemented with the #lock_ keyword), the xtd::threading::interlocked class, and the xtd::threading::auto_reset_event class. It defines two classes, sync_resource and un_sync_resource, that respectively provide synchronized and unsynchronized access to a resource. To ensure that the example illustrates the difference between the synchronized and unsynchronized access (which could be the case if each method call completes rapidly), the method includes a random delay: for threads whose xtd::threading::thread::managed_thread_id property is even, the method calls xtd::threading::thread::sleep to introduce a delay of 2,000 milliseconds.
+    /// @include monitor_lock.cpp
+    /// The example defines a variable, num_ops, that defines the number of threads that will attempt to access the resource. The application thread calls the xtd::threading::thread_pool::queue_user_work_item method for synchronized and unsynchronized access five times each. The xtd::threading::thread_pool::queue_user_work_item method has a single parameter, a delegate that accepts no parameters and returns no value. For synchronized access, it invokes the sync_update_resource method; for unsynchronized access, it invokes the un_sync_update_resource method. After each set of method calls, the application thread calls the xtd::thrrading::auto_reset_event::wait_one method so that it blocks until the xtd::threading::auto_reset_event instance is signaled.
+    /// <br><br>Each call to the sync_update_resource method calls the sync_resource::access method and then calls the xtd::threading::interlocked::decrement method to decrement the num_ops counter. The xtd::threading::interlocked::decrement method Is used to decrement the counter, because otherwise you cannot be certain that a second thread will access the value before a first thread's decremented value has been stored in the variable. When the last synchronized worker thread decrements the counter to zero, indicating that all synchronized threads have completed accessing the resource, the syncUpdate_resource method calls the xtd::threading::event_wait_handle::set method, which signals the main thread to continue execution.
+    /// <br><br>Each call to the un_sync_update_resource method calls the un_syncResource::access method and then calls the xtd::threading::interlocked::decrement method to decrement the num_ops counter. Once again, the xtd::threading::interlocked::decrement method Is used to decrement the counter to ensure that a second thread does not access the value before a first thread's decremented value has been assigned to the variable. When the last unsynchronized worker thread decrements the counter to zero, indicating that no more unsynchronized threads need to access the resource, the un_sync_update_resource method calls the xtd::threading::event_wait_handle::set method, which signals the main thread to continue execution.
+    /// <br><br>As the output from the example shows, synchronized access ensures that the calling thread exits the protected resource before another thread can access it; each thread waits on its predecessor. On the other hand, without the lock, the un_sync_resource::access method is called in the order in which threads reach it.
+    /// @remarks The xtd::threading::monitor class allows you to synchronize access to a region of code by taking and releasing a lock on a particular object by calling the xtd::threading::monitor::enter, xtd::threading::monitor::try_enter, and xtd::threading::monitor::exit methods. Object locks provide the ability to restrict access to a block of code, commonly called a critical section. While a thread owns the lock for an object, no other thread can acquire that lock. You can also use the xtd::threading::monitor class to ensure that no other thread is allowed to access a section of application code being executed by the lock owner, unless the other thread is executing the code using a different locked object. Because the Monitor class has thread affinity, the thread that acquired a lock must release the lock by calling the Monitor.Exit method.
+    /// @par The xtd::threading::monitor class: An overview
+    /// Monitor has the following features:
+    /// * It is associated with an object on demand.
+    /// * It is unbound, which means it can be called directly from any context.
+    /// * An instance of the xtd::threading::monitor class cannot be created; the methods of the xtd::threading::monitor class are all static. Each method is passed the synchronized object that controls access to the critical section.
+    /// The following table describes the actions that can be taken by threads that access synchronized objects:
+    /// | Action                                                             | Description                                                                                                                                                                                                                                                                                                                                                                                                                              |
+    /// | ------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    /// | xtd::threading::monitor::enter, xtd::threading::monitor::try_enter | Acquires a lock for an object. This action also marks the beginning of a critical section. No other thread can enter the critical section unless it is executing the instructions in the critical section using a different locked object.                                                                                                                                                                                               |
+    /// | xtd::threading::monitor::wait                                      | Releases the lock on an object in order to permit other threads to lock and access the object. The calling thread waits while another thread accesses the object. Pulse signals are used to notify waiting threads about changes to an object's state.                                                                                                                                                                                   |
+    /// | xtd::threading::monitor::pulse, xtd::threading::monitor::pulse_all | Sends a signal to one or more waiting threads. The signal notifies a waiting thread that the state of the locked object has changed, and the owner of the lock is ready to release the lock. The waiting thread is placed in the object's ready queue so that it might eventually receive the lock for the object. Once the thread has the lock, it can check the new state of the object to see if the required state has been reached. |
+    /// | xtd::threading::monitor::exit                                      | Releases the lock on an object. This action also marks the end of a critical section protected by the locked object.                                                                                                                                                                                                                                                                                                                     |
+    /// There are two sets of overloads for the xtd::threading::monitor::enter and xtd::threading::monitor::try_enter methods. One set of overloads has a boolean parameter that is atomically set to true if the lock is acquired, even if an exception is thrown when acquiring the lock. Use these overloads if it is critical to release the lock in all cases, even when the resources the lock is protecting might not be in a consistent state.
+    /// @par The lock object
+    /// The xtd::threading::monitor class consists of static methods that operate on an object that controls access to the critical section. The following information is maintained for each synchronized object:
+    /// * A reference to the thread that currently holds the lock.
+    /// * A reference to a ready queue, which contains the threads that are ready to obtain the lock.
+    /// * A reference to a waiting queue, which contains the threads that are waiting for notification of a change in the state of the locked object.
+    /// @par The critical section
+    /// Use the xtd::threading::monitor::enter and xtd::threading::monitor::exit methods to mark the beginning and end of a critical section.
+    /// @note The functionality provided by the xtd::threading::monitor::enter and xtd::threading::monitor::exit methods is identical to that provided by the xtd::threading::lock_guard object and the #lock_ keyword.
     class core_export_ monitor static_ {      
       struct item;
 
@@ -269,12 +298,43 @@ namespace xtd {
       static bool try_enter(const object_t& obj, const time_span& timeout, bool& lock_taken) noexcept {
         return try_enter_ptr(get_ptr(obj), timeout.total_milliseconds_duration().count(), lock_taken);
       }
+
+      /// @brief Releases the lock on an object and blocks the current thread until it reacquires the lock. If the specified time-out interval elapses, the thread enters the ready queue. This method also specifies whether the synchronization domain for the context (if in a synchronized context) is exited before the wait and reacquired afterward.
+      /// @param obj The object on which to wait.
+      /// @param milliseconds_timeout The number of milliseconds to wait before the thread enters the ready queue.
+      /// @param exit_context true to exit and reacquire the synchronization domain for the context (if in a synchronized context) before the wait; otherwise, false.
+      /// @return true if the lock was reacquired before the specified time elapsed; false if the lock was reacquired after the specified time elapsed. The method does not return until the lock is reacquired.
+      ///
+      template<typename object_t>
+      bool wait(const object_t& obj, int32 milliseconds_timeout, bool exit_context) {
+        return wait_ptr(get_ptr(obj), milliseconds_timeout, exit_context);
+      }
       
+      template<typename object_t>
+      bool wait(const object_t& obj, const time_span& timeout, bool exit_context) {
+        return wait_ptr(get_ptr(obj), as<int32>(timeout.total_milliseconds()), exit_context);
+      }
+
+      template<typename object_t>
+      bool wait(const object_t& obj, int32 milliseconds_timeout) {
+        return wait_ptr(get_ptr(obj), milliseconds_timeout, false);
+      }
+      
+      template<typename object_t>
+      bool wait(const object_t& obj, const time_span& timeout) {
+        return wait_ptr(get_ptr(obj), as<int32>(timeout.total_milliseconds()), false);
+      }
+
+      template<typename object_t>
+      bool wait(const object_t& obj) {
+        return wait_ptr(get_ptr(obj), timeout::infinite, false);
+      }
+      /// @}
+
       /// @cond
       template<typename type_t>
       static bool try_enter(const type_t* str, const time_span& timeout, bool& lock_taken) {return try_enter(ustring(str), timeout, lock_taken);}
       /// @endcond
-      /// @}
       
     private:
       friend class xtd::threading::lock_guard;
@@ -291,14 +351,15 @@ namespace xtd {
       template<typename type_t>
       static ptr_item get_ptr(const type_t* str) {return get_ptr(ustring(str));}
 
-      static void enter_ptr(ptr_item item);
-      static void enter_ptr(ptr_item item, bool& lock_taken);
-      static void exit_ptr(ptr_item item);
-      static intptr get_ustring_ptr(const ustring& ptr);
-      static bool is_entered_ptr(ptr_item item) noexcept;
+      static void enter_ptr(ptr_item ptr);
+      static void enter_ptr(ptr_item ptr, bool& lock_taken);
+      static void exit_ptr(ptr_item ptr);
+      static intptr get_ustring_ptr(const ustring& str);
+      static bool is_entered_ptr(ptr_item ptr) noexcept;
       static void pulse_ptr(ptr_item obj);
       static void pulse_all_ptr(ptr_item obj);
-      static bool try_enter_ptr(ptr_item item, int32 milliseconds_timeout, bool& lock_taken) noexcept;
+      static bool try_enter_ptr(ptr_item ptr, int32 milliseconds_timeout, bool& lock_taken) noexcept;
+      static bool wait_ptr(ptr_item ptr, int32 milliseconds_timeout, bool exit_context) noexcept;
       static thread_local item* current_locked_object;
     };
   }
