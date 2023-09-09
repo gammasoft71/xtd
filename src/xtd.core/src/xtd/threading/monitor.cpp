@@ -62,17 +62,17 @@ struct monitor::static_data {
   monitor::item_collection monitor_items;
 };
 
-void monitor::enter_ptr(ptr_item ptr) {
+void monitor::enter_ptr(item_ptr ptr) {
   bool lock_taken = false;
   enter_ptr(ptr, lock_taken);
 }
 
-void monitor::enter_ptr(ptr_item ptr, bool& lock_taken) {
+void monitor::enter_ptr(item_ptr ptr, bool& lock_taken) {
   if (!try_enter_ptr(ptr, timeout::infinite, lock_taken))
     throw invalid_operation_exception {csf_};
 }
 
-void monitor::exit_ptr(ptr_item ptr) {
+void monitor::exit_ptr(item_ptr ptr) {
   get_static_data().monitor_items_sync.enter();
   if (!is_entered_ptr(ptr)) {
     get_static_data().monitor_items_sync.leave();
@@ -106,12 +106,12 @@ intptr monitor::get_ustring_ptr(const ustring& str) {
   return ptr;
 }
 
-bool monitor::is_entered_ptr(ptr_item ptr) noexcept {
+bool monitor::is_entered_ptr(item_ptr ptr) noexcept {
   auto found = get_static_data().monitor_items.find(ptr.first) != get_static_data().monitor_items.end();
   return found;
 }
 
-void monitor::pulse_ptr(ptr_item ptr) {
+void monitor::pulse_ptr(item_ptr ptr) {
   item* monitor_item = nullptr;
   get_static_data().monitor_items_sync.enter();
   if (is_entered_ptr(ptr)) monitor_item = &get_static_data().monitor_items[ptr.first];
@@ -123,7 +123,7 @@ void monitor::pulse_ptr(ptr_item ptr) {
   monitor_item->wait_event.set();
 }
 
-void monitor::pulse_all_ptr(ptr_item ptr) {
+void monitor::pulse_all_ptr(item_ptr ptr) {
   item* monitor_item = nullptr;
   get_static_data().monitor_items_sync.enter();
   if (is_entered_ptr(ptr)) monitor_item = &get_static_data().monitor_items[ptr.first];
@@ -138,7 +138,7 @@ void monitor::pulse_all_ptr(ptr_item ptr) {
   }
 }
 
-bool monitor::try_enter_ptr(ptr_item ptr, int32 milliseconds_timeout, bool& lock_taken) noexcept {
+bool monitor::try_enter_ptr(item_ptr ptr, int32 milliseconds_timeout, bool& lock_taken) noexcept {
   if (milliseconds_timeout < timeout::infinite) return false;
   get_static_data().monitor_items_sync.enter();
   if (!is_entered_ptr(ptr)) {
@@ -157,7 +157,7 @@ bool monitor::try_enter_ptr(ptr_item ptr, int32 milliseconds_timeout, bool& lock
   return lock_taken;
 }
 
-bool monitor::wait_ptr(ptr_item ptr, int32 milliseconds_timeout) {
+bool monitor::wait_ptr(item_ptr ptr, int32 milliseconds_timeout) {
   item* monitor_item = nullptr;
   get_static_data().monitor_items_sync.enter();
   if (is_entered_ptr(ptr)) monitor_item = &get_static_data().monitor_items[ptr.first];
