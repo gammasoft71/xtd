@@ -14,6 +14,7 @@ add_projects(
   manual_reset_event
   mixing_std_and_xtd_threads
   monitor
+  monitor_lock
   mutex
   semaphore
   thread
