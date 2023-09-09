@@ -127,10 +127,11 @@ namespace xtd {
     /// * The xtd::threading::monitor class is purely managed, fully portable, and might be more efficient in terms of operating-system resource requirements.
     /// * xtd::threading::wait_handle objects represent operating-system waitable objects, are useful for synchronizing between managed and unmanaged code, and expose some advanced operating-system features like the ability to wait on many objects at once.
     class core_export_ monitor static_ {
-      class critical_sction;
-      struct item;
+      class critical_section;
+      
+      struct monitor_item;
 
-      using item_collection = std::unordered_map<intptr, item>;
+      using monitor_item_collection = std::unordered_map<intptr, monitor_item>;
       
       using ptr_item = std::pair<intptr, bool>;
 
