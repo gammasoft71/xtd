@@ -47,9 +47,9 @@ namespace xtd {
     /// <br><br>Each call to the sync_update_resource method calls the sync_resource::access method and then calls the xtd::threading::interlocked::decrement method to decrement the num_ops counter. The xtd::threading::interlocked::decrement method Is used to decrement the counter, because otherwise you cannot be certain that a second thread will access the value before a first thread's decremented value has been stored in the variable. When the last synchronized worker thread decrements the counter to zero, indicating that all synchronized threads have completed accessing the resource, the syncUpdate_resource method calls the xtd::threading::event_wait_handle::set method, which signals the main thread to continue execution.
     /// <br><br>Each call to the un_sync_update_resource method calls the un_syncResource::access method and then calls the xtd::threading::interlocked::decrement method to decrement the num_ops counter. Once again, the xtd::threading::interlocked::decrement method Is used to decrement the counter to ensure that a second thread does not access the value before a first thread's decremented value has been assigned to the variable. When the last unsynchronized worker thread decrements the counter to zero, indicating that no more unsynchronized threads need to access the resource, the un_sync_update_resource method calls the xtd::threading::event_wait_handle::set method, which signals the main thread to continue execution.
     /// <br><br>As the output from the example shows, synchronized access ensures that the calling thread exits the protected resource before another thread can access it; each thread waits on its predecessor. On the other hand, without the lock, the un_sync_resource::access method is called in the order in which threads reach it.
-    /// @remarks The xtd::threading::monitor class allows you to synchronize access to a region of code by taking and releasing a lock on a particular object by calling the xtd::threading::monitor::enter, xtd::threading::monitor::try_enter, and xtd::threading::monitor::exit methods. Object locks provide the ability to restrict access to a block of code, commonly called a critical section. While a thread owns the lock for an object, no other thread can acquire that lock. You can also use the xtd::threading::monitor class to ensure that no other thread is allowed to access a section of application code being executed by the lock owner, unless the other thread is executing the code using a different locked object. Because the Monitor class has thread affinity, the thread that acquired a lock must release the lock by calling the Monitor.Exit method.
+    /// @remarks The xtd::threading::monitor class allows you to synchronize access to a region of code by taking and releasing a lock on a particular object by calling the xtd::threading::monitor::enter, xtd::threading::monitor::try_enter, and xtd::threading::monitor::exit methods. Object locks provide the ability to restrict access to a block of code, commonly called a critical section. While a thread owns the lock for an object, no other thread can acquire that lock. You can also use the xtd::threading::monitor class to ensure that no other thread is allowed to access a section of application code being executed by the lock owner, unless the other thread is executing the code using a different locked object. Because the xtd::threading::monotor class has thread affinity, the thread that acquired a lock must release the lock by calling the xtd::threading::monotor::exit method.
     /// @par The xtd::threading::monitor class: An overview
-    /// Monitor has the following features:
+    /// xtd::threading::monotor has the following features:
     /// * It is associated with an object on demand.
     /// * It is unbound, which means it can be called directly from any context.
     /// * An instance of the xtd::threading::monitor class cannot be created; the methods of the xtd::threading::monitor class are all static. Each method is passed the synchronized object that controls access to the critical section.
@@ -128,13 +128,9 @@ namespace xtd {
     /// * xtd::threading::wait_handle objects represent operating-system waitable objects, are useful for synchronizing between managed and unmanaged code, and expose some advanced operating-system features like the ability to wait on many objects at once.
     class core_export_ monitor static_ {
       class critical_section;
-      
       struct monitor_item;
-
       using monitor_item_collection = std::unordered_map<intptr, monitor_item>;
-      
       using ptr_item = std::pair<intptr, bool>;
-
       struct static_data;
       
     public:
@@ -143,8 +139,8 @@ namespace xtd {
       /// @{
       /// @brief Acquires an exclusive lock on the specified obj.
       /// @param obj The object on which to acquire the monitor lock.
-      /// @remarks Use Enter to acquire the Monitor on the object passed as the parameter. If another thread has executed an Enter on the object, but has not yet executed the corresponding Exit, the current thread will block until the other thread releases the object. It is legal for the same thread to invoke Enter more than once without it blocking; however, an equal number of Exit calls must be invoked before other threads waiting on the object will unblock.
-      /// @remarks Usex Monitor to lock objects (that is, reference types), not value types. When you pass a value type variable to Enter, it is boxed as an object. If you pass the same variable to Enter again, the thread is block. The code that Monitor is supposedly protecting is not protected. Furthermore, when you pass the variable to Exit, still another separate object is created. Because the object passed to Exit is different from the object passed to Enter, Monitor throws SynchronizationLockException. For details, see the conceptual topic Monitors.
+      /// @remarks Use xtd::threading::monotor::enter to acquire the xtd::threading::monotor on the object passed as the parameter. If another thread has executed an xtd::threading::monotor::enter on the object, but has not yet executed the corresponding xtd::threading::monitor::exit, the current thread will block until the other thread releases the object. It is legal for the same thread to invoke xtd::threading::monotor::enter more than once without it blocking; however, an equal number of xtd::threading::monitor::exit calls must be invoked before other threads waiting on the object will unblock.
+      /// @remarks Usex xtd::threading::monotor to lock objects (that is, reference types), not value types. When you pass a value type variable to xtd::threading::monotor::enter, it is boxed as an object. If you pass the same variable to xtd::threading::monotor::enter again, the thread is block. The code that xtd::threading::monotor is supposedly protecting is not protected. Furthermore, when you pass the variable to xtd::threading::monitor::exit, still another separate object is created. Because the object passed to xtd::threading::monitor::exit is different from the object passed to xtd::threading::monotor::enter, xtd::threading::monotor throws SynchronizationLockException. For details, see the conceptual topic Monitors.
       template<typename object_t>
       static void enter(const object_t& obj) {
         auto lock_taken = false;
@@ -160,8 +156,8 @@ namespace xtd {
       /// @param obj The object on which to acquire the monitor lock.
       /// @param lock_taken The result of the attempt to acquire the lock, passed by reference. The input must be false. The output is true if the lock is acquired; otherwise, the output is false. The output is set even if an exception occurs during the attempt to acquire the lock.
       /// @note If no exception occurs, the output of this method is always true.
-      /// @remarks Use Enter to acquire the Monitor on the object passed as the parameter. If another thread has executed an Enter on the object, but has not yet executed the corresponding Exit, the current thread will block until the other thread releases the object. It is legal for the same thread to invoke Enter more than once without it blocking; however, an equal number of Exit calls must be invoked before other threads waiting on the object will unblock.
-      /// @remarks Use Monitor to lock objects (that is, reference types), not value types. When you pass a value type variable to Enter, it is boxed as an object. If you pass the same variable to Enter again, the thread is block. The code that Monitor is supposedly protecting is not protected. Furthermore, when you pass the variable to Exit, still another separate object is created. Because the object passed to Exit is different from the object passed to Enter, Monitor throws SynchronizationLockException. For details, see the conceptual topic Monitors.
+      /// @remarks Use xtd::threading::monotor::enter to acquire the xtd::threading::monotor on the object passed as the parameter. If another thread has executed an xtd::threading::monotor::enter on the object, but has not yet executed the corresponding xtd::threading::monitor::exit, the current thread will block until the other thread releases the object. It is legal for the same thread to invoke xtd::threading::monotor::enter more than once without it blocking; however, an equal number of xtd::threading::monitor::exit calls must be invoked before other threads waiting on the object will unblock.
+      /// @remarks Use xtd::threading::monotor to lock objects (that is, reference types), not value types. When you pass a value type variable to xtd::threading::monotor::enter, it is boxed as an object. If you pass the same variable to xtd::threading::monotor::enter again, the thread is block. The code that xtd::threading::monotor is supposedly protecting is not protected. Furthermore, when you pass the variable to xtd::threading::monitor::exit, still another separate object is created. Because the object passed to xtd::threading::monitor::exit is different from the object passed to xtd::threading::monotor::enter, xtd::threading::monotor throws SynchronizationLockException. For details, see the conceptual topic Monitors.
       template<typename object_t>
       static void enter(const object_t& obj, bool& lock_taken) {
         enter_ptr(get_ptr(obj), lock_taken);
@@ -174,8 +170,8 @@ namespace xtd {
 
       /// @brief Acquires an exclusive lock on the specified obj.
       /// @param obj The object on which to acquire the monitor lock.
-      /// @remarks Use Enter to acquire the Monitor on the object passed as the parameter. If another thread has executed an Enter on the object, but has not yet executed the corresponding Exit, the current thread will block until the other thread releases the object. It is legal for the same thread to invoke Enter more than once without it blocking; however, an equal number of Exit calls must be invoked before other threads waiting on the object will unblock.
-      /// @remarks Usex Monitor to lock objects (that is, reference types), not value types. When you pass a value type variable to Enter, it is boxed as an object. If you pass the same variable to Enter again, the thread is block. The code that Monitor is supposedly protecting is not protected. Furthermore, when you pass the variable to Exit, still another separate object is created. Because the object passed to Exit is different from the object passed to Enter, Monitor throws SynchronizationLockException. For details, see the conceptual topic Monitors.
+      /// @remarks Use xtd::threading::monotor::enter to acquire the xtd::threading::monotor on the object passed as the parameter. If another thread has executed an xtd::threading::monotor::enter on the object, but has not yet executed the corresponding xtd::threading::monitor::exit, the current thread will block until the other thread releases the object. It is legal for the same thread to invoke xtd::threading::monotor::enter more than once without it blocking; however, an equal number of xtd::threading::monitor::exit calls must be invoked before other threads waiting on the object will unblock.
+      /// @remarks Usex xtd::threading::monotor to lock objects (that is, reference types), not value types. When you pass a value type variable to xtd::threading::monotor::enter, it is boxed as an object. If you pass the same variable to xtd::threading::monotor::enter again, the thread is block. The code that xtd::threading::monotor is supposedly protecting is not protected. Furthermore, when you pass the variable to xtd::threading::monitor::exit, still another separate object is created. Because the object passed to xtd::threading::monitor::exit is different from the object passed to xtd::threading::monotor::enter, xtd::threading::monotor throws SynchronizationLockException. For details, see the conceptual topic Monitors.
       template<typename object_t>
       static bool is_entered(const object_t& obj) {
         return is_entered_ptr(get_ptr(obj));
@@ -192,7 +188,7 @@ namespace xtd {
       /// @remarks The thread that currently owns the lock on the specified object invokes this method to signal the next thread in line for the lock. Upon receiving the pulse, the waiting thread is moved to the ready queue. When the thread that invoked Pulse releases the lock, the next thread in the ready queue (which is not necessarily the thread that was pulsed) acquires the lock.
       template<typename object_t>
       static void pulse(const object_t& obj) {
-        pulse_ptr(rget_ptr(obj));
+        pulse_ptr(get_ptr(obj));
       }
       
       /// @cond
@@ -219,8 +215,8 @@ namespace xtd {
 
       /// @brief Releases an exclusive lock on the specified obj.
       /// @param obj The object on which to release the lock.
-      /// @remarks The calling thread must own the lock on the obj parameter. If the calling thread owns the lock on the specified object, and has made an equal number of Exit and Enter calls for the object, then the lock is released. If the calling thread has not invoked Exit as many times as Enter, the lock is not released.
-      /// @remarks If the lock is released and other threads are in the ready queue for the object, one of the threads acquires the lock. If other threads are in the waiting queue waiting to acquire the lock, they are not automatically moved to the ready queue when the owner of the lock calls Exit. To move one or more waiting threads into the ready queue, call Pulse or PulseAll before invoking Exit.
+      /// @remarks The calling thread must own the lock on the obj parameter. If the calling thread owns the lock on the specified object, and has made an equal number of xtd::threading::monitor::exit and xtd::threading::monotor::enter calls for the object, then the lock is released. If the calling thread has not invoked xtd::threading::monitor::exit as many times as xtd::threading::monotor::enter, the lock is not released.
+      /// @remarks If the lock is released and other threads are in the ready queue for the object, one of the threads acquires the lock. If other threads are in the waiting queue waiting to acquire the lock, they are not automatically moved to the ready queue when the owner of the lock calls xtd::threading::monitor::exit. To move one or more waiting threads into the ready queue, call Pulse or PulseAll before invoking xtd::threading::monitor::exit.
       template<typename object_t>
       static void exit(const object_t& obj) {
         exit_ptr(get_ptr(obj));
@@ -235,7 +231,7 @@ namespace xtd {
       /// @param obj The object on which to acquire the lock.
       /// @return bool true if the current thread acquires the lock; otherwise, false
       /// @remarks If successful, this method acquires an exclusive lock on the obj parameter. This method returns immediately, whether or not the lock is available.
-      /// @remarks This method is similar to Enter, but it will never block. If the thread cannot enter without blocking, the method returns false, and the thread does not enter the critical section.
+      /// @remarks This method is similar to xtd::threading::monotor::enter, but it will never block. If the thread cannot enter without blocking, the method returns false, and the thread does not enter the critical section.
       template<typename object_t>
       static bool try_enter(const object_t& obj) noexcept {
         auto lock_taken = false;
@@ -253,7 +249,7 @@ namespace xtd {
       /// @note If no exception occurs, the output of this method is always true.
       /// @return bool true if the current thread acquires the lock; otherwise, false
       /// @remarks If successful, this method acquires an exclusive lock on the obj parameter. This method returns immediately, whether or not the lock is available.
-      /// @remarks This method is similar to Enter, but it will never block. If the thread cannot enter without blocking, the method returns false, and the thread does not enter the critical section.
+      /// @remarks This method is similar to xtd::threading::monotor::enter, but it will never block. If the thread cannot enter without blocking, the method returns false, and the thread does not enter the critical section.
       template<typename object_t>
       static bool try_enter(const object_t& obj, bool& lock_taken) noexcept {
         return try_enter_ptr(get_ptr(obj), timeout::infinite, lock_taken);
@@ -268,7 +264,7 @@ namespace xtd {
       /// @param obj The object on which to acquire the lock.
       /// @param milliseconds_timeout The number of milliseconds to wait for the lock.
       /// @return bool true if the current thread acquires the lock; otherwise, false
-      /// @remarks If the milliseconds_timeout parameter equals Timeout::Infinite, this method is equivalent to Enter. If milliseconds_timeout equals 0, this method is equivalent to try_enter.
+      /// @remarks If the milliseconds_timeout parameter equals Timeout::Infinite, this method is equivalent to xtd::threading::monotor::enter. If milliseconds_timeout equals 0, this method is equivalent to try_enter.
       template<typename object_t>
       static bool try_enter(const object_t& obj, int32 milliseconds_timeout) noexcept {
         auto lock_taken = false;
@@ -286,7 +282,7 @@ namespace xtd {
       /// @param lock_taken The result of the attempt to acquire the lock, passed by reference. The input must be false. The output is true if the lock is acquired; otherwise, the output is false. The output is set even if an exception occurs during the attempt to acquire the lock.
       /// @note If no exception occurs, the output of this method is always true.
       /// @return bool true if the current thread acquires the lock; otherwise, false
-      /// @remarks If the milliseconds_timeout parameter equals Timeout::Infinite, this method is equivalent to Enter. If milliseconds_timeout equals 0, this method is equivalent to try_enter.
+      /// @remarks If the milliseconds_timeout parameter equals Timeout::Infinite, this method is equivalent to xtd::threading::monotor::enter. If milliseconds_timeout equals 0, this method is equivalent to try_enter.
       template<typename object_t>
       static bool try_enter(const object_t& obj, int32 milliseconds_timeout, bool& lock_taken) noexcept {
         return try_enter_ptr(get_ptr(obj), milliseconds_timeout, lock_taken);
@@ -301,7 +297,7 @@ namespace xtd {
       /// @param obj The object on which to acquire the lock.
       /// @param milliseconds_timeout The number of milliseconds to wait for the lock.
       /// @return bool true if the current thread acquires the lock; otherwise, false
-      /// @remarks If the milliseconds_timeout parameter equals Timeout::Infinite, this method is equivalent to Enter. If milliseconds_timeout equals 0, this method is equivalent to try_enter.
+      /// @remarks If the milliseconds_timeout parameter equals Timeout::Infinite, this method is equivalent to xtd::threading::monotor::enter. If milliseconds_timeout equals 0, this method is equivalent to try_enter.
       template<typename object_t>
       static bool try_enter(const object_t& obj, int64 milliseconds_timeout) noexcept {
         auto lock_taken = false;
@@ -319,7 +315,7 @@ namespace xtd {
       /// @param lock_taken The result of the attempt to acquire the lock, passed by reference. The input must be false. The output is true if the lock is acquired; otherwise, the output is false. The output is set even if an exception occurs during the attempt to acquire the lock.
       /// @note If no exception occurs, the output of this method is always true.
       /// @return bool true if the current thread acquires the lock; otherwise, false
-      /// @remarks If the milliseconds_timeout parameter equals Timeout::Infinite, this method is equivalent to Enter. If milliseconds_timeout equals 0, this method is equivalent to try_enter.
+      /// @remarks If the milliseconds_timeout parameter equals Timeout::Infinite, this method is equivalent to xtd::threading::monotor::enter. If milliseconds_timeout equals 0, this method is equivalent to try_enter.
       template<typename object_t>
       static bool try_enter(const object_t& obj, int64 milliseconds_timeout, bool& lock_taken) noexcept {
         return try_enter_ptr(get_ptr(obj), static_cast<int32>(milliseconds_timeout), lock_taken);
@@ -334,7 +330,7 @@ namespace xtd {
       /// @param obj The object on which to acquire the lock.
       /// @param timeout A time_span representing the amount of time to wait for the lock. A value of -1 millisecond specifies an infinite wait.
       /// @return bool true if the current thread acquires the lock; otherwise, false
-      /// @remarks If the value of the timeout parameter converted to milliseconds equals -1, this method is equivalent to Enter. If the value of timeout equals 0, this method is equivalent to try_enter.
+      /// @remarks If the value of the timeout parameter converted to milliseconds equals -1, this method is equivalent to xtd::threading::monotor::enter. If the value of timeout equals 0, this method is equivalent to try_enter.
       template<typename object_t>
       static bool try_enter(const object_t& obj, const time_span& timeout) noexcept {
         auto lock_taken = false;
@@ -352,7 +348,7 @@ namespace xtd {
       /// @param lock_taken The result of the attempt to acquire the lock, passed by reference. The input must be false. The output is true if the lock is acquired; otherwise, the output is false. The output is set even if an exception occurs during the attempt to acquire the lock.
       /// @note If no exception occurs, the output of this method is always true.
       /// @return bool true if the current thread acquires the lock; otherwise, false
-      /// @remarks If the value of the timeout parameter converted to milliseconds equals -1, this method is equivalent to Enter. If the value of timeout equals 0, this method is equivalent to try_enter.
+      /// @remarks If the value of the timeout parameter converted to milliseconds equals -1, this method is equivalent to xtd::threading::monotor::enter. If the value of timeout equals 0, this method is equivalent to try_enter.
       template<typename object_t>
       static bool try_enter(const object_t& obj, const time_span& timeout, bool& lock_taken) noexcept {
         return try_enter_ptr(get_ptr(obj), timeout.total_milliseconds_duration().count(), lock_taken);
@@ -365,27 +361,27 @@ namespace xtd {
       /// @return true if the lock was reacquired before the specified time elapsed; false if the lock was reacquired after the specified time elapsed. The method does not return until the lock is reacquired.
       ///
       template<typename object_t>
-      bool wait(const object_t& obj, int32 milliseconds_timeout, bool exit_context) {
+      static bool wait(const object_t& obj, int32 milliseconds_timeout, bool exit_context) {
         return wait_ptr(get_ptr(obj), milliseconds_timeout, exit_context);
       }
       
       template<typename object_t>
-      bool wait(const object_t& obj, const time_span& timeout, bool exit_context) {
+      static bool wait(const object_t& obj, const time_span& timeout, bool exit_context) {
         return wait_ptr(get_ptr(obj), as<int32>(timeout.total_milliseconds()), exit_context);
       }
 
       template<typename object_t>
-      bool wait(const object_t& obj, int32 milliseconds_timeout) {
+      static bool wait(const object_t& obj, int32 milliseconds_timeout) {
         return wait_ptr(get_ptr(obj), milliseconds_timeout, false);
       }
       
       template<typename object_t>
-      bool wait(const object_t& obj, const time_span& timeout) {
+      static bool wait(const object_t& obj, const time_span& timeout) {
         return wait_ptr(get_ptr(obj), as<int32>(timeout.total_milliseconds()), false);
       }
 
       template<typename object_t>
-      bool wait(const object_t& obj) {
+      static bool wait(const object_t& obj) {
         return wait_ptr(get_ptr(obj), timeout::infinite, false);
       }
       /// @}

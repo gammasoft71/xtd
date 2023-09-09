@@ -1,8 +1,9 @@
-#include "../../../include/xtd/threading/monitor.h"
+#include "../../../include/xtd/threading/auto_reset_event.h"
 #include "../../../include/xtd/threading/interlocked.h"
+#include "../../../include/xtd/threading/monitor.h"
 #include "../../../include/xtd/threading/mutex.h"
-#include "../../../include/xtd/threading/thread.h"
 #include "../../../include/xtd/threading/synchronization_lock_exception.h"
+#include "../../../include/xtd/threading/thread.h"
 #include "../../../include/xtd/not_implemented_exception.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/critical_section.h>
@@ -52,6 +53,8 @@ struct monitor::monitor_item {
   int32 used_counter {0};
   std::optional<ustring> name;
   intptr thread_id {thread::invalid_thread_id};
+  int32 wait_threads {0};
+  auto_reset_event wait_event {false};
 };
 
 struct monitor::static_data {
@@ -66,14 +69,14 @@ void monitor::enter_ptr(ptr_item ptr) {
 
 void monitor::enter_ptr(ptr_item ptr, bool& lock_taken) {
   if (!try_enter_ptr(ptr, timeout::infinite, lock_taken))
-    throw invalid_operation_exception(csf_);
+    throw invalid_operation_exception {csf_};
 }
 
 void monitor::exit_ptr(ptr_item ptr) {
   get_static_data().monitor_items_sync.enter();
   if (!is_entered_ptr(ptr)) {
     get_static_data().monitor_items_sync.leave();
-    throw synchronization_lock_exception(csf_);
+    throw synchronization_lock_exception {csf_};
   }
   
   monitor_item saved;
@@ -114,11 +117,10 @@ void monitor::pulse_ptr(ptr_item ptr) {
   if (is_entered_ptr(ptr)) monitor_item = &get_static_data().monitor_items[ptr.first];
   get_static_data().monitor_items_sync.leave();
   
-  if (monitor_item == nullptr) throw invalid_operation_exception(csf_);
+  if (monitor_item == nullptr) throw invalid_operation_exception {csf_};
   if (monitor_item->thread_id != thread::current_thread().thread_id()) throw synchronization_lock_exception {csf_};
 
-  // make pulse...
-  throw not_implemented_exception {csf_};
+  monitor_item->wait_event.set();
 }
 
 void monitor::pulse_all_ptr(ptr_item ptr) {
@@ -127,11 +129,13 @@ void monitor::pulse_all_ptr(ptr_item ptr) {
   if (is_entered_ptr(ptr)) monitor_item = &get_static_data().monitor_items[ptr.first];
   get_static_data().monitor_items_sync.leave();
   
-  if (monitor_item == nullptr) throw invalid_operation_exception(csf_);
+  if (monitor_item == nullptr) throw invalid_operation_exception {csf_};
   if (monitor_item->thread_id != thread::current_thread().thread_id()) throw synchronization_lock_exception {csf_};
-  
-  // make pulse...
-  throw not_implemented_exception {csf_};
+
+  while (monitor_item->wait_threads) {
+    monitor_item->wait_event.set();
+    thread::yield();
+  }
 }
 
 bool monitor::try_enter_ptr(ptr_item ptr, int32 milliseconds_timeout, bool& lock_taken) noexcept {
@@ -159,11 +163,18 @@ bool monitor::wait_ptr(ptr_item ptr, int32 milliseconds_timeout, bool exit_conte
   if (is_entered_ptr(ptr)) monitor_item = &get_static_data().monitor_items[ptr.first];
   get_static_data().monitor_items_sync.leave();
   
-  if (monitor_item == nullptr) throw invalid_operation_exception(csf_);
+  if (monitor_item == nullptr) throw invalid_operation_exception {csf_};
   if (monitor_item->thread_id != thread::current_thread().thread_id()) throw synchronization_lock_exception {csf_};
 
-  // make wait...
-  throw not_implemented_exception {csf_};
+  monitor_item->event.leave();
+  if (exit_context) {
+    /// @todo Make exit context when exist_context is true.
+  }
+  interlocked::increment(monitor_item->wait_threads);
+  auto result = monitor_item->wait_event.wait_one(milliseconds_timeout);
+  interlocked::decrement(monitor_item->wait_threads);
+  monitor_item->event.enter();
+  return result;
 }
 
 monitor::static_data& monitor::get_static_data() {
