@@ -19,6 +19,7 @@ namespace xtd {
   /// @brief The xtd::threading namespace provides classes and interfaces that enable multithreaded programming. In addition to classes for synchronizing thread activities and access to data ( xtd::threading::mutex, xtd::threading::monitor, xtd::threading::interlocked, xtd::threading::auto_reset_event, and so on), this namespace includes a xtd::threading::thread_pool class that allows you to use a pool of system-supplied threads, and a xtd::threading::timer class that executes callback methods on thread pool threads.
   namespace threading {
     /// @cond
+    class monitor;
     class thread_pool;
     /// @endcond
     
@@ -373,6 +374,7 @@ namespace xtd {
       /// @endcond
       
     private:
+      friend class monitor;
       friend class thread_pool;
       friend class wait_handle;
 
@@ -382,6 +384,7 @@ namespace xtd {
       static intptr get_current_thread_handle();
       static intptr get_current_thread_id();
       static static_data& get_static_data();
+      static thread& get_thread(intptr thread_id);
       void interrupt_internal();
       bool is_aborted() const noexcept;
       bool is_stopped() const noexcept;
