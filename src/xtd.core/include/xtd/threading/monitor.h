@@ -68,8 +68,65 @@ namespace xtd {
     /// * A reference to a waiting queue, which contains the threads that are waiting for notification of a change in the state of the locked object.
     /// @par The critical section
     /// Use the xtd::threading::monitor::enter and xtd::threading::monitor::exit methods to mark the beginning and end of a critical section.
-    /// @note The functionality provided by the xtd::threading::monitor::enter and xtd::threading::monitor::exit methods is identical to that provided by the xtd::threading::lock_guard object and the #lock_ keyword.
-    class core_export_ monitor static_ {      
+    /// @note The functionality provided by the xtd::threading::monitor::enter and xtd::threading::monitor::exit methods is identical to that provided by the xtd::threading::lock_guard object and the #lock_ keyword, except that with the xtd class: :threading::lock_guard class and the #lock_ keyword, the xtd::threading::monitor::enter method and the xtd::threading::monitor::exit method are always called, even if an exception has occurred.
+    /// @note It is therefore advisable to use the xtd::threading::lock_guard class or the #lock_ keyword instead of calling the xtd::threading::monitor::enter and xtd::threading::monitor::exit methods, to ensure that no critical sections remain in the xtd::threading::monitor class.
+    /// @par
+    /// The folowing code shows the use use of xtd:threading::monitor::enter and xtd:threading::monitor::exit when an exception occured :
+    /// @code
+    /// // Define the lock object.
+    /// auto obj = object {};
+    ///
+    /// try {
+    ///   // Define the critical section.
+    ///   monitor::enter(obj);
+    ///
+    ///   // Code to execute one thread at a time.
+    ///
+    ///   // Define the end of the critical section.
+    ///   monitor::exit(obj);
+    /// } catch(...) {
+    ///   // You also need to define the end of the critical section.
+    ///   monitor::exit(obj);
+    /// }
+    /// @endcode
+    /// <br>The same code with the xtd::threading::lock_guard class :
+    /// @code
+    /// // Define the lock object.
+    /// auto obj = object {};
+    ///
+    /// try {
+    ///   // Define the critical section.
+    ///   lock_guard lock {obj};
+    ///
+    ///   // Code to execute one thread at a time.
+    ///
+    /// } catch(...) {
+    ///
+    /// }
+    /// @endcode
+    /// <br>The same code with the #lock_ keyword :
+    /// @code
+    /// // Define the lock object.
+    /// auto obj = object {};
+    ///
+    /// try {
+    ///   // Define the critical section.
+    ///   lock_(obj) {
+    ///     // Code to execute one thread at a time.
+    ///   }
+    /// } catch(...) {
+    ///
+    /// }
+    /// @endcode
+    /// @par pulse, pulse_all, and wait
+    /// Once a thread owns the lock and has entered the critical section that the lock protects, it can call the xtd::threading::monitor::wait, xtd::threading::monitor::pulse, and xtd::threading::monitor::pulse_all methods.
+    /// <br><br>When the thread that holds the lock calls xtd::threading::monitor::wait, the lock is released and the thread is added to the waiting queue of the synchronized object. The first thread in the ready queue, if any, acquires the lock and enters the critical section. The thread that called Wait is moved from the waiting queue to the ready queue when either the xtd::threading::monitor::pulse or the xtd::threading::monitor::pulse_all method is called by the thread that holds the lock (to be moved, the thread must be at the head of the waiting queue). The xtd::threading::monitor::wait method returns when the calling thread reacquires the lock.
+    /// <br><br>When the thread that holds the lock calls xtd::threading::monitor::pulse, the thread at the head of the waiting queue is moved to the ready queue. The call to the xtd::threading::monitor::pulse_all method moves all the threads from the waiting queue to the ready queue.
+    /// @par Monitors and wait handles
+    /// It is important to note the distinction between the use of the xtd::threading::monitor class and xtd::threading::wait_handle objects.
+    /// * The xtd::threading::monitor class is purely managed, fully portable, and might be more efficient in terms of operating-system resource requirements.
+    /// * xtd::threading::wait_handle objects represent operating-system waitable objects, are useful for synchronizing between managed and unmanaged code, and expose some advanced operating-system features like the ability to wait on many objects at once.
+    class core_export_ monitor static_ {
       struct item;
 
       using item_collection = std::unordered_map<intptr, item>;
