@@ -10,5 +10,5 @@ void __throw_parse_format_exception(const std::string& message) {
 }
 
 void __throw_parse_overflow_exception() {
-  throw xtd::overflow_exception(csf_);
+  throw xtd::overflow_exception {csf_};
 }

@@ -36,13 +36,13 @@ intptr main_menu::create() {
 
 void main_menu::destroy(intptr main_menu) {
   if (!wxTheApp) return;
-  if (main_menu == 0) throw argument_exception(csf_);
+  if (main_menu == 0) throw argument_exception {csf_};
   reinterpret_cast<wxMenuBar*>(main_menu)->Destroy();
 }
 
 void main_menu::insert_item(intptr main_menu, size_t pos, intptr menu_item, const ustring& text) {
-  if (main_menu == 0) throw argument_exception(csf_);
-  if (menu_item == 0) throw argument_exception(csf_);
+  if (main_menu == 0) throw argument_exception {csf_};
+  if (menu_item == 0) throw argument_exception {csf_};
   
   auto wx_main_menu = reinterpret_cast<wxMenuBar*>(main_menu);
   
@@ -65,6 +65,6 @@ void main_menu::insert_item(intptr main_menu, size_t pos, intptr menu_item, cons
 }
 
 void main_menu::remove_item(intptr main_menu, size_t pos) {
-  if (main_menu == 0) throw argument_exception(csf_);
+  if (main_menu == 0) throw argument_exception {csf_};
   reinterpret_cast<wxMenuBar*>(main_menu)->Remove(pos);
 }

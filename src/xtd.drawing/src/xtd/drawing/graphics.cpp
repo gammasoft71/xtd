@@ -80,7 +80,7 @@ xtd::drawing::drawing_2d::compositing_mode graphics::compositing_mode() const no
 graphics& graphics::compositing_mode(xtd::drawing::drawing_2d::compositing_mode value) {
   if (data_->compositing_mode != value) {
     data_->compositing_mode = value;
-    if (data_->text_rendering_hint == xtd::drawing::text::text_rendering_hint::clear_type_grid_fit && data_->compositing_mode == xtd::drawing::drawing_2d::compositing_mode::source_copy) throw argument_exception(csf_);
+    if (data_->text_rendering_hint == xtd::drawing::text::text_rendering_hint::clear_type_grid_fit && data_->compositing_mode == xtd::drawing::drawing_2d::compositing_mode::source_copy) throw argument_exception {csf_};
     native::graphics::compositing_mode(handle(), static_cast<int32>(data_->compositing_mode));
   }
   return *this;
@@ -135,7 +135,7 @@ xtd::drawing::graphics_unit graphics::page_unit() const noexcept {
   return data_->page_unit;
 }
 graphics& graphics::page_unit(xtd::drawing::graphics_unit value) {
-  if (value == graphics_unit::world) throw argument_exception(csf_);
+  if (value == graphics_unit::world) throw argument_exception {csf_};
   data_->page_unit = value;
   return *this;
 }
@@ -182,7 +182,7 @@ xtd::drawing::text::text_rendering_hint graphics::text_rendering_hint() const no
 graphics& graphics::text_rendering_hint(xtd::drawing::text::text_rendering_hint value) {
   if (data_->text_rendering_hint != value) {
     data_->text_rendering_hint = value;
-    if (data_->text_rendering_hint == xtd::drawing::text::text_rendering_hint::clear_type_grid_fit && data_->compositing_mode == xtd::drawing::drawing_2d::compositing_mode::source_copy) throw argument_exception(csf_);
+    if (data_->text_rendering_hint == xtd::drawing::text::text_rendering_hint::clear_type_grid_fit && data_->compositing_mode == xtd::drawing::drawing_2d::compositing_mode::source_copy) throw argument_exception {csf_};
     native::graphics::text_rendering_hint(handle(), static_cast<int32>(data_->text_rendering_hint));
   }
   return *this;
@@ -272,7 +272,7 @@ void graphics::draw_bezier(const pen& pen, float x1, float y1, float x2, float y
 }
 
 void graphics::draw_beziers(const pen& pen, const std::vector<xtd::drawing::point>& points) {
-  if (points.size() < 4 || points.size() % 3 != 1) throw argument_exception(csf_);
+  if (points.size() < 4 || points.size() % 3 != 1) throw argument_exception {csf_};
   vector<point_f> beziers_points;
   for_each(points.begin(), points.end(), [&](auto pt) {beziers_points.push_back(point_f(pt));});
   draw_beziers(pen, beziers_points);
@@ -335,7 +335,7 @@ void graphics::draw_curve(const pen& pen, const std::vector<xtd::drawing::point>
 }
 
 void graphics::draw_curve(const pen& pen, const std::vector<xtd::drawing::point_f>& points, size_t offset, size_t number_of_segments, float tension) {
-  if (offset + number_of_segments > points.size() || number_of_segments == 0) throw argument_exception(csf_);
+  if (offset + number_of_segments > points.size() || number_of_segments == 0) throw argument_exception {csf_};
   vector<pair<float, float>> curve_points;
   for (auto index = 0U; index < number_of_segments; ++index)
     curve_points.emplace_back(to_pixels(points[offset + index].x()), to_pixels(points[offset + index].y()));

@@ -10,7 +10,7 @@ using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
 bool collapsible_panel::expanded(intptr control) {
-  if (!control || !wxTheApp) throw argument_exception(csf_);
+  if (!control || !wxTheApp) throw argument_exception {csf_};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return false;
@@ -19,7 +19,7 @@ bool collapsible_panel::expanded(intptr control) {
 }
 
 void collapsible_panel::expanded(intptr control, bool expand) {
-  if (!control || !wxTheApp) throw argument_exception(csf_);
+  if (!control || !wxTheApp) throw argument_exception {csf_};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;

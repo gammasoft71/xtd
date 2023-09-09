@@ -140,10 +140,10 @@ void event_wait_handle::create(bool initial_state, bool& created_new) {
   created_new = true;
   if (data_->name.empty()) {
     data_->event_wait_handle = std::make_unique<event_wait_handle::unnamed_event_wait_handle>();
-    if (!data_->event_wait_handle->create(initial_state, data_->mode == xtd::threading::event_reset_mode::manual_reset)) throw io::io_exception(csf_);
+    if (!data_->event_wait_handle->create(initial_state, data_->mode == xtd::threading::event_reset_mode::manual_reset)) throw io::io_exception {csf_};
   } else {
     data_->event_wait_handle = std::make_unique<event_wait_handle::named_event_wait_handle>();
     created_new = data_->event_wait_handle->create(initial_state, data_->mode == xtd::threading::event_reset_mode::manual_reset, data_->name);
-    if (!created_new && !data_->event_wait_handle->open(data_->name)) throw io::io_exception(csf_);
+    if (!created_new && !data_->event_wait_handle->open(data_->name)) throw io::io_exception {csf_};
   }
 }

@@ -52,7 +52,7 @@ int32 barrier::add_participant() {
 int32 barrier::add_participants(int32 participant_count) {
   lock_(*data_) {
     if (participant_count < 0 || as<int64>(data_->participant_count) + participant_count > as<int64>(int32_object::max_value)) throw argument_out_of_range_exception {csf_};
-    if (data_->run_post_phase_action) throw invalid_operation_exception(csf_);
+    if (data_->run_post_phase_action) throw invalid_operation_exception {csf_};
     data_->participant_count += participant_count;
     data_->participants_remaining += participant_count;
     return data_->current_phase_number;

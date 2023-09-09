@@ -281,7 +281,7 @@ namespace xtd {
         /// @param pos The index before which the content will be inserted.
         /// @param value The element to insert.
         void insert_at(size_t index, const value_type& value) {
-          if (index > size()) throw argument_out_of_range_exception(csf_);
+          if (index > size()) throw argument_out_of_range_exception {csf_};
           insert(begin() + index, value);
         }
         
@@ -354,7 +354,7 @@ namespace xtd {
         /// @brief Erases element at specified index.
         /// @param pos The index which the content will be erased.
         void erase_at(size_t index) {
-          if (index > size()) throw argument_out_of_range_exception(csf_);
+          if (index > size()) throw argument_out_of_range_exception {csf_};
           erase(begin() + index);
         }
         

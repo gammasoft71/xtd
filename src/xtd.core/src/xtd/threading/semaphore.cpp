@@ -129,10 +129,10 @@ void semaphore::create(int32 initial_count, int32 maximum_count, bool& created_n
   created_new = true;
   if (name_.empty()) {
     semaphore_ = std::make_shared<semaphore::unnamed_semaphore>();
-    if (!semaphore_->create(initial_count, maximum_count)) throw io::io_exception(csf_);
+    if (!semaphore_->create(initial_count, maximum_count)) throw io::io_exception {csf_};
   } else {
     semaphore_ = std::make_shared<semaphore::named_semaphore>();
     created_new = semaphore_->create(initial_count, maximum_count, name_);
-    if (!created_new && !semaphore_->open(name_)) throw io::io_exception(csf_);
+    if (!created_new && !semaphore_->open(name_)) throw io::io_exception {csf_};
   }
 }

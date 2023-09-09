@@ -16,17 +16,17 @@ intptr image_list::create(const drawing::size& image_size) {
 }
 
 void image_list::delete_item(intptr image_list, size_t pos) {
-  if (!image_list) throw argument_exception(csf_);
+  if (!image_list) throw argument_exception {csf_};
   reinterpret_cast<wxImageList*>(image_list)->Remove(static_cast<int32>(pos));
 }
 
 void image_list::destroy(intptr image_list) {
-  if (!image_list) throw argument_exception(csf_);
+  if (!image_list) throw argument_exception {csf_};
   delete reinterpret_cast<wxImageList*>(image_list);
 }
 
 void image_list::insert_item(intptr image_list, size_t pos, const drawing::image& image) {
-  if (!image_list) throw argument_exception(csf_);
+  if (!image_list) throw argument_exception {csf_};
   if (pos == static_cast<size_t>(reinterpret_cast<wxImageList*>(image_list)->GetImageCount()))
     reinterpret_cast<wxImageList*>(image_list)->Add(*reinterpret_cast<wxImage*>(image.handle()));
   else {
@@ -42,6 +42,6 @@ void image_list::insert_item(intptr image_list, size_t pos, const drawing::image
 }
 
 void image_list::update_item(intptr image_list, size_t pos, const drawing::image& image) {
-  if (!image_list) throw argument_exception(csf_);
+  if (!image_list) throw argument_exception {csf_};
   reinterpret_cast<wxImageList*>(image_list)->Replace(static_cast<int32>(pos), wxBitmap(*reinterpret_cast<wxImage*>(image.handle())));
 }

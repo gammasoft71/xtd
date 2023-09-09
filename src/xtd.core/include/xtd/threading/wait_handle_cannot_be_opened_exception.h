@@ -93,11 +93,11 @@ namespace xtd {
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to xtd::wait_handle_cannot_be_opened_exception({any argument}, csf_)
+/// @remarks Is equivalent to xtd::wait_handle_cannot_be_opened_exception {{any argument}, csf_}
 /// @code
 /// void my_func() {
-///   if (invalid_info) throw wait_handle_cannot_be_opened_exception_(); // same as : throw wait_handle_cannot_be_opened_exception(csf_);
-///   if (invalid_value) throw wait_handle_cannot_be_opened_exception_("Bad value"); // same as : throw wait_handle_cannot_be_opened_exception("Bad value", csf_);
+///   if (invalid_info) throw wait_handle_cannot_be_opened_exception_(); // same as : throw wait_handle_cannot_be_opened_exception {csf_};
+///   if (invalid_value) throw wait_handle_cannot_be_opened_exception_("Bad value"); // same as : throw wait_handle_cannot_be_opened_exception {"Bad value", csf_};
 ///   ...
 /// }
 /// @endcode

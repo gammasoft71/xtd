@@ -93,11 +93,11 @@ namespace xtd {
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to xtd::semaphore_full_exception({any argument}, csf_)
+/// @remarks Is equivalent to xtd::semaphore_full_exception {{any argument}, csf_}
 /// @code
 /// void my_func() {
-///   if (invalid_info) throw semaphore_full_exception_(); // same as : throw semaphore_full_exception(csf_);
-///   if (invalid_value) throw semaphore_full_exception_("Bad value"); // same as : throw semaphore_full_exception("Bad value", csf_);
+///   if (invalid_info) throw semaphore_full_exception_(); // same as : throw semaphore_full_exception {csf_};
+///   if (invalid_value) throw semaphore_full_exception_("Bad value"); // same as : throw semaphore_full_exception {"Bad value", csf_};
 ///   ...
 /// }
 /// @endcode

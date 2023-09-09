@@ -97,7 +97,7 @@ ustring guid::to_string(ustring format) const {
   format = format.empty() ? "d" : format.to_lower();
   
   if (format.size() != 1 || ustring("ndbpx").index_of(format) == ustring::npos)
-    throw xtd::format_exception(csf_);
+    throw xtd::format_exception {csf_};
     
   bool hyphens = format != "n" && format != "x";
   bool braces = format == "b";

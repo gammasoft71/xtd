@@ -11,7 +11,7 @@ using namespace xtd::forms::native;
 
 void tab_control::delete_page(intptr control, intptr page) {
   if (!wxTheApp) return;
-  if (!control || !page) throw argument_exception(csf_);
+  if (!control || !page) throw argument_exception {csf_};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
@@ -25,7 +25,7 @@ void tab_control::delete_page(intptr control, intptr page) {
 }
 
 void tab_control::image_list(intptr control, intptr image_list) {
-  if (!control || !wxTheApp) throw argument_exception(csf_);
+  if (!control || !wxTheApp) throw argument_exception {csf_};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
@@ -34,7 +34,7 @@ void tab_control::image_list(intptr control, intptr image_list) {
 }
 
 void tab_control::insert_page(intptr control, size_t index, intptr page) {
-  if (!control || !page || !wxTheApp) throw argument_exception(csf_);
+  if (!control || !page || !wxTheApp) throw argument_exception {csf_};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
@@ -43,7 +43,7 @@ void tab_control::insert_page(intptr control, size_t index, intptr page) {
 }
 
 size_t tab_control::selected_index(intptr control) {
-  if (!control || !wxTheApp) throw argument_exception(csf_);
+  if (!control || !wxTheApp) throw argument_exception {csf_};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return 0;
@@ -52,7 +52,7 @@ size_t tab_control::selected_index(intptr control) {
 }
 
 void tab_control::selected_index(intptr control, size_t index) {
-  if (!control || !wxTheApp) throw argument_exception(csf_);
+  if (!control || !wxTheApp) throw argument_exception {csf_};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;

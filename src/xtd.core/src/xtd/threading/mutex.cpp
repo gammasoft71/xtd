@@ -140,10 +140,10 @@ void mutex::create(bool initially_owned, bool& created_new) {
   created_new = true;
   if (name_.empty()) {
     mutex_ = std::make_shared<mutex::unnamed_mutex>();
-    if (!mutex_->create(initially_owned)) throw io::io_exception(csf_);
+    if (!mutex_->create(initially_owned)) throw io::io_exception {csf_};
   } else {
     mutex_ = std::make_shared<mutex::named_mutex>();
     created_new = mutex_->create(initially_owned, name_);
-    if (!created_new && !mutex_->open(name_)) throw io::io_exception(csf_);
+    if (!created_new && !mutex_->open(name_)) throw io::io_exception {csf_};
   }
 }

@@ -145,7 +145,7 @@ void test::run(const unit_test& unit_test, const xtd::tunit::test_class& test_cl
         if (xtd::tunit::settings::default_settings().break_on_failure())
           debug_break_();
         if (xtd::tunit::settings::default_settings().throw_on_failure())
-          throw system_exception(csf_);
+          throw system_exception {csf_};
       } catch (const xtd::tunit::ignore_error&) {
         if (!settings::default_settings().brief()) unit_test.event_listener_->on_test_ignored(xtd::tunit::test_event_args(*this, test_class, unit_test));
       } catch (const std::exception& e) {
@@ -157,7 +157,7 @@ void test::run(const unit_test& unit_test, const xtd::tunit::test_class& test_cl
         if (xtd::tunit::settings::default_settings().break_on_failure())
           debug_break_();
         if (xtd::tunit::settings::default_settings().throw_on_failure())
-          throw system_exception(csf_);
+          throw system_exception {csf_};
       } catch (...) {
         xtd::tunit::settings::default_settings().exit_status(EXIT_FAILURE);
         xtd::tunit::test::current_test().message_ = "Exception <unknown> throws";
@@ -167,7 +167,7 @@ void test::run(const unit_test& unit_test, const xtd::tunit::test_class& test_cl
         if (xtd::tunit::settings::default_settings().break_on_failure())
           debug_break_();
         if (xtd::tunit::settings::default_settings().throw_on_failure())
-          throw system_exception(csf_);
+          throw system_exception {csf_};
       }
       
       if (!settings::default_settings().brief()) unit_test.event_listener_->on_test_cleanup_start(xtd::tunit::test_event_args(*this, test_class, unit_test));

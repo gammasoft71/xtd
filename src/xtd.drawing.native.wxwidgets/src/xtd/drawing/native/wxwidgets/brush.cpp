@@ -22,7 +22,7 @@ void brush::solid(intptr brush, xtd::byte a, xtd::byte r, xtd::byte g, xtd::byte
 }
 
 void brush::conical_gradient(intptr brush, int32 center_x, int32 center_y, const std::vector<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte, float>>& colors, float angle) {
-  if (colors.size() < 2) throw argument_exception(csf_);
+  if (colors.size() < 2) throw argument_exception {csf_};
   
   auto center_point = wxPoint(center_x, center_y);
   auto [start_r, start_g, start_b, start_a, start_pos] = colors[0];
@@ -37,7 +37,7 @@ void brush::conical_gradient(intptr brush, int32 center_x, int32 center_y, const
 }
 
 void brush::linear_gradient(intptr brush, int32 x1, int32 y1, int32 x2, int32 y2, const std::vector<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte, float>>& colors, float angle) {
-  if (colors.size() < 2) throw argument_exception(csf_);
+  if (colors.size() < 2) throw argument_exception {csf_};
   
   if (angle <= 22) angle = 0;
   else if (angle <= 67) angle = 45;
@@ -68,7 +68,7 @@ void brush::linear_gradient(intptr brush, int32 x1, int32 y1, int32 x2, int32 y2
 }
 
 void brush::radial_gradient(intptr brush, int32 center_x, int32 center_y, int32 focal_x, int32 focal_y, const std::vector<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte, float>>& colors, float radius) {
-  if (colors.size() < 2) throw argument_exception(csf_);
+  if (colors.size() < 2) throw argument_exception {csf_};
   
   auto center_point = wxPoint(center_x, center_y);
   auto focal_point = wxPoint(focal_x, focal_y);

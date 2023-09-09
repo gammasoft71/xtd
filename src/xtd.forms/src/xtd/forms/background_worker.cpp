@@ -84,7 +84,7 @@ void background_worker::report_progress(int32 percent_progress, any user_state) 
 }
 
 void background_worker::run_worker_async() {
-  if (data_->is_busy) throw invalid_operation_exception(csf_);
+  if (data_->is_busy) throw invalid_operation_exception {csf_};
   data_->is_busy = true;
   if (data_->thread.joinable()) data_->thread.join();
   data_->invoker = make_unique<form>();

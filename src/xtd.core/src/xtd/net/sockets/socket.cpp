@@ -57,7 +57,7 @@ socket::socket(intptr handle)  {
   debug::write_if(show_debug_socket.enabled(), ustring::format("socket::socket(handle) : socket=[{}]", handle));
   if (handle == 0) {
     debug::write_line_if(show_debug_socket.enabled(), " error=[handle_invalid]");
-    throw argument_exception(csf_);
+    throw argument_exception {csf_};
   }
   data_->handle = handle;
   debug::write_line_if(show_debug_socket.enabled(), " succeed");
@@ -65,7 +65,7 @@ socket::socket(intptr handle)  {
 
 socket::socket(const socket_information& socket_information) {
   /*data_ = make_shared<socket::data>();*/
-  if (data_) throw not_implemented_exception(csf_);
+  if (data_) throw not_implemented_exception {csf_};
 }
 
 socket::socket(xtd::net::sockets::socket_type socket_type, xtd::net::sockets::protocol_type protocol_type) : socket(native::socket::get_os_supports_ip_v6() ? address_family::inter_network_v6 : address_family::inter_network, socket_type, protocol_type)  {
@@ -102,19 +102,19 @@ address_family socket::address_family() const noexcept {
 }
 
 size_t socket::available() const {
-  if (data_->handle == 0) throw object_closed_exception(csf_);
+  if (data_->handle == 0) throw object_closed_exception {csf_};
   auto available = native::socket::get_available(data_->handle);
   if (available == static_cast<size_t>(-1)) throw socket_exception(get_last_error_(), csf_);
   return available;
 }
 
 bool socket::blocking() const {
-  if (data_->handle == 0) throw object_closed_exception(csf_);
+  if (data_->handle == 0) throw object_closed_exception {csf_};
   return data_->will_block;
 }
 
 socket& socket::blocking(bool value) {
-  if (data_->handle == 0) throw object_closed_exception(csf_);
+  if (data_->handle == 0) throw object_closed_exception {csf_};
   if (native::socket::set_blocking(data_->handle, value) != 0) throw socket_exception(get_last_error_(), csf_);
   data_->will_block = value;
   return *this;
@@ -125,27 +125,27 @@ bool socket::connected() const noexcept {
 }
 
 bool socket::dont_fragment() const {
-  if (data_->handle == 0) throw object_closed_exception(csf_);
-  if (data_->address_family != address_family::inter_network) throw not_supported_exception(csf_);
+  if (data_->handle == 0) throw object_closed_exception {csf_};
+  if (data_->address_family != address_family::inter_network) throw not_supported_exception {csf_};
   return as<bool>(get_socket_option(xtd::net::sockets::socket_option_level::ip, xtd::net::sockets::socket_option_name::dont_fragment));
 }
 
 socket& socket::dont_fragment(bool value) {
-  if (data_->handle == 0) throw object_closed_exception(csf_);
-  if (data_->address_family != address_family::inter_network) throw not_supported_exception(csf_);
+  if (data_->handle == 0) throw object_closed_exception {csf_};
+  if (data_->address_family != address_family::inter_network) throw not_supported_exception {csf_};
   set_socket_option(xtd::net::sockets::socket_option_level::ip, xtd::net::sockets::socket_option_name::dont_fragment, value);
   return *this;
 }
 
 bool socket::dual_mode() const {
-  if (data_->handle == 0) throw object_closed_exception(csf_);
-  if (data_->address_family != address_family::inter_network_v6) throw not_supported_exception(csf_);
+  if (data_->handle == 0) throw object_closed_exception {csf_};
+  if (data_->address_family != address_family::inter_network_v6) throw not_supported_exception {csf_};
   return !as<bool>(get_socket_option(xtd::net::sockets::socket_option_level::ip_v6, xtd::net::sockets::socket_option_name::ip_v6_only));
 }
 
 socket& socket::dual_mode(bool value) {
-  if (data_->handle == 0) throw object_closed_exception(csf_);
-  if (data_->address_family != address_family::inter_network_v6) throw not_supported_exception(csf_);
+  if (data_->handle == 0) throw object_closed_exception {csf_};
+  if (data_->address_family != address_family::inter_network_v6) throw not_supported_exception {csf_};
   set_socket_option(xtd::net::sockets::socket_option_level::ip_v6, xtd::net::sockets::socket_option_name::ip_v6_only, !value);
   return *this;
 }
@@ -164,7 +164,7 @@ bool socket::exclusive_address_use() const {
 }
 
 socket& socket::exclusive_address_use(bool value) {
-  if (data_->is_bound) throw invalid_operation_exception(csf_);
+  if (data_->is_bound) throw invalid_operation_exception {csf_};
   set_socket_option(xtd::net::sockets::socket_option_level::socket, xtd::net::sockets::socket_option_name::exclusive_address_use, value);
   return *this;
 }
@@ -187,18 +187,18 @@ socket& socket::linger_state(const xtd::net::sockets::linger_option& value) {
 }
 
 std::shared_ptr<xtd::net::end_point> socket::local_end_point() const {
-  if (data_->handle == 0) throw object_closed_exception(csf_);
+  if (data_->handle == 0) throw object_closed_exception {csf_};
   return data_->local_end_point;
 }
 
 bool socket::multicast_loopback() const {
-  if (data_->handle == 0) throw object_closed_exception(csf_);
-  if (data_->address_family != address_family::inter_network && data_->address_family != address_family::inter_network_v6) throw not_supported_exception(csf_);
+  if (data_->handle == 0) throw object_closed_exception {csf_};
+  if (data_->address_family != address_family::inter_network && data_->address_family != address_family::inter_network_v6) throw not_supported_exception {csf_};
   return as<bool>(get_socket_option(xtd::net::sockets::socket_option_level::ip, xtd::net::sockets::socket_option_name::multicast_loopback));
 }
 
 socket& socket::multicast_loopback(bool value) {
-  if (data_->address_family != address_family::inter_network && data_->address_family != address_family::inter_network_v6) throw not_supported_exception(csf_);
+  if (data_->address_family != address_family::inter_network && data_->address_family != address_family::inter_network_v6) throw not_supported_exception {csf_};
   set_socket_option(xtd::net::sockets::socket_option_level::ip, xtd::net::sockets::socket_option_name::multicast_loopback, value);
   return *this;
 }
@@ -238,13 +238,13 @@ int32 socket::receive_timeout() const {
 }
 
 socket& socket::receive_timeout(int32 value) {
-  if (value < -1) throw argument_out_of_range_exception(csf_);
+  if (value < -1) throw argument_out_of_range_exception {csf_};
   set_socket_option(xtd::net::sockets::socket_option_level::socket, xtd::net::sockets::socket_option_name::receive_timeout, value);
   return *this;
 }
 
 std::shared_ptr<xtd::net::end_point> socket::remote_end_point() const {
-  if (data_->handle == 0) throw object_closed_exception(csf_);
+  if (data_->handle == 0) throw object_closed_exception {csf_};
   return data_->remote_end_point;
 }
 
@@ -262,7 +262,7 @@ int32 socket::send_timeout() const {
 }
 
 socket& socket::send_timeout(int32 value) {
-  if (value < -1) throw argument_out_of_range_exception(csf_);
+  if (value < -1) throw argument_out_of_range_exception {csf_};
   if (value >= 1 && value <= 499) value = 500;
   set_socket_option(xtd::net::sockets::socket_option_level::socket, xtd::net::sockets::socket_option_name::send_timeout, value);
   return *this;
@@ -273,23 +273,23 @@ xtd::net::sockets::socket_type socket::socket_type() const noexcept {
 }
 
 xtd::byte socket::ttl() const {
-  if (data_->handle == 0) throw object_closed_exception(csf_);
+  if (data_->handle == 0) throw object_closed_exception {csf_};
   if (data_->address_family == address_family::inter_network) return as<xtd::byte>(get_socket_option(xtd::net::sockets::socket_option_level::ip, xtd::net::sockets::socket_option_name::ip_time_to_live));
   if (data_->address_family == address_family::inter_network_v6) return as<xtd::byte>(get_socket_option(xtd::net::sockets::socket_option_level::ip_v6, xtd::net::sockets::socket_option_name::ip_time_to_live));
-  throw not_supported_exception(csf_);
+  throw not_supported_exception {csf_};
 }
 
 socket& socket::ttl(xtd::byte value) {
-  if (data_->handle == 0) throw object_closed_exception(csf_);
+  if (data_->handle == 0) throw object_closed_exception {csf_};
   if (data_->address_family == address_family::inter_network) set_socket_option(xtd::net::sockets::socket_option_level::ip, xtd::net::sockets::socket_option_name::ip_time_to_live, as<int32>(value));
   else if (data_->address_family == address_family::inter_network_v6) set_socket_option(xtd::net::sockets::socket_option_level::ip_v6, xtd::net::sockets::socket_option_name::ip_time_to_live, as<int32>(value));
-  else throw not_supported_exception(csf_);
+  else throw not_supported_exception {csf_};
   return *this;
 }
 
 socket socket::accept() {
-  if (data_->handle == 0) throw object_closed_exception(csf_);
-  if (data_->is_bound == false || data_->is_listening == false) throw invalid_operation_exception(csf_);
+  if (data_->handle == 0) throw object_closed_exception {csf_};
+  if (data_->is_bound == false || data_->is_listening == false) throw invalid_operation_exception {csf_};
   
   socket_address address(data_->address_family);
   intptr new_socket_handle = native::socket::accept(data_->handle, address.bytes_);
@@ -305,8 +305,8 @@ socket socket::accept() {
 }
 
 bool socket::accept_async(xtd::net::sockets::socket_async_event_args& e) {
-  if (data_->handle == 0) throw object_closed_exception(csf_);
-  if (data_->is_bound == false || data_->is_listening == false) throw invalid_operation_exception(csf_);
+  if (data_->handle == 0) throw object_closed_exception {csf_};
+  if (data_->is_bound == false || data_->is_listening == false) throw invalid_operation_exception {csf_};
   
   std::thread thread([](xtd::net::sockets::socket_async_event_args * e, xtd::net::sockets::address_family address_family, xtd::net::sockets::socket_type socket_type, xtd::net::sockets::protocol_type protocol_type) {
     if (e->accept_socket_.data_->address_family == xtd::net::sockets::address_family::unknown && e->accept_socket_.data_->socket_type == xtd::net::sockets::socket_type::unknown && e->accept_socket_.data_->protocol_type == xtd::net::sockets::protocol_type::unknown) {
@@ -322,8 +322,8 @@ bool socket::accept_async(xtd::net::sockets::socket_async_event_args& e) {
 }
 
 std::shared_ptr<xtd::iasync_result> socket::begin_accept(xtd::async_callback callback, const std::any& state) {
-  if (data_->handle == 0) throw object_closed_exception(csf_);
-  if (data_->is_bound == false || data_->is_listening == false) throw invalid_operation_exception(csf_);
+  if (data_->handle == 0) throw object_closed_exception {csf_};
+  if (data_->is_bound == false || data_->is_listening == false) throw invalid_operation_exception {csf_};
   
   std::shared_ptr<async_result_accept> ar = make_shared<async_result_accept>(state);
   ar->async_wait_handle().wait_one();
@@ -351,7 +351,7 @@ std::shared_ptr<xtd::iasync_result> socket::begin_connect(const std::vector<xtd:
     if (data_->is_connected == false)
       return begin_connect(address, port, callback, state);
   }
-  throw argument_exception(csf_);
+  throw argument_exception {csf_};
 }
 
 std::shared_ptr<xtd::iasync_result> socket::begin_connect(const xtd::ustring& host, uint16 port, xtd::async_callback callback, const std::any& state) {
@@ -359,8 +359,8 @@ std::shared_ptr<xtd::iasync_result> socket::begin_connect(const xtd::ustring& ho
 }
 
 std::shared_ptr<xtd::iasync_result> socket::begin_disconnect(bool reuse_socket, xtd::async_callback callback, const std::any& state) {
-  if (data_->handle == 0) throw object_closed_exception(csf_);
-  if (!data_->is_connected) throw object_closed_exception(csf_);
+  if (data_->handle == 0) throw object_closed_exception {csf_};
+  if (!data_->is_connected) throw object_closed_exception {csf_};
   
   std::shared_ptr<async_result_disconnect> ar = make_shared<async_result_disconnect>(state);
   ar->async_wait_handle().wait_one();
@@ -380,8 +380,8 @@ std::shared_ptr<xtd::iasync_result> socket::begin_disconnect(bool reuse_socket, 
 }
 
 std::shared_ptr<xtd::iasync_result> socket::begin_receive(std::vector<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::async_callback callback, const std::any& state) {
-  if (offset + size > buffer.size()) throw argument_out_of_range_exception(csf_);
-  if (data_->handle == 0) throw object_closed_exception(csf_);
+  if (offset + size > buffer.size()) throw argument_out_of_range_exception {csf_};
+  if (data_->handle == 0) throw object_closed_exception {csf_};
   if (!data_->is_connected) throw socket_exception(socket_error::not_connected, csf_);
   
   std::shared_ptr<async_result_receive> ar = make_shared<async_result_receive>(state);
@@ -402,8 +402,8 @@ std::shared_ptr<xtd::iasync_result> socket::begin_receive(std::vector<xtd::byte>
 }
 
 std::shared_ptr<xtd::iasync_result> socket::begin_receive(std::vector<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::sockets::socket_error& error_code, xtd::async_callback callback, const std::any& state) {
-  if (offset + size > buffer.size()) throw argument_out_of_range_exception(csf_);
-  if (data_->handle == 0) throw object_closed_exception(csf_);
+  if (offset + size > buffer.size()) throw argument_out_of_range_exception {csf_};
+  if (data_->handle == 0) throw object_closed_exception {csf_};
   if (!data_->is_connected) throw socket_exception(socket_error::not_connected, csf_);
   
   std::shared_ptr<async_result_receive> ar = make_shared<async_result_receive>(state);
@@ -424,8 +424,8 @@ std::shared_ptr<xtd::iasync_result> socket::begin_receive(std::vector<xtd::byte>
 }
 
 std::shared_ptr<xtd::iasync_result> socket::begin_receive_from(std::vector<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::end_point& remote_end_point, xtd::async_callback callback, const std::any& state) {
-  if (offset + size > buffer.size()) throw argument_out_of_range_exception(csf_);
-  if (data_->handle == 0) throw object_closed_exception(csf_);
+  if (offset + size > buffer.size()) throw argument_out_of_range_exception {csf_};
+  if (data_->handle == 0) throw object_closed_exception {csf_};
   
   std::shared_ptr<async_result_receive_from> ar = make_shared<async_result_receive_from>(state);
   ar->async_wait_handle().wait_one();
@@ -446,8 +446,8 @@ std::shared_ptr<xtd::iasync_result> socket::begin_receive_from(std::vector<xtd::
 }
 
 std::shared_ptr<xtd::iasync_result> socket::begin_receive_message_from(std::vector<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::end_point& remote_end_point, xtd::async_callback callback, const std::any& state) {
-  if (offset + size > buffer.size()) throw argument_out_of_range_exception(csf_);
-  if (data_->handle == 0) throw object_closed_exception(csf_);
+  if (offset + size > buffer.size()) throw argument_out_of_range_exception {csf_};
+  if (data_->handle == 0) throw object_closed_exception {csf_};
   
   std::shared_ptr<async_result_receive_message_from> ar = make_shared<async_result_receive_message_from>(state);
   ar->async_wait_handle().wait_one();
@@ -469,8 +469,8 @@ std::shared_ptr<xtd::iasync_result> socket::begin_receive_message_from(std::vect
 }
 
 std::shared_ptr<xtd::iasync_result> socket::begin_send(const std::vector<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::async_callback callback, const std::any& state) {
-  if (offset + size > buffer.size()) throw argument_out_of_range_exception(csf_);
-  if (data_->handle == 0) throw object_closed_exception(csf_);
+  if (offset + size > buffer.size()) throw argument_out_of_range_exception {csf_};
+  if (data_->handle == 0) throw object_closed_exception {csf_};
   if (!data_->is_connected) throw socket_exception(socket_error::not_connected, csf_);
   
   std::shared_ptr<async_result_send> ar = make_shared<async_result_send>(state);
@@ -491,8 +491,8 @@ std::shared_ptr<xtd::iasync_result> socket::begin_send(const std::vector<xtd::by
 }
 
 std::shared_ptr<xtd::iasync_result> socket::begin_send(const std::vector<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::sockets::socket_error& error, xtd::async_callback callback, const std::any& state) {
-  if (offset + size > buffer.size()) throw argument_out_of_range_exception(csf_);
-  if (data_->handle == 0) throw object_closed_exception(csf_);
+  if (offset + size > buffer.size()) throw argument_out_of_range_exception {csf_};
+  if (data_->handle == 0) throw object_closed_exception {csf_};
   if (!data_->is_connected) throw socket_exception(socket_error::not_connected, csf_);
   
   std::shared_ptr<async_result_send> ar = make_shared<async_result_send>(state);
@@ -513,8 +513,8 @@ std::shared_ptr<xtd::iasync_result> socket::begin_send(const std::vector<xtd::by
 }
 
 std::shared_ptr<xtd::iasync_result> socket::begin_send_to(const std::vector<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, const xtd::net::end_point& remote_end_point, xtd::async_callback callback, const std::any& state) {
-  if (offset + size > buffer.size()) throw argument_out_of_range_exception(csf_);
-  if (data_->handle == 0) throw object_closed_exception(csf_);
+  if (offset + size > buffer.size()) throw argument_out_of_range_exception {csf_};
+  if (data_->handle == 0) throw object_closed_exception {csf_};
   
   std::shared_ptr<async_result_send_to> ar = make_shared<async_result_send_to>(state);
   ar->async_wait_handle().wait_one();
@@ -561,7 +561,7 @@ void socket::connect(const std::vector<ip_address>& addresses, uint16 port) {
     if (data_->is_connected == false)
       connect(address, port);
   }
-  throw argument_exception(csf_);
+  throw argument_exception {csf_};
 }
 
 void socket::connect(const xtd::ustring& host, uint16 port) {
@@ -569,8 +569,8 @@ void socket::connect(const xtd::ustring& host, uint16 port) {
 }
 
 void socket::disconnect(bool reuse_socket) {
-  if (data_->handle == 0) throw object_closed_exception(csf_);
-  if (!data_->is_connected) throw object_closed_exception(csf_);
+  if (data_->handle == 0) throw object_closed_exception {csf_};
+  if (!data_->is_connected) throw object_closed_exception {csf_};
   
   data_->is_bound = false;
   data_->is_connected = false;
@@ -585,38 +585,38 @@ void socket::disconnect(bool reuse_socket) {
 }
 
 socket socket::end_accept(std::shared_ptr<xtd::iasync_result> ar) {
-  if (ar == nullptr) throw argument_null_exception(csf_);
-  if (!is<async_result_accept>(ar)) throw argument_exception(csf_);
+  if (ar == nullptr) throw argument_null_exception {csf_};
+  if (!is<async_result_accept>(ar)) throw argument_exception {csf_};
   lock_guard<xtd::threading::mutex> lock(as<xtd::threading::mutex>(ar->async_wait_handle()));
   if (as<async_result_accept>(ar)->exception_) rethrow_exception(as<async_result_accept>(ar)->exception_);
   return as<socket>(as<async_result_accept>(ar)->socket_);
 }
 
 void socket::end_connect(std::shared_ptr<xtd::iasync_result> ar) {
-  if (ar == nullptr) throw argument_null_exception(csf_);
-  if (!is<async_result_connect>(ar)) throw argument_exception(csf_);
+  if (ar == nullptr) throw argument_null_exception {csf_};
+  if (!is<async_result_connect>(ar)) throw argument_exception {csf_};
   lock_guard<xtd::threading::mutex> lock(as<xtd::threading::mutex>(ar->async_wait_handle()));
   if (as<async_result_connect>(ar)->exception_) rethrow_exception(as<async_result_connect>(ar)->exception_);
 }
 
 void socket::end_disconnect(std::shared_ptr<xtd::iasync_result> ar) {
-  if (ar == nullptr) throw argument_null_exception(csf_);
-  if (!is<async_result_disconnect>(ar)) throw argument_exception(csf_);
+  if (ar == nullptr) throw argument_null_exception {csf_};
+  if (!is<async_result_disconnect>(ar)) throw argument_exception {csf_};
   lock_guard<xtd::threading::mutex> lock(as<xtd::threading::mutex>(ar->async_wait_handle()));
   if (as<async_result_disconnect>(ar)->exception_) rethrow_exception(as<async_result_disconnect>(ar)->exception_);
 }
 
 size_t socket::end_receive(std::shared_ptr<xtd::iasync_result> ar) {
-  if (ar == nullptr) throw argument_null_exception(csf_);
-  if (!is<async_result_receive>(ar)) throw argument_exception(csf_);
+  if (ar == nullptr) throw argument_null_exception {csf_};
+  if (!is<async_result_receive>(ar)) throw argument_exception {csf_};
   lock_guard<xtd::threading::mutex> lock(as<xtd::threading::mutex>(ar->async_wait_handle()));
   if (as<async_result_receive>(ar)->exception_) rethrow_exception(as<async_result_receive>(ar)->exception_);
   return as<async_result_receive>(ar)->number_of_bytes_received_;
 }
 
 size_t socket::end_receive(std::shared_ptr<xtd::iasync_result> ar, xtd::net::sockets::socket_error& error) {
-  if (ar == nullptr) throw argument_null_exception(csf_);
-  if (!is<async_result_receive>(ar)) throw argument_exception(csf_);
+  if (ar == nullptr) throw argument_null_exception {csf_};
+  if (!is<async_result_receive>(ar)) throw argument_exception {csf_};
   lock_guard<xtd::threading::mutex> lock(as<xtd::threading::mutex>(ar->async_wait_handle()));
   if (as<async_result_receive>(ar)->exception_) rethrow_exception(as<async_result_receive>(ar)->exception_);
   error = as<async_result_receive>(ar)->error_code_;
@@ -624,8 +624,8 @@ size_t socket::end_receive(std::shared_ptr<xtd::iasync_result> ar, xtd::net::soc
 }
 
 size_t socket::end_receive_from(std::shared_ptr<xtd::iasync_result> ar, std::shared_ptr<xtd::net::end_point>& end_point) {
-  if (ar == nullptr) throw argument_null_exception(csf_);
-  if (!is<async_result_receive_from>(ar)) throw argument_exception(csf_);
+  if (ar == nullptr) throw argument_null_exception {csf_};
+  if (!is<async_result_receive_from>(ar)) throw argument_exception {csf_};
   lock_guard<xtd::threading::mutex> lock(as<xtd::threading::mutex>(ar->async_wait_handle()));
   if (as<async_result_receive_from>(ar)->exception_) rethrow_exception(as<async_result_receive_from>(ar)->exception_);
   end_point = as<async_result_receive_from>(ar)->end_point_;
@@ -633,8 +633,8 @@ size_t socket::end_receive_from(std::shared_ptr<xtd::iasync_result> ar, std::sha
 }
 
 size_t socket::end_receive_message_from(std::shared_ptr<xtd::iasync_result> ar, xtd::net::sockets::socket_flags& socket_flags, std::shared_ptr<xtd::net::end_point>& end_point, ip_packet_information& ip_packet_information) {
-  if (ar == nullptr) throw argument_null_exception(csf_);
-  if (!is<async_result_receive_message_from>(ar)) throw argument_exception(csf_);
+  if (ar == nullptr) throw argument_null_exception {csf_};
+  if (!is<async_result_receive_message_from>(ar)) throw argument_exception {csf_};
   lock_guard<xtd::threading::mutex> lock(as<xtd::threading::mutex>(ar->async_wait_handle()));
   if (as<async_result_receive_message_from>(ar)->exception_) rethrow_exception(as<async_result_receive_message_from>(ar)->exception_);
   end_point = as<async_result_receive_message_from>(ar)->end_point_;
@@ -644,16 +644,16 @@ size_t socket::end_receive_message_from(std::shared_ptr<xtd::iasync_result> ar, 
 }
 
 size_t socket::end_send(std::shared_ptr<xtd::iasync_result> ar) {
-  if (ar == nullptr) throw argument_null_exception(csf_);
-  if (!is<async_result_send>(ar)) throw argument_exception(csf_);
+  if (ar == nullptr) throw argument_null_exception {csf_};
+  if (!is<async_result_send>(ar)) throw argument_exception {csf_};
   lock_guard<xtd::threading::mutex> lock(as<xtd::threading::mutex>(ar->async_wait_handle()));
   if (as<async_result_send>(ar)->exception_) rethrow_exception(as<async_result_send>(ar)->exception_);
   return as<async_result_send>(ar)->number_of_bytes_sent_;
 }
 
 size_t socket::end_send(std::shared_ptr<xtd::iasync_result> ar, xtd::net::sockets::socket_error& error) {
-  if (ar == nullptr) throw argument_null_exception(csf_);
-  if (!is<async_result_send>(ar)) throw argument_exception(csf_);
+  if (ar == nullptr) throw argument_null_exception {csf_};
+  if (!is<async_result_send>(ar)) throw argument_exception {csf_};
   lock_guard<xtd::threading::mutex> lock(as<xtd::threading::mutex>(ar->async_wait_handle()));
   if (as<async_result_send>(ar)->exception_) rethrow_exception(as<async_result_send>(ar)->exception_);
   error = as<async_result_send>(ar)->error_code_;
@@ -661,25 +661,25 @@ size_t socket::end_send(std::shared_ptr<xtd::iasync_result> ar, xtd::net::socket
 }
 
 size_t socket::end_send_to(std::shared_ptr<xtd::iasync_result> ar) {
-  if (ar == nullptr) throw argument_null_exception(csf_);
-  if (!is<async_result_send_to>(ar)) throw argument_exception(csf_);
+  if (ar == nullptr) throw argument_null_exception {csf_};
+  if (!is<async_result_send_to>(ar)) throw argument_exception {csf_};
   lock_guard<xtd::threading::mutex> lock(as<xtd::threading::mutex>(ar->async_wait_handle()));
   if (as<async_result_send_to>(ar)->exception_) rethrow_exception(as<async_result_send_to>(ar)->exception_);
   return as<async_result_send_to>(ar)->number_of_bytes_sent_;
 }
 
 size_t socket::get_raw_socket_option(int32 socket_option_level, int32 socket_option_name, intptr option_value, size_t size_option_value) const {
-  if (data_->handle == 0) throw object_closed_exception(csf_);
+  if (data_->handle == 0) throw object_closed_exception {csf_};
   size_t size  = 0;
   if (native::socket::get_raw_socket_option(data_->handle, socket_option_level, socket_option_name, option_value, size) != 0) throw socket_exception(get_last_error_(), csf_);
   return size;
 }
 
 int32 socket::get_socket_option(xtd::net::sockets::socket_option_level socket_option_level, xtd::net::sockets::socket_option_name socket_option_name) const {
-  if (data_->handle == 0) throw object_closed_exception(csf_);
+  if (data_->handle == 0) throw object_closed_exception {csf_};
   if (socket_option_name == xtd::net::sockets::socket_option_name::broadcast && data_->socket_type != xtd::net::sockets::socket_type::dgram) throw socket_exception(socket_error::protocol_not_supported, csf_);
   if (socket_option_name == xtd::net::sockets::socket_option_name::multicast_loopback && data_->socket_type != xtd::net::sockets::socket_type::dgram) throw socket_exception(socket_error::protocol_not_supported, csf_);
-  if (socket_option_name == xtd::net::sockets::socket_option_name::linger || socket_option_name == xtd::net::sockets::socket_option_name::add_membership || socket_option_name == xtd::net::sockets::socket_option_name::drop_membership) throw argument_exception(csf_);
+  if (socket_option_name == xtd::net::sockets::socket_option_name::linger || socket_option_name == xtd::net::sockets::socket_option_name::add_membership || socket_option_name == xtd::net::sockets::socket_option_name::drop_membership) throw argument_exception {csf_};
   int32 result = 0;
   size_t size = sizeof(int32);
   if (native::socket::get_socket_option(data_->handle, static_cast<int32>(socket_option_level), static_cast<int32>(socket_option_name), reinterpret_cast<intptr>(&result), size) != 0) throw socket_exception(get_last_error_(), csf_);
@@ -687,7 +687,7 @@ int32 socket::get_socket_option(xtd::net::sockets::socket_option_level socket_op
 }
 
 xtd::net::sockets::linger_option socket::get_socket_linger_option() const {
-  if (data_->handle == 0) throw object_closed_exception(csf_);
+  if (data_->handle == 0) throw object_closed_exception {csf_};
   if (data_->socket_type == xtd::net::sockets::socket_type::dgram) throw socket_exception(socket_error::protocol_not_supported, csf_);
   bool enabled = false;
   uint32 linger_time = 0;
@@ -696,8 +696,8 @@ xtd::net::sockets::linger_option socket::get_socket_linger_option() const {
 }
 
 xtd::net::sockets::multicast_option socket::get_socket_multicast_option(xtd::net::sockets::socket_option_name socket_option_name) const {
-  if (data_->handle == 0) throw object_closed_exception(csf_);
-  if (socket_option_name != xtd::net::sockets::socket_option_name::add_membership && socket_option_name != xtd::net::sockets::socket_option_name::drop_membership) throw argument_exception(csf_);
+  if (data_->handle == 0) throw object_closed_exception {csf_};
+  if (socket_option_name != xtd::net::sockets::socket_option_name::add_membership && socket_option_name != xtd::net::sockets::socket_option_name::drop_membership) throw argument_exception {csf_};
   uint32 multicast_address = 0;
   uint32 interface_index = 0;
   if (native::socket::get_socket_multicast_option(data_->handle, static_cast<int32>(socket_option_name), multicast_address, interface_index) != 0) throw socket_exception(get_last_error_(), csf_);
@@ -711,8 +711,8 @@ xtd::net::sockets::multicast_option socket::get_socket_multicast_option(xtd::net
 }
 
 xtd::net::sockets::ip_v6_multicast_option socket::get_socket_ip_v6_multicast_option(xtd::net::sockets::socket_option_name socket_option_name) const {
-  if (data_->handle == 0) throw object_closed_exception(csf_);
-  if (socket_option_name != xtd::net::sockets::socket_option_name::add_membership && socket_option_name != xtd::net::sockets::socket_option_name::drop_membership) throw argument_exception(csf_);
+  if (data_->handle == 0) throw object_closed_exception {csf_};
+  if (socket_option_name != xtd::net::sockets::socket_option_name::add_membership && socket_option_name != xtd::net::sockets::socket_option_name::drop_membership) throw argument_exception {csf_};
   vector<xtd::byte> multicast_address;
   uint32 interface_index = 0;
   if (native::socket::get_socket_ip_v6_multicast_option(data_->handle, static_cast<int32>(socket_option_name), multicast_address, interface_index) != 0) throw socket_exception(get_last_error_(), csf_);
@@ -720,7 +720,7 @@ xtd::net::sockets::ip_v6_multicast_option socket::get_socket_ip_v6_multicast_opt
 }
 
 size_t socket::io_control(int32 io_control_code, std::vector<xtd::byte>& option_in_value, std::vector<xtd::byte>& option_out_value) {
-  if (data_->handle == 0) throw object_closed_exception(csf_);
+  if (data_->handle == 0) throw object_closed_exception {csf_};
   int32 result = native::socket::io_control(data_->handle, io_control_code, option_in_value, option_out_value);
   if (result == -1)  throw socket_exception(get_last_error_(), csf_);
   return static_cast<size_t>(result);
@@ -731,7 +731,7 @@ size_t socket::io_control(xtd::net::sockets::io_control_code io_control_code, st
 }
 
 void socket::listen(size_t backlog) {
-  if (data_->handle == 0) throw object_closed_exception(csf_);
+  if (data_->handle == 0) throw object_closed_exception {csf_};
   if (data_->is_bound == false) throw socket_exception(socket_error::not_connected, csf_);
   if (native::socket::listen(data_->handle, backlog) != 0) throw socket_exception(get_last_error_(), csf_);
   data_->is_listening = true;
@@ -742,7 +742,7 @@ void socket::listen() {
 }
 
 bool socket::poll(int32 micro_seconds, xtd::net::sockets::select_mode mode) {
-  if (data_->handle == 0) throw object_closed_exception(csf_);
+  if (data_->handle == 0) throw object_closed_exception {csf_};
   int32 result = native::socket::poll(data_->handle, micro_seconds, static_cast<int32>(mode));
   if (result == -1) throw socket_exception(get_last_error_(), csf_);
   return result;
@@ -768,8 +768,8 @@ size_t socket::receive(vector<xtd::byte>& buffer, size_t offset, size_t size, so
 }
 
 size_t socket::receive(vector<xtd::byte>& buffer, size_t offset, size_t size, socket_flags socket_flags, socket_error& error_code) {
-  if (offset + size > buffer.size()) throw argument_out_of_range_exception(csf_);
-  if (data_->handle == 0) throw object_closed_exception(csf_);
+  if (offset + size > buffer.size()) throw argument_out_of_range_exception {csf_};
+  if (data_->handle == 0) throw object_closed_exception {csf_};
   if (!data_->is_connected) throw socket_exception(socket_error::not_connected, csf_);
   
   auto number_of_bytes_received = native::socket::receive(data_->handle, buffer, offset, size, static_cast<int32>(socket_flags));
@@ -790,8 +790,8 @@ size_t socket::receive_from(vector<xtd::byte>& buffer, size_t size, socket_flags
 }
 
 size_t socket::receive_from(vector<xtd::byte>& buffer, size_t offset, size_t size, socket_flags socket_flags, end_point& remote_end_point) {
-  if (offset + size > buffer.size()) throw argument_out_of_range_exception(csf_);
-  if (data_->handle == 0) throw object_closed_exception(csf_);
+  if (offset + size > buffer.size()) throw argument_out_of_range_exception {csf_};
+  if (data_->handle == 0) throw object_closed_exception {csf_};
   socket_address socket_address = remote_end_point.serialize();
   auto number_of_bytes_received = native::socket::receive_from(data_->handle, buffer, offset, size, static_cast<int32>(socket_flags), socket_address.bytes_);
   if (number_of_bytes_received == -1) throw socket_exception(get_last_error_(), csf_);
@@ -799,8 +799,8 @@ size_t socket::receive_from(vector<xtd::byte>& buffer, size_t offset, size_t siz
 }
 
 size_t socket::receive_message_from(vector<xtd::byte>& buffer, size_t offset, size_t size, socket_flags socket_flags, end_point& remote_end_point, ip_packet_information& ip_packet_information) {
-  if (offset + size > buffer.size()) throw argument_out_of_range_exception(csf_);
-  if (data_->handle == 0) throw object_closed_exception(csf_);
+  if (offset + size > buffer.size()) throw argument_out_of_range_exception {csf_};
+  if (data_->handle == 0) throw object_closed_exception {csf_};
   socket_address socket_address = remote_end_point.serialize();
   auto number_of_bytes_received = native::socket::receive_from(data_->handle, buffer, offset, size, static_cast<int32>(socket_flags), socket_address.bytes_);
   if (number_of_bytes_received == -1) throw socket_exception(get_last_error_(), csf_);
@@ -814,7 +814,7 @@ size_t socket::receive_message_from(vector<xtd::byte>& buffer, size_t offset, si
 }
 
 size_t socket::select(std::vector<socket>& check_read, std::vector<socket>& check_write, std::vector<socket>& check_error, int32 microseconds) {
-  if (check_read.size() == 0 && check_write.size() == 0 && check_error.size() == 0) throw argument_exception(csf_);
+  if (check_read.size() == 0 && check_write.size() == 0 && check_error.size() == 0) throw argument_exception {csf_};
   
   vector<intptr> check_read_handles;
   for_each(check_read.begin(), check_read.end(), [&](auto s) {check_read_handles.push_back(s.data_->handle);});
@@ -861,8 +861,8 @@ size_t socket::send(const vector<xtd::byte>& buffer, size_t offset, size_t size,
 }
 
 size_t socket::send(const vector<xtd::byte>& buffer, size_t offset, size_t size, socket_flags socket_flags, socket_error& error_code) {
-  if (offset + size > buffer.size()) throw argument_out_of_range_exception(csf_);
-  if (data_->handle == 0) throw object_closed_exception(csf_);
+  if (offset + size > buffer.size()) throw argument_out_of_range_exception {csf_};
+  if (data_->handle == 0) throw object_closed_exception {csf_};
   int32 number_of_bytes_sent = native::socket::send(data_->handle, buffer, offset, size, static_cast<int32>(socket_flags));
   error_code = number_of_bytes_sent == -1 ? get_last_error_() : socket_error::success;
   return static_cast<size_t>(number_of_bytes_sent);
@@ -881,8 +881,8 @@ size_t socket::send_to(const vector<xtd::byte>& buffer, size_t size, socket_flag
 }
 
 size_t socket::send_to(const vector<xtd::byte>& buffer, size_t offset, size_t size, socket_flags socket_flags, const end_point& remote_end_point) {
-  if (offset + size > buffer.size()) throw argument_out_of_range_exception(csf_);
-  if (data_->handle == 0) throw object_closed_exception(csf_);
+  if (offset + size > buffer.size()) throw argument_out_of_range_exception {csf_};
+  if (data_->handle == 0) throw object_closed_exception {csf_};
   socket_address socket_address = remote_end_point.serialize();
   int32 number_of_bytes_sent = native::socket::send_to(data_->handle, buffer, offset, size, static_cast<int32>(socket_flags), socket_address.bytes_);
   if (number_of_bytes_sent == -1) throw socket_exception(get_last_error_(), csf_);
@@ -890,10 +890,10 @@ size_t socket::send_to(const vector<xtd::byte>& buffer, size_t offset, size_t si
 }
 
 void socket::set_ip_protection_level(ip_protection_level level) {
-  if (level == ip_protection_level::unspecified) throw argument_exception(csf_);
+  if (level == ip_protection_level::unspecified) throw argument_exception {csf_};
   if (data_->address_family == address_family::inter_network_v6) set_socket_option(socket_option_level::ip_v6, socket_option_name::ip_protection_level, static_cast<int32>(level));
   else if (data_->address_family == address_family::inter_network) set_socket_option(socket_option_level::ip, socket_option_name::ip_protection_level, static_cast<int32>(level));
-  else throw not_supported_exception(csf_);
+  else throw not_supported_exception {csf_};
 }
 
 void socket::set_socket_option(xtd::net::sockets::socket_option_level socket_option_level, xtd::net::sockets::socket_option_name socket_option_name, bool option_value) {
@@ -901,47 +901,47 @@ void socket::set_socket_option(xtd::net::sockets::socket_option_level socket_opt
 }
 
 void socket::set_socket_option(xtd::net::sockets::socket_option_level socket_option_level, xtd::net::sockets::socket_option_name socket_option_name, int32 option_value) {
-  if (data_->handle == 0) throw object_closed_exception(csf_);
+  if (data_->handle == 0) throw object_closed_exception {csf_};
   if (socket_option_name == xtd::net::sockets::socket_option_name::broadcast && data_->socket_type != xtd::net::sockets::socket_type::dgram) throw socket_exception(socket_error::protocol_not_supported, csf_);
   if (socket_option_name == xtd::net::sockets::socket_option_name::multicast_loopback && data_->socket_type != xtd::net::sockets::socket_type::dgram) throw socket_exception(socket_error::protocol_not_supported, csf_);
-  if (socket_option_name == xtd::net::sockets::socket_option_name::linger || socket_option_name == xtd::net::sockets::socket_option_name::add_membership || socket_option_name == xtd::net::sockets::socket_option_name::drop_membership) throw argument_exception(csf_);
+  if (socket_option_name == xtd::net::sockets::socket_option_name::linger || socket_option_name == xtd::net::sockets::socket_option_name::add_membership || socket_option_name == xtd::net::sockets::socket_option_name::drop_membership) throw argument_exception {csf_};
   if (native::socket::set_socket_option(data_->handle, static_cast<int32>(socket_option_level), static_cast<int32>(socket_option_name), reinterpret_cast<intptr>(&option_value), sizeof(int32)) != 0) throw socket_exception(get_last_error_(), csf_);
 }
 
 void socket::set_socket_option(xtd::net::sockets::linger_option option_value) {
-  if (data_->handle == 0) throw object_closed_exception(csf_);
+  if (data_->handle == 0) throw object_closed_exception {csf_};
   if (data_->socket_type == xtd::net::sockets::socket_type::dgram) throw socket_exception(socket_error::protocol_not_supported, csf_);
   if (native::socket::set_socket_linger_option(data_->handle, option_value.enabled(), option_value.linger_time()) != 0) throw socket_exception(get_last_error_(), csf_);
 }
 
 void socket::set_socket_option(xtd::net::sockets::socket_option_name socket_option_name, const xtd::net::sockets::multicast_option& option_value) {
-  if (data_->handle == 0) throw object_closed_exception(csf_);
-  if (socket_option_name != xtd::net::sockets::socket_option_name::add_membership && socket_option_name != xtd::net::sockets::socket_option_name::drop_membership) throw argument_exception(csf_);
+  if (data_->handle == 0) throw object_closed_exception {csf_};
+  if (socket_option_name != xtd::net::sockets::socket_option_name::add_membership && socket_option_name != xtd::net::sockets::socket_option_name::drop_membership) throw argument_exception {csf_};
   uint32 multicast_address = option_value.group().address_;
   uint32 interface_index = option_value.local_address() != ip_address::none ? option_value.local_address().address_ : ip_address::host_to_network_order(option_value.interface_index());
   if (native::socket::set_socket_multicast_option(data_->handle, static_cast<int32>(socket_option_name), multicast_address, interface_index) != 0) throw socket_exception(get_last_error_(), csf_);
 }
 
 void socket::set_socket_option(xtd::net::sockets::socket_option_name socket_option_name, const xtd::net::sockets::ip_v6_multicast_option& option_value) {
-  if (data_->handle == 0) throw object_closed_exception(csf_);
-  if (socket_option_name != xtd::net::sockets::socket_option_name::add_membership && socket_option_name != xtd::net::sockets::socket_option_name::drop_membership) throw argument_exception(csf_);
+  if (data_->handle == 0) throw object_closed_exception {csf_};
+  if (socket_option_name != xtd::net::sockets::socket_option_name::add_membership && socket_option_name != xtd::net::sockets::socket_option_name::drop_membership) throw argument_exception {csf_};
   if (native::socket::set_socket_ip_v6_multicast_option(data_->handle, static_cast<int32>(socket_option_name), option_value.group().get_address_bytes(), option_value.interface_index()) != 0) throw socket_exception(get_last_error_(), csf_);
 }
 
 void socket::set_raw_socket_option(int32 socket_option_level, int32 socket_option_name, intptr option_value, size_t option_value_size) {
-  if (data_->handle == 0) throw object_closed_exception(csf_);
+  if (data_->handle == 0) throw object_closed_exception {csf_};
   if (native::socket::set_raw_socket_option(data_->handle, socket_option_level, socket_option_name, reinterpret_cast<intptr>(&option_value), option_value_size) != 0) throw socket_exception(get_last_error_(), csf_);
 }
 
 void socket::shutdown(socket_shutdown how) {
-  if (data_->handle == 0) throw object_closed_exception(csf_);
+  if (data_->handle == 0) throw object_closed_exception {csf_};
   if (native::socket::shutdown(data_->handle, static_cast<int32>(how)) != 0) throw socket_exception(get_last_error_(), csf_);
   data_->is_connected = false;
   data_->is_disconnected = true;
 }
 
 std::shared_ptr<xtd::iasync_result> socket::begin_connect_(std::shared_ptr<xtd::net::end_point> remote_end_point, xtd::async_callback callback, const std::any& state) {
-  if (data_->handle == 0) throw object_closed_exception(csf_);
+  if (data_->handle == 0) throw object_closed_exception {csf_};
   
   std::shared_ptr<async_result_connect> ar = make_shared<async_result_connect>(state);
   ar->async_wait_handle().wait_one();
@@ -964,7 +964,7 @@ void socket::bind_(std::shared_ptr<xtd::net::end_point> local_end_point) {
   debug::write_if(show_debug_socket.enabled(), ustring::format("socket::bind() : socket=[{}] local_end_point=[{}]", data_->handle, *local_end_point));
   if (data_->handle == 0) {
     debug::write_line_if(show_debug_socket.enabled(), " error=[object_close]");
-    throw object_closed_exception(csf_);
+    throw object_closed_exception {csf_};
   }
   data_->local_end_point = local_end_point;
   xtd::net::socket_address socket_address = data_->local_end_point->serialize();
@@ -980,7 +980,7 @@ void socket::connect_(std::shared_ptr<xtd::net::end_point> remote_end_point) {
   debug::write_if(show_debug_socket.enabled(), ustring::format("socket::connect() : socket=[{}] remote_end_point=[{}]", data_->handle, *remote_end_point));
   if (data_->handle == 0) {
     debug::write_line_if(show_debug_socket.enabled(), " error=[object_close]");
-    throw object_closed_exception(csf_);
+    throw object_closed_exception {csf_};
   }
   
   data_->remote_end_point = remote_end_point;

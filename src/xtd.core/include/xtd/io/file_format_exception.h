@@ -100,11 +100,11 @@ namespace xtd {
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to xtd::io::file_format_exception({any argument}, csf_)
+/// @remarks Is equivalent to xtd::io::file_format_exception {{any argument}, csf_}
 /// @code
 /// void my_func() {
-///   if (invalid_info) throw file_format_exception_(); // same as : throw file_format_exception(csf_);
-///   if (invalid_value) throw file_format_exception_("Bad value"); // same as : throw file_format_exception("Bad value", csf_);
+///   if (invalid_info) throw file_format_exception_(); // same as : throw file_format_exception {csf_};
+///   if (invalid_value) throw file_format_exception_("Bad value"); // same as : throw file_format_exception {"Bad value", csf_};
 ///   ...
 /// }
 /// @endcode

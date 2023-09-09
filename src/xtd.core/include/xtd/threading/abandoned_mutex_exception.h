@@ -93,11 +93,11 @@ namespace xtd {
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to xtd::abandoned_mutex_exception({any argument}, csf_)
+/// @remarks Is equivalent to xtd::abandoned_mutex_exception {{any argument}, csf_}
 /// @code
 /// void my_func() {
-///   if (invalid_info) throw abandoned_mutex_exception_(); // same as : throw abandoned_mutex_exception(csf_);
-///   if (invalid_value) throw abandoned_mutex_exception_("Bad value"); // same as : throw abandoned_mutex_exception("Bad value", csf_);
+///   if (invalid_info) throw abandoned_mutex_exception_(); // same as : throw abandoned_mutex_exception {csf_};
+///   if (invalid_value) throw abandoned_mutex_exception_("Bad value"); // same as : throw abandoned_mutex_exception {"Bad value", csf_};
 ///   ...
 /// }
 /// @endcode
