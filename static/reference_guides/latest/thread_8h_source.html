@@ -249,26 +249,27 @@ $(function() {
 <div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>      static intptr get_current_thread_handle();</div>
 <div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>      static intptr get_current_thread_id();</div>
 <div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>      static static_data&amp; get_static_data();</div>
-<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>      <span class="keywordtype">void</span> interrupt_internal();</div>
-<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>      <span class="keywordtype">bool</span> is_aborted() const noexcept;</div>
-<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>      <span class="keywordtype">bool</span> is_stopped() const noexcept;</div>
-<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>      <span class="keywordtype">bool</span> is_suspended() const noexcept;</div>
-<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>      <span class="keywordtype">void</span> is_thread_pool_thread(<span class="keywordtype">bool</span> value) noexcept;</div>
-<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>      <span class="keywordtype">bool</span> is_unmanaged_thread() const noexcept;</div>
-<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>      <span class="keywordtype">bool</span> is_unstarted() const noexcept;</div>
-<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>      <span class="keywordtype">bool</span> is_wait_sleep_join() const noexcept;</div>
-<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>      static <span class="keywordtype">bool</span> join_all_ptr(const std::vector&lt;thread*&gt;&amp; threads, int32 milliseconds_timeout);</div>
-<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>      <span class="keywordtype">void</span> thread_proc();</div>
-<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span>      static thread&amp; unmanaged_thread();</div>
-<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span> </div>
-<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span>      static constexpr int32 main_managed_thread_id = 1;</div>
-<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>      static constexpr int32 unmanaged_thread_id = 0;</div>
-<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span> </div>
-<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span>      std::shared_ptr&lt;data&gt; data_;</div>
-<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>      static intptr main_thread_id_;</div>
-<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>    };</div>
-<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span>  }</div>
-<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>}</div>
+<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>      static thread&amp; get_thread(intptr thread_id);</div>
+<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>      <span class="keywordtype">void</span> interrupt_internal();</div>
+<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>      <span class="keywordtype">bool</span> is_aborted() const noexcept;</div>
+<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>      <span class="keywordtype">bool</span> is_stopped() const noexcept;</div>
+<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>      <span class="keywordtype">bool</span> is_suspended() const noexcept;</div>
+<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>      <span class="keywordtype">void</span> is_thread_pool_thread(<span class="keywordtype">bool</span> value) noexcept;</div>
+<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>      <span class="keywordtype">bool</span> is_unmanaged_thread() const noexcept;</div>
+<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>      <span class="keywordtype">bool</span> is_unstarted() const noexcept;</div>
+<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>      <span class="keywordtype">bool</span> is_wait_sleep_join() const noexcept;</div>
+<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>      static <span class="keywordtype">bool</span> join_all_ptr(const std::vector&lt;thread*&gt;&amp; threads, int32 milliseconds_timeout);</div>
+<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span>      <span class="keywordtype">void</span> thread_proc();</div>
+<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>      static thread&amp; unmanaged_thread();</div>
+<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span> </div>
+<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>      static constexpr int32 main_managed_thread_id = 1;</div>
+<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span>      static constexpr int32 unmanaged_thread_id = 0;</div>
+<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span> </div>
+<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>      std::shared_ptr&lt;data&gt; data_;</div>
+<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>      static intptr main_thread_id_;</div>
+<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span>    };</div>
+<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>  }</div>
+<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>}</div>
 <div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.h:32</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1thread_html"><div class="ttname"><a href="classxtd_1_1threading_1_1thread.html">xtd::threading::thread</a></div><div class="ttdoc">Creates and controls a thread, sets its priority, and gets its status.</div><div class="ttdef"><b>Definition</b> thread.h:42</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1thread_html_a01ebb1fb46c9f74b982192f216f8951f"><div class="ttname"><a href="classxtd_1_1threading_1_1thread.html#a01ebb1fb46c9f74b982192f216f8951f">xtd::threading::thread::thread</a></div><div class="ttdeci">thread(const xtd::threading::parameterized_thread_start &amp;start)</div><div class="ttdoc">Initializes a new instance of the xtd::threading::thread class, specifying a delegate that allows an ...</div></div>
@@ -314,7 +315,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Sep 8 2023 18:20:46 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Sep 9 2023 22:17:16 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

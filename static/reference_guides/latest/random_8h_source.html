@@ -133,7 +133,7 @@ $(function() {
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    </div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> value_t&gt;</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="classxtd_1_1random.html#a9db5b7d015f55c274c45b6059b159a9f">  116</a></span>    value_t <a class="code hl_function" href="classxtd_1_1random.html#a9db5b7d015f55c274c45b6059b159a9f">next</a>(value_t min_value, value_t max_value)<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>      <span class="keywordflow">if</span> (min_value &gt; max_value) <span class="keywordflow">throw</span> <a class="code hl_class" href="classxtd_1_1argument__out__of__range__exception.html">argument_out_of_range_exception</a>(<a class="code hl_define" href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a>);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>      <span class="keywordflow">if</span> (min_value &gt; max_value) <span class="keywordflow">throw</span> <a class="code hl_class" href="classxtd_1_1argument__out__of__range__exception.html">argument_out_of_range_exception</a> {<a class="code hl_define" href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a>};</div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>      <span class="keywordflow">if</span> (min_value == max_value) <span class="keywordflow">return</span> min_value;</div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>      <span class="keywordflow">return</span> min_value + <span class="keyword">static_cast&lt;</span>value_t<span class="keyword">&gt;</span>(std::round(<a class="code hl_function" href="classxtd_1_1random.html#af5a84d2617f754220f6a383520bfa98f">sample</a>() * std::numeric_limits&lt;value_t&gt;::max())) % ((max_value - 1) - min_value + 1);</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    }</div>
@@ -149,7 +149,7 @@ $(function() {
 <div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    </div>
 <div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> value_t&gt;</div>
 <div class="line"><a id="l00146" name="l00146"></a><span class="lineno"><a class="line" href="classxtd_1_1random.html#a423bd1ccf2965d97a2ee3d71ed509ded">  146</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1random.html#a423bd1ccf2965d97a2ee3d71ed509ded">next_values</a>(value_t* buffer, <span class="keywordtype">size_t</span> buffer_size)<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>      <span class="keywordflow">if</span> (buffer == <span class="keyword">nullptr</span>) <span class="keywordflow">throw</span> <a class="code hl_class" href="classxtd_1_1argument__null__exception.html">argument_null_exception</a>(<a class="code hl_define" href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a>);</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>      <span class="keywordflow">if</span> (buffer == <span class="keyword">nullptr</span>) <span class="keywordflow">throw</span> <a class="code hl_class" href="classxtd_1_1argument__null__exception.html">argument_null_exception</a> {<a class="code hl_define" href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a>};</div>
 <div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>      <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> index = 0; index &lt; buffer_size; index++)</div>
 <div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        buffer[index] = next&lt;value_t&gt;(0, std::numeric_limits&lt;value_t&gt;::max());</div>
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    }</div>
@@ -197,7 +197,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Sep 8 2023 18:20:46 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Sep 9 2023 22:17:16 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
