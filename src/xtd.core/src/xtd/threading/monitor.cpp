@@ -105,6 +105,10 @@ bool monitor::try_enter_ptr(ptr_item ptr, int32 milliseconds_timeout, bool& lock
   return lock_taken = monitor_data->event.wait_one(milliseconds_timeout);
 }
 
+bool monitor::wait_ptr(ptr_item ptr, int32 milliseconds_timeout, bool exit_context) noexcept {
+  return false;
+}
+
 monitor::static_data& monitor::get_static_data() {
   static static_data data;
   return data;
