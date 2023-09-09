@@ -15,15 +15,15 @@ version::version(const ustring& version) {
 }
 
 version::version(int32 major, int32 minor) : major_(major), minor_(minor) {
-  if (major < 0 || minor < 0) throw argument_out_of_range_exception(csf_);
+  if (major < 0 || minor < 0) throw argument_out_of_range_exception {csf_};
 }
 
 version::version(int32 major, int32 minor, int32 build) : major_(major), minor_(minor), build_(build) {
-  if (major < 0 || minor < 0 || build < 0) throw argument_out_of_range_exception(csf_);
+  if (major < 0 || minor < 0 || build < 0) throw argument_out_of_range_exception {csf_};
 }
 
 version::version(int32 major, int32 minor, int32 build, int32 revision) : major_(major), minor_(minor), build_(build), revision_(revision) {
-  if (major < 0 || minor < 0 || build < 0 || revision < 0) throw argument_out_of_range_exception(csf_);
+  if (major < 0 || minor < 0 || build < 0 || revision < 0) throw argument_out_of_range_exception {csf_};
 }
 
 int32 version::build() const noexcept {
@@ -78,7 +78,7 @@ version version::parse(const xtd::ustring& input) {
     case 4: return version(ustring::parse<int32>(versions[0]), ustring::parse<int32>(versions[1]), ustring::parse<int32>(versions[2]), ustring::parse<int32>(versions[3]));
   }
   
-  throw xtd::argument_exception(csf_);
+  throw xtd::argument_exception {csf_};
 }
 
 bool version::try_parse(const xtd::ustring& input, version& result) noexcept {

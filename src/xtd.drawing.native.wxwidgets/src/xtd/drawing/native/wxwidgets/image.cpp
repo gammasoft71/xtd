@@ -385,7 +385,7 @@ void image::lock_bits(intptr image, int32 left, int32 top, int32 width, int32 he
 }
 
 void image::make_transparent(intptr image, xtd::byte transparent_color_a, xtd::byte transparent_color_r, xtd::byte transparent_color_g, xtd::byte transparent_color_b) {
-  if (!image) throw argument_exception(csf_);
+  if (!image) throw argument_exception {csf_};
   reinterpret_cast<wxImage*>(image)->InitAlpha();
   for (int32 y = 0; y < reinterpret_cast<wxImage*>(image)->GetHeight(); y++)
     for (int32 x = 0; x < reinterpret_cast<wxImage*>(image)->GetWidth(); x++)

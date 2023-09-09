@@ -23,12 +23,12 @@ matrix::matrix(float m11, float m12, float m21, float m22, float dx, float dy) :
 }
 
 matrix::matrix(const rectangle& rect, const vector<point>& plgpts) : data_(std::make_shared<data>()) {
-  if (plgpts.size() != 3) throw argument_exception(csf_);
+  if (plgpts.size() != 3) throw argument_exception {csf_};
   init_from_rect_3points(rectangle_f(rect), point_f(plgpts[0]), point_f(plgpts[1]), point_f(plgpts[2]));
 }
 
 matrix::matrix(const rectangle_f& rect, const vector<point_f>& plgpts) : data_(std::make_shared<data>()) {
-  if (plgpts.size() != 3) throw argument_exception(csf_);
+  if (plgpts.size() != 3) throw argument_exception {csf_};
   init_from_rect_3points(rect, plgpts[0], plgpts[1], plgpts[2]);
 }
 

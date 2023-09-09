@@ -114,7 +114,7 @@ int32 button_base::image_index() const noexcept {
 
 button_base& button_base::image_index(int32 value) {
   if (data_->image_index != value) {
-    if (value < -1 || static_cast<size_t>(value) >= data_->image_list.images().size()) throw argument_out_of_range_exception(csf_);
+    if (value < -1 || static_cast<size_t>(value) >= data_->image_list.images().size()) throw argument_out_of_range_exception {csf_};
     data_->image_index = value;
     if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
     if (value != -1) data_->image = xtd::drawing::image::empty;

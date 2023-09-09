@@ -9,7 +9,7 @@ using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
 void up_down_button::maximum(intptr control, int32 maximum) {
-  if (!control || !wxTheApp) throw argument_exception(csf_);
+  if (!control || !wxTheApp) throw argument_exception {csf_};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
@@ -18,7 +18,7 @@ void up_down_button::maximum(intptr control, int32 maximum) {
 }
 
 void up_down_button::minimum(intptr control, int32 minimum) {
-  if (!control || !wxTheApp) throw argument_exception(csf_);
+  if (!control || !wxTheApp) throw argument_exception {csf_};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
@@ -27,7 +27,7 @@ void up_down_button::minimum(intptr control, int32 minimum) {
 }
 
 void up_down_button::value(intptr control, int32 value) {
-  if (!control || !wxTheApp) throw argument_exception(csf_);
+  if (!control || !wxTheApp) throw argument_exception {csf_};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
@@ -36,7 +36,7 @@ void up_down_button::value(intptr control, int32 value) {
 }
 
 int32 up_down_button::value(intptr control) {
-  if (!control || !wxTheApp) throw argument_exception(csf_);
+  if (!control || !wxTheApp) throw argument_exception {csf_};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return 0;

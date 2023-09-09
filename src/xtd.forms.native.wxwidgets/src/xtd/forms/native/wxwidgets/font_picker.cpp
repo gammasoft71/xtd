@@ -11,7 +11,7 @@ using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
 color font_picker::color(intptr control) {
-  if (!control || !wxTheApp) throw argument_exception(csf_);
+  if (!control || !wxTheApp) throw argument_exception {csf_};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return {};
@@ -21,7 +21,7 @@ color font_picker::color(intptr control) {
 }
 
 void font_picker::color(intptr control, const drawing::color& color) {
-  if (!control || !wxTheApp) throw argument_exception(csf_);
+  if (!control || !wxTheApp) throw argument_exception {csf_};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
@@ -30,7 +30,7 @@ void font_picker::color(intptr control, const drawing::color& color) {
 }
 
 font font_picker::font(intptr control) {
-  if (!control || !wxTheApp) throw argument_exception(csf_);
+  if (!control || !wxTheApp) throw argument_exception {csf_};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return system_fonts::default_font();
@@ -39,7 +39,7 @@ font font_picker::font(intptr control) {
 }
 
 void font_picker::font(intptr control, const drawing::font& font) {
-  if (!control || !wxTheApp) throw argument_exception(csf_);
+  if (!control || !wxTheApp) throw argument_exception {csf_};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;

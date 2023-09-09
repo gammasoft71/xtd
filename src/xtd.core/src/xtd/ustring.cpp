@@ -13,7 +13,7 @@ using namespace std;
 using namespace xtd;
 
 void __throw_ustring_format_exception() {
-  throw format_exception(csf_);
+  throw format_exception {csf_};
 }
 
 void __throw_ustring_format_exception_close_bracket() {
@@ -87,32 +87,32 @@ ustring::ustring(const ustring& str, size_t index, const allocator_type& allocat
 }
 
 ustring::ustring(const value_type* str, size_t count) {
-  if (str == nullptr) throw null_pointer_exception(csf_);
+  if (str == nullptr) throw null_pointer_exception {csf_};
   assign(str, count);
 }
 
 ustring::ustring(const value_type* str, size_t count, const allocator_type& allocator) : basic_string<value_type>(allocator) {
-  if (str == nullptr) throw null_pointer_exception(csf_);
+  if (str == nullptr) throw null_pointer_exception {csf_};
   assign(str, count);
 }
 
 ustring::ustring(const value_type* str) {
-  if (str == nullptr) throw null_pointer_exception(csf_);
+  if (str == nullptr) throw null_pointer_exception {csf_};
   assign(str);
 }
 
 ustring::ustring(const value_type* str, const allocator_type& allocator) : basic_string<value_type>(allocator) {
-  if (str == nullptr) throw null_pointer_exception(csf_);
+  if (str == nullptr) throw null_pointer_exception {csf_};
   assign(str);
 }
 
 ustring::ustring(value_type* str) {
-  if (str == nullptr) throw null_pointer_exception(csf_);
+  if (str == nullptr) throw null_pointer_exception {csf_};
   assign(str);
 }
 
 ustring::ustring(value_type* str, const allocator_type& allocator) : basic_string<value_type>(allocator) {
-  if (str == nullptr) throw null_pointer_exception(csf_);
+  if (str == nullptr) throw null_pointer_exception {csf_};
   assign(str);
 }
 
@@ -136,22 +136,22 @@ ustring::ustring(const u8string& str, const allocator_type& allocator) noexcept 
 }
 
 ustring::ustring(const char8* str) {
-  if (str == nullptr) throw null_pointer_exception(csf_);
+  if (str == nullptr) throw null_pointer_exception {csf_};
   assign(reinterpret_cast<const value_type*>(str));
 }
 
 ustring::ustring(const char8* str, const allocator_type& allocator) : basic_string<value_type>(allocator) {
-  if (str == nullptr) throw null_pointer_exception(csf_);
+  if (str == nullptr) throw null_pointer_exception {csf_};
   assign(reinterpret_cast<const value_type*>(str));
 }
 
 ustring::ustring(char8* str) {
-  if (str == nullptr) throw null_pointer_exception(csf_);
+  if (str == nullptr) throw null_pointer_exception {csf_};
   assign(reinterpret_cast<value_type*>(str));
 }
 
 ustring::ustring(char8* str, const allocator_type& allocator) : basic_string<value_type>(allocator) {
-  if (str == nullptr) throw null_pointer_exception(csf_);
+  if (str == nullptr) throw null_pointer_exception {csf_};
   assign(reinterpret_cast<value_type*>(str));
 }
 #endif
@@ -284,7 +284,7 @@ ustring& ustring::operator =(const std::string& str) noexcept {
 }
 
 ustring& ustring::operator =(const value_type* str) {
-  if (str == nullptr) throw null_pointer_exception(csf_);
+  if (str == nullptr) throw null_pointer_exception {csf_};
   assign(str);
   return *this;
 }
@@ -296,7 +296,7 @@ ustring& ustring::operator =(const std::u8string& str) noexcept {
 }
 
 ustring& ustring::operator =(const char8* str) {
-  if (str == nullptr) throw null_pointer_exception(csf_);
+  if (str == nullptr) throw null_pointer_exception {csf_};
   assign(reinterpret_cast<const value_type*>(str));
   return *this;
 }
@@ -308,7 +308,7 @@ ustring& ustring::operator =(const std::u16string& str) noexcept {
 }
 
 ustring& ustring::operator =(const char16* str) {
-  if (str == nullptr) throw null_pointer_exception(csf_);
+  if (str == nullptr) throw null_pointer_exception {csf_};
   return operator =(u16string(str));
 }
 
@@ -318,7 +318,7 @@ ustring& ustring::operator =(const std::u32string& str) noexcept {
 }
 
 ustring& ustring::operator =(const char32* str) {
-  if (str == nullptr) throw null_pointer_exception(csf_);
+  if (str == nullptr) throw null_pointer_exception {csf_};
   return operator =(u32string(str));
 }
 
@@ -328,7 +328,7 @@ ustring& ustring::operator =(const std::wstring& str) noexcept {
 }
 
 ustring& ustring::operator =(const wchar* str) {
-  if (str == nullptr) throw null_pointer_exception(csf_);
+  if (str == nullptr) throw null_pointer_exception {csf_};
   return operator =(wstring(str));
 }
 

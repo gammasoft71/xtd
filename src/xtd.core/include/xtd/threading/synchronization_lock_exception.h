@@ -94,11 +94,11 @@ namespace xtd {
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to xtd::synchronization_lock_exception({any argument}, csf_)
+/// @remarks Is equivalent to xtd::synchronization_lock_exception {{any argument}, csf_}
 /// @code
 /// void my_func() {
-///   if (invalid_info) throw synchronization_lock_exception_(); // same as : throw synchronization_lock_exception(csf_);
-///   if (invalid_value) throw synchronization_lock_exception_("Bad value"); // same as : throw synchronization_lock_exception("Bad value", csf_);
+///   if (invalid_info) throw synchronization_lock_exception_(); // same as : throw synchronization_lock_exception {csf_};
+///   if (invalid_value) throw synchronization_lock_exception_("Bad value"); // same as : throw synchronization_lock_exception {"Bad value", csf_};
 ///   ...
 /// }
 /// @endcode

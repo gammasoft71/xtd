@@ -95,11 +95,11 @@ namespace xtd {
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to xtd::security::security_exception({any argument}, csf_)
+/// @remarks Is equivalent to xtd::security::security_exception {{any argument}, csf_}
 /// @code
 /// void my_func() {
-///   if (invalid_info) throw security_exception_(); // same as : throw security_exception(csf_);
-///   if (invalid_value) throw security_exception_("Bad value"); // same as : throw security_exception("Bad value", csf_);
+///   if (invalid_info) throw security_exception_(); // same as : throw security_exception {csf_};
+///   if (invalid_value) throw security_exception_("Bad value"); // same as : throw security_exception {"Bad value", csf_};
 ///   ...
 /// }
 /// @endcode

@@ -150,8 +150,8 @@ ustring bit_converter::to_string(const vector<xtd::byte>& value, size_t start_in
 
 ustring bit_converter::to_string(const vector<xtd::byte>& value, size_t start_index, size_t length) {
   if (value.size() == 0 && start_index == 0 && length == 0) return "";
-  if (start_index >= value.size()) throw xtd::argument_out_of_range_exception(csf_);
-  if (start_index + length > value.size()) throw argument_out_of_range_exception(csf_);
+  if (start_index >= value.size()) throw xtd::argument_out_of_range_exception {csf_};
+  if (start_index + length > value.size()) throw argument_out_of_range_exception {csf_};
   
   ustring str;
   for (size_t index = start_index; index < start_index + length; index++) {

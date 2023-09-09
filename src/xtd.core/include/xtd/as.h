@@ -479,47 +479,47 @@ namespace xtd {
   /// @cond
   template<typename new_type_t>
   new_type_t as(const xtd::ustring& value, xtd::byte from_base) {
-    throw invalid_cast_exception(csf_);
+    throw invalid_cast_exception {csf_};
   }
   template<typename new_type_t>
   new_type_t as(xtd::byte value, xtd::byte from_base) {
-    throw invalid_cast_exception(csf_);
+    throw invalid_cast_exception {csf_};
   }
   template<typename new_type_t>
   new_type_t as(int16 value, xtd::byte from_base) {
-    throw invalid_cast_exception(csf_);
+    throw invalid_cast_exception {csf_};
   }
   template<typename new_type_t>
   new_type_t as(int32 value, xtd::byte from_base) {
-    throw invalid_cast_exception(csf_);
+    throw invalid_cast_exception {csf_};
   }
   template<typename new_type_t>
   new_type_t as(int64 value, xtd::byte from_base) {
-    throw invalid_cast_exception(csf_);
+    throw invalid_cast_exception {csf_};
   }
   template<typename new_type_t>
   new_type_t as(slong value, xtd::byte from_base) {
-    throw invalid_cast_exception(csf_);
+    throw invalid_cast_exception {csf_};
   }
   template<typename new_type_t>
   new_type_t as(sbyte value, xtd::byte from_base) {
-    throw invalid_cast_exception(csf_);
+    throw invalid_cast_exception {csf_};
   }
   template<typename new_type_t>
   new_type_t as(uint16 value, xtd::byte from_base) {
-    throw invalid_cast_exception(csf_);
+    throw invalid_cast_exception {csf_};
   }
   template<typename new_type_t>
   new_type_t as(uint32 value, xtd::byte from_base) {
-    throw invalid_cast_exception(csf_);
+    throw invalid_cast_exception {csf_};
   }
   template<typename new_type_t>
   new_type_t as(uint64 value, xtd::byte from_base) {
-    throw invalid_cast_exception(csf_);
+    throw invalid_cast_exception {csf_};
   }
   template<typename new_type_t>
   new_type_t as(xtd::ulong value, xtd::byte from_base) {
-    throw invalid_cast_exception(csf_);
+    throw invalid_cast_exception {csf_};
   }
   /// @endcond
   

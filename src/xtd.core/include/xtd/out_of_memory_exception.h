@@ -93,11 +93,11 @@ namespace xtd {
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to xtd::out_of_memory_exception({any argument}, csf_)
+/// @remarks Is equivalent to xtd::out_of_memory_exception {{any argument}, csf_}
 /// @code
 /// void my_func() {
-///   if (invalid_info) throw out_of_memory_exception_(); // same as : throw out_of_memory_exception(csf_);
-///   if (invalid_value) throw out_of_memory_exception_("Bad value"); // same as : throw out_of_memory_exception("Bad value", csf_);
+///   if (invalid_info) throw out_of_memory_exception_(); // same as : throw out_of_memory_exception {csf_};
+///   if (invalid_value) throw out_of_memory_exception_("Bad value"); // same as : throw out_of_memory_exception {"Bad value", csf_};
 ///   ...
 /// }
 /// @endcode

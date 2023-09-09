@@ -87,7 +87,7 @@ bitmap_data bitmap::lock_bits(const rectangle& rect, xtd::drawing::imaging::imag
 }
 
 bitmap_data bitmap::lock_bits(const rectangle& rect, xtd::drawing::imaging::image_lock_mode flags, xtd::drawing::imaging::pixel_format format, const bitmap_data& data) {
-  if (format == xtd::drawing::imaging::pixel_format::indexed || format == xtd::drawing::imaging::pixel_format::gdi) throw argument_exception(csf_);
+  if (format == xtd::drawing::imaging::pixel_format::indexed || format == xtd::drawing::imaging::pixel_format::gdi) throw argument_exception {csf_};
   int32 image_data_height = data.height();
   int32 image_data_pixel_format = static_cast<int32>(data.pixel_format());
   int32 image_data_reserved = data.reserved();

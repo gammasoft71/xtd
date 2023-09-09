@@ -148,7 +148,7 @@ process::~process() {
 }
 
 int32 process::base_priority() const {
-  if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception(csf_);
+  if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception {csf_};
   static map<process_priority_class, int32> base_priorities {{process_priority_class::idle, 4}, {process_priority_class::below_normal, 6}, {process_priority_class::normal, 8}, {process_priority_class::above_normal, 10}, {process_priority_class::high, 13}, {process_priority_class::real_time, 24}};
   return base_priorities[priority_class()];
 }
@@ -163,70 +163,70 @@ process& process::enable_raising_events(bool value) {
 }
 
 int32 process::exit_code() const {
-  if (!data_->handle_.has_value() || !has_exited()) throw xtd::invalid_operation_exception(csf_);
+  if (!data_->handle_.has_value() || !has_exited()) throw xtd::invalid_operation_exception {csf_};
   return data_->exit_code_.value();
 }
 
 date_time process::exit_time() const {
-  if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception(csf_);
+  if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception {csf_};
   return data_->exit_time_;
 }
 
 intptr process::handle() const {
-  if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception(csf_);
+  if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception {csf_};
   return data_->handle_.value();
 }
 
 bool process::has_exited() const {
-  if (!data_->handle_.has_value() || !data_->exit_code_.has_value()) throw xtd::invalid_operation_exception(csf_);
+  if (!data_->handle_.has_value() || !data_->exit_code_.has_value()) throw xtd::invalid_operation_exception {csf_};
   return data_->exit_code_.has_value();
 }
 
 int32 process::id() const {
-  if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception(csf_);
+  if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception {csf_};
   return data_->id_;
 }
 
 ustring process::machine_name() const {
-  if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception(csf_);
+  if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception {csf_};
   return data_->machine_name_;
 }
 
 process_priority_class process::priority_class() const {
-  if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception(csf_);
+  if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception {csf_};
   return data_->priority_class_;
 }
 
 process& process::priority_class(process_priority_class value) {
-  if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception(csf_);
+  if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception {csf_};
   data_->priority_class_ = value;
   static map<process_priority_class, int32> priorities {{process_priority_class::idle, IDLE_PRIORITY_CLASS}, {process_priority_class::below_normal, BELOW_NORMAL_PRIORITY_CLASS}, {process_priority_class::normal, NORMAL_PRIORITY_CLASS}, {process_priority_class::above_normal, ABOVE_NORMAL_PRIORITY_CLASS}, {process_priority_class::high, HIGH_PRIORITY_CLASS}, {process_priority_class::real_time, REALTIME_PRIORITY_CLASS}};
   auto it = priorities.find(value);
-  if (it == priorities.end()) throw argument_exception(csf_);
-  if (native::process::priority_class(data_->handle_.value(), it->second) == false) throw invalid_operation_exception(csf_);
+  if (it == priorities.end()) throw argument_exception {csf_};
+  if (native::process::priority_class(data_->handle_.value(), it->second) == false) throw invalid_operation_exception {csf_};
   return *this;
 }
 
 ustring process::process_name() const {
-  if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception(csf_);
+  if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception {csf_};
   return path::get_file_name_without_extension(data_->start_info_.file_name());
 }
 
 std::istream& process::standard_error() {
   if (!data_->handle_.has_value() || data_->standard_error_ == nullptr || !data_->start_info_.redirect_standard_error() || data_->start_info_.use_shell_execute())
-    throw invalid_operation_exception(csf_);
+    throw invalid_operation_exception {csf_};
   return *data_->standard_error_;
 }
 
 std::ostream& process::standard_input() {
   if (!data_->handle_.has_value() || data_->standard_input_ == nullptr || !data_->start_info_.redirect_standard_input() || data_->start_info_.use_shell_execute())
-    throw invalid_operation_exception(csf_);
+    throw invalid_operation_exception {csf_};
   return *data_->standard_input_;
 }
 
 std::istream& process::standard_output() {
   if (!data_->handle_.has_value() || data_->standard_output_ == nullptr || !data_->start_info_.redirect_standard_output() || data_->start_info_.use_shell_execute())
-    throw invalid_operation_exception(csf_);
+    throw invalid_operation_exception {csf_};
   return *data_->standard_output_;
 }
 
@@ -244,12 +244,12 @@ process& process::start_info(const process_start_info& value) {
 }
 
 date_time process::start_time() const {
-  if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception(csf_);
+  if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception {csf_};
   return data_->start_time_;
 }
 
 void process::close() {
-  if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception(csf_);
+  if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception {csf_};
   if (data_.use_count() == 1 && data_->thread_.joinable()) {
     data_->thread_.detach();
     data_->handle_.reset();
@@ -257,7 +257,7 @@ void process::close() {
 }
 
 void process::kill() {
-  if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception(csf_);
+  if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception {csf_};
   native::process::kill(data_->handle_.value());
   debug::write_line_if(show_debug_process.enabled(), ustring::format("process::kill [handle={}, killed]", data_->handle_));
 }
@@ -326,7 +326,7 @@ process process::start(const ustring& file_name, const ustring& arguments) {
 }
 
 process& process::wait_for_exit() {
-  if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception(csf_);
+  if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception {csf_};
   debug::write_line_if(show_debug_process.enabled(), ustring::format("process::wait_for_exit [handle={}, wait...]", data_->handle_));
   if (data_->thread_.joinable()) data_->thread_.join();
   close();
@@ -344,7 +344,7 @@ process& process::wait_for_exit() {
 process& process::wait_for_exit(int32 milliseconds) {
   /// @todo create a timeout...
   /// @see https://stackoverflow.com/questions/9948420/timeout-for-thread-join
-  if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception(csf_);
+  if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception {csf_};
   debug::write_line_if(show_debug_process.enabled(), ustring::format("process::wait_for_exit [handle={}, wait...]", data_->handle_));
   if (data_->thread_.joinable()) data_->thread_.join();
   close();

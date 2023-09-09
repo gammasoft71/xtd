@@ -99,19 +99,19 @@ const date_time date_time::max_value {max_ticks};
 const date_time date_time::min_value {min_ticks};
 
 date_time::date_time(int64 ticks) : value_(ticks) {
-  if (ticks < min_value.value_.count() || ticks > max_value.value_.count()) throw argument_out_of_range_exception(csf_);
+  if (ticks < min_value.value_.count() || ticks > max_value.value_.count()) throw argument_out_of_range_exception {csf_};
 }
 
 date_time::date_time(xtd::ticks ticks) : value_(ticks) {
-  if (ticks.count() < min_value.value_.count() || ticks.count() > max_value.value_.count()) throw argument_out_of_range_exception(csf_);
+  if (ticks.count() < min_value.value_.count() || ticks.count() > max_value.value_.count()) throw argument_out_of_range_exception {csf_};
 }
 
 date_time::date_time(int64 ticks, xtd::date_time_kind kind) : value_(ticks), kind_(kind) {
-  if (ticks < min_value.value_.count() || ticks > max_value.value_.count()) throw argument_out_of_range_exception(csf_);
+  if (ticks < min_value.value_.count() || ticks > max_value.value_.count()) throw argument_out_of_range_exception {csf_};
 }
 
 date_time::date_time(xtd::ticks ticks, xtd::date_time_kind kind) : value_(ticks), kind_(kind) {
-  if (ticks.count() < min_value.value_.count() || ticks.count() > max_value.value_.count()) throw argument_out_of_range_exception(csf_);
+  if (ticks.count() < min_value.value_.count() || ticks.count() > max_value.value_.count()) throw argument_out_of_range_exception {csf_};
 }
 
 date_time::date_time(uint32 year, uint32 month, uint32 day) {
@@ -259,7 +259,7 @@ date_time date_time::add_minutes(double minute) const {
 }
 
 date_time date_time::add_months(int32 months) const {
-  if (months < -120000 || months > 120000) throw argument_out_of_range_exception(csf_);
+  if (months < -120000 || months > 120000) throw argument_out_of_range_exception {csf_};
   
   uint32 year = 1, month = 1, day = 1, hour = 0, minute = 0, second = 0, day_of_year = 0;
   int32 day_of_week = 0;
@@ -273,7 +273,7 @@ date_time date_time::add_months(int32 months) const {
     month = static_cast<uint32>(12 + (i + 1) % 12);
     year = year + static_cast<uint32>((i - 11) / 12);
   }
-  if (year < 1U || year > 9999U) throw argument_out_of_range_exception(csf_);
+  if (year < 1U || year > 9999U) throw argument_out_of_range_exception {csf_};
   uint32 days = static_cast<uint32>(days_in_month(year, month));
   if (day > days) day = days;
   return date_time(year, month, day, hour, minute, second, kind_);
@@ -302,7 +302,7 @@ int32 date_time::days_in_month(uint32 year, month_of_year month) {
 }
 
 int32 date_time::days_in_month(uint32 year, uint32 month) {
-  if (month < 1 || month > 12) throw argument_out_of_range_exception(csf_);
+  if (month < 1 || month > 12) throw argument_out_of_range_exception {csf_};
   if (month == 2) return is_leap_year(year) ? 29 : 28;
   if (month == 4 || month == 6 || month == 9 || month == 11) return 30;
   return 31;
@@ -329,7 +329,7 @@ date_time date_time::from_file_time(int64 file_time) {
 }
 
 date_time date_time::from_file_time_utc(int64 file_time) {
-  if (file_time < 0) throw argument_out_of_range_exception(csf_);
+  if (file_time < 0) throw argument_out_of_range_exception {csf_};
   return date_time(xtd::ticks(file_time) + file_time_offset, date_time_kind::utc);
 }
 
@@ -355,12 +355,12 @@ bool date_time::is_daylight_saving_time() const noexcept {
 }
 
 bool date_time::is_leap_year(uint32 year) {
-  if (year < 1 || year > 9999) throw argument_out_of_range_exception(csf_);
+  if (year < 1 || year > 9999) throw argument_out_of_range_exception {csf_};
   return year % 4 == 0 && (year % 100 != 0 || year % 400 == 0);
 }
 
 date_time date_time::parse(const xtd::ustring& s) {
-  throw not_implemented_exception(csf_);
+  throw not_implemented_exception {csf_};
 }
 
 date_time date_time::specify_kind(const date_time& value, date_time_kind kind) {
@@ -397,7 +397,7 @@ int64 date_time::to_file_time() const {
 int64 date_time::to_file_time_utc() const {
   auto value = kind_ == date_time_kind::unspecified ? to_universal_time().value_ : value_;
   int64 result = (value - file_time_offset).count();
-  if (result < 0) throw argument_out_of_range_exception(csf_);
+  if (result < 0) throw argument_out_of_range_exception {csf_};
   return result;
 }
 
@@ -620,7 +620,7 @@ void date_time::set_date_time(uint32 year, uint32 month, uint32 day, uint32 hour
     (year == min_year && month == min_month && day == min_day && hour  < min_hour) ||
     (year == min_year && month == min_month && day == min_day && hour == min_hour && minute  < min_minute) ||
     (year == min_year && month == min_month && day == min_day && hour == min_hour && minute == min_minute && second < min_second))
-    throw argument_out_of_range_exception(csf_);
+    throw argument_out_of_range_exception {csf_};
     
   if (year  > max_year ||
     (year == max_year && month  > max_month) ||
@@ -628,7 +628,7 @@ void date_time::set_date_time(uint32 year, uint32 month, uint32 day, uint32 hour
     (year == max_year && month == max_month && day == max_day && hour > max_hour) ||
     (year == max_year && month == max_month && day == max_day && hour == max_hour && minute > max_minute) ||
     (year == max_year && month == max_month && day == max_day && hour == max_hour && minute == max_minute && second > max_second))
-    throw argument_out_of_range_exception(csf_);
+    throw argument_out_of_range_exception {csf_};
     
   int64 days = day - 1;
   

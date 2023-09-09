@@ -5,7 +5,7 @@
 using namespace xtd;
 
 compiler::compiler(xtd::compiler_id compiler_id, const xtd::version& version, xtd::build_type build_type, bool is_64_bit) : compiler_id_(compiler_id), version_(version), build_type_(build_type), is_64_bit_(is_64_bit) {
-  if (!enum_object<>::is_defined(compiler_id)) throw argument_exception(csf_);
+  if (!enum_object<>::is_defined(compiler_id)) throw argument_exception {csf_};
 }
 
 xtd::build_type compiler::build_type() const noexcept {

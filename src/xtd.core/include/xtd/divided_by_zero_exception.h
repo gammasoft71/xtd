@@ -92,11 +92,11 @@ namespace xtd {
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to xtd::divided_by_zero_exception({any argument}, csf_)
+/// @remarks Is equivalent to xtd::divided_by_zero_exception {{any argument}, csf_}
 /// @code
 /// void my_func() {
-///   if (invalid_info) throw divided_by_zero_exception_(); // same as : throw divided_by_zero_exception(csf_);
-///   if (invalid_value) throw divided_by_zero_exception_("Bad value"); // same as : throw divided_by_zero_exception("Bad value", csf_);
+///   if (invalid_info) throw divided_by_zero_exception_(); // same as : throw divided_by_zero_exception {csf_};
+///   if (invalid_value) throw divided_by_zero_exception_("Bad value"); // same as : throw divided_by_zero_exception {"Bad value", csf_};
 ///   ...
 /// }
 /// @endcode

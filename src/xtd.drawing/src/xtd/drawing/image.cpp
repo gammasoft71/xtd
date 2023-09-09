@@ -65,7 +65,7 @@ image::image(const ustring& filename) : data_(std::make_shared<data>()) {
     if (frame_resolution.first == FD_PAGE) data_->frame_dimensions[imaging::frame_dimension::page().guid()] =  frame_resolution.second;
     else if (frame_resolution.first == FD_RESOLUTION) data_->frame_dimensions[imaging::frame_dimension::resolution().guid()] =  frame_resolution.second;
     else if (frame_resolution.first == FD_TIME) data_->frame_dimensions[imaging::frame_dimension::time().guid()] =  frame_resolution.second;
-    else throw argument_exception(csf_);
+    else throw argument_exception {csf_};
   }
   update_properties();
 }
@@ -78,7 +78,7 @@ image::image(const ustring& filename, bool use_icm) : data_(std::make_shared<dat
     if (frame_resolution.first == FD_PAGE) data_->frame_dimensions[imaging::frame_dimension::page().guid()] =  frame_resolution.second;
     else if (frame_resolution.first == FD_RESOLUTION) data_->frame_dimensions[imaging::frame_dimension::resolution().guid()] =  frame_resolution.second;
     else if (frame_resolution.first == FD_TIME) data_->frame_dimensions[imaging::frame_dimension::time().guid()] =  frame_resolution.second;
-    else throw argument_exception(csf_);
+    else throw argument_exception {csf_};
   }
   update_properties();
 }
@@ -91,7 +91,7 @@ image::image(std::istream& stream) : data_(std::make_shared<data>()) {
     if (frame_resolution.first == FD_PAGE) data_->frame_dimensions[imaging::frame_dimension::page().guid()] =  frame_resolution.second;
     else if (frame_resolution.first == FD_RESOLUTION) data_->frame_dimensions[imaging::frame_dimension::resolution().guid()] =  frame_resolution.second;
     else if (frame_resolution.first == FD_TIME) data_->frame_dimensions[imaging::frame_dimension::time().guid()] =  frame_resolution.second;
-    else throw argument_exception(csf_);
+    else throw argument_exception {csf_};
   }
   update_properties();
 }
@@ -104,7 +104,7 @@ image::image(std::istream& stream, bool use_icm) : data_(std::make_shared<data>(
     if (frame_resolution.first == FD_PAGE) data_->frame_dimensions[imaging::frame_dimension::page().guid()] =  frame_resolution.second;
     else if (frame_resolution.first == FD_RESOLUTION) data_->frame_dimensions[imaging::frame_dimension::resolution().guid()] =  frame_resolution.second;
     else if (frame_resolution.first == FD_TIME) data_->frame_dimensions[imaging::frame_dimension::time().guid()] =  frame_resolution.second;
-    else throw argument_exception(csf_);
+    else throw argument_exception {csf_};
   }
   update_properties();
 }
@@ -277,7 +277,7 @@ xtd::drawing::imaging::encoder_parameters image::get_encoder_parameter_list(xtd:
 
 size_t image::get_frame_count(const xtd::drawing::imaging::frame_dimension& dimension) const {
   auto iterator = find_if(data_->frame_dimensions.begin(), data_->frame_dimensions.end(), [&](auto frame) {return frame.first == dimension.guid();});
-  if (iterator == data_->frame_dimensions.end()) throw argument_exception(csf_);
+  if (iterator == data_->frame_dimensions.end()) throw argument_exception {csf_};
   return iterator->second;
 }
 
@@ -288,7 +288,7 @@ int32 image::get_pixel_format_size(xtd::drawing::imaging::pixel_format pixfmt) n
 xtd::drawing::imaging::property_item image::get_property_item(int32 propid) {
   for (auto property_tiem : data_->property_items_)
     if (property_tiem.id() == propid) return property_tiem;
-  throw argument_exception(csf_);
+  throw argument_exception {csf_};
 }
 
 xtd::drawing::image image::get_thmbnail_image(int32 thumb_width, int32 thunb_height) noexcept {

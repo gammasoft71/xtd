@@ -12,8 +12,8 @@ dns_end_point::dns_end_point(const xtd::ustring& host, uint16 port) : dns_end_po
 }
 
 dns_end_point::dns_end_point(const xtd::ustring& host, uint16 port, sockets::address_family address_family) {
-  if (ustring::is_empty(host)) throw xtd::argument_exception(csf_);
-  if (address_family != sockets::address_family::unspecified && address_family != sockets::address_family::inter_network && address_family != sockets::address_family::inter_network_v6) throw xtd::argument_exception(csf_);
+  if (ustring::is_empty(host)) throw xtd::argument_exception {csf_};
+  if (address_family != sockets::address_family::unspecified && address_family != sockets::address_family::inter_network && address_family != sockets::address_family::inter_network_v6) throw xtd::argument_exception {csf_};
   
   host_ = host;
   port_ = port;

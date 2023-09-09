@@ -12,15 +12,15 @@ using namespace xtd;
 using namespace xtd::io;
 
 binary_writer::binary_writer(const ustring& path) : stream_(new ofstream(path, ios::out | ios::binary | ios_base::trunc)), delete_when_destroy_(true) {
-  if (path.index_of_any(path::get_invalid_path_chars()) != string::npos) throw argument_exception(csf_);
-  if (path.empty() || path.trim(' ').empty()) throw argument_exception(csf_);
-  if (!file::exists(path)) throw file_not_found_exception(csf_);
-  if ((file::get_attributes(path) & file_attributes::read_only) == file_attributes::read_only) throw unauthorized_access_exception(csf_);
-  if (!dynamic_cast<ofstream*>(stream_)->is_open() || !stream_->good()) throw io_exception(csf_);
+  if (path.index_of_any(path::get_invalid_path_chars()) != string::npos) throw argument_exception {csf_};
+  if (path.empty() || path.trim(' ').empty()) throw argument_exception {csf_};
+  if (!file::exists(path)) throw file_not_found_exception {csf_};
+  if ((file::get_attributes(path) & file_attributes::read_only) == file_attributes::read_only) throw unauthorized_access_exception {csf_};
+  if (!dynamic_cast<ofstream*>(stream_)->is_open() || !stream_->good()) throw io_exception {csf_};
 }
 
 binary_writer::binary_writer(ostream& stream) : stream_(&stream) {
-  if (!stream_->good()) throw io_exception(csf_);
+  if (!stream_->good()) throw io_exception {csf_};
   stream_->flush();
 }
 
@@ -48,7 +48,7 @@ void binary_writer::flush() {
 }
 
 size_t binary_writer::seek(size_t offset, std::ios::seekdir origin) {
-  if (!stream_) throw io_exception(csf_);
+  if (!stream_) throw io_exception {csf_};
   stream_->seekp(offset, origin);
   return static_cast<size_t>(stream_->tellp());
 }
@@ -58,12 +58,12 @@ void binary_writer::write(bool value) {
 }
 
 void binary_writer::write(xtd::byte value) {
-  if (!stream_) throw io_exception(csf_);
+  if (!stream_) throw io_exception {csf_};
   stream_->put(static_cast<char>(value));
 }
 
 void binary_writer::write(char value) {
-  if (!stream_) throw io_exception(csf_);
+  if (!stream_) throw io_exception {csf_};
   stream_->put(value);
 }
 
@@ -72,8 +72,8 @@ void binary_writer::write(const std::vector<xtd::byte>& buffer) {
 }
 
 void binary_writer::write(const std::vector<xtd::byte>& buffer, size_t index, size_t count) {
-  if (!stream_) throw io_exception(csf_);
-  if (index + count > buffer.size()) throw argument_exception(csf_);
+  if (!stream_) throw io_exception {csf_};
+  if (index + count > buffer.size()) throw argument_exception {csf_};
   for (size_t i = index; i < (index + count); ++i)
     write(buffer[i]);
 }
@@ -83,8 +83,8 @@ void binary_writer::write(const std::vector<char>& buffer) {
 }
 
 void binary_writer::write(const std::vector<char>& buffer, size_t index, size_t count) {
-  if (!stream_) throw io_exception(csf_);
-  if (index + count > buffer.size()) throw argument_exception(csf_);
+  if (!stream_) throw io_exception {csf_};
+  if (index + count > buffer.size()) throw argument_exception {csf_};
   for (size_t i = index; i < (index + count); ++i)
     write(buffer[i]);
 }
@@ -106,7 +106,7 @@ void binary_writer::write(int64 value) {
 }
 
 void binary_writer::write(sbyte value) {
-  if (!stream_) throw io_exception(csf_);
+  if (!stream_) throw io_exception {csf_};
   stream_->put(static_cast<char>(value));
 }
 

@@ -11,7 +11,7 @@ using namespace xtd;
 using namespace xtd::forms::native;
 
 void __set_button_bezel_style__(wxAnyButton* control, int32 height) {
-  if (!control || !wxTheApp) throw argument_exception(csf_);
+  if (!control || !wxTheApp) throw argument_exception {csf_};
   NSButton* button = reinterpret_cast<NSButton*>(control->GetHandle());
   [button setBezelStyle: height <= 25 ? NSBezelStyleRounded : NSBezelStyleRegularSquare];
 }

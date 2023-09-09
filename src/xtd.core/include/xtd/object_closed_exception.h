@@ -88,11 +88,11 @@ namespace xtd {
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to xtd::object_closed_exception({any argument}, csf_)
+/// @remarks Is equivalent to xtd::object_closed_exception {{any argument}, csf_}
 /// @code
 /// void my_func() {
-///   if (invalid_info) throw object_closed_exception_(); // same as : throw object_closed_exception(csf_);
-///   if (invalid_value) throw object_closed_exception_("Bad value"); // same as : throw object_closed_exception("Bad value", csf_);
+///   if (invalid_info) throw object_closed_exception_(); // same as : throw object_closed_exception {csf_};
+///   if (invalid_value) throw object_closed_exception_("Bad value"); // same as : throw object_closed_exception {"Bad value", csf_};
 ///   ...
 /// }
 /// @endcode

@@ -55,7 +55,7 @@ bool theme::from_css(const xtd::ustring& css_text, theme& result) {
 theme theme::parse(const xtd::ustring& text) {
   theme result;
   if (!try_parse(text, result))
-    throw argument_exception(csf_);
+    throw argument_exception {csf_};
   return result;
 }
 

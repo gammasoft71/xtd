@@ -230,7 +230,7 @@ xtd::forms::menu_item_kind menu_item::kind() const noexcept {
 menu_item& menu_item::kind(xtd::forms::menu_item_kind value) {
   if (data_->kind != value) {
     data_->kind = value;
-    throw not_implemented_exception(csf_);
+    throw not_implemented_exception {csf_};
     //recreate_menu();
   }
   return *this;

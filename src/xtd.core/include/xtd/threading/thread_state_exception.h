@@ -93,11 +93,11 @@ namespace xtd {
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to xtd::thread_state_exception({any argument}, csf_)
+/// @remarks Is equivalent to xtd::thread_state_exception {{any argument}, csf_}
 /// @code
 /// void my_func() {
-///   if (invalid_info) throw thread_state_exception_(); // same as : throw thread_state_exception(csf_);
-///   if (invalid_value) throw thread_state_exception_("Bad value"); // same as : throw thread_state_exception("Bad value", csf_);
+///   if (invalid_info) throw thread_state_exception_(); // same as : throw thread_state_exception {csf_};
+///   if (invalid_value) throw thread_state_exception_("Bad value"); // same as : throw thread_state_exception {"Bad value", csf_};
 ///   ...
 /// }
 /// @endcode

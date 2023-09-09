@@ -10,11 +10,11 @@ sockets::address_family end_point::address_family() const noexcept {
 }
 
 std::unique_ptr<end_point> end_point::create(const socket_address&) const {
-  throw not_implemented_exception(csf_);
+  throw not_implemented_exception {csf_};
 }
 
 socket_address end_point::serialize() const {
-  throw not_implemented_exception(csf_);
+  throw not_implemented_exception {csf_};
 }
 
 ustring end_point::to_string() const noexcept {

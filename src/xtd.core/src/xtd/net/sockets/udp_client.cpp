@@ -33,12 +33,12 @@ udp_client::udp_client(const xtd::net::ip_end_point& local_end_point) : data_(ma
 }
 
 udp_client::udp_client(address_family address_family) : data_(make_shared<udp_client::data>()) {
-  if (address_family != xtd::net::sockets::address_family::inter_network && address_family != xtd::net::sockets::address_family::inter_network_v6) throw argument_exception(csf_);
+  if (address_family != xtd::net::sockets::address_family::inter_network && address_family != xtd::net::sockets::address_family::inter_network_v6) throw argument_exception {csf_};
   data_->client_socket = socket(address_family, socket_type::dgram, protocol_type::udp);
 }
 
 udp_client::udp_client(uint16 port, xtd::net::sockets::address_family address_family) : data_(make_shared<udp_client::data>()) {
-  if (address_family != xtd::net::sockets::address_family::inter_network && address_family != xtd::net::sockets::address_family::inter_network_v6) throw argument_exception(csf_);
+  if (address_family != xtd::net::sockets::address_family::inter_network && address_family != xtd::net::sockets::address_family::inter_network_v6) throw argument_exception {csf_};
   data_->client_socket = socket(address_family, socket_type::dgram, protocol_type::udp);
   data_->client_socket.bind(ip_end_point(dns::get_host_addresses(dns::get_host_name())[0], port));
 }
@@ -213,8 +213,8 @@ void udp_client::drop_multicast_group(const xtd::net::ip_address& multicast_addr
 }
 
 vector<xtd::byte> udp_client::end_receive(shared_ptr<xtd::iasync_result> async_result, ip_end_point& remote_end_point) {
-  if (async_result == nullptr) throw argument_null_exception(csf_);
-  if (!is<async_result_receive>(async_result)) throw argument_exception(csf_);
+  if (async_result == nullptr) throw argument_null_exception {csf_};
+  if (!is<async_result_receive>(async_result)) throw argument_exception {csf_};
   lock_guard<xtd::threading::mutex> lock(as<xtd::threading::mutex>(async_result->async_wait_handle()));
   if (as<async_result_receive>(async_result)->exception_) rethrow_exception(as<async_result_receive>(async_result)->exception_);
   remote_end_point = as<async_result_receive>(async_result)->remote_end_point_;
@@ -222,8 +222,8 @@ vector<xtd::byte> udp_client::end_receive(shared_ptr<xtd::iasync_result> async_r
 }
 
 size_t udp_client::end_send(std::shared_ptr<xtd::iasync_result> async_result) {
-  if (async_result == nullptr) throw argument_null_exception(csf_);
-  if (!is<async_result_send>(async_result)) throw argument_exception(csf_);
+  if (async_result == nullptr) throw argument_null_exception {csf_};
+  if (!is<async_result_send>(async_result)) throw argument_exception {csf_};
   lock_guard<xtd::threading::mutex> lock(as<xtd::threading::mutex>(async_result->async_wait_handle()));
   if (as<async_result_send>(async_result)->exception_) rethrow_exception(as<async_result_receive>(async_result)->exception_);
   return as<async_result_send>(async_result)->number_of_bytes_sent_;

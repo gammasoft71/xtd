@@ -95,11 +95,11 @@ namespace xtd {
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions
-/// @remarks Is equivalent to xtd::net::cookie_exception({any argument}, csf_)
+/// @remarks Is equivalent to xtd::net::cookie_exception {{any argument}, csf_}
 /// @code
 /// void my_func() {
-///   if (invalid_info) throw cookie_exception_(); // same as : throw cookie_exception(csf_);
-///   if (invalid_value) throw cookie_exception_("Bad value"); // same as : throw cookie_exception("Bad value", csf_);
+///   if (invalid_info) throw cookie_exception_(); // same as : throw cookie_exception {csf_};
+///   if (invalid_value) throw cookie_exception_("Bad value"); // same as : throw cookie_exception {"Bad value", csf_};
 ///   ...
 /// }
 /// @endcode
