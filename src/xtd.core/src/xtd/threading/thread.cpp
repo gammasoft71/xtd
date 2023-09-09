@@ -58,16 +58,7 @@ const intptr thread::invalid_thread_id = native::types::invalid_handle();
 intptr thread::main_thread_id_ = thread::get_current_thread_id();
 
 thread& thread::current_thread() {
-  std::lock_guard<std::recursive_mutex> lock {get_static_data().threads_mutex};
-  auto id = get_current_thread_id();
-  
-  if (id == main_thread_id_) return main_thread();
-  
-  for (auto& thread : get_static_data().threads)
-    if (thread->data_ && thread->data_->thread_id == id)
-      return *thread;
-  
-  return unmanaged_thread();
+  return get_thread(get_current_thread_id());
 }
 
 thread::thread() : data_(std::make_shared<data>()) {
@@ -460,6 +451,16 @@ thread::static_data& thread::get_static_data() {
   return data;
 }
 
+thread& thread::get_thread(intptr thread_id) {
+  std::lock_guard<std::recursive_mutex> lock {get_static_data().threads_mutex};
+  if (thread_id == main_thread_id_) return main_thread();
+  
+  for (auto& thread : get_static_data().threads)
+    if (thread->data_ && thread->data_->thread_id == thread_id)
+      return *thread;
+  
+  return unmanaged_thread();
+}
 
 void thread::interrupt_internal() {
   struct cancel_thread {
