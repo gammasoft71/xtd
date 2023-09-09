@@ -2,34 +2,32 @@
 #include <xtd/native/critical_section.h>
 #include "../../../../include/xtd/native/macos/mutex.h"
 #undef __XTD_CORE_NATIVE_LIBRARY__
-#import <CoreFoundation/CoreFoundation.h>
-#include <TargetConditionals.h>
-#import <Cocoa/Cocoa.h>
-#include <fcntl.h>
-#include <sys/stat.h>
+#include <mutex>
 
 using namespace xtd::native;
 
 intmax_t critical_section::create() {
-  auto mutex = new pthread_mutex_t {};
-  if (pthread_mutex_init(mutex, nullptr) != 0) {
-    delete mutex;
-    return reinterpret_cast<intmax_t>(MUTEX_FAILED);
-  }
-  return reinterpret_cast<intmax_t>(mutex);
+  auto handle = new std::recursive_mutex {};
+  if (!handle) return reinterpret_cast<intmax_t>(MUTEX_FAILED);
+  return reinterpret_cast<intmax_t>(handle);
 }
 
 void critical_section::destroy(intmax_t handle) {
-  pthread_mutex_destroy(reinterpret_cast<pthread_mutex_t*>(handle));
+  if (handle == reinterpret_cast<intmax_t>(MUTEX_FAILED)) return;
+  delete reinterpret_cast<std::recursive_mutex*>(handle);
 }
 
-bool critical_section::enter(intmax_t handle) {
-  if (reinterpret_cast<pthread_mutex_t*>(handle) == MUTEX_FAILED) return false;
-  return pthread_mutex_unlock(reinterpret_cast<pthread_mutex_t*>(handle)) == 0;
+void critical_section::enter(intmax_t handle) {
+  if (handle == reinterpret_cast<intmax_t>(MUTEX_FAILED)) return;
+  reinterpret_cast<std::recursive_mutex*>(handle)->lock();
 }
 
-bool critical_section::leave(intmax_t handle) {
-  if (reinterpret_cast<pthread_mutex_t*>(handle) == MUTEX_FAILED) return false;
-  if (pthread_mutex_lock(reinterpret_cast<pthread_mutex_t*>(handle)) != 0) return false;
-  return true;
+bool critical_section::try_enter(intmax_t handle) {
+  if (handle == reinterpret_cast<intmax_t>(MUTEX_FAILED)) return false;
+  return reinterpret_cast<std::recursive_mutex*>(handle)->try_lock();
+}
+
+void critical_section::leave(intmax_t handle) {
+  if (handle == reinterpret_cast<intmax_t>(MUTEX_FAILED)) return;
+  reinterpret_cast<std::recursive_mutex*>(handle)->unlock();
 }

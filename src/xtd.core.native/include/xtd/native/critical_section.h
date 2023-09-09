@@ -17,7 +17,7 @@
 namespace xtd {
   /// @cond
   namespace threading {
-    class mutex;
+    class monitor;
   }
   /// @endcond
   
@@ -34,7 +34,7 @@ namespace xtd {
     /// @warning Internal use only
     class core_native_export_ critical_section final {
       critical_section() = delete;
-      friend xtd::threading::mutex;
+      friend xtd::threading::monitor;
     protected:
       /// @name Protected methods
       
@@ -54,13 +54,18 @@ namespace xtd {
       /// @brief Wait critical section with specified critical section handle.
       /// @param handle The critical section handle to wait.
       /// @return true if succeed; otherwhise false.
-      static bool enter(intmax_t handle);
+      static void enter(intmax_t handle);
+
+      /// @brief Attempts to enter critical section with specified critical section handle.
+      /// @param handle The critical section handle to wait.
+      /// @return true if succeed; otherwhise false.
+      static bool try_enter(intmax_t handle);
 
       /// @brief Release`critical section with specified critical section handle.
       /// @param handle The critical section handle to release.
       /// @return true if succeed; otherwhise false.
       /// @warning Internal use only
-      static bool leave(intmax_t handle);
+      static void leave(intmax_t handle);
       /// @}
     };
   }
