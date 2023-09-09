@@ -21,6 +21,7 @@ intmax_t unnamed_mutex::create(bool initially_owned) {
 
 void unnamed_mutex::destroy(intmax_t handle) {
   pthread_mutex_destroy(reinterpret_cast<pthread_mutex_t*>(handle));
+  delete reinterpret_cast<pthread_mutex_t*>(handle);
 }
 
 bool unnamed_mutex::signal(intmax_t handle, bool& io_error) {
