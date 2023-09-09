@@ -418,7 +418,7 @@ namespace xtd {
       static void pulse_ptr(ptr_item obj);
       static void pulse_all_ptr(ptr_item obj);
       static bool try_enter_ptr(ptr_item ptr, int32 milliseconds_timeout, bool& lock_taken) noexcept;
-      static bool wait_ptr(ptr_item ptr, int32 milliseconds_timeout, bool exit_context) noexcept;
+      static bool wait_ptr(ptr_item ptr, int32 milliseconds_timeout, bool exit_context);
     };
   }
 }

@@ -153,8 +153,17 @@ bool monitor::try_enter_ptr(ptr_item ptr, int32 milliseconds_timeout, bool& lock
   return lock_taken;
 }
 
-bool monitor::wait_ptr(ptr_item ptr, int32 milliseconds_timeout, bool exit_context) noexcept {
-  return false;
+bool monitor::wait_ptr(ptr_item ptr, int32 milliseconds_timeout, bool exit_context) {
+  monitor_item* monitor_item = nullptr;
+  get_static_data().monitor_items_sync.enter();
+  if (is_entered_ptr(ptr)) monitor_item = &get_static_data().monitor_items[ptr.first];
+  get_static_data().monitor_items_sync.leave();
+  
+  if (monitor_item == nullptr) throw invalid_operation_exception(csf_);
+  if (monitor_item->thread_id != thread::current_thread().thread_id()) throw synchronization_lock_exception {csf_};
+
+  // make wait...
+  throw not_implemented_exception {csf_};
 }
 
 monitor::static_data& monitor::get_static_data() {
