@@ -24,8 +24,7 @@ bool unnamed_mutex::signal(intmax_t handle, bool& io_error) {
     io_error = true;
     return false;
   }
-  pthread_mutex_lock(reinterpret_cast<pthread_mutex_t*>(handle));
-  if (pthread_mutex_unlock(reinterpret_cast<pthread_mutex_t*>(handle)) != 0) io_error = true;
+  if (pthread_mutex_lock(reinterpret_cast<pthread_mutex_t*>(handle)) != 0) io_error = true;
   return !io_error;
 }
 

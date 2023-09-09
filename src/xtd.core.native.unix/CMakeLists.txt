@@ -37,6 +37,7 @@ add_sources(
   include/xtd/native/unix/semaphore.h
   include/xtd/native/unix/strings.h
   src/xtd/native/unix/console.cpp
+  src/xtd/native/unix/critical_section.cpp
   src/xtd/native/unix/cryptography.cpp
   src/xtd/native/unix/date_time.cpp
   src/xtd/native/unix/debugger.cpp
