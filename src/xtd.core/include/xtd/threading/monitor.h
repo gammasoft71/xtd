@@ -57,7 +57,7 @@ namespace xtd {
     /// | Action                                                             | Description                                                                                                                                                                                                                                                                                                                                                                                                                              |
     /// | ------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
     /// | xtd::threading::monitor::enter, xtd::threading::monitor::try_enter | Acquires a lock for an object. This action also marks the beginning of a critical section. No other thread can enter the critical section unless it is executing the instructions in the critical section using a different locked object.                                                                                                                                                                                               |
-    /// | xtd::threading::monitor::wait                                      | Releases the lock on an object in order to permit other threads to lock and access the object. The calling thread waits while another thread accesses the object. Pulse signals are used to notify waiting threads about changes to an object's state.                                                                                                                                                                                   |
+    /// | xtd::threading::monitor::wait                                      | Releases the lock on an object in order to permit other threads to lock and access the object. The calling thread waits while another thread accesses the object. xtd::threading::monitor::pulse signals are used to notify waiting threads about changes to an object's state.                                                                                                                                                                                   |
     /// | xtd::threading::monitor::pulse, xtd::threading::monitor::pulse_all | Sends a signal to one or more waiting threads. The signal notifies a waiting thread that the state of the locked object has changed, and the owner of the lock is ready to release the lock. The waiting thread is placed in the object's ready queue so that it might eventually receive the lock for the object. Once the thread has the lock, it can check the new state of the object to see if the required state has been reached. |
     /// | xtd::threading::monitor::exit                                      | Releases the lock on an object. This action also marks the end of a critical section protected by the locked object.                                                                                                                                                                                                                                                                                                                     |
     /// There are two sets of overloads for the xtd::threading::monitor::enter and xtd::threading::monitor::try_enter methods. One set of overloads has a boolean parameter that is atomically set to true if the lock is acquired, even if an exception is thrown when acquiring the lock. Use these overloads if it is critical to release the lock in all cases, even when the resources the lock is protecting might not be in a consistent state.
@@ -128,8 +128,8 @@ namespace xtd {
     /// * xtd::threading::wait_handle objects represent operating-system waitable objects, are useful for synchronizing between managed and unmanaged code, and expose some advanced operating-system features like the ability to wait on many objects at once.
     class core_export_ monitor static_ {
       class critical_section;
-      struct monitor_item;
-      using monitor_item_collection = std::unordered_map<intptr, monitor_item>;
+      struct item;
+      using item_collection = std::unordered_map<intptr, item>;
       using ptr_item = std::pair<intptr, bool>;
       struct static_data;
       
@@ -140,7 +140,6 @@ namespace xtd {
       /// @brief Acquires an exclusive lock on the specified obj.
       /// @param obj The object on which to acquire the monitor lock.
       /// @remarks Use xtd::threading::monotor::enter to acquire the xtd::threading::monotor on the object passed as the parameter. If another thread has executed an xtd::threading::monotor::enter on the object, but has not yet executed the corresponding xtd::threading::monitor::exit, the current thread will block until the other thread releases the object. It is legal for the same thread to invoke xtd::threading::monotor::enter more than once without it blocking; however, an equal number of xtd::threading::monitor::exit calls must be invoked before other threads waiting on the object will unblock.
-      /// @remarks Usex xtd::threading::monotor to lock objects (that is, reference types), not value types. When you pass a value type variable to xtd::threading::monotor::enter, it is boxed as an object. If you pass the same variable to xtd::threading::monotor::enter again, the thread is block. The code that xtd::threading::monotor is supposedly protecting is not protected. Furthermore, when you pass the variable to xtd::threading::monitor::exit, still another separate object is created. Because the object passed to xtd::threading::monitor::exit is different from the object passed to xtd::threading::monotor::enter, xtd::threading::monotor throws SynchronizationLockException. For details, see the conceptual topic Monitors.
       template<typename object_t>
       static void enter(const object_t& obj) {
         auto lock_taken = false;
@@ -157,7 +156,6 @@ namespace xtd {
       /// @param lock_taken The result of the attempt to acquire the lock, passed by reference. The input must be false. The output is true if the lock is acquired; otherwise, the output is false. The output is set even if an exception occurs during the attempt to acquire the lock.
       /// @note If no exception occurs, the output of this method is always true.
       /// @remarks Use xtd::threading::monotor::enter to acquire the xtd::threading::monotor on the object passed as the parameter. If another thread has executed an xtd::threading::monotor::enter on the object, but has not yet executed the corresponding xtd::threading::monitor::exit, the current thread will block until the other thread releases the object. It is legal for the same thread to invoke xtd::threading::monotor::enter more than once without it blocking; however, an equal number of xtd::threading::monitor::exit calls must be invoked before other threads waiting on the object will unblock.
-      /// @remarks Use xtd::threading::monotor to lock objects (that is, reference types), not value types. When you pass a value type variable to xtd::threading::monotor::enter, it is boxed as an object. If you pass the same variable to xtd::threading::monotor::enter again, the thread is block. The code that xtd::threading::monotor is supposedly protecting is not protected. Furthermore, when you pass the variable to xtd::threading::monitor::exit, still another separate object is created. Because the object passed to xtd::threading::monitor::exit is different from the object passed to xtd::threading::monotor::enter, xtd::threading::monotor throws SynchronizationLockException. For details, see the conceptual topic Monitors.
       template<typename object_t>
       static void enter(const object_t& obj, bool& lock_taken) {
         enter_ptr(get_ptr(obj), lock_taken);
@@ -168,10 +166,25 @@ namespace xtd {
       static void enter(const type_t* str, bool& lock_taken) {enter(ustring(str), lock_taken);}
       /// @endcond
 
-      /// @brief Acquires an exclusive lock on the specified obj.
-      /// @param obj The object on which to acquire the monitor lock.
-      /// @remarks Use xtd::threading::monotor::enter to acquire the xtd::threading::monotor on the object passed as the parameter. If another thread has executed an xtd::threading::monotor::enter on the object, but has not yet executed the corresponding xtd::threading::monitor::exit, the current thread will block until the other thread releases the object. It is legal for the same thread to invoke xtd::threading::monotor::enter more than once without it blocking; however, an equal number of xtd::threading::monitor::exit calls must be invoked before other threads waiting on the object will unblock.
-      /// @remarks Usex xtd::threading::monotor to lock objects (that is, reference types), not value types. When you pass a value type variable to xtd::threading::monotor::enter, it is boxed as an object. If you pass the same variable to xtd::threading::monotor::enter again, the thread is block. The code that xtd::threading::monotor is supposedly protecting is not protected. Furthermore, when you pass the variable to xtd::threading::monitor::exit, still another separate object is created. Because the object passed to xtd::threading::monitor::exit is different from the object passed to xtd::threading::monotor::enter, xtd::threading::monotor throws SynchronizationLockException. For details, see the conceptual topic Monitors.
+      /// @brief Releases an exclusive lock on the specified obj.
+      /// @param obj The object on which to release the lock.
+      /// @remarks The calling thread must own the lock on the obj parameter. If the calling thread owns the lock on the specified object, and has made an equal number of xtd::threading::monitor::exit and xtd::threading::monotor::enter calls for the object, then the lock is released. If the calling thread has not invoked xtd::threading::monitor::exit as many times as xtd::threading::monotor::enter, the lock is not released.
+      /// @remarks If the lock is released and other threads are in the ready queue for the object, one of the threads acquires the lock. If other threads are in the waiting queue waiting to acquire the lock, they are not automatically moved to the ready queue when the owner of the lock calls xtd::threading::monitor::exit. To move one or more waiting threads into the ready queue, call xtd::threading::monitor::pulse or xtd::threading::monitor::xtd::threading::monitor::pulse_all before invoking xtd::threading::monitor::exit.
+      template<typename object_t>
+      static void exit(const object_t& obj) {
+        exit_ptr(get_ptr(obj));
+      }
+      
+      /// @cond
+      template<typename type_t>
+      static void exit(const type_t* str) {exit(ustring(str));}
+      /// @endcond
+
+      /// @brief Determines whether the current thread holds the lock on the specified object.
+      /// @param obj The object to test.
+      /// @@return true if the current thread holds the lock on obj; otherwise, false.
+      /// @remarks This method works only for locks that are acquired by using the methods of the xtd::threading::monitor class, or the xtd::threading::lock_guard class, or by using the #lock_ keyword, which are implemented with xtd::threading::monitor.
+      /// @remarks Use this method with diagnostic tools, such as the xtd::diagnostics::debug::assert method, to debug locking issues that involve the xtd::threading::monitor class.
       template<typename object_t>
       static bool is_entered(const object_t& obj) {
         return is_entered_ptr(get_ptr(obj));
@@ -184,8 +197,13 @@ namespace xtd {
 
       /// @brief Notifies a thread in the waiting queue of a change in the locked object's state.
       /// @param obj The object a thread is waiting for.
-      /// @remarks Only the current owner of the lock can signal a waiting object using Pulse.
-      /// @remarks The thread that currently owns the lock on the specified object invokes this method to signal the next thread in line for the lock. Upon receiving the pulse, the waiting thread is moved to the ready queue. When the thread that invoked Pulse releases the lock, the next thread in the ready queue (which is not necessarily the thread that was pulsed) acquires the lock.
+      /// @exception xtd::threading::synchronization_lock_exception The calling thread does not own the lock for the specified object.
+      /// @remarks Only the current owner of the lock can signal a waiting object using xtd::threading::monitor::pulse.
+      /// @remarks The thread that currently owns the lock on the specified object invokes this method to signal the next thread in line for the lock. Upon receiving the pulse, the waiting thread is moved to the ready queue. When the thread that invoked xtd::threading::monitor::pulse releases the lock, the next thread in the ready queue (which is not necessarily the thread that was pulsed) acquires the lock.
+      /// @warning The xtd::threading::monitor class does not maintain state indicating that the xtd::threading::monitor::pulse method has been called. Thus, if you call xtd::threading::monitor::pulse when no threads are waiting, the next thread that calls xtd::threading::monitor::wait blocks as if xtd::threading::monitor::pulse had never been called. If two threads are using xtd::threading::monitor::pulse and xtd::threading::monitor::wait to interact, this could result in a deadlock. Contrast this with the behavior of the xtd::threading::auto_reset_event class: If you signal an xtd::threading::auto_reset_svent by calling its xtd::threading::event_wait_handle::set method, and there are no threads waiting, the xtd::threading::auto_reset_event remains in a signaled state until a thread calls xtd::threading::wait_handle::wait_one, xtd::threading::wait_handle::wait_any, or xtd::threading::wait_handle::wait_all. The xtd::threading::auto_reset_event releases that thread and returns to the unsignaled state.
+      /// @remarks Note that a synchronized object holds several references, including a reference to the thread that currently holds the lock, a reference to the ready queue, which contains the threads that are ready to obtain the lock, and a reference to the waiting queue, which contains the threads that are waiting for notification of a change in the object's state.
+      /// @remarks The xtd::threading::monitor::pulse, xtd::threading::monitor::pulse_all, and xtd::threading::monitor::wait methods must be invoked from within a synchronized block of code.
+      /// @remarks To signal multiple threads, use the xtd::threading::monitor::pulse_all method.
       template<typename object_t>
       static void pulse(const object_t& obj) {
         pulse_ptr(get_ptr(obj));
@@ -198,11 +216,12 @@ namespace xtd {
 
       /// @brief Notifies all waiting threads of a change in the object's state.
       /// @param obj The object a thread is waiting for.
-      /// @remarks The thread that currently owns the lock on the specified object invokes this method to signal all threads waiting to acquire the lock on the object. After the signal is sent, the waiting threads are moved to the ready queue. When the thread that invoked PulseAll releases the lock, the next thread in the ready queue acquires the lock.
+      /// @exception xtd::threading::synchronization_lock_exception The calling thread does not own the lock for the specified object.
+      /// @remarks The thread that currently owns the lock on the specified object invokes this method to signal all threads waiting to acquire the lock on the object. After the signal is sent, the waiting threads are moved to the ready queue. When the thread that invoked xtd::threading::monitor::xtd::threading::monitor::pulse_all releases the lock, the next thread in the ready queue acquires the lock.
       /// @remarks Note that a synchronized object holds several references, including a reference to the thread that currently holds the lock, a reference to the ready queue, which contains the threads that are ready to obtain the lock, and a reference to the waiting queue, which contains the threads that are waiting for notification of a change in the object's state.
-      /// @remarks The Pulse, PulseAll, and Wait methods must be invoked from within a synchronized block of code.
-      /// @remarks The remarks for the Pulse method explain what happens if Pulse is called when no threads are waiting.
-      /// @remarks To signal a single thread, use the Pulse method.
+      /// @remarks The xtd::threading::monitor::pulse, xtd::threading::monitor::xtd::threading::monitor::pulse_all, and Wait methods must be invoked from within a synchronized block of code.
+      /// @remarks The remarks for the xtd::threading::monitor::pulse method explain what happens if xtd::threading::monitor::pulse is called when no threads are waiting.
+      /// @remarks To signal a single thread, use the xtd::threading::monitor::pulse method.
       template<typename object_t>
       static void pulse_all(const object_t& obj) {
         pulse_all_ptr(get_ptr(obj));
@@ -211,20 +230,6 @@ namespace xtd {
       /// @cond
       template<typename type_t>
       static void pulse_all(const type_t* str) {pulse_all(ustring(str));}
-      /// @endcond
-
-      /// @brief Releases an exclusive lock on the specified obj.
-      /// @param obj The object on which to release the lock.
-      /// @remarks The calling thread must own the lock on the obj parameter. If the calling thread owns the lock on the specified object, and has made an equal number of xtd::threading::monitor::exit and xtd::threading::monotor::enter calls for the object, then the lock is released. If the calling thread has not invoked xtd::threading::monitor::exit as many times as xtd::threading::monotor::enter, the lock is not released.
-      /// @remarks If the lock is released and other threads are in the ready queue for the object, one of the threads acquires the lock. If other threads are in the waiting queue waiting to acquire the lock, they are not automatically moved to the ready queue when the owner of the lock calls xtd::threading::monitor::exit. To move one or more waiting threads into the ready queue, call Pulse or PulseAll before invoking xtd::threading::monitor::exit.
-      template<typename object_t>
-      static void exit(const object_t& obj) {
-        exit_ptr(get_ptr(obj));
-      }
-      
-      /// @cond
-      template<typename type_t>
-      static void exit(const type_t* str) {exit(ustring(str));}
       /// @endcond
 
       /// @brief Attempts to acquire an exclusive lock on the specified object.

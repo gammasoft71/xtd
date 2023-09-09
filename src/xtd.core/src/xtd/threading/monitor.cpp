@@ -48,7 +48,7 @@ private:
   std::shared_ptr<intptr> handle_;
 };
 
-struct monitor::monitor_item {
+struct monitor::item {
   critical_section event;
   int32 used_counter {0};
   std::optional<ustring> name;
@@ -59,7 +59,7 @@ struct monitor::monitor_item {
 
 struct monitor::static_data {
   critical_section monitor_items_sync;
-  monitor::monitor_item_collection monitor_items;
+  monitor::item_collection monitor_items;
 };
 
 void monitor::enter_ptr(ptr_item ptr) {
@@ -79,8 +79,8 @@ void monitor::exit_ptr(ptr_item ptr) {
     throw synchronization_lock_exception {csf_};
   }
   
-  monitor_item saved;
-  monitor_item* monitor_data = &get_static_data().monitor_items[ptr.first];
+  item saved;
+  item* monitor_data = &get_static_data().monitor_items[ptr.first];
   if (interlocked::decrement(monitor_data->used_counter) == 0) {
     saved = get_static_data().monitor_items[ptr.first];
     if (ptr.second) delete reinterpret_cast<const ustring*>(ptr.first);
@@ -112,7 +112,7 @@ bool monitor::is_entered_ptr(ptr_item ptr) noexcept {
 }
 
 void monitor::pulse_ptr(ptr_item ptr) {
-  monitor_item* monitor_item = nullptr;
+  item* monitor_item = nullptr;
   get_static_data().monitor_items_sync.enter();
   if (is_entered_ptr(ptr)) monitor_item = &get_static_data().monitor_items[ptr.first];
   get_static_data().monitor_items_sync.leave();
@@ -124,7 +124,7 @@ void monitor::pulse_ptr(ptr_item ptr) {
 }
 
 void monitor::pulse_all_ptr(ptr_item ptr) {
-  monitor_item* monitor_item = nullptr;
+  item* monitor_item = nullptr;
   get_static_data().monitor_items_sync.enter();
   if (is_entered_ptr(ptr)) monitor_item = &get_static_data().monitor_items[ptr.first];
   get_static_data().monitor_items_sync.leave();
@@ -142,14 +142,14 @@ bool monitor::try_enter_ptr(ptr_item ptr, int32 milliseconds_timeout, bool& lock
   if (milliseconds_timeout < timeout::infinite) return false;
   get_static_data().monitor_items_sync.enter();
   if (!is_entered_ptr(ptr)) {
-    auto i = monitor_item {};
+    auto i = item {};
     if (ptr.second) {
       auto str = reinterpret_cast<const ustring*>(ptr.first);
       i.name = *str;
     }
     get_static_data().monitor_items.insert({ptr.first, i});
   }
-  monitor_item* monitor_data = &get_static_data().monitor_items[ptr.first];
+  item* monitor_data = &get_static_data().monitor_items[ptr.first];
   interlocked::increment(monitor_data->used_counter);
   get_static_data().monitor_items_sync.leave();
   lock_taken = monitor_data->event.try_enter(milliseconds_timeout);
@@ -158,7 +158,7 @@ bool monitor::try_enter_ptr(ptr_item ptr, int32 milliseconds_timeout, bool& lock
 }
 
 bool monitor::wait_ptr(ptr_item ptr, int32 milliseconds_timeout, bool exit_context) {
-  monitor_item* monitor_item = nullptr;
+  item* monitor_item = nullptr;
   get_static_data().monitor_items_sync.enter();
   if (is_entered_ptr(ptr)) monitor_item = &get_static_data().monitor_items[ptr.first];
   get_static_data().monitor_items_sync.leave();
