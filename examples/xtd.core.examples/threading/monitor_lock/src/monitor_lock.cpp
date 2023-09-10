@@ -54,7 +54,7 @@ namespace monitor_lock_example {
       // Set the number of synchronized calls.
       num_ops = 5;
       for (int ctr = 0; ctr <= 4; ++ctr)
-        thread_pool::queue_user_work_item(wait_callback {sync_update_resource});
+        thread_pool::queue_user_work_item(sync_update_resource);
       
       // Wait until this WaitHandle is signaled.
       ops_are_done.wait_one();
@@ -63,7 +63,7 @@ namespace monitor_lock_example {
       // Reset the count for unsynchronized calls.
       num_ops = 5;
       for (int ctr = 0; ctr <= 4; ctr++)
-        thread_pool::queue_user_work_item(wait_callback {un_sync_update_resource});
+        thread_pool::queue_user_work_item(un_sync_update_resource);
       
       // Wait until this WaitHandle is signaled.
       ops_are_done.wait_one();

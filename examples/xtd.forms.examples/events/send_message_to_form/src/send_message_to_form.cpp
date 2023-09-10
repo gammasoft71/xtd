@@ -52,10 +52,10 @@ public:
     button_send.location({10, 10});
     button_send.text("Send async notify something ready");
     button_send.click += [&] {
-      thread_pool::queue_user_work_item(wait_callback {[&] {
+      thread_pool::queue_user_work_item([&] {
         thread::sleep(2_s);
         notifier.notify_something_ready();
-      }});
+      });
     };
     
     list_box_messages.location({10, 50});
