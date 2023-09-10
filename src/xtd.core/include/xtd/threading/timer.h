@@ -128,6 +128,8 @@ namespace xtd {
       /// @}
 
       /// @cond
+      template <typename callback_t>
+      timer(callback_t callback) : timer(timer_callback {callback}) {}
       timer();
       timer(const timer& timer);
       timer& operator=(const timer& timer);
