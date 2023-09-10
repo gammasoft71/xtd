@@ -11,7 +11,7 @@ namespace barrier_example {
   public:
     static void main() {
       for (auto index = 0; index < task_count; ++index)
-        thread_pool::queue_user_work_item(wait_callback {perform_phase});
+        thread_pool::queue_user_work_item(perform_phase);
       
       thread::join_all();
     }

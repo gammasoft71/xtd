@@ -16,8 +16,8 @@ namespace wait_handle_example {
       // wait until all tasks are completed.
       auto dt = date_time::now();
       console::write_line("Main thread is waiting for BOTH tasks to complete.");
-      thread_pool::queue_user_work_item(wait_callback(do_task), event1);
-      thread_pool::queue_user_work_item(wait_callback(do_task), event2);
+      thread_pool::queue_user_work_item(do_task, event1);
+      thread_pool::queue_user_work_item(do_task, event2);
       wait_handle::wait_all({event1, event2});
       // The time shown below should match the longest task.
       console::write_line("Both tasks are completed (time waited={0})",
@@ -28,8 +28,8 @@ namespace wait_handle_example {
       dt = date_time::now();
       console::write_line();
       console::write_line("The main thread is waiting for either task to complete.");
-      thread_pool::queue_user_work_item(wait_callback(do_task), event1);
-      thread_pool::queue_user_work_item(wait_callback(do_task), event2);
+      thread_pool::queue_user_work_item(do_task, event1);
+      thread_pool::queue_user_work_item(do_task, event2);
       auto index = wait_handle::wait_any({event1, event2});
       // The time shown below should match the shortest task.
       console::write_line("Task {0} finished first (time waited={1}).",
