@@ -153,7 +153,7 @@ Inheritance diagram for xtd::threading::barrier:</div>
 <div class="line"> </div>
 <div class="line">      <span class="comment">// Now launch 4 parallel actions to serve as 4 participants</span></div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> index = 0; index &lt; 4; ++index)</div>
-<div class="line">        thread_pool::queue_user_work_item(<a class="code hl_typedef" href="group__xtd__core.html#ga21b580a3c06173e69cd3a9bb4e247bc2">wait_callback</a> {<a class="code hl_typedef" href="group__xtd__core.html#ga53c721aac682a7ccf19ee17d92280e31">action</a>});</div>
+<div class="line">        thread_pool::queue_user_work_item(<a class="code hl_typedef" href="group__xtd__core.html#ga53c721aac682a7ccf19ee17d92280e31">action</a>);</div>
 <div class="line">      </div>
 <div class="line">      <span class="comment">// It&#39;s good form to join all thread and  close() a barrier when you&#39;re done with it.</span></div>
 <div class="line">      thread::join_all();</div>
@@ -174,7 +174,6 @@ Inheritance diagram for xtd::threading::barrier:</div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1barrier__post__phase__exception_html"><div class="ttname"><a href="classxtd_1_1threading_1_1barrier__post__phase__exception.html">xtd::threading::barrier_post_phase_exception</a></div><div class="ttdoc">The exception that is thrown when a Thread is in an invalid ThreadState for the method call.</div><div class="ttdef"><b>Definition</b> barrier_post_phase_exception.h:22</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1barrier_html"><div class="ttname"><a href="classxtd_1_1threading_1_1barrier.html">xtd::threading::barrier</a></div><div class="ttdoc">Enables multiple tasks to cooperatively work on an algorithm in parallel through multiple phases.</div><div class="ttdef"><b>Definition</b> barrier.h:25</div></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:162</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ga21b580a3c06173e69cd3a9bb4e247bc2"><div class="ttname"><a href="group__xtd__core.html#ga21b580a3c06173e69cd3a9bb4e247bc2">xtd::threading::wait_callback</a></div><div class="ttdeci">action&lt; std::any &gt; wait_callback</div><div class="ttdoc">Represents a callback method to be executed by a thread pool thread.</div><div class="ttdef"><b>Definition</b> wait_callback.h:25</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga53c721aac682a7ccf19ee17d92280e31"><div class="ttname"><a href="group__xtd__core.html#ga53c721aac682a7ccf19ee17d92280e31">xtd::action</a></div><div class="ttdeci">delegate&lt; void(arguments_t...)&gt; action</div><div class="ttdoc">Represents a xtd::delegate that has variable parameters and does not return a value.</div><div class="ttdef"><b>Definition</b> action.h:19</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">xtd::console_key::b</a></div><div class="ttdeci">@ b</div><div class="ttdoc">The B key.</div></div>
 <div class="ttc" id="anamespacextd_1_1threading_html"><div class="ttname"><a href="namespacextd_1_1threading.html">xtd::threading</a></div><div class="ttdoc">The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....</div><div class="ttdef"><b>Definition</b> abandoned_mutex_exception.h:10</div></div>
@@ -272,7 +271,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Sep 9 2023 22:17:21 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Sep 11 2023 00:10:47 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
