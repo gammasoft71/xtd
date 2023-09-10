@@ -45,16 +45,16 @@ void thread_pool::get_min_threads(size_t& worker_threads, size_t& completion_por
   completion_port_threads = min_asynchronous_io_threads_;
 }
 
-bool thread_pool::queue_user_work_item(const wait_callback& call_back) {
-  return queue_user_work_item(call_back, std::any {});
+bool thread_pool::queue_user_work_item(const wait_callback& callback) {
+  return queue_user_work_item(callback, std::any {});
 }
 
-bool thread_pool::queue_user_work_item(const wait_callback& call_back, std::any state) {
+bool thread_pool::queue_user_work_item(const wait_callback& callback, std::any state) {
   lock_(get_static_data().thread_pool_items_sync_root) {
     if (get_static_data().threads.size() == 0) initialize_min_threads();
     if (get_static_data().thread_pool_items.size() == max_threads_) return false;
     if (get_static_data().thread_pool_items.size() + 1 > get_static_data().threads.size()) create_thread();
-    get_static_data().thread_pool_items.emplace(get_static_data().thread_pool_items.begin(), call_back, state);
+    get_static_data().thread_pool_items.emplace(get_static_data().thread_pool_items.begin(), callback, state);
   }
   get_static_data().semaphore.release();
   return true;
