@@ -1,8 +1,9 @@
 #include "../../../include/xtd/threading/barrier.h"
+#include "../../../include/xtd/threading/interlocked.h"
 #include "../../../include/xtd/threading/semaphore.h"
 #include "../../../include/xtd/argument_out_of_range_exception.h"
 #include "../../../include/xtd/as.h"
-#include "../../../include/xtd/int32_object.h"
+#include "../../../include/xtd/int16_object.h"
 #include "../../../include/xtd/invalid_operation_exception.h"
 #include "../../../include/xtd/lock.h"
 
@@ -14,7 +15,7 @@ struct barrier::data : object {
   int32 current_phase_number = 0;
   int32 participant_count = 0;
   int32 participants_remaining = 0;
-  action<barrier&> post_phase_action;
+  barrier::post_phase_action post_phase_action;
   bool run_post_phase_action = false;
   semaphore phase_semaphore;
   bool throw_barrier_post_phase_exception = false;
@@ -26,11 +27,17 @@ barrier::barrier() : barrier(0) {
 barrier::barrier(int32 participant_count) : barrier(participant_count, {}) {
 }
 
-barrier::barrier(int32 participant_count, action<barrier&> post_phase_action) : data_(std::make_shared<data>()) {
+barrier::barrier(int32 participant_count, barrier::post_phase_action post_phase_action) : data_(std::make_shared<data>()) {
   if (participant_count < 0) throw argument_out_of_range_exception {csf_};
   data_->participant_count = participant_count;
   data_->participants_remaining = participant_count;
   data_->post_phase_action = post_phase_action;
+}
+
+barrier& barrier::operator =(const barrier& other) {
+  close();
+  data_ = other.data_;
+  return *this;
 }
 
 int32 barrier::current_phase_number() const noexcept {
@@ -51,17 +58,18 @@ int32 barrier::add_participant() {
 
 int32 barrier::add_participants(int32 participant_count) {
   lock_(*data_) {
-    if (participant_count < 0 || as<int64>(data_->participant_count) + participant_count > as<int64>(int32_object::max_value)) throw argument_out_of_range_exception {csf_};
+    if (participant_count < 0 || data_->participant_count + participant_count > int16_object::max_value) throw argument_out_of_range_exception {csf_};
     if (data_->run_post_phase_action) throw invalid_operation_exception {csf_};
-    data_->participant_count += participant_count;
-    data_->participants_remaining += participant_count;
+    interlocked::exchange(data_->participant_count, data_->participant_count + participant_count);
+    interlocked::exchange(data_->participants_remaining, data_->participants_remaining + participant_count);
     return data_->current_phase_number;
   }
   return data_->current_phase_number;
 }
 
 void barrier::close() {
-  // to do...
+  if (data_.use_count() == 1)
+    data_.reset();
 }
 
 int32 barrier::remove_participant() {
@@ -73,8 +81,8 @@ int32 barrier::remove_participants(int32 participant_count) {
     if (participant_count < 0) throw argument_out_of_range_exception {csf_};
     if (data_->participant_count == 0 || data_->run_post_phase_action || data_->participants_remaining < data_->participant_count - participant_count) throw invalid_operation_exception {csf_};
     if (data_->participant_count < participant_count) throw argument_out_of_range_exception {csf_};
-    data_->participant_count -= participant_count;
-    data_->participants_remaining -= participant_count;
+    interlocked::exchange(data_->participant_count, data_->participant_count- participant_count);
+    interlocked::exchange(data_->participants_remaining, data_->participants_remaining - participant_count);
     return data_->current_phase_number;
   }
   return data_->current_phase_number;
@@ -97,8 +105,8 @@ bool barrier::signal_and_wait(int32 milliseconds_timeout) {
       }
       data_->run_post_phase_action = false;
 
-      data_->current_phase_number++;
-      data_->participants_remaining = data_->participant_count;
+      interlocked::increment(data_->current_phase_number);
+      interlocked::exchange(data_->participants_remaining, data_->participant_count);
       
       for (int i = 0; i < data_->participant_count; i++)
         data_->phase_semaphore.release();
