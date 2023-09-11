@@ -25,18 +25,26 @@ namespace xtd {
     class core_export_ barrier : public object {
       struct data;
     public:
+      /// @name Aliases
+      
+      /// @{
+      using post_phase_action = action<barrier&>;
+      /// @}
+      
       /// @name Constructors
       
       /// @{
       explicit barrier(int32 participant_count);
-      barrier(int32 participant_count, action<barrier&> post_phase_action);
+      barrier(int32 participant_count, barrier::post_phase_action post_phase_action);
       /// @}
 
       ///@cond
+      template <typename post_phase_action_t>
+      barrier(int32 participant_count, post_phase_action_t post_phase_action) : barrier(participant_count, barrier::post_phase_action {post_phase_action}) {}
       barrier();
       barrier(barrier&&) = default;
       barrier(const barrier&) = default;
-      barrier& operator =(const barrier&) = default;
+      barrier& operator =(const barrier& other);
       ///@endcond
 
       /// @name Properties
