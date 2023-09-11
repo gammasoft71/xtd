@@ -130,7 +130,7 @@ namespace xtd {
       class critical_section;
       struct item;
       using item_collection = std::unordered_map<intptr, item>;
-      using item_ptr = std::pair<intptr, bool>;
+      using object_ptr = std::pair<intptr, bool>;
       struct static_data;
       
     public:
@@ -427,24 +427,24 @@ namespace xtd {
       static static_data& get_static_data();
 
       template<typename object_t>
-      static item_ptr get_ptr(const object_t& obj) noexcept {
+      static object_ptr get_ptr(const object_t& obj) noexcept {
         bool is_string = is<ustring>(obj);
         // The newly created string will be deleted when the exit method is called, or if the lock has already been entered.
         return std::make_pair(is_string ? get_ustring_ptr(*(new ustring(as<ustring>(obj)))) : reinterpret_cast<intptr>(&obj), is_string);
       }
       
       template<typename type_t>
-      static item_ptr get_ptr(const type_t* str) {return get_ptr(ustring(str));}
+      static object_ptr get_ptr(const type_t* str) {return get_ptr(ustring(str));}
 
-      static void enter_ptr(item_ptr ptr);
-      static void enter_ptr(item_ptr ptr, bool& lock_taken);
-      static void exit_ptr(item_ptr ptr);
+      static void enter_ptr(object_ptr obj);
+      static void enter_ptr(object_ptr obj, bool& lock_taken);
+      static void exit_ptr(object_ptr obj);
       static intptr get_ustring_ptr(const ustring& str);
-      static bool is_entered_ptr(item_ptr ptr) noexcept;
-      static void pulse_ptr(item_ptr obj);
-      static void pulse_all_ptr(item_ptr obj);
-      static bool try_enter_ptr(item_ptr ptr, int32 milliseconds_timeout, bool& lock_taken) noexcept;
-      static bool wait_ptr(item_ptr ptr, int32 milliseconds_timeout);
+      static bool is_entered_ptr(object_ptr obj) noexcept;
+      static void pulse_ptr(object_ptr obj);
+      static void pulse_all_ptr(object_ptr obj);
+      static bool try_enter_ptr(object_ptr obj, int32 milliseconds_timeout, bool& lock_taken) noexcept;
+      static bool wait_ptr(object_ptr obj, int32 milliseconds_timeout);
     };
   }
 }

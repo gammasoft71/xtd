@@ -37,7 +37,7 @@ namespace xtd {
       /// @param obj The object on which to acquire the monitor lock.
       /// @remarks When the xtd::threading::lock_guard destroyed it releases the exclusive lock specified in the constructor.
       template<typename object_t>
-      explicit lock_guard(const object_t& lock) : lock_(monitor::get_ptr(lock)) {monitor::enter_ptr(lock_);}
+      explicit lock_guard(const object_t& obj) : obj_(monitor::get_ptr(obj)) {monitor::enter_ptr(obj_);}
       /// @}
       
       /// @cond
@@ -112,7 +112,7 @@ namespace xtd {
       
     private:
       lock_guard() = delete;
-      monitor::item_ptr lock_;
+      monitor::object_ptr obj_;
     };
   }
 }
