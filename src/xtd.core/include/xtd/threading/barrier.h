@@ -29,6 +29,7 @@ namespace xtd {
       /// @name Aliases
       
       /// @{
+      /// @brief Represents the xtd::threading::barrier::post_phase_action delegate.
       using post_phase_action = action<barrier&>;
       /// @}
       
