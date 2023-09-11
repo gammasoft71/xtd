@@ -5,6 +5,7 @@
 #include "../../../include/xtd/as.h"
 #include "../../../include/xtd/int16_object.h"
 #include "../../../include/xtd/invalid_operation_exception.h"
+#include "../../../include/xtd/object_closed_exception.h"
 #include "../../../include/xtd/lock.h"
 
 using namespace xtd;
@@ -28,7 +29,7 @@ barrier::barrier(int32 participant_count) : barrier(participant_count, {}) {
 }
 
 barrier::barrier(int32 participant_count, barrier::post_phase_action post_phase_action) : data_(std::make_shared<data>()) {
-  if (participant_count < 0) throw argument_out_of_range_exception {csf_};
+  if (participant_count < 0 || participant_count > int16_object::max_value) throw argument_out_of_range_exception {csf_};
   data_->participant_count = participant_count;
   data_->participants_remaining = participant_count;
   data_->post_phase_action = post_phase_action;
@@ -40,15 +41,22 @@ barrier& barrier::operator =(const barrier& other) {
   return *this;
 }
 
-int32 barrier::current_phase_number() const noexcept {
+barrier::~barrier() {
+  if (data_.use_count() == 1) close();
+}
+
+int32 barrier::current_phase_number() const {
+  if (!data_) throw object_closed_exception {csf_};
   return data_->current_phase_number;
 }
 
-int32 barrier::participant_count() const noexcept {
+int32 barrier::participant_count() const {
+  if (!data_) throw object_closed_exception {csf_};
   return data_->participant_count;
 }
 
-int32 barrier::participants_remaining() const noexcept {
+int32 barrier::participants_remaining() const {
+  if (!data_) throw object_closed_exception {csf_};
   return data_->participants_remaining;
 }
 
@@ -57,6 +65,7 @@ int32 barrier::add_participant() {
 }
 
 int32 barrier::add_participants(int32 participant_count) {
+  if (!data_) throw object_closed_exception {csf_};
   lock_(*data_) {
     if (participant_count < 0 || data_->participant_count + participant_count > int16_object::max_value) throw argument_out_of_range_exception {csf_};
     if (data_->run_post_phase_action) throw invalid_operation_exception {csf_};
@@ -68,8 +77,7 @@ int32 barrier::add_participants(int32 participant_count) {
 }
 
 void barrier::close() {
-  if (data_.use_count() == 1)
-    data_.reset();
+  data_.reset();
 }
 
 int32 barrier::remove_participant() {
@@ -77,6 +85,7 @@ int32 barrier::remove_participant() {
 }
 
 int32 barrier::remove_participants(int32 participant_count) {
+  if (!data_) throw object_closed_exception {csf_};
   lock_(*data_) {
     if (participant_count < 0) throw argument_out_of_range_exception {csf_};
     if (data_->participant_count == 0 || data_->run_post_phase_action || data_->participants_remaining < data_->participant_count - participant_count) throw invalid_operation_exception {csf_};
@@ -93,6 +102,7 @@ void barrier::signal_and_wait() {
 }
 
 bool barrier::signal_and_wait(int32 milliseconds_timeout) {
+  if (!data_) throw object_closed_exception {csf_};
   lock_(*data_) {
     data_->participants_remaining--;
     
