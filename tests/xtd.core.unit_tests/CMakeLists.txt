@@ -225,6 +225,7 @@ add_sources(
   src/xtd/tests/xml_syntax_exception_tests.cpp
   src/xtd/threading/tests/abandoned_mutex_exception_tests.cpp
   src/xtd/threading/tests/barrier_post_phase_exception_tests.cpp
+  src/xtd/threading/tests/barrier_tests.cpp
   src/xtd/threading/tests/event_reset_mode_tests.cpp
   src/xtd/threading/tests/event_wait_handle_tests.cpp
   src/xtd/threading/tests/interlocked_tests.cpp
