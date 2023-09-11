@@ -188,15 +188,15 @@ Inheritance diagram for xtd::threading::barrier:</div>
 <dl class="section remark"><dt>Remarks</dt><dd>A group of tasks cooperate by moving through a series of phases, where each in the group signals it has arrived at the <a class="el" href="classxtd_1_1threading_1_1barrier.html" title="Enables multiple tasks to cooperatively work on an algorithm in parallel through multiple phases.">xtd::threading::barrier</a> in a given phase and implicitly waits for all others to arrive. The same <a class="el" href="classxtd_1_1threading_1_1barrier.html" title="Enables multiple tasks to cooperatively work on an algorithm in parallel through multiple phases.">xtd::threading::barrier</a> can be used for multiple phases. </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Aliases</h2></td></tr>
-<tr class="memitem:a541a2b302cb76a52f869eaded0e0f518"><td class="memItemLeft" align="right" valign="top"><a id="a541a2b302cb76a52f869eaded0e0f518" name="a541a2b302cb76a52f869eaded0e0f518"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>post_phase_action</b> = <a class="el" href="group__xtd__core.html#ga53c721aac682a7ccf19ee17d92280e31">action</a>&lt; <a class="el" href="classxtd_1_1threading_1_1barrier.html">barrier</a> &amp; &gt;</td></tr>
+<tr class="memitem:a541a2b302cb76a52f869eaded0e0f518"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1barrier.html#a541a2b302cb76a52f869eaded0e0f518">post_phase_action</a> = <a class="el" href="group__xtd__core.html#ga53c721aac682a7ccf19ee17d92280e31">action</a>&lt; <a class="el" href="classxtd_1_1threading_1_1barrier.html">barrier</a> &amp; &gt;</td></tr>
+<tr class="memdesc:a541a2b302cb76a52f869eaded0e0f518"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the <a class="el" href="classxtd_1_1threading_1_1barrier.html#a541a2b302cb76a52f869eaded0e0f518" title="Represents the xtd::threading::barrier::post_phase_action delegate.">xtd::threading::barrier::post_phase_action</a> delegate.  <br /></td></tr>
 <tr class="separator:a541a2b302cb76a52f869eaded0e0f518"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Constructors</h2></td></tr>
 <tr class="memitem:a390125fc8e63213b1738fb4be961e20a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1barrier.html#a390125fc8e63213b1738fb4be961e20a">barrier</a> (<a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> <a class="el" href="classxtd_1_1threading_1_1barrier.html#a8b6c99f30a8fa0cd5dc0b0118182bcc4">participant_count</a>)</td></tr>
 <tr class="memdesc:a390125fc8e63213b1738fb4be961e20a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1threading_1_1barrier.html" title="Enables multiple tasks to cooperatively work on an algorithm in parallel through multiple phases.">xtd::threading::barrier</a> class.  <br /></td></tr>
 <tr class="separator:a390125fc8e63213b1738fb4be961e20a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af90668b66f8479c252160d7a22599bb8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1barrier.html#af90668b66f8479c252160d7a22599bb8">barrier</a> (<a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> <a class="el" href="classxtd_1_1threading_1_1barrier.html#a8b6c99f30a8fa0cd5dc0b0118182bcc4">participant_count</a>, barrier::post_phase_action post_phase_action)</td></tr>
+<tr class="memitem:af90668b66f8479c252160d7a22599bb8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1barrier.html#af90668b66f8479c252160d7a22599bb8">barrier</a> (<a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> <a class="el" href="classxtd_1_1threading_1_1barrier.html#a8b6c99f30a8fa0cd5dc0b0118182bcc4">participant_count</a>, <a class="el" href="classxtd_1_1threading_1_1barrier.html#a541a2b302cb76a52f869eaded0e0f518">barrier::post_phase_action</a> <a class="el" href="classxtd_1_1threading_1_1barrier.html#a541a2b302cb76a52f869eaded0e0f518">post_phase_action</a>)</td></tr>
 <tr class="memdesc:af90668b66f8479c252160d7a22599bb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1threading_1_1barrier.html" title="Enables multiple tasks to cooperatively work on an algorithm in parallel through multiple phases.">xtd::threading::barrier</a> class.  <br /></td></tr>
 <tr class="separator:af90668b66f8479c252160d7a22599bb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -276,6 +276,23 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a1ee13700465eead7934f450749b952d7 inherit pub_static_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are the same instance.  <br /></td></tr>
 <tr class="separator:a1ee13700465eead7934f450749b952d7 inherit pub_static_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a541a2b302cb76a52f869eaded0e0f518" name="a541a2b302cb76a52f869eaded0e0f518"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a541a2b302cb76a52f869eaded0e0f518">&#9670;&#160;</a></span>post_phase_action</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classxtd_1_1threading_1_1barrier.html#a541a2b302cb76a52f869eaded0e0f518">xtd::threading::barrier::post_phase_action</a> =  <a class="el" href="group__xtd__core.html#ga53c721aac682a7ccf19ee17d92280e31">action</a>&lt;<a class="el" href="classxtd_1_1threading_1_1barrier.html">barrier</a>&amp;&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Represents the <a class="el" href="classxtd_1_1threading_1_1barrier.html#a541a2b302cb76a52f869eaded0e0f518" title="Represents the xtd::threading::barrier::post_phase_action delegate.">xtd::threading::barrier::post_phase_action</a> delegate. </p>
+
+</div>
+</div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a390125fc8e63213b1738fb4be961e20a" name="a390125fc8e63213b1738fb4be961e20a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a390125fc8e63213b1738fb4be961e20a">&#9670;&#160;</a></span>barrier() <span class="overload">[1/2]</span></h2>
@@ -332,7 +349,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">barrier::post_phase_action&#160;</td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1threading_1_1barrier.html#a541a2b302cb76a52f869eaded0e0f518">barrier::post_phase_action</a>&#160;</td>
           <td class="paramname"><em>post_phase_action</em>&#160;</td>
         </tr>
         <tr>
@@ -817,7 +834,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 11 2023 20:53:12 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Sep 11 2023 22:09:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
