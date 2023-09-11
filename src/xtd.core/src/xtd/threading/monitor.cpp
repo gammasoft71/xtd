@@ -62,29 +62,29 @@ struct monitor::static_data {
   monitor::item_collection monitor_items;
 };
 
-void monitor::enter_ptr(item_ptr ptr) {
+void monitor::enter_ptr(object_ptr obj) {
   bool lock_taken = false;
-  enter_ptr(ptr, lock_taken);
+  enter_ptr(obj, lock_taken);
 }
 
-void monitor::enter_ptr(item_ptr ptr, bool& lock_taken) {
-  if (!try_enter_ptr(ptr, timeout::infinite, lock_taken))
+void monitor::enter_ptr(object_ptr obj, bool& lock_taken) {
+  if (!try_enter_ptr(obj, timeout::infinite, lock_taken))
     throw invalid_operation_exception {csf_};
 }
 
-void monitor::exit_ptr(item_ptr ptr) {
+void monitor::exit_ptr(object_ptr obj) {
   get_static_data().monitor_items_sync.enter();
-  if (!is_entered_ptr(ptr)) {
+  if (!is_entered_ptr(obj)) {
     get_static_data().monitor_items_sync.leave();
     throw synchronization_lock_exception {csf_};
   }
   
   item saved;
-  item* monitor_data = &get_static_data().monitor_items[ptr.first];
+  item* monitor_data = &get_static_data().monitor_items[obj.first];
   if (interlocked::decrement(monitor_data->used_counter) == 0) {
-    saved = get_static_data().monitor_items[ptr.first];
-    if (ptr.second) delete reinterpret_cast<const ustring*>(ptr.first);
-    get_static_data().monitor_items.erase(ptr.first);
+    saved = get_static_data().monitor_items[obj.first];
+    if (obj.second) delete reinterpret_cast<const ustring*>(obj.first);
+    get_static_data().monitor_items.erase(obj.first);
     monitor_data = &saved;
   }
   monitor_data->thread_id = thread::invalid_thread_id;
@@ -106,15 +106,15 @@ intptr monitor::get_ustring_ptr(const ustring& str) {
   return ptr;
 }
 
-bool monitor::is_entered_ptr(item_ptr ptr) noexcept {
-  auto found = get_static_data().monitor_items.find(ptr.first) != get_static_data().monitor_items.end();
+bool monitor::is_entered_ptr(object_ptr obj) noexcept {
+  auto found = get_static_data().monitor_items.find(obj.first) != get_static_data().monitor_items.end();
   return found;
 }
 
-void monitor::pulse_ptr(item_ptr ptr) {
+void monitor::pulse_ptr(object_ptr obj) {
   item* monitor_item = nullptr;
   get_static_data().monitor_items_sync.enter();
-  if (is_entered_ptr(ptr)) monitor_item = &get_static_data().monitor_items[ptr.first];
+  if (is_entered_ptr(obj)) monitor_item = &get_static_data().monitor_items[obj.first];
   get_static_data().monitor_items_sync.leave();
   
   if (monitor_item == nullptr) throw invalid_operation_exception {csf_};
@@ -123,10 +123,10 @@ void monitor::pulse_ptr(item_ptr ptr) {
   monitor_item->wait_event.set();
 }
 
-void monitor::pulse_all_ptr(item_ptr ptr) {
+void monitor::pulse_all_ptr(object_ptr obj) {
   item* monitor_item = nullptr;
   get_static_data().monitor_items_sync.enter();
-  if (is_entered_ptr(ptr)) monitor_item = &get_static_data().monitor_items[ptr.first];
+  if (is_entered_ptr(obj)) monitor_item = &get_static_data().monitor_items[obj.first];
   get_static_data().monitor_items_sync.leave();
   
   if (monitor_item == nullptr) throw invalid_operation_exception {csf_};
@@ -138,18 +138,18 @@ void monitor::pulse_all_ptr(item_ptr ptr) {
   }
 }
 
-bool monitor::try_enter_ptr(item_ptr ptr, int32 milliseconds_timeout, bool& lock_taken) noexcept {
+bool monitor::try_enter_ptr(object_ptr obj, int32 milliseconds_timeout, bool& lock_taken) noexcept {
   if (milliseconds_timeout < timeout::infinite) return false;
   get_static_data().monitor_items_sync.enter();
-  if (!is_entered_ptr(ptr)) {
+  if (!is_entered_ptr(obj)) {
     auto i = item {};
-    if (ptr.second) {
-      auto str = reinterpret_cast<const ustring*>(ptr.first);
+    if (obj.second) {
+      auto str = reinterpret_cast<const ustring*>(obj.first);
       i.name = *str;
     }
-    get_static_data().monitor_items.insert({ptr.first, i});
+    get_static_data().monitor_items.insert({obj.first, i});
   }
-  item* monitor_data = &get_static_data().monitor_items[ptr.first];
+  item* monitor_data = &get_static_data().monitor_items[obj.first];
   interlocked::increment(monitor_data->used_counter);
   get_static_data().monitor_items_sync.leave();
   lock_taken = monitor_data->event.try_enter(milliseconds_timeout);
@@ -157,10 +157,10 @@ bool monitor::try_enter_ptr(item_ptr ptr, int32 milliseconds_timeout, bool& lock
   return lock_taken;
 }
 
-bool monitor::wait_ptr(item_ptr ptr, int32 milliseconds_timeout) {
+bool monitor::wait_ptr(object_ptr obj, int32 milliseconds_timeout) {
   item* monitor_item = nullptr;
   get_static_data().monitor_items_sync.enter();
-  if (is_entered_ptr(ptr)) monitor_item = &get_static_data().monitor_items[ptr.first];
+  if (is_entered_ptr(obj)) monitor_item = &get_static_data().monitor_items[obj.first];
   get_static_data().monitor_items_sync.leave();
   
   if (monitor_item == nullptr) throw invalid_operation_exception {csf_};
