@@ -120,7 +120,7 @@ void monitor::pulse_ptr(object_ptr obj) {
   if (monitor_item == nullptr) throw invalid_operation_exception {csf_};
   if (monitor_item->thread_id != thread::current_thread().thread_id()) throw synchronization_lock_exception {csf_};
 
-  monitor_item->wait_event.set();
+  if (monitor_item->wait_threads) monitor_item->wait_event.set();
 }
 
 void monitor::pulse_all_ptr(object_ptr obj) {
@@ -134,7 +134,7 @@ void monitor::pulse_all_ptr(object_ptr obj) {
 
   while (monitor_item->wait_threads) {
     monitor_item->wait_event.set();
-    thread::yield();
+    thread::spin_wait(10);
   }
 }
 
