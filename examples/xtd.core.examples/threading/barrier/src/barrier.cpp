@@ -48,7 +48,7 @@ namespace barrier_example {
 
       // Now launch 4 parallel actions to serve as 4 participants
       for (auto index = 0; index < 4; ++index)
-        thread_pool::queue_user_work_item(wait_callback {action});
+        thread_pool::queue_user_work_item(action);
       
       // It's good form to join all thread and  close() a barrier when you're done with it.
       thread::join_all();
