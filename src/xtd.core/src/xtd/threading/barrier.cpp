@@ -6,6 +6,7 @@
 #include "../../../include/xtd/int16_object.h"
 #include "../../../include/xtd/invalid_operation_exception.h"
 #include "../../../include/xtd/object_closed_exception.h"
+#include "../../../include/xtd/operation_canceled_exception.h"
 #include "../../../include/xtd/lock.h"
 
 using namespace xtd;
@@ -102,6 +103,7 @@ void barrier::signal_and_wait() {
 }
 
 bool barrier::signal_and_wait(int32 milliseconds_timeout) {
+  if (milliseconds_timeout < timeout::infinite) throw argument_out_of_range_exception {csf_};
   if (!data_) throw object_closed_exception {csf_};
   lock_(*data_) {
     data_->participants_remaining--;
