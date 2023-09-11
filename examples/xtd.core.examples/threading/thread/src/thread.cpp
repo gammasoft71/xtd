@@ -25,7 +25,7 @@ public:
     // The constructor for the thread class requires a thread_start
     // delegate that represents the method to be executed on the
     // thread.  xtd simplifies the creation of this delegate.
-    auto t = thread {thread_start {thread_proc}};
+    auto t = thread {thread_proc};
     
     // Start thread_proc.  Note that on a uniprocessor, the new
     // thread does not get any processor time until the main thread
