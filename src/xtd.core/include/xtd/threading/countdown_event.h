@@ -23,6 +23,7 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core threading
     /// @par Examples
+    /// The following example shows how to use a xtd::threading::countdown_event:
     /// @include countdown_event.cpp
     class core_export_ countdown_event : public object {
       struct data;
