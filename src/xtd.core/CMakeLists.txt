@@ -736,6 +736,8 @@ add_sources(
   include/xtd/threading/cancellation_token_registration
   include/xtd/threading/cancellation_token_source.h
   include/xtd/threading/cancellation_token_source
+  include/xtd/threading/countdown_event.h
+  include/xtd/threading/countdown_event
   include/xtd/threading/event_reset_mode.h
   include/xtd/threading/event_reset_mode
   include/xtd/threading/event_wait_handle.h
@@ -932,6 +934,7 @@ add_sources(
   src/xtd/threading/cancellation_token.cpp
   src/xtd/threading/cancellation_token_registration.cpp
   src/xtd/threading/cancellation_token_source.cpp
+  src/xtd/threading/countdown_event.cpp
   src/xtd/threading/event_wait_handle.cpp
   src/xtd/threading/event_wait_handle_base.h
   src/xtd/threading/interlocked.cpp
