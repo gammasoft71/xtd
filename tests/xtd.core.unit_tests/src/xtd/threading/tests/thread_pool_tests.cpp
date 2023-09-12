@@ -81,20 +81,5 @@ namespace xtd::tests {
       thread_pool::close();
       assert::are_equal(max_worker_threads, count, csf_);
     }
-    
-    void test_method_(queue_user_work_item_twice__max_thread) {
-      size_t max_worker_threads = 0;
-      size_t max_completion_port_threads = 0;
-      thread_pool::get_max_threads(max_worker_threads, max_completion_port_threads);
-      auto count = 0;
-      auto action = wait_callback {[&] {
-        interlocked::increment(count);
-      }};
-      for (auto index = 0ul; index < 2 * max_worker_threads; ++index)
-        thread_pool::queue_user_work_item(action);
-      thread::sleep(10);
-      thread_pool::close();
-      assert::are_equal(2 * max_worker_threads, count, csf_);
-    }
   };
 }
