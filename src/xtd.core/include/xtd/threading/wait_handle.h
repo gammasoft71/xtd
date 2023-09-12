@@ -20,6 +20,9 @@ namespace xtd {
     /// @endcond
     
     /// @brief Encapsulates operating system specific objects that wait for exclusive access to shared resources.
+    /// @code
+    /// class core_export_ wait_handle abstract_
+    /// @endcode
     /// @par Header
     /// @code #include <xtd/threading/wait_handle> @endcode
     /// @par Namespace
