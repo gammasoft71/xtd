@@ -7,6 +7,7 @@ add_projects(
   auto_reset_event
   barrier
   barrier_simple
+  countdown_event
   event_wait_handle
   interlocked
   interlocked_decrement

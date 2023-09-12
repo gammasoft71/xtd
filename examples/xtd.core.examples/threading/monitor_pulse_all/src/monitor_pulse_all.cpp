@@ -1,4 +1,3 @@
-#include <xtd/threading/monitor>
 #include <xtd/threading/thread>
 #include <xtd/console>
 #include <xtd/lock>
@@ -38,7 +37,29 @@ startup_(monitor_lock_example::program::main);
 
 // This example produces output similar to the following:
 //
-//     Thread 2 wait...
-//     Thread 3 wait...
-//     Thread 3 ...continue.
-//     Thread 2 ...continue.
+// Starting synchronized resource access on thread #6
+// Stopping synchronized resource access on thread #6
+// Starting synchronized resource access on thread #9
+// Stopping synchronized resource access on thread #9
+// Starting synchronized resource access on thread #2
+// Stopping synchronized resource access on thread #2
+// Starting synchronized resource access on thread #3
+// Stopping synchronized resource access on thread #3
+// Starting synchronized resource access on thread #8
+// Stopping synchronized resource access on thread #8
+//
+// All synchronized operations have completed.
+//
+// Starting unsynchronized resource access on Thread #9
+// Starting unsynchronized resource access on Thread #2
+// Starting unsynchronized resource access on Thread #11
+// Starting unsynchronized resource access on Thread #6
+// Starting unsynchronized resource access on Thread #4
+// Stopping unsynchronized resource access on thread #9
+// Stopping unsynchronized resource access on thread #11
+// Stopping unsynchronized resource access on thread #6
+// Stopping unsynchronized resource access on thread #2
+// Stopping unsynchronized resource access on thread #4
+//
+// All unsynchronized thread operations have completed.
+//
