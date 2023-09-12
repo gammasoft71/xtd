@@ -646,6 +646,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1cancellation__token__source.html">xtd::threading::cancellation_token_source</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signals to a <a class="el" href="classxtd_1_1threading_1_1cancellation__token.html" title="Propagates notification that operations should be canceled.">xtd::threading::cancellation_token</a> that it should be canceled.  <a href="classxtd_1_1threading_1_1cancellation__token__source.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1countdown__event.html">xtd::threading::countdown_event</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a synchronization primitive that is signaled when its count reaches zero.  <a href="classxtd_1_1threading_1_1countdown__event.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html">xtd::threading::event_wait_handle</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a thread synchronization event.  <a href="classxtd_1_1threading_1_1event__wait__handle.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -6761,7 +6764,10 @@ template&lt;typename result_t , typename... arguments_t&gt; </div>
 <p>Represents the method that executes on a <a class="el" href="classxtd_1_1threading_1_1thread.html" title="Creates and controls a thread, sets its priority, and gets its status.">xtd::threading::thread</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">obj</td><td>An object that contains data for the thread procedure. </td></tr>
+    <tr><td class="paramname">obj</td><td>An object that contains data for the thread procedure. <div class="fragment"><div class="line"><span class="keyword">using </span><a class="code hl_typedef" href="group__xtd__core.html#ga05ac25649af478143826babb1a9fae7c">parameterized_thread_start</a> = <a class="code hl_typedef" href="group__xtd__core.html#ga53c721aac682a7ccf19ee17d92280e31">action&lt;std::any&gt;</a></div>
+<div class="ttc" id="agroup__xtd__core_html_ga05ac25649af478143826babb1a9fae7c"><div class="ttname"><a href="group__xtd__core.html#ga05ac25649af478143826babb1a9fae7c">xtd::threading::parameterized_thread_start</a></div><div class="ttdeci">action&lt; std::any &gt; parameterized_thread_start</div><div class="ttdoc">Represents the method that executes on a xtd::threading::thread.</div><div class="ttdef"><b>Definition</b> parameterized_thread_start.h:24</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ga53c721aac682a7ccf19ee17d92280e31"><div class="ttname"><a href="group__xtd__core.html#ga53c721aac682a7ccf19ee17d92280e31">xtd::action</a></div><div class="ttdeci">delegate&lt; void(arguments_t...)&gt; action</div><div class="ttdoc">Represents a xtd::delegate that has variable parameters and does not return a value.</div><div class="ttdef"><b>Definition</b> action.h:19</div></div>
+</div><!-- fragment --> </td></tr>
   </table>
   </dd>
 </dl>
@@ -6809,7 +6815,9 @@ template&lt;typename type_t &gt; </div>
 <p><code>#include &lt;<a class="el" href="thread__start_8h.html">xtd.core/include/xtd/threading/thread_start.h</a>&gt;</code></p>
 
 <p>Represents the method that executes on a <a class="el" href="classxtd_1_1threading_1_1thread.html" title="Creates and controls a thread, sets its priority, and gets its status.">xtd::threading::thread</a>. </p>
-<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/threading/thread_start&gt;</span> </div>
+<div class="fragment"><div class="line"><span class="keyword">using </span><a class="code hl_typedef" href="group__xtd__core.html#ga629e09da122fad73508fa0fb6286fd0a">thread_start</a> = <a class="code hl_typedef" href="group__xtd__core.html#ga53c721aac682a7ccf19ee17d92280e31">xtd::action&lt;&gt;</a></div>
+<div class="ttc" id="agroup__xtd__core_html_ga629e09da122fad73508fa0fb6286fd0a"><div class="ttname"><a href="group__xtd__core.html#ga629e09da122fad73508fa0fb6286fd0a">xtd::threading::thread_start</a></div><div class="ttdeci">action&lt;&gt; thread_start</div><div class="ttdoc">Represents the method that executes on a xtd::threading::thread.</div><div class="ttdef"><b>Definition</b> thread_start.h:22</div></div>
+</div><!-- fragment --> <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/threading/thread_start&gt;</span> </div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1threading.html" title="The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....">xtd::threading</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core </dd></dl>
@@ -6831,7 +6839,9 @@ template&lt;typename type_t &gt; </div>
 <p><code>#include &lt;<a class="el" href="timer__callback_8h.html">xtd.core/include/xtd/threading/timer_callback.h</a>&gt;</code></p>
 
 <p>Represents the method that handles calls from a <a class="el" href="classxtd_1_1threading_1_1timer.html" title="Provides a mechanism for executing a method on a thread pool thread at specified intervals....">xtd::threading::timer</a>. </p>
-<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/threading/timer_callback&gt;</span> </div>
+<div class="fragment"><div class="line"><span class="keyword">using </span><a class="code hl_typedef" href="group__xtd__core.html#ga9c5796114b4b8c6296894196f9898bc9">timer_callback</a> = <a class="code hl_typedef" href="group__xtd__core.html#ga53c721aac682a7ccf19ee17d92280e31">xtd::action&lt;std::any&gt;</a></div>
+<div class="ttc" id="agroup__xtd__core_html_ga9c5796114b4b8c6296894196f9898bc9"><div class="ttname"><a href="group__xtd__core.html#ga9c5796114b4b8c6296894196f9898bc9">xtd::threading::timer_callback</a></div><div class="ttdeci">action&lt; std::any &gt; timer_callback</div><div class="ttdoc">Represents the method that handles calls from a xtd::threading::timer.</div><div class="ttdef"><b>Definition</b> timer_callback.h:26</div></div>
+</div><!-- fragment --> <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/threading/timer_callback&gt;</span> </div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1threading.html" title="The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....">xtd::threading</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
@@ -6861,7 +6871,9 @@ template&lt;typename type_t &gt; </div>
 <p><code>#include &lt;<a class="el" href="wait__callback_8h.html">xtd.core/include/xtd/threading/wait_callback.h</a>&gt;</code></p>
 
 <p>Represents a callback method to be executed by a thread pool thread. </p>
-<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/threading/wait_callback&gt;</span> </div>
+<div class="fragment"><div class="line"><span class="keyword">using </span><a class="code hl_typedef" href="group__xtd__core.html#ga21b580a3c06173e69cd3a9bb4e247bc2">wait_callback</a> = <a class="code hl_typedef" href="group__xtd__core.html#ga53c721aac682a7ccf19ee17d92280e31">xtd::action&lt;std::any&gt;</a></div>
+<div class="ttc" id="agroup__xtd__core_html_ga21b580a3c06173e69cd3a9bb4e247bc2"><div class="ttname"><a href="group__xtd__core.html#ga21b580a3c06173e69cd3a9bb4e247bc2">xtd::threading::wait_callback</a></div><div class="ttdeci">action&lt; std::any &gt; wait_callback</div><div class="ttdoc">Represents a callback method to be executed by a thread pool thread.</div><div class="ttdef"><b>Definition</b> wait_callback.h:28</div></div>
+</div><!-- fragment --> <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/threading/wait_callback&gt;</span> </div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1threading.html" title="The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....">xtd::threading</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
@@ -6896,7 +6908,9 @@ For examples that use the <a class="el" href="group__xtd__core.html#ga21b580a3c0
 <p><code>#include &lt;<a class="el" href="wait__or__timer__callback_8h.html">xtd.core/include/xtd/threading/wait_or_timer_callback.h</a>&gt;</code></p>
 
 <p>Represents a method to be called when a <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> is signaled or times out. </p>
-<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/threading/wait_or_timer_callback&gt;</span> </div>
+<div class="fragment"><div class="line"><span class="keyword">using </span><a class="code hl_typedef" href="group__xtd__core.html#gadc74ba2f9d5f2eca2b70d17209852c2b">wait_or_timer_callback</a> = <a class="code hl_typedef" href="group__xtd__core.html#ga53c721aac682a7ccf19ee17d92280e31">xtd::action&lt;std::any, bool&gt;</a></div>
+<div class="ttc" id="agroup__xtd__core_html_gadc74ba2f9d5f2eca2b70d17209852c2b"><div class="ttname"><a href="group__xtd__core.html#gadc74ba2f9d5f2eca2b70d17209852c2b">xtd::threading::wait_or_timer_callback</a></div><div class="ttdeci">action&lt; std::any, bool &gt; wait_or_timer_callback</div><div class="ttdoc">Represents a method to be called when a xtd::threading::wait_handle is signaled or times out.</div><div class="ttdef"><b>Definition</b> wait_or_timer_callback.h:28</div></div>
+</div><!-- fragment --> <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/threading/wait_or_timer_callback&gt;</span> </div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1threading.html" title="The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....">xtd::threading</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
@@ -60017,7 +60031,7 @@ template&lt;typename ... args_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 11 2023 22:09:51 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Sep 12 2023 23:07:49 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

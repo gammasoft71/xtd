@@ -99,7 +99,10 @@ Inheritance diagram for xtd::threading::barrier:</div>
 </div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
 <div class="textblock"><p>Enables multiple tasks to cooperatively work on an algorithm in parallel through multiple phases. </p>
-<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/threading/barrier&gt;</span> </div>
+<div class="fragment"><div class="line"><span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1threading_1_1barrier.html">barrier</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">xtd::object</a></div>
+<div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.h:32</div></div>
+<div class="ttc" id="aclassxtd_1_1threading_1_1barrier_html"><div class="ttname"><a href="classxtd_1_1threading_1_1barrier.html">xtd::threading::barrier</a></div><div class="ttdoc">Enables multiple tasks to cooperatively work on an algorithm in parallel through multiple phases.</div><div class="ttdef"><b>Definition</b> barrier.h:29</div></div>
+</div><!-- fragment --> <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/threading/barrier&gt;</span> </div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1threading.html" title="The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....">xtd::threading</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
@@ -172,8 +175,7 @@ Inheritance diagram for xtd::threading::barrier:</div>
 <div class="line"><span class="comment">// Post-Phase action: count=16, phase=3</span></div>
 <div class="ttc" id="aclassxtd_1_1system__exception_html"><div class="ttname"><a href="classxtd_1_1system__exception.html">xtd::system_exception</a></div><div class="ttdoc">Defines the base class for predefined exceptions in the xtd namespace.</div><div class="ttdef"><b>Definition</b> system_exception.h:24</div></div>
 <div class="ttc" id="aclassxtd_1_1system__exception_html_a052e0b18f39fb7bd976bf3bc6d06e324"><div class="ttname"><a href="classxtd_1_1system__exception.html#a052e0b18f39fb7bd976bf3bc6d06e324">xtd::system_exception::message</a></div><div class="ttdeci">virtual const xtd::ustring &amp; message() const noexcept</div><div class="ttdoc">Gets message associate to the exception.</div></div>
-<div class="ttc" id="aclassxtd_1_1threading_1_1barrier__post__phase__exception_html"><div class="ttname"><a href="classxtd_1_1threading_1_1barrier__post__phase__exception.html">xtd::threading::barrier_post_phase_exception</a></div><div class="ttdoc">The exception that is thrown when a Thread is in an invalid ThreadState for the method call.</div><div class="ttdef"><b>Definition</b> barrier_post_phase_exception.h:22</div></div>
-<div class="ttc" id="aclassxtd_1_1threading_1_1barrier_html"><div class="ttname"><a href="classxtd_1_1threading_1_1barrier.html">xtd::threading::barrier</a></div><div class="ttdoc">Enables multiple tasks to cooperatively work on an algorithm in parallel through multiple phases.</div><div class="ttdef"><b>Definition</b> barrier.h:26</div></div>
+<div class="ttc" id="aclassxtd_1_1threading_1_1barrier__post__phase__exception_html"><div class="ttname"><a href="classxtd_1_1threading_1_1barrier__post__phase__exception.html">xtd::threading::barrier_post_phase_exception</a></div><div class="ttdoc">The exception that is thrown when a Thread is in an invalid ThreadState for the method call.</div><div class="ttdef"><b>Definition</b> barrier_post_phase_exception.h:25</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1barrier_html_a094feff1de30316394d58a288605051e"><div class="ttname"><a href="classxtd_1_1threading_1_1barrier.html#a094feff1de30316394d58a288605051e">xtd::threading::barrier::remove_participant</a></div><div class="ttdeci">int32 remove_participant()</div><div class="ttdoc">Notifies the Barrier that there will be one less participant.</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1barrier_html_a55da0235555a64ed97098c21fa5bf07e"><div class="ttname"><a href="classxtd_1_1threading_1_1barrier.html#a55da0235555a64ed97098c21fa5bf07e">xtd::threading::barrier::add_participants</a></div><div class="ttdeci">int32 add_participants(int32 participant_count)</div><div class="ttdoc">Notifies the xtd::threading::barrier that there will be additional participants.</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1barrier_html_ac7f0e50e3286f72551811ec0ad4918d3"><div class="ttname"><a href="classxtd_1_1threading_1_1barrier.html#ac7f0e50e3286f72551811ec0ad4918d3">xtd::threading::barrier::close</a></div><div class="ttdeci">void close()</div><div class="ttdoc">Close the current instance of the xtd::threading::barrier class.</div></div>
@@ -834,7 +836,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 11 2023 22:09:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Sep 12 2023 23:07:54 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
