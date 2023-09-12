@@ -130,6 +130,22 @@ namespace xtd {
       /// @cond
       template <typename callback_t>
       timer(callback_t callback) : timer(timer_callback {callback}) {}
+      template <typename callback_t>
+      timer(callback_t callback, int32 due_time, int32 period) : timer(timer_callback {callback}, due_time, period) {}
+      template <typename callback_t>
+      timer(callback_t callback, int64 due_time, int64 period) : timer(timer_callback {callback}, due_time, period) {}
+      template <typename callback_t>
+      timer(callback_t callback, const time_span& due_time, const time_span& period) : timer(timer_callback {callback}, due_time, period) {}
+      template <typename callback_t>
+      timer(callback_t callback, uint32 due_time, uint32 period) : timer(timer_callback {callback}, due_time, period) {}
+      template <typename callback_t>
+      timer(callback_t callback, std::any state, int32 due_time, int32 period) : timer(timer_callback {callback}, due_time, period) {}
+      template <typename callback_t>
+      timer(callback_t callback, std::any state, int64 due_time, int64 period) : timer(timer_callback {callback}, due_time, period) {}
+      template <typename callback_t>
+      timer(callback_t callback, std::any state, const time_span& due_time, const time_span& period) : timer(timer_callback {callback}, due_time, period) {}
+      template <typename callback_t>
+      timer(callback_t callback, std::any state, uint32 due_time, uint32 period) : timer(timer_callback {callback}, due_time, period) {}
       timer();
       timer(const timer& timer);
       timer& operator=(const timer& timer);
