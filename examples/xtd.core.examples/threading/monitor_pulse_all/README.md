@@ -1,10 +1,10 @@
-# monitor
+# monitor_pulse_all
 
-Shows how to use [xtd::threading::monitor](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1monitor.html) class.
+Shows how to use [xtd::threading::monitor::pulse_all](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1monitor.html#a362df17ae1c2d6e99ae2d272805c2dcb) method.
 
 ## Sources
 
-[src/monitor_lock.cpp](src/monitor_lock.cpp)
+[src/monitor_pulse_all.cpp](src/monitor_pulse_all.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -19,30 +19,8 @@ xtdc run
 # Output
 
 ```
-Starting synchronized resource access on thread #6
-Stopping synchronized resource access on thread #6
-Starting synchronized resource access on thread #9
-Stopping synchronized resource access on thread #9
-Starting synchronized resource access on thread #2
-Stopping synchronized resource access on thread #2
-Starting synchronized resource access on thread #3
-Stopping synchronized resource access on thread #3
-Starting synchronized resource access on thread #8
-Stopping synchronized resource access on thread #8
-	
-All synchronized operations have completed.
-
-Starting unsynchronized resource access on Thread #9
-Starting unsynchronized resource access on Thread #2
-Starting unsynchronized resource access on Thread #11
-Starting unsynchronized resource access on Thread #6
-Starting unsynchronized resource access on Thread #4
-Stopping unsynchronized resource access on thread #9
-Stopping unsynchronized resource access on thread #11
-Stopping unsynchronized resource access on thread #6
-Stopping unsynchronized resource access on thread #2
-Stopping unsynchronized resource access on thread #4
-	
-All unsynchronized thread operations have completed.
-
+    Thread 2 wait...
+    Thread 3 wait...
+    Thread 3 ...continue.
+    Thread 2 ...continue.
 ```
