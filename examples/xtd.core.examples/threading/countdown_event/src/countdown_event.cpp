@@ -12,13 +12,13 @@ namespace monitor_lock_example {
     static void main() {
       auto threads = std::vector<thread> {};
       auto countdown_event = threading::countdown_event {5};
-      auto thread_rpoc = [&] {
+      auto thread_proc = [&] {
         console::write_line("Thread {} signals countdown_event", thread::current_thread().managed_thread_id());
         countdown_event.signal();
       };
       
       for (auto i = 0; i < 5; ++i)
-        threads.push_back(thread::start_new(thread_rpoc));
+        threads.push_back(thread::start_new(thread_proc));
       
       countdown_event.wait();
       console::write_line("All threads have signaled countdown_event");
