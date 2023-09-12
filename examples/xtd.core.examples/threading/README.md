@@ -1,4 +1,4 @@
-# xtd.core Threading examples
+# Threading examples
 
 [This folder](.) contains network examples used by [Reference Guide](https://gammasoft71.github.io/xtd/reference_guides/latest/) and more.
 
