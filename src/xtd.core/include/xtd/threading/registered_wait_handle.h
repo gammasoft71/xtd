@@ -14,6 +14,9 @@ namespace xtd {
     /// @endcond
     
     /// @brief A synchronization primitive that can also be used for interprocess synchronization.
+    /// @code
+    /// class core_export_ registered_wait_handle final : public xtd::object
+    /// @endcode
     /// @par Header
     /// @code #include <xtd/threading/registered_wait_handle> @endcode
     /// @par Namespace
