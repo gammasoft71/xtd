@@ -12,6 +12,9 @@
 * [manual_reset_event](manual_reset_event/README.md) shows how to use [xtd::threading:manual_reset_event](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1manual_reset_event.html) class.
 * [mixing_std_and_xtd_threads](mixing_std_and_xtd_threads/README.md) shows how to use and mixing [xtd::threading::thread](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1thread.html) and [std::thread](https://en.cppreference.com/w/cpp/thread/thread) classes.
 * [monitor](monitor/README.md) shows how to use [xtd::threading:monitor](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1monitor.html) class.
+* [monitor_lock](monitor_lock/README.md) shows how to use [xtd::threading:monitor](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1monitor.html) class.
+* [monitor_pulse](monitor_pulse/README.md) shows how to use [xtd::threading:monitor::pulse](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1monitor.html#a02075512c6dc3fb73840910466cca815) method.
+* [monitor_pulse_all](monitor_pulse_all/README.md) shows how to use [xtd::threading:monitor::pulse_all](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1monitor.html#a362df17ae1c2d6e99ae2d272805c2dcb) method.
 * [mutex](mutex/README.md) shows how to use [xtd::threading:mutex](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1mutex.html) class.
 * [semaphore](semaphore/README.md) shows how to use [xtd::threading:semaphore](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1semaphore.html) class.
 * [thread](thread/README.md) shows hows how to use [xtd::threading::thread](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1thread.html) class.
