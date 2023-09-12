@@ -92,11 +92,29 @@ namespace xtd {
       /// @brief Close the current instance of the xtd::threading::countdown_event  class.
       void close();
 
+      /// @brief Resets the xtd::threading::countdown_event to the value of xtd::threading::countdown_event::initial_count.
+      /// @exception xtd::object_closed_exception The current instance has already been closed.
+      /// @remarks This method resets xtd::threading::countdown_event::initial_count for all subsequent accesses of the property on the current instance.
       void reset();
+      /// @brief Resets the xtd::threading::countdown_event::initial_count property to a specified value.
+      /// @param count he number of signals required to set the xtd::threading::countdown_event.
+      /// @exception xtd::object_closed_exception The current instance has already been closed.
+      /// @exception xtd::argument_out_of_range_exception count is less than 0.
+      /// @remarks This method resets xtd::threading::countdown_event::initial_count for all subsequent accesses of the property on the current instance.
       void reset(int32 count);
       
-      void signal();
-      void signal(int32 signal_count);
+      /// @brief Registers a signal with the xtd::threading::countdown_event, decrementing the value of xtd::threading::countdown_event::current_count.
+      /// @return true if the signal caused the count to reach zero and the event was set; otherwise, false.
+      /// @exception xtd::object_closed_exception The current instance has already been closed.
+      /// @exception xtd::nvalid_operation_exception The current instance is already set.
+      bool signal();
+      /// @brief Registers multiple signals with the CountdownEvent, decrementing the value of CurrentCount by the specified amount.
+      /// @param signal_count The number of signals to register.
+      /// @return true if the signal caused the count to reach zero and the event was set; otherwise, false.
+      /// @exception xtd::object_closed_exception The current instance has already been closed.
+      /// @exception xtd::argument_out_of_range_exception signal_count is less than 0.
+      /// @exception xtd::nvalid_operation_exception The current instance is already set.
+      bool signal(int32 signal_count);
       
       bool try_add_count() noexcept;
       bool try_add_count(int32 count) noexcept;
