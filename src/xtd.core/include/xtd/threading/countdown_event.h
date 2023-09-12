@@ -2,6 +2,7 @@
 /// @brief Contains xtd::threading::countdown_event exception.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "cancellation_token.h"
 #include "wait_handle.h"
 #include "../object.h"
 #include "../time_span.h"
@@ -67,6 +68,13 @@ namespace xtd {
       
       bool try_add_count() noexcept;
       bool try_add_count(int32 count) noexcept;
+
+      void wait();
+      bool wait(int32 milliseconds_timeout);
+      bool wait(const cancellation_token& cancellation_token);
+      bool wait(const time_span& timeout);
+      bool wait(int32 milliseconds_timeout, const cancellation_token& cancellation_token);
+      bool wait(const time_span& timeout, const cancellation_token& cancellation_token);
 /// @}
 
     private:
