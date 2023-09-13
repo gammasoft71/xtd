@@ -12,6 +12,7 @@
 #include "../../../include/xtd/threading/thread_pool.h"
 #include "../../../include/xtd/threading/timeout.h"
 #include "../../../include/xtd/io/io_exception.h"
+#include "../../../include/xtd/diagnostics/stopwatch.h"
 #include "../../../include/xtd/argument_exception.h"
 #include "../../../include/xtd/environment.h"
 #include "../../../include/xtd/int32_object.h"
@@ -23,6 +24,7 @@
 #include <thread>
 
 using namespace xtd;
+using namespace xtd::diagnostics;
 using namespace xtd::threading;
 
 namespace {
@@ -251,18 +253,14 @@ void thread::join_all() {
 }
 
 bool thread::join_all(int32 milliseconds_timeout) {
-  int32 timeout = milliseconds_timeout;
-  int64 start = std::chrono::nanoseconds(std::chrono::high_resolution_clock::now().time_since_epoch()).count() / 1000000;
+  auto sw = stopwatch::start_new();
   if (!thread_pool::join_all(milliseconds_timeout)) return false;
 
   std::vector<thread*> thread_pointers;
   for (auto& thread : get_static_data().threads)
     thread_pointers.push_back(thread.get());
 
-  if (milliseconds_timeout != timeout::infinite) timeout = milliseconds_timeout - as<int32>(std::chrono::nanoseconds(std::chrono::high_resolution_clock::now().time_since_epoch()).count() / 1000000 - start);
-  if (timeout < 0) return false;
-
-  if (join_all_ptr(thread_pointers, timeout) == false) return false;
+  if (sw.elapsed_milliseconds() > milliseconds_timeout || join_all_ptr(thread_pointers, milliseconds_timeout - as<int32>(sw.elapsed_milliseconds())) == false) return false;
   get_static_data().threads.clear();
   return true;
 }
@@ -514,12 +512,9 @@ bool thread::join_all_ptr(const std::vector<thread*>& threads, int32 millisecond
     return true;
   }
   
-  int32 timeout = milliseconds_timeout;
-  int64 start = std::chrono::nanoseconds(std::chrono::high_resolution_clock::now().time_since_epoch()).count() / 1000000;
+  auto sw = stopwatch::start_new();
   for (auto thread : threads) {
-    if (thread->joinable() && thread->join(timeout) == false) return false;
-    timeout = milliseconds_timeout - as<int32>(std::chrono::nanoseconds(std::chrono::high_resolution_clock::now().time_since_epoch()).count() / 1000000 - start);
-    if (timeout < 0) return false;
+    if (sw.elapsed_milliseconds() > milliseconds_timeout || (thread->joinable() && thread->join(milliseconds_timeout - as<int32>(sw.elapsed_milliseconds())) == false)) return false;
   }
   return true;
 }
