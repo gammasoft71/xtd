@@ -1,11 +1,14 @@
 #include "../../../include/xtd/threading/countdown_event.h"
 #include "../../../include/xtd/threading/manual_reset_event.h"
+#include "../../../include/xtd/diagnostics/stopwatch.h"
+#include "../../../include/xtd/operation_canceled_exception.h"
 #include "../../../include/xtd/argument_out_of_range_exception.h"
 #include "../../../include/xtd/invalid_operation_exception.h"
 #include "../../../include/xtd/object_closed_exception.h"
 #include "../../../include/xtd/lock.h"
 
 using namespace xtd;
+using namespace xtd::diagnostics;
 using namespace xtd::threading;
 
 struct countdown_event::data : object {
@@ -124,11 +127,13 @@ void countdown_event::wait() {
 bool countdown_event::wait(int32 milliseconds_timeout) {
   if (!data_) throw object_closed_exception {csf_};
   if (milliseconds_timeout < timeout::infinite) throw argument_out_of_range_exception {csf_};
-  return data_->event.wait_one(milliseconds_timeout);
+  if (!data_->cancellation_token) return data_->event.wait_one(milliseconds_timeout);
+  if (milliseconds_timeout == timeout::infinite) return wait_wtih_cancellation_token();
+  return wait_wtih_cancellation_token(milliseconds_timeout);
 }
 
-bool countdown_event::wait(const cancellation_token& cancellation_token) {
-  return wait(timeout::infinite, cancellation_token);
+void countdown_event::wait(const cancellation_token& cancellation_token) {
+  wait(timeout::infinite, cancellation_token);
 }
 
 bool countdown_event::wait(const time_span& timeout) {
@@ -142,4 +147,23 @@ bool countdown_event::wait(int32 milliseconds_timeout, const cancellation_token&
 
 bool countdown_event::wait(const time_span& timeout, const cancellation_token& cancellation_token) {
   return wait(as<int32>(timeout.total_milliseconds()), cancellation_token);
+}
+
+bool countdown_event::wait_wtih_cancellation_token() {
+  auto result = false;
+  while (!result) {
+    if (data_->cancellation_token->is_cancellation_requested()) throw operation_canceled_exception {csf_};
+    result = data_->event.wait_one(1);
+  }
+  return result;
+}
+
+bool countdown_event::wait_wtih_cancellation_token(int32 milliseconds_timeout) {
+  auto sw = stopwatch::start_new();
+  auto result = false;
+  while (!result && sw.elapsed_milliseconds() < milliseconds_timeout) {
+    if (data_->cancellation_token->is_cancellation_requested()) throw operation_canceled_exception {csf_};
+    result = data_->event.wait_one(1);
+  }
+  return result;
 }
