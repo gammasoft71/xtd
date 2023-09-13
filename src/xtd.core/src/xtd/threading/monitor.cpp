@@ -4,15 +4,16 @@
 #include "../../../include/xtd/threading/mutex.h"
 #include "../../../include/xtd/threading/synchronization_lock_exception.h"
 #include "../../../include/xtd/threading/thread.h"
+#include "../../../include/xtd/diagnostics/stopwatch.h"
 #include "../../../include/xtd/not_implemented_exception.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/critical_section.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
-#include <chrono>
 #include <mutex>
 #include <optional>
 
 using namespace xtd;
+using namespace xtd::diagnostics;
 using namespace xtd::threading;
 
 class monitor::critical_section {
@@ -33,15 +34,13 @@ public:
       native::critical_section::enter(*handle_);
       return true;
     }
-    int32 timeout = milliseconds_timeout;
-    int64 start = std::chrono::nanoseconds(std::chrono::high_resolution_clock::now().time_since_epoch()).count() / 1000000;
-    do {
-      if (native::critical_section::try_enter(*handle_)) return true;
-      timeout = milliseconds_timeout - as<int32>(std::chrono::nanoseconds(std::chrono::high_resolution_clock::now().time_since_epoch()).count() / 1000000 - start);
-      thread::yield();
-      thread::sleep(1);
-    } while (timeout >= 0);
-    return false;
+    auto sw = stopwatch::start_new();
+    auto result = false;
+    while (!result && sw.elapsed_milliseconds() <= milliseconds_timeout) {
+      result = native::critical_section::try_enter(*handle_);
+      if (!result) thread::sleep(1);
+    }
+    return result;
   }
 
 private:

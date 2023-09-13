@@ -161,7 +161,7 @@ bool countdown_event::wait_wtih_cancellation_token() {
 bool countdown_event::wait_wtih_cancellation_token(int32 milliseconds_timeout) {
   auto sw = stopwatch::start_new();
   auto result = false;
-  while (!result && sw.elapsed_milliseconds() < milliseconds_timeout) {
+  while (!result && sw.elapsed_milliseconds() <= milliseconds_timeout) {
     if (data_->cancellation_token->is_cancellation_requested()) throw operation_canceled_exception {csf_};
     result = data_->event.wait_one(1);
   }
