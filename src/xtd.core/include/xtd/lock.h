@@ -65,4 +65,4 @@
 /// @include lock.cpp
 /// @ingroup Keywords
 #define lock_(object)\
-  using_ (xtd::threading::lock_guard __xtd_lock_guard__(object))
+  lock_guard_(object)
