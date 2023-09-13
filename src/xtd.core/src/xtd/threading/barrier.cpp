@@ -1,6 +1,7 @@
 #include "../../../include/xtd/threading/barrier.h"
 #include "../../../include/xtd/threading/interlocked.h"
 #include "../../../include/xtd/threading/semaphore.h"
+#include "../../../include/xtd/diagnostics/stopwatch.h"
 #include "../../../include/xtd/argument_out_of_range_exception.h"
 #include "../../../include/xtd/as.h"
 #include "../../../include/xtd/int16_object.h"
@@ -10,6 +11,7 @@
 #include "../../../include/xtd/lock.h"
 
 using namespace xtd;
+using namespace xtd::diagnostics;
 using namespace xtd::threading;
 
 struct barrier::data : object {
@@ -124,7 +126,12 @@ bool barrier::signal_and_wait(int32 milliseconds_timeout) {
         data_->phase_semaphore.release();
     }
   }
-  auto result = data_->phase_semaphore.wait_one(milliseconds_timeout);
+  
+  auto result = false;
+  
+  if (!data_->cancellation_token) result = data_->phase_semaphore.wait_one(milliseconds_timeout);
+  else if (milliseconds_timeout == timeout::infinite) result = wait_wtih_cancellation_token();
+  else result = wait_wtih_cancellation_token(milliseconds_timeout);
   if (data_->throw_barrier_post_phase_exception) throw barrier_post_phase_exception {csf_};
   return result;
 }
@@ -144,4 +151,23 @@ bool barrier::signal_and_wait(int32 milliseconds_timeout, const cancellation_tok
 
 bool barrier::signal_and_wait(const time_span& timeout, const cancellation_token& cancellation_token) {
   return signal_and_wait(as<int32>(timeout.total_milliseconds()), cancellation_token);
+}
+
+bool barrier::wait_wtih_cancellation_token() {
+  auto result = false;
+  while (!result) {
+    if (data_->cancellation_token->is_cancellation_requested()) throw operation_canceled_exception {csf_};
+    result = data_->phase_semaphore.wait_one(1);
+  }
+  return result;
+}
+
+bool barrier::wait_wtih_cancellation_token(int32 milliseconds_timeout) {
+  auto sw = stopwatch::start_new();
+  auto result = false;
+  while (!result && sw.elapsed_milliseconds() < milliseconds_timeout) {
+    if (data_->cancellation_token->is_cancellation_requested()) throw operation_canceled_exception {csf_};
+    result = data_->phase_semaphore.wait_one(1);
+  }
+  return result;
 }
