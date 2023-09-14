@@ -37,6 +37,5 @@ bool condition_variable::wait(intmax_t handle, intmax_t critical_section_handle,
   clock_gettime(CLOCK_REALTIME, &timeout);
   timeout.tv_sec += milliseconds_timeout / 1000;
   timeout.tv_nsec += (milliseconds_timeout % 1000) * 1000000;
-
   return pthread_cond_timedwait(reinterpret_cast<pthread_cond_t*>(handle), reinterpret_cast<pthread_mutex_t*>(critical_section_handle), &timeout) == 0;
 }
