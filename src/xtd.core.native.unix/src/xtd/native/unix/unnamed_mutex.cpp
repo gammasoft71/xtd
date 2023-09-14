@@ -6,12 +6,15 @@
 using namespace xtd::native;
 
 intmax_t unnamed_mutex::create(bool initially_owned) {
-  auto mutex = new pthread_mutex_t {};
-  if (pthread_mutex_init(mutex, nullptr) != 0) {
-    delete mutex;
+  auto handle = new pthread_mutex_t;
+  pthread_mutexattr_t mutex_attribute;
+  if (pthread_mutexattr_init(&mutex_attribute) != 0 ||
+      pthread_mutexattr_settype(&mutex_attribute, PTHREAD_MUTEX_RECURSIVE) != 0 ||
+      pthread_mutex_init(handle, &mutex_attribute) != 0) {
+    delete handle;
     return reinterpret_cast<intmax_t>(MUTEX_FAILED);
   }
-  return reinterpret_cast<intmax_t>(mutex);
+  return reinterpret_cast<intmax_t>(handle);
 }
 
 void unnamed_mutex::destroy(intmax_t handle) {
