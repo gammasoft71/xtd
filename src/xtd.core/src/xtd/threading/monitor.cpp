@@ -1,4 +1,3 @@
-#include "../../../include/xtd/threading/auto_reset_event.h"
 #include "../../../include/xtd/threading/interlocked.h"
 #include "../../../include/xtd/threading/monitor.h"
 #include "../../../include/xtd/threading/mutex.h"
@@ -17,26 +16,6 @@ using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::threading;
 
-class monitor::condition_variable {
-public:
-  condition_variable() : handle_(std::make_shared<intptr>(native::condition_variable::create())) {}
-  condition_variable(const condition_variable&) = default;
-  condition_variable& operator =(const condition_variable&) = default;
-  condition_variable(condition_variable&&) = default;
-  ~condition_variable() {if (handle_.use_count() == 1) native::condition_variable::destroy(*handle_);}
-  
-  intptr handle() const noexcept {return *handle_;}
-  
-  void pulse() {native::condition_variable::pulse(*handle_);}
-
-  void pulse_all() {native::condition_variable::pulse(*handle_);}
-  
-  bool wait(intptr critical_section_handle, int32 milliseconds_timeout) {return native::condition_variable::wait(*handle_, critical_section_handle, milliseconds_timeout);}
-  
-private:
-  std::shared_ptr<intptr> handle_;
-};
-
 class monitor::critical_section {
 public:
   critical_section() : handle_(std::make_shared<intptr>(native::critical_section::create())) {}
@@ -44,7 +23,7 @@ public:
   critical_section& operator =(const critical_section&) = default;
   critical_section(critical_section&&) = default;
   ~critical_section() {if (handle_.use_count() == 1) native::critical_section::destroy(*handle_);}
-
+  
   intptr handle() const noexcept {return *handle_;}
   
   void enter() const noexcept {native::critical_section::enter(*handle_);}
@@ -64,22 +43,42 @@ public:
     }
     return result;
   }
+  
+private:
+  std::shared_ptr<intptr> handle_;
+};
 
+class monitor::condition_variable {
+public:
+  condition_variable() : handle_(std::make_shared<intptr>(native::condition_variable::create())) {}
+  condition_variable(const condition_variable&) = default;
+  condition_variable& operator =(const condition_variable&) = default;
+  condition_variable(condition_variable&&) = default;
+  ~condition_variable() {if (handle_.use_count() == 1) native::condition_variable::destroy(*handle_);}
+  
+  intptr handle() const noexcept {return *handle_;}
+  
+  void pulse() {native::condition_variable::pulse(*handle_);}
+
+  void pulse_all() {native::condition_variable::pulse(*handle_);}
+  
+  bool wait(const critical_section& critical_section, int32 milliseconds_timeout) {return native::condition_variable::wait(*handle_, critical_section.handle(), milliseconds_timeout);}
+  
 private:
   std::shared_ptr<intptr> handle_;
 };
 
 struct monitor::item {
-  critical_section event;
+  monitor::critical_section critical_section;
   int32 used_counter {0};
   std::optional<ustring> name;
   intptr thread_id {thread::invalid_thread_id};
   int32 wait_threads {0};
-  auto_reset_event wait_event {false};
+  monitor::condition_variable condition_variable;
 };
 
 struct monitor::static_data {
-  critical_section monitor_items_sync;
+  critical_section monitor_items_critical_section;
   monitor::item_collection monitor_items;
 };
 
@@ -94,9 +93,9 @@ void monitor::enter_ptr(object_ptr obj, bool& lock_taken) {
 }
 
 void monitor::exit_ptr(object_ptr obj) {
-  get_static_data().monitor_items_sync.enter();
+  get_static_data().monitor_items_critical_section.enter();
   if (!is_entered_ptr(obj)) {
-    get_static_data().monitor_items_sync.leave();
+    get_static_data().monitor_items_critical_section.leave();
     throw synchronization_lock_exception {csf_};
   }
   
@@ -109,13 +108,13 @@ void monitor::exit_ptr(object_ptr obj) {
     monitor_data = &saved;
   }
   monitor_data->thread_id = thread::invalid_thread_id;
-  monitor_data->event.leave();
-  get_static_data().monitor_items_sync.leave();
+  monitor_data->critical_section.leave();
+  get_static_data().monitor_items_critical_section.leave();
 }
 
 intptr monitor::get_ustring_ptr(const ustring& str) {
   if (str.empty()) throw argument_exception {csf_};
-  get_static_data().monitor_items_sync.enter();
+  get_static_data().monitor_items_critical_section.enter();
   intptr ptr = reinterpret_cast<intptr>(&str);
   for (const auto& item : get_static_data().monitor_items)
     if (item.second.name.has_value() && item.second.name.value() == str) {
@@ -123,7 +122,7 @@ intptr monitor::get_ustring_ptr(const ustring& str) {
       delete &str;
       break;
     }
-  get_static_data().monitor_items_sync.leave();
+  get_static_data().monitor_items_critical_section.leave();
   return ptr;
 }
 
@@ -134,34 +133,33 @@ bool monitor::is_entered_ptr(object_ptr obj) noexcept {
 
 void monitor::pulse_ptr(object_ptr obj) {
   item* monitor_item = nullptr;
-  get_static_data().monitor_items_sync.enter();
+  get_static_data().monitor_items_critical_section.enter();
   if (is_entered_ptr(obj)) monitor_item = &get_static_data().monitor_items[obj.first];
-  get_static_data().monitor_items_sync.leave();
+  get_static_data().monitor_items_critical_section.leave();
   
   if (monitor_item == nullptr) throw invalid_operation_exception {csf_};
   if (monitor_item->thread_id != thread::current_thread().thread_id()) throw synchronization_lock_exception {csf_};
 
-  if (monitor_item->wait_threads) monitor_item->wait_event.set();
+  if (monitor_item->wait_threads) monitor_item->condition_variable.pulse();
 }
 
 void monitor::pulse_all_ptr(object_ptr obj) {
   item* monitor_item = nullptr;
-  get_static_data().monitor_items_sync.enter();
+  get_static_data().monitor_items_critical_section.enter();
   if (is_entered_ptr(obj)) monitor_item = &get_static_data().monitor_items[obj.first];
-  get_static_data().monitor_items_sync.leave();
+  get_static_data().monitor_items_critical_section.leave();
   
   if (monitor_item == nullptr) throw invalid_operation_exception {csf_};
   if (monitor_item->thread_id != thread::current_thread().thread_id()) throw synchronization_lock_exception {csf_};
 
   while (monitor_item->wait_threads) {
-    monitor_item->wait_event.set();
-    thread::spin_wait(10);
+    monitor_item->condition_variable.pulse_all();
   }
 }
 
 bool monitor::try_enter_ptr(object_ptr obj, int32 milliseconds_timeout, bool& lock_taken) noexcept {
   if (milliseconds_timeout < timeout::infinite) return false;
-  get_static_data().monitor_items_sync.enter();
+  get_static_data().monitor_items_critical_section.enter();
   if (!is_entered_ptr(obj)) {
     auto i = item {};
     if (obj.second) {
@@ -172,26 +170,26 @@ bool monitor::try_enter_ptr(object_ptr obj, int32 milliseconds_timeout, bool& lo
   }
   item* monitor_data = &get_static_data().monitor_items[obj.first];
   interlocked::increment(monitor_data->used_counter);
-  get_static_data().monitor_items_sync.leave();
-  lock_taken = monitor_data->event.try_enter(milliseconds_timeout);
+  get_static_data().monitor_items_critical_section.leave();
+  lock_taken = monitor_data->critical_section.try_enter(milliseconds_timeout);
   if (lock_taken) monitor_data->thread_id = thread::current_thread().thread_id();
   return lock_taken;
 }
 
 bool monitor::wait_ptr(object_ptr obj, int32 milliseconds_timeout) {
   item* monitor_item = nullptr;
-  get_static_data().monitor_items_sync.enter();
+  get_static_data().monitor_items_critical_section.enter();
   if (is_entered_ptr(obj)) monitor_item = &get_static_data().monitor_items[obj.first];
-  get_static_data().monitor_items_sync.leave();
+  get_static_data().monitor_items_critical_section.leave();
   
   if (monitor_item == nullptr) throw invalid_operation_exception {csf_};
   if (monitor_item->thread_id != thread::current_thread().thread_id()) throw synchronization_lock_exception {csf_};
 
-  monitor_item->event.leave();
+  monitor_item->critical_section.leave();
   interlocked::increment(monitor_item->wait_threads);
-  auto result = monitor_item->wait_event.wait_one(milliseconds_timeout);
+  auto result = monitor_item->condition_variable.wait(monitor_item->critical_section, milliseconds_timeout);
   interlocked::decrement(monitor_item->wait_threads);
-  monitor_item->event.enter();
+  monitor_item->critical_section.enter();
   return result;
 }
 
