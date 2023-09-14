@@ -3,6 +3,7 @@
 #include "../../../include/xtd/threading/mutex.h"
 #include "../../../include/xtd/threading/synchronization_lock_exception.h"
 #include "../../../include/xtd/threading/thread.h"
+#include "../../../include/xtd/threading/thread_local_object.h"
 #include "../../../include/xtd/diagnostics/stopwatch.h"
 #include "../../../include/xtd/not_implemented_exception.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
@@ -80,9 +81,7 @@ struct monitor::item {
   monitor::critical_section critical_section;
   int32 used_count {0};
   std::optional<ustring> name;
-  /// @todo use xtd::threading::thread_local_object for thread_id...
-  /// thread_local_object<intptr> thread_id {thread::invalid_thread_id};
-  intptr thread_id {thread::invalid_thread_id};
+  thread_local_object<intptr> thread_id {[] {return thread::invalid_thread_id;}};
   monitor::condition_variable condition_variable;
 };
 
@@ -116,7 +115,7 @@ void monitor::exit_ptr(object_ptr obj) {
     get_static_data().monitor_items.erase(obj.first);
     monitor_data = &saved;
   }
-  monitor_data->thread_id = thread::invalid_thread_id;
+  monitor_data->thread_id.value(thread::invalid_thread_id);
   monitor_data->critical_section.leave();
   get_static_data().monitor_items_critical_section.leave();
 }
@@ -147,7 +146,7 @@ void monitor::pulse_ptr(object_ptr obj) {
   get_static_data().monitor_items_critical_section.leave();
   
   if (monitor_item == nullptr) throw invalid_operation_exception {csf_};
-  if (monitor_item->thread_id != thread::current_thread().thread_id()) throw synchronization_lock_exception {csf_};
+  if (monitor_item->thread_id.value() != thread::current_thread().thread_id()) throw synchronization_lock_exception {csf_};
 
   monitor_item->condition_variable.pulse();
 }
@@ -159,7 +158,7 @@ void monitor::pulse_all_ptr(object_ptr obj) {
   get_static_data().monitor_items_critical_section.leave();
   
   if (monitor_item == nullptr) throw invalid_operation_exception {csf_};
-  if (monitor_item->thread_id != thread::current_thread().thread_id()) throw synchronization_lock_exception {csf_};
+  if (monitor_item->thread_id.value() != thread::current_thread().thread_id()) throw synchronization_lock_exception {csf_};
 
   monitor_item->condition_variable.pulse_all();
 }
@@ -179,7 +178,7 @@ bool monitor::try_enter_ptr(object_ptr obj, int32 milliseconds_timeout, bool& lo
   interlocked::increment(monitor_data->used_count);
   get_static_data().monitor_items_critical_section.leave();
   lock_taken = monitor_data->critical_section.try_enter(milliseconds_timeout);
-  if (lock_taken) monitor_data->thread_id = thread::current_thread().thread_id();
+  if (lock_taken) monitor_data->thread_id.value(thread::current_thread().thread_id());
   return lock_taken;
 }
 
@@ -190,7 +189,7 @@ bool monitor::wait_ptr(object_ptr obj, int32 milliseconds_timeout) {
   get_static_data().monitor_items_critical_section.leave();
   
   if (monitor_item == nullptr) throw invalid_operation_exception {csf_};
-  if (monitor_item->thread_id != thread::current_thread().thread_id()) throw synchronization_lock_exception {csf_};
+  if (monitor_item->thread_id.value() != thread::current_thread().thread_id()) throw synchronization_lock_exception {csf_};
 
   return monitor_item->condition_variable.wait(monitor_item->critical_section, milliseconds_timeout);
 }
