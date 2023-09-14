@@ -62,7 +62,7 @@ public:
 
   void pulse_all() {native::condition_variable::pulse(*handle_);}
   
-  bool wait(const critical_section& critical_section, int32 milliseconds_timeout) {return native::condition_variable::wait(*handle_, critical_section.handle(), milliseconds_timeout);}
+  bool wait(const monitor::critical_section& critical_section, int32 milliseconds_timeout) {return native::condition_variable::wait(*handle_, critical_section.handle(), milliseconds_timeout);}
   
 private:
   std::shared_ptr<intptr> handle_;
