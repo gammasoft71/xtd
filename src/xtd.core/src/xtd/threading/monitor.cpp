@@ -60,7 +60,7 @@ public:
   
   void pulse() {native::condition_variable::pulse(*handle_);}
 
-  void pulse_all() {native::condition_variable::pulse(*handle_);}
+  void pulse_all() {native::condition_variable::pulse_all(*handle_);}
   
   bool wait(const monitor::critical_section& critical_section, int32 milliseconds_timeout) {return native::condition_variable::wait(*handle_, critical_section.handle(), milliseconds_timeout);}
   
@@ -73,7 +73,6 @@ struct monitor::item {
   int32 used_counter {0};
   std::optional<ustring> name;
   intptr thread_id {thread::invalid_thread_id};
-  int32 wait_threads {0};
   monitor::condition_variable condition_variable;
 };
 
@@ -140,7 +139,7 @@ void monitor::pulse_ptr(object_ptr obj) {
   if (monitor_item == nullptr) throw invalid_operation_exception {csf_};
   if (monitor_item->thread_id != thread::current_thread().thread_id()) throw synchronization_lock_exception {csf_};
 
-  if (monitor_item->wait_threads) monitor_item->condition_variable.pulse();
+  monitor_item->condition_variable.pulse();
 }
 
 void monitor::pulse_all_ptr(object_ptr obj) {
@@ -152,9 +151,7 @@ void monitor::pulse_all_ptr(object_ptr obj) {
   if (monitor_item == nullptr) throw invalid_operation_exception {csf_};
   if (monitor_item->thread_id != thread::current_thread().thread_id()) throw synchronization_lock_exception {csf_};
 
-  while (monitor_item->wait_threads) {
-    monitor_item->condition_variable.pulse_all();
-  }
+  monitor_item->condition_variable.pulse_all();
 }
 
 bool monitor::try_enter_ptr(object_ptr obj, int32 milliseconds_timeout, bool& lock_taken) noexcept {
@@ -185,12 +182,7 @@ bool monitor::wait_ptr(object_ptr obj, int32 milliseconds_timeout) {
   if (monitor_item == nullptr) throw invalid_operation_exception {csf_};
   if (monitor_item->thread_id != thread::current_thread().thread_id()) throw synchronization_lock_exception {csf_};
 
-  monitor_item->critical_section.leave();
-  interlocked::increment(monitor_item->wait_threads);
-  auto result = monitor_item->condition_variable.wait(monitor_item->critical_section, milliseconds_timeout);
-  interlocked::decrement(monitor_item->wait_threads);
-  monitor_item->critical_section.enter();
-  return result;
+  return monitor_item->condition_variable.wait(monitor_item->critical_section, milliseconds_timeout);
 }
 
 monitor::static_data& monitor::get_static_data() {
