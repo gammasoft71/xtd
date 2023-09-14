@@ -8,11 +8,13 @@ using namespace xtd::native;
 
 intmax_t critical_section::create() {
   auto handle = new pthread_mutex_t;
-  if (!handle) return reinterpret_cast<intmax_t>(MUTEX_FAILED);
   pthread_mutexattr_t mutex_attribute;
-  pthread_mutexattr_init(&mutex_attribute);
-  pthread_mutexattr_settype(&mutex_attribute, PTHREAD_MUTEX_RECURSIVE);
-  pthread_mutex_init(handle, &mutex_attribute);
+  if (pthread_mutexattr_init(&mutex_attribute) != 0 ||
+      pthread_mutexattr_settype(&mutex_attribute, PTHREAD_MUTEX_RECURSIVE) != 0 ||
+      pthread_mutex_init(handle, &mutex_attribute) != 0) {
+    delete handle;
+    return reinterpret_cast<intmax_t>(MUTEX_FAILED);
+  }
   return reinterpret_cast<intmax_t>(handle);
 }
 
