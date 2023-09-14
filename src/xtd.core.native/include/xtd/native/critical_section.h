@@ -40,13 +40,11 @@ namespace xtd {
       
       /// @{
       /// @brief Create critical section.
-      /// @param name The name, if the synchronization object is to be shared with other processes.
       /// @return The handle of the created critical section.
       /// @warning Internal use only
       static intmax_t create();
       
       /// @brief Destroy critical section with specified critical section handle.
-      /// @param name The name of the mutex.
       /// @param handle The critical section handle to destroy.
       /// @warning Internal use only
       static void destroy(intmax_t handle);
@@ -63,7 +61,6 @@ namespace xtd {
 
       /// @brief Release`critical section with specified critical section handle.
       /// @param handle The critical section handle to release.
-      /// @return true if succeed; otherwhise false.
       /// @warning Internal use only
       static void leave(intmax_t handle);
       /// @}
