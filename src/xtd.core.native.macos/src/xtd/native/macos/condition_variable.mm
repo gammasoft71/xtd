@@ -8,7 +8,10 @@ using namespace xtd::native;
 
 intmax_t condition_variable::create() {
   pthread_cond_t* handle = new pthread_cond_t;
-  if (handle == nullptr) return reinterpret_cast<intmax_t>(MUTEX_FAILED);
+  if (pthread_cond_init(handle, nullptr) != 0) {
+    delete handle;
+    return reinterpret_cast<intmax_t>(MUTEX_FAILED);
+  }
   return reinterpret_cast<intmax_t>(handle);
 }
 
