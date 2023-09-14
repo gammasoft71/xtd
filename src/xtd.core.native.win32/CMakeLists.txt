@@ -11,6 +11,7 @@ add_sources(
   include/xtd/xtd.core.native.win32
   include/xtd/native/win32/strings.h
   src/xtd/native/win32/console.cpp
+  src/xtd/native/win32/condition_variable.cpp
   src/xtd/native/win32/critical_section.cpp
   src/xtd/native/win32/cryptography.cpp
   src/xtd/native/win32/date_time.cpp

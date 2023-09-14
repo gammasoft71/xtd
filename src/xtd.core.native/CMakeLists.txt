@@ -14,6 +14,7 @@ add_sources(
   include/xtd/native/console_special_key.h
   include/xtd/native/console.h
   include/xtd/native/constant_special_item_id_list.h
+  include/xtd/native/condition_variable.h
   include/xtd/native/critical_section.h
   include/xtd/native/cryptography.h
   include/xtd/native/date_time.h
