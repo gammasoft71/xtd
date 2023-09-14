@@ -188,6 +188,9 @@ Macros</h2></td></tr>
 <tr class="memitem:gacd9906b29d877eb1eb0a8c7bc4ab774a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a">lock_</a>(object)</td></tr>
 <tr class="memdesc:gacd9906b29d877eb1eb0a8c7bc4ab774a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The lock_ keyword marks a statement block as a critical section by obtaining the mutual-exclusion lock for a given object, executing a statement, and then releasing the lock. The following example includes a lock statement.  <br /></td></tr>
 <tr class="separator:gacd9906b29d877eb1eb0a8c7bc4ab774a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafe36bf782d472e00dc82d91679d4a58b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__keywords.html#gafe36bf782d472e00dc82d91679d4a58b">lock_guard_</a>(object)</td></tr>
+<tr class="memdesc:gafe36bf782d472e00dc82d91679d4a58b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The lock_guard_ keyword marks a statement block as a critical section by obtaining the mutual-exclusion lock for a given object, executing a statement, and then releasing the lock. The following example includes a lock statement.  <br /></td></tr>
+<tr class="separator:gafe36bf782d472e00dc82d91679d4a58b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gabe3976c5f529fab9b255e38ced18b281"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__keywords.html#gabe3976c5f529fab9b255e38ced18b281">nameof_</a>(...)</td></tr>
 <tr class="memdesc:gabe3976c5f529fab9b255e38ced18b281"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to obtain the simple (unqualified) string name of a variable, type, or member.  <br /></td></tr>
 <tr class="separator:gabe3976c5f529fab9b255e38ced18b281"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -3135,6 +3138,211 @@ You can't use the await_ keyword in the body of a lock_ statement. </dd></dl>
 
 </div>
 </div>
+<a id="gafe36bf782d472e00dc82d91679d4a58b" name="gafe36bf782d472e00dc82d91679d4a58b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafe36bf782d472e00dc82d91679d4a58b">&#9670;&#160;</a></span>lock_guard_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define lock_guard_</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">object</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="lock__guard_8h.html">xtd.core/include/xtd/threading/lock_guard.h</a>&gt;</code></p>
+
+<p>The lock_guard_ keyword marks a statement block as a critical section by obtaining the mutual-exclusion lock for a given object, executing a statement, and then releasing the lock. The following example includes a lock statement. </p>
+<div class="fragment"><div class="line"><span class="keyword">class </span>account : <span class="keyword">public</span> object {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">  <span class="keywordtype">void</span> withdraw(decimal amount) {</div>
+<div class="line">    <a class="code hl_define" href="group__keywords.html#gafe36bf782d472e00dc82d91679d4a58b">lock_guard_</a> (balance) {</div>
+<div class="line">      <span class="keywordflow">if</span> (amount &gt; balance)</div>
+<div class="line">        <span class="keywordflow">throw</span> system_exception(<span class="stringliteral">&quot;Insufficient funds&quot;</span>);</div>
+<div class="line">      balance -= amount;</div>
+<div class="line">    }</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">private</span>:</div>
+<div class="line">  <a class="code hl_typedef" href="group__types.html#ga255b88769d29fe91661cacc7720f265a">decimal</a> balance;</div>
+<div class="line">};</div>
+<div class="ttc" id="agroup__keywords_html_gafe36bf782d472e00dc82d91679d4a58b"><div class="ttname"><a href="group__keywords.html#gafe36bf782d472e00dc82d91679d4a58b">lock_guard_</a></div><div class="ttdeci">#define lock_guard_(object)</div><div class="ttdoc">The lock_guard_ keyword marks a statement block as a critical section by obtaining the mutual-exclusi...</div><div class="ttdef"><b>Definition</b> lock_guard.h:180</div></div>
+</div><!-- fragment --><p> For more information, see Thread Synchronization. </p><dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The lock_guard_ keyword ensures that one thread does not enter a critical section of code while another thread is in the critical section. If another thread tries to enter a locked code, it will wait, block, until the object is released. </dd>
+<dd>
+The section Threading discusses threading. </dd>
+<dd>
+The lock_guard_ keyword calls Enter at the start of the block and Exit at the end of the block. A <a class="el" href="classxtd_1_1threading_1_1thread__interrupted__exception.html" title="The exception that is thrown when a Thread is interrupted while it is in a waiting state.">xtd::threading::thread_interrupted_exception</a> is thrown if <a class="el" href="classxtd_1_1threading_1_1thread.html#a23a6354206f5d065d706198b3afac452" title="Interrupts a thread that is in the xtd::threading::thread_state::wait_sleep_join thread state.">xtd::threading::thread::interrupt</a> interrupts a thread that is waiting to enter a lock statement. </dd>
+<dd>
+In general, avoid locking on a public type, or instances beyond your code's control. The common constructs lock_guard_ (*this), lock_guard_ (<a class="el" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99" title="Used to obtain the type string for a type. A typeof_ expression takes the following form:">typeof_&lt;my_type&gt;()</a>), and lock_guard_ ("myLock") violate this guideline:<ul>
+<li>lock_guard_ (*this) is a problem if the instance can be accessed publicly.</li>
+<li>lock_guard_ (<a class="el" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99" title="Used to obtain the type string for a type. A typeof_ expression takes the following form:">typeof_&lt;my_type&gt;()</a>) is a problem if my_type is publicly accessible.</li>
+<li>lock_guard_ ("my_lock") is a problem because any other code in the process using the same string, will share the same lock. </li>
+</ul>
+</dd>
+<dd>
+Best practice is to define a private object to lock on, or a private static object variable to protect data common to all instances. </dd>
+<dd>
+You can't use the await_ keyword in the body of a lock_guard_ statement. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following sample shows a simple use of threads without locking in C++. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"><span class="keyword">using namespace </span>xtd::rhreading;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>thread_test {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">  <span class="keywordtype">void</span> run_me() {</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;run_me called&quot;</span>);</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> main() {</div>
+<div class="line">    thread_test b;</div>
+<div class="line">    <span class="keyword">auto</span> t = thread {thread_start {b, &amp;thread_test::run_me));</div>
+<div class="line">    t.start();</div>
+<div class="line">  }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(thread_test::main)</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Output: run_me called</span></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following sample uses threads and lock_guard_. As long as the lock statement is present, the statement block is a critical section and balance will never become a negative number. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/threading/thread&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/lock&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/random&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1threading.html">xtd::threading</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span>examples {</div>
+<div class="line">  <span class="keyword">class </span>account : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">object</a> {</div>
+<div class="line">  <span class="keyword">public</span>:</div>
+<div class="line">    <span class="keyword">explicit</span> account(<span class="keywordtype">int</span> initial) : balance(initial) {}</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordtype">int</span> withdraw(<span class="keywordtype">int</span> amount) {</div>
+<div class="line">      <span class="comment">// This condition never is true unless the lock statement is commented out.</span></div>
+<div class="line">      <span class="keywordflow">if</span> (balance &lt; 0)</div>
+<div class="line">        <span class="keywordflow">throw</span> <a class="code hl_class" href="classxtd_1_1system__exception.html">system_exception</a>(<span class="stringliteral">&quot;Negative Balance&quot;</span>, <a class="code hl_define" href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a>);</div>
+<div class="line">      </div>
+<div class="line">      <span class="comment">// Comment out the next line to see the effect of leaving out the lock keyword.</span></div>
+<div class="line">      <a class="code hl_define" href="group__keywords.html#gafe36bf782d472e00dc82d91679d4a58b">lock_guard_</a>(balance) {</div>
+<div class="line">        <span class="keywordflow">if</span> (balance &gt;= amount) {</div>
+<div class="line">          console::write_line(<span class="stringliteral">&quot;Balance before Withdrawal :  {0}&quot;</span>, balance);</div>
+<div class="line">          console::write_line(<span class="stringliteral">&quot;Amount to Withdraw        : -{0}&quot;</span>, amount);</div>
+<div class="line">          balance = balance - amount;</div>
+<div class="line">          console::write_line(<span class="stringliteral">&quot;Balance after Withdrawal  :  {0}&quot;</span>, balance);</div>
+<div class="line">          <span class="keywordflow">return</span> amount;</div>
+<div class="line">        }</div>
+<div class="line">      }</div>
+<div class="line">      <span class="keywordflow">return</span> 0;</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordtype">void</span> do_transactions() {</div>
+<div class="line">      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; 100; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>++)</div>
+<div class="line">        withdraw(<a class="code hl_class" href="classxtd_1_1random.html">random</a>.<a class="code hl_function" href="classxtd_1_1random.html#a629a30d5ddd8035f45afe7d982fda712">next</a>(1, 100));</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">  <span class="keyword">private</span>:</div>
+<div class="line">    <span class="keywordtype">int</span> balance;</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1random.html">xtd::random</a> <a class="code hl_class" href="classxtd_1_1random.html">random</a>;</div>
+<div class="line">  };</div>
+<div class="line">  </div>
+<div class="line">  <span class="keyword">class </span>program {</div>
+<div class="line">  <span class="keyword">public</span>:</div>
+<div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> main() {</div>
+<div class="line">      std::vector&lt;thread&gt; threads(10);</div>
+<div class="line">      account account(1000);</div>
+<div class="line">      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; 10; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>++) {</div>
+<div class="line">        threads[<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>] = <a class="code hl_class" href="classxtd_1_1threading_1_1thread.html">thread</a> {<a class="code hl_typedef" href="group__xtd__core.html#ga629e09da122fad73508fa0fb6286fd0a">thread_start</a> {account, &amp;account::do_transactions}};</div>
+<div class="line">        threads[<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>].<a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a573cca51d21d56dcf79eaace281b74b0">start</a>();</div>
+<div class="line">      }</div>
+<div class="line"> </div>
+<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; <a class="code hl_class" href="classxtd_1_1threading_1_1thread.html">thread</a> : threads)</div>
+<div class="line">        <a class="code hl_class" href="classxtd_1_1threading_1_1thread.html">thread</a>.join();</div>
+<div class="line">    }</div>
+<div class="line">  };</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(examples::program::main);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code can produce the following output:</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Balance before Withdrawal :  1000</span></div>
+<div class="line"><span class="comment">// Amount to Withdraw        : -75</span></div>
+<div class="line"><span class="comment">// Balance after Withdrawal  :  925</span></div>
+<div class="line"><span class="comment">// Balance before Withdrawal :  925</span></div>
+<div class="line"><span class="comment">// Amount to Withdraw        : -84</span></div>
+<div class="line"><span class="comment">// Balance after Withdrawal  :  841</span></div>
+<div class="line"><span class="comment">// Balance before Withdrawal :  841</span></div>
+<div class="line"><span class="comment">// Amount to Withdraw        : -69</span></div>
+<div class="line"><span class="comment">// Balance after Withdrawal  :  772</span></div>
+<div class="line"><span class="comment">// Balance before Withdrawal :  772</span></div>
+<div class="line"><span class="comment">// Amount to Withdraw        : -71</span></div>
+<div class="line"><span class="comment">// Balance after Withdrawal  :  701</span></div>
+<div class="line"><span class="comment">// Balance before Withdrawal :  701</span></div>
+<div class="line"><span class="comment">// Amount to Withdraw        : -84</span></div>
+<div class="line"><span class="comment">// Balance after Withdrawal  :  617</span></div>
+<div class="line"><span class="comment">// Balance before Withdrawal :  617</span></div>
+<div class="line"><span class="comment">// Amount to Withdraw        : -81</span></div>
+<div class="line"><span class="comment">// Balance after Withdrawal  :  536</span></div>
+<div class="line"><span class="comment">// Balance before Withdrawal :  536</span></div>
+<div class="line"><span class="comment">// Amount to Withdraw        : -15</span></div>
+<div class="line"><span class="comment">// Balance after Withdrawal  :  521</span></div>
+<div class="line"><span class="comment">// Balance before Withdrawal :  521</span></div>
+<div class="line"><span class="comment">// Amount to Withdraw        : -93</span></div>
+<div class="line"><span class="comment">// Balance after Withdrawal  :  428</span></div>
+<div class="line"><span class="comment">// Balance before Withdrawal :  428</span></div>
+<div class="line"><span class="comment">// Amount to Withdraw        : -6</span></div>
+<div class="line"><span class="comment">// Balance after Withdrawal  :  422</span></div>
+<div class="line"><span class="comment">// Balance before Withdrawal :  422</span></div>
+<div class="line"><span class="comment">// Amount to Withdraw        : -54</span></div>
+<div class="line"><span class="comment">// Balance after Withdrawal  :  368</span></div>
+<div class="line"><span class="comment">// Balance before Withdrawal :  368</span></div>
+<div class="line"><span class="comment">// Amount to Withdraw        : -52</span></div>
+<div class="line"><span class="comment">// Balance after Withdrawal  :  316</span></div>
+<div class="line"><span class="comment">// Balance before Withdrawal :  316</span></div>
+<div class="line"><span class="comment">// Amount to Withdraw        : -67</span></div>
+<div class="line"><span class="comment">// Balance after Withdrawal  :  249</span></div>
+<div class="line"><span class="comment">// Balance before Withdrawal :  249</span></div>
+<div class="line"><span class="comment">// Amount to Withdraw        : -93</span></div>
+<div class="line"><span class="comment">// Balance after Withdrawal  :  156</span></div>
+<div class="line"><span class="comment">// Balance before Withdrawal :  156</span></div>
+<div class="line"><span class="comment">// Amount to Withdraw        : -60</span></div>
+<div class="line"><span class="comment">// Balance after Withdrawal  :  96</span></div>
+<div class="line"><span class="comment">// Balance before Withdrawal :  96</span></div>
+<div class="line"><span class="comment">// Amount to Withdraw        : -7</span></div>
+<div class="line"><span class="comment">// Balance after Withdrawal  :  89</span></div>
+<div class="line"><span class="comment">// Balance before Withdrawal :  89</span></div>
+<div class="line"><span class="comment">// Amount to Withdraw        : -42</span></div>
+<div class="line"><span class="comment">// Balance after Withdrawal  :  47</span></div>
+<div class="line"><span class="comment">// Balance before Withdrawal :  47</span></div>
+<div class="line"><span class="comment">// Amount to Withdraw        : -1</span></div>
+<div class="line"><span class="comment">// Balance after Withdrawal  :  46</span></div>
+<div class="line"><span class="comment">// Balance before Withdrawal :  46</span></div>
+<div class="line"><span class="comment">// Amount to Withdraw        : -22</span></div>
+<div class="line"><span class="comment">// Balance after Withdrawal  :  24</span></div>
+<div class="line"><span class="comment">// Balance before Withdrawal :  24</span></div>
+<div class="line"><span class="comment">// Amount to Withdraw        : -18</span></div>
+<div class="line"><span class="comment">// Balance after Withdrawal  :  6</span></div>
+<div class="line"><span class="comment">// Balance before Withdrawal :  6</span></div>
+<div class="line"><span class="comment">// Amount to Withdraw        : -2</span></div>
+<div class="line"><span class="comment">// Balance after Withdrawal  :  4</span></div>
+<div class="line"><span class="comment">// Balance before Withdrawal :  4</span></div>
+<div class="line"><span class="comment">// Amount to Withdraw        : -2</span></div>
+<div class="line"><span class="comment">// Balance after Withdrawal  :  2</span></div>
+<div class="line"><span class="comment">// Balance before Withdrawal :  2</span></div>
+<div class="line"><span class="comment">// Amount to Withdraw        : -2</span></div>
+<div class="line"><span class="comment">// Balance after Withdrawal  :  0</span></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
 <a id="gabe3976c5f529fab9b255e38ced18b281" name="gabe3976c5f529fab9b255e38ced18b281"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gabe3976c5f529fab9b255e38ced18b281">&#9670;&#160;</a></span>nameof_</h2>
 
@@ -3549,7 +3757,7 @@ If you need to get the fully-qualified name, you can use the typeof_ expression 
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Sep 13 2023 13:54:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Sep 14 2023 21:11:59 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
