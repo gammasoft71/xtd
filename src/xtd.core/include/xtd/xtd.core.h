@@ -165,6 +165,7 @@
 #include "threading/thread.h"
 #include "threading/thread_abort_exception.h"
 #include "threading/thread_interrupted_exception.h"
+#include "threading/thread_local_object.h"
 #include "threading/thread_pool.h"
 #include "threading/thread_priority.h"
 #include "threading/thread_start.h"

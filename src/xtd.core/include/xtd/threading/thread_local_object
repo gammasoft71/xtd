@@ -1,0 +1,2 @@
+#pragma once
+#include "thread_local_object.h"
