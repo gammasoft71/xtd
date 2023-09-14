@@ -20,7 +20,11 @@ class monitor::critical_section {
 public:
   critical_section() : handle_(std::make_shared<intptr>(native::critical_section::create())) {}
   critical_section(const critical_section&) = default;
-  critical_section& operator =(const critical_section&) = default;
+  critical_section& operator =(const critical_section& other) {
+    native::critical_section::destroy(*handle_);
+    handle_ = other.handle_;
+    return *this;
+  }
   critical_section(critical_section&&) = default;
   ~critical_section() {if (handle_.use_count() == 1) native::critical_section::destroy(*handle_);}
   
@@ -52,7 +56,11 @@ class monitor::condition_variable {
 public:
   condition_variable() : handle_(std::make_shared<intptr>(native::condition_variable::create())) {}
   condition_variable(const condition_variable&) = default;
-  condition_variable& operator =(const condition_variable&) = default;
+  condition_variable& operator =(const condition_variable& other) {
+    native::critical_section::destroy(*handle_);
+    handle_ = other.handle_;
+    return *this;
+  }
   condition_variable(condition_variable&&) = default;
   ~condition_variable() {if (handle_.use_count() == 1) native::condition_variable::destroy(*handle_);}
   
@@ -98,17 +106,15 @@ void monitor::exit_ptr(object_ptr obj) {
     throw synchronization_lock_exception {csf_};
   }
   
-  item saved;
   item* monitor_data = &get_static_data().monitor_items[obj.first];
-  if (interlocked::decrement(monitor_data->used_counter) == 0) {
-    saved = get_static_data().monitor_items[obj.first];
-    if (obj.second) delete reinterpret_cast<const ustring*>(obj.first);
-    get_static_data().monitor_items.erase(obj.first);
-    monitor_data = &saved;
-  }
   monitor_data->thread_id = thread::invalid_thread_id;
   monitor_data->critical_section.leave();
   get_static_data().monitor_items_critical_section.leave();
+
+  if (interlocked::decrement(monitor_data->used_counter) == 0) {
+    if (obj.second) delete reinterpret_cast<const ustring*>(obj.first);
+    get_static_data().monitor_items.erase(obj.first);
+  }
 }
 
 intptr monitor::get_ustring_ptr(const ustring& str) {
