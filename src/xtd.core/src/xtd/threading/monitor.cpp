@@ -7,6 +7,7 @@
 #include "../../../include/xtd/diagnostics/stopwatch.h"
 #include "../../../include/xtd/not_implemented_exception.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
+#include <xtd/native/condition_variable.h>
 #include <xtd/native/critical_section.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <mutex>
@@ -16,15 +17,36 @@ using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::threading;
 
+class monitor::condition_variable {
+public:
+  condition_variable() : handle_(std::make_shared<intptr>(native::condition_variable::create())) {}
+  condition_variable(const condition_variable&) = default;
+  condition_variable& operator =(const condition_variable&) = default;
+  condition_variable(condition_variable&&) = default;
+  ~condition_variable() {if (handle_.use_count() == 1) native::condition_variable::destroy(*handle_);}
+  
+  intptr handle() const noexcept {return *handle_;}
+  
+  void pulse() {native::condition_variable::pulse(*handle_);}
+
+  void pulse_all() {native::condition_variable::pulse(*handle_);}
+  
+  bool wait(intptr critical_section_handle, int32 milliseconds_timeout) {return native::condition_variable::wait(*handle_, critical_section_handle, milliseconds_timeout);}
+  
+private:
+  std::shared_ptr<intptr> handle_;
+};
+
 class monitor::critical_section {
 public:
   critical_section() : handle_(std::make_shared<intptr>(native::critical_section::create())) {}
-  
   critical_section(const critical_section&) = default;
   critical_section& operator =(const critical_section&) = default;
   critical_section(critical_section&&) = default;
   ~critical_section() {if (handle_.use_count() == 1) native::critical_section::destroy(*handle_);}
 
+  intptr handle() const noexcept {return *handle_;}
+  
   void enter() const noexcept {native::critical_section::enter(*handle_);}
   
   void leave() const noexcept {native::critical_section::leave(*handle_);}
