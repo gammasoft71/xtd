@@ -42,6 +42,7 @@ add_sources(
   include/xtd/native/macos/semaphore.h
   include/xtd/native/macos/strings.h
   src/xtd/native/macos/console.mm
+  src/xtd/native/macos/condition_variable.mm
   src/xtd/native/macos/critical_section.mm
   src/xtd/native/macos/cryptography.mm
   src/xtd/native/macos/date_time.mm
