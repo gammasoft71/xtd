@@ -78,8 +78,10 @@ private:
 
 struct monitor::item {
   monitor::critical_section critical_section;
-  int32 used_counter {0};
+  int32 used_count {0};
   std::optional<ustring> name;
+  /// @todo use xtd::threading::thread_local_object for thread_id...
+  /// thread_local_object<intptr> thread_id {thread::invalid_thread_id};
   intptr thread_id {thread::invalid_thread_id};
   monitor::condition_variable condition_variable;
 };
@@ -106,15 +108,17 @@ void monitor::exit_ptr(object_ptr obj) {
     throw synchronization_lock_exception {csf_};
   }
   
+  item saved;
   item* monitor_data = &get_static_data().monitor_items[obj.first];
+  if (interlocked::decrement(monitor_data->used_count) == 0) {
+    saved = get_static_data().monitor_items[obj.first];
+    if (obj.second) delete reinterpret_cast<const ustring*>(obj.first);
+    get_static_data().monitor_items.erase(obj.first);
+    monitor_data = &saved;
+  }
   monitor_data->thread_id = thread::invalid_thread_id;
   monitor_data->critical_section.leave();
   get_static_data().monitor_items_critical_section.leave();
-
-  if (interlocked::decrement(monitor_data->used_counter) == 0) {
-    if (obj.second) delete reinterpret_cast<const ustring*>(obj.first);
-    get_static_data().monitor_items.erase(obj.first);
-  }
 }
 
 intptr monitor::get_ustring_ptr(const ustring& str) {
@@ -172,7 +176,7 @@ bool monitor::try_enter_ptr(object_ptr obj, int32 milliseconds_timeout, bool& lo
     get_static_data().monitor_items.insert({obj.first, i});
   }
   item* monitor_data = &get_static_data().monitor_items[obj.first];
-  interlocked::increment(monitor_data->used_counter);
+  interlocked::increment(monitor_data->used_count);
   get_static_data().monitor_items_critical_section.leave();
   lock_taken = monitor_data->critical_section.try_enter(milliseconds_timeout);
   if (lock_taken) monitor_data->thread_id = thread::current_thread().thread_id();
