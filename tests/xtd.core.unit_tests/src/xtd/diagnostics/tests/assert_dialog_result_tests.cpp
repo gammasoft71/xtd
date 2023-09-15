@@ -1,7 +1,7 @@
-#include <xtd/diagnostics/assert_dialog_result.h>
-#include <xtd/tunit/assert.h>
-#include <xtd/tunit/test_class_attribute.h>
-#include <xtd/tunit/test_method_attribute.h>
+#include <xtd/diagnostics/assert_dialog_result>
+#include <xtd/tunit/assert>
+#include <xtd/tunit/test_class_attribute>
+#include <xtd/tunit/test_method_attribute>
 
 using namespace xtd::diagnostics;
 using namespace xtd::tunit;

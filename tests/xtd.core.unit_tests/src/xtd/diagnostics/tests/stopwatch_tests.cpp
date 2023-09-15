@@ -1,8 +1,8 @@
-#include <xtd/diagnostics/stopwatch.h>
-#include <xtd/threading/thread.h>
-#include <xtd/tunit/assert.h>
-#include <xtd/tunit/test_class_attribute.h>
-#include <xtd/tunit/test_method_attribute.h>
+#include <xtd/diagnostics/stopwatch>
+#include <xtd/threading/thread>
+#include <xtd/tunit/assert>
+#include <xtd/tunit/test_class_attribute>
+#include <xtd/tunit/test_method_attribute>
 
 using namespace xtd::diagnostics;
 using namespace xtd::threading;
