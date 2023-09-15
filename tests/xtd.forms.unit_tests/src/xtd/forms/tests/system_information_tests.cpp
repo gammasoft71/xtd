@@ -5,11 +5,11 @@
 #elif defined(__APPLE__)
 #include "get_double_click_time.h"
 #endif
-#include <xtd/forms/system_information.h>
-#include <xtd/forms/form.h>
-#include <xtd/tunit/assert.h>
-#include <xtd/tunit/test_class_attribute.h>
-#include <xtd/tunit/test_method_attribute.h>
+#include <xtd/forms/system_information>
+#include <xtd/forms/form>
+#include <xtd/tunit/assert>
+#include <xtd/tunit/test_class_attribute>
+#include <xtd/tunit/test_method_attribute>
 
 using namespace xtd::drawing;
 using namespace xtd::forms;
