@@ -9,10 +9,7 @@
 /// @cond
 struct tunit_export_ __tunit_main final static_ {
   static int main();
-};
-
-struct tunit_export_ __tunit_main_with_gtest_compatibility final static_ {
-  static int main();
+  static int main_with_gtest_compatibility();
 };
 /// @endcond
 
@@ -66,4 +63,4 @@ struct tunit_export_ __tunit_main_with_gtest_compatibility final static_ {
 /// startup_(tunit_main_with_gtest_compatibility_::main);
 /// @endcode
 #define tunit_main_with_gtest_compatibility_ \
-  __tunit_main_with_gtest_compatibility::main
+  __tunit_main::main_with_gtest_compatibility

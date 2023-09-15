@@ -9,7 +9,7 @@ int __tunit_main::main() {
   return console_unit_test {}.run();
 }
 
-int __tunit_main_with_gtest_compatibility::main() {
+int __tunit_main::main_with_gtest_compatibility() {
   settings::default_settings().gtest_compatibility(true);
-  return console_unit_test {}.run();
+  return main();
 }
