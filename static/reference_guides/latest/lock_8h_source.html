@@ -90,14 +90,20 @@ $(function() {
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="lock__guard_8h.html">threading/lock_guard.h</a>&quot;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a">   67</a></span><span class="preprocessor">#define lock_(object)\</span></div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="preprocessor">  lock_guard_(object)</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="group__threading.html#ga90b16e4ed2e4bde4276f0c807e5a7112">   22</a></span>  <span class="keyword">using </span><a class="code hl_class" href="classxtd_1_1threading_1_1lock__guard.html">lock</a> = <a class="code hl_class" href="classxtd_1_1threading_1_1lock__guard.html">xtd::threading::lock_guard</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>}</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a">   85</a></span><span class="preprocessor">#define lock_(object)\</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="preprocessor">  using_ (xtd::lock __xtd_lock_guard__(object))</span></div>
+<div class="ttc" id="aclassxtd_1_1threading_1_1lock__guard_html"><div class="ttname"><a href="classxtd_1_1threading_1_1lock__guard.html">xtd::threading::lock_guard</a></div><div class="ttdoc">Provides a mechanism that synchronizes access to objects with xtd::threading::monitor.</div><div class="ttdef"><b>Definition</b> lock_guard.h:31</div></div>
 <div class="ttc" id="alock__guard_8h_html"><div class="ttname"><a href="lock__guard_8h.html">lock_guard.h</a></div><div class="ttdoc">Contains xtd::threading::lock_guard class.</div></div>
+<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 14 2023 21:11:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Sep 15 2023 08:56:42 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
