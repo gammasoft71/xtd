@@ -2,8 +2,8 @@
 /// @brief Contains xtd::diagnostics::default_trace_listener class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../core_export.h"
-#include "trace_listener.h"
+#include "../core_export"
+#include "trace_listener"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

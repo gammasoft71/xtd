@@ -2,8 +2,8 @@
 /// @brief Contains xtd::diagnostics::boolean_switch class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../optional.h"
-#include "switch_base.h"
+#include "../optional"
+#include "switch_base"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

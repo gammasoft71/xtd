@@ -4,9 +4,9 @@
 #pragma once
 #include <cstdint>
 #include <limits>
-#include "../iequatable.h"
-#include "../object.h"
-#include "../ustring.h"
+#include "../iequatable"
+#include "../object"
+#include "../ustring"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -205,4 +205,4 @@ namespace xtd {
   }
 }
 
-#include "current_stack_frame.h"
+#include "current_stack_frame"

@@ -2,7 +2,7 @@
 /// @brief Contains xtd::diagnostics::debug_break keyword.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "debugger.h"
+#include "debugger"
 
 /// @brief Signals a breakpoint to an attached debugger.
 /// @par Header

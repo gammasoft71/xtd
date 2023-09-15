@@ -2,7 +2,7 @@
 /// @brief Contains xtd::diagnostics::trace class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "debug.h"
+#include "debug"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

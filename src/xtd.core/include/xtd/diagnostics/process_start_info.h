@@ -6,10 +6,10 @@
 #include <memory>
 #include <string>
 #include <vector>
-#include "../core_export.h"
-#include "../object.h"
-#include "../security/secure_string.h"
-#include "process_window_style.h"
+#include "../core_export"
+#include "../object"
+#include "../security/secure_string"
+#include "process_window_style"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

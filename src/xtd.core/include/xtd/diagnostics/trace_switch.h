@@ -2,9 +2,9 @@
 /// @brief Contains xtd::diagnostics::trace_switch class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "switch_base.h"
-#include "debug.h"
-#include "trace_level.h"
+#include "switch_base"
+#include "debug"
+#include "trace_level"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

@@ -5,10 +5,10 @@
 #include <cstdint>
 #include <map>
 #include <vector>
-#include "../iequatable.h"
-#include "../object.h"
-#include "../ustring.h"
-#include "source_levels.h"
+#include "../iequatable"
+#include "../object"
+#include "../ustring"
+#include "source_levels"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
