@@ -1,8 +1,8 @@
 /// @file
 /// @brief Contains xtd::tunit::unit_tests_event_listener class.
 #pragma once
-#include <xtd/tunit/event_listener.h>
-#include <xtd/tunit/unit_test.h>
+#include <xtd/tunit/event_listener>
+#include <xtd/tunit/unit_test>
 #include <ostream>
 
 namespace assert_unit_tests {

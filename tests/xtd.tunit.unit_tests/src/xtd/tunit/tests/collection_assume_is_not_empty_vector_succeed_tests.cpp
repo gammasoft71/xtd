@@ -1,6 +1,6 @@
-#include <xtd/tunit/collection_assume.h>
-#include <xtd/tunit/test_class_attribute.h>
-#include <xtd/tunit/test_method_attribute.h>
+#include <xtd/tunit/collection_assume>
+#include <xtd/tunit/test_class_attribute>
+#include <xtd/tunit/test_method_attribute>
 #include "../../../assert_unit_tests/assert_unit_tests.h"
 
 namespace xtd::tunit::tests {
