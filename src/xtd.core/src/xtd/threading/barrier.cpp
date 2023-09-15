@@ -1,5 +1,4 @@
 #include "../../../include/xtd/threading/barrier.h"
-#include "../../../include/xtd/threading/interlocked.h"
 #include "../../../include/xtd/threading/semaphore.h"
 #include "../../../include/xtd/diagnostics/stopwatch.h"
 #include "../../../include/xtd/argument_out_of_range_exception.h"
@@ -9,6 +8,7 @@
 #include "../../../include/xtd/object_closed_exception.h"
 #include "../../../include/xtd/operation_canceled_exception.h"
 #include "../../../include/xtd/lock.h"
+#include <atomic>
 
 using namespace xtd;
 using namespace xtd::diagnostics;
@@ -16,9 +16,9 @@ using namespace xtd::threading;
 
 struct barrier::data : object {
   const threading::cancellation_token* cancellation_token = nullptr;
-  int32 current_phase_number = 0;
-  int32 participant_count = 0;
-  int32 participants_remaining = 0;
+  std::atomic<int32> current_phase_number = 0;
+  std::atomic<int32> participant_count = 0;
+  std::atomic<int32> participants_remaining = 0;
   barrier::post_phase_action post_phase_action;
   bool run_post_phase_action = false;
   semaphore phase_semaphore;
@@ -72,8 +72,8 @@ int32 barrier::add_participants(int32 participant_count) {
   lock_(*data_) {
     if (participant_count < 0 || data_->participant_count + participant_count > int16_object::max_value) throw argument_out_of_range_exception {csf_};
     if (data_->run_post_phase_action) throw invalid_operation_exception {csf_};
-    interlocked::exchange(data_->participant_count, data_->participant_count + participant_count);
-    interlocked::exchange(data_->participants_remaining, data_->participants_remaining + participant_count);
+    data_->participant_count += participant_count;
+    data_->participants_remaining += participant_count;
     return data_->current_phase_number;
   }
   return data_->current_phase_number;
@@ -93,8 +93,8 @@ int32 barrier::remove_participants(int32 participant_count) {
     if (participant_count < 0) throw argument_out_of_range_exception {csf_};
     if (data_->participant_count == 0 || data_->run_post_phase_action || data_->participants_remaining < data_->participant_count - participant_count) throw invalid_operation_exception {csf_};
     if (data_->participant_count < participant_count) throw argument_out_of_range_exception {csf_};
-    interlocked::exchange(data_->participant_count, data_->participant_count- participant_count);
-    interlocked::exchange(data_->participants_remaining, data_->participants_remaining - participant_count);
+    data_->participant_count -= participant_count;
+    data_->participants_remaining -= participant_count;
     return data_->current_phase_number;
   }
   return data_->current_phase_number;
@@ -119,8 +119,8 @@ bool barrier::signal_and_wait(int32 milliseconds_timeout) {
       }
       data_->run_post_phase_action = false;
 
-      interlocked::increment(data_->current_phase_number);
-      interlocked::exchange(data_->participants_remaining, data_->participant_count);
+      ++data_->current_phase_number;
+      data_->participants_remaining.exchange(data_->participant_count);
       
       for (int i = 0; i < data_->participant_count; i++)
         data_->phase_semaphore.release();
