@@ -762,6 +762,8 @@ add_sources(
   include/xtd/threading/semaphore
   include/xtd/threading/semaphore_full_exception.h
   include/xtd/threading/semaphore_full_exception
+  include/xtd/threading/spin_lock.h
+  include/xtd/threading/spin_lock
   include/xtd/threading/synchronization_lock_exception.h
   include/xtd/threading/synchronization_lock_exception
   include/xtd/threading/thread.h
@@ -949,6 +951,7 @@ add_sources(
   src/xtd/threading/registered_wait_handle.cpp
   src/xtd/threading/semaphore.cpp
   src/xtd/threading/semaphore_base.h
+  src/xtd/threading/spin_lock.cpp
   src/xtd/threading/thread.cpp
   src/xtd/threading/thread_pool.cpp
   src/xtd/threading/timeout.cpp
