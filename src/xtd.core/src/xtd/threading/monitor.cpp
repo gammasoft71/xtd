@@ -58,7 +58,7 @@ public:
   condition_variable() : handle_(std::make_shared<intptr>(native::condition_variable::create())) {}
   condition_variable(const condition_variable&) = default;
   condition_variable& operator =(const condition_variable& other) {
-    native::critical_section::destroy(*handle_);
+    native::condition_variable::destroy(*handle_);
     handle_ = other.handle_;
     return *this;
   }
