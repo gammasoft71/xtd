@@ -1,9 +1,9 @@
 #include <iostream>
-#include <xtd/drawing/bitmap.h>
-#include <xtd/drawing/color.h>
-#include <xtd/io/file.h>
-#include <xtd/io/path.h>
-#include <xtd/ustring.h>
+#include <xtd/drawing/bitmap>
+#include <xtd/drawing/color>
+#include <xtd/io/file>
+#include <xtd/io/path>
+#include <xtd/ustring>
 //#include "logo.xpm"
 
 using namespace std;
