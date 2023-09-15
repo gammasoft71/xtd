@@ -3,7 +3,7 @@
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
 #include <xtd/environment>
-#include <xtd/object_closed_exception.h>
+#include <xtd/object_closed_exception>
 #include <mutex>
 #include <utility>
 #if defined(_WIN32)
