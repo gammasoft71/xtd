@@ -3,12 +3,12 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include <map>
-#include "../object.h"
-#include "default_trace_listener.h"
-#include "source_levels.h"
-#include "source_switch.h"
-#include "trace_event_cache.h"
-#include "trace_listener_collection.h"
+#include "../object"
+#include "default_trace_listener"
+#include "source_levels"
+#include "source_switch"
+#include "trace_event_cache"
+#include "trace_listener_collection"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

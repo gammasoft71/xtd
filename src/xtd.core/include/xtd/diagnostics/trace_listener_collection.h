@@ -4,8 +4,8 @@
 #pragma once
 #include <memory>
 #include <vector>
-#include "../iequatable.h"
-#include "trace_listener.h"
+#include "../iequatable"
+#include "trace_listener"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
