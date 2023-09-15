@@ -10,8 +10,11 @@ add_sources(
   include/xtd/xtd.drawing
   include/xtd/xtd.drawing.h
   include/xtd/drawing/actions_system_images.h
+  include/xtd/drawing/actions_system_images
   include/xtd/drawing/animations_system_images.h
+  include/xtd/drawing/animations_system_images
   include/xtd/drawing/applications_system_images.h
+  include/xtd/drawing/applications_system_images
   include/xtd/drawing/basic_colors.h
   include/xtd/drawing/basic_colors
   include/xtd/drawing/bitmap.h
@@ -42,8 +45,11 @@ add_sources(
   include/xtd/drawing/dash_style.h
   include/xtd/drawing/dash_style
   include/xtd/drawing/devices_system_images.h
+  include/xtd/drawing/devices_system_images
   include/xtd/drawing/emblems_system_images.h
+  include/xtd/drawing/emblems_system_images
   include/xtd/drawing/emotes_system_images.h
+  include/xtd/drawing/emotes_system_images
   include/xtd/drawing/extended_colors.h
   include/xtd/drawing/extended_colors
   include/xtd/drawing/font.h
@@ -65,11 +71,13 @@ add_sources(
   include/xtd/drawing/image.h
   include/xtd/drawing/image
   include/xtd/drawing/international_system_images.h
+  include/xtd/drawing/international_system_images
   include/xtd/drawing/known_color.h
   include/xtd/drawing/known_color
   include/xtd/drawing/magenta_colors.h
   include/xtd/drawing/magenta_colors
   include/xtd/drawing/mimetypes_system_images.h
+  include/xtd/drawing/mimetypes_system_images
   include/xtd/drawing/orange_colors.h
   include/xtd/drawing/orange_colors
   include/xtd/drawing/pen.h
@@ -79,6 +87,7 @@ add_sources(
   include/xtd/drawing/pink_colors.h
   include/xtd/drawing/pink_colors
   include/xtd/drawing/places_system_images.h
+  include/xtd/drawing/places_system_images
   include/xtd/drawing/point.h
   include/xtd/drawing/point
   include/xtd/drawing/point_f.h
@@ -102,6 +111,7 @@ add_sources(
   include/xtd/drawing/solid_brush.h
   include/xtd/drawing/solid_brush
   include/xtd/drawing/status_system_images.h
+  include/xtd/drawing/status_system_images
   include/xtd/drawing/string_alignment.h
   include/xtd/drawing/string_alignment
   include/xtd/drawing/string_format.h
