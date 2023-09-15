@@ -1,7 +1,7 @@
-#include <xtd/console.h>
-#include <xtd/time_span.h>
-#include <xtd/int64_object.h>
-#include <xtd/ustring.h>
+#include <xtd/console>
+#include <xtd/time_span>
+#include <xtd/int64_object>
+#include <xtd/ustring>
 
 using namespace xtd;
 
