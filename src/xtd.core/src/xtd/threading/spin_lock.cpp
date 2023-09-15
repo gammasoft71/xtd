@@ -1,4 +1,6 @@
 #include "../../../include/xtd/threading/spin_lock.h"
+#include "../../../include/xtd/threading/lock_recursion_exception.h"
+#include "../../../include/xtd/threading/synchronization_lock_exception.h"
 #include "../../../include/xtd/threading/thread.h"
 #include "../../../include/xtd/diagnostics/stopwatch.h"
 #include "../../../include/xtd/as.h"
@@ -35,29 +37,36 @@ bool spin_lock::is_thread_owner_tracking_enabled() const noexcept {
 }
 
 void spin_lock::enter(bool& lock_taken) {
-  lock_taken = enter(timeout::infinite);
-}
-
-bool spin_lock::enter(const time_span& timeout) {
-  return enter(as<int32>(timeout.total_milliseconds()));
-}
-
-bool spin_lock::enter(int32 milliseconds_timeout) {
-  auto sw = stopwatch::start_new();
-  while (data_->flag.test_and_set(std::memory_order_acquire)) {
-    if (milliseconds_timeout != timeout::infinite && sw.elapsed_milliseconds() > milliseconds_timeout) return false;
-    thread::yield();
-  }
-  if (data_->enable_thread_owner_tracking) data_->thread_id = thread::current_thread().thread_id();
-  return true;
+  try_enter(timeout::infinite, lock_taken);
 }
 
 void spin_lock::exit() {
   exit(true);
 }
 
-void spin_lock::exit(bool memory_barrier) {
-  if (memory_barrier) std::atomic_thread_fence(std::memory_order_acquire);
+void spin_lock::exit(bool use_memory_barrier) {
+  if (data_->enable_thread_owner_tracking && data_->thread_id != thread::current_thread().thread_id()) throw synchronization_lock_exception {csf_};
+  if (use_memory_barrier) std::atomic_thread_fence(std::memory_order_acquire);
   if (data_->enable_thread_owner_tracking) data_->thread_id = thread::invalid_thread_id;
   data_->flag.clear(std::memory_order_release);
+}
+
+void spin_lock::try_enter(bool& lock_taken) {
+  try_enter(0, lock_taken);
+}
+
+void spin_lock::try_enter(const time_span& timeout, bool& lock_taken) {
+  try_enter(as<int32>(timeout.total_milliseconds()), lock_taken);
+}
+
+void spin_lock::try_enter(int32 milliseconds_timeout, bool& lock_taken) {
+  if (data_->enable_thread_owner_tracking && data_->thread_id == thread::current_thread().thread_id()) throw lock_recursion_exception {csf_};
+  lock_taken = false;
+  auto sw = stopwatch::start_new();
+  while (data_->flag.test_and_set(std::memory_order_acquire)) {
+    if (milliseconds_timeout != timeout::infinite && sw.elapsed_milliseconds() > milliseconds_timeout) return;
+    thread::yield();
+  }
+  if (data_->enable_thread_owner_tracking) data_->thread_id = thread::current_thread().thread_id();
+  lock_taken = true;
 }
