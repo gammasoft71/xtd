@@ -1,9 +1,9 @@
-#include <xtd/console.h>
-#include <xtd/io/file.h>
-#include <xtd/reflection/assembly.h>
-#include <xtd/tunit/assert.h>
-#include <xtd/tunit/test_class_attribute.h>
-#include <xtd/tunit/test_method_attribute.h>
+#include <xtd/console>
+#include <xtd/io/file>
+#include <xtd/reflection/assembly>
+#include <xtd/tunit/assert>
+#include <xtd/tunit/test_class_attribute>
+#include <xtd/tunit/test_method_attribute>
 
 using namespace xtd;
 using namespace xtd::reflection;
