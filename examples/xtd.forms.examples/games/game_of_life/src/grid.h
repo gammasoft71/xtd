@@ -1,5 +1,5 @@
 #pragma once
-#include <xtd/event.h>
+#include <xtd/event>
 #include <vector>
 #include "cell.h"
 
