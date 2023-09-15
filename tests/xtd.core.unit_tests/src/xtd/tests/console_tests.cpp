@@ -1,11 +1,11 @@
-#include <xtd/console.h>
-#include <xtd/int16_object.h>
-#include <xtd/io/file.h>
-#include <xtd/io/path.h>
-#include <xtd/tunit/assert.h>
-#include <xtd/tunit/collection_assert.h>
-#include <xtd/tunit/test_class_attribute.h>
-#include <xtd/tunit/test_method_attribute.h>
+#include <xtd/console>
+#include <xtd/int16_object>
+#include <xtd/io/file>
+#include <xtd/io/path>
+#include <xtd/tunit/assert>
+#include <xtd/tunit/collection_assert>
+#include <xtd/tunit/test_class_attribute>
+#include <xtd/tunit/test_method_attribute>
 
 using namespace std;
 using namespace std::literals;

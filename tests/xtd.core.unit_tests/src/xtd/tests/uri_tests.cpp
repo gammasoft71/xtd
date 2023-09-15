@@ -1,9 +1,9 @@
 #include <sstream>
-#include <xtd/uri.h>
-#include <xtd/uri_format_exception.h>
-#include <xtd/tunit/assert.h>
-#include <xtd/tunit/test_class_attribute.h>
-#include <xtd/tunit/test_method_attribute.h>
+#include <xtd/uri>
+#include <xtd/uri_format_exception>
+#include <xtd/tunit/assert>
+#include <xtd/tunit/test_class_attribute>
+#include <xtd/tunit/test_method_attribute>
 
 using namespace std;
 using namespace xtd;

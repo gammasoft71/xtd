@@ -1,8 +1,8 @@
-#include <xtd/convert.h>
-#include <xtd/guid.h>
-#include <xtd/tunit/assert.h>
-#include <xtd/tunit/test_class_attribute.h>
-#include <xtd/tunit/test_method_attribute.h>
+#include <xtd/convert>
+#include <xtd/guid>
+#include <xtd/tunit/assert>
+#include <xtd/tunit/test_class_attribute>
+#include <xtd/tunit/test_method_attribute>
 
 using namespace std;
 using namespace xtd;

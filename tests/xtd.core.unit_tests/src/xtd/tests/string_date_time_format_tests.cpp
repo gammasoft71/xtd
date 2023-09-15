@@ -1,10 +1,10 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include <xtd/ustring.h>
-#include <xtd/format_exception.h>
-#include <xtd/tunit/assert.h>
-#include <xtd/tunit/string_assert.h>
-#include <xtd/tunit/test_class_attribute.h>
-#include <xtd/tunit/test_method_attribute.h>
+#include <xtd/ustring>
+#include <xtd/format_exception>
+#include <xtd/tunit/assert>
+#include <xtd/tunit/string_assert>
+#include <xtd/tunit/test_class_attribute>
+#include <xtd/tunit/test_method_attribute>
 
 #include <time.h>
 #if defined(_WIN32)

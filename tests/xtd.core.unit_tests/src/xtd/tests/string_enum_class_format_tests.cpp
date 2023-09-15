@@ -1,8 +1,8 @@
-#include <xtd/enum_class.h>
-#include <xtd/format_exception.h>
-#include <xtd/tunit/assert.h>
-#include <xtd/tunit/test_class_attribute.h>
-#include <xtd/tunit/test_method_attribute.h>
+#include <xtd/enum_class>
+#include <xtd/format_exception>
+#include <xtd/tunit/assert>
+#include <xtd/tunit/test_class_attribute>
+#include <xtd/tunit/test_method_attribute>
 
 using namespace std;
 using namespace std::string_literals;

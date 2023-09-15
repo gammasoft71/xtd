@@ -1,9 +1,9 @@
-#include <xtd/time_span.h>
-#include <xtd/divided_by_zero_exception.h>
-#include <xtd/int64_object.h>
-#include <xtd/tunit/assert.h>
-#include <xtd/tunit/test_class_attribute.h>
-#include <xtd/tunit/test_method_attribute.h>
+#include <xtd/time_span>
+#include <xtd/divided_by_zero_exception>
+#include <xtd/int64_object>
+#include <xtd/tunit/assert>
+#include <xtd/tunit/test_class_attribute>
+#include <xtd/tunit/test_method_attribute>
 
 using namespace std;
 using namespace std::chrono;

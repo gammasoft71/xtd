@@ -5,12 +5,12 @@
 #include "get_know_folder_path.h"
 #include "platform_name.h"
 #include "standard_name.h"
-#include <xtd/environment.h>
-#include <xtd/threading/thread.h>
-#include <xtd/tunit/assert.h>
-#include <xtd/tunit/string_assert.h>
-#include <xtd/tunit/test_class_attribute.h>
-#include <xtd/tunit/test_method_attribute.h>
+#include <xtd/environment>
+#include <xtd/threading/thread>
+#include <xtd/tunit/assert>
+#include <xtd/tunit/string_assert>
+#include <xtd/tunit/test_class_attribute>
+#include <xtd/tunit/test_method_attribute>
 
 using namespace xtd;
 using namespace xtd::tunit;
