@@ -37,6 +37,7 @@ namespace xtd {
       class semaphore_base;
       class named_semaphore;
       class unnamed_semaphore;
+      struct data;
     public:
       /// @name Constructors
       
@@ -206,9 +207,7 @@ namespace xtd {
     private:
       void create(int32 initial_count, int32 maximum_count, bool& created_new);
       std::shared_ptr<semaphore_base> semaphore_;
-      int32 count_ = 0;
-      int32 maximum_count_ = int32_object::max_value;
-      ustring name_;
+      std::shared_ptr<data> data_;
     };
   }
 }
