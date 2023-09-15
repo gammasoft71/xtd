@@ -1,32 +1,36 @@
-#include <xtd/console.h>
-#include <xtd/environment.h>
-#include <xtd/startup.h>
+#include <xtd/threading/spin_lock>
+#include <xtd/threading/thread>
+#include <xtd/console>
+#include <xtd/startup>
 
 using namespace xtd;
+using namespace xtd::threading;
 
-class program {
+class core_manual_test {
 public:
-  static void main() {
-    auto os = environment::os_version();
-    console::write_line("os = {}", os);
-    console::write_line("   desktop_environment = {}", os.desktop_environment());
-    console::write_line("   desktop_theme = {}", os.desktop_theme());
-    console::write_line("   distribution = {}", os.distribution());
-    console::write_line("      bug_repport = {}", os.distribution().bug_repport());
-    console::write_line("      code_name = {}", os.distribution().code_name());
-    console::write_line("      description = {}", os.distribution().description());
-    console::write_line("      home = {}", os.distribution().home());
-    console::write_line("      id = {}", os.distribution().id());
-    console::write_line("      like_ids = {}", os.distribution().like_ids());
-    console::write_line("      name = {}", os.distribution().name());
-    console::write_line("      version = {}", os.distribution().version());
-    console::write_line("      version_string = {}", os.distribution().version_string());
-    console::write_line("   name = {}", os.name());
-    console::write_line("   platform = {}", os.platform());
-    console::write_line("   service_pack = {}", os.service_pack());
-    console::write_line("   version = {}", os.version());
-    console::write_line("   version_string = {}", os.version_string());
+  static auto entry_point() {
+    ::spin_lock spin_lock;
+    auto thread1 = thread::start_new([&] {
+      auto lock_taken = false;
+      spin_lock.enter(lock_taken);
+      console::write_line("Thread 1 locked.");
+      thread::sleep(1000);
+      spin_lock.exit();
+    });
+
+    auto thread2 = thread::start_new([&] {
+      thread::sleep(500);
+      auto lock_taken = false;
+      spin_lock.enter(lock_taken);
+      console::write_line("Thread 2 locked.");
+      spin_lock.exit();
+    });
+
+    thread1.join();
+    thread2.join();
   }
 };
 
-startup_(program::main);
+auto main()->int {
+  startup::safe_run(core_manual_test::entry_point);
+}
