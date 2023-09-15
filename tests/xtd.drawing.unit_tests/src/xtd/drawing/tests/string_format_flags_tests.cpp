@@ -1,7 +1,7 @@
-#include <xtd/drawing/string_format_flags.h>
-#include <xtd/tunit/assert.h>
-#include <xtd/tunit/test_class_attribute.h>
-#include <xtd/tunit/test_method_attribute.h>
+#include <xtd/drawing/string_format_flags>
+#include <xtd/tunit/assert>
+#include <xtd/tunit/test_class_attribute>
+#include <xtd/tunit/test_method_attribute>
 
 using namespace xtd::drawing;
 using namespace xtd::tunit;

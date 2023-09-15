@@ -1,7 +1,7 @@
-#include <xtd/drawing/imaging/image_lock_mode.h>
-#include <xtd/tunit/assert.h>
-#include <xtd/tunit/test_class_attribute.h>
-#include <xtd/tunit/test_method_attribute.h>
+#include <xtd/drawing/imaging/image_lock_mode>
+#include <xtd/tunit/assert>
+#include <xtd/tunit/test_class_attribute>
+#include <xtd/tunit/test_method_attribute>
 
 using namespace xtd::drawing::imaging;
 using namespace xtd::tunit;

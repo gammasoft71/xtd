@@ -1,8 +1,8 @@
-#include <xtd/drawing/actions_system_images.h>
-#include <xtd/drawing/system_images.h>
-#include <xtd/tunit/assert.h>
-#include <xtd/tunit/test_class_attribute.h>
-#include <xtd/tunit/test_method_attribute.h>
+#include <xtd/drawing/actions_system_images>
+#include <xtd/drawing/system_images>
+#include <xtd/tunit/assert>
+#include <xtd/tunit/test_class_attribute>
+#include <xtd/tunit/test_method_attribute>
 
 using namespace xtd::drawing;
 using namespace xtd::tunit;
