@@ -9,12 +9,12 @@
 class tunit_export_ __tunit_main final {
 public:
   __tunit_main() = delete;
-  static int main(int argc, char* argv[]);
+  static int main();
 };
 class tunit_export_ __tunit_main_with_gtest_compatibility final {
 public:
   __tunit_main_with_gtest_compatibility() = delete;
-  static int main(int argc, char* argv[]);
+  static int main();
 };
 /// @endcond
 
