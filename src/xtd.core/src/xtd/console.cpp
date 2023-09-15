@@ -5,6 +5,7 @@
 #include <xtd/native/console.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include "../../include/xtd/argument_out_of_range_exception.h"
+#include "../../include/xtd/as.h"
 #include "../../include/xtd/console.h"
 #include "../../include/xtd/int16_object.h"
 #include "../../include/xtd/lock.h"
@@ -19,22 +20,22 @@ using namespace xtd::io;
 
 namespace {
   std::streambuf* __get_err_rdbuf() {
-    static std::streambuf* rdbuf = std::cerr.rdbuf();
+    static auto rdbuf = std::cerr.rdbuf();
     return rdbuf;
   }
   
   std::streambuf* __get_in_rdbuf() {
-    static std::streambuf* rdbuf = std::cin.rdbuf();
+    static auto rdbuf = std::cin.rdbuf();
     return rdbuf;
   }
   
   std::streambuf* __get_out_rdbuf() {
-    static std::streambuf* rdbuf = std::cout.rdbuf();
+    static auto rdbuf = std::cout.rdbuf();
     return rdbuf;
   }
   
-  bool __auto_flush_out = true;
-  std::recursive_mutex __console_mutex__;
+  auto __auto_flush_out = true;
+  auto __console_mutex__ = std::recursive_mutex {};
 }
 
 std::ostream console::error {__get_err_rdbuf()};
@@ -52,13 +53,13 @@ void console::auto_flush_out(bool value) {
 
 console_color console::background_color() {
   register_cancel_key_press(); // Must be first...
-  return static_cast<console_color>(native::console::background_color());
+  return as<console_color>(native::console::background_color());
 }
 
 void console::background_color(console_color color) {
   if (!enum_object<>::is_defined(color)) throw argument_exception {csf_};
   register_cancel_key_press(); // Must be first...
-  native::console::background_color(static_cast<int32>(color));
+  native::console::background_color(as<int32>(color));
 }
 
 int32 console::buffer_height() {
@@ -131,13 +132,13 @@ void console::cursor_visible(bool visible) {
 
 console_color console::foreground_color() {
   register_cancel_key_press(); // Must be first...
-  return static_cast<console_color>(native::console::foreground_color());
+  return as<console_color>(native::console::foreground_color());
 }
 
 bool console::foreground_color(console_color color) {
   register_cancel_key_press(); // Must be first...
   if (!enum_object<>::is_defined(color)) throw argument_exception {csf_};
-  return native::console::foreground_color(static_cast<int32>(color));
+  return native::console::foreground_color(as<int32>(color));
 }
 
 int32 console::input_code_page() {
@@ -281,17 +282,17 @@ std::pair<int32, int32> console::get_cursor_position() {
 
 std::ostream console::open_standard_error() {
   register_cancel_key_press(); // Must be first...
-  return std::ostream(__get_err_rdbuf());
+  return std::ostream {__get_err_rdbuf()};
 }
 
 std::istream console::open_standard_input() {
   register_cancel_key_press(); // Must be first...
-  return std::istream(__get_in_rdbuf());
+  return std::istream {__get_in_rdbuf()};
 }
 
 std::ostream console::open_standard_output() {
   register_cancel_key_press(); // Must be first...
-  return std::ostream(__get_out_rdbuf());
+  return std::ostream {__get_out_rdbuf()};
 }
 
 int32 console::read() {
@@ -316,7 +317,7 @@ console_key_info console::read_key(bool intercept) {
   auto key_char = U'0', key_code = U'0';
   auto alt = false, shift = false, ctrl = false;
   native::console::read_key(key_char, key_code, alt, shift, ctrl);
-  auto key_info = console_key_info(key_char, static_cast<console_key>(key_code), shift, alt, ctrl);
+  auto key_info = console_key_info(key_char, as<console_key>(key_code), shift, alt, ctrl);
   
   if (intercept == false)
     write(key_info.key_char());
@@ -372,25 +373,25 @@ void console::write_line() {
 }
 
 bool console::on_cancel_key_press(int32 special_key) {
-  auto e = console_cancel_event_args(static_cast<console_special_key>(special_key));
+  auto e = console_cancel_event_args(as<console_special_key>(special_key));
   cancel_key_press(e);
   return e.cancel();
 }
 
 void console::register_cancel_key_press() {
-  static bool initialized = false;
+  static auto initialized = false;
   if (!initialized) native::console::register_user_cancel_callback(console::on_cancel_key_press);
   initialized = true;
 }
 
 void console::write_(const ustring& value) {
-  std::lock_guard<std::recursive_mutex> lock {__console_mutex__};
+  auto lock = std::lock_guard<std::recursive_mutex> {__console_mutex__};
   out << value;
   if (auto_flush_out()) out.flush();
 }
 
 void console::write_line_(const ustring& value) {
-  std::lock_guard<std::recursive_mutex> lock {__console_mutex__};
+  auto lock = std::lock_guard<std::recursive_mutex> {__console_mutex__};
   out << value << std::endl;
   if (auto_flush_out()) out.flush();
 }
