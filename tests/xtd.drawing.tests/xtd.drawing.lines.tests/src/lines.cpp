@@ -1,14 +1,14 @@
-#include <xtd/drawing/drawing_2d/conical_gradient_brush.h>
-#include <xtd/drawing/drawing_2d/hatch_brush.h>
-#include <xtd/drawing/drawing_2d/linear_gradient_brush.h>
-#include <xtd/drawing/drawing_2d/radial_gradient_brush.h>
-#include <xtd/drawing/pens.h>
-#include <xtd/drawing/texture_brush.h>
-#include <xtd/forms/application.h>
-#include <xtd/forms/form.h>
-#include <xtd/forms/tab_control.h>
-#include <xtd/forms/tab_page.h>
-#include <xtd/startup.h>
+#include <xtd/drawing/drawing_2d/conical_gradient_brush>
+#include <xtd/drawing/drawing_2d/hatch_brush>
+#include <xtd/drawing/drawing_2d/linear_gradient_brush>
+#include <xtd/drawing/drawing_2d/radial_gradient_brush>
+#include <xtd/drawing/pens>
+#include <xtd/drawing/texture_brush>
+#include <xtd/forms/application>
+#include <xtd/forms/form>
+#include <xtd/forms/tab_control>
+#include <xtd/forms/tab_page>
+#include <xtd/startup>
 
 using namespace xtd;
 using namespace xtd::drawing;
