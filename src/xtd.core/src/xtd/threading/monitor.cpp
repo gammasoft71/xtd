@@ -1,4 +1,3 @@
-#include "../../../include/xtd/threading/interlocked.h"
 #include "../../../include/xtd/threading/monitor.h"
 #include "../../../include/xtd/threading/mutex.h"
 #include "../../../include/xtd/threading/synchronization_lock_exception.h"
@@ -10,6 +9,7 @@
 #include <xtd/native/condition_variable.h>
 #include <xtd/native/critical_section.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
+#include <atomic>
 #include <mutex>
 #include <optional>
 
@@ -79,7 +79,7 @@ private:
 
 struct monitor::item {
   monitor::critical_section critical_section;
-  int32 used_count {0};
+  std::shared_ptr<std::atomic<int32>> used_count = std::make_shared<std::atomic<int32>>(0);
   std::optional<ustring> name;
   thread_local_object<intptr> thread_id {[] {return thread::invalid_thread_id;}};
   monitor::condition_variable condition_variable;
@@ -109,7 +109,7 @@ void monitor::exit_ptr(object_ptr obj) {
   
   item saved;
   item* monitor_data = &get_static_data().monitor_items[obj.first];
-  if (interlocked::decrement(monitor_data->used_count) == 0) {
+  if (--(*monitor_data->used_count) == 0) {
     saved = get_static_data().monitor_items[obj.first];
     if (obj.second) delete reinterpret_cast<const ustring*>(obj.first);
     get_static_data().monitor_items.erase(obj.first);
@@ -175,7 +175,7 @@ bool monitor::try_enter_ptr(object_ptr obj, int32 milliseconds_timeout, bool& lo
     get_static_data().monitor_items.insert({obj.first, i});
   }
   item* monitor_data = &get_static_data().monitor_items[obj.first];
-  interlocked::increment(monitor_data->used_count);
+  ++(*monitor_data->used_count);
   get_static_data().monitor_items_critical_section.leave();
   lock_taken = monitor_data->critical_section.try_enter(milliseconds_timeout);
   if (lock_taken) monitor_data->thread_id.value(thread::current_thread().thread_id());
