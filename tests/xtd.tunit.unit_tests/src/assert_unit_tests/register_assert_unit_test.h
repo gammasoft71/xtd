@@ -1,8 +1,8 @@
 #pragma once
 
 #include "unit_tests_event_listener.h"
-#include <xtd/tunit/settings.h>
-#include <xtd/tunit/unit_test.h>
+#include <xtd/tunit/settings>
+#include <xtd/tunit/unit_test>
 #include <iostream>
 #include <functional>
 #include <sstream>

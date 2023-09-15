@@ -1,4 +1,4 @@
-#include <xtd/tunit/test.h>
+#include <xtd/tunit/test>
 #include "assert_unit_tests/assert_unit_tests.h"
 
 auto main()->int {

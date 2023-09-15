@@ -1,7 +1,7 @@
-#include <xtd/tunit/file_assert.h>
-#include <xtd/tunit/test_class_attribute.h>
-#include <xtd/tunit/test_method_attribute.h>
-#include <xtd/typeof.h>
+#include <xtd/tunit/file_assert>
+#include <xtd/tunit/test_class_attribute>
+#include <xtd/tunit/test_method_attribute>
+#include <xtd/typeof>
 #include "../../../assert_unit_tests/assert_unit_tests.h"
 
 namespace xtd::tunit::tests {
