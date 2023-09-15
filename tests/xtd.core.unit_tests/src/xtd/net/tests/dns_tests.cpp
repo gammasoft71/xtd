@@ -1,9 +1,9 @@
-#include <xtd/net/dns.h>
-#include <xtd/tunit/assert.h>
-#include <xtd/tunit/collection_assert.h>
-#include <xtd/tunit/string_assert.h>
-#include <xtd/tunit/test_class_attribute.h>
-#include <xtd/tunit/test_method_attribute.h>
+#include <xtd/net/dns>
+#include <xtd/tunit/assert>
+#include <xtd/tunit/collection_assert>
+#include <xtd/tunit/string_assert>
+#include <xtd/tunit/test_class_attribute>
+#include <xtd/tunit/test_method_attribute>
 
 using namespace std;
 using namespace xtd;

@@ -1,8 +1,8 @@
-#include <xtd/net/socket_address.h>
-#include <xtd/index_out_of_range_exception.h>
-#include <xtd/tunit/assert.h>
-#include <xtd/tunit/test_class_attribute.h>
-#include <xtd/tunit/test_method_attribute.h>
+#include <xtd/net/socket_address>
+#include <xtd/index_out_of_range_exception>
+#include <xtd/tunit/assert>
+#include <xtd/tunit/test_class_attribute>
+#include <xtd/tunit/test_method_attribute>
 
 using namespace xtd;
 using namespace xtd::net;
