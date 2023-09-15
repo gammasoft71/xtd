@@ -13,6 +13,7 @@ using namespace xtd::threading;
 struct spin_lock::data {
   bool enable_thread_owner_tracking = false;
   std::atomic_flag flag = ATOMIC_FLAG_INIT;
+  bool is_held = false;
   intptr thread_id = thread::invalid_thread_id;
 };
 
@@ -25,7 +26,7 @@ spin_lock::spin_lock(bool enable_thread_owner_tracking) : data_(std::make_shared
 }
 
 bool spin_lock::is_held() const noexcept {
-  return data_->flag.test();
+  return data_->is_held;
 }
 
 bool spin_lock::is_held_by_current_thread() const noexcept {
@@ -49,6 +50,7 @@ void spin_lock::exit(bool use_memory_barrier) {
   if (use_memory_barrier) std::atomic_thread_fence(std::memory_order_acquire);
   if (data_->enable_thread_owner_tracking) data_->thread_id = thread::invalid_thread_id;
   data_->flag.clear(std::memory_order_release);
+  data_->is_held = false;
 }
 
 void spin_lock::try_enter(bool& lock_taken) {
@@ -68,5 +70,6 @@ void spin_lock::try_enter(int32 milliseconds_timeout, bool& lock_taken) {
     thread::yield();
   }
   if (data_->enable_thread_owner_tracking) data_->thread_id = thread::current_thread().thread_id();
+  data_->is_held = true;
   lock_taken = true;
 }
