@@ -1,8 +1,8 @@
-#include <xtd/system_exception.h>
-#include <xtd/argument_exception.h>
-#include <xtd/tunit/assert.h>
-#include <xtd/tunit/test_class_attribute.h>
-#include <xtd/tunit/test_method_attribute.h>
+#include <xtd/system_exception>
+#include <xtd/argument_exception>
+#include <xtd/tunit/assert>
+#include <xtd/tunit/test_class_attribute>
+#include <xtd/tunit/test_method_attribute>
 
 using namespace xtd;
 using namespace xtd::tunit;

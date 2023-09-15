@@ -1,7 +1,7 @@
 #include <xtd/iasync_result>
 #include <xtd/invalid_operation_exception>
-#include <xtd/threading/auto_reset_event.h>
-#include <xtd/threading/thread.h>
+#include <xtd/threading/auto_reset_event>
+#include <xtd/threading/thread>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>

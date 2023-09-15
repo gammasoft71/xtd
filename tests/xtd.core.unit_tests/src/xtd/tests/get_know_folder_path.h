@@ -5,13 +5,13 @@
 #if defined(_WIN32)
 #define UNICODE
 #include <shlobj.h>
-#include <windows.h>
+#include <windows.H>
 #undef max
 #undef min
-#include <xtd/convert_string.h>
-#include <xtd/tunit/assert.h>
-#include <xtd/tunit/test_class_attribute.h>
-#include <xtd/tunit/test_method_attribute.h>
+#include <xtd/convert_string>
+#include <xtd/tunit/assert>
+#include <xtd/tunit/test_class_attribute>
+#include <xtd/tunit/test_method_attribute>
 
 constexpr xtd::int32 __CSIDL_HOME__ = 0x0040;
 
@@ -31,7 +31,7 @@ inline xtd::ustring __get_know_folder_path__(xtd::int32 id) {
   return SHGetFolderPath(nullptr, id, nullptr, SHGFP_TYPE_CURRENT, path.data()) == S_OK ? path.data() : L"";
 }
 #else
-#include <xtd/ustring.h>
+#include <xtd/ustring>
 
 inline xtd::ustring __get_know_folder_path__(xtd::int32 id) {
   return "";

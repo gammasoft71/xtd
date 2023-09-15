@@ -1,11 +1,11 @@
 #include <cfloat>
 #include <cmath>
-#include <xtd/bit_converter.h>
-#include <xtd/argument_out_of_range_exception.h>
-#include <xtd/using.h>
+#include <xtd/bit_converter>
+#include <xtd/argument_out_of_range_exception>
+#include <xtd/using>
 #include "bytes_assert.h"
-#include <xtd/tunit/test_class_attribute.h>
-#include <xtd/tunit/test_method_attribute.h>
+#include <xtd/tunit/test_class_attribute>
+#include <xtd/tunit/test_method_attribute>
 
 using namespace std;
 using namespace xtd;
