@@ -42,7 +42,14 @@ namespace xtd {
         func<value_t> value_factory;
         std::map<intptr, value_t> values;
       };
-      
+
+      struct lock_guard_mutex {
+        lock_guard_mutex(mutex& mutex) : mutex_(mutex) {mutex_.lock();}
+        ~lock_guard_mutex() {mutex_.unlock();}
+      private:
+        mutex& mutex_;
+      };
+
     public:
       /// @name Constructors
       
@@ -129,13 +136,6 @@ namespace xtd {
 
     private:
       mutable std::shared_ptr<data> data_ = std::make_shared<data>();
-      class lock_guard_mutex {
-      public:
-        lock_guard_mutex(mutex& mutex) : mutex_(mutex) {mutex_.lock();}
-        ~lock_guard_mutex() {mutex_.unlock();}
-      private:
-        mutex& mutex_;
-      };
     };
   }
 }
