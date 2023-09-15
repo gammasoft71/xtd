@@ -1,10 +1,10 @@
 #pragma once
 #include <map>
-#include <xtd/argument_exception.h>
-#include <xtd/bit_converter.h>
-#include <xtd/action.h>
-#include <xtd/console.h>
-#include <xtd/diagnostics/process.h>
+#include <xtd/argument_exception>
+#include <xtd/bit_converter>
+#include <xtd/action>
+#include <xtd/console>
+#include <xtd/diagnostics/process>
 
 #include "blank_solution_project.h"
 #include "c_console_project.h"

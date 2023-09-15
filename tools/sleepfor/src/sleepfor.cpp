@@ -1,9 +1,9 @@
-#include <xtd/console.h>
-#include <xtd/environment.h>
-#include <xtd/startup.h>
-#include <xtd/ustring.h>
+#include <xtd/console>
+#include <xtd/environment>
+#include <xtd/startup>
+#include <xtd/ustring>
 #include <xtd/chrono>
-#include <xtd/threading/thread.h>
+#include <xtd/threading/thread>
 
 using namespace std;
 using namespace std::chrono;

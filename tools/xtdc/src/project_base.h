@@ -1,7 +1,7 @@
 #pragma once
-#include <xtd/io/path.h>
-#include <xtd/environment.h>
-#include <xtd/ustring.h>
+#include <xtd/io/path>
+#include <xtd/environment>
+#include <xtd/ustring>
 
 namespace xtdc_command {
   class project_base static_ {

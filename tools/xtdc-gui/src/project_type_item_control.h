@@ -2,9 +2,9 @@
 /// @brief Contains project_type_item_control class.
 #pragma once
 #include "project_type_item.h"
-#include <xtd/forms/label.h>
-#include <xtd/forms/picture_box.h>
-#include <xtd/forms/user_control.h>
+#include <xtd/forms/label>
+#include <xtd/forms/picture_box>
+#include <xtd/forms/user_control>
 
 namespace xtdc_gui {
   /// @brief Represents the project_type_item_control control

@@ -65,7 +65,7 @@ namespace xtdc_command {
       std::vector<xtd::ustring> lines {
         "/// @file",
         "/// @brief Contains Window1 class.",
-        "#include <gtkmm.h>",
+        "#include <gtkmm>",
         "",
         xtd::ustring::format("namespace {} {{", name),
         "  /// @brief Represent the main window",

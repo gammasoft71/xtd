@@ -1,6 +1,6 @@
 #include "new_project.h"
 //#include "project_management.h"
-#include <xtd/startup.h>
+#include <xtd/startup>
 
 using namespace std;
 using namespace xtd;

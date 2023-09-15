@@ -3,7 +3,7 @@
 #include "project_management.h"
 #include "project_sdk.h"
 #include "project_type.h"
-#include <xtd/console.h>
+#include <xtd/console>
 #include <vector>
 
 namespace xtdc_command {

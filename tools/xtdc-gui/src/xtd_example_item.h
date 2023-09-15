@@ -2,12 +2,12 @@
 /// @brief Contains main_form class.
 #pragma once
 #include <string>
-#include <xtd/drawing/image.h>
-#include <xtd/forms/application.h>
-#include <xtd/forms/application.h>
-#include <xtd/io/directory.h>
-#include <xtd/io/file.h>
-#include <xtd/io/path.h>
+#include <xtd/drawing/image>
+#include <xtd/forms/application>
+#include <xtd/forms/application>
+#include <xtd/io/directory>
+#include <xtd/io/file>
+#include <xtd/io/path>
 //#include "../resources/noimage.xpm"
 
 namespace xtdc_gui {

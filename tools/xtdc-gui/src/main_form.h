@@ -12,24 +12,24 @@
 #include <limits>
 #include <memory>
 #include <vector>
-#include <xtd/forms/background_worker.h>
-#include <xtd/forms/button.h>
-#include <xtd/forms/check_box.h>
-#include <xtd/forms/choice.h>
-#include <xtd/forms/form.h>
-#include <xtd/forms/label.h>
-#include <xtd/forms/link_label.h>
-#include <xtd/forms/list_box.h>
-#include <xtd/forms/main_menu.h>
-#include <xtd/forms/menu_images.h>
-#include <xtd/forms/menu_item.h>
-#include <xtd/forms/panel.h>
-#include <xtd/forms/picture_box.h>
-#include <xtd/forms/progress_dialog.h>
-#include <xtd/forms/system_texts.h>
-#include <xtd/forms/tab_control.h>
-#include <xtd/forms/tab_page.h>
-#include <xtd/forms/text_box.h>
+#include <xtd/forms/background_worker>
+#include <xtd/forms/button>
+#include <xtd/forms/check_box>
+#include <xtd/forms/choice>
+#include <xtd/forms/form>
+#include <xtd/forms/label>
+#include <xtd/forms/link_label>
+#include <xtd/forms/list_box>
+#include <xtd/forms/main_menu>
+#include <xtd/forms/menu_images>
+#include <xtd/forms/menu_item>
+#include <xtd/forms/panel>
+#include <xtd/forms/picture_box>
+#include <xtd/forms/progress_dialog>
+#include <xtd/forms/system_texts>
+#include <xtd/forms/tab_control>
+#include <xtd/forms/tab_page>
+#include <xtd/forms/text_box>
 
 namespace xtdc_gui {
   /// @brief Represents the main form

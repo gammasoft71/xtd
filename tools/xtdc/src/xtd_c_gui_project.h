@@ -73,7 +73,7 @@ namespace xtdc_command {
     
     void create_source(const xtd::ustring& name, const xtd::ustring& path) const {
       std::vector<xtd::ustring> lines {
-        "#include <xtd_c/xtd_c.h>",
+        "#include <xtd_c/xtd_c>",
         "",
         "auto main()->int {",
         "  xtd_forms_control* form1 = xtd_forms_form_create();",

@@ -64,7 +64,7 @@ namespace xtdc_command {
         "/// @file",
         "/// @brief Contains Frame1 class.",
         "#pragma once",
-        "#include <wx/frame.h>",
+        "#include <wx/frame>",
         "",
         xtd::ustring::format("namespace {} {{", name),
         "  /// @brief Represent the main window",
@@ -95,7 +95,7 @@ namespace xtdc_command {
     void create_main(const xtd::ustring& name, const xtd::ustring& path) const {
       std::vector<xtd::ustring> lines {
         "#include \"Frame1.h\"",
-        "#include <wx/app.h>",
+        "#include <wx/app>",
         "",
         xtd::ustring::format("namespace {} {{", name),
         "  // Represent the application",

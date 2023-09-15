@@ -75,7 +75,7 @@ namespace xtdc_command {
     
     void create_header(const xtd::ustring& name, const xtd::ustring& path) const {
       std::vector<xtd::ustring> lines {
-        "#import <Foundation/Foundation.h>",
+        "#import <Foundation/Foundation>",
         "",
         "@interface Class1 : NSObject",
         "",

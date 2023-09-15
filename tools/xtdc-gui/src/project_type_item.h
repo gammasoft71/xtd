@@ -2,8 +2,8 @@
 /// @brief Contains main_form class.
 #pragma once
 #include <string>
-#include <xtd/iequatable.h>
-#include <xtd/drawing/image.h>
+#include <xtd/iequatable>
+#include <xtd/drawing/image>
 #include "project_language.h"
 #include "project_platform.h"
 #include "project_sdk.h"

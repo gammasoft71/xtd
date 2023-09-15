@@ -72,7 +72,7 @@ namespace xtdc_command {
     
     void create_source(const xtd::ustring& name, const xtd::ustring& path) const {
       std::vector<xtd::ustring> lines {
-        "#include <stdio.h>",
+        "#include <stdio>",
         "",
         "/* The main entry point for the application. */",
         "auto main(int argc, char* argv[])->int {",
