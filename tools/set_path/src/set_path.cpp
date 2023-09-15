@@ -1,12 +1,12 @@
-#include <xtd/io/path.h>
-#include <xtd/console.h>
-#include <xtd/environment.h>
-#include <xtd/startup.h>
-#include <xtd/ustring.h>
+#include <xtd/io/path>
+#include <xtd/console>
+#include <xtd/environment>
+#include <xtd/startup>
+#include <xtd/ustring>
 #include <xtd/chrono>
 #if defined(_WIN32)
 #define UNICODE
-#include <Windows.h>
+#include <Windows>
 #endif
 
 using namespace std;

@@ -1,12 +1,12 @@
 #pragma once
 #include <map>
-#include <xtd/bit_converter.h>
-#include <xtd/environment.h>
-#include <xtd/object.h>
-#include <xtd/ustring.h>
-#include <xtd/io/directory.h>
-#include <xtd/io/file.h>
-#include <xtd/io/path.h>
+#include <xtd/bit_converter>
+#include <xtd/environment>
+#include <xtd/object>
+#include <xtd/ustring>
+#include <xtd/io/directory>
+#include <xtd/io/file>
+#include <xtd/io/path>
 
 namespace xtdc_command {
   class base_project : public xtd::object {

@@ -66,7 +66,7 @@ namespace xtdc_command {
     
     void create_source(const xtd::ustring& name, const xtd::ustring& path) const {
       std::vector<xtd::ustring> lines {
-        "#include <xtd_c/console.h>",
+        "#include <xtd_c/console>",
         "",
         "auto main()->int {",
         "  xtd_console_write_line(\"Hello, World!\");",

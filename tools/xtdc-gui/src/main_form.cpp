@@ -1,17 +1,17 @@
 #include "main_form.h"
 #include <ctype.h>
 #include <list>
-#include <xtd/environment.h>
-#include <xtd/system_exception.h>
-#include <xtd/diagnostics/debug.h>
-#include <xtd/diagnostics/process.h>
-#include <xtd/drawing/system_icons.h>
-#include <xtd/forms/application.h>
-#include <xtd/forms/folder_browser_dialog.h>
-#include <xtd/forms/images.h>
-#include <xtd/forms/message_box.h>
-#include <xtd/io/directory.h>
-#include <xtd/io/path.h>
+#include <xtd/environment>
+#include <xtd/system_exception>
+#include <xtd/diagnostics/debug>
+#include <xtd/diagnostics/process>
+#include <xtd/drawing/system_icons>
+#include <xtd/forms/application>
+#include <xtd/forms/folder_browser_dialog>
+#include <xtd/forms/images>
+#include <xtd/forms/message_box>
+#include <xtd/io/directory>
+#include <xtd/io/path>
 
 using namespace std;
 using namespace xtd;

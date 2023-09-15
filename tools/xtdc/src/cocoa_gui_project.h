@@ -63,7 +63,7 @@ namespace xtdc_command {
       std::vector<xtd::ustring> lines {
         "/// @file",
         "/// @brief Contains Window1 class.",
-        "#import <Cocoa/Cocoa.h>",
+        "#import <Cocoa/Cocoa>",
         "",
         "/// @brief Represents the main NSWindow",
         "@interface Window1 : NSWindow {",

@@ -1,16 +1,16 @@
 /// @file
 /// @brief Contains main_form class.
 #pragma once
-#include <xtd/overload.h>
-#include <xtd/forms/button.h>
-#include <xtd/forms/check_box.h>
-#include <xtd/forms/control.h>
-#include <xtd/forms/form.h>
-#include <xtd/forms/main_menu.h>
-#include <xtd/forms/menu_images.h>
-#include <xtd/forms/menu_item.h>
-#include <xtd/forms/panel.h>
-#include <xtd/forms/system_texts.h>
+#include <xtd/overload>
+#include <xtd/forms/button>
+#include <xtd/forms/check_box>
+#include <xtd/forms/control>
+#include <xtd/forms/form>
+#include <xtd/forms/main_menu>
+#include <xtd/forms/menu_images>
+#include <xtd/forms/menu_item>
+#include <xtd/forms/panel>
+#include <xtd/forms/system_texts>
 
 /// @brief Represents the namespace that contains application objects.
 namespace keycodes {

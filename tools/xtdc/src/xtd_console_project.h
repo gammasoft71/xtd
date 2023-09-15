@@ -88,7 +88,7 @@ namespace xtdc_command {
         "/// @file",
         "/// @brief Contains program class.",
         "#pragma once",
-        "#include <xtd/ustring.h>",
+        "#include <xtd/ustring>",
         "#include <vector>",
         "",
         "/// @brief Represents the namespace that contains application objects.",
@@ -108,7 +108,7 @@ namespace xtdc_command {
     void create_xtd_console_source(const xtd::ustring& name, const xtd::ustring& path) const {
       std::vector<xtd::ustring> lines {
         "#include \"program.h\"",
-        "#include <xtd/console.h>",
+        "#include <xtd/console>",
         "",
         "using namespace std;",
         "using namespace xtd;",

@@ -1,8 +1,8 @@
 /// @file
 /// @brief Contains key_press_control class.
 #pragma once
-#include <xtd/forms/label.h>
-#include <xtd/forms/user_control.h>
+#include <xtd/forms/label>
+#include <xtd/forms/user_control>
 
 /// @brief Represents the namespace that contains application objects.
 namespace keycodes {

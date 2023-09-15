@@ -2,9 +2,9 @@
 /// @brief Contains project_type_item_control class.
 #pragma once
 #include <limits>
-#include <xtd/as.h>
-#include <xtd/drawing/bitmap.h>
-#include <xtd/forms/application.h>
+#include <xtd/as>
+#include <xtd/drawing/bitmap>
+#include <xtd/forms/application>
 #include "project_type_item_control.h"
 #include "../resources/catch2.xpm"
 #include "../resources/cocoa.xpm"
