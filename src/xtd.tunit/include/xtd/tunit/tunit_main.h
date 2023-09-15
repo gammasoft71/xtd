@@ -3,17 +3,15 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/startup.h>
+#include <xtd/static.h>
 #include "../tunit_export.h"
 
 /// @cond
-class tunit_export_ __tunit_main final {
-public:
-  __tunit_main() = delete;
+struct tunit_export_ __tunit_main final static_ {
   static int main();
 };
-class tunit_export_ __tunit_main_with_gtest_compatibility final {
-public:
-  __tunit_main_with_gtest_compatibility() = delete;
+
+struct tunit_export_ __tunit_main_with_gtest_compatibility final static_ {
   static int main();
 };
 /// @endcond
