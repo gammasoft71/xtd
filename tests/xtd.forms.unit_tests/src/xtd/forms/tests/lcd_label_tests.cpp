@@ -1,8 +1,8 @@
-#include <xtd/forms/lcd_label.h>
-#include <xtd/forms/form.h>
-#include <xtd/tunit/assert.h>
-#include <xtd/tunit/test_class_attribute.h>
-#include <xtd/tunit/test_method_attribute.h>
+#include <xtd/forms/lcd_label>
+#include <xtd/forms/form>
+#include <xtd/tunit/assert>
+#include <xtd/tunit/test_class_attribute>
+#include <xtd/tunit/test_method_attribute>
 
 using namespace xtd::drawing;
 using namespace xtd::forms;

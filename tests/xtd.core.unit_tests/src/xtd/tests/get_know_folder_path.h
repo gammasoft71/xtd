@@ -5,7 +5,7 @@
 #if defined(_WIN32)
 #define UNICODE
 #include <shlobj.h>
-#include <windows.H>
+#include <Windows.H>
 #undef max
 #undef min
 #include <xtd/convert_string>
