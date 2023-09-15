@@ -42,7 +42,7 @@ int32 cpp_language::month() const noexcept {
 }
 
 xtd::ustring cpp_language::name() const noexcept {
-  static std::map<language_id, xtd::ustring> names {{language_id::cpp_pre98, "C++ Pre 98"}, {language_id::cpp98, "C++ 98"}, {language_id::cpp11, "C++ 11"}, {language_id::cpp14, "C++ 14"}, {language_id::cpp17, "C++ 17"}, {language_id::cpp20, "C++ 20"}, {language_id::cpp23, "C++ 23"}, {language_id::unknown, "<unknown>"}};
+  static auto names = std::map<language_id, xtd::ustring> {{language_id::cpp_pre98, "C++ Pre 98"}, {language_id::cpp98, "C++ 98"}, {language_id::cpp11, "C++ 11"}, {language_id::cpp14, "C++ 14"}, {language_id::cpp17, "C++ 17"}, {language_id::cpp20, "C++ 20"}, {language_id::cpp23, "C++ 23"}, {language_id::unknown, "<unknown>"}};
   if (is_experimental_language()) return ustring::format("Experimental {}", names[experimental_language()]);
   return names[language()];
 }
