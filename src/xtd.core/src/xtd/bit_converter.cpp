@@ -6,7 +6,7 @@ using namespace std;
 using namespace xtd;
 
 int64 bit_converter::double_to_int64_bits(double value) noexcept {
-  int64 result = 0;
+  auto result = 0_s64;
   memcpy(&result, &value, sizeof(value));
   return result;
 }
@@ -83,19 +83,19 @@ vector<xtd::byte> bit_converter::get_bytes(xtd::ulong value) noexcept {
 }
 
 float bit_converter::int32_bits_to_single(int32 value) noexcept {
-  float result = 0;
+  auto result = .0f;
   memcpy(&result, &value, sizeof(value));
   return result;
 }
 
 double bit_converter::int64_bits_to_double(int64 value) noexcept {
-  double result = 0;
+  auto result = .0;
   memcpy(&result, &value, sizeof(value));
   return result;
 }
 
 int32 bit_converter::single_to_int32_bits(float value) noexcept {
-  int32 result = 0;
+  auto result = 0_s32;
   memcpy(&result, &value, sizeof(value));
   return result;
 }
@@ -154,7 +154,7 @@ ustring bit_converter::to_string(const vector<xtd::byte>& value, size_t start_in
   if (start_index + length > value.size()) throw argument_out_of_range_exception {csf_};
   
   ustring str;
-  for (size_t index = start_index; index < start_index + length; index++) {
+  for (auto index = start_index; index < start_index + length; ++index) {
     str += ustring::format("{:X2}", value[index]);
     str += index < (start_index + length - 1) ? "-" : "";
   }
