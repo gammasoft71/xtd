@@ -1,11 +1,11 @@
-#include <xtd/forms/application.h>
-#include <xtd/forms/button_images.h>
-#include <xtd/forms/choice.h>
-#include <xtd/forms/form.h>
-#include <xtd/forms/label.h>
-#include <xtd/forms/tab_control.h>
-#include <xtd/forms/tab_page.h>
-#include <xtd/startup.h>
+#include <xtd/forms/application>
+#include <xtd/forms/button_images>
+#include <xtd/forms/choice>
+#include <xtd/forms/form>
+#include <xtd/forms/label>
+#include <xtd/forms/tab_control>
+#include <xtd/forms/tab_page>
+#include <xtd/startup>
 
 using namespace std;
 using namespace xtd;
