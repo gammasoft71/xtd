@@ -1,5 +1,7 @@
-#include <xtd/threading/timeout.h>
-#include <xtd/xtd.tunit>
+#include <xtd/threading/timeout>
+#include <xtd/tunit/assert>
+#include <xtd/tunit/string_assert>
+#include <xtd/tunit/test_class_attribute>
 
 using namespace xtd::threading;
 using namespace xtd::tunit;

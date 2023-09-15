@@ -1,5 +1,7 @@
-#include <xtd/threading/event_reset_mode.h>
-#include <xtd/xtd.tunit>
+#include <xtd/threading/event_reset_mode>
+#include <xtd/tunit/assert>
+#include <xtd/tunit/test_class_attribute>
+#include <xtd/tunit/test_method_attribute>
 
 using namespace xtd::threading;
 using namespace xtd::tunit;

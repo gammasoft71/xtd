@@ -1,7 +1,12 @@
-#include <xtd/threading/thread.h>
-#include <xtd/threading/interlocked.h>
-#include <xtd/diagnostics/stopwatch.h>
-#include <xtd/xtd.tunit>
+#include <xtd/threading/thread>
+#include <xtd/threading/thread_interrupted_exception>
+#include <xtd/threading/thread_state_exception>
+#include <xtd/threading/interlocked>
+#include <xtd/diagnostics/stopwatch>
+#include <xtd/tunit/assert>
+#include <xtd/tunit/string_assert>
+#include <xtd/tunit/test_class_attribute>
+#include <xtd/diagnostics/debugger>
 #include <thread>
 
 using namespace xtd::threading;
