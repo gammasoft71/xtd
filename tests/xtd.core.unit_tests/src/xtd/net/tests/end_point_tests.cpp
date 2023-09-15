@@ -1,8 +1,8 @@
-#include <xtd/net/end_point.h>
-#include <xtd/not_implemented_exception.h>
-#include <xtd/tunit/assert.h>
-#include <xtd/tunit/test_class_attribute.h>
-#include <xtd/tunit/test_method_attribute.h>
+#include <xtd/net/end_point>
+#include <xtd/not_implemented_exception>
+#include <xtd/tunit/assert>
+#include <xtd/tunit/test_class_attribute>
+#include <xtd/tunit/test_method_attribute>
 
 using namespace xtd;
 using namespace xtd::net;
