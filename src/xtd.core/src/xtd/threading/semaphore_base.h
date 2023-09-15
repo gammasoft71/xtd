@@ -1,10 +1,9 @@
 #pragma once
 #include "../../../include/xtd/threading/semaphore.h"
+#include "../../../include/xtd/abstract.h"
 
-class xtd::threading::semaphore::semaphore_base {
+class xtd::threading::semaphore::semaphore_base abstract_ {
 public:
-  virtual ~semaphore_base() = default;
-  
   virtual intptr handle() const noexcept = 0;
   virtual void handle(intptr value) = 0;
   virtual bool create(int32 initial_count, int32 maximum_count) = 0;

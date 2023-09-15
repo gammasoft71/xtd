@@ -1,10 +1,9 @@
 #pragma once
 #include "../../../include/xtd/threading/event_wait_handle.h"
+#include "../../../include/xtd/abstract.h"
 
-class xtd::threading::event_wait_handle::event_wait_handle_base {
+class xtd::threading::event_wait_handle::event_wait_handle_base abstract_ {
 public:
-  virtual ~event_wait_handle_base() = default;
-  
   virtual intptr handle() const noexcept = 0;
   virtual void handle(intptr value) = 0;
   virtual bool create(bool initial_state, bool manual_reset) = 0;
