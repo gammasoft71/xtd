@@ -2,7 +2,7 @@
 /// @brief Contains xtd::collections::vector_list typedef.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../any.h"
+#include "../any"
 #include <vector>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
