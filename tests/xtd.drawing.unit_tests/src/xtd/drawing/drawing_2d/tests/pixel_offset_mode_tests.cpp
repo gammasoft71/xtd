@@ -1,7 +1,7 @@
-#include <xtd/drawing/drawing_2d/pixel_offset_mode.h>
-#include <xtd/tunit/assert.h>
-#include <xtd/tunit/test_class_attribute.h>
-#include <xtd/tunit/test_method_attribute.h>
+#include <xtd/drawing/drawing_2d/pixel_offset_mode>
+#include <xtd/tunit/assert>
+#include <xtd/tunit/test_class_attribute>
+#include <xtd/tunit/test_method_attribute>
 
 using namespace xtd::drawing::drawing_2d;
 using namespace xtd::tunit;

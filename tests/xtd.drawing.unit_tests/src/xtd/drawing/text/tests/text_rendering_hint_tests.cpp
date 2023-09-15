@@ -1,7 +1,7 @@
-#include <xtd/drawing/text/text_rendering_hint.h>
-#include <xtd/tunit/assert.h>
-#include <xtd/tunit/test_class_attribute.h>
-#include <xtd/tunit/test_method_attribute.h>
+#include <xtd/drawing/text/text_rendering_hint>
+#include <xtd/tunit/assert>
+#include <xtd/tunit/test_class_attribute>
+#include <xtd/tunit/test_method_attribute>
 
 using namespace xtd::drawing::text;
 using namespace xtd::tunit;
