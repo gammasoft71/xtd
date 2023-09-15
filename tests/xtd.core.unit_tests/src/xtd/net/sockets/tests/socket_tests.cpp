@@ -1,11 +1,11 @@
-#include <xtd/net/sockets/socket.h>
-#include <xtd/net/sockets/socket_exception.h>
-#include <xtd/net/ip_end_point.h>
-#include <xtd/object_closed_exception.h>
-#include <xtd/tunit/assert.h>
-#include <xtd/tunit/assume.h>
-#include <xtd/tunit/test_class_attribute.h>
-#include <xtd/tunit/test_method_attribute.h>
+#include <xtd/net/sockets/socket>
+#include <xtd/net/sockets/socket_exception>
+#include <xtd/net/ip_end_point>
+#include <xtd/object_closed_exception>
+#include <xtd/tunit/assert>
+#include <xtd/tunit/assume>
+#include <xtd/tunit/test_class_attribute>
+#include <xtd/tunit/test_method_attribute>
 
 using namespace std;
 using namespace xtd;

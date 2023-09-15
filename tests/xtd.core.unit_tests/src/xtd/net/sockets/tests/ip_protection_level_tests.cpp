@@ -1,7 +1,7 @@
-#include <xtd/net/sockets/ip_protection_level.h>
-#include <xtd/tunit/assert.h>
-#include <xtd/tunit/test_class_attribute.h>
-#include <xtd/tunit/test_method_attribute.h>
+#include <xtd/net/sockets/ip_protection_level>
+#include <xtd/tunit/assert>
+#include <xtd/tunit/test_class_attribute>
+#include <xtd/tunit/test_method_attribute>
 
 using namespace xtd::net::sockets;
 using namespace xtd::tunit;
