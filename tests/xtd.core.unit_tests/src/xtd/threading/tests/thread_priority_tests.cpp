@@ -1,5 +1,7 @@
-#include <xtd/threading/thread_priority.h>
-#include <xtd/xtd.tunit>
+#include <xtd/threading/thread_priority>
+#include <xtd/tunit/assert>
+#include <xtd/tunit/string_assert>
+#include <xtd/tunit/test_class_attribute>
 
 using namespace xtd::threading;
 using namespace xtd::tunit;

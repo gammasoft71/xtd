@@ -1,6 +1,8 @@
-#include <xtd/threading/lock_guard.h>
+#include <xtd/threading/lock_guard>
 #include <xtd/threading/thread>
-#include <xtd/xtd.tunit>
+#include <xtd/tunit/assert>
+#include <xtd/tunit/test_class_attribute>
+#include <xtd/tunit/test_method_attribute>
 #include <utility>
 
 using namespace xtd::threading;

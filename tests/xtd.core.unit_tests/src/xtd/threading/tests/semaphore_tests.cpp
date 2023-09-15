@@ -1,6 +1,9 @@
-#include <xtd/threading/semaphore.h>
-#include <xtd/threading/thread.h>
-#include <xtd/xtd.tunit>
+#include <xtd/threading/semaphore>
+#include <xtd/threading/thread>
+#include <xtd/tunit/assert>
+#include <xtd/tunit/test_class_attribute>
+#include <xtd/tunit/test_method_attribute>
+#include <xtd/io/io_exception>
 #include <utility>
 
 using namespace xtd::threading;

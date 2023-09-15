@@ -1,5 +1,9 @@
-#include <xtd/threading/event_wait_handle.h>
-#include <xtd/xtd.tunit>
+#include <xtd/threading/event_wait_handle>
+#include <xtd/threading/thread>
+#include <xtd/tunit/assert>
+#include <xtd/tunit/test_class_attribute>
+#include <xtd/tunit/test_method_attribute>
+#include <xtd/io/io_exception>
 #include <utility>
 
 using namespace xtd::threading;

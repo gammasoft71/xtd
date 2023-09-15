@@ -5,8 +5,8 @@
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
-#include <xtd/as.h>
-#include <xtd/object_closed_exception.h>
+#include <xtd/as>
+#include <xtd/object_closed_exception>
 
 using namespace xtd::threading;
 using namespace xtd::tunit;

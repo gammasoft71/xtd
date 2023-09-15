@@ -1,6 +1,10 @@
-#include <xtd/threading/mutex.h>
-#include <xtd/threading/thread.h>
-#include <xtd/xtd.tunit>
+#include <xtd/threading/mutex>
+#include <xtd/threading/thread>
+#include <xtd/tunit/assert>
+#include <xtd/tunit/test_class_attribute>
+#include <xtd/tunit/test_method_attribute>
+#include <xtd/io/io_exception>
+#include <xtd/object_closed_exception>
 #include <utility>
 
 using namespace xtd::threading;
