@@ -6,16 +6,14 @@ using namespace xtd;
 namespace {
   template<typename target_t, typename source_t>
   basic_string<target_t> convert_to_string(const basic_string<source_t>& str) noexcept {
-    basic_string<target_t> out;
-    uint32 codepoint = 0;
+    auto out = basic_string<target_t> {};
+    auto codepoint = 0u;
     for (auto character : str) {
       if (character >= 0xd800 && character <= 0xdbff)
         codepoint = ((character - 0xd800) << 10) + 0x10000;
       else  {
-        if (character >= 0xdc00 && character <= 0xdfff)
-          codepoint |= character - 0xdc00;
-        else
-          codepoint = character;
+        if (character >= 0xdc00 && character <= 0xdfff) codepoint |= character - 0xdc00;
+        else codepoint = character;
           
         if (codepoint <= 0x7f)
           out.append(1, static_cast<target_t>(codepoint));
@@ -242,10 +240,10 @@ u16string convert_string::to_u16string(const string& str) noexcept {
 }
 
 u16string convert_string::to_u16string(const char* str) noexcept {
-  u16string out;
-  int32 codepoint = 0;
+  auto out = u16string {};
+  auto codepoint = 0u;
   while (*str != 0) {
-    unsigned char ch = static_cast<unsigned char>(*str);
+    auto ch = static_cast<unsigned char>(*str);
     if (ch <= 0x7f) codepoint = ch;
     else if (ch <= 0xbf) codepoint = (codepoint << 6) | (ch & 0x3f);
     else if (ch <= 0xdf) codepoint = ch & 0x1f;
@@ -326,10 +324,10 @@ u32string convert_string::to_u32string(const string& str) noexcept {
 }
 
 u32string convert_string::to_u32string(const char* str) noexcept {
-  u32string out;
-  int32 codepoint = 0;
+  auto out = u32string {};
+  auto codepoint = 0u;
   while (*str != 0) {
-    unsigned char ch = static_cast<unsigned char>(*str);
+    auto ch = static_cast<unsigned char>(*str);
     if (ch <= 0x7f) codepoint = ch;
     else if (ch <= 0xbf) codepoint = (codepoint << 6) | (ch & 0x3f);
     else if (ch <= 0xdf) codepoint = ch & 0x1f;
@@ -405,10 +403,10 @@ wstring convert_string::to_wstring(const string& str) noexcept {
 }
 
 wstring convert_string::to_wstring(const char* str) noexcept {
-  std::wstring out;
-  int32 codepoint = 0;
+  auto out = std::wstring {};
+  auto codepoint = 0u;
   while (*str != 0) {
-    unsigned char ch = static_cast<unsigned char>(*str);
+    auto ch = static_cast<unsigned char>(*str);
     if (ch <= 0x7f) codepoint = ch;
     else if (ch <= 0xbf) codepoint = (codepoint << 6) | (ch & 0x3f);
     else if (ch <= 0xdf) codepoint = ch & 0x1f;
