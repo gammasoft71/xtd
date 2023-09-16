@@ -901,7 +901,7 @@ ustring ustring::replace(const ustring& old_string, const ustring& new_string) c
   auto result = *this;
   auto old_size = old_string.length();
   auto new_size = new_string.length();
-  auto index = 0ul;
+  auto index = 0_sz;
   while (true) {
     index = result.find(old_string, index);
     if (index == npos) break;
