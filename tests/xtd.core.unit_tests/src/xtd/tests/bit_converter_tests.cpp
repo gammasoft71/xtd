@@ -366,27 +366,27 @@ namespace xtd::tests {
     }
     
     void test_method_(getBytesUInt64) {
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(0xFFFFFFULL)) {
+      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(0xFFFFFFull)) {
         bytes_assert::are_equal(0xFF, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0x00, 0x00, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(1000000000ULL)) {
+      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(1000000000ull)) {
         bytes_assert::are_equal(0x00, 0xCA, 0x9A, 0x3B, 0x00, 0x00, 0x00, 0x00, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(0x100000000ULL)) {
+      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(0x100000000ull)) {
         bytes_assert::are_equal(0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(0xAAAAAAAAAAAAULL)) {
+      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(0xAAAAAAAAAAAAull)) {
         bytes_assert::are_equal(0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0x00, 0x00, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(1000000000000000000ULL)) {
+      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(1000000000000000000ull)) {
         bytes_assert::are_equal(0x00, 0x00, 0x64, 0xA7, 0xB3, 0xB6, 0xE0, 0x0D, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(10000000000000000000ULL)) {
+      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(10000000000000000000ull)) {
         bytes_assert::are_equal(0x00, 0x00, 0xE8, 0x89, 0x04, 0x23, 0xC7, 0x8A, bytes, csf_);
       }
       
@@ -600,12 +600,12 @@ namespace xtd::tests {
       assert::throws<out_of_range>([] {bit_converter::to_uint64({0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 8);});
       assert::throws<out_of_range>([] {bit_converter::to_uint64({0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 1);});
       
-      assert::are_equal(0xFFFFFFULL, bit_converter::to_uint64({0xFF, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0x00, 0x00}, 0));
-      assert::are_equal(1000000000ULL, bit_converter::to_uint64({0x00, 0xCA, 0x9A, 0x3B, 0x00, 0x00, 0x00, 0x00}, 0));
-      assert::are_equal(0x100000000ULL, bit_converter::to_uint64({0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00}, 0));
-      assert::are_equal(0xAAAAAAAAAAAAULL, bit_converter::to_uint64({0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0x00, 0x00}, 0));
-      assert::are_equal(1000000000000000000ULL, bit_converter::to_uint64({0x00, 0x00, 0x64, 0xA7, 0xB3, 0xB6, 0xE0, 0x0D}, 0));
-      assert::are_equal(10000000000000000000ULL, bit_converter::to_uint64({0x00, 0x00, 0xE8, 0x89, 0x04, 0x23, 0xC7, 0x8A}, 0));
+      assert::are_equal(0xFFFFFFull, bit_converter::to_uint64({0xFF, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0x00, 0x00}, 0));
+      assert::are_equal(1000000000ull, bit_converter::to_uint64({0x00, 0xCA, 0x9A, 0x3B, 0x00, 0x00, 0x00, 0x00}, 0));
+      assert::are_equal(0x100000000ull, bit_converter::to_uint64({0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00}, 0));
+      assert::are_equal(0xAAAAAAAAAAAAull, bit_converter::to_uint64({0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0x00, 0x00}, 0));
+      assert::are_equal(1000000000000000000ull, bit_converter::to_uint64({0x00, 0x00, 0x64, 0xA7, 0xB3, 0xB6, 0xE0, 0x0D}, 0));
+      assert::are_equal(10000000000000000000ull, bit_converter::to_uint64({0x00, 0x00, 0xE8, 0x89, 0x04, 0x23, 0xC7, 0x8A}, 0));
       assert::are_equal(std::numeric_limits<uint64>::lowest(), bit_converter::to_uint64({0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 0));
       assert::are_equal(std::numeric_limits<uint64>::max(), bit_converter::to_uint64({0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF}, 0));
     }
