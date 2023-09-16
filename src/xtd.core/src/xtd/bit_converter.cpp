@@ -95,7 +95,7 @@ double bit_converter::int64_bits_to_double(int64 value) noexcept {
 }
 
 int32 bit_converter::single_to_int32_bits(float value) noexcept {
-  auto result = 0_s32;
+  auto result = 0;
   memcpy(&result, &value, sizeof(value));
   return result;
 }

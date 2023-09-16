@@ -38,7 +38,7 @@ using namespace xtd::io;
 using namespace xtd::threading;
 
 namespace {
-  auto __exit_code__ = 0_s32;
+  auto __exit_code__ = 0;
 }
 
 class environment::signal_catcher {
