@@ -22,7 +22,7 @@ ofstream file::append_text(const ustring& path) {
   if (!exists(path)) create_text(path);
   if ((get_attributes(path) & file_attributes::read_only) == file_attributes::read_only) throw unauthorized_access_exception {csf_};
   
-  ofstream stream(path, ios::out | ios::app);
+  auto stream = ofstream {path, ios::out | ios::app};
   if (!stream.good()) throw io_exception {csf_};
   return stream;
 }
@@ -56,7 +56,7 @@ ofstream file::create(const ustring& path) {
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {csf_};
   if (exists(path) && (get_attributes(path) & file_attributes::read_only) == file_attributes::read_only) throw unauthorized_access_exception {csf_};
   
-  ofstream stream(path, ios::binary | ios::out);
+  auto stream = ofstream {path, ios::binary | ios::out};
   if (!stream.good()) throw io_exception {csf_};
   return stream;
 }
@@ -67,7 +67,7 @@ ofstream file::create_text(const ustring& path) {
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {csf_};
   if (exists(path) && (get_attributes(path) & file_attributes::read_only) == file_attributes::read_only) throw unauthorized_access_exception {csf_};
   
-  ofstream stream(path);
+  auto stream = ofstream {path};
   if (!stream.good()) throw io_exception {csf_};
   return stream;
 }
@@ -82,7 +82,7 @@ file_attributes file::get_attributes(const ustring& path) {
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {csf_};
   if (!(exists(path) || directory::exists(path))) throw file_not_found_exception {csf_};
   
-  int32 attributes = 0;
+  auto attributes = 0;
   if (native::file_system::get_attributes(path, attributes) != 0) throw file_not_found_exception {csf_};
   return static_cast<file_attributes>(attributes);
 }
@@ -93,8 +93,7 @@ date_time file::get_creation_time(const xtd::ustring& path) {
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {csf_};
   if (!(exists(path) || directory::exists(path))) throw file_not_found_exception {csf_};
   
-  time_t creation_time, last_access_time, last_write_time;
-  if (native::file_system::get_file_times(path, creation_time, last_access_time, last_write_time) != 0) throw io_exception {csf_};
+  [[maybe_unused]] auto [creation_time, last_access_time, last_write_time] = get_file_times(path);
   return date_time::from_time_t(creation_time, date_time_kind::local);
 }
 
@@ -104,8 +103,7 @@ date_time file::get_last_access_time(const xtd::ustring& path) {
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {csf_};
   if (!(exists(path) || directory::exists(path))) throw file_not_found_exception {csf_};
   
-  time_t creation_time, last_access_time, last_write_time;
-  if (native::file_system::get_file_times(path, creation_time, last_access_time, last_write_time) != 0) throw io_exception {csf_};
+  [[maybe_unused]] auto [creation_time, last_access_time, last_write_time] = get_file_times(path);
   return date_time::from_time_t(last_access_time, date_time_kind::local);
 }
 
@@ -115,8 +113,7 @@ date_time file::get_last_write_time(const xtd::ustring& path) {
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {csf_};
   if (!(exists(path) || directory::exists(path))) throw file_not_found_exception {csf_};
   
-  time_t creation_time, last_access_time, last_write_time;
-  if (native::file_system::get_file_times(path, creation_time, last_access_time, last_write_time) != 0) throw io_exception {csf_};
+  [[maybe_unused]] auto [creation_time, last_access_time, last_write_time] = get_file_times(path);
   return date_time::from_time_t(last_write_time, date_time_kind::local);
 }
 
@@ -126,7 +123,7 @@ file_permissions file::get_permissions(const ustring& path) {
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {csf_};
   if (!(exists(path) || directory::exists(path))) throw file_not_found_exception {csf_};
   
-  int32 permission = 0;
+  auto permission = 0;
   if (native::file_system::get_permissions(path, permission) != 0) throw file_not_found_exception {csf_};
   return static_cast<file_permissions>(permission);
 }
@@ -161,7 +158,7 @@ fstream file::open(const ustring& path, ios::openmode mode) {
   if ((mode & ios::in) == ios::in && !exists(string(path))) throw file_not_found_exception {csf_};
   if ((mode & ios::in) == ios::in && (get_attributes(path) & file_attributes::read_only) == file_attributes::read_only) throw unauthorized_access_exception {csf_};
   
-  fstream stream(path, mode);
+  auto stream = fstream {path, mode};
   if (!stream.good()) throw io_exception {csf_};
   return stream;
 }
@@ -172,7 +169,7 @@ ifstream file::open_read(const ustring& path) {
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {csf_};
   if (!exists(path)) throw file_not_found_exception {csf_};
   
-  ifstream stream(path, ios::binary | ios::in);
+  auto stream = ifstream {path, ios::binary | ios::in};
   if (!stream.good()) throw io_exception {csf_};
   return stream;
 }
@@ -183,7 +180,7 @@ ifstream file::open_text(const ustring& path) {
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {csf_};
   if (!exists(path)) throw file_not_found_exception {csf_};
   
-  ifstream stream(path);
+  auto stream = ifstream {path};
   if (!stream.good()) throw io_exception {csf_};
   return stream;
 }
@@ -193,7 +190,7 @@ ofstream file::open_write(const ustring& path) {
   if (path.empty() || path.trim(' ').empty()) throw argument_exception {csf_};
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {csf_};
   
-  ofstream stream(path, ios::binary | ios::out);
+  auto stream =  ofstream {path, ios::binary | ios::out};
   if (!stream.good()) throw io_exception {csf_};
   return stream;
 }
@@ -204,7 +201,7 @@ vector<xtd::byte> file::read_all_bytes(const ustring& path) {
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {csf_};
   if (!exists(path)) throw file_not_found_exception {csf_};
   
-  ifstream stream(path, ios::binary);
+  auto stream = ifstream {path, ios::binary};
   if (!stream.good()) throw io_exception {csf_};
   return vector<xtd::byte> {istreambuf_iterator<char>(stream), istreambuf_iterator<char>()};
 }
@@ -215,7 +212,7 @@ vector<ustring> file::read_all_lines(const ustring& path) {
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {csf_};
   if (!exists(path)) throw file_not_found_exception {csf_};
   
-  vector<ustring> contents;
+  auto contents = vector<ustring> {};
   stream_reader sr(path);
   while (!sr.end_of_stream())
     contents.push_back(sr.read_line());
@@ -228,7 +225,7 @@ ustring file::read_all_text(const ustring& path) {
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {csf_};
   if (!exists(path)) throw file_not_found_exception {csf_};
   
-  stream_reader sr(path);
+  auto sr = stream_reader {path};
   return sr.read_to_end();
 }
 
@@ -297,7 +294,13 @@ ofstream file::write_text(const ustring& path) {
   if (path.empty() || path.trim(' ').empty()) throw argument_exception {csf_};
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {csf_};
   
-  ofstream stream(path);
+  auto stream = ofstream {path};
   if (!stream.good()) throw io_exception {csf_};
   return stream;
+}
+
+tuple<time_t, time_t, time_t> file::get_file_times(const ustring& path) {
+  auto creation_time = time_t {}, last_access_time = time_t {}, last_write_time = time_t {};
+  if (native::file_system::get_file_times(path, creation_time, last_access_time, last_write_time) != 0) throw io_exception {csf_};
+  return make_tuple(creation_time, last_access_time, last_write_time);
 }
