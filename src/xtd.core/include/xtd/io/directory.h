@@ -1852,6 +1852,9 @@ namespace xtd {
       /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
       static void set_permissions(const xtd::ustring& path, xtd::io::file_permissions permissions);
       /// @}
+
+    private:
+      static std::tuple<time_t, time_t, time_t> get_file_times(const ustring& path);
     };
   }
 }
