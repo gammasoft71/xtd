@@ -95,7 +95,7 @@ void trace::fail__(const ustring& message) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
     if (!listener->is_thread_safe() && use_global_lock_) {
-      std::lock_guard<std::recursive_mutex> lock {__debug_mutex__};
+      auto lock = std::lock_guard<std::recursive_mutex> {__debug_mutex__};
       listener->fail(message);
     } else
       listener->fail(message);
@@ -108,7 +108,7 @@ void trace::fail__(const ustring& message, const ustring& detail_message) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
     if (!listener->is_thread_safe() && use_global_lock_) {
-      std::lock_guard<std::recursive_mutex> lock {__debug_mutex__};
+      auto lock = std::lock_guard<std::recursive_mutex> {__debug_mutex__};
       listener->fail(message, detail_message);
     } else
       listener->fail(message, detail_message);
@@ -126,7 +126,7 @@ void trace::trace_event_(trace_event_type trace_event_type, const ustring& messa
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
     if (!listener->is_thread_safe() && use_global_lock_) {
-      std::lock_guard<std::recursive_mutex> lock {__debug_mutex__};
+      auto lock = std::lock_guard<std::recursive_mutex> {__debug_mutex__};
       listener->trace_event(trace_event_cache(), source_name_, trace_event_type, 0, message);
     } else
       listener->trace_event(trace_event_cache(), source_name_, trace_event_type, 0, message);
@@ -139,7 +139,7 @@ void trace::write_(const ustring& message) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
     if (!listener->is_thread_safe() && use_global_lock_) {
-      std::lock_guard<std::recursive_mutex> lock {__debug_mutex__};
+      auto lock = std::lock_guard<std::recursive_mutex> {__debug_mutex__};
       listener->write(message);
     } else
       listener->write(message);
@@ -152,7 +152,7 @@ void trace::write_(const ustring& message, const ustring& category) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
     if (!listener->is_thread_safe() && use_global_lock_) {
-      std::lock_guard<std::recursive_mutex> lock {__debug_mutex__};
+      auto lock = std::lock_guard<std::recursive_mutex> {__debug_mutex__};
       listener->write(message, category);
     } else
       listener->write(message, category);
@@ -165,7 +165,7 @@ void trace::write_line_(const ustring& message) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
     if (!listener->is_thread_safe() && use_global_lock_) {
-      std::lock_guard<std::recursive_mutex> lock {__debug_mutex__};
+      auto lock = std::lock_guard<std::recursive_mutex> {__debug_mutex__};
       listener->write_line(message);
     } else
       listener->write_line(message);
@@ -178,7 +178,7 @@ void trace::write_line_(const ustring& message, const ustring& category) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
     if (!listener->is_thread_safe() && use_global_lock_) {
-      std::lock_guard<std::recursive_mutex> lock {__debug_mutex__};
+      auto lock = std::lock_guard<std::recursive_mutex> {__debug_mutex__};
       listener->write_line(message, category);
     } else
       listener->write_line(message, category);
