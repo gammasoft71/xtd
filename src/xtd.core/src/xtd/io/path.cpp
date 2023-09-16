@@ -17,14 +17,12 @@ char path::alt_directory_separator_char() noexcept {
 }
 
 ustring path::change_extension(const ustring& path, const ustring& extension) {
-  ustring path_without_extension = combine(get_directory_name(path), get_file_name_without_extension(path));
-  if (ustring::is_empty(path_without_extension) && !ustring::is_empty(extension)) return extension;
-  if (ustring::is_empty(extension)) return path_without_extension;
-  stringstream ss;
-  ss << path_without_extension;
-  if (path_without_extension[path_without_extension.size() - 1] != '.'  && extension[0] != '.') ss << '.';
-  ss << extension;
-  return ss.str();
+  auto result = combine(get_directory_name(path), get_file_name_without_extension(path));
+  if (ustring::is_empty(result) && !ustring::is_empty(extension)) return extension;
+  if (ustring::is_empty(extension)) return result;
+  if (!extension.starts_with('.')) result += ".";
+  result += extension;
+  return result;
 }
 
 ustring path::combine(const ustring& path1, const ustring& path2) {
@@ -32,15 +30,14 @@ ustring path::combine(const ustring& path1, const ustring& path2) {
   if (ustring::is_empty(path2)) return path1;
   if (ustring::is_empty(path1) || is_path_rooted(path2)) return path2;
   
-  stringstream ss;
-  ss << path1;
-  if (path1[path1.size() - 1] != directory_separator_char()) ss << directory_separator_char();
-  ss << path2;
-  return ss.str();
+  auto result = path1;
+  if (!result.ends_with(directory_separator_char())) result += directory_separator_char();
+  result += path2;
+  return result;
 }
 
 ustring path::combine(const initializer_list<ustring>& paths) noexcept {
-  ustring result;
+  auto result = ustring::empty_string;
   for (auto path : paths)
     result = combine(result, path);
   return result;
@@ -51,28 +48,27 @@ char path::directory_separator_char() noexcept {
 }
 
 ustring path::get_directory_name(const ustring& path) {
-  size_t index = path.last_index_of(directory_separator_char());
+  auto index = path.last_index_of(directory_separator_char());
   if (index == ustring::npos) index = path.last_index_of(alt_directory_separator_char());
   if (index == ustring::npos) return {};
-  ustring directory = path.substring(0, index);
-  return directory;
+  return path.substring(0, index);
 }
 
 ustring path::get_extension(const ustring& path) {
-  ustring file = get_file_name(path);
-  size_t index = file.last_index_of('.');
+  auto file = get_file_name(path);
+  auto index = file.last_index_of('.');
   return index == ustring::npos ? "" : file.substring(index);
 }
 
 ustring path::get_file_name(const ustring& path) {
-  size_t index = path.last_index_of(directory_separator_char());
+  auto index = path.last_index_of(directory_separator_char());
   if (index == ustring::npos) index = path.last_index_of(alt_directory_separator_char());
   return (index == ustring::npos) ? path : path.substring(index + 1);
 }
 
 ustring path::get_file_name_without_extension(const ustring& path) {
-  ustring file = get_file_name(path);
-  size_t index = file.last_index_of('.');
+  auto file = get_file_name(path);
+  auto index = file.last_index_of('.');
   return (index == ustring::npos) ? file : file.substring(0, index);
 }
 
@@ -89,40 +85,39 @@ ustring path::get_path_root(const ustring& path) {
 }
 
 ustring path::get_random_file_name() {
-  static ustring valid_chars = {'1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
-  xtd::random rand;
-  ustring random_file_name;
+  return get_random_file_name(8, 3);
+}
+
+xtd::ustring path::get_random_file_name(size_t name_length) {
+  return get_random_file_name(name_length, 0);
+}
+
+xtd::ustring path::get_random_file_name(size_t name_length, size_t extension_length) {
+  static auto valid_chars = ustring {'0', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
+  static auto rand = xtd::random {};
+  auto random_file_name = ustring::empty_string;
   
-  for (size_t i = 0; i < 11; i++) {
+  for (auto index = 0ul; index < name_length; ++index)
     random_file_name += valid_chars[rand.next(0, as<int32>(valid_chars.size() - 1))];
-    if (i == 7)
-      random_file_name += '.';
-  }
+  if (extension_length) random_file_name += '.';
+  for (auto index = 0ul; index < extension_length; ++index)
+    random_file_name += valid_chars[rand.next(0, as<int32>(valid_chars.size() - 1))];
   
   return random_file_name;
 }
 
 ustring path::get_temp_file_name() {
-  static ustring valid_chars = {'1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'a', 'b', 'c', 'd', 'e', 'f'};
-  ustring temp_file_name;
-  do {
-    static xtd::random rand;
-    temp_file_name = "tmp";
-    
-    for (size_t i = 0; i < 8; i++) {
-      if (i == 0)
-        temp_file_name += valid_chars[rand.next(0, 9)];
-      else
-        temp_file_name += valid_chars[rand.next(0, as<int32>(valid_chars.size() - 1))];
-    }
-    temp_file_name += ".tmp";
-  } while (file::exists(combine(get_temp_path(), temp_file_name)));
-  file::create(combine(get_temp_path(), temp_file_name));
-  return combine(get_temp_path(), temp_file_name);
+  static auto rand = xtd::random {};
+  auto temp_file_name = ustring::empty_string;
+  do
+    temp_file_name = combine(get_temp_path(), ustring::format("tmp{:X4}.tmp", rand.next<uint16>()));
+  while (file::exists(temp_file_name));
+  file::create(temp_file_name);
+  return temp_file_name;
 }
 
 ustring path::get_temp_path() noexcept {
-  ustring temp_path = native::path::get_temp_path();
+  auto temp_path = as<ustring>(native::path::get_temp_path());
   if (temp_path.ends_with(directory_separator_char())) temp_path = temp_path.remove(temp_path.size() - 1);
   return temp_path;
 }
@@ -144,7 +139,7 @@ char path::volume_separator_char() noexcept {
 }
 
 int32 path::__get_index_path_rooted(const ustring& path) {
-  size_t index = path.find(directory_separator_char());
+  auto index = path.find(directory_separator_char());
   return (index == ustring::npos || index == path.size() || (index != 0 && !__is_drive(path.substring(0, index + 1)))) ? -1 : static_cast<int32>(index);
 }
 
