@@ -58,11 +58,11 @@ directory::directory_iterator::value_type directory::directory_iterator::operato
 }
 
 directory::directory_iterator directory::directory_iterator::begin() const {
-  return directory::directory_iterator(data_->iterator_.path(), data_->iterator_.pattern());
+  return directory::directory_iterator {data_->iterator_.path(), data_->iterator_.pattern()};
 }
 
 directory::directory_iterator directory::directory_iterator::end() const {
-  return directory::directory_iterator();
+  return directory::directory_iterator {};
 }
 
 struct directory::file_iterator::data {
@@ -96,11 +96,11 @@ directory::file_iterator::value_type directory::file_iterator::operator *() cons
 }
 
 directory::file_iterator directory::file_iterator::begin() const {
-  return directory::file_iterator(data_->iterator_.path(), data_->iterator_.pattern());
+  return directory::file_iterator {data_->iterator_.path(), data_->iterator_.pattern()};
 }
 
 directory::file_iterator directory::file_iterator::end() const {
-  return directory::file_iterator();
+  return directory::file_iterator {};
 }
 
 bool directory::file_iterator::equals(const directory::file_iterator& other) const noexcept {
@@ -138,11 +138,11 @@ directory::file_system_entry_iterator::value_type directory::file_system_entry_i
 }
 
 directory::file_system_entry_iterator directory::file_system_entry_iterator::begin() const {
-  return directory::file_system_entry_iterator(data_->iterator_.path(), data_->iterator_.pattern());
+  return directory::file_system_entry_iterator {data_->iterator_.path(), data_->iterator_.pattern()};
 }
 
 directory::file_system_entry_iterator directory::file_system_entry_iterator::end() const {
-  return directory::file_system_entry_iterator();
+  return directory::file_system_entry_iterator {};
 }
 
 bool directory::file_system_entry_iterator::equals(const directory::file_system_entry_iterator& other) const noexcept {
