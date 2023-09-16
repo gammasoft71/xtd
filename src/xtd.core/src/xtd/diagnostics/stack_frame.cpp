@@ -100,11 +100,11 @@ ustring stack_frame::to_string() const noexcept {
 }
 
 std::vector<stack_frame> stack_frame::get_stack_frames(const ustring& str, size_t skip_frames, bool need_file_info) noexcept {
-  native::stack_trace::frames call_stack = native::stack_trace::get_frames(2);
-  size_t skip_frames_before_str = 0;
+  auto call_stack = native::stack_trace::get_frames(2);
+  auto skip_frames_before_str = 0ul;
   if (!str.empty()) {
     skip_frames_before_str = call_stack.size();
-    for (size_t index = 0; index < call_stack.size(); ++index) {
+    for (auto index = 0ul; index < call_stack.size(); ++index) {
       auto [file, line, column, function, offset] = call_stack[index];
       if (ustring {function}.starts_with(str)) {
         skip_frames_before_str = index;
@@ -113,9 +113,9 @@ std::vector<stack_frame> stack_frame::get_stack_frames(const ustring& str, size_
     }
   }
   
-  std::vector<stack_frame> stack_frames;
+  auto stack_frames = std::vector<stack_frame> {};
   if (call_stack.size() == 0) return stack_frames;
-  for (size_t index = skip_frames_before_str + skip_frames; index < call_stack.size(); ++index) {
+  for (auto index = skip_frames_before_str + skip_frames; index < call_stack.size(); ++index) {
     auto [file, line, column, function, offset] = call_stack[index];
     auto skip = false;
     for (auto starting_str : {"__startup__::run", "decltype", "std::_", "std::invoke", "void std::_", "long std::_", "xtd::delegate<"})
