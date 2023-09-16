@@ -1,5 +1,6 @@
 #include "../../../include/xtd/diagnostics/boolean_switch.h"
 #include "../../../include/xtd/format_exception.h"
+#include "../../../include/xtd/as.h"
 
 using namespace std;
 using namespace xtd;
@@ -9,7 +10,6 @@ boolean_switch::boolean_switch(const ustring& display_name, const ustring& descr
 }
 
 boolean_switch::boolean_switch(const ustring& display_name, const ustring& description, const ustring& default_switch_value) : switch_base(display_name, description, default_switch_value) {
-
 }
 
 bool boolean_switch::enabled() const {
@@ -18,10 +18,8 @@ bool boolean_switch::enabled() const {
     auto int_value = 0;
     if (try_parse(this->value(), bool_value) == true)
       enabled_ = bool_value;
-    else if (try_parse(this->value(), int_value) == true)
-      enabled_ = int_value != 0;
-    else
-      throw format_exception("Input xtd::ustring was not in a correct format."_t, csf_);
+    else if (try_parse(this->value(), int_value) == true) enabled_ = int_value != 0;
+    else throw format_exception {"Input xtd::ustring was not in a correct format."_t, csf_};
   }
   return enabled_.value();
 }
@@ -35,5 +33,5 @@ void boolean_switch::enabled(bool enabled) {
 
 void boolean_switch::on_value_changed() {
   switch_base::on_value_changed();
-  switch_setting(static_cast<int32>(enabled_.value()));
+  switch_setting(as<int32>(enabled_.value()));
 }
