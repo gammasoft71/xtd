@@ -20,29 +20,29 @@ operating_system::operating_system(xtd::platform_id platform, const xtd::version
 operating_system::operating_system(xtd::platform_id platform, const xtd::version& version, const xtd::ustring& service_pack, const xtd::ustring& desktop_environment, const xtd::ustring& desktop_theme, bool is_64_bit, const xtd::distribution& distribution) : platform_(platform), version_(version), service_pack_(service_pack), desktop_environment_(desktop_environment), desktop_theme_(desktop_theme), is_64_bit_(is_64_bit), distribution_(distribution) {
 }
 
-xtd::ustring operating_system::desktop_environment() const noexcept {
+ustring operating_system::desktop_environment() const noexcept {
   return desktop_environment_;
 }
 
-xtd::ustring operating_system::desktop_theme() const noexcept {
+ustring operating_system::desktop_theme() const noexcept {
   return desktop_theme_;
 }
 
-xtd::distribution operating_system::distribution() const noexcept {
+distribution operating_system::distribution() const noexcept {
   return distribution_;
 }
 
-xtd::ustring operating_system::name() const noexcept {
-  static auto operating_system_names = std::map<xtd::platform_id, xtd::ustring> {{platform_id::win32s, "Microsoft Win32S"}, {platform_id::win32_windows, "Microsoft Windows 95"}, {platform_id::win32_nt, "Microsoft Windows"}, {platform_id::win_ce, "Microsoft Windows CE"}, {platform_id::unix, "Unix"}, {platform_id::xbox, "Xbox"}, {platform_id::macos, "macOS"}, {platform_id::ios, "iOS"}, {platform_id::android, "Android"}, {platform_id::linux, "Linux"}, {platform_id::tvos, "tvOS"}, {platform_id::watchos, "watchOS"}, {platform_id::other, "Other"}, {platform_id::unknown, "<Unknown>"}};
+ustring operating_system::name() const noexcept {
+  static auto operating_system_names = std::map<platform_id, ustring> {{platform_id::win32s, "Microsoft Win32S"}, {platform_id::win32_windows, "Microsoft Windows 95"}, {platform_id::win32_nt, "Microsoft Windows"}, {platform_id::win_ce, "Microsoft Windows CE"}, {platform_id::unix, "Unix"}, {platform_id::xbox, "Xbox"}, {platform_id::macos, "macOS"}, {platform_id::ios, "iOS"}, {platform_id::android, "Android"}, {platform_id::linux, "Linux"}, {platform_id::tvos, "tvOS"}, {platform_id::watchos, "watchOS"}, {platform_id::other, "Other"}, {platform_id::unknown, "<Unknown>"}};
   if (platform_ == xtd::platform_id::win32_windows && (version_.major() > 4 || (version_.major() == 4 && version_.minor() > 0))) return "Microsoft Windows 98";
   return operating_system_names[platform_];
 }
 
-xtd::platform_id operating_system::platform() const noexcept {
+platform_id operating_system::platform() const noexcept {
   return platform_;
 }
 
-xtd::ustring operating_system::service_pack() const noexcept {
+ustring operating_system::service_pack() const noexcept {
   return service_pack_;
 }
 
@@ -50,7 +50,7 @@ const xtd::version& operating_system::version() const noexcept {
   return version_;
 }
 
-xtd::ustring operating_system::version_string() const noexcept {
+ustring operating_system::version_string() const noexcept {
   if (!version_string_.empty()) return version_string_;
   version_string_ = ustring::format("{} {}", name(), version_.to_string(3));
   if (!service_pack_.empty()) version_string_ += ustring::format(" {}", service_pack());
@@ -109,6 +109,6 @@ bool operating_system::is_xbox() const noexcept {
   return platform_ == xtd::platform_id::xbox;
 }
 
-xtd::ustring operating_system::to_string() const noexcept {
+ustring operating_system::to_string() const noexcept {
   return version_string();
 }
