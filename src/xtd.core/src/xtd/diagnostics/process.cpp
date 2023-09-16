@@ -149,7 +149,7 @@ process::~process() {
 
 int32 process::base_priority() const {
   if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception {csf_};
-  static map<process_priority_class, int32> base_priorities {{process_priority_class::idle, 4}, {process_priority_class::below_normal, 6}, {process_priority_class::normal, 8}, {process_priority_class::above_normal, 10}, {process_priority_class::high, 13}, {process_priority_class::real_time, 24}};
+  static auto base_priorities = map<process_priority_class, int32> {{process_priority_class::idle, 4}, {process_priority_class::below_normal, 6}, {process_priority_class::normal, 8}, {process_priority_class::above_normal, 10}, {process_priority_class::high, 13}, {process_priority_class::real_time, 24}};
   return base_priorities[priority_class()];
 }
 
@@ -200,7 +200,7 @@ process_priority_class process::priority_class() const {
 process& process::priority_class(process_priority_class value) {
   if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception {csf_};
   data_->priority_class_ = value;
-  static map<process_priority_class, int32> priorities {{process_priority_class::idle, IDLE_PRIORITY_CLASS}, {process_priority_class::below_normal, BELOW_NORMAL_PRIORITY_CLASS}, {process_priority_class::normal, NORMAL_PRIORITY_CLASS}, {process_priority_class::above_normal, ABOVE_NORMAL_PRIORITY_CLASS}, {process_priority_class::high, HIGH_PRIORITY_CLASS}, {process_priority_class::real_time, REALTIME_PRIORITY_CLASS}};
+  auto priorities = map<process_priority_class, int32> {{process_priority_class::idle, IDLE_PRIORITY_CLASS}, {process_priority_class::below_normal, BELOW_NORMAL_PRIORITY_CLASS}, {process_priority_class::normal, NORMAL_PRIORITY_CLASS}, {process_priority_class::above_normal, ABOVE_NORMAL_PRIORITY_CLASS}, {process_priority_class::high, HIGH_PRIORITY_CLASS}, {process_priority_class::real_time, REALTIME_PRIORITY_CLASS}};
   auto it = priorities.find(value);
   if (it == priorities.end()) throw argument_exception {csf_};
   if (native::process::priority_class(data_->handle_.value(), it->second) == false) throw invalid_operation_exception {csf_};
@@ -271,9 +271,9 @@ bool process::start() {
       process.data_->handle_.reset();
       process.data_->exit_code_.reset();
       process.data_->start_time_ = date_time::now();
-      int32 process_creation_flags = 0;
+      auto process_creation_flags = 0;
       if (process.start_info().create_no_window()) process_creation_flags |= CREATE_NO_WINDOW;
-      int32 process_window_style = 0;
+      auto process_window_style = 0;
       
       if (process.start_info().use_shell_execute())
         process.data_->handle_ = native::process::shell_execute(process.start_info().verb(), process.start_info().file_name(), process.start_info().arguments(), process.start_info().working_directory(), process_window_style);
@@ -286,10 +286,10 @@ bool process::start() {
         process.data_->standard_output_ = std::move(standard_output);
         process.data_->standard_error_ = std::move(standard_error);
       }
-      if (process.data_->handle_ == 0) throw invalid_operation_exception("The system cannot find the file specified"_t, csf_);
+      if (process.data_->handle_ == 0) throw invalid_operation_exception {"The system cannot find the file specified"_t, csf_};
       allow_to_continue = true;
       debug::write_line_if(show_debug_process.enabled(), ustring::format("process::start [handle={}, command_line={}, start_time={:u}.{:D6}, started]", process.data_->handle_, ustring::format("{}{}", process.start_info().file_name(), process.start_info().arguments() == "" ? "" : ustring::format(" {}", process.start_info().arguments())), process.data_->start_time_, (std::chrono::duration_cast<std::chrono::microseconds>(process.data_->start_time_.ticks_duration())).count() % 1000000));
-      int32 exit_code = 0;
+      auto exit_code = 0;
       process.data_->exit_code_ =  native::process::wait(process.data_->handle_.value(), exit_code) ? exit_code : -1;
       process.data_->exit_time_ = date_time::now();
       debug::write_line_if(show_debug_process.enabled(), ustring::format("process::start [handle={}, exit_time={:u}.{:D6}, exit_code={}, exited]", process.data_->handle_, process.data_->exit_time_, std::chrono::duration_cast<std::chrono::microseconds>(process.data_->exit_time_.ticks_duration()).count() % 1000000, process.data_->exit_code_));
@@ -303,7 +303,7 @@ bool process::start() {
   while (!allow_to_continue) this_thread::yield();
   if (data_->exception_pointer_) {
     if (data_->start_info_.use_shell_execute() && data_->start_info_.error_dialog())  message_box_message_(data_->start_info_.file_name());
-    std::exception_ptr exception_pointer = data_->exception_pointer_;
+    auto exception_pointer = data_->exception_pointer_;
     data_->exception_pointer_ = nullptr;
     rethrow_exception(exception_pointer);
   }
@@ -311,18 +311,18 @@ bool process::start() {
 }
 
 process process::start(const process_start_info& start_info) {
-  process process;
+  auto process = diagnostics::process {};
   process.start_info(start_info);
   process.start();
   return process;
 }
 
 process process::start(const ustring& file_name) {
-  return start(process_start_info(file_name));
+  return start(process_start_info {file_name});
 }
 
 process process::start(const ustring& file_name, const ustring& arguments) {
-  return start(process_start_info(file_name, arguments));
+  return start(process_start_info {file_name, arguments});
 }
 
 process& process::wait_for_exit() {
@@ -333,7 +333,7 @@ process& process::wait_for_exit() {
   debug::write_line_if(show_debug_process.enabled(), ustring::format("process::wait_for_exit [handle={}, exit_code={}, ...exit]", data_->handle_, data_->exit_code_));
   if (data_->exception_pointer_) {
     if (data_->start_info_.use_shell_execute() && data_->start_info_.error_dialog())  message_box_message_(data_->start_info_.file_name());
-    std::exception_ptr exception_pointer = data_->exception_pointer_;
+    auto exception_pointer = data_->exception_pointer_;
     data_->exception_pointer_ = nullptr;
     rethrow_exception(exception_pointer);
   }
@@ -351,7 +351,7 @@ process& process::wait_for_exit(int32 milliseconds) {
   debug::write_line_if(show_debug_process.enabled(), ustring::format("process::wait_for_exit [handle={}, exit_code={}, ...exit]", data_->handle_, data_->exit_code_));
   if (data_->exception_pointer_) {
     if (data_->start_info_.use_shell_execute() && data_->start_info_.error_dialog())  message_box_message_(data_->start_info_.file_name());
-    std::exception_ptr exception_pointer = data_->exception_pointer_;
+    auto exception_pointer = data_->exception_pointer_;
     data_->exception_pointer_ = nullptr;
     rethrow_exception(exception_pointer);
   }
