@@ -314,7 +314,7 @@ time_span time_span::negate() const {
 }
 
 time_span time_span::parse(const ustring& value) {
-  time_span result;
+  auto result = time_span {};
   switch (try_parse_internal(value, result)) {
     case parse_format: throw format_exception {csf_};
     case parse_overflow: throw overflow_exception {csf_};
@@ -365,14 +365,14 @@ bool time_span::try_parse(const ustring& value, time_span& result) {
 
 time_span time_span::interval(double value, int scale) {
   if (double_object::is_NaN(value)) throw argument_exception {csf_};
-  double tmp = value * scale;
-  double millis = tmp + (value >= 0 ? 0.5 : -0.5);
+  auto tmp = value * scale;
+  auto millis = tmp + (value >= 0 ? 0.5 : -0.5);
   if ((millis > int64_object::max_value / ticks_per_millisecond) || (millis < int64_object::min_value / ticks_per_millisecond))  throw overflow_exception {csf_};
   return time_span(static_cast<int64>(millis) * ticks_per_millisecond);
 }
 
 ustring time_span::make_string_from_duration(bool constant) const {
-  ustring result;
+  auto result = ustring::empty_string;
   if (ticks() < 0) result += '-';
   if (days()) result += ustring::format("{}.", math::abs(days()));
   result += ustring::format(constant ? "{:d2}:{:d2}:{:d2}" : "{:d}:{:d2}:{:d2}", math::abs(hours()), math::abs(minutes()), math::abs(seconds()));
@@ -385,7 +385,7 @@ int32 time_span::try_parse_internal(const ustring& value, time_span& result) {
 
   if (value.empty()) return parse_format;
 
-  int32 days = 0, hours = 0, minutes = 0, seconds = 0, ticks = 0;
+  auto days = 0, hours = 0, minutes = 0, seconds = 0, ticks = 0;
   auto items = value.split({'-', ':', '.', '\0'}, string_split_options::remove_empty_entries);
   
   if (items.size() == 1ul) {
