@@ -22,8 +22,8 @@ inline std::basic_string<char_t> __make_string_from_duration(std::chrono::durati
   if (std::chrono::duration_cast<std::chrono::days>(value).count())
     result += __sprintf(std::basic_string<char_t> {'%', 'd', '.'}.c_str(), std::chrono::duration_cast<std::chrono::days>(value).count());
   result += __sprintf(constant ? std::basic_string<char_t> {'%', '0', '2', 'd', ':', '%', '0', '2', 'd', ':', '%', '0', '2', 'd'}.c_str() : std::basic_string<char_t> {'%', 'd', ':', '%', '0', '2', 'd', ':', '%', '0', '2', 'd'}.c_str(), std::chrono::duration_cast<std::chrono::hours>(value).count() % 24, std::chrono::duration_cast<std::chrono::minutes>(value).count() % 60, std::chrono::duration_cast<std::chrono::seconds>(value).count() % 60);
-  if (std::chrono::duration_cast<std::chrono::nanoseconds>(value).count() % 1000000000UL)
-    result += __sprintf(std::basic_string<char_t> {':', '%', '0', '9', 'l', 'u'}.c_str(), std::chrono::duration_cast<std::chrono::nanoseconds>(value).count() % 1000000000UL);
+  if (std::chrono::duration_cast<std::chrono::nanoseconds>(value).count() % 1000000000ul)
+    result += __sprintf(std::basic_string<char_t> {':', '%', '0', '9', 'l', 'u'}.c_str(), std::chrono::duration_cast<std::chrono::nanoseconds>(value).count() % 1000000000ul);
     
   return result;
 }
