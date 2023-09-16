@@ -1332,8 +1332,10 @@ namespace xtd::forms::tests {
     }
     
     void test_method_(check_for_illegal_cross_thread_call) {
+      auto previous_value = forms::control::check_for_illegal_cross_thread_calls();
       forms::control::check_for_illegal_cross_thread_calls(false);
       assert::is_false(forms::control::check_for_illegal_cross_thread_calls(), csf_);
+      forms::control::check_for_illegal_cross_thread_calls(previous_value);
     }
     
     void test_method_(begin_invoke_without_parent) {
