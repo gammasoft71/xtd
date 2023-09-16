@@ -65,8 +65,8 @@ ustring stack_trace::to_string() const noexcept {
 }
 
 ustring stack_trace::to_string(size_t skip_frames, const stack_frame& stack_frame) const noexcept {
-  ustring str;
-  for (size_t index = skip_frames; index < frames_.size(); ++index) {
+  auto str = ustring::empty_string;
+  for (auto index = skip_frames; index < frames_.size(); ++index) {
     if (index > skip_frames) str += xtd::environment::new_line();
     str += "   at " + frames_[index].get_method();
     if (index == skip_frames && stack_frame != stack_frame::empty()) str += ustring::format(" {}in {}:line {}", frames_[index].get_offset() != stack_frame::OFFSET_UNKNOWN ? ustring::format("[0x{:X8}] ", frames_[index].get_offset()) : "", stack_frame.get_file_name(), stack_frame.get_file_line_number());
