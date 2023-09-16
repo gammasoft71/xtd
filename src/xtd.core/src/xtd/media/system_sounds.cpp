@@ -6,21 +6,21 @@
 using namespace xtd::media;
 
 system_sound system_sounds::asterisk() {
-  return system_sound(ST_ICONASTERISK);
+  return system_sound {ST_ICONASTERISK};
 }
 
 system_sound system_sounds::beep() {
-  return system_sound(ST_BEEP);
+  return system_sound {ST_BEEP};
 }
 
 system_sound system_sounds::exclamation() {
-  return system_sound(ST_ICONEXCLAMATION);
+  return system_sound {ST_ICONEXCLAMATION};
 }
 
 system_sound system_sounds::hand() {
-  return system_sound(ST_ICONHAND);
+  return system_sound {ST_ICONHAND};
 }
 
 system_sound system_sounds::question() {
-  return system_sound(ST_ICONQUESTION);
+  return system_sound {ST_ICONQUESTION};
 }
