@@ -337,7 +337,7 @@ ustring uri::unescape_data_string(const ustring& value) {
   if (!unescape_needed) return value;
   
   auto ret_value = ustring::empty_string;
-  auto index = 0ul;
+  auto index = 0_sz;
   while (index < value.size()) {
     if (is_hex_encoding(value, index))
       ret_value += ustring::format("{}", hex_unescape(value, index));
