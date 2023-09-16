@@ -1100,7 +1100,7 @@ bool style_sheet::try_parse_color(const xtd::ustring& text, xtd::drawing::color&
 }
 
 bool style_sheet::try_parse_hex_color(const ustring& text, color& result) const noexcept {
-  if (text.starts_with("#") && text.size() == 4U) {
+  if (text.starts_with("#") && text.size() == 4u) {
     xtd::byte r = 0;
     if (xtd::try_parse<xtd::byte>(text.substring(1, 1), r, number_styles::hex_number) == false) return false;
     r += r * 16;
@@ -1113,7 +1113,7 @@ bool style_sheet::try_parse_hex_color(const ustring& text, color& result) const 
     result = color::from_argb(r, g, b);
     return true;
   }
-  if (text.starts_with("#") && text.size() == 5U) {
+  if (text.starts_with("#") && text.size() == 5u) {
     xtd::byte a = 0;
     if (xtd::try_parse<xtd::byte>(text.substring(1, 1), a, number_styles::hex_number) == false) return false;
     a += a * 16;
@@ -1129,13 +1129,13 @@ bool style_sheet::try_parse_hex_color(const ustring& text, color& result) const 
     result = color::from_argb(a, r, g, b);
     return true;
   }
-  if (text.starts_with("#") && text.size() == 7U) {
+  if (text.starts_with("#") && text.size() == 7u) {
     uint32 rgb;
     if (xtd::try_parse<uint32>(text.substring(1), rgb, number_styles::hex_number) == false) return false;
-    result = color::from_argb(rgb + 0xFF000000U);
+    result = color::from_argb(rgb + 0xFF000000u);
     return true;
   }
-  if (text.starts_with("#") && text.size() == 9U) {
+  if (text.starts_with("#") && text.size() == 9u) {
     uint32 argb;
     if (xtd::try_parse<uint32>(text.substring(1), argb, number_styles::hex_number) == false) return false;
     result = color::from_argb(argb);

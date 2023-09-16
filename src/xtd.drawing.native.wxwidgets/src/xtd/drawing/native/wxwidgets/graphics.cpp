@@ -188,7 +188,7 @@ void graphics::draw_beziers(intptr handle, intptr pen, const std::vector<std::pa
   if (!handle) return;
   auto path = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics()->CreatePath();
   path.MoveToPoint(points[0].first, points[0].second);
-  for (auto index  = 1U; index < points.size(); index += 3) {
+  for (auto index  = 1u; index < points.size(); index += 3) {
     path.AddCurveToPoint(points[index].first, points[index].second, points[index + 1].first, points[index + 1].second, points[index + 2].first, points[index + 2].second);
     path.MoveToPoint(points[index + 2].first, points[index + 2].second);
   }
@@ -639,7 +639,7 @@ void graphics::measure_string(intptr handle, const ustring& text, intptr font, f
   if (!handle) return;
   width = 0;
   height = 0;
-  size_t line_index = 0U;
+  size_t line_index = 0u;
   auto strings = text.split({ '\n' });
   for (auto string : strings) {
     wxString text_to_draw = wxDrawString::FormatString(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc(), convert_string::to_wstring(string), max_width, hot_key_prefix, trimming);
@@ -664,7 +664,7 @@ void graphics::measure_string(intptr handle, const ustring& text, intptr font, f
   if (!handle) return;
   width = 0.0f;
   height = 0.0f;
-  size_t line_index = 0U;
+  size_t line_index = 0u;
   auto strings = text.split({'\n'});
   wxString formated_text;
   for (auto string : strings) {

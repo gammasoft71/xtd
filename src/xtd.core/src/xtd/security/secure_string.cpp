@@ -13,7 +13,7 @@ namespace {
     // https://kylewbanks.com/blog/Simple-XOR-Encryption-Decryption-in-Cpp
     auto key = guid.to_string("D");
     vector<xtd::byte> result;
-    for (auto index = 0U; index < length; ++index)
+    for (auto index = 0u; index < length; ++index)
       result.push_back(value[index] != key[index % key.size()] ? value[index] ^ key[index % key.size()] : value[index]);
     return result;
   }

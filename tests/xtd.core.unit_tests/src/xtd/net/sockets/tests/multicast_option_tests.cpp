@@ -36,7 +36,7 @@ namespace xtd::net::sockets::tests {
     void test_method_(constructor_with_group_and_interface_index) {
       multicast_option mo(ip_address(172, 16, 12, 24), 427);
       assert::are_equal("172.16.12.24", mo.group().to_string(), csf_);
-      assert::are_equal(427U, mo.interface_index(), csf_);
+      assert::are_equal(427u, mo.interface_index(), csf_);
       assert::are_equal(ip_address::none, mo.local_address(), csf_);
     }
     
@@ -56,7 +56,7 @@ namespace xtd::net::sockets::tests {
       multicast_option mo;
       mo.interface_index(427);
       assert::are_equal(ip_address::none, mo.group(), csf_);
-      assert::are_equal(427U, mo.interface_index(), csf_);
+      assert::are_equal(427u, mo.interface_index(), csf_);
       assert::are_equal(ip_address::none, mo.local_address(), csf_);
     }
     

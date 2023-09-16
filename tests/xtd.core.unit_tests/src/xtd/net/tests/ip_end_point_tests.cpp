@@ -13,11 +13,11 @@ namespace xtd::net::tests {
   class test_class_(ip_end_point_tests) {
   public:
     void test_method_(min_port) {
-      assert::are_equal(0U, ip_end_point::min_port, csf_);
+      assert::are_equal(0u, ip_end_point::min_port, csf_);
     }
     
     void test_method_(max_port) {
-      assert::are_equal(0xFFFFU, ip_end_point::max_port, csf_);
+      assert::are_equal(0xFFFFu, ip_end_point::max_port, csf_);
     }
     
     void test_method_(construstor_with_uint32_address_and_port) {
@@ -67,7 +67,7 @@ namespace xtd::net::tests {
     void test_method_(ip_end_point_ip_v6_create_with_socket_address_ip_v6_loopback_and_port_9400) {
       ip_end_point ep = ip_end_point(ip_address::ip_v6_loopback, 9400);
       assert::are_equal("inter_network_v6:28:{36,184,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0}", ep.serialize().to_string(), csf_);
-      assert::are_equal(28U, ep.serialize().size(), csf_);
+      assert::are_equal(28u, ep.serialize().size(), csf_);
     }
     
     void test_method_(ip_end_point_ip_v6_create_with_socket_address_ip_v4) {

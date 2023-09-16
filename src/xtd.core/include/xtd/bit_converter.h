@@ -72,14 +72,14 @@ namespace xtd {
     /// @par Examples
     /// The following code example illustrates the use of the is_big_endian field.
     /// @include bit_converter_is_big_endian.cpp
-    static constexpr bool is_big_endian = __endian_query__ == 0x01U;
+    static constexpr bool is_big_endian = __endian_query__ == 0x01u;
     /// @brief Indicates the xtd::byte order ("endianness") in which data is stored in this computer architecture.
     /// @return Returns true if the architecture is little-endian; false if it is big-endian.
     /// @remarks Different computer architectures store data using different xtd::byte orders. "Big-endian" means the most significant xtd::byte is on the left end of a word. "Little-endian" means the most significant xtd::byte is on the right end of a word.
     /// @par Examples
     /// The following code example illustrates the use of the is_little_endian field.
     /// @include bit_converter_is_little_endian.cpp
-    static constexpr bool is_little_endian = __endian_query__ == 0x04U;
+    static constexpr bool is_little_endian = __endian_query__ == 0x04u;
     /// @brief Indicates the xtd::byte order ("endianness") in which data is stored in this computer architecture.
     /// @return Returns One of xtd::bit_converter::endian values.
     /// @remarks Different computer architectures store data using different xtd::byte orders. "Big-endian" means the most significant xtd::byte is on the left end of a word. "Little-endian" means the most significant xtd::byte is on the right end of a word.

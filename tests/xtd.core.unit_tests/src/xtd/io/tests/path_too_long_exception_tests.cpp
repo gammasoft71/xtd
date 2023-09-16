@@ -30,7 +30,7 @@ namespace xtd::io::tests {
       assert::is_empty(e.file_path(), csf_);
       assert::is_empty(e.help_link(), csf_);
       assert::are_equal(0, e.error_code().value(), csf_);
-      assert::are_equal(0U, e.line_number(), csf_);
+      assert::are_equal(0u, e.line_number(), csf_);
       assert::is_empty(e.member_name(), csf_);
       assert::are_equal("The specified path, file name, or both are too long. The fully qualified file name must be less than 260 characters, and the directory name must be less than 248 characters.", e.message(), csf_);
       assert::are_equal("xtd::io::path_too_long_exception", e.name(), csf_);
@@ -63,7 +63,7 @@ namespace xtd::io::tests {
       assert::is_empty(e.file_path(), csf_);
       assert::is_empty(e.help_link(), csf_);
       assert::is_false(e.inner_exception().has_value(), csf_);
-      assert::are_equal(0U, e.line_number(), csf_);
+      assert::are_equal(0u, e.line_number(), csf_);
       assert::is_empty(e.member_name(), csf_);
       assert::is_empty(e.message(), csf_);
       assert::are_equal("xtd::io::path_too_long_exception", e.name(), csf_);
@@ -96,7 +96,7 @@ namespace xtd::io::tests {
       assert::is_empty(e.file_path(), csf_);
       assert::is_empty(e.help_link(), csf_);
       assert::is_false(e.inner_exception().has_value(), csf_);
-      assert::are_equal(0U, e.line_number(), csf_);
+      assert::are_equal(0u, e.line_number(), csf_);
       assert::is_empty(e.member_name(), csf_);
       assert::are_equal("Test excpetion message.", e.message(), csf_);
       assert::are_equal("xtd::io::path_too_long_exception", e.name(), csf_);
@@ -182,7 +182,7 @@ namespace xtd::io::tests {
       assert::is_empty(e.help_link(), csf_);
       assert::is_instance_of<xtd::system_exception>(e.inner_exception().value().get(), csf_);
       assert::are_equal(inner_exception.what(), e.inner_exception().value().get().what(), csf_);
-      assert::are_equal(0U, e.line_number(), csf_);
+      assert::are_equal(0u, e.line_number(), csf_);
       assert::is_empty(e.member_name(), csf_);
       assert::are_equal("Test excpetion message.", e.message(), csf_);
       assert::are_equal("xtd::io::path_too_long_exception", e.name(), csf_);

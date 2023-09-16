@@ -31,7 +31,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_false(c.is_named_color(), csf_);
       
-      assert::are_equal(0U, c.to_argb(), csf_);
+      assert::are_equal(0u, c.to_argb(), csf_);
       assert::are_equal((known_color)0, c.to_known_color(), csf_);
     }
     
@@ -55,7 +55,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_false(c.is_named_color(), csf_);
       
-      assert::are_equal(0U, c.to_argb(), csf_);
+      assert::are_equal(0u, c.to_argb(), csf_);
       assert::are_equal((known_color)0, c.to_known_color(), csf_);
     }
     
@@ -80,7 +80,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_false(c.is_named_color(), csf_);
       
-      assert::are_equal(0x12345678U, c.to_argb(), csf_);
+      assert::are_equal(0x12345678u, c.to_argb(), csf_);
       assert::are_equal((known_color)0, c.to_known_color(), csf_);
     }
     
@@ -105,7 +105,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_false(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF123456U, c.to_argb(), csf_);
+      assert::are_equal(0xFF123456u, c.to_argb(), csf_);
       assert::are_equal((known_color)0, c.to_known_color(), csf_);
     }
     
@@ -130,7 +130,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_false(c.is_named_color(), csf_);
       
-      assert::are_equal(0x200000FFU, c.to_argb(), csf_);
+      assert::are_equal(0x200000FFu, c.to_argb(), csf_);
       assert::are_equal((known_color)0, c.to_known_color(), csf_);
     }
     
@@ -155,7 +155,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_false(c.is_named_color(), csf_);
       
-      assert::are_equal(0x12345678U, c.to_argb(), csf_);
+      assert::are_equal(0x12345678u, c.to_argb(), csf_);
       assert::are_equal((known_color)0, c.to_known_color(), csf_);
     }
     
@@ -184,7 +184,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_false(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF0000FFU, c.to_argb(), csf_);
+      assert::are_equal(0xFF0000FFu, c.to_argb(), csf_);
       assert::are_equal((known_color)0, c.to_known_color(), csf_);
     }
     
@@ -242,7 +242,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0x00FFFFFFU, c.to_argb(), csf_);
+      assert::are_equal(0x00FFFFFFu, c.to_argb(), csf_);
       assert::are_equal(known_color::transparent, c.to_known_color(), csf_);
     }
     
@@ -267,7 +267,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFF0F8FFU, c.to_argb(), csf_);
+      assert::are_equal(0xFFF0F8FFu, c.to_argb(), csf_);
       assert::are_equal(known_color::alice_blue, c.to_known_color(), csf_);
     }
     
@@ -292,7 +292,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFAEBD7U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFAEBD7u, c.to_argb(), csf_);
       assert::are_equal(known_color::antique_white, c.to_known_color(), csf_);
     }
     
@@ -317,7 +317,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF00FFFFU, c.to_argb(), csf_);
+      assert::are_equal(0xFF00FFFFu, c.to_argb(), csf_);
       assert::are_equal(known_color::aqua, c.to_known_color(), csf_);
     }
     
@@ -342,7 +342,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF7FFFD4U, c.to_argb(), csf_);
+      assert::are_equal(0xFF7FFFD4u, c.to_argb(), csf_);
       assert::are_equal(known_color::aquamarine, c.to_known_color(), csf_);
     }
     
@@ -367,7 +367,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFF0FFFFU, c.to_argb(), csf_);
+      assert::are_equal(0xFFF0FFFFu, c.to_argb(), csf_);
       assert::are_equal(known_color::azure, c.to_known_color(), csf_);
     }
     
@@ -392,7 +392,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFF5F5DCU, c.to_argb(), csf_);
+      assert::are_equal(0xFFF5F5DCu, c.to_argb(), csf_);
       assert::are_equal(known_color::beige, c.to_known_color(), csf_);
     }
     
@@ -417,7 +417,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFFE4C4U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFFE4C4u, c.to_argb(), csf_);
       assert::are_equal(known_color::bisque, c.to_known_color(), csf_);
     }
     
@@ -442,7 +442,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF000000U, c.to_argb(), csf_);
+      assert::are_equal(0xFF000000u, c.to_argb(), csf_);
       assert::are_equal(known_color::black, c.to_known_color(), csf_);
     }
     
@@ -467,7 +467,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFFEBCDU, c.to_argb(), csf_);
+      assert::are_equal(0xFFFFEBCDu, c.to_argb(), csf_);
       assert::are_equal(known_color::blanched_almond, c.to_known_color(), csf_);
     }
     
@@ -492,7 +492,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF0000FFU, c.to_argb(), csf_);
+      assert::are_equal(0xFF0000FFu, c.to_argb(), csf_);
       assert::are_equal(known_color::blue, c.to_known_color(), csf_);
     }
     
@@ -517,7 +517,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF8A2BE2U, c.to_argb(), csf_);
+      assert::are_equal(0xFF8A2BE2u, c.to_argb(), csf_);
       assert::are_equal(known_color::blue_violet, c.to_known_color(), csf_);
     }
     
@@ -542,7 +542,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFA52A2AU, c.to_argb(), csf_);
+      assert::are_equal(0xFFA52A2Au, c.to_argb(), csf_);
       assert::are_equal(known_color::brown, c.to_known_color(), csf_);
     }
     
@@ -567,7 +567,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFDEB887U, c.to_argb(), csf_);
+      assert::are_equal(0xFFDEB887u, c.to_argb(), csf_);
       assert::are_equal(known_color::burly_wood, c.to_known_color(), csf_);
     }
     
@@ -592,7 +592,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF5F9EA0U, c.to_argb(), csf_);
+      assert::are_equal(0xFF5F9EA0u, c.to_argb(), csf_);
       assert::are_equal(known_color::cadet_blue, c.to_known_color(), csf_);
     }
     
@@ -617,7 +617,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF7FFF00U, c.to_argb(), csf_);
+      assert::are_equal(0xFF7FFF00u, c.to_argb(), csf_);
       assert::are_equal(known_color::chartreuse, c.to_known_color(), csf_);
     }
     
@@ -642,7 +642,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFD2691EU, c.to_argb(), csf_);
+      assert::are_equal(0xFFD2691Eu, c.to_argb(), csf_);
       assert::are_equal(known_color::chocolate, c.to_known_color(), csf_);
     }
     
@@ -667,7 +667,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFF7F50U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFF7F50u, c.to_argb(), csf_);
       assert::are_equal(known_color::coral, c.to_known_color(), csf_);
     }
     
@@ -692,7 +692,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF6495EDU, c.to_argb(), csf_);
+      assert::are_equal(0xFF6495EDu, c.to_argb(), csf_);
       assert::are_equal(known_color::cornflower_blue, c.to_known_color(), csf_);
     }
     
@@ -717,7 +717,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFFF8DCU, c.to_argb(), csf_);
+      assert::are_equal(0xFFFFF8DCu, c.to_argb(), csf_);
       assert::are_equal(known_color::cornsilk, c.to_known_color(), csf_);
     }
     
@@ -742,7 +742,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFDC143CU, c.to_argb(), csf_);
+      assert::are_equal(0xFFDC143Cu, c.to_argb(), csf_);
       assert::are_equal(known_color::crimson, c.to_known_color(), csf_);
     }
     
@@ -767,7 +767,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF00FFFFU, c.to_argb(), csf_);
+      assert::are_equal(0xFF00FFFFu, c.to_argb(), csf_);
       assert::are_equal(known_color::cyan, c.to_known_color(), csf_);
     }
     
@@ -792,7 +792,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF00008BU, c.to_argb(), csf_);
+      assert::are_equal(0xFF00008Bu, c.to_argb(), csf_);
       assert::are_equal(known_color::dark_blue, c.to_known_color(), csf_);
     }
     
@@ -817,7 +817,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF008B8BU, c.to_argb(), csf_);
+      assert::are_equal(0xFF008B8Bu, c.to_argb(), csf_);
       assert::are_equal(known_color::dark_cyan, c.to_known_color(), csf_);
     }
     
@@ -842,7 +842,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFB8860BU, c.to_argb(), csf_);
+      assert::are_equal(0xFFB8860Bu, c.to_argb(), csf_);
       assert::are_equal(known_color::dark_goldenrod, c.to_known_color(), csf_);
     }
     
@@ -867,7 +867,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFA9A9A9U, c.to_argb(), csf_);
+      assert::are_equal(0xFFA9A9A9u, c.to_argb(), csf_);
       assert::are_equal(known_color::dark_gray, c.to_known_color(), csf_);
     }
     
@@ -892,7 +892,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF006400U, c.to_argb(), csf_);
+      assert::are_equal(0xFF006400u, c.to_argb(), csf_);
       assert::are_equal(known_color::dark_green, c.to_known_color(), csf_);
     }
     
@@ -917,7 +917,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFBDB76BU, c.to_argb(), csf_);
+      assert::are_equal(0xFFBDB76Bu, c.to_argb(), csf_);
       assert::are_equal(known_color::dark_khaki, c.to_known_color(), csf_);
     }
     
@@ -942,7 +942,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF8B008BU, c.to_argb(), csf_);
+      assert::are_equal(0xFF8B008Bu, c.to_argb(), csf_);
       assert::are_equal(known_color::dark_magenta, c.to_known_color(), csf_);
     }
     
@@ -967,7 +967,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF556B2FU, c.to_argb(), csf_);
+      assert::are_equal(0xFF556B2Fu, c.to_argb(), csf_);
       assert::are_equal(known_color::dark_olive_green, c.to_known_color(), csf_);
     }
     
@@ -992,7 +992,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFF8C00U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFF8C00u, c.to_argb(), csf_);
       assert::are_equal(known_color::dark_orange, c.to_known_color(), csf_);
     }
     
@@ -1017,7 +1017,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF9932CCU, c.to_argb(), csf_);
+      assert::are_equal(0xFF9932CCu, c.to_argb(), csf_);
       assert::are_equal(known_color::dark_orchid, c.to_known_color(), csf_);
     }
     
@@ -1042,7 +1042,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF8B0000U, c.to_argb(), csf_);
+      assert::are_equal(0xFF8B0000u, c.to_argb(), csf_);
       assert::are_equal(known_color::dark_red, c.to_known_color(), csf_);
     }
     
@@ -1067,7 +1067,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFE9967AU, c.to_argb(), csf_);
+      assert::are_equal(0xFFE9967Au, c.to_argb(), csf_);
       assert::are_equal(known_color::dark_salmon, c.to_known_color(), csf_);
     }
     
@@ -1092,7 +1092,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF8FBC8BU, c.to_argb(), csf_);
+      assert::are_equal(0xFF8FBC8Bu, c.to_argb(), csf_);
       assert::are_equal(known_color::dark_sea_green, c.to_known_color(), csf_);
     }
     
@@ -1117,7 +1117,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF483D8BU, c.to_argb(), csf_);
+      assert::are_equal(0xFF483D8Bu, c.to_argb(), csf_);
       assert::are_equal(known_color::dark_slate_blue, c.to_known_color(), csf_);
     }
     
@@ -1142,7 +1142,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF2F4F4FU, c.to_argb(), csf_);
+      assert::are_equal(0xFF2F4F4Fu, c.to_argb(), csf_);
       assert::are_equal(known_color::dark_slate_gray, c.to_known_color(), csf_);
     }
     
@@ -1167,7 +1167,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF00CED1U, c.to_argb(), csf_);
+      assert::are_equal(0xFF00CED1u, c.to_argb(), csf_);
       assert::are_equal(known_color::dark_turquoise, c.to_known_color(), csf_);
     }
     
@@ -1192,7 +1192,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF9400D3U, c.to_argb(), csf_);
+      assert::are_equal(0xFF9400D3u, c.to_argb(), csf_);
       assert::are_equal(known_color::dark_violet, c.to_known_color(), csf_);
     }
     
@@ -1217,7 +1217,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFF1493U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFF1493u, c.to_argb(), csf_);
       assert::are_equal(known_color::deep_pink, c.to_known_color(), csf_);
     }
     
@@ -1242,7 +1242,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF00BFFFU, c.to_argb(), csf_);
+      assert::are_equal(0xFF00BFFFu, c.to_argb(), csf_);
       assert::are_equal(known_color::deep_sky_blue, c.to_known_color(), csf_);
     }
     
@@ -1267,7 +1267,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF696969U, c.to_argb(), csf_);
+      assert::are_equal(0xFF696969u, c.to_argb(), csf_);
       assert::are_equal(known_color::dim_gray, c.to_known_color(), csf_);
     }
     
@@ -1292,7 +1292,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF1E90FFU, c.to_argb(), csf_);
+      assert::are_equal(0xFF1E90FFu, c.to_argb(), csf_);
       assert::are_equal(known_color::dodger_blue, c.to_known_color(), csf_);
     }
     
@@ -1317,7 +1317,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFB22222U, c.to_argb(), csf_);
+      assert::are_equal(0xFFB22222u, c.to_argb(), csf_);
       assert::are_equal(known_color::firebrick, c.to_known_color(), csf_);
     }
     
@@ -1342,7 +1342,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFFFAF0U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFFFAF0u, c.to_argb(), csf_);
       assert::are_equal(known_color::floral_white, c.to_known_color(), csf_);
     }
     
@@ -1367,7 +1367,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF228B22U, c.to_argb(), csf_);
+      assert::are_equal(0xFF228B22u, c.to_argb(), csf_);
       assert::are_equal(known_color::forest_green, c.to_known_color(), csf_);
     }
     
@@ -1392,7 +1392,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFF00FFU, c.to_argb(), csf_);
+      assert::are_equal(0xFFFF00FFu, c.to_argb(), csf_);
       assert::are_equal(known_color::fuchsia, c.to_known_color(), csf_);
     }
     
@@ -1417,7 +1417,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFDCDCDCU, c.to_argb(), csf_);
+      assert::are_equal(0xFFDCDCDCu, c.to_argb(), csf_);
       assert::are_equal(known_color::gainsboro, c.to_known_color(), csf_);
     }
     
@@ -1442,7 +1442,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFF8F8FFU, c.to_argb(), csf_);
+      assert::are_equal(0xFFF8F8FFu, c.to_argb(), csf_);
       assert::are_equal(known_color::ghost_white, c.to_known_color(), csf_);
     }
     
@@ -1467,7 +1467,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFFD700U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFFD700u, c.to_argb(), csf_);
       assert::are_equal(known_color::gold, c.to_known_color(), csf_);
     }
     
@@ -1492,7 +1492,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFDAA520U, c.to_argb(), csf_);
+      assert::are_equal(0xFFDAA520u, c.to_argb(), csf_);
       assert::are_equal(known_color::goldenrod, c.to_known_color(), csf_);
     }
     
@@ -1517,7 +1517,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF808080U, c.to_argb(), csf_);
+      assert::are_equal(0xFF808080u, c.to_argb(), csf_);
       assert::are_equal(known_color::gray, c.to_known_color(), csf_);
     }
     
@@ -1542,7 +1542,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF008000U, c.to_argb(), csf_);
+      assert::are_equal(0xFF008000u, c.to_argb(), csf_);
       assert::are_equal(known_color::green, c.to_known_color(), csf_);
     }
     
@@ -1567,7 +1567,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFADFF2FU, c.to_argb(), csf_);
+      assert::are_equal(0xFFADFF2Fu, c.to_argb(), csf_);
       assert::are_equal(known_color::green_yellow, c.to_known_color(), csf_);
     }
     
@@ -1592,7 +1592,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFF0FFF0U, c.to_argb(), csf_);
+      assert::are_equal(0xFFF0FFF0u, c.to_argb(), csf_);
       assert::are_equal(known_color::honeydew, c.to_known_color(), csf_);
     }
     
@@ -1617,7 +1617,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFF69B4U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFF69B4u, c.to_argb(), csf_);
       assert::are_equal(known_color::hot_pink, c.to_known_color(), csf_);
     }
     
@@ -1642,7 +1642,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFCD5C5CU, c.to_argb(), csf_);
+      assert::are_equal(0xFFCD5C5Cu, c.to_argb(), csf_);
       assert::are_equal(known_color::indian_red, c.to_known_color(), csf_);
     }
     
@@ -1667,7 +1667,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF4B0082U, c.to_argb(), csf_);
+      assert::are_equal(0xFF4B0082u, c.to_argb(), csf_);
       assert::are_equal(known_color::indigo, c.to_known_color(), csf_);
     }
     
@@ -1692,7 +1692,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFFFFF0U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFFFFF0u, c.to_argb(), csf_);
       assert::are_equal(known_color::ivory, c.to_known_color(), csf_);
     }
     
@@ -1717,7 +1717,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFF0E68CU, c.to_argb(), csf_);
+      assert::are_equal(0xFFF0E68Cu, c.to_argb(), csf_);
       assert::are_equal(known_color::khaki, c.to_known_color(), csf_);
     }
     
@@ -1742,7 +1742,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFE6E6FAU, c.to_argb(), csf_);
+      assert::are_equal(0xFFE6E6FAu, c.to_argb(), csf_);
       assert::are_equal(known_color::lavender, c.to_known_color(), csf_);
     }
     
@@ -1767,7 +1767,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFFF0F5U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFFF0F5u, c.to_argb(), csf_);
       assert::are_equal(known_color::lavender_blush, c.to_known_color(), csf_);
     }
     
@@ -1792,7 +1792,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF7CFC00U, c.to_argb(), csf_);
+      assert::are_equal(0xFF7CFC00u, c.to_argb(), csf_);
       assert::are_equal(known_color::lawn_green, c.to_known_color(), csf_);
     }
     
@@ -1817,7 +1817,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFFFACDU, c.to_argb(), csf_);
+      assert::are_equal(0xFFFFFACDu, c.to_argb(), csf_);
       assert::are_equal(known_color::lemon_chiffon, c.to_known_color(), csf_);
     }
     
@@ -1842,7 +1842,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFADD8E6U, c.to_argb(), csf_);
+      assert::are_equal(0xFFADD8E6u, c.to_argb(), csf_);
       assert::are_equal(known_color::light_blue, c.to_known_color(), csf_);
     }
     
@@ -1867,7 +1867,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFF08080U, c.to_argb(), csf_);
+      assert::are_equal(0xFFF08080u, c.to_argb(), csf_);
       assert::are_equal(known_color::light_coral, c.to_known_color(), csf_);
     }
     
@@ -1892,7 +1892,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFE0FFFFU, c.to_argb(), csf_);
+      assert::are_equal(0xFFE0FFFFu, c.to_argb(), csf_);
       assert::are_equal(known_color::light_cyan, c.to_known_color(), csf_);
     }
     
@@ -1917,7 +1917,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFAFAD2U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFAFAD2u, c.to_argb(), csf_);
       assert::are_equal(known_color::light_goldenrod_yellow, c.to_known_color(), csf_);
     }
     
@@ -1942,7 +1942,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFD3D3D3U, c.to_argb(), csf_);
+      assert::are_equal(0xFFD3D3D3u, c.to_argb(), csf_);
       assert::are_equal(known_color::light_gray, c.to_known_color(), csf_);
     }
     
@@ -1967,7 +1967,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF90EE90U, c.to_argb(), csf_);
+      assert::are_equal(0xFF90EE90u, c.to_argb(), csf_);
       assert::are_equal(known_color::light_green, c.to_known_color(), csf_);
     }
     
@@ -1992,7 +1992,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFFB6C1U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFFB6C1u, c.to_argb(), csf_);
       assert::are_equal(known_color::light_pink, c.to_known_color(), csf_);
     }
     
@@ -2017,7 +2017,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFFA07AU, c.to_argb(), csf_);
+      assert::are_equal(0xFFFFA07Au, c.to_argb(), csf_);
       assert::are_equal(known_color::light_salmon, c.to_known_color(), csf_);
     }
     
@@ -2042,7 +2042,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF20B2AAU, c.to_argb(), csf_);
+      assert::are_equal(0xFF20B2AAu, c.to_argb(), csf_);
       assert::are_equal(known_color::light_sea_green, c.to_known_color(), csf_);
     }
     
@@ -2067,7 +2067,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF87CEFAU, c.to_argb(), csf_);
+      assert::are_equal(0xFF87CEFAu, c.to_argb(), csf_);
       assert::are_equal(known_color::light_sky_blue, c.to_known_color(), csf_);
     }
     
@@ -2092,7 +2092,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF778899U, c.to_argb(), csf_);
+      assert::are_equal(0xFF778899u, c.to_argb(), csf_);
       assert::are_equal(known_color::light_slate_gray, c.to_known_color(), csf_);
     }
     
@@ -2117,7 +2117,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFB0C4DEU, c.to_argb(), csf_);
+      assert::are_equal(0xFFB0C4DEu, c.to_argb(), csf_);
       assert::are_equal(known_color::light_steel_blue, c.to_known_color(), csf_);
     }
     
@@ -2142,7 +2142,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFFFFE0U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFFFFE0u, c.to_argb(), csf_);
       assert::are_equal(known_color::light_yellow, c.to_known_color(), csf_);
     }
     
@@ -2167,7 +2167,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF00FF00U, c.to_argb(), csf_);
+      assert::are_equal(0xFF00FF00u, c.to_argb(), csf_);
       assert::are_equal(known_color::lime, c.to_known_color(), csf_);
     }
     
@@ -2192,7 +2192,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF32CD32U, c.to_argb(), csf_);
+      assert::are_equal(0xFF32CD32u, c.to_argb(), csf_);
       assert::are_equal(known_color::lime_green, c.to_known_color(), csf_);
     }
     
@@ -2217,7 +2217,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFAF0E6U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFAF0E6u, c.to_argb(), csf_);
       assert::are_equal(known_color::linen, c.to_known_color(), csf_);
     }
     
@@ -2242,7 +2242,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFF00FFU, c.to_argb(), csf_);
+      assert::are_equal(0xFFFF00FFu, c.to_argb(), csf_);
       assert::are_equal(known_color::magenta, c.to_known_color(), csf_);
     }
     
@@ -2267,7 +2267,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF800000U, c.to_argb(), csf_);
+      assert::are_equal(0xFF800000u, c.to_argb(), csf_);
       assert::are_equal(known_color::maroon, c.to_known_color(), csf_);
     }
     
@@ -2292,7 +2292,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF66CDAAU, c.to_argb(), csf_);
+      assert::are_equal(0xFF66CDAAu, c.to_argb(), csf_);
       assert::are_equal(known_color::medium_aquamarine, c.to_known_color(), csf_);
     }
     
@@ -2317,7 +2317,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF0000CDU, c.to_argb(), csf_);
+      assert::are_equal(0xFF0000CDu, c.to_argb(), csf_);
       assert::are_equal(known_color::medium_blue, c.to_known_color(), csf_);
     }
     
@@ -2342,7 +2342,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFBA55D3U, c.to_argb(), csf_);
+      assert::are_equal(0xFFBA55D3u, c.to_argb(), csf_);
       assert::are_equal(known_color::medium_orchid, c.to_known_color(), csf_);
     }
     
@@ -2367,7 +2367,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF9370DBU, c.to_argb(), csf_);
+      assert::are_equal(0xFF9370DBu, c.to_argb(), csf_);
       assert::are_equal(known_color::medium_purple, c.to_known_color(), csf_);
     }
     
@@ -2392,7 +2392,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF3CB371U, c.to_argb(), csf_);
+      assert::are_equal(0xFF3CB371u, c.to_argb(), csf_);
       assert::are_equal(known_color::medium_sea_green, c.to_known_color(), csf_);
     }
     
@@ -2417,7 +2417,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF7B68EEU, c.to_argb(), csf_);
+      assert::are_equal(0xFF7B68EEu, c.to_argb(), csf_);
       assert::are_equal(known_color::medium_slate_blue, c.to_known_color(), csf_);
     }
     
@@ -2442,7 +2442,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF00FA9AU, c.to_argb(), csf_);
+      assert::are_equal(0xFF00FA9Au, c.to_argb(), csf_);
       assert::are_equal(known_color::medium_spring_green, c.to_known_color(), csf_);
     }
     
@@ -2467,7 +2467,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF48D1CCU, c.to_argb(), csf_);
+      assert::are_equal(0xFF48D1CCu, c.to_argb(), csf_);
       assert::are_equal(known_color::medium_turquoise, c.to_known_color(), csf_);
     }
     
@@ -2492,7 +2492,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFC71585U, c.to_argb(), csf_);
+      assert::are_equal(0xFFC71585u, c.to_argb(), csf_);
       assert::are_equal(known_color::medium_violet_red, c.to_known_color(), csf_);
     }
     
@@ -2517,7 +2517,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF191970U, c.to_argb(), csf_);
+      assert::are_equal(0xFF191970u, c.to_argb(), csf_);
       assert::are_equal(known_color::midnight_blue, c.to_known_color(), csf_);
     }
     
@@ -2542,7 +2542,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFF5FFFAU, c.to_argb(), csf_);
+      assert::are_equal(0xFFF5FFFAu, c.to_argb(), csf_);
       assert::are_equal(known_color::mint_cream, c.to_known_color(), csf_);
     }
     
@@ -2567,7 +2567,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFFE4E1U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFFE4E1u, c.to_argb(), csf_);
       assert::are_equal(known_color::misty_rose, c.to_known_color(), csf_);
     }
     
@@ -2592,7 +2592,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFFE4B5U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFFE4B5u, c.to_argb(), csf_);
       assert::are_equal(known_color::moccasin, c.to_known_color(), csf_);
     }
     
@@ -2617,7 +2617,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFFDEADU, c.to_argb(), csf_);
+      assert::are_equal(0xFFFFDEADu, c.to_argb(), csf_);
       assert::are_equal(known_color::navajo_white, c.to_known_color(), csf_);
     }
     
@@ -2642,7 +2642,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF000080U, c.to_argb(), csf_);
+      assert::are_equal(0xFF000080u, c.to_argb(), csf_);
       assert::are_equal(known_color::navy, c.to_known_color(), csf_);
     }
     
@@ -2667,7 +2667,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFDF5E6U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFDF5E6u, c.to_argb(), csf_);
       assert::are_equal(known_color::old_lace, c.to_known_color(), csf_);
     }
     
@@ -2692,7 +2692,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF808000U, c.to_argb(), csf_);
+      assert::are_equal(0xFF808000u, c.to_argb(), csf_);
       assert::are_equal(known_color::olive, c.to_known_color(), csf_);
     }
     
@@ -2717,7 +2717,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF6B8E23U, c.to_argb(), csf_);
+      assert::are_equal(0xFF6B8E23u, c.to_argb(), csf_);
       assert::are_equal(known_color::olive_drab, c.to_known_color(), csf_);
     }
     
@@ -2742,7 +2742,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFFA500U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFFA500u, c.to_argb(), csf_);
       assert::are_equal(known_color::orange, c.to_known_color(), csf_);
     }
     
@@ -2767,7 +2767,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFF4500U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFF4500u, c.to_argb(), csf_);
       assert::are_equal(known_color::orange_red, c.to_known_color(), csf_);
     }
     
@@ -2792,7 +2792,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFDA70D6U, c.to_argb(), csf_);
+      assert::are_equal(0xFFDA70D6u, c.to_argb(), csf_);
       assert::are_equal(known_color::orchid, c.to_known_color(), csf_);
     }
     
@@ -2817,7 +2817,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFEEE8AAU, c.to_argb(), csf_);
+      assert::are_equal(0xFFEEE8AAu, c.to_argb(), csf_);
       assert::are_equal(known_color::pale_goldenrod, c.to_known_color(), csf_);
     }
     
@@ -2842,7 +2842,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF98FB98U, c.to_argb(), csf_);
+      assert::are_equal(0xFF98FB98u, c.to_argb(), csf_);
       assert::are_equal(known_color::pale_green, c.to_known_color(), csf_);
     }
     
@@ -2867,7 +2867,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFAFEEEEU, c.to_argb(), csf_);
+      assert::are_equal(0xFFAFEEEEu, c.to_argb(), csf_);
       assert::are_equal(known_color::pale_turquoise, c.to_known_color(), csf_);
     }
     
@@ -2892,7 +2892,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFDB7093U, c.to_argb(), csf_);
+      assert::are_equal(0xFFDB7093u, c.to_argb(), csf_);
       assert::are_equal(known_color::pale_violet_red, c.to_known_color(), csf_);
     }
     
@@ -2917,7 +2917,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFFEFD5U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFFEFD5u, c.to_argb(), csf_);
       assert::are_equal(known_color::papaya_whip, c.to_known_color(), csf_);
     }
     
@@ -2942,7 +2942,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFFDAB9U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFFDAB9u, c.to_argb(), csf_);
       assert::are_equal(known_color::peach_puff, c.to_known_color(), csf_);
     }
     
@@ -2967,7 +2967,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFCD853FU, c.to_argb(), csf_);
+      assert::are_equal(0xFFCD853Fu, c.to_argb(), csf_);
       assert::are_equal(known_color::peru, c.to_known_color(), csf_);
     }
     
@@ -2992,7 +2992,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFFC0CBU, c.to_argb(), csf_);
+      assert::are_equal(0xFFFFC0CBu, c.to_argb(), csf_);
       assert::are_equal(known_color::pink, c.to_known_color(), csf_);
     }
     
@@ -3017,7 +3017,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFDDA0DDU, c.to_argb(), csf_);
+      assert::are_equal(0xFFDDA0DDu, c.to_argb(), csf_);
       assert::are_equal(known_color::plum, c.to_known_color(), csf_);
     }
     
@@ -3042,7 +3042,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFB0E0E6U, c.to_argb(), csf_);
+      assert::are_equal(0xFFB0E0E6u, c.to_argb(), csf_);
       assert::are_equal(known_color::powder_blue, c.to_known_color(), csf_);
     }
     
@@ -3067,7 +3067,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF800080U, c.to_argb(), csf_);
+      assert::are_equal(0xFF800080u, c.to_argb(), csf_);
       assert::are_equal(known_color::purple, c.to_known_color(), csf_);
     }
     
@@ -3092,7 +3092,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF663399U, c.to_argb(), csf_);
+      assert::are_equal(0xFF663399u, c.to_argb(), csf_);
       assert::are_equal(known_color::rebecca_purple, c.to_known_color(), csf_);
     }
     
@@ -3117,7 +3117,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFF0000U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFF0000u, c.to_argb(), csf_);
       assert::are_equal(known_color::red, c.to_known_color(), csf_);
     }
     
@@ -3142,7 +3142,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFBC8F8FU, c.to_argb(), csf_);
+      assert::are_equal(0xFFBC8F8Fu, c.to_argb(), csf_);
       assert::are_equal(known_color::rosy_brown, c.to_known_color(), csf_);
     }
     
@@ -3167,7 +3167,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF4169E1U, c.to_argb(), csf_);
+      assert::are_equal(0xFF4169E1u, c.to_argb(), csf_);
       assert::are_equal(known_color::royal_blue, c.to_known_color(), csf_);
     }
     
@@ -3192,7 +3192,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF8B4513U, c.to_argb(), csf_);
+      assert::are_equal(0xFF8B4513u, c.to_argb(), csf_);
       assert::are_equal(known_color::saddle_brown, c.to_known_color(), csf_);
     }
     
@@ -3217,7 +3217,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFA8072U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFA8072u, c.to_argb(), csf_);
       assert::are_equal(known_color::salmon, c.to_known_color(), csf_);
     }
     
@@ -3242,7 +3242,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFF4A460U, c.to_argb(), csf_);
+      assert::are_equal(0xFFF4A460u, c.to_argb(), csf_);
       assert::are_equal(known_color::sandy_brown, c.to_known_color(), csf_);
     }
     
@@ -3267,7 +3267,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF2E8B57U, c.to_argb(), csf_);
+      assert::are_equal(0xFF2E8B57u, c.to_argb(), csf_);
       assert::are_equal(known_color::sea_green, c.to_known_color(), csf_);
     }
     
@@ -3292,7 +3292,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFFF5EEU, c.to_argb(), csf_);
+      assert::are_equal(0xFFFFF5EEu, c.to_argb(), csf_);
       assert::are_equal(known_color::sea_shell, c.to_known_color(), csf_);
     }
     
@@ -3317,7 +3317,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFA0522DU, c.to_argb(), csf_);
+      assert::are_equal(0xFFA0522Du, c.to_argb(), csf_);
       assert::are_equal(known_color::sienna, c.to_known_color(), csf_);
     }
     
@@ -3342,7 +3342,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFC0C0C0U, c.to_argb(), csf_);
+      assert::are_equal(0xFFC0C0C0u, c.to_argb(), csf_);
       assert::are_equal(known_color::silver, c.to_known_color(), csf_);
     }
     
@@ -3367,7 +3367,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF87CEEBU, c.to_argb(), csf_);
+      assert::are_equal(0xFF87CEEBu, c.to_argb(), csf_);
       assert::are_equal(known_color::sky_blue, c.to_known_color(), csf_);
     }
     
@@ -3392,7 +3392,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF6A5ACDU, c.to_argb(), csf_);
+      assert::are_equal(0xFF6A5ACDu, c.to_argb(), csf_);
       assert::are_equal(known_color::slate_blue, c.to_known_color(), csf_);
     }
     
@@ -3417,7 +3417,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF708090U, c.to_argb(), csf_);
+      assert::are_equal(0xFF708090u, c.to_argb(), csf_);
       assert::are_equal(known_color::slate_gray, c.to_known_color(), csf_);
     }
     
@@ -3442,7 +3442,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFFFAFAU, c.to_argb(), csf_);
+      assert::are_equal(0xFFFFFAFAu, c.to_argb(), csf_);
       assert::are_equal(known_color::snow, c.to_known_color(), csf_);
     }
     
@@ -3467,7 +3467,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF00FF7FU, c.to_argb(), csf_);
+      assert::are_equal(0xFF00FF7Fu, c.to_argb(), csf_);
       assert::are_equal(known_color::spring_green, c.to_known_color(), csf_);
     }
     
@@ -3492,7 +3492,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF4682B4U, c.to_argb(), csf_);
+      assert::are_equal(0xFF4682B4u, c.to_argb(), csf_);
       assert::are_equal(known_color::steel_blue, c.to_known_color(), csf_);
     }
     
@@ -3517,7 +3517,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFD2B48CU, c.to_argb(), csf_);
+      assert::are_equal(0xFFD2B48Cu, c.to_argb(), csf_);
       assert::are_equal(known_color::tan, c.to_known_color(), csf_);
     }
     
@@ -3542,7 +3542,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF008080U, c.to_argb(), csf_);
+      assert::are_equal(0xFF008080u, c.to_argb(), csf_);
       assert::are_equal(known_color::teal, c.to_known_color(), csf_);
     }
     
@@ -3567,7 +3567,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFD8BFD8U, c.to_argb(), csf_);
+      assert::are_equal(0xFFD8BFD8u, c.to_argb(), csf_);
       assert::are_equal(known_color::thistle, c.to_known_color(), csf_);
     }
     
@@ -3592,7 +3592,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFF6347U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFF6347u, c.to_argb(), csf_);
       assert::are_equal(known_color::tomato, c.to_known_color(), csf_);
     }
     
@@ -3617,7 +3617,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF40E0D0U, c.to_argb(), csf_);
+      assert::are_equal(0xFF40E0D0u, c.to_argb(), csf_);
       assert::are_equal(known_color::turquoise, c.to_known_color(), csf_);
     }
     
@@ -3642,7 +3642,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFEE82EEU, c.to_argb(), csf_);
+      assert::are_equal(0xFFEE82EEu, c.to_argb(), csf_);
       assert::are_equal(known_color::violet, c.to_known_color(), csf_);
     }
     
@@ -3667,7 +3667,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFF5DEB3U, c.to_argb(), csf_);
+      assert::are_equal(0xFFF5DEB3u, c.to_argb(), csf_);
       assert::are_equal(known_color::wheat, c.to_known_color(), csf_);
     }
     
@@ -3692,7 +3692,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFFFFFFU, c.to_argb(), csf_);
+      assert::are_equal(0xFFFFFFFFu, c.to_argb(), csf_);
       assert::are_equal(known_color::white, c.to_known_color(), csf_);
     }
     
@@ -3717,7 +3717,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFF5F5F5U, c.to_argb(), csf_);
+      assert::are_equal(0xFFF5F5F5u, c.to_argb(), csf_);
       assert::are_equal(known_color::white_smoke, c.to_known_color(), csf_);
     }
     
@@ -3742,7 +3742,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFFFF00U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFFFF00u, c.to_argb(), csf_);
       assert::are_equal(known_color::yellow, c.to_known_color(), csf_);
     }
     
@@ -3767,7 +3767,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0x00FFFFFFU, c.to_argb(), csf_);
+      assert::are_equal(0x00FFFFFFu, c.to_argb(), csf_);
       assert::are_equal(known_color::transparent, c.to_known_color(), csf_);
     }
     
@@ -3792,7 +3792,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFF0F8FFU, c.to_argb(), csf_);
+      assert::are_equal(0xFFF0F8FFu, c.to_argb(), csf_);
       assert::are_equal(known_color::alice_blue, c.to_known_color(), csf_);
     }
     
@@ -3817,7 +3817,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFAEBD7U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFAEBD7u, c.to_argb(), csf_);
       assert::are_equal(known_color::antique_white, c.to_known_color(), csf_);
     }
     
@@ -3842,7 +3842,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF00FFFFU, c.to_argb(), csf_);
+      assert::are_equal(0xFF00FFFFu, c.to_argb(), csf_);
       assert::are_equal(known_color::aqua, c.to_known_color(), csf_);
     }
     
@@ -3867,7 +3867,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF7FFFD4U, c.to_argb(), csf_);
+      assert::are_equal(0xFF7FFFD4u, c.to_argb(), csf_);
       assert::are_equal(known_color::aquamarine, c.to_known_color(), csf_);
     }
     
@@ -3892,7 +3892,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFF0FFFFU, c.to_argb(), csf_);
+      assert::are_equal(0xFFF0FFFFu, c.to_argb(), csf_);
       assert::are_equal(known_color::azure, c.to_known_color(), csf_);
     }
     
@@ -3917,7 +3917,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFF5F5DCU, c.to_argb(), csf_);
+      assert::are_equal(0xFFF5F5DCu, c.to_argb(), csf_);
       assert::are_equal(known_color::beige, c.to_known_color(), csf_);
     }
     
@@ -3942,7 +3942,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFFE4C4U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFFE4C4u, c.to_argb(), csf_);
       assert::are_equal(known_color::bisque, c.to_known_color(), csf_);
     }
     
@@ -3967,7 +3967,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF000000U, c.to_argb(), csf_);
+      assert::are_equal(0xFF000000u, c.to_argb(), csf_);
       assert::are_equal(known_color::black, c.to_known_color(), csf_);
     }
     
@@ -3992,7 +3992,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFFEBCDU, c.to_argb(), csf_);
+      assert::are_equal(0xFFFFEBCDu, c.to_argb(), csf_);
       assert::are_equal(known_color::blanched_almond, c.to_known_color(), csf_);
     }
     
@@ -4017,7 +4017,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF0000FFU, c.to_argb(), csf_);
+      assert::are_equal(0xFF0000FFu, c.to_argb(), csf_);
       assert::are_equal(known_color::blue, c.to_known_color(), csf_);
     }
     
@@ -4042,7 +4042,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF8A2BE2U, c.to_argb(), csf_);
+      assert::are_equal(0xFF8A2BE2u, c.to_argb(), csf_);
       assert::are_equal(known_color::blue_violet, c.to_known_color(), csf_);
     }
     
@@ -4067,7 +4067,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFA52A2AU, c.to_argb(), csf_);
+      assert::are_equal(0xFFA52A2Au, c.to_argb(), csf_);
       assert::are_equal(known_color::brown, c.to_known_color(), csf_);
     }
     
@@ -4092,7 +4092,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFDEB887U, c.to_argb(), csf_);
+      assert::are_equal(0xFFDEB887u, c.to_argb(), csf_);
       assert::are_equal(known_color::burly_wood, c.to_known_color(), csf_);
     }
     
@@ -4117,7 +4117,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF5F9EA0U, c.to_argb(), csf_);
+      assert::are_equal(0xFF5F9EA0u, c.to_argb(), csf_);
       assert::are_equal(known_color::cadet_blue, c.to_known_color(), csf_);
     }
     
@@ -4142,7 +4142,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF7FFF00U, c.to_argb(), csf_);
+      assert::are_equal(0xFF7FFF00u, c.to_argb(), csf_);
       assert::are_equal(known_color::chartreuse, c.to_known_color(), csf_);
     }
     
@@ -4167,7 +4167,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFD2691EU, c.to_argb(), csf_);
+      assert::are_equal(0xFFD2691Eu, c.to_argb(), csf_);
       assert::are_equal(known_color::chocolate, c.to_known_color(), csf_);
     }
     
@@ -4192,7 +4192,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFF7F50U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFF7F50u, c.to_argb(), csf_);
       assert::are_equal(known_color::coral, c.to_known_color(), csf_);
     }
     
@@ -4217,7 +4217,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF6495EDU, c.to_argb(), csf_);
+      assert::are_equal(0xFF6495EDu, c.to_argb(), csf_);
       assert::are_equal(known_color::cornflower_blue, c.to_known_color(), csf_);
     }
     
@@ -4242,7 +4242,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFFF8DCU, c.to_argb(), csf_);
+      assert::are_equal(0xFFFFF8DCu, c.to_argb(), csf_);
       assert::are_equal(known_color::cornsilk, c.to_known_color(), csf_);
     }
     
@@ -4267,7 +4267,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFDC143CU, c.to_argb(), csf_);
+      assert::are_equal(0xFFDC143Cu, c.to_argb(), csf_);
       assert::are_equal(known_color::crimson, c.to_known_color(), csf_);
     }
     
@@ -4292,7 +4292,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF00FFFFU, c.to_argb(), csf_);
+      assert::are_equal(0xFF00FFFFu, c.to_argb(), csf_);
       assert::are_equal(known_color::cyan, c.to_known_color(), csf_);
     }
     
@@ -4317,7 +4317,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF00008BU, c.to_argb(), csf_);
+      assert::are_equal(0xFF00008Bu, c.to_argb(), csf_);
       assert::are_equal(known_color::dark_blue, c.to_known_color(), csf_);
     }
     
@@ -4342,7 +4342,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF008B8BU, c.to_argb(), csf_);
+      assert::are_equal(0xFF008B8Bu, c.to_argb(), csf_);
       assert::are_equal(known_color::dark_cyan, c.to_known_color(), csf_);
     }
     
@@ -4367,7 +4367,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFB8860BU, c.to_argb(), csf_);
+      assert::are_equal(0xFFB8860Bu, c.to_argb(), csf_);
       assert::are_equal(known_color::dark_goldenrod, c.to_known_color(), csf_);
     }
     
@@ -4392,7 +4392,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFA9A9A9U, c.to_argb(), csf_);
+      assert::are_equal(0xFFA9A9A9u, c.to_argb(), csf_);
       assert::are_equal(known_color::dark_gray, c.to_known_color(), csf_);
     }
     
@@ -4417,7 +4417,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF006400U, c.to_argb(), csf_);
+      assert::are_equal(0xFF006400u, c.to_argb(), csf_);
       assert::are_equal(known_color::dark_green, c.to_known_color(), csf_);
     }
     
@@ -4442,7 +4442,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFBDB76BU, c.to_argb(), csf_);
+      assert::are_equal(0xFFBDB76Bu, c.to_argb(), csf_);
       assert::are_equal(known_color::dark_khaki, c.to_known_color(), csf_);
     }
     
@@ -4467,7 +4467,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF8B008BU, c.to_argb(), csf_);
+      assert::are_equal(0xFF8B008Bu, c.to_argb(), csf_);
       assert::are_equal(known_color::dark_magenta, c.to_known_color(), csf_);
     }
     
@@ -4492,7 +4492,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF556B2FU, c.to_argb(), csf_);
+      assert::are_equal(0xFF556B2Fu, c.to_argb(), csf_);
       assert::are_equal(known_color::dark_olive_green, c.to_known_color(), csf_);
     }
     
@@ -4517,7 +4517,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFF8C00U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFF8C00u, c.to_argb(), csf_);
       assert::are_equal(known_color::dark_orange, c.to_known_color(), csf_);
     }
     
@@ -4542,7 +4542,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF9932CCU, c.to_argb(), csf_);
+      assert::are_equal(0xFF9932CCu, c.to_argb(), csf_);
       assert::are_equal(known_color::dark_orchid, c.to_known_color(), csf_);
     }
     
@@ -4567,7 +4567,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF8B0000U, c.to_argb(), csf_);
+      assert::are_equal(0xFF8B0000u, c.to_argb(), csf_);
       assert::are_equal(known_color::dark_red, c.to_known_color(), csf_);
     }
     
@@ -4592,7 +4592,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFE9967AU, c.to_argb(), csf_);
+      assert::are_equal(0xFFE9967Au, c.to_argb(), csf_);
       assert::are_equal(known_color::dark_salmon, c.to_known_color(), csf_);
     }
     
@@ -4617,7 +4617,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF8FBC8BU, c.to_argb(), csf_);
+      assert::are_equal(0xFF8FBC8Bu, c.to_argb(), csf_);
       assert::are_equal(known_color::dark_sea_green, c.to_known_color(), csf_);
     }
     
@@ -4642,7 +4642,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF483D8BU, c.to_argb(), csf_);
+      assert::are_equal(0xFF483D8Bu, c.to_argb(), csf_);
       assert::are_equal(known_color::dark_slate_blue, c.to_known_color(), csf_);
     }
     
@@ -4667,7 +4667,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF2F4F4FU, c.to_argb(), csf_);
+      assert::are_equal(0xFF2F4F4Fu, c.to_argb(), csf_);
       assert::are_equal(known_color::dark_slate_gray, c.to_known_color(), csf_);
     }
     
@@ -4692,7 +4692,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF00CED1U, c.to_argb(), csf_);
+      assert::are_equal(0xFF00CED1u, c.to_argb(), csf_);
       assert::are_equal(known_color::dark_turquoise, c.to_known_color(), csf_);
     }
     
@@ -4717,7 +4717,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF9400D3U, c.to_argb(), csf_);
+      assert::are_equal(0xFF9400D3u, c.to_argb(), csf_);
       assert::are_equal(known_color::dark_violet, c.to_known_color(), csf_);
     }
     
@@ -4742,7 +4742,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFF1493U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFF1493u, c.to_argb(), csf_);
       assert::are_equal(known_color::deep_pink, c.to_known_color(), csf_);
     }
     
@@ -4767,7 +4767,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF00BFFFU, c.to_argb(), csf_);
+      assert::are_equal(0xFF00BFFFu, c.to_argb(), csf_);
       assert::are_equal(known_color::deep_sky_blue, c.to_known_color(), csf_);
     }
     
@@ -4792,7 +4792,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF696969U, c.to_argb(), csf_);
+      assert::are_equal(0xFF696969u, c.to_argb(), csf_);
       assert::are_equal(known_color::dim_gray, c.to_known_color(), csf_);
     }
     
@@ -4817,7 +4817,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF1E90FFU, c.to_argb(), csf_);
+      assert::are_equal(0xFF1E90FFu, c.to_argb(), csf_);
       assert::are_equal(known_color::dodger_blue, c.to_known_color(), csf_);
     }
     
@@ -4842,7 +4842,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFB22222U, c.to_argb(), csf_);
+      assert::are_equal(0xFFB22222u, c.to_argb(), csf_);
       assert::are_equal(known_color::firebrick, c.to_known_color(), csf_);
     }
     
@@ -4867,7 +4867,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFFFAF0U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFFFAF0u, c.to_argb(), csf_);
       assert::are_equal(known_color::floral_white, c.to_known_color(), csf_);
     }
     
@@ -4892,7 +4892,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF228B22U, c.to_argb(), csf_);
+      assert::are_equal(0xFF228B22u, c.to_argb(), csf_);
       assert::are_equal(known_color::forest_green, c.to_known_color(), csf_);
     }
     
@@ -4917,7 +4917,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFF00FFU, c.to_argb(), csf_);
+      assert::are_equal(0xFFFF00FFu, c.to_argb(), csf_);
       assert::are_equal(known_color::fuchsia, c.to_known_color(), csf_);
     }
     
@@ -4942,7 +4942,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFDCDCDCU, c.to_argb(), csf_);
+      assert::are_equal(0xFFDCDCDCu, c.to_argb(), csf_);
       assert::are_equal(known_color::gainsboro, c.to_known_color(), csf_);
     }
     
@@ -4967,7 +4967,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFF8F8FFU, c.to_argb(), csf_);
+      assert::are_equal(0xFFF8F8FFu, c.to_argb(), csf_);
       assert::are_equal(known_color::ghost_white, c.to_known_color(), csf_);
     }
     
@@ -4992,7 +4992,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFFD700U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFFD700u, c.to_argb(), csf_);
       assert::are_equal(known_color::gold, c.to_known_color(), csf_);
     }
     
@@ -5017,7 +5017,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFDAA520U, c.to_argb(), csf_);
+      assert::are_equal(0xFFDAA520u, c.to_argb(), csf_);
       assert::are_equal(known_color::goldenrod, c.to_known_color(), csf_);
     }
     
@@ -5042,7 +5042,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF808080U, c.to_argb(), csf_);
+      assert::are_equal(0xFF808080u, c.to_argb(), csf_);
       assert::are_equal(known_color::gray, c.to_known_color(), csf_);
     }
     
@@ -5067,7 +5067,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF008000U, c.to_argb(), csf_);
+      assert::are_equal(0xFF008000u, c.to_argb(), csf_);
       assert::are_equal(known_color::green, c.to_known_color(), csf_);
     }
     
@@ -5092,7 +5092,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFADFF2FU, c.to_argb(), csf_);
+      assert::are_equal(0xFFADFF2Fu, c.to_argb(), csf_);
       assert::are_equal(known_color::green_yellow, c.to_known_color(), csf_);
     }
     
@@ -5117,7 +5117,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFF0FFF0U, c.to_argb(), csf_);
+      assert::are_equal(0xFFF0FFF0u, c.to_argb(), csf_);
       assert::are_equal(known_color::honeydew, c.to_known_color(), csf_);
     }
     
@@ -5142,7 +5142,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFF69B4U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFF69B4u, c.to_argb(), csf_);
       assert::are_equal(known_color::hot_pink, c.to_known_color(), csf_);
     }
     
@@ -5167,7 +5167,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFCD5C5CU, c.to_argb(), csf_);
+      assert::are_equal(0xFFCD5C5Cu, c.to_argb(), csf_);
       assert::are_equal(known_color::indian_red, c.to_known_color(), csf_);
     }
     
@@ -5192,7 +5192,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF4B0082U, c.to_argb(), csf_);
+      assert::are_equal(0xFF4B0082u, c.to_argb(), csf_);
       assert::are_equal(known_color::indigo, c.to_known_color(), csf_);
     }
     
@@ -5217,7 +5217,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFFFFF0U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFFFFF0u, c.to_argb(), csf_);
       assert::are_equal(known_color::ivory, c.to_known_color(), csf_);
     }
     
@@ -5242,7 +5242,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFF0E68CU, c.to_argb(), csf_);
+      assert::are_equal(0xFFF0E68Cu, c.to_argb(), csf_);
       assert::are_equal(known_color::khaki, c.to_known_color(), csf_);
     }
     
@@ -5267,7 +5267,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFE6E6FAU, c.to_argb(), csf_);
+      assert::are_equal(0xFFE6E6FAu, c.to_argb(), csf_);
       assert::are_equal(known_color::lavender, c.to_known_color(), csf_);
     }
     
@@ -5292,7 +5292,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFFF0F5U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFFF0F5u, c.to_argb(), csf_);
       assert::are_equal(known_color::lavender_blush, c.to_known_color(), csf_);
     }
     
@@ -5317,7 +5317,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF7CFC00U, c.to_argb(), csf_);
+      assert::are_equal(0xFF7CFC00u, c.to_argb(), csf_);
       assert::are_equal(known_color::lawn_green, c.to_known_color(), csf_);
     }
     
@@ -5342,7 +5342,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFFFACDU, c.to_argb(), csf_);
+      assert::are_equal(0xFFFFFACDu, c.to_argb(), csf_);
       assert::are_equal(known_color::lemon_chiffon, c.to_known_color(), csf_);
     }
     
@@ -5367,7 +5367,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFADD8E6U, c.to_argb(), csf_);
+      assert::are_equal(0xFFADD8E6u, c.to_argb(), csf_);
       assert::are_equal(known_color::light_blue, c.to_known_color(), csf_);
     }
     
@@ -5392,7 +5392,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFF08080U, c.to_argb(), csf_);
+      assert::are_equal(0xFFF08080u, c.to_argb(), csf_);
       assert::are_equal(known_color::light_coral, c.to_known_color(), csf_);
     }
     
@@ -5417,7 +5417,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFE0FFFFU, c.to_argb(), csf_);
+      assert::are_equal(0xFFE0FFFFu, c.to_argb(), csf_);
       assert::are_equal(known_color::light_cyan, c.to_known_color(), csf_);
     }
     
@@ -5442,7 +5442,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFAFAD2U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFAFAD2u, c.to_argb(), csf_);
       assert::are_equal(known_color::light_goldenrod_yellow, c.to_known_color(), csf_);
     }
     
@@ -5467,7 +5467,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFD3D3D3U, c.to_argb(), csf_);
+      assert::are_equal(0xFFD3D3D3u, c.to_argb(), csf_);
       assert::are_equal(known_color::light_gray, c.to_known_color(), csf_);
     }
     
@@ -5492,7 +5492,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF90EE90U, c.to_argb(), csf_);
+      assert::are_equal(0xFF90EE90u, c.to_argb(), csf_);
       assert::are_equal(known_color::light_green, c.to_known_color(), csf_);
     }
     
@@ -5517,7 +5517,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFFB6C1U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFFB6C1u, c.to_argb(), csf_);
       assert::are_equal(known_color::light_pink, c.to_known_color(), csf_);
     }
     
@@ -5542,7 +5542,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFFA07AU, c.to_argb(), csf_);
+      assert::are_equal(0xFFFFA07Au, c.to_argb(), csf_);
       assert::are_equal(known_color::light_salmon, c.to_known_color(), csf_);
     }
     
@@ -5567,7 +5567,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF20B2AAU, c.to_argb(), csf_);
+      assert::are_equal(0xFF20B2AAu, c.to_argb(), csf_);
       assert::are_equal(known_color::light_sea_green, c.to_known_color(), csf_);
     }
     
@@ -5592,7 +5592,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF87CEFAU, c.to_argb(), csf_);
+      assert::are_equal(0xFF87CEFAu, c.to_argb(), csf_);
       assert::are_equal(known_color::light_sky_blue, c.to_known_color(), csf_);
     }
     
@@ -5617,7 +5617,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF778899U, c.to_argb(), csf_);
+      assert::are_equal(0xFF778899u, c.to_argb(), csf_);
       assert::are_equal(known_color::light_slate_gray, c.to_known_color(), csf_);
     }
     
@@ -5642,7 +5642,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFB0C4DEU, c.to_argb(), csf_);
+      assert::are_equal(0xFFB0C4DEu, c.to_argb(), csf_);
       assert::are_equal(known_color::light_steel_blue, c.to_known_color(), csf_);
     }
     
@@ -5667,7 +5667,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFFFFE0U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFFFFE0u, c.to_argb(), csf_);
       assert::are_equal(known_color::light_yellow, c.to_known_color(), csf_);
     }
     
@@ -5692,7 +5692,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF00FF00U, c.to_argb(), csf_);
+      assert::are_equal(0xFF00FF00u, c.to_argb(), csf_);
       assert::are_equal(known_color::lime, c.to_known_color(), csf_);
     }
     
@@ -5717,7 +5717,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF32CD32U, c.to_argb(), csf_);
+      assert::are_equal(0xFF32CD32u, c.to_argb(), csf_);
       assert::are_equal(known_color::lime_green, c.to_known_color(), csf_);
     }
     
@@ -5742,7 +5742,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFAF0E6U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFAF0E6u, c.to_argb(), csf_);
       assert::are_equal(known_color::linen, c.to_known_color(), csf_);
     }
     
@@ -5767,7 +5767,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFF00FFU, c.to_argb(), csf_);
+      assert::are_equal(0xFFFF00FFu, c.to_argb(), csf_);
       assert::are_equal(known_color::magenta, c.to_known_color(), csf_);
     }
     
@@ -5792,7 +5792,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF800000U, c.to_argb(), csf_);
+      assert::are_equal(0xFF800000u, c.to_argb(), csf_);
       assert::are_equal(known_color::maroon, c.to_known_color(), csf_);
     }
     
@@ -5817,7 +5817,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF66CDAAU, c.to_argb(), csf_);
+      assert::are_equal(0xFF66CDAAu, c.to_argb(), csf_);
       assert::are_equal(known_color::medium_aquamarine, c.to_known_color(), csf_);
     }
     
@@ -5842,7 +5842,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF0000CDU, c.to_argb(), csf_);
+      assert::are_equal(0xFF0000CDu, c.to_argb(), csf_);
       assert::are_equal(known_color::medium_blue, c.to_known_color(), csf_);
     }
     
@@ -5867,7 +5867,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFBA55D3U, c.to_argb(), csf_);
+      assert::are_equal(0xFFBA55D3u, c.to_argb(), csf_);
       assert::are_equal(known_color::medium_orchid, c.to_known_color(), csf_);
     }
     
@@ -5892,7 +5892,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF9370DBU, c.to_argb(), csf_);
+      assert::are_equal(0xFF9370DBu, c.to_argb(), csf_);
       assert::are_equal(known_color::medium_purple, c.to_known_color(), csf_);
     }
     
@@ -5917,7 +5917,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF3CB371U, c.to_argb(), csf_);
+      assert::are_equal(0xFF3CB371u, c.to_argb(), csf_);
       assert::are_equal(known_color::medium_sea_green, c.to_known_color(), csf_);
     }
     
@@ -5942,7 +5942,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF7B68EEU, c.to_argb(), csf_);
+      assert::are_equal(0xFF7B68EEu, c.to_argb(), csf_);
       assert::are_equal(known_color::medium_slate_blue, c.to_known_color(), csf_);
     }
     
@@ -5967,7 +5967,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF00FA9AU, c.to_argb(), csf_);
+      assert::are_equal(0xFF00FA9Au, c.to_argb(), csf_);
       assert::are_equal(known_color::medium_spring_green, c.to_known_color(), csf_);
     }
     
@@ -5992,7 +5992,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF48D1CCU, c.to_argb(), csf_);
+      assert::are_equal(0xFF48D1CCu, c.to_argb(), csf_);
       assert::are_equal(known_color::medium_turquoise, c.to_known_color(), csf_);
     }
     
@@ -6017,7 +6017,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFC71585U, c.to_argb(), csf_);
+      assert::are_equal(0xFFC71585u, c.to_argb(), csf_);
       assert::are_equal(known_color::medium_violet_red, c.to_known_color(), csf_);
     }
     
@@ -6042,7 +6042,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF191970U, c.to_argb(), csf_);
+      assert::are_equal(0xFF191970u, c.to_argb(), csf_);
       assert::are_equal(known_color::midnight_blue, c.to_known_color(), csf_);
     }
     
@@ -6067,7 +6067,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFF5FFFAU, c.to_argb(), csf_);
+      assert::are_equal(0xFFF5FFFAu, c.to_argb(), csf_);
       assert::are_equal(known_color::mint_cream, c.to_known_color(), csf_);
     }
     
@@ -6092,7 +6092,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFFE4E1U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFFE4E1u, c.to_argb(), csf_);
       assert::are_equal(known_color::misty_rose, c.to_known_color(), csf_);
     }
     
@@ -6117,7 +6117,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFFE4B5U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFFE4B5u, c.to_argb(), csf_);
       assert::are_equal(known_color::moccasin, c.to_known_color(), csf_);
     }
     
@@ -6142,7 +6142,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFFDEADU, c.to_argb(), csf_);
+      assert::are_equal(0xFFFFDEADu, c.to_argb(), csf_);
       assert::are_equal(known_color::navajo_white, c.to_known_color(), csf_);
     }
     
@@ -6167,7 +6167,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF000080U, c.to_argb(), csf_);
+      assert::are_equal(0xFF000080u, c.to_argb(), csf_);
       assert::are_equal(known_color::navy, c.to_known_color(), csf_);
     }
     
@@ -6192,7 +6192,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFDF5E6U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFDF5E6u, c.to_argb(), csf_);
       assert::are_equal(known_color::old_lace, c.to_known_color(), csf_);
     }
     
@@ -6217,7 +6217,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF808000U, c.to_argb(), csf_);
+      assert::are_equal(0xFF808000u, c.to_argb(), csf_);
       assert::are_equal(known_color::olive, c.to_known_color(), csf_);
     }
     
@@ -6242,7 +6242,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF6B8E23U, c.to_argb(), csf_);
+      assert::are_equal(0xFF6B8E23u, c.to_argb(), csf_);
       assert::are_equal(known_color::olive_drab, c.to_known_color(), csf_);
     }
     
@@ -6267,7 +6267,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFFA500U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFFA500u, c.to_argb(), csf_);
       assert::are_equal(known_color::orange, c.to_known_color(), csf_);
     }
     
@@ -6292,7 +6292,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFF4500U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFF4500u, c.to_argb(), csf_);
       assert::are_equal(known_color::orange_red, c.to_known_color(), csf_);
     }
     
@@ -6317,7 +6317,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFDA70D6U, c.to_argb(), csf_);
+      assert::are_equal(0xFFDA70D6u, c.to_argb(), csf_);
       assert::are_equal(known_color::orchid, c.to_known_color(), csf_);
     }
     
@@ -6342,7 +6342,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFEEE8AAU, c.to_argb(), csf_);
+      assert::are_equal(0xFFEEE8AAu, c.to_argb(), csf_);
       assert::are_equal(known_color::pale_goldenrod, c.to_known_color(), csf_);
     }
     
@@ -6367,7 +6367,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF98FB98U, c.to_argb(), csf_);
+      assert::are_equal(0xFF98FB98u, c.to_argb(), csf_);
       assert::are_equal(known_color::pale_green, c.to_known_color(), csf_);
     }
     
@@ -6392,7 +6392,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFAFEEEEU, c.to_argb(), csf_);
+      assert::are_equal(0xFFAFEEEEu, c.to_argb(), csf_);
       assert::are_equal(known_color::pale_turquoise, c.to_known_color(), csf_);
     }
     
@@ -6417,7 +6417,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFDB7093U, c.to_argb(), csf_);
+      assert::are_equal(0xFFDB7093u, c.to_argb(), csf_);
       assert::are_equal(known_color::pale_violet_red, c.to_known_color(), csf_);
     }
     
@@ -6442,7 +6442,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFFEFD5U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFFEFD5u, c.to_argb(), csf_);
       assert::are_equal(known_color::papaya_whip, c.to_known_color(), csf_);
     }
     
@@ -6467,7 +6467,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFFDAB9U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFFDAB9u, c.to_argb(), csf_);
       assert::are_equal(known_color::peach_puff, c.to_known_color(), csf_);
     }
     
@@ -6492,7 +6492,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFCD853FU, c.to_argb(), csf_);
+      assert::are_equal(0xFFCD853Fu, c.to_argb(), csf_);
       assert::are_equal(known_color::peru, c.to_known_color(), csf_);
     }
     
@@ -6517,7 +6517,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFFC0CBU, c.to_argb(), csf_);
+      assert::are_equal(0xFFFFC0CBu, c.to_argb(), csf_);
       assert::are_equal(known_color::pink, c.to_known_color(), csf_);
     }
     
@@ -6542,7 +6542,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFDDA0DDU, c.to_argb(), csf_);
+      assert::are_equal(0xFFDDA0DDu, c.to_argb(), csf_);
       assert::are_equal(known_color::plum, c.to_known_color(), csf_);
     }
     
@@ -6567,7 +6567,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFB0E0E6U, c.to_argb(), csf_);
+      assert::are_equal(0xFFB0E0E6u, c.to_argb(), csf_);
       assert::are_equal(known_color::powder_blue, c.to_known_color(), csf_);
     }
     
@@ -6592,7 +6592,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF800080U, c.to_argb(), csf_);
+      assert::are_equal(0xFF800080u, c.to_argb(), csf_);
       assert::are_equal(known_color::purple, c.to_known_color(), csf_);
     }
     
@@ -6617,7 +6617,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF663399U, c.to_argb(), csf_);
+      assert::are_equal(0xFF663399u, c.to_argb(), csf_);
       assert::are_equal(known_color::rebecca_purple, c.to_known_color(), csf_);
     }
     
@@ -6642,7 +6642,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFF0000U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFF0000u, c.to_argb(), csf_);
       assert::are_equal(known_color::red, c.to_known_color(), csf_);
     }
     
@@ -6667,7 +6667,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFBC8F8FU, c.to_argb(), csf_);
+      assert::are_equal(0xFFBC8F8Fu, c.to_argb(), csf_);
       assert::are_equal(known_color::rosy_brown, c.to_known_color(), csf_);
     }
     
@@ -6692,7 +6692,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF4169E1U, c.to_argb(), csf_);
+      assert::are_equal(0xFF4169E1u, c.to_argb(), csf_);
       assert::are_equal(known_color::royal_blue, c.to_known_color(), csf_);
     }
     
@@ -6717,7 +6717,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF8B4513U, c.to_argb(), csf_);
+      assert::are_equal(0xFF8B4513u, c.to_argb(), csf_);
       assert::are_equal(known_color::saddle_brown, c.to_known_color(), csf_);
     }
     
@@ -6742,7 +6742,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFA8072U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFA8072u, c.to_argb(), csf_);
       assert::are_equal(known_color::salmon, c.to_known_color(), csf_);
     }
     
@@ -6767,7 +6767,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFF4A460U, c.to_argb(), csf_);
+      assert::are_equal(0xFFF4A460u, c.to_argb(), csf_);
       assert::are_equal(known_color::sandy_brown, c.to_known_color(), csf_);
     }
     
@@ -6792,7 +6792,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF2E8B57U, c.to_argb(), csf_);
+      assert::are_equal(0xFF2E8B57u, c.to_argb(), csf_);
       assert::are_equal(known_color::sea_green, c.to_known_color(), csf_);
     }
     
@@ -6817,7 +6817,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFFF5EEU, c.to_argb(), csf_);
+      assert::are_equal(0xFFFFF5EEu, c.to_argb(), csf_);
       assert::are_equal(known_color::sea_shell, c.to_known_color(), csf_);
     }
     
@@ -6842,7 +6842,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFA0522DU, c.to_argb(), csf_);
+      assert::are_equal(0xFFA0522Du, c.to_argb(), csf_);
       assert::are_equal(known_color::sienna, c.to_known_color(), csf_);
     }
     
@@ -6867,7 +6867,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFC0C0C0U, c.to_argb(), csf_);
+      assert::are_equal(0xFFC0C0C0u, c.to_argb(), csf_);
       assert::are_equal(known_color::silver, c.to_known_color(), csf_);
     }
     
@@ -6892,7 +6892,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF87CEEBU, c.to_argb(), csf_);
+      assert::are_equal(0xFF87CEEBu, c.to_argb(), csf_);
       assert::are_equal(known_color::sky_blue, c.to_known_color(), csf_);
     }
     
@@ -6917,7 +6917,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF6A5ACDU, c.to_argb(), csf_);
+      assert::are_equal(0xFF6A5ACDu, c.to_argb(), csf_);
       assert::are_equal(known_color::slate_blue, c.to_known_color(), csf_);
     }
     
@@ -6942,7 +6942,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF708090U, c.to_argb(), csf_);
+      assert::are_equal(0xFF708090u, c.to_argb(), csf_);
       assert::are_equal(known_color::slate_gray, c.to_known_color(), csf_);
     }
     
@@ -6967,7 +6967,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFFFAFAU, c.to_argb(), csf_);
+      assert::are_equal(0xFFFFFAFAu, c.to_argb(), csf_);
       assert::are_equal(known_color::snow, c.to_known_color(), csf_);
     }
     
@@ -6992,7 +6992,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF00FF7FU, c.to_argb(), csf_);
+      assert::are_equal(0xFF00FF7Fu, c.to_argb(), csf_);
       assert::are_equal(known_color::spring_green, c.to_known_color(), csf_);
     }
     
@@ -7017,7 +7017,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF4682B4U, c.to_argb(), csf_);
+      assert::are_equal(0xFF4682B4u, c.to_argb(), csf_);
       assert::are_equal(known_color::steel_blue, c.to_known_color(), csf_);
     }
     
@@ -7042,7 +7042,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFD2B48CU, c.to_argb(), csf_);
+      assert::are_equal(0xFFD2B48Cu, c.to_argb(), csf_);
       assert::are_equal(known_color::tan, c.to_known_color(), csf_);
     }
     
@@ -7067,7 +7067,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF008080U, c.to_argb(), csf_);
+      assert::are_equal(0xFF008080u, c.to_argb(), csf_);
       assert::are_equal(known_color::teal, c.to_known_color(), csf_);
     }
     
@@ -7092,7 +7092,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFD8BFD8U, c.to_argb(), csf_);
+      assert::are_equal(0xFFD8BFD8u, c.to_argb(), csf_);
       assert::are_equal(known_color::thistle, c.to_known_color(), csf_);
     }
     
@@ -7117,7 +7117,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFF6347U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFF6347u, c.to_argb(), csf_);
       assert::are_equal(known_color::tomato, c.to_known_color(), csf_);
     }
     
@@ -7142,7 +7142,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFF40E0D0U, c.to_argb(), csf_);
+      assert::are_equal(0xFF40E0D0u, c.to_argb(), csf_);
       assert::are_equal(known_color::turquoise, c.to_known_color(), csf_);
     }
     
@@ -7167,7 +7167,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFEE82EEU, c.to_argb(), csf_);
+      assert::are_equal(0xFFEE82EEu, c.to_argb(), csf_);
       assert::are_equal(known_color::violet, c.to_known_color(), csf_);
     }
     
@@ -7192,7 +7192,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFF5DEB3U, c.to_argb(), csf_);
+      assert::are_equal(0xFFF5DEB3u, c.to_argb(), csf_);
       assert::are_equal(known_color::wheat, c.to_known_color(), csf_);
     }
     
@@ -7217,7 +7217,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFFFFFFU, c.to_argb(), csf_);
+      assert::are_equal(0xFFFFFFFFu, c.to_argb(), csf_);
       assert::are_equal(known_color::white, c.to_known_color(), csf_);
     }
     
@@ -7242,7 +7242,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFF5F5F5U, c.to_argb(), csf_);
+      assert::are_equal(0xFFF5F5F5u, c.to_argb(), csf_);
       assert::are_equal(known_color::white_smoke, c.to_known_color(), csf_);
     }
     
@@ -7267,7 +7267,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0xFFFFFF00U, c.to_argb(), csf_);
+      assert::are_equal(0xFFFFFF00u, c.to_argb(), csf_);
       assert::are_equal(known_color::yellow, c.to_known_color(), csf_);
     }
   };

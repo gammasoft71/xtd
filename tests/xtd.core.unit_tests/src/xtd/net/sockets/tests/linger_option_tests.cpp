@@ -21,7 +21,7 @@ namespace xtd::net::sockets::tests {
     void test_method_(constructor_wtih_enabled_and_linger_time) {
       linger_option linger(true, 5);
       assert::is_true(linger.enabled(), csf_);
-      assert::are_equal(5U, linger.linger_time(), csf_);
+      assert::are_equal(5u, linger.linger_time(), csf_);
     }
     
     void test_method_(set_enabled) {
@@ -35,7 +35,7 @@ namespace xtd::net::sockets::tests {
       linger_option linger;
       linger.linger_time(5);
       assert::is_false(linger.enabled(), csf_);
-      assert::are_equal(5U, linger.linger_time(), csf_);
+      assert::are_equal(5u, linger.linger_time(), csf_);
     }
   };
 }

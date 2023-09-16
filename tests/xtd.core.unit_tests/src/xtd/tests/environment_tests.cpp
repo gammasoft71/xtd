@@ -98,7 +98,7 @@ namespace xtd::tests {
     }
     
     void test_method_(processor_count) {
-      assert::is_greater_or_equal(environment::processor_count(), 1U, csf_);
+      assert::is_greater_or_equal(environment::processor_count(), 1u, csf_);
     }
     
     void test_method_(processor_information) {
@@ -195,7 +195,7 @@ namespace xtd::tests {
     
     void test_method_(get_command_line_args) {
       auto args = environment::get_command_line_args();
-      assert::is_greater_or_equal(args.size(), 1U, csf_);
+      assert::is_greater_or_equal(args.size(), 1u, csf_);
       string_assert::contains("xtd.core.unit_tests", args[0], csf_);
     }
     
@@ -257,7 +257,7 @@ namespace xtd::tests {
       environment::set_environment_variable("xtd_test_core_value1", "First value");
       environment::set_environment_variable("xtd_test_core_value2", "Second value");
       auto envs = environment::get_environment_variables();
-      assert::is_greater_or_equal(envs.size(), 2U, csf_);
+      assert::is_greater_or_equal(envs.size(), 2u, csf_);
       assert::are_equal("First value", envs["xtd_test_core_value1"], csf_);
       assert::are_equal("Second value", envs["xtd_test_core_value2"], csf_);
     }
@@ -266,7 +266,7 @@ namespace xtd::tests {
       environment::set_environment_variable("xtd_test_core_value1", "First value", environment_variable_target::process);
       environment::set_environment_variable("xtd_test_core_value2", "Second value", environment_variable_target::process);
       auto envs = environment::get_environment_variables(environment_variable_target::process);
-      assert::is_greater_or_equal(envs.size(), 2U, csf_);
+      assert::is_greater_or_equal(envs.size(), 2u, csf_);
       assert::are_equal("First value", envs["xtd_test_core_value1"], csf_);
       assert::are_equal("Second value", envs["xtd_test_core_value2"], csf_);
     }
@@ -277,7 +277,7 @@ namespace xtd::tests {
        environment::set_environment_variable("xtd_test_core_value1", "First value", environment_variable_target::user);
        environment::set_environment_variable("xtd_test_core_value2", "Second value", environment_variable_target::user);
        auto envs = environment::get_environment_variables(environment_variable_target::user);
-       assert::is_greater_or_equal(envs.size(), 2U, csf_);
+       assert::is_greater_or_equal(envs.size(), 2u, csf_);
        assert::are_equal("First value", envs["xtd_test_core_value1"], csf_);
        assert::are_equal("Second value", envs["xtd_test_core_value2"], csf_);
        */
@@ -289,7 +289,7 @@ namespace xtd::tests {
        environment::set_environment_variable("xtd_test_core_value1", "First value", environment_variable_target::machine);
        environment::set_environment_variable("xtd_test_core_value2", "Second value", environment_variable_target::machine);
        auto envs = environment::get_environment_variables(environment_variable_target::machine);
-       assert::is_greater_or_equal(envs.size(), 2U, csf_);
+       assert::is_greater_or_equal(envs.size(), 2u, csf_);
        assert::are_equal("First value", envs["xtd_test_core_value1"], csf_);
        assert::are_equal("Second value", envs["xtd_test_core_value2"], csf_);
        */

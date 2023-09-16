@@ -65,7 +65,7 @@ int32 binary_reader::read() {
 
 size_t binary_reader::read(std::vector<xtd::byte>& buffer, size_t index, size_t count) {
   if (index + count > buffer.size()) throw argument_exception {csf_};
-  for (auto i = 0U; i < count; i++) {
+  for (auto i = 0u; i < count; i++) {
     auto current = read();
     if (current == EOF) return i;
     buffer[index + i] = static_cast<xtd::byte>(current);
@@ -75,7 +75,7 @@ size_t binary_reader::read(std::vector<xtd::byte>& buffer, size_t index, size_t 
 
 size_t binary_reader::read(std::vector<char>& buffer, size_t index, size_t count) {
   if (index + count > buffer.size()) throw argument_exception {csf_};
-  for (auto i = 0U; i < count; i++) {
+  for (auto i = 0u; i < count; i++) {
     auto current = read();
     if (current == EOF) return i;
     buffer[index + i] = static_cast<char>(current);

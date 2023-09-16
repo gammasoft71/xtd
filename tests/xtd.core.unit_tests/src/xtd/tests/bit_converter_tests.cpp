@@ -340,19 +340,19 @@ namespace xtd::tests {
     }
     
     void test_method_(get_bytes_uint32) {
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(15U)) {
+      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(15u)) {
         bytes_assert::are_equal(0x0F, 0x00, 0x00, 0x00, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(1023U)) {
+      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(1023u)) {
         bytes_assert::are_equal(0xFF, 0x03, 0x00, 0x00, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(0x100000U)) {
+      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(0x100000u)) {
         bytes_assert::are_equal(0x00, 0x00, 0x10, 0x00, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(1000000000U)) {
+      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(1000000000u)) {
         bytes_assert::are_equal(0x00, 0xCA, 0x9A, 0x3B, bytes, csf_);
       }
       
@@ -588,10 +588,10 @@ namespace xtd::tests {
       assert::throws<out_of_range>([] {bit_converter::to_uint32({0x00, 0x00, 0x00, 0x00}, 4);}, csf_);
       assert::throws<out_of_range>([] {bit_converter::to_uint32({0x00, 0x00, 0x00, 0x00}, 1);}, csf_);
       
-      assert::are_equal(15U, bit_converter::to_uint32({0x0F, 0x00, 0x00, 0x00}, 0), csf_);
-      assert::are_equal(1023U, bit_converter::to_uint32({0xFF, 0x03, 0x00, 0x00}, 0), csf_);
-      assert::are_equal(0x100000U, bit_converter::to_uint32({0x00, 0x00, 0x10, 0x00}, 0), csf_);
-      assert::are_equal(1000000000U, bit_converter::to_uint32({0x00, 0xCA, 0x9A, 0x3B}, 0), csf_);
+      assert::are_equal(15u, bit_converter::to_uint32({0x0F, 0x00, 0x00, 0x00}, 0), csf_);
+      assert::are_equal(1023u, bit_converter::to_uint32({0xFF, 0x03, 0x00, 0x00}, 0), csf_);
+      assert::are_equal(0x100000u, bit_converter::to_uint32({0x00, 0x00, 0x10, 0x00}, 0), csf_);
+      assert::are_equal(1000000000u, bit_converter::to_uint32({0x00, 0xCA, 0x9A, 0x3B}, 0), csf_);
       assert::are_equal(std::numeric_limits<uint32>::lowest(), bit_converter::to_uint32({0x00, 0x00, 0x00, 0x00}, 0), csf_);
       assert::are_equal(std::numeric_limits<uint32>::max(), bit_converter::to_uint32({0xFF, 0xFF, 0xFF, 0xFF}, 0), csf_);
     }

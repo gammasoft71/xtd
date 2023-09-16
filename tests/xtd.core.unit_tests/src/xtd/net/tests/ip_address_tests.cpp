@@ -94,8 +94,8 @@ namespace xtd::net::tests {
     
     void test_method_(get_scope_id) {
       assert::throws<socket_exception>([] {ip_address(vector<xtd::byte> {172, 16, 10, 30}).scope_id();}, csf_);
-      assert::are_equal(0U, ip_address(vector<xtd::byte> {0x20, 0x01, 0x00, 0x00, 0x5e, 0xf5, 0x73, 0xb8, 0x2c, 0x2c, 0x30, 0x28, 0x2a, 0x4e, 0xb2, 0x83}).scope_id(), csf_);
-      assert::are_equal(15U, ip_address(vector<xtd::byte> {0x20, 0x01, 0x00, 0x00, 0x5e, 0xf5, 0x73, 0xb8, 0x2c, 0x2c, 0x30, 0x28, 0x2a, 0x4e, 0xb2, 0x83}, 15).scope_id(), csf_);
+      assert::are_equal(0u, ip_address(vector<xtd::byte> {0x20, 0x01, 0x00, 0x00, 0x5e, 0xf5, 0x73, 0xb8, 0x2c, 0x2c, 0x30, 0x28, 0x2a, 0x4e, 0xb2, 0x83}).scope_id(), csf_);
+      assert::are_equal(15u, ip_address(vector<xtd::byte> {0x20, 0x01, 0x00, 0x00, 0x5e, 0xf5, 0x73, 0xb8, 0x2c, 0x2c, 0x30, 0x28, 0x2a, 0x4e, 0xb2, 0x83}, 15).scope_id(), csf_);
     }
     
     void test_method_(is_ip_v4_mapped_to_ip_v6) {
@@ -143,12 +143,12 @@ namespace xtd::net::tests {
     
     void test_method_(host_to_network_order) {
       if (bit_converter::is_little_endian) {
-        assert::are_equal(0x3412U, ip_address::host_to_network_order(static_cast<uint16>(0x1234)), csf_);
-        assert::are_equal(0x78563412U, ip_address::host_to_network_order(static_cast<uint32>(0x12345678)), csf_);
+        assert::are_equal(0x3412u, ip_address::host_to_network_order(static_cast<uint16>(0x1234)), csf_);
+        assert::are_equal(0x78563412u, ip_address::host_to_network_order(static_cast<uint32>(0x12345678)), csf_);
         assert::are_equal(0xF0DEBC9A78563412ull, ip_address::host_to_network_order(static_cast<uint64>(0x123456789ABCDEF0)), csf_);
       } else {
-        assert::are_equal(0x1234U, ip_address::host_to_network_order(static_cast<uint16>(0x1234)), csf_);
-        assert::are_equal(0x12345678U, ip_address::host_to_network_order(static_cast<uint32>(0x12345678)), csf_);
+        assert::are_equal(0x1234u, ip_address::host_to_network_order(static_cast<uint16>(0x1234)), csf_);
+        assert::are_equal(0x12345678u, ip_address::host_to_network_order(static_cast<uint32>(0x12345678)), csf_);
         assert::are_equal(0x123456789ABCDEF0ull, ip_address::host_to_network_order(static_cast<uint64>(0x123456789ABCDEF0)), csf_);
       }
     }
@@ -163,12 +163,12 @@ namespace xtd::net::tests {
     
     void test_method_(network_to_host_order) {
       if (bit_converter::is_little_endian) {
-        assert::are_equal(0x3412U, ip_address::network_to_host_order(static_cast<uint16>(0x1234)), csf_);
-        assert::are_equal(0x78563412U, ip_address::network_to_host_order(static_cast<uint32>(0x12345678)), csf_);
+        assert::are_equal(0x3412u, ip_address::network_to_host_order(static_cast<uint16>(0x1234)), csf_);
+        assert::are_equal(0x78563412u, ip_address::network_to_host_order(static_cast<uint32>(0x12345678)), csf_);
         assert::are_equal(0xF0DEBC9A78563412ull, ip_address::network_to_host_order(static_cast<uint64>(0x123456789ABCDEF0)), csf_);
       } else {
-        assert::are_equal(0x1234U, ip_address::network_to_host_order(static_cast<uint16>(0x1234)), csf_);
-        assert::are_equal(0x12345678U, ip_address::network_to_host_order(static_cast<uint32>(0x12345678)), csf_);
+        assert::are_equal(0x1234u, ip_address::network_to_host_order(static_cast<uint16>(0x1234)), csf_);
+        assert::are_equal(0x12345678u, ip_address::network_to_host_order(static_cast<uint32>(0x12345678)), csf_);
         assert::are_equal(0x123456789ABCDEF0ull, ip_address::network_to_host_order(static_cast<uint64>(0x123456789ABCDEF0)), csf_);
       }
     }

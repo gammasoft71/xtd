@@ -30,7 +30,7 @@ namespace xtd::net::tests {
     
     void test_method_(get_host_addresses_from_host_name) {
       vector<ip_address> addresses = dns::get_host_addresses(dns::get_host_name());
-      assert::is_greater_or_equal(addresses.size(), 1U, csf_);
+      assert::is_greater_or_equal(addresses.size(), 1u, csf_);
     }
     
     void test_method_(get_host_entry_from_local_host_address_string) {
@@ -54,14 +54,14 @@ namespace xtd::net::tests {
     void test_method_(get_host_entry_from_host_name) {
       ip_host_entry host_entry = dns::get_host_entry(dns::get_host_name());
       string_assert::starts_with(dns::get_host_name().to_lower(), host_entry.host_name().to_lower(), csf_);
-      assert::is_greater_or_equal(host_entry.address_list().size(), 1U, csf_);
+      assert::is_greater_or_equal(host_entry.address_list().size(), 1u, csf_);
     }
     
     void test_method_(get_host_entry_from_host_address) {
       #if !_WIN32 && !__APPLE__
       ip_host_entry host_entry = dns::get_host_entry(dns::get_host_entry(dns::get_host_name()).address_list()[0]);
       string_assert::starts_with(dns::get_host_name().to_lower(), host_entry.host_name().to_lower(), csf_);
-      assert::is_greater_or_equal(host_entry.address_list().size(), 1U, csf_);
+      assert::is_greater_or_equal(host_entry.address_list().size(), 1u, csf_);
       #endif
     }
     
@@ -69,7 +69,7 @@ namespace xtd::net::tests {
       #if !_WIN32 && !__APPLE__
       ip_host_entry host_entry = dns::get_host_entry(dns::get_host_entry(dns::get_host_name()).address_list()[0].to_string());
       string_assert::starts_with(dns::get_host_name().to_lower(), host_entry.host_name().to_lower(), csf_);
-      assert::is_greater_or_equal(host_entry.address_list().size(), 1U, csf_);
+      assert::is_greater_or_equal(host_entry.address_list().size(), 1u, csf_);
       #endif
     }
   };

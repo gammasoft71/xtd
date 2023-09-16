@@ -262,8 +262,8 @@ namespace xtd::net::sockets::tests {
       assume::is_true(socket::os_supports_ip_v4());
       socket s(address_family::inter_network, socket_type::stream, protocol_type::tcp);
       s.receive_buffer_size(4242);
-      // Fix on linux receive 8484U value ???
-      //assert::are_equal(4242U, s.receive_buffer_size(), csf_);
+      // Fix on linux receive 8484u value ???
+      //assert::are_equal(4242u, s.receive_buffer_size(), csf_);
     }
     
     void test_method_(set_receive_timeout) {
@@ -277,8 +277,8 @@ namespace xtd::net::sockets::tests {
       assume::is_true(socket::os_supports_ip_v4());
       socket s(address_family::inter_network, socket_type::stream, protocol_type::tcp);
       s.send_buffer_size(4242);
-      // Fix on linux receive 8484U value ???
-      //assert::are_equal(4242U, s.send_buffer_size(), csf_);
+      // Fix on linux receive 8484u value ???
+      //assert::are_equal(4242u, s.send_buffer_size(), csf_);
     }
     
     void test_method_(set_send_timeout) {
