@@ -627,8 +627,8 @@ int32 ustring::compare(const ustring& str_a, size_t index_a, const ustring& str_
 }
 
 int32 ustring::compare(const ustring& str_a, size_t index_a, const ustring& str_b, size_t index_b, size_t length, xtd::string_comparison comparison_type) noexcept {
-  ustring sa(str_a.substr(index_a, length));
-  ustring sb(str_b.substr(index_b, length));
+  auto sa = str_a.substr(index_a, length);
+  auto sb = str_b.substr(index_b, length);
   if (comparison_type == xtd::string_comparison::ordinal_ignore_case)
     return sa.to_lower().compare(sb.to_lower());
   return sa.compare(sb);
@@ -651,40 +651,40 @@ ustring ustring::concat(const ustring& str_a, const ustring& str_b) noexcept {
 }
 
 ustring ustring::concat(const std::vector<ustring>& values) noexcept {
-  ustring result;
+  auto result = ustring::empty_string;
   for_each(values.begin(), values.end(), [&](const auto & item) {result += item;});
   return result;
 }
 
 ustring ustring::concat(const std::vector<const value_type*>& values) noexcept {
-  ustring result;
+  auto result = ustring::empty_string;
   for_each(values.begin(), values.end(), [&](const auto & item) {result += item;});
   return result;
 }
 
 #if defined(__cpp_lib_char8_t)
 ustring ustring::concat(const std::vector<const char8*>& values) noexcept {
-  ustring result;
+  auto result = ustring::empty_string;
   for_each(values.begin(), values.end(), [&](const auto & item) {result += ustring(item);});
   return result;
 }
 #endif
 
 ustring ustring::concat(const std::initializer_list<ustring>& values) noexcept {
-  ustring result;
+  auto result = ustring::empty_string;
   for_each(values.begin(), values.end(), [&](const auto & item) {result += item;});
   return result;
 }
 
 ustring ustring::concat(const std::initializer_list<const value_type*>& values) noexcept {
-  ustring result;
+  auto result = ustring::empty_string;
   for_each(values.begin(), values.end(), [&](const auto & item) {result += item;});
   return result;
 }
 
 #if defined(__cpp_lib_char8_t)
 ustring ustring::concat(const std::initializer_list<const char8*>& values) noexcept {
-  ustring result;
+  auto result = ustring::empty_string;
   for_each(values.begin(), values.end(), [&](const auto & item) {result += ustring(item);});
   return result;
 }
@@ -751,12 +751,12 @@ size_t ustring::index_of(const ustring& value, size_t start_index) const noexcep
 }
 
 size_t ustring::index_of(value_type value, size_t start_index, size_t count) const noexcept {
-  size_t result = find(value, start_index);
+  auto result = find(value, start_index);
   return result > start_index + count ? npos : result;
 }
 
 size_t ustring::index_of(const ustring& value, size_t start_index, size_t count) const noexcept {
-  size_t result = find(value, start_index);
+  auto result = find(value, start_index);
   return result > start_index + count ? npos : result;
 }
 
@@ -769,7 +769,7 @@ size_t ustring::index_of_any(const std::vector<value_type>& values, size_t start
 }
 
 size_t ustring::index_of_any(const std::vector<value_type>& values, size_t start_index, size_t count) const noexcept {
-  size_t index = 0;
+  auto index = 0ul;
   for (const auto& item : *this) {
     if (index++ < start_index) continue;
     if (index - 1 > start_index + count) break;
@@ -791,7 +791,7 @@ size_t ustring::index_of_any(const std::initializer_list<value_type>& values, si
 }
 
 ustring ustring::insert(size_t start_index, const ustring& value) const noexcept {
-  ustring result(*this);
+  auto result = *this;
   result.basic_string<value_type>::insert(start_index, value);
   return result;
 }
@@ -817,12 +817,12 @@ size_t ustring::last_index_of(const ustring& value, size_t start_index) const no
 }
 
 size_t ustring::last_index_of(value_type value, size_t start_index, size_t count) const noexcept {
-  size_t result = rfind(value, start_index + count - 1);
+  auto result = rfind(value, start_index + count - 1);
   return result < start_index ? npos : result;
 }
 
 size_t ustring::last_index_of(const ustring& value, size_t start_index, size_t count) const noexcept {
-  size_t result = rfind(value, start_index + count - value.size());
+  auto result = rfind(value, start_index + count - value.size());
   return result < start_index ? npos : result;
 }
 
@@ -835,7 +835,7 @@ size_t ustring::last_index_of_any(const std::vector<value_type>& values, size_t 
 }
 
 size_t ustring::last_index_of_any(const std::vector<value_type>& values, size_t start_index, size_t count) const noexcept {
-  size_t index = size() - 1;
+  auto index = size() - 1;
   for (const_reverse_iterator it = crbegin(); it != crend(); ++it) {
     if (index-- > start_index + count) continue;
     if (index + 1 < start_index) break;
@@ -898,10 +898,10 @@ ustring ustring::replace(value_type old_char, value_type new_char) const noexcep
 }
 
 ustring ustring::replace(const ustring& old_string, const ustring& new_string) const noexcept {
-  ustring result(*this);
+  auto result = *this;
   auto old_size = old_string.length();
   auto new_size = new_string.length();
-  size_t index = 0;
+  auto index = 0ul;
   while (true) {
     index = result.find(old_string, index);
     if (index == npos) break;
@@ -919,11 +919,11 @@ std::vector<ustring> ustring::split(const std::vector<value_type>& separators, s
   if (count == 0) return {};
   if (count == 1) return {*this};
   
-  std::vector<ustring> list;
-  ustring sub_string;
-  std::vector<value_type> split_char_separators = separators.size() == 0 ? std::vector<value_type> {9, 10, 11, 12, 13, 32} : separators;
-  for (const_iterator it = begin(); it != end(); ++it) {
-    bool is_separator =  std::find(split_char_separators.begin(), split_char_separators.end(), *it) != split_char_separators.end();
+  auto list = std::vector<ustring> {};
+  auto sub_string = ustring::empty_string;
+  auto split_char_separators = separators.size() == 0 ? std::vector<value_type> {9, 10, 11, 12, 13, 32} : separators;
+  for (auto it = begin(); it != end(); ++it) {
+    auto is_separator =  std::find(split_char_separators.begin(), split_char_separators.end(), *it) != split_char_separators.end();
     if (!is_separator) sub_string.append(ustring(1, *it));
     if ((static_cast<size_t>(it - begin()) == length() - 1 || is_separator) && (sub_string.length() > 0 || (sub_string.length() == 0 && options != string_split_options::remove_empty_entries))) {
       if (list.size() == count - 1) {
@@ -997,7 +997,7 @@ std::vector<ustring::value_type> ustring::to_array(size_t start_index, size_t le
 }
 
 ustring ustring::to_lower() const noexcept {
-  ustring result;
+  auto result = ustring::empty_string;
   for_each(begin(), end(), [&](auto c) {result += static_cast<char>(std::tolower(c));});
   return result;
 }
@@ -1014,7 +1014,7 @@ ustring ustring::to_string() const noexcept {
 }
 
 ustring ustring::to_upper() const noexcept {
-  ustring result;
+  auto result = ustring::empty_string;
   for_each(begin(), end(), [&](auto c) {result += static_cast<char>(std::toupper(c));});
   return result;
 }
@@ -1041,7 +1041,7 @@ ustring ustring::trim_end(value_type trim_char) const noexcept {
 
 ustring ustring::trim_end(const std::vector<value_type>& trim_chars) const noexcept {
   if (!size()) return *this;
-  ustring result(*this);
+  auto result = *this;
   while (std::find(trim_chars.begin(), trim_chars.end(), result[result.size() - 1]) != trim_chars.end())
     result.erase(result.size() - 1, 1);
   return result;
@@ -1056,14 +1056,14 @@ ustring ustring::trim_start(value_type trim_char) const noexcept {
 }
 
 ustring ustring::trim_start(const std::vector<value_type>& trim_chars) const noexcept {
-  ustring result(*this);
+  auto result = *this;
   while (std::find(trim_chars.begin(), trim_chars.end(), result[0]) != trim_chars.end())
     result.erase(0, 1);
   return result;
 }
 
 ustring ustring::get_class_name(const ustring& full_name) {
-  size_t length = full_name.last_index_of("<");
+  auto length = full_name.last_index_of("<");
   if (length == npos) length = full_name.length();
   if (full_name.last_index_of("::", 0, length) == npos) return full_name;
   return full_name.substring(full_name.last_index_of("::", 0, length) + 2);
