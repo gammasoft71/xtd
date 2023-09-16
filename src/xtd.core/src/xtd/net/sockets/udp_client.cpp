@@ -115,9 +115,9 @@ void udp_client::allow_nat_traversal(bool allowed) {
 }
 
 std::shared_ptr<xtd::iasync_result> udp_client::begin_receive(xtd::async_callback callback, const std::any& state) {
-  std::shared_ptr<async_result_receive> ar = make_shared<async_result_receive>(state);
+  auto ar = make_shared<async_result_receive>(state);
   ar->async_wait_handle().wait_one();
-  thread operation_thread([](udp_client * udp_client, std::shared_ptr<async_result_receive> ar, xtd::async_callback callback) {
+  auto operation_thread = std::thread {[](udp_client * udp_client, std::shared_ptr<async_result_receive> ar, xtd::async_callback callback) {
     try {
       ar->buffer_ = udp_client->receive(ar->remote_end_point_);
       ar->is_completed_ = true;
@@ -126,15 +126,15 @@ std::shared_ptr<xtd::iasync_result> udp_client::begin_receive(xtd::async_callbac
     } catch (...) {
       ar->exception_ = current_exception();
     }
-  }, this, ar, callback);
+  }, this, ar, callback};
   operation_thread.detach();
   return ar;
 }
 
 std::shared_ptr<xtd::iasync_result> udp_client::begin_send(const std::vector<xtd::byte>& dgram, size_t bytes, const xtd::ustring& hostname, uint16 port, xtd::async_callback callback, const std::any& state) {
-  std::shared_ptr<async_result_send> ar = make_shared<async_result_send>(state);
+  auto ar = make_shared<async_result_send>(state);
   ar->async_wait_handle().wait_one();
-  thread operation_thread([](udp_client * udp_client, const std::vector<xtd::byte>& dgram, size_t bytes, const xtd::ustring & hostname, uint16 port, std::shared_ptr<async_result_send> ar, xtd::async_callback callback) {
+  auto operation_thread = std::thread {[](udp_client * udp_client, const std::vector<xtd::byte>& dgram, size_t bytes, const xtd::ustring & hostname, uint16 port, std::shared_ptr<async_result_send> ar, xtd::async_callback callback) {
     try {
       ar->number_of_bytes_sent_ = udp_client->send(dgram, bytes, hostname, port);
       ar->is_completed_ = true;
@@ -143,15 +143,15 @@ std::shared_ptr<xtd::iasync_result> udp_client::begin_send(const std::vector<xtd
     } catch (...) {
       ar->exception_ = current_exception();
     }
-  }, this, dgram, bytes, hostname, port, ar, callback);
+  }, this, dgram, bytes, hostname, port, ar, callback};
   operation_thread.detach();
   return ar;
 }
 
 std::shared_ptr<xtd::iasync_result> udp_client::begin_send(const std::vector<xtd::byte>& dgram, size_t bytes, const xtd::net::ip_end_point& end_point, xtd::async_callback callback, const std::any& state) {
-  std::shared_ptr<async_result_send> ar = make_shared<async_result_send>(state);
+  auto ar = make_shared<async_result_send>(state);
   ar->async_wait_handle().wait_one();
-  thread operation_thread([](udp_client * udp_client, const std::vector<xtd::byte>& dgram, size_t bytes, const xtd::net::ip_end_point & end_point, std::shared_ptr<async_result_send> ar, xtd::async_callback callback) {
+  auto operation_thread = std::thread {[](udp_client * udp_client, const std::vector<xtd::byte>& dgram, size_t bytes, const xtd::net::ip_end_point & end_point, std::shared_ptr<async_result_send> ar, xtd::async_callback callback) {
     try {
       ar->number_of_bytes_sent_ = udp_client->send(dgram, bytes, end_point);
       ar->is_completed_ = true;
@@ -160,15 +160,15 @@ std::shared_ptr<xtd::iasync_result> udp_client::begin_send(const std::vector<xtd
     } catch (...) {
       ar->exception_ = current_exception();
     }
-  }, this, dgram, bytes, end_point, ar, callback);
+  }, this, dgram, bytes, end_point, ar, callback};
   operation_thread.detach();
   return ar;
 }
 
 std::shared_ptr<xtd::iasync_result> udp_client::begin_send(const std::vector<xtd::byte>& dgram, size_t bytes, xtd::async_callback callback, const std::any& state) {
-  std::shared_ptr<async_result_send> ar = make_shared<async_result_send>(state);
+  auto ar = make_shared<async_result_send>(state);
   ar->async_wait_handle().wait_one();
-  thread operation_thread([](udp_client * udp_client, const std::vector<xtd::byte>& dgram, size_t bytes, std::shared_ptr<async_result_send> ar, xtd::async_callback callback) {
+  auto operation_thread = std::thread {[](udp_client * udp_client, const std::vector<xtd::byte>& dgram, size_t bytes, std::shared_ptr<async_result_send> ar, xtd::async_callback callback) {
     try {
       ar->number_of_bytes_sent_ = udp_client->send(dgram, bytes);
       ar->is_completed_ = true;
@@ -177,7 +177,7 @@ std::shared_ptr<xtd::iasync_result> udp_client::begin_send(const std::vector<xtd
     } catch (...) {
       ar->exception_ = current_exception();
     }
-  }, this, dgram, bytes, ar, callback);
+  }, this, dgram, bytes, ar, callback};
   operation_thread.detach();
   return ar;
 }
@@ -215,7 +215,7 @@ void udp_client::drop_multicast_group(const xtd::net::ip_address& multicast_addr
 vector<xtd::byte> udp_client::end_receive(shared_ptr<xtd::iasync_result> async_result, ip_end_point& remote_end_point) {
   if (async_result == nullptr) throw argument_null_exception {csf_};
   if (!is<async_result_receive>(async_result)) throw argument_exception {csf_};
-  lock_guard<xtd::threading::mutex> lock(as<xtd::threading::mutex>(async_result->async_wait_handle()));
+  auto lock = lock_guard<xtd::threading::mutex> {as<xtd::threading::mutex>(async_result->async_wait_handle())};
   if (as<async_result_receive>(async_result)->exception_) rethrow_exception(as<async_result_receive>(async_result)->exception_);
   remote_end_point = as<async_result_receive>(async_result)->remote_end_point_;
   return as<async_result_receive>(async_result)->buffer_;
@@ -224,7 +224,7 @@ vector<xtd::byte> udp_client::end_receive(shared_ptr<xtd::iasync_result> async_r
 size_t udp_client::end_send(std::shared_ptr<xtd::iasync_result> async_result) {
   if (async_result == nullptr) throw argument_null_exception {csf_};
   if (!is<async_result_send>(async_result)) throw argument_exception {csf_};
-  lock_guard<xtd::threading::mutex> lock(as<xtd::threading::mutex>(async_result->async_wait_handle()));
+  auto lock = lock_guard<xtd::threading::mutex> {as<xtd::threading::mutex>(async_result->async_wait_handle())};
   if (as<async_result_send>(async_result)->exception_) rethrow_exception(as<async_result_receive>(async_result)->exception_);
   return as<async_result_send>(async_result)->number_of_bytes_sent_;
 }
