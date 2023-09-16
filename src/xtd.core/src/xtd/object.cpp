@@ -1,3 +1,4 @@
+#include "../../include/xtd/as.h"
 #include "../../include/xtd/object.h"
 #include "../../include/xtd/type_object.h"
 #include "../../include/xtd/ustring.h"
@@ -15,7 +16,7 @@ bool object::equals(const object& object_a, const object& object_b) noexcept {
 }
 
 size_t object::get_hash_code() const noexcept {
-  return static_cast<size_t>(reinterpret_cast<int64>(this) & 0x00000000FFFFFFFF) ^ static_cast<size_t>((reinterpret_cast<int64>(this) >> 32) & 0x00000000FFFFFFFF);
+  return as<size_t>(reinterpret_cast<int64>(this) & 0x00000000FFFFFFFF) ^ as<size_t>((reinterpret_cast<int64>(this) >> 32) & 0x00000000FFFFFFFF);
 }
 
 type_object object::get_type() const noexcept {
