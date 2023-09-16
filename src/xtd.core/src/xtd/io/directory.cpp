@@ -363,8 +363,8 @@ void directory::set_permissions(const xtd::ustring& path, xtd::io::file_permissi
   if (native::file_system::set_permissions(path, static_cast<int32>(permissions)) != 0) throw io_exception {csf_};
 }
 
-std::tuple<time_t, time_t, time_t> directory::get_file_times(const ustring& path) {
+tuple<time_t, time_t, time_t> directory::get_file_times(const ustring& path) {
   auto creation_time = time_t {}, last_access_time = time_t {}, last_write_time = time_t {};
   if (native::file_system::get_file_times(path, creation_time, last_access_time, last_write_time) != 0) throw io_exception {csf_};
-  return std::make_tuple(creation_time, last_access_time, last_write_time);
+  return make_tuple(creation_time, last_access_time, last_write_time);
 }
