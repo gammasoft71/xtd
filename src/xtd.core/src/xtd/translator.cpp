@@ -40,7 +40,7 @@ std::vector<xtd::ustring> translator::languages() {
     initialize(); // Must be first
   } catch (...) {
   }
-  static std::vector<xtd::ustring> languages;
+  static auto languages = std::vector<xtd::ustring> {};
   if (!languages.empty()) return languages;
   for_each(language_values_.begin(), language_values_.end(), [&](auto language_value) {languages.push_back(language_value.first);});
   return languages;
@@ -64,10 +64,10 @@ void translator::parse_locale(const xtd::ustring& locale_path) {
 }
 
 void translator::parse_file(const xtd::ustring& file, const xtd::ustring& language) {
-  vector<ustring> lines = xtd::io::file::read_all_lines(file);
-  ustring key;
-  ustring value;
-  int32 line_count = 0;
+  auto lines = xtd::io::file::read_all_lines(file);
+  auto key = ustring::empty_string;
+  auto value = ustring::empty_string;
+  auto line_count = 0;
   for (auto line : lines) {
     line_count++;
     line = line.trim();
