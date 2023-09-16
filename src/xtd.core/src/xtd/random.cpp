@@ -1,4 +1,5 @@
 #include "../../include/xtd/as.h"
+#include "../../include/xtd/byte_object.h"
 #include "../../include/xtd/int32_object.h"
 #include "../../include/xtd/math.h"
 #include "../../include/xtd/random.h"
@@ -39,7 +40,7 @@ void random::next_bytes(std::vector<xtd::byte>& buffer) const {
 void random::next_bytes(xtd::byte* buffer, size_t buffer_size) const {
   if (buffer == nullptr) throw argument_null_exception {csf_};
   for (auto index = 0u; index < buffer_size; index++)
-    buffer[index] = next<xtd::byte>(0, int32_object::max_value);
+    buffer[index] = next<xtd::byte>(0, byte_object::max_value);
 }
 
 double random::next_double() const {
