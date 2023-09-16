@@ -670,7 +670,7 @@ size_t socket::end_send_to(std::shared_ptr<xtd::iasync_result> ar) {
 
 size_t socket::get_raw_socket_option(int32 socket_option_level, int32 socket_option_name, intptr option_value, size_t size_option_value) const {
   if (data_->handle == 0) throw object_closed_exception {csf_};
-  auto size  = 0ul;
+  auto size = 0_sz;
   if (native::socket::get_raw_socket_option(data_->handle, socket_option_level, socket_option_name, option_value, size) != 0) throw socket_exception(get_last_error_(), csf_);
   return size;
 }
