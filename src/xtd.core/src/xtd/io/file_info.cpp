@@ -21,7 +21,7 @@ file_info::file_info(const xtd::ustring& file_name) {
 }
 
 directory_info file_info::directory() const {
-  return directory_info(directory_name());
+  return directory_info {directory_name()};
 }
 
 ustring file_info::directory_name() const {
@@ -30,7 +30,7 @@ ustring file_info::directory_name() const {
 
 bool file_info::exists() const {
   try {
-    int32 attributes = 0;
+    auto attributes = 0;
     return native::file_system::get_attributes(full_path_, attributes) == 0 && (static_cast<file_attributes>(attributes) & file_attributes::directory) != file_attributes::directory;
   } catch (...) {
     return false;
@@ -42,7 +42,7 @@ bool file_info::is_read_only() const {
 }
 
 void file_info::is_read_only(bool value) {
-  int32 attributes;
+  auto attributes = 0;
   if (native::file_system::get_attributes(full_path_, attributes) != 0) throw io_exception {csf_};
   if (value) attributes |= static_cast<int32>(file_attributes::read_only);
   else attributes &= ~static_cast<int32>(file_attributes::read_only);
@@ -54,20 +54,20 @@ size_t file_info::length() const {
 }
 
 ustring file_info::name() const {
-  vector<ustring> items = full_path_.split({path::directory_separator_char()});
+  auto items = full_path_.split({path::directory_separator_char()});
   if (items.size() == 0) return full_path_;
   return items[items.size() - 1];
 }
 
 stream_writer file_info::append_text() const {
-  return stream_writer(full_path_, true);
+  return stream_writer {full_path_, true};
 }
 
 file_info file_info::copy_to(const xtd::ustring& dest_file_name) const {
   if (!exists()) throw file_not_found_exception {csf_};
   if (file::exists(dest_file_name)) throw io_exception {csf_};
   if (native::file::copy(full_path_, path::get_full_path(dest_file_name)) != 0) throw io_exception {csf_};
-  return file_info(dest_file_name);
+  return file_info {dest_file_name};
 }
 
 file_info file_info::copy_to(const xtd::ustring& dest_file_name, bool overwrite) const {
@@ -80,7 +80,7 @@ std::ofstream file_info::create() const {
 }
 
 stream_writer file_info::create_text() const {
-  return stream_writer(full_path_);
+  return stream_writer {full_path_};
 }
 
 void file_info::move_to(const xtd::ustring& dest_file_name) {
