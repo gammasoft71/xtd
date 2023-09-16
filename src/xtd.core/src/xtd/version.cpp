@@ -4,7 +4,6 @@
 #include "../../include/xtd/collections/specialized/string_vector.h"
 #include "../../include/xtd/argument_out_of_range_exception.h"
 #include "../../include/xtd/format_exception.h"
-#include <sstream>
 #include <regex>
 
 using namespace std;
@@ -67,15 +66,15 @@ bool version::equals(const version& v) const noexcept {
 }
 
 version version::parse(const xtd::ustring& input) {
-  std::regex rgx("\\.");
-  xtd::collections::specialized::string_vector versions;
-  for (std::sregex_token_iterator it(input.begin(), input.end(), rgx, -1), end; it != end; ++it)
+  auto rgx = regex {"\\."};
+  auto versions = xtd::collections::specialized::string_vector {};
+  for (auto it = sregex_token_iterator {input.begin(), input.end(), rgx, -1}, end = sregex_token_iterator {}; it != end; ++it)
     versions.push_back(it->str());
     
   switch (versions.size()) {
-    case 2: return version(ustring::parse<int32>(versions[0]), ustring::parse<int32>(versions[1]));
-    case 3: return version(ustring::parse<int32>(versions[0]), ustring::parse<int32>(versions[1]), ustring::parse<int32>(versions[2]));
-    case 4: return version(ustring::parse<int32>(versions[0]), ustring::parse<int32>(versions[1]), ustring::parse<int32>(versions[2]), ustring::parse<int32>(versions[3]));
+    case 2: return version {ustring::parse<int32>(versions[0]), ustring::parse<int32>(versions[1])};
+    case 3: return version {ustring::parse<int32>(versions[0]), ustring::parse<int32>(versions[1]), ustring::parse<int32>(versions[2])};
+    case 4: return version {ustring::parse<int32>(versions[0]), ustring::parse<int32>(versions[1]), ustring::parse<int32>(versions[2]), ustring::parse<int32>(versions[3])};
   }
   
   throw xtd::argument_exception {csf_};
@@ -99,16 +98,11 @@ xtd::ustring version::to_string() const noexcept {
 }
 
 xtd::ustring version::to_string(size_t field_count) const {
-  if (field_count > 4 || (field_count >= 3 && build_ == -1) || (field_count == 4 && revision_ == -1))
-    throw xtd::argument_exception("Field count invalid"_t, csf_);
-  std::stringstream result;
-  if (field_count >= 1)
-    result << std::to_string(major_);
-  if (field_count >= 2)
-    result << "." << std::to_string(minor_);
-  if (field_count >= 3)
-    result << "." << std::to_string(build_);
-  if (field_count == 4)
-    result << "." << std::to_string(revision_);
-  return result.str();
+  if (field_count > 4 || (field_count >= 3 && build_ == -1) || (field_count == 4 && revision_ == -1)) throw xtd::argument_exception {"Field count invalid"_t, csf_};
+  auto result = ustring::empty_string;
+  if (field_count >= 1) result += ustring::format("{}", major_);
+  if (field_count >= 2) result += ustring::format(".{}", minor_);
+  if (field_count >= 3) result += ustring::format(".{}", build_);
+  if (field_count == 4) result += ustring::format(".{}", revision_);
+  return result;
 }
