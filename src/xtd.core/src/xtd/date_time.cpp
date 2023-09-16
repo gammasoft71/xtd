@@ -10,6 +10,7 @@
 #include "../include/xtd/not_implemented_exception.h"
 #include "../include/xtd/time_zone_info.h"
 #include "../include/xtd/unused.h"
+#include <tuple>
 
 using namespace std;
 using namespace std::chrono;
@@ -51,45 +52,67 @@ namespace {
   
   constexpr seconds seconds_offset_1970 = seconds(seconds_per_day* days_to_1970);
   
-  static uint32 get_years(int64& days) {
+  static tuple<uint32, uint32> get_year_and_day_of_year(int64 days) {
     auto year = 1_s64;
-    
-    if (days >= days_per_400_years) {
-      auto chunks = days / days_per_400_years;
+    auto day_of_year = days;
+
+    if (day_of_year >= days_per_400_years) {
+      auto chunks = day_of_year / days_per_400_years;
       year += chunks * 400;
-      days -= chunks * days_per_400_years;
+      day_of_year -= chunks * days_per_400_years;
     }
     
-    if (days >= days_per_100_years) {
-      auto chunks = days / days_per_100_years;
+    if (day_of_year >= days_per_100_years) {
+      auto chunks = day_of_year / days_per_100_years;
       if (chunks == 4) chunks = 3;
       year += chunks * 100;
-      days -= chunks * days_per_100_years;
+      day_of_year -= chunks * days_per_100_years;
     }
     
-    if (days >= days_per_4_years) {
-      auto chunks = days / days_per_4_years;
+    if (day_of_year >= days_per_4_years) {
+      auto chunks = day_of_year / days_per_4_years;
       year += chunks * 4;
-      days -= chunks * days_per_4_years;
+      day_of_year -= chunks * days_per_4_years;
     }
     
-    if (days >= days_per_year) {
-      auto chunks = days / days_per_year;
+    if (day_of_year >= days_per_year) {
+      auto chunks = day_of_year / days_per_year;
       if (chunks == 4) chunks = 3;
       year += chunks;
-      days -= chunks * days_per_year;
+      day_of_year -= chunks * days_per_year;
     }
     
-    return as<uint32>(year);
+    return make_tuple(as<uint32>(year), as<uint32>(day_of_year));
   }
   
-  static uint32 get_months(int64& days, uint32 year) {
+  static uint32 get_year(int64 days) {
+    auto [year, day_of_year] = get_year_and_day_of_year(days);
+    return year;
+  }
+  
+  static uint32 get_day_of_year(int64 days) {
+    auto [year, day_of_year] = get_year_and_day_of_year(days);
+    return day_of_year;
+  }
+  
+  static tuple<uint32, uint32> get_month_and_day(int64 day_of_year, uint32 year) {
     auto month = 1_u32;
-    for (auto days_in_month = as<int64>(date_time::days_in_month(year, month)); days >= days_in_month; days_in_month = date_time::days_in_month(year, month)) {
+    auto day = day_of_year;
+    for (auto days_in_month = as<int64>(date_time::days_in_month(year, month)); day >= days_in_month; days_in_month = date_time::days_in_month(year, month)) {
       ++month;
-      days -= days_in_month;
+      day -= days_in_month;
     }
+    return make_tuple(month, as<uint32>(day));
+  }
+
+  static uint32 get_month(int64 day_of_year, uint32 year) {
+    auto [month, day] = get_month_and_day(day_of_year, year);
     return month;
+  }
+  
+  static uint32 get_day(int64 day_of_year, uint32 year) {
+    auto [month, day] = get_month_and_day(day_of_year, year);
+    return day;
   }
 }
 
@@ -550,15 +573,16 @@ date_time date_time::operator --(int32) {
 
 tuple<uint32, uint32, uint32, uint32, uint32, uint32, uint32, int32> date_time::get_date_time() const {
   auto days = value_.count() / ticks_per_day;
-  auto year = get_years(days);
-  auto day_of_year = static_cast<uint32>(days + 1);
-  auto month = get_months(days, year);
-  auto day = static_cast<uint32>(days + 1);
+  auto day_of_year = get_day_of_year(days);
+  
+  auto year = get_year(days);
+  auto month = get_month(day_of_year, year);
+  auto day = get_day(day_of_year, year);
   auto hour = static_cast<uint32>(value_.count() / ticks_per_hour % 24);
   auto minute = static_cast<uint32>(value_.count() / ticks_per_minute % 60);
   auto second = static_cast<uint32>(value_.count() / ticks_per_second % 60);
   auto day_of_week = (static_cast<int32>(value_.count() / ticks_per_day + 1) % 7);
-  return make_tuple(year, month, day, hour, minute, second, day_of_year, day_of_week);
+  return make_tuple(year, month, day + 1, hour, minute, second, day_of_year + 1, day_of_week);
 }
 
 xtd::ticks date_time::utc_offset() const {
