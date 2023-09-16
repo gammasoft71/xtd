@@ -27,11 +27,11 @@ bool processor::is_64_bit() const noexcept {
   return is_64_bit_;
 }
 
-xtd::ustring processor::name() const noexcept {
-  static std::map<xtd::architecture_id, xtd::ustring> processor_names {{architecture_id::x86, "Intel or AMD"}, {architecture_id::arm, "ARM"}, {architecture_id::unknown, "<Unknown>"}};
+ustring processor::name() const noexcept {
+  static auto processor_names = std::map<architecture_id, ustring> {{architecture_id::x86, "Intel or AMD"}, {architecture_id::arm, "ARM"}, {architecture_id::unknown, "<Unknown>"}};
   return processor_names[architecture_];
 }
 
-xtd::ustring processor::to_string() const noexcept {
+ustring processor::to_string() const noexcept {
   return architecture_string();
 }
