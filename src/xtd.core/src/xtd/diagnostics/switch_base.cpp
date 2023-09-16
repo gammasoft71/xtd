@@ -38,10 +38,9 @@ int32 switch_base::switch_setting() const noexcept {
 }
 
 void switch_base::switch_setting(int32 switch_setting) {
-  if (switch_setting_ != switch_setting) {
-    switch_setting_ = switch_setting;
-    on_switch_setting_changed();
-  }
+  if (switch_setting_ == switch_setting) return;
+  switch_setting_ = switch_setting;
+  on_switch_setting_changed();
 }
 
 const ustring& switch_base::value() const noexcept {
@@ -49,10 +48,9 @@ const ustring& switch_base::value() const noexcept {
 }
 
 void switch_base::value(const ustring& value) {
-  if (value_ != value) {
-    value_ = value;
-    on_value_changed();
-  }
+  if (value_ == value) return;
+  value_ = value;
+  on_value_changed();
 }
 
 std::vector<ustring> switch_base::get_supported_attributes() const noexcept {
