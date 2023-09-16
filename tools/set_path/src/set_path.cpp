@@ -6,7 +6,7 @@
 #include <xtd/chrono>
 #if defined(_WIN32)
 #define UNICODE
-#include <Windows>
+#include <Windows.h>
 #endif
 
 using namespace std;
