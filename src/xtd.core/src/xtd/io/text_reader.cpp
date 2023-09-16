@@ -8,7 +8,7 @@ using namespace xtd::io;
 std::recursive_mutex __synchronized_text_reader_mutex__;
 
 null_text_reader& text_reader::null() noexcept {
-  static null_text_reader null_text_reader;
+  static auto null_text_reader = io::null_text_reader {};
   return null_text_reader;
 }
 
@@ -25,7 +25,7 @@ int32 text_reader::read() {
 
 size_t text_reader::read(std::vector<char>& buffer, size_t index, size_t count) {
   if (index + count > buffer.size()) throw argument_exception {csf_};
-  for (auto i = 0U; i < count; i++) {
+  for (auto i = 0ul; i < count; i++) {
     auto current = read();
     if (current == EOF) return i;
     buffer[index + i] = static_cast<char>(current);
@@ -38,8 +38,8 @@ size_t text_reader::read_block(std::vector<char>& buffer, size_t index, size_t c
 }
 
 ustring text_reader::read_line() {
-  ustring line;
-  for (int32 current = read(); current != EOF && current != '\n'; current = read()) {
+  auto line = ustring::empty_string;
+  for (auto current = read(); current != EOF && current != '\n'; current = read()) {
     if (current == '\r') continue;
     line += static_cast<char>(current);
   }
@@ -47,7 +47,7 @@ ustring text_reader::read_line() {
 }
 
 ustring text_reader::read_to_end() {
-  std::string text;
+  auto text = ustring::empty_string;
   for (int32 current = read(); current != EOF; current = read()) {
     if (current == '\r') continue;
     text += static_cast<char>(current);
@@ -64,7 +64,7 @@ int32 null_text_reader::read() {
 }
 
 int32 synchronized_text_reader::read() {
-  std::lock_guard<std::recursive_mutex> lock(__synchronized_text_reader_mutex__);
+  auto lock = std::lock_guard<std::recursive_mutex> {__synchronized_text_reader_mutex__};
   return reader_.read();
 }
 
