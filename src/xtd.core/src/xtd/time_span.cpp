@@ -218,7 +218,7 @@ double time_span::divide(const time_span& ts) const {
 
 time_span time_span::divide(double divisor) const {
   if (divisor == 0) throw divided_by_zero_exception {csf_};
-  return time_span {static_cast<int64>(ticks_ / divisor)};
+  return time_span {static_cast<int64>(ticks_ / divisor)}; // Do not use as<int64>(...) because it rounds the value because it round the value
 }
 
 time_span time_span::duration() const noexcept {
@@ -252,7 +252,7 @@ time_span time_span::from_hours(std::chrono::hours value) {
 time_span time_span::from_microseconds(double value) {
   if (double_object::is_NaN(value)) throw argument_exception {csf_};
   if (double_object::is_infinity(value) || value < as<double>(time_span::min_value.ticks() / ticks_per_microsecond) || value > as<double>(time_span::max_value.ticks() / ticks_per_microsecond)) throw overflow_exception {csf_};
-  return from_ticks(static_cast<int64>(value * ticks_per_microsecond));
+  return from_ticks(static_cast<int64>(value * ticks_per_microsecond)); // Do not use as<int64>(...) because it rounds the value because it round the value
 }
 
 time_span time_span::from_microseconds(std::chrono::microseconds value) {
@@ -277,7 +277,7 @@ time_span time_span::from_minutes(std::chrono::minutes value) {
 
 time_span time_span::from_nanoseconds(double value) {
   if (double_object::is_NaN(value)) throw argument_exception {csf_};
-  return from_ticks(static_cast<int64>(value / nanoseconds_per_tick));
+  return from_ticks(static_cast<int64>(value / nanoseconds_per_tick)); // Do not use as<int64>(...) because it rounds the value
 }
 
 time_span time_span::from_nanoseconds(std::chrono::nanoseconds value) {
@@ -305,7 +305,7 @@ double time_span::multiply(const time_span& ts) const noexcept {
 }
 
 time_span time_span::multiply(double factor) const noexcept {
-  return time_span {static_cast<int64>(ticks_ * factor)};
+  return time_span {static_cast<int64>(ticks_ * factor)}; // Do not use as<int64>(...) because it rounds the value
 }
 
 time_span time_span::negate() const {
@@ -368,7 +368,7 @@ time_span time_span::interval(double value, int scale) {
   auto tmp = value * scale;
   auto millis = tmp + (value >= 0 ? 0.5 : -0.5);
   if ((millis > int64_object::max_value / ticks_per_millisecond) || (millis < int64_object::min_value / ticks_per_millisecond))  throw overflow_exception {csf_};
-  return time_span(static_cast<int64>(millis) * ticks_per_millisecond);
+  return time_span(static_cast<int64>(millis) * ticks_per_millisecond); // Do not use as<int64>(...) because it rounds the value
 }
 
 ustring time_span::make_string_from_duration(bool constant) const {
