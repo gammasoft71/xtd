@@ -124,7 +124,7 @@ int startup::run(xtd::delegate<void(int, char* [])> main_function, int argc, cha
 
 int startup::run(xtd::delegate<void(int, char* [])> main_function) {
   auto args = environment::get_command_line_args();
-  char** argv = new char*[args.size()];
+  auto argv = new char*[args.size()];
   for (auto index = 0ul; index < args.size(); ++index)
     argv[index] = args[index].data();
   main_function(as<int32>(args.size()), argv);
@@ -139,7 +139,7 @@ int startup::run(void (*main_function)(int, char* []), int argc, char* argv[]) {
 
 int startup::run(void (*main_function)(int, char* [])) {
   auto args = environment::get_command_line_args();
-  char** argv = new char*[args.size()];
+  auto argv = new char*[args.size()];
   for (auto index = 0ul; index < args.size(); ++index)
     argv[index] = args[index].data();
   main_function(as<int32>(args.size()), argv);
@@ -191,7 +191,7 @@ int startup::run(xtd::delegate<int(int, char* [])> main_function, int argc, char
 
 int startup::run(xtd::delegate<int(int, char* [])> main_function) {
   auto args = environment::get_command_line_args();
-  char** argv = new char*[args.size()];
+  auto argv = new char*[args.size()];
   for (auto index = 0ul; index < args.size(); ++index)
     argv[index] = args[index].data();
   auto exit_code = main_function(as<int32>(args.size()), argv);
@@ -205,7 +205,7 @@ int startup::run(int (*main_function)(int, char* []), int argc, char* argv[]) {
 
 int startup::run(int (*main_function)(int, char* [])) {
   auto args = environment::get_command_line_args();
-  char** argv = new char*[args.size()];
+  auto argv = new char*[args.size()];
   for (auto index = 0ul; index < args.size(); ++index)
     argv[index] = args[index].data();
   auto exit_code = main_function(as<int32>(args.size()), argv);
