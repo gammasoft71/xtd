@@ -14,7 +14,7 @@ void text_writer::new_line(const xtd::ustring& new_line) noexcept {
 }
 
 null_text_writer& text_writer::null() noexcept {
-  static null_text_writer null_text_writer;
+  static auto null_text_writer = io::null_text_writer {};
   return null_text_writer;
 }
 
@@ -130,7 +130,7 @@ void null_text_writer::write(const xtd::ustring&) {
 }
 
 void synchronized_text_writer::write(const xtd::ustring& value) {
-  std::lock_guard<std::recursive_mutex> lock(__synchronized_text_writer_mutex__);
+  auto lock = std::lock_guard<std::recursive_mutex> {__synchronized_text_writer_mutex__};
   writer_.write(value);
 }
 
