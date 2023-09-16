@@ -59,7 +59,7 @@ void binary_reader::push(std::streampos pos) {
 
 int32 binary_reader::read() {
   if (!stream_) return EOF;
-  int32 value = stream_->get();
+  auto value = stream_->get();
   return value;
 }
 
@@ -92,7 +92,7 @@ xtd::byte binary_reader::read_byte() {
 }
 
 std::vector<xtd::byte> binary_reader::read_bytes(size_t count) {
-  vector<xtd::byte> result(count);
+  auto result = vector<xtd::byte>(count);
   if (read(result, 0, count) != count)
     throw end_of_stream_exception {csf_};
   return result;
@@ -103,7 +103,7 @@ char binary_reader::read_char() {
 }
 
 std::vector<char> binary_reader::read_chars(size_t count) {
-  vector<char> result(count);
+  auto result = vector<char>(count);
   if (read(result, 0, count) != count)
     throw end_of_stream_exception {csf_};
   return result;
@@ -134,7 +134,7 @@ float binary_reader::read_single() {
 }
 
 ustring binary_reader::read_string() {
-  int32 length = read_int32();
+  auto length = read_int32();
   return ustring(read_chars(length).data(), static_cast<size_t>(length));
 }
 
