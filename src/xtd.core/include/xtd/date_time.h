@@ -1041,7 +1041,7 @@ namespace xtd {
   private:
     friend class time_zone_info;
     xtd::ticks utc_offset() const;
-    void get_date_time(uint32& year, uint32& month, uint32& day, uint32& hour, uint32& minute, uint32& second, uint32& day_of_year,  int32& day_of_week) const;
+    std::tuple<uint32, uint32, uint32, uint32, uint32, uint32, uint32, int32> get_date_time() const;
     void set_date_time(uint32 year, uint32 month, uint32 day, uint32 hour, uint32 minute, uint32 second, uint32 millisecond, date_time_kind kind);
     
     xtd::ticks value_ {0};
