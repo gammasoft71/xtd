@@ -316,8 +316,8 @@ decimal math::round(decimal value) {
 }
 
 decimal math::round(decimal value, int32 decimals) {
-  decimal muliplicator = 1;
-  for (int32 index = 0; index < decimals; index++)
+  auto muliplicator = decimal {1};
+  for (auto index = 0; index < decimals; index++)
     muliplicator *= 10;
   return math::floor((value * muliplicator) + 0.5) / muliplicator;
 }
@@ -328,7 +328,7 @@ double math::round(double value) {
 
 double math::round(double value, int32 decimals) {
   double multiplicator = 1.0;
-  for (int32 index = 0; index < decimals; index++)
+  for (auto index = 0; index < decimals; index++)
     multiplicator *= 10.0;
   return math::floor((value * multiplicator) + 0.5) / multiplicator;
 }
