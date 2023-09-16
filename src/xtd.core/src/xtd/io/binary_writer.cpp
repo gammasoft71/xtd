@@ -74,7 +74,7 @@ void binary_writer::write(const std::vector<xtd::byte>& buffer) {
 void binary_writer::write(const std::vector<xtd::byte>& buffer, size_t index, size_t count) {
   if (!stream_) throw io_exception {csf_};
   if (index + count > buffer.size()) throw argument_exception {csf_};
-  for (size_t i = index; i < (index + count); ++i)
+  for (auto i = index; i < (index + count); ++i)
     write(buffer[i]);
 }
 
@@ -85,7 +85,7 @@ void binary_writer::write(const std::vector<char>& buffer) {
 void binary_writer::write(const std::vector<char>& buffer, size_t index, size_t count) {
   if (!stream_) throw io_exception {csf_};
   if (index + count > buffer.size()) throw argument_exception {csf_};
-  for (size_t i = index; i < (index + count); ++i)
+  for (auto i = index; i < (index + count); ++i)
     write(buffer[i]);
 }
 
