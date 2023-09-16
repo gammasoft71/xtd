@@ -184,7 +184,7 @@ int_least32_t socket::get_socket_ip_v6_multicast_option(intmax_t handle, int_lea
   size_t multicast_size = 0;
   int_least32_t result = getsockopt(static_cast<int_least32_t>(handle), IPPROTO_IP, socket_option_name_to_native(socket_option_name), &m, reinterpret_cast<socklen_t*>(&multicast_size));
   if (result == 0) {
-    for (auto index = 0U; index < multicast_address.size(); ++index)
+    for (auto index = 0u; index < multicast_address.size(); ++index)
       multicast_address[index] = m.multicast_address[index];
     interface_index = m.interface_index;
   }
@@ -240,36 +240,36 @@ int_least32_t socket::select(vector<intmax_t>& check_read, vector<intmax_t>& che
   
   fd_set read_fds;
   FD_ZERO(&read_fds);
-  for (auto i = 0U; i < check_read.size() && i < FD_SETSIZE; i++)
+  for (auto i = 0u; i < check_read.size() && i < FD_SETSIZE; i++)
     FD_SET(static_cast<int_least32_t>(check_read[i]), &read_fds);
   if (check_read.size() > nfds) nfds = check_read.size();
   
   fd_set write_fds;
   FD_ZERO(&write_fds);
-  for (auto i = 0U; i < check_write.size() && i < FD_SETSIZE; i++)
+  for (auto i = 0u; i < check_write.size() && i < FD_SETSIZE; i++)
     FD_SET(static_cast<int_least32_t>(check_write[i]), &write_fds);
   if (check_write.size() > nfds) nfds = check_write.size();
   
   fd_set error_fds;
   FD_ZERO(&error_fds);
-  for (auto i = 0U; i < check_error.size() && i < FD_SETSIZE; i++)
+  for (auto i = 0u; i < check_error.size() && i < FD_SETSIZE; i++)
     FD_SET(static_cast<int_least32_t>(check_error[i]), &error_fds);
   if (check_error.size() > nfds) nfds = check_error.size();
   
   timeval timeout {microseconds / 1000000, microseconds % 1000000};
   int_least32_t result = ::select(static_cast<int_least32_t>(nfds + 1), &read_fds, &write_fds, &error_fds, microseconds == -1 ? nullptr : &timeout);
   
-  for (auto i = 0U; i < check_read.size(); i++) {
+  for (auto i = 0u; i < check_read.size(); i++) {
     FD_CLR(static_cast<int_least32_t>(check_read[i]), &read_fds);
     if (FD_ISSET(static_cast<int_least32_t>(check_read[i]), &read_fds) == 0) check_read[i] = 0;
   }
   
-  for (auto i = 0U; i < check_write.size(); i++) {
+  for (auto i = 0u; i < check_write.size(); i++) {
     FD_CLR(static_cast<int_least32_t>(check_write[i]), &write_fds);
     if (FD_ISSET(static_cast<int_least32_t>(check_write[i]), &write_fds) == 0) check_write[i] = 0;
   }
   
-  for (auto i = 0U; i < check_error.size(); i++) {
+  for (auto i = 0u; i < check_error.size(); i++) {
     FD_CLR(static_cast<int_least32_t>(check_error[i]), &error_fds);
     if (FD_ISSET(static_cast<int_least32_t>(check_error[i]), &error_fds) == 0) check_error[i] = 0;
   }
@@ -335,7 +335,7 @@ int_least32_t socket::set_socket_ip_v6_multicast_option(intmax_t handle, int_lea
     uint_least8_t multicast_address[16];
     uint_least32_t interface_index;
   } m;
-  for (auto index = 0U; index < multicast_address.size(); ++index)
+  for (auto index = 0u; index < multicast_address.size(); ++index)
     m.multicast_address[index] = multicast_address[index];
   m.interface_index = interface_index;
   return setsockopt(static_cast<int_least32_t>(handle), IPPROTO_IP, socket_option_name_to_native(socket_option_name), &m, static_cast<socklen_t>(sizeof(multicast)));

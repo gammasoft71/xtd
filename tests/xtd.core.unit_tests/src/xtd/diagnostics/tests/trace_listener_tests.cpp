@@ -42,8 +42,8 @@ namespace xtd::diagnostics::tests {
   public:
     void test_method_(new_trace_listener) {
       unit_test_trace_listener trace_listener;
-      assert::are_equal(0U, trace_listener.indent_level(), csf_);
-      assert::are_equal(4U, trace_listener.indent_size(), csf_);
+      assert::are_equal(0u, trace_listener.indent_level(), csf_);
+      assert::are_equal(4u, trace_listener.indent_size(), csf_);
       assert::is_false(trace_listener.is_thread_safe(), csf_);
       assert::is_empty(trace_listener.name(), csf_);
       assert::is_true(trace_listener.need_indent(), csf_);
@@ -54,13 +54,13 @@ namespace xtd::diagnostics::tests {
     void test_method_(indent_level) {
       unit_test_trace_listener trace_listener;
       trace_listener.indent_level(5);
-      assert::are_equal(5U, trace_listener.indent_level(), csf_);
+      assert::are_equal(5u, trace_listener.indent_level(), csf_);
     }
     
     void test_method_(indent_size) {
       unit_test_trace_listener trace_listener;
       trace_listener.indent_size(8);
-      assert::are_equal(8U, trace_listener.indent_size(), csf_);
+      assert::are_equal(8u, trace_listener.indent_size(), csf_);
     }
     
     void test_method_(name) {

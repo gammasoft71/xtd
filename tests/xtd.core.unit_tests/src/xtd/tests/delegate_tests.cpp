@@ -150,7 +150,7 @@ namespace xtd::tests {
       d += delegate<void(string&)> {static_method2};
       d += delegate<void(string&)> {c, &container::member_method2};
       d += delegate<void(string&)> {l};
-      assert::are_equal(3U, d.size());
+      assert::are_equal(3u, d.size());
       string result;
       d.invoke(result);
       assert::are_equal("static_method2;member_method2;lambda_expression2;", result, csf_);
@@ -163,7 +163,7 @@ namespace xtd::tests {
       d += delegate<void(string&)> {static_method2};
       d += delegate<void(string&)> {c, &container::member_method2};
       d += delegate<void(string&)> {l};
-      assert::are_equal(3U, d.size());
+      assert::are_equal(3u, d.size());
       string result;
       d(result);
       assert::are_equal("static_method2;member_method2;lambda_expression2;", result, csf_);
@@ -179,7 +179,7 @@ namespace xtd::tests {
       
       d = delegate<void(string&)>::remove(d, {static_method2});
       
-      assert::are_equal(2U, d.size());
+      assert::are_equal(2u, d.size());
       string result;
       d(result);
       assert::are_equal("member_method2;lambda_expression2;", result, csf_);
@@ -195,7 +195,7 @@ namespace xtd::tests {
       
       d = delegate<void(string&)>::remove(d, {c, &container::member_method2});
       
-      assert::are_equal(2U, d.size());
+      assert::are_equal(2u, d.size());
       string result;
       d(result);
       assert::are_equal("static_method2;lambda_expression2;", result, csf_);
@@ -211,7 +211,7 @@ namespace xtd::tests {
       
       d = delegate<void(string&)>::remove(d, {l});
       
-      assert::are_equal(2U, d.size());
+      assert::are_equal(2u, d.size());
       string result;
       d(result);
       assert::are_equal("static_method2;member_method2;", result, csf_);

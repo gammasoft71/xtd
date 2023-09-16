@@ -49,7 +49,7 @@ private:
   
   static void SetAlpha(wxBitmap& bitmap, const wxSize& size, const wxGraphicsGradientStops& gradientStops, float offset, double length, const wxPoint& center) noexcept {
     wxImage image = bitmap.ConvertToImage();
-    for (auto index = 0U; index < gradientStops.GetCount() - 1; ++index) {
+    for (auto index = 0u; index < gradientStops.GetCount() - 1; ++index) {
       auto startColor = gradientStops.Item(index).GetColour();
       auto endColor = gradientStops.Item(index + 1).GetColour();
       auto startAngle = offset + gradientStops.Item(index).GetPosition() * 360.0;
@@ -67,7 +67,7 @@ private:
   }
   
   static void SetColor(wxGraphicsContext* graphics, const wxSize& size, const wxGraphicsGradientStops& gradientStops, float offset, double length, const wxPoint& center) noexcept {
-    for (auto index = 0U; index < gradientStops.GetCount() - 1; ++index) {
+    for (auto index = 0u; index < gradientStops.GetCount() - 1; ++index) {
       auto startColor = gradientStops.Item(index).GetColour();
       auto endColor = gradientStops.Item(index + 1).GetColour();
       auto startAngle = offset + gradientStops.Item(index).GetPosition() * 360.0;

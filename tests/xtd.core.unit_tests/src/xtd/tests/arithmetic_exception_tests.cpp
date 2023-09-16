@@ -29,7 +29,7 @@ namespace xtd::tests {
       assert::is_empty_(e.file_path());
       assert::is_empty_(e.help_link());
       assert::are_equal_(0, e.error_code().value());
-      assert::are_equal_(0U, e.line_number());
+      assert::are_equal_(0u, e.line_number());
       assert::is_empty_(e.member_name());
       assert::are_equal_("Overflow or underflow in the arithmetic operation.", e.message());
       assert::are_equal_("xtd::arithmetic_exception", e.name());
@@ -62,7 +62,7 @@ namespace xtd::tests {
       assert::is_empty_(e.file_path());
       assert::is_empty_(e.help_link());
       assert::is_false_(e.inner_exception().has_value());
-      assert::are_equal_(0U, e.line_number());
+      assert::are_equal_(0u, e.line_number());
       assert::is_empty_(e.member_name());
       assert::are_equal_("", e.message());
       assert::are_equal_("xtd::arithmetic_exception", e.name());
@@ -95,7 +95,7 @@ namespace xtd::tests {
       assert::is_empty_(e.file_path());
       assert::is_empty_(e.help_link());
       assert::is_false_(e.inner_exception().has_value());
-      assert::are_equal_(0U, e.line_number());
+      assert::are_equal_(0u, e.line_number());
       assert::is_empty_(e.member_name());
       assert::are_equal_("Test excpetion message.", e.message());
       assert::are_equal_("xtd::arithmetic_exception", e.name());
@@ -181,7 +181,7 @@ namespace xtd::tests {
       assert::is_empty_(e.help_link());
       assert::is_instance_of<xtd::system_exception>(e.inner_exception().value().get());
       assert::are_equal_(inner_exception.what(), e.inner_exception().value().get().what());
-      assert::are_equal_(0U, e.line_number());
+      assert::are_equal_(0u, e.line_number());
       assert::is_empty_(e.member_name());
       assert::are_equal_("Test excpetion message.", e.message());
       assert::are_equal_("xtd::arithmetic_exception", e.name());

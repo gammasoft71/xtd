@@ -92,7 +92,7 @@ namespace xtd::forms::tests {
       // The following test may fail: The user can place the mouse in the upper left position of the screen {0, 0}...
       // assert::are_not_equal(drawing::point::empty, forms::control::mouse_position(), csf_);
       
-      assert::are_equal(100U, progress_bar.marquee_animation_speed(), csf_);
+      assert::are_equal(100u, progress_bar.marquee_animation_speed(), csf_);
       assert::are_equal(100, progress_bar.maximum(), csf_);
       assert::is_zero(progress_bar.minimum(), csf_);
       assert::are_equal(orientation::horizontal, progress_bar.orientation(), csf_);
@@ -103,10 +103,10 @@ namespace xtd::forms::tests {
     
     void test_method_(set_animation_speed) {
       progress_bar_for_test progress_bar;
-      valid::are_equal(100U, progress_bar.marquee_animation_speed(), csf_);
+      valid::are_equal(100u, progress_bar.marquee_animation_speed(), csf_);
       
-      progress_bar.marquee_animation_speed(50U);
-      assert::are_equal(50U, progress_bar.marquee_animation_speed(), csf_);
+      progress_bar.marquee_animation_speed(50u);
+      assert::are_equal(50u, progress_bar.marquee_animation_speed(), csf_);
     }
     
     void test_method_(set_maximum) {

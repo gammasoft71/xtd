@@ -30,7 +30,7 @@ namespace xtd::net::sockets::tests {
       socket_information si;
       si.protocol_information({1, 2, 3, 4, 5});
       assert::are_equal(socket_information_options::none, si.options(), csf_);
-      collection_assert::are_equal({1U, 2U, 3U, 4U, 5U}, si.protocol_information(), csf_);
+      collection_assert::are_equal({1u, 2u, 3u, 4u, 5u}, si.protocol_information(), csf_);
     }
   };
 }

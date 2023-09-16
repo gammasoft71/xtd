@@ -269,7 +269,7 @@ date_time date_time::add_months(int32 months) const {
     month = as<uint32>(12 + (i + 1) % 12);
     year = year + as<uint32>((i - 11) / 12);
   }
-  if (year < 1U || year > 9999U) throw argument_out_of_range_exception {csf_};
+  if (year < 1u || year > 9999u) throw argument_out_of_range_exception {csf_};
   auto days = as<uint32>(days_in_month(year, month));
   if (day > days) day = days;
   return date_time(year, month, day, hour, minute, second, kind_);

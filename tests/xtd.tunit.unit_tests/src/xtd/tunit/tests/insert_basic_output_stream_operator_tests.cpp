@@ -57,7 +57,7 @@ namespace tunit::tests {
     std::exception e;
     std::stringstream ss;
     ss << e;
-    assert_value_(0U, ss.str().find("exception: "));
+    assert_value_(0u, ss.str().find("exception: "));
   }
   
   void test_(insert_basic_output_stream_operator_tests, test_optional_without_value) {

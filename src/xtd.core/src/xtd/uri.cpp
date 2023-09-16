@@ -191,7 +191,7 @@ bool uri::check_scheme_name(const ustring& scheme) {
 }
 
 ustring uri::escape_data_string(const ustring& value) {
-  if (value.size() > 32766U) throw uri_format_exception {csf_};
+  if (value.size() > 32766u) throw uri_format_exception {csf_};
   
   auto escape_needed = false;
   for (auto index = 0ul; !escape_needed && index < value.size(); ++index)
@@ -210,7 +210,7 @@ ustring uri::escape_data_string(const ustring& value) {
 }
 
 ustring uri::escape_uri_string(const ustring& value) {
-  if (value.size() > 32766U) throw uri_format_exception {csf_};
+  if (value.size() > 32766u) throw uri_format_exception {csf_};
   
   auto escape_needed = false;
   for (auto index = 0ul; !escape_needed && index < value.size(); ++index)

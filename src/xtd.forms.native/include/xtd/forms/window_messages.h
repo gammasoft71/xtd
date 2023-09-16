@@ -1732,71 +1732,71 @@ constexpr xtd::int32 WA_CLICKACTIVE = 2;
 
 // Ranges definitions
 
-constexpr xtd::uint32 NM_FIRST = 0U - 0U; // generic to all controls
-constexpr xtd::uint32 NM_LAST = 0U - 99U;
+constexpr xtd::uint32 NM_FIRST = 0u - 0u; // generic to all controls
+constexpr xtd::uint32 NM_LAST = 0u - 99u;
 
-constexpr xtd::uint32 LVN_FIRST = 0U - 100U; // listview
-constexpr xtd::uint32 LVN_LAST = 0U - 199U;
+constexpr xtd::uint32 LVN_FIRST = 0u - 100u; // listview
+constexpr xtd::uint32 LVN_LAST = 0u - 199u;
 
-// Property sheet reserved (0U-200U) -  (0U-299U) - see prsht.h
+// Property sheet reserved (0u-200u) -  (0u-299u) - see prsht.h
 
-constexpr xtd::uint32 HDN_FIRST = 0U - 300U; // header
-constexpr xtd::uint32 HDN_LAST = 0U - 399U;
+constexpr xtd::uint32 HDN_FIRST = 0u - 300u; // header
+constexpr xtd::uint32 HDN_LAST = 0u - 399u;
 
-constexpr xtd::uint32 TVN_FIRST = 0U - 400U; // treeview
-constexpr xtd::uint32 TVN_LAST = 0U - 499U;
+constexpr xtd::uint32 TVN_FIRST = 0u - 400u; // treeview
+constexpr xtd::uint32 TVN_LAST = 0u - 499u;
 
-constexpr xtd::uint32 TTN_FIRST = 0U - 520U; // tooltips
-constexpr xtd::uint32 TTN_LAST = 0U - 549U;
+constexpr xtd::uint32 TTN_FIRST = 0u - 520u; // tooltips
+constexpr xtd::uint32 TTN_LAST = 0u - 549u;
 
-constexpr xtd::uint32 TCN_FIRST = 0U - 550U; // tab control
-constexpr xtd::uint32 TCN_LAST = 0U - 580U;
+constexpr xtd::uint32 TCN_FIRST = 0u - 550u; // tab control
+constexpr xtd::uint32 TCN_LAST = 0u - 580u;
 
-// Shell reserved               (0U-580U) -  (0U-589U)
+// Shell reserved               (0u-580u) -  (0u-589u)
 
-constexpr xtd::uint32 CDN_FIRST = 0U - 601U; // common dialog (new)
-constexpr xtd::uint32 CDN_LAST = 0U - 699U;
+constexpr xtd::uint32 CDN_FIRST = 0u - 601u; // common dialog (new)
+constexpr xtd::uint32 CDN_LAST = 0u - 699u;
 
-constexpr xtd::uint32 TBN_FIRST = 0U - 700U; // toolbar
-constexpr xtd::uint32 TBN_LAST = 0U - 720U;
+constexpr xtd::uint32 TBN_FIRST = 0u - 700u; // toolbar
+constexpr xtd::uint32 TBN_LAST = 0u - 720u;
 
-constexpr xtd::uint32 UDN_FIRST = 0U - 721U; // updown
-constexpr xtd::uint32 UDN_LAST = 0U - 729U;
-constexpr xtd::uint32 DTN_FIRST = 0U - 740U; // datetimepick
-constexpr xtd::uint32 DTN_LAST = 0U - 745U; // DTN_FIRST - 5
+constexpr xtd::uint32 UDN_FIRST = 0u - 721u; // updown
+constexpr xtd::uint32 UDN_LAST = 0u - 729u;
+constexpr xtd::uint32 DTN_FIRST = 0u - 740u; // datetimepick
+constexpr xtd::uint32 DTN_LAST = 0u - 745u; // DTN_FIRST - 5
 
-constexpr xtd::uint32 MCN_FIRST = 0U - 746U; // monthcal
-constexpr xtd::uint32 MCN_LAST = 0U - 752U; // MCN_FIRST - 6
+constexpr xtd::uint32 MCN_FIRST = 0u - 746u; // monthcal
+constexpr xtd::uint32 MCN_LAST = 0u - 752u; // MCN_FIRST - 6
 
-constexpr xtd::uint32 DTN_FIRST2 = 0U - 753U; // datetimepick2
-constexpr xtd::uint32 DTN_LAST2 = 0U - 799U;
+constexpr xtd::uint32 DTN_FIRST2 = 0u - 753u; // datetimepick2
+constexpr xtd::uint32 DTN_LAST2 = 0u - 799u;
 
-constexpr xtd::uint32 CBEN_FIRST = 0U - 800U; // combo box ex
-constexpr xtd::uint32 CBEN_LAST = 0U - 830U;
+constexpr xtd::uint32 CBEN_FIRST = 0u - 800u; // combo box ex
+constexpr xtd::uint32 CBEN_LAST = 0u - 830u;
 
-constexpr xtd::uint32 RBN_FIRST = 0U - 831U; // rebar
-constexpr xtd::uint32 RBN_LAST = 0U - 859U;
+constexpr xtd::uint32 RBN_FIRST = 0u - 831u; // rebar
+constexpr xtd::uint32 RBN_LAST = 0u - 859u;
 
-constexpr xtd::uint32 IPN_FIRST = 0U - 860U; // internet address
-constexpr xtd::uint32 IPN_LAST = 0U - 879U; // internet address
+constexpr xtd::uint32 IPN_FIRST = 0u - 860u; // internet address
+constexpr xtd::uint32 IPN_LAST = 0u - 879u; // internet address
 
-constexpr xtd::uint32 SBN_FIRST = 0U - 880U; // status bar
-constexpr xtd::uint32 SBN_LAST = 0U - 899U;
+constexpr xtd::uint32 SBN_FIRST = 0u - 880u; // status bar
+constexpr xtd::uint32 SBN_LAST = 0u - 899u;
 
-constexpr xtd::uint32 PGN_FIRST = 0U - 900U; // Pager Control
-constexpr xtd::uint32 PGN_LAST = 0U - 950U;
+constexpr xtd::uint32 PGN_FIRST = 0u - 900u; // Pager Control
+constexpr xtd::uint32 PGN_LAST = 0u - 950u;
 
-constexpr xtd::uint32 WMN_FIRST = 0U - 1000U;
-constexpr xtd::uint32 WMN_LAST = 0U - 1200U;
+constexpr xtd::uint32 WMN_FIRST = 0u - 1000u;
+constexpr xtd::uint32 WMN_LAST = 0u - 1200u;
 
-constexpr xtd::uint32 BCN_FIRST = 0U - 1250U;
-constexpr xtd::uint32 BCN_LAST = 0U - 1350U;
+constexpr xtd::uint32 BCN_FIRST = 0u - 1250u;
+constexpr xtd::uint32 BCN_LAST = 0u - 1350u;
 
-constexpr xtd::uint32 TRBN_FIRST = 0U - 1501U; // trackbar
-constexpr xtd::uint32 TRBN_LAST = 0U - 1519U;
+constexpr xtd::uint32 TRBN_FIRST = 0u - 1501u; // trackbar
+constexpr xtd::uint32 TRBN_LAST = 0u - 1519u;
 
-constexpr xtd::uint32 EN_FIRST = 0U - 1520U; // edit control
-constexpr xtd::uint32 EN_LAST = 0U - 1540U;
+constexpr xtd::uint32 EN_FIRST = 0u - 1520u; // edit control
+constexpr xtd::uint32 EN_LAST = 0u - 1540u;
 
 // Button notifications
 constexpr xtd::uint32 BN_CLICKED = 0;
