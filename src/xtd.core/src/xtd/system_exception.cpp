@@ -46,7 +46,7 @@ const xtd::ustring& system_exception::message() const noexcept {
 }
 
 const xtd::ustring& system_exception::name() const noexcept {
-  static bool init = false;
+  static auto init = false;
   //if (!init) __xtd__signal_catcher_check__();
   if (!init) environment::__signal_catcher_check__();
   init = true;
@@ -71,8 +71,8 @@ const char* system_exception::what() const noexcept {
 ustring system_exception::stack_trace_to_string() const noexcept {
   if (!stack_trace_) return information_.to_string();
   
-  size_t skip_frames = stack_trace_->frame_count();
-  for (size_t index = 0; index < stack_trace_->frame_count(); ++index)
+  auto skip_frames = stack_trace_->frame_count();
+  for (auto index = 0ul; index < stack_trace_->frame_count(); ++index)
     if (stack_trace_->get_frame(index).get_method().starts_with(name()))
       skip_frames = index;
   return stack_trace_->to_string(skip_frames + 1, information_);
