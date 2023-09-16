@@ -551,8 +551,14 @@ date_time date_time::operator --(int32) {
 tuple<uint32, uint32, uint32, uint32, uint32, uint32, uint32, int32> date_time::get_date_time() const {
   auto days = value_.count() / ticks_per_day;
   auto year = get_years(days);
-  // return tuple : year, month, day, hour, minute, second, day_of_year, day_of_week
-  return make_tuple(year, get_months(days, year), as<uint32>(days + 1), as<uint32>(value_.count() / ticks_per_hour % 24), as<uint32>(value_.count() / ticks_per_minute % 60), as<uint32>(value_.count() / ticks_per_second % 60), as<uint32>(days + 1), as<int32>(value_.count() / ticks_per_day + 1) % 7);
+  auto day_of_year = static_cast<uint32>(days + 1);
+  auto month = get_months(days, year);
+  auto day = static_cast<uint32>(days + 1);
+  auto hour = static_cast<uint32>(value_.count() / ticks_per_hour % 24);
+  auto minute = static_cast<uint32>(value_.count() / ticks_per_minute % 60);
+  auto second = static_cast<uint32>(value_.count() / ticks_per_second % 60);
+  auto day_of_week = (static_cast<int32>(value_.count() / ticks_per_day + 1) % 7);
+  return make_tuple(year, month, day, hour, minute, second, day_of_year, day_of_week);
 }
 
 xtd::ticks date_time::utc_offset() const {
