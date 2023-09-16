@@ -25,10 +25,9 @@ bool boolean_switch::enabled() const {
 }
 
 void boolean_switch::enabled(bool enabled) {
-  if (enabled_ != enabled) {
-    enabled_ = enabled;
-    on_value_changed();
-  }
+  if (enabled_ == enabled) return;
+  enabled_ = enabled;
+  on_value_changed();
 }
 
 void boolean_switch::on_value_changed() {
