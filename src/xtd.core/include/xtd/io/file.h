@@ -16,6 +16,7 @@
 #include "file_permissions.h"
 #include "stream_reader.h"
 #include "stream_writer.h"
+#include <tuple>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -366,6 +367,8 @@ namespace xtd {
       /// @exception xtd::io::io_exception the handle of the specified file cannot be opened.
       static std::ofstream write_text(const xtd::ustring& path);
       /// @}
+    private:
+      static std::tuple<time_t, time_t, time_t> get_file_times(const ustring& path);
     };
   }
 }
