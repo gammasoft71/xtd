@@ -38,7 +38,7 @@ using namespace xtd::io;
 using namespace xtd::threading;
 
 namespace {
-  int32 exit_code = 0;
+  auto __exit_code__ = 0_s32;
 }
 
 class environment::signal_catcher {
@@ -68,14 +68,14 @@ public:
 private:
   static void on_abnormal_termination_occured(int32 signal) {
     std::signal(signal, signal_catcher::on_abnormal_termination_occured);
-    signal_cancel_event_args e {xtd::signal::abnormal_termination};
+    auto e = signal_cancel_event_args {xtd::signal::abnormal_termination};
     environment::on_cancel_signal(e);
     if (!e.cancel()) environment::quick_exit(128 + last_signal_.value_or(signal)); //throw thread_abort_exception {ccsf_};
   }
   
   static void on_floating_point_exception_occured(int32 signal) {
     std::signal(signal, signal_catcher::on_floating_point_exception_occured);
-    signal_cancel_event_args e {xtd::signal::floating_point_exception};
+    auto e = signal_cancel_event_args {xtd::signal::floating_point_exception};
     environment::on_cancel_signal(e);
     if (!e.cancel()) {
       last_signal_ = signal;
@@ -85,7 +85,7 @@ private:
   
   static void on_illegal_instruction_occured(int32 signal) {
     std::signal(signal, signal_catcher::on_illegal_instruction_occured);
-    signal_cancel_event_args e {xtd::signal::illegal_instruction};
+    auto e = signal_cancel_event_args {xtd::signal::illegal_instruction};
     environment::on_cancel_signal(e);
     if (!e.cancel()) {
       last_signal_ = signal;
@@ -95,9 +95,9 @@ private:
   
   static void on_interrupt_occured(int32 signal) {
     std::signal(signal, signal_catcher::on_interrupt_occured);
-    signal_cancel_event_args se {xtd::signal::interrupt};
+    auto se = signal_cancel_event_args {xtd::signal::interrupt};
     environment::on_cancel_signal(se);
-    console_cancel_event_args ce {console_special_key::control_c};
+    auto ce = console_cancel_event_args {console_special_key::control_c};
     ce.cancel(console::on_cancel_key_press(static_cast<int32>(console_special_key::control_c)));
     if (!se.cancel() && !ce.cancel()) {
       last_signal_ = signal;
@@ -115,7 +115,7 @@ private:
   
   static void on_segmentation_violation_occured(int32 signal) {
     std::signal(signal, signal_catcher::on_segmentation_violation_occured);
-    signal_cancel_event_args e {xtd::signal::segmentation_violation};
+    auto e = signal_cancel_event_args {xtd::signal::segmentation_violation};
     environment::on_cancel_signal(e);
     if (!e.cancel()) {
       last_signal_ = signal;
@@ -125,7 +125,7 @@ private:
   
   static void on_software_termination_occured(int32 signal) {
     std::signal(signal, signal_catcher::on_software_termination_occured);
-    signal_cancel_event_args e {xtd::signal::software_termination};
+    auto e = signal_cancel_event_args {xtd::signal::software_termination};
     environment::on_cancel_signal(e);
     if (!e.cancel()) throw xtd::software_termination_exception {csf_};
   }
@@ -187,11 +187,11 @@ intptr environment::current_thread_id() noexcept {
 }
 
 int32 environment::exit_code() noexcept {
-  return ::exit_code;
+  return ::__exit_code__;
 }
 
 void environment::exit_code(int32 value) noexcept {
-  ::exit_code = value;
+  ::__exit_code__ = value;
 }
 
 bool environment::has_shutdown_started() {
@@ -238,10 +238,10 @@ uint32 environment::processor_count() {
 }
 
 xtd::processor environment::processor_information() {
-  static xtd::processor proc(xtd::architecture_id::unknown, false, 1);
-  if (proc.architecture() == xtd::architecture_id::unknown)
-    proc = xtd::processor(native::environment::is_processor_arm() ? architecture_id::arm : architecture_id::x86, native::environment::is_os_64_bit(), native::environment::get_processor_count());
-  return proc;
+  static auto processor = xtd::processor {xtd::architecture_id::unknown, false, 1};
+  if (processor.architecture() == xtd::architecture_id::unknown)
+    processor = xtd::processor(native::environment::is_processor_arm() ? architecture_id::arm : architecture_id::x86, native::environment::is_os_64_bit(), native::environment::get_processor_count());
+  return processor;
 }
 
 xtd::ustring environment::stack_trace() {
@@ -286,7 +286,7 @@ int64 environment::working_set() {
 }
 
 const xtd::environment::xtd_library_collection& environment::xtd_libraries() noexcept {
-  static xtd_library_collection libraries {{"xtd.core", environment::version(), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "include"), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "lib"), environment::get_folder_path(environment::special_folder::xtd_resources)}, {"xtd.drawing", environment::version(), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "include"), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "lib"), environment::get_folder_path(environment::special_folder::xtd_resources)}, {"xtd.forms", environment::version(), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "include"), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "lib"), environment::get_folder_path(environment::special_folder::xtd_resources)}, {"xtd.tunit", environment::version(), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "include"), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "lib"), environment::get_folder_path(environment::special_folder::xtd_resources)},};
+  static auto libraries = xtd_library_collection {{"xtd.core", environment::version(), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "include"), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "lib"), environment::get_folder_path(environment::special_folder::xtd_resources)}, {"xtd.drawing", environment::version(), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "include"), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "lib"), environment::get_folder_path(environment::special_folder::xtd_resources)}, {"xtd.forms", environment::version(), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "include"), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "lib"), environment::get_folder_path(environment::special_folder::xtd_resources)}, {"xtd.tunit", environment::version(), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "include"), xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "lib"), environment::get_folder_path(environment::special_folder::xtd_resources)},};
   return libraries;
 }
 
@@ -307,18 +307,16 @@ void environment::exit(xtd::exit_status exit_status) {
 }
 
 xtd::ustring environment::expand_environment_variables(const xtd::ustring& name) {
-  xtd::ustring buffer = name;
-  xtd::ustring result;
+  auto buffer = name;
+  auto result = xtd::ustring::empty_string;
   
-  size_t index = buffer.index_of('%');
+  auto index = buffer.index_of('%');
   while (index != xtd::ustring::npos && buffer.index_of('%', index + 1) != xtd::ustring::npos) {
     result += buffer.substring(0, index);
     buffer = buffer.remove(0, index + 1);
     index = buffer.index_of('%');
-    if (get_environment_variable(buffer.substring(0, index)) != "")
-      result += get_environment_variable(buffer.substring(0, index));
-    else
-      result += xtd::ustring::format("%{0}%", buffer.substring(0, index));
+    if (get_environment_variable(buffer.substring(0, index)) != "") result += get_environment_variable(buffer.substring(0, index));
+    else result += xtd::ustring::format("%{0}%", buffer.substring(0, index));
     buffer = buffer.remove(0, index + 1);
     index = buffer.index_of('%');
   }
@@ -375,7 +373,7 @@ ustring environment::get_folder_path(environment::special_folder folder, environ
     default: break;
   }
   
-  ustring path = native::environment::get_know_folder_path(static_cast<int32>(folder));
+  auto path = native::environment::get_know_folder_path(static_cast<int32>(folder));
   if (path.empty()) return path;
   if (option == environment::special_folder_option::none) return !xtd::io::directory::exists(path) ? "" :  path;
   if (option == environment::special_folder_option::create && !xtd::io::directory::exists(path)) xtd::io::directory::create_directory(path);
