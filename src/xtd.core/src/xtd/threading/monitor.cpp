@@ -91,7 +91,7 @@ struct monitor::static_data {
 };
 
 void monitor::enter_ptr(object_ptr obj) {
-  bool lock_taken = false;
+  auto lock_taken = false;
   enter_ptr(obj, lock_taken);
 }
 
@@ -123,7 +123,7 @@ void monitor::exit_ptr(object_ptr obj) {
 intptr monitor::get_ustring_ptr(const ustring& str) {
   if (str.empty()) throw argument_exception {csf_};
   get_static_data().monitor_items_critical_section.enter();
-  intptr ptr = reinterpret_cast<intptr>(&str);
+  auto ptr = reinterpret_cast<intptr>(&str);
   for (const auto& item : get_static_data().monitor_items)
     if (item.second.name.has_value() && item.second.name.value() == str) {
       ptr = item.first;
