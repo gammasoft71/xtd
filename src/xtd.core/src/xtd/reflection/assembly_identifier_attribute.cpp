@@ -20,6 +20,6 @@ shared_ptr<object> assembly_identifier_attribute::get_type_id() const noexcept {
 }
 
 shared_ptr<xtd::reflection::assembly_identifier_attribute>& __assembly_identifier_attribute__() {
-  static shared_ptr<xtd::reflection::assembly_identifier_attribute> identifier;
+  static auto identifier = shared_ptr<xtd::reflection::assembly_identifier_attribute> {};
   return identifier;
 }
