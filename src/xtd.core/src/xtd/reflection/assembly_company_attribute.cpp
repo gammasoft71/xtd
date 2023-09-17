@@ -19,6 +19,6 @@ shared_ptr<object> assembly_company_attribute::get_type_id() const noexcept {
 }
 
 shared_ptr<xtd::reflection::assembly_company_attribute>& __assembly_company_attribute__() {
-  static shared_ptr<xtd::reflection::assembly_company_attribute> company;
+  static auto company = shared_ptr<xtd::reflection::assembly_company_attribute> {};
   return company;
 }
