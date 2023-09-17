@@ -20,6 +20,6 @@ shared_ptr<object> assembly_title_attribute::get_type_id() const noexcept {
 }
 
 shared_ptr<xtd::reflection::assembly_title_attribute>& __assembly_title_attribute__() {
-  static shared_ptr<xtd::reflection::assembly_title_attribute> title;
+  static auto title = shared_ptr<xtd::reflection::assembly_title_attribute> {};
   return title;
 }
