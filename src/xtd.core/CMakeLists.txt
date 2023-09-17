@@ -937,7 +937,9 @@ add_sources(
   src/xtd/threading/cancellation_token.cpp
   src/xtd/threading/cancellation_token_registration.cpp
   src/xtd/threading/cancellation_token_source.cpp
+  src/xtd/threading/condition_variable.h
   src/xtd/threading/countdown_event.cpp
+  src/xtd/threading/critical_section.h
   src/xtd/threading/event_wait_handle.cpp
   src/xtd/threading/event_wait_handle_base.h
   src/xtd/threading/interlocked.cpp
