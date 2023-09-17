@@ -20,6 +20,6 @@ shared_ptr<object> assembly_file_version_attribute::get_type_id() const noexcept
 }
 
 shared_ptr<xtd::reflection::assembly_file_version_attribute>& __assembly_file_version_attribute__() {
-  static shared_ptr<xtd::reflection::assembly_file_version_attribute> version;
+  static auto version = shared_ptr<xtd::reflection::assembly_file_version_attribute> {};
   return version;
 }
