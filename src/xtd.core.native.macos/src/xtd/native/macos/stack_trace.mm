@@ -22,14 +22,14 @@ namespace {
 
 stack_trace::frames stack_trace::get_frames(size_t skip_frames) {
   //NSLog(@"%@", NSThread.callStackSymbols);
-  static constexpr size_t max_frames = 1024;
-  stack_trace::frames frames;
-  std::vector<void*> traces;
+  static constexpr auto max_frames = size_t {1024};
+  auto frames = stack_trace::frames {};
+  auto traces = std::vector<void*> {};
   traces.resize(max_frames);
-  size_t nb_frames = backtrace(traces.data(), static_cast<int>(max_frames));
+  auto nb_frames = static_cast<size_t>(backtrace(traces.data(), static_cast<int>(max_frames)));
   
-  for (size_t index = skip_frames + 1; index < nb_frames; ++index) {
-    Dl_info dl_info;
+  for (auto index = skip_frames + 1; index < nb_frames; ++index) {
+    auto dl_info = Dl_info {};
     if (!dladdr(traces[index], &dl_info) || !dl_info.dli_sname) break;
     frames.push_back(std::make_tuple(dl_info.dli_fname, 0, 0, demangle_string(dl_info.dli_sname), reinterpret_cast<size_t>(dl_info.dli_saddr) - reinterpret_cast<size_t>(dl_info.dli_fbase)));
     if (demangle_string(dl_info.dli_sname) == std::string("main")) break;
