@@ -20,6 +20,6 @@ shared_ptr<object> assembly_description_attribute::get_type_id() const noexcept 
 }
 
 shared_ptr<xtd::reflection::assembly_description_attribute>& __assembly_description_attribute__() {
-  static shared_ptr<xtd::reflection::assembly_description_attribute> description;
+  static auto description = shared_ptr<xtd::reflection::assembly_description_attribute> {};
   return description;
 }
