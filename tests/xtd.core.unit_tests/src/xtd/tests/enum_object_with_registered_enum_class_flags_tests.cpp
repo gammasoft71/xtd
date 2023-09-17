@@ -263,7 +263,7 @@ namespace xtd::tests {
     }
     
     void test_method_(get_values) {
-      auto expected_entries = vector<enum_object_with_registered_enum_class_flags_test> {enum_object_with_registered_enum_class_flags_test::none, enum_object_with_registered_enum_class_flags_test::one, enum_object_with_registered_enum_class_flags_test::two, enum_object_with_registered_enum_class_flags_test::three, enum_object_with_registered_enum_class_flags_test::four};
+      auto expected_entries = vector {enum_object_with_registered_enum_class_flags_test::none, enum_object_with_registered_enum_class_flags_test::one, enum_object_with_registered_enum_class_flags_test::two, enum_object_with_registered_enum_class_flags_test::three, enum_object_with_registered_enum_class_flags_test::four};
       auto actual_entries = enum_object<>::get_values<enum_object_with_registered_enum_class_flags_test>();
       assert::is_true(std::equal(actual_entries.begin(), actual_entries.end(), expected_entries.begin(), expected_entries.end()), csf_);
     }

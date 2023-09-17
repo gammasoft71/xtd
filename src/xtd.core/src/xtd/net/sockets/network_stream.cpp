@@ -24,7 +24,7 @@ int32 network_stream::socket_streambuf::underflow() {
 
 int32 network_stream::socket_streambuf::overflow(int32 value) {
   value_ = static_cast<char>(value);
-  auto buffer = std::vector<xtd::byte> {static_cast<xtd::byte>(value_)};
+  auto buffer = std::vector {static_cast<xtd::byte>(value_)};
   if (socket_.send(buffer) == 1) {
     setp(&value_, &value_);
     return 0;
