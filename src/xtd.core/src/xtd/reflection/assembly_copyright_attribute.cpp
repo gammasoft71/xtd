@@ -20,6 +20,6 @@ shared_ptr<object> assembly_copyright_attribute::get_type_id() const noexcept {
 }
 
 shared_ptr<xtd::reflection::assembly_copyright_attribute>& __assembly_copyright_attribute__() {
-  static shared_ptr<xtd::reflection::assembly_copyright_attribute> copyright;
+  static auto copyright = shared_ptr<xtd::reflection::assembly_copyright_attribute> {};
   return copyright;
 }
