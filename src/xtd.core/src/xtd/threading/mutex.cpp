@@ -23,7 +23,7 @@ mutex::mutex(const ustring& name, bool& created_new) : mutex(false, name, create
 
 mutex::mutex(bool initially_owned, const ustring& name) : name_(name) {
   if (name.size() > native::named_mutex::max_name_size()) throw io::path_too_long_exception {csf_};
-  bool created_new = false;
+  auto created_new = false;
   create(initially_owned, created_new);
 }
 
@@ -120,7 +120,7 @@ void mutex::unlock() {
 
 bool mutex::signal() {
   if (!mutex_) throw object_closed_exception {csf_};
-  bool io_error = false;
+  auto io_error = false;
   auto result = mutex_->signal(io_error);
   if (io_error) throw io::io_exception {csf_};
   return result;
