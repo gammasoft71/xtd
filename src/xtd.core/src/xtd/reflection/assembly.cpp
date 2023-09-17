@@ -58,9 +58,9 @@ const ustring& assembly::version() const noexcept {
 }
 
 const assembly& assembly::get_executing_assembly() noexcept {
-  static unique_ptr<assembly> current_assembly;
+  static auto current_assembly = unique_ptr<assembly> {};
   if (!current_assembly) {
-    current_assembly = unique_ptr<assembly>(new assembly());
+    current_assembly = unique_ptr<assembly> {new assembly {}};
     if (__assembly_company_attribute__()) current_assembly->company_ = __assembly_company_attribute__()->company();
     if (__assembly_configuration_attribute__()) current_assembly->configuration_ = __assembly_configuration_attribute__()->configuration();
     if (__assembly_copyright_attribute__()) current_assembly->copyright_ = __assembly_copyright_attribute__()->copyright();
