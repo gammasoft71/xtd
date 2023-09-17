@@ -74,7 +74,7 @@ thread::thread(const xtd::threading::thread_start& start, int32 max_stack_size) 
   data_->managed_thread_id = generate_managed_thread_id();
   data_->thread_start = start;
   data_->max_stack_size = max_stack_size;
-  std::lock_guard<std::recursive_mutex> lock {get_static_data().threads_mutex};
+  auto lock = std::lock_guard<std::recursive_mutex> {get_static_data().threads_mutex};
   auto safe_thread = std::make_shared<thread>(*this);
   data_->safe_thread = safe_thread.get();
   get_static_data().threads.push_back(safe_thread);
@@ -88,7 +88,7 @@ thread::thread(const xtd::threading::parameterized_thread_start& start, int32 ma
   data_->managed_thread_id = generate_managed_thread_id();
   data_->parameterized_thread_start = start;
   data_->max_stack_size = max_stack_size;
-  std::lock_guard<std::recursive_mutex> lock {get_static_data().threads_mutex};
+  auto lock = std::lock_guard<std::recursive_mutex> {get_static_data().threads_mutex};
   auto safe_thread = std::make_shared<thread>(*this);
   data_->safe_thread = safe_thread.get();
   get_static_data().threads.push_back(safe_thread);
@@ -119,7 +119,6 @@ bool thread::is_background() const noexcept {
 thread& thread::is_background(bool value) {
   if (value) data_->state |= xtd::threading::thread_state::background;
   else data_->state &= ~xtd::threading::thread_state::background;
-
   return *this;
 }
 
@@ -136,8 +135,8 @@ bool thread::joinable() const noexcept {
 }
 
 thread& thread::main_thread() {
-  static thread main_thread;
-  std::lock_guard<std::recursive_mutex> lock {get_static_data().threads_mutex};
+  static auto main_thread = threading::thread {};
+  auto lock = std::lock_guard<std::recursive_mutex> {get_static_data().threads_mutex};
   if (main_thread.data_->managed_thread_id != main_managed_thread_id) {
     main_thread.data_->end_thread_event.set();
     main_thread.data_->handle = get_current_thread_handle();
@@ -224,7 +223,7 @@ bool thread::join(int32 milliseconds_timeout) {
   if (data_->interrupted == true) interrupt_internal();
   if (!joinable()) return false;
   
-  bool result = data_->end_thread_event.wait_one(milliseconds_timeout);
+  auto result = data_->end_thread_event.wait_one(milliseconds_timeout);
   if (result == true) {
     auto current_thread = thread::current_thread();
     try {
@@ -235,8 +234,8 @@ bool thread::join(int32 milliseconds_timeout) {
       current_thread.data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
     }
     data_->joinable = false;
-    std::lock_guard<std::recursive_mutex> lock {get_static_data().threads_mutex};
-    thread_collection::iterator iterator = std::find_if(get_static_data().threads.begin(), get_static_data().threads.end(), [&](const auto& value) {return value->data_ ? value->data_->managed_thread_id == data_->managed_thread_id : false;});
+    auto lock = std::lock_guard<std::recursive_mutex> {get_static_data().threads_mutex};
+    auto iterator = std::find_if(get_static_data().threads.begin(), get_static_data().threads.end(), [&](const auto& value) {return value->data_ ? value->data_->managed_thread_id == data_->managed_thread_id : false;});
     if (iterator == get_static_data().threads.end()) return result;
     (*iterator)->data_.reset();
     get_static_data().threads.erase(iterator);
@@ -256,7 +255,7 @@ bool thread::join_all(int32 milliseconds_timeout) {
   auto sw = stopwatch::start_new();
   if (!thread_pool::join_all(milliseconds_timeout)) return false;
 
-  std::vector<thread*> thread_pointers;
+  auto thread_pointers = std::vector<thread*> {};
   for (auto& thread : get_static_data().threads)
     thread_pointers.push_back(thread.get());
 
@@ -353,7 +352,7 @@ bool thread::join_all(const std::initializer_list<std::shared_ptr<thread>>& thre
 }
 
 bool thread::join_all(const std::initializer_list<std::shared_ptr<thread>>& threads, int32 milliseconds_timeout) {
-  std::vector<thread*> threads_pointers;
+  auto threads_pointers = std::vector<thread*> {};
   for (auto& thread : threads)
     threads_pointers.push_back(thread.get());
   return join_all_ptr(threads_pointers, milliseconds_timeout);
@@ -368,7 +367,7 @@ bool thread::join_all(const std::initializer_list<std::unique_ptr<thread>>& thre
 }
 
 bool thread::join_all(const std::initializer_list<std::unique_ptr<thread>>& threads, int32 milliseconds_timeout) {
-  std::vector<thread*> threads_pointers;
+  auto threads_pointers = std::vector<thread*> {};
   for (auto& thread : threads)
     threads_pointers.push_back(thread.get());
   return join_all_ptr(threads_pointers, milliseconds_timeout);
@@ -383,7 +382,7 @@ bool thread::join_all(const std::vector<std::shared_ptr<thread>>& threads) {
 }
 
 bool thread::join_all(const std::vector<std::shared_ptr<thread>>& threads, int32 milliseconds_timeout) {
-  std::vector<thread*> threads_pointers;
+  auto threads_pointers = std::vector<thread*> {};
   for (auto& thread : threads)
     threads_pointers.push_back(thread.get());
   return join_all_ptr(threads_pointers, milliseconds_timeout);
@@ -398,7 +397,7 @@ bool thread::join_all(const std::vector<std::unique_ptr<thread>>& threads) {
 }
 
 bool thread::join_all(const std::vector<std::unique_ptr<thread>>& threads, int32 milliseconds_timeout) {
-  std::vector<thread*> threads_pointers;
+  auto threads_pointers = std::vector<thread*> {};
   for (auto& thread : threads)
     threads_pointers.push_back(thread.get());
   return join_all_ptr(threads_pointers, milliseconds_timeout);
@@ -431,7 +430,7 @@ bool thread::do_wait(wait_handle& wait_handle, int32 milliseconds_timeout) {
 }
 
 int32 thread::generate_managed_thread_id() noexcept {
-  static int32 managed_thread_id_counter = main_managed_thread_id;
+  static auto managed_thread_id_counter = main_managed_thread_id;
   managed_thread_id_counter = managed_thread_id_counter == int32_object::max_value ? main_managed_thread_id + 1 : managed_thread_id_counter + 1;
   return managed_thread_id_counter;
 }
@@ -445,12 +444,12 @@ intptr thread::get_current_thread_id() {
 }
 
 thread::static_data& thread::get_static_data() {
-  static static_data data;
+  static auto data = static_data {};
   return data;
 }
 
 thread& thread::get_thread(intptr thread_id) {
-  std::lock_guard<std::recursive_mutex> lock {get_static_data().threads_mutex};
+  auto lock = std::lock_guard<std::recursive_mutex> {get_static_data().threads_mutex};
   if (thread_id == main_thread_id_) return main_thread();
   
   for (auto& thread : get_static_data().threads)
@@ -536,15 +535,15 @@ void thread::thread_proc() {
   data_->end_thread_event.set();
   
   if (!is_background()) return;
-  std::lock_guard<std::recursive_mutex> lock {get_static_data().threads_mutex};
-  thread_collection::iterator iterator = std::find_if(get_static_data().threads.begin(), get_static_data().threads.end(), [&](const auto& value) {return value->data_ ? value->data_->managed_thread_id == data_->managed_thread_id : false;});
+  auto lock = std::lock_guard<std::recursive_mutex> {get_static_data().threads_mutex};
+  auto iterator = std::find_if(get_static_data().threads.begin(), get_static_data().threads.end(), [&](const auto& value) {return value->data_ ? value->data_->managed_thread_id == data_->managed_thread_id : false;});
   if (iterator == get_static_data().threads.end()) return;
   (*iterator)->data_.reset();
   get_static_data().threads.erase(iterator);
 }
 
 thread& thread::unmanaged_thread() {
-  static thread unmanaged_thread;
+  static auto unmanaged_thread = threading::thread {};
   if (unmanaged_thread.is_unstarted()) {
     unmanaged_thread.data_->state &= ~xtd::threading::thread_state::unstarted;
     unmanaged_thread.data_->state |= xtd::threading::thread_state::background;
