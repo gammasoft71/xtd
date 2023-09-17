@@ -13,12 +13,12 @@ using namespace std;
 using namespace xtd::native;
 
 namespace {
-  string root_drive = {"/"};
-  vector<string> ram_drives = {"/dev"};
-  vector<string> amovible_mounteds = {};
-  vector<string> amovible_mounted_points {"/System/Volumes"};
-  vector<string> network_drives = {"/System/Volumes/Data/home"};
-  vector<string> network_drive_points = {"/Volumes"};
+  auto root_drive = string {"/"};
+  auto ram_drives = vector<string> {"/dev"};
+  auto amovible_mounteds = vector<string> {};
+  auto amovible_mounted_points = vector<string> {"/System/Volumes"};
+  auto network_drives = vector<string> {"/System/Volumes/Data/home"};
+  auto network_drive_points = vector<string> {"/Volumes"};
 }
 
 bool drive::get_available_free_space(const std::string& root_path_name, size_t& free_bytes, size_t& total_number_of_bytes, size_t& total_number_of_free_bytes) {
@@ -52,13 +52,13 @@ int_least32_t drive::get_drive_type(const std::string& root_path_name) {
 }
 
 std::vector<std::string> drive::get_drives() {
-  vector<string> drives;
+  auto drives = vector<string> {};
   drives.push_back(root_drive);
   drives.insert(drives.end(), ram_drives.begin(), ram_drives.end());
   
   drives.insert(drives.end(), amovible_mounteds.begin(), amovible_mounteds.end());
   
-  int_least32_t file_attributes = 0;
+  auto file_attributes = 0;
   for (auto amovible_mounted_point : amovible_mounted_points) {
     if ((file_system::get_attributes(amovible_mounted_point, file_attributes) == 0 && (file_attributes & FILE_ATTRIBUTE_DIRECTORY) == FILE_ATTRIBUTE_DIRECTORY)) {
       for (string drive : directory::enumerate_directories(amovible_mounted_point, "*")) {
@@ -73,7 +73,7 @@ std::vector<std::string> drive::get_drives() {
   
   for (auto network_drive : network_drive_points) {
     if ((file_system::get_attributes(network_drive, file_attributes) == 0 && (file_attributes & FILE_ATTRIBUTE_DIRECTORY) == FILE_ATTRIBUTE_DIRECTORY)) {
-      for (string drive : directory::enumerate_directories(network_drive, "*")) {
+      for (auto drive : directory::enumerate_directories(network_drive, "*")) {
         struct statfs stat;
         if (statfs(drive.c_str(), &stat) == 0 && string(stat.f_mntonname) != root_drive  && !macos::strings::ends_with(drive, ".timemachine")  && !macos::strings::ends_with(drive, ".localsnapshots"))
           drives.push_back(drive);
