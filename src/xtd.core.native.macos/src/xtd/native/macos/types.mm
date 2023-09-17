@@ -17,7 +17,7 @@ string types::demangle(const string& name) {
   private:
     char* value_;
   };
-  int status = 0;
+  auto status = 0;
   auto result = __cxa_demangle(name.c_str(), 0, 0, &status);
   if (result == nullptr) return name;
   return auto_delete_char_pointer(result)();
