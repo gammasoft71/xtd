@@ -12,7 +12,7 @@
 using namespace xtd::native;
 
 intmax_t unnamed_semaphore::create(int_least32_t initial_count, int_least32_t maximum_count) {
-  semaphore_t semaphore;
+  auto semaphore = semaphore_t {};
   if (semaphore_create(current_task(), &semaphore, SYNC_POLICY_FIFO, std::min(initial_count, maximum_count)) != err_none)
     return reinterpret_cast<intmax_t>(SEM_FAILED);
   return static_cast<intmax_t>(semaphore);
