@@ -20,6 +20,6 @@ shared_ptr<object> assembly_configuration_attribute::get_type_id() const noexcep
 }
 
 shared_ptr<xtd::reflection::assembly_configuration_attribute>& __assembly_configuration_attribute__() {
-  static shared_ptr<xtd::reflection::assembly_configuration_attribute> configuration;
+  static auto configuration = shared_ptr<xtd::reflection::assembly_configuration_attribute> {};
   return configuration;
 }
