@@ -327,7 +327,7 @@ namespace xtd::tests {
       bool thread_aborted = false;
       auto thread = threading::thread {thread_start {[&] {
         thread_aborted = true;
-        thread::sleep(5);
+        thread::sleep(20);
         thread_aborted = false;
       }}};
       thread.start();
