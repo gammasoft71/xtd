@@ -20,7 +20,7 @@
 using namespace xtd::native;
 
 intmax_t named_semaphore::create(int_least32_t initial_count, int_least32_t max_count, const std::string& name) {
-  sem_t* semaphore = sem_open(name.c_str(), O_CREAT | O_EXCL, S_IRUSR | S_IWUSR, std::min(initial_count, max_count));
+  auto semaphore = sem_open(name.c_str(), O_CREAT | O_EXCL, S_IRUSR | S_IWUSR, std::min(initial_count, max_count));
   return reinterpret_cast<intmax_t>(semaphore);
 }
 
@@ -34,7 +34,7 @@ size_t named_semaphore::max_name_size() {
 }
 
 intmax_t named_semaphore::open(const std::string& name) {
-  sem_t* semaphore = sem_open(name.c_str(), O_RDWR, S_IRUSR | S_IWUSR);
+  auto semaphore = sem_open(name.c_str(), O_RDWR, S_IRUSR | S_IWUSR);
   return reinterpret_cast<intmax_t>(semaphore);
 }
 
