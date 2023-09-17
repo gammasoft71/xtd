@@ -61,8 +61,8 @@ bool thread::set_current_thread_name(const std::string& name) {
 
 bool thread::set_priority(intmax_t handle, int_least32_t priority) {
   if (reinterpret_cast<pthread_t>(handle) == PTHREAD_FAILED) return false;
-  int_least32_t policy;
-  sched_param schedParam;
+  auto policy = 0;
+  auto schedParam = sched_param {};
   if (::pthread_getschedparam(reinterpret_cast<pthread_t>(handle), &policy, &schedParam) != 0)
     return false;
   
