@@ -20,6 +20,6 @@ shared_ptr<object> assembly_trademark_attribute::get_type_id() const noexcept {
 }
 
 shared_ptr<xtd::reflection::assembly_trademark_attribute>& __assembly_trademark_attribute__() {
-  static shared_ptr<xtd::reflection::assembly_trademark_attribute> trademark;
+  static auto trademark = shared_ptr<xtd::reflection::assembly_trademark_attribute> {};
   return trademark;
 }
