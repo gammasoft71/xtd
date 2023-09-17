@@ -769,7 +769,7 @@ size_t ustring::index_of_any(const std::vector<value_type>& values, size_t start
 }
 
 size_t ustring::index_of_any(const std::vector<value_type>& values, size_t start_index, size_t count) const noexcept {
-  auto index = 0ul;
+  auto index = 0_sz;
   for (const auto& item : *this) {
     if (index++ < start_index) continue;
     if (index - 1 > start_index + count) break;

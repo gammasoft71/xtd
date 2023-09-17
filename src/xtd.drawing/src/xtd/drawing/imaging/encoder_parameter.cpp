@@ -87,7 +87,7 @@ encoder_parameter::encoder_parameter(const xtd::drawing::imaging::encoder& encod
 
 encoder_parameter::encoder_parameter(const xtd::drawing::imaging::encoder& encoder, std::vector<int32> numerator, std::vector<int32> denominator) : encoder_(encoder), number_of_values_(numerator.size()), type_(xtd::drawing::imaging::encoder_parameter_value_type::value_type_rational_range) {
   if (numerator.size() != denominator.size()) throw argument_out_of_range_exception {csf_};
-  for (auto index = 0u; index < numerator.size(); ++index) {
+  for (auto index = 0_sz; index < numerator.size(); ++index) {
     if (numerator[index] < 0 || denominator[index] < 0) throw argument_out_of_range_exception {csf_};
     add_bytes(value_, numerator[index]);
     add_bytes(value_, denominator[index]);
@@ -96,7 +96,7 @@ encoder_parameter::encoder_parameter(const xtd::drawing::imaging::encoder& encod
 
 encoder_parameter::encoder_parameter(const xtd::drawing::imaging::encoder& encoder, std::vector<int64> rangebegin, std::vector<int64> rangeend) : encoder_(encoder), number_of_values_(rangebegin.size()), type_(xtd::drawing::imaging::encoder_parameter_value_type::value_type_long_range) {
   if (rangebegin.size() != rangeend.size()) throw argument_out_of_range_exception {csf_};
-  for (auto index = 0u; index < rangebegin.size(); ++index) {
+  for (auto index = 0_sz; index < rangebegin.size(); ++index) {
     if (rangebegin[index] < 0 || rangeend[index] < 0) throw argument_out_of_range_exception {csf_};
     add_bytes(value_, as<int32>(rangebegin[index]));
     add_bytes(value_, as<int32>(rangeend[index]));

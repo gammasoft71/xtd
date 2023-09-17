@@ -97,10 +97,10 @@ xtd::ustring path::get_random_file_name(size_t name_length, size_t extension_len
   static auto rand = xtd::random {};
   auto random_file_name = ustring::empty_string;
   
-  for (auto index = 0ul; index < name_length; ++index)
+  for (auto index = 0_sz; index < name_length; ++index)
     random_file_name += valid_chars[rand.next(0, as<int32>(valid_chars.size() - 1))];
   if (extension_length) random_file_name += '.';
-  for (auto index = 0ul; index < extension_length; ++index)
+  for (auto index = 0_sz; index < extension_length; ++index)
     random_file_name += valid_chars[rand.next(0, as<int32>(valid_chars.size() - 1))];
   
   return random_file_name;

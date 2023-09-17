@@ -1,5 +1,6 @@
 #include "../../../include/xtd/security/secure_string.h"
 #include "../../../include/xtd/guid.h"
+#include "../../../include/xtd/literals.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/cryptography.h>
 #undef __XTD_CORE_NATIVE_LIBRARY__
@@ -13,7 +14,7 @@ namespace {
     // https://kylewbanks.com/blog/Simple-XOR-Encryption-Decryption-in-Cpp
     auto key = guid.to_string("D");
     vector<xtd::byte> result;
-    for (auto index = 0u; index < length; ++index)
+    for (auto index = 0_sz; index < length; ++index)
       result.push_back(value[index] != key[index % key.size()] ? value[index] ^ key[index % key.size()] : value[index]);
     return result;
   }

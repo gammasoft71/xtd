@@ -24,7 +24,7 @@ guid::guid(int32 a, int16 b, int16 c, const std::vector<xtd::byte>& d) : guid(as
 guid::guid(uint32 a, uint16 b, uint16 c, const std::vector<xtd::byte>& d) {
   if (d.size() != data_.size() - 8) throw argument_exception(ustring::format("Vector size must be {}", data_.size() - 8), csf_);
   
-  auto index = 0u;
+  auto index = 0_sz;
   data_[index++] = as<xtd::byte>((a & 0xFF000000) >> 24);
   data_[index++] = as<xtd::byte>((a & 0x00FF0000) >> 16);
   data_[index++] = as<xtd::byte>((a & 0x0000FF00) >> 8);
@@ -42,7 +42,7 @@ guid::guid(int32 a, int16 b, int16 c, xtd::byte d, xtd::byte e, xtd::byte f, xtd
 }
 
 guid::guid(uint32 a, uint16 b, uint16 c, xtd::byte d, xtd::byte e, xtd::byte f, xtd::byte g, xtd::byte h, xtd::byte i, xtd::byte j, xtd::byte k) noexcept {
-  auto index = 0u;
+  auto index = 0_sz;
   data_[index++] = as<xtd::byte>((a & 0xFF000000) >> 24);
   data_[index++] = as<xtd::byte>((a & 0x00FF0000) >> 16);
   data_[index++] = as<xtd::byte>((a & 0x0000FF00) >> 8);
@@ -63,21 +63,21 @@ guid::guid(uint32 a, uint16 b, uint16 c, xtd::byte d, xtd::byte e, xtd::byte f, 
 
 guid::guid(const ustring& guid) {
   auto simple = guid.replace("0x", "").replace(",", "").replace("-", "").replace("(", "").replace(")", "").replace("{", "").replace("}", "");
-  for (auto index = 0u; index < data_.size(); ++index) {
+  for (auto index = 0_sz; index < data_.size(); ++index) {
     data_[index] = parse<xtd::byte>(simple.substring(0, 2), number_styles::hex_number);
     simple = simple.remove(0, 2);
   }
 }
 
 int32 guid::compare_to(const guid& value) const noexcept {
-  for (auto index = 0u; index < data_.size(); ++index)
+  for (auto index = 0_sz; index < data_.size(); ++index)
     if (data_[index] > value.data_[index]) return 1;
     else if (data_[index] < value.data_[index]) return -1;
   return 0;
 }
 
 bool guid::equals(const guid& g) const noexcept {
-  for (auto index = 0u; index < data_.size(); ++index)
+  for (auto index = 0_sz; index < data_.size(); ++index)
     if (data_[index] != g.data_[index]) return false;
   return true;
 }
@@ -105,7 +105,7 @@ ustring guid::to_string(ustring format) const {
   auto hexadecimal = format == "x";
   
   auto result = ustring::empty_string;
-  for (auto index = 0u; index < data_.size(); ++index) {
+  for (auto index = 0_sz; index < data_.size(); ++index) {
     if (hexadecimal && (index == 4 || index == 6 || (index >= 8 && index <= 15))) result += ",";
     if (hexadecimal && (index == 0 || index == 8)) result += "{";
     if (hexadecimal && (index == 0 || index == 4 || index == 6 || (index >= 8 && index <= 15))) result += "0x";

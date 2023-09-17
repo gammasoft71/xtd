@@ -14,8 +14,8 @@ using namespace xtd::forms::visual_styles;
 
 namespace {
   xtd::ustring get_hotkey_prefix_locations(const xtd::ustring& str, std::vector<size_t>& locations) {
-    auto offset = 0u;
-    for (auto index = 0u; index < str.size(); index++) {
+    auto offset = 0_sz;
+    for (auto index = 0_sz; index < str.size(); index++) {
       if (str[index] == '&' && str[index + 1] != '&')
         locations.push_back(index + offset);
       else if (str[index] == '&' && str[index + 1] == '&') {
@@ -24,7 +24,7 @@ namespace {
       }
     }
     auto new_str = str.replace("&&", "&");
-    for (auto index = 0u; index < locations.size(); ++index)
+    for (auto index = 0_sz; index < locations.size(); ++index)
       new_str = new_str.remove(locations[index], 1);
     return new_str;
   }

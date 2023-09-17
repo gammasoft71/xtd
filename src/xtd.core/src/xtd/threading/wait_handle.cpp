@@ -183,7 +183,7 @@ size_t wait_handle::wait_any(const vector<wait_handle*>& wait_handles, int32 mil
   
   if (milliseconds_timeout == timeout::infinite) {
     while (true) {
-      for (auto index = 0ul; index < wait_handles.size(); ++index) {
+      for (auto index = 0_sz; index < wait_handles.size(); ++index) {
         if (wait_handles[index]->wait_one(0) == true) return index;
         thread::sleep(1);
       }
@@ -192,7 +192,7 @@ size_t wait_handle::wait_any(const vector<wait_handle*>& wait_handles, int32 mil
   
   auto sw = stopwatch::start_new();
   while (sw.elapsed_milliseconds() <= milliseconds_timeout) {
-    for (auto index = 0ul; index < wait_handles.size(); index++) {
+    for (auto index = 0_sz; index < wait_handles.size(); index++) {
       if (wait_handles[index]->wait_one(0) == true) return index;
       thread::sleep(1);
     }
