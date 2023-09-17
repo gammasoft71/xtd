@@ -11,7 +11,7 @@
 using namespace xtd::native;
 
 intmax_t named_event_wait_handle::create(bool initial_state, bool manual_reset, const std::string& name) {
-  sem_t* semaphore = sem_open(name.c_str(), O_CREAT | O_EXCL, S_IRUSR | S_IWUSR, initial_state ? 1 : 0);
+  auto semaphore = sem_open(name.c_str(), O_CREAT | O_EXCL, S_IRUSR | S_IWUSR, initial_state ? 1 : 0);
   return reinterpret_cast<intmax_t>(semaphore);
 }
 
@@ -25,7 +25,7 @@ size_t named_event_wait_handle::max_name_size() {
 }
 
 intmax_t named_event_wait_handle::open(const std::string& name) {
-  sem_t* semaphore = sem_open(name.c_str(), O_RDWR, S_IRUSR | S_IWUSR);
+  auto semaphore = sem_open(name.c_str(), O_RDWR, S_IRUSR | S_IWUSR);
   return reinterpret_cast<intmax_t>(semaphore);
 }
 
@@ -60,7 +60,7 @@ uint_least32_t named_event_wait_handle::wait(intmax_t handle, int_least32_t mill
   if (result && errno == ETIMEDOUT) return 0x00000102;
   
   if (manual_reset) {
-    bool io_error = false;
+    auto io_error = false;
     set(handle, io_error);
   }
   
