@@ -20,6 +20,6 @@ shared_ptr<object> assembly_culture_attribute::get_type_id() const noexcept {
 }
 
 shared_ptr<xtd::reflection::assembly_culture_attribute>& __assembly_culture_attribute__() {
-  static shared_ptr<xtd::reflection::assembly_culture_attribute> culture;
+  static auto culture = shared_ptr<xtd::reflection::assembly_culture_attribute> {};
   return culture;
 }
