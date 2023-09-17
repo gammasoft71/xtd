@@ -77,7 +77,7 @@ intptr bitmap::get_hicon() const {
 }
 
 drawing::color bitmap::get_pixel(int32 x, int32 y) const {
-  xtd::byte a = 0, r = 0, g = 0, b = 0;
+  auto a = 0_u8, r = 0_u8, g = 0_u8, b = 0_u8;
   native::image::get_pixel(handle(), x, y, a, r, g, b);
   return color::from_argb(a, r, g, b);
 }
@@ -88,12 +88,12 @@ bitmap_data bitmap::lock_bits(const rectangle& rect, xtd::drawing::imaging::imag
 
 bitmap_data bitmap::lock_bits(const rectangle& rect, xtd::drawing::imaging::image_lock_mode flags, xtd::drawing::imaging::pixel_format format, const bitmap_data& data) {
   if (format == xtd::drawing::imaging::pixel_format::indexed || format == xtd::drawing::imaging::pixel_format::gdi) throw argument_exception {csf_};
-  int32 image_data_height = data.height();
-  int32 image_data_pixel_format = static_cast<int32>(data.pixel_format());
-  int32 image_data_reserved = data.reserved();
-  intptr image_data_scan0 = data.scan0();
-  int32 image_data_stride = data.stride();
-  int32 image_data_width = data.width();
+  auto image_data_height = data.height();
+  auto image_data_pixel_format = static_cast<int32>(data.pixel_format());
+  auto image_data_reserved = data.reserved();
+  auto image_data_scan0 = data.scan0();
+  auto image_data_stride = data.stride();
+  auto image_data_width = data.width();
   native::image::lock_bits(handle(), rect.left(), rect.top(), rect.width(), rect.height(), static_cast<int32>(flags), static_cast<int32>(format), image_data_height, image_data_pixel_format, image_data_reserved, image_data_scan0, image_data_stride, image_data_width);
   return bitmap_data().height(image_data_height).pixel_format(static_cast<xtd::drawing::imaging::pixel_format>(image_data_pixel_format)).reserved(image_data_reserved).scan0(image_data_scan0).stride(image_data_stride).width(image_data_width);
 }
@@ -119,11 +119,11 @@ void bitmap::set_resolution(int32 x_dpi, int32 y_dpi) {
 }
 
 void bitmap::unlock_bits(const bitmap_data& data) {
-  int32 image_data_height = data.height();
-  int32 image_data_pixel_format = static_cast<int32>(data.pixel_format());
-  int32 image_data_reserved = data.reserved();
-  intptr image_data_scan0 = data.scan0();
-  int32 image_data_stride = data.stride();
-  int32 image_data_width = data.width();
+  auto image_data_height = data.height();
+  auto image_data_pixel_format = static_cast<int32>(data.pixel_format());
+  auto image_data_reserved = data.reserved();
+  auto image_data_scan0 = data.scan0();
+  auto image_data_stride = data.stride();
+  auto image_data_width = data.width();
   native::image::unlock_bits(handle(), image_data_height, image_data_pixel_format, image_data_reserved, image_data_scan0, image_data_stride, image_data_width);
 }
