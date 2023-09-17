@@ -337,7 +337,7 @@ void graphics::draw_curve(const pen& pen, const std::vector<xtd::drawing::point>
 void graphics::draw_curve(const pen& pen, const std::vector<xtd::drawing::point_f>& points, size_t offset, size_t number_of_segments, float tension) {
   if (offset + number_of_segments > points.size() || number_of_segments == 0) throw argument_exception {csf_};
   vector<pair<float, float>> curve_points;
-  for (auto index = 0u; index < number_of_segments; ++index)
+  for (auto index = 0_sz; index < number_of_segments; ++index)
     curve_points.emplace_back(to_pixels(points[offset + index].x()), to_pixels(points[offset + index].y()));
   native::graphics::draw_curve(handle(), pen.handle(), curve_points, tension);
 }

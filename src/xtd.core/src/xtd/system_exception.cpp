@@ -72,7 +72,7 @@ ustring system_exception::stack_trace_to_string() const noexcept {
   if (!stack_trace_) return information_.to_string();
   
   auto skip_frames = stack_trace_->frame_count();
-  for (auto index = 0ul; index < stack_trace_->frame_count(); ++index)
+  for (auto index = 0_sz; index < stack_trace_->frame_count(); ++index)
     if (stack_trace_->get_frame(index).get_method().starts_with(name()))
       skip_frames = index;
   return stack_trace_->to_string(skip_frames + 1, information_);

@@ -21,39 +21,39 @@ namespace xtd::tests {
     void test_method_(constructor_with_ustring) {
       ustring s1 = "test";
       ustring s2 = s1;
-      assert::are_equal(4u, s2.length(), csf_);
+      assert::are_equal(4_sz, s2.length(), csf_);
       assert::are_equal("test", s2, csf_);
     }
     
     void test_method_(constructor_with_literal) {
       ustring s = "test";
-      assert::are_equal(4u, s.length(), csf_);
+      assert::are_equal(4_sz, s.length(), csf_);
       assert::are_equal("test", s, csf_);
     }
     
     void test_method_(constructor_with_string) {
       string s1 = "test";
       ustring s2 = s1;
-      assert::are_equal(4u, s2.length(), csf_);
+      assert::are_equal(4_sz, s2.length(), csf_);
       assert::are_equal("test", s2, csf_);
     }
     
     void test_method_(constructor_with_w_literal) {
       ustring s = L"test";
-      assert::are_equal(4u, s.length(), csf_);
+      assert::are_equal(4_sz, s.length(), csf_);
       assert::are_equal("test", s, csf_);
     }
     
     void test_method_(constructor_with_wstring) {
       wstring s1 = L"test";
       ustring s2 = s1;
-      assert::are_equal(4u, s2.length(), csf_);
+      assert::are_equal(4_sz, s2.length(), csf_);
       assert::are_equal("test", s2, csf_);
     }
     
     void test_method_(constructor_with_u8_literal) {
       ustring s = u8"test";
-      assert::are_equal(4u, s.length(), csf_);
+      assert::are_equal(4_sz, s.length(), csf_);
       assert::are_equal("test", s, csf_);
     }
     
@@ -61,34 +61,34 @@ namespace xtd::tests {
     void test_method_(constructor_with_u8string) {
       u8string s1 = u8"test";
       ustring s2 = s1;
-      assert::are_equal(4u, s2.length(), csf_);
+      assert::are_equal(4_sz, s2.length(), csf_);
       assert::are_equal("test", s2, csf_);
     }
 #endif
     
     void test_method_(constructor_with_u16_literal) {
       ustring s = u"test";
-      assert::are_equal(4u, s.length(), csf_);
+      assert::are_equal(4_sz, s.length(), csf_);
       assert::are_equal("test", s, csf_);
     }
     
     void test_method_(constructor_with_u16string) {
       u16string s1 = u"test";
       ustring s2 = s1;
-      assert::are_equal(4u, s2.length(), csf_);
+      assert::are_equal(4_sz, s2.length(), csf_);
       assert::are_equal("test", s2, csf_);
     }
     
     void test_method_(constructor_with_u32_literal) {
       ustring s = U"test";
-      assert::are_equal(4u, s.length(), csf_);
+      assert::are_equal(4_sz, s.length(), csf_);
       assert::are_equal("test", s, csf_);
     }
     
     void test_method_(constructor_with_u32string) {
       u32string s1 = U"test";
       ustring s2 = s1;
-      assert::are_equal(4u, s2.length(), csf_);
+      assert::are_equal(4_sz, s2.length(), csf_);
       assert::are_equal("test", s2, csf_);
     }
     
@@ -148,7 +148,7 @@ namespace xtd::tests {
       auto s1 = string {"test"};
       ustring s2;
       s2 = s1;
-      assert::are_equal(4u, s2.length(), csf_);
+      assert::are_equal(4_sz, s2.length(), csf_);
       assert::are_equal("test", s2, csf_);
     }
     
@@ -157,7 +157,7 @@ namespace xtd::tests {
       auto s1 = u8string {u8"test"};
       ustring s2;
       s2 = s1;
-      assert::are_equal(4u, s2.length(), csf_);
+      assert::are_equal(4_sz, s2.length(), csf_);
       assert::are_equal("test", s2, csf_);
     }
 #endif
@@ -166,7 +166,7 @@ namespace xtd::tests {
       auto s1 = u16string {u"test"};
       ustring s2;
       s2 = s1;
-      assert::are_equal(4u, s2.length(), csf_);
+      assert::are_equal(4_sz, s2.length(), csf_);
       assert::are_equal("test", s2, csf_);
     }
     
@@ -174,7 +174,7 @@ namespace xtd::tests {
       auto s1 = u32string {U"test"};
       ustring s2;
       s2 = s1;
-      assert::are_equal(4u, s2.length(), csf_);
+      assert::are_equal(4_sz, s2.length(), csf_);
       assert::are_equal("test", s2, csf_);
     }
     
@@ -182,7 +182,7 @@ namespace xtd::tests {
       auto s1 = ustring {"test"};
       ustring s2;
       s2 = s1;
-      assert::are_equal(4u, s2.length(), csf_);
+      assert::are_equal(4_sz, s2.length(), csf_);
       assert::are_equal("test", s2, csf_);
     }
     
@@ -190,7 +190,7 @@ namespace xtd::tests {
       auto s1 = wstring {L"test"};
       ustring s2;
       s2 = s1;
-      assert::are_equal(4u, s2.length(), csf_);
+      assert::are_equal(4_sz, s2.length(), csf_);
       assert::are_equal("test", s2, csf_);
     }
 
@@ -198,7 +198,7 @@ namespace xtd::tests {
       auto p = "test";
       ustring s;
       s = p;
-      assert::are_equal(4u, s.length(), csf_);
+      assert::are_equal(4_sz, s.length(), csf_);
       assert::are_equal("test", s, csf_);
     }
 
@@ -206,7 +206,7 @@ namespace xtd::tests {
       auto p = "test";
       ustring s;
       s = const_cast<char*>(p);
-      assert::are_equal(4u, s.length(), csf_);
+      assert::are_equal(4_sz, s.length(), csf_);
       assert::are_equal("test", s, csf_);
     }
 
@@ -214,7 +214,7 @@ namespace xtd::tests {
       auto p = u8"test";
       ustring s;
       s = p;
-      assert::are_equal(4u, s.length(), csf_);
+      assert::are_equal(4_sz, s.length(), csf_);
       assert::are_equal("test", s, csf_);
     }
     
@@ -223,7 +223,7 @@ namespace xtd::tests {
       auto p = u8"test";
       ustring s;
       s = const_cast<char8*>(p);
-      assert::are_equal(4u, s.length(), csf_);
+      assert::are_equal(4_sz, s.length(), csf_);
       assert::are_equal("test", s, csf_);
     }
 #endif
@@ -232,7 +232,7 @@ namespace xtd::tests {
       auto p = u"test";
       ustring s;
       s = p;
-      assert::are_equal(4u, s.length(), csf_);
+      assert::are_equal(4_sz, s.length(), csf_);
       assert::are_equal("test", s, csf_);
     }
     
@@ -240,7 +240,7 @@ namespace xtd::tests {
       auto p = u"test";
       ustring s;
       s = const_cast<char16*>(p);
-      assert::are_equal(4u, s.length(), csf_);
+      assert::are_equal(4_sz, s.length(), csf_);
       assert::are_equal("test", s, csf_);
     }
 
@@ -248,7 +248,7 @@ namespace xtd::tests {
       auto p = U"test";
       ustring s;
       s = p;
-      assert::are_equal(4u, s.length(), csf_);
+      assert::are_equal(4_sz, s.length(), csf_);
       assert::are_equal("test", s, csf_);
     }
     
@@ -256,7 +256,7 @@ namespace xtd::tests {
       auto p = U"test";
       ustring s;
       s = const_cast<char32*>(p);
-      assert::are_equal(4u, s.length(), csf_);
+      assert::are_equal(4_sz, s.length(), csf_);
       assert::are_equal("test", s, csf_);
     }
 
@@ -264,7 +264,7 @@ namespace xtd::tests {
       auto p = L"test";
       ustring s;
       s = p;
-      assert::are_equal(4u, s.length(), csf_);
+      assert::are_equal(4_sz, s.length(), csf_);
       assert::are_equal("test", s, csf_);
     }
     
@@ -272,7 +272,7 @@ namespace xtd::tests {
       auto p = L"test";
       ustring s;
       s = const_cast<wchar*>(p);
-      assert::are_equal(4u, s.length(), csf_);
+      assert::are_equal(4_sz, s.length(), csf_);
       assert::are_equal("test", s, csf_);
     }
 
@@ -342,7 +342,7 @@ namespace xtd::tests {
       auto s1 = string {"s1"};
       ustring s2 = "s2";
       s2 += s1;
-      assert::are_equal(4u, s2.length(), csf_);
+      assert::are_equal(4_sz, s2.length(), csf_);
       assert::are_equal("s2s1", s2, csf_);
     }
     
@@ -351,7 +351,7 @@ namespace xtd::tests {
       auto s1 = u8string {u8"s1"};
       ustring s2 = "s2";
       s2 += s1;
-      assert::are_equal(4u, s2.length(), csf_);
+      assert::are_equal(4_sz, s2.length(), csf_);
       assert::are_equal("s2s1", s2, csf_);
     }
 #endif
@@ -360,7 +360,7 @@ namespace xtd::tests {
       auto s1 = u16string {u"s1"};
       ustring s2 = "s2";
       s2 += s1;
-      assert::are_equal(4u, s2.length(), csf_);
+      assert::are_equal(4_sz, s2.length(), csf_);
       assert::are_equal("s2s1", s2, csf_);
     }
     
@@ -368,7 +368,7 @@ namespace xtd::tests {
       auto s1 = u32string {U"s1"};
       ustring s2 = "s2";
       s2 += s1;
-      assert::are_equal(4u, s2.length(), csf_);
+      assert::are_equal(4_sz, s2.length(), csf_);
       assert::are_equal("s2s1", s2, csf_);
     }
     
@@ -376,7 +376,7 @@ namespace xtd::tests {
       auto s1 = ustring {"s1"};
       ustring s2 = "s2";
       s2 += s1;
-      assert::are_equal(4u, s2.length(), csf_);
+      assert::are_equal(4_sz, s2.length(), csf_);
       assert::are_equal("s2s1", s2, csf_);
     }
     
@@ -384,7 +384,7 @@ namespace xtd::tests {
       auto s1 = wstring {L"s1"};
       ustring s2 = "s2";
       s2 += s1;
-      assert::are_equal(4u, s2.length(), csf_);
+      assert::are_equal(4_sz, s2.length(), csf_);
       assert::are_equal("s2s1", s2, csf_);
     }
     
@@ -392,7 +392,7 @@ namespace xtd::tests {
       auto s1 = "s1";
       ustring s2 = "s2";
       s2 += s1;
-      assert::are_equal(4u, s2.length(), csf_);
+      assert::are_equal(4_sz, s2.length(), csf_);
       assert::are_equal("s2s1", s2, csf_);
     }
     
@@ -400,7 +400,7 @@ namespace xtd::tests {
       auto s1 = u8"s1";
       ustring s2 = "s2";
       s2 += s1;
-      assert::are_equal(4u, s2.length(), csf_);
+      assert::are_equal(4_sz, s2.length(), csf_);
       assert::are_equal("s2s1", s2, csf_);
     }
     
@@ -408,7 +408,7 @@ namespace xtd::tests {
       auto s1 = u"s1";
       ustring s2 = "s2";
       s2 += s1;
-      assert::are_equal(4u, s2.length(), csf_);
+      assert::are_equal(4_sz, s2.length(), csf_);
       assert::are_equal("s2s1", s2, csf_);
     }
     
@@ -416,7 +416,7 @@ namespace xtd::tests {
       auto s1 = U"s1";
       ustring s2 = "s2";
       s2 += s1;
-      assert::are_equal(4u, s2.length(), csf_);
+      assert::are_equal(4_sz, s2.length(), csf_);
       assert::are_equal("s2s1", s2, csf_);
     }
     
@@ -424,7 +424,7 @@ namespace xtd::tests {
       auto s1 = L"s1";
       ustring s2 = "s2";
       s2 += s1;
-      assert::are_equal(4u, s2.length(), csf_);
+      assert::are_equal(4_sz, s2.length(), csf_);
       assert::are_equal("s2s1", s2, csf_);
     }
     
@@ -432,7 +432,7 @@ namespace xtd::tests {
       auto s1 = "s1";
       ustring s2 = "s2";
       s2 += const_cast<char*>(s1);
-      assert::are_equal(4u, s2.length(), csf_);
+      assert::are_equal(4_sz, s2.length(), csf_);
       assert::are_equal("s2s1", s2, csf_);
     }
     
@@ -441,7 +441,7 @@ namespace xtd::tests {
       auto s1 = u8"s1";
       ustring s2 = "s2";
       s2 += const_cast<char8*>(s1);
-      assert::are_equal(4u, s2.length(), csf_);
+      assert::are_equal(4_sz, s2.length(), csf_);
       assert::are_equal("s2s1", s2, csf_);
     }
 #endif
@@ -450,7 +450,7 @@ namespace xtd::tests {
       auto s1 = u"s1";
       ustring s2 = "s2";
       s2 += const_cast<char16*>(s1);
-      assert::are_equal(4u, s2.length(), csf_);
+      assert::are_equal(4_sz, s2.length(), csf_);
       assert::are_equal("s2s1", s2, csf_);
     }
     
@@ -458,7 +458,7 @@ namespace xtd::tests {
       auto s1 = U"s1";
       ustring s2 = "s2";
       s2 += const_cast<char32*>(s1);
-      assert::are_equal(4u, s2.length(), csf_);
+      assert::are_equal(4_sz, s2.length(), csf_);
       assert::are_equal("s2s1", s2, csf_);
     }
     
@@ -466,7 +466,7 @@ namespace xtd::tests {
       auto s1 = L"s1";
       ustring s2 = "s2";
       s2 += const_cast<wchar*>(s1);
-      assert::are_equal(4u, s2.length(), csf_);
+      assert::are_equal(4_sz, s2.length(), csf_);
       assert::are_equal("s2s1", s2, csf_);
     }
     
@@ -536,7 +536,7 @@ namespace xtd::tests {
       auto s1 = string {"s1"};
       ustring s2 = "s2";
       ustring s3 = s2 + s1;
-      assert::are_equal(4u, s3.length(), csf_);
+      assert::are_equal(4_sz, s3.length(), csf_);
       assert::are_equal("s2s1", s3, csf_);
     }
     
@@ -545,7 +545,7 @@ namespace xtd::tests {
       auto s1 = u8string {u8"s1"};
       ustring s2 = "s2";
       ustring s3 = s2 + s1;
-      assert::are_equal(4u, s3.length(), csf_);
+      assert::are_equal(4_sz, s3.length(), csf_);
       assert::are_equal("s2s1", s3, csf_);
     }
 #endif
@@ -554,7 +554,7 @@ namespace xtd::tests {
       auto s1 = u16string {u"s1"};
       ustring s2 = "s2";
       ustring s3 = s2 + s1;
-      assert::are_equal(4u, s3.length(), csf_);
+      assert::are_equal(4_sz, s3.length(), csf_);
       assert::are_equal("s2s1", s3, csf_);
     }
     
@@ -562,7 +562,7 @@ namespace xtd::tests {
       auto s1 = u32string {U"s1"};
       ustring s2 = "s2";
       ustring s3 = s2 + s1;
-      assert::are_equal(4u, s3.length(), csf_);
+      assert::are_equal(4_sz, s3.length(), csf_);
       assert::are_equal("s2s1", s3, csf_);
     }
     
@@ -570,7 +570,7 @@ namespace xtd::tests {
       auto s1 = ustring {"s1"};
       ustring s2 = "s2";
       ustring s3 = s2 + s1;
-      assert::are_equal(4u, s3.length(), csf_);
+      assert::are_equal(4_sz, s3.length(), csf_);
       assert::are_equal("s2s1", s3, csf_);
     }
     
@@ -578,7 +578,7 @@ namespace xtd::tests {
       auto s1 = wstring {L"s1"};
       ustring s2 = "s2";
       ustring s3 = s2 + s1;
-      assert::are_equal(4u, s3.length(), csf_);
+      assert::are_equal(4_sz, s3.length(), csf_);
       assert::are_equal("s2s1", s3, csf_);
     }
 
@@ -586,7 +586,7 @@ namespace xtd::tests {
       auto s1 = "s1";
       ustring s2 = "s2";
       ustring s3 = s2 + s1;
-      assert::are_equal(4u, s3.length(), csf_);
+      assert::are_equal(4_sz, s3.length(), csf_);
       assert::are_equal("s2s1", s3, csf_);
     }
 
@@ -594,7 +594,7 @@ namespace xtd::tests {
       auto s1 = u8"s1";
       ustring s2 = "s2";
       ustring s3 = s2 + s1;
-      assert::are_equal(4u, s3.length(), csf_);
+      assert::are_equal(4_sz, s3.length(), csf_);
       assert::are_equal("s2s1", s3, csf_);
     }
 
@@ -602,7 +602,7 @@ namespace xtd::tests {
       auto s1 = u"s1";
       ustring s2 = "s2";
       ustring s3 = s2 + s1;
-      assert::are_equal(4u, s3.length(), csf_);
+      assert::are_equal(4_sz, s3.length(), csf_);
       assert::are_equal("s2s1", s3, csf_);
     }
 
@@ -610,7 +610,7 @@ namespace xtd::tests {
       auto s1 = U"s1";
       ustring s2 = "s2";
       ustring s3 = s2 + s1;
-      assert::are_equal(4u, s3.length(), csf_);
+      assert::are_equal(4_sz, s3.length(), csf_);
       assert::are_equal("s2s1", s3, csf_);
     }
 
@@ -618,7 +618,7 @@ namespace xtd::tests {
       auto s1 = L"s1";
       ustring s2 = "s2";
       ustring s3 = s2 + s1;
-      assert::are_equal(4u, s3.length(), csf_);
+      assert::are_equal(4_sz, s3.length(), csf_);
       assert::are_equal("s2s1", s3, csf_);
     }
 
@@ -626,7 +626,7 @@ namespace xtd::tests {
       auto s1 = "s1";
       ustring s2 = "s2";
       ustring s3 = s2 + const_cast<char*>(s1);
-      assert::are_equal(4u, s3.length(), csf_);
+      assert::are_equal(4_sz, s3.length(), csf_);
       assert::are_equal("s2s1", s3, csf_);
     }
 
@@ -635,7 +635,7 @@ namespace xtd::tests {
       auto s1 = u8"s1";
       ustring s2 = "s2";
       ustring s3 = s2 + const_cast<char8*>(s1);
-      assert::are_equal(4u, s3.length(), csf_);
+      assert::are_equal(4_sz, s3.length(), csf_);
       assert::are_equal("s2s1", s3, csf_);
     }
 #endif
@@ -644,7 +644,7 @@ namespace xtd::tests {
       auto s1 = u"s1";
       ustring s2 = "s2";
       ustring s3 = s2 + const_cast<char16*>(s1);
-      assert::are_equal(4u, s3.length(), csf_);
+      assert::are_equal(4_sz, s3.length(), csf_);
       assert::are_equal("s2s1", s3, csf_);
     }
 
@@ -652,7 +652,7 @@ namespace xtd::tests {
       auto s1 = U"s1";
       ustring s2 = "s2";
       ustring s3 = s2 + const_cast<char32*>(s1);
-      assert::are_equal(4u, s3.length(), csf_);
+      assert::are_equal(4_sz, s3.length(), csf_);
       assert::are_equal("s2s1", s3, csf_);
     }
 
@@ -660,7 +660,7 @@ namespace xtd::tests {
       auto s1 = L"s1";
       ustring s2 = "s2";
       ustring s3 = s2 + const_cast<wchar*>(s1);
-      assert::are_equal(4u, s3.length(), csf_);
+      assert::are_equal(4_sz, s3.length(), csf_);
       assert::are_equal("s2s1", s3, csf_);
     }
 
@@ -853,21 +853,21 @@ namespace xtd::tests {
     }
     
     void test_method_(index_of_char) {
-      assert::are_equal(3u, ustring("01234").index_of('3'), csf_);
-      assert::are_equal(3u, ustring("0123434").index_of('3'), csf_);
+      assert::are_equal(3_sz, ustring("01234").index_of('3'), csf_);
+      assert::are_equal(3_sz, ustring("0123434").index_of('3'), csf_);
     }
     
     void test_method_(index_of_string) {
-      assert::are_equal(2u, ustring("01234").index_of("23"), csf_);
-      assert::are_equal(2u, ustring("0123423").index_of("23"), csf_);
+      assert::are_equal(2_sz, ustring("01234").index_of("23"), csf_);
+      assert::are_equal(2_sz, ustring("0123423").index_of("23"), csf_);
     }
     
     void test_method_(index_of_char_start_index) {
-      assert::are_equal(5u, ustring("0123434").index_of('3', 4), csf_);
+      assert::are_equal(5_sz, ustring("0123434").index_of('3', 4), csf_);
     }
     
     void test_method_(index_of_string_start_index) {
-      assert::are_equal(5u, ustring("0123423").index_of("23", 3), csf_);
+      assert::are_equal(5_sz, ustring("0123423").index_of("23", 3), csf_);
     }
     
     void test_method_(index_of_char_start_index_count) {
@@ -879,15 +879,15 @@ namespace xtd::tests {
     }
     
     void test_method_(index_of_any) {
-      assert::are_equal(2u, ustring("01234").index_of_any({'5', '3', '2'}), csf_);
+      assert::are_equal(2_sz, ustring("01234").index_of_any({'5', '3', '2'}), csf_);
     }
     
     void test_method_(index_of_any_start_index) {
-      assert::are_equal(3u, ustring("01234").index_of_any({'5', '3', '2'}, 3), csf_);
+      assert::are_equal(3_sz, ustring("01234").index_of_any({'5', '3', '2'}, 3), csf_);
     }
     
     void test_method_(index_of_any_start_index_and_count) {
-      assert::are_equal(2u, ustring("01234").index_of_any({'5', '2'}, 2, 1), csf_);
+      assert::are_equal(2_sz, ustring("01234").index_of_any({'5', '2'}, 2, 1), csf_);
       assert::are_equal(ustring::npos, ustring("01234").index_of_any({'5', '3'}, 0, 2), csf_);
     }
     
@@ -912,21 +912,21 @@ namespace xtd::tests {
     }
     
     void test_method_(last_index_of_char) {
-      assert::are_equal(3u, ustring("01234").last_index_of('3'), csf_);
-      assert::are_equal(5u, ustring("0123434").last_index_of('3'), csf_);
+      assert::are_equal(3_sz, ustring("01234").last_index_of('3'), csf_);
+      assert::are_equal(5_sz, ustring("0123434").last_index_of('3'), csf_);
     }
     
     void test_method_(last_index_of_string) {
-      assert::are_equal(2u, ustring("01234").last_index_of("23"), csf_);
-      assert::are_equal(5u, ustring("0123423").last_index_of("23"), csf_);
+      assert::are_equal(2_sz, ustring("01234").last_index_of("23"), csf_);
+      assert::are_equal(5_sz, ustring("0123423").last_index_of("23"), csf_);
     }
     
     void test_method_(last_index_of_char_start_index) {
-      assert::are_equal(5u, ustring("0123434").last_index_of('3', 4), csf_);
+      assert::are_equal(5_sz, ustring("0123434").last_index_of('3', 4), csf_);
     }
     
     void test_method_(last_index_of_string_start_index) {
-      assert::are_equal(5u, ustring("0123423").last_index_of("23", 3), csf_);
+      assert::are_equal(5_sz, ustring("0123423").last_index_of("23", 3), csf_);
     }
     
     void test_method_(last_index_of_char_start_index_count) {
@@ -938,15 +938,15 @@ namespace xtd::tests {
     }
     
     void test_method_(last_index_of_any) {
-      assert::are_equal(3u, ustring("01234").last_index_of_any({'5', '3', '2'}), csf_);
+      assert::are_equal(3_sz, ustring("01234").last_index_of_any({'5', '3', '2'}), csf_);
     }
     
     void test_method_(last_index_of_any_start_index) {
-      assert::are_equal(3u, ustring("01234").last_index_of_any({'5', '3', '2'}, 3), csf_);
+      assert::are_equal(3_sz, ustring("01234").last_index_of_any({'5', '3', '2'}, 3), csf_);
     }
     
     void test_method_(last_index_of_any_start_index_and_count) {
-      assert::are_equal(2u, ustring("01234").last_index_of_any({'5', '2'}, 2, 1), csf_);
+      assert::are_equal(2_sz, ustring("01234").last_index_of_any({'5', '2'}, 2, 1), csf_);
       assert::are_equal(ustring::npos, ustring("01234").last_index_of_any({'5', '3'}, 0, 2), csf_);
     }
     

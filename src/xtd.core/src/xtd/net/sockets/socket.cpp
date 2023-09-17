@@ -829,7 +829,7 @@ size_t socket::select(std::vector<socket>& check_read, std::vector<socket>& chec
   if (status < 0) throw socket_exception(get_last_error_(), csf_);
   
   auto update_check_sockets = [](auto & sockets, auto & handles) {
-    for (auto i = 0ul, j = 0ul; i < handles.size() && j < sockets.size(); ++i, ++j)
+    for (auto i = 0ul, j = 0_sz; i < handles.size() && j < sockets.size(); ++i, ++j)
       if (handles[i] == 0)
         sockets.erase(sockets.begin() + j--);
   };

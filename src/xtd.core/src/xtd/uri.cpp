@@ -154,8 +154,8 @@ vector<ustring> uri::segments() const {
   if (path.empty()) return {};
   
   auto segments = vector<ustring> {};
-  auto start_index = 0ul;
-  auto length = 1ul;
+  auto start_index = 0_sz;
+  auto length = 1_sz;
   
   if (path[start_index] == '/') {
     segments.push_back(path.substring(start_index, length));
@@ -191,15 +191,15 @@ bool uri::check_scheme_name(const ustring& scheme) {
 }
 
 ustring uri::escape_data_string(const ustring& value) {
-  if (value.size() > 32766u) throw uri_format_exception {csf_};
+  if (value.size() > 32766_sz) throw uri_format_exception {csf_};
   
   auto escape_needed = false;
-  for (auto index = 0ul; !escape_needed && index < value.size(); ++index)
+  for (auto index = 0_sz; !escape_needed && index < value.size(); ++index)
     escape_needed = !is_hex_encoding(value, index) && need_to_escape_data_char(value[index]);
     
   if (escape_needed) {
     auto ret_value = ustring::empty_string;
-    for (auto index = 0ul; index < value.size(); ++index) {
+    for (auto index = 0_sz; index < value.size(); ++index) {
       if (!is_hex_encoding(value, index) && need_to_escape_data_char(value[index])) ret_value += hex_escape(value[index]);
       else ret_value += value[index];
     }
@@ -210,15 +210,15 @@ ustring uri::escape_data_string(const ustring& value) {
 }
 
 ustring uri::escape_uri_string(const ustring& value) {
-  if (value.size() > 32766u) throw uri_format_exception {csf_};
+  if (value.size() > 32766_sz) throw uri_format_exception {csf_};
   
   auto escape_needed = false;
-  for (auto index = 0ul; !escape_needed && index < value.size(); ++index)
+  for (auto index = 0_sz; !escape_needed && index < value.size(); ++index)
     escape_needed = !is_hex_encoding(value, index) && need_to_escape_uri_char(value[index]);
     
   if (escape_needed) {
     auto ret_value = ustring::empty_string;
-    for (auto index = 0ul; index < value.size(); ++index) {
+    for (auto index = 0_sz; index < value.size(); ++index) {
       if (!is_hex_encoding(value, index) && need_to_escape_uri_char(value[index])) ret_value += hex_escape(value[index]);
       else ret_value += value[index];
     }
@@ -304,7 +304,7 @@ bool uri::is_hex_encoding(const ustring& pattern, size_t index) {
 bool uri::is_well_formed_original_string() {
   auto well_formated_original_string = true;
   
-  for (auto index = 0ul; !well_formated_original_string && index < original_uri_.size(); ++index)
+  for (auto index = 0_sz; !well_formated_original_string && index < original_uri_.size(); ++index)
     well_formated_original_string = !(is_hex_encoding(original_uri_, index) || need_to_escape_uri_char(original_uri_[index]));
     
   if (well_formated_original_string == true) well_formated_original_string = path::is_path_rooted(original_uri_);
@@ -331,7 +331,7 @@ bool uri::is_well_formed_uri_string(const ustring& uri_string, uri_kind uri_kind
 ustring uri::unescape_data_string(const ustring& value) {
   // See http://www.geekhideout.com/urlcode.shtml
   auto unescape_needed = false;
-  for (auto index = 0ul; !unescape_needed && index < value.size(); ++index)
+  for (auto index = 0_sz; !unescape_needed && index < value.size(); ++index)
     unescape_needed = is_hex_encoding(value, index);
     
   if (!unescape_needed) return value;

@@ -238,7 +238,7 @@ namespace xtd::io::tests {
       existing_file.close();
       std::vector<unsigned char> bytes = file::read_all_bytes(test_file_name);
       
-      assert::are_equal(4u, bytes.size(), csf_);
+      assert::are_equal(4_sz, bytes.size(), csf_);
       assert::are_equal(0x42, bytes[0], csf_);
       assert::are_equal(0x24, bytes[1], csf_);
       assert::are_equal(0x12, bytes[2], csf_);
@@ -254,7 +254,7 @@ namespace xtd::io::tests {
       existing_file << "Line 1\nLine 2\nLine 3\n";
       existing_file.close();
       std::vector<ustring> lines = file::read_all_lines(test_file_name);
-      assert::are_equal(3u, lines.size(), csf_);
+      assert::are_equal(3_sz, lines.size(), csf_);
       assert::are_equal("Line 1", lines[0], csf_);
       assert::are_equal("Line 2", lines[1], csf_);
       assert::are_equal("Line 3", lines[2], csf_);

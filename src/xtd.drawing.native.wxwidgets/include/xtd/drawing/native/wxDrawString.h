@@ -129,7 +129,7 @@ namespace xtd {
           if (GetTextWidth(dc, string, font, true) < width)  return string;
           
           wxString result;
-          for (auto index = 0u; index < string.size(); ++index) {
+          for (auto index = 0_sz; index < string.size(); ++index) {
             if (GetTextWidth(dc, (result + string[index]).Trim() + ellips, font, true) > width) return result + ellips;
             result += string[index];
           }
@@ -142,7 +142,7 @@ namespace xtd {
           
           wxString result;
           auto words = wxSplit(string, ' ');
-          for (auto index = 0u; index < words.size(); ++index) {
+          for (auto index = 0_sz; index < words.size(); ++index) {
             auto space = index ? " " : "";
             if (GetTextWidth(dc, (result + space + words[index]).Trim() + ellips, font, true) > width)  return result + ellips;
             result += space + words[index];
@@ -157,7 +157,7 @@ namespace xtd {
           wxString result;
           auto paths = wxSplit(string, xtd::io::path::directory_separator_char());
           if (GetTextWidth(dc, paths[paths.size() - 1], font, true) > width)  return paths[paths.size() - 1];
-          for (auto index = 0u; index < paths.size() - 1; ++index) {
+          for (auto index = 0_sz; index < paths.size() - 1; ++index) {
             auto separator = index ? wxString(xtd::io::path::directory_separator_char()) : wxString();
             if (GetTextWidth(dc, result + separator + ellips + xtd::io::path::directory_separator_char() + paths[index] + xtd::io::path::directory_separator_char() + paths[paths.size() - 1], font, true) > width)  return result + xtd::io::path::directory_separator_char() + ellips + xtd::io::path::directory_separator_char() + paths[paths.size() - 1];
             result += separator + paths[index];
@@ -219,7 +219,7 @@ namespace xtd {
         
         static int32 GetFirstHotKeyPrefixLocations(const wxString& str) {
           if (str.IsEmpty()) return -1;
-          for (auto index = 0u; index < str.size() - 1; index++)
+          for (auto index = 0_sz; index < str.size() - 1; index++)
             if (str[index] == '&' && str[index + 1] != '&') return static_cast<int32>(index);
           return -1;
         }
@@ -241,7 +241,7 @@ namespace xtd {
         static wxString RemoveHotKeyPrefixLocations(const wxString& str) {
           wxString result;
           if (str.IsEmpty() && GetFirstHotKeyPrefixLocations(str) == -1) return str;
-          for (auto index = 0u; index < str.size() - 1; index++)
+          for (auto index = 0_sz; index < str.size() - 1; index++)
             if (str[index] != '&' || str[index + 1] == '&') result += str[index];
           result += str[str.size() - 1];
           return result;
@@ -269,7 +269,7 @@ namespace xtd {
           for (auto sentence : strings) {
             auto words = wxSplit(sentence, ' ');
             if (words.size() == 0) results.push_back(" ");
-            else for (auto index = 0u; index < words.size(); ++index) {
+            else for (auto index = 0_sz; index < words.size(); ++index) {
                 results.push_back(words[index]);
                 while (index + 1 < words.size() && GetTextWidth(dc, results[results.size() - 1] + " " + words[index + 1], font, measureTrailingSpaces) <= width)
                   results[results.size() - 1] += " " + words[++index];
