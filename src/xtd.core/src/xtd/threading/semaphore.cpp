@@ -39,7 +39,7 @@ semaphore::semaphore(int32 initial_count, int32 maximum_count) : semaphore(initi
 
 semaphore::semaphore(int32 initial_count, int32 maximum_count, const ustring& name) : data_(std::make_shared<data>()) {
   data_->name = name;
-  bool created_new = false;
+  auto created_new = false;
   create(initial_count, maximum_count, created_new);
 }
 
@@ -94,8 +94,8 @@ int32 semaphore::release(int32 release_count) {
   if (release_count < 1) throw argument_out_of_range_exception {csf_};
   if (!semaphore_) throw object_closed_exception {csf_};
   if (data_->count + release_count > data_->maximum_count) throw semaphore_full_exception {csf_};
-  bool io_error = false;
-  int32 previous_count = -1;
+  auto io_error = false;
+  auto previous_count = -1;
   semaphore_->signal(io_error, release_count, previous_count);
   if (previous_count != -1) data_->count.exchange(previous_count);
   if (io_error) throw io::io_exception {csf_};
