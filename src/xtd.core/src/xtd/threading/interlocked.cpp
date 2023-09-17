@@ -17,10 +17,9 @@ int64 interlocked::add(int64& location, int64 value) noexcept {
 }
 
 double interlocked::compare_exchange(double& location, double value, double comparand) noexcept {
-  double result = location;
+  auto result = location;
   lock_(location) {
-    if (location == comparand)
-      location = value;
+    if (location == comparand) location = value;
   }
   return result;
 }
@@ -42,10 +41,9 @@ void* interlocked::compare_exchange(void*& location, void* value, void* comparan
 }
 
 float interlocked::compare_exchange(float& location, float value, float comparand) noexcept {
-  float result = location;
+  auto result = location;
   lock_(location) {
-    if (location == comparand)
-      location = value;
+    if (location == comparand) location = value;
   }
   return result;
 }
@@ -59,9 +57,8 @@ int64 interlocked::decrement(int64& location) noexcept {
 }
 
 double interlocked::exchange(double& location, double value) noexcept {
-  double original = location;
-  lock_(location)
-    location = value;
+  auto original = location;
+  lock_(location) location = value;
   return original;
 }
 
@@ -82,9 +79,8 @@ void* interlocked::exchange(void*& location, void* value) noexcept {
 }
 
 float interlocked::exchange(float& location, float value) noexcept {
-  float original = location;
-  lock_(location)
-    location = value;
+  auto original = location;
+  lock_(location) location = value;
   return original;
 }
 
@@ -101,6 +97,6 @@ void interlocked::memory_barrier() noexcept {
 }
 
 int64 interlocked::read(int64& location) noexcept {
-  std::atomic<int64> atomic(location);
+  auto atomic = std::atomic<int64> {location};
   return std::atomic_load(&atomic);
 }
