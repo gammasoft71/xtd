@@ -59,8 +59,8 @@ namespace xtd {
         /// @}
         
       private:
-        xtd::ustring& text_to_speak();
-        void synthesizer(const speech_synthesizer* synthesizer);
+        xtd::ustring& text_to_speak() noexcept;
+        void synthesizer(const speech_synthesizer* synthesizer) noexcept;
         std::shared_ptr<data> data_;
       };
     }
