@@ -12,7 +12,7 @@
 using namespace xtd::native;
 
 intmax_t unnamed_event_wait_handle::create(bool initial_state, bool manual_reset) {
-  semaphore_t semaphore;
+  auto semaphore = semaphore_t {};
   if (semaphore_create(current_task(), &semaphore, SYNC_POLICY_FIFO, initial_state ? 1 : 0) != err_none)
     return reinterpret_cast<intmax_t>(SEM_FAILED);
   return static_cast<intmax_t>(semaphore);
