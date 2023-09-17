@@ -45,7 +45,7 @@ event_wait_handle::event_wait_handle(bool initial_state, event_reset_mode mode, 
   data_->is_set = initial_state;
   if (!enum_object<>::is_defined(mode)) throw argument_exception {csf_};
   if (name.size() > native::named_event_wait_handle::max_name_size()) throw io::path_too_long_exception {csf_};
-  bool created_new = false;
+  auto created_new = false;
   create(initial_state, created_new);
 }
 
@@ -93,7 +93,7 @@ event_wait_handle event_wait_handle::open_existing(const ustring& name) {
 
 bool event_wait_handle::reset() {
   if (!data_) throw object_closed_exception {csf_};
-  bool io_error = false;
+  auto io_error = false;
   auto result = data_->event_wait_handle->reset(io_error);
   if (io_error) throw io::io_exception {csf_};
   return result;
@@ -102,7 +102,7 @@ bool event_wait_handle::reset() {
 bool event_wait_handle::set() {
   if (!data_) throw object_closed_exception {csf_};
   if (data_->is_set) return true;
-  bool io_error = false;
+  auto io_error = false;
   auto result = data_->event_wait_handle->set(io_error);
   if (io_error) throw io::io_exception {csf_};
   data_->is_set = true;
