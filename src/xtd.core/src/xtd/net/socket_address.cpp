@@ -1,6 +1,7 @@
 #include "../../../include/xtd/net/ip_address.h"
 #include "../../../include/xtd/net/socket_address.h"
 #include "../../../include/xtd/argument_out_of_range_exception.h"
+#include "../../../include/xtd/as.h"
 #include "../../../include/xtd/index_out_of_range_exception.h"
 #include "../../../include/xtd/bit_converter.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
@@ -17,7 +18,7 @@ socket_address::socket_address(sockets::address_family address_family) : socket_
 
 socket_address::socket_address(sockets::address_family address_family, size_t buffer_size) : bytes_(buffer_size) {
   if (buffer_size < 2) throw argument_out_of_range_exception {csf_};
-  bytes_[0] = static_cast<xtd::byte>(native::socket::address_family_to_native(static_cast<int32>(address_family)));
+  bytes_[0] = static_cast<xtd::byte>(native::socket::address_family_to_native(as<int32>(address_family))); // do not use as because sockets::address_family::unknown is -1 and as<byte> throw an exception overflow_exception.
   bytes_[1] = 0;
 }
 
