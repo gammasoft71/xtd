@@ -26,10 +26,10 @@ char** __environment_argv;
 namespace {
   static string create_process(const string& command) {
     auto fs = popen(command.c_str(), "r");
-    string result;
+    auto result = string {};
     while (!feof(fs)) {
       char buf[513];
-      size_t l = fread(buf, 1, 512, fs);
+      auto l = fread(buf, 1, 512, fs);
       buf[l] = 0;
       result += buf;
     }
@@ -96,7 +96,7 @@ namespace {
   using distribution_dictionary = map<string, string>;
   
   const distribution_dictionary& get_distribution_key_values() {
-    static distribution_dictionary distribution_key_values;
+    static auto distribution_key_values = distribution_dictionary {};
     if (!distribution_key_values.empty()) return distribution_key_values;
     auto [name, codename, version] = macos_information();
     distribution_key_values.insert({"BUG_REPORT_URL", "https://support.apple.com/macos"});
@@ -207,10 +207,10 @@ string environment::get_environment_variable(const string& variable, int_least32
 
 map<string, string>& environment::get_environment_variables(int_least32_t target) {
   if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS) {
-    static map<string, string> envs;
+    static auto envs = map<string, string> {};
     if (envs.size() == 0) {
-      for (size_t index = 0; environ[index] != nullptr; index++) {
-        vector<string> key_value = macos::strings::split(environ[index], {'='});
+      for (auto index = size_t {0}; environ[index] != nullptr; index++) {
+        auto key_value = macos::strings::split(environ[index], {'='});
         if (key_value.size() == 2)
           envs[key_value[0]] = key_value[1];
       }
@@ -219,7 +219,7 @@ map<string, string>& environment::get_environment_variables(int_least32_t target
   }
   
   if (target == ENVIRONMENT_VARIABLE_TARGET_USER || target == ENVIRONMENT_VARIABLE_TARGET_MACHINE) {
-    static map<string, string> envs;
+    static auto envs = map<string, string> {};
     envs.clear();
     //microsoft::win32::registry_key key = target == environment_variable_target::user ? microsoft::win32::registry::current_user().create_sub_key("Environment") : microsoft::win32::registry::local_machine().create_sub_key("System").create_sub_key("CurrentControlSet").create_sub_key("Control").create_sub_key("Session Manager").create_sub_key("Environment");
     //for (auto name : key.get_value_names())
@@ -227,12 +227,12 @@ map<string, string>& environment::get_environment_variables(int_least32_t target
     return envs;
   }
   
-  static map<string, string> envs;
+  static auto envs = map<string, string> {};
   return envs;
 }
 
 string environment::get_know_folder_path(int_least32_t csidl) {
-  static map<int_least32_t, string> special_folders = {{CSIDL_DESKTOP, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Desktop"}, {CSIDL_PERSONAL, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS)}, {CSIDL_FAVORITES, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Library/Favorites"}, {CSIDL_MYMUSIC, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Music"}, {CSIDL_MYVIDEO, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Movies"}, {CSIDL_DESKTOPDIRECTORY, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Desktop"}, {CSIDL_FONTS, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Library/Fonts"}, {CSIDL_TEMPLATES, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Templates"}, {CSIDL_APPDATA, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/.config"}, {CSIDL_LOCAL_APPDATA, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/.local/share"}, {CSIDL_INTERNET_CACHE, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Library/Caches"}, {CSIDL_COMMON_APPDATA, "/usr/share"}, {CSIDL_SYSTEM, "/System"}, {CSIDL_PROGRAM_FILES, "/Applications"}, {CSIDL_MYPICTURES, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Pictures"}, {CSIDL_PROFILE, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS)}, {CSIDL_COMMON_TEMPLATES, "/usr/share/templates"}, {CSIDL_HOME, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS)}};
+  static auto special_folders = map<int_least32_t, string> {{CSIDL_DESKTOP, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Desktop"}, {CSIDL_PERSONAL, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS)}, {CSIDL_FAVORITES, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Library/Favorites"}, {CSIDL_MYMUSIC, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Music"}, {CSIDL_MYVIDEO, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Movies"}, {CSIDL_DESKTOPDIRECTORY, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Desktop"}, {CSIDL_FONTS, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Library/Fonts"}, {CSIDL_TEMPLATES, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Templates"}, {CSIDL_APPDATA, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/.config"}, {CSIDL_LOCAL_APPDATA, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/.local/share"}, {CSIDL_INTERNET_CACHE, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Library/Caches"}, {CSIDL_COMMON_APPDATA, "/usr/share"}, {CSIDL_SYSTEM, "/System"}, {CSIDL_PROGRAM_FILES, "/Applications"}, {CSIDL_MYPICTURES, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Pictures"}, {CSIDL_PROFILE, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS)}, {CSIDL_COMMON_TEMPLATES, "/usr/share/templates"}, {CSIDL_HOME, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS)}};
   auto it = special_folders.find(csidl);
   if (it == special_folders.end()) return "";
   return it->second;
@@ -251,7 +251,7 @@ int_least32_t environment::get_os_platform_id() {
 }
 
 void environment::get_os_version(int_least32_t& major, int_least32_t& minor, int_least32_t& build, int_least32_t& revision) {
-  vector<string> numbers = macos::strings::split(create_process("sw_vers -productVersion"), {'.', '\n'});
+  auto numbers = macos::strings::split(create_process("sw_vers -productVersion"), {'.', '\n'});
   if (numbers.size() < 1 || !macos::strings::try_parse(numbers[0], major)) major = 0;
   if (numbers.size() < 2 || !macos::strings::try_parse(numbers[1], minor)) minor = 0;
   if (numbers.size() < 3 || !macos::strings::try_parse(numbers[2], build)) build = 0;
@@ -272,8 +272,8 @@ size_t environment::get_system_page_size() {
 
 uint_least32_t environment::get_tick_count() {
   // https://stackoverflow.com/questions/3269321/osx-programmatically-get-uptime
-  struct timeval boottime {};
-  struct timeval nowtime {};
+  auto boottime = timeval {};
+  auto nowtime = timeval {};
   auto len = sizeof(boottime);
   int_least32_t mib[2] = {CTL_KERN, KERN_BOOTTIME};
   sysctl(mib, 2, &boottime, &len, nullptr, 0);
