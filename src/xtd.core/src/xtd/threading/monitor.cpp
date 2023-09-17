@@ -12,70 +12,12 @@
 #include <atomic>
 #include <mutex>
 #include <optional>
+#include "critical_section.h"
+#include "condition_variable.h"
 
 using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::threading;
-
-class monitor::critical_section {
-public:
-  critical_section() : handle_(std::make_shared<intptr>(native::critical_section::create())) {}
-  critical_section(const critical_section&) = default;
-  critical_section& operator =(const critical_section& other) {
-    native::critical_section::destroy(*handle_);
-    handle_ = other.handle_;
-    return *this;
-  }
-  critical_section(critical_section&&) = default;
-  ~critical_section() {if (handle_.use_count() == 1) native::critical_section::destroy(*handle_);}
-  
-  intptr handle() const noexcept {return *handle_;}
-  
-  void enter() const noexcept {native::critical_section::enter(*handle_);}
-  
-  void leave() const noexcept {native::critical_section::leave(*handle_);}
-  
-  bool try_enter(int32 milliseconds_timeout) const noexcept {
-    if (milliseconds_timeout == timeout::infinite) {
-      native::critical_section::enter(*handle_);
-      return true;
-    }
-    auto sw = stopwatch::start_new();
-    auto result = false;
-    while (!result && sw.elapsed_milliseconds() <= milliseconds_timeout) {
-      result = native::critical_section::try_enter(*handle_);
-      if (!result) thread::sleep(1);
-    }
-    return result;
-  }
-  
-private:
-  std::shared_ptr<intptr> handle_;
-};
-
-class monitor::condition_variable {
-public:
-  condition_variable() : handle_(std::make_shared<intptr>(native::condition_variable::create())) {}
-  condition_variable(const condition_variable&) = default;
-  condition_variable& operator =(const condition_variable& other) {
-    native::condition_variable::destroy(*handle_);
-    handle_ = other.handle_;
-    return *this;
-  }
-  condition_variable(condition_variable&&) = default;
-  ~condition_variable() {if (handle_.use_count() == 1) native::condition_variable::destroy(*handle_);}
-  
-  intptr handle() const noexcept {return *handle_;}
-  
-  void pulse() {native::condition_variable::pulse(*handle_);}
-
-  void pulse_all() {native::condition_variable::pulse_all(*handle_);}
-  
-  bool wait(const monitor::critical_section& critical_section, int32 milliseconds_timeout) {return native::condition_variable::wait(*handle_, critical_section.handle(), milliseconds_timeout);}
-  
-private:
-  std::shared_ptr<intptr> handle_;
-};
 
 struct monitor::item {
   monitor::critical_section critical_section;
