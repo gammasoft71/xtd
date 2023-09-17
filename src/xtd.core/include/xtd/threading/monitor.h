@@ -11,7 +11,6 @@
 #include "../types.h"
 #include "../as.h"
 #include "../is.h"
-#include "mutex.h"
 #include "timeout.h"
 #include <unordered_map>
 #include <utility>
