@@ -12,8 +12,8 @@ using namespace xtd::native;
 
 std::string translator::get_system_language() {
   if (!environment::get_environment_variable("LANG", ENVIRONMENT_VARIABLE_TARGET_PROCESS).empty()) return macos::strings::to_lower(macos::strings::substring(environment::get_environment_variable("LANG", ENVIRONMENT_VARIABLE_TARGET_PROCESS), 0, 2));
-  CFLocaleRef cflocale = CFLocaleCopyCurrent();
-  std::string language = [(NSString*)CFLocaleGetValue(cflocale, kCFLocaleLanguageCode) UTF8String];
+  auto cflocale = CFLocaleCopyCurrent();
+  auto language = std::string {[(NSString*)CFLocaleGetValue(cflocale, kCFLocaleLanguageCode) UTF8String]};
   CFRelease(cflocale);
   return language;
 }
