@@ -20,6 +20,6 @@ shared_ptr<object> assembly_product_attribute::get_type_id() const noexcept {
 }
 
 shared_ptr<xtd::reflection::assembly_product_attribute>& __assembly_product_attribute__() {
-  static shared_ptr<xtd::reflection::assembly_product_attribute> product;
+  static auto product = shared_ptr<xtd::reflection::assembly_product_attribute> {};
   return product;
 }
