@@ -20,6 +20,6 @@ shared_ptr<object> assembly_guid_attribute::get_type_id() const noexcept {
 }
 
 shared_ptr<xtd::reflection::assembly_guid_attribute>& __assembly_guid_attribute__() {
-  static shared_ptr<xtd::reflection::assembly_guid_attribute> guid;
+  static auto guid = shared_ptr<xtd::reflection::assembly_guid_attribute> {};
   return guid;
 }
