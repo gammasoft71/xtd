@@ -191,6 +191,12 @@ static <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td>
 <tr class="memitem:ae59b1cf9de1e1c261776afeab96dcaf2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1path.html#ae59b1cf9de1e1c261776afeab96dcaf2">get_random_file_name</a> ()</td></tr>
 <tr class="memdesc:ae59b1cf9de1e1c261776afeab96dcaf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a random folder name or file name.  <br /></td></tr>
 <tr class="separator:ae59b1cf9de1e1c261776afeab96dcaf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b9192a8ced5db8b209ea778c50e9c01"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1path.html#a6b9192a8ced5db8b209ea778c50e9c01">get_random_file_name</a> (size_t name_length)</td></tr>
+<tr class="memdesc:a6b9192a8ced5db8b209ea778c50e9c01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a random folder name or file name with specified name length.  <br /></td></tr>
+<tr class="separator:a6b9192a8ced5db8b209ea778c50e9c01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acced5bf8bc9344bbf96b9755fcf53bce"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1path.html#acced5bf8bc9344bbf96b9755fcf53bce">get_random_file_name</a> (size_t name_size, size_t extension_size)</td></tr>
+<tr class="memdesc:acced5bf8bc9344bbf96b9755fcf53bce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a random folder name or file name with specified name length, and extension length.  <br /></td></tr>
+<tr class="separator:acced5bf8bc9344bbf96b9755fcf53bce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9357fd7aa4d4f8b0d563d84d4bdf98fd"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1path.html#a9357fd7aa4d4f8b0d563d84d4bdf98fd">get_temp_file_name</a> ()</td></tr>
 <tr class="memdesc:a9357fd7aa4d4f8b0d563d84d4bdf98fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a uniquely named, zero-byte temporary file on disk and returns the full path of that file.  <br /></td></tr>
 <tr class="separator:a9357fd7aa4d4f8b0d563d84d4bdf98fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -874,7 +880,7 @@ information. </dd></dl>
 </div>
 </div>
 <a id="ae59b1cf9de1e1c261776afeab96dcaf2" name="ae59b1cf9de1e1c261776afeab96dcaf2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae59b1cf9de1e1c261776afeab96dcaf2">&#9670;&#160;</a></span>get_random_file_name()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae59b1cf9de1e1c261776afeab96dcaf2">&#9670;&#160;</a></span>get_random_file_name() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -898,6 +904,81 @@ information. </dd></dl>
 
 <p>Returns a random folder name or file name. </p>
 <dl class="section return"><dt>Returns</dt><dd>A random folder name or file name. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The get_random_file_name method returns a cryptographically strong, random string that can be used as either a folder name or a file name. Unlike GetTempFileName, get_random_file_name does not create a file. When the security of your file system is paramount, this method should be used instead of GetTempFileName. </dd>
+<dd>
+The default name length is 8 and the default extension length is 3. </dd></dl>
+
+</div>
+</div>
+<a id="a6b9192a8ced5db8b209ea778c50e9c01" name="a6b9192a8ced5db8b209ea778c50e9c01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b9192a8ced5db8b209ea778c50e9c01">&#9670;&#160;</a></span>get_random_file_name() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> xtd::io::path::get_random_file_name </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>name_length</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a random folder name or file name with specified name length. </p>
+<p>name_length The lname legnth. </p><dl class="section return"><dt>Returns</dt><dd>A random folder name or file name. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The get_random_file_name method returns a cryptographically strong, random string that can be used as either a folder name or a file name. Unlike GetTempFileName, get_random_file_name does not create a file. When the security of your file system is paramount, this method should be used instead of GetTempFileName. </dd>
+<dd>
+The default extension length is 0. </dd></dl>
+
+</div>
+</div>
+<a id="acced5bf8bc9344bbf96b9755fcf53bce" name="acced5bf8bc9344bbf96b9755fcf53bce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acced5bf8bc9344bbf96b9755fcf53bce">&#9670;&#160;</a></span>get_random_file_name() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> xtd::io::path::get_random_file_name </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>name_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>extension_size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a random folder name or file name with specified name length, and extension length. </p>
+<p>name_length The name legnth.</p>
+<p>extension_size The extension legnth. </p><dl class="section return"><dt>Returns</dt><dd>A random folder name or file name. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The get_random_file_name method returns a cryptographically strong, random string that can be used as either a folder name or a file name. Unlike GetTempFileName, get_random_file_name does not create a file. When the security of your file system is paramount, this method should be used instead of GetTempFileName. </dd></dl>
 
 </div>
@@ -1170,7 +1251,7 @@ template&lt;typename char_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Sep 15 2023 08:56:47 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Sep 17 2023 22:11:33 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

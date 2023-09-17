@@ -89,31 +89,28 @@ $(function() {
 <a href="tunit__main_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;<a class="code" href="startup_8h.html">xtd/startup.h</a>&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;../tunit_export.h&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">class </span><a class="code hl_define" href="group__keywords.html#ga3a58fce91c530883d63a6e440c3c5eab">tunit_export_</a> __tunit_main final {</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>  __tunit_main() = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  <span class="keyword">static</span> <span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]);</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;<a class="code" href="static_8h.html">xtd/static.h</a>&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;../tunit_export.h&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">struct </span><a class="code hl_define" href="group__keywords.html#ga3a58fce91c530883d63a6e440c3c5eab">tunit_export_</a> __tunit_main final <a class="code hl_define" href="group__keywords.html#ga28796443ec37b938df7072c79595e3f6">static_</a> {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>  <span class="keyword">static</span> <span class="keywordtype">int</span> main();</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  <span class="keyword">static</span> <span class="keywordtype">int</span> main_with_gtest_compatibility();</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>};</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">class </span><a class="code hl_define" href="group__keywords.html#ga3a58fce91c530883d63a6e440c3c5eab">tunit_export_</a> __tunit_main_with_gtest_compatibility final {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  __tunit_main_with_gtest_compatibility() = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <span class="keyword">static</span> <span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>};</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="group__tunit.html#ga3717390138bb7497869306999933bc3a">   44</a></span><span class="preprocessor">#define tunit_main_ \</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">  __tunit_main::main</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="group__tunit.html#ga4533e8faf3334dae0eda2a3621cc33db">   70</a></span><span class="preprocessor">#define tunit_main_with_gtest_compatibility_ \</span></div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="preprocessor">  __tunit_main_with_gtest_compatibility::main</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="group__tunit.html#ga3717390138bb7497869306999933bc3a">   39</a></span><span class="preprocessor">#define tunit_main_ \</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">  __tunit_main::main</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="group__tunit.html#ga4533e8faf3334dae0eda2a3621cc33db">   65</a></span><span class="preprocessor">#define tunit_main_with_gtest_compatibility_ \</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="preprocessor">  __tunit_main::main_with_gtest_compatibility</span></div>
+<div class="ttc" id="agroup__keywords_html_ga28796443ec37b938df7072c79595e3f6"><div class="ttname"><a href="group__keywords.html#ga28796443ec37b938df7072c79595e3f6">static_</a></div><div class="ttdeci">#define static_</div><div class="ttdoc">This keyword is use to represent a static object. A static object can't be instantiated (constructors...</div><div class="ttdef"><b>Definition</b> static.h:38</div></div>
 <div class="ttc" id="agroup__keywords_html_ga3a58fce91c530883d63a6e440c3c5eab"><div class="ttname"><a href="group__keywords.html#ga3a58fce91c530883d63a6e440c3c5eab">tunit_export_</a></div><div class="ttdeci">#define tunit_export_</div><div class="ttdoc">Define shared library export.</div><div class="ttdef"><b>Definition</b> tunit_export.h:13</div></div>
 <div class="ttc" id="astartup_8h_html"><div class="ttname"><a href="startup_8h.html">startup.h</a></div><div class="ttdoc">Contains startup class and startup_ keyword.</div></div>
+<div class="ttc" id="astatic_8h_html"><div class="ttname"><a href="static_8h.html">static.h</a></div><div class="ttdoc">Contains xtd::static_object class.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Sep 15 2023 08:56:42 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Sep 17 2023 22:11:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

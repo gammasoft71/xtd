@@ -89,13 +89,13 @@ $(function() {
 <a href="trace__filter_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;../any.h&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;../abstract.h&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;../ustring.h&quot;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="default__trace__listener_8h.html">default_trace_listener.h</a>&quot;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="source__levels_8h.html">source_levels.h</a>&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="source__switch_8h.html">source_switch.h</a>&quot;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="trace__listener__collection_8h.html">trace_listener_collection.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;../any&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;../abstract&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;../ustring&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;default_trace_listener&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;source_levels&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;source_switch&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;trace_listener_collection&quot;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <span class="keyword">namespace </span>diagnostics {</div>
@@ -121,20 +121,16 @@ $(function() {
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1trace__filter_html_a9eff01a35ecf308bdcc4d34784df3067"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1trace__filter.html#a9eff01a35ecf308bdcc4d34784df3067">xtd::diagnostics::trace_filter::should_trace</a></div><div class="ttdeci">virtual bool should_trace(const xtd::diagnostics::trace_event_cache &amp;cache, const xtd::ustring &amp;source, xtd::diagnostics::trace_event_type event_type, int32 id, const xtd::ustring &amp;message, std::any data1, const std::vector&lt; std::any &gt; &amp;data_array) noexcept=0</div><div class="ttdoc">When overridden in a derived class, determines whether the trace listener should trace the event.</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1trace__filter_html_aaf20947c6b4aa2907e5d93bbc1030143"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1trace__filter.html#aaf20947c6b4aa2907e5d93bbc1030143">xtd::diagnostics::trace_filter::should_trace</a></div><div class="ttdeci">bool should_trace(const xtd::diagnostics::trace_event_cache &amp;cache, const xtd::ustring &amp;source, xtd::diagnostics::trace_event_type event_type, int32 id, const xtd::ustring &amp;message) noexcept</div><div class="ttdoc">determines whether the trace listener should trace the event.</div></div>
 <div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:48</div></div>
-<div class="ttc" id="adefault__trace__listener_8h_html"><div class="ttname"><a href="default__trace__listener_8h.html">default_trace_listener.h</a></div><div class="ttdoc">Contains xtd::diagnostics::default_trace_listener class.</div></div>
 <div class="ttc" id="agroup__keywords_html_ga8bad3fd3f3b8afda1d635fa70ebaaa8e"><div class="ttname"><a href="group__keywords.html#ga8bad3fd3f3b8afda1d635fa70ebaaa8e">abstract_</a></div><div class="ttdeci">#define abstract_</div><div class="ttdoc">This keyword is used to represents an abstract class.</div><div class="ttdef"><b>Definition</b> abstract.h:23</div></div>
 <div class="ttc" id="agroup__keywords_html_gabc8f9c2aa36f6cee610a37f0e8227fd1"><div class="ttname"><a href="group__keywords.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a></div><div class="ttdeci">#define core_export_</div><div class="ttdoc">Define shared library export.</div><div class="ttdef"><b>Definition</b> core_export.h:13</div></div>
 <div class="ttc" id="agroup__types_html_ga92bf6d527cbcada4a30faa2efd0d6a91"><div class="ttname"><a href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">xtd::int32</a></div><div class="ttdeci">int_least32_t int32</div><div class="ttdoc">Represents a 32-bit signed integer.</div><div class="ttdef"><b>Definition</b> types.h:129</div></div>
 <div class="ttc" id="agroup__xtd__core_html_gaa4259447827076a90f74415bf11af9b9"><div class="ttname"><a href="group__xtd__core.html#gaa4259447827076a90f74415bf11af9b9">xtd::diagnostics::trace_event_type</a></div><div class="ttdeci">trace_event_type</div><div class="ttdoc">Identifies the type of event that has caused the trace.</div><div class="ttdef"><b>Definition</b> trace_event_type.h:23</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
-<div class="ttc" id="asource__levels_8h_html"><div class="ttname"><a href="source__levels_8h.html">source_levels.h</a></div><div class="ttdoc">Contains xtd::diagnostics::source_levels enum class.</div></div>
-<div class="ttc" id="asource__switch_8h_html"><div class="ttname"><a href="source__switch_8h.html">source_switch.h</a></div><div class="ttdoc">Contains xtd::diagnostics::source_switch class.</div></div>
-<div class="ttc" id="atrace__listener__collection_8h_html"><div class="ttname"><a href="trace__listener__collection_8h.html">trace_listener_collection.h</a></div><div class="ttdoc">Contains xtd::diagnostics::trace_listener_collection class.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Sep 15 2023 08:56:42 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Sep 17 2023 22:11:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
