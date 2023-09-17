@@ -61,7 +61,7 @@ bool thread_pool::queue_user_work_item(const wait_callback& callback, std::any s
 }
 
 registered_wait_handle thread_pool::register_wait_for_single_object(wait_handle& waitObject, const wait_or_timer_callback& callBack, std::any state, int32 milliseconds_timeout_interval, bool execute_only_once) {
-  registered_wait_handle result;
+  auto result = registered_wait_handle {};
   lock_(get_static_data().thread_pool_asynchronous_io_items_sync_root) {
     if (get_static_data().asynchronous_io_threads.size() == 0) initialize_min_asynchronous_io_threads();
     if (get_static_data().thread_pool_asynchronous_io_items.size() == max_asynchronous_io_threads_) return result;
@@ -123,7 +123,7 @@ void thread_pool::asynchronous_io_run() {
     do {
       auto wait_result = wait_handle::wait_any({&get_static_data().close_asynchronous_io_threads_manual_reset_event, item.wait_object}, item.milliseconds_timeout_interval);
       if (wait_result == 0) break;
-      bool timeout = wait_result == wait_handle::wait_timeout;
+      auto timeout = wait_result == wait_handle::wait_timeout;
       if (!item.unregistered) item.callback(item.state, timeout);
     } while (!item.execute_only_once && !item.unregistered);
   }
@@ -146,21 +146,21 @@ void thread_pool::create_asynchronous_io_thread() {
 }
 
 thread_pool::static_data& thread_pool::get_static_data() {
-  static static_data data;
+  static auto data = static_data {};
   return data;
 }
 
 void thread_pool::initialize_min_threads() {
   join_all_threads(timeout::infinite);
   get_static_data().threads.clear();
-  for (size_t index = 0; index < min_threads_; ++index)
+  for (auto index = 0_sz; index < min_threads_; ++index)
     create_thread();
 }
 
 void thread_pool::initialize_min_asynchronous_io_threads() {
   join_all_asynchronous_io_threads(timeout::infinite);
   get_static_data().asynchronous_io_threads.clear();
-  for (size_t index = 0; index < min_asynchronous_io_threads_; ++index)
+  for (auto index = 0_sz; index < min_asynchronous_io_threads_; ++index)
     create_asynchronous_io_thread();
 }
 
@@ -203,7 +203,7 @@ bool thread_pool::join_all_asynchronous_io_threads(int32 milliseconds_timeout) {
 void thread_pool::run() {
   while (true) {
     if (wait_handle::wait_any(get_static_data().close_threads_manual_reset_event, get_static_data().semaphore) == 0) break;
-    thread_pool_item item;
+    auto item = thread_pool_item {};
     lock_(get_static_data().thread_pool_items_sync_root) {
       item = get_static_data().thread_pool_items.back();
       get_static_data().thread_pool_items.pop_back();
