@@ -13,7 +13,7 @@ namespace {
   vector<xtd::byte> encrypt(const xtd::guid& guid, const char value[], size_t length) {
     // https://kylewbanks.com/blog/Simple-XOR-Encryption-Decryption-in-Cpp
     auto key = guid.to_string("D");
-    vector<xtd::byte> result;
+    auto result = vector<xtd::byte> {};
     for (auto index = 0_sz; index < length; ++index)
       result.push_back(value[index] != key[index % key.size()] ? value[index] ^ key[index % key.size()] : value[index]);
     return result;
@@ -21,7 +21,7 @@ namespace {
   
   ustring decrypt(const xtd::guid& guid, const xtd::byte value[], size_t length) {
     // https://kylewbanks.com/blog/Simple-XOR-Encryption-Decryption-in-Cpp
-    return ustring(reinterpret_cast<const char*>(encrypt(guid, reinterpret_cast<const char*>(value), length).data()), length);
+    return ustring {reinterpret_cast<const char*>(encrypt(guid, reinterpret_cast<const char*>(value), length).data()), length};
   }
 }
 
