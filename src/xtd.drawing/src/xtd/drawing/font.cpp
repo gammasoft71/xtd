@@ -64,8 +64,8 @@ font::font() : data_(std::make_shared<data>()) {
 
 font::font(intptr handle) : data_(std::make_shared<data>()) {
   data_->handle_ = handle;
-  ustring family_name;
-  bool fbold = false, fitalic = false, funderline = false, fstrikeout = false;
+  auto family_name = ustring::empty_string;
+  auto fbold = false, fitalic = false, funderline = false, fstrikeout = false;
   native::font::get_information(data_->handle_, family_name, data_->size_, fbold, fitalic, funderline, fstrikeout, data_->gdi_char_set_, data_->gdi_vertical_font_);
   try {
     data_->font_family_ = drawing::font_family(family_name);
@@ -208,10 +208,10 @@ bool font::equals(const font& value) const noexcept {
 }
 
 font font::from_hdc(const intptr hdc) {
-  font font;
+  auto font = drawing::font {};
   font.data_->handle_ = native::font::create_from_hdc(hdc);
-  ustring family_name;
-  bool fbold = false, fitalic = false, funderline = false, fstrikeout = false;
+  auto family_name = ustring::empty_string;
+  auto fbold = false, fitalic = false, funderline = false, fstrikeout = false;
   native::font::get_information(font.data_->handle_, family_name, font.data_->size_, fbold, fitalic, funderline, fstrikeout, font.data_->gdi_char_set_, font.data_->gdi_vertical_font_);
   try {
     font.data_->font_family_ = drawing::font_family(family_name);
