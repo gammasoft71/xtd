@@ -230,7 +230,7 @@ control& control::auto_size(bool auto_size) {
 }
 
 color control::back_color() const noexcept {
-  for (const control* control = this; control; control = control->parent().has_value() && !control->get_state(control::state::top_level) ? &control->parent().value().get() : nullptr)
+  for (auto control = this; control; control = control->parent().has_value() && !control->get_state(control::state::top_level) ? &control->parent().value().get() : nullptr)
     if (control->data_->back_color.has_value()) return control->data_->back_color.value();
   return default_back_color();
 }
@@ -294,7 +294,7 @@ bool control::can_focus() const noexcept {
   try {
     bool visible_and_enabled = handle() && get_state(state::visible) && get_state(state::enabled);
     
-    optional<control_ref> tlc = const_cast<control&>(*this);
+    auto tlc = optional<control_ref> {const_cast<control&>(*this)};
     while (visible_and_enabled && tlc.has_value() && !tlc.value().get().get_state(state::top_level)) {
       tlc = tlc.value().get().parent();
       if (tlc.has_value()) visible_and_enabled = tlc.value().get().get_state(state::visible) && get_state(state::enabled);
@@ -392,7 +392,7 @@ bool control::created() const noexcept {
 }
 
 forms::cursor control::cursor() const noexcept {
-  for (const control* control = this; control; control = control->parent().has_value() && !control->get_state(control::state::top_level) ? &control->parent().value().get() : nullptr)
+  for (auto control = this; control; control = control->parent().has_value() && !control->get_state(control::state::top_level) ? &control->parent().value().get() : nullptr)
     if (control->data_->cursor.has_value()) return control->data_->cursor.value();
   return default_cursor();
 }
@@ -461,7 +461,7 @@ bool control::focused() const noexcept {
 }
 
 drawing::font control::font() const noexcept {
-  for (const control* control = this; control; control = control->parent().has_value() && !control->get_state(control::state::top_level) ? &control->parent().value().get() : nullptr)
+  for (auto control = this; control; control = control->parent().has_value() && !control->get_state(control::state::top_level) ? &control->parent().value().get() : nullptr)
     if (control->data_->font.has_value()) return control->data_->font.value();
   return default_font();
 }
@@ -487,7 +487,7 @@ control& control::font(std::nullptr_t) {
 }
 
 color control::fore_color() const noexcept {
-  for (const control* control = this; control; control = control->parent().has_value() && !control->get_state(control::state::top_level) ? &control->parent().value().get() : nullptr)
+  for (auto control = this; control; control = control->parent().has_value() && !control->get_state(control::state::top_level) ? &control->parent().value().get() : nullptr)
     if (control->data_->fore_color.has_value()) return control->data_->fore_color.value();
   return default_fore_color();
 }
@@ -787,7 +787,7 @@ control& control::top(int32 top) {
 }
 
 optional<control_ref> control::top_level_control() const noexcept {
-  optional<control_ref> top_level_control = const_cast<control&>(*this);
+  auto top_level_control = optional<control_ref> {const_cast<control&>(*this)};
   while (top_level_control.has_value() && !top_level_control.value().get().get_state(state::top_level))
     top_level_control = top_level_control.value().get().parent();
   if (top_level_control.has_value() && !top_level_control.value().get().get_state(state::top_level)) top_level_control.reset();
@@ -838,20 +838,20 @@ int32 control::compare_to(const control& value) const noexcept {
 }
 
 control control::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  control item;
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = control {};
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 control control::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  control item;
-  item.parent(parent);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = control {};
+  result.parent(parent);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 void control::create_control() {
@@ -1001,7 +1001,7 @@ bool control::equals(const control& value) const noexcept {
 }
 
 std::optional<object_ref> control::end_invoke(shared_ptr<iasync_result> async) {
-  lock_guard<threading::mutex> lock {as<threading::mutex>(async->async_wait_handle())};
+  auto lock = lock_guard<threading::mutex> {as<threading::mutex>(async->async_wait_handle())};
   return *this;
 }
 
@@ -1010,7 +1010,7 @@ xtd::forms::visual_styles::control_state control::control_state() const noexcept
 }
 
 forms::create_params control::create_params() const noexcept {
-  forms::create_params create_params;
+  auto create_params = forms::create_params {};
   
   create_params.caption(data_->text);
   create_params.class_style(CS_DBLCLKS);
@@ -1437,7 +1437,7 @@ drawing::point control::point_to_screen(const xtd::drawing::point& p) const {
 }
 
 bool control::pre_process_message(xtd::forms::message& message) {
-  bool message_processed = false;
+  auto message_processed = false;
   for (auto child : controls()) {
     message_processed = child.get().pre_process_message(message);
     if (message_processed) break;
@@ -1540,7 +1540,7 @@ void control::reflect_message(intptr handle, message& message) { // message para
 
 intptr control::wnd_proc_(intptr hwnd, int32 msg, intptr wparam, intptr lparam, intptr handle) {
   //try {
-  message message = forms::message::create(hwnd, msg, wparam, lparam, 0, handle);
+  auto message = forms::message::create(hwnd, msg, wparam, lparam, 0, handle);
   wnd_proc(message);
   return message.result();
   /*
@@ -1642,17 +1642,17 @@ void control::create_handle() {
   auto params = create_params();
   if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::creation), ustring::format("create handle {} with params {}", *this, params));
   
-  native::create_params cp;
-  cp.caption = params.caption();
-  cp.class_name = params.class_name();
-  cp.class_style = params.class_style();
-  cp.ex_style = params.ex_style();
-  cp.location = params.location();
-  cp.param = params.param();
-  cp.parent = params.parent();
-  cp.style = params.style();
-  cp.size = params.size();
-  data_->handle = native::control::create(cp);
+  auto native_params = native::create_params {};
+  native_params.caption = params.caption();
+  native_params.class_name = params.class_name();
+  native_params.class_style = params.class_style();
+  native_params.ex_style = params.ex_style();
+  native_params.location = params.location();
+  native_params.param = params.param();
+  native_params.parent = params.parent();
+  native_params.style = params.style();
+  native_params.size = params.size();
+  data_->handle = native::control::create(native_params);
   suspend_layout();
   handles_[handle()] = this;
   native::control::register_wnd_proc(handle(), {*this, &control::wnd_proc_});
@@ -1768,14 +1768,14 @@ void control::post_recreate_handle() noexcept {
 }
 
 void control::do_layout_children_with_dock_style() {
-  bool docked = false;
-  for (control_ref control : data_->controls) {
+  auto docked = false;
+  for (auto control : data_->controls) {
     docked = control.get().get_state(state::docked);
     if (docked) break;
   }
   
   if (docked) {
-    drawing::rectangle docking_rect = {{0, 0}, client_size()};
+    auto docking_rect = drawing::rectangle {{0, 0}, client_size()};
     if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::layout), ustring::format("({}) do_layout :", *this));
     if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::indent();
     if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::layout), ustring::format("docking_rect = {}", docking_rect));
@@ -1784,7 +1784,7 @@ void control::do_layout_children_with_dock_style() {
     docking_rect.y(docking_rect.top() + data_->padding.top());
     docking_rect.width(docking_rect.width() - data_->padding.left() - data_->padding.right());
     docking_rect.height(docking_rect.height() - data_->padding.top() - data_->padding.bottom());
-    for (control_collection::reverse_iterator iterator = data_->controls.rbegin(); iterator != data_->controls.rend(); ++iterator) {
+    for (auto iterator = data_->controls.rbegin(); iterator != data_->controls.rend(); ++iterator) {
       if (!iterator->get().visible()) continue;
       if (iterator->get().dock() == dock_style::top) {
         iterator->get().location({docking_rect.left(), docking_rect.top()});
@@ -1843,7 +1843,7 @@ void control::do_layout_with_anchor_styles() {
 
 void control::do_layout_with_auto_size_mode() {
   if (get_state(state::auto_size)) {
-    drawing::size auto_size_size_ = measure_control();
+    auto auto_size_size_ = measure_control();
     if (data_->auto_size_mode == auto_size_mode::grow_only && auto_size_size_.width() < data_->client_size.width())
       auto_size_size_.width(data_->client_size.width());
     if (data_->auto_size_mode == auto_size_mode::grow_only && auto_size_size_.height() < data_->client_size.height())
@@ -1911,18 +1911,18 @@ void control::wm_help(message& message) {
 void control::wm_key_char(message& message) {
   if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::key_events), ustring::format("({}) receive message [{}]", *this, message));
   if (message.msg() == WM_KEYDOWN || message.msg() == WM_SYSKEYDOWN) {
-    key_event_args key_event_args(static_cast<keys>(message.wparam()));
+    auto key_event_args = forms::key_event_args {static_cast<keys>(message.wparam())};
     modifier_keys_ = key_event_args.modifiers();
     on_key_down(key_event_args);
     data_->suppress_key_press = key_event_args.suppress_key_press();
     if (!key_event_args.handled()) def_wnd_proc(message);
   } else if ((message.msg() == WM_CHAR || message.msg() == WM_SYSCHAR) && data_->suppress_key_press == false && (message.wparam() > 255u || std::iscntrl(static_cast<int32>(message.wparam()))) == 0) {
-    key_press_event_args key_press_event_args(static_cast<char32>(message.wparam()));
+    auto key_press_event_args = forms::key_press_event_args {static_cast<char32>(message.wparam())};
     on_key_press(key_press_event_args);
     message.result(key_press_event_args.handled());
     if (!key_press_event_args.handled()) def_wnd_proc(message);
   } else if (message.msg() == WM_KEYUP || message.msg() == WM_SYSKEYUP) {
-    key_event_args key_event_args(static_cast<keys>(message.wparam()));
+    auto key_event_args = forms::key_event_args {static_cast<keys>(message.wparam())};
     modifier_keys_ = key_event_args.modifiers();
     on_key_up(key_event_args);
     message.result(key_event_args.handled());
@@ -2033,7 +2033,7 @@ void control::wm_notify_control(message& message) {
 }
 
 void control::wm_paint(message& message) { // message parameter can't be const by design.
-  paint_event_args e(*this, data_->client_rectangle);
+  auto e = paint_event_args {*this, data_->client_rectangle};
   e.message_ = message;
   //auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
   //if (control_appearance() == forms::control_appearance::standard) control_renderer::draw_control(style, e.graphics(), e.clip_rectangle(), control_state(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt);
