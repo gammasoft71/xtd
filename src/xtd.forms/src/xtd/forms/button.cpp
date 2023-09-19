@@ -79,22 +79,22 @@ control& button::dialog_result(forms::dialog_result dialog_result) {
 }
 
 button button::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  button item;
-  item.text(text);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = button {};
+  result.text(text);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 button button::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  button item;
-  item.parent(parent);
-  item.text(text);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = button {};
+  result.parent(parent);
+  result.text(text);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 void button::notify_default(bool value) {
@@ -112,12 +112,9 @@ void button::perform_click() {
 }
 
 forms::create_params button::create_params() const noexcept {
-  forms::create_params create_params = button_base::create_params();
-  
+  auto create_params = button_base::create_params();
   create_params.class_name("button");
-  
   create_params.style(create_params.style() | BS_PUSHBUTTON | BS_MULTILINE | BS_CENTER | BS_VCENTER);
-  
   return create_params;
 }
 
@@ -126,7 +123,7 @@ xtd::forms::visual_styles::push_button_state button::state() const noexcept {
 }
 
 drawing::size button::measure_control() const noexcept {
-  drawing::size size = button_base::measure_control();
+  auto size = button_base::measure_control();
   if (size.height() < default_size().height()) size.height(default_size().height());
   return size;
 }
