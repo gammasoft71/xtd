@@ -1,5 +1,7 @@
 #include "../../../include/xtd/drawing/point.h"
 #include "../../../include/xtd/drawing/size.h"
+#include <xtd/as>
+#include <xtd/math>
 #include <cmath>
 
 using namespace xtd;
@@ -17,7 +19,7 @@ point::point(const size& size) noexcept : x_(size.width()), y_(size.height()) {
 }
 
 point::operator point_f() const noexcept {
-  return point_f(static_cast<float>(x_), static_cast<float>(y_));
+  return point_f(as<float>(x_), as<float>(y_));
 }
 
 bool point::is_empty() const noexcept {
@@ -45,11 +47,11 @@ point point::add(const point& pt, const size& sz) noexcept {
 }
 
 point point::add(const point& pt1, const point& pt2) noexcept {
-  return pt1 + size(pt2);
+  return pt1 + size {pt2};
 }
 
 point point::ceiling(const point_f& value) noexcept {
-  return {int32(std::ceil(value.x())), int32(std::ceil(value.y()))};
+  return {as<int32>(math::ceiling(value.x())), as<int32>(math::ceiling(value.y()))};
 }
 
 bool point::equals(const point& value) const noexcept {
@@ -66,7 +68,7 @@ void point::offset(const point& p) noexcept {
 }
 
 point point::round(const point_f& value) noexcept {
-  return {int32(std::round(value.x())), int32(std::round(value.y()))};
+  return {as<int32>(math::round(value.x())), as<int32>(math::round(value.y()))};
 }
 
 point point::subtract(const point& pt, const size& sz) noexcept {
@@ -74,7 +76,7 @@ point point::subtract(const point& pt, const size& sz) noexcept {
 }
 
 point point::subtract(const point& pt1, const point& pt2) noexcept {
-  return pt1 - size(pt2);
+  return pt1 - size {pt2};
 }
 
 xtd::ustring point::to_string() const noexcept {
@@ -82,7 +84,7 @@ xtd::ustring point::to_string() const noexcept {
 }
 
 point point::truncate(const point_f& value) noexcept {
-  return {int32(std::trunc(value.x())), int32(std::trunc(value.y()))};
+  return {as<int32>(math::truncate(value.x())), as<int32>(math::truncate(value.y()))};
 }
 
 point point::operator +(const size& sz) const noexcept {
