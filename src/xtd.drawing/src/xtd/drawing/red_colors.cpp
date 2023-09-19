@@ -41,11 +41,11 @@ color red_colors::salmon() noexcept {
 }
 
 const vector<color>& red_colors::get_colors() noexcept {
-  static vector colors {red_colors::dark_red(), red_colors::red(), red_colors::firebrick(), red_colors::crimson(), red_colors::indian_red(), red_colors::light_coral(), red_colors::salmon(), red_colors::dark_salmon(), red_colors::light_salmon()};
+  static auto colors = vector {red_colors::dark_red(), red_colors::red(), red_colors::firebrick(), red_colors::crimson(), red_colors::indian_red(), red_colors::light_coral(), red_colors::salmon(), red_colors::dark_salmon(), red_colors::light_salmon()};
   return colors;
 }
 
 const vector<ustring>& red_colors::get_color_names() noexcept {
-  static vector color_names {red_colors::dark_red().name(), red_colors::red().name(), red_colors::firebrick().name(), red_colors::crimson().name(), red_colors::indian_red().name(), red_colors::light_coral().name(), red_colors::salmon().name(), red_colors::dark_salmon().name(), red_colors::light_salmon().name()};
+  static auto color_names = vector {red_colors::dark_red().name(), red_colors::red().name(), red_colors::firebrick().name(), red_colors::crimson().name(), red_colors::indian_red().name(), red_colors::light_coral().name(), red_colors::salmon().name(), red_colors::dark_salmon().name(), red_colors::light_salmon().name()};
   return color_names;
 }
