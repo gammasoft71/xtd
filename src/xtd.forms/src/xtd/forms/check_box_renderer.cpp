@@ -31,8 +31,8 @@ namespace {
   }
   
   void draw_string(graphics g, const ustring& text, const font& font, const color& text_color, const rectangle_f& button_rect, text_format_flags flags) {
-    vector<size_t> hotkey_prefix_locations;
-    ustring text_without_hotkey_prefix = get_hotkey_prefix_locations(text, hotkey_prefix_locations);
+    auto hotkey_prefix_locations = vector<size_t> {};
+    auto text_without_hotkey_prefix = get_hotkey_prefix_locations(text, hotkey_prefix_locations);
     if ((flags & text_format_flags::prefix_only) == text_format_flags::prefix_only && hotkey_prefix_locations.size()) g.draw_string(text_without_hotkey_prefix.substring(hotkey_prefix_locations[0], 1), xtd::drawing::font(font, font_style::underline), solid_brush(text_color), button_rect, control_paint::string_format(flags));
     else g.draw_string(text, font, solid_brush(text_color), button_rect, control_paint::string_format(flags));
   }
@@ -82,10 +82,10 @@ void check_box_renderer::draw_check_box_gnome_dark(graphics g, const rectangle& 
     text_color = mark_color = application::style_sheet().system_colors().gray_text();
   }
   
-  rectangle button_rectangle = {bounds.x() + 1, bounds.y() + bounds.height() / 2 - 8, 16, 16};
+  auto button_rectangle = rectangle {bounds.x() + 1, bounds.y() + bounds.height() / 2 - 8, 16, 16};
   g.fill_rounded_rectangle(drawing_2d::linear_gradient_brush(point {bounds.x(), bounds.top()}, point {bounds.x(), bounds.bottom()}, control_paint::light(button_color, 0.15), button_color), button_rectangle, 3);
   g.draw_rounded_rectangle(pen(border_color, 1), rectangle::add(button_rectangle, {-1, -1}), 3);
-  rectangle string_rectangle = { bounds.x() + 19, bounds.y(), bounds.width() - 19, bounds.height() };
+  auto string_rectangle = rectangle { bounds.x() + 19, bounds.y(), bounds.width() - 19, bounds.height() };
   if (state == xtd::forms::visual_styles::check_box_state::checked_normal || state == xtd::forms::visual_styles::check_box_state::checked_hot || state == xtd::forms::visual_styles::check_box_state::checked_pressed || state == xtd::forms::visual_styles::check_box_state::checked_disabled) {
     g.draw_line(pen(mark_color, 3), button_rectangle.x() + 4, button_rectangle.y() + button_rectangle.height() / 2 - 1, button_rectangle.x() + button_rectangle.width() / 2 - 1, button_rectangle.y() + button_rectangle.height() - 6);
     g.draw_line(pen(mark_color, 3), button_rectangle.x() + button_rectangle.width() / 2 - 1, button_rectangle.y() + button_rectangle.height() - 6, button_rectangle.x() + button_rectangle.width() - 4, button_rectangle.y() + 5);
@@ -113,10 +113,10 @@ void check_box_renderer::draw_check_box_gnome_light(graphics g, const rectangle&
     text_color = mark_color = application::style_sheet().system_colors().gray_text();
   }
   
-  rectangle button_rectangle = {bounds.x() + 1, bounds.y() + bounds.height() / 2 - 8, 16, 16};
+  auto button_rectangle = rectangle {bounds.x() + 1, bounds.y() + bounds.height() / 2 - 8, 16, 16};
   g.fill_rounded_rectangle(drawing_2d::linear_gradient_brush(point {bounds.x(), bounds.top()}, point {bounds.x(), bounds.bottom()}, control_paint::light(button_color, 0.5), button_color), button_rectangle, 3);
   g.draw_rounded_rectangle(pen(border_color, 1), rectangle::add(button_rectangle, {-1, -1}), 3);
-  rectangle string_rectangle = { bounds.x() + 19, bounds.y(), bounds.width() - 19, bounds.height() };
+  auto string_rectangle = rectangle { bounds.x() + 19, bounds.y(), bounds.width() - 19, bounds.height() };
   if (state == xtd::forms::visual_styles::check_box_state::checked_normal || state == xtd::forms::visual_styles::check_box_state::checked_hot || state == xtd::forms::visual_styles::check_box_state::checked_pressed || state == xtd::forms::visual_styles::check_box_state::checked_disabled) {
     g.draw_line(pen(mark_color, 3), button_rectangle.x() + 4, button_rectangle.y() + button_rectangle.height() / 2 - 1, button_rectangle.x() + button_rectangle.width() / 2 - 1, button_rectangle.y() + button_rectangle.height() - 6);
     g.draw_line(pen(mark_color, 3), button_rectangle.x() + button_rectangle.width() / 2 - 1, button_rectangle.y() + button_rectangle.height() - 6, button_rectangle.x() + button_rectangle.width() - 4, button_rectangle.y() + 5);
@@ -160,13 +160,13 @@ void check_box_renderer::draw_check_box_macos_dark(graphics g, const rectangle& 
     button_color = control_paint::dark(application::style_sheet().system_colors().button_face(), 0.7);
   }
   
-  rectangle button_rectangle = {bounds.x() + 1, bounds.y() + bounds.height() / 2 - 7, 16, 16};
+  auto button_rectangle = rectangle {bounds.x() + 1, bounds.y() + bounds.height() / 2 - 7, 16, 16};
   if (state == xtd::forms::visual_styles::check_box_state::unchecked_normal || state == xtd::forms::visual_styles::check_box_state::unchecked_hot || state == xtd::forms::visual_styles::check_box_state::unchecked_pressed || state == xtd::forms::visual_styles::check_box_state::unchecked_disabled)
     g.fill_rounded_rectangle(drawing_2d::linear_gradient_brush(point {button_rectangle.x(), button_rectangle.top()}, point {button_rectangle.x(), button_rectangle.bottom()}, control_paint::dark(button_color, .5), button_color), button_rectangle, 4);
   else
     g.fill_rounded_rectangle(solid_brush(button_color), button_rectangle, 4);
   g.draw_rounded_rectangle(pen(border_color, 1), rectangle::add(button_rectangle, {-1, -1}), 4);
-  rectangle string_rectangle = {bounds.x() + 19, bounds.y(), bounds.width() - 19, bounds.height()};
+  auto string_rectangle = rectangle {bounds.x() + 19, bounds.y(), bounds.width() - 19, bounds.height()};
   if (state == xtd::forms::visual_styles::check_box_state::checked_normal || state == xtd::forms::visual_styles::check_box_state::checked_hot || state == xtd::forms::visual_styles::check_box_state::checked_pressed || state == xtd::forms::visual_styles::check_box_state::checked_disabled) {
     g.draw_line(pen(mark_color, 2), button_rectangle.x() + 4, button_rectangle.y() + button_rectangle.height() / 2, button_rectangle.x() + button_rectangle.width() / 2, button_rectangle.y() + button_rectangle.height() - 4);
     g.draw_line(pen(mark_color, 2), button_rectangle.x() + button_rectangle.width() / 2, button_rectangle.y() + button_rectangle.height() - 4, button_rectangle.x() + button_rectangle.width() - 4, button_rectangle.y() + 4);
@@ -191,13 +191,13 @@ void check_box_renderer::draw_check_box_macos_light(graphics g, const rectangle&
     button_color = back_color.has_value() ? color::from_argb(210, 255, 255, 255) : control_paint::dark(button_color, 0.04);
   }
   
-  rectangle button_rectangle = {bounds.x() + 1, bounds.y() + bounds.height() / 2 - 7, 16, 16};
+  auto button_rectangle = rectangle {bounds.x() + 1, bounds.y() + bounds.height() / 2 - 7, 16, 16};
   if (state == xtd::forms::visual_styles::check_box_state::unchecked_normal || state == xtd::forms::visual_styles::check_box_state::unchecked_hot || state == xtd::forms::visual_styles::check_box_state::unchecked_pressed || state == xtd::forms::visual_styles::check_box_state::unchecked_disabled)
     g.fill_rounded_rectangle(drawing_2d::linear_gradient_brush(point {bounds.x(), bounds.top()}, point {bounds.x(), bounds.bottom()}, button_color, control_paint::light(button_color)), button_rectangle, 4);
   else
     g.fill_rounded_rectangle(solid_brush(button_color), button_rectangle, 4);
   g.draw_rounded_rectangle(pen(border_color, 1), rectangle::add(button_rectangle, {-1, -1}), 4);
-  rectangle string_rectangle = {bounds.x() + 19, bounds.y(), bounds.width() - 19, bounds.height()};
+  auto string_rectangle = rectangle {bounds.x() + 19, bounds.y(), bounds.width() - 19, bounds.height()};
   if (state == xtd::forms::visual_styles::check_box_state::checked_normal || state == xtd::forms::visual_styles::check_box_state::checked_hot || state == xtd::forms::visual_styles::check_box_state::checked_pressed || state == xtd::forms::visual_styles::check_box_state::checked_disabled) {
     g.draw_line(pen(mark_color, 2), button_rectangle.x() + 4, button_rectangle.y() + button_rectangle.height() / 2, button_rectangle.x() + button_rectangle.width() / 2, button_rectangle.y() + button_rectangle.height() - 4);
     g.draw_line(pen(mark_color, 2), button_rectangle.x() + button_rectangle.width() / 2, button_rectangle.y() + button_rectangle.height() - 4, button_rectangle.x() + button_rectangle.width() - 4, button_rectangle.y() + 4);
@@ -237,10 +237,10 @@ void check_box_renderer::draw_check_box_symbolic_dark(graphics g, const rectangl
     mark_color = text_color = application::style_sheet().system_colors().gray_text();
   }
   
-  rectangle button_rectangle = {bounds.x() + 1, bounds.y() + bounds.height() / 2 - 7, 16, 16};
+  auto button_rectangle = rectangle {bounds.x() + 1, bounds.y() + bounds.height() / 2 - 7, 16, 16};
   g.fill_rounded_rectangle(solid_brush(button_color), button_rectangle, 3);
   g.draw_rounded_rectangle(pen(border_color, 1), rectangle::add(button_rectangle, {-1, -1}), 3);
-  rectangle string_rectangle = {bounds.x() + 19, bounds.y(), bounds.width() - 19, bounds.height()};
+  auto string_rectangle = rectangle {bounds.x() + 19, bounds.y(), bounds.width() - 19, bounds.height()};
   if (state == xtd::forms::visual_styles::check_box_state::checked_normal || state == xtd::forms::visual_styles::check_box_state::checked_hot || state == xtd::forms::visual_styles::check_box_state::checked_pressed || state == xtd::forms::visual_styles::check_box_state::checked_disabled) {
     g.draw_line(pen(mark_color, 2), button_rectangle.x() + 4, button_rectangle.y() + button_rectangle.height() / 2, button_rectangle.x() + button_rectangle.width() / 2, button_rectangle.y() + button_rectangle.height() - 4);
     g.draw_line(pen(mark_color, 2), button_rectangle.x() + button_rectangle.width() / 2, button_rectangle.y() + button_rectangle.height() - 4, button_rectangle.x() + button_rectangle.width() - 4, button_rectangle.y() + 4);
@@ -274,10 +274,10 @@ void check_box_renderer::draw_check_box_symbolic_light(graphics g, const rectang
     mark_color = text_color = application::style_sheet().system_colors().gray_text();
   }
   
-  rectangle button_rectangle = {bounds.x() + 1, bounds.y() + bounds.height() / 2 - 7, 16, 16};
+  auto button_rectangle = rectangle {bounds.x() + 1, bounds.y() + bounds.height() / 2 - 7, 16, 16};
   g.fill_rounded_rectangle(solid_brush(button_color), button_rectangle, 3);
   g.draw_rounded_rectangle(pen(border_color, 1), rectangle::add(button_rectangle, {-1, -1}), 3);
-  rectangle string_rectangle = {bounds.x() + 19, bounds.y(), bounds.width() - 19, bounds.height()};
+  auto string_rectangle = rectangle {bounds.x() + 19, bounds.y(), bounds.width() - 19, bounds.height()};
   if (state == xtd::forms::visual_styles::check_box_state::checked_normal || state == xtd::forms::visual_styles::check_box_state::checked_hot || state == xtd::forms::visual_styles::check_box_state::checked_pressed || state == xtd::forms::visual_styles::check_box_state::checked_disabled) {
     g.draw_line(pen(mark_color, 2), button_rectangle.x() + 4, button_rectangle.y() + button_rectangle.height() / 2, button_rectangle.x() + button_rectangle.width() / 2, button_rectangle.y() + button_rectangle.height() - 4);
     g.draw_line(pen(mark_color, 2), button_rectangle.x() + button_rectangle.width() / 2, button_rectangle.y() + button_rectangle.height() - 4, button_rectangle.x() + button_rectangle.width() - 4, button_rectangle.y() + 4);
@@ -310,10 +310,10 @@ void check_box_renderer::draw_check_box_windows_dark(graphics g, const rectangle
     text_color = mark_color = application::style_sheet().system_colors().gray_text();
   }
   
-  rectangle button_rectangle = {bounds.x() + 1, bounds.y() + bounds.height() / 2 - 7, 14, 14};
+  auto button_rectangle = rectangle {bounds.x() + 1, bounds.y() + bounds.height() / 2 - 7, 14, 14};
   g.fill_rectangle(solid_brush(button_color), button_rectangle);
   g.draw_rectangle(pen(border_color, 1), rectangle::add(button_rectangle, {-1, -1}));
-  rectangle string_rectangle = { bounds.x() + 19, bounds.y(), bounds.width() - 19, bounds.height() };
+  auto string_rectangle = rectangle {bounds.x() + 19, bounds.y(), bounds.width() - 19, bounds.height()};
   if (state == xtd::forms::visual_styles::check_box_state::checked_normal || state == xtd::forms::visual_styles::check_box_state::checked_hot || state == xtd::forms::visual_styles::check_box_state::checked_pressed || state == xtd::forms::visual_styles::check_box_state::checked_disabled) {
     g.draw_line(pen(mark_color, 2), button_rectangle.x() + 4, button_rectangle.y() + button_rectangle.height() / 2, button_rectangle.x() + button_rectangle.width() / 2, button_rectangle.y() + button_rectangle.height() - 4);
     g.draw_line(pen(mark_color, 2), button_rectangle.x() + button_rectangle.width() / 2, button_rectangle.y() + button_rectangle.height() - 4, button_rectangle.x() + button_rectangle.width() - 4, button_rectangle.y() + 4);
@@ -341,10 +341,10 @@ void check_box_renderer::draw_check_box_windows_light(graphics g, const rectangl
     text_color = mark_color = application::style_sheet().system_colors().gray_text();
   }
   
-  rectangle button_rectangle = {bounds.x() + 1, bounds.y() + bounds.height() / 2 - 6, 12, 12};
+  auto button_rectangle = rectangle {bounds.x() + 1, bounds.y() + bounds.height() / 2 - 6, 12, 12};
   g.fill_rectangle(solid_brush(button_color), button_rectangle);
   g.draw_rectangle(pen(border_color, 1), rectangle::add(button_rectangle, {-1, -1}));
-  rectangle string_rectangle = { bounds.x() + 19, bounds.y(), bounds.width() - 14, bounds.height() };
+  auto string_rectangle = rectangle {bounds.x() + 19, bounds.y(), bounds.width() - 14, bounds.height()};
   if (state == xtd::forms::visual_styles::check_box_state::checked_normal || state == xtd::forms::visual_styles::check_box_state::checked_hot || state == xtd::forms::visual_styles::check_box_state::checked_pressed || state == xtd::forms::visual_styles::check_box_state::checked_disabled) {
     g.draw_line(pen(mark_color, 1), button_rectangle.x() + 2, button_rectangle.y() + button_rectangle.height() / 2, button_rectangle.x() + button_rectangle.width() / 2 - 1, button_rectangle.y() + button_rectangle.height() - 4);
     g.draw_line(pen(mark_color, 1), button_rectangle.x() + button_rectangle.width() / 2 - 1, button_rectangle.y() + button_rectangle.height() - 4, button_rectangle.x() + button_rectangle.width() - 2, button_rectangle.y() + 2);
