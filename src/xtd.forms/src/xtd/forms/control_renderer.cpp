@@ -23,7 +23,7 @@ void control_renderer::draw_control(graphics& graphics, const rectangle& bounds,
 }
 
 void control_renderer::draw_control(const style_sheets::style_sheet& style_sheet, graphics& graphics, const rectangle& bounds, control_state state, const optional<color>& back_color) {
-  style_sheets::control current_style_sheet;
+  auto current_style_sheet = style_sheets::control {};
   switch (state) {
     case control_state::normal: current_style_sheet = style_sheet.control(style_sheets::pseudo_state::standard); break;
     case control_state::hot: current_style_sheet = style_sheet.control(style_sheets::pseudo_state::standard | pseudo_state::hover); break;
