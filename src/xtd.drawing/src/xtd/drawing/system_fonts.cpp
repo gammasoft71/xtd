@@ -44,11 +44,11 @@ font system_fonts::tool_font() {
 }
 
 const vector<font>& system_fonts::get_fonts() {
-  static vector system_fonts {system_fonts::caption_font(), system_fonts::default_font(), system_fonts::dialog_font(), system_fonts::icon_title_font(), system_fonts::menu_font(), system_fonts::message_box_font(), system_fonts::small_caption_font(), system_fonts::status_font(), system_fonts::tool_font(),};
+  static auto system_fonts = vector {system_fonts::caption_font(), system_fonts::default_font(), system_fonts::dialog_font(), system_fonts::icon_title_font(), system_fonts::menu_font(), system_fonts::message_box_font(), system_fonts::small_caption_font(), system_fonts::status_font(), system_fonts::tool_font(),};
   return system_fonts;
 }
 
 const vector<ustring>& system_fonts::get_font_names() {
-  static vector font_names {system_fonts::caption_font().name(), system_fonts::default_font().name(), system_fonts::dialog_font().name(), system_fonts::icon_title_font().name(), system_fonts::menu_font().name(), system_fonts::message_box_font().name(), system_fonts::small_caption_font().name(), system_fonts::status_font().name(), system_fonts::tool_font().name(),};
+  static auto font_names = vector {system_fonts::caption_font().name(), system_fonts::default_font().name(), system_fonts::dialog_font().name(), system_fonts::icon_title_font().name(), system_fonts::menu_font().name(), system_fonts::message_box_font().name(), system_fonts::small_caption_font().name(), system_fonts::status_font().name(), system_fonts::tool_font().name(),};
   return font_names;
 }
