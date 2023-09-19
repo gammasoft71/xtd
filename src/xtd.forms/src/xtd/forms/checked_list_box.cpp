@@ -68,14 +68,14 @@ checked_list_box::checked_list_box() : data_(std::make_shared<data>()) {
 }
 
 checked_list_box::checked_index_collection checked_list_box::checked_indices() const noexcept {
-  checked_index_collection indices;
-  for (size_t index = 0; index < data_->items.size(); index++)
+  auto indices = checked_index_collection {};
+  for (auto index = 0_sz; index < data_->items.size(); ++index)
     if (data_->items[index].checked()) indices.push_back(index);
   return indices;
 }
 
 checked_list_box::checked_item_collection checked_list_box::checked_items() const noexcept {
-  checked_item_collection itms;
+  auto itms = checked_item_collection {};
   copy_if(data_->items.begin(), data_->items.end(), itms.end(), [&](auto item) {return item.checked();});
   return itms;
 }
@@ -99,7 +99,7 @@ list_control& checked_list_box::selected_index(size_t selected_index) {
     set_selected_index(selected_index);
     if (is_handle_created()) native::checked_list_box::selected_index(handle(), selected_index);
     
-    item selected;
+    auto selected = item {};
     if (this->selected_index() != npos) selected = data_->items[this->selected_index()];
     //this->selected_item(selected);
     data_->selected_item = selected;
@@ -134,7 +134,7 @@ checked_list_box& checked_list_box::selected_item(const item& selected_item) {
 }
 
 vector<checked_list_box::item> checked_list_box::selected_items() const noexcept {
-  vector<item> itms;
+  auto itms = vector<item> {};
   auto indices = selected_indices();
   for_each(indices.begin(), indices.end(), [&](size_t index) {itms.push_back(data_->items[index]);});
   return itms;
@@ -150,24 +150,24 @@ void checked_list_box::begin_update() {
 }
 
 checked_list_box checked_list_box::create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  checked_list_box item;
-  item.items(items);
-  item.selected_index(selected_index);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = checked_list_box {};
+  result.items(items);
+  result.selected_index(selected_index);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 checked_list_box checked_list_box::create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  checked_list_box item;
-  item.parent(parent);
-  item.items(items);
-  item.selected_index(selected_index);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = checked_list_box {};
+  result.parent(parent);
+  result.items(items);
+  result.selected_index(selected_index);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 void checked_list_box::end_update() {
@@ -207,7 +207,7 @@ bool checked_list_box::allow_selection() const noexcept {
 }
 
 forms::create_params checked_list_box::create_params() const noexcept {
-  forms::create_params create_params = list_box::create_params();
+  auto create_params = list_box::create_params();
   
   create_params.class_name("checkedlistbox");
   create_params.style(create_params.style() | LBS_HASSTRINGS);
@@ -232,7 +232,7 @@ forms::create_params checked_list_box::create_params() const noexcept {
 void checked_list_box::on_handle_created(const event_args& e) {
   list_control::on_handle_created(e);
   data_->items.sorted(sorted());
-  for (size_t index = 0; index < data_->items.size(); ++index)
+  for (auto index = 0_sz; index < data_->items.size(); ++index)
     native::checked_list_box::insert_item(handle(), index, data_->items[index].value(), data_->items[index].checked());
   if (selection_mode() == forms::selection_mode::none) selected_index(npos);
   native::checked_list_box::selected_index(handle(), selected_index());
