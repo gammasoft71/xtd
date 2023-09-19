@@ -63,11 +63,11 @@ void box_renderer::draw_line_top(graphics& graphics, const rectangle& bounds, co
     pen_width2 = as<float>(border_width.top().get_pixels(bounds)) / 2;
   }
   
-  auto pen1 = pen(color1, pen_width1).dash_style(border_type_to_dash_style(border_style.top()));
-  auto pen2 = pen(color2, pen_width2).dash_style(border_type_to_dash_style(border_style.top()));
+  auto pen1 = pen {color1, pen_width1}.dash_style(border_type_to_dash_style(border_style.top()));
+  auto pen2 = pen {color2, pen_width2}.dash_style(border_type_to_dash_style(border_style.top()));
   
-  auto border_rect1 = rectangle::truncate(rectangle_f(bounds.left() + pen_width1 / 2.0f, bounds.top() + pen_width1 / 2.0f, bounds.width() - pen_width1, bounds.height() - pen_width1));
-  auto border_rect2 = rectangle::truncate(rectangle_f(bounds.left() + pen_width1 + pen_width2 / 2.0f,  bounds.top() + pen_width1 + pen_width2 / 2.0f, bounds.width() -  2 * pen_width1 - pen_width2, bounds.height() - 2 * pen_width1 - pen_width2));
+  auto border_rect1 = rectangle::truncate(rectangle_f {bounds.left() + pen_width1 / 2.0f, bounds.top() + pen_width1 / 2.0f, bounds.width() - pen_width1, bounds.height() - pen_width1});
+  auto border_rect2 = rectangle::truncate(rectangle_f {bounds.left() + pen_width1 + pen_width2 / 2.0f,  bounds.top() + pen_width1 + pen_width2 / 2.0f, bounds.width() -  2 * pen_width1 - pen_width2, bounds.height() - 2 * pen_width1 - pen_width2});
   
   if (border_style.top() == border_type::double_border)
     border_rect2 = rectangle::inflate(border_rect2, {-as<int32>(pen_width1), -as<int32>(pen_width1)});
@@ -121,11 +121,11 @@ void box_renderer::draw_line_right(graphics& graphics, const rectangle& bounds, 
     pen_width2 = as<float>(border_width.right().get_pixels(bounds)) / 2;
   }
   
-  auto pen1 = pen(color1, pen_width1).dash_style(border_type_to_dash_style(border_style.right()));
-  auto pen2 = pen(color2, pen_width2).dash_style(border_type_to_dash_style(border_style.right()));
+  auto pen1 = pen {color1, pen_width1}.dash_style(border_type_to_dash_style(border_style.right()));
+  auto pen2 = pen {color2, pen_width2}.dash_style(border_type_to_dash_style(border_style.right()));
   
-  auto border_rect1 = rectangle::truncate(rectangle_f(bounds.left() + pen_width1 / 2.0f, bounds.top() + pen_width1 / 2.0f, bounds.width() - pen_width1, bounds.height() - pen_width1));
-  auto border_rect2 = rectangle::truncate(rectangle_f(bounds.left() + pen_width1 + pen_width2 / 2.0f,  bounds.top() + pen_width1 + pen_width2 / 2.0f, bounds.width() -  2 * pen_width1 - pen_width2, bounds.height() - 2 * pen_width1 - pen_width2));
+  auto border_rect1 = rectangle::truncate(rectangle_f {bounds.left() + pen_width1 / 2.0f, bounds.top() + pen_width1 / 2.0f, bounds.width() - pen_width1, bounds.height() - pen_width1});
+  auto border_rect2 = rectangle::truncate(rectangle_f {bounds.left() + pen_width1 + pen_width2 / 2.0f,  bounds.top() + pen_width1 + pen_width2 / 2.0f, bounds.width() -  2 * pen_width1 - pen_width2, bounds.height() - 2 * pen_width1 - pen_width2});
   
   if (border_style.top() == border_type::double_border)
     border_rect2 = rectangle::inflate(border_rect2, {-as<int32>(pen_width1), -as<int32>(pen_width1)});
@@ -179,11 +179,11 @@ void box_renderer::draw_line_bottom(graphics& graphics, const rectangle& bounds,
     pen_width2 = as<float>(border_width.bottom().get_pixels(bounds)) / 2;
   }
   
-  auto pen1 = pen(color1, pen_width1).dash_style(border_type_to_dash_style(border_style.bottom()));
-  auto pen2 = pen(color2, pen_width2).dash_style(border_type_to_dash_style(border_style.bottom()));
+  auto pen1 = pen {color1, pen_width1}.dash_style(border_type_to_dash_style(border_style.bottom()));
+  auto pen2 = pen {color2, pen_width2}.dash_style(border_type_to_dash_style(border_style.bottom()));
   
-  auto border_rect1 = rectangle::truncate(rectangle_f(bounds.left() + pen_width1 / 2.0f, bounds.top() + pen_width1 / 2.0f, bounds.width() - pen_width1, bounds.height() - pen_width1));
-  auto border_rect2 = rectangle::truncate(rectangle_f(bounds.left() + pen_width1 + pen_width2 / 2.0f,  bounds.top() + pen_width1 + pen_width2 / 2.0f, bounds.width() -  2 * pen_width1 - pen_width2, bounds.height() - 2 * pen_width1 - pen_width2));
+  auto border_rect1 = rectangle::truncate(rectangle_f {bounds.left() + pen_width1 / 2.0f, bounds.top() + pen_width1 / 2.0f, bounds.width() - pen_width1, bounds.height() - pen_width1});
+  auto border_rect2 = rectangle::truncate(rectangle_f {bounds.left() + pen_width1 + pen_width2 / 2.0f,  bounds.top() + pen_width1 + pen_width2 / 2.0f, bounds.width() -  2 * pen_width1 - pen_width2, bounds.height() - 2 * pen_width1 - pen_width2});
   
   if (border_style.top() == border_type::double_border)
     border_rect2 = rectangle::inflate(border_rect2, {-as<int32>(pen_width1), -as<int32>(pen_width1)});
@@ -237,11 +237,11 @@ void box_renderer::draw_line_left(graphics& graphics, const rectangle& bounds, c
     pen_width2 = as<float>(border_width.left().get_pixels(bounds)) / 2;
   }
   
-  auto pen1 = pen(color1, pen_width1).dash_style(border_type_to_dash_style(border_style.left()));
-  auto pen2 = pen(color2, pen_width2).dash_style(border_type_to_dash_style(border_style.left()));
+  auto pen1 = pen {color1, pen_width1}.dash_style(border_type_to_dash_style(border_style.left()));
+  auto pen2 = pen {color2, pen_width2}.dash_style(border_type_to_dash_style(border_style.left()));
   
-  auto border_rect1 = rectangle::truncate(rectangle_f(bounds.left() + pen_width1 / 2.0f, bounds.top() + pen_width1 / 2.0f, bounds.width() - pen_width1, bounds.height() - pen_width1));
-  auto border_rect2 = rectangle::truncate(rectangle_f(bounds.left() + pen_width1 + pen_width2 / 2.0f,  bounds.top() + pen_width1 + pen_width2 / 2.0f, bounds.width() -  2 * pen_width1 - pen_width2, bounds.height() - 2 * pen_width1 - pen_width2));
+  auto border_rect1 = rectangle::truncate(rectangle_f {bounds.left() + pen_width1 / 2.0f, bounds.top() + pen_width1 / 2.0f, bounds.width() - pen_width1, bounds.height() - pen_width1});
+  auto border_rect2 = rectangle::truncate(rectangle_f {bounds.left() + pen_width1 + pen_width2 / 2.0f,  bounds.top() + pen_width1 + pen_width2 / 2.0f, bounds.width() -  2 * pen_width1 - pen_width2, bounds.height() - 2 * pen_width1 - pen_width2});
   
   if (border_style.top() == border_type::double_border)
     border_rect2 = rectangle::inflate(border_rect2, {-as<int32>(pen_width1), -as<int32>(pen_width1)});
@@ -273,12 +273,11 @@ void box_renderer::draw_line_left(graphics& graphics, const rectangle& bounds, c
 }
 
 void box_renderer::fill_box(xtd::drawing::graphics& graphics, const xtd::drawing::brush& brush, const xtd::drawing::rectangle& bounds, const xtd::forms::style_sheets::ibox_model& box_model) {
-  graphics_path path;
-  
+  auto path = graphics_path {};
   auto fill_rect = box_model.get_fill_rectangle(bounds);
-  
   auto radius_top_left = box_model.border_radius().top_left().get_pixels(bounds) - box_model.border_width().top().get_pixels(bounds);
   auto radius_top_right = box_model.border_radius().top_right().get_pixels(bounds) - box_model.border_width().top().get_pixels(bounds);
+
   if (radius_top_left < 0) radius_top_left = 0;
   if (radius_top_right < 0) radius_top_right = 0;
   
