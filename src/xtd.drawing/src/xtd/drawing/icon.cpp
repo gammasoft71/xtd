@@ -97,7 +97,7 @@ bool icon::equals(const icon& icon) const noexcept {
 }
 
 icon icon::from_handle(intptr handle) {
-  drawing::icon icon;
+  auto icon = drawing::icon {};
   icon.data_->handle = native::icon::from_handle(handle);
   icon.data_->size = {native::icon::get_width(icon.data_->handle), native::icon::get_height(icon.data_->handle)};
   return icon;
