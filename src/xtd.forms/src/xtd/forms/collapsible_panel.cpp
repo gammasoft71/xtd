@@ -78,24 +78,24 @@ void collapsible_panel::collapse() {
 }
 
 collapsible_panel collapsible_panel::create(const xtd::ustring& text, bool expanded, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  collapsible_panel item;
-  item.text(text);
-  item.expanded(expanded);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = collapsible_panel {};
+  result.text(text);
+  result.expanded(expanded);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 collapsible_panel collapsible_panel::create(const control& parent, const xtd::ustring& text, bool expanded, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  collapsible_panel item;
-  item.parent(parent);
-  item.text(text);
-  item.expanded(expanded);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = collapsible_panel {};
+  result.parent(parent);
+  result.text(text);
+  result.expanded(expanded);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 void collapsible_panel::expand() {
@@ -103,7 +103,7 @@ void collapsible_panel::expand() {
 }
 
 forms::create_params collapsible_panel::create_params() const noexcept {
-  forms::create_params create_params = control::create_params();
+  auto create_params = control::create_params();
   
   create_params.class_name("collapsiblepanel");
   create_params.style(create_params.style() | WS_CLIPSIBLINGS);
@@ -143,7 +143,7 @@ void collapsible_panel::on_handle_created(const event_args& e) {
 }
 
 drawing::size collapsible_panel::measure_control() const noexcept {
-  drawing::rectangle bounds;
+  auto bounds = drawing::rectangle {};
   for (auto item : controls()) {
     if (item.get().visible())
       bounds = drawing::rectangle::make_union(bounds, item.get().bounds());
