@@ -20,9 +20,9 @@ using namespace xtd::forms::style_sheets;
 using namespace xtd::web::css;
 
 namespace {
-  xtd::ustring get_css_string_from_path(const xtd::ustring& path_name) {
+  ustring get_css_string_from_path(const ustring& path_name) {
     if (!xtd::io::directory::exists(path_name)) throw xtd::io::directory_not_found_exception {csf_};
-    xtd::ustring theme_css;
+    auto theme_css = ustring::empty_string;
     for (auto theme_file : directory::enumerate_files(path_name, "*.css"))
       theme_css += file::read_all_text(theme_file);
     return theme_css;
@@ -63,7 +63,7 @@ style_sheet::style_sheet() : data_(std::make_shared<data>()) {
 style_sheet::style_sheet(const ustring& css_text) : style_sheet(css_text, true) {
 }
 
-style_sheet::style_sheet(const xtd::ustring& css_text, bool init_system) : data_(std::make_shared<data>()) {
+style_sheet::style_sheet(const ustring& css_text, bool init_system) : data_(std::make_shared<data>()) {
   if (init_system) *this = system_style_sheet();
   else {
     data_->system_colors.accent(drawing::system_colors::accent());
@@ -311,10 +311,10 @@ const style_sheet::style_sheets_t& style_sheet::style_sheets() noexcept {
   if (!style_sheets_.empty()) return style_sheets_;
   
   for (auto theme_dir : directory::enumerate_directories(environment::get_folder_path(environment::special_folder::xtd_themes))) {
-    xtd::ustring theme_css;
+    auto theme_css = ustring::empty_string;
     for (auto theme_file : directory::enumerate_files(theme_dir, "*.css"))
       theme_css += file::read_all_text(theme_file);
-    style_sheet style(theme_css);
+    auto style = style_sheet {theme_css};
     if (!style.theme().name().empty())
       style_sheets_[style.theme().name()] = style;
   }
@@ -326,11 +326,11 @@ const style_sheet::style_sheet_names_t& style_sheet::style_sheet_names() noexcep
   
   for (auto theme_dir : directory::enumerate_directories(environment::get_folder_path(environment::special_folder::xtd_themes))) {
     if (!file::exists(path::combine(theme_dir, "theme.css"))) continue;
-    css_reader reader(file::read_all_text(path::combine(theme_dir, "theme.css")));
-    selector_map::const_iterator selectors_iterator =  reader.selectors().find("theme");
+    auto reader = css_reader {file::read_all_text(path::combine(theme_dir, "theme.css"))};
+    auto selectors_iterator =  reader.selectors().find("theme");
     if (selectors_iterator == reader.selectors().end()) continue;
-    property_map::const_iterator properties_iterator;
-    if ((properties_iterator = selectors_iterator->second.properties().find("name")) != selectors_iterator->second.properties().end()) style_sheet_names_.push_back(properties_iterator->second.to_string().trim().trim('\"'));
+    auto properties_iterator = selectors_iterator->second.properties().find("name");
+    if (properties_iterator != selectors_iterator->second.properties().end()) style_sheet_names_.push_back(properties_iterator->second.to_string().trim().trim('\"'));
   }
   return style_sheet_names_;
 }
@@ -413,29 +413,29 @@ bool style_sheet::equals(const style_sheet& other) const noexcept {
   return data_->theme == other.data_->theme;
 }
 
-style_sheet::buttons_t style_sheet::button_from_css(const  xtd::ustring& css_text) {
-  style_sheet ss(css_text);
+style_sheet::buttons_t style_sheet::button_from_css(const  ustring& css_text) {
+  auto ss = style_sheet {css_text};
   return ss.buttons();
 }
 
-style_sheet::controls_t style_sheet::control_from_css(const  xtd::ustring& css_text) {
-  style_sheet ss(css_text);
+style_sheet::controls_t style_sheet::control_from_css(const  ustring& css_text) {
+  auto ss = style_sheet {css_text};
   return ss.controls();
 }
 
-style_sheet::forms_t style_sheet::form_from_css(const  xtd::ustring& css_text) {
-  style_sheet ss(css_text);
+style_sheet::forms_t style_sheet::form_from_css(const  ustring& css_text) {
+  auto ss = style_sheet {css_text};
   return ss.forms();
 }
 
-style_sheet style_sheet::get_style_sheet_from_name(const xtd::ustring& name) {
+style_sheet style_sheet::get_style_sheet_from_name(const ustring& name) {
   for (auto theme_dir : directory::enumerate_directories(environment::get_folder_path(environment::special_folder::xtd_themes))) {
-    css_reader reader(file::read_all_text(path::combine(theme_dir, "theme.css")));
-    selector_map::const_iterator selectors_iterator =  reader.selectors().find("theme");
+    auto reader = css_reader {file::read_all_text(path::combine(theme_dir, "theme.css"))};
+    auto selectors_iterator =  reader.selectors().find("theme");
     if (selectors_iterator == reader.selectors().end()) break;
-    property_map::const_iterator properties_iterator;
-    if ((properties_iterator = selectors_iterator->second.properties().find("name")) != selectors_iterator->second.properties().end() && properties_iterator->second.to_string().trim().trim('\"') == name) {
-      xtd::ustring theme_css;
+    auto properties_iterator = selectors_iterator->second.properties().find("name");
+    if (properties_iterator != selectors_iterator->second.properties().end() && properties_iterator->second.to_string().trim().trim('\"') == name) {
+      auto theme_css = ustring::empty_string;
       for (auto theme_file : directory::enumerate_files(theme_dir, "*.css"))
         theme_css += file::read_all_text(theme_file);
       return style_sheet(theme_css);
@@ -444,23 +444,23 @@ style_sheet style_sheet::get_style_sheet_from_name(const xtd::ustring& name) {
   throw argument_exception {csf_};
 }
 
-style_sheet style_sheet::get_style_sheet_from_file(const xtd::ustring& file_name) {
+style_sheet style_sheet::get_style_sheet_from_file(const ustring& file_name) {
   if (!xtd::io::file::exists(file_name)) throw xtd::io::directory_not_found_exception {csf_};
-  xtd::ustring theme_css = file::read_all_text(file_name);
+  auto theme_css = file::read_all_text(file_name);
   return style_sheet(theme_css);
 }
 
-style_sheet style_sheet::get_style_sheet_from_path(const xtd::ustring& path_name) {
+style_sheet style_sheet::get_style_sheet_from_path(const ustring& path_name) {
   return style_sheet(get_css_string_from_path(path_name));
 }
 
-xtd::forms::style_sheets::system_colors style_sheet::system_colors_from_css(const xtd::ustring& css_text) {
-  style_sheet ss(css_text);
+xtd::forms::style_sheets::system_colors style_sheet::system_colors_from_css(const ustring& css_text) {
+  auto ss = style_sheet {css_text};
   return ss.system_colors();
 }
 
-xtd::forms::style_sheets::theme style_sheet::theme_from_css(const xtd::ustring& css_text) {
-  style_sheet ss(css_text);
+xtd::forms::style_sheets::theme style_sheet::theme_from_css(const ustring& css_text) {
+  auto ss = style_sheet {css_text};
   return ss.theme();
 }
 
@@ -481,28 +481,28 @@ std::tuple<border_type, int32, int32> style_sheet::to_border_type(xtd::forms::bo
     case xtd::forms::border_style::bevel_inset: return make_tuple(border_type::inset, 4, 0); break;
     case xtd::forms::border_style::bevel_outset: return make_tuple(border_type::outset, 4, 0); break;
     case xtd::forms::border_style::rounded: return make_tuple(border_type::solid, 1, 6); break;
-    default:  break;
+    default: break;
   }
   return make_tuple(border_type::none, 0, 0);
 }
 
 color style_sheet::background_color_from_css(const ustring& css_text, const color& default_value) const noexcept {
-  color result = default_value;
+  auto result = default_value;
   try_parse_color(css_text.to_lower(), result);
   return result;
 }
 
-background_image style_sheet::background_image_from_css(const xtd::ustring& css_text, const background_image& default_value) const noexcept {
-  background_image result;
+background_image style_sheet::background_image_from_css(const ustring& css_text, const background_image& default_value) const noexcept {
+  auto result = background_image {};
   if (css_text.starts_with("url(", true) && css_text.ends_with(")", true) && try_parse_uri(css_text, result.url_)) return result;
   if (css_text.starts_with("linear-gradient(", true) && css_text.ends_with(")", true) && try_parse_linear_gradient(css_text.to_lower(), result)) return result;
   return default_value;
 }
 
-border_color style_sheet::border_color_from_css(const xtd::ustring& css_text, const border_color& default_value) const noexcept {
-  vector<ustring> values = split_values_from_text(css_text.to_lower());
+border_color style_sheet::border_color_from_css(const ustring& css_text, const border_color& default_value) const noexcept {
+  auto values = split_values_from_text(css_text.to_lower());
   if (values.size() < 1 || values.size() > 4) return default_value;
-  border_color result;
+  auto result = border_color {};
   result.all(color_from_css(values[0], default_value.top()));
   if (values.size() >= 2) result.right(color_from_css(values[0], default_value.right()));
   if (values.size() >= 3) result.bottom(color_from_css(values[0], default_value.right()));
@@ -512,10 +512,10 @@ border_color style_sheet::border_color_from_css(const xtd::ustring& css_text, co
 
 style_sheets::border_style style_sheet::border_style_from_css(const ustring& css_text, const border_style& default_value) const noexcept {
   auto values = css_text.to_lower().split();
-  static map<ustring, xtd::forms::style_sheets::border_type> border_types = {{"none", border_type::none}, {"hidden", border_type::hidden}, {"dashed", border_type::dashed}, {"dot-dash", border_type::dot_dash},  {"dot-dot-dash", border_type::dot_dot_dash}, {"dotted", border_type::dotted}, {"double", border_type::double_border}, {"groove", border_type::groove}, {"inset", border_type::inset}, {"outset", border_type::outset}, {"ridge", border_type::ridge}, {"solid", border_type::solid}, {"theme", border_type::theme}};
+  static auto border_types = map<ustring, xtd::forms::style_sheets::border_type> {{"none", border_type::none}, {"hidden", border_type::hidden}, {"dashed", border_type::dashed}, {"dot-dash", border_type::dot_dash},  {"dot-dot-dash", border_type::dot_dot_dash}, {"dotted", border_type::dotted}, {"double", border_type::double_border}, {"groove", border_type::groove}, {"inset", border_type::inset}, {"outset", border_type::outset}, {"ridge", border_type::ridge}, {"solid", border_type::solid}, {"theme", border_type::theme}};
   if (values.size() < 1 || values.size() > 4) return default_value;
   
-  border_style result;
+  auto result = border_style {};
   auto it = border_types.find(values[0]);
   if (it == border_types.end()) return default_value;
   result.all(it->second);
@@ -539,11 +539,11 @@ style_sheets::border_style style_sheet::border_style_from_css(const ustring& css
   return result;
 }
 
-border_radius style_sheet::border_radius_from_css(const xtd::ustring& css_text, const border_radius& default_value) const noexcept {
+border_radius style_sheet::border_radius_from_css(const ustring& css_text, const border_radius& default_value) const noexcept {
   auto values = css_text.to_lower().split();
   if (values.size() < 1 || values.size() > 4) return default_value;
   
-  border_radius result;
+  auto result = border_radius {};
   result.all(length_from_css(values[0], default_value.all()));
   
   if (values.size() >= 2) result.top_right(length_from_css(values[1], default_value.top_right()));
@@ -553,11 +553,11 @@ border_radius style_sheet::border_radius_from_css(const xtd::ustring& css_text, 
   return result;
 }
 
-border_width style_sheet::border_width_from_css(const xtd::ustring& css_text, const border_width& default_value) const noexcept {
+border_width style_sheet::border_width_from_css(const ustring& css_text, const border_width& default_value) const noexcept {
   auto values = css_text.to_lower().split();
   if (values.size() < 1 || values.size() > 4) return default_value;
   
-  border_width result;
+  auto result = border_width {};
   result.all(length_from_css(values[0], default_value.all()));
   
   if (values.size() >= 2) result.right(length_from_css(values[1], default_value.left()));
@@ -568,12 +568,12 @@ border_width style_sheet::border_width_from_css(const xtd::ustring& css_text, co
 }
 
 color style_sheet::color_from_css(const ustring& css_text, const color& default_value) const noexcept {
-  color result = default_value;
+  auto result = default_value;
   try_parse_color(css_text.to_lower(), result);
   return result;
 }
 
-length style_sheet::length_from_css(const xtd::ustring& css_text, const length& default_value) const noexcept {
+length style_sheet::length_from_css(const ustring& css_text, const length& default_value) const noexcept {
   if (css_text.to_lower() == "auto" || css_text.to_lower() == "initial" || css_text.to_lower() == "inherit") return length(-1);
   auto l = .0;
   if (css_text.to_lower().ends_with("cm") && ::try_parse<double>(css_text.to_lower().replace("cm", ""), l)) return length(l, length_unit::centimeters);
@@ -595,11 +595,11 @@ length style_sheet::length_from_css(const xtd::ustring& css_text, const length& 
   return default_value;
 }
 
-margin style_sheet::margin_from_css(const xtd::ustring& css_text, const margin& default_value) const noexcept {
+margin style_sheet::margin_from_css(const ustring& css_text, const margin& default_value) const noexcept {
   auto values = css_text.to_lower().split();
   if (values.size() < 1 || values.size() > 4) return default_value;
   
-  margin result;
+  auto result = margin {};
   result.all(length_from_css(values[0], default_value.all()));
   
   if (values.size() >= 2) result.right(length_from_css(values[1], default_value.left()));
@@ -609,21 +609,18 @@ margin style_sheet::margin_from_css(const xtd::ustring& css_text, const margin& 
   return result;
 }
 
-margin style_sheet::margin_bottom_from_css(const xtd::ustring& css_text, const margin& default_value) const noexcept {
+margin style_sheet::margin_bottom_from_css(const ustring& css_text, const margin& default_value) const noexcept {
   auto values = css_text.to_lower().split();
-  
-  margin result = default_value;
+  auto result = default_value;
   if (values.size() < 1 || values.size() > 1) return result;
-  
   result.bottom(length_from_css(values[0], default_value.bottom()));
-  
   return result;
 }
 
-margin style_sheet::margin_left_from_css(const xtd::ustring& css_text, const margin& default_value) const noexcept {
+margin style_sheet::margin_left_from_css(const ustring& css_text, const margin& default_value) const noexcept {
   auto values = css_text.to_lower().split();
   
-  margin result = default_value;
+  auto result = default_value;
   if (values.size() < 1 || values.size() > 1) return result;
   
   result.left(length_from_css(values[0], default_value.left()));
@@ -631,33 +628,27 @@ margin style_sheet::margin_left_from_css(const xtd::ustring& css_text, const mar
   return result;
 }
 
-margin style_sheet::margin_right_from_css(const xtd::ustring& css_text, const margin& default_value) const noexcept {
+margin style_sheet::margin_right_from_css(const ustring& css_text, const margin& default_value) const noexcept {
   auto values = css_text.to_lower().split();
-  
-  margin result = default_value;
+  auto result = default_value;
   if (values.size() < 1 || values.size() > 1) return result;
-  
   result.right(length_from_css(values[0], default_value.right()));
-  
   return result;
 }
 
-margin style_sheet::margin_top_from_css(const xtd::ustring& css_text, const margin& default_value) const noexcept {
+margin style_sheet::margin_top_from_css(const ustring& css_text, const margin& default_value) const noexcept {
   auto values = css_text.to_lower().split();
-  
-  margin result = default_value;
+  auto result = default_value;
   if (values.size() < 1 || values.size() > 1) return result;
-  
   result.top(length_from_css(values[0], default_value.top()));
-  
   return result;
 }
 
-style_sheets::padding style_sheet::padding_from_css(const xtd::ustring& css_text, const style_sheets::padding& default_value) const noexcept {
+style_sheets::padding style_sheet::padding_from_css(const ustring& css_text, const style_sheets::padding& default_value) const noexcept {
   auto values = css_text.to_lower().split();
   if (values.size() < 1 || values.size() > 4) return default_value;
   
-  style_sheets::padding result;
+  auto result = style_sheets::padding {};
   result.all(length_from_css(values[0], default_value.all()));
   
   if (values.size() >= 2) result.right(length_from_css(values[1], default_value.left()));
@@ -667,57 +658,46 @@ style_sheets::padding style_sheet::padding_from_css(const xtd::ustring& css_text
   return result;
 }
 
-style_sheets::padding style_sheet::padding_bottom_from_css(const xtd::ustring& css_text, const style_sheets::padding& default_value) const noexcept {
+style_sheets::padding style_sheet::padding_bottom_from_css(const ustring& css_text, const style_sheets::padding& default_value) const noexcept {
   auto values = css_text.to_lower().split();
-  style_sheets::padding result = default_value;
-  
+  auto result = default_value;
   if (values.size() < 1 || values.size() > 1) return result;
-  
   result.bottom(length_from_css(values[0], default_value.bottom()));
-  
   return result;
 }
 
-style_sheets::padding style_sheet::padding_left_from_css(const xtd::ustring& css_text, const style_sheets::padding& default_value) const noexcept {
+style_sheets::padding style_sheet::padding_left_from_css(const ustring& css_text, const style_sheets::padding& default_value) const noexcept {
   auto values = css_text.to_lower().split();
-  style_sheets::padding result = default_value;
-  
+  auto result = default_value;
   if (values.size() < 1 || values.size() > 1) return result;
-  
   result.left(length_from_css(values[0], default_value.left()));
-  
   return result;
 }
 
-style_sheets::padding style_sheet::padding_right_from_css(const xtd::ustring& css_text, const style_sheets::padding& default_value) const noexcept {
+style_sheets::padding style_sheet::padding_right_from_css(const ustring& css_text, const style_sheets::padding& default_value) const noexcept {
   auto values = css_text.to_lower().split();
-  style_sheets::padding result = default_value;
+  auto result = default_value;
   
   if (values.size() < 1 || values.size() > 1) return result;
-  
   result.right(length_from_css(values[0], default_value.right()));
-  
   return result;
 }
 
-style_sheets::padding style_sheet::padding_top_from_css(const xtd::ustring& css_text, const style_sheets::padding& default_value) const noexcept {
+style_sheets::padding style_sheet::padding_top_from_css(const ustring& css_text, const style_sheets::padding& default_value) const noexcept {
   auto values = css_text.to_lower().split();
-  style_sheets::padding result = default_value;
-  
+  auto result = default_value;
   if (values.size() < 1 || values.size() > 1) return result;
-  
   result.top(length_from_css(values[0], default_value.top()));
-  
   return result;
 }
 
-ustring style_sheet::string_from_css(const xtd::ustring& css_text, const ustring& default_value) const noexcept {
+ustring style_sheet::string_from_css(const ustring& css_text, const ustring& default_value) const noexcept {
   auto value = css_text.trim();
   if (!value.starts_with("\"") || !value.ends_with("\"")) return default_value;
   return value.remove(value.size() - 1, 1).replace("\"", "");
 }
 
-content_alignment style_sheet::text_align_from_css(const xtd::ustring& css_text, const content_alignment& default_value) const noexcept {
+content_alignment style_sheet::text_align_from_css(const ustring& css_text, const content_alignment& default_value) const noexcept {
   auto values = css_text.to_lower().split();
   if (values.size() == 1) {
     if (values[0] == "top") return content_alignment::top_center;
@@ -742,14 +722,14 @@ content_alignment style_sheet::text_align_from_css(const xtd::ustring& css_text,
 }
 
 text_decoration style_sheet::text_decoration_from_css(const ustring& css_text, const text_decoration& default_value) const noexcept {
-  map<ustring, text_decoration> decorations {{"none", text_decoration::none}, {"line-through", text_decoration::line_through}, {"overline", text_decoration::overline}, {"underline", text_decoration::underline}};
+  auto decorations = map<ustring, text_decoration> {{"none", text_decoration::none}, {"line-through", text_decoration::line_through}, {"overline", text_decoration::overline}, {"underline", text_decoration::underline}};
   auto it = decorations.find(css_text.to_lower());
   if (it == decorations.end()) return default_value;
   return it->second;
 }
 
 text_transformation style_sheet::text_transformation_from_css(const ustring& css_text, const text_transformation& default_value) const noexcept {
-  map<ustring, text_transformation> transformations {{"none", text_transformation::none}, {"capitalize", text_transformation::capitalize}, {"lowercase", text_transformation::lowercase}, {"uppercase", text_transformation::uppercase}};
+  auto transformations = map<ustring, text_transformation> {{"none", text_transformation::none}, {"capitalize", text_transformation::capitalize}, {"lowercase", text_transformation::lowercase}, {"uppercase", text_transformation::uppercase}};
   auto it = transformations.find(css_text.to_lower());
   if (it == transformations.end()) return default_value;
   return it->second;
@@ -761,8 +741,8 @@ uri style_sheet::uri_from_css(const ustring& css_text, const uri& default_value)
   return result;
 }
 
-white_space style_sheet::white_space_from_css(const xtd::ustring& css_text, const xtd::forms::style_sheets::white_space& default_value) const noexcept {
-  map<ustring, white_space> white_spaces {{"normal", white_space::normal}, {"nowrap", white_space::no_wrap}, {"pre", white_space::pre}, {"pre-line", white_space::pre_line}, {"pre-wrap", white_space::pre_wrap}};
+white_space style_sheet::white_space_from_css(const ustring& css_text, const xtd::forms::style_sheets::white_space& default_value) const noexcept {
+  auto white_spaces = map<ustring, white_space> {{"normal", white_space::normal}, {"nowrap", white_space::no_wrap}, {"pre", white_space::pre}, {"pre-line", white_space::pre_line}, {"pre-wrap", white_space::pre_wrap}};
   auto it = white_spaces.find(css_text.to_lower());
   if (it == white_spaces.end()) return default_value;
   return it->second;
@@ -782,7 +762,7 @@ void style_sheet::on_system_colors_changed(const event_args& e) {
 }
 
 vector<ustring> style_sheet::split_values_from_text(const ustring& text) const noexcept {
-  static vector<ustring> color_keywords = {"rgb(", "rgba(", "argb(", "hsl(", "hsla(", "ahsl(", "hsv(", "hsva(", "ahsv(", "system-color("};
+  static auto color_keywords = vector<ustring> {"rgb(", "rgba(", "argb(", "hsl(", "hsla(", "ahsl(", "hsv(", "hsva(", "ahsv(", "system-color("};
   auto string_starts_with_any = [](const ustring & text, const vector<ustring>& values)->ustring {
     for (auto value : values)
       if (text.starts_with(value)) return value;
@@ -808,8 +788,8 @@ vector<ustring> style_sheet::split_values_from_text(const ustring& text) const n
 }
 
 void style_sheet::button_reader(xtd::web::css::css_reader& reader) noexcept {
-  static vector<pair<ustring, pseudo_state>> states {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
-  static vector<pair<ustring, pseudo_state>> button_states {{"button", pseudo_state::standard}, {"button:default", pseudo_state::default_state}};
+  static auto states = vector<pair<ustring, pseudo_state>> {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
+  static auto button_states = vector<pair<ustring, pseudo_state>> {{"button", pseudo_state::standard}, {"button:default", pseudo_state::default_state}};
   for (auto button : button_states) {
     for (auto state : states) {
       selector_map::const_iterator selectors_iterator = reader.selectors().find(button.first + state.first);
@@ -822,7 +802,7 @@ void style_sheet::button_reader(xtd::web::css::css_reader& reader) noexcept {
 }
 
 void style_sheet::control_reader(xtd::web::css::css_reader& reader) noexcept {
-  static vector<pair<ustring, pseudo_state>> states {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
+  static auto states = vector<pair<ustring, pseudo_state>> {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
   for (auto state : states) {
     selector_map::const_iterator selectors_iterator = reader.selectors().find("control" + state.first);
     if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
@@ -868,8 +848,8 @@ void style_sheet::fill_control(const xtd::web::css::selector_map::const_iterator
 }
 
 void style_sheet::flat_button_reader(xtd::web::css::css_reader& reader) noexcept {
-  static vector<pair<ustring, pseudo_state>> states {{"", pseudo_state::standard}, {":hover", pseudo_state::hover}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":disabled", pseudo_state::disabled}};
-  static vector<pair<ustring, pseudo_state>> button_states {{"flat-button", pseudo_state::standard}, {"flat-button:default", pseudo_state::standard | pseudo_state::default_state}};
+  static auto states = vector<pair<ustring, pseudo_state>> {{"", pseudo_state::standard}, {":hover", pseudo_state::hover}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":disabled", pseudo_state::disabled}};
+  static auto button_states = vector<pair<ustring, pseudo_state>> {{"flat-button", pseudo_state::standard}, {"flat-button:default", pseudo_state::standard | pseudo_state::default_state}};
   for (auto button : button_states) {
     for (auto state : states) {
       selector_map::const_iterator selectors_iterator = reader.selectors().find(button.first + state.first);
@@ -882,7 +862,7 @@ void style_sheet::flat_button_reader(xtd::web::css::css_reader& reader) noexcept
 }
 
 void style_sheet::flat_toggle_button_reader(xtd::web::css::css_reader& reader) noexcept {
-  static vector<pair<ustring, pseudo_state>> states {{"", pseudo_state::standard}, {":hover", pseudo_state::hover}, {":pressed", pseudo_state::pressed}, {":disabled", pseudo_state::disabled}, {":checked", pseudo_state::checked}, {":checked:hover", pseudo_state::checked | pseudo_state::hover}, {":checked:pressed", pseudo_state::checked | pseudo_state::pressed}, {":checked:disabled", pseudo_state::checked | pseudo_state::disabled}, {":mixed", pseudo_state::mixed}, {":mixed:hover", pseudo_state::mixed | pseudo_state::hover}, {":mixed:pressed", pseudo_state::mixed | pseudo_state::pressed}, {":mixed:disabled", pseudo_state::mixed | pseudo_state::disabled}};
+  static auto states = vector<pair<ustring, pseudo_state>> {{"", pseudo_state::standard}, {":hover", pseudo_state::hover}, {":pressed", pseudo_state::pressed}, {":disabled", pseudo_state::disabled}, {":checked", pseudo_state::checked}, {":checked:hover", pseudo_state::checked | pseudo_state::hover}, {":checked:pressed", pseudo_state::checked | pseudo_state::pressed}, {":checked:disabled", pseudo_state::checked | pseudo_state::disabled}, {":mixed", pseudo_state::mixed}, {":mixed:hover", pseudo_state::mixed | pseudo_state::hover}, {":mixed:pressed", pseudo_state::mixed | pseudo_state::pressed}, {":mixed:disabled", pseudo_state::mixed | pseudo_state::disabled}};
   for (auto state : states) {
     selector_map::const_iterator selectors_iterator = reader.selectors().find("flat-toggle-button" + state.first);
     if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
@@ -893,7 +873,7 @@ void style_sheet::flat_toggle_button_reader(xtd::web::css::css_reader& reader) n
 }
 
 void style_sheet::form_reader(xtd::web::css::css_reader& reader) noexcept {
-  static vector<pair<ustring, pseudo_state>> states {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
+  static auto states = vector<pair<ustring, pseudo_state>> {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
   for (auto state : states) {
     selector_map::const_iterator selectors_iterator = reader.selectors().find("form" + state.first);
     if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
@@ -904,7 +884,7 @@ void style_sheet::form_reader(xtd::web::css::css_reader& reader) noexcept {
 }
 
 void style_sheet::label_reader(xtd::web::css::css_reader& reader) noexcept {
-  static vector<pair<ustring, pseudo_state>> states {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
+  static auto states = vector<pair<ustring, pseudo_state>> {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
   for (auto state : states) {
     selector_map::const_iterator selectors_iterator = reader.selectors().find("label" + state.first);
     if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
@@ -915,7 +895,7 @@ void style_sheet::label_reader(xtd::web::css::css_reader& reader) noexcept {
 }
 
 void style_sheet::link_label_reader(xtd::web::css::css_reader& reader) noexcept {
-  static vector<pair<ustring, pseudo_state>> states {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":link", pseudo_state::link}, {":visited", pseudo_state::visited}, {":hover", pseudo_state::hover}, {":active", pseudo_state::active}, {":disabled", pseudo_state::disabled}};
+  static auto states = vector<pair<ustring, pseudo_state>> {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":link", pseudo_state::link}, {":visited", pseudo_state::visited}, {":hover", pseudo_state::hover}, {":active", pseudo_state::active}, {":disabled", pseudo_state::disabled}};
   for (auto state : states) {
     selector_map::const_iterator selectors_iterator = reader.selectors().find("link-label" + state.first);
     if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
@@ -926,7 +906,7 @@ void style_sheet::link_label_reader(xtd::web::css::css_reader& reader) noexcept 
 }
 
 void style_sheet::panel_reader(xtd::web::css::css_reader& reader) noexcept {
-  static vector<pair<ustring, pseudo_state>> states {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
+  static auto states = vector<pair<ustring, pseudo_state>> {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
   for (auto state : states) {
     selector_map::const_iterator selectors_iterator = reader.selectors().find("panel" + state.first);
     if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
@@ -937,8 +917,8 @@ void style_sheet::panel_reader(xtd::web::css::css_reader& reader) noexcept {
 }
 
 void style_sheet::popup_button_reader(xtd::web::css::css_reader& reader) noexcept {
-  static vector<pair<ustring, pseudo_state>> states {{"", pseudo_state::standard}, {":hover", pseudo_state::hover}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":disabled", pseudo_state::disabled}};
-  static vector<pair<ustring, pseudo_state>> button_states {{"popup-button", pseudo_state::standard}, {"popup-button:default", pseudo_state::standard | pseudo_state::default_state}};
+  static auto states = vector<pair<ustring, pseudo_state>> {{"", pseudo_state::standard}, {":hover", pseudo_state::hover}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":disabled", pseudo_state::disabled}};
+  static auto button_states = vector<pair<ustring, pseudo_state>> {{"popup-button", pseudo_state::standard}, {"popup-button:default", pseudo_state::standard | pseudo_state::default_state}};
   for (auto button : button_states) {
     for (auto state : states) {
       selector_map::const_iterator selectors_iterator = reader.selectors().find(button.first + state.first);
@@ -951,7 +931,7 @@ void style_sheet::popup_button_reader(xtd::web::css::css_reader& reader) noexcep
 }
 
 void style_sheet::popup_toggle_button_reader(xtd::web::css::css_reader& reader) noexcept {
-  static vector<pair<ustring, pseudo_state>> states {{"", pseudo_state::standard}, {":hover", pseudo_state::hover}, {":pressed", pseudo_state::pressed}, {":disabled", pseudo_state::disabled}, {":checked", pseudo_state::checked}, {":checked:hover", pseudo_state::checked | pseudo_state::hover}, {":checked:pressed", pseudo_state::checked | pseudo_state::pressed}, {":checked:disabled", pseudo_state::checked | pseudo_state::disabled}, {":mixed", pseudo_state::mixed}, {":mixed:hover", pseudo_state::mixed | pseudo_state::hover}, {":mixed:pressed", pseudo_state::mixed | pseudo_state::pressed}, {":mixed:disabled", pseudo_state::mixed | pseudo_state::disabled}};
+  static auto states = vector<pair<ustring, pseudo_state>> {{"", pseudo_state::standard}, {":hover", pseudo_state::hover}, {":pressed", pseudo_state::pressed}, {":disabled", pseudo_state::disabled}, {":checked", pseudo_state::checked}, {":checked:hover", pseudo_state::checked | pseudo_state::hover}, {":checked:pressed", pseudo_state::checked | pseudo_state::pressed}, {":checked:disabled", pseudo_state::checked | pseudo_state::disabled}, {":mixed", pseudo_state::mixed}, {":mixed:hover", pseudo_state::mixed | pseudo_state::hover}, {":mixed:pressed", pseudo_state::mixed | pseudo_state::pressed}, {":mixed:disabled", pseudo_state::mixed | pseudo_state::disabled}};
   for (auto state : states) {
     selector_map::const_iterator selectors_iterator = reader.selectors().find("popup-toggle-button" + state.first);
     if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
@@ -962,7 +942,7 @@ void style_sheet::popup_toggle_button_reader(xtd::web::css::css_reader& reader) 
 }
 
 void style_sheet::status_bar_reader(xtd::web::css::css_reader& reader) noexcept {
-  static vector<pair<ustring, pseudo_state>> states {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
+  static auto states = vector<pair<ustring, pseudo_state>> {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
   for (auto state : states) {
     selector_map::const_iterator selectors_iterator = reader.selectors().find("status-bar" + state.first);
     if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
@@ -973,7 +953,7 @@ void style_sheet::status_bar_reader(xtd::web::css::css_reader& reader) noexcept 
 }
 
 void style_sheet::status_bar_panel_reader(xtd::web::css::css_reader& reader) noexcept {
-  static vector<pair<ustring, pseudo_state>> states {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
+  static auto states = vector<pair<ustring, pseudo_state>> {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
   for (auto state : states) {
     selector_map::const_iterator selectors_iterator = reader.selectors().find("tool-bar-button" + state.first);
     if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
@@ -984,7 +964,7 @@ void style_sheet::status_bar_panel_reader(xtd::web::css::css_reader& reader) noe
 }
 
 void style_sheet::tool_bar_reader(xtd::web::css::css_reader& reader) noexcept {
-  static vector<pair<ustring, pseudo_state>> states {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
+  static auto states = vector<pair<ustring, pseudo_state>> {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
   for (auto state : states) {
     selector_map::const_iterator selectors_iterator = reader.selectors().find("tool-bar" + state.first);
     if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
@@ -995,7 +975,7 @@ void style_sheet::tool_bar_reader(xtd::web::css::css_reader& reader) noexcept {
 }
 
 void style_sheet::tool_bar_button_reader(xtd::web::css::css_reader& reader) noexcept {
-  static vector<pair<ustring, pseudo_state>> states {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
+  static auto states = vector<pair<ustring, pseudo_state>> {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
   for (auto state : states) {
     selector_map::const_iterator selectors_iterator = reader.selectors().find("tool-bar-button" + state.first);
     if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
@@ -1006,7 +986,7 @@ void style_sheet::tool_bar_button_reader(xtd::web::css::css_reader& reader) noex
 }
 
 void style_sheet::toggle_button_reader(xtd::web::css::css_reader& reader) noexcept {
-  static vector<pair<ustring, pseudo_state>> states {{"", pseudo_state::standard}, {":hover", pseudo_state::hover}, {":pressed", pseudo_state::pressed}, {":disabled", pseudo_state::disabled}, {":checked", pseudo_state::checked}, {":checked:hover", pseudo_state::checked | pseudo_state::hover}, {":checked:pressed", pseudo_state::checked | pseudo_state::pressed}, {":checked:disabled", pseudo_state::checked | pseudo_state::disabled}, {":mixed", pseudo_state::mixed}, {":mixed:hover", pseudo_state::mixed | pseudo_state::hover}, {":mixed:pressed", pseudo_state::mixed | pseudo_state::pressed}, {":mixed:disabled", pseudo_state::mixed | pseudo_state::disabled}};
+  static auto states = vector<pair<ustring, pseudo_state>> {{"", pseudo_state::standard}, {":hover", pseudo_state::hover}, {":pressed", pseudo_state::pressed}, {":disabled", pseudo_state::disabled}, {":checked", pseudo_state::checked}, {":checked:hover", pseudo_state::checked | pseudo_state::hover}, {":checked:pressed", pseudo_state::checked | pseudo_state::pressed}, {":checked:disabled", pseudo_state::checked | pseudo_state::disabled}, {":mixed", pseudo_state::mixed}, {":mixed:hover", pseudo_state::mixed | pseudo_state::hover}, {":mixed:pressed", pseudo_state::mixed | pseudo_state::pressed}, {":mixed:disabled", pseudo_state::mixed | pseudo_state::disabled}};
   for (auto state : states) {
     selector_map::const_iterator selectors_iterator = reader.selectors().find("toggle-button" + state.first);
     if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
@@ -1017,7 +997,7 @@ void style_sheet::toggle_button_reader(xtd::web::css::css_reader& reader) noexce
 }
 
 void style_sheet::user_control_reader(xtd::web::css::css_reader& reader) noexcept {
-  static vector<pair<ustring, pseudo_state>> states {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
+  static auto states = vector<pair<ustring, pseudo_state>> {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
   for (auto state : states) {
     selector_map::const_iterator selectors_iterator = reader.selectors().find("user-control" + state.first);
     if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
@@ -1028,7 +1008,7 @@ void style_sheet::user_control_reader(xtd::web::css::css_reader& reader) noexcep
 }
 
 void style_sheet::system_colors_reader(xtd::web::css::css_reader& reader) noexcept {
-  selector_map::const_iterator selectors_iterator =  reader.selectors().find("system-colors");
+  auto selectors_iterator = reader.selectors().find("system-colors");
   if (selectors_iterator == reader.selectors().end()) return;
   for (auto property : selectors_iterator->second.properties()) {
     if (property.first == "accent") data_->system_colors.accent(color_from_css(property.second.to_string(), drawing::system_colors::accent()));
@@ -1076,7 +1056,7 @@ void style_sheet::system_colors_reader(xtd::web::css::css_reader& reader) noexce
 }
 
 void style_sheet::theme_reader(xtd::web::css::css_reader& reader) noexcept {
-  selector_map::const_iterator selectors_iterator =  reader.selectors().find("theme");
+  auto selectors_iterator =  reader.selectors().find("theme");
   if (selectors_iterator == reader.selectors().end()) return;
   for (auto property : selectors_iterator->second.properties()) {
     if (property.first == "name") data_->theme.name(string_from_css(property.second.to_string(), ustring()));
@@ -1086,7 +1066,7 @@ void style_sheet::theme_reader(xtd::web::css::css_reader& reader) noexcept {
   }
 }
 
-bool style_sheet::try_parse_color(const xtd::ustring& text, xtd::drawing::color& result) const noexcept {
+bool style_sheet::try_parse_color(const ustring& text, xtd::drawing::color& result) const noexcept {
   if (text.starts_with("#") && try_parse_hex_color(text, result)) return true;
   if (text.starts_with("rgb(") && text.ends_with(")") && try_parse_rgb_color(text, result)) return true;
   if (text.starts_with("rgba(") && text.ends_with(")") && try_parse_rgba_color(text, result)) return true;
@@ -1130,13 +1110,13 @@ bool style_sheet::try_parse_hex_color(const ustring& text, color& result) const 
     return true;
   }
   if (text.starts_with("#") && text.size() == 7_sz) {
-    uint32 rgb;
+    auto rgb = 0u;
     if (xtd::try_parse<uint32>(text.substring(1), rgb, number_styles::hex_number) == false) return false;
     result = color::from_argb(rgb + 0xFF000000u);
     return true;
   }
   if (text.starts_with("#") && text.size() == 9_sz) {
-    uint32 argb;
+    auto argb = 0u;
     if (xtd::try_parse<uint32>(text.substring(1), argb, number_styles::hex_number) == false) return false;
     result = color::from_argb(argb);
     return true;
@@ -1144,10 +1124,10 @@ bool style_sheet::try_parse_hex_color(const ustring& text, color& result) const 
   return false;
 }
 
-bool style_sheet::try_parse_linear_gradient(const xtd::ustring& text, background_image& result) const noexcept {
-  vector<ustring> arguments = split_values_from_text(text.remove(text.size() - 1).replace("linear-gradient(", ""));
-  vector<color> colors;
-  int32 angle = -1;
+bool style_sheet::try_parse_linear_gradient(const ustring& text, background_image& result) const noexcept {
+  auto arguments = split_values_from_text(text.remove(text.size() - 1).replace("linear-gradient(", ""));
+  auto colors = vector<color> {};
+  auto angle = -1;
   for (auto argument : arguments) {
     drawing::color gradient_color;
     if (argument == "to top") {
@@ -1292,7 +1272,7 @@ bool style_sheet::try_parse_system_color(const ustring& text, color& result) con
   return true;
 }
 
-bool style_sheet::try_parse_uri(const xtd::ustring& text, xtd::uri& result) const noexcept {
+bool style_sheet::try_parse_uri(const ustring& text, xtd::uri& result) const noexcept {
   if (!text.starts_with("url", true) || !text.ends_with(")", true)) return false;
   result = uri(text.remove(text.size() - 1, 1).remove(0, 4));
   return true;
@@ -1306,6 +1286,6 @@ void style_sheet::theme_(const xtd::forms::style_sheets::theme& theme) {
   data_->theme = theme;
 }
 
-void style_sheet::theme_name_(const xtd::ustring& name) {
+void style_sheet::theme_name_(const ustring& name) {
   data_->theme.name(name);
 }
