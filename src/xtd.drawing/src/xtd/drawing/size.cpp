@@ -1,5 +1,7 @@
 #include "../../../include/xtd/drawing/point.h"
 #include "../../../include/xtd/drawing/size.h"
+#include <xtd/as>
+#include <xtd/math>
 
 using namespace xtd;
 using namespace xtd::drawing;
@@ -41,7 +43,7 @@ drawing::size drawing::size::add(const drawing::size& size1, const drawing::size
 }
 
 drawing::size drawing::size::ceiling(const size_f& value) noexcept {
-  return {int32(std::ceil(value.width())), int32(std::ceil(value.height()))};
+  return {as<int32>(math::ceiling(value.width())), as<int32>(math::ceiling(value.height()))};
 }
 
 bool drawing::size::equals(const xtd::drawing::size& value) const noexcept {
@@ -49,11 +51,11 @@ bool drawing::size::equals(const xtd::drawing::size& value) const noexcept {
 }
 
 drawing::size drawing::size::round(const size_f& value) noexcept {
-  return {int32(std::round(value.width())), int32(std::round(value.height()))};
+  return {as<int32>(math::round(value.width())), as<int32>(math::round(value.height()))};
 }
 
 drawing::size drawing::size::truncate(const size_f& value)  noexcept {
-  return {int32(std::trunc(value.width())), int32(std::trunc(value.height()))};
+  return {as<int32>(math::truncate(value.width())), as<int32>(math::truncate(value.height()))};
 }
 
 drawing::size drawing::size::subtract(const drawing::size& size1, const drawing::size& size2) noexcept {
