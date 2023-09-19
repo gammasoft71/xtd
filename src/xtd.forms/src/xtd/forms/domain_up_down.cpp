@@ -26,7 +26,7 @@ const xtd::ustring& domain_up_down::item::value() const noexcept {
   return value_;
 }
 
-std::any domain_up_down::item::tag() const noexcept {
+any domain_up_down::item::tag() const noexcept {
   return tag_;
 }
 
@@ -49,7 +49,7 @@ struct domain_up_down::data {
   bool wrap = false;
 };
 
-domain_up_down::domain_up_down() : data_(std::make_shared<data>()) {
+domain_up_down::domain_up_down() : data_(make_shared<data>()) {
   control_appearance(forms::control_appearance::system);
   
   data_->items.item_added += {*this, &domain_up_down::on_items_item_added};
@@ -80,7 +80,7 @@ domain_up_down& domain_up_down::selected_index(size_t selected_index) {
     data_->selected_index = selected_index;
     if (is_handle_created()) native::domain_up_down::selected_index(handle(), data_->selected_index);
     
-    item selected;
+    auto selected = item {};
     if (data_->selected_index != npos) selected = data_->items[data_->selected_index];
     //this->selected_item(selected);
     data_->selected_item = selected;
@@ -100,7 +100,7 @@ domain_up_down& domain_up_down::selected_item(const item& selected_item) {
     if (it == data_->items.end())
       data_->selected_item = selected_index() != npos ? items()[selected_index()] : "";
     else {
-      size_t index = it - data_->items.begin();
+      auto index = it - data_->items.begin();
       selected_index(index);
       data_->selected_item = *it;
       
@@ -122,28 +122,28 @@ domain_up_down& domain_up_down::wrap(bool value) {
 }
 
 domain_up_down domain_up_down::create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  domain_up_down item;
-  item.items(items);
-  item.selected_index(selected_index);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = domain_up_down {};
+  result.items(items);
+  result.selected_index(selected_index);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 domain_up_down domain_up_down::create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  domain_up_down item;
-  item.parent(parent);
-  item.items(items);
-  item.selected_index(selected_index);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = domain_up_down {};
+  result.parent(parent);
+  result.items(items);
+  result.selected_index(selected_index);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 forms::create_params domain_up_down::create_params() const noexcept {
-  forms::create_params create_params = up_down_base::create_params();
+  auto create_params = up_down_base::create_params();
   
   create_params.class_name("domainupdown");
   
@@ -163,7 +163,7 @@ drawing::color domain_up_down::default_fore_color() const noexcept {
 
 void domain_up_down::on_handle_created(const event_args& e) {
   scrollable_control::on_handle_created(e);
-  for (size_t index = 0; index < data_->items.size(); ++index)
+  for (auto index = 0_sz; index < data_->items.size(); ++index)
     native::domain_up_down::insert_item(handle(), index, data_->items[index].value());
   native::domain_up_down::selected_index(handle(), data_->selected_index);
   if (data_->selected_index != npos) data_->selected_item = data_->items[data_->selected_index];
@@ -211,7 +211,7 @@ void domain_up_down::wm_scroll_control(message& message) {
 
 void domain_up_down::on_items_item_added(size_t pos, const item& item) {
   if (is_handle_created()) native::domain_up_down::insert_item(handle(), pos, item.value());
-  domain_up_down::item selected;
+  auto selected = domain_up_down::item {};
   if (data_->selected_index != npos && data_->selected_index < data_->items.size()) selected = data_->items[data_->selected_index];
   this->selected_item(selected);
 }
@@ -225,7 +225,7 @@ void domain_up_down::on_items_item_updated(size_t pos, const item& item) {
   static bool update_disabled = false;
   if (update_disabled) return;
   if (is_handle_created()) native::domain_up_down::update_item(handle(), pos, item.value());
-  domain_up_down::item selected;
+  auto selected = domain_up_down::item {};
   if (data_->selected_index != npos && data_->selected_index < data_->items.size()) selected = data_->items[data_->selected_index];
   this->selected_item(selected);
 }
