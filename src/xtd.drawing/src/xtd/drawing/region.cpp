@@ -74,19 +74,19 @@ void region::exclude(const xtd::drawing::region& region) noexcept {
 }
 
 xtd::drawing::region region::from_hrgn(intptr hrgn) {
-  region result;
+  auto result = region {};
   result.data_->handle = native::region::from_hrgn(hrgn);
   return result;
 }
 
 rectangle_f region::get_bounds() const noexcept {
-  float x = 0.0f, y = 0.0f, width = 0.0f, height = 0.0f;
+  auto x = 0.0f, y = 0.0f, width = 0.0f, height = 0.0f;
   native::region::get_bounds(handle(), x, y, width, height);
   return rectangle_f(x, y, width, height);
 }
 
 rectangle_f region::get_bounds(const xtd::drawing::graphics& g) const noexcept {
-  rectangle_f rect = get_bounds();
+  auto rect = get_bounds();
   rect.x(g.to_page_unit(rect.x()));
   rect.y(g.to_page_unit(rect.y()));
   rect.width(g.to_page_unit(rect.width()));
