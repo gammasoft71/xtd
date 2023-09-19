@@ -266,7 +266,7 @@ rectangle style_sheets::control::get_content_rectangle(const rectangle& bounds) 
 }
 
 string_format style_sheets::control::control::make_string_format() const noexcept {
-  string_format format;
+  auto format = string_format {};
   format.line_alignment(xtd::drawing::string_alignment::center);
   format.alignment(xtd::drawing::string_alignment::center);
   
