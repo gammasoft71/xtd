@@ -61,7 +61,7 @@ void button_renderer::draw_button(const style_sheets::style_sheet& style_sheet, 
   auto pseudo_state_base = pseudo_state::standard;
   if (default_button) pseudo_state_base += pseudo_state::default_state;
   
-  xtd::forms::style_sheets::button current_style_sheet;
+  auto current_style_sheet = xtd::forms::style_sheets::button {};
   switch (button_state) {
     case push_button_state::normal: current_style_sheet = style_sheet.button(pseudo_state_base); break;
     case push_button_state::hot: current_style_sheet = style_sheet.button(pseudo_state_base | pseudo_state::hover); break;
@@ -86,7 +86,7 @@ void button_renderer::draw_flat_button(const style_sheets::style_sheet& style_sh
   auto pseudo_state_base = pseudo_state::standard;
   if (default_button) pseudo_state_base += pseudo_state::default_state;
   
-  xtd::forms::style_sheets::button current_style_sheet;
+  auto current_style_sheet = xtd::forms::style_sheets::button {};
   switch (button_state) {
     case push_button_state::normal: current_style_sheet = style_sheet.flat_button(pseudo_state_base); break;
     case push_button_state::hot: current_style_sheet = style_sheet.flat_button(pseudo_state_base | pseudo_state::hover); break;
@@ -118,7 +118,7 @@ void button_renderer::draw_popup_button(const style_sheets::style_sheet& style_s
   auto pseudo_state_base = pseudo_state::standard;
   if (default_button) pseudo_state_base += pseudo_state::default_state;
   
-  xtd::forms::style_sheets::button current_style_sheet;
+  auto current_style_sheet = xtd::forms::style_sheets::button {};
   switch (button_state) {
     case push_button_state::normal: current_style_sheet = style_sheet.popup_button(pseudo_state_base); break;
     case push_button_state::hot: current_style_sheet = style_sheet.popup_button(pseudo_state_base | pseudo_state::hover); break;
@@ -164,8 +164,8 @@ namespace {
   }
   
   void draw_string(graphics g, const ustring& text, const font& font, const color& text_color, const rectangle_f& button_rect, text_format_flags flags) {
-    vector<size_t> hotkey_prefix_locations;
-    ustring text_without_hotkey_prefix = get_hotkey_prefix_locations(text, hotkey_prefix_locations);
+    auto hotkey_prefix_locations = vector<size_t> {};
+    auto text_without_hotkey_prefix = get_hotkey_prefix_locations(text, hotkey_prefix_locations);
     if ((flags & text_format_flags::prefix_only) == text_format_flags::prefix_only && hotkey_prefix_locations.size()) g.draw_string(text_without_hotkey_prefix.substring(hotkey_prefix_locations[0], 1), xtd::drawing::font(font, font_style::underline), solid_brush(text_color), button_rect, control_paint::string_format(flags));
     else g.draw_string(text, font, solid_brush(text_color), button_rect, control_paint::string_format(flags));
   }
@@ -195,7 +195,7 @@ void button_renderer::draw_button(const ustring& theme, graphics g, const rectan
 
 void button_renderer::draw_button_gnome(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const optional<color>& back_color, const optional<color>& fore_color) {
   if (application::style_sheet().system_colors().window().get_lightness() < 0.5) draw_button_gnome_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
-  else  draw_button_gnome_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  else draw_button_gnome_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
 }
 
 void button_renderer::draw_button_gnome_dark(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const optional<color>& back_color, const optional<color>& fore_color) {
@@ -254,7 +254,7 @@ void button_renderer::draw_button_gnome_light(graphics g, const rectangle& bound
 
 void button_renderer::draw_button_kde(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const optional<color>& back_color, const optional<color>& fore_color) {
   if (application::style_sheet().system_colors().window().get_lightness() < 0.5) draw_button_kde_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
-  else  draw_button_kde_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  else draw_button_kde_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
 }
 
 void button_renderer::draw_button_kde_dark(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const optional<color>& back_color, const optional<color>& fore_color) {
@@ -263,7 +263,7 @@ void button_renderer::draw_button_kde_dark(graphics g, const rectangle& bounds, 
   auto border_color = application::style_sheet().system_colors().control_dark();
   auto button_color = background_color;
   auto text_color = foreground_color;
-  int32 offset = 0;
+  auto offset = 0;
   
   if (state == xtd::forms::visual_styles::push_button_state::hot)
     border_color = application::style_sheet().system_colors().accent();
@@ -327,7 +327,7 @@ void button_renderer::draw_button_kde_light(graphics g, const rectangle& bounds,
 
 void button_renderer::draw_button_macos(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const optional<color>& back_color, const optional<color>& fore_color) {
   if (application::style_sheet().system_colors().window().get_lightness() < 0.5) draw_button_macos_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
-  else  draw_button_macos_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  else draw_button_macos_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
 }
 
 void button_renderer::draw_button_macos_dark(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const optional<color>& back_color, const optional<color>& fore_color) {
@@ -393,7 +393,7 @@ void button_renderer::draw_button_macos_light(graphics g, const rectangle& bound
 
 void button_renderer::draw_button_symbolic(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const optional<color>& back_color, const optional<color>& fore_color) {
   if (application::style_sheet().system_colors().window().get_lightness() < 0.5) draw_button_symbolic_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
-  else  draw_button_symbolic_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  else draw_button_symbolic_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
 }
 
 void button_renderer::draw_button_symbolic_dark(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const optional<color>& back_color, const optional<color>& fore_color) {
@@ -452,7 +452,7 @@ void button_renderer::draw_button_symbolic_light(graphics g, const rectangle& bo
 
 void button_renderer::draw_button_windows(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const optional<color>& back_color, const optional<color>& fore_color) {
   if (application::style_sheet().system_colors().window().get_lightness() < 0.5) draw_button_windows_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
-  else  draw_button_windows_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  else draw_button_windows_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
 }
 
 void button_renderer::draw_button_windows_dark(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const optional<color>& back_color, const optional<color>& fore_color) {
@@ -520,7 +520,7 @@ void button_renderer::draw_button_windows_light(graphics g, const rectangle& bou
 
 void button_renderer::draw_button_xtd(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const optional<color>& back_color, const optional<color>& fore_color) {
   if (application::style_sheet().system_colors().window().get_lightness() < 0.5) draw_button_xtd_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
-  else  draw_button_xtd_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
+  else draw_button_xtd_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
 }
 
 void button_renderer::draw_button_xtd_dark(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const optional<color>& back_color, const optional<color>& fore_color) {
@@ -533,7 +533,7 @@ void button_renderer::draw_button_xtd_light(graphics g, const rectangle& bounds,
 
 void button_renderer::draw_flat_button(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const optional<color>& back_color, const optional<color>& fore_color, const flat_button_appearance& flat_appearance) {
   if (application::style_sheet().system_colors().window().get_lightness() < 0.5) draw_flat_button_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color, flat_appearance);
-  else  draw_flat_button_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color, flat_appearance);
+  else draw_flat_button_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color, flat_appearance);
 }
 
 void button_renderer::draw_flat_button_dark(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const optional<color>& back_color, const optional<color>& fore_color, const flat_button_appearance& flat_appearance) {
@@ -573,7 +573,7 @@ void button_renderer::draw_flat_button_light(graphics g, const rectangle& bounds
 
 void button_renderer::draw_popup_button(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const optional<color>& back_color, const optional<color>& fore_color, const flat_button_appearance& flat_appearance) {
   if (application::style_sheet().system_colors().window().get_lightness() < 0.5) draw_popup_button_dark(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color, flat_appearance);
-  else  draw_popup_button_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color, flat_appearance);
+  else draw_popup_button_light(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color, flat_appearance);
 }
 
 void button_renderer::draw_popup_button_dark(graphics g, const rectangle& bounds, const ustring& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const optional<color>& back_color, const optional<color>& fore_color, const flat_button_appearance& flat_appearance) {
