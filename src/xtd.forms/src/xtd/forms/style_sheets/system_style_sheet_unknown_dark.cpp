@@ -1,6 +1,7 @@
 #include "../../../../include/xtd/forms/style_sheets/style_sheet.h"
 #include <xtd/drawing/system_colors.h>
 
+/*
 using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
@@ -58,3 +59,4 @@ style_sheet style_sheet::system_style_sheet_unknown_dark() noexcept {
   ss.system_colors_(get_system_colors());
   return ss;
 }
+*/
