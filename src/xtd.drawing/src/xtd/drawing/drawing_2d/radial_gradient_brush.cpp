@@ -48,8 +48,8 @@ radial_gradient_brush::radial_gradient_brush(const xtd::drawing::point_f& center
   data_->center_point = center;
   data_->focal_point = center;
   data_->radius = radius;
-  float pos = 0;
-  float increment = 1.0f / (radial_colors.size() - 1);
+  auto pos = .0f;
+  auto increment = 1.0f / (radial_colors.size() - 1);
   for (auto color : radial_colors) {
     data_->radial_colors.push_back({color, pos});
     pos += increment;
@@ -125,10 +125,8 @@ bool radial_gradient_brush::equals(const radial_gradient_brush& value) const noe
 }
 
 void radial_gradient_brush::recreate_handle() {
-  vector<tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte, float>> colors;
-  
+  auto colors = vector<tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte, float>> {};
   for_each(data_->radial_colors.begin(), data_->radial_colors.end(), [&](auto color) {colors.emplace_back(color.first.r(), color.first.g(), color.first.b(), color.first.a(), color.second);});
-  
   native::brush::radial_gradient(handle(), as<int32>(data_->center_point.x()), as<int32>(data_->center_point.y()), as<int32>(data_->focal_point.x()), as<int32>(data_->focal_point.y()), colors, data_->radius);
 }
 
