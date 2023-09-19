@@ -46,26 +46,26 @@ void color_picker::color(const drawing::color& value) {
 }
 
 color_picker color_picker::create(const xtd::drawing::color& color, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  color_picker item;
-  item.color(color);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = color_picker {};
+  result.color(color);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 color_picker color_picker::create(const control& parent, const xtd::drawing::color& color, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  color_picker item;
-  item.parent(parent);
-  item.color(color);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = color_picker {};
+  result.parent(parent);
+  result.color(color);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 forms::create_params color_picker::create_params() const noexcept {
-  forms::create_params create_params = control::create_params();
+  auto create_params = control::create_params();
   create_params.class_name("colorpicker");
   if (data_->alpha_color) create_params.style(create_params.style() | CC_ALPHACOLOR);
   return create_params;
