@@ -222,7 +222,7 @@ void domain_up_down::on_items_item_removed(size_t pos, const item& item) {
 }
 
 void domain_up_down::on_items_item_updated(size_t pos, const item& item) {
-  static bool update_disabled = false;
+  static auto update_disabled = false;
   if (update_disabled) return;
   if (is_handle_created()) native::domain_up_down::update_item(handle(), pos, item.value());
   auto selected = domain_up_down::item {};
