@@ -58,9 +58,9 @@ const color_dialog::colors& color_dialog::custom_colors() const noexcept {
 }
 
 color_dialog& color_dialog::custom_colors(const colors& custom_colors)  {
-  for (size_t index = 0; index < custom_colors.size(); index++)
+  for (auto index = 0_sz; index < custom_colors.size(); ++index)
     data_->custom_colors[index] = custom_colors[index];
-  for (size_t index = custom_colors.size(); index < data_->custom_colors.size(); index++)
+  for (auto index = custom_colors.size(); index < data_->custom_colors.size(); ++index)
     data_->custom_colors[index] = xtd::drawing::color::white;
   return *this;
 }
