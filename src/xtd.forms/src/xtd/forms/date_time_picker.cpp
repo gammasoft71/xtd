@@ -80,26 +80,26 @@ date_time_picker& date_time_picker::value(date_time value) {
 }
 
 date_time_picker date_time_picker::create(const xtd::date_time& value, const xtd::date_time& min_date, const xtd::date_time& max_date, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  date_time_picker item;
-  item.min_date(min_date);
-  item.max_date(max_date);
-  item.value(value);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = date_time_picker {};
+  result.min_date(min_date);
+  result.max_date(max_date);
+  result.value(value);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 date_time_picker date_time_picker::create(const control& parent, const xtd::date_time& value, const xtd::date_time& min_date, const xtd::date_time& max_date, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  date_time_picker item;
-  item.parent(parent);
-  item.min_date(min_date);
-  item.max_date(max_date);
-  item.value(value);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = date_time_picker {};
+  result.parent(parent);
+  result.min_date(min_date);
+  result.max_date(max_date);
+  result.value(value);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 drawing::color date_time_picker::default_back_color() const noexcept {
@@ -111,7 +111,7 @@ drawing::color date_time_picker::default_fore_color() const noexcept {
 }
 
 forms::create_params date_time_picker::create_params() const noexcept {
-  forms::create_params create_params = control::create_params();
+  auto create_params = control::create_params();
   create_params.class_name("datetimepicker");
   switch (data_->format) {
     case date_time_picker_format::long_format: create_params.style(create_params.style() | DTS_LONGDATEFORMAT); break;
@@ -148,7 +148,7 @@ void date_time_picker::wnd_proc(message& message) {
 }
 
 void date_time_picker::wm_nottify_control(message& message) {
-  NMHDR* nmhdr = reinterpret_cast<NMHDR*>(message.lparam());
+  auto nmhdr = reinterpret_cast<NMHDR*>(message.lparam());
   switch (nmhdr->code) {
     case DTN_CLOSEUP: wm_nottify_control_closeup(message); break;
     case DTN_DROPDOWN: wm_nottify_control_dropdown(message); break;
