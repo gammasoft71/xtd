@@ -79,13 +79,13 @@ void graphics_path::add_bezier(float x1, float y1, float x2, float y2, float x3,
 }
 
 void graphics_path::add_beziers(const std::vector<xtd::drawing::point>& points) {
-  vector<point_f> points_f;
+  auto points_f = vector<point_f> {};
   for_each(points.begin(), points.end(), [&](auto point) {points_f.push_back(point_f(point));});
   add_beziers(points_f);
 }
 
 void graphics_path::add_beziers(const std::vector<xtd::drawing::point_f>& points) {
-  vector<pair<float, float>> pair_points;
+  auto pair_points = vector<pair<float, float>> {};
   for_each(points.begin(), points.end(), [&](auto point) {pair_points.emplace_back(point.x(), point.y());});
   native::graphics_path::add_beziers(handle(), pair_points);
 }
@@ -99,13 +99,13 @@ void graphics_path::add_closed_curve(const std::vector<xtd::drawing::point_f>& p
 }
 
 void graphics_path::add_closed_curve(const std::vector<xtd::drawing::point>& points, float tension) {
-  vector<point_f> points_f;
+  auto points_f = vector<point_f> {};
   for_each(points.begin(), points.end(), [&](auto point) {points_f.push_back(point_f(point));});
   add_closed_curve(points_f, tension);
 }
 
 void graphics_path::add_closed_curve(const std::vector<xtd::drawing::point_f>& points, float tension) {
-  vector<pair<float, float>> pair_points;
+  auto pair_points = vector<pair<float, float>> {};
   for_each(points.begin(), points.end(), [&](auto point) {pair_points.emplace_back(point.x(), point.y());});
   native::graphics_path::add_closed_curve(handle(), pair_points, tension);
 }
@@ -127,13 +127,13 @@ void graphics_path::add_curve(const std::vector<xtd::drawing::point_f>& points, 
 }
 
 void graphics_path::add_curve(const std::vector<xtd::drawing::point>& points, size_t offset, size_t number_of_segments, float tension) {
-  vector<point_f> points_f;
+  auto points_f = vector<point_f> {};
   for_each(points.begin(), points.end(), [&](auto point) {points_f.push_back(point_f(point));});
   add_curve(points_f, offset, number_of_segments, tension);
 }
 
 void graphics_path::add_curve(const std::vector<xtd::drawing::point_f>& points, size_t offset, size_t number_of_segments, float tension) {
-  vector<pair<float, float>> pair_points;
+  auto pair_points = vector<pair<float, float>> {};
   for_each(points.begin(), points.end(), [&](auto point) {pair_points.emplace_back(point.x(), point.y());});
   native::graphics_path::add_curve(handle(), pair_points, offset, number_of_segments, tension);
 }
@@ -260,7 +260,7 @@ void graphics_path::add_string(const xtd::ustring& s, const xtd::drawing::font_f
 }
 
 void graphics_path::add_string(const xtd::ustring& s, const xtd::drawing::font_family& family, xtd::drawing::font_style style, float em_size, const xtd::drawing::point_f& origin, const xtd::drawing::string_format& format) {
-  font f(family, em_size, style);
+  auto f = font {family, em_size, style};
   native::graphics_path::add_string(handle(), s, f.handle(), origin.x(), origin.y(), static_cast<int32>(format.alignment()), static_cast<int32>(format.line_alignment()), static_cast<int32>(format.hotkey_prefix()), static_cast<int32>(format.trimming()));
 }
 
@@ -269,7 +269,7 @@ void graphics_path::add_string(const xtd::ustring& s, const xtd::drawing::font_f
 }
 
 void graphics_path::add_string(const xtd::ustring& s, const xtd::drawing::font_family& family, xtd::drawing::font_style style, float em_size, const xtd::drawing::rectangle_f& layout_rect, const xtd::drawing::string_format& format) {
-  font f(family, em_size, style);
+  auto f = font {family, em_size, style};
   native::graphics_path::add_string(handle(), s, f.handle(), layout_rect.x(), layout_rect.y(), layout_rect.width(), layout_rect.height(), static_cast<int32>(format.alignment()), static_cast<int32>(format.line_alignment()), static_cast<int32>(format.hotkey_prefix()), static_cast<int32>(format.trimming()));
 }
 
@@ -290,13 +290,13 @@ void graphics_path::flatten() {
 }
 
 xtd::drawing::rectangle_f graphics_path::get_bounds() const {
-  float x, y, width, height;
+  auto x = .0f, y = .0f, width = .0f, height = .0f;
   native::graphics_path::get_bounds(handle(), x, y, width, height);
   return {x, y, width, height};
 }
 
 xtd::drawing::point_f graphics_path::get_lat_point() const {
-  float x = 0.0f, y = 0.0f;
+  auto x = .0f, y = .0f;
   native::graphics_path::get_last_point(handle(), x, y);
   return point_f(x, y);
 }
