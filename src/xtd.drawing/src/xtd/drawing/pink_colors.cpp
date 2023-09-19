@@ -29,11 +29,11 @@ color pink_colors::pink() noexcept {
 }
 
 const vector<color>& pink_colors::get_colors() noexcept {
-  static vector colors {pink_colors::medium_violet_red(), pink_colors::deep_pink(), pink_colors::pale_violet_red(), pink_colors::hot_pink(), pink_colors::light_pink(), pink_colors::pink()};
+  static auto colors = vector {pink_colors::medium_violet_red(), pink_colors::deep_pink(), pink_colors::pale_violet_red(), pink_colors::hot_pink(), pink_colors::light_pink(), pink_colors::pink()};
   return colors;
 }
 
 const vector<ustring>& pink_colors::get_color_names() noexcept {
-  static vector color_names {pink_colors::medium_violet_red().name(), pink_colors::deep_pink().name(), pink_colors::pale_violet_red().name(), pink_colors::hot_pink().name(), pink_colors::light_pink().name(), pink_colors::pink().name()};
+  static auto color_names = vector {pink_colors::medium_violet_red().name(), pink_colors::deep_pink().name(), pink_colors::pale_violet_red().name(), pink_colors::hot_pink().name(), pink_colors::light_pink().name(), pink_colors::pink().name()};
   return color_names;
 }
