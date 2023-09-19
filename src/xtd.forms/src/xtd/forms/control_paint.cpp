@@ -129,7 +129,7 @@ namespace {
   static void draw_rounded_border(drawing::graphics& graphics, border_sides sides, const color& dark_color, const color& light_color, const rectangle& rect, bool light) {
     //graphics.draw_rounded_rectangle(pen(light ? light_color : dark_color, 1), rect, 4);
     
-    int32 radius = 6;
+    auto radius = 6;
     if (math::max(rect.width(), rect.height()) <= 12) radius = 5;
     if (math::max(rect.width(), rect.height()) <= 10) radius = 4;
     if (math::max(rect.width(), rect.height()) <= 8) radius = 3;
@@ -175,7 +175,7 @@ namespace {
   }
   
   static void draw_dotted_border(drawing::graphics& graphics, border_sides sides, const color& dark_color, const color& light_color, const rectangle& rect, bool light) {
-    pen dot_pen(light ? light_color : dark_color, 1);
+    auto dot_pen = pen {light ? light_color : dark_color, 1};
     dot_pen.dash_style(dash_style::dot);
     if ((sides & border_sides::top) == border_sides::top) graphics.draw_line(dot_pen, point {rect.left(), rect.top()}, point {rect.right(), rect.top()});
     if ((sides & border_sides::left) == border_sides::left) graphics.draw_line(dot_pen, point {rect.left(), rect.top()}, point {rect.left(), rect.bottom()});
@@ -184,7 +184,7 @@ namespace {
   }
   
   static void draw_dashed_border(drawing::graphics& graphics, border_sides sides, const color& dark_color, const color& light_color, const rectangle& rect, bool light) {
-    pen dash_pen(light ? light_color : dark_color, 1);
+    auto dash_pen = pen {light ? light_color : dark_color, 1};
     dash_pen.dash_style(dash_style::dash);
     if ((sides & border_sides::top) == border_sides::top) graphics.draw_line(dash_pen, point {rect.left(), rect.top()}, point {rect.right(), rect.top()});
     if ((sides & border_sides::left) == border_sides::left) graphics.draw_line(dash_pen, point {rect.left(), rect.top()}, point {rect.left(), rect.bottom()});
@@ -193,7 +193,7 @@ namespace {
   }
   
   static void draw_dot_dash_border(drawing::graphics& graphics, border_sides sides, const color& dark_color, const color& light_color, const rectangle& rect, bool light) {
-    pen dash_pen(light ? light_color : dark_color, 1);
+    auto dash_pen = pen {light ? light_color : dark_color, 1};
     dash_pen.dash_style(dash_style::dash_dot);
     if ((sides & border_sides::top) == border_sides::top) graphics.draw_line(dash_pen, point {rect.left(), rect.top()}, point {rect.right(), rect.top()});
     if ((sides & border_sides::left) == border_sides::left) graphics.draw_line(dash_pen, point {rect.left(), rect.top()}, point {rect.left(), rect.bottom()});
@@ -202,7 +202,7 @@ namespace {
   }
   
   static void draw_dot_dot_dash_border(drawing::graphics& graphics, border_sides sides, const color& dark_color, const color& light_color, const rectangle& rect, bool light) {
-    pen dash_pen(light ? light_color : dark_color, 1);
+    auto dash_pen = pen {light ? light_color : dark_color, 1};
     dash_pen.dash_style(dash_style::dash_dot_dot);
     if ((sides & border_sides::top) == border_sides::top) graphics.draw_line(dash_pen, point {rect.left(), rect.top()}, point {rect.right(), rect.top()});
     if ((sides & border_sides::left) == border_sides::left) graphics.draw_line(dash_pen, point {rect.left(), rect.top()}, point {rect.left(), rect.bottom()});
@@ -300,8 +300,8 @@ void control_paint::draw_image(xtd::drawing::graphics& graphics, const xtd::draw
   if (image_layout == xtd::forms::image_layout::none)
     graphics.draw_image(image, x, y);
   else if (image_layout == xtd::forms::image_layout::tile) {
-    for (int32 offset_y = 0; offset_y < height; offset_y += image.size().height())
-      for (int32 offset_x = 0; offset_x < width; offset_x += image.size().width())
+    for (auto offset_y = 0; offset_y < height; offset_y += image.size().height())
+      for (auto offset_x = 0; offset_x < width; offset_x += image.size().width())
         graphics.draw_image(image, x + offset_x, y + offset_y);
   } else if (image_layout == xtd::forms::image_layout::center)
     graphics.draw_image(image, x + (width - image.width()) / 2, y + (height - image.height()) / 2);
@@ -345,7 +345,7 @@ xtd::drawing::color control_paint::light_light(const xtd::drawing::color& base_c
 }
 
 xtd::drawing::string_format control_paint::string_format(xtd::forms::text_format_flags flags) {
-  xtd::drawing::string_format string_format;
+  auto string_format = drawing::string_format {};
   string_format.line_alignment(xtd::drawing::string_alignment::center);
   string_format.alignment(xtd::drawing::string_alignment::center);
   
