@@ -121,30 +121,30 @@ check_box& check_box::three_state(bool three_state) {
 }
 
 check_box check_box::create(const xtd::ustring& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  check_box item;
-  item.text(text);
-  item.three_state(three_state);
-  item.check_state(check_state);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = check_box {};
+  result.text(text);
+  result.three_state(three_state);
+  result.check_state(check_state);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 check_box check_box::create(const control& parent, const xtd::ustring& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  check_box item;
-  item.parent(parent);
-  item.text(text);
-  item.three_state(three_state);
-  item.check_state(check_state);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = check_box {};
+  result.parent(parent);
+  result.text(text);
+  result.three_state(three_state);
+  result.check_state(check_state);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 forms::create_params check_box::create_params() const noexcept {
-  forms::create_params create_params = button_base::create_params();
+  auto create_params = button_base::create_params();
   
   create_params.class_name("checkbox");
   if (data_->three_state) create_params.style(create_params.style() | (data_->auto_check ? BS_AUTO3STATE : BS_3STATE));
