@@ -22,7 +22,7 @@ container_control::container_control() {
 }
 
 drawing::size container_control::measure_control() const noexcept {
-  drawing::rectangle bounds;
+  auto bounds = drawing::rectangle {};
   for (auto item : controls()) {
     if (item.get().visible())
       bounds = drawing::rectangle::make_union(bounds, item.get().bounds());
