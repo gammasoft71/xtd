@@ -97,24 +97,24 @@ void choice::begin_update() {
 }
 
 choice choice::create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  choice item;
-  item.items(items);
-  item.selected_index(selected_index);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = choice {};
+  result.items(items);
+  result.selected_index(selected_index);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 choice choice::create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  choice item;
-  item.parent(parent);
-  item.items(items);
-  item.selected_index(selected_index);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = choice {};
+  result.parent(parent);
+  result.items(items);
+  result.selected_index(selected_index);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 void choice::end_update() {
@@ -122,7 +122,7 @@ void choice::end_update() {
 }
 
 forms::create_params choice::create_params() const noexcept {
-  forms::create_params create_params = list_control::create_params();
+  auto create_params = list_control::create_params();
   
   create_params.class_name("choice");
   
@@ -135,7 +135,7 @@ forms::create_params choice::create_params() const noexcept {
 void choice::on_handle_created(const event_args& e) {
   list_control::on_handle_created(e);
   data_->items.sorted(data_->sorted);
-  for (size_t index = 0; index < data_->items.size(); ++index)
+  for (auto index = 0_sz; index < data_->items.size(); ++index)
     native::choice::insert_item(handle(), index, data_->items[index].value());
   native::choice::selected_index(handle(), selected_index());
   if (selected_index() != npos) data_->selected_item = data_->items[selected_index()];
@@ -147,14 +147,14 @@ void choice::on_selected_value_changed(const event_args& e) {
 }
 
 void choice::set_bounds_core(int32 x, int32 y, int32 width, int32 height, bounds_specified specified) {
-  drawing::size current_size = size();
+  auto current_size = size();
   list_control::set_bounds_core(x, y, width, height, specified);
   if (size() != current_size)
     post_recreate_handle();
 }
 
 void choice::set_client_size_core(int32 width, int32 height) {
-  drawing::size current_size = size();
+  auto current_size = size();
   list_control::set_client_size_core(width, height);
   if (size() != current_size)
     post_recreate_handle();
@@ -172,7 +172,7 @@ void choice::wnd_proc(message& message) {
 
 void choice::on_items_item_added(size_t pos, const item& item) {
   if (is_handle_created()) native::choice::insert_item(handle(), pos, item.value());
-  size_t selected = npos;
+  auto selected = npos;
   if (this->selected_index() != npos && this->selected_index() < data_->items.size()) selected = this->selected_index();
   this->selected_index(selected);
 }
@@ -184,7 +184,7 @@ void choice::on_items_item_removed(size_t pos, const item& item)  {
 
 void choice::on_items_item_updated(size_t pos, const item& item) {
   if (is_handle_created()) native::choice::update_item(handle(), pos, item.value());
-  size_t selected = npos;
+  auto selected = npos;
   if (this->selected_index() != npos && this->selected_index() < data_->items.size()) selected = this->selected_index();
   this->selected_index(selected);
 }
