@@ -28,13 +28,13 @@ xtd::drawing::string_format& string_format::format_flags(xtd::drawing::string_fo
 }
 
 xtd::drawing::string_format string_format::generic_default() noexcept {
-  xtd::drawing::string_format format;
+  auto format = xtd::drawing::string_format {};
   format.trimming_ = xtd::drawing::string_trimming::character;
   return format;
 }
 
 xtd::drawing::string_format string_format::generic_typographic() noexcept {
-  return xtd::drawing::string_format(xtd::drawing::string_format_flags::no_clip | xtd::drawing::string_format_flags::fit_black_box | xtd::drawing::string_format_flags::line_limit);
+  return xtd::drawing::string_format {xtd::drawing::string_format_flags::no_clip | xtd::drawing::string_format_flags::fit_black_box | xtd::drawing::string_format_flags::line_limit};
 }
 
 xtd::drawing::text::hotkey_prefix string_format::hotkey_prefix() const noexcept {
