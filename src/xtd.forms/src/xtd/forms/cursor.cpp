@@ -10,7 +10,7 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 namespace {
-  std::optional<cursor> current_cursor;
+  auto current_cursor = std::optional<cursor> {};
 }
 
 struct cursor::data {
