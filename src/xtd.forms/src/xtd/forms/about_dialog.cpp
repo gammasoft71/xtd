@@ -431,8 +431,8 @@ about_dialog& about_dialog::website_label(const xtd::ustring& website_label) {
 }
 
 about_dialog about_dialog::from_executing_assembly_informations() {
-  about_dialog result;
-  assembly assembly = xtd::reflection::assembly::get_executing_assembly();
+  auto result = about_dialog {};
+  auto assembly = xtd::reflection::assembly::get_executing_assembly();
   result.copyright(assembly.copyright());
   result.description(assembly.description());
   result.long_version(assembly.version());
