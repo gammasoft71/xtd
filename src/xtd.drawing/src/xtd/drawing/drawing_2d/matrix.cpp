@@ -121,7 +121,7 @@ void matrix::shear(float scale_x, float scale_y, xtd::drawing::drawing_2d::matri
 
 void matrix::transform_points(std::vector<xtd::drawing::point>& points) {
   for (auto& point : points) {
-    int32 tx = point.x(), ty = point.y();
+    auto tx = point.x(), ty = point.y();
     native::matrix::transform_point(handle(), tx, ty);
     point.x(tx);
     point.y(ty);
@@ -130,7 +130,7 @@ void matrix::transform_points(std::vector<xtd::drawing::point>& points) {
 
 void matrix::transform_points(std::vector<xtd::drawing::point_f>& points) {
   for (auto& point : points) {
-    float tx = point.x(), ty = point.y();
+    auto tx = point.x(), ty = point.y();
     native::matrix::transform_point(handle(), tx, ty);
     point.x(tx);
     point.y(ty);
@@ -138,7 +138,7 @@ void matrix::transform_points(std::vector<xtd::drawing::point_f>& points) {
 }
 
 void matrix::transform_vectors(std::vector<xtd::drawing::point>& points) {
-  vector<pair<int32, int32>> tr_points;
+  auto tr_points = vector<pair<int32, int32>> {};
   for_each(points.begin(), points.end(), [&](auto point) {tr_points.emplace_back(point.x(), point.y());});
   native::matrix::transform_vectors(handle(), tr_points);
   points.clear();
@@ -146,7 +146,7 @@ void matrix::transform_vectors(std::vector<xtd::drawing::point>& points) {
 }
 
 void matrix::transform_vectors(std::vector<xtd::drawing::point_f>& points) {
-  vector<pair<float, float>> tr_points;
+  auto tr_points = vector<pair<float, float>> {};
   for_each(points.begin(), points.end(), [&](auto point) {tr_points.emplace_back(point.x(), point.y());});
   native::matrix::transform_vectors(handle(), tr_points);
   points.clear();
@@ -162,7 +162,7 @@ void matrix::translate(float offset_x, float offset_y, xtd::drawing::drawing_2d:
 }
 
 void matrix::vector_transform_points(std::vector<xtd::drawing::point>& points) {
-  vector<pair<int32, int32>> tr_points;
+  auto tr_points = vector<pair<int32, int32>> {};
   for_each(points.begin(), points.end(), [&](auto point) {tr_points.emplace_back(point.x(), point.y());});
   native::matrix::vector_transform_points(handle(), tr_points);
   points.clear();
@@ -180,5 +180,5 @@ void matrix::init_from_rect_3points(const rectangle_f& rect, const point_f pt1, 
   auto m22 = (pt3.y() - pt1.y()) / rect.height();
   
   data_->handle = native::matrix::create(m11, m12, m21, m22, pt1.x(), pt1.y());
-  native::matrix::translate(handle(), -rect.x(), -rect.y(), static_cast<int32>(matrix_order::prepend));
+  native::matrix::translate(handle(), -rect.x(), -rect.y(), as<int32>(matrix_order::prepend));
 }
