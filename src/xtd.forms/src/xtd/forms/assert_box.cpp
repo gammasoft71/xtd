@@ -37,7 +37,7 @@ dialog_result assert_box::show(const ustring& message, const xtd::diagnostics::s
 }
 
 dialog_result assert_box::show_assert_box(const iwin32_window* owner, const ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-  assert_dialog dialog;
+  auto dialog = assert_dialog {};
   dialog.message(message);
   dialog.stack_frame(stack_frame);
   return owner ? dialog.show_sheet_dialog(*owner) : dialog.show_dialog();
