@@ -17,36 +17,36 @@ namespace {
 
 const bitmap& resources::cursor_arrow() {
   if (!file::exists(path::combine(environment::get_folder_path(environment::special_folder::xtd_resources), "cursors", ustring::format("arrow{}.png", get_os_postfix())))) return bitmap::empty;
-  static bitmap bitmap(path::combine(environment::get_folder_path(environment::special_folder::xtd_resources), "cursors", ustring::format("arrow{}.png", get_os_postfix())));
+  static auto bitmap = drawing::bitmap {path::combine(environment::get_folder_path(environment::special_folder::xtd_resources), "cursors", ustring::format("arrow{}.png", get_os_postfix()))};
   return bitmap;
 }
 
 const bitmap& resources::cursor_no_move_2d() {
   if (!file::exists(path::combine(environment::get_folder_path(environment::special_folder::xtd_resources), "cursors", ustring::format("cursor_no_move_2d{}.png", get_os_postfix())))) return bitmap::empty;
-  static bitmap bitmap(path::combine(environment::get_folder_path(environment::special_folder::xtd_resources), "cursors", ustring::format("cursor_no_move_2d{}.png", get_os_postfix())));
+  static auto bitmap = drawing::bitmap {path::combine(environment::get_folder_path(environment::special_folder::xtd_resources), "cursors", ustring::format("cursor_no_move_2d{}.png", get_os_postfix()))};
   return bitmap;
 }
 
 const bitmap& resources::gammasoft() {
   if (!file::exists(path::combine(environment::get_folder_path(environment::special_folder::xtd_resources), "pictures", "gammasoft.png"))) return bitmap::empty;
-  static bitmap bitmap(path::combine(environment::get_folder_path(environment::special_folder::xtd_resources), "pictures", "gammasoft.png"));
+  static auto bitmap = drawing::bitmap {path::combine(environment::get_folder_path(environment::special_folder::xtd_resources), "pictures", "gammasoft.png")};
   return bitmap;
 }
 
 const bitmap& resources::xtd() {
   if (!file::exists(path::combine(environment::get_folder_path(environment::special_folder::xtd_resources), "pictures", "xtd.png"))) return bitmap::empty;
-  static bitmap bitmap(path::combine(environment::get_folder_path(environment::special_folder::xtd_resources), "pictures", "xtd.png"));
+  static auto bitmap = drawing::bitmap {path::combine(environment::get_folder_path(environment::special_folder::xtd_resources), "pictures", "xtd.png")};
   return bitmap;
 }
 
 const bitmap& resources::xtd_console() {
   if (!file::exists(path::combine(environment::get_folder_path(environment::special_folder::xtd_resources), "pictures", "xtd_console.png"))) return bitmap::empty;
-  static bitmap bitmap(path::combine(environment::get_folder_path(environment::special_folder::xtd_resources), "pictures", "xtd_console.png"));
+  static auto bitmap = drawing::bitmap {path::combine(environment::get_folder_path(environment::special_folder::xtd_resources), "pictures", "xtd_console.png")};
   return bitmap;
 }
 
 const bitmap& resources::xtd_forms() {
   if (!file::exists(path::combine(environment::get_folder_path(environment::special_folder::xtd_resources), "pictures", "xtd_forms.png"))) return bitmap::empty;
-  static bitmap bitmap(path::combine(environment::get_folder_path(environment::special_folder::xtd_resources), "pictures", "xtd_forms.png"));
+  static auto bitmap = drawing::bitmap {path::combine(environment::get_folder_path(environment::special_folder::xtd_resources), "pictures", "xtd_forms.png")};
   return bitmap;
 }
