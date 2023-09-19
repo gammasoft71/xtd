@@ -162,7 +162,7 @@ button_base& button_base::text_align(content_alignment text_align) {
 }
 
 forms::create_params button_base::create_params() const noexcept {
-  forms::create_params create_params = control::create_params();
+  auto create_params = control::create_params();
   
   if (data_->flat_style != xtd::forms::flat_style::system) create_params.style(create_params.style() | BS_OWNERDRAW);
   
@@ -254,7 +254,7 @@ void button_base::on_text_changed(const xtd::event_args& e) {
 xtd::drawing::rectangle button_base::compute_image_bounds() {return compute_image_bounds({0, 0, width(), height()});}
 
 xtd::drawing::rectangle button_base::compute_image_bounds(const xtd::drawing::rectangle& rectangle) {
-  xtd::drawing::rectangle image_bounds = {(width() - data_->image.width()) / 2, (height() - data_->image.height()) / 2, data_->image.width(), data_->image.height()};
+  auto image_bounds = xtd::drawing::rectangle {(width() - data_->image.width()) / 2, (height() - data_->image.height()) / 2, data_->image.width(), data_->image.height()};
   auto image_margin = 4;
   switch (data_->image_align) {
     case content_alignment::top_left: image_bounds = {rectangle.x() + image_margin, rectangle.y() + image_margin, data_->image.width(), data_->image.height()}; break;
@@ -272,7 +272,7 @@ xtd::drawing::rectangle button_base::compute_image_bounds(const xtd::drawing::re
 }
 
 text_format_flags button_base::to_text_format_flags(content_alignment text_align) {
-  text_format_flags flags = text_format_flags::default_format;
+  auto flags = text_format_flags::default_format;
   
   switch (text_align) {
     case content_alignment::top_left: flags |= text_format_flags::top | text_format_flags::left; break;
