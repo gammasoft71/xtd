@@ -162,10 +162,10 @@ rectangle rectangle::make_intersect(const rectangle& a, const rectangle& b) noex
 }
 
 void rectangle::make_intersect(const rectangle& rect) noexcept {
-  auto x1 = std::max(x_, rect.x_);
-  auto x2 = std::min(x_ + width_, rect.x_ + rect.width_);
-  auto y1 = std::max(y_, rect.y_);
-  auto y2 = std::min(y_ + height_, rect.y_ + rect.height_);
+  auto x1 = math::max(x_, rect.x_);
+  auto x2 = math::min(x_ + width_, rect.x_ + rect.width_);
+  auto y1 = math::max(y_, rect.y_);
+  auto y2 = math::min(y_ + height_, rect.y_ + rect.height_);
   
   if (x2 < x1 || y2 < y1) x_ = y_ = width_ = height_ = 0;
   else {
@@ -183,10 +183,10 @@ rectangle rectangle::make_union(const rectangle& a, const rectangle& b) noexcept
 }
 
 void rectangle::make_union(const rectangle& rect) noexcept {
-  auto x1 = std::min(x_, rect.x_);
-  auto x2 = std::max(x_ + width_, rect.x_ + rect.width_);
-  auto y1 = std::min(y_, rect.y_);
-  auto y2 = std::max(y_ + height_, rect.y_ + rect.height_);
+  auto x1 = math::min(x_, rect.x_);
+  auto x2 = math::max(x_ + width_, rect.x_ + rect.width_);
+  auto y1 = math::min(y_, rect.y_);
+  auto y2 = math::max(y_ + height_, rect.y_ + rect.height_);
   
   x_ = x1;
   y_ = y1;
