@@ -1,11 +1,11 @@
 /// @todo Remove following includes when xtd::diagnostics::process will used for restart see below..
 #include <xtd/io/path.h>
-#include <xtd/date_time.h>
 #include <xtd/environment.h>
 #include <xtd/invalid_operation_exception.h>
 #include <xtd/literals.h>
 #include <xtd/diagnostics/assert.h>
 #include <xtd/diagnostics/process.h>
+#include <xtd/diagnostics/stopwatch.h>
 #include <xtd/io/directory.h>
 #include <xtd/reflection/assembly.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
@@ -58,9 +58,9 @@ namespace {
   static message_filter_collection message_filters;
   
   bool message_filter_proc(intptr hwnd, int32 msg, intptr wparam, intptr lparam, intptr handle) {
-    bool block = false;
+    auto block = false;
     
-    for (message_filter_ref message_filter : message_filters) {
+    for (auto message_filter : message_filters) {
       block = message_filter.get().pre_filter_message(xtd::forms::message::create(hwnd, msg, wparam, lparam, 0, handle));
       if (block == true) break;
     }
@@ -103,7 +103,7 @@ bool application::allow_quit() noexcept {
 }
 
 xtd::ustring application::common_app_data_path() noexcept {
-  xtd::ustring common_app_data_path = io::path::combine({environment::get_folder_path(environment::special_folder::common_application_data), company_name(), product_name(), product_version()});
+  auto common_app_data_path = io::path::combine({environment::get_folder_path(environment::special_folder::common_application_data), company_name(), product_name(), product_version()});
   try {
     if (!io::directory::exists(common_app_data_path))
       io::directory::create_directory(common_app_data_path);
@@ -154,14 +154,13 @@ bool application::message_loop() noexcept {
 }
 
 const form_collection application::open_forms() noexcept {
-  form_collection forms;
+  auto forms = form_collection {};
   for (auto control : control::top_level_controls_)
     forms.push_back(static_cast<form&>(control.get()));
   return forms;
   
   /*
-  vector<reference_wrapper<form>> forms;
-  
+  auto forms = form_collection {};
   for (intptr handle : native::application::open_forms()) {
     control& control = control::from_handle(handle);
     forms.push_back(static_cast<form&>(control));
@@ -206,7 +205,7 @@ const xtd::forms::style_sheets::style_sheet& application::system_style_sheet() n
 }
 
 xtd::ustring application::user_app_data_path() noexcept {
-  xtd::ustring user_app_data_path = io::path::combine({environment::get_folder_path(environment::special_folder::application_data), company_name(), product_name(), product_version()});
+  auto user_app_data_path = io::path::combine({environment::get_folder_path(environment::special_folder::application_data), company_name(), product_name(), product_version()});
   try {
     if (!io::directory::exists(user_app_data_path))
       io::directory::create_directory(user_app_data_path);
@@ -296,7 +295,7 @@ void application::enable_visual_styles() {
 }
 
 void application::exit() {
-  cancel_event_args e;
+  auto e = cancel_event_args {};
   application::exit(e);
 }
 
@@ -323,7 +322,7 @@ void application::register_message_loop_callback(message_loop_callback callback)
 }
 
 void application::remove_message_filter(const imessage_filter& value) {
-  for (message_filter_collection::iterator iterator = message_filters.begin(); iterator != message_filters.end(); ++iterator) {
+  for (auto iterator = message_filters.begin(); iterator != message_filters.end(); ++iterator) {
     if (&iterator->get() == &value) {
       message_filters.erase(iterator);
       break;
@@ -337,7 +336,7 @@ void application::restart() {
 
 void application::run() {
   __init_process_message_box_message_value__.__force_compiler_optimizer_to_create_object__();
-  application_context context;
+  auto context = application_context {};
   application::run(context);
 }
 
@@ -357,13 +356,13 @@ void application::run(application_context& context) {
 }
 
 void application::run(const form& form) {
-  application_context context(form);
+  auto context = application_context {form};
   application::run(context);
 }
 
 bool application::close_open_forms() {
   for (auto open_form : application::open_forms()) {
-    form_closing_event_args closing_args;
+    auto closing_args = form_closing_event_args {};
     open_form.get().on_form_closing(closing_args);
     if (closing_args.cancel()) return false;
   }
@@ -397,7 +396,7 @@ void application::raise_leave_thread_modal(const event_args& e) {
 }
 
 intptr application::wnd_proc_(intptr hwnd, int32 msg, intptr wparam, intptr lparam, intptr handle) {
-  message message = forms::message::create(hwnd, msg, wparam, lparam, 0, handle);
+  auto message = forms::message::create(hwnd, msg, wparam, lparam, 0, handle);
   wnd_proc(message);
   return message.result();
 }
@@ -417,9 +416,9 @@ void application::wm_activate_app(message& message) {
 }
 
 void application::wm_app_idle(message& message) {
-  static date_time last_idle_time;
-  if (raise_idle_ || ((date_time::now() - last_idle_time)).total_milliseconds_duration() >= chrono::milliseconds(100)) {
-    last_idle_time = date_time::now();
+  static auto sw = stopwatch::start_new();
+  if (raise_idle_ || sw.elapsed_milliseconds() >= 100) {
+    sw = stopwatch::start_new();
     idle(event_args::empty);
     raise_idle_ = false;
   }
