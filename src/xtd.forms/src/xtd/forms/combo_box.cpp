@@ -30,7 +30,7 @@ combo_box::combo_box() : data_(std::make_shared<data>()) {
   set_style(control_styles::user_paint | control_styles::use_text_for_accessibility | control_styles::standard_click, false);
   data_->items.item_added += [&](size_t pos, const item & item) {
     if (is_handle_created()) native::combo_box::insert_item(handle(), pos, item.value());
-    combo_box::item selected_item;
+    auto selected_item = combo_box::item {};
     if (selected_index() != npos && selected_index() < data_->items.size()) selected_item = data_->items[selected_index()];
     this->selected_item(selected_item);
   };
@@ -45,7 +45,7 @@ combo_box::combo_box() : data_(std::make_shared<data>()) {
   
   data_->items.item_updated += [&](size_t pos, const item & item) {
     if (is_handle_created()) native::combo_box::update_item(handle(), pos, item.value());
-    combo_box::item selected_item;
+    auto selected_item = combo_box::item {};
     if (selected_index() != npos && selected_index() < data_->items.size()) selected_item = data_->items[selected_index()];
     this->selected_item(selected_item);
   };
@@ -116,7 +116,7 @@ combo_box& combo_box::selected_item(const item& selected_item) {
     if (it == data_->items.end())
       data_->selected_item = selected_index() != npos ? items()[selected_index()] : "";
     else {
-      size_t index = it - data_->items.begin();
+      auto index = it - data_->items.begin();
       selected_index(index);
       data_->selected_item = *it;
       on_selected_value_changed(event_args::empty);
@@ -146,24 +146,24 @@ void combo_box::begin_update() {
 }
 
 combo_box combo_box::create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  combo_box item;
-  item.items(items);
-  item.selected_index(selected_index);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = combo_box {};
+  result.items(items);
+  result.selected_index(selected_index);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 combo_box combo_box::create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  combo_box item;
-  item.parent(parent);
-  item.items(items);
-  item.selected_index(selected_index);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = combo_box {};
+  result.parent(parent);
+  result.items(items);
+  result.selected_index(selected_index);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 void combo_box::end_update() {
@@ -171,7 +171,7 @@ void combo_box::end_update() {
 }
 
 forms::create_params combo_box::create_params() const noexcept {
-  forms::create_params create_params = list_control::create_params();
+  auto create_params = list_control::create_params();
   
   create_params.class_name("combobox");
   
