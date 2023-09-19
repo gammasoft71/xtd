@@ -69,8 +69,8 @@ linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle_f& re
   data_->rect = rect;
   data_->angle = angle;
   
-  float pos = 0;
-  float increment = 1.0f / (linear_colors.size() - 1);
+  auto pos = .0f;
+  auto increment = 1.0f / (linear_colors.size() - 1);
   for (auto color : linear_colors) {
     data_->linear_colors.push_back({color, pos});
     pos += increment;
@@ -142,10 +142,8 @@ float linear_gradient_brush::linear_gradient_mode_to_angle(xtd::drawing::drawing
 }
 
 void linear_gradient_brush::recreate_handle() {
-  vector<tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte, float>> colors;
-  
+  auto colors = vector<tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte, float>> {};
   for_each(data_->linear_colors.begin(), data_->linear_colors.end(), [&](auto color) {colors.emplace_back(color.first.r(), color.first.g(), color.first.b(), color.first.a(), color.second);});
-  
   native::brush::linear_gradient(handle(), as<int32>(data_->rect.left()), as<int32>(data_->rect.top()), as<int32>(data_->rect.right()), as<int32>(data_->rect.bottom()), colors, data_->angle);
 }
 
