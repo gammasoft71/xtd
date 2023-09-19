@@ -45,11 +45,11 @@ color gray_colors::slate_gray() noexcept {
 }
 
 const vector<color>& gray_colors::get_colors() noexcept {
-  static vector colors {gray_colors::black(), gray_colors::dark_slate_gray(), gray_colors::dim_gray(), gray_colors::slate_gray(), gray_colors::gray(), gray_colors::light_slate_gray(), gray_colors::dark_gray(), gray_colors::silver(), gray_colors::light_gray(), gray_colors::gainsboro()};
+  static auto colors = vector {gray_colors::black(), gray_colors::dark_slate_gray(), gray_colors::dim_gray(), gray_colors::slate_gray(), gray_colors::gray(), gray_colors::light_slate_gray(), gray_colors::dark_gray(), gray_colors::silver(), gray_colors::light_gray(), gray_colors::gainsboro()};
   return colors;
 }
 
 const vector<ustring>& gray_colors::get_color_names() noexcept {
-  static vector color_names {gray_colors::black().name(), gray_colors::dark_slate_gray().name(), gray_colors::dim_gray().name(), gray_colors::slate_gray().name(), gray_colors::gray().name(), gray_colors::light_slate_gray().name(), gray_colors::dark_gray().name(), gray_colors::silver().name(), gray_colors::light_gray().name(), gray_colors::gainsboro().name()};
+  static auto color_names = vector {gray_colors::black().name(), gray_colors::dark_slate_gray().name(), gray_colors::dim_gray().name(), gray_colors::slate_gray().name(), gray_colors::gray().name(), gray_colors::light_slate_gray().name(), gray_colors::dark_gray().name(), gray_colors::silver().name(), gray_colors::light_gray().name(), gray_colors::gainsboro().name()};
   return color_names;
 }
