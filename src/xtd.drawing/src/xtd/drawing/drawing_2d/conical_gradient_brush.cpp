@@ -46,8 +46,8 @@ conical_gradient_brush::conical_gradient_brush(const xtd::drawing::point_f& cent
   
   data_->center_point = center;
   data_->angle = angle;
-  float pos = 0;
-  float increment = 1.0f / (conical_colors.size() - 1);
+  auto pos = .0f;
+  auto increment = 1.0f / (conical_colors.size() - 1);
   for (auto color : conical_colors) {
     data_->conical_colors.push_back({color, pos});
     pos += increment;
@@ -107,7 +107,7 @@ bool conical_gradient_brush::equals(const conical_gradient_brush& value) const n
 }
 
 void conical_gradient_brush::recreate_handle() {
-  vector<tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte, float>> colors;
+  auto colors = vector<tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte, float>> {};
   for_each(data_->conical_colors.begin(), data_->conical_colors.end(), [&](auto color) {colors.emplace_back(color.first.r(), color.first.g(), color.first.b(), color.first.a(), color.second);});
   native::brush::conical_gradient(handle(), as<int32>(data_->center_point.x()), as<int32>(data_->center_point.y()), colors, data_->angle);
 }
