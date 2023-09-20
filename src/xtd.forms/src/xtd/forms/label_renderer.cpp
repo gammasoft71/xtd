@@ -17,7 +17,7 @@ using namespace xtd::forms::visual_styles;
 void label_renderer::draw_label(const xtd::forms::style_sheets::style_sheet& style_sheet, xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::visual_styles::label_state label_state, const std::optional<xtd::drawing::color>& back_color, const xtd::ustring& text, const std::optional<xtd::forms::content_alignment>& text_align, const std::optional<xtd::drawing::color>& fore_color, const std::optional<xtd::drawing::font>& font, const xtd::drawing::image& image, const std::optional<xtd::forms::content_alignment>& image_align, const std::optional<xtd::forms::border_style>& border, xtd::forms::border_sides sides, const std::vector<xtd::forms::shadow>& shadows, bool auto_ellipsis) {
   auto pseudo_state_base = pseudo_state::standard;
   
-  label current_style_sheet;
+  auto current_style_sheet = label {};
   switch (label_state) {
     case label_state::normal: current_style_sheet = style_sheet.label(pseudo_state_base); break;
     case label_state::hot: current_style_sheet = style_sheet.label(pseudo_state_base | pseudo_state::hover); break;
@@ -50,7 +50,7 @@ void label_renderer::draw_label(const xtd::forms::style_sheets::style_sheet& sty
 void label_renderer::draw_link_label(const xtd::forms::style_sheets::style_sheet& style_sheet, xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::visual_styles::link_label_state link_label_state, const std::optional<xtd::drawing::color>& back_color, const xtd::ustring& text, const std::vector<xtd::forms::link>& links, const std::optional<xtd::forms::content_alignment>& text_align, const std::optional<xtd::drawing::color>& fore_color, const std::optional<xtd::drawing::color>& link_color, const std::optional<xtd::drawing::color>& visited_link_color, const std::optional<xtd::drawing::font>& font, xtd::forms::link_behavior link_behavior, const xtd::drawing::image& image, const std::optional<xtd::forms::content_alignment>& image_align, const std::optional<xtd::forms::border_style>& border, xtd::forms::border_sides sides, const std::vector<xtd::forms::shadow>& shadows, bool auto_ellipsis) {
   auto pseudo_state_base = pseudo_state::standard;
   
-  style_sheets::link_label current_style_sheet = style_sheet.link_label(pseudo_state_base), hot_style_sheet = style_sheet.link_label(pseudo_state_base | pseudo_state::hover), pressed_style_sheet = style_sheet.link_label(pseudo_state_base | pseudo_state::active);
+  auto current_style_sheet = style_sheet.link_label(pseudo_state_base), hot_style_sheet = style_sheet.link_label(pseudo_state_base | pseudo_state::hover), pressed_style_sheet = style_sheet.link_label(pseudo_state_base | pseudo_state::active);
   unused_(hot_style_sheet); /// @todo Remove when used...
   unused_(pressed_style_sheet); /// @todo Remove when used...
   
