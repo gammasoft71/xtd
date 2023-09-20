@@ -29,10 +29,9 @@ size_t progress_bar::marquee_animation_speed() const noexcept {
 }
 
 progress_bar& progress_bar::marquee_animation_speed(size_t marquee_animation_speed) {
-  if (data_->marquee_animation_speed != marquee_animation_speed) {
-    data_->marquee_animation_speed = marquee_animation_speed;
-    if (is_handle_created()) native::progress_bar::marquee(handle(), data_->style == progress_bar_style::marquee, data_->marquee_animation_speed);
-  }
+  if (data_->marquee_animation_speed == marquee_animation_speed) return *this;
+  data_->marquee_animation_speed = marquee_animation_speed;
+  if (is_handle_created()) native::progress_bar::marquee(handle(), data_->style == progress_bar_style::marquee, data_->marquee_animation_speed);
   return *this;
 }
 
@@ -41,12 +40,11 @@ int32 progress_bar::maximum() const noexcept {
 }
 
 progress_bar& progress_bar::maximum(int32 maximum) {
-  if (data_->maximum != maximum) {
-    data_->maximum = maximum;
-    if (is_handle_created()) native::progress_bar::maximum(handle(), data_->maximum);
-    minimum(math::min(data_->minimum, maximum));
-    value(math::min(data_->value, maximum));
-  }
+  if (data_->maximum == maximum) return *this;
+  data_->maximum = maximum;
+  if (is_handle_created()) native::progress_bar::maximum(handle(), data_->maximum);
+  minimum(math::min(data_->minimum, maximum));
+  value(math::min(data_->value, maximum));
   return *this;
 }
 
@@ -55,12 +53,11 @@ int32 progress_bar::minimum() const noexcept {
 }
 
 progress_bar& progress_bar::minimum(int32 minimum) {
-  if (data_->minimum != minimum) {
-    data_->minimum = minimum;
-    if (is_handle_created()) native::progress_bar::minimum(handle(), data_->minimum);
-    maximum(math::max(data_->maximum, minimum));
-    value(math::max(data_->value, minimum));
-  }
+  if (data_->minimum == minimum) return *this;
+  data_->minimum = minimum;
+  if (is_handle_created()) native::progress_bar::minimum(handle(), data_->minimum);
+  maximum(math::max(data_->maximum, minimum));
+  value(math::max(data_->value, minimum));
   return *this;
 }
 
@@ -70,10 +67,9 @@ forms::orientation progress_bar::orientation() const noexcept {
 
 progress_bar& progress_bar::orientation(forms::orientation orientation) {
   if (!enum_object<>::is_defined<forms::orientation>(orientation)) throw argument_out_of_range_exception {csf_};
-  if (data_->orientation != orientation) {
-    data_->orientation = orientation;
-    post_recreate_handle();
-  }
+  if (data_->orientation == orientation) return *this;
+  data_->orientation = orientation;
+  post_recreate_handle();
   return *this;
 }
 
@@ -92,12 +88,10 @@ progress_bar_style progress_bar::style() const noexcept {
 
 progress_bar& progress_bar::style(progress_bar_style style) {
   if (!enum_object<>::is_defined<progress_bar_style>(style)) throw argument_out_of_range_exception {csf_};
-  if (data_->style != style) {
-    data_->style = style;
-    if (is_handle_created()) native::progress_bar::marquee(handle(), data_->style == progress_bar_style::marquee, data_->marquee_animation_speed);
-    if (data_->style != progress_bar_style::marquee)
-      post_recreate_handle();
-  }
+  if (data_->style == style) return *this;
+  data_->style = style;
+  if (is_handle_created()) native::progress_bar::marquee(handle(), data_->style == progress_bar_style::marquee, data_->marquee_animation_speed);
+  if (data_->style != progress_bar_style::marquee) post_recreate_handle();
   return *this;
 }
 
@@ -106,34 +100,33 @@ int32 progress_bar::value() const noexcept {
 }
 
 progress_bar& progress_bar::value(int32 value) {
-  if (data_->value != value) {
-    data_->value = math::clamp(value, data_->minimum, data_->maximum);
-    if (is_handle_created()) native::progress_bar::value(handle(), data_->value);
-  }
+  if (data_->value == value) return *this;
+  data_->value = math::clamp(value, data_->minimum, data_->maximum);
+  if (is_handle_created()) native::progress_bar::value(handle(), data_->value);
   return *this;
 }
 
 progress_bar progress_bar::create(int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  progress_bar item;
-  item.minimum(minimum);
-  item.maximum(maximum);
-  item.value(value);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = progress_bar {};
+  result.minimum(minimum);
+  result.maximum(maximum);
+  result.value(value);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 progress_bar progress_bar::create(const control& parent, int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  progress_bar item;
-  item.parent(parent);
-  item.minimum(minimum);
-  item.maximum(maximum);
-  item.value(value);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = progress_bar {};
+  result.parent(parent);
+  result.minimum(minimum);
+  result.maximum(maximum);
+  result.value(value);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 void progress_bar::increment(int32 value) {
@@ -154,13 +147,10 @@ xtd::ustring progress_bar::to_string() const noexcept {
 }
 
 forms::create_params progress_bar::create_params() const noexcept {
-  forms::create_params create_params = control::create_params();
-  
+  auto create_params = control::create_params();
   create_params.class_name("progressbar");
-  
   if (data_->style == forms::progress_bar_style::continuous) create_params.style(create_params.style() | PBS_SMOOTH);
   if (data_->orientation == forms::orientation::vertical) create_params.style(create_params.style() | PBS_VERTICAL);
-  
   return create_params;
 }
 
