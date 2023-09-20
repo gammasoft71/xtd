@@ -36,12 +36,11 @@ double dot_matrix_display::back_dot_opacity() const noexcept {
 
 dot_matrix_display& dot_matrix_display::back_dot_opacity(double value) {
   if (value < 0.0 || value > 1.0) throw argument_out_of_range_exception("value must be between 0.0 and 1.0."_t, csf_);
-  if (data_->back_dot_opacity != value) {
-    data_->back_dot_opacity = value;
-    if (data_->back_dot_opacity < 0.0) data_->back_dot_opacity = 0.0;
-    if (data_->back_dot_opacity > 1.0) data_->back_dot_opacity = 1.0;
-    invalidate();
-  }
+  if (data_->back_dot_opacity == value) return *this;
+  data_->back_dot_opacity = value;
+  if (data_->back_dot_opacity < 0.0) data_->back_dot_opacity = 0.0;
+  if (data_->back_dot_opacity > 1.0) data_->back_dot_opacity = 1.0;
+  invalidate();
   return *this;
 }
 
@@ -50,10 +49,9 @@ forms::dot_matrix_style dot_matrix_display::dot_matrix_style() const noexcept {
 }
 
 dot_matrix_display& dot_matrix_display::dot_matrix_style(forms::dot_matrix_style value) {
-  if (data_->dot_matrix_style != value) {
-    data_->dot_matrix_style = value;
-    invalidate();
-  }
+  if (data_->dot_matrix_style == value) return *this;
+  data_->dot_matrix_style = value;
+  invalidate();
   return *this;
 }
 
@@ -62,11 +60,10 @@ const dot_matrix_display::dots_collection& dot_matrix_display::dot_matrix_displa
 }
 
 const dot_matrix_display& dot_matrix_display::dots(const dots_collection& dots) {
-  if (data_->dots != dots) {
-    data_->dots = dots;
-    data_->matrix_size = drawing::size(static_cast<int32>(data_->dots[0].size()), static_cast<int32>(data_->dots.size()));
-    invalidate();
-  }
+  if (data_->dots == dots) return *this;
+  data_->dots = dots;
+  data_->matrix_size = drawing::size(static_cast<int32>(data_->dots[0].size()), static_cast<int32>(data_->dots.size()));
+  invalidate();
   return *this;
 }
 
@@ -91,11 +88,10 @@ const drawing::size& dot_matrix_display::matrix_size() const noexcept {
 }
 
 void dot_matrix_display::matrix_size(const drawing::size& value) {
-  if (data_->matrix_size != value) {
-    data_->matrix_size = value;
-    data_->dots = dots_collection(data_->matrix_size.height(), std::vector<bool>(data_->matrix_size.width(), false));
-    invalidate();
-  }
+  if (data_->matrix_size == value) return *this;
+  data_->matrix_size = value;
+  data_->dots = dots_collection(data_->matrix_size.height(), std::vector<bool>(data_->matrix_size.width(), false));
+  invalidate();
 }
 
 bool dot_matrix_display::show_back_dot() const noexcept {
@@ -103,10 +99,9 @@ bool dot_matrix_display::show_back_dot() const noexcept {
 }
 
 dot_matrix_display& dot_matrix_display::show_back_dot(bool value) {
-  if (data_->show_back_dot != value) {
-    data_->show_back_dot = value;
-    invalidate();
-  }
+  if (data_->show_back_dot == value) return *this;
+  data_->show_back_dot = value;
+  invalidate();
   return *this;
 }
 
@@ -115,10 +110,9 @@ int32 dot_matrix_display::thickness() const noexcept {
 }
 
 dot_matrix_display& dot_matrix_display::thickness(int32 value) {
-  if (!data_->thickness.has_value() || data_->thickness.value() != value) {
-    data_->thickness = value;
-    invalidate();
-  }
+  if (data_->thickness.has_value() && data_->thickness.value() == value) return *this;
+  data_->thickness = value;
+  invalidate();
   return *this;
 }
 
