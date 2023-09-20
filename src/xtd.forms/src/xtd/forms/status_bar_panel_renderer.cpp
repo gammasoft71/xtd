@@ -16,7 +16,7 @@ using namespace xtd::forms::style_sheets;
 void status_bar_panel_renderer::draw_status_bar_panel(const style_sheets::style_sheet& style_sheet, graphics& graphics, const rectangle& bounds, const optional<color>& back_color, const ustring& text, const optional<content_alignment>& text_align, const optional<color>& fore_color, const optional<font>& font, const xtd::drawing::image& image, const optional<content_alignment>& image_align) {
   auto pseudo_state_base = pseudo_state::standard;
   
-  status_bar_panel current_style_sheet = style_sheet.status_bar_panel(pseudo_state_base);
+  auto current_style_sheet = style_sheet.status_bar_panel(pseudo_state_base);
   if (back_color.has_value()) current_style_sheet.background_color(back_color.value());
   if (text_align.has_value()) current_style_sheet.text_alignment(text_align.value());
   if (fore_color.has_value()) current_style_sheet.color(fore_color.value());
