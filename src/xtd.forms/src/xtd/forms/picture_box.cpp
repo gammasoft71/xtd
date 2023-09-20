@@ -102,26 +102,26 @@ picture_box& picture_box::size_mode(picture_box_size_mode size_mode) {
 }
 
 picture_box picture_box::create(const xtd::drawing::image& image, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  picture_box item;
-  item.image(image);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = picture_box {};
+  result.image(image);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 picture_box picture_box::create(const control& parent, const xtd::drawing::image& image, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  picture_box item;
-  item.parent(parent);
-  item.image(image);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = picture_box {};
+  result.parent(parent);
+  result.image(image);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 forms::create_params picture_box::create_params() const noexcept {
-  forms::create_params create_params = control::create_params();
+  auto create_params = control::create_params();
   
   create_params.class_name("picturebox");
   create_params.style(create_params.style() | SS_BITMAP);
@@ -143,8 +143,7 @@ forms::create_params picture_box::create_params() const noexcept {
 }
 
 drawing::size picture_box::measure_control() const noexcept {
-  drawing::size size;
-  size = data_->image.has_value() ? data_->image.value().size() : drawing::size(0, 0);
+  auto size = data_->image.has_value() ? data_->image.value().size() : drawing::size(0, 0);
   /// @todo add location
   return size;
 }
