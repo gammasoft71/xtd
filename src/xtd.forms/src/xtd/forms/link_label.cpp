@@ -39,16 +39,16 @@ link_label::link_collection& link_label::link_collection::operator =(const link_
 }
 
 link_label::link_collection::const_reference link_label::link_collection::operator [](const ustring& name) const noexcept {
-  static value_type link_empty;
   for (auto& item : *this)
     if (item.name() == name) return item;
+  static auto link_empty = value_type {};
   return link_empty;
 }
 
 link_label::link_collection::reference link_label::link_collection::operator [](const ustring& name) noexcept {
-  static value_type link_empty;
   for (auto& item : *this)
     if (item.name() == name) return item;
+  static auto link_empty = value_type {};
   return link_empty;
 }
 
@@ -153,26 +153,26 @@ link_label& link_label::visited_link_color(const xtd::drawing::color& color) {
 }
 
 link_label link_label::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  link_label item;
-  item.text(text);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = link_label {};
+  result.text(text);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 link_label link_label::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  link_label item;
-  item.parent(parent);
-  item.text(text);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = link_label {};
+  result.parent(parent);
+  result.text(text);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 drawing::size link_label::measure_control() const noexcept {
-  rectangle bounds;
+  auto bounds = rectangle {};
   for (auto [rect, is_link] : generate_text_rects())
     bounds = drawing::rectangle::make_union(bounds, rect);
   return bounds.size() + drawing::size(2, 1) + drawing::size(border_style() == border_style::none ? 0 : 4, border_style() == border_style::none ? 0 : 4);
@@ -233,15 +233,15 @@ void link_label::on_paint(paint_event_args& e) {
   
   if (system_information::is_operating_system_double_buffered() || double_buffered())
     e.graphics().clear(back_color());
-  size_t line_number = 0;
-  size_t index = 0;
+  auto line_number = 0_sz;
+  auto index = 0_sz;
   for (auto line : text().split({'\n'})) {
     auto text_location = get_text_location(line_number);
-    size_t line_index = 0;
-    drawing::size size_text;
-    ustring text;
+    auto line_index = 0_sz;
+    auto size_text = drawing::size {};
+    auto text = ustring::empty_string;
     for (auto link : data_->links) {
-      drawing::color color = link_color();
+      auto color = link_color();
       if (!link.enabled()) color = disabled_link_color();
       else if (link.active_()) color = active_link_color();
       else if (link.visited()) color = visited_link_color();
@@ -256,6 +256,7 @@ void link_label::on_paint(paint_event_args& e) {
         text_location.x(text_location.x() + size_text.width());
         line_index += text.length();
       }
+      
       if (index <= link.start() && line.length() + index > link.start()) {
         text = line.substring(link.start() - index, link.length());
         size_text = drawing::size::ceiling(e.graphics().measure_string(text, link_font(), size_f(0.0f, 0.0f), string_format(string_format_flags::measure_trailing_spaces)));
@@ -295,7 +296,7 @@ void link_label::on_text_changed(const event_args& e) {
 }
 
 link_label::link& link_label::point_in_link(const xtd::drawing::point& point) {
-  size_t link_index = 0;
+  auto link_index = 0_sz;
   for (auto [rect, is_link] : generate_text_rects())
     if (is_link) {
       if (rect.contains(point)) return data_->links[link_index];
@@ -306,10 +307,10 @@ link_label::link& link_label::point_in_link(const xtd::drawing::point& point) {
 }
 
 xtd::drawing::point link_label::get_text_location(size_t line_number) const noexcept {
-  size_t line_index = 0;
+  auto line_index = 0_sz;
   for (auto line : text().split({'\n'})) {
-    point text_location;
-    drawing::size text_size = drawing::size::ceiling(screen::create_graphics().measure_string(line, link_font(), size_f(0.0f, 0.0f), string_format(string_format_flags::measure_trailing_spaces)));
+    auto text_location = point {};
+    auto text_size = drawing::size::ceiling(screen::create_graphics().measure_string(line, link_font(), size_f(0.0f, 0.0f), string_format(string_format_flags::measure_trailing_spaces)));
     switch (text_align()) {
       case content_alignment::top_left: text_location = point(0, text_size.height() * as<int32>(line_number)); break;
       case content_alignment::top_center: text_location = point(client_rectangle().width() / 2 - text_size.width() / 2, text_size.height() * as<int32>(line_number)); break;
@@ -329,14 +330,14 @@ xtd::drawing::point link_label::get_text_location(size_t line_number) const noex
 }
 
 std::vector<std::tuple<xtd::drawing::rectangle, bool>> link_label::generate_text_rects() const noexcept {
-  std::vector<std::tuple<xtd::drawing::rectangle, bool>> text_rects;
-  size_t line_number = 0;
-  size_t index = 0;
+  auto text_rects = std::vector<std::tuple<xtd::drawing::rectangle, bool>> {};
+  auto line_number = 0_sz;
+  auto index = 0_sz;
   for (auto line : text().split({'\n'})) {
-    size_t line_index = 0;
+    auto line_index = 0_sz;
     auto text_location = get_text_location(line_number);
-    drawing::size size_text;
-    ustring text;
+    auto size_text = drawing::size {};
+    auto text = ustring::empty_string;
     for (auto link : data_->links) {
       if (index < link.start()) {
         text = line.substring(line_index, link.start() - line_index);
@@ -345,6 +346,7 @@ std::vector<std::tuple<xtd::drawing::rectangle, bool>> link_label::generate_text
         text_location.x(text_location.x() + size_text.width());
         line_index += text.length();
       }
+      
       if (index <= link.start() && line.length() + index > link.start()) {
         text = line.substring(link.start() - index, link.length());
         size_text = drawing::size::ceiling(screen::create_graphics().measure_string(text, link_font(), size_f(0.0f, 0.0f), string_format(string_format_flags::measure_trailing_spaces)));
