@@ -40,13 +40,13 @@ ustring message::to_string() const noexcept {
 }
 
 message::message(intptr hwnd, int32 msg, intptr wparam, intptr lparam) : hwnd_(hwnd), msg_(msg), wparam_(wparam), lparam_(lparam) {
-  id_++;
+  ++id_;
 }
 
 message::message(intptr hwnd, int32 msg, intptr wparam, intptr lparam, intptr result) : hwnd_(hwnd), msg_(msg), wparam_(wparam), lparam_(lparam), result_(result) {
-  id_++;
+  ++id_;
 }
 
 message::message(intptr hwnd, int32 msg, intptr wparam, intptr lparam, intptr result, intptr handle) : hwnd_(hwnd), msg_(msg), wparam_(wparam), lparam_(lparam), result_(result), handle_(handle) {
-  id_++;
+  ++id_;
 }
