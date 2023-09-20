@@ -16,7 +16,7 @@
 
 using namespace std;
 using namespace xtd;
-using namespace xtd::forms;
+using namespace forms;
 
 namespace {
   using link_label = label;
@@ -51,7 +51,7 @@ namespace {
       
       picture_box_error_.location({10, 10});
       picture_box_error_.size({64, 64});
-      picture_box_error_.image(xtd::drawing::system_images::from_name("dialog-error", xtd::drawing::size(64, 64)));
+      picture_box_error_.image(drawing::system_images::from_name("dialog-error", drawing::size(64, 64)));
       
       label_exception_.location({85, 10});
       label_exception_.size({385, 95});
@@ -85,31 +85,31 @@ namespace {
     }
     
     using form::show_dialog;
-    static xtd::forms::dialog_result show_dialog(const std::exception* exception, const string& text, delegate<void(const dialog_closed_event_args& e)>* on_dialog_closed) {
-      exception_dialog_standard dialog(exception, text, on_dialog_closed);
+    static forms::dialog_result show_dialog(const std::exception* exception, const string& text, delegate<void(const dialog_closed_event_args& e)>* on_dialog_closed) {
+      auto dialog = exception_dialog_standard {exception, text, on_dialog_closed};
       return dialog.form::show_dialog();
     }
     
-    static xtd::forms::dialog_result show_dialog(const iwin32_window& owner, const std::exception* exception, const string& text, delegate<void(const dialog_closed_event_args& e)>* on_dialog_closed) {
-      exception_dialog_standard dialog(exception, text, on_dialog_closed);
+    static forms::dialog_result show_dialog(const iwin32_window& owner, const std::exception* exception, const string& text, delegate<void(const dialog_closed_event_args& e)>* on_dialog_closed) {
+      auto dialog = exception_dialog_standard {exception, text, on_dialog_closed};
       return dialog.form::show_dialog(owner);
     }
     
     using form::show_sheet;
     static void show_sheet(const iwin32_window& owner, const std::exception* exception, const string& text, delegate<void(const dialog_closed_event_args& e)>* on_dialog_closed) {
-      exception_dialog_standard dialog(exception, text, on_dialog_closed);
+      auto dialog = exception_dialog_standard {exception, text, on_dialog_closed};
       dialog.form::show_sheet_dialog(owner);
     }
     
     using form::show_sheet_dialog;
-    static xtd::forms::dialog_result show_sheet_dialog(const iwin32_window& owner, const std::exception* exception, const string& text, delegate<void(const dialog_closed_event_args& e)>* on_dialog_closed) {
-      exception_dialog_standard dialog(exception, text, on_dialog_closed);
+    static forms::dialog_result show_sheet_dialog(const iwin32_window& owner, const std::exception* exception, const string& text, delegate<void(const dialog_closed_event_args& e)>* on_dialog_closed) {
+      auto dialog = exception_dialog_standard {exception, text, on_dialog_closed};
       return dialog.form::show_sheet_dialog(owner);
     }
     
   private:
-    xtd::ustring generate_report() const {
-      xtd::ustring report = ustring::format("Use try and catch to handle std::exception or xtd::system_exception instead{0}of this dialog box. For more information, see the xtd documentation.{0}{0}"_t, environment::new_line());
+    ustring generate_report() const {
+      auto report = ustring::format("Use try and catch to handle std::exception or xtd::system_exception instead{0}of this dialog box. For more information, see the xtd documentation.{0}{0}"_t, environment::new_line());
       report += generate_exception_report();
       report += generate_libraries_report();
       report += generate_operating_system_report();
@@ -118,10 +118,10 @@ namespace {
       return report;
     }
     
-    xtd::ustring generate_exception_report() const {
-      xtd::ustring report = ustring::format("{0} Exception text {0}{1}"_t, xtd::ustring(14, '*'), environment::new_line());
-      if (exception_ && dynamic_cast<const xtd::system_exception*>(exception_))
-        report += ustring::format("{}{}", static_cast<const xtd::system_exception*>(exception_)->to_string(), environment::new_line());
+    ustring generate_exception_report() const {
+      auto report = ustring::format("{0} Exception text {0}{1}"_t, ustring(14, '*'), environment::new_line());
+      if (exception_ && dynamic_cast<const system_exception*>(exception_))
+        report += ustring::format("{}{}", static_cast<const system_exception*>(exception_)->to_string(), environment::new_line());
       else if (exception_ && dynamic_cast<const std::exception*>(exception_))
         report += ustring::format("{0}: {1}{2}", typeof_(*exception_), static_cast<const std::exception*>(exception_)->what(), environment::new_line());
       else
@@ -130,16 +130,16 @@ namespace {
       return report;
     }
     
-    xtd::ustring generate_libraries_report() const {
-      bool first = true;
-      xtd::ustring report = ustring::format("{0} Libraries {0}{1}"_t, xtd::ustring(14, '*'), environment::new_line());
+    ustring generate_libraries_report() const {
+      auto first = true;
+      auto report = ustring::format("{0} Libraries {0}{1}"_t, ustring(14, '*'), environment::new_line());
       for (auto library : {"xtd.core", "xtd.drawing", "xtd.forms"}) {
-        if (!first) report += ustring::format("{}{}", xtd::ustring(40, '-'), environment::new_line());
+        if (!first) report += ustring::format("{}{}", ustring(40, '-'), environment::new_line());
         report += ustring::format("{}{}", library, environment::new_line());
         report += ustring::format("    Name: {}.{}{}"_t, library, environment::os_version().is_windows_platform() ? "lib" : "a", environment::new_line());
         report += ustring::format("    Version: {}{}"_t, environment::version(), environment::new_line());
-        report += ustring::format("    include path: {}{}"_t, xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "include"), environment::new_line());
-        report += ustring::format("    library path: {}{}"_t, xtd::io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "lib"), environment::new_line());
+        report += ustring::format("    include path: {}{}"_t, io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "include"), environment::new_line());
+        report += ustring::format("    library path: {}{}"_t, io::path::combine(environment::get_folder_path(environment::special_folder::xtd_install), "lib"), environment::new_line());
         report += ustring::format("    resources path: {}{}"_t, environment::get_folder_path(environment::special_folder::xtd_resources), environment::new_line());
         first = false;
       }
@@ -147,8 +147,8 @@ namespace {
       return report;
     }
     
-    xtd::ustring generate_operating_system_report() const {
-      xtd::ustring report = ustring::format("{0} Operating System {0}{1}"_t, xtd::ustring(14, '*'), environment::new_line());
+    ustring generate_operating_system_report() const {
+      auto report = ustring::format("{0} Operating System {0}{1}"_t, ustring(14, '*'), environment::new_line());
       report += ustring::format("{}{}", environment::os_version().name(), environment::new_line());
       report += ustring::format("    Version : {}{}"_t, environment::os_version().version(), environment::new_line());
       report += ustring::format("    Desktop environment : {}{}"_t, environment::os_version().desktop_environment(), environment::new_line());
@@ -158,8 +158,8 @@ namespace {
       return report;
     }
     
-    xtd::ustring generate_language_report() const {
-      xtd::ustring report = ustring::format("{0} Language {0}{1}"_t, xtd::ustring(14, '*'), environment::new_line());
+    ustring generate_language_report() const {
+      auto report = ustring::format("{0} Language {0}{1}"_t, ustring(14, '*'), environment::new_line());
       report += ustring::format("{}{}", environment::cpp_version().name(), environment::new_line());
       report += ustring::format("    Version : {}{}"_t, environment::cpp_version().version(), environment::new_line());
       report += ustring::format("    Experimental : {}{}"_t, environment::cpp_version().is_experimental_language(), environment::new_line());
@@ -168,8 +168,8 @@ namespace {
       return report;
     }
     
-    xtd::ustring generate_compiler_report() const {
-      xtd::ustring report = ustring::format("{0} Compiler {0}{1}"_t, xtd::ustring(14, '*'), environment::new_line());
+    ustring generate_compiler_report() const {
+      auto report = ustring::format("{0} Compiler {0}{1}"_t, ustring(14, '*'), environment::new_line());
       report += ustring::format("{0}{1}", environment::compiler_version().name(), environment::new_line());
       report += ustring::format("    Version : {0}{1}", environment::compiler_version().version(), environment::new_line());
       report += ustring::format("    ID : {0}{1}", environment::compiler_version().compiler_id(), environment::new_line());
@@ -192,25 +192,25 @@ namespace {
 }
 
 struct exception_dialog::data {
-  xtd::forms::dialog_result dialog_result = xtd::forms::dialog_result::none;
-  xtd::forms::dialog_appearance dialog_appearance = xtd::forms::dialog_appearance::standard;
+  forms::dialog_result dialog_result = forms::dialog_result::none;
+  forms::dialog_appearance dialog_appearance = forms::dialog_appearance::standard;
   const std::exception* exception = nullptr;
-  xtd::ustring text;
+  ustring text;
 };
 
 exception_dialog::exception_dialog() : data_(std::make_shared<data>()) {
   data_->dialog_appearance = application::use_system_controls() ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
 }
 
-xtd::forms::dialog_result exception_dialog::dialog_result() const noexcept {
+forms::dialog_result exception_dialog::dialog_result() const noexcept {
   return data_->dialog_result;
 }
 
-xtd::forms::dialog_appearance exception_dialog::dialog_appearance() const noexcept {
+forms::dialog_appearance exception_dialog::dialog_appearance() const noexcept {
   return data_->dialog_appearance;
 }
 
-exception_dialog& exception_dialog::dialog_appearance(xtd::forms::dialog_appearance dialog_appearance) {
+exception_dialog& exception_dialog::dialog_appearance(forms::dialog_appearance dialog_appearance) {
   data_->dialog_appearance = dialog_appearance;
   return *this;
 }
@@ -224,11 +224,11 @@ exception_dialog& exception_dialog::exception(const std::exception& exception) {
   return *this;
 }
 
-xtd::ustring exception_dialog::text() const noexcept {
+ustring exception_dialog::text() const noexcept {
   return data_->text;
 }
 
-exception_dialog& exception_dialog::text(const xtd::ustring& text) {
+exception_dialog& exception_dialog::text(const ustring& text) {
   data_->text = text;
   return *this;
 }
@@ -240,20 +240,20 @@ void exception_dialog::reset() noexcept {
   data_->text = "";
 }
 
-xtd::forms::dialog_result exception_dialog::show_dialog() {
+forms::dialog_result exception_dialog::show_dialog() {
   return exception_dialog_standard::show_dialog(data_->exception, data_->text, new delegate<void(const dialog_closed_event_args& e)>(*this, &exception_dialog::on_dialog_closed));
 }
 
-xtd::forms::dialog_result exception_dialog::show_dialog(const iwin32_window& owner) {
+forms::dialog_result exception_dialog::show_dialog(const iwin32_window& owner) {
   return exception_dialog_standard::show_dialog(owner, data_->exception, data_->text, new delegate<void(const dialog_closed_event_args& e)>(*this, &exception_dialog::on_dialog_closed));
 }
 
 void exception_dialog::show_sheet(const iwin32_window& owner) {
-  data_->dialog_result = xtd::forms::dialog_result::none;
+  data_->dialog_result = forms::dialog_result::none;
   exception_dialog_standard::show_sheet(owner, data_->exception, data_->text, new delegate<void(const dialog_closed_event_args& e)>(*this, &exception_dialog::on_dialog_closed));
 }
 
-xtd::forms::dialog_result exception_dialog::show_sheet_dialog(const iwin32_window& owner) {
+forms::dialog_result exception_dialog::show_sheet_dialog(const iwin32_window& owner) {
   return exception_dialog_standard::show_sheet_dialog(owner, data_->exception, data_->text, new delegate<void(const dialog_closed_event_args& e)>(*this, &exception_dialog::on_dialog_closed));
 }
 
