@@ -70,7 +70,7 @@ loading_indicator& loading_indicator::running(bool value) {
 }
 
 forms::create_params loading_indicator::create_params() const noexcept {
-  forms::create_params create_params = control::create_params();
+  auto create_params = control::create_params();
   create_params.class_name("loadingindicator");
   if (data_->loading_indicator_style != xtd::forms::loading_indicator_style::system) create_params.style(create_params.style() | LI_OWNERDRAW);
   return create_params;
@@ -91,13 +91,13 @@ void loading_indicator::on_handle_created(const event_args& e) {
 void loading_indicator::on_paint(paint_event_args& e) {
   if (data_->loading_indicator_style != xtd::forms::loading_indicator_style::system) {
     e.graphics().translate_transform(e.clip_rectangle().width() / 2.0f, e.clip_rectangle().height() / 2.0f);
-    const float angle = -360.f / data_->intervals;
+    auto angle = -360.f / data_->intervals;
     e.graphics().rotate_transform(data_->frame * angle);
-    const float height = static_cast<float>(std::min(e.clip_rectangle().width(), e.clip_rectangle().height())) / data_->radius_factor;
-    const float width = static_cast<float>(std::min(e.clip_rectangle().width(), e.clip_rectangle().height())) / data_->radius_factor;
-    for (int32 n = 0; n < data_->intervals; n++) {
-      const int32 opacity_index = enabled() ? n + 1 : 2;
-      const int32 opacity = opacity_index * (255 + 1) / data_->intervals - 1;
+    auto height = static_cast<float>(std::min(e.clip_rectangle().width(), e.clip_rectangle().height())) / data_->radius_factor;
+    auto width = static_cast<float>(std::min(e.clip_rectangle().width(), e.clip_rectangle().height())) / data_->radius_factor;
+    for (auto n = 0; n < data_->intervals; n++) {
+      auto opacity_index = enabled() ? n + 1 : 2;
+      auto opacity = opacity_index * (255 + 1) / data_->intervals - 1;
       e.graphics().fill_ellipse(xtd::drawing::solid_brush(xtd::drawing::color::from_argb(static_cast<xtd::byte>(opacity), fore_color())), -(data_->radius_factor / 2.f - 1.f) * width + width / data_->radius_factor * 2.f, -(data_->radius_factor / 2.f - 1.f) * height + height / data_->radius_factor * 2.f, 2.f * width, 2.f * height);
       e.graphics().rotate_transform(angle);
     }
@@ -111,20 +111,20 @@ void loading_indicator::on_timer_tick(object& timer, const xtd::event_args& e) {
 }
 
 loading_indicator loading_indicator::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  loading_indicator item;
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = loading_indicator {};
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 loading_indicator loading_indicator::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  loading_indicator item;
-  item.parent(parent);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = loading_indicator {};
+  result.parent(parent);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 void loading_indicator::start() {
