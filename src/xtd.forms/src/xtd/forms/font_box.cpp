@@ -38,7 +38,7 @@ dialog_result font_box::show(font& font, color& color, const iwin32_window& owne
 }
 
 dialog_result font_box::show_font_box(font& font, color* color, const iwin32_window* owner, font_box_options options) {
-  font_dialog dialog{};
+  auto dialog = font_dialog {};
   if (color) {
     options |= font_box_options::show_color;
     dialog.color(*color);
