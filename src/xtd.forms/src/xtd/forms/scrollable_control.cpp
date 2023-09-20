@@ -20,10 +20,9 @@ bool scrollable_control::auto_scroll() const noexcept {
 }
 
 scrollable_control& scrollable_control::auto_scroll(bool auto_scroll) {
-  if (data_->auto_scroll != auto_scroll) {
-    data_->auto_scroll = auto_scroll;
-    post_recreate_handle();
-  }
+  if (data_->auto_scroll == auto_scroll) return *this;
+  data_->auto_scroll = auto_scroll;
+  post_recreate_handle();
   return *this;
 }
 
@@ -32,10 +31,9 @@ drawing::size scrollable_control::auto_scroll_margin() const noexcept {
 }
 
 scrollable_control& scrollable_control::auto_scroll_margin(const drawing::size& value) {
-  if (data_->auto_scroll_margin != value) {
-    data_->auto_scroll_margin = value;
-    perform_layout();
-  }
+  if (data_->auto_scroll_margin == value) return *this;
+  data_->auto_scroll_margin = value;
+  perform_layout();
   return *this;
 }
 
@@ -48,10 +46,9 @@ bool scrollable_control::h_scroll() const noexcept {
 }
 
 scrollable_control& scrollable_control::h_scroll(bool h_scroll) {
-  if (data_->h_scroll != h_scroll) {
-    data_->h_scroll = h_scroll;
-    post_recreate_handle();
-  }
+  if (data_->h_scroll == h_scroll) return *this;
+  data_->h_scroll = h_scroll;
+  post_recreate_handle();
   return *this;
 }
 
@@ -60,10 +57,9 @@ bool scrollable_control::v_scroll() const noexcept {
 }
 
 scrollable_control& scrollable_control::v_scroll(bool v_scroll) {
-  if (data_->v_scroll != v_scroll) {
-    data_->v_scroll = v_scroll;
-    post_recreate_handle();
-  }
+  if (data_->v_scroll == v_scroll) return *this;
+  data_->v_scroll = v_scroll;
+  post_recreate_handle();
   return *this;
 }
 
@@ -74,7 +70,7 @@ scrollable_control::scrollable_control() : data_(std::make_shared<data>()) {
 }
 
 forms::create_params scrollable_control::create_params() const noexcept {
-  forms::create_params create_params = control::create_params();
+  auto create_params = control::create_params();
   
   if (data_->auto_scroll) {
     create_params.style(create_params.style() | WS_HSCROLL | WS_VSCROLL);
