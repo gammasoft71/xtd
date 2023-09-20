@@ -24,35 +24,32 @@ bool popup_panel::ignore_mouse_messages() const noexcept {
 }
 
 popup_panel& popup_panel::ignore_mouse_messages(bool value) {
-  if (data_->ignore_mouse_messages != value) {
-    data_->ignore_mouse_messages = value;
-    native::popup_panel::ignore_mouse_messages(handle(), data_->ignore_mouse_messages);
-  }
+  if (data_->ignore_mouse_messages == value) return *this;
+  data_->ignore_mouse_messages = value;
+  native::popup_panel::ignore_mouse_messages(handle(), data_->ignore_mouse_messages);
   return *this;
 }
 
 popup_panel popup_panel::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  popup_panel item;
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = popup_panel {};
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 popup_panel popup_panel::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  popup_panel item;
-  item.parent(parent);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = popup_panel {};
+  result.parent(parent);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 forms::create_params popup_panel::create_params() const noexcept {
-  forms::create_params create_params = panel::create_params();
-  
+  auto create_params = panel::create_params();
   create_params.class_name("popuppanel");
-  
   return create_params;
 }
 
@@ -81,9 +78,8 @@ void popup_panel::wnd_proc(message& message) {
 void popup_panel::wm_show(message& message) {
   panel::wnd_proc(message);
   
-  bool visible = message.lparam() != 0;
-  if (get_state(state::visible) != visible) {
-    set_state(state::visible, visible);
-    on_visible_changed(event_args::empty);
-  }
+  auto visible = message.lparam() != 0;
+  if (get_state(state::visible) == visible) return;
+  set_state(state::visible, visible);
+  on_visible_changed(event_args::empty);
 }
