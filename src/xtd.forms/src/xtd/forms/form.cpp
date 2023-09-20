@@ -74,11 +74,10 @@ std::optional<form::ibutton_control_ref> form::accept_button() const noexcept {
 }
 
 form& form::accept_button(const ibutton_control& accept_button) {
-  if (!data_->accept_button.has_value() || &data_->accept_button.value().get() != &accept_button) {
-    if (data_->accept_button.has_value()) data_->accept_button.value().get().notify_default(false);
-    data_->accept_button = const_cast<ibutton_control&>(accept_button);
-    data_->accept_button.value().get().notify_default(true);
-  }
+  if (data_->accept_button.has_value() && &data_->accept_button.value().get() == &accept_button) return *this;
+  if (data_->accept_button.has_value()) data_->accept_button.value().get().notify_default(false);
+  data_->accept_button = const_cast<ibutton_control&>(accept_button);
+  data_->accept_button.value().get().notify_default(true);
   return *this;
 }
 
@@ -106,8 +105,8 @@ std::optional<form::ibutton_control_ref> form::cancel_button() const noexcept {
 }
 
 form& form::cancel_button(const ibutton_control& cancel_button) {
-  if (!data_->cancel_button.has_value() || &data_->cancel_button.value().get() != &cancel_button)
-    data_->cancel_button = const_cast<ibutton_control&>(cancel_button);
+  if (data_->cancel_button.has_value() && &data_->cancel_button.value().get() == &cancel_button) return *this;
+  data_->cancel_button = const_cast<ibutton_control&>(cancel_button);
   return *this;
 }
 
@@ -121,10 +120,9 @@ bool form::close_box() const noexcept {
 }
 
 form& form::close_box(bool value) {
-  if (data_->close_box != value) {
-    data_->close_box = value;
-    post_recreate_handle();
-  }
+  if (data_->close_box == value) return *this;
+  data_->close_box = value;
+  post_recreate_handle();
   return *this;
 }
 
@@ -133,10 +131,9 @@ bool form::control_box() const noexcept {
 }
 
 form& form::control_box(bool value) {
-  if (data_->control_box != value) {
-    data_->control_box = value;
-    post_recreate_handle();
-  }
+  if (data_->control_box == value) return *this;
+  data_->control_box = value;
+  post_recreate_handle();
   return *this;
 }
 
@@ -158,10 +155,9 @@ forms::form_border_style form::form_border_style() const noexcept {
 }
 
 form& form::form_border_style(forms::form_border_style value) {
-  if (data_->form_border_style != value) {
-    data_->form_border_style = value;
-    post_recreate_handle();
-  }
+  if (data_->form_border_style == value) return *this;
+  data_->form_border_style = value;
+  post_recreate_handle();
   return *this;
 }
 
@@ -170,10 +166,9 @@ bool form::help_button() const {
 }
 
 form& form::help_button(bool value) {
-  if (data_->help_button != value) {
-    data_->help_button = value;
-    post_recreate_handle();
-  }
+  if (data_->help_button == value) return *this;
+  data_->help_button = value;
+  post_recreate_handle();
   return *this;
 }
 
@@ -182,10 +177,9 @@ const xtd::drawing::icon& form::icon() const noexcept {
 }
 
 form& form::icon(const xtd::drawing::icon& value) {
-  if (data_->icon != value) {
-    data_->icon = value != drawing::icon::empty ? value : system_icons::xtd_forms_logo();
-    if (is_handle_created() && data_->show_icon) native::form::icon(handle(), data_->icon);
-  }
+  if (data_->icon == value) return *this;
+  data_->icon = value != drawing::icon::empty ? value : system_icons::xtd_forms_logo();
+  if (is_handle_created() && data_->show_icon) native::form::icon(handle(), data_->icon);
   return *this;
 }
 
@@ -194,10 +188,9 @@ bool form::maximize_box() const noexcept {
 }
 
 form& form::maximize_box(bool value) {
-  if (data_->maximize_box != value) {
-    data_->maximize_box = value;
-    post_recreate_handle();
-  }
+  if (data_->maximize_box == value) return *this;
+  data_->maximize_box = value;
+  post_recreate_handle();
   return *this;
 }
 
@@ -206,18 +199,16 @@ std::optional<form::main_menu_ref> form::menu() const noexcept {
 }
 
 form& form::menu(const forms::main_menu& value) {
-  if (!data_->menu.has_value() || &data_->menu.value().get() != &value) {
-    data_->menu = const_cast<forms::main_menu&>(value);
-    if (is_handle_created()) create_system_menu();
-  }
+  if (data_->menu.has_value() && &data_->menu.value().get() == &value) return *this;
+  data_->menu = const_cast<forms::main_menu&>(value);
+  if (is_handle_created()) create_system_menu();
   return *this;
 }
 
 form& form::menu(std::nullptr_t) {
-  if (data_->menu.has_value()) {
-    if (is_handle_created()) destroy_system_menu();
-    data_->menu.reset();
-  }
+  if (!data_->menu.has_value()) return *this;
+  if (is_handle_created()) destroy_system_menu();
+  data_->menu.reset();
   return *this;
 }
 
@@ -226,10 +217,9 @@ bool form::minimize_box() const noexcept {
 }
 
 form& form::minimize_box(bool value) {
-  if (data_->minimize_box != value) {
-    data_->minimize_box = value;
-    post_recreate_handle();
-  }
+  if (data_->minimize_box == value) return *this;
+  data_->minimize_box = value;
+  post_recreate_handle();
   return *this;
 }
 
@@ -246,26 +236,23 @@ double form::opacity() const noexcept {
 }
 
 form& form::opacity(double opacity) {
-  if (data_->opacity != opacity) {
-    data_->opacity = opacity;
-    if (is_handle_created()) native::form::opacity(handle(), data_->opacity);
-  }
+  if (data_->opacity == opacity) return *this;
+  data_->opacity = opacity;
+  if (is_handle_created()) native::form::opacity(handle(), data_->opacity);
   return *this;
 }
 
 form& form::owner(const control& value) {
-  if (!data_->owner || data_->owner->handle() != value.handle()) {
-    data_->owner = &value;
-    post_recreate_handle();
-  }
+  if (data_->owner && data_->owner->handle() == value.handle()) return *this;
+  data_->owner = &value;
+  post_recreate_handle();
   return *this;
 }
 
 form& form::owner(std::nullptr_t) {
-  if (data_->owner) {
-    data_->owner = nullptr;
-    post_recreate_handle();
-  }
+  if (!data_->owner) return *this;
+  data_->owner = nullptr;
+  post_recreate_handle();
   return *this;
 }
 
@@ -278,11 +265,9 @@ bool form::show_icon() const noexcept {
 }
 
 form& form::show_icon(bool value) {
-  if (data_->show_icon != value) {
-    data_->show_icon = value;
-    post_recreate_handle();
-  }
-  
+  if (data_->show_icon == value) return *this;
+  data_->show_icon = value;
+  post_recreate_handle();
   return *this;
 }
 
@@ -291,11 +276,9 @@ bool form::show_in_taskbar() const noexcept {
 }
 
 form& form::show_in_taskbar(bool value) {
-  if (data_->show_in_taskbar != value) {
-    data_->show_in_taskbar = value;
-    post_recreate_handle();
-  }
-  
+  if (data_->show_in_taskbar == value) return *this;
+  data_->show_in_taskbar = value;
+  post_recreate_handle();
   return *this;
 }
 
@@ -313,18 +296,16 @@ std::optional<form::status_bar_ref> form::status_bar() const noexcept {
 }
 
 form& form::status_bar(const forms::status_bar& value) {
-  if (!data_->status_bar.has_value() || &data_->status_bar.value().get() != &value) {
-    data_->status_bar = const_cast<forms::status_bar&>(value);
-    data_->status_bar.value().get().is_system_status_bar(true);
-  }
+  if (data_->status_bar.has_value() && &data_->status_bar.value().get() == &value) return *this;
+  data_->status_bar = const_cast<forms::status_bar&>(value);
+  data_->status_bar.value().get().is_system_status_bar(true);
   return *this;
 }
 
 form& form::status_bar(std::nullptr_t) {
-  if (data_->status_bar.has_value()) {
-    data_->status_bar.value().get().is_system_status_bar(false);
-    data_->status_bar.reset();
-  }
+  if (!data_->status_bar.has_value()) return *this;
+  data_->status_bar.value().get().is_system_status_bar(false);
+  data_->status_bar.reset();
   return *this;
 }
 
@@ -333,18 +314,16 @@ std::optional<form::tool_bar_ref> form::tool_bar() const noexcept {
 }
 
 form& form::tool_bar(const forms::tool_bar& value) {
-  if (!data_->tool_bar.has_value() || &data_->tool_bar.value().get() != &value) {
-    data_->tool_bar = const_cast<forms::tool_bar&>(value);
-    data_->tool_bar.value().get().is_system_tool_bar(true);
-  }
+  if (data_->tool_bar.has_value() && &data_->tool_bar.value().get() == &value) return *this;
+  data_->tool_bar = const_cast<forms::tool_bar&>(value);
+  data_->tool_bar.value().get().is_system_tool_bar(true);
   return *this;
 }
 
 form& form::tool_bar(std::nullptr_t) {
-  if (data_->tool_bar.has_value()) {
-    data_->tool_bar.value().get().is_system_tool_bar(false);
-    data_->tool_bar.reset();
-  }
+  if (!data_->tool_bar.has_value()) return *this;
+  data_->tool_bar.value().get().is_system_tool_bar(false);
+  data_->tool_bar.reset();
   return *this;
 }
 
@@ -353,8 +332,8 @@ bool form::top_level() const noexcept {
 }
 
 form& form::top_level(bool top_level) {
-  if (!get_state(state::top_level) != top_level)
-    set_state(state::top_level, top_level);
+  if (!get_state(state::top_level) == top_level) return *this;
+  set_state(state::top_level, top_level);
   return *this;
 }
 
@@ -363,10 +342,9 @@ bool form::top_most() const noexcept {
 }
 
 form& form::top_most(bool value) {
-  if (data_->top_most != value) {
-    data_->top_most = value;
-    post_recreate_handle();
-  }
+  if (data_->top_most == value) return *this;
+  data_->top_most = value;
+  post_recreate_handle();
   return *this;
 }
 
@@ -426,47 +404,47 @@ void form::close() {
 }
 
 form form::create(const xtd::ustring& text, const drawing::size& size, const xtd::ustring& name) {
-  form item;
-  item.text(text);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = form {};
+  result.text(text);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 form form::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  form item;
-  item.text(text);
+  auto result = form {};
+  result.text(text);
   if (location != point {-1, -1}) {
-    item.start_position(form_start_position::manual);
-    item.location(location);
+    result.start_position(form_start_position::manual);
+    result.location(location);
   }
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 form form::create(const xtd::ustring& text, form_start_position start_position, const drawing::size& size, const xtd::ustring& name) {
-  form item;
-  item.text(text);
-  item.start_position(start_position);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = form {};
+  result.text(text);
+  result.start_position(start_position);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 form form::create(const xtd::ustring& text, form_start_position start_position, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  form item;
-  item.text(text);
-  item.start_position(start_position);
-  if (location != point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = form {};
+  result.text(text);
+  result.start_position(start_position);
+  if (location != point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 bool form::pre_process_message(xtd::forms::message& message) {
   if (message.msg() == WM_KEYUP) {
-    key_event_args key_event_args(static_cast<keys>(message.wparam()));
+    auto key_event_args = forms::key_event_args {static_cast<keys>(message.wparam())};
     if (key_event_args.key_data() == keys::enter && data_->accept_button.has_value()) {
       data_->accept_button.value().get().perform_click();
       return true;
@@ -528,7 +506,7 @@ forms::dialog_result form::show_sheet_dialog(const iwin32_window& owner) {
 }
 
 forms::create_params form::create_params() const noexcept {
-  forms::create_params cp = container_control::create_params();
+  auto cp = container_control::create_params();
   cp.style(cp.style() & ~WS_CHILD);
   
   cp.class_name("form");
@@ -536,11 +514,8 @@ forms::create_params form::create_params() const noexcept {
   cp.style(cp.style() | WS_CLIPCHILDREN);
   
   if (get_state(state::modal)) cp.ex_style(cp.ex_style() | WS_EX_MODALWINDOW);
-  
   if (data_->owner != nullptr) cp.parent(data_->owner->handle());
-  
   if (data_->top_most) cp.ex_style(cp.ex_style() | WS_EX_TOPMOST);
-  
   if (!enabled())
     // Forms that are parent of a modal dialog must keep their WS_DISABLED style (VSWhidbey 449309)
     cp.style(cp.style() | WS_DISABLED);
@@ -605,7 +580,7 @@ void form::on_handle_destroyed(const event_args& e) {
 }
 
 void form::on_form_closed(const form_closed_event_args& e) {
-  static bool closing = false;
+  static auto closing = false;
   if (closing) return;
   closing = true;
   form_closed(*this, e);
@@ -767,7 +742,7 @@ void form::fill_in_create_params_border_icons(xtd::forms::create_params& cp) con
 }
 
 void form::fill_in_create_params_start_position(xtd::forms::create_params& cp) const {
-  static int32 default_location = 0;
+  static auto default_location = 0;
   if (default_location == 0)
     default_location = xtd::random().next(4, 20) * 10;
     
@@ -823,7 +798,7 @@ void form::wm_activate(message& message) {
 
 void form::wm_close(message& message) {
   if (data_->closed) return;
-  form_closing_event_args event_args;
+  auto event_args = form_closing_event_args {};
   on_form_closing(event_args);
   message.result(event_args.cancel() == true);
   if (event_args.cancel() != true) {
