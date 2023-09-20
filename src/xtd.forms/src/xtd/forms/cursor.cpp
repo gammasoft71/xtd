@@ -5,12 +5,13 @@
 #include "../../../include/xtd/forms/cursor.h"
 #include "../../../include/xtd/forms/cursors.h"
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
 namespace {
-  auto current_cursor = std::optional<cursor> {};
+  auto current_cursor = optional<cursor> {};
 }
 
 struct cursor::data {
@@ -19,12 +20,12 @@ struct cursor::data {
   xtd::drawing::point hot_spot_;
   xtd::ustring name_;
   xtd::drawing::size size_;
-  std::any tag_;
+  any tag_;
 };
 
 cursor cursor::none(0, false, "none");
 
-cursor::cursor(intptr handle, bool destroyable, const xtd::ustring& name) : data_(std::make_shared<data>()) {
+cursor::cursor(intptr handle, bool destroyable, const xtd::ustring& name) : data_(make_shared<data>()) {
   data_->handle_ = handle;
   data_->destroyable_ = destroyable;
   data_->name_ = name;
@@ -32,7 +33,7 @@ cursor::cursor(intptr handle, bool destroyable, const xtd::ustring& name) : data
   data_->size_ = native::cursor::size(data_->handle_);
 }
 
-cursor::cursor() : data_(std::make_shared<data>()) {
+cursor::cursor() : data_(make_shared<data>()) {
   data_->handle_ = native::cursor::create();
   data_->hot_spot_ = native::cursor::hot_spot(data_->handle_);
   data_->size_ = native::cursor::size(data_->handle_);
@@ -41,7 +42,7 @@ cursor::cursor() : data_(std::make_shared<data>()) {
 cursor::cursor(intptr handle) : cursor(handle, false, "") {
 }
 
-cursor::cursor(const bitmap& bitmap, const xtd::drawing::point& hot_spot) : data_(std::make_shared<data>()) {
+cursor::cursor(const bitmap& bitmap, const xtd::drawing::point& hot_spot) : data_(make_shared<data>()) {
   data_->handle_ = native::cursor::create(bitmap, hot_spot);
   data_->hot_spot_ = hot_spot;
   data_->size_ = native::cursor::size(data_->handle_);
@@ -81,11 +82,11 @@ drawing::size cursor::size() const noexcept {
   return data_->size_;
 }
 
-std::any cursor::tag() const noexcept {
+any cursor::tag() const noexcept {
   return data_->tag_;
 }
 
-void cursor::tag(std::any tag) {
+void cursor::tag(any tag) {
   data_->tag_ = tag;
 }
 
