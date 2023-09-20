@@ -41,19 +41,18 @@ const choice& choice::items(const object_collection& items) {
 }
 
 list_control& choice::selected_index(size_t selected_index) {
-  if (this->selected_index() != selected_index) {
-    if (selected_index != npos && selected_index >= data_->items.size()) throw argument_out_of_range_exception("Selected index greater than items size"_t, csf_);
-    set_selected_index(selected_index);
-    if (is_handle_created()) native::choice::selected_index(handle(), this->selected_index());
-    
-    item selected;
-    if (this->selected_index() != npos) selected = data_->items[this->selected_index()];
-    //this->selected_item(selected);
-    data_->selected_item = selected;
-    on_selected_value_changed(event_args::empty);
-    
-    on_selected_index_changed(event_args::empty);
-  }
+  if (this->selected_index() == selected_index) return *this;
+  if (selected_index != npos && selected_index >= data_->items.size()) throw argument_out_of_range_exception("Selected index greater than items size"_t, csf_);
+  set_selected_index(selected_index);
+  if (is_handle_created()) native::choice::selected_index(handle(), this->selected_index());
+  
+  item selected;
+  if (this->selected_index() != npos) selected = data_->items[this->selected_index()];
+  //this->selected_item(selected);
+  data_->selected_item = selected;
+  on_selected_value_changed(event_args::empty);
+  
+  on_selected_index_changed(event_args::empty);
   return *this;
 }
 
@@ -62,16 +61,15 @@ const choice::item& choice::selected_item() const noexcept {
 }
 
 choice& choice::selected_item(const item& selected_item) {
-  if (data_->selected_item != selected_item) {
-    auto it = std::find(data_->items.begin(), data_->items.end(), selected_item);
-    if (it == data_->items.end())
-      data_->selected_item = selected_index() != npos ? items()[selected_index()] : item {""};
-    else {
-      size_t index = it - data_->items.begin();
-      selected_index(index);
-      data_->selected_item = *it;
-      on_selected_value_changed(event_args::empty);
-    }
+  if (data_->selected_item == selected_item) return *this;
+  auto it = std::find(data_->items.begin(), data_->items.end(), selected_item);
+  if (it == data_->items.end())
+    data_->selected_item = selected_index() != npos ? items()[selected_index()] : item {""};
+  else {
+    size_t index = it - data_->items.begin();
+    selected_index(index);
+    data_->selected_item = *it;
+    on_selected_value_changed(event_args::empty);
   }
   return *this;
 }
@@ -81,10 +79,9 @@ bool choice::sorted() const noexcept {
 }
 
 choice& choice::sorted(bool sorted) {
-  if (data_->sorted != sorted) {
-    data_->sorted = sorted;
-    data_->items.sorted(data_->sorted);
-  }
+  if (data_->sorted == sorted) return *this;
+  data_->sorted = sorted;
+  data_->items.sorted(data_->sorted);
   return *this;
 }
 
