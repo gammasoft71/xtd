@@ -62,11 +62,10 @@ int32 scroll_bar::value() const noexcept {
 
 scroll_bar& scroll_bar::value(int32 value) {
   if (value < data_->minimum || value > data_->maximum) throw argument_out_of_range_exception {csf_};
-  if (data_->value != value) {
-    data_->value = value;
-    if (is_handle_created()) native::scroll_bar::value(handle(), value);
-    on_value_changed(event_args::empty);
-  }
+  if (data_->value == value) return *this;
+  data_->value = value;
+  if (is_handle_created()) native::scroll_bar::value(handle(), value);
+  on_value_changed(event_args::empty);
   return *this;
 }
 
@@ -78,10 +77,8 @@ scroll_bar::scroll_bar(bool vertical) : data_(std::make_shared<data>()) {
 }
 
 forms::create_params scroll_bar::create_params() const noexcept {
-  forms::create_params create_params = control::create_params();
-  
+  auto create_params = control::create_params();
   create_params.class_name("scrollbar");
-  
   return create_params;
 }
 
