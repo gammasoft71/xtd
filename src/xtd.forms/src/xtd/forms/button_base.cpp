@@ -61,10 +61,9 @@ const xtd::forms::flat_button_appearance& button_base::flat_appearance() const n
 }
 
 button_base& button_base::flat_appearance(const xtd::forms::flat_button_appearance& value) {
-  if (data_->flat_appearance != value) {
-    data_->flat_appearance = value;
-    recreate_handle();
-  }
+  if (data_->flat_appearance == value) return *this;
+  data_->flat_appearance = value;
+  recreate_handle();
   return *this;
 }
 
@@ -73,11 +72,10 @@ xtd::forms::flat_style button_base::flat_style() const noexcept {
 }
 
 button_base& button_base::flat_style(xtd::forms::flat_style value) {
-  if (data_->flat_style != value) {
-    data_->flat_style = value;
-    control_appearance(data_->flat_style == xtd::forms::flat_style::system ? forms::control_appearance::system : forms::control_appearance::standard);
-    recreate_handle();
-  }
+  if (data_->flat_style == value) return *this;
+  data_->flat_style = value;
+  control_appearance(data_->flat_style == xtd::forms::flat_style::system ? forms::control_appearance::system : forms::control_appearance::standard);
+  recreate_handle();
   return *this;
 }
 
@@ -86,13 +84,12 @@ const drawing::image& button_base::image() const noexcept {
 }
 
 button_base& button_base::image(const drawing::image& value) {
-  if (data_->image != value) {
-    data_->image = value;
-    data_->image_list = forms::image_list();
-    data_->image_index = -1;
-    if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
-    on_image_changed(xtd::event_args::empty);
-  }
+  if (data_->image == value) return *this;
+  data_->image = value;
+  data_->image_list = forms::image_list();
+  data_->image_index = -1;
+  if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
+  on_image_changed(xtd::event_args::empty);
   return *this;
 }
 
@@ -101,10 +98,9 @@ content_alignment button_base::image_align() const noexcept {
 }
 
 button_base& button_base::image_align(content_alignment value) {
-  if (data_->image_align != value) {
-    data_->image_align = value;
-    if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
-  }
+  if (data_->image_align == value) return *this;
+  data_->image_align = value;
+  if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
   return *this;
 }
 
@@ -113,12 +109,11 @@ int32 button_base::image_index() const noexcept {
 }
 
 button_base& button_base::image_index(int32 value) {
-  if (data_->image_index != value) {
-    if (value < -1 || static_cast<size_t>(value) >= data_->image_list.images().size()) throw argument_out_of_range_exception {csf_};
-    data_->image_index = value;
-    if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
-    if (value != -1) data_->image = xtd::drawing::image::empty;
-  }
+  if (data_->image_index == value) return *this;
+  if (value < -1 || static_cast<size_t>(value) >= data_->image_list.images().size()) throw argument_out_of_range_exception {csf_};
+  data_->image_index = value;
+  if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
+  if (value != -1) data_->image = xtd::drawing::image::empty;
   return *this;
 }
 
@@ -131,11 +126,10 @@ forms::image_list& button_base::image_list() noexcept {
 }
 
 button_base& button_base::image_list(const forms::image_list& value) {
-  if (data_->image_list != value) {
-    data_->image_list = value;
-    data_->image = drawing::image::empty;
-    post_recreate_handle();
-  }
+  if (data_->image_list == value) return *this;
+  data_->image_list = value;
+  data_->image = drawing::image::empty;
+  post_recreate_handle();
   return *this;
 }
 
@@ -153,11 +147,10 @@ content_alignment button_base::text_align() const noexcept {
 }
 
 button_base& button_base::text_align(content_alignment text_align) {
-  if (data_->text_align != text_align) {
-    data_->text_align = text_align;
-    if (data_->flat_style == xtd::forms::flat_style::system) post_recreate_handle();
-    else invalidate();
-  }
+  if (data_->text_align == text_align) return *this;
+  data_->text_align = text_align;
+  if (data_->flat_style == xtd::forms::flat_style::system) post_recreate_handle();
+  else invalidate();
   return *this;
 }
 
