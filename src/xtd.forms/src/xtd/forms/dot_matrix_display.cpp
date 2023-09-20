@@ -59,7 +59,7 @@ const dot_matrix_display::dots_collection& dot_matrix_display::dot_matrix_displa
   return data_->dots;
 }
 
-const dot_matrix_display& dot_matrix_display::dots(const dots_collection& dots) {
+dot_matrix_display& dot_matrix_display::dots(const dots_collection& dots) {
   if (data_->dots == dots) return *this;
   data_->dots = dots;
   data_->matrix_size = drawing::size(static_cast<int32>(data_->dots[0].size()), static_cast<int32>(data_->dots.size()));
@@ -71,27 +71,30 @@ int32 dot_matrix_display::matrix_height() const noexcept {
   return data_->matrix_size.height();
 }
 
-void dot_matrix_display::matrix_height(int32 value) {
+dot_matrix_display& dot_matrix_display::matrix_height(int32 value) {
   matrix_size({data_->matrix_size.width(), value});
+  return *this;
 }
 
 int32 dot_matrix_display::matrix_width() const noexcept {
   return data_->matrix_size.width();
 }
 
-void dot_matrix_display::matrix_width(int32 value) {
+dot_matrix_display& dot_matrix_display::matrix_width(int32 value) {
   matrix_size({value, data_->matrix_size.height()});
+  return *this;
 }
 
 const drawing::size& dot_matrix_display::matrix_size() const noexcept {
   return data_->matrix_size;
 }
 
-void dot_matrix_display::matrix_size(const drawing::size& value) {
+dot_matrix_display& dot_matrix_display::matrix_size(const drawing::size& value) {
   if (data_->matrix_size == value) return *this;
   data_->matrix_size = value;
   data_->dots = dots_collection(data_->matrix_size.height(), std::vector<bool>(data_->matrix_size.width(), false));
   invalidate();
+  return *this;
 }
 
 bool dot_matrix_display::show_back_dot() const noexcept {

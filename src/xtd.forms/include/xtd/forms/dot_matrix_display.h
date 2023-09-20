@@ -84,7 +84,7 @@ namespace xtd {
       /// @brief Sets all dots status.
       /// @param dots A dots_collection that represent all dots status.
       /// @return Current dot_matrix_display.
-      virtual const dot_matrix_display& dots(const dots_collection& dots);
+      virtual dot_matrix_display& dots(const dots_collection& dots);
       
       /// @brief Gets the matrix size. Number of height dots.
       /// @return A int32 represent the height dots of the matrix. The default is 7.
@@ -92,7 +92,7 @@ namespace xtd {
       /// @brief Sets the matrix size. Number of height dots.
       /// @param value A int32 represent the height dots of the matrix. The default is 7.
       /// @return Current dot_matrix_display.
-      virtual void matrix_height(int32 value);
+      virtual dot_matrix_display& matrix_height(int32 value);
       
       /// @brief Gets the matrix size. Number height dots.
       /// @return A int32 that represent the width dots of the matrix. The default is 7.
@@ -100,7 +100,7 @@ namespace xtd {
       /// @brief Sets the matrix size. Number height dots.
       /// @param value A int32 that represent the width dots of the matrix. The default is 7.
       /// @return Current dot_matrix_display.
-      virtual void matrix_width(int32 value);
+      virtual dot_matrix_display& matrix_width(int32 value);
       
       /// @brief Gets the matrix size. Number of width and height dots.
       /// @return A xtd::drawing::point that represent the width and height dots of the matrix. The default is {7, 7}.
@@ -108,7 +108,7 @@ namespace xtd {
       /// @brief Gets the matrix size. Number of width and height dots.
       /// @param value A xtd::drawing::point that represent the width and height dots of the matrix. The default is {7, 7}. The default is {7, 7}.
       /// @return Current dot_matrix_display.
-      virtual void matrix_size(const drawing::size& value);
+      virtual dot_matrix_display& matrix_size(const drawing::size& value);
       
       /// @brief Gets a value indicate if background dots are shown.
       /// @return true if background dots are shown; otherwise false.
