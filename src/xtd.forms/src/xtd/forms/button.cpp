@@ -35,10 +35,9 @@ bool button::auto_repeat() const noexcept {
 }
 
 button& button::auto_repeat(bool auto_repeat) {
-  if (data_->auto_repeat != auto_repeat) {
-    data_->auto_repeat = auto_repeat;
-    if (!data_->auto_repeat) data_->auto_repeat_timer.enabled(false);
-  }
+  if (data_->auto_repeat == auto_repeat) return *this;
+  data_->auto_repeat = auto_repeat;
+  if (!data_->auto_repeat) data_->auto_repeat_timer.enabled(false);
   return *this;
 }
 
