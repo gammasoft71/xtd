@@ -49,11 +49,10 @@ uint32 animation::frames_per_second() const noexcept {
 }
 
 animation& animation::frames_per_second(uint32 value) {
-  if (data_->frames_per_second != value) {
-    data_->frames_per_second = value;
-    if (!data_->frames_per_second) data_->frames_timer.interval_milliseconds(std::numeric_limits<uint32>::max());
-    else data_->frames_timer.interval_milliseconds(static_cast<uint32>(ceil(1000.0 / data_->frames_per_second)));
-  }
+  if (data_->frames_per_second == value) return *this;
+  data_->frames_per_second = value;
+  if (!data_->frames_per_second) data_->frames_timer.interval_milliseconds(std::numeric_limits<uint32>::max());
+  else data_->frames_timer.interval_milliseconds(static_cast<uint32>(ceil(1000.0 / data_->frames_per_second)));
   return *this;
 }
 
