@@ -43,10 +43,9 @@ const xtd::ustring& replace_dialog::find_string() const noexcept {
 }
 
 replace_dialog& replace_dialog::find_string(const xtd::ustring& value) {
-  if (value != data_->find_string) {
-    data_->find_string = value;
-    recreate_handle();
-  }
+  if (value == data_->find_string) return *this;
+  data_->find_string = value;
+  recreate_handle();
   return *this;
 }
 
@@ -55,10 +54,9 @@ const xtd::ustring& replace_dialog::replace_string() const noexcept {
 }
 
 replace_dialog& replace_dialog::replace_string(const xtd::ustring& value) {
-  if (value != data_->replace_string) {
-    data_->replace_string = value;
-    recreate_handle();
-  }
+  if (value == data_->replace_string) return *this;
+  data_->replace_string = value;
+  recreate_handle();
   return *this;
 }
 
@@ -67,10 +65,9 @@ xtd::drawing::point replace_dialog::location() const noexcept {
 }
 
 replace_dialog& replace_dialog::location(const xtd::drawing::point& value) {
-  if (value != data_->location) {
-    data_->location = value;
-    recreate_handle();
-  }
+  if (value == data_->location) return *this;
+  data_->location = value;
+  recreate_handle();
   return *this;
 }
 
@@ -79,10 +76,9 @@ bool replace_dialog::match_case() const noexcept {
 }
 
 replace_dialog& replace_dialog::match_case(bool value) {
-  if (value != data_->match_case) {
-    data_->match_case = value;
-    recreate_handle();
-  }
+  if (value == data_->match_case) return *this;
+  data_->match_case = value;
+  recreate_handle();
   return *this;
 }
 
@@ -91,10 +87,9 @@ bool replace_dialog::show_match_case() const noexcept {
 }
 
 replace_dialog& replace_dialog::show_match_case(bool value) {
-  if (value != data_->show_match_case) {
-    data_->show_match_case = value;
-    recreate_handle();
-  }
+  if (value == data_->show_match_case) return *this;
+  data_->show_match_case = value;
+  recreate_handle();
   return *this;
 }
 
@@ -103,10 +98,9 @@ bool replace_dialog::show_whole_word() const noexcept {
 }
 
 replace_dialog& replace_dialog::show_whole_word(bool value) {
-  if (value != data_->show_whole_word) {
-    data_->show_whole_word = value;
-    recreate_handle();
-  }
+  if (value == data_->show_whole_word) return *this;
+  data_->show_whole_word = value;
+  recreate_handle();
   return *this;
 }
 
@@ -115,10 +109,9 @@ const xtd::ustring& replace_dialog::title() const noexcept {
 }
 
 replace_dialog& replace_dialog::title(const xtd::ustring& value) {
-  if (value != data_->title) {
-    data_->title = value;
-    recreate_handle();
-  }
+  if (value == data_->title) return *this;
+  data_->title = value;
+  recreate_handle();
   return *this;
 }
 
@@ -127,10 +120,9 @@ bool replace_dialog::whole_word() const noexcept {
 }
 
 replace_dialog& replace_dialog::whole_word(bool value) {
-  if (value != data_->whole_word) {
-    data_->whole_word = value;
-    recreate_handle();
-  }
+  if (value == data_->whole_word) return *this;
+  data_->whole_word = value;
+  recreate_handle();
   return *this;
 }
 
@@ -200,9 +192,8 @@ void replace_dialog::destroy_handle() {
 }
 
 void replace_dialog::recreate_handle() {
-  if (data_->handle) {
-    destroy_handle();
-    create_handle();
-    if (data_->visible) native::replace_dialog::show(data_->handle);
-  }
+  if (!data_->handle) return;
+  destroy_handle();
+  create_handle();
+  if (data_->visible) native::replace_dialog::show(data_->handle);
 }
