@@ -39,10 +39,9 @@ forms::border_sides list_box::border_sides() const noexcept {
 }
 
 list_box& list_box::border_sides(forms::border_sides border_sides) {
-  if (data_->border_sides != border_sides) {
-    data_->border_sides = border_sides;
-    if (control_appearance() == forms::control_appearance::standard) invalidate();
-  }
+  if (data_->border_sides == border_sides) return *this;
+  data_->border_sides = border_sides;
+  if (control_appearance() == forms::control_appearance::standard) invalidate();
   return *this;
 }
 
@@ -51,10 +50,9 @@ forms::border_style list_box::border_style() const noexcept {
 }
 
 list_box& list_box::border_style(forms::border_style border_style) {
-  if (data_->border_style != border_style) {
-    data_->border_style = border_style;
-    post_recreate_handle();
-  }
+  if (data_->border_style == border_style) return *this;
+  data_->border_style = border_style;
+  post_recreate_handle();
   return *this;
 }
 
@@ -73,18 +71,17 @@ const list_box& list_box::items(const object_collection& items) {
 
 list_control& list_box::selected_index(size_t selected_index) {
   if (selected_index != npos && selected_index >= data_->items.size()) throw argument_out_of_range_exception("Selected index greater than items size"_t, csf_);
-  if (this->selected_index() != selected_index) {
-    set_selected_index(selected_index);
-    if (is_handle_created()) native::list_box::selected_index(handle(), this->selected_index());
-    
-    item selected;
-    if (this->selected_index() != npos) selected = data_->items[this->selected_index()];
-    //this->selected_item(selected);
-    data_->selected_item = selected;
-    on_selected_value_changed(event_args::empty);
-    
-    on_selected_index_changed(event_args::empty);
-  }
+  if (this->selected_index() == selected_index) return *this;
+  set_selected_index(selected_index);
+  if (is_handle_created()) native::list_box::selected_index(handle(), this->selected_index());
+  
+  auto selected = item {};
+  if (this->selected_index() != npos) selected = data_->items[this->selected_index()];
+  //this->selected_item(selected);
+  data_->selected_item = selected;
+  on_selected_value_changed(event_args::empty);
+  
+  on_selected_index_changed(event_args::empty);
   return *this;
 }
 
@@ -93,20 +90,19 @@ vector<size_t> list_box::selected_indices() const noexcept {
 }
 
 list_box& list_box::selected_item(const item& selected_item) {
-  if (data_->selected_item != selected_item) {
-    auto it = std::find(data_->items.begin(), data_->items.end(), selected_item);
-    if (it == data_->items.end()) {
-      if (selected_index() == npos || items().size() == 0) data_->selected_item = "";
-      else {
-        if (selected_index() >= items().size()) data_->selected_item = items()[items().size() - 1];
-        else data_->selected_item = items()[selected_index()];
-      }
-    } else {
-      size_t index = it - data_->items.begin();
-      selected_index(index);
-      data_->selected_item = *it;
-      on_selected_value_changed(event_args::empty);
+  if (data_->selected_item == selected_item) return *this;
+  auto it = std::find(data_->items.begin(), data_->items.end(), selected_item);
+  if (it == data_->items.end()) {
+    if (selected_index() == npos || items().size() == 0) data_->selected_item = "";
+    else {
+      if (selected_index() >= items().size()) data_->selected_item = items()[items().size() - 1];
+      else data_->selected_item = items()[selected_index()];
     }
+  } else {
+    auto index = it - data_->items.begin();
+    selected_index(index);
+    data_->selected_item = *it;
+    on_selected_value_changed(event_args::empty);
   }
   return *this;
 }
@@ -116,7 +112,7 @@ const list_box::item& list_box::selected_item() const noexcept {
 }
 
 vector<list_box::item> list_box::selected_items() const noexcept {
-  vector<item> itms;
+  auto itms = vector<item> {};
   auto indices = selected_indices();
   for_each(indices.begin(), indices.end(), [&](size_t index) {itms.push_back(data_->items[index]);});
   return itms;
@@ -127,10 +123,9 @@ forms::selection_mode list_box::selection_mode() const noexcept {
 }
 
 list_box& list_box::selection_mode(forms::selection_mode selection_mode) {
-  if (data_->selection_mode != selection_mode) {
-    data_->selection_mode = selection_mode;
-    post_recreate_handle();
-  }
+  if (data_->selection_mode == selection_mode) return *this;
+  data_->selection_mode = selection_mode;
+  post_recreate_handle();
   return *this;
 }
 
@@ -139,10 +134,9 @@ bool list_box::sorted() const noexcept {
 }
 
 list_box& list_box::sorted(bool sorted) {
-  if (data_->sorted != sorted) {
-    data_->sorted = sorted;
-    data_->items.sorted(data_->sorted);
-  }
+  if (data_->sorted == sorted) return *this;
+  data_->sorted = sorted;
+  data_->items.sorted(data_->sorted);
   return *this;
 }
 
@@ -155,24 +149,24 @@ void list_box::begin_update() {
 }
 
 list_box list_box::create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  list_box item;
-  item.items(items);
-  item.selected_index(selected_index);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = list_box {};
+  result.items(items);
+  result.selected_index(selected_index);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 list_box list_box::create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  list_box item;
-  item.parent(parent);
-  item.items(items);
-  item.selected_index(selected_index);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = list_box {};
+  result.parent(parent);
+  result.items(items);
+  result.selected_index(selected_index);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 void list_box::end_update() {
@@ -192,7 +186,7 @@ bool list_box::allow_selection() const noexcept {
 }
 
 forms::create_params list_box::create_params() const noexcept {
-  forms::create_params create_params = list_control::create_params();
+  auto create_params = list_control::create_params();
   
   create_params.class_name("listbox");
   create_params.style(create_params.style() | LBS_HASSTRINGS);
@@ -217,7 +211,7 @@ forms::create_params list_box::create_params() const noexcept {
 void list_box::on_handle_created(const event_args& e) {
   list_control::on_handle_created(e);
   data_->items.sorted(data_->sorted);
-  for (size_t index = 0; index < data_->items.size(); ++index)
+  for (auto index = 0_sz; index < data_->items.size(); ++index)
     native::list_box::insert_item(handle(), index, data_->items[index].value());
   if (data_->selection_mode == forms::selection_mode::none) selected_index(npos);
   native::list_box::selected_index(handle(), selected_index());
@@ -242,7 +236,7 @@ void list_box::wnd_proc(message& message) {
 
 void list_box::on_items_item_added(size_t pos, const item& item) {
   if (is_handle_created()) native::list_box::insert_item(handle(), pos, item.value());
-  list_box::item selected;
+  auto selected = list_box::item {};
   if (selected_index() != npos && selected_index() < data_->items.size()) selected = data_->items[selected_index()];
   this->selected_item(selected);
 }
@@ -254,7 +248,7 @@ void list_box::on_items_item_removed(size_t pos, const item& item)   {
 
 void list_box::on_items_item_updated(size_t pos, const item& item)   {
   if (is_handle_created()) native::list_box::update_item(handle(), pos, item.value());
-  list_box::item selected;
+  auto selected = list_box::item {};
   if (selected_index() != npos && selected_index() < data_->items.size()) selected = data_->items[selected_index()];
   this->selected_item(selected);
 }
