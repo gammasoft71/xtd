@@ -45,7 +45,7 @@ dialog_result folder_browser_box::show(ustring& selected_path, const ustring& de
 }
 
 dialog_result folder_browser_box::show_folder_browser_box(ustring& selected_path, const ustring& description, environment::special_folder root_folder, bool show_new_folder_button, bool auto_upgrade_enable, const iwin32_window* owner) {
-  folder_browser_dialog dialog;
+  auto dialog = folder_browser_dialog {};
   dialog.description(description).root_folder(root_folder).show_new_folder_button(show_new_folder_button).auto_upgrade_enable(auto_upgrade_enable).selected_path(selected_path);
   const auto result = owner ? dialog.show_sheet_dialog(*owner) : dialog.show_dialog();
   if (result == dialog_result::ok) selected_path = dialog.selected_path();
