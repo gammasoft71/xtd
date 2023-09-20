@@ -37,10 +37,9 @@ ustring assert_dialog::message() const noexcept {
 }
 
 assert_dialog& assert_dialog::message(const ustring& message) {
-  if (data_->message != message) {
-    data_->message = message;
-    set_message();
-  }
+  if (data_->message == message) return *this;
+  data_->message = message;
+  set_message();
   return *this;
 }
 
@@ -49,10 +48,9 @@ diagnostics::stack_frame assert_dialog::stack_frame() const noexcept {
 }
 
 assert_dialog& assert_dialog::stack_frame(const diagnostics::stack_frame& stack_frame) {
-  if (data_->stack_frame != stack_frame) {
-    data_->stack_frame = stack_frame;
-    set_message();
-  }
+  if (data_->stack_frame == stack_frame) return *this;
+  data_->stack_frame = stack_frame;
+  set_message();
   return *this;
 }
 
