@@ -38,7 +38,7 @@ namespace {
 
 struct light_button::data {
   bool auto_check = true;
-  bool three_state = 0;
+  bool three_state = false;
   bool checked = false;
   content_alignment light_align = content_alignment::middle_left;
   forms::check_state check_state = forms::check_state::unchecked;
@@ -82,10 +82,9 @@ content_alignment light_button::light_align() const noexcept {
 }
 
 light_button& light_button::light_align(content_alignment light_align) {
-  if (data_->light_align != light_align) {
-    data_->light_align = light_align;
-    post_recreate_handle();
-  }
+  if (data_->light_align == light_align) return *this;
+  data_->light_align = light_align;
+  post_recreate_handle();
   return *this;
 }
 
@@ -94,15 +93,14 @@ forms::check_state light_button::check_state() const noexcept {
 }
 
 light_button& light_button::check_state(forms::check_state check_state) {
-  if (data_->check_state != check_state) {
-    data_->check_state = check_state;
-    if (data_->checked != (data_->check_state != forms::check_state::unchecked)) {
-      data_->checked = data_->check_state != forms::check_state::unchecked;
-      on_checked_changed(event_args::empty);
-    }
-    if (is_handle_created() && flat_style() == xtd::forms::flat_style::system) native::light_button::check_state(handle(), static_cast<int32>(data_->check_state));
-    on_check_state_changed(event_args::empty);
+  if (data_->check_state == check_state) return *this;
+  data_->check_state = check_state;
+  if (data_->checked != (data_->check_state != forms::check_state::unchecked)) {
+    data_->checked = data_->check_state != forms::check_state::unchecked;
+    on_checked_changed(event_args::empty);
   }
+  if (is_handle_created() && flat_style() == xtd::forms::flat_style::system) native::light_button::check_state(handle(), static_cast<int32>(data_->check_state));
+  on_check_state_changed(event_args::empty);
   return *this;
 }
 
@@ -111,10 +109,9 @@ bool light_button::three_state() const noexcept {
 }
 
 light_button& light_button::three_state(bool three_state) {
-  if (data_->three_state != three_state) {
-    data_->three_state = three_state;
-    post_recreate_handle();
-  }
+  if (data_->three_state == three_state) return *this;
+  data_->three_state = three_state;
+  post_recreate_handle();
   return *this;
 }
 
@@ -123,20 +120,16 @@ drawing::color light_button::light_off_color() const noexcept {
 }
 
 light_button& light_button::light_off_color(const drawing::color& value) {
-  if (!data_->light_off_color.has_value() || data_->light_off_color.value() != value) {
-    data_->light_off_color = value;
-    invalidate();
-  }
-  
+  if (data_->light_off_color.has_value() && data_->light_off_color.value() == value) return *this;
+  data_->light_off_color = value;
+  invalidate();
   return *this;
 }
 
 light_button& light_button::light_off_color(std::nullptr_t) {
-  if (data_->light_off_color.has_value()) {
-    data_->light_off_color.reset();
-    invalidate();
-  }
-  
+  if (!data_->light_off_color.has_value()) return *this;
+  data_->light_off_color.reset();
+  invalidate();
   return *this;
 }
 
@@ -145,53 +138,46 @@ drawing::color light_button::light_on_color() const noexcept {
 }
 
 light_button& light_button::light_on_color(const drawing::color& value) {
-  if (!data_->light_on_color.has_value() || data_->light_on_color.value() != value) {
-    data_->light_on_color = value;
-    invalidate();
-  }
-  
+  if (data_->light_on_color.has_value() && data_->light_on_color.value() == value) return *this;
+  data_->light_on_color = value;
+  invalidate();
   return *this;
 }
 
 light_button& light_button::light_on_color(std::nullptr_t) {
-  if (data_->light_on_color.has_value()) {
-    data_->light_on_color.reset();
-    invalidate();
-  }
-  
+  if (!data_->light_on_color.has_value()) return *this;
+  data_->light_on_color.reset();
+  invalidate();
   return *this;
 }
 
 light_button light_button::create(const xtd::ustring& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  light_button item;
-  item.text(text);
-  item.three_state(three_state);
-  item.check_state(check_state);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = light_button {};
+  result.text(text);
+  result.three_state(three_state);
+  result.check_state(check_state);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 light_button light_button::create(const control& parent, const xtd::ustring& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  light_button item;
-  item.parent(parent);
-  item.text(text);
-  item.three_state(three_state);
-  item.check_state(check_state);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = light_button {};
+  result.parent(parent);
+  result.text(text);
+  result.three_state(three_state);
+  result.check_state(check_state);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 forms::create_params light_button::create_params() const noexcept {
-  forms::create_params create_params = button_base::create_params();
-  
+  auto create_params = button_base::create_params();
   create_params.class_name("lightbutton");
-  
   create_params.style(create_params.style() | BS_PUSHBUTTON);
-  
   return create_params;
 }
 
@@ -281,14 +267,14 @@ void light_button::on_paint(paint_event_args& e) {
     else if (flat_style() == xtd::forms::flat_style::popup) button_renderer::draw_popup_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image(), compute_image_bounds(), focused(), to_push_button_style(data_->state), !get_back_color().has_value() && back_color() != application::style_sheet().system_colors().control() ? back_color() : get_back_color(), !get_fore_color().has_value() && fore_color() != application::style_sheet().system_colors().control_text() ? fore_color() : get_fore_color(), flat_appearance());
     else button_renderer::draw_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image(), compute_image_bounds(), focused(), to_push_button_style(data_->state), !get_back_color().has_value() && back_color() != application::style_sheet().system_colors().control() ? back_color() : get_back_color(), !get_fore_color().has_value() && fore_color() != application::style_sheet().system_colors().control_text() ? fore_color() : get_fore_color());
     
-    drawing::color light_color = light_off_color();
+    auto light_color = light_off_color();
     if (data_->check_state == check_state::checked) light_color = light_on_color();
     else if (data_->check_state == check_state::indeterminate) light_color = drawing::color::dark(light_on_color());
     if (!enabled()) light_color = back_color();
-    int32 left = e.clip_rectangle().left() + 5;
+    auto left = e.clip_rectangle().left() + 5;
     if (data_->light_align == content_alignment::top_right || data_->light_align == content_alignment::middle_right || data_->light_align == content_alignment::bottom_right) left = e.clip_rectangle().right() - 15;
     else if (data_->light_align == content_alignment::top_center || data_->light_align == content_alignment::middle_center || data_->light_align == content_alignment::bottom_center) left = e.clip_rectangle().left() + (e.clip_rectangle().width() / 2) - 5;
-    int32 top = e.clip_rectangle().top() + (e.clip_rectangle().height() / 2) - 7;
+    auto top = e.clip_rectangle().top() + (e.clip_rectangle().height() / 2) - 7;
     if (data_->light_align == content_alignment::top_right || data_->light_align == content_alignment::top_center || data_->light_align == content_alignment::top_left) top = e.clip_rectangle().top() + 5;
     else if (data_->light_align == content_alignment::bottom_right || data_->light_align == content_alignment::bottom_center || data_->light_align == content_alignment::bottom_left) top = e.clip_rectangle().bottom() - 20;
     e.graphics().fill_rounded_rectangle(drawing::solid_brush(light_color), drawing::rectangle {left, top, 10, 16}, 2);
