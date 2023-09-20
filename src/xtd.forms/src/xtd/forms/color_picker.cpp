@@ -26,10 +26,9 @@ bool color_picker::alpha_color() const noexcept {
 }
 
 color_picker& color_picker::alpha_color(bool alpha_color) {
-  if (data_->alpha_color != alpha_color) {
-    data_->alpha_color = alpha_color;
-    post_recreate_handle();
-  }
+  if (data_->alpha_color == alpha_color) return *this;
+  data_->alpha_color = alpha_color;
+  post_recreate_handle();
   return *this;
 }
 
@@ -38,11 +37,10 @@ const drawing::color& color_picker::color() const noexcept {
 }
 
 void color_picker::color(const drawing::color& value) {
-  if (data_->color != value) {
-    data_->color = value;
-    if (is_handle_created()) native::color_picker::color(handle(), data_->color);
-    on_color_picker_changed(color_picker_event_args(data_->color));
-  }
+  if (data_->color == value) return *this;
+  data_->color = value;
+  if (is_handle_created()) native::color_picker::color(handle(), data_->color);
+  on_color_picker_changed(color_picker_event_args(data_->color));
 }
 
 color_picker color_picker::create(const xtd::drawing::color& color, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
