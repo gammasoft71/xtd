@@ -16,53 +16,51 @@ public:
     data_->alignment = value;
   }
   
-  void control(const xtd::forms::control* value) {
-    if (data_->control != value) {
-      data_->control = value;
-      update_size();
-    }
+  status_bar_panel_control& control(const xtd::forms::control* value) {
+    if (data_->control == value) return *this;
+    data_->control = value;
+    update_size();
+    return *this;
   }
   
   using xtd::forms::label::image;
   label& image(const xtd::drawing::image& value) override {
-    if (image() != value) {
-      label::image(value);
-      update_size();
-    }
+    if (image() == value) return *this;
+    label::image(value);
+    update_size();
     return *this;
   }
   
   bool is_horizontal() const {return dock() == dock_style::left || dock() == dock_style::right;}
   
-  void min_width(int32 value) {
+  status_bar_panel_control& min_width(int32 value) {
     data_->min_width = value;
+    return *this;
   }
   
   xtd::drawing::size size() const noexcept override {return control::size();}
   
   xtd::forms::control& size(const xtd::drawing::size& value) override {
-    if (size() != value) {
-      control::size(value);
-      update_size();
-    }
+    if (size() == value) return *this;
+    control::size(value);
+    update_size();
     return *this;
   }
   
   xtd::forms::status_bar_panel_style style() const {return data_->style;}
   
-  void style(xtd::forms::status_bar_panel_style value) {
-    if (data_->style != value) {
-      data_->style = value;
-      update_size();
-    }
+  status_bar_panel_control& style(xtd::forms::status_bar_panel_style value) {
+    if (data_->style == value) return *this;
+    data_->style = value;
+    update_size();
+    return *this;
   }
   
   using xtd::forms::control::text;
   xtd::forms::control& text(const xtd::ustring& value) override {
-    if (text() != value) {
-      label::text(value);
-      update_size();
-    }
+    if (text() == value) return *this;
+    label::text(value);
+    update_size();
     return *this;
   }
   
@@ -70,18 +68,22 @@ public:
     data_->tool_tip_text = value;
   }
   
-  void status_bar_panel_auto_size(xtd::forms::status_bar_panel_auto_size value) {
-    if (data_->status_bar_panel_auto_size != value) {
-      data_->status_bar_panel_auto_size = value;
-      update_size();
-    }
+  status_bar_panel_control& status_bar_panel_auto_size(xtd::forms::status_bar_panel_auto_size value) {
+    if (data_->status_bar_panel_auto_size == value) return *this;
+    data_->status_bar_panel_auto_size = value;
+    update_size();
+    return *this;
   }
   
-  void status_bar_panel_border_style(xtd::forms::status_bar_panel_border_style value) {
+  status_bar_panel_control& status_bar_panel_border_style(xtd::forms::status_bar_panel_border_style value) {
     data_->status_bar_panel_border_style = value;
+    return *this;
   }
   
-  void status_bar_panel(status_bar_panel_ref value) {data_->status_bar_panel = value;}
+  status_bar_panel_control& status_bar_panel(status_bar_panel_ref value) {
+    data_->status_bar_panel = value;
+    return *this;
+  }
   
 protected:
   xtd::drawing::font default_font() const noexcept override {return xtd::drawing::system_fonts::tool_font();}
