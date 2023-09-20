@@ -37,7 +37,7 @@ time_span timer::interval() const noexcept {
 }
 
 void timer::interval(const time_span& interval) {
-  interval_milliseconds(as<int32>(interval.total_microseconds_duration().count()));
+  interval_milliseconds(as<int32>(interval.total_milliseconds_duration().count()));
 }
 
 int32 timer::interval_milliseconds() const noexcept {
