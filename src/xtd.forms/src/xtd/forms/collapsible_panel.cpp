@@ -33,10 +33,9 @@ forms::border_sides collapsible_panel::border_sides() const noexcept {
 }
 
 collapsible_panel& collapsible_panel::border_sides(forms::border_sides border_sides) {
-  if (data_->border_sides != border_sides) {
-    data_->border_sides = border_sides;
-    if (control_appearance() == forms::control_appearance::standard) invalidate();
-  }
+  if (data_->border_sides == border_sides) return *this;
+  data_->border_sides = border_sides;
+  if (control_appearance() == forms::control_appearance::standard) invalidate();
   return *this;
 }
 
@@ -45,10 +44,9 @@ forms::border_style collapsible_panel::border_style() const noexcept {
 }
 
 collapsible_panel& collapsible_panel::border_style(forms::border_style border_style) {
-  if (data_->border_style != border_style) {
-    data_->border_style = border_style;
-    post_recreate_handle();
-  }
+  if (data_->border_style == border_style) return *this;
+  data_->border_style = border_style;
+  post_recreate_handle();
   return *this;
 }
 
@@ -57,11 +55,10 @@ bool collapsible_panel::expanded() const noexcept {
 }
 
 collapsible_panel& collapsible_panel::expanded(bool expanded) {
-  if (data_->expanded != expanded) {
-    data_->expanded = expanded;
-    if (is_handle_created()) native::collapsible_panel::expanded(handle(), data_->expanded);
-    on_expanded_changed(event_args::empty);
-  }
+  if (data_->expanded == expanded) return *this;
+  data_->expanded = expanded;
+  if (is_handle_created()) native::collapsible_panel::expanded(handle(), data_->expanded);
+  on_expanded_changed(event_args::empty);
   return *this;
 }
 
