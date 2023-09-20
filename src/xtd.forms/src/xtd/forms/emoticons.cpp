@@ -1,5 +1,6 @@
 #include "../../../include/xtd/forms/emoticons.h"
 
+using namespace std;
 using namespace xtd::forms;
 
 // 00080-00FF Latin 1 Supplement
@@ -1320,8 +1321,8 @@ const xtd::forms::emoticon xtd::forms::emoticons::axe = {"axe", 0x0001FA93};
 const xtd::forms::emoticon xtd::forms::emoticons::diya_lamp = {"diya lamp", 0x0001FA94};
 const xtd::forms::emoticon xtd::forms::emoticons::banjo = {"banjo", 0x0001FA95};
 
-const std::vector<xtd::forms::emoticon>& xtd::forms::emoticons::get_emoticons() {
-  static std::vector<xtd::forms::emoticon> emoticons {
+const vector<xtd::forms::emoticon>& xtd::forms::emoticons::get_emoticons() {
+  static auto emoticons = vector {
     copyright_sign, registered_sign,
     double_exclamation_mark, exclamation_question_mark,
     trade_mark_sign, information_source,
@@ -1346,7 +1347,7 @@ const std::vector<xtd::forms::emoticon>& xtd::forms::emoticons::get_emoticons() 
     white_heart, brown_heart, pinching_hand, zipper_mouth_face, money_mouth_face, face_with_thermometer, nerd_face, thinking_face, face_with_head_bandage, robot_face, hugging_face, sign_of_the_horns, call_me_hand, raised_back_of_hand, left_facing_fist, right_facing_fist, handshake, hand_with_index_and_middle_fingers_crossed, i_love_you_hand_sign, face_with_cowboy_hat, clown_face, nauseated_face, rolling_on_the_floor_laughing, drooling_face, lying_face, face_palm, sneezing_face, face_with_one_eyebrow_raised, grinning_face_with_star_eyes, grinning_face_with_one_large_and_one_small_eye, face_with_finger_covering_closed_lips, serious_face_with_symbols_covering_mouth, smiling_face_with_smiling_eyes_and_hand_covering_mouth, face_with_open_mouth_vomiting, shocked_face_with_exploding_head, pregnant_woman, breast_feeding, palms_up_together, selfie, prince, man_in_tuxedo, mother_christmas, shrug, person_doing_cartwheel, juggling, fencer, wrestlers, water_polo, handball, wilted_flower, drum_with_drumsticks, clinking_glasses, tumbler_glass, spoon, goal_net, first_place_medal, second_place_medal, third_place_medal, boxing_glove, martial_arts_uniform, curling_stone, lacrosse_stick_and_ball, softball, flying_disc, croissant, avocado, cucumber, bacon, potato, carrot, baguette_bread, green_salad, shallow_pan_of_food, stuffed_flatbread, egg, glass_of_milk, peanuts, kiwifruit, pancakes, dumpling, fortune_cookie, takeout_box, chopsticks, bowl_with_spoon, cup_with_straw, coconut, broccoli, pie, pretzel, cut_of_meat, sandwich, canned_food, leafy_green, mango, moon_cake, bagel, smiling_face_with_smiling_eyes_and_three_hearts, face_with_party_horn_and_party_hat, face_with_uneven_eyes_and_wavy_mouth, overheated_face, freezing_face, face_with_pleading_eyes, lab_coat, goggles, hiking_boot, flat_shoe, crab, lion_face, scorpion, turkey, unicorn_face, eagle, duck, bat, shark, owl, fox_face, butterfly, deer, gorilla, lizard, rhinoceros, shrimp, squid, giraffe_face, zebra_face, hedgehog, sauropod, t_rex, cricket, kangaroo, llama, peacock, hippopotamus, parrot, raccoon, lobster, mosquito, microbe, badger, swan, emoji_component_red_hair, emoji_component_curly_hair, emoji_component_bald, emoji_component_white_hair, bone, leg, foot, tooth, superhero, supervillain, cheese_wedge, cupcake, salt_shaker, face_with_monocle, adult, child, older_adult, bearded_person, person_with_headscarf, person_in_steamy_room, person_climbing, person_in_lotus_position, mage, fairy, vampire, merperson, elf, genie, zombie, brain, orange_heart, billed_cap, scarf, gloves, coat, socks, red_gift_envelope, firecracker, jigsaw_puzzle_piece, test_tube, petri_dish, dna_double_helix, compass, abacus, fire_extinguisher, toolbox, brick, magnet, luggage, lotion_bottle, spool_of_thread, ball_of_yarn, safety_pin, teddy_bear, broom, basket, roll_of_paper, bar_of_soap, sponge, receipt, nazar_amulet,
     ballet_shoes, one_piece_swinsuit, briefs, shorts, drop_of_blood, adhesive_bandage, stethoscope, yo_yo, kite, parachute, ringed_planet, chair, razor, axe, diya_lamp, banjo,
   };
-  static bool first = true;
+  static auto first = true;
   if (first) sort(emoticons.begin(), emoticons.end(), [](auto a, auto b)->bool {return a.name() < b.name();});
   first = false;
   return emoticons;
