@@ -234,10 +234,9 @@ bool application::use_wait_cursor() noexcept {
 }
 
 void application::use_wait_cursor(bool use_wait_cursor) {
-  if (use_wait_cursor_ != use_wait_cursor) {
-    use_wait_cursor_ = use_wait_cursor;
-    native::application::use_wait_cursor(use_wait_cursor_);
-  }
+  if (use_wait_cursor_ == use_wait_cursor) return;
+  use_wait_cursor_ = use_wait_cursor;
+  native::application::use_wait_cursor(use_wait_cursor_);
 }
 
 void application::add_message_filter(const imessage_filter& value) {
