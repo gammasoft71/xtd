@@ -53,11 +53,10 @@ forms::appearance check_box::appearance() const noexcept {
 }
 
 check_box& check_box::appearance(forms::appearance appearance) {
-  if (data_->appearance != appearance) {
-    data_->appearance = appearance;
-    post_recreate_handle();
-    on_appearance_changed(event_args::empty);
-  }
+  if (data_->appearance == appearance) return *this;
+  data_->appearance = appearance;
+  post_recreate_handle();
+  on_appearance_changed(event_args::empty);
   return *this;
 }
 
@@ -84,10 +83,9 @@ content_alignment check_box::check_align() const noexcept {
 }
 
 check_box& check_box::check_align(content_alignment check_align) {
-  if (data_->check_align != check_align) {
-    data_->check_align = check_align;
-    post_recreate_handle();
-  }
+  if (data_->check_align == check_align) return *this;
+  data_->check_align = check_align;
+  post_recreate_handle();
   return *this;
 }
 
@@ -96,15 +94,14 @@ forms::check_state check_box::check_state() const noexcept {
 }
 
 check_box& check_box::check_state(forms::check_state check_state) {
-  if (data_->check_state != check_state) {
-    data_->check_state = check_state;
-    if (data_->checked != (data_->check_state != forms::check_state::unchecked)) {
-      data_->checked = data_->check_state != forms::check_state::unchecked;
-      on_checked_changed(event_args::empty);
-    }
-    if (is_handle_created() && flat_style() == xtd::forms::flat_style::system) native::check_box::check_state(handle(), static_cast<int32>(data_->check_state));
-    on_check_state_changed(event_args::empty);
+  if (data_->check_state == check_state) return *this;
+  data_->check_state = check_state;
+  if (data_->checked != (data_->check_state != forms::check_state::unchecked)) {
+    data_->checked = data_->check_state != forms::check_state::unchecked;
+    on_checked_changed(event_args::empty);
   }
+  if (is_handle_created() && flat_style() == xtd::forms::flat_style::system) native::check_box::check_state(handle(), static_cast<int32>(data_->check_state));
+  on_check_state_changed(event_args::empty);
   return *this;
 }
 
@@ -113,10 +110,9 @@ bool check_box::three_state() const noexcept {
 }
 
 check_box& check_box::three_state(bool three_state) {
-  if (data_->three_state != three_state) {
-    data_->three_state = three_state;
-    post_recreate_handle();
-  }
+  if (data_->three_state == three_state) return *this;
+  data_->three_state = three_state;
+  post_recreate_handle();
   return *this;
 }
 
