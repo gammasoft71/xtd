@@ -82,7 +82,7 @@ control& status_bar::dock(dock_style dock) {
     data_->non_system_dock = dock;
     if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
   } else {
-    int32 current_size = is_horizontal() ? height() : width();
+    auto current_size = is_horizontal() ? height() : width();
     control::dock(dock);
     if (is_horizontal()) height(current_size);
     else width(current_size);
@@ -103,10 +103,9 @@ bool status_bar::show_panels() const noexcept {
 }
 
 status_bar& status_bar::show_panels(bool value) {
-  if (data_->show_panels != value) {
-    data_->show_panels = value;
-    if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
-  }
+  if (data_->show_panels == value) return *this;
+  data_->show_panels = value;
+  if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
   return *this;
 }
 
@@ -115,10 +114,9 @@ bool status_bar::show_tool_tips() const noexcept {
 }
 
 status_bar& status_bar::show_tool_tips(bool value) {
-  if (data_->show_tool_tips != value) {
-    data_->show_tool_tips = value;
-    if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
-  }
+  if (data_->show_tool_tips == value) return *this;
+  data_->show_tool_tips = value;
+  if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
   return *this;
 }
 
@@ -127,33 +125,32 @@ bool status_bar::sizing_grip() const noexcept {
 }
 
 status_bar& status_bar::sizing_grip(bool value) {
-  if (data_->sizing_grip != value) {
-    data_->sizing_grip = value;
-    if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
-    else data_->sizing_grip_control->visible(value && native::status_bar::sizing_grip());
-  }
+  if (data_->sizing_grip == value) return *this;
+  data_->sizing_grip = value;
+  if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
+  else data_->sizing_grip_control->visible(value && native::status_bar::sizing_grip());
   return *this;
 }
 
 status_bar status_bar::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  status_bar item;
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = status_bar {};
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 status_bar status_bar::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  status_bar item;
-  item.parent(parent);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = status_bar {};
+  result.parent(parent);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 forms::create_params status_bar::create_params() const noexcept {
-  forms::create_params create_params = control::create_params();
+  auto create_params = control::create_params();
   
   if (is_system_status_bar())
     create_params.class_name("statusbar");
@@ -338,18 +335,18 @@ void status_bar::fill() {
 }
 
 void status_bar::on_item_added(size_t pos, status_bar_panel_ref item) {
-  parent_client_size_guard pcsg(*this); // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
+  auto pcsg = parent_client_size_guard {*this}; // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
   item.get().data_->parent = this;
   post_recreate_handle();
 }
 
 void status_bar::on_item_updated(size_t pos, status_bar_panel_ref item) {
-  parent_client_size_guard pcsg(*this); // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
+  auto pcsg = parent_client_size_guard {*this}; // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
   post_recreate_handle();
 }
 
 void status_bar::on_item_removed(size_t pos, status_bar_panel_ref item) {
-  parent_client_size_guard pcsg(*this); // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
+  auto pcsg = parent_client_size_guard {*this}; // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
   item.get().data_->parent = nullptr;
   post_recreate_handle();
 }
