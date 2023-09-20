@@ -11,7 +11,7 @@ using namespace xtd::forms::style_sheets;
 using namespace xtd::forms::visual_styles;
 
 void form_renderer::draw_form(const xtd::forms::style_sheets::style_sheet& style_sheet, xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::visual_styles::form_state form_state, const std::optional<xtd::drawing::color>& back_color) {
-  style_sheets::form current_style_sheet;
+  auto current_style_sheet = style_sheets::form {};
   switch (form_state) {
     case control_state::normal: current_style_sheet = style_sheet.form(style_sheets::pseudo_state::standard); break;
     case control_state::hot: current_style_sheet = style_sheet.form(style_sheets::pseudo_state::standard | pseudo_state::hover); break;
