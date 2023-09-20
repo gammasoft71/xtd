@@ -40,10 +40,9 @@ forms::border_sides panel::border_sides() const noexcept {
 }
 
 panel& panel::border_sides(forms::border_sides border_sides) {
-  if (data_->border_sides != border_sides) {
-    data_->border_sides = border_sides;
-    if (control_appearance() == forms::control_appearance::standard) invalidate();
-  }
+  if (data_->border_sides == border_sides) return *this;
+  data_->border_sides = border_sides;
+  if (control_appearance() == forms::control_appearance::standard) invalidate();
   return *this;
 }
 
@@ -52,42 +51,40 @@ forms::border_style panel::border_style() const noexcept {
 }
 
 panel& panel::border_style(forms::border_style border_style) {
-  if (data_->border_style != border_style) {
-    data_->border_style = border_style;
-    if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
-    else invalidate();
-  }
+  if (data_->border_style == border_style) return *this;
+  data_->border_style = border_style;
+  if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
+  else invalidate();
   return *this;
 }
 
 panel& panel::border_style(std::nullptr_t) {
-  if (data_->border_style) {
-    data_->border_style.reset();
-    if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
-    else invalidate();
-  }
+  if (data_->border_style) return *this;
+  data_->border_style.reset();
+  if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
+  else invalidate();
   return *this;
 }
 
 panel panel::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  panel item;
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = panel {};
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 panel panel::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  panel item;
-  item.parent(parent);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = panel {};
+  result.parent(parent);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 forms::create_params panel::create_params() const noexcept {
-  forms::create_params create_params = scrollable_control::create_params();
+  auto create_params = scrollable_control::create_params();
   
   create_params.class_name("panel");
   create_params.style(create_params.style() | WS_CLIPSIBLINGS);
@@ -101,7 +98,7 @@ forms::create_params panel::create_params() const noexcept {
 }
 
 drawing::size panel::measure_control() const noexcept {
-  drawing::rectangle bounds;
+  auto bounds = drawing::rectangle {};
   for (auto item : controls()) {
     if (item.get().visible())
       bounds = drawing::rectangle::make_union(bounds, item.get().bounds());
