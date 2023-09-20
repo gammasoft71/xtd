@@ -43,10 +43,9 @@ xtd::forms::dialog_appearance progress_dialog::dialog_appearance() const noexcep
 }
 
 progress_dialog& progress_dialog::dialog_appearance(xtd::forms::dialog_appearance dialog_appearance) {
-  if (data_->dialog_appearance != dialog_appearance) {
-    data_->dialog_appearance = dialog_appearance;
-    recreate_dialog();
-  }
+  if (data_->dialog_appearance == dialog_appearance) return *this;
+  data_->dialog_appearance = dialog_appearance;
+  recreate_dialog();
   return *this;
 }
 
@@ -55,10 +54,9 @@ const std::vector<xtd::ustring>& progress_dialog::informations() const noexcept 
 }
 
 progress_dialog& progress_dialog::informations(const std::vector<xtd::ustring>& informations) {
-  if (data_->informations != informations) {
-    data_->informations = informations;
-    if (data_->handle) native::progress_dialog::informations(data_->handle, data_->informations);
-  }
+  if (data_->informations == informations) return *this;
+  data_->informations = informations;
+  if (data_->handle) native::progress_dialog::informations(data_->handle, data_->informations);
   return *this;
 }
 
@@ -67,10 +65,9 @@ bool progress_dialog::marquee() const noexcept {
 }
 
 progress_dialog& progress_dialog::marquee(bool marquee) {
-  if (get_option(PROGDLG_MARQUEEPROGRESS) != marquee) {
-    set_option(PROGDLG_MARQUEEPROGRESS, marquee);
-    recreate_dialog();
-  }
+  if (get_option(PROGDLG_MARQUEEPROGRESS) == marquee) return *this;
+  set_option(PROGDLG_MARQUEEPROGRESS, marquee);
+  recreate_dialog();
   return *this;
 }
 
@@ -79,10 +76,9 @@ size_t progress_dialog::marquee_animation_speed() const noexcept {
 }
 
 progress_dialog& progress_dialog::marquee_animation_speed(size_t marquee_animation_speed) {
-  if (data_->marquee_animation_speed != marquee_animation_speed) {
-    data_->marquee_animation_speed = marquee_animation_speed;
-    native::progress_dialog::marquee(data_->handle, get_option(PROGDLG_MARQUEEPROGRESS), data_->marquee_animation_speed);
-  }
+  if (data_->marquee_animation_speed == marquee_animation_speed) return *this;
+  data_->marquee_animation_speed = marquee_animation_speed;
+  native::progress_dialog::marquee(data_->handle, get_option(PROGDLG_MARQUEEPROGRESS), data_->marquee_animation_speed);
   return *this;
 }
 
@@ -91,12 +87,11 @@ int32 progress_dialog::maximum() const noexcept {
 }
 
 progress_dialog& progress_dialog::maximum(int32 maximum) {
-  if (data_->maximum != maximum) {
-    data_->maximum = maximum;
-    native::progress_dialog::maximum(data_->handle, data_->maximum);
-    if (data_->minimum > maximum) minimum(maximum);
-    if (data_->value > maximum) value(maximum);
-  }
+  if (data_->maximum == maximum) return *this;
+  data_->maximum = maximum;
+  native::progress_dialog::maximum(data_->handle, data_->maximum);
+  if (data_->minimum > maximum) minimum(maximum);
+  if (data_->value > maximum) value(maximum);
   return *this;
 }
 
@@ -105,10 +100,9 @@ const xtd::ustring& progress_dialog::message() const noexcept {
 }
 
 progress_dialog& progress_dialog::message(const xtd::ustring& message) {
-  if (data_->message != message) {
-    data_->message = message;
-    if (data_->handle) native::progress_dialog::message(data_->handle, data_->message);
-  }
+  if (data_->message == message) return *this;
+  data_->message = message;
+  if (data_->handle) native::progress_dialog::message(data_->handle, data_->message);
   return *this;
 }
 
@@ -117,12 +111,11 @@ int32 progress_dialog::minimum() const noexcept {
 }
 
 progress_dialog& progress_dialog::minimum(int32 minimum) {
-  if (data_->minimum != minimum) {
-    data_->minimum = minimum;
-    native::progress_dialog::minimum(data_->handle, data_->minimum);
-    if (data_->maximum < minimum) maximum(minimum);
-    if (data_->value < minimum) value(minimum);
-  }
+  if (data_->minimum == minimum) return *this;
+  data_->minimum = minimum;
+  native::progress_dialog::minimum(data_->handle, data_->minimum);
+  if (data_->maximum < minimum) maximum(minimum);
+  if (data_->value < minimum) value(minimum);
   return *this;
 }
 
@@ -136,10 +129,9 @@ bool progress_dialog::show_cancel_button() const noexcept {
 }
 
 progress_dialog& progress_dialog::show_cancel_button(bool show_cancel_button) {
-  if (!get_option(PROGDLG_NOCANCEL) != show_cancel_button) {
-    set_option(PROGDLG_NOCANCEL, !show_cancel_button);
-    recreate_dialog();
-  }
+  if (!get_option(PROGDLG_NOCANCEL) == show_cancel_button) return *this;
+  set_option(PROGDLG_NOCANCEL, !show_cancel_button);
+  recreate_dialog();
   return *this;
 }
 
@@ -148,10 +140,9 @@ bool progress_dialog::show_elapsed_time() const noexcept {
 }
 
 progress_dialog& progress_dialog::show_elapsed_time(bool show_elapsed_time) {
-  if (get_option(PROGDLG_ELAPSEDTIME) != show_elapsed_time) {
-    set_option(PROGDLG_ELAPSEDTIME, show_elapsed_time);
-    recreate_dialog();
-  }
+  if (get_option(PROGDLG_ELAPSEDTIME) == show_elapsed_time) return *this;
+  set_option(PROGDLG_ELAPSEDTIME, show_elapsed_time);
+  recreate_dialog();
   return *this;
 }
 
@@ -160,10 +151,9 @@ bool progress_dialog::show_estimated_time() const noexcept {
 }
 
 progress_dialog& progress_dialog::show_estimated_time(bool show_estimated_time) {
-  if (get_option(PROGDLG_ESTIMATEDTIME) != show_estimated_time) {
-    set_option(PROGDLG_ESTIMATEDTIME, show_estimated_time);
-    recreate_dialog();
-  }
+  if (get_option(PROGDLG_ESTIMATEDTIME) == show_estimated_time) return *this;
+  set_option(PROGDLG_ESTIMATEDTIME, show_estimated_time);
+  recreate_dialog();
   return *this;
 }
 
@@ -172,10 +162,9 @@ bool progress_dialog::show_remaining_time() const noexcept {
 }
 
 progress_dialog& progress_dialog::show_remaining_time(bool show_remaining_time) {
-  if (get_option(PROGDLG_AUTOTIME) != show_remaining_time) {
-    set_option(PROGDLG_AUTOTIME, show_remaining_time);
-    recreate_dialog();
-  }
+  if (get_option(PROGDLG_AUTOTIME) == show_remaining_time) return *this;
+  set_option(PROGDLG_AUTOTIME, show_remaining_time);
+  recreate_dialog();
   return *this;
 }
 
@@ -184,10 +173,9 @@ bool progress_dialog::show_skip_button() const noexcept {
 }
 
 progress_dialog& progress_dialog::show_skip_button(bool show_skip_button) {
-  if (!get_option(PROGDLG_NOSKIP) != show_skip_button) {
-    set_option(PROGDLG_NOSKIP, !show_skip_button);
-    recreate_dialog();
-  }
+  if (!get_option(PROGDLG_NOSKIP) == show_skip_button) return *this;
+  set_option(PROGDLG_NOSKIP, !show_skip_button);
+  recreate_dialog();
   return *this;
 }
 
@@ -210,10 +198,9 @@ const xtd::ustring& progress_dialog::text() const noexcept {
 }
 
 progress_dialog& progress_dialog::text(const xtd::ustring& text) {
-  if (data_->text != text) {
-    data_->text = text;
-    recreate_dialog();
-  }
+  if (data_->text == text) return *this;
+  data_->text = text;
+  recreate_dialog();
   return *this;
 }
 
@@ -222,12 +209,11 @@ int32 progress_dialog::value() const noexcept {
 }
 
 progress_dialog& progress_dialog::value(int32 value) {
-  if (data_->value != value) {
-    if (value > data_->maximum) data_->value = data_->maximum;
-    else if (value < data_->minimum) data_->value = data_->minimum;
-    else data_->value = value;
-    native::progress_dialog::value(data_->handle, data_->value);
-  }
+  if (data_->value == value) return *this;
+  if (value > data_->maximum) data_->value = data_->maximum;
+  else if (value < data_->minimum) data_->value = data_->minimum;
+  else data_->value = value;
+  native::progress_dialog::value(data_->handle, data_->value);
   return *this;
 }
 
@@ -305,9 +291,8 @@ void progress_dialog::set_option(size_t flag, bool value) {
 }
 
 void progress_dialog::recreate_dialog() {
-  if (data_->handle) {
-    hide();
-    if (data_->owner) show(*data_->owner);
-    else show();
-  }
+  if (!data_->handle) return;
+  hide();
+  if (data_->owner) show(*data_->owner);
+  else show();
 }
