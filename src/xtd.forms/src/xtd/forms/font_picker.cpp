@@ -24,11 +24,10 @@ const drawing::color& font_picker::color() const noexcept {
 }
 
 font_picker& font_picker::color(const drawing::color& value) {
-  if (data_->color != value) {
-    data_->color = value;
-    if (is_handle_created()) native::font_picker::color(handle(), data_->color);
-    on_font_picker_changed(font_picker_event_args(data_->font, data_->color));
-  }
+  if (data_->color == value) return *this;
+  data_->color = value;
+  if (is_handle_created()) native::font_picker::color(handle(), data_->color);
+  on_font_picker_changed(font_picker_event_args(data_->font, data_->color));
   return *this;
 }
 
@@ -37,33 +36,32 @@ drawing::font font_picker::font() const noexcept {
 }
 
 control& font_picker::font(const drawing::font& value) {
-  if (data_->font != value) {
-    data_->font = value;
-    if (is_handle_created()) native::font_picker::font(handle(), data_->font);
-    on_font_picker_changed(font_picker_event_args(data_->font, data_->color));
-  }
+  if (data_->font == value) return *this;
+  data_->font = value;
+  if (is_handle_created()) native::font_picker::font(handle(), data_->font);
+  on_font_picker_changed(font_picker_event_args(data_->font, data_->color));
   return *this;
 }
 
 font_picker font_picker::create(const drawing::font& font, const xtd::drawing::color& color, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  font_picker item;
-  item.color(color);
-  item.font(font);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = font_picker {};
+  result.color(color);
+  result.font(font);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 font_picker font_picker::create(const control& parent, const drawing::font& font, const xtd::drawing::color& color, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  font_picker item;
-  item.parent(parent);
-  item.color(color);
-  item.font(font);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = font_picker {};
+  result.parent(parent);
+  result.color(color);
+  result.font(font);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 forms::create_params font_picker::create_params() const noexcept {
