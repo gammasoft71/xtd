@@ -76,17 +76,16 @@ size_t domain_up_down::selected_index() const noexcept {
 
 domain_up_down& domain_up_down::selected_index(size_t selected_index) {
   if (selected_index != npos && selected_index >= data_->items.size()) argument_out_of_range_exception("Selected index greater than items size");
-  if (data_->selected_index != selected_index) {
-    data_->selected_index = selected_index;
-    if (is_handle_created()) native::domain_up_down::selected_index(handle(), data_->selected_index);
-    
-    auto selected = item {};
-    if (data_->selected_index != npos) selected = data_->items[data_->selected_index];
-    //this->selected_item(selected);
-    data_->selected_item = selected;
-    
-    on_text_changed(event_args::empty);
-  }
+  if (data_->selected_index == selected_index) return *this;
+  data_->selected_index = selected_index;
+  if (is_handle_created()) native::domain_up_down::selected_index(handle(), data_->selected_index);
+  
+  auto selected = item {};
+  if (data_->selected_index != npos) selected = data_->items[data_->selected_index];
+  //this->selected_item(selected);
+  data_->selected_item = selected;
+  
+  on_text_changed(event_args::empty);
   return *this;
 }
 
@@ -95,16 +94,14 @@ const domain_up_down::item& domain_up_down::selected_item() const noexcept {
 }
 
 domain_up_down& domain_up_down::selected_item(const item& selected_item) {
-  if (data_->selected_item != selected_item) {
-    auto it = std::find(data_->items.begin(), data_->items.end(), selected_item);
-    if (it == data_->items.end())
-      data_->selected_item = selected_index() != npos ? items()[selected_index()] : "";
-    else {
-      auto index = it - data_->items.begin();
-      selected_index(index);
-      data_->selected_item = *it;
-      
-    }
+  if (data_->selected_item == selected_item) return *this;
+  auto it = std::find(data_->items.begin(), data_->items.end(), selected_item);
+  if (it == data_->items.end())
+    data_->selected_item = selected_index() != npos ? items()[selected_index()] : "";
+  else {
+    auto index = it - data_->items.begin();
+    selected_index(index);
+    data_->selected_item = *it;
   }
   return *this;
 }
@@ -114,10 +111,9 @@ bool domain_up_down::wrap() const noexcept {
 }
 
 domain_up_down& domain_up_down::wrap(bool value) {
-  if (data_->wrap != value) {
-    data_->wrap = value;
-    post_recreate_handle();
-  }
+  if (data_->wrap == value) return *this;
+  data_->wrap = value;
+  post_recreate_handle();
   return *this;
 }
 
