@@ -14,8 +14,8 @@ protected:
   void on_paint(paint_event_args& e) override {
     /// @todo Replace following code by drawing style_sheet sizing grip image.
     auto sizing_grip_color = back_color().is_dark() ? xtd::drawing::color::light(back_color()) : xtd::drawing::color::dark(back_color());
-    int32 offset_sizing_grip = 2;
-    std::vector<xtd::drawing::rectangle> rectangles = {{e.clip_rectangle().right() - 4 - offset_sizing_grip, e.clip_rectangle().bottom() - 10 - offset_sizing_grip, 2, 2}, {e.clip_rectangle().right() - 7 - offset_sizing_grip, e.clip_rectangle().bottom() - 7 - offset_sizing_grip, 2, 2}, {e.clip_rectangle().right() - 4 - offset_sizing_grip, e.clip_rectangle().bottom() - 7 - offset_sizing_grip, 2, 2}, {e.clip_rectangle().right() - 10 - offset_sizing_grip, e.clip_rectangle().bottom() - 4 - offset_sizing_grip, 2, 2}, {e.clip_rectangle().right() - 7 - offset_sizing_grip, e.clip_rectangle().bottom() - 4 - offset_sizing_grip, 2, 2}, {e.clip_rectangle().right() - 4 - offset_sizing_grip, e.clip_rectangle().bottom() - 4 - offset_sizing_grip, 2, 2}};
+    auto offset_sizing_grip = 2;
+    auto rectangles = std::vector<xtd::drawing::rectangle> {{e.clip_rectangle().right() - 4 - offset_sizing_grip, e.clip_rectangle().bottom() - 10 - offset_sizing_grip, 2, 2}, {e.clip_rectangle().right() - 7 - offset_sizing_grip, e.clip_rectangle().bottom() - 7 - offset_sizing_grip, 2, 2}, {e.clip_rectangle().right() - 4 - offset_sizing_grip, e.clip_rectangle().bottom() - 7 - offset_sizing_grip, 2, 2}, {e.clip_rectangle().right() - 10 - offset_sizing_grip, e.clip_rectangle().bottom() - 4 - offset_sizing_grip, 2, 2}, {e.clip_rectangle().right() - 7 - offset_sizing_grip, e.clip_rectangle().bottom() - 4 - offset_sizing_grip, 2, 2}, {e.clip_rectangle().right() - 4 - offset_sizing_grip, e.clip_rectangle().bottom() - 4 - offset_sizing_grip, 2, 2}};
     e.graphics().fill_rectangles(xtd::drawing::solid_brush(sizing_grip_color), rectangles);
     control::on_paint(e);
   }
