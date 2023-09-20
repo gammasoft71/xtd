@@ -55,7 +55,7 @@ namespace xtd {
       /// @brief Sets the color selected by the user.
       /// @param color The color selected by the user. If a color is not selected.
       /// @remarks The color selected by the user in the color picker at run time, as defined in color structure.
-      virtual void color(const drawing::color& color);
+      virtual color_picker& color(const drawing::color& color);
       /// @}
       
       

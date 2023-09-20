@@ -36,11 +36,12 @@ const drawing::color& color_picker::color() const noexcept {
   return data_->color;
 }
 
-void color_picker::color(const drawing::color& value) {
+color_picker& color_picker::color(const drawing::color& value) {
   if (data_->color == value) return *this;
   data_->color = value;
   if (is_handle_created()) native::color_picker::color(handle(), data_->color);
   on_color_picker_changed(color_picker_event_args(data_->color));
+  return *this;
 }
 
 color_picker color_picker::create(const xtd::drawing::color& color, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
