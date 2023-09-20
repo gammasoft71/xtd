@@ -22,18 +22,15 @@ tab_page::tab_page() : data_(std::make_shared<data>()) {
 }
 
 forms::create_params tab_page::create_params() const noexcept {
-  forms::create_params create_params = panel::create_params();
-  
+  auto create_params = panel::create_params();
   create_params.class_name("tabpage");
-  
   return create_params;
 }
 
 scrollable_control& tab_page::auto_scroll(bool value) {
-  if (auto_scroll() != value) {
-    panel::auto_scroll(value);
-    if (parent().has_value()) static_cast<tab_control&>(parent().value().get()).post_recreate_handle();
-  }
+  if (auto_scroll() == value) return *this;
+  panel::auto_scroll(value);
+  if (parent().has_value()) static_cast<tab_control&>(parent().value().get()).post_recreate_handle();
   return *this;
 }
 
@@ -42,10 +39,9 @@ size_t tab_page::image_index() const noexcept {
 }
 
 tab_page& tab_page::image_index(size_t value) {
-  if (data_->image_index != value) {
-    data_->image_index = value;
-    if (is_handle_created() && parent().has_value()) native::tab_page::image_index(handle(), data_->image_index);
-  }
+  if (data_->image_index == value) return *this;
+  data_->image_index = value;
+  if (is_handle_created() && parent().has_value()) native::tab_page::image_index(handle(), data_->image_index);
   return *this;
 }
 
@@ -56,30 +52,29 @@ control& tab_page::parent(const control& parent) {
 }
 
 control& tab_page::text(const ustring& text) {
-  if (control::text() != text) {
-    if (is_handle_created() && parent().has_value()) native::tab_page::text(handle(), text);
-    set_text(text);
-  }
+  if (control::text() == text) return *this;
+  if (is_handle_created() && parent().has_value()) native::tab_page::text(handle(), text);
+  set_text(text);
   return *this;
 }
 
 tab_page tab_page::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  tab_page item;
-  item.text(text);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = tab_page {};
+  result.text(text);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 tab_page tab_page::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  tab_page item;
-  item.parent(parent);
-  item.text(text);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = tab_page {};
+  result.parent(parent);
+  result.text(text);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 void tab_page::destroy_handle() {
