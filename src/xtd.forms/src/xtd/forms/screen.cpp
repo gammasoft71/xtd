@@ -10,9 +10,9 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 vector<screen> screen::all_screens() {
-  vector<screen> screens;
-  size_t count = native::screen::count();
-  for (size_t index = 0; index < count; index++)
+  auto screens = vector<screen> {};
+  auto count = native::screen::count();
+  for (auto index = 0_sz; index < count; index++)
     screens.push_back({native::screen::bits_per_pixel(index), native::screen::bounds(index), native::screen::device_name(index), native::screen::pixels_per_inch(index), native::screen::primary(index), native::screen::scale_factor(index), native::screen::working_area(index)});
   return screens;
 }
@@ -46,7 +46,7 @@ double screen::scale_factor() const noexcept {
 }
 
 screen screen::primary_screen() {
-  std::vector<screen> screens = all_screens();
+  auto screens = all_screens();
   for (auto& screen : screens)
     if (screen.primary()) return screen;
   return screens[0];
@@ -62,7 +62,7 @@ graphics screen::create_graphics() {
 }
 
 screen screen::from_control(const control& control) {
-  size_t index = native::screen::from_handle(control.handle());
+  auto index = native::screen::from_handle(control.handle());
   if (index == std::numeric_limits<size_t>::max() && control.parent().has_value()) index = native::screen::from_handle(control.parent().value().get().handle());
   if (index == std::numeric_limits<size_t>::max()) index = native::screen::from_point(forms::cursor::position());
   if (index == std::numeric_limits<size_t>::max()) index = 0;
