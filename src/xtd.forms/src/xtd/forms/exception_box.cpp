@@ -38,7 +38,7 @@ dialog_result exception_box::show(const exception& exception, const ustring& cap
 }
 
 dialog_result exception_box::show_exception_box(const iwin32_window* owner, const exception* exception, const ustring& caption) {
-  exception_dialog dialog;
+  auto dialog = exception_dialog {};
   if (exception) dialog.exception(*exception);
   dialog.text(caption);
   return owner ? dialog.show_sheet_dialog(*owner) : dialog.show_dialog();
