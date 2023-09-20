@@ -152,7 +152,7 @@ void lcd_label::dot_matrix_display_digit::set_back_digit_opacity(double value) {
 }
 
 void lcd_label::dot_matrix_display_digit::set_character(char32 value) {
-  static std::map<char32, points_collection> characters {
+  static auto characters = std::map<char32, points_collection> {
     {U'0', {{2, 0}, {3, 0}, {4, 0}, {1, 1}, {5, 1}, {1, 2}, {4, 2}, {5, 2}, {1, 3}, {3, 3}, {5, 3}, {1, 4}, {2, 4}, {5, 4}, {1, 5}, {5, 5}, {2, 6}, {3, 6}, {4, 6}}},
     {U'1', {{3, 0}, {2, 1}, {3, 1}, {3, 2}, {3, 3}, {3, 4}, {3, 5}, {3, 6}}},
     {U'2', {{2, 0}, {3, 0}, {4, 0}, {1, 1}, {5, 1}, {5, 2}, {4, 3}, {3, 4}, {2, 5}, {1, 6}, {2, 6}, {3, 6}, {4, 6}, {5, 6}}},
@@ -290,7 +290,7 @@ void lcd_label::fourteen_segment_display_digit::set_back_digit_opacity(double va
 }
 
 void lcd_label::fourteen_segment_display_digit::set_character(char32 value) {
-  static std::map<char32, forms::segments> characters {
+  static auto characters = std::map<char32, forms::segments> {
     {U'0', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::f},
     {U'1', forms::segments::b | forms::segments::c | forms::segments::j},
     {U'2', forms::segments::a | forms::segments::b | forms::segments::d | forms::segments::e | forms::segments::g1 | forms::segments::g2},
@@ -417,7 +417,7 @@ void lcd_label::nine_segment_display_digit::set_back_digit_opacity(double value)
 }
 
 void lcd_label::nine_segment_display_digit::set_character(char32 value) {
-  static std::map<char32, forms::segments> characters {
+  static auto characters = std::map<char32, forms::segments> {
     {U'0', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::f},
     {U'1', forms::segments::b | forms::segments::c},
     {U'2', forms::segments::a | forms::segments::b | forms::segments::d | forms::segments::i},
@@ -524,7 +524,7 @@ void lcd_label::seven_segment_display_digit::set_back_digit_opacity(double value
 }
 
 void lcd_label::seven_segment_display_digit::set_character(char32 value) {
-  static std::map<char32, forms::segments> characters {
+  static auto characters = std::map<char32, forms::segments> {
     {U'0', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::f},
     {U'1', forms::segments::b | forms::segments::c},
     {U'2', forms::segments::a | forms::segments::b | forms::segments::d | forms::segments::e | forms::segments::g},
@@ -625,7 +625,7 @@ int32 lcd_label::sixteen_segment_display_digit::get_thickness() const noexcept {
 void lcd_label::sixteen_segment_display_digit::set_back_digit_color(const xtd::drawing::color& value) {sixteen_segment_display::back_segment_color(value);}
 void lcd_label::sixteen_segment_display_digit::set_back_digit_opacity(double value) {sixteen_segment_display::back_segment_opacity(value);}
 void lcd_label::sixteen_segment_display_digit::set_character(char32 value) {
-  static std::map<char32, forms::segments> characters {
+  static auto characters = std::map<char32, forms::segments> {
     {U'0', forms::segments::a1 | forms::segments::a2 | forms::segments::b | forms::segments::c | forms::segments::d1 | forms::segments::d2 | forms::segments::e | forms::segments::f},
     {U'1', forms::segments::b | forms::segments::c | forms::segments::j},
     {U'2', forms::segments::a1 | forms::segments::a2 | forms::segments::b | forms::segments::d1 | forms::segments::d2 | forms::segments::e | forms::segments::g1 | forms::segments::g2},
@@ -744,10 +744,9 @@ xtd::drawing::color lcd_label::back_digit_color() const noexcept {
 }
 
 lcd_label& lcd_label::back_digit_color(const xtd::drawing::color& value) {
-  if (!data_->back_digit_color.has_value() || data_->back_digit_color.value() != value) {
-    data_->back_digit_color = value;
-    set_digits_params();
-  }
+  if (data_->back_digit_color.has_value() && data_->back_digit_color.value() == value) return *this;
+  data_->back_digit_color = value;
+  set_digits_params();
   return *this;
 }
 
@@ -757,10 +756,9 @@ double lcd_label::back_digit_opacity() const noexcept {
 
 lcd_label& lcd_label::back_digit_opacity(double value) {
   if (value < 0.0 || value > 1.0) throw argument_out_of_range_exception("value must be between 0.0 and 1.0."_t, csf_);
-  if (data_->back_digit_opacity != value) {
-    data_->back_digit_opacity = value;
-    set_digits_params();
-  }
+  if (data_->back_digit_opacity == value) return *this;
+  data_->back_digit_opacity = value;
+  set_digits_params();
   return *this;
 }
 
@@ -769,10 +767,9 @@ bool lcd_label::show_back_digit() const noexcept {
 }
 
 lcd_label& lcd_label::show_back_digit(bool value) {
-  if (data_->show_back_digit != value) {
-    data_->show_back_digit = value;
-    set_digits_params();
-  }
+  if (data_->show_back_digit == value) return *this;
+  data_->show_back_digit = value;
+  set_digits_params();
   return *this;
 }
 
@@ -782,10 +779,9 @@ int32 lcd_label::digit_spacing() const noexcept {
 
 lcd_label& lcd_label::digit_spacing(int32 value) {
   if (value < 0) throw argument_out_of_range_exception("value must be positive"_t, csf_);
-  if (data_->digit_spacing != value) {
-    data_->digit_spacing = value;
-    set_digits_params();
-  }
+  if (data_->digit_spacing == value) return *this;
+  data_->digit_spacing = value;
+  set_digits_params();
   return *this;
 }
 
@@ -794,12 +790,11 @@ forms::lcd_style lcd_label::lcd_style() const noexcept {
 }
 
 lcd_label& lcd_label::lcd_style(forms::lcd_style value) {
-  if (data_->lcd_style != value) {
-    data_->lcd_style = value;
-    xtd::ustring current_text = text();
-    text("");
-    text(current_text);
-  }
+  if (data_->lcd_style == value) return *this;
+  data_->lcd_style = value;
+  xtd::ustring current_text = text();
+  text("");
+  text(current_text);
   return *this;
 }
 
@@ -808,11 +803,10 @@ forms::segment_style lcd_label::segment_style() const noexcept {
 }
 
 lcd_label& lcd_label::segment_style(forms::segment_style value) {
-  if (data_->segment_style != value) {
-    data_->segment_style = value;
-    for (auto& digit : data_->digits)
-      digit->set_segment_style(value);
-  }
+  if (data_->segment_style == value) return *this;
+  data_->segment_style = value;
+  for (auto& digit : data_->digits)
+    digit->set_segment_style(value);
   return *this;
 }
 
@@ -821,11 +815,10 @@ forms::dot_matrix_style lcd_label::dot_matrix_style() const noexcept {
 }
 
 lcd_label& lcd_label::dot_matrix_style(forms::dot_matrix_style value) {
-  if (data_->dot_matrix_style != value) {
-    data_->dot_matrix_style = value;
-    for (auto& digit : data_->digits)
-      digit->set_dot_matrix_style(value);
-  }
+  if (data_->dot_matrix_style == value) return *this;
+  data_->dot_matrix_style = value;
+  for (auto& digit : data_->digits)
+    digit->set_dot_matrix_style(value);
   return *this;
 }
 
@@ -834,48 +827,46 @@ int32 lcd_label::thickness() const noexcept {
 }
 
 lcd_label& lcd_label::thickness(int32 value) {
-  if (data_->thickness != value) {
-    data_->thickness = value;
-    set_digits_params();
-  }
+  if (data_->thickness == value) return *this;
+  data_->thickness = value;
+  set_digits_params();
   return *this;
 }
 
 control& lcd_label::text(const xtd::ustring& value) {
-  if (text() != value) {
-    if (is_handle_created()) suspend_layout();
-    std::wstring str = convert_string::to_wstring(value);
-    if (str.size() < data_->digits.size()) {
-      for (size_t index = data_->digits.size(); index < str.size(); index++) {
-        dynamic_cast<control*>(data_->digits[index].get())->mouse_down -= {*this, &lcd_label::on_digit_mouse_down};
-        dynamic_cast<control*>(data_->digits[index].get())->mouse_move -= {*this, &lcd_label::on_digit_mouse_move};
-        dynamic_cast<control*>(data_->digits[index].get())->mouse_up -= {*this, &lcd_label::on_digit_mouse_up};
-      }
-      data_->digits.erase(data_->digits.begin() + str.size(), data_->digits.end());
+  if (text() == value) return *this;
+  if (is_handle_created()) suspend_layout();
+  auto str = convert_string::to_wstring(value);
+  if (str.size() < data_->digits.size()) {
+    for (auto index = data_->digits.size(); index < str.size(); ++index) {
+      dynamic_cast<control*>(data_->digits[index].get())->mouse_down -= {*this, &lcd_label::on_digit_mouse_down};
+      dynamic_cast<control*>(data_->digits[index].get())->mouse_move -= {*this, &lcd_label::on_digit_mouse_move};
+      dynamic_cast<control*>(data_->digits[index].get())->mouse_up -= {*this, &lcd_label::on_digit_mouse_up};
     }
-    if (str.size() > data_->digits.size())
-      for (size_t index = data_->digits.size(); index < str.size(); index++) {
-        switch (data_->lcd_style) {
-          case lcd_style::seven_segment_display: data_->digits.push_back(std::make_shared<seven_segment_display_digit>()); break;
-          case lcd_style::nine_segment_display: data_->digits.push_back(std::make_shared<nine_segment_display_digit>()); break;
-          case lcd_style::fourteen_segment_display: data_->digits.push_back(std::make_shared<fourteen_segment_display_digit>()); break;
-          case lcd_style::sixteen_segment_display: data_->digits.push_back(std::make_shared<sixteen_segment_display_digit>()); break;
-          case lcd_style::dot_matrix_display: data_->digits.push_back(std::make_shared<dot_matrix_display_digit>()); break;
-          default: throw argument_exception("lcd_style invalid"_t, csf_);
-        }
-        dynamic_cast<control*>(data_->digits[data_->digits.size() - 1].get())->parent(*this);
-        dynamic_cast<control*>(data_->digits[data_->digits.size() - 1].get())->double_buffered(double_buffered());
-        dynamic_cast<control*>(data_->digits[data_->digits.size() - 1].get())->click += {*this, &lcd_label::on_digit_click};
-        dynamic_cast<control*>(data_->digits[data_->digits.size() - 1].get())->mouse_down += {*this, &lcd_label::on_digit_mouse_down};
-        dynamic_cast<control*>(data_->digits[data_->digits.size() - 1].get())->mouse_move += {*this, &lcd_label::on_digit_mouse_move};
-        dynamic_cast<control*>(data_->digits[data_->digits.size() - 1].get())->mouse_up += {*this, &lcd_label::on_digit_mouse_up};
-      }
-    for (size_t index = 0; index < str.size(); index++)
-      data_->digits[index]->set_character(str[index]);
-    set_digits_params();
-    set_text(value);
-    if (is_handle_created()) resume_layout();
+    data_->digits.erase(data_->digits.begin() + str.size(), data_->digits.end());
   }
+  if (str.size() > data_->digits.size())
+    for (auto index = data_->digits.size(); index < str.size(); ++index) {
+      switch (data_->lcd_style) {
+        case lcd_style::seven_segment_display: data_->digits.push_back(std::make_shared<seven_segment_display_digit>()); break;
+        case lcd_style::nine_segment_display: data_->digits.push_back(std::make_shared<nine_segment_display_digit>()); break;
+        case lcd_style::fourteen_segment_display: data_->digits.push_back(std::make_shared<fourteen_segment_display_digit>()); break;
+        case lcd_style::sixteen_segment_display: data_->digits.push_back(std::make_shared<sixteen_segment_display_digit>()); break;
+        case lcd_style::dot_matrix_display: data_->digits.push_back(std::make_shared<dot_matrix_display_digit>()); break;
+        default: throw argument_exception("lcd_style invalid"_t, csf_);
+      }
+      dynamic_cast<control*>(data_->digits[data_->digits.size() - 1].get())->parent(*this);
+      dynamic_cast<control*>(data_->digits[data_->digits.size() - 1].get())->double_buffered(double_buffered());
+      dynamic_cast<control*>(data_->digits[data_->digits.size() - 1].get())->click += {*this, &lcd_label::on_digit_click};
+      dynamic_cast<control*>(data_->digits[data_->digits.size() - 1].get())->mouse_down += {*this, &lcd_label::on_digit_mouse_down};
+      dynamic_cast<control*>(data_->digits[data_->digits.size() - 1].get())->mouse_move += {*this, &lcd_label::on_digit_mouse_move};
+      dynamic_cast<control*>(data_->digits[data_->digits.size() - 1].get())->mouse_up += {*this, &lcd_label::on_digit_mouse_up};
+    }
+  for (auto index = 0_sz; index < str.size(); ++index)
+    data_->digits[index]->set_character(str[index]);
+  set_digits_params();
+  set_text(value);
+  if (is_handle_created()) resume_layout();
   return *this;
 }
 
@@ -894,22 +885,22 @@ std::vector<char32> lcd_label::valid_characters() {
 }
 
 lcd_label lcd_label::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  lcd_label item;
-  item.text(text);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = lcd_label {};
+  result.text(text);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 lcd_label lcd_label::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  lcd_label item;
-  item.parent(parent);
-  item.text(text);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = lcd_label {};
+  result.parent(parent);
+  result.text(text);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 drawing::size lcd_label::default_size() const noexcept {
@@ -963,7 +954,7 @@ void lcd_label::on_digit_mouse_up(object& sender, const mouse_event_args& e) {
 }
 
 void lcd_label::set_digits_params() {
-  int32 offset_left = 0;
+  auto offset_left = 0;
   for (auto& digit : data_->digits) {
     dynamic_cast<control*>(digit.get())->height(size().height());
     dynamic_cast<control*>(digit.get())->left(offset_left);
