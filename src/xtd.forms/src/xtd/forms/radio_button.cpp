@@ -47,11 +47,10 @@ forms::appearance radio_button::appearance() const noexcept {
 }
 
 radio_button& radio_button::appearance(forms::appearance appearance) {
-  if (data_->appearance != appearance) {
-    data_->appearance = appearance;
-    post_recreate_handle();
-    on_appearance_changed(event_args::empty);
-  }
+  if (data_->appearance == appearance) return *this;
+  data_->appearance = appearance;
+  post_recreate_handle();
+  on_appearance_changed(event_args::empty);
   return *this;
 }
 
@@ -69,16 +68,15 @@ bool radio_button::checked() const noexcept {
 }
 
 radio_button& radio_button::checked(bool checked) {
-  if (data_->checked != checked) {
-    data_->checked = checked;
-    if (is_handle_created() && flat_style() == flat_style::system) native::radio_button::checked(handle(), data_->checked);
-    if (flat_style() != flat_style::system) invalidate();
-    on_checked_changed(event_args::empty);
-    if (data_->checked == true && data_->auto_check == true && parent().has_value()) {
-      for (auto control : parent().value().get().controls()) {
-        if (dynamic_cast<radio_button*>(&control.get()) != nullptr && &control.get() != this && static_cast<radio_button&>(control.get()).data_->auto_check == true)
-          static_cast<radio_button&>(control.get()).checked(false);
-      }
+  if (data_->checked == checked) return *this;
+  data_->checked = checked;
+  if (is_handle_created() && flat_style() == flat_style::system) native::radio_button::checked(handle(), data_->checked);
+  if (flat_style() != flat_style::system) invalidate();
+  on_checked_changed(event_args::empty);
+  if (data_->checked == true && data_->auto_check == true && parent().has_value()) {
+    for (auto control : parent().value().get().controls()) {
+      if (dynamic_cast<radio_button*>(&control.get()) != nullptr && &control.get() != this && static_cast<radio_button&>(control.get()).data_->auto_check == true)
+        static_cast<radio_button&>(control.get()).checked(false);
     }
   }
   return *this;
@@ -89,32 +87,31 @@ content_alignment radio_button::check_align() const noexcept {
 }
 
 radio_button& radio_button::check_align(content_alignment check_align) {
-  if (data_->check_align != check_align) {
-    data_->check_align = check_align;
-    post_recreate_handle();
-  }
+  if (data_->check_align == check_align) return *this;
+  data_->check_align = check_align;
+  post_recreate_handle();
   return *this;
 }
 
 radio_button radio_button::create(const xtd::ustring& text, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  radio_button item;
-  item.text(text);
-  item.checked(checked);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = radio_button {};
+  result.text(text);
+  result.checked(checked);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 radio_button radio_button::create(const control& parent, const xtd::ustring& text, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  radio_button item;
-  item.parent(parent);
-  item.text(text);
-  item.checked(checked);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = radio_button {};
+  result.parent(parent);
+  result.text(text);
+  result.checked(checked);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 void radio_button::perform_click() {
@@ -126,7 +123,7 @@ xtd::ustring radio_button::to_string() const noexcept {
 }
 
 forms::create_params radio_button::create_params() const noexcept {
-  forms::create_params create_params = button_base::create_params();
+  auto create_params = button_base::create_params();
   
   create_params.class_name("radiobutton");
   if (data_->auto_check) create_params.style(create_params.style() | BS_AUTORADIOBUTTON);
@@ -265,14 +262,14 @@ void radio_button::wm_mouse_double_click(message& message) {
 
 void radio_button::wm_mouse_down(const message& message) {
   set_state(control::state::double_click_fired, message.msg() == WM_LBUTTONDBLCLK || message.msg() == WM_RBUTTONDBLCLK || message.msg() == WM_MBUTTONDBLCLK || message.msg() == WM_XBUTTONDBLCLK);
-  mouse_event_args e = mouse_event_args::create(message, get_state(state::double_click_fired));
+  auto e = mouse_event_args::create(message, get_state(state::double_click_fired));
   set_mouse_buttons(mouse_buttons() | e.button());
   on_mouse_down(e);
 }
 
 void radio_button::wm_mouse_up(const message& message) {
   if (data_->auto_check) checked(true);
-  mouse_event_args e = mouse_event_args::create(message);
+  auto e = mouse_event_args::create(message);
   set_mouse_buttons(mouse_buttons() & ~e.button());
   if (client_rectangle().contains(e.location())) on_click(event_args::empty);
   on_mouse_click(e);
