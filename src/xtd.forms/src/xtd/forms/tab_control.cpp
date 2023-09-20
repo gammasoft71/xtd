@@ -99,10 +99,9 @@ tab_alignment tab_control::alignment() const noexcept {
 }
 
 tab_control& tab_control::alignment(tab_alignment alignment) {
-  if (data_->alignment != alignment) {
-    data_->alignment = alignment;
-    post_recreate_handle();
-  }
+  if (data_->alignment == alignment) return *this;
+  data_->alignment = alignment;
+  post_recreate_handle();
   return *this;
 }
 
@@ -111,10 +110,9 @@ const forms::image_list& tab_control::image_list() const noexcept {
 }
 
 tab_control& tab_control::image_list(const forms::image_list& value) {
-  if (data_->image_list != value) {
-    data_->image_list = value;
-    post_recreate_handle();
-  }
+  if (data_->image_list == value) return *this;
+  data_->image_list = value;
+  post_recreate_handle();
   return *this;
 }
 
@@ -123,11 +121,10 @@ size_t tab_control::selected_index() const noexcept {
 }
 
 tab_control& tab_control::selected_index(size_t selected_index) {
-  if (data_->selected_index != selected_index) {
-    data_->selected_index = selected_index;
-    if (is_handle_created()) native::tab_control::selected_index(handle(), data_->selected_index);
-    on_selected_index_changed(event_args::empty);
-  }
+  if (data_->selected_index == selected_index) return *this;
+  data_->selected_index = selected_index;
+  if (is_handle_created()) native::tab_control::selected_index(handle(), data_->selected_index);
+  on_selected_index_changed(event_args::empty);
   return *this;
 }
 
@@ -140,24 +137,24 @@ const tab_control::tab_page_collection& tab_control::tab_pages() const noexcept 
 }
 
 tab_control tab_control::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  tab_control item;
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = tab_control {};
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 tab_control tab_control::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  tab_control item;
-  item.parent(parent);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = tab_control {};
+  result.parent(parent);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 forms::create_params tab_control::create_params() const noexcept {
-  forms::create_params create_params = control::create_params();
+  auto create_params = control::create_params();
   
   create_params.class_name("tabcontrol");
   create_params.style(create_params.style() | WS_CLIPSIBLINGS);
@@ -173,7 +170,7 @@ forms::create_params tab_control::create_params() const noexcept {
 }
 
 drawing::size tab_control::measure_control() const noexcept {
-  drawing::rectangle bounds;
+  auto bounds = drawing::rectangle {};
   for (auto item : controls())
     if (item.get().visible()) bounds = drawing::rectangle::make_union(bounds, item.get().bounds());
   return drawing::size(bounds.location() + bounds.size());
@@ -210,7 +207,7 @@ void tab_control::wnd_proc(message& message) {
 }
 
 size_t tab_control::get_child_index(intptr page) {
-  for (size_t index = 0; index < controls().size(); ++index)
+  for (auto index = 0_sz; index < controls().size(); ++index)
     if (controls()[index].get().handle() == page) return index;
   return npos;
 }
