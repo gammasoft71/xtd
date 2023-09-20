@@ -62,7 +62,7 @@ dialog_result save_file_box::show(xtd::ustring& file_name, const xtd::ustring& t
 }
 
 dialog_result save_file_box::show_save_file_box(xtd::ustring& output, const xtd::ustring& title, const xtd::ustring& initial_directory, const xtd::ustring& filter, const save_file_box_options options, const iwin32_window* owner) {
-  xtd::forms::save_file_dialog dialog{};
+  auto dialog = xtd::forms::save_file_dialog {};
   dialog.title(title)
   .initial_directory(initial_directory)
   .file_name(output)
