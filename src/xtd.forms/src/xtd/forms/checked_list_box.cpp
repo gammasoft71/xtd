@@ -94,19 +94,18 @@ const list_box& checked_list_box::items(const object_collection& items) {
 }
 
 list_control& checked_list_box::selected_index(size_t selected_index) {
-  if (this->selected_index() != selected_index) {
-    if (selected_index != npos && selected_index >= data_->items.size()) throw argument_out_of_range_exception("Selected index greater than items size"_t, csf_);
-    set_selected_index(selected_index);
-    if (is_handle_created()) native::checked_list_box::selected_index(handle(), selected_index);
-    
-    auto selected = item {};
-    if (this->selected_index() != npos) selected = data_->items[this->selected_index()];
-    //this->selected_item(selected);
-    data_->selected_item = selected;
-    on_selected_value_changed(event_args::empty);
-    
-    on_selected_index_changed(event_args::empty);
-  }
+  if (this->selected_index() == selected_index) return *this;
+  if (selected_index != npos && selected_index >= data_->items.size()) throw argument_out_of_range_exception("Selected index greater than items size"_t, csf_);
+  set_selected_index(selected_index);
+  if (is_handle_created()) native::checked_list_box::selected_index(handle(), selected_index);
+  
+  auto selected = item {};
+  if (this->selected_index() != npos) selected = data_->items[this->selected_index()];
+  //this->selected_item(selected);
+  data_->selected_item = selected;
+  on_selected_value_changed(event_args::empty);
+  
+  on_selected_index_changed(event_args::empty);
   return *this;
 }
 
@@ -119,16 +118,15 @@ const checked_list_box::item& checked_list_box::selected_item() const noexcept {
 }
 
 checked_list_box& checked_list_box::selected_item(const item& selected_item) {
-  if (data_->selected_item != selected_item) {
-    auto it = std::find(data_->items.begin(), data_->items.end(), selected_item);
-    if (it == data_->items.end())
-      data_->selected_item = selected_index() != npos ? items()[selected_index()] : "";
-    else {
-      size_t index = it - data_->items.begin();
-      selected_index(index);
-      data_->selected_item = *it;
-      on_selected_value_changed(event_args::empty);
-    }
+  if (data_->selected_item == selected_item) return *this;
+  auto it = std::find(data_->items.begin(), data_->items.end(), selected_item);
+  if (it == data_->items.end())
+    data_->selected_item = selected_index() != npos ? items()[selected_index()] : "";
+  else {
+    size_t index = it - data_->items.begin();
+    selected_index(index);
+    data_->selected_item = *it;
+    on_selected_value_changed(event_args::empty);
   }
   return *this;
 }
