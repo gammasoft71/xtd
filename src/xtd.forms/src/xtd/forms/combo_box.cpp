@@ -56,10 +56,9 @@ bool combo_box::dropped_down() const noexcept {
 }
 
 combo_box& combo_box::dropped_down(bool value) {
-  if (data_->drop_down != value) {
-    data_->drop_down = value;
-    if (is_handle_created()) native::combo_box::dropped_down(handle(), data_->drop_down);
-  }
+  if (data_->drop_down == value) return *this;
+  data_->drop_down = value;
+  if (is_handle_created()) native::combo_box::dropped_down(handle(), data_->drop_down);
   return *this;
 }
 
@@ -68,28 +67,26 @@ combo_box_style combo_box::drop_down_style() const noexcept {
 }
 
 combo_box& combo_box::drop_down_style(combo_box_style drop_down_style) {
-  if (data_->drop_down_style != drop_down_style) {
-    data_->drop_down_style = drop_down_style;
-    post_recreate_handle();
-    on_drop_down_style_changed(event_args::empty);
-  }
+  if (data_->drop_down_style == drop_down_style)
+  data_->drop_down_style = drop_down_style;
+  post_recreate_handle();
+  on_drop_down_style_changed(event_args::empty);
   return *this;
 }
 
 list_control& combo_box::selected_index(size_t selected_index) {
-  if (this->selected_index() != selected_index) {
-    if (selected_index != npos && selected_index >= data_->items.size()) throw argument_out_of_range_exception("Selected index greater than items size"_t, csf_);
-    set_selected_index(selected_index);
-    if (is_handle_created()) native::combo_box::selected_index(handle(), this->selected_index());
-    
-    item selected;
-    if (this->selected_index() != npos) selected = data_->items[this->selected_index()];
-    //this->selected_item(selected);
-    data_->selected_item = selected;
-    on_selected_value_changed(event_args::empty);
-    
-    on_selected_index_changed(event_args::empty);
-  }
+  if (this->selected_index() == selected_index) return *this;
+  if (selected_index != npos && selected_index >= data_->items.size()) throw argument_out_of_range_exception("Selected index greater than items size"_t, csf_);
+  set_selected_index(selected_index);
+  if (is_handle_created()) native::combo_box::selected_index(handle(), this->selected_index());
+  
+  item selected;
+  if (this->selected_index() != npos) selected = data_->items[this->selected_index()];
+  //this->selected_item(selected);
+  data_->selected_item = selected;
+  on_selected_value_changed(event_args::empty);
+  
+  on_selected_index_changed(event_args::empty);
   return *this;
 }
 
@@ -111,16 +108,15 @@ const combo_box::item& combo_box::selected_item() const noexcept {
 }
 
 combo_box& combo_box::selected_item(const item& selected_item) {
-  if (data_->selected_item != selected_item) {
-    auto it = std::find(data_->items.begin(), data_->items.end(), selected_item);
-    if (it == data_->items.end())
-      data_->selected_item = selected_index() != npos ? items()[selected_index()] : "";
-    else {
-      auto index = it - data_->items.begin();
-      selected_index(index);
-      data_->selected_item = *it;
-      on_selected_value_changed(event_args::empty);
-    }
+  if (data_->selected_item == selected_item) return *this;
+  auto it = std::find(data_->items.begin(), data_->items.end(), selected_item);
+  if (it == data_->items.end())
+    data_->selected_item = selected_index() != npos ? items()[selected_index()] : "";
+  else {
+    auto index = it - data_->items.begin();
+    selected_index(index);
+    data_->selected_item = *it;
+    on_selected_value_changed(event_args::empty);
   }
   return *this;
 }
@@ -130,10 +126,9 @@ bool combo_box::sorted() const noexcept {
 }
 
 combo_box& combo_box::sorted(bool sorted) {
-  if (data_->sorted != sorted) {
-    data_->sorted = sorted;
-    data_->items.sorted(data_->sorted);
-  }
+  if (data_->sorted == sorted) return *this;
+  data_->sorted = sorted;
+  data_->items.sorted(data_->sorted);
   return *this;
 }
 
