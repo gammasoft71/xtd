@@ -29,10 +29,9 @@ date_time_picker_format date_time_picker::format() const noexcept {
 }
 
 date_time_picker& date_time_picker::format(date_time_picker_format format) {
-  if (data_->format != format) {
-    data_->format = format;
-    post_recreate_handle();
-  }
+  if (data_->format == format) return *this;
+  data_->format = format;
+  post_recreate_handle();
   return *this;
 }
 
@@ -41,12 +40,11 @@ date_time date_time_picker::max_date() const noexcept {
 }
 
 date_time_picker& date_time_picker::max_date(date_time value) {
-  if (data_->max_date != value) {
-    data_->max_date = value;
-    if (data_->max_date < data_->min_date) data_->min_date = data_->max_date;
-    if (is_handle_created()) native::date_time_picker::allowable_dates(handle(), data_->min_date, data_->max_date);
-    this->value(data_->value);
-  }
+  if (data_->max_date == value) return *this;
+  data_->max_date = value;
+  if (data_->max_date < data_->min_date) data_->min_date = data_->max_date;
+  if (is_handle_created()) native::date_time_picker::allowable_dates(handle(), data_->min_date, data_->max_date);
+  this->value(data_->value);
   return *this;
 }
 
@@ -55,12 +53,11 @@ date_time date_time_picker::min_date() const noexcept {
 }
 
 date_time_picker& date_time_picker::min_date(date_time value) {
-  if (data_->min_date != value) {
-    data_->min_date = value;
-    if (data_->max_date < data_->min_date) data_->max_date = data_->min_date;
-    if (is_handle_created()) native::date_time_picker::allowable_dates(handle(), data_->min_date, data_->max_date);
-    this->value(data_->value);
-  }
+  if (data_->min_date == value) return *this;
+  data_->min_date = value;
+  if (data_->max_date < data_->min_date) data_->max_date = data_->min_date;
+  if (is_handle_created()) native::date_time_picker::allowable_dates(handle(), data_->min_date, data_->max_date);
+  this->value(data_->value);
   return *this;
 }
 
