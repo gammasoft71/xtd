@@ -23,24 +23,24 @@ seven_segment_display& nine_segment_display::thickness(int32 value) {
 }
 
 nine_segment_display nine_segment_display::create(xtd::forms::segments segments, bool show_back_segment, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  nine_segment_display item;
-  item.value(segments);
-  item.show_back_segment(show_back_segment);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = nine_segment_display {};
+  result.value(segments);
+  result.show_back_segment(show_back_segment);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 nine_segment_display nine_segment_display::create(const control& parent, xtd::forms::segments segments, bool show_back_segment, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  nine_segment_display item;
-  item.parent(parent);
-  item.value(segments);
-  item.show_back_segment(show_back_segment);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = nine_segment_display {};
+  result.parent(parent);
+  result.value(segments);
+  result.show_back_segment(show_back_segment);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 void nine_segment_display::draw_back_digit(drawing::graphics& graphics) {
@@ -50,14 +50,14 @@ void nine_segment_display::draw_back_digit(drawing::graphics& graphics) {
 }
 
 void nine_segment_display::draw_segment_h(drawing::graphics& graphics, const drawing::color& color) {
-  for (int32 offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++) {
+  for (auto offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++) {
     graphics.draw_line(drawing::pen(color), size().width() - 3 - thickness() - abs(offset), 2 + thickness(), 2 + thickness(), size().height() / 2 - 2 - thickness() / 2 - abs(offset));
     graphics.draw_line(drawing::pen(color), size().width() - 3 - thickness(), 2 + thickness() + abs(offset), 2 + thickness() + abs(offset), size().height() / 2 - 2 - thickness() / 2);
   }
 }
 
 void nine_segment_display::draw_segment_i(drawing::graphics& graphics, const drawing::color& color) {
-  for (int32 offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++) {
+  for (auto offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++) {
     graphics.draw_line(drawing::pen(color), size().width() - 3 - thickness() - abs(offset), size().height() / 2 + 2 + thickness() / 2, 2 + thickness(), size().height() - 3 - thickness() - abs(offset));
     graphics.draw_line(drawing::pen(color), size().width() - 3 - thickness(), size().height() / 2 + 2 + thickness() / 2 + abs(offset), 2 + thickness() + abs(offset), size().height() - 3 - thickness());
   }
