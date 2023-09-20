@@ -103,7 +103,7 @@ namespace {
       
       // Incase no button was specified, add a custom Close button
       if (mn.buttons().empty()) {
-        std::unique_ptr<button> btn = std::make_unique<button>();
+        auto btn = std::make_unique<button>();
         btn->parent(v_layout_buttons_)
         .text("&Close")
         .dock(dock_style::top)
@@ -119,7 +119,7 @@ namespace {
       
       // Buttons
       for (const auto& _btn : mn.buttons()) {
-        std::unique_ptr<button> btn = std::make_unique<button>();
+        auto btn = std::make_unique<button>();
         btn->parent(v_layout_buttons_)
         .text(_btn.get().text())
         .dock(dock_style::top)
