@@ -44,10 +44,9 @@ const xtd::ustring& find_dialog::find_string() const noexcept {
 }
 
 find_dialog& find_dialog::find_string(const xtd::ustring& value) {
-  if (value != data_->find_string) {
-    data_->find_string = value;
-    recreate_handle();
-  }
+  if (value == data_->find_string) return *this;
+  data_->find_string = value;
+  recreate_handle();
   return *this;
 }
 
@@ -56,10 +55,9 @@ xtd::drawing::point find_dialog::location() const noexcept {
 }
 
 find_dialog& find_dialog::location(const xtd::drawing::point& value) {
-  if (value != data_->location) {
-    data_->location = value;
-    recreate_handle();
-  }
+  if (value == data_->location) return *this;
+  data_->location = value;
+  recreate_handle();
   return *this;
 }
 
@@ -68,10 +66,9 @@ bool find_dialog::match_case() const noexcept {
 }
 
 find_dialog& find_dialog::match_case(bool value) {
-  if (value != data_->match_case) {
-    data_->match_case = value;
-    recreate_handle();
-  }
+  if (value == data_->match_case) return *this;
+  data_->match_case = value;
+  recreate_handle();
   return *this;
 }
 
@@ -80,10 +77,9 @@ xtd::forms::search_direction find_dialog::search_direction() const noexcept {
 }
 
 find_dialog& find_dialog::search_direction(xtd::forms::search_direction value) {
-  if (value != data_->search_direction) {
-    data_->search_direction = value;
-    recreate_handle();
-  }
+  if (value == data_->search_direction) return *this;
+  data_->search_direction = value;
+  recreate_handle();
   return *this;
 }
 
@@ -92,10 +88,9 @@ bool find_dialog::show_match_case() const noexcept {
 }
 
 find_dialog& find_dialog::show_match_case(bool value) {
-  if (value != data_->show_match_case) {
-    data_->show_match_case = value;
-    recreate_handle();
-  }
+  if (value == data_->show_match_case) return *this;
+  data_->show_match_case = value;
+  recreate_handle();
   return *this;
 }
 
@@ -104,10 +99,9 @@ bool find_dialog::show_up_down() const noexcept {
 }
 
 find_dialog& find_dialog::show_up_down(bool value) {
-  if (value != data_->show_up_down) {
-    data_->show_up_down = value;
-    recreate_handle();
-  }
+  if (value == data_->show_up_down) return *this;
+  data_->show_up_down = value;
+  recreate_handle();
   return *this;
 }
 
@@ -116,10 +110,9 @@ bool find_dialog::show_whole_word() const noexcept {
 }
 
 find_dialog& find_dialog::show_whole_word(bool value) {
-  if (value != data_->show_whole_word) {
-    data_->show_whole_word = value;
-    recreate_handle();
-  }
+  if (value == data_->show_whole_word) return *this;
+  data_->show_whole_word = value;
+  recreate_handle();
   return *this;
 }
 
@@ -128,10 +121,9 @@ const xtd::ustring& find_dialog::title() const noexcept {
 }
 
 find_dialog& find_dialog::title(const xtd::ustring& value) {
-  if (value != data_->title) {
-    data_->title = value;
-    recreate_handle();
-  }
+  if (value == data_->title) return *this;
+  data_->title = value;
+  recreate_handle();
   return *this;
 }
 
@@ -140,10 +132,9 @@ bool find_dialog::whole_word() const noexcept {
 }
 
 find_dialog& find_dialog::whole_word(bool value) {
-  if (value != data_->whole_word) {
-    data_->whole_word = value;
-    recreate_handle();
-  }
+  if (value == data_->whole_word) return *this;
+  data_->whole_word = value;
+  recreate_handle();
   return *this;
 }
 
@@ -204,9 +195,8 @@ void find_dialog::on_dialog_find(const xtd::drawing::point& location, const ustr
 }
 
 void find_dialog::recreate_handle() {
-  if (data_->handle) {
-    destroy_handle();
-    create_handle();
-    if (data_->visible) native::find_dialog::show(data_->handle);
-  }
+  if (!data_->handle) return;
+  destroy_handle();
+  create_handle();
+  if (data_->visible) native::find_dialog::show(data_->handle);
 }
