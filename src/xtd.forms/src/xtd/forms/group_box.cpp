@@ -49,35 +49,34 @@ xtd::forms::flat_style group_box::flat_style() const noexcept {
 }
 
 group_box& group_box::flat_style(xtd::forms::flat_style flat_style) {
-  if (data_->flat_style != flat_style) {
-    data_->flat_style = flat_style;
-    control_appearance(data_->flat_style == xtd::forms::flat_style::system ? forms::control_appearance::system : forms::control_appearance::standard);
-    recreate_handle();
-  }
+  if (data_->flat_style == flat_style) return *this;
+  data_->flat_style = flat_style;
+  control_appearance(data_->flat_style == xtd::forms::flat_style::system ? forms::control_appearance::system : forms::control_appearance::standard);
+  recreate_handle();
   return *this;
 }
 
 group_box group_box::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  group_box item;
-  item.text(text);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = group_box {};
+  result.text(text);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 group_box group_box::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  group_box item;
-  item.parent(parent);
-  item.text(text);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = group_box {};
+  result.parent(parent);
+  result.text(text);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 forms::create_params group_box::create_params() const noexcept {
-  forms::create_params create_params = control::create_params();
+  auto create_params = control::create_params();
   
   create_params.class_name("groupbox");
   create_params.style(create_params.style() | BS_GROUPBOX);
