@@ -33,9 +33,7 @@ control& splitter::dock(dock_style dock) {
 int32 splitter::min_size() const noexcept {
   return data_->min_size;
 }
-/// @brief Sets the minimum distance that must remain between the splitter control and the container edge that the control is docked to.
-/// @param min_size The minimum distance, in pixels, between the splitter control and the container edge that the control is docked to. The default is 25.
-/// @return Current splitter instance.
+
 splitter& splitter::min_size(int32 min_size) {
   data_->min_size = min_size;
   return *this;
@@ -55,22 +53,22 @@ forms::cursor splitter::default_cursor() const noexcept {
 }
 
 splitter splitter::create(dock_style dock, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  splitter item;
-  item.dock(dock);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = splitter {};
+  result.dock(dock);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 splitter splitter::create(const control& parent, dock_style dock, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  splitter item;
-  item.parent(parent);
-  item.dock(dock);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = splitter {};
+  result.parent(parent);
+  result.dock(dock);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 drawing::size splitter::default_size() const noexcept {
@@ -85,7 +83,7 @@ void splitter::on_mouse_down(const mouse_event_args& e) {
   control::on_mouse_down(e);
   data_->mouse_down_location = control::dock() == dock_style::left || control::dock() == dock_style::right ? cursor::position().x() : cursor::position().y();
   if (parent().has_value()) {
-    for (size_t index = 0; index < parent().value().get().controls().size(); index++) {
+    for (auto index = 0_sz; index < parent().value().get().controls().size(); ++index) {
       if (parent().value().get().controls()[index].get() == *this) {
         if (index > 0) data_->previous_control_cursor = (data_->previous_control = &parent().value().get().controls()[index - 1].get())->cursor();
         if (index < parent().value().get().controls().size() - 1) data_->next_control_cursor = (data_->next_control = &parent().value().get().controls()[index + 1].get())->cursor();
@@ -105,8 +103,8 @@ void splitter::on_mouse_move(const mouse_event_args& e) {
     if (data_->splitter_style == splitter_style::draw_line) {
     
     } else {
-      int32 delta_size = control::dock() == dock_style::left || control::dock() == dock_style::right ? (data_->next_control->width() + cursor::position().x()) : (data_->next_control->height() + cursor::position().y());
-      int32 new_size = delta_size - data_->mouse_down_location;
+      auto delta_size = control::dock() == dock_style::left || control::dock() == dock_style::right ? (data_->next_control->width() + cursor::position().x()) : (data_->next_control->height() + cursor::position().y());
+      auto new_size = delta_size - data_->mouse_down_location;
       if (new_size < data_->min_size) new_size = data_->min_size;
       //if (data_->previous_control.size()  < data_->min_size_extra) new_size = data_->min_size;
       if (control::dock() == dock_style::left || control::dock() == dock_style::right) data_->next_control->width(new_size);
@@ -121,7 +119,7 @@ void splitter::on_mouse_up(const mouse_event_args& e) {
   if (data_->previous_control) data_->previous_control->cursor(data_->previous_control_cursor);
   if (data_->next_control) data_->next_control->cursor(data_->previous_control_cursor);
   if (data_->mouse_down_location != -1 && parent().has_value() && data_->next_control) {
-    int32 new_size = (control::dock() == dock_style::left || control::dock() == dock_style::right ? (data_->next_control->width() + cursor::position().x()) : (data_->next_control->height() + cursor::position().y())) - data_->mouse_down_location;
+    auto new_size = (control::dock() == dock_style::left || control::dock() == dock_style::right ? (data_->next_control->width() + cursor::position().x()) : (data_->next_control->height() + cursor::position().y())) - data_->mouse_down_location;
     if (new_size < data_->min_size) new_size = data_->min_size;
     if (control::dock() == dock_style::left || control::dock() == dock_style::right) data_->next_control->width(new_size);
     else data_->next_control->height(new_size);
