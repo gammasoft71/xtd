@@ -26,10 +26,9 @@ xtd::forms::orientation split_container::orientation() const noexcept {
 }
 
 split_container& split_container::orientation(xtd::forms::orientation orientation) {
-  if (data_->orientation != orientation) {
-    data_->orientation = orientation;
-    arrange_children();
-  }
+  if (data_->orientation == orientation) return *this;
+  data_->orientation = orientation;
+  arrange_children();
   return *this;
 }
 
@@ -54,11 +53,10 @@ int32 split_container::splitter_distance() const noexcept {
 }
 
 split_container& split_container::splitter_distance(int32 splitter_distance) {
-  if (data_->splitter_distance != splitter_distance) {
-    data_->splitter_distance = splitter_distance;
-    if (data_->orientation == xtd::forms::orientation::horizontal) data_->panel1.height(splitter_distance);
-    else data_->panel1.width(splitter_distance);
-  }
+  if (data_->splitter_distance == splitter_distance) return *this;
+  data_->splitter_distance = splitter_distance;
+  if (data_->orientation == xtd::forms::orientation::horizontal) data_->panel1.height(splitter_distance);
+  else data_->panel1.width(splitter_distance);
   return *this;
 }
 
@@ -67,8 +65,8 @@ xtd::forms::splitter_style split_container::splitter_style() const noexcept {
 }
 
 split_container& split_container::splitter_style(xtd::forms::splitter_style splitter_style) {
-  if (data_->splitter.splitter_style() != splitter_style)
-    data_->splitter.splitter_style(splitter_style);
+  if (data_->splitter.splitter_style() == splitter_style) return *this;
+  data_->splitter.splitter_style(splitter_style);
   return *this;
 }
 
@@ -77,28 +75,27 @@ int32 split_container::splitter_width() const noexcept {
 }
 
 split_container& split_container::splitter_width(int32 splitter_width) {
-  if (data_->splitter_width != splitter_width) {
-    data_->splitter_width = splitter_width;
-    arrange_children();
-  }
+  if (data_->splitter_width == splitter_width) return *this;
+  data_->splitter_width = splitter_width;
+  arrange_children();
   return *this;
 }
 
 split_container split_container::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  split_container item;
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = split_container {};
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 split_container split_container::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  split_container item;
-  item.parent(parent);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = split_container {};
+  result.parent(parent);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 drawing::size split_container::default_size() const noexcept {
