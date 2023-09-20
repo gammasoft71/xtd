@@ -65,10 +65,9 @@ std::vector<xtd::date_time> month_calendar::annually_bolded_dates() const noexce
 }
 
 month_calendar& month_calendar::annually_bolded_dates(const std::vector<xtd::date_time>& value) {
-  if (data_->annually_bolded_dates != value) {
-    data_->annually_bolded_dates = value;
-    native::month_calendar::annually_bolded_dates(handle(), data_->annually_bolded_dates);
-  }
+  if (data_->annually_bolded_dates == value) return *this;
+  data_->annually_bolded_dates = value;
+  native::month_calendar::annually_bolded_dates(handle(), data_->annually_bolded_dates);
   return *this;
 }
 
@@ -77,10 +76,9 @@ std::vector<xtd::date_time> month_calendar::bolded_dates() const noexcept {
 }
 
 month_calendar& month_calendar::bolded_dates(const std::vector<xtd::date_time>& value) {
-  if (data_->bolded_dates != value) {
-    data_->bolded_dates = value;
-    native::month_calendar::bolded_dates(handle(), data_->bolded_dates);
-  }
+  if (data_->bolded_dates == value) return *this;
+  data_->bolded_dates = value;
+  native::month_calendar::bolded_dates(handle(), data_->bolded_dates);
   return *this;
 }
 
@@ -89,10 +87,9 @@ const xtd::drawing::size& month_calendar::calendar_dimensions() const noexcept {
 }
 
 month_calendar& month_calendar::calendar_dimensions(const xtd::drawing::size& value) {
-  if (data_->calendar_dimensions != value) {
-    data_->calendar_dimensions = value;
-    native::month_calendar::bolded_dates(handle(), data_->bolded_dates);
-  }
+  if (data_->calendar_dimensions == value) return *this;
+  data_->calendar_dimensions = value;
+  native::month_calendar::bolded_dates(handle(), data_->bolded_dates);
   return *this;
 }
 
@@ -100,10 +97,9 @@ xtd::forms::day month_calendar::first_day_of_week() const noexcept {
   return data_->first_day_of_week;
 }
 month_calendar& month_calendar::first_day_of_week(xtd::forms::day value) {
-  if (data_->first_day_of_week != value) {
-    data_->first_day_of_week = value;
-    native::month_calendar::first_day_of_week(handle(), static_cast<uint32>(data_->first_day_of_week));
-  }
+  if (data_->first_day_of_week == value) return *this;
+  data_->first_day_of_week = value;
+  native::month_calendar::first_day_of_week(handle(), static_cast<uint32>(data_->first_day_of_week));
   return *this;
 }
 
@@ -112,13 +108,12 @@ date_time month_calendar::max_date() const noexcept {
 }
 
 month_calendar& month_calendar::max_date(date_time value) {
-  if (data_->max_date != value) {
-    data_->max_date = value;
-    if (data_->max_date < data_->min_date) data_->min_date = data_->max_date;
-    if (is_handle_created()) native::month_calendar::allowable_dates(handle(), data_->min_date, data_->max_date);
-    selection_start(data_->selection_start);
-    selection_end(data_->selection_end);
-  }
+  if (data_->max_date == value) return *this;
+  data_->max_date = value;
+  if (data_->max_date < data_->min_date) data_->min_date = data_->max_date;
+  if (is_handle_created()) native::month_calendar::allowable_dates(handle(), data_->min_date, data_->max_date);
+  selection_start(data_->selection_start);
+  selection_end(data_->selection_end);
   return *this;
 }
 
@@ -127,10 +122,9 @@ uint32 month_calendar::max_selection_count() const noexcept {
 }
 
 month_calendar& month_calendar::max_selection_count(uint32 value) {
-  if (data_->max_selection_count != value) {
-    data_->max_selection_count = value;
-    native::month_calendar::max_selection_count(handle(), data_->max_selection_count);
-  }
+  if (data_->max_selection_count == value) return *this;
+  data_->max_selection_count = value;
+  native::month_calendar::max_selection_count(handle(), data_->max_selection_count);
   return *this;
 }
 
@@ -139,13 +133,12 @@ date_time month_calendar::min_date() const noexcept {
 }
 
 month_calendar& month_calendar::month_calendar::min_date(date_time value) {
-  if (data_->min_date != value) {
-    data_->min_date = value;
-    if (data_->max_date < data_->min_date) data_->max_date = data_->min_date;
-    if (is_handle_created()) native::month_calendar::allowable_dates(handle(), data_->min_date, data_->max_date);
-    selection_start(data_->selection_start);
-    selection_end(data_->selection_end);
-  }
+  if (data_->min_date == value) return *this;
+  data_->min_date = value;
+  if (data_->max_date < data_->min_date) data_->max_date = data_->min_date;
+  if (is_handle_created()) native::month_calendar::allowable_dates(handle(), data_->min_date, data_->max_date);
+  selection_start(data_->selection_start);
+  selection_end(data_->selection_end);
   return *this;
 }
 
@@ -154,10 +147,9 @@ std::vector<xtd::date_time> month_calendar::monthly_bolded_dates() const noexcep
 }
 
 month_calendar& month_calendar::monthly_bolded_dates(const std::vector<xtd::date_time>& value) {
-  if (data_->monthly_bolded_dates != value) {
-    data_->monthly_bolded_dates = value;
-    native::month_calendar::monthly_bolded_dates(handle(), data_->monthly_bolded_dates);
-  }
+  if (data_->monthly_bolded_dates == value) return *this;
+  data_->monthly_bolded_dates = value;
+  native::month_calendar::monthly_bolded_dates(handle(), data_->monthly_bolded_dates);
   return *this;
 }
 
@@ -168,11 +160,10 @@ date_time month_calendar::selection_end() const noexcept {
 month_calendar& month_calendar::selection_end(date_time value) {
   if (value < data_->min_date) value = data_->min_date;
   if (value > data_->max_date) value = data_->max_date;
-  if (data_->selection_end != value) {
-    data_->selection_end = value;
-    if (is_handle_created()) native::month_calendar::selection_range(handle(), data_->selection_start, data_->selection_end);
-    on_date_selected(date_range_event_args(data_->selection_start, data_->selection_end));
-  }
+  if (data_->selection_end == value) return *this;
+  data_->selection_end = value;
+  if (is_handle_created()) native::month_calendar::selection_range(handle(), data_->selection_start, data_->selection_end);
+  on_date_selected(date_range_event_args(data_->selection_start, data_->selection_end));
   return *this;
 }
 
@@ -183,11 +174,10 @@ date_time month_calendar::selection_start() const noexcept {
 month_calendar& month_calendar::selection_start(date_time value) {
   if (value < data_->min_date) value = data_->min_date;
   if (value > data_->max_date) value = data_->max_date;
-  if (data_->selection_start != value) {
-    data_->selection_start = value;
-    if (is_handle_created()) native::month_calendar::selection_range(handle(), data_->selection_start, data_->selection_end);
-    on_date_selected(date_range_event_args(data_->selection_start, data_->selection_end));
-  }
+  if (data_->selection_start == value) return *this;
+  data_->selection_start = value;
+  if (is_handle_created()) native::month_calendar::selection_range(handle(), data_->selection_start, data_->selection_end);
+  on_date_selected(date_range_event_args(data_->selection_start, data_->selection_end));
   return *this;
 }
 
@@ -206,10 +196,9 @@ bool month_calendar::show_today() const noexcept {
 }
 
 month_calendar& month_calendar::show_today(bool value) {
-  if (data_->show_today != value) {
-    data_->show_today = value;
-    post_recreate_handle();
-  }
+  if (data_->show_today == value) return *this;
+  data_->show_today = value;
+  post_recreate_handle();
   return *this;
 }
 
@@ -218,10 +207,9 @@ bool month_calendar::show_today_circle() const noexcept {
 }
 
 month_calendar& month_calendar::show_today_circle(bool value) {
-  if (data_->show_today_circle != value) {
-    data_->show_today_circle = value;
-    post_recreate_handle();
-  }
+  if (data_->show_today_circle == value) return *this;
+  data_->show_today_circle = value;
+  post_recreate_handle();
   return *this;
 }
 
@@ -230,10 +218,9 @@ bool month_calendar::show_week_numbers() const noexcept {
 }
 
 month_calendar& month_calendar::show_week_numbers(bool value) {
-  if (data_->show_week_numbers != value) {
-    data_->show_week_numbers = value;
-    post_recreate_handle();
-  }
+  if (data_->show_week_numbers == value) return *this;
+  data_->show_week_numbers = value;
+  post_recreate_handle();
   return *this;
 }
 
@@ -247,10 +234,9 @@ xtd::drawing::color month_calendar::title_back_color() const noexcept {
 }
 
 month_calendar& month_calendar::title_back_color(const xtd::drawing::color& value) {
-  if (data_->title_back_color != value) {
-    data_->title_back_color = value;
-    native::month_calendar::title_back_color(handle(), title_back_color());
-  }
+  if (data_->title_back_color == value) return *this;
+  data_->title_back_color = value;
+  native::month_calendar::title_back_color(handle(), title_back_color());
   return *this;
 }
 
@@ -259,10 +245,9 @@ xtd::drawing::color month_calendar::title_fore_color() const noexcept {
 }
 
 month_calendar& month_calendar::title_fore_color(const xtd::drawing::color& value) {
-  if (data_->title_fore_color != value) {
-    data_->title_fore_color = value;
-    native::month_calendar::title_fore_color(handle(), title_fore_color());
-  }
+  if (data_->title_fore_color == value) return *this;
+  data_->title_fore_color = value;
+  native::month_calendar::title_fore_color(handle(), title_fore_color());
   return *this;
 }
 
@@ -271,10 +256,9 @@ const xtd::date_time& month_calendar::today_date() const noexcept {
 }
 
 month_calendar& month_calendar::today_date(const xtd::date_time& value) {
-  if (data_->today_date != value) {
-    data_->today_date = value;
-    data_->today_date_set = true;
-  }
+  if (data_->today_date == value) return *this;
+  data_->today_date = value;
+  data_->today_date_set = true;
   return *this;
 }
 
@@ -287,10 +271,9 @@ xtd::drawing::color month_calendar::trailing_fore_color() const noexcept {
 }
 
 month_calendar& month_calendar::trailing_fore_color(const xtd::drawing::color& value) {
-  if (data_->trailing_fore_color != value) {
-    data_->trailing_fore_color = value;
-    native::month_calendar::trailing_fore_color(handle(), trailing_fore_color());
-  }
+  if (data_->trailing_fore_color == value) return *this;
+  data_->trailing_fore_color = value;
+  native::month_calendar::trailing_fore_color(handle(), trailing_fore_color());
   return *this;
 }
 
@@ -307,43 +290,43 @@ void month_calendar::add_monthly_bolded_date(const xtd::date_time& date) {
 }
 
 month_calendar month_calendar::create(const forms::selection_range& selection_range, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  month_calendar item;
-  item.selection_range(selection_range);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = month_calendar {};
+  result.selection_range(selection_range);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 month_calendar month_calendar::create(const date_time& selection_start, const date_time& selection_end, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  month_calendar item;
-  item.selection_start(selection_start);
-  item.selection_end(selection_end);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = month_calendar {};
+  result.selection_start(selection_start);
+  result.selection_end(selection_end);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 month_calendar month_calendar::create(const control& parent, const forms::selection_range& selection_range, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  month_calendar item;
-  item.parent(parent);
-  item.selection_range(selection_range);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = month_calendar {};
+  result.parent(parent);
+  result.selection_range(selection_range);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 month_calendar month_calendar::create(const control& parent, const date_time& selection_start, const date_time& selection_end, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  month_calendar item;
-  item.parent(parent);
-  item.selection_start(selection_start);
-  item.selection_end(selection_end);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = month_calendar {};
+  result.parent(parent);
+  result.selection_start(selection_start);
+  result.selection_end(selection_end);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 month_calendar::hit_test_info month_calendar::hit_test(int32 x, int32 y) const {
@@ -415,7 +398,7 @@ xtd::drawing::color month_calendar::default_fore_color() const noexcept {
 }
 
 forms::create_params month_calendar::create_params() const noexcept {
-  forms::create_params create_params = control::create_params();
+  auto create_params = control::create_params();
   create_params.class_name("monthcalendar");
   
   if (!data_->show_today) create_params.style(create_params.style() | MCS_NOTODAY);
@@ -467,7 +450,7 @@ void month_calendar::wnd_proc(message& message) {
 }
 
 void month_calendar::wm_notify_control(message& message) {
-  NMHDR* nmhdr = reinterpret_cast<NMHDR*>(message.lparam());
+  auto nmhdr = reinterpret_cast<NMHDR*>(message.lparam());
   switch (nmhdr->code) {
     case MCN_SELECT: wm_date_selected(message); break;
     case MCN_SELCHANGE: wm_date_changed(message); break;
