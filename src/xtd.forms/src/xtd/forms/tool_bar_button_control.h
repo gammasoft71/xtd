@@ -2,119 +2,131 @@
 #include "../../../include/xtd/forms/tool_bar.h"
 
 class xtd::forms::tool_bar::tool_bar_button_control : public xtd::forms::button {
+  struct data {
+    const xtd::forms::control* control = nullptr;
+    xtd::forms::context_menu* drop_down_menu = nullptr;
+    xtd::drawing::size image_size;
+    std::optional<tool_bar_button_ref> tool_bar_button;
+    bool mouse_on_drop_down_menu = false;
+    bool mouse_down_on_drop_down_menu = false;
+    bool flat = false;
+    bool show_icon = true;
+    bool show_text = false;
+    bool pushed = false;
+    xtd::forms::tool_bar_button_style style = xtd::forms::tool_bar_button_style::push_button;
+    xtd::forms::tool_bar_text_align tool_bar_text_align = xtd::forms::tool_bar_text_align::underneath;
+  };
+  
 public:
   tool_bar_button_control() {
     set_can_focus(false);
     flat_style(xtd::forms::flat_style::flat);
   }
   
-  void control(const xtd::forms::control* value) {
-    if (data_->control != value) {
-      data_->control = value;
-      update_size();
-      update_layout();
-    }
+  tool_bar_button_control& control(const xtd::forms::control* value) {
+    if (data_->control == value) return *this;
+    data_->control = value;
+    update_size();
+    update_layout();
+    return *this;
   }
   
-  void drop_down_menu(xtd::forms::context_menu* value) {
-    if (data_->drop_down_menu != value) {
-      data_->drop_down_menu = value;
-      update_size();
-      update_layout();
-    }
+  tool_bar_button_control& drop_down_menu(xtd::forms::context_menu* value) {
+    if (data_->drop_down_menu == value) return *this;
+    data_->drop_down_menu = value;
+    update_size();
+    update_layout();
+    return *this;
   }
   
-  void flat(bool value) {
-    if (data_->flat != value) {
-      data_->flat = value;
-      update_size();
-      update_layout();
-    }
+  tool_bar_button_control& flat(bool value) {
+    if (data_->flat == value) return *this;
+    data_->flat = value;
+    update_size();
+    update_layout();
+    return *this;
   }
   
   using xtd::forms::button_base::image;
   button_base& image(const xtd::drawing::image& value) override {
-    if (image() != value) {
-      button_base::image(value);
-      update_size();
-      update_layout();
-    }
+    if (image() == value) return *this;
+    button_base::image(value);
+    update_size();
+    update_layout();
     return *this;
   }
   
   const xtd::drawing::size& image_size() const {return data_->image_size;}
   
-  void image_size(const xtd::drawing::size& value) {
-    if (data_->image_size != value) {
-      data_->image_size = value;
-      update_size();
-      update_layout();
-    }
+  tool_bar_button_control& image_size(const xtd::drawing::size& value) {
+    if (data_->image_size == value) return *this;
+    data_->image_size = value;
+    update_size();
+    update_layout();
+    return *this;
   }
   
   bool is_horizontal() const {return dock() == dock_style::left || dock() == dock_style::right;}
   
-  void pushed(bool value) {
-    if (data_->pushed != value) {
-      data_->pushed = value;
-      update_size();
-      update_layout();
-    }
+  tool_bar_button_control& pushed(bool value) {
+    if (data_->pushed == value) return *this;
+    data_->pushed = value;
+    update_size();
+    update_layout();
+    return *this;
   }
   
-  void show_icon(bool value) {
-    if (data_->show_icon != value) {
-      data_->show_icon = value;
-      update_size();
-      update_layout();
-    }
+  tool_bar_button_control& show_icon(bool value) {
+    if (data_->show_icon == value) return *this;
+    data_->show_icon = value;
+    update_size();
+    update_layout();
+    return *this;
   }
   
-  void show_text(bool value) {
-    if (data_->show_text != value) {
-      data_->show_text = value;
-      update_size();
-      update_layout();
-    }
+  tool_bar_button_control& show_text(bool value) {
+    if (data_->show_text == value) return *this;
+    data_->show_text = value;
+    update_size();
+    update_layout();
+    return *this;
   }
   
   xtd::drawing::size size() const noexcept override {return control::size();}
   
   xtd::forms::control& size(const xtd::drawing::size& value) override {
-    if (size() != value) {
-      control::size(value);
-      update_size();
-      update_layout();
-    }
+    if (size() == value) return *this;
+    control::size(value);
+    update_size();
+    update_layout();
     return *this;
   }
   
   xtd::forms::tool_bar_button_style style() const {return data_->style;}
   
-  void style(xtd::forms::tool_bar_button_style value) {
-    if (data_->style != value) {
-      data_->style = value;
-      update_size();
-      update_layout();
-    }
+  tool_bar_button_control& style(xtd::forms::tool_bar_button_style value) {
+    if (data_->style == value) return *this;
+    data_->style = value;
+    update_size();
+    update_layout();
+    return *this;
   }
   
   using xtd::forms::control::text;
   xtd::forms::control& text(const xtd::ustring& value) override {
-    if (text() != value) {
-      button_base::text(value);
-      update_size();
-      update_layout();
-    }
+    if (text() == value) return *this;
+    button_base::text(value);
+    update_size();
+    update_layout();
     return *this;
   }
   
-  void tool_bar_text_align(xtd::forms::tool_bar_text_align value) {
-    if (data_->tool_bar_text_align != value) {
-      data_->tool_bar_text_align = value;
-      update_size();
-      update_layout();
-    }
+  tool_bar_button_control& tool_bar_text_align(xtd::forms::tool_bar_text_align value) {
+    if (data_->tool_bar_text_align == value) return *this;
+    data_->tool_bar_text_align = value;
+    update_size();
+    update_layout();
+    return *this;
   }
   
   void tool_bar_button(tool_bar_button_ref value) {data_->tool_bar_button = value;}
@@ -242,9 +254,9 @@ private:
   
   void draw_control(xtd::forms::paint_event_args& e) {
     auto sstyle = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
-    xtd::forms::style_sheets::tool_bar_button current_style_sheet = sstyle.tool_bar_button(xtd::forms::style_sheets::pseudo_state::standard);
+    auto current_style_sheet = sstyle.tool_bar_button(xtd::forms::style_sheets::pseudo_state::standard);
     current_style_sheet.font(font());
-    xtd::drawing::rectangle text_rect = current_style_sheet.get_content_rectangle(e.clip_rectangle());
+    auto text_rect = current_style_sheet.get_content_rectangle(e.clip_rectangle());
     if (data_->show_text == true && data_->tool_bar_text_align == tool_bar_text_align::right) {
       if (data_->control) text_rect.width(text_rect.width() - data_->control->width() - 4);
       if (data_->control) text_rect.x(text_rect.x() + data_->control->width() + 4);
@@ -310,21 +322,6 @@ private:
     }
     this->size(current_size);
   }
-  
-  struct data {
-    const xtd::forms::control* control = nullptr;
-    xtd::forms::context_menu* drop_down_menu = nullptr;
-    xtd::drawing::size image_size;
-    std::optional<tool_bar_button_ref> tool_bar_button;
-    bool mouse_on_drop_down_menu = false;
-    bool mouse_down_on_drop_down_menu = false;
-    bool flat = false;
-    bool show_icon = true;
-    bool show_text = false;
-    bool pushed = false;
-    xtd::forms::tool_bar_button_style style = xtd::forms::tool_bar_button_style::push_button;
-    xtd::forms::tool_bar_text_align tool_bar_text_align = xtd::forms::tool_bar_text_align::underneath;
-  };
   
   std::shared_ptr<data> data_ = std::make_shared<data>();
 };
