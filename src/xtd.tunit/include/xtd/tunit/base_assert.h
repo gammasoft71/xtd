@@ -11,9 +11,10 @@
 #include "abort_error.h"
 #include "assert_error.h"
 #include "ignore_error.h"
-#include <xtd/types.h>
+#include <xtd/types>
 #include <xtd/typeof>
-#include <xtd/diagnostics/stack_frame.h>
+#include <xtd/ustring>
+#include <xtd/diagnostics/stack_frame>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -54,7 +55,7 @@ namespace xtd {
       /// @code
       /// xtd::tunit::assert::abort("User message..."); // test throws an abort_error exception.
       /// @endcode
-      static void abort(const std::string& message);
+      static void abort(const xtd::ustring& message);
       
       /// @brief Abort current test. This is used by the other assert functions.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -63,7 +64,7 @@ namespace xtd {
       /// @code
       /// xtd::tunit::assert::abort("User message...", csf_); // test throws an abort_error exception.
       /// @endcode
-      static void abort(const std::string& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void abort(const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
       
       /// @brief Throws an xtd::tunit::assert_error exception. This is used by the other assert functions.
       /// @exception xtd::tunit::assert_error If bad assertion.
@@ -87,7 +88,7 @@ namespace xtd {
       /// @code
       /// xtd::tunit::assert::fail("User message..."); // test throws an assert_error exception.
       /// @endcode
-      static void fail(const std::string& message);
+      static void fail(const xtd::ustring& message);
       /// @brief Throws an xtd::tunit::assert_error exception. This is used by the other assert functions.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
@@ -96,7 +97,7 @@ namespace xtd {
       /// @code
       /// xtd::tunit::assert::fail("User message...", csf_); // test throws an assert_error exception.
       /// @endcode
-      static void fail(const std::string& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void fail(const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
       
       /// @brief Ignore current test. This is used by the other assert functions.
       /// @par Examples
@@ -118,7 +119,7 @@ namespace xtd {
       /// @code
       /// xtd::tunit::assert::ignore("User message..."); // test throws an ignore_error exception.
       /// @endcode
-      static void ignore(const std::string& message);
+      static void ignore(const xtd::ustring& message);
       /// @brief Ignore current test. This is used by the other assert functions.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
@@ -126,7 +127,7 @@ namespace xtd {
       /// @code
       /// xtd::tunit::assert::ignore("User message...", csf_); // test throws an ignore_error exception.
       /// @endcode
-      static void ignore(const std::string& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void ignore(const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
       
       /// @brief Generates a success with a generic message. This is used by the other assert functions.
       /// @par Examples
@@ -147,7 +148,7 @@ namespace xtd {
       /// @code
       /// xtd::tunit::assert::succeed("User message..."); // test ok.
       /// @endcode
-      static void succeed(const std::string& message);
+      static void succeed(const xtd::ustring& message);
       /// @brief Generates a success with a generic message. This is used by the other assert functions.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
@@ -155,7 +156,7 @@ namespace xtd {
       /// @code
       /// xtd::tunit::assert::succeed("User message...", csf_); // test ok.
       /// @endcode
-      static void succeed(const std::string& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void succeed(const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
       /// @}
       
     protected:
@@ -175,14 +176,14 @@ namespace xtd {
       /// @code
       /// xtd::tunit::assert::error("User message..."); // test throws an assert_error exception.
       /// @endcode
-      static void error(const std::string& message);
+      static void error(const xtd::ustring& message);
       /// @brief Throws an xtd::tunit::assert_error exception. This is used by the other assert functions.
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// @code
       /// xtd::tunit::assert::error(actual_str, expected_str, "User message...", csf_); // test throws an assert_error exception.
       /// @endcode
-      static void error(const std::string& actual, const std::string& expected, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void error(const xtd::ustring& actual, const xtd::ustring& expected, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
       
       /// @brief Throws an xtd::tunit::assert_error exception. This is used by the other assert functions.
       /// @exception xtd::tunit::assert_error If bad assertion.
@@ -190,28 +191,28 @@ namespace xtd {
       /// @code
       /// xtd::tunit::assert::fail(actual_str, expected_str, "User message...", csf_); // test throws an assert_error exception.
       /// @endcode
-      static void fail(const std::string& actual, const std::string& expected, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static void fail(const xtd::ustring& actual, const xtd::ustring& expected, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
       
-      /// @brief Convert specified value to std::string.
-      /// @param value The value to convert to std::string.
-      /// @return The std::string that contains the value.
+      /// @brief Convert specified value to xtd::ustring.
+      /// @param value The value to convert to xtd::ustring.
+      /// @return The xtd::ustring that contains the value.
       template <typename value_t>
-      static std::string to_string(const value_t& value) {return __tunit_to_string(value);}
-      /// @brief Convert specified value to std::string.
-      /// @param value The value to convert to std::string.
-      /// @return The std::string that contains the value.
+      static xtd::ustring to_string(const value_t& value) {return __tunit_to_string(value);}
+      /// @brief Convert specified value to xtd::ustring.
+      /// @param value The value to convert to xtd::ustring.
+      /// @return The xtd::ustring that contains the value.
       template <typename value_t>
-      static std::string to_string(const value_t* value) {return __tunit_to_string(value);}
+      static xtd::ustring to_string(const value_t* value) {return __tunit_to_string(value);}
       
-      /// @brief Join specified collection into std::string.
-      /// @param collection The collection to join into std::string.
-      /// @return The std::string that contains the joined collection.
+      /// @brief Join specified collection into xtd::ustring.
+      /// @param collection The collection to join into xtd::ustring.
+      /// @return The xtd::ustring that contains the joined collection.
       template<typename collection_t>
-      static std::string join_items(const collection_t& collection) {return __tunit_join__items(collection);}
-      /// @brief Join specified string into std::string.
-      /// @param str The joined to join into std::string.
-      /// @return The std::string that contains the joined string.
-      static std::string join_items(const std::string& str);
+      static xtd::ustring join_items(const collection_t& collection) {return __tunit_join__items(collection);}
+      /// @brief Join specified string into xtd::ustring.
+      /// @param str The joined to join into xtd::ustring.
+      /// @return The xtd::ustring that contains the joined string.
+      static xtd::ustring join_items(const xtd::ustring& str);
       /// @}
     };
   }
