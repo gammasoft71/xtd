@@ -80,11 +80,10 @@ xtd::forms::tool_bar_appearance tool_bar::appearance() const noexcept {
 }
 
 tool_bar& tool_bar::appearance(xtd::forms::tool_bar_appearance value) {
-  if (data_->appearance != value) {
-    data_->appearance = value;
-    if (value != tool_bar_appearance::system) invalidate();
-    else  post_recreate_handle();
-  }
+  if (data_->appearance == value) return *this;
+  data_->appearance = value;
+  if (value != tool_bar_appearance::system) invalidate();
+  else  post_recreate_handle();
   return *this;
 }
 
@@ -93,10 +92,9 @@ forms::border_sides tool_bar::border_sides() const noexcept {
 }
 
 tool_bar& tool_bar::border_sides(forms::border_sides border_sides) {
-  if (data_->border_sides != border_sides) {
-    data_->border_sides = border_sides;
-    if (control_appearance() == forms::control_appearance::standard) invalidate();
-  }
+  if (data_->border_sides == border_sides) return *this;
+  data_->border_sides = border_sides;
+  if (control_appearance() == forms::control_appearance::standard) invalidate();
   return *this;
 }
 
@@ -105,20 +103,18 @@ forms::border_style tool_bar::border_style() const noexcept {
 }
 
 tool_bar& tool_bar::border_style(forms::border_style border_style) {
-  if (data_->border_style != border_style) {
-    data_->border_style = border_style;
-    if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
-    else invalidate();
-  }
+  if (data_->border_style == border_style) return *this;
+  data_->border_style = border_style;
+  if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
+  else invalidate();
   return *this;
 }
 
 tool_bar& tool_bar::border_style(std::nullptr_t) {
-  if (data_->border_style) {
-    data_->border_style.reset();
-    if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
-    else invalidate();
-  }
+  if (!data_->border_style) return *this;
+  data_->border_style.reset();
+  if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
+  else invalidate();
   return *this;
 }
 
@@ -127,20 +123,18 @@ xtd::drawing::size tool_bar::button_size() const noexcept {
 }
 
 tool_bar& tool_bar::button_size(const xtd::drawing::size& value) {
-  if (!data_->button_size.has_value() || data_->button_size != value) {
-    data_->button_size = value;
-    if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
-    else invalidate();
-  }
+  if (data_->button_size.has_value() && data_->button_size == value) return *this;
+  data_->button_size = value;
+  if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
+  else invalidate();
   return *this;
 }
 
 tool_bar& tool_bar::button_size(std::nullptr_t) {
-  if (data_->button_size.has_value()) {
-    data_->button_size.reset();
-    if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
-    else invalidate();
-  }
+  if (!data_->button_size.has_value()) return *this;
+  data_->button_size.reset();
+  if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
+  else invalidate();
   return *this;
 }
 
@@ -149,11 +143,10 @@ bool tool_bar::divider() const noexcept {
 }
 
 tool_bar& tool_bar::divider(bool value) {
-  if (data_->divider != value) {
-    data_->divider = value;
-    if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
-    else invalidate();
-  }
+  if (data_->divider == value) return *this;
+  data_->divider = value;
+  if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
+  else invalidate();
   return *this;
 }
 
@@ -180,10 +173,9 @@ bool tool_bar::drop_down_arrows() const noexcept {
 }
 
 tool_bar& tool_bar::drop_down_arrows(bool value) {
-  if (data_->drop_down_arrows != value) {
-    data_->drop_down_arrows = value;
-    if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
-  }
+  if (data_->drop_down_arrows == value) return *this;
+  data_->drop_down_arrows = value;
+  if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
   return *this;
 }
 
@@ -196,10 +188,9 @@ xtd::forms::image_list& tool_bar::image_list() {
 }
 
 xtd::forms::tool_bar& tool_bar::image_list(const xtd::forms::image_list& value) {
-  if (data_->image_list != value) {
-    data_->image_list = value;
-    height(data_->image_list.image_size().height() + 8);
-  }
+  if (data_->image_list == value) return *this;
+  data_->image_list = value;
+  height(data_->image_list.image_size().height() + 8);
   return *this;
 }
 
@@ -220,11 +211,10 @@ bool tool_bar::show_icon() const noexcept {
 }
 
 tool_bar& tool_bar::show_icon(bool value) {
-  if (data_->show_icon != value) {
-    data_->show_icon = value;
-    if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
-    else invalidate();
-  }
+  if (data_->show_icon == value) return *this;
+  data_->show_icon = value;
+  if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
+  else invalidate();
   return *this;
 }
 
@@ -233,11 +223,10 @@ bool tool_bar::show_text() const noexcept {
 }
 
 tool_bar& tool_bar::show_text(bool value) {
-  if (data_->show_text != value) {
-    data_->show_text = value;
-    if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
-    else invalidate();
-  }
+  if (data_->show_text == value) return *this;
+  data_->show_text = value;
+  if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
+  else invalidate();
   return *this;
 }
 
@@ -246,10 +235,9 @@ bool tool_bar::show_tool_tips() const noexcept {
 }
 
 tool_bar& tool_bar::show_tool_tips(bool value) {
-  if (data_->show_tool_tips != value) {
-    data_->show_tool_tips = value;
-    if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
-  }
+  if (data_->show_tool_tips == value) return *this;
+  data_->show_tool_tips = value;
+  if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
   return *this;
 }
 
@@ -258,11 +246,10 @@ xtd::forms::tool_bar_text_align tool_bar::text_align() const noexcept {
 }
 
 tool_bar& tool_bar::text_align(xtd::forms::tool_bar_text_align value) {
-  if (data_->text_align != value) {
-    data_->text_align = value;
-    if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
-    else invalidate();
-  }
+  if (data_->text_align == value) return *this;
+  data_->text_align = value;
+  if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
+  else invalidate();
   return *this;
 }
 
@@ -271,16 +258,15 @@ bool tool_bar::wrappable() const noexcept {
 }
 
 tool_bar& tool_bar::wrappable(bool value) {
-  if (data_->wrappable != value) {
-    data_->wrappable = value;
-    if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
-    else invalidate();
-  }
+  if (data_->wrappable == value) return *this;
+  data_->wrappable = value;
+  if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
+  else invalidate();
   return *this;
 }
 
 forms::create_params tool_bar::create_params() const noexcept {
-  forms::create_params create_params = control::create_params();
+  auto create_params = control::create_params();
   
   if (is_system_tool_bar())
     create_params.class_name("toolbar");
@@ -374,9 +360,9 @@ void tool_bar::fill() {
   if (!is_system_tool_bar()) std::reverse(reversed_buttons.begin(), reversed_buttons.end());
   if (!is_system_tool_bar() && auto_size())
     size({padding().left() + padding().right(), padding().top() + padding().bottom()});
-  for (size_t index = 0; index < reversed_buttons.size(); ++index) {
+  for (auto index = 0_sz; index < reversed_buttons.size(); ++index) {
     auto& button_item = reversed_buttons[index].get();
-    intptr control_handle = 0;
+    auto control_handle = 0_sz;
     if (is_system_tool_bar()) {
       if (reversed_buttons[index].get().style() == tool_bar_button_style::push_button || (!data_->drop_down_arrows && button_item.style() == tool_bar_button_style::drop_down_button))
         control_handle = native::tool_bar::add_tool_bar_button(handle(), button_item.text(), button_item.tool_tip_text(), button_item.image_index() < data_->image_list.images().size() ? data_->image_list.images()[button_item.image_index()] : image::empty, button_item.enabled(), button_item.visible());
@@ -447,7 +433,7 @@ void tool_bar::fill() {
   }
   
   if (is_system_tool_bar()) {
-    parent_client_size_guard pcsg(*this); // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
+    auto pcsg = parent_client_size_guard {*this}; // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
     native::tool_bar::set_system_tool_bar(parent().value().get().handle(), handle());
   }
   
@@ -455,18 +441,18 @@ void tool_bar::fill() {
 }
 
 void tool_bar::on_item_added(size_t pos, tool_bar_button_ref item) {
-  parent_client_size_guard pcsg(*this); // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
+  auto pcsg = parent_client_size_guard {*this}; // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
   item.get().data_->parent = this;
   post_recreate_handle();
 }
 
 void tool_bar::on_item_updated(size_t pos, tool_bar_button_ref item) {
-  parent_client_size_guard pcsg(*this); // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
+  auto pcsg = parent_client_size_guard {*this}; // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
   post_recreate_handle();
 }
 
 void tool_bar::on_item_removed(size_t pos, tool_bar_button_ref item) {
-  parent_client_size_guard pcsg(*this); // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
+  auto pcsg = parent_client_size_guard {*this}; // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
   item.get().data_->parent = nullptr;
   post_recreate_handle();
 }
@@ -515,8 +501,8 @@ void tool_bar::update_toolbar_button_control(intptr handle, const xtd::ustring& 
 }
 
 void tool_bar::wm_click(const message& message) {
-  bool found_button_or_menu = false;
-  for (size_t index = 0; !found_button_or_menu && index < data_->system_tool_bar_button_handles.size(); ++index) {
+  auto found_button_or_menu = false;
+  for (auto index = 0_sz; !found_button_or_menu && index < data_->system_tool_bar_button_handles.size(); ++index) {
     if (index < data_->system_tool_bar_button_handles.size() && message.wparam() == data_->system_tool_bar_button_handles[index]) {
       if (data_->buttons[index].get().style() == tool_bar_button_style::toggle_button)
         data_->buttons[index].get().pushed(!data_->buttons[index].get().pushed());
@@ -525,7 +511,7 @@ void tool_bar::wm_click(const message& message) {
     }
   }
   
-  for (size_t index = 0; !found_button_or_menu && index < data_->system_tool_bar_button_handles.size(); ++index) {
+  for (auto index = 0_sz; !found_button_or_menu && index < data_->system_tool_bar_button_handles.size(); ++index) {
     if (data_->buttons[index].get().style() == tool_bar_button_style::drop_down_button && data_->buttons[index].get().drop_down_menu().has_value())
       found_button_or_menu = on_context_menu_item_click(data_->buttons[index].get().drop_down_menu().value(), message.wparam());
   }
