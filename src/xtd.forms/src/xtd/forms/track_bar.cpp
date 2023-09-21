@@ -31,10 +31,9 @@ int32 track_bar::large_change() const noexcept {
 }
 
 track_bar& track_bar::large_change(int32 large_change) {
-  if (data_->large_change != large_change) {
-    data_->large_change = large_change;
-    if (is_handle_created()) native::track_bar::large_change(handle(), data_->large_change);
-  }
+  if (data_->large_change == large_change) return *this;
+  data_->large_change = large_change;
+  if (is_handle_created()) native::track_bar::large_change(handle(), data_->large_change);
   return *this;
 }
 
@@ -43,12 +42,11 @@ int32 track_bar::maximum() const noexcept {
 }
 
 track_bar& track_bar::maximum(int32 maximum) {
-  if (data_->maximum != maximum) {
-    data_->maximum = maximum;
-    if (is_handle_created()) native::track_bar::maximum(handle(), data_->maximum);
-    if (data_->minimum > maximum) minimum(maximum);
-    if (data_->value > maximum) value(maximum);
-  }
+  if (data_->maximum == maximum) return *this;
+  data_->maximum = maximum;
+  if (is_handle_created()) native::track_bar::maximum(handle(), data_->maximum);
+  if (data_->minimum > maximum) minimum(maximum);
+  if (data_->value > maximum) value(maximum);
   return *this;
 }
 
@@ -57,12 +55,11 @@ int32 track_bar::minimum() const noexcept {
 }
 
 track_bar& track_bar::minimum(int32 minimum) {
-  if (data_->minimum != minimum) {
-    data_->minimum = minimum;
-    if (is_handle_created()) native::track_bar::minimum(handle(), data_->minimum);
-    if (data_->maximum < minimum) maximum(minimum);
-    if (data_->value < minimum) value(minimum);
-  }
+  if (data_->minimum == minimum) return *this;
+  data_->minimum = minimum;
+  if (is_handle_created()) native::track_bar::minimum(handle(), data_->minimum);
+  if (data_->maximum < minimum) maximum(minimum);
+  if (data_->value < minimum) value(minimum);
   return *this;
 }
 
@@ -71,10 +68,9 @@ forms::orientation track_bar::orientation() const noexcept {
 }
 
 track_bar& track_bar::orientation(forms::orientation orientation) {
-  if (data_->orientation != orientation) {
-    data_->orientation = orientation;
-    post_recreate_handle();
-  }
+  if (data_->orientation == orientation) return *this;
+  data_->orientation = orientation;
+  post_recreate_handle();
   return *this;
 }
 
@@ -83,10 +79,9 @@ int32 track_bar::small_change() const noexcept {
 }
 
 track_bar& track_bar::small_change(int32 small_change) {
-  if (data_->small_change != small_change) {
-    data_->small_change = small_change;
-    if (is_handle_created()) native::track_bar::small_change(handle(), data_->small_change);
-  }
+  if (data_->small_change == small_change) return *this;
+  data_->small_change = small_change;
+  if (is_handle_created()) native::track_bar::small_change(handle(), data_->small_change);
   return *this;
 }
 
@@ -95,10 +90,9 @@ int32 track_bar::tick_frequency() const noexcept {
 }
 
 track_bar& track_bar::tick_frequency(int32 tick_frequency) {
-  if (data_->tick_frequency != tick_frequency) {
-    data_->tick_frequency = tick_frequency;
-    if (is_handle_created()) native::track_bar::tick_frequency(handle(), data_->tick_frequency);
-  }
+  if (data_->tick_frequency == tick_frequency) return *this;
+  data_->tick_frequency = tick_frequency;
+  if (is_handle_created()) native::track_bar::tick_frequency(handle(), data_->tick_frequency);
   return *this;
 }
 
@@ -107,10 +101,9 @@ forms::tick_style track_bar::tick_style() const noexcept {
 }
 
 track_bar& track_bar::tick_style(forms::tick_style tick_style) {
-  if (data_->tick_style != tick_style) {
-    data_->tick_style = tick_style;
-    post_recreate_handle();
-  }
+  if (data_->tick_style == tick_style) return *this;
+  data_->tick_style = tick_style;
+  post_recreate_handle();
   return *this;
 }
 
@@ -119,11 +112,10 @@ int32 track_bar::value() const noexcept {
 }
 
 track_bar& track_bar::value(int32 value) {
-  if (data_->value != value) {
-    data_->value = std::clamp(value, data_->minimum, data_->maximum);
-    if (is_handle_created()) native::track_bar::value(handle(), data_->value);
-    on_value_changed(event_args::empty);
-  }
+  if (data_->value == value) return *this;
+  data_->value = std::clamp(value, data_->minimum, data_->maximum);
+  if (is_handle_created()) native::track_bar::value(handle(), data_->value);
+  on_value_changed(event_args::empty);
   return *this;
 }
 
@@ -137,7 +129,7 @@ xtd::ustring track_bar::to_string() const noexcept {
 }
 
 forms::create_params track_bar::create_params() const noexcept {
-  forms::create_params create_params = control::create_params();
+  auto create_params = control::create_params();
   
   create_params.class_name("trackbar");
   
