@@ -19,11 +19,11 @@ void user_control_renderer::draw_user_control(graphics& graphics, const rectangl
 }
 
 void user_control_renderer::draw_user_control(graphics& graphics, const rectangle& bounds, control_state control_state, const optional<color>& back_color) {
-  draw_user_control(style_sheet::current_style_sheet(), graphics, bounds, control_state, back_color, std::nullopt, border_sides::none);
+  draw_user_control(style_sheet::current_style_sheet(), graphics, bounds, control_state, back_color, nullopt, border_sides::none);
 }
 
-void user_control_renderer::draw_user_control(const style_sheets::style_sheet& style_sheet, graphics& graphics, const rectangle& bounds, control_state state, const optional<color>& back_color, const std::optional<xtd::forms::border_style>& border, xtd::forms::border_sides sides) {
-  style_sheets::user_control current_style_sheet;
+void user_control_renderer::draw_user_control(const style_sheets::style_sheet& style_sheet, graphics& graphics, const rectangle& bounds, control_state state, const optional<color>& back_color, const optional<xtd::forms::border_style>& border, xtd::forms::border_sides sides) {
+  auto current_style_sheet = style_sheets::user_control {};
   switch (state) {
     case control_state::normal: current_style_sheet = style_sheet.user_control(style_sheets::pseudo_state::standard); break;
     case control_state::hot: current_style_sheet = style_sheet.user_control(style_sheets::pseudo_state::standard | pseudo_state::hover); break;
