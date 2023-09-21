@@ -2,8 +2,8 @@
 /// @brief Contains xtd::tunit::string_assert class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
-#include "assert.h"
+#include <xtd/ustring>
+#include "assert"
 #include <locale>
 #include <cstring>
 #include <regex>

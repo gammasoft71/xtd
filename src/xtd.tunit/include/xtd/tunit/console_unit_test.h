@@ -2,8 +2,8 @@
 /// @brief Contains xtd::tunit::console_unit_test class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "unit_test.h"
-#include "ostream_unit_test.h"
+#include "unit_test"
+#include "ostream_unit_test"
 #include <xtd/console>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

@@ -2,8 +2,8 @@
 /// @brief Contains xtd::tunit::collection_valid class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "valid.h"
-#include "collection_assert.h"
+#include "valid"
+#include "collection_assert"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

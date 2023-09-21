@@ -2,9 +2,9 @@
 /// @brief Contains unit test application main entry point.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/startup.h>
-#include <xtd/static.h>
-#include "../tunit_export.h"
+#include <xtd/startup>
+#include <xtd/static>
+#include "../tunit_export"
 
 /// @cond
 struct tunit_export_ __tunit_main final static_ {

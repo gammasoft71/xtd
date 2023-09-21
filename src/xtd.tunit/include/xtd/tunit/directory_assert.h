@@ -2,12 +2,12 @@
 /// @brief Contains xtd::tunit::directory_assert class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "assert.h"
+#include "assert"
 #if defined(__cpp_lib_filesystem)
 #include <filesystem>
 #endif
-#include <xtd/io/directory.h>
-#include <xtd/io/directory_info.h>
+#include <xtd/io/directory>
+#include <xtd/io/directory_info>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
