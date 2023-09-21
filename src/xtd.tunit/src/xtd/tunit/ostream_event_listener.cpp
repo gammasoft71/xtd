@@ -1,5 +1,6 @@
 #include "../../../include/xtd/tunit/ostream_event_listener.h"
 #include "../../../include/xtd/tunit/unit_test.h"
+#include <xtd/console>
 
 using namespace xtd;
 using namespace xtd::tunit;
@@ -9,9 +10,9 @@ ostream_event_listener::ostream_event_listener(std::ostream& os) noexcept : os_(
 
 void ostream_event_listener::on_class_end(const xtd::tunit::class_event_args& e) const {
   if (settings::default_settings().gtest_compatibility()) {
-    os_ << __foreground_color(__console_color::dark_green);
+    os_ << console::foreground_color(console_color::dark_green);
     os_ << "[----------] ";
-    os_ << __reset_color();
+    console::reset_color();
     os_ << e.test_class().test_count() << " tests from " << e.test_class().name() << " (" << e.test_class().elapsed_time().count() << " ms total)" << std::endl << std::endl;
   }
   event_listener::on_class_end(e);
@@ -19,9 +20,9 @@ void ostream_event_listener::on_class_end(const xtd::tunit::class_event_args& e)
 
 void ostream_event_listener::on_class_start(const xtd::tunit::class_event_args& e) const {
   if (settings::default_settings().gtest_compatibility()) {
-    os_ << __foreground_color(__console_color::dark_green);
+    os_ << console::foreground_color(console_color::dark_green);
     os_ << "[----------] ";
-    os_ << __reset_color();
+    console::reset_color();
     os_ << e.test_class().test_count() << " tests from " << e.test_class().name() << std::endl;
   }
   event_listener::on_class_start(e);
@@ -35,14 +36,14 @@ void ostream_event_listener::on_test_aborted(const xtd::tunit::test_event_args& 
     if (e.test().actual() != "") os_ << "  Actual: " << e.test().actual() << std::endl;
     if (e.test().expect() != "") os_ << "Expected: " << e.test().expect() << std::endl;
     if (e.test().message() != "") os_ << e.test().message() << std::endl;
-    os_ << __foreground_color(__console_color::dark_red);
+    os_ << console::foreground_color(console_color::dark_red);
     os_ << "[  ABORTED ] ";
-    os_ << __reset_color();
+    console::reset_color();
     os_ << e.test_class().name() << "." << e.test().name() << " (" << e.test().elapsed_time().count() << " ms)" << std::endl;
   } else {
-    os_ << __foreground_color(__console_color::dark_magenta);
+    os_ << console::foreground_color(console_color::dark_magenta);
     os_ << "  ABORTED ";
-    os_ << __reset_color();
+    console::reset_color();
     os_ << e.test_class().name() << "." << e.test().name();
     if (xtd::tunit::settings::default_settings().show_duration())
       os_ << " (" << e.test().elapsed_time().count() << " ms total)";
@@ -63,9 +64,9 @@ void ostream_event_listener::on_test_aborted(const xtd::tunit::test_event_args& 
 
 void ostream_event_listener::on_unit_test_cleanup_start(const xtd::tunit::tunit_event_args& e) const {
   if (settings::default_settings().gtest_compatibility()) {
-    os_ << __foreground_color(__console_color::dark_green);
+    os_ << console::foreground_color(console_color::dark_green);
     os_ << "[----------] ";
-    os_ << __reset_color();
+    console::reset_color();
     os_ << "Global test environment tear-down" << std::endl;
   }
   event_listener::on_unit_test_cleanup_start(e);
@@ -73,9 +74,9 @@ void ostream_event_listener::on_unit_test_cleanup_start(const xtd::tunit::tunit_
 
 void ostream_event_listener::on_unit_test_initialize_start(const xtd::tunit::tunit_event_args& e) const {
   if (settings::default_settings().gtest_compatibility()) {
-    os_ << __foreground_color(__console_color::dark_green);
+    os_ << console::foreground_color(console_color::dark_green);
     os_ << "[----------] ";
-    os_ << __reset_color();
+    console::reset_color();
     os_ << "Global test environment set-up." << std::endl;
   }
   event_listener::on_unit_test_initialize_start(e);
@@ -89,14 +90,14 @@ void ostream_event_listener::on_test_failed(const xtd::tunit::test_event_args& e
     if (e.test().actual() != "") os_ << "  Actual: " << e.test().actual() << std::endl;
     if (e.test().expect() != "") os_ << "Expected: " << e.test().expect() << std::endl;
     if (e.test().message() != "") os_ << e.test().message() << std::endl;
-    os_ << __foreground_color(__console_color::dark_red);
+    os_ << console::foreground_color(console_color::dark_red);
     os_ << "[  FAILED  ] ";
-    os_ << __reset_color();
+    console::reset_color();
     os_ << e.test_class().name() << "." << e.test().name() << " (" << e.test().elapsed_time().count() << " ms)" << std::endl;
   } else {
-    os_ << __foreground_color(__console_color::dark_red);
+    os_ << console::foreground_color(console_color::dark_red);
     os_ << "  FAILED  ";
-    os_ << __reset_color();
+    console::reset_color();
     os_ << e.test_class().name() << "." << e.test().name();
     if (xtd::tunit::settings::default_settings().show_duration())
       os_ << " (" << e.test().elapsed_time().count() << " ms total)";
@@ -118,14 +119,14 @@ void ostream_event_listener::on_test_failed(const xtd::tunit::test_event_args& e
 void ostream_event_listener::on_test_ignored(const xtd::tunit::test_event_args& e) const {
   event_listener::on_test_ignored(e);
   if (settings::default_settings().gtest_compatibility()) {
-    os_ << __foreground_color(__console_color::dark_yellow);
+    os_ << console::foreground_color(console_color::dark_yellow);
     os_ << "[ DISABLED ] ";
-    os_ << __reset_color();
+    console::reset_color();
     os_ << e.test_class().name() << "." << e.test().name() << std::endl;
   } else {
-    os_ << __foreground_color(__console_color::dark_yellow);
+    os_ << console::foreground_color(console_color::dark_yellow);
     os_ << "  IGNORED ";
-    os_ << __reset_color();
+    console::reset_color();
     os_ << e.test_class().name() << "." << e.test().name();
     if (xtd::tunit::settings::default_settings().show_duration())
       os_ << " (" << e.test().elapsed_time().count() << " ms total)";
@@ -137,9 +138,9 @@ void ostream_event_listener::on_test_ignored(const xtd::tunit::test_event_args& 
 
 void ostream_event_listener::on_test_start(const xtd::tunit::test_event_args& e) const {
   if (settings::default_settings().gtest_compatibility()) {
-    os_ << __foreground_color(__console_color::dark_green);
+    os_ << console::foreground_color(console_color::dark_green);
     os_ << "[ RUN      ] ";
-    os_ << __reset_color();
+    console::reset_color();
     os_ << e.test_class().name() << "." << e.test().name() << std::endl;
   }
   event_listener::on_test_start(e);
@@ -148,14 +149,14 @@ void ostream_event_listener::on_test_start(const xtd::tunit::test_event_args& e)
 void ostream_event_listener::on_test_succeed(const xtd::tunit::test_event_args& e) const {
   event_listener::on_test_succeed(e);
   if (settings::default_settings().gtest_compatibility()) {
-    os_ << __foreground_color(__console_color::dark_green);
+    os_ << console::foreground_color(console_color::dark_green);
     os_ << "[       OK ] ";
-    os_ << __reset_color();
+    console::reset_color();
     os_ << e.test_class().name() << "." << e.test().name() << " (" << e.test().elapsed_time().count() << " ms)" << std::endl;
   } else {
-    os_ << __foreground_color(__console_color::dark_green);
+    os_ << console::foreground_color(console_color::dark_green);
     os_ << "  SUCCEED ";
-    os_ << __reset_color();
+    console::reset_color();
     os_ << e.test_class().name() << "." << e.test().name();
     if (xtd::tunit::settings::default_settings().show_duration())
       os_ << " (" << e.test().elapsed_time().count() << " ms total)";
@@ -168,23 +169,23 @@ void ostream_event_listener::on_test_succeed(const xtd::tunit::test_event_args& 
 void ostream_event_listener::on_unit_test_end(const xtd::tunit::tunit_event_args& e) const {
   event_listener::on_unit_test_end(e);
   if (settings::default_settings().gtest_compatibility()) {
-    os_ << __foreground_color(__console_color::dark_green);
+    os_ << console::foreground_color(console_color::dark_green);
     os_ << "[==========] ";
-    os_ << __reset_color();
+    console::reset_color();
     os_ << e.unit_test().test_count() << " tests from " << e.unit_test().test_cases_count() << " test suite" << (e.unit_test().test_cases_count() > 1 ?  "s" : "") <<  " ran. (" << e.unit_test().elapsed_time().count() << " ms total)" << std::endl;
-    os_ << __foreground_color(__console_color::dark_green);
+    os_ << console::foreground_color(console_color::dark_green);
     os_ << "[  PASSED  ] ";
-    os_ << __reset_color();
+    console::reset_color();
     os_ << e.unit_test().succeed_test_count() << " tests." << std::endl;
     if (e.unit_test().failed_test_count()) {
-      os_ << __foreground_color(__console_color::dark_red);
+      os_ << console::foreground_color(console_color::dark_red);
       os_ << "[  FAILED  ] ";
-      os_ << __reset_color();
+      console::reset_color();
       os_ << e.unit_test().failed_test_count() << " test, listed below:" << std::endl;
       for (std::string name : e.unit_test().failed_test_names()) {
-        os_ << __foreground_color(__console_color::dark_red);
+        os_ << console::foreground_color(console_color::dark_red);
         os_ << "[  FAILED  ] ";
-        os_ << __reset_color();
+        console::reset_color();
         os_ << name << std::endl;
       }
       os_ << std::endl;
@@ -192,36 +193,36 @@ void ostream_event_listener::on_unit_test_end(const xtd::tunit::tunit_event_args
     }
     if (!e.unit_test().failed_test_count() && e.unit_test().ignored_test_count()) os_ << std::endl;
     if (e.unit_test().ignored_test_count()) {
-      os_ << __foreground_color(__console_color::dark_yellow);
+      os_ << console::foreground_color(console_color::dark_yellow);
       os_ << "  YOU HAVE " << e.unit_test().ignored_test_count() << " DISABLED TEST" << (e.unit_test().ignored_test_count() > 1 ? "S" : "") << std::endl << std::endl;
-      os_ << __reset_color();
+      console::reset_color();
     }
   } else {
     os_ << std::endl;
-    os_ << __reset_color();
+    console::reset_color();
     os_ << "Test results:" << std::endl;
     if (e.unit_test().succeed_test_count()) {
-      os_ << __foreground_color(__console_color::dark_green);
+      os_ << console::foreground_color(console_color::dark_green);
       os_ << "  SUCCEED ";
-      os_ << __reset_color();
+      console::reset_color();
       os_ << e.unit_test().succeed_test_count() << " test" << (e.unit_test().succeed_test_count() > 1 ? "s" : "") << "." << std::endl;
     }
     if (e.unit_test().aborted_test_count()) {
-      os_ << __foreground_color(__console_color::dark_magenta);
+      os_ << console::foreground_color(console_color::dark_magenta);
       os_ << "  ABORTED ";
-      os_ << __reset_color();
+      console::reset_color();
       os_ << e.unit_test().aborted_test_count() << " test" << (e.unit_test().aborted_test_count() > 1 ? "s" : "") << "." << std::endl;
     }
     if (e.unit_test().failed_test_count()) {
-      os_ << __foreground_color(__console_color::dark_red);
+      os_ << console::foreground_color(console_color::dark_red);
       os_ << "  FAILED  ";
-      os_ << __reset_color();
+      console::reset_color();
       os_ << e.unit_test().failed_test_count() << " test" << (e.unit_test().failed_test_count() > 1 ? "s" : "") << "." << std::endl;
     }
     if (e.unit_test().ignored_test_count()) {
-      os_ << __foreground_color(__console_color::dark_yellow);
+      os_ << console::foreground_color(console_color::dark_yellow);
       os_ << "  IGNORED ";
-      os_ << __reset_color();
+      console::reset_color();
       os_ << e.unit_test().ignored_test_count() << " test" << (e.unit_test().ignored_test_count() > 1 ? "s" : "") << "." << std::endl;
     }
     
@@ -234,15 +235,15 @@ void ostream_event_listener::on_unit_test_end(const xtd::tunit::tunit_event_args
 
 void ostream_event_listener::on_unit_test_start(const xtd::tunit::tunit_event_args& e) const {
   if (e.unit_test().repeat_tests()) {
-    if (!settings::default_settings().gtest_compatibility()) os_ << __foreground_color(__console_color::dark_cyan);
+    if (!settings::default_settings().gtest_compatibility()) os_ << console::foreground_color(console_color::dark_cyan);
     os_ << "Repeating all tests (iteration " << e.unit_test().repeat_iteration() << ") . . ." << std::endl << std::endl;
-    os_ << __reset_color();
+    console::reset_color();
   }
   if (settings::default_settings().gtest_compatibility()) {
     os_ << "Running main() from " << settings::default_settings().file_name_ << std::endl;
-    os_ << __foreground_color(__console_color::dark_green);
+    os_ << console::foreground_color(console_color::dark_green);
     os_ << "[==========] ";
-    os_ << __reset_color();
+    console::reset_color();
     os_ << "Running " << e.unit_test().test_count() << " tests from " << e.unit_test().test_cases_count() << " test suite" << (e.unit_test().test_cases_count() > 1 ? "s" : "") << "." << std::endl;
   } else {
     os_ << "Start " << e.unit_test().test_count() << " test" << (e.unit_test().test_count() > 1 ? "s" : "") << " from " << e.unit_test().test_cases_count() << " test case" << (e.unit_test().test_cases_count() > 1 ? "s" : "") << std::endl;
