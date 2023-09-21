@@ -13,7 +13,7 @@ using namespace xtd::forms::style_sheets;
 using namespace xtd::forms::visual_styles;
 
 void toggle_button_renderer::draw_toggle_button(const style_sheets::style_sheet& style_sheet, graphics& graphics, const rectangle& bounds, toggle_button_state state, const optional<color>& back_color, const xtd::ustring& text, const std::optional<xtd::forms::content_alignment>& text_align, const std::optional<xtd::drawing::color>& fore_color, const std::optional<xtd::drawing::font>& font, const xtd::drawing::image& image, const std::optional<xtd::forms::content_alignment>& image_align) {
-  style_sheets::toggle_button current_style_sheet;
+  auto current_style_sheet = style_sheets::toggle_button {};
   switch (state) {
     case toggle_button_state::unchecked_normal: current_style_sheet = style_sheet.toggle_button(style_sheets::pseudo_state::standard); break;
     case toggle_button_state::unchecked_hot: current_style_sheet = style_sheet.toggle_button(style_sheets::pseudo_state::standard | pseudo_state::hover); break;
@@ -42,7 +42,7 @@ void toggle_button_renderer::draw_toggle_button(const style_sheets::style_sheet&
 }
 
 void toggle_button_renderer::draw_flat_toggle_button(const style_sheets::style_sheet& style_sheet, graphics& graphics, const rectangle& bounds, toggle_button_state state, const optional<color>& back_color, const flat_button_appearance& appearance, const xtd::ustring& text, const std::optional<xtd::forms::content_alignment>& text_align, const std::optional<xtd::drawing::color>& fore_color, const std::optional<xtd::drawing::font>& font, const xtd::drawing::image& image, const std::optional<xtd::forms::content_alignment>& image_align) {
-  style_sheets::toggle_button current_style_sheet;
+  auto current_style_sheet = style_sheets::toggle_button {};
   switch (state) {
     case toggle_button_state::unchecked_normal: current_style_sheet = style_sheet.flat_toggle_button(style_sheets::pseudo_state::standard); break;
     case toggle_button_state::unchecked_hot: current_style_sheet = style_sheet.flat_toggle_button(style_sheets::pseudo_state::standard | pseudo_state::hover); break;
@@ -78,7 +78,7 @@ void toggle_button_renderer::draw_flat_toggle_button(const style_sheets::style_s
 }
 
 void toggle_button_renderer::draw_popup_toggle_button(const style_sheets::style_sheet& style_sheet, graphics& graphics, const rectangle& bounds, toggle_button_state state, const optional<color>& back_color, const flat_button_appearance& appearance, const xtd::ustring& text, const std::optional<xtd::forms::content_alignment>& text_align, const std::optional<xtd::drawing::color>& fore_color, const std::optional<xtd::drawing::font>& font, const xtd::drawing::image& image, const std::optional<xtd::forms::content_alignment>& image_align) {
-  style_sheets::toggle_button current_style_sheet;
+  auto current_style_sheet = style_sheets::toggle_button {};
   switch (state) {
     case toggle_button_state::unchecked_normal: current_style_sheet = style_sheet.popup_toggle_button(style_sheets::pseudo_state::standard); break;
     case toggle_button_state::unchecked_hot: current_style_sheet = style_sheet.popup_toggle_button(style_sheets::pseudo_state::standard | pseudo_state::hover); break;
