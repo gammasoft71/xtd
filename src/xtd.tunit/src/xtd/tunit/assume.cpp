@@ -214,19 +214,19 @@ void assume::contains(wchar_t item, const wchar_t* values, const xtd::ustring& m
   }
 }
 
-void assume::does_not_throw(const std::function<void()>& statement) {
+void assume::does_not_throw(const function<void()>& statement) {
   does_not_throw(statement, "", xtd::diagnostics::stack_frame::empty());
 }
 
-void assume::does_not_throw(const std::function<void()>& statement, const xtd::diagnostics::stack_frame& stack_frame) {
+void assume::does_not_throw(const function<void()>& statement, const xtd::diagnostics::stack_frame& stack_frame) {
   does_not_throw(statement, "", stack_frame);
 }
 
-void assume::does_not_throw(const std::function<void()>& statement, const xtd::ustring& message) {
+void assume::does_not_throw(const function<void()>& statement, const xtd::ustring& message) {
   does_not_throw(statement, message, xtd::diagnostics::stack_frame::empty());
 }
 
-void assume::does_not_throw(const std::function<void()>& statement, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
+void assume::does_not_throw(const function<void()>& statement, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
   try {
     assert::does_not_throw(statement, message, stack_frame);
   } catch (...) {
@@ -561,19 +561,19 @@ void assume::is_not_empty(const wchar_t* value, const xtd::ustring& message, con
   }
 }
 
-void assume::is_not_null(std::nullptr_t pointer) {
+void assume::is_not_null(nullptr_t pointer) {
   is_not_null(pointer, "", xtd::diagnostics::stack_frame::empty());
 }
 
-void assume::is_not_null(std::nullptr_t pointer, const xtd::diagnostics::stack_frame& stack_frame) {
+void assume::is_not_null(nullptr_t pointer, const xtd::diagnostics::stack_frame& stack_frame) {
   is_not_null(pointer, "", stack_frame);
 }
 
-void assume::is_not_null(std::nullptr_t pointer, const xtd::ustring& message) {
+void assume::is_not_null(nullptr_t pointer, const xtd::ustring& message) {
   is_not_null(pointer, message, xtd::diagnostics::stack_frame::empty());
 }
 
-void assume::is_not_null(std::nullptr_t pointer, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
+void assume::is_not_null(nullptr_t pointer, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
   try {
     assert::is_not_null(pointer, message, stack_frame);
   } catch (...) {
@@ -581,19 +581,19 @@ void assume::is_not_null(std::nullptr_t pointer, const xtd::ustring& message, co
   }
 }
 
-void assume::is_null(std::nullptr_t pointer) {
+void assume::is_null(nullptr_t pointer) {
   is_null(pointer, "", xtd::diagnostics::stack_frame::empty());
 }
 
-void assume::is_null(std::nullptr_t pointer, const xtd::diagnostics::stack_frame& stack_frame) {
+void assume::is_null(nullptr_t pointer, const xtd::diagnostics::stack_frame& stack_frame) {
   is_null(pointer, "", stack_frame);
 }
 
-void assume::is_null(std::nullptr_t pointer, const xtd::ustring& message) {
+void assume::is_null(nullptr_t pointer, const xtd::ustring& message) {
   is_null(pointer, message, xtd::diagnostics::stack_frame::empty());
 }
 
-void assume::is_null(std::nullptr_t pointer, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
+void assume::is_null(nullptr_t pointer, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
   assert::succeed(message, stack_frame);
 }
 
@@ -617,19 +617,19 @@ void assume::is_true(bool condition, const xtd::ustring& message, const xtd::dia
   }
 }
 
-void assume::throws_any(const std::function<void()>& statement) {
+void assume::throws_any(const function<void()>& statement) {
   throws_any(statement, "", xtd::diagnostics::stack_frame::empty());
 }
 
-void assume::throws_any(const std::function<void()>& statement, const xtd::diagnostics::stack_frame& stack_frame) {
+void assume::throws_any(const function<void()>& statement, const xtd::diagnostics::stack_frame& stack_frame) {
   throws_any(statement, "", stack_frame);
 }
 
-void assume::throws_any(const std::function<void()>& statement, const xtd::ustring& message) {
+void assume::throws_any(const function<void()>& statement, const xtd::ustring& message) {
   throws_any(statement, message, xtd::diagnostics::stack_frame::empty());
 }
 
-void assume::throws_any(const std::function<void()>& statement, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
+void assume::throws_any(const function<void()>& statement, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
   try {
     assert::throws_any(statement, message, stack_frame);
   } catch (...) {
