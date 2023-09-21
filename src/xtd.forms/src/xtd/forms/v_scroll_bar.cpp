@@ -14,10 +14,8 @@ v_scroll_bar::v_scroll_bar() : scroll_bar(true) {
 }
 
 forms::create_params v_scroll_bar::create_params() const noexcept {
-  forms::create_params create_params = scroll_bar::create_params();
-  
+  auto create_params = scroll_bar::create_params();
   create_params.style(create_params.style() | SBS_VERT);
-  
   return create_params;
 }
 
