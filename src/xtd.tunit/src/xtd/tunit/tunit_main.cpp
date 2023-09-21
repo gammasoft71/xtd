@@ -1,6 +1,6 @@
-#include "../../../include/xtd/tunit/console_unit_test.h"
-#include "../../../include/xtd/tunit/tunit_main.h"
-#include <xtd/system_exception.h>
+#include "../../../include/xtd/tunit/console_unit_test"
+#include "../../../include/xtd/tunit/tunit_main"
+#include <xtd/system_exception>
 
 using namespace xtd;
 using namespace xtd::tunit;

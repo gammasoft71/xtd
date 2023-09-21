@@ -1,6 +1,6 @@
-#include "../../../include/xtd/tunit/test.h"
-#include "../../../include/xtd/tunit/unit_test.h"
-#include <xtd/diagnostics//debug_break.h>
+#include "../../../include/xtd/tunit/test"
+#include "../../../include/xtd/tunit/unit_test"
+#include <xtd/diagnostics//debug_break>
 #include <exception>
 
 using namespace xtd;

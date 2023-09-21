@@ -1,4 +1,4 @@
-#include "../../../include/xtd/tunit/registered_test_class.h"
+#include "../../../include/xtd/tunit/registered_test_class"
 
 using namespace std;
 using namespace xtd;
