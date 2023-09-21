@@ -24,31 +24,31 @@ bool timer::enabled() const noexcept {
   return data_->enabled;
 }
 
-void timer::enabled(bool enabled) {
-  if (data_->enabled != enabled) {
-    data_->enabled = enabled;
-    if (data_->enabled == true) data_->handle = native::timer::create(data_->interval, {*this, &timer::on_tick});
-    else native::timer::destroy(data_->handle);
-  }
+timer& timer::enabled(bool enabled) {
+  if (data_->enabled == enabled) return *this;
+  data_->enabled = enabled;
+  if (data_->enabled == true) data_->handle = native::timer::create(data_->interval, {*this, &timer::on_tick});
+  else native::timer::destroy(data_->handle);
+  return *this;
 }
 
 time_span timer::interval() const noexcept {
   return time_span {data_->interval};
 }
 
-void timer::interval(const time_span& interval) {
-  interval_milliseconds(as<int32>(interval.total_milliseconds_duration().count()));
+timer& timer::interval(const time_span& interval) {
+  return interval_milliseconds(as<int32>(interval.total_milliseconds_duration().count()));
 }
 
 int32 timer::interval_milliseconds() const noexcept {
   return data_->interval;
 }
 
-void timer::interval_milliseconds(int32 interval) {
-  if (data_->interval != interval) {
-    data_->interval = interval;
-    if (data_->enabled == true) restart();
-  }
+timer& timer::interval_milliseconds(int32 interval) {
+  if (data_->interval == interval) return *this;
+  data_->interval = interval;
+  if (data_->enabled == true) restart();
+  return *this;
 }
 
 void timer::start() {
