@@ -13,7 +13,7 @@ void assert::are_equal(const char* expected, const char* actual, const ustring& 
 
 #if defined(__cpp_lib_char8_t)
 void assert::are_equal(const char8* expected, const char8* actual, const ustring& message, const diagnostics::stack_frame& stack_frame) {
-  if (ustring(actual) == ustring(expected))
+  if (ustring {actual} == ustring {expected})
     succeed(message, stack_frame);
   else
     base_assert::base_assert::fail(base_assert::to_string(expected), base_assert::to_string(actual), message, stack_frame);
@@ -21,14 +21,14 @@ void assert::are_equal(const char8* expected, const char8* actual, const ustring
 #endif
 
 void assert::are_equal(const char16* expected, const char16* actual, const ustring& message, const diagnostics::stack_frame& stack_frame) {
-  if (u16string(actual) == u16string(expected))
+  if (u16string {actual} == u16string {expected})
     succeed(message, stack_frame);
   else
     base_assert::base_assert::fail(base_assert::to_string(expected), base_assert::to_string(actual), message, stack_frame);
 }
 
 void assert::are_equal(const char32* expected, const char32* actual, const ustring& message, const diagnostics::stack_frame& stack_frame) {
-  if (u32string(actual) == u32string(expected))
+  if (u32string {actual} == u32string {expected})
     succeed(message, stack_frame);
   else
     base_assert::fail(base_assert::to_string(expected), base_assert::to_string(actual), message, stack_frame);
@@ -134,7 +134,7 @@ void assert::are_not_equal(const char* expected, const char* actual, const ustri
 
 #if defined(__cpp_lib_char8_t)
 void assert::are_not_equal(const char8* expected, const char8* actual, const ustring& message, const diagnostics::stack_frame& stack_frame) {
-  if (ustring(actual) != ustring(expected))
+  if (ustring {actual} != ustring {expected})
     succeed(message, stack_frame);
   else
     base_assert::fail("not " + base_assert::to_string(expected), base_assert::to_string(actual), message, stack_frame);
@@ -142,14 +142,14 @@ void assert::are_not_equal(const char8* expected, const char8* actual, const ust
 #endif
 
 void assert::are_not_equal(const char16* expected, const char16* actual, const ustring& message, const diagnostics::stack_frame& stack_frame) {
-  if (u16string(actual) != u16string(expected))
+  if (u16string {actual} != u16string {expected})
     succeed(message, stack_frame);
   else
     base_assert::fail("not " + base_assert::to_string(expected), base_assert::to_string(actual), message, stack_frame);
 }
 
 void assert::are_not_equal(const char32* expected, const char32* actual, const ustring& message, const diagnostics::stack_frame& stack_frame) {
-  if (u32string(actual) != u32string(expected))
+  if (u32string {actual} != u32string {expected})
     succeed(message, stack_frame);
   else
     base_assert::fail("not " + base_assert::to_string(expected), base_assert::to_string(actual), message, stack_frame);
@@ -163,7 +163,7 @@ void assert::are_not_equal(const wchar_t* expected, const wchar_t* actual, const
 }
 
 void assert::contains(char item, const char* values, const ustring& message, const diagnostics::stack_frame& stack_frame) {
-  ustring s(values);
+  auto s = ustring {values};
   auto result = find(s.begin(), s.end(), item);
   if (result != s.end())
     succeed(message, stack_frame);
@@ -173,7 +173,7 @@ void assert::contains(char item, const char* values, const ustring& message, con
 
 #if defined(__cpp_lib_char8_t)
 void assert::contains(char8 item, const char8* values, const ustring& message, const diagnostics::stack_frame& stack_frame) {
-  u8string s(values);
+  auto s = u8string {values};
   auto result = find(s.begin(), s.end(), item);
   if (result != s.end())
     succeed(message, stack_frame);
@@ -183,7 +183,7 @@ void assert::contains(char8 item, const char8* values, const ustring& message, c
 #endif
 
 void assert::contains(char16 item, const char16* values, const ustring& message, const diagnostics::stack_frame& stack_frame) {
-  u16string s(values);
+  auto s = u16string {values};
   auto result = find(s.begin(), s.end(), item);
   if (result != s.end())
     succeed(message, stack_frame);
@@ -192,7 +192,7 @@ void assert::contains(char16 item, const char16* values, const ustring& message,
 }
 
 void assert::contains(char32 item, const char32* values, const ustring& message, const diagnostics::stack_frame& stack_frame) {
-  u32string s(values);
+  auto s = u32string {values};
   auto result = find(s.begin(), s.end(), item);
   if (result != s.end())
     succeed(message, stack_frame);
@@ -201,7 +201,7 @@ void assert::contains(char32 item, const char32* values, const ustring& message,
 }
 
 void assert::contains(wchar_t item, const wchar_t* values, const ustring& message, const diagnostics::stack_frame& stack_frame) {
-  wstring s(values);
+  auto s = wstring {values};
   auto result = find(s.begin(), s.end(), item);
   if (result != s.end())
     succeed(message, stack_frame);
@@ -233,7 +233,7 @@ void assert::does_not_throw(const function<void()>& statement, const ustring& me
 }
 
 void assert::is_empty(const char* value, const ustring& message, const diagnostics::stack_frame& stack_frame) {
-  ustring s(value);
+  auto s = ustring {value};
   if (ustring::is_empty(s))
     succeed(message, stack_frame);
   else
@@ -242,7 +242,7 @@ void assert::is_empty(const char* value, const ustring& message, const diagnosti
 
 #if defined(__cpp_lib_char8_t)
 void assert::is_empty(const char8* value, const ustring& message, const diagnostics::stack_frame& stack_frame) {
-  ustring s(value);
+  auto s = ustring {value};
   if (ustring::is_empty(s))
     succeed(message, stack_frame);
   else
@@ -251,7 +251,7 @@ void assert::is_empty(const char8* value, const ustring& message, const diagnost
 #endif
 
 void assert::is_empty(const char16* value, const ustring& message, const diagnostics::stack_frame& stack_frame) {
-  ustring s(value);
+  auto s = ustring {value};
   if (ustring::is_empty(s))
     succeed(message, stack_frame);
   else
@@ -259,7 +259,7 @@ void assert::is_empty(const char16* value, const ustring& message, const diagnos
 }
 
 void assert::is_empty(const char32* value, const ustring& message, const diagnostics::stack_frame& stack_frame) {
-  ustring s(value);
+  auto s = ustring {value};
   if (ustring::is_empty(s))
     succeed(message, stack_frame);
   else
@@ -267,7 +267,7 @@ void assert::is_empty(const char32* value, const ustring& message, const diagnos
 }
 
 void assert::is_empty(const wchar_t* value, const ustring& message, const diagnostics::stack_frame& stack_frame) {
-  ustring s(value);
+  auto s = ustring {value};
   if (ustring::is_empty(s))
     succeed(message, stack_frame);
   else
@@ -302,7 +302,7 @@ void assert::is_greater(const char* val1, const char* val2, const ustring& messa
 
 #if defined(__cpp_lib_char8_t)
 void assert::is_greater(const char8* val1, const char8* val2, const ustring& message, const diagnostics::stack_frame& stack_frame) {
-  if (ustring(val1) > ustring(val2))
+  if (ustring {val1} > ustring {val2})
     succeed(message, stack_frame);
   else
     base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
@@ -310,14 +310,14 @@ void assert::is_greater(const char8* val1, const char8* val2, const ustring& mes
 #endif
 
 void assert::is_greater(const char16* val1, const char16* val2, const ustring& message, const diagnostics::stack_frame& stack_frame) {
-  if (u16string(val1) > u16string(val2))
+  if (u16string {val1} > u16string {val2})
     succeed(message, stack_frame);
   else
     base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
 }
 
 void assert::is_greater(const char32* val1, const char32* val2, const ustring& message, const diagnostics::stack_frame& stack_frame) {
-  if (u32string(val1) > u32string(val2))
+  if (u32string {val1} > u32string {val2})
     succeed(message, stack_frame);
   else
     base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
@@ -339,7 +339,7 @@ void assert::is_greater_or_equal(const char* val1, const char* val2, const ustri
 
 #if defined(__cpp_lib_char8_t)
 void assert::is_greater_or_equal(const char8* val1, const char8* val2, const ustring& message, const diagnostics::stack_frame& stack_frame) {
-  if (ustring(val1) >= ustring(val2))
+  if (ustring {val1} >= ustring {val2})
     succeed(message, stack_frame);
   else
     base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
@@ -347,14 +347,14 @@ void assert::is_greater_or_equal(const char8* val1, const char8* val2, const ust
 #endif
 
 void assert::is_greater_or_equal(const char16* val1, const char16* val2, const ustring& message, const diagnostics::stack_frame& stack_frame) {
-  if (u16string(val1) >= u16string(val2))
+  if (u16string {val1} >= u16string {val2})
     succeed(message, stack_frame);
   else
     base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
 }
 
 void assert::is_greater_or_equal(const char32* val1, const char32* val2, const ustring& message, const diagnostics::stack_frame& stack_frame) {
-  if (u32string(val1) >= u32string(val2))
+  if (u32string {val1} >= u32string {val2})
     succeed(message, stack_frame);
   else
     base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
@@ -376,7 +376,7 @@ void assert::is_less(const char* val1, const char* val2, const ustring& message,
 
 #if defined(__cpp_lib_char8_t)
 void assert::is_less(const char8* val1, const char8* val2, const ustring& message, const diagnostics::stack_frame& stack_frame) {
-  if (ustring(val1) < ustring(val2))
+  if (ustring {val1} < ustring {val2})
     succeed(message, stack_frame);
   else
     base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
@@ -384,14 +384,14 @@ void assert::is_less(const char8* val1, const char8* val2, const ustring& messag
 #endif
 
 void assert::is_less(const char16* val1, const char16* val2, const ustring& message, const diagnostics::stack_frame& stack_frame) {
-  if (u16string(val1) < u16string(val2))
+  if (u16string {val1} < u16string {val2})
     succeed(message, stack_frame);
   else
     base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
 }
 
 void assert::is_less(const char32* val1, const char32* val2, const ustring& message, const diagnostics::stack_frame& stack_frame) {
-  if (u32string(val1) < u32string(val2))
+  if (u32string {val1} < u32string {val2})
     succeed(message, stack_frame);
   else
     base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
@@ -413,7 +413,7 @@ void assert::is_less_or_equal(const char* val1, const char* val2, const ustring&
 
 #if defined(__cpp_lib_char8_t)
 void assert::is_less_or_equal(const char8* val1, const char8* val2, const ustring& message, const diagnostics::stack_frame& stack_frame) {
-  if (ustring(val1) <= ustring(val2))
+  if (ustring {val1} <= ustring {val2})
     succeed(message, stack_frame);
   else
     base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
@@ -421,14 +421,14 @@ void assert::is_less_or_equal(const char8* val1, const char8* val2, const ustrin
 #endif
 
 void assert::is_less_or_equal(const char16* val1, const char16* val2, const ustring& message, const diagnostics::stack_frame& stack_frame) {
-  if (u16string(val1) <= u16string(val2))
+  if (u16string {val1} <= u16string {val2})
     succeed(message, stack_frame);
   else
     base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
 }
 
 void assert::is_less_or_equal(const char32* val1, const char32* val2, const ustring& message, const diagnostics::stack_frame& stack_frame) {
-  if (u32string(val1) <= u32string(val2))
+  if (u32string {val1} <= u32string {val2})
     succeed(message, stack_frame);
   else
     base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
