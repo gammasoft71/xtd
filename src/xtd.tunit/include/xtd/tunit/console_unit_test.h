@@ -4,7 +4,7 @@
 #pragma once
 #include "unit_test.h"
 #include "ostream_unit_test.h"
-#include <iostream>
+#include <xtd/console>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
