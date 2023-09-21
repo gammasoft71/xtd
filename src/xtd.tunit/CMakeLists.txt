@@ -7,7 +7,6 @@ include(../../scripts/cmake/xtd_version.cmake)
 add_include_directories(include)
 add_references(xtd.core)
 add_sources(
-  include/xtd/tunit/__console_color.h
   include/xtd/tunit/__default_insert_basic_ostream_operator.h
   include/xtd/tunit/__demangle.h
   include/xtd/tunit/__google_test_markers.h
@@ -96,8 +95,6 @@ add_sources(
   include/xtd/xtd.tunit
   include/xtd/xtd.tunit.h
   include/xtd/xtd.tunit
-  src/xtd/tunit/__console_color_gcc.cpp
-  src/xtd/tunit/__console_color_win32.cpp
   src/xtd/tunit/__demangle_gcc.cpp
   src/xtd/tunit/__demangle_win32.cpp
   src/xtd/tunit/assert.cpp
