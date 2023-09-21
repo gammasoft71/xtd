@@ -16,7 +16,7 @@ using namespace xtd::forms::style_sheets;
 void tool_bar_button_renderer::draw_tool_bar_button(const style_sheets::style_sheet& style_sheet, graphics& graphics, const rectangle& bounds, push_button_state button_state, const optional<color>& back_color, const flat_button_appearance& appearance, const ustring& text, const optional<content_alignment>& text_align, const optional<color>& fore_color, const optional<font>& font, const xtd::drawing::image& image, const optional<content_alignment>& image_align) {
   auto pseudo_state_base = pseudo_state::standard;
   
-  tool_bar_button current_style_sheet;
+  auto current_style_sheet = tool_bar_button {};
   switch (button_state) {
     case push_button_state::normal: current_style_sheet = style_sheet.tool_bar_button(pseudo_state_base); break;
     case push_button_state::hot: current_style_sheet = style_sheet.tool_bar_button(pseudo_state_base | pseudo_state::hover); break;
