@@ -343,7 +343,7 @@ namespace xtd {
             return;
           }
         }
-        base_assert::fail("not equal <" + typeof_(expected).name() + ">", "<" + typeof_(expected).name() + ">", message, stack_frame);
+        base_assert::fail("not equal <" + typeof_(expected).full_name() + ">", "<" + typeof_(expected).full_name() + ">", message, stack_frame);
       }
       /// @brief Asserts that two files are not equal.
       /// @param expected the expected value.

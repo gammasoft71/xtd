@@ -83,7 +83,7 @@ namespace xtd {
       static void all_items_are_instances_of(const collection_t& collection, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
         for (auto item : collection)
           if (dynamic_cast<expected_t>(item) == nullptr) {
-            base_assert::fail("all items instance of <" + typeof_<expected_t>().name() + ">", base_assert::join_items(collection), message, stack_frame);
+            base_assert::fail("all items instance of <" + typeof_<expected_t>().full_name() + ">", base_assert::join_items(collection), message, stack_frame);
             return;
           }
         assert::succeed(message, stack_frame);
@@ -100,7 +100,7 @@ namespace xtd {
       static void all_items_are_instances_of(const std::initializer_list<item_t>& collection, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
         for (auto item : collection)
           if (dynamic_cast<expected_t>(item) == nullptr) {
-            base_assert::fail("all items instance of <" + typeof_<expected_t>().name() + ">", base_assert::join_items(collection), message, stack_frame);
+            base_assert::fail("all items instance of <" + typeof_<expected_t>().full_name() + ">", base_assert::join_items(collection), message, stack_frame);
             return;
           }
         assert::succeed(message, stack_frame);

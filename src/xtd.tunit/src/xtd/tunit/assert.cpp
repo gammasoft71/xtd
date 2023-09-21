@@ -226,7 +226,7 @@ void assert::does_not_throw(const function<void()>& statement, const ustring& me
     statement();
     succeed(message, stack_frame);
   } catch (const exception& e) {
-    base_assert::fail("No Exception to be thrown", "<" + typeof_(e).name() + ">", message, stack_frame);
+    base_assert::fail("No Exception to be thrown", "<" + typeof_(e).full_name() + ">", message, stack_frame);
   } catch (...) {
     base_assert::fail("No Exception to be thrown", "<exception>", message, stack_frame);
   }

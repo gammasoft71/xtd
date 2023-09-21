@@ -904,7 +904,7 @@ namespace xtd {
         if (instance != nullptr)
           succeed(message, stack_frame);
         else
-          base_assert::fail("instance of <" + typeof_<type_t>().name() + ">", "<" + typeof_(value).name() + ">", message, stack_frame);
+          base_assert::fail("instance of <" + typeof_<type_t>().full_name() + ">", "<" + typeof_(value).full_name() + ">", message, stack_frame);
       }
       
       /// @brief Asserts that the first value is is_less than the second value.
@@ -1375,7 +1375,7 @@ namespace xtd {
         if (instance == nullptr)
           succeed(message, stack_frame);
         else
-          base_assert::fail("not instance of <" + typeof_<type_t>().name() + ">", "<" + typeof_(value).name() + ">", message, stack_frame);
+          base_assert::fail("not instance of <" + typeof_<type_t>().full_name() + ">", "<" + typeof_(value).full_name() + ">", message, stack_frame);
       }
       
       /// @brief Asserts that the pointer is not null.
@@ -2319,15 +2319,15 @@ namespace xtd {
       static void throws(const std::function<void()>& statement, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         try {
           statement();
-          base_assert::fail("<"  + typeof_<exception_t>().name() + ">", "<nothing>", message, stack_frame);
+          base_assert::fail("<"  + typeof_<exception_t>().full_name() + ">", "<nothing>", message, stack_frame);
         } catch (const exception_t&) {
           succeed(message, stack_frame);
         } catch (const xtd::tunit::assert_error&) {
           throw;
         } catch (const std::exception& e) {
-          base_assert::fail("<"  + typeof_<exception_t>().name() + ">", "<" + typeof_(e).name() + ">", message, stack_frame);
+          base_assert::fail("<"  + typeof_<exception_t>().full_name() + ">", "<" + typeof_(e).full_name() + ">", message, stack_frame);
         } catch (...) {
-          base_assert::fail("<"  + typeof_<exception_t>().name() + ">", "<exception>", message, stack_frame);
+          base_assert::fail("<"  + typeof_<exception_t>().full_name() + ">", "<exception>", message, stack_frame);
         }
       }
       
