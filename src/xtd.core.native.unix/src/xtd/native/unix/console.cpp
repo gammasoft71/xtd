@@ -752,7 +752,9 @@ void console::register_user_cancel_callback(std::function<bool(int_least32_t)> u
 }
 
 bool console::reset_color() {
-  return console::background_color(__background_color()) && console::foreground_color(__foreground_color());
+  console::background_color(__background_color()) && console::foreground_color(__foreground_color());
+  if (terminal::is_ansi_supported()) std::cout << "\x1b[0m" << std::flush;
+  return true;
 }
 
 bool console::set_cursor_position(int_least32_t left, int_least32_t top) {
