@@ -34,11 +34,10 @@ bool text_box::accepts_return() const noexcept {
 }
 
 text_box& text_box::accepts_return(bool value) {
-  if (data_->accepts_return != value) {
-    data_->accepts_return = value;
-    post_recreate_handle();
-    on_accepts_return_changed(event_args::empty);
-  }
+  if (data_->accepts_return == value) return *this;
+  data_->accepts_return = value;
+  post_recreate_handle();
+  on_accepts_return_changed(event_args::empty);
   return *this;
 }
 
@@ -47,10 +46,9 @@ xtd::forms::character_casing text_box::character_casing() const noexcept {
 }
 
 text_box& text_box::character_casing(xtd::forms::character_casing value) {
-  if (data_->character_casing != value) {
-    data_->character_casing = value;
-    post_recreate_handle();
-  }
+  if (data_->character_casing == value) return *this;
+  data_->character_casing = value;
+  post_recreate_handle();
   return *this;
 }
 
@@ -59,10 +57,9 @@ char32 text_box::password_char() const noexcept {
 }
 
 text_box& text_box::password_char(char32 value) {
-  if (data_->password_char != value) {
-    data_->password_char = value;
-    post_recreate_handle();
-  }
+  if (data_->password_char == value) return *this;
+  data_->password_char = value;
+  post_recreate_handle();
   return *this;
 }
 
@@ -71,11 +68,10 @@ const xtd::ustring& text_box::placeholder_text() const noexcept {
 }
 
 text_box& text_box::placeholder_text(const xtd::ustring& value) {
-  if (data_->placeholder_text != value) {
-    data_->placeholder_text = value;
-    if (is_handle_created())
-      native::text_box::placeholder_text(handle(), data_->placeholder_text);
-  }
+  if (data_->placeholder_text == value) return *this;
+  data_->placeholder_text = value;
+  if (is_handle_created())
+    native::text_box::placeholder_text(handle(), data_->placeholder_text);
   return *this;
 }
 
@@ -95,23 +91,22 @@ const ustring& text_box::text() const noexcept {
 }
 
 control& text_box::text(const ustring& text) {
-  if (control::text() != text) {
-    set_text(text);
-    if (!data_->use_system_password_char && data_->password_char) {
-      if (is_handle_created()) native::text_box::text(handle(), "");
-      for (size_t count = 0; count < text.size(); count++)
-        if (is_handle_created()) native::text_box::append(handle(), xtd::ustring::format("{}", data_->password_char));
-    } else {
-      switch (data_->character_casing) {
-        case xtd::forms::character_casing::normal: set_text(text); break;
-        case xtd::forms::character_casing::upper: set_text(text.to_upper()); break;
-        case xtd::forms::character_casing::lower: set_text(text.to_lower()); break;
-        default: break;
-      }
-      if (is_handle_created()) native::text_box::text(handle(), control::text());
+  if (control::text() == text) return *this;
+  set_text(text);
+  if (!data_->use_system_password_char && data_->password_char) {
+    if (is_handle_created()) native::text_box::text(handle(), "");
+    for (size_t count = 0; count < text.size(); count++)
+      if (is_handle_created()) native::text_box::append(handle(), xtd::ustring::format("{}", data_->password_char));
+  } else {
+    switch (data_->character_casing) {
+      case xtd::forms::character_casing::normal: set_text(text); break;
+      case xtd::forms::character_casing::upper: set_text(text.to_upper()); break;
+      case xtd::forms::character_casing::lower: set_text(text.to_lower()); break;
+      default: break;
     }
-    on_text_changed(event_args::empty);
+    if (is_handle_created()) native::text_box::text(handle(), control::text());
   }
+  on_text_changed(event_args::empty);
   return *this;
 }
 
@@ -120,10 +115,9 @@ bool text_box::use_system_password_char() const noexcept {
 }
 
 text_box& text_box::use_system_password_char(bool value) {
-  if (data_->use_system_password_char != value) {
-    data_->use_system_password_char = value;
-    post_recreate_handle();
-  }
+  if (data_->use_system_password_char == value) return *this;
+  data_->use_system_password_char = value;
+  post_recreate_handle();
   return *this;
 }
 
@@ -136,7 +130,7 @@ drawing::color text_box::default_fore_color() const noexcept {
 }
 
 forms::create_params text_box::create_params() const noexcept {
-  forms::create_params create_params = text_box_base::create_params();
+  auto create_params = text_box_base::create_params();
   
   create_params.class_name("textbox");
   
@@ -185,7 +179,7 @@ void text_box::on_handle_created(const event_args& e) {
   if (!data_->use_system_password_char && data_->password_char) {
     auto txt = text();
     native::text_box::text(handle(), "");
-    for (size_t count = 0; count < txt.size(); count++)
+    for (auto count = 0_sz; count < txt.size(); ++count)
       native::text_box::append(handle(), xtd::ustring::format("{}", data_->password_char));
   } else {
     switch (data_->character_casing) {
@@ -220,16 +214,16 @@ void text_box::wm_key_char(message& message) {
     control::wnd_proc(message);
   else {
     if (message.msg() == WM_KEYDOWN) {
-      key_event_args key_event_args(static_cast<keys>(message.wparam()));
+      auto key_event_args = forms::key_event_args {static_cast<keys>(message.wparam())};
       on_key_down(key_event_args);
       message.result(key_event_args.suppress_key_press());
     } else if (message.msg() == WM_CHAR && std::iscntrl(static_cast<int32>(message.wparam())) == 0) {
-      key_press_event_args key_event_args(static_cast<int32>(message.wparam()));
+      auto key_event_args = key_press_event_args {static_cast<char32>(message.wparam())};
       set_text(control::text() + xtd::ustring::format("{}", key_event_args.key_char()));
       native::text_box::append(handle(), xtd::ustring::format("{}", data_->password_char));
       message.result(true);
     } else if (message.msg() == WM_KEYUP) {
-      key_event_args key_event_args(static_cast<keys>(message.wparam()));
+      auto key_event_args = forms::key_event_args {static_cast<keys>(message.wparam())};
       on_key_up(key_event_args);
       message.result(key_event_args.suppress_key_press());
     }
