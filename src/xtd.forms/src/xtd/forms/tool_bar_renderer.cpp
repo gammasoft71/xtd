@@ -12,7 +12,7 @@ using namespace xtd::forms::style_sheets;
 using namespace xtd::forms::visual_styles;
 
 void tool_bar_renderer::draw_tool_bar(const xtd::forms::style_sheets::style_sheet& style_sheet, xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::visual_styles::form_state form_state, const std::optional<xtd::drawing::color>& back_color, const std::optional<border_style>& border, xtd::forms::border_sides sides) {
-  style_sheets::tool_bar current_style_sheet;
+  auto current_style_sheet = style_sheets::tool_bar {};
   switch (form_state) {
     case control_state::normal: current_style_sheet = style_sheet.tool_bar(style_sheets::pseudo_state::standard); break;
     case control_state::hot: current_style_sheet = style_sheet.tool_bar(style_sheets::pseudo_state::standard | pseudo_state::hover); break;
