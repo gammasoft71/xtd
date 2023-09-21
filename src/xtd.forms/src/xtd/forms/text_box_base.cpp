@@ -19,11 +19,10 @@ bool text_box_base::accepts_tab() const noexcept {
 }
 
 text_box_base& text_box_base::accepts_tab(bool value) {
-  if (data_->accepts_tab != value) {
-    data_->accepts_tab = value;
-    post_recreate_handle();
-    on_accepts_tab_changed(event_args::empty);
-  }
+  if (data_->accepts_tab == value) return *this;
+  data_->accepts_tab = value;
+  post_recreate_handle();
+  on_accepts_tab_changed(event_args::empty);
   return *this;
 }
 
@@ -32,10 +31,9 @@ forms::border_sides text_box_base::border_sides() const noexcept {
 }
 
 text_box_base& text_box_base::border_sides(forms::border_sides border_sides) {
-  if (data_->border_sides != border_sides) {
-    data_->border_sides = border_sides;
-    if (control_appearance() == forms::control_appearance::standard) invalidate();
-  }
+  if (data_->border_sides == border_sides) return *this;
+  data_->border_sides = border_sides;
+  if (control_appearance() == forms::control_appearance::standard) invalidate();
   return *this;
 }
 
@@ -44,11 +42,10 @@ forms::border_style text_box_base::border_style() const noexcept {
 }
 
 text_box_base& text_box_base::border_style(forms::border_style border_style) {
-  if (data_->border_style != border_style) {
-    data_->border_style = border_style;
-    post_recreate_handle();
-    on_border_style_changed(event_args::empty);
-  }
+  if (data_->border_style == border_style) return *this;
+  data_->border_style = border_style;
+  post_recreate_handle();
+  on_border_style_changed(event_args::empty);
   return *this;
 }
 
@@ -66,11 +63,10 @@ bool text_box_base::multiline() const noexcept {
 }
 
 text_box_base& text_box_base::multiline(bool value) {
-  if (data_->multiline != value) {
-    data_->multiline = value;
-    post_recreate_handle();
-    on_multiline_changed(event_args::empty);
-  }
+  if (data_->multiline == value) return *this;
+  data_->multiline = value;
+  post_recreate_handle();
+  on_multiline_changed(event_args::empty);
   return *this;
 }
 
@@ -79,11 +75,10 @@ bool text_box_base::read_only() const noexcept {
 }
 
 text_box_base& text_box_base::read_only(bool value) {
-  if (data_->read_only != value) {
-    data_->read_only = value;
-    post_recreate_handle();
-    on_read_only_changed(event_args::empty);
-  }
+  if (data_->read_only == value) return *this;
+  data_->read_only = value;
+  post_recreate_handle();
+  on_read_only_changed(event_args::empty);
   return *this;
 }
 
@@ -110,10 +105,9 @@ bool text_box_base::word_wrap() const noexcept {
 }
 
 text_box_base& text_box_base::word_wrap(bool value) {
-  if (data_->word_wrap != value) {
-    data_->word_wrap = value;
-    post_recreate_handle();
-  }
+  if (data_->word_wrap == value) return *this;
+  data_->word_wrap = value;
+  post_recreate_handle();
   return *this;
 }
 
