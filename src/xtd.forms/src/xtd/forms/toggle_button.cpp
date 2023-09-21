@@ -40,10 +40,9 @@ content_alignment toggle_button::check_align() const noexcept {
 }
 
 toggle_button& toggle_button::check_align(content_alignment check_align) {
-  if (data_->check_align != check_align) {
-    data_->check_align = check_align;
-    post_recreate_handle();
-  }
+  if (data_->check_align == check_align) return *this;
+  data_->check_align = check_align;
+  post_recreate_handle();
   return *this;
 }
 
@@ -61,15 +60,14 @@ forms::check_state toggle_button::check_state() const noexcept {
 }
 
 toggle_button& toggle_button::check_state(forms::check_state check_state) {
-  if (data_->check_state != check_state) {
-    data_->check_state = check_state;
-    if (data_->checked != (data_->check_state != forms::check_state::unchecked)) {
-      data_->checked = data_->check_state != forms::check_state::unchecked;
-      on_checked_changed(event_args::empty);
-    }
-    if (is_handle_created() && flat_style() == flat_style::system) native::toggle_button::check_state(handle(), static_cast<int32>(data_->check_state));
-    on_check_state_changed(event_args::empty);
+  if (data_->check_state == check_state) return *this;
+  data_->check_state = check_state;
+  if (data_->checked != (data_->check_state != forms::check_state::unchecked)) {
+    data_->checked = data_->check_state != forms::check_state::unchecked;
+    on_checked_changed(event_args::empty);
   }
+  if (is_handle_created() && flat_style() == flat_style::system) native::toggle_button::check_state(handle(), static_cast<int32>(data_->check_state));
+  on_check_state_changed(event_args::empty);
   return *this;
 }
 
@@ -78,38 +76,37 @@ bool toggle_button::three_state() const noexcept {
 }
 
 toggle_button& toggle_button::three_state(bool three_state) {
-  if (data_->three_state != three_state) {
-    data_->three_state = three_state;
-    post_recreate_handle();
-  }
+  if (data_->three_state == three_state) return *this;
+  data_->three_state = three_state;
+  post_recreate_handle();
   return *this;
 }
 
 toggle_button toggle_button::create(const xtd::ustring& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  toggle_button item;
-  item.text(text);
-  item.three_state(three_state);
-  item.check_state(check_state);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = toggle_button {};
+  result.text(text);
+  result.three_state(three_state);
+  result.check_state(check_state);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 toggle_button toggle_button::create(const control& parent, const xtd::ustring& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  toggle_button item;
-  item.parent(parent);
-  item.text(text);
-  item.three_state(three_state);
-  item.check_state(check_state);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = toggle_button {};
+  result.parent(parent);
+  result.text(text);
+  result.three_state(three_state);
+  result.check_state(check_state);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 forms::create_params toggle_button::create_params() const noexcept {
-  forms::create_params create_params = button_base::create_params();
+  auto create_params = button_base::create_params();
   
   create_params.class_name("togglebutton");
   if (data_->three_state) create_params.style(create_params.style() | (data_->auto_check ? BS_AUTO3STATE : BS_3STATE));
@@ -241,7 +238,7 @@ void toggle_button::wm_mouse_up(message& message) { // message parameter can't b
       case forms::check_state::checked: check_state(three_state() ? forms::check_state::indeterminate : forms::check_state::unchecked); break;
       case forms::check_state::indeterminate: check_state(forms::check_state::unchecked); break;
     }
-  mouse_event_args e = mouse_event_args::create(message);
+  auto e = mouse_event_args::create(message);
   set_mouse_buttons(mouse_buttons() & ~e.button());
   if (client_rectangle().contains(e.location())) on_click(event_args::empty);
   on_mouse_click(e);
