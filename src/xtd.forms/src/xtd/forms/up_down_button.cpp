@@ -26,12 +26,11 @@ up_down_button::up_down_button() : data_(std::make_shared<data>()) {
 int32 up_down_button::maximum() const noexcept {return data_->maximum;}
 
 up_down_button& up_down_button::maximum(int32 value) {
-  if (data_->maximum != value) {
-    data_->maximum = value;
-    if (is_handle_created()) native::up_down_button::maximum(handle(), data_->maximum);
-    if (data_->minimum > value) minimum(value);
-    if (data_->value > value) this->value(value);
-  }
+  if (data_->maximum == value) return *this;
+  data_->maximum = value;
+  if (is_handle_created()) native::up_down_button::maximum(handle(), data_->maximum);
+  if (data_->minimum > value) minimum(value);
+  if (data_->value > value) this->value(value);
   return *this;
 }
 
@@ -40,12 +39,11 @@ int32 up_down_button::minimum() const noexcept {
 }
 
 up_down_button& up_down_button::minimum(int32 value) {
-  if (data_->minimum != value) {
-    data_->minimum = value;
-    if (is_handle_created()) native::up_down_button::minimum(handle(), data_->minimum);
-    if (data_->maximum < value) maximum(value);
-    if (data_->value < value) this->value(value);
-  }
+  if (data_->minimum == value) return *this;
+  data_->minimum = value;
+  if (is_handle_created()) native::up_down_button::minimum(handle(), data_->minimum);
+  if (data_->maximum < value) maximum(value);
+  if (data_->value < value) this->value(value);
   return *this;
 }
 
@@ -54,10 +52,9 @@ forms::orientation up_down_button::orientation() const noexcept {
 }
 
 up_down_button& up_down_button::orientation(forms::orientation orientation) {
-  if (data_->orientation != orientation) {
-    data_->orientation = orientation;
-    post_recreate_handle();
-  }
+  if (data_->orientation == orientation) return *this;
+  data_->orientation = orientation;
+  post_recreate_handle();
   return *this;
 }
 
@@ -66,13 +63,12 @@ int32 up_down_button::value() const noexcept {
 }
 
 up_down_button& up_down_button::value(int32 value) {
-  if (data_->value != value) {
-    if (value > data_->maximum) data_->value = data_->maximum;
-    else if (value < data_->minimum) data_->value = data_->minimum;
-    else data_->value = value;
-    if (is_handle_created()) native::up_down_button::value(handle(), data_->value);
-    on_value_changed(event_args::empty);
-  }
+  if (data_->value == value) return *this;
+  if (value > data_->maximum) data_->value = data_->maximum;
+  else if (value < data_->minimum) data_->value = data_->minimum;
+  else data_->value = value;
+  if (is_handle_created()) native::up_down_button::value(handle(), data_->value);
+  on_value_changed(event_args::empty);
   return *this;
 }
 
@@ -81,10 +77,9 @@ bool up_down_button::wrapped() const noexcept {
 }
 
 up_down_button& up_down_button::wrapped(bool value) {
-  if (data_->wrapped != value) {
-    data_->wrapped = value;
-    post_recreate_handle();
-  }
+  if (data_->wrapped == value) return *this;
+  data_->wrapped = value;
+  post_recreate_handle();
   return *this;
 }
 
@@ -98,7 +93,7 @@ xtd::ustring up_down_button::to_string() const noexcept {
 }
 
 forms::create_params up_down_button::create_params() const noexcept {
-  forms::create_params create_params = button_base::create_params();
+  auto create_params = button_base::create_params();
   
   create_params.class_name("updownbutton");
   
