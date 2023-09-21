@@ -6,13 +6,13 @@
 #include "../tunit_export.h"
 #define __XTD_TUNIT_INTERNAL__
 #include "__default_insert_basic_ostream_operator.h"
-#include "__demangle.h"
 #include "__tunit_join__items.h"
 #define __XTD_TUNIT_INTERNAL__
 #include "abort_error.h"
 #include "assert_error.h"
 #include "ignore_error.h"
 #include <xtd/types.h>
+#include <xtd/typeof>
 #include <xtd/diagnostics/stack_frame.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
