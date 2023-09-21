@@ -37,10 +37,9 @@ forms::border_sides user_control::border_sides() const noexcept {
 }
 
 user_control& user_control::border_sides(forms::border_sides border_sides) {
-  if (data_->border_sides != border_sides) {
-    data_->border_sides = border_sides;
-    if (control_appearance() == forms::control_appearance::standard) invalidate();
-  }
+  if (data_->border_sides == border_sides) return *this;
+  data_->border_sides = border_sides;
+  if (control_appearance() == forms::control_appearance::standard) invalidate();
   return *this;
 }
 
@@ -49,25 +48,23 @@ xtd::forms::border_style user_control::border_style() const noexcept {
 }
 
 user_control& user_control::border_style(forms::border_style border_style) {
-  if (data_->border_style != border_style) {
-    data_->border_style = border_style;
-    if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
-    else invalidate();
-  }
+  if (data_->border_style == border_style) return *this;
+  data_->border_style = border_style;
+  if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
+  else invalidate();
   return *this;
 }
 
 user_control& user_control::border_style(std::nullptr_t) {
-  if (data_->border_style.has_value()) {
-    data_->border_style.reset();
-    if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
-    else invalidate();
-  }
+  if (!data_->border_style.has_value()) return *this;
+  data_->border_style.reset();
+  if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
+  else invalidate();
   return *this;
 }
 
 forms::create_params user_control::create_params() const noexcept {
-  forms::create_params create_params = scrollable_control::create_params();
+  auto create_params = scrollable_control::create_params();
   
   create_params.class_name("usercontrol");
   create_params.style(create_params.style() | WS_CLIPSIBLINGS);
