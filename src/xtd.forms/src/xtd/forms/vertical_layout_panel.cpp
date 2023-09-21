@@ -26,20 +26,20 @@ vertical_layout_panel& vertical_layout_panel::control_layout_style(const control
 }
 
 vertical_layout_panel vertical_layout_panel::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  vertical_layout_panel item;
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = vertical_layout_panel {};
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 vertical_layout_panel vertical_layout_panel::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  vertical_layout_panel item;
-  item.parent(parent);
-  if (location != drawing::point {-1, -1}) item.location(location);
-  if (size != drawing::size {-1, -1}) item.size(size);
-  item.name(name);
-  return item;
+  auto result = vertical_layout_panel {};
+  result.parent(parent);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
 }
 
 void vertical_layout_panel::on_control_added(const xtd::forms::control_event_args& e) {
@@ -58,24 +58,24 @@ void vertical_layout_panel::on_layout(const event_args& e) {
   panel::on_layout(e);
   if (!parent() && controls().size() == 0) return;
   
-  size_t auto_size_control_count = count_if(control_layout_styles_.begin(), control_layout_styles_.end(), [](auto layout_style)->bool {return layout_style.first.get().visible() && layout_style.second.size_type() == size_type::auto_size;});
-  int32 auto_size_height = client_size().height() - static_cast<int32>(control_layout_styles().size() * padding().top()) - static_cast<int32>(control_layout_styles().size() * padding().bottom());
+  auto auto_size_control_count = count_if(control_layout_styles_.begin(), control_layout_styles_.end(), [](auto layout_style)->bool {return layout_style.first.get().visible() && layout_style.second.size_type() == size_type::auto_size;});
+  auto auto_size_height = client_size().height() - static_cast<int32>(control_layout_styles().size() * padding().top()) - static_cast<int32>(control_layout_styles().size() * padding().bottom());
   
-  int32 absolute_height = 0;
+  auto absolute_height = 0;
   for (auto& [control, layout_style] : control_layout_styles_)
     if (control.get().visible() && layout_style.size_type() == size_type::absolute) absolute_height += static_cast<int32>(layout_style.height().value_or(control.get().default_size().height()));
   auto_size_height -= absolute_height;
   
-  float total_percent = 0;
+  auto total_percent = .0f;
   for (auto& [control, layout_style] : control_layout_styles_)
     if (control.get().visible() && layout_style.size_type() == size_type::percent) total_percent += layout_style.height().value_or(0);
-  int32 percent_height = static_cast<int32>(auto_size_height * total_percent);
+  auto percent_height = static_cast<int32>(auto_size_height * total_percent);
   auto_size_height -= percent_height;
   
-  int32 left = 0;
-  int32 top = padding().top();
-  int32 width = 0;
-  int32 height = 0;
+  auto left = 0;
+  auto top = padding().top();
+  auto width = 0;
+  auto height = 0;
   for (auto& [control, layout_style] : control_layout_styles_) {
     if (!control.get().visible()) continue;
     if (layout_style.expanded()) left = padding().left();
