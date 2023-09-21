@@ -1,4 +1,4 @@
-#include "../../../include/xtd/tunit/string_assert.h"
+#include "../../../include/xtd/tunit/string_assert"
 
 using namespace std;
 using namespace xtd;

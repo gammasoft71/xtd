@@ -1,4 +1,4 @@
-#include "../../../include/xtd/tunit/settings.h"
+#include "../../../include/xtd/tunit/settings"
 
 using namespace xtd;
 using namespace xtd::tunit;
