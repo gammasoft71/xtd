@@ -29,7 +29,7 @@
 #include <utility>
 #include <vector>
 #include <xtd/optional.h>
-#include <xtd/ustring.h>
+#include <xtd/ustring>
 
 /// @cond
 template<class type_t> struct __tunit_is_printable : std::false_type {};
@@ -608,52 +608,52 @@ inline std::string __tunit_codepoint_to_string(xtd::char32 codepoint) {
 }
 
 #if defined(__cpp_lib_char8_t)
-inline std::string __tunit_to_string(const xtd::char8& value) {
+inline xtd::ustring __tunit_to_string(const xtd::char8& value) {
   std::stringstream ss;
   ss << std::quoted(__tunit_codepoint_to_string(value));
   return ss.str();
 }
 #endif
 
-inline std::string __tunit_to_string(const xtd::char16& value) {
+inline xtd::ustring __tunit_to_string(const xtd::char16& value) {
   std::stringstream ss;
   ss << std::quoted(__tunit_codepoint_to_string(value));
   return ss.str();
 }
 
-inline std::string __tunit_to_string(const xtd::char32& value) {
+inline xtd::ustring __tunit_to_string(const xtd::char32& value) {
   std::stringstream ss;
   ss << std::quoted(__tunit_codepoint_to_string(value));
   return ss.str();
 }
 
-inline std::string __tunit_to_string(const wchar_t& value) {
+inline xtd::ustring __tunit_to_string(const wchar_t& value) {
   std::stringstream ss;
   ss << std::quoted(__tunit_codepoint_to_string(value));
   return ss.str();
 }
 
-inline std::string __tunit_to_string(const std::string& value) {
+inline xtd::ustring __tunit_to_string(const std::string& value) {
   std::stringstream ss;
   ss << std::quoted(value);
   return ss.str();
 }
 
-inline std::string __tunit_to_string(const xtd::ustring& value) {
+inline xtd::ustring __tunit_to_string(const xtd::ustring& value) {
   std::stringstream ss;
   ss << std::quoted(value);
   return ss.str();
 }
 
 #if defined(__cpp_lib_char8_t)
-inline std::string __tunit_to_string(const std::u8string& value) {
+inline xtd::ustring __tunit_to_string(const std::u8string& value) {
   std::stringstream ss;
   ss << std::quoted(value);
   return ss.str();
 }
 #endif
 
-inline std::string __tunit_to_string(const std::u16string& value) {
+inline xtd::ustring __tunit_to_string(const std::u16string& value) {
   std::string result;
   result += "\"";
   for (auto codepoint : value)
@@ -662,7 +662,7 @@ inline std::string __tunit_to_string(const std::u16string& value) {
   return result;
 }
 
-inline std::string __tunit_to_string(const std::u32string& value) {
+inline xtd::ustring __tunit_to_string(const std::u32string& value) {
   std::string result;
   result += "\"";
   for (auto codepoint : value)
@@ -671,7 +671,7 @@ inline std::string __tunit_to_string(const std::u32string& value) {
   return result;
 }
 
-inline std::string __tunit_to_string(const std::wstring& value) {
+inline xtd::ustring __tunit_to_string(const std::wstring& value) {
   std::string result;
   result += "\"";
   for (auto codepoint : value)
@@ -680,58 +680,58 @@ inline std::string __tunit_to_string(const std::wstring& value) {
   return result;
 }
 
-inline std::string __tunit_to_string(const void* value) {
+inline xtd::ustring __tunit_to_string(const void* value) {
   std::stringstream ss;
   ss << "\"" << reinterpret_cast<xtd::intptr>(value) << "\"";
   return ss.str();
 }
 
-inline std::string __tunit_to_string(void* value) {
+inline xtd::ustring __tunit_to_string(void* value) {
   std::stringstream ss;
   ss << "\"" << reinterpret_cast<xtd::intptr>(value) << "\"";
   return ss.str();
 }
 
-inline std::string __tunit_to_string(const char* value) {
+inline xtd::ustring __tunit_to_string(const char* value) {
   std::stringstream ss;
   ss << std::quoted(value);
   return ss.str();
 }
 
 #if defined(__cpp_lib_char8_t)
-inline std::string __tunit_to_string(const xtd::char8* value) {
+inline xtd::ustring __tunit_to_string(const xtd::char8* value) {
   return __tunit_to_string(std::u8string(value));
 }
 #endif
 
-inline std::string __tunit_to_string(const xtd::char16* value) {
+inline xtd::ustring __tunit_to_string(const xtd::char16* value) {
   return __tunit_to_string(std::u16string(value));
 }
 
-inline std::string __tunit_to_string(const xtd::char32* value) {
+inline xtd::ustring __tunit_to_string(const xtd::char32* value) {
   return __tunit_to_string(std::u32string(value));
 }
 
-inline std::string __tunit_to_string(const wchar_t* value) {
+inline xtd::ustring __tunit_to_string(const wchar_t* value) {
   return __tunit_to_string(std::wstring(value));
 }
 
 template <typename value_t>
-inline std::string __tunit_to_string(const value_t& value) {
+inline xtd::ustring __tunit_to_string(const value_t& value) {
   std::stringstream ss;
   ss << value;
   return ss.str();
 }
 
 template <typename value_t>
-inline std::string __tunit_to_string(const value_t* value) {
+inline xtd::ustring __tunit_to_string(const value_t* value) {
   std::stringstream ss;
   ss << reinterpret_cast<xtd::intptr>(value);
   return ss.str();
 }
 
 template <typename value_t>
-inline std::string __tunit_to_string(value_t* value) {
+inline xtd::ustring __tunit_to_string(value_t* value) {
   std::stringstream ss;
   ss << reinterpret_cast<xtd::intptr>(value);
   return ss.str();
