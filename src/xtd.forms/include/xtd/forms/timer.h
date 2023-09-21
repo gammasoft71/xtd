@@ -61,7 +61,7 @@ namespace xtd {
       /// @brief Sets whether the timer is running.
       /// @param enabled true if the timer is currently enabled; otherwise, false. The default is false.
       /// @remarks Calling the start method is the same as setting enabled to true. Likewise, calling the stop method is the same as setting enabled to false.
-      virtual void enabled(bool enabled);
+      virtual timer& enabled(bool enabled);
       
       /// @brief Gets the time, in milliseconds, before the tick event is raised relative to the last occurrence of the tick event.
       /// @return An int32 specifying the number of milliseconds before the tick event is raised relative to the last occurrence of the tick event. The value cannot be less than one.
@@ -70,7 +70,7 @@ namespace xtd {
       /// @brief Sets the time, in milliseconds, before the tick event is raised relative to the last occurrence of the tick event.
       /// @param interval An int32 specifying the number of milliseconds before the tick event is raised relative to the last occurrence of the tick event. The value cannot be less than one.
       /// @remarks To get the number of seconds in the interval, divide this number by 1,000.
-      void interval(const time_span& interval);
+      timer& interval(const time_span& interval);
 
       /// @brief Gets the time, in milliseconds, before the tick event is raised relative to the last occurrence of the tick event.
       /// @return An int32 specifying the number of milliseconds before the tick event is raised relative to the last occurrence of the tick event. The value cannot be less than one.
@@ -79,7 +79,7 @@ namespace xtd {
       /// @brief Sets the time, in milliseconds, before the tick event is raised relative to the last occurrence of the tick event.
       /// @param interval An int32 specifying the number of milliseconds before the tick event is raised relative to the last occurrence of the tick event. The value cannot be less than one.
       /// @remarks To get the number of seconds in the interval, divide this number by 1,000.
-      virtual void interval_milliseconds(int32 interval);
+      virtual timer& interval_milliseconds(int32 interval);
       /// @}
       
       /// @name Methods
