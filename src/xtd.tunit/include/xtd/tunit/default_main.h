@@ -2,7 +2,7 @@
 /// @brief Contains main entry point for TUNIT_CONFIG_MAIN definition.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "tunit_main.h"
+#include "tunit_main"
 
 /// @brief If you define TUNIT_CONFIG_MAIN before including xtd.tunit.h include, a main entry point is generated for you.
 /// @ingroup xtd_tunit tunit

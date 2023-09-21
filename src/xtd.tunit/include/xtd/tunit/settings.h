@@ -2,10 +2,10 @@
 /// @brief Contains xtd::tunit::settings class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../tunit_export.h"
-#include <xtd/date_time.h>
-#include <xtd/environment.h>
-#include <xtd/io/path.h>
+#include "../tunit_export"
+#include <xtd/date_time>
+#include <xtd/environment>
+#include <xtd/io/path>
 #include <cstdint>
 #include <cstdlib>
 #include <string>

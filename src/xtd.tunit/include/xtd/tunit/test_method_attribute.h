@@ -2,8 +2,8 @@
 /// @brief Contains xtd::tunit::test_method_attribute class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "test.h"
-#include "test_state.h"
+#include "test"
+#include "test_state"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

@@ -2,8 +2,8 @@
 /// @brief Contains xtd::tunit::file_assume class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "assume.h"
-#include "file_assert.h"
+#include "assume"
+#include "file_assert"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

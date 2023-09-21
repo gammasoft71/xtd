@@ -3,14 +3,14 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 
-#include "../tunit_export.h"
-#include "event_listener.h"
-#include "registered_test_class.h"
-#include "settings.h"
-#include <xtd/convert.h>
-#include <xtd/date_time.h>
-#include <xtd/random.h>
-#include <xtd/system_exception.h>
+#include "../tunit_export"
+#include "event_listener"
+#include "registered_test_class"
+#include "settings"
+#include <xtd/convert>
+#include <xtd/date_time>
+#include <xtd/random>
+#include <xtd/system_exception>
 #include <iomanip>
 #include <fstream>
 #include <memory>

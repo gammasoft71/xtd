@@ -3,11 +3,11 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 
-#include "../tunit_export.h"
-#include "assert.h"
-#include "assert_error.h"
-#include <xtd/date_time.h>
-#include <xtd/diagnostics/stack_frame.h>
+#include "../tunit_export"
+#include "assert"
+#include "assert_error"
+#include <xtd/date_time>
+#include <xtd/diagnostics/stack_frame>
 #include <functional>
 #include <string>
 
