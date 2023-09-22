@@ -2,8 +2,8 @@
 
 using namespace std;
 using namespace xtd;
-using namespace diagnostics;
-using namespace tunit;
+using namespace xtd::diagnostics;
+using namespace xtd::tunit;
 
 void string_assume::are_equal_ignoring_case(const ustring& expected, const ustring& actual) {
   are_equal_ignoring_case(expected, actual, "", stack_frame::empty());
