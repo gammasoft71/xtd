@@ -15,7 +15,7 @@ public:
     console::write_line("{0,-10}{1,-15}{2,4}\n", "Year", "Month", "Days");
     
     for (auto year : years) {
-      for (auto ctr = 1U; ctr <= 12U; ctr++)
+      for (auto ctr = 1u; ctr <= 12u; ctr++)
         console::write_line("{0,-10}{1,-15}{2,4}", year, as<month_of_year>(ctr), date_time::days_in_month(year, ctr));
       console::write_line();
     }
