@@ -5,12 +5,13 @@
 
 using namespace std;
 using namespace xtd;
+using namespace xtd::diagnostics;
 using namespace xtd::tunit;
 
 ostream_event_listener::ostream_event_listener(ostream& os) noexcept : os_(os) {
 }
 
-void ostream_event_listener::on_class_end(const xtd::tunit::class_event_args& e) const {
+void ostream_event_listener::on_class_end(const class_event_args& e) const {
   if (settings::default_settings().gtest_compatibility()) {
     console::foreground_color(console_color::dark_green);
     os_ << "[----------] ";
@@ -20,7 +21,7 @@ void ostream_event_listener::on_class_end(const xtd::tunit::class_event_args& e)
   event_listener::on_class_end(e);
 }
 
-void ostream_event_listener::on_class_start(const xtd::tunit::class_event_args& e) const {
+void ostream_event_listener::on_class_start(const class_event_args& e) const {
   if (settings::default_settings().gtest_compatibility()) {
     console::foreground_color(console_color::dark_green);
     os_ << "[----------] ";
@@ -30,7 +31,7 @@ void ostream_event_listener::on_class_start(const xtd::tunit::class_event_args& 
   event_listener::on_class_start(e);
 }
 
-void ostream_event_listener::on_test_aborted(const xtd::tunit::test_event_args& e) const {
+void ostream_event_listener::on_test_aborted(const test_event_args& e) const {
   event_listener::on_test_aborted(e);
   if (settings::default_settings().gtest_compatibility()) {
     os_ << e.test().stack_frame().get_file_name() << ":" << e.test().stack_frame().get_file_line_number() << ": Failure" << endl;
@@ -47,7 +48,7 @@ void ostream_event_listener::on_test_aborted(const xtd::tunit::test_event_args& 
     os_ << "  ABORTED ";
     console::reset_color();
     os_ << e.test_class().name() << "." << e.test().name();
-    if (xtd::tunit::settings::default_settings().show_duration())
+    if (settings::default_settings().show_duration())
       os_ << " (" << e.test().elapsed_time().count() << " ms total)";
     os_ << endl;
     if (e.test().message() != "")
@@ -56,7 +57,7 @@ void ostream_event_listener::on_test_aborted(const xtd::tunit::test_event_args& 
       os_ << "    Expected: " << e.test().expect() << endl;
     if (e.test().actual() != "")
       os_ << "    But was:  " << e.test().actual() << endl;
-    if ((e.test().expect() != "" || e.test().actual() != "") && e.test().stack_frame() != xtd::diagnostics::stack_frame::empty()) {
+    if ((e.test().expect() != "" || e.test().actual() != "") && e.test().stack_frame() != stack_frame::empty()) {
       os_ << "    Stack Trace: in " << e.test().stack_frame().get_file_name();
       if (e.test().stack_frame().get_file_line_number() != 0) os_ << ":" << e.test().stack_frame().get_file_line_number();
     }
@@ -64,7 +65,7 @@ void ostream_event_listener::on_test_aborted(const xtd::tunit::test_event_args& 
   }
 }
 
-void ostream_event_listener::on_unit_test_cleanup_start(const xtd::tunit::tunit_event_args& e) const {
+void ostream_event_listener::on_unit_test_cleanup_start(const tunit_event_args& e) const {
   if (settings::default_settings().gtest_compatibility()) {
     console::foreground_color(console_color::dark_green);
     os_ << "[----------] ";
@@ -74,7 +75,7 @@ void ostream_event_listener::on_unit_test_cleanup_start(const xtd::tunit::tunit_
   event_listener::on_unit_test_cleanup_start(e);
 }
 
-void ostream_event_listener::on_unit_test_initialize_start(const xtd::tunit::tunit_event_args& e) const {
+void ostream_event_listener::on_unit_test_initialize_start(const tunit_event_args& e) const {
   if (settings::default_settings().gtest_compatibility()) {
     console::foreground_color(console_color::dark_green);
     os_ << "[----------] ";
@@ -84,7 +85,7 @@ void ostream_event_listener::on_unit_test_initialize_start(const xtd::tunit::tun
   event_listener::on_unit_test_initialize_start(e);
 }
 
-void ostream_event_listener::on_test_failed(const xtd::tunit::test_event_args& e) const {
+void ostream_event_listener::on_test_failed(const test_event_args& e) const {
   event_listener::on_test_failed(e);
   if (settings::default_settings().gtest_compatibility()) {
     os_ << e.test().stack_frame().get_file_name() << ":" << e.test().stack_frame().get_file_line_number() << ": Failure" << endl;
@@ -101,7 +102,7 @@ void ostream_event_listener::on_test_failed(const xtd::tunit::test_event_args& e
     os_ << "  FAILED  ";
     console::reset_color();
     os_ << e.test_class().name() << "." << e.test().name();
-    if (xtd::tunit::settings::default_settings().show_duration())
+    if (settings::default_settings().show_duration())
       os_ << " (" << e.test().elapsed_time().count() << " ms total)";
     os_ << endl;
     if (e.test().message() != "")
@@ -110,7 +111,7 @@ void ostream_event_listener::on_test_failed(const xtd::tunit::test_event_args& e
       os_ << "    Expected: " << e.test().expect() << endl;
     if (e.test().actual() != "")
       os_ << "    But was:  " << e.test().actual() << endl;
-    if (e.test().stack_frame() != xtd::diagnostics::stack_frame::empty()) {
+    if (e.test().stack_frame() != stack_frame::empty()) {
       os_ << "    Stack Trace: in " << e.test().stack_frame().get_file_name();
       if (e.test().stack_frame().get_file_line_number() != 0) os_ << ":" << e.test().stack_frame().get_file_line_number();
     }
@@ -118,7 +119,7 @@ void ostream_event_listener::on_test_failed(const xtd::tunit::test_event_args& e
   }
 }
 
-void ostream_event_listener::on_test_ignored(const xtd::tunit::test_event_args& e) const {
+void ostream_event_listener::on_test_ignored(const test_event_args& e) const {
   event_listener::on_test_ignored(e);
   if (settings::default_settings().gtest_compatibility()) {
     console::foreground_color(console_color::dark_yellow);
@@ -130,7 +131,7 @@ void ostream_event_listener::on_test_ignored(const xtd::tunit::test_event_args& 
     os_ << "  IGNORED ";
     console::reset_color();
     os_ << e.test_class().name() << "." << e.test().name();
-    if (xtd::tunit::settings::default_settings().show_duration())
+    if (settings::default_settings().show_duration())
       os_ << " (" << e.test().elapsed_time().count() << " ms total)";
     os_ << endl;
     if (e.test().message() != "")
@@ -138,7 +139,7 @@ void ostream_event_listener::on_test_ignored(const xtd::tunit::test_event_args& 
   }
 }
 
-void ostream_event_listener::on_test_start(const xtd::tunit::test_event_args& e) const {
+void ostream_event_listener::on_test_start(const test_event_args& e) const {
   if (settings::default_settings().gtest_compatibility()) {
     console::foreground_color(console_color::dark_green);
     os_ << "[ RUN      ] ";
@@ -148,7 +149,7 @@ void ostream_event_listener::on_test_start(const xtd::tunit::test_event_args& e)
   event_listener::on_test_start(e);
 }
 
-void ostream_event_listener::on_test_succeed(const xtd::tunit::test_event_args& e) const {
+void ostream_event_listener::on_test_succeed(const test_event_args& e) const {
   event_listener::on_test_succeed(e);
   if (settings::default_settings().gtest_compatibility()) {
     console::foreground_color(console_color::dark_green);
@@ -160,7 +161,7 @@ void ostream_event_listener::on_test_succeed(const xtd::tunit::test_event_args& 
     os_ << "  SUCCEED ";
     console::reset_color();
     os_ << e.test_class().name() << "." << e.test().name();
-    if (xtd::tunit::settings::default_settings().show_duration())
+    if (settings::default_settings().show_duration())
       os_ << " (" << e.test().elapsed_time().count() << " ms total)";
     os_ << endl;
     if (e.test().message() != "")
@@ -168,7 +169,7 @@ void ostream_event_listener::on_test_succeed(const xtd::tunit::test_event_args& 
   }
 }
 
-void ostream_event_listener::on_unit_test_end(const xtd::tunit::tunit_event_args& e) const {
+void ostream_event_listener::on_unit_test_end(const tunit_event_args& e) const {
   event_listener::on_unit_test_end(e);
   if (settings::default_settings().gtest_compatibility()) {
     console::foreground_color(console_color::dark_green);
@@ -229,13 +230,13 @@ void ostream_event_listener::on_unit_test_end(const xtd::tunit::tunit_event_args
     }
     
     os_ << "End " << e.unit_test().test_count() << " test" << (e.unit_test().test_count() > 1 ? "s" : "") << " from " << e.unit_test().test_cases_count() << " test case" << (e.unit_test().test_cases_count() > 1 ? "s" : "") << " ran.";
-    if (xtd::tunit::settings::default_settings().show_duration())
+    if (settings::default_settings().show_duration())
       os_ << " (" << e.unit_test().elapsed_time().count() << " ms total)";
     os_ << endl << endl;
   }
 }
 
-void ostream_event_listener::on_unit_test_start(const xtd::tunit::tunit_event_args& e) const {
+void ostream_event_listener::on_unit_test_start(const tunit_event_args& e) const {
   if (e.unit_test().repeat_tests()) {
     if (!settings::default_settings().gtest_compatibility()) console::foreground_color(console_color::dark_cyan);
     os_ << "Repeating all tests (iteration " << e.unit_test().repeat_iteration() << ") . . ." << endl << endl;
