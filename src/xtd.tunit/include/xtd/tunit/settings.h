@@ -3,12 +3,12 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include "../tunit_export"
+#include <xtd/io/path>
 #include <xtd/date_time>
 #include <xtd/environment>
-#include <xtd/io/path>
+#include <xtd/ustring>
 #include <cstdint>
 #include <cstdlib>
-#include <string>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -113,7 +113,7 @@ namespace xtd {
       
       /// @brief Return true if a specified test class name and specified test name match with the current filter tests.
       /// @return Return true if class name and test name match with the current filter tests; otherwise false.
-      bool is_match_test_name(const std::string& test_class_name, const std::string& test_name) const noexcept;
+      bool is_match_test_name(const xtd::ustring& test_class_name, const xtd::ustring& test_name) const noexcept;
       
       /// @brief Gets list tests.
       /// @return true if list tests; otherwise false.
@@ -149,19 +149,19 @@ namespace xtd {
       
       /// @brief Gets output json path.
       /// @return Output json path.
-      std::string output_json_path() const noexcept;
+      xtd::ustring output_json_path() const noexcept;
       
       /// @brief Sets output sjon path.
       /// @param output_jsonl_path Output json path.
-      void output_json_path(const std::string& output_json_path) noexcept;
+      void output_json_path(const xtd::ustring& output_json_path) noexcept;
       
       /// @brief Gets output xml path.
       /// @return Output xml path.
-      std::string output_xml_path() const noexcept;
+      xtd::ustring output_xml_path() const noexcept;
       
       /// @brief Sets output xml path.
       /// @param output_xml_path Output xml path.
-      void output_xml_path(const std::string& output_xml_path) noexcept;
+      void output_xml_path(const xtd::ustring& output_xml_path) noexcept;
       
       /// @brief Gets shuffle tests.
       /// @return Shuffle test.
@@ -225,7 +225,7 @@ namespace xtd {
       friend class ostream_event_listener;
       friend class ostream_unit_test;
       
-      bool pattern_compare(const std::string& name, const std::string& pattern) const noexcept;
+      bool pattern_compare(const xtd::ustring& name, const xtd::ustring& pattern) const noexcept;
       
       void end_time(const xtd::date_time& end_time) noexcept;
       void start_time(const xtd::date_time& start_time) noexcept;
@@ -242,9 +242,9 @@ namespace xtd {
       bool output_color_ = true;
       bool output_json_ = false;
       bool output_xml_ = false;
-      std::string output_json_path_ = "tests.json";
-      std::string output_xml_path_ = "tests.xml";
-      std::string file_name_ = xtd::io::path::get_full_path(xtd::environment::get_command_line_args()[0]);
+      xtd::ustring output_json_path_ = "tests.json";
+      xtd::ustring output_xml_path_ = "tests.xml";
+      xtd::ustring file_name_ = xtd::io::path::get_full_path(xtd::environment::get_command_line_args()[0]);
       bool show_duration_ = true;
       bool shuffle_tests_ = false;
       uint32 random_seed_ = 0;
