@@ -10,12 +10,12 @@
 #include <xtd/convert>
 #include <xtd/date_time>
 #include <xtd/random>
+#include <xtd/ustring>
 #include <xtd/system_exception>
 #include <iomanip>
 #include <fstream>
 #include <memory>
 #include <random>
-#include <string>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -85,7 +85,7 @@ namespace xtd {
       
       /// @brief Gets the array of aborted test names.
       /// @return The array of aborted test names.
-      std::vector<std::string> aborted_test_names() const noexcept;
+      std::vector<xtd::ustring> aborted_test_names() const noexcept;
       
       /// @brief Gets the elapsed time for the execution of all tests in the unit test.
       /// @return The elapsed time for the execution of all tests in the unit test.
@@ -97,7 +97,7 @@ namespace xtd {
       
       /// @brief Gets the array of ignored test names.
       /// @return The array of ignored test names.
-      std::vector<std::string> ignored_test_names() const noexcept;
+      std::vector<xtd::ustring> ignored_test_names() const noexcept;
       
       /// @brief Gets the failed test count.
       /// @return The failed test count.
@@ -105,7 +105,7 @@ namespace xtd {
       
       /// @brief Gets the array of failed test names.
       /// @return The array of failed test names.
-      std::vector<std::string> failed_test_names() const noexcept;
+      std::vector<xtd::ustring> failed_test_names() const noexcept;
       
       /// @brief Gets the succeed test count.
       /// @return The succeed test count.
@@ -113,7 +113,7 @@ namespace xtd {
       
       /// @brief Gets the array of succeed test names.
       /// @return The array of succeed test names.
-      std::vector<std::string> succeed_test_names() const noexcept;
+      std::vector<xtd::ustring> succeed_test_names() const noexcept;
       /// @}
       
       
@@ -142,7 +142,7 @@ namespace xtd {
       /// @return The xtd::tunit::settings::exit_status value.
       /// @remarks This method does nothing by default. The inheritor must overload this method to act as it wants when the unit_lest is asked for the test list.
       /// @remarks This method is typically used to display the list of tests in a stream, or whatever. It depends on the implementation chosen by the inheritor.
-      virtual int32 list_tests(const std::vector<std::string>& tests);
+      virtual int32 list_tests(const std::vector<xtd::ustring>& tests);
       
       /// @brief Parses the specified arguments.
       /// @param The arguments to parse.
@@ -160,17 +160,17 @@ namespace xtd {
       
       static void add(const xtd::tunit::registered_test_class& test_class);
       static std::vector<xtd::tunit::registered_test_class>& test_classes();
-      std::string get_filename(const std::string& path);
-      std::string cdata_message_to_xml_string(const xtd::tunit::test& test);
-      std::string escape_path_to_json_string(const std::string& path);
-      std::string escape_to_json_string(const std::string& str);
-      std::string escape_to_xml_string(const std::string& str);
-      std::string message_to_json_string(const xtd::tunit::test& test);
-      std::string message_to_xml_string(const xtd::tunit::test& test);
-      std::string name_to_string(const std::string& name);
-      std::string status_to_string(const xtd::tunit::test& test);
-      std::string to_string(const std::chrono::milliseconds& ms);
-      std::string to_string(const std::chrono::time_point<std::chrono::system_clock>& time);
+      xtd::ustring get_filename(const xtd::ustring& path);
+      xtd::ustring cdata_message_to_xml_string(const xtd::tunit::test& test);
+      xtd::ustring escape_path_to_json_string(const xtd::ustring& path);
+      xtd::ustring escape_to_json_string(const xtd::ustring& str);
+      xtd::ustring escape_to_xml_string(const xtd::ustring& str);
+      xtd::ustring message_to_json_string(const xtd::tunit::test& test);
+      xtd::ustring message_to_xml_string(const xtd::tunit::test& test);
+      xtd::ustring name_to_string(const xtd::ustring& name);
+      xtd::ustring status_to_string(const xtd::tunit::test& test);
+      xtd::ustring to_string(const std::chrono::milliseconds& ms);
+      xtd::ustring to_string(const std::chrono::time_point<std::chrono::system_clock>& time);
       void unit_test_cleanup();
       void unit_test_initialize();
       void write_list_tests_json();
@@ -179,7 +179,7 @@ namespace xtd {
       void write_tests_xml();
       
       std::vector<ustring> arguments;
-      std::string name_ = "AllTests";
+      xtd::ustring name_ = "AllTests";
       std::unique_ptr<xtd::tunit::event_listener> event_listener_;
       xtd::date_time end_time_point_;
       int32 repeat_iteration_ = 0;

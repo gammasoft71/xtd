@@ -17,13 +17,14 @@ namespace {
 }
 #endif
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::tunit;
 
-unit_test::unit_test(std::unique_ptr<event_listener> event_listener) noexcept : unit_test(std::move(event_listener), __tunit_argc, __tunit_argv) {
+unit_test::unit_test(unique_ptr<event_listener> event_listener) noexcept : unit_test(std::move(event_listener), __tunit_argc, __tunit_argv) {
 }
 
-unit_test::unit_test(std::unique_ptr<event_listener> event_listener, int argc, char* argv[]) noexcept : arguments(argv == nullptr ? 0 : argv + 1, argv == nullptr ? 0 : argv + argc), name_(get_filename(argv[0])), event_listener_(std::move(event_listener)) {
+unit_test::unit_test(unique_ptr<event_listener> event_listener, int argc, char* argv[]) noexcept : arguments(argv == nullptr ? 0 : argv + 1, argv == nullptr ? 0 : argv + argc), name_(get_filename(argv[0])), event_listener_(std::move(event_listener)) {
 }
 
 unit_test::~unit_test() {
@@ -64,8 +65,8 @@ size_t unit_test::aborted_test_count() const noexcept {
   return count;
 }
 
-std::vector<std::string> unit_test::aborted_test_names() const noexcept {
-  std::vector<std::string> names;
+vector<ustring> unit_test::aborted_test_names() const noexcept {
+  vector<ustring> names;
   for (auto& test_class : test_classes())
     for (auto& test : test_class.test()->tests())
       if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.aborted()) names.push_back(test_class.test()->name() + "." + test.name());
@@ -86,8 +87,8 @@ size_t unit_test::ignored_test_count() const noexcept {
   return count;
 }
 
-std::vector<std::string> unit_test::ignored_test_names() const noexcept {
-  std::vector<std::string> names;
+vector<ustring> unit_test::ignored_test_names() const noexcept {
+  vector<ustring> names;
   for (auto& test_class : test_classes())
     for (auto& test : test_class.test()->tests())
       if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.ignored()) names.push_back(test_class.test()->name() + "." + test.name());
@@ -102,8 +103,8 @@ size_t unit_test::failed_test_count() const noexcept {
   return count;
 }
 
-std::vector<std::string> unit_test::failed_test_names() const noexcept {
-  std::vector<std::string> names;
+vector<ustring> unit_test::failed_test_names() const noexcept {
+  vector<ustring> names;
   for (auto& test_class : test_classes())
     for (auto& test : test_class.test()->tests())
       if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.failed()) names.push_back(test_class.test()->name() + "." + test.name());
@@ -118,8 +119,8 @@ size_t unit_test::succeed_test_count() const noexcept {
   return count;
 }
 
-std::vector<std::string> unit_test::succeed_test_names() const noexcept {
-  std::vector<std::string> names;
+vector<ustring> unit_test::succeed_test_names() const noexcept {
+  vector<ustring> names;
   for (auto& test_class : test_classes())
     for (auto& test : test_class.test()->tests())
       if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.succeed()) names.push_back(test_class.test()->name() + "." + test.name());
@@ -140,7 +141,7 @@ int32 unit_test::run() {
   }
   
   if (xtd::tunit::settings::default_settings().list_tests()) {
-    std::vector<std::string> tests;
+    vector<ustring> tests;
     for (auto test_class : test_classes())
       for (auto test : test_class.test()->tests())
         tests.push_back(test_class.test()->name() + '.' + test.name());
@@ -198,11 +199,11 @@ int32 unit_test::count_tests(int32 count) {
   return xtd::tunit::settings::default_settings().exit_status();
 }
 
-int32 unit_test::list_tests(const std::vector<std::string>& tests) {
+int32 unit_test::list_tests(const vector<ustring>& tests) {
   return xtd::tunit::settings::default_settings().exit_status();
 }
 
-bool unit_test::parse_arguments(const std::vector<ustring>& args) {
+bool unit_test::parse_arguments(const vector<ustring>& args) {
   bool gtest_compatibility = xtd::tunit::settings::default_settings().gtest_compatibility();
   for (auto arg : args) {
     if (arg == "--gtest_compatibility" || arg.find("--gtest") == 0) gtest_compatibility = true;
@@ -263,25 +264,25 @@ void unit_test::add(const xtd::tunit::registered_test_class& test_class) {
   test_classes().push_back(test_class);
 }
 
-std::vector<xtd::tunit::registered_test_class>& unit_test::test_classes() {
-  static std::vector<xtd::tunit::registered_test_class> test_classes;
+vector<xtd::tunit::registered_test_class>& unit_test::test_classes() {
+  static vector<xtd::tunit::registered_test_class> test_classes;
   return test_classes;
 }
 
-std::string unit_test::get_filename(const std::string& path) {
-  std::string filename = path;
+ustring unit_test::get_filename(const ustring& path) {
+  ustring filename = path;
   const size_t last_slash_idx = filename.find_last_of("\\/");
-  if (std::string::npos != last_slash_idx)
-    filename.erase(0, last_slash_idx + 1);
+  if (ustring::npos != last_slash_idx)
+    filename = filename.remove(0, last_slash_idx + 1);
     
   const size_t period_idx = filename.rfind('.');
-  if (std::string::npos != period_idx)
-    filename.erase(period_idx);
+  if (ustring::npos != period_idx)
+    filename = filename.remove(period_idx);
   return filename;
 }
 
-std::string unit_test::cdata_message_to_xml_string(const xtd::tunit::test& test) {
-  std::stringstream ss;
+ustring unit_test::cdata_message_to_xml_string(const xtd::tunit::test& test) {
+  stringstream ss;
   if (settings::default_settings().gtest_compatibility()) {
     if (test.stack_frame() != xtd::diagnostics::stack_frame::empty())
       ss << test.stack_frame().get_file_name() << ":" << test.stack_frame().get_file_line_number() << std::endl;
@@ -297,20 +298,20 @@ std::string unit_test::cdata_message_to_xml_string(const xtd::tunit::test& test)
   return ss.str();
 }
 
-std::string unit_test::escape_path_to_json_string(const std::string& path) {
+ustring unit_test::escape_path_to_json_string(const ustring& path) {
   return ustring::join(ustring::format("\\{}", io::path::directory_separator_char()), ustring(path).split({io::path::directory_separator_char()}));
 }
 
-std::string unit_test::escape_to_json_string(const std::string& str) {
+ustring unit_test::escape_to_json_string(const ustring& str) {
   return ustring(str).replace("\"", "\\\"");
 }
 
-std::string unit_test::escape_to_xml_string(const std::string& str) {
+ustring unit_test::escape_to_xml_string(const ustring& str) {
   return ustring(str).replace("\"", "&quot;").replace("&", "&amp;").replace("'", "&apos;").replace("<", "&lt;").replace(">", "&gt;");
 }
 
-std::string unit_test::message_to_json_string(const xtd::tunit::test& test) {
-  std::stringstream ss;
+ustring unit_test::message_to_json_string(const xtd::tunit::test& test) {
+  stringstream ss;
   if (settings::default_settings().gtest_compatibility())
     ss << "Value of: " << escape_to_json_string(test.actual()) << "\\n" << "  Actual: " << escape_to_json_string(test.actual()) << "\\n" << "Expected: " << escape_to_json_string(test.expect());
   else
@@ -318,8 +319,8 @@ std::string unit_test::message_to_json_string(const xtd::tunit::test& test) {
   return ss.str();
 }
 
-std::string unit_test::message_to_xml_string(const xtd::tunit::test& test) {
-  std::stringstream ss;
+ustring unit_test::message_to_xml_string(const xtd::tunit::test& test) {
+  stringstream ss;
   if (settings::default_settings().gtest_compatibility()) {
     if (test.stack_frame() != xtd::diagnostics::stack_frame::empty())
       ss << test.stack_frame().get_file_name() << ":" << test.stack_frame().get_file_line_number() << "&#x0A;";
@@ -335,19 +336,19 @@ std::string unit_test::message_to_xml_string(const xtd::tunit::test& test) {
   return ss.str();
 }
 
-std::string unit_test::name_to_string(const std::string& name) {
+ustring unit_test::name_to_string(const ustring& name) {
   return (settings::default_settings().gtest_compatibility() ? "AllTests" : name_);
 }
 
-std::string unit_test::status_to_string(const xtd::tunit::test& test) {
-  std::stringstream ss;
+ustring unit_test::status_to_string(const xtd::tunit::test& test) {
+  stringstream ss;
   if (test.not_started() || test.ignored()) ss << "notrun";
   else ss << "run";
   return ss.str();
 }
 
-std::string unit_test::to_string(const std::chrono::milliseconds& ms) {
-  std::stringstream ss;
+ustring unit_test::to_string(const std::chrono::milliseconds& ms) {
+  stringstream ss;
   if (ms.count() == 0)
     ss << 0;
   else
@@ -355,10 +356,10 @@ std::string unit_test::to_string(const std::chrono::milliseconds& ms) {
   return ss.str();
 }
 
-std::string unit_test::to_string(const std::chrono::time_point<std::chrono::system_clock>& time) {
+ustring unit_test::to_string(const std::chrono::time_point<std::chrono::system_clock>& time) {
   std::time_t time_t = std::chrono::system_clock::to_time_t(time);
   std::tm tm = *std::localtime(&time_t);
-  std::stringstream ss;
+  stringstream ss;
   ss << tm.tm_year + 1900 << "-" << std::setfill('0') << std::setw(2) << tm.tm_mon << "-" << std::setfill('0') << std::setw(2) << tm.tm_mday;
   ss << "T" << std::setfill('0') << std::setw(2) << tm.tm_hour << ":" << std::setfill('0') << std::setw(2) << tm.tm_min << ":" << std::setfill('0') << std::setw(2) << tm.tm_sec;
   return ss.str();
