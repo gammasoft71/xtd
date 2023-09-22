@@ -4,8 +4,8 @@
 #pragma once
 #include "test_class"
 #include "../tunit_export"
-#include <memory>
 #include <xtd/ustring>
+#include <memory>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -25,7 +25,7 @@ namespace xtd {
       /// @brief Creates a new registered_test_class instance.
       /// @param name The name associate to the test_class.
       /// @remarks The name is the name of the test class displayed when running the tests.
-      registered_test_class(const std::string& name, std::shared_ptr<xtd::tunit::test_class> test_class) noexcept;
+      registered_test_class(const xtd::ustring& name, std::shared_ptr<xtd::tunit::test_class> test_class) noexcept;
       /// @}
       
     private:
