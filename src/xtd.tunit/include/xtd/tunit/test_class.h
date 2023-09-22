@@ -13,6 +13,7 @@
 #include "test_cleanup_attribute"
 #include "test_method_attribute"
 #include <xtd/date_time>
+#include <xtd/ustring>
 #include <vector>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -63,7 +64,7 @@ namespace xtd {
       
       /// @brief Gets the name of the test class.
       /// @return The nzme of the test class.
-      std::string name() const noexcept;
+      xtd::ustring name() const noexcept;
       
       /// @brief Gets the test count.
       /// @return The test count.
@@ -140,7 +141,7 @@ namespace xtd {
       xtd::tunit::test class_cleanup_;
       xtd::tunit::test class_initialize_;
       xtd::date_time end_time_point;
-      std::string name_;
+      xtd::ustring name_;
       xtd::date_time start_time_;
       xtd::tunit::test test_cleanup_;
       xtd::tunit::test test_initialize_;
