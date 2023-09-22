@@ -13,14 +13,14 @@ public:
     text("Form and thread example");
     form_closed += [&] {
       closed = true;
-      for (auto index = 0u; index < threads.size(); ++index)
+      for (auto index = 0_sz; index < threads.size(); ++index)
         threads[index].join();
     };
     
     messages.parent(*this);
     messages.dock(dock_style::fill);
     
-    for (auto index = 0u; index < threads.size(); ++index) {
+    for (auto index = 0_sz; index < threads.size(); ++index) {
       threads[index] = thread {[&](auto user_thread_id) {
         auto counter = 0u;
         while (!closed) {
