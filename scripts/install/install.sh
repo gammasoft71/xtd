@@ -23,7 +23,8 @@ if [[ "$OSTYPE" == *"Linux"* ]]; then
 fi
 
 if [[ "$OSTYPE" == *"MSYS"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]]; then
-  echo "  Operating System is Windows"
+  OSTYPE="$MSYSTEM"
+  echo "  Operating System is MSYS2 " $OSTYPE
 elif [[ "$OSTYPE" == *"Darwin"* ]]; then
   echo "  Operating System is macOS"; else
   echo "  Operating System is linux"
@@ -52,9 +53,26 @@ case "$OSTYPE" in
   *"openSUSE"*) sudo zypper update; sudo zypper install -y -t pattern devel_basis; sudo zypper install -y alsa-devel doxygen gsound-devel gtk3-devel cmake;;
   *"CentOS"* | *"Fedora"* | *"RedHat"*) sudo yum update; sudo yum install alsa-lib-devel cmake gtk3-devel gsound-devel gtk3-devel -y;;
   *"Rocky"*) sudo yum update; sudo yum groupinstall 'Development Tools' -y; sudo yum install alsa-lib-devel cmake libuiid-devel gsound gtk3-devel -y;;
-  *"MINGW64"*) pacman -Sy base-devel cmake doxygen gcc git make mingw-w64-x86_64-wxWidgets3.2 -yy --noconfirm;;
-  *"MSYS"*) pacman -Sy base-devel cmake doxygen gcc git make mingw-w64-x86_64-wxWidgets3.2 -yy --noconfirm;;
+  *"CLANGARM64"*) pacman -S -yy --noconfirm base-devel git mingw-w64-clang-aarch64-cmake mingw-w64-clang-aarch64-doxygen mingw-w64-clang-aarch64-gcc-compat mingw-w64-clang-aarch64-gtk3 mingw-w64-clang-aarch64-make mingw-w64-clang-aarch64-wxwidgets3.2-msw;;
+  *"CLANG32"*) pacman -S -yy --noconfirm base-devel git mingw-w64-clang-i686-cmake mingw-w64-clang-i686-doxygen mingw-w64-clang-i686-gcc-compat mingw-w64-clang-i686-gtk3 mingw-w64-clang-i686-make mingw-w64-clang-i686-wxwidgets3.2-msw;;
+  *"CLANG64"*) pacman -S -yy --noconfirm base-devel git mingw-w64-clang-x86_64-cmake mingw-w64-clang-x86_64-doxygen mingw-w64-clang-x86_64-gcc-compat mingw-w64-clang-x86_64-gtk3 mingw-w64-clang-x86_64-make mingw-w64-clang-x86_64-wxwidgets3.2-msw;;
+  *"MINGW32"*) pacman -S -yy --noconfirm base-devel git mingw-w64-i686-cmake mingw-w64-i686-doxygen mingw-w64-i686-gcc mingw-w64-i686-gtk3 mingw-w64-i686-make mingw-w64-i686-wxwidgets3.2-msw;;
+  *"MINGW64"*) pacman -S -yy --noconfirm base-devel git mingw-w64-x86_64-cmake mingw-w64-x86_64-doxygen mingw-w64-x86_64-gcc mingw-w64-x86_64-gtk3 mingw-w64-x86_64-make mingw-w64-x86_64-wxwidgets3.2-msw;;
+  *"MSYS"*) pacman -S -yy --noconfirm base-devel git cmake doxygen gcc make ;; #gtk3 make wxwidgets3.2-msw;;
+  *"UCRT64"*) pacman -S -yy --noconfirm base-devel git mingw-w64-ucrt-x86_64-cmake mingw-w64-ucrt-x86_64-doxygen mingw-w64-ucrt-x86_64-gcc mingw-w64-ucrt-x86_64-gtk3 mingw-w64-ucrt-x86_64-make mingw-w64-ucrt-x86_64-wxwidgets3.2-msw;;
 esac
+
+if [[ "$OSTYPE" == *"MSYS"* ]]; then
+  echo ""
+  echo "---------------------------------------------------------------"
+  echo ""
+  echo "ERROR : The MSYS Shell is not supported : use : CLANGARM64,"
+  echo "        CLANG32, CLANG64, MINGW32, MINGW64 or UCRT64 Shell."
+  echo ""
+  echo "---------------------------------------------------------------"
+  echo ""
+  exit 1
+fi
 
 #_______________________________________________________________________________
 #                                                       Get cmake_install_prefix
@@ -103,7 +121,7 @@ mkdir Release && mkdir Debug
 pushd Release
 cmake ../..  -DCMAKE_BUILD_TYPE=Release "$@"
 cmake --build . -- -j$build_cores
-if [[ "$OSTYPE" == *"MSYS"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]]; then
+if [[ "$OSTYPE" == *"CLANGARM64"* ]] || [[ "$OSTYPE" == *"CLANG32"* ]] || [[ "$OSTYPE" == *"CLANG64"* ]] || [[ "$OSTYPE" == *"MINGW32"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]] || [[ "$OSTYPE" == *"UCRT64"* ]]; then
   cmake --build . --target install
 else
   sudo cmake --build . --target install
@@ -112,7 +130,7 @@ popd
 pushd Debug
 cmake ../.. -DCMAKE_BUILD_TYPE=Debug "$@"
 cmake --build . -- -j$build_cores
-if [[ "$OSTYPE" == *"MSYS"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]]; then
+if [[ "$OSTYPE" == *"CLANGARM64"* ]] || [[ "$OSTYPE" == *"CLANG32"* ]] || [[ "$OSTYPE" == *"CLANG64"* ]] || [[ "$OSTYPE" == *"MINGW32"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]] || [[ "$OSTYPE" == *"UCRT64"* ]]; then
   cmake --build . --target install
 else
   sudo cmake --build . --target install
@@ -139,7 +157,7 @@ fi
 
 #_______________________________________________________________________________
 #                             Copy install manifest files to xtd share directory
-if [[ "$OSTYPE" == *"MSYS"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]]; then
+if [[ "$OSTYPE" == *"CLANGARM64"* ]] || [[ "$OSTYPE" == *"CLANG32"* ]] || [[ "$OSTYPE" == *"CLANG64"* ]] || [[ "$OSTYPE" == *"MINGW32"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]] || [[ "$OSTYPE" == *"UCRT64"* ]]; then
   cp build/3rdparty/wxwidgets/build_cmake/Release/install_manifest.txt $cmake_install_prefix/share/xtd/wxwidgets_release_install_manifest.txt
   cp build/3rdparty/wxwidgets/build_cmake/Debug/install_manifest.txt $cmake_install_prefix/share/xtd/wxwidgets_debug_install_manifest.txt
   cp build/Release/install_manifest.txt $cmake_install_prefix/share/xtd/xtd_release_install_manifest.txt
@@ -154,7 +172,7 @@ fi
 #_______________________________________________________________________________
 #                                                                 Launch xtd-gui
 echo "Launching xtdc-gui..."
-if [[ "$OSTYPE" == *"MSYS"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]]; then
+if [[ "$OSTYPE" == *"CLANGARM64"* ]] || [[ "$OSTYPE" == *"CLANG32"* ]] || [[ "$OSTYPE" == *"CLANG64"* ]] || [[ "$OSTYPE" == *"MINGW32"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]] || [[ "$OSTYPE" == *"UCRT64"* ]]; then
   start "$cmake_install_prefix\xtd\bin\xtdc-gui.exe"
 elif [[ "$OSTYPE" == *"Darwin"* ]]; then
   open $cmake_install_prefix/bin/xtdc-gui.app; else
