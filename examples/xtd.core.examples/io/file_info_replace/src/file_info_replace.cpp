@@ -13,7 +13,7 @@ public:
       // original_file and file_to_replace must contain the path to files that already exist in the
       // file system. backup_of_file_to_replace is created during the execution of the Replace method.
       
-      auto original_file  = "test.txt"_s;
+      auto original_file = "test.txt"_s;
       auto file_to_replace = "test2.txt"_s;
       auto backup_of_file_to_replace = "test2.txt.bak"_s;
       
