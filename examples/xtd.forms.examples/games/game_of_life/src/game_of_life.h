@@ -212,7 +212,7 @@ namespace game_of_life {
     
     void fill_figure(const std::vector<xtd::ustring>& figure) {
       auto height = xtd::as<int>(figure.size());
-      auto width = 0U;
+      auto width = 0u;
       for (auto line : figure)
         if (line.length() > width) width = xtd::as<int>(line.length());
         
