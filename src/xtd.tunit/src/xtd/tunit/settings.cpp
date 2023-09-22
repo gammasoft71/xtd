@@ -73,7 +73,7 @@ void settings::gtest_compatibility(bool gtest_compatibility) noexcept {
   gtest_compatibility_ = gtest_compatibility;
 }
 
-bool settings::is_match_test_name(const xtd::ustring& test_class_name, const xtd::ustring& test_name) const noexcept {
+bool settings::is_match_test_name(const ustring& test_class_name, const ustring& test_name) const noexcept {
   auto result = false;
   auto found_filter_test_count = false;
   for (auto filter_test : filter_tests())
@@ -122,19 +122,19 @@ void settings::output_xml(bool output_xml) noexcept {
   output_xml_ = output_xml;
 }
 
-xtd::ustring settings::output_json_path() const noexcept {
+ustring settings::output_json_path() const noexcept {
   return output_json_path_;
 }
 
-void settings::output_json_path(const xtd::ustring& output_json_path) noexcept {
+void settings::output_json_path(const ustring& output_json_path) noexcept {
   output_json_path_ = output_json_path;
 }
 
-xtd::ustring settings::output_xml_path() const noexcept {
+ustring settings::output_xml_path() const noexcept {
   return output_xml_path_;
 }
 
-void settings::output_xml_path(const xtd::ustring& output_xml_path) noexcept {
+void settings::output_xml_path(const ustring& output_xml_path) noexcept {
   output_xml_path_ = output_xml_path;
 }
 
@@ -186,7 +186,7 @@ void settings::enable_stack_trace(bool enable_stack_trace) noexcept {
   enable_stack_trace_ = enable_stack_trace;
 }
 
-bool settings::pattern_compare(const xtd::ustring& name, const xtd::ustring& pattern) const noexcept {
+bool settings::pattern_compare(const ustring& name, const ustring& pattern) const noexcept {
   if (pattern == "") return name == "";
   if (name == "") return false;
   if (pattern == "*" || pattern == "*.*") return true;
