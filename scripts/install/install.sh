@@ -52,8 +52,8 @@ case "$OSTYPE" in
   *"openSUSE"*) sudo zypper update; sudo zypper install -y -t pattern devel_basis; sudo zypper install -y alsa-devel doxygen gsound-devel gtk3-devel cmake;;
   *"CentOS"* | *"Fedora"* | *"RedHat"*) sudo yum update; sudo yum install alsa-lib-devel cmake gtk3-devel gsound-devel gtk3-devel -y;;
   *"Rocky"*) sudo yum update; sudo yum groupinstall 'Development Tools' -y; sudo yum install alsa-lib-devel cmake libuiid-devel gsound gtk3-devel -y;;
-  *"MINGW64"*) pacman -S cmake doxygen gcc git make -yy --noconfirm;;
-  *"MSYS"*) pacman -S cmake doxygen gcc git make -yy --noconfirm;;
+  *"MINGW64"*) pacman -Sy base-devel cmake doxygen gcc git make mingw-w64-x86_64-wxWidgets3.2 -yy --noconfirm;;
+  *"MSYS"*) pacman -Sy base-devel cmake doxygen gcc git make mingw-w64-x86_64-wxWidgets3.2 -yy --noconfirm;;
 esac
 
 #_______________________________________________________________________________
