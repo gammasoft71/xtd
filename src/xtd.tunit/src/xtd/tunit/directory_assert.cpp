@@ -1,6 +1,7 @@
 #include "../../../include/xtd/tunit/directory_assert"
 
 using namespace xtd;
+using namespace xtd::diagnostics;
 using namespace xtd::io;
 using namespace xtd::tunit;
 
@@ -8,35 +9,35 @@ using namespace xtd::tunit;
 using namespace std::filesystem;
 
 void directory_assert::are_equal(const directory_entry& expected, const directory_entry& actual) {
-  are_equal(expected, actual, "", xtd::diagnostics::stack_frame::empty());
+  are_equal(expected, actual, "", stack_frame::empty());
 }
 
-void directory_assert::are_equal(const directory_entry& expected, const directory_entry& actual, const xtd::diagnostics::stack_frame& stack_frame) {
+void directory_assert::are_equal(const directory_entry& expected, const directory_entry& actual, const stack_frame& stack_frame) {
   are_equal(expected, actual, "", stack_frame);
 }
 
 void directory_assert::are_equal(const directory_entry& expected, const directory_entry& actual, const std::string& message) {
-  are_equal(expected, actual, message, xtd::diagnostics::stack_frame::empty());
+  are_equal(expected, actual, message, stack_frame::empty());
 }
 
-void directory_assert::are_equal(const directory_entry& expected, const directory_entry& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
+void directory_assert::are_equal(const directory_entry& expected, const directory_entry& actual, const std::string& message, const stack_frame& stack_frame) {
   are_equal(directory_info(expected.path().string()), directory_info(actual.path().string()), message, stack_frame);
 }
 #endif
 
 void directory_assert::are_equal(const directory_info& expected, const directory_info& actual) {
-  are_equal(expected, actual, "", xtd::diagnostics::stack_frame::empty());
+  are_equal(expected, actual, "", stack_frame::empty());
 }
 
-void directory_assert::are_equal(const directory_info& expected, const directory_info& actual, const xtd::diagnostics::stack_frame& stack_frame) {
+void directory_assert::are_equal(const directory_info& expected, const directory_info& actual, const stack_frame& stack_frame) {
   are_equal(expected, actual, "", stack_frame);
 }
 
 void directory_assert::are_equal(const directory_info& expected, const directory_info& actual, const std::string& message) {
-  are_equal(expected, actual, message, xtd::diagnostics::stack_frame::empty());
+  are_equal(expected, actual, message, stack_frame::empty());
 }
 
-void directory_assert::are_equal(const directory_info& expected, const directory_info& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
+void directory_assert::are_equal(const directory_info& expected, const directory_info& actual, const std::string& message, const stack_frame& stack_frame) {
   if (expected.full_name() != actual.full_name())
     base_assert::fail(base_assert::to_string(expected.full_name()), base_assert::to_string(actual.full_name()), message, stack_frame);
   else
@@ -45,35 +46,35 @@ void directory_assert::are_equal(const directory_info& expected, const directory
 
 #if defined(__cpp_lib_filesystem)
 void directory_assert::are_not_equal(const directory_entry& expected, const directory_entry& actual) {
-  are_not_equal(expected, actual, "", xtd::diagnostics::stack_frame::empty());
+  are_not_equal(expected, actual, "", stack_frame::empty());
 }
 
-void directory_assert::are_not_equal(const directory_entry& expected, const directory_entry& actual, const xtd::diagnostics::stack_frame& stack_frame) {
+void directory_assert::are_not_equal(const directory_entry& expected, const directory_entry& actual, const stack_frame& stack_frame) {
   are_not_equal(expected, actual, "", stack_frame);
 }
 
 void directory_assert::are_not_equal(const directory_entry& expected, const directory_entry& actual, const std::string& message) {
-  are_not_equal(expected, actual, message, xtd::diagnostics::stack_frame::empty());
+  are_not_equal(expected, actual, message, stack_frame::empty());
 }
 
-void directory_assert::are_not_equal(const directory_entry& expected, const directory_entry& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
+void directory_assert::are_not_equal(const directory_entry& expected, const directory_entry& actual, const std::string& message, const stack_frame& stack_frame) {
   are_not_equal(directory_info(expected.path().string()), directory_info(actual.path().string()), message, stack_frame);
 }
 #endif
 
 void directory_assert::are_not_equal(const directory_info& expected, const directory_info& actual) {
-  are_not_equal(expected, actual, "", xtd::diagnostics::stack_frame::empty());
+  are_not_equal(expected, actual, "", stack_frame::empty());
 }
 
-void directory_assert::are_not_equal(const directory_info& expected, const directory_info& actual, const xtd::diagnostics::stack_frame& stack_frame) {
+void directory_assert::are_not_equal(const directory_info& expected, const directory_info& actual, const stack_frame& stack_frame) {
   are_not_equal(expected, actual, "", stack_frame);
 }
 
 void directory_assert::are_not_equal(const directory_info& expected, const directory_info& actual, const std::string& message) {
-  are_not_equal(expected, actual, message, xtd::diagnostics::stack_frame::empty());
+  are_not_equal(expected, actual, message, stack_frame::empty());
 }
 
-void directory_assert::are_not_equal(const directory_info& expected, const directory_info& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
+void directory_assert::are_not_equal(const directory_info& expected, const directory_info& actual, const std::string& message, const stack_frame& stack_frame) {
   if (expected.full_name() == actual.full_name())
     base_assert::fail("not " + base_assert::to_string(expected.full_name()), base_assert::to_string(actual.full_name()), message, stack_frame);
   else
@@ -82,36 +83,36 @@ void directory_assert::are_not_equal(const directory_info& expected, const direc
 
 #if defined(__cpp_lib_filesystem)
 void directory_assert::does_not_exist(const std::filesystem::directory_entry& directory) {
-  does_not_exist(directory, "", xtd::diagnostics::stack_frame::empty());
+  does_not_exist(directory, "", stack_frame::empty());
 }
 
-void directory_assert::does_not_exist(const std::filesystem::directory_entry& directory, const xtd::diagnostics::stack_frame& stack_frame) {
+void directory_assert::does_not_exist(const std::filesystem::directory_entry& directory, const stack_frame& stack_frame) {
   does_not_exist(directory, "", stack_frame);
 }
 
 void directory_assert::does_not_exist(const std::filesystem::directory_entry& directory, const std::string& message) {
-  does_not_exist(directory, message, xtd::diagnostics::stack_frame::empty());
+  does_not_exist(directory, message, stack_frame::empty());
 }
 
-void directory_assert::does_not_exist(const std::filesystem::directory_entry& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
+void directory_assert::does_not_exist(const std::filesystem::directory_entry& directory, const std::string& message, const stack_frame& stack_frame) {
   does_not_exist(directory_info(directory.path().string()), message, stack_frame);
 }
 #endif
 
-void directory_assert::does_not_exist(const xtd::io::directory_info& directory) {
-  does_not_exist(directory, "", xtd::diagnostics::stack_frame::empty());
+void directory_assert::does_not_exist(const directory_info& directory) {
+  does_not_exist(directory, "", stack_frame::empty());
 }
 
-void directory_assert::does_not_exist(const xtd::io::directory_info& directory, const xtd::diagnostics::stack_frame& stack_frame) {
+void directory_assert::does_not_exist(const directory_info& directory, const stack_frame& stack_frame) {
   does_not_exist(directory, "", stack_frame);
 }
 
-void directory_assert::does_not_exist(const xtd::io::directory_info& directory, const std::string& message) {
-  does_not_exist(directory, message, xtd::diagnostics::stack_frame::empty());
+void directory_assert::does_not_exist(const directory_info& directory, const std::string& message) {
+  does_not_exist(directory, message, stack_frame::empty());
 }
 
-void directory_assert::does_not_exist(const xtd::io::directory_info& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
-  if (xtd::io::directory::exists(directory.full_name()))
+void directory_assert::does_not_exist(const directory_info& directory, const std::string& message, const stack_frame& stack_frame) {
+  if (directory::exists(directory.full_name()))
     base_assert::fail("not directory exists", "\"" + base_assert::to_string(directory) + "\"", message, stack_frame);
   else
     assert::succeed(message, stack_frame);
@@ -119,35 +120,35 @@ void directory_assert::does_not_exist(const xtd::io::directory_info& directory, 
 
 #if defined(__cpp_lib_filesystem)
 void directory_assert::exists(const std::filesystem::directory_entry& directory) {
-  exists(directory, "", xtd::diagnostics::stack_frame::empty());
+  exists(directory, "", stack_frame::empty());
 }
 
-void directory_assert::exists(const std::filesystem::directory_entry& directory, const xtd::diagnostics::stack_frame& stack_frame) {
+void directory_assert::exists(const std::filesystem::directory_entry& directory, const stack_frame& stack_frame) {
   exists(directory, "", stack_frame);
 }
 
 void directory_assert::exists(const std::filesystem::directory_entry& directory, const std::string& message) {
-  exists(directory, message, xtd::diagnostics::stack_frame::empty());
+  exists(directory, message, stack_frame::empty());
 }
 
-void directory_assert::exists(const std::filesystem::directory_entry& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
+void directory_assert::exists(const std::filesystem::directory_entry& directory, const std::string& message, const stack_frame& stack_frame) {
   exists(directory_info(directory.path().string()), message, stack_frame);
 }
 #endif
 
-void directory_assert::exists(const xtd::io::directory_info& directory) {
-  exists(directory, "", xtd::diagnostics::stack_frame::empty());
+void directory_assert::exists(const directory_info& directory) {
+  exists(directory, "", stack_frame::empty());
 }
 
-void directory_assert::exists(const xtd::io::directory_info& directory, const xtd::diagnostics::stack_frame& stack_frame) {
+void directory_assert::exists(const directory_info& directory, const stack_frame& stack_frame) {
   exists(directory, "", stack_frame);
 }
 
-void directory_assert::exists(const xtd::io::directory_info& directory, const std::string& message) {
-  exists(directory, message, xtd::diagnostics::stack_frame::empty());
+void directory_assert::exists(const directory_info& directory, const std::string& message) {
+  exists(directory, message, stack_frame::empty());
 }
 
-void directory_assert::exists(const xtd::io::directory_info& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
+void directory_assert::exists(const directory_info& directory, const std::string& message, const stack_frame& stack_frame) {
   if (!directory.exists())
     base_assert::fail("directory exists", "\"" + base_assert::to_string(directory) + "\"", message, stack_frame);
   else
