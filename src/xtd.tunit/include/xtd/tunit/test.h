@@ -6,10 +6,10 @@
 #include "../tunit_export"
 #include "assert"
 #include "assert_error"
-#include <xtd/date_time>
 #include <xtd/diagnostics/stack_frame>
+#include <xtd/date_time>
+#include <xtd/using>
 #include <functional>
-#include <string>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -55,13 +55,13 @@ namespace xtd {
       /// @param name Represents the name of the method. Generally is the same name as the method name.
       /// @param method The method that contains the test.
       /// @param stack_frame The stack frame of the method.
-      test(const std::string& name, const std::function<void()>& method, const xtd::diagnostics::stack_frame& stack_frame) noexcept;
+      test(const xtd::ustring& name, const std::function<void()>& method, const xtd::diagnostics::stack_frame& stack_frame) noexcept;
       /// @brief Creates a new test instance with specified name, method and stack frame.
       /// @param name Represents the name of the method. Generally is the same name as the method name.
       /// @param method The method that contains the test.
       /// @param ignored If true, the test will be ignored during tests execution; otherwise, the test will be taken into account during tests execution.
       /// @param stack_frame The stack frame of the method.
-      test(const std::string& name, const std::function<void()>& method, bool ignore, const xtd::diagnostics::stack_frame& stack_frame) noexcept;
+      test(const xtd::ustring& name, const std::function<void()>& method, bool ignore, const xtd::diagnostics::stack_frame& stack_frame) noexcept;
       /// @}
       
       /// @name Properties
@@ -73,7 +73,7 @@ namespace xtd {
       
       /// @brief Gets the actual value string.
       /// @return The actual value string. Can be empty.
-      const std::string& actual() const noexcept;
+      const xtd::ustring& actual() const noexcept;
       
       /// @brief Gets the elapsed time of the test method.
       /// @return The elapsed time of the test method.
@@ -81,7 +81,7 @@ namespace xtd {
       
       /// @brief Gets the expect value string.
       /// @return The expect value string. Can be empty.
-      const std::string& expect() const noexcept;
+      const xtd::ustring& expect() const noexcept;
       
       /// @brief Gest a value that represent an failed test.
       /// @return tru is the test is failed; otherwise false.
@@ -113,15 +113,15 @@ namespace xtd {
       
       /// @brief Gets the message.
       /// @return The message.
-      const std::string& message() const noexcept;
+      const xtd::ustring& message() const noexcept;
       
       /// @brief Gets the name of the test method.
       /// @return The nzme of the test method.
-      const std::string& name() const noexcept;
+      const xtd::ustring& name() const noexcept;
       
       /// @brief Gets the user message.
       /// @return The user message.
-      const std::string& user_message() const noexcept;
+      const xtd::ustring& user_message() const noexcept;
       /// @}
       
       /// @cond
@@ -146,15 +146,15 @@ namespace xtd {
       static test* current_test_;
       static const test_class* current_test_class_;
       static const unit_test* current_unit_test_;
-      std::string actual_;
-      std::string expect_;
+      xtd::ustring actual_;
+      xtd::ustring expect_;
       xtd::diagnostics::stack_frame stack_frame_ = xtd::diagnostics::stack_frame::empty();
-      std::string message_;
+      xtd::ustring message_;
       std::function<void()> method_;
-      std::string name_;
+      xtd::ustring name_;
       xtd::date_time start_time_;
       test_status status_ = test_status::not_started;
-      std::string user_message_;
+      xtd::ustring user_message_;
     };
   }
 }
