@@ -18,35 +18,35 @@ ustring test_class::name() const noexcept {
 }
 
 size_t test_class::test_count() const noexcept {
-  size_t count = 0;
+  auto count = 0_sz;
   for (auto method : tests_)
     if (settings::default_settings().is_match_test_name(name(), method.name())) count++;
   return count;
 }
 
 size_t test_class::aborted_test_count() const noexcept {
-  size_t count = 0;
+  auto count = 0_sz;
   for (auto method : tests_)
     if (settings::default_settings().is_match_test_name(name(), method.name()) && method.aborted()) count++;
   return count;
 }
 
 size_t test_class::failed_test_count() const noexcept {
-  size_t count = 0;
+  auto count = 0_sz;
   for (auto method : tests_)
     if (settings::default_settings().is_match_test_name(name(), method.name()) && method.failed()) count++;
   return count;
 }
 
 size_t test_class::ignored_test_count() const noexcept {
-  size_t count = 0;
+  auto count = 0_sz;
   for (auto method : tests_)
     if (settings::default_settings().is_match_test_name(name(), method.name()) && method.ignored()) count++;
   return count;
 }
 
 size_t test_class::succeed_test_count() const noexcept {
-  size_t count = 0;
+  auto count = 0_sz;
   for (auto method : tests_)
     if (settings::default_settings().is_match_test_name(name(), method.name()) && method.succeed()) count++;
   return count;
