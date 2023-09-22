@@ -1,10 +1,10 @@
-# date_time_days_in_month2
+# date_time_subtract
 
-Shows how to use [xtd::date_time::days_in_month](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#acf06b7e2c3c396c332d86e03c87f1d23) method.
+Shows how to use [xtd::date_time::subtract](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#aaf1f38f9b51733e38b5db3b5dfde6bb6) method.
 
 # Sources
 
-[src/date_time_days_in_month2.cpp](src/date_time_days_in_month2.cpp)
+[src/date_time_subtract.cpp](src/date_time_subtract.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -19,33 +19,11 @@ xtdc run
 # Output
 
 ```
-Days in the Month for the Gregorian calendar
-
-Year      Month          Days
-
-2012      january          31
-2012      february         29
-2012      march            31
-2012      april            30
-2012      may              31
-2012      june             30
-2012      july             31
-2012      august           31
-2012      september        30
-2012      october          31
-2012      november         30
-2012      december         31
-
-2014      january          31
-2014      february         28
-2014      march            31
-2014      april            30
-2014      may              31
-2014      june             30
-2014      july             31
-2014      august           31
-2014      september        30
-2014      october          31
-2014      november         30
-2014      december         31
+date1 = 1996-06-03 22:15:00
+date2 = 1996-12-06 13:02:00
+date3 = 1996-10-12 08:42:00
+diff1 = 185.14:47:00
+date4 = 1996-04-09 17:55:00
+diff2 = Sun Feb 25 04:20:00 0001
+date5 = 1996-04-09 17:55:00
 ```
