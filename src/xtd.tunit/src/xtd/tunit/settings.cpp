@@ -1,10 +1,11 @@
 #include "../../../include/xtd/tunit/settings"
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::tunit;
 
 settings& settings::default_settings() noexcept {
-  static xtd::tunit::settings settings;
+  static auto settings = tunit::settings {};
   return settings;
 }
 
@@ -56,12 +57,12 @@ void settings::exit_status(int32 exit_status) noexcept {
   exit_status_ = exit_status;
 }
 
-const std::vector<ustring>& settings::filter_tests() const noexcept {
+const vector<ustring>& settings::filter_tests() const noexcept {
   return filter_tests_;
 }
 
-void settings::filter_tests(const std::vector<ustring>& filter_tests) noexcept {
-  filter_tests_ = !filter_tests.empty() ? filter_tests : std::vector<ustring> {"*.*"};
+void settings::filter_tests(const vector<ustring>& filter_tests) noexcept {
+  filter_tests_ = !filter_tests.empty() ? filter_tests : vector<ustring> {"*.*"};
 }
 
 bool settings::gtest_compatibility() const noexcept {
@@ -72,9 +73,8 @@ void settings::gtest_compatibility(bool gtest_compatibility) noexcept {
   gtest_compatibility_ = gtest_compatibility;
 }
 
-bool settings::is_match_test_name(const std::string& test_class_name, const std::string& test_name) const noexcept {
+bool settings::is_match_test_name(const xtd::ustring& test_class_name, const xtd::ustring& test_name) const noexcept {
   auto result = false;
-
   auto found_filter_test_count = false;
   for (auto filter_test : filter_tests())
     if (!filter_test.starts_with('-')) {
@@ -122,19 +122,19 @@ void settings::output_xml(bool output_xml) noexcept {
   output_xml_ = output_xml;
 }
 
-std::string settings::output_json_path() const noexcept {
+xtd::ustring settings::output_json_path() const noexcept {
   return output_json_path_;
 }
 
-void settings::output_json_path(const std::string& output_json_path) noexcept {
+void settings::output_json_path(const xtd::ustring& output_json_path) noexcept {
   output_json_path_ = output_json_path;
 }
 
-std::string settings::output_xml_path() const noexcept {
+xtd::ustring settings::output_xml_path() const noexcept {
   return output_xml_path_;
 }
 
-void settings::output_xml_path(const std::string& output_xml_path) noexcept {
+void settings::output_xml_path(const xtd::ustring& output_xml_path) noexcept {
   output_xml_path_ = output_xml_path;
 }
 
@@ -170,11 +170,11 @@ void settings::show_duration(bool show_duration) noexcept {
   show_duration_ = show_duration;
 }
 
-const xtd::date_time& settings::end_time() const noexcept {
+const date_time& settings::end_time() const noexcept {
   return end_time_;
 }
 
-const xtd::date_time& settings::start_time() const noexcept {
+const date_time& settings::start_time() const noexcept {
   return start_time_;
 }
 
@@ -186,7 +186,7 @@ void settings::enable_stack_trace(bool enable_stack_trace) noexcept {
   enable_stack_trace_ = enable_stack_trace;
 }
 
-bool settings::pattern_compare(const std::string& name, const std::string& pattern) const noexcept {
+bool settings::pattern_compare(const xtd::ustring& name, const xtd::ustring& pattern) const noexcept {
   if (pattern == "") return name == "";
   if (name == "") return false;
   if (pattern == "*" || pattern == "*.*") return true;
@@ -194,10 +194,10 @@ bool settings::pattern_compare(const std::string& name, const std::string& patte
   return ((pattern[0] == '?') || (name[0] == pattern[0])) && pattern_compare(name.substr(1), pattern.substr(1));
 }
 
-void settings::end_time(const xtd::date_time& end_time) noexcept {
+void settings::end_time(const date_time& end_time) noexcept {
   start_time_ = end_time;
 }
 
-void settings::start_time(const xtd::date_time& start_time) noexcept {
+void settings::start_time(const date_time& start_time) noexcept {
   start_time_ = start_time;
 }
