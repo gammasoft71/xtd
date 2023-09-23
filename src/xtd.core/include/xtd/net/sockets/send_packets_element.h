@@ -3,11 +3,11 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 
+#include "../ip_address"
+#include "../../ustring"
 #include <fstream>
 #include <functional>
 #include <vector>
-#include "../../ustring.h"
-#include "../ip_address.h"
 
 /// @cond
 #undef unix
