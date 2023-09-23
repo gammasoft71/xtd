@@ -24,7 +24,7 @@ void directory_valid::are_equal(const directory_entry& expected, const directory
   try {
     directory_assert::are_equal(expected, actual, message, stack_frame);
   } catch (...) {
-    base_assert::error();
+    error();
   }
 }
 #endif
@@ -45,7 +45,7 @@ void directory_valid::are_equal(const directory_info& expected, const directory_
   try {
     directory_assert::are_equal(expected, actual, message, stack_frame);
   } catch (...) {
-    base_assert::error();
+    error();
   }
 }
 
@@ -64,7 +64,7 @@ void directory_valid::are_not_equal(const directory_entry& expected, const direc
   try {
     directory_assert::are_not_equal(expected, actual, message, stack_frame);
   } catch (...) {
-    base_assert::error();
+    error();
   }
 }
 #endif
@@ -85,7 +85,7 @@ void directory_valid::are_not_equal(const directory_info& expected, const direct
   try {
     directory_assert::are_not_equal(expected, actual, message, stack_frame);
   } catch (...) {
-    base_assert::error();
+    error();
   }
 }
 
@@ -123,7 +123,7 @@ void directory_valid::does_not_exist(const directory_info& directory, const std:
   try {
     directory_assert::does_not_exist(directory, message, stack_frame);
   } catch (...) {
-    base_assert::error();
+    error();
   }
 }
 
@@ -161,6 +161,6 @@ void directory_valid::exists(const directory_info& directory, const std::string&
   try {
     directory_assert::exists(directory, message, stack_frame);
   } catch (...) {
-    base_assert::error();
+    error();
   }
 }

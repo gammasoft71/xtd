@@ -83,7 +83,7 @@ namespace xtd {
       static void all_items_are_instances_of(const collection_t& collection, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
         for (auto item : collection)
           if (dynamic_cast<expected_t>(item) == nullptr) {
-            base_assert::fail("all items instance of <" + typeof_<expected_t>().full_name() + ">", base_assert::join_items(collection), message, stack_frame);
+            fail("all items instance of <" + typeof_<expected_t>().full_name() + ">", join_items(collection), message, stack_frame);
             return;
           }
         assert::succeed(message, stack_frame);
@@ -100,7 +100,7 @@ namespace xtd {
       static void all_items_are_instances_of(const std::initializer_list<item_t>& collection, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
         for (auto item : collection)
           if (dynamic_cast<expected_t>(item) == nullptr) {
-            base_assert::fail("all items instance of <" + typeof_<expected_t>().full_name() + ">", base_assert::join_items(collection), message, stack_frame);
+            fail("all items instance of <" + typeof_<expected_t>().full_name() + ">", join_items(collection), message, stack_frame);
             return;
           }
         assert::succeed(message, stack_frame);
@@ -169,7 +169,7 @@ namespace xtd {
       static void all_items_are_not_null(const collection_t& collection, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
         for (auto item : collection)
           if (item == nullptr) {
-            base_assert::fail("all items are not null", base_assert::join_items(collection), message, stack_frame);
+            fail("all items are not null", join_items(collection), message, stack_frame);
             return;
           }
         assert::succeed(message, stack_frame);
@@ -186,7 +186,7 @@ namespace xtd {
       static void all_items_are_not_null(const std::initializer_list<item_t>& collection, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
         for (auto item : collection)
           if (item == nullptr) {
-            base_assert::fail("all items are not null", base_assert::join_items(collection), message, stack_frame);
+            fail("all items are not null", join_items(collection), message, stack_frame);
             return;
           }
         assert::succeed(message, stack_frame);
@@ -254,7 +254,7 @@ namespace xtd {
         for (auto item : collection) {
           auto result = counts.emplace(item, 1);
           if (result.second == false)
-            base_assert::fail("all items are unique", base_assert::join_items(collection), message, stack_frame);
+            fail("all items are unique", join_items(collection), message, stack_frame);
         }
         assert::succeed(message, stack_frame);
       }
@@ -272,7 +272,7 @@ namespace xtd {
         for (auto item : collection) {
           auto result = counts.emplace(item, 1);
           if (result.second == false)
-            base_assert::fail("all items are unique", base_assert::join_items(collection), message, stack_frame);
+            fail("all items are unique", join_items(collection), message, stack_frame);
         }
         assert::succeed(message, stack_frame);
       }
@@ -331,7 +331,7 @@ namespace xtd {
       template<typename expected_t, typename actual_t>
       static void are_equal(const expected_t& expected, const actual_t& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
         if (std::equal(actual.begin(), actual.end(), expected.begin(), expected.end()) == false)
-          base_assert::fail(base_assert::join_items(expected), base_assert::join_items(actual), message, stack_frame);
+          fail(join_items(expected), join_items(actual), message, stack_frame);
         else
           assert::succeed(message, stack_frame);
       }
@@ -346,7 +346,7 @@ namespace xtd {
       template<typename item_t>
       static void are_equal(const std::initializer_list<item_t>& expected, const std::initializer_list<item_t>& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
         if (std::equal(actual.begin(), actual.end(), expected.begin(), expected.end()) == false)
-          base_assert::fail(base_assert::join_items(expected), base_assert::join_items(actual), message, stack_frame);
+          fail(join_items(expected), join_items(actual), message, stack_frame);
         else
           assert::succeed(message, stack_frame);
       }
@@ -359,7 +359,7 @@ namespace xtd {
       template<typename collection_t, typename item_t>
       static void are_equal(const collection_t& expected, const std::initializer_list<item_t>& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
         if (std::equal(actual.begin(), actual.end(), expected.begin(), expected.end()) == false)
-          base_assert::fail(base_assert::join_items(expected), base_assert::join_items(actual), message, stack_frame);
+          fail(join_items(expected), join_items(actual), message, stack_frame);
         else
           assert::succeed(message, stack_frame);
       }
@@ -372,7 +372,7 @@ namespace xtd {
       template<typename item_t, typename collection_t>
       static void are_equal(const std::initializer_list<item_t>& expected, const collection_t& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
         if (std::equal(actual.begin(), actual.end(), expected.begin(), expected.end()) == false)
-          base_assert::fail(base_assert::join_items(expected), base_assert::join_items(actual), message, stack_frame);
+          fail(join_items(expected), join_items(actual), message, stack_frame);
         else
           assert::succeed(message, stack_frame);
       }
@@ -435,7 +435,7 @@ namespace xtd {
         expected_t actual_sorted = actual;
         std::sort(actual_sorted.begin(), actual_sorted.end());
         if (std::equal(actual_sorted.begin(), actual_sorted.end(), expect_sorted.begin(), expect_sorted.end()) == false)
-          base_assert::fail("equivalent " + base_assert::join_items(expected), base_assert::join_items(actual), message, stack_frame);
+          fail("equivalent " + join_items(expected), join_items(actual), message, stack_frame);
         else
           assert::succeed(message, stack_frame);
       }
@@ -454,7 +454,7 @@ namespace xtd {
         std::vector<actual_t> actual_sorted = actual;
         std::sort(actual_sorted.begin(), actual_sorted.end());
         if (std::equal(actual_sorted.begin(), actual_sorted.end(), expect_sorted.begin(), expect_sorted.end()) == false)
-          base_assert::fail("equivalent " + base_assert::join_items(expected), base_assert::join_items(actual), message, stack_frame);
+          fail("equivalent " + join_items(expected), join_items(actual), message, stack_frame);
         else
           assert::succeed(message, stack_frame);
       }
@@ -471,7 +471,7 @@ namespace xtd {
         std::vector<item_t> actual_sorted = actual;
         std::sort(actual_sorted.begin(), actual_sorted.end());
         if (std::equal(actual_sorted.begin(), actual_sorted.end(), expect_sorted.begin(), expect_sorted.end()) == false)
-          base_assert::fail("equivalent " + base_assert::join_items(expected), base_assert::join_items(actual), message, stack_frame);
+          fail("equivalent " + join_items(expected), join_items(actual), message, stack_frame);
         else
           assert::succeed(message, stack_frame);
       }
@@ -488,7 +488,7 @@ namespace xtd {
         collection_t actual_sorted = actual;
         std::sort(actual_sorted.begin(), actual_sorted.end());
         if (std::equal(actual_sorted.begin(), actual_sorted.end(), expect_sorted.begin(), expect_sorted.end()) == false)
-          base_assert::fail("equivalent " + base_assert::join_items(expected), base_assert::join_items(actual), message, stack_frame);
+          fail("equivalent " + join_items(expected), join_items(actual), message, stack_frame);
         else
           assert::succeed(message, stack_frame);
       }
@@ -547,7 +547,7 @@ namespace xtd {
       template<typename expected_t, typename actual_t>
       static void are_not_equal(const expected_t& expected, const actual_t& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
         if (std::equal(actual.begin(), actual.end(), expected.begin(), expected.end()) == true)
-          base_assert::fail("not " + base_assert::join_items(expected), base_assert::join_items(actual), message, stack_frame);
+          fail("not " + join_items(expected), join_items(actual), message, stack_frame);
         else
           assert::succeed(message, stack_frame);
       }
@@ -562,7 +562,7 @@ namespace xtd {
       template<typename item_t>
       static void are_not_equal(const std::initializer_list<item_t>& expected, const std::initializer_list<item_t>& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
         if (std::equal(actual.begin(), actual.end(), expected.begin(), expected.end()) == true)
-          base_assert::fail("not " + base_assert::join_items(expected), base_assert::join_items(actual), message, stack_frame);
+          fail("not " + join_items(expected), join_items(actual), message, stack_frame);
         else
           assert::succeed(message, stack_frame);
       }
@@ -575,7 +575,7 @@ namespace xtd {
       template<typename collection_t, typename item_t>
       static void are_not_equal(const collection_t& expected, const std::initializer_list<item_t>& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
         if (std::equal(actual.begin(), actual.end(), expected.begin(), expected.end()) == true)
-          base_assert::fail("not " + base_assert::join_items(expected), base_assert::join_items(actual), message, stack_frame);
+          fail("not " + join_items(expected), join_items(actual), message, stack_frame);
         else
           assert::succeed(message, stack_frame);
       }
@@ -588,7 +588,7 @@ namespace xtd {
       template<typename item_t, typename collection_t>
       static void are_not_equal(const std::initializer_list<item_t>& expected, const collection_t& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
         if (std::equal(actual.begin(), actual.end(), expected.begin(), expected.end()) == true)
-          base_assert::fail("not " + base_assert::join_items(expected), base_assert::join_items(actual), message, stack_frame);
+          fail("not " + join_items(expected), join_items(actual), message, stack_frame);
         else
           assert::succeed(message, stack_frame);
       }
@@ -651,7 +651,7 @@ namespace xtd {
         expected_t actual_sorted = actual;
         std::sort(actual_sorted.begin(), actual_sorted.end());
         if (std::equal(actual_sorted.begin(), actual_sorted.end(), expect_sorted.begin(), expect_sorted.end()) == true)
-          base_assert::fail("not equivalent " + base_assert::join_items(expected), base_assert::join_items(actual), message, stack_frame);
+          fail("not equivalent " + join_items(expected), join_items(actual), message, stack_frame);
         else
           assert::succeed(message, stack_frame);
       }
@@ -670,7 +670,7 @@ namespace xtd {
         std::vector<actual_t> actual_sorted = actual;
         std::sort(actual_sorted.begin(), actual_sorted.end());
         if (std::equal(actual_sorted.begin(), actual_sorted.end(), expect_sorted.begin(), expect_sorted.end()) == true)
-          base_assert::fail("not equivalent " + base_assert::join_items(expected), base_assert::join_items(actual), message, stack_frame);
+          fail("not equivalent " + join_items(expected), join_items(actual), message, stack_frame);
         else
           assert::succeed(message, stack_frame);
       }
@@ -687,7 +687,7 @@ namespace xtd {
         std::vector<item_t> actual_sorted = actual;
         std::sort(actual_sorted.begin(), actual_sorted.end());
         if (std::equal(actual_sorted.begin(), actual_sorted.end(), expect_sorted.begin(), expect_sorted.end()) == true)
-          base_assert::fail("not equivalent " + base_assert::join_items(expected), base_assert::join_items(actual), message, stack_frame);
+          fail("not equivalent " + join_items(expected), join_items(actual), message, stack_frame);
         else
           assert::succeed(message, stack_frame);
       }
@@ -704,7 +704,7 @@ namespace xtd {
         collection_t actual_sorted = actual;
         std::sort(actual_sorted.begin(), actual_sorted.end());
         if (std::equal(actual_sorted.begin(), actual_sorted.end(), expect_sorted.begin(), expect_sorted.end()) == true)
-          base_assert::fail("not equivalent " + base_assert::join_items(expected), base_assert::join_items(actual), message, stack_frame);
+          fail("not equivalent " + join_items(expected), join_items(actual), message, stack_frame);
         else
           assert::succeed(message, stack_frame);
       }
@@ -764,7 +764,7 @@ namespace xtd {
       static void contains(const expected_t& expected, const actual_t& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
         for (auto item : expected) {
           if (std::find(actual.begin(), actual.end(), item) == actual.end()) {
-            base_assert::fail("contains " + base_assert::join_items(expected), base_assert::join_items(actual), message, stack_frame);
+            fail("contains " + join_items(expected), join_items(actual), message, stack_frame);
             return;
           }
         }
@@ -782,7 +782,7 @@ namespace xtd {
       static void contains(const std::initializer_list<item_t>& expected, const std::initializer_list<item_t>& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
         for (auto item : expected) {
           if (std::find(actual.begin(), actual.end(), item) == actual.end()) {
-            base_assert::fail("contains " + base_assert::join_items(expected), base_assert::join_items(actual), message, stack_frame);
+            fail("contains " + join_items(expected), join_items(actual), message, stack_frame);
             return;
           }
         }
@@ -798,7 +798,7 @@ namespace xtd {
       static void contains(const collection_t& expected, const std::initializer_list<item_t>& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
         for (auto item : expected) {
           if (std::find(actual.begin(), actual.end(), item) == actual.end()) {
-            base_assert::fail("contains " + base_assert::join_items(expected), base_assert::join_items(actual), message, stack_frame);
+            fail("contains " + join_items(expected), join_items(actual), message, stack_frame);
             return;
           }
         }
@@ -814,7 +814,7 @@ namespace xtd {
       static void contains(const std::initializer_list<item_t>& expected, const collection_t& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
         for (auto item : expected) {
           if (std::find(actual.begin(), actual.end(), item) == actual.end()) {
-            base_assert::fail("contains " + base_assert::join_items(expected), base_assert::join_items(actual), message, stack_frame);
+            fail("contains " + join_items(expected), join_items(actual), message, stack_frame);
             return;
           }
         }
@@ -880,7 +880,7 @@ namespace xtd {
             return;
           }
         }
-        base_assert::fail("not contains " + base_assert::join_items(expected), base_assert::join_items(actual), message, stack_frame);
+        fail("not contains " + join_items(expected), join_items(actual), message, stack_frame);
       }
       
       /// @cond
@@ -898,7 +898,7 @@ namespace xtd {
             return;
           }
         }
-        base_assert::fail("not contains " + base_assert::join_items(expected), base_assert::join_items(actual), message, stack_frame);
+        fail("not contains " + join_items(expected), join_items(actual), message, stack_frame);
       }
       template<typename collection_t, typename item_t>
       static void does_not_contain(const collection_t& expected, const std::initializer_list<item_t>& actual) {does_not_contain(expected, actual, "", xtd::diagnostics::stack_frame::empty());}
@@ -914,7 +914,7 @@ namespace xtd {
             return;
           }
         }
-        base_assert::fail("not contains " + base_assert::join_items(expected), base_assert::join_items(actual), message, stack_frame);
+        fail("not contains " + join_items(expected), join_items(actual), message, stack_frame);
       }
       template<typename item_t, typename collection_t>
       static void does_not_contain(const std::initializer_list<item_t>& expected, const collection_t& actual) {does_not_contain(expected, actual, "", xtd::diagnostics::stack_frame::empty());}
@@ -930,7 +930,7 @@ namespace xtd {
             return;
           }
         }
-        base_assert::fail("not contains " + base_assert::join_items(expected), base_assert::join_items(actual), message, stack_frame);
+        fail("not contains " + join_items(expected), join_items(actual), message, stack_frame);
       }
       /// @endcond
       
@@ -989,7 +989,7 @@ namespace xtd {
         if (std::empty(value))
           assert::succeed(message, stack_frame);
         else
-          base_assert::fail("<empty>", base_assert::join_items(value), message, stack_frame);
+          fail("<empty>", join_items(value), message, stack_frame);
       }
       
       /// @cond
@@ -1004,7 +1004,7 @@ namespace xtd {
         if (std::empty(value))
           assert::succeed(message, stack_frame);
         else
-          base_assert::fail("<empty>", base_assert::join_items(value), message, stack_frame);
+          fail("<empty>", join_items(value), message, stack_frame);
       }
       /// @endcond
       
@@ -1063,7 +1063,7 @@ namespace xtd {
         if (!std::empty(value))
           assert::succeed(message, stack_frame);
         else
-          base_assert::fail("not <empty>", "<empty>", message, stack_frame);
+          fail("not <empty>", "<empty>", message, stack_frame);
       }
       
       /// @cond
@@ -1078,7 +1078,7 @@ namespace xtd {
         if (!std::empty(value))
           assert::succeed(message, stack_frame);
         else
-          base_assert::fail("not <empty>", "<empty>", message, stack_frame);
+          fail("not <empty>", "<empty>", message, stack_frame);
       }
       /// @endcond
       
@@ -1137,7 +1137,7 @@ namespace xtd {
         if (std::is_sorted(value.begin(), value.end()))
           assert::succeed(message, stack_frame);
         else
-          base_assert::fail("<ordered>", base_assert::join_items(value), message, stack_frame);
+          fail("<ordered>", join_items(value), message, stack_frame);
       }
       
       /// @cond
@@ -1152,7 +1152,7 @@ namespace xtd {
         if (std::is_sorted(value.begin(), value.end()))
           assert::succeed(message, stack_frame);
         else
-          base_assert::fail("<ordered>", base_assert::join_items(value), message, stack_frame);
+          fail("<ordered>", join_items(value), message, stack_frame);
       }
       /// @endcond
       /// @}

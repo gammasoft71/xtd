@@ -410,7 +410,7 @@ namespace xtd {
         try {
           directory_assert::does_not_exist(directory, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       
@@ -589,7 +589,7 @@ namespace xtd {
         try {
           directory_assert::exists(directory, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       

@@ -78,7 +78,7 @@ namespace xtd {
         try {
           assert::are_equal(expected, actual, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       
@@ -290,7 +290,7 @@ namespace xtd {
         try {
           assert::are_not_equal(expected, actual, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       
@@ -366,7 +366,7 @@ namespace xtd {
         try {
           assert::are_not_same(expected, actual, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       
@@ -432,7 +432,7 @@ namespace xtd {
         try {
           assert::are_same(expected, actual, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       
@@ -490,7 +490,7 @@ namespace xtd {
         try {
           assert::contains(item, collection, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       
@@ -506,7 +506,7 @@ namespace xtd {
         try {
           assert::contains(item, values, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       
@@ -614,7 +614,7 @@ namespace xtd {
         try {
           assert::is_empty(value, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       
@@ -630,7 +630,7 @@ namespace xtd {
         try {
           assert::is_empty(values, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       
@@ -738,7 +738,7 @@ namespace xtd {
         try {
           assert::is_greater(val1, val2, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       
@@ -806,7 +806,7 @@ namespace xtd {
         try {
           assert::is_greater_or_equal(val1, val2, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       
@@ -870,7 +870,7 @@ namespace xtd {
         try {
           assert::is_instance_of<type_t>(value, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       
@@ -924,7 +924,7 @@ namespace xtd {
         try {
           assert::is_less(val1, val2, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       
@@ -992,7 +992,7 @@ namespace xtd {
         try {
           assert::is_less_or_equal(val1, val2, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       
@@ -1193,7 +1193,7 @@ namespace xtd {
         try {
           assert::is_negative(value, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       
@@ -1251,7 +1251,7 @@ namespace xtd {
         try {
           assert::is_not_empty(value, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       
@@ -1267,7 +1267,7 @@ namespace xtd {
         try {
           assert::is_not_empty(value, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       
@@ -1330,7 +1330,7 @@ namespace xtd {
         try {
           assert::is_not_instance_of<type_t>(value, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       
@@ -1392,7 +1392,7 @@ namespace xtd {
         try {
           assert::is_not_null(pointer, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       
@@ -1450,7 +1450,7 @@ namespace xtd {
         try {
           assert::is_not_null(opt, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       
@@ -1508,7 +1508,7 @@ namespace xtd {
         try {
           assert::is_not_null(pointer, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       
@@ -1566,7 +1566,7 @@ namespace xtd {
         try {
           assert::is_not_null(pointer, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       
@@ -1721,7 +1721,7 @@ namespace xtd {
         try {
           assert::is_not_zero(value, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       
@@ -1783,7 +1783,7 @@ namespace xtd {
         try {
           assert::is_null(pointer, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       
@@ -1841,7 +1841,7 @@ namespace xtd {
         try {
           assert::is_null(opt, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       
@@ -1899,7 +1899,7 @@ namespace xtd {
         try {
           assert::is_null(pointer, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       
@@ -1957,7 +1957,7 @@ namespace xtd {
         try {
           assert::is_null(pointer, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       
@@ -2023,7 +2023,7 @@ namespace xtd {
         try {
           assert::is_null(pointer, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       
@@ -2118,7 +2118,7 @@ namespace xtd {
         try {
           assert::is_positive(value, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       
@@ -2221,7 +2221,7 @@ namespace xtd {
         try {
           assert::is_zero(value, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       
@@ -2279,7 +2279,7 @@ namespace xtd {
         try {
           assert::throws<exception_t>(statement, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       

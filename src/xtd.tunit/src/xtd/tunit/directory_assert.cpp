@@ -39,7 +39,7 @@ void directory_assert::are_equal(const directory_info& expected, const directory
 
 void directory_assert::are_equal(const directory_info& expected, const directory_info& actual, const std::string& message, const stack_frame& stack_frame) {
   if (expected.full_name() != actual.full_name())
-    base_assert::fail(base_assert::to_string(expected.full_name()), base_assert::to_string(actual.full_name()), message, stack_frame);
+    fail(to_string(expected.full_name()), to_string(actual.full_name()), message, stack_frame);
   else
     assert::succeed(message, stack_frame);
 }
@@ -76,7 +76,7 @@ void directory_assert::are_not_equal(const directory_info& expected, const direc
 
 void directory_assert::are_not_equal(const directory_info& expected, const directory_info& actual, const std::string& message, const stack_frame& stack_frame) {
   if (expected.full_name() == actual.full_name())
-    base_assert::fail("not " + base_assert::to_string(expected.full_name()), base_assert::to_string(actual.full_name()), message, stack_frame);
+    fail("not " + to_string(expected.full_name()), to_string(actual.full_name()), message, stack_frame);
   else
     assert::succeed(message, stack_frame);
 }
@@ -113,7 +113,7 @@ void directory_assert::does_not_exist(const directory_info& directory, const std
 
 void directory_assert::does_not_exist(const directory_info& directory, const std::string& message, const stack_frame& stack_frame) {
   if (directory::exists(directory.full_name()))
-    base_assert::fail("not directory exists", "\"" + base_assert::to_string(directory) + "\"", message, stack_frame);
+    fail("not directory exists", "\"" + to_string(directory) + "\"", message, stack_frame);
   else
     assert::succeed(message, stack_frame);
 }
@@ -150,7 +150,7 @@ void directory_assert::exists(const directory_info& directory, const std::string
 
 void directory_assert::exists(const directory_info& directory, const std::string& message, const stack_frame& stack_frame) {
   if (!directory.exists())
-    base_assert::fail("directory exists", "\"" + base_assert::to_string(directory) + "\"", message, stack_frame);
+    fail("directory exists", "\"" + to_string(directory) + "\"", message, stack_frame);
   else
     assert::succeed(message, stack_frame);
 }
