@@ -2,7 +2,7 @@
 /// @brief Contains xtd::net::web_exception exception.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../format_exception.h"
+#include "../format_exception"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
