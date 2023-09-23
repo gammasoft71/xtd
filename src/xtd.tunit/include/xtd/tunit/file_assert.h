@@ -117,7 +117,7 @@ namespace xtd {
         size_t size_expected = static_cast<size_t>(if_expected.tellg());
         size_t size_actual = static_cast<size_t>(if_actual.tellg());
         if (size_expected != size_actual) {
-          base_assert::fail("istream length " + base_assert::to_string(size_expected), base_assert::to_string(size_actual), message, stack_frame);
+          fail("istream length " + to_string(size_expected), to_string(size_actual), message, stack_frame);
           return;
         }
         
@@ -127,7 +127,7 @@ namespace xtd {
           char_t value_expected = static_cast<char_t>(if_expected.get());
           char_t value_actual = static_cast<char_t>(if_actual.get());
           if (value_expected != value_actual) {
-            base_assert::fail("istream at offset " + base_assert::to_string(offset) + " value " + base_assert::to_string(value_expected), base_assert::to_string(value_actual), message, stack_frame);
+            fail("istream at offset " + to_string(offset) + " value " + to_string(value_expected), to_string(value_actual), message, stack_frame);
             return;
           }
         }
@@ -343,7 +343,7 @@ namespace xtd {
             return;
           }
         }
-        base_assert::fail("not equal <" + typeof_(expected).full_name() + ">", "<" + typeof_(expected).full_name() + ">", message, stack_frame);
+        fail("not equal <" + typeof_(expected).full_name() + ">", "<" + typeof_(expected).full_name() + ">", message, stack_frame);
       }
       /// @brief Asserts that two files are not equal.
       /// @param expected the expected value.
@@ -513,7 +513,7 @@ namespace xtd {
         auto is = std::basic_ifstream<char_t>(file);
         if (is.good() == true) {
           is.close();
-          base_assert::fail("not file exists", base_assert::to_string(file), message, stack_frame);
+          fail("not file exists", to_string(file), message, stack_frame);
         } else
           assert::succeed(message, stack_frame);
       }
@@ -587,7 +587,7 @@ namespace xtd {
       static void exists(const std::basic_string<char_t>& file, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
         auto is = std::basic_ifstream<char_t>(file);
         if (is.good() == false)
-          base_assert::fail("file exists", base_assert::to_string(file), message, stack_frame);
+          fail("file exists", to_string(file), message, stack_frame);
         else {
           is.close();
           assert::succeed(message, stack_frame);

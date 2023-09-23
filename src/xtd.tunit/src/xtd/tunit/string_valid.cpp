@@ -21,7 +21,7 @@ void string_valid::are_equal_ignoring_case(const ustring& expected, const ustrin
   try {
     string_assert::are_equal_ignoring_case(expected, actual, message, stack_frame);
   } catch (...) {
-    base_assert::error();
+    error();
   }
 }
 
@@ -41,7 +41,7 @@ void string_valid::are_not_equal_ignoring_case(const ustring& expected, const us
   try {
     string_assert::are_not_equal_ignoring_case(expected, actual, message, stack_frame);
   } catch (...) {
-    base_assert::error();
+    error();
   }
 }
 
@@ -61,7 +61,7 @@ void string_valid::contains(const ustring& item, const ustring& string, const us
   try {
     string_assert::contains(item, string, message, stack_frame);
   } catch (...) {
-    base_assert::error();
+    error();
   }
 }
 
@@ -81,7 +81,7 @@ void string_valid::does_not_contain(const ustring& item, const ustring& string, 
   try {
     string_assert::does_not_contain(item, string, message, stack_frame);
   } catch (...) {
-    base_assert::error();
+    error();
   }
 }
 
@@ -101,7 +101,7 @@ void string_valid::does_not_end_with(const ustring& item, const ustring& string,
   try {
     string_assert::does_not_end_with(item, string, message, stack_frame);
   } catch (...) {
-    base_assert::error();
+    error();
   }
 }
 
@@ -121,7 +121,7 @@ void string_valid::does_not_match(const ustring& regex_pattern, const ustring& a
   try {
     string_assert::does_not_match(regex_pattern, actual, message, stack_frame);
   } catch (...) {
-    base_assert::error();
+    error();
   }
 }
 
@@ -141,7 +141,7 @@ void string_valid::does_not_start_with(const ustring& item, const ustring& strin
   try {
     string_assert::does_not_start_with(item, string, message, stack_frame);
   } catch (...) {
-    base_assert::error();
+    error();
   }
 }
 
@@ -161,7 +161,7 @@ void string_valid::ends_with(const ustring& item, const ustring& string, const u
   try {
     string_assert::ends_with(item, string, message, stack_frame);
   } catch (...) {
-    base_assert::error();
+    error();
   }
 }
 
@@ -179,7 +179,7 @@ void string_valid::matches(const ustring& regex_pattern, const ustring& actual, 
   try {
     string_assert::matches(regex_pattern, actual, message, stack_frame);
   } catch (...) {
-    base_assert::error();
+    error();
   }
 }
 
@@ -199,6 +199,6 @@ void string_valid::starts_with(const ustring& item, const ustring& string, const
   try {
     string_assert::starts_with(item, string, message, stack_frame);
   } catch (...) {
-    base_assert::error();
+    error();
   }
 }

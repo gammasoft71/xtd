@@ -93,7 +93,7 @@ namespace xtd {
         if (actual == expected)
           succeed(message, stack_frame);
         else
-          base_assert::fail(base_assert::to_string(expected), base_assert::to_string(actual), message, stack_frame);
+          fail(to_string(expected), to_string(actual), message, stack_frame);
       }
       
       /// @cond
@@ -317,7 +317,7 @@ namespace xtd {
         if (actual != expected)
           succeed(message, stack_frame);
         else
-          base_assert::fail("not " + base_assert::to_string(expected), base_assert::to_string(actual), message, stack_frame);
+          fail("not " + to_string(expected), to_string(actual), message, stack_frame);
       }
       
       /// @cond
@@ -393,7 +393,7 @@ namespace xtd {
         if (&actual != &expected)
           succeed(message, stack_frame);
         else
-          base_assert::fail("not same as " + base_assert::to_string(expected), base_assert::to_string(actual), message, stack_frame);
+          fail("not same as " + to_string(expected), to_string(actual), message, stack_frame);
       }
       
       /// @brief Asserts that two objects do refer to differents objects.
@@ -459,7 +459,7 @@ namespace xtd {
         if (&actual == &expected)
           succeed(message, stack_frame);
         else
-          base_assert::fail("same as " + base_assert::to_string(expected), base_assert::to_string(actual), message, stack_frame);
+          fail("same as " + to_string(expected), to_string(actual), message, stack_frame);
       }
       
       /// @brief Asserts that collection contains an item.
@@ -518,7 +518,7 @@ namespace xtd {
         if (result != collection.end())
           succeed(message, stack_frame);
         else
-          base_assert::fail("collection containing " + base_assert::to_string(item), base_assert::join_items(collection), message, stack_frame);
+          fail("collection containing " + to_string(item), join_items(collection), message, stack_frame);
       }
       
       /// @cond
@@ -534,7 +534,7 @@ namespace xtd {
         if (result != values.end())
           succeed(message, stack_frame);
         else
-          base_assert::fail("collection containing " + base_assert::to_string(item), base_assert::join_items(values), message, stack_frame);
+          fail("collection containing " + to_string(item), join_items(values), message, stack_frame);
       }
       static void contains(char item, const char* values, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
 #if defined(__cpp_lib_char8_t)
@@ -645,7 +645,7 @@ namespace xtd {
         if (std::empty(value))
           succeed(message, stack_frame);
         else
-          base_assert::fail("collection <empty>", base_assert::join_items(value), message, stack_frame);
+          fail("collection <empty>", join_items(value), message, stack_frame);
       }
       
       /// @cond
@@ -660,7 +660,7 @@ namespace xtd {
         if (std::empty(values))
           succeed(message, stack_frame);
         else
-          base_assert::fail("collection <empty>", base_assert::join_items(values), message, stack_frame);
+          fail("collection <empty>", join_items(values), message, stack_frame);
       }
       static void is_empty(const char* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
 #if defined(__cpp_lib_char8_t)
@@ -771,7 +771,7 @@ namespace xtd {
         if (val1 > val2)
           succeed(message, stack_frame);
         else
-          base_assert::fail("greater than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
+          fail("greater than " + to_string(val2), to_string(val1), message, stack_frame);
       }
       
       /// @cond
@@ -839,7 +839,7 @@ namespace xtd {
         if (val1 >= val2)
           succeed(message, stack_frame);
         else
-          base_assert::fail("greater than or equal to " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
+          fail("greater than or equal to " + to_string(val2), to_string(val1), message, stack_frame);
       }
       
       /// @cond
@@ -904,7 +904,7 @@ namespace xtd {
         if (instance != nullptr)
           succeed(message, stack_frame);
         else
-          base_assert::fail("instance of <" + typeof_<type_t>().full_name() + ">", "<" + typeof_(value).full_name() + ">", message, stack_frame);
+          fail("instance of <" + typeof_<type_t>().full_name() + ">", "<" + typeof_(value).full_name() + ">", message, stack_frame);
       }
       
       /// @brief Asserts that the first value is is_less than the second value.
@@ -958,7 +958,7 @@ namespace xtd {
         if (val1 < val2)
           succeed(message, stack_frame);
         else
-          base_assert::fail("less than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
+          fail("less than " + to_string(val2), to_string(val1), message, stack_frame);
       }
       
       /// @cond
@@ -1026,7 +1026,7 @@ namespace xtd {
         if (val1 <= val2)
           succeed(message, stack_frame);
         else
-          base_assert::fail("less than or equal to " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
+          fail("less than or equal to " + to_string(val2), to_string(val1), message, stack_frame);
       }
       
       /// @cond
@@ -1239,7 +1239,7 @@ namespace xtd {
         if (value < 0)
           succeed(message, stack_frame);
         else
-          base_assert::fail("negative", base_assert::to_string(value), message, stack_frame);
+          fail("negative", to_string(value), message, stack_frame);
       }
       
       /// @brief Asserts that collection oes not contain any item.
@@ -1297,7 +1297,7 @@ namespace xtd {
         if (!std::empty(value))
           succeed(message, stack_frame);
         else
-          base_assert::fail("collection not <empty>", "<empty>", message, stack_frame);
+          fail("collection not <empty>", "<empty>", message, stack_frame);
       }
       
       /// @cond
@@ -1312,7 +1312,7 @@ namespace xtd {
         if (!std::empty(value))
           succeed(message, stack_frame);
         else
-          base_assert::fail("collection not <empty>", "<empty>", message, stack_frame);
+          fail("collection not <empty>", "<empty>", message, stack_frame);
       }
       static void is_not_empty(const char* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
 #if defined(__cpp_lib_char8_t)
@@ -1375,7 +1375,7 @@ namespace xtd {
         if (instance == nullptr)
           succeed(message, stack_frame);
         else
-          base_assert::fail("not instance of <" + typeof_<type_t>().full_name() + ">", "<" + typeof_(value).full_name() + ">", message, stack_frame);
+          fail("not instance of <" + typeof_<type_t>().full_name() + ">", "<" + typeof_(value).full_name() + ">", message, stack_frame);
       }
       
       /// @brief Asserts that the pointer is not null.
@@ -1437,7 +1437,7 @@ namespace xtd {
         if (pointer != nullptr)
           succeed(message, stack_frame);
         else
-          base_assert::fail("not null", "null", message, stack_frame);
+          fail("not null", "null", message, stack_frame);
       }
       /// @brief Asserts that the optional is not std::nullopt.
       /// @param opt The optional to check is std::nullopt.
@@ -1494,7 +1494,7 @@ namespace xtd {
         if (opt != std::nullopt)
           succeed(message, stack_frame);
         else
-          base_assert::fail("not null", "null", message, stack_frame);
+          fail("not null", "null", message, stack_frame);
       }
       /// @brief Asserts that the pointer is not null.
       /// @param pointer The pointer to check is null.
@@ -1551,7 +1551,7 @@ namespace xtd {
         if (pointer != nullptr)
           succeed(message, stack_frame);
         else
-          base_assert::fail("not null", "null", message, stack_frame);
+          fail("not null", "null", message, stack_frame);
       }
       /// @brief Asserts that the pointer is not null.
       /// @param pointer The pointer to check is null.
@@ -1608,7 +1608,7 @@ namespace xtd {
         if (pointer != nullptr)
           succeed(message, stack_frame);
         else
-          base_assert::fail("not null", "null", message, stack_frame);
+          fail("not null", "null", message, stack_frame);
       }
       /// @brief Asserts that the pointer is not null.
       /// @param pointer The pointer to check is null.
@@ -1665,7 +1665,7 @@ namespace xtd {
         if (pointer.owner_before(std::weak_ptr<pointer_t> {}) || std::weak_ptr<pointer_t> {}.owner_before(pointer))
           succeed(message, stack_frame);
         else
-          base_assert::fail("not null", "null", message, stack_frame);
+          fail("not null", "null", message, stack_frame);
       }
       /// @brief Asserts that the pointer is not null.
       /// @param pointer The pointer to check is null.
@@ -1763,7 +1763,7 @@ namespace xtd {
         if (value != 0)
           succeed(message, stack_frame);
         else
-          base_assert::fail("not zero", "0", message, stack_frame);
+          fail("not zero", "0", message, stack_frame);
       }
       
       /// @brief Asserts that the pointer is null.
@@ -1825,7 +1825,7 @@ namespace xtd {
         if (pointer == nullptr)
           succeed(message, stack_frame);
         else
-          base_assert::fail("null", "not null", message, stack_frame);
+          fail("null", "not null", message, stack_frame);
       }
       /// @brief Asserts that the optional is std::nullopt.
       /// @param opt The optional to check is std::nullopt.
@@ -1882,7 +1882,7 @@ namespace xtd {
         if (opt == std::nullopt)
           succeed(message, stack_frame);
         else
-          base_assert::fail("null", "not null", message, stack_frame);
+          fail("null", "not null", message, stack_frame);
       }
       /// @brief Asserts that the pointer is null.
       /// @param pointer The pointer to check is null.
@@ -1939,7 +1939,7 @@ namespace xtd {
         if (pointer == nullptr)
           succeed(message, stack_frame);
         else
-          base_assert::fail("null", "not null", message, stack_frame);
+          fail("null", "not null", message, stack_frame);
       }
       /// @brief Asserts that the pointer is null.
       /// @param pointer The pointer to check is null.
@@ -1996,7 +1996,7 @@ namespace xtd {
         if (pointer == nullptr)
           succeed(message, stack_frame);
         else
-          base_assert::fail("null", "not null", message, stack_frame);
+          fail("null", "not null", message, stack_frame);
       }
       /// @brief Asserts that the pointer is null.
       /// @param pointer The pointer to check is null.
@@ -2057,7 +2057,7 @@ namespace xtd {
         if (!pointer.owner_before(std::weak_ptr<pointer_t> {}) && !std::weak_ptr<pointer_t> {}.owner_before(pointer))
           succeed(message, stack_frame);
         else
-          base_assert::fail("null", "not null", message, stack_frame);
+          fail("null", "not null", message, stack_frame);
       }
       /// @brief Asserts that the pointer is null.
       /// @param pointer The pointer to check is null.
@@ -2155,7 +2155,7 @@ namespace xtd {
         if (value > 0)
           succeed(message, stack_frame);
         else
-          base_assert::fail("positive", base_assert::to_string(value), message, stack_frame);
+          fail("positive", to_string(value), message, stack_frame);
       }
       
       /// @brief Asserts that ta condition is true.
@@ -2262,7 +2262,7 @@ namespace xtd {
         if (value == static_cast<value_t>(0))
           succeed(message, stack_frame);
         else
-          base_assert::fail("zero", base_assert::to_string(value), message, stack_frame);
+          fail("zero", to_string(value), message, stack_frame);
       }
       
       /// @brief Asserts that the statement throws a particular exception when called.
@@ -2319,15 +2319,15 @@ namespace xtd {
       static void throws(const std::function<void()>& statement, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         try {
           statement();
-          base_assert::fail("<"  + typeof_<exception_t>().full_name() + ">", "<nothing>", message, stack_frame);
+          fail("<"  + typeof_<exception_t>().full_name() + ">", "<nothing>", message, stack_frame);
         } catch (const exception_t&) {
           succeed(message, stack_frame);
         } catch (const xtd::tunit::assert_error&) {
           throw;
         } catch (const std::exception& e) {
-          base_assert::fail("<"  + typeof_<exception_t>().full_name() + ">", "<" + typeof_(e).full_name() + ">", message, stack_frame);
+          fail("<"  + typeof_<exception_t>().full_name() + ">", "<" + typeof_(e).full_name() + ">", message, stack_frame);
         } catch (...) {
-          base_assert::fail("<"  + typeof_<exception_t>().full_name() + ">", "<exception>", message, stack_frame);
+          fail("<"  + typeof_<exception_t>().full_name() + ">", "<exception>", message, stack_frame);
         }
       }
       

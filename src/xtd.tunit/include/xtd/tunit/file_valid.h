@@ -108,7 +108,7 @@ namespace xtd {
         try {
           file_assert::are_equal(expected, actual, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       /// @brief Validate that two files are equal.
@@ -295,7 +295,7 @@ namespace xtd {
         try {
           file_assert::are_not_equal(expected, actual, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       /// @brief Validate that two files are not equal.
@@ -457,7 +457,7 @@ namespace xtd {
         try {
           file_assert::does_not_exist(file, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       
@@ -527,7 +527,7 @@ namespace xtd {
         try {
           file_assert::exists(file, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       

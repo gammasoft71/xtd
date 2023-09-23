@@ -80,7 +80,7 @@ namespace xtd {
         try {
           collection_assert::all_items_are_instances_of<expected_t>(collection, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       
@@ -96,7 +96,7 @@ namespace xtd {
         try {
           collection_assert::all_items_are_instances_of<expected_t>(collection, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       /// @endcond
@@ -160,7 +160,7 @@ namespace xtd {
         try {
           collection_assert::all_items_are_not_null(collection, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       
@@ -176,7 +176,7 @@ namespace xtd {
         try {
           collection_assert::all_items_are_not_null(collection, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       /// @endcond
@@ -236,7 +236,7 @@ namespace xtd {
         try {
           collection_assert::all_items_are_unique(collection, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       
@@ -252,7 +252,7 @@ namespace xtd {
         try {
           collection_assert::all_items_are_unique(collection, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       /// @endcond
@@ -308,7 +308,7 @@ namespace xtd {
         try {
           collection_assert::are_equal(expected, actual, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       
@@ -324,7 +324,7 @@ namespace xtd {
         try {
           collection_assert::are_equal(expected, actual, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       template<typename collection_t, typename item_t>
@@ -338,7 +338,7 @@ namespace xtd {
         try {
           collection_assert::are_equal(expected, actual, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       template<typename item_t, typename collection_t>
@@ -352,7 +352,7 @@ namespace xtd {
         try {
           collection_assert::are_equal(expected, actual, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       /// @endcond
@@ -408,7 +408,7 @@ namespace xtd {
         try {
           collection_assert::are_equivalent(expected, actual, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       
@@ -424,7 +424,7 @@ namespace xtd {
         try {
           collection_assert::are_equivalent(expected, actual, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       template<typename collection_t, typename item_t>
@@ -438,7 +438,7 @@ namespace xtd {
         try {
           collection_assert::are_equivalent(expected, actual, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       template<typename item_t, typename collection_t>
@@ -452,7 +452,7 @@ namespace xtd {
         try {
           collection_assert::are_equivalent(expected, actual, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       /// @endcond
@@ -508,7 +508,7 @@ namespace xtd {
         try {
           collection_assert::are_not_equal(expected, actual, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       
@@ -524,7 +524,7 @@ namespace xtd {
         try {
           collection_assert::are_not_equal(expected, actual, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       template<typename collection_t, typename item_t>
@@ -538,7 +538,7 @@ namespace xtd {
         try {
           collection_assert::are_not_equal(expected, actual, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       template<typename item_t, typename collection_t>
@@ -552,7 +552,7 @@ namespace xtd {
         try {
           collection_assert::are_not_equal(expected, actual, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       /// @endcond
@@ -608,7 +608,7 @@ namespace xtd {
         try {
           collection_assert::are_not_equivalent(expected, actual, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       
@@ -624,7 +624,7 @@ namespace xtd {
         try {
           collection_assert::are_not_equivalent(expected, actual, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       template<typename collection_t, typename item_t>
@@ -638,7 +638,7 @@ namespace xtd {
         try {
           collection_assert::are_not_equivalent(expected, actual, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       template<typename item_t, typename collection_t>
@@ -652,7 +652,7 @@ namespace xtd {
         try {
           collection_assert::are_not_equivalent(expected, actual, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       /// @endcond
@@ -708,7 +708,7 @@ namespace xtd {
         try {
           collection_assert::contains(expected, actual, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       
@@ -724,7 +724,7 @@ namespace xtd {
         try {
           collection_assert::contains(expected, actual, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       template<typename collection_t, typename item_t>
@@ -738,7 +738,7 @@ namespace xtd {
         try {
           collection_assert::contains(expected, actual, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       template<typename item_t, typename collection_t>
@@ -752,7 +752,7 @@ namespace xtd {
         try {
           collection_assert::contains(expected, actual, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       /// @endcond
@@ -808,7 +808,7 @@ namespace xtd {
         try {
           collection_assert::does_not_contain(expected, actual, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       
@@ -824,7 +824,7 @@ namespace xtd {
         try {
           collection_assert::does_not_contain(expected, actual, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       template<typename collection_t, typename item_t>
@@ -838,7 +838,7 @@ namespace xtd {
         try {
           collection_assert::does_not_contain(expected, actual, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       template<typename item_t, typename collection_t>
@@ -852,7 +852,7 @@ namespace xtd {
         try {
           collection_assert::does_not_contain(expected, actual, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       /// @endcond
@@ -908,7 +908,7 @@ namespace xtd {
         try {
           collection_assert::is_empty(value, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       
@@ -924,7 +924,7 @@ namespace xtd {
         try {
           collection_assert::is_empty(value, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       /// @endcond
@@ -980,7 +980,7 @@ namespace xtd {
         try {
           collection_assert::is_not_empty(value, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       
@@ -996,7 +996,7 @@ namespace xtd {
         try {
           collection_assert::is_not_empty(value, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       /// @endcond
@@ -1052,7 +1052,7 @@ namespace xtd {
         try {
           collection_assert::is_ordered(value, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       
@@ -1068,7 +1068,7 @@ namespace xtd {
         try {
           collection_assert::is_ordered(value, message, stack_frame);
         } catch (...) {
-          base_assert::error();
+          error();
         }
       }
       /// @endcond

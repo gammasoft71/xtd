@@ -9,7 +9,7 @@ void assert::are_equal(const char* expected, const char* actual, const ustring& 
   if (strcmp(actual, expected) == 0)
     succeed(message, stack_frame);
   else
-    base_assert::fail(base_assert::to_string(expected), base_assert::to_string(actual), message, stack_frame);
+    fail(to_string(expected), to_string(actual), message, stack_frame);
 }
 
 #if defined(__cpp_lib_char8_t)
@@ -17,7 +17,7 @@ void assert::are_equal(const char8* expected, const char8* actual, const ustring
   if (ustring {actual} == ustring {expected})
     succeed(message, stack_frame);
   else
-    base_assert::base_assert::fail(base_assert::to_string(expected), base_assert::to_string(actual), message, stack_frame);
+    fail(to_string(expected), to_string(actual), message, stack_frame);
 }
 #endif
 
@@ -25,21 +25,21 @@ void assert::are_equal(const char16* expected, const char16* actual, const ustri
   if (u16string {actual} == u16string {expected})
     succeed(message, stack_frame);
   else
-    base_assert::base_assert::fail(base_assert::to_string(expected), base_assert::to_string(actual), message, stack_frame);
+    fail(to_string(expected), to_string(actual), message, stack_frame);
 }
 
 void assert::are_equal(const char32* expected, const char32* actual, const ustring& message, const stack_frame& stack_frame) {
   if (u32string {actual} == u32string {expected})
     succeed(message, stack_frame);
   else
-    base_assert::fail(base_assert::to_string(expected), base_assert::to_string(actual), message, stack_frame);
+    fail(to_string(expected), to_string(actual), message, stack_frame);
 }
 
 void assert::are_equal(const wchar_t* expected, const wchar_t* actual, const ustring& message, const stack_frame& stack_frame) {
   if (wcscmp(actual, expected) == 0)
     succeed(message, stack_frame);
   else
-    base_assert::fail(base_assert::to_string(expected), base_assert::to_string(actual), message, stack_frame);
+    fail(to_string(expected), to_string(actual), message, stack_frame);
 }
 
 void assert::are_equal(float expected, float actual, const ustring& message, const stack_frame& stack_frame) {
@@ -48,7 +48,7 @@ void assert::are_equal(float expected, float actual, const ustring& message, con
   else if (actual == expected)
     succeed(message, stack_frame);
   else
-    base_assert::fail(base_assert::to_string(expected), base_assert::to_string(actual), message, stack_frame);
+    fail(to_string(expected), to_string(actual), message, stack_frame);
 }
 
 void assert::are_equal(double expected, double actual, const ustring& message, const stack_frame& stack_frame) {
@@ -57,7 +57,7 @@ void assert::are_equal(double expected, double actual, const ustring& message, c
   else if (actual == expected)
     succeed(message, stack_frame);
   else
-    base_assert::fail(base_assert::to_string(expected), base_assert::to_string(actual), message, stack_frame);
+    fail(to_string(expected), to_string(actual), message, stack_frame);
 }
 
 void assert::are_equal(long double expected, long double actual, const ustring& message, const stack_frame& stack_frame) {
@@ -66,7 +66,7 @@ void assert::are_equal(long double expected, long double actual, const ustring& 
   else if (actual == expected)
     succeed(message, stack_frame);
   else
-    base_assert::fail(base_assert::to_string(expected), base_assert::to_string(actual), message, stack_frame);
+    fail(to_string(expected), to_string(actual), message, stack_frame);
 }
 
 void assert::are_equal(float expected, float actual, float tolerance) {
@@ -85,7 +85,7 @@ void assert::are_equal(float expected, float actual, float tolerance, const ustr
   if (fabsf(expected - actual) <= fabsf(tolerance))
     succeed(message, stack_frame);
   else
-    base_assert::fail(base_assert::to_string(expected), base_assert::to_string(actual), message, stack_frame);
+    fail(to_string(expected), to_string(actual), message, stack_frame);
 }
 
 void assert::are_equal(double expected, double actual, double tolerance) {
@@ -104,7 +104,7 @@ void assert::are_equal(double expected, double actual, double tolerance, const u
   if (fabs(expected - actual) <= fabs(tolerance))
     succeed(message, stack_frame);
   else
-    base_assert::fail(base_assert::to_string(expected), base_assert::to_string(actual), message, stack_frame);
+    fail(to_string(expected), to_string(actual), message, stack_frame);
 }
 
 void assert::are_equal(long double expected, long double actual, long double tolerance) {
@@ -123,14 +123,14 @@ void assert::are_equal(long double expected, long double actual, long double tol
   if (fabsl(expected - actual) <= fabsl(tolerance))
     succeed(message, stack_frame);
   else
-    base_assert::fail(base_assert::to_string(expected), base_assert::to_string(actual), message, stack_frame);
+    fail(to_string(expected), to_string(actual), message, stack_frame);
 }
 
 void assert::are_not_equal(const char* expected, const char* actual, const ustring& message, const stack_frame& stack_frame) {
   if (strcmp(actual, expected) != 0)
     succeed(message, stack_frame);
   else
-    base_assert::fail("not " + base_assert::to_string(expected), base_assert::to_string(actual), message, stack_frame);
+    fail("not " + to_string(expected), to_string(actual), message, stack_frame);
 }
 
 #if defined(__cpp_lib_char8_t)
@@ -138,7 +138,7 @@ void assert::are_not_equal(const char8* expected, const char8* actual, const ust
   if (ustring {actual} != ustring {expected})
     succeed(message, stack_frame);
   else
-    base_assert::fail("not " + base_assert::to_string(expected), base_assert::to_string(actual), message, stack_frame);
+    fail("not " + to_string(expected), to_string(actual), message, stack_frame);
 }
 #endif
 
@@ -146,21 +146,21 @@ void assert::are_not_equal(const char16* expected, const char16* actual, const u
   if (u16string {actual} != u16string {expected})
     succeed(message, stack_frame);
   else
-    base_assert::fail("not " + base_assert::to_string(expected), base_assert::to_string(actual), message, stack_frame);
+    fail("not " + to_string(expected), to_string(actual), message, stack_frame);
 }
 
 void assert::are_not_equal(const char32* expected, const char32* actual, const ustring& message, const stack_frame& stack_frame) {
   if (u32string {actual} != u32string {expected})
     succeed(message, stack_frame);
   else
-    base_assert::fail("not " + base_assert::to_string(expected), base_assert::to_string(actual), message, stack_frame);
+    fail("not " + to_string(expected), to_string(actual), message, stack_frame);
 }
 
 void assert::are_not_equal(const wchar_t* expected, const wchar_t* actual, const ustring& message, const stack_frame& stack_frame) {
   if (wcscmp(actual, expected) != 0)
     succeed(message, stack_frame);
   else
-    base_assert::fail("not " + base_assert::to_string(expected), base_assert::to_string(actual), message, stack_frame);
+    fail("not " + to_string(expected), to_string(actual), message, stack_frame);
 }
 
 void assert::contains(char item, const char* values, const ustring& message, const stack_frame& stack_frame) {
@@ -169,7 +169,7 @@ void assert::contains(char item, const char* values, const ustring& message, con
   if (result != s.end())
     succeed(message, stack_frame);
   else
-    base_assert::fail("collection containing " + base_assert::to_string(item), base_assert::join_items(s), message, stack_frame);
+    fail("collection containing " + to_string(item), join_items(s), message, stack_frame);
 }
 
 #if defined(__cpp_lib_char8_t)
@@ -179,7 +179,7 @@ void assert::contains(char8 item, const char8* values, const ustring& message, c
   if (result != s.end())
     succeed(message, stack_frame);
   else
-    base_assert::fail("collection containing " + base_assert::to_string(item), base_assert::join_items(s), message, stack_frame);
+    fail("collection containing " + to_string(item), join_items(s), message, stack_frame);
 }
 #endif
 
@@ -189,7 +189,7 @@ void assert::contains(char16 item, const char16* values, const ustring& message,
   if (result != s.end())
     succeed(message, stack_frame);
   else
-    base_assert::fail("collection containing " + base_assert::to_string(item), base_assert::join_items(s), message, stack_frame);
+    fail("collection containing " + to_string(item), join_items(s), message, stack_frame);
 }
 
 void assert::contains(char32 item, const char32* values, const ustring& message, const stack_frame& stack_frame) {
@@ -198,7 +198,7 @@ void assert::contains(char32 item, const char32* values, const ustring& message,
   if (result != s.end())
     succeed(message, stack_frame);
   else
-    base_assert::fail("collection containing " + base_assert::to_string(item), base_assert::join_items(s), message, stack_frame);
+    fail("collection containing " + to_string(item), join_items(s), message, stack_frame);
 }
 
 void assert::contains(wchar_t item, const wchar_t* values, const ustring& message, const stack_frame& stack_frame) {
@@ -207,7 +207,7 @@ void assert::contains(wchar_t item, const wchar_t* values, const ustring& messag
   if (result != s.end())
     succeed(message, stack_frame);
   else
-    base_assert::fail("collection containing " + base_assert::to_string(item), base_assert::join_items(s), message, stack_frame);
+    fail("collection containing " + to_string(item), join_items(s), message, stack_frame);
 }
 
 void assert::does_not_throw(const function<void()>& statement) {
@@ -227,9 +227,9 @@ void assert::does_not_throw(const function<void()>& statement, const ustring& me
     statement();
     succeed(message, stack_frame);
   } catch (const exception& e) {
-    base_assert::fail("No Exception to be thrown", "<" + typeof_(e).full_name() + ">", message, stack_frame);
+    fail("No Exception to be thrown", "<" + typeof_(e).full_name() + ">", message, stack_frame);
   } catch (...) {
-    base_assert::fail("No Exception to be thrown", "<exception>", message, stack_frame);
+    fail("No Exception to be thrown", "<exception>", message, stack_frame);
   }
 }
 
@@ -238,7 +238,7 @@ void assert::is_empty(const char* value, const ustring& message, const stack_fra
   if (ustring::is_empty(s))
     succeed(message, stack_frame);
   else
-    base_assert::fail("collection <empty>", base_assert::join_items(s), message, stack_frame);
+    fail("collection <empty>", join_items(s), message, stack_frame);
 }
 
 #if defined(__cpp_lib_char8_t)
@@ -247,7 +247,7 @@ void assert::is_empty(const char8* value, const ustring& message, const stack_fr
   if (ustring::is_empty(s))
     succeed(message, stack_frame);
   else
-    base_assert::fail("collection <empty>", base_assert::join_items(s), message, stack_frame);
+    fail("collection <empty>", join_items(s), message, stack_frame);
 }
 #endif
 
@@ -256,7 +256,7 @@ void assert::is_empty(const char16* value, const ustring& message, const stack_f
   if (ustring::is_empty(s))
     succeed(message, stack_frame);
   else
-    base_assert::fail("collection <empty>", base_assert::join_items(s), message, stack_frame);
+    fail("collection <empty>", join_items(s), message, stack_frame);
 }
 
 void assert::is_empty(const char32* value, const ustring& message, const stack_frame& stack_frame) {
@@ -264,7 +264,7 @@ void assert::is_empty(const char32* value, const ustring& message, const stack_f
   if (ustring::is_empty(s))
     succeed(message, stack_frame);
   else
-    base_assert::fail("collection <empty>", base_assert::join_items(s), message, stack_frame);
+    fail("collection <empty>", join_items(s), message, stack_frame);
 }
 
 void assert::is_empty(const wchar_t* value, const ustring& message, const stack_frame& stack_frame) {
@@ -272,7 +272,7 @@ void assert::is_empty(const wchar_t* value, const ustring& message, const stack_
   if (ustring::is_empty(s))
     succeed(message, stack_frame);
   else
-    base_assert::fail("collection <empty>", base_assert::join_items(s), message, stack_frame);
+    fail("collection <empty>", join_items(s), message, stack_frame);
 }
 
 void assert::is_false(bool condition) {
@@ -291,14 +291,14 @@ void assert::is_false(bool condition, const ustring& message, const stack_frame&
   if (condition == false)
     succeed(message, stack_frame);
   else
-    base_assert::fail("false", "true", message, stack_frame);
+    fail("false", "true", message, stack_frame);
 }
 
 void assert::is_greater(const char* val1, const char* val2, const ustring& message, const stack_frame& stack_frame) {
   if (strcmp(val1, val2) > 0)
     succeed(message, stack_frame);
   else
-    base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
+    fail("greather than " + to_string(val2), to_string(val1), message, stack_frame);
 }
 
 #if defined(__cpp_lib_char8_t)
@@ -306,7 +306,7 @@ void assert::is_greater(const char8* val1, const char8* val2, const ustring& mes
   if (ustring {val1} > ustring {val2})
     succeed(message, stack_frame);
   else
-    base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
+    fail("greather than " + to_string(val2), to_string(val1), message, stack_frame);
 }
 #endif
 
@@ -314,28 +314,28 @@ void assert::is_greater(const char16* val1, const char16* val2, const ustring& m
   if (u16string {val1} > u16string {val2})
     succeed(message, stack_frame);
   else
-    base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
+    fail("greather than " + to_string(val2), to_string(val1), message, stack_frame);
 }
 
 void assert::is_greater(const char32* val1, const char32* val2, const ustring& message, const stack_frame& stack_frame) {
   if (u32string {val1} > u32string {val2})
     succeed(message, stack_frame);
   else
-    base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
+    fail("greather than " + to_string(val2), to_string(val1), message, stack_frame);
 }
 
 void assert::is_greater(const wchar_t* val1, const wchar_t* val2, const ustring& message, const stack_frame& stack_frame) {
   if (wcscmp(val1, val2) > 0)
     succeed(message, stack_frame);
   else
-    base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
+    fail("greather than " + to_string(val2), to_string(val1), message, stack_frame);
 }
 
 void assert::is_greater_or_equal(const char* val1, const char* val2, const ustring& message, const stack_frame& stack_frame) {
   if (strcmp(val1, val2) >= 0)
     succeed(message, stack_frame);
   else
-    base_assert::fail("greather than or equal to " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
+    fail("greather than or equal to " + to_string(val2), to_string(val1), message, stack_frame);
 }
 
 #if defined(__cpp_lib_char8_t)
@@ -343,7 +343,7 @@ void assert::is_greater_or_equal(const char8* val1, const char8* val2, const ust
   if (ustring {val1} >= ustring {val2})
     succeed(message, stack_frame);
   else
-    base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
+    fail("greather than " + to_string(val2), to_string(val1), message, stack_frame);
 }
 #endif
 
@@ -351,28 +351,28 @@ void assert::is_greater_or_equal(const char16* val1, const char16* val2, const u
   if (u16string {val1} >= u16string {val2})
     succeed(message, stack_frame);
   else
-    base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
+    fail("greather than " + to_string(val2), to_string(val1), message, stack_frame);
 }
 
 void assert::is_greater_or_equal(const char32* val1, const char32* val2, const ustring& message, const stack_frame& stack_frame) {
   if (u32string {val1} >= u32string {val2})
     succeed(message, stack_frame);
   else
-    base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
+    fail("greather than " + to_string(val2), to_string(val1), message, stack_frame);
 }
 
 void assert::is_greater_or_equal(const wchar_t* val1, const wchar_t* val2, const ustring& message, const stack_frame& stack_frame) {
   if (wcscmp(val1, val2) >= 0)
     succeed(message, stack_frame);
   else
-    base_assert::fail("greather than or equal to " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
+    fail("greather than or equal to " + to_string(val2), to_string(val1), message, stack_frame);
 }
 
 void assert::is_less(const char* val1, const char* val2, const ustring& message, const stack_frame& stack_frame) {
   if (strcmp(val1, val2) < 0)
     succeed(message, stack_frame);
   else
-    base_assert::fail("less than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
+    fail("less than " + to_string(val2), to_string(val1), message, stack_frame);
 }
 
 #if defined(__cpp_lib_char8_t)
@@ -380,7 +380,7 @@ void assert::is_less(const char8* val1, const char8* val2, const ustring& messag
   if (ustring {val1} < ustring {val2})
     succeed(message, stack_frame);
   else
-    base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
+    fail("greather than " + to_string(val2), to_string(val1), message, stack_frame);
 }
 #endif
 
@@ -388,28 +388,28 @@ void assert::is_less(const char16* val1, const char16* val2, const ustring& mess
   if (u16string {val1} < u16string {val2})
     succeed(message, stack_frame);
   else
-    base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
+    fail("greather than " + to_string(val2), to_string(val1), message, stack_frame);
 }
 
 void assert::is_less(const char32* val1, const char32* val2, const ustring& message, const stack_frame& stack_frame) {
   if (u32string {val1} < u32string {val2})
     succeed(message, stack_frame);
   else
-    base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
+    fail("greather than " + to_string(val2), to_string(val1), message, stack_frame);
 }
 
 void assert::is_less(const wchar_t* val1, const wchar_t* val2, const ustring& message, const stack_frame& stack_frame) {
   if (wcscmp(val1, val2) < 0)
     succeed(message, stack_frame);
   else
-    base_assert::fail("less than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
+    fail("less than " + to_string(val2), to_string(val1), message, stack_frame);
 }
 
 void assert::is_less_or_equal(const char* val1, const char* val2, const ustring& message, const stack_frame& stack_frame) {
   if (strcmp(val1, val2) <= 0)
     succeed(message, stack_frame);
   else
-    base_assert::fail("less than or equal to " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
+    fail("less than or equal to " + to_string(val2), to_string(val1), message, stack_frame);
 }
 
 #if defined(__cpp_lib_char8_t)
@@ -417,7 +417,7 @@ void assert::is_less_or_equal(const char8* val1, const char8* val2, const ustrin
   if (ustring {val1} <= ustring {val2})
     succeed(message, stack_frame);
   else
-    base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
+    fail("greather than " + to_string(val2), to_string(val1), message, stack_frame);
 }
 #endif
 
@@ -425,21 +425,21 @@ void assert::is_less_or_equal(const char16* val1, const char16* val2, const ustr
   if (u16string {val1} <= u16string {val2})
     succeed(message, stack_frame);
   else
-    base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
+    fail("greather than " + to_string(val2), to_string(val1), message, stack_frame);
 }
 
 void assert::is_less_or_equal(const char32* val1, const char32* val2, const ustring& message, const stack_frame& stack_frame) {
   if (u32string {val1} <= u32string {val2})
     succeed(message, stack_frame);
   else
-    base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
+    fail("greather than " + to_string(val2), to_string(val1), message, stack_frame);
 }
 
 void assert::is_less_or_equal(const wchar_t* val1, const wchar_t* val2, const ustring& message, const stack_frame& stack_frame) {
   if (wcscmp(val1, val2) <= 0)
     succeed(message, stack_frame);
   else
-    base_assert::fail("less than or equal to " + base_assert::to_string(val2), base_assert::to_string(val1), message, stack_frame);
+    fail("less than or equal to " + to_string(val2), to_string(val1), message, stack_frame);
 }
 
 void assert::is_NaN(double value) {
@@ -458,7 +458,7 @@ void assert::is_NaN(double value, const ustring& message, const stack_frame& sta
   if (isnan(value))
     succeed(message, stack_frame);
   else
-    base_assert::fail("NaN", base_assert::to_string(value), message, stack_frame);
+    fail("NaN", to_string(value), message, stack_frame);
 }
 
 void assert::is_NaN(long double value) {
@@ -477,7 +477,7 @@ void assert::is_NaN(long double value, const ustring& message, const stack_frame
   if (isnan(value))
     succeed(message, stack_frame);
   else
-    base_assert::fail("NaN", base_assert::to_string(value), message, stack_frame);
+    fail("NaN", to_string(value), message, stack_frame);
 }
 
 void assert::is_NaN(float value) {
@@ -496,14 +496,14 @@ void assert::is_NaN(float value, const ustring& message, const stack_frame& stac
   if (isnan(value))
     succeed(message, stack_frame);
   else
-    base_assert::fail("NaN", base_assert::to_string(value), message, stack_frame);
+    fail("NaN", to_string(value), message, stack_frame);
 }
 
 void assert::is_not_empty(const char* value, const ustring& message, const stack_frame& stack_frame) {
   if (!ustring::is_empty(ustring(value)))
     succeed(message, stack_frame);
   else
-    base_assert::fail("collection not <empty>", "<empty>", message, stack_frame);
+    fail("collection not <empty>", "<empty>", message, stack_frame);
 }
 
 #if defined(__cpp_lib_char8_t)
@@ -511,7 +511,7 @@ void assert::is_not_empty(const char8* value, const ustring& message, const stac
   if (!ustring::is_empty(ustring(value)))
     succeed(message, stack_frame);
   else
-    base_assert::fail("collection not <empty>", "<empty>", message, stack_frame);
+    fail("collection not <empty>", "<empty>", message, stack_frame);
 }
 #endif
 
@@ -519,21 +519,21 @@ void assert::is_not_empty(const char16* value, const ustring& message, const sta
   if (!ustring::is_empty(ustring(value)))
     succeed(message, stack_frame);
   else
-    base_assert::fail("collection not <empty>", "<empty>", message, stack_frame);
+    fail("collection not <empty>", "<empty>", message, stack_frame);
 }
 
 void assert::is_not_empty(const char32* value, const ustring& message, const stack_frame& stack_frame) {
   if (!ustring::is_empty(ustring(value)))
     succeed(message, stack_frame);
   else
-    base_assert::fail("collection not <empty>", "<empty>", message, stack_frame);
+    fail("collection not <empty>", "<empty>", message, stack_frame);
 }
 
 void assert::is_not_empty(const wchar_t* value, const ustring& message, const stack_frame& stack_frame) {
   if (!ustring::is_empty(ustring(value)))
     succeed(message, stack_frame);
   else
-    base_assert::fail("collection not <empty>", "<empty>", message, stack_frame);
+    fail("collection not <empty>", "<empty>", message, stack_frame);
 }
 
 void assert::is_not_null(nullptr_t pointer) {
@@ -549,7 +549,7 @@ void assert::is_not_null(nullptr_t pointer, const ustring& message) {
 }
 
 void assert::is_not_null(nullptr_t pointer, const ustring& message, const stack_frame& stack_frame) {
-  base_assert::fail("not null", "null", message, stack_frame);
+  fail("not null", "null", message, stack_frame);
 }
 
 void assert::is_null(nullptr_t pointer) {
@@ -584,7 +584,7 @@ void assert::is_true(bool condition, const ustring& message, const stack_frame& 
   if (condition == true)
     succeed(message, stack_frame);
   else
-    base_assert::fail("true", "false", message, stack_frame);
+    fail("true", "false", message, stack_frame);
 }
 
 void assert::throws_any(const function<void()>& statement) {
@@ -602,7 +602,7 @@ void assert::throws_any(const function<void()>& statement, const ustring& messag
 void assert::throws_any(const function<void()>& statement, const ustring& message, const stack_frame& stack_frame) {
   try {
     statement();
-    base_assert::fail("<exception>", "<nothing>", message, stack_frame);
+    fail("<exception>", "<nothing>", message, stack_frame);
   } catch (const assert_error&) {
     throw;
   } catch (...) {
