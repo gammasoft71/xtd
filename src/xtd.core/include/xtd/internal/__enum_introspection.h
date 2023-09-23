@@ -9,9 +9,9 @@
 #define __enum_introspection__(namespace_name, enum_t, base_t, ...)
 #else
 #include <string_view>
-#include "../typeof.h"
-#include "../types.h"
-#include "../ustring.h"
+#include "../typeof"
+#include "../types"
+#include "../ustring"
 
 namespace __enumeration_introspection {
   constexpr std::string_view trim(std::string_view view) {
