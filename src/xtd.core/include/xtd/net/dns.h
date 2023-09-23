@@ -3,10 +3,10 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 
+#include "ip_host_entry"
+#include "../core_export"
+#include "../static"
 #include <vector>
-#include "../core_export.h"
-#include "../static.h"
-#include "ip_host_entry.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

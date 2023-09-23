@@ -3,13 +3,13 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 
+#include "socket_address"
+#include "sockets/address_family"
+#include "../core_export"
+#include "../object"
+#include "../types"
+#include "../ustring"
 #include <memory>
-#include "../core_export.h"
-#include "../object.h"
-#include "../types.h"
-#include "../ustring.h"
-#include "socket_address.h"
-#include "sockets/address_family.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
