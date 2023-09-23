@@ -3,9 +3,9 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 
-#include "file_system_info.h"
-#include "stream_reader.h"
-#include "stream_writer.h"
+#include "file_system_info"
+#include "stream_reader"
+#include "stream_writer"
 #include <fstream>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

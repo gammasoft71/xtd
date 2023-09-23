@@ -3,9 +3,9 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 
+#include "text_reader"
+#include "../optional"
 #include <fstream>
-#include "../optional.h"
-#include "text_reader.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

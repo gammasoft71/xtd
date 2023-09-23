@@ -3,15 +3,15 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 
+#include "file"
+#include "../core_export"
+#include "../static"
+#include "../ustring"
 #include <algorithm>
 #include <cstdlib>
 #include <random>
 #include <regex>
 #include <sstream>
-#include "../core_export.h"
-#include "../static.h"
-#include "../ustring.h"
-#include "file.h"
 
 //#include <iostream>
 
