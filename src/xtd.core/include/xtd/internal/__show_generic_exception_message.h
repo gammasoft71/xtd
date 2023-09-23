@@ -9,11 +9,11 @@
 /// @endcond
 
 #if __XTD_CURRENT_TARGET_ID__ == __XTD_TARGET_ID_GUI_APPLICATION__
-#include "xtd/forms/application.h"
-#include "xtd/forms/exception_box.h"
+#include "xtd/forms/application"
+#include "xtd/forms/exception_box"
 #endif
-#include "../system_exception.h"
-#include "../ustring.h"
+#include "../system_exception"
+#include "../ustring"
 #include <iostream>
 
 /// @cond

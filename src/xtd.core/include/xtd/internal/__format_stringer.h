@@ -18,8 +18,8 @@
 #include <string>
 #include <type_traits>
 #include <vector>
-#include "../chrono.h"
-#include "../types.h"
+#include "../chrono"
+#include "../types"
 
 /// @cond
 namespace xtd {

@@ -10,7 +10,7 @@
 #include <locale>
 #include <string>
 #include <sstream>
-#include "../number_styles.h"
+#include "../number_styles"
 
 /// @cond
 void __throw_parse_format_exception(const std::string& message);
