@@ -3,20 +3,20 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 
-#include "../chrono.h"
+#include "file_attributes"
+#include "file_permissions"
+#include "stream_reader"
+#include "stream_writer"
+#include "../chrono"
+#include "../core_export"
+#include "../date_time"
+#include "../static"
+#include "../ustring"
 #include <cstdint>
 #include <cstdio>
 #include <fstream>
-#include <vector>
-#include "../core_export.h"
-#include "../date_time.h"
-#include "../static.h"
-#include "../ustring.h"
-#include "file_attributes.h"
-#include "file_permissions.h"
-#include "stream_reader.h"
-#include "stream_writer.h"
 #include <tuple>
+#include <vector>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
