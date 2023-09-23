@@ -3,12 +3,12 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 
-#include "../../threading/mutex.h"
-#include "../../iequatable.h"
-#include "../../object.h"
-#include "../../ustring.h"
-#include "../ip_end_point.h"
-#include "socket.h"
+#include "socket"
+#include "../ip_end_point"
+#include "../../threading/mutex"
+#include "../../iequatable"
+#include "../../object"
+#include "../../ustring"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

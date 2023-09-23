@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 
-#include "../ip_address.h"
+#include "../ip_address"
 
 /// @cond
 #undef unix

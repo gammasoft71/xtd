@@ -2,8 +2,9 @@
 /// @brief Contains xtd::net::sockets::socket_exception exception.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../../system_exception.h"
-#include "socket_error.h"
+
+#include "socket_error"
+#include "../../system_exception"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
