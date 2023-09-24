@@ -1,10 +1,10 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/file_system.h>
-#include <xtd/native/directory.h>
-#include <xtd/native/file_attribute.h>
-#include <xtd/native/file_permission.h>
-#include <xtd/native/path.h>
-#include "../../../../include/xtd/native/macos/strings.h"
+#include <xtd/native/file_system>
+#include <xtd/native/directory>
+#include <xtd/native/file_attribute>
+#include <xtd/native/file_permission>
+#include <xtd/native/path>
+#include "../../../../include/xtd/native/macos/strings"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <cstring>
 #include <unistd.h>

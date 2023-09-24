@@ -1,22 +1,19 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/console.h>
-#include <xtd/native/console_color.h>
-#include <xtd/native/console_special_key.h>
+#include <xtd/native/console>
+#include <xtd/native/console_color>
+#include <xtd/native/console_special_key>
 #undef __XTD_CORE_NATIVE_LIBRARY__
-
+#include <AudioUnit/AudioUnit.h>
 #include <csignal>
 #include <iostream>
 #include <list>
 #include <map>
 #include <sstream>
 #include <vector>
-
 #include <fcntl.h>
 #include <termios.h>
 #include <unistd.h>
 #include <sys/ioctl.h>
-
-#include <AudioUnit/AudioUnit.h>
 
 using namespace xtd::native;
 

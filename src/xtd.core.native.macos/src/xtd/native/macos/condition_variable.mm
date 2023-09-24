@@ -1,6 +1,6 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/condition_variable.h>
-#include "../../../../include/xtd/native/macos/mutex.h"
+#include <xtd/native/condition_variable>
+#include "../../../../include/xtd/native/macos/mutex"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <pthread.h>
 

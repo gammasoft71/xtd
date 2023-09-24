@@ -1,5 +1,5 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/date_time.h>
+#include <xtd/native/date_time>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <algorithm>
 #include <chrono>

@@ -1,5 +1,5 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/interlocked.h>
+#include <xtd/native/interlocked>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <cmath>
 #include <cstdarg>

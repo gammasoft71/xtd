@@ -1,6 +1,6 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/unnamed_event_wait_handle.h>
-#include "../../../../include/xtd/native/macos/semaphore.h"
+#include <xtd/native/unnamed_event_wait_handle>
+#include "../../../../include/xtd/native/macos/semaphore"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #import <CoreFoundation/CoreFoundation.h>
 #include <TargetConditionals.h>
