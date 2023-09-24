@@ -2,7 +2,6 @@
 /// @brief Contains xtd::net::sockets::ip_v6_multicast_option class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 #include "../ip_address"
 #include "../../core_export"
 #include "../../object"

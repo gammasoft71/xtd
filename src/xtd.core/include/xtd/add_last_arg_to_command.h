@@ -2,7 +2,6 @@
 /// @brief Contains #add_last_arg_to_command_ macro.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 #if !defined(add_last_arg_to_command_)
 /// @cond
 #define __add_last_arg_to_command1_args__(command, last_arg, arg1) command(arg1, last_arg)

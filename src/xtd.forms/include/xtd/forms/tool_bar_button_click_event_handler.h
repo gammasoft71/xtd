@@ -2,7 +2,6 @@
 /// @brief Contains xtd::forms::tool_bar_button_click_event_handler event handler.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 #include <xtd/event_handler.h>
 #include "tool_bar_button_click_event_args.h"
 

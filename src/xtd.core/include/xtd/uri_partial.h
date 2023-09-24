@@ -1,7 +1,6 @@
 /// @file
 /// @brief Contains xtd::uri_partial enum.
 #pragma once
-
 #include "enum.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

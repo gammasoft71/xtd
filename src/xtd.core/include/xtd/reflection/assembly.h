@@ -1,7 +1,6 @@
 /// @file
 /// @brief Contains xtd::reflection::assembly class.
 #pragma once
-
 #include "../object"
 #include "../ustring"
 

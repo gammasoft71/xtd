@@ -2,7 +2,6 @@
 /// @brief Contains xtd::enum_register.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 #include "enum_collection.h"
 #include "types.h"
 

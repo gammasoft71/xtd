@@ -7,7 +7,6 @@
 #endif
 /// @endcond
 #pragma once
-
 #include "../format_exception"
 #include "../types"
 #include "../ustring"

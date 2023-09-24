@@ -2,7 +2,6 @@
 /// @brief Contains xtd::net::sockets::io_control_code enum.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 #include "../../enum"
 
 /// @cond

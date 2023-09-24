@@ -2,7 +2,6 @@
 /// @brief Contains xtd::net::sockets::ip_packet_information class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 #include "../ip_address"
 
 /// @cond

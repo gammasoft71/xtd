@@ -2,7 +2,6 @@
 /// @brief Contains xtd::timers::timer class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 #include "elapsed_event_handler"
 #include "../core_export"
 #include "../event"

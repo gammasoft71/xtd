@@ -2,7 +2,6 @@
 /// @brief Contains xtd::to_string methods.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 /// @cond
 #define __XTD_CORE_INTERNAL__
 #include "internal/__binary_formatter.h"

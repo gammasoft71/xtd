@@ -2,7 +2,6 @@
 /// @brief Contains xtd::net::sockets::send_packets_element class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 #include "../ip_address"
 #include "../../ustring"
 #include <fstream>

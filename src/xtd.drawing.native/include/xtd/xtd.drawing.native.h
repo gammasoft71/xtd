@@ -1,5 +1,4 @@
 #pragma once
-
 #include "drawing/native/brush.h"
 #include "drawing/native/compositing_modes.h"
 #include "drawing/native/compositing_qualities.h"

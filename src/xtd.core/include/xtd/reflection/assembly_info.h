@@ -1,7 +1,6 @@
 /// @file
 /// @brief Contains the assembly information contained in xtd::reflection.
 #pragma once
-
 #include "assembly_company_attribute"
 #include "assembly_configuration_attribute"
 #include "assembly_copyright_attribute"

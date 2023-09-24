@@ -1,7 +1,6 @@
 /// @file
 /// @brief Contains xtd::attribute class.
 #pragma once
-
 #include "object.h"
 #include "guid.h"
 #include "ustring.h"

@@ -1,5 +1,4 @@
 #pragma once
-
 /// @cond
 #if !defined(__XTD_CORE_INTERNAL__)
 #error "Do not include this file: Internal use only"

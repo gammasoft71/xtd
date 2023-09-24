@@ -2,7 +2,6 @@
 /// @brief Contains xtd::string_comparison enum class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Specifies the culture, case, and sort rules to be used by certain overloads of the xtd::ustring::compare method

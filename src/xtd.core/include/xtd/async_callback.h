@@ -2,7 +2,6 @@
 /// @brief Contains xtd::async_callback delegate.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 #include "delegate.h"
 #include "iasync_result.h"
 

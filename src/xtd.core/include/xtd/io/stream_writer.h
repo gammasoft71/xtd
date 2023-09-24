@@ -2,7 +2,6 @@
 /// @brief Contains xtd::io::stream_writer class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 #include "text_writer"
 #include "../optional"
 #include <fstream>

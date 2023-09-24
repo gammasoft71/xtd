@@ -1,5 +1,4 @@
 #pragma once
-
 #include "unit_tests_event_listener.h"
 #include <xtd/tunit/settings>
 #include <xtd/tunit/unit_test>

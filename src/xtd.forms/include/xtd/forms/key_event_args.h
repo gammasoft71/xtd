@@ -2,7 +2,6 @@
 /// @brief Contains xtd::forms::key_event_args event args.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 #include <xtd/event_args.h>
 #include "keys.h"
 

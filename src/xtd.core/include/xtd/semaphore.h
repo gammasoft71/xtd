@@ -1,7 +1,6 @@
 /// @file
 /// @brief Contains std::counting_semaphore and std::binary_semaphore types.
 #pragma once
-
 /// @cond
 #if defined(__cpp_lib_semaphore) || __cplusplus >= 202002l
 #include <semaphore>

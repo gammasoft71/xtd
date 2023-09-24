@@ -2,7 +2,6 @@
 /// @brief Contains xtd.drawing library headers.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 #include <xtd/xtd.core>
 
 #include "drawing/drawing_2d/compositing_mode.h"

@@ -2,7 +2,6 @@
 /// @brief Contains xtd::console_key_info class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 #include <iostream>
 #include "console_key.h"
 #include "console_modifiers.h"

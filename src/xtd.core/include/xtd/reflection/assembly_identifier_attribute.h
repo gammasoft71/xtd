@@ -1,7 +1,6 @@
 /// @file
 /// @brief Contains xtd::reflection::assembly_identifier_attribute attribute.
 #pragma once
-
 #include "../attribute"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

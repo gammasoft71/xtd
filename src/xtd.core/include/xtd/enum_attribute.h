@@ -2,7 +2,6 @@
 /// @brief Contains xtd::enum_attribute enum class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Specifies the enum attribute.

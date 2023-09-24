@@ -2,7 +2,6 @@
 /// @brief Contains xtd::string_split_options enum class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Specifies whether applicable xtd::ustring::split method overloads include or omit empty substrings from the return value.

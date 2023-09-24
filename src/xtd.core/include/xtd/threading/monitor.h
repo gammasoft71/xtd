@@ -2,7 +2,6 @@
 /// @brief Contains xtd::threading::monitor class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 #include "timeout"
 #include "../diagnostics/stack_frame"
 #include "../core_export"

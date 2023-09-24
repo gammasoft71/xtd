@@ -1,7 +1,6 @@
 /// @file
 /// @brief Contains std::optional type and std::bad_optional_access exception.
 #pragma once
-
 /// @cond
 #if defined(__cpp_lib_optional) || __cplusplus >= 201703l
 #include <optional>

@@ -1,7 +1,6 @@
 /// @file
 /// @brief Contains xtd::ustring class.
 #pragma once
-
 /// @cond
 #define __XTD_CORE_INTERNAL__
 #include "internal/__generic_stream_output.h"

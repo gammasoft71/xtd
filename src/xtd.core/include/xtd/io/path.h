@@ -2,7 +2,6 @@
 /// @brief Contains xtd::io::path class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 #include "file"
 #include "../core_export"
 #include "../static"

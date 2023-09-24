@@ -2,7 +2,6 @@
 /// @brief Contains xtd::net::sockets::socket_async_event_args class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 #include "ip_packet_information"
 #include "socket"
 #include "socket_flags"
