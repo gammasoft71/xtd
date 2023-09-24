@@ -20,8 +20,8 @@ public:
     fore_color(colors::black());
     
     for (auto index = 0_sz; index < languages.size(); ++index) {
-      items[index].first.location(point(10, 10 + index * 30)).parent(*this).text(languages[index].first).width(150);
-      items[index].second.location(point(160, 10 + index * 30)).parent(*this).text(languages[index].second).width(220).font({items[index].second.font(), font_style::bold});
+      items[index].first.location(point(10, as<int>(10 + index * 30))).parent(*this).text(languages[index].first).width(150);
+      items[index].second.location(point(160, as<int>(10 + index * 30))).parent(*this).text(languages[index].second).width(220).font({items[index].second.font(), font_style::bold});
     }
   }
   
