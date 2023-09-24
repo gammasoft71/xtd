@@ -1,0 +1,2 @@
+#pragma once
+#include "protocol_type_constants.h"

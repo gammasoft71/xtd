@@ -11,8 +11,8 @@
 #include <xtd/core_native_export.h>
 #include <functional>
 #include <string>
-#include "console_color.h"
-#include "console_special_key.h"
+#include "console_color"
+#include "console_special_key"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

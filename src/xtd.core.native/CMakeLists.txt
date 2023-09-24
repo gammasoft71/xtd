@@ -6,59 +6,108 @@ include(../../scripts/cmake/xtd_commands.cmake)
 include(../../scripts/cmake/xtd_version.cmake)
 add_include_directories(include)
 add_sources(
-  include/xtd/xtd.core.native
   include/xtd/xtd.core.native.h
+  include/xtd/xtd.core.native
   include/xtd/native/address_family_constants.h
+  include/xtd/native/address_family_constants
   include/xtd/native/assert_dialog_results.h
+  include/xtd/native/assert_dialog_results
   include/xtd/native/console_color.h
+  include/xtd/native/console_color
   include/xtd/native/console_special_key.h
+  include/xtd/native/console_special_key
   include/xtd/native/console.h
+  include/xtd/native/console
   include/xtd/native/constant_special_item_id_list.h
+  include/xtd/native/constant_special_item_id_list
   include/xtd/native/condition_variable.h
+  include/xtd/native/condition_variable
   include/xtd/native/critical_section.h
+  include/xtd/native/critical_section
   include/xtd/native/cryptography.h
+  include/xtd/native/cryptography
   include/xtd/native/date_time.h
+  include/xtd/native/date_time
   include/xtd/native/debugger.h
+  include/xtd/native/debugger
   include/xtd/native/directory.h
+  include/xtd/native/directory
   include/xtd/native/dns.h
+  include/xtd/native/dns
   include/xtd/native/drive_type.h
+  include/xtd/native/drive_type
   include/xtd/native/drive.h
+  include/xtd/native/drive
   include/xtd/native/environment.h
+  include/xtd/native/environment
   include/xtd/native/environment_variable_target.h
+  include/xtd/native/environment_variable_target
   include/xtd/native/file.h
+  include/xtd/native/file
   include/xtd/native/file_attribute.h
+  include/xtd/native/file_attribute
   include/xtd/native/file_permission.h
+  include/xtd/native/file_permission
   include/xtd/native/file_system.h
+  include/xtd/native/file_system
   include/xtd/native/guid.h
+  include/xtd/native/guid
   include/xtd/native/interlocked.h
+  include/xtd/native/interlocked
   include/xtd/native/named_event_wait_handle.h
+  include/xtd/native/named_event_wait_handle
   include/xtd/native/named_mutex.h
+  include/xtd/native/named_mutex
   include/xtd/native/named_semaphore.h
+  include/xtd/native/named_semaphore
   include/xtd/native/path.h
+  include/xtd/native/path
   include/xtd/native/platform_ids.h
+  include/xtd/native/platform_ids
   include/xtd/native/priority_class.h
+  include/xtd/native/priority_class
   include/xtd/native/process.h
+  include/xtd/native/process
   include/xtd/native/process_creation_flags.h
+  include/xtd/native/process_creation_flags
   include/xtd/native/process_window_style.h
+  include/xtd/native/process_window_style
   include/xtd/native/protocol_type_constants.h
+  include/xtd/native/protocol_type_constants
   include/xtd/native/select_mode_constants.h
+  include/xtd/native/select_mode_constants
   include/xtd/native/socket.h
+  include/xtd/native/socket
   include/xtd/native/socket_option_level_constants.h
+  include/xtd/native/socket_option_level_constants
   include/xtd/native/socket_option_name_constants.h
+  include/xtd/native/socket_option_name_constants
   include/xtd/native/socket_error_constants.h
+  include/xtd/native/socket_error_constants
   include/xtd/native/socket_shutdown_constants.h
+  include/xtd/native/socket_shutdown_constants
   include/xtd/native/socket_type_constants.h
+  include/xtd/native/socket_type_constants
   include/xtd/native/sounds.h
+  include/xtd/native/sounds
   include/xtd/native/speech_synthesizer.h
+  include/xtd/native/speech_synthesizer
   include/xtd/native/stack_trace.h
+  include/xtd/native/stack_trace
   include/xtd/native/system_sound.h
+  include/xtd/native/system_sound
   include/xtd/native/thread.h
+  include/xtd/native/thread
   include/xtd/native/translator.h
+  include/xtd/native/translator
   include/xtd/native/types.h
   include/xtd/native/types
   include/xtd/native/unnamed_event_wait_handle.h
+  include/xtd/native/unnamed_event_wait_handle
   include/xtd/native/unnamed_mutex.h
+  include/xtd/native/unnamed_mutex
   include/xtd/native/unnamed_semaphore.h
+  include/xtd/native/unnamed_semaphore
 )
 target_type(INTERFACE_LIBRARY)
 

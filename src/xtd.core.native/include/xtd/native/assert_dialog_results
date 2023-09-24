@@ -1,0 +1,2 @@
+#pragma once
+#include "assert_dialog_results.h"
