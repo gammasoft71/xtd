@@ -8,14 +8,14 @@
 #endif
 /// @endcond
 
-#include <xtd/core_native_export.h>
+#include "constant_special_item_id_list"
+#include "environment_variable_target"
+#include "platform_ids"
+#include <xtd/core_native_export>
 #include <cstdint>
 #include <map>
 #include <string>
 #include <vector>
-#include "constant_special_item_id_list.h"
-#include "environment_variable_target.h"
-#include "platform_ids.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
