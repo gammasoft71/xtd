@@ -8,6 +8,8 @@
 #endif
 /// @endcond
 
+#include "../any"
+#include "../optional"
 #include <array>
 #include <deque>
 #include <stdexcept>
@@ -27,8 +29,6 @@
 #include <utility>
 #include <valarray>
 #include <vector>
-#include "../any.h"
-#include "../optional.h"
 
 /// @cond
 extern std::unordered_map<std::type_index, std::function<std::string(std::any const&)>> __any_stringer__;

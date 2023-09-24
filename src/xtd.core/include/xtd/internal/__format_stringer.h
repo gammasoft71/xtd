@@ -7,6 +7,8 @@
 #endif
 /// @endcond
 
+#include "../chrono"
+#include "../types"
 #include <algorithm>
 #include <cctype>
 #include <cstddef>
@@ -18,8 +20,6 @@
 #include <string>
 #include <type_traits>
 #include <vector>
-#include "../chrono"
-#include "../types"
 
 /// @cond
 namespace xtd {
