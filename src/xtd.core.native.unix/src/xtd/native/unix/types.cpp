@@ -1,7 +1,7 @@
-#include <cxxabi.h>
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/types.h>
+#include <xtd/native/types>
 #undef __XTD_CORE_NATIVE_LIBRARY__
+#include <cxxabi.h>
 
 using namespace abi;
 using namespace std;

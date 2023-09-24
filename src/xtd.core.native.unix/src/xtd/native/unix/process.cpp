@@ -1,9 +1,9 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/process.h>
-#include <xtd/native/process_creation_flags.h>
-#include <xtd/native/priority_class.h>
-#include <xtd/native/process_window_style.h>
-#include "../../../../include/xtd/native/unix/strings.h"
+#include <xtd/native/process>
+#include <xtd/native/process_creation_flags>
+#include <xtd/native/priority_class>
+#include <xtd/native/process_window_style>
+#include "../../../../include/xtd/native/unix/strings"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <vector>
 #include <filesystem>

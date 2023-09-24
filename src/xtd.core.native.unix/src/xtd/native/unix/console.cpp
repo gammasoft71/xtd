@@ -1,21 +1,18 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/console.h>
-#include <xtd/native/console_color.h>
-#include <xtd/native/console_special_key.h>
+#include <xtd/native/console>
+#include <xtd/native/console_color>
+#include <xtd/native/console_special_key>
 #undef __XTD_CORE_NATIVE_LIBRARY__
-
 #include <csignal>
 #include <iostream>
 #include <list>
 #include <map>
 #include <sstream>
 #include <vector>
-
 #include <fcntl.h>
 #include <termios.h>
 #include <unistd.h>
 #include <sys/ioctl.h>
-
 #define ALSA_PCM_NEW_HW_PARAMS_API
 #include <alsa/asoundlib.h>
 #include <linux/kd.h>

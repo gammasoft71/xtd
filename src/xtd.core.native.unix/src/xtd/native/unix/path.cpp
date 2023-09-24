@@ -1,5 +1,5 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/path.h>
+#include <xtd/native/path>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <string>
 #include <unistd.h>

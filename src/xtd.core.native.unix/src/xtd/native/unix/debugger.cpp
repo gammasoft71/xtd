@@ -1,7 +1,7 @@
 #if !defined(__APPLE__)
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/debugger.h>
-#include <xtd/native/assert_dialog_results.h>
+#include <xtd/native/debugger>
+#include <xtd/native/assert_dialog_results>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <iostream>
 #include <cstdlib>

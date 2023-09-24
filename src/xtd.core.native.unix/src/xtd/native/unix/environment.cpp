@@ -1,17 +1,15 @@
+#define __XTD_CORE_NATIVE_LIBRARY__
+#include <xtd/native/environment>
+#include "../../../../include/xtd/native/unix/strings"
+#undef __XTD_CORE_NATIVE_LIBRARY__
 #include <cstdio>
 #include <cstdlib>
 #include <map>
 #include <numeric>
 #include <thread>
-
 #include <sys/sysinfo.h>
 #include <sys/param.h>
 #include <unistd.h>
-
-#define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/environment.h>
-#include "../../../../include/xtd/native/unix/strings.h"
-#undef __XTD_CORE_NATIVE_LIBRARY__
 
 using namespace std;
 using namespace std::literals;

@@ -1,14 +1,12 @@
+#define __XTD_CORE_NATIVE_LIBRARY__
+#include <xtd/native/guid>
+#undef __XTD_CORE_NATIVE_LIBRARY__
 #include <algorithm>
 #include <numeric>
 #include <random>
-
 #if !defined(__ANDROID__)
 #include <uuid/uuid.h>
 #endif
-
-#define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/guid.h>
-#undef __XTD_CORE_NATIVE_LIBRARY__
 
 using namespace xtd::native;
 
