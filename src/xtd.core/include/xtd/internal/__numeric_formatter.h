@@ -7,10 +7,10 @@
 #endif
 /// @endcond
 
-#include "__binary_formatter.h"
-#include "__fixed_point_formatter.h"
-#include "__format_exception.h"
-#include "__sprintf.h"
+#include "__binary_formatter"
+#include "__fixed_point_formatter"
+#include "__format_exception"
+#include "__sprintf"
 #include <algorithm>
 
 /// @cond

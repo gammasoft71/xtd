@@ -8,8 +8,8 @@
 /// @endcond
 
 #include "../types"
-#include "__format_exception.h"
-#include "__sprintf.h"
+#include "__format_exception"
+#include "__sprintf"
 
 /// @cond
 template<typename char_t>

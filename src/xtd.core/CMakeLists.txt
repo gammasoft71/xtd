@@ -506,32 +506,59 @@ add_sources(
   include/xtd/diagnostics/trace_switch
   include/xtd/internal/__as_enum.h
   include/xtd/internal/__binary_formatter.h
+  include/xtd/internal/__binary_formatter
   include/xtd/internal/__boolean_formatter.h
+  include/xtd/internal/__boolean_formatter
   include/xtd/internal/__box_enum_or_object.h
+  include/xtd/internal/__box_enum_or_object
   include/xtd/internal/__box_floating_point.h
+  include/xtd/internal/__box_floating_point
   include/xtd/internal/__build_type.h
+  include/xtd/internal/__build_type
   include/xtd/internal/__character_formatter.h
+  include/xtd/internal/__character_formatter
   include/xtd/internal/__compiler_id.h
+  include/xtd/internal/__compiler_id
   include/xtd/internal/__compiler_version.h
+  include/xtd/internal/__compiler_version
   include/xtd/internal/__cpp_language.h
+  include/xtd/internal/__cpp_language
   include/xtd/internal/__currency_formatter.h
+  include/xtd/internal/__currency_formatter
   include/xtd/internal/__date_time_formatter.h
+  include/xtd/internal/__date_time_formatter
   include/xtd/internal/__duration_formatter.h
+  include/xtd/internal/__duration_formatter
   include/xtd/internal/__enum_formatter.h
+  include/xtd/internal/__enum_formatter
   include/xtd/internal/__enum_definition_to_enum_collection.h
+  include/xtd/internal/__enum_definition_to_enum_collection
   include/xtd/internal/__enum_introspection.h
+  include/xtd/internal/__enum_introspection
   include/xtd/internal/__fixed_point_formatter.h
+  include/xtd/internal/__fixed_point_formatter
   include/xtd/internal/__format_exception.h
+  include/xtd/internal/__format_exception
   include/xtd/internal/__format_information.h
+  include/xtd/internal/__format_information
   include/xtd/internal/__format_stringer.h
+  include/xtd/internal/__format_stringer
   include/xtd/internal/__generic_stream_output.h
+  include/xtd/internal/__generic_stream_output
   include/xtd/internal/__natural_formatter.h
+  include/xtd/internal/__natural_formatter
   include/xtd/internal/__numeric_formatter.h
+  include/xtd/internal/__numeric_formatter
   include/xtd/internal/__parse.h
+  include/xtd/internal/__parse
   include/xtd/internal/__show_generic_exception_message.h
+  include/xtd/internal/__show_generic_exception_message
   include/xtd/internal/__sprintf.h
+  include/xtd/internal/__sprintf
   include/xtd/internal/__std_abort.h
+  include/xtd/internal/__std_abort
   include/xtd/internal/__string_formatter.h
+  include/xtd/internal/__string_formatter
   include/xtd/io/binary_reader.h
   include/xtd/io/binary_reader
   include/xtd/io/binary_writer.h

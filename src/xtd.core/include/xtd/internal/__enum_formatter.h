@@ -7,8 +7,8 @@
 #endif
 /// @endcond
 
-#include "__numeric_formatter.h"
-#include "__format_exception.h"
+#include "__numeric_formatter"
+#include "__format_exception"
 
 /// @cond
 template<typename char_t, typename value_t>

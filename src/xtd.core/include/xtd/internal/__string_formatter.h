@@ -7,7 +7,7 @@
 #endif
 /// @endcond
 
-#include "__format_stringer.h"
+#include "__format_stringer"
 
 /// @cond
 template<typename char_t, typename value_t>

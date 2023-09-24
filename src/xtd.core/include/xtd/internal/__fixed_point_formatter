@@ -1,0 +1,2 @@
+#pragma once
+#include "__fixed_point_formatter.h"
