@@ -88,8 +88,8 @@ $(function() {
 <div class="contents">
 <a href="test__method__attribute_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="test_8h.html">test.h</a>&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="test__state_8h.html">test_state.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;test&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;test_state&quot;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>  <span class="keyword">namespace </span>tunit {</div>
@@ -126,7 +126,7 @@ $(function() {
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="preprocessor">    template&lt;typename test_class&gt; __##method_name##_attribute##_class(test_class&amp; test) : test_method_attribute(#method_name, test, &amp;test_class::method_name, {__FILE__, __LINE__, __func__}) {} \</span></div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="preprocessor">  } __##method_name##_attribute {*this}; \</span></div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="preprocessor">  void method_name()</span></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1test__class_html"><div class="ttname"><a href="classxtd_1_1tunit_1_1test__class.html">xtd::tunit::test_class</a></div><div class="ttdoc">Represents a test class.</div><div class="ttdef"><b>Definition</b> test_class.h:38</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1test__class_html"><div class="ttname"><a href="classxtd_1_1tunit_1_1test__class.html">xtd::tunit::test_class</a></div><div class="ttdoc">Represents a test class.</div><div class="ttdef"><b>Definition</b> test_class.h:39</div></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1test__method__attribute_html"><div class="ttname"><a href="classxtd_1_1tunit_1_1test__method__attribute.html">xtd::tunit::test_method_attribute</a></div><div class="ttdoc">Represents a test method attribute.</div><div class="ttdef"><b>Definition</b> test_method_attribute.h:22</div></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1test__method__attribute_html_a7b0bddf32b7349e289157490c86319ec"><div class="ttname"><a href="classxtd_1_1tunit_1_1test__method__attribute.html#a7b0bddf32b7349e289157490c86319ec">xtd::tunit::test_method_attribute::test_method_attribute</a></div><div class="ttdeci">test_method_attribute(const std::string &amp;name, test_class_t &amp;test_class, void(test_class_t::*method)(), xtd::tunit::test_state test_state) noexcept</div><div class="ttdoc">Creates a new instance of test_method_attribute with specified name, test_class, method,...</div><div class="ttdef"><b>Definition</b> test_method_attribute.h:48</div></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1test__method__attribute_html_ab0d36520bf0216dece09b42269db48fc"><div class="ttname"><a href="classxtd_1_1tunit_1_1test__method__attribute.html#ab0d36520bf0216dece09b42269db48fc">xtd::tunit::test_method_attribute::test_method_attribute</a></div><div class="ttdeci">test_method_attribute(const std::string &amp;name, test_class_t &amp;test_class, void(test_class_t::*method)()) noexcept</div><div class="ttdoc">Creates a new instance of test_method_attribute with specified name, test_class, and method.</div><div class="ttdef"><b>Definition</b> test_method_attribute.h:32</div></div>
@@ -136,13 +136,11 @@ $(function() {
 <div class="ttc" id="agroup__tunit_html_gga46f8455e2ce33fac305f44bea7a1c3d2ac9e661c6cd0e6e343ae44fbf34c16b6e"><div class="ttname"><a href="group__tunit.html#gga46f8455e2ce33fac305f44bea7a1c3d2ac9e661c6cd0e6e343ae44fbf34c16b6e">xtd::tunit::test_state::considered</a></div><div class="ttdeci">@ considered</div><div class="ttdoc">Test is considered.</div></div>
 <div class="ttc" id="agroup__tunit_html_gga46f8455e2ce33fac305f44bea7a1c3d2af3f98c5d41d7c992a6fb63799f700f2b"><div class="ttname"><a href="group__tunit.html#gga46f8455e2ce33fac305f44bea7a1c3d2af3f98c5d41d7c992a6fb63799f700f2b">xtd::tunit::test_state::ignored</a></div><div class="ttdeci">@ ignored</div><div class="ttdoc">Test is ignored.</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
-<div class="ttc" id="atest_8h_html"><div class="ttname"><a href="test_8h.html">test.h</a></div><div class="ttdoc">Contains xtd::tunit::test class.</div></div>
-<div class="ttc" id="atest__state_8h_html"><div class="ttname"><a href="test__state_8h.html">test_state.h</a></div><div class="ttdoc">Contains xtd::tunit::test_state enum class.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 17 2023 22:11:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Sep 24 2023 20:19:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -88,11 +88,11 @@ $(function() {
 <div class="contents">
 <a href="wait__handle_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;../abstract.h&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;../as.h&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;../time_span.h&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;../types.h&quot;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="timeout_8h.html">timeout.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;timeout&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;../abstract&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;../as&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;../time_span&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;../types&quot;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;limits&gt;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
@@ -252,8 +252,8 @@ $(function() {
 <div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>  }</div>
 <div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>}</div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1registered__wait__handle_html"><div class="ttname"><a href="classxtd_1_1threading_1_1registered__wait__handle.html">xtd::threading::registered_wait_handle</a></div><div class="ttdoc">A synchronization primitive that can also be used for interprocess synchronization.</div><div class="ttdef"><b>Definition</b> registered_wait_handle.h:27</div></div>
-<div class="ttc" id="aclassxtd_1_1threading_1_1thread_html"><div class="ttname"><a href="classxtd_1_1threading_1_1thread.html">xtd::threading::thread</a></div><div class="ttdoc">Creates and controls a thread, sets its priority, and gets its status.</div><div class="ttdef"><b>Definition</b> thread.h:42</div></div>
-<div class="ttc" id="aclassxtd_1_1threading_1_1timeout_html"><div class="ttname"><a href="classxtd_1_1threading_1_1timeout.html">xtd::threading::timeout</a></div><div class="ttdoc">Contains a constant used to specify an infinite amount of time. This class cannot be inherited.</div><div class="ttdef"><b>Definition</b> timeout.h:32</div></div>
+<div class="ttc" id="aclassxtd_1_1threading_1_1thread_html"><div class="ttname"><a href="classxtd_1_1threading_1_1thread.html">xtd::threading::thread</a></div><div class="ttdoc">Creates and controls a thread, sets its priority, and gets its status.</div><div class="ttdef"><b>Definition</b> thread.h:41</div></div>
+<div class="ttc" id="aclassxtd_1_1threading_1_1timeout_html"><div class="ttname"><a href="classxtd_1_1threading_1_1timeout.html">xtd::threading::timeout</a></div><div class="ttdoc">Contains a constant used to specify an infinite amount of time. This class cannot be inherited.</div><div class="ttdef"><b>Definition</b> timeout.h:31</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1wait__handle_html"><div class="ttname"><a href="classxtd_1_1threading_1_1wait__handle.html">xtd::threading::wait_handle</a></div><div class="ttdoc">Encapsulates operating system specific objects that wait for exclusive access to shared resources.</div><div class="ttdef"><b>Definition</b> wait_handle.h:48</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1wait__handle_html_a1c98f88990d103ede2f1f9dcbed8956b"><div class="ttname"><a href="classxtd_1_1threading_1_1wait__handle.html#a1c98f88990d103ede2f1f9dcbed8956b">xtd::threading::wait_handle::invalid_handle</a></div><div class="ttdeci">static const intptr invalid_handle</div><div class="ttdoc">Represents an invalid native operating system handle. This field is read-only.</div><div class="ttdef"><b>Definition</b> wait_handle.h:59</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1wait__handle_html_a217129669f17b6f14201dccd0405450c"><div class="ttname"><a href="classxtd_1_1threading_1_1wait__handle.html#a217129669f17b6f14201dccd0405450c">xtd::threading::wait_handle::wait_all</a></div><div class="ttdeci">static bool wait_all(const collection_t &amp;wait_handles)</div><div class="ttdoc">Waits for all the elements in the specified collection to receive a signal.</div><div class="ttdef"><b>Definition</b> wait_handle.h:130</div></div>
@@ -275,13 +275,12 @@ $(function() {
 <div class="ttc" id="agroup__types_html_gaa7283e1dd31c385d954467f7ea324451"><div class="ttname"><a href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">xtd::intptr</a></div><div class="ttdeci">intmax_t intptr</div><div class="ttdoc">Represent a pointer or a handle.</div><div class="ttdef"><b>Definition</b> types.h:151</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga19379a1158ccd320e208b362f11295b7"><div class="ttname"><a href="group__xtd__core.html#ga19379a1158ccd320e208b362f11295b7">xtd::as</a></div><div class="ttdeci">new_type_t as(std::any value)</div><div class="ttdoc">Casts a type into another type.</div><div class="ttdef"><b>Definition</b> as.h:37</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
-<div class="ttc" id="astructxtd_1_1time__span_html"><div class="ttname"><a href="structxtd_1_1time__span.html">xtd::time_span</a></div><div class="ttdoc">Represents a time interval.</div><div class="ttdef"><b>Definition</b> time_span.h:27</div></div>
-<div class="ttc" id="atimeout_8h_html"><div class="ttname"><a href="timeout_8h.html">timeout.h</a></div><div class="ttdoc">Contains xtd::threading::timeout class.</div></div>
+<div class="ttc" id="astructxtd_1_1time__span_html"><div class="ttname"><a href="structxtd_1_1time__span.html">xtd::time_span</a></div><div class="ttdoc">Represents a time interval.</div><div class="ttdef"><b>Definition</b> time_span.h:26</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 17 2023 22:11:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Sep 24 2023 20:19:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

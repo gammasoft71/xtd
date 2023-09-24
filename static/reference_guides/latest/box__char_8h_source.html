@@ -88,7 +88,7 @@ $(function() {
 <div class="contents">
 <a href="box__char_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="box__integer_8h.html">box_integer.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;box_integer&quot;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> type_t&gt;</div>
@@ -153,7 +153,6 @@ $(function() {
 <div class="line"><a id="l00199" name="l00199"></a><span class="lineno"><a class="line" href="classxtd_1_1box__char.html#a7ca0f2747a783cbed6bc60f1a1c87302">  199</a></span>    <span class="keyword">static</span> <span class="keywordtype">char</span> <a class="code hl_function" href="classxtd_1_1box__char.html#a7ca0f2747a783cbed6bc60f1a1c87302">to_upper</a>(type_t <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a4a8a08f09d37b73795649038408b5f33">c</a>) <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>type_t<span class="keyword">&gt;</span>(std::toupper(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a4a8a08f09d37b73795649038408b5f33">c</a>));}</div>
 <div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>  };</div>
 <div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>}</div>
-<div class="ttc" id="abox__integer_8h_html"><div class="ttname"><a href="box__integer_8h.html">box_integer.h</a></div><div class="ttdoc">Contains xtd::box_integer class.</div></div>
 <div class="ttc" id="aclassxtd_1_1box__char_html"><div class="ttname"><a href="classxtd_1_1box__char.html">xtd::box_char</a></div><div class="ttdoc">Represents a boxed char object.</div><div class="ttdef"><b>Definition</b> box_char.h:36</div></div>
 <div class="ttc" id="aclassxtd_1_1box__char_html_a07a459c622f9d0e15af8b78082d81eaa"><div class="ttname"><a href="classxtd_1_1box__char.html#a07a459c622f9d0e15af8b78082d81eaa">xtd::box_char::is_symbol</a></div><div class="ttdeci">static bool is_symbol(const ustring &amp;s, size_t index)</div><div class="ttdoc">Indicates whether the character at the specified position in a specified string is categorized as a s...</div><div class="ttdef"><b>Definition</b> box_char.h:165</div></div>
 <div class="ttc" id="aclassxtd_1_1box__char_html_a0ea82f4a3f2b901fc14cb37baefbc20f"><div class="ttname"><a href="classxtd_1_1box__char.html#a0ea82f4a3f2b901fc14cb37baefbc20f">xtd::box_char::is_punctuation</a></div><div class="ttdeci">static bool is_punctuation(type_t c) noexcept</div><div class="ttdoc">Indicates whether the specified Unicode character is categorized as a punctuation mark.</div><div class="ttdef"><b>Definition</b> box_char.h:134</div></div>
@@ -183,7 +182,7 @@ $(function() {
 <div class="ttc" id="aclassxtd_1_1box__char_html_aeec0e9f5add8b3e08d20a08cb9309037"><div class="ttname"><a href="classxtd_1_1box__char.html#aeec0e9f5add8b3e08d20a08cb9309037">xtd::box_char::is_letter</a></div><div class="ttdeci">static bool is_letter(type_t c) noexcept</div><div class="ttdoc">Indicates whether the specified Unicode character is categorized as a Unicode letter.</div><div class="ttdef"><b>Definition</b> box_char.h:86</div></div>
 <div class="ttc" id="aclassxtd_1_1box__integer_html"><div class="ttname"><a href="classxtd_1_1box__integer.html">xtd::box_integer</a></div><div class="ttdoc">Represents a boxed integer object.</div><div class="ttdef"><b>Definition</b> box_integer.h:36</div></div>
 <div class="ttc" id="aclassxtd_1_1box_html_abc6d47e0f1df482254595e035681a10f"><div class="ttname"><a href="classxtd_1_1box.html#abc6d47e0f1df482254595e035681a10f">xtd::box::value</a></div><div class="ttdeci">const type_t &amp; value() const noexcept</div><div class="ttdoc">Gets the underlying value.</div><div class="ttdef"><b>Definition</b> box.h:79</div></div>
-<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:48</div></div>
+<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:46</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">xtd::console_key::s</a></div><div class="ttdeci">@ s</div><div class="ttdoc">The S key.</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a4a8a08f09d37b73795649038408b5f33"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a4a8a08f09d37b73795649038408b5f33">xtd::console_key::c</a></div><div class="ttdeci">@ c</div><div class="ttdoc">The C key.</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
@@ -191,7 +190,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 17 2023 22:11:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Sep 24 2023 20:19:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

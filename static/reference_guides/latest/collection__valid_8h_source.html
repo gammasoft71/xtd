@@ -88,8 +88,8 @@ $(function() {
 <div class="contents">
 <a href="collection__valid_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="valid_8h.html">valid.h</a>&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="collection__assert_8h.html">collection_assert.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;valid&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;collection_assert&quot;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>  <span class="keyword">namespace </span>tunit {</div>
@@ -109,7 +109,7 @@ $(function() {
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>          collection_assert::all_items_are_instances_of&lt;expected_t&gt;(collection, message, stack_frame);</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>          base_assert::error();</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>          error();</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        }</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>      }</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>      </div>
@@ -124,7 +124,7 @@ $(function() {
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>          collection_assert::all_items_are_instances_of&lt;expected_t&gt;(collection, message, stack_frame);</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>          base_assert::error();</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>          <a class="code hl_enumvalue" href="group__xtd__core.html#ggaa67a4b789cb787af85a8a1337af56f99acb5e100e5a9a3e7f6d1fd97512215282">error</a>();</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        }</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>      }</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>      </div>
@@ -139,7 +139,7 @@ $(function() {
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>          collection_assert::all_items_are_not_null(collection, message, stack_frame);</div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>          base_assert::error();</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>          error();</div>
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        }</div>
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>      }</div>
 <div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>      </div>
@@ -154,7 +154,7 @@ $(function() {
 <div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>          collection_assert::all_items_are_not_null(collection, message, stack_frame);</div>
 <div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>          base_assert::error();</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>          <a class="code hl_enumvalue" href="group__xtd__core.html#ggaa67a4b789cb787af85a8a1337af56f99acb5e100e5a9a3e7f6d1fd97512215282">error</a>();</div>
 <div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        }</div>
 <div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>      }</div>
 <div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>      </div>
@@ -169,7 +169,7 @@ $(function() {
 <div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>          collection_assert::all_items_are_unique(collection, message, stack_frame);</div>
 <div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>          base_assert::error();</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>          error();</div>
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>        }</div>
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>      }</div>
 <div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>      </div>
@@ -184,7 +184,7 @@ $(function() {
 <div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>          collection_assert::all_items_are_unique(collection, message, stack_frame);</div>
 <div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>          base_assert::error();</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>          <a class="code hl_enumvalue" href="group__xtd__core.html#ggaa67a4b789cb787af85a8a1337af56f99acb5e100e5a9a3e7f6d1fd97512215282">error</a>();</div>
 <div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>        }</div>
 <div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>      }</div>
 <div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>      </div>
@@ -199,7 +199,7 @@ $(function() {
 <div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>          collection_assert::are_equal(expected, actual, message, stack_frame);</div>
 <div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>          base_assert::error();</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>          error();</div>
 <div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>        }</div>
 <div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>      }</div>
 <div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>      </div>
@@ -214,7 +214,7 @@ $(function() {
 <div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>          collection_assert::are_equal(expected, actual, message, stack_frame);</div>
 <div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>          base_assert::error();</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>          <a class="code hl_enumvalue" href="group__xtd__core.html#ggaa67a4b789cb787af85a8a1337af56f99acb5e100e5a9a3e7f6d1fd97512215282">error</a>();</div>
 <div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>        }</div>
 <div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>      }</div>
 <div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>      <span class="keyword">template</span>&lt;<span class="keyword">typename</span> collection_t, <span class="keyword">typename</span> item_t&gt;</div>
@@ -228,7 +228,7 @@ $(function() {
 <div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>          collection_assert::are_equal(expected, actual, message, stack_frame);</div>
 <div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>          base_assert::error();</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>          <a class="code hl_enumvalue" href="group__xtd__core.html#ggaa67a4b789cb787af85a8a1337af56f99acb5e100e5a9a3e7f6d1fd97512215282">error</a>();</div>
 <div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>        }</div>
 <div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>      }</div>
 <div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>      <span class="keyword">template</span>&lt;<span class="keyword">typename</span> item_t, <span class="keyword">typename</span> collection_t&gt;</div>
@@ -242,7 +242,7 @@ $(function() {
 <div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>          collection_assert::are_equal(expected, actual, message, stack_frame);</div>
 <div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>          base_assert::error();</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>          <a class="code hl_enumvalue" href="group__xtd__core.html#ggaa67a4b789cb787af85a8a1337af56f99acb5e100e5a9a3e7f6d1fd97512215282">error</a>();</div>
 <div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>        }</div>
 <div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>      }</div>
 <div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>      </div>
@@ -257,7 +257,7 @@ $(function() {
 <div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>          collection_assert::are_equivalent(expected, actual, message, stack_frame);</div>
 <div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span>          base_assert::error();</div>
+<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span>          error();</div>
 <div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span>        }</div>
 <div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span>      }</div>
 <div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>      </div>
@@ -272,7 +272,7 @@ $(function() {
 <div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>          collection_assert::are_equivalent(expected, actual, message, stack_frame);</div>
 <div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>          base_assert::error();</div>
+<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>          <a class="code hl_enumvalue" href="group__xtd__core.html#ggaa67a4b789cb787af85a8a1337af56f99acb5e100e5a9a3e7f6d1fd97512215282">error</a>();</div>
 <div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span>        }</div>
 <div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>      }</div>
 <div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span>      <span class="keyword">template</span>&lt;<span class="keyword">typename</span> collection_t, <span class="keyword">typename</span> item_t&gt;</div>
@@ -286,7 +286,7 @@ $(function() {
 <div class="line"><a id="l00438" name="l00438"></a><span class="lineno">  438</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00439" name="l00439"></a><span class="lineno">  439</span>          collection_assert::are_equivalent(expected, actual, message, stack_frame);</div>
 <div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span>          base_assert::error();</div>
+<div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span>          <a class="code hl_enumvalue" href="group__xtd__core.html#ggaa67a4b789cb787af85a8a1337af56f99acb5e100e5a9a3e7f6d1fd97512215282">error</a>();</div>
 <div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span>        }</div>
 <div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span>      }</div>
 <div class="line"><a id="l00444" name="l00444"></a><span class="lineno">  444</span>      <span class="keyword">template</span>&lt;<span class="keyword">typename</span> item_t, <span class="keyword">typename</span> collection_t&gt;</div>
@@ -300,7 +300,7 @@ $(function() {
 <div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span>          collection_assert::are_equivalent(expected, actual, message, stack_frame);</div>
 <div class="line"><a id="l00454" name="l00454"></a><span class="lineno">  454</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span>          base_assert::error();</div>
+<div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span>          <a class="code hl_enumvalue" href="group__xtd__core.html#ggaa67a4b789cb787af85a8a1337af56f99acb5e100e5a9a3e7f6d1fd97512215282">error</a>();</div>
 <div class="line"><a id="l00456" name="l00456"></a><span class="lineno">  456</span>        }</div>
 <div class="line"><a id="l00457" name="l00457"></a><span class="lineno">  457</span>      }</div>
 <div class="line"><a id="l00459" name="l00459"></a><span class="lineno">  459</span>      </div>
@@ -315,7 +315,7 @@ $(function() {
 <div class="line"><a id="l00508" name="l00508"></a><span class="lineno">  508</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00509" name="l00509"></a><span class="lineno">  509</span>          collection_assert::are_not_equal(expected, actual, message, stack_frame);</div>
 <div class="line"><a id="l00510" name="l00510"></a><span class="lineno">  510</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00511" name="l00511"></a><span class="lineno">  511</span>          base_assert::error();</div>
+<div class="line"><a id="l00511" name="l00511"></a><span class="lineno">  511</span>          error();</div>
 <div class="line"><a id="l00512" name="l00512"></a><span class="lineno">  512</span>        }</div>
 <div class="line"><a id="l00513" name="l00513"></a><span class="lineno">  513</span>      }</div>
 <div class="line"><a id="l00514" name="l00514"></a><span class="lineno">  514</span>      </div>
@@ -330,7 +330,7 @@ $(function() {
 <div class="line"><a id="l00524" name="l00524"></a><span class="lineno">  524</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00525" name="l00525"></a><span class="lineno">  525</span>          collection_assert::are_not_equal(expected, actual, message, stack_frame);</div>
 <div class="line"><a id="l00526" name="l00526"></a><span class="lineno">  526</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00527" name="l00527"></a><span class="lineno">  527</span>          base_assert::error();</div>
+<div class="line"><a id="l00527" name="l00527"></a><span class="lineno">  527</span>          <a class="code hl_enumvalue" href="group__xtd__core.html#ggaa67a4b789cb787af85a8a1337af56f99acb5e100e5a9a3e7f6d1fd97512215282">error</a>();</div>
 <div class="line"><a id="l00528" name="l00528"></a><span class="lineno">  528</span>        }</div>
 <div class="line"><a id="l00529" name="l00529"></a><span class="lineno">  529</span>      }</div>
 <div class="line"><a id="l00530" name="l00530"></a><span class="lineno">  530</span>      <span class="keyword">template</span>&lt;<span class="keyword">typename</span> collection_t, <span class="keyword">typename</span> item_t&gt;</div>
@@ -344,7 +344,7 @@ $(function() {
 <div class="line"><a id="l00538" name="l00538"></a><span class="lineno">  538</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00539" name="l00539"></a><span class="lineno">  539</span>          collection_assert::are_not_equal(expected, actual, message, stack_frame);</div>
 <div class="line"><a id="l00540" name="l00540"></a><span class="lineno">  540</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00541" name="l00541"></a><span class="lineno">  541</span>          base_assert::error();</div>
+<div class="line"><a id="l00541" name="l00541"></a><span class="lineno">  541</span>          <a class="code hl_enumvalue" href="group__xtd__core.html#ggaa67a4b789cb787af85a8a1337af56f99acb5e100e5a9a3e7f6d1fd97512215282">error</a>();</div>
 <div class="line"><a id="l00542" name="l00542"></a><span class="lineno">  542</span>        }</div>
 <div class="line"><a id="l00543" name="l00543"></a><span class="lineno">  543</span>      }</div>
 <div class="line"><a id="l00544" name="l00544"></a><span class="lineno">  544</span>      <span class="keyword">template</span>&lt;<span class="keyword">typename</span> item_t, <span class="keyword">typename</span> collection_t&gt;</div>
@@ -358,7 +358,7 @@ $(function() {
 <div class="line"><a id="l00552" name="l00552"></a><span class="lineno">  552</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00553" name="l00553"></a><span class="lineno">  553</span>          collection_assert::are_not_equal(expected, actual, message, stack_frame);</div>
 <div class="line"><a id="l00554" name="l00554"></a><span class="lineno">  554</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00555" name="l00555"></a><span class="lineno">  555</span>          base_assert::error();</div>
+<div class="line"><a id="l00555" name="l00555"></a><span class="lineno">  555</span>          <a class="code hl_enumvalue" href="group__xtd__core.html#ggaa67a4b789cb787af85a8a1337af56f99acb5e100e5a9a3e7f6d1fd97512215282">error</a>();</div>
 <div class="line"><a id="l00556" name="l00556"></a><span class="lineno">  556</span>        }</div>
 <div class="line"><a id="l00557" name="l00557"></a><span class="lineno">  557</span>      }</div>
 <div class="line"><a id="l00559" name="l00559"></a><span class="lineno">  559</span>      </div>
@@ -373,7 +373,7 @@ $(function() {
 <div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span>          collection_assert::are_not_equivalent(expected, actual, message, stack_frame);</div>
 <div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span>          base_assert::error();</div>
+<div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span>          error();</div>
 <div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span>        }</div>
 <div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span>      }</div>
 <div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span>      </div>
@@ -388,7 +388,7 @@ $(function() {
 <div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00625" name="l00625"></a><span class="lineno">  625</span>          collection_assert::are_not_equivalent(expected, actual, message, stack_frame);</div>
 <div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span>          base_assert::error();</div>
+<div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span>          <a class="code hl_enumvalue" href="group__xtd__core.html#ggaa67a4b789cb787af85a8a1337af56f99acb5e100e5a9a3e7f6d1fd97512215282">error</a>();</div>
 <div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span>        }</div>
 <div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span>      }</div>
 <div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span>      <span class="keyword">template</span>&lt;<span class="keyword">typename</span> collection_t, <span class="keyword">typename</span> item_t&gt;</div>
@@ -402,7 +402,7 @@ $(function() {
 <div class="line"><a id="l00638" name="l00638"></a><span class="lineno">  638</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00639" name="l00639"></a><span class="lineno">  639</span>          collection_assert::are_not_equivalent(expected, actual, message, stack_frame);</div>
 <div class="line"><a id="l00640" name="l00640"></a><span class="lineno">  640</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00641" name="l00641"></a><span class="lineno">  641</span>          base_assert::error();</div>
+<div class="line"><a id="l00641" name="l00641"></a><span class="lineno">  641</span>          <a class="code hl_enumvalue" href="group__xtd__core.html#ggaa67a4b789cb787af85a8a1337af56f99acb5e100e5a9a3e7f6d1fd97512215282">error</a>();</div>
 <div class="line"><a id="l00642" name="l00642"></a><span class="lineno">  642</span>        }</div>
 <div class="line"><a id="l00643" name="l00643"></a><span class="lineno">  643</span>      }</div>
 <div class="line"><a id="l00644" name="l00644"></a><span class="lineno">  644</span>      <span class="keyword">template</span>&lt;<span class="keyword">typename</span> item_t, <span class="keyword">typename</span> collection_t&gt;</div>
@@ -416,7 +416,7 @@ $(function() {
 <div class="line"><a id="l00652" name="l00652"></a><span class="lineno">  652</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00653" name="l00653"></a><span class="lineno">  653</span>          collection_assert::are_not_equivalent(expected, actual, message, stack_frame);</div>
 <div class="line"><a id="l00654" name="l00654"></a><span class="lineno">  654</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00655" name="l00655"></a><span class="lineno">  655</span>          base_assert::error();</div>
+<div class="line"><a id="l00655" name="l00655"></a><span class="lineno">  655</span>          <a class="code hl_enumvalue" href="group__xtd__core.html#ggaa67a4b789cb787af85a8a1337af56f99acb5e100e5a9a3e7f6d1fd97512215282">error</a>();</div>
 <div class="line"><a id="l00656" name="l00656"></a><span class="lineno">  656</span>        }</div>
 <div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span>      }</div>
 <div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span>      </div>
@@ -431,7 +431,7 @@ $(function() {
 <div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00709" name="l00709"></a><span class="lineno">  709</span>          collection_assert::contains(expected, actual, message, stack_frame);</div>
 <div class="line"><a id="l00710" name="l00710"></a><span class="lineno">  710</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00711" name="l00711"></a><span class="lineno">  711</span>          base_assert::error();</div>
+<div class="line"><a id="l00711" name="l00711"></a><span class="lineno">  711</span>          error();</div>
 <div class="line"><a id="l00712" name="l00712"></a><span class="lineno">  712</span>        }</div>
 <div class="line"><a id="l00713" name="l00713"></a><span class="lineno">  713</span>      }</div>
 <div class="line"><a id="l00714" name="l00714"></a><span class="lineno">  714</span>      </div>
@@ -446,7 +446,7 @@ $(function() {
 <div class="line"><a id="l00724" name="l00724"></a><span class="lineno">  724</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00725" name="l00725"></a><span class="lineno">  725</span>          collection_assert::contains(expected, actual, message, stack_frame);</div>
 <div class="line"><a id="l00726" name="l00726"></a><span class="lineno">  726</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00727" name="l00727"></a><span class="lineno">  727</span>          base_assert::error();</div>
+<div class="line"><a id="l00727" name="l00727"></a><span class="lineno">  727</span>          <a class="code hl_enumvalue" href="group__xtd__core.html#ggaa67a4b789cb787af85a8a1337af56f99acb5e100e5a9a3e7f6d1fd97512215282">error</a>();</div>
 <div class="line"><a id="l00728" name="l00728"></a><span class="lineno">  728</span>        }</div>
 <div class="line"><a id="l00729" name="l00729"></a><span class="lineno">  729</span>      }</div>
 <div class="line"><a id="l00730" name="l00730"></a><span class="lineno">  730</span>      <span class="keyword">template</span>&lt;<span class="keyword">typename</span> collection_t, <span class="keyword">typename</span> item_t&gt;</div>
@@ -460,7 +460,7 @@ $(function() {
 <div class="line"><a id="l00738" name="l00738"></a><span class="lineno">  738</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00739" name="l00739"></a><span class="lineno">  739</span>          collection_assert::contains(expected, actual, message, stack_frame);</div>
 <div class="line"><a id="l00740" name="l00740"></a><span class="lineno">  740</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00741" name="l00741"></a><span class="lineno">  741</span>          base_assert::error();</div>
+<div class="line"><a id="l00741" name="l00741"></a><span class="lineno">  741</span>          <a class="code hl_enumvalue" href="group__xtd__core.html#ggaa67a4b789cb787af85a8a1337af56f99acb5e100e5a9a3e7f6d1fd97512215282">error</a>();</div>
 <div class="line"><a id="l00742" name="l00742"></a><span class="lineno">  742</span>        }</div>
 <div class="line"><a id="l00743" name="l00743"></a><span class="lineno">  743</span>      }</div>
 <div class="line"><a id="l00744" name="l00744"></a><span class="lineno">  744</span>      <span class="keyword">template</span>&lt;<span class="keyword">typename</span> item_t, <span class="keyword">typename</span> collection_t&gt;</div>
@@ -474,7 +474,7 @@ $(function() {
 <div class="line"><a id="l00752" name="l00752"></a><span class="lineno">  752</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00753" name="l00753"></a><span class="lineno">  753</span>          collection_assert::contains(expected, actual, message, stack_frame);</div>
 <div class="line"><a id="l00754" name="l00754"></a><span class="lineno">  754</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00755" name="l00755"></a><span class="lineno">  755</span>          base_assert::error();</div>
+<div class="line"><a id="l00755" name="l00755"></a><span class="lineno">  755</span>          <a class="code hl_enumvalue" href="group__xtd__core.html#ggaa67a4b789cb787af85a8a1337af56f99acb5e100e5a9a3e7f6d1fd97512215282">error</a>();</div>
 <div class="line"><a id="l00756" name="l00756"></a><span class="lineno">  756</span>        }</div>
 <div class="line"><a id="l00757" name="l00757"></a><span class="lineno">  757</span>      }</div>
 <div class="line"><a id="l00759" name="l00759"></a><span class="lineno">  759</span>      </div>
@@ -489,7 +489,7 @@ $(function() {
 <div class="line"><a id="l00808" name="l00808"></a><span class="lineno">  808</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00809" name="l00809"></a><span class="lineno">  809</span>          collection_assert::does_not_contain(expected, actual, message, stack_frame);</div>
 <div class="line"><a id="l00810" name="l00810"></a><span class="lineno">  810</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00811" name="l00811"></a><span class="lineno">  811</span>          base_assert::error();</div>
+<div class="line"><a id="l00811" name="l00811"></a><span class="lineno">  811</span>          error();</div>
 <div class="line"><a id="l00812" name="l00812"></a><span class="lineno">  812</span>        }</div>
 <div class="line"><a id="l00813" name="l00813"></a><span class="lineno">  813</span>      }</div>
 <div class="line"><a id="l00814" name="l00814"></a><span class="lineno">  814</span>      </div>
@@ -504,7 +504,7 @@ $(function() {
 <div class="line"><a id="l00824" name="l00824"></a><span class="lineno">  824</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00825" name="l00825"></a><span class="lineno">  825</span>          collection_assert::does_not_contain(expected, actual, message, stack_frame);</div>
 <div class="line"><a id="l00826" name="l00826"></a><span class="lineno">  826</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00827" name="l00827"></a><span class="lineno">  827</span>          base_assert::error();</div>
+<div class="line"><a id="l00827" name="l00827"></a><span class="lineno">  827</span>          <a class="code hl_enumvalue" href="group__xtd__core.html#ggaa67a4b789cb787af85a8a1337af56f99acb5e100e5a9a3e7f6d1fd97512215282">error</a>();</div>
 <div class="line"><a id="l00828" name="l00828"></a><span class="lineno">  828</span>        }</div>
 <div class="line"><a id="l00829" name="l00829"></a><span class="lineno">  829</span>      }</div>
 <div class="line"><a id="l00830" name="l00830"></a><span class="lineno">  830</span>      <span class="keyword">template</span>&lt;<span class="keyword">typename</span> collection_t, <span class="keyword">typename</span> item_t&gt;</div>
@@ -518,7 +518,7 @@ $(function() {
 <div class="line"><a id="l00838" name="l00838"></a><span class="lineno">  838</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00839" name="l00839"></a><span class="lineno">  839</span>          collection_assert::does_not_contain(expected, actual, message, stack_frame);</div>
 <div class="line"><a id="l00840" name="l00840"></a><span class="lineno">  840</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00841" name="l00841"></a><span class="lineno">  841</span>          base_assert::error();</div>
+<div class="line"><a id="l00841" name="l00841"></a><span class="lineno">  841</span>          <a class="code hl_enumvalue" href="group__xtd__core.html#ggaa67a4b789cb787af85a8a1337af56f99acb5e100e5a9a3e7f6d1fd97512215282">error</a>();</div>
 <div class="line"><a id="l00842" name="l00842"></a><span class="lineno">  842</span>        }</div>
 <div class="line"><a id="l00843" name="l00843"></a><span class="lineno">  843</span>      }</div>
 <div class="line"><a id="l00844" name="l00844"></a><span class="lineno">  844</span>      <span class="keyword">template</span>&lt;<span class="keyword">typename</span> item_t, <span class="keyword">typename</span> collection_t&gt;</div>
@@ -532,7 +532,7 @@ $(function() {
 <div class="line"><a id="l00852" name="l00852"></a><span class="lineno">  852</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00853" name="l00853"></a><span class="lineno">  853</span>          collection_assert::does_not_contain(expected, actual, message, stack_frame);</div>
 <div class="line"><a id="l00854" name="l00854"></a><span class="lineno">  854</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00855" name="l00855"></a><span class="lineno">  855</span>          base_assert::error();</div>
+<div class="line"><a id="l00855" name="l00855"></a><span class="lineno">  855</span>          <a class="code hl_enumvalue" href="group__xtd__core.html#ggaa67a4b789cb787af85a8a1337af56f99acb5e100e5a9a3e7f6d1fd97512215282">error</a>();</div>
 <div class="line"><a id="l00856" name="l00856"></a><span class="lineno">  856</span>        }</div>
 <div class="line"><a id="l00857" name="l00857"></a><span class="lineno">  857</span>      }</div>
 <div class="line"><a id="l00859" name="l00859"></a><span class="lineno">  859</span>      </div>
@@ -547,7 +547,7 @@ $(function() {
 <div class="line"><a id="l00908" name="l00908"></a><span class="lineno">  908</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00909" name="l00909"></a><span class="lineno">  909</span>          collection_assert::is_empty(value, message, stack_frame);</div>
 <div class="line"><a id="l00910" name="l00910"></a><span class="lineno">  910</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00911" name="l00911"></a><span class="lineno">  911</span>          base_assert::error();</div>
+<div class="line"><a id="l00911" name="l00911"></a><span class="lineno">  911</span>          error();</div>
 <div class="line"><a id="l00912" name="l00912"></a><span class="lineno">  912</span>        }</div>
 <div class="line"><a id="l00913" name="l00913"></a><span class="lineno">  913</span>      }</div>
 <div class="line"><a id="l00914" name="l00914"></a><span class="lineno">  914</span>      </div>
@@ -562,7 +562,7 @@ $(function() {
 <div class="line"><a id="l00924" name="l00924"></a><span class="lineno">  924</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00925" name="l00925"></a><span class="lineno">  925</span>          collection_assert::is_empty(value, message, stack_frame);</div>
 <div class="line"><a id="l00926" name="l00926"></a><span class="lineno">  926</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00927" name="l00927"></a><span class="lineno">  927</span>          base_assert::error();</div>
+<div class="line"><a id="l00927" name="l00927"></a><span class="lineno">  927</span>          <a class="code hl_enumvalue" href="group__xtd__core.html#ggaa67a4b789cb787af85a8a1337af56f99acb5e100e5a9a3e7f6d1fd97512215282">error</a>();</div>
 <div class="line"><a id="l00928" name="l00928"></a><span class="lineno">  928</span>        }</div>
 <div class="line"><a id="l00929" name="l00929"></a><span class="lineno">  929</span>      }</div>
 <div class="line"><a id="l00931" name="l00931"></a><span class="lineno">  931</span>      </div>
@@ -577,7 +577,7 @@ $(function() {
 <div class="line"><a id="l00980" name="l00980"></a><span class="lineno">  980</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00981" name="l00981"></a><span class="lineno">  981</span>          collection_assert::is_not_empty(value, message, stack_frame);</div>
 <div class="line"><a id="l00982" name="l00982"></a><span class="lineno">  982</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00983" name="l00983"></a><span class="lineno">  983</span>          base_assert::error();</div>
+<div class="line"><a id="l00983" name="l00983"></a><span class="lineno">  983</span>          error();</div>
 <div class="line"><a id="l00984" name="l00984"></a><span class="lineno">  984</span>        }</div>
 <div class="line"><a id="l00985" name="l00985"></a><span class="lineno">  985</span>      }</div>
 <div class="line"><a id="l00986" name="l00986"></a><span class="lineno">  986</span>      </div>
@@ -592,7 +592,7 @@ $(function() {
 <div class="line"><a id="l00996" name="l00996"></a><span class="lineno">  996</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00997" name="l00997"></a><span class="lineno">  997</span>          collection_assert::is_not_empty(value, message, stack_frame);</div>
 <div class="line"><a id="l00998" name="l00998"></a><span class="lineno">  998</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00999" name="l00999"></a><span class="lineno">  999</span>          base_assert::error();</div>
+<div class="line"><a id="l00999" name="l00999"></a><span class="lineno">  999</span>          <a class="code hl_enumvalue" href="group__xtd__core.html#ggaa67a4b789cb787af85a8a1337af56f99acb5e100e5a9a3e7f6d1fd97512215282">error</a>();</div>
 <div class="line"><a id="l01000" name="l01000"></a><span class="lineno"> 1000</span>        }</div>
 <div class="line"><a id="l01001" name="l01001"></a><span class="lineno"> 1001</span>      }</div>
 <div class="line"><a id="l01003" name="l01003"></a><span class="lineno"> 1003</span>      </div>
@@ -607,7 +607,7 @@ $(function() {
 <div class="line"><a id="l01052" name="l01052"></a><span class="lineno"> 1052</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l01053" name="l01053"></a><span class="lineno"> 1053</span>          collection_assert::is_ordered(value, message, stack_frame);</div>
 <div class="line"><a id="l01054" name="l01054"></a><span class="lineno"> 1054</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l01055" name="l01055"></a><span class="lineno"> 1055</span>          base_assert::error();</div>
+<div class="line"><a id="l01055" name="l01055"></a><span class="lineno"> 1055</span>          error();</div>
 <div class="line"><a id="l01056" name="l01056"></a><span class="lineno"> 1056</span>        }</div>
 <div class="line"><a id="l01057" name="l01057"></a><span class="lineno"> 1057</span>      }</div>
 <div class="line"><a id="l01058" name="l01058"></a><span class="lineno"> 1058</span>      </div>
@@ -622,7 +622,7 @@ $(function() {
 <div class="line"><a id="l01068" name="l01068"></a><span class="lineno"> 1068</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l01069" name="l01069"></a><span class="lineno"> 1069</span>          collection_assert::is_ordered(value, message, stack_frame);</div>
 <div class="line"><a id="l01070" name="l01070"></a><span class="lineno"> 1070</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l01071" name="l01071"></a><span class="lineno"> 1071</span>          base_assert::error();</div>
+<div class="line"><a id="l01071" name="l01071"></a><span class="lineno"> 1071</span>          <a class="code hl_enumvalue" href="group__xtd__core.html#ggaa67a4b789cb787af85a8a1337af56f99acb5e100e5a9a3e7f6d1fd97512215282">error</a>();</div>
 <div class="line"><a id="l01072" name="l01072"></a><span class="lineno"> 1072</span>        }</div>
 <div class="line"><a id="l01073" name="l01073"></a><span class="lineno"> 1073</span>      }</div>
 <div class="line"><a id="l01076" name="l01076"></a><span class="lineno"> 1076</span>    };</div>
@@ -680,15 +680,14 @@ $(function() {
 <div class="ttc" id="aclassxtd_1_1tunit_1_1collection__valid_html_af359f9fc579f46506d398ab79d1d5526"><div class="ttname"><a href="classxtd_1_1tunit_1_1collection__valid.html#af359f9fc579f46506d398ab79d1d5526">xtd::tunit::collection_valid::is_not_empty</a></div><div class="ttdeci">static void is_not_empty(const value_t &amp;value, const std::string &amp;message, const xtd::diagnostics::stack_frame &amp;stack_frame)</div><div class="ttdoc">Validates that collection or traits does not contain any item.</div><div class="ttdef"><b>Definition</b> collection_valid.h:979</div></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1collection__valid_html_afd25628a4dbdb35e0e9363edb7e3af38"><div class="ttname"><a href="classxtd_1_1tunit_1_1collection__valid.html#afd25628a4dbdb35e0e9363edb7e3af38">xtd::tunit::collection_valid::does_not_contain</a></div><div class="ttdeci">static void does_not_contain(const expected_t &amp;expected, const actual_t &amp;actual)</div><div class="ttdoc">Validates that collection contains all items.</div><div class="ttdef"><b>Definition</b> collection_valid.h:771</div></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1collection__valid_html_afde5ceb7481f7f88d2a753b0ae6a9e6d"><div class="ttname"><a href="classxtd_1_1tunit_1_1collection__valid.html#afde5ceb7481f7f88d2a753b0ae6a9e6d">xtd::tunit::collection_valid::all_items_are_unique</a></div><div class="ttdeci">static void all_items_are_unique(const collection_t &amp;collection, const xtd::diagnostics::stack_frame &amp;stack_frame)</div><div class="ttdoc">Validates that all collection items are unique.</div><div class="ttdef"><b>Definition</b> collection_valid.h:222</div></div>
-<div class="ttc" id="acollection__assert_8h_html"><div class="ttname"><a href="collection__assert_8h.html">collection_assert.h</a></div><div class="ttdoc">Contains xtd::tunit::collection_assert class.</div></div>
 <div class="ttc" id="agroup__keywords_html_ga3a58fce91c530883d63a6e440c3c5eab"><div class="ttname"><a href="group__keywords.html#ga3a58fce91c530883d63a6e440c3c5eab">tunit_export_</a></div><div class="ttdeci">#define tunit_export_</div><div class="ttdoc">Define shared library export.</div><div class="ttdef"><b>Definition</b> tunit_export.h:13</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggaa67a4b789cb787af85a8a1337af56f99acb5e100e5a9a3e7f6d1fd97512215282"><div class="ttname"><a href="group__xtd__core.html#ggaa67a4b789cb787af85a8a1337af56f99acb5e100e5a9a3e7f6d1fd97512215282">xtd::diagnostics::source_levels::error</a></div><div class="ttdeci">@ error</div><div class="ttdoc">Allows critical and error events through.</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
-<div class="ttc" id="avalid_8h_html"><div class="ttname"><a href="valid_8h.html">valid.h</a></div><div class="ttdoc">Contains xtd::tunit::valid class.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 17 2023 22:11:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Sep 24 2023 20:19:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

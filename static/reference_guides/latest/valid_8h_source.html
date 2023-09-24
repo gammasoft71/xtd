@@ -88,7 +88,7 @@ $(function() {
 <div class="contents">
 <a href="valid_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="xtd_8tunit_2include_2xtd_2tunit_2assert_8h.html">assert.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;assert&quot;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>  <span class="keyword">namespace </span>tunit {</div>
@@ -111,7 +111,7 @@ $(function() {
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>          assert::are_equal(expected, actual, message, stack_frame);</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>          base_assert::error();</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>          error();</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        }</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>      }</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>      </div>
@@ -153,7 +153,7 @@ $(function() {
 <div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>          assert::are_not_equal(expected, actual, message, stack_frame);</div>
 <div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>          base_assert::error();</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>          error();</div>
 <div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>        }</div>
 <div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>      }</div>
 <div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>      </div>
@@ -179,7 +179,7 @@ $(function() {
 <div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>          assert::are_not_same(expected, actual, message, stack_frame);</div>
 <div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>          base_assert::error();</div>
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>          error();</div>
 <div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>        }</div>
 <div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>      }</div>
 <div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>      </div>
@@ -197,7 +197,7 @@ $(function() {
 <div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span>          assert::are_same(expected, actual, message, stack_frame);</div>
 <div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span>          base_assert::error();</div>
+<div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span>          error();</div>
 <div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span>        }</div>
 <div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span>      }</div>
 <div class="line"><a id="l00438" name="l00438"></a><span class="lineno">  438</span>      </div>
@@ -215,7 +215,7 @@ $(function() {
 <div class="line"><a id="l00490" name="l00490"></a><span class="lineno">  490</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span>          assert::contains(item, collection, message, stack_frame);</div>
 <div class="line"><a id="l00492" name="l00492"></a><span class="lineno">  492</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00493" name="l00493"></a><span class="lineno">  493</span>          base_assert::error();</div>
+<div class="line"><a id="l00493" name="l00493"></a><span class="lineno">  493</span>          error();</div>
 <div class="line"><a id="l00494" name="l00494"></a><span class="lineno">  494</span>        }</div>
 <div class="line"><a id="l00495" name="l00495"></a><span class="lineno">  495</span>      }</div>
 <div class="line"><a id="l00496" name="l00496"></a><span class="lineno">  496</span>      </div>
@@ -230,7 +230,7 @@ $(function() {
 <div class="line"><a id="l00506" name="l00506"></a><span class="lineno">  506</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00507" name="l00507"></a><span class="lineno">  507</span>          assert::contains(item, values, message, stack_frame);</div>
 <div class="line"><a id="l00508" name="l00508"></a><span class="lineno">  508</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00509" name="l00509"></a><span class="lineno">  509</span>          base_assert::error();</div>
+<div class="line"><a id="l00509" name="l00509"></a><span class="lineno">  509</span>          <a class="code hl_enumvalue" href="group__xtd__core.html#ggaa67a4b789cb787af85a8a1337af56f99acb5e100e5a9a3e7f6d1fd97512215282">error</a>();</div>
 <div class="line"><a id="l00510" name="l00510"></a><span class="lineno">  510</span>        }</div>
 <div class="line"><a id="l00511" name="l00511"></a><span class="lineno">  511</span>      }</div>
 <div class="line"><a id="l00512" name="l00512"></a><span class="lineno">  512</span>      </div>
@@ -261,7 +261,7 @@ $(function() {
 <div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span>          assert::is_empty(value, message, stack_frame);</div>
 <div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span>          base_assert::error();</div>
+<div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span>          error();</div>
 <div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span>        }</div>
 <div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span>      }</div>
 <div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span>      </div>
@@ -276,7 +276,7 @@ $(function() {
 <div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span>          assert::is_empty(values, message, stack_frame);</div>
 <div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span>          base_assert::error();</div>
+<div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span>          <a class="code hl_enumvalue" href="group__xtd__core.html#ggaa67a4b789cb787af85a8a1337af56f99acb5e100e5a9a3e7f6d1fd97512215282">error</a>();</div>
 <div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span>        }</div>
 <div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span>      }</div>
 <div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span>      </div>
@@ -307,7 +307,7 @@ $(function() {
 <div class="line"><a id="l00738" name="l00738"></a><span class="lineno">  738</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00739" name="l00739"></a><span class="lineno">  739</span>          assert::is_greater(val1, val2, message, stack_frame);</div>
 <div class="line"><a id="l00740" name="l00740"></a><span class="lineno">  740</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00741" name="l00741"></a><span class="lineno">  741</span>          base_assert::error();</div>
+<div class="line"><a id="l00741" name="l00741"></a><span class="lineno">  741</span>          error();</div>
 <div class="line"><a id="l00742" name="l00742"></a><span class="lineno">  742</span>        }</div>
 <div class="line"><a id="l00743" name="l00743"></a><span class="lineno">  743</span>      }</div>
 <div class="line"><a id="l00744" name="l00744"></a><span class="lineno">  744</span>      </div>
@@ -333,7 +333,7 @@ $(function() {
 <div class="line"><a id="l00806" name="l00806"></a><span class="lineno">  806</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00807" name="l00807"></a><span class="lineno">  807</span>          assert::is_greater_or_equal(val1, val2, message, stack_frame);</div>
 <div class="line"><a id="l00808" name="l00808"></a><span class="lineno">  808</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00809" name="l00809"></a><span class="lineno">  809</span>          base_assert::error();</div>
+<div class="line"><a id="l00809" name="l00809"></a><span class="lineno">  809</span>          error();</div>
 <div class="line"><a id="l00810" name="l00810"></a><span class="lineno">  810</span>        }</div>
 <div class="line"><a id="l00811" name="l00811"></a><span class="lineno">  811</span>      }</div>
 <div class="line"><a id="l00812" name="l00812"></a><span class="lineno">  812</span>      </div>
@@ -359,7 +359,7 @@ $(function() {
 <div class="line"><a id="l00870" name="l00870"></a><span class="lineno">  870</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00871" name="l00871"></a><span class="lineno">  871</span>          assert::is_instance_of&lt;type_t&gt;(value, message, stack_frame);</div>
 <div class="line"><a id="l00872" name="l00872"></a><span class="lineno">  872</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00873" name="l00873"></a><span class="lineno">  873</span>          base_assert::error();</div>
+<div class="line"><a id="l00873" name="l00873"></a><span class="lineno">  873</span>          error();</div>
 <div class="line"><a id="l00874" name="l00874"></a><span class="lineno">  874</span>        }</div>
 <div class="line"><a id="l00875" name="l00875"></a><span class="lineno">  875</span>      }</div>
 <div class="line"><a id="l00876" name="l00876"></a><span class="lineno">  876</span>      </div>
@@ -377,7 +377,7 @@ $(function() {
 <div class="line"><a id="l00924" name="l00924"></a><span class="lineno">  924</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00925" name="l00925"></a><span class="lineno">  925</span>          assert::is_less(val1, val2, message, stack_frame);</div>
 <div class="line"><a id="l00926" name="l00926"></a><span class="lineno">  926</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00927" name="l00927"></a><span class="lineno">  927</span>          base_assert::error();</div>
+<div class="line"><a id="l00927" name="l00927"></a><span class="lineno">  927</span>          error();</div>
 <div class="line"><a id="l00928" name="l00928"></a><span class="lineno">  928</span>        }</div>
 <div class="line"><a id="l00929" name="l00929"></a><span class="lineno">  929</span>      }</div>
 <div class="line"><a id="l00930" name="l00930"></a><span class="lineno">  930</span>      </div>
@@ -403,7 +403,7 @@ $(function() {
 <div class="line"><a id="l00992" name="l00992"></a><span class="lineno">  992</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00993" name="l00993"></a><span class="lineno">  993</span>          assert::is_less_or_equal(val1, val2, message, stack_frame);</div>
 <div class="line"><a id="l00994" name="l00994"></a><span class="lineno">  994</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00995" name="l00995"></a><span class="lineno">  995</span>          base_assert::error();</div>
+<div class="line"><a id="l00995" name="l00995"></a><span class="lineno">  995</span>          error();</div>
 <div class="line"><a id="l00996" name="l00996"></a><span class="lineno">  996</span>        }</div>
 <div class="line"><a id="l00997" name="l00997"></a><span class="lineno">  997</span>      }</div>
 <div class="line"><a id="l00998" name="l00998"></a><span class="lineno">  998</span>      </div>
@@ -442,7 +442,7 @@ $(function() {
 <div class="line"><a id="l01193" name="l01193"></a><span class="lineno"> 1193</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l01194" name="l01194"></a><span class="lineno"> 1194</span>          assert::is_negative(value, message, stack_frame);</div>
 <div class="line"><a id="l01195" name="l01195"></a><span class="lineno"> 1195</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l01196" name="l01196"></a><span class="lineno"> 1196</span>          base_assert::error();</div>
+<div class="line"><a id="l01196" name="l01196"></a><span class="lineno"> 1196</span>          error();</div>
 <div class="line"><a id="l01197" name="l01197"></a><span class="lineno"> 1197</span>        }</div>
 <div class="line"><a id="l01198" name="l01198"></a><span class="lineno"> 1198</span>      }</div>
 <div class="line"><a id="l01199" name="l01199"></a><span class="lineno"> 1199</span>      </div>
@@ -460,7 +460,7 @@ $(function() {
 <div class="line"><a id="l01251" name="l01251"></a><span class="lineno"> 1251</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l01252" name="l01252"></a><span class="lineno"> 1252</span>          assert::is_not_empty(value, message, stack_frame);</div>
 <div class="line"><a id="l01253" name="l01253"></a><span class="lineno"> 1253</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l01254" name="l01254"></a><span class="lineno"> 1254</span>          base_assert::error();</div>
+<div class="line"><a id="l01254" name="l01254"></a><span class="lineno"> 1254</span>          error();</div>
 <div class="line"><a id="l01255" name="l01255"></a><span class="lineno"> 1255</span>        }</div>
 <div class="line"><a id="l01256" name="l01256"></a><span class="lineno"> 1256</span>      }</div>
 <div class="line"><a id="l01257" name="l01257"></a><span class="lineno"> 1257</span>      </div>
@@ -475,7 +475,7 @@ $(function() {
 <div class="line"><a id="l01267" name="l01267"></a><span class="lineno"> 1267</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l01268" name="l01268"></a><span class="lineno"> 1268</span>          assert::is_not_empty(value, message, stack_frame);</div>
 <div class="line"><a id="l01269" name="l01269"></a><span class="lineno"> 1269</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l01270" name="l01270"></a><span class="lineno"> 1270</span>          base_assert::error();</div>
+<div class="line"><a id="l01270" name="l01270"></a><span class="lineno"> 1270</span>          <a class="code hl_enumvalue" href="group__xtd__core.html#ggaa67a4b789cb787af85a8a1337af56f99acb5e100e5a9a3e7f6d1fd97512215282">error</a>();</div>
 <div class="line"><a id="l01271" name="l01271"></a><span class="lineno"> 1271</span>        }</div>
 <div class="line"><a id="l01272" name="l01272"></a><span class="lineno"> 1272</span>      }</div>
 <div class="line"><a id="l01273" name="l01273"></a><span class="lineno"> 1273</span>      </div>
@@ -501,7 +501,7 @@ $(function() {
 <div class="line"><a id="l01330" name="l01330"></a><span class="lineno"> 1330</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l01331" name="l01331"></a><span class="lineno"> 1331</span>          assert::is_not_instance_of&lt;type_t&gt;(value, message, stack_frame);</div>
 <div class="line"><a id="l01332" name="l01332"></a><span class="lineno"> 1332</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l01333" name="l01333"></a><span class="lineno"> 1333</span>          base_assert::error();</div>
+<div class="line"><a id="l01333" name="l01333"></a><span class="lineno"> 1333</span>          error();</div>
 <div class="line"><a id="l01334" name="l01334"></a><span class="lineno"> 1334</span>        }</div>
 <div class="line"><a id="l01335" name="l01335"></a><span class="lineno"> 1335</span>      }</div>
 <div class="line"><a id="l01336" name="l01336"></a><span class="lineno"> 1336</span>      </div>
@@ -519,7 +519,7 @@ $(function() {
 <div class="line"><a id="l01392" name="l01392"></a><span class="lineno"> 1392</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l01393" name="l01393"></a><span class="lineno"> 1393</span>          assert::is_not_null(pointer, message, stack_frame);</div>
 <div class="line"><a id="l01394" name="l01394"></a><span class="lineno"> 1394</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l01395" name="l01395"></a><span class="lineno"> 1395</span>          base_assert::error();</div>
+<div class="line"><a id="l01395" name="l01395"></a><span class="lineno"> 1395</span>          error();</div>
 <div class="line"><a id="l01396" name="l01396"></a><span class="lineno"> 1396</span>        }</div>
 <div class="line"><a id="l01397" name="l01397"></a><span class="lineno"> 1397</span>      }</div>
 <div class="line"><a id="l01398" name="l01398"></a><span class="lineno"> 1398</span>      </div>
@@ -537,7 +537,7 @@ $(function() {
 <div class="line"><a id="l01450" name="l01450"></a><span class="lineno"> 1450</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l01451" name="l01451"></a><span class="lineno"> 1451</span>          assert::is_not_null(opt, message, stack_frame);</div>
 <div class="line"><a id="l01452" name="l01452"></a><span class="lineno"> 1452</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l01453" name="l01453"></a><span class="lineno"> 1453</span>          base_assert::error();</div>
+<div class="line"><a id="l01453" name="l01453"></a><span class="lineno"> 1453</span>          error();</div>
 <div class="line"><a id="l01454" name="l01454"></a><span class="lineno"> 1454</span>        }</div>
 <div class="line"><a id="l01455" name="l01455"></a><span class="lineno"> 1455</span>      }</div>
 <div class="line"><a id="l01456" name="l01456"></a><span class="lineno"> 1456</span>      </div>
@@ -555,7 +555,7 @@ $(function() {
 <div class="line"><a id="l01508" name="l01508"></a><span class="lineno"> 1508</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l01509" name="l01509"></a><span class="lineno"> 1509</span>          assert::is_not_null(pointer, message, stack_frame);</div>
 <div class="line"><a id="l01510" name="l01510"></a><span class="lineno"> 1510</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l01511" name="l01511"></a><span class="lineno"> 1511</span>          base_assert::error();</div>
+<div class="line"><a id="l01511" name="l01511"></a><span class="lineno"> 1511</span>          error();</div>
 <div class="line"><a id="l01512" name="l01512"></a><span class="lineno"> 1512</span>        }</div>
 <div class="line"><a id="l01513" name="l01513"></a><span class="lineno"> 1513</span>      }</div>
 <div class="line"><a id="l01514" name="l01514"></a><span class="lineno"> 1514</span>      </div>
@@ -573,7 +573,7 @@ $(function() {
 <div class="line"><a id="l01566" name="l01566"></a><span class="lineno"> 1566</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l01567" name="l01567"></a><span class="lineno"> 1567</span>          assert::is_not_null(pointer, message, stack_frame);</div>
 <div class="line"><a id="l01568" name="l01568"></a><span class="lineno"> 1568</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l01569" name="l01569"></a><span class="lineno"> 1569</span>          base_assert::error();</div>
+<div class="line"><a id="l01569" name="l01569"></a><span class="lineno"> 1569</span>          error();</div>
 <div class="line"><a id="l01570" name="l01570"></a><span class="lineno"> 1570</span>        }</div>
 <div class="line"><a id="l01571" name="l01571"></a><span class="lineno"> 1571</span>      }</div>
 <div class="line"><a id="l01572" name="l01572"></a><span class="lineno"> 1572</span>      </div>
@@ -608,7 +608,7 @@ $(function() {
 <div class="line"><a id="l01721" name="l01721"></a><span class="lineno"> 1721</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l01722" name="l01722"></a><span class="lineno"> 1722</span>          assert::is_not_zero(value, message, stack_frame);</div>
 <div class="line"><a id="l01723" name="l01723"></a><span class="lineno"> 1723</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l01724" name="l01724"></a><span class="lineno"> 1724</span>          base_assert::error();</div>
+<div class="line"><a id="l01724" name="l01724"></a><span class="lineno"> 1724</span>          error();</div>
 <div class="line"><a id="l01725" name="l01725"></a><span class="lineno"> 1725</span>        }</div>
 <div class="line"><a id="l01726" name="l01726"></a><span class="lineno"> 1726</span>      }</div>
 <div class="line"><a id="l01727" name="l01727"></a><span class="lineno"> 1727</span>      </div>
@@ -626,7 +626,7 @@ $(function() {
 <div class="line"><a id="l01783" name="l01783"></a><span class="lineno"> 1783</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l01784" name="l01784"></a><span class="lineno"> 1784</span>          assert::is_null(pointer, message, stack_frame);</div>
 <div class="line"><a id="l01785" name="l01785"></a><span class="lineno"> 1785</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l01786" name="l01786"></a><span class="lineno"> 1786</span>          base_assert::error();</div>
+<div class="line"><a id="l01786" name="l01786"></a><span class="lineno"> 1786</span>          error();</div>
 <div class="line"><a id="l01787" name="l01787"></a><span class="lineno"> 1787</span>        }</div>
 <div class="line"><a id="l01788" name="l01788"></a><span class="lineno"> 1788</span>      }</div>
 <div class="line"><a id="l01789" name="l01789"></a><span class="lineno"> 1789</span>      </div>
@@ -644,7 +644,7 @@ $(function() {
 <div class="line"><a id="l01841" name="l01841"></a><span class="lineno"> 1841</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l01842" name="l01842"></a><span class="lineno"> 1842</span>          assert::is_null(opt, message, stack_frame);</div>
 <div class="line"><a id="l01843" name="l01843"></a><span class="lineno"> 1843</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l01844" name="l01844"></a><span class="lineno"> 1844</span>          base_assert::error();</div>
+<div class="line"><a id="l01844" name="l01844"></a><span class="lineno"> 1844</span>          error();</div>
 <div class="line"><a id="l01845" name="l01845"></a><span class="lineno"> 1845</span>        }</div>
 <div class="line"><a id="l01846" name="l01846"></a><span class="lineno"> 1846</span>      }</div>
 <div class="line"><a id="l01847" name="l01847"></a><span class="lineno"> 1847</span>      </div>
@@ -662,7 +662,7 @@ $(function() {
 <div class="line"><a id="l01899" name="l01899"></a><span class="lineno"> 1899</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l01900" name="l01900"></a><span class="lineno"> 1900</span>          assert::is_null(pointer, message, stack_frame);</div>
 <div class="line"><a id="l01901" name="l01901"></a><span class="lineno"> 1901</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l01902" name="l01902"></a><span class="lineno"> 1902</span>          base_assert::error();</div>
+<div class="line"><a id="l01902" name="l01902"></a><span class="lineno"> 1902</span>          error();</div>
 <div class="line"><a id="l01903" name="l01903"></a><span class="lineno"> 1903</span>        }</div>
 <div class="line"><a id="l01904" name="l01904"></a><span class="lineno"> 1904</span>      }</div>
 <div class="line"><a id="l01905" name="l01905"></a><span class="lineno"> 1905</span>      </div>
@@ -680,7 +680,7 @@ $(function() {
 <div class="line"><a id="l01957" name="l01957"></a><span class="lineno"> 1957</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l01958" name="l01958"></a><span class="lineno"> 1958</span>          assert::is_null(pointer, message, stack_frame);</div>
 <div class="line"><a id="l01959" name="l01959"></a><span class="lineno"> 1959</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l01960" name="l01960"></a><span class="lineno"> 1960</span>          base_assert::error();</div>
+<div class="line"><a id="l01960" name="l01960"></a><span class="lineno"> 1960</span>          error();</div>
 <div class="line"><a id="l01961" name="l01961"></a><span class="lineno"> 1961</span>        }</div>
 <div class="line"><a id="l01962" name="l01962"></a><span class="lineno"> 1962</span>      }</div>
 <div class="line"><a id="l01963" name="l01963"></a><span class="lineno"> 1963</span>      </div>
@@ -698,7 +698,7 @@ $(function() {
 <div class="line"><a id="l02023" name="l02023"></a><span class="lineno"> 2023</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l02024" name="l02024"></a><span class="lineno"> 2024</span>          assert::is_null(pointer, message, stack_frame);</div>
 <div class="line"><a id="l02025" name="l02025"></a><span class="lineno"> 2025</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l02026" name="l02026"></a><span class="lineno"> 2026</span>          base_assert::error();</div>
+<div class="line"><a id="l02026" name="l02026"></a><span class="lineno"> 2026</span>          error();</div>
 <div class="line"><a id="l02027" name="l02027"></a><span class="lineno"> 2027</span>        }</div>
 <div class="line"><a id="l02028" name="l02028"></a><span class="lineno"> 2028</span>      }</div>
 <div class="line"><a id="l02029" name="l02029"></a><span class="lineno"> 2029</span>      </div>
@@ -721,7 +721,7 @@ $(function() {
 <div class="line"><a id="l02118" name="l02118"></a><span class="lineno"> 2118</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l02119" name="l02119"></a><span class="lineno"> 2119</span>          assert::is_positive(value, message, stack_frame);</div>
 <div class="line"><a id="l02120" name="l02120"></a><span class="lineno"> 2120</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l02121" name="l02121"></a><span class="lineno"> 2121</span>          base_assert::error();</div>
+<div class="line"><a id="l02121" name="l02121"></a><span class="lineno"> 2121</span>          error();</div>
 <div class="line"><a id="l02122" name="l02122"></a><span class="lineno"> 2122</span>        }</div>
 <div class="line"><a id="l02123" name="l02123"></a><span class="lineno"> 2123</span>      }</div>
 <div class="line"><a id="l02124" name="l02124"></a><span class="lineno"> 2124</span>      </div>
@@ -744,7 +744,7 @@ $(function() {
 <div class="line"><a id="l02221" name="l02221"></a><span class="lineno"> 2221</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l02222" name="l02222"></a><span class="lineno"> 2222</span>          assert::is_zero(value, message, stack_frame);</div>
 <div class="line"><a id="l02223" name="l02223"></a><span class="lineno"> 2223</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l02224" name="l02224"></a><span class="lineno"> 2224</span>          base_assert::error();</div>
+<div class="line"><a id="l02224" name="l02224"></a><span class="lineno"> 2224</span>          error();</div>
 <div class="line"><a id="l02225" name="l02225"></a><span class="lineno"> 2225</span>        }</div>
 <div class="line"><a id="l02226" name="l02226"></a><span class="lineno"> 2226</span>      }</div>
 <div class="line"><a id="l02227" name="l02227"></a><span class="lineno"> 2227</span>      </div>
@@ -762,7 +762,7 @@ $(function() {
 <div class="line"><a id="l02279" name="l02279"></a><span class="lineno"> 2279</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l02280" name="l02280"></a><span class="lineno"> 2280</span>          assert::throws&lt;exception_t&gt;(statement, message, stack_frame);</div>
 <div class="line"><a id="l02281" name="l02281"></a><span class="lineno"> 2281</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l02282" name="l02282"></a><span class="lineno"> 2282</span>          base_assert::error();</div>
+<div class="line"><a id="l02282" name="l02282"></a><span class="lineno"> 2282</span>          error();</div>
 <div class="line"><a id="l02283" name="l02283"></a><span class="lineno"> 2283</span>        }</div>
 <div class="line"><a id="l02284" name="l02284"></a><span class="lineno"> 2284</span>      }</div>
 <div class="line"><a id="l02285" name="l02285"></a><span class="lineno"> 2285</span>      </div>
@@ -933,18 +933,18 @@ $(function() {
 <div class="ttc" id="aclassxtd_1_1tunit_1_1valid_html_afa99fba9a4012cb79b9373481f47e07b"><div class="ttname"><a href="classxtd_1_1tunit_1_1valid.html#afa99fba9a4012cb79b9373481f47e07b">xtd::tunit::valid::is_NaN</a></div><div class="ttdeci">static void is_NaN(float value, const xtd::ustring &amp;message)</div><div class="ttdoc">Validates that a value is NaN.</div></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1valid_html_afcd9ae5eef87fde316c19d2c47f631f7"><div class="ttname"><a href="classxtd_1_1tunit_1_1valid.html#afcd9ae5eef87fde316c19d2c47f631f7">xtd::tunit::valid::is_NaN</a></div><div class="ttdeci">static void is_NaN(double value)</div><div class="ttdoc">that a value is NaN.</div></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1valid_html_afec9e847a5ee2928db0d16fea4748cd3"><div class="ttname"><a href="classxtd_1_1tunit_1_1valid.html#afec9e847a5ee2928db0d16fea4748cd3">xtd::tunit::valid::is_NaN</a></div><div class="ttdeci">static void is_NaN(long double value, const xtd::diagnostics::stack_frame &amp;stack_frame)</div><div class="ttdoc">that a value is NaN.</div></div>
-<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:48</div></div>
+<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:46</div></div>
 <div class="ttc" id="agroup__keywords_html_ga3a58fce91c530883d63a6e440c3c5eab"><div class="ttname"><a href="group__keywords.html#ga3a58fce91c530883d63a6e440c3c5eab">tunit_export_</a></div><div class="ttdeci">#define tunit_export_</div><div class="ttdoc">Define shared library export.</div><div class="ttdef"><b>Definition</b> tunit_export.h:13</div></div>
 <div class="ttc" id="agroup__types_html_ga1259090c8918e75847a8cb2a64b8912a"><div class="ttname"><a href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">xtd::char8</a></div><div class="ttdeci">char8_t char8</div><div class="ttdoc">Represents a 8-bit unicode character.</div><div class="ttdef"><b>Definition</b> types.h:62</div></div>
 <div class="ttc" id="agroup__types_html_ga39d5c4947c807e5f78b8a9abe3692570"><div class="ttname"><a href="group__types.html#ga39d5c4947c807e5f78b8a9abe3692570">xtd::char16</a></div><div class="ttdeci">char16_t char16</div><div class="ttdoc">Represents a 16-bit unicode character.</div><div class="ttdef"><b>Definition</b> types.h:74</div></div>
 <div class="ttc" id="agroup__types_html_ga989a1148b6ff15567dca430966b17c92"><div class="ttname"><a href="group__types.html#ga989a1148b6ff15567dca430966b17c92">xtd::char32</a></div><div class="ttdeci">char32_t char32</div><div class="ttdoc">Represents a 32-bit unicode character.</div><div class="ttdef"><b>Definition</b> types.h:85</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggaa67a4b789cb787af85a8a1337af56f99acb5e100e5a9a3e7f6d1fd97512215282"><div class="ttname"><a href="group__xtd__core.html#ggaa67a4b789cb787af85a8a1337af56f99acb5e100e5a9a3e7f6d1fd97512215282">xtd::diagnostics::source_levels::error</a></div><div class="ttdeci">@ error</div><div class="ttdoc">Allows critical and error events through.</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
-<div class="ttc" id="axtd_8tunit_2include_2xtd_2tunit_2assert_8h_html"><div class="ttname"><a href="xtd_8tunit_2include_2xtd_2tunit_2assert_8h.html">assert.h</a></div><div class="ttdoc">Contains xtd::tunit::assert class.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 17 2023 22:11:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Sep 24 2023 20:19:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

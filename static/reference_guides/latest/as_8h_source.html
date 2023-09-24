@@ -88,16 +88,16 @@ $(function() {
 <div class="contents">
 <a href="as_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="any_8h.html">any.h</a>&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="convert_8h.html">convert.h</a>&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="convert__pointer_8h.html">convert_pointer.h</a>&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="convert__string_8h.html">convert_string.h</a>&quot;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="invalid__cast__exception_8h.html">invalid_cast_exception.h</a>&quot;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="types_8h.html">types.h</a>&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#define __XTD_CORE_INTERNAL__</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;internal/__as_enum.h&quot;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#undef __XTD_CORE_INTERNAL__</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;any&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;convert&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;convert_pointer&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;convert_string&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;invalid_cast_exception&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;types&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define __XTD_CORE_INTERNAL__</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;internal/__as_enum&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#undef __XTD_CORE_INTERNAL__</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <span class="comment">// ___________________________________________________________________________________________</span></div>
@@ -4910,7 +4910,6 @@ $(function() {
 <div class="line"><a id="l18572" name="l18572"></a><span class="lineno">18572</span>new_type_t* __convert_value__(current_type_t* value) {</div>
 <div class="line"><a id="l18573" name="l18573"></a><span class="lineno">18573</span>  <span class="keywordflow">return</span> xtd::as&lt;new_type_t&gt;(value);</div>
 <div class="line"><a id="l18574" name="l18574"></a><span class="lineno">18574</span>}</div>
-<div class="ttc" id="aany_8h_html"><div class="ttname"><a href="any_8h.html">any.h</a></div><div class="ttdoc">Contains std::any type and std::bad_any_cast exception.</div></div>
 <div class="ttc" id="aclassxtd_1_1convert__string_html_a0f06101ea0fbb189437ceb3397a0c0f6"><div class="ttname"><a href="classxtd_1_1convert__string.html#a0f06101ea0fbb189437ceb3397a0c0f6">xtd::convert_string::to_u32string</a></div><div class="ttdeci">static std::u32string to_u32string(const std::string &amp;str) noexcept</div><div class="ttdoc">Converts std::string to std::u32string.</div></div>
 <div class="ttc" id="aclassxtd_1_1convert__string_html_a14a500b8395de6f4afe0a8f9e2688206"><div class="ttname"><a href="classxtd_1_1convert__string.html#a14a500b8395de6f4afe0a8f9e2688206">xtd::convert_string::to_u8string</a></div><div class="ttdeci">static std::u8string to_u8string(const std::string &amp;str) noexcept</div><div class="ttdoc">Converts std::string to std::u8string.</div></div>
 <div class="ttc" id="aclassxtd_1_1convert__string_html_a29867dbfe69deddfc01c9de2c552e8da"><div class="ttname"><a href="classxtd_1_1convert__string.html#a29867dbfe69deddfc01c9de2c552e8da">xtd::convert_string::to_ustring</a></div><div class="ttdeci">static xtd::ustring to_ustring(const std::string &amp;str) noexcept</div><div class="ttdoc">Converts std::string to xtd::ustring.</div></div>
@@ -4938,10 +4937,7 @@ $(function() {
 <div class="ttc" id="aclassxtd_1_1convert_html_ad46261e99b5f931cc38dacb0c73c5f9f"><div class="ttname"><a href="classxtd_1_1convert.html#ad46261e99b5f931cc38dacb0c73c5f9f">xtd::convert::to_char</a></div><div class="ttdeci">static char to_char(std::any value)</div><div class="ttdoc">Convert std::any to char.</div></div>
 <div class="ttc" id="aclassxtd_1_1convert_html_ae11be137455c2647ac05c8ff526e9339"><div class="ttname"><a href="classxtd_1_1convert.html#ae11be137455c2647ac05c8ff526e9339">xtd::convert::to_sbyte</a></div><div class="ttdeci">static sbyte to_sbyte(std::any value)</div><div class="ttdoc">Convert std::any to sbyte.</div></div>
 <div class="ttc" id="aclassxtd_1_1invalid__cast__exception_html"><div class="ttname"><a href="classxtd_1_1invalid__cast__exception.html">xtd::invalid_cast_exception</a></div><div class="ttdoc">The exception that is thrown for invalid casting or explicit conversion.</div><div class="ttdef"><b>Definition</b> invalid_cast_exception.h:18</div></div>
-<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:48</div></div>
-<div class="ttc" id="aconvert_8h_html"><div class="ttname"><a href="convert_8h.html">convert.h</a></div><div class="ttdoc">Contains xtd::convert class.</div></div>
-<div class="ttc" id="aconvert__pointer_8h_html"><div class="ttname"><a href="convert__pointer_8h.html">convert_pointer.h</a></div><div class="ttdoc">Contains xtd::convert class.</div></div>
-<div class="ttc" id="aconvert__string_8h_html"><div class="ttname"><a href="convert__string_8h.html">convert_string.h</a></div><div class="ttdoc">Contains xtd::convert_string class.</div></div>
+<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:46</div></div>
 <div class="ttc" id="agroup__keywords_html_gaf8b977f43d229f177b7b399c3b3a60a6"><div class="ttname"><a href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a></div><div class="ttdeci">#define csf_</div><div class="ttdoc">Provides information about the current stack frame.</div><div class="ttdef"><b>Definition</b> current_stack_frame.h:30</div></div>
 <div class="ttc" id="agroup__types_html_ga1259090c8918e75847a8cb2a64b8912a"><div class="ttname"><a href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">xtd::char8</a></div><div class="ttdeci">char8_t char8</div><div class="ttdoc">Represents a 8-bit unicode character.</div><div class="ttdef"><b>Definition</b> types.h:62</div></div>
 <div class="ttc" id="agroup__types_html_ga155357d92cf162b71b396e46accee518"><div class="ttname"><a href="group__types.html#ga155357d92cf162b71b396e46accee518">xtd::wchar</a></div><div class="ttdeci">wchar_t wchar</div><div class="ttdoc">Represents a wide character.</div><div class="ttdef"><b>Definition</b> types.h:284</div></div>
@@ -4987,14 +4983,12 @@ $(function() {
 <div class="ttc" id="agroup__xtd__core_html_gaeadadb949385a3c45e253b5c2d4c3c32"><div class="ttname"><a href="group__xtd__core.html#gaeadadb949385a3c45e253b5c2d4c3c32">xtd::as&lt; int64 &gt;</a></div><div class="ttdeci">int64 as&lt; int64 &gt;(std::any value)</div><div class="ttdoc">Casts a type into another type.</div><div class="ttdef"><b>Definition</b> as.h:9998</div></div>
 <div class="ttc" id="agroup__xtd__core_html_gafda97c601b28e11274488e2ea8a793ba"><div class="ttname"><a href="group__xtd__core.html#gafda97c601b28e11274488e2ea8a793ba">xtd::as&lt; bool &gt;</a></div><div class="ttdeci">bool as&lt; bool &gt;(std::any value)</div><div class="ttdoc">Casts a type into another type.</div><div class="ttdef"><b>Definition</b> as.h:960</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">xtd::console_key::e</a></div><div class="ttdeci">@ e</div><div class="ttdoc">The E key.</div></div>
-<div class="ttc" id="ainvalid__cast__exception_8h_html"><div class="ttname"><a href="invalid__cast__exception_8h.html">invalid_cast_exception.h</a></div><div class="ttdoc">Contains xtd::invalid_cast_exception exception.</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
-<div class="ttc" id="atypes_8h_html"><div class="ttname"><a href="types_8h.html">types.h</a></div><div class="ttdoc">Contains xtd fundamental types.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 17 2023 22:11:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Sep 24 2023 20:19:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

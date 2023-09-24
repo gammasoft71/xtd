@@ -88,31 +88,27 @@ $(function() {
 <div class="contents">
 <a href="enum__register_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="enum__collection_8h.html">enum_collection.h</a>&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="types_8h.html">types.h</a>&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define __XTD_CORE_INTERNAL__</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;internal/__enum_introspection.h&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;internal/__enum_definition_to_enum_collection.h&quot;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#undef __XTD_CORE_INTERNAL__</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> enum_t&gt;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="structxtd_1_1enum__register.html">   38</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="structxtd_1_1enum__register.html">enum_register</a> {</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="structxtd_1_1enum__register.html#a3b2b1faad00803f23272a76a646e6f64">   55</a></span>    <span class="keyword">explicit</span> <span class="keyword">operator</span> <span class="keyword">auto</span>() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> <a class="code hl_typedef" href="group__xtd__core.html#gaa289cd12f69682df4a6d194b5b10e191">xtd::enum_collection&lt;enum_t&gt;</a> {};}</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  };</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>}</div>
-<div class="ttc" id="aenum__collection_8h_html"><div class="ttname"><a href="enum__collection_8h.html">enum_collection.h</a></div><div class="ttdoc">Contains xtd::enum_collection.</div></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;enum_collection&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;types&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#define __XTD_CORE_INTERNAL__</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;internal/__enum_introspection&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;internal/__enum_definition_to_enum_collection&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#undef __XTD_CORE_INTERNAL__</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> enum_t&gt;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="structxtd_1_1enum__register.html">   36</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="structxtd_1_1enum__register.html">enum_register</a> {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="structxtd_1_1enum__register.html#a3b2b1faad00803f23272a76a646e6f64">   53</a></span>    <span class="keyword">explicit</span> <span class="keyword">operator</span> <span class="keyword">auto</span>() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> <a class="code hl_typedef" href="group__xtd__core.html#gaa289cd12f69682df4a6d194b5b10e191">xtd::enum_collection&lt;enum_t&gt;</a> {};}</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  };</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>}</div>
 <div class="ttc" id="agroup__xtd__core_html_gaa289cd12f69682df4a6d194b5b10e191"><div class="ttname"><a href="group__xtd__core.html#gaa289cd12f69682df4a6d194b5b10e191">xtd::enum_collection</a></div><div class="ttdeci">std::vector&lt; std::pair&lt; enum_t, xtd::ustring &gt; &gt; enum_collection</div><div class="ttdoc">Represents a pair of an enum_t value and a string of an enum of type enum_t.</div><div class="ttdef"><b>Definition</b> enum_collection.h:19</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
-<div class="ttc" id="astructxtd_1_1enum__register_html"><div class="ttname"><a href="structxtd_1_1enum__register.html">xtd::enum_register</a></div><div class="ttdoc">Provides the registration struct for enumerations.</div><div class="ttdef"><b>Definition</b> enum_register.h:38</div></div>
-<div class="ttc" id="atypes_8h_html"><div class="ttname"><a href="types_8h.html">types.h</a></div><div class="ttdoc">Contains xtd fundamental types.</div></div>
+<div class="ttc" id="astructxtd_1_1enum__register_html"><div class="ttname"><a href="structxtd_1_1enum__register.html">xtd::enum_register</a></div><div class="ttdoc">Provides the registration struct for enumerations.</div><div class="ttdef"><b>Definition</b> enum_register.h:36</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 17 2023 22:11:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Sep 24 2023 20:19:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

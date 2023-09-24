@@ -88,36 +88,35 @@ $(function() {
 <div class="contents">
 <a href="tunit__event__args_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>  <span class="keyword">namespace </span>tunit {</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">class </span>unit_test;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classxtd_1_1tunit_1_1tunit__event__args.html">   20</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1tunit_1_1tunit__event__args.html">tunit_event_args</a> {</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>      </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="classxtd_1_1tunit_1_1tunit__event__args.html#a0b08926c0b6d0a4160d2b4680bb21725">   26</a></span>      <span class="keyword">explicit</span> <a class="code hl_function" href="classxtd_1_1tunit_1_1tunit__event__args.html#a0b08926c0b6d0a4160d2b4680bb21725">tunit_event_args</a>(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1tunit_1_1unit__test.html">xtd::tunit::unit_test</a>&amp; <a class="code hl_class" href="classxtd_1_1tunit_1_1unit__test.html">unit_test</a>) : ut_(<a class="code hl_class" href="classxtd_1_1tunit_1_1unit__test.html">unit_test</a>) {};</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>      </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>      <a class="code hl_class" href="classxtd_1_1tunit_1_1tunit__event__args.html">tunit_event_args</a>(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1tunit_1_1tunit__event__args.html">tunit_event_args</a>&amp;) = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>      </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>      </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classxtd_1_1tunit_1_1tunit__event__args.html#a5a1345155859584a871e0ba2d9db91b7">   38</a></span>      <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1tunit_1_1unit__test.html">xtd::tunit::unit_test</a>&amp; <a class="code hl_function" href="classxtd_1_1tunit_1_1tunit__event__args.html#a5a1345155859584a871e0ba2d9db91b7">unit_test</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> ut_;}</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>      </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>      <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1tunit_1_1unit__test.html">xtd::tunit::unit_test</a>&amp; ut_;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    };</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  }</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>}</div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1tunit__event__args_html"><div class="ttname"><a href="classxtd_1_1tunit_1_1tunit__event__args.html">xtd::tunit::tunit_event_args</a></div><div class="ttdoc">tunit_event_args is the base class for classes containing event data.</div><div class="ttdef"><b>Definition</b> tunit_event_args.h:20</div></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1tunit__event__args_html_a0b08926c0b6d0a4160d2b4680bb21725"><div class="ttname"><a href="classxtd_1_1tunit_1_1tunit__event__args.html#a0b08926c0b6d0a4160d2b4680bb21725">xtd::tunit::tunit_event_args::tunit_event_args</a></div><div class="ttdeci">tunit_event_args(const xtd::tunit::unit_test &amp;unit_test)</div><div class="ttdoc">Create a new instance of class tunit_event_args.</div><div class="ttdef"><b>Definition</b> tunit_event_args.h:26</div></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1tunit__event__args_html_a5a1345155859584a871e0ba2d9db91b7"><div class="ttname"><a href="classxtd_1_1tunit_1_1tunit__event__args.html#a5a1345155859584a871e0ba2d9db91b7">xtd::tunit::tunit_event_args::unit_test</a></div><div class="ttdeci">const xtd::tunit::unit_test &amp; unit_test() const</div><div class="ttdoc">Gets current unit test.</div><div class="ttdef"><b>Definition</b> tunit_event_args.h:38</div></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1unit__test_html"><div class="ttname"><a href="classxtd_1_1tunit_1_1unit__test.html">xtd::tunit::unit_test</a></div><div class="ttdoc">The unit_test class is unit test base interface.</div><div class="ttdef"><b>Definition</b> unit_test.h:36</div></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>  <span class="keyword">namespace </span>tunit {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keyword">class </span>unit_test;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classxtd_1_1tunit_1_1tunit__event__args.html">   19</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1tunit_1_1tunit__event__args.html">tunit_event_args</a> {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>      </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classxtd_1_1tunit_1_1tunit__event__args.html#a0b08926c0b6d0a4160d2b4680bb21725">   25</a></span>      <span class="keyword">explicit</span> <a class="code hl_function" href="classxtd_1_1tunit_1_1tunit__event__args.html#a0b08926c0b6d0a4160d2b4680bb21725">tunit_event_args</a>(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1tunit_1_1unit__test.html">xtd::tunit::unit_test</a>&amp; <a class="code hl_class" href="classxtd_1_1tunit_1_1unit__test.html">unit_test</a>) : ut_(<a class="code hl_class" href="classxtd_1_1tunit_1_1unit__test.html">unit_test</a>) {};</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>      </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>      <a class="code hl_class" href="classxtd_1_1tunit_1_1tunit__event__args.html">tunit_event_args</a>(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1tunit_1_1tunit__event__args.html">tunit_event_args</a>&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>      </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>      </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classxtd_1_1tunit_1_1tunit__event__args.html#a5a1345155859584a871e0ba2d9db91b7">   37</a></span>      <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1tunit_1_1unit__test.html">xtd::tunit::unit_test</a>&amp; <a class="code hl_function" href="classxtd_1_1tunit_1_1tunit__event__args.html#a5a1345155859584a871e0ba2d9db91b7">unit_test</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> ut_;}</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>      </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>      <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1tunit_1_1unit__test.html">xtd::tunit::unit_test</a>&amp; ut_;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    };</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  }</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}</div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1tunit__event__args_html"><div class="ttname"><a href="classxtd_1_1tunit_1_1tunit__event__args.html">xtd::tunit::tunit_event_args</a></div><div class="ttdoc">tunit_event_args is the base class for classes containing event data.</div><div class="ttdef"><b>Definition</b> tunit_event_args.h:19</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1tunit__event__args_html_a0b08926c0b6d0a4160d2b4680bb21725"><div class="ttname"><a href="classxtd_1_1tunit_1_1tunit__event__args.html#a0b08926c0b6d0a4160d2b4680bb21725">xtd::tunit::tunit_event_args::tunit_event_args</a></div><div class="ttdeci">tunit_event_args(const xtd::tunit::unit_test &amp;unit_test)</div><div class="ttdoc">Create a new instance of class tunit_event_args.</div><div class="ttdef"><b>Definition</b> tunit_event_args.h:25</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1tunit__event__args_html_a5a1345155859584a871e0ba2d9db91b7"><div class="ttname"><a href="classxtd_1_1tunit_1_1tunit__event__args.html#a5a1345155859584a871e0ba2d9db91b7">xtd::tunit::tunit_event_args::unit_test</a></div><div class="ttdeci">const xtd::tunit::unit_test &amp; unit_test() const</div><div class="ttdoc">Gets current unit test.</div><div class="ttdef"><b>Definition</b> tunit_event_args.h:37</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1unit__test_html"><div class="ttname"><a href="classxtd_1_1tunit_1_1unit__test.html">xtd::tunit::unit_test</a></div><div class="ttdoc">The unit_test class is unit test base interface.</div><div class="ttdef"><b>Definition</b> unit_test.h:35</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 17 2023 22:11:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Sep 24 2023 20:19:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

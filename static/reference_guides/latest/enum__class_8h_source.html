@@ -88,32 +88,25 @@ $(function() {
 <div class="contents">
 <a href="enum__class_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="enum__attribute_8h.html">enum_attribute.h</a>&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="enum__collection_8h.html">enum_collection.h</a>&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="enum__object_8h.html">enum_object.h</a>&quot;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="enum__register_8h.html">enum_register.h</a>&quot;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="enum__set__attribute_8h.html">enum_set_attribute.h</a>&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="flags__attribute_8h.html">flags_attribute.h</a>&quot;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="group__keywords.html#ga23f683a98eff4df0bec973131eca5704">   29</a></span><span class="preprocessor">#define enum_class_ut_(namespace_name, enum_class_t, underlying_t, ...) \</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">  namespace namespace_name {enum class enum_class_t : underlying_t { __VA_ARGS__ };} \</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">  __enum_introspection__(namespace_name, enum_class_t, underlying_t, __VA_ARGS__) \</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">  template&lt;&gt; struct xtd::enum_register&lt;namespace_name::enum_class_t&gt; {explicit operator auto() const {return __enum_definition_to_enum_collection__&lt;namespace_name::enum_class_t&gt;(#__VA_ARGS__);}}</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="group__keywords.html#ga3cf593875eebd764cb406fa27ded6d93">   49</a></span><span class="preprocessor">#define enum_class_(namespace_name, enum_class_t, ...) \</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">  enum_class_ut_(namespace_name, enum_class_t, xtd::int32, __VA_ARGS__)</span></div>
-<div class="ttc" id="aenum__attribute_8h_html"><div class="ttname"><a href="enum__attribute_8h.html">enum_attribute.h</a></div><div class="ttdoc">Contains xtd::enum_attribute enum class.</div></div>
-<div class="ttc" id="aenum__collection_8h_html"><div class="ttname"><a href="enum__collection_8h.html">enum_collection.h</a></div><div class="ttdoc">Contains xtd::enum_collection.</div></div>
-<div class="ttc" id="aenum__object_8h_html"><div class="ttname"><a href="enum__object_8h.html">enum_object.h</a></div><div class="ttdoc">Contains xtd::enum_object.</div></div>
-<div class="ttc" id="aenum__register_8h_html"><div class="ttname"><a href="enum__register_8h.html">enum_register.h</a></div><div class="ttdoc">Contains xtd::enum_register.</div></div>
-<div class="ttc" id="aenum__set__attribute_8h_html"><div class="ttname"><a href="enum__set__attribute_8h.html">enum_set_attribute.h</a></div><div class="ttdoc">Contains xtd::enum_set_attribute strcut.</div></div>
-<div class="ttc" id="aflags__attribute_8h_html"><div class="ttname"><a href="flags__attribute_8h.html">flags_attribute.h</a></div><div class="ttdoc">Contains flags_attribute_ keyword.</div></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;enum_attribute&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;enum_collection&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;enum_object&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;enum_register&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;enum_set_attribute&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;flags_attribute&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="group__keywords.html#ga23f683a98eff4df0bec973131eca5704">   28</a></span><span class="preprocessor">#define enum_class_ut_(namespace_name, enum_class_t, underlying_t, ...) \</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">  namespace namespace_name {enum class enum_class_t : underlying_t { __VA_ARGS__ };} \</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">  __enum_introspection__(namespace_name, enum_class_t, underlying_t, __VA_ARGS__) \</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">  template&lt;&gt; struct xtd::enum_register&lt;namespace_name::enum_class_t&gt; {explicit operator auto() const {return __enum_definition_to_enum_collection__&lt;namespace_name::enum_class_t&gt;(#__VA_ARGS__);}}</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="group__keywords.html#ga3cf593875eebd764cb406fa27ded6d93">   48</a></span><span class="preprocessor">#define enum_class_(namespace_name, enum_class_t, ...) \</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">  enum_class_ut_(namespace_name, enum_class_t, xtd::int32, __VA_ARGS__)</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 17 2023 22:11:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Sep 24 2023 20:19:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

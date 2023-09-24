@@ -92,51 +92,45 @@ xtd build options</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">XTD_BUILD_CPP_STANDARD   </td><td class="markdownTableBodyNone">string   </td><td class="markdownTableBodyNone">Choose c++ standard to build xtd projects (20 17 14 11 compiler_default)   </td><td class="markdownTableBodyNone">20    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">XTD_BUILD_LIBRARIES_XTD_CORE   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Build xtd.core libraries   </td><td class="markdownTableBodyNone">ON    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">XTD_BUILD_LIBRARIES_XTD_DRAWING   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Build <a class="el" href="namespacextd_1_1drawing.html" title="The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functi...">xtd.drawing</a> libraries   </td><td class="markdownTableBodyNone">ON    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">XTD_BUILD_LIBRARIES_XTD_FORMS   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Build <a class="el" href="namespacextd_1_1forms.html" title="The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...">xtd.forms</a> libraries   </td><td class="markdownTableBodyNone">ON    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">XTD_BUILD_LIBRARIES_XTD_TUNIT   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Build <a class="el" href="namespacextd_1_1tunit.html" title="The tunit namespace contains a unit test library.">xtd.tunit</a> libraries   </td><td class="markdownTableBodyNone">ON    </td></tr>
-<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">XTD_BUILD_SHARED_LIBRARIES   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Build shared libraries   </td><td class="markdownTableBodyNone">OFF    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">XTD_BUILD_TESTS_XTD_CORE   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Build xtd.core tests   </td><td class="markdownTableBodyNone">OFF    </td></tr>
+<td class="markdownTableBodyNone">XTD_BUILD_TESTS   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Build tests   </td><td class="markdownTableBodyNone">OFF    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">XTD_BUILD_TESTS_XTD_DRAWING   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Build <a class="el" href="namespacextd_1_1drawing.html" title="The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functi...">xtd.drawing</a> tests   </td><td class="markdownTableBodyNone">OFF    </td></tr>
+<td class="markdownTableBodyNone">XTD_BUILD_TOOLS   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Build tools   </td><td class="markdownTableBodyNone">ON    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">XTD_BUILD_TESTS_XTD_FORMS   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Build <a class="el" href="namespacextd_1_1forms.html" title="The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...">xtd.forms</a> tests   </td><td class="markdownTableBodyNone">OFF    </td></tr>
+<td class="markdownTableBodyNone">XTD_BUILD_WITH_CONTINUOUS_INTEGRATION_SYSTEM   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Build with the continuous integration (CI) system. This flag should always be set to OFF. It is only needed for continuous integration.   </td><td class="markdownTableBodyNone">OFF    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">XTD_BUILD_TESTS_XTD_TUNIT   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Build <a class="el" href="namespacextd_1_1tunit.html" title="The tunit namespace contains a unit test library.">xtd.tunit</a> tests   </td><td class="markdownTableBodyNone">OFF    </td></tr>
+<td class="markdownTableBodyNone">XTD_DOWNLOAD_ASTYLE   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Download and build astyle from Github   </td><td class="markdownTableBodyNone">OFF    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">XTD_BUILD_TOOL_GUIDGEN_COMMAND_LINE   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Build tool guidgen command line   </td><td class="markdownTableBodyNone">ON    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">XTD_BUILD_TOOL_GUIDGEN_GUI   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Build tool guidgen GUI   </td><td class="markdownTableBodyNone">ON    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">XTD_BUILD_TOOL_SLEEPFOR_COMMAND_LINE   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Build tool sleepfor command line   </td><td class="markdownTableBodyNone">ON    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">XTD_BUILD_TOOL_XTDC_COMMAND_LINE   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Build tool xtdc command line   </td><td class="markdownTableBodyNone">ON    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">XTD_BUILD_TOOL_XTDC_GUI   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Build tool xtdc GUI   </td><td class="markdownTableBodyNone">ON    </td></tr>
+<td class="markdownTableBodyNone">XTD_DOWNLOAD_CPPCHECK   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Download and build cppcheck from Github   </td><td class="markdownTableBodyNone">OFF    </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">XTD_DOWNLOAD_DOXYGEN   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Download and build doxygen from Github   </td><td class="markdownTableBodyNone">OFF    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">XTD_ENABLE_COMMAND_REFERENCE_GUIDE_GENERATOR   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Enable command Reference Guide Generator   </td><td class="markdownTableBodyNone">OFF    </td></tr>
-<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">XTD_ENABLE_COVERAGE   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Enable code coverage   </td><td class="markdownTableBodyNone">OFF    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">XTD_ENABLE_RUN_ASYLE   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Enable run astyle (format) command   </td><td class="markdownTableBodyNone">ON    </td></tr>
 <tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">XTD_ENABLE_RUN_CPPCHECK   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Enable run cppcheck command   </td><td class="markdownTableBodyNone">ON    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">XTD_ENABLE_RUN_DEVELOPPER_REFERENCE_GUIDE   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Add run Developper Reference Guide generator command   </td><td class="markdownTableBodyNone">OFF    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">XTD_ENABLE_RUN_REFERENCE_GUIDE   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Add run Reference Guide generator command   </td><td class="markdownTableBodyNone">ON    </td></tr>
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">XTD_INSTALL_EXAMPLES   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Install examples   </td><td class="markdownTableBodyNone">ON    </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">XTD_INSTALL_RESOURCES   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Install resources   </td><td class="markdownTableBodyNone">ON    </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">XTD_NATIVE_GRAPHIC_TOOLKIT   </td><td class="markdownTableBodyNone">string   </td><td class="markdownTableBodyNone">Choose toolkit for native drawing and forms libraries <em>(see note 1)</em>   </td><td class="markdownTableBodyNone">wxwidgets    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">XTD_NATIVE_OPERATING_SYSTEM   </td><td class="markdownTableBodyNone">string   </td><td class="markdownTableBodyNone">Choose Operating System for native system libraries (Windows macOS linux iOS android)   </td><td class="markdownTableBodyNone">The current host OS    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">XTD_SET_COMPILER_OPTION_WARNINGS_AS_ERRORS   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Enable compiler option warnings as errors   </td><td class="markdownTableBodyNone">ON    </td></tr>
+<td class="markdownTableBodyNone">XTD_NATIVE_OPERATING_SYSTEM   </td><td class="markdownTableBodyNone">string   </td><td class="markdownTableBodyNone">Choose Operating System for native system libraries (Windows macOS linux iOS android)   </td><td class="markdownTableBodyNone">The current host OS    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">XTD_SET_COMPILER_OPTION_WARNINGS_TO_ALL   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Enable compiler option warnings to all   </td><td class="markdownTableBodyNone">ON   </td></tr>
+<td class="markdownTableBodyNone">XTD_SET_COMPILER_OPTION_WARNINGS_AS_ERRORS   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Enable compiler option warnings as errors   </td><td class="markdownTableBodyNone">ON    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">XTD_SET_COMPILER_OPTION_WARNINGS_TO_ALL   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Enable compiler option warnings to all   </td><td class="markdownTableBodyNone">ON    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">XTD_USE_ENUMERATION_INTROSPECTION   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Acivate enumeration introspection   </td><td class="markdownTableBodyNone">ON    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">XTD_USE_SYSTEM_CONTROLS   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Use system controls (only for debugging)   </td><td class="markdownTableBodyNone">OFF   </td></tr>
 </table>
 <p><em>(note 1)</em> The list of the underlying graphic toolkit depends of the operating system :</p><ul>
 <li>Windows : msw wxwidgets qt5 fltk</li>
@@ -157,20 +151,32 @@ xtd user project build options</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">XTD_BUILD_CPP_STANDARD   </td><td class="markdownTableBodyNone">string   </td><td class="markdownTableBodyNone">Choose c++ standard to build xtd projects (20 17 14 11 compiler_default)   </td><td class="markdownTableBodyNone">20    </td></tr>
 <tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">XTD_DOWNLOAD_ASTYLE   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Download and build astyle from Github   </td><td class="markdownTableBodyNone">OFF    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">XTD_DOWNLOAD_CPPCHECK   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Download and build cppcheck from Github   </td><td class="markdownTableBodyNone">OFF    </td></tr>
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">XTD_DOWNLOAD_DOXYGEN   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Download and build doxygen from Github   </td><td class="markdownTableBodyNone">OFF    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">XTD_ENABLE_COMMAND_REFERENCE_GUIDE_GENERATOR   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Enable command Reference Guide Generator   </td><td class="markdownTableBodyNone">ON    </td></tr>
+<td class="markdownTableBodyNone">XTD_ENABLE_RUN_ASYLE   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Enable run astyle (format) command   </td><td class="markdownTableBodyNone">ON    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">XTD_SET_COMPILER_OPTION_WARNINGS_AS_ERRORS   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Enable compiler option warnings as errors   </td><td class="markdownTableBodyNone">OFF    </td></tr>
+<td class="markdownTableBodyNone">XTD_ENABLE_RUN_CPPCHECK   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Enable run cppcheck command   </td><td class="markdownTableBodyNone">ON    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">XTD_SET_COMPILER_OPTION_WARNINGS_TO_ALL   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Enable compiler option warnings to all   </td><td class="markdownTableBodyNone">ON   </td></tr>
+<td class="markdownTableBodyNone">XTD_ENABLE_RUN_REFERENCE_GUIDE   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Add run Reference Guide generator command   </td><td class="markdownTableBodyNone">ON    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">XTD_SET_COMPILER_OPTION_WARNINGS_AS_ERRORS   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Enable compiler option warnings as errors   </td><td class="markdownTableBodyNone">ON    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">XTD_SET_COMPILER_OPTION_WARNINGS_TO_ALL   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Enable compiler option warnings to all   </td><td class="markdownTableBodyNone">ON    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">XTD_USE_ENUMERATION_INTROSPECTION   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Acivate enumeration introspection   </td><td class="markdownTableBodyNone">ON    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">XTD_USE_SYSTEM_CONTROLS   </td><td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone">Use system controls (only for debugging)   </td><td class="markdownTableBodyNone">OFF   </td></tr>
 </table>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 17 2023 22:11:28 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Sep 24 2023 20:19:42 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

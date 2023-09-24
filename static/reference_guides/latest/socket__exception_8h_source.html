@@ -88,8 +88,8 @@ $(function() {
 <div class="contents">
 <a href="socket__exception_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;../../system_exception.h&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="socket__error_8h.html">socket_error.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;socket_error&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;../../system_exception&quot;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>  <span class="keyword">namespace </span>net {</div>
@@ -139,17 +139,16 @@ $(function() {
 <div class="ttc" id="aclassxtd_1_1system__exception_html_a64d097d9e2f3d05de00ff6fc4bdd3f75"><div class="ttname"><a href="classxtd_1_1system__exception.html#a64d097d9e2f3d05de00ff6fc4bdd3f75">xtd::system_exception::help_link</a></div><div class="ttdeci">virtual const xtd::ustring &amp; help_link() const noexcept</div><div class="ttdoc">Gets a link to the help file associated with this exception.</div></div>
 <div class="ttc" id="aclassxtd_1_1system__exception_html_aae8a2e1635e67b7879c21ee09edbe738"><div class="ttname"><a href="classxtd_1_1system__exception.html#aae8a2e1635e67b7879c21ee09edbe738">xtd::system_exception::error_code</a></div><div class="ttdeci">virtual std::error_code error_code() const noexcept</div><div class="ttdoc">Gets error associate to the exception.</div></div>
 <div class="ttc" id="aclassxtd_1_1system__exception_html_aee52fbbd579e5daecc0b1008021002c8"><div class="ttname"><a href="classxtd_1_1system__exception.html#aee52fbbd579e5daecc0b1008021002c8">xtd::system_exception::inner_exception</a></div><div class="ttdeci">virtual exception_ref inner_exception() const noexcept</div><div class="ttdoc">Gets the exception instance that caused the current exception.</div></div>
-<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:48</div></div>
+<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:46</div></div>
 <div class="ttc" id="agroup__types_html_ga92bf6d527cbcada4a30faa2efd0d6a91"><div class="ttname"><a href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">xtd::int32</a></div><div class="ttdeci">int_least32_t int32</div><div class="ttdoc">Represents a 32-bit signed integer.</div><div class="ttdef"><b>Definition</b> types.h:129</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ga0c933b52bdbb9399c8ec4b1dcf3e2e71"><div class="ttname"><a href="group__xtd__core.html#ga0c933b52bdbb9399c8ec4b1dcf3e2e71">xtd::net::sockets::socket_error</a></div><div class="ttdeci">socket_error</div><div class="ttdoc">Defines error codes for the xtd::net::sockets::socket class.</div><div class="ttdef"><b>Definition</b> socket_error.h:29</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ga0c933b52bdbb9399c8ec4b1dcf3e2e71"><div class="ttname"><a href="group__xtd__core.html#ga0c933b52bdbb9399c8ec4b1dcf3e2e71">xtd::net::sockets::socket_error</a></div><div class="ttdeci">socket_error</div><div class="ttdoc">Defines error codes for the xtd::net::sockets::socket class.</div><div class="ttdef"><b>Definition</b> socket_error.h:28</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggaac9f71cf2a0b71c1b99cab47f8abc4cbacb5e100e5a9a3e7f6d1fd97512215282"><div class="ttname"><a href="group__xtd__core.html#ggaac9f71cf2a0b71c1b99cab47f8abc4cbacb5e100e5a9a3e7f6d1fd97512215282">xtd::net::sockets::socket_option_name::error</a></div><div class="ttdeci">@ error</div><div class="ttdoc">Gets the error status and clear.</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
-<div class="ttc" id="asocket__error_8h_html"><div class="ttname"><a href="socket__error_8h.html">socket_error.h</a></div><div class="ttdoc">Contains xtd::net::sockets::socket_error enum.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 17 2023 22:11:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Sep 24 2023 20:19:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

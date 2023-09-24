@@ -88,13 +88,13 @@ $(function() {
 <div class="contents">
 <a href="is_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;limits&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="any_8h.html">any.h</a>&quot;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="parse_8h.html">parse.h</a>&quot;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="types_8h.html">types.h</a>&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="unused_8h.html">unused.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;any&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;parse&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;types&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;unused&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;limits&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> value_t&gt;</div>
@@ -248,7 +248,6 @@ $(function() {
 <div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span>  }</div>
 <div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span>}</div>
-<div class="ttc" id="aany_8h_html"><div class="ttname"><a href="any_8h.html">any.h</a></div><div class="ttdoc">Contains std::any type and std::bad_any_cast exception.</div></div>
 <div class="ttc" id="agroup__types_html_ga159b2a409f2b3da8165af7a5e32eccf8"><div class="ttname"><a href="group__types.html#ga159b2a409f2b3da8165af7a5e32eccf8">xtd::int16</a></div><div class="ttdeci">int_least16_t int16</div><div class="ttdoc">Represents a 16-bit signed integer.</div><div class="ttdef"><b>Definition</b> types.h:118</div></div>
 <div class="ttc" id="agroup__types_html_ga255b88769d29fe91661cacc7720f265a"><div class="ttname"><a href="group__types.html#ga255b88769d29fe91661cacc7720f265a">xtd::decimal</a></div><div class="ttdeci">long double decimal</div><div class="ttdoc">Represents a decimal-precision floating-point number.</div><div class="ttdef"><b>Definition</b> types.h:96</div></div>
 <div class="ttc" id="agroup__types_html_ga313036ce703450f07d94c71ed78f2b21"><div class="ttname"><a href="group__types.html#ga313036ce703450f07d94c71ed78f2b21">xtd::ulong</a></div><div class="ttdeci">__ulong__ ulong</div><div class="ttdoc">Represents a 32-bit or 64-bit unsigned integer.</div><div class="ttdef"><b>Definition</b> types.h:272</div></div>
@@ -277,14 +276,11 @@ $(function() {
 <div class="ttc" id="agroup__xtd__core_html_gafb5a4b276ae791f17cf58f99beeb3aa6"><div class="ttname"><a href="group__xtd__core.html#gafb5a4b276ae791f17cf58f99beeb3aa6">xtd::is&lt; int16 &gt;</a></div><div class="ttdeci">bool is&lt; int16 &gt;(int16 value)</div><div class="ttdoc">Checks if the result of an expression is compatible with a given type.</div><div class="ttdef"><b>Definition</b> is.h:162</div></div>
 <div class="ttc" id="agroup__xtd__core_html_gafca4dfbca95412f736a8db416783ddae"><div class="ttname"><a href="group__xtd__core.html#gafca4dfbca95412f736a8db416783ddae">xtd::is&lt; xtd::byte &gt;</a></div><div class="ttdeci">bool is&lt; xtd::byte &gt;(xtd::byte value)</div><div class="ttdoc">Checks if the result of an expression is compatible with a given type.</div><div class="ttdef"><b>Definition</b> is.h:242</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
-<div class="ttc" id="aparse_8h_html"><div class="ttname"><a href="parse_8h.html">parse.h</a></div><div class="ttdoc">Contains xtd::parse methods.</div></div>
-<div class="ttc" id="atypes_8h_html"><div class="ttname"><a href="types_8h.html">types.h</a></div><div class="ttdoc">Contains xtd fundamental types.</div></div>
-<div class="ttc" id="aunused_8h_html"><div class="ttname"><a href="unused_8h.html">unused.h</a></div><div class="ttdoc">Contains unused_ keyword.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 17 2023 22:11:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Sep 24 2023 20:19:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

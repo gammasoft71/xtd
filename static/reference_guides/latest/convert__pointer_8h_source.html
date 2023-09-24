@@ -88,12 +88,12 @@ $(function() {
 <div class="contents">
 <a href="convert__pointer_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="any_8h.html">any.h</a>&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="static_8h.html">static.h</a>&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="types_8h.html">types.h</a>&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="unused_8h.html">unused.h</a>&quot;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="argument__null__exception_8h.html">argument_null_exception.h</a>&quot;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="invalid__cast__exception_8h.html">invalid_cast_exception.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;any&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;argument_null_exception&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;invalid_cast_exception&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;static&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;types&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;unused&quot;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> new_type_t, <span class="keyword">typename</span> current_type_t&gt;</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>new_type_t* __convert_value__(current_type_t* value);</div>
@@ -258,13 +258,11 @@ $(function() {
 <div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span>    }</div>
 <div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span>  };</div>
 <div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>}</div>
-<div class="ttc" id="aany_8h_html"><div class="ttname"><a href="any_8h.html">any.h</a></div><div class="ttdoc">Contains std::any type and std::bad_any_cast exception.</div></div>
-<div class="ttc" id="aargument__null__exception_8h_html"><div class="ttname"><a href="argument__null__exception_8h.html">argument_null_exception.h</a></div><div class="ttdoc">Contains xtd::argument_null_exception exception.</div></div>
 <div class="ttc" id="aclassxtd_1_1argument__null__exception_html"><div class="ttname"><a href="classxtd_1_1argument__null__exception.html">xtd::argument_null_exception</a></div><div class="ttdoc">The exception that is thrown when one of the arguments provided to a method is null.</div><div class="ttdef"><b>Definition</b> argument_null_exception.h:20</div></div>
 <div class="ttc" id="aclassxtd_1_1convert__pointer_html"><div class="ttname"><a href="classxtd_1_1convert__pointer.html">xtd::convert_pointer</a></div><div class="ttdoc">Represents API to convert pointers.</div><div class="ttdef"><b>Definition</b> convert_pointer.h:28</div></div>
 <div class="ttc" id="aclassxtd_1_1invalid__cast__exception_html"><div class="ttname"><a href="classxtd_1_1invalid__cast__exception.html">xtd::invalid_cast_exception</a></div><div class="ttdoc">The exception that is thrown for invalid casting or explicit conversion.</div><div class="ttdef"><b>Definition</b> invalid_cast_exception.h:18</div></div>
-<div class="ttc" id="agroup__keywords_html_ga0ee680d2ff7ec14c0dc73da3bb2e5c91"><div class="ttname"><a href="group__keywords.html#ga0ee680d2ff7ec14c0dc73da3bb2e5c91">unused_</a></div><div class="ttdeci">#define unused_</div><div class="ttdoc">It may be used to suppress the &quot;unused variable&quot; or &quot;unused local typedefs&quot; compiler warnings when th...</div><div class="ttdef"><b>Definition</b> unused.h:31</div></div>
-<div class="ttc" id="agroup__keywords_html_ga28796443ec37b938df7072c79595e3f6"><div class="ttname"><a href="group__keywords.html#ga28796443ec37b938df7072c79595e3f6">static_</a></div><div class="ttdeci">#define static_</div><div class="ttdoc">This keyword is use to represent a static object. A static object can't be instantiated (constructors...</div><div class="ttdef"><b>Definition</b> static.h:38</div></div>
+<div class="ttc" id="agroup__keywords_html_ga0ee680d2ff7ec14c0dc73da3bb2e5c91"><div class="ttname"><a href="group__keywords.html#ga0ee680d2ff7ec14c0dc73da3bb2e5c91">unused_</a></div><div class="ttdeci">#define unused_</div><div class="ttdoc">It may be used to suppress the &quot;unused variable&quot; or &quot;unused local typedefs&quot; compiler warnings when th...</div><div class="ttdef"><b>Definition</b> unused.h:30</div></div>
+<div class="ttc" id="agroup__keywords_html_ga28796443ec37b938df7072c79595e3f6"><div class="ttname"><a href="group__keywords.html#ga28796443ec37b938df7072c79595e3f6">static_</a></div><div class="ttdeci">#define static_</div><div class="ttdoc">This keyword is use to represent a static object. A static object can't be instantiated (constructors...</div><div class="ttdef"><b>Definition</b> static.h:37</div></div>
 <div class="ttc" id="agroup__keywords_html_gaf8b977f43d229f177b7b399c3b3a60a6"><div class="ttname"><a href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a></div><div class="ttdeci">#define csf_</div><div class="ttdoc">Provides information about the current stack frame.</div><div class="ttdef"><b>Definition</b> current_stack_frame.h:30</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga15b96cc09022ab255ef89aebba8ddf47"><div class="ttname"><a href="group__xtd__core.html#ga15b96cc09022ab255ef89aebba8ddf47">xtd::convert_pointer::to_ptr</a></div><div class="ttdeci">static const new_type_t * to_ptr(const current_type_t &amp;value)</div><div class="ttdoc">Casts a type into another type.</div><div class="ttdef"><b>Definition</b> convert_pointer.h:143</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga163db6c632f99222e3799a35fafee688"><div class="ttname"><a href="group__xtd__core.html#ga163db6c632f99222e3799a35fafee688">xtd::convert_pointer::to_ptr</a></div><div class="ttdeci">static const type_t * to_ptr(const type_t *value)</div><div class="ttdoc">Casts a type into another type.</div><div class="ttdef"><b>Definition</b> convert_pointer.h:77</div></div>
@@ -288,16 +286,12 @@ $(function() {
 <div class="ttc" id="agroup__xtd__core_html_gad07a5c51833c7dcf92a2e3fdb9146c1d"><div class="ttname"><a href="group__xtd__core.html#gad07a5c51833c7dcf92a2e3fdb9146c1d">xtd::convert_pointer::to_unique_ptr</a></div><div class="ttdeci">static std::unique_ptr&lt; new_type_t &gt; to_unique_ptr(std::unique_ptr&lt; current_type_t &gt; &amp;value)</div><div class="ttdoc">Casts a type into another type.</div><div class="ttdef"><b>Definition</b> convert_pointer.h:334</div></div>
 <div class="ttc" id="agroup__xtd__core_html_gadd4b41073f1b0b557827a1065d1d4b9c"><div class="ttname"><a href="group__xtd__core.html#gadd4b41073f1b0b557827a1065d1d4b9c">xtd::convert_pointer::to_ptr</a></div><div class="ttdeci">static type_t * to_ptr(type_t &amp;value)</div><div class="ttdoc">Casts a type into another type.</div><div class="ttdef"><b>Definition</b> convert_pointer.h:61</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">xtd::console_key::e</a></div><div class="ttdeci">@ e</div><div class="ttdoc">The E key.</div></div>
-<div class="ttc" id="ainvalid__cast__exception_8h_html"><div class="ttname"><a href="invalid__cast__exception_8h.html">invalid_cast_exception.h</a></div><div class="ttdoc">Contains xtd::invalid_cast_exception exception.</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
-<div class="ttc" id="astatic_8h_html"><div class="ttname"><a href="static_8h.html">static.h</a></div><div class="ttdoc">Contains xtd::static_object class.</div></div>
-<div class="ttc" id="atypes_8h_html"><div class="ttname"><a href="types_8h.html">types.h</a></div><div class="ttdoc">Contains xtd fundamental types.</div></div>
-<div class="ttc" id="aunused_8h_html"><div class="ttname"><a href="unused_8h.html">unused.h</a></div><div class="ttdoc">Contains unused_ keyword.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 17 2023 22:11:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Sep 24 2023 20:19:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

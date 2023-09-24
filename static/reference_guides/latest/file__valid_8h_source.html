@@ -88,8 +88,8 @@ $(function() {
 <div class="contents">
 <a href="file__valid_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="valid_8h.html">valid.h</a>&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="file__assert_8h.html">file_assert.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;valid&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;file_assert&quot;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>  <span class="keyword">namespace </span>tunit {</div>
@@ -109,7 +109,7 @@ $(function() {
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>          file_assert::are_equal(expected, actual, message, stack_frame);</div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>          base_assert::error();</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>          error();</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        }</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>      }</div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>      <span class="keyword">template</span>&lt;<span class="keyword">typename</span> <span class="keywordtype">char</span>_t&gt;</div>
@@ -158,7 +158,7 @@ $(function() {
 <div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>          file_assert::are_not_equal(expected, actual, message, stack_frame);</div>
 <div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>          base_assert::error();</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>          error();</div>
 <div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>        }</div>
 <div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>      }</div>
 <div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>      <span class="keyword">template</span>&lt;<span class="keyword">typename</span> <span class="keywordtype">char</span>_t&gt;</div>
@@ -206,7 +206,7 @@ $(function() {
 <div class="line"><a id="l00457" name="l00457"></a><span class="lineno">  457</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00458" name="l00458"></a><span class="lineno">  458</span>          file_assert::does_not_exist(file, message, stack_frame);</div>
 <div class="line"><a id="l00459" name="l00459"></a><span class="lineno">  459</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00460" name="l00460"></a><span class="lineno">  460</span>          base_assert::error();</div>
+<div class="line"><a id="l00460" name="l00460"></a><span class="lineno">  460</span>          error();</div>
 <div class="line"><a id="l00461" name="l00461"></a><span class="lineno">  461</span>        }</div>
 <div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span>      }</div>
 <div class="line"><a id="l00463" name="l00463"></a><span class="lineno">  463</span>      </div>
@@ -230,7 +230,7 @@ $(function() {
 <div class="line"><a id="l00527" name="l00527"></a><span class="lineno">  527</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00528" name="l00528"></a><span class="lineno">  528</span>          file_assert::exists(file, message, stack_frame);</div>
 <div class="line"><a id="l00529" name="l00529"></a><span class="lineno">  529</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00530" name="l00530"></a><span class="lineno">  530</span>          base_assert::error();</div>
+<div class="line"><a id="l00530" name="l00530"></a><span class="lineno">  530</span>          error();</div>
 <div class="line"><a id="l00531" name="l00531"></a><span class="lineno">  531</span>        }</div>
 <div class="line"><a id="l00532" name="l00532"></a><span class="lineno">  532</span>      }</div>
 <div class="line"><a id="l00533" name="l00533"></a><span class="lineno">  533</span>      </div>
@@ -273,15 +273,13 @@ $(function() {
 <div class="ttc" id="aclassxtd_1_1tunit_1_1file__valid_html_af747c9c8c27235ded548cde354c0260f"><div class="ttname"><a href="classxtd_1_1tunit_1_1file__valid.html#af747c9c8c27235ded548cde354c0260f">xtd::tunit::file_valid::are_not_equal</a></div><div class="ttdeci">static void are_not_equal(const std::basic_string&lt; char_t &gt; &amp;expected, const std::basic_string&lt; char_t &gt; &amp;actual, const std::string &amp;message)</div><div class="ttdoc">Validate that two files are not equal.</div><div class="ttdef"><b>Definition</b> file_valid.h:356</div></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1file__valid_html_afd1bb97a8f86b14d617c43a56d732ab6"><div class="ttname"><a href="classxtd_1_1tunit_1_1file__valid.html#afd1bb97a8f86b14d617c43a56d732ab6">xtd::tunit::file_valid::are_equal</a></div><div class="ttdeci">static void are_equal(const std::basic_istream&lt; char_t &gt; &amp;expected, const std::basic_istream&lt; char_t &gt; &amp;actual)</div><div class="ttdoc">Validate that two files are equal.</div><div class="ttdef"><b>Definition</b> file_valid.h:49</div></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1file__valid_html_afd973a6a9735580cc7022ce3d888484b"><div class="ttname"><a href="classxtd_1_1tunit_1_1file__valid.html#afd973a6a9735580cc7022ce3d888484b">xtd::tunit::file_valid::are_not_equal</a></div><div class="ttdeci">static void are_not_equal(const std::basic_istream&lt; char_t &gt; &amp;expected, const std::basic_istream&lt; char_t &gt; &amp;actual, const xtd::diagnostics::stack_frame &amp;stack_frame)</div><div class="ttdoc">Validate that two files are not equal.</div><div class="ttdef"><b>Definition</b> file_valid.h:255</div></div>
-<div class="ttc" id="afile__assert_8h_html"><div class="ttname"><a href="file__assert_8h.html">file_assert.h</a></div><div class="ttdoc">Contains xtd::tunit::file_assert class.</div></div>
 <div class="ttc" id="agroup__keywords_html_ga3a58fce91c530883d63a6e440c3c5eab"><div class="ttname"><a href="group__keywords.html#ga3a58fce91c530883d63a6e440c3c5eab">tunit_export_</a></div><div class="ttdeci">#define tunit_export_</div><div class="ttdoc">Define shared library export.</div><div class="ttdef"><b>Definition</b> tunit_export.h:13</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
-<div class="ttc" id="avalid_8h_html"><div class="ttname"><a href="valid_8h.html">valid.h</a></div><div class="ttdoc">Contains xtd::tunit::valid class.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 17 2023 22:11:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Sep 24 2023 20:19:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

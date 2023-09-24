@@ -88,11 +88,11 @@ $(function() {
 <div class="contents">
 <a href="barrier_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="barrier__post__phase__exception_8h.html">barrier_post_phase_exception.h</a>&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="cancellation__token_8h.html">cancellation_token.h</a>&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;../action.h&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;../object.h&quot;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;../time_span.h&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;barrier_post_phase_exception&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;cancellation_token&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;../action&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;../object&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;../time_span&quot;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  <span class="keyword">namespace </span>threading {</div>
@@ -147,8 +147,6 @@ $(function() {
 <div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    };</div>
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>  }</div>
 <div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>}</div>
-<div class="ttc" id="abarrier__post__phase__exception_8h_html"><div class="ttname"><a href="barrier__post__phase__exception_8h.html">barrier_post_phase_exception.h</a></div><div class="ttdoc">Contains xtd::threading::barrier_post_phase_exception exception.</div></div>
-<div class="ttc" id="acancellation__token_8h_html"><div class="ttname"><a href="cancellation__token_8h.html">cancellation_token.h</a></div><div class="ttdoc">Contains xtd::threading::cancellation_token class.</div></div>
 <div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.h:32</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1barrier_html"><div class="ttname"><a href="classxtd_1_1threading_1_1barrier.html">xtd::threading::barrier</a></div><div class="ttdoc">Enables multiple tasks to cooperatively work on an algorithm in parallel through multiple phases.</div><div class="ttdef"><b>Definition</b> barrier.h:29</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1barrier_html_a094feff1de30316394d58a288605051e"><div class="ttname"><a href="classxtd_1_1threading_1_1barrier.html#a094feff1de30316394d58a288605051e">xtd::threading::barrier::remove_participant</a></div><div class="ttdeci">int32 remove_participant()</div><div class="ttdoc">Notifies the Barrier that there will be one less participant.</div></div>
@@ -168,18 +166,18 @@ $(function() {
 <div class="ttc" id="aclassxtd_1_1threading_1_1barrier_html_ad9ee4749a4ad932acf7a66d5064fc0df"><div class="ttname"><a href="classxtd_1_1threading_1_1barrier.html#ad9ee4749a4ad932acf7a66d5064fc0df">xtd::threading::barrier::participants_remaining</a></div><div class="ttdeci">int32 participants_remaining() const</div><div class="ttdoc">Gets the number of participants in the barrier that haven't yet signaled in the current phase.</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1barrier_html_ae0495f6d30f433d8a87825bd3c094fe8"><div class="ttname"><a href="classxtd_1_1threading_1_1barrier.html#ae0495f6d30f433d8a87825bd3c094fe8">xtd::threading::barrier::current_phase_number</a></div><div class="ttdeci">int32 current_phase_number() const</div><div class="ttdoc">Gets the number of the barrier's current phase.</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1barrier_html_af90668b66f8479c252160d7a22599bb8"><div class="ttname"><a href="classxtd_1_1threading_1_1barrier.html#af90668b66f8479c252160d7a22599bb8">xtd::threading::barrier::barrier</a></div><div class="ttdeci">barrier(int32 participant_count, barrier::post_phase_action post_phase_action)</div><div class="ttdoc">Initializes a new instance of the xtd::threading::barrier class.</div></div>
-<div class="ttc" id="aclassxtd_1_1threading_1_1cancellation__token_html"><div class="ttname"><a href="classxtd_1_1threading_1_1cancellation__token.html">xtd::threading::cancellation_token</a></div><div class="ttdoc">Propagates notification that operations should be canceled.</div><div class="ttdef"><b>Definition</b> cancellation_token.h:38</div></div>
-<div class="ttc" id="aclassxtd_1_1threading_1_1timeout_html"><div class="ttname"><a href="classxtd_1_1threading_1_1timeout.html">xtd::threading::timeout</a></div><div class="ttdoc">Contains a constant used to specify an infinite amount of time. This class cannot be inherited.</div><div class="ttdef"><b>Definition</b> timeout.h:32</div></div>
+<div class="ttc" id="aclassxtd_1_1threading_1_1cancellation__token_html"><div class="ttname"><a href="classxtd_1_1threading_1_1cancellation__token.html">xtd::threading::cancellation_token</a></div><div class="ttdoc">Propagates notification that operations should be canceled.</div><div class="ttdef"><b>Definition</b> cancellation_token.h:37</div></div>
+<div class="ttc" id="aclassxtd_1_1threading_1_1timeout_html"><div class="ttname"><a href="classxtd_1_1threading_1_1timeout.html">xtd::threading::timeout</a></div><div class="ttdoc">Contains a constant used to specify an infinite amount of time. This class cannot be inherited.</div><div class="ttdef"><b>Definition</b> timeout.h:31</div></div>
 <div class="ttc" id="agroup__keywords_html_gabc8f9c2aa36f6cee610a37f0e8227fd1"><div class="ttname"><a href="group__keywords.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a></div><div class="ttdeci">#define core_export_</div><div class="ttdoc">Define shared library export.</div><div class="ttdef"><b>Definition</b> core_export.h:13</div></div>
 <div class="ttc" id="agroup__types_html_ga92bf6d527cbcada4a30faa2efd0d6a91"><div class="ttname"><a href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">xtd::int32</a></div><div class="ttdeci">int_least32_t int32</div><div class="ttdoc">Represents a 32-bit signed integer.</div><div class="ttdef"><b>Definition</b> types.h:129</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ga53c721aac682a7ccf19ee17d92280e31"><div class="ttname"><a href="group__xtd__core.html#ga53c721aac682a7ccf19ee17d92280e31">xtd::action</a></div><div class="ttdeci">delegate&lt; void(arguments_t...)&gt; action</div><div class="ttdoc">Represents a xtd::delegate that has variable parameters and does not return a value.</div><div class="ttdef"><b>Definition</b> action.h:19</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ga53c721aac682a7ccf19ee17d92280e31"><div class="ttname"><a href="group__xtd__core.html#ga53c721aac682a7ccf19ee17d92280e31">xtd::action</a></div><div class="ttdeci">delegate&lt; void(arguments_t...)&gt; action</div><div class="ttdoc">Represents a xtd::delegate that has variable parameters and does not return a value.</div><div class="ttdef"><b>Definition</b> action.h:18</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
-<div class="ttc" id="astructxtd_1_1time__span_html"><div class="ttname"><a href="structxtd_1_1time__span.html">xtd::time_span</a></div><div class="ttdoc">Represents a time interval.</div><div class="ttdef"><b>Definition</b> time_span.h:27</div></div>
+<div class="ttc" id="astructxtd_1_1time__span_html"><div class="ttname"><a href="structxtd_1_1time__span.html">xtd::time_span</a></div><div class="ttdoc">Represents a time interval.</div><div class="ttdef"><b>Definition</b> time_span.h:26</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 17 2023 22:11:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Sep 24 2023 20:19:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

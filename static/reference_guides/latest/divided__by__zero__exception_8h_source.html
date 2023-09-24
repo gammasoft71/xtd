@@ -88,7 +88,7 @@ $(function() {
 <div class="contents">
 <a href="divided__by__zero__exception_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="arithmetic__exception_8h.html">arithmetic_exception.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;arithmetic_exception&quot;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classxtd_1_1divided__by__zero__exception.html">   20</a></span>  <span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1divided__by__zero__exception.html">divided_by_zero_exception</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1arithmetic__exception.html">arithmetic_exception</a> {</div>
@@ -114,7 +114,6 @@ $(function() {
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>}</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="group__exceptions.html#gae220f0e88f76e7d1e823ef75b51a9915">  103</a></span><span class="preprocessor">#define divided_by_zero_exception_(...) divided_by_zero_exception(add_csf_(__VA_ARGS__))</span></div>
-<div class="ttc" id="aarithmetic__exception_8h_html"><div class="ttname"><a href="arithmetic__exception_8h.html">arithmetic_exception.h</a></div><div class="ttdoc">Contains xtd::arithmetic_exception exception.</div></div>
 <div class="ttc" id="aclassxtd_1_1arithmetic__exception_html"><div class="ttname"><a href="classxtd_1_1arithmetic__exception.html">xtd::arithmetic_exception</a></div><div class="ttdoc">The exception that is thrown for errors in an arithmetic, casting, or conversion operation.</div><div class="ttdef"><b>Definition</b> arithmetic_exception.h:20</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a></div><div class="ttdoc">Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...</div><div class="ttdef"><b>Definition</b> stack_frame.h:37</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html_a9675ae4558328c82740671a909b5d479"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__frame.html#a9675ae4558328c82740671a909b5d479">xtd::diagnostics::stack_frame::empty</a></div><div class="ttdeci">static stack_frame empty() noexcept</div><div class="ttdoc">Return an empty stack frame.</div></div>
@@ -132,13 +131,13 @@ $(function() {
 <div class="ttc" id="aclassxtd_1_1system__exception_html_a052e0b18f39fb7bd976bf3bc6d06e324"><div class="ttname"><a href="classxtd_1_1system__exception.html#a052e0b18f39fb7bd976bf3bc6d06e324">xtd::system_exception::message</a></div><div class="ttdeci">virtual const xtd::ustring &amp; message() const noexcept</div><div class="ttdoc">Gets message associate to the exception.</div></div>
 <div class="ttc" id="aclassxtd_1_1system__exception_html_a64d097d9e2f3d05de00ff6fc4bdd3f75"><div class="ttname"><a href="classxtd_1_1system__exception.html#a64d097d9e2f3d05de00ff6fc4bdd3f75">xtd::system_exception::help_link</a></div><div class="ttdeci">virtual const xtd::ustring &amp; help_link() const noexcept</div><div class="ttdoc">Gets a link to the help file associated with this exception.</div></div>
 <div class="ttc" id="aclassxtd_1_1system__exception_html_aee52fbbd579e5daecc0b1008021002c8"><div class="ttname"><a href="classxtd_1_1system__exception.html#aee52fbbd579e5daecc0b1008021002c8">xtd::system_exception::inner_exception</a></div><div class="ttdeci">virtual exception_ref inner_exception() const noexcept</div><div class="ttdoc">Gets the exception instance that caused the current exception.</div></div>
-<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:48</div></div>
+<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:46</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 17 2023 22:11:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Sep 24 2023 20:19:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

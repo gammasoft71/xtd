@@ -133,7 +133,7 @@ Time values are measured in 100-nanosecond units called ticks. A particular date
 <li>By parsing the <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> representation of a date and time value. The <a class="el" href="classxtd_1_1date__time.html#a546b0f90e2a358dd2c61a44d9ac7d740" title="Converts the string representation of a date and time to its xtd::date_time equivalent by using the c...">xtd::date_time::parse</a>, xtd::date_time::parse_exact, xtd::date_time::try_parse, and xtd::date_time::try_parse_exact methods all convert a <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> to its equivalent date and time value. The following example uses the <a class="el" href="classxtd_1_1date__time.html#a546b0f90e2a358dd2c61a44d9ac7d740" title="Converts the string representation of a date and time to its xtd::date_time equivalent by using the c...">xtd::date_time::parse</a> method to parse a <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> and convert it to a <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> value. <div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> date_string = <span class="stringliteral">&quot;5/1/2008 8:30:52&quot;</span>;</div>
 <div class="line"><a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a> date1 = <a class="code hl_function" href="classxtd_1_1date__time.html#a546b0f90e2a358dd2c61a44d9ac7d740">date_time::parse</a>(date_string);</div>
 <div class="ttc" id="aclassxtd_1_1date__time_html_a546b0f90e2a358dd2c61a44d9ac7d740"><div class="ttname"><a href="classxtd_1_1date__time.html#a546b0f90e2a358dd2c61a44d9ac7d740">xtd::date_time::parse</a></div><div class="ttdeci">static date_time parse(const xtd::ustring &amp;s)</div><div class="ttdoc">Converts the string representation of a date and time to its xtd::date_time equivalent by using the c...</div></div>
-<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:48</div></div>
+<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:46</div></div>
 </div><!-- fragment --> Note that the xtd::date_time::try_parse and xtd::date_time::try_parse_exact methods indicate whether a particular <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> contains a valid representation of a <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> value in addition to performing the conversion.</li>
 <li>By calling the <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> structure's implicit default constructor. The following example illustrates a call to the <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> implicit default constructor. <div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a> dat1;</div>
 <div class="line"><span class="comment">// The following method call displays 1/01/0001 00:00:00.</span></div>
@@ -575,7 +575,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// The custom date and time is created from 621675546300000000 ticks.</span></div>
 <div class="ttc" id="aclassxtd_1_1date__time_html_a1aba401d57acd3b150c6ac29609025be"><div class="ttname"><a href="classxtd_1_1date__time.html#a1aba401d57acd3b150c6ac29609025be">xtd::date_time::ticks</a></div><div class="ttdeci">int64 ticks() const noexcept</div><div class="ttdoc">Gets the number of ticks that represent the date and time of this instance.</div></div>
-<div class="ttc" id="agroup__types_html_gaf6b556b49d28b448fc2c5af1d820f3ea"><div class="ttname"><a href="group__types.html#gaf6b556b49d28b448fc2c5af1d820f3ea">xtd::ticks</a></div><div class="ttdeci">std::chrono::duration&lt; int64, tick &gt; ticks</div><div class="ttdoc">Represents a tick duration.</div><div class="ttdef"><b>Definition</b> ticks.h:22</div></div>
+<div class="ttc" id="agroup__types_html_gaf6b556b49d28b448fc2c5af1d820f3ea"><div class="ttname"><a href="group__types.html#gaf6b556b49d28b448fc2c5af1d820f3ea">xtd::ticks</a></div><div class="ttdeci">std::chrono::duration&lt; int64, tick &gt; ticks</div><div class="ttdoc">Represents a tick duration.</div><div class="ttdef"><b>Definition</b> ticks.h:21</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -1822,7 +1822,7 @@ Because the <a class="el" href="classxtd_1_1date__time.html" title="Represents a
 <div class="line">uint23_t <a class="code hl_function" href="classxtd_1_1date__time.html#a64d8c6b7c2a6ad3628934e5058cca23a">day</a> = moment.day();</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// hour gets 3.</span></div>
-<div class="line">uint23_t <a class="code hl_function" href="classxtd_1_1date__time.html#af6d5ec7775b954da23afcf5543cb7fbc">hour</a> = moment.hour();</div>
+<div class="line">uint23_t <a class="code hl_function" href="classxtd_1_1date__time.html#af6d5ec7775b954da23afcf5543cb7fbc">hour</a> = momentour();</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// minute gets 57.</span></div>
 <div class="line">uint23_t <a class="code hl_function" href="classxtd_1_1date__time.html#a55d9fe3569709cbbb4b229cbf615d306">minute</a> = moment.minute();</div>
@@ -1934,7 +1934,7 @@ The <a class="el" href="classxtd_1_1date__time.html#a907e5ccf8967446900741967788
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">    <span class="keyword">auto</span> dec31 = <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a> {2010, 12, 31};</div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> ctr = 0U; ctr &lt;= 10U; ctr++) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> ctr = 0u; ctr &lt;= 10u; ctr++) {</div>
 <div class="line">      <span class="keyword">auto</span> date_to_display = dec31.<a class="code hl_function" href="classxtd_1_1date__time.html#a503546326baaf6b2d0a0cb678a949836">add_years</a>(ctr);</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;{0:d}: day {1} of {2} {3}&quot;</span>, date_to_display, date_to_display.day_of_year(), date_to_display.year(), date_time::is_leap_year(date_to_display.year()) ? <span class="stringliteral">&quot;(Leap Year)&quot;</span> : <span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line">    }</div>
@@ -2062,7 +2062,7 @@ year is less than 1 or greater than 9999. </td></tr>
 <div class="line">    console::write_line(<span class="stringliteral">&quot;{0,-10}{1,-15}{2,4}\n&quot;</span>, <span class="stringliteral">&quot;Year&quot;</span>, <span class="stringliteral">&quot;Month&quot;</span>, <span class="stringliteral">&quot;Days&quot;</span>);</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> year : years) {</div>
-<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> ctr = 1U; ctr &lt;= 12U; ctr++)</div>
+<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> ctr = 1u; ctr &lt;= 12u; ctr++)</div>
 <div class="line">        console::write_line(<span class="stringliteral">&quot;{0,-10}{1,-15}{2,4}&quot;</span>, year, as&lt;month_of_year&gt;(ctr), date_time::days_in_month(year, ctr));</div>
 <div class="line">      console::write_line();</div>
 <div class="line">    }</div>
@@ -2206,7 +2206,7 @@ year is less than 1 or greater than 9999. </td></tr>
 <div class="line">    console::write_line(<span class="stringliteral">&quot;{0,-10}{1,-15}{2,4}\n&quot;</span>, <span class="stringliteral">&quot;Year&quot;</span>, <span class="stringliteral">&quot;Month&quot;</span>, <span class="stringliteral">&quot;Days&quot;</span>);</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> year : years) {</div>
-<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> ctr = 1U; ctr &lt;= 12U; ctr++)</div>
+<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> ctr = 1u; ctr &lt;= 12u; ctr++)</div>
 <div class="line">        console::write_line(<span class="stringliteral">&quot;{0,-10}{1,-15}{2,4}&quot;</span>, year, as&lt;month_of_year&gt;(ctr), date_time::days_in_month(year, ctr));</div>
 <div class="line">      console::write_line();</div>
 <div class="line">    }</div>
@@ -4074,7 +4074,7 @@ The xtd::date_time::subtract(xtd::time_span) method allows you to subtract a tim
 <div class="line"><span class="comment">//    713918776.07 seconds</span></div>
 <div class="line"><span class="comment">//    11898646.27 minutes</span></div>
 <div class="line"><span class="comment">//    8262 days, 22 hours, 46 minutes, 16 seconds</span></div>
-<div class="ttc" id="astructxtd_1_1time__span_html"><div class="ttname"><a href="structxtd_1_1time__span.html">xtd::time_span</a></div><div class="ttdoc">Represents a time interval.</div><div class="ttdef"><b>Definition</b> time_span.h:27</div></div>
+<div class="ttc" id="astructxtd_1_1time__span_html"><div class="ttname"><a href="structxtd_1_1time__span.html">xtd::time_span</a></div><div class="ttdoc">Represents a time interval.</div><div class="ttdef"><b>Definition</b> time_span.h:26</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="date_time_ticks_8cpp-example.html#a1">date_time_ticks.cpp</a>.</dd>
 </dl>
@@ -5273,7 +5273,7 @@ An alternative to using <a class="el" href="classxtd_1_1date__time.html#a15f9bf4
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 17 2023 22:11:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Sep 24 2023 20:19:43 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

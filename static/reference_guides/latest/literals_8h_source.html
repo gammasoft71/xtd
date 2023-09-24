@@ -88,9 +88,9 @@ $(function() {
 <div class="contents">
 <a href="literals_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="time__span_8h.html">time_span.h</a>&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="types_8h.html">types.h</a>&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="ustring_8h.html">ustring.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;time_span&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;types&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;ustring&quot;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="group__literals.html#ga5741d848966c79c559f3f58ed2b5b34f">   21</a></span>  <a class="code hl_typedef" href="group__types.html#gaf8d0aa5786861bead085592c31c09849">xtd::byte</a> <span class="keyword">operator</span><span class="stringliteral">&quot;&quot;</span>_b(<span class="keywordtype">long</span> <span class="keywordtype">double</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>);</div>
@@ -369,7 +369,7 @@ $(function() {
 <div class="line"><a id="l01523" name="l01523"></a><span class="lineno"> 1523</span>  </div>
 <div class="line"><a id="l01535" name="l01535"></a><span class="lineno"><a class="line" href="group__literals.html#ga165638fc39256e14ce127560f00a8652"> 1535</a></span>  <a class="code hl_struct" href="structxtd_1_1time__span.html">xtd::time_span</a> <span class="keyword">operator</span><span class="stringliteral">&quot;&quot;</span>_us(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>);</div>
 <div class="line"><a id="l01536" name="l01536"></a><span class="lineno"> 1536</span>}</div>
-<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:48</div></div>
+<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:46</div></div>
 <div class="ttc" id="agroup__types_html_ga1259090c8918e75847a8cb2a64b8912a"><div class="ttname"><a href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">xtd::char8</a></div><div class="ttdeci">char8_t char8</div><div class="ttdoc">Represents a 8-bit unicode character.</div><div class="ttdef"><b>Definition</b> types.h:62</div></div>
 <div class="ttc" id="agroup__types_html_ga155357d92cf162b71b396e46accee518"><div class="ttname"><a href="group__types.html#ga155357d92cf162b71b396e46accee518">xtd::wchar</a></div><div class="ttdeci">wchar_t wchar</div><div class="ttdoc">Represents a wide character.</div><div class="ttdef"><b>Definition</b> types.h:284</div></div>
 <div class="ttc" id="agroup__types_html_ga159b2a409f2b3da8165af7a5e32eccf8"><div class="ttname"><a href="group__types.html#ga159b2a409f2b3da8165af7a5e32eccf8">xtd::int16</a></div><div class="ttdeci">int_least16_t int16</div><div class="ttdoc">Represents a 16-bit signed integer.</div><div class="ttdef"><b>Definition</b> types.h:118</div></div>
@@ -386,15 +386,12 @@ $(function() {
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a4a8a08f09d37b73795649038408b5f33"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a4a8a08f09d37b73795649038408b5f33">xtd::console_key::c</a></div><div class="ttdeci">@ c</div><div class="ttdoc">The C key.</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">xtd::console_key::n</a></div><div class="ttdeci">@ n</div><div class="ttdoc">The N key.</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
-<div class="ttc" id="astructxtd_1_1time__span_html"><div class="ttname"><a href="structxtd_1_1time__span.html">xtd::time_span</a></div><div class="ttdoc">Represents a time interval.</div><div class="ttdef"><b>Definition</b> time_span.h:27</div></div>
-<div class="ttc" id="atime__span_8h_html"><div class="ttname"><a href="time__span_8h.html">time_span.h</a></div><div class="ttdoc">Contains xtd::time_span typedef.</div></div>
-<div class="ttc" id="atypes_8h_html"><div class="ttname"><a href="types_8h.html">types.h</a></div><div class="ttdoc">Contains xtd fundamental types.</div></div>
-<div class="ttc" id="austring_8h_html"><div class="ttname"><a href="ustring_8h.html">ustring.h</a></div><div class="ttdoc">Contains xtd::ustring class.</div></div>
+<div class="ttc" id="astructxtd_1_1time__span_html"><div class="ttname"><a href="structxtd_1_1time__span.html">xtd::time_span</a></div><div class="ttdoc">Represents a time interval.</div><div class="ttdef"><b>Definition</b> time_span.h:26</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 17 2023 22:11:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Sep 24 2023 20:19:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

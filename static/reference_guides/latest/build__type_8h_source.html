@@ -88,7 +88,7 @@ $(function() {
 <div class="contents">
 <a href="build__type_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="enum_8h.html">enum.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;enum&quot;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="group__xtd__core.html#ga8672853ea39d932089c60c4970d5bf4a">   18</a></span>  <span class="keyword">enum class</span> <a class="code hl_enumeration" href="group__xtd__core.html#ga8672853ea39d932089c60c4970d5bf4a">build_type</a> {</div>
@@ -100,18 +100,17 @@ $(function() {
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">template</span>&lt;&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structxtd_1_1enum__register.html">xtd::enum_register</a>&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_enumeration" href="group__xtd__core.html#ga8672853ea39d932089c60c4970d5bf4a">build_type</a>&gt; {</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <span class="keyword">explicit</span> <span class="keyword">operator</span> <span class="keyword">auto</span>() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> <a class="code hl_typedef" href="group__xtd__core.html#gaa289cd12f69682df4a6d194b5b10e191">xtd::enum_collection&lt;xtd::build_type&gt;</a> {{<a class="code hl_enumvalue" href="group__xtd__core.html#gga8672853ea39d932089c60c4970d5bf4aaad42f6697b035b7580e4fef93be20b4d">xtd::build_type::debug</a>, <span class="stringliteral">&quot;debug&quot;</span>}, {<a class="code hl_enumvalue" href="group__xtd__core.html#gga8672853ea39d932089c60c4970d5bf4aa123fead50246387983ee340507115ef4">xtd::build_type::release</a>, <span class="stringliteral">&quot;release&quot;</span>}};}</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>};</div>
-<div class="ttc" id="aenum_8h_html"><div class="ttname"><a href="enum_8h.html">enum.h</a></div><div class="ttdoc">Contains enum_ and enum_ut_ keywords.</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga8672853ea39d932089c60c4970d5bf4a"><div class="ttname"><a href="group__xtd__core.html#ga8672853ea39d932089c60c4970d5bf4a">xtd::build_type</a></div><div class="ttdeci">build_type</div><div class="ttdoc">Identifies the build type.</div><div class="ttdef"><b>Definition</b> build_type.h:18</div></div>
 <div class="ttc" id="agroup__xtd__core_html_gaa289cd12f69682df4a6d194b5b10e191"><div class="ttname"><a href="group__xtd__core.html#gaa289cd12f69682df4a6d194b5b10e191">xtd::enum_collection</a></div><div class="ttdeci">std::vector&lt; std::pair&lt; enum_t, xtd::ustring &gt; &gt; enum_collection</div><div class="ttdoc">Represents a pair of an enum_t value and a string of an enum of type enum_t.</div><div class="ttdef"><b>Definition</b> enum_collection.h:19</div></div>
 <div class="ttc" id="agroup__xtd__core_html_gga8672853ea39d932089c60c4970d5bf4aa123fead50246387983ee340507115ef4"><div class="ttname"><a href="group__xtd__core.html#gga8672853ea39d932089c60c4970d5bf4aa123fead50246387983ee340507115ef4">xtd::build_type::release</a></div><div class="ttdeci">@ release</div><div class="ttdoc">Build type release.</div></div>
 <div class="ttc" id="agroup__xtd__core_html_gga8672853ea39d932089c60c4970d5bf4aaad42f6697b035b7580e4fef93be20b4d"><div class="ttname"><a href="group__xtd__core.html#gga8672853ea39d932089c60c4970d5bf4aaad42f6697b035b7580e4fef93be20b4d">xtd::build_type::debug</a></div><div class="ttdeci">@ debug</div><div class="ttdoc">Build type debug.</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
-<div class="ttc" id="astructxtd_1_1enum__register_html"><div class="ttname"><a href="structxtd_1_1enum__register.html">xtd::enum_register</a></div><div class="ttdoc">Provides the registration struct for enumerations.</div><div class="ttdef"><b>Definition</b> enum_register.h:38</div></div>
+<div class="ttc" id="astructxtd_1_1enum__register_html"><div class="ttname"><a href="structxtd_1_1enum__register.html">xtd::enum_register</a></div><div class="ttdoc">Provides the registration struct for enumerations.</div><div class="ttdef"><b>Definition</b> enum_register.h:36</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 17 2023 22:11:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Sep 24 2023 20:19:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

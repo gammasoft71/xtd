@@ -88,10 +88,10 @@ $(function() {
 <div class="contents">
 <a href="isynchronize__invoke_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="delegate_8h.html">delegate.h</a>&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="iasync__result_8h.html">iasync_result.h</a>&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="interface_8h.html">interface.h</a>&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="object__ref_8h.html">object_ref.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;delegate&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;iasync_result&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;interface&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;object_ref&quot;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;any&gt;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;optional&gt;</span></div>
@@ -135,19 +135,15 @@ $(function() {
 <div class="ttc" id="aclassxtd_1_1isynchronize__invoke_html_a4f45baaf14ae2acf5c94ed60fbe3a429"><div class="ttname"><a href="classxtd_1_1isynchronize__invoke.html#a4f45baaf14ae2acf5c94ed60fbe3a429">xtd::isynchronize_invoke::end_invoke</a></div><div class="ttdeci">virtual std::optional&lt; object_ref &gt; end_invoke(std::shared_ptr&lt; xtd::iasync_result &gt; async)=0</div><div class="ttdoc">Waits until the process started by calling xtd::isynchronize_invoke::begin_invoke completes,...</div></div>
 <div class="ttc" id="aclassxtd_1_1isynchronize__invoke_html_a50238e3a0f085168e7309e52efc2c28f"><div class="ttname"><a href="classxtd_1_1isynchronize__invoke.html#a50238e3a0f085168e7309e52efc2c28f">xtd::isynchronize_invoke::invoke</a></div><div class="ttdeci">virtual std::optional&lt; object_ref &gt; invoke(delegate&lt; void()&gt; value)=0</div><div class="ttdoc">Synchronously executes the delegate on the thread that created this object and marshals the call to t...</div></div>
 <div class="ttc" id="aclassxtd_1_1isynchronize__invoke_html_a5434e03732b52c1b9b9861e1571a56a4"><div class="ttname"><a href="classxtd_1_1isynchronize__invoke.html#a5434e03732b52c1b9b9861e1571a56a4">xtd::isynchronize_invoke::invoke_required</a></div><div class="ttdeci">virtual bool invoke_required() const noexcept=0</div><div class="ttdoc">Gets a value indicating whether the caller must call Invoke(Delegate, Object[]) when calling an objec...</div></div>
-<div class="ttc" id="adelegate_8h_html"><div class="ttname"><a href="delegate_8h.html">delegate.h</a></div><div class="ttdoc">Contains xtd::delegate delegate.</div></div>
-<div class="ttc" id="agroup__keywords_html_ga64c32b24bd922fc8189a487213592ccf"><div class="ttname"><a href="group__keywords.html#ga64c32b24bd922fc8189a487213592ccf">interface_</a></div><div class="ttdeci">#define interface_</div><div class="ttdoc">This keyword is use to represent an interface.</div><div class="ttdef"><b>Definition</b> interface.h:55</div></div>
+<div class="ttc" id="agroup__keywords_html_ga64c32b24bd922fc8189a487213592ccf"><div class="ttname"><a href="group__keywords.html#ga64c32b24bd922fc8189a487213592ccf">interface_</a></div><div class="ttdeci">#define interface_</div><div class="ttdoc">This keyword is use to represent an interface.</div><div class="ttdef"><b>Definition</b> interface.h:54</div></div>
 <div class="ttc" id="agroup__xtd__core_html_gafaea93fb18a5eba4adfd23c9bd264e73"><div class="ttname"><a href="group__xtd__core.html#gafaea93fb18a5eba4adfd23c9bd264e73">xtd::object_ref</a></div><div class="ttdeci">std::reference_wrapper&lt; object &gt; object_ref</div><div class="ttdoc">Represents an object reference.</div><div class="ttdef"><b>Definition</b> object_ref.h:18</div></div>
 <div class="ttc" id="agroup__xtd__core_html_gga176c15b86e21b78ec7a3dd6f0a92c686a100b8cad7cf2a56f6df78f171f97a1ec"><div class="ttname"><a href="group__xtd__core.html#gga176c15b86e21b78ec7a3dd6f0a92c686a100b8cad7cf2a56f6df78f171f97a1ec">xtd::number_styles::any</a></div><div class="ttdeci">@ any</div><div class="ttdoc">Indicates that all styles except allow_binary_specifier, allow_octal_specifier and allow_hex_specifie...</div></div>
-<div class="ttc" id="aiasync__result_8h_html"><div class="ttname"><a href="iasync__result_8h.html">iasync_result.h</a></div><div class="ttdoc">Contains xtd::iasync_result interface.</div></div>
-<div class="ttc" id="ainterface_8h_html"><div class="ttname"><a href="interface_8h.html">interface.h</a></div><div class="ttdoc">Contains xtd::interface interface.</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
-<div class="ttc" id="aobject__ref_8h_html"><div class="ttname"><a href="object__ref_8h.html">object_ref.h</a></div><div class="ttdoc">Contains xtd::object_ref alias.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 17 2023 22:11:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Sep 24 2023 20:19:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

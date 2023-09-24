@@ -88,41 +88,40 @@ $(function() {
 <div class="contents">
 <a href="assembly__version__attribute_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;../attribute.h&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#if !defined(__XTD_ASSEMBLY_VERSION__)</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#  define __XTD_ASSEMBLY_VERSION__ &quot;1.0.0&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <span class="keyword">namespace </span>reflection {</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classxtd_1_1reflection_1_1assembly__version__attribute.html">   31</a></span>    <span class="keyword">class </span><a class="code hl_define" href="group__keywords.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a> <a class="code hl_class" href="classxtd_1_1reflection_1_1assembly__version__attribute.html">assembly_version_attribute</a> final : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1attribute.html">xtd::attribute</a> {</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classxtd_1_1reflection_1_1assembly__version__attribute.html#a6b0a936384b5d5c79586e859182f1d12">   36</a></span>      <span class="keyword">explicit</span> <a class="code hl_function" href="classxtd_1_1reflection_1_1assembly__version__attribute.html#a6b0a936384b5d5c79586e859182f1d12">assembly_version_attribute</a>(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>&amp; <a class="code hl_class" href="classxtd_1_1version.html">version</a>);</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>      </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>      <a class="code hl_class" href="classxtd_1_1reflection_1_1assembly__version__attribute.html">assembly_version_attribute</a>(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>&amp; <a class="code hl_class" href="classxtd_1_1version.html">version</a>, <span class="keyword">const</span> <span class="keywordtype">object</span>&amp; executing_assembly);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>      </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classxtd_1_1reflection_1_1assembly__version__attribute.html#a698c13527193af008d3800abf23065ca">   47</a></span>      <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>&amp; <a class="code hl_function" href="classxtd_1_1reflection_1_1assembly__version__attribute.html#a698c13527193af008d3800abf23065ca">version</a>() const noexcept;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>      </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    protected:</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="classxtd_1_1reflection_1_1assembly__version__attribute.html#ae515c11986b8b858c7602e3b88e0d933">   51</a></span>      std::shared_ptr&lt;<span class="keywordtype">object</span>&gt; get_type_id() const noexcept override;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>      </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    private:</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>      <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> version_;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    };</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  }</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>}</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>std::shared_ptr&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::reflection::<a class="code hl_class" href="classxtd_1_1reflection_1_1assembly__version__attribute.html">assembly_version_attribute</a>&gt;&amp; __assembly_version_attribute__();</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="group__keywords.html#ga48f60b6fa94cd6b17b95266a06fc69b7">   76</a></span><span class="preprocessor">#define assembly_version_(version) \</span></div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="preprocessor">  xtd::reflection::assembly_version_attribute __assembly_version_attribute {xtd::ustring(version) == &quot;&quot;</span> || xtd::ustring(version) == &quot;*&quot; ? __XTD_ASSEMBLY_VERSION__ : version, xtd::object()}</div>
-<div class="ttc" id="aclassxtd_1_1attribute_html"><div class="ttname"><a href="classxtd_1_1attribute.html">xtd::attribute</a></div><div class="ttdoc">Represents the base class for custom attributes.</div><div class="ttdef"><b>Definition</b> attribute.h:24</div></div>
-<div class="ttc" id="aclassxtd_1_1reflection_1_1assembly__version__attribute_html"><div class="ttname"><a href="classxtd_1_1reflection_1_1assembly__version__attribute.html">xtd::reflection::assembly_version_attribute</a></div><div class="ttdoc">Specifies the version of the assembly being attributed.</div><div class="ttdef"><b>Definition</b> assembly_version_attribute.h:31</div></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;../attribute&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#if !defined(__XTD_ASSEMBLY_VERSION__)</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#  define __XTD_ASSEMBLY_VERSION__ &quot;1.0.0&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <span class="keyword">namespace </span>reflection {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classxtd_1_1reflection_1_1assembly__version__attribute.html">   30</a></span>    <span class="keyword">class </span><a class="code hl_define" href="group__keywords.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a> <a class="code hl_class" href="classxtd_1_1reflection_1_1assembly__version__attribute.html">assembly_version_attribute</a> final : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1attribute.html">xtd::attribute</a> {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classxtd_1_1reflection_1_1assembly__version__attribute.html#a6b0a936384b5d5c79586e859182f1d12">   35</a></span>      <span class="keyword">explicit</span> <a class="code hl_function" href="classxtd_1_1reflection_1_1assembly__version__attribute.html#a6b0a936384b5d5c79586e859182f1d12">assembly_version_attribute</a>(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>&amp; <a class="code hl_class" href="classxtd_1_1version.html">version</a>);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>      </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>      <a class="code hl_class" href="classxtd_1_1reflection_1_1assembly__version__attribute.html">assembly_version_attribute</a>(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>&amp; <a class="code hl_class" href="classxtd_1_1version.html">version</a>, <span class="keyword">const</span> <span class="keywordtype">object</span>&amp; executing_assembly);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>      </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classxtd_1_1reflection_1_1assembly__version__attribute.html#a698c13527193af008d3800abf23065ca">   46</a></span>      <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>&amp; <a class="code hl_function" href="classxtd_1_1reflection_1_1assembly__version__attribute.html#a698c13527193af008d3800abf23065ca">version</a>() const noexcept;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>      </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    protected:</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classxtd_1_1reflection_1_1assembly__version__attribute.html#ae515c11986b8b858c7602e3b88e0d933">   50</a></span>      std::shared_ptr&lt;<span class="keywordtype">object</span>&gt; get_type_id() const noexcept override;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>      </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    private:</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>      <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> version_;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    };</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  }</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>}</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>std::shared_ptr&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::reflection::<a class="code hl_class" href="classxtd_1_1reflection_1_1assembly__version__attribute.html">assembly_version_attribute</a>&gt;&amp; __assembly_version_attribute__();</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="group__keywords.html#ga48f60b6fa94cd6b17b95266a06fc69b7">   75</a></span><span class="preprocessor">#define assembly_version_(version) \</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="preprocessor">  xtd::reflection::assembly_version_attribute __assembly_version_attribute {xtd::ustring(version) == &quot;&quot;</span> || xtd::ustring(version) == &quot;*&quot; ? __XTD_ASSEMBLY_VERSION__ : version, xtd::object()}</div>
+<div class="ttc" id="aclassxtd_1_1attribute_html"><div class="ttname"><a href="classxtd_1_1attribute.html">xtd::attribute</a></div><div class="ttdoc">Represents the base class for custom attributes.</div><div class="ttdef"><b>Definition</b> attribute.h:23</div></div>
+<div class="ttc" id="aclassxtd_1_1reflection_1_1assembly__version__attribute_html"><div class="ttname"><a href="classxtd_1_1reflection_1_1assembly__version__attribute.html">xtd::reflection::assembly_version_attribute</a></div><div class="ttdoc">Specifies the version of the assembly being attributed.</div><div class="ttdef"><b>Definition</b> assembly_version_attribute.h:30</div></div>
 <div class="ttc" id="aclassxtd_1_1reflection_1_1assembly__version__attribute_html_a698c13527193af008d3800abf23065ca"><div class="ttname"><a href="classxtd_1_1reflection_1_1assembly__version__attribute.html#a698c13527193af008d3800abf23065ca">xtd::reflection::assembly_version_attribute::version</a></div><div class="ttdeci">const ustring &amp; version() const noexcept</div><div class="ttdoc">Gets version information.</div></div>
 <div class="ttc" id="aclassxtd_1_1reflection_1_1assembly__version__attribute_html_a6b0a936384b5d5c79586e859182f1d12"><div class="ttname"><a href="classxtd_1_1reflection_1_1assembly__version__attribute.html#a6b0a936384b5d5c79586e859182f1d12">xtd::reflection::assembly_version_attribute::assembly_version_attribute</a></div><div class="ttdeci">assembly_version_attribute(const ustring &amp;version)</div><div class="ttdoc">Initializes a new instance of the xtd::reflection::assembly_version_attribute class.</div></div>
-<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:48</div></div>
+<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:46</div></div>
 <div class="ttc" id="aclassxtd_1_1version_html"><div class="ttname"><a href="classxtd_1_1version.html">xtd::version</a></div><div class="ttdoc">Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...</div><div class="ttdef"><b>Definition</b> version.h:95</div></div>
 <div class="ttc" id="agroup__keywords_html_gabc8f9c2aa36f6cee610a37f0e8227fd1"><div class="ttname"><a href="group__keywords.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a></div><div class="ttdeci">#define core_export_</div><div class="ttdoc">Define shared library export.</div><div class="ttdef"><b>Definition</b> core_export.h:13</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
@@ -130,7 +129,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 17 2023 22:11:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Sep 24 2023 20:19:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
