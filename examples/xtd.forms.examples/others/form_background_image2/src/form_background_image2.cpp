@@ -1,3 +1,4 @@
+#include <xtd/diagnostics/process>
 #include <xtd/forms/application>
 #include <xtd/forms/choice>
 #include <xtd/forms/form>
