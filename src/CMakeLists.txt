@@ -15,6 +15,11 @@ file(WRITE ${XTD_HEADER_FILE}
   "/// @brief Contains xtd library headers.\n"
   "/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.\n"
   "#pragma once\n"
+  "#include \"xtd/xtd.core\"\n"
+  "#include \"xtd/xtd.drawing\"\n"
+  "#include \"xtd/xtd.forms\"\n"
+  "#include \"xtd/xtd.tunit\"\n"
+  "#include \"xtd/system_report\"\n"
 )
 
 set(XTD_CMAKE_REFERENCES "xtd/references.cmake")
@@ -23,38 +28,27 @@ file(WRITE ${XTD_CMAKE_REFERENCES}
   "#\n"
   "# Changes to this file may cause incorrect behavior and will be lost if the file is regenerated.\n"
   "#\n"
+  "add_references(xtd.core)\n"
+  "add_references(xtd.drawing)\n"
+  "add_references(xtd.forms)\n"
+  "add_references(xtd.tunit)\n"
 )
 
 # Remarks : 
 # for 3rdparty libraries don't forget modify target_type macro (SHARED_LIBRARY) in scripts/cmake/xtd_command.cmake file to skip target_link_libraries with xtd.core
 
 # Projects
-if (XTD_BUILD_LIBRARIES_XTD_CORE)
-  add_projects(${XTD_CORE_NATIVE_3RDPARTY_LIBRARIES} xtd.core.native ${XTD_CORE_NATIVE_LIBRARY} xtd.core)
-  file(APPEND ${XTD_HEADER_FILE} "#include \"xtd/xtd.core\"\n")
-  file(APPEND ${XTD_CMAKE_REFERENCES} "add_references(xtd.core)\n")
-endif ()
-
-if (XTD_BUILD_LIBRARIES_XTD_DRAWING)
-  add_projects(xtd.drawing.native ${XTD_DRAWING_NATIVE_LIBRARY} xtd.drawing)
-  file(APPEND ${XTD_HEADER_FILE} "#include \"xtd/xtd.drawing\"\n")
-  file(APPEND ${XTD_CMAKE_REFERENCES} "add_references(xtd.drawing)\n")
-endif ()
-
-if (XTD_BUILD_LIBRARIES_XTD_FORMS)
-  add_projects(xtd.forms.native ${XTD_FORMS_NATIVE_LIBRARY} xtd.forms)
-  file(APPEND ${XTD_HEADER_FILE} "#include \"xtd/xtd.forms\"\n")
-  file(APPEND ${XTD_CMAKE_REFERENCES} "add_references(xtd.forms)\n")
-endif ()
-
-if (XTD_BUILD_LIBRARIES_XTD_TUNIT)
-  add_projects(xtd.tunit)
-  file(APPEND ${XTD_HEADER_FILE} "#include \"xtd/xtd.tunit\"\n")
-  file(APPEND ${XTD_CMAKE_REFERENCES} "add_references(xtd.tunit)\n")
-endif ()
-
-file(APPEND ${XTD_HEADER_FILE} "#include \"xtd/system_report.h\"\n")
-
-if (XTD_BUILD_LIBRARIES_XTD_CORE OR XTD_BUILD_LIBRARIES_XTD_DRAWING OR XTD_BUILD_LIBRARIES_XTD_FORMS OR XTD_BUILD_LIBRARIES_XTD_TUNIT)
-  add_projects(xtd)
-endif ()
+add_projects(
+  ${XTD_CORE_NATIVE_3RDPARTY_LIBRARIES} 
+  xtd.core.native 
+  ${XTD_CORE_NATIVE_LIBRARY} 
+  xtd.core
+  xtd.drawing.native 
+  ${XTD_DRAWING_NATIVE_LIBRARY}
+  xtd.drawing
+  xtd.forms.native
+  ${XTD_FORMS_NATIVE_LIBRARY}
+  xtd.forms
+  xtd.tunit
+  xtd
+  )

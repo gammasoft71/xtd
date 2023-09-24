@@ -4,22 +4,9 @@ cmake_minimum_required(VERSION 3.5)
 project(xtd)
 
 # Options
-option(XTD_BUILD_LIBRARIES_XTD_CORE "Build xtd.core libraries" ON)
-option(XTD_BUILD_LIBRARIES_XTD_DRAWING "Build xtd.drawing libraries" ON)
-option(XTD_BUILD_LIBRARIES_XTD_FORMS "Build xtd.forms libraries" ON)
-option(XTD_BUILD_LIBRARIES_XTD_TUNIT "Build xtd.tunit libraries" ON)
 option(XTD_BUILD_SHARED_LIBRARIES "Build shared libraries" OFF)
-option(XTD_BUILD_TESTS_XTD_CORE "Build xtd.core tests" OFF)
-option(XTD_BUILD_TESTS_XTD_DRAWING "Build xtd.drawing tests" OFF)
-option(XTD_BUILD_TESTS_XTD_FORMS "Build xtd.forms tests" OFF)
-option(XTD_BUILD_TESTS_XTD_TUNIT "Build xtd.tunit tests" OFF)
-option(XTD_BUILD_TOOL_GUIDGEN_COMMAND_LINE "Build tool guidgen command line" ON)
-option(XTD_BUILD_TOOL_GUIDGEN_GUI "Build tool guidgen GUI" ON)
-option(XTD_BUILD_TOOL_KEYCODES "Enable tool keycodes GUI" ON)
-option(XTD_BUILD_TOOL_SLEEPFOR_COMMAND_LINE "Build tool sleepfor command line" ON)
-option(XTD_BUILD_TOOL_SET_PATH "Enable tool set path" ON)
-option(XTD_BUILD_TOOL_XTDC_COMMAND_LINE "Build tool xtdc command line" ON)
-option(XTD_BUILD_TOOL_XTDC_GUI "Enable tool xtdc-gui GUI" ON)
+option(XTD_BUILD_TESTS "Build tests" OFF)
+option(XTD_BUILD_TOOLS "Build tools" ON)
 option(XTD_BUILD_WITH_CONTINUOUS_INTEGRATION_SYSTEM "Build with the continuous integration (CI) system. This flag should always be set to OFF. It is only needed for continuous integration." OFF)
 option(XTD_DOWNLOAD_ASTYLE "Download and build astyle from Github" OFF)
 option(XTD_DOWNLOAD_CPPCHECK "Download and build cppcheck from Github" OFF)
@@ -79,75 +66,6 @@ elseif (APPLE)
 else ()
   choice_options(XTD_NATIVE_OPERATING_SYSTEM "Choose Operating System for native system libraries" linux Windows macOS iOS android)
   choice_options(XTD_NATIVE_GRAPHIC_TOOLKIT "Choose toolkit for native drawing and forms libraries" wxwidgets gtk4 gtk3 qt5 fltk)
-endif ()
-
-# Options validations
-if (XTD_BUILD_LIBRARIES_XTD_DRAWING AND NOT XTD_BUILD_LIBRARIES_XTD_CORE)
-  message(FATAL_ERROR "Build xtd.core libraries must must be set to ON: xtd.drawing depends of xtd.core")
-endif ()
-
-if (XTD_BUILD_LIBRARIES_XTD_FORMS AND NOT XTD_BUILD_LIBRARIES_XTD_DRAWING)
-  message(FATAL_ERROR "Build xtd.drawing libraries must must be set to ON: xtd.drawing depends of xtd.drawing")
-endif ()
-
-if (XTD_BUILD_LIBRARIES_XTD_TUNIT AND NOT XTD_BUILD_LIBRARIES_XTD_CORE)
-  message(FATAL_ERROR "Build xtd.core libraries must must be set to ON: xtd.tunit depends of xtd.core")
-endif ()
-
-if (XTD_BUILD_TESTS_XTD_CORE AND NOT XTD_BUILD_LIBRARIES_XTD_CORE)
-  message(FATAL_ERROR "Build xtd.core libraries must must be set to ON: xtd.core.manual.tests and xtd.core.unit.tests depends of xtd.core")
-endif ()
-
-if (XTD_BUILD_TESTS_XTD_CORE AND NOT XTD_BUILD_LIBRARIES_XTD_TUNIT)
-  message(FATAL_ERROR "Build xtd.tunit libraries must must be set to ON: xtd.core.unit.tests depends of xtd.tunit")
-endif ()
-
-if (XTD_BUILD_TESTS_XTD_DRAWING AND NOT XTD_BUILD_LIBRARIES_XTD_DRAWING)
-  message(FATAL_ERROR "Build xtd.drawing libraries must must be set to ON: xtd.drawing.manual.tests and xtd.drawing.unit.tests depends of xtd.drawing")
-endif ()
-
-if (XTD_BUILD_TESTS_XTD_DRAWING AND NOT XTD_BUILD_LIBRARIES_XTD_TUNIT)
-  message(FATAL_ERROR "Build xtd.tunit libraries must must be set to ON: xtd.drawing.unit.tests depends of xtd.tunit")
-endif ()
-
-if (XTD_BUILD_TESTS_XTD_FORMS AND NOT XTD_BUILD_LIBRARIES_XTD_FORMS)
-  message(FATAL_ERROR "Build xtd.forms libraries must must be set to ON: xtd.forms.manual.tests and xtd.forms.unit.tests depends of xtd.forms")
-endif ()
-
-if (XTD_BUILD_TESTS_XTD_FORMS AND NOT XTD_BUILD_LIBRARIES_XTD_TUNIT)
-  message(FATAL_ERROR "Build xtd.tunit libraries must must be set to ON: xtd.forms.unit.tests depends of xtd.tunit")
-endif ()
-
-if (XTD_BUILD_TESTS_XTD_TUNIT AND NOT XTD_BUILD_LIBRARIES_XTD_TUNIT)
-  message(FATAL_ERROR "Build xtd.tunit libraries must must be set to ON: xtd.tunit.manual.tests and xtd.tunit.unit.tests depends of xtd.tunit")
-endif ()
-
-if (XTD_BUILD_TOOL_GUIDGEN_COMMAND_LINE AND NOT XTD_BUILD_LIBRARIES_XTD_CORE)
-  message(FATAL_ERROR "Build xtd.core libraries must must be set to ON: guidgen command line tool depends of xtd.core")
-endif ()
-
-if (XTD_BUILD_TOOL_GUIDGEN_GUI AND NOT XTD_BUILD_LIBRARIES_XTD_FORMS)
-  message(FATAL_ERROR "Build xtd.forms libraries must must be set to ON: guidgen-gui GUI tool depends of xtd.forms")
-endif ()
-
-if (XTD_BUILD_TOOL_KEYCODES AND NOT XTD_BUILD_LIBRARIES_XTD_FORMS)
-  message(FATAL_ERROR "Build xtd.forms libraries must must be set to ON: keycodes GUI tool depends of xtd.forms")
-endif ()
-
-if (XTD_BUILD_TOOL_SET_PATH AND NOT XTD_BUILD_LIBRARIES_XTD_CORE)
-  message(FATAL_ERROR "Build xtd.core libraries must must be set to ON: set_path command line tool depends of xtd.core")
-endif ()
-
-if (XTD_BUILD_TOOL_SLEEPFOR_COMMAND_LINE AND NOT XTD_BUILD_LIBRARIES_XTD_CORE)
-  message(FATAL_ERROR "Build xtd.core libraries must must be set to ON: sleepfor command line tool depends of xtd.core")
-endif ()
-
-if (XTD_BUILD_TOOL_XTDC_COMMAND_LINE AND NOT XTD_BUILD_LIBRARIES_XTD_CORE)
-  message(FATAL_ERROR "Build xtd.core libraries must must be set to ON: xtdc command line tool depends of xtd.core")
-endif ()
-
-if (XTD_BUILD_TOOL_XTDC_GUI AND NOT XTD_BUILD_LIBRARIES_XTD_FORMS)
-  message(FATAL_ERROR "Build xtd.forms libraries must must be set to ON: xtdc-gu GUI tool depends of xtd.forms")
 endif ()
 
 # set core native library
@@ -221,7 +139,16 @@ if (XTD_ENABLE_EXTRA_PROJECTS)
   add_projects(docs locale scripts)
 endif ()
 
-add_projects(src tests tools)
+add_projects(src)
+
+if (XTD_BUILD_TESTS)
+  add_projects(tests)
+endif ()
+
+if (XTD_BUILD_TOOLS)
+  add_projects(tools)
+endif ()
+
 if (XTD_BUILD_LIBRARIES_XTD_FORMS)
   add_projects(themes)
 endif ()
