@@ -2,10 +2,10 @@
 /// @brief Contains xtd::threading::event_wait_handle exception.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "event_reset_mode.h"
-#include "wait_handle.h"
-#include "../icomparable.h"
-#include "../iequatable.h"
+#include "event_reset_mode"
+#include "wait_handle"
+#include "../icomparable"
+#include "../iequatable"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

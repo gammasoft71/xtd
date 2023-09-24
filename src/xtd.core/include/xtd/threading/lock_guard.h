@@ -3,9 +3,9 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 
-#include "../object.h"
-#include "../using.h"
-#include "monitor.h"
+#include "../object"
+#include "../using"
+#include "monitor"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
