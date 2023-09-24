@@ -1,6 +1,6 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/unnamed_semaphore.h>
-#include "../../../../include/xtd/native/unix/semaphore.h"
+#include <xtd/native/unnamed_semaphore>
+#include "../../../../include/xtd/native/unix/semaphore"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
 using namespace xtd::native;
