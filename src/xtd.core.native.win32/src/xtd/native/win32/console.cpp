@@ -1,8 +1,8 @@
 #define UNICODE
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/console.h>
-#include <xtd/native/console_special_key.h>
-#include "../../../../include/xtd/native/win32/strings.h"
+#include <xtd/native/console>
+#include <xtd/native/console_special_key>
+#include "../../../../include/xtd/native/win32/strings"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
 #include <csignal>

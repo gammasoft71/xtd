@@ -1,6 +1,6 @@
 #define UNICODE
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/critical_section.h>
+#include <xtd/native/critical_section>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <Windows.h>
 #undef max

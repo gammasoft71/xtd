@@ -1,6 +1,6 @@
 #define UNICODE
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/condition_variable.h>
+#include <xtd/native/condition_variable>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <Windows.h>
 #undef max

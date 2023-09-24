@@ -1,7 +1,7 @@
 #define UNICODE
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/cryptography.h>
-#include "../../../../include/xtd/native/win32/strings.h"
+#include <xtd/native/cryptography>
+#include "../../../../include/xtd/native/win32/strings"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <Windows.h>
 
