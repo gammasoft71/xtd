@@ -2,11 +2,11 @@
 /// @brief Contains xtd::web::css::reader class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "selector_map.h"
-#include "../../argument_exception.h"
-#include "../../format_exception.h"
-#include "../../object.h"
-#include "../..//io/stream_reader.h"
+#include "selector_map"
+#include "../..//io/stream_reader"
+#include "../../argument_exception"
+#include "../../format_exception"
+#include "../../object"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
