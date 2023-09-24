@@ -1714,8 +1714,12 @@ macro(write_resources_file_header)
     "\n"
     "#pragma once\n"
     "\n"
+    "#include <xtd/drawing/bitmap>\n"
+    "#include <xtd/drawing/icon>\n"
+    "#include <xtd/io/path>\n"
+    "#include <xtd/environment>\n"
     "#include <xtd/not_implemented_exception>\n"
-    "#include <${XTD_PROJECT_INCLUDE_FILE}>\n"
+    "#include <xtd/ustring>\n"
     "\n"
     "namespace ${TARGET_DEFAULT_NAMESPACE}::properties {\n"
     "  /// @brief A strongly-typed resource class, for looking up localized strings, etc.\n"
@@ -1735,7 +1739,7 @@ macro(write_resources_file_header)
        file(APPEND ${RESOURCES_FILE_HEADER}
         "    /// @brief Looks up a localized resource of type xtd::drawing::bitmap.\n"
         "    static const xtd::drawing::bitmap& ${NAME}() {\n"
-        "      static xtd::drawing::bitmap bitmap(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), ${PREFIX_RESOURCE_PATH}, \"${FILENAME}\"));\n"
+        "      static auto bitmap = xtd::drawing::bitmap {xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), ${PREFIX_RESOURCE_PATH}, \"${FILENAME}\")};\n"
         "      return bitmap;\n"
         "    }\n"
         "\n"
@@ -1744,7 +1748,7 @@ macro(write_resources_file_header)
        file(APPEND ${RESOURCES_FILE_HEADER}
         "    /// @brief Looks up a localized resource of type xtd::drawing::icon.\n"
         "    static const xtd::drawing::icon& ${NAME}() {\n"
-        "      static xtd::drawing::icon icon(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), ${PREFIX_RESOURCE_PATH}, \"${FILENAME}\"));\n"
+        "      static auto icon = xtd::drawing::icon {xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), ${PREFIX_RESOURCE_PATH}, \"${FILENAME}\")};\n"
         "      return icon;\n"
         "    }\n"
         "\n"
@@ -1753,7 +1757,7 @@ macro(write_resources_file_header)
       file(APPEND ${RESOURCES_FILE_HEADER}
         "    /// @brief Looks up a localized resource of type xtd::ustring.\n"
         "    static const xtd::ustring& ${NAME}() {\n"
-        "      static xtd::ustring text = xtd::io::file::read_all_text(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), ${PREFIX_RESOURCE_PATH}, \"${FILENAME}\"));\n"
+        "      static auto text = xtd::io::file::read_all_text(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), ${PREFIX_RESOURCE_PATH}, \"${FILENAME}\"));\n"
         "      return text;\n"
         "    }\n"
         "\n"
@@ -1762,7 +1766,7 @@ macro(write_resources_file_header)
       file(APPEND ${RESOURCES_FILE_HEADER}
         "    /// @brief Looks up a localized resource of type xtd::forms::sound.\n"
         "    static const xtd::object& ${NAME}() {\n"
-        "      throw xtd::not_implemented_exception(current_stack_frame_);\n"
+        "      throw xtd::not_implemented_exception {csf_};\n"
         "    }\n"
         "\n"
       )
@@ -1770,7 +1774,7 @@ macro(write_resources_file_header)
       file(APPEND ${RESOURCES_FILE_HEADER}
         "    /// @brief Looks up a localized resource of type xtd::ustring.\n"
         "    static const xtd::ustring& ${NAME}() {\n"
-        "      static xtd::ustring text = xtd::io::file::read_all_text(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), ${PREFIX_RESOURCE_PATH}, \"${FILENAME}\"));\n"
+        "      static auto text = xtd::io::file::read_all_text(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), ${PREFIX_RESOURCE_PATH}, \"${FILENAME}\"));\n"
         "      return text;\n"
         "    }\n"
         "\n"
@@ -1785,7 +1789,7 @@ macro(write_resources_file_header)
     file(APPEND ${RESOURCES_FILE_HEADER}
       "    /// @brief Looks up a localized resource of type xtd::ustring.\n"
       "    static const xtd::ustring& ${NAME}() {\n"
-      "      static xtd::ustring str = ${VALUE};\n"
+      "      static auto str = xtd::ustring {${VALUE}};\n"
       "      return str;\n"
       "    }\n"
       "\n"
