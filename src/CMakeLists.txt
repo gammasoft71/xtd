@@ -51,4 +51,4 @@ add_projects(
   xtd.forms
   xtd.tunit
   xtd
-  )
+)
