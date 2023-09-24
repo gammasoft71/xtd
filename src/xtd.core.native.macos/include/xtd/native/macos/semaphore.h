@@ -5,8 +5,12 @@
 #endif
 /// @endcond
 
-#include <semaphore.h>
 #include <unistd.h>
+// Hacking to remove deprecated warning.
+#undef __deprecated
+#define __deprecated
+// end hacking
+#include <semaphore.h>
 
 inline static constexpr size_t PSEMNAMLEN = 31;
 

@@ -1,6 +1,6 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/sounds.h>
-#include <xtd/native/system_sound.h>
+#include <xtd/native/sounds>
+#include <xtd/native/system_sound>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <map>
 #include <string>

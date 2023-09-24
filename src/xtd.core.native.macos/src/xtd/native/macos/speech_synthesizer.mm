@@ -1,9 +1,9 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/speech_synthesizer.h>
-#include <xtd/native/file_permission.h>
-#include <xtd/native/file_system.h>
-#include <xtd/native/process.h>
-#include <xtd/native/process_window_style.h>
+#include <xtd/native/speech_synthesizer>
+#include <xtd/native/file_permission>
+#include <xtd/native/file_system>
+#include <xtd/native/process>
+#include <xtd/native/process_window_style>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <iostream>
 #include <fstream>

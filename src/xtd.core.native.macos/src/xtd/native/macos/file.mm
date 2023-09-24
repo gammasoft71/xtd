@@ -1,7 +1,7 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/file.h>
-#include <xtd/native/file_attribute.h>
-#include <xtd/native/file_system.h>
+#include <xtd/native/file>
+#include <xtd/native/file_attribute>
+#include <xtd/native/file_system>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <cstring>
 #include <unistd.h>

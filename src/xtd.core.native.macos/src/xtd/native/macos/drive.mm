@@ -1,9 +1,9 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/directory.h>
-#include <xtd/native/drive.h>
-#include <xtd/native/drive_type.h>
-#include <xtd/native/file_system.h>
-#include "../../../../include/xtd/native/macos/strings.h"
+#include <xtd/native/directory>
+#include <xtd/native/drive>
+#include <xtd/native/drive_type>
+#include <xtd/native/file_system>
+#include "../../../../include/xtd/native/macos/strings"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <map>
 #include <sys/mount.h>

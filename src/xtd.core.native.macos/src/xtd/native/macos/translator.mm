@@ -1,7 +1,7 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/translator.h>
-#include <xtd/native/environment.h>
-#include "../../../../include/xtd/native/macos/strings.h"
+#include <xtd/native/translator>
+#include <xtd/native/environment>
+#include "../../../../include/xtd/native/macos/strings"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #import <CoreFoundation/CoreFoundation.h>
 #include <TargetConditionals.h>

@@ -1,21 +1,14 @@
-// Hacking to remove deprecated warning.
-#include <sys/cdefs.h>
-#undef __deprecated
-#define __deprecated
-// end hacking
-#include <semaphore.h>
-
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/named_semaphore.h>
-#include "../../../../include/xtd/native/macos/semaphore.h"
+#include <xtd/native/named_semaphore>
+#include "../../../../include/xtd/native/macos/semaphore"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #import <CoreFoundation/CoreFoundation.h>
 #include <TargetConditionals.h>
 #import <Cocoa/Cocoa.h>
 #include <fcntl.h>
 #include <sys/stat.h>
-#include <semaphore.h>
 #include <algorithm>
+#include <sys/cdefs.h>
 
 using namespace xtd::native;
 

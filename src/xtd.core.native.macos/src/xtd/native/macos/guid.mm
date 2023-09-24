@@ -1,10 +1,10 @@
+#define __XTD_CORE_NATIVE_LIBRARY__
+#include <xtd/native/guid>
+#undef __XTD_CORE_NATIVE_LIBRARY__
 #include <algorithm>
 #include <numeric>
 #include <random>
 #include <uuid/uuid.h>
-#define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/guid.h>
-#undef __XTD_CORE_NATIVE_LIBRARY__
 
 using namespace xtd::native;
 
