@@ -2,7 +2,6 @@
 /// @brief Contains xtd::uri class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 #include "iequatable.h"
 #include "uri_components.h"
 #include "uri_format.h"

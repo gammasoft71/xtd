@@ -2,7 +2,6 @@
 /// @brief Contains xtd::net::network_credential class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 #include <vector>
 #include "../security/secure_string"
 #include "../core_export"

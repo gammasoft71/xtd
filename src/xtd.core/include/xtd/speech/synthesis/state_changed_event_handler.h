@@ -2,7 +2,6 @@
 /// @brief Contains xtd::speech::synthesis::state_changed_event_handler alias.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 #include "state_changed_event_args"
 #include "../../event_handler"
 

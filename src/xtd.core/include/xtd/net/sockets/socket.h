@@ -2,7 +2,6 @@
 /// @brief Contains xtd::net::sockets::socket class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 #include "address_family"
 #include "io_control_code"
 #include "ip_packet_information"

@@ -2,7 +2,6 @@
 /// @brief Contains #block_scope_ keyword.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The specified expression is cleared automatically when the scope is ended.

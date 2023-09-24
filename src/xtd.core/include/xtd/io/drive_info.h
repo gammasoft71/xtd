@@ -2,7 +2,6 @@
 /// @brief Contains xtd::io::drive_info class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 #include "../core_export"
 #include "../object"
 #include "directory_info"

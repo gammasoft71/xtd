@@ -1,7 +1,6 @@
 /// @file
 /// @brief Contains xtd::reflection::assembly_description_attribute attribute.
 #pragma once
-
 #include "../core_export"
 #include "../attribute"
 

@@ -2,7 +2,6 @@
 /// @brief Contains xtd::io::file_system_info class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 #include "file_attributes"
 #include "file_permissions"
 #include "../abstract"

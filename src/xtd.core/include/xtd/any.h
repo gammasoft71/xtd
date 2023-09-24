@@ -1,7 +1,6 @@
 /// @file
 /// @brief Contains std::any type and std::bad_any_cast exception.
 #pragma once
-
 /// @cond
 #if defined(__cpp_lib_any) || __cplusplus >= 201703l
 #include <any>

@@ -2,7 +2,6 @@
 /// @brief Contains xtd::ticks typedef.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 #include "chrono.h"
 #include "tick.h"
 #include "types.h"

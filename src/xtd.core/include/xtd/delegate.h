@@ -2,7 +2,6 @@
 /// @brief Contains xtd::delegate delegate.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 #include <functional>
 #include <memory>
 #include <stdexcept>

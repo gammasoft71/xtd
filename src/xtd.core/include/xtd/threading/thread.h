@@ -2,7 +2,6 @@
 /// @brief Contains xtd::threading::thread class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 #include "parameterized_thread_start"
 #include "wait_handle"
 #include "thread_priority"

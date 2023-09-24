@@ -2,7 +2,6 @@
 /// @brief Contains xtd::io::directory_info class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 #include "file_system_info"
 #include "../iequatable"
 #include <iterator>

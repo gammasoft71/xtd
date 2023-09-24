@@ -2,7 +2,6 @@
 /// @brief Contains xtd::net::sockets::tcp_client class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 #include "network_stream"
 #include "socket"
 #include "../ip_end_point"

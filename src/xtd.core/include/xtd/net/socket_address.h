@@ -1,7 +1,6 @@
 /// @file
 /// @brief Contains xtd::net::socket_address class.
 #pragma once
-
 #include "sockets/address_family"
 #include "../core_export"
 #include "../object"

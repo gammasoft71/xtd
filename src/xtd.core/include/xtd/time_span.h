@@ -2,7 +2,6 @@
 /// @brief Contains xtd::time_span typedef.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 #include "icomparable.h"
 #include "iequatable.h"
 #include "object.h"

@@ -2,7 +2,6 @@
 /// @brief Contains xtd::forms::control_event_handler event handler.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 #include <xtd/event_handler.h>
 #include "control_event_args.h"
 

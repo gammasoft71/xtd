@@ -1,5 +1,4 @@
 #pragma once
-
 namespace xtdc_gui {
   enum class project_sdk {
     none,

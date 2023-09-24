@@ -2,7 +2,6 @@
 /// @brief Contains xtd::tunit::test class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 #include "../tunit_export"
 #include "assert"
 #include "assert_error"

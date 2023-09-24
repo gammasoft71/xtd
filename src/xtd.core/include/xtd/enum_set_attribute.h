@@ -2,7 +2,6 @@
 /// @brief Contains xtd::enum_set_attribute strcut.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 #include "enum_attribute.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

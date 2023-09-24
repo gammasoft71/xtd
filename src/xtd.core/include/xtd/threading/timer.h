@@ -2,7 +2,6 @@
 /// @brief Contains xtd::threading::timer class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 #include "timer_callback"
 #include "../core_export"
 #include "../object"

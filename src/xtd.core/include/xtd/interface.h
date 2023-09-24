@@ -2,7 +2,6 @@
 /// @brief Contains xtd::interface interface.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 #undef interface
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

@@ -2,7 +2,6 @@
 /// @brief Contains xtd::threading::lock_guard class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 #include "../object"
 #include "../using"
 #include "monitor"

@@ -2,7 +2,6 @@
 /// @brief Contains xtd::speech::synthesis::speak_started_event_args alias.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 #include "prompt_event_args"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

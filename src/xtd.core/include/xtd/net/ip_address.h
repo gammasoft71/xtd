@@ -2,7 +2,6 @@
 /// @brief Contains xtd::net::ip_address class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 #include "sockets/address_family"
 #include "../core_export"
 #include "../iequatable"

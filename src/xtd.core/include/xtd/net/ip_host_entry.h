@@ -2,7 +2,6 @@
 /// @brief Contains xtd::net::ip_host_entry class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 #include "ip_address"
 #include "../core_export"
 #include "../object"

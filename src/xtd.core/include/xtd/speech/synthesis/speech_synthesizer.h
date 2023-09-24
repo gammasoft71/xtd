@@ -2,7 +2,6 @@
 /// @brief Contains xtd::speech::synthesis::speech_synthesizer class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 #include "prompt"
 #include "speak_completed_event_handler"
 #include "speak_started_event_handler"

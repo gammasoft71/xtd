@@ -2,7 +2,6 @@
 /// @brief Contains xtd::enum_object.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 #include "optional.h"
 #include "enum_attribute.h"
 #include "format_exception.h"

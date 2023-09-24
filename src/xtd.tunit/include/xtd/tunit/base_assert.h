@@ -2,7 +2,6 @@
 /// @brief Contains xtd::tunit::assert class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 #include "../tunit_export"
 #define __XTD_TUNIT_INTERNAL__
 #include "__default_insert_basic_ostream_operator.h"

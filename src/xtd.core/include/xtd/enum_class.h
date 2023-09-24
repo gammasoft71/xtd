@@ -2,7 +2,6 @@
 /// @brief Contains enum_class_ and enum_class_ut_ keywords.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 #include "enum_attribute.h"
 #include "enum_collection.h"
 #include "enum_object.h"

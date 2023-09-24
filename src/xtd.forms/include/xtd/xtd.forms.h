@@ -2,7 +2,6 @@
 /// @brief Contains  xtd.forms library headers.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 #include <xtd/xtd.drawing>
 #include "forms/about_box.h"
 #include "forms/about_dialog.h"

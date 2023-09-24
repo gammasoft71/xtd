@@ -2,7 +2,6 @@
 /// @brief Contains xtd::io::stream_reader class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 #include "text_reader"
 #include "../optional"
 #include <fstream>

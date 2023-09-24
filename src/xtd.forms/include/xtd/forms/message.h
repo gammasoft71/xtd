@@ -2,7 +2,6 @@
 /// @brief Contains xtd::forms::message class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-
 #include <iomanip>
 #include <sstream>
 #include <cstdint>
