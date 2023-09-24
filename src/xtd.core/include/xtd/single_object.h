@@ -2,7 +2,7 @@
 /// @brief Contains xtd::single_object alias.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "box_floating_point.h"
+#include "box_floating_point"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

@@ -2,13 +2,13 @@
 /// @brief Contains xtd::is method.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "any"
+#include "parse"
+#include "types"
+#include "unused"
 #include <limits>
 #include <memory>
 #include <stdexcept>
-#include "any.h"
-#include "parse.h"
-#include "types.h"
-#include "unused.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

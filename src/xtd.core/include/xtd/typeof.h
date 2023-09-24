@@ -2,8 +2,8 @@
 /// @brief Contains #typeof_ keyword.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "ustring.h"
-#include "type_object.h"
+#include "ustring"
+#include "type_object"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

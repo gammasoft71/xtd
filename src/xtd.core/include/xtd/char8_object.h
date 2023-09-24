@@ -2,7 +2,7 @@
 /// @brief Contains xtd::char8_object alias.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "box_char.h"
+#include "box_char"
 
 #if defined(__cpp_lib_char8_t)
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

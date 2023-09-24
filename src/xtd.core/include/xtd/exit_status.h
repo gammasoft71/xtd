@@ -2,7 +2,7 @@
 /// @brief Contains xtd::exit_status enum class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "enum.h"
+#include "enum"
 #include <cstdlib>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

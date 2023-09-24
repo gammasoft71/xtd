@@ -2,7 +2,7 @@
 /// @brief Contains xtd::target_id enum class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "enum.h"
+#include "enum"
 
 /// @cond
 // The following constants are defined in the file xtd_command.cmake.

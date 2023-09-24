@@ -2,7 +2,7 @@
 /// @brief Contains xtd::iobserver interface.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "interface.h"
+#include "interface"
 #include <exception>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

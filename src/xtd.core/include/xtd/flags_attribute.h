@@ -2,7 +2,7 @@
 /// @brief Contains flags_attribute_ keyword.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "enum_set_attribute.h"
+#include "enum_set_attribute"
 
 /// @brief Provides the set attribute struct for enumerations helper.
 /// @par Namespace

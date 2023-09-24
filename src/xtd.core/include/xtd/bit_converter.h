@@ -4,10 +4,10 @@
 #pragma once
 #include <vector>
 
-#include "core_export.h"
-#include "enum.h"
-#include "static.h"
-#include "types.h"
+#include "core_export"
+#include "enum"
+#include "static"
+#include "types"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

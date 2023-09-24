@@ -1,9 +1,9 @@
 /// @file
 /// @brief Contains xtd::attribute class.
 #pragma once
-#include "object.h"
-#include "guid.h"
-#include "ustring.h"
+#include "guid"
+#include "object"
+#include "ustring"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

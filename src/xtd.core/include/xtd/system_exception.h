@@ -2,16 +2,16 @@
 /// @brief Contains xtd::system_exception exception.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "diagnostics/stack_frame"
+#include "diagnostics/stack_trace"
+#include "optional"
+#include "core_export"
+#include "literals"
+#include "object"
+#include "ustring"
 #include <cstdint>
 #include <stdexcept>
 #include <system_error>
-#include "optional.h"
-#include "core_export.h"
-#include "literals.h"
-#include "object.h"
-#include "ustring.h"
-#include "diagnostics/stack_frame.h"
-#include "diagnostics/stack_trace.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

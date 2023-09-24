@@ -2,9 +2,9 @@
 /// @brief Contains xtd literals.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "time_span.h"
-#include "types.h"
-#include "ustring.h"
+#include "time_span"
+#include "types"
+#include "ustring"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

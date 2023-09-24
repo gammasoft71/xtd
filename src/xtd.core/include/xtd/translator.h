@@ -2,11 +2,11 @@
 /// @brief Contains xtd::translator class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "collections/specialized/string_map"
+#include "static"
+#include "ustring"
 #include <string>
 #include <vector>
-#include "collections/specialized/string_map.h"
-#include "static.h"
-#include "ustring.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

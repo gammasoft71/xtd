@@ -2,8 +2,8 @@
 /// @brief Contains xtd::console_cancel_event_args event args.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "event_args.h"
-#include "console_special_key.h"
+#include "console_special_key"
+#include "event_args"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

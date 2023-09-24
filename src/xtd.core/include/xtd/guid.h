@@ -2,12 +2,12 @@
 /// @brief Contains xtd::guid class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "core_export"
+#include "icomparable"
+#include "iequatable"
+#include "object"
+#include "ustring"
 #include <vector>
-#include "core_export.h"
-#include "icomparable.h"
-#include "iequatable.h"
-#include "object.h"
-#include "ustring.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
