@@ -3,12 +3,12 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 
+#include "synthesizer_state"
+#include "../../optional"
+#include "../../any"
+#include "../../event_args"
+#include "../../system_exception"
 #include <functional>
-#include "../../optional.h"
-#include "../../any.h"
-#include "../../event_args.h"
-#include "../../system_exception.h"
-#include "synthesizer_state.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

@@ -3,14 +3,14 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 
-#include "../../event.h"
-#include "../../object.h"
-#include "../../ustring.h"
-#include "prompt.h"
-#include "speak_completed_event_handler.h"
-#include "speak_started_event_handler.h"
-#include "state_changed_event_handler.h"
-#include "synthesizer_state.h"
+#include "prompt"
+#include "speak_completed_event_handler"
+#include "speak_started_event_handler"
+#include "state_changed_event_handler"
+#include "synthesizer_state"
+#include "../../event"
+#include "../../object"
+#include "../../ustring"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
