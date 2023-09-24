@@ -27,7 +27,7 @@ using __ulong__ = unsigned long; // Workaround: On linux 64 bits unfortunately '
 #endif
 
 #if defined(__XTD_CORE_NATIVE_LIBRARY__)
-#include <xtd/core_native_export.h>
+#include <xtd/core_native_export>
 #include <string>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

@@ -8,7 +8,7 @@
 #endif
 /// @endcond
 
-#include <xtd/core_native_export.h>
+#include <xtd/core_native_export>
 #include <cstddef>
 #include <ctime>
 #include <string>
