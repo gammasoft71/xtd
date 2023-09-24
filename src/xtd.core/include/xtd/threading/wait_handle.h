@@ -2,11 +2,11 @@
 /// @brief Contains xtd::threading::wait_handle exception.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../abstract.h"
-#include "../as.h"
-#include "../time_span.h"
-#include "../types.h"
-#include "timeout.h"
+#include "timeout"
+#include "../abstract"
+#include "../as"
+#include "../time_span"
+#include "../types"
 #include <limits>
 #include <vector>
 

@@ -3,16 +3,16 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 
-#include "parameterized_thread_start.h"
-#include "wait_handle.h"
-#include "thread_priority.h"
-#include "thread_start.h"
-#include "thread_state.h"
-#include "../as.h"
-#include "../core_export.h"
-#include "../object.h"
-#include "../time_span.h"
-#include "../types.h"
+#include "parameterized_thread_start"
+#include "wait_handle"
+#include "thread_priority"
+#include "thread_start"
+#include "thread_state"
+#include "../as"
+#include "../core_export"
+#include "../object"
+#include "../time_span"
+#include "../types"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

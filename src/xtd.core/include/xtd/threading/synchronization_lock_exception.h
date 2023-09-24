@@ -2,8 +2,8 @@
 /// @brief Contains xtd::threading::synchronization_lock_exception exception.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../system_exception.h"
-#include "../typeof.h"
+#include "../system_exception"
+#include "../typeof"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

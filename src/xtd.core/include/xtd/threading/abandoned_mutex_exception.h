@@ -2,7 +2,7 @@
 /// @brief Contains xtd::threading::abandoned_mutex_exception exception.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../system_exception.h"
+#include "../system_exception"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

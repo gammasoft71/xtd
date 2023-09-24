@@ -3,15 +3,15 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 
-#include "../diagnostics/stack_frame.h"
-#include "../core_export.h"
-#include "../invalid_operation_exception.h"
-#include "../static.h"
-#include "../time_span.h"
-#include "../types.h"
-#include "../as.h"
-#include "../is.h"
-#include "timeout.h"
+#include "timeout"
+#include "../diagnostics/stack_frame"
+#include "../core_export"
+#include "../invalid_operation_exception"
+#include "../static"
+#include "../time_span"
+#include "../types"
+#include "../as"
+#include "../is"
 #include <unordered_map>
 #include <utility>
 

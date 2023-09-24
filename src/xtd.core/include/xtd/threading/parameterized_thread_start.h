@@ -2,7 +2,7 @@
 /// @brief Contains xtd::threading::parameterized_thread_start exception.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../action.h"
+#include "../action"
 #include <any>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

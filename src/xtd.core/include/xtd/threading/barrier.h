@@ -2,11 +2,11 @@
 /// @brief Contains xtd::threading::barrier exception.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "barrier_post_phase_exception.h"
-#include "cancellation_token.h"
-#include "../action.h"
-#include "../object.h"
-#include "../time_span.h"
+#include "barrier_post_phase_exception"
+#include "cancellation_token"
+#include "../action"
+#include "../object"
+#include "../time_span"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
