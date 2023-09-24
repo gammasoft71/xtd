@@ -1,10 +1,10 @@
 #define UNICODE
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/date_time.h>
+#include <xtd/native/date_time>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <Windows.h>
 #include <time.h>
-#include  <algorithm>
+#include <algorithm>
 #include <cmath>
 #include <cstdarg>
 #include <cstdio>

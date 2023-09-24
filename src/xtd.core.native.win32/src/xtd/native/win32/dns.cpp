@@ -1,7 +1,7 @@
 #define UNICODE
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/dns.h>
-#include <xtd/native/address_family_constants.h>
+#include <xtd/native/dns>
+#include <xtd/native/address_family_constants>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #define _WINSOCK_DEPRECATED_NO_WARNINGS
 #include <mutex>

@@ -1,6 +1,6 @@
 #define UNICODE
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/unnamed_mutex.h>
+#include <xtd/native/unnamed_mutex>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <Windows.h>
 #undef max

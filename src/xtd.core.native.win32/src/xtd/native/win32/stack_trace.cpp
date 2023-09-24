@@ -1,5 +1,5 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/stack_trace.h>
+#include <xtd/native/stack_trace>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <StackWalker.h>
 #include <cstddef>

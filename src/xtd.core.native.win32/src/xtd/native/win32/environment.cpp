@@ -1,8 +1,8 @@
 #define UNICODE
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/environment.h>
-#include <xtd/native/constant_special_item_id_list.h>
-#include "../../../../include/xtd/native/win32/strings.h"
+#include <xtd/native/environment>
+#include <xtd/native/constant_special_item_id_list>
+#include "../../../../include/xtd/native/win32/strings"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
 #include <cstdio>

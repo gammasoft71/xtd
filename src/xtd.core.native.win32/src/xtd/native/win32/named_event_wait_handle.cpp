@@ -1,7 +1,7 @@
 #define UNICODE
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/named_event_wait_handle.h>
-#include "../../../../include/xtd/native/win32/strings.h"
+#include <xtd/native/named_event_wait_handle>
+#include "../../../../include/xtd/native/win32/strings"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <Windows.h>
 #undef max

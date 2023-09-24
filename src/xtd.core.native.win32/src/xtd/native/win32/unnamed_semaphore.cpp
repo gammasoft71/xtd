@@ -1,6 +1,6 @@
 #define UNICODE
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/unnamed_semaphore.h>
+#include <xtd/native/unnamed_semaphore>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <Windows.h>
 #undef max

@@ -1,8 +1,8 @@
 #define UNICODE
 #define _CRT_SECURE_NO_WARNINGS
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/path.h>
-#include "../../../../include/xtd/native/win32/strings.h"
+#include <xtd/native/path>
+#include "../../../../include/xtd/native/win32/strings"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <string>
 #include <direct.h>

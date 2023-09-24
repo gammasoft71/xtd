@@ -1,6 +1,6 @@
 #define UNICODE
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/guid.h>
+#include <xtd/native/guid>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
 #include <direct.h>

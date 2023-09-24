@@ -1,7 +1,7 @@
 #define UNICODE
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/interlocked.h>
-#include <xtd/native/types.h>
+#include <xtd/native/interlocked>
+#include <xtd/native/types>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <Windows.h>
 
