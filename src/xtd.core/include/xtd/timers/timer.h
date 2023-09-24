@@ -3,13 +3,13 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 
-#include "../core_export.h"
-#include "../event.h"
-#include "../isynchronize_invoke.h"
-#include "../object.h"
-#include "../time_span.h"
-#include "../types.h"
-#include "elapsed_event_handler.h"
+#include "elapsed_event_handler"
+#include "../core_export"
+#include "../event"
+#include "../isynchronize_invoke"
+#include "../object"
+#include "../time_span"
+#include "../types"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
