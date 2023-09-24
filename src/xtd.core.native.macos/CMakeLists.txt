@@ -39,8 +39,11 @@ add_sources(
   include/xtd/xtd.core.native.macos.h
   include/xtd/xtd.core.native.macos
   include/xtd/native/macos/mutex.h
+  include/xtd/native/macos/mutex
   include/xtd/native/macos/semaphore.h
+  include/xtd/native/macos/semaphore
   include/xtd/native/macos/strings.h
+  include/xtd/native/macos/strings
   src/xtd/native/macos/console.mm
   src/xtd/native/macos/condition_variable.mm
   src/xtd/native/macos/critical_section.mm
