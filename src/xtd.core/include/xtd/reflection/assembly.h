@@ -2,8 +2,8 @@
 /// @brief Contains xtd::reflection::assembly class.
 #pragma once
 
-#include "../object.h"
-#include "../ustring.h"
+#include "../object"
+#include "../ustring"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
