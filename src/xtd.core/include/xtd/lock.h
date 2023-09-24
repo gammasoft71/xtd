@@ -2,7 +2,7 @@
 /// @brief Contains #lock_ keyword.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "threading/lock_guard.h"
+#include "threading/lock_guard"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -83,4 +83,4 @@ namespace xtd {
 /// @include lock.cpp
 /// @ingroup Keywords
 #define lock_(object)\
-  using_ (xtd::lock __xtd_lock_guard__(object))
+  lock_guard_(object)

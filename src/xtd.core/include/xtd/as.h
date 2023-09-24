@@ -1,16 +1,16 @@
 /// @file
 /// @brief Contains xtd::as method.
 #pragma once
-#include <memory>
-#include "any.h"
-#include "convert.h"
-#include "convert_pointer.h"
-#include "convert_string.h"
-#include "invalid_cast_exception.h"
-#include "types.h"
+#include "any"
+#include "convert"
+#include "convert_pointer"
+#include "convert_string"
+#include "invalid_cast_exception"
+#include "types"
 #define __XTD_CORE_INTERNAL__
-#include "internal/__as_enum.h"
+#include "internal/__as_enum"
 #undef __XTD_CORE_INTERNAL__
+#include <memory>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

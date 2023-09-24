@@ -1,6 +1,7 @@
 /// @file
 /// @brief Contains xtd::register_any_stringer and xtd::unregister_any_stringer method.
 #pragma once
+#include "any"
 #include <functional>
 #include <string>
 #include <typeindex>
@@ -8,7 +9,6 @@
 #include <type_traits>
 #include <unordered_map>
 #include <vector>
-#include "any.h"
 
 /// @cond
 extern std::unordered_map<std::type_index, std::function<std::string(std::any const&)>> __any_stringer__;

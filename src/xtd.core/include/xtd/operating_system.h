@@ -2,14 +2,14 @@
 /// @brief Contains xtd::operating_system class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "optional"
+#include "distribution"
+#include "object"
+#include "platform_id"
+#include "ustring"
+#include "version"
 #include <map>
 #include <vector>
-#include "optional.h"
-#include "distribution.h"
-#include "object.h"
-#include "platform_id.h"
-#include "ustring.h"
-#include "version.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

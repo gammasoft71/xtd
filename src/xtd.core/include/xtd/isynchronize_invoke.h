@@ -2,10 +2,10 @@
 /// @brief Contains xtd::isynchronize_invoke interface.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "delegate.h"
-#include "iasync_result.h"
-#include "interface.h"
-#include "object_ref.h"
+#include "delegate"
+#include "iasync_result"
+#include "interface"
+#include "object_ref"
 #include <any>
 #include <memory>
 #include <optional>

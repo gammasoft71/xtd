@@ -2,11 +2,11 @@
 /// @brief Contains xtd::cnull ostream.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "types"
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <vector>
-#include "types.h"
 
 /// @cond
 xtd::int32 __get_file_attributes(const char* path);

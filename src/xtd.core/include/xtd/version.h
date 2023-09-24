@@ -2,8 +2,8 @@
 /// @brief Contains xtd::version class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "icomparable.h"
-#include "ustring.h"
+#include "icomparable"
+#include "ustring"
 
 /// @cond
 #undef major

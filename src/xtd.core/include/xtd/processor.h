@@ -2,11 +2,11 @@
 /// @brief Contains xtd::processor class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "architecture_id"
+#include "object"
+#include "ustring"
 #include <map>
 #include <vector>
-#include "architecture_id.h"
-#include "object.h"
-#include "ustring.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

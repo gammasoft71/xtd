@@ -2,9 +2,9 @@
 /// @brief Contains xtd::debugstreambuf class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "diagnostics/debug"
+#include "object"
 #include <iostream>
-#include "object.h"
-#include "diagnostics/debug.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

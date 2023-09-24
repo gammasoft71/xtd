@@ -2,13 +2,10 @@
 /// @brief Contains xtd::cpp_language class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <cstdint>
-#include <map>
-#include <vector>
-#include "language_id.h"
-#include "object.h"
-#include "ustring.h"
-#include "version.h"
+#include "language_id"
+#include "object"
+#include "ustring"
+#include "version"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

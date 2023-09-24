@@ -5,11 +5,11 @@
 #include <string>
 /// @cond
 #define __XTD_CORE_INTERNAL__
-#include "internal/__parse.h"
+#include "internal/__parse"
 #undef __XTD_CORE_INTERNAL__
 /// @endcond
-#include "number_styles.h"
-#include "types.h"
+#include "number_styles"
+#include "types"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

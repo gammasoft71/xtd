@@ -2,14 +2,14 @@
 /// @brief Contains xtd::time_zone_info class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "argument_out_of_range_exception.h"
-#include "day_of_week.h"
-#include "icomparable.h"
-#include "iequatable.h"
-#include "date_time.h"
-#include "object.h"
-#include "ticks.h"
-#include "ustring.h"
+#include "argument_out_of_range_exception"
+#include "day_of_week"
+#include "icomparable"
+#include "iequatable"
+#include "date_time"
+#include "object"
+#include "ticks"
+#include "ustring"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

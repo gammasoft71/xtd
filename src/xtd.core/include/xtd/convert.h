@@ -2,14 +2,14 @@
 /// @brief Contains xtd::convert class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "any.h"
-#include "argument_exception.h"
-#include "format_exception.h"
-#include "invalid_cast_exception.h"
-#include "overflow_exception.h"
-#include "static.h"
-#include "types.h"
-#include "ustring.h"
+#include "any"
+#include "argument_exception"
+#include "format_exception"
+#include "invalid_cast_exception"
+#include "overflow_exception"
+#include "static"
+#include "types"
+#include "ustring"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

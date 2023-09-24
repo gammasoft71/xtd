@@ -2,12 +2,12 @@
 /// @brief Contains xtd::convert class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "any.h"
-#include "static.h"
-#include "types.h"
-#include "unused.h"
-#include "argument_null_exception.h"
-#include "invalid_cast_exception.h"
+#include "any"
+#include "argument_null_exception"
+#include "invalid_cast_exception"
+#include "static"
+#include "types"
+#include "unused"
 
 /// @cond
 template<typename new_type_t, typename current_type_t>

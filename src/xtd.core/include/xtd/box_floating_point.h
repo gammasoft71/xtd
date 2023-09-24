@@ -2,9 +2,9 @@
 /// @brief Contains xtd::box_floating_point class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "box_integer.h"
+#include "box_integer"
 #define __XTD_CORE_INTERNAL__
-#include "internal/__box_floating_point.h"
+#include "internal/__box_floating_point"
 #undef __XTD_CORE_INTERNAL__
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

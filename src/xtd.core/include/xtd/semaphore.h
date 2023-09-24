@@ -5,11 +5,11 @@
 #if defined(__cpp_lib_semaphore) || __cplusplus >= 202002l
 #include <semaphore>
 #else
+#include <condition_variable>
 #include <cstdint>
 #include <cstddef>
-#include <mutex>
-#include <condition_variable>
 #include <limits>
+#include <mutex>
 
 namespace std {
   template<std::ptrdiff_t least_max_value = std::numeric_limits<std::ptrdiff_t>::max()>

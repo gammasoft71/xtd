@@ -2,14 +2,14 @@
 /// @brief Contains xtd::random class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "argument_null_exception"
+#include "argument_out_of_range_exception"
+#include "core_export"
+#include "environment"
+#include "object"
+#include "optional"
 #include <limits>
 #include <random>
-#include "optional.h"
-#include "argument_null_exception.h"
-#include "argument_out_of_range_exception.h"
-#include "core_export.h"
-#include "environment.h"
-#include "object.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

@@ -2,15 +2,15 @@
 /// @brief Contains xtd::box class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "convert_string.h"
-#include "icomparable.h"
-#include "iequatable.h"
-#include "invalid_cast_exception.h"
-#include "iequatable.h"
-#include "enum.h"
-#include "object.h"
-#include "ustring.h"
-#include "types.h"
+#include "convert_string"
+#include "icomparable"
+#include "iequatable"
+#include "invalid_cast_exception"
+#include "iequatable"
+#include "enum"
+#include "object"
+#include "ustring"
+#include "types"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
