@@ -18,7 +18,7 @@ jobs:
     # See: https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
     runs-on: ubuntu-latest
     #compiler: [ latest, gcc-latest, gcc-9, gcc-10, g++-11, clang, clang-10, clang-11, clang++-12 ]
-    compiler: g++-11
+    compiler: latest
 
     steps:
     - name: Checkout
