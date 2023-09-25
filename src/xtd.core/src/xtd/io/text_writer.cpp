@@ -1,4 +1,4 @@
-#include "../../../include/xtd/io/text_writer.h"
+#include "../../../include/xtd/io/text_writer"
 #include <mutex>
 
 std::recursive_mutex __synchronized_text_writer_mutex__;

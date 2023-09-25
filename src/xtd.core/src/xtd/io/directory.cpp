@@ -1,21 +1,21 @@
-#include "../../../include/xtd/io/directory.h"
-#include "../../../include/xtd/io/file_info.h"
-#include "../../../include/xtd/io/directory_info.h"
-#include "../../../include/xtd/io/directory_not_found_exception.h"
-#include "../../../include/xtd/io/drive_info.h"
-#include "../../../include/xtd/io/file.h"
-#include "../../../include/xtd/io/io_exception.h"
-#include "../../../include/xtd/io/path.h"
-#include "../../../include/xtd/io/path_too_long_exception.h"
-#include "../../../include/xtd/argument_exception.h"
-#include "../../../include/xtd/not_supported_exception.h"
-#include "../../../include/xtd/unauthorized_access_exception.h"
-#include "../../../include/xtd/diagnostics/debug.h"
+#include "../../../include/xtd/io/directory"
+#include "../../../include/xtd/io/file_info"
+#include "../../../include/xtd/io/directory_info"
+#include "../../../include/xtd/io/directory_not_found_exception"
+#include "../../../include/xtd/io/drive_info"
+#include "../../../include/xtd/io/file"
+#include "../../../include/xtd/io/io_exception"
+#include "../../../include/xtd/io/path"
+#include "../../../include/xtd/io/path_too_long_exception"
+#include "../../../include/xtd/argument_exception"
+#include "../../../include/xtd/not_supported_exception"
+#include "../../../include/xtd/unauthorized_access_exception"
+#include "../../../include/xtd/diagnostics/debug"
 #include <algorithm>
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/directory.h>
-#include <xtd/native/file.h>
-#include <xtd/native/file_system.h>
+#include <xtd/native/directory>
+#include <xtd/native/file>
+#include <xtd/native/file_system>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
 using namespace std;
