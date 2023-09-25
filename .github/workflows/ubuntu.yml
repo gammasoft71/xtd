@@ -20,15 +20,11 @@ jobs:
 
     steps:
     - name: Setup gcc 11
-      uses: egor-tensin/setup-gcc@v1
-      with:
-        version: 11
-
-    - name: Setup g++ 11
-      uses: egor-tensin/setup-g++@v1
-      with:
-        version: 11
-
+      run: |
+        sudo apt install gcc-11 g++-11
+        sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 100 --slave /usr/bin/g++ g++ /usr/bin/g++-11 --slave /usr/bin/gcov gcov /usr/bin/gcov-11
+        sudo update-alternatives --set gcc /usr/bin/gcc-11
+    
     - name: Checkout
       uses: actions/checkout@v2
 
