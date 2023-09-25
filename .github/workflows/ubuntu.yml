@@ -19,13 +19,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Setup gcc 12
-      run: |
-        sudo apt install gcc-11 g++-12
-        sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-12 100 --slave /usr/bin/g++ g++ /usr/bin/g++-12 --slave /usr/bin/gcov gcov /usr/bin/gcov-12
-        sudo update-alternatives --set gcc /usr/bin/gcc-12
-        sudo update-alternatives --set g++ /usr/bin/g++-12
-
     - name: Checkout
       uses: actions/checkout@v2
 
