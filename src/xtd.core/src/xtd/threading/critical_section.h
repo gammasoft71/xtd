@@ -1,9 +1,9 @@
 #pragma once
-#include "../../../include/xtd/threading/monitor.h"
-#include "../../../include/xtd/threading/thread.h"
-#include "../../../include/xtd/diagnostics/stopwatch.h"
+#include "../../../include/xtd/threading/monitor"
+#include "../../../include/xtd/threading/thread"
+#include "../../../include/xtd/diagnostics/stopwatch"
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/critical_section.h>
+#include <xtd/native/critical_section>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <memory>
 

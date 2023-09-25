@@ -1,9 +1,9 @@
 #pragma once
 #include "event_wait_handle_base.h"
 #include <condition_variable>
-#include "../../../include/xtd/semaphore.h"
-#include "../../../include/xtd/invalid_operation_exception.h"
-#include "../../../include/xtd/threading/interlocked.h"
+#include "../../../include/xtd/semaphore"
+#include "../../../include/xtd/invalid_operation_exception"
+#include "../../../include/xtd/threading/interlocked"
 
 class xtd::threading::event_wait_handle::unnamed_event_wait_handle : public event_wait_handle_base {
 public:

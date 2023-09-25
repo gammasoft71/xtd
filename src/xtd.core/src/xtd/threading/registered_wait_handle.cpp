@@ -1,5 +1,5 @@
-#include "../../../include/xtd/threading/registered_wait_handle.h"
-#include "../../../include/xtd/threading/thread_pool.h"
+#include "../../../include/xtd/threading/registered_wait_handle"
+#include "../../../include/xtd/threading/thread_pool"
 
 using namespace xtd;
 using namespace xtd::threading;

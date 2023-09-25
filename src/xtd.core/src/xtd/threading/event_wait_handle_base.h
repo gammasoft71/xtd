@@ -1,6 +1,6 @@
 #pragma once
-#include "../../../include/xtd/threading/event_wait_handle.h"
-#include "../../../include/xtd/abstract.h"
+#include "../../../include/xtd/threading/event_wait_handle"
+#include "../../../include/xtd/abstract"
 
 class xtd::threading::event_wait_handle::event_wait_handle_base abstract_ {
 public:
