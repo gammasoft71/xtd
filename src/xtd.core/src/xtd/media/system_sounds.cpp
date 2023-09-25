@@ -1,6 +1,6 @@
-#include "../../../include/xtd/media/system_sounds.h"
+#include "../../../include/xtd/media/system_sounds"
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/sounds.h>
+#include <xtd/native/sounds>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
 using namespace xtd::media;
