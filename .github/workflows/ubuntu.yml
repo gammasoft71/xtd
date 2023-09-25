@@ -17,10 +17,15 @@ jobs:
     # cross-platform coverage.
     # See: https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
     runs-on: ubuntu-latest
-    #compiler: [ latest, gcc-latest, gcc-9, gcc-10, g++-11, clang, clang-10, clang-11, clang++-12 ]
-    compiler: latest
 
     steps:
+    - name: Setup gcc 12
+      run: |
+        sudo apt install gcc-11 g++-12
+        sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-12 100 --slave /usr/bin/g++ g++ /usr/bin/g++-12 --slave /usr/bin/gcov gcov /usr/bin/gcov-12
+        sudo update-alternatives --set gcc /usr/bin/gcc-12
+        sudo update-alternatives --set g++ /usr/bin/g++-12
+
     - name: Checkout
       uses: actions/checkout@v2
 
