@@ -1,12 +1,12 @@
-#include "../../../include/xtd/diagnostics/debug.h"
-#include "../../../include/xtd/diagnostics/debug_break.h"
-#include "../../../include/xtd/diagnostics/default_trace_listener.h"
-#include "../../../include/xtd/environment.h"
-#include "../../../include/xtd/literals.h"
-#include "../../../include/xtd/lock.h"
+#include "../../../include/xtd/diagnostics/debug"
+#include "../../../include/xtd/diagnostics/debug_break"
+#include "../../../include/xtd/diagnostics/default_trace_listener"
+#include "../../../include/xtd/environment"
+#include "../../../include/xtd/literals"
+#include "../../../include/xtd/lock"
 #include <mutex>
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/debugger.h>
+#include <xtd/native/debugger>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
 using namespace std;

@@ -1,5 +1,5 @@
-#include "../../../include/xtd/diagnostics/console_trace_listener.h"
-#include <xtd/io/file.h>
+#include "../../../include/xtd/diagnostics/console_trace_listener"
+#include "../../../include/xtd/io/file"
 
 using namespace std;
 using namespace xtd::diagnostics;

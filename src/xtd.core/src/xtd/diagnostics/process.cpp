@@ -1,13 +1,13 @@
-#include "../../../include/xtd/diagnostics/process.h"
-#include "../../../include/xtd/diagnostics/debug.h"
-#include "../../../include/xtd/diagnostics/boolean_switch.h"
-#include "../../../include/xtd/environment.h"
-#include "../../../include/xtd/invalid_operation_exception.h"
-#include "../../../include/xtd/io/path.h"
+#include "../../../include/xtd/diagnostics/process"
+#include "../../../include/xtd/diagnostics/debug"
+#include "../../../include/xtd/diagnostics/boolean_switch"
+#include "../../../include/xtd/environment"
+#include "../../../include/xtd/invalid_operation_exception"
+#include "../../../include/xtd/io/path"
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/process.h>
-#include <xtd/native/process_creation_flags.h>
-#include <xtd/native/priority_class.h>
+#include <xtd/native/process>
+#include <xtd/native/process_creation_flags>
+#include <xtd/native/priority_class>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <thread>
 

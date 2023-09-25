@@ -1,4 +1,4 @@
-#include "../../../include/xtd/diagnostics/stopwatch.h"
+#include "../../../include/xtd/diagnostics/stopwatch"
 
 using namespace xtd;
 using namespace xtd::diagnostics;
