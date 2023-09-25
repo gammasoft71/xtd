@@ -1,4 +1,4 @@
-#include "../../../include/xtd/net/network_credential.h"
+#include "../../../include/xtd/net/network_credential"
 
 using namespace std;
 using namespace xtd;
