@@ -1,9 +1,9 @@
-#include "../../../include/xtd/timers/timer.h"
-#include "../../../include/xtd/threading/auto_reset_event.h"
-#include "../../../include/xtd/threading/thread_pool.h"
-#include "../../../include/xtd/threading/wait_callback.h"
-#include "../../../include/xtd/object_closed_exception.h"
-#include "../../../include/xtd/math.h"
+#include "../../../include/xtd/timers/timer"
+#include "../../../include/xtd/threading/auto_reset_event"
+#include "../../../include/xtd/threading/thread_pool"
+#include "../../../include/xtd/threading/wait_callback"
+#include "../../../include/xtd/object_closed_exception"
+#include "../../../include/xtd/math"
 
 using namespace xtd;
 using namespace xtd::threading;
