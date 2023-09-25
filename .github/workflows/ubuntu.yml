@@ -24,6 +24,11 @@ jobs:
       with:
         version: 11
 
+    - name: Setup g++ 11
+      uses: egor-tensin/setup-g++@v1
+      with:
+        version: 11
+
     - name: Checkout
       uses: actions/checkout@v2
 
