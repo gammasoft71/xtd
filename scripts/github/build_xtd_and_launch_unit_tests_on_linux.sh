@@ -1,5 +1,10 @@
 #!/bin/bash
 
+sudo apt install gcc-11 g++-11
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 100 --slave /usr/bin/g++ g++ /usr/bin/g++-11 --slave /usr/bin/gcov gcov /usr/bin/gcov-11
+#sudo update-alternatives --set gcc /usr/bin/gcc-11
+sudo update-alternatives --set g++ /usr/bin/g++-11
+
 # clone, generate and build wxwidgets 3.2.2.1
 mkdir -p build/thirdparty/ && cd build/thirdparty
 git clone https://github.com/wxwidgets/wxwidgets.git -b v3.2.2.1 --depth 1
