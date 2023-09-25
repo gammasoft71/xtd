@@ -1,8 +1,8 @@
-#include "../../../include/xtd/net/dns_end_point.h"
-#include "../../../include/xtd/net/dns.h"
-#include "../../../include/xtd/net/ip_host_entry.h"
-#include "../../../include/xtd/argument_exception.h"
-#include "../../../include/xtd/not_implemented_exception.h"
+#include "../../../include/xtd/net/dns_end_point"
+#include "../../../include/xtd/net/dns"
+#include "../../../include/xtd/net/ip_host_entry"
+#include "../../../include/xtd/argument_exception"
+#include "../../../include/xtd/not_implemented_exception"
 
 using namespace xtd;
 using namespace xtd::net;
