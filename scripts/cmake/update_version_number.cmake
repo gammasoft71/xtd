@@ -20,7 +20,7 @@ if (${STRING_FOUND} EQUAL -1)
     "//\n"
     "// Changes to this file may cause incorrect behavior and will be lost if the file is regenerated.\n"
     "\n"
-    "#include \"../include/xtd/environment.h\"\n"
+    "#include \"../include/xtd/environment\"\n"
     "\n"
     "xtd::version xtd::environment::version() noexcept {\n"
     "  return xtd::version::parse(\"${XTD_VERSION}\");\n"
