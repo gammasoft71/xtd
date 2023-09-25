@@ -19,6 +19,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Setup gcc 11
+      run: |
+        sudo update-alternatives --set g++ /usr/bin/g++-11
+
     - name: Checkout
       uses: actions/checkout@v2
 
