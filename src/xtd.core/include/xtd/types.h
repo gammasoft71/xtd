@@ -8,7 +8,7 @@
 #include "core_export"
 /// @cond
 #define __XTD_TYPE_NATIVE__
-#include <xtd/native/types.h>
+#include <xtd/native/types>
 #undef __XTD_TYPE_NATIVE__
 /// @endcond
 

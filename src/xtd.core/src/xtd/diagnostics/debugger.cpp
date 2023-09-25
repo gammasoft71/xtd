@@ -1,7 +1,7 @@
-#include "../../../include/xtd/diagnostics/debugger.h"
-#include "../../../include/xtd/diagnostics/debug_break.h"
+#include "../../../include/xtd/diagnostics/debugger"
+#include "../../../include/xtd/diagnostics/debug_break"
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/debugger.h>
+#include <xtd/native/debugger>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
 using namespace xtd;

@@ -1,4 +1,4 @@
-#include "../../../include/xtd/diagnostics/process_start_info.h"
+#include "../../../include/xtd/diagnostics/process_start_info"
 
 using namespace xtd;
 using namespace xtd::diagnostics;

@@ -1,6 +1,6 @@
-#include "../../../include/xtd/environment.h"
-#include "../../../include/xtd/typeof.h"
-#include "../../../include/xtd/diagnostics/stack_trace.h"
+#include "../../../include/xtd/environment"
+#include "../../../include/xtd/typeof"
+#include "../../../include/xtd/diagnostics/stack_trace"
 
 using namespace xtd;
 using namespace xtd::diagnostics;

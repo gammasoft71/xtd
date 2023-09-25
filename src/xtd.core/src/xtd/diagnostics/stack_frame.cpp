@@ -1,7 +1,7 @@
-#include "../../../include/xtd/diagnostics/stack_frame.h"
-#include "../../../include/xtd/literals.h"
+#include "../../../include/xtd/diagnostics/stack_frame"
+#include "../../../include/xtd/literals"
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/stack_trace.h>
+#include <xtd/native/stack_trace>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
 using namespace std;

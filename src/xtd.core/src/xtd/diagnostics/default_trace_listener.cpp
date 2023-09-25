@@ -1,8 +1,8 @@
-#include "../../../include/xtd/diagnostics/default_trace_listener.h"
+#include "../../../include/xtd/diagnostics/default_trace_listener"
+#include "../../../include/xtd/io/file"
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/debugger.h>
+#include <xtd/native/debugger>
 #undef __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/io/file.h>
 
 using namespace xtd;
 using namespace xtd::diagnostics;
