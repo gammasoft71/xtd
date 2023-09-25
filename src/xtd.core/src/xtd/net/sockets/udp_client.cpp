@@ -1,9 +1,9 @@
-#include "../../../../include/xtd/net/sockets/udp_client.h"
-#include "../../../../include/xtd/net/sockets/socket_error.h"
-#include "../../../../include/xtd/net/sockets/socket_exception.h"
-#include "../../../../include/xtd/net/dns.h"
-#include "../../../../include/xtd/as.h"
-#include "../../../../include/xtd/is.h"
+#include "../../../../include/xtd/net/sockets/udp_client"
+#include "../../../../include/xtd/net/sockets/socket_error"
+#include "../../../../include/xtd/net/sockets/socket_exception"
+#include "../../../../include/xtd/net/dns"
+#include "../../../../include/xtd/as"
+#include "../../../../include/xtd/is"
 #include <mutex>
 #include <thread>
 
