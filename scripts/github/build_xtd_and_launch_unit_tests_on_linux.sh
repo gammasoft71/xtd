@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "CXX=g++-10" >> $GITHUB_ENV
+
 # clone, generate and build wxwidgets 3.2.2.1
 mkdir -p build/thirdparty/ && cd build/thirdparty
 git clone https://github.com/wxwidgets/wxwidgets.git -b v3.2.2.1 --depth 1
@@ -11,6 +13,8 @@ if [ $? -ne 0 ]; then exit -1; fi
 cmake --build . --target install -- -j $(nproc)
 if [ $? -ne 0 ]; then exit -1; fi
 cd ../../../..
+
+echo "CXX=g++-10" >> $GITHUB_ENV
 
 # generate and build lib
 git submodule update --init
