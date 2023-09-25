@@ -1,4 +1,4 @@
-#include "../../../include/xtd/threading/cancellation_token_registration.h"
+#include "../../../include/xtd/threading/cancellation_token_registration"
 
 using namespace xtd;
 using namespace xtd::threading;

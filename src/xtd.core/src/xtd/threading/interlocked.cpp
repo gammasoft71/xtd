@@ -1,8 +1,8 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/interlocked.h>
+#include <xtd/native/interlocked>
 #undef __XTD_CORE_NATIVE_LIBRARY__
-#include "../../../include/xtd/threading/interlocked.h"
-#include "../../../include/xtd/as.h"
+#include "../../../include/xtd/threading/interlocked"
+#include "../../../include/xtd/as"
 #include <atomic>
 
 using namespace xtd;

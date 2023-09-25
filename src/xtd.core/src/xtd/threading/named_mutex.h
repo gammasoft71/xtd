@@ -1,8 +1,8 @@
 #pragma once
 #include "mutex_base.h"
-#include "../../../include/xtd/invalid_operation_exception.h"
+#include "../../../include/xtd/invalid_operation_exception"
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/named_mutex.h>
+#include <xtd/native/named_mutex>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
 class xtd::threading::mutex::named_mutex : public mutex::mutex_base {

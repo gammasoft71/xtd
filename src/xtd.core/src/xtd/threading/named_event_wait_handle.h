@@ -1,9 +1,9 @@
 #pragma once
 #include "event_wait_handle_base.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/named_event_wait_handle.h>
+#include <xtd/native/named_event_wait_handle>
 #undef __XTD_CORE_NATIVE_LIBRARY__
-#include "../../../include/xtd/invalid_operation_exception.h"
+#include "../../../include/xtd/invalid_operation_exception"
 #include <atomic>
 
 class xtd::threading::event_wait_handle::named_event_wait_handle : public event_wait_handle_base {

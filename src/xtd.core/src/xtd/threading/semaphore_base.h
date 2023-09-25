@@ -1,6 +1,6 @@
 #pragma once
-#include "../../../include/xtd/threading/semaphore.h"
-#include "../../../include/xtd/abstract.h"
+#include "../../../include/xtd/threading/semaphore"
+#include "../../../include/xtd/abstract"
 
 class xtd::threading::semaphore::semaphore_base abstract_ {
 public:

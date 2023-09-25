@@ -1,6 +1,6 @@
 #pragma once
 #include "mutex_base.h"
-#include "../../../include/xtd/invalid_operation_exception.h"
+#include "../../../include/xtd/invalid_operation_exception"
 #include <mutex>
 
 class xtd::threading::mutex::unnamed_mutex : public mutex_base {

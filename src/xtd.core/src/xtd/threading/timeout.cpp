@@ -1,4 +1,4 @@
-#include "../../../include/xtd/threading/timeout.h"
+#include "../../../include/xtd/threading/timeout"
 
 using namespace xtd;
 using namespace xtd::threading;

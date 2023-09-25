@@ -1,13 +1,13 @@
-#include "../../../include/xtd/threading/barrier.h"
-#include "../../../include/xtd/threading/semaphore.h"
-#include "../../../include/xtd/diagnostics/stopwatch.h"
-#include "../../../include/xtd/argument_out_of_range_exception.h"
-#include "../../../include/xtd/as.h"
-#include "../../../include/xtd/int16_object.h"
-#include "../../../include/xtd/invalid_operation_exception.h"
-#include "../../../include/xtd/object_closed_exception.h"
-#include "../../../include/xtd/operation_canceled_exception.h"
-#include "../../../include/xtd/lock.h"
+#include "../../../include/xtd/threading/barrier"
+#include "../../../include/xtd/threading/semaphore"
+#include "../../../include/xtd/diagnostics/stopwatch"
+#include "../../../include/xtd/argument_out_of_range_exception"
+#include "../../../include/xtd/as"
+#include "../../../include/xtd/int16_object"
+#include "../../../include/xtd/invalid_operation_exception"
+#include "../../../include/xtd/object_closed_exception"
+#include "../../../include/xtd/operation_canceled_exception"
+#include "../../../include/xtd/lock"
 #include <atomic>
 
 using namespace xtd;
