@@ -1,10 +1,10 @@
-#include "../../../include/xtd/io/binary_reader.h"
-#include "../../../include/xtd/io/end_of_stream_exception.h"
-#include "../../../include/xtd/io/file.h"
-#include "../../../include/xtd/io/file_not_found_exception.h"
-#include "../../../include/xtd/io/path.h"
-#include "../../../include/xtd/argument_exception.h"
-#include "../../../include/xtd/bit_converter.h"
+#include "../../../include/xtd/io/binary_reader"
+#include "../../../include/xtd/io/end_of_stream_exception"
+#include "../../../include/xtd/io/file"
+#include "../../../include/xtd/io/file_not_found_exception"
+#include "../../../include/xtd/io/path"
+#include "../../../include/xtd/argument_exception"
+#include "../../../include/xtd/bit_converter"
 
 using namespace std;
 using namespace xtd;
