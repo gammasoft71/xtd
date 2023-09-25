@@ -1,4 +1,4 @@
-#include "../../../../include/xtd/net/sockets/ip_v6_multicast_option.h"
+#include "../../../../include/xtd/net/sockets/ip_v6_multicast_option"
 
 using namespace std;
 using namespace xtd;
