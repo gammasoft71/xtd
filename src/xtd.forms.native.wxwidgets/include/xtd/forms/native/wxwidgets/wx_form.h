@@ -5,13 +5,14 @@
 #endif
 /// @endcond
 
-#include <xtd/cdebug.h>
-#include <xtd/convert_string.h>
-#include <xtd/drawing/system_colors.h>
-#include <xtd/forms/native/create_params.h>
-#include <xtd/forms/native/class_styles.h>
-#include <xtd/forms/native/extended_window_styles.h>
-#include <xtd/forms/native/window_styles.h>
+#include "control_handler"
+#include <xtd/drawing/system_colors>
+#include <xtd/forms/native/create_params>
+#include <xtd/forms/native/class_styles>
+#include <xtd/forms/native/extended_window_styles>
+#include <xtd/forms/native/window_styles>
+#include <xtd/cdebug>
+#include <xtd/convert_string>
 #include <wx/app.h>
 #include <wx/dialog.h>
 #include <wx/event.h>
@@ -19,7 +20,6 @@
 #include <wx/panel.h>
 #include <wx/scrolwin.h>
 #include <wx/settings.h>
-#include "control_handler.h"
 
 bool __toggle_full_screen_frame__(wxTopLevelWindow* control);
 

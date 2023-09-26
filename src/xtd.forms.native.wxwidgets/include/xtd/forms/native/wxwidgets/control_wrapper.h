@@ -5,25 +5,21 @@
 #endif
 /// @endcond
 
-#include "iwx_evt.h"
-#include <cstdint>
-#include <functional>
-#include <memory>
-#include <set>
-#include <xtd/delegate.h>
-#include <xtd/object.h>
-#include <xtd/using.h>
-#include <xtd/diagnostics/debug.h>
-#include <xtd/drawing/size.h>
+#include "iwx_evt"
 #define __XTD_DRAWING_NATIVE_LIBRARY__
-#include <xtd/drawing/native/wx_application.h>
+#include <xtd/drawing/native/wx_application>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
-#include <xtd/forms/window_messages.h>
-#include <xtd/forms/native/extended_window_styles.h>
-#include <xtd/forms/native/mouse_key.h>
-#include <xtd/forms/native/scroll_bar_styles.h>
-#include <xtd/forms/native/virtual_keys.h>
-#include <xtd/forms/native/window_styles.h>
+#include <xtd/diagnostics/debug>
+#include <xtd/drawing/size>
+#include <xtd/forms/window_messages>
+#include <xtd/forms/native/extended_window_styles>
+#include <xtd/forms/native/mouse_key>
+#include <xtd/forms/native/scroll_bar_styles>
+#include <xtd/forms/native/virtual_keys>
+#include <xtd/forms/native/window_styles>
+#include <xtd/delegate>
+#include <xtd/object>
+#include <xtd/using>
 #if defined(__WXMSW__)
 #include <Windows.h>
 #include <Commctrl.h>
@@ -46,6 +42,10 @@
 #include <wx/textctrl.h>
 #include <wx/timer.h>
 #include <wx/tglbtn.h>
+#include <cstdint>
+#include <functional>
+#include <memory>
+#include <set>
 
 /// @todo implement in wx_evt_event_size..
 // Add wxEVT_ENTER_SIZEMOVE event for send a WM_ENTERSIZEMOVE event to wxControl...

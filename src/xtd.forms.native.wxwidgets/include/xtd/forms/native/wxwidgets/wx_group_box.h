@@ -5,15 +5,15 @@
 #endif
 /// @endcond
 
-#include <xtd/argument_exception.h>
-#include <xtd/convert_string.h>
-#include <xtd/drawing/system_colors.h>
-#include <xtd/forms/native/create_params.h>
-#include <xtd/forms/native/button_styles.h>
+#include "control_handler"
+#include <xtd/drawing/system_colors>
+#include <xtd/forms/native/create_params>
+#include <xtd/forms/native/button_styles>
+#include <xtd/argument_exception>
+#include <xtd/convert_string>
 #include <wx/platform.h>
 #include <wx/panel.h>
 #include <wx/statbox.h>
-#include "control_handler.h"
 
 namespace xtd {
   namespace forms {

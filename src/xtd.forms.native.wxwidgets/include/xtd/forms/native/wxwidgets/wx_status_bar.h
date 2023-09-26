@@ -5,14 +5,13 @@
 #endif
 /// @endcond
 
-#include <codecvt>
-#include <xtd/argument_exception.h>
-#include <xtd/convert_string.h>
-#include <xtd/drawing/system_colors.h>
-#include <xtd/forms/native/create_params.h>
-#include <xtd/forms/native/status_bar_styles.h>
+#include "control_handler"
+#include <xtd/drawing/system_colors>
+#include <xtd/forms/native/create_params>
+#include <xtd/forms/native/status_bar_styles>
+#include <xtd/argument_exception>
+#include <xtd/convert_string>
 #include <wx/statusbr.h>
-#include "control_handler.h"
 
 namespace xtd {
   namespace forms {

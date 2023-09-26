@@ -5,12 +5,12 @@
 #endif
 /// @endcond
 
-#include <xtd/argument_exception.h>
-#include <xtd/drawing/system_colors.h>
-#include <xtd/forms/native/create_params.h>
-#include <xtd/forms/native/track_bar_styles.h>
-#include <wx/slider.h>
 #include "control_handler.h"
+#include <xtd/drawing/system_colors>
+#include <xtd/forms/native/create_params>
+#include <xtd/forms/native/track_bar_styles>
+#include <xtd/argument_exception>
+#include <wx/slider.h>
 
 namespace xtd {
   namespace forms {

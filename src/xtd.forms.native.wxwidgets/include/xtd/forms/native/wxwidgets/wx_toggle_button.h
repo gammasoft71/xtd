@@ -5,16 +5,16 @@
 #endif
 /// @endcond
 
-#include <xtd/argument_exception.h>
-#include <xtd/convert_string.h>
-#include <xtd/drawing/system_colors.h>
-#include <xtd/forms/native/create_params.h>
-#include <xtd/forms/native/button_styles.h>
+#include "control_handler"
+#include "wx_user_window"
+#include <xtd/drawing/system_colors>
+#include <xtd/forms/native/create_params>
+#include <xtd/forms/native/button_styles>
+#include <xtd/argument_exception>
+#include <xtd/convert_string>
 #include <wx/platform.h>
 #include <wx/radiobut.h>
 #include <wx/tglbtn.h>
-#include "control_handler.h"
-#include "wx_user_window.h"
 
 #if defined(__WXOSX__)
 void __set_button_bezel_style__(wxAnyButton* control, xtd::int32 height);

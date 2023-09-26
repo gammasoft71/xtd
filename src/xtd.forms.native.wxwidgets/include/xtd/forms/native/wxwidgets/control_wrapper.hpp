@@ -4,7 +4,7 @@
 #error "Do not include this file: Internal use only"
 #endif
 /// @endcond
-#include <xtd/typeof.h>
+#include <xtd/typeof>
 
 namespace xtd::forms::native {
   template<typename control_t>

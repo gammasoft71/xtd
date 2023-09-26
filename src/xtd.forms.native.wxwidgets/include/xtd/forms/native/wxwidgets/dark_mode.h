@@ -5,7 +5,7 @@
 #endif
 /// @endcond
 
-#include <xtd/types.h>
+#include <xtd/types>
 
 bool allow_dark_mode_for_window(xtd::intptr hWnd);
 void init_dark_mode(xtd::int32 enableDarkMode);

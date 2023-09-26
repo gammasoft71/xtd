@@ -5,13 +5,13 @@
 #endif
 /// @endcond
 
-#include <xtd/argument_exception.h>
-#include <xtd/drawing/system_colors.h>
-#include <xtd/forms/native/create_params.h>
+#include "control_handler"
+#include "wx_user_window"
+#include <xtd/drawing/system_colors>
+#include <xtd/forms/native/create_params>
+#include <xtd/argument_exception>
 #include <wx/panel.h>
 #include <wx/scrolwin.h>
-#include "control_handler.h"
-#include "wx_user_window.h"
 
 namespace xtd {
   namespace forms {
