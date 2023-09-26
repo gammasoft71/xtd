@@ -1,10 +1,10 @@
-#include "../../../include/xtd/drawing/region.h"
-#include "../../../include/xtd/drawing/graphics.h"
-#include <xtd/box.h>
+#include "../../../include/xtd/drawing/region"
+#include "../../../include/xtd/drawing/graphics"
 #define __XTD_DRAWING_NATIVE_LIBRARY__
-#include <xtd/drawing/native/region.h>
+#include <xtd/drawing/native/region>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
-#include <xtd/as.h>
+#include <xtd/as>
+#include <xtd/box>
 
 using namespace xtd;
 using namespace xtd::drawing;

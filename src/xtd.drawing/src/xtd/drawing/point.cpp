@@ -1,8 +1,7 @@
-#include "../../../include/xtd/drawing/point.h"
-#include "../../../include/xtd/drawing/size.h"
+#include "../../../include/xtd/drawing/point"
+#include "../../../include/xtd/drawing/size"
 #include <xtd/as>
 #include <xtd/math>
-#include <cmath>
 
 using namespace xtd;
 using namespace xtd::drawing;

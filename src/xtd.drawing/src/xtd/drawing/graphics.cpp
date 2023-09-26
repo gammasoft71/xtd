@@ -1,16 +1,16 @@
-#include <vector>
-#include "../../../include/xtd/drawing/bitmap.h"
-#include "../../../include/xtd/drawing/icon.h"
-#include "../../../include/xtd/drawing/graphics.h"
-#include "../../../include/xtd/drawing/solid_brush.h"
-#include <xtd/argument_exception.h>
-#include <xtd/as.h>
-#include <xtd/int32_object.h>
-#include <xtd/single_object.h>
-#include <xtd/math.h>
+#include "../../../include/xtd/drawing/bitmap"
+#include "../../../include/xtd/drawing/icon"
+#include "../../../include/xtd/drawing/graphics"
+#include "../../../include/xtd/drawing/solid_brush"
 #define __XTD_DRAWING_NATIVE_LIBRARY__
-#include <xtd/drawing/native/graphics.h>
+#include <xtd/drawing/native/graphics>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
+#include <xtd/argument_exception>
+#include <xtd/as>
+#include <xtd/int32_object>
+#include <xtd/single_object>
+#include <xtd/math>
+#include <vector>
 
 using namespace std;
 using namespace xtd;

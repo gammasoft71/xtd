@@ -1,4 +1,4 @@
-#include "../../../include/xtd/drawing/pens.h"
+#include "../../../include/xtd/drawing/pens"
 
 using namespace std;
 using namespace xtd::drawing;

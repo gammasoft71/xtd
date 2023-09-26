@@ -1,14 +1,14 @@
-#include "../../../include/xtd/drawing/bitmap.h"
-#include "../../../include/xtd/drawing/system_colors.h"
-#include "../../../include/xtd/drawing/system_images_base.h"
-#include <map>
-#include <xtd/environment.h>
-#include <xtd/io/directory.h>
-#include <xtd/io/file.h>
-#include <xtd/io/path.h>
+#include "../../../include/xtd/drawing/bitmap"
+#include "../../../include/xtd/drawing/system_colors"
+#include "../../../include/xtd/drawing/system_images_base"
 #define __XTD_DRAWING_NATIVE_LIBRARY__
-#include <xtd/drawing/native/system_images.h>
+#include <xtd/drawing/native/system_images>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
+#include <xtd/io/directory>
+#include <xtd/io/file>
+#include <xtd/io/path>
+#include <xtd/environment>
+#include <map>
 
 // doc : https://specifications.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html
 //

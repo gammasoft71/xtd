@@ -1,4 +1,4 @@
-#include "../../../include/xtd/drawing/system_icons.h"
+#include "../../../include/xtd/drawing/system_icons"
 
 using namespace xtd::drawing;
 

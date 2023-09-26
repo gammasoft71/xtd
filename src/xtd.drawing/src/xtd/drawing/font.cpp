@@ -1,12 +1,14 @@
-#include <cmath>
-#include <limits>
-#include "../../../include/xtd/drawing/font.h"
-#include "../../../include/xtd/drawing/graphics.h"
-#include <xtd/argument_exception.h>
+#include "../../../include/xtd/drawing/font"
+#include "../../../include/xtd/drawing/graphics"
 #define __XTD_DRAWING_NATIVE_LIBRARY__
-#include <xtd/drawing/native/font.h>
+#include <xtd/drawing/native/font>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
+#include <xtd/argument_exception>
+#include <xtd/single_object.h>
+#include <xtd/math>
+#include <memory>
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 
@@ -23,27 +25,27 @@ struct font::data {
   graphics_unit unit_ = graphics_unit::point;
 };
 
-font::font(const font& prototype, float em_size) : data_(std::make_shared<data>()) {
+font::font(const font& prototype, float em_size) : data_(make_shared<data>()) {
   *data_ = *prototype.data_;
   data_->size_ = em_size;
   data_->handle_ = native::font::create(data_->original_font_name_, size_in_points(), (data_->style_ & font_style::bold) == font_style::bold, (data_->style_ & font_style::italic) == font_style::italic, (data_->style_ & font_style::underline) == font_style::underline, (data_->style_ & font_style::strikeout) == font_style::strikeout, data_->gdi_char_set_, data_->gdi_vertical_font_);
 }
 
-font::font(const font& prototype, float em_size, font_style style) : data_(std::make_shared<data>()) {
+font::font(const font& prototype, float em_size, font_style style) : data_(make_shared<data>()) {
   *data_ = *prototype.data_;
   data_->size_ = em_size;
   data_->style_ = style;
   data_->handle_ = native::font::create(data_->original_font_name_, size_in_points(), (data_->style_ & font_style::bold) == font_style::bold, (data_->style_ & font_style::italic) == font_style::italic, (data_->style_ & font_style::underline) == font_style::underline, (data_->style_ & font_style::strikeout) == font_style::strikeout, data_->gdi_char_set_, data_->gdi_vertical_font_);
 }
 
-font::font(const font& prototype, font_style style) : data_(std::make_shared<data>()) {
+font::font(const font& prototype, font_style style) : data_(make_shared<data>()) {
   *data_ = *prototype.data_;
   data_->style_ = style;
   data_->handle_ = native::font::create(data_->original_font_name_, size_in_points(), (data_->style_ & font_style::bold) == font_style::bold, (data_->style_ & font_style::italic) == font_style::italic, (data_->style_ & font_style::underline) == font_style::underline, (data_->style_ & font_style::strikeout) == font_style::strikeout, data_->gdi_char_set_, data_->gdi_vertical_font_);
 }
 
-font::font(ustring family_name, float em_size, font_style style, graphics_unit unit, xtd::byte gdi_char_set, bool gdi_vertical_font) : data_(std::make_shared<data>()) {
-  if (em_size <= 0 || em_size == std::numeric_limits<float>::infinity() || std::isnan(em_size)) throw xtd::argument_exception("em_size is less than or equal to 0, evaluates to infinity, or is not a valid number."_t, csf_);
+font::font(ustring family_name, float em_size, font_style style, graphics_unit unit, xtd::byte gdi_char_set, bool gdi_vertical_font) : data_(make_shared<data>()) {
+  if (em_size <= 0 || em_size == single_object::positive_infinity || single_object::is_NaN(em_size)) throw xtd::argument_exception("em_size is less than or equal to 0, evaluates to infinity, or is not a valid number."_t, csf_);
   if (unit == graphics_unit::display) throw xtd::argument_exception("unit can't be equal to graphics_unit::display."_t, csf_);
   try {
     data_->font_family_ = drawing::font_family(family_name);
@@ -59,10 +61,10 @@ font::font(ustring family_name, float em_size, font_style style, graphics_unit u
   data_->handle_ = native::font::create(data_->original_font_name_, size_in_points(), (data_->style_ & font_style::bold) == font_style::bold, (data_->style_ & font_style::italic) == font_style::italic, (data_->style_ & font_style::underline) == font_style::underline, (data_->style_ & font_style::strikeout) == font_style::strikeout, data_->gdi_char_set_, data_->gdi_vertical_font_);
 }
 
-font::font() : data_(std::make_shared<data>()) {
+font::font() : data_(make_shared<data>()) {
 }
 
-font::font(intptr handle) : data_(std::make_shared<data>()) {
+font::font(intptr handle) : data_(make_shared<data>()) {
   data_->handle_ = handle;
   auto family_name = ustring::empty_string;
   auto fbold = false, fitalic = false, funderline = false, fstrikeout = false;
@@ -82,7 +84,7 @@ font::font(intptr handle) : data_(std::make_shared<data>()) {
   data_->unit_ = graphics_unit::point;
 }
 
-font::font(const font& value) : data_(std::make_shared<data>()) {
+font::font(const font& value) : data_(make_shared<data>()) {
   if (data_.use_count() == 1 && data_->handle_ != 0) native::font::destroy(data_->handle_);
   data_ = value.data_;
 }
@@ -151,7 +153,7 @@ intptr font::handle() const noexcept {
 }
 
 int32 font::height() const noexcept {
-  return static_cast<int32>(std::ceil(get_height()));
+  return static_cast<int32>(math::ceiling(get_height()));
 }
 
 bool font::is_system_font() const noexcept {
