@@ -1,6 +1,6 @@
-#include <xtd/drawing/solid_brush.h>
-#include <xtd/drawing/system_colors.h>
-#include "../../../../include/xtd/forms/style_sheets/border_color.h"
+#include "../../../../include/xtd/forms/style_sheets/border_color"
+#include <xtd/drawing/solid_brush>
+#include <xtd/drawing/system_colors>
 
 using namespace std;
 using namespace xtd;

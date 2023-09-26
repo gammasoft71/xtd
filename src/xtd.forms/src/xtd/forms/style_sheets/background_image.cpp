@@ -1,11 +1,11 @@
-#include "../../../../include/xtd/forms/style_sheets/background_image.h"
-#include <xtd/argument_exception.h>
-#include <xtd/as.h>
-#include <xtd/drawing/solid_brush.h>
-#include <xtd/drawing/texture_brush.h>
-#include <xtd/drawing/system_colors.h>
-#include <xtd/drawing/drawing_2d/linear_gradient_brush.h>
-#include <xtd/not_supported_exception.h>
+#include "../../../../include/xtd/forms/style_sheets/background_image"
+#include <xtd/drawing/solid_brush>
+#include <xtd/drawing/texture_brush>
+#include <xtd/drawing/system_colors>
+#include <xtd/drawing/drawing_2d/linear_gradient_brush>
+#include <xtd/argument_exception>
+#include <xtd/as>
+#include <xtd/not_supported_exception>
 
 using namespace std;
 using namespace xtd;

@@ -1,6 +1,6 @@
-#include "../../../../include/xtd/forms/style_sheets/border_style.h"
-#include <xtd/as.h>
-#include <xtd/is.h>
+#include "../../../../include/xtd/forms/style_sheets/border_style"
+#include <xtd/as>
+#include <xtd/is>
 
 using namespace xtd;
 using namespace xtd::forms::style_sheets;

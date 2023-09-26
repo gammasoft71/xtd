@@ -1,5 +1,5 @@
-#include <xtd/argument_exception.h>
-#include "../../../../include/xtd/forms/style_sheets/theme.h"
+#include "../../../../include/xtd/forms/style_sheets/theme"
+#include <xtd/argument_exception>
 
 using namespace xtd;
 using namespace xtd::forms::style_sheets;
