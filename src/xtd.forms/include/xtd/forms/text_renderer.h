@@ -2,14 +2,14 @@
 /// @brief Contains xtd::forms::text_renderer static class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "style_sheets/ibox_model"
+#include "style_sheets/itext_model"
+#include <xtd/drawing/graphics>
+#include <xtd/drawing/rectangle>
+#include <xtd/static>
+#include <xtd/ustring>
 #include <memory>
 #include <vector>
-#include <xtd/static.h>
-#include <xtd/ustring.h>
-#include <xtd/drawing/graphics.h>
-#include <xtd/drawing/rectangle.h>
-#include "style_sheets/ibox_model.h"
-#include "style_sheets/itext_model.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

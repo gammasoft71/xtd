@@ -2,10 +2,10 @@
 /// @brief Contains xtd::forms::settings component.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "../forms_export"
+#include <xtd/object>
+#include <xtd/ustring>
 #include <memory>
-#include <xtd/object.h>
-#include <xtd/ustring.h>
-#include "../forms_export.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

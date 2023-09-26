@@ -2,11 +2,11 @@
 /// @brief Contains xtd::forms::power_status class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "../forms_export"
+#include "battery_charge_status"
+#include "power_line_status"
+#include <xtd/object>
 #include <cstdint>
-#include <xtd/object.h>
-#include "../forms_export.h"
-#include "battery_charge_status.h"
-#include "power_line_status.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

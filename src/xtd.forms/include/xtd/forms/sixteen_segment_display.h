@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::sixteen_segment_display control.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "fourteen_segment_display.h"
+#include "fourteen_segment_display"
 
 namespace xtd {
   namespace forms {

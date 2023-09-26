@@ -2,15 +2,15 @@
 /// @brief Contains xtd::forms::toggle_button_renderer static class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/static.h>
-#include <xtd/drawing/graphics.h>
-#include "flat_style.h"
-#include "border_sides.h"
-#include "border_style.h"
-#include "box_renderer.h"
-#include "flat_button_appearance.h"
-#include "content_alignment.h"
-#include "visual_styles/toggle_button_state.h"
+#include "visual_styles/toggle_button_state"
+#include "border_sides"
+#include "border_style"
+#include "box_renderer"
+#include "content_alignment"
+#include "flat_button_appearance"
+#include "flat_style"
+#include <xtd/drawing/graphics>
+#include <xtd/static>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

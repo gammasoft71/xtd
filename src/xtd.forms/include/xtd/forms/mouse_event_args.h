@@ -2,11 +2,11 @@
 /// @brief Contains xtd::forms::mouse_event_args event args.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "message"
+#include "mouse_buttons"
+#include <xtd/drawing/point>
+#include <xtd/event_args>
 #include <cstdint>
-#include <xtd/event_args.h>
-#include <xtd/drawing/point.h>
-#include "message.h"
-#include "mouse_buttons.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

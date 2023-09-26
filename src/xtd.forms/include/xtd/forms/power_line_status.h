@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::power_line_status enum class.
 /// @copyonline Copyonline (c) 2023 Gammasoft. All onlines reserved.
 #pragma once
-#include <xtd/enum.h>
+#include <xtd/enum>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

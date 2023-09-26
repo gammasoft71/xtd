@@ -2,18 +2,18 @@
 /// @brief Contains xtd::forms::status_bar_panel container.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "component.h"
-#include "const_control_ref.h"
-#include "control_ref.h"
-#include <xtd/event.h>
-#include <xtd/event_handler.h>
-#include <xtd/iequatable.h>
-#include <xtd/forms/image_list.h>
-#include <xtd/forms/context_menu.h>
-#include <xtd/forms/horizontal_alignment.h>
-#include <xtd/forms/status_bar_panel_auto_size.h>
-#include <xtd/forms/status_bar_panel_border_style.h>
-#include <xtd/forms/status_bar_panel_style.h>
+#include "component"
+#include "const_control_ref"
+#include "context_menu"
+#include "control_ref"
+#include "horizontal_alignment"
+#include "image_list"
+#include "status_bar_panel_auto_size"
+#include "status_bar_panel_border_style"
+#include "status_bar_panel_style"
+#include <xtd/event>
+#include <xtd/event_handler>
+#include <xtd/iequatable>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

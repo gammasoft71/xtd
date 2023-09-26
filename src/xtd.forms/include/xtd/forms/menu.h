@@ -2,15 +2,14 @@
 /// @brief Contains xtd::forms::menu menu.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "layout/arranged_element_collection"
+#include "component"
+#include "const_menu_item_ref"
+#include "menu_item_ref"
+#include <xtd/optional>
+#include <xtd/any>
+#include <xtd/iequatable>
 #include <map>
-#include <string>
-#include <xtd/optional.h>
-#include <xtd/any.h>
-#include <xtd/iequatable.h>
-#include "component.h"
-#include "const_menu_item_ref.h"
-#include "menu_item_ref.h"
-#include "layout/arranged_element_collection.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

@@ -1,8 +1,8 @@
 #pragma once
-#include <xtd/forms/component.h>
-#include <xtd/iequatable.h>
-#include <xtd/ustring.h>
-#include <xtd/forms/component.h>
+#include "component"
+#include <xtd/iequatable>
+#include <xtd/ustring>
+
 // TODO: documentation
 namespace xtd {
   namespace forms {

@@ -2,10 +2,10 @@
 /// @brief Contains xtd::forms::status_bar_draw_item_event_args event args.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "draw_item_event_args"
+#include "status_bar_panel"
+#include <xtd/any>
 #include <cstdint>
-#include <xtd/any.h>
-#include "draw_item_event_args.h"
-#include "status_bar_panel.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

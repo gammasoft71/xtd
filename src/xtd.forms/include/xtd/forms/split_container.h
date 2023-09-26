@@ -2,10 +2,10 @@
 /// @brief Contains xtd::forms::split_container container.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "orientation.h"
-#include "scrollable_control.h"
-#include "splitter.h"
-#include "splitter_panel.h"
+#include "orientation"
+#include "scrollable_control"
+#include "splitter"
+#include "splitter_panel"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

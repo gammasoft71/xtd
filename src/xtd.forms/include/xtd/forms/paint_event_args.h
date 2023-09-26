@@ -2,11 +2,11 @@
 /// @brief Contains xtd::forms::paint_event_args event args.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/event_args.h>
-#include <xtd/drawing/graphics.h>
-#include <xtd/drawing/rectangle.h>
-#include "../forms_export.h"
-#include "message.h"
+#include "../forms_export"
+#include "message"
+#include <xtd/drawing/graphics>
+#include <xtd/drawing/rectangle>
+#include <xtd/event_args>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

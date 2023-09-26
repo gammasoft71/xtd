@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::message_loop_callback callback.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/delegate.h>
+#include <xtd/delegate>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

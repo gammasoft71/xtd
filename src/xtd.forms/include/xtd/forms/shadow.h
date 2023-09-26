@@ -2,12 +2,12 @@
 /// @brief Contains xtd::forms::shadow class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/iequatable.h>
-#include <xtd/object.h>
-#include <xtd/ustring.h>
-#include <xtd/drawing/color.h>
-#include <xtd/drawing/point.h>
-#include "../forms_export.h"
+#include "../forms_export"
+#include <xtd/drawing/color>
+#include <xtd/drawing/point>
+#include <xtd/iequatable>
+#include <xtd/object>
+#include <xtd/ustring>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

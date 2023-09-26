@@ -2,9 +2,9 @@
 /// @brief Contains xtd::forms::vertical_control_layout_style class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/optional.h>
-#include <xtd/iequatable.h>
-#include "control_layout_style.h"
+#include "control_layout_style"
+#include <xtd/iequatable>
+#include <xtd/optional>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

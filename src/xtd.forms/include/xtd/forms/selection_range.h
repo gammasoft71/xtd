@@ -2,9 +2,9 @@
 /// @brief Contains xtd::forms::selection_range control.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/date_time.h>
-#include <xtd/object.h>
-#include "../forms_export.h"
+#include "../forms_export"
+#include <xtd/date_time>
+#include <xtd/object>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

@@ -2,11 +2,10 @@
 /// @brief Contains xtd::forms::progress_dialog dialog.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/ustring.h>
-#include <xtd/forms/progress_dialog_flags.h>
-#include "component.h"
-#include "dialog_appearance.h"
-#include "iwin32_window.h"
+#include "component"
+#include "dialog_appearance"
+#include "iwin32_window"
+#include <xtd/ustring>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

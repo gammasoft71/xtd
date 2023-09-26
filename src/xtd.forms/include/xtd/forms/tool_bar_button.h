@@ -2,16 +2,16 @@
 /// @brief Contains xtd::forms::tool_bar_button container.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "component.h"
-#include "const_control_ref.h"
-#include "control_ref.h"
-#include <xtd/event.h>
-#include <xtd/event_handler.h>
-#include <xtd/iequatable.h>
-#include <xtd/forms/image_list.h>
-#include <xtd/forms/context_menu.h>
-#include <xtd/forms/tool_bar_button_ref.h>
-#include <xtd/forms/tool_bar_button_style.h>
+#include "component"
+#include "const_control_ref"
+#include "context_menu"
+#include "control_ref"
+#include "image_list"
+#include "tool_bar_button_ref"
+#include "tool_bar_button_style"
+#include <xtd/event>
+#include <xtd/event_handler>
+#include <xtd/iequatable>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

@@ -1,24 +1,22 @@
 #pragma once
-#include "component.h"
-
-#include <xtd/optional.h>
-#include <xtd/delegate.h>
-#include <xtd/ustring.h>
-#include <xtd/drawing/icon.h>
-#include <xtd/event.h>
-#include <xtd/event_args.h>
-#include <xtd/not_implemented_exception.h>
-#include <xtd/forms/layout/arranged_element_collection.h>
+#include "layout/arranged_element_collection"
+#include "component"
+#include "iwin32_window"
+#include "message_notifier_button"
+#include "notifier_style"
+#include <xtd/drawing/icon>
 #include <xtd/chrono>
-#include "notifier_style.h"
-#include "message_notifier_button.h"
-#include "iwin32_window.h"
+#include <xtd/delegate>
+#include <xtd/ustring>
+#include <xtd/event>
+#include <xtd/event_args>
+#include <xtd/not_implemented_exception>
+#include <xtd/optional>
 
-// TODO: Documentation
-
+/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  namespace forms {
-  
+  /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
+  namespace forms {  
     // TODO: IMPL + move to seperate file
     class notifier_button_click_event_args : public xtd::event_args {
     public:
