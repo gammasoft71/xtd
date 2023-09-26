@@ -1,5 +1,5 @@
-#include "../../include/xtd/to_string.h"
-#include "../../include/xtd/ustring.h"
+#include "../../include/xtd/to_string"
+#include "../../include/xtd/ustring"
 
 using namespace std;
 

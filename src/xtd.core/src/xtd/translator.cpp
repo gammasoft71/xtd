@@ -1,13 +1,13 @@
-#include "../../include/xtd/translator.h"
-#include "../../include/xtd/environment.h"
-#include "../../include/xtd/format_exception.h"
-#include "../../include/xtd/ustring.h"
-#include "../../include/xtd/collections/specialized/string_map.h"
-#include "../../include/xtd/io/directory.h"
-#include "../../include/xtd/io/file.h"
-#include "../../include/xtd/io/path.h"
+#include "../../include/xtd/translator"
+#include "../../include/xtd/environment"
+#include "../../include/xtd/format_exception"
+#include "../../include/xtd/ustring"
+#include "../../include/xtd/collections/specialized/string_map"
+#include "../../include/xtd/io/directory"
+#include "../../include/xtd/io/file"
+#include "../../include/xtd/io/path"
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/translator.h>
+#include <xtd/native/translator>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <map>
 

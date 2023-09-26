@@ -1,15 +1,15 @@
+#include "../include/xtd/argument_out_of_range_exception"
+#include "../include/xtd/as"
+#include "../include/xtd/format_exception"
+#include "../include/xtd/invalid_operation_exception"
+#include "../include/xtd/date_time"
+#include "../include/xtd/math"
+#include "../include/xtd/not_implemented_exception"
+#include "../include/xtd/time_zone_info"
+#include "../include/xtd/unused"
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/date_time.h>
+#include <xtd/native/date_time>
 #undef __XTD_CORE_NATIVE_LIBRARY__
-#include "../include/xtd/argument_out_of_range_exception.h"
-#include "../include/xtd/as.h"
-#include "../include/xtd/format_exception.h"
-#include "../include/xtd/invalid_operation_exception.h"
-#include "../include/xtd/date_time.h"
-#include "../include/xtd/math.h"
-#include "../include/xtd/not_implemented_exception.h"
-#include "../include/xtd/time_zone_info.h"
-#include "../include/xtd/unused.h"
 #include <tuple>
 
 using namespace std;

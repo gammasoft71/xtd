@@ -1,4 +1,4 @@
-#include "../../include/xtd/type_object.h"
+#include "../../include/xtd/type_object"
 #include <cstring>
 
 using namespace xtd;

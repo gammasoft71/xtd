@@ -1,6 +1,6 @@
+#include "../../include/xtd/compiler"
+#include "../../include/xtd/argument_exception"
 #include <algorithm>
-#include "../../include/xtd/compiler.h"
-#include "../../include/xtd/argument_exception.h"
 
 using namespace xtd;
 

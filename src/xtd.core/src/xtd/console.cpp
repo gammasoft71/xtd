@@ -1,18 +1,18 @@
+#include "../../include/xtd/argument_out_of_range_exception"
+#include "../../include/xtd/as"
+#include "../../include/xtd/console"
+#include "../../include/xtd/int16_object"
+#include "../../include/xtd/lock"
+#include "../../include/xtd/io/stream_reader"
+#define __XTD_CORE_INTERNAL__
+#include "../../include/xtd/internal/__generic_stream_output"
+#undef __XTD_CORE_INTERNAL__
+#define __XTD_CORE_NATIVE_LIBRARY__
+#include <xtd/native/console>
+#undef __XTD_CORE_NATIVE_LIBRARY__
 #include <cstring>
 #include <iostream>
 #include <mutex>
-#define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/console.h>
-#undef __XTD_CORE_NATIVE_LIBRARY__
-#include "../../include/xtd/argument_out_of_range_exception.h"
-#include "../../include/xtd/as.h"
-#include "../../include/xtd/console.h"
-#include "../../include/xtd/int16_object.h"
-#include "../../include/xtd/lock.h"
-#include "../../include/xtd/io/stream_reader.h"
-#define __XTD_CORE_INTERNAL__
-#include "../../include/xtd/internal/__generic_stream_output.h"
-#undef __XTD_CORE_INTERNAL__
 
 using namespace std;
 using namespace xtd;
