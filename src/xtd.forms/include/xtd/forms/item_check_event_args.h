@@ -2,10 +2,10 @@
 /// @brief Contains xtd::forms::item_check_event_args event args.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "check_state"
+#include <xtd/event_args>
 #include <cstdint>
 #include <limits>
-#include <xtd/event_args.h>
-#include "check_state.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

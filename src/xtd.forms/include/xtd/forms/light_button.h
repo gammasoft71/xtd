@@ -2,11 +2,11 @@
 /// @brief Contains xtd::forms::light_button control.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/drawing/system_colors.h>
-#include "appearance.h"
-#include "button_base.h"
-#include "check_state.h"
-#include "visual_styles/check_box_state.h"
+#include "visual_styles/check_box_state"
+#include "appearance"
+#include "button_base"
+#include "check_state"
+#include <xtd/drawing/system_colors>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

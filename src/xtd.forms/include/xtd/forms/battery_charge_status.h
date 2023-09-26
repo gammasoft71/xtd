@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::battery_charge_status enum class.
 /// @copylow Copylow (c) 2023 Gammasoft. All lows reserved.
 #pragma once
-#include <xtd/enum.h>
+#include <xtd/enum>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

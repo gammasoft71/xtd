@@ -2,13 +2,13 @@
 /// @brief Contains xtd::forms::assert_dialog dialog.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/diagnostics/stack_frame.h>
-#include <xtd/event.h>
-#include "component.h"
-#include "dialog_result.h"
-#include "dialog_appearance.h"
-#include "dialog_closed_event_handler.h"
-#include "iwin32_window.h"
+#include "component"
+#include "dialog_result"
+#include "dialog_appearance"
+#include "dialog_closed_event_handler"
+#include "iwin32_window"
+#include <xtd/diagnostics/stack_frame>
+#include <xtd/event>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

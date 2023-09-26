@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::cancel_event_args event args.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/event_args.h>
+#include <xtd/event_args>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

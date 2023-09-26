@@ -2,15 +2,15 @@
 /// @brief Contains xtd::forms::link_label class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "cursors"
+#include "label"
+#include "link"
+#include "link_area"
+#include "link_behavior"
+#include "link_label_clicked_event_handler"
+#include <xtd/drawing/system_colors>
+#include <xtd/any>
 #include <tuple>
-#include <xtd/any.h>
-#include <xtd/drawing/system_colors.h>
-#include "cursors.h"
-#include "label.h"
-#include "link.h"
-#include "link_area.h"
-#include "link_behavior.h"
-#include "link_label_clicked_event_handler.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

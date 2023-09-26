@@ -2,9 +2,9 @@
 /// @brief Contains xtd::forms::find_box control.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "find_dialog"
+#include <xtd/static>
 #include <memory>
-#include <xtd/static.h>
-#include "find_dialog.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

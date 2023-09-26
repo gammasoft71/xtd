@@ -2,9 +2,9 @@
 /// @brief Contains xtd::forms::domain_up_down control.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/iequatable.h>
-#include "up_down_base.h"
-#include "application.h"
+#include "up_down_base"
+#include "application"
+#include <xtd/iequatable>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

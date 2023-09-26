@@ -2,16 +2,16 @@
 /// @brief Contains xtd::forms::image_renderer static class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "../forms_export"
+#include "style_sheets/iimage_model"
+#include "style_sheets/iimage_model"
+#include <xtd/drawing/graphics>
+#include <xtd/drawing/image>
+#include <xtd/drawing/rectangle>
+#include <xtd/static>
+#include <xtd/ustring>
 #include <memory>
 #include <vector>
-#include <xtd/static.h>
-#include <xtd/ustring.h>
-#include <xtd/drawing/graphics.h>
-#include <xtd/drawing/image.h>
-#include <xtd/drawing/rectangle.h>
-#include "style_sheets/iimage_model.h"
-#include "style_sheets/iimage_model.h"
-#include "../forms_export.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

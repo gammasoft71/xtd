@@ -2,9 +2,9 @@
 /// @brief Contains xtd::forms::color_picker_event_args event args.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include <xtd/drawing/color>
+#include <xtd/event_args>
 #include <cstdint>
-#include <xtd/event_args.h>
-#include <xtd/drawing/color.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

@@ -2,12 +2,12 @@
 /// @brief Contains xtd::forms::enable_debug class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "../forms_export"
+#include <xtd/diagnostics/trace_switch>
+#include <xtd/iequatable>
+#include <xtd/object>
+#include <xtd/static>
 #include <cstdint>
-#include <xtd/iequatable.h>
-#include <xtd/object.h>
-#include <xtd/static.h>
-#include <xtd/diagnostics/trace_switch.h>
-#include "../forms_export.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

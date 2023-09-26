@@ -2,15 +2,15 @@
 /// @brief Contains xtd::forms::busy_dialog dialog.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "component"
+#include "dialog_appearance"
+#include "iwin32_window"
+#include <xtd/drawing/color>
+#include <xtd/drawing/icon>
+#include <xtd/forms/control>
+#include <xtd/optional>
+#include <xtd/delegate>
 #include <string>
-#include <xtd/optional.h>
-#include <xtd/delegate.h>
-#include <xtd/drawing/color.h>
-#include <xtd/drawing/icon.h>
-#include <xtd/forms/control.h>
-#include "component.h"
-#include "dialog_appearance.h"
-#include "iwin32_window.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

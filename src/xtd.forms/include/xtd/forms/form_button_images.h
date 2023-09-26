@@ -2,10 +2,10 @@
 /// @brief Contains xtd::forms::form_button_images factory.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/environment.h>
-#include <xtd/static.h>
-#include <xtd/drawing/system_images.h>
-#include "images.h"
+#include "images"
+#include <xtd/drawing/system_images>
+#include <xtd/environment>
+#include <xtd/static>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

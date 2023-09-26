@@ -2,8 +2,8 @@
 /// @brief Contains xtd::forms::const_control_ref typedef.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/object.h>
-#include "const_control_ref.h"
+#include "const_control_ref"
+#include <xtd/object>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

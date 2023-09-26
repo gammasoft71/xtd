@@ -2,13 +2,13 @@
 /// @brief Contains xtd::forms::color_box control.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "color_box_styles.h"
-#include "dialog_result.h"
-#include "iwin32_window.h"
-#include "../forms_export.h"
-#include <xtd/static.h>
-#include <xtd/ustring.h>
-#include <xtd/drawing/color.h>
+#include "../forms_export"
+#include "color_box_styles"
+#include "dialog_result"
+#include "iwin32_window"
+#include <xtd/drawing/color>
+#include <xtd/static>
+#include <xtd/ustring>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

@@ -2,17 +2,16 @@
 /// @brief Contains xtd::forms::exception_dialog dialog.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "component"
+#include "dialog_result"
+#include "dialog_appearance"
+#include "dialog_closed_event_handler"
+#include "iwin32_window"
+#include "layout/arranged_element_collection"
+#include <xtd/version>
+#include <xtd/drawing/icon>
+#include <xtd/system_exception>
 #include <functional>
-#include <string>
-#include <xtd/version.h>
-#include <xtd/drawing/icon.h>
-#include <xtd/system_exception.h>
-#include "component.h"
-#include "dialog_result.h"
-#include "dialog_appearance.h"
-#include "dialog_closed_event_handler.h"
-#include "iwin32_window.h"
-#include "layout/arranged_element_collection.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

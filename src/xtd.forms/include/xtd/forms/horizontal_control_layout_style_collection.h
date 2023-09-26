@@ -2,11 +2,11 @@
 /// @brief Contains xtd::forms::horizontal_control_layout_style_collection typedef.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "const_control_ref"
+#include "control_ref"
+#include "horizontal_control_layout_style"
 #include <utility>
 #include <vector>
-#include "const_control_ref.h"
-#include "control_ref.h"
-#include "horizontal_control_layout_style.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

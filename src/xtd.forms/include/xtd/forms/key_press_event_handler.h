@@ -2,8 +2,8 @@
 /// @brief Contains xtd::forms::key_press_event_handler event handler.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/event_handler.h>
-#include "key_press_event_args.h"
+#include "key_press_event_args"
+#include <xtd/event_handler>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

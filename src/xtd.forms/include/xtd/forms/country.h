@@ -2,13 +2,13 @@
 /// @brief Contains xtd::forms::country component.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../forms_export.h"
-#include <xtd/iequatable.h>
-#include <xtd/object.h>
-#include <xtd/ustring.h>
-#include <xtd/convert_string.h>
-#include <xtd/static.h>
-#include <xtd/drawing/bitmap.h>
+#include "../forms_export"
+#include <xtd/drawing/bitmap>
+#include <xtd/iequatable>
+#include <xtd/object>
+#include <xtd/ustring>
+#include <xtd/convert_string>
+#include <xtd/static>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

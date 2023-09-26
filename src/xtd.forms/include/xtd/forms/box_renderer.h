@@ -2,9 +2,9 @@
 /// @brief Contains xtd::forms::box_renderer static class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/static.h>
-#include <xtd/drawing/graphics.h>
-#include "style_sheets/ibox_model.h"
+#include "style_sheets/ibox_model"
+#include <xtd/static>
+#include <xtd/drawing/graphics>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

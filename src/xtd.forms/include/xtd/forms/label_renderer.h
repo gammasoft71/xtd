@@ -2,18 +2,18 @@
 /// @brief Contains xtd::forms::label_renderer static class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/static.h>
-#include <xtd/ustring.h>
-#include <xtd/drawing/graphics.h>
-#include "content_alignment.h"
-#include "border_sides.h"
-#include "border_style.h"
-#include "link_behavior.h"
-#include "link.h"
-#include "visual_styles/label_state.h"
-#include "visual_styles/link_label_state.h"
-#include "box_renderer.h"
-#include "shadow.h"
+#include "visual_styles/label_state"
+#include "visual_styles/link_label_state"
+#include "content_alignment"
+#include "border_sides"
+#include "border_style"
+#include "link_behavior"
+#include "link"
+#include "box_renderer"
+#include "shadow"
+#include <xtd/drawing/graphics>
+#include <xtd/static>
+#include <xtd/ustring>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

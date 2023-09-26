@@ -2,11 +2,11 @@
 /// @brief Contains xtd::forms::image_list component.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/any.h>
-#include <xtd/iequatable.h>
-#include <xtd/drawing/image.h>
-#include "component.h"
-#include "layout/arranged_element_collection.h"
+#include "layout/arranged_element_collection"
+#include "component"
+#include <xtd/any>
+#include <xtd/iequatable>
+#include <xtd/drawing/image>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
