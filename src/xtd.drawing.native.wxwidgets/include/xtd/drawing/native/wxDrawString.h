@@ -5,15 +5,15 @@
 #endif
 /// @endcond
 
-#include "wx_brush.h"
-#include "wxConicalGradient.h"
-#include "hdc_wrapper.h"
-#include <cmath>
-#include <xtd/drawing/native/hot_key_prefixes.h>
-#include <xtd/drawing/native/string_formats.h>
-#include <xtd/drawing/native/string_trimmings.h>
-#include <xtd/io/path.h>
-#include <xtd/convert_string.h>
+#include "hdc_wrapper"
+#include "wx_brush"
+#include "wxConicalGradient"
+#include <xtd/drawing/native/hot_key_prefixes>
+#include <xtd/drawing/native/string_formats>
+#include <xtd/drawing/native/string_trimmings>
+#include <xtd/io/path>
+#include <xtd/convert_string>
+#include <xtd/math>
 #include <wx/control.h>
 #include <wx/dcclient.h>
 #include <wx/dcmemory.h>

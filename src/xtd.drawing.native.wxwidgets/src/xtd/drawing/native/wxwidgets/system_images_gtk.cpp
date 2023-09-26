@@ -1,9 +1,9 @@
 #if defined(__WXGTK__)
+#include <xtd/types>
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wparentheses"
 #include <gtk/gtk.h>
 #pragma GCC diagnostic pop
-#include <xtd/types.h>
 
 GdkPixbuf* __gtk_get_image_from_name__(const char* name, xtd::int32 width, xtd::int32 /*height*/) {
   if (name[0] == 0) return 0;

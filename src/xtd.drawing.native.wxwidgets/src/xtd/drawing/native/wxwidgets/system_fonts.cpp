@@ -1,6 +1,6 @@
 #define __XTD_DRAWING_NATIVE_LIBRARY__
-#include <xtd/drawing/native/system_fonts.h>
-#include <xtd/drawing/native/toolkit.h>
+#include <xtd/drawing/native/system_fonts>
+#include <xtd/drawing/native/toolkit>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <wx/font.h>
 #include <wx/settings.h>

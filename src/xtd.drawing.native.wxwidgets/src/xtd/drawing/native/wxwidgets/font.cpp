@@ -1,8 +1,8 @@
-#include <xtd/convert_string.h>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
-#include <xtd/drawing/native/font.h>
-#include <xtd/drawing/native/toolkit.h>
+#include <xtd/drawing/native/font>
+#include <xtd/drawing/native/toolkit>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
+#include <xtd/convert_string>
 #include <wx/app.h>
 #include <wx/dcscreen.h>
 #include <wx/font.h>

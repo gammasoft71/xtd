@@ -1,14 +1,14 @@
+#define __XTD_DRAWING_NATIVE_LIBRARY__
+#include <xtd/drawing/native/graphics_path>
+#include <xtd/drawing/native/toolkit>
+#include "../../../../../include/xtd/drawing/native/hdc_wrapper"
+#undef __XTD_DRAWING_NATIVE_LIBRARY__
+#include <xtd/as>
+#include <xtd/math>
+#include <xtd/static>
+#include <wx/graphics.h>
 #include <map>
 #include <vector>
-#define __XTD_DRAWING_NATIVE_LIBRARY__
-#include <xtd/drawing/native/graphics_path.h>
-#include <xtd/drawing/native/toolkit.h>
-#include "../../../../../include/xtd/drawing/native/hdc_wrapper.h"
-#undef __XTD_DRAWING_NATIVE_LIBRARY__
-#include <wx/graphics.h>
-#include <xtd/as.h>
-#include <xtd/math.h>
-#include <xtd/static.h>
 
 using namespace std;
 using namespace xtd;

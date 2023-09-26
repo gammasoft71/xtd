@@ -1,15 +1,15 @@
-#include <algorithm>
-#include <cmath>
-#include <xtd/convert_string.h>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
-#include <xtd/drawing/native/font.h>
-#include <xtd/drawing/native/font_family.h>
-#include <xtd/drawing/native/toolkit.h>
+#include <xtd/drawing/native/font>
+#include <xtd/drawing/native/font_family>
+#include <xtd/drawing/native/toolkit>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
+#include <xtd/convert_string>
 #include <wx/app.h>
 #include <wx/colour.h>
 #include <wx/fontenum.h>
 #include <wx/dcscreen.h>
+#include <algorithm>
+#include <cmath>
 
 using namespace xtd;
 using namespace xtd::drawing::native;

@@ -5,14 +5,14 @@
 #endif
 /// @endcond
 
-#include <cstdint>
-#include <memory>
-#include <xtd/types.h>
+#include <xtd/types>
 #include <wx/dc.h>
 #include <wx/dcbuffer.h>
 #include <wx/dcmemory.h>
 #include <wx/dcscreen.h>
 #include <wx/graphics.h>
+#include <cstdint>
+#include <memory>
 
 namespace xtd {
   namespace drawing {

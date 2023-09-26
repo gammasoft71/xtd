@@ -5,14 +5,14 @@
 #endif
 /// @endcond
 
-#include <cstdint>
-#include <stdexcept>
-#include <xtd/delegate.h>
-#include <xtd/event.h>
+#include <xtd/delegate>
+#include <xtd/event>
 #include <wx/aboutdlg.h>
 #include <wx/app.h>
 #include <wx/menu.h>
 #include <wx/window.h>
+#include <cstdint>
+#include <stdexcept>
 
 namespace xtd {
   namespace drawing {
