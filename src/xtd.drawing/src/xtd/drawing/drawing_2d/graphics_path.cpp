@@ -1,12 +1,11 @@
-#include <stdexcept>
-#include "../../../../include/xtd/drawing/drawing_2d/graphics_path.h"
-#include "../../../../include/xtd/drawing/graphics.h"
-#include <xtd/argument_exception.h>
-#include <xtd/as.h>
-#include <xtd/is.h>
+#include "../../../../include/xtd/drawing/drawing_2d/graphics_path"
+#include "../../../../include/xtd/drawing/graphics"
 #define __XTD_DRAWING_NATIVE_LIBRARY__
-#include <xtd/drawing/native/graphics_path.h>
+#include <xtd/drawing/native/graphics_path>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
+#include <xtd/argument_exception>
+#include <xtd/as>
+#include <xtd/is>
 
 using namespace std;
 using namespace xtd;

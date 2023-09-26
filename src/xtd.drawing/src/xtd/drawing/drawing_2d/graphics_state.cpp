@@ -1,5 +1,4 @@
-#include <stdexcept>
-#include "../../../../include/xtd/drawing/drawing_2d/graphics_state.h"
+#include "../../../../include/xtd/drawing/drawing_2d/graphics_state"
 
 using namespace xtd::drawing::drawing_2d;
 

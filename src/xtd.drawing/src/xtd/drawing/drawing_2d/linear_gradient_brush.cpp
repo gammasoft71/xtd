@@ -1,10 +1,10 @@
-#include "../../../../include/xtd/drawing/drawing_2d/linear_gradient_brush.h"
-#include <xtd/argument_exception.h>
-#include <xtd/as.h>
-#include <tuple>
+#include "../../../../include/xtd/drawing/drawing_2d/linear_gradient_brush"
 #define __XTD_DRAWING_NATIVE_LIBRARY__
-#include <xtd/drawing/native/brush.h>
+#include <xtd/drawing/native/brush>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
+#include <xtd/argument_exception>
+#include <xtd/as>
+#include <tuple>
 
 using namespace std;
 using namespace xtd;
