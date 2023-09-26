@@ -1,6 +1,6 @@
-#include <xtd/as.h>
-#include <xtd/math.h>
-#include "../../../include/xtd/drawing/rectangle.h"
+#include "../../../include/xtd/drawing/rectangle"
+#include <xtd/as>
+#include <xtd/math>
 
 using namespace xtd;
 using namespace xtd::drawing;

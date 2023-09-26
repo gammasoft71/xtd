@@ -1,7 +1,7 @@
-#include "../../../include/xtd/drawing/buffered_graphics_context.h"
-#include <xtd/optional.h>
-#include <xtd/argument_exception.h>
-#include <xtd/threading/interlocked.h>
+#include "../../../include/xtd/drawing/buffered_graphics_context"
+#include <xtd/threading/interlocked>
+#include <xtd/argument_exception>
+#include <xtd/optional>
 
 using namespace std;
 using namespace xtd;

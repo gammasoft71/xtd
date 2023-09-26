@@ -1,18 +1,16 @@
-#include <stdexcept>
-#include "../../../include/xtd/drawing/pen.h"
-#include "../../../include/xtd/drawing/bitmap.h"
-#include "../../../include/xtd/drawing/solid_brush.h"
-#include "../../../include/xtd/drawing/drawing_2d/hatch_brush.h"
-#include "../../../include/xtd/drawing/drawing_2d/conical_gradient_brush.h"
-#include "../../../include/xtd/drawing/drawing_2d/linear_gradient_brush.h"
-#include "../../../include/xtd/drawing/drawing_2d/radial_gradient_brush.h"
-#include "../../../include/xtd/drawing/texture_brush.h"
-#include <xtd/argument_exception.h>
-#include <xtd/as.h>
-#include <xtd/is.h>
+#include "../../../include/xtd/drawing/pen"
+#include "../../../include/xtd/drawing/bitmap"
+#include "../../../include/xtd/drawing/solid_brush"
+#include "../../../include/xtd/drawing/drawing_2d/hatch_brush"
+#include "../../../include/xtd/drawing/drawing_2d/conical_gradient_brush"
+#include "../../../include/xtd/drawing/drawing_2d/linear_gradient_brush"
+#include "../../../include/xtd/drawing/drawing_2d/radial_gradient_brush"
+#include "../../../include/xtd/drawing/texture_brush"
 #define __XTD_DRAWING_NATIVE_LIBRARY__
-#include <xtd/drawing/native/pen.h>
+#include <xtd/drawing/native/pen>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
+#include <xtd/as>
+#include <xtd/is>
 
 using namespace std;
 using namespace xtd;

@@ -1,7 +1,7 @@
-#include "../../../include/xtd/drawing/point.h"
-#include "../../../include/xtd/drawing/point_f.h"
-#include "../../../include/xtd/drawing/size.h"
-#include "../../../include/xtd/drawing/size_f.h"
+#include "../../../include/xtd/drawing/point"
+#include "../../../include/xtd/drawing/point_f"
+#include "../../../include/xtd/drawing/size"
+#include "../../../include/xtd/drawing/size_f"
 #include <xtd/as>
 #include <xtd/ustring>
 

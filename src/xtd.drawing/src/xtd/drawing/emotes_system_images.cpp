@@ -1,4 +1,4 @@
-#include "../../../include/xtd/drawing/emotes_system_images.h"
+#include "../../../include/xtd/drawing/emotes_system_images"
 
 using namespace std;
 using namespace xtd;

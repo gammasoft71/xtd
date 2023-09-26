@@ -1,6 +1,6 @@
-#include "../../../include/xtd/drawing/brush.h"
+#include "../../../include/xtd/drawing/brush"
 #define __XTD_DRAWING_NATIVE_LIBRARY__
-#include <xtd/drawing/native/brush.h>
+#include <xtd/drawing/native/brush>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 
 using namespace xtd;

@@ -1,5 +1,5 @@
-#include "../../../include/xtd/drawing/buffered_graphics.h"
-#include <xtd/argument_exception.h>
+#include "../../../include/xtd/drawing/buffered_graphics"
+#include <xtd/argument_exception>
 
 using namespace xtd;
 using namespace xtd::drawing;

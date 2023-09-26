@@ -1,6 +1,6 @@
-#include "../../../include/xtd/drawing/system_fonts.h"
+#include "../../../include/xtd/drawing/system_fonts"
 #define __XTD_DRAWING_NATIVE_LIBRARY__
-#include <xtd/drawing/native/system_fonts.h>
+#include <xtd/drawing/native/system_fonts>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 
 using namespace std;

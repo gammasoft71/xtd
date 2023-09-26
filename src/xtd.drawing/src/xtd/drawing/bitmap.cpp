@@ -1,8 +1,8 @@
-#include "../../../include/xtd/drawing/bitmap.h"
-#include <xtd/argument_exception.h>
+#include "../../../include/xtd/drawing/bitmap"
 #define __XTD_DRAWING_NATIVE_LIBRARY__
-#include <xtd/drawing/native/image.h>
+#include <xtd/drawing/native/image>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
+#include <xtd/argument_exception>
 
 using namespace xtd;
 using namespace xtd::drawing;

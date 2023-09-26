@@ -1,4 +1,4 @@
-#include "../../../include/xtd/drawing/rectangle_f.h"
+#include "../../../include/xtd/drawing/rectangle_f"
 #include <xtd/math>
 #include <xtd/ustring>
 
