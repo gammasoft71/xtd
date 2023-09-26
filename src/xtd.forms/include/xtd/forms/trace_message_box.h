@@ -1,7 +1,7 @@
 /// @file
 /// @brief Contains xtd::forms::trace_message_box dialog.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
-#pragma onceƒ
+#pragma once
 #include "application"
 #include "message_box_buttons"
 #include "message_box_default_button"
