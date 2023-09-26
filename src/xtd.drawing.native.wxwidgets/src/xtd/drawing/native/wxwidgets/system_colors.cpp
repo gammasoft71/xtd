@@ -1,16 +1,15 @@
 #define __XTD_DRAWING_NATIVE_LIBRARY__
-#include <xtd/drawing/native/system_colors.h>
-#include <xtd/drawing/native/toolkit.h>
+#include <xtd/drawing/native/system_colors>
+#include <xtd/drawing/native/toolkit>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
-#include <xtd/as.h>
-#include <wx/settings.h>
-
-#include <cstdint>
-#include <map>
+#include <xtd/as>
 #include <wx/app.h>
 #include <wx/button.h>
 #include <wx/frame.h>
+#include <wx/settings.h>
 #include <wx/textctrl.h>
+#include <cstdint>
+#include <map>
 
 using namespace xtd;
 using namespace xtd::drawing::native;

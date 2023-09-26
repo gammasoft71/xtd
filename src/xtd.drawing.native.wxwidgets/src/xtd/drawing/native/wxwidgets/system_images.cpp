@@ -1,10 +1,10 @@
+#define __XTD_DRAWING_NATIVE_LIBRARY__
+#include <xtd/drawing/native/system_images>
+#undef __XTD_DRAWING_NATIVE_LIBRARY__
+#include <xtd/convert_string>
+#include <xtd/environment>
 #include <wx/image.h>
 #include <wx/bitmap.h>
-#define __XTD_DRAWING_NATIVE_LIBRARY__
-#include <xtd/drawing/native/system_images.h>
-#undef __XTD_DRAWING_NATIVE_LIBRARY__
-#include <xtd/convert_string.h>
-#include <xtd/environment.h>
 
 using namespace xtd;
 using namespace xtd::drawing::native;

@@ -1,11 +1,11 @@
-#include <xtd/delegate.h>
-#include <xtd/event.h>
-#include <xtd/diagnostics/boolean_switch.h>
-#include <xtd/diagnostics/assert.h>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
-#include <xtd/drawing/native/toolkit.h>
-#include <xtd/drawing/native/wx_application.h>
+#include <xtd/drawing/native/toolkit>
+#include <xtd/drawing/native/wx_application>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
+#include <xtd/diagnostics/assert>
+#include <xtd/diagnostics/boolean_switch>
+#include <xtd/delegate>
+#include <xtd/event>
 #include <wx/app.h>
 #include <wx/image.h>
 #include <wx/memory.h>

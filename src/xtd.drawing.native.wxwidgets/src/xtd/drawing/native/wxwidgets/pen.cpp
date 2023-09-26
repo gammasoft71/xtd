@@ -1,14 +1,14 @@
-#include <map>
-#include <vector>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
-#include <xtd/drawing/native/pen.h>
-#include <xtd/drawing/native/line_caps.h>
-#include <xtd/drawing/native/line_joins.h>
-#include <xtd/drawing/native/toolkit.h>
-#include "../../../../../include/xtd/drawing/native/wx_pen.h"
+#include <xtd/drawing/native/pen>
+#include <xtd/drawing/native/line_caps>
+#include <xtd/drawing/native/line_joins>
+#include <xtd/drawing/native/toolkit>
+#include "../../../../../include/xtd/drawing/native/wx_pen"
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <wx/colour.h>
 #include <wx/pen.h>
+#include <map>
+#include <vector>
 
 using namespace std;
 using namespace xtd;

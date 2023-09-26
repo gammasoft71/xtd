@@ -5,11 +5,11 @@
 #endif
 /// @endcond
 
-#include <cstdint>
-#include <xtd/argument_exception.h>
+#include <xtd/argument_exception>
 #include <wx/brush.h>
 #include <wx/image.h>
 #include <wx/graphics.h>
+#include <cstdint>
 
 namespace xtd {
   namespace drawing {

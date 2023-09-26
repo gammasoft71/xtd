@@ -4,11 +4,11 @@
 #error "Do not include this file: Internal use only"
 #endif
 /// @endcond
-#include <cmath>
+#include <xtd/types>
 #include <wx/dcclient.h>
 #include <wx/dcmemory.h>
 #include <wx/graphics.h>
-#include <xtd/types.h>
+#include <cmath>
 
 class wxConicalGradient {
 public:

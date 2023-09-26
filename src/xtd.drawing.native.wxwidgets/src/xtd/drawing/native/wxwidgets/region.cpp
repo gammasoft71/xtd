@@ -1,15 +1,15 @@
-#include <map>
-#include <vector>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
-#include <xtd/drawing/native/region.h>
-#include <xtd/drawing/native/toolkit.h>
-#include "../../../../../include/xtd/drawing/native/hdc_wrapper.h"
+#include <xtd/drawing/native/region>
+#include <xtd/drawing/native/toolkit>
+#include "../../../../../include/xtd/drawing/native/hdc_wrapper"
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
+#include <xtd/as>
+#include <xtd/int32_object>
+#include <xtd/single_object>
 #include <wx/colour.h>
 #include <wx/region.h>
-#include <xtd/as.h>
-#include <xtd/int32_object.h>
-#include <xtd/single_object.h>
+#include <map>
+#include <vector>
 
 using namespace std;
 using namespace xtd;
