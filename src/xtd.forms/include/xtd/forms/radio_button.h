@@ -2,9 +2,9 @@
 /// @brief Contains xtd::forms::radio_button control.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "appearance.h"
-#include "button_base.h"
-#include "visual_styles/radio_button_state.h"
+#include "visual_styles/radio_button_state"
+#include "appearance"
+#include "button_base"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

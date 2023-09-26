@@ -2,11 +2,11 @@
 /// @brief Contains xtd::forms::tab_control container.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "const_tab_page_ref.h"
-#include "control.h"
-#include "image_list.h"
-#include "tab_alignment.h"
-#include "tab_page_ref.h"
+#include "const_tab_page_ref"
+#include "control"
+#include "image_list"
+#include "tab_alignment"
+#include "tab_page_ref"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

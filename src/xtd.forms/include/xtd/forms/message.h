@@ -2,13 +2,13 @@
 /// @brief Contains xtd::forms::message class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "../forms_export"
+#include <xtd/object>
+#include <xtd/ustring>
+#include <cstdint>
 #include <iomanip>
 #include <sstream>
-#include <cstdint>
 #include <string>
-#include <xtd/object.h>
-#include <xtd/ustring.h>
-#include "../forms_export.h"
 
 namespace xtd {
   namespace forms {

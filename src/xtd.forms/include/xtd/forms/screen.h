@@ -2,12 +2,11 @@
 /// @brief Contains xtd::forms::screen component.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "control"
+#include <xtd/drawing/rectangle>
+#include <xtd/object>
 #include <cstdint>
-#include <string>
 #include <vector>
-#include <xtd/object.h>
-#include <xtd/drawing/rectangle.h>
-#include "control.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

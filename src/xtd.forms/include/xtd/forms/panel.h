@@ -2,10 +2,10 @@
 /// @brief Contains xtd::forms::panel container.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/optional.h>
-#include "scrollable_control.h"
-#include "border_sides.h"
-#include "border_style.h"
+#include "border_sides"
+#include "border_style"
+#include "scrollable_control"
+#include <xtd/optional>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

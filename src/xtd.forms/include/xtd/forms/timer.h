@@ -2,13 +2,13 @@
 /// @brief Contains xtd::forms::timer component.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "component"
+#include <xtd/chrono>
+#include <xtd/event>
+#include <xtd/event_handler>
+#include <xtd/time_span>
 #include <cstdint>
 #include <memory>
-#include <xtd/chrono>
-#include <xtd/event.h>
-#include <xtd/event_handler.h>
-#include <xtd/time_span.h>
-#include "component.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

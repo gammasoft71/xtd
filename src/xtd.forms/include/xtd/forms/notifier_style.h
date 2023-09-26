@@ -1,8 +1,9 @@
 #pragma once
-#include <xtd/enum.h>
-//TODO: Documentation
+#include <xtd/enum>
 
+/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     enum class notifier_style {
       standard = 0,

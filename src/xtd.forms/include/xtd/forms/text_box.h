@@ -2,9 +2,9 @@
 /// @brief Contains xtd::forms::text_box control.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "border_style.h"
-#include "character_casing.h"
-#include "text_box_base.h"
+#include "border_style"
+#include "character_casing"
+#include "text_box_base"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

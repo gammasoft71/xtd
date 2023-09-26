@@ -2,11 +2,11 @@
 /// @brief Contains xtd::forms::padding class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "../forms_export"
+#include <xtd/iequatable>
+#include <xtd/object>
+#include <xtd/ustring>
 #include <cstdint>
-#include <xtd/iequatable.h>
-#include <xtd/object.h>
-#include <xtd/ustring.h>
-#include "../forms_export.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

@@ -2,17 +2,16 @@
 /// @brief Contains xtd::forms::switch_button_renderer class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <string>
-#include <xtd/optional.h>
-#include <xtd/drawing/color.h>
-#include <xtd/drawing/font.h>
-#include <xtd/drawing/graphics.h>
-#include <xtd/drawing/image.h>
-#include <xtd/drawing/rectangle.h>
-#include <xtd/drawing/system_fonts.h>
-#include "text_format_flags.h"
-#include "application.h"
-#include "visual_styles/push_button_state.h"
+#include "visual_styles/push_button_state"
+#include "application"
+#include "text_format_flags"
+#include <xtd/drawing/color>
+#include <xtd/drawing/font>
+#include <xtd/drawing/graphics>
+#include <xtd/drawing/image>
+#include <xtd/drawing/rectangle>
+#include <xtd/drawing/system_fonts>
+#include <xtd/optional>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

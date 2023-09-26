@@ -2,12 +2,12 @@
 /// @brief Contains xtd::forms::picture_box control.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/optional.h>
-#include "control.h"
-#include "border_sides.h"
-#include "border_style.h"
-#include "picture_box_size_mode.h"
-#include <xtd/drawing/image.h>
+#include "border_sides"
+#include "border_style"
+#include "control"
+#include "picture_box_size_mode"
+#include <xtd/drawing/image>
+#include <xtd/optional>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

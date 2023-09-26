@@ -2,13 +2,13 @@
 /// @brief Contains xtd::forms::panel_renderer static class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/static.h>
-#include <xtd/ustring.h>
-#include <xtd/drawing/graphics.h>
-#include "border_sides.h"
-#include "border_style.h"
-#include "visual_styles/form_state.h"
-#include "box_renderer.h"
+#include "visual_styles/form_state"
+#include "border_sides"
+#include "border_style"
+#include "box_renderer"
+#include <xtd/drawing/graphics>
+#include <xtd/static>
+#include <xtd/ustring>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

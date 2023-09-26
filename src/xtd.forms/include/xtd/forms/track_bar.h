@@ -2,9 +2,9 @@
 /// @brief Contains xtd::forms::track_bar control.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "control.h"
-#include "orientation.h"
-#include "tick_style.h"
+#include "control"
+#include "orientation"
+#include "tick_style"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

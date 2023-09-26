@@ -2,9 +2,9 @@
 /// @brief Contains xtd::forms::progress_box control.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/static.h>
-#include "progress_dialog.h"
-#include "progress_box_options.h"
+#include "progress_box_options"
+#include "progress_dialog"
+#include <xtd/static>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

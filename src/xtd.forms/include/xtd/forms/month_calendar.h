@@ -2,13 +2,13 @@
 /// @brief Contains xtd::forms::month_calendar control.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "application"
+#include "control"
+#include "date_range_event_handler"
+#include "day"
+#include "menu"
+#include "selection_range"
 #include <xtd/chrono>
-#include "application.h"
-#include "control.h"
-#include "day.h"
-#include "menu.h"
-#include "selection_range.h"
-#include "date_range_event_handler.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

@@ -2,17 +2,17 @@
 /// @brief Contains xtd::forms::system_information class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/static.h>
-#include <xtd/drawing/font.h>
-#include <xtd/drawing/rectangle.h>
-#include <xtd/drawing/size.h>
-#include "../forms_export.h"
-#include "arrange_direction.h"
-#include "arrange_starting_position.h"
-#include "boot_mode.h"
-#include "left_right_alignment.h"
-#include "power_status.h"
-#include "screen_orientation.h"
+#include "../forms_export"
+#include "arrange_direction"
+#include "arrange_starting_position"
+#include "boot_mode"
+#include "left_right_alignment"
+#include "power_status"
+#include "screen_orientation"
+#include <xtd/drawing/font>
+#include <xtd/drawing/rectangle>
+#include <xtd/drawing/size>
+#include <xtd/static>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
