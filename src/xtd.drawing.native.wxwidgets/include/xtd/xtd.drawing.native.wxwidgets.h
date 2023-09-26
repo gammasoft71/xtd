@@ -8,4 +8,10 @@
 #endif
 /// @endcond
 
-#include <xtd/xtd.drawing.native.h>
+#include <xtd/xtd.drawing.native>
+#include "drawing/native/hdc_wrapper"
+#include "drawing/native/wxConicalGradient"
+#include "drawing/native/wxDrawString"
+#include "drawing/native/wx_application"
+#include "drawing/native/wx_brush"
+#include "drawing/native/wx_pen"
