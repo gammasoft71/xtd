@@ -2,10 +2,10 @@
 /// @brief Contains xtd::forms::debug_form form.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "control_trace_listener.h"
-#include "trace_form_base.h"
-#include "icontrol_trace.h"
-#include <xtd/diagnostics/debug.h>
+#include "control_trace_listener"
+#include "trace_form_base"
+#include "icontrol_trace"
+#include <xtd/diagnostics/debug>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

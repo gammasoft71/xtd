@@ -2,15 +2,15 @@
 /// @brief Contains xtd::forms::cursor class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "../forms_export"
+#include <xtd/drawing/bitmap>
+#include <xtd/drawing/point>
+#include <xtd/drawing/size>
+#include <xtd/any>
+#include <xtd/iequatable>
+#include <xtd/object>
 #include <cstdint>
 #include <memory>
-#include <xtd/any.h>
-#include <xtd/iequatable.h>
-#include <xtd/object.h>
-#include <xtd/drawing/bitmap.h>
-#include <xtd/drawing/point.h>
-#include <xtd/drawing/size.h>
-#include "../forms_export.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

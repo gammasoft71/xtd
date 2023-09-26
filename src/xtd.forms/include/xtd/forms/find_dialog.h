@@ -2,16 +2,16 @@
 /// @brief Contains xtd::forms::find_dialog dialog.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/event.h>
-#include <xtd/ustring.h>
-#include <xtd/drawing/point.h>
-#include "component.h"
-#include "dialog_closed_event_handler.h"
-#include "dialog_appearance.h"
-#include "find_event_handler.h"
-#include "search_direction.h"
-#include "iwin32_window.h"
-#include "layout/arranged_element_collection.h"
+#include "component"
+#include "dialog_closed_event_handler"
+#include "dialog_appearance"
+#include "find_event_handler"
+#include "search_direction"
+#include "iwin32_window"
+#include "layout/arranged_element_collection"
+#include <xtd/drawing/point>
+#include <xtd/event>
+#include <xtd/ustring>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

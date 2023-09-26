@@ -2,12 +2,12 @@
 /// @brief Contains xtd::forms::link class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "../forms_export"
+#include <xtd/any>
+#include <xtd/iequatable>
+#include <xtd/object>
+#include <xtd/ustring>
 #include <tuple>
-#include <xtd/any.h>
-#include <xtd/iequatable.h>
-#include <xtd/object.h>
-#include <xtd/ustring.h>
-#include "../forms_export.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

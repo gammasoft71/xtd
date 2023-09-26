@@ -2,18 +2,18 @@
 /// @brief Contains xtd::forms::check_box_renderer class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "../forms_export"
+#include "text_format_flags"
+#include "application"
+#include "visual_styles/check_box_state"
+#include <xtd/optional>
+#include <xtd/drawing/color>
+#include <xtd/drawing/font>
+#include <xtd/drawing/graphics>
+#include <xtd/drawing/image>
+#include <xtd/drawing/rectangle>
+#include <xtd/drawing/system_fonts>
 #include <string>
-#include <xtd/optional.h>
-#include <xtd/drawing/color.h>
-#include <xtd/drawing/font.h>
-#include <xtd/drawing/graphics.h>
-#include <xtd/drawing/image.h>
-#include <xtd/drawing/rectangle.h>
-#include <xtd/drawing/system_fonts.h>
-#include "../forms_export.h"
-#include "text_format_flags.h"
-#include "application.h"
-#include "visual_styles/check_box_state.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

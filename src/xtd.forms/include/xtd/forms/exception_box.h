@@ -2,12 +2,11 @@
 /// @brief Contains xtd::forms::exception_box dialog.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <exception>
-#include <xtd/static.h>
-#include <xtd/ustring.h>
-#include "dialog_result.h"
-#include "iwin32_window.h"
-#include "../forms_export.h"
+#include "../forms_export"
+#include "dialog_result"
+#include "iwin32_window"
+#include <xtd/static>
+#include <xtd/ustring>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

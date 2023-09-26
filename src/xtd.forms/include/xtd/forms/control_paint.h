@@ -2,21 +2,21 @@
 /// @brief Contains xtd::forms::control_paint class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "../forms_export"
+#include "button_state"
+#include "border_sides"
+#include "border_style"
+#include "image_layout"
+#include "text_format_flags"
+#include <xtd/optional>
+#include <xtd/drawing/color>
+#include <xtd/drawing/font>
+#include <xtd/drawing/graphics>
+#include <xtd/drawing/image>
+#include <xtd/drawing/rectangle>
+#include <xtd/drawing/string_format>
+#include <xtd/drawing/system_fonts>
 #include <string>
-#include <xtd/optional.h>
-#include <xtd/drawing/color.h>
-#include <xtd/drawing/font.h>
-#include <xtd/drawing/graphics.h>
-#include <xtd/drawing/image.h>
-#include <xtd/drawing/rectangle.h>
-#include <xtd/drawing/string_format.h>
-#include <xtd/drawing/system_fonts.h>
-#include "../forms_export.h"
-#include "button_state.h"
-#include "border_sides.h"
-#include "border_style.h"
-#include "image_layout.h"
-#include "text_format_flags.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

@@ -2,8 +2,8 @@
 /// @brief Contains xtd::forms::choice control.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "layout/arranged_element_collection.h"
-#include "list_control.h"
+#include "layout/arranged_element_collection"
+#include "list_control"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

@@ -2,8 +2,8 @@
 /// @brief Contains xtd::forms::application_context class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/object.h>
-#include "form.h"
+#include "form"
+#include <xtd/object>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

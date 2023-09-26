@@ -2,13 +2,13 @@
 /// @brief Contains xtd::forms::font_box control.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/static.h>
-#include <xtd/drawing/color.h>
-#include <xtd/drawing/font.h>
-#include "dialog_result.h"
-#include "../forms_export.h"
-#include "font_box_options.h"
-#include "iwin32_window.h"
+#include "../forms_export"
+#include "font_box_options"
+#include "dialog_result"
+#include "iwin32_window"
+#include <xtd/drawing/color>
+#include <xtd/drawing/font>
+#include <xtd/static>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

@@ -2,13 +2,13 @@
 /// @brief Contains xtd::forms::label control.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "control.h"
-#include "border_sides.h"
-#include "border_style.h"
-#include "content_alignment.h"
-#include "flat_style.h"
-#include "image_list.h"
-#include "shadows.h"
+#include "control"
+#include "border_sides"
+#include "border_style"
+#include "content_alignment"
+#include "flat_style"
+#include "image_list"
+#include "shadows"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

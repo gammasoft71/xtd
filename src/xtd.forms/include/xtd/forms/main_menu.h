@@ -2,11 +2,11 @@
 /// @brief Contains xtd::forms::main_menu menu.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "menu_item"
+#include "message"
+#include <xtd/drawing/size>
 #include <memory>
 #include <vector>
-#include "menu_item.h"
-#include "message.h"
-#include <xtd/drawing/size.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

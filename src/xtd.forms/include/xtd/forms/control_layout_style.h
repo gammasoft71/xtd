@@ -2,11 +2,11 @@
 /// @brief Contains xtd::forms::control_layout_style class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/iequatable.h>
-#include <xtd/object.h>
-#include <xtd/ustring.h>
-#include "content_alignment.h"
-#include "size_type.h"
+#include "content_alignment"
+#include "size_type"
+#include <xtd/iequatable>
+#include <xtd/object>
+#include <xtd/ustring>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

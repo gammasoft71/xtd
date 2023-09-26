@@ -2,12 +2,12 @@
 /// @brief Contains xtd::forms::background_worker component.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../forms_export.h"
-#include "component.h"
-#include "form.h"
-#include "do_work_event_handler.h"
-#include "progress_changed_event_handler.h"
-#include "run_worker_completed_event_handler.h"
+#include "../forms_export"
+#include "component"
+#include "form"
+#include "do_work_event_handler"
+#include "progress_changed_event_handler"
+#include "run_worker_completed_event_handler"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

@@ -2,9 +2,9 @@
 /// @brief Contains xtd::forms::date_range_event_args event args.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include <xtd/date_time>
+#include <xtd/event_args>
 #include <cstdint>
-#include <xtd/date_time.h>
-#include <xtd/event_args.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

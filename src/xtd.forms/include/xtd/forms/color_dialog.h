@@ -2,10 +2,10 @@
 /// @brief Contains xtd::forms::color_dialog dialog.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/drawing/color.h>
-#include <xtd/forms/choose_color_flags.h>
-#include "../forms_export.h"
-#include "common_dialog.h"
+#include "../forms_export"
+#include "common_dialog"
+#include <xtd/forms/choose_color_flags>
+#include <xtd/drawing/color>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
