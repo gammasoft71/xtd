@@ -1,0 +1,2 @@
+#pragma once
+#include "browser_info_flags.h"
