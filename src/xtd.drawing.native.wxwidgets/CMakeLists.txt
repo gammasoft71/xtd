@@ -20,14 +20,20 @@ include(${wxWidgets_USE_FILE})
 add_include_directories(include)
 add_references(xtd.drawing.native xtd.core ${wxWidgets_LIBRARIES} ${XTD_EXTRA_LIBS})
 add_sources(
+  include/xtd/drawing/native/hdc_wrapper.h
+  include/xtd/drawing/native/hdc_wrapper
+  include/xtd/drawing/native/wx_application.h
+  include/xtd/drawing/native/wx_application
+  include/xtd/drawing/native/wx_brush.h
+  include/xtd/drawing/native/wx_brush
+  include/xtd/drawing/native/wx_pen.h
+  include/xtd/drawing/native/wx_pen
+  include/xtd/drawing/native/wxConicalGradient.h
+  include/xtd/drawing/native/wxConicalGradient
+  include/xtd/drawing/native/wxDrawString.h
+  include/xtd/drawing/native/wxDrawString
   include/xtd/xtd.drawing.native.wxwidgets.h
   include/xtd/xtd.drawing.native.wxwidgets
-  include/xtd/drawing/native/hdc_wrapper.h
-  include/xtd/drawing/native/wx_application.h
-  include/xtd/drawing/native/wx_brush.h
-  include/xtd/drawing/native/wx_pen.h
-  include/xtd/drawing/native/wxConicalGradient.h
-  include/xtd/drawing/native/wxDrawString.h
   src/xtd/drawing/native/wxwidgets/brush.cpp
   src/xtd/drawing/native/wxwidgets/font.cpp
   src/xtd/drawing/native/wxwidgets/font_family.cpp
