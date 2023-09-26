@@ -2,16 +2,16 @@
 /// @brief Contains xtd::drawing::drawing_2d/::hatch_brush class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "../../drawing_export"
+#include "../brush"
+#include "../color"
+#include "../image"
+#include "../point"
+#include "../rectangle"
+#include "drawing2d"
+#include "hatch_style"
+#include <xtd/iequatable>
 #include <array>
-#include <xtd/iequatable.h>
-#include "../../drawing_export.h"
-#include "../brush.h"
-#include "../color.h"
-#include "../image.h"
-#include "../point.h"
-#include "../rectangle.h"
-#include "drawing2d.h"
-#include "hatch_style.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

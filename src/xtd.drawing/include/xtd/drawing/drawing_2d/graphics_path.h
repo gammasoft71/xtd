@@ -2,19 +2,19 @@
 /// @brief Contains xtd::drawing::drawing_2d/::graphics_path class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "../../drawing_export"
+#include "../font_family"
+#include "../font_style"
+#include "../rectangle"
+#include "../rectangle_f"
+#include "../string_format"
+#include "drawing2d"
+#include "fill_mode"
+#include <xtd/object>
+#include <xtd/ustring>
 #include <cstdint>
 #include <memory>
 #include <ostream>
-#include <xtd/object.h>
-#include <xtd/ustring.h>
-#include "../../drawing_export.h"
-#include "drawing2d.h"
-#include "fill_mode.h"
-#include "../font_family.h"
-#include "../font_style.h"
-#include "../rectangle.h"
-#include "../rectangle_f.h"
-#include "../string_format.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
