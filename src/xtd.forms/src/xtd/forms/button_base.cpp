@@ -1,9 +1,9 @@
-#include "../../../include/xtd/forms/application.h"
-#include "../../../include/xtd/forms/button_base.h"
-#include <xtd/argument_exception.h>
+#include "../../../include/xtd/forms/application"
+#include "../../../include/xtd/forms/button_base"
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/button_styles.h>
+#include <xtd/forms/native/button_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/argument_exception>
 
 using namespace xtd;
 using namespace xtd::forms;

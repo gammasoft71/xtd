@@ -1,5 +1,5 @@
-#include "../../../include/xtd/forms/exception_box.h"
-#include "../../../include/xtd/forms/exception_dialog.h"
+#include "../../../include/xtd/forms/exception_box"
+#include "../../../include/xtd/forms/exception_dialog"
 
 using namespace std;
 using namespace xtd;

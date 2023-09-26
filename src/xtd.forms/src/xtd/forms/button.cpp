@@ -1,17 +1,17 @@
-#include "../../../include/xtd/forms/button.h"
-#include "../../../include/xtd/forms/button_renderer.h"
-#include "../../../include/xtd/forms/form.h"
-#include <xtd/drawing/pen.h>
-#include <xtd/drawing/solid_brush.h>
-#include <xtd/drawing/string_format.h>
-#include <xtd/drawing/system_brushes.h>
-#include <xtd/drawing/system_pens.h>
+#include "../../../include/xtd/forms/button"
+#include "../../../include/xtd/forms/button_renderer"
+#include "../../../include/xtd/forms/form"
+#include <xtd/drawing/pen>
+#include <xtd/drawing/solid_brush>
+#include <xtd/drawing/string_format>
+#include <xtd/drawing/system_brushes>
+#include <xtd/drawing/system_pens>
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/button.h>
-#include <xtd/forms/native/button_styles.h>
-#include <xtd/forms/native/control.h>
+#include <xtd/forms/native/button>
+#include <xtd/forms/native/button_styles>
+#include <xtd/forms/native/control>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/window_messages.h>
+#include <xtd/forms/window_messages>
 
 using namespace xtd;
 using namespace xtd::forms;

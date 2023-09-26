@@ -1,5 +1,5 @@
-#include <xtd/threading/thread.h>
-#include "../../../include/xtd/forms/common_dialog.h"
+#include "../../../include/xtd/forms/common_dialog"
+#include <xtd/threading/thread>
 
 using namespace xtd;
 using namespace xtd::forms;

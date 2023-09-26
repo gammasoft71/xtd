@@ -1,12 +1,12 @@
-#include <xtd/argument_out_of_range_exception.h>
-#include <xtd/literals.h>
+#include "../../../include/xtd/forms/choice"
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/control.h>
-#include <xtd/forms/native/choice.h>
-#include <xtd/forms/native/extended_window_styles.h>
-#include <xtd/forms/native/window_styles.h>
+#include <xtd/forms/native/control>
+#include <xtd/forms/native/choice>
+#include <xtd/forms/native/extended_window_styles>
+#include <xtd/forms/native/window_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../include/xtd/forms/choice.h"
+#include <xtd/argument_out_of_range_exception>
+#include <xtd/literals>
 
 using namespace std;
 using namespace xtd;

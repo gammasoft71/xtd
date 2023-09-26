@@ -1,11 +1,11 @@
-#include "../../../include/xtd/forms/label_renderer.h"
-#include "../../../include/xtd/forms/image_renderer.h"
-#include "../../../include/xtd/forms/text_renderer.h"
-#include "../../../include/xtd/forms/style_sheets/label.h"
-#include "../../../include/xtd/forms/style_sheets/link_label.h"
-#include "../../../include/xtd/forms/style_sheets/pseudo_state.h"
-#include "../../../include/xtd/forms/style_sheets/style_sheet.h"
-#include <xtd/unused.h>
+#include "../../../include/xtd/forms/label_renderer"
+#include "../../../include/xtd/forms/image_renderer"
+#include "../../../include/xtd/forms/text_renderer"
+#include "../../../include/xtd/forms/style_sheets/label"
+#include "../../../include/xtd/forms/style_sheets/link_label"
+#include "../../../include/xtd/forms/style_sheets/pseudo_state"
+#include "../../../include/xtd/forms/style_sheets/style_sheet"
+#include <xtd/unused>
 
 using namespace std;
 using namespace xtd;

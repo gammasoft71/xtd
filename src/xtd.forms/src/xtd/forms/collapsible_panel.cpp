@@ -1,10 +1,10 @@
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/control.h>
-#include <xtd/forms/native/collapsible_panel.h>
-#include <xtd/forms/native/extended_window_styles.h>
-#include <xtd/forms/native/window_styles.h>
+#include <xtd/forms/native/control>
+#include <xtd/forms/native/collapsible_panel>
+#include <xtd/forms/native/extended_window_styles>
+#include <xtd/forms/native/window_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../include/xtd/forms/collapsible_panel.h"
+#include "../../../include/xtd/forms/collapsible_panel"
 
 using namespace xtd;
 using namespace xtd::forms;

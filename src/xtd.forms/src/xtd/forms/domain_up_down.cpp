@@ -1,13 +1,13 @@
-#include <xtd/argument_out_of_range_exception.h>
-#include <xtd/literals.h>
+#include "../../../include/xtd/forms/domain_up_down"
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/control.h>
-#include <xtd/forms/native/domain_up_down.h>
-#include <xtd/forms/native/extended_window_styles.h>
-#include <xtd/forms/native/up_down_styles.h>
-#include <xtd/forms/native/window_styles.h>
+#include <xtd/forms/native/control>
+#include <xtd/forms/native/domain_up_down>
+#include <xtd/forms/native/extended_window_styles>
+#include <xtd/forms/native/up_down_styles>
+#include <xtd/forms/native/window_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../include/xtd/forms/domain_up_down.h"
+#include <xtd/argument_out_of_range_exception>
+#include <xtd/literals>
 
 using namespace std;
 using namespace xtd;

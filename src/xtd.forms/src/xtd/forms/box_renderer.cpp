@@ -1,9 +1,9 @@
-#include "../../../include/xtd/forms/box_renderer.h"
-#include <xtd/argument_exception.h>
-#include <xtd/as.h>
-#include <xtd/is.h>
-#include <xtd/math.h>
-#include <xtd/drawing/drawing_2d/linear_gradient_brush.h>
+#include "../../../include/xtd/forms/box_renderer"
+#include <xtd/drawing/drawing_2d/linear_gradient_brush>
+#include <xtd/argument_exception>
+#include <xtd/as>
+#include <xtd/is>
+#include <xtd/math>
 
 using namespace std;
 using namespace xtd;

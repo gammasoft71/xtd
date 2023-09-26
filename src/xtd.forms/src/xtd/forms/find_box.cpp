@@ -1,4 +1,4 @@
-#include "../../../include/xtd/forms/find_box.h"
+#include "../../../include/xtd/forms/find_box"
 
 using namespace std;
 using namespace xtd;

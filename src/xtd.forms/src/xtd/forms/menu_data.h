@@ -1,4 +1,4 @@
-#include "../../../include/xtd/forms/menu.h"
+#include "../../../include/xtd/forms/menu"
 
 struct xtd::forms::menu::data {
   intptr handle = 0;

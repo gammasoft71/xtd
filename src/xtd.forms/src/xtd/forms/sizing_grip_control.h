@@ -1,7 +1,7 @@
 #pragma once
-#include "../../../include/xtd/forms/application.h"
-#include "../../../include/xtd/forms/panel.h"
-#include "../../../include/xtd/forms/status_bar.h"
+#include "../../../include/xtd/forms/application"
+#include "../../../include/xtd/forms/panel"
+#include "../../../include/xtd/forms/status_bar"
 
 class xtd::forms::status_bar::sizing_grip_control : public xtd::forms::panel {
 public:

@@ -1,18 +1,18 @@
+#include "../../../include/xtd/forms/exception_dialog"
+#include "../../../include/xtd/forms/application"
+#include "../../../include/xtd/forms/button"
+#include "../../../include/xtd/forms/form"
+#include "../../../include/xtd/forms/label"
+#include "../../../include/xtd/forms/panel"
+#include "../../../include/xtd/forms/picture_box"
+#include "../../../include/xtd/forms/text_box"
+#include "../../../include/xtd/forms/toggle_button"
+#include <xtd/drawing/system_icons>
+#include <xtd/io/path>
+#include <xtd/literals>
+#include <xtd/system_exception>
+#include <xtd/typeof>
 #include <memory>
-#include <xtd/literals.h>
-#include <xtd/system_exception.h>
-#include <xtd/drawing/system_icons.h>
-#include <xtd/io/path.h>
-#include <xtd/typeof.h>
-#include "../../../include/xtd/forms/exception_dialog.h"
-#include "../../../include/xtd/forms/application.h"
-#include "../../../include/xtd/forms/button.h"
-#include "../../../include/xtd/forms/form.h"
-#include "../../../include/xtd/forms/label.h"
-#include "../../../include/xtd/forms/panel.h"
-#include "../../../include/xtd/forms/picture_box.h"
-#include "../../../include/xtd/forms/text_box.h"
-#include "../../../include/xtd/forms/toggle_button.h"
 
 using namespace std;
 using namespace xtd;

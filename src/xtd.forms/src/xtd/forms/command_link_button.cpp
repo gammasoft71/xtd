@@ -1,11 +1,11 @@
-#include "../../../include/xtd/forms/command_link_button.h"
-#include "../../../include/xtd/forms/form.h"
+#include "../../../include/xtd/forms/command_link_button"
+#include "../../../include/xtd/forms/form"
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/command_link_button.h>
-#include <xtd/forms/native/button_styles.h>
-#include <xtd/forms/native/control.h>
+#include <xtd/forms/native/command_link_button>
+#include <xtd/forms/native/button_styles>
+#include <xtd/forms/native/control>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/window_messages.h>
+#include <xtd/forms/window_messages>
 
 using namespace xtd;
 using namespace xtd::forms;

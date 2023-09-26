@@ -1,9 +1,9 @@
-#include <xtd/optional.h>
+#include "../../../include/xtd/forms/cursor"
+#include "../../../include/xtd/forms/cursors"
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/cursor.h>
+#include <xtd/forms/native/cursor>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../include/xtd/forms/cursor.h"
-#include "../../../include/xtd/forms/cursors.h"
+#include <xtd/optional>
 
 using namespace std;
 using namespace xtd;

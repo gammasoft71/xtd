@@ -1,5 +1,5 @@
-#include <xtd/argument_exception.h>
-#include "../../../include/xtd/forms/horizontal_layout_panel.h"
+#include "../../../include/xtd/forms/horizontal_layout_panel"
+#include <xtd/argument_exception>
 
 using namespace std;
 using namespace xtd;

@@ -1,9 +1,9 @@
+#include "../../../include/xtd/forms/image_list"
+#include <xtd/drawing/bitmap>
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/image_list.h>
+#include <xtd/forms/native/image_list>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/argument_out_of_range_exception.h>
-#include <xtd/drawing/bitmap.h>
-#include "../../../include/xtd/forms/image_list.h"
+#include <xtd/argument_out_of_range_exception>
 
 using namespace xtd;
 using namespace xtd::forms;

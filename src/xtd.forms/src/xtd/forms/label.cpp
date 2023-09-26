@@ -1,21 +1,21 @@
-#include <vector>
-#include <xtd/drawing/pens.h>
-#include <xtd/drawing/solid_brush.h>
-#include <xtd/drawing/system_colors.h>
-#include <xtd/drawing/string_format.h>
+#include "../../../include/xtd/forms/application"
+#include "../../../include/xtd/forms/control_paint"
+#include "../../../include/xtd/forms/label"
+#include "../../../include/xtd/forms/label_renderer"
+#include "../../../include/xtd/forms/screen"
+#include <xtd/drawing/pens>
+#include <xtd/drawing/solid_brush>
+#include <xtd/drawing/system_colors>
+#include <xtd/drawing/string_format>
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/control.h>
-#include <xtd/forms/native/extended_window_styles.h>
-#include <xtd/forms/native/label.h>
-#include <xtd/forms/native/static_styles.h>
-#include <xtd/forms/native/toolkit.h>
-#include <xtd/forms/native/window_styles.h>
+#include <xtd/forms/native/control>
+#include <xtd/forms/native/extended_window_styles>
+#include <xtd/forms/native/label>
+#include <xtd/forms/native/static_styles>
+#include <xtd/forms/native/toolkit>
+#include <xtd/forms/native/window_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../include/xtd/forms/application.h"
-#include "../../../include/xtd/forms/control_paint.h"
-#include "../../../include/xtd/forms/label.h"
-#include "../../../include/xtd/forms/label_renderer.h"
-#include "../../../include/xtd/forms/screen.h"
+#include <vector>
 
 using namespace std;
 using namespace xtd;

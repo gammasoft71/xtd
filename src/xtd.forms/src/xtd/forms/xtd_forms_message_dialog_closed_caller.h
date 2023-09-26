@@ -1,5 +1,5 @@
 #pragma once
-#include "../../../include/xtd/forms/message_dialog.h"
+#include "../../../include/xtd/forms/message_dialog"
 
 struct __xtd_forms_message_dialog_closed_caller__ {
   explicit __xtd_forms_message_dialog_closed_caller__(xtd::forms::message_dialog* message_dialog) : message_dialog_(message_dialog) {}

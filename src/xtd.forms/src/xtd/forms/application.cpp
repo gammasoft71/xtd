@@ -1,21 +1,21 @@
 /// @todo Remove following includes when xtd::diagnostics::process will used for restart see below..
-#include <xtd/io/path.h>
-#include <xtd/environment.h>
-#include <xtd/invalid_operation_exception.h>
-#include <xtd/literals.h>
-#include <xtd/diagnostics/assert.h>
-#include <xtd/diagnostics/process.h>
-#include <xtd/diagnostics/stopwatch.h>
-#include <xtd/io/directory.h>
-#include <xtd/reflection/assembly.h>
+#include "../../../include/xtd/forms/application"
+#include "../../../include/xtd/forms/exception_box"
+#include "../../../include/xtd/forms/message_box"
+#include <xtd/diagnostics/assert>
+#include <xtd/diagnostics/process>
+#include <xtd/diagnostics/stopwatch>
+#include <xtd/io/directory>
+#include <xtd/io/path>
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/application.h>
-#include <xtd/forms/native/toolkit.h>
+#include <xtd/forms/native/application>
+#include <xtd/forms/native/toolkit>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/window_messages.h>
-#include "../../../include/xtd/forms/application.h"
-#include "../../../include/xtd/forms/exception_box.h"
-#include "../../../include/xtd/forms/message_box.h"
+#include <xtd/forms/window_messages>
+#include <xtd/reflection/assembly>
+#include <xtd/environment>
+#include <xtd/invalid_operation_exception>
+#include <xtd/literals>
 
 using namespace std;
 using namespace std::chrono;

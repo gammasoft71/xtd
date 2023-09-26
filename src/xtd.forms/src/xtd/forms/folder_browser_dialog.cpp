@@ -1,7 +1,7 @@
+#include "../../../include/xtd/forms/folder_browser_dialog"
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/folder_browser_dialog.h>
+#include <xtd/forms/native/folder_browser_dialog>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../include/xtd/forms/folder_browser_dialog.h"
 #include "xtd_forms_common_dialog_closed_caller.h"
 
 using namespace xtd;
