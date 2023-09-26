@@ -1,24 +1,24 @@
+#include "../../../include/xtd/forms/about_dialog"
+#include "../../../include/xtd/forms/application"
+#include "../../../include/xtd/forms/form"
+#include "../../../include/xtd/forms/horizontal_layout_panel"
+#include "../../../include/xtd/forms/label"
+#include "../../../include/xtd/forms/link_label"
+#include "../../../include/xtd/forms/panel"
+#include "../../../include/xtd/forms/picture_box"
+#include "../../../include/xtd/forms/tab_control"
+#include "../../../include/xtd/forms/tab_page"
+#include "../../../include/xtd/forms/text_box"
+#include <xtd/diagnostics/process>
+#include <xtd/drawing/system_icons>
+#define __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/forms/native/about_dialog>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/reflection/assembly>
+#include <xtd/chrono>
+#include <xtd/literals>
 #include <memory>
 #include <vector>
-#include <xtd/chrono>
-#include <xtd/literals.h>
-#define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/about_dialog.h>
-#undef __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/diagnostics/process.h>
-#include <xtd/reflection/assembly.h>
-#include <xtd/drawing/system_icons.h>
-#include "../../../include/xtd/forms/about_dialog.h"
-#include "../../../include/xtd/forms/application.h"
-#include "../../../include/xtd/forms/form.h"
-#include "../../../include/xtd/forms/horizontal_layout_panel.h"
-#include "../../../include/xtd/forms/label.h"
-#include "../../../include/xtd/forms/link_label.h"
-#include "../../../include/xtd/forms/panel.h"
-#include "../../../include/xtd/forms/picture_box.h"
-#include "../../../include/xtd/forms/tab_control.h"
-#include "../../../include/xtd/forms/tab_page.h"
-#include "../../../include/xtd/forms/text_box.h"
 
 using namespace std;
 using namespace xtd;

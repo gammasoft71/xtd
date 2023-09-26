@@ -1,4 +1,4 @@
-#include "../../../include/xtd/forms/dot_matrix_display.h"
+#include "../../../include/xtd/forms/dot_matrix_display"
 
 using namespace xtd;
 using namespace xtd::forms;

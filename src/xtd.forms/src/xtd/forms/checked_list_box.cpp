@@ -1,17 +1,17 @@
-#include <xtd/argument_out_of_range_exception.h>
-#include <xtd/literals.h>
-#include <xtd/drawing/graphics.h>
-#include <xtd/drawing/pens.h>
+#include "../../../include/xtd/forms/application"
+#include "../../../include/xtd/forms/checked_list_box"
+#include <xtd/drawing/graphics>
+#include <xtd/drawing/pens>
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/control.h>
-#include <xtd/forms/native/checked_list_box.h>
-#include <xtd/forms/native/extended_window_styles.h>
-#include <xtd/forms/native/toolkit.h>
-#include <xtd/forms/native/window_styles.h>
-#include <xtd/forms/native/list_box_styles.h>
+#include <xtd/forms/native/control>
+#include <xtd/forms/native/checked_list_box>
+#include <xtd/forms/native/extended_window_styles>
+#include <xtd/forms/native/toolkit>
+#include <xtd/forms/native/window_styles>
+#include <xtd/forms/native/list_box_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../include/xtd/forms/application.h"
-#include "../../../include/xtd/forms/checked_list_box.h"
+#include <xtd/argument_out_of_range_exception>
+#include <xtd/literals>
 
 using namespace std;
 using namespace xtd;

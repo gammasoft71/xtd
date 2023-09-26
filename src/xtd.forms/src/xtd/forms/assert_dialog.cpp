@@ -1,8 +1,8 @@
-#include <xtd/as.h>
-#include <xtd/diagnostics/debug.h>
-#include <xtd/literals.h>
-#include "../../../include/xtd/forms/assert_dialog.h"
-#include "../../../include/xtd/forms/message_dialog.h"
+#include "../../../include/xtd/forms/assert_dialog"
+#include "../../../include/xtd/forms/message_dialog"
+#include <xtd/diagnostics/debug>
+#include <xtd/as>
+#include <xtd/literals>
 
 using namespace xtd;
 using namespace xtd::forms;

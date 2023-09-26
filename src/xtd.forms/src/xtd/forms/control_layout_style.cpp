@@ -1,4 +1,4 @@
-#include "../../../include/xtd/forms/control_layout_style.h"
+#include "../../../include/xtd/forms/control_layout_style"
 
 using namespace xtd;
 using namespace xtd::forms;

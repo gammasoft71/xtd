@@ -1,15 +1,15 @@
-#define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/context_menu.h>
-#include <xtd/forms/native/control.h>
-#include <xtd/forms/native/menu_item.h>
-#undef __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../include/xtd/forms/menu_item.h"
-#include "../../../include/xtd/forms/context_menu.h"
-#include "../../../include/xtd/forms/control.h"
-#include "../../../include/xtd/forms/menu_images.h"
-#include "../../../include/xtd/forms/shortcut.h"
-#include "../../../include/xtd/forms/system_texts.h"
+#include "../../../include/xtd/forms/menu_item"
+#include "../../../include/xtd/forms/context_menu"
+#include "../../../include/xtd/forms/control"
+#include "../../../include/xtd/forms/menu_images"
+#include "../../../include/xtd/forms/shortcut"
+#include "../../../include/xtd/forms/system_texts"
 #include "menu_data.h"
+#define __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/forms/native/context_menu>
+#include <xtd/forms/native/control>
+#include <xtd/forms/native/menu_item>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 
 using namespace xtd;
 using namespace xtd::forms;

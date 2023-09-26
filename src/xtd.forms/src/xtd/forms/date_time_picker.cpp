@@ -1,12 +1,12 @@
+#include "../../../include/xtd/forms/date_time_picker"
+#include <xtd/diagnostics/debug>
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/control.h>
-#include <xtd/forms/native/date_time_picker.h>
-#include <xtd/forms/native/date_time_picker_styles.h>
-#include <xtd/forms/native/extended_window_styles.h>
-#include <xtd/forms/native/window_styles.h>
+#include <xtd/forms/native/control>
+#include <xtd/forms/native/date_time_picker>
+#include <xtd/forms/native/date_time_picker_styles>
+#include <xtd/forms/native/extended_window_styles>
+#include <xtd/forms/native/window_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../include/xtd/forms/date_time_picker.h"
-#include <xtd/diagnostics/debug.h>
 
 using namespace xtd;
 using namespace xtd::forms;

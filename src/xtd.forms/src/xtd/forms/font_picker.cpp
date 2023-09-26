@@ -1,11 +1,11 @@
+#include "../../../include/xtd/forms/font_picker"
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/control.h>
-#include <xtd/forms/native/extended_window_styles.h>
-#include <xtd/forms/native/font_picker.h>
-#include <xtd/forms/native/static_styles.h>
-#include <xtd/forms/native/window_styles.h>
+#include <xtd/forms/native/control>
+#include <xtd/forms/native/extended_window_styles>
+#include <xtd/forms/native/font_picker>
+#include <xtd/forms/native/static_styles>
+#include <xtd/forms/native/window_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../include/xtd/forms/font_picker.h"
 
 using namespace xtd;
 using namespace xtd::forms;

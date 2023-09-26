@@ -1,7 +1,7 @@
-#include "../../../include/xtd/forms/background_worker.h"
-#include "../../../include/xtd/forms/application.h"
-#include <xtd/invalid_operation_exception.h>
-#include <xtd/threading/thread.h>
+#include "../../../include/xtd/forms/background_worker"
+#include "../../../include/xtd/forms/application"
+#include <xtd/threading/thread>
+#include <xtd/invalid_operation_exception>
 
 using namespace std;
 using namespace xtd;

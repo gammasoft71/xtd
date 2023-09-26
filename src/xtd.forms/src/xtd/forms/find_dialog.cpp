@@ -1,14 +1,14 @@
+#include "../../../include/xtd/forms/application"
+#include "../../../include/xtd/forms/find_dialog"
+#include <xtd/diagnostics/process>
+#include <xtd/drawing/system_icons>
+#define __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/forms/native/find_dialog>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/chrono>
+#include <xtd/literals>
 #include <memory>
 #include <vector>
-#include <xtd/chrono>
-#include <xtd/literals.h>
-#define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/find_dialog.h>
-#undef __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/diagnostics/process.h>
-#include <xtd/drawing/system_icons.h>
-#include "../../../include/xtd/forms/application.h"
-#include "../../../include/xtd/forms/find_dialog.h"
 
 using namespace std;
 using namespace xtd;

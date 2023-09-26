@@ -1,5 +1,5 @@
-#include "../../../include/xtd/forms/font_box.h"
-#include "../../../include/xtd/forms/font_dialog.h"
+#include "../../../include/xtd/forms/font_box"
+#include "../../../include/xtd/forms/font_dialog"
 
 using namespace xtd;
 using namespace xtd::drawing;

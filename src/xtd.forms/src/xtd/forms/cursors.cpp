@@ -1,9 +1,9 @@
+#include "../../../include/xtd/forms/cursors"
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/cursors.h>
+#include <xtd/forms/native/cursors>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/argument_exception>
 #include <map>
-#include <xtd/argument_exception.h>
-#include "../../../include/xtd/forms/cursors.h"
 
 using namespace std;
 using namespace xtd;

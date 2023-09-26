@@ -1,26 +1,24 @@
-#include <random>
-#include <stdexcept>
-#include <xtd/as.h>
-#include <xtd/invalid_operation_exception.h>
-#include <xtd/is.h>
-#include <xtd/literals.h>
-#include <xtd/random.h>
-#include <xtd/diagnostics/debug.h>
-#include <xtd/drawing/system_colors.h>
-#include <xtd/drawing/system_icons.h>
+#include "../../../include/xtd/forms/application"
+#include "../../../include/xtd/forms/form"
+#include "../../../include/xtd/forms/form_renderer"
+#include "../../../include/xtd/forms/screen"
+#include "../../../include/xtd/forms/style_sheets/style_sheet"
+#include <xtd/diagnostics/debug>
+#include <xtd/drawing/system_colors>
+#include <xtd/drawing/system_icons>
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/class_styles.h>
-#include <xtd/forms/native/control.h>
-#include <xtd/forms/native/extended_window_styles.h>
-#include <xtd/forms/native/form.h>
-#include <xtd/forms/native/window_styles.h>
+#include <xtd/forms/native/class_styles>
+#include <xtd/forms/native/control>
+#include <xtd/forms/native/extended_window_styles>
+#include <xtd/forms/native/form>
+#include <xtd/forms/native/window_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/window_messages.h>
-#include "../../../include/xtd/forms/application.h"
-#include "../../../include/xtd/forms/form.h"
-#include "../../../include/xtd/forms/form_renderer.h"
-#include "../../../include/xtd/forms/screen.h"
-#include "../../../include/xtd/forms/style_sheets/style_sheet.h"
+#include <xtd/forms/window_messages>
+#include <xtd/as>
+#include <xtd/invalid_operation_exception>
+#include <xtd/is>
+#include <xtd/literals>
+#include <xtd/random>
 
 using namespace std;
 using namespace xtd;
