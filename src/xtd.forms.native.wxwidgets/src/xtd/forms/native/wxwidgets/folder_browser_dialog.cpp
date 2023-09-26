@@ -1,11 +1,10 @@
-#include <xtd/convert_string.h>
-#include <xtd/forms/browser_info_flags.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/folder_browser_dialog.h>
-#include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
-#include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/control_handler"
+#include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode"
+#include <xtd/forms/native/folder_browser_dialog>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-
+#include <xtd/forms/browser_info_flags>
+#include <xtd/convert_string>
 #include <wx/filefn.h>
 #include <wx/dirdlg.h>
 #include <wx/windowptr.h>

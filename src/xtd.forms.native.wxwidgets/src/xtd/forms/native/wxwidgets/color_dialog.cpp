@@ -1,10 +1,10 @@
-#include <xtd/forms/choose_color_flags.h>
-#include <wx/colordlg.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/color_dialog.h>
-#include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
-#include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/control_handler"
+#include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode"
+#include <xtd/forms/native/color_dialog>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/forms/choose_color_flags>
+#include <wx/colordlg.h>
 #if defined(__WXGTK__)
 #undef interface_
 #include <gtk/gtk.h>

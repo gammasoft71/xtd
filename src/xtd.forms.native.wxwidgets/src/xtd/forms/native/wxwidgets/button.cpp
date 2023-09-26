@@ -1,9 +1,9 @@
-#include <xtd/argument_exception.h>
-#include <xtd/cdebug.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/button.h>
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_button.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_button"
+#include <xtd/forms/native/button>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/argument_exception>
+#include <xtd/cdebug>
 
 using namespace xtd;
 using namespace xtd::forms::native;

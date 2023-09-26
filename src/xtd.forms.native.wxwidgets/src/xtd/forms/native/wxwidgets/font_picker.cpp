@@ -1,10 +1,10 @@
-#include <xtd/argument_exception.h>
-#include <xtd/drawing/system_fonts.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/font_picker.h>
-#include <xtd/forms/native/content_alignment.h>
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_font_picker.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_font_picker"
+#include <xtd/forms/native/content_alignment>
+#include <xtd/forms/native/font_picker>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/drawing/system_fonts>
+#include <xtd/argument_exception>
 
 using namespace xtd;
 using namespace xtd::drawing;

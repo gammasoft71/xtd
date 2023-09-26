@@ -1,10 +1,9 @@
-#include <stdexcept>
-#include <xtd/argument_exception.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/application.h>
-#include <xtd/forms/native/loading_indicator.h>
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_loading_indicator.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_loading_indicator"
+#include <xtd/forms/native/application>
+#include <xtd/forms/native/loading_indicator>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/argument_exception>
 
 using namespace xtd;
 using namespace xtd::forms::native;

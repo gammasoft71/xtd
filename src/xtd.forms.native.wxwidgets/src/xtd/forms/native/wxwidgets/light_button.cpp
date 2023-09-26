@@ -1,9 +1,8 @@
-#include <xtd/argument_exception.h>
-#include <xtd/cdebug.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/light_button.h>
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_light_button.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_light_button"
+#include <xtd/forms/native/light_button>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/argument_exception>
 
 using namespace xtd;
 using namespace xtd::forms::native;

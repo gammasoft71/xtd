@@ -3,10 +3,10 @@
 /// @remarks Code from https://github.com/ysc3839/win32-darkmode
 #define TRACE
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode"
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/types.h>
-#include <xtd/diagnostics/trace.h>
+#include <xtd/types>
+#include <xtd/diagnostics/trace>
 
 using namespace xtd;
 

@@ -1,9 +1,9 @@
-#include <map>
-#include <xtd/argument_exception.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/toggle_button.h>
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_toggle_button.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_toggle_button"
+#include <xtd/forms/native/toggle_button>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/argument_exception>
+#include <map>
 
 using namespace xtd;
 using namespace xtd::drawing;

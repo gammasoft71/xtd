@@ -1,10 +1,10 @@
-#include<limits>
-#include <xtd/argument_exception.h>
-#include <xtd/convert_string.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/domain_up_down.h>
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_domain_up_down.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_domain_up_down"
+#include <xtd/forms/native/domain_up_down>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/argument_exception>
+#include <xtd/convert_string>
+#include<limits>
 
 using namespace xtd;
 using namespace xtd::drawing;

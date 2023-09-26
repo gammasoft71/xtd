@@ -1,14 +1,14 @@
+#define __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/forms/native/application>
+#include <xtd/forms/native/settings>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/argument_exception>
+#include <xtd/convert_string>
 #include <wx/string.h>
 #include <wx/config.h>
 #if !defined(__WXMSW__)
 #include <unistd.h>
 #endif
-#include <xtd/argument_exception.h>
-#include <xtd/convert_string.h>
-#define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/application.h>
-#include <xtd/forms/native/settings.h>
-#undef __XTD_FORMS_NATIVE_LIBRARY__
 
 using namespace std;
 using namespace std::literals;

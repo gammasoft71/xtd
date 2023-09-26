@@ -1,6 +1,6 @@
 #if defined(__WXOSX__)
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/cursor.h>
+#include <xtd/forms/native/cursor>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <Quartz/Quartz.h>
 

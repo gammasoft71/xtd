@@ -1,10 +1,10 @@
-#include <xtd/convert_string.h>
-#include <xtd/drawing/bitmap.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/application.h>
-#include <xtd/forms/native/busy_dialog.h>
-#include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/control_handler"
+#include <xtd/forms/native/application>
+#include <xtd/forms/native/busy_dialog>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/drawing/bitmap>
+#include <xtd/convert_string>
 #include <wx/iconbndl.h>
 
 // Workaround : with wxWidgets version <= 3.1.4 wxBusyInfo does not shows hourglass cursor on macOS ==> set public m_InfoFrame...

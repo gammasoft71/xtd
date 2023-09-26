@@ -1,9 +1,9 @@
-#include <map>
-#include <xtd/argument_exception.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/check_box.h>
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_check_box.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_check_box"
+#include <xtd/forms/native/check_box>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/argument_exception>
+#include <map>
 
 using namespace xtd;
 using namespace xtd::drawing;

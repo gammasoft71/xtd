@@ -1,9 +1,9 @@
-#include <limits>
-#include <xtd/argument_exception.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/tab_control.h>
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_tab_control.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_tab_control"
+#include <xtd/forms/native/tab_control>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/argument_exception>
+#include <limits>
 
 using namespace xtd;
 using namespace xtd::drawing;

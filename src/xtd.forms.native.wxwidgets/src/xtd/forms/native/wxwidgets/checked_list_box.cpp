@@ -1,13 +1,12 @@
-#include <limits>
-#include <stdexcept>
-#include <xtd/argument_exception.h>
-#include <xtd/convert_string.h>
-#include <xtd/drawing/system_colors.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/application.h>
-#include <xtd/forms/native/checked_list_box.h>
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_checked_list_box.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_checked_list_box"
+#include <xtd/forms/native/application>
+#include <xtd/forms/native/checked_list_box>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/argument_exception>
+#include <xtd/convert_string>
+#include <xtd/drawing/system_colors>
+#include <limits>
 
 using namespace std;
 using namespace xtd;

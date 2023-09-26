@@ -1,12 +1,12 @@
-#include <xtd/as.h>
-#include <xtd/convert_string.h>
-#include <xtd/drawing/system_colors.h>
-#include <xtd/forms/progress_dialog_flags.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/progress_dialog.h>
-#include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
-#include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/control_handler"
+#include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode"
+#include <xtd/forms/native/progress_dialog>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/drawing/system_colors>
+#include <xtd/forms/progress_dialog_flags>
+#include <xtd/as>
+#include <xtd/convert_string>
 #include <wx/progdlg.h>
 #include <wx/timer.h>
 

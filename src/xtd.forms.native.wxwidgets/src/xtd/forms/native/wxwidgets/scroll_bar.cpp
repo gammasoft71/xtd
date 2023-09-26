@@ -1,8 +1,8 @@
-#include <xtd/argument_exception.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/scroll_bar.h>
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_scroll_bar.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_scroll_bar"
+#include <xtd/forms/native/scroll_bar>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/argument_exception>
 
 using namespace xtd;
 using namespace xtd::drawing;

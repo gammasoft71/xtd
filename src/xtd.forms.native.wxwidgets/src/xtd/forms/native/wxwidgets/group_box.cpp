@@ -1,7 +1,6 @@
-#include <stdexcept>
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/group_box.h>
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_group_box.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_group_box"
+#include <xtd/forms/native/group_box>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 
 using namespace xtd;

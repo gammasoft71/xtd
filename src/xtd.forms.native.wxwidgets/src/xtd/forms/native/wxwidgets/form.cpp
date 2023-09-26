@@ -1,7 +1,3 @@
-#include <xtd/argument_exception.h>
-#include <xtd/diagnostics/debug.h>
-#include <xtd/not_implemented_exception.h>
-#include <xtd/threading/thread.h>
 #include <wx/apptrait.h>
 #if defined(__WXMSW__)
 #include <winsock2.h>
@@ -12,12 +8,16 @@
 #undef min
 #endif
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/application.h>
-#include <xtd/forms/native/control.h>
-#include <xtd/forms/native/form.h>
-#include <xtd/forms/native/screen.h>
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_form.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_form"
+#include <xtd/forms/native/application>
+#include <xtd/forms/native/control>
+#include <xtd/forms/native/form>
+#include <xtd/forms/native/screen>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/argument_exception>
+#include <xtd/diagnostics/debug>
+#include <xtd/not_implemented_exception>
+#include <xtd/threading/thread>
 
 using namespace xtd;
 using namespace xtd::drawing;

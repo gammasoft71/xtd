@@ -1,13 +1,13 @@
 #define __XTD_DRAWING_NATIVE_LIBRARY__
-#include <xtd/convert_string.h>
-#include <xtd/drawing/native/hdc_wrapper.h>
+#include <xtd/drawing/native/hdc_wrapper>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/application.h>
-#include <xtd/forms/native/screen.h>
-#include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/control_handler"
+#include <xtd/forms/native/application>
+#include <xtd/forms/native/screen>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/ustring.h>
+#include <xtd/convert_string>
+#include <xtd/ustring>
 #include <wx/dcscreen.h>
 #include <wx/display.h>
 

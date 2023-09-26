@@ -1,6 +1,6 @@
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/label.h>
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_label.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_label"
+#include <xtd/forms/native/label>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 
 using namespace xtd;
