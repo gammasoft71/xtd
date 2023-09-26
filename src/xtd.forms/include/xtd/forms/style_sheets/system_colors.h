@@ -2,13 +2,13 @@
 /// @brief Contains xtd::forms::style_sheets::system_colors class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "../../forms_export"
+#include <xtd/drawing/color>
+#include <xtd/iequatable>
+#include <xtd/object>
+#include <xtd/ustring>
 #include <memory>
 #include <vector>
-#include <xtd/iequatable.h>
-#include <xtd/object.h>
-#include <xtd/ustring.h>
-#include <xtd/drawing/color.h>
-#include "../../forms_export.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

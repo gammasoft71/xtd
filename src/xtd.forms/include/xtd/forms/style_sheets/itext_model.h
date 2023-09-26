@@ -2,18 +2,18 @@
 /// @brief Contains xtd::forms::style_sheets::itext_model class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "shadows"
+#include "text_decoration"
+#include "text_transformation"
+#include "white_space"
+#include <xtd/drawing/color>
+#include <xtd/drawing/font>
+#include <xtd/drawing/string_format>
+#include <xtd/drawing/system_fonts>
+#include <xtd/forms/content_alignment>
+#include <xtd/interface>
+#include <xtd/ustring>
 #include <memory>
-#include <xtd/interface.h>
-#include <xtd/ustring.h>
-#include <xtd/drawing/color.h>
-#include <xtd/drawing/font.h>
-#include <xtd/drawing/string_format.h>
-#include <xtd/drawing/system_fonts.h>
-#include <xtd/forms/content_alignment.h>
-#include "shadows.h"
-#include "text_decoration.h"
-#include "text_transformation.h"
-#include "white_space.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

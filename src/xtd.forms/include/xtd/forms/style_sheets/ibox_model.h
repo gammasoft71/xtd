@@ -2,22 +2,22 @@
 /// @brief Contains xtd::forms::style_sheets::ibox_model class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "../padding"
+#include "border_color"
+#include "border_radius"
+#include "border_style"
+#include "border_width"
+#include "background_image"
+#include "margin"
+#include "outline_color"
+#include "outline_offset"
+#include "outline_radius"
+#include "outline_style"
+#include "outline_width"
+#include "padding"
+#include <xtd/iequatable>
+#include <xtd/interface>
 #include <array>
-#include <xtd/iequatable.h>
-#include <xtd/interface.h>
-#include "border_color.h"
-#include "border_radius.h"
-#include "border_style.h"
-#include "border_width.h"
-#include "background_image.h"
-#include "margin.h"
-#include "outline_color.h"
-#include "outline_offset.h"
-#include "outline_radius.h"
-#include "outline_style.h"
-#include "outline_width.h"
-#include "padding.h"
-#include "../padding.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

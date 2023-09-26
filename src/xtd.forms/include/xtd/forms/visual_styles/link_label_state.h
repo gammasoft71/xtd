@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::visual_styles::link_label_state enum class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "control_state.h"
+#include "control_state"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

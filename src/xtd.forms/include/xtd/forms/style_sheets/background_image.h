@@ -2,16 +2,16 @@
 /// @brief Contains xtd::forms::style_sheets::background_image class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "../../forms_export"
+#include "image_type"
+#include <xtd/drawing/brush>
+#include <xtd/drawing/color>
+#include <xtd/drawing/rectangle>
+#include <xtd/iequatable>
+#include <xtd/object>
+#include <xtd/uri>
+#include <xtd/ustring>
 #include <memory>
-#include <xtd/iequatable.h>
-#include <xtd/object.h>
-#include <xtd/uri.h>
-#include <xtd/ustring.h>
-#include <xtd/drawing/brush.h>
-#include <xtd/drawing/color.h>
-#include <xtd/drawing/rectangle.h>
-#include "../../forms_export.h"
-#include "image_type.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
