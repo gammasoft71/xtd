@@ -23,48 +23,90 @@ add_sources(
   include/xtd/xtd.forms.native.wxwidgets.h
   include/xtd/xtd.forms.native.wxwidgets
   include/xtd/forms/native/wxwidgets/control_handler.h
+  include/xtd/forms/native/wxwidgets/control_handler
   include/xtd/forms/native/wxwidgets/control_wrapper.h
+  include/xtd/forms/native/wxwidgets/control_wrapper
   include/xtd/forms/native/wxwidgets/control_wrapper.hpp
   include/xtd/forms/native/wxwidgets/dark_mode.h
+  include/xtd/forms/native/wxwidgets/dark_mode
   include/xtd/forms/native/wxwidgets/iwx_evt.h
+  include/xtd/forms/native/wxwidgets/iwx_evt
   include/xtd/forms/native/wxwidgets/wx_button.h
+  include/xtd/forms/native/wxwidgets/wx_button
   include/xtd/forms/native/wxwidgets/wx_check_box.h
+  include/xtd/forms/native/wxwidgets/wx_check_box
   include/xtd/forms/native/wxwidgets/wx_checked_list_box.h
+  include/xtd/forms/native/wxwidgets/wx_checked_list_box
   include/xtd/forms/native/wxwidgets/wx_choice.h
+  include/xtd/forms/native/wxwidgets/wx_choice
   include/xtd/forms/native/wxwidgets/wx_collapsible_panel.h
+  include/xtd/forms/native/wxwidgets/wx_collapsible_panel
   include/xtd/forms/native/wxwidgets/wx_color_picker.h
+  include/xtd/forms/native/wxwidgets/wx_color_picker
   include/xtd/forms/native/wxwidgets/wx_combo_box.h
+  include/xtd/forms/native/wxwidgets/wx_combo_box
   include/xtd/forms/native/wxwidgets/wx_command_link_button.h
+  include/xtd/forms/native/wxwidgets/wx_command_link_button
   include/xtd/forms/native/wxwidgets/wx_control.h
+  include/xtd/forms/native/wxwidgets/wx_control
   include/xtd/forms/native/wxwidgets/wx_date_time_picker.h
+  include/xtd/forms/native/wxwidgets/wx_date_time_picker
   include/xtd/forms/native/wxwidgets/wx_domain_up_down.h
+  include/xtd/forms/native/wxwidgets/wx_domain_up_down
   include/xtd/forms/native/wxwidgets/wx_font_picker.h
+  include/xtd/forms/native/wxwidgets/wx_font_picker
   include/xtd/forms/native/wxwidgets/wx_form.h
+  include/xtd/forms/native/wxwidgets/wx_form
   include/xtd/forms/native/wxwidgets/wx_group_box.h
+  include/xtd/forms/native/wxwidgets/wx_group_box
   include/xtd/forms/native/wxwidgets/wx_label.h
+  include/xtd/forms/native/wxwidgets/wx_label
   include/xtd/forms/native/wxwidgets/wx_light_button.h
+  include/xtd/forms/native/wxwidgets/wx_light_button
   include/xtd/forms/native/wxwidgets/wx_list_box.h
+  include/xtd/forms/native/wxwidgets/wx_list_box
   include/xtd/forms/native/wxwidgets/wx_loading_indicator.h
+  include/xtd/forms/native/wxwidgets/wx_loading_indicator
   include/xtd/forms/native/wxwidgets/wx_month_calendar.h
+  include/xtd/forms/native/wxwidgets/wx_month_calendar
   include/xtd/forms/native/wxwidgets/wx_numeric_up_down.h
+  include/xtd/forms/native/wxwidgets/wx_numeric_up_down
   include/xtd/forms/native/wxwidgets/wx_panel.h
+  include/xtd/forms/native/wxwidgets/wx_panel
   include/xtd/forms/native/wxwidgets/wx_picture_box.h
+  include/xtd/forms/native/wxwidgets/wx_picture_box
   include/xtd/forms/native/wxwidgets/wx_popup_panel.h
+  include/xtd/forms/native/wxwidgets/wx_popup_panel
   include/xtd/forms/native/wxwidgets/wx_progress_bar.h
+  include/xtd/forms/native/wxwidgets/wx_progress_bar
   include/xtd/forms/native/wxwidgets/wx_radio_button.h
+  include/xtd/forms/native/wxwidgets/wx_radio_button
   include/xtd/forms/native/wxwidgets/wx_scroll_bar.h
+  include/xtd/forms/native/wxwidgets/wx_scroll_bar
   include/xtd/forms/native/wxwidgets/wx_status_bar.h
+  include/xtd/forms/native/wxwidgets/wx_status_bar
   include/xtd/forms/native/wxwidgets/wx_switch_button.h
+  include/xtd/forms/native/wxwidgets/wx_switch_button
   include/xtd/forms/native/wxwidgets/wx_tab_control.h
+  include/xtd/forms/native/wxwidgets/wx_tab_control
   include/xtd/forms/native/wxwidgets/wx_tab_page.h
+  include/xtd/forms/native/wxwidgets/wx_tab_page
   include/xtd/forms/native/wxwidgets/wx_text_box.h
+  include/xtd/forms/native/wxwidgets/wx_text_box
   include/xtd/forms/native/wxwidgets/wx_timer.h
+  include/xtd/forms/native/wxwidgets/wx_timer
   include/xtd/forms/native/wxwidgets/wx_toggle_button.h
+  include/xtd/forms/native/wxwidgets/wx_toggle_button
   include/xtd/forms/native/wxwidgets/wx_tool_bar.h
+  include/xtd/forms/native/wxwidgets/wx_tool_bar
   include/xtd/forms/native/wxwidgets/wx_track_bar.h
+  include/xtd/forms/native/wxwidgets/wx_track_bar
   include/xtd/forms/native/wxwidgets/wx_up_down_button.h
+  include/xtd/forms/native/wxwidgets/wx_up_down_button
   include/xtd/forms/native/wxwidgets/wx_user_control.h
+  include/xtd/forms/native/wxwidgets/wx_user_control
   include/xtd/forms/native/wxwidgets/wx_user_window.h
+  include/xtd/forms/native/wxwidgets/wx_user_window
   src/xtd/forms/native/wxwidgets/about_dialog.cpp
   src/xtd/forms/native/wxwidgets/application.cpp
   src/xtd/forms/native/wxwidgets/busy_dialog.cpp

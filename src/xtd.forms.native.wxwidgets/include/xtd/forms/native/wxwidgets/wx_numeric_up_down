@@ -1,0 +1,2 @@
+#pragma once
+#include "wx_numeric_up_down.h"

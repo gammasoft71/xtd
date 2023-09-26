@@ -1,0 +1,2 @@
+#pragma once
+#include "wx_switch_button.h"

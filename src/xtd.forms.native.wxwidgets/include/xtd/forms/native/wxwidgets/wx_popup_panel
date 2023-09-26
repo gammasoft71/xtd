@@ -1,0 +1,2 @@
+#pragma once
+#include "wx_popup_panel.h"
