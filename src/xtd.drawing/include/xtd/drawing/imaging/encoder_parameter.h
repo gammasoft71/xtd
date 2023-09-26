@@ -2,9 +2,9 @@
 /// @brief Contains xtd::drawing::imaging::encoder_parameter class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/iequatable.h>
-#include "encoder.h"
-#include "encoder_parameter_value_type.h"
+#include "encoder"
+#include "encoder_parameter_value_type"
+#include <xtd/iequatable>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

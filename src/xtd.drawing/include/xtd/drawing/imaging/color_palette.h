@@ -2,11 +2,11 @@
 /// @brief Contains xtd::drawing::imaging::color_palette class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "../color"
+#include <xtd/iequatable>
+#include <xtd/object>
 #include <cstdint>
 #include <vector>
-#include <xtd/iequatable.h>
-#include <xtd/object.h>
-#include "../color.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
