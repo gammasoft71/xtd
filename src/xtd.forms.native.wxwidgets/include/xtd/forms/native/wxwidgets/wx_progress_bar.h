@@ -5,13 +5,13 @@
 #endif
 /// @endcond
 
-#include <xtd/argument_exception.h>
-#include <xtd/drawing/system_colors.h>
-#include <xtd/forms/native/create_params.h>
-#include <xtd/forms/native/progress_bar_styles.h>
+#include "control_handler"
+#include <xtd/drawing/system_colors>
+#include <xtd/forms/native/create_params>
+#include <xtd/forms/native/progress_bar_styles>
+#include <xtd/argument_exception>
 #include <wx/gauge.h>
 #include <wx/timer.h>
-#include "control_handler.h"
 
 namespace xtd {
   namespace forms {

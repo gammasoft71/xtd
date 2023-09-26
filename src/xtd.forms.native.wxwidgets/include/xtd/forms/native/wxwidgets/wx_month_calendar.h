@@ -5,16 +5,16 @@
 #endif
 /// @endcond
 
-#include <vector>
-#include <xtd/argument_exception.h>
-#include <xtd/date_time.h>
-#include <xtd/drawing/system_colors.h>
-#include <xtd/forms/native/create_params.h>
-#include <xtd/forms/native/month_calendar_styles.h>
+#include "control_handler"
+#include <xtd/drawing/system_colors>
+#include <xtd/forms/native/create_params>
+#include <xtd/forms/native/month_calendar_styles>
+#include <xtd/argument_exception>
 #include <xtd/chrono>
-#include "control_handler.h"
+#include <xtd/date_time>
 #include <wx/calctrl.h>
 #include <wx/panel.h>
+#include <vector>
 
 namespace xtd {
   namespace forms {

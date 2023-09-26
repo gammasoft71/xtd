@@ -5,18 +5,18 @@
 #endif
 /// @endcond
 
-#include <xtd/argument_exception.h>
-#include <xtd/convert_string.h>
-#include <xtd/environment.h>
-#include <xtd/drawing/system_colors.h>
-#include <xtd/drawing/system_images.h>
-#include <xtd/forms/native/create_params.h>
-#include <xtd/forms/native/application.h>
-#include <xtd/forms/native/button_styles.h>
+#include "control_handler"
+#include "wx_user_window"
+#include <xtd/drawing/system_colors>
+#include <xtd/drawing/system_images>
+#include <xtd/forms/native/create_params>
+#include <xtd/forms/native/application>
+#include <xtd/forms/native/button_styles>
+#include <xtd/argument_exception>
+#include <xtd/convert_string>
+#include <xtd/environment>
 #include <wx/commandlinkbutton.h>
 #include <wx/platform.h>
-#include "control_handler.h"
-#include "wx_user_window.h"
 
 namespace xtd {
   namespace forms {

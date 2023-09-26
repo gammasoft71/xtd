@@ -5,8 +5,8 @@
 #endif
 /// @endcond
 
-#include <xtd/delegate.h>
-#include <xtd/event_args.h>
+#include <xtd/delegate>
+#include <xtd/event_args>
 #include <wx/app.h>
 #include <wx/timer.h>
 
