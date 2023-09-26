@@ -2,18 +2,18 @@
 /// @brief Contains xtd::drawing::drawing_2d/::matrix class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "../../drawing_export"
+#include "../point"
+#include "../point_f"
+#include "../rectangle"
+#include "../rectangle_f"
+#include "drawing2d"
+#include "matrix_order"
+#include <xtd/iequatable>
+#include <xtd/object>
+#include <xtd/ustring>
 #include <cstdint>
 #include <ostream>
-#include <xtd/iequatable.h>
-#include <xtd/object.h>
-#include <xtd/ustring.h>
-#include "../../drawing_export.h"
-#include "matrix_order.h"
-#include "../point.h"
-#include "../point_f.h"
-#include "../rectangle.h"
-#include "../rectangle_f.h"
-#include "drawing2d.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

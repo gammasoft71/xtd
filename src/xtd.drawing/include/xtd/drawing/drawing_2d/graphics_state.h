@@ -2,10 +2,10 @@
 /// @brief Contains xtd::drawing::drawing_2d/::graphics_state class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../../drawing_export.h"
-#include "drawing2d.h"
-#include <xtd/iequatable.h>
-#include <xtd/object.h>
+#include "../../drawing_export"
+#include "drawing2d"
+#include <xtd/iequatable>
+#include <xtd/object>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
