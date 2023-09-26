@@ -9,6 +9,7 @@
 #include <xtd/static.h>
 #include <xtd/types.h>
 #include <xtd/drawing_native_export.h>
+#include <vector>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
