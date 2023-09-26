@@ -2,30 +2,30 @@
 /// @brief Contains xtd::forms::style_sheets::style_sheet class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "../../forms_export"
+#include "../border_style"
+#include "button"
+#include "control"
+#include "form"
+#include "label"
+#include "link_label"
+#include "panel"
+#include "pseudo_state"
+#include "status_bar"
+#include "status_bar_panel"
+#include "system_colors"
+#include "theme"
+#include "user_control"
+#include "toggle_button"
+#include "tool_bar"
+#include "tool_bar_button"
+#include <xtd/web/css/css_reader>
+#include <xtd/event_handler>
+#include <xtd/iequatable>
+#include <xtd/object>
+#include <xtd/uri>
 #include <map>
 #include <vector>
-#include <xtd/event_handler.h>
-#include <xtd/iequatable.h>
-#include <xtd/object.h>
-#include <xtd/uri.h>
-#include <xtd/web/css/css_reader.h>
-#include "../../forms_export.h"
-#include "../border_style.h"
-#include "button.h"
-#include "control.h"
-#include "form.h"
-#include "label.h"
-#include "link_label.h"
-#include "panel.h"
-#include "pseudo_state.h"
-#include "status_bar.h"
-#include "status_bar_panel.h"
-#include "system_colors.h"
-#include "theme.h"
-#include "user_control.h"
-#include "toggle_button.h"
-#include "tool_bar.h"
-#include "tool_bar_button.h"
 
 /// @cond
 class __test_style_sheet__; // Necessary for the test unit to access the private member functions

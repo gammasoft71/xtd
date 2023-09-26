@@ -2,10 +2,10 @@
 /// @brief Contains xtd::forms::style_sheets::border_color class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/iequatable.h>
-#include <xtd/ustring.h>
-#include <xtd/drawing/color.h>
-#include "../../forms_export.h"
+#include "../../forms_export"
+#include <xtd/drawing/color>
+#include <xtd/iequatable>
+#include <xtd/ustring>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

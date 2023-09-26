@@ -2,15 +2,15 @@
 /// @brief Contains xtd::forms::layout::arranged_element_collection collection.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "sorter_none"
+#include <xtd/argument_out_of_range_exception>
+#include <xtd/event_args>
+#include <xtd/event_handler>
+#include <xtd/event>
+#include <xtd/object>
 #include <limits>
 #include <ostream>
 #include <vector>
-#include <xtd/argument_out_of_range_exception.h>
-#include <xtd/event_args.h>
-#include <xtd/event_handler.h>
-#include <xtd/event.h>
-#include <xtd/object.h>
-#include "sorter_none.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

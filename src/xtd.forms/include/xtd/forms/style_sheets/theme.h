@@ -2,11 +2,11 @@
 /// @brief Contains xtd::forms::style_sheets::theme class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/iequatable.h>
-#include <xtd/object.h>
-#include <xtd/uri.h>
-#include <xtd/ustring.h>
-#include "../../forms_export.h"
+#include "../../forms_export"
+#include <xtd/iequatable>
+#include <xtd/object>
+#include <xtd/uri>
+#include <xtd/ustring>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
