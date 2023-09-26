@@ -1,9 +1,9 @@
-#include "../../../../include/xtd/drawing/drawing_2d/hatch_brush.h"
-#include "../../../../include/xtd/drawing/bitmap.h"
-#include <xtd/delegate.h>
+#include "../../../../include/xtd/drawing/drawing_2d/hatch_brush"
+#include "../../../../include/xtd/drawing/bitmap"
 #define __XTD_DRAWING_NATIVE_LIBRARY__
-#include <xtd/drawing/native/brush.h>
+#include <xtd/drawing/native/brush>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
+#include <xtd/delegate>
 
 using namespace xtd;
 using namespace xtd::drawing;

@@ -1,10 +1,9 @@
-#include <stdexcept>
-#include "../../../../include/xtd/drawing/drawing_2d/matrix.h"
+#include "../../../../include/xtd/drawing/drawing_2d/matrix"
 #define __XTD_DRAWING_NATIVE_LIBRARY__
-#include <xtd/drawing/native/matrix.h>
+#include <xtd/drawing/native/matrix>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
-#include <xtd/argument_exception.h>
-#include <xtd/as.h>
+#include <xtd/argument_exception>
+#include <xtd/as>
 
 using namespace std;
 using namespace xtd;
