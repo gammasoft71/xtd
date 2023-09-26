@@ -2,11 +2,11 @@
 /// @brief Contains xtd::drawing::imaging::encoder class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include <xtd/guid>
+#include <xtd/iequatable>
+#include <xtd/object>
 #include <cstdint>
 #include <ostream>
-#include <xtd/guid.h>
-#include <xtd/iequatable.h>
-#include <xtd/object.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

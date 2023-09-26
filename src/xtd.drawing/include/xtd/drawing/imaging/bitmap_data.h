@@ -2,9 +2,9 @@
 /// @brief Contains xtd::drawing::imaging::bitmap_data class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/object.h>
-#include <xtd/types.h>
-#include "pixel_format.h"
+#include "pixel_format"
+#include <xtd/object>
+#include <xtd/types>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

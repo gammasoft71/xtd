@@ -2,9 +2,9 @@
 /// @brief Contains xtd::drawing::imaging::property_item class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include <xtd/object>
 #include <cstdint>
 #include <vector>
-#include <xtd/object.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
