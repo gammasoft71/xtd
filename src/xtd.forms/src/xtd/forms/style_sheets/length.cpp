@@ -1,7 +1,7 @@
-#include "../../../../include/xtd/forms/style_sheets/length.h"
-#include <xtd/as.h>
-#include <xtd/is.h>
-#include <xtd/math.h>
+#include "../../../../include/xtd/forms/style_sheets/length"
+#include <xtd/as>
+#include <xtd/is>
+#include <xtd/math>
 
 using namespace xtd;
 using namespace xtd::forms::style_sheets;

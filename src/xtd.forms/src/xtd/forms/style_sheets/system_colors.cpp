@@ -1,6 +1,6 @@
-#include "../../../../include/xtd/forms/style_sheets/system_colors.h"
-#include <xtd/as.h>
-#include <xtd/is.h>
+#include "../../../../include/xtd/forms/style_sheets/system_colors"
+#include <xtd/as>
+#include <xtd/is>
 
 using namespace xtd;
 using namespace xtd::drawing;

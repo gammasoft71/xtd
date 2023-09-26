@@ -1,7 +1,7 @@
-#include "../../../../include/xtd/forms/properties/resources.h"
-#include <xtd/environment.h>
-#include <xtd/io/file.h>
-#include <xtd/io/path.h>
+#include "../../../../include/xtd/forms/properties/resources"
+#include <xtd/environment>
+#include <xtd/io/file>
+#include <xtd/io/path>
 
 using namespace xtd;
 using namespace io;

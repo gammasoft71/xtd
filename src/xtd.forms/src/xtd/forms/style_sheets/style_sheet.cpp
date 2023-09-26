@@ -1,14 +1,14 @@
-#include "../../../../include/xtd/forms/style_sheets/style_sheet.h"
-#include "../../../../include/xtd/forms/application.h"
-#include <xtd/as.h>
-#include <xtd/is.h>
-#include <xtd/environment.h>
-#include <xtd/drawing/system_colors.h>
-#include <xtd/drawing/drawing_2d/linear_gradient_brush.h>
-#include <xtd/forms/window_messages.h>
-#include <xtd/io/directory.h>
-#include <xtd/io/file.h>
-#include <xtd/io/directory_not_found_exception.h>
+#include "../../../../include/xtd/forms/style_sheets/style_sheet"
+#include "../../../../include/xtd/forms/application"
+#include <xtd/drawing/drawing_2d/linear_gradient_brush>
+#include <xtd/drawing/system_colors>
+#include <xtd/forms/window_messages>
+#include <xtd/io/directory>
+#include <xtd/io/directory_not_found_exception>
+#include <xtd/io/file>
+#include <xtd/as>
+#include <xtd/is>
+#include <xtd/environment>
 
 using namespace std;
 using namespace xtd;
