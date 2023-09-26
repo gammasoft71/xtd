@@ -1,13 +1,13 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/types.h>
+#include <xtd/native/types>
 #undef __XTD_CORE_NATIVE_LIBRARY__
+#include "../../include/xtd/ustring"
+#include "../../include/xtd/typeof"
+#include "../../include/xtd/convert_string"
+#include "../../include/xtd/format_exception"
+#include "../../include/xtd/null_pointer_exception"
+#include "../../include/xtd/diagnostics/stack_frame"
 #include <iomanip>
-#include "../../include/xtd/ustring.h"
-#include "../../include/xtd/typeof.h"
-#include "../../include/xtd/convert_string.h"
-#include "../../include/xtd/format_exception.h"
-#include "../../include/xtd/null_pointer_exception.h"
-#include "../../include/xtd/diagnostics/stack_frame.h"
 
 using namespace std;
 using namespace xtd;

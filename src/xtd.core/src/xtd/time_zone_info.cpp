@@ -1,11 +1,11 @@
+#include "../include/xtd/as"
+#include "../include/xtd/is"
+#include "../include/xtd/time_zone_info"
+#include "../include/xtd/time_zone_not_found_exception"
+#include "../include/xtd/chrono"
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/date_time.h>
+#include <xtd/native/date_time>
 #undef __XTD_CORE_NATIVE_LIBRARY__
-#include "../include/xtd/as.h"
-#include "../include/xtd/is.h"
-#include "../include/xtd/time_zone_info.h"
-#include "../include/xtd/time_zone_not_found_exception.h"
-#include "../include/xtd/chrono.h"
 #include <list>
 
 using namespace std;

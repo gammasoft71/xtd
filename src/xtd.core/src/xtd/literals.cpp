@@ -1,5 +1,5 @@
-#include "../../include/xtd/as.h"
-#include "../../include/xtd/translator.h"
+#include "../../include/xtd/as"
+#include "../../include/xtd/translator"
 
 using namespace std;
 using namespace xtd;

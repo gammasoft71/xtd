@@ -1,6 +1,6 @@
-#include "../../include/xtd/ustring.h"
-#include "../../include/xtd/register_any_stringer.h"
-#include "../../include/xtd/types.h"
+#include "../../include/xtd/ustring"
+#include "../../include/xtd/register_any_stringer"
+#include "../../include/xtd/types"
 
 using namespace std;
 using namespace xtd;

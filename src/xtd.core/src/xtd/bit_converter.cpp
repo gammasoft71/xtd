@@ -1,6 +1,6 @@
+#include "../../include/xtd/bit_converter"
+#include "../../include/xtd/argument_out_of_range_exception"
 #include <cstring>
-#include "../../include/xtd/bit_converter.h"
-#include "../../include/xtd/argument_out_of_range_exception.h"
 
 using namespace std;
 using namespace xtd;

@@ -1,9 +1,9 @@
-#include "../../include/xtd/as.h"
-#include "../../include/xtd/guid.h"
-#include "../../include/xtd/argument_exception.h"
-#include "../../include/xtd/format_exception.h"
+#include "../../include/xtd/as"
+#include "../../include/xtd/guid"
+#include "../../include/xtd/argument_exception"
+#include "../../include/xtd/format_exception"
 #define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/guid.h>
+#include <xtd/native/guid>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
 using namespace xtd;
