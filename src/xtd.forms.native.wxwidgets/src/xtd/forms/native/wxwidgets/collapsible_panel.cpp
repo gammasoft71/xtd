@@ -1,9 +1,8 @@
-#include <stdexcept>
-#include <xtd/argument_exception.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/collapsible_panel.h>
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_collapsible_panel.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_collapsible_panel"
+#include <xtd/forms/native/collapsible_panel>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/argument_exception>
 
 using namespace xtd;
 using namespace xtd::drawing;

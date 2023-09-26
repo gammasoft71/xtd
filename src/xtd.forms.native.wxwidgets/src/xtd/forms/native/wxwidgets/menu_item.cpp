@@ -1,14 +1,14 @@
-#include <xtd/argument_exception.h>
-#include <xtd/convert_string.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/menu_item.h>
-#include <xtd/forms/native/menu_item_kind.h>
-#include <xtd/forms/native/virtual_keys.h>
+#include <xtd/forms/native/menu_item>
+#include <xtd/forms/native/menu_item_kind>
+#include <xtd/forms/native/virtual_keys>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include <map>
+#include <xtd/argument_exception>
+#include <xtd/convert_string>
 #include <wx/app.h>
 #include <wx/menu.h>
 #include <wx/menuitem.h>
+#include <map>
 
 using namespace std;
 using namespace xtd;

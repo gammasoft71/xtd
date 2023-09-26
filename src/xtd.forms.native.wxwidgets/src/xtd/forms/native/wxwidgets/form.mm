@@ -1,9 +1,9 @@
 #if defined(__WXOSX__)
-#include <xtd/argument_exception.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/form.h>
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_form.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_form"
+#include <xtd/forms/native/form>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/argument_exception>
 #include <AppKit/AppKit.h>
 
 using namespace xtd;

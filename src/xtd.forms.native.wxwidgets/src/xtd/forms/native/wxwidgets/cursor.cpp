@@ -1,11 +1,9 @@
-#include <stdexcept>
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/cursor.h>
+#include <xtd/forms/native/cursor>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <wx/bitmap.h>
 #include <wx/cursor.h>
 #include <wx/window.h>
-
 #if defined(__WXMSW__)
 #include <Windows.h>
 #include <Windowsx.h>

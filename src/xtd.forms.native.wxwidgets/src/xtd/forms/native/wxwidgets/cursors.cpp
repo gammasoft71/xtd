@@ -1,11 +1,10 @@
-#include <stdexcept>
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/cursors.h>
+#include <xtd/forms/native/cursors>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/environment.h>
-#include <xtd/drawing/point.h>
-#include <xtd/io/path.h>
-#include <xtd/ustring.h>
+#include <xtd/drawing/point>
+#include <xtd/io/path>
+#include <xtd/environment>
+#include <xtd/ustring>
 #include <wx/cursor.h>
 #include <wx/image.h>
 

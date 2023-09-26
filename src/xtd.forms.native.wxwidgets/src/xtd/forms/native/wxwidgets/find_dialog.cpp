@@ -1,11 +1,11 @@
-#include <xtd/literals.h>
-#include <xtd/convert_string.h>
-#include <xtd/drawing/system_colors.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/find_dialog.h>
-#include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
-#include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/control_handler"
+#include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode"
+#include <xtd/forms/native/find_dialog>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/drawing/system_colors>
+#include <xtd/convert_string>
+#include <xtd/literals>
 #include <wx/fdrepdlg.h>
 
 using namespace xtd;

@@ -1,9 +1,9 @@
-#include <xtd/argument_exception.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/tab_page.h>
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_tab_page.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_tab_page"
+#include <xtd/forms/native/tab_page>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/convert_string.h>
+#include <xtd/argument_exception>
+#include <xtd/convert_string>
 
 using namespace xtd;
 using namespace xtd::drawing;

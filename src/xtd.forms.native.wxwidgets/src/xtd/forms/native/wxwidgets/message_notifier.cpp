@@ -1,15 +1,15 @@
-#include <xtd/convert_string.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/message_notifier.h>
-#include <xtd/forms/native/message_notifier_styles.h>
-#include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/control_handler"
+#include <xtd/forms/native/message_notifier>
+#include <xtd/forms/native/message_notifier_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/convert_string>
 #include <wx/app.h>
 #include <wx/notifmsg.h>
 #include <wx/icon.h>
+
 using namespace xtd;
 using namespace xtd::forms::native;
-
 
 //int32 convert_to_buttons(uint32 style){
 //    switch(style)

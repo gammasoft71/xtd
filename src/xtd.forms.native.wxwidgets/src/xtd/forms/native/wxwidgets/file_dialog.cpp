@@ -1,10 +1,10 @@
-#include <xtd/io/path.h>
-#include <xtd/convert_string.h>
-#include <xtd/forms/open_file_name_flags.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/file_dialog.h>
-#include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/control_handler"
+#include <xtd/forms/native/file_dialog>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/forms/open_file_name_flags>
+#include <xtd/io/path>
+#include <xtd/convert_string>
 #include <wx/filedlg.h>
 #include <wx/windowptr.h>
 

@@ -1,12 +1,12 @@
-#include <xtd/convert_string.h>
-#include <xtd/drawing/system_colors.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/application.h>
-#include <xtd/forms/native/dialog_box_identifiers.h>
-#include <xtd/forms/native/input_dialog.h>
-#include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
-#include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/control_handler"
+#include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode"
+#include <xtd/forms/native/application>
+#include <xtd/forms/native/dialog_box_identifiers>
+#include <xtd/forms/native/input_dialog>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/drawing/system_colors>
+#include <xtd/convert_string>
 #include <wx/textdlg.h>
 #include <wx/windowptr.h>
 

@@ -1,10 +1,9 @@
-#include <stdexcept>
-#include <xtd/argument_exception.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/application.h>
-#include <xtd/forms/native/timer.h>
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_timer.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_timer"
+#include <xtd/forms/native/application>
+#include <xtd/forms/native/timer>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/argument_exception>
 #include <wx/app.h>
 
 using namespace xtd;

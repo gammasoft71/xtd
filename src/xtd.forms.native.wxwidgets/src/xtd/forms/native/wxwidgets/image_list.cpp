@@ -1,12 +1,12 @@
-#include <list>
-#include <xtd/argument_exception.h>
-#include <xtd/as.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/image_list.h>
+#include <xtd/forms/native/image_list>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/argument_exception>
+#include <xtd/as>
 #include <wx/image.h>
 #include <wx/bitmap.h>
 #include <wx/imaglist.h>
+#include <list>
 
 using namespace xtd;
 using namespace xtd::forms::native;

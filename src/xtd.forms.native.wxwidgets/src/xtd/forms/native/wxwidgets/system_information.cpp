@@ -1,3 +1,7 @@
+#define __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/forms/native/arranged_direction_window>
+#include <xtd/forms/native/system_information>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <wx/settings.h>
 #include <wx/frame.h>
 #if defined(__WXMSW__)
@@ -5,10 +9,6 @@
 #undef max
 #undef min
 #endif
-#define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/arranged_direction_window.h>
-#include <xtd/forms/native/system_information.h>
-#undef __XTD_FORMS_NATIVE_LIBRARY__
 
 using namespace xtd;
 using namespace xtd::forms::native;

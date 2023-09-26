@@ -1,10 +1,10 @@
-#include <xtd/argument_exception.h>
-#include <xtd/diagnostics/stopwatch.h>
-#include <xtd/cdebug.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/tool_bar.h>
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_tool_bar.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_tool_bar"
+#include <xtd/forms/native/tool_bar>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/diagnostics/stopwatch>
+#include <xtd/argument_exception>
+#include <xtd/cdebug>
 
 using namespace xtd;
 using namespace xtd::drawing;

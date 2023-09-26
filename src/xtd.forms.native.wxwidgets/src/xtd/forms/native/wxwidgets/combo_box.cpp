@@ -1,13 +1,12 @@
-#include <limits>
-#include <stdexcept>
-#include <xtd/argument_exception.h>
-#include <xtd/convert_string.h>
-#include <xtd/drawing/system_colors.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/application.h>
-#include <xtd/forms/native/combo_box.h>
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_combo_box.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_combo_box"
+#include <xtd/forms/native/application>
+#include <xtd/forms/native/combo_box>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/drawing/system_colors>
+#include <xtd/argument_exception>
+#include <xtd/convert_string>
+#include <limits>
 
 using namespace std;
 using namespace xtd;

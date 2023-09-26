@@ -1,8 +1,8 @@
 // Workaround : When wxWidgets destroy the tool bar tool with a control or drop down menu, it destroy the control and the drop down menu. But with xtd, the control and the drop down menu are managed by xtd and they can be destroyed.
 // To prevent destroy control and drop down menu change the tool bar tool style to wxTOOL_STYLE_BUTTON et set drop down menu to null...
 
+#include <xtd/types>
 #include <wx/toolbar.h>
-#include <xtd/types.h>
 
 // We need to access the private members of the wxToolBarToolBase class.
 // See https://stackoverflow.com/questions/424104/can-i-access-private-members-from-outside-the-class-without-using-friends for more info.
