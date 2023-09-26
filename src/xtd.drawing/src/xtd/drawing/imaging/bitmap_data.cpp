@@ -1,4 +1,4 @@
-#include "../../../../include/xtd/drawing/imaging/bitmap_data.h"
+#include "../../../../include/xtd/drawing/imaging/bitmap_data"
 
 using namespace std;
 using namespace xtd;
