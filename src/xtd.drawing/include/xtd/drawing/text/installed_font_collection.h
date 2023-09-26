@@ -2,9 +2,9 @@
 /// @brief Contains xtd::drawing::text::installed_font_collection class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "../../drawing_export"
+#include "font_collection"
 #include <vector>
-#include "../../drawing_export.h"
-#include "font_collection.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
