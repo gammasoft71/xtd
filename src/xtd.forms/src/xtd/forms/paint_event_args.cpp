@@ -1,9 +1,9 @@
+#include "../../../include/xtd/forms/control"
+#include "../../../include/xtd/forms/paint_event_args"
+#include "../../../include/xtd/forms/system_information"
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/control.h>
+#include <xtd/forms/native/control>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../include/xtd/forms/control.h"
-#include "../../../include/xtd/forms/paint_event_args.h"
-#include "../../../include/xtd/forms/system_information.h"
 
 using namespace xtd;
 using namespace xtd::forms;

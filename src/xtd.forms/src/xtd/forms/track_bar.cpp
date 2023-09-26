@@ -1,9 +1,9 @@
+#include "../../../include/xtd/forms/track_bar"
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/track_bar.h>
-#include <xtd/forms/native/track_bar_styles.h>
+#include <xtd/forms/native/track_bar>
+#include <xtd/forms/native/track_bar_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/window_messages.h>
-#include "../../../include/xtd/forms/track_bar.h"
+#include <xtd/forms/window_messages>
 #include <algorithm>
 
 using namespace xtd;

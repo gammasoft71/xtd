@@ -1,13 +1,13 @@
+#include "../../../include/xtd/forms/month_calendar"
+#include "../../../include/xtd/forms/application"
+#include <xtd/diagnostics/debug>
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/control.h>
-#include <xtd/forms/native/month_calendar.h>
-#include <xtd/forms/native/month_calendar_styles.h>
-#include <xtd/forms/native/extended_window_styles.h>
-#include <xtd/forms/native/window_styles.h>
+#include <xtd/forms/native/control>
+#include <xtd/forms/native/month_calendar>
+#include <xtd/forms/native/month_calendar_styles>
+#include <xtd/forms/native/extended_window_styles>
+#include <xtd/forms/native/window_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../include/xtd/forms/month_calendar.h"
-#include "../../../include/xtd/forms/application.h"
-#include <xtd/diagnostics/debug.h>
 
 using namespace xtd;
 using namespace xtd::forms;

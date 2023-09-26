@@ -1,6 +1,6 @@
-#include "../../../include/xtd/forms/switch_button.h"
-#include "../../../include/xtd/forms/application.h"
-#include "../../../include/xtd/forms/control_paint.h"
+#include "../../../include/xtd/forms/application"
+#include "../../../include/xtd/forms/control_paint"
+#include "../../../include/xtd/forms/switch_button"
 
 using namespace xtd;
 using namespace xtd::forms;

@@ -1,16 +1,16 @@
-#include "xtd/math.h"
+#include "../../../include/xtd/forms/collapsible_panel"
+#include "../../../include/xtd/forms/form"
+#include "../../../include/xtd/forms/horizontal_layout_panel"
+#include "../../../include/xtd/forms/label"
+#include "../../../include/xtd/forms/message_notifier"
+#include "../../../include/xtd/forms/picture_box"
+#include "../../../include/xtd/forms/screen"
+#include "../../../include/xtd/forms/vertical_layout_panel"
+#include <xtd/drawing/system_icons>
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/message_notifier.h>
+#include <xtd/forms/native/message_notifier>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/drawing/system_icons.h>
-#include "../../../include/xtd/forms/message_notifier.h"
-#include "../../../include/xtd/forms/form.h"
-#include "../../../include/xtd/forms/label.h"
-#include "../../../include/xtd/forms/collapsible_panel.h"
-#include "../../../include/xtd/forms/picture_box.h"
-#include "../../../include/xtd/forms/horizontal_layout_panel.h"
-#include "../../../include/xtd/forms/vertical_layout_panel.h"
-#include "../../../include/xtd/forms/screen.h"
+#include <xtd/math>
 
 using namespace xtd;
 using namespace xtd::forms;

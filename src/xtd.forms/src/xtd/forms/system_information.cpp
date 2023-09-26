@@ -1,7 +1,7 @@
+#include "../../../include/xtd/forms/system_information"
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/system_information.h>
+#include <xtd/forms/native/system_information>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../include/xtd/forms/system_information.h"
 
 using namespace xtd;
 using namespace xtd::forms;

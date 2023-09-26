@@ -1,5 +1,5 @@
-#include "../../../include/xtd/forms/application.h"
-#include "../../../include/xtd/forms/shadow.h"
+#include "../../../include/xtd/forms/application"
+#include "../../../include/xtd/forms/shadow"
 
 using namespace std;
 using namespace xtd;

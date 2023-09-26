@@ -1,15 +1,15 @@
-#define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/menu.h>
-#include <xtd/forms/native/menu_item.h>
-#undef __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/as.h>
-#include <xtd/argument_exception.h>
-#include <xtd/is.h>
-#include "../../../include/xtd/forms/menu.h"
-#include "../../../include/xtd/forms/context_menu.h"
-#include "../../../include/xtd/forms/main_menu.h"
-#include "../../../include/xtd/forms/menu_item.h"
+#include "../../../include/xtd/forms/context_menu"
+#include "../../../include/xtd/forms/main_menu"
+#include "../../../include/xtd/forms/menu"
+#include "../../../include/xtd/forms/menu_item"
 #include "menu_data.h"
+#define __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/forms/native/menu>
+#include <xtd/forms/native/menu_item>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/argument_exception>
+#include <xtd/as>
+#include <xtd/is>
 
 using namespace std;
 using namespace xtd;

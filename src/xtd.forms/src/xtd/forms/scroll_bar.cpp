@@ -1,8 +1,8 @@
+#include "../../../include/xtd/forms/scroll_bar"
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/scroll_bar.h>
-#include <xtd/forms/window_messages.h>
+#include <xtd/forms/native/scroll_bar>
+#include <xtd/forms/window_messages>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../include/xtd/forms/scroll_bar.h"
 
 using namespace xtd;
 using namespace xtd::drawing;

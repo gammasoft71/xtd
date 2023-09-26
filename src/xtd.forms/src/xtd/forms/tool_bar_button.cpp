@@ -1,5 +1,5 @@
-#include "../../../include/xtd/forms/tool_bar_button.h"
-#include "../../../include/xtd/forms/tool_bar.h"
+#include "../../../include/xtd/forms/tool_bar_button"
+#include "../../../include/xtd/forms/tool_bar"
 #include "tool_bar_button_data.h"
 
 using namespace std;

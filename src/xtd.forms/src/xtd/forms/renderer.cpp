@@ -1,7 +1,7 @@
-#include "../../../include/xtd/forms/renderer.h"
-#include "../../../include/xtd/forms/button_renderer.h"
-#include "../../../include/xtd/forms/check_box_renderer.h"
-#include "../../../include/xtd/forms/radio_button_renderer.h"
+#include "../../../include/xtd/forms/button_renderer"
+#include "../../../include/xtd/forms/check_box_renderer"
+#include "../../../include/xtd/forms/radio_button_renderer"
+#include "../../../include/xtd/forms/renderer"
 
 using namespace std;
 using namespace xtd;

@@ -1,15 +1,14 @@
-#define _USE_MATH_DEFINES
-#include <cmath>
-#include <xtd/drawing/solid_brush.h>
-#include <xtd/drawing/string_format.h>
+#include "../../../include/xtd/forms/loading_indicator"
+#include <xtd/drawing/solid_brush>
+#include <xtd/drawing/string_format>
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/control.h>
-#include <xtd/forms/native/extended_window_styles.h>
-#include <xtd/forms/native/loading_indicator.h>
-#include <xtd/forms/native/loading_indicator_styles.h>
-#include <xtd/forms/native/window_styles.h>
+#include <xtd/forms/native/control>
+#include <xtd/forms/native/extended_window_styles>
+#include <xtd/forms/native/loading_indicator>
+#include <xtd/forms/native/loading_indicator_styles>
+#include <xtd/forms/native/window_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../include/xtd/forms/loading_indicator.h"
+#include <xtd/math>
 
 using namespace xtd;
 using namespace xtd::forms;
@@ -93,8 +92,8 @@ void loading_indicator::on_paint(paint_event_args& e) {
     e.graphics().translate_transform(e.clip_rectangle().width() / 2.0f, e.clip_rectangle().height() / 2.0f);
     auto angle = -360.f / data_->intervals;
     e.graphics().rotate_transform(data_->frame * angle);
-    auto height = static_cast<float>(std::min(e.clip_rectangle().width(), e.clip_rectangle().height())) / data_->radius_factor;
-    auto width = static_cast<float>(std::min(e.clip_rectangle().width(), e.clip_rectangle().height())) / data_->radius_factor;
+    auto height = static_cast<float>(math::min(e.clip_rectangle().width(), e.clip_rectangle().height())) / data_->radius_factor;
+    auto width = static_cast<float>(math::min(e.clip_rectangle().width(), e.clip_rectangle().height())) / data_->radius_factor;
     for (auto n = 0; n < data_->intervals; n++) {
       auto opacity_index = enabled() ? n + 1 : 2;
       auto opacity = opacity_index * (255 + 1) / data_->intervals - 1;

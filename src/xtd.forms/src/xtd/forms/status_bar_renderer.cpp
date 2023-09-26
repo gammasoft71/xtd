@@ -1,9 +1,9 @@
+#include "../../../include/xtd/forms/style_sheets/status_bar"
+#include "../../../include/xtd/forms/style_sheets/pseudo_state"
+#include "../../../include/xtd/forms/style_sheets/style_sheet"
+#include "../../../include/xtd/forms/status_bar_renderer"
+#include "../../../include/xtd/forms/text_renderer"
 #include <tuple>
-#include "../../../include/xtd/forms/status_bar_renderer.h"
-#include "../../../include/xtd/forms/text_renderer.h"
-#include "../../../include/xtd/forms/style_sheets/status_bar.h"
-#include "../../../include/xtd/forms/style_sheets/pseudo_state.h"
-#include "../../../include/xtd/forms/style_sheets/style_sheet.h"
 
 using namespace std;
 using namespace xtd;

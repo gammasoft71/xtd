@@ -1,5 +1,5 @@
-#include "../../../include/xtd/forms/trace_message_dialog.h"
-#include "../../../include/xtd/forms/application.h"
+#include "../../../include/xtd/forms/trace_message_dialog"
+#include "../../../include/xtd/forms/application"
 
 using namespace xtd;
 using namespace xtd::forms;

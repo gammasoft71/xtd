@@ -1,18 +1,18 @@
-#include <xtd/as.h>
-#include <xtd/is.h>
-#include <xtd/drawing/system_pens.h>
-#define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/control.h>
-#include <xtd/forms/native/tool_bar.h>
-#include <xtd/forms/native/tool_bar_styles.h>
-#undef __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/window_messages.h>
-#include "../../../include/xtd/forms/control_paint.h"
-#include "../../../include/xtd/forms/tool_bar.h"
-#include "../../../include/xtd/forms/tool_bar_renderer.h"
-#include "../../../include/xtd/forms/tool_bar_button_renderer.h"
+#include "../../../include/xtd/forms/control_paint"
+#include "../../../include/xtd/forms/tool_bar"
+#include "../../../include/xtd/forms/tool_bar_renderer"
+#include "../../../include/xtd/forms/tool_bar_button_renderer"
 #include "tool_bar_button_control.h"
 #include "tool_bar_button_data.h"
+#include <xtd/drawing/system_pens>
+#define __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/forms/native/control>
+#include <xtd/forms/native/tool_bar>
+#include <xtd/forms/native/tool_bar_styles>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/forms/window_messages>
+#include <xtd/as>
+#include <xtd/is>
 
 using namespace std;
 using namespace xtd;

@@ -1,4 +1,4 @@
-#include "../../../include/xtd/forms/split_container.h"
+#include "../../../include/xtd/forms/split_container"
 
 using namespace xtd;
 using namespace xtd::forms;
