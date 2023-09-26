@@ -9,39 +9,73 @@ add_sources(
   include/xtd/xtd.drawing.native
   include/xtd/xtd.drawing.native.h
   include/xtd/drawing/native/brush.h
+  include/xtd/drawing/native/brush
   include/xtd/drawing/native/compositing_modes.h
+  include/xtd/drawing/native/compositing_modes
   include/xtd/drawing/native/compositing_qualities.h
+  include/xtd/drawing/native/compositing_qualities
   include/xtd/drawing/native/copy_pixel_operations.h
+  include/xtd/drawing/native/copy_pixel_operations
   include/xtd/drawing/native/flush_intentions.h
+  include/xtd/drawing/native/flush_intentions
   include/xtd/drawing/native/font_family.h
+  include/xtd/drawing/native/font_family
   include/xtd/drawing/native/font.h
+  include/xtd/drawing/native/font
   include/xtd/drawing/native/frame_dimension.h
+  include/xtd/drawing/native/frame_dimension
   include/xtd/drawing/native/graphics_path.h
+  include/xtd/drawing/native/graphics_path
   include/xtd/drawing/native/graphics.h
+  include/xtd/drawing/native/graphics
   include/xtd/drawing/native/hot_key_prefixes.h
+  include/xtd/drawing/native/hot_key_prefixes
   include/xtd/drawing/native/icon.h
+  include/xtd/drawing/native/icon
   include/xtd/drawing/native/image_flags.h
+  include/xtd/drawing/native/image_flags
   include/xtd/drawing/native/image_formats.h
+  include/xtd/drawing/native/image_formats
   include/xtd/drawing/native/image.h
+  include/xtd/drawing/native/image
   include/xtd/drawing/native/interpolation_modes.h
+  include/xtd/drawing/native/interpolation_modes
   include/xtd/drawing/native/line_caps.h
+  include/xtd/drawing/native/line_caps
   include/xtd/drawing/native/line_joins.h
+  include/xtd/drawing/native/line_joins
   include/xtd/drawing/native/matrix_orders.h
+  include/xtd/drawing/native/matrix_orders
   include/xtd/drawing/native/matrix.h
+  include/xtd/drawing/native/matrix
   include/xtd/drawing/native/path_fill_modes.h
+  include/xtd/drawing/native/path_fill_modes
   include/xtd/drawing/native/pen.h
+  include/xtd/drawing/native/pen
   include/xtd/drawing/native/pixel_offset_modes.h
+  include/xtd/drawing/native/pixel_offset_modes
   include/xtd/drawing/native/region.h
+  include/xtd/drawing/native/region
   include/xtd/drawing/native/rotate_flip_types.h
+  include/xtd/drawing/native/rotate_flip_types
   include/xtd/drawing/native/smoothing_modes.h
+  include/xtd/drawing/native/smoothing_modes
   include/xtd/drawing/native/string_alignments.h
+  include/xtd/drawing/native/string_alignments
   include/xtd/drawing/native/string_formats.h
+  include/xtd/drawing/native/string_formats
   include/xtd/drawing/native/string_trimmings.h
+  include/xtd/drawing/native/string_trimmings
   include/xtd/drawing/native/system_colors.h
+  include/xtd/drawing/native/system_colors
   include/xtd/drawing/native/system_fonts.h
+  include/xtd/drawing/native/system_fonts
   include/xtd/drawing/native/system_images.h
+  include/xtd/drawing/native/system_images
   include/xtd/drawing/native/text_rendering.h
+  include/xtd/drawing/native/text_rendering
   include/xtd/drawing/native/toolkit.h
+  include/xtd/drawing/native/toolkit
 )
 target_type(INTERFACE_LIBRARY)
 

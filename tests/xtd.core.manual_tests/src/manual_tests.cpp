@@ -1,33 +1,17 @@
-#include <xtd/threading/spin_lock>
-#include <xtd/threading/thread>
+#include <xtd/io/directory>
+#include <xtd/io/file>
+#include <xtd/io/path>
 #include <xtd/console>
 #include <xtd/startup>
 
 using namespace xtd;
-using namespace xtd::threading;
+using namespace xtd::io;
 
 class core_manual_test {
 public:
   static auto entry_point() {
-    ::spin_lock spin_lock;
-    auto thread1 = thread::start_new([&] {
-      auto lock_taken = false;
-      spin_lock.enter(lock_taken);
-      console::write_line("Thread 1 locked.");
-      thread::sleep(1000);
-      spin_lock.exit();
-    });
-
-    auto thread2 = thread::start_new([&] {
-      thread::sleep(500);
-      auto lock_taken = false;
-      spin_lock.enter(lock_taken);
-      console::write_line("Thread 2 locked.");
-      spin_lock.exit();
-    });
-
-    thread1.join();
-    thread2.join();
+    for (auto file_name : directory::get_files("/Users/yves/Projects/xtd/src/xtd.drawing.native/include/xtd/drawing/native", "*.h"))
+      file::write_all_lines(path::change_extension(file_name, ""), {"#pragma once"_s, ustring::format("#include \"{}\"", path::get_file_name(file_name))});
   }
 };
 
