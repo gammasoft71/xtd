@@ -1,8 +1,8 @@
+#include "../../../include/xtd/forms/style_sheets/panel"
+#include "../../../include/xtd/forms/style_sheets/pseudo_state"
+#include "../../../include/xtd/forms/style_sheets/style_sheet"
+#include "../../../include/xtd/forms/panel_renderer"
 #include <tuple>
-#include "../../../include/xtd/forms/panel_renderer.h"
-#include "../../../include/xtd/forms/style_sheets/panel.h"
-#include "../../../include/xtd/forms/style_sheets/pseudo_state.h"
-#include "../../../include/xtd/forms/style_sheets/style_sheet.h"
 
 using namespace std;
 using namespace xtd;

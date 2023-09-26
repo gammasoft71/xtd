@@ -1,8 +1,8 @@
+#include "../../../include/xtd/forms/style_sheets/tool_bar"
+#include "../../../include/xtd/forms/style_sheets/pseudo_state"
+#include "../../../include/xtd/forms/style_sheets/style_sheet"
+#include "../../../include/xtd/forms/tool_bar_renderer"
 #include <tuple>
-#include "../../../include/xtd/forms/tool_bar_renderer.h"
-#include "../../../include/xtd/forms/style_sheets/tool_bar.h"
-#include "../../../include/xtd/forms/style_sheets/pseudo_state.h"
-#include "../../../include/xtd/forms/style_sheets/style_sheet.h"
 
 using namespace std;
 using namespace xtd;

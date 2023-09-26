@@ -1,9 +1,9 @@
+#include "../include/xtd/forms/control"
+#include "../include/xtd/forms/mouse_event_args"
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/control.h>
-#include <xtd/forms/native/mouse_key.h>
+#include <xtd/forms/native/control>
+#include <xtd/forms/native/mouse_key>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include "../include/xtd/forms/control.h"
-#include "../include/xtd/forms/mouse_event_args.h"
 
 using namespace std;
 using namespace xtd::forms;

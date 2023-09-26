@@ -1,16 +1,16 @@
-#include <xtd/convert_string.h>
-#include <xtd/drawing/system_colors.h>
+#include "../../../include/xtd/forms/application"
+#include "../../../include/xtd/forms/text_box"
+#include <xtd/drawing/pens>
+#include <xtd/drawing/system_colors>
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/control.h>
-#include <xtd/forms/native/edit_styles.h>
-#include <xtd/forms/native/extended_window_styles.h>
-#include <xtd/forms/native/text_box.h>
-#include <xtd/forms/native/toolkit.h>
-#include <xtd/forms/native/window_styles.h>
+#include <xtd/forms/native/control>
+#include <xtd/forms/native/edit_styles>
+#include <xtd/forms/native/extended_window_styles>
+#include <xtd/forms/native/text_box>
+#include <xtd/forms/native/toolkit>
+#include <xtd/forms/native/window_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/drawing/pens.h>
-#include "../../../include/xtd/forms/application.h"
-#include "../../../include/xtd/forms/text_box.h"
+#include <xtd/convert_string>
 
 using namespace std;
 using namespace xtd;

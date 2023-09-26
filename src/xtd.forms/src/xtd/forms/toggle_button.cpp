@@ -1,14 +1,14 @@
+#include "../../../include/xtd/forms/toggle_button"
+#include "../../../include/xtd/forms/toggle_button_renderer"
+#include "../../../include/xtd/forms/visual_styles/push_button_state"
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/button_states.h>
-#include <xtd/forms/native/button_styles.h>
-#include <xtd/forms/native/extended_window_styles.h>
-#include <xtd/forms/native/toggle_button.h>
-#include <xtd/forms/native/window_styles.h>
+#include <xtd/forms/native/button_states>
+#include <xtd/forms/native/button_styles>
+#include <xtd/forms/native/extended_window_styles>
+#include <xtd/forms/native/toggle_button>
+#include <xtd/forms/native/window_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/window_messages.h>
-#include "../../../include/xtd/forms/toggle_button.h"
-#include "../../../include/xtd/forms/toggle_button_renderer.h"
-#include "../../../include/xtd/forms/visual_styles/push_button_state.h"
+#include <xtd/forms/window_messages>
 
 using namespace xtd;
 using namespace xtd::forms;

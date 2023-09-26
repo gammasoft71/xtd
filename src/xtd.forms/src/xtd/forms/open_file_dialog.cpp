@@ -1,10 +1,10 @@
-#define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/file_dialog.h>
-#undef __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../include/xtd/forms/application.h"
-#include "../../../include/xtd/forms/open_file_dialog.h"
-#include "xtd_forms_common_dialog_closed_caller.h"
+#include "../../../include/xtd/forms/application"
+#include "../../../include/xtd/forms/open_file_dialog"
 #include "file_dialog_data.h"
+#include "xtd_forms_common_dialog_closed_caller.h"
+#define __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/forms/native/file_dialog>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 
 using namespace xtd;
 using namespace xtd::forms;

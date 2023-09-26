@@ -1,5 +1,5 @@
-#include "../../../include/xtd/forms/vertical_control_layout_style.h"
-#include "../../../include/xtd/forms/application.h"
+#include "../../../include/xtd/forms/application"
+#include "../../../include/xtd/forms/vertical_control_layout_style"
 
 using namespace xtd;
 using namespace xtd::forms;

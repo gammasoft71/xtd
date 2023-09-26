@@ -1,10 +1,10 @@
-#include <xtd/threading/thread.h>
-#define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/message_box.h>
-#undef __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../include/xtd/forms/application.h"
-#include "../../../include/xtd/forms/message_dialog.h"
+#include "../../../include/xtd/forms/application"
+#include "../../../include/xtd/forms/message_dialog"
 #include "xtd_forms_message_dialog_closed_caller.h"
+#define __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/forms/native/message_box>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/threading/thread>
 
 using namespace xtd;
 using namespace xtd::forms;

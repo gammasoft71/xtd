@@ -1,5 +1,5 @@
-#include "../../../include/xtd/forms/message_box.h"
-#include "../../../include/xtd/forms/message_dialog.h"
+#include "../../../include/xtd/forms/message_box"
+#include "../../../include/xtd/forms/message_dialog"
 
 using namespace xtd;
 using namespace xtd::forms;

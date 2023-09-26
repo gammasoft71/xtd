@@ -1,19 +1,19 @@
-#include <xtd/as.h>
-#include <xtd/is.h>
-#include <xtd/drawing/system_pens.h>
-#define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/control.h>
-#include <xtd/forms/native/status_bar.h>
-#include <xtd/forms/native/status_bar_styles.h>
-#undef __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/window_messages.h>
-#include "../../../include/xtd/forms/control_paint.h"
-#include "../../../include/xtd/forms/status_bar.h"
-#include "../../../include/xtd/forms/status_bar_renderer.h"
-#include "../../../include/xtd/forms/status_bar_panel_renderer.h"
+#include "../../../include/xtd/forms/control_paint"
+#include "../../../include/xtd/forms/status_bar"
+#include "../../../include/xtd/forms/status_bar_renderer"
+#include "../../../include/xtd/forms/status_bar_panel_renderer"
 #include "sizing_grip_control.h"
 #include "status_bar_panel_control.h"
 #include "status_bar_panel_data.h"
+#include <xtd/drawing/system_pens>
+#define __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/forms/native/control>
+#include <xtd/forms/native/status_bar>
+#include <xtd/forms/native/status_bar_styles>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/forms/window_messages>
+#include <xtd/as>
+#include <xtd/is>
 
 using namespace std;
 using namespace xtd;

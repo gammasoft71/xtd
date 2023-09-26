@@ -1,17 +1,17 @@
-#include <xtd/as.h>
-#include <xtd/environment.h>
-#include <xtd/is.h>
-#define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/control.h>
-#include <xtd/forms/native/extended_window_styles.h>
-#include <xtd/forms/native/tab_control.h>
-#include <xtd/forms/native/tab_page.h>
-#include <xtd/forms/native/tab_control_styles.h>
-#include <xtd/forms/native/window_styles.h>
-#undef __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../include/xtd/forms/tab_control.h"
-#include "../../../include/xtd/forms/tab_page.h"
+#include "../../../include/xtd/forms/tab_control"
+#include "../../../include/xtd/forms/tab_page"
 #include "tab_control_data.h"
+#define __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/forms/native/control>
+#include <xtd/forms/native/extended_window_styles>
+#include <xtd/forms/native/tab_control>
+#include <xtd/forms/native/tab_page>
+#include <xtd/forms/native/tab_control_styles>
+#include <xtd/forms/native/window_styles>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/as>
+#include <xtd/environment>
+#include <xtd/is>
 
 using namespace std;
 using namespace xtd;

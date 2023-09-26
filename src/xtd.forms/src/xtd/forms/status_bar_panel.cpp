@@ -1,5 +1,5 @@
-#include "../../../include/xtd/forms/status_bar_panel.h"
-#include "../../../include/xtd/forms/status_bar.h"
+#include "../../../include/xtd/forms/status_bar_panel"
+#include "../../../include/xtd/forms/status_bar"
 #include "status_bar_panel_data.h"
 
 using namespace std;

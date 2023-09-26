@@ -1,10 +1,10 @@
-#include <xtd/as.h>
-#include "../../../include/xtd/forms/application.h"
-#include "../../../include/xtd/forms/control_paint.h"
-#include "../../../include/xtd/forms/label_renderer.h"
-#include "../../../include/xtd/forms/link_label.h"
-#include "../../../include/xtd/forms/screen.h"
-#include "../../../include/xtd/forms/system_information.h"
+#include "../../../include/xtd/forms/application"
+#include "../../../include/xtd/forms/control_paint"
+#include "../../../include/xtd/forms/label_renderer"
+#include "../../../include/xtd/forms/link_label"
+#include "../../../include/xtd/forms/screen"
+#include "../../../include/xtd/forms/system_information"
+#include <xtd/as>
 
 using namespace std;
 using namespace xtd;

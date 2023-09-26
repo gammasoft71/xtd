@@ -1,12 +1,12 @@
+#include "../../../include/xtd/forms/application"
+#include "../../../include/xtd/forms/menu_item"
+#include "../../../include/xtd/forms/main_menu"
+#include "../../../include/xtd/forms/menu_images"
+#include "../../../include/xtd/forms/shortcut"
+#include "../../../include/xtd/forms/system_texts"
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/main_menu.h>
+#include <xtd/forms/native/main_menu>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../include/xtd/forms/application.h"
-#include "../../../include/xtd/forms/menu_item.h"
-#include "../../../include/xtd/forms/main_menu.h"
-#include "../../../include/xtd/forms/menu_images.h"
-#include "../../../include/xtd/forms/shortcut.h"
-#include "../../../include/xtd/forms/system_texts.h"
 #include "menu_data.h"
 
 using namespace std;

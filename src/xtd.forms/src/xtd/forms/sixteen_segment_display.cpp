@@ -1,4 +1,4 @@
-#include "../../../include/xtd/forms/sixteen_segment_display.h"
+#include "../../../include/xtd/forms/sixteen_segment_display"
 
 using namespace xtd;
 using namespace xtd::forms;

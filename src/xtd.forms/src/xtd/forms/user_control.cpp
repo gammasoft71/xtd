@@ -1,14 +1,14 @@
+#include "../../../include/xtd/forms/application"
+#include "../../../include/xtd/forms/user_control"
+#include "../../../include/xtd/forms/user_control_renderer"
+#include <xtd/drawing/pens>
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/control.h>
-#include <xtd/forms/native/extended_window_styles.h>
-#include <xtd/forms/native/user_control.h>
-#include <xtd/forms/native/toolkit.h>
-#include <xtd/forms/native/window_styles.h>
+#include <xtd/forms/native/control>
+#include <xtd/forms/native/extended_window_styles>
+#include <xtd/forms/native/user_control>
+#include <xtd/forms/native/toolkit>
+#include <xtd/forms/native/window_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/drawing/pens.h>
-#include "../../../include/xtd/forms/application.h"
-#include "../../../include/xtd/forms/user_control.h"
-#include "../../../include/xtd/forms/user_control_renderer.h"
 
 using namespace xtd;
 using namespace xtd::forms;

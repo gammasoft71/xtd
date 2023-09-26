@@ -1,10 +1,10 @@
-#include <xtd/not_implemented_exception.h>
-#define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/menu.h>
-#include <xtd/forms/native/menu_item.h>
-#undef __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../include/xtd/forms/menu_item.h"
+#include "../../../include/xtd/forms/menu_item"
 #include "menu_data.h"
+#define __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/forms/native/menu>
+#include <xtd/forms/native/menu_item>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/not_implemented_exception>
 
 using namespace std;
 using namespace xtd;

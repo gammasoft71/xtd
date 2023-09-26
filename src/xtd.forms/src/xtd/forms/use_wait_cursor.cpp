@@ -1,5 +1,5 @@
-#include "../../../include/xtd/forms/use_wait_cursor.h"
-#include "../../../include/xtd/forms/application.h"
+#include "../../../include/xtd/forms/application"
+#include "../../../include/xtd/forms/use_wait_cursor"
 
 using namespace xtd;
 using namespace xtd::forms;

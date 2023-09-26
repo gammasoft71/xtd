@@ -1,11 +1,10 @@
-#include "../../../include/xtd/forms/switch_button_renderer.h"
-#include "../../../include/xtd/forms/control_paint.h"
+#include "../../../include/xtd/forms/switch_button_renderer"
+#include "../../../include/xtd/forms/control_paint"
+#include <xtd/drawing/drawing_2d/linear_gradient_brush>
+#include <xtd/drawing/pen>
+#include <xtd/drawing/solid_brush>
+#include <xtd/environment>
 #include <map>
-#include <xtd/environment.h>
-#include <xtd/drawing/pen.h>
-#include <xtd/drawing/solid_brush.h>
-
-#include <xtd/drawing/drawing_2d/linear_gradient_brush.h>
 
 using namespace std;
 using namespace xtd;

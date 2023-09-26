@@ -1,4 +1,4 @@
-#include "../../../include/xtd/forms/splitter_panel.h"
+#include "../../../include/xtd/forms/splitter_panel"
 
 using namespace xtd;
 using namespace xtd::forms;

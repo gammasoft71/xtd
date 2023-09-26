@@ -1,8 +1,8 @@
+#include "../../../include/xtd/forms/timer"
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/timer.h>
+#include <xtd/forms/native/timer>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../include/xtd/forms/timer.h"
-#include <xtd/as.h>
+#include <xtd/as>
 
 using namespace xtd;
 using namespace xtd::forms;
