@@ -1,6 +1,6 @@
-#include "../../../../include/xtd/drawing/text/installed_font_collection.h"
+#include "../../../../include/xtd/drawing/text/installed_font_collection"
 #define __XTD_DRAWING_NATIVE_LIBRARY__
-#include <xtd/drawing/native/font_family.h>
+#include <xtd/drawing/native/font_family>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 
 using namespace std;
