@@ -1,0 +1,2 @@
+#pragma once
+#include "wx_group_box.h"

@@ -1,0 +1,2 @@
+#pragma once
+#include "wx_user_control.h"
