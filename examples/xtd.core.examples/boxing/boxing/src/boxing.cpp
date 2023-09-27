@@ -44,9 +44,9 @@ struct setup {
 };
 
 auto main()->int {
-  setup my_application_setup {10, 10, 300, 300, "My application", {1, 2, 3}};
+  auto my_application_setup = setup {10, 10, 300, 300, "My application", {1, 2, 3}};
   
-  setup_serializer serializer;
+  auto serializer = setup_serializer {};
   serializer.title("My application setup");
   serializer.add_key_value("x", boxing(my_application_setup.x));
   serializer.add_key_value("y", boxing(my_application_setup.y));
