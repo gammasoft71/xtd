@@ -88,10 +88,10 @@ $(function() {
 <div class="contents">
 <a href="item__check__event__args_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;limits&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;<a class="code" href="event__args_8h.html">xtd/event_args.h</a>&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="check__state_8h.html">check_state.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;check_state&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;xtd/event_args&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;limits&gt;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>  <span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">forms</a> {</div>
@@ -120,7 +120,6 @@ $(function() {
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    };</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  }</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>}</div>
-<div class="ttc" id="acheck__state_8h_html"><div class="ttname"><a href="check__state_8h.html">check_state.h</a></div><div class="ttdoc">Contains xtd::forms::check_state enum class.</div></div>
 <div class="ttc" id="aclassxtd_1_1event__args_html"><div class="ttname"><a href="classxtd_1_1event__args.html">xtd::event_args</a></div><div class="ttdoc">Represents the base class for classes that contain event data, and provides a value to use for events...</div><div class="ttdef"><b>Definition</b> event_args.h:18</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1item__check__event__args_html"><div class="ttname"><a href="classxtd_1_1forms_1_1item__check__event__args.html">xtd::forms::item_check_event_args</a></div><div class="ttdoc">Provides data for the item_check event of the checked_list_box and list_view controls.</div><div class="ttdef"><b>Definition</b> item_check_event_args.h:27</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1item__check__event__args_html_a1c7ed3d5ccccb93ddb26cb32bab2e41c"><div class="ttname"><a href="classxtd_1_1forms_1_1item__check__event__args.html#a1c7ed3d5ccccb93ddb26cb32bab2e41c">xtd::forms::item_check_event_args::index</a></div><div class="ttdeci">size_t index() const noexcept</div><div class="ttdoc">Gets the zero-based index of the item to change.</div><div class="ttdef"><b>Definition</b> item_check_event_args.h:55</div></div>
@@ -128,7 +127,6 @@ $(function() {
 <div class="ttc" id="aclassxtd_1_1forms_1_1item__check__event__args_html_aaea8c76c4afe5e0a6ccb1ec7d58a7113"><div class="ttname"><a href="classxtd_1_1forms_1_1item__check__event__args.html#aaea8c76c4afe5e0a6ccb1ec7d58a7113">xtd::forms::item_check_event_args::item_check_event_args</a></div><div class="ttdeci">item_check_event_args(size_t index, check_state new_value, check_state current_value)</div><div class="ttdoc">Initializes a new instance of the item_check_event_args class.</div><div class="ttdef"><b>Definition</b> item_check_event_args.h:41</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1item__check__event__args_html_ad4e78919d3dd85fa99684ec796572017"><div class="ttname"><a href="classxtd_1_1forms_1_1item__check__event__args.html#ad4e78919d3dd85fa99684ec796572017">xtd::forms::item_check_event_args::new_value</a></div><div class="ttdeci">check_state new_value() const noexcept</div><div class="ttdoc">Gets a value indicating whether to set the check box for the item to be checked, unchecked,...</div><div class="ttdef"><b>Definition</b> item_check_event_args.h:60</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1item__check__event__args_html_ad9ef4e78b7ca18db3a35396f2f86b30a"><div class="ttname"><a href="classxtd_1_1forms_1_1item__check__event__args.html#ad9ef4e78b7ca18db3a35396f2f86b30a">xtd::forms::item_check_event_args::current_value</a></div><div class="ttdeci">check_state current_value() const noexcept</div><div class="ttdoc">Gets a value indicating the current state of the item's check box.</div><div class="ttdef"><b>Definition</b> item_check_event_args.h:50</div></div>
-<div class="ttc" id="aevent__args_8h_html"><div class="ttname"><a href="event__args_8h.html">event_args.h</a></div><div class="ttdoc">Contains xtd::event_args event args.</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggacc628237bd3e274afe3d5d836e2db786afc5364bf9dbfa34954526becad136d4b"><div class="ttname"><a href="group__xtd__core.html#ggacc628237bd3e274afe3d5d836e2db786afc5364bf9dbfa34954526becad136d4b">xtd::console_modifiers::control</a></div><div class="ttdeci">@ control</div><div class="ttdoc">The left or right CTRL modifier key.</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_ga5ada8078f6297710207025403d7e7866"><div class="ttname"><a href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866">xtd::forms::check_state</a></div><div class="ttdeci">check_state</div><div class="ttdoc">Specifies the state of a control, such as a check box, that can be checked, unchecked,...</div><div class="ttdef"><b>Definition</b> check_state.h:21</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga5ada8078f6297710207025403d7e7866a44560d82707cce3b8111a770924cf0e2"><div class="ttname"><a href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866a44560d82707cce3b8111a770924cf0e2">xtd::forms::check_state::indeterminate</a></div><div class="ttdeci">@ indeterminate</div><div class="ttdoc">The control is indeterminate. An indeterminate control generally has a shaded appearance.</div></div>
@@ -139,7 +137,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 24 2023 20:19:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Sep 27 2023 09:42:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -88,10 +88,10 @@ $(function() {
 <div class="contents">
 <a href="trace__form_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;<a class="code" href="trace_8h.html">xtd/diagnostics/trace.h</a>&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;<a class="code" href="control__trace__listener_8h.html">xtd/forms/control_trace_listener.h</a>&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="icontrol__trace_8h.html">icontrol_trace.h</a>&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="trace__form__base_8h.html">trace_form_base.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;control_trace_listener&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;icontrol_trace&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;trace_form_base&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;xtd/diagnostics/trace&gt;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>  <span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">forms</a> {</div>
@@ -146,18 +146,14 @@ $(function() {
 <div class="ttc" id="aclassxtd_1_1forms_1_1trace__form_html_a7b6fc183b44c6046e7e62d7f0b3c8bb4"><div class="ttname"><a href="classxtd_1_1forms_1_1trace__form.html#a7b6fc183b44c6046e7e62d7f0b3c8bb4">xtd::forms::trace_form::write_line</a></div><div class="ttdeci">void write_line(const xtd::ustring &amp;trace) override</div><div class="ttdoc">Write debug or trace message on this instance control followed by line terminator.</div><div class="ttdef"><b>Definition</b> trace_form.h:71</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1trace__form_html_ae34f0786a29bba9e4d99144d1fc151ca"><div class="ttname"><a href="classxtd_1_1forms_1_1trace__form.html#ae34f0786a29bba9e4d99144d1fc151ca">xtd::forms::trace_form::flush</a></div><div class="ttdeci">void flush() override</div><div class="ttdoc">Flushes the output buffer and causes buffered data to write to the control.</div><div class="ttdef"><b>Definition</b> trace_form.h:77</div></div>
 <div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:46</div></div>
-<div class="ttc" id="acontrol__trace__listener_8h_html"><div class="ttname"><a href="control__trace__listener_8h.html">control_trace_listener.h</a></div><div class="ttdoc">Contains xtd::forms::control_trace_listener listener.</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga2f00c1ad108efaddc951106e768970dea7f021a1415b86f2d013b2618fb31ae53"><div class="ttname"><a href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970dea7f021a1415b86f2d013b2618fb31ae53">xtd::forms::keys::end</a></div><div class="ttdeci">@ end</div><div class="ttdoc">The END key.</div></div>
-<div class="ttc" id="aicontrol__trace_8h_html"><div class="ttname"><a href="icontrol__trace_8h.html">icontrol_trace.h</a></div><div class="ttdoc">Contains xtd::forms::icontrol_trace interface.</div></div>
 <div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> about_box.h:13</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
-<div class="ttc" id="atrace_8h_html"><div class="ttname"><a href="trace_8h.html">trace.h</a></div><div class="ttdoc">Contains xtd::diagnostics::trace class.</div></div>
-<div class="ttc" id="atrace__form__base_8h_html"><div class="ttname"><a href="trace__form__base_8h.html">trace_form_base.h</a></div><div class="ttdoc">Contains xtd::forms::trace_form_base dialog.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 24 2023 20:19:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Sep 27 2023 09:42:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

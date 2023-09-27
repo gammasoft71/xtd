@@ -88,12 +88,12 @@ $(function() {
 <div class="contents">
 <a href="form__renderer_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;<a class="code" href="static_8h.html">xtd/static.h</a>&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;<a class="code" href="ustring_8h.html">xtd/ustring.h</a>&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;<a class="code" href="graphics_8h.html">xtd/drawing/graphics.h</a>&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="flat__style_8h.html">flat_style.h</a>&quot;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="form__state_8h.html">visual_styles/form_state.h</a>&quot;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="box__renderer_8h.html">box_renderer.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;visual_styles/form_state&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;flat_style&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;box_renderer&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;xtd/drawing/graphics&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;xtd/static&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;xtd/ustring&gt;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  <span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">forms</a> {</div>
@@ -103,26 +103,20 @@ $(function() {
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    };</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  }</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>}</div>
-<div class="ttc" id="abox__renderer_8h_html"><div class="ttname"><a href="box__renderer_8h.html">box_renderer.h</a></div><div class="ttdoc">Contains xtd::forms::box_renderer static class.</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1graphics_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1graphics.html">xtd::drawing::graphics</a></div><div class="ttdoc">Defines an object used to draw lines and curves. This class cannot be inherited.</div><div class="ttdef"><b>Definition</b> graphics.h:70</div></div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1rectangle_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a></div><div class="ttdoc">Stores a set of four integers that represent the location and size of a rectangle.</div><div class="ttdef"><b>Definition</b> rectangle.h:45</div></div>
+<div class="ttc" id="aclassxtd_1_1drawing_1_1rectangle_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a></div><div class="ttdoc">Stores a set of four integers that represent the location and size of a rectangle.</div><div class="ttdef"><b>Definition</b> rectangle.h:44</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form__renderer_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form__renderer.html">xtd::forms::form_renderer</a></div><div class="ttdoc">Provides form control renderer methods.</div><div class="ttdef"><b>Definition</b> form_renderer.h:29</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form__renderer_html_acf1c655a45bb15e1c775f1c0f65402a6"><div class="ttname"><a href="classxtd_1_1forms_1_1form__renderer.html#acf1c655a45bb15e1c775f1c0f65402a6">xtd::forms::form_renderer::draw_form</a></div><div class="ttdeci">static void draw_form(const xtd::forms::style_sheets::style_sheet &amp;style_sheet, xtd::drawing::graphics &amp;graphics, const xtd::drawing::rectangle &amp;bounds, xtd::forms::visual_styles::form_state form_state, const std::optional&lt; xtd::drawing::color &gt; &amp;back_color)</div><div class="ttdoc">Draws a box in the specified bounds, form state and background color.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1style__sheets_1_1style__sheet_html"><div class="ttname"><a href="classxtd_1_1forms_1_1style__sheets_1_1style__sheet.html">xtd::forms::style_sheets::style_sheet</a></div><div class="ttdoc">The xtd::forms::style_sheets::style_sheet allows you to specify an xtd style sheet.</div><div class="ttdef"><b>Definition</b> style_sheet.h:62</div></div>
-<div class="ttc" id="aflat__style_8h_html"><div class="ttname"><a href="flat__style_8h.html">flat_style.h</a></div><div class="ttdoc">Contains xtd::forms::flat_style enum class.</div></div>
-<div class="ttc" id="aform__state_8h_html"><div class="ttname"><a href="form__state_8h.html">form_state.h</a></div><div class="ttdoc">Contains xtd::forms::visual_styles::form_state enum class.</div></div>
-<div class="ttc" id="agraphics_8h_html"><div class="ttname"><a href="graphics_8h.html">graphics.h</a></div><div class="ttdoc">Contains xtd::drawing::graphics class.</div></div>
 <div class="ttc" id="agroup__keywords_html_ga28796443ec37b938df7072c79595e3f6"><div class="ttname"><a href="group__keywords.html#ga28796443ec37b938df7072c79595e3f6">static_</a></div><div class="ttdeci">#define static_</div><div class="ttdoc">This keyword is use to represent a static object. A static object can't be instantiated (constructors...</div><div class="ttdef"><b>Definition</b> static.h:37</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_ga5f838907d816afcb82bb6ddbff6ef125"><div class="ttname"><a href="group__xtd__forms.html#ga5f838907d816afcb82bb6ddbff6ef125">xtd::forms::visual_styles::control_state</a></div><div class="ttdeci">control_state</div><div class="ttdoc">Specifies the visual state of a control that is drawn with visual styles.</div><div class="ttdef"><b>Definition</b> control_state.h:22</div></div>
 <div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> about_box.h:13</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
-<div class="ttc" id="astatic_8h_html"><div class="ttname"><a href="static_8h.html">static.h</a></div><div class="ttdoc">Contains xtd::static_object class.</div></div>
-<div class="ttc" id="austring_8h_html"><div class="ttname"><a href="ustring_8h.html">ustring.h</a></div><div class="ttdoc">Contains xtd::ustring class.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 24 2023 20:19:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Sep 27 2023 09:42:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

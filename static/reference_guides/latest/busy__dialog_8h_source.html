@@ -88,15 +88,15 @@ $(function() {
 <div class="contents">
 <a href="busy__dialog_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;<a class="code" href="optional_8h.html">xtd/optional.h</a>&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;<a class="code" href="delegate_8h.html">xtd/delegate.h</a>&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;<a class="code" href="color_8h.html">xtd/drawing/color.h</a>&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;<a class="code" href="icon_8h.html">xtd/drawing/icon.h</a>&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;<a class="code" href="control_8h.html">xtd/forms/control.h</a>&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="component_8h.html">component.h</a>&quot;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="dialog__appearance_8h.html">dialog_appearance.h</a>&quot;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="iwin32__window_8h.html">iwin32_window.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;component&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;dialog_appearance&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;iwin32_window&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;xtd/drawing/color&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;xtd/drawing/icon&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;xtd/forms/control&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;xtd/optional&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;xtd/delegate&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">forms</a> {</div>
@@ -152,23 +152,15 @@ $(function() {
 <div class="ttc" id="aclassxtd_1_1forms_1_1component_html"><div class="ttname"><a href="classxtd_1_1forms_1_1component.html">xtd::forms::component</a></div><div class="ttdoc">Provides the base implementation and enables object sharing between applications.</div><div class="ttdef"><b>Definition</b> component.h:23</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1iwin32__window_html"><div class="ttname"><a href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a></div><div class="ttdoc">Provides an interface to expose Win32 HWND handles.</div><div class="ttdef"><b>Definition</b> iwin32_window.h:21</div></div>
 <div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:46</div></div>
-<div class="ttc" id="acolor_8h_html"><div class="ttname"><a href="color_8h.html">color.h</a></div><div class="ttdoc">Contains xtd::drawing::color class.</div></div>
-<div class="ttc" id="acomponent_8h_html"><div class="ttname"><a href="component_8h.html">component.h</a></div><div class="ttdoc">Contains xtd::forms::component class.</div></div>
-<div class="ttc" id="acontrol_8h_html"><div class="ttname"><a href="control_8h.html">control.h</a></div><div class="ttdoc">Contains xtd::forms::control control.</div></div>
-<div class="ttc" id="adelegate_8h_html"><div class="ttname"><a href="delegate_8h.html">delegate.h</a></div><div class="ttdoc">Contains xtd::delegate delegate.</div></div>
-<div class="ttc" id="adialog__appearance_8h_html"><div class="ttname"><a href="dialog__appearance_8h.html">dialog_appearance.h</a></div><div class="ttdoc">Contains xtd::forms::dialog_appearance enum class.</div></div>
 <div class="ttc" id="agroup__keywords_html_gaa2ab2e666648001a7d445dc452ac1767"><div class="ttname"><a href="group__keywords.html#gaa2ab2e666648001a7d445dc452ac1767">forms_export_</a></div><div class="ttdeci">#define forms_export_</div><div class="ttdoc">Define shared library export.</div><div class="ttdef"><b>Definition</b> forms_export.h:13</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_ga5d307293383256b1361069a8e6c57316"><div class="ttname"><a href="group__xtd__forms.html#ga5d307293383256b1361069a8e6c57316">xtd::forms::control_appearance</a></div><div class="ttdeci">control_appearance</div><div class="ttdoc">Specifies the appearance of a control.</div><div class="ttdef"><b>Definition</b> control_appearance.h:19</div></div>
-<div class="ttc" id="aicon_8h_html"><div class="ttname"><a href="icon_8h.html">icon.h</a></div><div class="ttdoc">Contains xtd::drawing::icon class.</div></div>
-<div class="ttc" id="aiwin32__window_8h_html"><div class="ttname"><a href="iwin32__window_8h.html">iwin32_window.h</a></div><div class="ttdoc">Contains xtd::forms::iwin32_window interface.</div></div>
 <div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> about_box.h:13</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
-<div class="ttc" id="aoptional_8h_html"><div class="ttname"><a href="optional_8h.html">optional.h</a></div><div class="ttdoc">Contains std::optional type and std::bad_optional_access exception.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 24 2023 20:19:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Sep 27 2023 09:42:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

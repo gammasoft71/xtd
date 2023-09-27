@@ -88,18 +88,18 @@ $(function() {
 <div class="contents">
 <a href="itext__model_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;<a class="code" href="interface_8h.html">xtd/interface.h</a>&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;<a class="code" href="ustring_8h.html">xtd/ustring.h</a>&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;<a class="code" href="color_8h.html">xtd/drawing/color.h</a>&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;<a class="code" href="font_8h.html">xtd/drawing/font.h</a>&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;<a class="code" href="string__format_8h.html">xtd/drawing/string_format.h</a>&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;<a class="code" href="system__fonts_8h.html">xtd/drawing/system_fonts.h</a>&gt;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;<a class="code" href="content__alignment_8h.html">xtd/forms/content_alignment.h</a>&gt;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="style__sheets_2shadows_8h.html">shadows.h</a>&quot;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="text__decoration_8h.html">text_decoration.h</a>&quot;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="text__transformation_8h.html">text_transformation.h</a>&quot;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="white__space_8h.html">white_space.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;shadows&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;text_decoration&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;text_transformation&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;white_space&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;xtd/drawing/color&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;xtd/drawing/font&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;xtd/drawing/string_format&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;xtd/drawing/system_fonts&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;xtd/forms/content_alignment&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;xtd/interface&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;xtd/ustring&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">forms</a> {</div>
@@ -137,30 +137,19 @@ $(function() {
 <div class="ttc" id="aclassxtd_1_1forms_1_1style__sheets_1_1itext__model_html_aa00151dd28c59388fe25635798a973e3"><div class="ttname"><a href="classxtd_1_1forms_1_1style__sheets_1_1itext__model.html#aa00151dd28c59388fe25635798a973e3">xtd::forms::style_sheets::itext_model::text_alignment</a></div><div class="ttdeci">virtual xtd::forms::content_alignment text_alignment() const noexcept=0</div><div class="ttdoc">Gets the alignment of the text.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1style__sheets_1_1itext__model_html_ae6575cb3848c13f32add67eaef16fa8d"><div class="ttname"><a href="classxtd_1_1forms_1_1style__sheets_1_1itext__model.html#ae6575cb3848c13f32add67eaef16fa8d">xtd::forms::style_sheets::itext_model::decoration</a></div><div class="ttdeci">virtual xtd::forms::style_sheets::text_decoration decoration() const noexcept=0</div><div class="ttdoc">Gets the decoration of the text.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1style__sheets_1_1itext__model_html_af84e4764b99443d54b539da59f6cbc82"><div class="ttname"><a href="classxtd_1_1forms_1_1style__sheets_1_1itext__model.html#af84e4764b99443d54b539da59f6cbc82">xtd::forms::style_sheets::itext_model::font</a></div><div class="ttdeci">virtual const xtd::drawing::font &amp; font() const noexcept=0</div><div class="ttdoc">Gets the font of the text.</div></div>
-<div class="ttc" id="acolor_8h_html"><div class="ttname"><a href="color_8h.html">color.h</a></div><div class="ttdoc">Contains xtd::drawing::color class.</div></div>
-<div class="ttc" id="acontent__alignment_8h_html"><div class="ttname"><a href="content__alignment_8h.html">content_alignment.h</a></div><div class="ttdoc">Contains xtd::forms::content_alignment enum class.</div></div>
-<div class="ttc" id="afont_8h_html"><div class="ttname"><a href="font_8h.html">font.h</a></div><div class="ttdoc">Contains xtd::drawing::font class.</div></div>
 <div class="ttc" id="agroup__keywords_html_ga64c32b24bd922fc8189a487213592ccf"><div class="ttname"><a href="group__keywords.html#ga64c32b24bd922fc8189a487213592ccf">interface_</a></div><div class="ttdeci">#define interface_</div><div class="ttdoc">This keyword is use to represent an interface.</div><div class="ttdef"><b>Definition</b> interface.h:54</div></div>
 <div class="ttc" id="agroup__style__sheets_html_ga54167367c919f2f359cf55d34ee71c44"><div class="ttname"><a href="group__style__sheets.html#ga54167367c919f2f359cf55d34ee71c44">xtd::forms::style_sheets::text_decoration</a></div><div class="ttdeci">text_decoration</div><div class="ttdoc">The xtd::forms::style_sheets::text_decoration enum class is used to set or remove decorations from te...</div><div class="ttdef"><b>Definition</b> text_decoration.h:23</div></div>
 <div class="ttc" id="agroup__style__sheets_html_ga6b836003c0891459bf382b60fa2f5a69"><div class="ttname"><a href="group__style__sheets.html#ga6b836003c0891459bf382b60fa2f5a69">xtd::forms::style_sheets::white_space</a></div><div class="ttdeci">white_space</div><div class="ttdoc">The white_space enum class specifies how white-space inside an element is handled.</div><div class="ttdef"><b>Definition</b> white_space.h:21</div></div>
 <div class="ttc" id="agroup__style__sheets_html_gae92c9bad16e4e07d834be243b217ba55"><div class="ttname"><a href="group__style__sheets.html#gae92c9bad16e4e07d834be243b217ba55">xtd::forms::style_sheets::text_transformation</a></div><div class="ttdeci">text_transformation</div><div class="ttdoc">The xtd::forms::style_sheets::text_transformation enum class is used to specify uppercase and lowerca...</div><div class="ttdef"><b>Definition</b> text_transformation.h:22</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gabb060283692e62b7229dd87ae7e85b76"><div class="ttname"><a href="group__xtd__forms.html#gabb060283692e62b7229dd87ae7e85b76">xtd::forms::style_sheets::shadows</a></div><div class="ttdeci">std::vector&lt; xtd::forms::style_sheets::shadow &gt; shadows</div><div class="ttdoc">Represents an xtd::forms::style_sheets::shadow array.</div><div class="ttdef"><b>Definition</b> shadows.h:22</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gad8fe8984e9f4652c13654b2c4d7288f0"><div class="ttname"><a href="group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0">xtd::forms::content_alignment</a></div><div class="ttdeci">content_alignment</div><div class="ttdoc">Specifies alignment of content on the drawing surface.</div><div class="ttdef"><b>Definition</b> content_alignment.h:19</div></div>
-<div class="ttc" id="ainterface_8h_html"><div class="ttname"><a href="interface_8h.html">interface.h</a></div><div class="ttdoc">Contains xtd::interface interface.</div></div>
 <div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> about_box.h:13</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
-<div class="ttc" id="astring__format_8h_html"><div class="ttname"><a href="string__format_8h.html">string_format.h</a></div><div class="ttdoc">Contains xtd::drawing::string_format class.</div></div>
-<div class="ttc" id="astyle__sheets_2shadows_8h_html"><div class="ttname"><a href="style__sheets_2shadows_8h.html">shadows.h</a></div><div class="ttdoc">Contains xtd::forms::style_sheets::shadows typedef.</div></div>
-<div class="ttc" id="asystem__fonts_8h_html"><div class="ttname"><a href="system__fonts_8h.html">system_fonts.h</a></div><div class="ttdoc">Contains xtd::drawing::system_fonts factory.</div></div>
-<div class="ttc" id="atext__decoration_8h_html"><div class="ttname"><a href="text__decoration_8h.html">text_decoration.h</a></div><div class="ttdoc">Contains xtd::forms::style_sheets::text_decoration enum class.</div></div>
-<div class="ttc" id="atext__transformation_8h_html"><div class="ttname"><a href="text__transformation_8h.html">text_transformation.h</a></div><div class="ttdoc">Contains xtd::forms::style_sheets::text_transformation enum class.</div></div>
-<div class="ttc" id="austring_8h_html"><div class="ttname"><a href="ustring_8h.html">ustring.h</a></div><div class="ttdoc">Contains xtd::ustring class.</div></div>
-<div class="ttc" id="awhite__space_8h_html"><div class="ttname"><a href="white__space_8h.html">white_space.h</a></div><div class="ttdoc">Contains xtd::forms::style_sheets::white_space enum class.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 24 2023 20:19:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Sep 27 2023 09:42:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

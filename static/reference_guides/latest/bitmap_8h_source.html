@@ -88,10 +88,10 @@ $(function() {
 <div class="contents">
 <a href="bitmap_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;../drawing_export.h&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="image_8h.html">image.h</a>&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="bitmap__data_8h.html">imaging/bitmap_data.h</a>&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="image__lock__mode_8h.html">imaging/image_lock_mode.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;../drawing_export&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;imaging/bitmap_data&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;imaging/image_lock_mode&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;image&quot;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>  <span class="keyword">namespace </span>drawing {</div>
@@ -150,7 +150,6 @@ $(function() {
 <div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    };</div>
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>  }</div>
 <div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>}</div>
-<div class="ttc" id="abitmap__data_8h_html"><div class="ttname"><a href="bitmap__data_8h.html">bitmap_data.h</a></div><div class="ttdoc">Contains xtd::drawing::imaging::bitmap_data class.</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1bitmap_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a></div><div class="ttdoc">Encapsulates a GDI+ bitmap, which consists of the pixel data for a graphics image and its attributes....</div><div class="ttdef"><b>Definition</b> bitmap.h:26</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1bitmap_html_a06c5d425b4eac9e2301b48715da337eb"><div class="ttname"><a href="classxtd_1_1drawing_1_1bitmap.html#a06c5d425b4eac9e2301b48715da337eb">xtd::drawing::bitmap::bitmap</a></div><div class="ttdeci">bitmap(const xtd::ustring &amp;filename, bool use_icm)</div><div class="ttdoc">Initializes a new instance of the bitmap class from the specified file.</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1bitmap_html_a07001cf0a4200c7c09a2951a29b95ef6"><div class="ttname"><a href="classxtd_1_1drawing_1_1bitmap.html#a07001cf0a4200c7c09a2951a29b95ef6">xtd::drawing::bitmap::set_resolution</a></div><div class="ttdeci">void set_resolution(int32 x_dpi, int32 y_dpi)</div><div class="ttdoc">Sets the resolution for this xtd::drawing::bitmap.</div></div>
@@ -186,8 +185,8 @@ $(function() {
 <div class="ttc" id="aclassxtd_1_1drawing_1_1icon_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1icon.html">xtd::drawing::icon</a></div><div class="ttdoc">Represents a Windows icon, which is a small bitmap image that is used to represent an object....</div><div class="ttdef"><b>Definition</b> icon.h:28</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1image_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1image.html">xtd::drawing::image</a></div><div class="ttdoc">An abstract base class that provides functionality for the bitmap and metafile descended classes.</div><div class="ttdef"><b>Definition</b> image.h:48</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1imaging_1_1bitmap__data_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1imaging_1_1bitmap__data.html">xtd::drawing::imaging::bitmap_data</a></div><div class="ttdoc">Specifies the attributes of a bitmap image. The xtd::drawing::imaging::bitmap_data class is used by t...</div><div class="ttdef"><b>Definition</b> bitmap_data.h:22</div></div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1rectangle__f_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1rectangle__f.html">xtd::drawing::rectangle_f</a></div><div class="ttdoc">Stores a set of four floating-point numbers that represent the location and size of a rectangle....</div><div class="ttdef"><b>Definition</b> rectangle_f.h:35</div></div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1rectangle_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a></div><div class="ttdoc">Stores a set of four integers that represent the location and size of a rectangle.</div><div class="ttdef"><b>Definition</b> rectangle.h:45</div></div>
+<div class="ttc" id="aclassxtd_1_1drawing_1_1rectangle__f_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1rectangle__f.html">xtd::drawing::rectangle_f</a></div><div class="ttdoc">Stores a set of four floating-point numbers that represent the location and size of a rectangle....</div><div class="ttdef"><b>Definition</b> rectangle_f.h:34</div></div>
+<div class="ttc" id="aclassxtd_1_1drawing_1_1rectangle_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a></div><div class="ttdoc">Stores a set of four integers that represent the location and size of a rectangle.</div><div class="ttdef"><b>Definition</b> rectangle.h:44</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1size_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1size.html">xtd::drawing::size</a></div><div class="ttdoc">Stores an ordered pair of integers, which specify a height and width.</div><div class="ttdef"><b>Definition</b> size.h:31</div></div>
 <div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:46</div></div>
 <div class="ttc" id="agroup__keywords_html_ga0e59557a60ff5461db679dd209b6d3cd"><div class="ttname"><a href="group__keywords.html#ga0e59557a60ff5461db679dd209b6d3cd">drawing_export_</a></div><div class="ttdeci">#define drawing_export_</div><div class="ttdoc">Define shared library export.</div><div class="ttdef"><b>Definition</b> drawing_export.h:13</div></div>
@@ -195,14 +194,12 @@ $(function() {
 <div class="ttc" id="agroup__types_html_gaa7283e1dd31c385d954467f7ea324451"><div class="ttname"><a href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">xtd::intptr</a></div><div class="ttdeci">intmax_t intptr</div><div class="ttdoc">Represent a pointer or a handle.</div><div class="ttdef"><b>Definition</b> types.h:151</div></div>
 <div class="ttc" id="agroup__xtd__drawing_html_ga9e8366816379505a879f17e5b0ce7be2"><div class="ttname"><a href="group__xtd__drawing.html#ga9e8366816379505a879f17e5b0ce7be2">xtd::drawing::imaging::pixel_format</a></div><div class="ttdeci">pixel_format</div><div class="ttdoc">Specifies the format of the color data for each pixel in the image.</div><div class="ttdef"><b>Definition</b> pixel_format.h:23</div></div>
 <div class="ttc" id="agroup__xtd__drawing_html_gaab4cc0f15617caca1bed28c92505fd3b"><div class="ttname"><a href="group__xtd__drawing.html#gaab4cc0f15617caca1bed28c92505fd3b">xtd::drawing::imaging::image_lock_mode</a></div><div class="ttdeci">image_lock_mode</div><div class="ttdoc">Specifies flags that are passed to the flags parameter of the xtd::drawing::bitmap::lock_bits method....</div><div class="ttdef"><b>Definition</b> image_lock_mode.h:20</div></div>
-<div class="ttc" id="aimage_8h_html"><div class="ttname"><a href="image_8h.html">image.h</a></div><div class="ttdoc">Contains xtd::drawing::image class.</div></div>
-<div class="ttc" id="aimage__lock__mode_8h_html"><div class="ttname"><a href="image__lock__mode_8h.html">image_lock_mode.h</a></div><div class="ttdoc">Contains xtd::drawing::imaging::image_lock_mode class.</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 24 2023 20:19:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Sep 27 2023 09:42:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

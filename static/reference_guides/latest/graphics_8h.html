@@ -89,38 +89,38 @@ $(function() {
   <div class="headertitle"><div class="title">graphics.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;cstdint&gt;</code><br />
+<div class="textblock"><code>#include &quot;../drawing_export&quot;</code><br />
+<code>#include &quot;drawing_2d/compositing_mode&quot;</code><br />
+<code>#include &quot;drawing_2d/compositing_quality&quot;</code><br />
+<code>#include &quot;drawing_2d/flush_intention&quot;</code><br />
+<code>#include &quot;drawing_2d/interpolation_mode&quot;</code><br />
+<code>#include &quot;drawing_2d/graphics_path&quot;</code><br />
+<code>#include &quot;drawing_2d/graphics_state&quot;</code><br />
+<code>#include &quot;drawing_2d/matrix&quot;</code><br />
+<code>#include &quot;drawing_2d/matrix_order&quot;</code><br />
+<code>#include &quot;drawing_2d/pixel_offset_mode&quot;</code><br />
+<code>#include &quot;drawing_2d/smoothing_mode&quot;</code><br />
+<code>#include &quot;text/text_rendering_hint&quot;</code><br />
+<code>#include &quot;brush&quot;</code><br />
+<code>#include &quot;copy_pixel_operation&quot;</code><br />
+<code>#include &quot;solid_brush&quot;</code><br />
+<code>#include &quot;color&quot;</code><br />
+<code>#include &quot;font&quot;</code><br />
+<code>#include &quot;graphics_unit&quot;</code><br />
+<code>#include &quot;pen&quot;</code><br />
+<code>#include &quot;point&quot;</code><br />
+<code>#include &quot;point_f&quot;</code><br />
+<code>#include &quot;rectangle&quot;</code><br />
+<code>#include &quot;rectangle_f&quot;</code><br />
+<code>#include &quot;region&quot;</code><br />
+<code>#include &quot;size&quot;</code><br />
+<code>#include &quot;string_format&quot;</code><br />
+<code>#include &quot;size_f&quot;</code><br />
+<code>#include &lt;xtd/object&gt;</code><br />
+<code>#include &lt;xtd/ustring&gt;</code><br />
+<code>#include &lt;cstdint&gt;</code><br />
 <code>#include &lt;limits&gt;</code><br />
 <code>#include &lt;ostream&gt;</code><br />
-<code>#include &lt;<a class="el" href="object_8h_source.html">xtd/object.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="ustring_8h_source.html">xtd/ustring.h</a>&gt;</code><br />
-<code>#include &quot;<a class="el" href="drawing__export_8h_source.html">../drawing_export.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="brush_8h_source.html">brush.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="copy__pixel__operation_8h_source.html">copy_pixel_operation.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="solid__brush_8h_source.html">solid_brush.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="color_8h_source.html">color.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="font_8h_source.html">font.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="graphics__unit_8h_source.html">graphics_unit.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="pen_8h_source.html">pen.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="point_8h_source.html">point.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="point__f_8h_source.html">point_f.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="rectangle_8h_source.html">rectangle.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="rectangle__f_8h_source.html">rectangle_f.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="region_8h_source.html">region.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="xtd_8drawing_2include_2xtd_2drawing_2size_8h_source.html">size.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="string__format_8h_source.html">string_format.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="size__f_8h_source.html">size_f.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="compositing__mode_8h_source.html">drawing_2d/compositing_mode.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="compositing__quality_8h_source.html">drawing_2d/compositing_quality.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="flush__intention_8h_source.html">drawing_2d/flush_intention.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="interpolation__mode_8h_source.html">drawing_2d/interpolation_mode.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="graphics__path_8h_source.html">drawing_2d/graphics_path.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="graphics__state_8h_source.html">drawing_2d/graphics_state.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="matrix_8h_source.html">drawing_2d/matrix.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="matrix__order_8h_source.html">drawing_2d/matrix_order.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="pixel__offset__mode_8h_source.html">drawing_2d/pixel_offset_mode.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="smoothing__mode_8h_source.html">drawing_2d/smoothing_mode.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="text__rendering__hint_8h_source.html">text/text_rendering_hint.h</a>&quot;</code><br />
 </div><a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
 <div class="textblock"><p>Contains <a class="el" href="classxtd_1_1drawing_1_1graphics.html" title="Defines an object used to draw lines and curves. This class cannot be inherited.">xtd::drawing::graphics</a> class. </p>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2023 Gammasoft. All rights reserved. </dd></dl>
@@ -146,7 +146,7 @@ Namespaces</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 24 2023 20:19:42 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Sep 27 2023 09:42:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
