@@ -2,10 +2,10 @@
 /// @brief Contains xtd::drawing::bitmap class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../drawing_export.h"
-#include "image.h"
-#include "imaging/bitmap_data.h"
-#include "imaging/image_lock_mode.h"
+#include "../drawing_export"
+#include "imaging/bitmap_data"
+#include "imaging/image_lock_mode"
+#include "image"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

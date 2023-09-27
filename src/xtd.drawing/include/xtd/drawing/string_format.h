@@ -2,14 +2,14 @@
 /// @brief Contains xtd::drawing::string_format class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "../drawing_export"
+#include "text/hotkey_prefix"
+#include "string_alignment"
+#include "string_format_flags"
+#include "string_trimming"
+#include <xtd/object>
 #include <cstdint>
 #include <ostream>
-#include <xtd/object.h>
-#include "../drawing_export.h"
-#include "string_alignment.h"
-#include "string_format_flags.h"
-#include "string_trimming.h"
-#include "text/hotkey_prefix.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

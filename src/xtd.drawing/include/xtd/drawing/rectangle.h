@@ -2,16 +2,15 @@
 /// @brief Contains xtd::drawing::rectangle class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <cmath>
+#include "../drawing_export"
+#include "point"
+#include "size"
+#include "rectangle_f"
+#include <xtd/iequatable>
+#include <xtd/object>
+#include <xtd/ustring>
 #include <cstdint>
 #include <ostream>
-#include <xtd/iequatable.h>
-#include <xtd/object.h>
-#include <xtd/ustring.h>
-#include "../drawing_export.h"
-#include "point.h"
-#include "size.h"
-#include "rectangle_f.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

@@ -2,10 +2,10 @@
 /// @brief Contains xtd::drawing::solid_brush class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/iequatable.h>
-#include "../drawing_export.h"
-#include "brush.h"
-#include "color.h"
+#include "../drawing_export"
+#include "brush"
+#include "color"
+#include <xtd/iequatable>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

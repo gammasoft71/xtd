@@ -2,9 +2,9 @@
 /// @brief Contains xtd::drawing::system_colors factory.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/static.h>
-#include "../drawing_export.h"
-#include "color.h"
+#include "../drawing_export"
+#include "color"
+#include <xtd/static>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

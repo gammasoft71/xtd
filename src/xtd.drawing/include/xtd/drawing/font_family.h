@@ -2,17 +2,17 @@
 /// @brief Contains xtd::drawing::font_family class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "../drawing_export"
+#include "font_style"
+#include "text/generic_font_families"
+#include <xtd/iequatable>
+#include <xtd/object>
+#include <xtd/ustring>
 #include <cstdint>
 #include <memory>
 #include <ostream>
 #include <stdexcept>
 #include <vector>
-#include <xtd/iequatable.h>
-#include <xtd/object.h>
-#include <xtd/ustring.h>
-#include "../drawing_export.h"
-#include "font_style.h"
-#include "text/generic_font_families.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

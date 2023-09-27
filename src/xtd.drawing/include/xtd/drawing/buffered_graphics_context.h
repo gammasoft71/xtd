@@ -2,13 +2,13 @@
 /// @brief Contains xtd::drawing::buffered_graphics_context class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/optional.h>
-#include <xtd/object.h>
-#include <xtd/types.h>
-#include "graphics.h"
-#include "buffered_graphics.h"
-#include "point.h"
-#include "size.h"
+#include "buffered_graphics"
+#include "graphics"
+#include "point"
+#include "size"
+#include <xtd/optional>
+#include <xtd/object>
+#include <xtd/types>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

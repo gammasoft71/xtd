@@ -2,13 +2,13 @@
 /// @brief Contains xtd::drawing::point class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "../drawing_export"
+#include "point_f"
+#include <xtd/iequatable>
+#include <xtd/object>
+#include <xtd/ustring>
 #include <cstdint>
 #include <ostream>
-#include <xtd/iequatable.h>
-#include <xtd/object.h>
-#include <xtd/ustring.h>
-#include "../drawing_export.h"
-#include "point_f.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
