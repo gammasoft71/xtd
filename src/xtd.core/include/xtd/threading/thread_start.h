@@ -2,7 +2,7 @@
 /// @brief Contains xtd::threading::thread_start exception.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../action"
+#include "../delegate"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -19,6 +19,6 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
-    using thread_start = action<>;
+    using thread_start = delegate<void()>;
   }
 }
