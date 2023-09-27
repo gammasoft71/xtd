@@ -210,3 +210,9 @@ namespace xtd {
     };
   }
 }
+
+/// @cond
+// Add xtd::delegate::begin_invoke and xtd::delegate::end_invoke methods.
+//
+#include "../delegate.hpp"
+/// @endcond

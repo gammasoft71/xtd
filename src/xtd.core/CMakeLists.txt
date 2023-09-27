@@ -132,6 +132,7 @@ add_sources(
   include/xtd/debugstreambuf
   include/xtd/delegate.h
   include/xtd/delegate
+  include/xtd/delegate.hpp
   include/xtd/distribution.h
   include/xtd/distribution
   include/xtd/divided_by_zero_exception.h

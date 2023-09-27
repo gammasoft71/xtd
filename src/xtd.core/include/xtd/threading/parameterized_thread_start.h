@@ -2,7 +2,7 @@
 /// @brief Contains xtd::threading::parameterized_thread_start exception.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../action"
+#include "../delegate"
 #include <any>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -21,6 +21,6 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
-    using parameterized_thread_start = action<std::any>;
+    using parameterized_thread_start = delegate<void(std::any)>;
   }
 }
