@@ -2,13 +2,12 @@
 /// @brief Contains xtd::drawing::system_icons factory.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "icon.h"
-#include "system_images.h"
-#include "size.h"
+#include "icon"
+#include "size"
+#include "system_images"
+#include <xtd/static>
 #include <map>
-#include <string>
 #include <vector>
-#include <xtd/static.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

@@ -2,10 +2,10 @@
 /// @brief Contains xtd::drawing::region class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../drawing_export.h"
-#include <xtd/iequatable.h>
-#include <xtd/object.h>
-#include "drawing_2d/graphics_path.h"
+#include "../drawing_export"
+#include "drawing_2d/graphics_path"
+#include <xtd/iequatable>
+#include <xtd/object>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

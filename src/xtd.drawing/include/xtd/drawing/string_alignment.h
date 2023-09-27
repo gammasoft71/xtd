@@ -2,7 +2,7 @@
 /// @brief Contains xtd::drawing::string_alignment enum class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/enum.h>
+#include <xtd/enum>
 
 /// @cond
 #undef far

@@ -2,11 +2,11 @@
 /// @brief Contains xtd::drawing::system_images_base factory.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "../drawing_export"
+#include "bitmap"
+#include "size"
+#include <xtd/static>
 #include <map>
-#include <xtd/static.h>
-#include "../drawing_export.h"
-#include "bitmap.h"
-#include "size.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
