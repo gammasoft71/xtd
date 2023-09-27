@@ -27,7 +27,7 @@ struct thread_pool::static_data {
 };
 
 void thread_pool::close() {
-  join_all(timeout::infinite);
+  join_all();
 }
 
 void thread_pool::get_available_threads(size_t& worker_threads, size_t& completion_port_threads) {
@@ -43,6 +43,20 @@ void thread_pool::get_max_threads(size_t& worker_threads, size_t& completion_por
 void thread_pool::get_min_threads(size_t& worker_threads, size_t& completion_port_threads) {
   worker_threads = min_threads_;
   completion_port_threads = min_asynchronous_io_threads_;
+}
+
+void thread_pool::join_all() {
+  join_all(timeout::infinite);
+}
+
+bool thread_pool::join_all(int32 milliseconds_timeout) {
+  auto result = join_all_threads(milliseconds_timeout);
+  if (result) result = join_all_asynchronous_io_threads(milliseconds_timeout);
+  return result;
+}
+
+bool thread_pool::join_all(const time_span& timeout) {
+  return join_all(as<int32>(timeout.total_milliseconds()));
 }
 
 bool thread_pool::queue_user_work_item(const wait_callback& callback) {
@@ -162,12 +176,6 @@ void thread_pool::initialize_min_asynchronous_io_threads() {
   get_static_data().asynchronous_io_threads.clear();
   for (auto index = 0_sz; index < min_asynchronous_io_threads_; ++index)
     create_asynchronous_io_thread();
-}
-
-bool thread_pool::join_all(int32 milliseconds_timeout) {
-  auto result = join_all_threads(milliseconds_timeout);
-  if (result) result = join_all_asynchronous_io_threads(milliseconds_timeout);
-  return result;
 }
 
 bool thread_pool::join_all_threads(int32 milliseconds_timeout) {
