@@ -119,7 +119,7 @@ namespace xtd {
     
     /// @brief Executes the method represented by the current delegate asynchronously on the thread that the control's underlying handle was created on.
     /// @return An async_result_invoke that represents the result of the begin_invoke operation.
-    std::shared_ptr<xtd::iasync_result> begin_invoke(const xtd::async_callback& async_callback, std::any async_state);
+    std::shared_ptr<xtd::iasync_result> begin_invoke(xtd::async_callback async_callback, std::any async_state);
 
     /// @brief Executes the method represented by the current delegate asynchronously on the thread that the control's underlying handle was created on.
     /// @return An async_result_invoke that represents the result of the begin_invoke operation.
@@ -1107,7 +1107,7 @@ namespace xtd {
     class async_result_invoke : public xtd::iasync_result {
       struct data;
     public:
-      explicit async_result_invoke(std::any async_state);
+      async_result_invoke(xtd::async_callback async_callback, std::any async_state);
       std::any async_state() const noexcept override;
       xtd::threading::wait_handle& async_wait_handle() noexcept override;
       bool completed_synchronously() const noexcept override;
@@ -1298,6 +1298,10 @@ namespace xtd {
     /// @name Methods
     
     /// @{
+    /// @brief Executes the method represented by the current delegate asynchronously on the thread that the control's underlying handle was created on.
+    /// @return An async_result_invoke that represents the result of the begin_invoke operation.
+    std::shared_ptr<xtd::iasync_result> begin_invoke(xtd::async_callback async_callback, std::any async_state, arguments_t... arguments);
+    
     /// @brief Executes the method represented by the current delegate asynchronously on the thread that the control's underlying handle was created on.
     /// @return An async_result_invoke that represents the result of the begin_invoke operation.
     std::shared_ptr<xtd::iasync_result> begin_invoke(arguments_t... arguments);
