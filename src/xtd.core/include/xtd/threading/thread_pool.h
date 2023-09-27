@@ -112,6 +112,25 @@ namespace xtd {
       /// @param completion_port_threads The maximum number of asynchronous I/O threads in the thread pool.
       static void get_min_threads(size_t& worker_threads, size_t& completion_port_threads);
 
+      /// @brief Join all resources and worker threads.
+      /// @remarks The join_all method waits for the end of running worker threads, but will not wait for unstarted worker threads.
+      /// @remarks You can use this method to ensure that all pending threads are closed, and that resources are also closed.
+      /// @remarks #startup_calls xtd::thread_pool::close method.
+      /// @remarks xtd::threading::thread::join_all, xtd::threading::thread::join_all(int32), xtd::threading::thread::join_all(const xtd::time_span&) methods call xtd::threading::thread_pool::close method too.
+      static void join_all();
+      /// @brief Join all resources and worker threads.
+      /// @param milliseconds_timeout The number of milliseconds to wait for all threads to terminate.
+      /// @return true if all threads have terminated; false if all threads have not terminated after the amount of time specified by the timeout parameter has elapsed.
+      /// @remarks If one or more threads are not joinable, they will be skipped.
+      /// @remarks You can use this method to ensure that all pending threads are closed, and that resources are also closed.
+      static bool join_all(int32 milliseconds_timeout);
+      /// @brief Join all resources and worker threads.
+      /// @param timeout A xtd::time_span set to the amount of time to wait for all threads to terminate.
+      /// @return true if all threads have terminated; false if all threads have not terminated after the amount of time specified by the timeout parameter has elapsed.
+      /// @remarks If one or more threads are not joinable, they will be skipped.
+      /// @remarks You can use this method to ensure that all pending threads are closed, and that resources are also closed.
+      static bool join_all(const time_span& timeout);
+
       /// @brief Queues a method for execution. The method executes when a thread pool thread becomes available.
       /// @param callback A pointer function that represents the method to be executed.
       /// @return true if the method is successfully queued; NotSupportException is thrown if the work item could not be queued
@@ -198,7 +217,6 @@ namespace xtd {
       static static_data& get_static_data();
       static void initialize_min_threads();
       static void initialize_min_asynchronous_io_threads();
-      static bool join_all(int32 milliseconds_timeout);
       static bool join_all_threads(int32 milliseconds_timeout);
       static bool join_all_asynchronous_io_threads(int32 milliseconds_timeout);
       static void run();
