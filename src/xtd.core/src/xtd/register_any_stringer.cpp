@@ -1,6 +1,8 @@
 #include "../../include/xtd/ustring"
 #include "../../include/xtd/register_any_stringer"
 #include "../../include/xtd/types"
+#include "../../include/xtd/date_time"
+#include "../../include/xtd/time_span"
 
 using namespace std;
 using namespace xtd;
@@ -50,4 +52,6 @@ std::unordered_map<std::type_index, std::function<std::string(std::any const&)>>
   //__to_any_stringer__<char16*>([](auto value)->std::string {return ustring::format("{}", value);}),
   //__to_any_stringer__<char32*>([](auto value)->std::string {return ustring::format("{}", value);}),
   //__to_any_stringer__<wchar*>([](auto value)->std::string {return ustring::format("{}", value);}),
+  __to_any_stringer__<date_time>([](auto value)->std::string {return ustring::format("{}", value);}),
+  __to_any_stringer__<time_span>([](auto value)->std::string {return ustring::format("{}", value);}),
 };
