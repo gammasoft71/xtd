@@ -1,6 +1,6 @@
-#include <xtd/threading/thread>
+#include <xtd/threading/lock_guard>
+#include <xtd/threading/thread_pool>
 #include <xtd/console>
-#include <xtd/lock>
 #include <xtd/random>
 #include <xtd/startup>
 
@@ -12,46 +12,41 @@ namespace examples {
   public:
     explicit account(int initial) : balance(initial) {}
     
-    int withdraw(int amount) {
-      // This condition never is true unless the lock statement is commented out.
-      if (balance < 0)
-        throw system_exception("Negative Balance", csf_);
-      
-      // Comment out the next line to see the effect of leaving out the lock keyword.
-      lock_guard_(balance) {
-        if (balance >= amount) {
-          console::write_line("Balance before Withdrawal :  {0}", balance);
-          console::write_line("Amount to Withdraw        : -{0}", amount);
-          balance = balance - amount;
-          console::write_line("Balance after Withdrawal  :  {0}", balance);
-          return amount;
-        }
-      }
-      return 0;
-    }
-    
     void do_transactions() {
-      for (int i = 0; i < 100; i++)
+      for (auto i = 0; i < 100; ++i)
         withdraw(random.next(1, 100));
     }
     
   private:
-    int balance;
+    int withdraw(int amount) {
+      // This condition never is true unless the lock statement is commented out.
+      if (balance < 0) throw system_exception {"Negative Balance", csf_};
+      
+      // Comment out the next line to see the effect of leaving out the lock keyword.
+      lock_guard_(balance) {
+        if (balance < amount) return 0;
+        console::write_line("Balance before Withdrawal :  {0}", balance);
+        console::write_line("Amount to Withdraw        : -{0}", amount);
+        balance = balance - amount;
+        console::write_line("Balance after Withdrawal  :  {0}", balance);
+        return amount;
+      }
+      return 0;
+    }
+    
+    int balance = 0;
     xtd::random random;
   };
   
   class program {
   public:
     static void main() {
-      std::vector<thread> threads(10);
-      account account(1000);
-      for (int i = 0; i < 10; i++) {
-        threads[i] = thread {thread_start {account, &account::do_transactions}};
-        threads[i].start();
-      }
-
-      for (auto& thread : threads)
-        thread.join();
+      auto account = examples::account {1000};
+      
+      for (auto i = 0; i < 10; ++i)
+        thread_pool::queue_user_work_item({account, &account::do_transactions});
+      
+      thread_pool::close();
     }
   };
 }
