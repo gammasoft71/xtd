@@ -9,7 +9,7 @@ auto main()->int {
   
   auto a_double = 0.1111111111111111111;
   auto a_single = 0.1111111111111111111f;
-  auto a_long = 1111111111111111111;
+  auto a_long = 1111111111111111111_s64;
   auto an_int = 1111111111;
   auto a_short = 11111_u16;
   auto a_char = '*';
