@@ -535,16 +535,8 @@ namespace {
     {"z", {90, U'z', false, false, false}}, // z
   };
   
-  int_least32_t __background_color() {
-    return CONSOLE_COLOR_BLACK;
-  }
-  
-  int_least32_t __foreground_color() {
-    return CONSOLE_COLOR_GRAY;
-  }
-  
-  auto background_color = __background_color();
-  auto foreground_color = __foreground_color();
+  auto background_color = CONSOLE_COLOR_DEFAULT;
+  auto foreground_color = CONSOLE_COLOR_DEFAULT;
   auto buffer_height = -1;
   auto buffer_width = -1;
   auto caps_lock = false;
@@ -569,7 +561,7 @@ int_least32_t console::background_color() {
 }
 
 bool console::background_color(int_least32_t color) {
-  static auto colors = std::map<int_least32_t, const char*> {{CONSOLE_COLOR_BLACK, "\033[40m"}, {CONSOLE_COLOR_DARK_BLUE, "\033[44m"}, {CONSOLE_COLOR_DARK_GREEN, "\033[42m"}, {CONSOLE_COLOR_DARK_CYAN, "\033[46m"}, {CONSOLE_COLOR_DARK_RED, "\033[41m"}, {CONSOLE_COLOR_DARK_MAGENTA, "\033[45m"}, {CONSOLE_COLOR_DARK_YELLOW, "\033[43m"}, {CONSOLE_COLOR_GRAY, "\033[47m"}, {CONSOLE_COLOR_DARK_GRAY, "\033[100m"}, {CONSOLE_COLOR_BLUE, "\033[104m"}, {CONSOLE_COLOR_GREEN, "\033[102m"}, {CONSOLE_COLOR_CYAN, "\033[106m"}, {CONSOLE_COLOR_RED, "\033[101m"}, {CONSOLE_COLOR_MAGENTA, "\033[105m"}, {CONSOLE_COLOR_YELLOW, "\033[103m"}, {CONSOLE_COLOR_WHITE, "\033[107m"}};
+  static auto colors = std::map<int_least32_t, const char*> {{CONSOLE_COLOR_DEFAULT, "\x1b[49m"}, {CONSOLE_COLOR_BLACK, "\x1b[40m"}, {CONSOLE_COLOR_DARK_BLUE, "\x1b[44m"}, {CONSOLE_COLOR_DARK_GREEN, "\x1b[42m"}, {CONSOLE_COLOR_DARK_CYAN, "\x1b[46m"}, {CONSOLE_COLOR_DARK_RED, "\x1b[41m"}, {CONSOLE_COLOR_DARK_MAGENTA, "\x1b[45m"}, {CONSOLE_COLOR_DARK_YELLOW, "\x1b[43m"}, {CONSOLE_COLOR_GRAY, "\x1b[47m"}, {CONSOLE_COLOR_DARK_GRAY, "\x1b[100m"}, {CONSOLE_COLOR_BLUE, "\x1b[104m"}, {CONSOLE_COLOR_GREEN, "\x1b[102m"}, {CONSOLE_COLOR_CYAN, "\x1b[106m"}, {CONSOLE_COLOR_RED, "\x1b[101m"}, {CONSOLE_COLOR_MAGENTA, "\x1b[105m"}, {CONSOLE_COLOR_YELLOW, "\x1b[103m"}, {CONSOLE_COLOR_WHITE, "\x1b[107m"}};
   auto it = colors.find(color);
   if (it == colors.end()) return false;
   ::background_color = color;
@@ -737,7 +729,7 @@ int_least32_t console::foreground_color() {
 }
 
 bool console::foreground_color(int_least32_t color) {
-  static auto colors = std::map<int_least32_t, const char*> {{CONSOLE_COLOR_BLACK, "\033[30m"}, {CONSOLE_COLOR_DARK_BLUE, "\033[34m"}, {CONSOLE_COLOR_DARK_GREEN, "\033[32m"}, {CONSOLE_COLOR_DARK_CYAN, "\033[36m"}, {CONSOLE_COLOR_DARK_RED, "\033[31m"}, {CONSOLE_COLOR_DARK_MAGENTA, "\033[35m"}, {CONSOLE_COLOR_DARK_YELLOW, "\033[33m"}, {CONSOLE_COLOR_GRAY, "\033[37m"}, {CONSOLE_COLOR_DARK_GRAY, "\033[90m"}, {CONSOLE_COLOR_BLUE, "\033[94m"}, {CONSOLE_COLOR_GREEN, "\033[92m"}, {CONSOLE_COLOR_CYAN, "\033[96m"}, {CONSOLE_COLOR_RED, "\033[91m"}, {CONSOLE_COLOR_MAGENTA, "\033[95m"}, {CONSOLE_COLOR_YELLOW, "\033[93m"}, {CONSOLE_COLOR_WHITE, "\033[97m"}};
+  static auto colors = std::map<int_least32_t, const char*> {{CONSOLE_COLOR_DEFAULT, "\x1b[39m"}, {CONSOLE_COLOR_BLACK, "\x1b[30m"}, {CONSOLE_COLOR_DARK_BLUE, "\x1b[34m"}, {CONSOLE_COLOR_DARK_GREEN, "\x1b[32m"}, {CONSOLE_COLOR_DARK_CYAN, "\x1b[36m"}, {CONSOLE_COLOR_DARK_RED, "\x1b[31m"}, {CONSOLE_COLOR_DARK_MAGENTA, "\x1b[35m"}, {CONSOLE_COLOR_DARK_YELLOW, "\x1b[33m"}, {CONSOLE_COLOR_GRAY, "\x1b[37m"}, {CONSOLE_COLOR_DARK_GRAY, "\x1b[90m"}, {CONSOLE_COLOR_BLUE, "\x1b[94m"}, {CONSOLE_COLOR_GREEN, "\x1b[92m"}, {CONSOLE_COLOR_CYAN, "\x1b[96m"}, {CONSOLE_COLOR_RED, "\x1b[91m"}, {CONSOLE_COLOR_MAGENTA, "\x1b[95m"}, {CONSOLE_COLOR_YELLOW, "\x1b[93m"}, {CONSOLE_COLOR_WHITE, "\x1b[97m"}};
   auto it = colors.find(color);
   if (it == colors.end()) return false;
   ::foreground_color = color;
@@ -798,9 +790,7 @@ void console::register_user_cancel_callback(std::function<bool(int_least32_t)> u
 }
 
 bool console::reset_color() {
-  console::background_color(__background_color()) && console::foreground_color(__foreground_color());
-  if (terminal::is_ansi_supported()) std::cout << "\x1b[0m" << std::flush;
-  return true;
+  return console::background_color(CONSOLE_COLOR_DEFAULT) && console::foreground_color(CONSOLE_COLOR_DEFAULT);
 }
 
 bool console::set_cursor_position(int_least32_t left, int_least32_t top) {

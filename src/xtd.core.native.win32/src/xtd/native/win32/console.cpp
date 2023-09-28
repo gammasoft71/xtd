@@ -16,18 +16,18 @@ using namespace xtd::native;
 namespace {
   std::function<bool(int_least32_t)> user_cancel_callback;
   
-  int_least32_t __background_color() {
-    static int_least32_t color = -1;
-    if (color != -1) return color;
+  int_least32_t __default_background_color() {
+    static int_least32_t color = CONSOLE_COLOR_DEFAULT;
+    if (color != CONSOLE_COLOR_DEFAULT) return color;
     CONSOLE_SCREEN_BUFFER_INFO csbi;
     if (GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi) != TRUE) color = 0x00;
     color = (csbi.wAttributes & 0x00F0) >> 4;
     return color;
   }
   
-  int_least32_t __foreground_color() {
-    static int_least32_t color = -1;
-    if (color != -1) return color;
+  int_least32_t __default_foreground_color() {
+    static int_least32_t color = CONSOLE_COLOR_DEFAULT;
+    if (color != CONSOLE_COLOR_DEFAULT) return color;
     CONSOLE_SCREEN_BUFFER_INFO csbi;
     if (GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi) != TRUE) color = 0x07;
     color = csbi.wAttributes & 0x000F;
@@ -45,8 +45,8 @@ namespace {
     return false;
   }();
   bool treat_control_c_as_input =  false;
-  auto background_color = __background_color();
-  auto foreground_color = __foreground_color();
+  auto background_color = CONSOLE_COLOR_DEFAULT;
+  auto foreground_color = CONSOLE_COLOR_DEFAULT;
   auto buffer_height = -1;
   auto buffer_width = -1;
   auto caps_lock = false;
@@ -83,16 +83,14 @@ namespace {
       SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), csbi.wAttributes);
     }
     
-    int_least32_t background_color_ = __background_color();
-    int_least32_t foreground_color_ = __foreground_color();
+    int_least32_t background_color_ = __default_background_color();
+    int_least32_t foreground_color_ = __default_foreground_color();
   };
   
   terminal terminal::terminal_;
 }
 
 int_least32_t console::background_color() {
-  CONSOLE_SCREEN_BUFFER_INFO csbi;
-  if (GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi) == TRUE) ::background_color = (csbi.wAttributes & 0x00F0) >> 4;
   return ::background_color;
 }
 
@@ -103,7 +101,7 @@ bool console::background_color(int_least32_t color) {
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   
   csbi.wAttributes &= 0xFF0F;
-  csbi.wAttributes |= color << 4;
+  csbi.wAttributes |= (color == CONSOLE_COLOR_DEFAULT ? __default_background_color() : color) << 4;
   return SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), csbi.wAttributes) == TRUE;
 }
 
@@ -210,8 +208,6 @@ bool console::cursor_visible(bool visible) {
 }
 
 int_least32_t console::foreground_color() {
-  CONSOLE_SCREEN_BUFFER_INFO csbi;
-  if (GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi) == TRUE) ::foreground_color = csbi.wAttributes & 0x000F;
   return ::foreground_color;
 }
 
@@ -222,7 +218,7 @@ bool console::foreground_color(int_least32_t color) {
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   
   csbi.wAttributes &= 0xFFF0;
-  csbi.wAttributes |= color;
+  csbi.wAttributes |= (color == CONSOLE_COLOR_DEFAULT ? __default_foreground_color() : color);
   return SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), csbi.wAttributes) == TRUE;
 }
 
@@ -286,9 +282,7 @@ void console::register_user_cancel_callback(std::function<bool(int_least32_t)> u
 }
 
 bool console::reset_color() {
-  auto result1 = console::background_color(__background_color());
-  auto result2 = console::foreground_color(__foreground_color());
-  return result1 && result2;
+  return console::background_color(CONSOLE_COLOR_DEFAULT) && console::foreground_color(CONSOLE_COLOR_DEFAULT);
 }
 
 bool console::set_cursor_position(int_least32_t left, int_least32_t top) {
