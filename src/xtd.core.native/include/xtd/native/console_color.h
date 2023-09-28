@@ -11,6 +11,14 @@
 
 #include <cstdint>
 
+/// @brief Console DEFAULT black.
+/// @par Library
+/// xtd.core.native
+/// @ingroup xtd_core_native console_color
+/// @remarks Added specifically for xtd.
+/// @warning Internal use only
+constexpr int_least32_t CONSOLE_COLOR_DEFAULT = -1;
+
 /// @brief Console color black.
 /// @par Library
 /// xtd.core.native

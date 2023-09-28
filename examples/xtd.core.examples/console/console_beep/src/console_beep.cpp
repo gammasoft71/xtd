@@ -9,7 +9,7 @@ auto main(int argc, char* argv[])->int {
   auto x = 0;
   //
   if ((argc == 2) && (int32_object::try_parse(argv[1], x) == true) && ((x >= 1) && (x <= 9))) {
-    for (auto i = 1; i <= x; i++) {
+    for (auto i = 1; i <= x; ++i) {
       console::write_line("Beep number {}.", i);
       console::beep();
       thread::sleep(100_ms);
