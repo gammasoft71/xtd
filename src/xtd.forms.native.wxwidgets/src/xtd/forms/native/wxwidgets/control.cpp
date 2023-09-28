@@ -363,20 +363,17 @@ intptr control::native_handle(intptr control) {
   return reinterpret_cast<intptr>(reinterpret_cast<control_handler*>(control)->control()->GetHandle());
 }
 
-void control::invoke_in_control_thread(intptr control, delegate<void(std::vector<std::any>)> invoker, const std::vector<std::any>& args, std::shared_ptr<xtd::threading::mutex> invoked, std::shared_ptr<bool> completed) {
-  if (!control || !wxTheApp || !wxTheApp->IsMainLoopRunning() || !reinterpret_cast<control_handler*>(control)->control()->GetEvtHandlerEnabled())
-    invoked->unlock();
-  else {
-    if (!reinterpret_cast<control_handler*>(control)->control()) {
-      wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
-      return;
-    }
-    reinterpret_cast<control_handler*>(control)->control()->CallAfter([ = ] {
-      invoker(args);
-      *completed = true;
-      invoked->unlock();
-    });
+void control::invoke_in_control_thread(intptr control, delegate<void(std::vector<std::any>)> invoker, const std::vector<std::any>& args, std::shared_ptr<xtd::threading::manual_reset_event> invoked, std::shared_ptr<bool> completed) {
+  if (!control || !wxTheApp || !wxTheApp->IsMainLoopRunning() || !reinterpret_cast<control_handler*>(control)->control()->GetEvtHandlerEnabled()) return;
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
   }
+  reinterpret_cast<control_handler*>(control)->control()->CallAfter([ = ] {
+    invoker(args);
+    *completed = true;
+    invoked->set();
+  });
 }
 
 point control::location(intptr control) {
