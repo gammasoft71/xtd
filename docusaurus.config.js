@@ -97,6 +97,11 @@ const config = {
             label: 'Documentation',
           },
           {
+            href: 'https://github.com/gammasoft71/xtd/wiki/wiki#xtd-wiki',
+            label: 'Wiki',
+            position: 'left',
+          },
+          {
             type: 'doc',
             docId: 'Support/README',
             position: 'left',
