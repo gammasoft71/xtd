@@ -24,7 +24,7 @@
 #include <xtd/forms/native/mouse_key>
 #include <xtd/forms/native/window_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/threading/mutex>
+#include <xtd/threading/manual_reset_event.h>
 #include <xtd/threading/thread>
 #include <xtd/invalid_operation_exception>
 #include <xtd/typeof>
@@ -64,7 +64,7 @@ namespace {
 struct control::async_result_invoke::data {
   std::any async_state;
   std::shared_ptr<bool> is_completed = std::make_shared<bool>(false);
-  std::shared_ptr<xtd::threading::mutex> async_mutex = std::make_shared<xtd::threading::mutex>();
+  std::shared_ptr<xtd::threading::manual_reset_event> async_event = std::make_shared<xtd::threading::manual_reset_event>();
 };
 
 control::async_result_invoke::async_result_invoke(std::any async_state) : data_(std::make_shared<data>()) {
@@ -76,7 +76,7 @@ std::any control::async_result_invoke::async_state() const noexcept {
 }
 
 xtd::threading::wait_handle& control::async_result_invoke::async_wait_handle() noexcept {
-  return *data_->async_mutex;
+  return *data_->async_event;
 }
 
 bool control::async_result_invoke::completed_synchronously() const noexcept {
@@ -820,10 +820,8 @@ std::shared_ptr<xtd::iasync_result> control::begin_invoke(delegate<void()> metho
 }
 
 shared_ptr<iasync_result> control::begin_invoke(delegate<void(vector<any>)> method, const vector<any>& args) {
-  //while (!xtd::forms::application::message_loop()) xtd::threading::thread::sleep(10_ms);
   shared_ptr<async_result_invoke> async = make_shared<async_result_invoke>(std::reference_wrapper(*this));
-  async->async_wait_handle().wait_one();
-  if (is_handle_created()) native::control::invoke_in_control_thread(data_->handle, method, args, async->data_->async_mutex, async->data_->is_completed);
+  if (is_handle_created()) native::control::invoke_in_control_thread(data_->handle, method, args, async->data_->async_event, async->data_->is_completed);
   threading::thread::yield();
   return async;
 }
@@ -1000,7 +998,7 @@ bool control::equals(const control& value) const noexcept {
 }
 
 std::optional<object_ref> control::end_invoke(shared_ptr<iasync_result> async) {
-  auto lock = lock_guard<threading::mutex> {as<threading::mutex>(async->async_wait_handle())};
+  async->async_wait_handle().wait_one();
   return *this;
 }
 
