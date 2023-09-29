@@ -2,7 +2,7 @@
 /// @brief Contains xtd::net::sockets::address_family enum.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../../enum"
+#include "../../enum.h"
 
 /// @cond
 #undef unix

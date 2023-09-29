@@ -2,12 +2,12 @@
 /// @brief Contains xtd::net::sockets::tcp_client class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "network_stream"
-#include "socket"
-#include "../ip_end_point"
-#include "../../iequatable"
-#include "../../object"
-#include "../../ustring"
+#include "network_stream.h"
+#include "socket.h"
+#include "../ip_end_point.h"
+#include "../../iequatable.h"
+#include "../../object.h"
+#include "../../ustring.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

@@ -2,11 +2,11 @@
 /// @brief Contains xtd::net::sockets::socket_information class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "socket_information_options"
-#include "../../core_export"
-#include "../../object"
-#include "../../types"
-#include "../../ustring"
+#include "socket_information_options.h"
+#include "../../core_export.h"
+#include "../../object.h"
+#include "../../types.h"
+#include "../../ustring.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

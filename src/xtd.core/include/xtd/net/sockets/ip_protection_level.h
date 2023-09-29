@@ -2,7 +2,7 @@
 /// @brief Contains xtd::net::sockets::ip_protection_level enum.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../../enum"
+#include "../../enum.h"
 
 /// @cond
 #undef unix
