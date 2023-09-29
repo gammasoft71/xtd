@@ -2,7 +2,7 @@
 /// @brief Contains xtd::io::string_reader class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "text_reader"
+#include "text_reader.h"
 #include <sstream>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

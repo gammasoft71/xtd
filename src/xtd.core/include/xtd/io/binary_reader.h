@@ -2,9 +2,9 @@
 /// @brief Contains xtd::io::binary_reader class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../optional"
-#include "../object"
-#include "../ustring"
+#include "../optional.h"
+#include "../object.h"
+#include "../ustring.h"
 #include <iostream>
 #include <fstream>
 #include <vector>

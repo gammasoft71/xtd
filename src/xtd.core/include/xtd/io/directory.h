@@ -2,11 +2,11 @@
 /// @brief Contains xtd::io::directory class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "directory_info"
-#include "../core_export"
-#include "../date_time"
-#include "../iequatable"
-#include "../static"
+#include "directory_info.h"
+#include "../core_export.h"
+#include "../date_time.h"
+#include "../iequatable.h"
+#include "../static.h"
 #include <tuple>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

@@ -2,10 +2,10 @@
 /// @brief Contains xtd::io::drive_info class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../core_export"
-#include "../object"
-#include "directory_info"
-#include "drive_type"
+#include "../core_export.h"
+#include "../object.h"
+#include "directory_info.h"
+#include "drive_type.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
