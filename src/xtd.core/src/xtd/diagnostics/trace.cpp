@@ -1,8 +1,8 @@
-#include "../../../include/xtd/diagnostics/trace"
-#include "../../../include/xtd/diagnostics/debugger"
-#include "../../../include/xtd/diagnostics/default_trace_listener"
-#include "../../../include/xtd/environment"
-#include "../../../include/xtd/lock"
+#include "../../../include/xtd/diagnostics/trace.h"
+#include "../../../include/xtd/diagnostics/debugger.h"
+#include "../../../include/xtd/diagnostics/default_trace_listener.h"
+#include "../../../include/xtd/environment.h"
+#include "../../../include/xtd/lock.h"
 #include <mutex>
 
 using namespace std;
