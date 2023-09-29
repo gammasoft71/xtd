@@ -2,13 +2,13 @@
 /// @brief Contains xtd::uri class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "iequatable"
-#include "uri_components"
-#include "uri_format"
-#include "uri_host_name_type"
-#include "uri_kind"
-#include "uri_partial"
-#include "ustring"
+#include "iequatable.h"
+#include "uri_components.h"
+#include "uri_format.h"
+#include "uri_host_name_type.h"
+#include "uri_kind.h"
+#include "uri_partial.h"
+#include "ustring.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

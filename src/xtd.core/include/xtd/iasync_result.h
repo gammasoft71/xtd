@@ -2,10 +2,10 @@
 /// @brief Contains xtd::iasync_result interface.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "threading/wait_handle"
-#include "any"
-#include "interface"
-#include "object"
+#include "threading/wait_handle.h"
+#include "any.h"
+#include "interface.h"
+#include "object.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

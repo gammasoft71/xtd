@@ -2,7 +2,7 @@
 /// @brief Contains xtd::const_object_ref alias.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "object"
+#include "object.h"
 #include <functional>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

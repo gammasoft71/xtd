@@ -2,12 +2,12 @@
 /// @brief Contains xtd::time_span typedef.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "chrono"
-#include "icomparable"
-#include "iequatable"
-#include "object"
-#include "ticks"
-#include "types"
+#include "chrono.h"
+#include "icomparable.h"
+#include "iequatable.h"
+#include "object.h"
+#include "ticks.h"
+#include "types.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

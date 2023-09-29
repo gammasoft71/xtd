@@ -2,9 +2,9 @@
 /// @brief Contains xtd::processor class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "architecture_id"
-#include "object"
-#include "ustring"
+#include "architecture_id.h"
+#include "object.h"
+#include "ustring.h"
 #include <map>
 #include <vector>
 

@@ -2,9 +2,9 @@
 /// @brief Contains xtd::ticks typedef.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "chrono"
-#include "tick"
-#include "types"
+#include "chrono.h"
+#include "tick.h"
+#include "types.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

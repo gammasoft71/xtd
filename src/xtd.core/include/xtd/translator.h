@@ -2,9 +2,9 @@
 /// @brief Contains xtd::translator class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "collections/specialized/string_map"
-#include "static"
-#include "ustring"
+#include "collections/specialized/string_map.h"
+#include "static.h"
+#include "ustring.h"
 #include <string>
 #include <vector>
 

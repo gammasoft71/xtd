@@ -2,12 +2,12 @@
 /// @brief Contains enum_ and enum_ut_ keywords.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "enum_attribute"
-#include "enum_collection"
-#include "enum_object"
-#include "enum_register"
-#include "enum_set_attribute"
-#include "flags_attribute"
+#include "enum_attribute.h"
+#include "enum_collection.h"
+#include "enum_object.h"
+#include "enum_register.h"
+#include "enum_set_attribute.h"
+#include "flags_attribute.h"
 
 /// @brief Provides the registration struct for enum with specified underlying type.
 /// @par Header

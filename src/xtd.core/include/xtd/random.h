@@ -2,12 +2,12 @@
 /// @brief Contains xtd::random class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "argument_null_exception"
-#include "argument_out_of_range_exception"
-#include "core_export"
-#include "environment"
-#include "object"
-#include "optional"
+#include "argument_null_exception.h"
+#include "argument_out_of_range_exception.h"
+#include "core_export.h"
+#include "environment.h"
+#include "object.h"
+#include "optional.h"
 #include <limits>
 #include <random>
 

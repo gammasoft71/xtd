@@ -2,12 +2,12 @@
 /// @brief Contains xtd::operating_system class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "optional"
-#include "distribution"
-#include "object"
-#include "platform_id"
-#include "ustring"
-#include "version"
+#include "optional.h"
+#include "distribution.h"
+#include "object.h"
+#include "platform_id.h"
+#include "ustring.h"
+#include "version.h"
 #include <map>
 #include <vector>
 

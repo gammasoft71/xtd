@@ -2,7 +2,7 @@
 /// @brief Contains xtd::argument_null_exception exception.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "argument_exception"
+#include "argument_exception.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

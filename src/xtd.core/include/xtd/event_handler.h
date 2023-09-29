@@ -2,9 +2,9 @@
 /// @brief Contains xtd::event_handler event handler.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "delegate"
-#include "event"
-#include "event_args"
+#include "delegate.h"
+#include "event.h"
+#include "event_args.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

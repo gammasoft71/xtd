@@ -1,14 +1,14 @@
 /// @file
 /// @brief Contains xtd::as method.
 #pragma once
-#include "any"
-#include "convert"
-#include "convert_pointer"
-#include "convert_string"
-#include "invalid_cast_exception"
-#include "types"
+#include "any.h"
+#include "convert.h"
+#include "convert_pointer.h"
+#include "convert_string.h"
+#include "invalid_cast_exception.h"
+#include "types.h"
 #define __XTD_CORE_INTERNAL__
-#include "internal/__as_enum"
+#include "internal/__as_enum.h"
 #undef __XTD_CORE_INTERNAL__
 #include <memory>
 

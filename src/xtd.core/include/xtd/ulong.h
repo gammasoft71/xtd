@@ -3,5 +3,5 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 /// @cond
-#include "types"
-#include "ulong_object"
+#include "types.h"
+#include "ulong_object.h"

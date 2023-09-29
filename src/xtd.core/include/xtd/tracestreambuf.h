@@ -2,8 +2,8 @@
 /// @brief Contains xtd::tracestreambuf class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "diagnostics/trace"
-#include "object"
+#include "diagnostics/trace.h"
+#include "object.h"
 #include <iostream>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
