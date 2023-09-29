@@ -1,11 +1,11 @@
-#include "../../../include/xtd/argument_exception"
-#include "../../../include/xtd/unauthorized_access_exception"
-#include "../../../include/xtd/io/io_exception"
-#include "../../../include/xtd/io/file_not_found_exception"
-#include "../../../include/xtd/io/file"
-#include "../../../include/xtd/io/path"
-#include "../../../include/xtd/io/stream_writer"
-#include "../../../include/xtd/diagnostics/debug"
+#include "../../../include/xtd/argument_exception.h"
+#include "../../../include/xtd/unauthorized_access_exception.h"
+#include "../../../include/xtd/io/io_exception.h"
+#include "../../../include/xtd/io/file_not_found_exception.h"
+#include "../../../include/xtd/io/file.h"
+#include "../../../include/xtd/io/path.h"
+#include "../../../include/xtd/io/stream_writer.h"
+#include "../../../include/xtd/diagnostics/debug.h"
 
 using namespace std;
 using namespace xtd;

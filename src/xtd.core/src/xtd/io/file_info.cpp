@@ -1,9 +1,9 @@
-#include "../../../include/xtd/io/file_info"
-#include "../../../include/xtd/io/file_attributes"
-#include "../../../include/xtd/io/file_not_found_exception"
-#include "../../../include/xtd/io/directory_info"
-#include "../../../include/xtd/io/path"
-#include "../../../include/xtd/argument_exception"
+#include "../../../include/xtd/io/file_info.h"
+#include "../../../include/xtd/io/file_attributes.h"
+#include "../../../include/xtd/io/file_not_found_exception.h"
+#include "../../../include/xtd/io/directory_info.h"
+#include "../../../include/xtd/io/path.h"
+#include "../../../include/xtd/argument_exception.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/file>
 #include <xtd/native/file_system>
