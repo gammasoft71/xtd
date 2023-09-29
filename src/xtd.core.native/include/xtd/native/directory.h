@@ -8,7 +8,7 @@
 #endif
 /// @endcond
 
-#include "file_attribute"
+#include "file_attribute.h"
 #include <xtd/core_native_export>
 #include <cstdint>
 #include <iterator>
