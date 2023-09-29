@@ -1,6 +1,6 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/named_semaphore>
-#include "../../../../include/xtd/native/macos/semaphore"
+#include "../../../../include/xtd/native/macos/semaphore.h"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #import <CoreFoundation/CoreFoundation.h>
 #include <TargetConditionals.h>
