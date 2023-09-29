@@ -2,10 +2,10 @@
 /// @brief Contains xtd::threading::mutex exception.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "wait_handle"
-#include "../date_time"
-#include "../icomparable"
-#include "../iequatable"
+#include "wait_handle.h"
+#include "../date_time.h"
+#include "../icomparable.h"
+#include "../iequatable.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

@@ -2,15 +2,15 @@
 /// @brief Contains xtd::threading::thread_pool class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "registered_wait_handle"
-#include "semaphore"
-#include "thread"
-#include "wait_callback"
-#include "wait_or_timer_callback"
-#include "../core_export"
-#include "../static"
-#include "../time_span"
-#include "../types"
+#include "registered_wait_handle.h"
+#include "semaphore.h"
+#include "thread.h"
+#include "wait_callback.h"
+#include "wait_or_timer_callback.h"
+#include "../core_export.h"
+#include "../static.h"
+#include "../time_span.h"
+#include "../types.h"
 #include <vector>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

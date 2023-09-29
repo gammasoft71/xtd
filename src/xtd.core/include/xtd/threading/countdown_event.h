@@ -2,10 +2,10 @@
 /// @brief Contains xtd::threading::countdown_event exception.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "cancellation_token"
-#include "wait_handle"
-#include "../object"
-#include "../time_span"
+#include "cancellation_token.h"
+#include "wait_handle.h"
+#include "../object.h"
+#include "../time_span.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

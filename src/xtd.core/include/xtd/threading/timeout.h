@@ -2,10 +2,10 @@
 /// @brief Contains xtd::threading::timeout class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../core_export"
-#include "../static"
-#include "../time_span"
-#include "../types"
+#include "../core_export.h"
+#include "../static.h"
+#include "../time_span.h"
+#include "../types.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
