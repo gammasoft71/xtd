@@ -1,11 +1,11 @@
 /// @file
 /// @brief Contains xtd::net::socket_address class.
 #pragma once
-#include "sockets/address_family"
-#include "../core_export"
-#include "../object"
-#include "../types"
-#include "../ustring"
+#include "sockets/address_family.h"
+#include "../core_export.h"
+#include "../object.h"
+#include "../types.h"
+#include "../ustring.h"
 #include <vector>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

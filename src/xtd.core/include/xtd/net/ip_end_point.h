@@ -2,8 +2,8 @@
 /// @brief Contains xtd::net::ip_end_point class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "end_point"
-#include "ip_address"
+#include "end_point.h"
+#include "ip_address.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
