@@ -2,9 +2,9 @@
 /// @brief Contains xtd::media::system_sounds class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "system_sound"
-#include "../core_export"
-#include "../static"
+#include "system_sound.h"
+#include "../core_export.h"
+#include "../static.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
