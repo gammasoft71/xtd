@@ -1,7 +1,7 @@
 #define __XTD_CORE_INTERNAL__
-#include "../../../include/xtd/internal/__format_stringer"
+#include "../../../include/xtd/internal/__format_stringer.h"
 #undef __XTD_CORE_INTERNAL__
-#include "../../../include/xtd/ustring"
+#include "../../../include/xtd/ustring.h"
 
 using namespace std;
 using namespace xtd;
