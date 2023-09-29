@@ -7,7 +7,7 @@
 #endif
 /// @endcond
 
-#include "../number_styles"
+#include "../number_styles.h"
 #include <locale>
 #include <string>
 #include <sstream>

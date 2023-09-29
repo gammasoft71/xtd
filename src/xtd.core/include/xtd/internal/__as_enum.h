@@ -7,7 +7,7 @@
 #endif
 /// @endcond
 
-#include "../convert_pointer"
+#include "../convert_pointer.h"
 
 /// @cond
 template<typename new_type_t, typename current_type_t, typename bool_t>
