@@ -2,12 +2,12 @@
 /// @brief Contains xtd::net::sockets::udp_client class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "socket"
-#include "../ip_end_point"
-#include "../../threading/mutex"
-#include "../../iequatable"
-#include "../../object"
-#include "../../ustring"
+#include "socket.h"
+#include "../ip_end_point.h"
+#include "../../threading/mutex.h"
+#include "../../iequatable.h"
+#include "../../object.h"
+#include "../../ustring.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

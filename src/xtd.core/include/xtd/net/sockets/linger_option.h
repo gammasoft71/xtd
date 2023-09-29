@@ -2,11 +2,11 @@
 /// @brief Contains xtd::net::sockets::linger_option class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../ip_address"
-#include "../../core_export"
-#include "../../object"
-#include "../../types"
-#include "../../ustring"
+#include "../ip_address.h"
+#include "../../core_export.h"
+#include "../../object.h"
+#include "../../types.h"
+#include "../../ustring.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

@@ -2,9 +2,9 @@
 /// @brief Contains xtd::net::sockets::tcp_listener class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "tcp_client"
-#include "../../threading/mutex"
-#include "../../iequatable"
+#include "tcp_client.h"
+#include "../../threading/mutex.h"
+#include "../../iequatable.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
