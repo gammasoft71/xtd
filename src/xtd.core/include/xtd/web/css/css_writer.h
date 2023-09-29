@@ -2,11 +2,11 @@
 /// @brief Contains xtd::web::css::writer class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "selector_map"
-#include "../../io/stream_writer"
-#include "../../argument_exception"
-#include "../../format_exception"
-#include "../../object"
+#include "selector_map.h"
+#include "../../io/stream_writer.h"
+#include "../../argument_exception.h"
+#include "../../format_exception.h"
+#include "../../object.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

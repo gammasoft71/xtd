@@ -2,8 +2,8 @@
 /// @brief Contains xtd::web::css::property class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../../object"
-#include "../../ustring"
+#include "../../object.h"
+#include "../../ustring.h"
 #include <ostream>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
