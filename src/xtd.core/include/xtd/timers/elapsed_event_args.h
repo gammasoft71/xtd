@@ -2,8 +2,8 @@
 /// @brief Contains xtd::timers::elapsed_event_args event args.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../date_time"
-#include "../event_args"
+#include "../date_time.h"
+#include "../event_args.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
