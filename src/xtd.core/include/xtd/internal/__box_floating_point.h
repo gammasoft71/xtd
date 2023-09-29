@@ -7,7 +7,7 @@
 #endif
 /// @endcond
 
-#include "../types"
+#include "../types.h"
 
 /// @cond
 static constexpr xtd::decimal __get_epsilon(xtd::decimal) noexcept {return 0;}

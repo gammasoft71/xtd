@@ -7,8 +7,8 @@
 #endif
 /// @endcond
 
-#include "__numeric_formatter"
-#include "__format_exception"
+#include "__numeric_formatter.h"
+#include "__format_exception.h"
 
 
 /// @cond

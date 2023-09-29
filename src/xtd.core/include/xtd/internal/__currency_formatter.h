@@ -7,7 +7,7 @@
 #endif
 /// @endcond
 
-#include "__binary_formatter"
+#include "__binary_formatter.h"
 
 #include <cmath>
 #include <locale>

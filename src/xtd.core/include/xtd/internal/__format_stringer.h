@@ -7,8 +7,8 @@
 #endif
 /// @endcond
 
-#include "../chrono"
-#include "../types"
+#include "../chrono.h"
+#include "../types.h"
 #include <algorithm>
 #include <cctype>
 #include <cstddef>

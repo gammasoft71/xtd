@@ -7,12 +7,12 @@
 #endif
 /// @endcond
 
-#include "__character_formatter"
-#include "__currency_formatter"
-#include "__format_exception"
-#include "__format_stringer"
-#include "__natural_formatter"
-#include "__sprintf"
+#include "__character_formatter.h"
+#include "__currency_formatter.h"
+#include "__format_exception.h"
+#include "__format_stringer.h"
+#include "__natural_formatter.h"
+#include "__sprintf.h"
 #include <algorithm>
 
 /// @cond

@@ -7,10 +7,10 @@
 #endif
 /// @endcond
 #pragma once
-#include "../format_exception"
-#include "../types"
-#include "../ustring"
-#include "../enum_collection"
+#include "../format_exception.h"
+#include "../types.h"
+#include "../ustring.h"
+#include "../enum_collection.h"
 
 /// @cond
 template<typename enum_t>
