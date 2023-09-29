@@ -2,10 +2,10 @@
 /// @brief Contains xtd::diagnostics::source_switch class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../ustring"
-#include "source_levels"
-#include "trace_event_type"
-#include "switch_base"
+#include "../ustring.h"
+#include "source_levels.h"
+#include "trace_event_type.h"
+#include "switch_base.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

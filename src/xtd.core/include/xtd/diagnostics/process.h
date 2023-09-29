@@ -2,16 +2,16 @@
 /// @brief Contains xtd::diagnostics::process class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../core_export"
-#include "../date_time"
-#include "../event"
-#include "../event_handler"
-#include "../object"
-#include "../ustring"
-#include "../optional"
-#include "data_received_event_handler"
-#include "process_priority_class"
-#include "process_start_info"
+#include "../core_export.h"
+#include "../date_time.h"
+#include "../event.h"
+#include "../event_handler.h"
+#include "../object.h"
+#include "../ustring.h"
+#include "../optional.h"
+#include "data_received_event_handler.h"
+#include "process_priority_class.h"
+#include "process_start_info.h"
 #include <functional>
 #include <memory>
 

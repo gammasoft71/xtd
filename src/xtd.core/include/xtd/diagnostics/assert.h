@@ -2,8 +2,8 @@
 /// @brief Contains xtd::diagnostics::assert_ keyword.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "debug"
-#include "debug_break"
+#include "debug.h"
+#include "debug_break.h"
 
 /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
 /// @par Header
