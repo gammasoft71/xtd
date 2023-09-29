@@ -2,9 +2,9 @@
 /// @brief Contains xtd::net::dns class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "ip_host_entry"
-#include "../core_export"
-#include "../static"
+#include "ip_host_entry.h"
+#include "../core_export.h"
+#include "../static.h"
 #include <vector>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

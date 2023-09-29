@@ -2,12 +2,12 @@
 /// @brief Contains xtd::net::network_credential class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
+#include "../security/secure_string.h"
+#include "../core_export.h"
+#include "../object.h"
+#include "../types.h"
+#include "../ustring.h"
 #include <vector>
-#include "../security/secure_string"
-#include "../core_export"
-#include "../object"
-#include "../types"
-#include "../ustring"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
