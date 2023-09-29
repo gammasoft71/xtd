@@ -2,11 +2,11 @@
 /// @brief Contains xtd::threading::semaphore exception.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "semaphore_full_exception"
-#include "wait_handle"
-#include "../icomparable"
-#include "../iequatable"
-#include "../int32_object"
+#include "semaphore_full_exception.h"
+#include "wait_handle.h"
+#include "../icomparable.h"
+#include "../iequatable.h"
+#include "../int32_object.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

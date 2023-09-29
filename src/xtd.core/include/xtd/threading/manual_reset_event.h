@@ -2,7 +2,7 @@
 /// @brief Contains xtd::threading::manual_reset_event exception.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "event_wait_handle"
+#include "event_wait_handle.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

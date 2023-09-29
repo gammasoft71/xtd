@@ -2,12 +2,12 @@
 /// @brief Contains xtd::threading::thread_local_object exception.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "mutex"
-#include "thread"
-#include "../func"
-#include "../invalid_operation_exception"
-#include "../object"
-#include "../time_span"
+#include "mutex.h"
+#include "thread.h"
+#include "../func.h"
+#include "../invalid_operation_exception.h"
+#include "../object.h"
+#include "../time_span.h"
 #include <map>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

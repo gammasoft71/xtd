@@ -2,9 +2,9 @@
 /// @brief Contains xtd::threading::cancellation_token_registration class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../core_export"
-#include "../object"
-#include "../types"
+#include "../core_export.h"
+#include "../object.h"
+#include "../types.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

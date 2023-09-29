@@ -801,6 +801,7 @@ add_sources(
   include/xtd/threading/thread_interrupted_exception.h
   include/xtd/threading/thread_interrupted_exception
   include/xtd/threading/thread_local_object.h
+  include/xtd/threading/thread_local_object
   include/xtd/threading/thread_pool.h
   include/xtd/threading/thread_pool
   include/xtd/threading/thread_priority.h
