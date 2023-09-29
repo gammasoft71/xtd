@@ -2,8 +2,8 @@
 /// @brief Contains xtd::diagnostics::data_received_event_args event args.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../event_args"
-#include "../ustring"
+#include "../event_args.h"
+#include "../ustring.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

@@ -4,9 +4,9 @@
 #pragma once
 #include <cstdint>
 #include <limits>
-#include "../iequatable"
-#include "../object"
-#include "../ustring"
+#include "../iequatable.h"
+#include "../object.h"
+#include "../ustring.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

@@ -4,14 +4,14 @@
 #pragma once
 #include <cstdint>
 #include <cstdlib>
-#include "../add_last_arg_to_command"
-#include "../core_export"
-#include "../environment"
-#include "../static"
-#include "../ustring"
-#include "assert_dialog_result"
-#include "stack_trace"
-#include "trace_listener_collection"
+#include "../add_last_arg_to_command.h"
+#include "../core_export.h"
+#include "../environment.h"
+#include "../static.h"
+#include "../ustring.h"
+#include "assert_dialog_result.h"
+#include "stack_trace.h"
+#include "trace_listener_collection.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

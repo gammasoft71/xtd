@@ -2,8 +2,8 @@
 /// @brief Contains xtd::diagnostics::event_type_filter class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "source_levels"
-#include "trace_filter"
+#include "source_levels.h"
+#include "trace_filter.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

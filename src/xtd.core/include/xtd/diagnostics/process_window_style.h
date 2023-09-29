@@ -2,7 +2,7 @@
 /// @brief Contains xtd::diagnostics::process_window_style enum class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../enum"
+#include "../enum.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

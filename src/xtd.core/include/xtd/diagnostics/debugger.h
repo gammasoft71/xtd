@@ -4,9 +4,9 @@
 #pragma once
 #include <cstdint>
 #include <cstdlib>
-#include "../core_export"
-#include "../static"
-#include "../ustring"
+#include "../core_export.h"
+#include "../static.h"
+#include "../ustring.h"
 
 #define __XTD_CORE_INTERNAL__
 #include "../internal/__std_abort.h"

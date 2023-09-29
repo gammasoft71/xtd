@@ -4,11 +4,11 @@
 #pragma once
 #include <memory>
 #include <stdexcept>
-#include "../abstract"
-#include "../ustring"
-#include "trace_event_cache"
-#include "trace_event_type"
-#include "trace_options"
+#include "../abstract.h"
+#include "../ustring.h"
+#include "trace_event_cache.h"
+#include "trace_event_type.h"
+#include "trace_options.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
