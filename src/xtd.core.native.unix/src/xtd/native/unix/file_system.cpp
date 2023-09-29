@@ -4,7 +4,7 @@
 #include <xtd/native/file_attribute>
 #include <xtd/native/file_permission>
 #include <xtd/native/path>
-#include "../../../../include/xtd/native/unix/strings"
+#include "../../../../include/xtd/native/unix/strings.h"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <cstring>
 #include <unistd.h>
