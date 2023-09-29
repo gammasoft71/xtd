@@ -1,7 +1,7 @@
 /// @file
 /// @brief Contains xtd::reflection::assembly_version_attribute attribute.
 #pragma once
-#include "../attribute"
+#include "../attribute.h"
 
 /// @cond
 /// Internal used only

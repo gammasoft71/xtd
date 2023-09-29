@@ -1,8 +1,8 @@
 /// @file
 /// @brief Contains xtd::reflection::assembly_description_attribute attribute.
 #pragma once
-#include "../core_export"
-#include "../attribute"
+#include "../core_export.h"
+#include "../attribute.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
