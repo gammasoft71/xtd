@@ -1,4 +1,4 @@
-#include "../../../include/xtd/io/string_writer"
+#include "../../../include/xtd/io/string_writer.h"
 
 using namespace std;
 using namespace xtd;

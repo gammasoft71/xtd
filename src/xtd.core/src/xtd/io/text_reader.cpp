@@ -1,5 +1,5 @@
-#include "../../../include/xtd/io/text_reader"
-#include "../../../include/xtd/argument_out_of_range_exception"
+#include "../../../include/xtd/io/text_reader.h"
+#include "../../../include/xtd/argument_out_of_range_exception.h"
 #include <mutex>
 
 using namespace xtd;

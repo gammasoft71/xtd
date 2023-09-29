@@ -1,8 +1,8 @@
-#include "../../../include/xtd/io/path"
-#include "../../../include/xtd/io/drive_info"
-#include "../../../include/xtd/as"
-#include "../../../include/xtd/environment"
-#include "../../../include/xtd/random"
+#include "../../../include/xtd/io/path.h"
+#include "../../../include/xtd/io/drive_info.h"
+#include "../../../include/xtd/as.h"
+#include "../../../include/xtd/environment.h"
+#include "../../../include/xtd/random.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/path>
 #include <xtd/native/file_system>
