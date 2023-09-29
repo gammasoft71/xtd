@@ -1,9 +1,9 @@
 #define __XTD_CORE_INTERNAL__
-#include "../../../include/xtd/internal/__parse"
+#include "../../../include/xtd/internal/__parse.h"
 #undef __XTD_CORE_INTERNAL__
-#include "../../../include/xtd/argument_exception"
-#include "../../../include/xtd/format_exception"
-#include "../../../include/xtd/overflow_exception"
+#include "../../../include/xtd/argument_exception.h"
+#include "../../../include/xtd/format_exception.h"
+#include "../../../include/xtd/overflow_exception.h"
 
 void __throw_parse_format_exception(const std::string& message) {
   throw xtd::format_exception(message, csf_);
