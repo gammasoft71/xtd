@@ -3,7 +3,7 @@
 #include <xtd/native/file_system>
 #include <xtd/native/file_attribute>
 #include <xtd/native/file_permission>
-#include "../../../../include/xtd/native/win32/strings"
+#include "../../../../include/xtd/native/win32/strings.h"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <filesystem>
 #include <Windows.h>
