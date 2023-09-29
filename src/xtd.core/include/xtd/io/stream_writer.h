@@ -2,8 +2,8 @@
 /// @brief Contains xtd::io::stream_writer class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "text_writer"
-#include "../optional"
+#include "text_writer.h"
+#include "../optional.h"
 #include <fstream>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

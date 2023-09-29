@@ -2,12 +2,12 @@
 /// @brief Contains xtd::io::file_system_info class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "file_attributes"
-#include "file_permissions"
-#include "../abstract"
-#include "../core_export"
-#include "../date_time"
-#include "../ustring"
+#include "file_attributes.h"
+#include "file_permissions.h"
+#include "../abstract.h"
+#include "../core_export.h"
+#include "../date_time.h"
+#include "../ustring.h"
 #include <memory>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

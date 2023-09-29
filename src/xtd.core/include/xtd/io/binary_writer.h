@@ -2,9 +2,9 @@
 /// @brief Contains xtd::io::binary_writer class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../optional"
-#include "../object"
-#include "../ustring"
+#include "../optional.h"
+#include "../object.h"
+#include "../ustring.h"
 #include <fstream>
 #include <array>
 #include <vector>

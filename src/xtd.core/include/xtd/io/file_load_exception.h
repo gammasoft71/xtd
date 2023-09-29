@@ -2,7 +2,7 @@
 /// @brief Contains xtd::io::file_load_exception exception.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "io_exception"
+#include "io_exception.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
