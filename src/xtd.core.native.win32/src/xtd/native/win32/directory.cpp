@@ -3,7 +3,7 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/directory>
 #include <xtd/native/file_system>
-#include "../../../../include/xtd/native/win32/strings"
+#include "../../../../include/xtd/native/win32/strings.h"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <chrono>
 #include <string>

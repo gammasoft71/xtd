@@ -2,7 +2,7 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/translator>
 #include <xtd/native/environment>
-#include "../../../../include/xtd/native/win32/strings"
+#include "../../../../include/xtd/native/win32/strings.h"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <Windows.h>
 #undef max

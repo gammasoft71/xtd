@@ -2,7 +2,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/drive>
-#include "../../../../include/xtd/native/win32/strings"
+#include "../../../../include/xtd/native/win32/strings.h"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <string>
 #include <direct.h>

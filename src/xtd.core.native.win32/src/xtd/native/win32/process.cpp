@@ -2,7 +2,7 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/process>
 #include <xtd/native/process_creation_flags>
-#include "../../../../include/xtd/native/win32/strings"
+#include "../../../../include/xtd/native/win32/strings.h"
 #include <xtd/native/process_window_style>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <filesystem>

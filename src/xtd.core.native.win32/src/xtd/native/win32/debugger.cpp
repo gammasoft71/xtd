@@ -4,7 +4,7 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/debugger>
 #include <xtd/native/assert_dialog_results>
-#include "../../../../include/xtd/native/win32/strings"
+#include "../../../../include/xtd/native/win32/strings.h"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <cassert>
 #include <sstream>
