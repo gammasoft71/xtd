@@ -3,10 +3,10 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include "prompt.h"
-#include "../../any"
-#include "../../optional"
-#include "../../event_args"
-#include "../../system_exception"
+#include "../../any.h"
+#include "../../optional.h"
+#include "../../event_args.h"
+#include "../../system_exception.h"
 #include <functional>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
