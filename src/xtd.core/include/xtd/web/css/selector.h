@@ -2,8 +2,8 @@
 /// @brief Contains xtd::web::css::selector class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "property_map"
-#include "../../object"
+#include "property_map.h"
+#include "../../object.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
