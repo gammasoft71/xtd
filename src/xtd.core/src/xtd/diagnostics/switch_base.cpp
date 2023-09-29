@@ -1,4 +1,4 @@
-#include "../../../include/xtd/diagnostics/switch_base"
+#include "../../../include/xtd/diagnostics/switch_base.h"
 
 using namespace xtd;
 using namespace xtd::diagnostics;

@@ -1,4 +1,4 @@
-#include "../../../include/xtd/diagnostics/trace_switch"
+#include "../../../include/xtd/diagnostics/trace_switch.h"
 
 using namespace xtd;
 using namespace xtd::diagnostics;

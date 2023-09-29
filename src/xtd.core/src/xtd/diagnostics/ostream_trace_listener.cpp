@@ -1,4 +1,4 @@
-#include "../../../include/xtd/diagnostics/ostream_trace_listener"
+#include "../../../include/xtd/diagnostics/ostream_trace_listener.h"
 
 using namespace std;
 using namespace xtd::diagnostics;

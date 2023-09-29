@@ -1,4 +1,4 @@
-#include "../../../include/xtd/diagnostics/event_type_filter"
+#include "../../../include/xtd/diagnostics/event_type_filter.h"
 
 using namespace std;
 using namespace xtd;

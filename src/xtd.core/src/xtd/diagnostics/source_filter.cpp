@@ -1,4 +1,4 @@
-#include "../../../include/xtd/diagnostics/source_filter"
+#include "../../../include/xtd/diagnostics/source_filter.h"
 
 using namespace std;
 using namespace xtd;
