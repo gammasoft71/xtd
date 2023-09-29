@@ -3,7 +3,7 @@
 #include <xtd/native/drive>
 #include <xtd/native/drive_type>
 #include <xtd/native/file_system>
-#include "../../../../include/xtd/native/macos/strings"
+#include "../../../../include/xtd/native/macos/strings.h"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <map>
 #include <sys/mount.h>

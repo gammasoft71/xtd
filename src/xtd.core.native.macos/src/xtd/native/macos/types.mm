@@ -1,7 +1,7 @@
 #include <cxxabi.h>
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/types>
-#include "../../../../include/xtd/native/macos/semaphore"
+#include "../../../../include/xtd/native/macos/semaphore.h"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
 using namespace abi;

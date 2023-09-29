@@ -1,6 +1,6 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/unnamed_mutex>
-#include "../../../../include/xtd/native/macos/mutex"
+#include "../../../../include/xtd/native/macos/mutex.h"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #import <CoreFoundation/CoreFoundation.h>
 #include <TargetConditionals.h>
