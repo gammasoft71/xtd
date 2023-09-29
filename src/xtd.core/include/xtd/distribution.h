@@ -2,12 +2,12 @@
 /// @brief Contains xtd::distribution class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "optional"
-#include "object"
-#include "platform_id"
-#include "uri"
-#include "ustring"
-#include "version"
+#include "optional.h"
+#include "object.h"
+#include "platform_id.h"
+#include "uri.h"
+#include "ustring.h"
+#include "version.h"
 #include <map>
 #include <vector>
 

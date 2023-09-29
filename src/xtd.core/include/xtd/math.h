@@ -1,8 +1,8 @@
 /// @file
 /// @brief Contains xtd::math class.
 #pragma once
-#include "static"
-#include "types"
+#include "static.h"
+#include "types.h"
 #include <limits>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

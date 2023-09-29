@@ -2,15 +2,15 @@
 /// @brief Contains xtd fundamental types.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <cstdint>
-#include <string>
-#include <typeinfo>
-#include "core_export"
+#include "core_export.h"
 /// @cond
 #define __XTD_TYPE_NATIVE__
 #include <xtd/native/types>
 #undef __XTD_TYPE_NATIVE__
 /// @endcond
+#include <cstdint>
+#include <string>
+#include <typeinfo>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

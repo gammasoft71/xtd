@@ -2,17 +2,17 @@
 /// @brief Contains xtd::date_time class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "chrono"
+#include "chrono.h"
+#include "date_time_kind.h"
+#include "day_of_week.h"
+#include "icomparable.h"
+#include "iequatable.h"
+#include "month_of_year.h"
+#include "object.h"
+#include "ticks.h"
+#include "time_span.h"
+#include "ustring.h"
 #include <ctime>
-#include "date_time_kind"
-#include "day_of_week"
-#include "icomparable"
-#include "iequatable"
-#include "month_of_year"
-#include "object"
-#include "ticks"
-#include "time_span"
-#include "ustring"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

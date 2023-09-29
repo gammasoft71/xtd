@@ -2,11 +2,11 @@
 /// @brief Contains xtd::compiler class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "build_type"
-#include "compiler_id"
-#include "object"
-#include "ustring"
-#include "version"
+#include "build_type.h"
+#include "compiler_id.h"
+#include "object.h"
+#include "ustring.h"
+#include "version.h"
 #include <vector>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

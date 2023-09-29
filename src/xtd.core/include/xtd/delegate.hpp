@@ -2,8 +2,8 @@
 /// @brief Contains xtd::delegate::begin_invoke and xtd::delegate::end_invoke methods.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "delegate"
-#include "threading/manual_reset_event"
+#include "delegate.h"
+#include "threading/manual_reset_event.h"
 
 /// ___________________________________________________________________________
 ///                                                                      void()

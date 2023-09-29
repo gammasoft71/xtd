@@ -2,7 +2,7 @@
 /// @brief Contains xtd::ctrace ostream.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "tracestreambuf"
+#include "tracestreambuf.h"
 #include <iostream>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

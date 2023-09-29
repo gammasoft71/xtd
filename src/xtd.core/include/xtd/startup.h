@@ -2,10 +2,10 @@
 /// @brief Contains startup class and #startup_ keyword.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "collections/specialized/string_vector"
-#include "core_export"
-#include "delegate"
-#include "static"
+#include "collections/specialized/string_vector.h"
+#include "core_export.h"
+#include "delegate.h"
+#include "static.h"
 #include <exception>
 #include <optional>
 

@@ -2,10 +2,10 @@
 /// @brief Contains xtd::is method.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "any"
-#include "parse"
-#include "types"
-#include "unused"
+#include "any.h"
+#include "parse.h"
+#include "types.h"
+#include "unused.h"
 #include <limits>
 #include <memory>
 #include <stdexcept>

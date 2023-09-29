@@ -2,9 +2,9 @@
 /// @brief Contains xtd::object class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "core_export"
-#include "iequatable"
-#include "types"
+#include "core_export.h"
+#include "iequatable.h"
+#include "types.h"
 #include <string>
 #include <memory>
 

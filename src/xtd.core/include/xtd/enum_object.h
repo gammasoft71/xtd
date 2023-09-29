@@ -2,18 +2,18 @@
 /// @brief Contains xtd::enum_object.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "enum_attribute"
-#include "enum_collection"
-#include "enum_register"
-#include "enum_set_attribute"
-#include "format_exception"
-#include "icomparable"
-#include "iequatable"
-#include "number_styles"
-#include "optional"
-#include "static"
-#include "string_comparison"
-#include "string_split_options"
+#include "enum_attribute.h"
+#include "enum_collection.h"
+#include "enum_register.h"
+#include "enum_set_attribute.h"
+#include "format_exception.h"
+#include "icomparable.h"
+#include "iequatable.h"
+#include "number_styles.h"
+#include "optional.h"
+#include "static.h"
+#include "string_comparison.h"
+#include "string_split_options.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

@@ -2,8 +2,8 @@
 /// @brief Contains xtd::async_callback delegate.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "delegate"
-#include "iasync_result"
+#include "delegate.h"
+#include "iasync_result.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

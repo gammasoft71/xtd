@@ -2,8 +2,8 @@
 /// @brief Contains xtd::target_type class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "object"
-#include "target_id"
+#include "object.h"
+#include "target_id.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

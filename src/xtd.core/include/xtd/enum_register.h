@@ -2,11 +2,11 @@
 /// @brief Contains xtd::enum_register.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "enum_collection"
-#include "types"
+#include "enum_collection.h"
+#include "types.h"
 #define __XTD_CORE_INTERNAL__
-#include "internal/__enum_introspection"
-#include "internal/__enum_definition_to_enum_collection"
+#include "internal/__enum_introspection.h"
+#include "internal/__enum_definition_to_enum_collection.h"
 #undef __XTD_CORE_INTERNAL__
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

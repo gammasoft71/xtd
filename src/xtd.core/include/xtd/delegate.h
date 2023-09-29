@@ -2,12 +2,12 @@
 /// @brief Contains xtd::delegate delegate.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "any"
-#include "argument_null_exception"
-#include "iasync_result"
-#include "iequatable"
-#include "object"
-#include "object_ref"
+#include "any.h"
+#include "argument_null_exception.h"
+#include "iasync_result.h"
+#include "iequatable.h"
+#include "object.h"
+#include "object_ref.h"
 #include <functional>
 #include <memory>
 #include <stdexcept>

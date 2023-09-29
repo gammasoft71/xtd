@@ -2,10 +2,10 @@
 /// @brief Contains xtd::console_key_info class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "console_key"
-#include "console_modifiers"
-#include "iequatable"
-#include "object"
+#include "console_key.h"
+#include "console_modifiers.h"
+#include "iequatable.h"
+#include "object.h"
 #include <iostream>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

@@ -2,8 +2,8 @@
 /// @brief Contains xtd::icomparable interface.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "interface"
-#include "types"
+#include "interface.h"
+#include "types.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

@@ -2,8 +2,8 @@
 /// @brief Contains xtd::program_exit_event_args event args.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "event_args"
-#include "exit_mode"
+#include "event_args.h"
+#include "exit_mode.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

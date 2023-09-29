@@ -2,14 +2,14 @@
 /// @brief Contains xtd::parse methods.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include <string>
 /// @cond
 #define __XTD_CORE_INTERNAL__
-#include "internal/__parse"
+#include "internal/__parse.h"
 #undef __XTD_CORE_INTERNAL__
 /// @endcond
-#include "number_styles"
-#include "types"
+#include "number_styles.h"
+#include "types.h"
+#include <string>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

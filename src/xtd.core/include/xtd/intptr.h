@@ -3,5 +3,5 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 /// @cond
-#include "types"
-#include "intptr_object"
+#include "types.h"
+#include "intptr_object.h"
