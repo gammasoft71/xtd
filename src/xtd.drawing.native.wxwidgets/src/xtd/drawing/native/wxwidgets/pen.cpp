@@ -3,7 +3,7 @@
 #include <xtd/drawing/native/line_caps>
 #include <xtd/drawing/native/line_joins>
 #include <xtd/drawing/native/toolkit>
-#include "../../../../../include/xtd/drawing/native/wx_pen"
+#include "../../../../../include/xtd/drawing/native/wx_pen.h"
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <wx/colour.h>
 #include <wx/pen.h>
