@@ -1,5 +1,5 @@
-#include "../../../include/xtd/tunit/ostream_unit_test"
-#include "../../../include/xtd/tunit/unit_test"
+#include "../../../include/xtd/tunit/ostream_unit_test.h"
+#include "../../../include/xtd/tunit/unit_test.h"
 #include <xtd/console>
 
 using namespace std;

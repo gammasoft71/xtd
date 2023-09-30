@@ -2,9 +2,9 @@
 /// @brief Contains xtd::tunit::test_event_args class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "test_class"
-#include "test"
-#include "tunit_event_args"
+#include "test_class.h"
+#include "test.h"
+#include "tunit_event_args.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

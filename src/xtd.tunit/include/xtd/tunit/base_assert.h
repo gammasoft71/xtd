@@ -2,14 +2,14 @@
 /// @brief Contains xtd::tunit::assert class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../tunit_export"
+#include "../tunit_export.h"
 #define __XTD_TUNIT_INTERNAL__
 #include "__default_insert_basic_ostream_operator.h"
 #include "__tunit_join__items.h"
 #define __XTD_TUNIT_INTERNAL__
-#include "abort_error"
-#include "assert_error"
-#include "ignore_error"
+#include "abort_error.h"
+#include "assert_error.h"
+#include "ignore_error.h"
 #include <xtd/types>
 #include <xtd/typeof>
 #include <xtd/ustring>

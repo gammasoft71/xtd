@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/ustring>
-#include "assert"
+#include "assert.h"
 #include <locale>
 #include <cstring>
 #include <regex>
