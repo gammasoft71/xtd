@@ -1,5 +1,5 @@
-#include "../../include/xtd/convert"
-#include "../../include/xtd/math"
+#include "../../include/xtd/convert.h"
+#include "../../include/xtd/math.h"
 
 using namespace std;
 using namespace xtd;

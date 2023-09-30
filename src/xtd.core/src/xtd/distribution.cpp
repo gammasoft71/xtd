@@ -1,4 +1,4 @@
-#include "../../include/xtd/distribution"
+#include "../../include/xtd/distribution.h"
 
 using namespace xtd;
 

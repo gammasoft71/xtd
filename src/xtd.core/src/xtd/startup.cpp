@@ -1,9 +1,9 @@
-#include "../../include/xtd/environment"
-#include "../../include/xtd/startup"
-#include "../../include/xtd/threading/thread"
+#include "../../include/xtd/environment.h"
+#include "../../include/xtd/startup.h"
+#include "../../include/xtd/threading/thread.h"
 
 #define __XTD_CORE_INTERNAL__
-#include "../../include/xtd/internal/__show_generic_exception_message"
+#include "../../include/xtd/internal/__show_generic_exception_message.h"
 #undef __XTD_CORE_INTERNAL__
 
 using namespace xtd;

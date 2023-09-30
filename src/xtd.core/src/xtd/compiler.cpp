@@ -1,5 +1,5 @@
-#include "../../include/xtd/compiler"
-#include "../../include/xtd/argument_exception"
+#include "../../include/xtd/compiler.h"
+#include "../../include/xtd/argument_exception.h"
 #include <algorithm>
 
 using namespace xtd;

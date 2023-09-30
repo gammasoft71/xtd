@@ -1,7 +1,7 @@
-#include "../../include/xtd/console"
-#include "../../include/xtd/environment"
-#include "../../include/xtd/system_exception"
-#include "../../include/xtd/diagnostics/stack_trace"
+#include "../../include/xtd/console.h"
+#include "../../include/xtd/environment.h"
+#include "../../include/xtd/system_exception.h"
+#include "../../include/xtd/diagnostics/stack_trace.h"
 
 //void __xtd__signal_catcher_check__();
 

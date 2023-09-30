@@ -1,9 +1,9 @@
-#include "../../include/xtd/version"
-#include "../../include/xtd/as"
-#include "../../include/xtd/is"
-#include "../../include/xtd/collections/specialized/string_vector"
-#include "../../include/xtd/argument_out_of_range_exception"
-#include "../../include/xtd/format_exception"
+#include "../../include/xtd/version.h"
+#include "../../include/xtd/as.h"
+#include "../../include/xtd/is.h"
+#include "../../include/xtd/collections/specialized/string_vector.h"
+#include "../../include/xtd/argument_out_of_range_exception.h"
+#include "../../include/xtd/format_exception.h"
 #include <regex>
 
 using namespace std;
