@@ -1,10 +1,10 @@
+#include "../../../include/xtd/threading/thread.h"
+#include "../../../include/xtd/threading/wait_handle.h"
+#include "../../../include/xtd/diagnostics/stopwatch.h"
+#include "../../../include/xtd/argument_exception.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/types>
 #undef __XTD_CORE_NATIVE_LIBRARY__
-#include "../../../include/xtd/threading/thread"
-#include "../../../include/xtd/threading/wait_handle"
-#include "../../../include/xtd/diagnostics/stopwatch"
-#include "../../../include/xtd/argument_exception"
 
 using namespace std;
 using namespace xtd;

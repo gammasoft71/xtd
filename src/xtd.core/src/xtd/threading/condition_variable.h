@@ -1,6 +1,6 @@
 #pragma once
-#include "../../../include/xtd/threading/monitor"
-#include "../../../include/xtd/threading/thread"
+#include "../../../include/xtd/threading/monitor.h"
+#include "../../../include/xtd/threading/thread.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/condition_variable>
 #undef __XTD_CORE_NATIVE_LIBRARY__

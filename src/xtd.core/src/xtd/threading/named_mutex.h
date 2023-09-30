@@ -1,6 +1,6 @@
 #pragma once
 #include "mutex_base.h"
-#include "../../../include/xtd/invalid_operation_exception"
+#include "../../../include/xtd/invalid_operation_exception.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/named_mutex>
 #undef __XTD_CORE_NATIVE_LIBRARY__
