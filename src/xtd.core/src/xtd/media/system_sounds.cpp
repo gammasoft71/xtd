@@ -1,4 +1,4 @@
-#include "../../../include/xtd/media/system_sounds"
+#include "../../../include/xtd/media/system_sounds.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/sounds>
 #undef __XTD_CORE_NATIVE_LIBRARY__
