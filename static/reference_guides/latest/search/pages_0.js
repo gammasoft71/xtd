@@ -1,10 +1,5 @@
 var searchData=
 [
-  ['cmake_20build_20options_0',['CMake build options',['../_c_make_build_option.html',1,'']]],
-  ['cmake_20commands_1',['CMake commands',['../_c_make_commands.html',1,'']]],
-  ['colors_2',['Colors',['../_colors_page.html',1,'']]],
-  ['containers_20appearances_3',['Containers appearances',['../_conatiners_appearances_page.html',1,'']]],
-  ['controls_20appearances_4',['Controls appearances',['../_controls_appearances_page.html',1,'']]],
-  ['countries_20flags_20appearances_5',['Countries flags appearances',['../_countries_flags_page.html',1,'']]],
-  ['cursors_20appearances_6',['Cursors appearances',['../_cursors_appearances_page.html',1,'']]]
+  ['and_20tool_20bars_20appearances_0',['Menus and tool bars appearances',['../_menus_and_toolbars_appearances_page.html',1,'']]],
+  ['appearances_1',['appearances',['../_conatiners_appearances_page.html',1,'Containers appearances'],['../_controls_appearances_page.html',1,'Controls appearances'],['../_countries_flags_page.html',1,'Countries flags appearances'],['../_cursors_appearances_page.html',1,'Cursors appearances'],['../_dialogs_appearances_page.html',1,'Dialogs appearances'],['../_forms_appearances_page.html',1,'Forms appearances'],['../_images_appearances_page.html',1,'Images appearances'],['../_menus_and_toolbars_appearances_page.html',1,'Menus and tool bars appearances']]]
 ];

@@ -32,7 +32,7 @@ var searchData=
   ['time_5fzone_5fnot_5ffound_5fexception_29',['time_zone_not_found_exception',['../classxtd_1_1time__zone__not__found__exception.html',1,'xtd']]],
   ['timeout_30',['timeout',['../classxtd_1_1threading_1_1timeout.html',1,'xtd::threading']]],
   ['timeout_5fexception_31',['timeout_exception',['../classxtd_1_1timeout__exception.html',1,'xtd']]],
-  ['timer_32',['timer',['../classxtd_1_1forms_1_1timer.html',1,'xtd::forms::timer'],['../classxtd_1_1threading_1_1timer.html',1,'xtd::threading::timer'],['../classxtd_1_1timers_1_1timer.html',1,'xtd::timers::timer']]],
+  ['timer_32',['timer',['../classxtd_1_1threading_1_1timer.html',1,'xtd::threading::timer'],['../classxtd_1_1timers_1_1timer.html',1,'xtd::timers::timer'],['../classxtd_1_1forms_1_1timer.html',1,'xtd::forms::timer']]],
   ['toggle_5fbutton_33',['toggle_button',['../classxtd_1_1forms_1_1toggle__button.html',1,'xtd::forms']]],
   ['toggle_5fbutton_5frenderer_34',['toggle_button_renderer',['../classxtd_1_1forms_1_1toggle__button__renderer.html',1,'xtd::forms']]],
   ['toggle_5fbuttons_35',['toggle_buttons',['../classxtd_1_1forms_1_1toggle__buttons.html',1,'xtd::forms']]],

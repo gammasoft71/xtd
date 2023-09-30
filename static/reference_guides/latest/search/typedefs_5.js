@@ -10,5 +10,5 @@ var searchData=
   ['form_5fstate_7',['form_state',['../group__xtd__forms.html#ga2d268a66caa75127bfae0ac7ca5a1aac',1,'xtd::forms::visual_styles']]],
   ['forms_5ft_8',['forms_t',['../classxtd_1_1forms_1_1style__sheets_1_1style__sheet.html#aa3778d42605f317822dcb6720ee8bb5c',1,'xtd::forms::style_sheets::style_sheet']]],
   ['func_9',['func',['../group__xtd__core.html#ga655ac2d710f5daaa327ac82c8c235de9',1,'xtd']]],
-  ['function_5ft_10',['function_t',['../classxtd_1_1delegate_3_01result__t_07_08_4.html#ac6ac28272b0483d975b902c3839d044e',1,'xtd::delegate&lt; result_t()&gt;::function_t'],['../classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a6835638fe4ae28e749abc960dd9b962f',1,'xtd::delegate&lt; result_t(arguments_t...)&gt;::function_t']]]
+  ['function_5ft_10',['function_t',['../classdelegate_3_01result__t_07_08_4.html#af27d9fa9a7234817c2eb08bf985e17f9',1,'delegate&lt; result_t()&gt;']]]
 ];

@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['t_0',['t',['../group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae358efa489f58062f10dd7316b65649e',1,'xtd::t'],['../group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deae358efa489f58062f10dd7316b65649e',1,'xtd::forms::t']]],
-  ['tab_1',['tab',['../group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae7f8cbd87d347be881cba92dad128518',1,'xtd::tab'],['../group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deae7f8cbd87d347be881cba92dad128518',1,'xtd::forms::tab']]],
+  ['t_0',['t',['../group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deae358efa489f58062f10dd7316b65649e',1,'xtd::forms::t'],['../group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae358efa489f58062f10dd7316b65649e',1,'xtd::t']]],
+  ['tab_1',['tab',['../group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deae7f8cbd87d347be881cba92dad128518',1,'xtd::forms::tab'],['../group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae7f8cbd87d347be881cba92dad128518',1,'xtd::tab']]],
   ['tan_2',['tan',['../group__xtd__drawing.html#ggabb6249e3fb8a4388778157257e99049ba5b2d4484498235e80d61a233a7c04991',1,'xtd::drawing']]],
   ['task_5fmanager_5fclosing_3',['task_manager_closing',['../group__xtd__forms.html#ggad306a8c86886e96653e8e813745adb62ae298cfa8e4b5a3b5ef93a86c8e1b22cb',1,'xtd::forms']]],
   ['tcp_4',['tcp',['../group__xtd__core.html#ggac4690c745045463d3c96d043878cc1e3ae20bb202b1d5537b1415e3263a37ed78',1,'xtd::net::sockets::tcp'],['../group__xtd__core.html#gga743142f866afefad31e41e24765e74f0ae20bb202b1d5537b1415e3263a37ed78',1,'xtd::net::sockets::tcp']]],
@@ -10,11 +10,11 @@ var searchData=
   ['temporary_7',['temporary',['../group__xtd__core.html#ggaaf346227f9a44012acb58d9e7e4020a4ad5197d93c063a2b1e22d1630a39b7aef',1,'xtd::io']]],
   ['test_5fapplication_8',['test_application',['../group__xtd__core.html#gga5ecb92392db71dc0bde6ce6588f06912a587879b487d2ff753dc4e7c16cfc62f4',1,'xtd']]],
   ['text_9',['text',['../group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1',1,'xtd::forms']]],
-  ['text_5fbox_10',['text_box',['../group__xtd__drawing.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb',1,'xtd::drawing::text_box'],['../group__xtd__forms.html#ggad628284799d529bfb37edb2fa250a986a89a625dcf4d8165ffe633fa540009acb',1,'xtd::forms::text_box']]],
+  ['text_5fbox_10',['text_box',['../group__xtd__forms.html#ggad628284799d529bfb37edb2fa250a986a89a625dcf4d8165ffe633fa540009acb',1,'xtd::forms::text_box'],['../group__xtd__drawing.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb',1,'xtd::drawing::text_box']]],
   ['text_5fbox_5fcontrol_11',['text_box_control',['../group__xtd__forms.html#gga12b406a1ff6df3c0af717121e6c37257abc8b1b1ddac25aecca1a868087b685ec',1,'xtd::forms']]],
   ['text_5fbox_5ftext_12',['text_box_text',['../group__xtd__drawing.html#ggabb6249e3fb8a4388778157257e99049ba858aabad81d1dea3e500053615d32518',1,'xtd::drawing::text_box_text'],['../group__xtd__forms.html#ggad628284799d529bfb37edb2fa250a986a858aabad81d1dea3e500053615d32518',1,'xtd::forms::text_box_text']]],
   ['texture_5ffill_13',['texture_fill',['../group__xtd__drawing.html#gga971b04cde48340d1ca04169e6ce3e6e2ac118f9f98e60e9c2f24a571057accfab',1,'xtd::drawing::drawing_2d']]],
-  ['theme_14',['theme',['../group__xtd__forms.html#gga663fa5bbff2ea7ea9ece8563a188a1c6af484570d7cf557020e11ace406901b10',1,'xtd::forms::theme'],['../group__style__sheets.html#ggaf113fb84f70cd93a23dd95e91bbebdd4af484570d7cf557020e11ace406901b10',1,'xtd::forms::style_sheets::theme']]],
+  ['theme_14',['theme',['../group__style__sheets.html#ggaf113fb84f70cd93a23dd95e91bbebdd4af484570d7cf557020e11ace406901b10',1,'xtd::forms::style_sheets::theme'],['../group__xtd__forms.html#gga663fa5bbff2ea7ea9ece8563a188a1c6af484570d7cf557020e11ace406901b10',1,'xtd::forms::theme']]],
   ['thistle_15',['thistle',['../group__xtd__drawing.html#ggabb6249e3fb8a4388778157257e99049ba94ec2b8d73527db3da316ad28195219e',1,'xtd::drawing']]],
   ['thread_5fid_16',['thread_id',['../group__diagnostics.html#gga897ca504c8b1ff350135bff87494c0dfae3464c971b2ac626e89b5881ebff0d82',1,'xtd::diagnostics']]],
   ['thursday_17',['thursday',['../group__xtd__forms.html#gga108529868f1e8670d0a2cb08f311c36bac395246f710b0e2c86b7ed82f7f56ce3',1,'xtd::forms::thursday'],['../group__xtd__core.html#ggaf3aa09e1775eb8b85ca5974e8b926be2ac395246f710b0e2c86b7ed82f7f56ce3',1,'xtd::thursday']]],

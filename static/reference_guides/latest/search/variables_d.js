@@ -2,7 +2,7 @@ var searchData=
 [
   ['nail_5fpolish_0',['nail_polish',['../classxtd_1_1forms_1_1emoticons.html#aa0e0e86aa1b5d2afaee47159c5b0bc75',1,'xtd::forms::emoticons']]],
   ['name_5fbadge_1',['name_badge',['../classxtd_1_1forms_1_1emoticons.html#aca1aec57907f8e17fda57d8c86ef6bc0',1,'xtd::forms::emoticons']]],
-  ['nan_2',['NaN',['../classxtd_1_1box__floating__point.html#a3e658f6e798b8f0f972fef8bfd8ff086',1,'xtd::box_floating_point::NaN'],['../classxtd_1_1math.html#aa1bbf357477ceaa574dd3415bcd820dd',1,'xtd::math::NaN']]],
+  ['nan_2',['nan',['../classxtd_1_1box__floating__point.html#a3e658f6e798b8f0f972fef8bfd8ff086',1,'xtd::box_floating_point::NaN'],['../classxtd_1_1math.html#aa1bbf357477ceaa574dd3415bcd820dd',1,'xtd::math::NaN']]],
   ['nanoseconds_5fper_5ftick_3',['nanoseconds_per_tick',['../structxtd_1_1time__span.html#aae13f43f495c9736631a953d35abd25c',1,'xtd::time_span']]],
   ['national_5fpark_4',['national_park',['../classxtd_1_1forms_1_1emoticons.html#a09d8d287634d9cd094f68bd09c8d45f5',1,'xtd::forms::emoticons']]],
   ['nauseated_5fface_5',['nauseated_face',['../classxtd_1_1forms_1_1emoticons.html#a4dea30bfbdcf470ed9234edab214669f',1,'xtd::forms::emoticons']]],
