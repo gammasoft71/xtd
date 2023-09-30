@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::const_tab_page_ref_less struct.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "const_tab_page_ref"
+#include "const_tab_page_ref.h"
 #include <xtd/object>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

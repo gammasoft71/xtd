@@ -1,9 +1,9 @@
-#include "../../../include/xtd/forms/menu_item"
-#include "../../../include/xtd/forms/context_menu"
-#include "../../../include/xtd/forms/control"
-#include "../../../include/xtd/forms/menu_images"
-#include "../../../include/xtd/forms/shortcut"
-#include "../../../include/xtd/forms/system_texts"
+#include "../../../include/xtd/forms/menu_item.h"
+#include "../../../include/xtd/forms/context_menu.h"
+#include "../../../include/xtd/forms/control.h"
+#include "../../../include/xtd/forms/menu_images.h"
+#include "../../../include/xtd/forms/shortcut.h"
+#include "../../../include/xtd/forms/system_texts.h"
 #include "menu_data.h"
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/context_menu>

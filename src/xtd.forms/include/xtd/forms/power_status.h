@@ -2,9 +2,9 @@
 /// @brief Contains xtd::forms::power_status class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../forms_export"
-#include "battery_charge_status"
-#include "power_line_status"
+#include "../forms_export.h"
+#include "battery_charge_status.h"
+#include "power_line_status.h"
 #include <xtd/object>
 #include <cstdint>
 

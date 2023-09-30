@@ -1,4 +1,4 @@
-#include "../../../include/xtd/forms/fixed_layout_panel"
+#include "../../../include/xtd/forms/fixed_layout_panel.h"
 
 using namespace xtd;
 using namespace xtd::forms;

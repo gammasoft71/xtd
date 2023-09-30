@@ -1,4 +1,4 @@
-#include "../../../include/xtd/forms/tool_bar_button"
+#include "../../../include/xtd/forms/tool_bar_button.h"
 
 struct xtd::forms::tool_bar_button::data {
   xtd::forms::control* control = nullptr;

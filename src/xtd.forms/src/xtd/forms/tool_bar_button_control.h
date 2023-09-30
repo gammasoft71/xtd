@@ -1,5 +1,5 @@
 #pragma once
-#include "../../../include/xtd/forms/tool_bar"
+#include "../../../include/xtd/forms/tool_bar.h"
 
 class xtd::forms::tool_bar::tool_bar_button_control : public xtd::forms::button {
   struct data {

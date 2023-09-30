@@ -1,7 +1,7 @@
-#include "../../../include/xtd/forms/application"
-#include "../../../include/xtd/forms/control_paint"
-#include "../../../include/xtd/forms/panel"
-#include "../../../include/xtd/forms/panel_renderer"
+#include "../../../include/xtd/forms/application.h"
+#include "../../../include/xtd/forms/control_paint.h"
+#include "../../../include/xtd/forms/panel.h"
+#include "../../../include/xtd/forms/panel_renderer.h"
 #include <xtd/drawing/pens>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/control>

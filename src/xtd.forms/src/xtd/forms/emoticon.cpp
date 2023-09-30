@@ -1,4 +1,4 @@
-#include "../../../include/xtd/forms/emoticon"
+#include "../../../include/xtd/forms/emoticon.h"
 
 using namespace std;
 using namespace xtd;

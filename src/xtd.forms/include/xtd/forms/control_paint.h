@@ -2,12 +2,12 @@
 /// @brief Contains xtd::forms::control_paint class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../forms_export"
-#include "button_state"
-#include "border_sides"
-#include "border_style"
-#include "image_layout"
-#include "text_format_flags"
+#include "../forms_export.h"
+#include "button_state.h"
+#include "border_sides.h"
+#include "border_style.h"
+#include "image_layout.h"
+#include "text_format_flags.h"
 #include <xtd/optional>
 #include <xtd/drawing/color>
 #include <xtd/drawing/font>

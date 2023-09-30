@@ -1,4 +1,4 @@
-#include "../../../include/xtd/forms/enable_debug"
+#include "../../../include/xtd/forms/enable_debug.h"
 
 using namespace xtd::diagnostics;
 using namespace xtd::forms;

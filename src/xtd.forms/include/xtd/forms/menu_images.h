@@ -2,8 +2,8 @@
 /// @brief Contains xtd::forms::menu_images factory.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "application"
-#include "images"
+#include "application.h"
+#include "images.h"
 #include <xtd/drawing/system_images>
 #include <xtd/static>
 

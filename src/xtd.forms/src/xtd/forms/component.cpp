@@ -1,4 +1,4 @@
-#include "../../../include/xtd/forms/component"
+#include "../../../include/xtd/forms/component.h"
 
 using namespace xtd;
 using namespace xtd::forms;

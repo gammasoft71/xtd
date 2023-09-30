@@ -2,9 +2,9 @@
 /// @brief Contains xtd::forms::text_box_base control.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "border_sides"
-#include "border_style"
-#include "control"
+#include "border_sides.h"
+#include "border_style.h"
+#include "control.h"
 #include <xtd/argument_out_of_range_exception>
 #include <xtd/bit_converter>
 

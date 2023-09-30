@@ -1,7 +1,7 @@
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/control>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include "../include/xtd/forms/message"
+#include "../include/xtd/forms/message.h"
 
 using namespace xtd;
 using namespace xtd::forms;

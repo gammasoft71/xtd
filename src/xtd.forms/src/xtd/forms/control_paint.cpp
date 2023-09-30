@@ -1,6 +1,6 @@
-#include "../../../include/xtd/forms/control_paint"
-#include "../../../include/xtd/forms/control"
-#include "../../../include/xtd/forms/screen"
+#include "../../../include/xtd/forms/control_paint.h"
+#include "../../../include/xtd/forms/control.h"
+#include "../../../include/xtd/forms/screen.h"
 #include <xtd/as>
 #include <xtd/math>
 

@@ -2,10 +2,10 @@
 /// @brief Contains xtd::forms::save_file_box control.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../forms_export"
-#include "dialog_result"
-#include "iwin32_window"
-#include "save_file_box_options"
+#include "../forms_export.h"
+#include "dialog_result.h"
+#include "iwin32_window.h"
+#include "save_file_box_options.h"
 #include <xtd/static>
 #include <xtd/ustring>
 

@@ -1,9 +1,9 @@
 #pragma once
-#include "layout/arranged_element_collection"
-#include "component"
-#include "iwin32_window"
-#include "message_notifier_button"
-#include "notifier_style"
+#include "layout/arranged_element_collection.h"
+#include "component.h"
+#include "iwin32_window.h"
+#include "message_notifier_button.h"
+#include "notifier_style.h"
 #include <xtd/drawing/icon>
 #include <xtd/chrono>
 #include <xtd/delegate>

@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::style_sheets::outline_color alias.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "border_color"
+#include "border_color.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

@@ -2,8 +2,8 @@
 /// @brief Contains xtd::forms::main_menu menu.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "menu_item"
-#include "message"
+#include "menu_item.h"
+#include "message.h"
 #include <xtd/drawing/size>
 #include <memory>
 #include <vector>

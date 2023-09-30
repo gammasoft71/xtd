@@ -1,5 +1,5 @@
-#include "../../../include/xtd/forms/month_calendar"
-#include "../../../include/xtd/forms/application"
+#include "../../../include/xtd/forms/month_calendar.h"
+#include "../../../include/xtd/forms/application.h"
 #include <xtd/diagnostics/debug>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/control>

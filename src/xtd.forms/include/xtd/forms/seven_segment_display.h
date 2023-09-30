@@ -2,10 +2,10 @@
 /// @brief Contains xtd::forms::seven_segment_display control.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "application"
-#include "control"
-#include "segments"
-#include "segment_style"
+#include "application.h"
+#include "control.h"
+#include "segments.h"
+#include "segment_style.h"
 #include <xtd/argument_out_of_range_exception>
 #include <xtd/drawing/system_colors>
 

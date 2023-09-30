@@ -1,5 +1,5 @@
 #pragma once
-#include "component"
+#include "component.h"
 #include <xtd/iequatable>
 #include <xtd/ustring>
 

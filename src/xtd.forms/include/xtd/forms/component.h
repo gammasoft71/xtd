@@ -2,8 +2,8 @@
 /// @brief Contains xtd::forms::component class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../forms_export"
-#include "../forms_namespace_aliases"
+#include "../forms_export.h"
+#include "../forms_namespace_aliases.h"
 #include <xtd/object>
 #include <cstdint>
 

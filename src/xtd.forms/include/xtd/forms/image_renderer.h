@@ -2,9 +2,9 @@
 /// @brief Contains xtd::forms::image_renderer static class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../forms_export"
-#include "style_sheets/iimage_model"
-#include "style_sheets/iimage_model"
+#include "../forms_export.h"
+#include "style_sheets/iimage_model.h"
+#include "style_sheets/iimage_model.h"
 #include <xtd/drawing/graphics>
 #include <xtd/drawing/image>
 #include <xtd/drawing/rectangle>

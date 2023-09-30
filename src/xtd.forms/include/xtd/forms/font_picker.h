@@ -2,8 +2,8 @@
 /// @brief Contains xtd::forms::font_picker control.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "control"
-#include "font_picker_event_handler"
+#include "control.h"
+#include "font_picker_event_handler.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

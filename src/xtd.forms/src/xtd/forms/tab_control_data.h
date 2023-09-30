@@ -1,5 +1,5 @@
-#include "../../../include/xtd/forms/tab_control"
-#include "../../../include/xtd/forms/tab_page"
+#include "../../../include/xtd/forms/tab_control.h"
+#include "../../../include/xtd/forms/tab_page.h"
 
 struct xtd::forms::tab_control::data {
   tab_alignment alignment = tab_alignment::top;

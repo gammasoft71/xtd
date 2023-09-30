@@ -1,4 +1,4 @@
-#include "../../../include/xtd/forms/link_area"
+#include "../../../include/xtd/forms/link_area.h"
 
 using namespace xtd;
 using namespace xtd::forms;

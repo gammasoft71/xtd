@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::style_sheets::shadows typedef.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "shadow"
+#include "shadow.h"
 #include <vector>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

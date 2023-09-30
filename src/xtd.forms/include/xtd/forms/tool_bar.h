@@ -2,15 +2,15 @@
 /// @brief Contains xtd::forms::tool_bar container.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "border_style"
-#include "button"
-#include "context_menu"
-#include "image_list"
-#include "panel"
-#include "tool_bar_appearance"
-#include "tool_bar_button"
-#include "tool_bar_button_click_event_handler"
-#include "tool_bar_text_align"
+#include "border_style.h"
+#include "button.h"
+#include "context_menu.h"
+#include "image_list.h"
+#include "panel.h"
+#include "tool_bar_appearance.h"
+#include "tool_bar_button.h"
+#include "tool_bar_button_click_event_handler.h"
+#include "tool_bar_text_align.h"
 #include <memory>
 #include <vector>
 

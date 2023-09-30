@@ -2,13 +2,13 @@
 /// @brief Contains xtd::forms::common_dialog class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "application"
-#include "form"
-#include "component"
-#include "dialog_closed_event_handler"
-#include "dialog_result"
-#include "help_event_handler"
-#include "iwin32_window"
+#include "application.h"
+#include "form.h"
+#include "component.h"
+#include "dialog_closed_event_handler.h"
+#include "dialog_result.h"
+#include "help_event_handler.h"
+#include "iwin32_window.h"
 #include <xtd/any>
 #include <xtd/chrono>
 

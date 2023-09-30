@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::selection_range control.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../forms_export"
+#include "../forms_export.h"
 #include <xtd/date_time>
 #include <xtd/object>
 

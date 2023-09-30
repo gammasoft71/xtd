@@ -2,8 +2,8 @@
 /// @brief Contains xtd::forms::list_control control.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "application"
-#include "control"
+#include "application.h"
+#include "control.h"
 #include <xtd/iequatable>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

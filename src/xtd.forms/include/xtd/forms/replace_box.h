@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::replace_box control.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "replace_dialog"
+#include "replace_dialog.h"
 #include <xtd/static>
 #include <memory>
 

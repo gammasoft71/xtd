@@ -2,9 +2,9 @@
 /// @brief Contains xtd::forms::folder_browser_box control.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../forms_export"
-#include "dialog_result"
-#include "iwin32_window"
+#include "../forms_export.h"
+#include "dialog_result.h"
+#include "iwin32_window.h"
 #include <xtd/environment>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

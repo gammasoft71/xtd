@@ -1,4 +1,4 @@
-#include "../../../../include/xtd/forms/style_sheets/system_colors"
+#include "../../../../include/xtd/forms/style_sheets/system_colors.h"
 #include <xtd/as>
 #include <xtd/is>
 

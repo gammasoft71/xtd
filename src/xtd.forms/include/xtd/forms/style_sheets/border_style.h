@@ -2,8 +2,8 @@
 /// @brief Contains xtd::forms::style_sheets::border_style class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../../forms_export"
-#include "border_type"
+#include "../../forms_export.h"
+#include "border_type.h"
 #include <xtd/iequatable>
 #include <xtd/ustring>
 

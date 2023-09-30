@@ -1,4 +1,4 @@
-#include "../../../include/xtd/forms/vertical_layout_panel"
+#include "../../../include/xtd/forms/vertical_layout_panel.h"
 #include <xtd/argument_exception>
 
 using namespace std;

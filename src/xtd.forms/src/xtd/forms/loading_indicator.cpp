@@ -1,4 +1,4 @@
-#include "../../../include/xtd/forms/loading_indicator"
+#include "../../../include/xtd/forms/loading_indicator.h"
 #include <xtd/drawing/solid_brush>
 #include <xtd/drawing/string_format>
 #define __XTD_FORMS_NATIVE_LIBRARY__

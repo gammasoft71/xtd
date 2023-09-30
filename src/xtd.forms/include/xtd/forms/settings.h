@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::settings component.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../forms_export"
+#include "../forms_export.h"
 #include <xtd/object>
 #include <xtd/ustring>
 #include <memory>

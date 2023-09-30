@@ -2,11 +2,11 @@
 /// @brief Contains xtd::forms::renderer class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "visual_styles/check_box_state"
-#include "visual_styles/push_button_state"
-#include "visual_styles/radio_button_state"
-#include "../forms_export"
-#include "text_format_flags"
+#include "visual_styles/check_box_state.h"
+#include "visual_styles/push_button_state.h"
+#include "visual_styles/radio_button_state.h"
+#include "../forms_export.h"
+#include "text_format_flags.h"
 #include <xtd/drawing/color>
 #include <xtd/drawing/font>
 #include <xtd/drawing/graphics>

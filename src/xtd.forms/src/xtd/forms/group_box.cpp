@@ -1,5 +1,5 @@
-#include "../../../include/xtd/forms/application"
-#include "../../../include/xtd/forms/group_box"
+#include "../../../include/xtd/forms/application.h"
+#include "../../../include/xtd/forms/group_box.h"
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/button_styles>
 #include <xtd/forms/native/control>

@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::layout::arranged_element_collection collection.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "sorter_none"
+#include "sorter_none.h"
 #include <xtd/argument_out_of_range_exception>
 #include <xtd/event_args>
 #include <xtd/event_handler>

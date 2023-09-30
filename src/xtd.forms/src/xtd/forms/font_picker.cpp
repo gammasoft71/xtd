@@ -1,4 +1,4 @@
-#include "../../../include/xtd/forms/font_picker"
+#include "../../../include/xtd/forms/font_picker.h"
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/control>
 #include <xtd/forms/native/extended_window_styles>

@@ -2,9 +2,9 @@
 /// @brief Contains xtd::forms::combo_box control.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "layout/arranged_element_collection"
-#include "combo_box_style"
-#include "list_control"
+#include "layout/arranged_element_collection.h"
+#include "combo_box_style.h"
+#include "list_control.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

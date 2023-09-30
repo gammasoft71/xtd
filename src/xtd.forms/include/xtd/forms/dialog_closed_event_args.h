@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::dialog_closed_event_args dialog.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "dialog_result"
+#include "dialog_result.h"
 #include <xtd/event_args>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

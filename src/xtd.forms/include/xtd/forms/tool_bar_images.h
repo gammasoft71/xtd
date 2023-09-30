@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::tool_bar_images factory.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "images"
+#include "images.h"
 #include <xtd/drawing/system_images>
 #include <xtd/environment>
 #include <xtd/static>

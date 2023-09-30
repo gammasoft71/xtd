@@ -1,5 +1,5 @@
-#include "../../../include/xtd/forms/application"
-#include "../../../include/xtd/forms/text_box"
+#include "../../../include/xtd/forms/application.h"
+#include "../../../include/xtd/forms/text_box.h"
 #include <xtd/drawing/pens>
 #include <xtd/drawing/system_colors>
 #define __XTD_FORMS_NATIVE_LIBRARY__

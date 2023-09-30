@@ -2,8 +2,8 @@
 /// @brief Contains xtd::forms::open_file_box control.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "open_file_box_options"
-#include "open_file_dialog"
+#include "open_file_box_options.h"
+#include "open_file_dialog.h"
 #include <xtd/static>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

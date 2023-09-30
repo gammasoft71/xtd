@@ -1,4 +1,4 @@
-#include "../../../include/xtd/forms/tool_bar_images"
+#include "../../../include/xtd/forms/tool_bar_images.h"
 
 using namespace xtd;
 using namespace xtd::forms;

@@ -1,4 +1,4 @@
-#include "../../../include/xtd/forms/busy_box"
+#include "../../../include/xtd/forms/busy_box.h"
 
 using namespace xtd;
 using namespace xtd::forms;

@@ -2,9 +2,9 @@
 /// @brief Contains xtd::forms::group_box container.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "border_style"
-#include "control"
-#include "flat_style"
+#include "border_style.h"
+#include "control.h"
+#include "flat_style.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

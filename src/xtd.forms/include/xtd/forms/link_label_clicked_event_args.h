@@ -2,8 +2,8 @@
 /// @brief Contains xtd::forms::link_label class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "link"
-#include "mouse_buttons"
+#include "link.h"
+#include "mouse_buttons.h"
 #include <xtd/event_args>
 #include <cstdint>
 

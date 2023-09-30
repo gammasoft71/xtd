@@ -1,7 +1,7 @@
 /// @todo Remove following includes when xtd::diagnostics::process will used for restart see below..
-#include "../../../include/xtd/forms/application"
-#include "../../../include/xtd/forms/exception_box"
-#include "../../../include/xtd/forms/message_box"
+#include "../../../include/xtd/forms/application.h"
+#include "../../../include/xtd/forms/exception_box.h"
+#include "../../../include/xtd/forms/message_box.h"
 #include <xtd/diagnostics/assert>
 #include <xtd/diagnostics/process>
 #include <xtd/diagnostics/stopwatch>

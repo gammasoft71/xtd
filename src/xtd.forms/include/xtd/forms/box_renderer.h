@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::box_renderer static class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "style_sheets/ibox_model"
+#include "style_sheets/ibox_model.h"
 #include <xtd/static>
 #include <xtd/drawing/graphics>
 

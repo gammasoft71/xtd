@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::padding class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../forms_export"
+#include "../forms_export.h"
 #include <xtd/iequatable>
 #include <xtd/object>
 #include <xtd/ustring>

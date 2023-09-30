@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::enable_debug class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../forms_export"
+#include "../forms_export.h"
 #include <xtd/diagnostics/trace_switch>
 #include <xtd/iequatable>
 #include <xtd/object>

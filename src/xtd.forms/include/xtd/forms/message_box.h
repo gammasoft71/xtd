@@ -2,13 +2,13 @@
 /// @brief Contains xtd::forms::message_box dialog.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../forms_export"
-#include "dialog_result"
-#include "iwin32_window"
-#include "message_box_buttons"
-#include "message_box_default_button"
-#include "message_box_icon"
-#include "message_box_options"
+#include "../forms_export.h"
+#include "dialog_result.h"
+#include "iwin32_window.h"
+#include "message_box_buttons.h"
+#include "message_box_default_button.h"
+#include "message_box_icon.h"
+#include "message_box_options.h"
 #include <xtd/static>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

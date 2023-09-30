@@ -2,8 +2,8 @@
 /// @brief Contains xtd::forms::paint_event_args event args.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../forms_export"
-#include "message"
+#include "../forms_export.h"
+#include "message.h"
 #include <xtd/drawing/graphics>
 #include <xtd/drawing/rectangle>
 #include <xtd/event_args>

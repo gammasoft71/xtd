@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::link class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../forms_export"
+#include "../forms_export.h"
 #include <xtd/any>
 #include <xtd/iequatable>
 #include <xtd/object>

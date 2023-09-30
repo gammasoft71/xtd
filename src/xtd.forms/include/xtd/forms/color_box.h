@@ -2,10 +2,10 @@
 /// @brief Contains xtd::forms::color_box control.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../forms_export"
-#include "color_box_styles"
-#include "dialog_result"
-#include "iwin32_window"
+#include "../forms_export.h"
+#include "color_box_styles.h"
+#include "dialog_result.h"
+#include "iwin32_window.h"
 #include <xtd/drawing/color>
 #include <xtd/static>
 #include <xtd/ustring>

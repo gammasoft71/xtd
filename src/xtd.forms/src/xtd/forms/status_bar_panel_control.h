@@ -1,10 +1,10 @@
 #pragma once
-#include "../../../include/xtd/forms/border_style"
-#include "../../../include/xtd/forms/horizontal_alignment"
-#include "../../../include/xtd/forms/image_renderer"
-#include "../../../include/xtd/forms/label"
-#include "../../../include/xtd/forms/status_bar"
-#include "../../../include/xtd/forms/status_bar_panel_border_style"
+#include "../../../include/xtd/forms/border_style.h"
+#include "../../../include/xtd/forms/horizontal_alignment.h"
+#include "../../../include/xtd/forms/image_renderer.h"
+#include "../../../include/xtd/forms/label.h"
+#include "../../../include/xtd/forms/status_bar.h"
+#include "../../../include/xtd/forms/status_bar_panel_border_style.h"
 
 class xtd::forms::status_bar::status_bar_panel_control : public xtd::forms::label {
 public:

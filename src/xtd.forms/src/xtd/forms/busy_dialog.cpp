@@ -1,5 +1,5 @@
-#include "../../../include/xtd/forms/application"
-#include "../../../include/xtd/forms/busy_dialog"
+#include "../../../include/xtd/forms/application.h"
+#include "../../../include/xtd/forms/busy_dialog.h"
 #include <xtd/drawing/system_icons>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/busy_dialog>

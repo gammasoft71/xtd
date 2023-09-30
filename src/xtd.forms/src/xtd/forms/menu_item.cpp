@@ -1,4 +1,4 @@
-#include "../../../include/xtd/forms/menu_item"
+#include "../../../include/xtd/forms/menu_item.h"
 #include "menu_data.h"
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/menu>

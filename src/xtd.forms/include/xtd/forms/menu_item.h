@@ -2,9 +2,9 @@
 /// @brief Contains xtd::forms::menu_item menu.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "menu"
-#include "menu_item_kind"
-#include "shortcut"
+#include "menu.h"
+#include "menu_item_kind.h"
+#include "shortcut.h"
 #include <xtd/drawing/image>
 #include <xtd/event>
 

@@ -1,7 +1,7 @@
-#include "../../../include/xtd/forms/style_sheets/button"
-#include "../../../include/xtd/forms/style_sheets/pseudo_state"
-#include "../../../include/xtd/forms/style_sheets/style_sheet"
-#include "../../../include/xtd/forms/user_control_renderer"
+#include "../../../include/xtd/forms/style_sheets/button.h"
+#include "../../../include/xtd/forms/style_sheets/pseudo_state.h"
+#include "../../../include/xtd/forms/style_sheets/style_sheet.h"
+#include "../../../include/xtd/forms/user_control_renderer.h"
 
 using namespace std;
 using namespace xtd;

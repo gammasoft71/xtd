@@ -2,9 +2,9 @@
 /// @brief Contains xtd::forms::style_sheets::control class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "ibox_model"
-#include "iimage_model"
-#include "itext_model"
+#include "ibox_model.h"
+#include "iimage_model.h"
+#include "itext_model.h"
 #include <xtd/iequatable>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

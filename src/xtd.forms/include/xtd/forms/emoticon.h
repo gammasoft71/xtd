@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::emoticon enum component.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../forms_export"
+#include "../forms_export.h"
 #include <xtd/iequatable>
 #include <xtd/object>
 #include <xtd/static>

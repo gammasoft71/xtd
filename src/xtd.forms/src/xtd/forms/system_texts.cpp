@@ -1,4 +1,4 @@
-#include "../../../include/xtd/forms/system_texts"
+#include "../../../include/xtd/forms/system_texts.h"
 #include <xtd/literals>
 
 using namespace xtd::forms;
