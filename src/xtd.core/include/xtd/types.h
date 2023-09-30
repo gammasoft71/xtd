@@ -4,9 +4,9 @@
 #pragma once
 #include "core_export.h"
 /// @cond
-#define __XTD_TYPE_NATIVE__
-#include <xtd/native/types>
-#undef __XTD_TYPE_NATIVE__
+#define __XTD_VALUE_TYPE_NATIVE__
+#include <xtd/native/value_types>
+#undef __XTD_VALUE_TYPE_NATIVE__
 /// @endcond
 #include <cstdint>
 #include <string>

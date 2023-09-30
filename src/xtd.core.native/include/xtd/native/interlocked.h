@@ -8,6 +8,9 @@
 #endif
 /// @endcond
 
+#define __XTD_VALUE_TYPE_NATIVE__
+#include "value_types.h"
+#undef __XTD_VALUE_TYPE_NATIVE__
 #include "types.h"
 #include <xtd/core_native_export>
 #include <cstddef>
