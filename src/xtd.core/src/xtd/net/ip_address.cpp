@@ -1,10 +1,10 @@
-#include "../../../include/xtd/argument_out_of_range_exception"
-#include "../../../include/xtd/bit_converter"
-#include "../../../include/xtd/format_exception"
-#include "../../../include/xtd/using"
-#include "../../../include/xtd/net/ip_address"
-#include "../../../include/xtd/net/sockets/socket_error"
-#include "../../../include/xtd/net/sockets/socket_exception"
+#include "../../../include/xtd/argument_out_of_range_exception.h"
+#include "../../../include/xtd/bit_converter.h"
+#include "../../../include/xtd/format_exception.h"
+#include "../../../include/xtd/using.h"
+#include "../../../include/xtd/net/ip_address.h"
+#include "../../../include/xtd/net/sockets/socket_error.h"
+#include "../../../include/xtd/net/sockets/socket_exception.h"
 
 using namespace std;
 using namespace xtd;

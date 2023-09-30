@@ -1,7 +1,7 @@
-#include "../../../include/xtd/argument_out_of_range_exception"
-#include "../../../include/xtd/bit_converter"
-#include "../../../include/xtd/net/ip_end_point"
-#include "../../../include/xtd/net/sockets/socket_exception"
+#include "../../../include/xtd/argument_out_of_range_exception.h"
+#include "../../../include/xtd/bit_converter.h"
+#include "../../../include/xtd/net/ip_end_point.h"
+#include "../../../include/xtd/net/sockets/socket_exception.h"
 
 using namespace std;
 using namespace xtd;
