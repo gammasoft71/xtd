@@ -1,9 +1,9 @@
 #include "../../include/xtd/system_report.h"
-#include <xtd/box_char.h>
-#include <xtd/environment.h>
-#include <xtd/drawing/system_colors.h>
-#include <xtd/drawing/system_fonts.h>
-#include <xtd/io/path.h>
+#include <xtd/box_char>
+#include <xtd/environment>
+#include <xtd/drawing/system_colors>
+#include <xtd/drawing/system_fonts>
+#include <xtd/io/path>
 
 using namespace std;
 using namespace xtd;
