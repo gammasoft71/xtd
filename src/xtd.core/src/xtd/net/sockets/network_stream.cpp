@@ -1,4 +1,4 @@
-#include "../../../../include/xtd/net/sockets/network_stream"
+#include "../../../../include/xtd/net/sockets/network_stream.h"
 
 using namespace std;
 using namespace xtd;
