@@ -5,7 +5,7 @@
 #include <wx/font.h>
 #include <wx/settings.h>
 
-using namespace xtd;;
+using namespace xtd;
 using namespace xtd::drawing::native;
 
 bool __enable_system_font_size__ = false;

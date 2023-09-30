@@ -59,7 +59,7 @@ namespace xtd::tests {
     }
     
     void test_method_(event_args_copy_with_empty) {
-      assert::does_not_throw([&] {auto e = event_args::empty;;}, csf_);
+      assert::does_not_throw([&] {auto e = event_args::empty;}, csf_);
     }
     
     void test_method_(test_event_args_ctor) {
