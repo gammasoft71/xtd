@@ -1268,7 +1268,7 @@ macro(write_assembly_informations)
       "\n"
       "assembly_version_(\"${PROJECT_VERSION}\");\n"
       "${FILE_VERSION}"
-      "#pragma endregion"
+      "#pragma endregion\n"
     )
     
     auto_source_group(${ASSEMBLY_INFORMATIONS_FILE})
