@@ -1,9 +1,9 @@
 #pragma once
 #include "semaphore_base.h"
-#include "../../../include/xtd/int32_object"
-#include "../../../include/xtd/semaphore"
-#include "../../../include/xtd/invalid_operation_exception"
-#include "../../../include/xtd/threading/interlocked"
+#include "../../../include/xtd/int32_object.h"
+#include "../../../include/xtd/semaphore.h"
+#include "../../../include/xtd/invalid_operation_exception.h"
+#include "../../../include/xtd/threading/interlocked.h"
 #include <atomic>
 #include <condition_variable>
 

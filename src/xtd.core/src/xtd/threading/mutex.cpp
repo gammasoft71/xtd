@@ -1,10 +1,10 @@
 #include "named_mutex.h"
 #include "unnamed_mutex.h"
-#include "../../../include/xtd/argument_out_of_range_exception"
-#include "../../../include/xtd/object_closed_exception"
-#include "../../../include/xtd/io/io_exception"
-#include "../../../include/xtd/io/path_too_long_exception"
-#include "../../../include/xtd/threading/abandoned_mutex_exception"
+#include "../../../include/xtd/argument_out_of_range_exception.h"
+#include "../../../include/xtd/object_closed_exception.h"
+#include "../../../include/xtd/io/io_exception.h"
+#include "../../../include/xtd/io/path_too_long_exception.h"
+#include "../../../include/xtd/threading/abandoned_mutex_exception.h"
 
 using namespace xtd;
 using namespace xtd::threading;

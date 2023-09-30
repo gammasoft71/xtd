@@ -1,34 +1,30 @@
+#include "../../../include/xtd/threading/manual_reset_event.h"
+#include "../../../include/xtd/threading/mutex.h"
+#include "../../../include/xtd/threading/thread_abort_exception.h"
+#include "../../../include/xtd/threading/thread_interrupted_exception.h"
+#include "../../../include/xtd/threading/thread_state_exception.h"
+#include "../../../include/xtd/threading/thread.h"
+#include "../../../include/xtd/threading/thread_pool.h"
+#include "../../../include/xtd/threading/timeout.h"
+#include "../../../include/xtd/io/io_exception.h"
+#include "../../../include/xtd/diagnostics/stopwatch.h"
+#include "../../../include/xtd/argument_exception.h"
+#include "../../../include/xtd/environment.h"
+#include "../../../include/xtd/int32_object.h"
+#include "../../../include/xtd/invalid_operation_exception.h"
+#include "../../../include/xtd/not_implemented_exception.h"
+#include "../../../include/xtd/as.h"
+#include "../../../include/xtd/using.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/types>
 #include <xtd/native/thread>
-#include <xtd/native/types>
 #undef __XTD_CORE_NATIVE_LIBRARY__
-#include "../../../include/xtd/threading/manual_reset_event"
-#include "../../../include/xtd/threading/mutex"
-#include "../../../include/xtd/threading/thread_abort_exception"
-#include "../../../include/xtd/threading/thread_interrupted_exception"
-#include "../../../include/xtd/threading/thread_state_exception"
-#include "../../../include/xtd/threading/thread"
-#include "../../../include/xtd/threading/thread_pool"
-#include "../../../include/xtd/threading/timeout"
-#include "../../../include/xtd/io/io_exception"
-#include "../../../include/xtd/diagnostics/stopwatch"
-#include "../../../include/xtd/argument_exception"
-#include "../../../include/xtd/environment"
-#include "../../../include/xtd/int32_object"
-#include "../../../include/xtd/invalid_operation_exception"
-#include "../../../include/xtd/not_implemented_exception"
-#include "../../../include/xtd/as"
-#include "../../../include/xtd/using"
 #include <mutex>
 #include <thread>
 
 using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::threading;
-
-namespace {
-}
 
 struct thread::data {
   manual_reset_event end_thread_event;

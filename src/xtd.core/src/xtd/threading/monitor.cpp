@@ -1,10 +1,12 @@
-#include "../../../include/xtd/threading/monitor"
-#include "../../../include/xtd/threading/mutex"
-#include "../../../include/xtd/threading/synchronization_lock_exception"
-#include "../../../include/xtd/threading/thread"
-#include "../../../include/xtd/threading/thread_local_object"
-#include "../../../include/xtd/diagnostics/stopwatch"
-#include "../../../include/xtd/not_implemented_exception"
+#include "critical_section.h"
+#include "condition_variable.h"
+#include "../../../include/xtd/threading/monitor.h"
+#include "../../../include/xtd/threading/mutex.h"
+#include "../../../include/xtd/threading/synchronization_lock_exception.h"
+#include "../../../include/xtd/threading/thread.h"
+#include "../../../include/xtd/threading/thread_local_object.h"
+#include "../../../include/xtd/diagnostics/stopwatch.h"
+#include "../../../include/xtd/not_implemented_exception.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/condition_variable>
 #include <xtd/native/critical_section>
@@ -12,8 +14,6 @@
 #include <atomic>
 #include <mutex>
 #include <optional>
-#include "critical_section.h"
-#include "condition_variable.h"
 
 using namespace xtd;
 using namespace xtd::diagnostics;

@@ -1,6 +1,6 @@
 #pragma once
-#include "../../../include/xtd/threading/mutex"
-#include "../../../include/xtd/abstract"
+#include "../../../include/xtd/threading/mutex.h"
+#include "../../../include/xtd/abstract.h"
 
 class xtd::threading::mutex::mutex_base abstract_ {
 public:
