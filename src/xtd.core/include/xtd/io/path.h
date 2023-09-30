@@ -2,7 +2,7 @@
 /// @brief Contains xtd::io::path class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "file"
+#include "file.h"
 #include "../core_export.h"
 #include "../static.h"
 #include "../ustring.h"
