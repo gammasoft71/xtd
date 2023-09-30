@@ -1,8 +1,8 @@
-#include "../../include/xtd/ustring"
-#include "../../include/xtd/register_any_stringer"
-#include "../../include/xtd/types"
-#include "../../include/xtd/date_time"
-#include "../../include/xtd/time_span"
+#include "../../include/xtd/ustring.h"
+#include "../../include/xtd/register_any_stringer.h"
+#include "../../include/xtd/types.h"
+#include "../../include/xtd/date_time.h"
+#include "../../include/xtd/time_span.h"
 
 using namespace std;
 using namespace xtd;

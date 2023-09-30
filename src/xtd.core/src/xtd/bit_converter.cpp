@@ -1,5 +1,5 @@
-#include "../../include/xtd/bit_converter"
-#include "../../include/xtd/argument_out_of_range_exception"
+#include "../../include/xtd/bit_converter.h"
+#include "../../include/xtd/argument_out_of_range_exception.h"
 #include <cstring>
 
 using namespace std;

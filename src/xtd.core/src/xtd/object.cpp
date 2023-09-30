@@ -1,7 +1,7 @@
-#include "../../include/xtd/as"
-#include "../../include/xtd/object"
-#include "../../include/xtd/type_object"
-#include "../../include/xtd/ustring"
+#include "../../include/xtd/as.h"
+#include "../../include/xtd/object.h"
+#include "../../include/xtd/type_object.h"
+#include "../../include/xtd/ustring.h"
 
 using namespace std;
 using namespace xtd;

@@ -1,5 +1,5 @@
-#include "../../include/xtd/as"
-#include "../../include/xtd/target_type"
+#include "../../include/xtd/as.h"
+#include "../../include/xtd/target_type.h"
 
 using namespace xtd;
 

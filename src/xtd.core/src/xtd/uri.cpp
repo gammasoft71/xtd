@@ -1,12 +1,12 @@
-#include "../../include/xtd/uri"
-#include "../../include/xtd/argument_exception"
-#include "../../include/xtd/argument_out_of_range_exception"
-#include "../../include/xtd/as"
-#include "../../include/xtd/invalid_operation_exception"
-#include "../../include/xtd/uri_format_exception"
-#include "../../include/xtd/uri_template_match_exception"
-#include "../../include/xtd/io/path"
-#include "../../include/xtd/net/ip_address"
+#include "../../include/xtd/uri.h"
+#include "../../include/xtd/argument_exception.h"
+#include "../../include/xtd/argument_out_of_range_exception.h"
+#include "../../include/xtd/as.h"
+#include "../../include/xtd/invalid_operation_exception.h"
+#include "../../include/xtd/uri_format_exception.h"
+#include "../../include/xtd/uri_template_match_exception.h"
+#include "../../include/xtd/io/path.h"
+#include "../../include/xtd/net/ip_address.h"
 
 using namespace std;
 using namespace xtd;
