@@ -1,4 +1,4 @@
-#include "../../../include/xtd/reflection/assembly_file_version_attribute"
+#include "../../../include/xtd/reflection/assembly_file_version_attribute.h"
 
 using namespace std;
 using namespace xtd;

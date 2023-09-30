@@ -1,5 +1,5 @@
-#include "../../../include/xtd/reflection/assembly"
-#include "../../../include/xtd/reflection/assembly_info"
+#include "../../../include/xtd/reflection/assembly.h"
+#include "../../../include/xtd/reflection/assembly_info.h"
 
 using namespace std;
 using namespace xtd;

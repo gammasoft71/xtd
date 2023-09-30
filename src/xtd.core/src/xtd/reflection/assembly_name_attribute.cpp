@@ -1,4 +1,4 @@
-#include "../../../include/xtd/reflection/assembly_name_attribute"
+#include "../../../include/xtd/reflection/assembly_name_attribute.h"
 
 using namespace std;
 using namespace xtd;
