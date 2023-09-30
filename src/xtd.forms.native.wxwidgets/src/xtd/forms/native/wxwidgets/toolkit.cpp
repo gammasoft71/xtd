@@ -1,8 +1,8 @@
 #define __XTD_DRAWING_NATIVE_LIBRARY__
-#include <xtd/drawing/native/toolkit>
+#include <xtd/drawing/native/toolkit.h>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/toolkit>
+#include <xtd/forms/native/toolkit.h>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/environment>
 
