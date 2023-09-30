@@ -1,4 +1,4 @@
-#include "../../../include/xtd/net/ip_host_entry"
+#include "../../../include/xtd/net/ip_host_entry.h"
 
 using namespace std;
 using namespace xtd;
