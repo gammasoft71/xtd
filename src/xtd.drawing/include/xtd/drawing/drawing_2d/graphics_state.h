@@ -2,8 +2,8 @@
 /// @brief Contains xtd::drawing::drawing_2d/::graphics_state class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../../drawing_export"
-#include "drawing2d"
+#include "../../drawing_export.h"
+#include "drawing2d.h"
 #include <xtd/iequatable>
 #include <xtd/object>
 

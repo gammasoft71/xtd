@@ -2,9 +2,9 @@
 /// @brief Contains xtd::drawing::font_family class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../drawing_export"
-#include "font_style"
-#include "text/generic_font_families"
+#include "../drawing_export.h"
+#include "font_style.h"
+#include "text/generic_font_families.h"
 #include <xtd/iequatable>
 #include <xtd/object>
 #include <xtd/ustring>

@@ -2,8 +2,8 @@
 /// @brief Contains xtd::drawing::drawing_2d/::gradient_stop alias.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "drawing2d"
-#include "gradient_stop"
+#include "drawing2d.h"
+#include "gradient_stop.h"
 #include <vector>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

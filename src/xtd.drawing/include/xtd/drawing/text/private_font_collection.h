@@ -2,8 +2,8 @@
 /// @brief Contains xtd::drawing::text::private_font_collection class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../../drawing_export"
-#include "font_collection"
+#include "../../drawing_export.h"
+#include "font_collection.h"
 #include <xtd/ustring>
 #include <cstdint>
 #include <vector>

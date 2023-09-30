@@ -2,7 +2,7 @@
 /// @brief Contains xtd::drawing::imaging::encoder_parameters class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "encoder_parameter"
+#include "encoder_parameter.h"
 #include <xtd/iequatable>
 #include <cstdint>
 #include <ostream>

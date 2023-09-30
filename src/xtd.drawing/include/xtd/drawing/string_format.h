@@ -2,11 +2,11 @@
 /// @brief Contains xtd::drawing::string_format class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../drawing_export"
-#include "text/hotkey_prefix"
-#include "string_alignment"
-#include "string_format_flags"
-#include "string_trimming"
+#include "../drawing_export.h"
+#include "text/hotkey_prefix.h"
+#include "string_alignment.h"
+#include "string_format_flags.h"
+#include "string_trimming.h"
 #include <xtd/object>
 #include <cstdint>
 #include <ostream>

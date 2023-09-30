@@ -2,10 +2,10 @@
 /// @brief Contains xtd::drawing::buffered_graphics_context class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "buffered_graphics"
-#include "graphics"
-#include "point"
-#include "size"
+#include "buffered_graphics.h"
+#include "graphics.h"
+#include "point.h"
+#include "size.h"
 #include <xtd/optional>
 #include <xtd/object>
 #include <xtd/types>

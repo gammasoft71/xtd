@@ -2,8 +2,8 @@
 /// @brief Contains xtd::drawing::system_pens factory.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../drawing_export"
-#include "pen"
+#include "../drawing_export.h"
+#include "pen.h"
 #include <xtd/static>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

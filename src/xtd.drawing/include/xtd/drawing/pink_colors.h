@@ -2,8 +2,8 @@
 /// @brief Contains xtd::drawing::pink_colors factory.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../drawing_export"
-#include "color"
+#include "../drawing_export.h"
+#include "color.h"
 #include <xtd/static>
 #include <vector>
 

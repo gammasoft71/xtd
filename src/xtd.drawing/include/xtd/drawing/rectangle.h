@@ -2,10 +2,10 @@
 /// @brief Contains xtd::drawing::rectangle class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../drawing_export"
-#include "point"
-#include "size"
-#include "rectangle_f"
+#include "../drawing_export.h"
+#include "point.h"
+#include "size.h"
+#include "rectangle_f.h"
 #include <xtd/iequatable>
 #include <xtd/object>
 #include <xtd/ustring>

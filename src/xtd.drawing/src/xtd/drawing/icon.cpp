@@ -1,4 +1,4 @@
-#include "../../../include/xtd/drawing/icon"
+#include "../../../include/xtd/drawing/icon.h"
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/icon.h>
 #include <xtd/drawing/native/image_formats.h>

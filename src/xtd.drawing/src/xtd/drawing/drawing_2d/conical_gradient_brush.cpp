@@ -1,4 +1,4 @@
-#include "../../../../include/xtd/drawing/drawing_2d/conical_gradient_brush"
+#include "../../../../include/xtd/drawing/drawing_2d/conical_gradient_brush.h"
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/brush>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__

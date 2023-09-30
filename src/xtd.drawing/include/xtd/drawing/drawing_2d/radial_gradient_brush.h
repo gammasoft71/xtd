@@ -2,12 +2,12 @@
 /// @brief Contains xtd::drawing::drawing_2d/::radial_gradient_brush class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../../drawing_export"
-#include "../brush"
-#include "../point"
-#include "../rectangle"
-#include "gradient_stop_collection"
-#include "drawing2d"
+#include "../../drawing_export.h"
+#include "../brush.h"
+#include "../point.h"
+#include "../rectangle.h"
+#include "gradient_stop_collection.h"
+#include "drawing2d.h"
 #include <xtd/iequatable>
 #include <array>
 #include <utility>

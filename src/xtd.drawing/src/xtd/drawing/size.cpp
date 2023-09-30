@@ -1,5 +1,5 @@
-#include "../../../include/xtd/drawing/point"
-#include "../../../include/xtd/drawing/size"
+#include "../../../include/xtd/drawing/point.h"
+#include "../../../include/xtd/drawing/size.h"
 #include <xtd/as>
 #include <xtd/math>
 

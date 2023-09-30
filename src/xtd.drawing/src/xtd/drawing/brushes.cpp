@@ -1,4 +1,4 @@
-#include "../../../include/xtd/drawing/brushes"
+#include "../../../include/xtd/drawing/brushes.h"
 
 using namespace std;
 using namespace xtd::drawing;

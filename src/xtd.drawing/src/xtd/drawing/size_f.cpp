@@ -1,6 +1,6 @@
-#include "../../../include/xtd/drawing/point_f"
-#include "../../../include/xtd/drawing/size_f"
-#include "../../../include/xtd/drawing/size"
+#include "../../../include/xtd/drawing/point_f.h"
+#include "../../../include/xtd/drawing/size_f.h"
+#include "../../../include/xtd/drawing/size.h"
 #include <xtd/as>
 
 using namespace xtd::drawing;

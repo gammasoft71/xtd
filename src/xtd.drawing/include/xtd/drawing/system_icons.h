@@ -2,9 +2,9 @@
 /// @brief Contains xtd::drawing::system_icons factory.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "icon"
-#include "size"
-#include "system_images"
+#include "icon.h"
+#include "size.h"
+#include "system_images.h"
 #include <xtd/static>
 #include <map>
 #include <vector>

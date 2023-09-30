@@ -2,8 +2,8 @@
 /// @brief Contains xtd::drawing::size class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../drawing_export"
-#include "size_f"
+#include "../drawing_export.h"
+#include "size_f.h"
 #include <xtd/iequatable>
 #include <xtd/object>
 #include <xtd/ustring>

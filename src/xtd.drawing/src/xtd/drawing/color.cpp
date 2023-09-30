@@ -1,4 +1,4 @@
-#include "../../../include/xtd/drawing/color"
+#include "../../../include/xtd/drawing/color.h"
 #include <xtd/argument_exception>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/system_colors>

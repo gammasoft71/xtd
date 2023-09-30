@@ -2,7 +2,7 @@
 /// @brief Contains xtd::drawing::drawing_2d/::compositing_mode enum class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "drawing2d"
+#include "drawing2d.h"
 #include <xtd/enum>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
