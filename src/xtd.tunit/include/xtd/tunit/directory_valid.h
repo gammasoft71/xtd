@@ -488,7 +488,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::ustring d1 = environment::get_folder_path(environment::special_folder::common_application_data);
-      /// xtdd;;utring d2 = xtd::io::path::combine(environment::get_folder_path(environment::special_folder::common_application_data), "__xtd_test_directory_not_found__");
+      /// xtd::utring d2 = xtd::io::path::combine(environment::get_folder_path(environment::special_folder::common_application_data), "__xtd_test_directory_not_found__");
       /// xtd::tunit::directory_valid::exists(d1); // test ok.
       /// xtd::tunit::directory_valid::exists(d2); // test throws an assert_error exception.
       /// @endcode
@@ -501,7 +501,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::ustring d1 = environment::get_folder_path(environment::special_folder::common_application_data);
-      /// xtdd;;utring d2 = xtd::io::path::combine(environment::get_folder_path(environment::special_folder::common_application_data), "__xtd_test_directory_not_found__");
+      /// xtd::utring d2 = xtd::io::path::combine(environment::get_folder_path(environment::special_folder::common_application_data), "__xtd_test_directory_not_found__");
       /// xtd::tunit::directory_valid::exists(d1); // test ok.
       /// xtd::tunit::directory_valid::exists(d2); // test throws an assert_error exception.
       /// @endcode
@@ -514,7 +514,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::ustring d1 = environment::get_folder_path(environment::special_folder::common_application_data);
-      /// xtdd;;utring d2 = xtd::io::path::combine(environment::get_folder_path(environment::special_folder::common_application_data), "__xtd_test_directory_not_found__");
+      /// xtd::utring d2 = xtd::io::path::combine(environment::get_folder_path(environment::special_folder::common_application_data), "__xtd_test_directory_not_found__");
       /// xtd::tunit::directory_valid::exists(d1); // test ok.
       /// xtd::tunit::directory_valid::exists(d2); // test throws an assert_error exception.
       /// @endcode
@@ -528,7 +528,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::ustring d1 = environment::get_folder_path(environment::special_folder::common_application_data);
-      /// xtdd;;utring d2 = xtd::io::path::combine(environment::get_folder_path(environment::special_folder::common_application_data), "__xtd_test_directory_not_found__");
+      /// xtd::utring d2 = xtd::io::path::combine(environment::get_folder_path(environment::special_folder::common_application_data), "__xtd_test_directory_not_found__");
       /// xtd::tunit::directory_valid::exists(d1); // test ok.
       /// xtd::tunit::directory_valid::exists(d2); // test throws an assert_error exception.
       /// @endcode

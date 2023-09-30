@@ -54,7 +54,7 @@ const xtd::drawing::color& shadow::color() const noexcept {
 
 shadow& shadow::color(const xtd::drawing::color& value) noexcept {
   data_->color = value;
-  return *this;;
+  return *this;
 }
 
 const xtd::drawing::point& shadow::offset() const noexcept {
@@ -63,7 +63,7 @@ const xtd::drawing::point& shadow::offset() const noexcept {
 
 shadow& shadow::offset(const xtd::drawing::point& value) noexcept {
   data_->offset = value;
-  return *this;;
+  return *this;
 }
 
 int32 shadow::radius() const noexcept {
@@ -72,7 +72,7 @@ int32 shadow::radius() const noexcept {
 
 shadow& shadow::radius(int32 value) noexcept {
   data_->radius = value;
-  return *this;;
+  return *this;
 }
 
 int32 shadow::x() const noexcept {
@@ -81,7 +81,7 @@ int32 shadow::x() const noexcept {
 
 shadow& shadow::x(int32 value) noexcept {
   data_->offset.x(value);
-  return *this;;
+  return *this;
 }
 
 int32 shadow::y() const noexcept {
@@ -90,7 +90,7 @@ int32 shadow::y() const noexcept {
 
 shadow& shadow::y(int32 value) noexcept {
   data_->offset.y(value);
-  return *this;;
+  return *this;
 }
 
 bool shadow::equals(const shadow& other) const noexcept {

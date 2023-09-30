@@ -81,7 +81,7 @@ link_label& link_label::active_link_color(const xtd::drawing::color& color) {
 }
 
 xtd::drawing::color link_label::disabled_link_color() const noexcept {
-  return data_->disabled_link_color.value_or(xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().gray_text());;
+  return data_->disabled_link_color.value_or(xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().gray_text());
 }
 
 link_label& link_label::disabled_link_color(const xtd::drawing::color& color) {
@@ -114,7 +114,7 @@ link_label& link_label::link_behavior(xtd::forms::link_behavior value) {
 }
 
 xtd::drawing::color link_label::link_color() const noexcept {
-  return data_->link_color.value_or(xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().link_text());;
+  return data_->link_color.value_or(xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().link_text());
 }
 
 link_label& link_label::link_color(const xtd::drawing::color& color) {
@@ -142,7 +142,7 @@ link_label& link_label::override_cursor(const xtd::forms::cursor& cursor) {
 }
 
 xtd::drawing::color link_label::visited_link_color() const noexcept {
-  return data_->visited_link_color.value_or(xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().visited_text());;
+  return data_->visited_link_color.value_or(xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().visited_text());
 }
 
 link_label& link_label::visited_link_color(const xtd::drawing::color& color) {
