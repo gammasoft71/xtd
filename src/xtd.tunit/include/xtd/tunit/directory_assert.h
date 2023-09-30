@@ -2,7 +2,7 @@
 /// @brief Contains xtd::tunit::directory_assert class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "assert"
+#include "assert.h"
 #if defined(__cpp_lib_filesystem)
 #include <filesystem>
 #endif

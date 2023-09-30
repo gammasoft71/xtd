@@ -2,7 +2,7 @@
 /// @brief Contains xtd::tunit::ostream_event_listener class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "event_listener"
+#include "event_listener.h"
 #include <ostream>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

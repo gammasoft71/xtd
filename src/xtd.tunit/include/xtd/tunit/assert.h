@@ -2,7 +2,7 @@
 /// @brief Contains xtd::tunit::assert class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "base_assert"
+#include "base_assert.h"
 #include <algorithm>
 #include <cmath>
 #include <cstring>

@@ -2,8 +2,8 @@
 /// @brief Contains xtd::tunit::registered_test_class class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "test_class"
-#include "../tunit_export"
+#include "test_class.h"
+#include "../tunit_export.h"
 #include <xtd/ustring>
 #include <memory>
 

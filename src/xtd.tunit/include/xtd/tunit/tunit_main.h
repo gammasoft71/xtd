@@ -4,7 +4,7 @@
 #pragma once
 #include <xtd/startup>
 #include <xtd/static>
-#include "../tunit_export"
+#include "../tunit_export.h"
 
 /// @cond
 struct tunit_export_ __tunit_main final static_ {

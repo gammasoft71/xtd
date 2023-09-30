@@ -1,7 +1,7 @@
-#include "../../../include/xtd/tunit/base_assert"
-#include "../../../include/xtd/tunit/settings"
-#include "../../../include/xtd/tunit/unit_test"
-#include "../../../include/xtd/tunit/test"
+#include "../../../include/xtd/tunit/base_assert.h"
+#include "../../../include/xtd/tunit/settings.h"
+#include "../../../include/xtd/tunit/unit_test.h"
+#include "../../../include/xtd/tunit/test.h"
 
 using namespace std;
 using namespace xtd;

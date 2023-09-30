@@ -2,7 +2,7 @@
 /// @brief Contains xtd::tunit::class_cleanup_attribute class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "test"
+#include "test.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

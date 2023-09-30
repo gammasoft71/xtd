@@ -2,10 +2,10 @@
 /// @brief Contains xtd::tunit::unit_test class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../tunit_export"
-#include "event_listener"
-#include "registered_test_class"
-#include "settings"
+#include "../tunit_export.h"
+#include "event_listener.h"
+#include "registered_test_class.h"
+#include "settings.h"
 #include <xtd/convert>
 #include <xtd/date_time>
 #include <xtd/random>
