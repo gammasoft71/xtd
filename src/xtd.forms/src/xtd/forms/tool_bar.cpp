@@ -1,7 +1,7 @@
-#include "../../../include/xtd/forms/control_paint"
-#include "../../../include/xtd/forms/tool_bar"
-#include "../../../include/xtd/forms/tool_bar_renderer"
-#include "../../../include/xtd/forms/tool_bar_button_renderer"
+#include "../../../include/xtd/forms/control_paint.h"
+#include "../../../include/xtd/forms/tool_bar.h"
+#include "../../../include/xtd/forms/tool_bar_renderer.h"
+#include "../../../include/xtd/forms/tool_bar_button_renderer.h"
 #include "tool_bar_button_control.h"
 #include "tool_bar_button_data.h"
 #include <xtd/drawing/system_pens>

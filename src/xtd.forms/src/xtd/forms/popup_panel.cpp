@@ -1,5 +1,5 @@
-#include "../../../include/xtd/forms/tab_control"
-#include "../../../include/xtd/forms/popup_panel"
+#include "../../../include/xtd/forms/tab_control.h"
+#include "../../../include/xtd/forms/popup_panel.h"
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/control>
 #include <xtd/forms/native/extended_window_styles>

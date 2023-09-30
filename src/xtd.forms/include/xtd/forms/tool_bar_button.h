@@ -2,13 +2,13 @@
 /// @brief Contains xtd::forms::tool_bar_button container.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "component"
-#include "const_control_ref"
-#include "context_menu"
-#include "control_ref"
-#include "image_list"
-#include "tool_bar_button_ref"
-#include "tool_bar_button_style"
+#include "component.h"
+#include "const_control_ref.h"
+#include "context_menu.h"
+#include "control_ref.h"
+#include "image_list.h"
+#include "tool_bar_button_ref.h"
+#include "tool_bar_button_style.h"
 #include <xtd/event>
 #include <xtd/event_handler>
 #include <xtd/iequatable>

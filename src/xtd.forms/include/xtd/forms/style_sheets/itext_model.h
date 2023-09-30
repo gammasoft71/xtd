@@ -2,10 +2,10 @@
 /// @brief Contains xtd::forms::style_sheets::itext_model class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "shadows"
-#include "text_decoration"
-#include "text_transformation"
-#include "white_space"
+#include "shadows.h"
+#include "text_decoration.h"
+#include "text_transformation.h"
+#include "white_space.h"
 #include <xtd/drawing/color>
 #include <xtd/drawing/font>
 #include <xtd/drawing/string_format>

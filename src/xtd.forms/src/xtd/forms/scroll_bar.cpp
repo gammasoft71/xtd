@@ -1,4 +1,4 @@
-#include "../../../include/xtd/forms/scroll_bar"
+#include "../../../include/xtd/forms/scroll_bar.h"
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/scroll_bar>
 #include <xtd/forms/window_messages>

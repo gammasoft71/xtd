@@ -2,9 +2,9 @@
 /// @brief Contains xtd::forms::input_dialog dialog.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "dialog_appearance"
-#include "character_casing"
-#include "common_dialog"
+#include "dialog_appearance.h"
+#include "character_casing.h"
+#include "common_dialog.h"
 #include <xtd/delegate>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

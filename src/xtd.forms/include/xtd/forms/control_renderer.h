@@ -2,9 +2,9 @@
 /// @brief Contains xtd::forms::control_renderer static class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "visual_styles/control_state"
-#include "box_renderer"
-#include "flat_style"
+#include "visual_styles/control_state.h"
+#include "box_renderer.h"
+#include "flat_style.h"
 #include <xtd/static>
 #include <xtd/drawing/graphics>
 

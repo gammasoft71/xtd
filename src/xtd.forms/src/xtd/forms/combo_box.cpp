@@ -1,4 +1,4 @@
-#include "../../../include/xtd/forms/combo_box"
+#include "../../../include/xtd/forms/combo_box.h"
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/control>
 #include <xtd/forms/native/combo_box>

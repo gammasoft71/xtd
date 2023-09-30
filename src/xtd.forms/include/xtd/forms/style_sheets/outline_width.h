@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::style_sheets::outline_width alias.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "lengths"
+#include "lengths.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

@@ -1,4 +1,4 @@
-#include "../../../../include/xtd/forms/style_sheets/shadow"
+#include "../../../../include/xtd/forms/style_sheets/shadow.h"
 #include <xtd/as>
 #include <xtd/is>
 

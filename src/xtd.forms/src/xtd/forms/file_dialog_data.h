@@ -1,4 +1,4 @@
-#include "../../../include/xtd/forms/file_dialog"
+#include "../../../include/xtd/forms/file_dialog.h"
 
 /// @cond
 struct xtd::forms::file_dialog::data {

@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::busy_box dialog.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "busy_dialog"
+#include "busy_dialog.h"
 #include <xtd/forms/application>
 #include <xtd/literals>
 #include <xtd/static>

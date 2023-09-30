@@ -1,5 +1,5 @@
-#include "../../../include/xtd/forms/color_box"
-#include "../../../include/xtd/forms/color_dialog"
+#include "../../../include/xtd/forms/color_box.h"
+#include "../../../include/xtd/forms/color_dialog.h"
 
 using namespace std;
 using namespace xtd;

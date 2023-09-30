@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::images factory.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "application"
+#include "application.h"
 #include <xtd/static>
 #include <xtd/drawing/system_images>
 

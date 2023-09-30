@@ -1,5 +1,5 @@
-#include "../../../include/xtd/forms/radio_button_renderer"
-#include "../../../include/xtd/forms/control_paint"
+#include "../../../include/xtd/forms/radio_button_renderer.h"
+#include "../../../include/xtd/forms/control_paint.h"
 #include <xtd/drawing/drawing_2d/linear_gradient_brush>
 #include <xtd/drawing/pen>
 #include <xtd/drawing/solid_brush>

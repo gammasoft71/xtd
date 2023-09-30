@@ -2,10 +2,10 @@
 /// @brief Contains xtd::forms::font_box control.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../forms_export"
-#include "font_box_options"
-#include "dialog_result"
-#include "iwin32_window"
+#include "../forms_export.h"
+#include "font_box_options.h"
+#include "dialog_result.h"
+#include "iwin32_window.h"
 #include <xtd/drawing/color>
 #include <xtd/drawing/font>
 #include <xtd/static>

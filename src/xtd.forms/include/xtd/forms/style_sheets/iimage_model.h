@@ -2,8 +2,8 @@
 /// @brief Contains xtd::forms::style_sheets::iimage_model class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "text_decoration"
-#include "text_transformation"
+#include "text_decoration.h"
+#include "text_transformation.h"
 #include <xtd/drawing/color>
 #include <xtd/drawing/font>
 #include <xtd/drawing/string_format>

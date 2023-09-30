@@ -2,16 +2,16 @@
 /// @brief Contains xtd::forms::message_dialog dialog.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "component"
-#include "dialog_appearance"
-#include "dialog_closed_event_handler"
-#include "dialog_result"
-#include "help_event_handler"
-#include "iwin32_window"
-#include "message_dialog_buttons"
-#include "message_dialog_default_button"
-#include "message_dialog_icon"
-#include "message_dialog_options"
+#include "component.h"
+#include "dialog_appearance.h"
+#include "dialog_closed_event_handler.h"
+#include "dialog_result.h"
+#include "help_event_handler.h"
+#include "iwin32_window.h"
+#include "message_dialog_buttons.h"
+#include "message_dialog_default_button.h"
+#include "message_dialog_icon.h"
+#include "message_dialog_options.h"
 
 /// @cond
 struct __xtd_forms_message_dialog_closed_caller__;

@@ -2,12 +2,12 @@
 /// @brief Contains xtd::forms::button_base class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "control"
-#include "content_alignment"
-#include "image_list"
-#include "flat_button_appearance"
-#include "flat_style"
-#include "text_format_flags"
+#include "control.h"
+#include "content_alignment.h"
+#include "image_list.h"
+#include "flat_button_appearance.h"
+#include "flat_style.h"
+#include "text_format_flags.h"
 #include <xtd/drawing/image>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

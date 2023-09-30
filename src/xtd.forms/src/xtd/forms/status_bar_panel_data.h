@@ -1,4 +1,4 @@
-#include "../../../include/xtd/forms/status_bar_panel"
+#include "../../../include/xtd/forms/status_bar_panel.h"
 
 struct xtd::forms::status_bar_panel::data {
   xtd::forms::horizontal_alignment alignment = xtd::forms::horizontal_alignment::left;

@@ -2,8 +2,8 @@
 /// @brief Contains xtd::forms::toggle_buttons factory.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "system_texts"
-#include "toggle_button"
+#include "system_texts.h"
+#include "toggle_button.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

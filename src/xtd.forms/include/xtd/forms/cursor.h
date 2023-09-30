@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::cursor class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../forms_export"
+#include "../forms_export.h"
 #include <xtd/drawing/bitmap>
 #include <xtd/drawing/point>
 #include <xtd/drawing/size>

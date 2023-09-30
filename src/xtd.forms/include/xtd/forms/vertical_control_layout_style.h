@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::vertical_control_layout_style class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "control_layout_style"
+#include "control_layout_style.h"
 #include <xtd/iequatable>
 #include <xtd/optional>
 

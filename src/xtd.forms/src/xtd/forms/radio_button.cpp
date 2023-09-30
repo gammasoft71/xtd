@@ -1,7 +1,7 @@
-#include "../../../include/xtd/forms/radio_button"
-#include "../../../include/xtd/forms/button_renderer"
-#include "../../../include/xtd/forms/radio_button_renderer"
-#include "../../../include/xtd/forms/visual_styles/push_button_state"
+#include "../../../include/xtd/forms/radio_button.h"
+#include "../../../include/xtd/forms/button_renderer.h"
+#include "../../../include/xtd/forms/radio_button_renderer.h"
+#include "../../../include/xtd/forms/visual_styles/push_button_state.h"
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/button_states>
 #include <xtd/forms/native/button_styles>

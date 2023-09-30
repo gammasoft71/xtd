@@ -2,10 +2,10 @@
 /// @brief Contains xtd::forms::status_bar container.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "panel"
-#include "status_bar_panel"
-#include "status_bar_draw_item_event_handler"
-#include "status_bar_panel_click_event_handler"
+#include "panel.h"
+#include "status_bar_panel.h"
+#include "status_bar_draw_item_event_handler.h"
+#include "status_bar_panel_click_event_handler.h"
 #include <memory>
 #include <vector>
 

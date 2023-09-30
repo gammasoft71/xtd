@@ -2,8 +2,8 @@
 /// @brief Contains xtd::forms::style_sheets::length class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../../forms_export"
-#include "length_unit"
+#include "../../forms_export.h"
+#include "length_unit.h"
 #include <xtd/drawing/rectangle>
 #include <xtd/iequatable>
 #include <xtd/ustring>

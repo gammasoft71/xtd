@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::status_bar_panel_click_event_args event args.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "status_bar_panel"
+#include "status_bar_panel.h"
 #include <xtd/any>
 #include <xtd/event_args>
 #include <cstdint>

@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::about_box dialog.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "about_dialog"
+#include "about_dialog.h"
 #include <xtd/literals>
 #include <xtd/static>
 #include <xtd/ustring>

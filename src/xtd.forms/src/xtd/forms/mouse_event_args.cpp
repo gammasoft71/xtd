@@ -1,5 +1,5 @@
-#include "../include/xtd/forms/control"
-#include "../include/xtd/forms/mouse_event_args"
+#include "../include/xtd/forms/control.h"
+#include "../include/xtd/forms/mouse_event_args.h"
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/control>
 #include <xtd/forms/native/mouse_key>

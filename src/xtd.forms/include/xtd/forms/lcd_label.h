@@ -2,13 +2,13 @@
 /// @brief Contains xtd::forms::lcd_label control.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "control"
-#include "dot_matrix_display"
-#include "lcd_style"
-#include "nine_segment_display"
-#include "seven_segment_display"
-#include "fourteen_segment_display"
-#include "sixteen_segment_display"
+#include "control.h"
+#include "dot_matrix_display.h"
+#include "lcd_style.h"
+#include "nine_segment_display.h"
+#include "seven_segment_display.h"
+#include "fourteen_segment_display.h"
+#include "sixteen_segment_display.h"
 #include <xtd/argument_out_of_range_exception>
 #include <xtd/convert_string>
 #include <xtd/as>

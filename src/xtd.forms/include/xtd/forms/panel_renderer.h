@@ -2,10 +2,10 @@
 /// @brief Contains xtd::forms::panel_renderer static class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "visual_styles/form_state"
-#include "border_sides"
-#include "border_style"
-#include "box_renderer"
+#include "visual_styles/form_state.h"
+#include "border_sides.h"
+#include "border_style.h"
+#include "box_renderer.h"
 #include <xtd/drawing/graphics>
 #include <xtd/static>
 #include <xtd/ustring>

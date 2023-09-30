@@ -2,9 +2,9 @@
 /// @brief Contains xtd::forms::dot_matrix_display control.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "control"
-#include "segments"
-#include "dot_matrix_style"
+#include "control.h"
+#include "segments.h"
+#include "dot_matrix_style.h"
 #include <xtd/drawing/solid_brush>
 #include <xtd/argument_out_of_range_exception>
 #include <array>

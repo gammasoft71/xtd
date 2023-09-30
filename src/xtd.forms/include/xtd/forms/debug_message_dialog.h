@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::debug_message_dialog dialog.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "message_dialog"
+#include "message_dialog.h"
 #include <xtd/diagnostics/debug>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

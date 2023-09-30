@@ -2,10 +2,10 @@
 /// @brief Contains xtd::forms::about_dialog dialog.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "layout/arranged_element_collection"
-#include "component"
-#include "dialog_appearance"
-#include "iwin32_window"
+#include "layout/arranged_element_collection.h"
+#include "component.h"
+#include "dialog_appearance.h"
+#include "iwin32_window.h"
 #include <xtd/drawing/icon>
 #include <xtd/delegate>
 #include <xtd/ustring>

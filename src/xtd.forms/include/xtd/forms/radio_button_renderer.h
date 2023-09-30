@@ -2,10 +2,10 @@
 /// @brief Contains xtd::forms::radio_button_renderer class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "visual_styles/radio_button_state"
-#include "../forms_export"
-#include "text_format_flags"
-#include "application"
+#include "visual_styles/radio_button_state.h"
+#include "../forms_export.h"
+#include "text_format_flags.h"
+#include "application.h"
 #include <xtd/optional>
 #include <xtd/drawing/color>
 #include <xtd/drawing/font>

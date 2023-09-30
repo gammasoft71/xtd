@@ -1,5 +1,5 @@
-#include "../../../include/xtd/forms/folder_browser_box"
-#include "../../../include/xtd/forms/folder_browser_dialog"
+#include "../../../include/xtd/forms/folder_browser_box.h"
+#include "../../../include/xtd/forms/folder_browser_dialog.h"
 
 using namespace xtd;
 using namespace xtd::forms;

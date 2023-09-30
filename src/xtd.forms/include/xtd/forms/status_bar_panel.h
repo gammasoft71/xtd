@@ -2,15 +2,15 @@
 /// @brief Contains xtd::forms::status_bar_panel container.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "component"
-#include "const_control_ref"
-#include "context_menu"
-#include "control_ref"
-#include "horizontal_alignment"
-#include "image_list"
-#include "status_bar_panel_auto_size"
-#include "status_bar_panel_border_style"
-#include "status_bar_panel_style"
+#include "component.h"
+#include "const_control_ref.h"
+#include "context_menu.h"
+#include "control_ref.h"
+#include "horizontal_alignment.h"
+#include "image_list.h"
+#include "status_bar_panel_auto_size.h"
+#include "status_bar_panel_border_style.h"
+#include "status_bar_panel_style.h"
 #include <xtd/event>
 #include <xtd/event_handler>
 #include <xtd/iequatable>

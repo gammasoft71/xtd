@@ -2,14 +2,14 @@
 /// @brief Contains xtd::forms::application class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../forms_export"
-#include "../forms_namespace_aliases"
-#include "style_sheets/style_sheet"
-#include "application_context"
-#include "form_collection"
-#include "imessage_filter"
-#include "message"
-#include "message_loop_callback"
+#include "../forms_export.h"
+#include "../forms_namespace_aliases.h"
+#include "style_sheets/style_sheet.h"
+#include "application_context.h"
+#include "form_collection.h"
+#include "imessage_filter.h"
+#include "message.h"
+#include "message_loop_callback.h"
 #include <xtd/forms/window_messages>
 #include <xtd/delegate>
 #include <xtd/event_args>

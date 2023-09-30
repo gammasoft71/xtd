@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::find_box control.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "find_dialog"
+#include "find_dialog.h"
 #include <xtd/static>
 #include <memory>
 

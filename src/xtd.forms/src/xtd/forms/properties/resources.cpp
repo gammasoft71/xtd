@@ -1,4 +1,4 @@
-#include "../../../../include/xtd/forms/properties/resources"
+#include "../../../../include/xtd/forms/properties/resources.h"
 #include <xtd/environment>
 #include <xtd/io/file>
 #include <xtd/io/path>

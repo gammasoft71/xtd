@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::replace_event_args event args.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "message"
+#include "message.h"
 #include <xtd/event_args>
 #include <cstdint>
 

@@ -1,4 +1,4 @@
-#include "../../../include/xtd/forms/trace_form_base"
+#include "../../../include/xtd/forms/trace_form_base.h"
 
 using namespace xtd;
 using namespace xtd::drawing;

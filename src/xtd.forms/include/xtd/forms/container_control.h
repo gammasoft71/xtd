@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::container_control class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "scrollable_control"
+#include "scrollable_control.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

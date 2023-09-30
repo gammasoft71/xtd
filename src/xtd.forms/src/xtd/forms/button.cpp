@@ -1,6 +1,6 @@
-#include "../../../include/xtd/forms/button"
-#include "../../../include/xtd/forms/button_renderer"
-#include "../../../include/xtd/forms/form"
+#include "../../../include/xtd/forms/button.h"
+#include "../../../include/xtd/forms/button_renderer.h"
+#include "../../../include/xtd/forms/form.h"
 #include <xtd/drawing/pen>
 #include <xtd/drawing/solid_brush>
 #include <xtd/drawing/string_format>

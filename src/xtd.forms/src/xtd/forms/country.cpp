@@ -1,6 +1,6 @@
-#include "../../../include/xtd/forms/country"
-#include "../../../include/xtd/forms/countries"
-#include "../../../include/xtd/forms/images"
+#include "../../../include/xtd/forms/country.h"
+#include "../../../include/xtd/forms/countries.h"
+#include "../../../include/xtd/forms/images.h"
 #include <xtd/io/path>
 
 using namespace std;

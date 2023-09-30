@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::message_box_buttons enum class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "message_dialog_buttons"
+#include "message_dialog_buttons.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

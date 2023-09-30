@@ -2,8 +2,8 @@
 /// @brief Contains xtd::forms::image_list component.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "layout/arranged_element_collection"
-#include "component"
+#include "layout/arranged_element_collection.h"
+#include "component.h"
 #include <xtd/any>
 #include <xtd/iequatable>
 #include <xtd/drawing/image>

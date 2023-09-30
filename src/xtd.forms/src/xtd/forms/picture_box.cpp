@@ -1,5 +1,5 @@
-#include "../../../include/xtd/forms/control_paint"
-#include "../../../include/xtd/forms/picture_box"
+#include "../../../include/xtd/forms/control_paint.h"
+#include "../../../include/xtd/forms/picture_box.h"
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/control>
 #include <xtd/forms/native/extended_window_styles>

@@ -1,7 +1,7 @@
-#include "../../../include/xtd/forms/context_menu"
-#include "../../../include/xtd/forms/main_menu"
-#include "../../../include/xtd/forms/menu"
-#include "../../../include/xtd/forms/menu_item"
+#include "../../../include/xtd/forms/context_menu.h"
+#include "../../../include/xtd/forms/main_menu.h"
+#include "../../../include/xtd/forms/menu.h"
+#include "../../../include/xtd/forms/menu_item.h"
 #include "menu_data.h"
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/menu>

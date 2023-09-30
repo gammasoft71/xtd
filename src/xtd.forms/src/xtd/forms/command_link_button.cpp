@@ -1,5 +1,5 @@
-#include "../../../include/xtd/forms/command_link_button"
-#include "../../../include/xtd/forms/form"
+#include "../../../include/xtd/forms/command_link_button.h"
+#include "../../../include/xtd/forms/form.h"
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/command_link_button>
 #include <xtd/forms/native/button_styles>

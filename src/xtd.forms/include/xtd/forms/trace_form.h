@@ -2,9 +2,9 @@
 /// @brief Contains xtd::forms::trace_form dialog.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "control_trace_listener"
-#include "icontrol_trace"
-#include "trace_form_base"
+#include "control_trace_listener.h"
+#include "icontrol_trace.h"
+#include "trace_form_base.h"
 #include <xtd/diagnostics/trace>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

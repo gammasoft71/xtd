@@ -2,9 +2,9 @@
 /// @brief Contains xtd::forms::busy_dialog dialog.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "component"
-#include "dialog_appearance"
-#include "iwin32_window"
+#include "component.h"
+#include "dialog_appearance.h"
+#include "iwin32_window.h"
 #include <xtd/drawing/color>
 #include <xtd/drawing/icon>
 #include <xtd/forms/control>

@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::style_sheets::form alias.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "control"
+#include "control.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

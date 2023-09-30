@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::style_sheets::shadow class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../../forms_export"
+#include "../../forms_export.h"
 #include <xtd/drawing/color>
 #include <xtd/drawing/point>
 #include <xtd/iequatable>

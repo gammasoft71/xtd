@@ -2,11 +2,11 @@
 /// @brief Contains xtd::forms::input_box control.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../forms_export"
-#include "character_casing"
-#include "dialog_result"
-#include "input_box_style"
-#include "iwin32_window"
+#include "../forms_export.h"
+#include "character_casing.h"
+#include "dialog_result.h"
+#include "input_box_style.h"
+#include "iwin32_window.h"
 #include <xtd/static>
 #include <xtd/ustring>
 

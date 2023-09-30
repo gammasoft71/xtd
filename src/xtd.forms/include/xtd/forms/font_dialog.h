@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::font_dialog dialog.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "common_dialog"
+#include "common_dialog.h"
 #include <xtd/drawing/color>
 #include <xtd/drawing/font>
 #include <xtd/drawing/system_colors>

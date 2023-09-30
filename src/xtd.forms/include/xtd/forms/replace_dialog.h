@@ -2,13 +2,13 @@
 /// @brief Contains xtd::forms::replace_dialog dialog.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "layout/arranged_element_collection"
-#include "component"
-#include "dialog_closed_event_handler"
-#include "dialog_appearance"
-#include "find_event_handler"
-#include "replace_event_handler"
-#include "iwin32_window"
+#include "layout/arranged_element_collection.h"
+#include "component.h"
+#include "dialog_closed_event_handler.h"
+#include "dialog_appearance.h"
+#include "find_event_handler.h"
+#include "replace_event_handler.h"
+#include "iwin32_window.h"
 #include <xtd/drawing/point>
 #include <xtd/event>
 #include <xtd/ustring>

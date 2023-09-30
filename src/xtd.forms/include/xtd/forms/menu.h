@@ -2,10 +2,10 @@
 /// @brief Contains xtd::forms::menu menu.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "layout/arranged_element_collection"
-#include "component"
-#include "const_menu_item_ref"
-#include "menu_item_ref"
+#include "layout/arranged_element_collection.h"
+#include "component.h"
+#include "const_menu_item_ref.h"
+#include "menu_item_ref.h"
 #include <xtd/optional>
 #include <xtd/any>
 #include <xtd/iequatable>

@@ -2,8 +2,8 @@
 /// @brief Contains xtd::forms::style_sheets::background_image class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../../forms_export"
-#include "image_type"
+#include "../../forms_export.h"
+#include "image_type.h"
 #include <xtd/drawing/brush>
 #include <xtd/drawing/color>
 #include <xtd/drawing/rectangle>

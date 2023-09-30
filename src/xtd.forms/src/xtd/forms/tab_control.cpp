@@ -1,5 +1,5 @@
-#include "../../../include/xtd/forms/tab_control"
-#include "../../../include/xtd/forms/tab_page"
+#include "../../../include/xtd/forms/tab_control.h"
+#include "../../../include/xtd/forms/tab_page.h"
 #include "tab_control_data.h"
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/control>

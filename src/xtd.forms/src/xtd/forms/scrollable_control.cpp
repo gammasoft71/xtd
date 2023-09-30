@@ -1,4 +1,4 @@
-#include "../../../include/xtd/forms/scrollable_control"
+#include "../../../include/xtd/forms/scrollable_control.h"
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/extended_window_styles>
 #include <xtd/forms/native/window_styles>

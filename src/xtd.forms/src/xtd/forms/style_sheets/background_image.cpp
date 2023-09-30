@@ -1,4 +1,4 @@
-#include "../../../../include/xtd/forms/style_sheets/background_image"
+#include "../../../../include/xtd/forms/style_sheets/background_image.h"
 #include <xtd/drawing/solid_brush>
 #include <xtd/drawing/texture_brush>
 #include <xtd/drawing/system_colors>

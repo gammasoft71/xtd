@@ -2,9 +2,9 @@
 /// @brief Contains xtd::forms::horizontal_control_layout_style_collection typedef.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "const_control_ref"
-#include "control_ref"
-#include "horizontal_control_layout_style"
+#include "const_control_ref.h"
+#include "control_ref.h"
+#include "horizontal_control_layout_style.h"
 #include <utility>
 #include <vector>
 

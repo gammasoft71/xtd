@@ -2,12 +2,12 @@
 /// @brief Contains xtd::forms::exception_dialog dialog.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "component"
-#include "dialog_result"
-#include "dialog_appearance"
-#include "dialog_closed_event_handler"
-#include "iwin32_window"
-#include "layout/arranged_element_collection"
+#include "component.h"
+#include "dialog_result.h"
+#include "dialog_appearance.h"
+#include "dialog_closed_event_handler.h"
+#include "iwin32_window.h"
+#include "layout/arranged_element_collection.h"
 #include <xtd/version>
 #include <xtd/drawing/icon>
 #include <xtd/system_exception>

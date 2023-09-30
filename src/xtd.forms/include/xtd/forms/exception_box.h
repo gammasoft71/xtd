@@ -2,9 +2,9 @@
 /// @brief Contains xtd::forms::exception_box dialog.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../forms_export"
-#include "dialog_result"
-#include "iwin32_window"
+#include "../forms_export.h"
+#include "dialog_result.h"
+#include "iwin32_window.h"
 #include <xtd/static>
 #include <xtd/ustring>
 

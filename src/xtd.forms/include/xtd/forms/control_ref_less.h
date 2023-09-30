@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::control_ref_less class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "control_ref"
+#include "control_ref.h"
 #include <xtd/object>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

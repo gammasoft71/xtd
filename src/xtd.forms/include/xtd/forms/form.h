@@ -2,20 +2,20 @@
 /// @brief Contains xtd::forms::form container.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "const_form_ref"
-#include "form_border_style"
-#include "form_closed_event_handler"
-#include "form_closing_event_handler"
-#include "form_ref"
-#include "form_start_position"
-#include "form_window_state"
-#include "container_control"
-#include "dialog_result"
-#include "ibutton_control"
-#include "main_menu"
-#include "screen"
-#include "status_bar"
-#include "tool_bar"
+#include "const_form_ref.h"
+#include "form_border_style.h"
+#include "form_closed_event_handler.h"
+#include "form_closing_event_handler.h"
+#include "form_ref.h"
+#include "form_start_position.h"
+#include "form_window_state.h"
+#include "container_control.h"
+#include "dialog_result.h"
+#include "ibutton_control.h"
+#include "main_menu.h"
+#include "screen.h"
+#include "status_bar.h"
+#include "tool_bar.h"
 #include <xtd/drawing/icon>
 #include <xtd/io/path>
 #include <cstddef>

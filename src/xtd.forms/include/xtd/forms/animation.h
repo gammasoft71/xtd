@@ -2,9 +2,9 @@
 /// @brief Contains xtd::forms::animation control.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "animation_update_event_handler"
-#include "control"
-#include "timer"
+#include "animation_update_event_handler.h"
+#include "control.h"
+#include "timer.h"
 #include <xtd/diagnostics/stopwatch>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

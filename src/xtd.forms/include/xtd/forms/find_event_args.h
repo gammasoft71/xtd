@@ -2,9 +2,9 @@
 /// @brief Contains xtd::forms::find_event_args event args.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../forms_export"
-#include "message"
-#include "search_direction"
+#include "../forms_export.h"
+#include "message.h"
+#include "search_direction.h"
 #include <xtd/event_args>
 #include <cstdint>
 

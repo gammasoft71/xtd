@@ -2,11 +2,11 @@
 /// @brief Contains xtd::forms::status_bar_panel_renderer class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "visual_styles/push_button_state"
-#include "../forms_export"
-#include "box_renderer"
-#include "flat_button_appearance"
-#include "text_renderer"
+#include "visual_styles/push_button_state.h"
+#include "../forms_export.h"
+#include "box_renderer.h"
+#include "flat_button_appearance.h"
+#include "text_renderer.h"
 #include <xtd/drawing/color>
 #include <xtd/drawing/font>
 #include <xtd/drawing/graphics>
@@ -15,8 +15,8 @@
 #include <xtd/optional>
 
 /// @todo to remove
-#include "flat_button_appearance"
-#include "text_format_flags"
+#include "flat_button_appearance.h"
+#include "text_format_flags.h"
 #include <xtd/drawing/system_fonts>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

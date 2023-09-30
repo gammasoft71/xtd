@@ -2,12 +2,12 @@
 /// @brief Contains xtd::forms::status_bar_renderer static class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "visual_styles/form_state"
-#include "border_sides"
-#include "box_renderer"
-#include "content_alignment"
-#include "border_style"
-#include "flat_style"
+#include "visual_styles/form_state.h"
+#include "border_sides.h"
+#include "box_renderer.h"
+#include "content_alignment.h"
+#include "border_style.h"
+#include "flat_style.h"
 #include <xtd/drawing/graphics>
 #include <xtd/static>
 #include <xtd/ustring>

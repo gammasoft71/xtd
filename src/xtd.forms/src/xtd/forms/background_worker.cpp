@@ -1,5 +1,5 @@
-#include "../../../include/xtd/forms/background_worker"
-#include "../../../include/xtd/forms/application"
+#include "../../../include/xtd/forms/background_worker.h"
+#include "../../../include/xtd/forms/application.h"
 #include <xtd/threading/thread>
 #include <xtd/invalid_operation_exception>
 

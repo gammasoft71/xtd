@@ -1,4 +1,4 @@
-#include "../../../../include/xtd/forms/style_sheets/border_color"
+#include "../../../../include/xtd/forms/style_sheets/border_color.h"
 #include <xtd/drawing/solid_brush>
 #include <xtd/drawing/system_colors>
 
