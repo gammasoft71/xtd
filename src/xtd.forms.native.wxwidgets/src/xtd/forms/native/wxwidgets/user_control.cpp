@@ -1,5 +1,5 @@
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_user_control"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_user_control.h"
 #include <xtd/forms/native/user_control>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/argument_exception>

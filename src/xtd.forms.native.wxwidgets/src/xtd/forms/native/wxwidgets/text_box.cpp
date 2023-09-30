@@ -1,5 +1,5 @@
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_text_box"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_text_box.h"
 #include <xtd/forms/native/application>
 #include <xtd/forms/native/text_box>
 #undef __XTD_FORMS_NATIVE_LIBRARY__

@@ -1,5 +1,5 @@
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_collapsible_panel"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_collapsible_panel.h"
 #include <xtd/forms/native/collapsible_panel>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/argument_exception>

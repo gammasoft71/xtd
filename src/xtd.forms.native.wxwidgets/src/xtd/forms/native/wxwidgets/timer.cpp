@@ -1,5 +1,5 @@
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_timer"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_timer.h"
 #include <xtd/forms/native/application>
 #include <xtd/forms/native/timer>
 #undef __XTD_FORMS_NATIVE_LIBRARY__

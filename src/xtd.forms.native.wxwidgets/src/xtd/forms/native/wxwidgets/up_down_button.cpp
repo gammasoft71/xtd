@@ -1,5 +1,5 @@
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_up_down_button"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_up_down_button.h"
 #include <xtd/forms/native/up_down_button>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/argument_exception>

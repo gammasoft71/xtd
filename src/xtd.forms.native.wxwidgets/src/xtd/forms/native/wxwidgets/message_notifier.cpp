@@ -1,5 +1,5 @@
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../../../include/xtd/forms/native/wxwidgets/control_handler"
+#include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
 #include <xtd/forms/native/message_notifier>
 #include <xtd/forms/native/message_notifier_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__

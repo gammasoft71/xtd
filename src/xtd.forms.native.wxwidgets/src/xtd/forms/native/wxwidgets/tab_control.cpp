@@ -1,5 +1,5 @@
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_tab_control"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_tab_control.h"
 #include <xtd/forms/native/tab_control>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/argument_exception>

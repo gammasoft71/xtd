@@ -1,5 +1,5 @@
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../../../include/xtd/forms/native/wxwidgets/control_handler"
+#include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
 #include <xtd/forms/native/file_dialog>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/open_file_name_flags>

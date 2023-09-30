@@ -1,5 +1,5 @@
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_progress_bar"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_progress_bar.h"
 #include <xtd/forms/native/progress_bar>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/argument_exception>
