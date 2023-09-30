@@ -58,3 +58,4 @@
 #include "native/unnamed_event_wait_handle.h"
 #include "native/unnamed_mutex.h"
 #include "native/unnamed_semaphore.h"
+#include "native/value_types.h"

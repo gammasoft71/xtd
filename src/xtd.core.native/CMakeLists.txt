@@ -108,6 +108,8 @@ add_sources(
   include/xtd/native/unnamed_mutex
   include/xtd/native/unnamed_semaphore.h
   include/xtd/native/unnamed_semaphore
+  include/xtd/native/value_types.h
+  include/xtd/native/value_types
 )
 target_type(INTERFACE_LIBRARY)
 
