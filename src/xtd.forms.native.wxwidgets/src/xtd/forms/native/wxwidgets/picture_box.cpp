@@ -1,5 +1,5 @@
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_picture_box"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_picture_box.h"
 #include <xtd/forms/native/picture_box>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/argument_exception>

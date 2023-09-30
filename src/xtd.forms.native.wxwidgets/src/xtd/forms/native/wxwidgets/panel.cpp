@@ -1,5 +1,5 @@
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_panel"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_panel.h"
 #include <xtd/forms/native/panel>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/argument_exception>

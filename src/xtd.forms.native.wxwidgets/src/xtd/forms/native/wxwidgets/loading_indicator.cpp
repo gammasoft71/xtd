@@ -1,5 +1,5 @@
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_loading_indicator"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_loading_indicator.h"
 #include <xtd/forms/native/application>
 #include <xtd/forms/native/loading_indicator>
 #undef __XTD_FORMS_NATIVE_LIBRARY__

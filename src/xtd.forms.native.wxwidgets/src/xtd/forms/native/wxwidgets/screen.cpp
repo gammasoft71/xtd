@@ -2,7 +2,7 @@
 #include <xtd/drawing/native/hdc_wrapper>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../../../include/xtd/forms/native/wxwidgets/control_handler"
+#include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
 #include <xtd/forms/native/application>
 #include <xtd/forms/native/screen>
 #undef __XTD_FORMS_NATIVE_LIBRARY__

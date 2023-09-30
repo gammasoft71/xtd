@@ -1,6 +1,6 @@
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../../../include/xtd/forms/native/wxwidgets/control_handler"
-#include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode"
+#include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.h"
 #include <xtd/forms/native/application>
 #include <xtd/forms/native/message_box>
 #include <xtd/forms/native/dialog_box_identifiers>

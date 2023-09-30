@@ -5,7 +5,7 @@
 #endif
 /// @endcond
 
-#include "iwx_evt"
+#include "iwx_evt.h"
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/wx_application>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__

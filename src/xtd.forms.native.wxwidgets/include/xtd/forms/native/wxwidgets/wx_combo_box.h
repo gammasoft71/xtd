@@ -5,7 +5,7 @@
 #endif
 /// @endcond
 
-#include "control_handler"
+#include "control_handler.h"
 #include <xtd/drawing/system_colors>
 #include <xtd/forms/native/create_params>
 #include <xtd/forms/native/combo_box_styles>

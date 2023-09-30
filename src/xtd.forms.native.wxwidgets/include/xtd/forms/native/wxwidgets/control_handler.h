@@ -5,7 +5,7 @@
 #endif
 /// @endcond
 
-#include "control_wrapper"
+#include "control_wrapper.h"
 
 namespace xtd {
   namespace forms {

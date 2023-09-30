@@ -1,5 +1,5 @@
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_light_button"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_light_button.h"
 #include <xtd/forms/native/light_button>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/argument_exception>

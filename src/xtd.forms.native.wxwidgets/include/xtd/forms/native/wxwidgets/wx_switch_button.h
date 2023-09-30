@@ -5,8 +5,8 @@
 #endif
 /// @endcond
 
-#include "control_handler"
-#include "wx_user_window"
+#include "control_handler.h"
+#include "wx_user_window.h"
 #include <xtd/drawing/system_colors>
 #include <xtd/forms/native/create_params>
 #include <xtd/forms/native/button_styles>
