@@ -12,11 +12,11 @@
 #include <xtd/drawing/native/string_alignments>
 #include <xtd/drawing/native/string_trimmings>
 #include <xtd/drawing/native/text_rendering>
-#include "../../../../../include/xtd/drawing/native/hdc_wrapper"
-#include "../../../../../include/xtd/drawing/native/wx_brush"
-#include "../../../../../include/xtd/drawing/native/wx_pen"
-#include "../../../../../include/xtd/drawing/native/wxConicalGradient"
-#include "../../../../../include/xtd/drawing/native/wxDrawString"
+#include "../../../../../include/xtd/drawing/native/hdc_wrapper.h"
+#include "../../../../../include/xtd/drawing/native/wx_brush.h"
+#include "../../../../../include/xtd/drawing/native/wx_pen.h"
+#include "../../../../../include/xtd/drawing/native/wxConicalGradient.h"
+#include "../../../../../include/xtd/drawing/native/wxDrawString.h"
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/argument_exception>
 #include <xtd/as>

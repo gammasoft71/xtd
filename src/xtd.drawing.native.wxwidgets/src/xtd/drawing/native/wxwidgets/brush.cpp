@@ -2,7 +2,7 @@
 #include <xtd/drawing/native/brush>
 #include <xtd/drawing/native/system_colors>
 #include <xtd/drawing/native/toolkit>
-#include "../../../../../include/xtd/drawing/native/wx_brush"
+#include "../../../../../include/xtd/drawing/native/wx_brush.h"
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/argument_exception>
 #include <wx/colour.h>
