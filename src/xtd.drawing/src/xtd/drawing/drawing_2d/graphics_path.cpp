@@ -1,5 +1,5 @@
-#include "../../../../include/xtd/drawing/drawing_2d/graphics_path"
-#include "../../../../include/xtd/drawing/graphics"
+#include "../../../../include/xtd/drawing/drawing_2d/graphics_path.h"
+#include "../../../../include/xtd/drawing/graphics.h"
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/graphics_path>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__

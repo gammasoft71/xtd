@@ -2,20 +2,20 @@
 /// @brief Contains xtd::drawing::image class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../drawing_export"
-#include "imaging/color_palette"
-#include "imaging/encoder_parameters"
-#include "imaging/frame_dimension"
-#include "imaging/image_flags"
-#include "imaging/image_format"
-#include "imaging/pixel_format"
-#include "imaging/property_item"
-#include "graphics"
-#include "graphics_unit"
-#include "rectangle"
-#include "rotate_flip_type"
-#include "size"
-#include "size_f"
+#include "../drawing_export.h"
+#include "imaging/color_palette.h"
+#include "imaging/encoder_parameters.h"
+#include "imaging/frame_dimension.h"
+#include "imaging/image_flags.h"
+#include "imaging/image_format.h"
+#include "imaging/pixel_format.h"
+#include "imaging/property_item.h"
+#include "graphics.h"
+#include "graphics_unit.h"
+#include "rectangle.h"
+#include "rotate_flip_type.h"
+#include "size.h"
+#include "size_f.h"
 #include <xtd/any>
 #include <xtd/iequatable>
 #include <xtd/object>

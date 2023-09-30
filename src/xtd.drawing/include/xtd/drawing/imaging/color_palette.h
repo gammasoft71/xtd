@@ -2,7 +2,7 @@
 /// @brief Contains xtd::drawing::imaging::color_palette class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../color"
+#include "../color.h"
 #include <xtd/iequatable>
 #include <xtd/object>
 #include <cstdint>

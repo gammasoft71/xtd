@@ -2,14 +2,14 @@
 /// @brief Contains xtd::drawing::pen class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../drawing_export"
-#include "drawing_2d/line_cap"
-#include "drawing_2d/line_join"
-#include "drawing_2d/pen_alignment"
-#include "drawing_2d/pen_type"
-#include "brush"
-#include "color"
-#include "dash_style"
+#include "../drawing_export.h"
+#include "drawing_2d/line_cap.h"
+#include "drawing_2d/line_join.h"
+#include "drawing_2d/pen_alignment.h"
+#include "drawing_2d/pen_type.h"
+#include "brush.h"
+#include "color.h"
+#include "dash_style.h"
 #include <xtd/iequatable>
 #include <xtd/object>
 #include <xtd/ustring>

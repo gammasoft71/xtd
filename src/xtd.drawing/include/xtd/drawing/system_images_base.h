@@ -2,9 +2,9 @@
 /// @brief Contains xtd::drawing::system_images_base factory.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../drawing_export"
-#include "bitmap"
-#include "size"
+#include "../drawing_export.h"
+#include "bitmap.h"
+#include "size.h"
 #include <xtd/static>
 #include <map>
 

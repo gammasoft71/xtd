@@ -2,7 +2,7 @@
 /// @brief Contains xtd::drawing::extended_colors alias.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "colors"
+#include "colors.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

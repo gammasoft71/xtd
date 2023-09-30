@@ -1,4 +1,4 @@
-#include "../../../include/xtd/drawing/xtd_system_images"
+#include "../../../include/xtd/drawing/xtd_system_images.h"
 
 using namespace std;
 using namespace xtd;

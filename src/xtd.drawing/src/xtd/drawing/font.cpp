@@ -1,5 +1,5 @@
-#include "../../../include/xtd/drawing/font"
-#include "../../../include/xtd/drawing/graphics"
+#include "../../../include/xtd/drawing/font.h"
+#include "../../../include/xtd/drawing/graphics.h"
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/font>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__

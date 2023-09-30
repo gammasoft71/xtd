@@ -2,7 +2,7 @@
 /// @brief Contains xtd::drawing::imaging::bitmap_data class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "pixel_format"
+#include "pixel_format.h"
 #include <xtd/object>
 #include <xtd/types>
 

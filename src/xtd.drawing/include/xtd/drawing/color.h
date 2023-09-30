@@ -2,8 +2,8 @@
 /// @brief Contains xtd::drawing::color class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../drawing_export"
-#include "known_color"
+#include "../drawing_export.h"
+#include "known_color.h"
 #include <xtd/iequatable>
 #include <xtd/object>
 #include <xtd/ustring>

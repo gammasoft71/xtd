@@ -1,6 +1,6 @@
-#include "../../../include/xtd/drawing/image"
-#include "../../../include/xtd/drawing/bitmap"
-#include "../../../include/xtd/drawing/graphics"
+#include "../../../include/xtd/drawing/image.h"
+#include "../../../include/xtd/drawing/bitmap.h"
+#include "../../../include/xtd/drawing/graphics.h"
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/argument_exception>
 #include <xtd/drawing/native/image>

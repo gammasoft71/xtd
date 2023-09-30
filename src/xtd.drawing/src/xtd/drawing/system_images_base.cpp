@@ -1,6 +1,6 @@
-#include "../../../include/xtd/drawing/bitmap"
-#include "../../../include/xtd/drawing/system_colors"
-#include "../../../include/xtd/drawing/system_images_base"
+#include "../../../include/xtd/drawing/bitmap.h"
+#include "../../../include/xtd/drawing/system_colors.h"
+#include "../../../include/xtd/drawing/system_images_base.h"
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/system_images>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__

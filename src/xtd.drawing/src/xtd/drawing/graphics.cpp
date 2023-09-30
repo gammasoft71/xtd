@@ -1,7 +1,7 @@
-#include "../../../include/xtd/drawing/bitmap"
-#include "../../../include/xtd/drawing/icon"
-#include "../../../include/xtd/drawing/graphics"
-#include "../../../include/xtd/drawing/solid_brush"
+#include "../../../include/xtd/drawing/bitmap.h"
+#include "../../../include/xtd/drawing/icon.h"
+#include "../../../include/xtd/drawing/graphics.h"
+#include "../../../include/xtd/drawing/solid_brush.h"
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/graphics>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__

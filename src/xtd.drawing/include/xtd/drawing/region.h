@@ -2,8 +2,8 @@
 /// @brief Contains xtd::drawing::region class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
-#include "../drawing_export"
-#include "drawing_2d/graphics_path"
+#include "../drawing_export.h"
+#include "drawing_2d/graphics_path.h"
 #include <xtd/iequatable>
 #include <xtd/object>
 

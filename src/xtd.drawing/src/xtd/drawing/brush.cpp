@@ -1,4 +1,4 @@
-#include "../../../include/xtd/drawing/brush"
+#include "../../../include/xtd/drawing/brush.h"
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/brush>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__

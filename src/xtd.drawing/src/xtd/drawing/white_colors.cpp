@@ -1,4 +1,4 @@
-#include "../../../include/xtd/drawing/white_colors"
+#include "../../../include/xtd/drawing/white_colors.h"
 
 using namespace std;
 using namespace xtd;

@@ -1,4 +1,4 @@
-#include "../../../include/xtd/drawing/bitmap"
+#include "../../../include/xtd/drawing/bitmap.h"
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/image>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
