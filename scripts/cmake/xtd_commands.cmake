@@ -1819,7 +1819,6 @@ macro(write_settings_file_header)
     "// Changes to this file may cause incorrect behavior and will be lost if the code is regenerated.\n"
     "\n"
     "#pragma once\n"
-    "\n"
     "#include <${XTD_PROJECT_INCLUDE_FILE}>\n"
     "\n"
     "namespace ${TARGET_DEFAULT_NAMESPACE}::properties {\n"
