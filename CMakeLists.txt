@@ -180,28 +180,26 @@ xtd_update_export_file(src/xtd/include/xtd/export.h XTD_EXPORT export_)
 set(CMAKE_CTEST_ARGUMENTS ${CMAKE_CTEST_ARGUMENTS} --output-on-failure)
 
 # Install
-if (XTD_BUILD_LIBRARIES_XTD_CORE OR XTD_BUILD_LIBRARIES_XTD_DRAWING OR XTD_BUILD_LIBRARIES_XTD_FORMS OR XTD_BUILD_LIBRARIES_XTD_TUNIT)
-  install_package()
-  # override with specific xtd cmake config file
-  set(XTD_CONFIG_CMAKE_FILE ${CMAKE_CURRENT_BINARY_DIR}/xtdConfig.cmake)
-  file(WRITE "${XTD_CONFIG_CMAKE_FILE}"
-    "include(CMakeFindDependencyMacro)\n"
-    "include(\"\${CMAKE_CURRENT_LIST_DIR}/${PROJECT_NAME}.cmake\")\n"
-    "include(\"\${CMAKE_CURRENT_LIST_DIR}/xtd_modules/xtd_commands.cmake\")\n"
-    "set(CMAKE_MODULE_PATH \${CMAKE_MODULE_PATH} \${CMAKE_CURRENT_LIST_DIR}/xtd_modules)\n"
-    "\n"
-    "set(${PROJECT_NAME}_INCLUDE_DIRS \"\${CMAKE_CURRENT_LIST_DIR}/../include\")\n"
-    "set(${PROJECT_NAME}_LIBRARIES_DIRS \"\${CMAKE_CURRENT_LIST_DIR}/../lib\")\n"
-    "set(${PROJECT_NAME}_LIBRARIES ${PROJECT_NAME} xtd.3rdparty.call_stack xtd.core xtd.drawing xtd.forms xtd.tunit xtd)\n"
-    "set(${PROJECT_NAME}_FOUND TRUE)\n"
-  )
-  install(FILES scripts/cmake/xtd_commands.cmake DESTINATION cmake/xtd_modules)
-  install(FILES scripts/cmake/MacOSXBundleInfo.plist.in DESTINATION cmake/xtd_modules)
-  if (XTD_INSTALL_RESOURCES)
-    install(DIRECTORY resources DESTINATION share/xtd)
-    install(DIRECTORY docs/pictures/examples/. DESTINATION share/xtd/resources/pictures/examples)
-  endif ()
-  if (XTD_INSTALL_EXAMPLES)
-    install(DIRECTORY examples/. DESTINATION share/xtd/examples)
-  endif ()
+install_package()
+# override with specific xtd cmake config file
+set(XTD_CONFIG_CMAKE_FILE ${CMAKE_CURRENT_BINARY_DIR}/xtdConfig.cmake)
+file(WRITE "${XTD_CONFIG_CMAKE_FILE}"
+  "include(CMakeFindDependencyMacro)\n"
+  "include(\"\${CMAKE_CURRENT_LIST_DIR}/${PROJECT_NAME}.cmake\")\n"
+  "include(\"\${CMAKE_CURRENT_LIST_DIR}/xtd_modules/xtd_commands.cmake\")\n"
+  "set(CMAKE_MODULE_PATH \${CMAKE_MODULE_PATH} \${CMAKE_CURRENT_LIST_DIR}/xtd_modules)\n"
+  "\n"
+  "set(${PROJECT_NAME}_INCLUDE_DIRS \"\${CMAKE_CURRENT_LIST_DIR}/../include\")\n"
+  "set(${PROJECT_NAME}_LIBRARIES_DIRS \"\${CMAKE_CURRENT_LIST_DIR}/../lib\")\n"
+  "set(${PROJECT_NAME}_LIBRARIES ${PROJECT_NAME} xtd.3rdparty.call_stack xtd.core xtd.drawing xtd.forms xtd.tunit xtd)\n"
+  "set(${PROJECT_NAME}_FOUND TRUE)\n"
+)
+install(FILES scripts/cmake/xtd_commands.cmake DESTINATION cmake/xtd_modules)
+install(FILES scripts/cmake/MacOSXBundleInfo.plist.in DESTINATION cmake/xtd_modules)
+if (XTD_INSTALL_RESOURCES)
+  install(DIRECTORY resources DESTINATION share/xtd)
+  install(DIRECTORY docs/pictures/examples/. DESTINATION share/xtd/resources/pictures/examples)
+endif ()
+if (XTD_INSTALL_EXAMPLES)
+  install(DIRECTORY examples/. DESTINATION share/xtd/examples)
 endif ()
