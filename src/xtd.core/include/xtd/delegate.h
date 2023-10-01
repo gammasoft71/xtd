@@ -310,7 +310,6 @@ namespace xtd {
     }
     std::shared_ptr<data> data_ = std::make_shared<data>();
   };
-  /// @endcond
   
   /// @brief Represents a delegate, which is a data structure that refers to a static method or to a class instance && an instance method of that class.
   /// @par Header
@@ -1083,7 +1082,6 @@ namespace xtd {
     std::shared_ptr<data> data_ = std::make_shared<data>();
   };
   */
-  /// @endcond
   
   /// @brief Represents a delegate, which is a data structure that refers to a static method or to a class instance && an instance method of that class.
   /// @par Header
