@@ -678,7 +678,6 @@ namespace xtd {
     inline static constexpr const char* xtd_tunit_libraries_path = __XTD_TUNIT_LIB_PATH__;
     static signal_catcher signal_catcher_;
   };
-  /// @}
 }
 
 /// @cond

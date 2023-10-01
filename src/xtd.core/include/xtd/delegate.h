@@ -71,13 +71,6 @@ namespace xtd {
     delegate(const delegate& delegate) noexcept {
       data_->functions = delegate.data_->functions;
     }
-    /// @cond
-    delegate(const function_t& function) noexcept { data_->functions.push_back(function); } // Can't be explicit by design.
-    delegate& operator =(const delegate& delegate) noexcept {
-      data_->functions = delegate.data_->functions;
-      return *this;
-    }
-    /// @endcond
     
     /// @brief Initializes a delegate that invokes the specified instance method on the specified class instance.
     /// @param object the class instance.
@@ -94,7 +87,15 @@ namespace xtd {
       data_->functions.push_back(function_t(std::bind(method, const_cast<object1_t*>(&object))));
     }
     /// @}
-    
+
+    /// @cond
+    delegate(const function_t& function) noexcept { data_->functions.push_back(function); } // Can't be explicit by design.
+    delegate& operator =(const delegate& delegate) noexcept {
+      data_->functions = delegate.data_->functions;
+      return *this;
+    }
+    /// @endcond
+
     /// @name Properties
     
     /// @{
@@ -646,24 +647,10 @@ namespace xtd {
       data_->no_arguments_functions = delegate.data_->no_arguments_functions;
       data_->functions = delegate.data_->functions;
     }
-    /// @cond
-    delegate& operator =(const delegate& delegate) noexcept {
-      data_->no_arguments_functions = delegate.data_->no_arguments_functions;
-      data_->functions = delegate.data_->functions;
-      return *this;
-    }
-    delegate(const delegate<void()>& delegate) noexcept {
-      data_->no_arguments_functions = delegate.functions();
-    }
-    /// @endcond
     
     /// @brief Initializes a delegate that invokes the specified instance method.
     /// @param function the method instance.
     delegate(const function_t& function) noexcept {data_->functions.push_back(function);} // Can't be explicit by design.
-    
-    /// @cond
-    delegate(const no_arguments_function_t& function) noexcept { data_->no_arguments_functions.push_back(function); } // Can't be explicit by design.
-    /// @endcond
     
     /// @brief Initializes a delegate that invokes the specified instance method on the specified class instance.
     /// @param object the class instance.
@@ -683,6 +670,16 @@ namespace xtd {
     /// @}
     
     /// @cond
+    delegate& operator =(const delegate& delegate) noexcept {
+      data_->no_arguments_functions = delegate.data_->no_arguments_functions;
+      data_->functions = delegate.data_->functions;
+      return *this;
+    }
+    delegate(const delegate<void()>& delegate) noexcept {
+    data_->no_arguments_functions = delegate.functions();
+    }
+    delegate(const no_arguments_function_t& function) noexcept { data_->no_arguments_functions.push_back(function); } // Can't be explicit by design.
+   
     template<typename object1_t, typename object2_t, typename a1_t>
     delegate(const object1_t& object, void(object2_t::*method)(a1_t) const) noexcept {
       data_->functions.push_back(function_t(std::bind(method, const_cast<object1_t*>(&object), std::placeholders::_1)));
