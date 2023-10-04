@@ -83,7 +83,7 @@ namespace xtd {
       data_->functions = delegate.data_->functions;
     }
     /// @cond
-    delegate(const function_t& function) noexcept { data_->functions.push_back(function); } // Can't be explicit by design.
+    delegate(const function_t& function) noexcept {data_->functions.push_back(function);} // Can't be explicit by design.
     delegate& operator =(const delegate& delegate) noexcept {
       data_->functions = delegate.data_->functions;
       return *this;
@@ -115,11 +115,11 @@ namespace xtd {
     
     /// @brief Return if the delegate is empty.
     /// @return bool Return true if delegate is empty; otherwise false.
-    bool is_empty() const noexcept { return data_->functions.size() == 0; }
+    bool is_empty() const noexcept {return data_->functions.size() == 0;}
     
     /// @brief Return the size of invocation list.
     /// @return Return the size of invocation list.
-    size_t size() const noexcept { return data_->functions.size(); }
+    size_t size() const noexcept {return data_->functions.size();}
     /// @}
     
     /// @name Methods
@@ -127,14 +127,19 @@ namespace xtd {
     /// @{
     /// @brief Clear delegates array.
     void clear() {data_->functions.clear();}
-    
-    /// @brief Executes the method represented by the current delegate asynchronously on the thread that the control's underlying handle was created on.
-    /// @return An async_result_invoke that represents the result of the begin_invoke operation.
-    std::shared_ptr<xtd::iasync_result> begin_invoke(xtd::async_callback async_callback, std::any async_state);
 
     /// @brief Executes the method represented by the current delegate asynchronously on the thread that the control's underlying handle was created on.
     /// @return An async_result_invoke that represents the result of the begin_invoke operation.
     std::shared_ptr<xtd::iasync_result> begin_invoke();
+    /// @brief Executes the method represented by the current delegate asynchronously on the thread that the control's underlying handle was created on.
+    /// @param async_callback The asynchronous callback that will be called at the end of the invocation.
+    /// @return An async_result_invoke that represents the result of the begin_invoke operation.
+    std::shared_ptr<xtd::iasync_result> begin_invoke(xtd::async_callback async_callback);
+    /// @brief Executes the method represented by the current delegate asynchronously on the thread that the control's underlying handle was created on.
+    /// @param async_callback The asynchronous callback that will be called at the end of the invocation.
+    /// @param async_state The asynchronous state associated with the invocation.
+    /// @return An async_result_invoke that represents the result of the begin_invoke operation.
+    std::shared_ptr<xtd::iasync_result> begin_invoke(xtd::async_callback async_callback, std::any async_state);
 
     /// @brief Retrieves the return value of the asynchronous operation represented by the async_result_invoke passed.
     /// @param async The async_result_invoke that represents a specific invoke asynchronous operation, returned when calling begin_invoke.
@@ -143,7 +148,7 @@ namespace xtd {
     /// @brief invokes the method represented by the current delegate.
     /// @param arguments The parameter list.
     /// @return result_t The return value.
-    result_t invoke() const { return operator()(); }
+    result_t invoke() const {return operator()();}
     
     /// @brief Concatenates the invocation lists of an array of delegates.
     /// @param delegates The array of delegates to combine.
@@ -395,7 +400,7 @@ namespace xtd {
     delegate(const function_t& function) noexcept {data_->functions.push_back(function);} // Can't be explicit by design.
     
     /// @cond
-    delegate(const no_arguments_function_t& function) noexcept { data_->no_arguments_functions.push_back(function); } // Can't be explicit by design.
+    delegate(const no_arguments_function_t& function) noexcept {data_->no_arguments_functions.push_back(function);} // Can't be explicit by design.
     /// @endcond
     
     /// @brief Initializes a delegate that invokes the specified instance method on the specified class instance.
@@ -530,24 +535,32 @@ namespace xtd {
     
     /// @brief Return if the delegate is empty.
     /// @return bool Return true if delegate is empty; otherwise false.
-    bool is_empty() const noexcept { return data_->functions.size() == 0 && data_->no_arguments_functions.size() == 0; }
+    bool is_empty() const noexcept {return data_->functions.size() == 0 && data_->no_arguments_functions.size() == 0;}
     
     /// @brief Return the size of invocation list.
     /// @return Return the size of invocation list.
-    size_t size() const noexcept { return data_->functions.size() + data_->no_arguments_functions.size(); }
+    size_t size() const noexcept {return data_->functions.size() + data_->no_arguments_functions.size();}
     /// @}
     
     /// @name Methods
     
     /// @{
     /// @brief Executes the method represented by the current delegate asynchronously on the thread that the control's underlying handle was created on.
-    /// @return An async_result_invoke that represents the result of the begin_invoke operation.
-    std::shared_ptr<xtd::iasync_result> begin_invoke(xtd::async_callback async_callback, std::any async_state, arguments_t... arguments);
-    
-    /// @brief Executes the method represented by the current delegate asynchronously on the thread that the control's underlying handle was created on.
+    /// @param async_callback The asynchronous callback that will be called at the end of the invocation.
+    /// @param async_state The asynchronous state associated with the invocation.
+    /// @param arguments The parameter list.
     /// @return An async_result_invoke that represents the result of the begin_invoke operation.
     std::shared_ptr<xtd::iasync_result> begin_invoke(arguments_t... arguments);
-    
+    /// @brief Executes the method represented by the current delegate asynchronously on the thread that the control's underlying handle was created on.
+    /// @param async_callback The asynchronous callback that will be called at the end of the invocation.
+    /// @param arguments The parameter list.
+    /// @return An async_result_invoke that represents the result of the begin_invoke operation.
+    std::shared_ptr<xtd::iasync_result> begin_invoke(xtd::async_callback async_callback, arguments_t... arguments);
+    /// @brief Executes the method represented by the current delegate asynchronously on the thread that the control's underlying handle was created on.
+    /// @param arguments The parameter list.
+    /// @return An async_result_invoke that represents the result of the begin_invoke operation.
+    std::shared_ptr<xtd::iasync_result> begin_invoke(xtd::async_callback async_callback, std::any async_state, arguments_t... arguments);
+        
     /// @brief Retrieves the return value of the asynchronous operation represented by the async_result_invoke passed.
     /// @param async The async_result_invoke that represents a specific invoke asynchronous operation, returned when calling begin_invoke.
     result_t end_invoke(std::shared_ptr<xtd::iasync_result> async);
@@ -555,7 +568,7 @@ namespace xtd {
     /// @brief invokes the method represented by the current delegate.
     /// @param arguments The parameter list.
     /// @return result_t The return value.
-    result_t invoke(arguments_t... arguments) const { return operator()(arguments...); }
+    result_t invoke(arguments_t... arguments) const {return operator()(arguments...);}
 
     /// @brief Concatenates the invocation lists of an array of delegates.
     /// @param delegates The array of delegates to combine.
@@ -823,4 +836,5 @@ namespace xtd {
   };
 }
 
+// Required for begin_invoke and end_invoke methods implementation.
 #include "threading/thread_pool.h"
