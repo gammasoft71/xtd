@@ -92,7 +92,7 @@ template<typename result_t>
 xtd::iasync_result_ptr xtd::delegate<result_t()>::begin_invoke(xtd::async_callback async_callback, std::any async_state) {
   auto async = std::make_shared<async_result_invoke>(async_callback, async_state);
   threading::thread_pool::queue_user_work_item([&, async = async] {
-    async->data_->result = __xtd_delegate_invoker({std::bind(&xtd::delegate<result_t()>::invoke, this)});
+    async->data_->result = __xtd_delegate_invoker(function_t {std::bind(&xtd::delegate<result_t()>::invoke, this)});
     async->data_->is_completed = true;
     async->data_->async_event.set();
     async->data_->async_callback(async);
@@ -156,7 +156,7 @@ template<typename result_t, typename... arguments_t>
 xtd::iasync_result_ptr xtd::delegate<result_t(arguments_t...)>::begin_invoke(xtd::async_callback async_callback, std::any async_state, arguments_t... arguments) {
   auto async = std::make_shared<async_result_invoke>(async_callback, async_state);
   threading::thread_pool::queue_user_work_item([&, async = async] {
-    async->data_->result = __xtd_delegate_invoker({std::bind(&xtd::delegate<result_t(arguments_t...)>::invoke, this, arguments...)}, arguments...);
+    async->data_->result = __xtd_delegate_invoker(function_t {std::bind(&xtd::delegate<result_t(arguments_t...)>::invoke, this, arguments...)}, arguments...);
     async->data_->is_completed = true;
     async->data_->async_event.set();
     async->data_->async_callback(async);
