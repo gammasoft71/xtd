@@ -37,7 +37,7 @@
 #include <xtd/forms/window_messages>
 #include <xtd/any>
 #include <xtd/optional>
-#include <xtd/iasync_result>
+#include <xtd/iasync_result_ptr>
 #include <xtd/iequatable>
 #include <xtd/isynchronize_invoke>
 #include <cstdint>
@@ -768,13 +768,13 @@ namespace xtd {
       /// @brief Executes the specified delegate asynchronously on the thread that the control's underlying handle was created on.
       /// @param method A delegate to a method that takes no parameters.
       /// @return An async_result_invoke that represents the result of the begin_invoke(delegate) operation.
-      std::shared_ptr<xtd::iasync_result> begin_invoke(delegate<void()> method) override;
+      xtd::iasync_result_ptr begin_invoke(delegate<void()> method) override;
       
       /// @brief Executes the specified delegate asynchronously with the specified arguments, on the thread that the control's underlying handle was created on.
       /// @param method A delegate to a method that takes parameters of the same number and type that are contained in the args parameter.
       /// @param args An array of objects to pass as arguments to the given method. This can be empty if no arguments are needed.
       /// @return An async_result_invoke that represents the result of the begin_invoke(delegate) operation.
-      std::shared_ptr<xtd::iasync_result> begin_invoke(delegate<void(std::vector<std::any>)> method, const std::vector<std::any>& args) override;
+      xtd::iasync_result_ptr begin_invoke(delegate<void(std::vector<std::any>)> method, const std::vector<std::any>& args) override;
       
       /// @brief Brings the control to the front of the z-order.
       /// @remarks The control is moved to the front of the z-order. If the control is a child of another control, the child control is moved to the front of the z-order. bring_to_front does not make a control a top-level control, and it does not raise the xtd::forms::control::paint event.
@@ -875,7 +875,7 @@ namespace xtd {
       
       /// @brief Retrieves the return value of the asynchronous operation represented by the async_result_invoke passed.
       /// @param async The async_result_invoke that represents a specific invoke asynchronous operation, returned when calling begin_invoke(delegate).
-      std::optional<object_ref> end_invoke(std::shared_ptr<xtd::iasync_result> async) override;
+      std::optional<object_ref> end_invoke(xtd::iasync_result_ptr async) override;
       
       bool equals(const control& value) const noexcept override;
       

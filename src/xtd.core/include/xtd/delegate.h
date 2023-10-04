@@ -4,12 +4,11 @@
 #pragma once
 #include "any.h"
 #include "argument_null_exception.h"
-#include "iasync_result.h"
+#include "iasync_result_ptr.h"
 #include "iequatable.h"
 #include "object.h"
 #include "object_ref.h"
 #include <functional>
-#include <memory>
 #include <stdexcept>
 #include <vector>
 
@@ -32,7 +31,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  using async_callback = delegate<void(std::shared_ptr<xtd::iasync_result> ar)>;
+  using async_callback = delegate<void(iasync_result_ptr ar)>;
 
   /// @brief Represents a delegate, which is a data structure that refers to a static method or to a class instance && an instance method of that class.
   /// @par Header
@@ -130,20 +129,20 @@ namespace xtd {
 
     /// @brief Executes the method represented by the current delegate asynchronously on the thread that the control's underlying handle was created on.
     /// @return An async_result_invoke that represents the result of the begin_invoke operation.
-    std::shared_ptr<xtd::iasync_result> begin_invoke();
+    iasync_result_ptr begin_invoke();
     /// @brief Executes the method represented by the current delegate asynchronously on the thread that the control's underlying handle was created on.
     /// @param async_callback The asynchronous callback that will be called at the end of the invocation.
     /// @return An async_result_invoke that represents the result of the begin_invoke operation.
-    std::shared_ptr<xtd::iasync_result> begin_invoke(xtd::async_callback async_callback);
+    iasync_result_ptr begin_invoke(xtd::async_callback async_callback);
     /// @brief Executes the method represented by the current delegate asynchronously on the thread that the control's underlying handle was created on.
     /// @param async_callback The asynchronous callback that will be called at the end of the invocation.
     /// @param async_state The asynchronous state associated with the invocation.
     /// @return An async_result_invoke that represents the result of the begin_invoke operation.
-    std::shared_ptr<xtd::iasync_result> begin_invoke(xtd::async_callback async_callback, std::any async_state);
+    iasync_result_ptr begin_invoke(xtd::async_callback async_callback, std::any async_state);
 
     /// @brief Retrieves the return value of the asynchronous operation represented by the async_result_invoke passed.
     /// @param async The async_result_invoke that represents a specific invoke asynchronous operation, returned when calling begin_invoke.
-    result_t end_invoke(std::shared_ptr<xtd::iasync_result> async);
+    result_t end_invoke(iasync_result_ptr async);
 
     /// @brief invokes the method represented by the current delegate.
     /// @param arguments The parameter list.
@@ -550,20 +549,20 @@ namespace xtd {
     /// @param async_state The asynchronous state associated with the invocation.
     /// @param arguments The parameter list.
     /// @return An async_result_invoke that represents the result of the begin_invoke operation.
-    std::shared_ptr<xtd::iasync_result> begin_invoke(arguments_t... arguments);
+    iasync_result_ptr begin_invoke(arguments_t... arguments);
     /// @brief Executes the method represented by the current delegate asynchronously on the thread that the control's underlying handle was created on.
     /// @param async_callback The asynchronous callback that will be called at the end of the invocation.
     /// @param arguments The parameter list.
     /// @return An async_result_invoke that represents the result of the begin_invoke operation.
-    std::shared_ptr<xtd::iasync_result> begin_invoke(xtd::async_callback async_callback, arguments_t... arguments);
+    iasync_result_ptr begin_invoke(xtd::async_callback async_callback, arguments_t... arguments);
     /// @brief Executes the method represented by the current delegate asynchronously on the thread that the control's underlying handle was created on.
     /// @param arguments The parameter list.
     /// @return An async_result_invoke that represents the result of the begin_invoke operation.
-    std::shared_ptr<xtd::iasync_result> begin_invoke(xtd::async_callback async_callback, std::any async_state, arguments_t... arguments);
+    iasync_result_ptr begin_invoke(xtd::async_callback async_callback, std::any async_state, arguments_t... arguments);
         
     /// @brief Retrieves the return value of the asynchronous operation represented by the async_result_invoke passed.
     /// @param async The async_result_invoke that represents a specific invoke asynchronous operation, returned when calling begin_invoke.
-    result_t end_invoke(std::shared_ptr<xtd::iasync_result> async);
+    result_t end_invoke(iasync_result_ptr async);
 
     /// @brief invokes the method represented by the current delegate.
     /// @param arguments The parameter list.
