@@ -95,7 +95,7 @@ xtd::iasync_result_ptr xtd::delegate<result_t()>::begin_invoke(xtd::async_callba
     async->data_->result = __xtd_delegate_invoker(function_t {std::bind(&xtd::delegate<result_t()>::invoke, this)});
     async->data_->is_completed = true;
     async->data_->async_event.set();
-    async->data_->async_callback(async);
+    async->data_->async_callback(*async);
   });
   return async;
 }
@@ -159,7 +159,7 @@ xtd::iasync_result_ptr xtd::delegate<result_t(arguments_t...)>::begin_invoke(xtd
     async->data_->result = __xtd_delegate_invoker(function_t {std::bind(&xtd::delegate<result_t(arguments_t...)>::invoke, this, arguments...)}, arguments...);
     async->data_->is_completed = true;
     async->data_->async_event.set();
-    async->data_->async_callback(async);
+    async->data_->async_callback(*async);
   });
   return async;
 }

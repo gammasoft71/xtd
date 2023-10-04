@@ -332,7 +332,7 @@ std::shared_ptr<xtd::iasync_result> socket::begin_accept(xtd::async_callback cal
       ar->socket_ = s.accept();
       ar->is_completed_ = true;
       as<xtd::threading::mutex>(ar->async_wait_handle()).release_mutex();
-      callback(ar);
+      callback(*ar);
     } catch (...) {
       ar->error_code_ = s.get_last_error_();
       ar->exception_ = current_exception();
@@ -369,7 +369,7 @@ std::shared_ptr<xtd::iasync_result> socket::begin_disconnect(bool reuse_socket, 
       s.disconnect(reuse_socket);
       ar->is_completed_ = true;
       as<xtd::threading::mutex>(ar->async_wait_handle()).release_mutex();
-      callback(ar);
+      callback(*ar);
     } catch (...) {
       ar->error_code_ = s.get_last_error_();
       ar->exception_ = current_exception();
@@ -391,7 +391,7 @@ std::shared_ptr<xtd::iasync_result> socket::begin_receive(std::vector<xtd::byte>
       ar->number_of_bytes_received_ = s.receive(*buffer, offset, size, socket_flags);
       ar->is_completed_ = true;
       as<xtd::threading::mutex>(ar->async_wait_handle()).release_mutex();
-      callback(ar);
+      callback(*ar);
     } catch (...) {
       ar->error_code_ = s.get_last_error_();
       ar->exception_ = current_exception();
@@ -413,7 +413,7 @@ std::shared_ptr<xtd::iasync_result> socket::begin_receive(std::vector<xtd::byte>
       ar->number_of_bytes_received_ = s.receive(*buffer, offset, size, socket_flags, ar->error_code_);
       ar->is_completed_ = true;
       as<xtd::threading::mutex>(ar->async_wait_handle()).release_mutex();
-      callback(ar);
+      callback(*ar);
     } catch (...) {
       ar->error_code_ = s.get_last_error_();
       ar->exception_ = current_exception();
@@ -435,7 +435,7 @@ std::shared_ptr<xtd::iasync_result> socket::begin_receive_from(std::vector<xtd::
       ar->number_of_bytes_received_ = s.receive_from(*buffer, offset, size, socket_flags, *ar->end_point_);
       ar->is_completed_ = true;
       as<xtd::threading::mutex>(ar->async_wait_handle()).release_mutex();
-      callback(ar);
+      callback(*ar);
     } catch (...) {
       ar->error_code_ = s.get_last_error_();
       ar->exception_ = current_exception();
@@ -458,7 +458,7 @@ std::shared_ptr<xtd::iasync_result> socket::begin_receive_message_from(std::vect
       ar->number_of_bytes_received_ = s.receive_message_from(*buffer, offset, size, ar->socket_flags_, *ar->end_point_, ar->ip_packet_information_);
       ar->is_completed_ = true;
       as<xtd::threading::mutex>(ar->async_wait_handle()).release_mutex();
-      callback(ar);
+      callback(*ar);
     } catch (...) {
       ar->error_code_ = s.get_last_error_();
       ar->exception_ = current_exception();
@@ -480,7 +480,7 @@ std::shared_ptr<xtd::iasync_result> socket::begin_send(const std::vector<xtd::by
       ar->number_of_bytes_sent_ = s.send(buffer, offset, size, socket_flags);
       ar->is_completed_ = true;
       as<xtd::threading::mutex>(ar->async_wait_handle()).release_mutex();
-      callback(ar);
+      callback(*ar);
     } catch (...) {
       ar->error_code_ = s.get_last_error_();
       ar->exception_ = current_exception();
@@ -502,7 +502,7 @@ std::shared_ptr<xtd::iasync_result> socket::begin_send(const std::vector<xtd::by
       ar->number_of_bytes_sent_ = s.send(buffer, offset, size, socket_flags, ar->error_code_);
       ar->is_completed_ = true;
       as<xtd::threading::mutex>(ar->async_wait_handle()).release_mutex();
-      callback(ar);
+      callback(*ar);
     } catch (...) {
       ar->error_code_ = s.get_last_error_();
       ar->exception_ = current_exception();
@@ -523,7 +523,7 @@ std::shared_ptr<xtd::iasync_result> socket::begin_send_to(const std::vector<xtd:
       ar->number_of_bytes_sent_ = s.send_to(buffer, offset, size, socket_flags, remote_end_point);
       ar->is_completed_ = true;
       as<xtd::threading::mutex>(ar->async_wait_handle()).release_mutex();
-      callback(ar);
+      callback(*ar);
     } catch (...) {
       ar->error_code_ = s.get_last_error_();
       ar->exception_ = current_exception();
@@ -950,7 +950,7 @@ std::shared_ptr<xtd::iasync_result> socket::begin_connect_(std::shared_ptr<xtd::
       s.connect_(remote_end_point);
       ar->is_completed_ = true;
       as<xtd::threading::mutex>(ar->async_wait_handle()).release_mutex();
-      callback(ar);
+      callback(*ar);
     } catch (...) {
       ar->error_code_ = s.get_last_error_();
       ar->exception_ = current_exception();

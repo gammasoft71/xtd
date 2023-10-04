@@ -122,7 +122,7 @@ std::shared_ptr<xtd::iasync_result> udp_client::begin_receive(xtd::async_callbac
       ar->buffer_ = udp_client->receive(ar->remote_end_point_);
       ar->is_completed_ = true;
       as<threading::mutex>(ar->async_wait_handle()).release_mutex();
-      callback(ar);
+      callback(*ar);
     } catch (...) {
       ar->exception_ = current_exception();
     }
@@ -139,7 +139,7 @@ std::shared_ptr<xtd::iasync_result> udp_client::begin_send(const std::vector<xtd
       ar->number_of_bytes_sent_ = udp_client->send(dgram, bytes, hostname, port);
       ar->is_completed_ = true;
       as<xtd::threading::mutex>(ar->async_wait_handle()).release_mutex();
-      callback(ar);
+      callback(*ar);
     } catch (...) {
       ar->exception_ = current_exception();
     }
@@ -156,7 +156,7 @@ std::shared_ptr<xtd::iasync_result> udp_client::begin_send(const std::vector<xtd
       ar->number_of_bytes_sent_ = udp_client->send(dgram, bytes, end_point);
       ar->is_completed_ = true;
       as<xtd::threading::mutex>(ar->async_wait_handle()).release_mutex();
-      callback(ar);
+      callback(*ar);
     } catch (...) {
       ar->exception_ = current_exception();
     }
@@ -173,7 +173,7 @@ std::shared_ptr<xtd::iasync_result> udp_client::begin_send(const std::vector<xtd
       ar->number_of_bytes_sent_ = udp_client->send(dgram, bytes);
       ar->is_completed_ = true;
       as<xtd::threading::mutex>(ar->async_wait_handle()).release_mutex();
-      callback(ar);
+      callback(*ar);
     } catch (...) {
       ar->exception_ = current_exception();
     }
