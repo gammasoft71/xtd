@@ -132,7 +132,6 @@ add_sources(
   include/xtd/debugstreambuf
   include/xtd/delegate.h
   include/xtd/delegate
-  include/xtd/delegate.hpp
   include/xtd/distribution.h
   include/xtd/distribution
   include/xtd/divided_by_zero_exception.h
@@ -528,6 +527,8 @@ add_sources(
   include/xtd/internal/__currency_formatter
   include/xtd/internal/__date_time_formatter.h
   include/xtd/internal/__date_time_formatter
+  include/xtd/internal/__delegate.h
+  include/xtd/internal/__delegate
   include/xtd/internal/__duration_formatter.h
   include/xtd/internal/__duration_formatter
   include/xtd/internal/__enum_formatter.h

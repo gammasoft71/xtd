@@ -231,6 +231,7 @@ namespace xtd {
 
 /// @cond
 // Add xtd::delegate::begin_invoke and xtd::delegate::end_invoke methods.
-//
-#include "../delegate.hpp"
+#define __XTD_CORE_INTERNAL__
+#include "../internal/__delegate.h"
+#undef __XTD_CORE_INTERNAL__
 /// @endcond
