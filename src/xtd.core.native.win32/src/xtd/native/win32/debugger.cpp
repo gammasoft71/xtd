@@ -42,7 +42,7 @@ bool debugger::launch() {
 }
 
 int_least32_t debugger::show_assert_dialog(const std::string& text, const std::string& caption) {
-  return MessageBox(nullptr, win32::strings::to_wstring(text).c_str(), win32::strings::to_wstring(caption).c_str(), MB_ICONERROR | MB_ABORTRETRYIGNORE | MB_DEFBUTTON3);
+  return MessageBox(nullptr, win32::strings::to_wstring(text).c_str(), win32::strings::to_wstring(caption).c_str(), MB_TOPMOST | MB_ICONERROR | MB_ABORTRETRYIGNORE | MB_DEFBUTTON3);
 }
 
 void debugger::log(int_least32_t level, const std::string& category, const std::string& message) {
