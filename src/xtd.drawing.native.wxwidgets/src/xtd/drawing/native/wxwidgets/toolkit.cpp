@@ -36,11 +36,7 @@ namespace {
     // Workaround: wxWidgets generates an assert if wxPaintDC is not call in paint event.
     if (func.Contains("wxTextMeasure::BeginMeasuring") && cond == "m_hdc" && msg == "Must not be used with non-native wxDCs") return;
     
-    debug::write_line_if(show_wx_assert.enabled(), "wxAssert");
-    debug::write_line_if(show_wx_assert.enabled(), "--------");
-    debug::write_line_if(show_wx_assert.enabled(), ustring::format("cond={}, msg={}", cond, msg));
-    debug::write_line_if(show_wx_assert.enabled(), ustring::format("  at {} in {}:line {}", func, file, line));
-    assert_(false);
+    if (xtd::diagnostics::debug::__should_aborted__(!show_wx_assert.enabled(), "wxAssert", ustring::format("cond={}, msg={}", cond, msg), stack_frame {ustring {file.c_str()}, as<uint32>(line), ustring {func.c_str()}})) debug_break_();
   }
 }
 
@@ -61,6 +57,7 @@ intptr xtd::drawing::native::toolkit::initialize() {
   wxTheApp->CallOnInit();
   wxTheApp->SetExitOnFrameDelete(false);
   wxInitAllImageHandlers();
+  xtd_assert_handler("/home/gammasoft/fle.cpp", 32, "wxFileInfo::GetPath", "\"Assert failure\"", "invalid path");
   return 0;
 }
 
