@@ -10,6 +10,7 @@
 #include "abort_error.h"
 #include "assert_error.h"
 #include "ignore_error.h"
+#include <xtd/environment>
 #include <xtd/types>
 #include <xtd/typeof>
 #include <xtd/ustring>
@@ -213,6 +214,9 @@ namespace xtd {
       /// @return The xtd::ustring that contains the joined string.
       static xtd::ustring join_items(const xtd::ustring& str);
       /// @}
+      
+    private:
+      static bool is_debug() noexcept {return environment::compiler_version().build_type() == build_type::debug;}
     };
   }
 }

@@ -2,6 +2,7 @@
 #include "../../../include/xtd/tunit/settings.h"
 #include "../../../include/xtd/tunit/unit_test.h"
 #include "../../../include/xtd/tunit/test.h"
+#include <xtd/diagnostics/assert>
 
 using namespace std;
 using namespace xtd;
@@ -45,7 +46,7 @@ void base_assert::fail(const ustring& message) {
 }
 
 void base_assert::fail(const ustring& message, const stack_frame& stack_frame) {
-  base_assert::fail("", "", message, stack_frame);
+  fail("", "", message, stack_frame);
 }
 
 void base_assert::error() {
@@ -81,7 +82,9 @@ void base_assert::fail(const ustring& expected, const ustring& actual, const ust
     test::current_test().expect_ = expected;
     test::current_test().status_ = test::test_status::failed;
   }
-  throw assert_error(message != ""_s ? message : "assertion failed!"_s);
+  if (!test::has_current_unit_test() && is_debug()) {
+    assert_(false, message != ""_s ? message : "assertion failed!"_s);
+  } else throw assert_error(message != ""_s ? message : "assertion failed!"_s);
 }
 
 void base_assert::ignore() {
