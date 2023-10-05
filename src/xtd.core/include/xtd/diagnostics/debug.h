@@ -461,6 +461,7 @@ namespace xtd {
       static inline bool __should_aborted__(bool condition, const xtd::ustring& message) {return __should_aborted__(condition, message, csf_);}
       static inline bool __should_aborted__(bool condition, const xtd::diagnostics::stack_frame& stack_frame) {return __should_aborted__(condition, "", stack_frame);}
       static inline bool __should_aborted__(bool condition, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {return __should_aborted__(condition, message, "", stack_frame);}
+      static inline bool __should_aborted__(bool condition, const xtd::ustring& message, const xtd::ustring& detail_message) {return __should_aborted__(condition, message, detail_message, csf_);}
       static inline bool __should_aborted__(bool condition, const xtd::ustring& message, const xtd::ustring& detail_message, const xtd::diagnostics::stack_frame& stack_frame) {
         #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         // Workaround : Xcode can't display the assert dialog in the foreground, so if the debugger is attached, we consider that we want to debug.
