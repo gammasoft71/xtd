@@ -6,6 +6,7 @@
 #error "Do not include this file: Internal use only"
 #endif
 /// @endcond
+#include "../build_type.h"
 
 /// @cond
 #if !defined(NDEBUG) || defined(DEBUG)
