@@ -13,12 +13,12 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::diagnostics;
 
-extern trace_listener_collection __listeners__;
-extern bool __show_assert_dialog__;
 extern char** __diagnostics_argv;
+std::recursive_mutex __debug_mutex__;
+trace_listener_collection __listeners__ {std::make_shared<xtd::diagnostics::default_trace_listener>()};
+bool __show_assert_dialog__ {true};
 
 bool __debug_use_debug_global_lock__ = true;
-std::recursive_mutex __debug_mutex__;
 
 trace_listener_collection& debug::listeners_ = __listeners__;
 bool& debug::show_assert_dialog_ = __show_assert_dialog__;
@@ -82,6 +82,14 @@ void debug::cassert(bool condition, const ustring& message) {
 
 void debug::cassert(bool condition, const ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
   if (__should_aborted__(condition, message, stack_frame)) debug_break_();
+}
+
+void debug::cassert(bool condition, const ustring& message, const ustring& detail_message) {
+  if (__should_aborted__(condition, message, detail_message, csf_)) debug_break_();
+}
+
+void debug::cassert(bool condition, const ustring& message, const ustring& detail_message, const xtd::diagnostics::stack_frame& stack_frame) {
+  if (__should_aborted__(condition, message, detail_message, stack_frame)) debug_break_();
 }
 
 void debug::cassert(bool condition, const xtd::diagnostics::stack_frame& stack_frame) {
@@ -192,19 +200,19 @@ void debug::write_line_(const ustring& message, const ustring& category) {
   if (auto_flush_) flush();
 }
 
-xtd::diagnostics::assert_dialog_result debug::assert_dialog(bool condition, const ustring& message, const stack_frame& stack_frame) {
+xtd::diagnostics::assert_dialog_result debug::assert_dialog(bool condition, const ustring& message, const ustring& detail_message, const stack_frame& stack_frame) {
   if (condition == true) return assert_dialog_result::ignore;
-  assert_message(condition, message, stack_frame);
-  return show_assert_dialog_ ? static_cast<xtd::diagnostics::assert_dialog_result>(native::debugger::show_assert_dialog(ustring::format("{}\n\n{}", message, stack_trace(stack_frame)), assert_dialog_caption())) : assert_dialog_result::retry;
+  assert_message(condition, message, detail_message, stack_frame);
+  return show_assert_dialog_ ? static_cast<xtd::diagnostics::assert_dialog_result>(native::debugger::show_assert_dialog(ustring::format("{}\n{}\n{}", message, detail_message, stack_trace(stack_frame)), assert_dialog_caption())) : assert_dialog_result::retry;
 }
 
-xtd::diagnostics::assert_dialog_result debug::assert_message(bool condition, const ustring& message, const stack_frame& stack_frame) {
+xtd::diagnostics::assert_dialog_result debug::assert_message(bool condition, const ustring& message, const ustring& detail_message, const stack_frame& stack_frame) {
   if (condition == true) return assert_dialog_result::ignore;
   write_line("---- DEBUG ASSERTION FAILED ----");
   write_line("---- Assert Short Message----");
   write_line(message);
   write_line("---- Assert Long Message----");
-  write_line("");
+  write_line(detail_message);
   write_line(stack_trace(stack_frame).to_string());
   write_line("");
   return assert_dialog_result::retry;

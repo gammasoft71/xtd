@@ -128,6 +128,17 @@ namespace xtd {
       static void cassert(bool condition, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
       /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
       /// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
+      /// @param message The message to send to the xtd::diagnostics::debug::listeners collection.
+      /// @param detail_message The detailed message to send to the xtd::diagnostics::debug::listeners collection.
+      static void cassert(bool condition, const xtd::ustring& message, const xtd::ustring& detail_message);
+      /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
+      /// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
+      /// @param message The message to send to the xtd::diagnostics::debug::listeners collection.
+      /// @param detail_message The detailed message to send to the xtd::diagnostics::debug::listeners collection.
+      /// @param stack_frame The stack frame corresponding to the generated assert.
+      static void cassert(bool condition, const xtd::ustring& message, const xtd::ustring& detail_message, const xtd::diagnostics::stack_frame& stack_frame);
+      /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
+      /// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
       /// @param stack_frame The stack frame corresponding to the generated assert.
       static void cassert(bool condition, const xtd::diagnostics::stack_frame& stack_frame);
       
@@ -430,11 +441,13 @@ namespace xtd {
       
       /// @cond
       static inline bool __should_aborted__(bool condition) { return __should_aborted__(condition, "", csf_); }
-      static inline bool __should_aborted__(bool condition, const xtd::ustring& message) { return __should_aborted__(condition, message, csf_); }
-      static inline bool __should_aborted__(bool condition, const xtd::diagnostics::stack_frame& stack_frame) { return __should_aborted__(condition, "", stack_frame); }
-      static inline bool __should_aborted__(bool condition, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
+      static inline bool __should_aborted__(bool condition, const xtd::ustring& message) {return __should_aborted__(condition, message, csf_);}
+      static inline bool __should_aborted__(bool condition, const xtd::diagnostics::stack_frame& stack_frame) {return __should_aborted__(condition, "", stack_frame);}
+      static inline bool __should_aborted__(bool condition, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {return __should_aborted__(condition, message, "", stack_frame);}
+      static inline bool __should_aborted__(bool condition, const xtd::ustring& message, const xtd::ustring& detail_message, const xtd::diagnostics::stack_frame& stack_frame) {
         #if defined(TRACE)
-        auto result = xtd::diagnostics::debug::assert_dialog(condition, message, stack_frame);
+        // Workaround : Xcode can't display the assert dialog in the foreground, so if the debugger is attached, we consider that we want to debug.
+        auto result = environment::target_type().is_guid_application() || !(environment::os_version().is_macos_platform() && debugger::is_attached()) ? xtd::diagnostics::debug::assert_dialog(condition, message, detail_message, stack_frame) : xtd::diagnostics::debug::assert_message(condition, message, detail_message, stack_frame);
         if (result == xtd::diagnostics::assert_dialog_result::abort) xtd::environment::exit(EXIT_FAILURE);
         if (result == xtd::diagnostics::assert_dialog_result::retry) return true;
         #endif

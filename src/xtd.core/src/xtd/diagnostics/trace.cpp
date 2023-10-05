@@ -10,9 +10,8 @@ using namespace xtd;
 using namespace xtd::diagnostics;
 
 extern std::recursive_mutex __debug_mutex__;
-
-trace_listener_collection __listeners__ {std::make_shared<xtd::diagnostics::default_trace_listener>()};
-bool __show_assert_dialog__ {true};
+extern trace_listener_collection __listeners__;
+extern bool __show_assert_dialog__;
 
 trace_listener_collection& trace::listeners_ = __listeners__;
 bool& trace::show_assert_dialog_ = __show_assert_dialog__;
@@ -76,6 +75,14 @@ void trace::cassert(bool condition, const ustring& message) {
 
 void trace::cassert(bool condition, const ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
   if (__should_aborted__(condition, message, stack_frame)) __std_abort();
+}
+
+void trace::cassert(bool condition, const ustring& message, const ustring& detail_message) {
+  if (__should_aborted__(condition, message, detail_message, csf_)) __std_abort();
+}
+
+void trace::cassert(bool condition, const ustring& message, const ustring& detail_message, const xtd::diagnostics::stack_frame& stack_frame) {
+  if (__should_aborted__(condition, message, detail_message, stack_frame)) __std_abort();
 }
 
 void trace::cassert(bool condition, const xtd::diagnostics::stack_frame& stack_frame) {
