@@ -447,8 +447,7 @@ namespace xtd {
       static inline bool __should_aborted__(bool condition, const xtd::ustring& message, const xtd::ustring& detail_message) {return __should_aborted__(condition, message, detail_message, csf_);}
       static inline bool __should_aborted__(bool condition, const xtd::ustring& message, const xtd::ustring& detail_message, const xtd::diagnostics::stack_frame& stack_frame) {
         #if defined(TRACE)
-        // Workaround : Xcode can't display the assert dialog in the foreground, so if the debugger is attached, we consider that we want to debug.
-        auto result = environment::target_type().is_guid_application() || !(environment::os_version().is_macos_platform() && debugger::is_attached()) ? xtd::diagnostics::debug::assert_dialog(condition, message, detail_message, stack_frame) : xtd::diagnostics::debug::assert_message(condition, message, detail_message, stack_frame);
+        auto result = xtd::diagnostics::debug::assert_dialog(condition, message, detail_message, stack_frame);
         if (result == xtd::diagnostics::assert_dialog_result::abort) xtd::environment::exit(EXIT_FAILURE);
         if (result == xtd::diagnostics::assert_dialog_result::retry) return true;
         #endif
