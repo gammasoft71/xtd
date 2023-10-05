@@ -47,6 +47,7 @@ int_least32_t debugger::show_assert_dialog(const std::string& text, const std::s
     [alert setAlertStyle:NSAlertStyleCritical];
     [alert setMessageText:[NSString stringWithUTF8String:caption.c_str()]];
     [alert setInformativeText:[NSString stringWithUTF8String:text.c_str()]];
+    [[alert window] setLevel:NSStatusWindowLevel];
     return_code = [alert runModal];
   }
   [pool release];
