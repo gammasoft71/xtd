@@ -34,6 +34,7 @@ bool debugger::launch() {
 
 int_least32_t debugger::show_assert_dialog(const std::string& text, const std::string& caption) {
   //#if !defined(TARGET_IPHONE_SIMULATOR) && !defined(TARGET_OS_MACCATALYST) && !defined(TARGET_OS_IPHONE)
+  if (is_attached()) return ADR_RETRY; // Workaround : Xcode can't display the assert dialog in the foreground, so if the debugger is attached, we consider that we want to debug.
   [NSApplication sharedApplication];
   [NSApp finishLaunching];
   [NSApp activateIgnoringOtherApps:YES];
