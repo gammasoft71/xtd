@@ -51,12 +51,12 @@ public:
 private:
   void generate_assert() {
     auto index = 0;
-    assert_(index > 0, "Index must be greather than 0");
+    assert_(index > 0, "Out of range", "Index must be greather than 0");
   }
   
   void generate_debug_cassert() {
     auto index = 0;
-    debug::cassert_(index > 0, "Index must be greather than 0");
+    debug::cassert_(index > 0, "Out of range", "Index must be greather than 0");
   }
   
   void generate_debug_break() {
