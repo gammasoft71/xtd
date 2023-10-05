@@ -6,6 +6,7 @@
 #error "Do not include this file: Internal use only"
 #endif
 /// @endcond
+#include "../version.h"
 
 /// @cond
 #if defined(_MSC_VER)
