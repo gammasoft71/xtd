@@ -57,7 +57,6 @@ intptr xtd::drawing::native::toolkit::initialize() {
   wxTheApp->CallOnInit();
   wxTheApp->SetExitOnFrameDelete(false);
   wxInitAllImageHandlers();
-  xtd_assert_handler("/home/gammasoft/fle.cpp", 32, "wxFileInfo::GetPath", "\"Assert failure\"", "invalid path");
   return 0;
 }
 
