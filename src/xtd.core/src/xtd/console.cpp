@@ -309,10 +309,9 @@ ustring console::read_line(bool intercept) {
   struct echo_on {
     echo_on(bool intercept) : intercept(intercept) {if (!is_input_redirected()) native::console::echo(!intercept);}
     ~echo_on() {
-      if (!is_input_redirected()) {
-        native::console::echo(false);
-        if (intercept) write_line();
-      }
+      if (is_input_redirected()) return;
+      native::console::echo(false);
+      if (intercept) write_line();
     }
     bool intercept = false;
   } echo_on {intercept};
