@@ -301,11 +301,23 @@ int32 console::read() {
 
 ustring console::read_line() {
   register_cancel_key_press(); // Must be first...
+  return read_line(false);
+}
+
+ustring console::read_line(bool intercept) {
+  register_cancel_key_press(); // Must be first...
+  struct echo_on {
+    echo_on(bool intercept) : intercept(intercept) {if (!is_input_redirected()) native::console::echo(!intercept);}
+    ~echo_on() {
+      if (!is_input_redirected()) {
+        native::console::echo(false);
+        if (intercept) write_line();
+      }
+    }
+    bool intercept = false;
+  } echo_on {intercept};
   out.flush();
-  if (!is_input_redirected()) native::console::echo(true);
-  auto result = stream_reader {in}.read_line();
-  if (!is_input_redirected()) native::console::echo(false);
-  return result;
+  return stream_reader {in}.read_line();
 }
 
 console_key_info console::read_key() {
