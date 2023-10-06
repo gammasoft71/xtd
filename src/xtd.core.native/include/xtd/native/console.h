@@ -97,6 +97,9 @@ namespace xtd {
       /// @param visible true if the cursor is visible; otherwise, false.
       /// @warning Internal use only
       static bool cursor_visible(bool visible);
+      
+      static bool echo(bool on);
+      
       /// @brief Gets the foreground color of the console.
       /// @return the foreground console color.
       /// @warning Internal use only

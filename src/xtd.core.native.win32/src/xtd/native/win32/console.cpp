@@ -207,6 +207,17 @@ bool console::cursor_visible(bool visible) {
   return SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cci) == TRUE;
 }
 
+bool console::echo(bool on) {
+  /*
+  DWORD mode = 0;
+  GetConsoleMode(GetStdHandle(STD_INPUT_HANDLE), &mode);
+  if (on) mode |= ENABLE_ECHO_INPUT;
+  else mode &= ~ENABLE_ECHO_INPUT;
+  return SetConsoleMode(GetStdHandle(STD_INPUT_HANDLE), mode) == TRUE;
+   */
+  return true;
+}
+
 int_least32_t console::foreground_color() {
   return ::foreground_color;
 }
