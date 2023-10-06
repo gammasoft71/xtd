@@ -44,6 +44,12 @@ namespace {
     SetConsoleCtrlHandler(&__handler_routine, TRUE);
     return false;
   }();
+  bool echo_off = []()-> bool {
+    DWORD mode = 0;
+    GetConsoleMode(GetStdHandle(STD_INPUT_HANDLE), &mode);
+    return SetConsoleMode(GetStdHandle(STD_INPUT_HANDLE), mode & ~ENABLE_ECHO_INPUT) == TRUE;
+  }();
+
   bool treat_control_c_as_input =  false;
   auto background_color = CONSOLE_COLOR_DEFAULT;
   auto foreground_color = CONSOLE_COLOR_DEFAULT;
@@ -208,14 +214,11 @@ bool console::cursor_visible(bool visible) {
 }
 
 bool console::echo(bool on) {
-  /*
   DWORD mode = 0;
   GetConsoleMode(GetStdHandle(STD_INPUT_HANDLE), &mode);
   if (on) mode |= ENABLE_ECHO_INPUT;
   else mode &= ~ENABLE_ECHO_INPUT;
   return SetConsoleMode(GetStdHandle(STD_INPUT_HANDLE), mode) == TRUE;
-   */
-  return true;
 }
 
 int_least32_t console::foreground_color() {
