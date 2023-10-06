@@ -302,7 +302,10 @@ int32 console::read() {
 ustring console::read_line() {
   register_cancel_key_press(); // Must be first...
   out.flush();
-  return stream_reader {in}.read_line();
+  if (!is_input_redirected()) native::console::echo(true);
+  auto result = stream_reader {in}.read_line();
+  if (!is_input_redirected()) native::console::echo(false);
+  return result;
 }
 
 console_key_info console::read_key() {

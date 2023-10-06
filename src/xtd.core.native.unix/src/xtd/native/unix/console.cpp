@@ -43,82 +43,111 @@ namespace {
     }
     
     // The SIGINT signal catcher conflicts with with xtd::environment::cancel_interrupt signal...
-    inline static std::map<int_least32_t, int_least32_t> signal_keys_  {{SIGQUIT, CONSOLE_SPECIAL_KEY_CTRL_BS}, {SIGTSTP, CONSOLE_SPECIAL_KEY_CTRL_Z}/*, {SIGINT, CONSOLE_SPECIAL_KEY_CTRL_C}*/};
+    inline static std::map<int_least32_t, int_least32_t> signal_keys_ {{SIGQUIT, CONSOLE_SPECIAL_KEY_CTRL_BS}, {SIGTSTP, CONSOLE_SPECIAL_KEY_CTRL_Z}/*, {SIGINT, CONSOLE_SPECIAL_KEY_CTRL_C}*/};
     static console_intercept_signals console_intercept_signals_;
   };
   
   console_intercept_signals console_intercept_signals::console_intercept_signals_;
   
   class terminal final {
-  private:
-    terminal() {
-      termios termioAttributes;
-      tcgetattr(0, &termioAttributes);
-      backupedTermioAttributes = termioAttributes;
-      termioAttributes.c_lflag &= ~ECHO;
-      tcsetattr(0, TCSANOW, &termioAttributes);
-    }
-    ~terminal() {
-      tcsetattr(0, TCSANOW, &backupedTermioAttributes);
-      if (is_ansi_supported())
-        std::cout << "\x1b]0;\x7" << std::flush;
+  public:
+    bool echo(bool on) {
+      auto status = termios {};
+      tcgetattr(0, &status);
+      if (on) status.c_lflag |= ECHO;
+      else status.c_lflag &= ~ECHO;
+      return tcsetattr(0, TCSANOW, &status) == 0;
     }
     
-  public:
+    bool icanon(bool on) {
+      auto status = termios {};
+      tcgetattr(0, &status);
+      if (on) status.c_lflag |= ICANON;
+      else status.c_lflag &= ~ICANON;
+      status.c_cc[VMIN] = on ? 1 : 0;
+      status.c_cc[VTIME] = 0; // Can be discarded.
+      return tcsetattr(0, TCSANOW, &status) == 0;
+    }
+    
     int_least32_t getch() {
       if (peek_character != -1) {
-        int_least8_t character = peek_character;
+        auto character = peek_character;
         peek_character = -1;
         return character;
       }
       
-      termios termioAttributes;
-      tcgetattr(0, &termioAttributes);
-      termios localeBackupedTermioAttributes = termioAttributes;
-      termioAttributes.c_lflag &= ~(ICANON | ECHO);
-      termioAttributes.c_cc[VTIME] = 0;
-      termioAttributes.c_cc[VMIN] = 1;
-      tcsetattr(0, TCSANOW, &termioAttributes);
+      push_status();
+      echo(false);
+      icanon(false);
       
-      int_least8_t character = 0;
+      auto character = '\0';
       while (read(0, &character, 1) != 1);
       
-      tcsetattr(0, TCSANOW, &localeBackupedTermioAttributes);
-      
+      pop_status();
       return character;
     }
     
     bool key_available() {
       if (peek_character != -1)
         return true;
-        
-      termios termioAttributes;
-      tcgetattr(0, &termioAttributes);
-      termios localeBackupedTermioAttributes = termioAttributes;
-      termioAttributes.c_lflag &= ~(ICANON | ECHO);
-      termioAttributes.c_cc[VTIME] = 0;
-      termioAttributes.c_cc[VMIN] = 0;
-      tcsetattr(0, TCSANOW, &termioAttributes);
+      
+      push_status();
+      echo(false);
+      icanon(false);
       
       if (read(0, &peek_character, 1) == -1) {
-        tcsetattr(0, TCSANOW, &localeBackupedTermioAttributes);
+        pop_status();
         return false;
       }
       
-      tcsetattr(0, TCSANOW, &localeBackupedTermioAttributes);
+      pop_status();
       return peek_character != -1;
     }
     
     static bool is_ansi_supported() {
-      static std::string terminal = getenv("TERM") == nullptr ? "" : getenv("TERM");
+      static auto terminal = std::string {getenv("TERM") == nullptr ? "" : getenv("TERM")};
       return isatty(fileno(stdout)) && (terminal == "xterm" || terminal == "xterm-color" || terminal == "xterm-256color" || terminal == "screen" || terminal == "screen-256color" || terminal == "linux" || terminal == "cygwin");
     }
     
     static terminal terminal_;
     
   private:
+    terminal() {
+      push_status();
+      echo(false);
+      icanon(true);
+    }
+    ~terminal() {
+      pop_status();
+      reset_colors_and_attributes();
+    }
+    
+    void reset_colors_and_attributes() {
+      if (is_ansi_supported()) std::cout << "\x1b]0;\x7" << std::flush;
+    }
+    
+    termios push_status() {
+      auto status = termios {};
+      tcgetattr(0, &status);
+      statuses.push_back(status);
+      return status;
+    }
+    
+    termios pop_status() {
+      if (statuses.size() == 0) {
+        auto status = termios {};
+        tcgetattr(0, &status);
+        return status;
+      }
+      auto status = statuses.back();
+      statuses.pop_back();
+      tcsetattr(0, TCSANOW, &status);
+      return status;
+    }
+    
+    
     int_least8_t peek_character {-1};
-    termios backupedTermioAttributes;
+    std::vector<termios> statuses;
   };
   
   terminal terminal::terminal_;
@@ -673,6 +702,10 @@ bool console::cursor_visible(bool visible) {
   ::cursor_visible = visible;
   if (terminal::is_ansi_supported()) std::cout << (::cursor_visible ? "\x1b[?25h" : "\x1b[?25l") << std::flush;
   return true;
+}
+
+bool console::echo(bool on) {
+  return terminal::terminal_.echo(on);
 }
 
 int_least32_t console::foreground_color() {
