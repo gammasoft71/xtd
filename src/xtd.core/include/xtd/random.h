@@ -6,6 +6,7 @@
 #include "argument_out_of_range_exception.h"
 #include "core_export.h"
 #include "environment.h"
+#include "math.h"
 #include "object.h"
 #include "optional.h"
 #include <limits>
@@ -116,9 +117,18 @@ namespace xtd {
     value_t next(value_t min_value, value_t max_value) const {
       if (min_value > max_value) throw argument_out_of_range_exception {csf_};
       if (min_value == max_value) return min_value;
-      return min_value + static_cast<value_t>(std::round(sample() * std::numeric_limits<value_t>::max())) % ((max_value - 1) - min_value + 1);
+      return min_value + static_cast<value_t>(math::round(sample() * std::numeric_limits<value_t>::max())) % ((max_value - 1) - min_value + 1);
     }
     
+    /// @cond
+    double next(decimal max_value) const;
+    double next(double max_value) const;
+    float next(float max_value) const;
+    double next(decimal min_value, decimal max_value) const;
+    double next(double min_value, double max_value) const;
+    float next(float min_value, float max_value) const;
+    /// @endcond
+
     /// @brief Fills the elements of a specified array of bytes with random numbers.
     /// @param buffer An array of bytes to contain random numbers.
     /// @remarks Each element of the array of bytes is set to a random number greater than or equal to zero, and less than or equal to std::numeric_limits<xtd::byte>::max().
