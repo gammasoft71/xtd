@@ -1,4 +1,5 @@
 #include "../../../include/xtd/forms/trace_form_base.h"
+#include <xtd/lock>
 
 using namespace xtd;
 using namespace xtd::drawing;
@@ -88,11 +89,17 @@ void trace_form_base::on_fore_color_changed(const event_args& e) {
 }
 
 void trace_form_base::write(const ustring& trace) {
-  if (need_header()) write_header();
-  data_->text.append_text(trace);
+  auto writer = [self = this, trace=trace] {
+    auto lck = lock {*self};
+    if (self->need_header()) self->write_header();
+    self->data_->text.append_text(trace);
+  };
+  if (invoke_required()) begin_invoke(writer);
+  else writer();
 }
 
 void trace_form_base::write_line(const ustring& trace) {
+  auto lck = lock {*this};
   write(trace);
   write(environment::new_line());
   need_header(true);
