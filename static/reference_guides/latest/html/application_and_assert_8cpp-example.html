@@ -159,12 +159,12 @@ $(function() {
 <div class="line"><span class="keyword">private</span>:</div>
 <div class="line">  <span class="keywordtype">void</span> generate_assert() {</div>
 <div class="line">    <span class="keyword">auto</span> index = 0;</div>
-<div class="line">    <a id="a1" name="a1"></a><a class="code hl_define" href="group__debug.html#gad1e9d87aeb065b1eec47e92a49fd01e9">assert_</a>(index &gt; 0, <span class="stringliteral">&quot;Index must be greather than 0&quot;</span>);</div>
+<div class="line">    <a id="a1" name="a1"></a><a class="code hl_define" href="group__debug.html#gad1e9d87aeb065b1eec47e92a49fd01e9">assert_</a>(index &gt; 0, <span class="stringliteral">&quot;Out of range&quot;</span>, <span class="stringliteral">&quot;Index must be greather than 0&quot;</span>);</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="keywordtype">void</span> generate_debug_cassert() {</div>
 <div class="line">    <span class="keyword">auto</span> index = 0;</div>
-<div class="line">    debug::cassert_(index &gt; 0, <span class="stringliteral">&quot;Index must be greather than 0&quot;</span>);</div>
+<div class="line">    debug::cassert_(index &gt; 0, <span class="stringliteral">&quot;Out of range&quot;</span>, <span class="stringliteral">&quot;Index must be greather than 0&quot;</span>);</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="keywordtype">void</span> generate_debug_break() {</div>
@@ -195,7 +195,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 1 2023 22:33:48 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Oct 8 2023 08:41:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -172,6 +172,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1debugstreambuf.html">xtd::debugstreambuf</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides an std::stringbuf for <a class="el" href="classxtd_1_1diagnostics_1_1debug.html" title="Provides a set of methods and properties that help you debug the execution of your code....">xtd::diagnostics::debug</a>.  <a href="classxtd_1_1debugstreambuf.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html">xtd::delegate&lt; result_t(arguments_t...)&gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a delegate, which is a data structure that refers to a static method or to a class instance &amp;&amp; an instance method of that class.  <a href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1diagnostics_1_1boolean__switch.html">xtd::diagnostics::boolean_switch</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a simple on/off switch that controls debugging and tracing output.  <a href="classxtd_1_1diagnostics_1_1boolean__switch.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -782,9 +785,9 @@ Typedefs</h2></td></tr>
 <tr class="memitem:ga53c721aac682a7ccf19ee17d92280e31"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga53c721aac682a7ccf19ee17d92280e31">xtd::action</a> = delegate&lt; void(arguments_t...)&gt;</td></tr>
 <tr class="memdesc:ga53c721aac682a7ccf19ee17d92280e31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a xtd::delegate that has variable parameters and does not return a value.  <br /></td></tr>
 <tr class="separator:ga53c721aac682a7ccf19ee17d92280e31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7852347e0e6becdc6c64eec40762ddfb"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga7852347e0e6becdc6c64eec40762ddfb">xtd::async_callback</a> = delegate&lt; void(std::shared_ptr&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt; ar)&gt;</td></tr>
-<tr class="memdesc:ga7852347e0e6becdc6c64eec40762ddfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">References a method to be called when a corresponding asynchronous operation completes.  <br /></td></tr>
-<tr class="separator:ga7852347e0e6becdc6c64eec40762ddfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3f4dbb1c27671728ff930fde8171cd5c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga3f4dbb1c27671728ff930fde8171cd5c">xtd::async_callback</a> = delegate&lt; void(const <a class="el" href="classxtd_1_1iasync__result.html">iasync_result</a> &amp;ar)&gt;</td></tr>
+<tr class="memdesc:ga3f4dbb1c27671728ff930fde8171cd5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">References a method to be called when a corresponding asynchronous operation completes.  <br /></td></tr>
+<tr class="separator:ga3f4dbb1c27671728ff930fde8171cd5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1f5f8c3f8cde130d9b2c4d79b15542bf"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga1f5f8c3f8cde130d9b2c4d79b15542bf">xtd::const_object_ref</a> = std::reference_wrapper&lt; const <a class="el" href="classxtd_1_1object.html">object</a> &gt;</td></tr>
 <tr class="memdesc:ga1f5f8c3f8cde130d9b2c4d79b15542bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents an object reference.  <br /></td></tr>
 <tr class="separator:ga1f5f8c3f8cde130d9b2c4d79b15542bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -796,6 +799,9 @@ Typedefs</h2></td></tr>
 <tr class="memitem:ga655ac2d710f5daaa327ac82c8c235de9"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga655ac2d710f5daaa327ac82c8c235de9">xtd::func</a> = delegate&lt; result_t(arguments_t...)&gt;</td></tr>
 <tr class="memdesc:ga655ac2d710f5daaa327ac82c8c235de9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a delegate that has variables parameters and returns a value of the type specified by the result_t type.  <br /></td></tr>
 <tr class="separator:ga655ac2d710f5daaa327ac82c8c235de9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga69b3c52c152151b15afd995946ea4bd7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga69b3c52c152151b15afd995946ea4bd7">xtd::iasync_result_ptr</a> = std::shared_ptr&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt;</td></tr>
+<tr class="memdesc:ga69b3c52c152151b15afd995946ea4bd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the status of an asynchronous operation.  <br /></td></tr>
+<tr class="separator:ga69b3c52c152151b15afd995946ea4bd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gafaea93fb18a5eba4adfd23c9bd264e73"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gafaea93fb18a5eba4adfd23c9bd264e73">xtd::object_ref</a> = std::reference_wrapper&lt; <a class="el" href="classxtd_1_1object.html">object</a> &gt;</td></tr>
 <tr class="memdesc:gafaea93fb18a5eba4adfd23c9bd264e73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents an object reference.  <br /></td></tr>
 <tr class="separator:gafaea93fb18a5eba4adfd23c9bd264e73"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -6631,14 +6637,14 @@ template&lt;typename... arguments_t&gt; </div>
 
 </div>
 </div>
-<a id="ga7852347e0e6becdc6c64eec40762ddfb" name="ga7852347e0e6becdc6c64eec40762ddfb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga7852347e0e6becdc6c64eec40762ddfb">&#9670;&#160;</a></span>async_callback</h2>
+<a id="ga3f4dbb1c27671728ff930fde8171cd5c" name="ga3f4dbb1c27671728ff930fde8171cd5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3f4dbb1c27671728ff930fde8171cd5c">&#9670;&#160;</a></span>async_callback</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="group__xtd__core.html#ga7852347e0e6becdc6c64eec40762ddfb">xtd::async_callback</a> = typedef delegate&lt;void(std::shared_ptr&lt;<a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a>&gt; ar)&gt;</td>
+          <td class="memname">using <a class="el" href="group__xtd__core.html#ga3f4dbb1c27671728ff930fde8171cd5c">xtd::async_callback</a> = typedef delegate&lt;void(const <a class="el" href="classxtd_1_1iasync__result.html">iasync_result</a>&amp; ar)&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -6723,6 +6729,26 @@ template&lt;typename result_t , typename... arguments_t&gt; </div>
 <p><code>#include &lt;<a class="el" href="func_8h.html">xtd.core/include/xtd/func.h</a>&gt;</code></p>
 
 <p>Represents a delegate that has variables parameters and returns a value of the type specified by the result_t type. </p>
+<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core </dd></dl>
+
+</div>
+</div>
+<a id="ga69b3c52c152151b15afd995946ea4bd7" name="ga69b3c52c152151b15afd995946ea4bd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga69b3c52c152151b15afd995946ea4bd7">&#9670;&#160;</a></span>iasync_result_ptr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="group__xtd__core.html#ga69b3c52c152151b15afd995946ea4bd7">xtd::iasync_result_ptr</a> = typedef std::shared_ptr&lt;<a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="iasync__result__ptr_8h.html">xtd.core/include/xtd/iasync_result_ptr.h</a>&gt;</code></p>
+
+<p>Represents the status of an asynchronous operation. </p>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core </dd></dl>
 
@@ -60034,7 +60060,7 @@ template&lt;typename ... args_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 1 2023 22:33:53 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Oct 8 2023 08:41:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

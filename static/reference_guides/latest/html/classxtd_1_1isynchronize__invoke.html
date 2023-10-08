@@ -129,7 +129,7 @@ Inheritance diagram for xtd::isynchronize_invoke:</div>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1isynchronize__invoke.html" title="Provides a way to synchronously or asynchronously execute a delegate.">xtd::isynchronize_invoke</a> interface provides synchronous and asynchronous communication between objects about the occurrence of an event. Objects that implement this interface can receive notification that an event has occurred, and they can respond to queries about the event. In this way, clients can ensure that one request has been processed before they submit a subsequent request that depends on completion of the first. </dd>
 <dd>
 The <a class="el" href="classxtd_1_1isynchronize__invoke.html" title="Provides a way to synchronously or asynchronously execute a delegate.">xtd::isynchronize_invoke</a> class provides two ways to invoke a process:<ol type="1">
-<li>Asynchronously, by using the <a class="el" href="classxtd_1_1isynchronize__invoke.html#a09e447115193aa9c9f4790ef10de2025" title="Asynchronously executes the delegate on the thread that created this object.">xtd::isynchronize_invoke::begin_invoke</a> method. <a class="el" href="classxtd_1_1isynchronize__invoke.html#a09e447115193aa9c9f4790ef10de2025" title="Asynchronously executes the delegate on the thread that created this object.">xtd::isynchronize_invoke::begin_invoke</a> starts a process and then returns immediately. Use <a class="el" href="classxtd_1_1isynchronize__invoke.html#a4f45baaf14ae2acf5c94ed60fbe3a429" title="Waits until the process started by calling xtd::isynchronize_invoke::begin_invoke completes,...">xtd::isynchronize_invoke::end_invoke</a> to wait until the process started by <a class="el" href="classxtd_1_1isynchronize__invoke.html#a09e447115193aa9c9f4790ef10de2025" title="Asynchronously executes the delegate on the thread that created this object.">xtd::isynchronize_invoke::begin_invoke</a> completes.</li>
+<li>Asynchronously, by using the <a class="el" href="classxtd_1_1isynchronize__invoke.html#a838b735a2f4c5ebc3e398187c0e97739" title="Asynchronously executes the delegate on the thread that created this object.">xtd::isynchronize_invoke::begin_invoke</a> method. <a class="el" href="classxtd_1_1isynchronize__invoke.html#a838b735a2f4c5ebc3e398187c0e97739" title="Asynchronously executes the delegate on the thread that created this object.">xtd::isynchronize_invoke::begin_invoke</a> starts a process and then returns immediately. Use <a class="el" href="classxtd_1_1isynchronize__invoke.html#a82302cb21556a295e5bdf2b2406f6bd2" title="Waits until the process started by calling xtd::isynchronize_invoke::begin_invoke completes,...">xtd::isynchronize_invoke::end_invoke</a> to wait until the process started by <a class="el" href="classxtd_1_1isynchronize__invoke.html#a838b735a2f4c5ebc3e398187c0e97739" title="Asynchronously executes the delegate on the thread that created this object.">xtd::isynchronize_invoke::begin_invoke</a> completes.</li>
 <li>Synchronously, by using the <a class="el" href="classxtd_1_1isynchronize__invoke.html#a50238e3a0f085168e7309e52efc2c28f" title="Synchronously executes the delegate on the thread that created this object and marshals the call to t...">xtd::isynchronize_invoke::invoke</a> method. <a class="el" href="classxtd_1_1isynchronize__invoke.html#a50238e3a0f085168e7309e52efc2c28f" title="Synchronously executes the delegate on the thread that created this object and marshals the call to t...">xtd::isynchronize_invoke::invoke</a> starts a process, waits until it completes, and then returns. Use <a class="el" href="classxtd_1_1isynchronize__invoke.html#a50238e3a0f085168e7309e52efc2c28f" title="Synchronously executes the delegate on the thread that created this object and marshals the call to t...">xtd::isynchronize_invoke::invoke</a> when the control's main thread is different from the calling thread to marshal the call to the proper thread. </li>
 </ol>
 </dd></dl>
@@ -140,15 +140,15 @@ The <a class="el" href="classxtd_1_1isynchronize__invoke.html" title="Provides a
 <tr class="separator:a5434e03732b52c1b9b9861e1571a56a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Methods</h2></td></tr>
-<tr class="memitem:a09e447115193aa9c9f4790ef10de2025"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1isynchronize__invoke.html#a09e447115193aa9c9f4790ef10de2025">begin_invoke</a> (delegate&lt; void()&gt; method)=0</td></tr>
-<tr class="memdesc:a09e447115193aa9c9f4790ef10de2025"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asynchronously executes the delegate on the thread that created this object.  <br /></td></tr>
-<tr class="separator:a09e447115193aa9c9f4790ef10de2025"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48e0ca34517e53a55940b246879567f8"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1isynchronize__invoke.html#a48e0ca34517e53a55940b246879567f8">begin_invoke</a> (delegate&lt; void(std::vector&lt; std::any &gt;)&gt; value, const std::vector&lt; std::any &gt; &amp;args)=0</td></tr>
-<tr class="memdesc:a48e0ca34517e53a55940b246879567f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asynchronously executes the delegate on the thread that created this object.  <br /></td></tr>
-<tr class="separator:a48e0ca34517e53a55940b246879567f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f45baaf14ae2acf5c94ed60fbe3a429"><td class="memItemLeft" align="right" valign="top">virtual std::optional&lt; <a class="el" href="group__xtd__core.html#gafaea93fb18a5eba4adfd23c9bd264e73">object_ref</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1isynchronize__invoke.html#a4f45baaf14ae2acf5c94ed60fbe3a429">end_invoke</a> (std::shared_ptr&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt; async)=0</td></tr>
-<tr class="memdesc:a4f45baaf14ae2acf5c94ed60fbe3a429"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits until the process started by calling <a class="el" href="classxtd_1_1isynchronize__invoke.html#a09e447115193aa9c9f4790ef10de2025" title="Asynchronously executes the delegate on the thread that created this object.">xtd::isynchronize_invoke::begin_invoke</a> completes, and then returns the value generated by the process.  <br /></td></tr>
-<tr class="separator:a4f45baaf14ae2acf5c94ed60fbe3a429"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a838b735a2f4c5ebc3e398187c0e97739"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__xtd__core.html#ga69b3c52c152151b15afd995946ea4bd7">xtd::iasync_result_ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1isynchronize__invoke.html#a838b735a2f4c5ebc3e398187c0e97739">begin_invoke</a> (delegate&lt; void()&gt; method)=0</td></tr>
+<tr class="memdesc:a838b735a2f4c5ebc3e398187c0e97739"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asynchronously executes the delegate on the thread that created this object.  <br /></td></tr>
+<tr class="separator:a838b735a2f4c5ebc3e398187c0e97739"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93a4f8c8bfa98639cb94dd696ff785b0"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__xtd__core.html#ga69b3c52c152151b15afd995946ea4bd7">xtd::iasync_result_ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1isynchronize__invoke.html#a93a4f8c8bfa98639cb94dd696ff785b0">begin_invoke</a> (delegate&lt; void(std::vector&lt; std::any &gt;)&gt; value, const std::vector&lt; std::any &gt; &amp;args)=0</td></tr>
+<tr class="memdesc:a93a4f8c8bfa98639cb94dd696ff785b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asynchronously executes the delegate on the thread that created this object.  <br /></td></tr>
+<tr class="separator:a93a4f8c8bfa98639cb94dd696ff785b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82302cb21556a295e5bdf2b2406f6bd2"><td class="memItemLeft" align="right" valign="top">virtual std::optional&lt; <a class="el" href="group__xtd__core.html#gafaea93fb18a5eba4adfd23c9bd264e73">object_ref</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1isynchronize__invoke.html#a82302cb21556a295e5bdf2b2406f6bd2">end_invoke</a> (<a class="el" href="group__xtd__core.html#ga69b3c52c152151b15afd995946ea4bd7">xtd::iasync_result_ptr</a> async)=0</td></tr>
+<tr class="memdesc:a82302cb21556a295e5bdf2b2406f6bd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits until the process started by calling <a class="el" href="classxtd_1_1isynchronize__invoke.html#a838b735a2f4c5ebc3e398187c0e97739" title="Asynchronously executes the delegate on the thread that created this object.">xtd::isynchronize_invoke::begin_invoke</a> completes, and then returns the value generated by the process.  <br /></td></tr>
+<tr class="separator:a82302cb21556a295e5bdf2b2406f6bd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a50238e3a0f085168e7309e52efc2c28f"><td class="memItemLeft" align="right" valign="top">virtual std::optional&lt; <a class="el" href="group__xtd__core.html#gafaea93fb18a5eba4adfd23c9bd264e73">object_ref</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1isynchronize__invoke.html#a50238e3a0f085168e7309e52efc2c28f">invoke</a> (delegate&lt; void()&gt; value)=0</td></tr>
 <tr class="memdesc:a50238e3a0f085168e7309e52efc2c28f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Synchronously executes the delegate on the thread that created this object and marshals the call to the creating thread.  <br /></td></tr>
 <tr class="separator:a50238e3a0f085168e7309e52efc2c28f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -160,8 +160,8 @@ The <a class="el" href="classxtd_1_1isynchronize__invoke.html" title="Provides a
 <tr class="separator:a18a0fcfb180a70a109cadd842f86e17f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a09e447115193aa9c9f4790ef10de2025" name="a09e447115193aa9c9f4790ef10de2025"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a09e447115193aa9c9f4790ef10de2025">&#9670;&#160;</a></span>begin_invoke() <span class="overload">[1/2]</span></h2>
+<a id="a838b735a2f4c5ebc3e398187c0e97739" name="a838b735a2f4c5ebc3e398187c0e97739"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a838b735a2f4c5ebc3e398187c0e97739">&#9670;&#160;</a></span>begin_invoke() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -170,7 +170,7 @@ The <a class="el" href="classxtd_1_1isynchronize__invoke.html" title="Provides a
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual std::shared_ptr&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt; xtd::isynchronize_invoke::begin_invoke </td>
+          <td class="memname">virtual <a class="el" href="group__xtd__core.html#ga69b3c52c152151b15afd995946ea4bd7">xtd::iasync_result_ptr</a> xtd::isynchronize_invoke::begin_invoke </td>
           <td>(</td>
           <td class="paramtype">delegate&lt; void()&gt;&#160;</td>
           <td class="paramname"><em>method</em></td><td>)</td>
@@ -192,16 +192,16 @@ The <a class="el" href="classxtd_1_1isynchronize__invoke.html" title="Provides a
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classxtd_1_1iasync__result.html" title="Represents the status of an asynchronous operation.">xtd::iasync_result</a> interface that represents the asynchronous operation started by calling this method. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The method delegate is executed on the thread that created the object, instead of the thread on which <a class="el" href="classxtd_1_1isynchronize__invoke.html#a09e447115193aa9c9f4790ef10de2025" title="Asynchronously executes the delegate on the thread that created this object.">xtd::isynchronize_invoke::begin_invoke</a> was called. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>The method delegate is executed on the thread that created the object, instead of the thread on which <a class="el" href="classxtd_1_1isynchronize__invoke.html#a838b735a2f4c5ebc3e398187c0e97739" title="Asynchronously executes the delegate on the thread that created this object.">xtd::isynchronize_invoke::begin_invoke</a> was called. </dd>
 <dd>
-The delegate is called asynchronously, and this method returns immediately. You can call this method from any thread. If you need the return value from a process started with this method, call <a class="el" href="classxtd_1_1isynchronize__invoke.html#a4f45baaf14ae2acf5c94ed60fbe3a429" title="Waits until the process started by calling xtd::isynchronize_invoke::begin_invoke completes,...">xtd::isynchronize_invoke::end_invoke</a> to get the value. </dd></dl>
+The delegate is called asynchronously, and this method returns immediately. You can call this method from any thread. If you need the return value from a process started with this method, call <a class="el" href="classxtd_1_1isynchronize__invoke.html#a82302cb21556a295e5bdf2b2406f6bd2" title="Waits until the process started by calling xtd::isynchronize_invoke::begin_invoke completes,...">xtd::isynchronize_invoke::end_invoke</a> to get the value. </dd></dl>
 
-<p>Implemented in <a class="el" href="classxtd_1_1forms_1_1control.html#afcd8f50a5dc204d0240db3f06be0b4fa">xtd::forms::control</a>, and <a class="el" href="classxtd_1_1forms_1_1control.html#a09e447115193aa9c9f4790ef10de2025">xtd::forms::control</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1forms_1_1control.html#a6ecbf0635176dc4d026dc5dc7a95c720">xtd::forms::control</a>, and <a class="el" href="classxtd_1_1forms_1_1control.html#a838b735a2f4c5ebc3e398187c0e97739">xtd::forms::control</a>.</p>
 
 </div>
 </div>
-<a id="a48e0ca34517e53a55940b246879567f8" name="a48e0ca34517e53a55940b246879567f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a48e0ca34517e53a55940b246879567f8">&#9670;&#160;</a></span>begin_invoke() <span class="overload">[2/2]</span></h2>
+<a id="a93a4f8c8bfa98639cb94dd696ff785b0" name="a93a4f8c8bfa98639cb94dd696ff785b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93a4f8c8bfa98639cb94dd696ff785b0">&#9670;&#160;</a></span>begin_invoke() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -210,7 +210,7 @@ The delegate is called asynchronously, and this method returns immediately. You 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual std::shared_ptr&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt; xtd::isynchronize_invoke::begin_invoke </td>
+          <td class="memname">virtual <a class="el" href="group__xtd__core.html#ga69b3c52c152151b15afd995946ea4bd7">xtd::iasync_result_ptr</a> xtd::isynchronize_invoke::begin_invoke </td>
           <td>(</td>
           <td class="paramtype">delegate&lt; void(std::vector&lt; std::any &gt;)&gt;&#160;</td>
           <td class="paramname"><em>value</em>, </td>
@@ -243,16 +243,16 @@ The delegate is called asynchronously, and this method returns immediately. You 
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classxtd_1_1iasync__result.html" title="Represents the status of an asynchronous operation.">xtd::iasync_result</a> interface that represents the asynchronous operation started by calling this method. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The method delegate is executed on the thread that created the object, instead of the thread on which <a class="el" href="classxtd_1_1isynchronize__invoke.html#a09e447115193aa9c9f4790ef10de2025" title="Asynchronously executes the delegate on the thread that created this object.">xtd::isynchronize_invoke::begin_invoke</a> was called. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>The method delegate is executed on the thread that created the object, instead of the thread on which <a class="el" href="classxtd_1_1isynchronize__invoke.html#a838b735a2f4c5ebc3e398187c0e97739" title="Asynchronously executes the delegate on the thread that created this object.">xtd::isynchronize_invoke::begin_invoke</a> was called. </dd>
 <dd>
-The delegate is called asynchronously, and this method returns immediately. You can call this method from any thread. If you need the return value from a process started with this method, call <a class="el" href="classxtd_1_1isynchronize__invoke.html#a4f45baaf14ae2acf5c94ed60fbe3a429" title="Waits until the process started by calling xtd::isynchronize_invoke::begin_invoke completes,...">xtd::isynchronize_invoke::end_invoke</a> to get the value. </dd></dl>
+The delegate is called asynchronously, and this method returns immediately. You can call this method from any thread. If you need the return value from a process started with this method, call <a class="el" href="classxtd_1_1isynchronize__invoke.html#a82302cb21556a295e5bdf2b2406f6bd2" title="Waits until the process started by calling xtd::isynchronize_invoke::begin_invoke completes,...">xtd::isynchronize_invoke::end_invoke</a> to get the value. </dd></dl>
 
-<p>Implemented in <a class="el" href="classxtd_1_1forms_1_1control.html#a43595d21676848e1db1ba872d4c27ddb">xtd::forms::control</a>, and <a class="el" href="classxtd_1_1forms_1_1control.html#a48e0ca34517e53a55940b246879567f8">xtd::forms::control</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1forms_1_1control.html#ab6bf2428e2f4b2aef4509ee6599c2a8d">xtd::forms::control</a>, and <a class="el" href="classxtd_1_1forms_1_1control.html#a93a4f8c8bfa98639cb94dd696ff785b0">xtd::forms::control</a>.</p>
 
 </div>
 </div>
-<a id="a4f45baaf14ae2acf5c94ed60fbe3a429" name="a4f45baaf14ae2acf5c94ed60fbe3a429"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4f45baaf14ae2acf5c94ed60fbe3a429">&#9670;&#160;</a></span>end_invoke()</h2>
+<a id="a82302cb21556a295e5bdf2b2406f6bd2" name="a82302cb21556a295e5bdf2b2406f6bd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82302cb21556a295e5bdf2b2406f6bd2">&#9670;&#160;</a></span>end_invoke()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -263,7 +263,7 @@ The delegate is called asynchronously, and this method returns immediately. You 
         <tr>
           <td class="memname">virtual std::optional&lt; <a class="el" href="group__xtd__core.html#gafaea93fb18a5eba4adfd23c9bd264e73">object_ref</a> &gt; xtd::isynchronize_invoke::end_invoke </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="group__xtd__core.html#ga69b3c52c152151b15afd995946ea4bd7">xtd::iasync_result_ptr</a>&#160;</td>
           <td class="paramname"><em>async</em></td><td>)</td>
           <td></td>
         </tr>
@@ -275,13 +275,13 @@ The delegate is called asynchronously, and this method returns immediately. You 
 </table>
 </div><div class="memdoc">
 
-<p>Waits until the process started by calling <a class="el" href="classxtd_1_1isynchronize__invoke.html#a09e447115193aa9c9f4790ef10de2025" title="Asynchronously executes the delegate on the thread that created this object.">xtd::isynchronize_invoke::begin_invoke</a> completes, and then returns the value generated by the process. </p>
-<dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classxtd_1_1iasync__result.html" title="Represents the status of an asynchronous operation.">xtd::iasync_result</a> interface that represents the asynchronous operation started by calling <a class="el" href="classxtd_1_1isynchronize__invoke.html#a09e447115193aa9c9f4790ef10de2025" title="Asynchronously executes the delegate on the thread that created this object.">xtd::isynchronize_invoke::begin_invoke</a>. </dd>
+<p>Waits until the process started by calling <a class="el" href="classxtd_1_1isynchronize__invoke.html#a838b735a2f4c5ebc3e398187c0e97739" title="Asynchronously executes the delegate on the thread that created this object.">xtd::isynchronize_invoke::begin_invoke</a> completes, and then returns the value generated by the process. </p>
+<dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classxtd_1_1iasync__result.html" title="Represents the status of an asynchronous operation.">xtd::iasync_result</a> interface that represents the asynchronous operation started by calling <a class="el" href="classxtd_1_1isynchronize__invoke.html#a838b735a2f4c5ebc3e398187c0e97739" title="Asynchronously executes the delegate on the thread that created this object.">xtd::isynchronize_invoke::begin_invoke</a>. </dd>
 <dd>
 An <a class="el" href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....">xtd::object</a> that represents the return value generated by the asynchronous operation. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This method gets the return value of the asynchronous operation represented by the <a class="el" href="classxtd_1_1iasync__result.html" title="Represents the status of an asynchronous operation.">xtd::iasync_result</a> passed by this interface. If the asynchronous operation has not completed, this method will wait until the result is available. </dd></dl>
 
-<p>Implemented in <a class="el" href="classxtd_1_1forms_1_1control.html#add5bb3f89e8f1214ddb9432fa024f6ac">xtd::forms::control</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1forms_1_1control.html#a42df06621530c12e225672b75e802325">xtd::forms::control</a>.</p>
 
 </div>
 </div>
@@ -317,7 +317,7 @@ An <a class="el" href="classxtd_1_1object.html" title="Supports all classes in t
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....">xtd::object</a> that represents the return value from the delegate being invoked, or null if the delegate has no return value. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Unlike <a class="el" href="classxtd_1_1isynchronize__invoke.html#a09e447115193aa9c9f4790ef10de2025" title="Asynchronously executes the delegate on the thread that created this object.">xtd::isynchronize_invoke::begin_invoke</a>, this method operates synchronously, that is, it waits until the process completes before returning. Exceptions raised during the call are propagated back to the caller. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>Unlike <a class="el" href="classxtd_1_1isynchronize__invoke.html#a838b735a2f4c5ebc3e398187c0e97739" title="Asynchronously executes the delegate on the thread that created this object.">xtd::isynchronize_invoke::begin_invoke</a>, this method operates synchronously, that is, it waits until the process completes before returning. Exceptions raised during the call are propagated back to the caller. </dd>
 <dd>
 Use this method when calling a method from a different thread to marshal the call to the proper thread. </dd></dl>
 
@@ -368,7 +368,7 @@ Use this method when calling a method from a different thread to marshal the cal
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....">xtd::object</a> that represents the return value from the delegate being invoked, or null if the delegate has no return value. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Unlike <a class="el" href="classxtd_1_1isynchronize__invoke.html#a09e447115193aa9c9f4790ef10de2025" title="Asynchronously executes the delegate on the thread that created this object.">xtd::isynchronize_invoke::begin_invoke</a>, this method operates synchronously, that is, it waits until the process completes before returning. Exceptions raised during the call are propagated back to the caller. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>Unlike <a class="el" href="classxtd_1_1isynchronize__invoke.html#a838b735a2f4c5ebc3e398187c0e97739" title="Asynchronously executes the delegate on the thread that created this object.">xtd::isynchronize_invoke::begin_invoke</a>, this method operates synchronously, that is, it waits until the process completes before returning. Exceptions raised during the call are propagated back to the caller. </dd>
 <dd>
 Use this method when calling a method from a different thread to marshal the call to the proper thread. </dd></dl>
 
@@ -419,7 +419,7 @@ Use this method when calling a method from a different thread to marshal the cal
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....">xtd::object</a> that represents the return value from the delegate being invoked, or null if the delegate has no return value. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Unlike <a class="el" href="classxtd_1_1isynchronize__invoke.html#a09e447115193aa9c9f4790ef10de2025" title="Asynchronously executes the delegate on the thread that created this object.">xtd::isynchronize_invoke::begin_invoke</a>, this method operates synchronously, that is, it waits until the process completes before returning. Exceptions raised during the call are propagated back to the caller. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>Unlike <a class="el" href="classxtd_1_1isynchronize__invoke.html#a838b735a2f4c5ebc3e398187c0e97739" title="Asynchronously executes the delegate on the thread that created this object.">xtd::isynchronize_invoke::begin_invoke</a>, this method operates synchronously, that is, it waits until the process completes before returning. Exceptions raised during the call are propagated back to the caller. </dd>
 <dd>
 Use this method when calling a method from a different thread to marshal the call to the proper thread. </dd></dl>
 
@@ -465,7 +465,7 @@ Use this method when calling a method from a different thread to marshal the cal
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 1 2023 22:33:53 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Oct 8 2023 08:41:42 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

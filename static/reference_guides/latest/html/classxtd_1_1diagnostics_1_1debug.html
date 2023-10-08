@@ -100,7 +100,7 @@ Inheritance diagram for xtd::diagnostics::debug:</div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
 <div class="textblock"><p>Provides a set of methods and properties that help you debug the execution of your code. This class cannot be inherited. </p>
 <div class="fragment"><div class="line"><span class="keyword">class </span><a class="code hl_define" href="group__keywords.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a> <a class="code hl_class" href="classxtd_1_1diagnostics_1_1debug.html">debug</a> <a class="code hl_define" href="group__keywords.html#ga28796443ec37b938df7072c79595e3f6">static_</a></div>
-<div class="ttc" id="aclassxtd_1_1diagnostics_1_1debug_html"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1debug.html">xtd::diagnostics::debug</a></div><div class="ttdoc">Provides a set of methods and properties that help you debug the execution of your code....</div><div class="ttdef"><b>Definition</b> debug.h:56</div></div>
+<div class="ttc" id="aclassxtd_1_1diagnostics_1_1debug_html"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1debug.html">xtd::diagnostics::debug</a></div><div class="ttdoc">Provides a set of methods and properties that help you debug the execution of your code....</div><div class="ttdef"><b>Definition</b> debug.h:57</div></div>
 <div class="ttc" id="agroup__keywords_html_ga28796443ec37b938df7072c79595e3f6"><div class="ttname"><a href="group__keywords.html#ga28796443ec37b938df7072c79595e3f6">static_</a></div><div class="ttdeci">#define static_</div><div class="ttdoc">This keyword is use to represent a static object. A static object can't be instantiated (constructors...</div><div class="ttdef"><b>Definition</b> static.h:37</div></div>
 <div class="ttc" id="agroup__keywords_html_gabc8f9c2aa36f6cee610a37f0e8227fd1"><div class="ttname"><a href="group__keywords.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a></div><div class="ttdeci">#define core_export_</div><div class="ttdoc">Define shared library export.</div><div class="ttdef"><b>Definition</b> core_export.h:13</div></div>
 </div><!-- fragment --> <dl class="section user"><dt>Inheritance</dt><dd><a class="el" href="classxtd_1_1static__object.html" title="Represent a static object. A static class can&#39;t be instantiated (constructors are deleted).">xtd::static_object</a> → <a class="el" href="classxtd_1_1diagnostics_1_1debug.html" title="Provides a set of methods and properties that help you debug the execution of your code....">xtd::diagnostics::debug</a> </dd></dl>
@@ -154,7 +154,7 @@ To activate your code if DEBUG is defined, you must enclose calls to the methods
 <div class="ttc" id="aclassxtd_1_1console_html_a923837ac84baf01726703e0474ca4888"><div class="ttname"><a href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">xtd::console::out</a></div><div class="ttdeci">static std::ostream out</div><div class="ttdoc">Gets the standard output stream. A std::basic_ostream&lt;char_t&gt; that represents the standard output str...</div><div class="ttdef"><b>Definition</b> console.h:49</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1debug_html_a1e85e29f94c54388d35a9b24d16a52c1"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1debug.html#a1e85e29f94c54388d35a9b24d16a52c1">xtd::diagnostics::debug::indent</a></div><div class="ttdeci">static void indent() noexcept</div><div class="ttdoc">Increases the current indent_level by one.</div></div>
-<div class="ttc" id="aclassxtd_1_1diagnostics_1_1debug_html_a2656cc128804128258ecad60ecf1cbd1"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1debug.html#a2656cc128804128258ecad60ecf1cbd1">xtd::diagnostics::debug::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes a line terminator to the trace listeners in the listeners collection.</div><div class="ttdef"><b>Definition</b> debug.h:358</div></div>
+<div class="ttc" id="aclassxtd_1_1diagnostics_1_1debug_html_a2656cc128804128258ecad60ecf1cbd1"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1debug.html#a2656cc128804128258ecad60ecf1cbd1">xtd::diagnostics::debug::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes a line terminator to the trace listeners in the listeners collection.</div><div class="ttdef"><b>Definition</b> debug.h:370</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1debug_html_a483a067a6c0bb8f9bf92c18d65adffda"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1debug.html#a483a067a6c0bb8f9bf92c18d65adffda">xtd::diagnostics::debug::listeners</a></div><div class="ttdeci">static listener_collection &amp; listeners() noexcept</div><div class="ttdoc">Gets the collection of listeners that is monitoring the trace output.</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1debug_html_a60740400c74b23c28654d16583abd892"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1debug.html#a60740400c74b23c28654d16583abd892">xtd::diagnostics::debug::auto_flush</a></div><div class="ttdeci">static bool auto_flush() noexcept</div><div class="ttdoc">Gets whether xtd::diagnostics::debug::flush should be called on the xtd::diagnostics::debug::Listener...</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1debug_html_adb62c53bf313739efafec28bc0739b65"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1debug.html#adb62c53bf313739efafec28bc0739b65">xtd::diagnostics::debug::unindent</a></div><div class="ttdeci">static void unindent() noexcept</div><div class="ttdoc">Decreases the current indent_level by one.</div></div>
@@ -215,6 +215,12 @@ To activate your code if DEBUG is defined, you must enclose calls to the methods
 <tr class="memitem:adb12e43a0ee5e7ffaaa118a97a43fff7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1diagnostics_1_1debug.html#adb12e43a0ee5e7ffaaa118a97a43fff7">cassert</a> (bool condition, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">stack_frame</a>)</td></tr>
 <tr class="memdesc:adb12e43a0ee5e7ffaaa118a97a43fff7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks for a condition; if the condition is false, displays a message box that shows the call stack.  <br /></td></tr>
 <tr class="separator:adb12e43a0ee5e7ffaaa118a97a43fff7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade75fdf4e8cbd7ae78ef579e5caef557"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1diagnostics_1_1debug.html#ade75fdf4e8cbd7ae78ef579e5caef557">cassert</a> (bool condition, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;message, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;detail_message)</td></tr>
+<tr class="memdesc:ade75fdf4e8cbd7ae78ef579e5caef557"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks for a condition; if the condition is false, displays a message box that shows the call stack.  <br /></td></tr>
+<tr class="separator:ade75fdf4e8cbd7ae78ef579e5caef557"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a374f384615a41fd3252e9bfe829a5ad3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1diagnostics_1_1debug.html#a374f384615a41fd3252e9bfe829a5ad3">cassert</a> (bool condition, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;message, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;detail_message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">stack_frame</a>)</td></tr>
+<tr class="memdesc:a374f384615a41fd3252e9bfe829a5ad3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks for a condition; if the condition is false, displays a message box that shows the call stack.  <br /></td></tr>
+<tr class="separator:a374f384615a41fd3252e9bfe829a5ad3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adfbf354a526504f24542c2c4d002a0b1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1diagnostics_1_1debug.html#adfbf354a526504f24542c2c4d002a0b1">cassert</a> (bool condition, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">stack_frame</a>)</td></tr>
 <tr class="memdesc:adfbf354a526504f24542c2c4d002a0b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks for a condition; if the condition is false, displays a message box that shows the call stack.  <br /></td></tr>
 <tr class="separator:adfbf354a526504f24542c2c4d002a0b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -404,7 +410,7 @@ Flushing the stream will not flush its underlying encoder unless you explicitly 
 </div>
 </div>
 <a id="acdb0d00e4b12fccc037cf3f965110d72" name="acdb0d00e4b12fccc037cf3f965110d72"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acdb0d00e4b12fccc037cf3f965110d72">&#9670;&#160;</a></span>cassert() <span class="overload">[1/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#acdb0d00e4b12fccc037cf3f965110d72">&#9670;&#160;</a></span>cassert() <span class="overload">[1/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -469,7 +475,7 @@ Flushing the stream will not flush its underlying encoder unless you explicitly 
 </div>
 </div>
 <a id="adfbf354a526504f24542c2c4d002a0b1" name="adfbf354a526504f24542c2c4d002a0b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adfbf354a526504f24542c2c4d002a0b1">&#9670;&#160;</a></span>cassert() <span class="overload">[2/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#adfbf354a526504f24542c2c4d002a0b1">&#9670;&#160;</a></span>cassert() <span class="overload">[2/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -514,7 +520,7 @@ Flushing the stream will not flush its underlying encoder unless you explicitly 
 </div>
 </div>
 <a id="a175c0454a4328a8498c14311b8bc4390" name="a175c0454a4328a8498c14311b8bc4390"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a175c0454a4328a8498c14311b8bc4390">&#9670;&#160;</a></span>cassert() <span class="overload">[3/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a175c0454a4328a8498c14311b8bc4390">&#9670;&#160;</a></span>cassert() <span class="overload">[3/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -559,7 +565,7 @@ Flushing the stream will not flush its underlying encoder unless you explicitly 
 </div>
 </div>
 <a id="adb12e43a0ee5e7ffaaa118a97a43fff7" name="adb12e43a0ee5e7ffaaa118a97a43fff7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb12e43a0ee5e7ffaaa118a97a43fff7">&#9670;&#160;</a></span>cassert() <span class="overload">[4/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#adb12e43a0ee5e7ffaaa118a97a43fff7">&#9670;&#160;</a></span>cassert() <span class="overload">[4/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -610,6 +616,117 @@ Flushing the stream will not flush its underlying encoder unless you explicitly 
 
 </div>
 </div>
+<a id="ade75fdf4e8cbd7ae78ef579e5caef557" name="ade75fdf4e8cbd7ae78ef579e5caef557"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade75fdf4e8cbd7ae78ef579e5caef557">&#9670;&#160;</a></span>cassert() <span class="overload">[5/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::diagnostics::debug::cassert </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>condition</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>message</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>detail_message</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks for a condition; if the condition is false, displays a message box that shows the call stack. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">condition</td><td>The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed. </td></tr>
+    <tr><td class="paramname">message</td><td>The message to send to the <a class="el" href="classxtd_1_1diagnostics_1_1debug.html#a483a067a6c0bb8f9bf92c18d65adffda" title="Gets the collection of listeners that is monitoring the trace output.">xtd::diagnostics::debug::listeners</a> collection. </td></tr>
+    <tr><td class="paramname">detail_message</td><td>The detailed message to send to the <a class="el" href="classxtd_1_1diagnostics_1_1debug.html#a483a067a6c0bb8f9bf92c18d65adffda" title="Gets the collection of listeners that is monitoring the trace output.">xtd::diagnostics::debug::listeners</a> collection. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a374f384615a41fd3252e9bfe829a5ad3" name="a374f384615a41fd3252e9bfe829a5ad3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a374f384615a41fd3252e9bfe829a5ad3">&#9670;&#160;</a></span>cassert() <span class="overload">[6/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::diagnostics::debug::cassert </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>condition</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>message</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>detail_message</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;&#160;</td>
+          <td class="paramname"><em>stack_frame</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks for a condition; if the condition is false, displays a message box that shows the call stack. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">condition</td><td>The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed. </td></tr>
+    <tr><td class="paramname">message</td><td>The message to send to the <a class="el" href="classxtd_1_1diagnostics_1_1debug.html#a483a067a6c0bb8f9bf92c18d65adffda" title="Gets the collection of listeners that is monitoring the trace output.">xtd::diagnostics::debug::listeners</a> collection. </td></tr>
+    <tr><td class="paramname">detail_message</td><td>The detailed message to send to the <a class="el" href="classxtd_1_1diagnostics_1_1debug.html#a483a067a6c0bb8f9bf92c18d65adffda" title="Gets the collection of listeners that is monitoring the trace output.">xtd::diagnostics::debug::listeners</a> collection. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html" title="Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...">stack_frame</a></td><td>The stack frame corresponding to the generated assert. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a1e0ce974cdd07fc0a7b236f7d72e62d4" name="a1e0ce974cdd07fc0a7b236f7d72e62d4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1e0ce974cdd07fc0a7b236f7d72e62d4">&#9670;&#160;</a></span>fail() <span class="overload">[1/2]</span></h2>
 
@@ -642,7 +759,7 @@ Flushing the stream will not flush its underlying encoder unless you explicitly 
   </dd>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The default behavior is that the <a class="el" href="classxtd_1_1diagnostics_1_1default__trace__listener.html" title="Provides the default output methods and behavior for tracing.">xtd::diagnostics::default_trace_listener</a> outputs the message to a message box when the application is running in user interface mode and to the <a class="el" href="classxtd_1_1diagnostics_1_1trace__listener.html" title="Provides the abstract base class for the listeners who monitor trace and debug output.">xtd::diagnostics::trace_listener</a> instances in the <a class="el" href="classxtd_1_1diagnostics_1_1debug.html#a483a067a6c0bb8f9bf92c18d65adffda" title="Gets the collection of listeners that is monitoring the trace output.">xtd::diagnostics::debug::listeners</a> collection. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>The display of the message box is dependent on the presence of the <a class="el" href="classxtd_1_1diagnostics_1_1default__trace__listener.html" title="Provides the default output methods and behavior for tracing.">xtd::diagnostics::default_trace_listener</a>. If the <a class="el" href="classxtd_1_1diagnostics_1_1default__trace__listener.html" title="Provides the default output methods and behavior for tracing.">xtd::diagnostics::default_trace_listener</a> is not in the <a class="el" href="classxtd_1_1diagnostics_1_1debug.html#a483a067a6c0bb8f9bf92c18d65adffda" title="Gets the collection of listeners that is monitoring the trace output.">xtd::diagnostics::debug::listeners</a> collection, the message box is not displayed. The <a class="el" href="classxtd_1_1diagnostics_1_1default__trace__listener.html" title="Provides the default output methods and behavior for tracing.">xtd::diagnostics::default_trace_listener</a> can be removed by the &lt;clear&gt;, the &lt;erase&gt;, or by calling the clear method on the <a class="el" href="classxtd_1_1diagnostics_1_1debug.html#a483a067a6c0bb8f9bf92c18d65adffda" title="Gets the collection of listeners that is monitoring the trace output.">xtd::diagnostics::debug::listeners</a> property (<a class="el" href="classxtd_1_1diagnostics_1_1trace.html#a8e4635956642fba7833b8bbdff59a0c9" title="Gets the collection of listeners that is monitoring the trace output.">xtd::diagnostics::trace::listeners()</a>.<a class="el" href="namespacextd.html#aa18befa3a6d9b1a934bdfdf3fecdb2b5" title="Clear delegates array.">clear()</a>). </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The display of the message box is dependent on the presence of the <a class="el" href="classxtd_1_1diagnostics_1_1default__trace__listener.html" title="Provides the default output methods and behavior for tracing.">xtd::diagnostics::default_trace_listener</a>. If the <a class="el" href="classxtd_1_1diagnostics_1_1default__trace__listener.html" title="Provides the default output methods and behavior for tracing.">xtd::diagnostics::default_trace_listener</a> is not in the <a class="el" href="classxtd_1_1diagnostics_1_1debug.html#a483a067a6c0bb8f9bf92c18d65adffda" title="Gets the collection of listeners that is monitoring the trace output.">xtd::diagnostics::debug::listeners</a> collection, the message box is not displayed. The <a class="el" href="classxtd_1_1diagnostics_1_1default__trace__listener.html" title="Provides the default output methods and behavior for tracing.">xtd::diagnostics::default_trace_listener</a> can be removed by the &lt;clear&gt;, the &lt;erase&gt;, or by calling the clear method on the <a class="el" href="classxtd_1_1diagnostics_1_1debug.html#a483a067a6c0bb8f9bf92c18d65adffda" title="Gets the collection of listeners that is monitoring the trace output.">xtd::diagnostics::debug::listeners</a> property (<a class="el" href="classxtd_1_1diagnostics_1_1trace.html#a8e4635956642fba7833b8bbdff59a0c9" title="Gets the collection of listeners that is monitoring the trace output.">xtd::diagnostics::trace::listeners()</a>.<a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a01bc6f8efa4202821e95f4fdf6298b30" title="The CLEAR key.">clear()</a>). </dd></dl>
 
 </div>
 </div>
@@ -689,7 +806,7 @@ Flushing the stream will not flush its underlying encoder unless you explicitly 
   </dd>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The default behavior is that the <a class="el" href="classxtd_1_1diagnostics_1_1default__trace__listener.html" title="Provides the default output methods and behavior for tracing.">default_trace_listener</a> outputs the message to a message box when the application is running in user interface mode and to the TraceListener instances in the Listeners collection. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>The display of the message box is dependent on the presence of the <a class="el" href="classxtd_1_1diagnostics_1_1default__trace__listener.html" title="Provides the default output methods and behavior for tracing.">default_trace_listener</a>. If the <a class="el" href="classxtd_1_1diagnostics_1_1default__trace__listener.html" title="Provides the default output methods and behavior for tracing.">default_trace_listener</a> is not in the listeners collection, the message box is not displayed. The <a class="el" href="classxtd_1_1diagnostics_1_1default__trace__listener.html" title="Provides the default output methods and behavior for tracing.">default_trace_listener</a> can be removed by the &lt;clear&gt;, the &lt;remove&gt;, or by calling the clear method on the listeners property (<a class="el" href="classxtd_1_1diagnostics_1_1trace.html#a8e4635956642fba7833b8bbdff59a0c9" title="Gets the collection of listeners that is monitoring the trace output.">xtd::diagnostics::trace::listeners()</a>.<a class="el" href="namespacextd.html#aa18befa3a6d9b1a934bdfdf3fecdb2b5" title="Clear delegates array.">clear()</a>). </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The display of the message box is dependent on the presence of the <a class="el" href="classxtd_1_1diagnostics_1_1default__trace__listener.html" title="Provides the default output methods and behavior for tracing.">default_trace_listener</a>. If the <a class="el" href="classxtd_1_1diagnostics_1_1default__trace__listener.html" title="Provides the default output methods and behavior for tracing.">default_trace_listener</a> is not in the listeners collection, the message box is not displayed. The <a class="el" href="classxtd_1_1diagnostics_1_1default__trace__listener.html" title="Provides the default output methods and behavior for tracing.">default_trace_listener</a> can be removed by the &lt;clear&gt;, the &lt;remove&gt;, or by calling the clear method on the listeners property (<a class="el" href="classxtd_1_1diagnostics_1_1trace.html#a8e4635956642fba7833b8bbdff59a0c9" title="Gets the collection of listeners that is monitoring the trace output.">xtd::diagnostics::trace::listeners()</a>.<a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a01bc6f8efa4202821e95f4fdf6298b30" title="The CLEAR key.">clear()</a>). </dd></dl>
 
 </div>
 </div>
@@ -2147,7 +2264,7 @@ This method calls the write method of the trace listener. </dd></dl>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 1 2023 22:33:54 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Oct 8 2023 08:41:42 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
