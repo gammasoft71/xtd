@@ -1,12 +1,11 @@
 #include "../../../include/xtd/forms/background_worker.h"
 #include "../../../include/xtd/forms/application.h"
-#include <xtd/threading/thread>
+#include <xtd/action>
 #include <xtd/invalid_operation_exception>
 
 using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
-using namespace xtd::threading;
 
 struct background_worker::data {
   any argument;
@@ -16,17 +15,15 @@ struct background_worker::data {
   bool worker_supports_cancellation = false;
   progress_changed_event_args event {0, any()};
   unique_ptr<form> invoker;
-  threading::thread thread;
+  action<> worker;
+  iasync_result_ptr worker_result;
 };
 
 background_worker::background_worker() noexcept : data_(make_shared<data>()) {
 }
 
 background_worker::~background_worker() noexcept {
-  if (data_->thread.joinable()) {
-    if (data_->cancellation_pending) data_->thread.detach();
-    else data_->thread.join();
-  }
+  if (data_->worker_result) data_->worker.end_invoke(data_->worker_result);
 }
 
 bool background_worker::cancellation_pending() const noexcept {
@@ -86,10 +83,10 @@ void background_worker::report_progress(int32 percent_progress, any user_state) 
 void background_worker::run_worker_async() {
   if (data_->is_busy) throw invalid_operation_exception {csf_};
   data_->is_busy = true;
-  if (data_->thread.joinable()) data_->thread.join();
+  if (data_->worker_result) data_->worker.end_invoke(data_->worker_result);
   data_->invoker = make_unique<form>();
-  data_->thread = threading::thread {[&] {
-    do_work_event_args e(data_->argument);
+  data_->worker = action<> {[&] {
+    auto e = do_work_event_args {data_->argument};
     on_do_work(e);
     data_->invoker->begin_invoke([&] {
       on_run_worker_completed(run_worker_completed_event_args(any(), optional<reference_wrapper<exception>>(), data_->cancellation_pending));
@@ -98,7 +95,7 @@ void background_worker::run_worker_async() {
     });
     data_->is_busy = false;
   }};
-  data_->thread.start();
+  data_->worker_result = data_->worker.begin_invoke();
 }
 
 void background_worker::argument_(any&& argument) {
