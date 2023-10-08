@@ -5,6 +5,7 @@ find_package(xtd REQUIRED)
 
 add_projects(
   button_with_style_sheet
+  graph_control
   line
   numeric_text_box
   owner_button
