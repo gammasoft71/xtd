@@ -9,6 +9,7 @@ add_projects(
   action2
   action3
   delegate
+  delegate_begin_invoke
   delegate_lambda
   delegate_member_method
   delegate_multicast

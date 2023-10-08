@@ -129,24 +129,39 @@ namespace xtd {
 
     /// @brief Executes the method represented by the current delegate asynchronously on the thread that the control's underlying handle was created on.
     /// @return An async_result_invoke that represents the result of the begin_invoke operation.
+    /// @par Examples
+    /// The following examples shows hot tu use xtd::delegate::begin_invoke, xtd::delegate::end_invoke, xtd::delegate::invoke methods.
+    /// @include delegate_begin_invoke.cpp
     iasync_result_ptr begin_invoke();
     /// @brief Executes the method represented by the current delegate asynchronously on the thread that the control's underlying handle was created on.
     /// @param async_callback The asynchronous callback that will be called at the end of the invocation.
     /// @return An async_result_invoke that represents the result of the begin_invoke operation.
+    /// @par Examples
+    /// The following examples shows hot tu use xtd::delegate::begin_invoke, xtd::delegate::end_invoke, xtd::delegate::invoke methods.
+    /// @include delegate_begin_invoke.cpp
     iasync_result_ptr begin_invoke(xtd::async_callback async_callback);
     /// @brief Executes the method represented by the current delegate asynchronously on the thread that the control's underlying handle was created on.
     /// @param async_callback The asynchronous callback that will be called at the end of the invocation.
     /// @param async_state The asynchronous state associated with the invocation.
     /// @return An async_result_invoke that represents the result of the begin_invoke operation.
+    /// @par Examples
+    /// The following examples shows hot tu use xtd::delegate::begin_invoke, xtd::delegate::end_invoke, xtd::delegate::invoke methods.
+    /// @include delegate_begin_invoke.cpp
     iasync_result_ptr begin_invoke(xtd::async_callback async_callback, std::any async_state);
 
     /// @brief Retrieves the return value of the asynchronous operation represented by the async_result_invoke passed.
     /// @param async The async_result_invoke that represents a specific invoke asynchronous operation, returned when calling begin_invoke.
+    /// @par Examples
+    /// The following examples shows hot tu use xtd::delegate::begin_invoke, xtd::delegate::end_invoke, xtd::delegate::invoke methods.
+    /// @include delegate_begin_invoke.cpp
     result_t end_invoke(iasync_result_ptr async);
 
     /// @brief invokes the method represented by the current delegate.
     /// @param arguments The parameter list.
     /// @return result_t The return value.
+    /// @par Examples
+    /// The following examples shows hot tu use xtd::delegate::begin_invoke, xtd::delegate::end_invoke, xtd::delegate::invoke methods.
+    /// @include delegate_begin_invoke.cpp
     result_t invoke() const {return operator()();}
     
     /// @brief Concatenates the invocation lists of an array of delegates.
@@ -549,24 +564,39 @@ namespace xtd {
     /// @param async_state The asynchronous state associated with the invocation.
     /// @param arguments The parameter list.
     /// @return An async_result_invoke that represents the result of the begin_invoke operation.
+    /// @par Examples
+    /// The following examples shows hot tu use xtd::delegate::begin_invoke, xtd::delegate::end_invoke, xtd::delegate::invoke methods.
+    /// @include delegate_begin_invoke.cpp
     iasync_result_ptr begin_invoke(arguments_t... arguments);
     /// @brief Executes the method represented by the current delegate asynchronously on the thread that the control's underlying handle was created on.
     /// @param async_callback The asynchronous callback that will be called at the end of the invocation.
     /// @param arguments The parameter list.
     /// @return An async_result_invoke that represents the result of the begin_invoke operation.
+    /// @par Examples
+    /// The following examples shows hot tu use xtd::delegate::begin_invoke, xtd::delegate::end_invoke, xtd::delegate::invoke methods.
+    /// @include delegate_begin_invoke.cpp
     iasync_result_ptr begin_invoke(xtd::async_callback async_callback, arguments_t... arguments);
     /// @brief Executes the method represented by the current delegate asynchronously on the thread that the control's underlying handle was created on.
     /// @param arguments The parameter list.
     /// @return An async_result_invoke that represents the result of the begin_invoke operation.
+    /// @par Examples
+    /// The following examples shows hot tu use xtd::delegate::begin_invoke, xtd::delegate::end_invoke, xtd::delegate::invoke methods.
+    /// @include delegate_begin_invoke.cpp
     iasync_result_ptr begin_invoke(xtd::async_callback async_callback, std::any async_state, arguments_t... arguments);
         
     /// @brief Retrieves the return value of the asynchronous operation represented by the async_result_invoke passed.
     /// @param async The async_result_invoke that represents a specific invoke asynchronous operation, returned when calling begin_invoke.
+    /// @par Examples
+    /// The following examples shows hot tu use xtd::delegate::begin_invoke, xtd::delegate::end_invoke, xtd::delegate::invoke methods.
+    /// @include delegate_begin_invoke.cpp
     result_t end_invoke(iasync_result_ptr async);
 
     /// @brief invokes the method represented by the current delegate.
     /// @param arguments The parameter list.
     /// @return result_t The return value.
+    /// @par Examples
+    /// The following examples shows hot tu use xtd::delegate::begin_invoke, xtd::delegate::end_invoke, xtd::delegate::invoke methods.
+    /// @include delegate_begin_invoke.cpp
     result_t invoke(arguments_t... arguments) const {return operator()(arguments...);}
 
     /// @brief Concatenates the invocation lists of an array of delegates.
