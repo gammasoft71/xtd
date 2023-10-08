@@ -815,11 +815,11 @@ control& control::width(int32 width) {
   return *this;
 }
 
-iasync_result_ptr control::begin_invoke(delegate<void()> method) {
+async_result control::begin_invoke(delegate<void()> method) {
   return begin_invoke(delegate<void(std::vector<std::any>)>(method), {});
 }
 
-iasync_result_ptr control::begin_invoke(delegate<void(vector<any>)> method, const vector<any>& args) {
+async_result control::begin_invoke(delegate<void(vector<any>)> method, const vector<any>& args) {
   shared_ptr<async_result_invoke> async = make_shared<async_result_invoke>(std::reference_wrapper(*this));
   if (is_handle_created()) native::control::invoke_in_control_thread(data_->handle, method, args, async->data_->async_event, async->data_->is_completed);
   threading::thread::yield();
@@ -997,7 +997,7 @@ bool control::equals(const control& value) const noexcept {
   return this == &value;
 }
 
-std::optional<object_ref> control::end_invoke(iasync_result_ptr async) {
+std::optional<object_ref> control::end_invoke(async_result async) {
   async->async_wait_handle().wait_one();
   return *this;
 }

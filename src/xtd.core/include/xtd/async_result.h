@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::iasync_result_ptr alias.
+/// @brief Contains xtd::async_result alias.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include "iasync_result.h"
@@ -13,5 +13,5 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  using iasync_result_ptr = std::shared_ptr<xtd::iasync_result>;
+  using async_result = std::shared_ptr<xtd::iasync_result>;
 }
