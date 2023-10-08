@@ -66,7 +66,7 @@ std::shared_ptr<xtd::iasync_result> tcp_listener::begin_accept_socket(xtd::async
       ar->socket_ = listener->accept_socket();
       ar->is_completed_ = true;
       as<xtd::threading::mutex>(ar->async_wait_handle()).release_mutex();
-      callback(*ar);
+      callback(ar);
     } catch (...) {
       ar->exception_ = current_exception();
     }
@@ -83,7 +83,7 @@ std::shared_ptr<xtd::iasync_result> tcp_listener::begin_accept_tcp_client(xtd::a
       ar->tcp_client_ = listener->accept_tcp_client();
       ar->is_completed_ = true;
       as<xtd::threading::mutex>(ar->async_wait_handle()).release_mutex();
-      callback(*ar);
+      callback(ar);
     } catch (...) {
       ar->exception_ = current_exception();
     }

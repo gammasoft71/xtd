@@ -31,7 +31,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  using async_callback = delegate<void(const iasync_result& ar)>;
+  using async_callback = delegate<void(async_result ar)>;
 
   /// @brief Represents a delegate, which is a data structure that refers to a static method or to a class instance && an instance method of that class.
   /// @par Header
