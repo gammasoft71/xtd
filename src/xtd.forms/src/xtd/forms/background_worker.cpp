@@ -16,7 +16,7 @@ struct background_worker::data {
   progress_changed_event_args event {0, any()};
   unique_ptr<form> invoker;
   action<> worker;
-  iasync_result_ptr worker_result;
+  async_result worker_result;
 };
 
 background_worker::background_worker() noexcept : data_(make_shared<data>()) {
