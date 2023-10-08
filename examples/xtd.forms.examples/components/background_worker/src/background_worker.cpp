@@ -7,6 +7,7 @@
 #include <xtd/forms/progress_bar>
 #include <xtd/forms/text_box>
 #include <xtd/threading/thread>
+#include <xtd/startup>
 
 using namespace xtd;
 using namespace xtd::forms;
@@ -15,6 +16,10 @@ using namespace xtd::threading;
 namespace background_worker_example {
   class form1 : public form {
   public:
+    static void main() {
+      application::run(background_worker_example::form1 {});
+    }
+
     form1() {
       text("Background worker example");
       auto_size_mode(forms::auto_size_mode::grow_and_shrink);
@@ -102,6 +107,4 @@ namespace background_worker_example {
   };
 }
 
-auto main()->int {
-  application::run(background_worker_example::form1 {});
-}
+startup_(background_worker_example::form1::main);
