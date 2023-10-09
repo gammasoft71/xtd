@@ -30,7 +30,7 @@ struct process::data {
   std::unique_ptr<std::ostream> standard_input_;
   std::unique_ptr<std::istream> standard_output_;
   std::unique_ptr<std::istream> standard_error_;
-  std::thread thread_;
+  thread thread_;
   xtd::date_time start_time_;
   xtd::date_time exit_time_;
   bool enable_raising_events_ = false;

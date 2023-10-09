@@ -59,7 +59,7 @@ xtd::net::sockets::tcp_client tcp_listener::accept_tcp_client() {
 
 std::shared_ptr<xtd::iasync_result> tcp_listener::begin_accept_socket(xtd::async_callback callback, const std::any& state) {
   auto ar = make_shared<async_result_accept_socket>(state);
-  auto operation_thread = std::thread {[](tcp_listener * listener, std::shared_ptr<async_result_accept_socket> ar, xtd::async_callback callback) {
+  auto operation_thread = thread {[](tcp_listener * listener, std::shared_ptr<async_result_accept_socket> ar, xtd::async_callback callback) {
     try {
       ar->socket_ = listener->accept_socket();
       ar->is_completed_ = true;
@@ -75,7 +75,7 @@ std::shared_ptr<xtd::iasync_result> tcp_listener::begin_accept_socket(xtd::async
 
 std::shared_ptr<xtd::iasync_result> tcp_listener::begin_accept_tcp_client(xtd::async_callback callback, const std::any& state) {
   auto ar = make_shared<async_result_accept_tcp_client>(state);
-  auto operation_thread = std::thread {[](tcp_listener * listener, std::shared_ptr<async_result_accept_tcp_client> ar, xtd::async_callback callback) {
+  auto operation_thread = thread {[](tcp_listener * listener, std::shared_ptr<async_result_accept_tcp_client> ar, xtd::async_callback callback) {
     try {
       ar->tcp_client_ = listener->accept_tcp_client();
       ar->is_completed_ = true;
