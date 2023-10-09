@@ -197,8 +197,9 @@ $(function() {
 <div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>}</div>
 <div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
 <div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span><span class="comment">// Add xtd::delegate::begin_invoke and xtd::delegate::end_invoke methods.</span></div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span><span class="comment">//</span></div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span><span class="preprocessor">#include &quot;../delegate.hpp&quot;</span></div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span><span class="preprocessor">#define __XTD_CORE_INTERNAL__</span></div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span><span class="preprocessor">#include &quot;../internal/__delegate.h&quot;</span></div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span><span class="preprocessor">#undef __XTD_CORE_INTERNAL__</span></div>
 <div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.h:32</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1registered__wait__handle_html"><div class="ttname"><a href="classxtd_1_1threading_1_1registered__wait__handle.html">xtd::threading::registered_wait_handle</a></div><div class="ttdoc">A synchronization primitive that can also be used for interprocess synchronization.</div><div class="ttdef"><b>Definition</b> registered_wait_handle.h:27</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1thread__pool_html"><div class="ttname"><a href="classxtd_1_1threading_1_1thread__pool.html">xtd::threading::thread_pool</a></div><div class="ttdoc">Provides a pool of threads that can be used to execute tasks, post work items, process asynchronous I...</div><div class="ttdef"><b>Definition</b> thread_pool.h:50</div></div>
@@ -239,7 +240,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 1 2023 21:56:44 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Oct 9 2023 18:06:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

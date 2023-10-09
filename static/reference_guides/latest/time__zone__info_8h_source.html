@@ -126,7 +126,7 @@ $(function() {
 <div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>      </div>
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>      static transition_time create_floating_date_rule(date_time time_of_day, uint32 month, uint32 week, <a class="code hl_namespace" href="namespacextd.html">xtd</a>::day_of_week day_of_week);</div>
 <div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>      </div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>      <span class="keywordtype">bool</span> <a class="code hl_function" href="delegate_8h.html#a14ea8edcf76574cc2fb32557bb1a05f7">equals</a>(const transition_time&amp; tt) const noexcept override;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>      <span class="keywordtype">bool</span> equals(const transition_time&amp; tt) const noexcept override;</div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>      </div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    private:</div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>      uint32 day_ = 0;</div>
@@ -156,7 +156,7 @@ $(function() {
 <div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>      transition_time daylight_transition_start() const noexcept;</div>
 <div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>      </div>
 <div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>      </div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>      <span class="keywordtype">bool</span> <a class="code hl_function" href="delegate_8h.html#a14ea8edcf76574cc2fb32557bb1a05f7">equals</a>(const adjustement_rule&amp; ar) const noexcept override;</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>      <span class="keywordtype">bool</span> equals(const adjustement_rule&amp; ar) const noexcept override;</div>
 <div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>      </div>
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    private:</div>
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>      <a class="code hl_namespace" href="namespacextd.html">xtd</a>::date_time date_end_ {date_time::max_value};</div>
@@ -207,7 +207,7 @@ $(function() {
 <div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>    static <a class="code hl_namespace" href="namespacextd.html">xtd</a>::date_time convert_to_utc(const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::date_time&amp; date_time, const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::time_zone_info&amp; source_time_zone);</div>
 <div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>    static <a class="code hl_namespace" href="namespacextd.html">xtd</a>::date_time convert_to_utc(const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::date_time&amp; date_time);</div>
 <div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>    </div>
-<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="delegate_8h.html#a14ea8edcf76574cc2fb32557bb1a05f7">equals</a>(const time_zone_info&amp; tzi) const noexcept override;</div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>    <span class="keywordtype">bool</span> equals(const time_zone_info&amp; tzi) const noexcept override;</div>
 <div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>    </div>
 <div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>    std::vector&lt;adjustement_rule&gt; get_adjustement_rules() const noexcept;</div>
 <div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>    </div>
@@ -234,7 +234,6 @@ $(function() {
 <div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.h:32</div></div>
 <div class="ttc" id="adate__time_8h_html"><div class="ttname"><a href="date__time_8h.html">date_time.h</a></div><div class="ttdoc">Contains xtd::date_time class.</div></div>
 <div class="ttc" id="aday__of__week_8h_html"><div class="ttname"><a href="day__of__week_8h.html">day_of_week.h</a></div><div class="ttdoc">Contains xtd::day_of_week enum class.</div></div>
-<div class="ttc" id="adelegate_8h_html_a14ea8edcf76574cc2fb32557bb1a05f7"><div class="ttname"><a href="delegate_8h.html#a14ea8edcf76574cc2fb32557bb1a05f7">equals</a></div><div class="ttdeci">bool equals(const delegate &amp;delegate) const noexcept override</div><div class="ttdoc">Determines whether this instance and another specified delegateType object have the same value.</div><div class="ttdef"><b>Definition</b> delegate.h:853</div></div>
 <div class="ttc" id="agroup__keywords_html_gabc8f9c2aa36f6cee610a37f0e8227fd1"><div class="ttname"><a href="group__keywords.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a></div><div class="ttdeci">#define core_export_</div><div class="ttdoc">Define shared library export.</div><div class="ttdef"><b>Definition</b> core_export.h:13</div></div>
 <div class="ttc" id="agroup__types_html_gae7af83eab478757e17f0eb7af57571df"><div class="ttname"><a href="group__types.html#gae7af83eab478757e17f0eb7af57571df">xtd::uint32</a></div><div class="ttdeci">uint_least32_t uint32</div><div class="ttdoc">Represents a 32-bit unsigned integer.</div><div class="ttdef"><b>Definition</b> types.h:239</div></div>
 <div class="ttc" id="agroup__types_html_gaf6b556b49d28b448fc2c5af1d820f3ea"><div class="ttname"><a href="group__types.html#gaf6b556b49d28b448fc2c5af1d820f3ea">xtd::ticks</a></div><div class="ttdeci">std::chrono::duration&lt; int64, tick &gt; ticks</div><div class="ttdoc">Represents a tick duration.</div><div class="ttdef"><b>Definition</b> ticks.h:21</div></div>
@@ -249,7 +248,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 1 2023 21:56:44 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Oct 9 2023 18:06:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

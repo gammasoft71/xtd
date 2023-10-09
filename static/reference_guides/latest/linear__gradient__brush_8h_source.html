@@ -140,8 +140,8 @@ $(function() {
 <div class="line"><a id="l00170" name="l00170"></a><span class="lineno"><a class="line" href="classxtd_1_1drawing_1_1drawing__2d_1_1linear__gradient__brush.html#a4826507b2a085cb41ca8e114db62caf9">  170</a></span>        <a class="code hl_class" href="classxtd_1_1drawing_1_1drawing__2d_1_1linear__gradient__brush.html">linear_gradient_brush</a>&amp; <a class="code hl_class" href="classxtd_1_1drawing_1_1rectangle.html">rectangle</a>(const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::drawing::<a class="code hl_class" href="classxtd_1_1drawing_1_1rectangle.html">rectangle</a>&amp; value) noexcept;</div>
 <div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        </div>
 <div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        </div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        using <a class="code hl_class" href="classxtd_1_1drawing_1_1brush.html">brush</a>::<a class="code hl_function" href="delegate_8h.html#a14ea8edcf76574cc2fb32557bb1a05f7">equals</a>;</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="delegate_8h.html#a14ea8edcf76574cc2fb32557bb1a05f7">equals</a>(const <a class="code hl_class" href="classxtd_1_1drawing_1_1drawing__2d_1_1linear__gradient__brush.html">linear_gradient_brush</a>&amp; value) const noexcept override;</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        using <a class="code hl_class" href="classxtd_1_1drawing_1_1brush.html">brush</a>::equals;</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        <span class="keywordtype">bool</span> equals(const <a class="code hl_class" href="classxtd_1_1drawing_1_1drawing__2d_1_1linear__gradient__brush.html">linear_gradient_brush</a>&amp; value) const noexcept override;</div>
 <div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        </div>
 <div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>      private:</div>
 <div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        static <span class="keywordtype">float</span> linear_gradient_mode_to_angle(<a class="code hl_namespace" href="namespacextd.html">xtd</a>::drawing::drawing_2d::<a class="code hl_enumeration" href="group__xtd__drawing.html#ga07ee1d1c09d7b52a3370d92af48fabd9">linear_gradient_mode</a>);</div>
@@ -179,7 +179,6 @@ $(function() {
 <div class="ttc" id="aclassxtd_1_1drawing_1_1rectangle__f_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1rectangle__f.html">xtd::drawing::rectangle_f</a></div><div class="ttdoc">Stores a set of four floating-point numbers that represent the location and size of a rectangle....</div><div class="ttdef"><b>Definition</b> rectangle_f.h:34</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1rectangle_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a></div><div class="ttdoc">Stores a set of four integers that represent the location and size of a rectangle.</div><div class="ttdef"><b>Definition</b> rectangle.h:44</div></div>
 <div class="ttc" id="aclassxtd_1_1iequatable_html"><div class="ttname"><a href="classxtd_1_1iequatable.html">xtd::iequatable</a></div><div class="ttdoc">Defines a generalized method that a value type or class implements to create a type-specific method f...</div><div class="ttdef"><b>Definition</b> iequatable.h:18</div></div>
-<div class="ttc" id="adelegate_8h_html_a14ea8edcf76574cc2fb32557bb1a05f7"><div class="ttname"><a href="delegate_8h.html#a14ea8edcf76574cc2fb32557bb1a05f7">equals</a></div><div class="ttdeci">bool equals(const delegate &amp;delegate) const noexcept override</div><div class="ttdoc">Determines whether this instance and another specified delegateType object have the same value.</div><div class="ttdef"><b>Definition</b> delegate.h:853</div></div>
 <div class="ttc" id="adrawing2d_8h_html"><div class="ttname"><a href="drawing2d_8h.html">drawing2d.h</a></div><div class="ttdoc">Contains xtd::drawing::drawing_2d/::matrix class.</div></div>
 <div class="ttc" id="agradient__stop__collection_8h_html"><div class="ttname"><a href="gradient__stop__collection_8h.html">gradient_stop_collection.h</a></div><div class="ttdoc">Contains xtd::drawing::drawing_2d/::gradient_stop alias.</div></div>
 <div class="ttc" id="agroup__drawing_html_ga1af9e4c38fd8d7b0b54f5f695e98cb01"><div class="ttname"><a href="group__drawing.html#ga1af9e4c38fd8d7b0b54f5f695e98cb01">xtd::drawing::drawing_2d::gradient_stop_collection</a></div><div class="ttdeci">std::vector&lt; xtd::drawing::drawing_2d::gradient_stop &gt; gradient_stop_collection</div><div class="ttdoc">Represents a collection of xtd::drawing::drawing_2d/gradient_stop objects that can be individually ac...</div><div class="ttdef"><b>Definition</b> gradient_stop_collection.h:21</div></div>
@@ -191,7 +190,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 1 2023 21:56:44 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Oct 9 2023 18:06:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
