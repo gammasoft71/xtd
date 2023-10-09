@@ -12,7 +12,7 @@ using namespace xtd::threading;
 auto main()->int {
   auto terminate_app = false;
   
-  auto on_server_accept = [&](std::shared_ptr<iasync_result> ar) {
+  auto on_server_accept = [&](async_result ar) {
     auto socket = as<xtd::net::sockets::socket>(ar->async_state()).end_accept(ar);
     
     while (!terminate_app) {
@@ -22,7 +22,7 @@ auto main()->int {
     }
   };
   
-  auto on_client_connect = [&](std::shared_ptr<iasync_result> ar) {
+  auto on_client_connect = [&](async_result ar) {
     auto socket = as<xtd::net::sockets::socket>(ar->async_state());
     socket.end_connect(ar);
     
