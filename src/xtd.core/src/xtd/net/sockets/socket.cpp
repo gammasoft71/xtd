@@ -307,7 +307,7 @@ bool socket::accept_async(xtd::net::sockets::socket_async_event_args& e) {
   if (data_->handle == 0) throw object_closed_exception {csf_};
   if (data_->is_bound == false || data_->is_listening == false) throw invalid_operation_exception {csf_};
   
-  auto thread = std::thread {[](xtd::net::sockets::socket_async_event_args * e, xtd::net::sockets::address_family address_family, xtd::net::sockets::socket_type socket_type, xtd::net::sockets::protocol_type protocol_type) {
+  auto operation_thread = thread {[](xtd::net::sockets::socket_async_event_args * e, xtd::net::sockets::address_family address_family, xtd::net::sockets::socket_type socket_type, xtd::net::sockets::protocol_type protocol_type) {
     if (e->accept_socket_.data_->address_family == xtd::net::sockets::address_family::unknown && e->accept_socket_.data_->socket_type == xtd::net::sockets::socket_type::unknown && e->accept_socket_.data_->protocol_type == xtd::net::sockets::protocol_type::unknown) {
       e->accept_socket_.data_->address_family = address_family;
       e->accept_socket_.data_->socket_type = socket_type;
@@ -316,7 +316,7 @@ bool socket::accept_async(xtd::net::sockets::socket_async_event_args& e) {
       e->on_complete(*e);
     }
   }, &e, data_->address_family, data_->socket_type, data_->protocol_type};
-  thread.detach();
+  operation_thread.detach();
   return false;
 }
 
@@ -325,7 +325,7 @@ std::shared_ptr<xtd::iasync_result> socket::begin_accept(xtd::async_callback cal
   if (data_->is_bound == false || data_->is_listening == false) throw invalid_operation_exception {csf_};
   
   auto ar = make_shared<async_result_accept>(state);
-  auto operation_thread = std::thread {[](socket s, std::shared_ptr<async_result_accept> ar, xtd::async_callback callback) {
+  auto operation_thread = thread {[](socket s, std::shared_ptr<async_result_accept> ar, xtd::async_callback callback) {
     try {
       ar->socket_ = s.accept();
       ar->is_completed_ = true;
@@ -361,7 +361,7 @@ std::shared_ptr<xtd::iasync_result> socket::begin_disconnect(bool reuse_socket, 
   if (!data_->is_connected) throw object_closed_exception {csf_};
   
   auto ar = make_shared<async_result_disconnect>(state);
-  auto operation_thread = std::thread {[](socket s, bool reuse_socket, std::shared_ptr<async_result_disconnect> ar, xtd::async_callback callback) {
+  auto operation_thread = thread {[](socket s, bool reuse_socket, std::shared_ptr<async_result_disconnect> ar, xtd::async_callback callback) {
     try {
       s.disconnect(reuse_socket);
       ar->is_completed_ = true;
@@ -382,7 +382,7 @@ std::shared_ptr<xtd::iasync_result> socket::begin_receive(std::vector<xtd::byte>
   if (!data_->is_connected) throw socket_exception(socket_error::not_connected, csf_);
   
   auto ar = make_shared<async_result_receive>(state);
-  auto operation_thread = std::thread {[](socket s, std::vector<xtd::byte>* buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, std::shared_ptr<async_result_receive> ar, xtd::async_callback callback) {
+  auto operation_thread = thread {[](socket s, std::vector<xtd::byte>* buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, std::shared_ptr<async_result_receive> ar, xtd::async_callback callback) {
     try {
       ar->number_of_bytes_received_ = s.receive(*buffer, offset, size, socket_flags);
       ar->is_completed_ = true;
@@ -403,7 +403,7 @@ std::shared_ptr<xtd::iasync_result> socket::begin_receive(std::vector<xtd::byte>
   if (!data_->is_connected) throw socket_exception(socket_error::not_connected, csf_);
   
   auto ar = make_shared<async_result_receive>(state);
-  auto operation_thread = std::thread {[](socket s, std::vector<xtd::byte>* buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, std::shared_ptr<async_result_receive> ar, xtd::async_callback callback) {
+  auto operation_thread = thread {[](socket s, std::vector<xtd::byte>* buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, std::shared_ptr<async_result_receive> ar, xtd::async_callback callback) {
     try {
       ar->number_of_bytes_received_ = s.receive(*buffer, offset, size, socket_flags, ar->error_code_);
       ar->is_completed_ = true;
@@ -423,7 +423,7 @@ std::shared_ptr<xtd::iasync_result> socket::begin_receive_from(std::vector<xtd::
   if (data_->handle == 0) throw object_closed_exception {csf_};
   
   auto ar = make_shared<async_result_receive_from>(state);
-  auto operation_thread = std::thread {[](socket s, std::vector<xtd::byte>* buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, std::shared_ptr<async_result_receive_from> ar, xtd::async_callback callback) {
+  auto operation_thread = thread {[](socket s, std::vector<xtd::byte>* buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, std::shared_ptr<async_result_receive_from> ar, xtd::async_callback callback) {
     try {
       ar->end_point_ = make_shared<ip_end_point>();
       ar->number_of_bytes_received_ = s.receive_from(*buffer, offset, size, socket_flags, *ar->end_point_);
@@ -445,7 +445,7 @@ std::shared_ptr<xtd::iasync_result> socket::begin_receive_message_from(std::vect
   
   auto ar = make_shared<async_result_receive_message_from>(state);
   ar->socket_flags_ = socket_flags;
-  auto operation_thread = std::thread {[](socket s, std::vector<xtd::byte>* buffer, size_t offset, size_t size, std::shared_ptr<async_result_receive_message_from> ar, xtd::async_callback callback) {
+  auto operation_thread = thread {[](socket s, std::vector<xtd::byte>* buffer, size_t offset, size_t size, std::shared_ptr<async_result_receive_message_from> ar, xtd::async_callback callback) {
     try {
       ar->end_point_ = make_shared<ip_end_point>();
       ar->number_of_bytes_received_ = s.receive_message_from(*buffer, offset, size, ar->socket_flags_, *ar->end_point_, ar->ip_packet_information_);
@@ -467,7 +467,7 @@ std::shared_ptr<xtd::iasync_result> socket::begin_send(const std::vector<xtd::by
   if (!data_->is_connected) throw socket_exception(socket_error::not_connected, csf_);
   
   auto ar = make_shared<async_result_send>(state);
-  auto operation_thread = std::thread {[](socket s, const std::vector<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, std::shared_ptr<async_result_send> ar, xtd::async_callback callback) {
+  auto operation_thread = thread {[](socket s, const std::vector<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, std::shared_ptr<async_result_send> ar, xtd::async_callback callback) {
     try {
       ar->number_of_bytes_sent_ = s.send(buffer, offset, size, socket_flags);
       ar->is_completed_ = true;
@@ -488,7 +488,7 @@ std::shared_ptr<xtd::iasync_result> socket::begin_send(const std::vector<xtd::by
   if (!data_->is_connected) throw socket_exception(socket_error::not_connected, csf_);
   
   auto ar = make_shared<async_result_send>(state);
-  auto operation_thread = std::thread {[](socket s, const std::vector<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, std::shared_ptr<async_result_send> ar, xtd::async_callback callback) {
+  auto operation_thread = thread {[](socket s, const std::vector<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, std::shared_ptr<async_result_send> ar, xtd::async_callback callback) {
     try {
       ar->number_of_bytes_sent_ = s.send(buffer, offset, size, socket_flags, ar->error_code_);
       ar->is_completed_ = true;
@@ -508,7 +508,7 @@ std::shared_ptr<xtd::iasync_result> socket::begin_send_to(const std::vector<xtd:
   if (data_->handle == 0) throw object_closed_exception {csf_};
   
   auto ar = make_shared<async_result_send_to>(state);
-  auto operation_thread = std::thread {[](socket s, const std::vector<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, const xtd::net::end_point & remote_end_point, std::shared_ptr<async_result_send_to> ar, xtd::async_callback callback) {
+  auto operation_thread = thread {[](socket s, const std::vector<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, const xtd::net::end_point & remote_end_point, std::shared_ptr<async_result_send_to> ar, xtd::async_callback callback) {
     try {
       ar->number_of_bytes_sent_ = s.send_to(buffer, offset, size, socket_flags, remote_end_point);
       ar->is_completed_ = true;
@@ -934,7 +934,7 @@ std::shared_ptr<xtd::iasync_result> socket::begin_connect_(std::shared_ptr<xtd::
   if (data_->handle == 0) throw object_closed_exception {csf_};
   
   auto ar = make_shared<async_result_connect>(state);
-  auto operation_thread = std::thread {[](socket s, std::shared_ptr<xtd::net::end_point> remote_end_point, std::shared_ptr<async_result_connect> ar, xtd::async_callback callback) {
+  auto operation_thread = thread {[](socket s, std::shared_ptr<xtd::net::end_point> remote_end_point, std::shared_ptr<async_result_connect> ar, xtd::async_callback callback) {
     try {
       s.connect_(remote_end_point);
       ar->is_completed_ = true;

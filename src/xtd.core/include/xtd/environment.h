@@ -385,11 +385,11 @@ namespace xtd {
     static void current_directory(const xtd::ustring& directory_name);
     
     /// @brief Gets a unique identifier for the current managed thread.
-    /// @return A std::thread::id that represents a unique identifier for this thread.
+    /// @return An id that represents a unique identifier for this thread.
     static int32 current_managed_thread_id() noexcept;
 
     /// @brief Gets a unique identifier for the current thread.
-    /// @return A std::thread::id that represents a unique identifier for this thread.
+    /// @return An id that represents a unique identifier for this thread.
     static intptr current_thread_id() noexcept;
 
     /// @brief Gets the exit code of the process.

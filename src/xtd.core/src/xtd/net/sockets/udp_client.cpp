@@ -115,7 +115,7 @@ void udp_client::allow_nat_traversal(bool allowed) {
 
 std::shared_ptr<xtd::iasync_result> udp_client::begin_receive(xtd::async_callback callback, const std::any& state) {
   auto ar = make_shared<async_result_receive>(state);
-  auto operation_thread = std::thread {[](udp_client * udp_client, std::shared_ptr<async_result_receive> ar, xtd::async_callback callback) {
+  auto operation_thread = thread {[](udp_client * udp_client, std::shared_ptr<async_result_receive> ar, xtd::async_callback callback) {
     try {
       ar->buffer_ = udp_client->receive(ar->remote_end_point_);
       ar->is_completed_ = true;
@@ -131,7 +131,7 @@ std::shared_ptr<xtd::iasync_result> udp_client::begin_receive(xtd::async_callbac
 
 std::shared_ptr<xtd::iasync_result> udp_client::begin_send(const std::vector<xtd::byte>& dgram, size_t bytes, const xtd::ustring& hostname, uint16 port, xtd::async_callback callback, const std::any& state) {
   auto ar = make_shared<async_result_send>(state);
-  auto operation_thread = std::thread {[](udp_client * udp_client, const std::vector<xtd::byte>& dgram, size_t bytes, const xtd::ustring & hostname, uint16 port, std::shared_ptr<async_result_send> ar, xtd::async_callback callback) {
+  auto operation_thread = thread {[](udp_client * udp_client, const std::vector<xtd::byte>& dgram, size_t bytes, const xtd::ustring & hostname, uint16 port, std::shared_ptr<async_result_send> ar, xtd::async_callback callback) {
     try {
       ar->number_of_bytes_sent_ = udp_client->send(dgram, bytes, hostname, port);
       ar->is_completed_ = true;
@@ -147,7 +147,7 @@ std::shared_ptr<xtd::iasync_result> udp_client::begin_send(const std::vector<xtd
 
 std::shared_ptr<xtd::iasync_result> udp_client::begin_send(const std::vector<xtd::byte>& dgram, size_t bytes, const xtd::net::ip_end_point& end_point, xtd::async_callback callback, const std::any& state) {
   auto ar = make_shared<async_result_send>(state);
-  auto operation_thread = std::thread {[](udp_client * udp_client, const std::vector<xtd::byte>& dgram, size_t bytes, const xtd::net::ip_end_point & end_point, std::shared_ptr<async_result_send> ar, xtd::async_callback callback) {
+  auto operation_thread = thread {[](udp_client * udp_client, const std::vector<xtd::byte>& dgram, size_t bytes, const xtd::net::ip_end_point & end_point, std::shared_ptr<async_result_send> ar, xtd::async_callback callback) {
     try {
       ar->number_of_bytes_sent_ = udp_client->send(dgram, bytes, end_point);
       ar->is_completed_ = true;
@@ -163,7 +163,7 @@ std::shared_ptr<xtd::iasync_result> udp_client::begin_send(const std::vector<xtd
 
 std::shared_ptr<xtd::iasync_result> udp_client::begin_send(const std::vector<xtd::byte>& dgram, size_t bytes, xtd::async_callback callback, const std::any& state) {
   auto ar = make_shared<async_result_send>(state);
-  auto operation_thread = std::thread {[](udp_client * udp_client, const std::vector<xtd::byte>& dgram, size_t bytes, std::shared_ptr<async_result_send> ar, xtd::async_callback callback) {
+  auto operation_thread = thread {[](udp_client * udp_client, const std::vector<xtd::byte>& dgram, size_t bytes, std::shared_ptr<async_result_send> ar, xtd::async_callback callback) {
     try {
       ar->number_of_bytes_sent_ = udp_client->send(dgram, bytes);
       ar->is_completed_ = true;
