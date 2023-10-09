@@ -16,7 +16,6 @@
 #include <xtd/native/socket>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <algorithm>
-#include <mutex>
 #include <thread>
 
 using namespace std;
