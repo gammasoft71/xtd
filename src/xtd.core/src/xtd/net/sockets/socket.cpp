@@ -326,12 +326,11 @@ std::shared_ptr<xtd::iasync_result> socket::begin_accept(xtd::async_callback cal
   if (data_->is_bound == false || data_->is_listening == false) throw invalid_operation_exception {csf_};
   
   auto ar = make_shared<async_result_accept>(state);
-  ar->async_wait_handle().wait_one();
   auto operation_thread = std::thread {[](socket s, std::shared_ptr<async_result_accept> ar, xtd::async_callback callback) {
     try {
       ar->socket_ = s.accept();
       ar->is_completed_ = true;
-      as<xtd::threading::mutex>(ar->async_wait_handle()).release_mutex();
+      as<xtd::threading::manual_reset_event>(ar->async_wait_handle()).set();
       callback(ar);
     } catch (...) {
       ar->error_code_ = s.get_last_error_();
@@ -363,12 +362,11 @@ std::shared_ptr<xtd::iasync_result> socket::begin_disconnect(bool reuse_socket, 
   if (!data_->is_connected) throw object_closed_exception {csf_};
   
   auto ar = make_shared<async_result_disconnect>(state);
-  ar->async_wait_handle().wait_one();
   auto operation_thread = std::thread {[](socket s, bool reuse_socket, std::shared_ptr<async_result_disconnect> ar, xtd::async_callback callback) {
     try {
       s.disconnect(reuse_socket);
       ar->is_completed_ = true;
-      as<xtd::threading::mutex>(ar->async_wait_handle()).release_mutex();
+      as<xtd::threading::manual_reset_event>(ar->async_wait_handle()).set();
       callback(ar);
     } catch (...) {
       ar->error_code_ = s.get_last_error_();
@@ -385,12 +383,11 @@ std::shared_ptr<xtd::iasync_result> socket::begin_receive(std::vector<xtd::byte>
   if (!data_->is_connected) throw socket_exception(socket_error::not_connected, csf_);
   
   auto ar = make_shared<async_result_receive>(state);
-  ar->async_wait_handle().wait_one();
   auto operation_thread = std::thread {[](socket s, std::vector<xtd::byte>* buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, std::shared_ptr<async_result_receive> ar, xtd::async_callback callback) {
     try {
       ar->number_of_bytes_received_ = s.receive(*buffer, offset, size, socket_flags);
       ar->is_completed_ = true;
-      as<xtd::threading::mutex>(ar->async_wait_handle()).release_mutex();
+      as<xtd::threading::manual_reset_event>(ar->async_wait_handle()).set();
       callback(ar);
     } catch (...) {
       ar->error_code_ = s.get_last_error_();
@@ -407,12 +404,11 @@ std::shared_ptr<xtd::iasync_result> socket::begin_receive(std::vector<xtd::byte>
   if (!data_->is_connected) throw socket_exception(socket_error::not_connected, csf_);
   
   auto ar = make_shared<async_result_receive>(state);
-  ar->async_wait_handle().wait_one();
   auto operation_thread = std::thread {[](socket s, std::vector<xtd::byte>* buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, std::shared_ptr<async_result_receive> ar, xtd::async_callback callback) {
     try {
       ar->number_of_bytes_received_ = s.receive(*buffer, offset, size, socket_flags, ar->error_code_);
       ar->is_completed_ = true;
-      as<xtd::threading::mutex>(ar->async_wait_handle()).release_mutex();
+      as<xtd::threading::manual_reset_event>(ar->async_wait_handle()).set();
       callback(ar);
     } catch (...) {
       ar->error_code_ = s.get_last_error_();
@@ -428,13 +424,12 @@ std::shared_ptr<xtd::iasync_result> socket::begin_receive_from(std::vector<xtd::
   if (data_->handle == 0) throw object_closed_exception {csf_};
   
   auto ar = make_shared<async_result_receive_from>(state);
-  ar->async_wait_handle().wait_one();
   auto operation_thread = std::thread {[](socket s, std::vector<xtd::byte>* buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, std::shared_ptr<async_result_receive_from> ar, xtd::async_callback callback) {
     try {
       ar->end_point_ = make_shared<ip_end_point>();
       ar->number_of_bytes_received_ = s.receive_from(*buffer, offset, size, socket_flags, *ar->end_point_);
       ar->is_completed_ = true;
-      as<xtd::threading::mutex>(ar->async_wait_handle()).release_mutex();
+      as<xtd::threading::manual_reset_event>(ar->async_wait_handle()).set();
       callback(ar);
     } catch (...) {
       ar->error_code_ = s.get_last_error_();
@@ -450,14 +445,13 @@ std::shared_ptr<xtd::iasync_result> socket::begin_receive_message_from(std::vect
   if (data_->handle == 0) throw object_closed_exception {csf_};
   
   auto ar = make_shared<async_result_receive_message_from>(state);
-  ar->async_wait_handle().wait_one();
   ar->socket_flags_ = socket_flags;
   auto operation_thread = std::thread {[](socket s, std::vector<xtd::byte>* buffer, size_t offset, size_t size, std::shared_ptr<async_result_receive_message_from> ar, xtd::async_callback callback) {
     try {
       ar->end_point_ = make_shared<ip_end_point>();
       ar->number_of_bytes_received_ = s.receive_message_from(*buffer, offset, size, ar->socket_flags_, *ar->end_point_, ar->ip_packet_information_);
       ar->is_completed_ = true;
-      as<xtd::threading::mutex>(ar->async_wait_handle()).release_mutex();
+      as<xtd::threading::manual_reset_event>(ar->async_wait_handle()).set();
       callback(ar);
     } catch (...) {
       ar->error_code_ = s.get_last_error_();
@@ -474,12 +468,11 @@ std::shared_ptr<xtd::iasync_result> socket::begin_send(const std::vector<xtd::by
   if (!data_->is_connected) throw socket_exception(socket_error::not_connected, csf_);
   
   auto ar = make_shared<async_result_send>(state);
-  ar->async_wait_handle().wait_one();
   auto operation_thread = std::thread {[](socket s, const std::vector<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, std::shared_ptr<async_result_send> ar, xtd::async_callback callback) {
     try {
       ar->number_of_bytes_sent_ = s.send(buffer, offset, size, socket_flags);
       ar->is_completed_ = true;
-      as<xtd::threading::mutex>(ar->async_wait_handle()).release_mutex();
+      as<xtd::threading::manual_reset_event>(ar->async_wait_handle()).set();
       callback(ar);
     } catch (...) {
       ar->error_code_ = s.get_last_error_();
@@ -496,12 +489,11 @@ std::shared_ptr<xtd::iasync_result> socket::begin_send(const std::vector<xtd::by
   if (!data_->is_connected) throw socket_exception(socket_error::not_connected, csf_);
   
   auto ar = make_shared<async_result_send>(state);
-  ar->async_wait_handle().wait_one();
   auto operation_thread = std::thread {[](socket s, const std::vector<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, std::shared_ptr<async_result_send> ar, xtd::async_callback callback) {
     try {
       ar->number_of_bytes_sent_ = s.send(buffer, offset, size, socket_flags, ar->error_code_);
       ar->is_completed_ = true;
-      as<xtd::threading::mutex>(ar->async_wait_handle()).release_mutex();
+      as<xtd::threading::manual_reset_event>(ar->async_wait_handle()).set();
       callback(ar);
     } catch (...) {
       ar->error_code_ = s.get_last_error_();
@@ -517,12 +509,11 @@ std::shared_ptr<xtd::iasync_result> socket::begin_send_to(const std::vector<xtd:
   if (data_->handle == 0) throw object_closed_exception {csf_};
   
   auto ar = make_shared<async_result_send_to>(state);
-  ar->async_wait_handle().wait_one();
   auto operation_thread = std::thread {[](socket s, const std::vector<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, const xtd::net::end_point & remote_end_point, std::shared_ptr<async_result_send_to> ar, xtd::async_callback callback) {
     try {
       ar->number_of_bytes_sent_ = s.send_to(buffer, offset, size, socket_flags, remote_end_point);
       ar->is_completed_ = true;
-      as<xtd::threading::mutex>(ar->async_wait_handle()).release_mutex();
+      as<xtd::threading::manual_reset_event>(ar->async_wait_handle()).set();
       callback(ar);
     } catch (...) {
       ar->error_code_ = s.get_last_error_();
@@ -587,7 +578,7 @@ void socket::disconnect(bool reuse_socket) {
 socket socket::end_accept(std::shared_ptr<xtd::iasync_result> ar) {
   if (ar == nullptr) throw argument_null_exception {csf_};
   if (!is<async_result_accept>(ar)) throw argument_exception {csf_};
-  auto lock = lock_guard<xtd::threading::mutex> {as<xtd::threading::mutex>(ar->async_wait_handle())};
+  ar->async_wait_handle().wait_one();
   if (as<async_result_accept>(ar)->exception_) rethrow_exception(as<async_result_accept>(ar)->exception_);
   return as<socket>(as<async_result_accept>(ar)->socket_);
 }
@@ -595,21 +586,21 @@ socket socket::end_accept(std::shared_ptr<xtd::iasync_result> ar) {
 void socket::end_connect(std::shared_ptr<xtd::iasync_result> ar) {
   if (ar == nullptr) throw argument_null_exception {csf_};
   if (!is<async_result_connect>(ar)) throw argument_exception {csf_};
-  auto lock = lock_guard<xtd::threading::mutex> {as<xtd::threading::mutex>(ar->async_wait_handle())};
+  ar->async_wait_handle().wait_one();
   if (as<async_result_connect>(ar)->exception_) rethrow_exception(as<async_result_connect>(ar)->exception_);
 }
 
 void socket::end_disconnect(std::shared_ptr<xtd::iasync_result> ar) {
   if (ar == nullptr) throw argument_null_exception {csf_};
   if (!is<async_result_disconnect>(ar)) throw argument_exception {csf_};
-  auto lock = lock_guard<xtd::threading::mutex> {as<xtd::threading::mutex>(ar->async_wait_handle())};
+  ar->async_wait_handle().wait_one();
   if (as<async_result_disconnect>(ar)->exception_) rethrow_exception(as<async_result_disconnect>(ar)->exception_);
 }
 
 size_t socket::end_receive(std::shared_ptr<xtd::iasync_result> ar) {
   if (ar == nullptr) throw argument_null_exception {csf_};
   if (!is<async_result_receive>(ar)) throw argument_exception {csf_};
-  auto lock = lock_guard<xtd::threading::mutex> {as<xtd::threading::mutex>(ar->async_wait_handle())};
+  ar->async_wait_handle().wait_one();
   if (as<async_result_receive>(ar)->exception_) rethrow_exception(as<async_result_receive>(ar)->exception_);
   return as<async_result_receive>(ar)->number_of_bytes_received_;
 }
@@ -617,7 +608,7 @@ size_t socket::end_receive(std::shared_ptr<xtd::iasync_result> ar) {
 size_t socket::end_receive(std::shared_ptr<xtd::iasync_result> ar, xtd::net::sockets::socket_error& error) {
   if (ar == nullptr) throw argument_null_exception {csf_};
   if (!is<async_result_receive>(ar)) throw argument_exception {csf_};
-  auto lock = lock_guard<xtd::threading::mutex> {as<xtd::threading::mutex>(ar->async_wait_handle())};
+  ar->async_wait_handle().wait_one();
   if (as<async_result_receive>(ar)->exception_) rethrow_exception(as<async_result_receive>(ar)->exception_);
   error = as<async_result_receive>(ar)->error_code_;
   return as<async_result_receive>(ar)->number_of_bytes_received_;
@@ -626,7 +617,7 @@ size_t socket::end_receive(std::shared_ptr<xtd::iasync_result> ar, xtd::net::soc
 size_t socket::end_receive_from(std::shared_ptr<xtd::iasync_result> ar, std::shared_ptr<xtd::net::end_point>& end_point) {
   if (ar == nullptr) throw argument_null_exception {csf_};
   if (!is<async_result_receive_from>(ar)) throw argument_exception {csf_};
-  auto lock = lock_guard<xtd::threading::mutex> {as<xtd::threading::mutex>(ar->async_wait_handle())};
+  ar->async_wait_handle().wait_one();
   if (as<async_result_receive_from>(ar)->exception_) rethrow_exception(as<async_result_receive_from>(ar)->exception_);
   end_point = as<async_result_receive_from>(ar)->end_point_;
   return as<async_result_receive_from>(ar)->number_of_bytes_received_;
@@ -635,7 +626,7 @@ size_t socket::end_receive_from(std::shared_ptr<xtd::iasync_result> ar, std::sha
 size_t socket::end_receive_message_from(std::shared_ptr<xtd::iasync_result> ar, xtd::net::sockets::socket_flags& socket_flags, std::shared_ptr<xtd::net::end_point>& end_point, ip_packet_information& ip_packet_information) {
   if (ar == nullptr) throw argument_null_exception {csf_};
   if (!is<async_result_receive_message_from>(ar)) throw argument_exception {csf_};
-  auto lock = lock_guard<xtd::threading::mutex> {as<xtd::threading::mutex>(ar->async_wait_handle())};
+  ar->async_wait_handle().wait_one();
   if (as<async_result_receive_message_from>(ar)->exception_) rethrow_exception(as<async_result_receive_message_from>(ar)->exception_);
   end_point = as<async_result_receive_message_from>(ar)->end_point_;
   socket_flags = as<async_result_receive_message_from>(ar)->socket_flags_;
@@ -646,7 +637,7 @@ size_t socket::end_receive_message_from(std::shared_ptr<xtd::iasync_result> ar, 
 size_t socket::end_send(std::shared_ptr<xtd::iasync_result> ar) {
   if (ar == nullptr) throw argument_null_exception {csf_};
   if (!is<async_result_send>(ar)) throw argument_exception {csf_};
-  auto lock = lock_guard<xtd::threading::mutex> {as<xtd::threading::mutex>(ar->async_wait_handle())};
+  ar->async_wait_handle().wait_one();
   if (as<async_result_send>(ar)->exception_) rethrow_exception(as<async_result_send>(ar)->exception_);
   return as<async_result_send>(ar)->number_of_bytes_sent_;
 }
@@ -654,7 +645,7 @@ size_t socket::end_send(std::shared_ptr<xtd::iasync_result> ar) {
 size_t socket::end_send(std::shared_ptr<xtd::iasync_result> ar, xtd::net::sockets::socket_error& error) {
   if (ar == nullptr) throw argument_null_exception {csf_};
   if (!is<async_result_send>(ar)) throw argument_exception {csf_};
-  auto lock = lock_guard<xtd::threading::mutex> {as<xtd::threading::mutex>(ar->async_wait_handle())};
+  ar->async_wait_handle().wait_one();
   if (as<async_result_send>(ar)->exception_) rethrow_exception(as<async_result_send>(ar)->exception_);
   error = as<async_result_send>(ar)->error_code_;
   return as<async_result_send>(ar)->number_of_bytes_sent_;
@@ -663,7 +654,7 @@ size_t socket::end_send(std::shared_ptr<xtd::iasync_result> ar, xtd::net::socket
 size_t socket::end_send_to(std::shared_ptr<xtd::iasync_result> ar) {
   if (ar == nullptr) throw argument_null_exception {csf_};
   if (!is<async_result_send_to>(ar)) throw argument_exception {csf_};
-  auto lock = lock_guard<xtd::threading::mutex> {as<xtd::threading::mutex>(ar->async_wait_handle())};
+  ar->async_wait_handle().wait_one();
   if (as<async_result_send_to>(ar)->exception_) rethrow_exception(as<async_result_send_to>(ar)->exception_);
   return as<async_result_send_to>(ar)->number_of_bytes_sent_;
 }
@@ -944,12 +935,11 @@ std::shared_ptr<xtd::iasync_result> socket::begin_connect_(std::shared_ptr<xtd::
   if (data_->handle == 0) throw object_closed_exception {csf_};
   
   auto ar = make_shared<async_result_connect>(state);
-  ar->async_wait_handle().wait_one();
   auto operation_thread = std::thread {[](socket s, std::shared_ptr<xtd::net::end_point> remote_end_point, std::shared_ptr<async_result_connect> ar, xtd::async_callback callback) {
     try {
       s.connect_(remote_end_point);
       ar->is_completed_ = true;
-      as<xtd::threading::mutex>(ar->async_wait_handle()).release_mutex();
+      as<xtd::threading::manual_reset_event>(ar->async_wait_handle()).set();
       callback(ar);
     } catch (...) {
       ar->error_code_ = s.get_last_error_();

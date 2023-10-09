@@ -20,7 +20,7 @@
 #include "socket_type.h"
 #include "../end_point.h"
 #include "../ip_address.h"
-#include "../../threading/mutex.h"
+#include "../../threading/manual_reset_event.h"
 #include "../../core_export.h"
 #include "../../argument_exception.h"
 #include "../../async_callback.h"
@@ -74,13 +74,13 @@ namespace xtd {
         public:
           explicit async_result_socket(std::any async_state) : async_state_(async_state) {}
           std::any async_state() const noexcept override {return async_state_;}
-          xtd::threading::wait_handle& async_wait_handle() noexcept override {return async_mutex_;}
+          xtd::threading::wait_handle& async_wait_handle() noexcept override {return async_event_;}
           bool completed_synchronously() const noexcept override {return false;}
           bool is_completed() const noexcept override {return is_completed_;};
           
           std::any async_state_;
           bool is_completed_ = false;
-          xtd::threading::mutex async_mutex_;
+          xtd::threading::manual_reset_event async_event_;
           xtd::net::sockets::socket_error error_code_ = xtd::net::sockets::socket_error::success;
           std::exception_ptr exception_;
         };
