@@ -60,7 +60,7 @@ private:
       on_signal_generated({next_signal(), date_time::now()});
     }
   }};
-  iasync_result_ptr generator_result_;
+  async_result generator_result_;
 };
 
 class random_signal_generator : public signal_generator_base {
@@ -120,7 +120,7 @@ public:
     grid_horizontal_line_color_ = value;
     return *this;
   }
-  graph_control& grid_horizontal_line_color(nullptr_t) noexcept {
+  graph_control& grid_horizontal_line_color(std::nullptr_t) noexcept {
     grid_horizontal_line_color_.reset();
     return *this;
   }
@@ -148,7 +148,7 @@ public:
     grid_vertical_line_color_ = value;
     return *this;
   }
-  graph_control& grid_vertical_line_color(nullptr_t) noexcept {
+  graph_control& grid_vertical_line_color(std::nullptr_t) noexcept {
     grid_vertical_line_color_.reset();
     return *this;
   }
@@ -176,7 +176,7 @@ public:
     x_axis_line_color_ = value;
     return *this;
   }
-  graph_control& x_axis_line_color(nullptr_t) noexcept {
+  graph_control& x_axis_line_color(std::nullptr_t) noexcept {
     x_axis_line_color_.reset();
     return *this;
   }
@@ -198,7 +198,7 @@ public:
     y_axis_line_color_ = value;
     return *this;
   }
-  graph_control& y_axis_line_color(nullptr_t) noexcept {
+  graph_control& y_axis_line_color(std::nullptr_t) noexcept {
     y_axis_line_color_.reset();
     return *this;
   }
