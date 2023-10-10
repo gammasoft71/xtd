@@ -23,7 +23,6 @@ using signal_generated_event_handler = generic_event_handler<const signal_genera
 
 class signal_generator_base abstract_ {
 public:
-  signal_generator_base() = default;
   ~signal_generator_base() {enabled(false);}
   
   bool enabled() const noexcept {return enabled_;}
