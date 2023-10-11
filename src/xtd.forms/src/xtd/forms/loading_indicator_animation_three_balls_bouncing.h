@@ -3,7 +3,7 @@
 #include <xtd/math>
 
 namespace xtd::forms {
-  class loading_indicator_animation_three_balls : public loading_indicator_animation {
+  class loading_indicator_animation_three_balls_bouncing : public loading_indicator_animation {
   public:
     void on_paint(xtd::drawing::graphics& graphics,  const xtd::drawing::rectangle& clip_rectangle, const xtd::drawing::color& color, bool enabled) override {
       auto dot_height = xtd::math::min(clip_rectangle.height(), clip_rectangle.width()) / 4;
@@ -21,10 +21,13 @@ namespace xtd::forms {
       auto height3 = dot_height;
       auto width3 = dot_width;
       auto opacity = enabled ? 255 : 128;
-      
-      graphics.fill_ellipse(xtd::drawing::solid_brush {xtd::drawing::color::from_argb(static_cast<xtd::byte>(opacity), color)}, x1, y1, width1, height1);
-      graphics.fill_ellipse(xtd::drawing::solid_brush {xtd::drawing::color::from_argb(static_cast<xtd::byte>(opacity), color)}, x2, y2, width2, height2);
-      graphics.fill_ellipse(xtd::drawing::solid_brush {xtd::drawing::color::from_argb(static_cast<xtd::byte>(opacity), color)}, x3, y3, width3, height3);
+      auto wave1 = std::vector { 0,  2,  4,  2,  0, -2, -4, -2};
+      auto wave2 = std::vector {-4, -2,  0,  2,  4,  2,  0, -2};
+      auto wave3 = std::vector { 0, -2, -4, -2,  0,  2,  4,  2};
+
+      graphics.fill_ellipse(xtd::drawing::solid_brush {xtd::drawing::color::from_argb(static_cast<xtd::byte>(opacity), color)}, x1, y1 - wave1[frame_ % 8], width1, height1);
+      graphics.fill_ellipse(xtd::drawing::solid_brush {xtd::drawing::color::from_argb(static_cast<xtd::byte>(opacity), color)}, x2, y2 - wave2[frame_ % 8], width2, height2);
+      graphics.fill_ellipse(xtd::drawing::solid_brush {xtd::drawing::color::from_argb(static_cast<xtd::byte>(opacity), color)}, x3, y3 - wave3[frame_ % 8], width3, height3);
     }
     
     void on_timer() override {

@@ -3,6 +3,7 @@
 #include "loading_indicator_animation_standard.h"
 #include "loading_indicator_animation_system.h"
 #include "loading_indicator_animation_three_balls.h"
+#include "loading_indicator_animation_three_balls_bouncing.h"
 #include <xtd/drawing/solid_brush>
 #include <xtd/drawing/string_format>
 #define __XTD_FORMS_NATIVE_LIBRARY__
@@ -87,6 +88,7 @@ void loading_indicator::on_handle_created(const event_args& e) {
     case loading_indicator_style::standard: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_standard>(); break;
     case loading_indicator_style::system: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_system>(); break;
     case loading_indicator_style::three_balls: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_three_balls>(); break;
+    case loading_indicator_style::three_balls_bouncing: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_three_balls_bouncing>(); break;
     default: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_system>(); break;
   }
   if (data_->loading_indicator_style == xtd::forms::loading_indicator_style::system) {
