@@ -18,18 +18,20 @@ namespace xtd {
     /// @ingroup xtd_forms
     /// @remarks If the system style is used, the appearance of the control is determined by the user's operating system and the following property values will be ignored: control_background_image, image_align, image, image_index, image_list, and text_align. In addition, the control.back_color property will be ignored for button controls. If supported, users can change the appearance of controls by adjusting the appearance settings of their operating system.
     enum class loading_indicator_style {
-      /// @brief The control appears with dots style.
-      dots = 0,
+      /// @brief The control appears with circle blinks style.
+      circle_blinks = 0,
       /// @brief The control appears with standard style.
       standard,
       /// @brief The appearance of the control is determined by the user's operating system.
       system,
+      /// @brief The control appears with three balls style.
+      three_balls,
     };
   }
 }
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::loading_indicator_style> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::loading_indicator_style> {{xtd::forms::loading_indicator_style::dots, "dots"}, {xtd::forms::loading_indicator_style::standard, "standard"}, {xtd::forms::loading_indicator_style::system, "system"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::loading_indicator_style> {{xtd::forms::loading_indicator_style::circle_blinks, "circle_blinks"}, {xtd::forms::loading_indicator_style::standard, "standard"}, {xtd::forms::loading_indicator_style::system, "system"}, {xtd::forms::loading_indicator_style::three_balls, "three_balls"}};}
 };
 /// @endcond

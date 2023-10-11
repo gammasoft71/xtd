@@ -1,4 +1,8 @@
 #include "../../../include/xtd/forms/loading_indicator.h"
+#include "loading_indicator_animation_circle_blinks.h"
+#include "loading_indicator_animation_standard.h"
+#include "loading_indicator_animation_system.h"
+#include "loading_indicator_animation_three_balls.h"
 #include <xtd/drawing/solid_brush>
 #include <xtd/drawing/string_format>
 #define __XTD_FORMS_NATIVE_LIBRARY__
@@ -8,19 +12,16 @@
 #include <xtd/forms/native/loading_indicator_styles>
 #include <xtd/forms/native/window_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/math>
 
 using namespace xtd;
 using namespace xtd::forms;
 
 struct loading_indicator::data {
   bool running = false;
+  int32 interval = 150;
   xtd::forms::loading_indicator_style loading_indicator_style = xtd::forms::loading_indicator_style::standard;
   xtd::forms::timer timer;
-  int32 intervals = 8;
-  int32 radius_factor = 10;
-  int32 frame = 0;
-  int32 interval = 150;
+  std::shared_ptr<loading_indicator_animation> loading_indicator_animation;
 };
 
 loading_indicator::loading_indicator() : data_(std::make_shared<data>()) {
@@ -81,6 +82,13 @@ drawing::size loading_indicator::measure_control() const noexcept {
 
 void loading_indicator::on_handle_created(const event_args& e) {
   control::on_handle_created(e);
+  switch (data_->loading_indicator_style) {
+    case loading_indicator_style::circle_blinks: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_circle_blinks>(); break;
+    case loading_indicator_style::standard: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_standard>(); break;
+    case loading_indicator_style::system: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_system>(); break;
+    case loading_indicator_style::three_balls: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_three_balls>(); break;
+    default: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_system>(); break;
+  }
   if (data_->loading_indicator_style == xtd::forms::loading_indicator_style::system) {
     if (data_->running) native::loading_indicator::start(handle());
     else native::loading_indicator::stop(handle());
@@ -88,24 +96,12 @@ void loading_indicator::on_handle_created(const event_args& e) {
 }
 
 void loading_indicator::on_paint(paint_event_args& e) {
-  if (data_->loading_indicator_style != xtd::forms::loading_indicator_style::system) {
-    e.graphics().translate_transform(e.clip_rectangle().width() / 2.0f, e.clip_rectangle().height() / 2.0f);
-    auto angle = -360.f / data_->intervals;
-    e.graphics().rotate_transform(data_->frame * angle);
-    auto height = static_cast<float>(math::min(e.clip_rectangle().width(), e.clip_rectangle().height())) / data_->radius_factor;
-    auto width = static_cast<float>(math::min(e.clip_rectangle().width(), e.clip_rectangle().height())) / data_->radius_factor;
-    for (auto n = 0; n < data_->intervals; n++) {
-      auto opacity_index = enabled() ? n + 1 : 2;
-      auto opacity = opacity_index * (255 + 1) / data_->intervals - 1;
-      e.graphics().fill_ellipse(xtd::drawing::solid_brush(xtd::drawing::color::from_argb(static_cast<xtd::byte>(opacity), fore_color())), -(data_->radius_factor / 2.f - 1.f) * width + width / data_->radius_factor * 2.f, -(data_->radius_factor / 2.f - 1.f) * height + height / data_->radius_factor * 2.f, 2.f * width, 2.f * height);
-      e.graphics().rotate_transform(angle);
-    }
-  }
+  if (data_->loading_indicator_style != xtd::forms::loading_indicator_style::system) data_->loading_indicator_animation->on_paint(e.graphics(), e.clip_rectangle(), fore_color(), enabled());
   control::on_paint(e);
 }
 
 void loading_indicator::on_timer_tick(object& timer, const xtd::event_args& e) {
-  if (++data_->frame == data_->intervals) data_->frame = 0;
+  if (data_->loading_indicator_style != xtd::forms::loading_indicator_style::system) data_->loading_indicator_animation->on_timer();
   if (control_appearance() == forms::control_appearance::standard) invalidate();
 }
 
