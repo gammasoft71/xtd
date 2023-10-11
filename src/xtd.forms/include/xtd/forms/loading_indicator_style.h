@@ -26,12 +26,14 @@ namespace xtd {
       system,
       /// @brief The control appears with three balls style.
       three_balls,
+      /// @brief The control appears with three balls bouncing style.
+      three_balls_bouncing,
     };
   }
 }
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::loading_indicator_style> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::loading_indicator_style> {{xtd::forms::loading_indicator_style::circle_blinks, "circle_blinks"}, {xtd::forms::loading_indicator_style::standard, "standard"}, {xtd::forms::loading_indicator_style::system, "system"}, {xtd::forms::loading_indicator_style::three_balls, "three_balls"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::loading_indicator_style> {{xtd::forms::loading_indicator_style::circle_blinks, "circle_blinks"}, {xtd::forms::loading_indicator_style::standard, "standard"}, {xtd::forms::loading_indicator_style::system, "system"}, {xtd::forms::loading_indicator_style::three_balls, "three_balls"}, {xtd::forms::loading_indicator_style::three_balls_bouncing, "three_balls_bouncing"}};}
 };
 /// @endcond

@@ -828,6 +828,7 @@ add_sources(
   src/xtd/forms/loading_indicator_animation_standard.h
   src/xtd/forms/loading_indicator_animation_system.h
   src/xtd/forms/loading_indicator_animation_three_balls.h
+  src/xtd/forms/loading_indicator_animation_three_balls_bouncing.h
   src/xtd/forms/main_menu.cpp
   src/xtd/forms/menu.cpp
   src/xtd/forms/menu_data.h
