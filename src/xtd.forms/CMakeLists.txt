@@ -359,6 +359,8 @@ add_sources(
   include/xtd/forms/list_control
   include/xtd/forms/loading_indicator.h
   include/xtd/forms/loading_indicator
+  include/xtd/forms/loading_indicators.h
+  include/xtd/forms/loading_indicators
   include/xtd/forms/loading_indicator_style.h
   include/xtd/forms/loading_indicator_style
   include/xtd/forms/main_menu.h
@@ -829,6 +831,7 @@ add_sources(
   src/xtd/forms/loading_indicator_animation_system.h
   src/xtd/forms/loading_indicator_animation_three_balls.h
   src/xtd/forms/loading_indicator_animation_three_balls_bouncing.h
+  src/xtd/forms/loading_indicators.cpp
   src/xtd/forms/main_menu.cpp
   src/xtd/forms/menu.cpp
   src/xtd/forms/menu_data.h
