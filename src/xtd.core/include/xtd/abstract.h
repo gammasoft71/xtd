@@ -21,5 +21,5 @@ namespace xtd {
   /// };
   /// @endcode
   #define abstract_ \
-    : public abstract_object
+    : public xtd::abstract_object
 }
