@@ -37,7 +37,7 @@ namespace xtd {
       loading_indicator();
       /// @}
       
-      /// @name Propeties
+      /// @name Properties
       
       /// @{
       using control::control_appearance;
