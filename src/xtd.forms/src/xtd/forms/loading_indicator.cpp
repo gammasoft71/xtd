@@ -22,7 +22,7 @@ struct loading_indicator::data {
   int32 interval = 150;
   xtd::forms::loading_indicator_style loading_indicator_style = xtd::forms::loading_indicator_style::standard;
   xtd::forms::timer timer;
-  std::shared_ptr<loading_indicator_animation> loading_indicator_animation;
+  std::shared_ptr<xtd::forms::loading_indicator_animation> loading_indicator_animation;
 };
 
 loading_indicator::loading_indicator() : data_(std::make_shared<data>()) {
