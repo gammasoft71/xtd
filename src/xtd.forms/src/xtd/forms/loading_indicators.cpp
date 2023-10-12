@@ -97,3 +97,22 @@ loading_indicator loading_indicators::three_balls_bouncing(const control& parent
   if (size.width() != -1 && size.height() != -1) result.size(size);
   return result;
 }
+
+loading_indicator loading_indicators::three_balls_rotation(const xtd::drawing::point& location, const xtd::drawing::size& size, bool running) noexcept {
+  auto result = loading_indicator {};
+  result.loading_indicator_style(xtd::forms::loading_indicator_style::three_balls_rotation);
+  if (location.x() != -1 && location.y() != -1) result.location(location);
+  result.running(running);
+  if (size.width() != -1 && size.height() != -1) result.size(size);
+  return result;
+}
+
+loading_indicator loading_indicators::three_balls_rotation(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, bool running) noexcept {
+  auto result = loading_indicator {};
+  result.loading_indicator_style(xtd::forms::loading_indicator_style::three_balls_rotation);
+  if (location.x() != -1 && location.y() != -1) result.location(location);
+  result.parent(parent);
+  result.running(running);
+  if (size.width() != -1 && size.height() != -1) result.size(size);
+  return result;
+}
