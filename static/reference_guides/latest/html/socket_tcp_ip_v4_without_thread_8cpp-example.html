@@ -97,7 +97,7 @@ $(function() {
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
 <div class="line">  <span class="keyword">auto</span> terminate_app = <span class="keyword">false</span>;</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">auto</span> on_server_accept = [&amp;](std::shared_ptr&lt;iasync_result&gt; ar) {</div>
+<div class="line">  <span class="keyword">auto</span> on_server_accept = [&amp;](<a class="code hl_typedef" href="group__xtd__core.html#ga19b5fcfe32a5a80bd6dad2ce04423367">async_result</a> ar) {</div>
 <div class="line">    <span class="keyword">auto</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1net_1_1sockets_1_1socket.html">socket</a> = as&lt;xtd::net::sockets::socket&gt;(ar-&gt;async_state()).<a id="a1" name="a1"></a><a class="code hl_function" href="classxtd_1_1net_1_1sockets_1_1socket.html#a51fa396cf0d6794fc3bbf4f9122f408d">end_accept</a>(ar);</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">while</span> (!terminate_app) {</div>
@@ -107,7 +107,7 @@ $(function() {
 <div class="line">    }</div>
 <div class="line">  };</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">auto</span> on_client_connect = [&amp;](std::shared_ptr&lt;iasync_result&gt; ar) {</div>
+<div class="line">  <span class="keyword">auto</span> on_client_connect = [&amp;](<a class="code hl_typedef" href="group__xtd__core.html#ga19b5fcfe32a5a80bd6dad2ce04423367">async_result</a> ar) {</div>
 <div class="line">    <span class="keyword">auto</span> <a class="code hl_class" href="classxtd_1_1net_1_1sockets_1_1socket.html">socket</a> = as&lt;xtd::net::sockets::socket&gt;(ar-&gt;async_state());</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1net_1_1sockets_1_1socket.html">socket</a>.<a id="a4" name="a4"></a><a class="code hl_function" href="classxtd_1_1net_1_1sockets_1_1socket.html#a82d5dc513919cadc682049b3a81d2514">end_connect</a>(ar);</div>
 <div class="line">    </div>
@@ -199,6 +199,7 @@ $(function() {
 <div class="ttc" id="aclassxtd_1_1net_1_1sockets_1_1socket_html_a7228566485b91ca662a4f877a3ac64b3"><div class="ttname"><a href="classxtd_1_1net_1_1sockets_1_1socket.html#a7228566485b91ca662a4f877a3ac64b3">xtd::net::sockets::socket::begin_connect</a></div><div class="ttdeci">std::shared_ptr&lt; xtd::iasync_result &gt; begin_connect(const end_point_t &amp;remote_end_point, xtd::async_callback callback, const std::any &amp;state)</div><div class="ttdoc">Begins an asynchronous request for a remote host connection.</div><div class="ttdef"><b>Definition</b> socket.h:574</div></div>
 <div class="ttc" id="aclassxtd_1_1net_1_1sockets_1_1socket_html_a82d5dc513919cadc682049b3a81d2514"><div class="ttname"><a href="classxtd_1_1net_1_1sockets_1_1socket.html#a82d5dc513919cadc682049b3a81d2514">xtd::net::sockets::socket::end_connect</a></div><div class="ttdeci">void end_connect(std::shared_ptr&lt; xtd::iasync_result &gt; async_result)</div><div class="ttdoc">Ends a pending asynchronous connection request.</div></div>
 <div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:46</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ga19b5fcfe32a5a80bd6dad2ce04423367"><div class="ttname"><a href="group__xtd__core.html#ga19b5fcfe32a5a80bd6dad2ce04423367">xtd::async_result</a></div><div class="ttdeci">std::shared_ptr&lt; xtd::iasync_result &gt; async_result</div><div class="ttdoc">Represents the status of an asynchronous operation.</div><div class="ttdef"><b>Definition</b> async_result.h:16</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga2c9b01f90017e6d921f8642ab99f0fcc"><div class="ttname"><a href="group__xtd__core.html#ga2c9b01f90017e6d921f8642ab99f0fcc">xtd::async_callback</a></div><div class="ttdeci">delegate&lt; void(async_result ar)&gt; async_callback</div><div class="ttdoc">References a method to be called when a corresponding asynchronous operation completes.</div><div class="ttdef"><b>Definition</b> delegate.h:34</div></div>
 <div class="ttc" id="anamespacextd_1_1net_1_1sockets_html"><div class="ttname"><a href="namespacextd_1_1net_1_1sockets.html">xtd::net::sockets</a></div><div class="ttdoc">The xtd::net::sockets namespace provides a managed implementation of the Berkeley Sockets interface f...</div><div class="ttdef"><b>Definition</b> address_family.h:16</div></div>
 <div class="ttc" id="anamespacextd_1_1net_html"><div class="ttname"><a href="namespacextd_1_1net.html">xtd::net</a></div><div class="ttdoc">The xtd::net namespace provides a simple programming interface for many of the protocols used on netw...</div><div class="ttdef"><b>Definition</b> cookie_exception.h:10</div></div>
@@ -208,7 +209,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 9 2023 18:06:01 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Oct 12 2023 13:53:14 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

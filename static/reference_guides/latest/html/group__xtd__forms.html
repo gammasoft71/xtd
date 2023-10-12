@@ -433,6 +433,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1loading__indicator.html">xtd::forms::loading_indicator</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a loading indicator control.  <a href="classxtd_1_1forms_1_1loading__indicator.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1loading__indicators.html">xtd::forms::loading_indicators</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a collection of loading indicator objects for use by a Windows Forms application.  <a href="classxtd_1_1forms_1_1loading__indicators.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1main__menu.html">xtd::forms::main_menu</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the menu structure of a form.  <a href="classxtd_1_1forms_1_1main__menu.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1923,11 +1926,15 @@ Enumerations</h2></td></tr>
 <tr class="memdesc:ga9cd361fe4470dd0f0f0a628b4df62a08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies the behaviors of a link in a <a class="el" href="classxtd_1_1forms_1_1link__label.html" title="Represents a Windows label control that can display hyperlinks.">xtd::forms::link_label</a>.  <a href="group__xtd__forms.html#ga9cd361fe4470dd0f0f0a628b4df62a08">More...</a><br /></td></tr>
 <tr class="separator:ga9cd361fe4470dd0f0f0a628b4df62a08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga316f2df5503d2bebdfee32b5f8f57c7b"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__forms.html#ga316f2df5503d2bebdfee32b5f8f57c7b">xtd::forms::loading_indicator_style</a> { <br />
-&#160;&#160;<a class="el" href="group__xtd__forms.html#gga316f2df5503d2bebdfee32b5f8f57c7bae9c6cfa16d8958cb7752450883950ab8">xtd::forms::loading_indicator_style::dots</a>
+&#160;&#160;<a class="el" href="group__xtd__forms.html#gga316f2df5503d2bebdfee32b5f8f57c7ba989d2ba1915b10d497680b32de196c8f">xtd::forms::loading_indicator_style::circle_blinks</a>
 , <br />
 &#160;&#160;<a class="el" href="group__xtd__forms.html#gga316f2df5503d2bebdfee32b5f8f57c7bac00f0c4675b91fb8b918e4079a0b1bac">xtd::forms::loading_indicator_style::standard</a>
 , <br />
 &#160;&#160;<a class="el" href="group__xtd__forms.html#gga316f2df5503d2bebdfee32b5f8f57c7ba54b53072540eeeb8f8e9343e71f28176">xtd::forms::loading_indicator_style::system</a>
+, <br />
+&#160;&#160;<a class="el" href="group__xtd__forms.html#gga316f2df5503d2bebdfee32b5f8f57c7ba58e95254db7c7541fe3075a52200d5ff">xtd::forms::loading_indicator_style::three_balls</a>
+, <br />
+&#160;&#160;<a class="el" href="group__xtd__forms.html#gga316f2df5503d2bebdfee32b5f8f57c7baa679bf7ed7ec2135765a7998e13d85a4">xtd::forms::loading_indicator_style::three_balls_bouncing</a>
 <br />
  }</td></tr>
 <tr class="memdesc:ga316f2df5503d2bebdfee32b5f8f57c7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies the appearance of a loading indicator control.  <a href="group__xtd__forms.html#ga316f2df5503d2bebdfee32b5f8f57c7b">More...</a><br /></td></tr>
@@ -5788,11 +5795,15 @@ If the system style is used, the appearance of the control is determined by the 
 <dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms.html" title="The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...">xtd.forms</a></dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If the system style is used, the appearance of the control is determined by the user's operating system and the following property values will be ignored: control_background_image, image_align, image, image_index, <a class="el" href="classxtd_1_1forms_1_1image__list.html" title="Provides methods to manage a collection of xtd::drawing::image objects. This class cannot be inherite...">image_list</a>, and text_align. In addition, the <a class="el" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa" title="Gets the background color for the control.">control.back_color</a> property will be ignored for button controls. If supported, users can change the appearance of controls by adjusting the appearance settings of their operating system. </dd></dl>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga316f2df5503d2bebdfee32b5f8f57c7bae9c6cfa16d8958cb7752450883950ab8" name="gga316f2df5503d2bebdfee32b5f8f57c7bae9c6cfa16d8958cb7752450883950ab8"></a>dots&#160;</td><td class="fielddoc"><p>The control appears with dots style. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga316f2df5503d2bebdfee32b5f8f57c7ba989d2ba1915b10d497680b32de196c8f" name="gga316f2df5503d2bebdfee32b5f8f57c7ba989d2ba1915b10d497680b32de196c8f"></a>circle_blinks&#160;</td><td class="fielddoc"><p>The control appears with circle blinks style. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="gga316f2df5503d2bebdfee32b5f8f57c7bac00f0c4675b91fb8b918e4079a0b1bac" name="gga316f2df5503d2bebdfee32b5f8f57c7bac00f0c4675b91fb8b918e4079a0b1bac"></a>standard&#160;</td><td class="fielddoc"><p>The control appears with standard style. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="gga316f2df5503d2bebdfee32b5f8f57c7ba54b53072540eeeb8f8e9343e71f28176" name="gga316f2df5503d2bebdfee32b5f8f57c7ba54b53072540eeeb8f8e9343e71f28176"></a>system&#160;</td><td class="fielddoc"><p>The appearance of the control is determined by the user's operating system. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga316f2df5503d2bebdfee32b5f8f57c7ba58e95254db7c7541fe3075a52200d5ff" name="gga316f2df5503d2bebdfee32b5f8f57c7ba58e95254db7c7541fe3075a52200d5ff"></a>three_balls&#160;</td><td class="fielddoc"><p>The control appears with three balls style. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga316f2df5503d2bebdfee32b5f8f57c7baa679bf7ed7ec2135765a7998e13d85a4" name="gga316f2df5503d2bebdfee32b5f8f57c7baa679bf7ed7ec2135765a7998e13d85a4"></a>three_balls_bouncing&#160;</td><td class="fielddoc"><p>The control appears with three balls bouncing style. </p>
 </td></tr>
 </table>
 
@@ -7649,7 +7660,7 @@ Room is reserved for an image to be displayed on toolbar buttons. The alignment 
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 9 2023 18:06:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Oct 12 2023 13:53:20 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
