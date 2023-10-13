@@ -79,6 +79,25 @@ loading_indicator loading_indicators::five_lines_chronological(const control& pa
   return result;
 }
 
+loading_indicator loading_indicators::five_lines_pulse(const xtd::drawing::point& location, const xtd::drawing::size& size, bool running) noexcept {
+  auto result = loading_indicator {};
+  result.loading_indicator_style(xtd::forms::loading_indicator_style::five_lines_pulse);
+  if (location.x() != -1 && location.y() != -1) result.location(location);
+  result.running(running);
+  if (size.width() != -1 && size.height() != -1) result.size(size);
+  return result;
+}
+
+loading_indicator loading_indicators::five_lines_pulse(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, bool running) noexcept {
+  auto result = loading_indicator {};
+  result.loading_indicator_style(xtd::forms::loading_indicator_style::five_lines_pulse);
+  if (location.x() != -1 && location.y() != -1) result.location(location);
+  result.parent(parent);
+  result.running(running);
+  if (size.width() != -1 && size.height() != -1) result.size(size);
+  return result;
+}
+
 loading_indicator loading_indicators::five_lines_wave(const xtd::drawing::point& location, const xtd::drawing::size& size, bool running) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::five_lines_wave);
