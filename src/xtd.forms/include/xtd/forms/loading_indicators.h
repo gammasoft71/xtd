@@ -63,7 +63,7 @@ namespace xtd {
       /// @return The created loading_indicator.
       static loading_indicator five_lines_chronological(const control& parent, const xtd::drawing::point& location = {-1, -1}, const xtd::drawing::size& size = {-1, -1}, bool running = true) noexcept;
 
-      /// @brief Create a system-defined loading_indicator that represent five lines wave loading indicator.
+      /// @brief Create a system-defined loading_indicator that represent five lines pulse loading indicator.
       /// @param location The loading_indicator location in pixels.
       /// @param size The loading_indicator size in pixels.
       /// @return The created loading_indicator.
@@ -75,7 +75,7 @@ namespace xtd {
       /// @return The created loading_indicator.
       static loading_indicator five_lines_pulse(const control& parent, const xtd::drawing::point& location = {-1, -1}, const xtd::drawing::size& size = {-1, -1}, bool running = true) noexcept;
 
-      /// @brief Create a system-defined loading_indicator that represent five lines pulse loading indicator.
+      /// @brief Create a system-defined loading_indicator that represent five lines wave loading indicator.
       /// @param location The loading_indicator location in pixels.
       /// @param size The loading_indicator size in pixels.
       /// @return The created loading_indicator.
@@ -98,6 +98,18 @@ namespace xtd {
       /// @param size The loading_indicator size in pixels.
       /// @return The created loading_indicator.
       static loading_indicator five_lines(const control& parent, const xtd::drawing::point& location = {-1, -1}, const xtd::drawing::size& size = {-1, -1}, bool running = true) noexcept;
+
+      /// @brief Create a system-defined loading_indicator that represent pulse loading indicator.
+      /// @param location The loading_indicator location in pixels.
+      /// @param size The loading_indicator size in pixels.
+      /// @return The created loading_indicator.
+      static loading_indicator pulse(const xtd::drawing::point& location = {-1, -1}, const xtd::drawing::size& size = {-1, -1}, bool running = true) noexcept;
+      /// @brief Create a system-defined loading_indicator that represent pulse loading indicator.
+      /// @param parent The control that contains the loading indicator.
+      /// @param location The loading_indicator location in pixels.
+      /// @param size The loading_indicator size in pixels.
+      /// @return The created loading_indicator.
+      static loading_indicator pulse(const control& parent, const xtd::drawing::point& location = {-1, -1}, const xtd::drawing::size& size = {-1, -1}, bool running = true) noexcept;
 
       /// @brief Create a system-defined loading_indicator that represent standard loading indicator.
       /// @param location The loading_indicator location in pixels.

@@ -30,6 +30,8 @@ namespace xtd {
       five_lines_pulse,
       /// @brief The control appears with five lines wave style.
       five_lines_wave,
+      /// @brief The control appears with pulse style.
+      pulse,
       /// @brief The control appears with standard style.
       standard,
       /// @brief The appearance of the control is determined by the user's operating system.
@@ -46,6 +48,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::loading_indicator_style> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::loading_indicator_style> {{xtd::forms::loading_indicator_style::circle_blinks, "circle_blinks"}, {xtd::forms::loading_indicator_style::five_lines_center, "five_lines_center"}, {xtd::forms::loading_indicator_style::five_lines_chronological, "five_lines_chronological"}, {xtd::forms::loading_indicator_style::five_lines_pulse, "five_lines_pulse"}, {xtd::forms::loading_indicator_style::five_lines_wave, "five_lines_wave"}, {xtd::forms::loading_indicator_style::five_lines, "five_lines"}, {xtd::forms::loading_indicator_style::standard, "standard"}, {xtd::forms::loading_indicator_style::system, "system"}, {xtd::forms::loading_indicator_style::three_balls, "three_balls"}, {xtd::forms::loading_indicator_style::three_balls_bouncing, "three_balls_bouncing"}, {xtd::forms::loading_indicator_style::three_balls_rotation, "three_balls_rotation"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::loading_indicator_style> {{xtd::forms::loading_indicator_style::circle_blinks, "circle_blinks"}, {xtd::forms::loading_indicator_style::five_lines_center, "five_lines_center"}, {xtd::forms::loading_indicator_style::five_lines_chronological, "five_lines_chronological"}, {xtd::forms::loading_indicator_style::five_lines_pulse, "five_lines_pulse"}, {xtd::forms::loading_indicator_style::five_lines_wave, "five_lines_wave"}, {xtd::forms::loading_indicator_style::five_lines, "five_lines"}, {xtd::forms::loading_indicator_style::pulse, "pulse"}, {xtd::forms::loading_indicator_style::standard, "standard"}, {xtd::forms::loading_indicator_style::system, "system"}, {xtd::forms::loading_indicator_style::three_balls, "three_balls"}, {xtd::forms::loading_indicator_style::three_balls_bouncing, "three_balls_bouncing"}, {xtd::forms::loading_indicator_style::three_balls_rotation, "three_balls_rotation"}};}
 };
 /// @endcond
