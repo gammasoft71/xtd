@@ -136,6 +136,25 @@ loading_indicator loading_indicators::pulse(const control& parent, const xtd::dr
   return result;
 }
 
+loading_indicator loading_indicators::pulse_outline(const xtd::drawing::point& location, const xtd::drawing::size& size, bool running) noexcept {
+  auto result = loading_indicator {};
+  result.loading_indicator_style(xtd::forms::loading_indicator_style::pulse_outline);
+  if (location.x() != -1 && location.y() != -1) result.location(location);
+  result.running(running);
+  if (size.width() != -1 && size.height() != -1) result.size(size);
+  return result;
+}
+
+loading_indicator loading_indicators::pulse_outline(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, bool running) noexcept {
+  auto result = loading_indicator {};
+  result.loading_indicator_style(xtd::forms::loading_indicator_style::pulse_outline);
+  if (location.x() != -1 && location.y() != -1) result.location(location);
+  result.parent(parent);
+  result.running(running);
+  if (size.width() != -1 && size.height() != -1) result.size(size);
+  return result;
+}
+
 loading_indicator loading_indicators::standard(const xtd::drawing::point& location, const xtd::drawing::size& size, bool running) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::standard);
