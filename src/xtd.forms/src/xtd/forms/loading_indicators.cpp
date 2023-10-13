@@ -22,6 +22,25 @@ loading_indicator loading_indicators::circle_blinks(const control& parent, const
   return result;
 }
 
+loading_indicator loading_indicators::five_lines(const xtd::drawing::point& location, const xtd::drawing::size& size, bool running) noexcept {
+  auto result = loading_indicator {};
+  result.loading_indicator_style(xtd::forms::loading_indicator_style::five_lines);
+  if (location.x() != -1 && location.y() != -1) result.location(location);
+  result.running(running);
+  if (size.width() != -1 && size.height() != -1) result.size(size);
+  return result;
+}
+
+loading_indicator loading_indicators::five_lines(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, bool running) noexcept {
+  auto result = loading_indicator {};
+  result.loading_indicator_style(xtd::forms::loading_indicator_style::five_lines);
+  if (location.x() != -1 && location.y() != -1) result.location(location);
+  result.parent(parent);
+  result.running(running);
+  if (size.width() != -1 && size.height() != -1) result.size(size);
+  return result;
+}
+
 loading_indicator loading_indicators::standard(const xtd::drawing::point& location, const xtd::drawing::size& size, bool running) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::standard);
