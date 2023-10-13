@@ -16,11 +16,11 @@ namespace xtd::forms {
       auto x5 = x4 + line_width + gap;
       auto y = clip_rectangle.top() + 2;
       auto opacity = enabled ? 255 : 64;
-      auto wave1 = enabled ? std::vector {4, 2, 4, 0, 0, 0, 0} : std::vector {0, 0, 0, 0, 0, 0, 0};
-      auto wave2 = enabled ? std::vector {0, 4, 2, 4, 0, 0, 0} : std::vector {0, 0, 0, 0, 0, 0, 0};
-      auto wave3 = enabled ? std::vector {0, 0, 4, 2, 4, 0, 0} : std::vector {0, 0, 0, 0, 0, 0, 0};
-      auto wave4 = enabled ? std::vector {0, 0, 0, 4, 2, 4, 0} : std::vector {0, 0, 0, 0, 0, 0, 0};
-      auto wave5 = enabled ? std::vector {0, 0, 0, 0, 4, 2, 4} : std::vector {0, 0, 0, 0, 0, 0, 0};
+      auto wave1 = enabled ? std::vector {4, 2, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0} : std::vector {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      auto wave2 = enabled ? std::vector {0, 0, 0, 4, 2, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0} : std::vector {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      auto wave3 = enabled ? std::vector {0, 0, 0, 0, 0, 0, 4, 2, 4, 0, 0, 0, 0, 0, 0} : std::vector {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      auto wave4 = enabled ? std::vector {0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2, 4, 0, 0, 0} : std::vector {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      auto wave5 = enabled ? std::vector {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2, 4} : std::vector {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
       graphics.fill_rounded_rectangle(xtd::drawing::solid_brush {xtd::drawing::color::from_argb(static_cast<xtd::byte>(opacity), color)}, x1, y + line_height / wave1[frame_] / 2, line_width,  line_height - line_height / wave1[frame_], line_width / 2);
       graphics.fill_rounded_rectangle(xtd::drawing::solid_brush {xtd::drawing::color::from_argb(static_cast<xtd::byte>(opacity), color)}, x2, y + line_height / wave2[frame_] / 2, line_width,  line_height - line_height / wave2[frame_], line_width / 2);
@@ -34,7 +34,7 @@ namespace xtd::forms {
     }
     
   private:
-    xtd::int32 intervals_ = 7;
+    xtd::int32 intervals_ = 15;
     xtd::int32 radius_factor_ = 10;
     xtd::int32 frame_ = 0;
   };
