@@ -3,6 +3,7 @@
 #include "loading_indicator_animation_five_lines.h"
 #include "loading_indicator_animation_five_lines_center.h"
 #include "loading_indicator_animation_five_lines_chronological.h"
+#include "loading_indicator_animation_five_lines_pulse.h"
 #include "loading_indicator_animation_five_lines_wave.h"
 #include "loading_indicator_animation_standard.h"
 #include "loading_indicator_animation_system.h"
@@ -93,6 +94,7 @@ void loading_indicator::on_handle_created(const event_args& e) {
     case loading_indicator_style::five_lines: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_five_lines>(); break;
     case loading_indicator_style::five_lines_center: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_five_lines_center>(); break;
     case loading_indicator_style::five_lines_chronological: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_five_lines_chronological>(); break;
+    case loading_indicator_style::five_lines_pulse: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_five_lines_pulse>(); break;
     case loading_indicator_style::five_lines_wave: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_five_lines_wave>(); break;
     case loading_indicator_style::standard: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_standard>(); break;
     case loading_indicator_style::system: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_system>(); break;
