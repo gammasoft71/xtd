@@ -38,6 +38,19 @@ namespace xtd {
       /// @param size The loading_indicator size in pixels.
       /// @return The created loading_indicator.
       static loading_indicator circle_blinks(const control& parent, const xtd::drawing::point& location = {-1, -1}, const xtd::drawing::size& size = {-1, -1}, bool running = true) noexcept;
+      
+      /// @brief Create a system-defined loading_indicator that represent five lines loading indicator.
+      /// @param location The loading_indicator location in pixels.
+      /// @param size The loading_indicator size in pixels.
+      /// @return The created loading_indicator.
+      static loading_indicator five_lines(const xtd::drawing::point& location = {-1, -1}, const xtd::drawing::size& size = {-1, -1}, bool running = true) noexcept;
+      /// @brief Create a system-defined loading_indicator that represent five lines loading indicator.
+      /// @param parent The control that contains the loading indicator.
+      /// @param location The loading_indicator location in pixels.
+      /// @param size The loading_indicator size in pixels.
+      /// @return The created loading_indicator.
+      static loading_indicator five_lines(const control& parent, const xtd::drawing::point& location = {-1, -1}, const xtd::drawing::size& size = {-1, -1}, bool running = true) noexcept;
+      
       /// @brief Create a system-defined loading_indicator that represent standard loading indicator.
       /// @param location The loading_indicator location in pixels.
       /// @param size The loading_indicator size in pixels.
@@ -49,6 +62,7 @@ namespace xtd {
       /// @param size The loading_indicator size in pixels.
       /// @return The created loading_indicator.
       static loading_indicator standard(const control& parent, const xtd::drawing::point& location = {-1, -1}, const xtd::drawing::size& size = {-1, -1}, bool running = true) noexcept;
+
       /// @brief Create a system-defined loading_indicator that represent system loading indicator.
       /// @param location The loading_indicator location in pixels.
       /// @param size The loading_indicator size in pixels.
@@ -60,6 +74,7 @@ namespace xtd {
       /// @param size The loading_indicator size in pixels.
       /// @return The created loading_indicator.
       static loading_indicator system(const control& parent, const xtd::drawing::point& location = {-1, -1}, const xtd::drawing::size& size = {-1, -1}, bool running = true) noexcept;
+
       /// @brief Create a system-defined loading_indicator that represent three_balls loading indicator.
       /// @param location The loading_indicator location in pixels.
       /// @param size The loading_indicator size in pixels.
@@ -71,6 +86,7 @@ namespace xtd {
       /// @param size The loading_indicator size in pixels.
       /// @return The created loading_indicator.
       static loading_indicator three_balls(const control& parent, const xtd::drawing::point& location = {-1, -1}, const xtd::drawing::size& size = {-1, -1}, bool running = true) noexcept;
+
       /// @brief Create a system-defined loading_indicator that represent three_balls_bouncing loading indicator.
       /// @param location The loading_indicator location in pixels.
       /// @param size The loading_indicator size in pixels.
@@ -82,6 +98,7 @@ namespace xtd {
       /// @param size The loading_indicator size in pixels.
       /// @return The created loading_indicator.
       static loading_indicator three_balls_bouncing(const control& parent, const xtd::drawing::point& location = {-1, -1}, const xtd::drawing::size& size = {-1, -1}, bool running = true) noexcept;
+
       /// @brief Create a system-defined loading_indicator that represent three_balls_rotation loading indicator.
       /// @param location The loading_indicator location in pixels.
       /// @param size The loading_indicator size in pixels.
