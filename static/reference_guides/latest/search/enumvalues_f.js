@@ -79,8 +79,9 @@ var searchData=
   ['protocol_5foption_76',['protocol_option',['../group__xtd__core.html#gga0c933b52bdbb9399c8ec4b1dcf3e2e71a01e9852fbe6fb744e490a1e917df4d7e',1,'xtd::net::sockets']]],
   ['protocol_5ftype_77',['protocol_type',['../group__xtd__core.html#gga0c933b52bdbb9399c8ec4b1dcf3e2e71a7ec8e14f0c9f20e3cbf7315530a2b697',1,'xtd::net::sockets']]],
   ['pulse_78',['pulse',['../group__xtd__forms.html#gga316f2df5503d2bebdfee32b5f8f57c7ba02a8dc4cf01fed584c6423f577c0b0d7',1,'xtd::forms']]],
-  ['pup_79',['pup',['../group__xtd__core.html#gga5c7a488efbbc9c766286c1485399aef3a59f6af98d759634f8597238fb0b86854',1,'xtd::net::sockets::pup'],['../group__xtd__core.html#gga33cbc7eb0a0fcda4d9f2a175b8062b23a59f6af98d759634f8597238fb0b86854',1,'xtd::net::sockets::pup'],['../group__xtd__core.html#ggac4690c745045463d3c96d043878cc1e3a59f6af98d759634f8597238fb0b86854',1,'xtd::net::sockets::pup']]],
-  ['purple_80',['purple',['../group__xtd__drawing.html#ggabb6249e3fb8a4388778157257e99049babb7aedfa61007447dd6efaf9f37641e3',1,'xtd::drawing']]],
-  ['push_5fbutton_81',['push_button',['../group__xtd__forms.html#gga601aa3d12e8f50c0ef209bcdf1bf3675a7e60a2ad3cc1f06c5d17a928f2dfb168',1,'xtd::forms']]],
-  ['pushed_82',['pushed',['../group__xtd__forms.html#gga13e58aa1f50e91172769e708c7f46945abefdb61f29fafe2fa668659fc8058f54',1,'xtd::forms']]]
+  ['pulse_5foutline_79',['pulse_outline',['../group__xtd__forms.html#gga316f2df5503d2bebdfee32b5f8f57c7ba4b668f503a6cc14aa389824fec3afdbf',1,'xtd::forms']]],
+  ['pup_80',['pup',['../group__xtd__core.html#gga5c7a488efbbc9c766286c1485399aef3a59f6af98d759634f8597238fb0b86854',1,'xtd::net::sockets::pup'],['../group__xtd__core.html#gga33cbc7eb0a0fcda4d9f2a175b8062b23a59f6af98d759634f8597238fb0b86854',1,'xtd::net::sockets::pup'],['../group__xtd__core.html#ggac4690c745045463d3c96d043878cc1e3a59f6af98d759634f8597238fb0b86854',1,'xtd::net::sockets::pup']]],
+  ['purple_81',['purple',['../group__xtd__drawing.html#ggabb6249e3fb8a4388778157257e99049babb7aedfa61007447dd6efaf9f37641e3',1,'xtd::drawing']]],
+  ['push_5fbutton_82',['push_button',['../group__xtd__forms.html#gga601aa3d12e8f50c0ef209bcdf1bf3675a7e60a2ad3cc1f06c5d17a928f2dfb168',1,'xtd::forms']]],
+  ['pushed_83',['pushed',['../group__xtd__forms.html#gga13e58aa1f50e91172769e708c7f46945abefdb61f29fafe2fa668659fc8058f54',1,'xtd::forms']]]
 ];
