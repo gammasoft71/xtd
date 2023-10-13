@@ -41,6 +41,25 @@ loading_indicator loading_indicators::five_lines(const control& parent, const xt
   return result;
 }
 
+loading_indicator loading_indicators::five_lines_center(const xtd::drawing::point& location, const xtd::drawing::size& size, bool running) noexcept {
+  auto result = loading_indicator {};
+  result.loading_indicator_style(xtd::forms::loading_indicator_style::five_lines_center);
+  if (location.x() != -1 && location.y() != -1) result.location(location);
+  result.running(running);
+  if (size.width() != -1 && size.height() != -1) result.size(size);
+  return result;
+}
+
+loading_indicator loading_indicators::five_lines_center(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, bool running) noexcept {
+  auto result = loading_indicator {};
+  result.loading_indicator_style(xtd::forms::loading_indicator_style::five_lines_center);
+  if (location.x() != -1 && location.y() != -1) result.location(location);
+  result.parent(parent);
+  result.running(running);
+  if (size.width() != -1 && size.height() != -1) result.size(size);
+  return result;
+}
+
 loading_indicator loading_indicators::five_lines_chronological(const xtd::drawing::point& location, const xtd::drawing::size& size, bool running) noexcept {
   auto result = loading_indicator {};
   result.loading_indicator_style(xtd::forms::loading_indicator_style::five_lines_chronological);

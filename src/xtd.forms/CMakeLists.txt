@@ -828,6 +828,7 @@ add_sources(
   src/xtd/forms/loading_indicator_animation.h
   src/xtd/forms/loading_indicator_animation_circle_blinks.h
   src/xtd/forms/loading_indicator_animation_five_lines.h
+  src/xtd/forms/loading_indicator_animation_five_lines_center.h
   src/xtd/forms/loading_indicator_animation_five_lines_chronological.h
   src/xtd/forms/loading_indicator_animation_five_lines_wave.h
   src/xtd/forms/loading_indicator_animation_standard.h
