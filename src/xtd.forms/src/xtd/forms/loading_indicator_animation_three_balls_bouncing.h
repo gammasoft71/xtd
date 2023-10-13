@@ -12,9 +12,9 @@ namespace xtd::forms {
       auto x3 = clip_rectangle.right() - dot_size - 2;
       auto y = clip_rectangle.top() + clip_rectangle.height() / 2 - dot_size / 2;
       auto opacity = enabled ? 255 : 64;
-      auto wave1 = enabled ? std::vector { 0,  2,  4,  2,  0, -2, -4, -2} : std::vector {0, 0, 0, 0, 0, 0, 0};
-      auto wave2 = enabled ? std::vector {-4, -2,  0,  2,  4,  2,  0, -2} : std::vector {0, 0, 0, 0, 0, 0, 0};
-      auto wave3 = enabled ? std::vector { 0, -2, -4, -2,  0,  2,  4,  2} : std::vector {0, 0, 0, 0, 0, 0, 0};
+      auto wave1 = enabled ? std::vector {0, 2, 4, 2, 0, -2, -4, -2} : std::vector {0, 0, 0, 0, 0, 0, 0, 0};
+      auto wave2 = enabled ? std::vector {-4, -2, 0, 2, 4, 2, 0, -2} : std::vector {0, 0, 0, 0, 0, 0, 0, 0};
+      auto wave3 = enabled ? std::vector {0, -2, -4, -2, 0, 2, 4, 2} : std::vector {0, 0, 0, 0, 0, 0, 0, 0};
 
       graphics.fill_ellipse(xtd::drawing::solid_brush {xtd::drawing::color::from_argb(static_cast<xtd::byte>(opacity), color)}, x1, y - wave1[frame_], dot_size, dot_size);
       graphics.fill_ellipse(xtd::drawing::solid_brush {xtd::drawing::color::from_argb(static_cast<xtd::byte>(opacity), color)}, x2, y - wave2[frame_], dot_size, dot_size);
