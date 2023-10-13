@@ -30,7 +30,7 @@ namespace xtd {
     /// @remarks This class models a drive and provides methods and properties to query for drive information. Use xtd::io::drive_info to determine what drives are available, and what type of drives they are. You can also query to determine the capacity and available free space on the drive.
     class core_export_ drive_info : public xtd::object {
     public:
-      /// @name Constructors
+      /// @name Fields
       
       /// @{
       /// @brief Represents the uninitialized xtd::io::drive_info object. This field is constant.
