@@ -12,9 +12,9 @@ namespace xtd::forms {
       auto x3 = clip_rectangle.right() - dot_size - 2;
       auto y = clip_rectangle.top() + clip_rectangle.height() / 2 - dot_size / 2;
       auto opacity = enabled ? 255 : 64;
-      auto size1 = enabled ? std::vector {4, 4, 2, 2, 0, 0, 2, 2} : std::vector {0, 0, 0, 0, 0, 0, 0};
-      auto size2 = enabled ? std::vector {2, 2, 4, 4, 2, 2, 0, 0} : std::vector {0, 0, 0, 0, 0, 0, 0};
-      auto size3 = enabled ? std::vector {0, 0, 2, 2, 4, 4, 2, 2} : std::vector {0, 0, 0, 0, 0, 0, 0};
+      auto size1 = enabled ? std::vector {4, 4, 2, 2, 0, 0, 2, 2} : std::vector {0, 0, 0, 0, 0, 0, 0, 0};
+      auto size2 = enabled ? std::vector {2, 2, 4, 4, 2, 2, 0, 0} : std::vector {0, 0, 0, 0, 0, 0, 0, 0};
+      auto size3 = enabled ? std::vector {0, 0, 2, 2, 4, 4, 2, 2} : std::vector {0, 0, 0, 0, 0, 0, 0, 0};
 
       graphics.fill_ellipse(xtd::drawing::solid_brush {xtd::drawing::color::from_argb(static_cast<xtd::byte>(opacity), color)}, x1 - size1[frame_] / 2, y - size1[frame_] / 2, dot_size + size1[frame_], dot_size + size1[frame_]);
       graphics.fill_ellipse(xtd::drawing::solid_brush {xtd::drawing::color::from_argb(static_cast<xtd::byte>(opacity), color)}, x2 - size2[frame_] / 2, y - size2[frame_] / 2, dot_size + size2[frame_], dot_size + size2[frame_]);
