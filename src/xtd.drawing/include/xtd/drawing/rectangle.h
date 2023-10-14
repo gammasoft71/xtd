@@ -82,6 +82,10 @@ namespace xtd {
       /// @remarks The value of the xtd::drawing::rectangle::bottom property represents the y-coordinate of the first point at the bottom edge of the xtd::drawing::rectangle that is not contained in the xtd::drawing::rectangle.
       int32 bottom() const noexcept;
       
+      /// @brief Gets the center property values of this xtd::drawing::rectangle structure.
+      /// @return The center of this xtd::drawing::rectangle.
+      point center() const noexcept;
+      
       /// @brief Gets the height of this xtd::drawing::rectangle structure.
       /// @return The height of this Rectangle structure. The default is 0.
       /// @remarks Changing the xtd::drawing::rectangle::height property will also cause a change in the xtd::drawing::rectangle::bottom property of the xtd::drawing::rectangle. The units the rectangle is drawn in is determined by the xtd::drawing::graphics::page_unit and xtd::drawing::graphics::page_scale properties of the graphics object used for drawing. The default unit is pixels.
