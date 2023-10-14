@@ -16,6 +16,10 @@ float rectangle_f::bottom() const noexcept {
   return y_ + height_;
 }
 
+point_f rectangle_f::center() const noexcept {
+  return {x_ + width_ / 2, y_ + height_ / 2};
+}
+
 float rectangle_f::height() const noexcept {
   return height_;
 }
