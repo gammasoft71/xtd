@@ -21,6 +21,10 @@ int32 rectangle::bottom() const noexcept {
   return y_ + height_;
 }
 
+point rectangle::center() const noexcept {
+  return {x_ + width_ / 2, y_ + height_ / 2};
+}
+
 int32 rectangle::height() const noexcept {
   return height_;
 }
