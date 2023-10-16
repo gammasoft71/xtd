@@ -5,6 +5,7 @@
 #endif
 /// @endcond
 
+#include <errno.h>
 #include <pthread.h>
 #include <unistd.h>
 
