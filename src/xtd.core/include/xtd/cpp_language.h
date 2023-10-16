@@ -27,7 +27,7 @@ namespace xtd {
     
     /// @{
     /// @brief Initialize a new instance of xtd::cpp_language class.
-    explicit cpp_language(uint32 cpp) noexcept;
+    explicit cpp_language(int32 cpp) noexcept;
     /// @}
     
     /// @cond
@@ -90,6 +90,6 @@ namespace xtd {
     /// @}
     
   private:
-    uint32 cpp_ = 0;
+    int32 cpp_ = 0;
   };
 }
