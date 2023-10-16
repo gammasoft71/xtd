@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.20)
 
 project(string_assume_does_not_contain)
 find_package(xtd REQUIRED)

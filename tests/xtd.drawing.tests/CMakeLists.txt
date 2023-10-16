@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.20)
 
 project(xtd.drawing.tests)
 include(../../scripts/cmake/xtd_commands.cmake)

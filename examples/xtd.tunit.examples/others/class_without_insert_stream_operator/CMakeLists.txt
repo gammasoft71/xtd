@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.20)
 
 project(class_without_insert_stream_operator)
 find_package(xtd REQUIRED)
