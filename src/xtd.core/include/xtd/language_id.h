@@ -31,6 +31,8 @@ namespace xtd {
     cpp20,
     /// @brief The language is c++23.
     cpp23,
+    /// @brief The language is c++26.
+    cpp26,
   };
 }
 
