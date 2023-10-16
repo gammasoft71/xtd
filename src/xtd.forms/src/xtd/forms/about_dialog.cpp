@@ -230,7 +230,7 @@ namespace {
     }
     
   private:
-    inline static std::unique_ptr<about_dialog_standard> about_dialog_;
+    static std::unique_ptr<about_dialog_standard> about_dialog_;
     /// @todo Activate the following commment if about dialog must be modal on Windows.
     //inline static bool show_modal_ = environment::os_version().is_windows();
     picture_box picture_box_icon_;
@@ -250,6 +250,8 @@ namespace {
     text_box text_box_license_;
     tab_control tab_control_about_;
   };
+  
+  std::unique_ptr<about_dialog_standard> about_dialog_standard::about_dialog_;
 }
 
 struct about_dialog::data {
