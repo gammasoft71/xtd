@@ -5,6 +5,7 @@
 #endif
 /// @endcond
 
+#include <errno.h>
 #include <unistd.h>
 // Hacking to remove deprecated warning.
 #undef __deprecated
