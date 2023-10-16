@@ -1,11 +1,15 @@
 #if defined(__cplusplus)
-#  if __cplusplus == 202601L
+#  if __cplusplus == 202901L
+#    define __standard_name__ "C++ 29"
+#  elif __cplusplus < 202901L && __cplusplus > 202601L
+#    define __standard_name__ "Experimental C++ 29"
+#  elif __cplusplus == 202601L
 #    define __standard_name__ "C++ 26"
-#  elif __cplusplus < 202601L && __cplusplus > 202301L
+#  elif __cplusplus < 202601L && __cplusplus > 202302L
 #    define __standard_name__ "Experimental C++ 26"
-#  elif __cplusplus == 202301L
+#  elif __cplusplus == 202002L
 #    define __standard_name__ "C++ 23"
-#  elif __cplusplus < 202301L && __cplusplus > 202002L
+#  elif __cplusplus < 202302L && __cplusplus > 202002L
 #    define __standard_name__ "Experimental C++ 23"
 #  elif __cplusplus == 202002L
 #    define __standard_name__ "C++ 20"
