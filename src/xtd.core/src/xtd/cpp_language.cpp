@@ -1,8 +1,9 @@
+#include "../../include/xtd/as.h"
 #include "../../include/xtd/cpp_language.h"
 
 using namespace xtd;
 
-cpp_language::cpp_language(uint32 cpp) noexcept : cpp_(cpp) {
+cpp_language::cpp_language(int32 cpp) noexcept : cpp_(cpp) {
 }
 
 bool cpp_language::is_experimental_language() const noexcept {
@@ -10,32 +11,32 @@ bool cpp_language::is_experimental_language() const noexcept {
 }
 
 bool cpp_language::is_supported() const noexcept {
-  return cpp_ >= 201703L;
+  return cpp_ >= as<int32>(language_id::cpp17);
 }
 
 language_id cpp_language::language() const noexcept {
-  if (cpp_ >= 202901L) return language_id::cpp29; /// @todo Set the correct value when the __cplusplus macro is defined for c++29...
-  if (cpp_ >= 202601L) return language_id::cpp26; /// @todo Set the correct value when the __cplusplus macro is defined for c++26...
-  if (cpp_ >= 202302L) return language_id::cpp23;
-  if (cpp_ >= 202002L) return language_id::cpp20;
-  if (cpp_ >= 201703L) return language_id::cpp17;
-  if (cpp_ >= 201402L) return language_id::cpp14;
-  if (cpp_ >= 201103L) return language_id::cpp11;
-  if (cpp_ >= 199711L) return language_id::cpp98;
-  if (cpp_ >= 1L) return language_id::cpp_pre98;
+  if (cpp_ >= as<int32>(language_id::cpp29)) return language_id::cpp29; /// @todo Set the correct value when the __cplusplus macro is defined for c++29...
+  if (cpp_ >= as<int32>(language_id::cpp26)) return language_id::cpp26; /// @todo Set the correct value when the __cplusplus macro is defined for c++26...
+  if (cpp_ >= as<int32>(language_id::cpp23)) return language_id::cpp23;
+  if (cpp_ >= as<int32>(language_id::cpp20)) return language_id::cpp20;
+  if (cpp_ >= as<int32>(language_id::cpp17)) return language_id::cpp17;
+  if (cpp_ >= as<int32>(language_id::cpp14)) return language_id::cpp14;
+  if (cpp_ >= as<int32>(language_id::cpp11)) return language_id::cpp11;
+  if (cpp_ >= as<int32>(language_id::cpp98)) return language_id::cpp98;
+  if (cpp_ >= as<int32>(language_id::cpp_pre98)) return language_id::cpp_pre98;
   return language_id::unknown;
 }
 
 language_id cpp_language::experimental_language() const noexcept {
-  if (cpp_ > 202601L) return language_id::cpp29; /// @todo Set the correct value when the __cplusplus macro is defined for c++26...
-  if (cpp_ > 202302L) return language_id::cpp26;
-  if (cpp_ > 202002L) return language_id::cpp23;
-  if (cpp_ > 201703L) return language_id::cpp20;
-  if (cpp_ > 201402L) return language_id::cpp17;
-  if (cpp_ > 201103L) return language_id::cpp14;
-  if (cpp_ > 199711L) return language_id::cpp11;
-  if (cpp_ > 1L) return language_id::cpp98;
-  if (cpp_ > 0L) return language_id::cpp_pre98;
+  if (cpp_ > as<int32>(language_id::cpp26)) return language_id::cpp29; /// @todo Set the correct value when the __cplusplus macro is defined for c++26...
+  if (cpp_ > as<int32>(language_id::cpp23)) return language_id::cpp26;
+  if (cpp_ > as<int32>(language_id::cpp20)) return language_id::cpp23;
+  if (cpp_ > as<int32>(language_id::cpp17)) return language_id::cpp20;
+  if (cpp_ > as<int32>(language_id::cpp14)) return language_id::cpp17;
+  if (cpp_ > as<int32>(language_id::cpp11)) return language_id::cpp14;
+  if (cpp_ > as<int32>(language_id::cpp98)) return language_id::cpp11;
+  if (cpp_ > as<int32>(language_id::cpp_pre98)) return language_id::cpp98;
+  if (cpp_ > as<int32>(language_id::unknown)) return language_id::cpp_pre98;
   return language_id::unknown;
 }
 

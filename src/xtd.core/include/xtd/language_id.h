@@ -16,25 +16,25 @@ namespace xtd {
   /// @remarks For more info about c++ see <a href="https://en.cppreference.com/w/cpp">cppreference</a>.
   enum class language_id {
     /// @brief The language is unknown.
-    unknown = -1,
+    unknown = 0,
     /// @brief The language is pre 98.
-    cpp_pre98 = 0,
+    cpp_pre98 = 1,
     /// @brief The language is c++98.
-    cpp98,
+    cpp98 = 199711,
     /// @brief The language is c++11.
-    cpp11,
+    cpp11 = 201103,
     /// @brief The language is c++14.
-    cpp14,
+    cpp14 = 201402,
     /// @brief The language is c++17.
-    cpp17,
+    cpp17 = 201703,
     /// @brief The language is c++20.
-    cpp20,
+    cpp20 = 202002,
     /// @brief The language is c++23.
-    cpp23,
+    cpp23 = 202302,
     /// @brief The language is c++26.
-    cpp26,
+    cpp26 = 202601,
     /// @brief The language is c++29.
-    cpp29,
+    cpp29 = 202901,
   };
 }
 
