@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.20)
 
 project(string_assert_are_not_equal_ignoring_case)
 find_package(xtd REQUIRED)

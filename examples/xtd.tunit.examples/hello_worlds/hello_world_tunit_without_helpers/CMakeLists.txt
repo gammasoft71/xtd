@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.20)
 
 project(hello_world_tunit_without_helpers)
 find_package(xtd REQUIRED)
