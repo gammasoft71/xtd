@@ -11,6 +11,7 @@
 #include <xtd/forms/native/message_notifier>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/math>
+#include <memory>
 
 using namespace xtd;
 using namespace xtd::forms;
@@ -154,7 +155,7 @@ namespace {
     }
     
   private:
-    inline static std::unique_ptr<message_notifier_standard> message_notifier_ = nullptr;
+    static std::unique_ptr<message_notifier_standard> message_notifier_;
     picture_box picture_box_icon_;
     label label_title_;
     label label_message_;
@@ -170,7 +171,7 @@ namespace {
       drawing::point location;
       drawing::size size;
     };
-    inline static std::unique_ptr<previous_message_notifier_coords> previous_notifier_coords_ = nullptr;
+    inline static std::unique_ptr<previous_message_notifier_coords> previous_notifier_coords_;
     
     /*
             Standard Notification
@@ -182,8 +183,9 @@ namespace {
     |______|____________________|_________|
     */
   };
+  
+  std::unique_ptr<message_notifier_standard> message_notifier_standard::message_notifier_;
 }
-
 
 
 void message_notifier::reset() {
