@@ -5,8 +5,8 @@
 namespace xtd::forms {
   class loading_indicator_animation_circle_blinks : public loading_indicator_animation {
   public:
-    void on_paint(xtd::drawing::graphics& graphics,  const xtd::drawing::rectangle& clip_rectangle, const xtd::drawing::color& color, bool enabled) override {
-      graphics.translate_transform(clip_rectangle.width() / 2.0f, clip_rectangle.height() / 2.0f);
+    void on_paint(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& clip_rectangle, const xtd::drawing::color& color, bool enabled) override {
+      graphics.translate_transform(clip_rectangle.center().x(), clip_rectangle.center().y());
       auto angle = -360.f / intervals_;
       graphics.rotate_transform(frame_ * angle);
       auto height = static_cast<float>(xtd::math::min(clip_rectangle.width(), clip_rectangle.height())) / radius_factor_;

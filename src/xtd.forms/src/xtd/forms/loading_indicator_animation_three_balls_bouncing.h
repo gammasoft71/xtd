@@ -5,7 +5,7 @@
 namespace xtd::forms {
   class loading_indicator_animation_three_balls_bouncing : public loading_indicator_animation {
   public:
-    void on_paint(xtd::drawing::graphics& graphics,  const xtd::drawing::rectangle& clip_rectangle, const xtd::drawing::color& color, bool enabled) override {
+    void on_paint(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& clip_rectangle, const xtd::drawing::color& color, bool enabled) override {
       auto dot_size = xtd::math::min(clip_rectangle.height(), clip_rectangle.width()) / radius_factor_ * 2 + 2;
       auto x1 = clip_rectangle.left() + 2;
       auto x2 = clip_rectangle.left() + clip_rectangle.width() / 2 - dot_size / 2;
