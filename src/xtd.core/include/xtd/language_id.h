@@ -32,8 +32,10 @@ namespace xtd {
     /// @brief The language is c++23.
     cpp23 = 202302,
     /// @brief The language is c++26.
+    /// @todo Set the correct value when the __cplusplus macro is defined for c++26...
     cpp26 = 202601,
     /// @brief The language is c++29.
+    /// @todo Set the correct value when the __cplusplus macro is defined for c++29...
     cpp29 = 202901,
   };
 }
