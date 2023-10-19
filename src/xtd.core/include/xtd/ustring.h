@@ -1207,17 +1207,17 @@ namespace xtd {
     /// | .number    | For integer specifiers (d, i, o, u, x, X): precision specifies the minimum number of digits to be written. If the value to be written is shorter than this number, the result is padded with leading zeros. The value is not truncated even if the result is longer. A precision of 0 means that no character is written for the value 0. For a, A, e, E, f and F specifiers: this is the number of digits to be printed after the decimal point (by default, this is 6). For g and G specifiers: This is the maximum number of significant digits to be printed. For s: this is the maximum number of characters to be printed. By default all characters are printed until the ending null character is encountered. If the period is specified without an explicit value for precision, 0 is assumed. |
     /// | .*         | The precision is not specified in the format string, but as an additional integer value argument preceding the argument that has to be formatted.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
     /// @remarks The length sub-specifier modifies the length of the data type. This is a chart showing the types used to interpret the corresponding arguments with and without length specifier (if a different type is used, the proper type promotion or conversion is performed, if allowed):
-    /// | length | d i           | u o x X                | f F e E g G a A | c     | s        | p     | n              |
-    /// | ------ | ------------- | ---------------------- | --------------- | ----- | -------- | ----- | -------------- |
-    /// | (none) | int           | unsigned int           | double          | int   | char8*    | void* | int*           |
-    /// | hh     | signed char8   | unsigned char8          |                 |       |          |       | unsigned char8* |
-    /// | h      | short int     | unsigned short int     |                 |       |          |       | short int*     |
-    /// | l      | long int      | unsigned long int      |                 | win_t | wchar* |       | long int*      |
-    /// | ll     | long long int | unsigned long long int |                 |       |          |       | long long int* |
-    /// | j      | intmax_t      | uintmax_t              |                 |       |          |       | intmax_t*      |
-    /// | z      | size_t        | size_t                 |                 |       |          |       | size_t*        |
-    /// | t      | ptrdiff_t     | ptrdiff_t              |                 |       |          |       | ptrdiff_t*     |
-    /// | L      |               |                        | long double     |       |          |       |                |
+    /// | length | d i           | u o x X                | f F e E g G a A | c     | s        | p     | n               |
+    /// | ------ | ------------- | ---------------------- | --------------- | ----- | -------- | ----- | --------------- |
+    /// | (none) | int           | unsigned int           | double          | int   | char8*   | void* | int*            |
+    /// | hh     | signed char8  | unsigned char8         |                 |       |          |       | unsigned char8* |
+    /// | h      | short int     | unsigned short int     |                 |       |          |       | short int*      |
+    /// | l      | long int      | unsigned long int      |                 | win_t | wchar*   |       | long int*       |
+    /// | ll     | long long int | unsigned long long int |                 |       |          |       | long long int*  |
+    /// | j      | intmax_t      | uintmax_t              |                 |       |          |       | intmax_t*       |
+    /// | z      | size_t        | size_t                 |                 |       |          |       | size_t*         |
+    /// | t      | ptrdiff_t     | ptrdiff_t              |                 |       |          |       | ptrdiff_t*      |
+    /// | L      |               |                        | long double     |       |          |       |                 |
     /// @remarks Note regarding the c specifier: it takes an int (or wint_t) as argument, but performs the proper conversion to a char8 value (or a wchar) before formatting it for output.
     /// @remarks you can use std::string or std::wstring with format param %%s.
     template<typename ... args_t>
