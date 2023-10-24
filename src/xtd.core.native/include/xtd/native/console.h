@@ -98,6 +98,9 @@ namespace xtd {
       /// @warning Internal use only
       static bool cursor_visible(bool visible);
       
+      /// @brief Sets the echo of the console on or off.
+      /// @param on if true the echo is on; otherwise is off.
+      /// @warning Internal use only
       static bool echo(bool on);
       
       /// @brief Gets the foreground color of the console.
