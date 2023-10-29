@@ -24,12 +24,12 @@ public:
     console::write_line("Main thread: Start a second thread.");
     // The constructor for the thread class requires a thread_start
     // delegate that represents the method to be executed on the
-    // thread.  xtd simplifies the creation of this delegate.
+    // thread. xtd simplifies the creation of this delegate.
     auto t = thread {thread_proc};
     
-    // Start thread_proc.  Note that on a uniprocessor, the new
+    // Start thread_proc. Note that on a uniprocessor, the new
     // thread does not get any processor time until the main thread
-    // is preempted or yields.  Uncomment the thread::sleep that
+    // is preempted or yields. Uncomment the thread::sleep that
     // follows t.start() to see the difference.
     t.start();
     //thread::sleep(0);
@@ -39,9 +39,9 @@ public:
       thread::sleep(0);
     }
     
-    console::write_line("Main thread: Call Join(), to wait until thread_proc ends.");
+    console::write_line("Main thread: Call join(), to wait until thread_proc ends.");
     t.join();
-    console::write_line("Main thread: thread_proc.Join has returned.  Press Enter to end program.");
+    console::write_line("Main thread: thread_proc.join has returned.  Press Enter to end program.");
     console::read_line();
   }
 };
@@ -58,7 +58,7 @@ startup_(thread_example::main);
 // thread_proc: 1
 // Main thread: Do some work.
 // thread_proc: 2
-// Main thread: Call Join(), to wait until thread_proc ends.
+// Main thread: Call join(), to wait until thread_proc ends.
 // thread_proc: 3
 // thread_proc: 4
 // thread_proc: 5
@@ -66,4 +66,4 @@ startup_(thread_example::main);
 // thread_proc: 7
 // thread_proc: 8
 // thread_proc: 9
-// Main thread: thread_proc.Join has returned.  Press Enter to end program.
+// Main thread: thread_proc.join has returned.  Press Enter to end program.
