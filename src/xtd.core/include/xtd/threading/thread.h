@@ -341,7 +341,6 @@ namespace xtd {
       /// @}
       
       /// @cond
-      /// @cond
       template<typename item_t>
       static bool join_all(const std::initializer_list<item_t>& threads) {return join_all(threads, timeout::infinite);}
       template<typename item_t>
