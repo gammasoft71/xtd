@@ -68,6 +68,7 @@ namespace xtd {
   /// @par Examples
   /// The following example demonstrates displays a list of information about the current environment.
   /// @include examples/xtd.core.examples/environment/environment/src/environment.cpp
+  /// @remarks Use the xtd::environment class to retrieve information such as command-line arguments, the exit code, environment variable settings, contents of the call stack, time since last system boot, and the version of the xtd framework.
   class core_export_ environment final static_ {
     class signal_catcher;
   public:
