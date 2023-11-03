@@ -14,6 +14,8 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
+  /// @include <xtd/interface>
+  ///
   /// class istringable : public interface {
   /// public:
   ///   virtual std::string to_string() const = 0;
@@ -39,6 +41,8 @@ namespace xtd {
   /// @ingroup xtd_core keywords
   /// @par Examples
   /// @code
+  /// @include <xtd/interface>
+  ///
   /// class istringable interface_ {
   /// public:
   ///   virtual std::string to_string() const = 0;
