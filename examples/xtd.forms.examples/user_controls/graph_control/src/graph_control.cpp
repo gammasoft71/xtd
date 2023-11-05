@@ -231,6 +231,7 @@ public:
 protected:
   void on_paint(paint_event_args& e) override {
     user_control::on_paint(e);
+    e.graphics().smoothing_mode(drawing2d::smoothing_mode::anti_alias);
     draw_grid(e.clip_rectangle(), e.graphics());
     draw_axis(e.clip_rectangle(), e.graphics());
     
