@@ -300,6 +300,8 @@ add_sources(
   include/xtd/sbyte
   include/xtd/sbyte_object.h
   include/xtd/sbyte_object
+  include/xtd/self.h
+  include/xtd/self
   include/xtd/semaphore.h
   include/xtd/semaphore
   include/xtd/signal.h

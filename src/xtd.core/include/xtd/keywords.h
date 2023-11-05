@@ -6,6 +6,7 @@
 #include "block_scope.h"
 #include "interface.h"
 #include "nameof.h"
+#include "self.h"
 #include "startup.h"
 #include "typeof.h"
 #include "unused.h"
