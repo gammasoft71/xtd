@@ -27,6 +27,7 @@ add_projects(
   link_label
   list_box
   loading_indicator
+  loading_indicators
   month_calendar
   nine_segment_display
   numeric_up_down
