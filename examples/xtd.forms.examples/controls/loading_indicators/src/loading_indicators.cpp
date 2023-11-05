@@ -1,49 +1,42 @@
-#include <xtd/forms/application>
-#include <xtd/forms/loading_indicator>
-#include <xtd/forms/form>
-#include <xtd/forms/list_box>
-#include <xtd/forms/panel>
 #include <xtd/drawing/system_colors>
+#include <xtd/forms/application>
+#include <xtd/forms/form>
+#include <xtd/forms/loading_indicators>
 
-using namespace std;
-using namespace xtd;
 using namespace xtd::forms;
 
-class form1 : public form {
-public:
-  form1() {
-    text("Loading indicators example");
-    start_position(form_start_position::manual);
-    location({200, 200});
-    client_size({360, 240});
+namespace loading_indicators_example {
+  class form1 : public form {
+  public:
+    form1() {
+      text("Loading indicatorss example");
+      fore_color(xtd::drawing::system_colors::accent());
+      
+      mouse_click += [&](object& sender, const mouse_event_args& e) {
+        for (auto item : {&loading_indicator1, &loading_indicator2, &loading_indicator3, &loading_indicator4, &loading_indicator5, &loading_indicator6, &loading_indicator7, &loading_indicator8, &loading_indicator9, &loading_indicator10, &loading_indicator11, &loading_indicator12, &loading_indicator13}) {
+          if (e.button() == xtd::forms::mouse_buttons::left) item->running(!item->running());
+          if (e.button() == xtd::forms::mouse_buttons::right) item->enabled(!item->enabled());
+        }
+      };
+    }
     
-    list_box1.parent(*this);
-    list_box1.bounds({20, 20, 150, 200});
-    list_box1.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom);
-    list_box1.items().push_back_range({{"Standard", loading_indicator_style::standard}, {"System", loading_indicator_style::system}, {"Circle bars", loading_indicator_style::circle_bars}, {"Circle blinks", loading_indicator_style::circle_blinks}, {"Five lines", loading_indicator_style::five_lines}, {"Five lines center", loading_indicator_style::five_lines_center}, {"Five lines chronological", loading_indicator_style::five_lines_chronological}, {"Five lines pulse", loading_indicator_style::five_lines_pulse}, {"Five lines wave", loading_indicator_style::five_lines_wave}, {"Pulse", loading_indicator_style::pulse}, {"Pulse outline", loading_indicator_style::pulse_outline}, {"Three balls", loading_indicator_style::three_balls}, {"Three balls bouncing", loading_indicator_style::three_balls_bouncing}, {"Three balls rotation", loading_indicator_style::three_balls_rotation}});
-    list_box1.selected_index_changed += [&] {
-      loading_indicator1.loading_indicator_style(any_cast<forms::loading_indicator_style>(list_box1.selected_item().tag()));
-    };
-    list_box1.selected_item("Standard");
-    
-    panel1.parent(*this);
-    panel1.border_style(border_style::fixed_3d);
-    panel1.back_color(drawing::system_colors::window());
-    panel1.bounds({190, 20, 150, 200});
-    panel1.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
-    
-    loading_indicator1.parent(panel1);
-    loading_indicator1.location({59, 84});
-    loading_indicator1.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
-    loading_indicator1.running(true);
-  }
-  
-private:
-  list_box list_box1;
-  panel panel1;
-  loading_indicator loading_indicator1;
-};
+  private:
+    loading_indicator loading_indicator1 = loading_indicators::system(*this, {10, 10}, {32, 32});
+    loading_indicator loading_indicator2 = loading_indicators::circle_bars(*this, {50, 10});
+    loading_indicator loading_indicator3 = loading_indicators::circle_blinks(*this, {90, 10});
+    loading_indicator loading_indicator4 = loading_indicators::five_lines(*this, {130, 10});
+    loading_indicator loading_indicator5 = loading_indicators::five_lines_center(*this, {170, 10});
+    loading_indicator loading_indicator6 = loading_indicators::five_lines_chronological(*this, {210, 10});
+    loading_indicator loading_indicator7 = loading_indicators::five_lines_pulse(*this, {250, 10});
+    loading_indicator loading_indicator8 = loading_indicators::five_lines_wave(*this, {10, 50});
+    loading_indicator loading_indicator9 = loading_indicators::pulse(*this, {50, 50});
+    loading_indicator loading_indicator10 = loading_indicators::pulse_outline(*this, {90, 50});
+    loading_indicator loading_indicator11 = loading_indicators::three_balls(*this, {130, 50});
+    loading_indicator loading_indicator12 = loading_indicators::three_balls_bouncing(*this, {170, 50});
+    loading_indicator loading_indicator13 = loading_indicators::three_balls_rotation(*this, {210, 50});
+  };
+}
 
 auto main()->int {
-  application::run(form1 {});
+  application::run(loading_indicators_example::form1 {});
 }
