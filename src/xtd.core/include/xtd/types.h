@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include "core_export.h"
+#include "self.h"
 /// @cond
 #define __XTD_VALUE_TYPE_NATIVE__
 #include <xtd/native/value_types>

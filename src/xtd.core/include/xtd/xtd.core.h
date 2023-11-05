@@ -332,6 +332,7 @@
 #include "reset_color.h"
 #include "sbyte.h"
 #include "sbyte_object.h"
+#include "self.h"
 #include "signal.h"
 #include "signal_cancel_event_args.h"
 #include "signal_cancel_event_handler.h"
