@@ -27,7 +27,7 @@ void critical_section::enter(intmax_t handle) {
 
 bool critical_section::try_enter(intmax_t handle) {
   if (reinterpret_cast<CRITICAL_SECTION*>(handle) == nullptr) return false;
-  TryEnterCriticalSection(reinterpret_cast<CRITICAL_SECTION*>(handle)) == TRUE;
+  return TryEnterCriticalSection(reinterpret_cast<CRITICAL_SECTION*>(handle)) == TRUE;
 }
 
 void critical_section::leave(intmax_t handle) {
