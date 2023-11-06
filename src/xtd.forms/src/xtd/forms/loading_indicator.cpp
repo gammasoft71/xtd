@@ -1,4 +1,5 @@
 #include "../../../include/xtd/forms/loading_indicator.h"
+#include "loading_indicator_animation_bar.h"
 #include "loading_indicator_animation_circle_bars.h"
 #include "loading_indicator_animation_circle_blinks.h"
 #include "loading_indicator_animation_five_lines.h"
@@ -93,6 +94,7 @@ drawing::size loading_indicator::measure_control() const noexcept {
 void loading_indicator::on_handle_created(const event_args& e) {
   control::on_handle_created(e);
   switch (data_->loading_indicator_style) {
+    case loading_indicator_style::bar: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_bar>(); break;
     case loading_indicator_style::circle_bars: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_circle_bars>(); break;
     case loading_indicator_style::circle_blinks: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_circle_blinks>(); break;
     case loading_indicator_style::five_lines: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_five_lines>(); break;

@@ -27,6 +27,18 @@ namespace xtd {
       /// @name Properties
       
       /// @{
+      /// @brief Create a system-defined loading_indicator that represent bar loading indicator.
+      /// @param location The loading_indicator location in pixels.
+      /// @param size The loading_indicator size in pixels.
+      /// @return The created loading_indicator.
+      static loading_indicator bar(const xtd::drawing::point& location = {-1, -1}, const xtd::drawing::size& size = {-1, -1}, bool running = true) noexcept;
+      /// @brief Create a system-defined loading_indicator that represent bar loading indicator.
+      /// @param parent The control that contains the loading indicator.
+      /// @param location The loading_indicator location in pixels.
+      /// @param size The loading_indicator size in pixels.
+      /// @return The created loading_indicator.
+      static loading_indicator bar(const control& parent, const xtd::drawing::point& location = {-1, -1}, const xtd::drawing::size& size = {-1, -1}, bool running = true) noexcept;
+      
       /// @brief Create a system-defined loading_indicator that represent circle bars loading indicator.
       /// @param location The loading_indicator location in pixels.
       /// @param size The loading_indicator size in pixels.
