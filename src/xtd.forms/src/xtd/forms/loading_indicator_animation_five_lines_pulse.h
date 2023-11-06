@@ -22,11 +22,11 @@ namespace xtd::forms {
       auto wave4 = enabled ? std::vector {2, 2, 2, 4, 0, 4, 2, 2, 2} : std::vector {2, 2, 2, 2, 2, 2, 2, 2, 2};
       auto wave5 = enabled ? std::vector {2, 2, 2, 2, 2, 2, 4, 0, 4} : std::vector {2, 2, 2, 2, 2, 2, 2, 2, 2};
 
-      graphics.fill_rounded_rectangle(xtd::drawing::solid_brush {xtd::drawing::color::from_argb(static_cast<xtd::byte>(opacity), color)}, x1, y + line_height / wave1[frame_] / 2, line_width,  line_height - line_height / wave1[frame_], line_width / 2);
-      graphics.fill_rounded_rectangle(xtd::drawing::solid_brush {xtd::drawing::color::from_argb(static_cast<xtd::byte>(opacity), color)}, x2, y + line_height / wave2[frame_] / 2, line_width,  line_height - line_height / wave2[frame_], line_width / 2);
-      graphics.fill_rounded_rectangle(xtd::drawing::solid_brush {xtd::drawing::color::from_argb(static_cast<xtd::byte>(opacity), color)}, x3, y + line_height / wave3[frame_] / 2, line_width,  line_height - line_height / wave3[frame_], line_width / 2);
-      graphics.fill_rounded_rectangle(xtd::drawing::solid_brush {xtd::drawing::color::from_argb(static_cast<xtd::byte>(opacity), color)}, x4, y + line_height / wave4[frame_] / 2, line_width,  line_height - line_height / wave4[frame_], line_width / 2);
-      graphics.fill_rounded_rectangle(xtd::drawing::solid_brush {xtd::drawing::color::from_argb(static_cast<xtd::byte>(opacity), color)}, x5, y + line_height / wave5[frame_] / 2, line_width,  line_height - line_height / wave5[frame_], line_width / 2);
+      graphics.fill_rounded_rectangle(xtd::drawing::solid_brush {xtd::drawing::color::from_argb(static_cast<xtd::byte>(opacity), color)}, x1, y + wave1[frame_] ? line_height / wave1[frame_] / 2 : 0, line_width,  line_height - line_height / wave1[frame_], line_width / 2);
+      graphics.fill_rounded_rectangle(xtd::drawing::solid_brush {xtd::drawing::color::from_argb(static_cast<xtd::byte>(opacity), color)}, x2, y + wave2[frame_] ? line_height / wave2[frame_] / 2 : 0, line_width,  line_height - line_height / wave2[frame_], line_width / 2);
+      graphics.fill_rounded_rectangle(xtd::drawing::solid_brush {xtd::drawing::color::from_argb(static_cast<xtd::byte>(opacity), color)}, x3, y + wave3[frame_] ? line_height / wave3[frame_] / 2 : 0, line_width,  line_height - line_height / wave3[frame_], line_width / 2);
+      graphics.fill_rounded_rectangle(xtd::drawing::solid_brush {xtd::drawing::color::from_argb(static_cast<xtd::byte>(opacity), color)}, x4, y + wave4[frame_] ? line_height / wave4[frame_] / 2 : 0, line_width,  line_height - line_height / wave4[frame_], line_width / 2);
+      graphics.fill_rounded_rectangle(xtd::drawing::solid_brush {xtd::drawing::color::from_argb(static_cast<xtd::byte>(opacity), color)}, x5, y + wave5[frame_] ? line_height / wave5[frame_] / 2 : 0, line_width,  line_height - line_height / wave5[frame_], line_width / 2);
     }
     
     void on_timer() override {
