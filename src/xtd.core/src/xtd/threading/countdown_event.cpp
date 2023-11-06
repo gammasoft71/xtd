@@ -102,12 +102,10 @@ bool countdown_event::signal(int32 signal_count) {
   if (!data_) throw object_closed_exception {csf_};
   if (data_->current_count == 0) throw invalid_operation_exception {csf_};
   if (signal_count < 0 || signal_count > data_->current_count) throw argument_out_of_range_exception {csf_};
-  lock_(*data_) {
-    data_->current_count -= signal_count;
-    if (data_->current_count == 0) data_->event.set();
-    return data_->current_count == 0;
-  }
-  return false;
+  auto lock = lock_guard {*data_};
+  data_->current_count -= signal_count;
+  if (data_->current_count == 0) data_->event.set();
+  return data_->current_count == 0;
 }
 
 bool countdown_event::try_add_count() noexcept {
