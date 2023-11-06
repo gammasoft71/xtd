@@ -826,6 +826,7 @@ add_sources(
   src/xtd/forms/list_control.cpp
   src/xtd/forms/loading_indicator.cpp
   src/xtd/forms/loading_indicator_animation.h
+  src/xtd/forms/loading_indicator_animation_bar.h
   src/xtd/forms/loading_indicator_animation_circle_bars.h
   src/xtd/forms/loading_indicator_animation_circle_blinks.h
   src/xtd/forms/loading_indicator_animation_five_lines.h
