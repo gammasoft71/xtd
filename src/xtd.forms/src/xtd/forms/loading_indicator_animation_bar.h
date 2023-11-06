@@ -13,7 +13,7 @@ namespace xtd::forms {
       auto y = (clip_rectangle.height() - h) / 2;
       
       auto graphics_path = xtd::drawing::drawing_2d::graphics_path {};
-      graphics_path.add_rounded_rectangle(0, y, clip_rectangle.width(), h, h / 2);
+      graphics_path.add_rounded_rectangle(0, y, clip_rectangle.width(), h, h / 2.0f);
       auto region = xtd::drawing::region {graphics_path};
       graphics.clip(region);
       graphics.clear(xtd::drawing::color::from_argb(static_cast<xtd::byte>(32), color));
