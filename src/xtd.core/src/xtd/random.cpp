@@ -32,7 +32,7 @@ int32 random::next(int32 min_value, int32 max_value) const {
   return min_value + as<int32>(math::round(sample() * int32_object::max_value)) % ((max_value - 1) - min_value + 1);
 }
 
-double random::next(decimal max_value) const {
+decimal random::next(decimal max_value) const {
   return next(decimal {.0}, max_value);
 }
 
@@ -44,7 +44,7 @@ float random::next(float max_value) const {
   return next(.0f, max_value);
 }
 
-double random::next(decimal min_value, decimal max_value) const {
+decimal random::next(decimal min_value, decimal max_value) const {
   if (min_value > max_value) throw argument_out_of_range_exception {csf_};
   if (min_value == max_value) return min_value;
   return min_value + (sample() * (max_value - min_value));
@@ -59,7 +59,7 @@ double random::next(double min_value, double max_value) const {
 float random::next(float min_value, float max_value) const {
   if (min_value > max_value) throw argument_out_of_range_exception {csf_};
   if (min_value == max_value) return min_value;
-  return min_value + (sample() * (max_value - min_value));
+  return static_cast<float>(min_value + (sample() * (max_value - min_value)));
 }
 
 void random::next_bytes(std::vector<xtd::byte>& buffer) const {

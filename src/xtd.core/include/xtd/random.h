@@ -94,7 +94,7 @@ namespace xtd {
     /// @remarks The next(value_t) overload returns random integers that range from 0 to max_value – 1. However, if max_value is 0, the method returns 0.
     template<typename value_t>
     value_t next(value_t max_value) const {
-      return next(0, max_value);
+      return static_cast<value_t>(next(0, max_value));
     }
     
     /// @brief Returns a random number within a specified range.
@@ -121,10 +121,10 @@ namespace xtd {
     }
     
     /// @cond
-    double next(decimal max_value) const;
+    decimal next(decimal max_value) const;
     double next(double max_value) const;
     float next(float max_value) const;
-    double next(decimal min_value, decimal max_value) const;
+    decimal next(decimal min_value, decimal max_value) const;
     double next(double min_value, double max_value) const;
     float next(float min_value, float max_value) const;
     /// @endcond
