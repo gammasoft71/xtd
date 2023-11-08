@@ -102,7 +102,7 @@ namespace {
     if (build == 19045) return make_tuple("Windows 10", "Vibranium", "22H2");
     if (build == 22000) return make_tuple("Windows 11", "Sun Valley", "21H2");
     if (build == 22621) return make_tuple("Windows 11", "Sun Valley 2", "22H2");
-    if (build == 22631) return make_tuple("Windows 11", "Sun Valley 2", "22H3");
+    if (build == 22631) return make_tuple("Windows 11", "Sun Valley 2", "23H2");
     return {"Windows", "", ""};
   }
 }
