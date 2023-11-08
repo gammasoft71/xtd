@@ -45,7 +45,7 @@ class environment::signal_catcher {
 public:
   signal_catcher() {
     std::atexit(signal_catcher::on_program_exit);
-    /// Workaround sts::quick_exit and std::at_quick_exit are not implemented on macOS !
+    /// Workaround std::quick_exit and std::at_quick_exit are not implemented on macOS !
     /// See https://github.com/runtimeverification/k/issues/1580 for more informtion
     native::environment::at_quick_exit(signal_catcher::on_program_quick_exit);
     std::signal(SIGABRT, signal_catcher::on_abnormal_termination_occured);
