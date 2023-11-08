@@ -181,7 +181,11 @@ namespace xtd {
       /// @return The characters after the last directory separator character in path. If the last character of path is a directory or volume separator character, this method returns string empty ("").
       /// @remarks The separator characters used to determine the start of the file name are directory_separator_char and alt_directory_separator_char.
       static xtd::ustring get_file_name(const xtd::ustring& path);
-      
+
+      /// @brief Returns the file name of the specified path string without the extension.
+      /// @param path The path of the file.
+      /// @return The string returned by xtd::io::path::get_file_name, minus the last period (.) and all characters following it.
+      /// @remarks This method does not verify that the path or file name exists.
       static xtd::ustring get_file_name_without_extension(const xtd::ustring& path);
       
       /// @brief Returns the absolute path for the specified path string.
