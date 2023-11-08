@@ -389,7 +389,7 @@ void environment::quick_exit() noexcept {
 }
 
 void environment::quick_exit(int32 exit_code) noexcept {
-  /// Workaround sts::quick_exit and std::at_quick_exit are not implemented on macOS !
+  /// Workaround std::quick_exit and std::at_quick_exit are not implemented on macOS !
   /// See https://github.com/runtimeverification/k/issues/1580 for more informtion
   native::environment::quick_exit(exit_code);
 }
