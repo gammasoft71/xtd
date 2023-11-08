@@ -56,7 +56,7 @@ namespace xtd {
     /// @return The operating system distribution bug repport url.
     const xtd::uri& bug_repport() const noexcept;
     
-    /// @brief Gets operating system distribution code name. For example "jammy".
+    /// @brief Gets operating system distribution code name. For example "jammy" is the code name of Ubuntu 22.04.
     /// @return The operating system distribution code name.
     const xtd::ustring& code_name() const noexcept;
     
