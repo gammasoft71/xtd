@@ -31,7 +31,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example shows how to query a server to obtain the family addresses and the IP addresses it supports.
     /// @include ip_address.cpp
-    /// @remarks The xtd::ip_address class contains the address of a computer on an IP network.
+    /// @remarks The xtd::net::ip_address class contains the address of a computer on an IP network.
     class core_export_ ip_address : public xtd::object, public xtd::iequatable<ip_address> {
     public:
       /// @name Fields
