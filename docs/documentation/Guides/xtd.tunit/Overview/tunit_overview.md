@@ -68,7 +68,7 @@ You can execute your [xtd.tunit](https://gammasoft71.github.io/xtd/reference_gui
 Run "Command prompt", go to the buid directory of the project (`unit_test_project2\build\Debug`) and type the following line :
 
 ```shell
-unit_test_porject2
+unit_test_project2
 ```
 
 ### On macOS and Linux
