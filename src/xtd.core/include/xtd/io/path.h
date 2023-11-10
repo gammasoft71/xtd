@@ -172,7 +172,7 @@ namespace xtd {
       
       /// @brief Returns the extension of the specified path string.
       /// @param path The path string from which to get the extension.
-      /// @return A std::string containing the extension of the specified path (including the ".") or std::string::empty.
+      /// @return An xtd::ustring containing the extension of the specified path (including the ".") or xtd::ustring::empty.
       /// @remarks If path is empty, GetExtension returns string empty. If path does not have extension information, GetExtension returns string empty ("").
       static xtd::ustring get_extension(const xtd::ustring& path);
       
