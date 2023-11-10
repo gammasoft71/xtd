@@ -11,13 +11,13 @@ using namespace xtd;
 using namespace xtd::net;
 using namespace xtd::net::sockets;
 
-ip_address ip_address::any {0x00000000LL};
-ip_address ip_address::broadcast {0xFFFFFFFFLL};
-ip_address ip_address::ip_v6_any {vector<xtd::byte> {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
-ip_address ip_address::ip_v6_loopback {vector<xtd::byte> {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1}};
-ip_address ip_address::ip_v6_none {vector<xtd::byte> {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
-ip_address ip_address::loopback {0x0100007FLL};
-ip_address ip_address::none {0xFFFFFFFFLL};
+const ip_address ip_address::any {0x00000000LL};
+const ip_address ip_address::broadcast {0xFFFFFFFFLL};
+const ip_address ip_address::ip_v6_any {vector<xtd::byte> {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
+const ip_address ip_address::ip_v6_loopback {vector<xtd::byte> {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1}};
+const ip_address ip_address::ip_v6_none {vector<xtd::byte> {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
+const ip_address ip_address::loopback {0x0100007FLL};
+const ip_address ip_address::none {0xFFFFFFFFLL};
 
 ip_address::ip_address(uint32 address) {
   address_ = static_cast<int32>(address);
