@@ -44,11 +44,8 @@ Free and open-source ([MIT License](/docs/documentation/license))
 
 [![cpp](/pictures/xtd.cpp.png)](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/xtd.cpp.png)
 Written in efficient, modern [C++17/20](https://en.cppreference.com/w/) with [RAII](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization) programming idiom;
-
-A collection of native C++ classes libraries, to complete std;
-
+A collection of native C++ classes libraries, to complete std.
 API close to the .net API with a modern C++ approach and full integration with the std standard and highly portable and available on many different platforms;
-
 
 xtd contains a wide variety of classes in [different libraries](https://gammasoft71.github.io/xtd/docs/documentation/Guides/Overview/Libraries/hierarchy). 
 You can find more information in the [xtd programming guide](/docs/documentation/Guides) and in the [xtd reference guide](https://gammasoft71.github.io/xtd/reference_guides/latest/index.html).
@@ -60,23 +57,20 @@ With xtd you can create differents targets :
 [![console](/pictures/xtd.console.png)](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/xtd.console.png)
 [console application](/docs/documentation/Guides/Overview/Tutorials/writing_applicaion_console) to run your own application in [CLI](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html) mode.
 
-[![forms](/pictures/xtd.console.png)](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/xtd.forms.png)
+[![forms](/pictures/xtd.forms.png)](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/xtd.forms.png)
 [GUI application](/docs/documentation/Guides/Overview/Tutorials/writing_applicaion_gui) to run your own application in a graphical mode with rich [controls](https://gammasoft71.github.io/xtd/reference_guides/latest/_controls_appearances_page.html), [containers](https://gammasoft71.github.io/xtd/reference_guides/latest/_conatiners_appearances_page.html), [dialogs](https://gammasoft71.github.io/xtd/reference_guides/latest/_dialogs_appearances_page.html), [menu and tools bars](https://gammasoft71.github.io/xtd/reference_guides/latest/_menus_and_toolbars_appearances_page.html).
-
 xtd is designed to manage GUI controls and dialogs in pure [native mode](/docs/documentation/Guides/xtd.forms/Overview/control_appearance) or with [CSS styles](/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview).
 
-[![tunit](/pictures/xtd.console.png)](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/xtd.tunit.png)
+[![tunit](/pictures/xtd.tunit.png)](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/xtd.tunit.png)
 [test application](/docs/documentation/Guides/Overview/Tutorials/writing_applicaion_test) to run your own [unit tests](https://gammasoft71.github.io/xtd/reference_guides/latest/group__tunit.html).
 
-[![staticlib](/pictures/xtd.console.png)](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/xtd.staticlib.png)
-* [static libraries](https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html#TargetTypeSubSection) to contain your own code to share between your applications.
+[![staticlib](/pictures/xtd.staticlib.png)](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/xtd.staticlib.png)
+[static libraries](https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html#TargetTypeSubSection) to contain your own code to share between your applications.
 
-[![sharedlib](/pictures/xtd.console.png)](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/xtd.sharedlib.png)
-* [dynamic libraries](https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html#TargetTypeSubSection) to contain your own code to share between your applications.
+[![sharedlib](/pictures/xtd.sharedlib.png)](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/xtd.sharedlib.png)
+[dynamic libraries](https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html#TargetTypeSubSection) to contain your own code to share between your applications.
 
 You can use [xtdc](https://github.com/gammasoft71/xtd/blob/master/tools/xtdc/README.md) and [xtdc-gui](https://github.com/gammasoft71/xtd/blob/master/tools/xtdc-gui/README.md) to help you create these different targets.
-
-## xtd is also
 
 ## See also
 
