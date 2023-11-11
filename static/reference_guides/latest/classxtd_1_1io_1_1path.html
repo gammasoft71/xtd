@@ -172,8 +172,8 @@ Inheritance diagram for xtd::io::path:</div>
 <tr class="memitem:a76e7816cd46fb6e9f3bb5c4277e247cf"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1path.html#a76e7816cd46fb6e9f3bb5c4277e247cf">get_file_name</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1io_1_1path.html">path</a>)</td></tr>
 <tr class="memdesc:a76e7816cd46fb6e9f3bb5c4277e247cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the file name and extension of the specified path string.  <br /></td></tr>
 <tr class="separator:a76e7816cd46fb6e9f3bb5c4277e247cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1cdfa9487b2346eda9f9115af7cd5063"><td class="memItemLeft" align="right" valign="top"><a id="a1cdfa9487b2346eda9f9115af7cd5063" name="a1cdfa9487b2346eda9f9115af7cd5063"></a>
-static <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><b>get_file_name_without_extension</b> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1io_1_1path.html">path</a>)</td></tr>
+<tr class="memitem:a1cdfa9487b2346eda9f9115af7cd5063"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1path.html#a1cdfa9487b2346eda9f9115af7cd5063">get_file_name_without_extension</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1io_1_1path.html">path</a>)</td></tr>
+<tr class="memdesc:a1cdfa9487b2346eda9f9115af7cd5063"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the file name of the specified path string without the extension.  <br /></td></tr>
 <tr class="separator:a1cdfa9487b2346eda9f9115af7cd5063"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20998f4a284d3e9f56b02f755b78c595"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1path.html#a20998f4a284d3e9f56b02f755b78c595">get_full_path</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1io_1_1path.html">path</a>)</td></tr>
 <tr class="memdesc:a20998f4a284d3e9f56b02f755b78c595"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the absolute path for the specified path string.  <br /></td></tr>
@@ -704,7 +704,7 @@ template&lt;typename char_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A std::string containing the extension of the specified path (including the ".") or std::string::empty. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> containing the extension of the specified path (including the ".") or xtd::ustring::empty. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If path is empty, GetExtension returns string empty. If path does not have extension information, GetExtension returns string empty (""). </dd></dl>
 
 </div>
@@ -742,6 +742,42 @@ template&lt;typename char_t &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The characters after the last directory separator character in path. If the last character of path is a directory or volume separator character, this method returns string empty (""). </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The separator characters used to determine the start of the file name are directory_separator_char and alt_directory_separator_char. </dd></dl>
+
+</div>
+</div>
+<a id="a1cdfa9487b2346eda9f9115af7cd5063" name="a1cdfa9487b2346eda9f9115af7cd5063"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cdfa9487b2346eda9f9115af7cd5063">&#9670;&#160;</a></span>get_file_name_without_extension()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> xtd::io::path::get_file_name_without_extension </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the file name of the specified path string without the extension. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>The path of the file. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The string returned by <a class="el" href="classxtd_1_1io_1_1path.html#a76e7816cd46fb6e9f3bb5c4277e247cf" title="Returns the file name and extension of the specified path string.">xtd::io::path::get_file_name</a>, minus the last period (.) and all characters following it. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This method does not verify that the path or file name exists. </dd></dl>
 
 </div>
 </div>
@@ -1251,7 +1287,7 @@ template&lt;typename char_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 16 2023 21:29:43 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Nov 11 2023 13:29:53 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -118,7 +118,7 @@ var searchData=
   ['bridge_5fat_5fnight_115',['bridge_at_night',['../classxtd_1_1forms_1_1emoticons.html#a6e99fdecb1542d3d30ba65f0a2f28af5',1,'xtd::forms::emoticons']]],
   ['briefcase_116',['briefcase',['../classxtd_1_1forms_1_1emoticons.html#ad5085b6e0834a5aa14856a5860bc3024',1,'xtd::forms::emoticons']]],
   ['briefs_117',['briefs',['../classxtd_1_1forms_1_1emoticons.html#aaad6fa73a55c30678d8b52c3ec5feef8',1,'xtd::forms::emoticons']]],
-  ['broadcast_118',['broadcast',['../classxtd_1_1net_1_1ip__address.html#a08d8d0f4440ac8cf10403534c9b2e0c6',1,'xtd::net::ip_address']]],
+  ['broadcast_118',['broadcast',['../classxtd_1_1net_1_1ip__address.html#ac9bde2932e0a8283e263f4ac3e65a6a4',1,'xtd::net::ip_address']]],
   ['broccoli_119',['broccoli',['../classxtd_1_1forms_1_1emoticons.html#a578fd7aa2a2bf896f56792f15fb1b64a',1,'xtd::forms::emoticons']]],
   ['broken_5fheart_120',['broken_heart',['../classxtd_1_1forms_1_1emoticons.html#aea42e9b56b58decfaa239193570f0fc2',1,'xtd::forms::emoticons']]],
   ['broom_121',['broom',['../classxtd_1_1forms_1_1emoticons.html#ad9dcc09f09811b0d78de062d3181508d',1,'xtd::forms::emoticons']]],

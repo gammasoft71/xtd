@@ -109,12 +109,12 @@ $(function() {
 <div class="line">    console::write_line(<span class="stringliteral">&quot;Main thread: Start a second thread.&quot;</span>);</div>
 <div class="line">    <span class="comment">// The constructor for the thread class requires a thread_start</span></div>
 <div class="line">    <span class="comment">// delegate that represents the method to be executed on the</span></div>
-<div class="line">    <span class="comment">// thread.  xtd simplifies the creation of this delegate.</span></div>
+<div class="line">    <span class="comment">// thread. xtd simplifies the creation of this delegate.</span></div>
 <div class="line">    <span class="keyword">auto</span> t = <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1threading_1_1thread.html">thread</a> {thread_proc};</div>
 <div class="line">    </div>
-<div class="line">    <span class="comment">// Start thread_proc.  Note that on a uniprocessor, the new</span></div>
+<div class="line">    <span class="comment">// Start thread_proc. Note that on a uniprocessor, the new</span></div>
 <div class="line">    <span class="comment">// thread does not get any processor time until the main thread</span></div>
-<div class="line">    <span class="comment">// is preempted or yields.  Uncomment the thread::sleep that</span></div>
+<div class="line">    <span class="comment">// is preempted or yields. Uncomment the thread::sleep that</span></div>
 <div class="line">    <span class="comment">// follows t.start() to see the difference.</span></div>
 <div class="line">    t.start();</div>
 <div class="line">    <span class="comment">//thread::sleep(0);</span></div>
@@ -124,9 +124,9 @@ $(function() {
 <div class="line">      thread::sleep(0);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;Main thread: Call Join(), to wait until thread_proc ends.&quot;</span>);</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;Main thread: Call join(), to wait until thread_proc ends.&quot;</span>);</div>
 <div class="line">    t.join();</div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;Main thread: thread_proc.Join has returned.  Press Enter to end program.&quot;</span>);</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;Main thread: thread_proc.join has returned.  Press Enter to end program.&quot;</span>);</div>
 <div class="line">    console::read_line();</div>
 <div class="line">  }</div>
 <div class="line">};</div>
@@ -143,7 +143,7 @@ $(function() {
 <div class="line"><span class="comment">// thread_proc: 1</span></div>
 <div class="line"><span class="comment">// Main thread: Do some work.</span></div>
 <div class="line"><span class="comment">// thread_proc: 2</span></div>
-<div class="line"><span class="comment">// Main thread: Call Join(), to wait until thread_proc ends.</span></div>
+<div class="line"><span class="comment">// Main thread: Call join(), to wait until thread_proc ends.</span></div>
 <div class="line"><span class="comment">// thread_proc: 3</span></div>
 <div class="line"><span class="comment">// thread_proc: 4</span></div>
 <div class="line"><span class="comment">// thread_proc: 5</span></div>
@@ -151,7 +151,7 @@ $(function() {
 <div class="line"><span class="comment">// thread_proc: 7</span></div>
 <div class="line"><span class="comment">// thread_proc: 8</span></div>
 <div class="line"><span class="comment">// thread_proc: 9</span></div>
-<div class="line"><span class="comment">// Main thread: thread_proc.Join has returned.  Press Enter to end program.</span></div>
+<div class="line"><span class="comment">// Main thread: thread_proc.join has returned.  Press Enter to end program.</span></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1thread_html"><div class="ttname"><a href="classxtd_1_1threading_1_1thread.html">xtd::threading::thread</a></div><div class="ttdoc">Creates and controls a thread, sets its priority, and gets its status.</div><div class="ttdef"><b>Definition</b> thread.h:41</div></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:162</div></div>
 <div class="ttc" id="anamespacextd_1_1threading_html"><div class="ttname"><a href="namespacextd_1_1threading.html">xtd::threading</a></div><div class="ttdoc">The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....</div><div class="ttdef"><b>Definition</b> abandoned_mutex_exception.h:10</div></div>
@@ -160,7 +160,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 16 2023 21:29:33 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Nov 11 2023 13:29:43 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -106,134 +106,113 @@ $(function() {
 <img src="test_forms_gd.png" alt=""/>
 </div>
 </dd></dl>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/drawing/brushes&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/user_control&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/math&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">class </span>waiting_spinner_control : <span class="keyword">public</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1forms_1_1user__control.html">xtd::forms::user_control</a> {</div>
-<div class="line"><span class="keyword">public</span>:</div>
-<div class="line">  waiting_spinner_control() {</div>
-<div class="line">    update_timer();</div>
-<div class="line">    timer_.tick += {*<span class="keyword">this</span>, &amp;waiting_spinner_control::rotate};</div>
-<div class="line">  }</div>
-<div class="line">  </div>
-<div class="line"><span class="keyword">public</span>:</div>
-<div class="line">  </div>
-<div class="line">  <span class="keywordtype">int</span> inner_radius() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> inner_radius_;}</div>
-<div class="line">  waiting_spinner_control&amp; inner_radius(<span class="keywordtype">int</span> value);</div>
-<div class="line">  </div>
-<div class="line">  <span class="keywordtype">int</span> line_length() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> line_length_;}</div>
-<div class="line">  waiting_spinner_control&amp; line_length(<span class="keywordtype">int</span> value);</div>
-<div class="line">  </div>
-<div class="line">  <span class="keywordtype">int</span> line_width() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> line_width_;}</div>
-<div class="line">  waiting_spinner_control&amp; line_width(<span class="keywordtype">int</span> value);</div>
-<div class="line">  </div>
-<div class="line">  <span class="keywordtype">float</span> minimum_trail_opacity() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> minimum_trail_opacity_;}</div>
-<div class="line">  waiting_spinner_control&amp; minimum_trail_opacity(<span class="keywordtype">float</span> value);</div>
-<div class="line"> </div>
-<div class="line">  <span class="keywordtype">int</span> number_of_lines() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> number_of_lines_;}</div>
-<div class="line">  waiting_spinner_control&amp; number_of_lines(<span class="keywordtype">int</span> value);</div>
-<div class="line">  </div>
-<div class="line">  <span class="keywordtype">float</span> revolutions_pers_second() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> revolutions_per_second_;}</div>
-<div class="line">  waiting_spinner_control&amp; revolutions_pers_second(<span class="keywordtype">float</span> value);</div>
-<div class="line">  </div>
-<div class="line">  <span class="keywordtype">float</span> roundness() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span>  roundness_;}</div>
-<div class="line">  waiting_spinner_control&amp; roundness(<span class="keywordtype">float</span> value);</div>
-<div class="line">  </div>
-<div class="line">  <span class="keywordtype">bool</span> running()<span class="keyword"> const </span>{<span class="keywordflow">return</span> running_;}</div>
-<div class="line">  waiting_spinner_control&amp; running(<span class="keywordtype">bool</span> value) {</div>
-<div class="line">    <span class="keywordflow">if</span> (running_ == value) <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line">    current_counter_ = 0;</div>
-<div class="line">    running_ = value;</div>
-<div class="line">    timer_.enabled(value);</div>
-<div class="line">    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line">  }</div>
-<div class="line"> </div>
-<div class="line">  <span class="keywordtype">float</span> trail_fade_percentage() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> trail_fade_percentage_;}</div>
-<div class="line">  waiting_spinner_control&amp; trail_fade_percentage(<span class="keywordtype">float</span> value);</div>
-<div class="line">  </div>
-<div class="line">  </div>
-<div class="line">  <span class="keywordtype">void</span> start() {running(<span class="keyword">true</span>);}</div>
-<div class="line">  </div>
-<div class="line">  <span class="keywordtype">void</span> stop() {running(<span class="keyword">false</span>);}</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">protected</span>:</div>
-<div class="line">  <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> default_size() <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> {256, 256};}</div>
-<div class="line">  </div>
-<div class="line">  <span class="keywordtype">void</span> rotate() {</div>
-<div class="line">    </div>
-<div class="line">  }</div>
-<div class="line">  </div>
-<div class="line">  <span class="keywordtype">void</span> on_paint(<a id="_a2" name="_a2"></a><a class="code hl_class" href="classxtd_1_1forms_1_1paint__event__args.html">xtd::forms::paint_event_args</a>&amp; e)<span class="keyword"> override </span>{</div>
-<div class="line">    <a id="a3" name="a3"></a><a class="code hl_function" href="classxtd_1_1forms_1_1user__control.html#a842bdef2a0f8b7e822b2b7864d5a188b">xtd::forms::user_control::on_paint</a>(e);</div>
-<div class="line">    e.graphics().fill_rectangle(<a id="a4" name="a4"></a><a class="code hl_function" href="classxtd_1_1drawing_1_1brushes.html#ae49bf9092c96684aa6f497f6ca5df42d">xtd::drawing::brushes::transparent</a>(), e.clip_rectangle());</div>
-<div class="line">    e.graphics().smoothing_mode(<a id="a5" name="a5"></a><a class="code hl_enumvalue" href="group__xtd__drawing.html#ggaa97bef62c2930f0214bcb97a67792a41af369cd55314f7be17fa5cfbd2ade6206">xtd::drawing::drawing_2d::smoothing_mode::anti_alias</a>);</div>
-<div class="line">    e.graphics().translate_transform(e.clip_rectangle().center().x(), e.clip_rectangle().center().y());</div>
-<div class="line"> </div>
-<div class="line">    <span class="keywordflow">if</span> (current_counter_ &gt;= number_of_lines_) current_counter_ = 0;</div>
-<div class="line">    </div>
-<div class="line">    e.graphics().rotate_transform(360.0f / <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(number_of_lines_));</div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; number_of_lines_; ++i) {</div>
-<div class="line">      <span class="keyword">auto</span> rotate_angle = 360.0f * i / <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(number_of_lines_);</div>
-<div class="line">      <span class="comment">//e.graphics().translate_transform(inner_radius_ + line_length_, inner_radius_ + line_length_);</span></div>
-<div class="line">      <span class="comment">//e.graphics().translate_transform(inner_radius_, 0);</span></div>
-<div class="line">      <span class="keyword">auto</span> distance = line_count_distance_from_primary(i, current_counter_, number_of_lines_);</div>
-<div class="line">      <a id="_a6" name="_a6"></a><a class="code hl_class" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> color = current_line_color(distance, number_of_lines_, trail_fade_percentage_, minimum_trail_opacity_, fore_color());</div>
-<div class="line">      e.graphics().fill_rounded_rectangle(<a id="_a7" name="_a7"></a><a class="code hl_class" href="classxtd_1_1drawing_1_1solid__brush.html">xtd::drawing::solid_brush</a> {color}, <a id="_a8" name="_a8"></a><a class="code hl_class" href="classxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a>(0, -line_width_ / 2, line_length_, line_width_), <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(line_width_ * roundness_ / 100.0f));</div>
-<div class="line">      e.graphics().rotate_transform(i * rotate_angle);</div>
-<div class="line">    }</div>
-<div class="line">  }</div>
-<div class="line">  </div>
-<div class="line"><span class="keyword">private</span>:</div>
-<div class="line">  <span class="keyword">static</span> <span class="keywordtype">int</span> line_count_distance_from_primary(<span class="keywordtype">int</span> current, <span class="keywordtype">int</span> primary, <span class="keywordtype">int</span> total_nbr_of_lines) {</div>
-<div class="line">    <span class="keyword">auto</span> distance = primary - current;</div>
-<div class="line">    <span class="keywordflow">if</span> (distance &lt; 0) distance += total_nbr_of_lines;</div>
-<div class="line">    <span class="keywordflow">return</span> distance;</div>
-<div class="line">  }</div>
-<div class="line"> </div>
-<div class="line">  <span class="keyword">static</span> <a class="code hl_class" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> current_line_color(<span class="keywordtype">int</span> count_distance, <span class="keywordtype">int</span> total_nbr_of_lines, <span class="keywordtype">float</span> trail_fade_perc, <span class="keywordtype">float</span> min_opacity, <a class="code hl_class" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> color) {</div>
-<div class="line">    <span class="keywordflow">if</span> (count_distance == 0) <span class="keywordflow">return</span> color;</div>
-<div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> min_alpha = min_opacity / 100.0f;</div>
-<div class="line">    <span class="keywordtype">int</span> distance_threshold = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a id="a9" name="a9"></a><a class="code hl_function" href="classxtd_1_1math.html#acd0247120772e3fad51cafcdabddcc23">xtd::math::ceiling</a>((total_nbr_of_lines - 1) * trail_fade_perc / 100.0f));</div>
-<div class="line">    <span class="keywordflow">if</span> (count_distance &gt; distance_threshold) color = <a id="a10" name="a10"></a><a class="code hl_function" href="classxtd_1_1drawing_1_1color.html#ac4a75a743036c1bfbb948db2d481736b">xtd::drawing::color::from_argb</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(min_alpha * 255), color);</div>
-<div class="line">    <span class="keywordflow">else</span> {</div>
-<div class="line">      <span class="keyword">auto</span> alpha_diff = color.<a id="a11" name="a11"></a><a class="code hl_function" href="classxtd_1_1drawing_1_1color.html#adf44e69216277fc02f79320855036bd3">a</a>() / 255.0f - min_alpha;</div>
-<div class="line">      <span class="keyword">auto</span> gradient = alpha_diff / <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(distance_threshold + 1.0f);</div>
-<div class="line">      <span class="keyword">auto</span> result_alpha = color.<a class="code hl_function" href="classxtd_1_1drawing_1_1color.html#adf44e69216277fc02f79320855036bd3">a</a>() / 255.0f - gradient * count_distance;</div>
-<div class="line">      </div>
-<div class="line">      <span class="comment">// If alpha is out of bounds, clip it.</span></div>
-<div class="line">      result_alpha = <a id="a12" name="a12"></a><a class="code hl_function" href="classxtd_1_1math.html#a42ffb88ddec0bb59a656d407fb8fe494">xtd::math::min</a>(1.0f, <a id="a13" name="a13"></a><a class="code hl_function" href="classxtd_1_1math.html#aafdaac98206d8573f794250e03098c00">xtd::math::max</a>(0.0f, result_alpha));</div>
-<div class="line">      color = <a class="code hl_function" href="classxtd_1_1drawing_1_1color.html#ac4a75a743036c1bfbb948db2d481736b">xtd::drawing::color::from_argb</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(result_alpha * 255), color);</div>
-<div class="line">    }</div>
-<div class="line">    <span class="keywordflow">return</span> color;</div>
-<div class="line">  }</div>
-<div class="line">  </div>
-<div class="line">  <span class="keywordtype">void</span> update_size() {</div>
-<div class="line">    <span class="keyword">auto</span> size = (inner_radius_ + line_length_) * 2;</div>
-<div class="line">    this-&gt;size({size, size});</div>
-<div class="line">  }</div>
-<div class="line">  </div>
-<div class="line">  <span class="keywordtype">void</span> update_timer() {timer_.interval_milliseconds(1000 / (number_of_lines_ * revolutions_per_second_));}</div>
-<div class="line">  </div>
-<div class="line"><span class="keyword">private</span>:</div>
-<div class="line">  <span class="keywordtype">int</span>   = 0;</div>
-<div class="line">  <span class="keywordtype">int</span> inner_radius_ = 10;</div>
-<div class="line">  <span class="keywordtype">int</span> line_length_ = 10;</div>
-<div class="line">  <span class="keywordtype">int</span> line_width_ = 2;</div>
-<div class="line">  <span class="keywordtype">float</span> minimum_trail_opacity_ = 3.14159265358979323846f;</div>
-<div class="line">  <span class="keywordtype">int</span> number_of_lines_ = 20;</div>
-<div class="line">  <span class="keywordtype">float</span> revolutions_per_second_ = 1.57079632679489661923f;</div>
-<div class="line">  <span class="keywordtype">int</span> roundness_ = 100.0f; <span class="comment">// 0..100</span></div>
-<div class="line">  <span class="keywordtype">bool</span> running_ = <span class="keyword">false</span>;</div>
-<div class="line">  <a id="_a14" name="_a14"></a><a class="code hl_class" href="classxtd_1_1forms_1_1timer.html">xtd::forms::timer</a> timer_;</div>
-<div class="line">  <span class="keywordtype">float</span> trail_fade_percentage_ = 80.0f;</div>
-<div class="line">};</div>
-<div class="line"> </div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/process&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/text_box&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/environment&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>virtual_console : <span class="keyword">public</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">xtd::forms::text_box</a> {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">  virtual_console()  {</div>
+<div class="line">    <a id="a1" name="a1"></a><a class="code hl_function" href="classxtd_1_1environment.html#a981ec9665ba83e12a0241c37017c9ec7">xtd::environment::current_directory</a>(<a id="a2" name="a2"></a><a class="code hl_function" href="classxtd_1_1environment.html#a0bcc0c727357a767874cfc4970df1414">xtd::environment::get_folder_path</a>(<a id="a3" name="a3"></a><a class="code hl_enumvalue" href="classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057a106a6c241b8797f52e1e77317b96a201">xtd::environment::special_folder::home</a>));</div>
+<div class="line">    prompt = <a id="a4" name="a4"></a><a class="code hl_function" href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">xtd::ustring::format</a>(<span class="stringliteral">&quot;[{}] $ &quot;</span>, <a class="code hl_function" href="classxtd_1_1environment.html#a981ec9665ba83e12a0241c37017c9ec7">xtd::environment::current_directory</a>());</div>
+<div class="line">    </div>
+<div class="line">    <a id="a5" name="a5"></a><a class="code hl_function" href="classxtd_1_1forms_1_1text__box__base.html#aab82289e82f2768b84c982fd3e00451c">multiline</a>(<span class="keyword">true</span>);</div>
+<div class="line">    <a id="a6" name="a6"></a><a class="code hl_function" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa">back_color</a>(<a id="a7" name="a7"></a><a class="code hl_function" href="classxtd_1_1forms_1_1text__box.html#a080c52451b8db158e390d2111f9d3b3e">default_back_color</a>());</div>
+<div class="line">    <a id="a8" name="a8"></a><a class="code hl_function" href="classxtd_1_1forms_1_1control.html#a5a4bc61bebeea8b848b4371ca82db09e">font</a>(<a id="a9" name="a9"></a><a class="code hl_function" href="classxtd_1_1forms_1_1control.html#a3f6491b9cb25850c60a2bd9049ca1df4">default_font</a>());</div>
+<div class="line">    <a id="a10" name="a10"></a><a class="code hl_function" href="classxtd_1_1forms_1_1control.html#a265fde2d4a85f8abae67e2223c20e1f5">fore_color</a>(<a id="a11" name="a11"></a><a class="code hl_function" href="classxtd_1_1forms_1_1text__box.html#a28af010a8c7e9a899e4343ea137014ad">default_fore_color</a>());</div>
+<div class="line">    <a id="a12" name="a12"></a><a class="code hl_function" href="classxtd_1_1forms_1_1text__box.html#ad22e5b141e192e6aad9a391242deba86">text</a>(prompt);</div>
+<div class="line">    <a id="a13" name="a13"></a><a class="code hl_enumvalue" href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970dea99938282f04071859941e18f16efcf42">select</a>(<a class="code hl_function" href="classxtd_1_1forms_1_1text__box.html#ad22e5b141e192e6aad9a391242deba86">text</a>().<a id="a14" name="a14"></a><a class="code hl_function" href="classxtd_1_1forms_1_1control.html#ad6b15530ad92e3df1996d4fd3c0c862e">size</a>() - 1, 0);</div>
+<div class="line">  }</div>
+<div class="line">  </div>
+<div class="line"><span class="keyword">protected</span>:</div>
+<div class="line">  <a id="_a15" name="_a15"></a><a class="code hl_class" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> <a class="code hl_function" href="classxtd_1_1forms_1_1text__box.html#a080c52451b8db158e390d2111f9d3b3e">default_back_color</a>() <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> <a id="a16" name="a16"></a><a class="code hl_variable" href="classxtd_1_1drawing_1_1color.html#ad04928a6ddbfa799f6fdaca302cacf11">xtd::drawing::color::black</a>;}</div>
+<div class="line">  <a id="_a17" name="_a17"></a><a class="code hl_class" href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a> <a class="code hl_function" href="classxtd_1_1forms_1_1control.html#a3f6491b9cb25850c60a2bd9049ca1df4">default_font</a>() <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> <a class="code hl_class" href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a>(<a id="a18" name="a18"></a><a class="code hl_function" href="classxtd_1_1drawing_1_1font__family.html#a4423c916478f5a28589f1c36a663f650">xtd::drawing::font_family::generic_monospace</a>(), 10);}</div>
+<div class="line">  <a class="code hl_class" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> <a class="code hl_function" href="classxtd_1_1forms_1_1text__box.html#a28af010a8c7e9a899e4343ea137014ad">default_fore_color</a>() <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> <a id="a19" name="a19"></a><a class="code hl_variable" href="classxtd_1_1drawing_1_1color.html#a59bfef2cdc600a35b186f7c98238a3c4">xtd::drawing::color::lime</a>;}</div>
+<div class="line">  <a id="_a20" name="_a20"></a><a class="code hl_class" href="classxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> <a id="a21" name="a21"></a><a class="code hl_function" href="classxtd_1_1forms_1_1control.html#ac49090fd2de49771a00b4835895c6bd8">default_size</a>() <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> {300, 200};}</div>
+<div class="line">  </div>
+<div class="line">  <span class="keywordtype">void</span> <a id="a22" name="a22"></a><a class="code hl_function" href="classxtd_1_1forms_1_1control.html#a385168b0a603edaebc6df8df0c9aa97e">on_key_down</a>(<a id="_a23" name="_a23"></a><a class="code hl_class" href="classxtd_1_1forms_1_1key__event__args.html">xtd::forms::key_event_args</a>&amp; e)<span class="keyword"> override </span>{</div>
+<div class="line">    <span class="keywordflow">switch</span> (e.key_code()) {</div>
+<div class="line">      <span class="keywordflow">case</span> <a id="a24" name="a24"></a><a class="code hl_enumvalue" href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970dea74e8333ad11685ff3bdae589c8f6e34d">xtd::forms::keys::down</a>: key_down_pressed(e); <span class="keywordflow">break</span>;</div>
+<div class="line">      <span class="keywordflow">case</span> <a id="a25" name="a25"></a><a class="code hl_enumvalue" href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970dea46c48bec0d282018b9d167eef7711b2c">xtd::forms::keys::up</a>: key_up_pressed(e); <span class="keywordflow">break</span>;</div>
+<div class="line">      <span class="keywordflow">case</span> <a id="a26" name="a26"></a><a class="code hl_enumvalue" href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deae2a7106f1cc8bb1e1318df70aa0a3540">xtd::forms::keys::enter</a>: key_enter_pressed(e); <span class="keywordflow">break</span>;</div>
+<div class="line">      <span class="keywordflow">default</span>: <span class="keywordflow">break</span>;</div>
+<div class="line">    }</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1forms_1_1control.html#a385168b0a603edaebc6df8df0c9aa97e">text_box::on_key_down</a>(e);</div>
+<div class="line">  }</div>
+<div class="line">  </div>
+<div class="line"><span class="keyword">private</span>:</div>
+<div class="line">  <a id="_a27" name="_a27"></a><a class="code hl_class" href="classxtd_1_1ustring.html">xtd::ustring</a> get_command()<span class="keyword"> const </span>{</div>
+<div class="line">    <span class="keyword">auto</span> pos = <a class="code hl_function" href="classxtd_1_1forms_1_1text__box.html#ad22e5b141e192e6aad9a391242deba86">text</a>().<a id="a28" name="a28"></a><a class="code hl_function" href="classxtd_1_1ustring.html#a1d6d810543949e28650f92b5206314a5">last_index_of</a>(prompt);</div>
+<div class="line">    <span class="keywordflow">if</span> (pos != xtd::ustring::npos) {</div>
+<div class="line">      pos += prompt.size();</div>
+<div class="line">      <span class="keywordflow">return</span> <a class="code hl_function" href="classxtd_1_1forms_1_1text__box.html#ad22e5b141e192e6aad9a391242deba86">text</a>().<a id="a29" name="a29"></a><a class="code hl_function" href="classxtd_1_1ustring.html#ad27e596eab3904c5084c2d2cb7ae05a1">substring</a>(pos);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line">  }</div>
+<div class="line">  </div>
+<div class="line">  <span class="keywordtype">void</span> key_down_pressed(<a class="code hl_class" href="classxtd_1_1forms_1_1key__event__args.html">xtd::forms::key_event_args</a>&amp; e) {</div>
+<div class="line">    e.handled(<span class="keyword">true</span>);</div>
+<div class="line">  }</div>
+<div class="line">  <span class="keywordtype">void</span> key_up_pressed(<a class="code hl_class" href="classxtd_1_1forms_1_1key__event__args.html">xtd::forms::key_event_args</a>&amp; e) {</div>
+<div class="line">    e.handled(<span class="keyword">true</span>);</div>
+<div class="line">  }</div>
+<div class="line">  <span class="keywordtype">void</span> key_enter_pressed(<a class="code hl_class" href="classxtd_1_1forms_1_1key__event__args.html">xtd::forms::key_event_args</a>&amp; e) {</div>
+<div class="line">    <span class="keyword">auto</span> command_line = get_command();</div>
+<div class="line">    <span class="keywordflow">if</span> (!command_line.empty()) {</div>
+<div class="line">      <a id="_a30" name="_a30"></a><a class="code hl_class" href="classxtd_1_1diagnostics_1_1process__start__info.html">xtd::diagnostics::process_start_info</a> start_info;</div>
+<div class="line">      <span class="keywordflow">try</span> {</div>
+<div class="line">        <span class="keyword">auto</span> args = command_line.split({<span class="charliteral">&#39; &#39;</span>});</div>
+<div class="line">        start_info.<a id="a31" name="a31"></a><a class="code hl_function" href="classxtd_1_1diagnostics_1_1process__start__info.html#a451273cb1bd889af9cf173f6a6467a16">file_name</a>(args[0]);</div>
+<div class="line">        <span class="keywordflow">if</span> (args.size() &gt; 1)</div>
+<div class="line">          start_info.<a id="a32" name="a32"></a><a class="code hl_function" href="classxtd_1_1diagnostics_1_1process__start__info.html#ada9ce33185087d235a2d0f380323bbfd">arguments</a>(<a id="a33" name="a33"></a><a class="code hl_function" href="classxtd_1_1ustring.html#a95694998a854ba65dde682b879eec355">xtd::ustring::join</a>(<span class="stringliteral">&quot; &quot;</span>, std::vector&lt;xtd::ustring&gt;(args.begin() + 1, args.end())));</div>
+<div class="line">          </div>
+<div class="line">        <a id="a34" name="a34"></a><a class="code hl_function" href="classxtd_1_1forms_1_1text__box.html#ab6f558ccea3f3ee86e06e5f8cf0f0046">append_text</a>(<a id="a35" name="a35"></a><a class="code hl_function" href="classxtd_1_1environment.html#a4b3f67dc9a3a0f67d13b60bf4f09386f">xtd::environment::new_line</a>());</div>
+<div class="line">        start_info.<a id="a36" name="a36"></a><a class="code hl_function" href="classxtd_1_1diagnostics_1_1process__start__info.html#afbe7913a04289abf0dcf6b51f6c0186b">use_shell_execute</a>(<span class="keyword">false</span>);</div>
+<div class="line">        start_info.<a id="a37" name="a37"></a><a class="code hl_function" href="classxtd_1_1diagnostics_1_1process__start__info.html#a4a06a0294cb4293389f1dd3542b0741a">redirect_standard_error</a>(<span class="keyword">true</span>);</div>
+<div class="line">        start_info.<a id="a38" name="a38"></a><a class="code hl_function" href="classxtd_1_1diagnostics_1_1process__start__info.html#a2e12dcf466c131ba8562e1342af4f3aa">redirect_standard_output</a>(<span class="keyword">true</span>);</div>
+<div class="line">        </div>
+<div class="line">        <span class="keywordflow">if</span> (start_info.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process__start__info.html#a451273cb1bd889af9cf173f6a6467a16">file_name</a>() == <span class="stringliteral">&quot;cd&quot;</span> &amp;&amp; !start_info.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process__start__info.html#ada9ce33185087d235a2d0f380323bbfd">arguments</a>().empty()) {</div>
+<div class="line">          <span class="keywordflow">if</span> (<a id="a39" name="a39"></a><a class="code hl_function" href="classxtd_1_1io_1_1directory.html#acbfb159f4d4aaf5837563eba5fc876fc">xtd::io::directory::exists</a>(start_info.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process__start__info.html#ada9ce33185087d235a2d0f380323bbfd">arguments</a>())) {</div>
+<div class="line">            <a class="code hl_function" href="classxtd_1_1environment.html#a981ec9665ba83e12a0241c37017c9ec7">xtd::environment::current_directory</a>(start_info.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process__start__info.html#ada9ce33185087d235a2d0f380323bbfd">arguments</a>());</div>
+<div class="line">            prompt = <a class="code hl_function" href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">xtd::ustring::format</a>(<span class="stringliteral">&quot;[{}] $ &quot;</span>,  <a class="code hl_function" href="classxtd_1_1environment.html#a981ec9665ba83e12a0241c37017c9ec7">xtd::environment::current_directory</a>());</div>
+<div class="line">          } <span class="keywordflow">else</span> {</div>
+<div class="line">            <a class="code hl_function" href="classxtd_1_1forms_1_1text__box.html#ab6f558ccea3f3ee86e06e5f8cf0f0046">append_text</a>(<a class="code hl_function" href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">xtd::ustring::format</a>(<span class="stringliteral">&quot;cd: no such file or directory: {}&quot;</span>, start_info.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process__start__info.html#ada9ce33185087d235a2d0f380323bbfd">arguments</a>()));</div>
+<div class="line">            <a class="code hl_function" href="classxtd_1_1forms_1_1text__box.html#ab6f558ccea3f3ee86e06e5f8cf0f0046">append_text</a>(<a class="code hl_function" href="classxtd_1_1environment.html#a4b3f67dc9a3a0f67d13b60bf4f09386f">xtd::environment::new_line</a>());</div>
+<div class="line">          }</div>
+<div class="line">        } <span class="keywordflow">else</span> {</div>
+<div class="line">          <a id="_a40" name="_a40"></a><a class="code hl_class" href="classxtd_1_1diagnostics_1_1process.html">xtd::diagnostics::process</a> <a id="a41" name="a41"></a><a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a5075140835d0bc504791c76b04c33d2b">process</a>;</div>
+<div class="line">          process.start_info(start_info);</div>
+<div class="line">          process.start();</div>
+<div class="line">          std::istream&amp; standard_error = process.standard_error();</div>
+<div class="line">          std::istream&amp; standard_output = process.standard_output();</div>
+<div class="line">          </div>
+<div class="line">          <a id="_a42" name="_a42"></a><a class="code hl_class" href="classxtd_1_1io_1_1stream__reader.html">xtd::io::stream_reader</a> error_reader(standard_error);</div>
+<div class="line">          <span class="keywordflow">while</span> (!error_reader.<a id="a43" name="a43"></a><a class="code hl_function" href="classxtd_1_1io_1_1stream__reader.html#af86ae00e44bfc363b2bf51986a9e58d0">end_of_stream</a>()) {</div>
+<div class="line">            <a class="code hl_function" href="classxtd_1_1forms_1_1text__box.html#ab6f558ccea3f3ee86e06e5f8cf0f0046">append_text</a>(error_reader.<a id="a44" name="a44"></a><a class="code hl_function" href="classxtd_1_1io_1_1text__reader.html#a18c34f5d077adfb00394881b511c1e91">read_line</a>());</div>
+<div class="line">            <a class="code hl_function" href="classxtd_1_1forms_1_1text__box.html#ab6f558ccea3f3ee86e06e5f8cf0f0046">append_text</a>(<a class="code hl_function" href="classxtd_1_1environment.html#a4b3f67dc9a3a0f67d13b60bf4f09386f">xtd::environment::new_line</a>());</div>
+<div class="line">          }</div>
+<div class="line">          </div>
+<div class="line">          <a class="code hl_class" href="classxtd_1_1io_1_1stream__reader.html">xtd::io::stream_reader</a> output_reader(standard_output);</div>
+<div class="line">          <span class="keywordflow">while</span> (!output_reader.<a class="code hl_function" href="classxtd_1_1io_1_1stream__reader.html#af86ae00e44bfc363b2bf51986a9e58d0">end_of_stream</a>()) {</div>
+<div class="line">            <a class="code hl_function" href="classxtd_1_1forms_1_1text__box.html#ab6f558ccea3f3ee86e06e5f8cf0f0046">append_text</a>(output_reader.<a class="code hl_function" href="classxtd_1_1io_1_1text__reader.html#a18c34f5d077adfb00394881b511c1e91">read_line</a>());</div>
+<div class="line">            <a class="code hl_function" href="classxtd_1_1forms_1_1text__box.html#ab6f558ccea3f3ee86e06e5f8cf0f0046">append_text</a>(<a class="code hl_function" href="classxtd_1_1environment.html#a4b3f67dc9a3a0f67d13b60bf4f09386f">xtd::environment::new_line</a>());</div>
+<div class="line">          }</div>
+<div class="line">        }</div>
+<div class="line">      } <span class="keywordflow">catch</span> (...) {</div>
+<div class="line">        <a class="code hl_function" href="classxtd_1_1forms_1_1text__box.html#ab6f558ccea3f3ee86e06e5f8cf0f0046">append_text</a>(<a class="code hl_function" href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">xtd::ustring::format</a>(<span class="stringliteral">&quot;command not found: {}&quot;</span>, start_info.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process__start__info.html#a451273cb1bd889af9cf173f6a6467a16">file_name</a>()));</div>
+<div class="line">        <a class="code hl_function" href="classxtd_1_1forms_1_1text__box.html#ab6f558ccea3f3ee86e06e5f8cf0f0046">append_text</a>(<a class="code hl_function" href="classxtd_1_1environment.html#a4b3f67dc9a3a0f67d13b60bf4f09386f">xtd::environment::new_line</a>());</div>
+<div class="line">      }</div>
+<div class="line">    }</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1forms_1_1text__box.html#ab6f558ccea3f3ee86e06e5f8cf0f0046">append_text</a>(<a class="code hl_function" href="classxtd_1_1environment.html#a4b3f67dc9a3a0f67d13b60bf4f09386f">xtd::environment::new_line</a>());</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1forms_1_1text__box.html#ab6f558ccea3f3ee86e06e5f8cf0f0046">append_text</a>(prompt);</div>
+<div class="line">    e.handled(<span class="keyword">true</span>);</div>
+<div class="line">  }</div>
+<div class="line">  <a class="code hl_class" href="classxtd_1_1ustring.html">xtd::ustring</a> prompt = <a class="code hl_function" href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">xtd::ustring::format</a>(<span class="stringliteral">&quot;[{}] $ &quot;</span>,  <a class="code hl_function" href="classxtd_1_1environment.html#a981ec9665ba83e12a0241c37017c9ec7">xtd::environment::current_directory</a>());</div>
+<div class="line">  std::vector&lt;xtd::ustring&gt; commands;</div>
+<div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span>xtd::windows::forms;</div>
@@ -245,39 +224,71 @@ $(function() {
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  form_main() {</div>
+<div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;Virtual console&quot;</span>);</div>
 <div class="line">    client_size({600, 600});</div>
 <div class="line">    </div>
-<div class="line">    spinner1_.parent(*<span class="keyword">this</span>);</div>
-<div class="line">    spinner1_.running(<span class="keyword">true</span>);</div>
+<div class="line">    virtual_console.dock(dock_style::fill);</div>
+<div class="line">    virtual_console.parent(*<span class="keyword">this</span>);</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
-<div class="line">  waiting_spinner_control spinner1_;</div>
+<div class="line">  <span class="keyword">class </span>virtual_console virtual_console;</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a id="a15" name="a15"></a><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(form_main::main);</div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1brushes_html_ae49bf9092c96684aa6f497f6ca5df42d"><div class="ttname"><a href="classxtd_1_1drawing_1_1brushes.html#ae49bf9092c96684aa6f497f6ca5df42d">xtd::drawing::brushes::transparent</a></div><div class="ttdeci">static xtd::drawing::solid_brush transparent()</div><div class="ttdoc">A system-defined brush object.</div></div>
+<div class="line"><a id="a45" name="a45"></a><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(form_main::main);</div>
+<div class="ttc" id="aclassxtd_1_1diagnostics_1_1process__start__info_html"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1process__start__info.html">xtd::diagnostics::process_start_info</a></div><div class="ttdoc">Specifies a set of values that are used when you start a process.</div><div class="ttdef"><b>Definition</b> process_start_info.h:37</div></div>
+<div class="ttc" id="aclassxtd_1_1diagnostics_1_1process__start__info_html_a2e12dcf466c131ba8562e1342af4f3aa"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1process__start__info.html#a2e12dcf466c131ba8562e1342af4f3aa">xtd::diagnostics::process_start_info::redirect_standard_output</a></div><div class="ttdeci">bool redirect_standard_output() const noexcept</div><div class="ttdoc">Gets a value that indicates whether the textual output of an application is written to the xtd::diagn...</div></div>
+<div class="ttc" id="aclassxtd_1_1diagnostics_1_1process__start__info_html_a451273cb1bd889af9cf173f6a6467a16"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1process__start__info.html#a451273cb1bd889af9cf173f6a6467a16">xtd::diagnostics::process_start_info::file_name</a></div><div class="ttdeci">const xtd::ustring &amp; file_name() const noexcept</div><div class="ttdoc">Gets the application or document to start.</div></div>
+<div class="ttc" id="aclassxtd_1_1diagnostics_1_1process__start__info_html_a4a06a0294cb4293389f1dd3542b0741a"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1process__start__info.html#a4a06a0294cb4293389f1dd3542b0741a">xtd::diagnostics::process_start_info::redirect_standard_error</a></div><div class="ttdeci">bool redirect_standard_error() const noexcept</div><div class="ttdoc">Gets a value that indicates whether the error output of an application is written to the xtd::diagnos...</div></div>
+<div class="ttc" id="aclassxtd_1_1diagnostics_1_1process__start__info_html_ada9ce33185087d235a2d0f380323bbfd"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1process__start__info.html#ada9ce33185087d235a2d0f380323bbfd">xtd::diagnostics::process_start_info::arguments</a></div><div class="ttdeci">const xtd::ustring &amp; arguments() const noexcept</div><div class="ttdoc">Gets the set of command-line arguments to use when starting the application.</div></div>
+<div class="ttc" id="aclassxtd_1_1diagnostics_1_1process__start__info_html_afbe7913a04289abf0dcf6b51f6c0186b"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1process__start__info.html#afbe7913a04289abf0dcf6b51f6c0186b">xtd::diagnostics::process_start_info::use_shell_execute</a></div><div class="ttdeci">bool use_shell_execute() const noexcept</div><div class="ttdoc">Gets a value indicating whether to use the operating system shell to start the process.</div></div>
+<div class="ttc" id="aclassxtd_1_1diagnostics_1_1process_html"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1process.html">xtd::diagnostics::process</a></div><div class="ttdoc">Provides access to local and remote processes and enables you to start and stop local system processe...</div><div class="ttdef"><b>Definition</b> process.h:47</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1color_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a></div><div class="ttdoc">Represents an ARGB (alpha, red, green, blue) color.</div><div class="ttdef"><b>Definition</b> color.h:45</div></div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1color_html_ac4a75a743036c1bfbb948db2d481736b"><div class="ttname"><a href="classxtd_1_1drawing_1_1color.html#ac4a75a743036c1bfbb948db2d481736b">xtd::drawing::color::from_argb</a></div><div class="ttdeci">static xtd::drawing::color from_argb(uint32 argb) noexcept</div><div class="ttdoc">Creates a xtd::drawing::color class from a 32-bit ARGB value.</div></div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1color_html_adf44e69216277fc02f79320855036bd3"><div class="ttname"><a href="classxtd_1_1drawing_1_1color.html#adf44e69216277fc02f79320855036bd3">xtd::drawing::color::a</a></div><div class="ttdeci">xtd::byte a() const noexcept</div><div class="ttdoc">Gets the alpha component value of this xtd::drawing::color class.</div></div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1rectangle_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a></div><div class="ttdoc">Stores a set of four integers that represent the location and size of a rectangle.</div><div class="ttdef"><b>Definition</b> rectangle.h:44</div></div>
+<div class="ttc" id="aclassxtd_1_1drawing_1_1color_html_a59bfef2cdc600a35b186f7c98238a3c4"><div class="ttname"><a href="classxtd_1_1drawing_1_1color.html#a59bfef2cdc600a35b186f7c98238a3c4">xtd::drawing::color::lime</a></div><div class="ttdeci">static const xtd::drawing::color lime</div><div class="ttdoc">Gets a system-defined color that has an ARGB value of 0xFF00FF00. This field is constant.</div><div class="ttdef"><b>Definition</b> color.h:286</div></div>
+<div class="ttc" id="aclassxtd_1_1drawing_1_1color_html_ad04928a6ddbfa799f6fdaca302cacf11"><div class="ttname"><a href="classxtd_1_1drawing_1_1color.html#ad04928a6ddbfa799f6fdaca302cacf11">xtd::drawing::color::black</a></div><div class="ttdeci">static const xtd::drawing::color black</div><div class="ttdoc">Gets a system-defined color that has an ARGB value of 0xFF000000. This field is constant.</div><div class="ttdef"><b>Definition</b> color.h:79</div></div>
+<div class="ttc" id="aclassxtd_1_1drawing_1_1font__family_html_a4423c916478f5a28589f1c36a663f650"><div class="ttname"><a href="classxtd_1_1drawing_1_1font__family.html#a4423c916478f5a28589f1c36a663f650">xtd::drawing::font_family::generic_monospace</a></div><div class="ttdeci">static font_family generic_monospace() noexcept</div><div class="ttdoc">Gets a generic monospace font_family.</div></div>
+<div class="ttc" id="aclassxtd_1_1drawing_1_1font_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a></div><div class="ttdoc">Defines a particular format for text, including font face, size, and style attributes....</div><div class="ttdef"><b>Definition</b> font.h:45</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1size_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1size.html">xtd::drawing::size</a></div><div class="ttdoc">Stores an ordered pair of integers, which specify a height and width.</div><div class="ttdef"><b>Definition</b> size.h:31</div></div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1solid__brush_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1solid__brush.html">xtd::drawing::solid_brush</a></div><div class="ttdoc">Defines a xtd::drawing::brush of a single color. Brushes are used to fill graphics shapes,...</div><div class="ttdef"><b>Definition</b> solid_brush.h:30</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1paint__event__args_html"><div class="ttname"><a href="classxtd_1_1forms_1_1paint__event__args.html">xtd::forms::paint_event_args</a></div><div class="ttdoc">Provides data for the xtd::forms::control::paint event.</div><div class="ttdef"><b>Definition</b> paint_event_args.h:28</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1timer_html"><div class="ttname"><a href="classxtd_1_1forms_1_1timer.html">xtd::forms::timer</a></div><div class="ttdoc">Implements a timer that raises an event at user-defined intervals. This timer is optimized for use in...</div><div class="ttdef"><b>Definition</b> timer.h:36</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1user__control_html"><div class="ttname"><a href="classxtd_1_1forms_1_1user__control.html">xtd::forms::user_control</a></div><div class="ttdoc">Represents a standard Windows user control.</div><div class="ttdef"><b>Definition</b> user_control.h:25</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1user__control_html_a842bdef2a0f8b7e822b2b7864d5a188b"><div class="ttname"><a href="classxtd_1_1forms_1_1user__control.html#a842bdef2a0f8b7e822b2b7864d5a188b">xtd::forms::user_control::on_paint</a></div><div class="ttdeci">void on_paint(paint_event_args &amp;e) override</div><div class="ttdoc">Raises the xtd::forms::control::paint event.</div></div>
-<div class="ttc" id="aclassxtd_1_1math_html_a42ffb88ddec0bb59a656d407fb8fe494"><div class="ttname"><a href="classxtd_1_1math.html#a42ffb88ddec0bb59a656d407fb8fe494">xtd::math::min</a></div><div class="ttdeci">static xtd::byte min(xtd::byte a, xtd::byte b) noexcept</div><div class="ttdoc">Returns the smaller of two 8-bit unsigned integers.</div></div>
-<div class="ttc" id="aclassxtd_1_1math_html_aafdaac98206d8573f794250e03098c00"><div class="ttname"><a href="classxtd_1_1math.html#aafdaac98206d8573f794250e03098c00">xtd::math::max</a></div><div class="ttdeci">static xtd::byte max(xtd::byte a, xtd::byte b) noexcept</div><div class="ttdoc">Returns the larger of two 8-bit unsigned integers.</div></div>
-<div class="ttc" id="aclassxtd_1_1math_html_acd0247120772e3fad51cafcdabddcc23"><div class="ttname"><a href="classxtd_1_1math.html#acd0247120772e3fad51cafcdabddcc23">xtd::math::ceiling</a></div><div class="ttdeci">static decimal ceiling(decimal value)</div><div class="ttdoc">Returns the smallest integer greater than or equal to the specified double-precision floating-point n...</div></div>
+<div class="ttc" id="aclassxtd_1_1environment_html_a0bcc0c727357a767874cfc4970df1414"><div class="ttname"><a href="classxtd_1_1environment.html#a0bcc0c727357a767874cfc4970df1414">xtd::environment::get_folder_path</a></div><div class="ttdeci">static xtd::ustring get_folder_path(environment::special_folder folder)</div><div class="ttdoc">Gets the path to the system special folder that is identified by the specified enumeration.</div></div>
+<div class="ttc" id="aclassxtd_1_1environment_html_a2fb2b59eded52f8745b88b44ae9e7057a106a6c241b8797f52e1e77317b96a201"><div class="ttname"><a href="classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057a106a6c241b8797f52e1e77317b96a201">xtd::environment::special_folder::home</a></div><div class="ttdeci">@ home</div><div class="ttdoc">The file system directory that contains home folder.</div></div>
+<div class="ttc" id="aclassxtd_1_1environment_html_a4b3f67dc9a3a0f67d13b60bf4f09386f"><div class="ttname"><a href="classxtd_1_1environment.html#a4b3f67dc9a3a0f67d13b60bf4f09386f">xtd::environment::new_line</a></div><div class="ttdeci">static xtd::ustring new_line() noexcept</div><div class="ttdoc">Gets the newline string defined for this environment.</div></div>
+<div class="ttc" id="aclassxtd_1_1environment_html_a981ec9665ba83e12a0241c37017c9ec7"><div class="ttname"><a href="classxtd_1_1environment.html#a981ec9665ba83e12a0241c37017c9ec7">xtd::environment::current_directory</a></div><div class="ttdeci">static xtd::ustring current_directory()</div><div class="ttdoc">Gets the fully qualified path of the current working directory.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1control_html_a265fde2d4a85f8abae67e2223c20e1f5"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#a265fde2d4a85f8abae67e2223c20e1f5">xtd::forms::control::fore_color</a></div><div class="ttdeci">virtual drawing::color fore_color() const noexcept</div><div class="ttdoc">Gets the foreground color of the control.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1control_html_a385168b0a603edaebc6df8df0c9aa97e"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#a385168b0a603edaebc6df8df0c9aa97e">xtd::forms::control::on_key_down</a></div><div class="ttdeci">virtual void on_key_down(key_event_args &amp;e)</div><div class="ttdoc">Raises the xtd::forms::control::key_down event.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1control_html_a3f6491b9cb25850c60a2bd9049ca1df4"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#a3f6491b9cb25850c60a2bd9049ca1df4">xtd::forms::control::default_font</a></div><div class="ttdeci">virtual drawing::font default_font() const noexcept</div><div class="ttdoc">Gets the default font of the control.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1control_html_a5a4bc61bebeea8b848b4371ca82db09e"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#a5a4bc61bebeea8b848b4371ca82db09e">xtd::forms::control::font</a></div><div class="ttdeci">virtual drawing::font font() const noexcept</div><div class="ttdoc">Gets the font of the text displayed by the control.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1control_html_ab4236dd32071d07bb8ec2452e041fbfa"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa">xtd::forms::control::back_color</a></div><div class="ttdeci">virtual drawing::color back_color() const noexcept</div><div class="ttdoc">Gets the background color for the control.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1control_html_ac49090fd2de49771a00b4835895c6bd8"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#ac49090fd2de49771a00b4835895c6bd8">xtd::forms::control::default_size</a></div><div class="ttdeci">virtual drawing::size default_size() const noexcept</div><div class="ttdoc">Gets the default size of the control.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1control_html_ad6b15530ad92e3df1996d4fd3c0c862e"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#ad6b15530ad92e3df1996d4fd3c0c862e">xtd::forms::control::size</a></div><div class="ttdeci">virtual drawing::size size() const noexcept</div><div class="ttdoc">Gets the height and width of the control.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1key__event__args_html"><div class="ttname"><a href="classxtd_1_1forms_1_1key__event__args.html">xtd::forms::key_event_args</a></div><div class="ttdoc">Provides data for the xtd::forms::control::key_down or xtd::forms::control::key_up event.</div><div class="ttdef"><b>Definition</b> key_event_args.h:23</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1text__box__base_html_aab82289e82f2768b84c982fd3e00451c"><div class="ttname"><a href="classxtd_1_1forms_1_1text__box__base.html#aab82289e82f2768b84c982fd3e00451c">xtd::forms::text_box_base::multiline</a></div><div class="ttdeci">virtual bool multiline() const noexcept</div><div class="ttdoc">Gets a value indicating whether this is a multiline text box control.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1text__box_html"><div class="ttname"><a href="classxtd_1_1forms_1_1text__box.html">xtd::forms::text_box</a></div><div class="ttdoc">Represents a standard Windows text box.</div><div class="ttdef"><b>Definition</b> text_box.h:29</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1text__box_html_a080c52451b8db158e390d2111f9d3b3e"><div class="ttname"><a href="classxtd_1_1forms_1_1text__box.html#a080c52451b8db158e390d2111f9d3b3e">xtd::forms::text_box::default_back_color</a></div><div class="ttdeci">drawing::color default_back_color() const noexcept override</div><div class="ttdoc">Gets the default background color of the control.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1text__box_html_a28af010a8c7e9a899e4343ea137014ad"><div class="ttname"><a href="classxtd_1_1forms_1_1text__box.html#a28af010a8c7e9a899e4343ea137014ad">xtd::forms::text_box::default_fore_color</a></div><div class="ttdeci">drawing::color default_fore_color() const noexcept override</div><div class="ttdoc">Gets the default foreground color of the control.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1text__box_html_ab6f558ccea3f3ee86e06e5f8cf0f0046"><div class="ttname"><a href="classxtd_1_1forms_1_1text__box.html#ab6f558ccea3f3ee86e06e5f8cf0f0046">xtd::forms::text_box::append_text</a></div><div class="ttdeci">void append_text(const xtd::ustring &amp;value) override</div><div class="ttdoc">Appends text to the current text of a text box.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1text__box_html_ad22e5b141e192e6aad9a391242deba86"><div class="ttname"><a href="classxtd_1_1forms_1_1text__box.html#ad22e5b141e192e6aad9a391242deba86">xtd::forms::text_box::text</a></div><div class="ttdeci">const xtd::ustring &amp; text() const noexcept override</div><div class="ttdoc">Gets the text associated with this control.</div></div>
+<div class="ttc" id="aclassxtd_1_1io_1_1directory_html_acbfb159f4d4aaf5837563eba5fc876fc"><div class="ttname"><a href="classxtd_1_1io_1_1directory.html#acbfb159f4d4aaf5837563eba5fc876fc">xtd::io::directory::exists</a></div><div class="ttdeci">static bool exists(const xtd::ustring &amp;path)</div><div class="ttdoc">Determines whether the given path refers to an existing directory on disk.</div></div>
+<div class="ttc" id="aclassxtd_1_1io_1_1stream__reader_html"><div class="ttname"><a href="classxtd_1_1io_1_1stream__reader.html">xtd::io::stream_reader</a></div><div class="ttdoc">Implements a xtd::io::text_reader that reads characters from a byte stream.</div><div class="ttdef"><b>Definition</b> stream_reader.h:26</div></div>
+<div class="ttc" id="aclassxtd_1_1io_1_1stream__reader_html_af86ae00e44bfc363b2bf51986a9e58d0"><div class="ttname"><a href="classxtd_1_1io_1_1stream__reader.html#af86ae00e44bfc363b2bf51986a9e58d0">xtd::io::stream_reader::end_of_stream</a></div><div class="ttdeci">bool end_of_stream() const</div><div class="ttdoc">Gets a value that indicates whether the current stream position is at the end of the stream.</div></div>
+<div class="ttc" id="aclassxtd_1_1io_1_1text__reader_html_a18c34f5d077adfb00394881b511c1e91"><div class="ttname"><a href="classxtd_1_1io_1_1text__reader.html#a18c34f5d077adfb00394881b511c1e91">xtd::io::text_reader::read_line</a></div><div class="ttdeci">virtual xtd::ustring read_line()</div><div class="ttdoc">Reads a line of characters from the current stream and returns the data as a string.</div></div>
+<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:46</div></div>
+<div class="ttc" id="aclassxtd_1_1ustring_html_a1d6d810543949e28650f92b5206314a5"><div class="ttname"><a href="classxtd_1_1ustring.html#a1d6d810543949e28650f92b5206314a5">xtd::ustring::last_index_of</a></div><div class="ttdeci">size_t last_index_of(value_type value) const noexcept</div><div class="ttdoc">Reports the index of the last occurrence of the specified character in this tring.</div></div>
+<div class="ttc" id="aclassxtd_1_1ustring_html_a95694998a854ba65dde682b879eec355"><div class="ttname"><a href="classxtd_1_1ustring.html#a95694998a854ba65dde682b879eec355">xtd::ustring::join</a></div><div class="ttdeci">static ustring join(const ustring separator, const collection_t &amp;values) noexcept</div><div class="ttdoc">Concatenates a specified separator string between each element of a specified object array,...</div><div class="ttdef"><b>Definition</b> ustring.h:932</div></div>
+<div class="ttc" id="aclassxtd_1_1ustring_html_ad27e596eab3904c5084c2d2cb7ae05a1"><div class="ttname"><a href="classxtd_1_1ustring.html#ad27e596eab3904c5084c2d2cb7ae05a1">xtd::ustring::substring</a></div><div class="ttdeci">ustring substring(size_t start_index) const noexcept</div><div class="ttdoc">Retrieves a substring from this instance. The substring starts at a specified character position and ...</div></div>
+<div class="ttc" id="agroup__format__parse_html_ga3afd6d163bc6391a48a1f84f28a68ffd"><div class="ttname"><a href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">xtd::ustring::format</a></div><div class="ttdeci">static ustring format(const ustring &amp;fmt, args_t &amp;&amp;... args)</div><div class="ttdoc">Writes the text representation of the specified arguments list, to string using the specified format ...</div><div class="ttdef"><b>Definition</b> ustring.h:744</div></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:162</div></div>
-<div class="ttc" id="agroup__xtd__drawing_html_ggaa97bef62c2930f0214bcb97a67792a41af369cd55314f7be17fa5cfbd2ade6206"><div class="ttname"><a href="group__xtd__drawing.html#ggaa97bef62c2930f0214bcb97a67792a41af369cd55314f7be17fa5cfbd2ade6206">xtd::drawing::drawing_2d::smoothing_mode::anti_alias</a></div><div class="ttdeci">@ anti_alias</div><div class="ttdoc">Specifies that pixels are offset by -.5 units, both horizontally and vertically, for high speed antia...</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a5075140835d0bc504791c76b04c33d2b"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a5075140835d0bc504791c76b04c33d2b">xtd::console_key::process</a></div><div class="ttdeci">@ process</div><div class="ttdoc">The IME PROCESS key.</div></div>
+<div class="ttc" id="agroup__xtd__forms_html_gga2f00c1ad108efaddc951106e768970dea46c48bec0d282018b9d167eef7711b2c"><div class="ttname"><a href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970dea46c48bec0d282018b9d167eef7711b2c">xtd::forms::keys::up</a></div><div class="ttdeci">@ up</div><div class="ttdoc">The UP key.</div></div>
+<div class="ttc" id="agroup__xtd__forms_html_gga2f00c1ad108efaddc951106e768970dea74e8333ad11685ff3bdae589c8f6e34d"><div class="ttname"><a href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970dea74e8333ad11685ff3bdae589c8f6e34d">xtd::forms::keys::down</a></div><div class="ttdeci">@ down</div><div class="ttdoc">The DOWN key.</div></div>
+<div class="ttc" id="agroup__xtd__forms_html_gga2f00c1ad108efaddc951106e768970dea99938282f04071859941e18f16efcf42"><div class="ttname"><a href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970dea99938282f04071859941e18f16efcf42">xtd::forms::keys::select</a></div><div class="ttdeci">@ select</div><div class="ttdoc">The SELECT key.</div></div>
+<div class="ttc" id="agroup__xtd__forms_html_gga2f00c1ad108efaddc951106e768970deae2a7106f1cc8bb1e1318df70aa0a3540"><div class="ttname"><a href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deae2a7106f1cc8bb1e1318df70aa0a3540">xtd::forms::keys::enter</a></div><div class="ttdeci">@ enter</div><div class="ttdoc">The ENTER key.</div></div>
+<div class="ttc" id="agroup__xtd__forms_html_gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1"><div class="ttname"><a href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">xtd::forms::status_bar_panel_style::text</a></div><div class="ttdeci">@ text</div><div class="ttdoc">The xtd::forms::status_bar_panel displays text in the standard font.</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 16 2023 21:29:34 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Nov 11 2023 13:29:44 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
