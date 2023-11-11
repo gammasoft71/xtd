@@ -4,7 +4,7 @@ sidebar_position: 13
 
 # Features
 
-![features](/pictures/xtd_bento_dark.png)
+[![features](/pictures/xtd_bento_dark.png)](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/xtd_bento_dark.png)
 
 * Free and open-source ([MIT License](/docs/documentation/license));
 * a collection of native C++ classes libraries, to complete std;
