@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::drawing::drawing_2d/::interpolation_mode enum class.
+/// @brief Contains xtd::drawing::drawing_2d::interpolation_mode enum class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include "drawing2d.h"
@@ -11,14 +11,14 @@ namespace xtd {
   namespace drawing {
     /// @brief The xtd::drawing::drawing_2d/ namespace provides advanced two-dimensional and vector graphics functionality.
     namespace drawing_2d {
-      /// @brief The xtd::drawing::drawing_2d/::interpolation_mode enumeration specifies the algorithm that is used when images are scaled or rotated.
+      /// @brief The xtd::drawing::drawing_2d::interpolation_mode enumeration specifies the algorithm that is used when images are scaled or rotated.
       /// @par Namespace
       /// xtd::drawing::drawing_2d/
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing
       enum class interpolation_mode {
-        /// @brief Equivalent to the xtd::drawing::drawing_2d/::quality_mode::invalid element of the xtd::drawing::drawing_2d/::quality_mode enumeration.
+        /// @brief Equivalent to the xtd::drawing::drawing_2d::quality_mode::invalid element of the xtd::drawing::drawing_2d::quality_mode enumeration.
         invalid = -1,
         /// @brief Specifies default mode.
         default_value = 0,

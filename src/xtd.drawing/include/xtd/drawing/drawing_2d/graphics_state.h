@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::drawing::drawing_2d/::graphics_state class.
+/// @brief Contains xtd::drawing::drawing_2d::graphics_state class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include "../../drawing_export.h"
@@ -22,7 +22,7 @@ namespace xtd {
       /// class drawing_export_ graphics_state final : public xtd::object
       /// @endcode
       /// @par Inheritance
-      /// xtd::object → xtd::object → xtd::drawing::drawing_2d/::graphics_state
+      /// xtd::object → xtd::object → xtd::drawing::drawing_2d::graphics_state
       /// @par Namespace
       /// xtd::drawing::drawing_2d/
       /// @par Library

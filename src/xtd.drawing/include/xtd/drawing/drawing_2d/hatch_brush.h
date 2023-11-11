@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::drawing::drawing_2d/::hatch_brush class.
+/// @brief Contains xtd::drawing::drawing_2d::hatch_brush class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include "../../drawing_export.h"
@@ -37,15 +37,15 @@ namespace xtd {
         /// @name Constructors
         
         /// @{
-        /// @brief Initializes a new instance of the xtd::drawing::drawing_2d/::hatch_brush class with the specified xtd::drawing::drawing_2d/::hatch_style enumeration and foreground color.
-        /// @param hatch_style One of the xtd::drawing::drawing_2d/::hatch_style values that represents the pattern drawn by this xtd::drawing::drawing_2d/::hatch_brush.
-        /// @param fore_color The xtd::drawing::color structure that represents the color of lines drawn by this xtd::drawing::drawing_2d/::hatch_brush.
+        /// @brief Initializes a new instance of the xtd::drawing::drawing_2d::hatch_brush class with the specified xtd::drawing::drawing_2d::hatch_style enumeration and foreground color.
+        /// @param hatch_style One of the xtd::drawing::drawing_2d::hatch_style values that represents the pattern drawn by this xtd::drawing::drawing_2d::hatch_brush.
+        /// @param fore_color The xtd::drawing::color structure that represents the color of lines drawn by this xtd::drawing::drawing_2d::hatch_brush.
         /// @remarks The background color is initialized to black.
         hatch_brush(xtd::drawing::drawing_2d::hatch_style hatch_style, const xtd::drawing::color& fore_color);
-        /// @brief Initializes a new instance of the xtd::drawing::drawing_2d/::hatch_brush class with the specified xtd::drawing::drawing_2d/::hatch_style enumeration, foreground color and background color.
-        /// @param hatch_style One of the xtd::drawing::drawing_2d/::hatch_style values that represents the pattern drawn by this xtd::drawing::drawing_2d/::hatch_brush.
-        /// @param fore_color The xtd::drawing::color structure that represents the color of lines drawn by this xtd::drawing::drawing_2d/::hatch_brush.
-        /// @param back_color The xtd::drawing::color structure that represents the color of spaces between the lines drawn by this xtd::drawing::drawing_2d/::hatch_brush.
+        /// @brief Initializes a new instance of the xtd::drawing::drawing_2d::hatch_brush class with the specified xtd::drawing::drawing_2d::hatch_style enumeration, foreground color and background color.
+        /// @param hatch_style One of the xtd::drawing::drawing_2d::hatch_style values that represents the pattern drawn by this xtd::drawing::drawing_2d::hatch_brush.
+        /// @param fore_color The xtd::drawing::color structure that represents the color of lines drawn by this xtd::drawing::drawing_2d::hatch_brush.
+        /// @param back_color The xtd::drawing::color structure that represents the color of spaces between the lines drawn by this xtd::drawing::drawing_2d::hatch_brush.
         hatch_brush(xtd::drawing::drawing_2d::hatch_style hatch_style, const xtd::drawing::color& fore_color, const xtd::drawing::color& back_color);
         /// @}
         
@@ -66,7 +66,7 @@ namespace xtd {
         xtd::drawing::color foreground_color() const noexcept;
         
         /// @brief Gets the hatch style of this hatch_brush object.
-        /// @return One of the xtd::drawing::drawing_2d/::hatch_style values that represents the pattern of this hatch_brush.
+        /// @return One of the xtd::drawing::drawing_2d::hatch_style values that represents the pattern of this hatch_brush.
         xtd::drawing::drawing_2d::hatch_style hatch_style() const noexcept;
         /// @}
         

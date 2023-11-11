@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::drawing::drawing_2d/::gradient_stop alias.
+/// @brief Contains xtd::drawing::drawing_2d::gradient_stop alias.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include "drawing2d.h"
@@ -12,7 +12,7 @@ namespace xtd {
   namespace drawing {
     /// @brief The xtd::drawing::drawing_2d/ namespace provides advanced two-dimensional and vector graphics functionality.
     namespace drawing_2d {
-      /// @brief Represents a collection of xtd::drawing::drawing_2d/::gradient_stop objects that can be individually accessed by index.
+      /// @brief Represents a collection of xtd::drawing::drawing_2d::gradient_stop objects that can be individually accessed by index.
       /// @par Namespace
       /// xtd::drawing::drawing_2d/
       /// @par Library

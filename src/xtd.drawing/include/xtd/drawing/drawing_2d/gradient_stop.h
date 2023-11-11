@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::drawing::drawing_2d/::gradient_stop alias.
+/// @brief Contains xtd::drawing::drawing_2d::gradient_stop alias.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include "../color.h"

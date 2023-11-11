@@ -83,13 +83,13 @@ namespace xtd {
       
       /// @{
       /// @brief Gets the alignment for this xtd::drawing::pen.
-      /// @return A xtd::drawing::drawing_2d/::pen_alignment that represents the alignment for this xtd::drawing::pen.
-      /// @remarks This property determines how the xtd::drawing::pen draws closed curves and polygons. The td::drawing_2d/::pen_alignment enumeration specifies five values; however, only two values - td::drawing_2d/::pen_alignment::center and td::drawing_2d/::pen_alignment::inset - will change the appearance of a drawn line. td::drawing_2d/::pen_alignment::center is the default value for this property and specifies that the width of the pen is centered on the outline of the curve or polygon. A value of td::drawing_2d/::pen_alignment::inset for this property specifies that the width of the pen is inside the outline of the curve or polygon. The other three values, td::drawing_2d/::pen_alignment::right, td::drawing_2d/::pen_alignment::left, and td::drawing_2d/::pen_alignment::outset, will result in a pen that is centered.
+      /// @return A xtd::drawing::drawing_2d::pen_alignment that represents the alignment for this xtd::drawing::pen.
+      /// @remarks This property determines how the xtd::drawing::pen draws closed curves and polygons. The td::drawing_2d::pen_alignment enumeration specifies five values; however, only two values - td::drawing_2d::pen_alignment::center and td::drawing_2d::pen_alignment::inset - will change the appearance of a drawn line. td::drawing_2d::pen_alignment::center is the default value for this property and specifies that the width of the pen is centered on the outline of the curve or polygon. A value of td::drawing_2d::pen_alignment::inset for this property specifies that the width of the pen is inside the outline of the curve or polygon. The other three values, td::drawing_2d::pen_alignment::right, td::drawing_2d::pen_alignment::left, and td::drawing_2d::pen_alignment::outset, will result in a pen that is centered.
       xtd::drawing::drawing_2d::pen_alignment alignment() const noexcept;
       
       /// @brief Sets the alignment for this xtd::drawing::pen.
-      /// @param value A xtd::drawing::drawing_2d/::pen_alignment that represents the alignment for this xtd::drawing::pen.
-      /// @remarks This property determines how the xtd::drawing::pen draws closed curves and polygons. The xtd::drawing::drawing_2d/::pen_alignment enumeration specifies five values; however, only two values - xtd::drawing::drawing_2d/::pen_alignment::center and xtd::drawing::drawing_2d/::pen_alignment::inset - will change the appearance of a drawn line. xtd::drawing::drawing_2d/::pen_alignment::center is the default value for this property and specifies that the width of the pen is centered on the outline of the curve or polygon. A value of xtd::drawing::drawing_2d/::pen_alignment::inset for this property specifies that the width of the pen is inside the outline of the curve or polygon. The other three values, xtd::drawing::drawing_2d/::pen_alignment::right, xtd::drawing::drawing_2d/::pen_alignment::left, and xtd::drawing::drawing_2d/::pen_alignment::outset, will result in a pen that is centered.
+      /// @param value A xtd::drawing::drawing_2d::pen_alignment that represents the alignment for this xtd::drawing::pen.
+      /// @remarks This property determines how the xtd::drawing::pen draws closed curves and polygons. The xtd::drawing::drawing_2d::pen_alignment enumeration specifies five values; however, only two values - xtd::drawing::drawing_2d::pen_alignment::center and xtd::drawing::drawing_2d::pen_alignment::inset - will change the appearance of a drawn line. xtd::drawing::drawing_2d::pen_alignment::center is the default value for this property and specifies that the width of the pen is centered on the outline of the curve or polygon. A value of xtd::drawing::drawing_2d::pen_alignment::inset for this property specifies that the width of the pen is inside the outline of the curve or polygon. The other three values, xtd::drawing::drawing_2d::pen_alignment::right, xtd::drawing::drawing_2d::pen_alignment::left, and xtd::drawing::drawing_2d::pen_alignment::outset, will result in a pen that is centered.
       xtd::drawing::pen& alignment(xtd::drawing::drawing_2d::pen_alignment value);
       
       /// @brief Gets the xtd::drawing::brush that determines attributes of this xtd::drawing::pen.
@@ -139,10 +139,10 @@ namespace xtd {
       xtd::drawing::pen& dash_style(drawing::dash_style value);
       
       /// @brief Gets the cap style used at the end of lines drawn with this xtd::drawing::pen.
-      /// @return One of the xtd::drawing::drawing_2d/::line_cap values that represents the cap style used at the end of lines drawn with this xtd::drawing::pen.
+      /// @return One of the xtd::drawing::drawing_2d::line_cap values that represents the cap style used at the end of lines drawn with this xtd::drawing::pen.
       xtd::drawing::drawing_2d::line_cap end_cap() const noexcept;
       /// @brief Sets the cap style used at the end of lines drawn with this xtd::drawing::pen.
-      /// @param value One of the xtd::drawing::drawing_2d/::line_cap values that represents the cap style used at the end of lines drawn with this xtd::drawing::pen.
+      /// @param value One of the xtd::drawing::drawing_2d::line_cap values that represents the cap style used at the end of lines drawn with this xtd::drawing::pen.
       /// @return This current instance.
       xtd::drawing::pen& end_cap(xtd::drawing::drawing_2d::line_cap value);
       
@@ -151,14 +151,14 @@ namespace xtd {
       intptr handle() const noexcept;
       
       /// @brief Gets the join style for the ends of two consecutive lines drawn with this xtd::drawing::pen.
-      /// @return A xtd::drawing::drawing_2d/::line_join that represents the join style for the ends of two consecutive lines drawn with this xtd::drawing::pen.
-      /// @remarks A line join is the common area that is formed by two lines whose ends meet or overlap. There are three line join styles: miter, bevel, and round. When you specify a line join style for a xtd::drawing::pen object, that join style will be applied to all the connected lines in any xtd::drawing::drawing_2d/::graphics_path object drawn using that pen. The following illustration shows the results of the beveled line join example.
+      /// @return A xtd::drawing::drawing_2d::line_join that represents the join style for the ends of two consecutive lines drawn with this xtd::drawing::pen.
+      /// @remarks A line join is the common area that is formed by two lines whose ends meet or overlap. There are three line join styles: miter, bevel, and round. When you specify a line join style for a xtd::drawing::pen object, that join style will be applied to all the connected lines in any xtd::drawing::drawing_2d::graphics_path object drawn using that pen. The following illustration shows the results of the beveled line join example.
       /// @image html line_join_bevel.png
       xtd::drawing::drawing_2d::line_join line_join() const noexcept;
       /// @brief Sets the join style for the ends of two consecutive lines drawn with this xtd::drawing::pen.
-      /// @param value A xtd::drawing::drawing_2d/::line_join that represents the join style for the ends of two consecutive lines drawn with this xtd::drawing::pen.
+      /// @param value A xtd::drawing::drawing_2d::line_join that represents the join style for the ends of two consecutive lines drawn with this xtd::drawing::pen.
       /// @return This current instance.
-      /// @remarks A line join is the common area that is formed by two lines whose ends meet or overlap. There are three line join styles: miter, bevel, and round. When you specify a line join style for a xtd::drawing::pen object, that join style will be applied to all the connected lines in any xtd::drawing::drawing_2d/::graphics_path object drawn using that pen. The following illustration shows the results of the beveled line join example.
+      /// @remarks A line join is the common area that is formed by two lines whose ends meet or overlap. There are three line join styles: miter, bevel, and round. When you specify a line join style for a xtd::drawing::pen object, that join style will be applied to all the connected lines in any xtd::drawing::drawing_2d::graphics_path object drawn using that pen. The following illustration shows the results of the beveled line join example.
       /// @image html line_join_bevel.png
       xtd::drawing::pen& line_join(xtd::drawing::drawing_2d::line_join value);
       
@@ -175,15 +175,15 @@ namespace xtd {
       xtd::drawing::pen& miter_limit(float value);
       
       /// @brief Gets the cap style used at the beginning of lines drawn with this xtd::drawing::pen.
-      /// @return One of the xtd::drawing::drawing_2d/::line_cap values that represents the cap style used at the beginning of lines drawn with this xtd::drawing::pen.
+      /// @return One of the xtd::drawing::drawing_2d::line_cap values that represents the cap style used at the beginning of lines drawn with this xtd::drawing::pen.
       xtd::drawing::drawing_2d::line_cap start_cap() const noexcept;
       /// @brief Sets the cap style used at the beginning of lines drawn with this xtd::drawing::pen.
-      /// @param value One of the xtd::drawing::drawing_2d/::line_cap values that represents the cap style used at the beginning of lines drawn with this xtd::drawing::pen.
+      /// @param value One of the xtd::drawing::drawing_2d::line_cap values that represents the cap style used at the beginning of lines drawn with this xtd::drawing::pen.
       /// @return This current instance.
       xtd::drawing::pen& start_cap(xtd::drawing::drawing_2d::line_cap value);
       
       /// @brief Gets the style of lines drawn with this xtd::drawing::pen.
-      /// @return A xtd::drawing::drawing_2d/::pen_type enumeration that specifies the style of lines drawn with this xtd::drawing::pen.
+      /// @return A xtd::drawing::drawing_2d::pen_type enumeration that specifies the style of lines drawn with this xtd::drawing::pen.
       /// @remarks A xtd::drawing::pen can draw solid lines, filled lines, or textured lines, depending on the style specified by a member of the PenType enumeration.
       xtd::drawing::drawing_2d::pen_type type() const noexcept;
       
