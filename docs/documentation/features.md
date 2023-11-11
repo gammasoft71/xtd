@@ -12,13 +12,27 @@ sidebar_position: 13
 * written in efficient, modern [C++17/20](https://en.cppreference.com/w/) with [RAII](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization) programming idiom;
 * and highly portable and available on many different platforms;
 
-## Modules
+## classes / components
 
-* 
+xtd contains various classes and components to help you create your applications. These classes and components complement the standard C++ library.
+The following is a non-exhaustive list of the components present in the xtd framework:
+
+* [cmake](https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html) : xtd is based on CMake and contains numerous functions to help and simplify the configuration of the CMakelists.txt file construction.
+* [delegate](/docs/documentation/Guides/xtd.core/Types%20overview/delegates) : xtd implements delegate and event classes to respond easily to system events, GUI events and programming events.
+* [diagnostics](https://gammasoft71.github.io/xtd/reference_guides/latest/group__diagnostics.html) : xtd contains numerous diagnostic classes (such as debug, trace, debugger, ...) to help you monitor your application.
+* [drawing](https://gammasoft71.github.io/xtd/reference_guides/latest/group__drawing.html) : 
 
 ## Applications
 
-* 
+With xtd you can create differents targets :
+
+* [console application](/docs/documentation/Guides/Overview/Tutorials/writing_applicaion_console) to run your own application in CLI mode.
+* [Gui application](/docs/documentation/Guides/Overview/Tutorials/writing_applicaion_gui) to run your own application in a graphical mode with rich controls and drawings.
+* [test application](/docs/documentation/Guides/Overview/Tutorials/writing_applicaion_test) to run your own unit tests.
+* [static and dynamic libraries](https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html#TargetTypeSubSection) to contain your own code to share between your applications.
+
+You can use [xtdc](https://github.com/gammasoft71/xtd/blob/master/tools/xtdc/README.md) and [xtdc-gui](https://github.com/gammasoft71/xtd/blob/master/tools/xtdc-gui/README.md) to help you create these different targets.
+
 
 ## See also
 
