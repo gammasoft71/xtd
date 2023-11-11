@@ -1,6 +1,6 @@
 # Common I/O Tasks
 
-The xtd.io namespace provides several classes that allow for various actions, such as reading and writing, to be performed on files, directories, and streams. For more information, see [File and Stream I/O](/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks/file_and_stream_io).
+The [xtd::io](https://gammasoft71.github.io/xtd/reference_guides/latest/namespacextd_1_1io.html) namespace provides several classes that allow for various actions, such as reading and writing, to be performed on files, directories, and streams. For more information, see [File and Stream I/O](/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks/file_and_stream_io).
 
 ## Preamble
 
