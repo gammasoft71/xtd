@@ -14,7 +14,7 @@ const FeatureList = [
     title: 'Latest news',
     description: (
       <>
-      • <a href="docs/news#the-xtd-020-beta-is-growing-november-11-2023">The xtd 0.2.1 (beta) is growing - November 11, 2023</a>
+      • <a href="docs/news#the-xtd-020-beta-is-growing-november-11-2023">The xtd 0.2.0 (beta) is growing - November 11, 2023</a>
       <br/>• <a href="docs/news#release-xtd-011-beta-jully-17-2023">Release xtd 0.1.1 (beta) - Jully 17, 2023</a>
       <br/>• <a href="docs/news#the-new-xtd-website-is-online-february-9-2023">The new xtd website is online - February 9, 2023</a>
       <br/>• <a href="docs/news#xtdtunit-is-compatible-with-test-explorer-window-of-visual-studio-2019-or-later-november-18-2022">xtd.tunit is compatible with Test Explorer window of Visual Studio 2019 or later - November 18, 2022</a>
@@ -29,7 +29,7 @@ const FeatureList = [
       • Free and open-source (<a href="docs/documentation/license">MIT License</a>). A collection of native C++ classes libraries, to complete std.
       <br/>• API close to the .net API with modern C++ approach and full integration with the std standard.
       <br/>• xtd is designed to manage GUI controls and dialogs in pure <a href="docs/documentation/Guides/xtd.forms/Overview/control_appearance">native mode</a> or with <a href="docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview">CSS styles</a>.
-      <br/>• Written in efficient, modern c++17/20 with <a href="https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization">RAII</a> programming idiom.
+      <br/>• Written in efficient, modern <a href="https://en.cppreference.com/w/">c++17/20</a> with <a href="https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization">RAII</a> programming idiom.
       <br/>• And <a href="docs/documentation/portability">highly portable</a> and available on <a href="docs/documentation/portability">many different platforms</a>.
       <br/>• See <a href="docs/documentation/features">features</a> for more informations.
       </>
