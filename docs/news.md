@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # News
 
-## The xtd 0.2.0 is growing - November 11, 2023
+## The xtd 0.2.0 (beta) is growing - November 11, 2023
 
 * The xtd 0.2.0 is 84% complete.
 * See [features](documentation/features.md) for more information on the possibilities of xtd.
