@@ -18,6 +18,7 @@ The xtd guides provide an explanation on how to use the important features of th
 * Overview
   * [Introduction to xtd](/docs/documentation/Guides/Overview/introduction_to_xtd)
   * [About xtd](/docs/documentation/Guides/Overview/xtd_explanations)
+  * [Features](/docs/documentation/features)
   * Libraries
     * [Architecture](/docs/documentation/Guides/Overview/Libraries/architecture)
     * [Hierarchy](/docs/documentation/Guides/Overview/Libraries/hierarchy)
