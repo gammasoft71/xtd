@@ -35,7 +35,7 @@ The following is a non-exhaustive list of the components present in the xtd fram
 [![timers](/pictures/xtd.timers.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__timers.html)
 [timers](https://gammasoft71.github.io/xtd/reference_guides/latest/group__timers.html) : xtd includes several timer classes, each of which offers different functionality: [xtd::timers::timer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1timers_1_1timer.html), [xtd::threading::timer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1timer.html), [xtd::forms::timer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1timer.html).
 
-xtd contains a wide variety of classes in [different libraries](https://gammasoft71.github.io/xtd/docs/documentation/Guides/Overview/Libraries/hierarchy). 
+xtd contains a wide variety of classes in [different libraries](/docs/documentation/Guides/Overview/Libraries/hierarchy). 
 You can find more information in the [xtd programming guide](/docs/documentation/Guides) and in the [xtd reference guide](https://gammasoft71.github.io/xtd/reference_guides/latest/index.html).
 
 ## Targets
