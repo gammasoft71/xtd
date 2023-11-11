@@ -1,3 +1,4 @@
+#include <xtd/drawing/basic_colors>
 #include <xtd/forms/application>
 #include <xtd/forms/form>
 #include <xtd/random>
@@ -19,8 +20,8 @@ namespace draw_point_example {
     form1() {
       text("Draw point example");
       
-      generate_colored_points_timer.interval_milliseconds(200);
-      generate_colored_points_timer.tick += event_handler(*this, &form1::generate_colored_points);
+      generate_colored_points_timer.interval(200_ms);
+      generate_colored_points_timer.tick += event_handler {*this, &form1::generate_colored_points};
       generate_colored_points_timer.start();
     }
     
@@ -34,11 +35,11 @@ namespace draw_point_example {
     
   private:
     void generate_colored_points() {
-      static xtd::random random;
-      static vector colors = {color::red, color::green, color::blue, color::yellow, color::cyan, color::magenta, color::white};
+      static auto random = xtd::random {};
+      static auto colors = basic_colors::get_colors();
       colored_points.resize(random.next(height() * width() / 800, height() * width() / 400));
       for (auto& colored_point : colored_points)
-        colored_point = {point(random.next(client_size().width()), random.next(client_size().height())), colors[random.next(colors.size())], random.next(1, 10)};
+        colored_point = {{random.next(client_size().width()), random.next(client_size().height())}, colors[random.next(colors.size())], random.next(1, 10)};
       invalidate();
     }
     
