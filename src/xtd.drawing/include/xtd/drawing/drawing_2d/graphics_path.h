@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::drawing::drawing_2d/::graphics_path class.
+/// @brief Contains xtd::drawing::drawing_2d::graphics_path class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include "../../drawing_export.h"
@@ -27,7 +27,7 @@ namespace xtd {
       /// class drawing_export_ graphics_path final : public object
       /// @endcode
       /// @par Inheritance
-      /// xtd::object → xtd::drawing::drawing_2d/::graphics_path
+      /// xtd::object → xtd::drawing::drawing_2d::graphics_path
       /// @par Namespace
       /// xtd::drawing::drawing_2d/
       /// @par Library
@@ -39,10 +39,10 @@ namespace xtd {
       public:
         /// @name Constructors
         
-        /// @brief Initializes a new instance of the xtd::drawing::drawing_2d/::graphics_path class with a xtd::drawing::drawing_2d/::graphics_path::fill_mode value of xtd::drawing::drawing_2d/::fill_mode::alternate.
+        /// @brief Initializes a new instance of the xtd::drawing::drawing_2d::graphics_path class with a xtd::drawing::drawing_2d::graphics_path::fill_mode value of xtd::drawing::drawing_2d::fill_mode::alternate.
         graphics_path();
-        /// @brief Initializes a new instance of the xtd::drawing::drawing_2d/::graphics_path class with the specified xtd::drawing::drawing_2d/::fil_mode enumeration.
-        /// @param mode The xtd::drawing::drawing_2d/::fill_mode enumeration that determines how the interior of this xtd::drawing::drawing_2d/::graphics_path is filled.
+        /// @brief Initializes a new instance of the xtd::drawing::drawing_2d::graphics_path class with the specified xtd::drawing::drawing_2d::fil_mode enumeration.
+        /// @param mode The xtd::drawing::drawing_2d::fill_mode enumeration that determines how the interior of this xtd::drawing::drawing_2d::graphics_path is filled.
         explicit graphics_path(xtd::drawing::drawing_2d::fill_mode mode);
         /// @}
         
@@ -60,11 +60,11 @@ namespace xtd {
         intptr handle() const noexcept;
         
         
-        /// @brief Gets a xtd::drawing::drawing_2d/::fill_mode enumeration that determines how the interiors of shapes in this xtd::drawing::drawing_2d/::graphics_path are filled.
-        /// @return A xtd::drawing::drawing_2d/::fill_mode enumeration that specifies how the interiors of shapes in this xtd::drawing::drawing_2d/::graphics_path are filled.
+        /// @brief Gets a xtd::drawing::drawing_2d::fill_mode enumeration that determines how the interiors of shapes in this xtd::drawing::drawing_2d::graphics_path are filled.
+        /// @return A xtd::drawing::drawing_2d::fill_mode enumeration that specifies how the interiors of shapes in this xtd::drawing::drawing_2d::graphics_path are filled.
         xtd::drawing::drawing_2d::fill_mode fill_mode() const noexcept;
-        /// @brief Sets a xtd::drawing::drawing_2d/::fill_mode enumeration that determines how the interiors of shapes in this xtd::drawing::drawing_2d/::graphics_path are filled.
-        /// @param value A xtd::drawing::drawing_2d/::fill_mode enumeration that specifies how the interiors of shapes in this xtd::drawing::drawing_2d/::graphics_path are filled.
+        /// @brief Sets a xtd::drawing::drawing_2d::fill_mode enumeration that determines how the interiors of shapes in this xtd::drawing::drawing_2d::graphics_path are filled.
+        /// @param value A xtd::drawing::drawing_2d::fill_mode enumeration that specifies how the interiors of shapes in this xtd::drawing::drawing_2d::graphics_path are filled.
         graphics_path& fill_mode(xtd::drawing::drawing_2d::fill_mode value) noexcept;
         /// @}
         
@@ -232,42 +232,42 @@ namespace xtd {
         /// @param height The height of the bounding rectangle that defines the ellipse.
         void add_ellipse(float x, float y, float width, float height);
         
-        /// @brief Appends a line segment to this xtd::drawing::drawing_2d/::graphics_path.
+        /// @brief Appends a line segment to this xtd::drawing::drawing_2d::graphics_path.
         /// @param pt1 A xtd::drawing::point that represents the starting point of the line.
         /// @param pt2 A xtd::drawing::point that represents the endpoint of the line.
-        /// @remarks This method adds the line segment defined by the specified points to the end of this xtd::drawing::drawing_2d/::graphics_path. If there are previous lines or curves in the xtd::drawing::drawing_2d/::graphics_path, a line segment is drawn to connect the last point in the path to the first point in the new line segment.
+        /// @remarks This method adds the line segment defined by the specified points to the end of this xtd::drawing::drawing_2d::graphics_path. If there are previous lines or curves in the xtd::drawing::drawing_2d::graphics_path, a line segment is drawn to connect the last point in the path to the first point in the new line segment.
         void add_line(const xtd::drawing::point& pt1, const xtd::drawing::point& pt2);
-        /// @brief Appends a line segment to this xtd::drawing::drawing_2d/::graphics_path.
+        /// @brief Appends a line segment to this xtd::drawing::drawing_2d::graphics_path.
         /// @param pt1 A xtd::drawing::point_f that represents the starting point of the line.
         /// @param pt2 A xtd::drawing::point_f that represents the endpoint of the line.
-        /// @remarks This method adds the line segment defined by the specified points to the end of this xtd::drawing::drawing_2d/::graphics_path. If there are previous lines or curves in the xtd::drawing::drawing_2d/::graphics_path, a line segment is drawn to connect the last point in the path to the first point in the new line segment.
+        /// @remarks This method adds the line segment defined by the specified points to the end of this xtd::drawing::drawing_2d::graphics_path. If there are previous lines or curves in the xtd::drawing::drawing_2d::graphics_path, a line segment is drawn to connect the last point in the path to the first point in the new line segment.
         void add_line(const xtd::drawing::point_f& pt1, const xtd::drawing::point_f& pt2);
-        /// @brief Appends a line segment to this xtd::drawing::drawing_2d/::graphics_path.
+        /// @brief Appends a line segment to this xtd::drawing::drawing_2d::graphics_path.
         /// @param x1 The x-coordinate of the starting point of the line.
         /// @param y1 The y-coordinate of the starting point of the line.
         /// @param x2 The x-coordinate of the endpoint of the line.
         /// @param y2 The y-coordinate of the endpoint of the line.
-        /// @remarks This method adds the line segment defined by the specified points to the end of this xtd::drawing::drawing_2d/::graphics_path. If there are previous lines or curves in the xtd::drawing::drawing_2d/::graphics_path, a line segment is drawn to connect the last point in the path to the first point in the new line segment.
+        /// @remarks This method adds the line segment defined by the specified points to the end of this xtd::drawing::drawing_2d::graphics_path. If there are previous lines or curves in the xtd::drawing::drawing_2d::graphics_path, a line segment is drawn to connect the last point in the path to the first point in the new line segment.
         void add_line(int32 x1, int32 y1, int32 x2, int32 y2);
-        /// @brief Appends a line segment to this xtd::drawing::drawing_2d/::graphics_path.
+        /// @brief Appends a line segment to this xtd::drawing::drawing_2d::graphics_path.
         /// @param x1 The x-coordinate of the starting point of the line.
         /// @param y1 The y-coordinate of the starting point of the line.
         /// @param x2 The x-coordinate of the endpoint of the line.
         /// @param y2 The y-coordinate of the endpoint of the line.
-        /// @remarks This method adds the line segment defined by the specified points to the end of this xtd::drawing::drawing_2d/::graphics_path. If there are previous lines or curves in the xtd::drawing::drawing_2d/::graphics_path, a line segment is drawn to connect the last point in the path to the first point in the new line segment.
+        /// @remarks This method adds the line segment defined by the specified points to the end of this xtd::drawing::drawing_2d::graphics_path. If there are previous lines or curves in the xtd::drawing::drawing_2d::graphics_path, a line segment is drawn to connect the last point in the path to the first point in the new line segment.
         void add_line(float x1, float y1, float x2, float y2);
         
-        /// @brief Appends a series of connected line segments to the end of this xtd::drawing::drawing_2d/::graphics_path.
+        /// @brief Appends a series of connected line segments to the end of this xtd::drawing::drawing_2d::graphics_path.
         /// @param points An array of xtd::drawing::point structures that represents the points that define the line segments to add.
         /// @remarks If there are previous lines or curves in the figure, a line is added to connect the endpoint of the previous segment the starting point of the line. The points parameter specifies an array of endpoints. The first two specify the first line. Each additional point specifies the endpoint of a line segment whose starting point is the endpoint of the previous line.
         void add_lines(const std::vector<xtd::drawing::point>& points);
-        /// @brief Appends a series of connected line segments to the end of this xtd::drawing::drawing_2d/::graphics_path.
+        /// @brief Appends a series of connected line segments to the end of this xtd::drawing::drawing_2d::graphics_path.
         /// @param points An array of xtd::drawing::point_f structures that represents the points that define the line segments to add.
         /// @remarks If there are previous lines or curves in the figure, a line is added to connect the endpoint of the previous segment the starting point of the line. The points parameter specifies an array of endpoints. The first two specify the first line. Each additional point specifies the endpoint of a line segment whose starting point is the endpoint of the previous line.
         void add_lines(const std::vector<xtd::drawing::point_f>& points);
         
-        /// @brief Appends the specified xtd::drawing::drawing_2d/::graphics_path to this path.
-        /// @param adding_path The xtd::drawing::drawing_2d/::graphics_path to add.
+        /// @brief Appends the specified xtd::drawing::drawing_2d::graphics_path to this path.
+        /// @param adding_path The xtd::drawing::drawing_2d::graphics_path to add.
         /// @param connect A bool value that specifies whether the first figure in the added path is part of the last figure in this path. A value of true specifies that (if possible) the first figure in the added path is part of the last figure in this path. A value of false specifies that the first figure in the added path is separate from the last figure in this path.
         void add_path(const graphics_path& adding_path, bool connect);
         
@@ -400,43 +400,43 @@ namespace xtd {
         /// @brief Converts each curve in this path into a sequence of connected line segments.
         void flatten();
         
-        /// @brief Returns a rectangle that bounds this xtd::drawing::drawing_2d/::graphics_path.
-        /// @return A xtd::drawing::rectangle_f that represents a rectangle that bounds this xtd::drawing::drawing_2d/::graphics_path.
+        /// @brief Returns a rectangle that bounds this xtd::drawing::drawing_2d::graphics_path.
+        /// @return A xtd::drawing::rectangle_f that represents a rectangle that bounds this xtd::drawing::drawing_2d::graphics_path.
         /// @remarks The size of the returned bounding rectangle is influenced by the type of end caps, pen width, and pen miter limit, and therefore produces a "loose fit" to the bounded path. The approximate formula is: the initial bounding rectangle is inflated by pen width, and this result is multiplied by the miter limit, plus some additional margin to allow for end caps.
         xtd::drawing::rectangle_f get_bounds() const;
         
-        /// @brief Gets the last point of this xtd::drawing::drawing_2d/::graphics_path.
-        /// @return A xtd::drawing::point_f that represents the last point in this xtd::drawing::drawing_2d/::graphics_path.
+        /// @brief Gets the last point of this xtd::drawing::drawing_2d::graphics_path.
+        /// @return A xtd::drawing::point_f that represents the last point in this xtd::drawing::drawing_2d::graphics_path.
         xtd::drawing::point_f get_lat_point() const;
         
-        /// @brief Indicates whether the specified point is contained within this xtd::drawing::drawing_2d/::graphics_path.
+        /// @brief Indicates whether the specified point is contained within this xtd::drawing::drawing_2d::graphics_path.
         /// @param point A xtd::drawing::point that represents the point to test.
-        /// @return This method returns true if the specified point is contained within this xtd::drawing::drawing_2d/::graphics_path; otherwise, false.
+        /// @return This method returns true if the specified point is contained within this xtd::drawing::drawing_2d::graphics_path; otherwise, false.
         bool is_vsible(const xtd::drawing::point& point) const;
-        /// @brief Indicates whether the specified point is contained within this xtd::drawing::drawing_2d/::graphics_path.
+        /// @brief Indicates whether the specified point is contained within this xtd::drawing::drawing_2d::graphics_path.
         /// @param point A xtd::drawing::point_f that represents the point to test.
-        /// @return This method returns true if the specified point is contained within this xtd::drawing::drawing_2d/::graphics_path; otherwise, false.
+        /// @return This method returns true if the specified point is contained within this xtd::drawing::drawing_2d::graphics_path; otherwise, false.
         bool is_vsible(const xtd::drawing::point_f& point) const;
-        /// @brief Indicates whether the specified point is contained within this xtd::drawing::drawing_2d/::graphics_path.
+        /// @brief Indicates whether the specified point is contained within this xtd::drawing::drawing_2d::graphics_path.
         /// @param x The x-coordinate of the point to test.
         /// @param y The y-coordinate of the point to test.
-        /// @return This method returns true if the specified point is contained within this xtd::drawing::drawing_2d/::graphics_path; otherwise, false.
+        /// @return This method returns true if the specified point is contained within this xtd::drawing::drawing_2d::graphics_path; otherwise, false.
         bool is_vsible(int32 x, int32 y) const;
-        /// @brief Indicates whether the specified point is contained within this xtd::drawing::drawing_2d/::graphics_path.
+        /// @brief Indicates whether the specified point is contained within this xtd::drawing::drawing_2d::graphics_path.
         /// @param x The x-coordinate of the point to test.
         /// @param y The y-coordinate of the point to test.
-        /// @return This method returns true if the specified point is contained within this xtd::drawing::drawing_2d/::graphics_path; otherwise, false.
+        /// @return This method returns true if the specified point is contained within this xtd::drawing::drawing_2d::graphics_path; otherwise, false.
         bool is_vsible(float x, float y) const;
         
-        /// @brief Empties the xtd::drawing::drawing_2d/::graphics_path::path_points and xtd::drawing::drawing_2d/::graphics_path::path_types arrays and sets the xtd::drawing::drawing_2d/::graphics_path::fill_mode to xtd::drawing::drawing_2d/::fill_mode::alternate.
+        /// @brief Empties the xtd::drawing::drawing_2d::graphics_path::path_points and xtd::drawing::drawing_2d::graphics_path::path_types arrays and sets the xtd::drawing::drawing_2d::graphics_path::fill_mode to xtd::drawing::drawing_2d::fill_mode::alternate.
         void reset();
         
-        /// @brief Reverses the order of points in the xtd::drawing::drawing_2d/::graphics_path::path_points array of this xtd::drawing::drawing_2d/::graphics_path.
+        /// @brief Reverses the order of points in the xtd::drawing::drawing_2d::graphics_path::path_points array of this xtd::drawing::drawing_2d::graphics_path.
         void reverse();
         
         /// @brief Starts a new figure without closing the current figure. All subsequent points added to the path are added to this new figure.
         /// @remarks The user must keep the original points if they are needed. The original points are converted to cubic Bézier control points internally, therefore there is no mechanism for returning the original points.
-        /// @remarks This method starts a new subpath in the path. Subpaths allow you to separate a path into sections and use the xtd::drawing::drawing_2d/::graphics_path_iterator class to iterate through the subpaths.
+        /// @remarks This method starts a new subpath in the path. Subpaths allow you to separate a path into sections and use the xtd::drawing::drawing_2d::graphics_path_iterator class to iterate through the subpaths.
         void start_figure();
         
         xtd::ustring to_string() const noexcept override;

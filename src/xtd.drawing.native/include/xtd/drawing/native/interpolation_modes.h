@@ -7,7 +7,7 @@
 
 #include <xtd/types.h>
 
-/// @brief Equivalent to the xtd::drawing::drawing_2d/::quality_mode::invalid element of the xtd::drawing::drawing_2d/::quality_mode enumeration.
+/// @brief Equivalent to the xtd::drawing::drawing_2d::quality_mode::invalid element of the xtd::drawing::drawing_2d::quality_mode enumeration.
 /// @par Library
 /// xtd.drawing.native
 /// @ingroup xtd_drawing_native im

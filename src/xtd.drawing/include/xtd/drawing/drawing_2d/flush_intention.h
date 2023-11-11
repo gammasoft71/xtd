@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::drawing::drawing_2d/::flush_intention enum class.
+/// @brief Contains xtd::drawing::drawing_2d::flush_intention enum class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include "drawing2d.h"

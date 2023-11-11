@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::drawing::drawing_2d/::hatch_style enum class.
+/// @brief Contains xtd::drawing::drawing_2d::hatch_style enum class.
 /// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 #pragma once
 #include "drawing2d.h"
@@ -11,7 +11,7 @@ namespace xtd {
   namespace drawing {
     /// @brief The xtd::drawing::drawing_2d/ namespace provides advanced two-dimensional and vector graphics functionality.
     namespace drawing_2d {
-      /// @brief Specifies the different patterns available for xtd::drawing::drawing_2d/::hatch_brush objects.
+      /// @brief Specifies the different patterns available for xtd::drawing::drawing_2d::hatch_brush objects.
       /// @par Namespace
       /// xtd::drawing::drawing_2d/
       /// @par Library

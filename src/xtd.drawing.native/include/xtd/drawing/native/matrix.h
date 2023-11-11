@@ -89,7 +89,7 @@ namespace xtd {
         /// @warning Internal use only
         static float offset_y(intptr handle);
         
-        /// @brief Multiplies this xtd::drawing::drawing_2d/::matrix by the matrix specified in the matrix parameter, and in the order specified in the order parameter.
+        /// @brief Multiplies this xtd::drawing::drawing_2d::matrix by the matrix specified in the matrix parameter, and in the order specified in the order parameter.
         /// @param handle The matrix handle.
         /// @param matrix The matrix handle by which the matrix is to be multiplied.
         /// @param order The value that represents the order (see matrix_orders.h for more information).
@@ -117,10 +117,10 @@ namespace xtd {
         /// @warning Internal use only
         static void rotate_at(intptr handle, float angle, float x, float y, int32 order);
         
-        /// @brief Applies the specified scale vector (scale_x and scale_y) to this xtd::drawing::drawing_2d/::matrix using the specified order.
+        /// @brief Applies the specified scale vector (scale_x and scale_y) to this xtd::drawing::drawing_2d::matrix using the specified order.
         /// @param handle The matrix handle.
-        /// @param scale_x The value by which to scale this xtd::drawing::drawing_2d/::matrix in the x-axis direction.
-        /// @param scale_y The value by which to scale this xtd::drawing::drawing_2d/::matrix in the y-axis direction.
+        /// @param scale_x The value by which to scale this xtd::drawing::drawing_2d::matrix in the x-axis direction.
+        /// @param scale_y The value by which to scale this xtd::drawing::drawing_2d::matrix in the y-axis direction.
         /// @param order A value that specifies the order (append or prepend) in which the scale vector is applied to the matrix (see matrix_orders.h for more information).
         /// @warning Internal use only
         static void scale(intptr handle, float scale_x, float scale_y, int32 order);
