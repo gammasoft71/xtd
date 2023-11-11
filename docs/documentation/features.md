@@ -20,7 +20,12 @@ The following is a non-exhaustive list of the components present in the xtd fram
 * [cmake](https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html) : xtd is based on CMake and contains numerous functions to help and simplify the configuration of the CMakelists.txt file construction.
 * [delegate](/docs/documentation/Guides/xtd.core/Types%20overview/delegates) : xtd implements delegate and event classes to respond easily to system events, GUI events and programming events.
 * [diagnostics](https://gammasoft71.github.io/xtd/reference_guides/latest/group__diagnostics.html) : xtd contains numerous diagnostic classes (such as debug, trace, debugger, ...) to help you monitor your application.
-* [drawing](https://gammasoft71.github.io/xtd/reference_guides/latest/group__drawing.html) : 
+* [drawing](/docs/documentation/Guides/xtd.drawing/drawing) : xtd contains pens, solid brushes and various gradients, images, bitmaps, icons and other useful classes for drawing what you want and need.
+* [io](/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks) : The xtd.io namespace provides several classes that allow for various actions, such as reading and writing, to be performed on files, directories, and streams. For more information, see File and Stream I/O.
+* [media](https://gammasoft71.github.io/xtd/reference_guides/latest/group__media.html) : 
+* [network](/docs/documentation/Guides/xtd.core/Networking/network_programming) : 
+* [threading](https://gammasoft71.github.io/xtd/reference_guides/latest/group__threading.html) :
+* [timers](https://gammasoft71.github.io/xtd/reference_guides/latest/group__timers.html) :
 
 ## Applications
 
