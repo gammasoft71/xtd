@@ -76,7 +76,7 @@ const FeatureList = [
       <>
       • <a href="docs/downloads">Installation</a> provides download and install documentation.
       <br/>• <a href="docs/documentation/guides">Guides</a> provides xtd guides and tutorials.
-      <br/>• <a href="https://github.com/gammasoft71/xtd/blob/master/examples/README.md">Examples</a> provides over 700 examples to help you use xtd, grouped by libraries and topics.
+      <br/>• <a href="https://github.com/gammasoft71/xtd/blob/master/examples/README.md">Examples</a> provides over 750 examples to help you use xtd, grouped by libraries and topics.
       </>
     ),
   },
