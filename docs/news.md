@@ -4,6 +4,11 @@ sidebar_position: 1
 
 # News
 
+## Release xtd 0.1.1 (beta) - November 11, 2023
+
+* The xtd 0.2.0 is 84% complete.
+* See [features](documentation/features.md) for more information on the possibilities of xtd.
+
 ## Release xtd 0.1.1 (beta) - Jully 17, 2023
 
 * This release is only a bug fix on version 0.1.0. Some users report warnings (converted to errors) when building with a recent compiler or IDE on all platforms.
