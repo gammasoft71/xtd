@@ -27,6 +27,9 @@ The following is a non-exhaustive list of the components present in the xtd fram
 * [threading](https://gammasoft71.github.io/xtd/reference_guides/latest/group__threading.html) :
 * [timers](https://gammasoft71.github.io/xtd/reference_guides/latest/group__timers.html) :
 
+xtd contains a wide variety of classes in different libraries. 
+You can find more information in the [xtd programming guide](/docs/documentation/Guides) and in the [xtd reference guide](https://gammasoft71.github.io/xtd/reference_guides/latest/index.html).
+
 ## Applications
 
 With xtd you can create differents targets :
