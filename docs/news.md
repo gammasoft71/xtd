@@ -4,15 +4,17 @@ sidebar_position: 1
 
 # News
 
-## Release xtd 0.1.1 (beta) - November 11, 2023
+## The xtd 0.2.0 is growing - November 11, 2023
 
 * The xtd 0.2.0 is 84% complete.
 * See [features](documentation/features.md) for more information on the possibilities of xtd.
+* Read the [release notes](documentation/release_notes.md) for more informations.
+* Read the [Roadmap](https://gammasoft71.github.io/xtd/docs/documentation/roadmap) for a view of the xtd roadmap and the [Development status](https://gammasoft71.github.io/xtd/docs/documentation/Development%20status) for information about classes and libraries development status.
 
 ## Release xtd 0.1.1 (beta) - Jully 17, 2023
 
 * This release is only a bug fix on version 0.1.0. Some users report warnings (converted to errors) when building with a recent compiler or IDE on all platforms.
-* Read the [release note](documentation/release_notes.md) for more informations.
+* Read the [release notes](documentation/release_notes.md) for more informations.
 * [Installation](downloads.md) provides download and install documentation.
 * For more information about all functionalities read the [Reference Guide](https://gammasoft71.github.io/xtd/reference_guides/v0.1.1/index.html).
 
@@ -31,6 +33,6 @@ sidebar_position: 1
 ## Release xtd 0.1.0 (beta) - October 10, 2021
 
 * After 3 years of development, we are happy to release the first beta version of xtd. This version contains a lot of functionalities. It is the first of a long serie.
-* Read the [release note](documentation/release_notes.md) for more informations.
+* Read the [release notes](documentation/release_notes.md) for more informations.
 * [Installation](downloads.md) provides download and install documentation.
 * For more information about all functionalities read the [Reference Guide](https://gammasoft71.github.io/xtd/reference_guides/v0.1.0/index.html).
