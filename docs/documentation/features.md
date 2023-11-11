@@ -6,6 +6,8 @@ sidebar_position: 13
 
 [![features](/pictures/xtd_bento_dark.png)](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/xtd_bento_dark.png)
 
+## Components
+
 xtd contains various classes and components to help you create your applications. These classes and components complement the standard C++ library.
 The following is a non-exhaustive list of the components present in the xtd framework:
 
@@ -36,13 +38,6 @@ The following is a non-exhaustive list of the components present in the xtd fram
 [![timers](/pictures/xtd.timers.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__timers.html)
 [timers](https://gammasoft71.github.io/xtd/reference_guides/latest/group__timers.html) : xtd includes several timer classes, each of which offers different functionality: [xtd::timers::timer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1timers_1_1timer.html), [xtd::threading::timer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1timer.html), [xtd::forms::timer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1timer.html).
 
-[![license](/pictures/xtd.license.png)](/docs/documentation/license)
-[license](/docs/documentation/license) : Free and open-source ([MIT License](https://opensource.org/licenses/MIT))
-
-[![cpp](/pictures/xtd.cpp.png)](https://en.cppreference.com/w/)
-[modern c++ 17/20](https://en.cppreference.com/w/) : 
-Written in efficient, modern [C++17/20](https://en.cppreference.com/w/) with [RAII](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization) programming idiom. API close to the .net API with a modern C++ approach and full integration with the std standard and highly portable and available on many different platforms;
-
 xtd contains a wide variety of classes in [different libraries](https://gammasoft71.github.io/xtd/docs/documentation/Guides/Overview/Libraries/hierarchy). 
 You can find more information in the [xtd programming guide](/docs/documentation/Guides) and in the [xtd reference guide](https://gammasoft71.github.io/xtd/reference_guides/latest/index.html).
 
@@ -67,6 +62,16 @@ xtd is designed to manage GUI controls and dialogs in pure [native mode](/docs/d
 [dynamic libraries](https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html#TargetTypeSubSection) to contain your own code to share between your applications.
 
 You can use [xtdc](https://github.com/gammasoft71/xtd/blob/master/tools/xtdc/README.md) and [xtdc-gui](https://github.com/gammasoft71/xtd/blob/master/tools/xtdc-gui/README.md) to help you create these different targets.
+
+## Various
+
+[![license](/pictures/xtd.license.png)](/docs/documentation/license)
+[license](/docs/documentation/license) : Free and open-source ([MIT License](https://opensource.org/licenses/MIT))
+
+[![cpp](/pictures/xtd.cpp.png)](https://en.cppreference.com/w/)
+[modern c++ 17/20](https://en.cppreference.com/w/) : 
+Written in efficient, modern [C++17/20](https://en.cppreference.com/w/) with [RAII](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization) programming idiom. API close to the .net API with a modern C++ approach and full integration with the std standard and highly portable and available on many different platforms;
+
 
 ## See also
 
