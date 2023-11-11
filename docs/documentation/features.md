@@ -37,9 +37,9 @@ You can find more information in the [xtd programming guide](/docs/documentation
 
 With xtd you can create differents targets :
 
-* [console application](/docs/documentation/Guides/Overview/Tutorials/writing_applicaion_console) to run your own application in CLI mode.
+* [console application](/docs/documentation/Guides/Overview/Tutorials/writing_applicaion_console) to run your own application in [CLI](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html) mode.
 * [GUI application](/docs/documentation/Guides/Overview/Tutorials/writing_applicaion_gui) to run your own application in a graphical mode with rich [controls](https://gammasoft71.github.io/xtd/reference_guides/latest/_controls_appearances_page.html), [containers](https://gammasoft71.github.io/xtd/reference_guides/latest/_conatiners_appearances_page.html), [dialogs](https://gammasoft71.github.io/xtd/reference_guides/latest/_dialogs_appearances_page.html), [menu and tools bars](https://gammasoft71.github.io/xtd/reference_guides/latest/_menus_and_toolbars_appearances_page.html).
-* [test application](/docs/documentation/Guides/Overview/Tutorials/writing_applicaion_test) to run your own unit tests.
+* [test application](/docs/documentation/Guides/Overview/Tutorials/writing_applicaion_test) to run your own [unit tests](https://gammasoft71.github.io/xtd/reference_guides/latest/group__tunit.html).
 * [static and dynamic libraries](https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html#TargetTypeSubSection) to contain your own code to share between your applications.
 
 You can use [xtdc](https://github.com/gammasoft71/xtd/blob/master/tools/xtdc/README.md) and [xtdc-gui](https://github.com/gammasoft71/xtd/blob/master/tools/xtdc-gui/README.md) to help you create these different targets.
