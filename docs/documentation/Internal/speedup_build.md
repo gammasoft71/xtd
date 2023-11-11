@@ -4,7 +4,7 @@ sidebar_position: 11
 
 # Investigations to speed up the build of xtd (**Internal use only**)
 
-## Muultiple proocess build flags
+## Multiple process build flags
 
 ### Windows
 
@@ -72,7 +72,7 @@ We investigate to add cotire to build of xtd.
 * build and install wxWidgets in Debug and Release.
 * build and install xtd (without unit tests) in Debug and Release.
 
-### TTime to install xtd on linux Unbuntu (4 cores and 8 Gb memory)
+### Time to install xtd on linux Unbuntu (4 cores and 8 Gb memory)
 
 ```
 real	34m30,458s
