@@ -64,7 +64,7 @@ See [xtd libraries hierarchy](hierarchy.md).
 
 * [Installation](downloads.md) provides download and install documentation.
 * [Guides](guides.md) provides xtd guides and tutorials.
-* [Examples](../examples/README.md) provides over 700 examples to help you use xtd, grouped by libraries and topics.
+* [Examples](../examples/README.md) provides over 750 examples to help you use xtd, grouped by libraries and topics.
 
 ______________________________________________________________________________________________
 
