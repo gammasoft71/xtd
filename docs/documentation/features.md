@@ -11,9 +11,6 @@ sidebar_position: 13
 xtd contains various classes and components to help you create your applications. These classes and components complement the standard C++ library.
 The following is a non-exhaustive list of the components present in the xtd framework:
 
-[![cmake](/pictures/xtd.cmake.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html)
-[cmake](https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html) : xtd is based on [CMake](https://cmake.org) and contains [numerous functions](https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html) to help and simplify the configuration of the CMakelists.txt file construction.
-
 [![delegates](/pictures/xtd.delegates.png)](/docs/documentation/Guides/xtd.core/Types%20overview/delegates)
 [delegate](/docs/documentation/Guides/xtd.core/Types%20overview/delegates) : xtd implements [delegate](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html) and [event](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1event.html) classes to respond easily to system events, GUI events and programming events. For more information about handling events, see [Handling and Raising Events](/docs/documentation/Guides/xtd.core/Events/overview).
 
@@ -65,13 +62,15 @@ You can use [xtdc](https://github.com/gammasoft71/xtd/blob/master/tools/xtdc/REA
 
 ## Various
 
+[![cmake](/pictures/xtd.cmake.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html)
+[cmake](https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html) : xtd is based on [CMake](https://cmake.org) and contains [numerous functions](https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html) to help and simplify the configuration of the CMakelists.txt file construction.
+
 [![license](/pictures/xtd.license.png)](/docs/documentation/license)
 [license](/docs/documentation/license) : Free and open-source ([MIT License](https://opensource.org/licenses/MIT))
 
 [![cpp](/pictures/xtd.cpp.png)](https://en.cppreference.com/w/)
 [modern c++ 17/20](https://en.cppreference.com/w/) : 
 Written in efficient, modern [C++17/20](https://en.cppreference.com/w/) with [RAII](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization) programming idiom. API close to the .net API with a modern C++ approach and full integration with the std standard and highly portable and available on many different platforms;
-
 
 ## See also
 
