@@ -22,7 +22,7 @@
 * a collection of native C++ classes libraries, to **extend** std;
 * API close to the .net API with a modern C++ approach and full integration with the std standard;
 * xtd is designed to manage GUI controls and dialogs in pure [native mode](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Overview/control_appearance) or with [CSS styles](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview).
-* written in efficient, modern C++17 / C++20 with [RAII](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization) programming idiom;
+* written in efficient, modern [C++17/20](https://en.cppreference.com/w/) with [RAII](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization) programming idiom;
 * and [highly portable](https://gammasoft71.github.io/xtd/docs/documentation/portability) and available on [many different platforms](https://gammasoft71.github.io/xtd/docs/documentation/portability);
 * See [features](https://gammasoft71.github.io/xtd/docs/documentation/features) for more informations.
 
