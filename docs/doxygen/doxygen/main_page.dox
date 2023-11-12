@@ -5,7 +5,7 @@
 ///
 /// <b>xtd (pronounced "extend") is a modern c++17/20 framework to create console, forms (GUI like WinForms) and unit test applications on Windows, macOS, Linux, iOS and android.</b>
 ///
-/// @image html logo.png
+/// <a href="https://gammasoft71.github.io/xtd"><img src="logo.png"></a>
 ///
 /// @section FeaturesSection Features
 ///   * Free and open-source (<a href="https://gammasoft71.github.io/xtd/docs/documentation/license">MIT License</a>);
@@ -18,25 +18,25 @@
 ///
 /// @section xtdLibrariesArchitectureSection xtd libraries architecture
 ///
-/// @image html block_diagram_onion.png
+/// <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/Overview/Libraries/hierarchy"><img src="block_diagram_onion.png"></a>
 ///
 /// xtd is composed of several libraries.
 ///
 /// @subsection coreSubSection xtd.core
 /// @image html docs/pictures/xtd.core.png
-/// The <a href="group__xtd__core.html">xtd.core</a> library is modern C++17/20 libraries of classes, interfaces, and value types that provide access to system functionality. It is the foundation on which c++ applications, components, and controls are built.
+/// The <a href="https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html">xtd.core</a> library is modern C++17/20 libraries of classes, interfaces, and value types that provide access to system functionality. It is the foundation on which c++ applications, components, and controls are built.
 ///
 /// @subsection DrawingSubSection xtd.drawing
 /// @image html docs/pictures/xtd.drawing.png
-/// The <a href="group__xtd__drawing.html">xtd.drawing</a> library contains types that support basic GDI+ graphics functionality. Child namespaces support advanced two-dimensional and vector graphics functionality, advanced imaging functionality, and print-related and typographical services. A child namespace also contains types that extend design-time user-interface logic and drawing.
+/// The <a href="https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__drawing.html">xtd.drawing</a> library contains types that support basic GDI+ graphics functionality. Child namespaces support advanced two-dimensional and vector graphics functionality, advanced imaging functionality, and print-related and typographical services. A child namespace also contains types that extend design-time user-interface logic and drawing.
 ///
 /// @subsection FormsSubSection xtd.forms
 /// @image html docs/pictures/xtd.forms.png
-/// The <a href="group__xtd__forms.html">xtd.forms</a> library contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows, Apple macOS and linux base operating system.
+/// The <a href="https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html">xtd.forms</a> library contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows, Apple macOS and linux base operating system.
 ///
 /// @subsection TUinitSubSection xtd.tunit
 /// @image html docs/pictures/xtd.tunit.png
-/// The <a href="group__xtd__tunit.html">xtd.tunit</a> library is a unit-testing framework for modern C++17/20 inspired by <a href="https://docs.microsoft.com/en-us/visualstudio/test/microsoft-visualstudio-testtools-cppunittestframework-api-reference">Microsoft.VisualStudio.TestTools.Cpp</a>.
+/// The <a href="https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__tunit.html">xtd.tunit</a> library is a unit-testing framework for modern C++17/20 inspired by <a href="https://docs.microsoft.com/en-us/visualstudio/test/microsoft-visualstudio-testtools-cppunittestframework-api-reference">Microsoft.VisualStudio.TestTools.Cpp</a>.
 ///
 /// See <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/Overview/Libraries/hierarchy">xtd libraries hierarchy</a>.
 ///
