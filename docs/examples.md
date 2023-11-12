@@ -126,21 +126,21 @@ xtdc run
 
 #### Windows :
 
-![Screenshot](/pictures/examples/hello_world_message_box_w.png)
+![Screenshot](/pictures/hello_world_message_box_w.png)
 
-![Screenshot](/pictures/examples/hello_world_message_box_wd.png)
+![Screenshot](/pictures/hello_world_message_box_wd.png)
 
 #### macOS :
 
-![Screenshot](/pictures/examples/hello_world_message_box_m.png)
+![Screenshot](/pictures/hello_world_message_box_m.png)
 
-![Screenshot](/pictures/examples/hello_world_message_box_md.png)
+![Screenshot](/pictures/hello_world_message_box_md.png)
 
 #### Linux Gnome :
 
-![Screenshot](/pictures/examples/hello_world_message_box_g.png)
+![Screenshot](/pictures/hello_world_message_box_g.png)
 
-![Screenshot](/pictures/examples/hello_world_message_box_gd.png)
+![Screenshot](/pictures/hello_world_message_box_gd.png)
 
 ## Unit tests
 
