@@ -575,9 +575,11 @@ namespace xtdc_command {
       xtd::diagnostics::process process;
       process.start_info({file_name, arguments});
       process.start_info().use_shell_execute(shell_execute);
-      //process.start_info().redirect_standard_output(!shell_execute && !verbose);
-      //process.start_info().redirect_standard_error(!shell_execute && !verbose);
+      process.start_info().redirect_standard_output(!shell_execute && !verbose);
+      process.start_info().redirect_standard_error(!shell_execute && !verbose);
       process.start();
+      if (process.start_info().redirect_standard_output()) xtd::io::stream_reader {process.standard_output()}.read_to_end();
+      if (process.start_info().redirect_standard_error()) xtd::io::stream_reader {process.standard_error()}.read_to_end();
       process.wait_for_exit();
       last_exit_code_ = process.exit_code();
     }
