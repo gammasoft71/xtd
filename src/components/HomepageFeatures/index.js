@@ -26,11 +26,12 @@ const FeatureList = [
     title: 'Features',
     description: (
       <>
-      • Free and open-source (<a href="docs/documentation/license">MIT License</a>). A collection of native C++ classes libraries, to complete std.
+      • Free and open-source (<a href="docs/documentation/license">MIT License</a>).
+      <br/>• A collection of native C++ classes libraries, to complete std.
       <br/>• API close to the .net API with modern C++ approach and full integration with the std standard.
       <br/>• xtd is designed to manage GUI controls and dialogs in pure <a href="docs/documentation/Guides/xtd.forms/Overview/control_appearance">native mode</a> or with <a href="docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview">CSS styles</a>.
       <br/>• Written in efficient, modern <a href="https://en.cppreference.com/w/">c++17/20</a> with <a href="https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization">RAII</a> programming idiom.
-      <br/>• And <a href="docs/documentation/portability">highly portable</a> and available on <a href="docs/documentation/portability">many different platforms</a>.
+      <br/>• And <a href="docs/documentation/portability">highly portable</a> and available on <a href="docs/documentation/portability">many different platforms</a> (Windows, macOS, Linux, iOS and android).
       <br/>• See <a href="docs/documentation/features">features</a> for more informations.
       </>
     ),
