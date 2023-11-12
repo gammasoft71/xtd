@@ -856,6 +856,21 @@
 /// <br>
 /// @image html loading_indicator_gd.png
 ///
+/// @example loading_indicators.cpp
+/// xtd::forms::loading_indicator represents a Windows control to display a loading indicator animation.
+/// @par Windows
+/// @image html loading_indicators_w.png
+/// <br>
+/// @image html loading_indicators_wd.png
+/// @par macOS
+/// @image html loading_indicators_m.png
+/// <br>
+/// @image html loading_indicators_md.png
+/// @par Gnome
+/// @image html loading_indicators_g.png
+/// <br>
+/// @image html loading_indicators_gd.png
+///
 /// @example month_calendar.cpp
 /// demonstrates the use of xtd::forms::month_calendar control.
 /// @par Windows
@@ -3450,6 +3465,21 @@
 /// @image html button_with_style_sheet_g.png
 /// <br>
 /// @image html button_with_style_sheet_gd.png
+///
+/// @example graph_control.cpp
+/// demonstrates how to create a custom control with xtd::forms::user_control control for create own graph.
+/// @par Windows
+/// @image html graph_control_w.png
+/// <br>
+/// @image html graph_control_wd.png
+/// @par macOS
+/// @image html graph_control_m.png
+/// <br>
+/// @image html graph_control_md.png
+/// @par Gnome
+/// @image html graph_control_g.png
+/// <br>
+/// @image html graph_control_gd.png
 ///
 /// @example line.cpp
 /// demonstrates how to create a custom control with xtd::forms::user_control control.
