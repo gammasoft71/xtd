@@ -136,11 +136,11 @@ namespace xtdc_command {
       if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Build project aborted.";
       change_current_directory current_directory {xtd::environment::os_version().is_unix_platform() ? xtd::io::path::combine(build_path(), release ? "Release" : "Debug") : build_path()};
       if (xtd::environment::os_version().is_windows_platform())
-        launch_and_wait_process("cmake", xtd::ustring::format("--build {} --parallel {} --config {}{}{}", build_path(), xtd::environment::processor_count(), (release ? "Release" : "Debug"), target.empty() ? "" : xtd::ustring::format(" --target {}", target), clean_first ? xtd::ustring::format(" --clean-first {}", target) : ""), false);
+        launch_and_wait_process("cmake", xtd::ustring::format("--build {} --parallel {} --config {}{}{}", build_path(), xtd::environment::processor_count(), (release ? "Release" : "Debug"), target.empty() ? "" : xtd::ustring::format(" --target {}", target), clean_first ? xtd::ustring::format(" --clean-first {}", target) : ""), false, false);
       else if (xtd::environment::os_version().is_macos_platform())
-        launch_and_wait_process("cmake", xtd::ustring::format("--build {} --parallel {} --config {}{}{}", build_path(), xtd::environment::processor_count(), (release ? "Release" : "Debug"), target.empty() ? "" : xtd::ustring::format(" --target {}", target), clean_first ? xtd::ustring::format(" --clean-first {}", target) : ""), true);
+        launch_and_wait_process("cmake", xtd::ustring::format("--build {} --parallel {} --config {}{}{}", build_path(), xtd::environment::processor_count(), (release ? "Release" : "Debug"), target.empty() ? "" : xtd::ustring::format(" --target {}", target), clean_first ? xtd::ustring::format(" --clean-first {}", target) : ""), true, false);
       else
-        launch_and_wait_process("cmake", xtd::ustring::format("--build {}{}", xtd::io::path::combine(build_path(), release ? "Release" : "Debug"), target.empty() ? "" : xtd::ustring::format(" --target {}", target), clean_first ? " --clean-first {}" : ""));
+        launch_and_wait_process("cmake", xtd::ustring::format("--build {}{}", xtd::io::path::combine(build_path(), release ? "Release" : "Debug"), target.empty() ? "" : xtd::ustring::format(" --target {}", target), clean_first ? " --clean-first {}" : ""), false, false);
       if (last_exit_code() != EXIT_SUCCESS) return "Build error! Build project aborted.";
       return xtd::ustring::format("{0}Project {1} builded{0}", xtd::environment::new_line(), path_);
     }
@@ -213,11 +213,11 @@ namespace xtdc_command {
       change_current_directory current_directory {xtd::environment::os_version().is_unix_platform() ? xtd::io::path::combine(build_path(), release ? "Release" : "Debug") : build_path()};
       generate_project();
       if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Open project aborted.";
-      if (xtd::environment::os_version().is_windows_platform()) launch_and_wait_process(xtd::ustring::format("{}.sln", xtd::io::path::combine(build_path(), get_name())), true);
-      else if (xtd::environment::os_version().is_macos_platform()) launch_and_wait_process(xtd::ustring::format("{}.xcodeproj", xtd::io::path::combine(build_path(), get_name())), true);
+      if (xtd::environment::os_version().is_windows_platform()) launch_and_wait_process(xtd::ustring::format("{}.sln", xtd::io::path::combine(build_path(), get_name())), true, false);
+      else if (xtd::environment::os_version().is_macos_platform()) launch_and_wait_process(xtd::ustring::format("{}.xcodeproj", xtd::io::path::combine(build_path(), get_name())), true, false);
       else {
-        if (xtd::io::file::exists("/usr/bin/codeblocks")) launch_and_wait_process(xtd::ustring::format("{}.cbp", xtd::io::path::combine(build_path(), release ? "Release" : "Debug", get_name())), true);
-        else if (xtd::io::file::exists("/usr/bin/qtcreator")) launch_and_wait_process("qtcreator", xtd::io::path::combine(path_, "CMakeLists.txt"), false);
+        if (xtd::io::file::exists("/usr/bin/codeblocks")) launch_and_wait_process(xtd::ustring::format("{}.cbp", xtd::io::path::combine(build_path(), release ? "Release" : "Debug", get_name())), true, false);
+        else if (xtd::io::file::exists("/usr/bin/qtcreator")) launch_and_wait_process("qtcreator", xtd::io::path::combine(path_, "CMakeLists.txt"), false, false);
         else return xtd::ustring::format("{0}Project {1} has not been opened bacause no IDE has been found!{0}", xtd::environment::new_line(), get_name());
       }
       return xtd::ustring::format("{0}Project {1} opened{0}", xtd::environment::new_line(), get_name());
@@ -262,7 +262,7 @@ namespace xtdc_command {
       change_current_directory current_directory {xtd::environment::os_version().is_unix_platform() ? xtd::io::path::combine(build_path(), release ? "Release" : "Debug") : build_path()};
       build("", false, release);
       if (last_exit_code() != EXIT_SUCCESS) return "Build error! Test project aborted.";
-      launch_and_wait_process("ctest", xtd::ustring::format("--output-on-failure --build-config {}", release ? "release" : "debug"));
+      launch_and_wait_process("ctest", xtd::ustring::format("--output-on-failure --build-config {}", release ? "release" : "debug"), false, false);
       return xtd::ustring::format("{0}Project {1} tested{0}", xtd::environment::new_line(), path_);
     }
     
@@ -357,7 +357,7 @@ namespace xtdc_command {
         if (!xtd::io::file::exists(xtd::io::path::combine(build_path(), "xtd_si.txt"))) {
           change_current_directory current_directory {build_path()};
           try {
-            launch_and_wait_process("cmake", "--system-information xtd_si.txt", xtd::environment::os_version().is_macos_platform());
+            launch_and_wait_process("cmake", "--system-information xtd_si.txt", xtd::environment::os_version().is_macos_platform(), false);
           } catch (...) {
             exception_throwed = true;
           }
@@ -540,20 +540,20 @@ namespace xtdc_command {
       change_current_directory current_directory {build_path()};
       if (!first_generation && name.empty()) name = get_name();
       if (xtd::environment::os_version().is_windows_platform() && (first_generation || !xtd::io::file::exists(xtd::io::path::combine(build_path(), xtd::ustring::format("{}.sln", name)))))
-        launch_and_wait_process("cmake", xtd::ustring::format("-S {} -B {}", path_, build_path()));
+        launch_and_wait_process("cmake", xtd::ustring::format("-S {} -B {}", path_, build_path()), false, false);
       else if (xtd::environment::os_version().is_macos_platform() && (first_generation || !xtd::io::directory::exists(xtd::io::path::combine(build_path(), xtd::ustring::format("{}.xcodeproj", name)))))
-        launch_and_wait_process("cmake", xtd::ustring::format("-S {} -B {} -G \"Xcode\"", path_, build_path()), true);
+        launch_and_wait_process("cmake", xtd::ustring::format("-S {} -B {} -G \"Xcode\"", path_, build_path()), true, false);
       else if (xtd::environment::os_version().is_unix_platform()) {
         if (first_generation || !xtd::io::file::exists(xtd::io::path::combine(build_path(), "Debug", xtd::ustring::format("{}.cbp", name)))) {
           change_current_directory current_directory_debug {xtd::io::path::combine(build_path(), "Debug")};
           xtd::io::directory::create_directory(xtd::io::path::combine(build_path(), "Debug"));
-          launch_and_wait_process("cmake", xtd::ustring::format("-S {} -B {} -G \"CodeBlocks - Unix Makefiles\"", path_, xtd::io::path::combine(build_path(), "Debug")));
+          launch_and_wait_process("cmake", xtd::ustring::format("-S {} -B {} -G \"CodeBlocks - Unix Makefiles\"", path_, xtd::io::path::combine(build_path(), "Debug")), false, false);
           patch_cbp_file(name, "Debug");
         }
         if (first_generation || !xtd::io::file::exists(xtd::io::path::combine(build_path(), "Release", xtd::ustring::format("{}.cbp", name)))) {
           change_current_directory current_directory_release {xtd::io::path::combine(build_path(), "Release")};
           xtd::io::directory::create_directory(xtd::io::path::combine(build_path(), "Release"));
-          launch_and_wait_process("cmake", xtd::ustring::format("-S {} -B {} -G \"CodeBlocks - Unix Makefiles\"", path_, xtd::io::path::combine(build_path(), "Release")));
+          launch_and_wait_process("cmake", xtd::ustring::format("-S {} -B {} -G \"CodeBlocks - Unix Makefiles\"", path_, xtd::io::path::combine(build_path(), "Release")), false, false);
           patch_cbp_file(name, "Release");
         }
       }
@@ -567,12 +567,16 @@ namespace xtdc_command {
     }
     
     void launch_and_wait_process(const xtd::ustring& file_name) const {launch_and_wait_process(file_name, false);}
-    void launch_and_wait_process(const xtd::ustring& file_name, bool shell_execute) const {launch_and_wait_process(file_name, "", shell_execute);}
+    void launch_and_wait_process(const xtd::ustring& file_name, bool shell_execute) const {launch_and_wait_process(file_name, shell_execute, false);}
+    void launch_and_wait_process(const xtd::ustring& file_name, bool shell_execute, bool verbose) const {launch_and_wait_process(file_name, "", shell_execute, verbose);}
     void launch_and_wait_process(const xtd::ustring& file_name, const xtd::ustring& arguments) const {launch_and_wait_process(file_name, arguments, false);}
-    void launch_and_wait_process(const xtd::ustring& file_name, const xtd::ustring& arguments, bool shell_execute) const {
+    void launch_and_wait_process(const xtd::ustring& file_name, const xtd::ustring& arguments, bool shell_execute) const {launch_and_wait_process(file_name, arguments, shell_execute, false);}
+    void launch_and_wait_process(const xtd::ustring& file_name, const xtd::ustring& arguments, bool shell_execute, bool verbose) const {
       xtd::diagnostics::process process;
       process.start_info({file_name, arguments});
       process.start_info().use_shell_execute(shell_execute);
+      process.start_info().redirect_standard_output(!shell_execute && !verbose);
+      process.start_info().redirect_standard_error(!shell_execute && !verbose);
       process.start();
       process.wait_for_exit();
       last_exit_code_ = process.exit_code();
