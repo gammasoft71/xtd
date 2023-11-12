@@ -167,7 +167,7 @@
 /// Shows how to use xtd::date_time::sprintf method.
 ///
 /// @example date_time_subtract.cpp
-/// Shows how to use xtd::date_time::days_in_month method.
+/// Shows how to use xtd::date_time::subtract method.
 ///
 /// @example date_time_ticks.cpp
 /// Shows how to use xtd::date_time class with ticks constructors.
@@ -198,6 +198,9 @@
 ///
 /// @example delegate.cpp
 /// Shows how to use xtd::delegate class.
+///
+/// @example delegate_begin_invoke.cpp
+/// Shows how to use xtd::delegate::begin_invoke, xtd::delegate::end_invoke and xtd::delegate::invoke methods.
 ///
 /// @example delegate_lambda.cpp
 /// Shows how to use xtd::delegate class.
@@ -493,7 +496,10 @@
 /// @example lock.cpp
 /// Shows how to use xtd::lock class.
 ///
-/// @example startup.cpp
+/// @example lock_guard_keyword.cpp
+/// Shows how to use lock_guard_ class.
+///
+/// @example startup_keyword.cpp
 /// Shows how to use xtd::startup class.
 ///
 /// @example static.cpp
@@ -697,6 +703,21 @@
 /// @example sprintf_with_order.cpp
 /// Show how to use format xtd::format class.
 ///
+/// @example startup.cpp
+/// Shows how to use xtd::startup class.
+///
+/// @example startup1.cpp
+/// Shows how to use xtd::startup class.
+///
+/// @example startup2.cpp
+/// Shows how to use xtd::startup class.
+///
+/// @example startup3.cpp
+/// Shows how to use xtd::startup class.
+///
+/// @example startup4.cpp
+/// Shows how to use xtd::startup class.
+///
 /// @example compare.cpp
 /// Shows how to use xtd::ustring::compare method.
 ///
@@ -733,6 +754,15 @@
 /// @example auto_reset_event.cpp
 /// Shows how to use xtd::threading::auto_reset_event class.
 ///
+/// @example barrier.cpp
+/// Shows how to use xtd::threading::barrier class.
+///
+/// @example barrier_simple.cpp
+/// Shows how to use xtd::threading::barrier class.
+///
+/// @example countdown_event.cpp
+/// Shows how to use xtd::threading::countdown_event class.
+///
 /// @example event_wait_handle.cpp
 /// Shows how to use xtd::threading::event_wait_handle class.
 ///
@@ -742,6 +772,9 @@
 /// @example interlocked_decrement.cpp
 /// Shows how to use xtd::threading::interlocked::decrement and xtd::threading::interlocked::increment methods.
 ///
+/// @example lock_guard.cpp
+/// Shows how to use xtd::threading::lock_guard class.
+///
 /// @example manual_reset_event.cpp
 /// Shows how to use xtd::threading::manual_reset_event class.
 ///
@@ -750,6 +783,15 @@
 ///
 /// @example monitor.cpp
 /// Shows how to use xtd::threading::monitor class.
+///
+/// @example monitor_lock.cpp
+/// Shows how to use xtd::threading::monitor class.
+///
+/// @example monitor_pulse.cpp
+/// Shows how to use xtd::threading::monitor::pulse pulse.
+///
+/// @example monitor_pulse_all.cpp
+/// Shows how to use xtd::threading::monitor::pulse_all method.
 ///
 /// @example mutex.cpp
 /// Shows how to use xtd::threading::mutex class.
@@ -771,6 +813,21 @@
 ///
 /// @example wait_handle.cpp
 /// Shows how to use xtd::threading::wait_handle class.
+///
+/// @example time_span.cpp
+/// Demonstrates the xtd::time_span struct.
+///
+/// @example time_span_from_days.cpp
+/// Demonstrates the xtd::time_span::from_days method.
+///
+/// @example time_span_from_hours.cpp
+/// Demonstrates the xtd::time_span::from_days method.
+///
+/// @example timers_timer.cpp
+/// Shows how to use xtd::timers::timer class.
+///
+/// @example timers_timer_synchronizing_object.cpp
+/// Shows how to use xtd::timers::timer::synchronizing_object property.
 ///
 /// @example uri.cpp
 /// Demonstrates the xtd::uri various properties.
