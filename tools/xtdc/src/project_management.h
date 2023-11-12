@@ -575,8 +575,8 @@ namespace xtdc_command {
       xtd::diagnostics::process process;
       process.start_info({file_name, arguments});
       process.start_info().use_shell_execute(shell_execute);
-      process.start_info().redirect_standard_output(!shell_execute && !verbose);
-      process.start_info().redirect_standard_error(!shell_execute && !verbose);
+      //process.start_info().redirect_standard_output(!shell_execute && !verbose);
+      //process.start_info().redirect_standard_error(!shell_execute && !verbose);
       process.start();
       process.wait_for_exit();
       last_exit_code_ = process.exit_code();
