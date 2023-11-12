@@ -12,8 +12,9 @@
 ///   * a collection of native C++ classes libraries, to complete std;
 ///   * API close to the .net API with a modern C++ approach and full integration with the std standard;
 ///   * xtd is designed to manage GUI controls and dialogs in pure <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Overview/control_appearance">native mode</a> or with <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview">CSS styles</a>.
-///   * written in efficient, modern C++17 / C++20 with <a href="https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization">RAII</a> programming idiom;
+///   * written in efficient, modern <a href="https://en.cppreference.com/w/">C++ 17/20</a> with <a href="https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization">RAII</a> programming idiom;
 ///   * and <a href="https://gammasoft71.github.io/xtd/docs/documentation/portability">highly</a> portable and available on <a href="https://gammasoft71.github.io/xtd/docs/documentation/portability">many different platforms</a> (Windows, macOS, Linux, iOS and android);
+///   * See <a href="https://gammasoft71.github.io/xtd/docs/documentation/features">features</a> for more informations.
 ///
 /// @section xtdLibrariesArchitectureSection xtd libraries architecture
 ///
