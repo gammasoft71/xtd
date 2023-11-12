@@ -10,7 +10,7 @@
  
 # Latest news
 
-* [The xtd 0.2.0 (beta) is growing - November 11, 2023](https://gammasoft71.github.io/xtd/docs/news#the-xtd-020-beta-is-growing-november-11-2023)
+* [The xtd 0.2.0 (beta) is growing - November 12, 2023](https://gammasoft71.github.io/xtd/docs/news#the-xtd-020-beta-is-growing-november-12-2023)
 * [Release xtd 0.1.1 (beta) - Jully 17, 2023](https://gammasoft71.github.io/xtd/docs/news#release-xtd-011-beta-jully-17-2023)
 * [The new xtd website is online - February 9, 2023](https://gammasoft71.github.io/xtd/docs/news#the-new-xtd-website-is-online-february-9-2023)
 * [xtd.tunit is compatible with Test Explorer window of Visual Studio 2019 or later - November 18, 2022](https://gammasoft71.github.io/xtd/docs/news#xtdtunit-is-compatible-with-test-explorer-window-of-visual-studio-2019-or-later-november-18-2022)
