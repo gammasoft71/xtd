@@ -188,6 +188,8 @@ Inheritance diagram for xtd::threading::barrier:</div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>A group of tasks cooperate by moving through a series of phases, where each in the group signals it has arrived at the <a class="el" href="classxtd_1_1threading_1_1barrier.html" title="Enables multiple tasks to cooperatively work on an algorithm in parallel through multiple phases.">xtd::threading::barrier</a> in a given phase and implicitly waits for all others to arrive. The same <a class="el" href="classxtd_1_1threading_1_1barrier.html" title="Enables multiple tasks to cooperatively work on an algorithm in parallel through multiple phases.">xtd::threading::barrier</a> can be used for multiple phases. </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="barrier_8cpp-example.html#_a0">barrier.cpp</a>, and <a class="el" href="barrier_simple_8cpp-example.html#_a0">barrier_simple.cpp</a>.</dd>
+</dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Aliases</h2></td></tr>
 <tr class="memitem:a541a2b302cb76a52f869eaded0e0f518"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1barrier.html#a541a2b302cb76a52f869eaded0e0f518">post_phase_action</a> = <a class="el" href="group__xtd__core.html#ga53c721aac682a7ccf19ee17d92280e31">action</a>&lt; <a class="el" href="classxtd_1_1threading_1_1barrier.html">barrier</a> &amp; &gt;</td></tr>
@@ -443,6 +445,8 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If the barrier is currently executing a post phase action, this call is blocked until the post phase action completes and the barrier has moved on to the next phase. </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="barrier_8cpp-example.html#a3">barrier.cpp</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -462,6 +466,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Close the current instance of the <a class="el" href="classxtd_1_1threading_1_1barrier.html" title="Enables multiple tasks to cooperatively work on an algorithm in parallel through multiple phases.">xtd::threading::barrier</a> class. </p>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="barrier_8cpp-example.html#a8">barrier.cpp</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -568,6 +574,8 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="barrier_8cpp-example.html#a4">barrier.cpp</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -629,6 +637,8 @@ Additional Inherited Members</h2></td></tr>
     <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1barrier__post__phase__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">xtd::threading::barrier_post_phase_exception</a></td><td>If an exception is thrown from the post phase action of a <a class="el" href="classxtd_1_1threading_1_1barrier.html" title="Enables multiple tasks to cooperatively work on an algorithm in parallel through multiple phases.">xtd::threading::barrier</a> after all participating threads have called <a class="el" href="classxtd_1_1threading_1_1barrier.html#accca72ab78acd9bbbc2074ab0caca7bd" title="Signals that a participant has reached the barrier and waits for all other participants to reach the ...">xtd::threading::barrier::signal_and_wait</a>, the exception will be wrapped in a <a class="el" href="classxtd_1_1threading_1_1barrier__post__phase__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">xtd::threading::barrier_post_phase_exception</a> and be thrown on all participating threads. </td></tr>
   </table>
   </dd>
+</dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="barrier_8cpp-example.html#a5">barrier.cpp</a>, and <a class="el" href="barrier_simple_8cpp-example.html#a1">barrier_simple.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -836,7 +846,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Nov 11 2023 13:29:53 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Nov 12 2023 03:01:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
