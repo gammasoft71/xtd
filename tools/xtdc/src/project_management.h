@@ -215,7 +215,11 @@ namespace xtdc_command {
       if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Open project aborted.";
       if (xtd::environment::os_version().is_windows_platform()) launch_and_wait_process(xtd::ustring::format("{}.sln", xtd::io::path::combine(build_path(), get_name())), true);
       else if (xtd::environment::os_version().is_macos_platform()) launch_and_wait_process(xtd::ustring::format("{}.xcodeproj", xtd::io::path::combine(build_path(), get_name())), true);
-      else launch_and_wait_process(xtd::ustring::format("{}.cbp", xtd::io::path::combine(build_path(), release ? "Release" : "Debug", get_name())), true);
+      else {
+        if (xtd::io::file::exists("/usr/bin/codeblocks")) launch_and_wait_process(xtd::ustring::format("{}.cbp", xtd::io::path::combine(build_path(), release ? "Release" : "Debug", get_name())), true);
+        else if (xtd::io::file::exists("/usr/bin/qtcreator")) launch_and_wait_process("qtcreator", xtd::io::path::combine(path_, "CMakeLists.txt"), false);
+        else return xtd::ustring::format("{0}Project {1} has not been opened bacause no IDE has been found!{0}", xtd::environment::new_line(), get_name());
+      }
       return xtd::ustring::format("{0}Project {1} opened{0}", xtd::environment::new_line(), get_name());
     }
     
