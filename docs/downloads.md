@@ -211,19 +211,19 @@ cd xtd_path_name
 
 ### xtd
 
-[xtd](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/logo/xtd.png)
+[xtd](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/logo/xtd.logo.png)
 
-[xtd.core](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/logo/xtd.core.png)
+[xtd.core](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/logo/xtd.core.logo.png)
 
-[xtd.drawing](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/logo/xtd.drawing.png)
+[xtd.drawing](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/logo/xtd.drawing.logo.png)
 
-[xtd.forms](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/logo/xtd.forms.png)
+[xtd.forms](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/logo/xtd.forms.logo.png)
 
-[xtd.tunit](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/logo/xtd.tunit.png)
+[xtd.tunit](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/logo/xtd.tunit.logo.png)
 
 ### gammasoft
 
-[gammasoft](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/logo/gammasoft.png)
+[gammasoft](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/logo/gammasoft.logo.png)
 
 ______________________________________________________________________________________________
 
