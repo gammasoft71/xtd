@@ -302,26 +302,23 @@ namespace xtdc_command {
       for (const auto& line : get_system_information())
         if (line.starts_with(xtd::ustring::format("{}_BINARY_DIR:STATIC=", target)))
           return make_platform_target_path(line.replace(xtd::ustring::format("{}_BINARY_DIR:STATIC=", target), ""), target, release);
+      if (xtd::environment::os_version().is_linux()) return xtd::io::path::combine(build_path(), release ? "Release" : "Debug", target);
       return xtd::io::path::combine(build_path(), release ? "Release" : "Debug", target, target);
     }
     
     xtd::ustring get_first_target_path(bool release) const {
       for (const auto& line : get_system_information())
-        if (line.index_of("_BINARY_DIR:STATIC=") != xtd::ustring::npos)
-          return make_platform_target_path(line.replace(xtd::ustring::format("{}_BINARY_DIR:STATIC=", line.substring(0, line.index_of("_BINARY_DIR:STATIC="))), ""), line.substring(0, line.index_of("_BINARY_DIR:STATIC=")), release);
+        if (line.index_of("_BINARY_DIR:STATIC=") != xtd::ustring::npos) return make_platform_target_path(line.replace(xtd::ustring::format("{}_BINARY_DIR:STATIC=", line.substring(0, line.index_of("_BINARY_DIR:STATIC="))), ""), line.substring(0, line.index_of("_BINARY_DIR:STATIC=")), release);
       if (xtd::environment::os_version().is_windows_platform()) return xtd::io::path::combine(build_path(), xtd::io::path::get_file_name(path_), release ? "Release" : "Debug", xtd::io::path::get_file_name(path_));
+      if (xtd::environment::os_version().is_linux()) return xtd::io::path::combine(build_path(), release ? "Release" : "Debug", xtd::io::path::get_file_name(path_));
       return xtd::io::path::combine(build_path(), release ? "Release" : "Debug", xtd::io::path::get_file_name(path_), xtd::io::path::get_file_name(path_));
     }
     
     xtd::ustring make_platform_target_path(const xtd::ustring& path, const xtd::ustring& target, bool release) const {
-      if (xtd::environment::os_version().is_windows_platform() && xtd::io::file::exists(xtd::io::path::combine(path, release ? "Release" : "Debug", xtd::ustring::format("{}.exe", target))))
-        return xtd::io::path::combine(path, release ? "Release" : "Debug", xtd::ustring::format("{}.exe", target));
-      else if (xtd::environment::os_version().is_macos_platform() && xtd::io::directory::exists(xtd::io::path::combine(path, release ? "Release" : "Debug", xtd::ustring::format("{}.app", target))))
-        return xtd::io::path::combine(path, release ? "Release" : "Debug", xtd::ustring::format("{}.app", target));
-      else if (xtd::environment::os_version().is_macos_platform() && xtd::io::file::exists(xtd::io::path::combine(path, release ? "Release" : "Debug", target)))
-        return xtd::io::path::combine(path, release ? "Release" : "Debug", target);
-      else if (xtd::environment::os_version().is_unix_platform() && xtd::io::file::exists(xtd::io::path::combine(path, target)))
-        return xtd::io::path::combine(path, target);
+      if (xtd::environment::os_version().is_windows_platform() && xtd::io::file::exists(xtd::io::path::combine(path, release ? "Release" : "Debug", xtd::ustring::format("{}.exe", target)))) return xtd::io::path::combine(path, release ? "Release" : "Debug", xtd::ustring::format("{}.exe", target));
+      if (xtd::environment::os_version().is_macos_platform() && xtd::io::directory::exists(xtd::io::path::combine(path, release ? "Release" : "Debug", xtd::ustring::format("{}.app", target)))) return xtd::io::path::combine(path, release ? "Release" : "Debug", xtd::ustring::format("{}.app", target));
+      if (xtd::environment::os_version().is_macos_platform() && xtd::io::file::exists(xtd::io::path::combine(path, release ? "Release" : "Debug", target))) return xtd::io::path::combine(path, release ? "Release" : "Debug", target);
+      if (xtd::environment::os_version().is_unix_platform() && xtd::io::file::exists(xtd::io::path::combine(path, target))) return xtd::io::path::combine(path, target);
       return "";
     }
     
