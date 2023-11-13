@@ -24,15 +24,26 @@ struct thread_pool::static_data {
   object thread_pool_items_sync_root;
   thread_pool_asynchronous_io_item_collection thread_pool_asynchronous_io_items;
   object thread_pool_asynchronous_io_items_sync_root;
+  
+  ~static_data() {
+    close_asynchronous_io_threads_manual_reset_event.set();
+    close_threads_manual_reset_event.set();
+    for (auto& thread : threads)
+      thread.close();
+    for (auto& asynchronous_io_thread : asynchronous_io_threads)
+      asynchronous_io_thread.close();
+  }
 };
+
+thread_pool::static_data thread_pool::static_data_ {};
 
 void thread_pool::close() {
   join_all();
 }
 
 void thread_pool::get_available_threads(size_t& worker_threads, size_t& completion_port_threads) {
-  worker_threads = max_threads_ - get_static_data().thread_pool_items.size();
-  completion_port_threads = max_asynchronous_io_threads_ - get_static_data().thread_pool_asynchronous_io_items.size();
+  worker_threads = max_threads_ - static_data_.thread_pool_items.size();
+  completion_port_threads = max_asynchronous_io_threads_ - static_data_.thread_pool_asynchronous_io_items.size();
 }
 
 void thread_pool::get_max_threads(size_t& worker_threads, size_t& completion_port_threads) {
@@ -64,26 +75,26 @@ bool thread_pool::queue_user_work_item(const wait_callback& callback) {
 }
 
 bool thread_pool::queue_user_work_item(const wait_callback& callback, std::any state) {
-  lock_(get_static_data().thread_pool_items_sync_root) {
-    if (get_static_data().threads.size() == 0) initialize_min_threads();
-    if (get_static_data().thread_pool_items.size() == max_threads_) return false;
-    if (get_static_data().thread_pool_items.size() + 1 > get_static_data().threads.size()) create_thread();
-    get_static_data().thread_pool_items.emplace(get_static_data().thread_pool_items.begin(), callback, state);
+  lock_(static_data_.thread_pool_items_sync_root) {
+    if (static_data_.threads.size() == 0) initialize_min_threads();
+    if (static_data_.thread_pool_items.size() == max_threads_) return false;
+    if (static_data_.thread_pool_items.size() + 1 > static_data_.threads.size()) create_thread();
+    static_data_.thread_pool_items.emplace(static_data_.thread_pool_items.begin(), callback, state);
   }
-  get_static_data().semaphore.release();
+  static_data_.semaphore.release();
   return true;
 }
 
 registered_wait_handle thread_pool::register_wait_for_single_object(wait_handle& waitObject, const wait_or_timer_callback& callBack, std::any state, int32 milliseconds_timeout_interval, bool execute_only_once) {
   auto result = registered_wait_handle {};
-  lock_(get_static_data().thread_pool_asynchronous_io_items_sync_root) {
-    if (get_static_data().asynchronous_io_threads.size() == 0) initialize_min_asynchronous_io_threads();
-    if (get_static_data().thread_pool_asynchronous_io_items.size() == max_asynchronous_io_threads_) return result;
-    if (get_static_data().thread_pool_items.size() + 1 > get_static_data().threads.size()) create_thread();
-    get_static_data().thread_pool_asynchronous_io_items.emplace(get_static_data().thread_pool_asynchronous_io_items.begin(), callBack, state, waitObject, milliseconds_timeout_interval, execute_only_once);
-    result.item_ = reinterpret_cast<intptr>(&get_static_data().thread_pool_asynchronous_io_items.back());
+  lock_(static_data_.thread_pool_asynchronous_io_items_sync_root) {
+    if (static_data_.asynchronous_io_threads.size() == 0) initialize_min_asynchronous_io_threads();
+    if (static_data_.thread_pool_asynchronous_io_items.size() == max_asynchronous_io_threads_) return result;
+    if (static_data_.thread_pool_items.size() + 1 > static_data_.threads.size()) create_thread();
+    static_data_.thread_pool_asynchronous_io_items.emplace(static_data_.thread_pool_asynchronous_io_items.begin(), callBack, state, waitObject, milliseconds_timeout_interval, execute_only_once);
+    result.item_ = reinterpret_cast<intptr>(&static_data_.thread_pool_asynchronous_io_items.back());
   }
-  get_static_data().asynchronous_io_semaphore.release();
+  static_data_.asynchronous_io_semaphore.release();
   return result;
 }
 
@@ -106,8 +117,8 @@ bool thread_pool::set_max_threads(size_t worker_threads, size_t completion_port_
   max_threads_ = worker_threads;
   max_asynchronous_io_threads_ = completion_port_threads;
   
-  get_static_data().semaphore = semaphore(as<int32>(get_static_data().thread_pool_items.size()), as<int32>(max_threads_));
-  get_static_data().asynchronous_io_semaphore = semaphore(as<int32>(get_static_data().thread_pool_asynchronous_io_items.size()), as<int32>(max_asynchronous_io_threads_));
+  static_data_.semaphore = semaphore(as<int32>(static_data_.thread_pool_items.size()), as<int32>(max_threads_));
+  static_data_.asynchronous_io_semaphore = semaphore(as<int32>(static_data_.thread_pool_asynchronous_io_items.size()), as<int32>(max_asynchronous_io_threads_));
   
   return true;
 }
@@ -119,23 +130,23 @@ bool thread_pool::set_min_threads(size_t worker_threads, size_t completion_port_
   min_threads_ = worker_threads;
   min_asynchronous_io_threads_ = completion_port_threads;
   
-  if (get_static_data().threads.size() != 0) initialize_min_threads();
-  if (get_static_data().asynchronous_io_threads.size() != 0) initialize_min_asynchronous_io_threads();
+  if (static_data_.threads.size() != 0) initialize_min_threads();
+  if (static_data_.asynchronous_io_threads.size() != 0) initialize_min_asynchronous_io_threads();
   
   return true;
 }
 
 void thread_pool::asynchronous_io_run() {
   while (true) {
-    if (wait_handle::wait_any(get_static_data().close_asynchronous_io_threads_manual_reset_event, get_static_data().asynchronous_io_semaphore) == 0) break;
+    if (wait_handle::wait_any(static_data_.close_asynchronous_io_threads_manual_reset_event, static_data_.asynchronous_io_semaphore) == 0) break;
     thread_pool_asynchronous_io_item item;
-    lock_(get_static_data().thread_pool_asynchronous_io_items_sync_root) {
-      item = get_static_data().thread_pool_asynchronous_io_items.back();
-      get_static_data().thread_pool_asynchronous_io_items.pop_back();
+    lock_(static_data_.thread_pool_asynchronous_io_items_sync_root) {
+      item = static_data_.thread_pool_asynchronous_io_items.back();
+      static_data_.thread_pool_asynchronous_io_items.pop_back();
     }
     
     do {
-      auto wait_result = wait_handle::wait_any({&get_static_data().close_asynchronous_io_threads_manual_reset_event, item.wait_object}, item.milliseconds_timeout_interval);
+      auto wait_result = wait_handle::wait_any({&static_data_.close_asynchronous_io_threads_manual_reset_event, item.wait_object}, item.milliseconds_timeout_interval);
       if (wait_result == 0) break;
       auto timeout = wait_result == wait_handle::wait_timeout;
       if (!item.unregistered) item.callback(item.state, timeout);
@@ -144,77 +155,72 @@ void thread_pool::asynchronous_io_run() {
 }
 
 void thread_pool::create_thread() {
-  get_static_data().threads.emplace_back(&thread_pool::run);
-  get_static_data().threads.back().name("Thread Pool");
-  get_static_data().threads.back().is_background(true);
-  get_static_data().threads.back().is_thread_pool_thread(true);
-  get_static_data().threads.back().start();
+  static_data_.threads.emplace_back(&thread_pool::run);
+  static_data_.threads.back().name("Thread Pool");
+  static_data_.threads.back().is_background(true);
+  static_data_.threads.back().is_thread_pool_thread(true);
+  static_data_.threads.back().start();
 }
 
 void thread_pool::create_asynchronous_io_thread() {
-  get_static_data().asynchronous_io_threads.emplace_back(&thread_pool::asynchronous_io_run);
-  get_static_data().asynchronous_io_threads.back().name("Thread Pool");
-  get_static_data().asynchronous_io_threads.back().is_background(true);
-  get_static_data().asynchronous_io_threads.back().is_thread_pool_thread(true);
-  get_static_data().asynchronous_io_threads.back().start();
-}
-
-thread_pool::static_data& thread_pool::get_static_data() {
-  static auto data = static_data {};
-  return data;
+  static_data_.asynchronous_io_threads.emplace_back(&thread_pool::asynchronous_io_run);
+  static_data_.asynchronous_io_threads.back().name("Thread Pool");
+  static_data_.asynchronous_io_threads.back().is_background(true);
+  static_data_.asynchronous_io_threads.back().is_thread_pool_thread(true);
+  static_data_.asynchronous_io_threads.back().start();
 }
 
 void thread_pool::initialize_min_threads() {
   join_all_threads(timeout::infinite);
-  get_static_data().threads.clear();
+  static_data_.threads.clear();
   for (auto index = 0_sz; index < min_threads_; ++index)
     create_thread();
 }
 
 void thread_pool::initialize_min_asynchronous_io_threads() {
   join_all_asynchronous_io_threads(timeout::infinite);
-  get_static_data().asynchronous_io_threads.clear();
+  static_data_.asynchronous_io_threads.clear();
   for (auto index = 0_sz; index < min_asynchronous_io_threads_; ++index)
     create_asynchronous_io_thread();
 }
 
 bool thread_pool::join_all_threads(int32 milliseconds_timeout) {
-  if (!get_static_data().threads.size()) return true;
+  if (!static_data_.threads.size()) return true;
   
-  for (auto& thread : get_static_data().threads) {
+  for (auto& thread : static_data_.threads) {
     thread.is_background(false);
     thread.is_thread_pool_thread(false);
   }
   
-  get_static_data().close_threads_manual_reset_event.set();
-  auto result = thread::join_all(get_static_data().threads, milliseconds_timeout);
-  get_static_data().threads.clear();
-  get_static_data().close_threads_manual_reset_event.reset();
+  static_data_.close_threads_manual_reset_event.set();
+  auto result = thread::join_all(static_data_.threads, milliseconds_timeout);
+  static_data_.threads.clear();
+  static_data_.close_threads_manual_reset_event.reset();
   return result;
 }
 
 bool thread_pool::join_all_asynchronous_io_threads(int32 milliseconds_timeout) {
-  if (!get_static_data().asynchronous_io_threads.size()) return true;
+  if (!static_data_.asynchronous_io_threads.size()) return true;
   
-  for (auto& thread : get_static_data().asynchronous_io_threads) {
+  for (auto& thread : static_data_.asynchronous_io_threads) {
     thread.is_background(false);
     thread.is_thread_pool_thread(false);
   }
   
-  get_static_data().close_asynchronous_io_threads_manual_reset_event.set();
-  auto result = thread::join_all(get_static_data().asynchronous_io_threads, milliseconds_timeout);
-  get_static_data().asynchronous_io_threads.clear();
-  get_static_data().close_asynchronous_io_threads_manual_reset_event.reset();
+  static_data_.close_asynchronous_io_threads_manual_reset_event.set();
+  auto result = thread::join_all(static_data_.asynchronous_io_threads, milliseconds_timeout);
+  static_data_.asynchronous_io_threads.clear();
+  static_data_.close_asynchronous_io_threads_manual_reset_event.reset();
   return result;
 }
 
 void thread_pool::run() {
   while (true) {
-    if (wait_handle::wait_any(get_static_data().close_threads_manual_reset_event, get_static_data().semaphore) == 0) break;
+    if (wait_handle::wait_any(static_data_.close_threads_manual_reset_event, static_data_.semaphore) == 0) break;
     auto item = thread_pool_item {};
-    lock_(get_static_data().thread_pool_items_sync_root) {
-      item = get_static_data().thread_pool_items.back();
-      get_static_data().thread_pool_items.pop_back();
+    lock_(static_data_.thread_pool_items_sync_root) {
+      item = static_data_.thread_pool_items.back();
+      static_data_.thread_pool_items.pop_back();
     }
     item.callback(item.state);
   }
