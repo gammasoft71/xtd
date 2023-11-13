@@ -4,6 +4,7 @@
 #pragma once
 #include "abstract.h"
 #include "block_scope.h"
+#include "finally.h"
 #include "interface.h"
 #include "nameof.h"
 #include "self.h"

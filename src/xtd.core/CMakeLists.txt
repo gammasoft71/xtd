@@ -174,6 +174,7 @@ add_sources(
   include/xtd/exit_mode
   include/xtd/exit_status.h
   include/xtd/exit_status
+  include/xtd/finally.h
   include/xtd/flags_attribute.h
   include/xtd/flags_attribute
   include/xtd/foreground_color.h
