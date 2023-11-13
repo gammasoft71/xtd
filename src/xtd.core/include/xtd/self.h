@@ -13,6 +13,6 @@ namespace xtd {
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core keywords
-/// @remarks #selt_ is equivalent to *this.
+/// @remarks #self_ is equivalent to *this.
 #define self_\
   (*this)
