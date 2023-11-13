@@ -214,7 +214,6 @@ namespace xtd {
       static void asynchronous_io_run();
       static void create_thread();
       static void create_asynchronous_io_thread();
-      static static_data& get_static_data();
       static void initialize_min_threads();
       static void initialize_min_asynchronous_io_threads();
       static bool join_all_threads(int32 milliseconds_timeout);
@@ -225,6 +224,7 @@ namespace xtd {
       static size_t max_asynchronous_io_threads_;
       static size_t min_threads_;
       static size_t min_asynchronous_io_threads_;
+      static static_data static_data_;
     };
   }
 }
