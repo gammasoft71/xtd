@@ -38,8 +38,6 @@ namespace auto_reset_event_example {
         event_2.set();
         thread::sleep(250_ms);
       }
-      
-      thread::join_all(threads);
     }
     
     static void thread_proc() {

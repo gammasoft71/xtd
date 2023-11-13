@@ -91,8 +91,6 @@ public:
     console::write_line("Press ENTER to release the waiting threads.");
     console::read_line();
     ewh.set();
-    
-    thread::join_all(threads_);
   }
   
 private:

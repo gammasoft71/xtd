@@ -53,8 +53,6 @@ namespace manual_reset_event_example {
       console::read_line();
       
       mre.set();
-      
-      thread::join_all(threads);
     }
     
   private:
