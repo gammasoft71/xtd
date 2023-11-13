@@ -95,7 +95,6 @@ $(function() {
 <div class="line">  <span class="keyword">class </span>program {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> main() {</div>
-<div class="line">      <span class="keyword">auto</span> threads = std::vector&lt;thread&gt; {};</div>
 <div class="line">      <span class="keyword">auto</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1threading_1_1countdown__event.html">countdown_event</a> = <a class="code hl_class" href="classxtd_1_1threading_1_1countdown__event.html">threading::countdown_event</a> {5};</div>
 <div class="line">      <span class="keyword">auto</span> thread_proc = [&amp;] {</div>
 <div class="line">        console::write_line(<span class="stringliteral">&quot;Thread {} signals countdown_event&quot;</span>, thread::current_thread().managed_thread_id());</div>
@@ -103,11 +102,10 @@ $(function() {
 <div class="line">      };</div>
 <div class="line">      </div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0; i &lt; 5; ++i)</div>
-<div class="line">        threads.push_back(thread::start_new(thread_proc));</div>
+<div class="line">        thread::start_new(thread_proc);</div>
 <div class="line">      </div>
 <div class="line">      <a class="code hl_class" href="classxtd_1_1threading_1_1countdown__event.html">countdown_event</a>.<a id="a2" name="a2"></a><a class="code hl_function" href="classxtd_1_1threading_1_1countdown__event.html#a8391ecaf337ae01ff3fbd35f0298cfb9">wait</a>();</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;All threads have signaled countdown_event&quot;</span>);</div>
-<div class="line">      thread::join_all(threads);</div>
 <div class="line">    }</div>
 <div class="line">  };</div>
 <div class="line">}</div>
@@ -132,7 +130,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 12 2023 11:26:21 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Nov 13 2023 20:39:51 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

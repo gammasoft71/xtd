@@ -176,6 +176,9 @@ Macros</h2></td></tr>
 <tr class="memitem:ga8c203f08ddf277e496fa11b6e3e5d0ef"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__keywords.html#ga8c203f08ddf277e496fa11b6e3e5d0ef">export_</a></td></tr>
 <tr class="memdesc:ga8c203f08ddf277e496fa11b6e3e5d0ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define shared library export.  <br /></td></tr>
 <tr class="separator:ga8c203f08ddf277e496fa11b6e3e5d0ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa1d4feda5380aa7b0daa9b38c8f2251f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__keywords.html#gaa1d4feda5380aa7b0daa9b38c8f2251f">finally_</a></td></tr>
+<tr class="memdesc:gaa1d4feda5380aa7b0daa9b38c8f2251f"><td class="mdescLeft">&#160;</td><td class="mdescRight">In addition to try and catch clauses, xtd supports a <a class="el" href="group__keywords.html#gaa1d4feda5380aa7b0daa9b38c8f2251f" title="In addition to try and catch clauses, xtd supports a finally_ clause. A finally_ block can follow a t...">finally_</a> clause. A <a class="el" href="group__keywords.html#gaa1d4feda5380aa7b0daa9b38c8f2251f" title="In addition to try and catch clauses, xtd supports a finally_ clause. A finally_ block can follow a t...">finally_</a> block can follow a try or catch block.  <br /></td></tr>
+<tr class="separator:gaa1d4feda5380aa7b0daa9b38c8f2251f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaea49fae71107df8769685efb159c181a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__keywords.html#gaea49fae71107df8769685efb159c181a">flags_attribute_</a>(namespace_name,  enum_type)</td></tr>
 <tr class="memdesc:gaea49fae71107df8769685efb159c181a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the set attribute struct for enumerations helper.  <br /></td></tr>
 <tr class="separator:gaea49fae71107df8769685efb159c181a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2745,6 +2748,54 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 
 </div>
 </div>
+<a id="gaa1d4feda5380aa7b0daa9b38c8f2251f" name="gaa1d4feda5380aa7b0daa9b38c8f2251f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa1d4feda5380aa7b0daa9b38c8f2251f">&#9670;&#160;</a></span>finally_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define finally_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="finally_8h.html">xtd.core/include/xtd/finally.h</a>&gt;</code></p>
+
+<p>In addition to try and catch clauses, xtd supports a <a class="el" href="group__keywords.html#gaa1d4feda5380aa7b0daa9b38c8f2251f" title="In addition to try and catch clauses, xtd supports a finally_ clause. A finally_ block can follow a t...">finally_</a> clause. A <a class="el" href="group__keywords.html#gaa1d4feda5380aa7b0daa9b38c8f2251f" title="In addition to try and catch clauses, xtd supports a finally_ clause. A finally_ block can follow a t...">finally_</a> block can follow a try or catch block. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>The purpose of the <a class="el" href="group__keywords.html#gaa1d4feda5380aa7b0daa9b38c8f2251f" title="In addition to try and catch clauses, xtd supports a finally_ clause. A finally_ block can follow a t...">finally_</a> block is to clean up any resources left after the exception occurred. Note that the finally block is always executed, even if no exception was thrown. The catch block is only executed if a managed exception is thrown within the associated try block. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Generally in C++ the <a class="el" href="group__keywords.html#gaa1d4feda5380aa7b0daa9b38c8f2251f" title="In addition to try and catch clauses, xtd supports a finally_ clause. A finally_ block can follow a t...">finally_</a> is NOT required because of <a href="https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization">RAII</a>. </dd></dl>
+<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;start&quot;</span>);</div>
+<div class="line">  <span class="keywordflow">try</span> {</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;try&quot;</span>);</div>
+<div class="line">    <span class="keywordflow">throw</span> <a class="code hl_class" href="classxtd_1_1system__exception.html">system_exception</a>(<span class="stringliteral">&quot;invalid operation exception&quot;</span>);</div>
+<div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1system__exception.html">system_exception</a>&amp; e) {</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;catch&quot;</span>);</div>
+<div class="line">  } <a class="code hl_define" href="group__keywords.html#gaa1d4feda5380aa7b0daa9b38c8f2251f">finally_</a> {</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;finally&quot;</span>);</div>
+<div class="line">  };</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;stop&quot;</span>);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output:</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// start</span></div>
+<div class="line"><span class="comment">// try</span></div>
+<div class="line"><span class="comment">// catch</span></div>
+<div class="line"><span class="comment">// stop</span></div>
+<div class="line"><span class="comment">// finally</span></div>
+<div class="ttc" id="aclassxtd_1_1system__exception_html"><div class="ttname"><a href="classxtd_1_1system__exception.html">xtd::system_exception</a></div><div class="ttdoc">Defines the base class for predefined exceptions in the xtd namespace.</div><div class="ttdef"><b>Definition</b> system_exception.h:25</div></div>
+<div class="ttc" id="agroup__keywords_html_gaa1d4feda5380aa7b0daa9b38c8f2251f"><div class="ttname"><a href="group__keywords.html#gaa1d4feda5380aa7b0daa9b38c8f2251f">finally_</a></div><div class="ttdeci">#define finally_</div><div class="ttdoc">In addition to try and catch clauses, xtd supports a finally_ clause. A finally_ block can follow a t...</div><div class="ttdef"><b>Definition</b> finally.h:64</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
 <a id="gaea49fae71107df8769685efb159c181a" name="gaea49fae71107df8769685efb159c181a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaea49fae71107df8769685efb159c181a">&#9670;&#160;</a></span>flags_attribute_</h2>
 
@@ -3126,7 +3177,6 @@ You can't use the await_ keyword in the body of a lock_ statement. </dd></dl>
 <div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.h:32</div></div>
 <div class="ttc" id="aclassxtd_1_1random_html"><div class="ttname"><a href="classxtd_1_1random.html">xtd::random</a></div><div class="ttdoc">Represents a pseudo-random number generator, a device that produces a sequence of numbers that meet c...</div><div class="ttdef"><b>Definition</b> random.h:38</div></div>
 <div class="ttc" id="aclassxtd_1_1random_html_a629a30d5ddd8035f45afe7d982fda712"><div class="ttname"><a href="classxtd_1_1random.html#a629a30d5ddd8035f45afe7d982fda712">xtd::random::next</a></div><div class="ttdeci">virtual int32 next() const</div><div class="ttdoc">Returns a nonnegative random number.</div></div>
-<div class="ttc" id="aclassxtd_1_1system__exception_html"><div class="ttname"><a href="classxtd_1_1system__exception.html">xtd::system_exception</a></div><div class="ttdoc">Defines the base class for predefined exceptions in the xtd namespace.</div><div class="ttdef"><b>Definition</b> system_exception.h:24</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">xtd::console_key::i</a></div><div class="ttdeci">@ i</div><div class="ttdoc">The I key.</div></div>
 <div class="ttc" id="anamespacextd_1_1threading_html"><div class="ttname"><a href="namespacextd_1_1threading.html">xtd::threading</a></div><div class="ttdoc">The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....</div><div class="ttdef"><b>Definition</b> abandoned_mutex_exception.h:10</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -3395,7 +3445,7 @@ If you need to get the fully-qualified name, you can use the typeof_ expression 
 <p>The <a class="el" href="group__keywords.html#ga05d1212dca8562cec36b4ebb03dd897f" title="The self_ expression is a reference value expression whose value is the reference of the implicit obj...">self_</a> expression is a reference value expression whose value is the reference of the implicit object parameter (the object on which the non-static member function (up to C++23) implicit object member function (since C++23) is called). </p>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>#selt_ is equivalent to *this. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="group__keywords.html#ga05d1212dca8562cec36b4ebb03dd897f" title="The self_ expression is a reference value expression whose value is the reference of the implicit obj...">self_</a> is equivalent to *this. </dd></dl>
 
 </div>
 </div>
@@ -3772,7 +3822,7 @@ If you need to get the fully-qualified name, you can use the typeof_ expression 
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 12 2023 11:26:25 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Nov 13 2023 20:39:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
