@@ -55,7 +55,7 @@ const intptr thread::invalid_thread_id = native::types::invalid_handle();
 
 intptr thread::main_thread_id_ = thread::get_current_thread_id();
 
-thread& thread::current_thread() {
+thread& thread::current_thread() noexcept {
   return get_thread(get_current_thread_id());
 }
 
@@ -97,7 +97,7 @@ thread& thread::operator=(const thread& value) {
 }
 
 thread::~thread() {
-  //if (data_.use_count() == 1) close();
+  if (data_.use_count() == 1 && !is_stopped()) close();
 }
 
 intptr thread::handle() const noexcept {
@@ -405,23 +405,26 @@ bool thread::join_all(const std::vector<std::unique_ptr<thread>>& threads, const
 
 void thread::close() {
   if (is_main_thread() || is_unmanaged_thread()) return;
-  
   if (data_->joinable) join();
+  if (!is_unstarted() && !is_stopped()) native::thread::cancel(handle());
 }
 
 bool thread::do_wait(wait_handle& wait_handle, int32 milliseconds_timeout) {
   if (milliseconds_timeout < timeout::infinite) throw argument_exception {csf_};
   
   auto current_thread = thread::current_thread();
-  current_thread.data_->state |= xtd::threading::thread_state::wait_sleep_join;
-  if (current_thread.data_->interrupted) current_thread.interrupt_internal();
-  try {
-    auto result = wait_handle.wait(milliseconds_timeout);
-    current_thread.data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
-    return result;
-  } catch (...) {
-    current_thread.data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
-    throw;
+  if (current_thread.is_unmanaged_thread()) return wait_handle.wait(milliseconds_timeout);
+  else {
+    current_thread.data_->state |= xtd::threading::thread_state::wait_sleep_join;
+    if (current_thread.data_->interrupted) current_thread.interrupt_internal();
+    try {
+      auto result = wait_handle.wait(milliseconds_timeout);
+      current_thread.data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
+      return result;
+    } catch (...) {
+      current_thread.data_->state &= ~xtd::threading::thread_state::wait_sleep_join;
+      throw;
+    }
   }
 }
 
@@ -435,7 +438,7 @@ intptr thread::get_current_thread_handle() {
   return native::thread::get_current_thread_handle();
 }
 
-intptr thread::get_current_thread_id() {
+intptr thread::get_current_thread_id() noexcept {
   return native::thread::get_thread_id(get_current_thread_handle());
 }
 
@@ -445,14 +448,15 @@ thread::static_data& thread::get_static_data() {
 }
 
 thread& thread::get_thread(intptr thread_id) {
-  auto lock = std::lock_guard<std::recursive_mutex> {get_static_data().threads_mutex};
-  if (thread_id == main_thread_id_) return main_thread();
-  
-  for (auto& thread : get_static_data().threads)
-    if (thread->data_ && thread->data_->thread_id == thread_id)
-      return *thread;
-  
-  return unmanaged_thread();
+  try {
+    if (thread_id == main_thread_id_) return main_thread();
+    auto lock = std::lock_guard<std::recursive_mutex> {get_static_data().threads_mutex};
+    for (auto& thread : get_static_data().threads)
+      if (thread->data_ && thread->data_->thread_id == thread_id) return *thread;
+    return unmanaged_thread();
+  } catch(const std::system_error& e) {
+    return unmanaged_thread();
+  }
 }
 
 void thread::interrupt_internal() {

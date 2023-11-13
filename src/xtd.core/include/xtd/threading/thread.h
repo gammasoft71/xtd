@@ -103,7 +103,7 @@ namespace xtd {
       /// @{
       /// @brief Gets the currently running thread.
       /// @return A xtd::threading::thread that is the representation of the currently running thread.
-      static thread& current_thread();
+      static thread& current_thread() noexcept;
       
       /// @brief Gets the native operating system handle.
       /// @return An intptr representing the native operating system handle.
@@ -378,7 +378,7 @@ namespace xtd {
       static bool do_wait(wait_handle& wait_handle, int32 milliseconds_timeout);
       static int32 generate_managed_thread_id() noexcept;
       static intptr get_current_thread_handle();
-      static intptr get_current_thread_id();
+      static intptr get_current_thread_id() noexcept;
       static static_data& get_static_data();
       static thread& get_thread(intptr thread_id);
       void interrupt_internal();
