@@ -13,7 +13,6 @@ public:
     text("Form and thread example");
     form_closed += [&] {
       closed = true;
-      thread::join_all();
     };
     
     messages.parent(*this);
