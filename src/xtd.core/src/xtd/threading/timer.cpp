@@ -12,7 +12,7 @@ struct timer::data {
   bool closed{false};
   int32 due_time{-1};
   auto_reset_event event {true};
-  auto_reset_event sleep {true};
+  auto_reset_event sleep {false};
   int32 period {-1};
   std::any state{this};
   wait_callback timer_proc = wait_callback {[&] {
@@ -25,19 +25,19 @@ struct timer::data {
   }};
 };
 
-timer::timer(const timer_callback& callback) : timer(callback, *this, -1, -1) {
+timer::timer(const timer_callback& callback) : timer(callback, this, -1, -1) {
 }
 
-timer::timer(const timer_callback& callback, int32 due_time, int32 period) : timer(callback, *this, due_time, period) {
+timer::timer(const timer_callback& callback, int32 due_time, int32 period) : timer(callback, this, due_time, period) {
 }
 
-timer::timer(const timer_callback& callback, int64 due_time, int64 period) : timer(callback, *this, as<int32>(due_time), as<int32>(period)) {
+timer::timer(const timer_callback& callback, int64 due_time, int64 period) : timer(callback, this, as<int32>(due_time), as<int32>(period)) {
 }
 
-timer::timer(const timer_callback& callback, const time_span& due_time, const time_span& period) : timer(callback, *this, due_time.total_milliseconds_duration().count(), period.total_milliseconds_duration().count()) {
+timer::timer(const timer_callback& callback, const time_span& due_time, const time_span& period) : timer(callback, this, due_time.total_milliseconds_duration().count(), period.total_milliseconds_duration().count()) {
 }
 
-timer::timer(const timer_callback& callback, uint32 due_time, uint32 period) : timer(callback, *this, as<int32>(due_time), as<int32>(period)) {
+timer::timer(const timer_callback& callback, uint32 due_time, uint32 period) : timer(callback, this, as<int32>(due_time), as<int32>(period)) {
 }
 
 timer::timer(const timer_callback& callback, std::any state, int32 due_time, int32 period) : data_(std::make_shared<data>()) {
@@ -78,6 +78,7 @@ void timer::change(int32 due_time, int32 period) {
   data_->period = period;
   close();
   data_->closed = false;
+  data_->sleep.reset();
   thread_pool::queue_user_work_item(data_->timer_proc);
 }
 
