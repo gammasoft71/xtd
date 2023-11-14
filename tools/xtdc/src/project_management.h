@@ -225,6 +225,7 @@ namespace xtdc_command {
         else if (xtd::io::file::exists("/usr/bin/gvim")) launch_and_wait_process("gvim", path_, false, false);
         else if (xtd::io::file::exists("/usr/bin/vim")) launch_and_wait_process("vim", path_, false, false);
         else if (xtd::io::file::exists("/usr/bin/codeblocks")) launch_and_wait_process(xtd::ustring::format("{}.cbp", xtd::io::path::combine(build_path(), release ? "Release" : "Debug", get_name())), true, false);
+        else if (xtd::io::file::exists("/usr/bin/kdevelop")) launch_and_wait_process("kdevelop", path_, false, false);
         else if (xtd::io::file::exists("/usr/bin/qtcreator")) launch_and_wait_process("qtcreator", path_, false, false);
         else return xtd::ustring::format("{0}Project {1} has not been opened bacause no IDE has been found!{0}", xtd::environment::new_line(), get_name());
       }
