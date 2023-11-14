@@ -2775,9 +2775,9 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">  console::write_line(<span class="stringliteral">&quot;start&quot;</span>);</div>
 <div class="line">  <span class="keywordflow">try</span> {</div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot;try&quot;</span>);</div>
-<div class="line">    <span class="keywordflow">throw</span> <a class="code hl_class" href="classxtd_1_1system__exception.html">system_exception</a>(<span class="stringliteral">&quot;invalid operation exception&quot;</span>);</div>
+<div class="line">    <span class="keywordflow">throw</span> <a class="code hl_class" href="classxtd_1_1system__exception.html">system_exception</a>(<span class="stringliteral">&quot;invalid operation exception&quot;</span>, <a class="code hl_define" href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a>);</div>
 <div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1system__exception.html">system_exception</a>&amp; e) {</div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;catch&quot;</span>);</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;catch : {}&quot;</span>, e);</div>
 <div class="line">  } <a class="code hl_define" href="group__keywords.html#gaa1d4feda5380aa7b0daa9b38c8f2251f">finally_</a> {</div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot;finally&quot;</span>);</div>
 <div class="line">  };</div>
@@ -2788,11 +2788,12 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// start</span></div>
 <div class="line"><span class="comment">// try</span></div>
-<div class="line"><span class="comment">// catch</span></div>
+<div class="line"><span class="comment">// catch : xtd::system_exception : invalid operation exception</span></div>
+<div class="line"><span class="comment">//    at main [0x00007CAC] in /!---OMITTED---!/finally_test.cpp:line 9</span></div>
 <div class="line"><span class="comment">// stop</span></div>
 <div class="line"><span class="comment">// finally</span></div>
 <div class="ttc" id="aclassxtd_1_1system__exception_html"><div class="ttname"><a href="classxtd_1_1system__exception.html">xtd::system_exception</a></div><div class="ttdoc">Defines the base class for predefined exceptions in the xtd namespace.</div><div class="ttdef"><b>Definition</b> system_exception.h:25</div></div>
-<div class="ttc" id="agroup__keywords_html_gaa1d4feda5380aa7b0daa9b38c8f2251f"><div class="ttname"><a href="group__keywords.html#gaa1d4feda5380aa7b0daa9b38c8f2251f">finally_</a></div><div class="ttdeci">#define finally_</div><div class="ttdoc">In addition to try and catch clauses, xtd supports a finally_ clause. A finally_ block can follow a t...</div><div class="ttdef"><b>Definition</b> finally.h:64</div></div>
+<div class="ttc" id="agroup__keywords_html_gaa1d4feda5380aa7b0daa9b38c8f2251f"><div class="ttname"><a href="group__keywords.html#gaa1d4feda5380aa7b0daa9b38c8f2251f">finally_</a></div><div class="ttdeci">#define finally_</div><div class="ttdoc">In addition to try and catch clauses, xtd supports a finally_ clause. A finally_ block can follow a t...</div><div class="ttdef"><b>Definition</b> finally.h:65</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -3822,7 +3823,7 @@ If you need to get the fully-qualified name, you can use the typeof_ expression 
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 13 2023 20:39:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Nov 14 2023 09:51:37 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
