@@ -44,9 +44,9 @@ namespace xtd {
 ///   console::write_line("start");
 ///   try {
 ///     console::write_line("try");
-///     throw system_exception("invalid operation exception");
+///     throw system_exception("invalid operation exception", csf_);
 ///   } catch (const system_exception& e) {
-///     console::write_line("catch");
+///     console::write_line("catch : {}", e);
 ///   } finally_ {
 ///     console::write_line("finally");
 ///   };
@@ -57,7 +57,8 @@ namespace xtd {
 /// //
 /// // start
 /// // try
-/// // catch
+/// // catch : xtd::system_exception : invalid operation exception
+/// //    at main [0x00007CAC] in /!---OMITTED---!/finally_test.cpp:line 9
 /// // stop
 /// // finally
 /// @endcode
