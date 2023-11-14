@@ -213,11 +213,19 @@ namespace xtdc_command {
       change_current_directory current_directory {xtd::environment::os_version().is_unix_platform() ? xtd::io::path::combine(build_path(), release ? "Release" : "Debug") : build_path()};
       generate_project();
       if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Open project aborted.";
-      if (xtd::environment::os_version().is_windows_platform()) launch_and_wait_process(xtd::ustring::format("{}.sln", xtd::io::path::combine(build_path(), get_name())), true, false);
+      auto xtdc_default_ide = xtd::environment::get_environment_variable("XTDC_DEFAULT_IDE");
+      if (!xtd::ustring::is_empty(xtdc_default_ide)) {
+        if (xtdc_default_ide == "devenv") launch_and_wait_process(xtd::ustring::format("{}.sln", xtd::io::path::combine(build_path(), get_name())), true, false);
+        if (xtdc_default_ide == "codeblocks") launch_and_wait_process(xtd::ustring::format("{}.cbp", xtd::io::path::combine(build_path(), release ? "Release" : "Debug", get_name())), true, false);
+        else launch_and_wait_process(xtdc_default_ide, path_, false, false);
+      } else if (xtd::environment::os_version().is_windows_platform()) launch_and_wait_process(xtd::ustring::format("{}.sln", xtd::io::path::combine(build_path(), get_name())), true, false);
       else if (xtd::environment::os_version().is_macos_platform()) launch_and_wait_process(xtd::ustring::format("{}.xcodeproj", xtd::io::path::combine(build_path(), get_name())), true, false);
       else {
-        if (xtd::io::file::exists("/usr/bin/codeblocks")) launch_and_wait_process(xtd::ustring::format("{}.cbp", xtd::io::path::combine(build_path(), release ? "Release" : "Debug", get_name())), true, false);
-        else if (xtd::io::file::exists("/usr/bin/qtcreator")) launch_and_wait_process("qtcreator", xtd::io::path::combine(path_, "CMakeLists.txt"), false, false);
+        if (xtd::io::file::exists("/usr/bin/code")) launch_and_wait_process("code", path_, false, false);
+        else if (xtd::io::file::exists("/usr/bin/gvim")) launch_and_wait_process("gvim", path_, false, false);
+        else if (xtd::io::file::exists("/usr/bin/vim")) launch_and_wait_process("vim", path_, false, false);
+        else if (xtd::io::file::exists("/usr/bin/codeblocks")) launch_and_wait_process(xtd::ustring::format("{}.cbp", xtd::io::path::combine(build_path(), release ? "Release" : "Debug", get_name())), true, false);
+        else if (xtd::io::file::exists("/usr/bin/qtcreator")) launch_and_wait_process("qtcreator", path_, false, false);
         else return xtd::ustring::format("{0}Project {1} has not been opened bacause no IDE has been found!{0}", xtd::environment::new_line(), get_name());
       }
       return xtd::ustring::format("{0}Project {1} opened{0}", xtd::environment::new_line(), get_name());
