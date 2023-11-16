@@ -22,7 +22,7 @@ The xtd guides provide an explanation on how to use the important features of th
   * Libraries
     * [Architecture](/docs/documentation/Guides/Overview/Libraries/architecture)
     * [Hierarchy](/docs/documentation/Guides/Overview/Libraries/hierarchy)
-  * [Releases, patches, and support](/docs/documentation/Guides/Overview/release_patches_and_support)
+  * [Releases, patches, and support](/docs/documentation/Guides/Overview/releases_patches_and_support)
   * Tutorials
     * [Writing console application](/docs/documentation/Guides/Overview/Tutorials/writing_applicaion_console)
     * [Writing GUI application](/docs/documentation/Guides/Overview/Tutorials/writing_applicaion_gui)
