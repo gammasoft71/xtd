@@ -6,11 +6,11 @@
 * [Architectures](#architectures)
 * [Compilers](#compilers)
 * [Standards](#standards)
-* [Build types](#build-ypes)
+* [Build types](#build-types)
 * [xtd targets](#xtd-targets)
 * [xtd paths](#xtd-paths)
 
-First of all, the following definitions of preprocessor symbols are not defined by xtd, but are standard definitions.
+First of all, the following definitions of preprocessor symbols (with the exception of [xtd targets](#xtd-targets) and [xtd paths](#xtd-paths)) are not defined by xtd, but are standard definitions.
 Normally, you won't need to use these definitions in your programs to use xtd. 
 However, you may need to use them for specific purposes outside xtd.
 
