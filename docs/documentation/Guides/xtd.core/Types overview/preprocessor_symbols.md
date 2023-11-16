@@ -10,6 +10,10 @@
 * [xtd targets](#xtd-targets)
 * [xtd paths](#xtd-paths)
 
+First of all, the following definitions of preprocessor symbols are not defined by xtd, but are standard definitions.
+Normally, you won't need to use these definitions in your programs to use xtd. 
+However, you may need to use them for specific purposes outside xtd.
+
 ## Operating Systems
 
 The following table represents the different preprocessor symbols for the operating systems supported by xtd:
