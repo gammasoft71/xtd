@@ -43,6 +43,200 @@ int main() {
 
 As you can see, even if the `main` function is called without arguments and if `one two "three four" five` are entered on the command line, you can still retrieve them.
 
+## startup::safe_run methods
+
+xtd introduce the [xtd::startup::safe_run](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1startup.html#a9301437f9e6012fa2a487878639e7d23) methods which allows to have a main static method in any class with different parameters with or without return value.
+
+### startup::safe_run methods and exceptions
+
+Even if[xtd::startup::safe_run](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1startup.html#a9301437f9e6012fa2a487878639e7d23) method catch exceptions, it's preferable that you catch yourself exception. Indeed [startup_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c) generate a generic fallback message to the output console for a console application and a generic falbback [xtd::forms::dialog_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1exception__dialog.html) for a GUI application.
+
+Your code should look like this :
+
+```cpp
+#include <xtd/xtd>
+
+using namespace xtd;
+
+namespace examples {
+  class program {
+  public:
+    static void main() {
+      try {
+        // your code
+      } catch(const std::exception& e) {
+        // Your catch handler
+      }
+    }
+  };
+}
+
+auto main()->int {
+  return xtd::startup::safe_run(examples::program::main);
+}
+```
+
+See [try-block](https://en.cppreference.com/w/cpp/language/try_catch) for more information.
+
+### startup::safe_run methods usage
+
+* Static `main` member function without argument and without return value.
+
+```cpp
+#include <xtd/xtd>
+
+using namespace xtd;
+
+namespace examples {
+  class program {
+  public:
+    static void main() {
+      // Write arguments to the console output
+      for (auto arg : environment::get_command_line_args())
+        console::write_line(arg);
+        
+      // return 42
+      environment::exit_code(42);
+    }
+  };
+}
+
+auto main()->int {
+  return xtd::startup::safe_run(examples::program::main);
+}
+```
+
+* Static `main` member function without argument and with int return value.
+
+```cpp
+#include <xtd/xtd>
+
+using namespace xtd;
+
+namespace examples {
+  class program {
+  public:
+    static int main() {
+      // Write arguments to the console output
+      for (auto arg : environment::get_command_line_args())
+        console::write_line(arg);
+        
+      return 42;
+    }
+  };
+}
+
+auto main()->int {
+  return xtd::startup::safe_run(examples::program::main);
+}
+```
+
+* Static `main` member function with string array argument and without return value.
+
+```cpp
+#include <xtd/xtd>
+
+using namespace std;
+using namespace xtd;
+
+namespace examples {
+  class program {
+  public:
+    static void main(const vector<ustring>& args) {
+      // Write arguments to the console output
+      for (auto arg : args)
+        console::write_line(arg);
+        
+      // return 42
+      environment::exit_code(42);
+    }
+  };
+}
+
+auto main()->int {
+  return xtd::startup::safe_run(examples::program::main);
+}
+```
+
+* Static `main` member function with string array argument and with int return value.
+
+```cpp
+#include <xtd/xtd>
+
+using namespace std;
+using namespace xtd;
+
+namespace examples {
+  class program {
+  public:
+    static int main(const vector<ustring>& args) {
+      // Write arguments to the console output
+      for (auto arg : args)
+        console::write_line(arg);
+        
+      return 42;
+    }
+  };
+}
+
+auto main()->int {
+  return xtd::startup::safe_run(examples::program::main);
+}
+```
+
+* Static `main` member function with int and char*[] arguments and without return value.
+
+```cpp
+#include <xtd/xtd>
+
+using namespace std;
+using namespace xtd;
+
+namespace examples {
+  class program {
+  public:
+    static void main(int argc, char* argv[]) {
+      // Write arguments to the console output
+      for (auto arg : {argv, argv + argc})
+        console::write_line(arg);
+        
+      // return 42
+      environment::exit_code(42);
+    }
+  };
+}
+
+auto main()->int {
+  return xtd::startup::safe_run(examples::program::main);
+}
+```
+
+* Static `main` member function with int and char*[] arguments and with int return value.
+
+```cpp
+#include <xtd/xtd>
+
+using namespace std;
+using namespace xtd;
+
+namespace examples {
+  class program {
+  public:
+    static int main(int argc, char* argv[]) {
+      // Write arguments to the console output
+      for (auto arg : {argv, argv + argc})
+        console::write_line(arg);
+        
+      return 42;
+    }
+  };
+}
+
+auto main()->int {
+  return xtd::startup::safe_run(examples::program::main);
+}
+```
+
 ## startup_ keyword
 
 xtd introduces the keyword [startup_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gac9b8e6f22fb2fdc1bb915ee01aef848c) which allows to have a main static method in any class with different parameters with or without return value.
@@ -54,15 +248,9 @@ Behind this keyword there is a `main` global function that call `main` static me
 ```cpp
 #define startup_(main_class) \
   auto main(int argc, char* argv[])->int {\
-    try {\
-      return __startup__::run(main_class::main, argc, argv);\
-    } catch(const std::exception& e) {\
-      __startup_catch_exception__(e);\
-    } catch(...) {\
-      __startup_catch_exception__();\
-    }\
+    return xtd::startup::safe_run(main_method, argc, argv);\
   }\
-  auto __startup_force_to_end_with_semicolon__ = 0
+  intptr_t __opaque_sftews__ = 0
 ```
 
 ### startup_ and exceptions
@@ -89,7 +277,7 @@ namespace examples {
   };
 }
 
-startup_(examples::program);
+startup_(examples::program::main);
 ```
 
 See [try-block](https://en.cppreference.com/w/cpp/language/try_catch) for more information.
@@ -140,7 +328,7 @@ namespace examples {
   };
 }
 
-startup_(examples::program);
+startup_(examples::program::main);
 ```
 
 * Static `main` member function with string array argument and without return value.
@@ -165,7 +353,7 @@ namespace examples {
   };
 }
 
-startup_(examples::program);
+startup_(examples::program::main);
 ```
 
 * Static `main` member function with string array argument and with int return value.
@@ -188,6 +376,8 @@ namespace examples {
     }
   };
 }
+
+startup_(examples::program::main);
 ```
 
 * Static `main` member function with int and char*[] arguments and without return value.
@@ -212,7 +402,7 @@ namespace examples {
   };
 }
 
-startup_(examples::program);
+startup_(examples::program::main);
 ```
 
 * Static `main` member function with int and char*[] arguments and with int return value.
@@ -236,7 +426,7 @@ namespace examples {
   };
 }
 
-startup_(examples::program);
+startup_(examples::program::main);
 ```
 
 ## Windows main definitions
