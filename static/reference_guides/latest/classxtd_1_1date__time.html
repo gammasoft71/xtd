@@ -130,11 +130,11 @@ Time values are measured in 100-nanosecond units called ticks. A particular date
 <div class="ttc" id="aclassxtd_1_1date__time_html_a59f1715a20ea00fdd56aabe19b704f70"><div class="ttname"><a href="classxtd_1_1date__time.html#a59f1715a20ea00fdd56aabe19b704f70">xtd::date_time::today</a></div><div class="ttdeci">static date_time today() noexcept</div><div class="ttdoc">Gets the current date.</div></div>
 <div class="ttc" id="aclassxtd_1_1date__time_html_ad94505e74efe9f353836901eda9230ed"><div class="ttname"><a href="classxtd_1_1date__time.html#ad94505e74efe9f353836901eda9230ed">xtd::date_time::now</a></div><div class="ttdeci">static date_time now() noexcept</div><div class="ttdoc">Gets a xtd::date_time object that is set to the current date and time on this computer,...</div></div>
 </div><!-- fragment --></li>
-<li>By parsing the <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> representation of a date and time value. The <a class="el" href="classxtd_1_1date__time.html#a546b0f90e2a358dd2c61a44d9ac7d740" title="Converts the string representation of a date and time to its xtd::date_time equivalent by using the c...">xtd::date_time::parse</a>, xtd::date_time::parse_exact, xtd::date_time::try_parse, and xtd::date_time::try_parse_exact methods all convert a <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> to its equivalent date and time value. The following example uses the <a class="el" href="classxtd_1_1date__time.html#a546b0f90e2a358dd2c61a44d9ac7d740" title="Converts the string representation of a date and time to its xtd::date_time equivalent by using the c...">xtd::date_time::parse</a> method to parse a <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> and convert it to a <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> value. <div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> date_string = <span class="stringliteral">&quot;5/1/2008 8:30:52&quot;</span>;</div>
+<li>By parsing the <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> representation of a date and time value. The <a class="el" href="classxtd_1_1date__time.html#a546b0f90e2a358dd2c61a44d9ac7d740" title="Converts the string representation of a date and time to its xtd::date_time equivalent by using the c...">xtd::date_time::parse</a>, xtd::date_time::parse_exact, <a class="el" href="classxtd_1_1date__time.html#aed2927509532db28cee470cf231dc16d" title="Converts the specified string representation of a date and time to its xtd::date_time equivalent and ...">xtd::date_time::try_parse</a>, and xtd::date_time::try_parse_exact methods all convert a <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> to its equivalent date and time value. The following example uses the <a class="el" href="classxtd_1_1date__time.html#a546b0f90e2a358dd2c61a44d9ac7d740" title="Converts the string representation of a date and time to its xtd::date_time equivalent by using the c...">xtd::date_time::parse</a> method to parse a <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> and convert it to a <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> value. <div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> date_string = <span class="stringliteral">&quot;5/1/2008 8:30:52&quot;</span>;</div>
 <div class="line"><a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a> date1 = <a class="code hl_function" href="classxtd_1_1date__time.html#a546b0f90e2a358dd2c61a44d9ac7d740">date_time::parse</a>(date_string);</div>
 <div class="ttc" id="aclassxtd_1_1date__time_html_a546b0f90e2a358dd2c61a44d9ac7d740"><div class="ttname"><a href="classxtd_1_1date__time.html#a546b0f90e2a358dd2c61a44d9ac7d740">xtd::date_time::parse</a></div><div class="ttdeci">static date_time parse(const xtd::ustring &amp;s)</div><div class="ttdoc">Converts the string representation of a date and time to its xtd::date_time equivalent by using the c...</div></div>
 <div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:46</div></div>
-</div><!-- fragment --> Note that the xtd::date_time::try_parse and xtd::date_time::try_parse_exact methods indicate whether a particular <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> contains a valid representation of a <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> value in addition to performing the conversion.</li>
+</div><!-- fragment --> Note that the <a class="el" href="classxtd_1_1date__time.html#aed2927509532db28cee470cf231dc16d" title="Converts the specified string representation of a date and time to its xtd::date_time equivalent and ...">xtd::date_time::try_parse</a> and xtd::date_time::try_parse_exact methods indicate whether a particular <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> contains a valid representation of a <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> value in addition to performing the conversion.</li>
 <li>By calling the <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> structure's implicit default constructor. The following example illustrates a call to the <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> implicit default constructor. <div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a> dat1;</div>
 <div class="line"><span class="comment">// The following method call displays 1/01/0001 00:00:00.</span></div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(dat1.<a class="code hl_function" href="classxtd_1_1date__time.html#a58e9d766b5af37b77d5d8239a8320ab7">to_string</a>());</div>
@@ -363,8 +363,10 @@ Time values are measured in 100-nanosecond units called ticks. A particular date
 <tr class="memdesc:a6276ed849123dd222df49d7ad139dac3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serializes the current <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> object to a 64-bit binary value that subsequently can be used to recreate the <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> object.  <br /></td></tr>
 <tr class="separator:a6276ed849123dd222df49d7ad139dac3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab85147f0bd608e981eacc0c843b12d95"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga7ab879ebcae19d6021222f00537cfdce">int64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1date__time.html#ab85147f0bd608e981eacc0c843b12d95">to_file_time</a> () const</td></tr>
+<tr class="memdesc:ab85147f0bd608e981eacc0c843b12d95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the value of the current <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> object to a Windows file time.  <br /></td></tr>
 <tr class="separator:ab85147f0bd608e981eacc0c843b12d95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a516cc6f765178cad69020570fa75e736"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga7ab879ebcae19d6021222f00537cfdce">int64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1date__time.html#a516cc6f765178cad69020570fa75e736">to_file_time_utc</a> () const</td></tr>
+<tr class="memdesc:a516cc6f765178cad69020570fa75e736"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the value of the current <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> object to a Windows file time.  <br /></td></tr>
 <tr class="separator:a516cc6f765178cad69020570fa75e736"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9678ce3d1b6da7cf005a19728bfe6e2e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1date__time.html">date_time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1date__time.html#a9678ce3d1b6da7cf005a19728bfe6e2e">to_local_time</a> () const</td></tr>
 <tr class="memdesc:a9678ce3d1b6da7cf005a19728bfe6e2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the value of the current <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> object to local time.  <br /></td></tr>
@@ -439,6 +441,9 @@ Time values are measured in 100-nanosecond units called ticks. A particular date
 <tr class="memitem:a6bfef6c7aaf1f0642fa47e4b007c8640"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1date__time.html#a6bfef6c7aaf1f0642fa47e4b007c8640">sprintf</a> (const <a class="el" href="classxtd_1_1ustring.html">ustring</a> &amp;format, const <a class="el" href="classxtd_1_1date__time.html">date_time</a> &amp;value)</td></tr>
 <tr class="memdesc:a6bfef6c7aaf1f0642fa47e4b007c8640"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> that represents the current <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a>.  <br /></td></tr>
 <tr class="separator:a6bfef6c7aaf1f0642fa47e4b007c8640"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed2927509532db28cee470cf231dc16d"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1date__time.html#aed2927509532db28cee470cf231dc16d">try_parse</a> (const <a class="el" href="classxtd_1_1ustring.html">ustring</a> &amp;<a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>, <a class="el" href="classxtd_1_1date__time.html">date_time</a> &amp;result) noexcept</td></tr>
+<tr class="memdesc:aed2927509532db28cee470cf231dc16d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the specified string representation of a date and time to its <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> equivalent and returns a value that indicates whether the conversion succeeded.  <br /></td></tr>
+<tr class="separator:aed2927509532db28cee470cf231dc16d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -4243,7 +4248,8 @@ If you want to display the time of day or retrieve the string representation of 
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section remark"><dt>Remarks</dt><dd>Converts the value of the current <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> object to a Windows file time. </dd></dl>
+
+<p>Converts the value of the current <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> object to a Windows file time. </p>
 <dl class="section return"><dt>Returns</dt><dd>The value of the current <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> object expressed as a Windows file time. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
@@ -4253,7 +4259,7 @@ If you want to display the time of day or retrieve the string representation of 
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>A Windows file time is a 64-bit value that represents the number of 100-nanosecond intervals that have elapsed since 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC). Windows uses a file time to record when an application creates, accesses, or writes to a file. </dd>
 <dd>
-The <a class="el" href="classxtd_1_1date__time.html#ab85147f0bd608e981eacc0c843b12d95">xtd::date_time::to_file_time</a> method uses the <a class="el" href="classxtd_1_1date__time.html#ac49ab9e61e6b546f483de527819a840f" title="Gets a value that indicates whether the time represented by this instance is based on local time,...">xtd::date_time::kind</a> property to determine whether the current <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> object is a local time, a UTC time, or an unspecified kind of time which is treated as a local time. </dd></dl>
+The <a class="el" href="classxtd_1_1date__time.html#ab85147f0bd608e981eacc0c843b12d95" title="Converts the value of the current xtd::date_time object to a Windows file time.">xtd::date_time::to_file_time</a> method uses the <a class="el" href="classxtd_1_1date__time.html#ac49ab9e61e6b546f483de527819a840f" title="Gets a value that indicates whether the time represented by this instance is based on local time,...">xtd::date_time::kind</a> property to determine whether the current <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> object is a local time, a UTC time, or an unspecified kind of time which is treated as a local time. </dd></dl>
 
 </div>
 </div>
@@ -4271,7 +4277,8 @@ The <a class="el" href="classxtd_1_1date__time.html#ab85147f0bd608e981eacc0c843b
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section remark"><dt>Remarks</dt><dd>Converts the value of the current <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> object to a Windows file time. </dd></dl>
+
+<p>Converts the value of the current <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> object to a Windows file time. </p>
 <dl class="section return"><dt>Returns</dt><dd>The value of the current <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> object expressed as a Windows file time. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
@@ -4281,7 +4288,7 @@ The <a class="el" href="classxtd_1_1date__time.html#ab85147f0bd608e981eacc0c843b
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>A Windows file time is a 64-bit value that represents the number of 100-nanosecond intervals that have elapsed since 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC). Windows uses a file time to record when an application creates, accesses, or writes to a file. </dd>
 <dd>
-The <a class="el" href="classxtd_1_1date__time.html#a516cc6f765178cad69020570fa75e736">xtd::date_time::to_file_time_utc</a> method uses the xtd::date_time::to_file_timextd::date_time::kind property to determine whether the current <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> object is a local time, a UTC time, or an unspecified kind of time which is treated as a UTC time. If it is a local time, it converts the time to UTC before performing the conversion to a Windows file time. </dd></dl>
+The <a class="el" href="classxtd_1_1date__time.html#a516cc6f765178cad69020570fa75e736" title="Converts the value of the current xtd::date_time object to a Windows file time.">xtd::date_time::to_file_time_utc</a> method uses the xtd::date_time::to_file_timextd::date_time::kind property to determine whether the current <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> object is a local time, a UTC time, or an unspecified kind of time which is treated as a UTC time. If it is a local time, it converts the time to UTC before performing the conversion to a Windows file time. </dd></dl>
 
 </div>
 </div>
@@ -5044,6 +5051,53 @@ Because it returns the current date without the current time, the <a class="el" 
 
 </div>
 </div>
+<a id="aed2927509532db28cee470cf231dc16d" name="aed2927509532db28cee470cf231dc16d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed2927509532db28cee470cf231dc16d">&#9670;&#160;</a></span>try_parse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool xtd::date_time::try_parse </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1date__time.html">date_time</a> &amp;&#160;</td>
+          <td class="paramname"><em>result</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts the specified string representation of a date and time to its <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> equivalent and returns a value that indicates whether the conversion succeeded. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>A string containing a date and time to convert. </td></tr>
+    <tr><td class="paramname">result</td><td>When this method returns, contains the <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> value equivalent to the date and time contained in s, if the conversion succeeded, or <a class="el" href="classxtd_1_1date__time.html#a2052693f474e549778be006a9bf9ffcd" title="Represents the smallest possible value of xtd::date_time. This field is read-only.">xtd::date_time::min_value</a> if the conversion failed. The conversion fails if the s parameter is an empty string (""), or does not contain a valid string representation of a date and time. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the s parameter was converted successfully; otherwise, false. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1date__time.html#aed2927509532db28cee470cf231dc16d" title="Converts the specified string representation of a date and time to its xtd::date_time equivalent and ...">xtd::date_time::try_parse</a> method is similar to the <a class="el" href="classxtd_1_1date__time.html#a546b0f90e2a358dd2c61a44d9ac7d740" title="Converts the string representation of a date and time to its xtd::date_time equivalent by using the c...">xtd::date_time::parse</a> method, except that the <a class="el" href="classxtd_1_1date__time.html#aed2927509532db28cee470cf231dc16d" title="Converts the specified string representation of a date and time to its xtd::date_time equivalent and ...">xtd::date_time::try_parse</a> method does not throw an exception if the conversion fails. </dd></dl>
+
+</div>
+</div>
 <a id="a15f9bf48847f8d981f8c37bde44308b0" name="a15f9bf48847f8d981f8c37bde44308b0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a15f9bf48847f8d981f8c37bde44308b0">&#9670;&#160;</a></span>utc_now()</h2>
 
@@ -5273,7 +5327,7 @@ An alternative to using <a class="el" href="classxtd_1_1date__time.html#a15f9bf4
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 14 2023 09:51:37 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Nov 16 2023 22:49:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
