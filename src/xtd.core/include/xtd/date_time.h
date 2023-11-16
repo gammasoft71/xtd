@@ -882,13 +882,14 @@ namespace xtd {
     /// @remarks Use the xtd::date_time::to_binary method to convert the value of the current xtd::date_time object to a binary value. Subsequently, use the binary value and the xtd::date_time::from_binary method to recreate the original xtd::date_time object.
     int64 to_binary() const;
     
-    /// @remarks Converts the value of the current xtd::date_time object to a Windows file time.
+    /// @brief Converts the value of the current xtd::date_time object to a Windows file time.
     /// @return The value of the current xtd::date_time object expressed as a Windows file time.
     /// @exception xtd::argument_out_of_range_exception The resulting file time would represent a date and time before 12:00 midnight January 1, 1601 C.E. UTC.
     /// @remarks A Windows file time is a 64-bit value that represents the number of 100-nanosecond intervals that have elapsed since 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC). Windows uses a file time to record when an application creates, accesses, or writes to a file.
     /// @remarks The xtd::date_time::to_file_time method uses the xtd::date_time::kind property to determine whether the current xtd::date_time object is a local time, a UTC time, or an unspecified kind of time which is treated as a local time.
     int64 to_file_time() const;
-    /// @remarks Converts the value of the current xtd::date_time object to a Windows file time.
+
+    /// @brief Converts the value of the current xtd::date_time object to a Windows file time.
     /// @return The value of the current xtd::date_time object expressed as a Windows file time.
     /// @exception xtd::argument_out_of_range_exception The resulting file time would represent a date and time before 12:00 midnight January 1, 1601 C.E. UTC.
     /// @remarks A Windows file time is a 64-bit value that represents the number of 100-nanosecond intervals that have elapsed since 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC). Windows uses a file time to record when an application creates, accesses, or writes to a file.
@@ -1018,6 +1019,13 @@ namespace xtd {
     /// | xtd::date_time_kind::local       | The current xtd::date_time object is converted to UTC.                                                                                  |
     /// | xtd::date_time_kind::unspecified | The current xtd::date_time object is assumed to be a local time, and the conversion is performed as if xtd::date_time::kind were Local. |
     date_time to_universal_time() const;
+    
+    /// @brief Converts the specified string representation of a date and time to its xtd::date_time equivalent and returns a value that indicates whether the conversion succeeded.
+    /// @param s A string containing a date and time to convert.
+    /// @param result When this method returns, contains the xtd::date_time value equivalent to the date and time contained in s, if the conversion succeeded, or xtd::date_time::min_value if the conversion failed. The conversion fails if the s parameter is an empty string (""), or does not contain a valid string representation of a date and time.
+    /// @return true if the s parameter was converted successfully; otherwise, false.
+    /// @remarks The xtd::date_time::try_parse method is similar to the xtd::date_time::parse method, except that the xtd::date_time::try_parse method does not throw an exception if the conversion fails.
+    static bool try_parse(const ustring& s, date_time& result) noexcept;
     /// @}
     
     /// @cond
