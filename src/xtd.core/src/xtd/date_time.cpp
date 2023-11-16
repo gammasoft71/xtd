@@ -518,7 +518,7 @@ date_time date_time::to_universal_time() const {
 }
 
 bool date_time::try_parse(const ustring& s, date_time& result) noexcept {
-  throw not_implemented_exception(csf_);
+  return false;
 }
 
 date_time date_time::operator +=(const time_span& value) {
