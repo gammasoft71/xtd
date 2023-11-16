@@ -517,6 +517,10 @@ date_time date_time::to_universal_time() const {
   return date_time {ticks_duration() - utc_offset, date_time_kind::utc};
 }
 
+bool date_time::try_parse(const ustring& s, date_time& result) noexcept {
+  throw not_implemented_exception(csf_);
+}
+
 date_time date_time::operator +=(const time_span& value) {
   return add(value);
 }
