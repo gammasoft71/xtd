@@ -214,7 +214,7 @@ namespace xtd {
       /// @remarks The following formula defines a time zone's daylight saving time:
       /// @code
       /// time_tone_time = base_utc_offset + daylight_delta + utc_time
-      /// @encode
+      /// @endcode
       /// @remarks The value of the xtd::time_zone_info::adjustement_rule::daylight_delta property can range from 14 hours to -14 hours.
       /// @note The xtd::time_zone_info::adjustement_rule::daylight_delta property measures the difference between the time zone's standard time and its daylight saving time. It does not apply to changes in a time zone's standard offset from Coordinated Universal Time (UTC). To represent a time zone that has changed its standard time offset from UTC, you must call the CreateCustomTimeZone method to create a new time zone.
       /// @remarks The most common value of the xtd::time_zone_info::adjustement_rule::daylight_delta property is 1.0 hours. The application of the daylight saving time adjustment rule increases the time zone's offset from Coordinated Universal Time (UTC) by one hour.
