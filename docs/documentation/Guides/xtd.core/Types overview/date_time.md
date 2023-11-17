@@ -106,7 +106,7 @@ date_time date3 = date_time.today();
 ```
 ### Parsing a string that represents a date_time
 
-The [xtd::date_time::parse](#https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#a546b0f90e2a358dd2c61a44d9ac7d740), [xtd::date_time::try_parse](#https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#aed2927509532db28cee470cf231dc16d), and [xtd::date_time::try_parse_exact](#) methods all convert a string to its equivalent date and time value.
+The [xtd::date_time::parse](#https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#a546b0f90e2a358dd2c61a44d9ac7d740), and [xtd::date_time::try_parse](#https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#aed2927509532db28cee470cf231dc16d) methods all convert a string to its equivalent date and time value.
 The following examples use the [xtd::date_time::parse](##https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#a546b0f90e2a358dd2c61a44d9ac7d740) method to parse a string and convert it to a [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) value. 
 The second format uses a form supported by the ISO 8601 standard for a representing date and time in string format. This standard representation is often used to transfer date information in web services.
 
@@ -117,7 +117,6 @@ auto iso8601_string = "20080501T08:30:52Z";
 date_time date_iso8602 = date_time::parse_exact(iso8601_string, "yyyyMMddTHH:mm:ssZ", std::locale());
 ```
 The [try_parse](#) method indicates whether a string is a valid representation of a [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) value and, if it is, performs the conversion.
-
 
 ## date_time values and their string representations
 
