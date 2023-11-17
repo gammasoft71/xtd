@@ -160,6 +160,10 @@ For more information about formatting [date_time](https://gammasoft71.github.io/
 
 ## Parse date_time values from strings
 
+Parsing converts the string representation of a date and time to a [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) value. Typically, date and time strings have two different usages in applications:
+* A date and time takes a variety of forms and reflects the conventions of either the current culture or a specific culture. For example, an application allows a user whose current culture is en-US to input a date value as "12/15/2013" or "December 15, 2013". It allows a user whose current culture is en-gb to input a date value as "15/12/2013" or "15 December 2013."
+* A date and time is represented in a predefined format. For example, an application serializes a date as "20130103" independently of the culture on which the app is running. An application may require dates be input in the current culture's short date format.
+
 ## See also
 
 * [Tutorials](/docs/documentation/Guides/Overview/Tutorials)
