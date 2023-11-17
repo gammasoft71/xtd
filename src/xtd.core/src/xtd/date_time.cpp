@@ -1,5 +1,6 @@
 #include "../include/xtd/argument_out_of_range_exception.h"
 #include "../include/xtd/as.h"
+#include "../include/xtd/char_object.h"
 #include "../include/xtd/format_exception.h"
 #include "../include/xtd/invalid_operation_exception.h"
 #include "../include/xtd/date_time.h"
@@ -343,6 +344,22 @@ date_time date_time::from_tm(const tm& value) {
 
 date_time date_time::from_tm(const tm& value, date_time_kind kind) {
   return date_time(value.tm_year + 1900, value.tm_mon + 1, value.tm_mday, value.tm_hour, value.tm_min, value.tm_sec, kind);
+}
+
+vector<ustring> date_time::get_date_time_formats() const noexcept {
+  auto date_time_formats = vector<ustring> {};
+  //for (auto format : formats)
+  for (auto format = 'a'; format <= 'z'; ++format) {
+    try {
+      date_time_formats.emplace_back(self_.to_string(ustring::format("{}", format)));
+    } catch(...) {
+    }
+    try {
+      date_time_formats.emplace_back(self_.to_string(ustring::format("{}", char_object::to_upper(format))));
+    } catch(...) {
+    }
+  }
+  return date_time_formats;
 }
 
 bool date_time::is_daylight_saving_time() const noexcept {
