@@ -745,6 +745,10 @@ namespace xtd {
     /// @remarks See <a href="https://en.cppreference.com/w/c/chrono.h">std::chrono</a> for more information.
     static date_time from_tm(const std::tm& value, date_time_kind kind);
     
+    /// @brief Converts the value of this instance to all the string representations supported by the standard date and time format specifiers.
+    /// @return A string array where each element is the representation of the value of this instance formatted with one of the standard date and time format specifiers.
+    std::vector<ustring> get_date_time_formats() const noexcept;
+    
     /// @brief Indicates whether this instance of xtd::date_time is within the daylight saving time range for the current time zone.
     /// @return true if the value of the xtd::date_time::kind property is xtd::date_time_kind::local or xtd::date_time_kind::unspecified and the value of this instance ofxtd::date_time is within the daylight saving time range for the local time zone; false if xtd::date_time::kind is xtd::date_time_kind::utc.
     /// @remarks This method determines whether the current xtd::date_time value falls within the daylight saving time range of the local time zone, which is returned by the xtd::time_zone_info::local property. You can determine whether a time zone supports daylight saving time by retrieving the value of its xtd::time_zone_info::supports_daylight_saving_time property. For time zones that observe daylight saving time, you can determine when the transition to and from daylight saving time occurs by retrieving the xtd::time_zone_info::adjustment_rule array returned by the time zone's xtd::time_zone_info::get_adjustmen_rules property.
