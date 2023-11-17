@@ -117,7 +117,7 @@ date_time date1 = date_time::parse(date_string, std::locale());
 auto iso8601_string = "20080501T08:30:52Z";
 date_time date_iso8602 = date_time::parse_exact(iso8601_string, "yyyyMMddTHH:mm:ssZ", std::locale());
 ```
-The [try_parse]() method indicates whether a string is a valid representation of a [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) value and, if it is, performs the conversion.
+The [try_parse](#) method indicates whether a string is a valid representation of a [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) value and, if it is, performs the conversion.
 
 
 ## date_time values and their string representations
