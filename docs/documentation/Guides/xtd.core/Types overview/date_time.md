@@ -6,9 +6,9 @@ This article includes several examples that use the DateTime type:
 
 * Initialization Examples
   * [Invoke a constructor](#invoke-constructor)
-  * [Invoke the implicit parameterless constructor](#)
-  * [Assignment from return value](#)
-  * [Parsing a string that represents a date and time](#)
+  * [Invoke the implicit parameterless constructor](#invoke-constructor)
+  * [Assignment from return value](#assigning-a-computed-value)
+  * [Parsing a string that represents a date and time](#parsing-a-string-that-represents-a-date_time)
   * [Visual Basic syntax to initialize a date and time](#)
 * Formatting DateTime objects as strings
   * [Use the default date time format](#)
@@ -105,7 +105,7 @@ date_time date1 = date_time::now();
 date_time date2 = date_time::utc_now();
 date_time date3 = date_time.today();
 ```
-### Parsing a string that represents a DateTime
+### Parsing a string that represents a date_time
 
 The [xtd::parse\<xtd::data_time\>](#), [xtd::date_time::parse](#), [xtd::date_time::parse_exact](#), [xtd::try_parse\<xtd::date_time\>](#), [xtd::date_time::try_parse](#), and [xtd::date_time::try_parse_exact](#) methods all convert a string to its equivalent date and time value.
 The following examples use the [xtd::date_time::parse](#) and [xtd::date_time::parse_exact](#) methods to parse a string and convert it to a [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) value. 
