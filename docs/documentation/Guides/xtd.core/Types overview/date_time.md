@@ -191,7 +191,7 @@ You use the [parse](https://gammasoft71.github.io/xtd/reference_guides/latest/cl
   // Press "Run" to see the output.}
 ```
 
-## date_t_ime values
+## date_time values
 
 Descriptions of time values in the [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) type are often expressed using the Coordinated Universal Time (UTC) standard. Coordinated Universal Time is the internationally recognized name for Greenwich Mean Time (GMT). Coordinated Universal Time is the time as measured at zero degrees longitude, the UTC origin point. Daylight saving time is not applicable to UTC.
 
