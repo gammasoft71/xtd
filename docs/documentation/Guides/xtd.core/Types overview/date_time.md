@@ -132,7 +132,7 @@ console::write_line(date1.to_string());
 // For en-US culture, displays Sat Mar  1 07:00:00 2008
 ```
 
-You may need to format dates in a specific culture to support web scenarios where the server may be in a different culture from the client. You specify the culture using the `std::locale` method to create the short date and long time representation in a specific culture. The following example uses the [xtd::date_time::to_string]() method to display the date and time using the short date and long time pattern for the fr-FR culture.
+You may need to format dates in a specific culture to support web scenarios where the server may be in a different culture from the client. You specify the culture using the `std::locale` method to create the short date and long time representation in a specific culture. The following example uses the [xtd::date_time::to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#aa6565955947e9562c4c1e0f9c7e9a504) method to display the date and time using the short date and long time pattern for the fr-FR culture.
 
 ```c++
   auto date1 = date_time(2008, 3, 1, 7, 0, 0);
