@@ -152,7 +152,7 @@ try {
                       typeof_(large_value).name(), large_value,
                       typeof_(new_value).name(), new_value);
 } catch (const overflow_exception& e) {
-  console::write_line("{0} is outside the range of the Byte data type.",
+  console::write_line("{0} is outside the range of the byte data type.",
                       large_value);
 }
 
@@ -162,12 +162,12 @@ try {
                       typeof_(large_value).name(), large_value,
                       typeof_(new_value).name(), new_value);
 } catch (const overflow_exception& e) {
-  console::write_line("{0} is outside the range of the Byte data type.",
+  console::write_line("{0} is outside the range of the byte data type.",
                       large_value);
 }
 // The example displays the following output:
 //    Converted the int value 2147483647 to the unsigned char value 255.
-//    2147483647 is outside the range of the Byte data type.
+//    2147483647 is outside the range of the byte data type.
 ```
 
 ## See also
