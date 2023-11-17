@@ -390,8 +390,10 @@ Time values are measured in 100-nanosecond units called ticks. A particular date
 <tr class="memdesc:aa6565955947e9562c4c1e0f9c7e9a504"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the value of the current <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> object to its equivalent string representation using the specified format and the formatting conventions of the current culture.  <br /></td></tr>
 <tr class="separator:aa6565955947e9562c4c1e0f9c7e9a504"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37a28c97ecddc59c671fcf659ed44763"><td class="memItemLeft" align="right" valign="top">std::time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1date__time.html#a37a28c97ecddc59c671fcf659ed44763">to_time_t</a> () const</td></tr>
+<tr class="memdesc:a37a28c97ecddc59c671fcf659ed44763"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the value of the current <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> object to <a href="https://en.cppreference.com/w/cpp/chrono/c/time_t">std::time_t</a>.  <br /></td></tr>
 <tr class="separator:a37a28c97ecddc59c671fcf659ed44763"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abcb08f381981e349a9b1d4db4014e1e9"><td class="memItemLeft" align="right" valign="top">std::tm&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1date__time.html#abcb08f381981e349a9b1d4db4014e1e9">to_tm</a> () const</td></tr>
+<tr class="memdesc:abcb08f381981e349a9b1d4db4014e1e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the value of the current <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> object to <a href="https://en.cppreference.com/w/c/chrono/tm">std::tm</a>.  <br /></td></tr>
 <tr class="separator:abcb08f381981e349a9b1d4db4014e1e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60d4fa67380ada97048d0691c3143e81"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1date__time.html">date_time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1date__time.html#a60d4fa67380ada97048d0691c3143e81">to_universal_time</a> () const</td></tr>
 <tr class="memdesc:a60d4fa67380ada97048d0691c3143e81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the value of the current <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> object to Coordinated Universal Time (UTC).  <br /></td></tr>
@@ -4812,7 +4814,8 @@ The length si greater than 1. </td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section remark"><dt>Remarks</dt><dd>Converts the value of the current <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> object to <a href="https://en.cppreference.com/w/cpp/chrono/c/time_t">std::time_t</a>. </dd></dl>
+
+<p>Converts the value of the current <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> object to <a href="https://en.cppreference.com/w/cpp/chrono/c/time_t">std::time_t</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>The value of the current <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> object expressed as <a href="https://en.cppreference.com/w/cpp/chrono/c/time_t">std::time_t</a>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd><a href="https://en.cppreference.com/w/cpp/chrono/c/time_t">std::time_t</a> is almost always an integral value holding the number of seconds (not counting leap seconds) since 00:00, Jan 1 1970 UTC, corresponding to POSIX time. </dd>
 <dd>
@@ -4834,7 +4837,8 @@ See <a href="https://en.cppreference.com/w/c/chrono.h">std::chrono</a> for more 
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section remark"><dt>Remarks</dt><dd>Converts the value of the current <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> object to <a href="https://en.cppreference.com/w/c/chrono/tm">std::tm</a>. </dd></dl>
+
+<p>Converts the value of the current <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> object to <a href="https://en.cppreference.com/w/c/chrono/tm">std::tm</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>The value of the current <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> object expressed as <a href="https://en.cppreference.com/w/c/chrono/tm">std::tm</a>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd><a href="https://en.cppreference.com/w/c/chrono/tm">std::tm</a> is a structure holding a calendar date and time broken down into its components. is almost always an integral value holding the number of seconds (not counting leap seconds) since 00:00, Jan 1 1970 UTC, corresponding to POSIX time. </dd>
 <dd>
@@ -5327,7 +5331,7 @@ An alternative to using <a class="el" href="classxtd_1_1date__time.html#a15f9bf4
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 16 2023 22:49:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Nov 17 2023 03:45:13 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
