@@ -26,10 +26,10 @@ In addition to these automatic conversions, C++ and xtd provide several features
 
 * The `Implicit` operator, which defines the available widening conversions between types. For more information, see the [Implicit Conversion with the Implicit Operator](#) section.
 * The `Explicit` operator, which defines the available narrowing conversions between types. For more information, see the [Explicit Conversion with the Explicit Operator](#) section.
-* The [convert]() class, which provides a set of methods for converting types. For more information, see [The convert Class](#) section.
-* The [convert_pointer]() class, which provides a set of methods for converting pointers. For more information, see [The convert_pointer Class](#) section.
-* The [convert_string]() class, which provides a set of methods for converting strings. For more information, see [The convert_string Class](#) section.
-* The [as]() operators, which provides a set of methods for converting types, pointers or strings. For more information, see [The as Operator](#) section.
+* The [convert](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert.html) class, which provides a set of methods for converting types. For more information, see [The convert Class](#) section.
+* The [convert_pointer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert__pointer.html) class, which provides a set of methods for converting pointers. For more information, see [The convert_pointer Class](#) section.
+* The [convert_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert__string.html) class, which provides a set of methods for converting strings. For more information, see [The convert_string Class](#) section.
+* The [as](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#ga09e01287b655c20807cdb73d993ba13d) operators, which provides a set of methods for converting types, pointers or strings. For more information, see [The as Operator](#) section.
 
 ## Implicit conversion with the implicit operator
 
