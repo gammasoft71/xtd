@@ -2,8 +2,8 @@
 
 ## In this article
 
-* [Implicit conversion with the implicit operator](#)
-* [Explicit conversion with the explicit operator](#)
+* [Implicit conversion with the implicit operator](#implicit-conversion-with-the-implicit-operator)
+* [Explicit conversion with the explicit operator](#explicit-conversion-with-the-explicit-operator)
 * [The IConvertible interface](#)
 * [The Convert class](#)
 * [The TypeConverter class](#)
@@ -140,7 +140,7 @@ try {
 > **Notes**
 > The explicit [as](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#ga09e01287b655c20807cdb73d993ba13d) cast of xtd, unlike the [static_cast](https://en.cppreference.com/w/cpp/language/static_cast) of std, generates an [overflow_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1overflow__exception.html) exception in the event of overflow.
 
-The following example uses the  [as](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#ga09e01287b655c20807cdb73d993ba13d) and [static_cast](https://en.cppreference.com/w/cpp/language/static_cast) cast operators to illustrate the difference in behavior when a value outside the range of a [byte]() is converted to a [byte](). The [as](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#ga09e01287b655c20807cdb73d993ba13d) conversion throws an exception, but the [static_cast](https://en.cppreference.com/w/cpp/language/static_cast) conversion assigns [byte_object::max_value](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1box__integer.html#a21847edbb248c1b0d07a35e2a8c08232) to the [byte](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1) variable.
+The following example uses the  [as](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#ga09e01287b655c20807cdb73d993ba13d) and [static_cast](https://en.cppreference.com/w/cpp/language/static_cast) cast operators to illustrate the difference in behavior when a value outside the range of a [byte](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1) is converted to a [byte](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1). The [as](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#ga09e01287b655c20807cdb73d993ba13d) conversion throws an exception, but the [static_cast](https://en.cppreference.com/w/cpp/language/static_cast) conversion assigns [byte_object::max_value](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1box__integer.html#a21847edbb248c1b0d07a35e2a8c08232) to the [byte](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1) variable.
 
 ```cpp
 int large_value = int32_object::max_value;
