@@ -126,7 +126,7 @@ Internally, all  [date_time](https://gammasoft71.github.io/xtd/reference_guides/
 
 The appearance of date and time values is dependent on culture, international standards, application requirements, and personal preference. The  [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) structure offers flexibility in formatting date and time values through overloads of [to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#aa6565955947e9562c4c1e0f9c7e9a504). The default [xtd::date_time::to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#aa6565955947e9562c4c1e0f9c7e9a504) method returns the string representation of a date and time value using the current culture's short date and long time pattern. The following example uses the default [xtd::date_time::to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#aa6565955947e9562c4c1e0f9c7e9a504) method. It displays the date and time using the short date and long time pattern for the current culture. The en-US culture is the current culture on the computer on which the example was run.
 
-```c++
+```cpp
 auto date1 = date_time(2008, 3, 1, 7, 0, 0);
 console::write_line(date1.to_string());
 // For en-US culture, displays Sat Mar  1 07:00:00 2008
@@ -134,7 +134,7 @@ console::write_line(date1.to_string());
 
 You may need to format dates in a specific culture to support web scenarios where the server may be in a different culture from the client. You specify the culture using the `std::locale` method to create the short date and long time representation in a specific culture. The following example uses the [xtd::date_time::to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#aa6565955947e9562c4c1e0f9c7e9a504) method to display the date and time using the short date and long time pattern for the fr-FR culture.
 
-```c++
+```cpp
   auto date1 = date_time(2008, 3, 1, 7, 0, 0);
   std::locale::global(std::locale("fr_FR.utf-8"));
   console::write_line(date1.to_string());
