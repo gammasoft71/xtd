@@ -5,7 +5,7 @@
 This article includes several examples that use the DateTime type:
 
 * Initialization Examples
-  * [Invoke a constructor](#invoke-a-constructor)
+  * [Invoke a constructor](#invoke-constructor)
   * [Invoke the implicit parameterless constructor](#)
   * [Assignment from return value](#)
   * [Parsing a string that represents a date and time](#)
@@ -74,7 +74,7 @@ You can assign an initial value to a new `date_time` value in many different way
 
 The following code snippets show examples of each:
 
-### Invoke Constructors
+### Invoke constructors
 
 You call any of the overloads of the [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) constructor that specify elements of the date and time value (such as the year, month, and day, or the number of ticks). 
 The following code creates a specific date using the DateTime constructor specifying the year, month, day, hour, minute, and second.
