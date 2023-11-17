@@ -54,7 +54,7 @@ This section contains topics for many common uses of the date_time struct:
 
 The [xtd::date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) value type represents dates and times with values ranging from 00:00:00 (midnight), January 1, 0001 Anno Domini (Common Era) through 11:59:59 P.M., December 31, 9999 A.D. (C.E.) in the Gregorian calendar.
 
-Time values are measured in 100-nanosecond units called [ticks](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#ga8fd3ccd5f25e401dc28a28ba352aa966). A particular date is the number of ticks since 12:00 midnight, January 1, 0001 A.D. (C.E.) in the GregorianCalendar calendar. 
+Time values are measured in 100-nanosecond units called [ticks](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gaf6b556b49d28b448fc2c5af1d820f3ea). A particular date is the number of ticks since 12:00 midnight, January 1, 0001 A.D. (C.E.) in the GregorianCalendar calendar. 
 The number excludes ticks that would be added by leap seconds. For example, a ticks value of 31241376000000000L represents the date Friday, January 01, 0100 12:00:00 midnight. A [xtd::date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) value is always expressed in the context of an explicit or default calendar.
 
 ## Note
