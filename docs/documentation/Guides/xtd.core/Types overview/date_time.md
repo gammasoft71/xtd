@@ -139,6 +139,27 @@ console::write_line(date1.to_string());
 // Displays Sam  1 mar 07:00:00 2008
 ```
 
+Other applications may require different string representations of a date. The [date_time::to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#aa6565955947e9562c4c1e0f9c7e9a504) method returns the string representation defined by a standard or custom format specifier using the formatting conventions of the current culture. The following example uses the [date_rime::to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#aa6565955947e9562c4c1e0f9c7e9a504) method to display the full date and time pattern for the en-US culture, the current culture on the computer on which the example was run.
+
+```cpp
+auto date1 = date_time(2008, 3, 1, 7, 0, 0);
+console::write_line(date1.to_string("F"));
+// Displays Sat Mar  1 07:00:00 2008
+```
+
+Finally, you can specify both the culture and the format using the `std::locale` method. The following example uses the [date_rime::to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#aa6565955947e9562c4c1e0f9c7e9a504) method to display the full date and time pattern for the fr-FR culture.
+
+```cpp
+auto date1 = date_time(2008, 3, 1, 7, 0, 0);
+std::locale::global(std::locale("fr_FR.utf-8"));
+console::write_line(date1.to_string("F"));
+// Displays Sam  1 mar 07:00:00 2008
+```
+
+For more information about formatting [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) values, see [Standard Date and Time Format Strings](/docs/documentation/Guides/xtd.core/Format%20number%20dates%20other%20types/standard_date_and_time_format_strings) and [Custom Date and Time Format Strings](/docs/documentation/Guides/xtd.core/Format%20number%20dates%20other%20types/custom_date_and_time_format_strings).
+
+## Parse date_time values from strings
+
 ## See also
 
 * [Tutorials](/docs/documentation/Guides/Overview/Tutorials)
