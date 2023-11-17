@@ -2,24 +2,24 @@
 
 ## In This Section
 
-This article includes several examples that use the DateTime type:
+This article includes several examples that use the date_time type:
 
 * Initialization Examples
   * [Invoke a constructor](#invoke-constructor)
   * [Invoke the implicit parameterless constructor](#invoke-constructor)
   * [Assignment from return value](#assigning-a-computed-value)
   * [Parsing a string that represents a date and time](#parsing-a-string-that-represents-a-date_time)
-* Formatting DateTime objects as strings
+* Formatting date_time objects as strings
   * [Use the default date time format](#date_time-values-and-their-string-representations)
   * [Format a date and time using a specific culture](##date_time-values-and-their-string-representations)
-  * [Format a date time using a standard or custom format string](#)
-  * [Specify both a format string and a specific culture](#)
-  * [Format a date time using the ISO 8601 standard for web services](#)
-* Parsing strings as DateTime objects
+  * [Format a date time using a standard or custom format string](##date_time-values-and-their-string-representation)
+  * [Specify both a format string and a specific culture](##date_time-values-and-their-string-representation)
+  * [Format a date time using the ISO 8601 standard for web services](#date_time-values-and-their-string-representation)
+* Parsing strings as date_time objects
   * [Use Parse or TryParse to convert a string to a date and time](#)
   * [Use ParseExact or TryParseExact to convert a string in a known format](#)
   * [Convert from the ISO 8601 string representation to a date and time](#)
-* DateTime resolution
+* date_time resolution
   * [Explore the resolution of date and time values](#)
   * [Comparing for equality within a tolerance](#)
   * [Culture and calendars](#)
@@ -38,17 +38,17 @@ This article includes several examples that use the DateTime type:
 
 ## Quick links to Remarks topics.
 
-This section contains topics for many common uses of the DateTime struct:
+This section contains topics for many common uses of the date_time struct:
 
 * [Initializing a date_time object](#initializing-a-date-time-object)
-* [DateTime values and their string representations](#)
-* [Parsing DateTime values from strings](#)
-* [DateTime values](#)
-* [DateTime operations](#)
-* [DateTime resolution](#)
-* [DateTime values and calendars](#)
-* [Persisting DateTime values](#)
-* [DateTime vs. TimeSpan](#)
+* [date_time values and their string representations](#)
+* [Parsing date_time values from strings](#)
+* [date_time values](#)
+* [date_time operations](#)
+* [date_time resolution](#)
+* [date_time values and calendars](#)
+* [Persisting date_time values](#)
+* [date_time vs. TimeSpan](#)
 * [Comparing for equality within tolerance](#)
 * [COM interop considerations](#)
 
@@ -76,7 +76,7 @@ The following code snippets show examples of each:
 ### Invoke constructors
 
 You call any of the overloads of the [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) constructor that specify elements of the date and time value (such as the year, month, and day, or the number of ticks). 
-The following code creates a specific date using the DateTime constructor specifying the year, month, day, hour, minute, and second.
+The following code creates a specific date using the date_time constructor specifying the year, month, day, hour, minute, and second.
 
 ```cpp
 auto date1 = date_time(2008, 5, 1, 8, 30, 52);
