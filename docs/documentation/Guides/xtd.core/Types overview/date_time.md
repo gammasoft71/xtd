@@ -16,41 +16,26 @@ This article includes several examples that use the date_time type:
   * [Specify both a format string and a specific culture](##date_time-values-and-their-string-representations)
   * [Format a date time using the ISO 8601 standard for web services](#date_time-values-and-their-string-representations)
 * Parsing strings as date_time objects
-  * [Use Parse or TryParse to convert a string to a date and time](#)
-  * [Use ParseExact or TryParseExact to convert a string in a known format](#)
-  * [Convert from the ISO 8601 string representation to a date and time](#)
+  * [Use Parse or TryParse to convert a string to a date and time](#parse-date_time-values-from-strings)
+  * [Use ParseExact or TryParseExact to convert a string in a known format](#parse-date_time-values-from-strings)
+  * [Convert from the ISO 8601 string representation to a date and time](#parse-date_time-values-from-strings)
 * date_time resolution
-  * [Explore the resolution of date and time values](#)
-  * [Comparing for equality within a tolerance](#)
-  * [Culture and calendars](#)
-  * [Display date and time values using culture specific calendars](#)
-  * [Parse strings according to a culture specific calendar](#)
-  * [Initialize a date and time from a specific culture's calendar](#)
-  * [Accessing date and time properties using a specific culture's calendar](#)
-  * [Retrieving the week of the year using culture specific calendars](#)
-* Persistence
-  * [Persisting date and time values as strings in the local time zone](#)
-  * [Persisting date and time values as strings in a culture and time invariant format](#)
-  * [Persisting date and time values as integers](#)
-  * [Persisting date and time values using the XmlSerializer](#)
-  * [Persisting date and time values using the BinaryFormatter](#)
-  * [Persisting date and time values with time zone data](#)
+  * [Explore the resolution of date and time values](#date_time values)
+  * [Comparing for equality within a tolerance](#compare-for-equality-within-tolerance)
 
 ## Quick links to Remarks topics.
 
 This section contains topics for many common uses of the date_time struct:
 
 * [Initializing a date_time object](#initializing-a-date-time-object)
-* [date_time values and their string representations](#)
-* [Parsing date_time values from strings](#)
-* [date_time values](#)
-* [date_time operations](#)
-* [date_time resolution](#)
-* [date_time values and calendars](#)
-* [Persisting date_time values](#)
-* [date_time vs. TimeSpan](#)
-* [Comparing for equality within tolerance](#)
-* [COM interop considerations](#)
+* [date_time values and their string representations](#date_time-values-and-their-string-representations)
+* [Parsing date_time values from strings](#parse-date_time-values-from-strings)
+* [date_time values](#date_time-values)
+* [date_time operations](#date_time-operations)
+* [date_time resolution](#date_time-resolution)
+* [Persisting date_time values](#Persisting-date_time-values)
+* [date_time vs. time_span](#date_time-vs-time_span)
+* [Comparing for equality within tolerance](#comparing-for-equality-within-tolerance)
 
 The [xtd::date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) value type represents dates and times with values ranging from 00:00:00 (midnight), January 1, 0001 Anno Domini (Common Era) through 11:59:59 P.M., December 31, 9999 A.D. (C.E.) in the Gregorian calendar.
 
@@ -200,6 +185,76 @@ Local time is relative to a particular time zone. A time zone is associated with
 UTC time is suitable for calculations, comparisons, and storing dates and time in files. Local time is appropriate for display in user interfaces of desktop applications. Time zone-aware applications (such as many Web applications) also need to work with a number of other time zones.
 
 If the [kind](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#ac49ab9e61e6b546f483de527819a840f) property of a [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) object is [date_time_kind::unspecified](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#ga03b78d9831d31a0a2ea100078219f2ea), it is unspecified whether the time represented is local time, UTC time, or a time in some other time zone.
+
+## date_time operations
+
+A calculation using a [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) structure, such as [add](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#a6f0a5355543e1aed529a2a78bf6c630b) or [subtract](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#aaf1f38f9b51733e38b5db3b5dfde6bb6), does not modify the value of the structure. Instead, the calculation returns a new [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) structure whose value is the result of the calculation.
+Conversion operations between time zones (such as between UTC and local time, or between one time zone and another) take daylight saving time into account, but arithmetic and comparison operations do not.
+
+The [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) structure itself offers limited support for converting from one time zone to another. You can use the [to_local_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#a9678ce3d1b6da7cf005a19728bfe6e2e) method to convert UTC to local time, or you can use the [to_universal_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#a60d4fa67380ada97048d0691c3143e81) method to convert from local time to UTC. However, a full set of time zone conversion methods is available in the [time_zone_info](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1time__zone__info.html) class. You convert the time in any one of the world's time zones to the time in any other time zone using these methods.
+
+Calculations and comparisons of [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) objects are meaningful only if the objects represent times in the same time zone. You can use a [time_zone_info](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1time__zone__info.html) object to represent a [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) value's time zone, although the two are loosely coupled. A [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) object does not have a property that returns an object that represents that date and time value's time zone. The [kind](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#ac49ab9e61e6b546f483de527819a840f) property indicates if a [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) represents UTC, local time, or is unspecified. In a time zone-aware application, you must rely on some external mechanism to determine the time zone in which a [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) object was created. You could use a structure that wraps both the [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) value and the [time_zone_info](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1time__zone__info.html) object that represents the [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) value's time zone. For details on using UTC in calculations and comparisons with [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) values, see Performing Arithmetic Operations with Dates and Times.
+
+Each [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) member implicitly uses the Gregorian calendar to perform its operation. Exceptions are methods that implicitly specify a calendar. 
+
+Operations by members of the [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) type take into account details such as leap years and the number of days in a month.
+
+## date_time vs. time_span
+
+The [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) and [time_span](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1time__span.html) value types differ in that a [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) represents an instant in time whereas a [time_span](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1time__span.html) represents a time interval. You can subtract one instance of [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) from another to obtain a [time_span](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1time__span.html) object that represents the time interval between them. Or you could add a positive [time_span](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1time__span.html) to the current [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) to obtain a [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) value that represents a future date.
+You can add or subtract a time interval from a [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) object. Time intervals can be negative or positive, and they can be expressed in units such as ticks, seconds, or as a [time_span](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1time__span.html) object.
+
+## Compare for equality within tolerance
+
+Equality comparisons for [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) values are exact. That means two values must be expressed as the same number of ticks to be considered equal. That precision is often unnecessary or even incorrect for many applications. Often, you want to test if [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) objects are roughly equal.
+The following example demonstrates how to compare roughly equivalent [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) values. It accepts a small margin of difference when declaring them equal.
+
+```cpp
+static bool roughly_equals(const date_time& time, const date_time& time_with_window, int window_in_seconds, int frequency_in_seconds) {
+  auto delta = convert::to_int32((time_with_window - time).total_seconds_duration().count()) % frequency_in_seconds;
+  delta = delta > window_in_seconds ? frequency_in_seconds - delta : delta;
+  return math::abs(delta) < window_in_seconds;
+}
+
+static void test_roughly_equals() {
+  auto window = 10;
+  auto freq = 60 * 60 * 2; // 2 hours;
+  
+  auto d1 = date_time::now();
+  
+  auto d2 = d1.add_seconds(2 * window);
+  auto d3 = d1.add_seconds(-2 * window);
+  auto d4 = d1.add_seconds(window / 2);
+  auto d5 = d1.add_seconds(-window / 2);
+  
+  auto d6 = (d1.add_hours(2)).add_seconds(2 * window);
+  auto d7 = (d1.add_hours(2)).add_seconds(-2 * window);
+  auto d8 = (d1.add_hours(2)).add_seconds(window / 2);
+  auto d9 = (d1.add_hours(2)).add_seconds(-window / 2);
+  
+  console::write_line("d1 ({0}) ~= d1 ({1}): {2}", d1, d1, roughly_equals(d1, d1, window, freq));
+  console::write_line("d1 ({0}) ~= d2 ({1}): {2}", d1, d2, roughly_equals(d1, d2, window, freq));
+  console::write_line("d1 ({0}) ~= d3 ({1}): {2}", d1, d3, roughly_equals(d1, d3, window, freq));
+  console::write_line("d1 ({0}) ~= d4 ({1}): {2}", d1, d4, roughly_equals(d1, d4, window, freq));
+  console::write_line("d1 ({0}) ~= d5 ({1}): {2}", d1, d5, roughly_equals(d1, d5, window, freq));
+  
+  console::write_line("d1 ({0}) ~= d6 ({1}): {2}", d1, d6, roughly_equals(d1, d6, window, freq));
+  console::write_line("d1 ({0}) ~= d7 ({1}): {2}", d1, d7, roughly_equals(d1, d7, window, freq));
+  console::write_line("d1 ({0}) ~= d8 ({1}): {2}", d1, d8, roughly_equals(d1, d8, window, freq));
+  console::write_line("d1 ({0}) ~= d9 ({1}): {2}", d1, d9, roughly_equals(d1, d9, window, freq));
+}
+
+// The example displays output similar to the following:
+// d1 (Thu Dec 30 16:18:10 2021) ~= d1 (Thu Dec 30 16:18:10 2021): true
+// d1 (Thu Dec 30 16:18:10 2021) ~= d2 (Thu Dec 30 16:18:30 2021): false
+// d1 (Thu Dec 30 16:18:10 2021) ~= d3 (Thu Dec 30 16:17:50 2021): false
+// d1 (Thu Dec 30 16:18:10 2021) ~= d4 (Thu Dec 30 16:18:15 2021): true
+// d1 (Thu Dec 30 16:18:10 2021) ~= d5 (Thu Dec 30 16:18:05 2021): true
+// d1 (Thu Dec 30 16:18:10 2021) ~= d6 (Thu Dec 30 18:18:30 2021): false
+// d1 (Thu Dec 30 16:18:10 2021) ~= d7 (Thu Dec 30 18:17:50 2021): false
+// d1 (Thu Dec 30 16:18:10 2021) ~= d8 (Thu Dec 30 18:18:15 2021): true
+// d1 (Thu Dec 30 16:18:10 2021) ~= d9 (Thu Dec 30 18:18:05 2021): true
+```
 
 ## See also
 
