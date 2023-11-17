@@ -72,6 +72,7 @@ namespace xtd {
   /// // The following method call displays true.
   /// console::write_line(dat1.equals(date_time::min_value));
   /// @endcode
+  /// @remarks For more information about xtd::date_time, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/date_time">Date and time</a>.
   /// @par Examples
   /// The following example demonstrates how to compare roughly equivalent xtd::date_time values, accepting a small margin of difference when declaring them equal.
   /// @include date_time.cpp
