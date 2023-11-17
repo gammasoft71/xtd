@@ -994,13 +994,13 @@ namespace xtd {
     /// | 'Z'    | writes time zone "local" or "UTC".                                                                                          |
     xtd::ustring to_string(const ustring& format) const;
     
-    /// @remarks Converts the value of the current xtd::date_time object to <a href="https://en.cppreference.com/w/cpp/chrono/c/time_t">std::time_t</a>.
+    /// @brief Converts the value of the current xtd::date_time object to <a href="https://en.cppreference.com/w/cpp/chrono/c/time_t">std::time_t</a>.
     /// @return The value of the current xtd::date_time object expressed as <a href="https://en.cppreference.com/w/cpp/chrono/c/time_t">std::time_t</a>.
     /// @remarks <a href="https://en.cppreference.com/w/cpp/chrono/c/time_t">std::time_t</a> is almost always an integral value holding the number of seconds (not counting leap seconds) since 00:00, Jan 1 1970 UTC, corresponding to POSIX time.
     /// @remarks See <a href="https://en.cppreference.com/w/c/chrono.h">std::chrono</a> for more information.
     std::time_t to_time_t() const;
     
-    /// @remarks Converts the value of the current xtd::date_time object to <a href="https://en.cppreference.com/w/c/chrono/tm">std::tm</a>.
+    /// @brief Converts the value of the current xtd::date_time object to <a href="https://en.cppreference.com/w/c/chrono/tm">std::tm</a>.
     /// @return The value of the current xtd::date_time object expressed as <a href="https://en.cppreference.com/w/c/chrono/tm">std::tm</a>.
     /// @remarks <a href="https://en.cppreference.com/w/c/chrono/tm">std::tm</a> is a structure holding a calendar date and time broken down into its components. is almost always an integral value holding the number of seconds (not counting leap seconds) since 00:00, Jan 1 1970 UTC, corresponding to POSIX time.
     /// @remarks See <a href="https://en.cppreference.com/w/c/chrono.h">std::chrono</a> for more information.
