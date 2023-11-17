@@ -76,6 +76,99 @@ console::write_line("After assigning a {} value, the decimal value is {}.",
 //    After assigning a unsigned long value, the decimal value is 1.84467440737096E+19.
 ```
 
+## Explicit conversion with the explicit operator
+
+Narrowing conversions involve the creation of a new value from the value of an existing type that has either a greater range or a larger member list than the target type. Because a narrowing conversion can result in a loss of data, compilers often require that the conversion be made explicit through a call to a conversion method or a casting operator. That is, the conversion must be handled explicitly in developer code.
+
+> **Notes**
+> The major purpose of requiring a conversion method or casting operator for narrowing conversions is to make the developer aware of the possibility of data loss or an OverflowException so that it can be handled in code. However, some compilers can relax this requirement.
+
+For example, the [uint32](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gae7af83eab478757e17f0eb7af57571df), [int64](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#ga7ab879ebcae19d6021222f00537cfdce), and [uint64](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gae1d338ada567eb17107e17cbffea5320) data types have ranges that exceed that the [int32](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91) data type, as the following table shows.
+
+| Type                                                                                                                     |	Comparison with range of int32                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [int64](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#ga7ab879ebcae19d6021222f00537cfdce)  | [int64_object::max_value](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1box__integer.html#a21847edbb248c1b0d07a35e2a8c08232) is greater than [int32_object::max_value](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1box__integer.html#a21847edbb248c1b0d07a35e2a8c08232), and [int64_object::min_value](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1box__integer.html#abacf9950b09d5d214dcfa6205559785d) is less than (has a greater negative range than) [int32_object::min_value](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1box__integer.html#abacf9950b09d5d214dcfa6205559785d). |
+| [uint32](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gae7af83eab478757e17f0eb7af57571df) | [uint32_object::max_value](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1box__integer.html#a21847edbb248c1b0d07a35e2a8c08232) is greater than [int32_object::max_value](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1box__integer.html#a21847edbb248c1b0d07a35e2a8c08232).                                                                                                                                                                                                                                                                                                                                                                |
+| [uint64](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gae1d338ada567eb17107e17cbffea5320) | [uint64_object::max_value](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1box__integer.html#a21847edbb248c1b0d07a35e2a8c08232) is greater than [int32_object::max_value](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1box__integer.html#a21847edbb248c1b0d07a35e2a8c08232).                                                                                                                                                                                                                                                                                                                                                                |
+
+To handle these restrictive conversions, xtd allows types to define an explicit operator. A member of the [convert](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert.html) class can be called to perform the conversion. (For more information on the [convert](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert.html) class, see [The Convert class](#) later in this section). The following example illustrates the use of language features to manage the explicit conversion of these potentially out-of-range integer values into [int32](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91) values.
+
+```cpp
+long number1 = int32_object::max_value + 20L;
+uint number2 = int32_object::max_value - 1000;
+ulong number3 = int32_object::max_value;
+
+int int_number;
+
+try {
+  int_number = as<int>(number1);
+  console::write_line("After assigning a {0} value, the Integer value is {1}.",
+                      typeof_(number1).name(), int_number);
+} catch (const overflow_exception& e) {
+  if (number1 > int32_object::max_value)
+    console::write_line("Conversion failed: {0} exceeds {1}.",
+                        number1, int32_object::max_value);
+  else
+    console::write_line("Conversion failed: {0} is less than {1}.",
+                        number1, int32_object::min_value);
+}
+
+try {
+  int_number = as<int>(number2);
+  console::write_line("After assigning a {0} value, the Integer value is {1}.",
+                      typeof_(number2).name(), int_number);
+} catch (const overflow_exception& e) {
+  console::write_line("Conversion failed: {0} exceeds {1}.",
+                      number2, int32_object::max_value);
+}
+
+try {
+  int_number = as<int>(number3);
+  console::write_line("After assigning a {0} value, the Integer value is {1}.",
+                      typeof_(number3).name(), int_number);
+} catch (const overflow_exception& e) {
+  console::write_line("Conversion failed: {0} exceeds {1}.",
+                      number1, int32_object::max_value);
+}
+
+// The example displays the following output:
+//    Conversion failed: 2147483667 exceeds 2147483647.
+//    After assigning a unsigned int value, the Integer value is 2147482647.
+//    After assigning a unsigned long value, the Integer value is 2147483647.
+```
+
+> **Notes**
+> The explicit [as](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#ga09e01287b655c20807cdb73d993ba13d) cast of xtd, unlike the [static_cast](https://en.cppreference.com/w/cpp/language/static_cast) of std, generates an [overflow_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1overflow__exception.html) exception in the event of overflow.
+
+The following example uses the  [as](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#ga09e01287b655c20807cdb73d993ba13d) and [static_cast](https://en.cppreference.com/w/cpp/language/static_cast) cast operators to illustrate the difference in behavior when a value outside the range of a [byte]() is converted to a [byte](). The [as](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#ga09e01287b655c20807cdb73d993ba13d) conversion throws an exception, but the [static_cast](https://en.cppreference.com/w/cpp/language/static_cast) conversion assigns [byte_object::max_value](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1box__integer.html#a21847edbb248c1b0d07a35e2a8c08232) to the [byte](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1) variable.
+
+```cpp
+int large_value = int32_object::max_value;
+byte new_value;
+
+try {
+  new_value = static_cast<byte>(large_value);
+  console::write_line("Converted the {0} value {1} to the {2} value {3}.",
+                      typeof_(large_value).name(), large_value,
+                      typeof_(new_value).name(), new_value);
+} catch (const overflow_exception& e) {
+  console::write_line("{0} is outside the range of the Byte data type.",
+                      large_value);
+}
+
+try {
+  new_value = as<byte>(large_value);
+  console::write_line("Converted the {0} value {1} to the {2} value {3}.",
+                      typeof_(large_value).name(), large_value,
+                      typeof_(new_value).name(), new_value);
+} catch (const overflow_exception& e) {
+  console::write_line("{0} is outside the range of the Byte data type.",
+                      large_value);
+}
+// The example displays the following output:
+//    Converted the int value 2147483647 to the unsigned char value 255.
+//    2147483647 is outside the range of the Byte data type.
+```
 
 ## See also
 
