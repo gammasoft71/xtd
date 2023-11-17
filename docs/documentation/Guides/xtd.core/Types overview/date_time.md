@@ -12,9 +12,9 @@ This article includes several examples that use the date_time type:
 * Formatting date_time objects as strings
   * [Use the default date time format](#date_time-values-and-their-string-representations)
   * [Format a date and time using a specific culture](##date_time-values-and-their-string-representations)
-  * [Format a date time using a standard or custom format string](##date_time-values-and-their-string-representation)
-  * [Specify both a format string and a specific culture](##date_time-values-and-their-string-representation)
-  * [Format a date time using the ISO 8601 standard for web services](#date_time-values-and-their-string-representation)
+  * [Format a date time using a standard or custom format string](##date_time-values-and-their-string-representations)
+  * [Specify both a format string and a specific culture](##date_time-values-and-their-string-representations)
+  * [Format a date time using the ISO 8601 standard for web services](#date_time-values-and-their-string-representations)
 * Parsing strings as date_time objects
   * [Use Parse or TryParse to convert a string to a date and time](#)
   * [Use ParseExact or TryParseExact to convert a string in a known format](#)
