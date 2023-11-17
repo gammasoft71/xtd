@@ -9,10 +9,9 @@ This article includes several examples that use the DateTime type:
   * [Invoke the implicit parameterless constructor](#invoke-constructor)
   * [Assignment from return value](#assigning-a-computed-value)
   * [Parsing a string that represents a date and time](#parsing-a-string-that-represents-a-date_time)
-  * [Visual Basic syntax to initialize a date and time](#)
 * Formatting DateTime objects as strings
-  * [Use the default date time format](#)
-  * [Format a date and time using a specific culture](#)
+  * [Use the default date time format](#date_time-values-and-their-string-representations)
+  * [Format a date and time using a specific culture](##date_time-values-and-their-string-representations)
   * [Format a date time using a standard or custom format string](#)
   * [Specify both a format string and a specific culture](#)
   * [Format a date time using the ISO 8601 standard for web services](#)
