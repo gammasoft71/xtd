@@ -80,7 +80,7 @@ You call any of the overloads of the [date_time](https://gammasoft71.github.io/x
 The following code creates a specific date using the date_time constructor specifying the year, month, day, hour, minute, and second.
 
 ```cpp
-auto date1 = date_time(2008, 5, 1, 8, 30, 52);
+auto date1 = date_time {2008, 5, 1, 8, 30, 52};
 console::write_line(date1);
 ```
 
@@ -88,7 +88,7 @@ You invoke the `date_time` structure's implicit parameterless constructor when y
 The following example illustrates the [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) implicit parameterless constructor.
 
 ```cpp
-auto dat1 = date_time();
+auto dat1 = date_time {};
 // The following method call displays 1/1/0001 12:00:00 AM.
 console::write_line(dat1.to_string());
 // The following method call displays true.
@@ -126,7 +126,7 @@ Internally, all  [date_time](https://gammasoft71.github.io/xtd/reference_guides/
 The appearance of date and time values is dependent on culture, international standards, application requirements, and personal preference. The  [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) structure offers flexibility in formatting date and time values through overloads of [to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#aa6565955947e9562c4c1e0f9c7e9a504). The default [xtd::date_time::to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#aa6565955947e9562c4c1e0f9c7e9a504) method returns the string representation of a date and time value using the current culture's short date and long time pattern. The following example uses the default [xtd::date_time::to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#aa6565955947e9562c4c1e0f9c7e9a504) method. It displays the date and time using the short date and long time pattern for the current culture. The en-US culture is the current culture on the computer on which the example was run.
 
 ```cpp
-auto date1 = date_time(2008, 3, 1, 7, 0, 0);
+auto date1 = date_time {2008, 3, 1, 7, 0, 0};
 console::write_line(date1.to_string());
 // For en-US culture, displays Sat Mar  1 07:00:00 2008
 ```
@@ -134,7 +134,7 @@ console::write_line(date1.to_string());
 You may need to format dates in a specific culture to support web scenarios where the server may be in a different culture from the client. You specify the culture using the `std::locale` method to create the short date and long time representation in a specific culture. The following example uses the [xtd::date_time::to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#aa6565955947e9562c4c1e0f9c7e9a504) method to display the date and time using the short date and long time pattern for the fr-FR culture.
 
 ```cpp
-auto date1 = date_time(2008, 3, 1, 7, 0, 0);
+auto date1 = date_time {2008, 3, 1, 7, 0, 0};
 std::locale::global(std::locale("fr_FR.utf-8"));
 console::write_line(date1.to_string());
 // Displays Sam  1 mar 07:00:00 2008
@@ -143,7 +143,7 @@ console::write_line(date1.to_string());
 Other applications may require different string representations of a date. The [date_time::to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#aa6565955947e9562c4c1e0f9c7e9a504) method returns the string representation defined by a standard or custom format specifier using the formatting conventions of the current culture. The following example uses the [date_rime::to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#aa6565955947e9562c4c1e0f9c7e9a504) method to display the full date and time pattern for the en-US culture, the current culture on the computer on which the example was run.
 
 ```cpp
-auto date1 = date_time(2008, 3, 1, 7, 0, 0);
+auto date1 = date_time {2008, 3, 1, 7, 0, 0};
 console::write_line(date1.to_string("F"));
 // Displays Sat Mar  1 07:00:00 2008
 ```
@@ -151,7 +151,7 @@ console::write_line(date1.to_string("F"));
 Finally, you can specify both the culture and the format using the `std::locale` method. The following example uses the [date_rime::to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#aa6565955947e9562c4c1e0f9c7e9a504) method to display the full date and time pattern for the fr-FR culture.
 
 ```cpp
-auto date1 = date_time(2008, 3, 1, 7, 0, 0);
+auto date1 = date_time {2008, 3, 1, 7, 0, 0};
 std::locale::global(std::locale("fr_FR.utf-8"));
 console::write_line(date1.to_string("F"));
 // Displays Sam  1 mar 07:00:00 2008
@@ -167,6 +167,39 @@ Parsing converts the string representation of a date and time to a [date_time](h
 
 You use the [parse](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#a546b0f90e2a358dd2c61a44d9ac7d740) or [try_parse](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#aed2927509532db28cee470cf231dc16d) method to convert a string from one of the common date and time formats used by a culture to a [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) value. The following example shows how you can use  [try_parse](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#aed2927509532db28cee470cf231dc16d) to convert date strings in different culture-specific formats to a [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) value. It changes the current culture to English (United Kingdom) and calls the [get_date_time_formats](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#a986723d16d20808a9dbdc1f3dd6f4c1a) method to generate an array of date and time strings. It then passes each element in the array to the  [try_parse](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#aed2927509532db28cee470cf231dc16d) method. The output from the example shows the parsing method was able to successfully convert each of the culture-specific date and time strings.
 
+```cpp
+  std::locale::global(std::locale("en_GB.utf-8"));
+  
+  auto date1 = date_time {2013, 6, 1, 12, 32, 30};
+  auto bad_formats = vector<ustring> {};
+  
+  console::write_line("{,-37} {,-19}\n", "Date String", "Date");
+  for (auto date_string : date1.get_date_time_formats()) {
+    auto parsed_date = date_time {};
+    if (date_time::try_parse(date_string, parsed_date))
+      console::write_line("{,-37} {,-19}", date_string, date_time::parse(date_string));
+    else
+      bad_formats.push_back(date_string);
+  }
+  
+  // Display strings that could not be parsed.
+  if (bad_formats.size() > 0_sz) {
+    console::write_line("\nStrings that could not be parsed: ");
+    for (auto bad_format : bad_formats)
+      console::write_line(bad_format);
+  }
+  // Press "Run" to see the output.}
+```
+
+## date_t_ime values
+
+Descriptions of time values in the [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) type are often expressed using the Coordinated Universal Time (UTC) standard. Coordinated Universal Time is the internationally recognized name for Greenwich Mean Time (GMT). Coordinated Universal Time is the time as measured at zero degrees longitude, the UTC origin point. Daylight saving time is not applicable to UTC.
+
+Local time is relative to a particular time zone. A time zone is associated with a time zone offset. A time zone offset is the displacement of the time zone measured in hours from the UTC origin point. In addition, local time is optionally affected by daylight saving time, which adds or subtracts a time interval adjustment. Local time is calculated by adding the time zone offset to UTC and adjusting for daylight saving time if necessary. The time zone offset at the UTC origin point is zero.
+
+UTC time is suitable for calculations, comparisons, and storing dates and time in files. Local time is appropriate for display in user interfaces of desktop applications. Time zone-aware applications (such as many Web applications) also need to work with a number of other time zones.
+
+If the [kind](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#ac49ab9e61e6b546f483de527819a840f) property of a [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) object is [date_time_kind::unspecified](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#ga03b78d9831d31a0a2ea100078219f2ea), it is unspecified whether the time represented is local time, UTC time, or a time in some other time zone.
 
 ## See also
 
