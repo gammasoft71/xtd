@@ -82,7 +82,7 @@ console::write_line("After assigning a {} value, the decimal value is {}.",
 Narrowing conversions involve the creation of a new value from the value of an existing type that has either a greater range or a larger member list than the target type. Because a narrowing conversion can result in a loss of data, compilers often require that the conversion be made explicit through a call to a conversion method or a casting operator. That is, the conversion must be handled explicitly in developer code.
 
 > **Notes**
-> The major purpose of requiring a conversion method or casting operator for narrowing conversions is to make the developer aware of the possibility of data loss or an OverflowException so that it can be handled in code. However, some compilers can relax this requirement.
+> The major purpose of requiring a conversion method or casting operator for narrowing conversions is to make the developer aware of the possibility of data loss or an [overflow_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1overflow__exception.html) so that it can be handled in code. However, some compilers can relax this requirement.
 
 For example, the [uint32](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gae7af83eab478757e17f0eb7af57571df), [int64](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#ga7ab879ebcae19d6021222f00537cfdce), and [uint64](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gae1d338ada567eb17107e17cbffea5320) data types have ranges that exceed that the [int32](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91) data type, as the following table shows.
 
