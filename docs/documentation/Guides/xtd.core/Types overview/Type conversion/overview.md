@@ -265,6 +265,72 @@ For a table that lists both the widening and narrowing conversions supported by 
 
 ## The convert_pointer class
 
+Although the [dynamic_cast](https://en.cppreference.com/w/cpp/language/dynamic_cast), [static_cast](https://en.cppreference.com/w/cpp/language/static_cast) ou [reinterpret_cast](https://en.cppreference.com/w/cpp/language/explicit_cast) can be called to perform pointer conversion, calling the methods of the [xtd::convert_pointer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert.html) class is the recommended method for converting one pointer into another.
+
+The following example illustrates the use of the [xtd::convert_pointer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert__pointer.html) class to perform several widening and narrowing conversions between [shared_ptr](https://en.cppreference.com/w/cpp/memory/shared_ptr).
+
+```cpp
+shared_ptr<object> object_ptr = make_shared<ustring>("string");
+
+shared_ptr<ustring> string_ptr = convert_pointer::to_shared_ptr<ustring>(object_ptr);
+console::write_line("Converted the {0} value \"{1}\" to "
+                    "the {2} value \"{3}\".",
+                    typeof_(object_ptr).name(),
+                    *object_ptr,
+                    typeof_(string_ptr).name(),
+                    *string_ptr);
+
+try {
+  shared_ptr<date_time> date_time_ptr = convert_pointer::to_shared_ptr<date_time>(object_ptr);
+  console::write_line("Converted the {0} value \"{1}\" to "
+                      "the {2} value \"{3}\".",
+                      typeof_(object_ptr).name(),
+                      *object_ptr,
+                      typeof_(date_time_ptr).name(),
+                      *date_time_ptr);
+} catch (const invalid_cast_exception& e) {
+  console::write_line("Unable to convert the {0} value \"{1}\".",
+                      typeof_(object_ptr).name(), *object_ptr);
+}
+
+// The example displays the following output:
+//       Converted the shared_ptr<xtd::object> value "string" to the shared_ptr<xtd::ustring> value "string".
+//       Unable to convert the shared_ptr<xtd::object> value "string".
+```
+
+
+The following example illustrates the use of the [xtd::convert_pointer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert__pointer.html) class to perform several widening and narrowing conversions between [unqiue_ptr](https://en.cppreference.com/w/cpp/memory/unique_ptr).
+
+```cpp
+unique_ptr<object> object_ptr = make_unique<ustring>("string");
+
+unique_ptr<ustring> string_ptr = convert_pointer::to_unique_ptr<ustring>(object_ptr);
+console::write_line("Converted the {0} value \"{1}\" to "
+                    "the {2} value \"{3}\".",
+                    typeof_(object_ptr).name(),
+                    "(null)",
+                    typeof_(string_ptr).name(),
+                    *string_ptr);
+
+try {
+  object_ptr = make_unique<ustring>("string");
+  unique_ptr<date_time> date_time_ptr = convert_pointer::to_unique_ptr<date_time>(object_ptr);
+  console::write_line("Converted the {0} value \"{1}\" to "
+                      "the {2} value \"{3}\".",
+                      typeof_(object_ptr).name(),
+                      "(null)",
+                      typeof_(date_time_ptr).name(),
+                      *date_time_ptr);
+} catch (const invalid_cast_exception& e) {
+  console::write_line("Unable to convert the {0} value \"{1}\".",
+                      typeof_(object_ptr).name(), *object_ptr);
+}
+
+// The example displays the following output:
+//       Converted the unique_ptr<xtd::object>> value "(null)" to the unique_ptr<xtd::ustring>> value "string".
+//       Unable to convert the unique_ptr<xtd::object>> value "string".
+```
+
 ## The convert_string class
 
 ## The as operators
