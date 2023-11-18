@@ -517,7 +517,6 @@ console::write_line(number_value);
 //       wednesday
 ```
 
-
 ## See also
 
 * [Guides](/docs/documentation/Guides)
