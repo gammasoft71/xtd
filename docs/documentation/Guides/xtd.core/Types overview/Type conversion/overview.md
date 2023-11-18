@@ -237,7 +237,7 @@ try {
 //       Unable to convert the signed char value -16.
 ```
 
-In some cases, particularly when converting to and from floating-point values, a conversion may involve a loss of precision, even though it does not throw an [overflow_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1overflow__exception.html). The following example illustrates this loss of precision. In the first case, a [decimal](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#ga255b88769d29fe91661cacc7720f265a) value has less precision (fewer significant digits) when it is converted to a [double](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gac9b7afa2262ed23eae6787dea92d733e). In the second case, a [double]https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gac9b7afa2262ed23eae6787dea92d733e) value is rounded from 42.72 to 43 in order to complete the conversion.
+In some cases, particularly when converting to and from floating-point values, a conversion may involve a loss of precision, even though it does not throw an [overflow_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1overflow__exception.html). The following example illustrates this loss of precision. In the first case, a [decimal](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#ga255b88769d29fe91661cacc7720f265a) value has less precision (fewer significant digits) when it is converted to a [double](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gac9b7afa2262ed23eae6787dea92d733e). In the second case, a [double](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gac9b7afa2262ed23eae6787dea92d733e) value is rounded from 42.72 to 43 in order to complete the conversion.
 
 ```cpp
   double double_value;
@@ -428,7 +428,7 @@ console::write_line(s5);
 //       u32string test 🐨
 ```
 
-The following example shows how to convert any container to [string]https://en.cppreference.com/w/cpp/string/basic_string).
+The following example shows how to convert any container to [string](https://en.cppreference.com/w/cpp/string/basic_string).
 
 ```cpp
 string s1 = convert_string::to_string("string test 🐨"s);
@@ -451,7 +451,7 @@ console::write_line(s5);
 //       u32string test 🐨
 ```
 
-The following example shows how to convert any container to [u8string]https://en.cppreference.com/w/cpp/string/basic_string).
+The following example shows how to convert any container to [u8string](https://en.cppreference.com/w/cpp/string/basic_string).
 
 ```cpp
 u8string s1 = convert_string::to_u8string("string test 🐨"s);
@@ -474,13 +474,13 @@ console::write_line(s5);
 //       u32string test 🐨
 ```
 
-And the same goes for [u16string]https://en.cppreference.com/w/cpp/string/basic_string), [u32string]https://en.cppreference.com/w/cpp/string/basic_string) and [wstring]https://en.cppreference.com/w/cpp/string/basic_string).
+And the same goes for [u16string](https://en.cppreference.com/w/cpp/string/basic_string), [u32string](https://en.cppreference.com/w/cpp/string/basic_string) and [wstring](https://en.cppreference.com/w/cpp/string/basic_string).
 
 ## The as operators
 
 ## See also
 
-* [Tutorials](/docs/documentation/Guides/Overview/Tutorials)
+* [Guides](/docs/documentation/Guides)
 * [Documentation](/docs/documentation)
 
 [//]: # (https://learn.microsoft.com/en-us/dotnet/standard/base-types/type-conversion)
