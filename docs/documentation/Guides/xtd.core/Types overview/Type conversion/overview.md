@@ -520,7 +520,7 @@ console::write_line(number_value);
 
 ## The is operators
 
-The [is](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#ga1bfa9e11607cad616748a8ef5d2a99c9) operator can be used to check that the [as] operator (https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#ga09e01287b655c20807cdb73d993ba13d) will not generate an [invalid_cast_exception] exception (tps://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1invalid__cast__exception.html).
+The [is](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#ga1bfa9e11607cad616748a8ef5d2a99c9) operator can be used to check that the [as](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#ga09e01287b655c20807cdb73d993ba13d) operator will not generate an [invalid_cast_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1invalid__cast__exception.html) exception.
 
 The following example shows how to use the [is](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#ga1bfa9e11607cad616748a8ef5d2a99c9) operator to prevent an exception.
 
