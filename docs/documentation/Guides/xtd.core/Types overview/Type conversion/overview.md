@@ -396,6 +396,21 @@ try {
 
 ## The convert_string class
 
+In C++, there are several types of container managed by the std: [string](https://en.cppreference.com/w/cpp/string/basic_string), [wstring](https://en.cppreference.com/w/cpp/string/basic_string), [u8string](https://en.cppreference.com/w/cpp/string/basic_string), [u16string](https://en.cppreference.com/w/cpp/string/basic_string) and [u32string](https://en.cppreference.com/w/cpp/string/basic_string). xtd also adds a new container, [ustring](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1ustring.html), which is exactly the same as [string](https://en.cppreference.com/w/cpp/string/basic_string), with the added feature of being immutable. See the [ustring page](/docs/documentation/Guides/xtd.core/Types%20overview/ustring) for more information.
+
+There are several encoding types that are not handled by std: ASCII, UTF7, UTF-8, UTF-16 Little Endian, UTF-16 Big Endian, UFT-32, as well as the various code pages.
+
+> **Warning**
+> xtd assumes that all the strings you use are encoded in UTF-8, but can be used in any container.
+
+The [convert_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert__string.html) class is used to pass a UTF-8 string from one container to another.
+
+The following example shows how to convert any container to [ustring](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1ustring.html).
+
+```cpp
+
+```
+
 ## The as operators
 
 ## See also
