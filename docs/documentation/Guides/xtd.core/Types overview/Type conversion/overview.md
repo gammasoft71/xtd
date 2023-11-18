@@ -171,6 +171,98 @@ try {
 //    2147483647 is outside the range of the byte data type.
 ```
 
+## The convert class
+
+Although each base type's can be called to perform a type conversion, calling the methods of the [xtd::convert](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert.html) class is the recommended way to convert from one base type to another.
+
+### Conversions between base types
+
+The [convert](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert.html) class provides a way to perform conversions between base types. It provides a complete set of methods for both widening and narrowing conversions, and throws an [invalid_cast_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1invalid__cast__exception.html) for conversions that are not supported (such as the conversion of a [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) value to an integer value). Narrowing conversions are performed in a checked context, and an [overflow_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1overflow__exception.html) is thrown if the conversion fails.
+
+The following example illustrates the use of the [xtd::convert](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert.html) class to perform several widening and narrowing conversions between base types.
+
+```cpp
+// Convert an int32 value to a decimal (a widening conversion).
+int integral_value = 12534;
+decimal decimal_value = convert::to_decimal(integral_value);
+console::write_line("Converted the {0} value {1} to "
+                    "the {2} value {3:N2}.",
+                    typeof_(integral_value).name(),
+                    integral_value,
+                    typeof_(decimal_value).name(),
+                    decimal_value);
+// Convert a byte value to an int32 value (a widening conversion).
+byte byte_value = byte_object::max_value;
+int integral_value2 = convert::to_int32(byte_value);
+console::write_line("Converted the {0} value {1} to "
+                    "the {2} value {3:G}.",
+                    typeof_(byte_value).name(),
+                    byte_value,
+                    typeof_(integral_value2).name(),
+                    integral_value2);
+
+// Convert a Double value to an Int32 value (a narrowing conversion).
+double double_value = 16.32513e12;
+try {
+  long long_value = convert::to_int64(double_value);
+  console::write_line("Converted the {0} value {1:E} to "
+                      "the {2} value {3:N0}.",
+                      typeof_(double_value).name(),
+                      double_value,
+                      typeof_(long_value).name(),
+                      long_value);
+} catch (const overflow_exception& e) {
+  console::write_line("Unable to convert the {0:E} value {1}.",
+                      typeof_(double_value).name(), double_value);
+}
+
+// Convert a signed byte to a byte (a narrowing conversion).
+sbyte sbyte_value = -16;
+try {
+  byte byte_value2 = convert::to_byte(sbyte_value);
+  console::write_line("Converted the {0} value {1} to "
+                      "the {2} value {3:G}.",
+                      typeof_(sbyte_value).name(),
+                      sbyte_value,
+                      typeof_(byte_value2).name(),
+                      byte_value2);
+} catch (const overflow_exception& e) {
+  console::write_line("Unable to convert the {0} value {1}.",
+                      typeof_(sbyte_value).name(), sbyte_value);
+}
+// The example displays the following output:
+//       Converted the int value 12534 to the long double value 12534.00.
+//       Converted the unsigned char value 255 to the int value 255.
+//       Converted the double value 1.632513E+13 to the long value 16325130000000.
+//       Unable to convert the signed char value -16.
+```
+
+In some cases, particularly when converting to and from floating-point values, a conversion may involve a loss of precision, even though it does not throw an [overflow_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1overflow__exception.html). The following example illustrates this loss of precision. In the first case, a [decimal](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#ga255b88769d29fe91661cacc7720f265a) value has less precision (fewer significant digits) when it is converted to a [double](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gac9b7afa2262ed23eae6787dea92d733e). In the second case, a [double]https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gac9b7afa2262ed23eae6787dea92d733e) value is rounded from 42.72 to 43 in order to complete the conversion.
+
+```cpp
+  double double_value;
+  
+  // Convert a Double to a Decimal.
+  decimal decimal_value = 13956810.96702888123451471211;
+  double_value = convert::to_double(decimal_value);
+  console::write_line("{0} converted to {1}.", decimal_value, double_value);
+  
+  double_value = 42.72;
+  try {
+    int integerValue = convert::to_int32(double_value);
+    console::write_line("{0} converted to {1}.",
+                        double_value, integerValue);
+  } catch (const overflow_exception& e) {
+    console::write_line("Unable to convert {0} to an integer.",
+                        double_value);
+  }
+  // The example displays the following output:
+  //       13956810.9670289 converted to 13956810.9670289.
+  //       42.72 converted to 43.
+```
+
+For a table that lists both the widening and narrowing conversions supported by the [convert](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert.html) class, see [Type conversion tables](/docs/documentation/Guides/xtd.core/Types%20overview/Type%20conversion/type_conversion_tables).
+
 ## See also
 
 * [Tutorials](/docs/documentation/Guides/Overview/Tutorials)
