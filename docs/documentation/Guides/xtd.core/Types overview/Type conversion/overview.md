@@ -478,6 +478,46 @@ And the same goes for [u16string](https://en.cppreference.com/w/cpp/string/basic
 
 ## The as operators
 
+The [as](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#ga09e01287b655c20807cdb73d993ba13d) operator is used to convert one type, pointer or string into another. The [as](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#ga09e01287b655c20807cdb73d993ba13d) operator is based on the [convert](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert.html), [convert_pointer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert__pointer.html) and [convert_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert__string.html) classes.
+
+The following example shows some uses of the [as](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#ga09e01287b655c20807cdb73d993ba13d) operator. 
+
+```cpp
+short short_value = as<short>(42);
+decimal decimal_value = as<decimal>(.42);
+
+console::write_line(short_value);
+console::write_line(decimal_value);
+
+object* object_ptr = new ustring("string text");
+ustring* ustring_ptr = as<ustring>(object_ptr);
+
+console::write_line(*ustring_ptr);
+delete object_ptr;
+
+u16string u16string_value = as<u16string>(u8"string 🐨");
+ustring ustring_value = as<ustring>(U"string 🐨");
+
+console::write_line(u16string_value);
+console::write_line(ustring_value);
+
+int int_value = as<int>(day_of_week::tuesday);
+day_of_week number_value = as<day_of_week>(3);
+
+console::write_line(int_value);
+console::write_line(number_value);
+
+// The example displays the following output:
+//       42
+//       0.42
+//       string text
+//       string 🐨
+//       string 🐨
+//       2
+//       wednesday
+```
+
+
 ## See also
 
 * [Guides](/docs/documentation/Guides)
