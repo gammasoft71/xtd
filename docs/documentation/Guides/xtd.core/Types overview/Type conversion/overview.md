@@ -4,10 +4,10 @@
 
 * [Implicit conversion with the implicit operator](#implicit-conversion-with-the-implicit-operator)
 * [Explicit conversion with the explicit operator](#explicit-conversion-with-the-explicit-operator)
-* [The convert class](#)
-* [The convert_pointer class](#)
-* [The convert_string class](#)
-* [The as operators](#)
+* [The convert class](#the-convert-class)
+* [The convert_pointer class](#the-convert_pointer-class)
+* [The convert_string class](#the-convert_string-class)
+* [The as operators](#the-as-operators)
 * [See also](#see-also)
 
 Every value has an associated type, which defines attributes such as the amount of space allocated to the value, the range of possible values it can have, and the members that it makes available. Many values can be expressed as more than one type. For example, the value 4 can be expressed as an integer or a floating-point value. Type conversion creates a value in a new type that is equivalent to the value of an old type, but does not necessarily preserve the identity (or exact value) of the original object.
@@ -262,6 +262,12 @@ In some cases, particularly when converting to and from floating-point values, a
 ```
 
 For a table that lists both the widening and narrowing conversions supported by the [convert](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert.html) class, see [Type conversion tables](/docs/documentation/Guides/xtd.core/Types%20overview/Type%20conversion/type_conversion_tables).
+
+## The convert_pointer class
+
+## The convert_string class
+
+## The as operators
 
 ## See also
 
