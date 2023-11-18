@@ -332,9 +332,11 @@ namespace xtd {
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
     template<typename new_type_t, typename current_type_t>
     static std::unique_ptr<new_type_t> to_unique_ptr(std::unique_ptr<current_type_t>& value) {
+      auto ptr = value.release();
       try {
-        return std::unique_ptr<new_type_t>(__convert_value__<new_type_t>(value.release()));
+        return std::unique_ptr<new_type_t>(__convert_value__<new_type_t>(ptr));
       } catch (const std::exception& e) {
+        value = std::unique_ptr<current_type_t>(ptr);
         throw invalid_cast_exception(e.what(), csf_);
       }
       throw invalid_cast_exception {csf_};
@@ -353,9 +355,11 @@ namespace xtd {
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
     template<typename new_type_t, typename current_type_t>
     static std::unique_ptr<new_type_t> to_unique_ptr(std::unique_ptr<current_type_t>&& value) {
+      auto ptr = value.release();
       try {
-        return std::unique_ptr<new_type_t>(__convert_value__<new_type_t>(value.release()));
+        return std::unique_ptr<new_type_t>(__convert_value__<new_type_t>(ptr));
       } catch (const std::exception& e) {
+        value = std::unique_ptr<current_type_t>(ptr);
         throw invalid_cast_exception(e.what(), csf_);
       }
       throw invalid_cast_exception {csf_};
