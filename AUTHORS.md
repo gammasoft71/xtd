@@ -15,6 +15,7 @@ This file lists all persons who contributed to xtd (in alphabetical order). If y
 * [jimorc](https://github.com/jimorc) - Contributor
 * [jopadan](https://github.com/jopadan) - Contributor
 * [niansa](https://github.com/niansa) - Contributor
+* [qingyiwebt](https://github.com/qingyiwebt) - Contributor
 
 ## Remarks
 
