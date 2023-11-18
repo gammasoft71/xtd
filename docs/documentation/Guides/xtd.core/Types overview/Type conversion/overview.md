@@ -298,7 +298,6 @@ try {
 //       Unable to convert the shared_ptr<xtd::object> value "string".
 ```
 
-
 The following example illustrates the use of the [xtd::convert_pointer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert__pointer.html) class to perform several widening and narrowing conversions between [unqiue_ptr](https://en.cppreference.com/w/cpp/memory/unique_ptr).
 
 ```cpp
@@ -327,8 +326,72 @@ try {
 }
 
 // The example displays the following output:
-//       Converted the unique_ptr<xtd::object>> value "(null)" to the unique_ptr<xtd::ustring>> value "string".
-//       Unable to convert the unique_ptr<xtd::object>> value "string".
+//       Converted the unique_ptr<xtd::object> value "(null)" to the unique_ptr<xtd::ustring> value "string".
+//       Unable to convert the unique_ptr<xtd::object> value "string".
+```
+
+The following example illustrates the use of the [xtd::convert_pointer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert__pointer.html) class to perform several widening and narrowing conversions between pointers.
+
+```cpp
+object* object_ptr = new ustring("string");
+
+ustring* string_ptr = convert_pointer::to_ptr<ustring>(object_ptr);
+console::write_line("Converted the {0} to "
+                    "the {1} value \"{2}\".",
+                    typeof_(object_ptr).name(),
+                    typeof_(string_ptr).name(),
+                    *string_ptr);
+
+delete string_ptr;
+
+try {
+  object_ptr =  new ustring("string");
+  date_time* date_time_ptr = convert_pointer::to_ptr<date_time>(object_ptr);
+  console::write_line("Converted the {0} to "
+                      "the {1} value \"{2}\".",
+                      typeof_(object_ptr).name(),
+                      typeof_(date_time_ptr).name(),
+                      *date_time_ptr);
+} catch (const invalid_cast_exception& e) {
+  console::write_line("Unable to convert the {0} value \"{1}\".",
+                      typeof_(object_ptr).name(), *object_ptr);
+}
+
+delete object_ptr;
+
+// The example displays the following output:
+//       Converted the object* to the ustring* value "string".
+//       Unable to convert the object* value "string".
+```
+
+The following example illustrates the use of the [xtd::convert_pointer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert__pointer.html) class to perform several widening and narrowing conversions between references.
+
+```cpp
+ustring value = "string";
+object& object_ref = value;
+
+ustring& string_ref = convert_pointer::to_ref<ustring>(object_ref);
+console::write_line("Converted the {0} to "
+                    "the {1} value \"{2}\".",
+                    typeof_(object_ref).name(),
+                    typeof_(string_ref).name(),
+                    string_ref);
+
+try {
+  date_time& date_time_ref = convert_pointer::to_ref<date_time>(object_ref);
+  console::write_line("Converted the {0} to "
+                      "the {1} value \"{2}\".",
+                      typeof_(object_ref).name(),
+                      typeof_(date_time_ref).name(),
+                      date_time_ref);
+} catch (const invalid_cast_exception& e) {
+  console::write_line("Unable to convert the {0} value \"{1}\".",
+                      typeof_(object_ref).name(), object_ref);
+}
+
+// The example displays the following output:
+//       Converted the ustring to the ustring value "string".
+//       Unable to convert the ustring value "string".
 ```
 
 ## The convert_string class
