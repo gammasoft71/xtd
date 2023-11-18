@@ -398,17 +398,34 @@ try {
 
 In C++, there are several types of container managed by the std: [string](https://en.cppreference.com/w/cpp/string/basic_string), [wstring](https://en.cppreference.com/w/cpp/string/basic_string), [u8string](https://en.cppreference.com/w/cpp/string/basic_string), [u16string](https://en.cppreference.com/w/cpp/string/basic_string) and [u32string](https://en.cppreference.com/w/cpp/string/basic_string). xtd also adds a new container, [ustring](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1ustring.html), which is exactly the same as [string](https://en.cppreference.com/w/cpp/string/basic_string), with the added feature of being immutable. See the [ustring page](/docs/documentation/Guides/xtd.core/Types%20overview/ustring) for more information.
 
-There are several encoding types that are not handled by std: ASCII, UTF7, UTF-8, UTF-16 Little Endian, UTF-16 Big Endian, UFT-32, as well as the various code pages.
-
-> **Warning**
-> xtd assumes that all the strings you use are encoded in UTF-8, but can be used in any container.
+There are several encoding types that are not handled by std: ASCII (20127), UTF7 (65000), UTF-8 (65001), UTF-16 Unicode (1200), UTF-16 Big Endian (1201), UTF-32 (12000), UFT-32 Big Endian (12001), as well as other code pages.
 
 The [convert_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert__string.html) class is used to pass a UTF-8 string from one container to another.
+
+> **Warning**
+> The content of the string must be encoded in UTF-8 (65001) format. Make sure it is, otherwise the result will be uncertain.
 
 The following example shows how to convert any container to [ustring](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1ustring.html).
 
 ```cpp
+ustring s1 = convert_string::to_ustring("ustring test 🐨"s);
+ustring s2 = convert_string::to_ustring(L"wstring test 🐨");
+ustring s3 = convert_string::to_ustring(u8"u8string test 🐨"s);
+ustring s4 = convert_string::to_ustring(u"u16string test 🐨");
+ustring s5 = convert_string::to_ustring(U"u32string test 🐨"s);
 
+console::write_line(s1);
+console::write_line(s2);
+console::write_line(s3);
+console::write_line(s4);
+console::write_line(s5);
+
+// The example displays the following output:
+//       string test 🐨
+//       wstring test 🐨
+//       u8string test 🐨
+//       u16string test 🐨
+//       u32string test 🐨
 ```
 
 ## The as operators
