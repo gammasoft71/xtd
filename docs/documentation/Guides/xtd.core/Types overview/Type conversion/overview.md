@@ -8,6 +8,7 @@
 * [The convert_pointer class](#the-convert_pointer-class)
 * [The convert_string class](#the-convert_string-class)
 * [The as operators](#the-as-operators)
+* [The is operators](#the-is-operators)
 * [See also](#see-also)
 
 Every value has an associated type, which defines attributes such as the amount of space allocated to the value, the range of possible values it can have, and the members that it makes available. Many values can be expressed as more than one type. For example, the value 4 can be expressed as an integer or a floating-point value. Type conversion creates a value in a new type that is equivalent to the value of an old type, but does not necessarily preserve the identity (or exact value) of the original object.
@@ -515,6 +516,34 @@ console::write_line(number_value);
 //       string 🐨
 //       2
 //       wednesday
+```
+
+## The is operators
+
+The [is](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#ga1bfa9e11607cad616748a8ef5d2a99c9) operator can be used to check that the [as] operator (https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#ga09e01287b655c20807cdb73d993ba13d) will not generate an [invalid_cast_exception] exception (tps://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1invalid__cast__exception.html).
+
+The following example shows how to use the [is](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#ga1bfa9e11607cad616748a8ef5d2a99c9) operator to prevent an exception.
+
+```cpp
+ustring ustring_value = "string text";
+
+if (is<object>(ustring_value)) {
+  object& object_value = as<object&>(ustring_value);
+  console::write_line("object = {}", object_value.to_string());
+} else {
+  console::write_line("{} is not a object type", typeof_(ustring_value).name());
+}
+
+if (is<date_time>(ustring_value)) {
+  date_time& date_time_value = as<date_time&>(ustring_value);
+  console::write_line("date_time = {}", date_time_value);
+} else {
+  console::write_line("{} is not a date_time type", typeof_(ustring_value).name());
+}
+
+// The example displays the following output:
+//       object = string text
+//       ustring is not a date_time type
 ```
 
 ## See also
