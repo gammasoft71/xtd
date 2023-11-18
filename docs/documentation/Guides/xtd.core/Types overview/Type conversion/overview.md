@@ -408,7 +408,7 @@ The [convert_string](https://gammasoft71.github.io/xtd/reference_guides/latest/c
 The following example shows how to convert any container to [ustring](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1ustring.html).
 
 ```cpp
-ustring s1 = convert_string::to_ustring("ustring test 🐨"s);
+ustring s1 = convert_string::to_ustring("string test 🐨"s);
 ustring s2 = convert_string::to_ustring(L"wstring test 🐨");
 ustring s3 = convert_string::to_ustring(u8"u8string test 🐨"s);
 ustring s4 = convert_string::to_ustring(u"u16string test 🐨");
@@ -427,6 +427,54 @@ console::write_line(s5);
 //       u16string test 🐨
 //       u32string test 🐨
 ```
+
+The following example shows how to convert any container to [string]https://en.cppreference.com/w/cpp/string/basic_string).
+
+```cpp
+string s1 = convert_string::to_string("string test 🐨"s);
+string s2 = convert_string::to_string(L"wstring test 🐨");
+string s3 = convert_string::to_string(u8"u8string test 🐨"s);
+string s4 = convert_string::to_string(u"u16string test 🐨");
+string s5 = convert_string::to_string(U"u32string test 🐨"s);
+
+console::write_line(s1);
+console::write_line(s2);
+console::write_line(s3);
+console::write_line(s4);
+console::write_line(s5);
+
+// The example displays the following output:
+//       string test 🐨
+//       wstring test 🐨
+//       u8string test 🐨
+//       u16string test 🐨
+//       u32string test 🐨
+```
+
+The following example shows how to convert any container to [u8string]https://en.cppreference.com/w/cpp/string/basic_string).
+
+```cpp
+u8string s1 = convert_string::to_u8string("string test 🐨"s);
+u8string s2 = convert_string::to_u8string(L"wstring test 🐨");
+u8string s3 = convert_string::to_u8string(u8"u8string test 🐨"s);
+u8string s4 = convert_string::to_u8string(u"u16string test 🐨");
+u8string s5 = convert_string::to_u8string(U"u32string test 🐨"s);
+
+console::write_line(s1);
+console::write_line(s2);
+console::write_line(s3);
+console::write_line(s4);
+console::write_line(s5);
+
+// The example displays the following output:
+//       string test 🐨
+//       wstring test 🐨
+//       u8string test 🐨
+//       u16string test 🐨
+//       u32string test 🐨
+```
+
+And the same goes for [u16string]https://en.cppreference.com/w/cpp/string/basic_string), [u32string]https://en.cppreference.com/w/cpp/string/basic_string) and [wstring]https://en.cppreference.com/w/cpp/string/basic_string).
 
 ## The as operators
 
