@@ -74,13 +74,16 @@ Specialized and strongly-typed collections.
 
 ## Thread-safe containers
 
-Not yet implemented, but coming soon :
+Thread-safe containers can be used for multithreading.
 
-| Container                                          | Definition                                                       |
-| -------------------------------------------------- | ---------------------------------------------------------------- |
-| **xtd::collections::concurrent::concurrent_bag**   | Represents a thread-safe, unordered collection of objects.       |
-| **xtd::collections::concurrent::concurrent_queue** | Represents a thread-safe first in-first out (FIFO) collection.   |
-| **xtd::collections::concurrent::concurrent_stack** | RepRepresents a thread-safe last in-first out (LIFO) collection. |
+| Container                                           | Definition                                                       |
+| --------------------------------------------------- | ---------------------------------------------------------------- |
+| [xtd::collections::concurrent::concurrent_bag](#)   | Represents a thread-safe, unordered collection of objects.       |
+| [xtd::collections::concurrent::concurrent_queue](#) | Represents a thread-safe first in-first out (FIFO) collection.   |
+| [xtd::collections::concurrent::concurrent_stack](#) | RepRepresents a thread-safe last in-first out (LIFO) collection. |
+
+> **Remarks**
+> Not yet implemented, but coming soon.
 
 # See also
 ​
