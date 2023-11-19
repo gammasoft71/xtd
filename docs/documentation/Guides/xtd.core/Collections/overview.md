@@ -69,7 +69,7 @@ Container adaptors provide a different interface for sequential collections.
 | [std::flat_multiset](https://en.cppreference.com/w/cpp/container/flat_multiset)   | Adapts a container to provide a collection of keys, sorted by keys.                       |
 | [std::flat_multimap](https://en.cppreference.com/w/cpp/container/flat_multimap)   | Adapts two collections to provide a collection of key-value pairs, sorted by keys.        |
 
-## std collections
+## xtd collections
 
 ### Collections with events
 
