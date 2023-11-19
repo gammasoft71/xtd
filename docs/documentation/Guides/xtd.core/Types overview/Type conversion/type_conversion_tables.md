@@ -14,11 +14,11 @@ The following table describes the widening conversions that can be performed wit
 
 | Type   | Can be converted without data loss to                                |
 | ------ | -------------------------------------------------------------------- |
-| byte   | uint16, int16, uint32, int32, uint64, int64, single, double, decimal |
+| [byte](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gaf8d0aa5786861bead085592c31c09849)   | [uint16](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#ga7f48d085fbe8abdb92329be2bc04a236), int16, uint32, int32, uint64, int64, single, double, decimal |
 | sbyte  | int16, int32, int64, single, double, decimal                         |
 | int16  | int32, int64, single, double, decimal                                |
 | uint16 | uint32, int32, uint64, int64, single, double, decimal                |
-| char   | uint16, uint32, int32, uint64, int64, single, double, decimal        |
+| char   | [uint16](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#ga7f48d085fbe8abdb92329be2bc04a236), uint32, int32, uint64, int64, single, double, decimal        |
 | int32  | int64, double, decimal                                               |
 | uint32 | int64, uint64, double, decimal                                       |
 | int64  | decimal                                                              |
@@ -43,17 +43,17 @@ The following table lists conversions that throw an [overflow_exception](https:/
 
 | Type    | Can be converted to                                      |
 | ------- | -------------------------------------------------------- |
-| Byte    | SByte                                                    |
-| SByte   | Byte, UInt16, UInt32, UInt64                             |
-| Int16   | Byte, SByte, UInt16                                      |
-| UInt16  | Byte, SByte, Int16                                       |
-| Int32   | Byte, SByte, Int16, UInt16,UInt32                        |
-| UInt32  | Byte, SByte, Int16, UInt16, Int32                        |
-| Int64   | Byte, SByte, Int16, UInt16, Int32,UInt32,UInt64          |
-| UInt64  | Byte, SByte, Int16, UInt16, Int32, UInt32, Int64         |
-| Decimal | Byte, SByte, Int16, UInt16, Int32, UInt32, Int64, UInt64 |
-| single  | Byte, SByte, Int16, UInt16, Int32, UInt32, Int64, UInt64 |
-| double  | Byte, SByte, Int16, UInt16, Int32, UInt32, Int64, UInt64 |
+| [byte](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gaf8d0aa5786861bead085592c31c09849)  | sbyte                                                    |
+| sbyte   | [[[byte](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gaf8d0aa5786861bead085592c31c09849)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gaf8d0aa5786861bead085592c31c09849)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gaf8d0aa5786861bead085592c31c09849), [uint16](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#ga7f48d085fbe8abdb92329be2bc04a236), uint32, uint64                             |
+| int16   | [[[byte](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gaf8d0aa5786861bead085592c31c09849)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gaf8d0aa5786861bead085592c31c09849)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gaf8d0aa5786861bead085592c31c09849), sbyte, [uint16](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#ga7f48d085fbe8abdb92329be2bc04a236)                                      |
+| [uint16](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#ga7f48d085fbe8abdb92329be2bc04a236)  | [[[byte](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gaf8d0aa5786861bead085592c31c09849)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gaf8d0aa5786861bead085592c31c09849)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gaf8d0aa5786861bead085592c31c09849), sbyte, int16                                       |
+| int32   | [[[byte](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gaf8d0aa5786861bead085592c31c09849)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gaf8d0aa5786861bead085592c31c09849)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gaf8d0aa5786861bead085592c31c09849), sbyte, int16, [uint16](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#ga7f48d085fbe8abdb92329be2bc04a236),uint32                        |
+| uint32  | [[[byte](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gaf8d0aa5786861bead085592c31c09849)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gaf8d0aa5786861bead085592c31c09849)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gaf8d0aa5786861bead085592c31c09849), sbyte, int16, [uint16](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#ga7f48d085fbe8abdb92329be2bc04a236), int32                        |
+| int64   | [[[byte](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gaf8d0aa5786861bead085592c31c09849)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gaf8d0aa5786861bead085592c31c09849)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gaf8d0aa5786861bead085592c31c09849), sbyte, int16, [uint16](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#ga7f48d085fbe8abdb92329be2bc04a236), int32,uint32,uint64          |
+| uint64  | [[[byte](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gaf8d0aa5786861bead085592c31c09849)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gaf8d0aa5786861bead085592c31c09849)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gaf8d0aa5786861bead085592c31c09849), sbyte, int16, [uint16](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#ga7f48d085fbe8abdb92329be2bc04a236), int32, uint32, int64         |
+| Decimal | [[[byte](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gaf8d0aa5786861bead085592c31c09849)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gaf8d0aa5786861bead085592c31c09849)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gaf8d0aa5786861bead085592c31c09849), sbyte, int16, [uint16](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#ga7f48d085fbe8abdb92329be2bc04a236), int32, uint32, int64, uint64 |
+| single  | [[[byte](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gaf8d0aa5786861bead085592c31c09849)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gaf8d0aa5786861bead085592c31c09849)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gaf8d0aa5786861bead085592c31c09849), sbyte, int16, [uint16](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#ga7f48d085fbe8abdb92329be2bc04a236), int32, uint32, int64, uint64 |
+| double  | [[[byte](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gaf8d0aa5786861bead085592c31c09849)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gaf8d0aa5786861bead085592c31c09849)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#gaf8d0aa5786861bead085592c31c09849), sbyte, int16, [uint16](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#ga7f48d085fbe8abdb92329be2bc04a236), int32, uint32, int64, uint64 |
 
 ## See also
 ​
