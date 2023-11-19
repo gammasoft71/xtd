@@ -12,7 +12,7 @@
   * [Collections with events](#collections-with-events)
   * [Specialized collections](#specialized-collections)
   * [Thread-safe collections](#thread-safe-collections)
-* [Choose a collection](#Choose-a-collection)
+* [Choose a collection](#choose-a-collection)
 
 ## Overview
 
