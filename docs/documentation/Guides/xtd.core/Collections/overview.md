@@ -54,13 +54,12 @@ Container adaptors provide a different interface for sequential containers.
 
 ## Eventing containers
 
-The [arranged_element_collection](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/layout/arranged_element_collection.h) collection has the particularity to have [events](/docs/documentation/Guides/xtd.core/Events/overview.md) on which we can connect:
+| Container                                                                                                                                          | Definition                                                                                                              |
+| -------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| [arranged_element_collection](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/layout/arranged_element_collection.h) | Represents a collection with [events](/docs/documentation/Guides/xtd.core/Events/overview.md) to which you can connect. |
 
-* [item_added](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#afadce93d0b8a19c5d61f3b417158747c) : occurs when an item is added to the collection.
-* [item_updated](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a3ccfbdf5ef99ca06e5c380c2f4de4076) : occurs when an item is updated in the collection.
-* [item_removed](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#ad37a37d62a7b257ac20274e95a6501f3) : occurs when an item is deleted from the collection.
-
-This [arranged_element_collection](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/layout/arranged_element_collection.h) Collections is overloaded in various classes such as [control](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html), [list_control](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1list__control.html), [tab_control](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1tab__control.html), [status_bar](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1status__bar.html), [tool_bar](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1tool__bar.html), ...
+> **Remarks**
+> The [arranged_element_collection](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/layout/arranged_element_collection.h) Collections is overloaded in various classes such as [control](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html), [list_control](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1list__control.html), [tab_control](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1tab__control.html), [status_bar](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1status__bar.html), [tool_bar](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1tool__bar.html), ...
 
 ## Specialized containers
 
