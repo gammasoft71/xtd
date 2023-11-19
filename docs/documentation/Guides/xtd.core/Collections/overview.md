@@ -64,6 +64,14 @@ This [arranged_element_collection](https://github.com/gammasoft71/xtd/blob/maste
 
 ## Specialized containers
 
+Specialized and strongly-typed collections.
+
+| Container                                                                                                                                                            | Definition                                                                                                                        |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| [xtd::collections::vector_list](https://gammasoft71.github.io/xtd/reference_guides/latest/group__collections.html#gaf18249e78122f5f0f0f09003cf6abc5c)                | Represents a collection of std::any.                                                                                              |
+| [xtd::collections::specialized::string_map](https://gammasoft71.github.io/xtd/reference_guides/latest/group__collections.html#ga563b341f7aaf8f09a45cf5c52e70bbc8)    | Implements a [std::map](https://en.cppreference.com/w/cpp/container/map) with the key and the value strongly typed to be strings. |
+| [xtd::collections::specialized::string_vector](https://gammasoft71.github.io/xtd/reference_guides/latest/group__collections.html#gadc1dbfbb41611242c5aa2e857e574256) | Represents a collection of strings.                                                                                               |
+
 ## Thread-safe containers
 
 Not yet implemented, but coming soon :
