@@ -124,16 +124,21 @@ In general, you should use generic collections. The following table describes so
 
 ## Algorithmic complexity of collections
 
-When choosing a collection class, it's worth considering potential tradeoffs in performance. Use the following table to reference how various mutable collection types compare in algorithmic complexity to their corresponding immutable counterparts. Often immutable collection types are less performant but provide immutability - which is often a valid comparative benefit.
+Lors du choix d'une classe de collection, il convient de tenir compte des compromis possibles en termes de performances. Utilisez le tableau suivant pour comparer la complexité algorithmique de divers types de collection.
 
-| Collection                                                                                              | Amortized | Worst Case |
-| ------------------------------------------------------------------------------------------------------- | --------- | ---------- |
-| [std::stack<type_t>::push](https://en.cppreference.com/w/cpp/container/stack/push)                      | O(1)      | O(n)       |
-| [std::queue<type_t>::push](https://en.cppreference.com/w/cpp/container/queue/push)                      | O(1)      | O(n)       |
-| [std::vector<type_t>::push_back](https://en.cppreference.com/w/cpp/container/vector/push_back)          | O(1)      | O(n)       |
-| [std::vector<type_t>::operator[size_t]](https://en.cppreference.com/w/cpp/container/vector/operator_at) | O(1)      | O(1)       |
-| [std::vector<type_t>::iterator](https://en.cppreference.com/w/cpp/container/vector)                     | O(n)      | O(n)       |
-
+| Operation                                                                                               | Amortized | Worst Case              |
+| ------------------------------------------------------------------------------------------------------- | --------- | ----------------------- |
+| [std::stack<type_t>::push](https://en.cppreference.com/w/cpp/container/stack/push)                      | O(1)      | O(n)                    |
+| [std::queue<type_t>::push](https://en.cppreference.com/w/cpp/container/queue/push)                      | O(1)      | O(n)                    |
+| [std::vector<type_t>::push_back](https://en.cppreference.com/w/cpp/container/vector/push_back)          | O(1)      | O(n)                    |
+| [std::vector<type_t>::operator[size_t]](https://en.cppreference.com/w/cpp/container/vector/operator_at) | O(1)      | O(1)                    |
+| [std::vector<type_t>::iterator](https://en.cppreference.com/w/cpp/container/vector)                     | O(n)      | O(n)                    |
+| [std::unordered_set<type_t>::insert](https://en.cppreference.com/w/cpp/container/unordered_set/insert)  | O(1)      | O(n)                    |
+| [std::unordered_set<type_t>::find](https://en.cppreference.com/w/cpp/container/unordered_set/find)      | O(1)      | O(n)                    |
+| [std::set<type_t>::insert](https://en.cppreference.com/w/cpp/container/set/insert)                      | O(log n)  | O(n)                    |
+| [std::unordered_map<type_t>::insert](https://en.cppreference.com/w/cpp/container/unordered_map/insert)  | O(1)      | O(n)                    |
+| [std::unordered_map<type_t>::find]([https://en.cppreference.com/w/cpp/container/unordered_map/find)     | O(1)      | O(1) – or strictly O(n) |
+| [std::map<type_t>::insert](https://en.cppreference.com/w/cpp/container/map/insert)                      | O(log n)  | O(n log n)              |
 
 # See also
 ​
