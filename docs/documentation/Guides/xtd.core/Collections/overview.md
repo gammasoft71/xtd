@@ -137,7 +137,7 @@ Lors du choix d'une classe de collection, il convient de tenir compte des compro
 | [std::unordered_set<type_t>::find](https://en.cppreference.com/w/cpp/container/unordered_set/find)      | O(1)      | O(n)                    |
 | [std::set<type_t>::insert](https://en.cppreference.com/w/cpp/container/set/insert)                      | O(log n)  | O(n)                    |
 | [std::unordered_map<type_t>::insert](https://en.cppreference.com/w/cpp/container/unordered_map/insert)  | O(1)      | O(n)                    |
-| [std::unordered_map<type_t>::find]([https://en.cppreference.com/w/cpp/container/unordered_map/find)     | O(1)      | O(1) – or strictly O(n) |
+| [std::unordered_map<type_t>::find](https://en.cppreference.com/w/cpp/container/unordered_map/find)      | O(1)      | O(1) – or strictly O(n) |
 | [std::map<type_t>::insert](https://en.cppreference.com/w/cpp/container/map/insert)                      | O(log n)  | O(n log n)              |
 
 # See also
