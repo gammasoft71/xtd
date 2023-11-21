@@ -13,6 +13,7 @@
   * [Specialized collections](#specialized-collections)
   * [Thread-safe collections](#thread-safe-collections)
 * [Choose a collection](#choose-a-collection)
+* [Algorithmic complexity of collections](#algorithmic-complexity-of-collections)
 
 ## Overview
 
@@ -120,6 +121,19 @@ In general, you should use generic collections. The following table describes so
 | Use data Last-In-First-Out (LIFO)                       | [std::stack](https://en.cppreference.com/w/cpp/container/stack)                                                                                     | [xtd::collections::stack](#)                                                                                                                          | [xtd::collections::concurrent::concurrent_stack](#) | 
 | Access items sequentially                               | [std::list](https://en.cppreference.com/w/cpp/container/list)                                                                                       | No recommendation                                                                                                                                     | No recommendation                                   |
 | A set for mathematical functions                        | [std::set](https://en.cppreference.com/w/cpp/container/set)<br></br>[std::unordered_set](https://en.cppreference.com/w/cpp/container/unordered_set) | No recommendation                                                                                                                                     | No recommendation                                   |
+
+## Algorithmic complexity of collections
+
+When choosing a collection class, it's worth considering potential tradeoffs in performance. Use the following table to reference how various mutable collection types compare in algorithmic complexity to their corresponding immutable counterparts. Often immutable collection types are less performant but provide immutability - which is often a valid comparative benefit.
+
+| Collection                                                                                              | Amortized | Worst Case |
+| ------------------------------------------------------------------------------------------------------- | --------- | ---------- |
+| [std::stack<type_t>::push](https://en.cppreference.com/w/cpp/container/stack/push)                      | O(1)      | O(n)       |
+| [std::queue<type_t>::push](https://en.cppreference.com/w/cpp/container/queue/push)                      | O(1)      | O(n)       |
+| [std::vector<type_t>::push_back](https://en.cppreference.com/w/cpp/container/vector/push_back)          | O(1)      | O(n)       |
+| [std::vector<type_t>::operator[size_t]](https://en.cppreference.com/w/cpp/container/vector/operator_at) | O(1)      | O(1)       |
+| [std::vector<type_t>::iterator](https://en.cppreference.com/w/cpp/container/vector)                     | O(n)      | O(n)       |
+
 
 # See also
 ​
