@@ -15,7 +15,6 @@
 * [Choose a collection](#choose-a-collection)
 * [Algorithmic complexity of collections](#algorithmic-complexity-of-collections)
 
-## Overview
 
 xtd mainly uses [std collections](https://en.cppreference.com/w/cpp/container). 
 To complete the std, xtd implements some owner collections.
@@ -145,4 +144,4 @@ Lors du choix d'une classe de collection, il convient de tenir compte des compro
 * [Guides](/docs/documentation/Guides)
 * [Documentation](/docs/documentation)
 
-[//]: # (https://learn.microsoft.com/en-us/dotnet/standard/base-types/type-conversion)
+[//]: # (https://learn.microsoft.com/en-us/dotnet/standard/collections/)
