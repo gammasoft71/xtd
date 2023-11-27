@@ -73,11 +73,41 @@ public:
 };
 ```
 
-Here, class TextBox implements both IControl and ITextBox.
+Here, class text_box implements both icontrol and itext_box.
+
+For multiple-inheritance interfaces, ambiguities can occur when two or more unrelated base interfaces declare members with the same name or signature. Explicit casts can be used to resolve the ambiguities.
+
+```cpp
+struct ilist interface_ {
+  virtual size_t count() const = 0;
+  virtual void count(size_t) = 0;
+};
+
+struct icounter interface_ {
+  virtual size_t count() const = 0;
+  virtual void count(size_t) = 0;
+};
+
+struct ilist_counter : public ilist, public icounter {
+  
+};
+
+struct s : public ilist_counter {
+  void test(ilist_counter& x) {
+    x.count();    // Error
+    x.count(1);   // Error
+    x.ilist::count(); // Ok, invokes ilist::count method
+    x.icounter::count(1); // Ok, invokes ilist::count method
+  }
+};
+
+```
+
+The first two instructions cause compile-time errors because the search for the `count` member in `ilist_counter` is ambiguous. As the example illustrates, the ambiguity is resolved by casting `x` into the appropriate basic interface type. Such castings have no runtime cost - they simply involve considering the instance as a less derived type at compile time.
 
 ## iequatable
 
-Coming soon...
+Coming soon... 
 
 ## icomparable
 
