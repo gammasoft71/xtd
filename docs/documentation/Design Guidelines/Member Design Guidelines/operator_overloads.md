@@ -30,10 +30,10 @@ For example, if you overload the operator ==, you should also overload the opera
 
 # xtd::iequatable
 
-The [xtd::iequatable<type_t>](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1iequatable.html) interface class implement the == and != operators and used the `virtual bool equals(const type_t&) const noexcept;` method.
+The [xtd::iequatable<type_t>](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1iequatable.html) interface class implement the `==` and `!=` operators and used the `virtual bool equals(const type_t&) const noexcept;` method.
 You must just overload this method for used your own implementation.
 
-The Point class show how to used Equals method :
+The `point` class show how to used `equals` method :
 
 ```cpp
 class point : public xtd::object, public xtd::iequatable<point> {
@@ -61,10 +61,10 @@ static ustring form1::check_points(const point& p1, const point& p2) {
 
 # xtd::icomparable
 
-The [xtd::icomparable<type_t>](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1icomparable.html) interface implement the <, <=, > and >= operators. and used the `virtual int compare_to(const type_t&) const noexcept;` method.
+The [xtd::icomparable<type_t>](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1icomparable.html) interface implement the `<`, `<=`, `>` and `>=` operators. and used the `virtual int compare_to(const type_t&) const noexcept;` method.
 You must just overload this method for used your own implementation.
 
-The time_span class show how to used compare_to method:
+The `time_span` class show how to used `compare_to` method:
 
 ```cpp
 class time_span : public xtd::object, public xtd::icomparable<time_span> {

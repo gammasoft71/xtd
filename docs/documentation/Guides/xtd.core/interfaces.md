@@ -107,11 +107,66 @@ The first two instructions cause compile-time errors because the search for the 
 
 ## iequatable
 
-Coming soon... 
+The [xtd::iequatable<type_t>](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1iequatable.html) interface class implement the `==` and `!=` operators and used the `virtual bool equals(const type_t&) const noexcept;` method.
+You must just overload this method for used your own implementation.
+
+The `point` class show how to used `equals` method :
+
+```cpp
+class point : public xtd::object, public xtd::iequatable<point> {
+  //...
+  
+public:
+  bool equals(const point& value) const noexcept override {
+    return x_ == value.x_ && y_ == value.y_;
+  }
+  ​
+  //...
+  
+private:
+  int x_ = 0;
+  int y_ = 0;
+};
+
+//...
+
+static ustring form1::check_points(const point& p1, const point& p2) {
+  if (p1 == p2) eturn "Equals";
+  return "Not equals";
+}
+```
 
 ## icomparable
 
-Coming soon...
+The [xtd::icomparable<type_t>](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1icomparable.html) interface implement the `<`, `<=`, `>` and `>=` operators. and used the `virtual int compare_to(const type_t&) const noexcept;` method.
+You must just overload this method for used your own implementation.
+
+The `time_span` class show how to used `compare_to` method:
+
+```cpp
+class time_span : public xtd::object, public xtd::icomparable<time_span> {
+  //...
+  
+public:
+  int compare_to(const time_span& value) const noexcept override {
+    return value_ < value.value_ ? -1 : value_ > value.value_ ? 1 : 0;
+  }
+  ​
+  //...
+  
+private:
+  int64 value_ = 0;
+};
+
+//...
+
+time_span test::get_max_duration(const std::vector<time_span>& durations) const noexcept {
+  time_span result;
+  for (const auto& duration : durations)
+    if (duration > result) result = duration;
+  return result;
+}
+```
 
 # See also
 ​
