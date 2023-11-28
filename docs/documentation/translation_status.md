@@ -35,11 +35,11 @@ sidebar_position: 9
 
 ## Translated languages
 
-| Languages                                                           | Status                                   |
-| ------------------------------------------------------------------- | ---------------------------------------- |
-| [English](https://github.com/gammasoft71/xtd/tree/master/locale/en) | ![progresser](/pictures/progress100.png) |
-| [French](https://github.com/gammasoft71/xtd/tree/master/locale/fr)  | ![progresser](/pictures/progress100.png) |
-| [Chinese](https://github.com/gammasoft71/xtd/tree/master/locale/zh) | ![progresser](/pictures/progress100.png) |
+| Languages                                                           | Status                                   | Contributor                                              |
+| ------------------------------------------------------------------- | ---------------------------------------- | -------------------------------------------------------- |
+| [English](https://github.com/gammasoft71/xtd/tree/master/locale/en) | ![progresser](/pictures/progress100.png) | [gammasoft71](https://gammasoft71.wixsite.com/gammasoft) |
+| [French](https://github.com/gammasoft71/xtd/tree/master/locale/fr)  | ![progresser](/pictures/progress100.png) | [gammasoft71](https://gammasoft71.wixsite.com/gammasoft) |
+| [Chinese](https://github.com/gammasoft71/xtd/tree/master/locale/zh) | ![progresser](/pictures/progress100.png) | [qingyiwebt](https://github.com/qingyiwebt)              |
 
 ## Contributing
 
