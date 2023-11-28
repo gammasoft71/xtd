@@ -1,0 +1,17 @@
+key "dialog can't have menu"
+value "la boite de dialogue ne peut pas avoir de menu"
+
+key "show_dialog work only with dialog"
+value "show_dialog fonctionne uniquement avec une boite de dialogue"
+
+key "show_sheet work only with dialog"
+value "show_sheet fonctionne uniquement avec une boite de dialogue"
+
+key "show_sheet_dialog work only with dialog"
+value "show_sheet_dialog fonctionne uniquement avec une boite de dialogue"
+
+key "end_dialog work only with dialog"
+value "end_dialog fonctionne uniquement avec une boite de dialogue"
+
+key "Top-level control cannot be added to a control."
+value "Un contrôle de haut niveau ne peut être ajouté à un contrôle."
