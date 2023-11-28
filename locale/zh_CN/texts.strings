@@ -1,8 +1,8 @@
 key "&Abort"
 value "终止(&A)"
 
-key "&About"
-value "关于(&A)"
+key "&About..."
+value "关于(&A)..."
 
 key "&Actual Size"
 value "实际大小(&A)"
