@@ -1,0 +1,257 @@
+key "&Abort"
+value "终止(&A)"
+
+key "&About..."
+value "关于(&A)..."
+
+key "&Actual Size"
+value "实际大小(&A)"
+
+key "Add"
+value "添加"
+
+key "Alignment"
+value "对齐"
+
+key "Align Left"
+value "向左对齐"
+
+key "Align Right"
+value "向右对齐"
+
+key "&Apply"
+value "应用(&A)"
+
+key "&Ascending"
+value "升序(&A)"
+
+key "&Back"
+value "返回(&B)"
+
+key "&Bold"
+value "粗体(&B)"
+
+key "&Bottom"
+value "下端(&B)"
+
+key "&Cancel"
+value "取消(&C)"
+
+key "&CD-Rom"
+value "&CD-Rom"
+
+key "Centered"
+value "向中对齐"
+
+key "&Clear"
+value "清除(&C)"
+
+key "&Close"
+value "关闭(&C)"
+
+key "&Color"
+value "颜色(&C)"
+
+key "&Contents"
+value "内容(&C)"
+
+key "&Convert"
+value "转换(&C)"
+
+key "&Copy"
+value "复制(&C)"
+
+key "&Customize"
+value "自定义(&C)"
+
+key "Cu&t"
+value "剪切(&T)"
+
+key "&Delete"
+value "删除(&D)"
+
+key "&Descending"
+value "降序(&D)"
+
+key "&Down"
+value "向下(&D)"
+
+key "&Edit"
+value "编辑(&E)"
+
+key "&Execute"
+value "执行(&E)"
+
+key "E&xit"
+value "关闭(&E)"
+
+key "&File"
+value "文件(&F)"
+
+key "&Find..."
+value "寻找(&F)..."
+
+key "&First"
+value "首个(&F)"
+
+key "&Floppy"
+value "软盘(&F)"
+
+key "&Font"
+value "字体(&F)"
+
+key "&Forward"
+value "向前(&F)"
+
+key "&Harddisk"
+value "硬盘(&H)"
+
+key "&Help"
+value "帮助(&H)"
+
+key "&Home"
+value "主页(&H)"
+
+key "&Ignore"
+value "忽略(&I)"
+
+key "Indent"
+value "缩进"
+
+key "&Index"
+value "索引(&I)"
+
+key "&Info"
+value "信息(&I)"
+
+key "&Italic"
+value "斜体(&I)"
+
+key "Justified"
+value "对齐"
+
+key "&Jump to"
+value "跳转至(&J)"
+
+key "&Last"
+value "最后(&L)"
+
+key "&Network"
+value "网络(&N)"
+
+key "&New"
+value "新建(&N)"
+
+key "&Next"
+value "向后(&N)"
+
+key "&No"
+value "不要(&N)"
+
+key "&OK"
+value "好的(&O)"
+
+key "&Open..."
+value "打开(&)..."
+
+key "&Options"
+value "选项(&O)"
+
+key "&Paste"
+value "粘贴(&P)"
+
+key "&Preferences"
+value "设置(&P)"
+
+key "&Previous"
+value "向前(&P)"
+
+key "&Print..."
+value "打印(&P)..."
+
+key "Print pre&view"
+value "打印预览(&V)"
+
+key "&Properties"
+value "属性(&P)"
+
+key "&Quit"
+value "退出(&Q)"
+
+key "&Redo"
+value "重做(&R)"
+
+key "Refresh"
+value "刷新"
+
+key "Remove"
+value "移除"
+
+key "Rep&lace..."
+value "替换(&L)..."
+
+key "&Retry"
+value "&重试"
+
+key "Revert to Saved"v
+value "恢复到已保存的版本"
+
+key "&Save"
+value "保存(&S)"
+
+key "Save &As..."
+value "另存为(&A)..."
+
+key "&Search"
+value "搜索(&S)"
+
+key "Select &All"
+value "全选(&A)"
+
+key "&Spell Check"
+value "拼写检查(&S)"
+
+key "&Stop"
+value "停止(&S)"
+
+key "&Strikeout"
+value "&Strikeout"
+
+key "&Tools"
+value "工具(&T)"
+
+key "&Top"
+value "顶端(&T)"
+
+key "Undelete"
+value "回复"
+
+key "&Underline"
+value "下划线(&U)"
+
+key "&Undo"
+value "撤销(&U)"
+
+key "Unindent"
+value "Unindent"
+
+key "&Up"
+value "向上(&U)"
+
+key "&View"
+value "视图(&V)"
+
+key "&Window"
+value "窗口(&W)"
+
+key "&Yes"
+value "是的(&Y)"
+
+key "Zoom &In"
+value "放大(&I)"
+
+key "Zoom &Out"
+value "缩小(&O)"
+
+key "Zoom to &Fit"
+value "适应视图大小(&F)"
