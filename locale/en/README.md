@@ -1,6 +1,6 @@
 # en
 
-Contains translation files in generic English.
+Contains genric English translation files.
 
 ## Translators
 
