@@ -35,7 +35,7 @@ sidebar_position: 9
 
 ## Translated languages
 
-| Languages                                                           | Status                                   | Contributor                                              |
+| Languages                                                           | Status                                   | Translator(s)                                            |
 | ------------------------------------------------------------------- | ---------------------------------------- | -------------------------------------------------------- |
 | [Chinese](https://github.com/gammasoft71/xtd/tree/master/locale/zh) | ![progresser](/pictures/progress100.png) | [qingyiwebt](https://github.com/qingyiwebt)              |
 | [English](https://github.com/gammasoft71/xtd/tree/master/locale/en) | ![progresser](/pictures/progress100.png) | [gammasoft71](https://gammasoft71.wixsite.com/gammasoft) |
