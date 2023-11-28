@@ -1,0 +1,8 @@
+key "Invalid format expression : closing bracket '{' without open bracket '}'"
+value "Invalid format expression : closing bracket '{' without open bracket '}'"
+
+key "Invalid format expression : open bracket '}' without end bracket '{'"
+value "Invalid format expression : open bracket '}' without end bracket '{'"
+
+key "Invalid format expression : format argument must be start by ':'"
+value "Invalid format expression : format argument must be start by ':'"

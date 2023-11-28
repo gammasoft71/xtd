@@ -1,0 +1,12 @@
+key "Only characters : \"{}\" are valid"
+value "Only characters : \"{}\" are valid"
+
+key "value must be between 0.0 and 1.0."
+value "值必须在 0.0 至 1.0 之间。"
+
+key "value must be positive"
+value "值必须为正数"
+
+key "lcd_style invalid"
+value "lcd_style 无效"
+

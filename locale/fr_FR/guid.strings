@@ -1,0 +1,5 @@
+key "Vector size must be 16"
+value "La taille du vecteur doit être de 16"
+
+key "Vector size must be 8"
+value "La taille du vecteur doit être de 8"

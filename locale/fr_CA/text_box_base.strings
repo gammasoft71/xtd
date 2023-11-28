@@ -1,0 +1,5 @@
+key "start greater than text size"
+value "start supérieur à la taille du texte"
+
+key "start + lenght greater than text size"
+value "start + lenght supérieur à la taille du texte"

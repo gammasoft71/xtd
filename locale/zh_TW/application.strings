@@ -1,0 +1,17 @@
+key "Call application::enable_dark_mode() before application::run()"
+value "在调用 application::run() 之前调用 application::enable_dark_mode()"
+
+key "Call application::enable_button_images() before application::run()"
+value "在调用 application::run() 之前调用 application::enable_button_images()"
+
+key "Call application::enable_light_mode() before application::run()"
+value "在调用 application::run() 之前调用 application::enable_light_mode()"
+
+key "Call application::enable_menu_images() before application::run()"
+value "在调用 application::run() 之前调用 application::enable_menu_images()"
+
+key "Call application::enable_visual_styles() before application::run()"
+value "在调用 application::run() 之前调用 application::enable_visual_styles()"
+
+key "Application already running"
+value "应用程序已经在运行"

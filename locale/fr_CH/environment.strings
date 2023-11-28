@@ -1,0 +1,11 @@
+key "Invalid environment variable target value"
+value "Valeur cible de la variable d'environnement invalide"
+
+key "Environment variable name is empty"
+value "Le nom de la variable d'environnement est vide"
+
+key "Can't erase environment variable"
+value "Impossible d'effacer la variable d'environnement"
+
+key "Can't set environment variable"
+value "Impossible de définir une variable d'environnement"
