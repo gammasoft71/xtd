@@ -39,6 +39,7 @@ sidebar_position: 9
 | ------------------------------------------------------------------- | ---------------------------------------- |
 | [English](https://github.com/gammasoft71/xtd/tree/master/locale/en) | ![progresser](/pictures/progress100.png) |
 | [French](https://github.com/gammasoft71/xtd/tree/master/locale/fr)  | ![progresser](/pictures/progress100.png) |
+| [Chinese](https://github.com/gammasoft71/xtd/tree/master/locale/zh) | ![progresser](/pictures/progress100.png) |
 
 ## Contributing
 
