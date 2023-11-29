@@ -1,7 +1,16 @@
 # Internationalization
 
+## Overview
+
+Xtd uses a number of user-readable strings, such as "open" or "save", which need to be translated into the user's language if it's different from English.
+
+xtd has built-in support for internationalization, allowing this to happen automatically if translations into the current language are available.
+
+You can find [here](docs/documentation/translation_status) a list of all existing translations with the addresses of the official translators you should contact if you wish to submit corrections to the translations for your language.
 
 ## List of all locales and corresponding languages
+
+The following table shows all locales and corresponding languages
 
 | code    | ISO 639-2 code | summary                             | language            |
 | ------- | -------------- | ----------------------------------- | ------------------- |
@@ -93,6 +102,35 @@
 | zh_TW   | zho            | Chinese Traditional locale (Taiwan) | Chinese Traditional |
 
 <!-- source : [List of all locales and corresponding languages?](https://github.com/date-fns/date-fns/discussions/2724?sort=new) -->
+
+## Translater usage
+
+### Change The applicaiton locale
+
+To change the application locale, use method [std::locale](https://en.cppreference.com/w/cpp/locale/locale).
+
+The following example show how to change the locale to french (France).
+
+```cpp
+auto main()->int {
+  std::locale::global(std::locale {"fr_FR.utf-8"});
+}
+```
+
+
+### Mark a string for translation
+
+To mark a string for translation use [xtd::translator::translate](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1translator.html#ad0cb6175fa980d928321600c1156d6f2) method.
+
+The following example shows how to marks a string for translation
+
+```cpp
+auto main()->int {
+  auto str = translator::translate("This is a sor translation tring fexample.");
+
+  console::write_line(str);
+}
+```
 
 # See also
 ​
