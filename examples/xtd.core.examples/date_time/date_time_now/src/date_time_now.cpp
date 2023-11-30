@@ -15,7 +15,7 @@ public:
     
     for (auto locale_name : locale_names) {
       try {
-        locale::global(locale(locale_name + ".utf-8"_s));
+        locale::global(locale {locale_name + ".utf-8"_s});
         console::write_line("{}:", locale_name);
         console::write_line("   Local date and time: {}, {}", local_date.to_string(), local_date.kind());
         console::write_line("   UTC date and time: {}, {}\n", utc_date.to_string(), utc_date.kind());
