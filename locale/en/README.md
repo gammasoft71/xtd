@@ -20,9 +20,9 @@ Contains English locale translation files.
 
 [color.strings](color.strings)
 
-[combo_box.strings](combo_box.strings)](.strings)
+[combo_box.strings](combo_box.strings)
 
-[[control.strings](control.strings)
+[control.strings](control.strings)
 
 [countries.strings](countries.strings)
 
