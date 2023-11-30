@@ -6,7 +6,7 @@
 
 using namespace xtd::native;
 
-std::string translator::get_system_language() {
+std::string translator::get_system_locale() {
   if (!environment::get_environment_variable("LANG", ENVIRONMENT_VARIABLE_TARGET_PROCESS).empty()) return environment::get_environment_variable("LANG", ENVIRONMENT_VARIABLE_TARGET_PROCESS);
   return "";
 }
