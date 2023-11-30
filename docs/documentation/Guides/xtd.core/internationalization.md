@@ -6,7 +6,7 @@ Xtd uses a number of user-readable strings, such as "open" or "save", which need
 
 xtd has built-in support for internationalization, allowing this to happen automatically if translations into the current language are available.
 
-You can find [here](docs/documentation/translation_status) a list of all existing translations with the addresses of the official translators you should contact if you wish to submit corrections to the translations for your language.
+You can find [here](/docs/documentation/translation_status) a list of all existing translations with the addresses of the official translators you should contact if you wish to submit corrections to the translations for your language.
 
 ## List of all locales and corresponding languages
 
