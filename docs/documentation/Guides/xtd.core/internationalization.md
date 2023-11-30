@@ -36,6 +36,7 @@ The following table shows all locales and corresponding languages
 | en_AU   | eng            | English locale (Australia)          | English             |
 | en_CA   | eng            | English locale (Canada)             | English             |
 | en_GB   | eng            | English locale (United Kingdom)     | English             |
+| en_IE   | eng            | English locale (Ireland)            | English             |
 | en_IN   | eng            | English locale (India)              | English             |
 | en_NZ   | eng            | English locale (New Zealand)        | English             |
 | en_US   | eng            | English locale (United States)      | English             |
@@ -62,7 +63,7 @@ The following table shows all locales and corresponding languages
 | is      | isl            | Icelandic locale                    | Icelandic           |
 | it      | ita            | Italian locale                      | Italian             |
 | ja      | jpn            | Japanese locale                     | Japanese            |
-| ja_Hira | jpn            | Japanese (Hiragana) locale          | Japanese (Hiragana) |
+| ja_HIRA | jpn            | Japanese (Hiragana) locale          | Japanese (Hiragana) |
 | ka      | geo            | Georgian locale                     | Georgian            |
 | kk      | kaz            | Kazakh locale                       | Kazakh              |
 | kn      | kan            | Kannada locale (India)              | Kannada             |
@@ -87,7 +88,7 @@ The following table shows all locales and corresponding languages
 | sl      | slv            | Slovenian locale                    | Slovenian           |
 | sq      | sqi            | Albanian locale                     | Shqip               |
 | sr      | srp            | Serbian cyrillic locale             | Serbian             |
-| sr_Latn | srp            | Serbian latin locale                | Serbian             |
+| sr_LATN | srp            | Serbian latin locale                | Serbian             |
 | sv      | swe            | Swedish locale                      | Swedish             |
 | ta      | tam            | Tamil locale (India)                | Tamil               |
 | te      | tel            | Telugu locale                       | Telugu              |
@@ -116,7 +117,17 @@ auto main()->int {
   std::locale::global(std::locale {"fr_FR.utf-8"});
 }
 ```
+The following example show how to change the locale to russian (Russia).
 
+```cpp
+auto main()->int {
+  std::locale::global(std::locale {"ru_RU.utf-8"});
+}
+```
+
+### String format
+
+The locale 
 
 ### Mark a string for translation
 
