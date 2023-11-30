@@ -1,5 +1,0 @@
-key "em_size is less than or equal to 0, evaluates to infinity, or is not a valid number."
-value "em_size 小于或等于 0、 计算结果无穷大或不是一个有效的数字."
-
-key "unit can't be equal to graphics_unit::display."
-value "unit 不能等于 graphics_unit::display."
