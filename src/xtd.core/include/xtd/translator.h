@@ -83,6 +83,7 @@ namespace xtd {
     
   private:
     static void initialize();
+    static xtd::ustring locale_to_language(xtd::ustring locale);
     static std::map<xtd::ustring, xtd::collections::specialized::string_map> language_values_;
     static xtd::ustring language_;
   };

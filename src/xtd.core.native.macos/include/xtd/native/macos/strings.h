@@ -115,18 +115,23 @@ namespace xtd::native::macos {
       return list;
     }
     
+    static std::string substring(const std::string& str, size_t start_index, size_t length) noexcept {
+      if (start_index >= str.size()) return "";
+      return str.substr(start_index, length);
+    }
+    
     static const std::string to_lower(const std::string& str) noexcept {
       std::string result = str;
       std::transform(result.begin(), result.end(), result.begin(), ::tolower);
       return result;
     }
     
-    static std::string substring(const std::string& str, size_t start_index, size_t length) noexcept {
-      if (start_index >= str.size()) return "";
-      return str.substr(start_index, length);
+    static const std::string to_upper(const std::string& str) noexcept {
+      std::string result = str;
+      std::transform(result.begin(), result.end(), result.begin(), ::toupper);
+      return result;
     }
-    
-    
+
     static std::string trim_end(const std::string& str, const std::vector<char>& trim_chars) noexcept {
       if (!str.size()) return str;
       std::string result(str);

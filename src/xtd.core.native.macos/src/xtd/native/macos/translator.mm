@@ -10,10 +10,10 @@
 
 using namespace xtd::native;
 
-std::string translator::get_system_language() {
-  if (!environment::get_environment_variable("LANG", ENVIRONMENT_VARIABLE_TARGET_PROCESS).empty()) return macos::strings::to_lower(macos::strings::substring(environment::get_environment_variable("LANG", ENVIRONMENT_VARIABLE_TARGET_PROCESS), 0, 2));
+std::string translator::get_system_locale() {
+  if (!environment::get_environment_variable("LANG", ENVIRONMENT_VARIABLE_TARGET_PROCESS).empty()) return environment::get_environment_variable("LANG", ENVIRONMENT_VARIABLE_TARGET_PROCESS);
   auto cflocale = CFLocaleCopyCurrent();
-  auto language = std::string {[(NSString*)CFLocaleGetValue(cflocale, kCFLocaleLanguageCode) UTF8String]};
+  auto locale = macos::strings::to_lower(std::string {[(NSString*)CFLocaleGetValue(cflocale, kCFLocaleLanguageCode) UTF8String]}) + "_" + macos::strings::to_upper(std::string {[(NSString*)CFLocaleGetValue(cflocale, kCFLocaleCountryCode) UTF8String]});
   CFRelease(cflocale);
-  return language;
+  return locale;
 }
