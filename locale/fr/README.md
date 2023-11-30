@@ -1,4 +1,4 @@
-# en
+# fr
 
 Contains genric French translation files.
 

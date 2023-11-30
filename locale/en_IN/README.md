@@ -1,6 +1,6 @@
-# en
+# en_IN
 
-Contains Ireland English translation files.
+Contains India English translation files.
 
 ## Translators
 

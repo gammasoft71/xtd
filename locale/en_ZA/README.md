@@ -1,6 +1,6 @@
-# en
+# en_ZA
 
-Contains US English translation files.
+Contains South Africa English translation files.
 
 ## Translators
 

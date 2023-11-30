@@ -1,4 +1,4 @@
-# en
+# fr_CA
 
 Contains canadian French translation files.
 

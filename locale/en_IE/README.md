@@ -1,4 +1,4 @@
-# en
+# en_IE
 
 Contains Ireland English translation files.
 
