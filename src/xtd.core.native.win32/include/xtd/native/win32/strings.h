@@ -126,7 +126,13 @@ namespace xtd::native {
         }
         return out;
       }
-      
+
+      static const std::string to_upper(const std::string& str) noexcept {
+        std::string result;
+        std::for_each(str.begin(), str.end(), [&](auto c) {result += static_cast<char>(std::toupper(c)); });
+        return result;
+      }
+
       static std::wstring to_wstring(const std::string& str) { return to_wstring(str.c_str()); }
       static std::wstring to_wstring(const char* str) {
         std::wstring out;

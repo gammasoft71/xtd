@@ -10,6 +10,7 @@
 #include <xtd/native/translator>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <map>
+#include <set>
 
 using namespace std;
 using namespace xtd;
@@ -47,7 +48,7 @@ std::vector<xtd::ustring> translator::languages() {
 }
 
 xtd::ustring translator::system_language() {
-  return xtd::native::translator::get_system_language();
+  return locale_to_language(xtd::native::translator::get_system_locale());
 }
 
 void translator::add_value(const xtd::ustring& language, const xtd::ustring& key, const xtd::ustring& value) {
@@ -109,7 +110,7 @@ void translator::initialize() {
   lock_guard<mutex> lock(mutex_init);
   
   if (language_.empty()) {
-    if (!std::locale().name().empty() && std::locale().name() != "C") language_ = ustring(std::locale().name()).substring(0, 2).to_lower();
+    if (!std::locale().name().empty() && std::locale().name() != "C") language_ = locale_to_language(std::locale().name());
     else language_ = system_language();
   }
   
@@ -125,4 +126,12 @@ void translator::initialize() {
   else parse_locale(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]));
    */
   language_initialized = language_;
+}
+
+ustring translator::locale_to_language(ustring locale) {
+  if (locale.size() < 2) return locale;
+  if (locale.find(".") != locale.npos) locale = locale.remove(locale.find("."));
+  static auto codes = set<ustring> {"ar_DZ", "ar_MA", "ar_SA", "ar_TN", "de_AT", "en_AU", "en_CA", "en_GB", "en_IE", "en_IN", "en_NZ", "en_US", "en_ZA", "fa_IR", "fr_CA", "fr_CH", "ja_HIRA", "nl_BE", "pt_BR", "sr_LATN", "zh_CN", "zh_TW"};
+  if (codes.find(locale) != codes.end()) return locale;
+  return locale.remove(2);
 }

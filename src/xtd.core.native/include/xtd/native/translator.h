@@ -34,10 +34,10 @@ namespace xtd {
       /// @name Protected methods
       
       /// @{
-      /// @brief Gets the system language.
-      /// @return std::string A string containing the system language.
+      /// @brief Gets the system locale.
+      /// @return std::string A string containing the system locale.
       /// @warning Internal use only
-      static std::string get_system_language();
+      static std::string get_system_locale();
       /// @}
     };
   }
