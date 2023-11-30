@@ -1,4 +1,4 @@
-# en
+# en_GB
 
 Contains UK English translation files.
 

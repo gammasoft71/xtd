@@ -1,4 +1,4 @@
-# en
+# en_CA
 
 Contains Canadian English translation files.
 

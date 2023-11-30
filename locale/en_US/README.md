@@ -1,4 +1,4 @@
-# en
+# en_US
 
 Contains US English translation files.
 

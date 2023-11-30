@@ -1,10 +1,10 @@
-# en
+# zh_CN
 
 Contains China Chinese translation files.
 
 ## Translators
 
-* Initial translation by [gammasoft71](https://gammasoft71.wixsite.com/gammasoft).
+* Initial translation by [qingyiwebt](https://github.com/qingyiwebt).
 
 ## Remarks
 

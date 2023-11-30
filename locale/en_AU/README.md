@@ -1,4 +1,4 @@
-# en
+# en_AU
 
 Contains Australian English translation files.
 

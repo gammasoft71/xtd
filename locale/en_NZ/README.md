@@ -1,4 +1,4 @@
-# en
+# en_NZ
 
 Contains New Zealand English translation files.
 

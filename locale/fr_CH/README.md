@@ -1,6 +1,6 @@
-# en
+# fr_CH
 
-Contains Swiss French translation files.
+Contains Swisszerland French translation files.
 
 ## Translators
 
