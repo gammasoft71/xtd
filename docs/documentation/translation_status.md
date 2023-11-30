@@ -81,6 +81,11 @@ sidebar_position: 9
 | [Hebrew](https://github.com/gammasoft71/xtd/tree/master/locale/eh)                      | ![progresser](/pictures/progress0.png)   | -                                                        |
 | [Hindi](https://github.com/gammasoft71/xtd/tree/master/locale/hi)                       | ![progresser](/pictures/progress0.png)   | -                                                        |
 | [Hungarian](https://github.com/gammasoft71/xtd/tree/master/locale/hu)                   | ![progresser](/pictures/progress0.png)   | -                                                        |
+| [Indonesian](https://github.com/gammasoft71/xtd/tree/master/locale/id)                  | ![progresser](/pictures/progress0.png)   | -                                                        |
+| [Icelandic](https://github.com/gammasoft71/xtd/tree/master/locale/is)                   | ![progresser](/pictures/progress0.png)   | -                                                        |
+| [Italian](https://github.com/gammasoft71/xtd/tree/master/locale/it)                     | ![progresser](/pictures/progress0.png)   | -                                                        |
+| [Japanese](https://github.com/gammasoft71/xtd/tree/master/locale/ja)                    | ![progresser](/pictures/progress0.png)   | -                                                        |
+| [Japanese (Hiragana)](https://github.com/gammasoft71/xtd/tree/master/locale/ja_HIRA)    | ![progresser](/pictures/progress0.png)   | -                                                        |
 | [Persian](https://github.com/gammasoft71/xtd/tree/master/locale/fa_IR)                  | ![progresser](/pictures/progress0.png)   | -                                                        |
 | [Spanish](https://github.com/gammasoft71/xtd/tree/master/locale/es)                     | ![progresser](/pictures/progress0.png)   | -                                                        |
 | [Scottish Gaelic](https://github.com/gammasoft71/xtd/tree/master/locale/gd)             | ![progresser](/pictures/progress0.png)   | -                                                        |
