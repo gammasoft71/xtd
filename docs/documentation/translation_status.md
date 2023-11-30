@@ -37,6 +37,12 @@ sidebar_position: 9
 
 | Languages                                                                               | Status                                   | Translator(s)                                            |
 | --------------------------------------------------------------------------------------- | ---------------------------------------- | -------------------------------------------------------- |
+| [Afrikaans](https://github.com/gammasoft71/xtd/tree/master/locale/af)                   | ![progresser](/pictures/progress0.png)   | -                                                        |
+| [Arabic](https://github.com/gammasoft71/xtd/tree/master/locale/ar)                      | ![progresser](/pictures/progress0.png)   | -                                                        |
+| [Arabic (Algerian)](https://github.com/gammasoft71/xtd/tree/master/locale/ar_DZ)        | ![progresser](/pictures/progress0.png)   | -                                                        |
+| [Arabic (Moroccan)](https://github.com/gammasoft71/xtd/tree/master/locale/ar_MA)        | ![progresser](/pictures/progress0.png)   | -                                                        |
+| [Arabic (Sauid)](https://github.com/gammasoft71/xtd/tree/master/locale/ar_SA)           | ![progresser](/pictures/progress0.png)   | -                                                        |
+| [Arabic (Tunisian)](https://github.com/gammasoft71/xtd/tree/master/locale/ar_TN)        | ![progresser](/pictures/progress0.png)   | -                                                        |
 | [Chinese](https://github.com/gammasoft71/xtd/tree/master/locale/zh)                     | ![progresser](/pictures/progress100.png) | [qingyiwebt](https://github.com/qingyiwebt)              |
 | [Chinese (China)](https://github.com/gammasoft71/xtd/tree/master/locale/zh_CN)          | ![progresser](/pictures/progress100.png) | [qingyiwebt](https://github.com/qingyiwebt)              |
 | [Chinese (Taiwan)](https://github.com/gammasoft71/xtd/tree/master/locale/zh_TW)         | ![progresser](/pictures/progress100.png) | [qingyiwebt](https://github.com/qingyiwebt)              |
