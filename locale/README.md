@@ -2,7 +2,9 @@
 
 Contains translation files.
 
-The folowing table contains all supported languages.
+## List of all locales and corresponding languages
+
+The following table shows all locales and corresponding languages :
 
 | code                         | ISO 639-2 code | summary                             | language            |
 | ---------------------------- | -------------- | ----------------------------------- | ------------------- |
