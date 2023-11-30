@@ -10,97 +10,97 @@ You can find [here](/docs/documentation/translation_status) a list of all existi
 
 ## List of all locales and corresponding languages
 
-The following table shows all locales and corresponding languages
+The following table shows all locales and corresponding languages :
 
-| code    | ISO 639-2 code | summary                             | language            |
-| ------- | -------------- | ----------------------------------- | ------------------- |
-| af      | afr            | Afrikaans locale                    | Afrikaans           |
-| ar      | ara            | Arabic locale                       | Arabic              |
-| ar_DZ   | ara            | Arabic locale (Algerian Arabic)     | Algerian Arabic     |
-| ar_MA   | ara            | Arabic locale (Moroccan Arabic)     | Moroccan Arabic     |
-| ar_SA   | ara            | Arabic locale (Sauid Arabic)        | Arabic              |
-| ar_TN   | ara            | Arabic locale (Tunisian Arabic)     | Arabic              |
-| az      | aze            | Azerbaijani locale                  | Azerbaijani         |
-| be      | bel            | Belarusian locale                   | Belarusian          |
-| bg      | bul            | Bulgarian locale                    | Bulgarian           |
-| bn      | ben            | Bengali locale                      | Bengali             |
-| bs      | bos            | Bosnian locale                      | Bosnian             |
-| ca      | cat            | Catalan locale                      | Catalan             |
-| cs      | ces            | Czech locale                        | Czech               |
-| cy      | cym            | Welsh locale                        | Welsh               |
-| da      | dan            | Danish locale                       | Danish              |
-| de      | deu            | German locale                       | German              |
-| de_AT   | deu            | German locale (Austria)             | German              |
-| el      | ell            | Greek locale                        | Greek               |
-| en      | eng            | English locale                      | English             |
-| en_AU   | eng            | English locale (Australia)          | English             |
-| en_CA   | eng            | English locale (Canada)             | English             |
-| en_GB   | eng            | English locale (United Kingdom)     | English             |
-| en_IE   | eng            | English locale (Ireland)            | English             |
-| en_IN   | eng            | English locale (India)              | English             |
-| en_NZ   | eng            | English locale (New Zealand)        | English             |
-| en_US   | eng            | English locale (United States)      | English             |
-| en_ZA   | eng            | English locale (South Africa)       | English             |
-| eo      | epo            | Esperanto locale                    | Esperanto           |
-| es      | spa            | Spanish locale                      | Spanish             |
-| et      | est            | Estonian locale                     | Estonian            |
-| eu      | eus            | Basque locale                       | Basque              |
-| fa_IR   | ira            | Persian/Farsi locale (Iran)         | Persian             |
-| fi      | fin            | Finnish locale                      | Finnish             |
-| fr      | fra            | French locale                       | French              |
-| fr_CA   | fra            | French locale (Canada)              | French              |
-| fr_CH   | fra            | French locale (Switzerland)         | French              |
-| gd      | gla            | Scottish Gaelic                     | Scottish Gaelic     |
-| gl      | glg            | Galician locale                     | Galician            |
-| gu      | guj            | Gujarati locale (India)             | Gujarati            |
-| he      | heb            | Hebrew locale                       | Hebrew              |
-| hi      | hin            | Hindi locale (India)                | Hindi               |
-| hr      | hrv            | Croatian locale                     | Croatian            |
-| ht      | hat            | Haitian Creole locale               | Haitian Creole      |
-| hu      | hun            | Hungarian locale                    | Hungarian           |
-| hy      | arm            | Armenian locale                     | Armenian            |
-| id      | ind            | Indonesian locale                   | Indonesian          |
-| is      | isl            | Icelandic locale                    | Icelandic           |
-| it      | ita            | Italian locale                      | Italian             |
-| ja      | jpn            | Japanese locale                     | Japanese            |
-| ja_HIRA | jpn            | Japanese (Hiragana) locale          | Japanese (Hiragana) |
-| ka      | geo            | Georgian locale                     | Georgian            |
-| kk      | kaz            | Kazakh locale                       | Kazakh              |
-| kn      | kan            | Kannada locale (India)              | Kannada             |
-| ko      | kor            | Korean locale                       | Korean              |
-| lb      | ltz            | Luxembourgish locale                | Luxembourgish       |
-| lt      | lit            | Lithuanian locale                   | Lithuanian          |
-| lv      | lav            | Latvian locale (Latvia)             | Latvian             |
-| mk      | mkd            | Macedonian locale                   | Macedonian          |
-| mn      | mon            | Mongolian locale                    | Mongolian           |
-| ms      | msa            | Malay locale                        | Malay               |
-| mt      | mlt            | Maltese locale                      | Maltese             |
-| nb      | nob            | Norwegian Bokmål locale             | Norwegian Bokmål    |
-| nl      | nld            | Dutch locale                        | Dutch               |
-| nl_BE   | nld            | Flemish locale (Belgium)            | Flemish             |
-| nn      | nno            | Norwegian Nynorsk locale            | Norwegian Nynorsk   |
-| pl      | pol            | Polish locale                       | Polish              |
-| pt      | por            | Portuguese locale                   | Portuguese          |
-| pt_BR   | por            | Portuguese locale (Brazil)          | Portuguese          |
-| ro      | ron            | Romanian locale                     | Romanian            |
-| ru      | rus            | Russian locale                      | Russian             |
-| sk      | slk            | Slovak locale                       | Slovak              |
-| sl      | slv            | Slovenian locale                    | Slovenian           |
-| sq      | sqi            | Albanian locale                     | Shqip               |
-| sr      | srp            | Serbian cyrillic locale             | Serbian             |
-| sr_LATN | srp            | Serbian latin locale                | Serbian             |
-| sv      | swe            | Swedish locale                      | Swedish             |
-| ta      | tam            | Tamil locale (India)                | Tamil               |
-| te      | tel            | Telugu locale                       | Telugu              |
-| th      | tha            | Thai locale                         | Thai                |
-| tr      | tur            | Turkish locale                      | Turkish             |
-| ug      | uig            | Uighur locale                       | Uighur              |
-| uk      | ukr            | Ukrainian locale                    | Ukrainian           |
-| uz      | uzb            | Uzbek locale                        | Uzbek               |
-| vi      | vie            | Vietnamese locale (Vietnam)         | Vietnamese          |
-| zh      | zho            | Chinese Simplified locale           | Chinese Simplified  |
-| zh_CN   | zho            | Chinese Simplified locale (China)   | Chinese Simplified  |
-| zh_TW   | zho            | Chinese Traditional locale (Taiwan) | Chinese Traditional |
+| code                                                                               | ISO 639-2 code | summary                             | language            |
+| ---------------------------------------------------------------------------------- | -------------- | ----------------------------------- | ------------------- |
+| [af](https://github.com/gammasoft71/xtd/tree/master/locale/af/README.md)           | afr            | Afrikaans locale                    | Afrikaans           |
+| [ar](https://github.com/gammasoft71/xtd/tree/master/locale/ar/README.md)           | ara            | Arabic locale                       | Arabic              |
+| [ar_DZ](https://github.com/gammasoft71/xtd/tree/master/locale/ar_DZ/README.md)     | ara            | Arabic locale (Algerian Arabic)     | Algerian Arabic     |
+| [ar_MA](https://github.com/gammasoft71/xtd/tree/master/locale/ar_MA/README.md)     | ara            | Arabic locale (Moroccan Arabic)     | Moroccan Arabic     |
+| [ar_SA](https://github.com/gammasoft71/xtd/tree/master/locale/ar_SA/README.md)     | ara            | Arabic locale (Sauid Arabic)        | Arabic              |
+| [ar_TN](https://github.com/gammasoft71/xtd/tree/master/locale/ar_TN/README.md)     | ara            | Arabic locale (Tunisian Arabic)     | Arabic              |
+| [az](https://github.com/gammasoft71/xtd/tree/master/locale/az/README.md)           | aze            | Azerbaijani locale                  | Azerbaijani         |
+| [be](https://github.com/gammasoft71/xtd/tree/master/locale/be/README.md)           | bel            | Belarusian locale                   | Belarusian          |
+| [bg](https://github.com/gammasoft71/xtd/tree/master/locale/bg/README.md)           | bul            | Bulgarian locale                    | Bulgarian           |
+| [bn](https://github.com/gammasoft71/xtd/tree/master/locale/bn/README.md)           | ben            | Bengali locale                      | Bengali             |
+| [bs](https://github.com/gammasoft71/xtd/tree/master/locale/bs/README.md)           | bos            | Bosnian locale                      | Bosnian             |
+| [ca](https://github.com/gammasoft71/xtd/tree/master/locale/ca/README.md)           | cat            | Catalan locale                      | Catalan             |
+| [cs](https://github.com/gammasoft71/xtd/tree/master/locale/cs/README.md)           | ces            | Czech locale                        | Czech               |
+| [cy](https://github.com/gammasoft71/xtd/tree/master/locale/cy/README.md)           | cym            | Welsh locale                        | Welsh               |
+| [da](https://github.com/gammasoft71/xtd/tree/master/locale/da/README.md)           | dan            | Danish locale                       | Danish              |
+| [de](https://github.com/gammasoft71/xtd/tree/master/locale/de/README.md)           | deu            | German locale                       | German              |
+| [de_AT](https://github.com/gammasoft71/xtd/tree/master/locale/de_AT/README.md)     | deu            | German locale (Austria)             | German              |
+| [el](https://github.com/gammasoft71/xtd/tree/master/locale/el/README.md)           | ell            | Greek locale                        | Greek               |
+| [en](https://github.com/gammasoft71/xtd/tree/master/locale/en/README.md)           | eng            | English locale                      | English             |
+| [en_AU](https://github.com/gammasoft71/xtd/tree/master/locale/en_AU/README.md)     | eng            | English locale (Australia)          | English             |
+| [en_CA](https://github.com/gammasoft71/xtd/tree/master/locale/en_CA/README.md)     | eng            | English locale (Canada)             | English             |
+| [en_GB](https://github.com/gammasoft71/xtd/tree/master/locale/em_GB/README.md)     | eng            | English locale (United Kingdom)     | English             |
+| [en_IE](https://github.com/gammasoft71/xtd/tree/master/locale/em_IE/README.md)     | eng            | English locale (Ireland)            | English             |
+| [en_IN](https://github.com/gammasoft71/xtd/tree/master/locale/en_IN/README.md)     | eng            | English locale (India)              | English             |
+| [en_NZ](https://github.com/gammasoft71/xtd/tree/master/locale/en_NZ/README.md)     | eng            | English locale (New Zealand)        | English             |
+| [en_US](https://github.com/gammasoft71/xtd/tree/master/locale/en_US/README.md)     | eng            | English locale (United States)      | English             |
+| [en_ZA](https://github.com/gammasoft71/xtd/tree/master/locale/en_ZA/README.md)     | eng            | English locale (South Africa)       | English             |
+| [eo](https://github.com/gammasoft71/xtd/tree/master/locale/eo/README.md)           | epo            | Esperanto locale                    | Esperanto           |
+| [es](https://github.com/gammasoft71/xtd/tree/master/locale/es/README.md)           | spa            | Spanish locale                      | Spanish             |
+| [et](https://github.com/gammasoft71/xtd/tree/master/locale/et/README.md)           | est            | Estonian locale                     | Estonian            |
+| [eu](https://github.com/gammasoft71/xtd/tree/master/locale/eu/README.md)           | eus            | Basque locale                       | Basque              |
+| [fa_IR](https://github.com/gammasoft71/xtd/tree/master/locale/fa_IR/README.md)     | ira            | Persian/Farsi locale (Iran)         | Persian             |
+| [fi](https://github.com/gammasoft71/xtd/tree/master/locale/fi/README.md)           | fin            | Finnish locale                      | Finnish             |
+| [fr](https://github.com/gammasoft71/xtd/tree/master/locale/fr/README.md)           | fra            | French locale                       | French              |
+| [fr_CA](https://github.com/gammasoft71/xtd/tree/master/locale/fr_CA/README.md)     | fra            | French locale (Canada)              | French              |
+| [fr_CH](https://github.com/gammasoft71/xtd/tree/master/locale/fr_CH/README.md)     | fra            | French locale (Switzerland)         | French              |
+| [gd](https://github.com/gammasoft71/xtd/tree/master/locale/gd/README.md)           | gla            | Scottish Gaelic                     | Scottish Gaelic     |
+| [gl](https://github.com/gammasoft71/xtd/tree/master/locale/gl/README.md)           | glg            | Galician locale                     | Galician            |
+| [gu](https://github.com/gammasoft71/xtd/tree/master/locale/gu/README.md)           | guj            | Gujarati locale (India)             | Gujarati            |
+| [he](https://github.com/gammasoft71/xtd/tree/master/locale/he/README.md)           | heb            | Hebrew locale                       | Hebrew              |
+| [hi](https://github.com/gammasoft71/xtd/tree/master/locale/hi/README.md)           | hin            | Hindi locale (India)                | Hindi               |
+| [hr](https://github.com/gammasoft71/xtd/tree/master/locale/hr/README.md)           | hrv            | Croatian locale                     | Croatian            |
+| [ht](https://github.com/gammasoft71/xtd/tree/master/locale/ht/README.md)           | hat            | Haitian Creole locale               | Haitian Creole      |
+| [hu](https://github.com/gammasoft71/xtd/tree/master/locale/hu/README.md)           | hun            | Hungarian locale                    | Hungarian           |
+| [hy](https://github.com/gammasoft71/xtd/tree/master/locale/hy/README.md)           | arm            | Armenian locale                     | Armenian            |
+| [id](https://github.com/gammasoft71/xtd/tree/master/locale/id/README.md)           | ind            | Indonesian locale                   | Indonesian          |
+| [is](https://github.com/gammasoft71/xtd/tree/master/locale/is/README.md)           | isl            | Icelandic locale                    | Icelandic           |
+| [it](https://github.com/gammasoft71/xtd/tree/master/locale/it/README.md)           | ita            | Italian locale                      | Italian             |
+| [ja](https://github.com/gammasoft71/xtd/tree/master/locale/ja/README.md)           | jpn            | Japanese locale                     | Japanese            |
+| [ja_HIRA](https://github.com/gammasoft71/xtd/tree/master/locale/ja_HIRA/README.md) | jpn            | Japanese (Hiragana) locale          | Japanese (Hiragana) |
+| [ka](https://github.com/gammasoft71/xtd/tree/master/locale/ka/README.md)           | geo            | Georgian locale                     | Georgian            |
+| [kk](https://github.com/gammasoft71/xtd/tree/master/locale/kk/README.md)           | kaz            | Kazakh locale                       | Kazakh              |
+| [kn](https://github.com/gammasoft71/xtd/tree/master/locale/kn/README.md)           | kan            | Kannada locale (India)              | Kannada             |
+| [ko](https://github.com/gammasoft71/xtd/tree/master/locale/ko/README.md)           | kor            | Korean locale                       | Korean              |
+| [lb](https://github.com/gammasoft71/xtd/tree/master/locale/lb/README.md)           | ltz            | Luxembourgish locale                | Luxembourgish       |
+| [lt](https://github.com/gammasoft71/xtd/tree/master/locale/lt/README.md)           | lit            | Lithuanian locale                   | Lithuanian          |
+| [lv](https://github.com/gammasoft71/xtd/tree/master/locale/lv/README.md)           | lav            | Latvian locale (Latvia)             | Latvian             |
+| [mk](https://github.com/gammasoft71/xtd/tree/master/locale/mk/README.md)           | mkd            | Macedonian locale                   | Macedonian          |
+| [mn](https://github.com/gammasoft71/xtd/tree/master/locale/mn/README.md)           | mon            | Mongolian locale                    | Mongolian           |
+| [ms](https://github.com/gammasoft71/xtd/tree/master/locale/ms/README.md)           | msa            | Malay locale                        | Malay               |
+| [mt](https://github.com/gammasoft71/xtd/tree/master/locale/mt/README.md)           | mlt            | Maltese locale                      | Maltese             |
+| [nb](https://github.com/gammasoft71/xtd/tree/master/locale/nb/README.md)           | nob            | Norwegian Bokmål locale             | Norwegian Bokmål    |
+| [nl](https://github.com/gammasoft71/xtd/tree/master/locale/nl/README.md)           | nld            | Dutch locale                        | Dutch               |
+| [nl_BE](https://github.com/gammasoft71/xtd/tree/master/locale/nl_BE/README.md)     | nld            | Flemish locale (Belgium)            | Flemish             |
+| [nn](https://github.com/gammasoft71/xtd/tree/master/locale/nn/README.md)           | nno            | Norwegian Nynorsk locale            | Norwegian Nynorsk   |
+| [pl](https://github.com/gammasoft71/xtd/tree/master/locale/pl/README.md)           | pol            | Polish locale                       | Polish              |
+| [pt](https://github.com/gammasoft71/xtd/tree/master/locale/pt/README.md)           | por            | Portuguese locale                   | Portuguese          |
+| [pt_BR](https://github.com/gammasoft71/xtd/tree/master/locale/pt_BR/README.md)     | por            | Portuguese locale (Brazil)          | Portuguese          |
+| [ro](https://github.com/gammasoft71/xtd/tree/master/locale/ro/README.md)           | ron            | Romanian locale                     | Romanian            |
+| [ru](https://github.com/gammasoft71/xtd/tree/master/locale/ru/README.md)           | rus            | Russian locale                      | Russian             |
+| [sk](https://github.com/gammasoft71/xtd/tree/master/locale/sk/README.md)           | slk            | Slovak locale                       | Slovak              |
+| [sl](https://github.com/gammasoft71/xtd/tree/master/locale/sl/README.md)           | slv            | Slovenian locale                    | Slovenian           |
+| [sq](https://github.com/gammasoft71/xtd/tree/master/locale/sq/README.md)           | sqi            | Albanian locale                     | Shqip               |
+| [sr](https://github.com/gammasoft71/xtd/tree/master/locale/sr/README.md)           | srp            | Serbian cyrillic locale             | Serbian             |
+| [sr_LATN](https://github.com/gammasoft71/xtd/tree/master/locale/sr_LATN/README.md) | srp            | Serbian latin locale                | Serbian             |
+| [sv](https://github.com/gammasoft71/xtd/tree/master/locale/sv/README.md)           | swe            | Swedish locale                      | Swedish             |
+| [ta](https://github.com/gammasoft71/xtd/tree/master/locale/ta/README.md)           | tam            | Tamil locale (India)                | Tamil               |
+| [te](https://github.com/gammasoft71/xtd/tree/master/locale/te/README.md)           | tel            | Telugu locale                       | Telugu              |
+| [th](https://github.com/gammasoft71/xtd/tree/master/locale/th/README.md)           | tha            | Thai locale                         | Thai                |
+| [tr](https://github.com/gammasoft71/xtd/tree/master/locale/tr/README.md)           | tur            | Turkish locale                      | Turkish             |
+| [ug](https://github.com/gammasoft71/xtd/tree/master/locale/ug/README.md)           | uig            | Uighur locale                       | Uighur              |
+| [uk](https://github.com/gammasoft71/xtd/tree/master/locale/uk/README.md)           | ukr            | Ukrainian locale                    | Ukrainian           |
+| [uz](https://github.com/gammasoft71/xtd/tree/master/locale/af/README.md)           | uzb            | Uzbek locale                        | Uzbek               |
+| [vi](https://github.com/gammasoft71/xtd/tree/master/locale/vi/README.md)           | vie            | Vietnamese locale (Vietnam)         | Vietnamese          |
+| [zh](https://github.com/gammasoft71/xtd/tree/master/locale/zh/README.md)           | zho            | Chinese Simplified locale           | Chinese Simplified  |
+| [zh_CN](https://github.com/gammasoft71/xtd/tree/master/locale/zh_CN/README.md)     | zho            | Chinese Simplified locale (China)   | Chinese Simplified  |
+| [zh_TW](https://github.com/gammasoft71/xtd/tree/master/locale/zh_TW/README.md)     | zho            | Chinese Traditional locale (Taiwan) | Chinese Traditional |
 
 <!-- source : [List of all locales and corresponding languages?](https://github.com/date-fns/date-fns/discussions/2724?sort=new) -->
 
@@ -149,7 +149,3 @@ auto main()->int {
 * [Documentation](/docs/documentation)
 
 [//]: # (https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-timespan-format-strings)
-      /// @brief Gets the system language.
-      /// @return std::string A string containing the system language.
-      /// @warning Internal use only
-      static std::string get_system_language();
