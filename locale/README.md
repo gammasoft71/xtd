@@ -4,95 +4,95 @@ Contains translation files.
 
 The folowing table contains all supported languages.
 
-| Languages                                   | summary                             |
-| ------------------------------------------- | ----------------------------------- |
-| [Afrikaans](af/README.md)                   | Afrikaans locale                    |
-| [Arabic](ar/README.md)                      | Arabic locale                       |
-| [Arabic (Algerian)](ar_DZ/README.md)        | Arabic locale (Algerian Arabic)     |
-| [Arabic (Moroccan)](ar_MA/README.md)        |  |
-| [Arabic (Sauid)](ar_SA/README.md)           |  |
-| [Arabic (Tunisian)](ar_TN/README.md)        |  |
-| [Armenian](hy/README.md)                    |  |
-| [Azerbaijani](az/README.md)                 |  |
-| [Basque](eu/README.md)                      |  |
-| [Belarusian](be/README.md)                  |  |
-| [Bulgarian](bg/README.md)                   |  |
-| [Bengali](bn/README.md)                     |  |
-| [Bosnian](bs/README.md)                     |  |
-| [Catalan](ca/README.md)                     |  |
-| [Czech](cs/README.md)                       |  |
-| [Chinese](zh/README.md)                     |  |
-| [Chinese (China)](zh_CN/README.md)          |  |
-| [Chinese (Taiwan)](zh_TW/README.md)         |  |
-| [Croatian](hr/README.md)                    |  |
-| [Danish](da/README.md)                      |  |
-| [Dutch](nl/README.md)                       |  |
-| [English](en/README.md)                     |  |
-| [English (Australia)](en_AU/README.md)      |  |
-| [English (Canada)](en_CA/README.md)         |  |
-| [English (India)](en_IN/README.md)          |  |
-| [English (Ireland)](en_IE/README.md)        |  |
-| [English (New Zealand)](en_NZ/README.md)    |  |
-| [English (South Affrica)](en_ZA/README.md)  |  |
-| [English (United Kingdom)](en_GB/README.md) |  |
-| [English (United States)](en_US/README.md)  |  |
-| [Esperanto](eo/README.md)                   |  |
-| [Estonian](et/README.md)                    |  |
-| [Finnish](fi/README.md)                     |  |
-| [Flemish](nl_BE/README.md)                  |  |
-| [French](fr/README.md)                      |  |
-| [French (Canada)](fr_CA/README.md)          |  |
-| [French (Switzerland)](fr_CH/README.md)     |  |
-| [Galician](gl/README.md)                    |  |
-| [Georgian](ka/README.md)                    |  |
-| [German](de/README.md)                      |  |
-| [German (Austria)](de_AT/README.md)         |  |
-| [Greek](el/README.md)                       |  |
-| [Gujarati](gu/README.md)                    |  |
-| [Haitian Creole](ht/README.md)              |  |
-| [Hebrew](eh/README.md)                      |  |
-| [Hindi](hi/README.md)                       |  |
-| [Hungarian](hu/README.md)                   |  |
-| [Indonesian](id/README.md)                  |  |
-| [Icelandic](is/README.md)                   |  |
-| [Italian](it/README.md)                     |  |
-| [Japanese](ja/README.md)                    |  |
-| [Japanese (Hiragana)](ja_HIRA/README.md)    |  |
-| [Kazakh](kk/README.md)                      |  |
-| [Kannada](kn/README.md)                     |  |
-| [Korean](ko/README.md)                      |  |
-| [Latvian](lv/README.md)                     |  |
-| [Lithuanian](lt/README.md)                  |  |
-| [Luxembourgish](lb/README.md)               |  |
-| [Macedonian](mk/README.md)                  |  |
-| [Malay](ms/README.md)                       |  |
-| [Maltese](mt/README.md)                     |  |
-| [Mongolian](mn/README.md)                   |  |
-| [Norwegian Bokmål](nb/README.md)            |  |
-| [Norwegian Nynorsk](nn/README.md)           |  |
-| [Persian/Farsi (Iran)](fa_IR/README.md)     |  |
-| [Polish](pl/README.md)                      |  |
-| [Portuguese](pt/README.md)                  |  |
-| [Portuguese (Brazil)](pt_BR/README.md)      |  |
-| [Romanian](ro/README.md)                    |  |
-| [Russian](ru/README.md)                     |  |
-| [Serbian](sr/README.md)                     |  |
-| [Serbian (Latin)](sr_LATN/README.md)        |  |
-| [Shqip](sq/README.md)                       |  |
-| [Slovak](sk/README.md)                      |  |
-| [Slovenian](sl/README.md)                   |  |
-| [Spanish](es/README.md)                     |  |
-| [Scottish Gaelic](gd/README.md)             |  |
-| [Swedish](sv/README.md)                     |  |
-| [Tamil](ta/README.md)                       |  |
-| [Telugu](te/README.md)                      |  |
-| [Thai](th/README.md)                        |  |
-| [Turkish](tr/README.md)                     |  |
-| [Uighur](ug/README.md)                      |  |
-| [Ukrainian](uk/README.md)                   |  |
-| [Uzbek](uz/README.md)                       |  |
-| [Vietnamese](vi/README.md)                  |  |
-| [Welsh](cy/README.md)                       |  |
+| code                         | ISO 639-2 code | summary                             | language            |
+| ---------------------------- | -------------- | ----------------------------------- | ------------------- |
+| [af](af/README.md)           | afr            | Afrikaans locale                    | Afrikaans           |
+| [ar](ar/README.md)           | ara            | Arabic locale                       | Arabic              |
+| [ar_DZ](ar_DZ/README.md)     | ara            | Arabic locale (Algerian Arabic)     | Algerian Arabic     |
+| [ar_MA](ar_MA/README.md)     | ara            | Arabic locale (Moroccan Arabic)     | Moroccan Arabic     |
+| [ar_SA](ar_SA/README.md)     | ara            | Arabic locale (Sauid Arabic)        | Arabic              |
+| [ar_TN](ar_TN/README.md)     | ara            | Arabic locale (Tunisian Arabic)     | Arabic              |
+| [az](az/README.md)           | aze            | Azerbaijani locale                  | Azerbaijani         |
+| [be](be/README.md)           | bel            | Belarusian locale                   | Belarusian          |
+| [bg](bg/README.md)           | bul            | Bulgarian locale                    | Bulgarian           |
+| [bn](bn/README.md)           | ben            | Bengali locale                      | Bengali             |
+| [bs](bs/README.md)           | bos            | Bosnian locale                      | Bosnian             |
+| [ca](ca/README.md)           | cat            | Catalan locale                      | Catalan             |
+| [cs](cs/README.md)           | ces            | Czech locale                        | Czech               |
+| [cy](cy/README.md)           | cym            | Welsh locale                        | Welsh               |
+| [da](da/README.md)           | dan            | Danish locale                       | Danish              |
+| [de](de/README.md)           | deu            | German locale                       | German              |
+| [de_AT](de_AT/README.md)     | deu            | German locale (Austria)             | German              |
+| [el](el/README.md)           | ell            | Greek locale                        | Greek               |
+| [en](en/README.md)           | eng            | English locale                      | English             |
+| [en_AU](en_AU/README.md)     | eng            | English locale (Australia)          | English             |
+| [en_CA](en_CA/README.md)     | eng            | English locale (Canada)             | English             |
+| [en_GB](em_GB/README.md)     | eng            | English locale (United Kingdom)     | English             |
+| [en_IE](em_IE/README.md)     | eng            | English locale (Ireland)            | English             |
+| [en_IN](en_IN/README.md)     | eng            | English locale (India)              | English             |
+| [en_NZ](en_NZ/README.md)     | eng            | English locale (New Zealand)        | English             |
+| [en_US](en_US/README.md)     | eng            | English locale (United States)      | English             |
+| [en_ZA](en_ZA/README.md)     | eng            | English locale (South Africa)       | English             |
+| [eo](eo/README.md)           | epo            | Esperanto locale                    | Esperanto           |
+| [es](es/README.md)           | spa            | Spanish locale                      | Spanish             |
+| [et](et/README.md)           | est            | Estonian locale                     | Estonian            |
+| [eu](eu/README.md)           | eus            | Basque locale                       | Basque              |
+| [fa_IR](fa_IR/README.md)     | ira            | Persian/Farsi locale (Iran)         | Persian             |
+| [fi](fi/README.md)           | fin            | Finnish locale                      | Finnish             |
+| [fr](fr/README.md)           | fra            | French locale                       | French              |
+| [fr_CA](fr_CA/README.md)     | fra            | French locale (Canada)              | French              |
+| [fr_CH](fr_CH/README.md)     | fra            | French locale (Switzerland)         | French              |
+| [gd](gd/README.md)           | gla            | Scottish Gaelic                     | Scottish Gaelic     |
+| [gl](gl/README.md)           | glg            | Galician locale                     | Galician            |
+| [gu](gu/README.md)           | guj            | Gujarati locale (India)             | Gujarati            |
+| [he](he/README.md)           | heb            | Hebrew locale                       | Hebrew              |
+| [hi](hi/README.md)           | hin            | Hindi locale (India)                | Hindi               |
+| [hr](hr/README.md)           | hrv            | Croatian locale                     | Croatian            |
+| [ht](ht/README.md)           | hat            | Haitian Creole locale               | Haitian Creole      |
+| [hu](hu/README.md)           | hun            | Hungarian locale                    | Hungarian           |
+| [hy](hy/README.md)           | arm            | Armenian locale                     | Armenian            |
+| [id](id/README.md)           | ind            | Indonesian locale                   | Indonesian          |
+| [is](is/README.md)           | isl            | Icelandic locale                    | Icelandic           |
+| [it](it/README.md)           | ita            | Italian locale                      | Italian             |
+| [ja](ja/README.md)           | jpn            | Japanese locale                     | Japanese            |
+| [ja_HIRA](ja_HIRA/README.md) | jpn            | Japanese (Hiragana) locale          | Japanese (Hiragana) |
+| [ka](ka/README.md)           | geo            | Georgian locale                     | Georgian            |
+| [kk](kk/README.md)           | kaz            | Kazakh locale                       | Kazakh              |
+| [kn](kn/README.md)           | kan            | Kannada locale (India)              | Kannada             |
+| [ko](ko/README.md)           | kor            | Korean locale                       | Korean              |
+| [lb](lb/README.md)           | ltz            | Luxembourgish locale                | Luxembourgish       |
+| [lt](lt/README.md)           | lit            | Lithuanian locale                   | Lithuanian          |
+| [lv](lv/README.md)           | lav            | Latvian locale (Latvia)             | Latvian             |
+| [mk](mk/README.md)           | mkd            | Macedonian locale                   | Macedonian          |
+| [mn](mn/README.md)           | mon            | Mongolian locale                    | Mongolian           |
+| [ms](ms/README.md)           | msa            | Malay locale                        | Malay               |
+| [mt](mt/README.md)           | mlt            | Maltese locale                      | Maltese             |
+| [nb](nb/README.md)           | nob            | Norwegian Bokmål locale             | Norwegian Bokmål    |
+| [nl](nl/README.md)           | nld            | Dutch locale                        | Dutch               |
+| [nl_BE](nl_BE/README.md)     | nld            | Flemish locale (Belgium)            | Flemish             |
+| [nn](nn/README.md)           | nno            | Norwegian Nynorsk locale            | Norwegian Nynorsk   |
+| [pl](pl/README.md)           | pol            | Polish locale                       | Polish              |
+| [pt](pt/README.md)           | por            | Portuguese locale                   | Portuguese          |
+| [pt_BR](pt_BR/README.md)     | por            | Portuguese locale (Brazil)          | Portuguese          |
+| [ro](ro/README.md)           | ron            | Romanian locale                     | Romanian            |
+| [ru](ru/README.md)           | rus            | Russian locale                      | Russian             |
+| [sk](sk/README.md)           | slk            | Slovak locale                       | Slovak              |
+| [sl](sl/README.md)           | slv            | Slovenian locale                    | Slovenian           |
+| [sq](sq/README.md)           | sqi            | Albanian locale                     | Shqip               |
+| [sr](sr/README.md)           | srp            | Serbian cyrillic locale             | Serbian             |
+| [sr_LATN](sr_LATN/README.md) | srp            | Serbian latin locale                | Serbian             |
+| [sv](sv/README.md)           | swe            | Swedish locale                      | Swedish             |
+| [ta](ta/README.md)           | tam            | Tamil locale (India)                | Tamil               |
+| [te](te/README.md)           | tel            | Telugu locale                       | Telugu              |
+| [th](th/README.md)           | tha            | Thai locale                         | Thai                |
+| [tr](tr/README.md)           | tur            | Turkish locale                      | Turkish             |
+| [ug](ug/README.md)           | uig            | Uighur locale                       | Uighur              |
+| [uk](uk/README.md)           | ukr            | Ukrainian locale                    | Ukrainian           |
+| [uz](af/README.md)           | uzb            | Uzbek locale                        | Uzbek               |
+| [vi](vi/README.md)           | vie            | Vietnamese locale (Vietnam)         | Vietnamese          |
+| [zh](zh/README.md)           | zho            | Chinese Simplified locale           | Chinese Simplified  |
+| [zh_CN](zh_CN/README.md)     | zho            | Chinese Simplified locale (China)   | Chinese Simplified  |
+| [zh_TW](zh_TW/README.md)     | zho            | Chinese Traditional locale (Taiwan) | Chinese Traditional |
 
 ## Remarks
 
