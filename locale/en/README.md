@@ -1,6 +1,22 @@
 # en
 
-Contains genric English translation files.
+Contains English locale translation files.
+
+## Files
+
+[about_dialog.strings](about_dialog.strings)
+
+[application.strings](application.strings)
+
+[boolean_switch.strings](boolean_switch.strings)
+
+[busy_box.strings](busy_box.strings)
+
+[checked_list_box.strings](checked_list_box.strings)
+
+[choice.strings](choice.strings)
+
+[color.strings](color.strings)
 
 ## Translators
 
