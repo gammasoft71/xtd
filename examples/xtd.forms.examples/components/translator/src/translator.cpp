@@ -35,9 +35,12 @@ private:
 
 auto main()->int {
   try {
+    //locale::global(locale {"ar_MA.utf-8"});
+    //locale::global(locale {"es_ES.utf-8"});
+    //locale::global(locale {"fr_FR.utf-8"});
     locale::global(locale {"ru_RU.utf-8"});
   } catch (const std::exception& e) {
-    message_box::show(ustring::format("Make sure russian locale is installed on your system :\n\n{}", e.what()), "Exception");
+    message_box::show(ustring::format("Make sure specified locale is installed on your system :\n\n{}", e.what()), "Exception");
     return -1;
   }
   application::run(form1 {});
