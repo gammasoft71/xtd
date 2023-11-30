@@ -57,6 +57,7 @@ sidebar_position: 9
 | [Chinese (Taiwan)](https://github.com/gammasoft71/xtd/tree/master/locale/zh_TW)         | ![progresser](/pictures/progress100.png) | [qingyiwebt](https://github.com/qingyiwebt)              |
 | [Croatian](https://github.com/gammasoft71/xtd/tree/master/locale/hr)                    | ![progresser](/pictures/progress0.png)   | -                                                        |
 | [Danish](https://github.com/gammasoft71/xtd/tree/master/locale/da)                      | ![progresser](/pictures/progress0.png)   | -                                                        |
+| [Dutch](https://github.com/gammasoft71/xtd/tree/master/locale/nl)                       | ![progresser](/pictures/progress0.png)   | -                                                        |
 | [English](https://github.com/gammasoft71/xtd/tree/master/locale/en)                     | ![progresser](/pictures/progress100.png) | [gammasoft71](https://gammasoft71.wixsite.com/gammasoft) |
 | [English (Australia)](https://github.com/gammasoft71/xtd/tree/master/locale/en_AU)      | ![progresser](/pictures/progress100.png) | [gammasoft71](https://gammasoft71.wixsite.com/gammasoft) |
 | [English (Canada)](https://github.com/gammasoft71/xtd/tree/master/locale/en_CA)         | ![progresser](/pictures/progress100.png) | [gammasoft71](https://gammasoft71.wixsite.com/gammasoft) |
@@ -69,10 +70,12 @@ sidebar_position: 9
 | [Esperanto](https://github.com/gammasoft71/xtd/tree/master/locale/eo)                   | ![progresser](/pictures/progress0.png)   | -                                                        |
 | [Estonian](https://github.com/gammasoft71/xtd/tree/master/locale/et)                    | ![progresser](/pictures/progress0.png)   | -                                                        |
 | [Finnish](https://github.com/gammasoft71/xtd/tree/master/locale/fi)                     | ![progresser](/pictures/progress0.png)   | -                                                        |
+| [Flemish](https://github.com/gammasoft71/xtd/tree/master/locale/nl_BE)                  | ![progresser](/pictures/progress0.png)   | -                                                        |
 | [French](https://github.com/gammasoft71/xtd/tree/master/locale/fr)                      | ![progresser](/pictures/progress100.png) | [gammasoft71](https://gammasoft71.wixsite.com/gammasoft) |
 | [French (Canada)](https://github.com/gammasoft71/xtd/tree/master/locale/fr_CA)          | ![progresser](/pictures/progress100.png) | [gammasoft71](https://gammasoft71.wixsite.com/gammasoft) |
 | [French (Switzerland)](https://github.com/gammasoft71/xtd/tree/master/locale/fr_CH)     | ![progresser](/pictures/progress100.png) | [gammasoft71](https://gammasoft71.wixsite.com/gammasoft) |
 | [Galician](https://github.com/gammasoft71/xtd/tree/master/locale/gl)                    | ![progresser](/pictures/progress0.png)   | -                                                        |
+| [Georgian](https://github.com/gammasoft71/xtd/tree/master/locale/ka)                    | ![progresser](/pictures/progress0.png)   | -                                                        |
 | [German](https://github.com/gammasoft71/xtd/tree/master/locale/de)                      | ![progresser](/pictures/progress0.png)   | -                                                        |
 | [German (Austria)](https://github.com/gammasoft71/xtd/tree/master/locale/de_AT)         | ![progresser](/pictures/progress0.png)   | -                                                        |
 | [Greek](https://github.com/gammasoft71/xtd/tree/master/locale/el)                       | ![progresser](/pictures/progress0.png)   | -                                                        |
@@ -86,9 +89,40 @@ sidebar_position: 9
 | [Italian](https://github.com/gammasoft71/xtd/tree/master/locale/it)                     | ![progresser](/pictures/progress0.png)   | -                                                        |
 | [Japanese](https://github.com/gammasoft71/xtd/tree/master/locale/ja)                    | ![progresser](/pictures/progress0.png)   | -                                                        |
 | [Japanese (Hiragana)](https://github.com/gammasoft71/xtd/tree/master/locale/ja_HIRA)    | ![progresser](/pictures/progress0.png)   | -                                                        |
-| [Persian](https://github.com/gammasoft71/xtd/tree/master/locale/fa_IR)                  | ![progresser](/pictures/progress0.png)   | -                                                        |
+| [Kazakh](https://github.com/gammasoft71/xtd/tree/master/locale/kk)                      | ![progresser](/pictures/progress0.png)   | -                                                        |
+| [Kannada](https://github.com/gammasoft71/xtd/tree/master/locale/kn)                     | ![progresser](/pictures/progress0.png)   | -                                                        |
+| [Korean](https://github.com/gammasoft71/xtd/tree/master/locale/ko)                      | ![progresser](/pictures/progress0.png)   | -                                                        |
+| [Latvian](https://github.com/gammasoft71/xtd/tree/master/locale/lv)                     | ![progresser](/pictures/progress0.png)   | -                                                        |
+| [Lithuanian](https://github.com/gammasoft71/xtd/tree/master/locale/lt)                  | ![progresser](/pictures/progress0.png)   | -                                                        |
+| [Luxembourgish](https://github.com/gammasoft71/xtd/tree/master/locale/lb)               | ![progresser](/pictures/progress0.png)   | -                                                        |
+| [Macedonian](https://github.com/gammasoft71/xtd/tree/master/locale/mk)                  | ![progresser](/pictures/progress0.png)   | -                                                        |
+| [Malay](https://github.com/gammasoft71/xtd/tree/master/locale/ms)                       | ![progresser](/pictures/progress0.png)   | -                                                        |
+| [Maltese](https://github.com/gammasoft71/xtd/tree/master/locale/mt)                     | ![progresser](/pictures/progress0.png)   | -                                                        |
+| [Mongolian](https://github.com/gammasoft71/xtd/tree/master/locale/mn)                   | ![progresser](/pictures/progress0.png)   | -                                                        |
+| [Norwegian Bokmål](https://github.com/gammasoft71/xtd/tree/master/locale/nb)            | ![progresser](/pictures/progress0.png)   | -                                                        |
+| [Norwegian Nynorsk](https://github.com/gammasoft71/xtd/tree/master/locale/nn)           | ![progresser](/pictures/progress0.png)   | -                                                        |
+| [Persian/Farsi (Iran)](https://github.com/gammasoft71/xtd/tree/master/locale/fa_IR)     | ![progresser](/pictures/progress0.png)   | -                                                        |
+| [Polish](https://github.com/gammasoft71/xtd/tree/master/locale/pl)                      | ![progresser](/pictures/progress0.png)   | -                                                        |
+| [Portuguese](https://github.com/gammasoft71/xtd/tree/master/locale/pt)                  | ![progresser](/pictures/progress0.png)   | -                                                        |
+| [Portuguese (Brazil)](https://github.com/gammasoft71/xtd/tree/master/locale/pt_BR)      | ![progresser](/pictures/progress0.png)   | -                                                        |
+| [Romanian](https://github.com/gammasoft71/xtd/tree/master/locale/ro)                    | ![progresser](/pictures/progress0.png)   | -                                                        |
+| [Russian](https://github.com/gammasoft71/xtd/tree/master/locale/ru)                     | ![progresser](/pictures/progress0.png)   | -                                                        |
+| [Serbian](https://github.com/gammasoft71/xtd/tree/master/locale/sr)                     | ![progresser](/pictures/progress0.png)   | -                                                        |
+| [Serbian (Latin)](https://github.com/gammasoft71/xtd/tree/master/locale/sr_LATN)        | ![progresser](/pictures/progress0.png)   | -                                                        |
+| [Shqip](https://github.com/gammasoft71/xtd/tree/master/locale/sq)                       | ![progresser](/pictures/progress0.png)   | -                                                        |
+| [Slovak](https://github.com/gammasoft71/xtd/tree/master/locale/sk)                      | ![progresser](/pictures/progress0.png)   | -                                                        |
+| [Slovenian](https://github.com/gammasoft71/xtd/tree/master/locale/sl)                   | ![progresser](/pictures/progress0.png)   | -                                                        |
 | [Spanish](https://github.com/gammasoft71/xtd/tree/master/locale/es)                     | ![progresser](/pictures/progress0.png)   | -                                                        |
 | [Scottish Gaelic](https://github.com/gammasoft71/xtd/tree/master/locale/gd)             | ![progresser](/pictures/progress0.png)   | -                                                        |
+| [Swedish](https://github.com/gammasoft71/xtd/tree/master/locale/sv)                     | ![progresser](/pictures/progress0.png)   | -                                                        |
+| [Tamil](https://github.com/gammasoft71/xtd/tree/master/locale/ta)                       | ![progresser](/pictures/progress0.png)   | -                                                        |
+| [Telugu](https://github.com/gammasoft71/xtd/tree/master/locale/te)                      | ![progresser](/pictures/progress0.png)   | -                                                        |
+| [Thai](https://github.com/gammasoft71/xtd/tree/master/locale/th)                        | ![progresser](/pictures/progress0.png)   | -                                                        |
+| [Turkish](https://github.com/gammasoft71/xtd/tree/master/locale/tr)                     | ![progresser](/pictures/progress0.png)   | -                                                        |
+| [Uighur](https://github.com/gammasoft71/xtd/tree/master/locale/ug)                      | ![progresser](/pictures/progress0.png)   | -                                                        |
+| [Ukrainian](https://github.com/gammasoft71/xtd/tree/master/locale/uk                    | ![progresser](/pictures/progress0.png)   | -                                                        |
+| [Uzbek](https://github.com/gammasoft71/xtd/tree/master/locale/uz)                       | ![progresser](/pictures/progress0.png)   | -                                                        |
+| [Vietnamese](https://github.com/gammasoft71/xtd/tree/master/locale/vi)                  | ![progresser](/pictures/progress0.png)   | -                                                        |
 | [Welsh](https://github.com/gammasoft71/xtd/tree/master/locale/cy)                       | ![progresser](/pictures/progress0.png)   | -                                                        |
 
 ## Contributing
