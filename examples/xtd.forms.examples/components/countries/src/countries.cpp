@@ -16,7 +16,7 @@ namespace countries_example {
   class main_form : public form {
   public:
     static auto main() {
-      //locale::global(locale("fr_FR.utf-8"));
+      //locale::global(locale {"fr_FR.utf-8"});
       application::run(main_form());
     }
     
