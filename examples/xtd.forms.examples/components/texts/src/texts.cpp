@@ -1,8 +1,11 @@
 #include <xtd/forms/application>
 #include <xtd/forms/form>
 #include <xtd/forms/list_box>
+#include <xtd/forms/message_box>
 #include <xtd/forms/system_texts>
 
+using namespace std;
+using namespace xtd;
 using namespace xtd::forms;
 
 class form1 : public form {
@@ -21,5 +24,12 @@ private:
 };
 
 auto main()->int {
+  try {
+    //locale::global(locale {"fr_FR.utf-8"});
+    locale::global(locale {"zh_CN.utf-8"});
+  } catch (const std::exception& e) {
+    message_box::show(ustring::format("Make sure specified locale is installed on your system :\n\n{}", e.what()), "Exception");
+    return -1;
+  }
   application::run(form1 {});
 }
