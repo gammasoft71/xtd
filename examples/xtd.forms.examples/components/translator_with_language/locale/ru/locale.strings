@@ -1,0 +1,15 @@
+# Main window caption
+key "Translator example"
+value "Пример перевода"
+
+# Open button text
+key "Open"
+value "Oткрыто"
+
+# Close button text
+key "Close"
+value "Закрыть"
+
+# Label text
+key "The quick brown fox jumps over the lazy dog."
+value "Быстрый коричневый лис перепрыгивает через ленивого пса."
