@@ -21,5 +21,6 @@ add_projects(
   settings_example
   texts
   translator
+  translator_with_language
   use_wait_cursor
 )
