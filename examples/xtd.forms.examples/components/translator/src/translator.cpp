@@ -3,9 +3,9 @@
 #include <xtd/forms/form>
 #include <xtd/forms/label>
 #include <xtd/forms/message_box>
+#include <xtd/translator>
 #include <locale>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
@@ -35,10 +35,10 @@ private:
 
 auto main()->int {
   try {
-    //locale::global(locale {"ar_MA.utf-8"});
-    //locale::global(locale {"es_ES.utf-8"});
-    //locale::global(locale {"fr_FR.utf-8"});
-    locale::global(locale {"ru_RU.utf-8"});
+    //translator::locale("ar_MA");
+    //translator::locale("es_ES");
+    //translator::locale("fr_FR");
+    translator::locale("ru_RU");
   } catch (const std::exception& e) {
     message_box::show(ustring::format("Make sure specified locale is installed on your system :\n\n{}", e.what()), "Exception");
     return -1;
