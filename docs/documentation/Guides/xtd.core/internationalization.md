@@ -102,13 +102,15 @@ The following table shows all locales and corresponding languages :
 | [zh_CN](https://github.com/gammasoft71/xtd/tree/master/locale/zh_CN/README.md)     | zho            | Chinese Simplified locale (China)   | Chinese Simplified  |
 | [zh_TW](https://github.com/gammasoft71/xtd/tree/master/locale/zh_TW/README.md)     | zho            | Chinese Traditional locale (Taiwan) | Chinese Traditional |
 
-<!-- source : [List of all locales and corresponding languages?](https://github.com/date-fns/date-fns/discussions/2724?sort=new) -->
+If you wish to add a specific language not listed below, you can do so by using the ISO code 639-1] (https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).
+
+See [List of ISO 639-1 codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) for complete list of languages.
 
 ## Translater usage
 
 ### Change The applicaiton locale
 
-To change the application locale, use method [std::locale](https://en.cppreference.com/w/cpp/locale/locale).
+To change the application locale, use [std::locale::global](https://en.cppreference.com/w/cpp/locale/locale) method.
 
 The following example show how to change the locale to french (France).
 
@@ -122,6 +124,42 @@ The following example show how to change the locale to russian (Russia).
 ```cpp
 auto main()->int {
   std::locale::global(std::locale {"ru_RU.utf-8"});
+}
+```
+
+Or use [xtd::translate::locale](https://en.cppreference.com/w/cpp/locale/locale) meyhod.
+
+The following example show how to change the locale to french (France).
+
+```cpp
+auto main()->int {
+  xtd::translate::locale("fr_FR");
+}
+```
+The following example show how to change the locale to russian (Russia).
+
+```cpp
+auto main()->int {
+  xtd::translate::locale("ru_RU");
+}
+```
+
+### Change The application language without change locale
+
+Tho change the application language without change the locale use [xtd::translate::language](https://en.cppreference.com/w/cpp/locale/locale) meyhod.
+
+The following example show how to change the language to french (France).
+
+```cpp
+auto main()->int {
+  xtd::translate::language("fr");
+}
+```
+The following example show how to change the language to russian (Russia).
+
+```cpp
+auto main()->int {
+  xtd::translate::language("ru");
 }
 ```
 
