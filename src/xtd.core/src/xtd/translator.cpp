@@ -33,7 +33,7 @@ void translator::language(const xtd::ustring& language) {
     initialize(); // Must be first
   } catch (...) {
   }
-  language_ = language.to_lower();
+  language_ = language;
 }
 
 std::vector<xtd::ustring> translator::languages() {
@@ -47,6 +47,23 @@ std::vector<xtd::ustring> translator::languages() {
   return languages;
 }
 
+std::locale translator::locale() {
+  return std::locale {};
+}
+
+void translator::locale(const xtd::ustring& value) {
+  auto parts = (value.find_last_of(".") == value.npos ? value : value.remove(value.find_last_of("."))).split({'_'});
+  auto extension = value.find_last_of(".") == value.npos ? ".utf-8" : value.substring(value.find_last_of("."));
+  if (parts.size() != 0 && parts.size() != 2) throw argument_exception(csf_);
+  auto language = parts.size() == 0 ? "en" : parts[0].to_lower();
+  auto country = parts.size() == 0 ? "US" : parts[1].to_upper();
+  locale(std::locale {language + "_" + country + extension});
+}
+
+void translator::locale(const std::locale& locale) {
+  std::locale::global(locale);
+}
+
 xtd::ustring translator::system_language() {
   return locale_to_language(xtd::native::translator::get_system_locale());
 }
@@ -58,7 +75,7 @@ void translator::add_value(const xtd::ustring& language, const xtd::ustring& key
 void translator::parse_locale(const xtd::ustring& locale_path) {
   if (!directory::exists(locale_path)) return;
   for (auto locale_item : directory::get_directories(locale_path)) {
-    if (language_ != path::get_file_name(locale_item).to_lower()) continue;
+    if (language_ != path::get_file_name(locale_item)) continue;
     for (auto language_item : directory::get_files(locale_item))
       if (path::get_extension(language_item) == ".strings") parse_file(language_item, language_);
   }
