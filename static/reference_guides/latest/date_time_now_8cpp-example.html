@@ -100,7 +100,7 @@ $(function() {
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> locale_name : locale_names) {</div>
 <div class="line">      <span class="keywordflow">try</span> {</div>
-<div class="line">        locale::global(locale(locale_name + <span class="stringliteral">&quot;.utf-8&quot;</span>_s));</div>
+<div class="line">        locale::global(locale {locale_name + <span class="stringliteral">&quot;.utf-8&quot;</span>_s});</div>
 <div class="line">        console::write_line(<span class="stringliteral">&quot;{}:&quot;</span>, locale_name);</div>
 <div class="line">        console::write_line(<span class="stringliteral">&quot;   Local date and time: {}, {}&quot;</span>, local_date.to_string(), local_date.kind());</div>
 <div class="line">        console::write_line(<span class="stringliteral">&quot;   UTC date and time: {}, {}\n&quot;</span>, utc_date.to_string(), utc_date.kind());</div>
@@ -140,7 +140,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 17 2023 15:31:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Dec 1 2023 09:43:49 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -109,6 +109,7 @@ For more information about internationalization, see <a href="https://gammasoft7
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/label&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/message_box&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/translator&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;locale&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
@@ -141,9 +142,20 @@ For more information about internationalization, see <a href="https://gammasoft7
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
 <div class="line">  <span class="keywordflow">try</span> {</div>
-<div class="line">    locale::global(locale(<span class="stringliteral">&quot;ru_RU.utf-8&quot;</span>));</div>
+<div class="line">    <span class="comment">//translator::language(&quot;ar&quot;);</span></div>
+<div class="line">    <span class="comment">//translator::language(&quot;es&quot;);</span></div>
+<div class="line">    <span class="comment">//translator::language(&quot;fr&quot;);</span></div>
+<div class="line">    <span class="comment">//translator::language(&quot;ru&quot;);</span></div>
+<div class="line">    <span class="comment">//locale::global(locale {&quot;ar_MA.utf-8&quot;});</span></div>
+<div class="line">    <span class="comment">//locale::global(locale {&quot;es_ES.utf-8&quot;});</span></div>
+<div class="line">    <span class="comment">//locale::global(locale {&quot;fr_FR.utf-8&quot;});</span></div>
+<div class="line">    <span class="comment">//locale::global(locale {&quot;ru_RU.utf-8&quot;});</span></div>
+<div class="line">    <span class="comment">//translator::locale(&quot;ar_MA&quot;);</span></div>
+<div class="line">    <span class="comment">//translator::locale(&quot;es_ES&quot;);</span></div>
+<div class="line">    <span class="comment">//translator::locale(&quot;fr_FR&quot;);</span></div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1translator.html#a8304f2cc15d2ea1368153b645bc0a313">translator::locale</a>(<span class="stringliteral">&quot;ru_RU&quot;</span>);</div>
 <div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>) {</div>
-<div class="line">    message_box::show(<a class="code hl_function" href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">ustring::format</a>(<span class="stringliteral">&quot;Make sure russian locale is installed on your system :\n\n{}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.what()), <span class="stringliteral">&quot;Exception&quot;</span>);</div>
+<div class="line">    message_box::show(<a class="code hl_function" href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">ustring::format</a>(<span class="stringliteral">&quot;Make sure specified locale is installed on your system :\n\n{}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.what()), <span class="stringliteral">&quot;Exception&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">return</span> -1;</div>
 <div class="line">  }</div>
 <div class="line">  application::run(form1 {});</div>
@@ -151,6 +163,7 @@ For more information about internationalization, see <a href="https://gammasoft7
 <div class="ttc" id="aclassxtd_1_1forms_1_1button_html"><div class="ttname"><a href="classxtd_1_1forms_1_1button.html">xtd::forms::button</a></div><div class="ttdoc">Represents a Windows button control.</div><div class="ttdef"><b>Definition</b> button.h:47</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application's user interface.</div><div class="ttdef"><b>Definition</b> form.h:52</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1label_html"><div class="ttname"><a href="classxtd_1_1forms_1_1label.html">xtd::forms::label</a></div><div class="ttdoc">Represents a standard Windows label.</div><div class="ttdef"><b>Definition</b> label.h:36</div></div>
+<div class="ttc" id="aclassxtd_1_1translator_html_a8304f2cc15d2ea1368153b645bc0a313"><div class="ttname"><a href="classxtd_1_1translator.html#a8304f2cc15d2ea1368153b645bc0a313">xtd::translator::locale</a></div><div class="ttdeci">static std::locale locale()</div><div class="ttdoc">Gets the global locale.</div></div>
 <div class="ttc" id="agroup__format__parse_html_ga3afd6d163bc6391a48a1f84f28a68ffd"><div class="ttname"><a href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">xtd::ustring::format</a></div><div class="ttdeci">static ustring format(const ustring &amp;fmt, args_t &amp;&amp;... args)</div><div class="ttdoc">Writes the text representation of the specified arguments list, to string using the specified format ...</div><div class="ttdef"><b>Definition</b> ustring.h:744</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">xtd::console_key::e</a></div><div class="ttdeci">@ e</div><div class="ttdoc">The E key.</div></div>
 <div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> about_box.h:13</div></div>
@@ -179,6 +192,15 @@ For more information about internationalization, see <a href="https://gammasoft7
 <tr class="memitem:a445b7372f13ad9148fa4b06f0ce2a10b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1translator.html#a445b7372f13ad9148fa4b06f0ce2a10b">language</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;language)</td></tr>
 <tr class="memdesc:a445b7372f13ad9148fa4b06f0ce2a10b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the current application language.  <br /></td></tr>
 <tr class="separator:a445b7372f13ad9148fa4b06f0ce2a10b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8304f2cc15d2ea1368153b645bc0a313"><td class="memItemLeft" align="right" valign="top">static std::locale&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1translator.html#a8304f2cc15d2ea1368153b645bc0a313">locale</a> ()</td></tr>
+<tr class="memdesc:a8304f2cc15d2ea1368153b645bc0a313"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the global locale.  <br /></td></tr>
+<tr class="separator:a8304f2cc15d2ea1368153b645bc0a313"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7b1d3f2803b9553259d423af271c947"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1translator.html#aa7b1d3f2803b9553259d423af271c947">locale</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;value)</td></tr>
+<tr class="memdesc:aa7b1d3f2803b9553259d423af271c947"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the global locale.  <br /></td></tr>
+<tr class="separator:aa7b1d3f2803b9553259d423af271c947"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8b5bbe5b3e64ccc8a6525cacc6e6335"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1translator.html#ad8b5bbe5b3e64ccc8a6525cacc6e6335">locale</a> (const std::locale &amp;value)</td></tr>
+<tr class="memdesc:ad8b5bbe5b3e64ccc8a6525cacc6e6335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the global locale.  <br /></td></tr>
+<tr class="separator:ad8b5bbe5b3e64ccc8a6525cacc6e6335"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad030d79572f98c32c63fddd2b803a0fa"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1translator.html#ad030d79572f98c32c63fddd2b803a0fa">languages</a> ()</td></tr>
 <tr class="memdesc:ad030d79572f98c32c63fddd2b803a0fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an array of languages supported by the application.  <br /></td></tr>
 <tr class="separator:ad030d79572f98c32c63fddd2b803a0fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -346,6 +368,105 @@ For more information about internationalization, see <a href="https://gammasoft7
 
 <p>Gets an array of languages supported by the application. </p>
 <dl class="section return"><dt>Returns</dt><dd>An array of languages supported by the application. </dd></dl>
+
+</div>
+</div>
+<a id="a8304f2cc15d2ea1368153b645bc0a313" name="a8304f2cc15d2ea1368153b645bc0a313"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8304f2cc15d2ea1368153b645bc0a313">&#9670;&#160;</a></span>locale() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::locale xtd::translator::locale </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the global locale. </p>
+<dl class="section return"><dt>Returns</dt><dd>The global locale. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>is same a call <code>std::locale {};</code> </dd></dl>
+
+</div>
+</div>
+<a id="ad8b5bbe5b3e64ccc8a6525cacc6e6335" name="ad8b5bbe5b3e64ccc8a6525cacc6e6335"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8b5bbe5b3e64ccc8a6525cacc6e6335">&#9670;&#160;</a></span>locale() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::translator::locale </td>
+          <td>(</td>
+          <td class="paramtype">const std::locale &amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the global locale. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The global locale. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>is same a call <code>std::locale::global(value);</code> </dd></dl>
+
+</div>
+</div>
+<a id="aa7b1d3f2803b9553259d423af271c947" name="aa7b1d3f2803b9553259d423af271c947"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7b1d3f2803b9553259d423af271c947">&#9670;&#160;</a></span>locale() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::translator::locale </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the global locale. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The global locale. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>is same a call <code>std::locale::global(std::locale {value});</code> </dd></dl>
 
 </div>
 </div>
@@ -539,7 +660,7 @@ For more information about internationalization, see <a href="https://gammasoft7
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 17 2023 15:31:42 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Dec 1 2023 09:43:54 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

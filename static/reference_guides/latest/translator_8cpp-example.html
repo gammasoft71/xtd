@@ -111,6 +111,7 @@ $(function() {
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/label&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/message_box&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/translator&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;locale&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
@@ -143,9 +144,20 @@ $(function() {
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
 <div class="line">  <span class="keywordflow">try</span> {</div>
-<div class="line">    locale::global(locale(<span class="stringliteral">&quot;ru_RU.utf-8&quot;</span>));</div>
+<div class="line">    <span class="comment">//translator::language(&quot;ar&quot;);</span></div>
+<div class="line">    <span class="comment">//translator::language(&quot;es&quot;);</span></div>
+<div class="line">    <span class="comment">//translator::language(&quot;fr&quot;);</span></div>
+<div class="line">    <span class="comment">//translator::language(&quot;ru&quot;);</span></div>
+<div class="line">    <span class="comment">//locale::global(locale {&quot;ar_MA.utf-8&quot;});</span></div>
+<div class="line">    <span class="comment">//locale::global(locale {&quot;es_ES.utf-8&quot;});</span></div>
+<div class="line">    <span class="comment">//locale::global(locale {&quot;fr_FR.utf-8&quot;});</span></div>
+<div class="line">    <span class="comment">//locale::global(locale {&quot;ru_RU.utf-8&quot;});</span></div>
+<div class="line">    <span class="comment">//translator::locale(&quot;ar_MA&quot;);</span></div>
+<div class="line">    <span class="comment">//translator::locale(&quot;es_ES&quot;);</span></div>
+<div class="line">    <span class="comment">//translator::locale(&quot;fr_FR&quot;);</span></div>
+<div class="line">    translator::locale(<span class="stringliteral">&quot;ru_RU&quot;</span>);</div>
 <div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; e) {</div>
-<div class="line">    message_box::show(ustring::format(<span class="stringliteral">&quot;Make sure russian locale is installed on your system :\n\n{}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.what()), <span class="stringliteral">&quot;Exception&quot;</span>);</div>
+<div class="line">    message_box::show(ustring::format(<span class="stringliteral">&quot;Make sure specified locale is installed on your system :\n\n{}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.what()), <span class="stringliteral">&quot;Exception&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">return</span> -1;</div>
 <div class="line">  }</div>
 <div class="line">  application::run(form1 {});</div>
@@ -160,7 +172,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 17 2023 15:31:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Dec 1 2023 09:43:49 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
