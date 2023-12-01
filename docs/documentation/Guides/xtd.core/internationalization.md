@@ -165,7 +165,7 @@ auto main()->int {
 
 ### String format
 
-The locale 
+The locale impact the format string as currency and date time see [Format number, dates other types](/docs/documentation/Guides/xtd.core/Format%20number%20dates%20other%20types/overview) for more information.
 
 ### Mark a string for translation
 
@@ -190,6 +190,58 @@ auto main()->int {
   console::write_line(str);
 }
 ```
+
+### Strings file format
+
+The followng file example show the strings file format for translation
+
+
+menu.strings :
+
+```
+# This file is used to translate menu items into French.
+
+key "&File"
+value "&Fichier"
+
+key "&Edit"
+value "&Editer"
+
+key "&Vew"
+value "&Vue"
+
+key "&Window"
+value "&Fenêtre"
+
+key "&Help"
+value "&Aide"
+```
+
+* Start comment with `#`
+* The string literal in the source faile starts with the keyword `key` and must be in double quotes `"`.
+* The transated string starts  with the keyword `value` and must be in double quotes `"`.
+
+The strings file, for each language, must be in a directory with the [ISO code 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) as its name, possibly followed by the underscore `_` and the two uppercase letters of the country code.
+
+The language directory should be located in the `locale` folder, next to the `src` folder containing your application sources.
+
+for example :
+
+```
+my_app
+ |-src
+    |-my_app.cpp
+    |-my_app.h
+  cMakeLists.txt
+```
+
+#### Example
+
+English : `en`
+English (Australia) : `en_AU`
+French : `fr`
+French (Switzerland) : `fr_CH`
+
 
 # See also
 ​
