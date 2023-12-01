@@ -6,6 +6,8 @@
 #include "static.h"
 #include "ustring.h"
 #include <string>
+#include <map>
+#include <set>
 #include <vector>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -99,5 +101,6 @@ namespace xtd {
     static xtd::ustring locale_to_language(xtd::ustring locale);
     static std::map<xtd::ustring, xtd::collections::specialized::string_map> language_values_;
     static xtd::ustring language_;
+    static std::set<ustring> translated_languages_;
   };
 }
