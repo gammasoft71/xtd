@@ -9,8 +9,6 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/translator>
 #undef __XTD_CORE_NATIVE_LIBRARY__
-#include <map>
-#include <set>
 
 using namespace std;
 using namespace xtd;
@@ -19,6 +17,7 @@ using namespace xtd::collections::specialized;
 
 map<ustring, string_map> translator::language_values_;
 ustring translator::language_;
+set<ustring> translator::translated_languages_;
 
 xtd::ustring translator::language() {
   try {
@@ -75,9 +74,10 @@ void translator::add_value(const xtd::ustring& language, const xtd::ustring& key
 void translator::parse_locale(const xtd::ustring& locale_path) {
   if (!directory::exists(locale_path)) return;
   for (auto locale_item : directory::get_directories(locale_path)) {
-    if (language_ != path::get_file_name(locale_item)) continue;
+    // Uncomment the following line if initialization is too slow to read only the current language, and not all languages...
+    // if (language_ != path::get_file_name(locale_item)) continue;
     for (auto language_item : directory::get_files(locale_item))
-      if (path::get_extension(language_item) == ".strings") parse_file(language_item, language_);
+      if (path::get_extension(language_item) == ".strings") parse_file(language_item, path::get_file_name(locale_item));
   }
 }
 
@@ -123,32 +123,37 @@ const char* translator::translate(const xtd::ustring& language, const char* valu
 }
 
 void translator::initialize() {
-  static mutex mutex_init;
-  lock_guard<mutex> lock(mutex_init);
+  static auto mutex_init = recursive_mutex {};
+  auto lock = lock_guard<recursive_mutex>  {mutex_init};
   
   if (language_.empty()) {
-    if (!std::locale().name().empty() && std::locale().name() != "C") language_ = locale_to_language(std::locale().name());
+    if (!std::locale {}.name().empty() && std::locale {}.name() != "C") language_ = locale_to_language(std::locale {}.name());
     else language_ = system_language();
   }
   
-  static xtd::ustring language_initialized ;
+  static auto language_initialized = ustring::empty_string;
   if (language_initialized == language_ || language_values_.find(language_) != language_values_.end()) return;
   
-  parse_locale(environment::get_folder_path(environment::special_folder::xtd_locale));
-  if (xtd::environment::os_version().is_macos_platform()) parse_locale(io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), "..", "Resources", "locale"));
-  else parse_locale(io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), "locale"));
-  /*
-  if (xtd::environment::os_version().is_macos_platform()) parse_locale(io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), "..", "Resources"));
-  else if (xtd::environment::os_version().is_unix_platform()) parse_locale(io::path::combine("usr", "share", "locale"));
-  else parse_locale(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]));
-   */
+  auto xtd_locale_path = environment::get_folder_path(environment::special_folder::xtd_locale);
+  if (directory::exists(xtd_locale_path)) {
+    for (auto item : directory::get_directories(xtd_locale_path))
+      translated_languages_.insert(item);
+    parse_locale(xtd_locale_path);
+  }
+
+  auto application_locale_path = xtd::environment::os_version().is_macos_platform() ? io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), "..", "Resources", "locale") : io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), "locale");
+  if (directory::exists(application_locale_path)) {
+    for (auto item : directory::get_directories(application_locale_path))
+      translated_languages_.insert(item);
+    parse_locale(application_locale_path);
+  }
+
   language_initialized = language_;
 }
 
 ustring translator::locale_to_language(ustring locale) {
   if (locale.size() < 2) return locale;
   if (locale.find(".") != locale.npos) locale = locale.remove(locale.find("."));
-  static auto codes = set<ustring> {"ar_DZ", "ar_MA", "ar_SA", "ar_TN", "de_AT", "en_AU", "en_CA", "en_GB", "en_IE", "en_IN", "en_NZ", "en_US", "en_ZA", "fa_IR", "fr_CA", "fr_CH", "ja_HIRA", "nl_BE", "pt_BR", "sr_LATN", "zh_CN", "zh_TW"};
-  if (codes.find(locale) != codes.end()) return locale;
+  if (translated_languages_.find(locale) != translated_languages_.end()) return locale;
   return locale.remove(2);
 }
