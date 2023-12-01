@@ -6,14 +6,15 @@
 #include "../../include/xtd/io/directory.h"
 #include "../../include/xtd/io/file.h"
 #include "../../include/xtd/io/path.h"
+#include "../../include/xtd/threading/lock_guard.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/translator>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
 using namespace std;
 using namespace xtd;
-using namespace xtd::io;
 using namespace xtd::collections::specialized;
+using namespace xtd::io;
 
 map<ustring, string_map> translator::language_values_;
 ustring translator::language_;
@@ -123,8 +124,8 @@ const char* translator::translate(const xtd::ustring& language, const char* valu
 }
 
 void translator::initialize() {
-  static auto mutex_init = recursive_mutex {};
-  auto lock = lock_guard<recursive_mutex>  {mutex_init};
+  static object sync_root;
+  auto lock = threading::lock_guard {sync_root};
   
   if (language_.empty()) {
     if (!std::locale {}.name().empty() && std::locale {}.name() != "C") language_ = locale_to_language(std::locale {}.name());
