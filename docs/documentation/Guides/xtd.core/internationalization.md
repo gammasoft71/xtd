@@ -102,13 +102,13 @@ The following table shows all locales and corresponding languages :
 | [zh_CN](https://github.com/gammasoft71/xtd/tree/master/locale/zh_CN/README.md)     | zho            | Chinese Simplified locale (China)   | Chinese Simplified  |
 | [zh_TW](https://github.com/gammasoft71/xtd/tree/master/locale/zh_TW/README.md)     | zho            | Chinese Traditional locale (Taiwan) | Chinese Traditional |
 
-If you wish to add a specific language not listed below, you can do so by using the ISO code 639-1] (https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).
+If you wish to add a specific language not listed below, you can do so by using the [ISO code 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).
 
 See [List of ISO 639-1 codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) for complete list of languages.
 
 ## Translater usage
 
-### Change The applicaiton locale
+### Change the applicaiton locale
 
 To change the application locale, use [std::locale::global](https://en.cppreference.com/w/cpp/locale/locale) method.
 
@@ -127,7 +127,7 @@ auto main()->int {
 }
 ```
 
-Or use [xtd::translate::locale](https://en.cppreference.com/w/cpp/locale/locale) meyhod.
+Or use [xtd::translate::locale](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1translator.html#aa7b1d3f2803b9553259d423af271c947) method.
 
 The following example show how to change the locale to french (France).
 
@@ -144,9 +144,9 @@ auto main()->int {
 }
 ```
 
-### Change The application language without change locale
+### Change the application language without change locale
 
-Tho change the application language without change the locale use [xtd::translate::language](https://en.cppreference.com/w/cpp/locale/locale) meyhod.
+Tho change the application language without change the locale use [xtd::translate::language](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1translator.html#a445b7372f13ad9148fa4b06f0ce2a10b) method.
 
 The following example show how to change the language to french (France).
 
