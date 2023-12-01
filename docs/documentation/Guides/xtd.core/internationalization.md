@@ -144,9 +144,9 @@ auto main()->int {
 }
 ```
 
-### Change the application language without change locale
+### Change the application language without changing locale
 
-Tho change the application language without change the locale use [xtd::translate::language](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1translator.html#a445b7372f13ad9148fa4b06f0ce2a10b) method.
+To change the application language without changing locale use [xtd::translate::language](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1translator.html#a445b7372f13ad9148fa4b06f0ce2a10b) method.
 
 The following example show how to change the language to french (France).
 
@@ -169,13 +169,23 @@ The locale
 
 ### Mark a string for translation
 
-To mark a string for translation use [xtd::translator::translate](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1translator.html#ad0cb6175fa980d928321600c1156d6f2) method.
+To mark a string for translation use [xtd::translator::translate](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1translator.html#ad0cb6175fa980d928321600c1156d6f2) method or [operator""_t](https://gammasoft71.github.io/xtd/reference_guides/latest/group__literals.html#gad8e2f2486b3591796ad602fe1739178e) literal operator.
 
-The following example shows how to marks a string for translation
+The following example shows how to marks a string for translation with [xtd::translator::translate](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1translator.html#ad0cb6175fa980d928321600c1156d6f2) method.
 
 ```cpp
 auto main()->int {
   auto str = translator::translate("This is a sor translation tring fexample.");
+
+  console::write_line(str);
+}
+```
+
+The following example shows how to marks a string for translation with  [operator""_t](https://gammasoft71.github.io/xtd/reference_guides/latest/group__literals.html#gad8e2f2486b3591796ad602fe1739178e) literal operator.
+
+```cpp
+auto main()->int {
+  auto str = "This is a sor translation tring fexample."_t;
 
   console::write_line(str);
 }
