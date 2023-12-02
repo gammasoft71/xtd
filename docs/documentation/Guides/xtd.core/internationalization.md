@@ -195,7 +195,6 @@ auto main()->int {
 
 The followng file example show the strings file format for translation
 
-
 menu.strings :
 
 ```
@@ -223,16 +222,41 @@ value "&Aide"
 
 The strings file, for each language, must be in a directory with the [ISO code 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) as its name, possibly followed by the underscore `_` and the two uppercase letters of the country code.
 
-The language directory should be located in the `locale` folder, next to the `src` folder containing your application sources.
+### locale languages hierarchy
 
-for example :
+The languages directories should be located in the `locale` folder, next to the `src` folder containing your application sources.
+
+String files have no fixed name. The name and number of chain files can be arbitrary, depending on how the project is organized.
+
+The following example shows the hierarchy file for `my_app` project.
 
 ```
 my_app
- |-src
-    |-my_app.cpp
-    |-my_app.h
-  cMakeLists.txt
+|- locale
+|   |- en
+|   |  |- messages.strings
+|   |  |- menu_items.strings
+|   |  |- texts.strings
+|   |- en_GB
+|   |  |- messages.strings
+|   |  |- menu_items.strings
+|   |  |- texts.strings
+|   |- fr
+|   |  |- messages.strings
+|   |  |- menu_items.strings
+|   |  |- texts.strings
+|   |- fr_CH
+|   |  |- messages.strings
+|   |  |- menu_items.strings
+|   |  |- texts.strings
+|   |- ru
+|      |- messages.strings
+|      |- menu_items.strings
+|      |- texts.strings
+|- src
+|  |- my_app.cpp
+|  |- my_app.h
+|- CMakeLists.txt
 ```
 
 #### Example
