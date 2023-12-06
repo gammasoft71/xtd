@@ -1,6 +1,6 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/environment>
-#include "../../../../include/xtd/native/unix/strings.h"
+#include "../../../../include/xtd/native/linux/strings.h"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <cstdio>
 #include <cstdlib>
@@ -44,11 +44,11 @@ namespace {
     static distribution_dictionary distribution_key_values;
     if (!distribution_key_values.empty()) return distribution_key_values;
     auto distribution_string = create_process("cat /etc/os-release");
-    auto distribution_lines = xtd::native::unix::strings::split(distribution_string, {'\n'});
+    auto distribution_lines = xtd::native::linux::strings::split(distribution_string, {'\n'});
     for (auto distribution_line : distribution_lines) {
-      auto key_value = xtd::native::unix::strings::split(distribution_line, {'='});
+      auto key_value = xtd::native::linux::strings::split(distribution_line, {'='});
       if (key_value.size() != 2) continue;
-      distribution_key_values.insert({key_value[0], xtd::native::unix::strings::replace(key_value[1], "\"", "")});
+      distribution_key_values.insert({key_value[0], xtd::native::linux::strings::replace(key_value[1], "\"", "")});
     }
     
     return distribution_key_values;
@@ -67,7 +67,7 @@ string environment::get_desktop_environment() {
   auto current_desktop = get_environment_variable("XDG_CURRENT_DESKTOP", ENVIRONMENT_VARIABLE_TARGET_PROCESS);
   if (current_desktop == "") current_desktop = get_environment_variable("XDG_DATA_DIRS", ENVIRONMENT_VARIABLE_TARGET_PROCESS);
   for (auto environment_desktop : {"budgie", "cinnamon", "deepin", "Enlightenment", "étoilé", "gnome", "kde", "lxqt", "mate", "pantheon", "razor", "unity", "xfce"}) {
-    if (unix::strings::contains(unix::strings::to_lower(current_desktop), environment_desktop)) return environment_desktop;
+    if (linux::strings::contains(linux::strings::to_lower(current_desktop), environment_desktop)) return environment_desktop;
   }
   return "";
 }
@@ -77,7 +77,7 @@ string environment::get_desktop_theme() {
   if (desktop != "gnome") return desktop;
   auto current_theme = create_process("gsettings get org.gnome.desktop.interface gtk-theme");
   if (current_theme.size() >= 4)
-    current_theme = unix::strings::substring(current_theme, 1, current_theme.size() - 3);
+    current_theme = linux::strings::substring(current_theme, 1, current_theme.size() - 3);
   return current_theme;
 }
 
@@ -114,7 +114,7 @@ string environment::get_distribution_id() {
 vector<string> environment::get_distribution_like_ids() {
   auto iterator = get_distribution_key_values().find("ID_LIKE");
   if (iterator == get_distribution_key_values().end()) return {};
-  return unix::strings::split(iterator->second, {' '});
+  return linux::strings::split(iterator->second, {' '});
 }
 
 string environment::get_distribution_name() {
@@ -126,7 +126,7 @@ string environment::get_distribution_name() {
 void environment::get_distribution_version(int_least32_t& major, int_least32_t& minor, int_least32_t& build, int_least32_t& revision) {
   auto name_it = get_distribution_key_values().find("VERSION_ID");
   if (name_it == get_distribution_key_values().end()) return;
-  auto versions = xtd::native::unix::strings::split(name_it->second, {'.'});
+  auto versions = xtd::native::linux::strings::split(name_it->second, {'.'});
   if (versions.size() >= 1) major = stoi(versions[0]);
   if (versions.size() >= 2) minor = stoi(versions[1]);
 }
@@ -156,7 +156,7 @@ map<string, string>& environment::get_environment_variables(int_least32_t target
     static map<string, string> envs;
     if (envs.size() == 0) {
       for (size_t index = 0; environ[index] != nullptr; index++) {
-        vector<string> key_value = unix::strings::split(environ[index], {'='});
+        vector<string> key_value = linux::strings::split(environ[index], {'='});
         if (key_value.size() == 2)
           envs[key_value[0]] = key_value[1];
       }
@@ -185,7 +185,7 @@ string environment::get_know_folder_path(int_least32_t csidl) {
 }
 
 string environment::get_machine_name() {
-  return unix::strings::replace(create_process("uname -n"), "\n", "");
+  return linux::strings::replace(create_process("uname -n"), "\n", "");
 }
 
 int_least32_t environment::get_os_platform_id() {
@@ -197,11 +197,11 @@ int_least32_t environment::get_os_platform_id() {
 }
 
 void environment::get_os_version(int_least32_t& major, int_least32_t& minor, int_least32_t& build, int_least32_t& revision) {
-  vector<string> numbers = unix::strings::split(create_process("uname -r"), {'.', '-', '\n'});
-  if (numbers.size() < 1 || !unix::strings::try_parse(numbers[0], major)) major = 0;
-  if (numbers.size() < 2 || !unix::strings::try_parse(numbers[1], minor)) minor = 0;
-  if (numbers.size() < 3 || !unix::strings::try_parse(numbers[2], build)) build = 0;
-  if (numbers.size() < 4 || !unix::strings::try_parse(numbers[3], revision)) revision = 0;
+  vector<string> numbers = linux::strings::split(create_process("uname -r"), {'.', '-', '\n'});
+  if (numbers.size() < 1 || !linux::strings::try_parse(numbers[0], major)) major = 0;
+  if (numbers.size() < 2 || !linux::strings::try_parse(numbers[1], minor)) minor = 0;
+  if (numbers.size() < 3 || !linux::strings::try_parse(numbers[2], build)) build = 0;
+  if (numbers.size() < 4 || !linux::strings::try_parse(numbers[3], revision)) revision = 0;
 }
 
 string environment::get_service_pack() {
@@ -230,7 +230,7 @@ bool environment::get_user_administrator() {
 }
 
 string environment::get_user_domain_name() {
-  return unix::strings::trim_end(create_process("uname -n"), {'\n'});
+  return linux::strings::trim_end(create_process("uname -n"), {'\n'});
 }
 
 string environment::get_user_name() {
@@ -245,11 +245,11 @@ bool environment::has_shutdown_started() {
 
 bool environment::is_processor_arm() {
   auto uname_result = create_process("uname -m");
-  return unix::strings::contains(uname_result, "arm") || unix::strings::contains(uname_result, "aarch64");
+  return linux::strings::contains(uname_result, "arm") || linux::strings::contains(uname_result, "aarch64");
 }
 
 bool environment::is_os_64_bit() {
-  return unix::strings::contains(create_process("uname -m"), "64");
+  return linux::strings::contains(create_process("uname -m"), "64");
 }
 
 string environment::new_line() {

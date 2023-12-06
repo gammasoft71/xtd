@@ -33,41 +33,41 @@ add_references(xtd.core.native)
 add_sources(
   include/xtd/xtd.core.native.linux.h
   include/xtd/xtd.core.native.linux
-  include/xtd/native/unix/mutex.h
-  include/xtd/native/unix/mutex
-  include/xtd/native/unix/semaphore.h
-  include/xtd/native/unix/semaphore
-  include/xtd/native/unix/strings.h
-  include/xtd/native/unix/strings
-  src/xtd/native/unix/condition_variable.cpp
-  src/xtd/native/unix/console.cpp
-  src/xtd/native/unix/critical_section.cpp
-  src/xtd/native/unix/cryptography.cpp
-  src/xtd/native/unix/date_time.cpp
-  src/xtd/native/unix/debugger.cpp
-  src/xtd/native/unix/directory.cpp
-  src/xtd/native/unix/dns.cpp
-  src/xtd/native/unix/drive.cpp
-  src/xtd/native/unix/environment.cpp
-  src/xtd/native/unix/file.cpp
-  src/xtd/native/unix/file_system.cpp
-  src/xtd/native/unix/guid.cpp
-  src/xtd/native/unix/interlocked.cpp
-  src/xtd/native/unix/named_event_wait_handle.cpp
-  src/xtd/native/unix/named_mutex.cpp
-  src/xtd/native/unix/named_semaphore.cpp
-  src/xtd/native/unix/path.cpp
-  src/xtd/native/unix/process.cpp
-  src/xtd/native/unix/socket.cpp
-  src/xtd/native/unix/speech_synthesizer.cpp
-  src/xtd/native/unix/stack_trace.cpp
-  src/xtd/native/unix/system_sound.cpp
-  src/xtd/native/unix/thread.cpp
-  src/xtd/native/unix/translator.cpp
-  src/xtd/native/unix/types.cpp
-  src/xtd/native/unix/unnamed_event_wait_handle.cpp
-  src/xtd/native/unix/unnamed_mutex.cpp
-  src/xtd/native/unix/unnamed_semaphore.cpp
+  include/xtd/native/linux/mutex.h
+  include/xtd/native/linux/mutex
+  include/xtd/native/linux/semaphore.h
+  include/xtd/native/linux/semaphore
+  include/xtd/native/linux/strings.h
+  include/xtd/native/linux/strings
+  src/xtd/native/linux/condition_variable.cpp
+  src/xtd/native/linux/console.cpp
+  src/xtd/native/linux/critical_section.cpp
+  src/xtd/native/linux/cryptography.cpp
+  src/xtd/native/linux/date_time.cpp
+  src/xtd/native/linux/debugger.cpp
+  src/xtd/native/linux/directory.cpp
+  src/xtd/native/linux/dns.cpp
+  src/xtd/native/linux/drive.cpp
+  src/xtd/native/linux/environment.cpp
+  src/xtd/native/linux/file.cpp
+  src/xtd/native/linux/file_system.cpp
+  src/xtd/native/linux/guid.cpp
+  src/xtd/native/linux/interlocked.cpp
+  src/xtd/native/linux/named_event_wait_handle.cpp
+  src/xtd/native/linux/named_mutex.cpp
+  src/xtd/native/linux/named_semaphore.cpp
+  src/xtd/native/linux/path.cpp
+  src/xtd/native/linux/process.cpp
+  src/xtd/native/linux/socket.cpp
+  src/xtd/native/linux/speech_synthesizer.cpp
+  src/xtd/native/linux/stack_trace.cpp
+  src/xtd/native/linux/system_sound.cpp
+  src/xtd/native/linux/thread.cpp
+  src/xtd/native/linux/translator.cpp
+  src/xtd/native/linux/types.cpp
+  src/xtd/native/linux/unnamed_event_wait_handle.cpp
+  src/xtd/native/linux/unnamed_mutex.cpp
+  src/xtd/native/linux/unnamed_semaphore.cpp
 )
 target_type(${XTD_LIBRARY_TYPE})
 

@@ -3,7 +3,7 @@
 #include <xtd/native/process_creation_flags>
 #include <xtd/native/priority_class>
 #include <xtd/native/process_window_style>
-#include "../../../../include/xtd/native/unix/strings.h"
+#include "../../../../include/xtd/native/linux/strings.h"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <vector>
 #include <filesystem>
@@ -167,10 +167,10 @@ bool process::priority_class(intmax_t process, int_least32_t priority) {
 intmax_t process::shell_execute(const std::string& verb, const string& file_name, const string& arguments, const string& working_directory, int_least32_t process_window_style) {
   pid_t process = fork();
   if (process == 0) {
-    bool is_shell_execute = is_valid_shell_execute_process(&unix::strings::split, file_name, working_directory);
+    bool is_shell_execute = is_valid_shell_execute_process(&linux::strings::split, file_name, working_directory);
     if (is_shell_execute) {
       for (auto arg : split_arguments(arguments))
-        if (!(is_shell_execute = is_valid_shell_execute_process(&unix::strings::split, arg, working_directory))) break;
+        if (!(is_shell_execute = is_valid_shell_execute_process(&linux::strings::split, arg, working_directory))) break;
     }
     vector<string> command_line_args;
     if (is_shell_execute) {
@@ -180,16 +180,16 @@ intmax_t process::shell_execute(const std::string& verb, const string& file_name
         if (verb == "explore" && (file_name == "" || !is_directory(file_name))) return 0;
         if (verb == "edit" && (file_name == "" || !is_regular_file(file_name) || (status(file_name).permissions() & perms::owner_write) != perms::owner_write)) return 0;
         if ((verb == "runas" || verb == "runasuser")  && (file_name == "" || (status(file_name).permissions() & perms::owner_exec) != perms::owner_exec)) return 0;
-        command_line_args.insert(command_line_args.begin(), get_full_file_name_with_extension(&unix::strings::split, file_name, working_directory));
+        command_line_args.insert(command_line_args.begin(), get_full_file_name_with_extension(&linux::strings::split, file_name, working_directory));
         command_line_args.insert(command_line_args.begin(), shell_execute_command());
       } else {
-        command_line_args.insert(command_line_args.begin(), get_full_file_name_with_extension(&unix::strings::split, file_name, working_directory));
+        command_line_args.insert(command_line_args.begin(), get_full_file_name_with_extension(&linux::strings::split, file_name, working_directory));
         command_line_args.insert(command_line_args.begin(), verb);
       }
     } else {
       command_line_args = split_arguments(arguments);
       if (working_directory != "") current_path(working_directory.c_str());
-      command_line_args.insert(command_line_args.begin(), get_full_file_name_with_extension(&unix::strings::split, file_name));
+      command_line_args.insert(command_line_args.begin(), get_full_file_name_with_extension(&linux::strings::split, file_name));
     }
     vector<char*> execvp_args(command_line_args.size() + 1);
     for (size_t index = 0; index < command_line_args.size(); ++index)
@@ -213,7 +213,7 @@ process::started_process process::start(const string& file_name, const string& a
   if (redirect_standard_error) pipe_result = pipe(pipe_stderr);
   if (pipe_result) {/*do nothing*/}
   
-  if (!is_valid_process(&unix::strings::split, file_name, working_directory)) return make_tuple(0, 0, make_unique<process_ostream>(pipe_stdin[1]), make_unique<process_istream>(pipe_stdout[0]), make_unique<process_istream>(pipe_stderr[0]));
+  if (!is_valid_process(&linux::strings::split, file_name, working_directory)) return make_tuple(0, 0, make_unique<process_ostream>(pipe_stdin[1]), make_unique<process_istream>(pipe_stdout[0]), make_unique<process_istream>(pipe_stderr[0]));
   
   pid_t process = fork();
   if (process == 0) {
@@ -235,7 +235,7 @@ process::started_process process::start(const string& file_name, const string& a
     vector<string> command_line_args;
     if (working_directory != "") current_path(working_directory.c_str());
     command_line_args = split_arguments(arguments);
-    command_line_args.insert(command_line_args.begin(), get_full_file_name_with_extension(&unix::strings::split, file_name));
+    command_line_args.insert(command_line_args.begin(), get_full_file_name_with_extension(&linux::strings::split, file_name));
     vector<char*> execvp_args(command_line_args.size() + 1);
     for (size_t index = 0; index < command_line_args.size(); ++index)
       execvp_args[index] = command_line_args[index].data();
