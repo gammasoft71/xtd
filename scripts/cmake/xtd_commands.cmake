@@ -31,7 +31,7 @@ set(__CMAKE_TARGET_ID_CUSTOM_TARGET__ 8)
 ## @remarks This method is optional. 
 ## @par Examples
 ## @code
-##  cmake_minimum_required(VERSION 3.5)
+##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
@@ -50,7 +50,7 @@ endmacro ()
 ## @remarks This method is optional. 
 ## @par Examples
 ## @code
-##  cmake_minimum_required(VERSION 3.5)
+##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
@@ -82,7 +82,7 @@ endmacro ()
 ## @remarks This method is optional. 
 ## @par Examples
 ## @code
-##  cmake_minimum_required(VERSION 3.5)
+##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
@@ -105,7 +105,7 @@ endmacro()
 ## @remarks This method is optional. 
 ## @par Examples
 ## @code
-##  cmake_minimum_required(VERSION 3.5)
+##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
@@ -145,7 +145,7 @@ endmacro()
 ## @remarks This method is optional.
 ## @par Examples
 ## @code
-##  cmake_minimum_required(VERSION 3.5)
+##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
@@ -194,7 +194,7 @@ endmacro()
 ## @remarks This method is optional. 
 ## @par Examples
 ## @code
-##  cmake_minimum_required(VERSION 3.5)
+##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
@@ -216,7 +216,7 @@ endmacro()
 ## @remarks This method is optional. 
 ## @par Examples
 ## @code
-##  cmake_minimum_required(VERSION 3.5)
+##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
@@ -242,7 +242,7 @@ endmacro()
 ## @remarks This method is optional. 
 ## @par Examples
 ## @code
-##  cmake_minimum_required(VERSION 3.5)
+##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
@@ -297,7 +297,7 @@ endmacro()
 ## @remarks Call only once by project.
 ## @par Examples
 ## @code
-##  cmake_minimum_required(VERSION 3.5)
+##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
@@ -486,7 +486,7 @@ endmacro()
 ## @remarks This method is optional. 
 ## @par Examples
 ## @code
-##  cmake_minimum_required(VERSION 3.5)
+##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
@@ -508,7 +508,7 @@ endmacro()
 ## @remarks This method is optional. 
 ## @par Examples
 ## @code
-##  cmake_minimum_required(VERSION 3.5)
+##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
@@ -530,7 +530,7 @@ endmacro()
 ## @remarks This method is optional. 
 ## @par Examples
 ## @code
-##  cmake_minimum_required(VERSION 3.5)
+##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
@@ -562,7 +562,7 @@ endmacro()
 ## @remarks This method is optional. 
 ## @par Examples
 ## @code
-##  cmake_minimum_required(VERSION 3.5)
+##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
@@ -585,7 +585,7 @@ endmacro()
 ## @remarks This method is optional. 
 ## @par Examples
 ## @code
-##  cmake_minimum_required(VERSION 3.5)
+##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
@@ -607,7 +607,7 @@ endmacro()
 ## @remarks This method is optional. 
 ## @par Examples
 ## @code
-##  cmake_minimum_required(VERSION 3.5)
+##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
@@ -629,7 +629,7 @@ endmacro()
 ## @remarks This method is optional. 
 ## @par Examples
 ## @code
-##  cmake_minimum_required(VERSION 3.5)
+##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
@@ -652,7 +652,7 @@ endmacro()
 ## @remarks This method is optional. 
 ## @par Examples
 ## @code
-##  cmake_minimum_required(VERSION 3.5)
+##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
@@ -674,7 +674,7 @@ endmacro()
 ## @remarks This method is optional. 
 ## @par Examples
 ## @code
-##  cmake_minimum_required(VERSION 3.5)
+##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
@@ -706,7 +706,7 @@ endmacro()
 ## @remarks This method is optional. 
 ## @par Examples
 ## @code
-##  cmake_minimum_required(VERSION 3.5)
+##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
@@ -730,7 +730,7 @@ endmacro()
 ## @remark This option is use mainly when a solution as more than one projec.
 ## @par Examples
 ## @code
-##  cmake_minimum_required(VERSION 3.5)
+##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(MySolution)
 ##  find_package(xtd REQUIRED)
@@ -805,7 +805,7 @@ endmacro()
 ## @remarks This method can be call more than once in the same project.
 ## @par Examples
 ## @code
-##  cmake_minimum_required(VERSION 3.5)
+##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
@@ -830,7 +830,7 @@ endmacro()
 ## @remarks This method can be call more than once in the same project.
 ## @par Examples
 ## @code
-##  cmake_minimum_required(VERSION 3.5)
+##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
@@ -855,7 +855,7 @@ endmacro()
 ## @remarks Call only once by project.
 ## @par Examples
 ## @code
-##  cmake_minimum_required(VERSION 3.5)
+##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
@@ -911,7 +911,7 @@ endmacro()
 ## @remarks Call only once by project.
 ## @par Examples
 ## @code
-##  cmake_minimum_required(VERSION 3.5)
+##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
@@ -936,7 +936,7 @@ endmacro()
 ## @remarks Call only once by project.
 ## @par Examples
 ## @code
-##  cmake_minimum_required(VERSION 3.5)
+##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
@@ -971,7 +971,7 @@ endmacro()
 ## @remarks This method is optional.
 ## @par Examples
 ## @code
-##  cmake_minimum_required(VERSION 3.5)
+##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
@@ -995,7 +995,7 @@ endmacro()
 ## @remarks This method is optional.
 ## @par Examples
 ## @code
-##  cmake_minimum_required(VERSION 3.5)
+##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
@@ -1022,7 +1022,7 @@ endmacro()
 ## @remarks This method must be call before target_type().
 ## @par Examples
 ## @code
-##  cmake_minimum_required(VERSION 3.5)
+##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(MySolution)
 ##  find_package(xtd REQUIRED)
@@ -1049,7 +1049,7 @@ endmacro()
 ## @remarks This method is optional.
 ## @par Examples
 ## @code
-##  cmake_minimum_required(VERSION 3.5)
+##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
@@ -1074,7 +1074,7 @@ endmacro()
 ## @remarks This method is optional.
 ## @par Examples
 ## @code
-##  cmake_minimum_required(VERSION 3.5)
+##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
@@ -1112,7 +1112,7 @@ endmacro()
 ## @remarks This method is optional.
 ## @par Examples
 ## @code
-##  cmake_minimum_required(VERSION 3.5)
+##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
@@ -1146,7 +1146,7 @@ endmacro()
 ## @remarks This method is optional.
 ## @par Examples
 ## @code
-##  cmake_minimum_required(VERSION 3.5)
+##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
@@ -1183,7 +1183,7 @@ endmacro()
 ## @remarks This method must be call before target_type().
 ## @par Examples
 ## @code
-##  cmake_minimum_required(VERSION 3.5)
+##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
