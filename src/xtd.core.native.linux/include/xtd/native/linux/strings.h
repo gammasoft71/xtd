@@ -13,7 +13,7 @@
 
 #undef unix
 
-namespace xtd::native::unix {
+namespace xtd::native::linux {
   class strings final {
   public:
     strings() = delete;

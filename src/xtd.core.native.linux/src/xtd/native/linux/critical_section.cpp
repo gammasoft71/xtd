@@ -1,6 +1,6 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/critical_section>
-#include "../../../../include/xtd/native/unix/mutex.h"
+#include "../../../../include/xtd/native/linux/mutex.h"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <pthread.h>
 
