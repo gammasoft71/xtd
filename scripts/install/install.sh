@@ -26,8 +26,11 @@ if [[ "$OSTYPE" == *"MSYS"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]]; then
   OSTYPE="$MSYSTEM"
   echo "  Operating System is MSYS2 " $OSTYPE
 elif [[ "$OSTYPE" == *"Darwin"* ]]; then
-  echo "  Operating System is macOS"; else
-  echo "  Operating System is linux"
+  echo "  Operating System is macOS";
+elif [[ "$OSTYPE" == *"FreeBSD"* ]]; then
+  echo "  Operating System is Unix"; 
+else
+  echo "  Operating System is Linux"
 fi
 
 #_______________________________________________________________________________
@@ -48,17 +51,18 @@ echo  "Using up to ${build_cores} build cores"
 
 echo "Installing needed packages and libraries..."
 case "$OSTYPE" in
-  *"Darwin"*) brew update; brew install cmake;;
-  *"Debian"* | *"elementary"* | *"LinuxMint"* | *"Ubuntu"*) sudo apt update; sudo apt install build-essential codeblocks doxygen libasound2-dev libgsound-dev libgtk-3-dev cmake -y;;
-  *"openSUSE"*) sudo zypper update; sudo zypper install -y -t pattern devel_basis; sudo zypper install -y alsa-devel doxygen gsound-devel gtk3-devel cmake;;
   *"CentOS"* | *"Fedora"* | *"RedHat"*) sudo yum update; sudo yum install alsa-lib-devel cmake gtk3-devel gsound-devel gtk3-devel -y;;
-  *"Rocky"*) sudo yum update; sudo yum groupinstall 'Development Tools' -y; sudo yum install alsa-lib-devel cmake libuiid-devel gsound gtk3-devel -y;;
   *"CLANGARM64"*) pacman -S -yy --noconfirm base-devel git mingw-w64-clang-aarch64-cmake mingw-w64-clang-aarch64-doxygen mingw-w64-clang-aarch64-gcc-compat mingw-w64-clang-aarch64-gtk3 mingw-w64-clang-aarch64-make mingw-w64-clang-aarch64-wxwidgets3.2-msw;;
   *"CLANG32"*) pacman -S -yy --noconfirm base-devel git mingw-w64-clang-i686-cmake mingw-w64-clang-i686-doxygen mingw-w64-clang-i686-gcc-compat mingw-w64-clang-i686-gtk3 mingw-w64-clang-i686-make mingw-w64-clang-i686-wxwidgets3.2-msw;;
   *"CLANG64"*) pacman -S -yy --noconfirm base-devel git mingw-w64-clang-x86_64-cmake mingw-w64-clang-x86_64-doxygen mingw-w64-clang-x86_64-gcc-compat mingw-w64-clang-x86_64-gtk3 mingw-w64-clang-x86_64-make mingw-w64-clang-x86_64-wxwidgets3.2-msw;;
+  *"Darwin"*) brew update; brew install cmake;;
+  *"Debian"* | *"elementary"* | *"LinuxMint"* | *"Ubuntu"*) sudo apt update; sudo apt install build-essential codeblocks doxygen libasound2-dev libgsound-dev libgtk-3-dev cmake -y;;
+  *"FreeBSD"*) sudo pkg update; sudo pkg install -y cmake doxygen gtk3 gsound alsa-plugins wx32-gtk3 libsysinfo;;
+  *"openSUSE"*) sudo zypper update; sudo zypper install -y -t pattern devel_basis; sudo zypper install -y alsa-devel doxygen gsound-devel gtk3-devel cmake;;
   *"MINGW32"*) pacman -S -yy --noconfirm base-devel git mingw-w64-i686-cmake mingw-w64-i686-doxygen mingw-w64-i686-gcc mingw-w64-i686-gtk3 mingw-w64-i686-make mingw-w64-i686-wxwidgets3.2-msw;;
   *"MINGW64"*) pacman -S -yy --noconfirm base-devel git mingw-w64-x86_64-cmake mingw-w64-x86_64-doxygen mingw-w64-x86_64-gcc mingw-w64-x86_64-gtk3 mingw-w64-x86_64-make mingw-w64-x86_64-wxwidgets3.2-msw;;
   *"MSYS"*) pacman -S -yy --noconfirm base-devel git cmake doxygen gcc make ;; #gtk3 make wxwidgets3.2-msw;;
+  *"Rocky"*) sudo yum update; sudo yum groupinstall 'Development Tools' -y; sudo yum install alsa-lib-devel cmake libuiid-devel gsound gtk3-devel -y;;
   *"UCRT64"*) pacman -S -yy --noconfirm base-devel git mingw-w64-ucrt-x86_64-cmake mingw-w64-ucrt-x86_64-doxygen mingw-w64-ucrt-x86_64-gcc mingw-w64-ucrt-x86_64-gtk3 mingw-w64-ucrt-x86_64-make mingw-w64-ucrt-x86_64-wxwidgets3.2-msw;;
 esac
 
