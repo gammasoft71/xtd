@@ -1,4 +1,3 @@
-#if !defined(__APPLE__)
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/debugger>
 #include <xtd/native/assert_dialog_results>
@@ -15,12 +14,12 @@ using namespace xtd::native;
 
 namespace {
   std::string get_process_name(pid_t pid) {
-    std::ifstream stat_file("/proc/" + std::to_string(pid) + "/status");
+    auto stat_file = std::ifstream {"/proc/" + std::to_string(pid) + "/status"};
     if (!stat_file) return "Unknown";
     
-    std::string line;
+    auto line = std::string {};
     getline(stat_file, line);
-    size_t start = line.find("Name:\t") + 1;
+    auto start = line.find("Name:\t") + 1;
     
     if (start == std::string::npos) return "Unknown";
     start += std::string {"Name:\t"}.size() - 1;
@@ -61,4 +60,3 @@ void debugger::log(int_least32_t level, const std::string& category, const std::
   syslog(LOG_EMERG | LOG_USER, "%s", message.c_str());
   std::cerr << message << std::flush;
 }
-#endif
