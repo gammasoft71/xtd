@@ -28,7 +28,6 @@ set(__CMAKE_TARGET_ID_CUSTOM_TARGET__ 8)
 ## @param MESSAGE Description message for the choice options.
 ## @param DEFAULT_OPTION The default option.
 ## @param ... Other options.
-## @remarks This method must be call before target_type().
 ## @remarks This method is optional. 
 ## @par Examples
 ## @code
@@ -44,6 +43,32 @@ set(__CMAKE_TARGET_ID_CUSTOM_TARGET__ 8)
 macro(choice_options OPTION MESSAGE DEFAULT_OPTION)
   set(${OPTION} ${DEFAULT_OPTION} CACHE STRING ${MESSAGE})
   set_property(CACHE ${OPTION} PROPERTY STRINGS ${DEFAULT_OPTION} ${ARGN})
+endmacro ()
+
+## @brief Gets the operating system name.
+## @param OPERATING_SYSTEM_NAME The variable containing the name of the operating system.
+## @remarks This method is optional. 
+## @par Examples
+## @code
+##  cmake_minimum_required(VERSION 3.5)
+##
+##  project(my_project)
+##  find_package(xtd REQUIRED)
+##  add_sources(my_project.cpp)
+##  
+##  get_operating_system_name(OPERATING_SYSTEM_NAME)
+##  message("The current operating system name is \"${OPERATING_SYSTEM_NAME}\"")
+## @endcode
+macro(get_operating_system_name OPERATING_SYSTEM_NAME)
+  if (WIN32)
+    set(${OPERATING_SYSTEM_NAME} "Windows")
+  elseif (APPLE)
+    set(${OPERATING_SYSTEM_NAME} "macOS")
+  elseif (UNIX)
+    exec_program("uname" OUTPUT_VARIABLE ${OPERATING_SYSTEM_NAME})
+  else ()
+    set(${OPERATING_SYSTEM_NAME} "Unknown")
+  endif ()  
 endmacro ()
 
 ################################################################################
