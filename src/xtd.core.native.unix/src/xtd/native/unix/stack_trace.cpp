@@ -19,11 +19,6 @@ namespace {
   }
 }
 
-#if __ANDROID__ | __CYGWIN__ | __MINGW32__
-stack_trace::frames stack_trace::get_frames(size_t skip_frames, size_t max_frames) {
-  return {};
-}
-#else
 stack_trace::frames stack_trace::get_frames(size_t skip_frames) {
   static constexpr size_t max_frames = 1024;
   stack_trace::frames frames;
@@ -39,4 +34,3 @@ stack_trace::frames stack_trace::get_frames(size_t skip_frames) {
   }
   return frames;
 }
-#endif
