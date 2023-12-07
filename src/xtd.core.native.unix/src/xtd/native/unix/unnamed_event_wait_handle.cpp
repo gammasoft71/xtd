@@ -6,7 +6,7 @@
 using namespace xtd::native;
 
 intmax_t unnamed_event_wait_handle::create(bool initial_state, bool manual_reset) {
-  sem_t* semaphore = new sem_t;
+  auto semaphore = new sem_t;
   if (sem_init(semaphore, 0, initial_state ? 1 : 0) != 0) return reinterpret_cast<intmax_t>(SEM_FAILED);
   return reinterpret_cast<intmax_t>(semaphore);
 }
