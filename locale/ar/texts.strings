@@ -1,0 +1,257 @@
+key "&Abort"
+value "&إلغاء"
+
+key "&About..."
+value "&حول..."
+
+key "&Actual Size"
+value "&الحجم الفعلي"
+
+key "Add"
+value "إضافة"
+
+key "Alignment"
+value "محاذاة"
+
+key "Align Left"
+value "محاذاة إلى اليسار"
+
+key "Align Right"
+value "محاذاة إلى اليمين"
+
+key "&Apply"
+value "&تطبيق"
+
+key "&Ascending"
+value "&تصاعدي"
+
+key "&Back"
+value "&رجوع"
+
+key "&Bold"
+value "&عريض"
+
+key "&Bottom"
+value "&أسفل"
+
+key "&Cancel"
+value "&إلغاء"
+
+key "&CD-Rom"
+value "&CD-Rom"
+
+key "Centered"
+value "في الوسط"
+
+key "&Clear"
+value "&مسح"
+
+key "&Close"
+value "&إغلاق"
+
+key "&Color"
+value "&لون"
+
+key "&Contents"
+value "&المحتويات"
+
+key "&Convert"
+value "&تحويل"
+
+key "&Copy"
+value "&نسخ"
+
+key "&Customize"
+value "&تخصيص"
+
+key "Cu&t"
+value "ق&ص"
+
+key "&Delete"
+value "&حذف"
+
+key "&Descending"
+value "&تنازلي"
+
+key "&Down"
+value "&أسفل"
+
+key "&Edit"
+value "&تحرير"
+
+key "&Execute"
+value "&تنفيذ"
+
+key "E&xit"
+value "&خروج"
+
+key "&File"
+value "&ملف"
+
+key "&Find..."
+value "&بحث..."
+
+key "&First"
+value "&أول"
+
+key "&Floppy"
+value "&Floppy"
+
+key "&Font"
+value "&الخط"
+
+key "&Forward"
+value "&إلى الأمام"
+
+key "&Harddisk"
+value "&Harddisk"
+
+key "&Help"
+value "&مساعدة"
+
+key "&Home"
+value "&الصفحة الرئيسية"
+
+key "&Ignore"
+value "&تجاهل"
+
+key "Indent"
+value "Indent"
+
+key "&Index"
+value "&Index"
+
+key "&Info"
+value "&معلومات"
+
+key "&Italic"
+value "&مائل"
+
+key "Justified"
+value "مبرر"
+
+key "&Jump to"
+value "&الانتقال إلى"
+
+key "&Last"
+value "&الأخير"
+
+key "&Network"
+value "&الشبكة"
+
+key "&New"
+value "&جديد"
+
+key "&Next"
+value "&التالي"
+
+key "&No"
+value "&لا"
+
+key "&OK"
+value "&موافق"
+
+key "&Open..."
+value "&فتح..."
+
+key "&Options"
+value "&خيارات"
+
+key "&Paste"
+value "&لصق"
+
+key "&Preferences"
+value "&تفضيلات"
+
+key "&Previous"
+value "&السابق"
+
+key "&Print..."
+value "&طباعة..."
+
+key "Print pre&view"
+value "معاينة الطباعة"
+
+key "&Properties"
+value "&الخصائص"
+
+key "&Quit"
+value "&الخروج"
+
+key "&Redo"
+value "&إعادة"
+
+key "Refresh"
+value "تحديث"
+
+key "Remove"
+value "إزالة"
+
+key "Rep&lace..."
+value "&استبدال..."
+
+key "&Retry"
+value "&إعادة المحاولة"
+
+key "Revert to Saved"
+value "العودة إلى الحفظ"
+
+key "&Save"
+value "&حفظ"
+
+key "Save &As..."
+value "&حفظ باسم..."
+
+key "&Search"
+value "&بحث"
+
+key "Select &All"
+value "&تحديد الكل"
+
+key "&Spell Check"
+value "&فحص الإملاء"
+
+key "&Stop"
+value "&إيقاف"
+
+key "&Strikeout"
+value "&Strikeout"
+
+key "&Tools"
+value "&أدوات"
+
+key "&Top"
+value "&أعلى"
+
+key "Undelete"
+value "إلغاء الحذف"
+
+key "&Underline"
+value "&تسطير"
+
+key "&Undo"
+value "&تراجع"
+
+key "Unindent"
+value "Unindent"
+
+key "&Up"
+value "&لأعلى"
+
+key "&View"
+value "&عرض"
+
+key "&Window"
+value "&نافذة"
+
+key "&Yes"
+value "&نعم"
+
+key "Zoom &In"
+value "&تكبير"
+
+key "Zoom &Out"
+value "&تصغير"
+
+key "Zoom to &Fit"
+value "ضبط للملاءمة"

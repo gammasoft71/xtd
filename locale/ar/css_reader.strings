@@ -1,0 +1,8 @@
+key "expected end comment"
+value "متوقع نهاية التعليق"
+
+key "key cannot be empty"
+value "لا يمكن أن يكون المفتاح فارغاً"
+
+key "value cannot be empty"
+value "لا يمكن أن تكون القيمة فارغة"
