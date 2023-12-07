@@ -1,6 +1,7 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/thread>
 #undef __XTD_CORE_NATIVE_LIBRARY__
+#include <math.h>
 #include <pthread.h>
 #include <thread>
 
@@ -63,7 +64,7 @@ bool thread::set_priority(intmax_t handle, int_least32_t priority) {
   if (::pthread_getschedparam(reinterpret_cast<pthread_t>(handle), &policy, &schedParam) != 0)
     return false;
   
-  schedParam.sched_priority = static_cast<int_least32_t>(ceil((static_cast<double>(priority) * (sched_get_priority_max(policy) - sched_get_priority_min(policy)) / 4) + sched_get_priority_min(policy)));
+  schedParam.sched_priority = static_cast<int_least32_t>(std::ceil((static_cast<double>(priority) * (sched_get_priority_max(policy) - sched_get_priority_min(policy)) / 4) + sched_get_priority_min(policy)));
   return pthread_setschedparam(reinterpret_cast<pthread_t>(handle), policy, &schedParam) == 0;
 }
 
