@@ -1,9 +1,6 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/thread>
 #undef __XTD_CORE_NATIVE_LIBRARY__
-#import <CoreFoundation/CoreFoundation.h>
-#include <TargetConditionals.h>
-#import <Cocoa/Cocoa.h>
 #include <pthread.h>
 #include <thread>
 
