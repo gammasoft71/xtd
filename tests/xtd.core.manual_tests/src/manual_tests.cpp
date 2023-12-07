@@ -10,7 +10,7 @@ using namespace xtd::io;
 class core_manual_test {
 public:
   static auto entry_point() {
-      file::write_all_lines(path::change_extension(file_name, ""), {"#pragma once"_s, ustring::format("#include \"{}\"", path::get_file_name(file_name))});
+      console::write_line("Hello, World!");
   }
 };
 
