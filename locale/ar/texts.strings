@@ -1,11 +1,11 @@
 key "&Abort"
-value "&إلغاء"
+value "إلغاء&"
 
 key "&About..."
-value "&حول..."
+value "...حول&"
 
 key "&Actual Size"
-value "&الحجم الفعلي"
+value "الحجم الفعلي&"
 
 key "Add"
 value "إضافة"
@@ -20,22 +20,22 @@ key "Align Right"
 value "محاذاة إلى اليمين"
 
 key "&Apply"
-value "&تطبيق"
+value "تطبيق&"
 
 key "&Ascending"
-value "&تصاعدي"
+value "تصاعدي&"
 
 key "&Back"
-value "&رجوع"
+value "رجوع&"
 
 key "&Bold"
-value "&عريض"
+value "عريض&"
 
 key "&Bottom"
-value "&أسفل"
+value "أسفل&"
 
 key "&Cancel"
-value "&إلغاء"
+value "إلغاء&"
 
 key "&CD-Rom"
 value "&CD-Rom"
@@ -44,76 +44,76 @@ key "Centered"
 value "في الوسط"
 
 key "&Clear"
-value "&مسح"
+value "مسح&"
 
 key "&Close"
-value "&إغلاق"
+value "إغلاق&"
 
 key "&Color"
-value "&لون"
+value "لون&"
 
 key "&Contents"
-value "&المحتويات"
+value "المحتويات&"
 
 key "&Convert"
-value "&تحويل"
+value "تحويل&"
 
 key "&Copy"
-value "&نسخ"
+value "نسخ&"
 
 key "&Customize"
-value "&تخصيص"
+value "تخصيص&"
 
 key "Cu&t"
 value "ق&ص"
 
 key "&Delete"
-value "&حذف"
+value "حذف&"
 
 key "&Descending"
-value "&تنازلي"
+value "تنازلي&"
 
 key "&Down"
-value "&أسفل"
+value "أسفل&"
 
 key "&Edit"
-value "&تحرير"
+value "تحرير&"
 
 key "&Execute"
-value "&تنفيذ"
+value "تنفيذ&"
 
 key "E&xit"
-value "&خروج"
+value "خ&روج"
 
 key "&File"
-value "&ملف"
+value "ملف&"
 
 key "&Find..."
-value "&بحث..."
+value "...بحث&"
 
 key "&First"
-value "&أول"
+value "أول&"
 
 key "&Floppy"
 value "&Floppy"
 
 key "&Font"
-value "&الخط"
+value "الخط&"
 
 key "&Forward"
-value "&إلى الأمام"
+value "إلى الأمام&"
 
 key "&Harddisk"
 value "&Harddisk"
 
 key "&Help"
-value "&مساعدة"
+value "مساعدة&"
 
 key "&Home"
-value "&الصفحة الرئيسية"
+value "الصفحة الرئيسية&"
 
 key "&Ignore"
-value "&تجاهل"
+value "تجاهل&"
 
 key "Indent"
 value "Indent"
@@ -122,64 +122,64 @@ key "&Index"
 value "&Index"
 
 key "&Info"
-value "&معلومات"
+value "معلومات&"
 
 key "&Italic"
-value "&مائل"
+value "مائل&"
 
 key "Justified"
 value "مبرر"
 
 key "&Jump to"
-value "&الانتقال إلى"
+value "الانتقال إلى&"
 
 key "&Last"
-value "&الأخير"
+value "الأخير&"
 
 key "&Network"
-value "&الشبكة"
+value "الشبكة&"
 
 key "&New"
-value "&جديد"
+value "جديد&"
 
 key "&Next"
-value "&التالي"
+value "التالي&"
 
 key "&No"
-value "&لا"
+value "لا&"
 
 key "&OK"
-value "&موافق"
+value "موافق&"
 
 key "&Open..."
-value "&فتح..."
+value "...فتح&"
 
 key "&Options"
-value "&خيارات"
+value "خيارات&"
 
 key "&Paste"
-value "&لصق"
+value "لصق&"
 
 key "&Preferences"
-value "&تفضيلات"
+value "تفضيلات&"
 
 key "&Previous"
-value "&السابق"
+value "السابق&"
 
 key "&Print..."
-value "&طباعة..."
+value "...طباعة&"
 
 key "Print pre&view"
-value "معاينة الطباعة"
+value "معا&ينة الطباعة"
 
 key "&Properties"
-value "&الخصائص"
+value "الخصائص&"
 
 key "&Quit"
-value "&الخروج"
+value "الخروج&"
 
 key "&Redo"
-value "&إعادة"
+value "إعادة&"
 
 key "Refresh"
 value "تحديث"
@@ -188,70 +188,70 @@ key "Remove"
 value "إزالة"
 
 key "Rep&lace..."
-value "&استبدال..."
+value "...استب&دال"
 
 key "&Retry"
-value "&إعادة المحاولة"
+value "إعادة المحاولة&"
 
 key "Revert to Saved"
 value "العودة إلى الحفظ"
 
 key "&Save"
-value "&حفظ"
+value "حفظ&"
 
 key "Save &As..."
-value "&حفظ باسم..."
+value "...حفظ& باسم"
 
 key "&Search"
-value "&بحث"
+value "بحث&"
 
 key "Select &All"
-value "&تحديد الكل"
+value "تحديد &الكل"
 
 key "&Spell Check"
-value "&فحص الإملاء"
+value "فحص الإملاء&"
 
 key "&Stop"
-value "&إيقاف"
+value "إيقاف&"
 
 key "&Strikeout"
 value "&Strikeout"
 
 key "&Tools"
-value "&أدوات"
+value "أدوات&"
 
 key "&Top"
-value "&أعلى"
+value "أعلى&"
 
 key "Undelete"
 value "إلغاء الحذف"
 
 key "&Underline"
-value "&تسطير"
+value "تسطير&"
 
 key "&Undo"
-value "&تراجع"
+value "تراجع&"
 
 key "Unindent"
 value "Unindent"
 
 key "&Up"
-value "&لأعلى"
+value "لأعلى&"
 
 key "&View"
-value "&عرض"
+value "عرض&"
 
 key "&Window"
-value "&نافذة"
+value "نافذة&"
 
 key "&Yes"
-value "&نعم"
+value "نعم&"
 
 key "Zoom &In"
-value "&تكبير"
+value "تكبير&"
 
 key "Zoom &Out"
-value "&تصغير"
+value "تصغير&"
 
 key "Zoom to &Fit"
-value "ضبط للملاءمة"
+value "ضبط &للملاءمة"

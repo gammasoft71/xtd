@@ -2,7 +2,7 @@ key "name is an empty string"
 value "الاسم هو سلسلة فارغة"
 
 key "name specifies a font that is not installed on the computer running the application."
-value "الاسم يحدد خطً غير مثبت على الكمبيوتر الذي يشغل التطبيق."
+value ".الاسم يحدد خطً غير مثبت على الكمبيوتر الذي يشغل التطبيق"
 
 key "name specifies a font that is not a part of specified font_collection."
-value "font_collection الاسم يحدد خطً ليس جزءًا من مجموعة الخطوط المحددة."
+value ".font_collection الاسم يحدد خطً ليس جزءًا من مجموعة الخطوط المحددة"

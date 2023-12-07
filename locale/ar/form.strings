@@ -14,4 +14,4 @@ key "end_dialog work only with dialog"
 value "dialog يعمل فقط مع end_dialog"
 
 key "Top-level control cannot be added to a control."
-value "لا يمكن إضافة كائن تحكم على مستوى عالٍ إلى كائن تحكم فرعي."
+value ".لا يمكن إضافة كائن تحكم على مستوى عالٍ إلى كائن تحكم فرعي"

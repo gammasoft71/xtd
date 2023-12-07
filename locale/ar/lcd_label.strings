@@ -2,7 +2,7 @@ key "Only characters : \"{}\" are valid"
 value "الأحرف الصحيحة هي: "\{}"\ فقط"
 
 key "value must be between 0.0 and 1.0."
-value "يجب أن تكون القيمة بين 0.0 و 1.0."
+value ".يجب أن تكون القيمة بين 0.0 و 1.0"
 
 key "value must be positive"
 value "يجب أن تكون القيمة إيجابية"
