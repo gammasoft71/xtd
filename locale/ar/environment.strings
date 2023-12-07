@@ -1,0 +1,11 @@
+key "Invalid environment variable target value"
+value "قيمة متغير البيئة غير صالحة"
+
+key "Environment variable name is empty"
+value "اسم متغير البيئة فارغ"
+
+key "Can't erase environment variable"
+value "لا يمكن مسح متغير البيئة"
+
+key "Can't set environment variable"
+value "لا يمكن تعيين متغير البيئة"

@@ -85,4 +85,44 @@ add_sources(
   fr/version.strings
 )
 
+# Arabic
+add_sources(
+  ar/about_dialog.strings
+  ar/application.strings
+  ar/busy_box.strings
+  ar/checked_list_box.strings
+  ar/choice.strings
+  ar/color.strings
+  ar/combo_box.strings
+  ar/control.strings
+  ar/countries.strings
+  ar/domain_up_down.strings
+  ar/environment.strings
+  ar/exception_dialog.strings
+  ar/enumeration.strings
+  ar/css_reader.strings
+  ar/date_time.strings
+  ar/boolean_switch.strings
+  ar/paint_evant_args.strings
+  ar/process.strings
+  ar/exceptions.strings
+  ar/font_family.strings
+  ar/font.strings
+  ar/form.strings
+  ar/graphics.strings
+  ar/guid.strings
+  ar/image_list.strings
+  ar/lcd_label.strings
+  ar/list_box.strings
+  ar/menu.strings
+  ar/message_box.strings
+  ar/pen.strings
+  ar/splitter.strings
+  ar/strings.strings
+  ar/text_box_base.strings
+  ar/texts.strings
+  ar/theme_colors.strings
+  ar/version.strings
+)
+
 target_type(INTERFACE_LIBRARY)
