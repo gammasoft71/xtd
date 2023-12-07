@@ -1,7 +1,7 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/thread>
 #undef __XTD_CORE_NATIVE_LIBRARY__
-#include <math.h>
+#include <cmath>
 #include <pthread.h>
 #include <thread>
 
