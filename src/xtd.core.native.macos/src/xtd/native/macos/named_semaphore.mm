@@ -2,9 +2,6 @@
 #include <xtd/native/named_semaphore>
 #include "../../../../include/xtd/native/macos/semaphore.h"
 #undef __XTD_CORE_NATIVE_LIBRARY__
-#import <CoreFoundation/CoreFoundation.h>
-#include <TargetConditionals.h>
-#import <Cocoa/Cocoa.h>
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <algorithm>
