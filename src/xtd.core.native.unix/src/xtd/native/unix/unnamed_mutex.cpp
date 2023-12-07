@@ -2,12 +2,14 @@
 #include <xtd/native/unnamed_mutex>
 #include "../../../../include/xtd/native/unix/mutex.h"
 #undef __XTD_CORE_NATIVE_LIBRARY__
+#include <fcntl.h>
+#include <sys/stat.h>
 
 using namespace xtd::native;
 
 intmax_t unnamed_mutex::create(bool initially_owned) {
   auto handle = new pthread_mutex_t;
-  pthread_mutexattr_t mutex_attribute;
+  auto mutex_attribute = pthread_mutexattr_t {};
   if (pthread_mutexattr_init(&mutex_attribute) != 0 ||
       pthread_mutexattr_settype(&mutex_attribute, PTHREAD_MUTEX_RECURSIVE) != 0 ||
       pthread_mutex_init(handle, &mutex_attribute) != 0) {
