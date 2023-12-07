@@ -1,19 +1,21 @@
-#include <xtd/io/directory>
-#include <xtd/io/file>
-#include <xtd/io/path>
+#include <xtd/as>
+#include <xtd/is>
 #include <xtd/console>
-#include <xtd/startup>
+#include <xtd/date_time>
+#include <xtd/day_of_week>
+#include <xtd/convert_string>
+#include <xtd/typeof>
+#include <xtd/translator>
 
+using namespace std;
 using namespace xtd;
-using namespace xtd::io;
-
-class core_manual_test {
-public:
-  static auto entry_point() {
-      console::write_line("Hello, World!");
-  }
-};
 
 auto main()->int {
-  startup::safe_run(core_manual_test::entry_point);
+  console::write_line("locale = {}", translator::locale().name());
+  translator::language("fr_CH");
+  translator::locale("zh_CN");
+  console::write_line("locale = {}", translator::locale().name());
+  
+  auto str = translator::translate("&Open...");
+  console::write_line(str);
 }
