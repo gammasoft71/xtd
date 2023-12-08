@@ -1,0 +1,20 @@
+key "Abort"
+value "إحباط"
+
+key "Cancel"
+value "إلغاء"
+
+key "Ignore"
+value "تجاهل"
+
+key "No"
+value "لا"
+
+key "OK"
+value "موافق"
+
+key "Retry"
+value "إعادة المحاولة"
+
+key "Yes"
+value "نعم"
