@@ -80,7 +80,7 @@ Contains Arabic locale translation files.
 
 ## Translators
 
-* Initial translation by [gammasoft71](https://gammasoft71.wixsite.com/gammasoft).
+* Initial translation by [Bader](https://github.com/BaderEddineOuaich).
 
 ## Remarks
 
