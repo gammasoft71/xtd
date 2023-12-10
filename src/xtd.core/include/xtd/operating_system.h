@@ -143,6 +143,10 @@ namespace xtd {
     /// @return true if the current platform is Android; otherwise, false.
     bool is_android() const noexcept;
     
+    /// @brief Determines whether the current platform is FreeBSD.
+    /// @return true if the current platform is Android; otherwise, false.
+    bool is_free_bsd() const noexcept;
+    
     /// @brief Determines whether the current platform is iOS.
     /// @return true if the current platform is iOS; otherwise, false.
     bool is_ios() const noexcept;
