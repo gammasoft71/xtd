@@ -189,7 +189,8 @@ string environment::get_machine_name() {
 }
 
 int_least32_t environment::get_os_platform_id() {
-  return create_process("uname -a").find("FreeBSD") != string::npos ? PLATFORM_FREEBSD : PLATFORM_UNIX;
+  if (create_process("uname -a").find("FreeBSD") != string::npos) return PLATFORM_FREEBSD;
+  return PLATFORM_UNIX;
 }
 
 void environment::get_os_version(int_least32_t& major, int_least32_t& minor, int_least32_t& build, int_least32_t& revision) {
