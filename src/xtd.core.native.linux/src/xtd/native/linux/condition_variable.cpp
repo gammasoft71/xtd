@@ -7,7 +7,7 @@
 using namespace xtd::native;
 
 intmax_t condition_variable::create() {
-  pthread_cond_t* handle = new pthread_cond_t;
+  auto handle = new pthread_cond_t;
   if (pthread_cond_init(handle, nullptr) != 0) {
     delete handle;
     return reinterpret_cast<intmax_t>(MUTEX_FAILED);
@@ -34,10 +34,10 @@ void condition_variable::pulse_all(intmax_t handle) {
 bool condition_variable::wait(intmax_t handle, intmax_t critical_section_handle, int_least32_t milliseconds_timeout) {
   if (handle == reinterpret_cast<intmax_t>(MUTEX_FAILED)) return false;
   if (reinterpret_cast<pthread_mutex_t*>(critical_section_handle) == nullptr) return false;
-  
+
   if (milliseconds_timeout == -1) return pthread_cond_wait(reinterpret_cast<pthread_cond_t*>(handle), reinterpret_cast<pthread_mutex_t*>(critical_section_handle));
 
-  struct timespec timeout;
+  auto timeout = timespec {};
   clock_gettime(CLOCK_REALTIME, &timeout);
   timeout.tv_sec += milliseconds_timeout / 1000;
   timeout.tv_nsec += (milliseconds_timeout % 1000) * 1000000;
