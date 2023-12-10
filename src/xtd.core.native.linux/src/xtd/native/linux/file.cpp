@@ -12,9 +12,9 @@ using namespace std;
 using namespace xtd::native;
 
 int_least32_t file::copy(const std::string& source_file, const std::string& target_file) {
-  ifstream ifs {source_file, ios::binary};
+  auto ifs = ifstream {source_file, ios::binary};
   if (!ifs) return -1;
-  ofstream ofs {target_file, ios::trunc | ios::binary};
+  auto ofs = ofstream {target_file, ios::trunc | ios::binary};
   if (!ofs) return -2;
   ofs << ifs.rdbuf();
   ifs.close();
@@ -23,18 +23,19 @@ int_least32_t file::copy(const std::string& source_file, const std::string& targ
 }
 
 bool file::exists(const std::string& path) {
-  int_least32_t attributes = 0;
+  auto attributes = 0;
   return file_system::get_attributes(path, attributes) == 0 && (attributes & FILE_ATTRIBUTE_DIRECTORY) != FILE_ATTRIBUTE_DIRECTORY;
 }
 
 size_t file::get_size(const std::string& path) {
-  struct stat status;
+  using struct_stat = struct stat;
+  auto status = struct_stat {};
   if (stat(path.c_str(), &status) != 0) return 0;
   return static_cast<size_t>(status.st_size);
 }
 
 int_least32_t file::move(const std::string& old_path, const std::string& new_path) {
-  int_least32_t file_attributes = 0;
+  auto file_attributes = 0;
   if (file_system::get_attributes(new_path, file_attributes) == 0) return -1;
   return rename(old_path.c_str(), new_path.c_str());
 }
