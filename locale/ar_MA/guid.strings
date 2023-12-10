@@ -1,0 +1,5 @@
+key "Vector size must be 16"
+value "يجب أن يكون حجم المجموعة 16"
+
+key "Vector size must be 8"
+value "يجب أن يكون حجم المجموعة 8"
