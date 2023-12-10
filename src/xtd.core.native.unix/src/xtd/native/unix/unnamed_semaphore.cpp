@@ -2,6 +2,8 @@
 #include <xtd/native/unnamed_semaphore>
 #include "../../../../include/xtd/native/unix/semaphore.h"
 #undef __XTD_CORE_NATIVE_LIBRARY__
+#include <sys/stat.h>
+#include <errno.h>
 
 using namespace xtd::native;
 
