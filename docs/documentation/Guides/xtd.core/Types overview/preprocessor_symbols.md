@@ -82,7 +82,7 @@ The following code shows how to detect the operating system with the preprocesso
 #  endif
 #elif defined(__ANDROID__)
 #  define __platform_name__ "Android"
-#elif defined(__FreeBDSD__)
+#elif defined(__FreeBSD__)
 #  define __platform_name__ "FreeBSD"
 #elif defined(__linux__)
 #  define __platform_name__ "Linux"
