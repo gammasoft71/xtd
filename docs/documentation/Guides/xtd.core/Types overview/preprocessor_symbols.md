@@ -22,6 +22,7 @@ The following table represents the different preprocessor symbols for the operat
 | ---------------- | ----------------------------------------------------------------------- |
 | `__ANDROID__`    | [Android](https://en.wikipedia.org/wiki/Android_%28operating_system%29) |
 | `__APPLE__`      | [macOS](https://en.wikipedia.org/wiki/Mac_OS)                           |
+| `__FreeBSD__`    | [FreeBSD](https://fr.wikipedia.org/wiki/FreeBSD)                        |
 | `__linux__`      | [Linux](https://en.wikipedia.org/wiki/Linux_kernel)                     |
 | `__unix__`       | [Unix](https://en.wikipedia.org/wiki/unix)                              |
 | `_POSIX_VERSION` | [Posix](https://en.wikipedia.org/wiki/posix)                            |
@@ -81,6 +82,8 @@ The following code shows how to detect the operating system with the preprocesso
 #  endif
 #elif defined(__ANDROID__)
 #  define __platform_name__ "Android"
+#elif defined(__FreeBDSD__)
+#  define __platform_name__ "FreeBSD"
 #elif defined(__linux__)
 #  define __platform_name__ "Linux"
 #elif defined(__unix__)
