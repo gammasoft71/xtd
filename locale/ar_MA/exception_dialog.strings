@@ -1,0 +1,96 @@
+key "Exception {} occurred"
+value "{} حدثت خطأ"
+
+key "Unknown exception occurred"
+value "حدث خطأ غير معروف"
+
+key "Unhandled exception occurred in your application. If you click Continue, the application will ignore this error and attempt to continue. If you click Quit, the application will close immediately.{0}{0}{1}"
+value "حدث خطأ غير معالج في تطبيقك. إذا قمت بالنقر فوق متابعة، سيتجاهل التطبيق هذا الخطأ ويحاول المتابعة. إذا قمت بالنقر فوق الإنهاء، سيتم إغلاق التطبيق فورًا.{0}{0}{1}"
+
+key "(Unknown exception)"
+value "(خطأ غير معروف)"
+
+key "Details"
+value "تفاصيل"
+
+key "Continue"
+value "متابعة"
+
+key "Quit"
+value "إنهاء"
+
+key "Use try and catch to handle std::exception or xtd::system_exception instead{0}of this dialog box. For more information, see the xtd documentation.{0}{0}"
+value "استخدم try و catch للتعامل مع std::exception أو xtd::system_exception بدلاً من هذا الصندوق التفاعلي. للمزيد من المعلومات، راجع توثيق xtd.{0}{0}"
+value "{0}{0} بدلا{0}من هذا الصندوق التفاعلي. للمزيد من المعلومات، راجع التوثيق  std::exception أو xtd::system_exception للتعامل مع try و catch استخدم"
+
+key "{0} Exception text {0}{1}"
+value "{0} وصف الخطأ {0}{1}"
+
+key "(Unknown exception){0}"
+value "(خطأ غير معروف){0}"
+
+key "{0} Libraries {0}{1}"
+value "{0} المكتبات {0}{1}"
+
+key "    Name: {}.{}{}"
+value "{}.{}{} :الاسم    "
+
+key "    Version: {}{}"
+value "{}{} :الإصدار    "
+
+key "    include path: {}{}"
+value "{}{} :مسار الاستدراج     "
+
+key "    library path: {}{}"
+value "{}{} :مسار المكتبة    "
+
+key "    resources path: {}{}"
+value "{}{} :مسار الموارد    "
+
+key "{0} Operating System {0}{1}"
+value "{0} نظام التشغيل {0}{1}"
+
+key "    Version : {}{}"
+value "{}{} :الإصدار    "
+
+key "    Desktop environment : {}{}"
+value "{}{} :بيئة سطح المكتب    "
+
+key "    OS Version : {}{}"
+value "{}{} :إصدار نظام التشغيل    "
+
+key "    64 bits : {}{}"
+value "{}{} : 64 بت    "
+
+key "{0} Language {0}{1}"
+value "{0} لغة {0}{1}"
+
+key "    Version : {}{}"
+value "{}{} : الإصدار    "
+
+key "    Experimental : {}{}"
+value "{}{} : تجريبي    "
+
+key "    Supported : {}{}"
+value "{}{} : مدعوم    "
+
+key "{0} Compiler {0}{1}"
+value "{0} المترجم {0}{1}"
+
+key "    Version : {0}{1}"
+value "الإصدار : {0}{1}    "
+
+key "    ID : {0}{1}"
+value "المعرف : {0}{1}    "
+
+key "    Mode : {0}{1}"
+value "الوضع : {0}{1}    "
+
+key "    64 bits : {0}{1}"
+value "{0}{1} : 64 bits"
+
+key "Debug"
+value "تصحيح"
+
+key "Release"
+value "إصدار"

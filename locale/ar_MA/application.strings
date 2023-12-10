@@ -1,0 +1,17 @@
+key "Call application::enable_dark_mode() before application::run()"
+value "application::run() قبل application::enable_dark_mode() استدعِ"
+
+key "Call application::enable_button_images() before application::run()"
+value "application::run() قبل application::enable_button_images() استدعِ"
+
+key "Call application::enable_light_mode() before application::run()"
+value "application::run() قبل application::enable_light_mode() استدعِ"
+
+key "Call application::enable_menu_images() before application::run()"
+value "application::run() قبل application::enable_menu_images() استدعِ"
+
+key "Call application::enable_visual_styles() before application::run()"
+value "application::run() قبل application::enable_visual_styles() استدعِ"
+
+key "Application already running"
+value "التطبيق قيد التشغيل"
