@@ -28,9 +28,11 @@ if [[ "$OSTYPE" == *"MSYS"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]]; then
 elif [[ "$OSTYPE" == *"Darwin"* ]]; then
   echo "  Operating System is macOS";
 elif [[ "$OSTYPE" == *"FreeBSD"* ]]; then
-  echo "  Operating System is Unix"; 
+  echo "  Operating System is FreeBSD"; 
+elif [[ "$OSTYPE" == *"Linux"* ]]; then
+  echo "  Operating System is Linux"; 
 else
-  echo "  Operating System is Linux"
+  echo "  Operating System is Unknown"
 fi
 
 #_______________________________________________________________________________
