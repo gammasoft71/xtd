@@ -11,6 +11,7 @@
 #include "file_attribute.h"
 #include <xtd/core_native_export>
 #include <cstdint>
+#include <ctime>
 #include <string>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
