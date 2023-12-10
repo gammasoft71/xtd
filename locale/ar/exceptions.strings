@@ -1,0 +1,104 @@
+key "The given key was not present in the dictionary."
+value ".المفتاح المعطى لم يكن موجودًا في القاموس"
+
+key "Attempted to access a path that is not on the disk."
+value ".محاولة الوصول إلى مسار غير موجود على القرص"
+
+key "Attempted to access a drive that is not available."
+value ".محاولة الوصول إلى مسار غير متاح"
+
+key "Attempted to read past the end of the stream."
+value ".محاولة القراءة بعد نهاية التيار"
+
+key "Input file or data stream does not conform to the expected file format specification."
+value ".ملف الإدخال أو تدفق البيانات لا يتفق مع مواصفات تنسيق الملف المتوقع"
+
+key "Could not load the specified file."
+value ".تعذر تحميل الملف المحدد"
+
+key "Unable to find the specified file."
+value ".تعذر العثور على الملف المحدد"
+
+key "I/O error occurred."
+value ".حدث خطأ في إدخال/إخراج البيانات"
+
+key "The specified path, file name, or both are too long. The fully qualified file name must be less than 260 characters, and the directory name must be less than 248 characters."
+value ".المسار المحدد أو اسم الملف، أو كليهما طويلان جدًا. يجب أن يكون اسم الملف الكامل أقل من 260 حرفًا، ويجب أن يكون اسم المجلد أقل من 248 حرفًا"
+
+key "Value does not fall within the expected range."
+value ".القيمة لا تقع ضمن النطاق المتوقع"
+
+key "Value cannot be null."
+value ".القيمة لا يمكن أن تكون فارغة"
+
+key "Specified argument is out of range of valid values."
+value ".المعامل المحدد خارج نطاق القيم الصالحة"
+
+key "Overflow or underflow in the arithmetic operation."
+value ".تجاوز أو تحت الحد في العملية الحسابية"
+
+key "Attempt to divide by zero."
+value ".محاولة القسمة على الصفر"
+
+key "Report domain error."
+value ".الإبلاغ عن خطأ في النطاق"
+
+key "One of identified items is an invalid format."
+value ".أحد العناصر المحددة له تنسيق غير صالح"
+
+key "Index was outside the bounds of the array."
+value ".كان خارج حدود المصفوفة index"
+
+key "Specified cast is not valid."
+value ".التحويل المحدد غير صالح"
+
+key "Operation is not valid due to the current state of the object."
+value ".العملية غير صالحة بسبب حالة الكائن"
+
+key "The system detected an invalid program."
+value ".النظام اكتشف برنامجًا غير صالح"
+
+key "Exceed implementation defined length limits."
+value ".تجاوز حدود الطول المحددة من قبل التنفيذ"
+
+key "Number encountered was not a finite quantity."
+value ".الرقم الذي تم مواجهته ليس كمية محدودة"
+
+key "The method or operation is not implemented."
+value ".الطريقة أو العملية غير مُنفَّذة"
+
+key "Specified method is not supported."
+value ".الطريقة المحددة غير مدعومة"
+
+key "Object pointer not set to an instance of an object."
+value ".مؤشر الكائن غير معين إلى مثيل من الكائن"
+
+key "The operation was canceled."
+value ".تم إلغاء العملية"
+
+key "Arithmetic operation resulted in an overflow."
+value ".أسفرت العملية الحسابية في تجاوز"
+
+key "Operation is not supported on this platform."
+value ".العملية غير مدعومة على هذه المنصة"
+
+key "System error."
+value ".خطأ في النظام"
+
+key "The operation has timed out."
+value ".انتهت مهلة العملية"
+
+key "Arithmetic operation resulted in an underflow."
+value ".underflow أسفرت العملية الحسابية في"
+
+key "Security error detected."
+value ".تم اكتشاف خطأ أمان"
+
+key "Syntax error in XML."
+value "XML خطأفي صيغة"
+
+key "The Socket operation failed."
+value ".فشلت عملية القابس (Socket)"
+
+key "Attempted to perform an unauthorized operation."
+value ".محاولة أداء عملية غير مصرح بها"
