@@ -1,6 +1,6 @@
 # ar
 
-Contains Arabic locale translation files.
+Contains Arabic locale (Moroccan Arabic) translation files.
 
 ## Files
 
