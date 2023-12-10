@@ -48,20 +48,20 @@ directory::directory_iterator::~directory_iterator() {
 }
 
 directory::directory_iterator& directory::directory_iterator::operator ++() {
-  dirent* item;
-  int_least32_t attributes;
+  dirent* item = nullptr;
+  auto attributes = 0;
   do {
     if ((item = readdir(data_->handle_)) != nullptr)
       native::file_system::get_attributes(data_->path_ + '/' + item->d_name, attributes);
   } while (item != nullptr && ((attributes & FILE_ATTRIBUTE_DIRECTORY) != FILE_ATTRIBUTE_DIRECTORY || string(item->d_name) == "." ||  string(item->d_name) == ".."  || !pattern_compare(item->d_name, data_->pattern_)));
-  
+
   if (item == nullptr) data_->current_ = "";
   else data_->current_ = data_->path_ + (data_->path_.rfind('/') == data_->path_.size() - 1 ? "" : "/") + item->d_name;
   return *this;
 }
 
 directory::directory_iterator directory::directory_iterator::operator ++(int_least32_t) {
-  directory_iterator result = *this;
+  auto result = *this;
   ++(*this);
   return result;
 }
@@ -118,20 +118,20 @@ directory::file_iterator::~file_iterator() {
 }
 
 directory::file_iterator& directory::file_iterator::operator ++() {
-  dirent* item;
-  int_least32_t attributes;
+  dirent* item = nullptr;
+  auto attributes = 0;
   do {
     if ((item = readdir(data_->handle_)) != nullptr)
       native::file_system::get_attributes(data_->path_ + '/' + item->d_name, attributes);
   } while (item != nullptr && ((attributes & FILE_ATTRIBUTE_DIRECTORY) == FILE_ATTRIBUTE_DIRECTORY || string(item->d_name) == "." ||  string(item->d_name) == ".."  || !pattern_compare(item->d_name, data_->pattern_)));
-  
+
   if (item == nullptr) data_->current_ = "";
   else data_->current_ = data_->path_ + (data_->path_.rfind('/') == data_->path_.size() - 1 ? "" : "/") + item->d_name;
   return *this;
 }
 
 directory::file_iterator directory::file_iterator::operator ++(int_least32_t) {
-  file_iterator result = *this;
+  auto result = *this;
   ++(*this);
   return result;
 }
@@ -189,19 +189,19 @@ directory::file_and_directory_iterator::~file_and_directory_iterator() {
 
 directory::file_and_directory_iterator& directory::file_and_directory_iterator::operator ++() {
   dirent* item;
-  int_least32_t attributes;
+  auto attributes = 0;
   do {
     if ((item = readdir(data_->handle_)) != nullptr)
       native::file_system::get_attributes(data_->path_ + '/' + item->d_name, attributes);
   } while (item != nullptr && (string(item->d_name) == "." ||  string(item->d_name) == ".."  || !pattern_compare(item->d_name, data_->pattern_)));
-  
+
   if (item == nullptr) data_->current_ = "";
   else data_->current_ = data_->path_ + (data_->path_.rfind('/') == data_->path_.size() - 1 ? "" : "/") + item->d_name;
   return *this;
 }
 
 directory::file_and_directory_iterator directory::file_and_directory_iterator::operator ++(int_least32_t) {
-  file_and_directory_iterator result = *this;
+  auto result = *this;
   ++(*this);
   return result;
 }
@@ -248,12 +248,12 @@ directory::file_and_directory_iterator directory::enumerate_files_and_directorie
 }
 
 bool directory::exists(const std::string& path) {
-  int_least32_t attributes = 0;
+  auto attributes = 0;
   return file_system::get_attributes(path, attributes) == 0 && (attributes & FILE_ATTRIBUTE_DIRECTORY) == FILE_ATTRIBUTE_DIRECTORY;
 }
 
 string directory::get_current_directory() {
-  std::string path(MAXPATHLEN + 1, 0);
+  auto path = std::string(MAXPATHLEN + 1, 0);
   auto result = getcwd(path.data(), MAXPATHLEN);
   //path.shrink_to_fit();
   path.erase(std::find(path.begin(), path.end(), '\0'), path.end());

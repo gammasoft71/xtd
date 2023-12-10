@@ -6,7 +6,7 @@
 using namespace xtd::native;
 
 intmax_t unnamed_semaphore::create(int_least32_t initial_count, int_least32_t max_count) {
-  sem_t* semaphore = new sem_t;
+  auto semaphore = new sem_t;
   if (sem_init(semaphore, 0, std::min(initial_count, max_count)) == -1) return reinterpret_cast<intmax_t>(SEM_FAILED);
   return reinterpret_cast<intmax_t>(semaphore);
 }
