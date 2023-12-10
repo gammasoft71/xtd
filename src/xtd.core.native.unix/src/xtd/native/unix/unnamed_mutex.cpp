@@ -4,6 +4,7 @@
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <fcntl.h>
 #include <sys/stat.h>
+#include <errno.h>
 
 using namespace xtd::native;
 
