@@ -23,32 +23,32 @@ namespace {
   auto treat_control_c_as_input = false;
   std::vector<int_least32_t> signal_couter_;
   std::function<bool(int_least32_t)> user_cancel_callback;
-  
+
   struct console_intercept_signals {
   private:
     console_intercept_signals() {
       for (auto signal : signal_keys_)
         ::signal(signal.first, console_intercept_signals::signal_handler);
     }
-    
+
     ~console_intercept_signals() {
       for (auto signal : signal_keys_)
         ::signal(signal.first, SIG_DFL);
     }
-    
+
     static void signal_handler(int_least32_t signal) {
       ::signal(signal, console_intercept_signals::signal_handler);
       if (treat_control_c_as_input) signal_couter_.push_back(signal_keys_[signal]);
       else if (user_cancel_callback && user_cancel_callback(signal_keys_[signal]) == false) exit(EXIT_FAILURE);
     }
-    
+
     // The SIGINT signal catcher conflicts with with xtd::environment::cancel_interrupt signal...
     inline static std::map<int_least32_t, int_least32_t> signal_keys_ {{SIGQUIT, CONSOLE_SPECIAL_KEY_CTRL_BS}, {SIGTSTP, CONSOLE_SPECIAL_KEY_CTRL_Z}/*, {SIGINT, CONSOLE_SPECIAL_KEY_CTRL_C}*/};
     static console_intercept_signals console_intercept_signals_;
   };
-  
+
   console_intercept_signals console_intercept_signals::console_intercept_signals_;
-  
+
   class terminal final {
   public:
     bool echo(bool on) {
@@ -58,7 +58,7 @@ namespace {
       else status.c_lflag &= ~ECHO;
       return tcsetattr(0, TCSANOW, &status) == 0;
     }
-    
+
     bool icanon(bool on) {
       auto status = termios {};
       tcgetattr(0, &status);
@@ -68,49 +68,49 @@ namespace {
       status.c_cc[VTIME] = 0; // Can be discarded.
       return tcsetattr(0, TCSANOW, &status) == 0;
     }
-    
+
     int_least32_t getch() {
       if (peek_character != -1) {
         auto character = peek_character;
         peek_character = -1;
         return character;
       }
-      
+
       push_status();
       echo(false);
       icanon(false);
-      
+
       auto character = '\0';
       while (read(0, &character, 1) != 1);
-      
+
       pop_status();
       return character;
     }
-    
+
     bool key_available() {
       if (peek_character != -1)
         return true;
-      
+
       push_status();
       echo(false);
       icanon(false);
-      
+
       if (read(0, &peek_character, 1) == -1) {
         pop_status();
         return false;
       }
-      
+
       pop_status();
       return peek_character != -1;
     }
-    
+
     static bool is_ansi_supported() {
       static auto terminal = std::string {getenv("TERM") == nullptr ? "" : getenv("TERM")};
       return isatty(fileno(stdout)) && (terminal == "xterm" || terminal == "xterm-color" || terminal == "xterm-256color" || terminal == "screen" || terminal == "screen-256color" || terminal == "linux" || terminal == "cygwin");
     }
-    
+
     static terminal terminal_;
-    
+
   private:
     terminal() {
       push_status();
@@ -121,18 +121,18 @@ namespace {
       pop_status();
       reset_colors_and_attributes();
     }
-    
+
     void reset_colors_and_attributes() {
       if (is_ansi_supported()) std::cout << "\x1b]0;\x7" << std::flush;
     }
-    
+
     termios push_status() {
       auto status = termios {};
       tcgetattr(0, &status);
       statuses.push_back(status);
       return status;
     }
-    
+
     termios pop_status() {
       if (statuses.size() == 0) {
         auto status = termios {};
@@ -144,14 +144,14 @@ namespace {
       tcsetattr(0, TCSANOW, &status);
       return status;
     }
-    
-    
+
+
     int_least8_t peek_character {-1};
     std::vector<termios> statuses;
   };
-  
+
   terminal terminal::terminal_;
-  
+
   class key_info {
   public:
     class input_list {
@@ -160,34 +160,34 @@ namespace {
       explicit input_list(const std::list<int_least32_t>& chars) : chars(chars) {}
       explicit input_list(std::initializer_list<int_least32_t> il) : chars(il) {}
       input_list(const input_list& il) : chars(il.chars) {}
-      
+
       input_list& operator =(const input_list& il) {
         chars = il.chars;
         return *this;
       }
-      
+
       bool operator ==(const input_list& il) const noexcept {return chars == il.chars;}
       bool operator !=(const input_list& il) const noexcept {return chars != il.chars;}
-      
+
       using const_iterator = std::list<int_least32_t>::const_iterator;
       using iterator = std::list<int_least32_t>::iterator;
-      
+
       const_iterator cbegin() const {return chars.begin();}
       const_iterator cend() const {return chars.end();}
       const_iterator begin() const {return chars.begin();}
       iterator begin() {return chars.begin();}
       const_iterator end() const {return chars.end();}
       iterator end() {return chars.end();}
-      
+
       void add(int_least32_t c) {chars.push_back(c);}
       void add_front(int_least32_t c) {chars.push_front(c);}
       void remove(int_least32_t c) {chars.remove(c);}
       int_least32_t count() const {return static_cast<int_least32_t>(chars.size());}
       int_least32_t pop() { int_least32_t c = chars.front();  chars.erase(chars.begin()); return c;}
       void clear() {chars.clear();}
-      
+
       bool is_empty() const {return chars.empty();}
-      
+
       std::string to_string() const {
         std::stringstream result;
         std::list<int_least32_t>::const_iterator iterator = chars.begin();
@@ -200,7 +200,7 @@ namespace {
         }
         return result.str();
       }
-      
+
       static input_list parse(const std::string& value) {
         input_list result;
         std::string::const_iterator iterator = value.begin();
@@ -214,13 +214,13 @@ namespace {
         }
         return result;
       }
-      
+
     private:
       std::list<int_least32_t> chars;
     };
-    
+
     key_info(const key_info& ki) : key_(ki.key_), key_char_(ki.key_char_), has_alt_modifier_(ki.has_alt_modifier_), has_control_modifier_(ki.has_control_modifier_), has_shift_modifier_(ki.has_shift_modifier_) {}
-    
+
     key_info& operator =(const key_info& ki) {
       key_ = ki.key_;
       key_char_ = ki.key_char_;
@@ -229,9 +229,9 @@ namespace {
       has_shift_modifier_ = ki.has_shift_modifier_;
       return *this;
     }
-    
+
     static bool key_available() {return !signal_couter_.empty() || !inputs.is_empty() || terminal::terminal_.key_available();}
-    
+
     static key_info read() {
       if (!signal_couter_.empty()) {
         auto k = signal_couter_[0];
@@ -243,43 +243,43 @@ namespace {
         }
       }
       if (!inputs.is_empty()) return to_key_info(inputs.pop());
-      
+
       do
         inputs.add(terminal::terminal_.getch());
       while (terminal::terminal_.key_available());
-      
+
       auto it = key_info::keys.find(inputs.to_string());
       if (it != key_info::keys.end()) {
         inputs.clear();
         return key_info(it->second.key, it->second.key_char, false, false, it->second.shift);
       }
-      
+
       if (inputs.count() == 1) return to_key_info(inputs.pop());
       if (inputs.count() > 1 && *inputs.begin() != 27) return to_key_info(to_key(inputs));
-      
+
       inputs.pop();
       return to_key_info(inputs.pop(), true);
     }
-    
+
     char32_t key() const {return key_;}
     char32_t key_char() const {return key_char_;}
     bool has_alt_modifier() const {return has_alt_modifier_;}
     bool has_control_modifier() const {return has_control_modifier_;}
     bool has_shift_modifier() const {return has_shift_modifier_;}
-    
+
     std::string to_string() const {
       std::stringstream result;
       result << "{key=" << std::hex << static_cast<int_least32_t>(key_) << ", key_char=" << std::dec << static_cast<char>(key_char_) << ", has_alt_modifier=" << to_string(has_alt_modifier_) << ", has_control_modifier=" << to_string(has_control_modifier_) << ", has_shift_modifier=" << to_string(has_shift_modifier_) << "}";
       return result.str();
     }
-    
+
   private:
     key_info() : key_(U'0'), key_char_(U'0'), has_alt_modifier_(false), has_control_modifier_(false), has_shift_modifier_(false) {}
     key_info(int_least32_t key, int_least32_t key_char) : key_(key), key_char_(key_char), has_alt_modifier_(false), has_control_modifier_(false), has_shift_modifier_(false) {}
     key_info(int_least32_t key, int_least32_t key_char, bool has_alt_modifier, bool has_control_modifier, bool has_shift_modifier) : key_(key), key_char_(key_char), has_alt_modifier_(has_alt_modifier), has_control_modifier_(has_control_modifier), has_shift_modifier_(has_shift_modifier) {}
-    
+
     static std::string to_string(bool b) {return b ? "true" : "false";}
-    
+
     static int_least32_t to_key(input_list& inputs) {
       int_least32_t result = 0;
       int_least32_t index = 1;
@@ -288,20 +288,20 @@ namespace {
       inputs.clear();
       return result;
     }
-    
+
     static key_info to_key_info(int_least32_t key) {
       return to_key_info(key, false);
     }
-    
+
     static key_info to_key_info(int_least32_t key, bool alt) {
       // Ctrl + Space
       if (key == 0)
         return key_info(' ', ' ', false, true, false);
-        
+
       // Ctrl + [a; z]
       if ((key >= 1 && key <= 7) || (key >= 10 && key <= 11) || (key >= 14 && key <= 18) || (key >= 20 && key <= 26))
         return key_info(key + 'A' - 1, key, false, true, false);
-        
+
       switch (key) {
         case 50086 : return key_info(0, U'æ', alt, false, false);
         case 50054 : return key_info(0, U'Æ', alt, false, false);
@@ -396,13 +396,13 @@ namespace {
         case -1610554743 : return key_info(0, U'≠', alt, false, false);
         case 49841 : return key_info(0, U'±', alt, false, false);
       }
-      
+
       if (key_info::keys.find(std::string(1, toupper((char)key))) != key_info::keys.end())
         return key_info(toupper(key), key, alt, false, key >= 'A' && key <= 'Z');
-        
+
       return key_info(0, key, alt, false, key >= 'A' && key <= 'Z');
     }
-    
+
     char32_t key_;
     char32_t key_char_;
     bool has_alt_modifier_;
@@ -418,7 +418,7 @@ namespace {
     static std::map<std::string, key_key_char> keys;
     static input_list inputs;
   };
-  
+
   key_info::input_list key_info::inputs;
   std::map<std::string, key_info::key_key_char> key_info::keys = {
     {"\x7F", {8, 0, false, false, false}}, // Backspace
@@ -566,7 +566,7 @@ namespace {
     {"y", {89, U'y', false, false, false}}, // y
     {"z", {90, U'z', false, false, false}}, // z
   };
-  
+
   auto background_color = CONSOLE_COLOR_DEFAULT;
   auto foreground_color = CONSOLE_COLOR_DEFAULT;
   auto buffer_height = -1;
@@ -593,7 +593,7 @@ int_least32_t console::background_color() {
 }
 
 bool console::background_color(int_least32_t color) {
-  static std::map<int_least32_t, const char*> colors {{CONSOLE_COLOR_DEFAULT, "\x1b[49m"}, {CONSOLE_COLOR_BLACK, "\x1b[40m"}, {CONSOLE_COLOR_DARK_BLUE, "\x1b[44m"}, {CONSOLE_COLOR_DARK_GREEN, "\x1b[42m"}, {CONSOLE_COLOR_DARK_CYAN, "\x1b[46m"}, {CONSOLE_COLOR_DARK_RED, "\x1b[41m"}, {CONSOLE_COLOR_DARK_MAGENTA, "\x1b[45m"}, {CONSOLE_COLOR_DARK_YELLOW, "\x1b[43m"}, {CONSOLE_COLOR_GRAY, "\x1b[47m"}, {CONSOLE_COLOR_DARK_GRAY, "\x1b[100m"}, {CONSOLE_COLOR_BLUE, "\x1b[104m"}, {CONSOLE_COLOR_GREEN, "\x1b[102m"}, {CONSOLE_COLOR_CYAN, "\x1b[106m"}, {CONSOLE_COLOR_RED, "\x1b[101m"}, {CONSOLE_COLOR_MAGENTA, "\x1b[105m"}, {CONSOLE_COLOR_YELLOW, "\x1b[103m"}, {CONSOLE_COLOR_WHITE, "\x1b[107m"}};
+  static auto colors = std::map<int_least32_t, const char*> {{CONSOLE_COLOR_DEFAULT, "\x1b[49m"}, {CONSOLE_COLOR_BLACK, "\x1b[40m"}, {CONSOLE_COLOR_DARK_BLUE, "\x1b[44m"}, {CONSOLE_COLOR_DARK_GREEN, "\x1b[42m"}, {CONSOLE_COLOR_DARK_CYAN, "\x1b[46m"}, {CONSOLE_COLOR_DARK_RED, "\x1b[41m"}, {CONSOLE_COLOR_DARK_MAGENTA, "\x1b[45m"}, {CONSOLE_COLOR_DARK_YELLOW, "\x1b[43m"}, {CONSOLE_COLOR_GRAY, "\x1b[47m"}, {CONSOLE_COLOR_DARK_GRAY, "\x1b[100m"}, {CONSOLE_COLOR_BLUE, "\x1b[104m"}, {CONSOLE_COLOR_GREEN, "\x1b[102m"}, {CONSOLE_COLOR_CYAN, "\x1b[106m"}, {CONSOLE_COLOR_RED, "\x1b[101m"}, {CONSOLE_COLOR_MAGENTA, "\x1b[105m"}, {CONSOLE_COLOR_YELLOW, "\x1b[103m"}, {CONSOLE_COLOR_WHITE, "\x1b[107m"}};
   auto it = colors.find(color);
   if (it == colors.end()) return false;
   ::background_color = color;
@@ -603,18 +603,18 @@ bool console::background_color(int_least32_t color) {
 
 bool console::beep(uint_least32_t frequency, uint_least32_t duration) {
   if (frequency < 37 || frequency > 32767) return false;
-  
-  static constexpr uint_least32_t simple_rate = 8000;
+
+  static constexpr auto simple_rate = 8000u;
   static snd_pcm_t* pcm_handle = nullptr;
   if (pcm_handle == nullptr) {
     if (snd_pcm_open(&pcm_handle, "default", SND_PCM_STREAM_PLAYBACK, 0)) return false;
     snd_pcm_set_params(pcm_handle, SND_PCM_FORMAT_U8, SND_PCM_ACCESS_RW_INTERLEAVED, 1, simple_rate, 1, 20000);
   }
-  
+
   unsigned char buffer[2400];
-  for (uint_least32_t duration_index = 0; duration_index < duration / 200; ++duration_index) {
+  for (auto duration_index = 0u; duration_index < duration / 200; ++duration_index) {
     snd_pcm_prepare(pcm_handle);
-    for (uint_least32_t buffer_index = 0; buffer_index < sizeof(buffer); ++buffer_index)
+    for (auto buffer_index = 0u; buffer_index < sizeof(buffer); ++buffer_index)
       buffer[buffer_index] = frequency > 0 ? (255 * buffer_index * frequency / simple_rate) : 0;
     snd_pcm_sframes_t written_frames = snd_pcm_writei(pcm_handle, buffer, sizeof(buffer));
     if (written_frames < 0) snd_pcm_recover(pcm_handle, written_frames, 0);
@@ -713,7 +713,7 @@ int_least32_t console::foreground_color() {
 }
 
 bool console::foreground_color(int_least32_t color) {
-  static std::map<int_least32_t, const char*> colors {{CONSOLE_COLOR_DEFAULT, "\x1b[39m"}, {CONSOLE_COLOR_BLACK, "\x1b[30m"}, {CONSOLE_COLOR_DARK_BLUE, "\x1b[34m"}, {CONSOLE_COLOR_DARK_GREEN, "\x1b[32m"}, {CONSOLE_COLOR_DARK_CYAN, "\x1b[36m"}, {CONSOLE_COLOR_DARK_RED, "\x1b[31m"}, {CONSOLE_COLOR_DARK_MAGENTA, "\x1b[35m"}, {CONSOLE_COLOR_DARK_YELLOW, "\x1b[33m"}, {CONSOLE_COLOR_GRAY, "\x1b[37m"}, {CONSOLE_COLOR_DARK_GRAY, "\x1b[90m"}, {CONSOLE_COLOR_BLUE, "\x1b[94m"}, {CONSOLE_COLOR_GREEN, "\x1b[92m"}, {CONSOLE_COLOR_CYAN, "\x1b[96m"}, {CONSOLE_COLOR_RED, "\x1b[91m"}, {CONSOLE_COLOR_MAGENTA, "\x1b[95m"}, {CONSOLE_COLOR_YELLOW, "\x1b[93m"}, {CONSOLE_COLOR_WHITE, "\x1b[97m"}};
+  static auto colors = std::map<int_least32_t, const char*> {{CONSOLE_COLOR_DEFAULT, "\x1b[39m"}, {CONSOLE_COLOR_BLACK, "\x1b[30m"}, {CONSOLE_COLOR_DARK_BLUE, "\x1b[34m"}, {CONSOLE_COLOR_DARK_GREEN, "\x1b[32m"}, {CONSOLE_COLOR_DARK_CYAN, "\x1b[36m"}, {CONSOLE_COLOR_DARK_RED, "\x1b[31m"}, {CONSOLE_COLOR_DARK_MAGENTA, "\x1b[35m"}, {CONSOLE_COLOR_DARK_YELLOW, "\x1b[33m"}, {CONSOLE_COLOR_GRAY, "\x1b[37m"}, {CONSOLE_COLOR_DARK_GRAY, "\x1b[90m"}, {CONSOLE_COLOR_BLUE, "\x1b[94m"}, {CONSOLE_COLOR_GREEN, "\x1b[92m"}, {CONSOLE_COLOR_CYAN, "\x1b[96m"}, {CONSOLE_COLOR_RED, "\x1b[91m"}, {CONSOLE_COLOR_MAGENTA, "\x1b[95m"}, {CONSOLE_COLOR_YELLOW, "\x1b[93m"}, {CONSOLE_COLOR_WHITE, "\x1b[97m"}};
   auto it = colors.find(color);
   if (it == colors.end()) return false;
   ::foreground_color = color;
@@ -788,9 +788,9 @@ std::string console::title() {
   /// @todo get console get title on linux and macOS
   /** Didn't work correctly!
    std::cout << "\x1b[21t" << std::endl;
-  
+
    if (!terminal.key_available()) return ::title;
-  
+
    std::string title;
    for (auto c = terminal.getch(); terminal::terminal_.key_available(); c = terminal::terminal_.getch())
      title.push_back(static_cast<char>(c));
