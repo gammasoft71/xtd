@@ -9,6 +9,9 @@
 #include <cstring>
 #include <unistd.h>
 #include <sys/stat.h>
+#include <sys/param.h>
+#include <sys/mount.h>
+#include <errno.h>
 #include <utime.h>
 #include <limits.h>
 
