@@ -11,7 +11,7 @@
 using namespace xtd::native;
 
 std::vector<uint_least8_t> guid::new_guid() {
-  std::vector<uint_least8_t> guid(16);
+  auto guid = std::vector<uint_least8_t>(16);
   #if !defined(__ANDROID__)
   uuid_generate(guid.data());
   #else
@@ -38,7 +38,7 @@ std::vector<uint_least8_t> guid::new_guid() {
   //  o  Set the two most significant bits (bits 6 and 7) of the clock_seq_hi_and_reserved to zero and one, respectively.
   //  o  Set the four most significant bits (bits 12 through 15) of the time_hi_and_version field to the 4-bit version number from Section 4.1.3.
   //  o  Set all the other bits to randomly (or pseudo-randomly) chosen values.
-  static std::random_device rand;
+  static auto rand = std::random_device {};
   std::uniform_int_distribution<int_least32_t> rand_byte_distribution(0, std::numeric_limits<uint_least8_t>::max());
   std::for_each(guid.begin(), guid.end(), [&](uint_least8_t& value) {value = static_cast<int_least8_t>(rand_byte_distribution(rand));});
   guid[6] = (guid[6] & 0x0f) | 0x40;
