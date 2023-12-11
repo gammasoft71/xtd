@@ -454,7 +454,7 @@ thread& thread::get_thread(intptr thread_id) {
     for (auto& thread : get_static_data().threads)
       if (thread->data_ && thread->data_->thread_id == thread_id) return *thread;
     return unmanaged_thread();
-  } catch(const std::system_error& e) {
+  } catch(const std::system_error&) {
     return unmanaged_thread();
   }
 }
