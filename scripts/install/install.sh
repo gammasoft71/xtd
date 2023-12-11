@@ -24,7 +24,7 @@ fi
 
 if [[ "$OSTYPE" == *"MSYS"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]]; then
   OSTYPE="$MSYSTEM"
-  echo "  Operating System is MSYS2 " $OSTYPE
+  echo "  Operating System is MSYS2 " $OSTYPE;
 elif [[ "$OSTYPE" == *"Darwin"* ]]; then
   echo "  Operating System is macOS";
 elif [[ "$OSTYPE" == *"FreeBSD"* ]]; then
