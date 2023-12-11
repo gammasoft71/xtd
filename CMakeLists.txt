@@ -77,7 +77,7 @@ elseif (${XTD_OPERATING_SYSTEM_NAME} STREQUAL "Windows")
   choice_options(XTD_NATIVE_OPERATING_SYSTEM "Choose Operating System for native system libraries" "Windows" "Android")
   choice_options(XTD_NATIVE_GRAPHIC_TOOLKIT "Choose toolkit for native drawing and forms libraries" "wxwidgets" "msw" "qt5" "fltk")
 else ()
-  message(FATAL_ERROR "Operating system unknown!")
+  message(FATAL_ERROR "The Operating system \"${XTD_OPERATING_SYSTEM_NAME}\" is unknown!")
 endif ()
 
 # set core native library
