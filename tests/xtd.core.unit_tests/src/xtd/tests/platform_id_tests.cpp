@@ -93,6 +93,12 @@ namespace xtd::tests {
       assert::are_equal(platform_id::free_bsd, enum_object<>::parse<platform_id>("free_bsd"), csf_);
     }
     
+    void test_method_(msys2) {
+      assert::are_equal(13, enum_object<>::to_int32(platform_id::msys2), csf_);
+      assert::are_equal("msys2", enum_object<>::to_string(platform_id::msys2), csf_);
+      assert::are_equal(platform_id::msys2, enum_object<>::parse<platform_id>("msys2"), csf_);
+    }
+    
     void test_method_(other) {
       assert::are_equal(0x0FFFFFFF, enum_object<>::to_int32(platform_id::other), csf_);
       assert::are_equal("other", enum_object<>::to_string(platform_id::other), csf_);
