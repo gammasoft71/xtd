@@ -22,6 +22,7 @@ static inline int pthread_mutex_timedlock(pthread_mutex_t* mut, const struct tim
       }
       usleep(20000);
     } else return -1;
+    usleep(20000);
   }
   return 0;
 }

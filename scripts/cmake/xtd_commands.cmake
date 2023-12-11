@@ -60,12 +60,12 @@ endmacro ()
 ##  message("The current operating system name is \"${OPERATING_SYSTEM_NAME}\"")
 ## @endcode
 macro(get_operating_system_name OPERATING_SYSTEM_NAME)
-  if (WIN32)
+  if (MSYS) # MSYS2, MINGW32 and MINGW64
+    set(${OPERATING_SYSTEM_NAME} "MSYS")
+  elseif (WIN32)
     set(${OPERATING_SYSTEM_NAME} "Windows")
   elseif (APPLE)
     set(${OPERATING_SYSTEM_NAME} "macOS")
-  elseif (MSYS) # MSYS2, MINGW32 and MINGW64
-    set(${OPERATING_SYSTEM_NAME} "MSYS")
   elseif (UNIX)
     exec_program("uname" OUTPUT_VARIABLE ${OPERATING_SYSTEM_NAME})
   else ()
