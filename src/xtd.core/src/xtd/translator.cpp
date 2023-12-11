@@ -76,7 +76,7 @@ void translator::parse_locale(const xtd::ustring& locale_path) {
   if (!directory::exists(locale_path)) return;
   for (auto locale_item : directory::get_directories(locale_path)) {
     // Uncomment the following line if initialization is too slow to read only the current language, and not all languages...
-    // if (language_ != path::get_file_name(locale_item)) continue;
+    if (language_ != path::get_file_name(locale_item)) continue;
     for (auto language_item : directory::get_files(locale_item))
       if (path::get_extension(language_item) == ".strings") parse_file(language_item, path::get_file_name(locale_item));
   }
