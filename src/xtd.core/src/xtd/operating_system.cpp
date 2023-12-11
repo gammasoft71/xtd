@@ -33,7 +33,7 @@ distribution operating_system::distribution() const noexcept {
 }
 
 ustring operating_system::name() const noexcept {
-  static auto operating_system_names = std::map<platform_id, ustring> {{platform_id::win32s, "Microsoft Win32S"}, {platform_id::win32_windows, "Microsoft Windows 95"}, {platform_id::win32_nt, "Microsoft Windows"}, {platform_id::win_ce, "Microsoft Windows CE"}, {platform_id::unix, "Unix"}, {platform_id::xbox, "Xbox"}, {platform_id::macos, "macOS"}, {platform_id::ios, "iOS"}, {platform_id::android, "Android"}, {platform_id::linux, "Linux"}, {platform_id::tvos, "tvOS"}, {platform_id::watchos, "watchOS"}, {platform_id::free_bsd, "FreeBSD"}, {platform_id::other, "Other"}, {platform_id::unknown, "<Unknown>"}};
+  static auto operating_system_names = std::map<platform_id, ustring> {{platform_id::win32s, "Microsoft Win32S"}, {platform_id::win32_windows, "Microsoft Windows 95"}, {platform_id::win32_nt, "Microsoft Windows"}, {platform_id::win_ce, "Microsoft Windows CE"}, {platform_id::unix, "Unix"}, {platform_id::xbox, "Xbox"}, {platform_id::macos, "macOS"}, {platform_id::ios, "iOS"}, {platform_id::android, "Android"}, {platform_id::linux, "Linux"}, {platform_id::tvos, "tvOS"}, {platform_id::watchos, "watchOS"}, {platform_id::free_bsd, "FreeBSD"}, {platform_id::mingw, "MINGW"}, {platform_id::msys, "MSYS"}, {platform_id::other, "Other"}, {platform_id::unknown, "<Unknown>"}};
   if (platform_ == xtd::platform_id::win32_windows && (version_.major() > 4 || (version_.major() == 4 && version_.minor() > 0))) return "Microsoft Windows 98";
   return operating_system_names[platform_];
 }

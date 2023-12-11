@@ -189,7 +189,8 @@ string environment::get_machine_name() {
 }
 
 int_least32_t environment::get_os_platform_id() {
-  if (create_process("uname -a").find("MSYS_NT") != string::npos) return PLATFORM_MSYS2;
+  if (create_process("uname -a").find("MINGW") != string::npos) return PLATFORM_MINGW;
+  if (create_process("uname -a").find("MSYS") != string::npos) return PLATFORM_MSYS;
   return PLATFORM_UNIX;
 }
 

@@ -109,17 +109,24 @@ constexpr int_least32_t PLATFORM_WATCHOS = 11;
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr int_least32_t PLATFORM_FREEBSD = 12;
-/// @brief The operating system is MSYS2.
+/// @brief The operating system is MINGW.
 /// @par Library
 /// xtd.core.native
 /// @ingroup xtd_core_native platform_id
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int_least32_t PLATFORM_MSYS2 = 13;
+constexpr int_least32_t PLATFORM_MINGW = 13;
+/// @brief The operating system is MSYS.
+/// @par Library
+/// xtd.core.native
+/// @ingroup xtd_core_native platform_id
+/// @remarks Added specifically for xtd.
+/// @warning Internal use only
+constexpr int_least32_t PLATFORM_MSYS = 14;
 /// @brief The operating system is other.
 /// @par Library
 /// xtd.core.native
 /// @ingroup xtd_core_native platform_id
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int_least32_t PLATFORM_OTHER = 0x0FFFFFFF;
+constexpr int_least32_t PLATFORM_OTHER = 2147483647;
