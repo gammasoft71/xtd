@@ -49,7 +49,7 @@ namespace xtd {
     /// @brief The operating system is MSYS.
     msys,
     /// @brief The operating system is other.
-    other = 0x0FFFFFFF,
+    other = 32767,
   };
 }
 
