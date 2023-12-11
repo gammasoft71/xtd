@@ -106,7 +106,7 @@ namespace xtd::tests {
     }
 
     void test_method_(other) {
-      assert::are_equal(2147483647, enum_object<>::to_int32(platform_id::other), csf_);
+      assert::are_equal(32767, enum_object<>::to_int32(platform_id::other), csf_);
       assert::are_equal("other", enum_object<>::to_string(platform_id::other), csf_);
       assert::are_equal(platform_id::other, enum_object<>::parse<platform_id>("other"), csf_);
     }

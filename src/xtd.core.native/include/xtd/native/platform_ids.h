@@ -129,4 +129,4 @@ constexpr int_least32_t PLATFORM_MSYS = 14;
 /// @ingroup xtd_core_native platform_id
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int_least32_t PLATFORM_OTHER = 2147483647;
+constexpr int_least32_t PLATFORM_OTHER = 32767;
