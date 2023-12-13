@@ -8,6 +8,7 @@ Contains xtd sources.
 * [xtd.core.native](xtd.core.native) library contains internal native API definitions to access underlying operating system used by xtd.core library.
 * [xtd.core.native.linux](xtd.core.native.linux) library is based on Linux operating system.
 * [xtd.core.native.macos](xtd.core.native.macos) library is based on macOS operating system.
+* [xtd.core.native.unix](xtd.core.native.posix) library is based on Posix operating system.
 * [xtd.core.native.unix](xtd.core.native.unix) library is based on Unix operating system (like FreeBSD).
 * [xtd.core.native.win32](xtd.core.native.win32) library is based on Windows operating system.
 
