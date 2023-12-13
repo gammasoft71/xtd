@@ -60,11 +60,6 @@ endmacro ()
 ##  message("The current operating system name is \"${OPERATING_SYSTEM_NAME}\"")
 ## @endcode
 macro(get_operating_system_name OPERATING_SYSTEM_NAME)
-  #if (MINGW)
-  #  set(${OPERATING_SYSTEM_NAME} "blabla")
-  #elseif (MSYS)
-  #  set(${OPERATING_SYSTEM_NAME} "MSYS")
-  #else
   if (WIN32)
     if ("$ENV{MSYSTEM}" STREQUAL "CLANG" OR "$ENV{MSYSTEM}" STREQUAL "CLANG32" OR "$ENV{MSYSTEM}" STREQUAL "CLANG64")
       set(${OPERATING_SYSTEM_NAME} "CLANG")
