@@ -12,10 +12,12 @@
 #include <ctime>
 #include <mutex>
 
+#if defined (_MSC_VER)
 int daylight = 0;
 long timezone = 0;
 const char* tzname[2] = {"Local", "Local"};
 #define tzset _tzset
+#endif
 
 using namespace std;
 using namespace xtd::native;
