@@ -7,6 +7,11 @@
 
 using namespace xtd::native;
 
+#if !defined(_MSC_VER)
+#define __try
+#define __except if
+#endif
+
 namespace {
   // https://msdn.microsoft.com/en-us/library/xcb2z8hs.aspx
   void SetThreadName(DWORD dwThreadID, const char* threadName) {
@@ -74,7 +79,7 @@ bool thread::join(intmax_t handle) {
 
 bool thread::resume(intmax_t handle) {
   if (reinterpret_cast<HANDLE>(handle) == INVALID_HANDLE_VALUE) return false;
-  return ResumeThread(reinterpret_cast<HANDLE>(handle)) != -1;
+  return ResumeThread(reinterpret_cast<HANDLE>(handle)) != static_cast<DWORD>(-1);
 }
 
 bool thread::set_current_thread_name(const std::string& name) {
@@ -93,7 +98,7 @@ void thread::sleep(int_least32_t milliseconds_timeout) {
 
 bool thread::suspend(intmax_t handle) {
   if (reinterpret_cast<HANDLE>(handle) == INVALID_HANDLE_VALUE) return false;
-  return SuspendThread(reinterpret_cast<HANDLE>(handle)) != -1;
+  return SuspendThread(reinterpret_cast<HANDLE>(handle)) != static_cast<DWORD>(-1);
 }
 
 bool thread::yield() {
