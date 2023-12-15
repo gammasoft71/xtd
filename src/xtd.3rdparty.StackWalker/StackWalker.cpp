@@ -228,7 +228,7 @@ typedef DWORD64(__stdcall* PTRANSLATE_ADDRESS_ROUTINE64)(HANDLE      hProcess,
 #  define strncpy_s(dst, len, src, maxLen) strncpy(dst, len, src)
 #  define strcat_s(dst, len, src) strcat(dst, src)
 #  define _snprintf_s _snprintf
-#  if !defined (__MSYS__)
+#  if defined (_MSC_VER)
 #    define _tcscat_s _tcscat
 #  endif
 #endif
@@ -236,7 +236,7 @@ typedef DWORD64(__stdcall* PTRANSLATE_ADDRESS_ROUTINE64)(HANDLE      hProcess,
 static void MyStrCpy(char* szDest, size_t nMaxDestSize, const char* szSrc) {
   if (nMaxDestSize == 0)
     return;
-#if !defined (__MSYS__)
+#if defined (_MSC_VER)
   strncpy_s(szDest, nMaxDestSize, szSrc, _TRUNCATE);
 #else
   strncpy(szDest, szSrc, nMaxDestSize);
@@ -287,7 +287,7 @@ public:
     TCHAR szTemp[4096];
     // But before we do this, we first check if the ".local" file exists
     if (GetModuleFileName(NULL, szTemp, 4096) > 0) {
-#if !defined (__MSYS__)
+#if defined (_MSC_VER)
       _tcscat_s(szTemp, _T(".local"));
 #else
       _tcscat_s(szTemp, 4096, _T(".local"));
@@ -297,7 +297,7 @@ public:
         // Ok, first try the new path according to the architecture:
         #ifdef _M_IX86
         if ((m_hDbhHelp == NULL) && (GetEnvironmentVariable(_T("ProgramFiles"), szTemp, 4096) > 0)) {
-#if !defined (__MSYS__)
+#if defined (_MSC_VER)
           _tcscat_s(szTemp, _T("\\Debugging Tools for Windows (x86)\\dbghelp.dll"));
 #else
           _tcscat_s(szTemp, 4096, _T("\\Debugging Tools for Windows (x86)\\dbghelp.dll"));
@@ -308,7 +308,7 @@ public:
         }
         #elif _M_X64
         if ((m_hDbhHelp == NULL) && (GetEnvironmentVariable(_T("ProgramFiles"), szTemp, 4096) > 0)) {
-#if !defined (__MSYS__)
+#if defined (_MSC_VER)
           _tcscat_s(szTemp, _T("\\Debugging Tools for Windows (x64)\\dbghelp.dll"));
 #else
           _tcscat_s(szTemp, 4096, _T("\\Debugging Tools for Windows (x64)\\dbghelp.dll"));
@@ -319,7 +319,7 @@ public:
         }
         #elif _M_IA64
         if ((m_hDbhHelp == NULL) && (GetEnvironmentVariable(_T("ProgramFiles"), szTemp, 4096) > 0)) {
-#if !defined (__MSYS__)
+#if defined (_MSC_VER)
           _tcscat_s(szTemp, _T("\\Debugging Tools for Windows (ia64)\\dbghelp.dll"));
 #else
           _tcscat_s(szTemp, 4096, _T("\\Debugging Tools for Windows (ia64)\\dbghelp.dll"));
@@ -331,7 +331,7 @@ public:
         #endif
         // If still not found, try the old directories...
         if ((m_hDbhHelp == NULL) && (GetEnvironmentVariable(_T("ProgramFiles"), szTemp, 4096) > 0)) {
-#if !defined (__MSYS__)
+#if defined (_MSC_VER)
           _tcscat_s(szTemp, _T("\\Debugging Tools for Windows\\dbghelp.dll"));
 #else
           _tcscat_s(szTemp, 4096, _T("\\Debugging Tools for Windows\\dbghelp.dll"));
@@ -343,7 +343,7 @@ public:
         #if defined _M_X64 || defined _M_IA64
         // Still not found? Then try to load the (old) 64-Bit version:
         if ((m_hDbhHelp == NULL) && (GetEnvironmentVariable(_T("ProgramFiles"), szTemp, 4096) > 0)) {
-#if !defined (__MSYS__)
+#if defined (_MSC_VER)
           _tcscat_s(szTemp, _T("\\Debugging Tools for Windows 64-Bit\\dbghelp.dll"));
 #else
           _tcscat_s(szTemp, 4096, _T("\\Debugging Tools for Windows 64-Bit\\dbghelp.dll"));
