@@ -224,17 +224,23 @@ typedef DWORD64(__stdcall* PTRANSLATE_ADDRESS_ROUTINE64)(HANDLE      hProcess,
 
 // secure-CRT_functions are only available starting with VC8
 #if _MSC_VER < 1400
-#define strcpy_s(dst, len, src) strcpy(dst, src)
-#define strncpy_s(dst, len, src, maxLen) strncpy(dst, len, src)
-#define strcat_s(dst, len, src) strcat(dst, src)
-#define _snprintf_s _snprintf
-#define _tcscat_s _tcscat
+#  define strcpy_s(dst, len, src) strcpy(dst, src)
+#  define strncpy_s(dst, len, src, maxLen) strncpy(dst, len, src)
+#  define strcat_s(dst, len, src) strcat(dst, src)
+#  define _snprintf_s _snprintf
+#  if !defined (__MSYS__)
+#    define _tcscat_s _tcscat
+#  endif
 #endif
 
 static void MyStrCpy(char* szDest, size_t nMaxDestSize, const char* szSrc) {
   if (nMaxDestSize == 0)
     return;
+#if !defined (__MSYS__)
   strncpy_s(szDest, nMaxDestSize, szSrc, _TRUNCATE);
+#else
+  strncpy(szDest, szSrc, nMaxDestSize);
+#endif
   // INFO: _TRUNCATE will ensure that it is null-terminated;
   // but with older compilers (<1400) it uses "strncpy" and this does not!)
   szDest[nMaxDestSize - 1] = 0;
@@ -281,27 +287,43 @@ public:
     TCHAR szTemp[4096];
     // But before we do this, we first check if the ".local" file exists
     if (GetModuleFileName(NULL, szTemp, 4096) > 0) {
+#if !defined (__MSYS__)
       _tcscat_s(szTemp, _T(".local"));
+#else
+      _tcscat_s(szTemp, 4096, _T(".local"));
+#endif
       if (GetFileAttributes(szTemp) == INVALID_FILE_ATTRIBUTES) {
         // ".local" file does not exist, so we can try to load the dbghelp.dll from the "Debugging Tools for Windows"
         // Ok, first try the new path according to the architecture:
         #ifdef _M_IX86
         if ((m_hDbhHelp == NULL) && (GetEnvironmentVariable(_T("ProgramFiles"), szTemp, 4096) > 0)) {
+#if !defined (__MSYS__)
           _tcscat_s(szTemp, _T("\\Debugging Tools for Windows (x86)\\dbghelp.dll"));
+#else
+          _tcscat_s(szTemp, 4096, _T("\\Debugging Tools for Windows (x86)\\dbghelp.dll"));
+#endif
           // now check if the file exists:
           if (GetFileAttributes(szTemp) != INVALID_FILE_ATTRIBUTES)
             m_hDbhHelp = LoadLibrary(szTemp);
         }
         #elif _M_X64
         if ((m_hDbhHelp == NULL) && (GetEnvironmentVariable(_T("ProgramFiles"), szTemp, 4096) > 0)) {
+#if !defined (__MSYS__)
           _tcscat_s(szTemp, _T("\\Debugging Tools for Windows (x64)\\dbghelp.dll"));
+#else
+          _tcscat_s(szTemp, 4096, _T("\\Debugging Tools for Windows (x64)\\dbghelp.dll"));
+#endif
           // now check if the file exists:
           if (GetFileAttributes(szTemp) != INVALID_FILE_ATTRIBUTES)
             m_hDbhHelp = LoadLibrary(szTemp);
         }
         #elif _M_IA64
         if ((m_hDbhHelp == NULL) && (GetEnvironmentVariable(_T("ProgramFiles"), szTemp, 4096) > 0)) {
+#if !defined (__MSYS__)
           _tcscat_s(szTemp, _T("\\Debugging Tools for Windows (ia64)\\dbghelp.dll"));
+#else
+          _tcscat_s(szTemp, 4096, _T("\\Debugging Tools for Windows (ia64)\\dbghelp.dll"));
+#endif
           // now check if the file exists:
           if (GetFileAttributes(szTemp) != INVALID_FILE_ATTRIBUTES)
             m_hDbhHelp = LoadLibrary(szTemp);
@@ -309,7 +331,11 @@ public:
         #endif
         // If still not found, try the old directories...
         if ((m_hDbhHelp == NULL) && (GetEnvironmentVariable(_T("ProgramFiles"), szTemp, 4096) > 0)) {
+#if !defined (__MSYS__)
           _tcscat_s(szTemp, _T("\\Debugging Tools for Windows\\dbghelp.dll"));
+#else
+          _tcscat_s(szTemp, 4096, _T("\\Debugging Tools for Windows\\dbghelp.dll"));
+#endif
           // now check if the file exists:
           if (GetFileAttributes(szTemp) != INVALID_FILE_ATTRIBUTES)
             m_hDbhHelp = LoadLibrary(szTemp);
@@ -317,7 +343,11 @@ public:
         #if defined _M_X64 || defined _M_IA64
         // Still not found? Then try to load the (old) 64-Bit version:
         if ((m_hDbhHelp == NULL) && (GetEnvironmentVariable(_T("ProgramFiles"), szTemp, 4096) > 0)) {
+#if !defined (__MSYS__)
           _tcscat_s(szTemp, _T("\\Debugging Tools for Windows 64-Bit\\dbghelp.dll"));
+#else
+          _tcscat_s(szTemp, 4096, _T("\\Debugging Tools for Windows 64-Bit\\dbghelp.dll"));
+#endif
           if (GetFileAttributes(szTemp) != INVALID_FILE_ATTRIBUTES)
             m_hDbhHelp = LoadLibrary(szTemp);
         }
@@ -741,6 +771,8 @@ cleanup:
             break;
           case 8: //SymVirtual:
             szSymType = "Virtual";
+            break;
+          default: 
             break;
         }
       }
@@ -1321,7 +1353,7 @@ void StackWalker::OnLoadModule(LPCSTR    img,
   maxLen = _TRUNCATE;
   #endif
   if (fileVersion == 0)
-    _snprintf_s(buffer, maxLen, "%s:%s (%p), size: %d (result: %d), SymType: '%s', PDB: '%s'\n",
+    _snprintf_s(buffer, maxLen, "%s:%s (%p), size: %lu (result: %lu), SymType: '%s', PDB: '%s'\n",
       img, mod, (LPVOID)baseAddr, size, result, symType, pdbName);
   else {
     DWORD v4 = (DWORD)(fileVersion & 0xFFFF);
@@ -1330,7 +1362,7 @@ void StackWalker::OnLoadModule(LPCSTR    img,
     DWORD v1 = (DWORD)((fileVersion >> 48) & 0xFFFF);
     _snprintf_s(
       buffer, maxLen,
-      "%s:%s (%p), size: %d (result: %d), SymType: '%s', PDB: '%s', fileVersion: %d.%d.%d.%d\n",
+      "%s:%s (%p), size: %lu (result: %lu), SymType: '%s', PDB: '%s', fileVersion: %lu.%lu.%lu.%lu\n",
       img, mod, (LPVOID)baseAddr, size, result, symType, pdbName, v1, v2, v3, v4);
   }
   buffer[STACKWALK_MAX_NAMELEN - 1] = 0; // be sure it is NULL terminated
@@ -1357,7 +1389,7 @@ void StackWalker::OnCallstackEntry(CallstackEntryType eType, CallstackEntry& ent
       _snprintf_s(buffer, maxLen, "%p (%s): %s: %s\n", (LPVOID)entry.offset, entry.moduleName,
         entry.lineFileName, entry.name);
     } else
-      _snprintf_s(buffer, maxLen, "%s (%d): %s\n", entry.lineFileName, entry.lineNumber,
+      _snprintf_s(buffer, maxLen, "%s (%lu): %s\n", entry.lineFileName, entry.lineNumber,
         entry.name);
     buffer[STACKWALK_MAX_NAMELEN - 1] = 0;
     OnOutput(buffer);
@@ -1370,7 +1402,7 @@ void StackWalker::OnDbgHelpErr(LPCSTR szFuncName, DWORD gle, DWORD64 addr) {
   #if _MSC_VER >= 1400
   maxLen = _TRUNCATE;
   #endif
-  _snprintf_s(buffer, maxLen, "ERROR: %s, GetLastError: %d (Address: %p)\n", szFuncName, gle,
+  _snprintf_s(buffer, maxLen, "ERROR: %s, GetLastError: %lu (Address: %p)\n", szFuncName, gle,
     (LPVOID)addr);
   buffer[STACKWALK_MAX_NAMELEN - 1] = 0;
   OnOutput(buffer);
@@ -1382,7 +1414,7 @@ void StackWalker::OnSymInit(LPCSTR szSearchPath, DWORD symOptions, LPCSTR szUser
   #if _MSC_VER >= 1400
   maxLen = _TRUNCATE;
   #endif
-  _snprintf_s(buffer, maxLen, "SymInit: Symbol-SearchPath: '%s', symOptions: %d, UserName: '%s'\n",
+  _snprintf_s(buffer, maxLen, "SymInit: Symbol-SearchPath: '%s', symOptions: %lu, UserName: '%s'\n",
     szSearchPath, symOptions, szUserName);
   buffer[STACKWALK_MAX_NAMELEN - 1] = 0;
   OnOutput(buffer);
@@ -1392,7 +1424,7 @@ void StackWalker::OnSymInit(LPCSTR szSearchPath, DWORD symOptions, LPCSTR szUser
   ZeroMemory(&ver, sizeof(OSVERSIONINFOA));
   ver.dwOSVersionInfoSize = sizeof(ver);
   if (GetVersionExA(&ver) != FALSE) {
-    _snprintf_s(buffer, maxLen, "OS-Version: %d.%d.%d (%s)\n", ver.dwMajorVersion,
+    _snprintf_s(buffer, maxLen, "OS-Version: %lu.%lu.%lu (%s)\n", ver.dwMajorVersion,
       ver.dwMinorVersion, ver.dwBuildNumber, ver.szCSDVersion);
     buffer[STACKWALK_MAX_NAMELEN - 1] = 0;
     OnOutput(buffer);
