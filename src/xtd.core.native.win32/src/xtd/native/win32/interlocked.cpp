@@ -35,9 +35,11 @@ __slong__ interlocked::compare_exchange(__slong__& location, __slong__ value, __
 #pragma warning(disable:4311)
 #pragma warning(disable:4312)
 void* interlocked::compare_exchange(void*& location, void* value, void* comparand) {
-  if (sizeof(void*) == 4)
-    return (void*)InterlockedCompareExchange((long*)&location, (long)value, (long)comparand);
-  return (void*)InterlockedCompareExchange64((long long*)&location, (long long)value, (long long)comparand);
+#if !defined(_WIN64)
+  return reinterpret_cast<void*>(InterlockedCompareExchange(reinterpret_cast<long*>(&location), reinterpret_cast<long>(value), reinterpret_cast<long>(comparand)));
+ #else
+  return reinterpret_cast<void*>(InterlockedCompareExchange64(reinterpret_cast<long long*>(&location), reinterpret_cast<long long>(value), reinterpret_cast<long long>(comparand)));
+#endif
 }
 #pragma warning(pop)
 
@@ -66,9 +68,11 @@ __slong__ interlocked::exchange(__slong__& location, __slong__ value) {
 #pragma warning(disable:4311)
 #pragma warning(disable:4312)
 void* interlocked::exchange(void*& location, void* value) {
-  if (sizeof(void*) == 4)
-    return (void*)InterlockedExchange((long*)&location, (long)value);
-  return (void*)InterlockedExchange64((long long*)&location, (long long)value);
+#if !defined(_WIN64)
+  return reinterpret_cast<void*>(InterlockedExchange(reinterpret_cast<long*>(&location), reinterpret_cast<long>(value)));
+#else
+  return reinterpret_cast<void*>(InterlockedExchange64(reinterpret_cast<long long*>(&location), reinterpret_cast<long long>(value)));
+#endif
 }
 #pragma warning(pop)
 
