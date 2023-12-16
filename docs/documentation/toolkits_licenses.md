@@ -1144,3 +1144,8 @@ choice whether to permit this exception to apply to your modifications.  If
 you do not wish that, you must delete the exception notice from such code
 and/or adjust the licensing conditions notice accordingly.
 ```
+
+# See also
+
+- [License](/docs/documentation/license)
+- [Documentation](/docs/documentation)

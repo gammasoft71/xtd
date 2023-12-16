@@ -33,6 +33,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
 OR OTHER DEALINGS IN THE SOFTWARE.
 ```
 
-See [3rd parties licenses](docs/documentation/3rdparties_licenses) for more information.
+# See also
 
-See [Toolkits licenses](docs/documentation/toolkits_licenses) for more information.
+- [3rd parties licenses](/docs/documentation/3rdparties_licenses)
+- [Toolkits licenses](/docs/documentation/toolkits_licenses)
+- [Documentation](/docs/documentation)
