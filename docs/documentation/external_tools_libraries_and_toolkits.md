@@ -15,9 +15,9 @@ sidebar_position: 13
 
 ## External libraries used
 
-| Product                                                      | Copyright       | Description                               | Release |
-| ------------------------------------------------------------ | --------------- | ----------------------------------------- | ------- |
-| [StackWalker](https://github.com/JochenKalmbach/StackWalker) | Jochen Kalmbach | Walking the callstack                     | 1.20    |
+| Product                                                      | Copyright       | Description                               | Release    |
+| ------------------------------------------------------------ | --------------- | ----------------------------------------- | ---------- |
+| [StackWalker](https://github.com/JochenKalmbach/StackWalker) | Jochen Kalmbach | Walking the callstack                     | 2023-06-24 |
 
 ## External toolkits used
 
