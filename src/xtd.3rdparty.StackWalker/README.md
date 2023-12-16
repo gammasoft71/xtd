@@ -373,3 +373,7 @@ typedef enum StackWalkOptions
 * To open a remote thread I used `OpenThread` which is not available on NT4/W9x. To have an example of doing this in NT4/Win9x please refer to [Remote Library](http://www.codeproject.com/win32/Remote.asp).
 * Walking mixed-mode callstacks (managed/unmanaged) does only return the unmanaged functions.
 * Doesn't work when debugging with the `/DEBUG:fastlink` [option](https://blogs.msdn.microsoft.com/vcblog/2014/11/12/speeding-up-the-incremental-developer-build-scenario/)
+
+## Original sources
+
+[commit 5b0df7a on master](https://github.com/JochenKalmbach/StackWalker/tree/5b0df7a4db8896f6b6dc45d36e383c52577e3c6b)
