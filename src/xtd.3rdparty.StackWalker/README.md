@@ -376,4 +376,4 @@ typedef enum StackWalkOptions
 
 ## Original sources
 
-[commit 5b0df7a on master](https://github.com/JochenKalmbach/StackWalker/tree/5b0df7a4db8896f6b6dc45d36e383c52577e3c6b)
+Release [2023-06-24](https://github.com/JochenKalmbach/StackWalker/releases/tag/2023-06-24).
