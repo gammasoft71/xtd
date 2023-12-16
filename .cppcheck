@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains the list of false positives from cppcheck.
-/// @copyright Copyright (c) 2022 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
 /// @remarks The list is organized by library and then by error type.
 /// @remarks The XTD_ENABLE_RUN_CPPCHECK option must be enabled to run cppcheck.
 /// @remarks The label @CMAKE_SOURCE_DIR@ represents the source directory. It will be replaced by the real path of the xtd sources located by cmake.
