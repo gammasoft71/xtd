@@ -1,4 +1,3 @@
----
 # 3rd parties licenses
 
 ## xtd.3rdparty.StackWalker
