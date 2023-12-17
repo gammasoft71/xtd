@@ -2122,7 +2122,13 @@ if (MSVC)
 endif ()
 
 if (APPLE)
-  add_link_options(-ld_classic)
+  string(REPLACE "." ";" XCODE_VERSION_LIST ${XCODE_VERSION})
+  list(GET XCODE_VERSION_LIST 0 XCODE_VERSION_MAJOR)
+  list(GET XCODE_VERSION_LIST 1 XCODE_VERSION_MINOR)
+  list(GET XCODE_VERSION_LIST 2 XCODE_VERSION_PATCH)
+  if (XCODE_VERSION_MAJOR GREATER_EQUAL 15)
+    add_link_options(-Wl -ld_classic)
+  endif ()
 endif ()
 
 
