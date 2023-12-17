@@ -2122,7 +2122,7 @@ if (MSVC)
 endif ()
 
 if (APPLE)
-  add_link_options(-Wl -ld_classic)
+  add_link_options(-ld_classic)
 endif ()
 
 
