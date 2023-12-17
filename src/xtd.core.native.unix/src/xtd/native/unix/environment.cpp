@@ -1,6 +1,7 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/environment>
 #include "../../../../include/xtd/native/unix/strings.h"
+#include "../../../../include/xtd/native/unix/shell_execute.h"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <cstdio>
 #include <cstdlib>
@@ -20,19 +21,6 @@ int_least32_t __environment_argc;
 char** __environment_argv;
 
 namespace {
-  static string create_process(const string& command) {
-    auto fs = popen(command.c_str(), "r");
-    auto result = string {};
-    while (!feof(fs)) {
-      char buf[513];
-      size_t l = fread(buf, 1, 512, fs);
-      buf[l] = 0;
-      result += buf;
-    }
-    pclose(fs);
-    return result;
-  }
-  
   __attribute__((constructor)) void startup_program(int_least32_t argc, char** argv) {
     __environment_argc = argc;
     __environment_argv = argv;
@@ -43,7 +31,7 @@ namespace {
   const distribution_dictionary& get_distribution_key_values() {
     static auto distribution_key_values = distribution_dictionary {};
     if (!distribution_key_values.empty()) return distribution_key_values;
-    auto distribution_string = create_process("cat /etc/os-release");
+    auto distribution_string = unix::shell_execute::run("cat", "/etc/os-release");
     auto distribution_lines = xtd::native::unix::strings::split(distribution_string, {'\n'});
     for (auto distribution_line : distribution_lines) {
       auto key_value = xtd::native::unix::strings::split(distribution_line, {'='});
@@ -75,7 +63,7 @@ string environment::get_desktop_environment() {
 string environment::get_desktop_theme() {
   auto desktop = get_desktop_environment();
   if (desktop != "gnome") return desktop;
-  auto current_theme = create_process("gsettings get org.gnome.desktop.interface gtk-theme");
+  auto current_theme = unix::shell_execute::run("gsettings", "get org.gnome.desktop.interface gtk-theme");
   if (current_theme.size() >= 4)
     current_theme = unix::strings::substring(current_theme, 1, current_theme.size() - 3);
   return current_theme;
@@ -185,16 +173,16 @@ string environment::get_know_folder_path(int_least32_t csidl) {
 }
 
 string environment::get_machine_name() {
-  return unix::strings::replace(create_process("uname -n"), "\n", "");
+  return unix::strings::replace(unix::shell_execute::run("uname", "-n"), "\n", "");
 }
 
 int_least32_t environment::get_os_platform_id() {
-  if (create_process("uname -a").find("FreeBSD") != string::npos) return PLATFORM_FREEBSD;
+  if (unix::shell_execute::run("uname", "-a").find("FreeBSD") != string::npos) return PLATFORM_FREEBSD;
   return PLATFORM_UNIX;
 }
 
 void environment::get_os_version(int_least32_t& major, int_least32_t& minor, int_least32_t& build, int_least32_t& revision) {
-  auto numbers = unix::strings::split(create_process("uname -r"), {'.', '-', '\n'});
+  auto numbers = unix::strings::split(unix::shell_execute::run("uname", "-r"), {'.', '-', '\n'});
   if (numbers.size() < 1 || !unix::strings::try_parse(numbers[0], major)) major = 0;
   if (numbers.size() < 2 || !unix::strings::try_parse(numbers[1], minor)) minor = 0;
   if (numbers.size() < 3 || !unix::strings::try_parse(numbers[2], build)) build = 0;
@@ -227,7 +215,7 @@ bool environment::get_user_administrator() {
 }
 
 string environment::get_user_domain_name() {
-  return unix::strings::trim_end(create_process("uname -n"), {'\n'});
+  return unix::strings::trim_end(unix::shell_execute::run("uname", "-n"), {'\n'});
 }
 
 string environment::get_user_name() {
@@ -241,12 +229,12 @@ bool environment::has_shutdown_started() {
 }
 
 bool environment::is_processor_arm() {
-  auto uname_result = create_process("uname -m");
+  auto uname_result = unix::shell_execute::run("uname", "-m");
   return unix::strings::contains(uname_result, "arm") || unix::strings::contains(uname_result, "aarch64");
 }
 
 bool environment::is_os_64_bit() {
-  return unix::strings::contains(create_process("uname -m"), "64");
+  return unix::strings::contains(unix::shell_execute::run("uname", "-m"), "64");
 }
 
 string environment::new_line() {

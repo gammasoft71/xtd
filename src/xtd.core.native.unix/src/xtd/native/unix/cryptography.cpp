@@ -1,5 +1,6 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/cryptography>
+#include "../../../../include/xtd/native/unix/shell_execute.h"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <unistd.h>
 #include <cstdint>
@@ -7,24 +8,9 @@
 using namespace std;
 using namespace xtd::native;
 
-namespace {
-  static std::string create_process(const std::string& command) {
-    auto fs = popen(command.c_str(), "r");
-    auto result = std::string {};
-    while (!feof(fs)) {
-      char buf[513];
-      size_t l = fread(buf, 1, 512, fs);
-      buf[l] = 0;
-      result += buf;
-    }
-    pclose(fs);
-    return result;
-  }
-}
-
 vector<uint_least8_t> cryptography::machine_guid() {
   static auto first = true;
-  static auto guid_str = create_process("ioreg -rd1 -c IOPlatformExpertDevice | grep -E '(UUID)'");
+  static auto guid_str = unix::shell_execute::run("ioreg", "-rd1 -c IOPlatformExpertDevice | grep -E '(UUID)'");
   if (first) guid_str = guid_str.substr(guid_str.find("=") + 1);
   first = false;
   
