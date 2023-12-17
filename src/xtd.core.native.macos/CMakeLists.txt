@@ -42,6 +42,8 @@ add_sources(
   include/xtd/native/macos/mutex
   include/xtd/native/macos/semaphore.h
   include/xtd/native/macos/semaphore
+  include/xtd/native/macos/shell_execute.h
+  include/xtd/native/macos/shell_execute
   include/xtd/native/macos/strings.h
   include/xtd/native/macos/strings
   src/xtd/native/macos/console.mm
