@@ -1,5 +1,6 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/cryptography>
+#include "../../../../include/xtd/native/linux/shell_execute.h"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <unistd.h>
 #include <cstdint>
@@ -7,23 +8,8 @@
 using namespace std;
 using namespace xtd::native;
 
-namespace {
-  static std::string create_process(const std::string& command) {
-    auto fs = popen(command.c_str(), "r");
-    auto result = string {};
-    while (!feof(fs)) {
-      char buf[513];
-      auto l = fread(buf, 1, 512, fs);
-      buf[l] = 0;
-      result += buf;
-    }
-    pclose(fs);
-    return result;
-  }
-}
-
 vector<uint_least8_t> cryptography::machine_guid() {
-  static auto guid_str = create_process("{ uname -n ; cat /proc/meminfo | head -n1 ; cat /proc/cpuinfo ; } | md5sum");
+  static auto guid_str = linux::shell_execute::run("{ uname -n ; cat /proc/meminfo | head -n1 ; cat /proc/cpuinfo ; } | md5sum");
 
   static const auto guid_fallback = string {"30395f0ed6aa4a5eb4af6f90a608c605"};
   static const auto hex_chars = string {"0123456789ABCDEF"};

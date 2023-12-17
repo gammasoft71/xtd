@@ -1,6 +1,7 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/environment>
 #include "../../../../include/xtd/native/linux/strings.h"
+#include "../../../../include/xtd/native/linux/shell_execute.h"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <cstdio>
 #include <cstdlib>
@@ -20,19 +21,6 @@ int_least32_t __environment_argc;
 char** __environment_argv;
 
 namespace {
-  static string create_process(const string& command) {
-    auto fs = popen(command.c_str(), "r");
-    auto result = string {};
-    while (!feof(fs)) {
-      char buf[513];
-      auto l = fread(buf, 1, 512, fs);
-      buf[l] = 0;
-      result += buf;
-    }
-    pclose(fs);
-    return result;
-  }
-
   __attribute__((constructor)) void startup_program(int_least32_t argc, char** argv) {
     __environment_argc = argc;
     __environment_argv = argv;
@@ -43,7 +31,7 @@ namespace {
   const distribution_dictionary& get_distribution_key_values() {
     static auto distribution_key_values = distribution_dictionary {};
     if (!distribution_key_values.empty()) return distribution_key_values;
-    auto distribution_string = create_process("cat /etc/os-release");
+    auto distribution_string = linux::shell_execute::run("cat", "/etc/os-release");
     auto distribution_lines = xtd::native::linux::strings::split(distribution_string, {'\n'});
     for (auto distribution_line : distribution_lines) {
       auto key_value = xtd::native::linux::strings::split(distribution_line, {'='});
@@ -75,7 +63,7 @@ string environment::get_desktop_environment() {
 string environment::get_desktop_theme() {
   auto desktop = get_desktop_environment();
   if (desktop != "gnome") return desktop;
-  auto current_theme = create_process("gsettings get org.gnome.desktop.interface gtk-theme");
+  auto current_theme = linux::shell_execute::run("gsettings", "get org.gnome.desktop.interface gtk-theme");
   if (current_theme.size() >= 4)
     current_theme = linux::strings::substring(current_theme, 1, current_theme.size() - 3);
   return current_theme;
@@ -185,20 +173,20 @@ string environment::get_know_folder_path(int_least32_t csidl) {
 }
 
 string environment::get_machine_name() {
-  return linux::strings::replace(create_process("uname -n"), "\n", "");
+  return linux::strings::replace(linux::shell_execute::run("uname", "-n"), "\n", "");
 }
 
 int_least32_t environment::get_os_platform_id() {
   #if defined(__ANDROID__)
   return PLATFORM_ANDROID;
   #else
-  if (create_process("uname -a").find("Linux") != string::npos) return PLATFORM_LINUX;
+  if (linux::shell_execute::run("uname", "-a").find("Linux") != string::npos) return PLATFORM_LINUX;
   return PLATFORM_UNIX;
   #endif
 }
 
 void environment::get_os_version(int_least32_t& major, int_least32_t& minor, int_least32_t& build, int_least32_t& revision) {
-  auto numbers = linux::strings::split(create_process("uname -r"), {'.', '-', '\n'});
+  auto numbers = linux::strings::split(linux::shell_execute::run("uname", "-r"), {'.', '-', '\n'});
   if (numbers.size() < 1 || !linux::strings::try_parse(numbers[0], major)) major = 0;
   if (numbers.size() < 2 || !linux::strings::try_parse(numbers[1], minor)) minor = 0;
   if (numbers.size() < 3 || !linux::strings::try_parse(numbers[2], build)) build = 0;
@@ -232,7 +220,7 @@ bool environment::get_user_administrator() {
 }
 
 string environment::get_user_domain_name() {
-  return linux::strings::trim_end(create_process("uname -n"), {'\n'});
+  return linux::strings::trim_end(linux::shell_execute::run("uname", "-n"), {'\n'});
 }
 
 string environment::get_user_name() {
@@ -246,12 +234,12 @@ bool environment::has_shutdown_started() {
 }
 
 bool environment::is_processor_arm() {
-  auto uname_result = create_process("uname -m");
+  auto uname_result = linux::shell_execute::run("uname", "-m");
   return linux::strings::contains(uname_result, "arm") || linux::strings::contains(uname_result, "aarch64");
 }
 
 bool environment::is_os_64_bit() {
-  return linux::strings::contains(create_process("uname -m"), "64");
+  return linux::strings::contains(linux::shell_execute::run("uname", "-m"), "64");
 }
 
 string environment::new_line() {
