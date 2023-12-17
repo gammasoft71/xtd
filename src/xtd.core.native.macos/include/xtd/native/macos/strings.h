@@ -11,12 +11,12 @@
 #include <sstream>
 #include <string>
 
-#undef unix
-
 namespace xtd::native::macos {
   class strings final {
   public:
     strings() = delete;
+    
+    inline static const std::string empty_string;
     
     static bool contains(const std::string& str, const std::string& value) noexcept {
       return str.find(value) != str.npos;
