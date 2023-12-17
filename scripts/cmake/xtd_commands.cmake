@@ -2121,6 +2121,11 @@ if (MSVC)
   set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /ENTRY:mainCRTStartup")
 endif ()
 
+if (APPLE)
+  add_link_options(-Wl -ld_classic)
+endif ()
+
+
 add_definitions(-D__CMAKE_INSTALL_PREFIX__="${CMAKE_INSTALL_PREFIX}")
 if (NOT XTD_PROJECT_INCLUDE_FILE)
   set(XTD_PROJECT_INCLUDE_FILE "xtd/xtd")
