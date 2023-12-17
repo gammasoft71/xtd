@@ -37,6 +37,8 @@ add_sources(
   include/xtd/native/linux/mutex
   include/xtd/native/linux/semaphore.h
   include/xtd/native/linux/semaphore
+  include/xtd/native/linux/shell_execute.h
+  include/xtd/native/linux/shell_execute
   include/xtd/native/linux/strings.h
   include/xtd/native/linux/strings
   src/xtd/native/linux/condition_variable.cpp
