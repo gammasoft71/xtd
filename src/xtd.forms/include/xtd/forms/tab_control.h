@@ -250,8 +250,8 @@ namespace xtd {
       friend class xtd::forms::form;
       using control::controls;
       
-      void on_tab_pages_item_added(size_t, control_ref item);
-      void on_tab_pages_item_removed(size_t, control_ref item);
+      void on_tab_pages_item_added(size_t, tab_page_ref& item);
+      void on_tab_pages_item_removed(size_t, tab_page_ref& item);
       void on_tab_pages_text_added(size_t index, const ustring& text, const ustring& name);
       tab_page_collection::iterator on_tab_pages_text_inserted(tab_page_collection::const_iterator pos, const ustring& text, const ustring& name);
       
