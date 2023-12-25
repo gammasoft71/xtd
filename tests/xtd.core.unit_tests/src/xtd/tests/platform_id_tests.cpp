@@ -104,6 +104,12 @@ namespace xtd::tests {
       assert::are_equal("msys", enum_object<>::to_string(platform_id::msys), csf_);
       assert::are_equal(platform_id::msys, enum_object<>::parse<platform_id>("msys"), csf_);
     }
+    
+    void test_method_(posix) {
+      assert::are_equal(15, enum_object<>::to_int32(platform_id::posix), csf_);
+      assert::are_equal("posix", enum_object<>::to_string(platform_id::posix), csf_);
+      assert::are_equal(platform_id::posix, enum_object<>::parse<platform_id>("posix"), csf_);
+    }
 
     void test_method_(other) {
       assert::are_equal(32767, enum_object<>::to_int32(platform_id::other), csf_);
