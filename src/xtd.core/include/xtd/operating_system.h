@@ -151,6 +151,10 @@ namespace xtd {
     /// @return true if the current platform is iOS; otherwise, false.
     bool is_ios() const noexcept;
     
+    /// @brief Determines whether the current platform is Linux.
+    /// @return true if the current platform is Linux; otherwise, false.
+    bool is_linux() const noexcept;
+
     /// @brief Determines whether the current platform is macOS.
     /// @return true if the current platform is macOS; otherwise, false.
     bool is_macos() const noexcept;
@@ -159,10 +163,22 @@ namespace xtd {
     /// @return true if the current platform is macOS family; otherwise, false.
     bool is_macos_platform() const noexcept;
     
-    /// @brief Determines whether the current platform is Linux.
-    /// @return true if the current platform is Linux; otherwise, false.
-    bool is_linux() const noexcept;
+    /// @brief Determines whether the current platform is MINGW.
+    /// @return true if the current platform is MINGW; otherwise, false.
+    bool is_mingw() const noexcept;
     
+    /// @brief Determines whether the current platform is MSYS.
+    /// @return true if the current platform is MSYS; otherwise, false.
+    bool is_msys() const noexcept;
+    
+    /// @brief Determines whether the current platform is Posix.
+    /// @return true if the current platform is Posix; otherwise, false.
+    bool is_posix() const noexcept;
+    
+    /// @brief Determines whether the current platform is Posix family.
+    /// @return true if the current platform is Posix family; otherwise, false.
+    bool is_posix_platform() const noexcept;
+
     /// @brief Determines whether the current platform is Unix family.
     /// @return true if the current platform is Unix family; otherwise, false.
     bool is_unix_platform() const noexcept;
