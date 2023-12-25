@@ -73,6 +73,10 @@ bool operating_system::is_ios() const noexcept {
   return platform_ == xtd::platform_id::ios;
 }
 
+bool operating_system::is_linux() const noexcept {
+  return platform_ == xtd::platform_id::linux;
+}
+
 bool operating_system::is_macos() const noexcept {
   return platform_ == xtd::platform_id::macos;
 }
@@ -81,8 +85,20 @@ bool operating_system::is_macos_platform() const noexcept {
   return platform_ == xtd::platform_id::macos || platform_ == xtd::platform_id::ios || platform_ == xtd::platform_id::tvos || platform_ == xtd::platform_id::watchos;
 }
 
-bool operating_system::is_linux() const noexcept {
-  return platform_ == xtd::platform_id::linux;
+bool operating_system::is_mingw() const noexcept {
+  return platform_ == xtd::platform_id::mingw;
+}
+
+bool operating_system::is_msys() const noexcept {
+  return platform_ == xtd::platform_id::msys;
+}
+
+bool operating_system::is_posix() const noexcept {
+  return platform_ == xtd::platform_id::posix;
+}
+
+bool operating_system::is_posix_platform() const noexcept {
+  return is_macos_platform() || is_unix_platform();
 }
 
 bool operating_system::is_unix_platform() const noexcept {
