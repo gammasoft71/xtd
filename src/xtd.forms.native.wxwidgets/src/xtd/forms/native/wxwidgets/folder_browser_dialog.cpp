@@ -35,7 +35,7 @@ namespace {
 }
 
 bool folder_browser_dialog::run_dialog(intptr hwnd, const ustring& description, environment::special_folder root_folder, ustring& selected_path, size_t options) {
-  BROWSEINFO browserInfo = { 0 };
+  BROWSEINFO browserInfo;
   browserInfo.hwndOwner = hwnd == 0 ? nullptr : reinterpret_cast<control_handler*>(hwnd)->control()->GetHandle();
   PIDLIST_ABSOLUTE pidlRoot;
   SHGetSpecialFolderLocation(reinterpret_cast<HWND>(hwnd), static_cast<int32>(root_folder), &pidlRoot);
