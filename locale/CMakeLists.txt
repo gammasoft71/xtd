@@ -5,124 +5,21 @@ project(locale)
 include(../scripts/cmake/xtd_commands.cmake)
 include(../scripts/cmake/xtd_version.cmake)
 
-# English
-add_sources(
-  en/about_dialog.strings
-  en/application.strings
-  en/boolean_switch.strings
-  en/busy_box.strings
-  en/checked_list_box.strings
-  en/choice.strings
-  en/color.strings
-  en/combo_box.strings
-  en/control.strings
-  en/countries.strings
-  en/css_reader.strings
-  en/date_time.strings
-  en/domain_up_down.strings
-  en/enumeration.strings
-  en/environment.strings
-  en/exception_dialog.strings
-  en/paint_event_args.strings
-  en/process.strings
-  en/exceptions.strings
-  en/font_family.strings
-  en/font.strings
-  en/form.strings
-  en/graphics.strings
-  en/guid.strings
-  en/image_list.strings
-  en/lcd_label.strings
-  en/list_box.strings
-  en/menu.strings
-  en/message_box.strings
-  en/pen.strings
-  en/splitter.strings
-  en/strings.strings
-  en/text_box_base.strings
-  en/texts.strings
-  en/theme_colors.strings
-  en/version.strings
+add_projects(
+  ar
+  ar_MA
+  en
+  en_AU
+  en_CA
+  en_GB
+  en_IE
+  en_NZ
+  en_US
+  en_ZA
+  fr
+  fr_CA
+  fr_CH
+  zh
+  zh_CN
+  zh_TW
 )
-
-# French
-add_sources(
-  fr/about_dialog.strings
-  fr/application.strings
-  fr/busy_box.strings
-  fr/checked_list_box.strings
-  fr/choice.strings
-  fr/color.strings
-  fr/combo_box.strings
-  fr/control.strings
-  fr/countries.strings
-  fr/domain_up_down.strings
-  fr/environment.strings
-  fr/exception_dialog.strings
-  fr/enumeration.strings
-  fr/css_reader.strings
-  fr/date_time.strings
-  fr/boolean_switch.strings
-  fr/paint_evant_args.strings
-  fr/process.strings
-  fr/exceptions.strings
-  fr/font_family.strings
-  fr/font.strings
-  fr/form.strings
-  fr/graphics.strings
-  fr/guid.strings
-  fr/image_list.strings
-  fr/lcd_label.strings
-  fr/list_box.strings
-  fr/menu.strings
-  fr/message_box.strings
-  fr/pen.strings
-  fr/splitter.strings
-  fr/strings.strings
-  fr/text_box_base.strings
-  fr/texts.strings
-  fr/theme_colors.strings
-  fr/version.strings
-)
-
-# Arabic
-add_sources(
-  ar/about_dialog.strings
-  ar/application.strings
-  ar/busy_box.strings
-  ar/checked_list_box.strings
-  ar/choice.strings
-  ar/color.strings
-  ar/combo_box.strings
-  ar/control.strings
-  ar/countries.strings
-  ar/domain_up_down.strings
-  ar/environment.strings
-  ar/exception_dialog.strings
-  ar/enumeration.strings
-  ar/css_reader.strings
-  ar/date_time.strings
-  ar/boolean_switch.strings
-  ar/paint_evant_args.strings
-  ar/process.strings
-  ar/exceptions.strings
-  ar/font_family.strings
-  ar/font.strings
-  ar/form.strings
-  ar/graphics.strings
-  ar/guid.strings
-  ar/image_list.strings
-  ar/lcd_label.strings
-  ar/list_box.strings
-  ar/menu.strings
-  ar/message_box.strings
-  ar/pen.strings
-  ar/splitter.strings
-  ar/strings.strings
-  ar/text_box_base.strings
-  ar/texts.strings
-  ar/theme_colors.strings
-  ar/version.strings
-)
-
-target_type(INTERFACE_LIBRARY)

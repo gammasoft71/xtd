@@ -74,7 +74,7 @@ if not exist "build\test_wxwidgets\wxwidgets.lck" (
 echo Installing xtd...
 mkdir build
 cd build
-cmake .. %*
+cmake .. -DXTD_BUILD_CPP_STANDARD="17" %*
 cmake --build . --target install --config Debug
 cmake --build . --target install --config Release
 cd ..

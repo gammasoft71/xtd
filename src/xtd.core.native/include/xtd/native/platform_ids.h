@@ -123,6 +123,13 @@ constexpr int_least32_t PLATFORM_MINGW = 13;
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr int_least32_t PLATFORM_MSYS = 14;
+/// @brief The operating system is Posix.
+/// @par Library
+/// xtd.core.native
+/// @ingroup xtd_core_native platform_id
+/// @remarks Added specifically for xtd.
+/// @warning Internal use only
+constexpr int_least32_t PLATFORM_POSIX = 15;
 /// @brief The operating system is other.
 /// @par Library
 /// xtd.core.native

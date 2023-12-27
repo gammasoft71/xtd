@@ -212,11 +212,11 @@ size_t tab_control::get_child_index(intptr page) {
   return npos;
 }
 
-void tab_control::on_tab_pages_item_added(size_t index, control_ref item) {
+void tab_control::on_tab_pages_item_added(size_t index, tab_page_ref& item) {
   controls().insert_at(index, item);
 }
 
-void tab_control::on_tab_pages_item_removed(size_t index, control_ref item) {
+void tab_control::on_tab_pages_item_removed(size_t index, tab_page_ref& item) {
   controls().erase_at(index);
 }
 
