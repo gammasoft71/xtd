@@ -70,6 +70,6 @@ int_least32_t dns::get_host_name(string& host_name) {
 
 void dns::startup() {
   static WORD version_requested = MAKEWORD(2, 2);
-  static WSADATA wsa_data = {0};
+  static WSADATA wsa_data;
   WSAStartup(version_requested, &wsa_data);
 }
