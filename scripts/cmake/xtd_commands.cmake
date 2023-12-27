@@ -2121,16 +2121,17 @@ if (MSVC)
   set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /ENTRY:mainCRTStartup")
 endif ()
 
+# The following linker option is used to remove : "ld: warning: ignoring duplicate libraries:" with XCode 15 on macOS
+# See https://github.com/orgs/Homebrew/discussions/4794 for more information
 if (APPLE AND XCODE_VERSION)
   string(REPLACE "." ";" XCODE_VERSION_LIST ${XCODE_VERSION})
   list(GET XCODE_VERSION_LIST 0 XCODE_VERSION_MAJOR)
-  list(GET XCODE_VERSION_LIST 1 XCODE_VERSION_MINOR)
-  list(GET XCODE_VERSION_LIST 2 XCODE_VERSION_PATCH)
+  #list(GET XCODE_VERSION_LIST 1 XCODE_VERSION_MINOR)
+  #list(GET XCODE_VERSION_LIST 2 XCODE_VERSION_BUILD)
   if (XCODE_VERSION_MAJOR GREATER_EQUAL 15)
     add_link_options(-Wl -ld_classic)
   endif ()
 endif ()
-
 
 add_definitions(-D__CMAKE_INSTALL_PREFIX__="${CMAKE_INSTALL_PREFIX}")
 if (NOT XTD_PROJECT_INCLUDE_FILE)

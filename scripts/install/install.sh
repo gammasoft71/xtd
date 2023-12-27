@@ -125,7 +125,7 @@ mkdir build
 pushd build
 mkdir Release && mkdir Debug
 pushd Release
-cmake ../..  -DCMAKE_BUILD_TYPE=Release "$@"
+cmake ../.. -DXTD_BUILD_CPP_STANDARD="17"  -DCMAKE_BUILD_TYPE=Release "$@"
 cmake --build . -- -j$build_cores
 if [[ "$OSTYPE" == *"CLANGARM64"* ]] || [[ "$OSTYPE" == *"CLANG32"* ]] || [[ "$OSTYPE" == *"CLANG64"* ]] || [[ "$OSTYPE" == *"MINGW32"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]] || [[ "$OSTYPE" == *"UCRT64"* ]]; then
   cmake --build . --target install
@@ -134,7 +134,7 @@ else
 fi
 popd
 pushd Debug
-cmake ../.. -DCMAKE_BUILD_TYPE=Debug "$@"
+cmake ../.. -DXTD_BUILD_CPP_STANDARD="17" -DCMAKE_BUILD_TYPE=Debug "$@"
 cmake --build . -- -j$build_cores
 if [[ "$OSTYPE" == *"CLANGARM64"* ]] || [[ "$OSTYPE" == *"CLANG32"* ]] || [[ "$OSTYPE" == *"CLANG64"* ]] || [[ "$OSTYPE" == *"MINGW32"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]] || [[ "$OSTYPE" == *"UCRT64"* ]]; then
   cmake --build . --target install
