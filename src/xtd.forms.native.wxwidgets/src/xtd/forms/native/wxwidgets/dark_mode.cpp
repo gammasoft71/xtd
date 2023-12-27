@@ -30,6 +30,7 @@ namespace {
     return RVA2VA<T>(moduleBase, dataDir[entryID].VirtualAddress);
   }
   
+  /* Unused method
   PIMAGE_THUNK_DATA FindAddressByName(void* moduleBase, PIMAGE_THUNK_DATA impName, PIMAGE_THUNK_DATA impAddr, const char* funcName) {
     for (; impName->u1.Ordinal; ++impName, ++impAddr) {
       if (IMAGE_SNAP_BY_ORDINAL(impName->u1.Ordinal)) continue;
@@ -39,6 +40,7 @@ namespace {
     }
     return nullptr;
   }
+  */
   
   PIMAGE_THUNK_DATA FindAddressByOrdinal(void* moduleBase, PIMAGE_THUNK_DATA impName, PIMAGE_THUNK_DATA impAddr, uint16 ordinal) {
     for (; impName->u1.Ordinal; ++impName, ++impAddr) {
@@ -47,6 +49,7 @@ namespace {
     return nullptr;
   }
   
+  /* Unused methods
   PIMAGE_THUNK_DATA FindIatThunkInModule(void* moduleBase, const char* dllName, const char* funcName) {
     auto imports = DataDirectoryFromModuleBase<PIMAGE_IMPORT_DESCRIPTOR>(moduleBase, IMAGE_DIRECTORY_ENTRY_IMPORT);
     for (; imports->Name; ++imports) {
@@ -68,6 +71,7 @@ namespace {
     }
     return nullptr;
   }
+  */
   
   PIMAGE_THUNK_DATA FindDelayLoadThunkInModule(void* moduleBase, const char* dllName, uint16 ordinal) {
     auto imports = DataDirectoryFromModuleBase<PIMAGE_DELAYLOAD_DESCRIPTOR>(moduleBase, IMAGE_DIRECTORY_ENTRY_DELAY_IMPORT);
@@ -173,7 +177,8 @@ bool allow_dark_mode_for_window(intptr hWnd) {
 }
 
 bool IsHighContrast() {
-  HIGHCONTRASTW highContrast = { sizeof(highContrast) };
+  HIGHCONTRASTW highContrast;
+  highContrast.cbSize = sizeof(highContrast);
   if (SystemParametersInfoW(SPI_GETHIGHCONTRAST, sizeof(highContrast), &highContrast, FALSE))
     return highContrast.dwFlags & HCF_HIGHCONTRASTON;
   return false;
