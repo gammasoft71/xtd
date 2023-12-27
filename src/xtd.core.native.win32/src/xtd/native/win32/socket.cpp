@@ -294,6 +294,6 @@ int_least32_t socket::shutdown(intmax_t handle, int_least32_t how) {
 
 void socket::startup() {
   static WORD version_requested = MAKEWORD(2, 2);
-  static WSADATA wsa_data = {0};
+  static WSADATA wsa_data;
   WSAStartup(version_requested, &wsa_data);
 }
