@@ -6,7 +6,7 @@ sidebar_position: 5
 
 ![0.2.0](/pictures/releases/version_0_2_0.png) (beta) Not yet planned
 
-* ![todo](/pictures/releases/status/todo.png) xtd - MSYS2 support - [#220](https://github.com/gammasoft71/xtd/issues/220)
+* ![todo](/pictures/releases/status/todo.png) xtd - FreeBSD support - [#241](https://github.com/gammasoft71/xtd/issues/241)
 * ![todo](/pictures/releases/status/todo.png) xtd - Creation of the website - [#212](https://github.com/gammasoft71/xtd/issues/212)
 * ![todo](/pictures/releases/status/todo.png) xtd.forms - link_label enhancements - [#211](https://github.com/gammasoft71/xtd/issues/211)
 * ![todo](/pictures/releases/status/todo.png) xtd.forms - themes - [#97](https://github.com/gammasoft71/xtd/issues/97)
@@ -26,7 +26,14 @@ sidebar_position: 5
 * ![todo](/pictures/releases/status/todo.png) xtd.forms - color_picker_rendererer - [#62](https://github.com/gammasoft71/xtd/issues/62)
 * ![todo](/pictures/releases/status/todo.png) xtd.forms - check_box_renderer - [#53](https://github.com/gammasoft71/xtd/issues/53)
 
+* ![fixed](/pictures/releases/status/fixed.png) How to redraw window background or button redraw? - [#236](https://github.com/gammasoft71/xtd/issues/236)
+* ![fixed](/pictures/releases/status/fixed.png) Please enable Github discussion - [#234](https://github.com/gammasoft71/xtd/issues/234)
+* ![fixed](/pictures/releases/status/fixed.png) - Build with C++17 standard failed - [#231](https://github.com/gammasoft71/xtd/issues/231)
+* ![fixed](/pictures/releases/status/fixed.png) Unable to compiling on Linux/GCC with Meson and CMake module - [#230](https://github.com/gammasoft71/xtd/issues/230)
+* ![fixed](/pictures/releases/status/fixed.png) Build failed with XTD_BUILD_LIBRARIES_XTD_DRAWING=OFF - [#225](https://github.com/gammasoft71/xtd/issues/225)
+* ![fixed](/pictures/releases/status/fixed.png) ./install fails with AUTHORS.md and make with call_stack.h missing - [#223](https://github.com/gammasoft71/xtd/issues/223)
 * ![fixed](/pictures/releases/status/fixed.png) xtd::forms - Arguments get split up after doing application::restart - [#222](https://github.com/gammasoft71/xtd/issues/222)
+* ![added](/pictures/releases/status/added.png) xtd - MSYS2 support - [#220](https://github.com/gammasoft71/xtd/issues/220)
 * ![fixed](/pictures/releases/status/fixed.png) This library is using wxWidgets? - [#219](https://github.com/gammasoft71/xtd/issues/219)
 * ![fixed](/pictures/releases/status/fixed.png) reserved identifier violation - [#218](https://github.com/gammasoft71/xtd/issues/218)
 * ![added](/pictures/releases/status/added.png) Reduce duplicate condition checks - [#217](https://github.com/gammasoft71/xtd/issues/217)
