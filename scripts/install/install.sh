@@ -164,10 +164,10 @@ fi
 #_______________________________________________________________________________
 #                             Copy install manifest files to xtd share directory
 if [[ "$OSTYPE" == *"CLANGARM64"* ]] || [[ "$OSTYPE" == *"CLANG32"* ]] || [[ "$OSTYPE" == *"CLANG64"* ]] || [[ "$OSTYPE" == *"MINGW32"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]] || [[ "$OSTYPE" == *"UCRT64"* ]]; then
-  cp build/3rdparty/wxwidgets/build_cmake/Release/install_manifest.txt $cmake_install_prefix/share/xtd/wxwidgets_release_install_manifest.txt
-  cp build/3rdparty/wxwidgets/build_cmake/Debug/install_manifest.txt $cmake_install_prefix/share/xtd/wxwidgets_debug_install_manifest.txt
-  cp build/Release/install_manifest.txt $cmake_install_prefix/share/xtd/xtd_release_install_manifest.txt
-  cp build/Debug/install_manifest.txt $cmake_install_prefix/share/xtd/xtd_debug_install_manifest.txt
+  cp build/3rdparty/wxwidgets/build_cmake/Release/install_manifest.txt "$cmake_install_prefix/share/xtd/wxwidgets_release_install_manifest.txt"
+  cp build/3rdparty/wxwidgets/build_cmake/Debug/install_manifest.txt "$cmake_install_prefix/share/xtd/wxwidgets_debug_install_manifest.txt"
+  cp build/Release/install_manifest.txt "$cmake_install_prefix/share/xtd/xtd_release_install_manifest.txt"
+  cp build/Debug/install_manifest.txt "$cmake_install_prefix/share/xtd/xtd_debug_install_manifest.txt"
 else
   sudo cp build/3rdparty/wxwidgets/build_cmake/Release/install_manifest.txt $cmake_install_prefix/share/xtd/wxwidgets_release_install_manifest.txt
   sudo cp build/3rdparty/wxwidgets/build_cmake/Debug/install_manifest.txt $cmake_install_prefix/share/xtd/wxwidgets_debug_install_manifest.txt
@@ -179,8 +179,9 @@ fi
 #                                                                 Launch xtd-gui
 echo "Launching xtdc-gui..."
 if [[ "$OSTYPE" == *"CLANGARM64"* ]] || [[ "$OSTYPE" == *"CLANG32"* ]] || [[ "$OSTYPE" == *"CLANG64"* ]] || [[ "$OSTYPE" == *"MINGW32"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]] || [[ "$OSTYPE" == *"UCRT64"* ]]; then
-  start "$cmake_install_prefix\xtd\bin\xtdc-gui.exe"
+  "$cmake_install_prefix/xtd/bin/xtdc-gui.exe"
 elif [[ "$OSTYPE" == *"Darwin"* ]]; then
-  open $cmake_install_prefix/bin/xtdc-gui.app; else
+  open $cmake_install_prefix/bin/xtdc-gui.app; 
+else
   $cmake_install_prefix/bin/xtdc-gui &>/dev/null &
 fi
