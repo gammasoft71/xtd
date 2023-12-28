@@ -136,7 +136,7 @@ namespace xtd::native {
       static std::wstring to_wstring(const std::string& str) { return to_wstring(str.c_str()); }
       static std::wstring to_wstring(const char* str) {
         std::wstring out;
-        char32_t codepoint;
+        char32_t codepoint = 0;
         while (*str != 0) {
           unsigned char ch = static_cast<unsigned char>(*str);
           if (ch <= 0x7f) codepoint = ch;
