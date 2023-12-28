@@ -212,7 +212,7 @@ namespace {
   string string_printf(const char* fmt, ...) {
     va_list args;
     va_start(args, fmt);
-    auto formatted_string = string {vsnprintf(nullptr, 0, fmt, args), 0};
+    auto formatted_string = string(static_cast<size_t>(vsnprintf(nullptr, 0, fmt, args)), 0);
     va_end(args);
     va_start(args, fmt);
     vsnprintf(&formatted_string[0], formatted_string.size() + 1, fmt, args);
