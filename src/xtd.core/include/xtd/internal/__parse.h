@@ -9,6 +9,7 @@
 
 #include "../number_styles.h"
 #include <locale>
+#include <limits>
 #include <string>
 #include <sstream>
 
