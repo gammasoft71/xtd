@@ -35,6 +35,10 @@ namespace {
     if (func.Contains("wxClientDCImpl::DoGetSize") && cond == "\"m_window\"" && msg == "wxClientDCImpl without a window?") return;
     // Workaround: wxWidgets generates an assert if wxPaintDC is not call in paint event.
     if (func.Contains("wxTextMeasure::BeginMeasuring") && cond == "m_hdc" && msg == "Must not be used with non-native wxDCs") return;
+    // Workaround: wxWidgets generates an assert if wxPaintDC is not call with the window being repainted.
+    if (func.Contains("wxPaintDCImpl") && cond == "\"paintStack.top().window == window\"" && msg == "wxPaintDC must be associated with the window being repainted") return;
+    // Workaround: Call wxClientDCImpl without a window.
+    if (func.Contains("DoGetSize") && cond == "\"m_window\"" && msg == "wxClientDCImpl without a window?") return;
     
     if (xtd::diagnostics::debug::__should_aborted__(!show_wx_assert.enabled(), "wxAssert", ustring::format("cond={}, msg={}", cond, msg), stack_frame {ustring {file.c_str()}, as<uint32>(line), ustring {func.c_str()}})) debug_break_();
   }

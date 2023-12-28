@@ -29,7 +29,7 @@ stack_trace::frames stack_trace::get_frames(size_t skip_frames) {
   auto frames = stack_trace::frames {};
   auto traces = std::vector<void*> {};
   traces.resize(max_frames);
-  auto nb_frames = backtrace(traces.data(), static_cast<int>(max_frames));
+  auto nb_frames = static_cast<size_t>(backtrace(traces.data(), static_cast<int>(max_frames)));
 
   for (auto index = skip_frames + 1; index < nb_frames; ++index) {
     auto dl_info = Dl_info {};
