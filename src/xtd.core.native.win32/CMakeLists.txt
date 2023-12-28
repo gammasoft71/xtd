@@ -5,7 +5,7 @@ project(xtd.core.native.win32)
 include(../../scripts/cmake/xtd_commands.cmake)
 include(../../scripts/cmake/xtd_version.cmake)
 add_include_directories(include)
-if (${XTD_NATIVE_OPERATING_SYSTEM} STREQUAL "CLANG" OR ${XTD_NATIVE_OPERATING_SYSTEM} STREQUAL "CLANGARM" OR ${XTD_NATIVE_OPERATING_SYSTEM} STREQUAL "MINGW" OR ${XTD_NATIVE_OPERATING_SYSTEM} STREQUAL "MSYS" OR ${XTD_NATIVE_OPERATING_SYSTEM} STREQUAL "UCRT")
+if (${XTD_NATIVE_OPERATING_SYSTEM} STREQUAL "MSYS")
   add_references(msvcrt Version)
 endif ()
 
