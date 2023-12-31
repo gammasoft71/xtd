@@ -8,7 +8,7 @@ add_include_directories(include)
 if (${XTD_NATIVE_OPERATING_SYSTEM} STREQUAL "MSYS")
   add_references(msvcrt Version)
 endif ()
-
+ 
 add_references(xtd.core.native rpcrt4 ws2_32 ${XTD_CORE_NATIVE_3RDPARTY_LIBRARIES})
 add_sources(
   include/xtd/xtd.core.native.win32.h
