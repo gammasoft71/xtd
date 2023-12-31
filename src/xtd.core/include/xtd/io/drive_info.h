@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::io::drive_info class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "../core_export.h"
 #include "../object.h"

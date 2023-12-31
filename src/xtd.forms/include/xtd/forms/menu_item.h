@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::menu_item menu.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "menu.h"
 #include "menu_item_kind.h"

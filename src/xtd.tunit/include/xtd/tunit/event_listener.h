@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::tunit::event_listener class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "class_event_args.h"
 #include "test_event_args.h"

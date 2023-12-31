@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::tunit::settings class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "../tunit_export.h"
 #include <xtd/io/path>

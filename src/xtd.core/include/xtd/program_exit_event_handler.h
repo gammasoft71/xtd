@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::program_exit_event_handler event handler.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "event_handler.h"
 #include "program_exit_event_args.h"

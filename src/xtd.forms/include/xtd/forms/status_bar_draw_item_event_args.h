@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::status_bar_draw_item_event_args event args.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "draw_item_event_args.h"
 #include "status_bar_panel.h"

@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::style_sheets::itext_model class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "shadows.h"
 #include "text_decoration.h"

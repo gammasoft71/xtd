@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::diagnostics::default_trace_listener class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "../core_export.h"
 #include "trace_listener.h"

@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains debug API.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 /// @cond
 #if !defined(__XTD_CORE_NATIVE_LIBRARY__)

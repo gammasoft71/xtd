@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::console class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "io/stream_writer.h"
 #include "console_cancel_event_handler.h"

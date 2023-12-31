@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::drawing::pen class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "../drawing_export.h"
 #include "drawing_2d/line_cap.h"

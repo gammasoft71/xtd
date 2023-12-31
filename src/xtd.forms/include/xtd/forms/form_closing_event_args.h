@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::form_closing_event_args event args.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "cancel_event_args.h"
 #include "close_reason.h"

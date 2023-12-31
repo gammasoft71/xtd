@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::animation control.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "animation_update_event_handler.h"
 #include "control.h"

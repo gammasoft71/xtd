@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::color_picker picker controls.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "control.h"
 #include "color_picker_event_handler.h"

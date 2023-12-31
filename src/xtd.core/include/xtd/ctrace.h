@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::ctrace ostream.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "tracestreambuf.h"
 #include <iostream>

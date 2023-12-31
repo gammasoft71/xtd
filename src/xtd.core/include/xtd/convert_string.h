@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::convert_string class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "static.h"
 #include "ustring.h"

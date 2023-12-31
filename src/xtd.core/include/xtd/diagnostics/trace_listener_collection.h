@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::diagnostics::trace_listener_collection class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include <memory>
 #include <vector>

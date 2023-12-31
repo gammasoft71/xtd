@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd keywords.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "abstract.h"
 #include "block_scope.h"

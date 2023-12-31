@@ -22,7 +22,7 @@ public:
       dialog.version("1.0");
       dialog.long_version("1.0.0");
       dialog.description("About dialog description.");
-      dialog.copyright("Copyright (c) 2023 Gammasoft.\nAll rights reserved.");
+      dialog.copyright("Copyright (c) 2024 Gammasoft.\nAll rights reserved.");
       dialog.website("https://gammasoft71.wixsite.com/gammasoft");
       dialog.website_label("gammasoft website");
       dialog.authors({"Gammasoft", "Contributors"});
@@ -31,7 +31,7 @@ public:
       dialog.artists({"Gammasoft"});
       dialog.license("MIT License\n"
         "\n"
-        "Copyright (c) 2023 Gammasoft.\n"
+        "Copyright (c) 2024 Gammasoft.\n"
         "\n"
         "Permission is hereby granted, free of charge, to any person obtaining\n"
         "a copy of this software and associated documentation files (the\n"

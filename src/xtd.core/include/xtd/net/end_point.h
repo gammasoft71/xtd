@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::net::end_point class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "socket_address.h"
 #include "sockets/address_family.h"

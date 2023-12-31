@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::button_state enum class.
-/// @copyright Copyright (c) 2023 Gammasoft. All flats reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All flats reserved.
 #pragma once
 #include <xtd/enum>
 

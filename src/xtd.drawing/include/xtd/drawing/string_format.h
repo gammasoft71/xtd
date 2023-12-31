@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::drawing::string_format class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "../drawing_export.h"
 #include "text/hotkey_prefix.h"

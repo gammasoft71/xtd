@@ -35,4 +35,4 @@ This structural code demonstrates the Builder pattern in which complex objects a
 
 ______________________________________________________________________________________________
 
-© 2023 Gammasoft.
+© 2024 Gammasoft.

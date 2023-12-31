@@ -7,4 +7,4 @@ The [xtd.core.native.unix](.) is based on unix Operating System.
 
 ______________________________________________________________________________________________
 
-© 2023 Gammasoft.
+© 2024 Gammasoft.

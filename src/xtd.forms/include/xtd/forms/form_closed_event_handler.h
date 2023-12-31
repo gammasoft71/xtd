@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::form_closed_event_args event handler.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "form_closed_event_args.h"
 #include <xtd/event_handler>

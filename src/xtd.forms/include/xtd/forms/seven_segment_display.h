@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::seven_segment_display control.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "application.h"
 #include "control.h"

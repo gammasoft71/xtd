@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::button_base class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "control.h"
 #include "content_alignment.h"

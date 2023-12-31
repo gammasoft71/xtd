@@ -39,4 +39,4 @@ More compilers can be used see [C++ compiler support for C++17](https://en.cppre
 
 ______________________________________________________________________________________________
 
-© 2023 Gammasoft.
+© 2024 Gammasoft.

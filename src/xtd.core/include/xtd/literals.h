@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd literals.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "time_span.h"
 #include "types.h"

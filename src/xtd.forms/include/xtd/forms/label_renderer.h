@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::label_renderer static class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "visual_styles/label_state.h"
 #include "visual_styles/link_label_state.h"

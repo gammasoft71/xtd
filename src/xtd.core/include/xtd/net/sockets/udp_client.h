@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::net::sockets::udp_client class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "socket.h"
 #include "../ip_end_point.h"

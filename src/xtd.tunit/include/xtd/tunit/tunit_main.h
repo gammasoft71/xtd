@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains unit test application main entry point.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/startup>
 #include <xtd/static>

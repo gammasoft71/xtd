@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::threading::thread class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "parameterized_thread_start.h"
 #include "wait_handle.h"

@@ -28,4 +28,4 @@ The public members of a class should provide the right set of functionality for 
 
 ______________________________________________________________________________________________
 
-© 2023 Gammasoft.
+© 2024 Gammasoft.

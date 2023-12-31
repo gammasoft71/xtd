@@ -770,4 +770,4 @@ Images used in xtd can be customized using the following properties:
 
 ______________________________________________________________________________________________
 
-© 2023 Gammasoft.
+© 2024 Gammasoft.

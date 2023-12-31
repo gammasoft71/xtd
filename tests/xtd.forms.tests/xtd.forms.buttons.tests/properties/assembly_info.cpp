@@ -15,7 +15,7 @@ assembly_description_("xtd.forms.buttons.tests contains xtd::forms::button manua
 assembly_configuration_("Test");
 assembly_company_("Gammasoft");
 assembly_product_("xtd.forms.buttons.tests");
-assembly_copyright_("Copyright © Gammasoft 2023");
+assembly_copyright_("Copyright © Gammasoft 2024");
 assembly_trademark_("");
 assembly_culture_("en_US.UTF-8");
 

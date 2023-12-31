@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::image_list component.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "layout/arranged_element_collection.h"
 #include "component.h"

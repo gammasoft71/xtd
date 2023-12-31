@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::progress_box control.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "progress_box_options.h"
 #include "progress_dialog.h"

@@ -19,7 +19,7 @@ auto main()->int {
 
 // This code produces the following output :
 //
-// xtdc version 0.2.0, © 2023 by Gammasoft
+// xtdc version 0.2.0, © 2024 by Gammasoft
 //
 // Usage: xtdc [<options> | command [<command-argument>] [<command-options>]]
 //

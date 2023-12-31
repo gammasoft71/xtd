@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::tool_bar_button_click_event_args event args.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "tool_bar_button.h"
 #include <xtd/any>

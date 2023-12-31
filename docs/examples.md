@@ -191,4 +191,4 @@ If you face any problems feel free to open an issue at the [issues tracker](http
 
 ______________________________________________________________________________________________
 
-© 2023 Gammasoft.
+© 2024 Gammasoft.

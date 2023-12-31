@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::tunit::unit_test class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "../tunit_export.h"
 #include "event_listener.h"

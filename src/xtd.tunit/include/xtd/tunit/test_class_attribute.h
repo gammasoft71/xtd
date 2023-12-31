@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::tunit::test_class_attribute class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "unit_test.h"
 #include <memory>

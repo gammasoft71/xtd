@@ -7,4 +7,4 @@ The [xtd.core.native.linux](.) is based on Linux Operating System.
 
 ______________________________________________________________________________________________
 
-© 2023 Gammasoft.
+© 2024 Gammasoft.

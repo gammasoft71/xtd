@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::system_exception exception.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "diagnostics/stack_frame.h"
 #include "diagnostics/stack_trace.h"

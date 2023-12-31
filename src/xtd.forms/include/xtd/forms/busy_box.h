@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::busy_box dialog.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "busy_dialog.h"
 #include <xtd/forms/application>

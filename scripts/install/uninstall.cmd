@@ -5,7 +5,7 @@ if "%xtd_version%"== "" (
   exit /B 1
 )
 
-echo Uninstall xtd libraries version %xtd_version%, copyright Gammasoft, 2023
+echo Uninstall xtd libraries version %xtd_version%, copyright Gammasoft, 2024
 
 ::______________________________________________________________________________
 ::                                                   Check if administrator mode

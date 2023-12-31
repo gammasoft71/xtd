@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::diagnostics::console_trace_listener class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include <iostream>
 #include "ostream_trace_listener.h"

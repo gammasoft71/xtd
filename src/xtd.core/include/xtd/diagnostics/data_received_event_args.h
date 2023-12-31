@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::diagnostics::data_received_event_args event args.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "../event_args.h"
 #include "../ustring.h"

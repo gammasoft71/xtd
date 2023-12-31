@@ -34,4 +34,4 @@ This structural code demonstrates the Decorator pattern which dynamically adds e
 
 ______________________________________________________________________________________________
 
-© 2023 Gammasoft.
+© 2024 Gammasoft.

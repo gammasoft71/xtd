@@ -34,4 +34,4 @@ This structural code demonstrates the Memento pattern which temporary saves and 
 
 ______________________________________________________________________________________________
 
-© 2023 Gammasoft.
+© 2024 Gammasoft.

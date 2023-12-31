@@ -13,7 +13,7 @@ file(WRITE ${XTD_HEADER_FILE}
   "\n"
   "/// @file\n"
   "/// @brief Contains xtd library headers.\n"
-  "/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.\n"
+  "/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.\n"
   "#pragma once\n"
   "#include \"xtd/xtd.core\"\n"
   "#include \"xtd/xtd.drawing\"\n"

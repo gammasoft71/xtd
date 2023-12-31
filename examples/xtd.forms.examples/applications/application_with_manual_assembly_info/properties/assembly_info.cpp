@@ -15,7 +15,7 @@ assembly_description_("This example shows how to use xtd assembly informations")
 assembly_configuration_("Debug");
 assembly_company_("Gammasoft");
 assembly_product_("form_with_manual_assembly_info");
-assembly_copyright_("Copyright © Gammasoft 2023");
+assembly_copyright_("Copyright © Gammasoft 2024");
 assembly_trademark_("");
 assembly_culture_("");
 

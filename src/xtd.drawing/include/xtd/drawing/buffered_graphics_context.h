@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::drawing::buffered_graphics_context class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "buffered_graphics.h"
 #include "graphics.h"

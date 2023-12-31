@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::numeric_up_down control.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "application.h"
 #include "up_down_base.h"

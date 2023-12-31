@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::screen_orientation enum class.
-/// @copyangle_90 Copyangle_90 (c) 2023 Gammasoft. All angle_90s reserved.
+/// @copyangle_90 Copyangle_90 (c) 2024 Gammasoft. All angle_90s reserved.
 #pragma once
 #include <xtd/enum>
 

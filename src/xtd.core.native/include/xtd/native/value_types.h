@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains value types.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 /// @cond
 #if !defined(__XTD_VALUE_TYPE_NATIVE__)

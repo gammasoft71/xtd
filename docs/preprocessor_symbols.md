@@ -452,4 +452,4 @@ It is better to use [xtd::environment::get_folder_path](https://gammasoft71.gith
 
 ______________________________________________________________________________________________
 
-© 2023 Gammasoft.
+© 2024 Gammasoft.

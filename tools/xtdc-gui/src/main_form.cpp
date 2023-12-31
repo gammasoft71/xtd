@@ -872,7 +872,7 @@ void main_form::show_about_dialog() {
   dialog.version(environment::version().to_string(2));
   dialog.long_version(environment::version().to_string(3));
   dialog.description("Project management.");
-  dialog.copyright("Copyright (c) 2023 Gammasoft.\nAll rights reserved.");
+  dialog.copyright("Copyright (c) 2024 Gammasoft.\nAll rights reserved.");
   dialog.website("https://gammasoft71.wixsite.com/gammasoft");
   dialog.website_label("gammasoft website");
   dialog.authors({"Gammasoft", "Bader", "Contributors"});
@@ -880,7 +880,7 @@ void main_form::show_about_dialog() {
   dialog.artists({"Gammasoft"});
   dialog.license("MIT License\n"
     "\n"
-    "Copyright (c) 2023 Gammasoft.\n"
+    "Copyright (c) 2024 Gammasoft.\n"
     "\n"
     "Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n"
     "\n"

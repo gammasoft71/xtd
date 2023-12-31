@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::tool_bar container.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "border_style.h"
 #include "button.h"

@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::convert class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "any.h"
 #include "argument_null_exception.h"

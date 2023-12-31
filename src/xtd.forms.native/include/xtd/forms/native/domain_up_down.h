@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::native::domain_up_down API.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 /// @cond
 #if !defined(__XTD_FORMS_NATIVE_LIBRARY__)

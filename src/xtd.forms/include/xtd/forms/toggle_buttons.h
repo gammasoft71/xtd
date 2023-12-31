@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::toggle_buttons factory.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "system_texts.h"
 #include "toggle_button.h"

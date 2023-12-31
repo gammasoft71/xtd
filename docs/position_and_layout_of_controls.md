@@ -255,6 +255,6 @@ In this case the client_size of main_form will be :
 
 ______________________________________________________________________________________________
 
-© 2023 Gammasoft.
+© 2024 Gammasoft.
 
 [//]: # (https://learn.microsoft.com/en-us/dotnet/desktop/winforms/controls/layout?view=netdesktop-6.0)

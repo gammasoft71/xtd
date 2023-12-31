@@ -263,14 +263,14 @@ private:
     if (main_menu1.menu_items()[0].get().menu_items()[3].get() == sender) save_file_box::show(file_name, *this);
     if (main_menu1.menu_items()[0].get().menu_items()[4].get() == sender) save_file_box::show(file_name, *this, "Save as...");
     if (main_menu1.menu_items()[0].get().menu_items()[9].get() == sender) application::exit();
-    if (main_menu1.menu_items()[3].get().menu_items()[4].get() == sender) about_box::show(*this, "Shows some controls by category", "Some controls example", xtd::drawing::system_icons::xtd_logo(), environment::version().to_string(2), environment::version().to_string(), "Copyright (c) 2023 Gammasoft.", "https://gammasoft71.github.io/xtd", "xtd");
+    if (main_menu1.menu_items()[3].get().menu_items()[4].get() == sender) about_box::show(*this, "Shows some controls by category", "Some controls example", xtd::drawing::system_icons::xtd_logo(), environment::version().to_string(2), environment::version().to_string(), "Copyright (c) 2024 Gammasoft.", "https://gammasoft71.github.io/xtd", "xtd");
   }
   
   void on_tool_bar_button_click(object& sender, const tool_bar_button_click_event_args& e) {
     ustring file_name;
     if (e.button() == open_tool_bar_button) open_file_box::show(file_name, *this);
     if (e.button() == save_tool_bar_button) save_file_box::show(file_name, *this);
-    if (e.button() == help_tool_bar_button) about_box::show(*this, "Shows some controls by category", "Some controls example", xtd::drawing::system_icons::xtd_logo(), environment::version().to_string(2), environment::version().to_string(), "Copyright (c) 2023 Gammasoft.", "https://gammasoft71.github.io/xtd", "xtd");
+    if (e.button() == help_tool_bar_button) about_box::show(*this, "Shows some controls by category", "Some controls example", xtd::drawing::system_icons::xtd_logo(), environment::version().to_string(2), environment::version().to_string(), "Copyright (c) 2024 Gammasoft.", "https://gammasoft71.github.io/xtd", "xtd");
   }
   
   void update_status_bar_text() {

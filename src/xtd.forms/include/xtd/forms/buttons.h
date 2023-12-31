@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::buttons factory.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "button.h"
 #include "system_texts.h"

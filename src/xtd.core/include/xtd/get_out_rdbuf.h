@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains __get_out_rdbuf method.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include <iostream>
 

@@ -11,4 +11,4 @@ See [Qt downloads](https://www.qt.io/download/) to install [Qt](https://www.qt.i
 
 ______________________________________________________________________________________________
 
-© 2023 Gammasoft.
+© 2024 Gammasoft.

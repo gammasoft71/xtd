@@ -50,6 +50,6 @@ The following sections examine these methods for converting an object to its str
 
 ______________________________________________________________________________________________
 
-© 2023 Gammasoft.
+© 2024 Gammasoft.
 
 [//]: # (https://learn.microsoft.com/en-us/dotnet/standard/base-types/formatting-types)

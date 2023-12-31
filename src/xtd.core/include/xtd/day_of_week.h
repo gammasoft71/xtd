@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::day_of_week enum class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "enum.h"
 

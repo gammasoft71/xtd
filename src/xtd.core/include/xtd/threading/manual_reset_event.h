@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::threading::manual_reset_event exception.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "event_wait_handle.h"
 
