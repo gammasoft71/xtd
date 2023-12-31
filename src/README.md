@@ -6,11 +6,11 @@ Contains xtd sources.
 
 * [xtd.core](xtd.core) library contains all fundamental classes to access Hardware, Os, System, and more.
 * [xtd.core.native](xtd.core.native) library contains internal native API definitions to access underlying operating system used by xtd.core library.
-* [xtd.core.native.linux](xtd.core.native.linux) library is based on Linux operating system.
-* [xtd.core.native.macos](xtd.core.native.macos) library is based on macOS operating system.
-* [xtd.core.native.posix](xtd.core.native.posix) library is based on Posix operating system.
-* [xtd.core.native.unix](xtd.core.native.unix) library is based on Unix operating system (like FreeBSD).
-* [xtd.core.native.win32](xtd.core.native.win32) library is based on Windows operating system.
+* [xtd.core.native.linux](xtd.core.native.linux) library is based on [Linux](https://linux.org) operating system.
+* [xtd.core.native.macos](xtd.core.native.macos) library is based on [macOS](https://www.apple.com/macos) operating system.
+* [xtd.core.native.posix](xtd.core.native.posix) library is based on [Posix](https://posix.opengroup.org).
+* [xtd.core.native.unix](xtd.core.native.unix) library is based on [Unix](https://www.opengroup.org/membership/forums/platform/unix) operating system (like [FreeBSD](https://www.freebsd.org)).
+* [xtd.core.native.win32](xtd.core.native.win32) library is based on [Windows](https://www.microsoft.com/en-gb/windows) operating system.
 
 ## Drawing
 
@@ -42,7 +42,7 @@ Contains xtd sources.
 
 ## Third parties
 
-* [xtd.3rdparty.call_stack](xtd.3rdparty.call_stack) provides information about the call stack.
+* [xtd.3rdparty.StackWalker](xtd.3rdparty.StackWalker) provides information about the call stack for Windows only.
 
 ## The xtd libraries hierarchy
 
