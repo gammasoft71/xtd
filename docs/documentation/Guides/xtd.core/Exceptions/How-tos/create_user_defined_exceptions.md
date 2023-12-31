@@ -7,6 +7,6 @@ Coming soon...
 * [Guides](/docs/documentation/Guides)
 * [Documentation](/docs/documentation)
 
-© 2023 Gammasoft.
+© 2024 Gammasoft.
 
 [//]: # (https://learn.microsoft.com/en-us/dotnet/standard/exceptions/how-to-create-localized-exception-messages)
