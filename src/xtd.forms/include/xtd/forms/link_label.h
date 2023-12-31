@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::link_label class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "cursors.h"
 #include "label.h"

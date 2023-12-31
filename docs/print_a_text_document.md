@@ -11,6 +11,6 @@ Coming soon...
 
 ______________________________________________________________________________________________
 
-© 2023 Gammasoft.
+© 2024 Gammasoft.
 
 [//]: # (https://learn.microsoft.com/en-us/dotnet/desktop/winforms/printing/how-to-print-text-document?view=netdesktop-6.0)

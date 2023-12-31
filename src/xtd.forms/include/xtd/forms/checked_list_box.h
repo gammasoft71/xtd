@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::checked_list_box control.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "item_check_event_handler.h"
 #include "list_box.h"

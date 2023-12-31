@@ -147,4 +147,4 @@ For example the [gtest-runner](https://github.com/nholthaus/gtest-runner) tool c
 
 ______________________________________________________________________________________________
 
-© 2023 Gammasoft.
+© 2024 Gammasoft.

@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::argument_out_of_range_exception exception.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "argument_exception.h"
 

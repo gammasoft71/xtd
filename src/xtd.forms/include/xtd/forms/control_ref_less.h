@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::control_ref_less class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "control_ref.h"
 #include <xtd/object>

@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::diagnostics::process_start_info class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include <map>
 #include <memory>

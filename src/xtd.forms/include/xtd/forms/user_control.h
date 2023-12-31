@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::user_control control.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "border_sides.h"
 #include "border_style.h"

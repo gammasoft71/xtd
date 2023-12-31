@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::net::dns class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "ip_host_entry.h"
 #include "../core_export.h"

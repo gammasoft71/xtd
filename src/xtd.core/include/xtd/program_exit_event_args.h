@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::program_exit_event_args event args.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "event_args.h"
 #include "exit_mode.h"

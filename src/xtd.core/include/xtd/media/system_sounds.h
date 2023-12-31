@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::media::system_sounds class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "system_sound.h"
 #include "../core_export.h"

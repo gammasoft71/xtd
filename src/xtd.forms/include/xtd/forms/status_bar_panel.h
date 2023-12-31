@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::status_bar_panel container.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "component.h"
 #include "const_control_ref.h"

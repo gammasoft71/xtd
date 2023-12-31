@@ -34,4 +34,4 @@ This structural code demonstrates the Interpreter patterns, which using a define
 
 ______________________________________________________________________________________________
 
-© 2023 Gammasoft.
+© 2024 Gammasoft.

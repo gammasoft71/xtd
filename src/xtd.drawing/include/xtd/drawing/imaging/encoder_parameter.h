@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::drawing::imaging::encoder_parameter class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "encoder.h"
 #include "encoder_parameter_value_type.h"

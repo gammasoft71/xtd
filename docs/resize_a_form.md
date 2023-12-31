@@ -11,6 +11,6 @@ Coming soon...
 
 ______________________________________________________________________________________________
 
-© 2023 Gammasoft.
+© 2024 Gammasoft.
 
 [//]: # (https://learn.microsoft.com/en-us/dotnet/desktop/winforms/forms/how-to-position-and-resize?view=netdesktop-6.0)

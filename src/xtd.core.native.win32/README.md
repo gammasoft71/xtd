@@ -7,4 +7,4 @@ The [xtd.core.native.win32](.) is based on Windows Operating System.
 
 ______________________________________________________________________________________________
 
-© 2023 Gammasoft.
+© 2024 Gammasoft.

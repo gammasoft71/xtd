@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::time_zone_info class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "argument_out_of_range_exception.h"
 #include "day_of_week.h"

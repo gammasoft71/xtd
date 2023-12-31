@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::web::css::property class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "../../object.h"
 #include "../../ustring.h"

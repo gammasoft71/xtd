@@ -127,4 +127,4 @@ date_time date_iso8602 = date_time::parse_exact(iso8601_string, "yyyyMMddTHH:mm:
 
 ______________________________________________________________________________________________
 
-© 2023 Gammasoft.
+© 2024 Gammasoft.

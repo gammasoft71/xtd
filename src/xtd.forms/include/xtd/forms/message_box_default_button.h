@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::message_box_default_button enum class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "message_dialog_default_button.h"
 

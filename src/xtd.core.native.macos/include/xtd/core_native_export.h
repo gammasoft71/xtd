@@ -4,7 +4,7 @@
 
 /// @file
 /// @brief Contains #core_native_export_ keyword.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 
 /// @brief Define shared library export.

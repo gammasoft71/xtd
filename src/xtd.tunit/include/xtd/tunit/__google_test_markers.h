@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains google test markers definitions.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 /// @cond
 #if !defined(__XTD_TUNIT_INTERNAL__)

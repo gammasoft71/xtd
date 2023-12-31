@@ -44,4 +44,4 @@ Your projects are welcome. If you want to add your project in this gallery, just
 
 ______________________________________________________________________________________________
 
-© 2023 Gammasoft.
+© 2024 Gammasoft.

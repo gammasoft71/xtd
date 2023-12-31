@@ -14,4 +14,4 @@
 * [xtdc-gui](../tools/xtdc-gui/README.md) is project management GUI application.
 ______________________________________________________________________________________________
 
-© 2023 Gammasoft.
+© 2024 Gammasoft.

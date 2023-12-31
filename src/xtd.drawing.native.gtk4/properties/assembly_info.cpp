@@ -15,7 +15,7 @@ assembly_description_("xtd.drawing.native.gtk4 library is based on Gtk+ 4 toolki
 assembly_configuration_("");
 assembly_company_("Gammasoft");
 assembly_product_("xtd.drawing.native.gtk4");
-assembly_copyright_("Copyright © Gammasoft 2023");
+assembly_copyright_("Copyright © Gammasoft 2024");
 assembly_trademark_("");
 assembly_culture_("en_US.UTF-8");
 

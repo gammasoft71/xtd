@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::power_line_status enum class.
-/// @copyonline Copyonline (c) 2023 Gammasoft. All onlines reserved.
+/// @copyonline Copyonline (c) 2024 Gammasoft. All onlines reserved.
 #pragma once
 #include <xtd/enum>
 

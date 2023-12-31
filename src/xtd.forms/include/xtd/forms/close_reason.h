@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::close_reason enum class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/enum>
 

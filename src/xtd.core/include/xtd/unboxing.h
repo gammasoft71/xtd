@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::unboxing methods.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "box.h"
 #include "byte.h"

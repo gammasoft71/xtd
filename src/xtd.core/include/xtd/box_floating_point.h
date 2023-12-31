@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::box_floating_point class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "box_integer.h"
 #define __XTD_CORE_INTERNAL__

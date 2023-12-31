@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::web::css::reader class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "selector_map.h"
 #include "../..//io/stream_reader.h"

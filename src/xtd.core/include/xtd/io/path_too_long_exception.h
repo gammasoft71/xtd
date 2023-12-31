@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::io::path_too_long_exception exception.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "io_exception.h"
 

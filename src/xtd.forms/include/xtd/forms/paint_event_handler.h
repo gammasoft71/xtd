@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::paint_event_handler event handler.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "paint_event_args.h"
 #include <xtd/event_handler>

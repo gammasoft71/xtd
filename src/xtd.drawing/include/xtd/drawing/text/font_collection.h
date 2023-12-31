@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::drawing::text::font_collection class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "../font_family.h"
 #include <xtd/object>

@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::tunit::assert class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "../tunit_export.h"
 #define __XTD_TUNIT_INTERNAL__

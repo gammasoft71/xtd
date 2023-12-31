@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::ibutton_control interface.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "control.h"
 #include "dialog_result.h"

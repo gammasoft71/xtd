@@ -15,7 +15,7 @@ assembly_description_("xtd.drawing.native.fltk library is based on Fltk toolkit.
 assembly_configuration_("");
 assembly_company_("Gammasoft");
 assembly_product_("xtd.drawing.native.fltk");
-assembly_copyright_("Copyright © Gammasoft 2023");
+assembly_copyright_("Copyright © Gammasoft 2024");
 assembly_trademark_("");
 assembly_culture_("en_US.UTF-8");
 

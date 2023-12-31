@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::threading::spin_lock exception.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "../object.h"
 #include "../time_span.h"

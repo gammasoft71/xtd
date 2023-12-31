@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::io::directory class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "directory_info.h"
 #include "../core_export.h"

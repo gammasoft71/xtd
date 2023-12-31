@@ -64,4 +64,4 @@ When an argument is passed through a ref parameter, the member receives a refere
 
 ______________________________________________________________________________________________
 
-© 2023 Gammasoft.
+© 2024 Gammasoft.

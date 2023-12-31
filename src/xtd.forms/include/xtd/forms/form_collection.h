@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::form_collection alias.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "form.h"
 #include <functional>

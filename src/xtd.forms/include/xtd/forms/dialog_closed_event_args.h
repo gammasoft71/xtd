@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::dialog_closed_event_args dialog.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "dialog_result.h"
 #include <xtd/event_args>

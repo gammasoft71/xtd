@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::control_renderer static class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "visual_styles/control_state.h"
 #include "box_renderer.h"

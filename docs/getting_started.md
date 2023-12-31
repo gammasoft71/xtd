@@ -16,4 +16,4 @@ This Section provides a getting started documentation.
 
 ______________________________________________________________________________________________
 
-© 2023 Gammasoft.
+© 2024 Gammasoft.

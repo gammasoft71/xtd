@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::tab_control container.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "const_tab_page_ref.h"
 #include "control.h"

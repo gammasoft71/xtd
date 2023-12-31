@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::speech::synthesis::speak_completed_event_handler alias.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "speak_completed_event_args.h"
 #include "../../event_handler.h"

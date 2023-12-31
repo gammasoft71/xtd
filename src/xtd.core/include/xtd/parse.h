@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::parse methods.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 /// @cond
 #define __XTD_CORE_INTERNAL__

@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::replace_event_handler event handler.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "replace_event_args.h"
 #include <xtd/event_handler>

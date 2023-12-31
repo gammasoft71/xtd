@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::io::file_info class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "file_system_info.h"
 #include "stream_reader.h"

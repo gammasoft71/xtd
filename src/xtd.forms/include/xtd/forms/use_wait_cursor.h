@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::use_wait_cursor class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/object>
 

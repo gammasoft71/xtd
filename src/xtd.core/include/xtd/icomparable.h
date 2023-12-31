@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::icomparable interface.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "interface.h"
 #include "types.h"

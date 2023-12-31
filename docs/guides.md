@@ -219,4 +219,4 @@ The xtd guides provide an explanation on how to use the important features of th
 
 ______________________________________________________________________________________________
 
-© 2023 Gammasoft.
+© 2024 Gammasoft.

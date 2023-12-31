@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::time_span typedef.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "chrono.h"
 #include "icomparable.h"

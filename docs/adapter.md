@@ -34,4 +34,4 @@ This structural code demonstrates the Adapter pattern which maps the interface o
 
 ______________________________________________________________________________________________
 
-© 2023 Gammasoft.
+© 2024 Gammasoft.

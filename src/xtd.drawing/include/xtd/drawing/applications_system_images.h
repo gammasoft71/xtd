@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::drawing::applications_system_images factory.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "system_images_base.h"
 #include <vector>

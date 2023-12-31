@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::find_dialog dialog.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "component.h"
 #include "dialog_closed_event_handler.h"

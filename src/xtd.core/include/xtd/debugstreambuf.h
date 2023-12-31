@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::debugstreambuf class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "diagnostics/debug.h"
 #include "object.h"

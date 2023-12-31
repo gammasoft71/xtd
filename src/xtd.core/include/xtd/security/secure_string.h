@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::security::secure_string class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "../ustring.h"
 #include <vector>

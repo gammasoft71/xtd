@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::console_cancel_event_handler event handler.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "console_cancel_event_args.h"
 #include "event_handler.h"

@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains #current_stack_frame_ and #csf_ keywords.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "stack_frame.h"
 

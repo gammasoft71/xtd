@@ -355,4 +355,4 @@ See [lietarl operators](literal_operators.md) for more information.
 
 ______________________________________________________________________________________________
 
-© 2023 Gammasoft.
+© 2024 Gammasoft.

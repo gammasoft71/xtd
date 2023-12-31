@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::tab_page_ref_less typedef.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "tab_page_ref.h"
 #include <xtd/object>

@@ -107,4 +107,4 @@ Note that you can change the main form at any time while the application is runn
 
 ______________________________________________________________________________________________
 
-© 2023 Gammasoft.
+© 2024 Gammasoft.

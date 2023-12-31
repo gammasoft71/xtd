@@ -22,4 +22,4 @@ where <component> contains one or more underscore-separated clauses. For example
 
 ______________________________________________________________________________________________
 
-© 2023 Gammasoft.
+© 2024 Gammasoft.

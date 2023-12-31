@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::text_renderer static class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "style_sheets/ibox_model.h"
 #include "style_sheets/itext_model.h"

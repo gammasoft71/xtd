@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::diagnostics::trace_switch class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "switch_base.h"
 #include "debug.h"

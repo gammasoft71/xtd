@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::visual_styles::tool_bar_state enum class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "control_state.h"
 

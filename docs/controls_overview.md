@@ -42,6 +42,6 @@ For more information, see [Control events]() and [How to handle a control event]
 
 ______________________________________________________________________________________________
 
-© 2023 Gammasoft.
+© 2024 Gammasoft.
 
 [//]: # (https://learn.microsoft.com/en-us/dotnet/desktop/winforms/controls/overview?view=netdesktop-6.0)

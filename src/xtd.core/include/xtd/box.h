@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::box class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "convert_string.h"
 #include "icomparable.h"

@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::control_event_args event args.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/drawing/point>
 #include <xtd/event_args>

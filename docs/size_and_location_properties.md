@@ -39,4 +39,4 @@ For more oinformation see [Position and layout of controls](position_and_layout_
 
 ______________________________________________________________________________________________
 
-© 2023 Gammasoft.
+© 2024 Gammasoft.

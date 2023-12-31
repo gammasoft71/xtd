@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::net::sockets::socket class.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "address_family.h"
 #include "io_control_code.h"

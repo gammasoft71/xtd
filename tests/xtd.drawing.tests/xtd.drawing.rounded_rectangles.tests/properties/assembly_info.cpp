@@ -15,7 +15,7 @@ assembly_description_("xtd.drawing.rounded_rectangles.tests contains graphiccs r
 assembly_configuration_("Test");
 assembly_company_("Gammasoft");
 assembly_product_("xtd.drawing.rounded_rectangles.tests");
-assembly_copyright_("Copyright © Gammasoft 2023");
+assembly_copyright_("Copyright © Gammasoft 2024");
 assembly_trademark_("");
 assembly_culture_("en_US.UTF-8");
 

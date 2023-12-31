@@ -303,4 +303,4 @@ This functionality of lambda expression is supported by [xtd::delegate](../src/x
 
 ______________________________________________________________________________________________
 
-© 2023 Gammasoft.
+© 2024 Gammasoft.

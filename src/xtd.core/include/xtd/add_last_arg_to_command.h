@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains #add_last_arg_to_command_ macro.
-/// @copyright Copyright (c) 2023 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #if !defined(add_last_arg_to_command_)
 /// @cond
