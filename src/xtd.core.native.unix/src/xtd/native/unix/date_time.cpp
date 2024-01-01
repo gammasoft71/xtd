@@ -240,11 +240,11 @@ date_time::time_zone_info date_time::get_local_time_zone() {
   if (iterator != stzis.end()) {
     local_time_zone = *iterator;
     local_time_zone.id = reinterpret_cast<const char*>(tzname[0]);
-    local_time_zone.base_utc_offset = static_cast<int_least64_t>(-timezone * ticks_per_second);
+    //local_time_zone.base_utc_offset = static_cast<int_least64_t>(-timezone * ticks_per_second);
     local_time_zone.daylight_name = reinterpret_cast<const char*>(tzname[1]);
-    local_time_zone.display_name = string_printf("(UTC%s%02d:%02d) %s", (-timezone) ? "+" : "", abs(timezone) / 3600, (abs(timezone) % 3600) / 60, reinterpret_cast<const char*>(tzname[0]));
+    //local_time_zone.display_name = string_printf("(UTC%s%02d:%02d) %s", (-timezone) ? "+" : "", abs(timezone) / 3600, (abs(timezone) % 3600) / 60, reinterpret_cast<const char*>(tzname[0]));
     local_time_zone.standard_name = reinterpret_cast<const char*>(tzname[0]);
-    local_time_zone.supports_daylight_saving_time = daylight != 0;
+    //local_time_zone.supports_daylight_saving_time = daylight != 0;
   }
   return local_time_zone;
 }
