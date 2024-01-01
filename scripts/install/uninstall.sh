@@ -5,7 +5,7 @@ if [ -z ${xtd_version+x} ]; then
   exit 1
 fi
 
-echo "Uninstall xtd libraries version $xtd_version, copyright Gammasoft, 2024"
+echo "Uninstall xtd libraries version $xtd_version, copyright © 2024 Gammasoft"
 
 echo ""
 echo "---------------------------------------------------------------"

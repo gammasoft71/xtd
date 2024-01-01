@@ -10,7 +10,7 @@ if "%xtd_version%"== "" (
   exit /B 1
 )
 
-echo Install xtd libraries version %xtd_version%, copyright Gammasoft, 2024
+echo Install xtd libraries version %xtd_version%, copyright © 2024 Gammasoft
 echo.
 echo   Operating System is Windows
 
