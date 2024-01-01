@@ -29,7 +29,7 @@ bool drive::get_available_free_space(const std::string& root_path_name, size_t& 
   
   free_bytes = static_cast<size_t>(stat.f_bavail * stat.f_bsize);
   total_number_of_bytes = static_cast<size_t>(stat.f_blocks * stat.f_bsize);
-  //total_number_of_free_bytes = static_cast<size_t>((stat.f_flags & ST_RDONLY) == ST_RDONLY ? 0 : stat.f_bfree * stat.f_bsize);
+  //total_number_of_free_bytes = static_cast<size_t>((stat.f_flag & ST_RDONLY) == ST_RDONLY ? 0 : stat.f_bfree * stat.f_bsize);
   total_number_of_free_bytes = static_cast<size_t>(stat.f_bfree * stat.f_bsize);
   return true;
 }
@@ -41,13 +41,13 @@ int_least32_t drive::get_drive_type(const std::string& root_path_name) {
   for (auto network_drive : network_drive_points)
     if (root_path_name.find(network_drive) == 0) {
       struct statvfs stat;
-      if (statvfs(root_path_name.c_str(), &stat) == 0 && (stat.f_flags & ST_RDONLY) == ST_RDONLY) return DRIVE_CDROM;
+      if (statvfs(root_path_name.c_str(), &stat) == 0 && (stat.f_flag & ST_RDONLY) == ST_RDONLY) return DRIVE_CDROM;
       return DRIVE_REMOTE;
     }
   for (auto amovible_mounted_point : amovible_mounted_points)
     if (root_path_name.find(amovible_mounted_point) == 0) {
       struct statvfs stat;
-      if (statvfs(root_path_name.c_str(), &stat) == 0 && (stat.f_flags & ST_RDONLY) == ST_RDONLY) return DRIVE_CDROM;
+      if (statvfs(root_path_name.c_str(), &stat) == 0 && (stat.f_flag & ST_RDONLY) == ST_RDONLY) return DRIVE_CDROM;
       return DRIVE_FIXED;
     }
   return DRIVE_FIXED;
@@ -65,7 +65,7 @@ std::vector<std::string> drive::get_drives() {
     if ((file_system::get_attributes(amovible_mounted_point, file_attributes) == 0 && (file_attributes & FILE_ATTRIBUTE_DIRECTORY) == FILE_ATTRIBUTE_DIRECTORY)) {
       for (string drive : directory::enumerate_directories(amovible_mounted_point, "*")) {
         struct statvfs stat;
-        if (statvfs(drive.c_str(), &stat) == 0 && string(stat.f_mntonname) != root_drive)
+        //if (statvfs(drive.c_str(), &stat) == 0 && string(stat.f_mntonname) != root_drive)
           drives.push_back(drive);
       }
     }
@@ -76,8 +76,8 @@ std::vector<std::string> drive::get_drives() {
   for (auto network_drive : network_drive_points) {
     if ((file_system::get_attributes(network_drive, file_attributes) == 0 && (file_attributes & FILE_ATTRIBUTE_DIRECTORY) == FILE_ATTRIBUTE_DIRECTORY)) {
       for (auto drive : directory::enumerate_directories(network_drive, "*")) {
-        struct statvfs stat;
-        if (statvfs(drive.c_str(), &stat) == 0 && string(stat.f_mntonname) != root_drive  && !macos::strings::ends_with(drive, ".timemachine")  && !macos::strings::ends_with(drive, ".localsnapshots"))
+        struct statfs stat;
+        if (statfs(drive.c_str(), &stat) == 0 && string(stat.f_mntonname) != root_drive && !unix::strings::ends_with(drive, ".timemachine")  && !unix::strings::ends_with(drive, ".localsnapshots"))
           drives.push_back(drive);
       }
     }
