@@ -620,10 +620,6 @@ bool console::beep(uint_least32_t frequency, uint_least32_t duration) {
   return true;
 }
 
-bool console::beep(uint_least32_t frequency, uint_least32_t duration) {
-  return audio::beep(frequency, duration);
-}
-
 int_least32_t console::buffer_height() {
   /// @todo console buffer Height on linux and macOS
   if (::buffer_height == -1) ::buffer_height = console::window_height();
