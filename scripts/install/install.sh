@@ -59,7 +59,7 @@ case "$OSTYPE" in
   "CLANG64") pacman -S -yy --noconfirm base-devel git mingw-w64-clang-x86_64-cmake mingw-w64-clang-x86_64-doxygen mingw-w64-clang-x86_64-gcc-compat mingw-w64-clang-x86_64-gtk3 mingw-w64-clang-x86_64-make mingw-w64-clang-x86_64-wxwidgets3.2-msw;;
   "Darwin") brew update; brew install cmake;;
   *"Debian"* | *"elementary"* | *"LinuxMint"* | *"Ubuntu"*) sudo apt update; sudo apt install build-essential codeblocks doxygen libasound2-dev libgsound-dev libgtk-3-dev cmake -y;;
-  "FreeBSD") sudo pkg update; sudo pkg install -y cmake doxygen gtk3 gsound alsa-plugins wx32-gtk3 libsysinfo;;
+  "FreeBSD") sudo pkg update; sudo pkg install -y cmake doxygen gtk3 gsound alsa-plugins wx32-gtk3 libsysinfo pkgconf;;
   *"openSUSE"*) sudo zypper update; sudo zypper install -y -t pattern devel_basis; sudo zypper install -y alsa-devel doxygen gsound-devel gtk3-devel cmake;;
   "MINGW32") pacman -S -yy --noconfirm base-devel git mingw-w64-i686-cmake mingw-w64-i686-doxygen mingw-w64-i686-gcc mingw-w64-i686-gtk3 mingw-w64-i686-make mingw-w64-i686-wxwidgets3.2-msw;;
   "MINGW64") pacman -S -yy --noconfirm base-devel git mingw-w64-x86_64-cmake mingw-w64-x86_64-doxygen mingw-w64-x86_64-gcc mingw-w64-x86_64-gtk3 mingw-w64-x86_64-make mingw-w64-x86_64-wxwidgets3.2-msw;;
