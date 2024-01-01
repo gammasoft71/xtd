@@ -10,7 +10,7 @@
 
 #undef unix
 
-namespace xtd::unix {
+namespace xtd::native::unix {
   class shell_execute final {
   public:
     static std::string run(const std::string& file_name) {return run(file_name, {});}
