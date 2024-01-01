@@ -86,8 +86,8 @@ std::vector<std::string> drive::get_drives() {
 }
 
 bool drive::get_volume_information(const std::string& root_path_name, std::string& volume_name, std::string& file_system_name) {
-  struct statvfs stat;
-  if (statvfs(root_path_name.c_str(), &stat) != 0)
+  struct statfs stat;
+  if (statfs(root_path_name.c_str(), &stat) != 0)
     return false;
   
   volume_name = root_path_name;
