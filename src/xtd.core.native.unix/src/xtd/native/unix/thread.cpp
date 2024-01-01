@@ -53,7 +53,7 @@ bool thread::resume(intmax_t handle) {
 }
 
 bool thread::set_current_thread_name(const std::string& name) {
-  pthread_setname_np(name.c_str());
+  pthread_setname_np(pthread_self(), name.c_str());
   return true;
 }
 
