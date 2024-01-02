@@ -2111,6 +2111,8 @@ if (MSVC)
   # But this is not a problem at the moment. If there is ever a problem or doubt, it should be addressed and removed it.
   # For more information ee https://learn.microsoft.com/en-us/windows/win32/learnwin32/winmain--the-application-entry-point
   set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /ENTRY:mainCRTStartup")
+  else()
+    add_compile_options(-Wno-c++20-extensions)
 endif ()
 
 # The following linker option is used to remove : "ld: warning: ignoring duplicate libraries:" with XCode 15 on macOS
