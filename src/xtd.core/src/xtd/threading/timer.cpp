@@ -34,7 +34,7 @@ timer::timer(const timer_callback& callback, int32 due_time, int32 period) : tim
 timer::timer(const timer_callback& callback, int64 due_time, int64 period) : timer(callback, this, as<int32>(due_time), as<int32>(period)) {
 }
 
-timer::timer(const timer_callback& callback, const time_span& due_time, const time_span& period) : timer(callback, this, due_time.total_milliseconds_duration().count(), period.total_milliseconds_duration().count()) {
+timer::timer(const timer_callback& callback, const time_span& due_time, const time_span& period) : timer(callback, this, as<int32>(due_time.total_milliseconds_duration().count()), as<int32>(period.total_milliseconds_duration().count())) {
 }
 
 timer::timer(const timer_callback& callback, uint32 due_time, uint32 period) : timer(callback, this, as<int32>(due_time), as<int32>(period)) {
