@@ -87,7 +87,7 @@ void timer::change(int64 due_time, int64 period) {
 }
 
 void timer::change(const time_span& due_time, const time_span& period) {
-  this->change(due_time.total_milliseconds_duration().count(), period.total_milliseconds_duration().count());
+  this->change(as<int32>(due_time.total_milliseconds_duration().count()), as<int32>(period.total_milliseconds_duration().count()));
 }
 
 void timer::change(uint32 due_time, uint32 period) {
