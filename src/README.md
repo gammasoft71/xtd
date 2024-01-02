@@ -6,7 +6,7 @@ Contains xtd sources.
 
 * [xtd.core](xtd.core) library contains all fundamental classes to access Hardware, Os, System, and more.
 * [xtd.core.native](xtd.core.native) library contains internal native API definitions to access underlying operating system used by xtd.core library.
-* [xtd.core.native.linux](xtd.core.native.linux) library is based on [Linux](https://linux.org) operating system.
+* [xtd.core.native.linux](xtd.core.native.linux) library is based on [Linux](https://www.kernel.org/doc/html/latest/) operating system.
 * [xtd.core.native.macos](xtd.core.native.macos) library is based on [macOS](https://www.apple.com/macos) operating system.
 * [xtd.core.native.posix](xtd.core.native.posix) library is based on [Posix](https://posix.opengroup.org).
 * [xtd.core.native.unix](xtd.core.native.unix) library is based on [Unix](https://www.opengroup.org/membership/forums/platform/unix) operating system (like [FreeBSD](https://www.freebsd.org)).
