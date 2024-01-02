@@ -85,29 +85,29 @@ bool thread_pool::queue_user_work_item(const wait_callback& callback, std::any s
   return true;
 }
 
-registered_wait_handle thread_pool::register_wait_for_single_object(wait_handle& wait_object, const wait_or_timer_callback& callBack, std::any state, int32 milliseconds_timeout_interval, bool execute_only_once) {
+registered_wait_handle thread_pool::register_wait_for_single_object(wait_handle& wait_object, const wait_or_timer_callback& callback, std::any state, int32 milliseconds_timeout_interval, bool execute_only_once) {
   auto result = registered_wait_handle {};
   lock_(static_data_.thread_pool_asynchronous_io_items_sync_root) {
     if (static_data_.asynchronous_io_threads.size() == 0) initialize_min_asynchronous_io_threads();
     if (static_data_.thread_pool_asynchronous_io_items.size() == max_asynchronous_io_threads_) return result;
     if (static_data_.thread_pool_items.size() + 1 > static_data_.threads.size()) create_thread();
-    static_data_.thread_pool_asynchronous_io_items.emplace(static_data_.thread_pool_asynchronous_io_items.begin(), callBack, state, wait_object, milliseconds_timeout_interval, execute_only_once);
+    static_data_.thread_pool_asynchronous_io_items.emplace(static_data_.thread_pool_asynchronous_io_items.begin(), callback, state, wait_object, milliseconds_timeout_interval, execute_only_once);
     result.item_ = reinterpret_cast<intptr>(&static_data_.thread_pool_asynchronous_io_items.back());
   }
   static_data_.asynchronous_io_semaphore.release();
   return result;
 }
 
-registered_wait_handle thread_pool::register_wait_for_single_object(wait_handle& wait_object, const wait_or_timer_callback& callBack, std::any state, int64 milliseconds_timeout_interval, bool execute_only_once)  {
-  return register_wait_for_single_object(wait_object, callBack, state, as<int32>(milliseconds_timeout_interval), execute_only_once);
+registered_wait_handle thread_pool::register_wait_for_single_object(wait_handle& wait_object, const wait_or_timer_callback& callback, std::any state, int64 milliseconds_timeout_interval, bool execute_only_once)  {
+  return register_wait_for_single_object(wait_object, callback, state, as<int32>(milliseconds_timeout_interval), execute_only_once);
 }
 
-registered_wait_handle thread_pool::register_wait_for_single_object(wait_handle& wait_object, const wait_or_timer_callback& callBack, std::any state, const time_span& timeout, bool execute_only_once) {
-  return register_wait_for_single_object(wait_object, callBack, state, timeout.total_milliseconds_duration().count(), execute_only_once);
+registered_wait_handle thread_pool::register_wait_for_single_object(wait_handle& wait_object, const wait_or_timer_callback& callback, std::any state, const time_span& timeout, bool execute_only_once) {
+  return register_wait_for_single_object(wait_object, callback, state, as<int32>(timeout.total_milliseconds_duration().count()), execute_only_once);
 }
 
-registered_wait_handle thread_pool::register_wait_for_single_object(wait_handle& wait_object, const wait_or_timer_callback& callBack, std::any state, uint32 milliseconds_timeout_interval, bool execute_only_once) {
-  return register_wait_for_single_object(wait_object, callBack, state, as<int32>(milliseconds_timeout_interval), execute_only_once);
+registered_wait_handle thread_pool::register_wait_for_single_object(wait_handle& wait_object, const wait_or_timer_callback& callback, std::any state, uint32 milliseconds_timeout_interval, bool execute_only_once) {
+  return register_wait_for_single_object(wait_object, callback, state, as<int32>(milliseconds_timeout_interval), execute_only_once);
 }
 
 bool thread_pool::set_max_threads(size_t worker_threads, size_t completion_port_threads) {
