@@ -12,8 +12,8 @@ namespace unit_tests {
     }
     
     void test_method_(test_case_failed) {
-      int a = 24;
-      int b =  24;
+      auto a = 24;
+      auto b =  24;
       assert::are_same(b, a);
     }
   };
