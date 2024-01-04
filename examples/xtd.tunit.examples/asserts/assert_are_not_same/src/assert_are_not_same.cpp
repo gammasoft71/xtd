@@ -13,7 +13,7 @@ namespace unit_tests {
     
     void test_method_(test_case_failed) {
       auto a = 24;
-      auto b = a;
+      auto& b = a;
       assert::are_not_same(b, a);
     }
   };
