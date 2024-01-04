@@ -6,8 +6,8 @@ namespace unit_tests {
   class test_class_(test) {
   public:
     void test_method_(test_case_succeed) {
-      int a = 24;
-      int& b = a;
+      auto a = 24;
+      auto& b = a;
       assert::are_same(b, a);
     }
     
