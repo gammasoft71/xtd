@@ -6,17 +6,17 @@ namespace unit_tests {
   class test_class_(test) {
   public:
     void test_method_(test_case_succeed1) {
-      int i = 24;
+      auto i = 24;
       assert::is_less_or_equal(i, 48);
     }
     
     void test_method_(test_case_succeed2) {
-      int i = 24;
+      auto i = 24;
       assert::is_less_or_equal(i, 24);
     }
     
     void test_method_(test_case_failed) {
-      int i = 24;
+      auto i = 24;
       assert::is_less_or_equal(i, 12);
     }
   };
