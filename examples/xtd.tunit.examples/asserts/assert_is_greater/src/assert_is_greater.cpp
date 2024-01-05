@@ -6,12 +6,12 @@ namespace unit_tests {
   class test_class_(test) {
   public:
     void test_method_(test_case_succeed) {
-      int i = 24;
+      auto i = 24;
       assert::is_greater(i, 12);
     }
     
     void test_method_(test_case_failed) {
-      int i = 24;
+      auto i = 24;
       assert::is_greater(i, 48);
     }
   };
