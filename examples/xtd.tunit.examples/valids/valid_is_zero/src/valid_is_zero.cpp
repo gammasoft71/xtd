@@ -1,20 +1,17 @@
 #include <xtd/xtd.tunit>
-#include <iterator>
-#include <string>
 
-using namespace std;
 using namespace xtd::tunit;
 
 namespace unit_tests {
   class test_class_(test) {
   public:
     void test_method_(test_case_succeed) {
-      int i = 0;
+      auto i = 0;
       valid::is_zero(i);
     }
     
     void test_method_(test_case_failed) {
-      int i = 42;
+      auto i = 42;
       valid::is_zero(i);
     }
   };
