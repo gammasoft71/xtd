@@ -1,14 +1,14 @@
 #include <xtd/xtd.tunit>
-#include <limits>
+#include <xtd/double_object>
 
-using namespace std;
+using namespace xtd;
 using namespace xtd::tunit;
 
 namespace unit_tests {
   class test_class_(test) {
   public:
     void test_method_(test_case_succeed) {
-      auto d = numeric_limits<double>::quiet_NaN();
+      auto d = double_object::NaN;
       assert::is_NaN(d);
     }
     
