@@ -1,5 +1,5 @@
 #include <xtd/xtd.tunit>
-#include <XTD/ustring>
+#include <xtd/ustring>
 #include <iterator>
 
 using namespace xtd;
@@ -10,7 +10,7 @@ namespace unit_tests {
   public:
     void test_method_(test_case_succeed) {
       auto s = ustring::empty_string;
-      assert::is_true(std::empty(s));
+      assert::is_true(ustring::is_empty(s));
     }
     
     void test_method_(test_case_failed) {
