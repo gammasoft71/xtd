@@ -1,6 +1,6 @@
 #include <xtd/xtd.tunit>
+#include <xtd/ustring>
 #include <iterator>
-#include <string>
 
 using namespace xtd;
 using namespace xtd::tunit;
