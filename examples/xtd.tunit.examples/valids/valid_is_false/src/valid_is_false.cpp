@@ -1,21 +1,20 @@
 #include <xtd/xtd.tunit>
-#include <iterator>
-#include <string>
+#include <xtd/ustring>
 
-using namespace std;
+using namespace xtd;
 using namespace xtd::tunit;
 
 namespace unit_tests {
   class test_class_(test) {
   public:
     void test_method_(test_case_succeed) {
-      string s = "string";
-      valid::is_false(std::empty(s));
+      auto s = "string";
+      valid::is_false(ustring::is_empty(s));
     }
     
     void test_method_(test_case_failed) {
-      string s;
-      valid::is_false(std::empty(s));
+      auto s = ustring::empty_string;
+      valid::is_false(ustring::is_empty(s));
     }
   };
 }
