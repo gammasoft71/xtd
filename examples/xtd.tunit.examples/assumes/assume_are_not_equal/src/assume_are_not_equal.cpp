@@ -6,12 +6,12 @@ namespace unit_tests {
   class test_class_(test) {
   public:
     void test_method_(test_case_succeed) {
-      int i = 24;
+      auto i = 24;
       assume::are_not_equal(23, i);
     }
     
     void test_method_(test_case_aborted) {
-      int i = 24;
+      auto i = 24;
       assume::are_not_equal(24, i);
     }
   };
