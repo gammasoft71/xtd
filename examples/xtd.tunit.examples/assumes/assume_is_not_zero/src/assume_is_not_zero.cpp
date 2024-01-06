@@ -1,8 +1,5 @@
 #include <xtd/xtd.tunit>
-#include <iterator>
-#include <string>
 
-using namespace std;
 using namespace xtd::tunit;
 
 namespace unit_tests {
