@@ -9,12 +9,12 @@ namespace unit_tests {
   class test_class_(test) {
   public:
     void test_method_(test_case_succeed) {
-      int i = 0;
+      auto i = 0;
       assume::is_zero(i);
     }
     
     void test_method_(test_case_aborted) {
-      int i = 42;
+      auto i = 42;
       assume::is_zero(i);
     }
   };
