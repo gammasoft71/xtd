@@ -8,12 +8,12 @@ namespace unit_tests {
   class test_class_(test) {
   public:
     void test_method_(test_case_succeed) {
-      vector v = {1, 2, 3, 4};
+      auto v = vector {1, 2, 3, 4};
       valid::throws_any([&] {return v.at(5);});
     }
     
     void test_method_(test_case_failed) {
-      vector v = {1, 2, 3, 4};
+      auto v = vector {1, 2, 3, 4};
       valid::throws_any([&] {return v.at(2);});
     }
   };
