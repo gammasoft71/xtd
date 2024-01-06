@@ -6,12 +6,12 @@ namespace unit_tests {
   class test_class_(test) {
   public:
     void test_method_(test_case_succeed) {
-      double d = 0.5999999999;
+      auto d = 0.5999999999;
       valid::are_equal(0.6, d, 0.000000001);
     }
     
     void test_method_(test_case_failed) {
-      double d = 0.5999999999;
+      auto d = 0.5999999999;
       valid::are_equal(0.6, d, 0.0000000001);
     }
   };
