@@ -2,18 +2,19 @@
 #include <memory>
 
 using namespace std;
+using namespace xtd;
 using namespace xtd::tunit;
 
 namespace unit_tests {
   class test_class_(test) {
   public:
     void test_method_(test_case_succeed) {
-      shared_ptr<string> s;
+      auto s = shared_ptr<ustring> {};
       assume::is_null(s);
     }
     
     void test_method_(test_case_aborted) {
-      shared_ptr<string> s = make_shared<string>("string");
+      auto s = make_shared<ustring>("string");
       assume::is_null(s);
     }
   };
