@@ -13,7 +13,7 @@ namespace unit_tests {
     }
     
     void test_method_(test_case_failed) {
-      auto di = directory_info(environment::get_folder_path(environment::special_folder::system));
+      auto di = directory_info {environment::get_folder_path(environment::special_folder::system)};
       directory_valid::are_equal(directory_info {path::get_temp_path()}, di);
     }
   };
