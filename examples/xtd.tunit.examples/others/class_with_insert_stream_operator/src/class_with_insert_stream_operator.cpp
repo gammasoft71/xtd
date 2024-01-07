@@ -24,14 +24,14 @@ namespace unit_tests {
   class test_class_(test) {
   public:
     void test_method_(test_case_succeed) {
-      class_with_insert_stream_operator c1(42);
-      class_with_insert_stream_operator c2(42);
+      auto c1 = class_with_insert_stream_operator {42};
+      auto c2 = class_with_insert_stream_operator {42};
       assert::are_equal(c1, c2);
     }
     
     void test_method_(test_case_failed) {
-      class_with_insert_stream_operator c1(42);
-      class_with_insert_stream_operator c2(24);
+      auto c1 = class_with_insert_stream_operator {42};
+      auto c2 = class_with_insert_stream_operator {24};
       assert::are_equal(c1, c2);
     }
   };
