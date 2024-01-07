@@ -1,20 +1,18 @@
 #include <xtd/xtd.tunit>
-#include <string>
 
-using namespace std;
-using namespace std::string_literals;
+using namespace xtd;
 using namespace xtd::tunit;
 
 namespace unit_tests {
   class test_class_(test) {
   public:
     void test_method_(test_case_succeed) {
-      auto s = u"VALUE"s;
+      auto s = u"VALUE"_s;
       string_valid::are_equal_ignoring_case(u"value", s);
     }
     
     void test_method_(test_case_failed) {
-      auto s = U"VALUE"s;
+      auto s = U"VALUE"_s;
       string_valid::are_equal_ignoring_case(U"key", s);
     }
   };
