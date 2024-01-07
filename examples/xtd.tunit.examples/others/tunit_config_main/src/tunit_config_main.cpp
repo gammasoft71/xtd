@@ -2,6 +2,7 @@
 #include <xtd/xtd.tunit>
 #include <string>
 
+using namespace std;
 using namespace xtd::tunit;
 
 namespace unit_tests {
@@ -9,7 +10,7 @@ namespace unit_tests {
   class test_class_(test) {
   public:
     void test_method_(test_case1) {
-      std::string s = "Hello";
+      auto s = string {"Hello"};
       assert::is_true(s == "Hello");
     }
   };
