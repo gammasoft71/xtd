@@ -1,17 +1,18 @@
 #include <xtd/xtd.tunit>
 
+using namespace std;
 using namespace xtd::tunit;
 
 namespace unit_tests {
   class test_class_(test) {
   public:
     void test_method_(test_case_succeed) {
-      std::vector a = {1, 2, 3, 4};
+      auto a = vector {1, 2, 3, 4};
       collection_valid::is_not_empty(a);
     }
     
     void test_method_(test_case_failed) {
-      std::vector<int> a = {};
+      auto a = vector<int> {};
       collection_valid::is_not_empty(a);
     }
   };
