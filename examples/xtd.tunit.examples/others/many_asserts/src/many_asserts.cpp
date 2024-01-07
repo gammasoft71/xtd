@@ -1,6 +1,7 @@
 #include <xtd/xtd.tunit>
 #include <stdexcept>
 
+using namespace std;
 using namespace xtd::tunit;
 
 namespace unit_tests {
@@ -16,7 +17,7 @@ namespace unit_tests {
     }
     
     void test_method_(test_case3) {
-      assert::does_not_throw([] {throw std::range_error("error");});
+      assert::does_not_throw([] {throw range_error("error");});
     }
   };
 }
