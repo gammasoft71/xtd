@@ -8,7 +8,7 @@ namespace unit_tests {
   class test_class_(test) {
   public:
     void test_method_(test_case_succeed) {
-      auto di = directory_info(environment::get_folder_path(environment::special_folder::system));
+      auto di = directory_info {environment::get_folder_path(environment::special_folder::system)};
       directory_valid::are_not_equal(directory_info {path::get_temp_path()}, di);
     }
     
