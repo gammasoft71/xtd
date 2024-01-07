@@ -1,21 +1,22 @@
 #include <xtd/xtd.tunit>
 
+using namespace std;
 using namespace xtd::tunit;
 
 namespace unit_tests {
   class test_class_(test) {
   public:
     void test_method_(test_case_succeed) {
-      int i1 = 1;
-      int i2 = 2;
-      std::vector<int*> a = {&i1, &i2};
+      auto i1 = 1;
+      auto i2 = 2;
+      auto a = vector {&i1, &i2};
       collection_assert::all_items_are_not_null(a);
     }
     
     void test_method_(test_case_failed) {
-      int i1 = 1;
-      int i2 = 2;
-      std::vector<int*> a = {&i1, &i2, nullptr};
+      auto i1 = 1;
+      auto i2 = 2;
+      auto a = vector<int*> {&i1, &i2, nullptr};
       collection_assert::all_items_are_not_null(a);
     }
   };
