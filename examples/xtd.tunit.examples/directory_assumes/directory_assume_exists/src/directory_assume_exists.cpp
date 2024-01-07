@@ -12,7 +12,7 @@ namespace unit_tests {
     }
     
     void test_method_(test_case_aborted) {
-      auto di = directory_info(path::combine("unknown folder 1", "unknown folder 2", "unknown folder 3"));
+      auto di = directory_info {path::combine("unknown folder 1", "unknown folder 2", "unknown folder 3")};
       directory_assume::exists(di);
     }
   };
