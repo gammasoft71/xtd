@@ -1,15 +1,13 @@
 #include <xtd/xtd.tunit>
-#include <string>
 
-using namespace std;
-using namespace std::string_literals;
+using namespace xtd;
 using namespace xtd::tunit;
 
 namespace unit_tests {
   class test_class_(test) {
   public:
     void test_method_(test_case_succeed) {
-      auto s = "value"s;
+      auto s = "value"_s;
       string_assert::does_not_start_with("lue", s);
     }
     
