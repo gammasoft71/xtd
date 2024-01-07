@@ -18,7 +18,7 @@ namespace unit_tests {
     }
     
     void test_method_(test_case3) {
-      directory_valid::are_equal(directory_info(environment::get_folder_path(environment::special_folder::my_music)), directory_info(environment::get_folder_path(environment::special_folder::my_videos)));
+      directory_valid::are_equal(directory_info {environment::get_folder_path(environment::special_folder::my_music)}, directory_info {environment::get_folder_path(environment::special_folder::my_videos)});
     }
   };
 }
