@@ -1,17 +1,18 @@
 #include <xtd/xtd.tunit>
 
+using namespace std;
 using namespace xtd::tunit;
 
 namespace unit_tests {
   class test_class_(test) {
   public:
     void test_method_(test_case_succeed) {
-      std::vector a = {1, 2, 3, 4};
+      auto a = vector {1, 2, 3, 4};
       collection_valid::is_ordered(a);
     }
     
     void test_method_(test_case_failed) {
-      std::vector a = {1, 2, 4, 3};
+      auto a = vector {1, 2, 4, 3};
       collection_valid::is_ordered(a);
     }
   };
