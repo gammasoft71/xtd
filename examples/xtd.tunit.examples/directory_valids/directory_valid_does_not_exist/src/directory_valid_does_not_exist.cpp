@@ -7,7 +7,7 @@ namespace unit_tests {
   class test_class_(test) {
   public:
     void test_method_(test_case_succeed) {
-      auto di = directory_info(path::combine("unknown folder 1", "unknown folder 2", "unknown folder 3"));
+      auto di = directory_info {path::combine("unknown folder 1", "unknown folder 2", "unknown folder 3")};
       directory_valid::does_not_exist(di);
     }
     
