@@ -12,14 +12,14 @@ namespace unit_tests {
   public:
     test_method_attribute create_string_from_literal_attr {"create_string_from_literal", *this, &hello_world_test::create_string_from_literal};
     void create_string_from_literal() {
-      string s = "Hello, World!";
+      auto s = string {"Hello, World!"};
       valid::are_equal(13, s.size());
       assert::are_equal("Hello, World!", s);
     }
     
     test_method_attribute create_string_from_chars_attr {"create_string_from_chars", *this, &hello_world_test::create_string_from_chars};
     void create_string_from_chars() {
-      string s = {'H', 'e', 'l', 'l', 'o', ',', ' ', 'W', 'o', 'r', 'l', 'd', '!'};
+      auto s = string {'H', 'e', 'l', 'l', 'o', ',', ' ', 'W', 'o', 'r', 'l', 'd', '!'};
       valid::are_equal(13, s.size());
       string_assert::starts_with("Hello,", s);
       string_assert::ends_with(" World!", s);
