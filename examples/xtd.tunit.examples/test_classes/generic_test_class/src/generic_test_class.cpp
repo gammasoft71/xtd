@@ -39,7 +39,7 @@ namespace unit_tests {
   class test : public test_class {
   public:
     void test_method_(test_max_value) {
-      static std::map<std::string, size_t> expected_max_values = {{typeid(bool).name(), std::numeric_limits<bool>::max()}, {typeid(int).name(), std::numeric_limits<int>::max()}, {typeid(long int).name(), std::numeric_limits<long int>::max()}, {typeid(char).name(), std::numeric_limits<char>::max()}};
+      static auto expected_max_values = std::map<std::string, size_t> {{typeid(bool).name(), std::numeric_limits<bool>::max()}, {typeid(int).name(), std::numeric_limits<int>::max()}, {typeid(long int).name(), std::numeric_limits<long int>::max()}, {typeid(char).name(), std::numeric_limits<char>::max()}};
       
       if (expected_max_values.find(typeid(type_t).name()) == expected_max_values.end())
         assert::fail("expect max value for this type is not defined.");
