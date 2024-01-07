@@ -12,11 +12,11 @@ namespace unit_tests {
     }
     
     void test_method_(test_case2) {
-      collection_assert::is_empty(vector<int> {1, 2, 3});
+      collection_assert::is_empty(vector {1, 2, 3});
     }
     
     void test_method_(test_case3) {
-      collection_assert::is_ordered(vector<int> {1, 3, 2});
+      collection_assert::is_ordered(vector {1, 3, 2});
     }
   };
 }
