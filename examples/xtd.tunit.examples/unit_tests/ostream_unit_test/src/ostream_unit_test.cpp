@@ -14,13 +14,13 @@ namespace unit_tests {
 
 auto main()->int {
   // create your own ostream in this case a string stream for example
-  stringstream ss;
+  auto ss = stringstream {};
   
   // create and run an ostream_unit_test
-  int result = ostream_unit_test(ss).run();
+  auto result = ostream_unit_test(ss).run();
   
   // display string stream on cout line by line
-  string line;
+  auto line = string {};
   while (std::getline(ss, line))
     cout << line << endl;
     
