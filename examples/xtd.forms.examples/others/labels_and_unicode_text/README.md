@@ -17,19 +17,19 @@ xtdc run
 
 ## Output
 
-## Windows :
+### Windows :
 
 ![Screenshot](../../../../docs/pictures/examples/labels_and_unicode_text_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/labels_and_unicode_text_wd.png)
 
-## macOS :
+### macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/labels_and_unicode_text_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/labels_and_unicode_text_md.png)
 
-## Gnome :
+### Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/labels_and_unicode_text_g.png)
 

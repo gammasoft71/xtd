@@ -17,19 +17,19 @@ xtdc run
 
 ## Output
 
-## Windows :
+### Windows :
 
 ![Screenshot](../../../../docs/pictures/examples/border_style_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/border_style_wd.png)
 
-## macOS :
+### macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/border_style_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/border_style_md.png)
 
-## Gnome :
+### Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/border_style_g.png)
 

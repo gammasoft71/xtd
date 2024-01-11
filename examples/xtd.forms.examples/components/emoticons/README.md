@@ -17,19 +17,19 @@ xtdc run
 
 ## Output
 
-## Windows :
+### Windows :
 
 ![Screenshot](../../../../docs/pictures/examples/emoticons_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/emoticons_wd.png)
 
-## macOS :
+### macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/emoticons_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/emoticons_md.png)
 
-## Gnome :
+### Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/emoticons_g.png)
 

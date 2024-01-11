@@ -17,19 +17,19 @@ xtdc run
 
 ## Output
 
-## Windows :
+### Windows :
 
 ![Screenshot](../../../../docs/pictures/examples/tab_control_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/tab_control_wd.png)
 
-## macOS :
+### macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/tab_control_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/tab_control_md.png)
 
-## Gnome :
+### Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/tab_control_g.png)
 

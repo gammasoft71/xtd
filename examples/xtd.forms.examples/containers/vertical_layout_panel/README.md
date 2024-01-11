@@ -17,19 +17,19 @@ xtdc run
 
 ## Output
 
-## Windows :
+### Windows :
 
 ![Screenshot](../../../../docs/pictures/examples/vertical_layout_panel_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/vertical_layout_panel_wd.png)
 
-## macOS :
+### macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/vertical_layout_panel_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/vertical_layout_panel_md.png)
 
-## Gnome :
+### Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/vertical_layout_panel_g.png)
 

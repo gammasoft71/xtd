@@ -28,19 +28,19 @@ Hello, World!
 
 ## Output
 
-## Windows :
+### Windows :
 
 ![Screenshot](../../../../docs/pictures/examples/hello_world_message_box3_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/hello_world_message_box3_wd.png)
 
-## macOS :
+### macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/hello_world_message_box3_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/hello_world_message_box3_md.png)
 
-## Linux Gnome :
+### Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/hello_world_message_box3_g.png)
 

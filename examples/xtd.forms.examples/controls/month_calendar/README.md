@@ -17,19 +17,19 @@ xtdc run
 
 ## Output
 
-## Windows :
+### Windows :
 
 ![Screenshot](../../../../docs/pictures/examples/month_calendar_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/month_calendar_wd.png)
 
-## macOS :
+### macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/month_calendar_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/month_calendar_md.png)
 
-## Gnome :
+### Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/month_calendar_g.png)
 

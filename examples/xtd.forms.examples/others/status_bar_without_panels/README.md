@@ -17,19 +17,19 @@ xtdc run
 
 ## Output
 
-## Windows :
+### Windows :
 
 ![Screenshot](../../../../docs/pictures/examples/status_bar_without_panels_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/status_bar_without_panels_wd.png)
 
-## macOS :
+### macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/status_bar_without_panels_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/status_bar_without_panels_md.png)
 
-## Gnome :
+### Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/status_bar_without_panels_g.png)
 

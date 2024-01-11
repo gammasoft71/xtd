@@ -17,19 +17,19 @@ xtdc run
 
 ## Output
 
-## Windows :
+### Windows :
 
 ![Screenshot](../../../../docs/pictures/examples/hello_world_label_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/hello_world_label_wd.png)
 
-## macOS :
+### macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/hello_world_label_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/hello_world_label_md.png)
 
-## Gnome :
+### Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/hello_world_label_g.png)
 

@@ -17,19 +17,19 @@ xtdc run
 
 ## Output
 
-## Windows :
+### Windows :
 
 ![Screenshot](../../../../docs/pictures/examples/color_picker_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/color_picker_wd.png)
 
-## macOS :
+### macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/color_picker_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/color_picker_md.png)
 
-## Gnome :
+### Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/color_picker_g.png)
 

@@ -17,19 +17,19 @@ xtdc run
 
 ## Output
 
-## Windows :
+### Windows :
 
 ![Screenshot](../../../../docs/pictures/examples/screen_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/screen_wd.png)
 
-## macOS :
+### macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/screen_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/screen_md.png)
 
-## Gnome :
+### Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/screen_g.png)
 

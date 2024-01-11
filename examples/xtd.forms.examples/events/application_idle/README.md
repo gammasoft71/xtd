@@ -17,19 +17,19 @@ xtdc run
 
 ## Output
 
-## Windows :
+### Windows :
 
 ![Screenshot](../../../../docs/pictures/examples/application_idle_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/application_idle_wd.png)
 
-## macOS :
+### macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/application_idle_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/application_idle_md.png)
 
-## Gnome :
+### Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/application_idle_g.png)
 

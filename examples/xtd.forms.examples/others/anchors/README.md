@@ -17,19 +17,19 @@ xtdc run
 
 ## Output
 
-## Windows :
+### Windows :
 
 ![Screenshot](../../../../docs/pictures/examples/anchors_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/anchors_wd.png)
 
-## macOS :
+### macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/anchors_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/anchors_md.png)
 
-## Gnome :
+### Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/anchors_g.png)
 

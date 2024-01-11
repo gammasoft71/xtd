@@ -17,19 +17,19 @@ xtdc run
 
 ## Output
 
-## Windows :
+### Windows :
 
 ![Screenshot](../../../../docs/pictures/examples/font_families_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/font_families_wd.png)
 
-## macOS :
+### macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/font_families_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/font_families_md.png)
 
-## Gnome :
+### Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/font_families_g.png)
 

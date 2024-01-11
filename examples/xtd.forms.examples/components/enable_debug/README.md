@@ -17,19 +17,19 @@ xtdc run
 
 ## Output
 
-## Windows :
+### Windows :
 
 ![Screenshot](../../../../docs/pictures/examples/enable_debug_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/enable_debug_wd.png)
 
-## macOS :
+### macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/enable_debug_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/enable_debug_md.png)
 
-## Gnome :
+### Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/enable_debug_g.png)
 

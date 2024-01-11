@@ -17,19 +17,19 @@ xtdc run
 
 ## Output
 
-## Windows :
+### Windows :
 
 ![Screenshot](../../../../docs/pictures/examples/system_sound_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/system_sound_wd.png)
 
-## macOS :
+### macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/system_sound_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/system_sound_md.png)
 
-## Gnome :
+### Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/system_sound_g.png)
 

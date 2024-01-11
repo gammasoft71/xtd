@@ -18,19 +18,19 @@ xtdc run
 
 ## Output
 
-## Windows :
+### Windows :
 
 ![Screenshot](../../../../docs/pictures/examples/check_boxes_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/check_boxes_wd.png)
 
-## macOS :
+### macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/check_boxes_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/check_boxes_md.png)
 
-## Gnome :
+### Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/check_boxes_g.png)
 

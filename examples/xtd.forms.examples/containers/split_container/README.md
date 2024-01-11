@@ -17,19 +17,19 @@ xtdc run
 
 ## Output
 
-## Windows :
+### Windows :
 
 ![Screenshot](../../../../docs/pictures/examples/split_container_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/split_container_wd.png)
 
-## macOS :
+### macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/split_container_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/split_container_md.png)
 
-## Gnome :
+### Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/split_container_g.png)
 

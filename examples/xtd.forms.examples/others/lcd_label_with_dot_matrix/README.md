@@ -17,19 +17,19 @@ xtdc run
 
 ## Output
 
-## Windows :
+### Windows :
 
 ![Screenshot](../../../../docs/pictures/examples/lcd_label_with_dot_matrix_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/lcd_label_with_dot_matrix_wd.png)
 
-## macOS :
+### macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/lcd_label_with_dot_matrix_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/lcd_label_with_dot_matrix_md.png)
 
-## Gnome :
+### Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/lcd_label_with_dot_matrix_g.png)
 

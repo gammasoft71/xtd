@@ -17,19 +17,19 @@ xtdc run
 
 ## Output
 
-## Windows :
+### Windows :
 
 ![Screenshot](../../../../docs/pictures/examples/form_resize_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/form_resize_wd.png)
 
-## macOS :
+### macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/form_resize_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/form_resize_md.png)
 
-## Gnome :
+### Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/form_resize_g.png)
 
