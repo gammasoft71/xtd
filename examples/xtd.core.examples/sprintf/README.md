@@ -16,3 +16,11 @@
 * [sprintf_string](sprintf_string/README.md) shows how to use [xtd::ustring::sprinyf](https://gammasoft71.github.io/xtd/reference_guides/latest/group__sprintf__parse.html#ga0c65606fb81f84e4d9ea43002114d8de) method with strings (std::string, std::wstring, std::u8string, std::u16string and std::u32string).
 * [sprintf_with_alignment](sprintf_with_alignment/README.md) shows how to use [xtd::ustring::sprinyf](https://gammasoft71.github.io/xtd/reference_guides/latest/group__sprintf__parse.html#ga0c65606fb81f84e4d9ea43002114d8de) method with specified alignment args.
 * [sprintf_with_order](sprintf_with_order/README.md) shows how to use [xtd::ustring::sprinyf](https://gammasoft71.github.io/xtd/reference_guides/latest/group__sprintf__parse.html#ga0c65606fb81f84e4d9ea43002114d8de) method with specified order args.
+
+## Build and run any project
+
+Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+
+```shell
+xtdc run -t any_project_name
+```

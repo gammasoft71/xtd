@@ -12,3 +12,11 @@
 * [environment_program_exit](environment_program_exit/README.md) shows how to use [xtd::environment::program_exit](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1environment.html#abe21c5dab4d3c803aba05dd5743cea13) event.
 * [environment_stack_trace](environment_stack_trace/README.md) shows how to use [xtd::environment::stack_trace](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1diagnostics_1_1stack__trace.html) method.
 * [environment_tick_count](environment_tick_count/README.md) shows how to use [xtd::environment::tick_count](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1environment.html#a07572149363f8941095c1d6f6e40e6c5) method.
+
+## Build and run any project
+
+Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+
+```shell
+xtdc run -t any_project_name
+```

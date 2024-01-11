@@ -25,3 +25,11 @@
 * [format_unordered_associative_containers](format_unordered_associative_containers/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with associative containers (std::unordered_set, std::unordered_multiset, std::unordered_map and std::unordered_multimap).
 * [format_with_alignment](format_with_alignment/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with specified alignment args.
 * [format_with_order](format_with_order/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with specified order args.
+
+## Build and run any project
+
+Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+
+```shell
+xtdc run -t any_project_name
+```

@@ -28,3 +28,11 @@
 * [date_time_time_of_day](date_time_time_of_day/README.md) shows how to use [xtd::date_time::time_of_day](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#ab19867a4850ebd33ba52908050eb3df7) property.
 * [date_time_to_string_format](date_time_to_string_format/README.md) shows how to use [xtd::date_time::to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#a58e9d766b5af37b77d5d8239a8320ab7) with format method.
 * [date_time_today](date_time_today/README.md) shows how to use [xtd::date_time::today](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#a59f1715a20ea00fdd56aabe19b704f70) property.
+
+## Build and run any project
+
+Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+
+```shell
+xtdc run -t any_project_name
+```

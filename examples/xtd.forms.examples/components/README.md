@@ -30,3 +30,11 @@
 * [translator](translator/README.md) demonstrates the use of [xtd::forms::translator](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1translator.html) strings.
 * [translator_with_language](translator_with_language/README.md) demonstrates the use of [xtd::forms::translator](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1translator.html) strings.
 * [use_wait_cursor](use_wait_cursor/README.md) shows how to use [xtd::forms::use_wait_cursor](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1application.html#a70a9b0d8fd502111b7f4bba193135c46) component.
+
+## Build and run any project
+
+Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+
+```shell
+xtdc run -t any_project_name
+```

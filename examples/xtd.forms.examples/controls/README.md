@@ -51,3 +51,11 @@
 * [user_control](user_control/README.md) defines the base class for user controls.
 * [v_scroll_bar](v_scroll_bar/README.md) represents a standard Windows vertical scroll bar.
 * **web_browser** enables the user to navigate Web pages inside your form.
+
+## Build and run any project
+
+Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+
+```shell
+xtdc run -t any_project_name
+```

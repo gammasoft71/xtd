@@ -2,4 +2,12 @@
 
 [This folder](.) contains xtd.forms tests.
 
-* [test_forms](test_forms/README.md) tests.
+* [test_console](test_console/README.md) tests.
+
+## Build and run any project
+
+Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+
+```shell
+xtdc run -t any_project_name
+```

@@ -8,3 +8,11 @@
 * [numeric_text_box](numeric_text_box/README.md) demonstrates the customize [xtd::forms::text_box](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1text__box.html) control.
 * [owner_button](owner_button/README.md) demonstrates the customize [xtd::forms::button](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1button.html) control.
 * [toggle_light](toggle_light/README.md) demonstrates the use of [xtd::forms::user_control](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1user__control.html) control to draw toggle light.
+
+## Build and run any project
+
+Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+
+```shell
+xtdc run -t any_project_name
+```
