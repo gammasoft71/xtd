@@ -2,12 +2,12 @@
 
 represents an example of [system_report](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1system__report.html) with [xtd::forms::text_box](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1text__box.html) control.
 
-# Sources
+## Sources
 
 * [src/system_report.cpp](src/system_report.cpp)
 * [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
@@ -15,7 +15,7 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output
+## Output
 
 ## Windows :
 

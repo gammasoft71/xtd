@@ -8,7 +8,7 @@ This example simplifies this code by instantiating the xtd::action delegate inst
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
@@ -18,7 +18,7 @@ xtdc run
 
 * If action1 is called without param
 
-# Output
+## Output
 
 ```
 Hello, World!
@@ -26,7 +26,7 @@ Hello, World!
 
 * If Action1 is called with any param
 
-# Output
+## Output
 
 ## Windows :
 

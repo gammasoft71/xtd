@@ -2,13 +2,13 @@
 
 Shows how to use [xtd::date_time::to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#a58e9d766b5af37b77d5d8239a8320ab7) with format method.
 
-# Sources
+## Sources
 
 [src/date_time_to_string_format.cpp](src/date_time_to_string_format.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
@@ -16,7 +16,7 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output
+## Output
 
 ```
 PM

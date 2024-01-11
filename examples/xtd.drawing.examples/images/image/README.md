@@ -2,7 +2,7 @@
 
 Shows how to use [xtd::drawing::image](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1image.html) class.
 
-# Sources
+## Sources
 
 [src/image.cpp](src/image.cpp)
 
@@ -10,7 +10,7 @@ Shows how to use [xtd::drawing::image](https://gammasoft71.github.io/xtd/referen
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
@@ -18,7 +18,7 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output
+## Output
 
 ```
 handle = 0x600000008600

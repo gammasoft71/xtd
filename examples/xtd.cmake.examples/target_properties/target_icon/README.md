@@ -2,7 +2,7 @@
 
 Shows how to set target icon with cmake [target_icon()](https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html#TargetIconSubSection).
 
-# Sources
+## Sources
 
 [src/target_icon.cpp](src/target_icon.cpp)
 
@@ -14,7 +14,7 @@ Shows how to set target icon with cmake [target_icon()](https://gammasoft71.gith
 
 [xtd_forms.png](resources/xtd_forms.png)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 

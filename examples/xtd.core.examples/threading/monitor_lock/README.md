@@ -8,7 +8,7 @@ Shows how to use [xtd::threading::monitor](https://gammasoft71.github.io/xtd/ref
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
@@ -16,7 +16,7 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output
+## Output
 
 ```
 Starting synchronized resource access on thread #6

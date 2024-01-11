@@ -8,7 +8,7 @@ The classic first application "Hello, World!" with [xtd::console](https://gammas
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 

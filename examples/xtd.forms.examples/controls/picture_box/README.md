@@ -2,14 +2,14 @@
 
 demonstrates the use of [xtd::forms::picture_box](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1picture__box.html) control.
 
-# Sources
+## Sources
 
 * [src/picture_box.cpp](src/picture_box.cpp)
 * [properties/resources.cmake](properties/resources.cmake)
 * [resources/logo.png](resources/logo.png)
 * [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
@@ -17,7 +17,7 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output
+## Output
 
 ## Windows :
 

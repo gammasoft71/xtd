@@ -2,12 +2,12 @@
 
 demonstrates how to use [xtd::forms::switch_button](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1switch__button.html) control.
 
-# Sources
+## Sources
 
 * [src/switch_button.cpp](src/switch_button.cpp)
 * [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
@@ -15,7 +15,7 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output
+## Output
 
 ## Windows :
 

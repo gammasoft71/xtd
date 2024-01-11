@@ -8,7 +8,7 @@ Shows how to use [xtd::tunit::string_assert::ends_with](https://gammasoft71.gith
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that ends_with the project and type the following:
 
@@ -16,7 +16,7 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that ends_with the p
 xtdc run
 ```
 
-# Output
+## Output
 
 ```
 Start 2 tests from 1 test case

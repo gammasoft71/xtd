@@ -8,7 +8,7 @@ Shows how to create your own [xtd::tunit::event_listener](https://gammasoft71.gi
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
@@ -16,7 +16,7 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output
+## Output
 
 ```
 [==========] Running 3 tests from 1 test case.

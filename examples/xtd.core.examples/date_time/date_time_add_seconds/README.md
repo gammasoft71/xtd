@@ -2,13 +2,13 @@
 
 Shows how to use [xtd::date_time::add_seconds](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#a413650dded2269db34a6ec15949a5d5f) method.
 
-# Sources
+## Sources
 
 [src/date_time_add_seconds.cpp](src/date_time_add_seconds.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
@@ -16,7 +16,7 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output
+## Output
 
 ```
 Original date: 09/08/2014/16:00:00.0000000 (635457888000000000 ticks)

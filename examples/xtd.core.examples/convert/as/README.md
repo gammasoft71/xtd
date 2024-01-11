@@ -2,13 +2,13 @@
 
 Shows how to use [xtd::as](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#ga19379a1158ccd320e208b362f11295b7) operator.
 
-# Sources
+## Sources
 
 [src/as.cpp](src/as.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
@@ -16,7 +16,7 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output
+## Output
 
 ```
 d = 41.6, convert::to_int32(d) = 42, as<int>(d) = 42

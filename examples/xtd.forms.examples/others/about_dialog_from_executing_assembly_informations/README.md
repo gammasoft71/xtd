@@ -2,12 +2,12 @@
 
 demonstrates the use of [xtd::forms::about_dialog::from_executing_assembly_informations](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1about__dialog.html) method.
 
-# Sources
+## Sources
 
 * [src/about_dialog_from_executing_assembly_informations.cpp](src/about_dialog_from_executing_assembly_informations.cpp)
 * [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
@@ -15,7 +15,7 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output
+## Output
 
 ## Windows :
 

@@ -2,13 +2,13 @@
 
 Demonstrates the [xtd::time_span::from_days](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1time__span.html#a788f3085fe6068614f25c53e6bcfdbc3) method.
 
-# Sources
+## Sources
 
 [src/time_span_from_hours.cpp](src/time_span_from_hours.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
@@ -16,7 +16,7 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output
+## Output
 
 ```
 This example of time_span::from_hours(double)

@@ -2,13 +2,13 @@
 
 The classic first application "Hello, World!" with GDI+ drawing objects.
 
-# Sources
+## Sources
 
 [src/hello_world_png.cpp](src/hello_world_png.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
@@ -16,6 +16,6 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output
+## Output
 
 ![Screenshot](../../../../docs/pictures/examples/hello_world_png.png)

@@ -2,12 +2,12 @@
 
 demonstrates the use of [xtd::forms::check_box_renderer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1check__box__renderer.html) control.
 
-# Sources
+## Sources
 
 * [src/check_box_renderer.cpp](src/check_box_renderer.cpp)
 * [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
@@ -15,7 +15,7 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output
+## Output
 
 ## Windows :
 

@@ -2,13 +2,13 @@
 
 Shows how to use [xtd::date_time::add_minutes](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#a707bef059e2d5161b8545cedc58983b2) method.
 
-# Sources
+## Sources
 
 [src/date_time_add_minutes.cpp](src/date_time_add_minutes.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
@@ -16,7 +16,7 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output
+## Output
 
 ```
 2013-09-15 12:00:00 + 0.01667 minute(s) = 2013-09-15 12:00:01

@@ -2,13 +2,13 @@
 
 Shows how to use [xtd::date_time::specify_kind](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#adcb67f5e68f1830781c7d2b4e90f757c) method.
 
-# Sources
+## Sources
 
 [src/date_time_specify_kind.cpp](src/date_time_specify_kind.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
@@ -16,7 +16,7 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output
+## Output
 
 ```
 utc_now: ........... 2021-12-31 17:08:41, Kind = utc

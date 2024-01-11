@@ -8,7 +8,7 @@ Shows how to use [std::exception_ptr](https://en.cppreference.com/w/cpp/error/ex
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
@@ -16,7 +16,7 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output
+## Output
 
 ```
 xtd::invalid_operation_exception : Ouch there are an exception !

@@ -17,7 +17,7 @@ Minesweeper features:
  
  See [help](docs/help.md) for more information.
  
-# Sources
+## Sources
 
 * [src/cell.h](src/cell.h)
 * [src/cell.cpp](src/cell.cpp)
@@ -56,7 +56,7 @@ Minesweeper features:
 
 * [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
@@ -64,7 +64,7 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output
+## Output
 
 ## Windows :
 

@@ -2,12 +2,12 @@
 
 This example demonstrates how to launch form as normal window , model-less window and modal window.
 
-# Sources
+## Sources
 
 * [src/form_show.cpp](src/form_show.cpp)
 * [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
@@ -15,7 +15,7 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output
+## Output
 
 ## Windows :
 

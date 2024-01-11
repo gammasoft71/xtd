@@ -8,7 +8,7 @@ Shows how to use [xtd::tunit::string_assume::matches](https://gammasoft71.github
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that matches the project and type the following:
 
@@ -16,7 +16,7 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that matches the pro
 xtdc run
 ```
 
-# Output
+## Output
 
 ```
 Start 2 tests from 1 test case

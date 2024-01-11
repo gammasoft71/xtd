@@ -8,7 +8,7 @@ Shows how to use [xtd::startup](https://gammasoft71.github.io/xtd/reference_guid
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
