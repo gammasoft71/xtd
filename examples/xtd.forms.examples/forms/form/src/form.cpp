@@ -4,7 +4,6 @@
 #include <xtd/forms/message_box>
 #include <xtd/overload>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
