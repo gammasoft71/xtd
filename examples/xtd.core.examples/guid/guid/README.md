@@ -2,13 +2,13 @@
 
 Shows how to use [xtd::guid](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1guid.html) class.
 
-# Sources
+## Sources
 
 [src/guid.cpp](src/guid.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
@@ -16,7 +16,7 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output
+## Output
 
 ```
 {0x8b29b084,0x4be2,0x4a1d,{0x93,0x44,0x59,0xea,0x59,0x9b,0x5b,0xaa}}

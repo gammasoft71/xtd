@@ -2,13 +2,13 @@
 
 Demonstrates the [xtd::time_span](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1time__span.html) struct.
 
-# Sources
+## Sources
 
 [src/time_span.cpp](src/time_span.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
@@ -16,7 +16,7 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output
+## Output
 
 ```
 Wed Aug 18 13:30:30 2010 - Fri Jan  1 08:00:15 2010 = 229.05:30:15

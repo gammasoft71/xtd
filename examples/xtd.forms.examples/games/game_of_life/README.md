@@ -25,14 +25,14 @@ A new generation of cells (corresponding to one iteration of the rules) is initi
 The 'Run' button advances the game by several generations. 
 Game speed is regulated by the speed track bar and the size of the cells with the size track bar.
 
-# Sources
+## Sources
 
 * [src/cell.h](src/cell.h)
 * [src/grid.h](src/grid.h)
 * [src/game_of_life.h](src/game_of_life.h)
 * [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
@@ -40,7 +40,7 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output
+## Output
 
 ## Windows :
 

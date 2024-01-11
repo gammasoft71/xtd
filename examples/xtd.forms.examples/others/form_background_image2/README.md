@@ -2,7 +2,7 @@
 
 demonstrates how to use of [xtd::forms::form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html) control with background_image.
 
-# Sources
+## Sources
 
 * [src/form_background_image2.cpp](src/form_background_image2.cpp)
 * [properties/resources.cmake](properties/resources.cmake)
@@ -10,7 +10,7 @@ demonstrates how to use of [xtd::forms::form](https://gammasoft71.github.io/xtd/
 * [resources/bliss_night.png](resources/background_light.png)
 * [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
@@ -18,7 +18,7 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output
+## Output
 
 ## Windows :
 

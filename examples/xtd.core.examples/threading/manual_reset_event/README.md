@@ -8,7 +8,7 @@ Shows how to use [xtd::threading::manual_reset_event](https://gammasoft71.github
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
@@ -16,7 +16,7 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output
+## Output
 
 ```
 Start 3 named threads that block on a ManualresetEvent:

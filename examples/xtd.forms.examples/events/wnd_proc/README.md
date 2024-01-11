@@ -2,12 +2,12 @@
 
 demonstrates the use of [wnd_proc](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#ac75d78bfc73154decabddc734cd28096) method.
 
-# Sources
+## Sources
 
 * [src/wnd_proc.cpp](src/wnd_proc.cpp)
 * [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
@@ -15,7 +15,7 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output
+## Output
 
 ## Windows :
 

@@ -8,7 +8,7 @@ Shows how to use [xtd::console::background_color4](https://gammasoft71.github.io
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
@@ -16,6 +16,6 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output
+## Output
 
 ![Screenshot](../../../../docs/pictures/examples/console_color2.png)

@@ -2,13 +2,13 @@
 
 Shows how to use [xtd::date_time::time_of_day](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#ab19867a4850ebd33ba52908050eb3df7) property.
 
-# Sources
+## Sources
 
 [src/date_time_time_of_day.cpp](src/date_time_time_of_day.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
@@ -16,7 +16,7 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output
+## Output
 
 ```
 Day: 01/12/2022 Time: 12:51:49

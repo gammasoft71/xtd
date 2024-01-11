@@ -2,13 +2,13 @@
 
 Shows how to use [xtd::date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) class with ticks constructors.
 
-# Sources
+## Sources
 
 [src/date_time_ticks.cpp](src/date_time_ticks.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
@@ -16,7 +16,7 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output
+## Output
 
 ```
 1) The maximum date and time is 12/31/9999 23:59:59

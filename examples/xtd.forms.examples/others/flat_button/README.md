@@ -2,14 +2,14 @@
 
 demonstrates the use of [xtd::forms::button](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1button.html) control with flat style.
 
-# Sources
+## Sources
 
 * [src/flat_button.cpp](src/flat_button.cpp)
 * [reources/gammasoft_32x32.xpm](reources/gammasoft_32x32.xpm)
 * [reources/gammasoft_64x64.xpm](reources/gammasoft_64x64.xpm)
 * [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
@@ -17,7 +17,7 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output
+## Output
 
 ## Windows :
 

@@ -8,7 +8,7 @@ Shows how to use [xtd::timers::timer::synchronizing_object](https://gammasoft71.
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 

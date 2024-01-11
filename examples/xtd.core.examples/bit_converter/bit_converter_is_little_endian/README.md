@@ -8,7 +8,7 @@ Shows how to use [bit_converter::is_little_endian](https://gammasoft71.github.io
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
@@ -16,7 +16,7 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output
+## Output
 
 ```
 This example of the bit_converter::is_little_endian field generates

@@ -8,7 +8,7 @@ Shows how to use [xtd::delegate::begin_invoke](https://gammasoft71.github.io/xtd
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
@@ -16,7 +16,7 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output
+## Output
 
 ```
 (Thread 1) Hello xtd!

@@ -2,13 +2,13 @@
 
 This example uses several mathematical and trigonometric functions from the [xtd::math](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1math.html) class to calculate the inner angles of a trapezoid.
 
-# Sources
+## Sources
 
 [src/math.cpp](src/math.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
@@ -16,7 +16,7 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output
+## Output
 
 ```
 The trapezoid's bases are 20.0 and 10.0, the trapezoid's legs are 8.0 and 6.0

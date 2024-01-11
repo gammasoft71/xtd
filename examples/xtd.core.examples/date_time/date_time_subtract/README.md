@@ -2,13 +2,13 @@
 
 Shows how to use [xtd::date_time::subtract](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#aaf1f38f9b51733e38b5db3b5dfde6bb6) method.
 
-# Sources
+## Sources
 
 [src/date_time_subtract.cpp](src/date_time_subtract.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
@@ -16,7 +16,7 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output
+## Output
 
 ```
 date1 = 1996-06-03 22:15:00

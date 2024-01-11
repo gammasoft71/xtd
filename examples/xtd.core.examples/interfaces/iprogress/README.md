@@ -2,13 +2,13 @@
 
 Shows how to use how to use [xtd::iprogress](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1iprogress.html) interface.
 
-# Sources
+## Sources
 
 [src/iprogress.cpp](src/iprogress.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
@@ -16,7 +16,7 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output
+## Output
 
 ```
 Started

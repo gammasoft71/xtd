@@ -2,12 +2,12 @@
 
 demonstrates the use of [xtd::forms::split_container](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1split__container.html) container.
 
-# Sources
+## Sources
 
 * [src/split_container.cpp](src/split_container.cpp)
 * [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
@@ -15,7 +15,7 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output
+## Output
 
 ## Windows :
 

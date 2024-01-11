@@ -2,12 +2,12 @@
 
 demonstrates how to create a [xtd::forms::button](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1button.html) control with [style_sheet](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1style__sheets_1_1style__sheet.html).
 
-# Sources
+## Sources
 
 * [src/button_with_style_sheet.cpp](src/button_with_style_sheet.cpp)
 * [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
@@ -15,7 +15,7 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output
+## Output
 
 ## Windows :
 

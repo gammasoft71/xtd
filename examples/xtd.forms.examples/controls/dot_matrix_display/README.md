@@ -2,12 +2,12 @@
 
 demonstrates how to use [xtd::forms::dot_matrix_display](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1dot__matrix__display.html) control.
 
-# Sources
+## Sources
 
 * [src/dot_matrix_display.cpp](src/dot_matrix_display.cpp)
 * [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
@@ -15,7 +15,7 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output
+## Output
 
 ## Windows :
 

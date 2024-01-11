@@ -2,12 +2,12 @@
 
 demonstrates the use of [form](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#gafbf4f123f0b8b904992f3476a1b12b3d) event.
 
-# Sources
+## Sources
 
 * [src/move_form.cpp](src/move_form.cpp)
 * [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
@@ -15,7 +15,7 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output
+## Output
 
 ## Windows :
 

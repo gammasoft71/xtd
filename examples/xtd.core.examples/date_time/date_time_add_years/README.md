@@ -2,13 +2,13 @@
 
 Shows how to use [xtd::date_time::add_years](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#a673fa2094f973e199e9ebcc1f6e48158) method.
 
-# Sources
+## Sources
 
 [src/date_time_add_years.cpp](src/date_time_add_years.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
@@ -16,7 +16,7 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output
+## Output
 
 ```
      Base Date:        02/29/2000

@@ -2,12 +2,12 @@
 
 shows how to draw image in paint event using [xtd::drawing::graphics::draw_image](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1graphics.html#aca14d418dfc8999e4a59092bcc902637).
 
-# Sources
+## Sources
 
 * [src/draw_image.cpp](src/draw_image.cpp)
 * [CMakeLists.txt](CMakeLists.txt)
 
-# Build and run
+## Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
@@ -15,7 +15,7 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-# Output
+## Output
 
 ## Windows :
 
