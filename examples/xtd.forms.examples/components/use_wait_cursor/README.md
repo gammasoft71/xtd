@@ -17,19 +17,19 @@ xtdc run
 
 ## Output
 
-## Windows :
+### Windows :
 
 ![Screenshot](../../../../docs/pictures/examples/use_wait_cursor_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/use_wait_cursor_wd.png)
 
-## macOS :
+### macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/use_wait_cursor_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/use_wait_cursor_md.png)
 
-## Gnome :
+### Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/use_wait_cursor_g.png)
 

@@ -18,19 +18,19 @@ xtdc run
 
 ## Output
 
-## Windows :
+### Windows :
 
 ![Screenshot](../../../../docs/pictures/examples/application_with_manual_assembly_info_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/application_with_manual_assembly_info_wd.png)
 
-## macOS :
+### macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/application_with_manual_assembly_info_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/application_with_manual_assembly_info_md.png)
 
-## Gnome :
+### Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/application_with_manual_assembly_info_g.png)
 

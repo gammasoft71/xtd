@@ -17,19 +17,19 @@ xtdc run
 
 ## Output
 
-## Windows :
+### Windows :
 
 ![Screenshot](../../../../docs/pictures/examples/loading_indicator_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/loading_indicator_wd.png)
 
-## macOS :
+### macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/loading_indicator_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/loading_indicator_md.png)
 
-## Gnome :
+### Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/loading_indicator_g.png)
 

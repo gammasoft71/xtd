@@ -17,19 +17,19 @@ xtdc run
 
 ## Output
 
-## Windows :
+### Windows :
 
 ![Screenshot](../../../../docs/pictures/examples/wiggly_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/wiggly_wd.png)
 
-## macOS :
+### macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/wiggly_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/wiggly_md.png)
 
-## Gnome :
+### Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/wiggly_g.png)
 

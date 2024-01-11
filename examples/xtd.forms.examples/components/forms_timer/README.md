@@ -17,19 +17,19 @@ xtdc run
 
 ## Output
 
-## Windows :
+### Windows :
 
 ![Screenshot](../../../../docs/pictures/examples/forms_timer_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/forms_timer_wd.png)
 
-## macOS :
+### macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/forms_timer_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/forms_timer_md.png)
 
-## Gnome :
+### Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/forms_timer_g.png)
 

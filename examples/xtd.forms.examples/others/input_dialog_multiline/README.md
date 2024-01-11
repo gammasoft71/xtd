@@ -17,19 +17,19 @@ xtdc run
 
 ## Output
 
-## Windows :
+### Windows :
 
 ![Screenshot](../../../../docs/pictures/examples/input_dialog_multiline_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/input_dialog_multiline_wd.png)
 
-## macOS :
+### macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/input_dialog_multiline_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/input_dialog_multiline_md.png)
 
-## Gnome :
+### Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/input_dialog_multiline_g.png)
 

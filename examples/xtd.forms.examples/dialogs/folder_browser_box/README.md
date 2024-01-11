@@ -17,19 +17,19 @@ xtdc run
 
 ## Output
 
-## Windows :
+### Windows :
 
 ![Screenshot](../../../../docs/pictures/examples/folder_browser_box_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/folder_browser_box_wd.png)
 
-## macOS :
+### macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/folder_browser_box_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/folder_browser_box_md.png)
 
-## Gnome :
+### Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/folder_browser_box_g.png)
 

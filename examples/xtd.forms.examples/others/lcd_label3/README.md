@@ -17,19 +17,19 @@ xtdc run
 
 ## Output
 
-## Windows :
+### Windows :
 
 ![Screenshot](../../../../docs/pictures/examples/lcd_label3_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/lcd_label3_wd.png)
 
-## macOS :
+### macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/lcd_label3_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/lcd_label3_md.png)
 
-## Gnome :
+### Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/lcd_label3_g.png)
 

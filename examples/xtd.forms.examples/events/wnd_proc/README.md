@@ -17,19 +17,19 @@ xtdc run
 
 ## Output
 
-## Windows :
+### Windows :
 
 ![Screenshot](../../../../docs/pictures/examples/wnd_proc_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/wnd_proc_wd.png)
 
-## macOS :
+### macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/wnd_proc_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/wnd_proc_md.png)
 
-## Gnome :
+### Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/wnd_proc_g.png)
 

@@ -17,19 +17,19 @@ xtdc run
 
 ## Output
 
-## Windows :
+### Windows :
 
 ![Screenshot](../../../../docs/pictures/examples/input_dialog_password_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/input_dialog_password_wd.png)
 
-## macOS :
+### macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/input_dialog_password_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/input_dialog_password_md.png)
 
-## Gnome :
+### Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/input_dialog_password_g.png)
 

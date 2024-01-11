@@ -17,19 +17,19 @@ xtdc run
 
 ## Output
 
-## Windows :
+### Windows :
 
 ![Screenshot](../../../../docs/pictures/examples/fill_ellipse_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/fill_ellipse_wd.png)
 
-## macOS :
+### macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/fill_ellipse_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/fill_ellipse_md.png)
 
-## Gnome :
+### Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/fill_ellipse_g.png)
 

@@ -19,19 +19,19 @@ xtdc run
 
 ## Output
 
-## Windows :
+### Windows :
 
 ![Screenshot](../../../../docs/pictures/examples/colors_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/colors_wd.png)
 
-## macOS :
+### macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/colors_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/colors_md.png)
 
-## Gnome :
+### Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/colors_g.png)
 

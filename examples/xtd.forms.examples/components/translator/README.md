@@ -21,19 +21,19 @@ xtdc run
 
 ## Output
 
-## Windows :
+### Windows :
 
 ![Screenshot](../../../../docs/pictures/examples/translator_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/translator_wd.png)
 
-## macOS :
+### macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/translator_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/translator_md.png)
 
-## Gnome :
+### Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/translator_g.png)
 

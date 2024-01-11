@@ -17,19 +17,19 @@ xtdc run
 
 ## Output
 
-## Windows :
+### Windows :
 
 ![Screenshot](../../../../docs/pictures/examples/background_worker_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/background_worker_wd.png)
 
-## macOS :
+### macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/background_worker_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/background_worker_md.png)
 
-## Gnome :
+### Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/background_worker_g.png)
 

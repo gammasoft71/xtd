@@ -17,19 +17,19 @@ xtdc run
 
 ## Output
 
-## Windows :
+### Windows :
 
 ![Screenshot](../../../../docs/pictures/examples/control_with_name_operator_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/control_with_name_operator_wd.png)
 
-## macOS :
+### macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/control_with_name_operator_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/control_with_name_operator_md.png)
 
-## Gnome :
+### Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/control_with_name_operator_g.png)
 

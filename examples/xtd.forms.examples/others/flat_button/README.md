@@ -19,19 +19,19 @@ xtdc run
 
 ## Output
 
-## Windows :
+### Windows :
 
 ![Screenshot](../../../../docs/pictures/examples/flat_button_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/flat_button_wd.png)
 
-## macOS :
+### macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/flat_button_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/flat_button_md.png)
 
-## Gnome :
+### Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/flat_button_g.png)
 

@@ -17,19 +17,19 @@ xtdc run
 
 ## Output
 
-## Windows :
+### Windows :
 
 ![Screenshot](../../../../docs/pictures/examples/colored_forms_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/colored_forms_wd.png)
 
-## macOS :
+### macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/colored_forms_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/colored_forms_md.png)
 
-## Gnome :
+### Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/colored_forms_g.png)
 

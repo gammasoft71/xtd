@@ -17,19 +17,19 @@ xtdc run
 
 ## Output
 
-## Windows :
+### Windows :
 
 ![Screenshot](../../../../docs/pictures/examples/hello_world_message_box2_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/hello_world_message_box2_wd.png)
 
-## macOS :
+### macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/hello_world_message_box2_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/hello_world_message_box2_md.png)
 
-## Linux Gnome :
+### Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/hello_world_message_box2_g.png)
 

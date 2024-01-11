@@ -17,19 +17,19 @@ xtdc run
 
 ## Output
 
-## Windows :
+### Windows :
 
 ![Screenshot](../../../../docs/pictures/examples/fill_rectangle_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/fill_rectangle_wd.png)
 
-## macOS :
+### macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/fill_rectangle_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/fill_rectangle_md.png)
 
-## Gnome :
+### Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/fill_rectangle_g.png)
 

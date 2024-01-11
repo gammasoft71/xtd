@@ -17,19 +17,19 @@ xtdc run
 
 ## Output
 
-## Windows :
+### Windows :
 
 ![Screenshot](../../../../docs/pictures/examples/colored_tab_pages_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/colored_tab_pages_wd.png)
 
-## macOS :
+### macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/colored_tab_pages_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/colored_tab_pages_md.png)
 
-## Gnome :
+### Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/colored_tab_pages_g.png)
 

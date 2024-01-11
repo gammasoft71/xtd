@@ -66,19 +66,19 @@ xtdc run
 
 ## Output
 
-## Windows :
+### Windows :
 
 ![Screenshot](../../../../docs/pictures/examples/minesweeper_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/minesweeper_wd.png)
 
-## macOS :
+### macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/minesweeper_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/minesweeper_md.png)
 
-## Gnome :
+### Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/minesweeper_g.png)
 

@@ -17,19 +17,19 @@ xtdc run
 
 ## Output
 
-## Windows :
+### Windows :
 
 ![Screenshot](../../../../docs/pictures/examples/radio_button_renderer_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/radio_button_renderer_wd.png)
 
-## macOS :
+### macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/radio_button_renderer_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/radio_button_renderer_md.png)
 
-## Gnome :
+### Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/radio_button_renderer_g.png)
 

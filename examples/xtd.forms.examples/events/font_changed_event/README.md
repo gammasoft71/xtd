@@ -17,19 +17,19 @@ xtdc run
 
 ## Output
 
-## Windows :
+### Windows :
 
 ![Screenshot](../../../../docs/pictures/examples/font_changed_event_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/font_changed_event_wd.png)
 
-## macOS :
+### macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/font_changed_event_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/font_changed_event_md.png)
 
-## Gnome :
+### Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/font_changed_event_g.png)
 

@@ -17,19 +17,19 @@ xtdc run
 
 ## Output
 
-## Windows :
+### Windows :
 
 ![Screenshot](../../../../docs/pictures/examples/main_menu_create_standard_items_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/main_menu_create_standard_items_wd.png)
 
-## macOS :
+### macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/main_menu_create_standard_items_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/main_menu_create_standard_items_md.png)
 
-## Gnome :
+### Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/main_menu_create_standard_items_g.png)
 

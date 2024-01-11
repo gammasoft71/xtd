@@ -17,19 +17,19 @@ xtdc run
 
 ## Output
 
-## Windows :
+### Windows :
 
 ![Screenshot](../../../../docs/pictures/examples/application_restart_w.png)
 
 ![Screenshot](../../../../docs/pictures/examples/application_restart_wd.png)
 
-## macOS :
+### macOS :
 
 ![Screenshot](../../../../docs/pictures/examples/application_restart_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/application_restart_md.png)
 
-## Gnome :
+### Gnome :
 
 ![Screenshot](../../../../docs/pictures/examples/application_restart_g.png)
 
