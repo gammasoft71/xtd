@@ -62,3 +62,11 @@
 * [toggle_button2](toggle_button2/README.md) represents a [xtd::forms::toggle_button](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1toggle__button.html) control.
 * [track_bar2](track_bar2/README.md) represents a standard Windows [xtd::forms::track_bar](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1track__bar.html).
 * [wiggly](wiggly/README.md) shows how to animate a user control using timer and timer::event. In addition, the example demonstrates how to use graphics::measure_string to determine the size of text on screen.
+
+## Build and run any project
+
+Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+
+```shell
+xtdc run -t any_project_name
+```

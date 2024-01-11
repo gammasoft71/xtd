@@ -108,3 +108,11 @@
 * [Hello Worlds](xtd.cmake.examples/hello_worlds/README.md) contains xtd.cmake "Hello, World!" examples.
 * [Target properties](xtd.cmake.examples/target_properties/README.md) contains cmake target properties examples.
 * [Build options](xtd.cmake.examples/build_options/README.md) contains cmake build options examples.
+
+## Build and run any project
+
+Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+
+```shell
+xtdc run -t any_project_name
+```

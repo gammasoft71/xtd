@@ -13,3 +13,11 @@
 * [enum_struct](enum_struct/README.md) shows how to use [xtd::enum_object](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1enum__object.html) class and [enum_struct_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga85a4f5366ae461ca1e20872d39a0b440) helper.
 * [enum_struct_ut](enum_struct_ut/README.md) shows how to use [xtd::enum_object](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1enum__object.html) class and [enum_struct_ut_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga341342381ae697a142233d256948df84) helper.
 * [enum_ut](enum_ut/README.md) shows how to use [xtd::enum_object](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1enum__object.html) class and [enum_ut_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gabe13d52c924723772f27878f606210cd) helper.
+
+## Build and run any project
+
+Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+
+```shell
+xtdc run -t any_project_name
+```

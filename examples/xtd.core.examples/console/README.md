@@ -24,3 +24,11 @@
 * [console_window_size](console_window_size/README.md) shows how to use [xtd::console::set_window_size](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html#a390011ad7e02c84804983afe83e40ad5) method.
 * [redirect_output](redirect_output/README.md) shows how to use [xtd::console](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html) class.
 * [wconsole](wconsole/README.md) shows how to use [xtd::console](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html) class.
+
+## Build and run any project
+
+Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+
+```shell
+xtdc run -t any_project_name
+```

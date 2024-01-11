@@ -7,3 +7,11 @@
 * **chart** 
 * **data_grid_view** displays data in a customizable grid.
 * **data_set** 
+
+## Build and run any project
+
+Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+
+```shell
+xtdc run -t any_project_name
+```

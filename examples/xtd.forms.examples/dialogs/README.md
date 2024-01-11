@@ -34,3 +34,11 @@
 * [save_file_dialog](save_file_dialog/README.md) prompts the user to select a location for saving a file.
 * [trace_message_box](trace_message_box/README.md) represents a trace message box that displays trace message box and write trace message.
 * [trace_message_dialog](trace_message_dialog/README.md) represents a trace message dialog that displays trace message dialog and write trace message.
+
+## Build and run any project
+
+Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+
+```shell
+xtdc run -t any_project_name
+```

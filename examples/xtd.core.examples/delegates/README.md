@@ -12,3 +12,11 @@
 * [delegate_member_method](delegate_member_method/README.md) shows how to use [xtd::delegate](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1delegate_3_01result__t_07_08_4.html) class.
 * [delegate_multicast](delegate_multicast/README.md) shows how to use [xtd::delegate](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1delegate_3_01result__t_07_08_4.html) class.
 * [event](event/README.md) shows how to use [xtd::event](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1event.html) class.
+
+## Build and run any project
+
+Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+
+```shell
+xtdc run -t any_project_name
+```

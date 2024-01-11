@@ -14,3 +14,11 @@
 * [stopwatch_constructor](stopwatch_constructor/README.md) initializes a [xtd::diagnostics::stopwatch](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1diagnostics_1_1stopwatch.html) instance by using a simple class constructor.
 * [trace](trace/README.md) shows how to use [xtd::diagnostics::trace](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1diagnostics_1_1trace.html) class.
 * [trace_cassert](trace_cassert/README.md) shows how to use [xtd::diagnostics::trace::cassert](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1diagnostics_1_1debug.html#acdb0d00e4b12fccc037cf3f965110d72) method.
+
+## Build and run any project
+
+Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+
+```shell
+xtdc run -t any_project_name
+```

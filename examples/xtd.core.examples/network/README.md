@@ -15,3 +15,11 @@
 * [tcp_client_ip_v6](tcp_client_ip_v6/README.md) shows hows how to use [xtd::net::sockets::tcp_client](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1net_1_1sockets_1_1tcp__client.html) class.
 * [udp_client_ip_v4](udp_client_ip_v4/README.md) shows hows how to use [xtd::net::sockets::udp_client](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1net_1_1sockets_1_1udp__client.html) class.
 * [udp_client_ip_v6](udp_client_ip_v6/README.md) shows hows how to use [xtd::net::sockets::udp_client](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1net_1_1sockets_1_1udp__client.html) class.
+
+## Build and run any project
+
+Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+
+```shell
+xtdc run -t any_project_name
+```

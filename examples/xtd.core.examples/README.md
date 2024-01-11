@@ -357,3 +357,11 @@
 * [hello_world_diagnostics2](others/hello_world_diagnostics2/README.md) The same classic first application "Hello World" on the debug output stream with another style.
 * [hello_world_environment2](others/hello_world_environment2/README.md) The same classic first application "Hello World" environment with another style.
 * [wconsole2](others/wconsole2/README.md) shows how to use [xtd::wconsole](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html) class.
+
+## Build and run any project
+
+Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+
+```shell
+xtdc run -t any_project_name
+```

@@ -12,3 +12,11 @@
 * [tab_control](tab_control/README.md) manages a related set of tab pages.
 * **table_layout_panel** represents a panel that dynamically lays out its contents in a grid composed of rows and columns.
 * [vertical_layout_panel](vertical_layout_panel/README.md) used to group collections of horizontal aligned controls.
+
+## Build and run any project
+
+Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+
+```shell
+xtdc run -t any_project_name
+```

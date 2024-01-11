@@ -14,3 +14,11 @@
 * [static_object](static_object/README.md) shows how to use [static_object_](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1static__object.html) keyword.
 * [static_object2](static_object2/README.md) shows how to use [xtd::static_object](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1static__object.html) class.
 * [using](using/README.md) shows how to use [using_](https://gammasoft71.github.io/xtd/reference_guides/latest/using_8h.html) method.
+
+## Build and run any project
+
+Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+
+```shell
+xtdc run -t any_project_name
+```

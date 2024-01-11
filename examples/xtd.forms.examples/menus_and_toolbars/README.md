@@ -11,3 +11,11 @@
 * [tool_bar](tool_bar/README.md) represents a tool bar for a form.
 * **tool_strip** represents a container for Windows toolbar objects.
 * **tool_strip_container** represents panels on each side of the form and a central panel that can hold one or more controls.
+
+## Build and run any project
+
+Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+
+```shell
+xtdc run -t any_project_name
+```

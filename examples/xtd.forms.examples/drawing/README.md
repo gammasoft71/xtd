@@ -11,3 +11,11 @@
 * [fill_ellipse](fill_ellipse/README.md) shows how to fill ellipse in paint event.
 * [fill_rectangle](fill_rectangle/README.md) shows how to fill rectangle in paint event.
 * [fill_rounded_rectangle](fill_rounded_rectangle/README.md) shows how to fill rounded rectangle in paint event.
+
+## Build and run any project
+
+Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+
+```shell
+xtdc run -t any_project_name
+```

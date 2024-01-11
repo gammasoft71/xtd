@@ -22,3 +22,11 @@
 * [timeout](timeout/README.md) shows how to use [xtd::threading:timeout](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1timeout.html) class.
 * [timer](timer/README.md) shows how to use [xtd::threading:timer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1timer.html) class.
 * [wait_handle](wait_handle/README.md) shows how to use [xtd::threading:wait_handle](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1wait__handle.html) class.
+
+## Build and run any project
+
+Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+
+```shell
+xtdc run -t any_project_name
+```

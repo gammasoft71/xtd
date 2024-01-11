@@ -15,3 +15,11 @@
 * [move_form](move_form/README.md) demonstrates the use of move form events.
 * [send_message_to_form](send_message_to_form/README.md) demonstrates how to send message to form.
 * [wnd_proc](wnd_proc/README.md) demonstrates the use of [wnd_proc](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#ac75d78bfc73154decabddc734cd28096) method.
+
+## Build and run any project
+
+Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+
+```shell
+xtdc run -t any_project_name
+```
