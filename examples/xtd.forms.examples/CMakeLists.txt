@@ -6,16 +6,16 @@ find_package(xtd REQUIRED)
 add_projects(
   hello_worlds
   applications
-  controls
-  containers
-  menus_and_toolbars
-  forms
   dialogs
-  datas
+  forms
+  menus_and_toolbars
+  containers
+  controls
   components
+  datas
   printing
-  themes
   events
+  themes
   user_dialogs
   user_controls
   drawing
