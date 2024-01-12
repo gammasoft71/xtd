@@ -3,7 +3,7 @@
 [This folder](.) contains xtd.forms application examples.
 
 * [application](application/README.md) shows how to create an application with [xtd::forms::application](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1application.html) class.
-* [application_and_assert](application_and_assert/README.md) shows how to create an application with [xtd::forms::application](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1application.html) class and hot to manage assert.
+* [application_and_assert](application_and_assert/README.md) shows how to create an application with [xtd::forms::application](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1application.html) class and how to manage assert.
 * [application_and_exception](application_and_exception/README.md) shows how to create an application with [xtd::forms::application](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1application.html) class and hot to manage exception.
 * [application_context](application_context/README.md) shows how to create an application with [xtd::forms::application](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1application.html) class.
 * [application_restart](application_restart/README.md) shows how to restart application with [xtd::forms::application::restart](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1application.html#a9d1de5b2f5e8ee4b46a24aa8f556a5c2) method.
