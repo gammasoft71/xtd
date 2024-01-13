@@ -15,7 +15,7 @@
 * [hello_world_say](hello_worlds/hello_world_say/README.md) The classic first application "Hello, World!" with [xtd::forms::button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html) control and [xtd::speech::synthesis::speech_synthesizer](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1speech_1_1synthesis_1_1speech__synthesizer.html) class.
 * [hello_world_xtd](hello_worlds/hello_world_xtd/README.md) The classic first application "Hello, World!" with [xtd::forms::main_menu](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1main__menu.html) menu, [xtd::sorms::status_bar](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1status__bar.html) control, and [xtd::event_handler](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b).
 
-## [application](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html)
+## [Application](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html)
 
 * [application](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html) shows how to create an application with [xtd::forms::application](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html) class.
 * [application_and_assert](applications/application_and_assert/README.md) shows how to create an application with [xtd::forms::application](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html) class and hot to manage assert.
@@ -61,7 +61,7 @@
 * [trace_message_box](dialogs/trace_message_box/README.md) represents a trace message box that displays trace message box and write trace message.
 * [trace_message_dialog](dialogs/trace_message_dialog/README.md) represents a trace message dialog that displays trace message dialog and write trace message.
 
-## [forms](forms/README.md)
+## [Forms](forms/README.md)
 
 * [circular_form](forms/circular_form/README.md) demonstrates the use of [xtd::control::region](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#ad87086e004f60985be7fa8d6eb1f8527) property for create a circular form.
 * [debug_form](forms/debug_form/README.md) represents a form that trace all written debug with xtd::diagnostics::debug class.
@@ -82,7 +82,7 @@
 * **tool_strip** represents a container for Windows toolbar objects.
 * **tool_strip_container** represents panels on each side of the form and a central panel that can hold one or more controls.
 
-## [containers](containers/README.md)
+## [Containers](containers/README.md)
 
 * **flow_layout_panel** represents a panel that dynamically lays out its contents horizontally or vertically.
 * [collapsible_panel](containers/collapsible_panel/README.md) used to group collections of controls in a collapsible container.
