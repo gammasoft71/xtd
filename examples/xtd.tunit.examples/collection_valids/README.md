@@ -13,3 +13,11 @@
 * [collection_valid_is_empty](collection_valid_is_empty/README.md) shows how to use [xtd::tunit::collection_valid::is_empty](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__valid.html#a179eeadd8e0002a0ced692583bc96377) method.
 * [collection_valid_is_not_empty](collection_valid_is_not_empty/README.md) shows how to use [xtd::tunit::collection_valid::is_not_empty](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__valid.html#a988063d96e516913628f442aec6c95b3) method.
 * [collection_valid_is_ordered](collection_valid_is_ordered/README.md) shows how to use [xtd::tunit::collection_valid::is_ordered](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__valid.html#abab68a7c738a9c696db3d6e8195d11d8) method.
+
+## Build and run any project
+
+Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+
+```shell
+xtdc run -t any_project_name
+```
