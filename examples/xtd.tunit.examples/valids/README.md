@@ -27,3 +27,11 @@
 * [valid_is_zero](valid_is_zero/README.md) shows how to use [xtd::tunit::valid::is_zero](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#a82842ce982e054e8145286d64e83266b) method.
 * [valid_throws](valid_throws/README.md) shows how to use [xtd::tunit::valid::throws](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#adaefe0145f2f2c4dd21a5c8f307f8278) method.
 * [valid_throws_any](valid_throws_any/README.md) shows how to use [xtd::tunit::valid::throws_any](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#a1efbf499859e744ebeb073ba0c84e642) method.
+
+## Build and run any project
+
+Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+
+```shell
+xtdc run -t any_project_name
+```
