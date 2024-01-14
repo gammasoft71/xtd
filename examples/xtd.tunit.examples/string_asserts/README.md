@@ -11,3 +11,11 @@
 * [string_assert_ends_with](string_assert_ends_with/README.md) shows how to use [xtd::tunit::string_assert::ends_with](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__assert.html#aa48fa8ff8f40e30c289aedcd1941b482) method.
 * [string_assert_matches](string_assert_matches/README.md) shows how to use [xtd::tunit::string_assert::matches](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__assert.html#ae2219060040a4aead8be62a283f36505) method.
 * [string_assert_starts_with](string_assert_starts_with/README.md) shows how to use [xtd::tunit::string_assert::starts_with](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__assert.html#a798f3ad026c80669f79045b8f5e96bee) method.
+
+## Build and run any project
+
+Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+
+```shell
+xtdc run -t any_project_name
+```
