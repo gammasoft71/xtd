@@ -273,3 +273,11 @@
 * [many_asserts](others/many_asserts/README.md) shows how to use [xtd::tunit::assert](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assert.html) class with many asserts.
 * [many_valids_and_asserts](others/many_valids_and_asserts/README.md) shows how to use [xtd::tunit::valid](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html) and [xtd::tunit::assert](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assert.html) classes with many valids and asserts.
 * [tunit_config_main](others/tunit_config_main/README.md) shows how to use [TUNIT_CONFIG_MAIN](https://gammasoft71.github.io/xtd/reference_guides/latest/default__main_8h.html) define to automatically generate entry point.
+
+## Build and run any project
+
+Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+
+```shell
+xtdc run -t any_project_name
+```
