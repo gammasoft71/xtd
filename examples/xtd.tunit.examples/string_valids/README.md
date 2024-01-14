@@ -11,3 +11,11 @@
 * [string_valid_ends_with](string_valid_ends_with/README.md) shows how to use [xtd::tunit::string_valid::ends_with](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__valid.html#abf0a6a55c5b4588c46d906d421fda56b) method.
 * [string_valid_matches](string_valid_matches/README.md) shows how to use [xtd::tunit::string_valid::matches](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__valid.html#a96767fa89a4c5d96149b6abbd5752a70) method.
 * [string_valid_starts_with](string_valid_starts_with/README.md) shows how to use [xtd::tunit::string_valid::starts_with](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__valid.html#a4095a956cb2d28231f29258166351a4f) method.
+
+## Build and run any project
+
+Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+
+```shell
+xtdc run -t any_project_name
+```
