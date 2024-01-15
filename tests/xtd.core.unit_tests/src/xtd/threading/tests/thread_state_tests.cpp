@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(thread_state_tests) {
-  public:
     void test_method_(running) {
       assert::are_equal(0, enum_object<>::to_int32(thread_state::running), csf_);
       assert::are_equal("running", enum_object<>::to_string(thread_state::running), csf_);

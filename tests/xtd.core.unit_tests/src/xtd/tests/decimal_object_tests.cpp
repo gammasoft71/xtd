@@ -12,7 +12,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(decimal_object_tests) {
-  public:
     void test_method_(epsilon) {
       assert::are_equal(0, decimal_object::epsilon, csf_);
     }

@@ -23,7 +23,6 @@ namespace xtd::io::tests {
       directory_assume::does_not_exist(test_path, csf_);
     }
     
-  public:
     void test_method_(create_with_existing_path) {
       directory_assume::exists(test_path, csf_);
       assert::does_not_throw([] {directory_info di(test_path);}, csf_);

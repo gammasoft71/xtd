@@ -17,7 +17,6 @@ namespace xtd::net::tests {
   };
   
   class test_class_(end_point_tests) {
-  public:
     void test_method_(create_end_point_with_address_family_unknown) {
       tend_point ep(address_family::unknown);
       assert::are_equal(address_family::unknown, ep.address_family(), csf_);

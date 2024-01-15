@@ -10,7 +10,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(convert_pointer_tests) {
-  public:
     void test_method_(const_object_to_ptr) {
       const guid* g1 = new guid();
       

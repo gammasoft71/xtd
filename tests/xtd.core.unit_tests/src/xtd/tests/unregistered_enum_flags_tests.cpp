@@ -18,7 +18,6 @@ inline unregistered_enum_flags_test operator |(unregistered_enum_flags_test lhs,
 
 namespace xtd::tests {
   class test_class_(unregistered_enum_flags_tests) {
-  public:
     void test_method_(format) {
       assert::are_equal("0", ustring::format("{}", unregistered_enum_flags_test::none), csf_);
       assert::are_equal("1", ustring::format("{}", unregistered_enum_flags_test::one), csf_);

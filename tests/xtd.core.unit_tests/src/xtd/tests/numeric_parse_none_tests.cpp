@@ -39,7 +39,6 @@ namespace xtd::tests {
   template <typename Value>
   class numeric_parse_string_none_tests : public test_class {
     inline static std::locale previous_locale;
-  public:
     static void class_initialize_(class_initialize) {
       previous_locale = std::locale::global(std::locale("en_US.UTF-8"));
     }

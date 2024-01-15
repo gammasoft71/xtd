@@ -12,7 +12,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(mutex_tests) {
-  public:
     void test_method_(constructor) {
       auto m1 = mutex {};
       auto m2 = mutex {};

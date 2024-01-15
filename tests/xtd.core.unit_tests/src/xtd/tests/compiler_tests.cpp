@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(compiler_tests) {
-  public:
     void test_method_(create_compiler_with_default_ctor) {
       compiler c;
       assert::are_equal(build_type::debug, c.build_type(), csf_);

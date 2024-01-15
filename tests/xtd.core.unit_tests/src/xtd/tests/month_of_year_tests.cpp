@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(month_of_year_tests) {
-  public:
     void test_method_(january) {
       assert::are_equal(1, enum_object<>::to_int32(month_of_year::january), csf_);
       assert::are_equal("january", enum_object<>::to_string(month_of_year::january), csf_);

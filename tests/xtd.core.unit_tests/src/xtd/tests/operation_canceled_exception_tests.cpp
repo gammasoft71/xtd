@@ -10,7 +10,6 @@ namespace xtd::tests {
   class test_class_(operation_canceled_exception_tests) {
     inline static bool stack_trace_enabled = false;
     inline static std::locale previous_locale;
-  public:
     static void test_initialize_(test_initialize) {
       previous_locale = std::locale::global(std::locale("en_US.UTF-8"));
       stack_trace_enabled = system_exception::enable_stack_trace();

@@ -11,7 +11,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(box_tests) {
-  public:
     void test_method_(create_box_with_default_constructor) {
       box<int32> b;
       assert::is_zero(b.value(), csf_);

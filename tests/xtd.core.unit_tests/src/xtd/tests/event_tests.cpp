@@ -18,7 +18,6 @@ namespace xtd::tests {
       }
       
     };
-  public:
     void test_method_(add_event) {
       auto c = 0;
       auto l = [&](const object & sender, const event_args & e) {++c;};

@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(envvironment_special_folder_option_tests) {
-  public:
     void test_method_(none) {
       assert::are_equal(0, enum_object<>::to_int32(environment::special_folder_option::none), csf_);
       assert::are_equal("none", enum_object<>::to_string(environment::special_folder_option::none), csf_);

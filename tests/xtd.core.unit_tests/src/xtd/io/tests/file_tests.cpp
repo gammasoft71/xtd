@@ -12,7 +12,6 @@ using namespace xtd::tunit;
 
 namespace xtd::io::tests {
   class test_class_(file_tests) {
-  public:
     static constexpr auto test_file_name = "file.txt";
     
     static void test_initialize_(test_initialize) {

@@ -10,7 +10,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(ticks_tests) {
-  public:
     void test_method_(create_ticks_0) {
       ticks t(0);
       assert::are_equal(0, t.count(), csf_);

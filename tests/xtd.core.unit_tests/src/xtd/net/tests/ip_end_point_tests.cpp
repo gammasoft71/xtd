@@ -11,7 +11,6 @@ using namespace xtd::tunit;
 
 namespace xtd::net::tests {
   class test_class_(ip_end_point_tests) {
-  public:
     void test_method_(min_port) {
       assert::are_equal(0u, ip_end_point::min_port, csf_);
     }

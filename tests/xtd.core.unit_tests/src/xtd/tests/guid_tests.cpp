@@ -10,7 +10,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(guid_tests) {
-  public:
     void test_method_(create_guid) {
       assert::are_equal("00000000-0000-0000-0000-000000000000", guid().to_string(), csf_);
     }

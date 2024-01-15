@@ -17,7 +17,6 @@ using namespace xtd::tunit;
 
 namespace xtd::net::tests {
   class test_class_(ip_address_tests) {
-  public:
     void test_method_(any) {
       assert::are_equal("0.0.0.0", ip_address::any.to_string(), csf_);
     }

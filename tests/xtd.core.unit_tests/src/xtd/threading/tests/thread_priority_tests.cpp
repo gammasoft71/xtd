@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(thread_priority_tests) {
-  public:
     void test_method_(lowest) {
       assert::are_equal(0, enum_object<>::to_int32(thread_priority::lowest), csf_);
       assert::are_equal("lowest", enum_object<>::to_string(thread_priority::lowest), csf_);

@@ -26,7 +26,6 @@ namespace xtd::tests {
       int32 args_ = 0;
     };
     
-  public:
     void test_method_(event_args_ctor) {
       assert::does_not_throw([] {event_args {};}, csf_);
     }

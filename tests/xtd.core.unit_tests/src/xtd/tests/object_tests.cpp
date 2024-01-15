@@ -9,7 +9,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(object_tests) {
-  public:
     void test_method_(equals_with_another_object) {
       assert::is_false(object().equals(object()), csf_);
     }

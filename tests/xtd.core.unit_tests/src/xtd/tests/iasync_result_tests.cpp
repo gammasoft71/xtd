@@ -64,7 +64,6 @@ namespace xtd::tests {
       test_async_result result_;
     };
     
-  public:
      void test_method_(test_async_result_ctor) {
      test_async_result ar;
      

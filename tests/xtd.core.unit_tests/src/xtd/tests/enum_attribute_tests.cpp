@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(enum_attribute_tests) {
-  public:
     void test_method_(standard) {
       assert::are_equal(0, enum_object<>::to_int32(enum_attribute::standard), csf_);
       assert::are_equal("standard", enum_object<>::to_string(enum_attribute::standard), csf_);

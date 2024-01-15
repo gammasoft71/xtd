@@ -10,7 +10,6 @@ using namespace xtd::tunit;
 
 namespace xtd::net::tests {
   class test_class_(ip_host_entry_tests) {
-  public:
     void test_method_(create_with_default_constructor) {
       ip_host_entry host_entry;
       collection_assert::is_empty(host_entry.address_list(), csf_);

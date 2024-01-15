@@ -59,7 +59,6 @@ namespace xtd::tests {
       bool locked_ = false;
     };
     
-  public:
     void test_method_(invalid_handle) {
 #if defined(_WIN32)
       assert::are_equal(reinterpret_cast<intptr>(INVALID_HANDLE_VALUE), wait_handle::invalid_handle, csf_);

@@ -34,7 +34,6 @@ std::wostream& operator <<(std::wostream& os, day d) {
 
 namespace xtd::tests {
   class test_class_(wstring_enum_format_tests) {
-  public:
     void test_method_(format_sunday_with_default_argument) {
       assert::are_equal(L"sunday", xtd::ustring::format(L"{0}", sunday), csf_);
     }

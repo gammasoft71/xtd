@@ -10,7 +10,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(is_tests) {
-  public:
     void test_method_(is_string_with_string) {
       string v;
       assert::is_true(is<string>(v), csf_);

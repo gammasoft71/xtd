@@ -10,7 +10,6 @@ using namespace xtd::tunit;
 
 namespace xtd::net::tests {
   class test_class_(dns_end_point_tests) {
-  public:
     void test_method_(constructor_with_host_and_port) {
       dns_end_point end_point("localhost", 9500);
       assert::are_equal("localhost", end_point.host(), csf_);

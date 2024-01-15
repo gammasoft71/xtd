@@ -13,7 +13,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(countdown_event_tests) {
-  public:
     void test_method_(constructor_default) {
       auto ce = countdown_event {};
       assert::is_zero(ce.current_count(), csf_);

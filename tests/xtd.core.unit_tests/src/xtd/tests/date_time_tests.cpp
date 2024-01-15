@@ -22,7 +22,6 @@ namespace xtd::tests {
       return date;
     }
     
-  public:
     void test_method_(create_date_with_default_constructor) {
       date_time d;
       assert::are_equal(date_time_kind::unspecified, d.kind(), csf_);

@@ -91,7 +91,6 @@ namespace xtd::tests {
   template<typename value_t>
   class string_date_time_format_tests : public test_class {
     inline static std::locale previous_locale;
-  public:
     static void class_initialize_(class_initialize) {
       previous_locale = std::locale::global(std::locale("en_US.UTF-8"));
     }

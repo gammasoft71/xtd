@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(select_mode_tests) {
-  public:
     void test_method_(select_read) {
       assert::are_equal(0, enum_object<>::to_int32(select_mode::select_read), csf_);
       assert::are_equal("select_read", enum_object<>::to_string(select_mode::select_read), csf_);

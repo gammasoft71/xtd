@@ -27,7 +27,6 @@ template<> struct xtd::enum_register<xtd::tests::wday> {
 
 namespace xtd::tests {
   class test_class_(wstring_enum_class_format_tests) {
-  public:
     void test_method_(format_sunday_with_default_argument) {
       assert::are_equal(L"sunday", xtd::ustring::format(L"{0}", wday::sunday), csf_);
     }

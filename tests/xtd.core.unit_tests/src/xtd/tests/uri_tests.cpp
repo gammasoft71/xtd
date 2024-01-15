@@ -12,7 +12,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(uri_tests) {
-  public:
     void test_method_(constructor_with_absolute_uri) {
       assert::does_not_throw([] {uri("http://www.contoso.com");}, csf_);
     }

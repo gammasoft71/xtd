@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(socket_error_tests) {
-  public:
     void test_method_(sock_error) {
       assert::are_equal(-1, enum_object<>::to_int32(socket_error::sock_error), csf_);
       assert::are_equal("sock_error", enum_object<>::to_string(socket_error::sock_error), csf_);

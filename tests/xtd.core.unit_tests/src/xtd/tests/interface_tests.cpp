@@ -29,7 +29,6 @@ namespace xtd::tests {
       int value_ = 0;
     };
     
-  public:
     void test_method_(interface_test_value) {
       interface_test it {42};
       assert::are_equal(42, it.value(), csf_);

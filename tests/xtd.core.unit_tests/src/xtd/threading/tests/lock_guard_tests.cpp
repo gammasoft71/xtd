@@ -10,7 +10,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(lock_guard_tests) {
-  public:
     void test_method_(lock_object) {
       object lock_object;
       assert::is_false(monitor::is_entered(lock_object), csf_);

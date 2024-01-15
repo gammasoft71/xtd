@@ -39,7 +39,6 @@ namespace xtd::diagnostics::tests {
       std::stringstream string_stream;
     };
     
-  public:
     void test_method_(new_trace_listener) {
       unit_test_trace_listener trace_listener;
       assert::are_equal(0u, trace_listener.indent_level(), csf_);

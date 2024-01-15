@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(environment_variable_target_tests) {
-  public:
     void test_method_(process) {
       assert::are_equal(0, enum_object<>::to_int32(environment_variable_target::process), csf_);
       assert::are_equal("process", enum_object<>::to_string(environment_variable_target::process), csf_);

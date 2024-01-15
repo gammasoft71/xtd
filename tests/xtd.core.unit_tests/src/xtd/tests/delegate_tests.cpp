@@ -34,7 +34,6 @@ namespace xtd::tests {
       result += "static_method2;";
     }
     
-  public:
     void test_method_(create_empty_delegate_and_test_is_empty) {
       delegate<void()> d;
       assert::is_true(d.is_empty(), csf_);

@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(source_levels_tests) {
-  public:
     void test_method_(off) {
       assert::are_equal(0, enum_object<>::to_int32(source_levels::off), csf_);
       assert::are_equal("off", enum_object<>::to_string(source_levels::off), csf_);

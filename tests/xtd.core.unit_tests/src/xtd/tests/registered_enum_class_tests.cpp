@@ -16,7 +16,6 @@ enum_class_(, registered_enum_class_test,
 
 namespace xtd::tests {
   class test_class_(registered_enum_class_tests) {
-  public:
     void test_method_(format) {
       assert::are_equal("none", ustring::format("{}", registered_enum_class_test::none), csf_);
       assert::are_equal("one", ustring::format("{}", registered_enum_class_test::one), csf_);

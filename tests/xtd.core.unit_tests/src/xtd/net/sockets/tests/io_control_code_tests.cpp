@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(io_control_code_tests) {
-  public:
     void test_method_(enable_circular_queuing) {
       assert::are_equal(671088642ul, enum_object<>::to_uint64(io_control_code::enable_circular_queuing), csf_);
       assert::are_equal("enable_circular_queuing", enum_object<>::to_string(io_control_code::enable_circular_queuing), csf_);

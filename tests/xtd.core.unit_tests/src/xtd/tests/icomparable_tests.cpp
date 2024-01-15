@@ -24,7 +24,6 @@ namespace xtd::tests {
       int value_ = 0;
     };
     
-  public:
     void test_method_(compare_to) {
       icomparable_test ic1 {42};
       icomparable_test ic2 {42};

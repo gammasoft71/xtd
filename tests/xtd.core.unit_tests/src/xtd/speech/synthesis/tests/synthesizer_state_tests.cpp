@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(synthesizer_state_tests) {
-  public:
     void test_method_(ready) {
       assert::are_equal(0, enum_object<>::to_int32(synthesizer_state::ready), csf_);
       assert::are_equal("ready", enum_object<>::to_string(synthesizer_state::ready), csf_);

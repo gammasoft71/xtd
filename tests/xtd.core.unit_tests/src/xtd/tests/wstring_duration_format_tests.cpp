@@ -11,7 +11,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(wstring_duration_format_tests) {
-  public:
     void test_method_(format_with_default_argument) {
       assert::are_equal(L"1.02:03:32:024000500", xtd::ustring::format(L"{0}", 26h + 3min + 32s + 24ms + 500ns), csf_);
     }

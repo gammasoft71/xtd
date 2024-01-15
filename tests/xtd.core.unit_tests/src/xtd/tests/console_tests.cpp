@@ -15,7 +15,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(console_tests) {
-  public:
     void test_method_(error) {
       assert::are_equal(std::cerr.rdbuf(), console::error.rdbuf(), csf_);
       assert::is_false(console::is_error_redirected(), csf_);
