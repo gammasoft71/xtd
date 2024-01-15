@@ -21,7 +21,6 @@ namespace xtd::forms::tests {
       using form::default_size;
     };
     
-  public:
     void test_method_(new_form_back_color) {
       form_for_test form;
       assert::are_equal(form.default_back_color(), form.back_color(), csf_);

@@ -13,7 +13,6 @@ using namespace xtd::tunit;
 
 namespace xtd::forms::style_sheets::tests {
   class test_class_(background_image_tests) {
-  public:
     void test_method_(create_with_default_constructor) {
       background_image i;
       assert::are_equal(image_type::none, i.image_type(), csf_);

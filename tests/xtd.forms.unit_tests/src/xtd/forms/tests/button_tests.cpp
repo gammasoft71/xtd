@@ -23,7 +23,6 @@ namespace xtd::forms::tests {
       using button::default_size;
     };
     
-  public:
     void test_method_(constructor) {
       button_for_test button;
       assert::are_equal(anchor_styles::left | anchor_styles::top, button.anchor(), csf_);

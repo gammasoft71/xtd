@@ -17,7 +17,6 @@ using namespace xtd::tunit;
 
 namespace xtd::forms::tests {
   class test_class_(system_information_tests) {
-  public:
     void test_method_(active_window_tracking_delay) {
       assert::are_equal(0, system_information::active_window_tracking_delay(), csf_);
     }

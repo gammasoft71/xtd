@@ -36,7 +36,6 @@ public:
 
 namespace xtd::forms::style_sheets::tests {
   class test_class_(style_sheet_tests) {
-  public:
     void test_method_(style_sheets) {
       auto styles = style_sheet::style_sheets();
       assert::are_not_equal(styles.end(), styles.find("GNOME (dark)"), csf_);

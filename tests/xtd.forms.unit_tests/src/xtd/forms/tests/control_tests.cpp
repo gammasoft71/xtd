@@ -57,7 +57,6 @@ namespace xtd::forms::tests {
       }
     };
     
-  public:
     void test_method_(constructor) {
       control_for_test control;
       assert::are_equal(anchor_styles::left | anchor_styles::top, control.anchor(), csf_);

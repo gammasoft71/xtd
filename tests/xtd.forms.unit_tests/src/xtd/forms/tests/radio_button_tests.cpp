@@ -23,7 +23,6 @@ namespace xtd::forms::tests {
       using radio_button::default_size;
     };
     
-  public:
     void test_method_(constructor) {
       radio_button_for_test radio_button;
       assert::are_equal(anchor_styles::left | anchor_styles::top, radio_button.anchor(), csf_);

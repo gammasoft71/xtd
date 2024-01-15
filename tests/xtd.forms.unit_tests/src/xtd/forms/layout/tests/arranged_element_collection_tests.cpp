@@ -13,7 +13,6 @@ using namespace xtd::tunit;
 
 namespace xtd::forms::layout::tests {
   class test_class_(arranged_element_collection_tests) {
-  public:
     void test_method_(new_collection) {
       arranged_element_collection<std::string> items;
       items.item_added += [&](size_t index, std::string & value) {

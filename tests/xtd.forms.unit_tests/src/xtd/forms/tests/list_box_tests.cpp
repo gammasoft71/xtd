@@ -10,7 +10,6 @@ using namespace xtd::tunit;
 
 namespace xtd::forms::tests {
   class test_class_(list_box_tests) {
-  public:
     void test_method_(create_list_box) {
       form form;
       list_box list_box;
