@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::drawing::imaging::tests {
   class test_class_(image_flags_tests) {
-  public:
     void test_method_(none) {
       assert::are_equal(0, enum_object<>::to_int32(image_flags::none), csf_);
       assert::are_equal("none", enum_object<>::to_string(image_flags::none), csf_);

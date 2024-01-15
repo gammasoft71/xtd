@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::drawing::tests {
   class test_class_(copy_pixel_operation_tests) {
-  public:
     void test_method_(blackness) {
       assert::are_equal(66, enum_object<>::to_int32(copy_pixel_operation::blackness), csf_);
       assert::are_equal("blackness", enum_object<>::to_string(copy_pixel_operation::blackness), csf_);

@@ -9,7 +9,6 @@ using namespace xtd::tunit;
 
 namespace xtd::drawing::tests {
   class test_class_(point_tests) {
-  public:
     void test_method_(create_empty_point) {
       point p;
       assert::are_equal(point(0, 0), p, csf_);

@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::drawing::tests {
   class test_class_(rotate_flip_type_tests) {
-  public:
     void test_method_(rotate_none_flip_none) {
       assert::are_equal(0, enum_object<>::to_int32(rotate_flip_type::rotate_none_flip_none), csf_);
       assert::are_equal("rotate_none_flip_none", enum_object<>::to_string(rotate_flip_type::rotate_none_flip_none), csf_);

@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::drawing::tests {
   class test_class_(known_color_tests) {
-  public:
     void test_method_(transparent) {
       assert::are_equal(1, enum_object<>::to_int32(known_color::transparent), csf_);
       assert::are_equal("transparent", enum_object<>::to_string(known_color::transparent), csf_);

@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::drawing::drawing_2d::tests {
   class test_class_(line_join_tests) {
-  public:
     void test_method_(miter) {
       assert::are_equal(0, enum_object<>::to_int32(line_join::miter), csf_);
       assert::are_equal("miter", enum_object<>::to_string(line_join::miter), csf_);

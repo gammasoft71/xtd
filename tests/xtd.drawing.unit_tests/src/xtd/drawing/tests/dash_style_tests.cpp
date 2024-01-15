@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::drawing::tests {
   class test_class_(dash_style_tests) {
-  public:
     void test_method_(solid) {
       assert::are_equal(0, enum_object<>::to_int32(dash_style::solid), csf_);
       assert::are_equal("solid", enum_object<>::to_string(dash_style::solid), csf_);

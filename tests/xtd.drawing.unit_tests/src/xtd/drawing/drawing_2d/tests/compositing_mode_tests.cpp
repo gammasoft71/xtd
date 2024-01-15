@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::drawing::drawing_2d::tests {
   class test_class_(compositing_mode_tests) {
-  public:
     void test_method_(source_over) {
       assert::are_equal(0, enum_object<>::to_int32(compositing_mode::source_over), csf_);
       assert::are_equal("source_over", enum_object<>::to_string(compositing_mode::source_over), csf_);

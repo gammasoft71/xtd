@@ -9,7 +9,6 @@ using namespace xtd::tunit;
 
 namespace xtd::drawing::tests {
   class test_class_(actions_system_images_tests) {
-  public:
     void test_method_(default_size) {
       auto s = actions_system_images::default_size();
       assert::are_equal(size {32, 32}, s, csf_);

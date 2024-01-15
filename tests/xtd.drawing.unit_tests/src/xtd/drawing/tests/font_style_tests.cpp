@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::drawing::tests {
   class test_class_(font_style_tests) {
-  public:
     void test_method_(regular) {
       assert::are_equal(0, enum_object<>::to_int32(font_style::regular), csf_);
       assert::are_equal("regular", enum_object<>::to_string(font_style::regular), csf_);

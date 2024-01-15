@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::drawing::text::tests {
   class test_class_(generic_font_families_tests) {
-  public:
     void test_method_(serif) {
       assert::are_equal(0, enum_object<>::to_int32(generic_font_families::serif), csf_);
       assert::are_equal("serif", enum_object<>::to_string(generic_font_families::serif), csf_);

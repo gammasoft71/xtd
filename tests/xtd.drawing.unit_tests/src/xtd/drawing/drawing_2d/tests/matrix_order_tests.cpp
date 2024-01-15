@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::drawing::drawing_2d::tests {
   class test_class_(matrix_order_tests) {
-  public:
     void test_method_(prepend) {
       assert::are_equal(0, enum_object<>::to_int32(matrix_order::prepend), csf_);
       assert::are_equal("prepend", enum_object<>::to_string(matrix_order::prepend), csf_);
