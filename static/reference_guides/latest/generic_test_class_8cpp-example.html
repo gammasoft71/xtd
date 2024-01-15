@@ -124,7 +124,7 @@ $(function() {
 <div class="line">  <span class="keyword">class </span>test : <span class="keyword">public</span> test_class {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    <span class="keywordtype">void</span> <a id="a0" name="a0"></a><a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_max_value) {</div>
-<div class="line">      <span class="keyword">static</span> std::map&lt;std::string, size_t&gt; expected_max_values = {{<span class="keyword">typeid</span>(bool).name(), std::numeric_limits&lt;bool&gt;::max()}, {<span class="keyword">typeid</span>(int).name(), std::numeric_limits&lt;int&gt;::max()}, {<span class="keyword">typeid</span>(<span class="keywordtype">long</span> int).name(), std::numeric_limits&lt;long int&gt;::max()}, {<span class="keyword">typeid</span>(char).name(), std::numeric_limits&lt;char&gt;::max()}};</div>
+<div class="line">      <span class="keyword">static</span> <span class="keyword">auto</span> expected_max_values = std::map&lt;std::string, size_t&gt; {{<span class="keyword">typeid</span>(bool).name(), std::numeric_limits&lt;bool&gt;::max()}, {<span class="keyword">typeid</span>(int).name(), std::numeric_limits&lt;int&gt;::max()}, {<span class="keyword">typeid</span>(<span class="keywordtype">long</span> int).name(), std::numeric_limits&lt;long int&gt;::max()}, {<span class="keyword">typeid</span>(char).name(), std::numeric_limits&lt;char&gt;::max()}};</div>
 <div class="line">      </div>
 <div class="line">      <span class="keywordflow">if</span> (expected_max_values.find(<span class="keyword">typeid</span>(type_t).name()) == expected_max_values.end())</div>
 <div class="line">        assert::fail(<span class="stringliteral">&quot;expect max value for this type is not defined.&quot;</span>);</div>
@@ -160,7 +160,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 1 2024 09:59:56 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jan 15 2024 22:51:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

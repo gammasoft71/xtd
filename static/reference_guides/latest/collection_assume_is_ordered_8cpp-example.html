@@ -85,18 +85,19 @@ $(function() {
 <p>Shows how to use <a class="el" href="classxtd_1_1tunit_1_1collection__assume.html#a2526324a21a6bc7e3cdf36bed4d446aa" title="Assumes that collection is ordered.">xtd::tunit::collection_assume::is_ordered</a> method.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd.tunit&gt;</span></div>
 <div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1tunit.html">xtd::tunit</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>unit_tests {</div>
 <div class="line">  <span class="keyword">class </span>test_class_(test) {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    <span class="keywordtype">void</span> <a id="a0" name="a0"></a><a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case_succeed) {</div>
-<div class="line">      std::vector a = {1, 2, 3, 4};</div>
+<div class="line">      <span class="keyword">auto</span> a = vector {1, 2, 3, 4};</div>
 <div class="line">      collection_assume::is_ordered(a);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">void</span> <a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case_aborted) {</div>
-<div class="line">      std::vector a = {1, 2, 4, 3};</div>
+<div class="line">      <span class="keyword">auto</span> a = vector {1, 2, 4, 3};</div>
 <div class="line">      collection_assume::is_ordered(a);</div>
 <div class="line">    }</div>
 <div class="line">  };</div>
@@ -129,7 +130,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 1 2024 09:59:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jan 15 2024 22:51:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

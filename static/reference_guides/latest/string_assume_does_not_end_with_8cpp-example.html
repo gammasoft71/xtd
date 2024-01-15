@@ -84,17 +84,15 @@ $(function() {
 <div class="contents">
 <p>Shows how to use <a class="el" href="classxtd_1_1tunit_1_1string__assume.html#a3b553b206df8cfb0684898713b569141" title="Validates that string does not end with a specific item.">xtd::tunit::string_assume::does_not_end_with</a> method.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd.tunit&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
-<div class="line"><span class="keyword">using namespace </span>std::string_literals;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1tunit.html">xtd::tunit</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>unit_tests {</div>
 <div class="line">  <span class="keyword">class </span>test_class_(test) {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    <span class="keywordtype">void</span> <a id="a0" name="a0"></a><a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case_succeed) {</div>
-<div class="line">      <span class="keyword">auto</span> s = <span class="stringliteral">&quot;value&quot;</span>s;</div>
+<div class="line">      <span class="keyword">auto</span> s = <span class="stringliteral">&quot;value&quot;</span>_s;</div>
 <div class="line">      string_assume::does_not_end_with(<span class="stringliteral">&quot;val&quot;</span>, s);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
@@ -128,11 +126,12 @@ $(function() {
 <div class="ttc" id="aclassxtd_1_1tunit_1_1unit__test_html_a8da8a3353d5c71e0afa0de307fc40916"><div class="ttname"><a href="classxtd_1_1tunit_1_1unit__test.html#a8da8a3353d5c71e0afa0de307fc40916">xtd::tunit::unit_test::run</a></div><div class="ttdeci">int32 run()</div><div class="ttdoc">Runs all tests in this unit_test object and prints the result.</div></div>
 <div class="ttc" id="agroup__tunit_html_ga1fa6dc01b83d00ce9e92402c9694c6af"><div class="ttname"><a href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a></div><div class="ttdeci">#define test_method_(method_name)</div><div class="ttdoc">Add test method to class test.</div><div class="ttdef"><b>Definition</b> test_method_attribute.h:88</div></div>
 <div class="ttc" id="anamespacextd_1_1tunit_html"><div class="ttname"><a href="namespacextd_1_1tunit.html">xtd::tunit</a></div><div class="ttdoc">The tunit namespace contains a unit test library.</div><div class="ttdef"><b>Definition</b> abort_error.h:10</div></div>
+<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 1 2024 09:59:56 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jan 15 2024 22:51:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

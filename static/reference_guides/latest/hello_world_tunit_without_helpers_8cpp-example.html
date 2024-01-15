@@ -92,19 +92,19 @@ $(function() {
 <div class="line"><span class="keyword">namespace </span>unit_tests {</div>
 <div class="line">  <span class="keyword">class </span>hello_world_test;</div>
 <div class="line">  </div>
-<div class="line">  <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1tunit_1_1test__class__attribute.html">test_class_attribute&lt;hello_world_test&gt;</a> hello_world_test_class_attr {<span class="stringliteral">&quot;hello_world_test&quot;</span>};</div>
+<div class="line">  <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1tunit_1_1test__class__attribute.html">test_class_attribute&lt;hello_world_test&gt;</a> hello_world_test_class_attr {<span class="stringliteral">&quot;unit_tests::hello_world_test&quot;</span>};</div>
 <div class="line">  <span class="keyword">class </span>hello_world_test : <span class="keyword">public</span> <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1tunit_1_1test__class.html">test_class</a> {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    <a id="_a2" name="_a2"></a><a class="code hl_class" href="classxtd_1_1tunit_1_1test__method__attribute.html">test_method_attribute</a> create_string_from_literal_attr {<span class="stringliteral">&quot;create_string_from_literal&quot;</span>, *<span class="keyword">this</span>, &amp;hello_world_test::create_string_from_literal};</div>
 <div class="line">    <span class="keywordtype">void</span> create_string_from_literal() {</div>
-<div class="line">      <span class="keywordtype">string</span> s = <span class="stringliteral">&quot;Hello, World!&quot;</span>;</div>
+<div class="line">      <span class="keyword">auto</span> s = <span class="keywordtype">string</span> {<span class="stringliteral">&quot;Hello, World!&quot;</span>};</div>
 <div class="line">      valid::are_equal(13, s.size());</div>
 <div class="line">      assert::are_equal(<span class="stringliteral">&quot;Hello, World!&quot;</span>, s);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1tunit_1_1test__method__attribute.html">test_method_attribute</a> create_string_from_chars_attr {<span class="stringliteral">&quot;create_string_from_chars&quot;</span>, *<span class="keyword">this</span>, &amp;hello_world_test::create_string_from_chars};</div>
 <div class="line">    <span class="keywordtype">void</span> create_string_from_chars() {</div>
-<div class="line">      <span class="keywordtype">string</span> s = {<span class="charliteral">&#39;H&#39;</span>, <span class="charliteral">&#39;e&#39;</span>, <span class="charliteral">&#39;l&#39;</span>, <span class="charliteral">&#39;l&#39;</span>, <span class="charliteral">&#39;o&#39;</span>, <span class="charliteral">&#39;,&#39;</span>, <span class="charliteral">&#39; &#39;</span>, <span class="charliteral">&#39;W&#39;</span>, <span class="charliteral">&#39;o&#39;</span>, <span class="charliteral">&#39;r&#39;</span>, <span class="charliteral">&#39;l&#39;</span>, <span class="charliteral">&#39;d&#39;</span>, <span class="charliteral">&#39;!&#39;</span>};</div>
+<div class="line">      <span class="keyword">auto</span> s = <span class="keywordtype">string</span> {<span class="charliteral">&#39;H&#39;</span>, <span class="charliteral">&#39;e&#39;</span>, <span class="charliteral">&#39;l&#39;</span>, <span class="charliteral">&#39;l&#39;</span>, <span class="charliteral">&#39;o&#39;</span>, <span class="charliteral">&#39;,&#39;</span>, <span class="charliteral">&#39; &#39;</span>, <span class="charliteral">&#39;W&#39;</span>, <span class="charliteral">&#39;o&#39;</span>, <span class="charliteral">&#39;r&#39;</span>, <span class="charliteral">&#39;l&#39;</span>, <span class="charliteral">&#39;d&#39;</span>, <span class="charliteral">&#39;!&#39;</span>};</div>
 <div class="line">      valid::are_equal(13, s.size());</div>
 <div class="line">      string_assert::starts_with(<span class="stringliteral">&quot;Hello,&quot;</span>, s);</div>
 <div class="line">      string_assert::ends_with(<span class="stringliteral">&quot; World!&quot;</span>, s);</div>
@@ -127,7 +127,7 @@ $(function() {
 <div class="line"><span class="comment">//   SUCCEED 2 tests.</span></div>
 <div class="line"><span class="comment">// End 2 tests from 1 test case ran. (0 ms total)</span></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1console__unit__test_html"><div class="ttname"><a href="classxtd_1_1tunit_1_1console__unit__test.html">xtd::tunit::console_unit_test</a></div><div class="ttdoc">The console_unit_test class is console unit test interface.</div><div class="ttdef"><b>Definition</b> console_unit_test.h:23</div></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1test__class__attribute_html"><div class="ttname"><a href="classxtd_1_1tunit_1_1test__class__attribute.html">xtd::tunit::test_class_attribute</a></div><div class="ttdoc">Represents a test class attribute.</div><div class="ttdef"><b>Definition</b> test_class_attribute.h:24</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1test__class__attribute_html"><div class="ttname"><a href="classxtd_1_1tunit_1_1test__class__attribute.html">xtd::tunit::test_class_attribute</a></div><div class="ttdoc">Represents a test class attribute.</div><div class="ttdef"><b>Definition</b> test_class_attribute.h:25</div></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1test__class_html"><div class="ttname"><a href="classxtd_1_1tunit_1_1test__class.html">xtd::tunit::test_class</a></div><div class="ttdoc">Represents a test class.</div><div class="ttdef"><b>Definition</b> test_class.h:39</div></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1test__method__attribute_html"><div class="ttname"><a href="classxtd_1_1tunit_1_1test__method__attribute.html">xtd::tunit::test_method_attribute</a></div><div class="ttdoc">Represents a test method attribute.</div><div class="ttdef"><b>Definition</b> test_method_attribute.h:22</div></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1unit__test_html_a8da8a3353d5c71e0afa0de307fc40916"><div class="ttname"><a href="classxtd_1_1tunit_1_1unit__test.html#a8da8a3353d5c71e0afa0de307fc40916">xtd::tunit::unit_test::run</a></div><div class="ttdeci">int32 run()</div><div class="ttdoc">Runs all tests in this unit_test object and prints the result.</div></div>
@@ -136,7 +136,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 1 2024 09:59:56 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jan 15 2024 22:51:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
