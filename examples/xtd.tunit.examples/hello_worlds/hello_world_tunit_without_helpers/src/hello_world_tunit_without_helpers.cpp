@@ -7,7 +7,7 @@ using namespace xtd::tunit;
 namespace unit_tests {
   class hello_world_test;
   
-  test_class_attribute<hello_world_test> hello_world_test_class_attr {"hello_world_test"};
+  test_class_attribute<hello_world_test> hello_world_test_class_attr {"unit_tests::hello_world_test"};
   class hello_world_test : public test_class {
   public:
     test_method_attribute create_string_from_literal_attr {"create_string_from_literal", *this, &hello_world_test::create_string_from_literal};
