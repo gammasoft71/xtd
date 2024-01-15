@@ -36,7 +36,7 @@ public:
 protected:
   void on_form_closing(form_closing_event_args& e) override {
     e.cancel(message_box::show(*this, "Are you sure you want exit?", "Close Form", message_box_buttons::yes_no, message_box_icon::question) == dialog_result::no);
-  };
+  }
   
 private:
   forms::button button_close;
