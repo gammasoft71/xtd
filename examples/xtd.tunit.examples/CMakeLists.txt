@@ -26,4 +26,5 @@ add_projects(
   user_assumes
   user_valids
   valids
+  tests
 )
