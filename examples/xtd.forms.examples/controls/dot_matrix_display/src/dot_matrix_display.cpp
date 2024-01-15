@@ -20,8 +20,8 @@ public:
     timer1.interval(300_ms);
     timer1.enabled(true);
     timer1.tick += [&] {
-      dot_matrix_display1.dot_matrix_style(dot_matrix_styles[(counter / chase.size()) % dot_matrix_styles.size()]);
-      dot_matrix_display1.set_dots(chase[counter++ % chase.size()]);
+      dot_matrix_display1.dot_matrix_style(dot_matrix_styles[(counter / crawler.size()) % dot_matrix_styles.size()]);
+      dot_matrix_display1.set_dots(crawler[counter++ % crawler.size()]);
     };
     
     back_color(color::average(color::black, dot_matrix_display1.fore_color(), 0.20));
@@ -33,7 +33,7 @@ public:
   
 private:
   int counter = 0;
-  vector<dot_matrix_display::points_collection> chase = {
+  vector<dot_matrix_display::points_collection> crawler = {
     {},
     {{3, 3}},
     {{3, 3}, {2, 2}, {2, 3}, {2, 4}, {3, 2}, {3, 4}, {4, 2}, {4, 3}, {4, 4}},
