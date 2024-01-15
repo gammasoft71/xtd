@@ -11,7 +11,6 @@ using namespace xtd::tunit;
 
 namespace xtd::forms::style_sheets::tests {
   class test_class_(style_sheet_windows_dark_tests) {
-  public:
     void test_method_(theme) {
       auto styles = style_sheet::style_sheets();
       auto style = styles.find("Windows (dark)")->second;

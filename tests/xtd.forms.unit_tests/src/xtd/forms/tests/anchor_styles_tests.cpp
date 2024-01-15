@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(anchor_styles_tests) {
-  public:
     void test_method_(none) {
       assert::are_equal(0, enum_object<>::to_int32(anchor_styles::none), csf_);
       assert::are_equal("none", enum_object<>::to_string(anchor_styles::none), csf_);

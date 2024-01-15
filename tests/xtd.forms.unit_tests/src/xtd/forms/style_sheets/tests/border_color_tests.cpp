@@ -10,7 +10,6 @@ using namespace xtd::tunit;
 
 namespace xtd::forms::style_sheets::tests {
   class test_class_(border_color_tests) {
-  public:
     void test_method_(create_default) {
       border_color b;
       assert::are_equal(color::black, b.all(), csf_);

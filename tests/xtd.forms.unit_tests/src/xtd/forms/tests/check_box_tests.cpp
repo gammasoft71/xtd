@@ -23,7 +23,6 @@ namespace xtd::forms::tests {
       using check_box::default_size;
     };
     
-  public:
     void test_method_(constructor) {
       check_box_for_test check_box;
       assert::are_equal(anchor_styles::left | anchor_styles::top, check_box.anchor(), csf_);

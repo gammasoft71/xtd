@@ -24,7 +24,6 @@ namespace xtd::forms::tests {
       using progress_bar::default_size;
     };
     
-  public:
     void test_method_(constructor) {
       progress_bar_for_test progress_bar;
       assert::are_equal(anchor_styles::left | anchor_styles::top, progress_bar.anchor(), csf_);

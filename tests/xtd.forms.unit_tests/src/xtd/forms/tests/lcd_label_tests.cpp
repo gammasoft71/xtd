@@ -10,7 +10,6 @@ using namespace xtd::tunit;
 
 namespace xtd::forms::tests {
   class test_class_(lcd_label_tests) {
-  public:
     void test_method_(new_lcd_label) {
       form form;
       lcd_label label;
