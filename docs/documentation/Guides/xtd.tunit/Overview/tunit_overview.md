@@ -15,7 +15,6 @@ using namespace xtd::tunit;
 
 namespace unit_test_project2 {
   class test_class_(unit_test1) {
-  public:
     void test_method_(test_method1) {
       assert::is_true(true);
     }
@@ -30,7 +29,6 @@ namespace unit_test_project2 {
   };
 
   class test_class_(unit_test2) {
-  public:
     void test_method_(test_method1) {
       assert::is_true(true);
     }
