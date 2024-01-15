@@ -4,7 +4,6 @@ using namespace xtd::tunit;
 
 namespace unit_tests {
   class test_class_(test) {
-  public:
     void test_method_(test_case_succeed) {
       auto d = 0.5999999999;
       assert::are_equal(0.6, d, 0.000000001);

@@ -5,7 +5,6 @@ using namespace xtd::tunit;
 
 namespace unit_tests {
   class test_class_(test) {
-  public:
     void test_method_(test_case_succeed) {
       auto s = "value"_s;
       string_assume::does_not_match("^item", s);

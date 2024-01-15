@@ -7,7 +7,6 @@ using namespace xtd::tunit;
 
 namespace unit_tests {
   class test_class_(test) {
-  public:
     void test_method_(test_case_succeed) {
       invalid_argument except("invalid argument");
       assume::is_not_instance_of<bad_cast>(except);

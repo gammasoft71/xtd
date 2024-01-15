@@ -37,7 +37,6 @@ namespace unit_tests {
   // The test class must be inherit from test_class class.
   template<typename type_t>
   class test : public test_class {
-  public:
     void test_method_(test_max_value) {
       static auto expected_max_values = std::map<std::string, size_t> {{typeid(bool).name(), std::numeric_limits<bool>::max()}, {typeid(int).name(), std::numeric_limits<int>::max()}, {typeid(long int).name(), std::numeric_limits<long int>::max()}, {typeid(char).name(), std::numeric_limits<char>::max()}};
       

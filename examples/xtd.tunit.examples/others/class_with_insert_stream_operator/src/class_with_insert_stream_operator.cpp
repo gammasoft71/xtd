@@ -22,7 +22,6 @@ namespace unit_tests {
   };
   
   class test_class_(test) {
-  public:
     void test_method_(test_case_succeed) {
       auto c1 = class_with_insert_stream_operator {42};
       auto c2 = class_with_insert_stream_operator {42};

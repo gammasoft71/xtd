@@ -7,7 +7,6 @@ using namespace xtd::tunit;
 namespace unit_tests {
   // The class test must be declared with test_class_ helper.
   class test_class_(test) {
-  public:
     void test_method_(test_case1) {
       auto s = string {"Hello, World!"};
       

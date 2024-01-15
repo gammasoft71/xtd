@@ -5,7 +5,6 @@ using namespace xtd::tunit;
 
 namespace unit_tests {
   class test_class_(test) {
-  public:
     void test_method_(test_case_succeed) {
       auto a = vector<ios_base*> {&cout, &cerr, &cin};
       collection_assert::all_items_are_instances_of<ios_base*>(a);

@@ -5,7 +5,6 @@ using namespace xtd::tunit;
 namespace unit_tests {
   class class_without_insert_stream_operator {
   public:
-  public:
     class_without_insert_stream_operator() = default;
     explicit class_without_insert_stream_operator(int value) : value_(value) {}
     
@@ -19,7 +18,6 @@ namespace unit_tests {
   };
   
   class test_class_(test) {
-  public:
     void test_method_(test_case_succeed) {
       auto c1 = class_without_insert_stream_operator {42};
       auto c2 = class_without_insert_stream_operator {42};
