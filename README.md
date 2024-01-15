@@ -261,7 +261,6 @@ using namespace xtd::tunit;
 
 namespace unit_tests {
   class test_class_(hello_world_test) {
-  public:
     void test_method_(create_string_from_literal) {
       auto s = string {"Hello, World!"};
       valid::are_equal(13, s.size());
@@ -296,7 +295,6 @@ namespace unit_tests {
   
   auto hello_world_test_class_attr = test_class_attribute<hello_world_test> {"hello_world_test"};
   class hello_world_test : public test_class {
-  public:
     test_method_attribute create_string_from_literal_attr {"create_string_from_literal", *this, &hello_world_test::create_string_from_literal};
     void create_string_from_literal() {
       auto s = string {"Hello, World!"};
