@@ -9,7 +9,6 @@ namespace unit_tests {
   
   // The test class must be inherit from test_class class.
   class test : public test_class {
-  public:
     // This is the method that is called 1 time before test class run.
     class_initialize_attribute class_initialize_attr {"class_initialize", *this, &test::class_initialize};
     static void class_initialize() {

@@ -5,7 +5,6 @@ using namespace xtd::tunit;
 
 namespace unit_tests {
   class test_class_(test) {
-  public:
     void test_method_(test_case_succeed) {
       auto is = istringstream {"xtd::tunit::file_valid::are_equal example."};
       file_valid::are_equal(istringstream {"xtd::tunit::file_valid::are_equal example."}, is);

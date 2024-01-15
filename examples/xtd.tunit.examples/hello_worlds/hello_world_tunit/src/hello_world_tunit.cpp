@@ -6,7 +6,6 @@ using namespace xtd::tunit;
 
 namespace unit_tests {
   class test_class_(hello_world_test) {
-  public:
     void test_method_(create_string_from_literal) {
       auto s = string {"Hello, World!"};
       valid::are_equal(13, s.size());

@@ -5,7 +5,6 @@ using namespace xtd::tunit;
 
 namespace unit_tests {
   class test_class_(test) {
-  public:
     void test_method_(test_case_succeed) {
       auto s = u"VALUE"_s;
       string_assume::are_not_equal_ignoring_case(u"key", s);

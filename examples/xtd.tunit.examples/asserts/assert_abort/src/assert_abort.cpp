@@ -4,7 +4,6 @@ using namespace xtd::tunit;
 
 namespace unit_tests {
   class test_class_(test) {
-  public:
     void test_method_(test_case_aborted) {
       assert::abort();
       assert::is_true(false);

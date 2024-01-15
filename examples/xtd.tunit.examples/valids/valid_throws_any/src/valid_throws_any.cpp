@@ -6,7 +6,6 @@ using namespace xtd::tunit;
 
 namespace unit_tests {
   class test_class_(test) {
-  public:
     void test_method_(test_case_succeed) {
       auto v = vector {1, 2, 3, 4};
       valid::throws_any([&] {return v.at(5);});
