@@ -20,8 +20,8 @@ public:
     timer1.interval(300_ms);
     timer1.enabled(true);
     timer1.tick += [&] {
-      seven_segment_display1.segment_style(segment_styles[(counter / crawler.size()) % segment_styles.size()]);
-      seven_segment_display1.value(crawler[counter++ % crawler.size()]);
+      seven_segment_display1.segment_style(segment_styles[(counter / chaser.size()) % segment_styles.size()]);
+      seven_segment_display1.value(chaser[counter++ % chaser.size()]);
     };
     
     back_color(color::average(color::black, seven_segment_display1.fore_color(), 0.20));
@@ -33,7 +33,7 @@ public:
   
 private:
   int counter = 0;
-  vector<segments> crawler = {
+  vector<segments> chaser = {
     segments::none,
     segments::a,
     segments::a | segments::b,
