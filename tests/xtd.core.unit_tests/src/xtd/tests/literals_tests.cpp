@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(lietarls_tests) {
-  public:
     void test_method_(operator_s_on_char_ptr) {
       auto s = "string"_s;
       assert::is_instance_of<ustring>(s);

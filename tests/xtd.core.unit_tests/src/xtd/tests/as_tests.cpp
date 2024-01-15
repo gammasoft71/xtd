@@ -10,7 +10,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(as_tests) {
-  public:
     void test_method_(bool_as_int) {
       assert::is_true(is<int>(as<int>((bool)true)), csf_);
     }

@@ -13,7 +13,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(bit_converter_tests) {
-  public:
     void test_method_(get_bytes_boolean) {
       using_(vector<xtd::byte> bytes = bit_converter::get_bytes(false)) {
         bytes_assert::are_equal(0, bytes, csf_);

@@ -18,7 +18,6 @@ enum_class_(, enum_object_with_registered_enum_class_test,
 
 namespace xtd::tests {
   class test_class_(enum_object_with_registered_enum_class_tests) {
-  public:
     void test_method_(enum_object_with_registered_enum_class_test_default_ctor) {
       enum_object<enum_object_with_registered_enum_class_test> e;
       

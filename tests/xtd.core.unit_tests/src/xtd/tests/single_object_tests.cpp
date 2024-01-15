@@ -12,7 +12,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(single_object_tests) {
-  public:
     void test_method_(epsilon) {
       assert::are_equal(1.401298E-45f, single_object::epsilon, csf_);
     }

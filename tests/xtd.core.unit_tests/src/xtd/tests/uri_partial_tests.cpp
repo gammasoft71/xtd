@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(uri_partial_tests) {
-  public:
     void test_method_(scheme) {
       assert::are_equal(0, enum_object<>::to_int32(uri_partial::scheme), csf_);
       assert::are_equal("scheme", enum_object<>::to_string(uri_partial::scheme), csf_);

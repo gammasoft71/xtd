@@ -16,7 +16,6 @@ enum_struct_(, registered_enum_struct_test,
 
 namespace xtd::tests {
   class test_class_(registered_enum_struct_tests) {
-  public:
     void test_method_(format) {
       assert::are_equal("none", ustring::format("{}", registered_enum_struct_test::none), csf_);
       assert::are_equal("one", ustring::format("{}", registered_enum_struct_test::one), csf_);

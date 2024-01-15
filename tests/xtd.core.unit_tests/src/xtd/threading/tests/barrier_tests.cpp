@@ -9,7 +9,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(barrier_tests) {
-  public:
     void test_method_(ctr_default) {
       barrier b;
       assert::is_zero(b.participant_count(), csf_);

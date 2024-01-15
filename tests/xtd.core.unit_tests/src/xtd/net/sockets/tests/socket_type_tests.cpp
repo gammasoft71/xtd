@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(socket_type_tests) {
-  public:
     void test_method_(unknown) {
       assert::are_equal(-1, enum_object<>::to_int32(socket_type::unknown), csf_);
       assert::are_equal("unknown", enum_object<>::to_string(socket_type::unknown), csf_);

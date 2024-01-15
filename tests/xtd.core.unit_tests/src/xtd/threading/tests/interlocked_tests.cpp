@@ -10,7 +10,6 @@ using namespace xtd::tunit;
 
 namespace xtd::threading::tests {
   class test_class_(interlocked_tests) {
-  public:
     void test_method_(add_int32) {
       int32 location = 42;
       assert::are_equal(45, interlocked::add(location, 3), csf_);

@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(file_access_tests) {
-  public:
     void test_method_(read) {
       assert::are_equal(1, enum_object<>::to_int32(file_access::read), csf_);
       assert::are_equal("read", enum_object<>::to_string(file_access::read), csf_);

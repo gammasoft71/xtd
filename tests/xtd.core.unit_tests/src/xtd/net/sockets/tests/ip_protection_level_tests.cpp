@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(ip_protection_level_tests) {
-  public:
     void test_method_(unspecified) {
       assert::are_equal(-1, enum_object<>::to_int32(ip_protection_level::unspecified), csf_);
       assert::are_equal("unspecified", enum_object<>::to_string(ip_protection_level::unspecified), csf_);

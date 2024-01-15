@@ -17,7 +17,6 @@ namespace xtd::tests {
       ustring to_string() const noexcept {return "foo string";}
     };
     
-  public:
     void test_method_(format_empty) {
       any a;
       assert::are_equal("{}", ustring::format("{}", a), csf_);

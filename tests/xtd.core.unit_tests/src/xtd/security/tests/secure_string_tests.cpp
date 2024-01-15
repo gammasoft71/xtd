@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::security::tests {
   class test_class_(secure_string_tests) {
-  public:
     void test_method_(create_secure_string) {
       secure_string ss("String to test", 14);
       assert::are_equal(14_sz, ss.size(), csf_);

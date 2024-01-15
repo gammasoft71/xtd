@@ -11,7 +11,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(event_wait_handle_tests) {
-  public:
     void test_method_(constructor) {
       auto e1 = event_wait_handle {};
       auto e2 = event_wait_handle {};

@@ -23,7 +23,6 @@ namespace xtd::tests {
       int value_ = 0;
     };
     
-  public:
     void test_method_(equals) {
       iequatable_test ie1 {42};
       iequatable_test ie2 {42};

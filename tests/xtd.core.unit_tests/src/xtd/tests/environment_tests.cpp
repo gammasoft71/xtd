@@ -17,7 +17,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(environment_tests) {
-  public:
     void test_method_(command_line) {
       string_assert::contains("xtd.core.unit_tests", environment::command_line(), csf_);
     }

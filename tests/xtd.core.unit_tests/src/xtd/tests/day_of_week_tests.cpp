@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(day_of_week_tests) {
-  public:
     void test_method_(sunday) {
       assert::are_equal(0, enum_object<>::to_int32(day_of_week::sunday), csf_);
       assert::are_equal("sunday", enum_object<>::to_string(day_of_week::sunday), csf_);

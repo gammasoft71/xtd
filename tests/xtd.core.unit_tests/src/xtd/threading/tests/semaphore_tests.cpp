@@ -11,7 +11,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(semaphore_tests) {
-  public:
     // unnamed
     
     void test_method_(constructor) {

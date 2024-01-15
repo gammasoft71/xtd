@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(search_option_tests) {
-  public:
     void test_method_(top_directory_only) {
       assert::are_equal(0, enum_object<>::to_int32(search_option::top_directory_only), csf_);
       assert::are_equal("top_directory_only", enum_object<>::to_string(search_option::top_directory_only), csf_);

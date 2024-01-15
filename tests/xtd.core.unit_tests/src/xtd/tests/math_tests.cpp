@@ -12,7 +12,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(math_tests) {
-  public:
     void test_method_(e) {
       assert::are_equal(2.7182818284590452354, math::e, csf_);
     }

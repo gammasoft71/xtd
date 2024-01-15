@@ -10,7 +10,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(generic_stream_output_tests) {
-  public:
     void test_method_(write_array) {
       stringstream result;
       console::set_out(result);

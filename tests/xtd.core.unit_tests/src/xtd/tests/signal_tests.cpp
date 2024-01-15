@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(signal_tests) {
-  public:
     void test_method_(abnormal_termination) {
       assert::are_equal(SIGABRT, enum_object<>::to_int32(signal::abnormal_termination), csf_);
       assert::are_equal("abnormal_termination", enum_object<>::to_string(signal::abnormal_termination), csf_);

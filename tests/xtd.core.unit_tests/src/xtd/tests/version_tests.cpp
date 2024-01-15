@@ -10,7 +10,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(version_tests) {
-  public:
     void test_method_(create_version_with_default_constructor) {
       version version;
       assert::are_equal(0, version.major(), csf_);

@@ -10,7 +10,6 @@ using namespace xtd::tunit;
 
 namespace xtd::io::tests {
   class test_class_(path_tests) {
-  public:
     void test_method_(alt_directory_separator_char) {
       assert::are_equal('/', path::alt_directory_separator_char(), csf_);
     }

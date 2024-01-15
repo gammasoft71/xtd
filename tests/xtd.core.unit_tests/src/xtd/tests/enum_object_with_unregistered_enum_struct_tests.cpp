@@ -18,7 +18,6 @@ enum struct enum_object_with_unregistered_enum_struct_test {
 
 namespace xtd::tests {
   class test_class_(enum_object_with_unregistered_enum_struct_tests) {
-  public:
     void test_method_(enum_object_with_unregistered_enum_struct_test_default_ctor) {
       enum_object<enum_object_with_unregistered_enum_struct_test> e;
       

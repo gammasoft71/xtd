@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(assert_dialog_result_tests) {
-  public:
     void test_method_(abort) {
       assert::are_equal(3, enum_object<>::to_int32(assert_dialog_result::abort), csf_);
       assert::are_equal("abort", enum_object<>::to_string(assert_dialog_result::abort), csf_);

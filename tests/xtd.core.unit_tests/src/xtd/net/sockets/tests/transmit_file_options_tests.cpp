@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(transmit_file_options_tests) {
-  public:
     void test_method_(use_default_worker_thread) {
       assert::are_equal(0, enum_object<>::to_int32(transmit_file_options::use_default_worker_thread), csf_);
       assert::are_equal("use_default_worker_thread", enum_object<>::to_string(transmit_file_options::use_default_worker_thread), csf_);

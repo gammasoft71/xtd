@@ -10,7 +10,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(thread_pool_tests) {
-  public:
     void test_method_(get_max_threads) {
       size_t max_worker_threads = 0;
       size_t max_completion_port_threads = 0;

@@ -11,7 +11,6 @@ using namespace xtd::tunit;
 
 namespace xtd::reflection::tests {
   class test_class_(assembly_tests) {
-  public:
     void test_method_(assembly_company) {
       assert::are_equal("Gammasoft", assembly::get_executing_assembly().company(), csf_);
     }

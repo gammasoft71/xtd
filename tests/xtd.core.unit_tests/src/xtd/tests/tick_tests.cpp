@@ -9,7 +9,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(tick_tests) {
-  public:
     void test_method_(tick_denominator) {
       assert::are_equal(10000000LL, tick::den, csf_);
     }

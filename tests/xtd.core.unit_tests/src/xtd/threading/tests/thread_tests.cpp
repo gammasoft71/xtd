@@ -14,7 +14,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(thread_tests) {
-  public:
     void test_method_(constructor_empty) {
       auto thread = threading::thread {};
       assert::are_equal(threading::thread::invalid_handle, thread.handle(), csf_);

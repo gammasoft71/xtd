@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(trace_event_type_tests) {
-  public:
     void test_method_(critical) {
       assert::are_equal(1, enum_object<>::to_int32(trace_event_type::critical), csf_);
       assert::are_equal("critical", enum_object<>::to_string(trace_event_type::critical), csf_);

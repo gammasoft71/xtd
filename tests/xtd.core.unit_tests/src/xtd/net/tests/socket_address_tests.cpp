@@ -11,7 +11,6 @@ using namespace xtd::tunit;
 
 namespace xtd::net::tests {
   class test_class_(socket_address_tests) {
-  public:
     void test_method_(create_socket_address_with_address_family_unnown) {
       socket_address sa(address_family::unknown);
       assert::are_equal(address_family::unspecified, sa.address_family(), csf_);

@@ -40,7 +40,6 @@ namespace xtd {
 
 namespace xtd::tests {
   class test_class_(string_object_format_tests) {
-  public:
     void test_method_(format_point_with_default_argument) {
       assert::are_equal("(42, 24)", xtd::ustring::format("{0}", point {42, 24}), csf_);
     }

@@ -11,7 +11,6 @@ using namespace xtd::tunit;
 
 namespace xtd::net::sockets::tests {
   class test_class_(ip_v6_multicast_option_tests) {
-  public:
     void test_method_(default_constructor) {
       ip_v6_multicast_option mo;
       assert::are_equal(ip_address::ip_v6_none, mo.group(), csf_);

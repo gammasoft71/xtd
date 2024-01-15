@@ -12,7 +12,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(time_span_tests) {
-  public:
     void test_method_(nanoseconds_per_tick) {
       assert::are_equal(100ll, time_span::nanoseconds_per_tick, csf_);
     }

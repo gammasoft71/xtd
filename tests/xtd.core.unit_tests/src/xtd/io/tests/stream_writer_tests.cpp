@@ -11,7 +11,6 @@ using namespace xtd::tunit;
 
 namespace xtd::io::tests {
   class test_class_(stream_writer_tests) {
-  public:
     void test_method_(create_stream_writer_from_stringstream) {
       vector data = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
       std::stringstream s;

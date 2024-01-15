@@ -10,7 +10,6 @@ using namespace xtd::tunit;
 
 namespace xtd::diagnostics::tests {
   class test_class_(stopwatch_tests) {
-  public:
     void test_method_(create_stopwatch) {
       stopwatch s;
       thread::sleep(1_ms);

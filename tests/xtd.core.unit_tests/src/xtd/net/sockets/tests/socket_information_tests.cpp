@@ -12,7 +12,6 @@ using namespace xtd::tunit;
 
 namespace xtd::net::sockets::tests {
   class test_class_(socket_information_tests) {
-  public:
     void test_method_(default_constructor) {
       socket_information si;
       assert::are_equal(socket_information_options::none, si.options(), csf_);

@@ -9,7 +9,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(distribution_tests) {
-  public:
     void test_method_(default_ctor) {
       auto d = distribution {};
       assert::are_equal(uri {}, d.bug_repport(), csf_);

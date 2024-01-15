@@ -17,7 +17,6 @@ namespace xtd::tests {
     static constexpr int32 cpp_unknown = 0;
     static constexpr int32 cpp20_experimental = 201707L;
     
-  public:
     void test_method_(default_ctor) {
       cpp_language cl;
       

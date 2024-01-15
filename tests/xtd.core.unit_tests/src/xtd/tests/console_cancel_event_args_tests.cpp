@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(console_cancel_event_args_tests) {
-  public:
     void test_method_(default_constructor) {
       auto ea = console_cancel_event_args();
       assert::is_false(ea.cancel(), csf_);

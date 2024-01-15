@@ -11,7 +11,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(wstring_boolean_format_tests) {
-  public:
     void test_method_(format_false_with_default_argument) {
       assert::are_equal(L"false", xtd::ustring::format(L"{0}", false), csf_);
     }

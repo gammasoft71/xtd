@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(console_key_tests) {
-  public:
     void test_method_(backspace) {
       assert::are_equal(8, enum_object<>::to_int32(console_key::backspace), csf_);
       assert::are_equal("backspace", enum_object<>::to_string(console_key::backspace), csf_);

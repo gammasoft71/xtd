@@ -9,7 +9,6 @@ using namespace xtd::tunit;
 
 namespace xtd::net::tests {
   class test_class_(network_credential_tests) {
-  public:
     void test_method_(create_with_default_constructor) {
       network_credential nc;
       assert::is_empty(nc.user_name(), csf_);

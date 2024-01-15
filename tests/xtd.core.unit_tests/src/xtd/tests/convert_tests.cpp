@@ -17,7 +17,6 @@ namespace xtd::tests {
       two
     };
     
-  public:
     void test_method_(to_any_from_any) {
       any value = 42;
       assert::are_equal(42, any_cast<int>(convert::to_any(value)), csf_);
