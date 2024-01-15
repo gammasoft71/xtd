@@ -5,7 +5,7 @@ using namespace xtd::tunit;
 namespace unit_tests {
   // Used test_class_attribute<> to add unit test suit.
   class test;
-  test_class_attribute<test> test_class_attr {"test"};
+  test_class_attribute<test> test_class_attr {"unit_tests::test"};
   
   // The test class must be inherit from test_class class.
   class test : public test_class {
