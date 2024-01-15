@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "unit_test.h"
+#include <xtd/typeof>
 #include <memory>
 #include <string>
 
@@ -42,7 +43,7 @@ namespace xtd {
 /// @include test_class.cpp
 #define test_class_(class_name) \
   class_name;\
-  xtd::tunit::test_class_attribute<class_name> __##class_name##_attribute {#class_name}; \
+  xtd::tunit::test_class_attribute<class_name> __##class_name##_attribute {typeof_<class_name>().full_name()}; \
   class class_name : public xtd::tunit::test_class
 
 /// @brief Helper to create a test_class in a test unit from a specified class base.
@@ -77,5 +78,5 @@ namespace xtd {
 /// @endcode
 #define test_class_from_(class_name, from_class_name) \
   class_name;\
-  xtd::tunit::test_class_attribute<class_name> __##class_name##_attribute {#class_name}; \
+  xtd::tunit::test_class_attribute<class_name> __##class_name##_attribute {typeof_<class_name>().full_name()}; \
   class class_name : public from_class_name
