@@ -293,7 +293,7 @@ using namespace xtd::tunit;
 namespace unit_tests {
   class hello_world_test;
   
-  auto hello_world_test_class_attr = test_class_attribute<hello_world_test> {"hello_world_test"};
+  auto hello_world_test_class_attr = test_class_attribute<hello_world_test> {"unit_tests::hello_world_test"};
   class hello_world_test : public test_class {
     test_method_attribute create_string_from_literal_attr {"create_string_from_literal", *this, &hello_world_test::create_string_from_literal};
     void create_string_from_literal() {
