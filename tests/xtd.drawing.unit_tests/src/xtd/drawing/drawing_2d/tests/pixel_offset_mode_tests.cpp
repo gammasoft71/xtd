@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::drawing::drawing_2d::tests {
   class test_class_(pixel_offset_mode_tests) {
-  public:
     void test_method_(invalid) {
       assert::are_equal(-1, enum_object<>::to_int32(pixel_offset_mode::invalid), csf_);
       assert::are_equal("invalid", enum_object<>::to_string(pixel_offset_mode::invalid), csf_);

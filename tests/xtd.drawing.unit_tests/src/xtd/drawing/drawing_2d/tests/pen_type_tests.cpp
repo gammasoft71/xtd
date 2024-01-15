@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::drawing::drawing_2d::tests {
   class test_class_(pen_type_tests) {
-  public:
     void test_method_(solid_color) {
       assert::are_equal(0, enum_object<>::to_int32(pen_type::solid_color), csf_);
       assert::are_equal("solid_color", enum_object<>::to_string(pen_type::solid_color), csf_);

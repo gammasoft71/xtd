@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::drawing::imaging::tests {
   class test_class_(encoder_parameter_value_type_tests) {
-  public:
     void test_method_(value_type_byte) {
       assert::are_equal(1, enum_object<>::to_int32(encoder_parameter_value_type::value_type_byte), csf_);
       assert::are_equal("value_type_byte", enum_object<>::to_string(encoder_parameter_value_type::value_type_byte), csf_);

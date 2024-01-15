@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::drawing::imaging::tests {
   class test_class_(pixel_format_tests) {
-  public:
     void test_method_(undefined) {
       assert::are_equal(0, enum_object<>::to_int32(pixel_format::undefined), csf_);
       assert::are_equal("undefined", enum_object<>::to_string(pixel_format::undefined), csf_);

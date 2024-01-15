@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::drawing::text::tests {
   class test_class_(hotkey_prefix_tests) {
-  public:
     void test_method_(none) {
       assert::are_equal(0, enum_object<>::to_int32(hotkey_prefix::none), csf_);
       assert::are_equal("none", enum_object<>::to_string(hotkey_prefix::none), csf_);

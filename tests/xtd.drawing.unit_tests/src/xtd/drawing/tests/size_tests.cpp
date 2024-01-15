@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::drawing::tests {
   class test_class_(size_tests) {
-  public:
     void test_method_(create_empty_size) {
       size s;
       assert::are_equal(size(0, 0), s, csf_);

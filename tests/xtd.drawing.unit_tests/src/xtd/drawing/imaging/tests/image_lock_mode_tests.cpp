@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::drawing::imaging::tests {
   class test_class_(image_lock_mode_tests) {
-  public:
     void test_method_(read_only) {
       assert::are_equal(1, enum_object<>::to_int32(image_lock_mode::read_only), csf_);
       assert::are_equal("read_only", enum_object<>::to_string(image_lock_mode::read_only), csf_);

@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::drawing::drawing_2d::tests {
   class test_class_(flush_intention_tests) {
-  public:
     void test_method_(flush) {
       assert::are_equal(0, enum_object<>::to_int32(flush_intention::flush), csf_);
       assert::are_equal("flush", enum_object<>::to_string(flush_intention::flush), csf_);

@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::drawing::tests {
   class test_class_(graphics_unit_tests) {
-  public:
     void test_method_(world) {
       assert::are_equal(0, enum_object<>::to_int32(graphics_unit::world), csf_);
       assert::are_equal("world", enum_object<>::to_string(graphics_unit::world), csf_);

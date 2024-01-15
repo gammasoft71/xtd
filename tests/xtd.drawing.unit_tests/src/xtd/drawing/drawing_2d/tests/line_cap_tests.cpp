@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::drawing::drawing_2d::tests {
   class test_class_(line_cap_tests) {
-  public:
     void test_method_(flat) {
       assert::are_equal(0, enum_object<>::to_int32(line_cap::flat), csf_);
       assert::are_equal("flat", enum_object<>::to_string(line_cap::flat), csf_);

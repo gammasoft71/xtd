@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::drawing::drawing_2d::tests {
   class test_class_(pen_alignment_tests) {
-  public:
     void test_method_(center) {
       assert::are_equal(0, enum_object<>::to_int32(pen_alignment::center), csf_);
       assert::are_equal("center", enum_object<>::to_string(pen_alignment::center), csf_);

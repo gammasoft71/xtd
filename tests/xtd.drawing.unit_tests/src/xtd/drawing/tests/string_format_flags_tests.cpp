@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::drawing::tests {
   class test_class_(string_format_flags_tests) {
-  public:
     void test_method_(direction_right_to_left) {
       assert::are_equal(1, enum_object<>::to_int32(string_format_flags::direction_right_to_left), csf_);
       assert::are_equal("direction_right_to_left", enum_object<>::to_string(string_format_flags::direction_right_to_left), csf_);

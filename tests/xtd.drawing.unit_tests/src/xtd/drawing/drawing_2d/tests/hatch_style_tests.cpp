@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::drawing::drawing_2d::tests {
   class test_class_(hatch_style_tests) {
-  public:
     void test_method_(horizontal) {
       assert::are_equal(0, enum_object<>::to_int32(hatch_style::horizontal), csf_);
       assert::are_equal("horizontal", enum_object<>::to_string(hatch_style::horizontal), csf_);

@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::drawing::text::tests {
   class test_class_(text_rendering_hint_tests) {
-  public:
     void test_method_(system_default) {
       assert::are_equal(0, enum_object<>::to_int32(text_rendering_hint::system_default), csf_);
       assert::are_equal("system_default", enum_object<>::to_string(text_rendering_hint::system_default), csf_);

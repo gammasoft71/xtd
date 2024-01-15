@@ -10,7 +10,6 @@ using namespace xtd::tunit;
 
 namespace xtd::drawing::tests {
   class test_class_(color_tests) {
-  public:
     void test_method_(create_empty_color) {
       color c;
       

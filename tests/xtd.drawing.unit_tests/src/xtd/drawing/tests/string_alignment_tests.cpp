@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::drawing::tests {
   class test_class_(string_alignment_tests) {
-  public:
     void test_method_(near) {
       assert::are_equal(0, enum_object<>::to_int32(string_alignment::near), csf_);
       assert::are_equal("near", enum_object<>::to_string(string_alignment::near), csf_);
