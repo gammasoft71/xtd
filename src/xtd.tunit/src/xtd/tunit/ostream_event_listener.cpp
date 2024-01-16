@@ -140,7 +140,7 @@ void ostream_event_listener::on_test_ignored(const test_event_args& e) const {
 }
 
 void ostream_event_listener::on_test_start(const test_event_args& e) const {
-  if (settings::default_settings().gtest_compatibility()) {
+  if (settings::default_settings().gtest_compatibility() && !e.test().name().starts_with("DISABLED_")) {
     console::foreground_color(console_color::dark_green);
     os_ << "[ RUN      ] ";
     console::reset_color();
