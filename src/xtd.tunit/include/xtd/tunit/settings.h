@@ -9,6 +9,7 @@
 #include <xtd/ustring>
 #include <cstdint>
 #include <cstdlib>
+#include <optional>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -242,8 +243,8 @@ namespace xtd {
       bool output_color_ = true;
       bool output_json_ = false;
       bool output_xml_ = false;
-      xtd::ustring output_json_path_ = "tests.json";
-      xtd::ustring output_xml_path_ = "tests.xml";
+      std::optional<xtd::ustring> output_json_path_;
+      std::optional<xtd::ustring> output_xml_path_;
       xtd::ustring file_name_ = xtd::io::path::get_full_path(xtd::environment::get_command_line_args()[0]);
       bool show_duration_ = true;
       bool shuffle_tests_ = false;

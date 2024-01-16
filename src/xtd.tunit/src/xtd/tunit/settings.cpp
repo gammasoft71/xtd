@@ -123,7 +123,7 @@ void settings::output_xml(bool output_xml) noexcept {
 }
 
 ustring settings::output_json_path() const noexcept {
-  return output_json_path_;
+  return output_json_path_.value_or(gtest_compatibility() ? "test_detail.json" : "tests.json");
 }
 
 void settings::output_json_path(const ustring& output_json_path) noexcept {
@@ -131,7 +131,7 @@ void settings::output_json_path(const ustring& output_json_path) noexcept {
 }
 
 ustring settings::output_xml_path() const noexcept {
-  return output_xml_path_;
+  return output_xml_path_.value_or(gtest_compatibility() ? "test_detail.xml" : "tests.xml");
 }
 
 void settings::output_xml_path(const ustring& output_xml_path) noexcept {
