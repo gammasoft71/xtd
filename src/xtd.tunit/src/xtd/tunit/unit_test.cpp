@@ -447,7 +447,7 @@ void unit_test::write_tests_json() {
       if (test.failed()) {
         file << "          \"failures\": [" << endl;
         file << "            {" << endl;
-        file << "              \"failure\": \"" << test.stack_frame().get_file_name() << ":" << test.stack_frame().get_file_line_number() << "\\n" << message_to_json_string(test) << "\"" << endl;
+        file << "              \"failure\": \"" << escape_path_to_json_string(test.stack_frame().get_file_name()) << ":" << test.stack_frame().get_file_line_number() << "\\n" << message_to_json_string(test) << "\"" << endl;
         file << "              \"type\": \"\"" << endl;
         file << "            }" << endl;
         file << "          ]" << endl;
@@ -474,7 +474,7 @@ void unit_test::write_tests_xml() {
         file << " />" << endl;
       else {
         file << ">" << endl;
-        file << "      <failure message=\"" << message_to_xml_string(test) << "\" type=\"" << "\">" << "<![CDATA[" << cdata_message_to_xml_string(test) << "]]></failure>" << endl;
+        file << "      <failure message=\"" << message_to_xml_string(test) << "\" type=\"" << "\">" << "<![CDATA[" << cdata_message_to_xml_string(test) << endl << "]]></failure>" << endl;
         file << "    </testcase>" << endl;
       }
     }

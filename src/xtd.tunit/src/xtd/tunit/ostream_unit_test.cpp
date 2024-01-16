@@ -66,7 +66,7 @@ void ostream_unit_test::write_help() {
   os_ << "  --filter_tests=";
   console::reset_color();
   console::foreground_color(console_color::dark_yellow);
-  os_ << "POSITIVE_PATTERN[–NEGATIVE_PATERN]" << endl;
+  os_ << "POSITIVE_PATTERN[-NEGATIVE_PATERN]" << endl;
   console::reset_color();
   os_ << "      Run only the tests whose name matches one of the positive patterns but" << endl;
   os_ << "      none of the negative patterns. '?' matches any single character; '*'" << endl;
