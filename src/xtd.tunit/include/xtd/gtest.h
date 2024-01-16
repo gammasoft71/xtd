@@ -1,21 +1,27 @@
+/// @cond
+
 /// @file
 /// @brief Contains gtest helpers.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "xtd.tunit.h"
 
-/// @cond
+#if !defined(__XTD_EXPERIMENTAL_GTEST_HELPERS__)
+#error "Do not use this file: it is for experimental purposes only"
+#endif
 
 namespace testing {
   void InitGoogleTest() {xtd::tunit::settings::default_settings().gtest_compatibility(true);}
   void InitGoogleTest(int argc, char* argv[]) {InitGoogleTest();}
 }
 
+#define ASSERT_EQ(val1, val2) xtd::tunit::assert::are_equal(val1, val2, csf_)
+#define ASSERT_NE(val1, val2) xtd::tunit::assert::are_not_equal(val1, val2, csf_)
 #define ASSERT_FALSE(condition) xtd::tunit::assert::is_false(condition, csf_)
 #define ASSERT_TRUE(condition) xtd::tunit::assert::is_true(condition, csf_)
 
-#define EXPECT_FALSE(condition) xtd::tunit::valid::is_false(condition, csf_)
-#define EXPECT_TRUE(condition) xtd::tunit::valid::is_true(condition, csf_)
+#define EXPECT_FALSE(condition) xtd::tunit::assume::is_false(condition, csf_)
+#define EXPECT_TRUE(condition) xtd::tunit::assume::is_true(condition, csf_)
 
 #define RUN_ALL_TESTS xtd::tunit::console_unit_test().run
 
