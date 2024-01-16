@@ -243,7 +243,6 @@ void ostream_event_listener::on_unit_test_start(const tunit_event_args& e) const
     console::reset_color();
   }
   if (settings::default_settings().gtest_compatibility()) {
-    os_ << "Running main() from " << settings::default_settings().file_name_ << endl;
     console::foreground_color(console_color::dark_green);
     os_ << "[==========] ";
     console::reset_color();
