@@ -31,14 +31,3 @@ namespace unit_test_project2 {
 auto main()->int {
   return console_unit_test().run();
 }
-
-// This code produces the following output:
-//
-// Start 2 tests from 1 test case
-// Run tests:
-//   SUCCEED hello_world_test.create_string_from_literal (0 ms total)
-//   SUCCEED hello_world_test.create_string_from_chars (0 ms total)
-//
-// Test results:
-//   SUCCEED 2 tests.
-// End 2 tests from 1 test case ran. (0 ms total)
