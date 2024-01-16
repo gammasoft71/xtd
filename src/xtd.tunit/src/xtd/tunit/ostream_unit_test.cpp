@@ -26,7 +26,6 @@ int ostream_unit_test::list_tests(const vector<ustring>& tests) {
     for (auto name : tests)
       os_ << name << endl;
   } else {
-    os_ << "Running main() from " << settings::default_settings().file_name_ << endl;
     map<string, vector<ustring>> lists;
     for (auto name : tests) {
       auto key_value =  ustring(name).split({'.'});
