@@ -59,7 +59,7 @@ namespace xtdc_command {
     
     void create_source(const xtd::ustring& name, const xtd::ustring& path) const {
       std::vector<xtd::ustring> lines {
-        "#include <gtest/gtest>",
+        "#include <gtest/gtest.h>",
         "",
         xtd::ustring::format("namespace {} {{", name),
         "  TEST(unit_test1, test_method1) {",
@@ -73,7 +73,7 @@ namespace xtdc_command {
     
     void create_main(const xtd::ustring& name, const xtd::ustring& path) const {
       std::vector<xtd::ustring> lines {
-        "#include <gtest/gtest>",
+        "#include <gtest/gtest.h>",
         "",
         "auto main(int argc, char* argv[])->int {",
         "  testing::InitGoogleTest(&argc, argv);",
