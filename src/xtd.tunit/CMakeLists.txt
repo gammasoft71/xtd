@@ -90,6 +90,8 @@ add_sources(
   include/xtd/tunit/unit_test
   include/xtd/tunit/valid.h
   include/xtd/tunit/valid
+  include/xtd/gtest.h
+  include/xtd/gtest
   include/xtd/xtd.tunit
   include/xtd/xtd.tunit
   include/xtd/xtd.tunit.h
