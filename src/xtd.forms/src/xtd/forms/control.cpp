@@ -26,6 +26,7 @@
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/threading/manual_reset_event.h>
 #include <xtd/threading/thread>
+#include <xtd/char32_object>
 #include <xtd/invalid_operation_exception>
 #include <xtd/typeof>
 #include <iostream>
@@ -1913,7 +1914,7 @@ void control::wm_key_char(message& message) {
     on_key_down(key_event_args);
     data_->suppress_key_press = key_event_args.suppress_key_press();
     if (!key_event_args.handled()) def_wnd_proc(message);
-  } else if ((message.msg() == WM_CHAR || message.msg() == WM_SYSCHAR) && data_->suppress_key_press == false && (message.wparam() > 255u || std::iscntrl(static_cast<int32>(message.wparam()))) == 0) {
+  } else if ((message.msg() == WM_CHAR || message.msg() == WM_SYSCHAR) && data_->suppress_key_press == false && (message.wparam() > 255u || char32_object::is_control(static_cast<char32>(message.wparam())) == 0)) {
     auto key_press_event_args = forms::key_press_event_args {static_cast<char32>(message.wparam())};
     on_key_press(key_press_event_args);
     message.result(key_press_event_args.handled());
