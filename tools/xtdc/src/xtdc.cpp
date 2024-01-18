@@ -1,5 +1,6 @@
 #include "new_project.h"
 //#include "project_management.h"
+#include <xtd/char_object>
 #include <xtd/startup>
 
 using namespace std;
@@ -405,7 +406,7 @@ namespace xtdc_command {
           console::write_line("The name is empty.");
           return -1;
         }
-        if (std::find_if(name.begin(), name.end(), [](auto c) {return !(isalnum(c) || c == '_');}) != name.end()) {
+        if (std::find_if(name.begin(), name.end(), [](auto c) {return !(char_object::is_letter_or_digit(c) || c == '_');}) != name.end()) {
           console::write_line("The name : \"{}\" contains invalid charaters.", name);
           return -1;
         }
@@ -490,7 +491,7 @@ namespace xtdc_command {
           console::write_line("The name is empty.");
           return -1;
         }
-        if (std::find_if(name.begin(), name.end(), [](auto c) {return !(isalnum(c) || c == '_');}) != name.end()) {
+        if (std::find_if(name.begin(), name.end(), [](auto c) {return !(char_object::is_letter_or_digit(c) || c == '_');}) != name.end()) {
           console::write_line("The name : \"{}\" contains invalid charaters.", name);
           return -1;
         }

@@ -1120,7 +1120,7 @@ namespace xtd {
     /// @remarks If count is greater than the number of substrings, the available substrings are returned.
     std::vector<ustring> split(const std::vector<value_type>& separators, size_t count, string_split_options options) const noexcept;
     
-    /// @brief Splits this string into substrings that are based on the default white-space characters. White-space characters are defined by the c++ standard and return true if they are passed to the std::isspace() or std::iswspace() method.
+    /// @brief Splits this string into substrings that are based on the default white-space characters. White-space characters are defined by the c++ standard and return true if they are passed to the xtd::char_object::isspace() or std::iswspace() method.
     /// @return An array whose elements contain the substrings in this string that are delimited by one or more characters in white-space separators. For more information, see the Remarks section.
     /// @remarks Delimiter characters are not included in the elements of the returned array.
     /// @remarks If the specified string does not contain any of the characters in separator, or the count parameter is 1, the returned array consists of a single element that contains the specified string.
@@ -1147,7 +1147,7 @@ namespace xtd {
     ///   3. "aa",
     ///   4. empty string, which represents the empty string that follows the "_" character at index 4.
     ///   5. empty string, which represents the empty string that follows the "-" character at index 5.
-    /// @remarks If the separator parameter contains no characters, white-space characters are assumed to be the delimiters. White-space characters are defined by the c++ standard and return true if they are passed to the std::isspace() or std::iswspace() method.
+    /// @remarks If the separator parameter contains no characters, white-space characters are assumed to be the delimiters. White-space characters are defined by the c++ standard and return true if they are passed to the xtd::char_object::isspace() or std::iswspace() method.
     /// @remarks If count is greater than the number of substrings, the available substrings are returned.
     std::vector<ustring> split(const std::vector<value_type>& separators, string_split_options options) const noexcept;
     

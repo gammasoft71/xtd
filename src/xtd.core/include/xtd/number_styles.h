@@ -16,9 +16,9 @@ namespace xtd {
   enum class number_styles {
     /// @brief Indicates that no style elements, such as leading or trailing white space, thousands separators, or a decimal separator, can be present in the parsed string. The string to be parsed must consist of integral decimal digits only.
     none = 0x0,
-    /// @brief Indicates that leading white-space characters can be present in the parsed string. Valid white-space characters have the Unicode values U+0009, U+000A, U+000B, U+000C, U+000D, and U+0020. Note that this is a subset of the characters for which the std::isspace(char) method returns true.
+    /// @brief Indicates that leading white-space characters can be present in the parsed string. Valid white-space characters have the Unicode values U+0009, U+000A, U+000B, U+000C, U+000D, and U+0020. Note that this is a subset of the characters for which the xtd::char_object::is_space(char) method returns true.
     allow_leading_white = 0b1,
-    /// @brief Indicates that trailing white-space characters can be present in the parsed string. Valid white-space characters have the Unicode values U+0009, U+000A, U+000B, U+000C, U+000D, and U+0020. Note that this is a subset of the characters for which the std::isspace(char) method returns true.
+    /// @brief Indicates that trailing white-space characters can be present in the parsed string. Valid white-space characters have the Unicode values U+0009, U+000A, U+000B, U+000C, U+000D, and U+0020. Note that this is a subset of the characters for which the xtd::char_object::is_space(char) method returns true.
     allow_trailing_white = 0b10,
     /// @brief Indicates that the numeric string can have a leading sign.
     allow_leading_sign = 0b100,
