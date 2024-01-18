@@ -2,6 +2,7 @@
 #include "../../include/xtd/argument_exception.h"
 #include "../../include/xtd/argument_out_of_range_exception.h"
 #include "../../include/xtd/as.h"
+#include "../../include/xtd/char_object.h"
 #include "../../include/xtd/invalid_operation_exception.h"
 #include "../../include/xtd/uri_format_exception.h"
 #include "../../include/xtd/uri_template_match_exception.h"
@@ -181,9 +182,9 @@ bool uri::check_scheme_name(const ustring& scheme) {
   for (auto c : as<u32string>(scheme)) {
     if (first) {
       first = false;
-      if (!isalpha(c)) return false;
+      if (!char_object::is_letter(c)) return false;
     } else {
-      if (!isalnum(c) && c != '.' && c != '+' && c != '-') return false;
+      if (!char_object::is_letter_or_digit(c) && c != '.' && c != '+' && c != '-') return false;
     }
   }
   
@@ -376,11 +377,11 @@ ustring uri::format_host_componant(const ustring& str, uri_format format) {
 }
 
 bool uri::need_to_escape_data_char(char character) {
-  return !(isalnum(character) || "!-_.~"_s.index_of(character) != ustring::npos);
+  return !(char_object::is_letter_or_digit(character) || "!-_.~"_s.index_of(character) != ustring::npos);
 }
 
 bool uri::need_to_escape_uri_char(char character) {
-  return !(isalnum(character) || "!@#=?/:-_.~"_s.index_of(character) != ustring::npos);
+  return !(char_object::is_letter_or_digit(character) || "!@#=?/:-_.~"_s.index_of(character) != ustring::npos);
 }
 
 void uri::set_fragment(ustring& escape_uri) {

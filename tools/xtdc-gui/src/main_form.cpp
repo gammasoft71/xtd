@@ -1,6 +1,7 @@
 #include "main_form.h"
 #include <ctype.h>
 #include <list>
+#include <xtd/char_object>
 #include <xtd/environment>
 #include <xtd/system_exception>
 #include <xtd/diagnostics/debug>
@@ -509,7 +510,7 @@ main_form::main_form() {
   configure_project_name_text_box_.location({50, 210});
   configure_project_name_text_box_.width(550);
   configure_project_name_text_box_.key_press += [&](object & sender, key_press_event_args & e) {
-    e.handled(configure_project_name_text_box_.text().size() >= 128 || !(isalnum(e.key_char()) || e.key_char() == U'_' || e.key_char() == U'-'));
+    e.handled(configure_project_name_text_box_.text().size() >= 128 || !(char_object::is_letter_or_digit(e.key_char()) || e.key_char() == U'_' || e.key_char() == U'-'));
   };
   configure_project_name_text_box_.key_up += [&](object & sender, key_event_args & e) {
     next_button_.enabled(configure_project_name_text_box_.text().size() != 0 && configure_project_location_text_box_.text().size() != 0);
