@@ -10,6 +10,7 @@
 #include <xtd/forms/native/toolkit>
 #include <xtd/forms/native/window_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/char32_object.h>
 #include <xtd/convert_string>
 
 using namespace std;
@@ -217,7 +218,7 @@ void text_box::wm_key_char(message& message) {
       auto key_event_args = forms::key_event_args {static_cast<keys>(message.wparam())};
       on_key_down(key_event_args);
       message.result(key_event_args.suppress_key_press());
-    } else if (message.msg() == WM_CHAR && std::iscntrl(static_cast<int32>(message.wparam())) == 0) {
+    } else if (message.msg() == WM_CHAR && char32_object::is_control(static_cast<char32>(message.wparam())) == 0) {
       auto key_event_args = key_press_event_args {static_cast<char32>(message.wparam())};
       set_text(control::text() + xtd::ustring::format("{}", key_event_args.key_char()));
       native::text_box::append(handle(), xtd::ustring::format("{}", data_->password_char));
