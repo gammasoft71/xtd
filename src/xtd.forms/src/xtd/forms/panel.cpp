@@ -87,7 +87,6 @@ forms::create_params panel::create_params() const noexcept {
   auto create_params = scrollable_control::create_params();
   
   create_params.class_name("panel");
-  create_params.style(create_params.style() | WS_CLIPSIBLINGS);
   
   if (control_appearance() == forms::control_appearance::system) {
     if (data_->border_style == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
