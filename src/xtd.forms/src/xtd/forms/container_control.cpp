@@ -18,6 +18,7 @@ void container_control::active_control(std::nullptr_t) {
 }
 
 container_control::container_control() {
+  set_style(control_styles::container_control, true);
   set_style(control_styles::all_painting_in_wm_paint, false);
 }
 
