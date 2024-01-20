@@ -38,6 +38,7 @@ public:
     cancel_close_check_box.size({100, 40});
     cancel_close_check_box.text("cancel close");
     
+    form2.size({300, 100});
     form2.text("Close count = 0");
     form2.form_closing += [&](object& seander, form_closing_event_args& e) {
       e.cancel(cancel_close_check_box.checked());
