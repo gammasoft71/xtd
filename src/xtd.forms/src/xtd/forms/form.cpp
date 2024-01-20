@@ -504,50 +504,47 @@ forms::dialog_result form::show_sheet_dialog(const iwin32_window& owner) {
 }
 
 forms::create_params form::create_params() const noexcept {
-  auto cp = container_control::create_params();
-  cp.style(cp.style() & ~WS_CHILD);
+  auto create_params = container_control::create_params();
+
+  create_params.class_name("form");
   
-  cp.class_name("form");
-  
-  cp.style(cp.style() | WS_CLIPCHILDREN);
-  
-  if (get_state(state::modal)) cp.ex_style(cp.ex_style() | WS_EX_MODALWINDOW);
-  if (data_->owner != nullptr) cp.parent(data_->owner->handle());
-  if (data_->top_most) cp.ex_style(cp.ex_style() | WS_EX_TOPMOST);
+  if (get_state(state::modal)) create_params.ex_style(create_params.ex_style() | WS_EX_MODALWINDOW);
+  if (data_->owner != nullptr) create_params.parent(data_->owner->handle());
+  if (data_->top_most) create_params.ex_style(create_params.ex_style() | WS_EX_TOPMOST);
   if (!enabled())
     // Forms that are parent of a modal dialog must keep their WS_DISABLED style (VSWhidbey 449309)
-    cp.style(cp.style() | WS_DISABLED);
+    create_params.style(create_params.style() | WS_DISABLED);
   else if (top_level())
     // It doesn't seem to make sense to allow a top-level form to be disabled
     //
-    cp.style(cp.style() & ~WS_DISABLED);
+    create_params.style(create_params.style() & ~WS_DISABLED);
     
   if (top_level() && opacity() != 0)
-    cp.ex_style(cp.ex_style() | WS_EX_LAYERED);
+    create_params.ex_style(create_params.ex_style() | WS_EX_LAYERED);
     
-  fill_in_create_params_border_styles(cp);
-  fill_in_create_params_window_state(cp);
-  fill_in_create_params_border_icons(cp);
+  fill_in_create_params_border_styles(create_params);
+  fill_in_create_params_window_state(create_params);
+  fill_in_create_params_border_icons(create_params);
   
   if (data_->show_in_taskbar)
-    cp.ex_style(cp.ex_style() | WS_EX_APPWINDOW);
+    create_params.ex_style(create_params.ex_style() | WS_EX_APPWINDOW);
     
   xtd::forms::form_border_style border_style = form_border_style();
   if (!data_->show_icon && (border_style == xtd::forms::form_border_style::sizable || border_style == xtd::forms::form_border_style::fixed_3d || border_style == xtd::forms::form_border_style::fixed_single))
-    cp.ex_style(cp.ex_style() | WS_EX_DLGMODALFRAME);
+    create_params.ex_style(create_params.ex_style() | WS_EX_DLGMODALFRAME);
     
   if (top_level())
-    fill_in_create_params_start_position(cp);
+    fill_in_create_params_start_position(create_params);
     
   /*
   if (right_to_left == xtd::forms::right_to_left::yes && right_to_left_layout() == true) {
-    cp.ex_style(cp.ex_style() | WS_EX_LAYOUTRTL | WS_EX_NOINHERITLAYOUT);
-    cp.ex_style(cp.ex_style() & ~(WS_EX_RTLREADING | WS_EX_RIGHT | WS_EX_LEFTSCROLLBAR));
+    create_params.ex_style(create_params.ex_style() | WS_EX_LAYOUTRTL | WS_EX_NOINHERITLAYOUT);
+    create_params.ex_style(create_params.ex_style() & ~(WS_EX_RTLREADING | WS_EX_RIGHT | WS_EX_LEFTSCROLLBAR));
   }*/
   
-  //diagnostics::debug::write_line("create_params = {}, style = {}, ex_style = {}", cp, __windows_style_to_string__(cp.style()), __windows_extended_style_to_string__(cp.ex_style()));
+  //diagnostics::debug::write_line("create_params = {}, style = {}, ex_style = {}", create_params, __windows_style_to_string__(create_params.style()), __windows_extended_style_to_string__(create_params.ex_style()));
   
-  return cp;
+  return create_params;
 }
 
 drawing::size form::default_size() const noexcept {
@@ -681,65 +678,65 @@ void form::destroy_system_menu() {
   client_size(prev_client_size);
 }
 
-void form::fill_in_create_params_border_styles(xtd::forms::create_params& cp) const {
+void form::fill_in_create_params_border_styles(xtd::forms::create_params& create_params) const {
   switch (data_->form_border_style) {
     case xtd::forms::form_border_style::none: break;
-    case xtd::forms::form_border_style::fixed_single: cp.style(cp.style() | WS_BORDER); break;
-    case xtd::forms::form_border_style::sizable: cp.style(cp.style() | WS_BORDER | WS_THICKFRAME); break;
+    case xtd::forms::form_border_style::fixed_single: create_params.style(create_params.style() | WS_BORDER); break;
+    case xtd::forms::form_border_style::sizable: create_params.style(create_params.style() | WS_BORDER | WS_THICKFRAME); break;
     case xtd::forms::form_border_style::fixed_3d:
-      cp.style(cp.style() | WS_BORDER);
-      cp.ex_style(cp.ex_style() | WS_EX_CLIENTEDGE);
+      create_params.style(create_params.style() | WS_BORDER);
+      create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
       break;
     case xtd::forms::form_border_style::fixed_dialog:
-      cp.style(cp.style() | WS_BORDER);
-      cp.ex_style(cp.ex_style() | WS_EX_DLGMODALFRAME);
+      create_params.style(create_params.style() | WS_BORDER);
+      create_params.ex_style(create_params.ex_style() | WS_EX_DLGMODALFRAME);
       break;
     case xtd::forms::form_border_style::fixed_tool_window:
-      cp.style(cp.style() | WS_BORDER);
-      cp.ex_style(cp.ex_style() | WS_EX_TOOLWINDOW);
+      create_params.style(create_params.style() | WS_BORDER);
+      create_params.ex_style(create_params.ex_style() | WS_EX_TOOLWINDOW);
       break;
     case xtd::forms::form_border_style::sizable_tool_window:
-      cp.style(cp.style() | WS_BORDER | WS_THICKFRAME);
-      cp.ex_style(cp.ex_style() | WS_EX_TOOLWINDOW);
+      create_params.style(create_params.style() | WS_BORDER | WS_THICKFRAME);
+      create_params.ex_style(create_params.ex_style() | WS_EX_TOOLWINDOW);
       break;
   }
 }
 
-void form::fill_in_create_params_border_icons(xtd::forms::create_params& cp) const {
+void form::fill_in_create_params_border_icons(xtd::forms::create_params& create_params) const {
   if (data_->form_border_style == xtd::forms::form_border_style::none)
-    cp.class_style(cp.class_style() | CS_NOCLOSE);
+    create_params.class_style(create_params.class_style() | CS_NOCLOSE);
   else {
     if (!text().empty())
-      cp.style(cp.style() | WS_CAPTION);
+      create_params.style(create_params.style() | WS_CAPTION);
       
     if (data_->control_box)
-      cp.style(cp.style() | WS_SYSMENU | WS_CAPTION);
+      create_params.style(create_params.style() | WS_SYSMENU | WS_CAPTION);
     else
-      cp.style(cp.style() & ~WS_SYSMENU);
+      create_params.style(create_params.style() & ~WS_SYSMENU);
       
     if (!data_->close_box)
-      cp.class_style(cp.class_style() | CS_NOCLOSE);
+      create_params.class_style(create_params.class_style() | CS_NOCLOSE);
     else
-      cp.class_style(cp.class_style() & ~CS_NOCLOSE);
+      create_params.class_style(create_params.class_style() & ~CS_NOCLOSE);
       
     if (data_->maximize_box)
-      cp.style(cp.style() | WS_MAXIMIZEBOX);
+      create_params.style(create_params.style() | WS_MAXIMIZEBOX);
     else
-      cp.style(cp.style() & ~WS_MAXIMIZEBOX);
+      create_params.style(create_params.style() & ~WS_MAXIMIZEBOX);
       
     if (data_->minimize_box)
-      cp.style(cp.style() | WS_MINIMIZEBOX);
+      create_params.style(create_params.style() | WS_MINIMIZEBOX);
     else
-      cp.style(cp.style() & ~WS_MINIMIZEBOX);
+      create_params.style(create_params.style() & ~WS_MINIMIZEBOX);
       
     if (data_->help_button && !data_->maximize_box && !data_->minimize_box && data_->control_box)
-      cp.ex_style(cp.ex_style() | WS_EX_CONTEXTHELP);
+      create_params.ex_style(create_params.ex_style() | WS_EX_CONTEXTHELP);
     else
-      cp.ex_style(cp.ex_style() & ~WS_EX_CONTEXTHELP);
+      create_params.ex_style(create_params.ex_style() & ~WS_EX_CONTEXTHELP);
   }
 }
 
-void form::fill_in_create_params_start_position(xtd::forms::create_params& cp) const {
+void form::fill_in_create_params_start_position(xtd::forms::create_params& create_params) const {
   static auto default_location = 0;
   if (default_location == 0)
     default_location = xtd::random().next(4, 20) * 10;
@@ -747,27 +744,27 @@ void form::fill_in_create_params_start_position(xtd::forms::create_params& cp) c
   if (data_->previous_screen) {
     switch (data_->start_position) {
       case form_start_position::manual:
-        cp.location(location());
-        cp.size(size());
+        create_params.location(location());
+        create_params.size(size());
         break;
       case form_start_position::center_screen:
-        cp.location({(data_->previous_screen->working_area().width() - width()) / 2, (data_->previous_screen->working_area().height() - height()) / 2});
-        cp.size(size());
+        create_params.location({(data_->previous_screen->working_area().width() - width()) / 2, (data_->previous_screen->working_area().height() - height()) / 2});
+        create_params.size(size());
         break;
       case form_start_position::windows_default_location:
-        cp.location({default_location, default_location});
-        cp.size(size());
+        create_params.location({default_location, default_location});
+        create_params.size(size());
         break;
       case form_start_position::windows_default_bounds:
-        cp.location({default_location, default_location});
-        cp.size({data_->previous_screen->working_area().width() / 4 * 3, data_->previous_screen->working_area().height() / 4 * 3});
+        create_params.location({default_location, default_location});
+        create_params.size({data_->previous_screen->working_area().width() / 4 * 3, data_->previous_screen->working_area().height() / 4 * 3});
         break;
       case form_start_position::center_parent:
         if (parent().has_value())
-          cp.location({parent().value().get().left() + (parent().value().get().width() - width()) / 2, parent().value().get().top() + (parent().value().get().height() - height()) / 2});
+          create_params.location({parent().value().get().left() + (parent().value().get().width() - width()) / 2, parent().value().get().top() + (parent().value().get().height() - height()) / 2});
         else
-          cp.location({default_location, default_location});
-        cp.size(size());
+          create_params.location({default_location, default_location});
+        create_params.size(size());
         break;
     }
     
@@ -776,10 +773,10 @@ void form::fill_in_create_params_start_position(xtd::forms::create_params& cp) c
   }
 }
 
-void form::fill_in_create_params_window_state(xtd::forms::create_params& cp) const {
+void form::fill_in_create_params_window_state(xtd::forms::create_params& create_params) const {
   switch (data_->window_state) {
-    case form_window_state::maximized: cp.style(cp.style() | WS_MAXIMIZE); break;
-    case form_window_state::minimized: cp.style(cp.style() | WS_MINIMIZE); break;
+    case form_window_state::maximized: create_params.style(create_params.style() | WS_MAXIMIZE); break;
+    case form_window_state::minimized: create_params.style(create_params.style() | WS_MINIMIZE); break;
     default: break;
   }
 }
