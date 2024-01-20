@@ -157,7 +157,6 @@ forms::create_params tab_control::create_params() const noexcept {
   auto create_params = control::create_params();
   
   create_params.class_name("tabcontrol");
-  create_params.style(create_params.style() | WS_CLIPSIBLINGS);
   
   switch (data_->alignment) {
     case tab_alignment::bottom: create_params.style(create_params.style() | TCS_BOTTOM); break;
