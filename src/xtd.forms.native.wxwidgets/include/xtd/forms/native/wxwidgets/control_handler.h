@@ -129,6 +129,27 @@ namespace xtd {
         std::function<intptr(intptr, int32, intptr, intptr, intptr)> wnd_proc;
         std::function<intptr(intptr, int32, intptr, intptr, intptr, intptr)> def_wnd_proc;
         
+      protected:
+        static long common_control_style_to_wx_style(size_t style, size_t ex_style) {
+          long wx_style = 0;
+          //if ((style & WS_CHILD) == WS_CHILD) wx_style |= wxCHILD;
+          if ((style & WS_CLIPSIBLINGS) == WS_CLIPSIBLINGS) wx_style |= wxCLIP_SIBLINGS;
+          if ((style & WS_CLIPCHILDREN) == WS_CLIPCHILDREN) wx_style |= wxCLIP_CHILDREN;
+          if ((style & WS_TABSTOP) != WS_TABSTOP) wx_style |= wxTAB_TRAVERSAL;
+          //if ((style & WS_VISIBLE) == WS_VISIBLE) wx_style |= wxVISIBLE;
+          //if ((style & WS_DISABLED) == WS_DISABLED) wx_style |= wxDISABLED;
+          
+          return wx_style;
+        }
+        
+        static long common_container_style_to_wx_style(size_t style, size_t ex_style) {
+          long wx_style = common_control_style_to_wx_style(style, ex_style);
+         
+          //if ((ex_style & WS_EX_CONTROLPARENT) wx_style = wxCONTROL_PARENT;
+          
+          return wx_style;
+        }
+        
       private:
         wxWindow* control_ = nullptr;
         int32 suspended_count_ = 0;

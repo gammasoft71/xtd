@@ -37,9 +37,8 @@ namespace xtd {
         }
         
         static long style_to_wx_style(size_t style, size_t ex_style) {
-          long wx_style = 0;
+          long wx_style = common_container_style_to_wx_style(style, ex_style);
           
-          if ((style & WS_TABSTOP) != WS_TABSTOP) wx_style |= wxTAB_TRAVERSAL;
           if ((style & WS_HSCROLL) == WS_HSCROLL) wx_style |= wxHSCROLL;
           if ((style & WS_VSCROLL) == WS_VSCROLL) wx_style |= wxVSCROLL;
           if (((style & WS_HSCROLL) == WS_HSCROLL || (style & WS_VSCROLL) == WS_VSCROLL) && (ex_style & WS_EX_AUTOSCROLL) != WS_EX_AUTOSCROLL) wx_style |= wxALWAYS_SHOW_SB;
@@ -47,7 +46,7 @@ namespace xtd {
           if ((style & WS_BORDER) == WS_BORDER) wx_style |= wxBORDER_SIMPLE;
           else if ((ex_style & WS_EX_CLIENTEDGE) == WS_EX_CLIENTEDGE) wx_style |= wxBORDER_THEME;
           else wx_style |= wxBORDER_NONE;
-          
+
           return wx_style;
         }
       };
