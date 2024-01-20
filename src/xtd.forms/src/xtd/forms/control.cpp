@@ -230,7 +230,7 @@ control& control::auto_size(bool auto_size) {
 }
 
 color control::back_color() const noexcept {
-  for (auto control = this; control; control = control->parent().has_value() && !control->get_state(control::state::top_level) ? &control->parent().value().get() : nullptr)
+  for (auto control = this; control; control = control->parent().has_value() && !control->get_state(state::top_level) ? &control->parent().value().get() : nullptr)
     if (control->data_->back_color.has_value()) return control->data_->back_color.value();
   return default_back_color();
 }
@@ -392,7 +392,7 @@ bool control::created() const noexcept {
 }
 
 forms::cursor control::cursor() const noexcept {
-  for (auto control = this; control; control = control->parent().has_value() && !control->get_state(control::state::top_level) ? &control->parent().value().get() : nullptr)
+  for (auto control = this; control; control = control->parent().has_value() && !control->get_state(state::top_level) ? &control->parent().value().get() : nullptr)
     if (control->data_->cursor.has_value()) return control->data_->cursor.value();
   return default_cursor();
 }
@@ -461,7 +461,7 @@ bool control::focused() const noexcept {
 }
 
 drawing::font control::font() const noexcept {
-  for (auto control = this; control; control = control->parent().has_value() && !control->get_state(control::state::top_level) ? &control->parent().value().get() : nullptr)
+  for (auto control = this; control; control = control->parent().has_value() && !control->get_state(state::top_level) ? &control->parent().value().get() : nullptr)
     if (control->data_->font.has_value()) return control->data_->font.value();
   return default_font();
 }
@@ -487,7 +487,7 @@ control& control::font(std::nullptr_t) {
 }
 
 color control::fore_color() const noexcept {
-  for (auto control = this; control; control = control->parent().has_value() && !control->get_state(control::state::top_level) ? &control->parent().value().get() : nullptr)
+  for (auto control = this; control; control = control->parent().has_value() && !control->get_state(state::top_level) ? &control->parent().value().get() : nullptr)
     if (control->data_->fore_color.has_value()) return control->data_->fore_color.value();
   return default_fore_color();
 }
@@ -1011,16 +1011,22 @@ forms::create_params control::create_params() const noexcept {
   auto create_params = forms::create_params {};
   
   create_params.caption(data_->text);
-  create_params.class_style(CS_DBLCLKS);
-  
-  create_params.style(WS_CHILD);
-  if (!enabled()) create_params.style(create_params.style() | WS_DISABLED);
-  if (get_state(control::state::tab_stop)) create_params.style(create_params.style() | WS_TABSTOP);
-  if (visible()) create_params.style(create_params.style() | WS_VISIBLE);
-  
   if (parent().has_value()) create_params.parent(parent().value().get().handle());
   create_params.location(data_->location);
   create_params.size(data_->size.value_or(drawing::size(0, 0)));
+  
+  create_params.style(create_params.style() | WS_CLIPCHILDREN);
+
+  if (get_style(forms::control_styles::container_control)) create_params.ex_style(create_params.ex_style() | WS_EX_CONTROLPARENT);
+  
+  create_params.class_style(CS_DBLCLKS);
+  
+  if (!get_state(state::top_level)) create_params.style(create_params.style() | WS_CHILD | WS_CLIPSIBLINGS);
+  if (get_state(state::tab_stop)) create_params.style(create_params.style() | WS_TABSTOP);
+  if (visible()) create_params.style(create_params.style() | WS_VISIBLE);
+  if (!enabled()) create_params.style(create_params.style() | WS_DISABLED);
+  
+  //if (right_to_left() == forms::right_to_left::yes) create_params.ex_style(create_params.ex_style() | WS_EX_RTLREADING | WS_EX_RIGHT | WS_EX_LEFTSCROLLBAR);
   
   return create_params;
 }

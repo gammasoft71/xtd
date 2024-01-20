@@ -415,7 +415,7 @@ namespace xtd::forms::tests {
       assert::are_equal(drawing::point::empty, cp.location(), csf_);
       assert::is_zero(cp.param(), csf_);
       assert::is_zero(cp.parent(), csf_);
-      assert::are_equal(WS_VISIBLE | WS_CHILD | WS_TABSTOP, cp.style(), csf_);
+      assert::are_equal(WS_CHILD | WS_CLIPSIBLINGS | WS_CLIPCHILDREN | WS_VISIBLE | WS_TABSTOP, cp.style(), csf_);
       assert::are_equal(drawing::size::empty, cp.size(), csf_);
       assert::is_zero(cp.width(), csf_);
       assert::is_zero(cp.x(), csf_);
@@ -435,7 +435,7 @@ namespace xtd::forms::tests {
       assert::are_equal(drawing::point::empty, cp.location(), csf_);
       assert::is_zero(cp.param(), csf_);
       assert::is_zero(cp.parent(), csf_);
-      assert::are_equal(WS_VISIBLE | WS_DISABLED | WS_CHILD | WS_TABSTOP, cp.style(), csf_);
+      assert::are_equal(WS_CHILD | WS_CLIPSIBLINGS | WS_CLIPCHILDREN | WS_DISABLED | WS_VISIBLE | WS_TABSTOP, cp.style(), csf_);
       assert::are_equal(drawing::size::empty, cp.size(), csf_);
       assert::is_zero(cp.width(), csf_);
       assert::is_zero(cp.x(), csf_);
@@ -455,7 +455,7 @@ namespace xtd::forms::tests {
       assert::are_equal(drawing::point(10, 20), cp.location(), csf_);
       assert::is_zero(cp.param(), csf_);
       assert::is_zero(cp.parent(), csf_);
-      assert::are_equal(WS_VISIBLE | WS_CHILD | WS_TABSTOP, cp.style(), csf_);
+      assert::are_equal(WS_CHILD | WS_CLIPSIBLINGS | WS_CLIPCHILDREN | WS_VISIBLE | WS_TABSTOP, cp.style(), csf_);
       assert::are_equal(drawing::size::empty, cp.size(), csf_);
       assert::is_zero(cp.width(), csf_);
       assert::are_equal(10, cp.x(), csf_);
@@ -476,7 +476,7 @@ namespace xtd::forms::tests {
       assert::are_equal(drawing::point::empty, cp.location(), csf_);
       assert::is_zero(cp.param(), csf_);
       assert::are_equal(form.handle(), cp.parent(), csf_);
-      assert::are_equal(WS_VISIBLE | WS_CHILD | WS_TABSTOP, cp.style(), csf_);
+      assert::are_equal(WS_CHILD | WS_CLIPSIBLINGS | WS_CLIPCHILDREN | WS_VISIBLE | WS_TABSTOP, cp.style(), csf_);
       assert::are_equal(drawing::size::empty, cp.size(), csf_);
       assert::is_zero(cp.width(), csf_);
       assert::is_zero(cp.x(), csf_);
@@ -496,7 +496,7 @@ namespace xtd::forms::tests {
       assert::are_equal(drawing::point::empty, cp.location(), csf_);
       assert::is_zero(cp.param(), csf_);
       assert::is_zero(cp.parent(), csf_);
-      assert::are_equal(WS_VISIBLE | WS_CHILD | WS_TABSTOP, cp.style(), csf_);
+      assert::are_equal(WS_CHILD | WS_CLIPSIBLINGS | WS_CLIPCHILDREN | WS_VISIBLE | WS_TABSTOP, cp.style(), csf_);
       assert::are_equal(drawing::size(100, 50), cp.size(), csf_);
       assert::are_equal(100, cp.width(), csf_);
       assert::is_zero(cp.x(), csf_);
@@ -516,7 +516,7 @@ namespace xtd::forms::tests {
       assert::are_equal(drawing::point::empty, cp.location(), csf_);
       assert::is_zero(cp.param(), csf_);
       assert::is_zero(cp.parent(), csf_);
-      assert::are_equal(WS_VISIBLE | WS_CHILD, cp.style(), csf_);
+      assert::are_equal(WS_CHILD | WS_CLIPSIBLINGS | WS_CLIPCHILDREN | WS_VISIBLE, cp.style(), csf_);
       assert::are_equal(drawing::size::empty, cp.size(), csf_);
       assert::is_zero(cp.width(), csf_);
       assert::is_zero(cp.x(), csf_);
@@ -536,7 +536,7 @@ namespace xtd::forms::tests {
       assert::are_equal(drawing::point::empty, cp.location(), csf_);
       assert::is_zero(cp.param(), csf_);
       assert::is_zero(cp.parent(), csf_);
-      assert::are_equal(WS_CHILD | WS_TABSTOP | WS_VISIBLE, cp.style(), csf_);
+      assert::are_equal(WS_CHILD | WS_CLIPSIBLINGS | WS_CLIPCHILDREN | WS_VISIBLE | WS_TABSTOP, cp.style(), csf_);
       assert::are_equal(drawing::size::empty, cp.size(), csf_);
       assert::is_zero(cp.width(), csf_);
       assert::is_zero(cp.x(), csf_);
@@ -556,7 +556,7 @@ namespace xtd::forms::tests {
       assert::are_equal(drawing::point::empty, cp.location(), csf_);
       assert::is_zero(cp.param(), csf_);
       assert::is_zero(cp.parent(), csf_);
-      assert::are_equal(WS_CHILD | WS_TABSTOP, cp.style(), csf_);
+      assert::are_equal(WS_CHILD | WS_CLIPSIBLINGS | WS_CLIPCHILDREN | WS_TABSTOP, cp.style(), csf_);
       assert::are_equal(drawing::size::empty, cp.size(), csf_);
       assert::is_zero(cp.width(), csf_);
       assert::is_zero(cp.x(), csf_);
@@ -583,7 +583,7 @@ namespace xtd::forms::tests {
       assert::are_equal(drawing::point(10, 20), cp.location(), csf_);
       assert::is_zero(cp.param(), csf_);
       assert::are_equal(form.handle(), cp.parent(), csf_);
-      assert::are_equal(WS_DISABLED | WS_CHILD, cp.style(), csf_);
+      assert::are_equal(WS_CHILD | WS_CLIPSIBLINGS | WS_DISABLED | WS_CLIPCHILDREN, cp.style(), csf_);
       assert::are_equal(drawing::size(100, 50), cp.size(), csf_);
       assert::are_equal(100, cp.width(), csf_);
       assert::are_equal(10, cp.x(), csf_);
