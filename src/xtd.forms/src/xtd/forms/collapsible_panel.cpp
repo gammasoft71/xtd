@@ -21,6 +21,7 @@ collapsible_panel::collapsible_panel() : data_(std::make_shared<data>()) {
   set_can_focus(false);
   set_style(control_styles::selectable | control_styles::all_painting_in_wm_paint, false);
   set_style(control_styles::supports_transparent_back_color, true);
+  set_state(state::tab_stop, false);
 }
 
 bool collapsible_panel::auto_size() const noexcept {
@@ -103,7 +104,6 @@ forms::create_params collapsible_panel::create_params() const noexcept {
   auto create_params = control::create_params();
   
   create_params.class_name("collapsiblepanel");
-  create_params.style(create_params.style() | WS_CLIPSIBLINGS);
   
   if (data_->border_style == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
   else if (data_->border_style != forms::border_style::none) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
