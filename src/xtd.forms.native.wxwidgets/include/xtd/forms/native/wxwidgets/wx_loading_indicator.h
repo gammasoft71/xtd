@@ -26,7 +26,7 @@ namespace xtd {
         explicit wx_loading_indicator(const xtd::forms::native::create_params& create_params) {
           if (!create_params.parent) throw xtd::argument_exception("control must have a parent"_t, csf_);
           owner_draw_ = (create_params.style & LI_OWNERDRAW) == LI_OWNERDRAW;
-          if (owner_draw_) control_handler::create<wx_user_window>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), wxID_ANY, wxPoint(create_params.location.x(), create_params.location.y()), wxSize(create_params.size.width(), create_params.size.height()));
+          if (owner_draw_) control_handler::create<wx_user_window>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), wxID_ANY, wxPoint(create_params.location.x(), create_params.location.y()), wxSize(create_params.size.width(), create_params.size.height()), common_control_style_to_wx_style(create_params.style, create_params.ex_style));
           else control_handler::create<wxActivityIndicator>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), wxID_ANY, wxPoint(create_params.location.x(), create_params.location.y()), wxSize(create_params.size.width(), create_params.size.height()));
           #if defined(__WXMSW__)
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
@@ -36,6 +36,12 @@ namespace xtd {
           #endif
         }
         
+        static long style_to_wx_style(size_t style, size_t ex_style) {
+          long wx_style = common_control_style_to_wx_style(style, ex_style);
+          
+          return wx_style;
+        }
+
         bool owner_draw_ = false;
       };
     }

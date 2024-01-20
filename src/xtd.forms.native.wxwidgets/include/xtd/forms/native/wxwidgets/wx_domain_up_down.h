@@ -126,9 +126,8 @@ namespace xtd {
         }
         
         static long style_to_wx_text_box_style(size_t style, size_t ex_style) {
-          long wx_style = 0;
+          long wx_style = common_control_style_to_wx_style(style, ex_style);
           
-          if ((style & WS_TABSTOP) != WS_TABSTOP) wx_style |= wxTAB_TRAVERSAL;
           if ((style & WS_BORDER) == WS_BORDER) wx_style |= wxBORDER_DEFAULT;
           else if ((ex_style & WS_EX_CLIENTEDGE) == WS_EX_CLIENTEDGE) wx_style |= wxBORDER_THEME;
           else wx_style |= wxBORDER_NONE;
@@ -137,9 +136,8 @@ namespace xtd {
         }
         
         static long style_to_wx_spin_style(size_t style, size_t ex_style) {
-          long wx_style = 0;
+          long wx_style = common_control_style_to_wx_style(style, ex_style);
           
-          if ((style & WS_TABSTOP) != WS_TABSTOP) wx_style |= wxTAB_TRAVERSAL;
           if ((style & UDS_WRAP) == UDS_WRAP) wx_style |= wxSP_WRAP;
           
           return wx_style;

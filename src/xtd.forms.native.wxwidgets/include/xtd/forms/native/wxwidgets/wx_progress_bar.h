@@ -52,9 +52,8 @@ namespace xtd {
         }
         
         static long style_to_wx_style(size_t style, size_t ex_style) {
-          long wx_style = 0;
+          long wx_style = common_control_style_to_wx_style(style, ex_style);
           
-          if ((style & WS_TABSTOP) != WS_TABSTOP) wx_style |= wxTAB_TRAVERSAL;
           if ((style & PBS_SMOOTH) == PBS_SMOOTH) wx_style |= wxGA_SMOOTH;
           if ((style & PBS_VERTICAL) == PBS_VERTICAL) wx_style |= wxGA_VERTICAL;
           else wx_style |= wxGA_HORIZONTAL;

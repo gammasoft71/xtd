@@ -33,14 +33,14 @@ namespace xtd {
           if (!create_params.parent) throw xtd::argument_exception("control must have a parent"_t, csf_);
           owner_draw_ = (create_params.style & BS_OWNERDRAW) == BS_OWNERDRAW;
           if (owner_draw_) {
-            control_handler::create<wx_user_window>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), wxID_ANY, wxPoint(create_params.location.x(), create_params.location.y()), wxSize(create_params.size.width(), create_params.size.height()));
+            control_handler::create<wx_user_window>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), wxID_ANY, wxPoint(create_params.location.x(), create_params.location.y()), wxSize(create_params.size.width(), create_params.size.height()), common_control_style_to_wx_style(create_params.style, create_params.ex_style));
             #if defined(__WXOSX__)
             reinterpret_cast<wx_user_window*>(control())->set_accepts_focus(false);
             #else
             reinterpret_cast<wx_user_window*>(control())->set_accepts_focus(true);
             #endif
           } else
-            control_handler::create<wxToggleButton>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), wxID_ANY, wxString(xtd::convert_string::to_wstring(create_params.caption)), wxPoint(create_params.location.x(), create_params.location.y()), wxSize(create_params.size.width(), create_params.size.height()));
+            control_handler::create<wxToggleButton>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), wxID_ANY, wxString(xtd::convert_string::to_wstring(create_params.caption)), wxPoint(create_params.location.x(), create_params.location.y()), wxSize(create_params.size.width(), create_params.size.height()), style_to_wx_style(create_params.style, create_params.ex_style));
           SetSize(create_params.size.width(), create_params.size.height());
           SetPosition({create_params.location.x(), create_params.location.y()});
           #if defined(__WXMSW__)
@@ -51,6 +51,12 @@ namespace xtd {
           #endif
         }
         
+        static long style_to_wx_style(size_t style, size_t ex_style) {
+          long wx_style = common_control_style_to_wx_style(style, ex_style);
+          
+          return wx_style;
+        }
+
         wxSize GetClientSize() const override {
           return control()->GetSize();
         }

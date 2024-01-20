@@ -150,9 +150,9 @@ namespace xtd {
         }
         
         static long popup_panel_style_to_wx_style(size_t style, size_t ex_style) {
-          long wx_style = wxFRAME_SHAPED | wxPU_CONTAINS_CONTROLS;
+          long wx_style = common_container_style_to_wx_style(style, ex_style);
           
-          //if ((style & WS_TABSTOP) != WS_TABSTOP) wx_style |= wxTAB_TRAVERSAL;
+          wx_style |= wxFRAME_SHAPED | wxPU_CONTAINS_CONTROLS;
           
           if ((style & WS_BORDER) == WS_BORDER) wx_style |= wxBORDER_SIMPLE;
           else if ((ex_style & WS_EX_CLIENTEDGE) == WS_EX_CLIENTEDGE) wx_style |= wxBORDER_THEME;

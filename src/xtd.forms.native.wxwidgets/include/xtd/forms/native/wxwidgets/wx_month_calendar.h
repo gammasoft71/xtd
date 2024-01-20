@@ -54,7 +54,7 @@ namespace xtd {
         }
         
         static long style_to_wx_style(size_t style, size_t ex_style) {
-          long wx_style = 0;
+          long wx_style = common_control_style_to_wx_style(style, ex_style);
           
           if ((style & MCS_WEEKNUMBERS) == MCS_WEEKNUMBERS) wx_style |= wxCAL_SHOW_WEEK_NUMBERS;
           
