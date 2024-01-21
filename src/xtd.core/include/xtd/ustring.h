@@ -18,6 +18,7 @@
 #include "parse.h"
 #include "to_string.h"
 #include "types.h"
+#include "unused.h"
 #include <ostream>
 #include <string>
 
@@ -1722,13 +1723,10 @@ void __ustring_extract_format_arg(std::string& fmt, size_t& index, std::vector<_
   ++index;
 }
 
-template <typename ...args_t>
-void __xtd_ustrings_unused(args_t&& ... args) {}
-
 template<typename ...args_t>
 void __ustring_extract_format_arg(xtd::ustring& fmt, std::vector<__format_information<char>>& formats, args_t&& ... args) {
   size_t index = 0;
   (__ustring_extract_format_arg(fmt, index, formats, args), ...);
-  __xtd_ustrings_unused(index); // workaround to mute gcc warning: unused-but-set-variable
+  unused_(index); // workaround to mute gcc warning: unused-but-set-variable
 }
 /// @endcond
