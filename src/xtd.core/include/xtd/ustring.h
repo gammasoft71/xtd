@@ -28,10 +28,10 @@ namespace xtd {
 }
 template<typename ...args_t>
 void __ustring_extract_format_arg(xtd::ustring& fmt, std::vector<__format_information<char>>& format, args_t&& ... args);
-void __throw_ustring_format_exception();
-void __throw_ustring_format_exception_close_bracket();
-void __throw_ustring_format_exception_open_bracket();
-void __throw_ustring_format_exception_start_colon();
+void __throw_ustring_format_exception(const char* file, xtd::uint32 line, const char* func);
+void __throw_ustring_format_exception_close_bracket(const char* file, xtd::uint32 line, const char* func);
+void __throw_ustring_format_exception_open_bracket(const char* file, xtd::uint32 line, const char* func);
+void __throw_ustring_format_exception_start_colon(const char* file, xtd::uint32 line, const char* func);
 /// @endcond
 
 namespace xtd {
@@ -751,14 +751,14 @@ namespace xtd {
       for (auto iterator = fmt.begin(); iterator != fmt.end(); ++iterator) {
         if (*iterator == '{') {
           if (++iterator == fmt.end())
-            __throw_ustring_format_exception_open_bracket();
+            __throw_ustring_format_exception_open_bracket(__FILE__, __LINE__, __func__);
           if (*iterator == '{')
             result += *iterator;
           else {
             begin_format_iterator = iterator;
             while (iterator != fmt.end() && *iterator != '}') ++iterator;
             if (iterator == fmt.end())
-              __throw_ustring_format_exception_open_bracket();
+              __throw_ustring_format_exception_open_bracket(__FILE__, __LINE__, __func__);
             end_format_iterator = iterator;
             __format_information<char> fi;
             fi.location = result.size();
@@ -790,10 +790,10 @@ namespace xtd {
                   index_str = std::move(format_str);
                 try {
                   for (auto c : index_str)
-                    if (!std::isdigit(c)) __throw_ustring_format_exception_start_colon();
+                    if (!std::isdigit(c)) __throw_ustring_format_exception_start_colon(__FILE__, __LINE__, __func__);
                   fi.index = std::stoi(index_str);
                 } catch (...) {
-                  __throw_ustring_format_exception_start_colon();
+                  __throw_ustring_format_exception_start_colon(__FILE__, __LINE__, __func__);
                 }
               }
             }
@@ -801,11 +801,11 @@ namespace xtd {
           }
         } else if (*iterator == '}') {
           if (++iterator == fmt.end()) {
-            __throw_ustring_format_exception_close_bracket();
+            __throw_ustring_format_exception_close_bracket(__FILE__, __LINE__, __func__);
             break;
           }
           if (*iterator != '}') {
-            __throw_ustring_format_exception_close_bracket();
+            __throw_ustring_format_exception_close_bracket(__FILE__, __LINE__, __func__);
             break;
           }
           result += *iterator;
@@ -1711,7 +1711,7 @@ void __ustring_extract_format_arg(std::string& fmt, size_t& index, std::vector<_
         try {
           alignment = std::stoi(format.alignment);
         } catch (...) {
-          __throw_ustring_format_exception();
+          __throw_ustring_format_exception(__FILE__, __LINE__, __func__);
         }
         if (alignment > 0) arg_str = arg_str.pad_left(alignment);
         else if (alignment < 0) arg_str = arg_str.pad_right(-alignment);

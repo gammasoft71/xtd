@@ -12,20 +12,20 @@
 using namespace std;
 using namespace xtd;
 
-void __throw_ustring_format_exception() {
-  throw format_exception {csf_};
+void __throw_ustring_format_exception(const char* file, uint32 line, const char* func) {
+  throw format_exception { {file, line, func}};
 }
 
-void __throw_ustring_format_exception_close_bracket() {
-  throw format_exception("Invalid format expression : closing bracket '{' without open bracket '}'"_t, csf_);
+void __throw_ustring_format_exception_close_bracket(const char* file, uint32 line, const char* func) {
+  throw format_exception("Invalid format expression : closing bracket '{' without open bracket '}'"_t, {file, line, func});
 }
 
-void __throw_ustring_format_exception_open_bracket() {
-  throw format_exception("Invalid format expression : open bracket '}' without end bracket '{'"_t, csf_);
+void __throw_ustring_format_exception_open_bracket(const char* file, uint32 line, const char* func) {
+  throw format_exception("Invalid format expression : open bracket '}' without end bracket '{'"_t, {file, line, func});
 }
 
-void __throw_ustring_format_exception_start_colon() {
-  throw format_exception("Invalid format expression : format argument must be start by ':'"_t, csf_);
+void __throw_ustring_format_exception_start_colon(const char* file, uint32 line, const char* func) {
+  throw format_exception("Invalid format expression : format argument must be start by ':'"_t, {file, line, func});
 }
 
 const ustring ustring::empty_string;
