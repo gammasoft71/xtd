@@ -23,5 +23,5 @@ private:
 };
 
 auto main()->int {
-  application::run(main_form());
+  application::run(main_form {});
 }
