@@ -1,8 +1,4 @@
-#include <xtd/diagnostics/process>
-#include <xtd/drawing/bitmap>
-#include <xtd/drawing/brushes>
-#include <xtd/drawing/system_fonts>
-#include <xtd/io/path>
+#include <xtd/xtd>
 
 using namespace xtd;
 using namespace xtd::diagnostics;
