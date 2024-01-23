@@ -17,7 +17,7 @@ system-colors {
   control-dark-dark: rgba(0, 0, 0, 0.267);
   control-light: rgba(255, 255, 255, 0.098);
   control-light-light: rgba(255, 255, 255, 0.098);
-  control-text: rgba(255, 255, 255, 0.847);
+  control-text: #FFFFFF;
   desktop: #9A9A9A;
   gradient-active-caption: #9A9A9A;
   gradient-inactive-caption: #9A9A9A;

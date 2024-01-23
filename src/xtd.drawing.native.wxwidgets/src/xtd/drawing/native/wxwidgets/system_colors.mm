@@ -66,13 +66,7 @@ intptr __xtd__macos_system_colors_active_caption__() {
 
 intptr __xtd__macos_system_colors_button_face__() {
   effective_appearance_setter helper;
-  uint32 argb = to_argb(NSColor.controlColor);
-  if (argb != 0xFFFFFFFF) {
-    argb &= 0x00FFFFFF;
-    argb |= 0x40000000;
-  }
-  return argb;
-  
+  return to_argb(NSColor.controlColor);
 }
 
 intptr __xtd__macos_system_colors_button_text__() {
@@ -92,12 +86,7 @@ intptr __xtd__macos_system_colors_control_text__() {
 
 intptr __xtd__macos_system_colors_text_box__() {
   effective_appearance_setter helper;
-  uint32 argb = to_argb([NSColor controlColor]);
-  if (argb != 0xFFFFFFFF) {
-    argb &= 0x00FFFFFF;
-    argb |= 0x10000000;
-  }
-  return argb;
+  return to_argb([NSColor controlColor]);
 }
 
 intptr __xtd__macos_system_colors_text_box_text__() {
