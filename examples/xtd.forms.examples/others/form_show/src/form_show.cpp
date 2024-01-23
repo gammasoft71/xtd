@@ -62,8 +62,7 @@ namespace example {
       button_sheet.text("Show sheet");
       button_sheet.click += [&] {
         auto dialog = make_unique<form>();
-        dialog->text("dialog show sheet");
-        dialog->size({250, 100});
+        dialog->text("dialog show sheet").size({250, 100});
         dialog->key_up += [&](object & control, key_event_args & e) {
           if (e.key_code() == keys::escape) as<form&>(control).close();
         };
