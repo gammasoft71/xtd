@@ -18,6 +18,7 @@ add_sources(
   src/xtd/forms/tests/border_style_tests.cpp
   src/xtd/forms/tests/bounds_specified_tests.cpp
   src/xtd/forms/tests/button_base_tests.cpp 
+  src/xtd/forms/tests/button_state_tests.cpp 
   src/xtd/forms/tests/button_tests.cpp 
   src/xtd/forms/tests/check_box_tests.cpp 
   src/xtd/forms/tests/control_tests.cpp 
