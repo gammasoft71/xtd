@@ -47,6 +47,7 @@ add_sources(
   src/xtd/forms/style_sheets/tests/white_space_tests.cpp 
   src/xtd/forms/visual_styles/tests/check_box_state_tests.cpp 
   src/xtd/forms/visual_styles/tests/control_state_tests.cpp 
+  src/xtd/forms/visual_styles/tests/push_button_state_tests.cpp 
 )
 if (APPLE)
 add_sources(
