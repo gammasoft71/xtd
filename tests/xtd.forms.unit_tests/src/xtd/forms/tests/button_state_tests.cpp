@@ -38,6 +38,12 @@ namespace xtd::forms::tests {
       assert::are_equal("flat", enum_object<>::to_string(button_state::flat), csf_);
       assert::are_equal(button_state::flat, enum_object<>::parse<button_state>("flat"), csf_);
     }
+    
+    void test_method_(all) {
+      assert::are_equal(18176, enum_object<>::to_int32(button_state::all), csf_);
+      assert::are_equal("inactive, pushed, checked, flat", enum_object<>::to_string(button_state::all), csf_);
+      assert::are_equal(button_state::all, enum_object<>::parse<button_state>("inactive, pushed, checked, flat"), csf_);
+    }
   };
 }
 
