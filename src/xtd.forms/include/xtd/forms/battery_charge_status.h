@@ -37,6 +37,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::battery_charge_status> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::battery_charge_status> {{xtd::forms::battery_charge_status::high, "high"}, {xtd::forms::battery_charge_status::low, "low"}, {xtd::forms::battery_charge_status::low, "low"}, {xtd::forms::battery_charge_status::critical, "critical"}, {xtd::forms::battery_charge_status::charging, "charging"}, {xtd::forms::battery_charge_status::no_system_battery, "no_system_battery"}, {xtd::forms::battery_charge_status::unknown, "unknown"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::battery_charge_status> {{xtd::forms::battery_charge_status::high, "high"}, {xtd::forms::battery_charge_status::low, "low"}, {xtd::forms::battery_charge_status::critical, "critical"}, {xtd::forms::battery_charge_status::charging, "charging"}, {xtd::forms::battery_charge_status::no_system_battery, "no_system_battery"}, {xtd::forms::battery_charge_status::unknown, "unknown"}};}
 };
 /// @endcond
