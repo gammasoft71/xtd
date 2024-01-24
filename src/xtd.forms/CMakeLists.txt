@@ -19,6 +19,8 @@ add_sources(
   include/xtd/forms/animation_update_event_handler
   include/xtd/forms/animation.h
   include/xtd/forms/animation
+  include/xtd/forms/anchor_styles.h
+  include/xtd/forms/anchor_styles
   include/xtd/forms/appearance.h
   include/xtd/forms/appearance
   include/xtd/forms/application.h
