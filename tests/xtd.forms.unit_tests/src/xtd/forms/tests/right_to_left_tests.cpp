@@ -6,7 +6,7 @@
 using namespace xtd::forms;
 using namespace xtd::tunit;
 
-namespace xtd::tests {
+namespace xtd::forms::tests {
   class test_class_(right_to_left_tests) {
   public:
     void test_method_(no) {

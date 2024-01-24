@@ -6,7 +6,7 @@
 using namespace xtd::forms;
 using namespace xtd::tunit;
 
-namespace xtd::tests {
+namespace xtd::forms::tests {
   class test_class_(anchor_styles_tests) {
     void test_method_(none) {
       assert::are_equal(0, enum_object<>::to_int32(anchor_styles::none), csf_);
