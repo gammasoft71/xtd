@@ -19,6 +19,7 @@ add_sources(
   src/xtd/forms/tests/main_menu_tests.cpp
   src/xtd/forms/tests/progress_bar_tests.cpp 
   src/xtd/forms/tests/radio_button_tests.cpp 
+  src/xtd/forms/tests/right_to_left_tests.cpp 
   src/xtd/forms/tests/system_information_tests.cpp
   src/xtd/forms/tests/toggle_button_tests.cpp 
   src/xtd/forms/layout/tests/arranged_element_collection_tests.cpp 

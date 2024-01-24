@@ -292,6 +292,7 @@
 #include "forms/replace_dialog.h"
 #include "forms/replace_event_args.h"
 #include "forms/replace_event_handler.h"
+#include "forms/right_to_left.h"
 #include "forms/run_worker_completed_event_args.h"
 #include "forms/run_worker_completed_event_handler.h"
 #include "forms/save_file_box.h"
