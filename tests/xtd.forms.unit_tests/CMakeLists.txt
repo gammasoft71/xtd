@@ -44,6 +44,7 @@ add_sources(
   src/xtd/forms/style_sheets/tests/style_sheet_xtd_light_tests.cpp 
   src/xtd/forms/style_sheets/tests/text_decoration_tests.cpp 
   src/xtd/forms/style_sheets/tests/text_transformation_tests.cpp 
+  src/xtd/forms/style_sheets/tests/white_space_tests.cpp 
 )
 if (APPLE)
 add_sources(
