@@ -26,6 +26,7 @@ add_sources(
   src/xtd/forms/style_sheets/tests/background_image_tests.cpp 
   src/xtd/forms/style_sheets/tests/border_color_tests.cpp 
   src/xtd/forms/style_sheets/tests/border_type_tests.cpp 
+  src/xtd/forms/style_sheets/tests/image_type_tests.cpp 
   src/xtd/forms/style_sheets/tests/style_sheet_tests.cpp 
   src/xtd/forms/style_sheets/tests/style_sheet_gnome_dark_tests.cpp 
   src/xtd/forms/style_sheets/tests/style_sheet_gnome_light_tests.cpp 
