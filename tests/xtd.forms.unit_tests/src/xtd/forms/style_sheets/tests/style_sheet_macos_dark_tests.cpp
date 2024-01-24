@@ -37,7 +37,7 @@ namespace xtd::forms::style_sheets::tests {
       assert::are_equal(color::from_argb(68, 0, 0, 0), style.system_colors().control_dark_dark(), csf_);
       assert::are_equal(color::from_argb(25, 255, 255, 255), style.system_colors().control_light(), csf_);
       assert::are_equal(color::from_argb(25, 255, 255, 255), style.system_colors().control_light_light(), csf_);
-      assert::are_equal(color::from_argb(216, 255, 255, 255), style.system_colors().control_text(), csf_);
+      assert::are_equal(color::from_argb(0xFFFFFFFF), style.system_colors().control_text(), csf_);
       assert::are_equal(color::from_argb(0xFF9A9A9A), style.system_colors().desktop(), csf_);
       assert::are_equal(color::from_argb(0xFF9A9A9A), style.system_colors().gradient_active_caption(), csf_);
       assert::are_equal(color::from_argb(0xFF9A9A9A), style.system_colors().gradient_inactive_caption(), csf_);
