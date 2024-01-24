@@ -477,6 +477,8 @@ add_sources(
   include/xtd/forms/replace_event_args
   include/xtd/forms/replace_event_handler.h
   include/xtd/forms/replace_event_handler
+  include/xtd/forms/right_to_left.h
+  include/xtd/forms/right_to_left
   include/xtd/forms/run_worker_completed_event_args.h
   include/xtd/forms/run_worker_completed_event_args
   include/xtd/forms/run_worker_completed_event_handler.h
