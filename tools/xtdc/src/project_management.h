@@ -253,7 +253,7 @@ namespace xtdc_command {
       xtd::diagnostics::process process;
       process.start_info(xtd::diagnostics::process_start_info(target_path));
       process.start_info().use_shell_execute(is_gui(target_path));
-      xtd::console::write_line("execute : \"{}\" with arguments \"{}\"", process.start_info().file_name(), process.start_info().arguments());
+      //xtd::console::write_line("execute : \"{}\" with arguments \"{}\"", process.start_info().file_name(), process.start_info().arguments());
       process.start();
       if (wait_process) process.wait_for_exit();
       return "";
