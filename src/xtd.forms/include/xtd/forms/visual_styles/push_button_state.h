@@ -39,6 +39,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::forms::visual_styles::push_button_state> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::visual_styles::push_button_state> {{xtd::forms::visual_styles::push_button_state::normal, "normal"}, {xtd::forms::visual_styles::push_button_state::hot, "hot"}, {xtd::forms::visual_styles::push_button_state::pressed, "pressed"}, {xtd::forms::visual_styles::push_button_state::disabled, "disabled"}, {xtd::forms::visual_styles::push_button_state::default_state, "default_state"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::forms::visual_styles::push_button_state> {{xtd::forms::visual_styles::push_button_state::normal, "normal"}, {xtd::forms::visual_styles::push_button_state::hot, "hot"}, {xtd::forms::visual_styles::push_button_state::pressed, "pressed"}, {xtd::forms::visual_styles::push_button_state::checked, "checked"}, {xtd::forms::visual_styles::push_button_state::disabled, "disabled"}, {xtd::forms::visual_styles::push_button_state::default_state, "default_state"}};}
 };
 /// @endcond
