@@ -14,6 +14,7 @@ add_sources(
   src/xtd/forms/tests/auto_size_mode_tests.cpp
   src/xtd/forms/tests/battery_charge_status_tests.cpp
   src/xtd/forms/tests/boot_mode_tests.cpp
+  src/xtd/forms/tests/border_sides_tests.cpp
   src/xtd/forms/tests/button_base_tests.cpp 
   src/xtd/forms/tests/button_tests.cpp 
   src/xtd/forms/tests/check_box_tests.cpp 
