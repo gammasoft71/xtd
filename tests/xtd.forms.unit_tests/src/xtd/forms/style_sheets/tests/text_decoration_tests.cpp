@@ -6,7 +6,7 @@
 using namespace xtd::forms::style_sheets;
 using namespace xtd::tunit;
 
-namespace xtd::tests {
+namespace xtd::forms::style_sheets::tests {
   class test_class_(text_decoration_tests) {
   public:
     void test_method_(none) {
