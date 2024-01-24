@@ -8,6 +8,7 @@ add_references(xtd.forms)
 add_sources(
   src/main.cpp 
   src/xtd/forms/tests/anchor_styles_tests.cpp 
+  src/xtd/forms/tests/appearance_tests.cpp 
   src/xtd/forms/tests/button_base_tests.cpp 
   src/xtd/forms/tests/button_tests.cpp 
   src/xtd/forms/tests/check_box_tests.cpp 
