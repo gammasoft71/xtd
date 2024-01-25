@@ -11,26 +11,26 @@ namespace xtd::tunit::tests {
       xtd::tunit::directory_valid::exists(d);
     }
   };
-}
-
-void test_(directory_valid_exists_string_failed_tests, test_output) {
-  auto [output, result] = run_test_("xtd::tunit::tests::directory_valid_exists_string_failed_tests.*");
-  #if defined (_WIN32)
-  assert_value_("Start 1 test from 1 test case\n"
-    "  FAILED  xtd::tunit::tests::directory_valid_exists_string_failed_tests.test_case_failed\n"
-    "    Expected: directory exists\n"
-    "    But was:  \"C:\\ProgramData\\__xtd_test_directory_not_found__\"\n"
-    "End 1 test from 1 test case ran.\n", output);
-  #else
-  assert_value_("Start 1 test from 1 test case\n"
-    "  FAILED  xtd::tunit::tests::directory_valid_exists_string_failed_tests.test_case_failed\n"
-    "    Expected: directory exists\n"
-    "    But was:  \"/usr/share/__xtd_test_directory_not_found__\"\n"
-    "End 1 test from 1 test case ran.\n", output);
-  #endif
-}
-
-void test_(directory_valid_exists_string_failed_tests, test_result) {
-  auto [output, result] = run_test_("xtd::tunit::tests::directory_valid_exists_string_failed_tests.*");
-  assert_value_(1, result);
+  
+  void test_(directory_valid_exists_string_failed_tests, test_output) {
+    auto [output, result] = run_test_("xtd::tunit::tests::directory_valid_exists_string_failed_tests.*");
+#if defined (_WIN32)
+    assert_value_("Start 1 test from 1 test case\n"
+                  "  FAILED  xtd::tunit::tests::directory_valid_exists_string_failed_tests.test_case_failed\n"
+                  "    Expected: directory exists\n"
+                  "    But was:  \"C:\\ProgramData\\__xtd_test_directory_not_found__\"\n"
+                  "End 1 test from 1 test case ran.\n", output);
+#else
+    assert_value_("Start 1 test from 1 test case\n"
+                  "  FAILED  xtd::tunit::tests::directory_valid_exists_string_failed_tests.test_case_failed\n"
+                  "    Expected: directory exists\n"
+                  "    But was:  \"/usr/share/__xtd_test_directory_not_found__\"\n"
+                  "End 1 test from 1 test case ran.\n", output);
+#endif
+  }
+  
+  void test_(directory_valid_exists_string_failed_tests, test_result) {
+    auto [output, result] = run_test_("xtd::tunit::tests::directory_valid_exists_string_failed_tests.*");
+    assert_value_(1, result);
+  }
 }
