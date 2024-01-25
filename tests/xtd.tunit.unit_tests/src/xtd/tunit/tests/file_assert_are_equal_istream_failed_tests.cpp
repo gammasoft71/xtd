@@ -19,18 +19,18 @@ namespace xtd::tunit::tests {
 }
 
 void test_(file_assert_are_equal_istream_failed_tests, test_output) {
-  auto [output, result] = run_test_("file_assert_are_equal_istream_failed_tests.*");
+  auto [output, result] = run_test_("xtd::tunit::tests::file_assert_are_equal_istream_failed_tests.*");
   assert_value_("Start 2 tests from 1 test case\n"
-    "  FAILED  file_assert_are_equal_istream_failed_tests.test_case_lenght_failed\n"
+    "  FAILED  xtd::tunit::tests::file_assert_are_equal_istream_failed_tests.test_case_lenght_failed\n"
     "    Expected: istream length 40\n"
     "    But was:  39\n"
-    "  FAILED  file_assert_are_equal_istream_failed_tests.test_case_letter_failed\n"
+    "  FAILED  xtd::tunit::tests::file_assert_are_equal_istream_failed_tests.test_case_letter_failed\n"
     "    Expected: istream at offset 17 value f\n"
     "    But was:  D\n"
     "End 2 tests from 1 test case ran.\n", output);
 }
 
 void test_(file_assert_are_equal_istream_failed_tests, test_result) {
-  auto [output, result] = run_test_("file_assert_are_equal_istream_failed_tests.*");
+  auto [output, result] = run_test_("xtd::tunit::tests::file_assert_are_equal_istream_failed_tests.*");
   assert_value_(1, result);
 }

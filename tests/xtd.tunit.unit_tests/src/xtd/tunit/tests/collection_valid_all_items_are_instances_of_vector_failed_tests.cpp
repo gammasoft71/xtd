@@ -17,16 +17,16 @@
 }
 
 void test_(collection_valid_all_items_are_instances_of_vector_failed_tests, test_output) {
-  auto [output, result] = run_test_("collection_valid_all_items_are_instances_of_vector_failed_tests.*");
+  auto [output, result] = run_test_("xtd::tunit::tests::collection_valid_all_items_are_instances_of_vector_failed_tests.*");
   assert_value_("Start 1 test from 1 test case\n"
-    "  FAILED  collection_valid_all_items_are_instances_of_vector_failed_tests.test_case_failed\n"
+    "  FAILED  xtd::tunit::tests::collection_valid_all_items_are_instances_of_vector_failed_tests.test_case_failed\n"
     "    Expected: all items instance of <std::__1::basic_ostream<char, std::__1::char_traits<char> >*>\n"
     "    But was:  < 8-byte object <90-9A 44-E9 01-00 00-00>, 8-byte object <D0-9B 44-E9 01-00 00-00>, 8-byte object <48-99 44-E9 01-00 00-00> >\n"
     "End 1 test from 1 test case ran.\n", output);
 }
 
 void test_(collection_valid_all_items_are_instances_of_vector_failed_tests, test_result) {
-  auto [output, result] = run_test_("collection_valid_all_items_are_instances_of_vector_failed_tests.*");
+  auto [output, result] = run_test_("xtd::tunit::tests::collection_valid_all_items_are_instances_of_vector_failed_tests.*");
   assert_value_(1, result);
 }
 */

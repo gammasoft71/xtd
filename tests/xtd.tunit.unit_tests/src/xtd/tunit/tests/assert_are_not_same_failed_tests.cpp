@@ -15,15 +15,15 @@ namespace xtd::tunit::tests {
 }
 
 void test_(assert_are_not_same_failed_tests, test_output) {
-  auto [output, result] = run_test_("assert_are_not_same_failed_tests.*");
+  auto [output, result] = run_test_("xtd::tunit::tests::assert_are_not_same_failed_tests.*");
   assert_value_("Start 1 test from 1 test case\n"
-    "  FAILED  assert_are_not_same_failed_tests.test_case_failed\n"
+    "  FAILED  xtd::tunit::tests::assert_are_not_same_failed_tests.test_case_failed\n"
     "    Expected: not same as 24\n"
     "    But was:  24\n"
     "End 1 test from 1 test case ran.\n", output);
 }
 
 void test_(assert_are_not_same_failed_tests, test_result) {
-  auto [output, result] = run_test_("assert_are_not_same_failed_tests.*");
+  auto [output, result] = run_test_("xtd::tunit::tests::assert_are_not_same_failed_tests.*");
   assert_value_(1, result);
 }

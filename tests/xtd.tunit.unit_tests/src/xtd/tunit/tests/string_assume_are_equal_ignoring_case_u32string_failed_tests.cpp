@@ -14,14 +14,14 @@ namespace xtd::tunit::tests {
 }
 
 void test_(string_assume_are_equal_ignoring_case_u32string_failed_tests, test_output) {
-  auto [output, result] = run_test_("string_assume_are_equal_ignoring_case_u32string_failed_tests.*");
+  auto [output, result] = run_test_("xtd::tunit::tests::string_assume_are_equal_ignoring_case_u32string_failed_tests.*");
   assert_value_("Start 1 test from 1 test case\n"
-    "  ABORTED string_assume_are_equal_ignoring_case_u32string_failed_tests.test_case_failed\n"
+    "  ABORTED xtd::tunit::tests::string_assume_are_equal_ignoring_case_u32string_failed_tests.test_case_failed\n"
     "    Test aborted\n"
     "End 1 test from 1 test case ran.\n", output);
 }
 
 void test_(string_assume_are_equal_ignoring_case_u32string_failed_tests, test_result) {
-  auto [output, result] = run_test_("string_assume_are_equal_ignoring_case_u32string_failed_tests.*");
+  auto [output, result] = run_test_("xtd::tunit::tests::string_assume_are_equal_ignoring_case_u32string_failed_tests.*");
   assert_value_(0, result);
 }

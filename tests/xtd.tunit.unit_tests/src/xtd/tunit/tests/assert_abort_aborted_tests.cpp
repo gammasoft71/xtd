@@ -13,14 +13,14 @@ namespace xtd::tunit::tests {
 }
 
 void test_(assert_abort_aborted_tests, test_output) {
-  auto [output, result] = run_test_("assert_abort_aborted_tests.*");
+  auto [output, result] = run_test_("xtd::tunit::tests::assert_abort_aborted_tests.*");
   assert_value_("Start 1 test from 1 test case\n"
-    "  ABORTED assert_abort_aborted_tests.test_case_aborted\n"
+    "  ABORTED xtd::tunit::tests::assert_abort_aborted_tests.test_case_aborted\n"
     "    Test aborted\n"
     "End 1 test from 1 test case ran.\n", output);
 }
 
 void test_(assert_abort_aborted_tests, test_result) {
-  auto [output, result] = run_test_("assert_abort_aborted_tests.*");
+  auto [output, result] = run_test_("xtd::tunit::tests::assert_abort_aborted_tests.*");
   assert_value_(0, result);
 }

@@ -14,13 +14,13 @@ namespace xtd::tunit::tests {
 }
 
 void test_(assume_are_not_equal_double_NaN_tests, test_output) {
-  auto [output, result] = run_test_("assume_are_not_equal_double_NaN_tests.*");
+  auto [output, result] = run_test_("xtd::tunit::tests::assume_are_not_equal_double_NaN_tests.*");
   assert_value_("Start 1 test from 1 test case\n"
-    "  SUCCEED assume_are_not_equal_double_NaN_tests.test_case_succeed\n"
+    "  SUCCEED xtd::tunit::tests::assume_are_not_equal_double_NaN_tests.test_case_succeed\n"
     "End 1 test from 1 test case ran.\n", output);
 }
 
 void test_(assume_are_not_equal_double_NaN_tests, test_result) {
-  auto [output, result] = run_test_("assume_are_not_equal_double_NaN_tests.*");
+  auto [output, result] = run_test_("xtd::tunit::tests::assume_are_not_equal_double_NaN_tests.*");
   assert_value_(0, result);
 }
