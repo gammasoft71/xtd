@@ -13,17 +13,17 @@ namespace xtd::tunit::tests {
       xtd::tunit::directory_valid::are_not_equal(d1, d2);
     }
   };
-}
-
-void test_(directory_valid_are_not_equal_filesystem_directory_entry_succeed_tests, test_output) {
-  auto [output, result] = run_test_("xtd::tunit::tests::directory_valid_are_not_equal_filesystem_directory_entry_succeed_tests.*");
-  assert_value_("Start 1 test from 1 test case\n"
-    "  SUCCEED xtd::tunit::tests::directory_valid_are_not_equal_filesystem_directory_entry_succeed_tests.test_case_succeed\n"
-    "End 1 test from 1 test case ran.\n", output);
-}
-
-void test_(directory_valid_are_not_equal_filesystem_directory_entry_succeed_tests, test_result) {
-  auto [output, result] = run_test_("xtd::tunit::tests::directory_valid_are_not_equal_filesystem_directory_entry_succeed_tests.*");
-  assert_value_(0, result);
+  
+  void test_(directory_valid_are_not_equal_filesystem_directory_entry_succeed_tests, test_output) {
+    auto [output, result] = run_test_("xtd::tunit::tests::directory_valid_are_not_equal_filesystem_directory_entry_succeed_tests.*");
+    assert_value_("Start 1 test from 1 test case\n"
+                  "  SUCCEED xtd::tunit::tests::directory_valid_are_not_equal_filesystem_directory_entry_succeed_tests.test_case_succeed\n"
+                  "End 1 test from 1 test case ran.\n", output);
+  }
+  
+  void test_(directory_valid_are_not_equal_filesystem_directory_entry_succeed_tests, test_result) {
+    auto [output, result] = run_test_("xtd::tunit::tests::directory_valid_are_not_equal_filesystem_directory_entry_succeed_tests.*");
+    assert_value_(0, result);
+  }
 }
 #endif
