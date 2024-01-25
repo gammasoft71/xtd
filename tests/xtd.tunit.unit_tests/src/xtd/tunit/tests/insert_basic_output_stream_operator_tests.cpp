@@ -22,6 +22,8 @@
 
 //namespace xtd::tunit::tests {
 namespace tunit::tests {
+  class insert_basic_output_stream_operator_tests {};
+  
   void test_(insert_basic_output_stream_operator_tests, test_bool) {
     bool b = true;
     std::stringstream ss;
