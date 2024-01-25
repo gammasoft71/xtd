@@ -12,18 +12,18 @@ namespace xtd::tunit::tests {
       xtd::tunit::file_valid::are_not_equal(std::istringstream("Test xtd::tunit::file_valid::are_not_equal."), std::istringstream("Test xtd::tunit::file_valid::are_not_equal."));
     }
   };
-}
-
-void test_(file_valid_are_not_equal_istream_failed_tests, test_output) {
-  auto [output, result] = run_test_("xtd::tunit::tests::file_valid_are_not_equal_istream_failed_tests.*");
-  assert_value_(xtd::ustring::format("Start 1 test from 1 test case\n"
-      "  FAILED  xtd::tunit::tests::file_valid_are_not_equal_istream_failed_tests.test_case_failed\n"
-      "    Expected: not equal <{0}>\n"
-      "    But was:  <{0}>\n"
-      "End 1 test from 1 test case ran.\n", typeof_<std::istringstream>()), output);
-}
-
-void test_(file_valid_are_not_equal_istream_failed_tests, test_result) {
-  auto [output, result] = run_test_("xtd::tunit::tests::file_valid_are_not_equal_istream_failed_tests.*");
-  assert_value_(1, result);
+  
+  void test_(file_valid_are_not_equal_istream_failed_tests, test_output) {
+    auto [output, result] = run_test_("xtd::tunit::tests::file_valid_are_not_equal_istream_failed_tests.*");
+    assert_value_(xtd::ustring::format("Start 1 test from 1 test case\n"
+                                       "  FAILED  xtd::tunit::tests::file_valid_are_not_equal_istream_failed_tests.test_case_failed\n"
+                                       "    Expected: not equal <{0}>\n"
+                                       "    But was:  <{0}>\n"
+                                       "End 1 test from 1 test case ran.\n", typeof_<std::istringstream>()), output);
+  }
+  
+  void test_(file_valid_are_not_equal_istream_failed_tests, test_result) {
+    auto [output, result] = run_test_("xtd::tunit::tests::file_valid_are_not_equal_istream_failed_tests.*");
+    assert_value_(1, result);
+  }
 }
