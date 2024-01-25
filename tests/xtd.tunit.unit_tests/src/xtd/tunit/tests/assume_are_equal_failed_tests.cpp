@@ -11,17 +11,17 @@ namespace xtd::tunit::tests {
       xtd::tunit::assume::are_equal(23, i);
     }
   };
-}
-
-void test_(assumet_are_equal_failed_tests, test_output) {
-  auto [output, result] = run_test_("xtd::tunit::tests::assumet_are_equal_failed_tests.*");
-  assert_value_("Start 1 test from 1 test case\n"
-    "  ABORTED xtd::tunit::tests::assumet_are_equal_failed_tests.test_case_failed\n"
-    "    Test aborted\n"
-    "End 1 test from 1 test case ran.\n", output);
-}
-
-void test_(assumet_are_equal_failed_tests, test_result) {
-  auto [output, result] = run_test_("xtd::tunit::tests::assumet_are_equal_failed_tests.*");
-  assert_value_(0, result);
+  
+  void test_(assumet_are_equal_failed_tests, test_output) {
+    auto [output, result] = run_test_("xtd::tunit::tests::assumet_are_equal_failed_tests.*");
+    assert_value_("Start 1 test from 1 test case\n"
+                  "  ABORTED xtd::tunit::tests::assumet_are_equal_failed_tests.test_case_failed\n"
+                  "    Test aborted\n"
+                  "End 1 test from 1 test case ran.\n", output);
+  }
+  
+  void test_(assumet_are_equal_failed_tests, test_result) {
+    auto [output, result] = run_test_("xtd::tunit::tests::assumet_are_equal_failed_tests.*");
+    assert_value_(0, result);
+  }
 }
