@@ -11,18 +11,18 @@ namespace xtd::tunit::tests {
       xtd::tunit::collection_assert::is_not_empty(a);
     }
   };
-}
-
-void test_(collection_assert_is_not_empty_vector_failed_tests, test_output) {
-  auto [output, result] = run_test_("xtd::tunit::tests::collection_assert_is_not_empty_vector_failed_tests.*");
-  assert_value_("Start 1 test from 1 test case\n"
-    "  FAILED  xtd::tunit::tests::collection_assert_is_not_empty_vector_failed_tests.test_case_failed\n"
-    "    Expected: not <empty>\n"
-    "    But was:  <empty>\n"
-    "End 1 test from 1 test case ran.\n", output);
-}
-
-void test_(collection_assert_is_not_empty_vector_failed_tests, test_result) {
-  auto [output, result] = run_test_("xtd::tunit::tests::collection_assert_is_not_empty_vector_failed_tests.*");
-  assert_value_(1, result);
+  
+  void test_(collection_assert_is_not_empty_vector_failed_tests, test_output) {
+    auto [output, result] = run_test_("xtd::tunit::tests::collection_assert_is_not_empty_vector_failed_tests.*");
+    assert_value_("Start 1 test from 1 test case\n"
+                  "  FAILED  xtd::tunit::tests::collection_assert_is_not_empty_vector_failed_tests.test_case_failed\n"
+                  "    Expected: not <empty>\n"
+                  "    But was:  <empty>\n"
+                  "End 1 test from 1 test case ran.\n", output);
+  }
+  
+  void test_(collection_assert_is_not_empty_vector_failed_tests, test_result) {
+    auto [output, result] = run_test_("xtd::tunit::tests::collection_assert_is_not_empty_vector_failed_tests.*");
+    assert_value_(1, result);
+  }
 }
