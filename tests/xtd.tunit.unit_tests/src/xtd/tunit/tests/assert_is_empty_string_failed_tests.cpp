@@ -12,18 +12,18 @@ namespace xtd::tunit::tests {
       xtd::tunit::assert::is_empty(s);
     }
   };
-}
-
-void test_(assert_is_empty_string_failed_tests, test_output) {
-  auto [output, result] = run_test_("xtd::tunit::tests::assert_is_empty_string_failed_tests.*");
-  assert_value_("Start 1 test from 1 test case\n"
-    "  FAILED  xtd::tunit::tests::assert_is_empty_string_failed_tests.test_case_failed\n"
-    "    Expected: collection <empty>\n"
-    "    But was:  < 's', 't', 'r', 'i', 'n', 'g' >\n"
-    "End 1 test from 1 test case ran.\n", output);
-}
-
-void test_(assert_is_empty_string_failed_tests, test_result) {
-  auto [output, result] = run_test_("xtd::tunit::tests::assert_is_empty_string_failed_tests.*");
-  assert_value_(1, result);
+  
+  void test_(assert_is_empty_string_failed_tests, test_output) {
+    auto [output, result] = run_test_("xtd::tunit::tests::assert_is_empty_string_failed_tests.*");
+    assert_value_("Start 1 test from 1 test case\n"
+                  "  FAILED  xtd::tunit::tests::assert_is_empty_string_failed_tests.test_case_failed\n"
+                  "    Expected: collection <empty>\n"
+                  "    But was:  < 's', 't', 'r', 'i', 'n', 'g' >\n"
+                  "End 1 test from 1 test case ran.\n", output);
+  }
+  
+  void test_(assert_is_empty_string_failed_tests, test_result) {
+    auto [output, result] = run_test_("xtd::tunit::tests::assert_is_empty_string_failed_tests.*");
+    assert_value_(1, result);
+  }
 }
