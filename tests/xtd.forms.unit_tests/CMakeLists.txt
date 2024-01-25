@@ -22,6 +22,7 @@ add_sources(
   src/xtd/forms/tests/button_tests.cpp 
   src/xtd/forms/tests/character_casing_tests.cpp 
   src/xtd/forms/tests/check_box_tests.cpp 
+  src/xtd/forms/tests/check_state_tests.cpp 
   src/xtd/forms/tests/control_tests.cpp 
   src/xtd/forms/tests/form_tests.cpp
   src/xtd/forms/tests/keys_tests.cpp
