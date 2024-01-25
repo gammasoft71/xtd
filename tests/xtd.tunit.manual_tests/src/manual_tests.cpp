@@ -43,7 +43,8 @@ namespace unit_tests {
   class test_class_(manual_test_tunit) {
   public:
     void test_method_(test_case1) {
-      assert::are_equal(42, 0x2A, csf_);
+      //assert::are_equal(42, 0x2A, csf_);
+      assert::abort(csf_);
     }
   };
 }

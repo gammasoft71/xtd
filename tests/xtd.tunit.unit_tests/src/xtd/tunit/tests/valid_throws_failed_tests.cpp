@@ -15,15 +15,15 @@ namespace xtd::tunit::tests {
 }
 
 void test_(valid_throws_failed_tests, test_output) {
-  auto [output, result] = run_test_("valid_throws_failed_tests.*");
+  auto [output, result] = run_test_("xtd::tunit::tests::valid_throws_failed_tests.*");
   assert_value_("Start 1 test from 1 test case\n"
-    "  FAILED  valid_throws_failed_tests.test_case_failed\n"
+    "  FAILED  xtd::tunit::tests::valid_throws_failed_tests.test_case_failed\n"
     "    Expected: <std::out_of_range>\n"
     "    But was:  <nothing>\n"
     "End 1 test from 1 test case ran.\n", output);
 }
 
 void test_(valid_throws_failed_tests, test_result) {
-  auto [output, result] = run_test_("valid_throws_failed_tests.*");
+  auto [output, result] = run_test_("xtd::tunit::tests::valid_throws_failed_tests.*");
   assert_value_(1, result);
 }

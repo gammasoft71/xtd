@@ -29,16 +29,16 @@ namespace xtd::tunit::tests {
 }
 
 void test_(file_assume_are_equal_string_failed_tests, test_output) {
-  auto [output, result] = run_test_("file_assume_are_equal_string_failed_tests.*");
+  auto [output, result] = run_test_("xtd::tunit::tests::file_assume_are_equal_string_failed_tests.*");
   assert_value_("Start 2 tests from 1 test case\n"
-    "  ABORTED file_assume_are_equal_string_failed_tests.test_case_lenght_failed\n"
+    "  ABORTED xtd::tunit::tests::file_assume_are_equal_string_failed_tests.test_case_lenght_failed\n"
     "    Test aborted\n"
-    "  ABORTED file_assume_are_equal_string_failed_tests.test_case_letter_failed\n"
+    "  ABORTED xtd::tunit::tests::file_assume_are_equal_string_failed_tests.test_case_letter_failed\n"
     "    Test aborted\n"
     "End 2 tests from 1 test case ran.\n", output);
 }
 
 void test_(file_assume_are_equal_string_failed_tests, test_result) {
-  auto [output, result] = run_test_("file_assume_are_equal_string_failed_tests.*");
+  auto [output, result] = run_test_("xtd::tunit::tests::file_assume_are_equal_string_failed_tests.*");
   assert_value_(0, result);
 }
