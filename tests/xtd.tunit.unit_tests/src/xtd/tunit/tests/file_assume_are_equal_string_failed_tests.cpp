@@ -26,19 +26,19 @@ namespace xtd::tunit::tests {
       xtd::io::file::remove(xtd::io::path::combine(xtd::io::path::get_temp_path(), "test_tunit_file2.txt"));
     }
   };
-}
-
-void test_(file_assume_are_equal_string_failed_tests, test_output) {
-  auto [output, result] = run_test_("xtd::tunit::tests::file_assume_are_equal_string_failed_tests.*");
-  assert_value_("Start 2 tests from 1 test case\n"
-    "  ABORTED xtd::tunit::tests::file_assume_are_equal_string_failed_tests.test_case_lenght_failed\n"
-    "    Test aborted\n"
-    "  ABORTED xtd::tunit::tests::file_assume_are_equal_string_failed_tests.test_case_letter_failed\n"
-    "    Test aborted\n"
-    "End 2 tests from 1 test case ran.\n", output);
-}
-
-void test_(file_assume_are_equal_string_failed_tests, test_result) {
-  auto [output, result] = run_test_("xtd::tunit::tests::file_assume_are_equal_string_failed_tests.*");
-  assert_value_(0, result);
+  
+  void test_(file_assume_are_equal_string_failed_tests, test_output) {
+    auto [output, result] = run_test_("xtd::tunit::tests::file_assume_are_equal_string_failed_tests.*");
+    assert_value_("Start 2 tests from 1 test case\n"
+                  "  ABORTED xtd::tunit::tests::file_assume_are_equal_string_failed_tests.test_case_lenght_failed\n"
+                  "    Test aborted\n"
+                  "  ABORTED xtd::tunit::tests::file_assume_are_equal_string_failed_tests.test_case_letter_failed\n"
+                  "    Test aborted\n"
+                  "End 2 tests from 1 test case ran.\n", output);
+  }
+  
+  void test_(file_assume_are_equal_string_failed_tests, test_result) {
+    auto [output, result] = run_test_("xtd::tunit::tests::file_assume_are_equal_string_failed_tests.*");
+    assert_value_(0, result);
+  }
 }
