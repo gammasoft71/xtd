@@ -21,6 +21,8 @@ namespace xtd::tunit::tests {
     }
   };
   
+  class two_tests_five_test_cases {};
+  
   void test_(two_tests_five_test_cases, test_output) {
     auto [output, result] = run_test_("xtd::tunit::tests::two_tests_five_test_cases_*");
     assert_value_("Start 5 tests from 2 test cases\n"

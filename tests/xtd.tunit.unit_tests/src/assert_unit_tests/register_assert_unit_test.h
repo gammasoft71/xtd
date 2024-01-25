@@ -4,6 +4,7 @@
 #include <xtd/tunit/unit_test>
 #include <xtd/foreground_color>
 #include <xtd/reset_color>
+#include <xtd/typeof>
 #include <iostream>
 #include <functional>
 #include <sstream>
@@ -62,7 +63,7 @@ namespace assert_unit_tests {
 #define test_(class_name, function_name) \
   __##class_name##_##function_name##_unused() {} \
   void class_name##_##function_name(const std::string& name); \
-  assert_unit_tests::register_assert_unit_test __##class_name##_##function_name##_name {std::string(#class_name) + "." + std::string(#function_name), &class_name##_##function_name}; \
+  assert_unit_tests::register_assert_unit_test __##class_name##_##function_name##_name {std::string(typeof_<class_name>().full_name()) + "." + std::string(#function_name), &class_name##_##function_name}; \
   void class_name##_##function_name(const std::string& name)
 
 #define ignore_test_(class_name, function_name) \
