@@ -12,16 +12,16 @@ namespace xtd::tunit::tests {
       xtd::tunit::valid::is_less_or_equal(i, 42);
     }
   };
-}
-
-void test_(valid_is_less_or_equal_succeed_tests, test_output) {
-  auto [output, result] = run_test_("xtd::tunit::tests::valid_is_less_or_equal_succeed_tests.*");
-  assert_value_("Start 1 test from 1 test case\n"
-    "  SUCCEED xtd::tunit::tests::valid_is_less_or_equal_succeed_tests.test_case_succeed\n"
-    "End 1 test from 1 test case ran.\n", output);
-}
-
-void test_(valid_is_less_or_equal_succeed_tests, test_result) {
-  auto [output, result] = run_test_("xtd::tunit::tests::valid_is_less_or_equal_succeed_tests.*");
-  assert_value_(0, result);
+  
+  void test_(valid_is_less_or_equal_succeed_tests, test_output) {
+    auto [output, result] = run_test_("xtd::tunit::tests::valid_is_less_or_equal_succeed_tests.*");
+    assert_value_("Start 1 test from 1 test case\n"
+                  "  SUCCEED xtd::tunit::tests::valid_is_less_or_equal_succeed_tests.test_case_succeed\n"
+                  "End 1 test from 1 test case ran.\n", output);
+  }
+  
+  void test_(valid_is_less_or_equal_succeed_tests, test_result) {
+    auto [output, result] = run_test_("xtd::tunit::tests::valid_is_less_or_equal_succeed_tests.*");
+    assert_value_(0, result);
+  }
 }

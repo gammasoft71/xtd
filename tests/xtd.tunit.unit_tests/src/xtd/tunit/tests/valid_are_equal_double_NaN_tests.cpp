@@ -11,16 +11,16 @@ namespace xtd::tunit::tests {
       xtd::tunit::valid::are_equal(std::numeric_limits<double>::quiet_NaN(), d);
     }
   };
-}
-
-void test_(valid_are_equal_double_NaN_tests, test_output) {
-  auto [output, result] = run_test_("xtd::tunit::tests::valid_are_equal_double_NaN_tests.*");
-  assert_value_("Start 1 test from 1 test case\n"
-    "  SUCCEED xtd::tunit::tests::valid_are_equal_double_NaN_tests.test_case_succeed\n"
-    "End 1 test from 1 test case ran.\n", output);
-}
-
-void test_(valid_are_equal_double_NaN_tests, test_result) {
-  auto [output, result] = run_test_("xtd::tunit::tests::valid_are_equal_double_NaN_tests.*");
-  assert_value_(0, result);
+  
+  void test_(valid_are_equal_double_NaN_tests, test_output) {
+    auto [output, result] = run_test_("xtd::tunit::tests::valid_are_equal_double_NaN_tests.*");
+    assert_value_("Start 1 test from 1 test case\n"
+                  "  SUCCEED xtd::tunit::tests::valid_are_equal_double_NaN_tests.test_case_succeed\n"
+                  "End 1 test from 1 test case ran.\n", output);
+  }
+  
+  void test_(valid_are_equal_double_NaN_tests, test_result) {
+    auto [output, result] = run_test_("xtd::tunit::tests::valid_are_equal_double_NaN_tests.*");
+    assert_value_(0, result);
+  }
 }

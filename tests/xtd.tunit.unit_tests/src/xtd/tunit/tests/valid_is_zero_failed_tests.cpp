@@ -11,18 +11,18 @@ namespace xtd::tunit::tests {
       xtd::tunit::valid::is_zero(i);
     }
   };
-}
-
-void test_(valid_is_zero_failed_tests, test_output) {
-  auto [output, result] = run_test_("xtd::tunit::tests::valid_is_zero_failed_tests.*");
-  assert_value_("Start 1 test from 1 test case\n"
-    "  FAILED  xtd::tunit::tests::valid_is_zero_failed_tests.test_case_failed\n"
-    "    Expected: zero\n"
-    "    But was:  42\n"
-    "End 1 test from 1 test case ran.\n", output);
-}
-
-void test_(valid_is_zero_failed_tests, test_result) {
-  auto [output, result] = run_test_("xtd::tunit::tests::valid_is_zero_failed_tests.*");
-  assert_value_(1, result);
+  
+  void test_(valid_is_zero_failed_tests, test_output) {
+    auto [output, result] = run_test_("xtd::tunit::tests::valid_is_zero_failed_tests.*");
+    assert_value_("Start 1 test from 1 test case\n"
+                  "  FAILED  xtd::tunit::tests::valid_is_zero_failed_tests.test_case_failed\n"
+                  "    Expected: zero\n"
+                  "    But was:  42\n"
+                  "End 1 test from 1 test case ran.\n", output);
+  }
+  
+  void test_(valid_is_zero_failed_tests, test_result) {
+    auto [output, result] = run_test_("xtd::tunit::tests::valid_is_zero_failed_tests.*");
+    assert_value_(1, result);
+  }
 }
