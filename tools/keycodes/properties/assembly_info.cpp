@@ -10,7 +10,7 @@
 // Information about this assembly is defined by the following attributes.
 // Change them to the values specific to your project.
 
-assembly_title_("kzycodes");
+assembly_title_("keycodes");
 assembly_description_("keycodes displays information about the keys entered.");
 assembly_configuration_("");
 assembly_company_("Gammasoft");
