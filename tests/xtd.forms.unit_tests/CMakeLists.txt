@@ -38,6 +38,7 @@ add_sources(
   src/xtd/forms/tests/flat_style_tests.cpp
   src/xtd/forms/tests/font_box_options_tests.cpp
   src/xtd/forms/tests/form_border_style_tests.cpp
+  src/xtd/forms/tests/form_start_position_tests.cpp
   src/xtd/forms/tests/form_tests.cpp
   src/xtd/forms/tests/keys_tests.cpp
   src/xtd/forms/tests/lcd_label_tests.cpp
