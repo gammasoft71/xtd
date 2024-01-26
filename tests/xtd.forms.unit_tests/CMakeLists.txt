@@ -31,6 +31,7 @@ add_sources(
   src/xtd/forms/tests/control_styles_tests.cpp
   src/xtd/forms/tests/control_tests.cpp
   src/xtd/forms/tests/date_time_picker_format_tests.cpp
+  src/xtd/forms/tests/day_tests.cpp
   src/xtd/forms/tests/form_tests.cpp
   src/xtd/forms/tests/keys_tests.cpp
   src/xtd/forms/tests/lcd_label_tests.cpp
