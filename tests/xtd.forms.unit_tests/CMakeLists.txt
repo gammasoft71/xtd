@@ -34,6 +34,7 @@ add_sources(
   src/xtd/forms/tests/day_tests.cpp
   src/xtd/forms/tests/dialog_result_tests.cpp
   src/xtd/forms/tests/dock_style_tests.cpp
+  src/xtd/forms/tests/dot_matrix_style_tests.cpp
   src/xtd/forms/tests/form_tests.cpp
   src/xtd/forms/tests/keys_tests.cpp
   src/xtd/forms/tests/lcd_label_tests.cpp
