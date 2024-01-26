@@ -25,6 +25,7 @@ add_sources(
   src/xtd/forms/tests/check_state_tests.cpp 
   src/xtd/forms/tests/close_reason_tests.cpp
   src/xtd/forms/tests/color_box_styles_tests.cpp
+  src/xtd/forms/tests/combo_box_style_tests.cpp
   src/xtd/forms/tests/control_tests.cpp
   src/xtd/forms/tests/form_tests.cpp
   src/xtd/forms/tests/keys_tests.cpp
