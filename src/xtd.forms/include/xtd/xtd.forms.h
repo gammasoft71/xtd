@@ -260,7 +260,7 @@
 #include "forms/mouse_event_args.h"
 #include "forms/mouse_event_handler.h"
 #include "forms/nine_segment_display.h"
-#include "forms/notifier_style.h"
+#include "forms/notifier_appearance.h"
 #include "forms/numeric_up_down.h"
 #include "forms/open_file_box.h"
 #include "forms/open_file_box_options.h"

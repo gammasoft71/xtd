@@ -196,18 +196,18 @@ void message_notifier::reset() {
   close_timeout_enabled_ = false;
   close_timeout_interval_ = std::chrono::milliseconds(10'000);
   notifier_closed.clear();
-  notifier_style_ = xtd::forms::notifier_style::standard;
+  notifier_appearance_ = xtd::forms::notifier_appearance::standard;
 }
 
 
 void message_notifier::show() {
-  if (notifier_style_ == xtd::forms::notifier_style::standard)
+  if (notifier_appearance_ == xtd::forms::notifier_appearance::standard)
     message_notifier_standard::show(0, *this);
   else
     throw xtd::not_implemented_exception();
 }
 void message_notifier::show(const iwin32_window& owner) {
-  if (notifier_style_ == xtd::forms::notifier_style::standard)
+  if (notifier_appearance_ == xtd::forms::notifier_appearance::standard)
     message_notifier_standard::show(owner.handle(), *this);
   else
     throw xtd::not_implemented_exception();

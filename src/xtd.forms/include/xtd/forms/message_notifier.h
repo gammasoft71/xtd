@@ -3,7 +3,7 @@
 #include "component.h"
 #include "iwin32_window.h"
 #include "message_notifier_button.h"
-#include "notifier_style.h"
+#include "notifier_appearance.h"
 #include <xtd/drawing/icon>
 #include <xtd/chrono>
 #include <xtd/delegate>
@@ -93,8 +93,8 @@ namespace xtd {
       message_notifier& close_timeout_interval(std::chrono::milliseconds value) noexcept { close_timeout_interval_ = value; return *this;}
       message_notifier& close_timeout_interval_milliseconds(int32 value) noexcept { close_timeout_interval_ = std::chrono::milliseconds(value); return *this; }
       
-      xtd::forms::notifier_style notifier_style() const noexcept {return notifier_style_; }
-      message_notifier& notifier_style(xtd::forms::notifier_style notifier_style) noexcept { notifier_style_ = notifier_style; return *this; }
+      xtd::forms::notifier_appearance notifier_appearance() const noexcept {return notifier_appearance_; }
+      message_notifier& notifier_appearance(xtd::forms::notifier_appearance notifier_appearance) noexcept { notifier_appearance_ = notifier_appearance; return *this; }
       
       void reset();
       
@@ -120,7 +120,7 @@ namespace xtd {
       std::chrono::milliseconds close_timeout_interval_ = std::chrono::milliseconds(10'000);
       message_notifier_button_collection buttons_;
       std::optional<xtd::forms::message_notifier_button> notifier_button_clicked_ = std::nullopt;
-      xtd::forms::notifier_style notifier_style_ = xtd::forms::notifier_style::standard;
+      xtd::forms::notifier_appearance notifier_appearance_ = xtd::forms::notifier_appearance::standard;
       
     };
   }

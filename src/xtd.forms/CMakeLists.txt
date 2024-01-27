@@ -415,8 +415,8 @@ add_sources(
   include/xtd/forms/mouse_event_handler
   include/xtd/forms/nine_segment_display.h
   include/xtd/forms/nine_segment_display
-  include/xtd/forms/notifier_style.h
-  include/xtd/forms/notifier_style
+  include/xtd/forms/notifier_appearance.h
+  include/xtd/forms/notifier_appearance
   include/xtd/forms/numeric_up_down.h
   include/xtd/forms/numeric_up_down
   include/xtd/forms/open_file_box.h
