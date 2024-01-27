@@ -54,6 +54,7 @@ add_sources(
   src/xtd/forms/tests/loading_indicator_style_tests.cpp
   src/xtd/forms/tests/main_menu_tests.cpp
   src/xtd/forms/tests/menu_item_kind_tests.cpp
+  src/xtd/forms/tests/message_dialog_buttons_tests.cpp
   src/xtd/forms/tests/progress_bar_tests.cpp 
   src/xtd/forms/tests/radio_button_tests.cpp 
   src/xtd/forms/tests/right_to_left_tests.cpp 
