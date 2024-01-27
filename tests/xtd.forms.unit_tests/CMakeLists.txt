@@ -42,6 +42,7 @@ add_sources(
   src/xtd/forms/tests/form_tests.cpp
   src/xtd/forms/tests/form_window_state_tests.cpp
   src/xtd/forms/tests/horizontal_alignment_tests.cpp
+  src/xtd/forms/tests/image_layout_tests.cpp
   src/xtd/forms/tests/keys_tests.cpp
   src/xtd/forms/tests/lcd_label_tests.cpp
   src/xtd/forms/tests/list_box_tests.cpp
