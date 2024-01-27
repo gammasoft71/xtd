@@ -57,6 +57,7 @@ add_sources(
   src/xtd/forms/tests/message_dialog_buttons_tests.cpp
   src/xtd/forms/tests/message_dialog_default_button_tests.cpp
   src/xtd/forms/tests/message_dialog_icon_tests.cpp
+  src/xtd/forms/tests/message_dialog_options_tests.cpp
   src/xtd/forms/tests/progress_bar_tests.cpp 
   src/xtd/forms/tests/radio_button_tests.cpp 
   src/xtd/forms/tests/right_to_left_tests.cpp 
