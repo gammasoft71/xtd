@@ -63,6 +63,7 @@ add_sources(
   src/xtd/forms/tests/open_file_box_options_tests.cpp
   src/xtd/forms/tests/orientation_tests.cpp
   src/xtd/forms/tests/picture_box_size_mode_tests.cpp
+  src/xtd/forms/tests/power_line_status_tests.cpp
   src/xtd/forms/tests/progress_bar_tests.cpp 
   src/xtd/forms/tests/radio_button_tests.cpp 
   src/xtd/forms/tests/right_to_left_tests.cpp 
