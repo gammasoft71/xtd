@@ -51,6 +51,7 @@ add_sources(
   src/xtd/forms/tests/left_right_alignment_tests.cpp
   src/xtd/forms/tests/link_behavior_tests.cpp
   src/xtd/forms/tests/list_box_tests.cpp
+  src/xtd/forms/tests/loading_indicator_style_tests.cpp
   src/xtd/forms/tests/main_menu_tests.cpp
   src/xtd/forms/tests/progress_bar_tests.cpp 
   src/xtd/forms/tests/radio_button_tests.cpp 
