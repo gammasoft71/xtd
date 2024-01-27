@@ -16,7 +16,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
-    /// @remarks This enumeration is used by the xtd::system_information::screen_orientation property.
+    /// @remarks This enumeration is used by the xtd::forms::system_information::screen_orientation property.
     enum class screen_orientation {
       /// @brief The screen is oriented at 0 degrees.
       angle_0 = 0,
