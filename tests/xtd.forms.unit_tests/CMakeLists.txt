@@ -60,6 +60,7 @@ add_sources(
   src/xtd/forms/tests/message_dialog_options_tests.cpp
   src/xtd/forms/tests/month_calendar_hit_area_tests.cpp
   src/xtd/forms/tests/mouse_buttons_tests.cpp
+  src/xtd/forms/tests/open_file_box_options_tests.cpp
   src/xtd/forms/tests/progress_bar_tests.cpp 
   src/xtd/forms/tests/radio_button_tests.cpp 
   src/xtd/forms/tests/right_to_left_tests.cpp 
