@@ -81,6 +81,7 @@ add_sources(
   src/xtd/forms/tests/splitter_style_tests.cpp
   src/xtd/forms/tests/status_bar_panel_auto_size_tests.cpp
   src/xtd/forms/tests/status_bar_panel_border_style_tests.cpp
+  src/xtd/forms/tests/status_bar_panel_style_tests.cpp
   src/xtd/forms/tests/system_information_tests.cpp
   src/xtd/forms/tests/toggle_button_tests.cpp 
   src/xtd/forms/layout/tests/arranged_element_collection_tests.cpp 
