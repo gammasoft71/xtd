@@ -77,6 +77,7 @@ add_sources(
   src/xtd/forms/tests/segments_tests.cpp
   src/xtd/forms/tests/selection_mode_tests.cpp
   src/xtd/forms/tests/shortcut_tests.cpp
+  src/xtd/forms/tests/size_type_tests.cpp
   src/xtd/forms/tests/system_information_tests.cpp
   src/xtd/forms/tests/toggle_button_tests.cpp 
   src/xtd/forms/layout/tests/arranged_element_collection_tests.cpp 
