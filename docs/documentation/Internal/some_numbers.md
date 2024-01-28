@@ -12,7 +12,7 @@ sidebar_position: 15
 
 ## Team
 
-* contributors :
+* Contributors : 12
   * 11 developers
   *  1 translators (*)
   *  0 documenters (*)
@@ -57,17 +57,8 @@ sidebar_position: 15
   
 ## Unit tests
 
-* xtd.core.unit_tests : 
-   * test_case : 404
-   * tests : 11663
-   
-* xtd.drawing.unit_tests : 
-   * test_case : 45
-   * tests : 1947
-   
-* xtd.forms.unit_tests : 
-   * test_case : 111
-   * tests : 1259
-   
-* xtd.forms.unit_tests : 
-   * tests : 1058
+* Tests : 15927
+   * 11663 tests from 404 test cases (xtd.core.unit_test)
+   *  1947 tests from  45 test cases (xtd.drawing.unit_tests)
+   *  1259 tests from 111 test cases (xtd.forms.unit_tests)
+   *  1058 tests from 529 test cases (xtd.forms.unit_tests)
