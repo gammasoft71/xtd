@@ -5,7 +5,7 @@ This file lists all persons who contributed to xtd (in alphabetical order). If y
 ## Contributors
 
 * [Arsero](https://github.com/Arsero) - Developer : Created the xtd site with Docusaurus 2.0 and published it on gh-pages
-* [Bader](https://github.com/BaderEddineOuaich) - Developer
+* [Bader](https://github.com/baderouaich) - Developer
 * [bigplayszn](https://github.com/bigplayszn) - Developer
 * [Fireblaze-A47](https://github.com/Fireblaze-A47) - Developer
 * **[gammasoft71](https://gammasoft71.wixsite.com/gammasoft)** - **Main developer : Owner**
