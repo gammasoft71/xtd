@@ -87,6 +87,7 @@ add_sources(
   src/xtd/forms/tests/text_format_flags_tests.cpp
   src/xtd/forms/tests/tick_style_tests.cpp
   src/xtd/forms/tests/toggle_button_tests.cpp 
+  src/xtd/forms/tests/tool_bar_appearance_tests.cpp
   src/xtd/forms/layout/tests/arranged_element_collection_tests.cpp 
   src/xtd/forms/style_sheets/tests/background_image_tests.cpp 
   src/xtd/forms/style_sheets/tests/border_color_tests.cpp 
