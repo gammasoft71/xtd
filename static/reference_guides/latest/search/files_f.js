@@ -20,7 +20,8 @@ var searchData=
   ['replace_5fevent_5fhandler_2eh_17',['replace_event_handler.h',['../replace__event__handler_8h.html',1,'']]],
   ['reset_5fcolor_2eh_18',['reset_color.h',['../reset__color_8h.html',1,'']]],
   ['resources_2eh_19',['resources.h',['../resources_8h.html',1,'']]],
-  ['rotate_5fflip_5ftype_2eh_20',['rotate_flip_type.h',['../rotate__flip__type_8h.html',1,'']]],
-  ['run_5fworker_5fcompleted_5fevent_5fargs_2eh_21',['run_worker_completed_event_args.h',['../run__worker__completed__event__args_8h.html',1,'']]],
-  ['run_5fworker_5fcompleted_5fevent_5fhandler_2eh_22',['run_worker_completed_event_handler.h',['../run__worker__completed__event__handler_8h.html',1,'']]]
+  ['right_5fto_5fleft_2eh_20',['right_to_left.h',['../right__to__left_8h.html',1,'']]],
+  ['rotate_5fflip_5ftype_2eh_21',['rotate_flip_type.h',['../rotate__flip__type_8h.html',1,'']]],
+  ['run_5fworker_5fcompleted_5fevent_5fargs_2eh_22',['run_worker_completed_event_args.h',['../run__worker__completed__event__args_8h.html',1,'']]],
+  ['run_5fworker_5fcompleted_5fevent_5fhandler_2eh_23',['run_worker_completed_event_handler.h',['../run__worker__completed__event__handler_8h.html',1,'']]]
 ];

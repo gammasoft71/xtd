@@ -1541,7 +1541,7 @@ You can anchor a control to one or more edges of its container. For example, if 
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa" title="Gets the background color for the control.">xtd::forms::control::back_color</a> property does not support transparent colors unless the <a class="el" href="group__xtd__forms.html#gga8b6e8bca23778f49dc78093e0d5fadbfaea40a4cc3b5943ae2a00eb1b600da7be" title="If true, the control accepts a BackColor with an alpha component of less than 255 to simulate transpa...">xtd::forms::control_styles::supports_transparent_back_color</a> value of <a class="el" href="group__xtd__forms.html#ga8b6e8bca23778f49dc78093e0d5fadbf" title="Specifies the style and behavior of a control.">xtd::forms::control_styles</a> is set to true. </dd>
 <dd>
 The <a class="el" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa" title="Gets the background color for the control.">xtd::forms::control::back_color</a> property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a button will have the same <a class="el" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa" title="Gets the background color for the control.">xtd::forms::control::back_color</a> as its parent form by default. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="animation_8cpp-example.html#a12">animation.cpp</a>, <a class="el" href="auto_scroll_8cpp-example.html#a6">auto_scroll.cpp</a>, <a class="el" href="clock_8cpp-example.html#a10">clock.cpp</a>, <a class="el" href="debug_form_8cpp-example.html#a4">debug_form.cpp</a>, <a class="el" href="demo_8cpp-example.html#a21">demo.cpp</a>, <a class="el" href="lcd_label2_8cpp-example.html#a14">lcd_label2.cpp</a>, <a class="el" href="lcd_label_with_dot_matrix_8cpp-example.html#a8">lcd_label_with_dot_matrix.cpp</a>, <a class="el" href="lcd_label_with_fourteen_segment_8cpp-example.html#a8">lcd_label_with_fourteen_segment.cpp</a>, <a class="el" href="lcd_label_with_nine_segment_8cpp-example.html#a8">lcd_label_with_nine_segment.cpp</a>, <a class="el" href="lcd_label_with_seven_segment_8cpp-example.html#a8">lcd_label_with_seven_segment.cpp</a>, <a class="el" href="lcd_label_with_sixteen_segment_8cpp-example.html#a8">lcd_label_with_sixteen_segment.cpp</a>, <a class="el" href="test_forms_8cpp-example.html#a6">test_forms.cpp</a>, and <a class="el" href="trace_form_8cpp-example.html#a3">trace_form.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="animation_8cpp-example.html#a12">animation.cpp</a>, <a class="el" href="auto_scroll_8cpp-example.html#a6">auto_scroll.cpp</a>, <a class="el" href="clock_8cpp-example.html#a10">clock.cpp</a>, <a class="el" href="debug_form_8cpp-example.html#a4">debug_form.cpp</a>, <a class="el" href="demo_8cpp-example.html#a21">demo.cpp</a>, <a class="el" href="lcd_label2_8cpp-example.html#a14">lcd_label2.cpp</a>, <a class="el" href="lcd_label_with_dot_matrix_8cpp-example.html#a8">lcd_label_with_dot_matrix.cpp</a>, <a class="el" href="lcd_label_with_fourteen_segment_8cpp-example.html#a8">lcd_label_with_fourteen_segment.cpp</a>, <a class="el" href="lcd_label_with_nine_segment_8cpp-example.html#a8">lcd_label_with_nine_segment.cpp</a>, <a class="el" href="lcd_label_with_seven_segment_8cpp-example.html#a8">lcd_label_with_seven_segment.cpp</a>, <a class="el" href="lcd_label_with_sixteen_segment_8cpp-example.html#a8">lcd_label_with_sixteen_segment.cpp</a>, and <a class="el" href="trace_form_8cpp-example.html#a3">trace_form.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -3244,8 +3244,6 @@ create_control does not create a control handle if the control's visible propert
 <dl class="section return"><dt>Returns</dt><dd>The default font of the control. The value returned will vary depending on the user's operating system the local culture setting of their system. </dd></dl>
 
 <p>Reimplemented in <a class="el" href="classxtd_1_1forms_1_1status__bar.html#afe8ff6472d32fb7df848600cfcbe2086">xtd::forms::status_bar</a>, and <a class="el" href="classxtd_1_1forms_1_1tool__bar.html#a51c1abe8ef43d11902fac4c631bf05fd">xtd::forms::tool_bar</a>.</p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="test_forms_8cpp-example.html#a9">test_forms.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -3306,8 +3304,6 @@ create_control does not create a control handle if the control's visible propert
 <dl class="section return"><dt>Returns</dt><dd>The default size of the control. </dd></dl>
 
 <p>Reimplemented in <a class="el" href="classxtd_1_1forms_1_1animation.html#ac66dc3a45a4fa6b6d72f2345c4f408b1">xtd::forms::animation</a>, <a class="el" href="classxtd_1_1forms_1_1dot__matrix__display.html#abb6d0abb1f6b0cece6ecb7e36bdf30a5">xtd::forms::dot_matrix_display</a>, <a class="el" href="classxtd_1_1forms_1_1form.html#a5addb99a817ce74d00b901611c388e09">xtd::forms::form</a>, <a class="el" href="classxtd_1_1forms_1_1h__scroll__bar.html#a9bb63774705e5abb2ca47b518be524c2">xtd::forms::h_scroll_bar</a>, <a class="el" href="classxtd_1_1forms_1_1lcd__label.html#adfced6718b1378a790a3bc413df70fe3">xtd::forms::lcd_label</a>, <a class="el" href="classxtd_1_1forms_1_1progress__bar.html#a48e875d4c50a8468f1595b101da9ce89">xtd::forms::progress_bar</a>, <a class="el" href="classxtd_1_1forms_1_1seven__segment__display.html#a699ca85447c48ac429f6485b298e7e59">xtd::forms::seven_segment_display</a>, <a class="el" href="classxtd_1_1forms_1_1split__container.html#ab29cf6b4535a545720c0e1401c32bbcd">xtd::forms::split_container</a>, <a class="el" href="classxtd_1_1forms_1_1splitter.html#a305bc662932378182a3959ffdb3386f9">xtd::forms::splitter</a>, <a class="el" href="classxtd_1_1forms_1_1status__bar.html#a3560784f8716abb0abc6a5d74d22d20e">xtd::forms::status_bar</a>, <a class="el" href="classxtd_1_1forms_1_1switch__button.html#afb0ca2d8d57f4be4325c60ab58848c10">xtd::forms::switch_button</a>, <a class="el" href="classxtd_1_1forms_1_1tool__bar.html#a31148771da2871f08af5cdc41d899a73">xtd::forms::tool_bar</a>, <a class="el" href="classxtd_1_1forms_1_1track__bar.html#a1a65e8122e07404cd1d54f623b53e256">xtd::forms::track_bar</a>, and <a class="el" href="classxtd_1_1forms_1_1v__scroll__bar.html#a5ab890290bef9d26db1c982f7a8c8864">xtd::forms::v_scroll_bar</a>.</p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="test_forms_8cpp-example.html#a21">test_forms.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -3727,7 +3723,7 @@ Setting the <a class="el" href="classxtd_1_1forms_1_1control.html#a75fa27c1abc0d
 <dl class="section return"><dt>Returns</dt><dd>The font to apply to the text displayed by the control. The default is the value of the default_font property. </dd></dl>
 
 <p>Reimplemented in <a class="el" href="classxtd_1_1forms_1_1font__picker.html#a6eac89bd4e88f4f4ce0b068b4eb92576">xtd::forms::font_picker</a>.</p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="demo_8cpp-example.html#a85">demo.cpp</a>, <a class="el" href="hello_world_emoticons_8cpp-example.html#a4">hello_world_emoticons.cpp</a>, <a class="el" href="hello_world_label_8cpp-example.html#a3">hello_world_label.cpp</a>, and <a class="el" href="test_forms_8cpp-example.html#a8">test_forms.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="demo_8cpp-example.html#a85">demo.cpp</a>, <a class="el" href="hello_world_emoticons_8cpp-example.html#a4">hello_world_emoticons.cpp</a>, and <a class="el" href="hello_world_label_8cpp-example.html#a3">hello_world_label.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -3794,7 +3790,7 @@ Setting the <a class="el" href="classxtd_1_1forms_1_1control.html#a75fa27c1abc0d
 
 <p>Gets the foreground color of the control. </p>
 <dl class="section return"><dt>Returns</dt><dd>The foreground color of the control. The default is the value of the default_fore_color property. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="clock_8cpp-example.html#a9">clock.cpp</a>, <a class="el" href="demo_8cpp-example.html#a22">demo.cpp</a>, <a class="el" href="hello_world_label_8cpp-example.html#a5">hello_world_label.cpp</a>, <a class="el" href="lcd_label2_8cpp-example.html#a13">lcd_label2.cpp</a>, <a class="el" href="lcd_label_with_dot_matrix_8cpp-example.html#a7">lcd_label_with_dot_matrix.cpp</a>, <a class="el" href="lcd_label_with_fourteen_segment_8cpp-example.html#a7">lcd_label_with_fourteen_segment.cpp</a>, <a class="el" href="lcd_label_with_nine_segment_8cpp-example.html#a7">lcd_label_with_nine_segment.cpp</a>, <a class="el" href="lcd_label_with_seven_segment_8cpp-example.html#a7">lcd_label_with_seven_segment.cpp</a>, <a class="el" href="lcd_label_with_sixteen_segment_8cpp-example.html#a7">lcd_label_with_sixteen_segment.cpp</a>, and <a class="el" href="test_forms_8cpp-example.html#a10">test_forms.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="clock_8cpp-example.html#a9">clock.cpp</a>, <a class="el" href="demo_8cpp-example.html#a22">demo.cpp</a>, <a class="el" href="hello_world_label_8cpp-example.html#a5">hello_world_label.cpp</a>, <a class="el" href="lcd_label2_8cpp-example.html#a13">lcd_label2.cpp</a>, <a class="el" href="lcd_label_with_dot_matrix_8cpp-example.html#a7">lcd_label_with_dot_matrix.cpp</a>, <a class="el" href="lcd_label_with_fourteen_segment_8cpp-example.html#a7">lcd_label_with_fourteen_segment.cpp</a>, <a class="el" href="lcd_label_with_nine_segment_8cpp-example.html#a7">lcd_label_with_nine_segment.cpp</a>, <a class="el" href="lcd_label_with_seven_segment_8cpp-example.html#a7">lcd_label_with_seven_segment.cpp</a>, and <a class="el" href="lcd_label_with_sixteen_segment_8cpp-example.html#a7">lcd_label_with_sixteen_segment.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -6849,8 +6845,6 @@ The <a class="el" href="classxtd_1_1forms_1_1control.html#a401edfee5bfcb03598eda
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="test_forms_8cpp-example.html#a22">test_forms.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -9053,7 +9047,7 @@ Typically, you should not set the client_size of the control. </dd></dl>
 
 <p>Gets the height and width of the control. </p>
 <dl class="section return"><dt>Returns</dt><dd>The size that represents the height and width of the control in pixels. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="auto_scroll_8cpp-example.html#a2">auto_scroll.cpp</a>, <a class="el" href="border_style_8cpp-example.html#a9">border_style.cpp</a>, <a class="el" href="demo_8cpp-example.html#a3">demo.cpp</a>, <a class="el" href="lcd_label_with_dot_matrix_8cpp-example.html#a13">lcd_label_with_dot_matrix.cpp</a>, <a class="el" href="lcd_label_with_fourteen_segment_8cpp-example.html#a13">lcd_label_with_fourteen_segment.cpp</a>, <a class="el" href="lcd_label_with_nine_segment_8cpp-example.html#a13">lcd_label_with_nine_segment.cpp</a>, <a class="el" href="lcd_label_with_seven_segment_8cpp-example.html#a13">lcd_label_with_seven_segment.cpp</a>, <a class="el" href="lcd_label_with_sixteen_segment_8cpp-example.html#a13">lcd_label_with_sixteen_segment.cpp</a>, <a class="el" href="screen_8cpp-example.html#a5">screen.cpp</a>, and <a class="el" href="test_forms_8cpp-example.html#a14">test_forms.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="auto_scroll_8cpp-example.html#a2">auto_scroll.cpp</a>, <a class="el" href="border_style_8cpp-example.html#a9">border_style.cpp</a>, <a class="el" href="demo_8cpp-example.html#a3">demo.cpp</a>, <a class="el" href="lcd_label_with_dot_matrix_8cpp-example.html#a13">lcd_label_with_dot_matrix.cpp</a>, <a class="el" href="lcd_label_with_fourteen_segment_8cpp-example.html#a13">lcd_label_with_fourteen_segment.cpp</a>, <a class="el" href="lcd_label_with_nine_segment_8cpp-example.html#a13">lcd_label_with_nine_segment.cpp</a>, <a class="el" href="lcd_label_with_seven_segment_8cpp-example.html#a13">lcd_label_with_seven_segment.cpp</a>, <a class="el" href="lcd_label_with_sixteen_segment_8cpp-example.html#a13">lcd_label_with_sixteen_segment.cpp</a>, and <a class="el" href="screen_8cpp-example.html#a5">screen.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -10447,7 +10441,7 @@ To handle keyboard events only at the form level and not enable other controls t
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1key__event__args_html"><div class="ttname"><a href="classxtd_1_1forms_1_1key__event__args.html">xtd::forms::key_event_args</a></div><div class="ttdoc">Provides data for the xtd::forms::control::key_down or xtd::forms::control::key_up event.</div><div class="ttdef"><b>Definition</b> key_event_args.h:23</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1key__press__event__args_html"><div class="ttname"><a href="classxtd_1_1forms_1_1key__press__event__args.html">xtd::forms::key_press_event_args</a></div><div class="ttdoc">Provides data for the xtd::forms::control::key_press event.</div><div class="ttdef"><b>Definition</b> key_press_event_args.h:24</div></div>
-<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:46</div></div>
+<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:47</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga20a8c5c8813e84b0831d7b236d1f1459"><div class="ttname"><a href="group__xtd__core.html#ga20a8c5c8813e84b0831d7b236d1f1459">xtd::ctrace</a></div><div class="ttdeci">std::ostream ctrace(nullptr)</div><div class="ttdoc">Provides an std::ostream for xtd::diagnostics::trace.</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>. </dd></dl>
@@ -11822,7 +11816,7 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 15 2024 22:51:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jan 29 2024 13:37:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -96,6 +96,7 @@ $(function() {
 </ul>
 </li>
 <li><a class="el" href="_c_make_commands.html#TargetPropertiesCommandsSection">Target properties commands</a><ul>
+<li><a class="el" href="_c_make_commands.html#TargetCategoriesSubSection">target_categories</a> Specifies the application categories.</li>
 <li><a class="el" href="_c_make_commands.html#TargetDefaultNamespaceSubSection">target_default_namespace</a> specifies the the base namespace for files added to the project.</li>
 <li><a class="el" href="_c_make_commands.html#TargetDisplaySubSection">target_display</a> specifies if application is displaying in GNOME or KDE menu.</li>
 <li><a class="el" href="_c_make_commands.html#TargetIconSubSection">target_icon</a> specifies the icon file (.ico for Windows, icons for maOS and png or svg for linux) that you want to use as your program icon.</li>
@@ -145,11 +146,12 @@ $(function() {
 </ul>
 </dd></dl>
 <dl class="section user"><dt>xtd Specific CMake variables</dt><dd><ul>
-<li><a class="el" href="_c_make_commands.html#ApplicationPropertiesVariablesSection">Application properties Variables</a><ul>
-<li><a class="el" href="_c_make_commands.html#ApplicationDefaultNamespaceVariableSubSection">APPLICATION_DEFAULT_NAMESPACE</a> contains default namespace use by application.</li>
-<li><a class="el" href="_c_make_commands.html#ApplicationIconVariableSubSection">APPLICATION_ICON</a> contains application icon file name without extension.</li>
-<li><a class="el" href="_c_make_commands.html#ApplicationNameVariableSubSection">APPLICATION_NAME</a> contains application name.</li>
-<li><a class="el" href="_c_make_commands.html#ApplicationRegisteredVariableSubSection">APPLICATION_REGISTERED</a> contains boolean that specify if application is registered or not on the system.</li>
+<li><a class="el" href="_c_make_commands.html#TargetPropertiesVariablesSection">Target properties Variables</a><ul>
+<li><a class="el" href="_c_make_commands.html#TargetCategoriesVariableSubSection">TARGET_CATEGORIES</a> contains the application categories.</li>
+<li><a class="el" href="_c_make_commands.html#TargetDefaultNamespaceVariableSubSection">TARGET_DEFAULT_NAMESPACE</a> contains default namespace use by application.</li>
+<li><a class="el" href="_c_make_commands.html#TargetVariableSubSection">TARGET_ICON</a> contains application icon file name without extension.</li>
+<li><a class="el" href="_c_make_commands.html#TargetNameVariableSubSection">TARGET_NAME</a> contains application name.</li>
+<li><a class="el" href="_c_make_commands.html#TargetRegisteredVariableSubSection">TARGET_REGISTERED</a> contains boolean that specify if application is registered or not on the system.</li>
 <li><a class="el" href="_c_make_commands.html#TargetTypeVariableSubSection">TARGET_TYPE</a> contains application type.</li>
 </ul>
 </li>
@@ -225,11 +227,40 @@ This method is optional. </dd></dl>
 </div><!-- fragment --></dd></dl>
 <h1><a class="anchor" id="TargetPropertiesCommandsSection"></a>
 Target properties commands</h1>
+<h2><a class="anchor" id="TargetCategoriesSubSection"></a>
+target_categories</h2>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">MAIN_CATEGORY</td><td>Main categories to set. </td></tr>
+    <tr><td class="paramname">ARGV0</td><td>One or more additional categories to set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Only effect on linux. </dd>
+<dd>
+If you don't specify the target_categories, the application has no category. </dd>
+<dd>
+Call only once by project. </dd>
+<dd>
+This method must be call before target_type(). </dd>
+<dd>
+This method is optional. </dd>
+<dd>
+For more inforamtion see <a href="https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html">Desktop Entry Specification</a>. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">cmake_minimum_required(VERSION 3.20)</div>
+<div class="line"> </div>
+<div class="line">project(my_project)</div>
+<div class="line">find_package(<a class="code hl_namespace" href="namespacextd.html">xtd</a> REQUIRED)</div>
+<div class="line">add_sources(my_project.cpp)</div>
+<div class="line"> </div>
+<div class="line">target_categories(Development IDE GUIDesigner)</div>
+<div class="line">target_type(CONSOLE_APPLICATION)</div>
+</div><!-- fragment --></dd></dl>
 <h2><a class="anchor" id="TargetDefaultNamespaceSubSection"></a>
 target_default_namespace</h2>
 <p>Specifies the the base namespace for files added to the project. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">APPLICATION_DEFAULT_NAMESPACE</td><td>the namespace to set. </td></tr>
+    <tr><td class="paramname">TARGET_DEFAULT_NAMESPACE</td><td>the namespace to set. </td></tr>
   </table>
   </dd>
 </dl>
@@ -253,7 +284,7 @@ This method is optional. </dd></dl>
 target_display</h2>
 <p>Specifies if application is displaying in GNOME or KDE menu. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">APPLICATION_DISPLAY</td><td>option to display (ON or OFF) </td></tr>
+    <tr><td class="paramname">TARGET_DISPLAY</td><td>option to display (ON or OFF) </td></tr>
   </table>
   </dd>
 </dl>
@@ -265,7 +296,9 @@ Call only once by project. </dd>
 <dd>
 This method must be call before target_type(). </dd>
 <dd>
-This method is optional. </dd></dl>
+This method is optional. </dd>
+<dd>
+For more inforamtion see <a href="https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html">Desktop Entry Specification</a>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">cmake_minimum_required(VERSION 3.5)</div>
 <div class="line"> </div>
 <div class="line">project(my_project)</div>
@@ -325,7 +358,7 @@ This method is optional. </dd></dl>
 target_name</h2>
 <p>Specifies the name of the output file. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">APPLICATION_NAME</td><td>the name to set. </td></tr>
+    <tr><td class="paramname">TARGET_NAME</td><td>the name to set. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1004,24 +1037,27 @@ This method must be call before target_type(). </dd></dl>
 <div class="line"> </div>
 <div class="line">target_type(CONSOLE_APPLICATION)</div>
 </div><!-- fragment --></dd></dl>
-<h1><a class="anchor" id="ApplicationPropertiesVariablesSection"></a>
-Application properties Variables</h1>
-<h2><a class="anchor" id="ApplicationDefaultNamespaceVariableSubSection"></a>
-APPLICATION_DEFAULT_NAMESPACE</h2>
+<h1><a class="anchor" id="TargetPropertiesVariablesSection"></a>
+Target properties Variables</h1>
+<h2><a class="anchor" id="TargetCategoriesVariableSubSection"></a>
+TARGET_CATEGORIES</h2>
+<p>Contains the application categories. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="_c_make_commands.html#TargetCategoriesSubSection">target_categories</a></dd></dl>
+<h2><a class="anchor" id="TargetDefaultNamespaceVariableSubSection"></a>
+TARGET_DEFAULT_NAMESPACE</h2>
 <p>Contains default namespace use by application. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="_c_make_commands.html#TargetDefaultNamespaceSubSection">target_default_namespace</a></dd></dl>
-<h2><a class="anchor" id="ApplicationIconVariableSubSection"></a>
-APPLICATION_ICON</h2>
+<h2><a class="anchor" id="TargetVariableSubSection"></a>
+TARGET_ICON</h2>
 <p>Contains application icon file name without extension. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="_c_make_commands.html#TargetIconSubSection">target_icon</a></dd></dl>
-<h2><a class="anchor" id="ApplicationNameVariableSubSection"></a>
-APPLICATION_NAME</h2>
+<h2><a class="anchor" id="TargetNameVariableSubSection"></a>
+TARGET_NAME</h2>
 <p>Contains application name. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="_c_make_commands.html#TargetNameSubSection">target_name</a></dd></dl>
-<h2><a class="anchor" id="ApplicationRegisteredVariableSubSection"></a>
-APPLICATION_REGISTERED</h2>
+<h2><a class="anchor" id="TargetRegisteredVariableSubSection"></a>
+TARGET_REGISTERED</h2>
 <p>Contains boolean that specify if application is registered or not on the system.</p><ul>
 <li>ON Registered</li>
-<li>OFF Not registered</li>
+<li>OFF Not registered <dl class="section see"><dt>See also</dt><dd><a class="el" href="_c_make_commands.html#TargetRegisteredSubSection">target_registered</a></dd></dl>
+</li>
 </ul>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="_c_make_commands.html#TargetRegisteredSubSection">target_registered</a></dd></dl>
 <h2><a class="anchor" id="TargetTypeVariableSubSection"></a>
 TARGET_TYPE</h2>
 <p>Contains application type. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="_c_make_commands.html#TargetTypeSubSection">target_type</a></dd></dl>
@@ -1121,7 +1157,7 @@ USER_DIRECTORY</h2>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 15 2024 22:51:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jan 29 2024 13:37:50 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
