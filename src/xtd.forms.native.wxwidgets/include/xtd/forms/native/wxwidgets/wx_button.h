@@ -66,7 +66,7 @@ namespace xtd {
         static long style_to_wx_user_window_style(size_t style, size_t ex_style) {
           long wx_style = common_control_style_to_wx_style(style, ex_style);
           
-          wx_style |= wxNO_BORDER;
+          wx_style |= wxBORDER_NONE;
           
           return wx_style;
         }

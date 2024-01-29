@@ -26,7 +26,7 @@ namespace xtd {
       
       class wxInnerGroupBoxPanel : public wxPanel {
       public:
-        explicit wxInnerGroupBoxPanel(wxWindow* parent, wxWindowID winid = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxTAB_TRAVERSAL | wxNO_BORDER, const wxString& name = wxASCII_STR(wxPanelNameStr)) : wxPanel(parent, winid, pos, size, style, name) {}
+        explicit wxInnerGroupBoxPanel(wxWindow* parent, wxWindowID winid = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxTAB_TRAVERSAL | wxBORDER_NONE, const wxString& name = wxASCII_STR(wxPanelNameStr)) : wxPanel(parent, winid, pos, size, style, name) {}
         
         bool ProcessEvent(wxEvent& event) override {
           bool result = wxPanel::ProcessEvent(event);
