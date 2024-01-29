@@ -1,3 +1,4 @@
+target_categories(Development)
 target_default_namespace("xtdc_gui")
 target_icon(resources/xtdc-gui)
 target_display(ON)

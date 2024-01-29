@@ -1,3 +1,4 @@
+target_categories(Development)
 target_default_namespace("keycodes")
 target_icon(resources/keycodes)
 target_name("keycodes")

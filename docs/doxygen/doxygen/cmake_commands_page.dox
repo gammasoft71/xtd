@@ -18,6 +18,7 @@
 /// * @ref GenericCommandsSection
 ///   * @ref ChoiceOptionsSubSection provides a choice options for the user to select an option from options list.
 /// * @ref TargetPropertiesCommandsSection
+///   * @ref TargetCategoriesSubSection Specifies the application categories.
 ///   * @ref TargetDefaultNamespaceSubSection specifies the the base namespace for files added to the project.
 ///   * @ref TargetDisplaySubSection specifies if application is displaying in GNOME or KDE menu.
 ///   * @ref TargetIconSubSection specifies the icon file (.ico for Windows, icons for maOS and png or svg for linux) that you want to use as your program icon.
@@ -56,11 +57,12 @@
 ///   * @ref AddSourcesSubSection adds source and header files to current project.
 ///
 /// @par xtd Specific CMake variables
-/// * @ref ApplicationPropertiesVariablesSection
-///   * @ref ApplicationDefaultNamespaceVariableSubSection contains default namespace use by application.
-///   * @ref ApplicationIconVariableSubSection contains application icon file name without extension.
-///   * @ref ApplicationNameVariableSubSection contains application name.
-///   * @ref ApplicationRegisteredVariableSubSection contains boolean that specify if application is registered or not on the system.
+/// * @ref TargetPropertiesVariablesSection
+///   * @ref TargetCategoriesVariableSubSection contains the application categories.
+///   * @ref TargetDefaultNamespaceVariableSubSection contains default namespace use by application.
+///   * @ref TargetVariableSubSection contains application icon file name without extension.
+///   * @ref TargetNameVariableSubSection contains application name.
+///   * @ref TargetRegisteredVariableSubSection contains boolean that specify if application is registered or not on the system.
 ///   * @ref TargetTypeVariableSubSection contains application type.
 /// * @ref AssemblyInformationsVariablesSection
 ///   * @ref AssemblyCompanyVariableSubSection contains assembly company name.
@@ -120,9 +122,30 @@
 ///
 /// @section TargetPropertiesCommandsSection Target properties commands
 ///
+/// @subsection TargetCategoriesSubSection target_categories
+/// @param MAIN_CATEGORY Main categories to set.
+/// @param ARGV0 One or more additional categories to set.
+/// @remarks Only effect on linux.
+/// @remarks If you don't specify the target_categories, the application has no category.
+/// @remarks Call only once by project.
+/// @remarks This method must be call before target_type().
+/// @remarks This method is optional.
+/// @remarks For more inforamtion see <a href="https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html">Desktop Entry Specification</a>.
+/// @par Examples
+/// @code
+///  cmake_minimum_required(VERSION 3.20)
+///
+///  project(my_project)
+///  find_package(xtd REQUIRED)
+///  add_sources(my_project.cpp)
+///
+///  target_categories(Development IDE GUIDesigner)
+///  target_type(CONSOLE_APPLICATION)
+/// @endcode
+///
 /// @subsection TargetDefaultNamespaceSubSection target_default_namespace
 /// @brief Specifies the the base namespace for files added to the project.
-/// @param APPLICATION_DEFAULT_NAMESPACE the namespace to set.
+/// @param TARGET_DEFAULT_NAMESPACE the namespace to set.
 /// @remarks If you don't specify the target_default_namespace, it will be the same of the project name.
 /// @remarks Call only once by project.
 /// @remarks This method must be call before target_type().
@@ -141,12 +164,13 @@
 ///
 /// @subsection TargetDisplaySubSection target_display
 /// @brief Specifies if application is displaying in GNOME or KDE menu.
-/// @param APPLICATION_DISPLAY option to display (ON or OFF)
+/// @param TARGET_DISPLAY option to display (ON or OFF)
 /// @remarks Only effect on linux.
 /// @remarks By default the application is registered but not visible in the general menu.
 /// @remarks Call only once by project.
 /// @remarks This method must be call before target_type().
 /// @remarks This method is optional.
+/// @remarks For more inforamtion see <a href="https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html">Desktop Entry Specification</a>.
 /// @par Examples
 /// @code
 ///  cmake_minimum_required(VERSION 3.5)
@@ -198,7 +222,7 @@
 ///
 /// @subsection TargetNameSubSection target_name
 /// @brief Specifies the name of the output file.
-/// @param APPLICATION_NAME the name to set.
+/// @param TARGET_NAME the name to set.
 /// @remarks If you don't specify the target_name, it will be the same of the project name.
 /// @remarks Call only once by project.
 /// @remarks This method must be call before target_type().
@@ -755,25 +779,28 @@
 ///  target_type(CONSOLE_APPLICATION)
 /// @endcode
 ///
-/// @section ApplicationPropertiesVariablesSection Application properties Variables
+/// @section TargetPropertiesVariablesSection Target properties Variables
 ///
-/// @subsection ApplicationDefaultNamespaceVariableSubSection APPLICATION_DEFAULT_NAMESPACE
+/// @subsection TargetCategoriesVariableSubSection TARGET_CATEGORIES
+/// @brief Contains the application categories.
+/// @see @ref TargetCategoriesSubSection
+///
+/// @subsection TargetDefaultNamespaceVariableSubSection TARGET_DEFAULT_NAMESPACE
 /// @brief Contains default namespace use by application.
 /// @see @ref TargetDefaultNamespaceSubSection
 ///
-/// @subsection ApplicationIconVariableSubSection APPLICATION_ICON
+/// @subsection TargetVariableSubSection TARGET_ICON
 /// @brief Contains application icon file name without extension.
 /// @see @ref TargetIconSubSection
 ///
-/// @subsection ApplicationNameVariableSubSection APPLICATION_NAME
+/// @subsection TargetNameVariableSubSection TARGET_NAME
 /// @brief Contains application name.
 /// @see @ref TargetNameSubSection
 ///
-/// @subsection ApplicationRegisteredVariableSubSection APPLICATION_REGISTERED
+/// @subsection TargetRegisteredVariableSubSection TARGET_REGISTERED
 /// @brief Contains boolean that specify if application is registered or not on the system.
 ///  * ON Registered
 ///  * OFF Not registered
-///
 /// @see @ref TargetRegisteredSubSection
 ///
 /// @subsection TargetTypeVariableSubSection TARGET_TYPE
