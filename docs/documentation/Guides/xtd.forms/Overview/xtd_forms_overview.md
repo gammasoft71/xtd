@@ -1236,7 +1236,7 @@ resources_example
 * CMakeLists.txt :
 
 ```cmake
-make_minimum_required(VERSION 3.3)
+make_minimum_required(VERSION 3.20)
 
 # Project
 project(test_project)

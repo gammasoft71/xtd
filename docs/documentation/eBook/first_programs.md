@@ -50,7 +50,7 @@ auto main(int argc, char* argv[])->int {
 This example can be build on Windows, macOS or linux operating system with CMake.
 
 ```cmake
-cmake_minimum_required(VERSION 3.3)
+cmake_minimum_required(VERSION 3.20)
 
 project(simple)
 find_package(xtd REQUIRED)
