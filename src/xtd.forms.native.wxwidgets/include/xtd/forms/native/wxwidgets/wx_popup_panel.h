@@ -162,7 +162,7 @@ namespace xtd {
         }
         
         static long panel_style_to_wx_style(size_t style, size_t ex_style, size_t class_style) {
-          long wx_style = wxNO_BORDER;
+          long wx_style = wxBORDER_NONE;
           
           if ((style & WS_HSCROLL) == WS_HSCROLL) wx_style |= wxHSCROLL;
           if ((style & WS_VSCROLL) == WS_VSCROLL) wx_style |= wxVSCROLL;

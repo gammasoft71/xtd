@@ -38,7 +38,7 @@ namespace xtd {
         friend xtd::forms::native::wx_switch_button;
         friend xtd::forms::native::wx_toggle_button;
         
-        explicit wx_user_window(wxWindow* parent, wxWindowID winid = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxNO_BORDER) : wxControl(parent, winid, pos, size, style) {}
+        explicit wx_user_window(wxWindow* parent, wxWindowID winid = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxBORDER_NONE) : wxControl(parent, winid, pos, size, style) {}
         
         void set_accepts_focus(bool accepts_focus) {accepts_focus_ = accepts_focus;}
         
@@ -66,7 +66,7 @@ namespace xtd {
         friend xtd::forms::native::wx_switch_button;
         friend xtd::forms::native::wx_toggle_button;
         
-        explicit wx_user_panel(wxWindow* parent, wxWindowID winid = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxTAB_TRAVERSAL | wxNO_BORDER) : wxPanel(parent, winid, pos, size, style) {}
+        explicit wx_user_panel(wxWindow* parent, wxWindowID winid = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxTAB_TRAVERSAL | wxBORDER_NONE) : wxPanel(parent, winid, pos, size, style) {}
         
         void set_accepts_focus(bool accepts_focus) {accepts_focus_ = accepts_focus;}
         
