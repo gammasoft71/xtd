@@ -78,7 +78,32 @@ endmacro ()
 ################################################################################
 # Target properties commands
 
-## @brief Specifie the the base namespace for files added to the project.
+## @brief Specifies the application categories.
+## @param MAIN_CATEGORY Main categories to set.
+## @param ARGV0 One or more additional categories to set.
+## @remarks Only effect on linux.
+## @remarks If you don't specify the target_categories, the application has no category.
+## @remarks Call only once by project.
+## @remarks This method must be call before target_type().
+## @remarks This method is optional. 
+## @remarks For more inforamtion see <a href="https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html">Desktop Entry Specification</a>.
+## @par Examples
+## @code
+##  cmake_minimum_required(VERSION 3.20)
+##
+##  project(my_project)
+##  find_package(xtd REQUIRED)
+##  add_sources(my_project.cpp)
+##
+##  target_categories(Development IDE GUIDesigner)
+##  target_type(CONSOLE_APPLICATION)
+## @endcode
+macro(target_categories MAIN_CATEGORY)
+  message(VERBOSE "Add application categories [MAIN_CATEGORY] [${ARGV0}]...")
+  set(TARGET_CATEGORIES ${MAIN_CATEGORY} ${ARGV0})
+endmacro()
+
+## @brief Specifies the base namespace for files added to the project.
 ## @param DEFAULT_NAMESPACE the namespace to set.
 ## @remarks If you don't specify the target_default_namespace, it will be the same of the project name.
 ## @remarks Call only once by project.
@@ -190,7 +215,7 @@ macro(target_icon)
   endif ()
 endmacro()
 
-## @brief Specifie the name of the output file.
+## @brief Specifies the name of the output file.
 ## @param NAME the name to set.
 ## @remarks If you don't specify the target_name, it will be the same of the project name.
 ## @remarks Call only once by project.
@@ -1549,6 +1574,10 @@ macro(write_linux_target_informations_file)
   endif ()
   #message(VERBOSE "Writing linux target informations  file [${TARGET_INFORMATIONS_FILE}]...")
  
+  if (TARGET_CATEGORIES)
+    set(CATEGORIES "Categories=${TARGET_CATEGORIES}\n")
+  endif ()
+  
   if (TARGET_DISPLAY)
     set(NO_DISPLAY "false")
   else ()  
@@ -1588,6 +1617,7 @@ macro(write_linux_target_informations_file)
     "Exec=${RUNTIME_OUTPUT_DIRECTORY}/${TARGET_NAME}\n"
     "${ICON}"
     "Name=${NAME}\n"
+    "${CATEGORIES}"
     "NoDisplay=${NO_DISPLAY}\n"
     "Terminal=${TERMINAL}\n"
     "Version=${VERSION}\n"

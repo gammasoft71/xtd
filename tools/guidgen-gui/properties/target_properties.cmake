@@ -1,3 +1,4 @@
+target_categories(Development)
 target_default_namespace("guidgen_gui")
 target_icon(resources/guidgen-gui)
 target_display(ON)
