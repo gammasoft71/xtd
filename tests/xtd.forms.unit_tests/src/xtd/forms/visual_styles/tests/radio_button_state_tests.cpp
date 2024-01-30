@@ -58,4 +58,3 @@ namespace xtd::forms::visual_styles::tests {
     }
   };
 }
-
