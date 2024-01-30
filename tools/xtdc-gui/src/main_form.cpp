@@ -436,8 +436,7 @@ main_form::main_form() {
   create_language_choice_.anchor(anchor_styles::top | anchor_styles::right);
   create_language_choice_.items().push_back_range({{"All languages", project_language::all}, {"xtd (c++)", project_language::xtd}, {"xtd_c (c)", project_language::xtd_c}, {"c++", project_language::cpp}, {"c", project_language::c}, {"c#", project_language::csharp}, {"objective-c", project_language::objectivec}});
   create_language_choice_.selected_value_changed += [&] {
-    properties::settings::default_settings().language_index(create_language_choice_.selected_index());
-    properties::settings::default_settings().save();
+    properties::settings::default_settings().language_index(create_language_choice_.selected_index()).save();
     create_project_type_items_control_.filter_items(create_language_choice_.selected_item().tag().has_value() ? any_cast<project_language>(create_language_choice_.selected_item().tag()) : project_language::all, create_platform_choice_.selected_item().tag().has_value() ? any_cast<project_platform>(create_platform_choice_.selected_item().tag()) : project_platform::all, create_type_choice_.selected_item().tag().has_value() ? any_cast<project_type>(create_type_choice_.selected_item().tag()) : project_type::all);
   };
   create_language_choice_.selected_index(properties::settings::default_settings().language_index());
@@ -448,8 +447,7 @@ main_form::main_form() {
   create_platform_choice_.anchor(anchor_styles::top | anchor_styles::right);
   create_platform_choice_.items().push_back_range({{"All platforms", project_platform::all}, {"Windows", project_platform::windows}, {"Linux", project_platform::linux}, {"macOS", project_platform::macos}});
   create_platform_choice_.selected_value_changed += [&] {
-    properties::settings::default_settings().platform_index(create_platform_choice_.selected_index());
-    properties::settings::default_settings().save();
+    properties::settings::default_settings().platform_index(create_platform_choice_.selected_index()).save();
     create_project_type_items_control_.filter_items(create_language_choice_.selected_item().tag().has_value() ? any_cast<project_language>(create_language_choice_.selected_item().tag()) : project_language::all, create_platform_choice_.selected_item().tag().has_value() ? any_cast<project_platform>(create_platform_choice_.selected_item().tag()) : project_platform::all, create_type_choice_.selected_item().tag().has_value() ? any_cast<project_type>(create_type_choice_.selected_item().tag()) : project_type::all);
   };
   create_platform_choice_.selected_index(properties::settings::default_settings().platform_index());
@@ -460,8 +458,7 @@ main_form::main_form() {
   create_type_choice_.anchor(anchor_styles::top | anchor_styles::right);
   create_type_choice_.items().push_back_range({{"All project types", project_type::all}, {"Gui", project_type::gui}, {"Console", project_type::console}, {"Shared library", project_type::shared_library}, {"Static library", project_type::static_library}, {"UnitTest Project", project_type::unit_tests_project}, {"Solution File", project_type::solution_file}});
   create_type_choice_.selected_value_changed += [&] {
-    properties::settings::default_settings().type_index(create_type_choice_.selected_index());
-    properties::settings::default_settings().save();
+    properties::settings::default_settings().type_index(create_type_choice_.selected_index()).save();
     create_project_type_items_control_.filter_items(create_language_choice_.selected_item().tag().has_value() ? any_cast<project_language>(create_language_choice_.selected_item().tag()) : project_language::all, create_platform_choice_.selected_item().tag().has_value() ? any_cast<project_platform>(create_platform_choice_.selected_item().tag()) : project_platform::all, create_type_choice_.selected_item().tag().has_value() ? any_cast<project_type>(create_type_choice_.selected_item().tag()) : project_type::all);
   };
   create_type_choice_.selected_index(properties::settings::default_settings().type_index());
@@ -537,8 +534,7 @@ main_form::main_form() {
     folder_browser_dialog dialog;
     dialog.selected_path(properties::settings::default_settings().create_propject_folder());
     if (dialog.show_sheet_dialog(*this) == dialog_result::ok) {
-      properties::settings::default_settings().create_propject_folder(dialog.selected_path());
-      properties::settings::default_settings().save();
+      properties::settings::default_settings().create_propject_folder(dialog.selected_path()).save();
       configure_project_location_text_box_.text(properties::settings::default_settings().create_propject_folder());
       next_button_.enabled(configure_project_name_text_box_.text().size() != 0 && configure_project_location_text_box_.text().size() != 0);
     }
@@ -681,16 +677,14 @@ void main_form::on_system_colors_changed(const event_args& e) {
 void main_form::delete_from_create_recent_projects(size_t create_project_items_index) {
   auto create_recent_projects = properties::settings::default_settings().create_recent_propjects().split({';'});
   create_recent_projects.erase(find(create_recent_projects.begin(), create_recent_projects.end(), std::to_string(create_project_items_index)));
-  properties::settings::default_settings().create_recent_propjects(ustring::join(";", create_recent_projects));
-  properties::settings::default_settings().save();
+  properties::settings::default_settings().create_recent_propjects(ustring::join(";", create_recent_projects)).save();
   init_create_create_recent_projects_list_box();
 }
 
 void main_form::delete_from_open_recent_projects(const ustring& project_path) {
   auto open_recent_projects = properties::settings::default_settings().open_recent_propjects().split({';'});
   open_recent_projects.erase(find(open_recent_projects.begin(), open_recent_projects.end(), project_path));
-  properties::settings::default_settings().open_recent_propjects(ustring::join(";", open_recent_projects));
-  properties::settings::default_settings().save();
+  properties::settings::default_settings().open_recent_propjects(ustring::join(";", open_recent_projects)).save();
   init_startup_open_recent_projects_list_box();
 }
 
@@ -722,8 +716,7 @@ void main_form::add_to_create_recent_projects(size_t create_project_items_index)
     create_recent_projects.erase(find(create_recent_projects.begin(), create_recent_projects.end(), std::to_string(create_project_items_index)));
     
   create_recent_projects.push_front(std::to_string(create_project_items_index));
-  properties::settings::default_settings().create_recent_propjects(ustring::join(";", vector<ustring> {create_recent_projects.begin(), create_recent_projects.end()}));
-  properties::settings::default_settings().save();
+  properties::settings::default_settings().create_recent_propjects(ustring::join(";", vector<ustring> {create_recent_projects.begin(), create_recent_projects.end()})).save();
   
   init_create_create_recent_projects_list_box();
 }
@@ -735,9 +728,7 @@ void main_form::add_to_open_recent_projects(const ustring& project_path) {
     open_recent_projects.erase(find(open_recent_projects.begin(), open_recent_projects.end(), project_path));
     
   open_recent_projects.push_front(project_path);
-  properties::settings::default_settings().open_recent_propjects(ustring::join(";", vector<ustring> {open_recent_projects.begin(), open_recent_projects.end()}));
-  properties::settings::default_settings().open_propject_folder(project_path);
-  properties::settings::default_settings().save();
+  properties::settings::default_settings().open_recent_propjects(ustring::join(";", vector<ustring> {open_recent_projects.begin(), open_recent_projects.end()})).open_propject_folder(project_path).save();
   
   init_startup_open_recent_projects_list_box();
 }
@@ -861,9 +852,31 @@ void main_form::run_project(const ustring& project_path) {
   background_worker_->run_worker_async(project_path);
 }
 
-void main_form::set_auto_close() {
-  properties::settings::default_settings().auto_close(!properties::settings::default_settings().auto_close());
-  properties::settings::default_settings().save();
+void main_form::settings() {
+  if (preferences_form_.visible()) return;
+  preferences_form_.controls().push_back_range({preferences_form_on_close_label_, preferences_form_on_close_check_box_});
+  preferences_form_.text("Settings...");
+  preferences_form_.maximize_box(false);
+  preferences_form_.minimize_box(false);
+  preferences_form_.form_border_style(forms::form_border_style::fixed_3d);
+  preferences_form_.back_color(application::style_sheet().system_colors().app_workspace());
+  preferences_form_.client_size({300, 150});
+  preferences_form_.start_position(form_start_position::manual);
+  preferences_form_.location(properties::settings::default_settings().settings_form_location());
+  preferences_form_.form_closed += [&] {properties::settings::default_settings().settings_form_location(preferences_form_.location()).save();};
+
+  preferences_form_on_close_label_.location({0, 21});
+  preferences_form_on_close_label_.text("After open/create:");
+  preferences_form_on_close_label_.text_align(xtd::forms::content_alignment::middle_right);
+  preferences_form_on_close_label_.width(145);
+  
+  preferences_form_on_close_check_box_.location({155, 20});
+  preferences_form_on_close_check_box_.text("Auto close");
+  preferences_form_on_close_check_box_.checked(properties::settings::default_settings().auto_close());
+  preferences_form_on_close_check_box_.width(145);
+  preferences_form_on_close_check_box_.checked_changed += [&] {properties::settings::default_settings().auto_close(preferences_form_on_close_check_box_.checked()).save();};
+  
+  preferences_form_.show();
 }
 
 void main_form::show_about_dialog() {
