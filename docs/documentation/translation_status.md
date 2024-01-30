@@ -38,9 +38,9 @@ sidebar_position: 9
 | code                                                                               | Status                                   | Translator(s)                                            |
 | ---------------------------------------------------------------------------------- | ---------------------------------------- | -------------------------------------------------------- |
 | [af](https://github.com/gammasoft71/xtd/tree/master/locale/af/README.md)           | ![progresser](/pictures/progress0.png)   | -                                                        |
-| [ar](https://github.com/gammasoft71/xtd/tree/master/locale/ar/README.md)           | ![progresser](/pictures/progress0.png)   | [Bader](https://github.com/BaderEddineOuaich)            |
+| [ar](https://github.com/gammasoft71/xtd/tree/master/locale/ar/README.md)           | ![progresser](/pictures/progress100.png) | [Bader](https://github.com/BaderEddineOuaich)            |
 | [ar_DZ](https://github.com/gammasoft71/xtd/tree/master/locale/ar_DZ/README.md)     | ![progresser](/pictures/progress0.png)   | -                                                        |
-| [ar_MA](https://github.com/gammasoft71/xtd/tree/master/locale/ar_MA/README.md)     | ![progresser](/pictures/progress0.png)   | [Bader](https://github.com/BaderEddineOuaich)            |
+| [ar_MA](https://github.com/gammasoft71/xtd/tree/master/locale/ar_MA/README.md)     | ![progresser](/pictures/progress100.png) | [Bader](https://github.com/BaderEddineOuaich)            |
 | [ar_SA](https://github.com/gammasoft71/xtd/tree/master/locale/ar_SA/README.md)     | ![progresser](/pictures/progress0.png)   | -                                                        |
 | [ar_TN](https://github.com/gammasoft71/xtd/tree/master/locale/ar_TN/README.md)     | ![progresser](/pictures/progress0.png)   | -                                                        |
 | [az](https://github.com/gammasoft71/xtd/tree/master/locale/az/README.md)           | ![progresser](/pictures/progress0.png)   | -                                                        |
