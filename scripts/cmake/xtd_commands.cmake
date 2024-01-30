@@ -1907,7 +1907,10 @@ macro(write_settings_file_header)
         "    ${TYPE} ${NAME}() const {return ${NAME}_;}\n"
         "    /// @brief Sets the ${NAME} user setting property.\n"
         "    /// @param value A ${TYPE} value.\n"
-        "    void ${NAME}(${TYPE} value) {${NAME}_ = value;}\n"
+        "    settings& ${NAME}(${TYPE} value) {\n"
+        "      ${NAME}_ = value;\n"
+        "      return *this;\n"
+        "    }\n"
         "\n"
       )
     endforeach()
