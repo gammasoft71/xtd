@@ -1,4 +1,4 @@
-#include <xtd/forms/dot_matrix_style.h>
+#include <xtd/forms/dot_matrix_style>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>

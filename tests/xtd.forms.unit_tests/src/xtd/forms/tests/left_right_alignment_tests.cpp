@@ -1,4 +1,4 @@
-#include <xtd/forms/left_right_alignment.h>
+#include <xtd/forms/left_right_alignment>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>

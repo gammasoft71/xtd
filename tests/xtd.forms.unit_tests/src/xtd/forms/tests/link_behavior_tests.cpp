@@ -1,4 +1,4 @@
-#include <xtd/forms/link_behavior.h>
+#include <xtd/forms/link_behavior>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>

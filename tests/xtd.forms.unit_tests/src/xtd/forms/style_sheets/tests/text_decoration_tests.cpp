@@ -1,4 +1,4 @@
-#include <xtd/forms/style_sheets/text_decoration.h>
+#include <xtd/forms/style_sheets/text_decoration>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>

@@ -1,4 +1,4 @@
-#include <xtd/forms/message_dialog_options.h>
+#include <xtd/forms/message_dialog_options>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>

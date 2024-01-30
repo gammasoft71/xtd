@@ -1,4 +1,4 @@
-#include <xtd/forms/menu_item_kind.h>
+#include <xtd/forms/menu_item_kind>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>

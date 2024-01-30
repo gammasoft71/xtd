@@ -1,4 +1,4 @@
-#include <xtd/forms/lcd_style.h>
+#include <xtd/forms/lcd_style>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>

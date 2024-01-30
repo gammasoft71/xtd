@@ -1,4 +1,4 @@
-#include <xtd/forms/close_reason.h>
+#include <xtd/forms/close_reason>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>

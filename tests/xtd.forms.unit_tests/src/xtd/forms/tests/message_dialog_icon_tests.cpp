@@ -1,4 +1,4 @@
-#include <xtd/forms/message_dialog_icon.h>
+#include <xtd/forms/message_dialog_icon>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>

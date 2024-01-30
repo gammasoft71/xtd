@@ -1,4 +1,4 @@
-#include <xtd/forms/style_sheets/white_space.h>
+#include <xtd/forms/style_sheets/white_space>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>

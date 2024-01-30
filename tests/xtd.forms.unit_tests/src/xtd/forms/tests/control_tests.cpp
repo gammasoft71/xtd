@@ -9,8 +9,8 @@
 #include <xtd/tunit/test_method_attribute>
 
 #define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/class_styles.h>
-#include <xtd/forms/native/window_styles.h>
+#include <xtd/forms/native/class_styles>
+#include <xtd/forms/native/window_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 
 using namespace std;

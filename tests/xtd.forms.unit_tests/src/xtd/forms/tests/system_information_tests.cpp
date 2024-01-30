@@ -1,5 +1,5 @@
 #if defined(_WIN32)
-#include <Windows.h>
+#include <Windows>
 #undef max
 #undef min
 #elif defined(__APPLE__)

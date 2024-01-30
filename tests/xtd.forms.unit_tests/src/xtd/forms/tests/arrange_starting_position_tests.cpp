@@ -1,4 +1,4 @@
-#include <xtd/forms/arrange_starting_position.h>
+#include <xtd/forms/arrange_starting_position>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>

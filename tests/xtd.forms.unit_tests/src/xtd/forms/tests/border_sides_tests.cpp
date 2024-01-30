@@ -1,4 +1,4 @@
-#include <xtd/forms/border_sides.h>
+#include <xtd/forms/border_sides>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>

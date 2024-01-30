@@ -1,4 +1,4 @@
-#include <xtd/forms/power_line_status.h>
+#include <xtd/forms/power_line_status>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
