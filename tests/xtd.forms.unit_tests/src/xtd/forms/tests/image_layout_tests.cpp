@@ -1,4 +1,4 @@
-#include <xtd/forms/image_layout.h>
+#include <xtd/forms/image_layout>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>

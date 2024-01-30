@@ -1,4 +1,4 @@
-#include <xtd/forms/control_styles.h>
+#include <xtd/forms/control_styles>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>

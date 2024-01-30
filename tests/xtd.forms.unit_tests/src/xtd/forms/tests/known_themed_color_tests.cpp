@@ -1,4 +1,4 @@
-#include <xtd/forms/known_themed_color.h>
+#include <xtd/forms/known_themed_color>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>

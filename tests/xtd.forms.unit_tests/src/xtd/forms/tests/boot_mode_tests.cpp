@@ -1,4 +1,4 @@
-#include <xtd/forms/boot_mode.h>
+#include <xtd/forms/boot_mode>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>

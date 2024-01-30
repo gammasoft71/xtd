@@ -1,4 +1,4 @@
-#include <xtd/forms/visual_styles/check_box_state.h>
+#include <xtd/forms/visual_styles/check_box_state>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>

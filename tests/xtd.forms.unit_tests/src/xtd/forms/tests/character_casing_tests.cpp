@@ -1,4 +1,4 @@
-#include <xtd/forms/character_casing.h>
+#include <xtd/forms/character_casing>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
