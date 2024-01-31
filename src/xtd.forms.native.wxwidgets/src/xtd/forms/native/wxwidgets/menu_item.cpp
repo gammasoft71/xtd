@@ -46,11 +46,15 @@ namespace {
     itemText.Replace("&", "");
     itemText.Replace(".", "");
     itemText.LowerCase();
-    wxString preferenceText = "E&xit"_t;
+#ifdef __MAC_13_0
+    wxString preferenceText = "&Settings..."_t;
+#else
+    wxString preferenceText = "&Preferences"_t;
+#endif
     preferenceText.Replace("&", "");
     preferenceText.Replace(".", "");
     preferenceText.LowerCase();
-    return itemText == preferenceText || itemText == "preferences" || itemText == "options";
+    return itemText == preferenceText || itemText == "preferences" || itemText == "options" || itemText == "settings";
   }
   #endif
   
@@ -59,7 +63,11 @@ namespace {
     #if defined(__WXOSX__)
     if (is_about_item(text)) return "";
     if (is_quit_item(text)) return "";
-    if (is_preferences_item(text)) return "";
+#ifdef __MAC_13_0
+    if (is_preferences_item(text)) return xtd::ustring {"&Settings..."_t} + "\tCtrl+,";
+#else
+    if (is_preferences_item(text)) return xtd::ustring {"&Preference"_t} + "\tCtrl+,";
+#endif
     #endif
     if (shortcut == VK_NONE) return text;
     auto key = ""s;
