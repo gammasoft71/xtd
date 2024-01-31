@@ -16,6 +16,8 @@ add_sources(
   src/project_type_item_control.h
   src/project_type_item_control.cpp
   src/project_type_items_control.h
+  src/settings_form.h
+  src/settings_form.cpp
   src/xtd_example_item.h
 )
 target_type(GUI_APPLICATION)

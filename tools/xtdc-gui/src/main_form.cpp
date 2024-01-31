@@ -853,30 +853,7 @@ void main_form::run_project(const ustring& project_path) {
 }
 
 void main_form::settings() {
-  if (preferences_form_.visible()) return;
-  preferences_form_.controls().push_back_range({preferences_form_on_close_label_, preferences_form_on_close_check_box_});
-  preferences_form_.text("Settings...");
-  preferences_form_.maximize_box(false);
-  preferences_form_.minimize_box(false);
-  preferences_form_.form_border_style(forms::form_border_style::fixed_3d);
-  preferences_form_.back_color(application::style_sheet().system_colors().app_workspace());
-  preferences_form_.client_size({300, 150});
-  preferences_form_.start_position(form_start_position::manual);
-  preferences_form_.location(properties::settings::default_settings().settings_form_location());
-  preferences_form_.form_closed += [&] {properties::settings::default_settings().settings_form_location(preferences_form_.location()).save();};
-
-  preferences_form_on_close_label_.location({0, 21});
-  preferences_form_on_close_label_.text("After open/create:");
-  preferences_form_on_close_label_.text_align(xtd::forms::content_alignment::middle_right);
-  preferences_form_on_close_label_.width(145);
-  
-  preferences_form_on_close_check_box_.location({155, 20});
-  preferences_form_on_close_check_box_.text("Auto close");
-  preferences_form_on_close_check_box_.checked(properties::settings::default_settings().auto_close());
-  preferences_form_on_close_check_box_.width(145);
-  preferences_form_on_close_check_box_.checked_changed += [&] {properties::settings::default_settings().auto_close(preferences_form_on_close_check_box_.checked()).save();};
-  
-  preferences_form_.show();
+  settings_form_.show();
 }
 
 void main_form::show_about_dialog() {
