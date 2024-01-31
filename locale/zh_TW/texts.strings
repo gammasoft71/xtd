@@ -208,6 +208,9 @@ value "搜索(&S)"
 key "Select &All"
 value "全选(&A)"
 
+key "&Settings..."
+value "设置(&S)"
+
 key "&Spell Check"
 value "拼写检查(&S)"
 

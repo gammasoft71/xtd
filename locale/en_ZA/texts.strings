@@ -208,6 +208,9 @@ value "&Search"
 key "Select &All"
 value "Select &All"
 
+key "&Settings..."
+value "&Settings..."
+
 key "&Spell Check"
 value "&Spell Check"
 

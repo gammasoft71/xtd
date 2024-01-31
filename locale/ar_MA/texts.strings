@@ -208,6 +208,9 @@ value "بحث&"
 key "Select &All"
 value "تحديد &الكل"
 
+key "&Settings..."
+value "...الإعدادات"
+
 key "&Spell Check"
 value "فحص الإملاء&"
 
