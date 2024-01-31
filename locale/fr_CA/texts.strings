@@ -208,6 +208,9 @@ value "&Rechercher"
 key "Select &All"
 value "Sélectionner &tout"
 
+key "&Settings..."
+value "&Paramètres..."
+
 key "&Spell Check"
 value "&Orthographe"
 

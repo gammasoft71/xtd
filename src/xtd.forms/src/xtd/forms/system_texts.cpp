@@ -283,6 +283,10 @@ xtd::ustring system_texts::select_all() {
   return "Select &All"_t;
 }
 
+xtd::ustring system_texts::settings() {
+  return "&Settings..."_t;
+}
+
 xtd::ustring system_texts::spell_check() {
   return "&Spell Check"_t;
 }
