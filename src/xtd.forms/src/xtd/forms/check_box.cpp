@@ -139,6 +139,27 @@ check_box check_box::create(const control& parent, const xtd::ustring& text, boo
   return result;
 }
 
+check_box check_box::create(const xtd::ustring& text, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = check_box {};
+  result.text(text);
+  result.check_state(check_state);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
+}
+
+check_box check_box::create(const control& parent, const xtd::ustring& text, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = check_box {};
+  result.parent(parent);
+  result.text(text);
+  result.check_state(check_state);
+  if (location != drawing::point {-1, -1}) result.location(location);
+  if (size != drawing::size {-1, -1}) result.size(size);
+  result.name(name);
+  return result;
+}
+
 forms::create_params check_box::create_params() const noexcept {
   auto create_params = button_base::create_params();
   
