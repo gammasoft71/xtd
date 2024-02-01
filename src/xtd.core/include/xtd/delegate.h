@@ -701,8 +701,6 @@ namespace xtd {
     /// @param arguments The parameter list.
     /// @return result_t The return value.
     result_t operator()(arguments_t... arguments) const {
-      if (data_->no_arguments_functions.size() == 0 && data_->functions.size() == 0) return result_t();
-      
       if (data_->no_arguments_functions.size()) {
         for (size_t i = 0; i < data_->no_arguments_functions.size() - (data_->functions.size() == 0 ? 1 : 0); i++) {
           if (data_->no_arguments_functions[i] == nullptr) throw xtd::argument_null_exception {csf_};
