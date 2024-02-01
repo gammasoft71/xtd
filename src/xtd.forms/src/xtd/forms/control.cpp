@@ -1949,6 +1949,7 @@ void control::wm_menu_command(message& message) {
 
 void control::wm_mouse_down(message& message) {
   if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::mouse_events), ustring::format("({}) receive message [{}]", *this, message));
+  set_state(control::state::mouse_pressed, true);
   set_state(control::state::double_click_fired, message.msg() == WM_LBUTTONDBLCLK || message.msg() == WM_RBUTTONDBLCLK || message.msg() == WM_MBUTTONDBLCLK || message.msg() == WM_XBUTTONDBLCLK);
   mouse_event_args e = mouse_event_args::create(message, get_state(state::double_click_fired));
   mouse_buttons_ |= e.button();
@@ -2002,11 +2003,12 @@ void control::wm_mouse_up(message& message) {
   def_wnd_proc(message);
   mouse_event_args e = mouse_event_args::create(message);
   mouse_buttons_ &= ~e.button();
-  if (client_rectangle().contains(e.location())) {
+  if (get_state(control::state::mouse_pressed) && client_rectangle().contains(e.location())) {
     if (e.button() == mouse_buttons::left && (get_style(control_styles::standard_click) || control_appearance() == control_appearance::standard)) on_click(event_args::empty);
     on_mouse_click(e);
   }
   on_mouse_up(e);
+  set_state(control::state::mouse_pressed, false);
 }
 
 void control::wm_mouse_wheel(message& message) {
