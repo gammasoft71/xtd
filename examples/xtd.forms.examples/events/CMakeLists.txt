@@ -4,6 +4,7 @@ project(events)
 find_package(xtd REQUIRED)
 
 add_projects(
+  application_add_message_filter
   application_application_exit
   application_events
   application_idle
