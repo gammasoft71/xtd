@@ -104,6 +104,10 @@ namespace xtd {
       template<typename type_t>
       type_t get_lparam() const noexcept { return reinterpret_cast<type_t>(lparam_); }
       
+      /// @brief Returns a string that represents the msg property.
+      /// @return A xtd::ustring that represents the msg property.
+      xtd::ustring to_msg_string() const noexcept;
+      
       /// @brief Returns a string that represents the current message.
       /// @return A xtd::ustring that represents the current message.
       xtd::ustring to_string() const noexcept override;
