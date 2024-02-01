@@ -2,6 +2,7 @@
 
 [This folder](.) contains xtd.forms event examples.
 
+* [application_add_message_filter](application_add_message_filter/README.md) shows how to create an application with  [xtd::forms::application::add_message_filter](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1application.html#a4f8eac12a2e3e29b5308846260788d14) method.
 * [application_application_exit](application_application_exit/README.md) demonstrates the use of [xtd::forms::application::application_exit](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1application.html#af1adab6813016a8eea1ea6382abeeadc) event.
 * [application_events](application_events/README.md) demonstrates the use of [xtd::forms::application](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1application.html) events.
 * [application_idle](application_idle/README.md) demonstrates the use of [xtd::forms::application::idle](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga936f2c887b42e06ecb7e81d4d1bc33ba) event.
