@@ -37,7 +37,7 @@ namespace xtd {
     /// @par Examples
     /// The following example demonstrates simple threading functionality.
     /// @include thread.cpp
-    /// @remarks When a process starts, the system automatically creates a single foreground thread to execute application code. Along with this main foreground thread, a process can create one or more threads to execute a portion of the program code associated with the process. These threads can execute either in the foreground or in the background. In addition, you can use the xtd::threading::thread_pool class to execute code on worker threads that are managed by t frameworkhe xrd.
+    /// @remarks When a process starts, the system automatically creates a single foreground thread to execute application code. Along with this main foreground thread, a process can create one or more threads to execute a portion of the program code associated with the process. These threads can execute either in the foreground or in the background. In addition, you can use the xtd::threading::thread_pool class to execute code on worker threads that are managed by the framework xrd.
     class core_export_ thread final : public object {
       struct data;
 
