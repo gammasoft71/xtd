@@ -991,7 +991,7 @@ namespace xtd {
       /// @param message A xtd::forms::message, passed by reference, that represents the message to process. The possible values are WM_KEYDOWN, WM_SYSKEYDOWN, WM_CHAR, and WM_SYSCHAR.
       /// @return true if the message was processed by the control; otherwise, false.
       /// @remarks pre_process_message is called by the application's message loop to preprocess input messages before they are dispatched. Possible values for the msg parameter are WM_KEYDOWN, WM_SYSKEYDOWN, WM_CHAR, and WM_SYSCHAR.
-      virtual bool pre_process_message(xtd::forms::message& message);
+      virtual bool pre_process_message(const xtd::forms::message& message);
       
       /// @brief Forces the control to invalidate its client area and immediately redraw itself and any child controls.
       /// @par Notes to Inheritors

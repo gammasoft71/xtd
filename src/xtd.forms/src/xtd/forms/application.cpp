@@ -58,22 +58,16 @@ namespace {
   static message_filter_collection message_filters;
   
   bool message_filter_proc(intptr hwnd, int32 msg, intptr wparam, intptr lparam, intptr handle) {
-    auto block = false;
+    auto current_control = control::from_handle(hwnd);
+    if (current_control.has_value() && (current_control.value().get().name() == "9f5767d6-7a21-4ebe-adfe-2427b2024a55" || current_control.value().get().name() == "d014d407-851c-49c1-a343-3380496a639a")) return true;
+
+    for (auto message_filter : message_filters)
+      if (message_filter.get().pre_filter_message(xtd::forms::message::create(hwnd, msg, wparam, lparam, 0, handle))) return true;
+
+    for (auto open_form : application::open_forms())
+      if (open_form.get().pre_process_message(xtd::forms::message::create(hwnd, msg, wparam, lparam, 0, handle))) return true;
     
-    for (auto message_filter : message_filters) {
-      block = message_filter.get().pre_filter_message(xtd::forms::message::create(hwnd, msg, wparam, lparam, 0, handle));
-      if (block == true) break;
-    }
-    
-    if (!block) {
-      for (auto open_form : application::open_forms()) {
-        auto message = xtd::forms::message::create(hwnd, msg, wparam, lparam, 0, handle);
-        block = open_form.get().pre_process_message(message);
-        if (block == true) break;
-      }
-    }
-    
-    return block;
+    return false;
   }
 }
 
