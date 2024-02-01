@@ -361,7 +361,7 @@ namespace xtd {
       /// @return New xtd::forms::form created.
       static form create(const xtd::ustring& text, form_start_position start_position, const drawing::point& location, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
       
-      bool pre_process_message(xtd::forms::message& message) override;
+      bool pre_process_message(const xtd::forms::message& message) override;
       
       /// @brief Shows the form as a modal dialog box.
       /// @return One of the dialog_result values.

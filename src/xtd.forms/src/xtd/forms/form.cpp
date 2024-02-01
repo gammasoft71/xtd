@@ -440,7 +440,7 @@ form form::create(const xtd::ustring& text, form_start_position start_position, 
   return result;
 }
 
-bool form::pre_process_message(xtd::forms::message& message) {
+bool form::pre_process_message(const xtd::forms::message& message) {
   if (message.msg() == WM_KEYUP) {
     auto key_event_args = forms::key_event_args {static_cast<keys>(message.wparam())};
     if (key_event_args.key_data() == keys::enter && data_->accept_button.has_value()) {

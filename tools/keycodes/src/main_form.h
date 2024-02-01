@@ -24,7 +24,7 @@ namespace keycodes {
     main_form();
     
   private:
-    bool pre_process_message(xtd::forms::message& message) override;
+    bool pre_process_message(const xtd::forms::message& message) override;
     void on_clear_button_click(xtd::object& sender, const xtd::event_args& e);
     void on_form_location_changed(xtd::object& sender, const xtd::event_args& e);
     void on_form_resize(xtd::object& sender, const xtd::event_args& e);

@@ -1440,7 +1440,7 @@ drawing::point control::point_to_screen(const xtd::drawing::point& p) const {
   return is_handle_created() ? native::control::point_to_screen(handle(), p) : drawing::point {};
 }
 
-bool control::pre_process_message(xtd::forms::message& message) {
+bool control::pre_process_message(const xtd::forms::message& message) {
   auto message_processed = false;
   for (auto child : controls()) {
     message_processed = child.get().pre_process_message(message);
