@@ -1,10 +1,4 @@
-#include <xtd/forms/about_box>
-#include <xtd/forms/application>
-#include <xtd/forms/form>
-#include <xtd/forms/main_menu>
-#include <xtd/forms/message_box>
-#include <xtd/forms/status_bar>
-#include <xtd/forms/system_texts>
+#include <xtd/xtd>
 
 using namespace xtd;
 using namespace xtd::forms;

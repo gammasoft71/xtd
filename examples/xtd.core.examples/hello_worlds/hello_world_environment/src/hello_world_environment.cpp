@@ -1,5 +1,4 @@
-#include <xtd/console>
-#include <xtd/environment>
+#include <xtd/xtd>
 
 using namespace xtd;
 

@@ -1,5 +1,4 @@
-#include <xtd/forms/application>
-#include <xtd/forms/form>
+#include <xtd/xtd>
 
 auto main()->int {
   xtd::forms::application::run(xtd::forms::form {});

@@ -1,7 +1,4 @@
-#include <xtd/forms/application>
-#include <xtd/forms/button>
-#include <xtd/forms/form>
-#include <xtd/speech/synthesis/speech_synthesizer>
+#include <xtd/xtd>
 
 using namespace xtd;
 using namespace xtd::forms;
