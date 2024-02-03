@@ -1,10 +1,7 @@
-#include <xtd/diagnostics/debug>
 #include <xtd/drawing/basic_colors>
-#include <xtd/drawing/colors>
 #include <xtd/forms/animation>
 #include <xtd/forms/application>
 #include <xtd/forms/debug_form>
-#include <xtd/forms/form>
 
 using namespace std;
 using namespace xtd;
@@ -16,18 +13,18 @@ namespace animation_example {
   class form1 : public form {
   public:
     form1() {
-      back_color(colors::dark_cyan());
+      back_color(basic_colors::teal());
       client_size({360, 280});
       controls().push_back(fish_animation);
-      fore_color(colors::cyan());
+      fore_color(basic_colors::aqua());
       text("Animation example");
       
       fish_animation.dock(dock_style::fill);
       fish_animation.frames_per_second(60);
       fish_animation.start();
-      fish_animation.click += event_handler(*this, &form1::on_fish_animation_click);
-      fish_animation.paint += paint_event_handler(*this, &form1::on_fish_animation_paint);
-      fish_animation.updated += animation_updated_event_handler(*this, &form1::on_fish_animation_updated);
+      fish_animation.click += event_handler {*this, &form1::on_fish_animation_click};
+      fish_animation.paint += paint_event_handler {*this, &form1::on_fish_animation_paint};
+      fish_animation.updated += animation_updated_event_handler {*this, &form1::on_fish_animation_updated};
     }
     
   private:
