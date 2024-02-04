@@ -7,11 +7,7 @@
 #include <xtd/forms/picture_box>
 #include <xtd/forms/system_texts>
 #include <xtd/drawing/system_colors>
-#include <map>
-#include <string>
-#include <vector>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
