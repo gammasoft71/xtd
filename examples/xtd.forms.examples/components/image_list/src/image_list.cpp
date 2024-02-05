@@ -54,12 +54,12 @@ namespace example {
     
   private:
     void load_images() {
-      open_file_dialog ofd;
-      ofd.multiselect(true);
-      ofd.filter("All Image Files|*.bmp;*.gif;*.jpg;*.jpeg;*.png;*.tif;*.tiff;*.xpm|Bitmap Files|*.bmp|Gif Files|*.gif|Jpeg Files|*.jpg;*.jpeg|Png Files|*.png|Tiff Files|*.tif;*.tiff|xpm Files|*.xpm");
-      if (ofd.show_dialog() == dialog_result::ok) {
+      auto dialog = open_file_dialog {};
+      dialog.multiselect(true);
+      dialog.filter("All Image Files|*.bmp;*.gif;*.jpg;*.jpeg;*.png;*.tif;*.tiff;*.xpm|Bitmap Files|*.bmp|Gif Files|*.gif|Jpeg Files|*.jpg;*.jpeg|Png Files|*.png|Tiff Files|*.tif;*.tiff|xpm Files|*.xpm");
+      if (dialog.show_dialog() == dialog_result::ok) {
         pictures.images().clear();
-        for (auto file : ofd.file_names())
+        for (auto file : dialog.file_names())
           pictures.images().push_back(drawing::image::from_file(file));
         current_image_index = 0;
         picture.image(pictures.images()[current_image_index]);
