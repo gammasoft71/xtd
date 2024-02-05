@@ -14,6 +14,7 @@ add_projects(
   form_paint
   key_events
   form_click
+  form_custom_event
   mouse_events
   move_form
   send_message_to_form

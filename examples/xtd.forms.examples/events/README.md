@@ -9,6 +9,7 @@
 * [enable_changed_event](enable_changed_event/README.md) demonstrates the use of [enable_changed](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga34c92d7fb3eb02179db90c13669b6a70) event.
 * [font_changed_event](font_changed_event/README.md) demonstrates the use of [font_changed](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga52494f7214b65db98e3a942acab5d506) event.
 * [form_click](form_click/README.md) demonstrates the use of [xtd::forms::form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html) event.
+* [form_custom_event](form_custom_event/README.md) demonstrates how to create custom event with [form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html).
 * [form_and_messages](form_and_messages/README.md) demonstrates some events received by [xtd::forms::form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html).
 * [form_paint](form_paint/README.md) demonstrates paint event with [xtd::forms::form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html).
 * [key_events](key_events/README.md) demonstrates the use of key events.
