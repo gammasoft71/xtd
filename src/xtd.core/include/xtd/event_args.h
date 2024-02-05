@@ -32,10 +32,5 @@ namespace xtd {
     /// @remarks To pass an object that does not contain any data, use the empty field.
     event_args() = default;
     /// @}
-    
-    /// @cond
-    event_args(const event_args& event_args) = default;
-    event_args& operator =(const event_args& event_args) = default;
-    /// @endcond
   };
 }
