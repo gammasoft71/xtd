@@ -13,7 +13,7 @@ settings_form::settings_form() {
   maximize_box(false);
   minimize_box(false);
   form_border_style(forms::form_border_style::fixed_3d);
-  back_color(application::style_sheet().system_colors().app_workspace());
+  if (environment::os_version().is_macos()) back_color(application::style_sheet().system_colors().app_workspace());
   client_size({500, 200});
   start_position(form_start_position::manual);
   location(properties::settings::default_settings().settings_form_location());
