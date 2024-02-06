@@ -3,6 +3,7 @@
 [This folder](.) contains common controls examples.
 
 * [animation](animation/README.md) represents a [xtd::forms::animation](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1animation.html) control.
+* [bitmap_button](bitmap_button/README.md) demonstrates the use of [xtd::forms::button](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1button.html) control with [xtd::drawing::image](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1image.html).
 * [button](button/README.md) represents a Windows [xtd::forms::button](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1button.html) control.
 * [buttons](buttons/README.md) shows how to use buttons factory with [xtd::forms::buttons](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1buttons.html) control.
 * [check_box](check_box/README.md) represents a Windows [xtd::forms::check_box](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1check__box.html) control.

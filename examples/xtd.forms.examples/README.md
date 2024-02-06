@@ -98,6 +98,7 @@
 ## [Controls](controls/README.md)
 
 * [animation](controls/animation/README.md) represents a [xtd::forms::animation](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1animation.html) control.
+* [bitmap_button](controls/bitmap_button/README.md) demonstrates the use of [xtd::forms::button](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1button.html) control with [xtd::drawing::image](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1image.html).
 * [button](controls/button/README.md) represents a Windows [xtd::forms::button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html) control.
 * [buttons](controls/buttons/README.md) Show how to use buttons factory with [xtd::forms::buttons](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1buttons.html) control.
 * [check_box](controls/check_box/README.md) represents a Windows [xtd::forms::check_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1check__box.html) control.
@@ -254,7 +255,7 @@
 * [about_dialog_system](others/about_dialog_system/README.md) represents a dialog box that displays about box.
 * [anchors](others/anchors/README.md) demonstrates the use of [xtd::forms::button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html) container with [xtd::forms::control::anchor](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1tool__bar.html).
 * [auto_scroll](others/auto_scroll/README.md) demonstrates the use of [xtd::forms::panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1panel.html).
-* [bitmap_button](others/bitmap_button/README.md) demonstrates the use of [xtd::forms::button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html) control with [xtd::drawing::image](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1drawing_1_1image.html).
+* [bitmap_button_with_text](others/bitmap_button_with_text/README.md) demonstrates the use of [xtd::forms::button](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1button.html) control with [xtd::drawing::image](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1image.html).
 * [border_style](others/border_style/README.md) demonstrates the use of [xtd::forms::label::border_style](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1label.html#a572b81ed9b6e7ba3a3b97501aeb43c69) property.
 * [button2](others/button2/README.md) demonstrates the use of [xtd::forms::button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html) control.
 * [button3](others/button3/README.md) demonstrates the use of [xtd::forms::button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html) control.
