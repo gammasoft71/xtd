@@ -83,7 +83,7 @@ namespace xtd {
       /// @brief Gets the alignment of the image on the button control.
       /// @return One of the content_alignment values. The default is middle_center.
       virtual content_alignment image_align() const noexcept;
-      /// @brief Gets the alignment of the image on the button control.
+      /// @brief Sets the alignment of the image on the button control.
       /// @param value One of the content_alignment values. The default is middle_center.
       virtual button_base& image_align(content_alignment value);
       
