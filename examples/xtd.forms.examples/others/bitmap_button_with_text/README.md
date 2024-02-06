@@ -5,6 +5,9 @@ demonstrates the use of [xtd::forms::button](https://gammasoft71.github.io/xtd/r
 ## Sources
 
 * [src/bitmap_button_with_text.cpp](src/bitmap_button_with_text.cpp)
+* [resources/gammasoft_16x16.xpm](resources/gammasoft_16x16.xpm)
+* [resources/gammasoft_32x32.xpm](resources/gammasoft_32x32.xpm)
+* [resources/gammasoft_64x64.xpm](resources/gammasoft_64x64.xpm)
 * [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
