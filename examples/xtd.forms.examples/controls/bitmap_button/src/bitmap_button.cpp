@@ -1,9 +1,9 @@
+#include "../resources/gammasoft_16x16.xpm"
+#include "../resources/gammasoft_64x64.xpm"
 #include <xtd/forms/application>
 #include <xtd/forms/button>
 #include <xtd/forms/form>
 #include <xtd/forms/label>
-#include "../resources/gammasoft_16x16.xpm"
-#include "../resources/gammasoft_64x64.xpm"
 
 using namespace xtd;
 using namespace xtd::drawing;
