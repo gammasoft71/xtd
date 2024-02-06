@@ -176,7 +176,9 @@ forms::create_params button_base::create_params() const noexcept {
 }
 
 drawing::size button_base::measure_control() const noexcept {
-  return control::measure_text() + drawing::size(13, 0);
+  auto size = control::measure_text() + drawing::size(13, 0);
+  if (image().height() > 0 && image().width() > 0) size += image().size() + drawing::size(0, 13);
+  return size;
 }
 
 void button_base::on_back_color_changed(const event_args& e) {
