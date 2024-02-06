@@ -143,6 +143,8 @@ void button::on_handle_created(const event_args& e) {
   button_base::on_handle_created(e);
   if (flat_style() == xtd::forms::flat_style::system) {
     if (image() != drawing::image::empty || (image_list().images().size() && image_index() > -1)) {
+      native::button::image(handle(), image() != drawing::image::empty ? image() : image_list().images()[image_index()]);
+      native::button::image_align(handle(), static_cast<uint32_t>(image_align()));
       if (image_align() != content_alignment::middle_center) native::control::text(handle(), text());
       native::control::location(handle(), location());
       native::control::size(handle(), size());
