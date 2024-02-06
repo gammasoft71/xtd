@@ -5,6 +5,7 @@ find_package(xtd REQUIRED)
 
 add_projects(
   animation
+  bitmap_button
   button
   buttons
   check_box

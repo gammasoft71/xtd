@@ -12,7 +12,7 @@ using namespace xtd::forms;
 class form1 : public form {
 public:
   form1() {
-    text("Bitmap button example");
+    text("Bitmap button with text example");
     controls().push_back_range({button1, button2, button3, button4});
     
     button1.location({40, 40});

@@ -9,7 +9,7 @@ add_projects(
   anchors
   application_run
   auto_scroll
-  bitmap_button
+  bitmap_button_with_text
   border_style
   button2
   button3
