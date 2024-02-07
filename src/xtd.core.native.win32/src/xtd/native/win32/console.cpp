@@ -296,7 +296,9 @@ void console::register_user_cancel_callback(std::function<bool(int_least32_t)> u
 }
 
 bool console::reset_color() {
-  return console::background_color(CONSOLE_COLOR_DEFAULT) && console::foreground_color(CONSOLE_COLOR_DEFAULT);
+  auto result = console::background_color(CONSOLE_COLOR_DEFAULT);
+  result = console::foreground_color(CONSOLE_COLOR_DEFAULT) && result;
+  return result;
 }
 
 bool console::set_cursor_position(int_least32_t left, int_least32_t top) {
@@ -310,8 +312,8 @@ bool console::set_cursor_position(int_least32_t left, int_least32_t top) {
 }
 
 std::string console::title() {
-  auto title = std::wstring {MAX_PATH, 0};
-  ::title =  GetConsoleTitle(title.data(), MAX_PATH) == 0 ? "" : win32::strings::to_string(title);
+  auto title = std::wstring(MAX_PATH, '\0');
+  ::title =  GetConsoleTitle(title.data(), static_cast<int>(title.size())) == 0 ? "" : win32::strings::to_string(title);
   return ::title;
 }
 
