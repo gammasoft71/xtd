@@ -13,7 +13,7 @@ using namespace xtd::native;
 namespace {
   std::wstring get_locale_user_default_info(int lacole_info) {
     auto locale_info_size = GetLocaleInfo(LOCALE_USER_DEFAULT, lacole_info, nullptr, 0);
-    std::wstring locale_info(locale_info_size, 0);
+    auto locale_info = std::wstring(locale_info_size, '\0');
     GetLocaleInfo(LOCALE_USER_DEFAULT, lacole_info, locale_info.data(), locale_info_size);
     return locale_info;
   }
