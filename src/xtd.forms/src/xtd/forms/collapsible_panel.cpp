@@ -18,6 +18,7 @@ struct collapsible_panel::data {
 };
 
 collapsible_panel::collapsible_panel() : data_(std::make_shared<data>()) {
+  /// @todo Delete the next line when the standard control is developed.
   control_appearance(forms::control_appearance::system);
   set_auto_size_mode(forms::auto_size_mode::grow_and_shrink);
   set_can_focus(false);

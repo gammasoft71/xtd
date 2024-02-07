@@ -27,6 +27,7 @@ struct list_box::data {
 };
 
 list_box::list_box() : data_(std::make_shared<data>()) {
+  /// @todo Delete the next line when the standard control is developed.
   control_appearance(forms::control_appearance::system);
   set_style(control_styles::user_paint | control_styles::standard_click | control_styles::use_text_for_accessibility, false);
   data_->items.item_added += {*this, &list_box::on_items_item_added};

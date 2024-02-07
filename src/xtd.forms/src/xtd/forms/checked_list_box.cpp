@@ -61,6 +61,8 @@ struct checked_list_box::data {
 };
 
 checked_list_box::checked_list_box() : data_(std::make_shared<data>()) {
+  /// @todo Delete the next line when the standard control is developed.
+  control_appearance(forms::control_appearance::system);
   set_style(control_styles::resize_redraw, true);
   data_->items.item_added += {*this, &checked_list_box::on_items_item_added};
   data_->items.item_removed += {*this, &checked_list_box::on_items_item_removed};
