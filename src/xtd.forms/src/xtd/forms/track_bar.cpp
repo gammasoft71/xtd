@@ -21,6 +21,7 @@ struct track_bar::data {
 };
 
 track_bar::track_bar() : data_(std::make_shared<data>()) {
+  /// @todo Delete the next line when the standard control is developed.
   control_appearance(forms::control_appearance::system);
   set_style(control_styles::user_paint, false);
   set_style(control_styles::use_text_for_accessibility, false);

@@ -55,6 +55,7 @@ month_calendar::hit_test_info::hit_test_info(xtd::forms::month_calendar::hit_are
 }
 
 month_calendar::month_calendar() : data_(std::make_shared<data>()) {
+  /// @todo Delete the next line when the standard control is developed.
   control_appearance(forms::control_appearance::system);
   set_style(control_styles::user_paint, false);
   set_style(control_styles::standard_click, false);
