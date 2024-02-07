@@ -27,6 +27,7 @@ struct text_box::data {
 };
 
 text_box::text_box() : data_(std::make_shared<data>()) {
+  /// @todo Delete the next line when the standard control is developed.
   control_appearance(forms::control_appearance::system);
 }
 

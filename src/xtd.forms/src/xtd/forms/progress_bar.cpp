@@ -19,6 +19,7 @@ struct progress_bar::data {
 };
 
 progress_bar::progress_bar() : data_(std::make_shared<data>()) {
+  /// @todo Delete the next line when the standard control is developed.
   control_appearance(forms::control_appearance::system);
   set_can_focus(false);
   set_style(control_styles::user_paint | control_styles::use_text_for_accessibility | control_styles::selectable, false);

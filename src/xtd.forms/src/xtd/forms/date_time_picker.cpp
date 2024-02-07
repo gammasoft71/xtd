@@ -19,6 +19,7 @@ struct date_time_picker::data {
 };
 
 date_time_picker::date_time_picker() : data_(std::make_shared<data>()) {
+  /// @todo Delete the next line when the standard control is developed.
   control_appearance(forms::control_appearance::system);
   set_style(control_styles::fixed_height, true);
   set_style(control_styles::user_paint | control_styles::standard_click, false);

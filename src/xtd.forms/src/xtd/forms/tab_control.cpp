@@ -86,6 +86,7 @@ optional<tab_control::tab_page_collection::value_type> tab_control::tab_page_col
 }
 
 tab_control::tab_control() : data_(std::make_shared<data>()) {
+  /// @todo Delete the next line when the standard control is developed.
   control_appearance(forms::control_appearance::system);
   set_style(control_styles::user_paint, false);
   

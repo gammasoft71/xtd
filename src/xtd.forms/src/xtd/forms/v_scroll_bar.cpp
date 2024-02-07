@@ -9,6 +9,7 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 v_scroll_bar::v_scroll_bar() : scroll_bar(true) {
+  /// @todo Delete the next line when the standard control is developed.
   control_appearance(forms::control_appearance::system);
   set_can_focus(false);
 }
