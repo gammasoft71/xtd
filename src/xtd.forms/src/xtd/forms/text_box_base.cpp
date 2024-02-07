@@ -1,12 +1,19 @@
 #include "../../../include/xtd/forms/text_box_base.h"
+#define __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/forms/native/edit_styles>
+#include <xtd/forms/native/extended_window_styles>
+#include <xtd/forms/native/window_styles>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <optional>
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
 struct text_box_base::data {
   bool accepts_tab = false;
-  xtd::forms::border_sides border_sides = xtd::forms::border_sides::all;
-  xtd::forms::border_style border_style = xtd::forms::border_style::fixed_single;
+  forms::border_sides border_sides = xtd::forms::border_sides::all;
+  optional<forms::border_style> border_style;
   bool multiline = false;
   bool read_only = false;
   bool word_wrap = true;
@@ -38,14 +45,23 @@ text_box_base& text_box_base::border_sides(forms::border_sides border_sides) {
 }
 
 forms::border_style text_box_base::border_style() const noexcept {
-  return data_->border_style;
+  return data_->border_style.value_or(forms::border_style::fixed_single);
 }
 
 text_box_base& text_box_base::border_style(forms::border_style border_style) {
-  if (data_->border_style == border_style) return *this;
+  if (this->border_style() == border_style) return *this;
   data_->border_style = border_style;
-  post_recreate_handle();
+  if (is_handle_created() && control_appearance() == forms::control_appearance::system) post_recreate_handle();
+  else invalidate();
   on_border_style_changed(event_args::empty);
+  return *this;
+}
+
+text_box_base& text_box_base::border_style(std::nullptr_t) {
+  if (!data_->border_style) return *this;
+  data_->border_style.reset();
+  if (is_handle_created() && control_appearance() == forms::control_appearance::system) post_recreate_handle();
+  else invalidate();
   return *this;
 }
 
@@ -138,6 +154,20 @@ void text_box_base::select_all() {
 text_box_base::text_box_base() : data_(std::make_shared<data>()) {
   set_style(control_styles::fixed_height, auto_size());
   set_style(control_styles::standard_click | control_styles::standard_double_click | control_styles::use_text_for_accessibility | control_styles::user_paint, false);
+}
+
+forms::create_params text_box_base::create_params() const noexcept {
+  auto create_params = control::create_params();
+  
+  if (border_style() == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
+  else if (border_style() != forms::border_style::none) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
+  
+  if (accepts_tab()) create_params.style(create_params.style() | ES_WANTTAB);
+  if (multiline()) create_params.style(create_params.style() | ES_MULTILINE);
+  if (read_only()) create_params.style(create_params.style() | ES_READONLY);
+  if (!word_wrap()) create_params.style(create_params.style() | ES_AUTOHSCROLL);
+  
+  return create_params;
 }
 
 forms::cursor text_box_base::default_cursor() const noexcept {

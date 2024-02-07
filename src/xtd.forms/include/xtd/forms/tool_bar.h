@@ -97,7 +97,7 @@ namespace xtd {
       /// @return Current tool_bar instance.
       /// @remarks The xtd::forms::tool_bar can take on a sunken, three-dimensional appearance when the xtd::forms::tool_bar::border_style property is set to xtd::forms::border_style::fixed_3d. To display a flat thin border around the toolbar control, set the xtd::forms::tool_bar::border_style property to xtd::forms::border_style.fixed_single.
       virtual tool_bar& border_style(forms::border_style value);
-      /// @brief Reets the border style for the control.
+      /// @brief Resets the border style for the control.
       /// @param value nullptr.
       /// @return Current tool_bar instance.
       /// @remarks The xtd::forms::tool_bar can take on a sunken, three-dimensional appearance when the xtd::forms::tool_bar::border_style property is set to xtd::forms::border_style::fixed_3d. To display a flat thin border around the toolbar control, set the xtd::forms::tool_bar::border_style property to xtd::forms::border_style.fixed_single.

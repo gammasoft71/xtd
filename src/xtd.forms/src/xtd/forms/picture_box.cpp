@@ -7,6 +7,7 @@
 #include <xtd/forms/native/window_styles>
 #include <xtd/forms/native/static_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <optional>
 
 using namespace std;
 using namespace xtd;
@@ -27,8 +28,8 @@ namespace {
 
 struct picture_box::data {
   forms::border_sides border_sides = forms::border_sides::all;
-  forms::border_style border_style = forms::border_style::none;
-  std::optional<drawing::image> image;
+  optional<forms::border_style> border_style;
+  optional<drawing::image> image;
   picture_box_size_mode size_mode = picture_box_size_mode::normal;
 };
 
@@ -51,15 +52,22 @@ picture_box& picture_box::border_sides(forms::border_sides border_sides) {
 }
 
 forms::border_style picture_box::border_style() const noexcept {
-  return data_->border_style;
+  return data_->border_style.value_or(forms::border_style::none);
 }
 
 picture_box& picture_box::border_style(forms::border_style border_style) {
-  if (data_->border_style != border_style) {
-    data_->border_style = border_style;
-    if (is_handle_created() && control_appearance() == forms::control_appearance::system) post_recreate_handle();
-    else invalidate();
-  }
+  if (this->border_style() == border_style) return *this;
+  data_->border_style = border_style;
+  if (is_handle_created() && control_appearance() == forms::control_appearance::system) post_recreate_handle();
+  else invalidate();
+  return *this;
+}
+
+picture_box& picture_box::border_style(nullptr_t) {
+  if (data_->border_style) return *this;
+  data_->border_style.reset();
+  if (is_handle_created() && control_appearance() == forms::control_appearance::system) post_recreate_handle();
+  else invalidate();
   return *this;
 }
 
@@ -126,17 +134,15 @@ forms::create_params picture_box::create_params() const noexcept {
   create_params.class_name("picturebox");
   create_params.style(create_params.style() | SS_BITMAP);
   
-  if (control_appearance() == forms::control_appearance::system) {
-    if (data_->border_style == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
-    else if (data_->border_style != forms::border_style::none) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
-    
-    switch (data_->size_mode) {
-      case picture_box_size_mode::normal: create_params.style(create_params.style() | SS_BITMAP_NORMAL); break;
-      case picture_box_size_mode::stretch_image: create_params.style(create_params.style() | SS_BITMAP_STRETCH); break;
-      case picture_box_size_mode::auto_size: create_params.style(create_params.style() | SS_BITMAP_AUTOSIZE); break;
-      case picture_box_size_mode::center_image: create_params.style(create_params.style() | SS_BITMAP_CENTER); break;
-      case picture_box_size_mode::zoom: create_params.style(create_params.style() | SS_BITMAP_ZOOM); break;
-    }
+  if (border_style() == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
+  else if (border_style() != forms::border_style::none) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
+  
+  switch (data_->size_mode) {
+    case picture_box_size_mode::normal: create_params.style(create_params.style() | SS_BITMAP_NORMAL); break;
+    case picture_box_size_mode::stretch_image: create_params.style(create_params.style() | SS_BITMAP_STRETCH); break;
+    case picture_box_size_mode::auto_size: create_params.style(create_params.style() | SS_BITMAP_AUTOSIZE); break;
+    case picture_box_size_mode::center_image: create_params.style(create_params.style() | SS_BITMAP_CENTER); break;
+    case picture_box_size_mode::zoom: create_params.style(create_params.style() | SS_BITMAP_ZOOM); break;
   }
   
   return create_params;

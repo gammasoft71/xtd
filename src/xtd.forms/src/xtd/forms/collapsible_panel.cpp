@@ -5,13 +5,15 @@
 #include <xtd/forms/native/window_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../include/xtd/forms/collapsible_panel.h"
+#include <optional>
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
 struct collapsible_panel::data {
   forms::border_sides border_sides = forms::border_sides::all;
-  forms::border_style border_style = forms::border_style::none;
+  optional<forms::border_style> border_style;
   bool expanded = false;
 };
 
@@ -41,13 +43,22 @@ collapsible_panel& collapsible_panel::border_sides(forms::border_sides border_si
 }
 
 forms::border_style collapsible_panel::border_style() const noexcept {
-  return data_->border_style;
+  return data_->border_style.value_or(forms::border_style::none);
 }
 
 collapsible_panel& collapsible_panel::border_style(forms::border_style border_style) {
-  if (data_->border_style == border_style) return *this;
+  if (this->border_style() == border_style) return *this;
   data_->border_style = border_style;
-  post_recreate_handle();
+  if (is_handle_created() && control_appearance() == forms::control_appearance::system) post_recreate_handle();
+  else invalidate();
+  return *this;
+}
+
+collapsible_panel& collapsible_panel::border_style(std::nullptr_t) {
+  if (!data_->border_style) return *this;
+  data_->border_style.reset();
+  if (is_handle_created() && control_appearance() == forms::control_appearance::system) post_recreate_handle();
+  else invalidate();
   return *this;
 }
 
@@ -105,8 +116,8 @@ forms::create_params collapsible_panel::create_params() const noexcept {
   
   create_params.class_name("collapsiblepanel");
   
-  if (data_->border_style == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
-  else if (data_->border_style != forms::border_style::none) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
+  if (border_style() == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
+  else if (border_style() != forms::border_style::none) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
   
   return create_params;
 }

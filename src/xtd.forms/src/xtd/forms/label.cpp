@@ -15,6 +15,7 @@
 #include <xtd/forms/native/toolkit>
 #include <xtd/forms/native/window_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <optional>
 #include <vector>
 
 using namespace std;
@@ -64,7 +65,8 @@ forms::border_sides label::border_sides() const noexcept {
 label& label::border_sides(forms::border_sides border_sides) {
   if (data_->border_sides == border_sides) return *this;
   data_->border_sides = border_sides;
-  if (control_appearance() == forms::control_appearance::standard) invalidate();
+  if (is_handle_created() && control_appearance() == forms::control_appearance::system) post_recreate_handle();
+  else invalidate();
   return *this;
 }
 
@@ -73,9 +75,9 @@ xtd::forms::border_style label::border_style() const noexcept {
 }
 
 label& label::border_style(xtd::forms::border_style border_style) {
-  if (data_->border_style == border_style) return *this;
+  if (this->border_style() == border_style) return *this;
   data_->border_style = border_style;
-  if (flat_style() == forms::flat_style::system) post_recreate_handle();
+  if (is_handle_created() && control_appearance() == forms::control_appearance::system) post_recreate_handle();
   else invalidate();
   return *this;
 }
@@ -220,10 +222,10 @@ forms::create_params label::create_params() const noexcept {
   create_params.class_name("label");
   create_params.style(create_params.style() | SS_LEFT);
   
-  if (data_->flat_style == xtd::forms::flat_style::system) {
-    if (data_->border_style.value_or(xtd::forms::border_style::none) == xtd::forms::border_style::solid) create_params.style(create_params.style() | WS_BORDER);
-    else if (data_->border_style.value_or(xtd::forms::border_style::none) != xtd::forms::border_style::none) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
-  } else create_params.style(create_params.style() | SS_OWNERDRAW);
+  if (border_style() == xtd::forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
+  else if (border_style() != xtd::forms::border_style::none) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
+
+  if (data_->flat_style != xtd::forms::flat_style::system) create_params.style(create_params.style() | SS_OWNERDRAW);
   
   if (data_->auto_ellipsis) create_params.style(create_params.style() | SS_ENDELLIPSIS);
   

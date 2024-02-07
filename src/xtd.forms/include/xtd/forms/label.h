@@ -76,7 +76,7 @@ namespace xtd {
       /// @return Current label instance.
       /// @remarks You can use this property to add a border to the control. This property is typically used to differentiate a label that labels another control from a label that displays the status of a process in an application.
       virtual xtd::forms::label& border_style(xtd::forms::border_style border_style);
-      /// @brief Reets the border style for the control.
+      /// @brief Resets the border style for the control.
       /// @param border_style nullptr.
       /// @return Current label instance.
       /// @remarks You can use this property to add a border to the control. This property is typically used to differentiate a label that labels another control from a label that displays the status of a process in an application.
