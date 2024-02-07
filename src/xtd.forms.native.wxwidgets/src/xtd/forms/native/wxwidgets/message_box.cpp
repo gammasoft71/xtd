@@ -16,7 +16,7 @@ using namespace xtd::forms::native;
 
 #if defined(__WXMSW__)
 namespace {
-  HHOOK handle_hook;
+  auto handle_hook = HHOOK{};
   LRESULT CALLBACK callbackProc(INT ncode, WPARAM wparam, LPARAM lparam) {
     if (ncode == HCBT_ACTIVATE) {
       allow_dark_mode_for_window(static_cast<intptr>(wparam));

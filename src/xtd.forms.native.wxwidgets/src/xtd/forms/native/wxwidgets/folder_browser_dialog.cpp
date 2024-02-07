@@ -16,7 +16,7 @@ using namespace xtd::forms::native;
 #include <ShlObj.h>
 using namespace std;
 namespace {
-  HHOOK handle_hook = 0;
+  auto handle_hook = HHOOK {};
   LRESULT CALLBACK callbackProc(INT ncode, WPARAM wparam, LPARAM lparam) {
     if (ncode == HCBT_ACTIVATE) {
       allow_dark_mode_for_window(static_cast<intptr>(wparam));
