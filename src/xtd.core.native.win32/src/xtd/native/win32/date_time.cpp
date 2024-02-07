@@ -222,7 +222,7 @@ namespace {
   string string_printf(const char* fmt, ...) {
     va_list args;
     va_start(args, fmt);
-    string formatted_string(vsnprintf(nullptr, 0, fmt, args), 0);
+    auto formatted_string = string(static_cast<size_t>(vsnprintf(nullptr, 0, fmt, args)), 0);
     va_end(args);
     va_start(args, fmt);
     vsnprintf(&formatted_string[0], formatted_string.size() + 1, fmt, args);
@@ -233,7 +233,7 @@ namespace {
   }
   
   void TimetToFileTime(time_t t, LPFILETIME pft) {
-    ULARGE_INTEGER time_value;
+    auto time_value = ULARGE_INTEGER {};
     time_value.QuadPart = (t * 10000000LL) + 116444736000000000LL;
     pft->dwLowDateTime = time_value.LowPart;
     pft->dwHighDateTime = time_value.HighPart;
@@ -241,7 +241,7 @@ namespace {
 }
 
 date_time::time_zone_info date_time::get_local_time_zone() {
-  time_zone_info local_time_zone;
+  auto local_time_zone = time_zone_info {};
   tzset();
   auto stzis = get_system_time_zones();
   auto iterator = std::find_if(stzis.begin(), stzis.end(), [&](auto tzi) {return tzi.id == reinterpret_cast<const char*>(tzname[0]);});
@@ -262,26 +262,26 @@ vector<date_time::time_zone_info> date_time::get_system_time_zones() {
 }
 
 bool date_time::is_daylight(time_t time) {
-  tm value {};
+  auto value = tm {};
   localtime_s(&value, &time);
   return value.tm_isdst != 0;
 }
 
 time_t date_time::utc_offset(time_t time) {
-  FILETIME file_time_local;
+  auto file_time_local = FILETIME {};
   TimetToFileTime(time, &file_time_local);
   
-  SYSTEMTIME system_time;
+  auto system_time = SYSTEMTIME {};
   if (FileTimeToSystemTime(&file_time_local, &system_time) == 0) return 0;
   
-  SYSTEMTIME system_time_local;
+  auto system_time_local = SYSTEMTIME {};
   if (SystemTimeToTzSpecificLocalTime(nullptr, &system_time, &system_time_local) == 0) return 0;
   
-  FILETIME file_time_utc;
+  auto file_time_utc = FILETIME {};
   if (SystemTimeToFileTime(&system_time_local, &file_time_utc) == 0) return 0;
   
-  ULARGE_INTEGER ticks_local = { file_time_local.dwLowDateTime, file_time_local.dwHighDateTime };
-  ULARGE_INTEGER ticks_utc = { file_time_utc.dwLowDateTime, file_time_utc.dwHighDateTime };
+  auto ticks_local = ULARGE_INTEGER {file_time_local.dwLowDateTime, file_time_local.dwHighDateTime};
+  auto ticks_utc = ULARGE_INTEGER {file_time_utc.dwLowDateTime, file_time_utc.dwHighDateTime};
   
   return (ticks_utc.QuadPart - ticks_local.QuadPart) / 10000000;
 }
