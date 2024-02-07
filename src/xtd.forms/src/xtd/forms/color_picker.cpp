@@ -17,6 +17,7 @@ struct color_picker::data {
 };
 
 color_picker::color_picker() : data_(std::make_shared<data>()) {
+  /// @todo Delete the next line when the standard control is developed.
   control_appearance(forms::control_appearance::system);
   set_can_focus(false);
 }

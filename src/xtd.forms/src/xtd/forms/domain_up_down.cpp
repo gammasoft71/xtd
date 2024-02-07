@@ -50,8 +50,9 @@ struct domain_up_down::data {
 };
 
 domain_up_down::domain_up_down() : data_(make_shared<data>()) {
+  /// @todo Delete the next line when the standard control is developed.
   control_appearance(forms::control_appearance::system);
-  
+
   data_->items.item_added += {*this, &domain_up_down::on_items_item_added};
   data_->items.item_removed += {*this, &domain_up_down::on_items_item_removed};
   data_->items.item_updated += {*this, &domain_up_down::on_items_item_updated};

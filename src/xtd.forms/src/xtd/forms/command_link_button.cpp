@@ -11,7 +11,8 @@ using namespace xtd;
 using namespace xtd::forms;
 
 command_link_button::command_link_button() {
-  flat_style(xtd::forms::flat_style::system);
+  /// @todo Delete the next line when the standard control is developed.
+  control_appearance(forms::control_appearance::system);
   text_align(content_alignment::middle_left);
   set_style(control_styles::standard_click | control_styles::standard_double_click, false);
 }
