@@ -18,28 +18,28 @@ using namespace xtd::native;
 
 namespace {
   static int_least32_t protocol_type_to_native(int_least32_t protocol_type) {
-    static map<int_least32_t, int_least32_t> protocol_types = {{PROTOCOL_TYPE_UNKNOWN, IPPROTO_IP}, {PROTOCOL_TYPE_IP, IPPROTO_IP}, {PROTOCOL_TYPE_ICMP, IPPROTO_ICMP}, {PROTOCOL_TYPE_IGMP, IPPROTO_IGMP}, {PROTOCOL_TYPE_GGP, IPPROTO_GGP}, {PROTOCOL_TYPE_IP_V4, IPPROTO_IPV4}, {PROTOCOL_TYPE_IP_V6, IPPROTO_IPV6}, {PROTOCOL_TYPE_TCP, IPPROTO_TCP}, {PROTOCOL_TYPE_PUP, IPPROTO_PUP}, {PROTOCOL_TYPE_UDP, IPPROTO_UDP}, {PROTOCOL_TYPE_IDP, IPPROTO_IDP}, {PROTOCOL_TYPE_IP_V6, IPPROTO_IPV6}, {PROTOCOL_TYPE_IP_V6_ROUTING_HEADER, IPPROTO_ROUTING}, {PROTOCOL_TYPE_IP_V6_FRAGMENT_HEADER, IPPROTO_FRAGMENT}, {PROTOCOL_TYPE_IP_SEC_ENCAPSULATING_SECURITY_PAYLOAD, IPPROTO_ESP}, {PROTOCOL_TYPE_IP_SEC_AUTHENTICATION_HEADER, IPPROTO_AH}, {PROTOCOL_TYPE_ICMP_V6, IPPROTO_ICMPV6}, {PROTOCOL_TYPE_IP_V6_NO_NEXT_HEADER, IPPROTO_NONE}, {PROTOCOL_TYPE_IP_V6_DESTINATION_OPTIONS, IPPROTO_DSTOPTS}, {PROTOCOL_TYPE_ND, IPPROTO_ND}, {PROTOCOL_TYPE_RAW, IPPROTO_RAW}, {PROTOCOL_TYPE_SPX, IPPROTO_IP}, {PROTOCOL_TYPE_SPX_2, IPPROTO_IP}};
+    static auto protocol_types = map<int_least32_t, int_least32_t> {{PROTOCOL_TYPE_UNKNOWN, IPPROTO_IP}, {PROTOCOL_TYPE_IP, IPPROTO_IP}, {PROTOCOL_TYPE_ICMP, IPPROTO_ICMP}, {PROTOCOL_TYPE_IGMP, IPPROTO_IGMP}, {PROTOCOL_TYPE_GGP, IPPROTO_GGP}, {PROTOCOL_TYPE_IP_V4, IPPROTO_IPV4}, {PROTOCOL_TYPE_IP_V6, IPPROTO_IPV6}, {PROTOCOL_TYPE_TCP, IPPROTO_TCP}, {PROTOCOL_TYPE_PUP, IPPROTO_PUP}, {PROTOCOL_TYPE_UDP, IPPROTO_UDP}, {PROTOCOL_TYPE_IDP, IPPROTO_IDP}, {PROTOCOL_TYPE_IP_V6, IPPROTO_IPV6}, {PROTOCOL_TYPE_IP_V6_ROUTING_HEADER, IPPROTO_ROUTING}, {PROTOCOL_TYPE_IP_V6_FRAGMENT_HEADER, IPPROTO_FRAGMENT}, {PROTOCOL_TYPE_IP_SEC_ENCAPSULATING_SECURITY_PAYLOAD, IPPROTO_ESP}, {PROTOCOL_TYPE_IP_SEC_AUTHENTICATION_HEADER, IPPROTO_AH}, {PROTOCOL_TYPE_ICMP_V6, IPPROTO_ICMPV6}, {PROTOCOL_TYPE_IP_V6_NO_NEXT_HEADER, IPPROTO_NONE}, {PROTOCOL_TYPE_IP_V6_DESTINATION_OPTIONS, IPPROTO_DSTOPTS}, {PROTOCOL_TYPE_ND, IPPROTO_ND}, {PROTOCOL_TYPE_RAW, IPPROTO_RAW}, {PROTOCOL_TYPE_SPX, IPPROTO_IP}, {PROTOCOL_TYPE_SPX_2, IPPROTO_IP}};
     auto it = protocol_types.find(protocol_type);
     if (it == protocol_types.end()) return IPPROTO_IP;
     return it->second;
   }
   
   static int_least32_t socket_option_name_to_native(int_least32_t socket_option_name) {
-    static map<int_least32_t, int_least32_t> socket_option_names = {{SOCKET_OPTION_NAME_DEBUG, SO_DEBUG}, {SOCKET_OPTION_NAME_ACCEPT_CONNECTION, SO_ACCEPTCONN}, {SOCKET_OPTION_NAME_REUSE_ADDRESS, SO_REUSEADDR}, {SOCKET_OPTION_NAME_KEEP_ALIVE, SO_KEEPALIVE}, {SOCKET_OPTION_NAME_DONT_ROUTE, SO_DONTROUTE}, {SOCKET_OPTION_NAME_BROADCAST, SO_BROADCAST}, {SOCKET_OPTION_NAME_USE_LOOPBACK, SO_USELOOPBACK}, {SOCKET_OPTION_NAME_LINGER, SO_LINGER}, {SOCKET_OPTION_NAME_OUT_OF_BAND_INLINE, SO_OOBINLINE}, {SOCKET_OPTION_NAME_SEND_BUFFER, SO_SNDBUF}, {SOCKET_OPTION_NAME_RECEIVE_BUFFER, SO_RCVBUF}, {SOCKET_OPTION_NAME_SEND_LOW_WATER, SO_SNDLOWAT}, {SOCKET_OPTION_NAME_RECEIVE_LOW_WATER, SO_RCVLOWAT}, {SOCKET_OPTION_NAME_SEND_TIMEOUT, SO_SNDTIMEO}, {SOCKET_OPTION_NAME_RECEIVE_TIMEOUT, SO_RCVTIMEO}, {SOCKET_OPTION_NAME_ERROR, SO_ERROR}, {SOCKET_OPTION_NAME_TYPE, SO_TYPE}};
+    static auto socket_option_names = map<int_least32_t, int_least32_t> {{SOCKET_OPTION_NAME_DEBUG, SO_DEBUG}, {SOCKET_OPTION_NAME_ACCEPT_CONNECTION, SO_ACCEPTCONN}, {SOCKET_OPTION_NAME_REUSE_ADDRESS, SO_REUSEADDR}, {SOCKET_OPTION_NAME_KEEP_ALIVE, SO_KEEPALIVE}, {SOCKET_OPTION_NAME_DONT_ROUTE, SO_DONTROUTE}, {SOCKET_OPTION_NAME_BROADCAST, SO_BROADCAST}, {SOCKET_OPTION_NAME_USE_LOOPBACK, SO_USELOOPBACK}, {SOCKET_OPTION_NAME_LINGER, SO_LINGER}, {SOCKET_OPTION_NAME_OUT_OF_BAND_INLINE, SO_OOBINLINE}, {SOCKET_OPTION_NAME_SEND_BUFFER, SO_SNDBUF}, {SOCKET_OPTION_NAME_RECEIVE_BUFFER, SO_RCVBUF}, {SOCKET_OPTION_NAME_SEND_LOW_WATER, SO_SNDLOWAT}, {SOCKET_OPTION_NAME_RECEIVE_LOW_WATER, SO_RCVLOWAT}, {SOCKET_OPTION_NAME_SEND_TIMEOUT, SO_SNDTIMEO}, {SOCKET_OPTION_NAME_RECEIVE_TIMEOUT, SO_RCVTIMEO}, {SOCKET_OPTION_NAME_ERROR, SO_ERROR}, {SOCKET_OPTION_NAME_TYPE, SO_TYPE}};
     auto it = socket_option_names.find(socket_option_name);
     if (it == socket_option_names.end()) return socket_option_name;
     return it->second;
   }
   
   static int_least32_t socket_option_level_to_native(int_least32_t socket_option_level) {
-    static map<int_least32_t, int_least32_t> socket_option_levels = {{SOCKET_OPTION_LEVEL_SOCKET, SOL_SOCKET}, {SOCKET_OPTION_LEVEL_IP, IPPROTO_IP}, {SOCKET_OPTION_LEVEL_IP_V6, IPPROTO_IPV6}, {SOCKET_OPTION_LEVEL_TCP, IPPROTO_TCP}, {SOCKET_OPTION_LEVEL_UDP, IPPROTO_UDP}};
+    static auto socket_option_levels = map<int_least32_t, int_least32_t> {{SOCKET_OPTION_LEVEL_SOCKET, SOL_SOCKET}, {SOCKET_OPTION_LEVEL_IP, IPPROTO_IP}, {SOCKET_OPTION_LEVEL_IP_V6, IPPROTO_IPV6}, {SOCKET_OPTION_LEVEL_TCP, IPPROTO_TCP}, {SOCKET_OPTION_LEVEL_UDP, IPPROTO_UDP}};
     auto it = socket_option_levels.find(socket_option_level);
     if (it == socket_option_levels.end()) return SOL_SOCKET;
     return it->second;
   }
   
   static int_least32_t socket_type_to_native(int_least32_t socket_type) {
-    static map<int_least32_t, int_least32_t> socket_types = {{SOCKET_TYPE_UNKNOWN, SOCK_STREAM}, {SOCKET_TYPE_STREAM, SOCK_STREAM}, {SOCKET_TYPE_DGRAM, SOCK_DGRAM}, {SOCKET_TYPE_RAW, SOCK_RAW}, {SOCKET_TYPE_RDM, SOCK_RDM}, {SOCKET_TYPE_SEQPACKET, SOCK_SEQPACKET}};
+    static auto socket_types = map<int_least32_t, int_least32_t> {{SOCKET_TYPE_UNKNOWN, SOCK_STREAM}, {SOCKET_TYPE_STREAM, SOCK_STREAM}, {SOCKET_TYPE_DGRAM, SOCK_DGRAM}, {SOCKET_TYPE_RAW, SOCK_RAW}, {SOCKET_TYPE_RDM, SOCK_RDM}, {SOCKET_TYPE_SEQPACKET, SOCK_SEQPACKET}};
     auto it = socket_types.find(socket_type);
     if (it == socket_types.end()) return SOCK_STREAM;
     return it->second;
@@ -47,22 +47,22 @@ namespace {
 }
 
 int_least32_t socket::address_family_to_native(int_least32_t address_family) {
-  static map<int_least32_t, int_least32_t> address_families = {{ADDRESS_FAMILY_UNIX, AF_UNIX}, {ADDRESS_FAMILY_INTER_NETWORK, AF_INET}, {ADDRESS_FAMILY_IMP_LINK, AF_IMPLINK}, {ADDRESS_FAMILY_PUP, AF_PUP}, {ADDRESS_FAMILY_CHAOS, AF_CHAOS}, {ADDRESS_FAMILY_NS, AF_NS}, {ADDRESS_FAMILY_ISO, AF_ISO}, {ADDRESS_FAMILY_ECMA, AF_ECMA}, {ADDRESS_FAMILY_DATA_KIT, AF_DATAKIT}, {ADDRESS_FAMILY_CCITT, AF_CCITT}, {ADDRESS_FAMILY_SNA, AF_SNA}, {ADDRESS_FAMILY_DEC_NET, AF_DECnet}, {ADDRESS_FAMILY_DATA_LINK, AF_DLI}, {ADDRESS_FAMILY_LAT, AF_LAT}, {ADDRESS_FAMILY_HYPER_CHANNEL, AF_HYLINK}, {ADDRESS_FAMILY_APPLE_TALK, AF_APPLETALK}, {ADDRESS_FAMILY_NET_BIOS, AF_NETBIOS}, {ADDRESS_FAMILY_VOICE_VIEW, AF_VOICEVIEW}, {ADDRESS_FAMILY_FIRE_FOX, AF_FIREFOX}, {ADDRESS_FAMILY_BANYAN, AF_BAN}, {ADDRESS_FAMILY_ATM, AF_ATM}, {ADDRESS_FAMILY_INTER_NETWORK_V6, AF_INET6}, {ADDRESS_FAMILY_CLUSTER, AF_CLUSTER}, {ADDRESS_FAMILY_IEEE12844, AF_12844}, {ADDRESS_FAMILY_IRDA, AF_IRDA}, {ADDRESS_FAMILY_NETWORK_DESIGNERS, AF_NETDES}, {ADDRESS_FAMILY_MAX, AF_MAX}};
+  static auto address_families = map<int_least32_t, int_least32_t> {{ADDRESS_FAMILY_UNIX, AF_UNIX}, {ADDRESS_FAMILY_INTER_NETWORK, AF_INET}, {ADDRESS_FAMILY_IMP_LINK, AF_IMPLINK}, {ADDRESS_FAMILY_PUP, AF_PUP}, {ADDRESS_FAMILY_CHAOS, AF_CHAOS}, {ADDRESS_FAMILY_NS, AF_NS}, {ADDRESS_FAMILY_ISO, AF_ISO}, {ADDRESS_FAMILY_ECMA, AF_ECMA}, {ADDRESS_FAMILY_DATA_KIT, AF_DATAKIT}, {ADDRESS_FAMILY_CCITT, AF_CCITT}, {ADDRESS_FAMILY_SNA, AF_SNA}, {ADDRESS_FAMILY_DEC_NET, AF_DECnet}, {ADDRESS_FAMILY_DATA_LINK, AF_DLI}, {ADDRESS_FAMILY_LAT, AF_LAT}, {ADDRESS_FAMILY_HYPER_CHANNEL, AF_HYLINK}, {ADDRESS_FAMILY_APPLE_TALK, AF_APPLETALK}, {ADDRESS_FAMILY_NET_BIOS, AF_NETBIOS}, {ADDRESS_FAMILY_VOICE_VIEW, AF_VOICEVIEW}, {ADDRESS_FAMILY_FIRE_FOX, AF_FIREFOX}, {ADDRESS_FAMILY_BANYAN, AF_BAN}, {ADDRESS_FAMILY_ATM, AF_ATM}, {ADDRESS_FAMILY_INTER_NETWORK_V6, AF_INET6}, {ADDRESS_FAMILY_CLUSTER, AF_CLUSTER}, {ADDRESS_FAMILY_IEEE12844, AF_12844}, {ADDRESS_FAMILY_IRDA, AF_IRDA}, {ADDRESS_FAMILY_NETWORK_DESIGNERS, AF_NETDES}, {ADDRESS_FAMILY_MAX, AF_MAX}};
   auto it = address_families.find(address_family);
   if (it == address_families.end()) return AF_UNSPEC;
   return it->second;
 }
 
 int_least32_t socket::native_to_address_family(int_least32_t address_family) {
-  static map<int_least32_t, int_least32_t> address_families = {{AF_UNIX, ADDRESS_FAMILY_UNIX}, {AF_INET, ADDRESS_FAMILY_INTER_NETWORK}, {AF_IMPLINK, ADDRESS_FAMILY_IMP_LINK}, {AF_PUP, ADDRESS_FAMILY_PUP}, {AF_CHAOS, ADDRESS_FAMILY_CHAOS}, {AF_NS, ADDRESS_FAMILY_NS}, {AF_ISO, ADDRESS_FAMILY_ISO}, {AF_ECMA, ADDRESS_FAMILY_ECMA}, {AF_DATAKIT, ADDRESS_FAMILY_DATA_KIT}, {AF_CCITT, ADDRESS_FAMILY_CCITT}, {AF_SNA, ADDRESS_FAMILY_SNA}, {AF_DECnet, ADDRESS_FAMILY_DEC_NET}, {AF_DLI, ADDRESS_FAMILY_DATA_LINK}, {AF_LAT, ADDRESS_FAMILY_LAT}, {AF_HYLINK, ADDRESS_FAMILY_HYPER_CHANNEL}, {AF_APPLETALK, ADDRESS_FAMILY_APPLE_TALK}, {AF_NETBIOS, ADDRESS_FAMILY_NET_BIOS}, {AF_VOICEVIEW, ADDRESS_FAMILY_VOICE_VIEW}, {AF_FIREFOX, ADDRESS_FAMILY_FIRE_FOX}, {AF_BAN, ADDRESS_FAMILY_BANYAN}, {AF_ATM, ADDRESS_FAMILY_ATM}, {AF_INET6, ADDRESS_FAMILY_INTER_NETWORK_V6}, {AF_CLUSTER, ADDRESS_FAMILY_CLUSTER}, {AF_12844, ADDRESS_FAMILY_IEEE12844}, {AF_IRDA, ADDRESS_FAMILY_IRDA}, {AF_NETDES, ADDRESS_FAMILY_NETWORK_DESIGNERS}, {AF_MAX, ADDRESS_FAMILY_MAX}};
+  static auto address_families = map<int_least32_t, int_least32_t> {{AF_UNIX, ADDRESS_FAMILY_UNIX}, {AF_INET, ADDRESS_FAMILY_INTER_NETWORK}, {AF_IMPLINK, ADDRESS_FAMILY_IMP_LINK}, {AF_PUP, ADDRESS_FAMILY_PUP}, {AF_CHAOS, ADDRESS_FAMILY_CHAOS}, {AF_NS, ADDRESS_FAMILY_NS}, {AF_ISO, ADDRESS_FAMILY_ISO}, {AF_ECMA, ADDRESS_FAMILY_ECMA}, {AF_DATAKIT, ADDRESS_FAMILY_DATA_KIT}, {AF_CCITT, ADDRESS_FAMILY_CCITT}, {AF_SNA, ADDRESS_FAMILY_SNA}, {AF_DECnet, ADDRESS_FAMILY_DEC_NET}, {AF_DLI, ADDRESS_FAMILY_DATA_LINK}, {AF_LAT, ADDRESS_FAMILY_LAT}, {AF_HYLINK, ADDRESS_FAMILY_HYPER_CHANNEL}, {AF_APPLETALK, ADDRESS_FAMILY_APPLE_TALK}, {AF_NETBIOS, ADDRESS_FAMILY_NET_BIOS}, {AF_VOICEVIEW, ADDRESS_FAMILY_VOICE_VIEW}, {AF_FIREFOX, ADDRESS_FAMILY_FIRE_FOX}, {AF_BAN, ADDRESS_FAMILY_BANYAN}, {AF_ATM, ADDRESS_FAMILY_ATM}, {AF_INET6, ADDRESS_FAMILY_INTER_NETWORK_V6}, {AF_CLUSTER, ADDRESS_FAMILY_CLUSTER}, {AF_12844, ADDRESS_FAMILY_IEEE12844}, {AF_IRDA, ADDRESS_FAMILY_IRDA}, {AF_NETDES, ADDRESS_FAMILY_NETWORK_DESIGNERS}, {AF_MAX, ADDRESS_FAMILY_MAX}};
   auto it = address_families.find(address_family);
   if (it == address_families.end()) return ADDRESS_FAMILY_UNSPECIFIED;
   return it->second;
 }
 
 intmax_t socket::accept(intmax_t handle, vector<uint_least8_t>& socket_address) {
-  int_least32_t address_length = static_cast<int_least32_t>(socket_address.size());
-  intmax_t socket = static_cast<intmax_t>(::accept(static_cast<SOCKET>(handle), reinterpret_cast<SOCKADDR*>(socket_address.data()), &address_length));
+  auto address_length = static_cast<int_least32_t>(socket_address.size());
+  auto socket = static_cast<intmax_t>(::accept(static_cast<SOCKET>(handle), reinterpret_cast<SOCKADDR*>(socket_address.data()), &address_length));
   if (socket_address.size() != static_cast<size_t>(address_length)) socket_address.resize(static_cast<size_t>(address_length));
   return socket;
 }
@@ -88,7 +88,7 @@ int_least32_t socket::destroy(intmax_t handle) {
 }
 
 size_t socket::get_available(intmax_t handle) {
-  u_long nbr_bytes_available = 0;
+  auto nbr_bytes_available = u_long {};
   if (::ioctlsocket(static_cast<SOCKET>(handle), FIONREAD, &nbr_bytes_available) != 0) return static_cast<size_t>(-1);
   return static_cast<size_t>(nbr_bytes_available);
 }
@@ -98,14 +98,14 @@ int_least32_t socket::get_last_error() {
 }
 
 bool socket::get_os_supports_ip_v4() noexcept {
-  SOCKET s = ::socket(AF_INET, SOCK_STREAM, IPPROTO_IP);
+  auto s = ::socket(AF_INET, SOCK_STREAM, IPPROTO_IP);
   if (s == INVALID_SOCKET) return false;
   closesocket(s);
   return true;
 }
 
 bool socket::get_os_supports_ip_v6() noexcept {
-  SOCKET s = ::socket(AF_INET6, SOCK_STREAM, IPPROTO_IP);
+  auto s = ::socket(AF_INET6, SOCK_STREAM, IPPROTO_IP);
   if (s == INVALID_SOCKET) return false;
   closesocket(s);
   return true;
@@ -120,9 +120,9 @@ int_least32_t socket::get_socket_option(intmax_t handle, int_least32_t socket_op
 }
 
 int_least32_t socket::get_socket_linger_option(intmax_t handle, bool& enabled, uint_least32_t& linger_time) {
-  LINGER l {static_cast<u_short>(enabled), static_cast<u_short>(linger_time)};
-  size_t linger_size = sizeof(LINGER);
-  int_least32_t result = ::getsockopt(static_cast<SOCKET>(handle), SOL_SOCKET, SO_LINGER, reinterpret_cast<char*>(&l), reinterpret_cast<int_least32_t*>(&linger_size));
+  auto l = LINGER {static_cast<u_short>(enabled), static_cast<u_short>(linger_time)};
+  auto linger_size = sizeof(LINGER);
+  auto result = ::getsockopt(static_cast<SOCKET>(handle), SOL_SOCKET, SO_LINGER, reinterpret_cast<char*>(&l), reinterpret_cast<int_least32_t*>(&linger_size));
   if (result == 0) {
     enabled = static_cast<bool>(l.l_onoff);
     linger_time = static_cast<uint_least32_t>(l.l_linger);
@@ -135,8 +135,8 @@ int_least32_t socket::get_socket_multicast_option(intmax_t handle, int_least32_t
     uint_least32_t multicast_address;
     uint_least32_t interface_index;
   } m;
-  size_t multicast_size = sizeof(multicast);
-  int_least32_t result = getsockopt(static_cast<SOCKET>(handle), IPPROTO_IP, socket_option_name_to_native(socket_option_name), reinterpret_cast<char*>(&m), reinterpret_cast<int_least32_t*>(&multicast_size));
+  auto multicast_size = sizeof(multicast);
+  auto result = getsockopt(static_cast<SOCKET>(handle), IPPROTO_IP, socket_option_name_to_native(socket_option_name), reinterpret_cast<char*>(&m), reinterpret_cast<int_least32_t*>(&multicast_size));
   if (result == 0) {
     multicast_address = m.multicast_address;
     interface_index = m.interface_index;
@@ -149,8 +149,8 @@ int_least32_t socket::get_socket_ip_v6_multicast_option(intmax_t handle, int_lea
     uint_least8_t multicast_address[16];
     uint_least32_t interface_index;
   } m;
-  size_t multicast_size = sizeof(multicast);
-  int_least32_t result = getsockopt(static_cast<SOCKET>(handle), IPPROTO_IP, socket_option_name_to_native(socket_option_name), reinterpret_cast<char*>(&m), reinterpret_cast<int_least32_t*>(&multicast_size));
+  auto multicast_size = sizeof(multicast);
+  auto result = getsockopt(static_cast<SOCKET>(handle), IPPROTO_IP, socket_option_name_to_native(socket_option_name), reinterpret_cast<char*>(&m), reinterpret_cast<int_least32_t*>(&multicast_size));
   if (result == 0) {
     for (auto index = 0U; index < multicast_address.size(); ++index)
       multicast_address[index] = m.multicast_address[index];
@@ -160,22 +160,22 @@ int_least32_t socket::get_socket_ip_v6_multicast_option(intmax_t handle, int_lea
 }
 
 int_least32_t socket::io_control(intmax_t handle, int_least32_t io_control, vector<uint_least8_t>& option_in_value, vector<uint_least8_t>& option_out_value) {
-  size_t option_out_value_size = 0;
-  int_least32_t result = WSAIoctl(static_cast<SOCKET>(handle), io_control, option_in_value.data(), static_cast<int_least32_t>(option_in_value.size()), option_out_value.data(), static_cast<int_least32_t>(option_out_value.size()), reinterpret_cast<LPDWORD>(&option_out_value_size), nullptr, nullptr);
+  auto option_out_value_size = size_t {};
+  auto result = WSAIoctl(static_cast<SOCKET>(handle), io_control, option_in_value.data(), static_cast<int_least32_t>(option_in_value.size()), option_out_value.data(), static_cast<int_least32_t>(option_out_value.size()), reinterpret_cast<LPDWORD>(&option_out_value_size), nullptr, nullptr);
   if (option_out_value.size() != option_out_value_size) option_out_value.resize(option_out_value_size);
   return result;
 }
 
 int_least32_t socket::listen(intmax_t handle, size_t backlog) {
-  int_least32_t backlog_value = backlog != static_cast<size_t>(-1) ? static_cast<int_least32_t>(backlog) : SOMAXCONN;
+  auto backlog_value = backlog != static_cast<size_t>(-1) ? static_cast<int_least32_t>(backlog) : SOMAXCONN;
   return ::listen(static_cast<SOCKET>(handle), backlog_value);
 }
 
 int_least32_t socket::poll(intmax_t handle, int_least32_t microseconds, int_least32_t mode) {
   if (handle == 0 || microseconds < 0) return -1;
   
-  timeval timeout = {microseconds / 1000000, microseconds % 1000000};
-  fd_set fdset;
+  auto timeout = timeval {microseconds / 1000000, microseconds % 1000000};
+  auto fdset = fd_set {};
   FD_ZERO(&fdset);
   FD_SET(static_cast<SOCKET>(handle), &fdset);
   switch (mode) {
@@ -191,39 +191,39 @@ int_least32_t socket::receive(intmax_t handle, vector<uint_least8_t>& buffer, si
 }
 
 int_least32_t socket::receive_from(intmax_t handle, vector<uint_least8_t>& buffer, size_t offset, size_t size, int_least32_t flags, vector<uint_least8_t>& socket_address) {
-  int_least32_t address_length = static_cast<int_least32_t>(socket_address.size());
-  int_least32_t result = static_cast<int_least32_t>(::recvfrom(static_cast<SOCKET>(handle), reinterpret_cast<char*>(&buffer.data()[offset]), static_cast<int_least32_t>(size), flags, reinterpret_cast<SOCKADDR*>(socket_address.data()), &address_length));
+  auto address_length = static_cast<int_least32_t>(socket_address.size());
+  auto result = static_cast<int_least32_t>(::recvfrom(static_cast<SOCKET>(handle), reinterpret_cast<char*>(&buffer.data()[offset]), static_cast<int_least32_t>(size), flags, reinterpret_cast<SOCKADDR*>(socket_address.data()), &address_length));
   if (socket_address.size() != static_cast<size_t>(address_length)) socket_address.resize(static_cast<size_t>(address_length));
   return result;
 }
 
 int_least32_t socket::select(vector<intmax_t>& check_read, vector<intmax_t>& check_write, vector<intmax_t>& check_error, int_least32_t microseconds) {
-  size_t nfds = 0;
+  auto nfds = size_t {};
   
-  fd_set read_fds;
+  auto read_fds = fd_set {};
   FD_ZERO(&read_fds);
   for (auto i = 0U; i < check_read.size() && i < FD_SETSIZE; i++)
     FD_SET(static_cast<SOCKET>(check_read[i]), &read_fds);
   if (check_read.size() > nfds) nfds = check_read.size();
   
-  fd_set write_fds;
+  auto write_fds = fd_set {};
   FD_ZERO(&write_fds);
   for (auto i = 0U; i < check_write.size() && i < FD_SETSIZE; i++)
     FD_SET(static_cast<SOCKET>(check_write[i]), &write_fds);
   if (check_write.size() > nfds) nfds = check_write.size();
   
-  fd_set error_fds;
+  auto error_fds = fd_set{};
   FD_ZERO(&error_fds);
   for (auto i = 0U; i < check_error.size() && i < FD_SETSIZE; i++)
     FD_SET(static_cast<SOCKET>(check_error[i]), &error_fds);
   if (check_error.size() > nfds) nfds = check_error.size();
   
-  timeval tv;
+  auto tv = timeval {};
   if (microseconds != -1) {
     tv.tv_sec = microseconds / 1000000;
     tv.tv_usec = microseconds % 1000000;
   }
-  int_least32_t result = ::select(static_cast<int_least32_t>(nfds + 1), &read_fds, &write_fds, &error_fds, &tv);
+  auto result = ::select(static_cast<int_least32_t>(nfds + 1), &read_fds, &write_fds, &error_fds, &tv);
   
   for (auto i = 0U; i < check_read.size(); i++) {
     FD_CLR(static_cast<SOCKET>(check_read[i]), &read_fds);
@@ -252,7 +252,7 @@ int_least32_t socket::send_to(intmax_t handle, const vector<uint_least8_t>& buff
 }
 
 int_least32_t socket::set_blocking(intmax_t handle, bool blocking) {
-  u_long mode = blocking ? 0 : 1;
+  auto mode = u_long {blocking ? 0ul : 1ul};
   return ioctlsocket(static_cast<SOCKET>(handle), FIONBIO, &mode);
 }
 
@@ -293,7 +293,7 @@ int_least32_t socket::shutdown(intmax_t handle, int_least32_t how) {
 }
 
 void socket::startup() {
-  static WORD version_requested = MAKEWORD(2, 2);
-  static WSADATA wsa_data;
+  static auto version_requested = MAKEWORD(2, 2);
+  static auto wsa_data = WSADATA {};
   WSAStartup(version_requested, &wsa_data);
 }
