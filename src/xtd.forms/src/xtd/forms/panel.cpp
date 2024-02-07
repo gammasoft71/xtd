@@ -11,15 +11,16 @@
 #include <xtd/forms/native/window_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
 struct panel::data {
   forms::border_sides border_sides = forms::border_sides::all;
-  std::optional<forms::border_style> border_style;
+  optional<forms::border_style> border_style;
 };
 
-panel::panel() : data_(std::make_shared<data>()) {
+panel::panel() : data_(make_shared<data>()) {
   set_auto_size_mode(forms::auto_size_mode::grow_only);
   set_can_focus(false);
   set_style(control_styles::selectable | control_styles::all_painting_in_wm_paint, false);
@@ -51,17 +52,17 @@ forms::border_style panel::border_style() const noexcept {
 }
 
 panel& panel::border_style(forms::border_style border_style) {
-  if (data_->border_style == border_style) return *this;
+  if (this->border_style() == border_style) return *this;
   data_->border_style = border_style;
-  if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
+  if (is_handle_created() && control_appearance() == forms::control_appearance::system) post_recreate_handle();
   else invalidate();
   return *this;
 }
 
-panel& panel::border_style(std::nullptr_t) {
+panel& panel::border_style(nullptr_t) {
   if (data_->border_style) return *this;
   data_->border_style.reset();
-  if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
+  if (is_handle_created() && control_appearance() == forms::control_appearance::system) post_recreate_handle();
   else invalidate();
   return *this;
 }
@@ -88,10 +89,8 @@ forms::create_params panel::create_params() const noexcept {
   
   create_params.class_name("panel");
   
-  if (control_appearance() == forms::control_appearance::system) {
-    if (data_->border_style == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
-    else if (data_->border_style != forms::border_style::none) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
-  }
+  if (border_style() == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
+  else if (border_style() != forms::border_style::none) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
   
   return create_params;
 }
@@ -112,6 +111,6 @@ void panel::on_layout(const event_args& e) {
 
 void panel::on_paint(paint_event_args& e) {
   auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
-  if (control_appearance() == forms::control_appearance::standard) panel_renderer::draw_panel(style, e.graphics(), e.clip_rectangle(), control_state(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, data_->border_style, data_->border_sides);
+  if (control_appearance() == forms::control_appearance::standard) panel_renderer::draw_panel(style, e.graphics(), e.clip_rectangle(), control_state(), back_color() != default_back_color() ? optional<drawing::color> {back_color()} : nullopt, data_->border_style, data_->border_sides);
   scrollable_control::on_paint(e);
 }

@@ -135,15 +135,8 @@ forms::create_params text_box::create_params() const noexcept {
   
   create_params.class_name("textbox");
   
-  if (border_style() == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
-  else if (border_style() != forms::border_style::none) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
-  
   if (accepts_return()) create_params.style(create_params.style() | ES_WANTRETURN);
-  if (accepts_tab()) create_params.style(create_params.style() | ES_WANTTAB);
-  if (multiline()) create_params.style(create_params.style() | ES_MULTILINE);
   if (use_system_password_char()) create_params.style(create_params.style() | ES_PASSWORD);
-  if (read_only()) create_params.style(create_params.style() | ES_READONLY);
-  if (!word_wrap()) create_params.style(create_params.style() | ES_AUTOHSCROLL);
   if (character_casing() == xtd::forms::character_casing::upper) create_params.style(create_params.style() | ES_UPPERCASE);
   if (character_casing() == xtd::forms::character_casing::lower) create_params.style(create_params.style() | ES_LOWERCASE);
   

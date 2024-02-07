@@ -19,7 +19,7 @@ using namespace xtd::forms;
 
 struct list_box::data {
   forms::border_sides border_sides = forms::border_sides::all;
-  forms::border_style border_style = forms::border_style::fixed_single;
+  optional<forms::border_style> border_style;
   object_collection items;
   item selected_item;
   forms::selection_mode selection_mode = forms::selection_mode::one;
@@ -46,13 +46,22 @@ list_box& list_box::border_sides(forms::border_sides border_sides) {
 }
 
 forms::border_style list_box::border_style() const noexcept {
-  return data_->border_style;
+  return data_->border_style.value_or(forms::border_style::fixed_single);
 }
 
 list_box& list_box::border_style(forms::border_style border_style) {
-  if (data_->border_style == border_style) return *this;
+  if (this->border_style() == border_style) return *this;
   data_->border_style = border_style;
-  post_recreate_handle();
+  if (is_handle_created() && control_appearance() == forms::control_appearance::system) post_recreate_handle();
+  else invalidate();
+  return *this;
+}
+
+list_box& list_box::border_style(std::nullptr_t) {
+  if (!data_->border_style) return *this;
+  data_->border_style.reset();
+  if (is_handle_created() && control_appearance() == forms::control_appearance::system) post_recreate_handle();
+  else invalidate();
   return *this;
 }
 
@@ -202,8 +211,8 @@ forms::create_params list_box::create_params() const noexcept {
   // Do not use native control sort
   //if (data_->sorted) create_params.style(create_params.style() | LBS_SORT);
   
-  if (data_->border_style == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
-  else if (data_->border_style != forms::border_style::none) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
+  if (border_style() == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
+  else if (border_style() != forms::border_style::none) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
   
   return create_params;
 }

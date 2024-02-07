@@ -221,9 +221,6 @@ forms::create_params checked_list_box::create_params() const noexcept {
   // Do not use native control sort
   //if (sorted_) create_params.style(create_params.style() | LBS_SORT);
   
-  if (border_style() == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
-  else if (border_style() == forms::border_style::fixed_3d) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
-  
   return create_params;
 }
 

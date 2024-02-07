@@ -52,7 +52,12 @@ namespace xtd {
       /// @param border_style One of the border_style values. The default is border_style::none.
       /// @remarks By default, the collapsible_panel control is displayed without a border. You can use this property to distinguish the boundaries of the collapsible_panel control from other areas on the form.
       virtual collapsible_panel& border_style(forms::border_style border_style);
-      
+      /// @brief Resets the border style for the control.
+      /// @param border_style nullptr.
+      /// @return Current label instance.
+      /// @remarks You can use this property to add a border to the control. This property is typically used to differentiate a label that labels another control from a label that displays the status of a process in an application.
+      virtual collapsible_panel& border_style(std::nullptr_t);
+
       /// @brief Gets a value indicating whether the collapsible_panel is in the expanded.
       /// @return true if collapsible_panel is expanded; otherwise false.
       bool expanded() const noexcept;

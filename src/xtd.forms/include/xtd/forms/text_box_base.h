@@ -50,7 +50,12 @@ namespace xtd {
       /// @param border_style A xtd::forms::border_style that represents the border type of the text box control. The default is fixed_single.
       /// @return Current text_box_base instance.
       virtual text_box_base& border_style(forms::border_style border_style);
-      
+      /// @brief Resets the border style for the control.
+      /// @param border_style nullptr.
+      /// @return Current label instance.
+      /// @remarks You can use this property to add a border to the control. This property is typically used to differentiate a label that labels another control from a label that displays the status of a process in an application.
+      virtual text_box_base& border_style(std::nullptr_t);
+
       /// @brief Gets the lines of text in a text box control.
       /// @return An array of strings that contains the text in a text box control.
       /// @remarks Each element in the array becomes a line of text in the text box control. If the multiline property of the text box control is set to true and a newline character appears in the text, the text following the newline character is added to a new element in the array and displayed on a separate line.
@@ -163,6 +168,7 @@ namespace xtd {
       /// @name Protected properties
       
       /// @{
+      forms::create_params create_params() const noexcept override;
       forms::cursor default_cursor() const noexcept override;
       /// @}
       

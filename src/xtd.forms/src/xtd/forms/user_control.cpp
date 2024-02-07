@@ -10,12 +10,13 @@
 #include <xtd/forms/native/window_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
 struct user_control::data {
   forms::border_sides border_sides = forms::border_sides::all;
-  std::optional<forms::border_style> border_style;
+  optional<forms::border_style> border_style;
 };
 
 user_control::user_control() : data_(std::make_shared<data>()) {
@@ -50,7 +51,7 @@ xtd::forms::border_style user_control::border_style() const noexcept {
 user_control& user_control::border_style(forms::border_style border_style) {
   if (data_->border_style == border_style) return *this;
   data_->border_style = border_style;
-  if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
+  if (is_handle_created() && control_appearance() == forms::control_appearance::system) post_recreate_handle();
   else invalidate();
   return *this;
 }
@@ -58,7 +59,7 @@ user_control& user_control::border_style(forms::border_style border_style) {
 user_control& user_control::border_style(std::nullptr_t) {
   if (!data_->border_style.has_value()) return *this;
   data_->border_style.reset();
-  if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
+  if (is_handle_created() && control_appearance() == forms::control_appearance::system) post_recreate_handle();
   else invalidate();
   return *this;
 }
@@ -68,11 +69,9 @@ forms::create_params user_control::create_params() const noexcept {
   
   create_params.class_name("usercontrol");
   
-  if (control_appearance() == forms::control_appearance::system) {
-    if (data_->border_style == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
-    else if (data_->border_style != forms::border_style::none) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
-  }
-  
+  if (border_style() == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
+  else if (border_style() != forms::border_style::none) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
+
   return create_params;
 }
 
