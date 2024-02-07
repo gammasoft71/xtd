@@ -16,7 +16,7 @@ using namespace xtd::forms::native;
 #include <ShlObj.h>
 using namespace std;
 namespace {
-  HHOOK handle_hook;
+  HHOOK handle_hook = 0;
   LRESULT CALLBACK callbackProc(INT ncode, WPARAM wparam, LPARAM lparam) {
     if (ncode == HCBT_ACTIVATE) {
       allow_dark_mode_for_window(static_cast<intptr>(wparam));
@@ -35,24 +35,24 @@ namespace {
 }
 
 bool folder_browser_dialog::run_dialog(intptr hwnd, const ustring& description, environment::special_folder root_folder, ustring& selected_path, size_t options) {
-  BROWSEINFO browserInfo;
+  auto browserInfo = BROWSEINFO {};
   browserInfo.hwndOwner = hwnd == 0 ? nullptr : reinterpret_cast<control_handler*>(hwnd)->control()->GetHandle();
-  PIDLIST_ABSOLUTE pidlRoot;
+  auto pidlRoot = PIDLIST_ABSOLUTE {};
   SHGetSpecialFolderLocation(reinterpret_cast<HWND>(hwnd), static_cast<int32>(root_folder), &pidlRoot);
   browserInfo.lpfn = OnBrowserCalllback;
-  wstring wselected_path = xtd::convert_string::to_wstring(selected_path);
+  auto wselected_path = xtd::convert_string::to_wstring(selected_path);
   browserInfo.lParam = reinterpret_cast<LPARAM>(wselected_path.c_str());
-  wstring wdescription = xtd::convert_string::to_wstring(description);
+  auto wdescription = xtd::convert_string::to_wstring(description);
   browserInfo.lpszTitle = wdescription.c_str();
   
   browserInfo.ulFlags = options;
   
   handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
   
-  PCIDLIST_ABSOLUTE result = SHBrowseForFolder(&browserInfo);
+  auto result = SHBrowseForFolder(&browserInfo);
   if (result) {
-    wchar path[MAX_PATH];
-    SHGetPathFromIDList(result, path);
+    auto path = wstring {MAX_PATH, 0};
+    SHGetPathFromIDList(result, path.data());
     selected_path = wxString(path).ToUTF8().data();
     return true;
   }
