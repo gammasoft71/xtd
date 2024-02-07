@@ -26,8 +26,8 @@ bool debugger::is_logging() {
 
 bool debugger::launch() {
   // https://stackoverflow.com/questions/20337870/what-is-the-equivalent-of-system-diagnostics-debugger-launch-in-unmanaged-code
-  auto system_dir = std::wstring(MAX_PATH + 1, '\0');
-  auto system_dir_size = GetSystemDirectory(system_dir.data(), (UINT)system_dir.length());
+  auto system_dir = std::wstring(MAX_PATH, '\0');
+  auto system_dir_size = GetSystemDirectory(system_dir.data(), (UINT)system_dir.size());
   if (system_dir_size == 0) return false;
   system_dir.resize(system_dir_size);
   

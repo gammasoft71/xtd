@@ -10,7 +10,7 @@ using namespace xtd::native;
 
 namespace {
   wstring get_machine_guid_str() {
-    auto value = wstring {255, 0};
+    auto value = wstring(255, '\0');
     auto value_size = static_cast<DWORD>(value.size());
     return RegGetValue(HKEY_LOCAL_MACHINE, L"SOFTWARE\\Microsoft\\Cryptography", L"MachineGuid", RRF_RT_REG_SZ, nullptr, value.data(), &value_size) == 0 ? value : L"";
   }
