@@ -10,9 +10,9 @@ using namespace std::literals;
 using namespace xtd::native;
 
 string types::demangle(const string& name) {
-  string result = name;
+  auto result = name;
   for (auto& item : {"enum "s, "class "s, "union "s, "struct "s}) {
-    size_t index = 0;
+    auto index = size_t {};
     while (true) {
       index = result.find(item, index);
       if (index == std::string::npos) break;
