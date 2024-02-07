@@ -9,7 +9,7 @@
 using namespace xtd::native;
 
 intmax_t condition_variable::create() {
-  PCONDITION_VARIABLE handle = new CONDITION_VARIABLE;
+  auto handle = new CONDITION_VARIABLE;
   if (handle == nullptr) return reinterpret_cast<intmax_t>(INVALID_HANDLE_VALUE);
   InitializeConditionVariable(handle);
   return reinterpret_cast<intmax_t>(handle);
