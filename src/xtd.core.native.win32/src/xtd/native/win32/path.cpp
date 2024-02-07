@@ -23,8 +23,8 @@ char path::directory_separator_char() {
 }
 
 string path::get_temp_path() {
-  DWORD temp_path_size = 65535;
-  std::wstring temp_path(temp_path_size, 0);
+  auto temp_path_size = DWORD {65535};
+  auto temp_path = std::wstring(temp_path_size, '\0');
   GetTempPath(temp_path_size, temp_path.data());
   return win32::strings::to_string(temp_path.c_str());
 }
