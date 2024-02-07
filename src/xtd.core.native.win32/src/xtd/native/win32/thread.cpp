@@ -41,14 +41,14 @@ bool thread::cancel(intmax_t handle) {
 }
 
 intmax_t thread::create(std::function<void(intmax_t)> start, intmax_t obj, int_least32_t max_stack_size, bool suspended, intmax_t& id) {
-  SECURITY_ATTRIBUTES sa;
+  auto sa = SECURITY_ATTRIBUTES {};
   sa.bInheritHandle = TRUE;
   sa.lpSecurityDescriptor = nullptr;
   sa.nLength = sizeof(SECURITY_ATTRIBUTES);
-  DWORD flags = 0;
+  auto flags = DWORD {};
   if (suspended) flags |= CREATE_SUSPENDED;
-  DWORD thread_id = 0;
-  HANDLE thread = CreateThread(nullptr, max_stack_size, [](void* thread_arg)->DWORD {
+  auto thread_id = DWORD {};
+  auto thread = CreateThread(nullptr, max_stack_size, [](void* thread_arg)->DWORD {
     auto start_obj = reinterpret_cast<std::pair<std::function<int_least32_t(intmax_t)>, intmax_t>*>(thread_arg);
     start_obj->first(start_obj->second);
     delete start_obj;
