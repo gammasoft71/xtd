@@ -29,16 +29,16 @@ namespace {
   }
   
   static string get_unique_speak_cmd_file_name() {
-    static int_least32_t cpt = 0;
-    stringstream ss;
+    static auto cpt = 0;
+    auto ss = stringstream {};
     ss << get_temp_path() << "\\__xtd_speech_synthesizer_speak_process_" << ++cpt << "__.cmd";
     return  ss.str();
   }
 }
 
 intmax_t speech_synthesizer::create() {
-  speech_synthesizer_data* data = new speech_synthesizer_data {get_unique_speak_cmd_file_name(), 0};
-  ofstream cmd_file;
+  auto data = new speech_synthesizer_data {get_unique_speak_cmd_file_name(), 0};
+  auto cmd_file = ofstream {};
   cmd_file.open(data->say_cmd_file_name);
   cmd_file << "@echo Set Speaker=CreateObject(\"sapi.spvoice\") > %TEMP%\\say_.vbs\n@echo Speaker.Speak \"%*\" >> %TEMP%\\say_.vbs\n@%TEMP%\\say_.vbs\n";
   cmd_file.close();
@@ -61,17 +61,17 @@ void speech_synthesizer::resume(intmax_t handle) {
 
 void speech_synthesizer::speak(intmax_t handle, const string& text_to_speak) {
   speak_async(handle, text_to_speak, [] {});
-  int_least32_t exit_code = 0;
+  auto exit_code = 0;
   native::process::wait(reinterpret_cast<speech_synthesizer_data*>(handle)->process_handle, exit_code);
 }
 
 void speech_synthesizer::speak_async(intmax_t handle, const string& text_to_speak, std::function<void()> on_speak_completed) {
   reinterpret_cast<speech_synthesizer_data*>(handle)->process_handle = native::process::shell_execute("", reinterpret_cast<speech_synthesizer_data*>(handle)->say_cmd_file_name, text_to_speak, "", PROCESS_WINDOW_STYLE_HIDDEN);
-  thread wait_process_thread([on_speak_completed, handle] {
+  auto wait_process_thread = thread{[on_speak_completed, handle] {
     int_least32_t exit_code = 0;
     native::process::wait(reinterpret_cast<speech_synthesizer_data*>(handle)->process_handle, exit_code);
     on_speak_completed();
-  });
+  }};
   wait_process_thread.detach();
 }
 
