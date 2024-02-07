@@ -26,14 +26,14 @@ bool debugger::is_logging() {
 
 bool debugger::launch() {
   // https://stackoverflow.com/questions/20337870/what-is-the-equivalent-of-system-diagnostics-debugger-launch-in-unmanaged-code
-  std::wstring system_dir(MAX_PATH + 1, '\0');
-  UINT system_dir_size = GetSystemDirectory(system_dir.data(), (UINT)system_dir.length());
+  auto system_dir = std::wstring(MAX_PATH + 1, '\0');
+  auto system_dir_size = GetSystemDirectory(system_dir.data(), (UINT)system_dir.length());
   if (system_dir_size == 0) return false;
   system_dir.resize(system_dir_size);
   
-  STARTUPINFO startup_info = {};
+  auto startup_info = STARTUPINFO {};
   startup_info.cb = sizeof(startup_info);
-  PROCESS_INFORMATION process_information = {};
+  auto process_information = PROCESS_INFORMATION {};
   if (CreateProcess(nullptr, (system_dir + L"\\vsjitdebugger.exe -p " + std::to_wstring(GetCurrentProcessId())).data(), nullptr, nullptr, FALSE, 0, nullptr, nullptr, &startup_info, &process_information) == 0) return false;
   CloseHandle(process_information.hThread);
   CloseHandle(process_information.hProcess);
