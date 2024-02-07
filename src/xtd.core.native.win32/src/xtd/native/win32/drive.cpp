@@ -23,21 +23,21 @@ int_least32_t drive::get_drive_type(const std::string& root_path_name) {
 }
 
 std::vector<std::string> drive::get_drives() {
-  wchar_t buffer[MAX_PATH + 1];
-  int_least32_t buffer_lenght = MAX_PATH;
-  if (::GetLogicalDriveStrings(buffer_lenght, buffer) <= 0)
+  auto buffer = wstring(MAX_PATH, '\0');
+  auto buffer_lenght = static_cast<int>(buffer.size());
+  if (::GetLogicalDriveStrings(buffer_lenght, buffer.data()) <= 0)
     return {};
-  vector<string> drives;
-  for (const wchar_t* drive = buffer; drive[0] != 0; drive += wcslen(drive) + 1)
+  auto drives = vector<string> {};
+  for (auto drive = buffer.data(); drive[0] != 0; drive += wcslen(drive) + 1)
     drives.push_back(win32::strings::to_string(drive));
   return drives;
 }
 
 bool drive::get_volume_information(const std::string& root_path_name, std::string& volume_name, std::string& file_system_name) {
-  DWORD file_system_flags = 0;
-  wchar_t volume[MAX_PATH + 1];
-  wchar_t file_system[MAX_PATH + 1];
-  if (GetVolumeInformation(win32::strings::to_wstring(root_path_name).c_str(), volume, MAX_PATH, nullptr, nullptr, &file_system_flags, file_system, MAX_PATH) == FALSE)
+  auto file_system_flags = DWORD {};
+  auto volume = wstring(MAX_PATH, '\0');
+  auto file_system = wstring(MAX_PATH, '\0');
+  if (GetVolumeInformation(win32::strings::to_wstring(root_path_name).c_str(), volume.data(), MAX_PATH, nullptr, nullptr, &file_system_flags, file_system.data(), MAX_PATH) == FALSE)
     return false;
     
   volume_name = win32::strings::to_string(volume);
