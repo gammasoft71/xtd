@@ -5,6 +5,7 @@
 #include "../../../../include/xtd/native/win32/strings.h"
 #include <xtd/native/process_window_style>
 #undef __XTD_CORE_NATIVE_LIBRARY__
+#include <array>
 #include <filesystem>
 #include <cstdlib>
 #include <map>
@@ -15,7 +16,7 @@ using namespace std::filesystem;
 using namespace xtd::native;
 
 namespace {
-  map<intmax_t, tuple<intmax_t, intmax_t, wstring, wstring, wstring, wstring>> process_infos;
+  auto process_infos = map<intmax_t, tuple<intmax_t, intmax_t, wstring, wstring, wstring, wstring>> {};
   class file_handle_streambuf : public std::streambuf {
   public:
     explicit file_handle_streambuf(HANDLE file_handle) : file_handle_(file_handle) {}
@@ -23,7 +24,7 @@ namespace {
     
   protected:
     int underflow() override {
-      DWORD number_of_bytes_read = 0;
+      auto number_of_bytes_read = DWORD {};
       ReadFile(file_handle_, &value_, 1, &number_of_bytes_read, nullptr);
       if (number_of_bytes_read == 1) {
         this->setg(&value_, &value_, &value_ + 1);
@@ -34,7 +35,7 @@ namespace {
     
     int overflow(int c) override {
       value_ = static_cast<char>(c);
-      DWORD number_of_bytes_written = 0;
+      auto number_of_bytes_written = DWORD {};
       if (WriteFile(file_handle_, &value_, 1, &number_of_bytes_written, nullptr) == 0) {
         this->setp(&value_, &value_);
         return 0;
@@ -42,7 +43,7 @@ namespace {
       return std::streambuf::overflow(c); // EOF
     }
     
-    HANDLE file_handle_;
+    HANDLE file_handle_ = INVALID_HANDLE_VALUE;
     char value_ = EOF;
   };
   
@@ -71,7 +72,7 @@ namespace {
 }
 
 int_least32_t process::base_priority(int_least32_t priority) {
-  static map<int_least32_t, int_least32_t> base_priorities {{IDLE_PRIORITY_CLASS, 4}, {BELOW_NORMAL_PRIORITY_CLASS, 6}, {NORMAL_PRIORITY_CLASS, 8}, {ABOVE_NORMAL_PRIORITY_CLASS, 10}, {HIGH_PRIORITY_CLASS, 13}, {REALTIME_PRIORITY_CLASS, 24}};
+  static auto base_priorities = map<int_least32_t, int_least32_t> {{IDLE_PRIORITY_CLASS, 4}, {BELOW_NORMAL_PRIORITY_CLASS, 6}, {NORMAL_PRIORITY_CLASS, 8}, {ABOVE_NORMAL_PRIORITY_CLASS, 10}, {HIGH_PRIORITY_CLASS, 13}, {REALTIME_PRIORITY_CLASS, 24}};
   auto it = base_priorities.find(priority);
   if (it == base_priorities.end()) it = base_priorities.find(NORMAL_PRIORITY_CLASS);
   return it->second;
@@ -88,12 +89,12 @@ bool process::priority_class(intmax_t process, int_least32_t priority) {
 
 intmax_t process::shell_execute(const std::string& verb, const std::string& file_name, const std::string& arguments, const std::string& working_directory, int_least32_t process_window_style) {
   initialize();
-  static map<int_least32_t, int_least32_t> window_styles{{PROCESS_WINDOW_STYLE_NORMAL, SW_NORMAL}, {PROCESS_WINDOW_STYLE_HIDDEN, SW_HIDE}, {PROCESS_WINDOW_STYLE_MINIMIZED, SW_SHOWMINIMIZED}, {PROCESS_WINDOW_STYLE_MAXIMIZED, SW_SHOWMAXIMIZED}};
+  static auto window_styles = map<int_least32_t, int_least32_t> {{PROCESS_WINDOW_STYLE_NORMAL, SW_NORMAL}, {PROCESS_WINDOW_STYLE_HIDDEN, SW_HIDE}, {PROCESS_WINDOW_STYLE_MINIMIZED, SW_SHOWMINIMIZED}, {PROCESS_WINDOW_STYLE_MAXIMIZED, SW_SHOWMAXIMIZED}};
   auto wverb = win32::strings::to_wstring(verb);
   auto wfile_name = win32::strings::to_wstring(file_name);
   auto warguments = win32::strings::to_wstring(arguments);
   auto wworking_directory =  working_directory != "" ? win32::strings::to_wstring(working_directory) : filesystem::current_path().wstring();
-  SHELLEXECUTEINFO shell_execute_info = {};
+  auto shell_execute_info = SHELLEXECUTEINFO {};
   shell_execute_info.cbSize = sizeof(SHELLEXECUTEINFO);
   shell_execute_info.fMask = SEE_MASK_NOCLOSEPROCESS | SEE_MASK_FLAG_NO_UI;
   shell_execute_info.hwnd = nullptr;
@@ -111,35 +112,35 @@ intmax_t process::shell_execute(const std::string& verb, const std::string& file
 process::started_process process::start(const string& file_name, const string& arguments, const string& working_directory, int_least32_t process_window_style, int_least32_t process_creation_flags, tuple<bool, bool, bool> redirect_standard_streams) {
   initialize();
   auto [redirect_standard_input, redirect_standard_output, redirect_standard_error] = redirect_standard_streams;
-  STARTUPINFO startup_info {};
+  auto startup_info = STARTUPINFO {};
   startup_info.cb = sizeof(STARTUPINFOA);
   if (redirect_standard_input || redirect_standard_output || redirect_standard_error) startup_info.dwFlags |= STARTF_USESTDHANDLES;
-  SECURITY_ATTRIBUTES security_attributes {};
+  auto security_attributes = SECURITY_ATTRIBUTES {};
   security_attributes.nLength = sizeof(SECURITY_ATTRIBUTES);
   security_attributes.bInheritHandle = TRUE;
   
-  HANDLE pipe_stdin[2] = {0, 0};
+  auto pipe_stdin = array<HANDLE, 2> {};
   if (redirect_standard_input) {
     CreatePipe(&pipe_stdin[0], &pipe_stdin[1], &security_attributes, 0);
     SetHandleInformation(pipe_stdin[1], HANDLE_FLAG_INHERIT, 0);
     startup_info.hStdInput = pipe_stdin[0];
   }
   
-  HANDLE pipe_stdout[2] = {0, 0};
+  auto pipe_stdout = array<HANDLE, 2> {};
   if (redirect_standard_output) {
     CreatePipe(&pipe_stdout[0], &pipe_stdout[1], &security_attributes, 0);
     SetHandleInformation(pipe_stdout[0], HANDLE_FLAG_INHERIT, 0);
     startup_info.hStdOutput = pipe_stdout[1];
   }
   
-  HANDLE pipe_stderr[2] = {0, 0};
+  auto pipe_stderr = array<HANDLE, 2> {};
   if (redirect_standard_error) {
     CreatePipe(&pipe_stderr[0], &pipe_stderr[1], &security_attributes, 0);
     SetHandleInformation(pipe_stderr[0], HANDLE_FLAG_INHERIT, 0);
     startup_info.hStdError = pipe_stderr[1];
   }
   
-  PROCESS_INFORMATION process_information;
+  auto process_information = PROCESS_INFORMATION {};
   if (CreateProcess(nullptr, win32::strings::to_wstring(file_name + (arguments == "" ? "" : (" " + arguments))).data(), nullptr, nullptr, true, process_creation_flags, nullptr, working_directory == "" ? nullptr : win32::strings::to_wstring(working_directory).c_str(), &startup_info, &process_information) == 0) return make_tuple(0, 0, nullptr, nullptr, nullptr);
   
   if (redirect_standard_input) CloseHandle(pipe_stdin[0]);
