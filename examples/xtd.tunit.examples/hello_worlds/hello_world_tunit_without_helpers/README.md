@@ -18,13 +18,8 @@ xtdc run
 
 ## Output
 
-```
-Start 2 tests from 1 test case
-Run tests:
-  SUCCEED hello_world_tunit_without_helpers.create_string_from_literal (0 ms total)
-  SUCCEED hello_world_tunit_without_helpers.create_string_from_chars (0 ms total)
+![Screenshot](../../../../docs/pictures/examples/hello_world_tunit.png)
 
-Test results:
-  SUCCEED 2 tests.
-End 2 tests from 1 test case ran. (0 ms total)
-```
+## Visual Studio Output
+
+![Screenshot](../../../../docs/pictures/examples/hello_world_tunit_vs.png)

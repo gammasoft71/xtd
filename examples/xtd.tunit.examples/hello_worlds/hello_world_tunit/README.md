@@ -18,7 +18,6 @@ xtdc run
 
 ## Output
 
-
 ![Screenshot](../../../../docs/pictures/examples/hello_world_tunit.png)
 
 ## Visual Studio Output
