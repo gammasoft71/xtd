@@ -639,6 +639,10 @@ add_sources(
   include/xtd/forms/vertical_layout_panel
   include/xtd/forms/v_scroll_bar.h
   include/xtd/forms/v_scroll_bar
+  include/xtd/forms/xtd_about_box.h
+  include/xtd/forms/xtd_about_box
+  include/xtd/forms/xtd_about_dialog.h
+  include/xtd/forms/xtd_about_dialog
   include/xtd/forms/layout/arranged_element_collection.h
   include/xtd/forms/layout/arranged_element_collection
   include/xtd/forms/layout/sorter_none.h
@@ -927,6 +931,8 @@ add_sources(
   src/xtd/forms/vertical_control_layout_style.cpp
   src/xtd/forms/vertical_layout_panel.cpp
   src/xtd/forms/v_scroll_bar.cpp
+  src/xtd/forms/xtd_about_box.cpp
+  src/xtd/forms/xtd_about_dialog.cpp
   src/xtd/forms/xtd_forms_common_dialog_closed_caller.h
   src/xtd/forms/xtd_forms_message_dialog_closed_caller.h
   src/xtd/forms/properties/resources.cpp

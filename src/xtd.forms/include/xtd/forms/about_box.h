@@ -42,29 +42,29 @@ namespace xtd {
       using translator_collection = xtd::forms::about_dialog::translator_collection;
       
       /// @brief Displays an about box in front of the specified window.
-      /// @param owner A iwin32_window that represents the owner window of the busy box.
+      /// @param owner A iwin32_window that represents the owner window of the about box.
       static void show(const iwin32_window& owner);
       
       /// @brief Displays an about box in front of the specified window. The about box displays a message.
-      /// @param owner A iwin32_window that represents the owner window of the busy box.
+      /// @param owner A iwin32_window that represents the owner window of the about box.
       /// @param text A string that specifies the text to display.
       static void show(const iwin32_window& owner, const xtd::ustring& text);
       
       /// @brief Displays an about box in front of the specified window. The about box displays a message and title bar caption.
-      /// @param owner A iwin32_window that represents the owner window of the busy box.
+      /// @param owner A iwin32_window that represents the owner window of the about box.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
       static void show(const iwin32_window& owner, const xtd::ustring& text, const xtd::ustring& caption);
       
       /// @brief Displays an about box in front of the specified window. The about box displays a message, title bar caption and icon.
-      /// @param owner A iwin32_window that represents the owner window of the busy box.
+      /// @param owner A iwin32_window that represents the owner window of the about box.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
       /// @param icon An icon value that specifies the icon to display.
       static void show(const iwin32_window& owner, const xtd::ustring& text, const xtd::ustring& caption, const xtd::drawing::icon& icon);
       
       /// @brief Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon and version.
-      /// @param owner A iwin32_window that represents the owner window of the busy box.
+      /// @param owner A iwin32_window that represents the owner window of the about box.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
       /// @param icon An icon value that specifies the icon to display.
@@ -72,7 +72,7 @@ namespace xtd {
       static void show(const iwin32_window& owner, const xtd::ustring& text, const xtd::ustring& caption, const xtd::drawing::icon& icon, const xtd::ustring& version);
       
       /// @brief Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version and long version.
-      /// @param owner A iwin32_window that represents the owner window of the busy box.
+      /// @param owner A iwin32_window that represents the owner window of the about box.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
       /// @param icon An icon value that specifies the icon to display.
@@ -81,7 +81,7 @@ namespace xtd {
       static void show(const iwin32_window& owner, const xtd::ustring& text, const xtd::ustring& caption, const xtd::drawing::icon& icon, const xtd::ustring& version, const xtd::ustring& long_version);
       
       /// @brief Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version and copyright.
-      /// @param owner A iwin32_window that represents the owner window of the busy box.
+      /// @param owner A iwin32_window that represents the owner window of the about box.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
       /// @param icon An icon value that specifies the icon to display.
@@ -91,7 +91,7 @@ namespace xtd {
       static void show(const iwin32_window& owner, const xtd::ustring& text, const xtd::ustring& caption, const xtd::drawing::icon& icon, const xtd::ustring& version, const xtd::ustring& long_version, const xtd::ustring& copyright);
       
       /// @brief Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version, copyright and website.
-      /// @param owner A iwin32_window that represents the owner window of the busy box.
+      /// @param owner A iwin32_window that represents the owner window of the about box.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
       /// @param icon An icon value that specifies the icon to display.
@@ -102,7 +102,7 @@ namespace xtd {
       static void show(const iwin32_window& owner, const xtd::ustring& text, const xtd::ustring& caption, const xtd::drawing::icon& icon, const xtd::ustring& version, const xtd::ustring& long_version, const xtd::ustring& copyright, const xtd::ustring& website);
       
       /// @brief Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version, copyright and website with label.
-      /// @param owner A iwin32_window that represents the owner window of the busy box.
+      /// @param owner A iwin32_window that represents the owner window of the about box.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
       /// @param icon An icon value that specifies the icon to display.
@@ -114,7 +114,7 @@ namespace xtd {
       static void show(const iwin32_window& owner, const xtd::ustring& text, const xtd::ustring& caption, const xtd::drawing::icon& icon, const xtd::ustring& version, const xtd::ustring& long_version, const xtd::ustring& copyright, const xtd::ustring& website, const xtd::ustring& website_label);
       
       /// @brief Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label and authors.
-      /// @param owner A iwin32_window that represents the owner window of the busy box.
+      /// @param owner A iwin32_window that represents the owner window of the about box.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
       /// @param icon An icon value that specifies the icon to display.
@@ -127,7 +127,7 @@ namespace xtd {
       static void show(const iwin32_window& owner, const xtd::ustring& text, const xtd::ustring& caption, const xtd::drawing::icon& icon, const xtd::ustring& version, const xtd::ustring& long_version, const xtd::ustring& copyright, const xtd::ustring& website, const xtd::ustring& website_label, const author_collection& authors);
       
       /// @brief Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors and documentation writers.
-      /// @param owner A iwin32_window that represents the owner window of the busy box.
+      /// @param owner A iwin32_window that represents the owner window of the about box.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
       /// @param icon An icon value that specifies the icon to display.
@@ -141,7 +141,7 @@ namespace xtd {
       static void show(const iwin32_window& owner, const xtd::ustring& text, const xtd::ustring& caption, const xtd::drawing::icon& icon, const xtd::ustring& version, const xtd::ustring& long_version, const xtd::ustring& copyright, const xtd::ustring& website, const xtd::ustring& website_label, const author_collection& authors, const documenter_collection& documenters);
       
       /// @brief Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors, documentation writers and translators.
-      /// @param owner A iwin32_window that represents the owner window of the busy box.
+      /// @param owner A iwin32_window that represents the owner window of the about box.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
       /// @param icon An icon value that specifies the icon to display.
@@ -156,7 +156,7 @@ namespace xtd {
       static void show(const iwin32_window& owner, const xtd::ustring& text, const xtd::ustring& caption, const xtd::drawing::icon& icon, const xtd::ustring& version, const xtd::ustring& long_version, const xtd::ustring& copyright, const xtd::ustring& website, const xtd::ustring& website_label, const author_collection& authors, const documenter_collection& documenters, const translator_collection translators);
       
       /// @brief Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors, documentation writers, translators and artists.
-      /// @param owner A iwin32_window that represents the owner window of the busy box.
+      /// @param owner A iwin32_window that represents the owner window of the about box.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
       /// @param icon An icon value that specifies the icon to display.
@@ -172,7 +172,7 @@ namespace xtd {
       static void show(const iwin32_window& owner, const xtd::ustring& text, const xtd::ustring& caption, const xtd::drawing::icon& icon, const xtd::ustring& version, const xtd::ustring& long_version, const xtd::ustring& copyright, const xtd::ustring& website, const xtd::ustring& website_label, const author_collection& authors, const documenter_collection& documenters, const translator_collection translators, const artist_collection& artists);
       
       /// @brief Displays an about box in front of the specified window. The about box displays a message, title bar caption, icon, version, long version, copyright, website with label, authors, documentation writers, translators, artists and license.
-      /// @param owner A iwin32_window that represents the owner window of the busy box.
+      /// @param owner A iwin32_window that represents the owner window of the about box.
       /// @param text A string that specifies the text to display.
       /// @param caption A string that specifies the title bar caption to display.
       /// @param icon An icon value that specifies the icon to display.
